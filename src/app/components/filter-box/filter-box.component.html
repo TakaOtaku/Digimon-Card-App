@@ -1,0 +1,69 @@
+<div class="grid grid-cols-7 border-2 border-slate-300 rounded-md m-5">
+  <!-- Set Dropdown -->
+  <mat-form-field appearance="fill">
+    <mat-label>Set</mat-label>
+    <mat-select multiple>
+      <mat-option *ngFor="let value of setList" [value]="value">{{value}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Card Type Dropdown -->
+  <mat-form-field appearance="fill">
+    <mat-label>Card-Type</mat-label>
+    <mat-select multiple>
+      <mat-option *ngFor="let value of cardTypeList" [value]="value">{{value}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Color Dropdown -->
+  <mat-form-field appearance="fill">
+    <mat-label>Color</mat-label>
+    <mat-select multiple>
+      <mat-option *ngFor="let value of colorList" [value]="value">{{value}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Type Dropdown -->
+  <mat-form-field appearance="fill">
+    <mat-label>Type</mat-label>
+    <mat-select multiple>
+      <mat-option *ngFor="let value of typeList" [value]="value">{{value}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Lv Dropdown -->
+  <mat-form-field appearance="fill">
+    <mat-label>Lv</mat-label>
+    <mat-select multiple>
+      <mat-option *ngFor="let value of lvList" [value]="value">{{value}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Rarity Dropdown -->
+  <mat-form-field appearance="fill">
+    <mat-label>Rarity</mat-label>
+    <mat-select multiple>
+      <mat-option *ngFor="let value of rarityList" [value]="value">{{value}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Version Dropdown -->
+  <mat-form-field appearance="fill">
+    <mat-label>Version</mat-label>
+    <mat-select multiple>
+      <mat-option *ngFor="let value of versionList" [value]="value">{{value}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div>
+    <p>Sort by</p>
+  </div>
+
+  <div>
+    <p>Ascending / Descending</p>
+  </div>
+
+  <mat-slider aria-label="unit(s)"></mat-slider>
+
+  <mat-slide-toggle>Collection Mode</mat-slide-toggle>
+</div>

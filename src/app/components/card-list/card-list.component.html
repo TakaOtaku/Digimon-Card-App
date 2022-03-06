@@ -1,0 +1,3 @@
+<div class="grid grid-cols-8 gap-2" >
+    <digimon-full-card *ngFor="let card of cards$ | async" [card]="card" [count]="getCount(card)"></digimon-full-card>
+</div>
