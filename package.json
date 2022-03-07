@@ -31,12 +31,13 @@
     "@ngrx/store-devtools": "^13.0.2",
     "file-saver": "^2.0.5",
     "firebase": "^9.6.8",
+    "firebase-tools": "^9.23.3",
     "ngrx-etc": "^7.0.1",
     "ngx-cookie-service": "^13.1.2",
+    "rxfire": "^6.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4",
-    "rxfire": "^6.0.0"
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.2.5",
