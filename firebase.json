@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/digimon-card-game-collector",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
