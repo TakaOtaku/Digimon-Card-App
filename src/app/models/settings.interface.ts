@@ -6,6 +6,7 @@ export interface ISettings {
 }
 
 export interface IFilter {
+  searchFilter: string;
   cardCountFilter: number|null;
   setFilter: [];
   colorFilter: [];

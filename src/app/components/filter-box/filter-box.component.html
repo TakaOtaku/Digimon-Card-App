@@ -1,6 +1,10 @@
-<div class="m-2">
-  <!-- Filter Box -->
-  <div [formGroup]="filterFormGroup" class="grid grid-cols-8 border-2 border-slate-300 rounded-md filter">
+<div [formGroup]="filterFormGroup" class="grid grid-cols-10 filter">
+    <!-- Search -->
+    <mat-form-field  class="col-span-2" appearance="fill">
+      <mat-label>Search</mat-label>
+      <input matInput type="text" formControlName="searchFilter">
+    </mat-form-field>
+
     <!-- Number -->
     <mat-form-field appearance="fill">
       <mat-label>Card Count</mat-label>
@@ -63,34 +67,3 @@
       </mat-select>
     </mat-form-field>
   </div>
-
-  <!-- Sort Box -->
-  <div class="flex mt-2 align-middle">
-    <div [formGroup]="sortFormGroup" class="flex">
-      <!-- Sort by Dropdown -->
-      <mat-chip-list selectable class="ml-2 col-span-3  align-middle">
-        <mat-chip *ngFor="let sort of sortList"  #c="matChip" (click)="toggleSelection(c, sort)" [selected]="this.sortFormGroup.get('sortBy')?.value.name === sort.name">
-          <mat-icon *ngIf="c.selected">check</mat-icon>
-          {{sort.name}}
-        </mat-chip>
-      </mat-chip-list>
-
-      <div class="ml-10 align-middle">
-        <mat-slide-toggle class="align-middle" color="primary" formControlName="ascOrder">
-          {{this.sortFormGroup.get('ascOrder')?.value ? 'ASC' : 'DES'}}
-        </mat-slide-toggle>
-      </div>
-    </div>
-
-    <div class="flex flex-grow  align-middle">
-      <mat-icon class="ml-5 align-middle">zoom_out</mat-icon>
-      <mat-slider class="w-full align-middle" thumbLabel min="3" max="12" step="1" [formControl]="cardSizeFormControl"></mat-slider>
-      <mat-icon class="mr-5 align-middle">zoom_in</mat-icon>
-    </div>
-
-    <mat-slide-toggle class="ml-auto mr-auto font-thin align-middle" [formControl]="collectionModeFormControl">Collection Mode</mat-slide-toggle>
-  </div>
-</div>
-
-
-

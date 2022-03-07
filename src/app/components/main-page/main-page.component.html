@@ -1,25 +1,39 @@
 <mat-toolbar class="grid-cols-12 gap-0 header">
-  <img class="max-h-10 col-span-2" src="assets/img_logo.png" alt="Logo">
+  <img class="max-h-10" src="assets/img_logo.png" alt="Logo">
 
-  <div class="col-span-7"></div>
+  <mat-chip-list [formGroup]="sortFormGroup" selectable class="m-auto col-span-3">
+    <mat-chip *ngFor="let sort of sortList"  #c="matChip" (click)="toggleSelection(c, sort)" [selected]="this.sortFormGroup.get('sortBy')?.value.name === sort.name">
+      <mat-icon *ngIf="c.selected && sortFormGroup.get('ascOrder')?.value">arrow_downward</mat-icon>
+      <mat-icon *ngIf="c.selected && !sortFormGroup.get('ascOrder')?.value">arrow_upward</mat-icon>
+      {{sort.name}}
+    </mat-chip>
+  </mat-chip-list>
+
+  <div class="flex flex-grow align-middle col-span-4">
+    <mat-icon class="m-auto align-middle">zoom_out</mat-icon>
+    <mat-slider class="w-full align-middle" thumbLabel min="3" max="12" step="1" color="warn" [formControl]="cardSizeFormControl"></mat-slider>
+    <mat-icon class="m-auto align-middle">zoom_in</mat-icon>
+  </div>
+
+  <div></div>
+
+  <div class="flex col-span-2">
+    <mat-slide-toggle color="warn" class="m-auto align-middle" [formControl]="collectionModeFormControl">CM</mat-slide-toggle>
+
+    <button class="m-auto" mat-icon-button color="warn" aria-label="Export Data from Digimon Card Collector" (click)="exportSave()">
+      <mat-icon class="scale">cloud_download</mat-icon>
+    </button>
+
+    <input type="file" id="file-input" (change)="handleFileInput($event.target)" #fileUpload>
+    <button class="m-auto" type="file" mat-icon-button color="warn" aria-label="Import Data from Digimon Card Collector" (click)="fileUpload.click()">
+      <mat-icon class="scale">cloud_upload</mat-icon>
+    </button>
+  </div>
 
   <div>
     <a href="https://www.paypal.com/donate/?hosted_button_id=DHQVT7GQ72J98">
       <img src="assets/blue.svg">
     </a>
-  </div>
-
-  <div></div>
-
-  <div class="flex flex-">
-    <button class="m-auto" mat-icon-button color="accent" aria-label="Export Data from Digimon Card Collector" (click)="exportSave()">
-      <mat-icon>cloud_download</mat-icon>
-    </button>
-
-    <input type="file" id="file-input" (change)="handleFileInput($event.target)" #fileUpload>
-    <button class="m-auto" type="file" mat-icon-button color="accent" aria-label="Import Data from Digimon Card Collector" (click)="fileUpload.click()">
-      <mat-icon>cloud_upload</mat-icon>
-    </button>
   </div>
 </mat-toolbar>
 

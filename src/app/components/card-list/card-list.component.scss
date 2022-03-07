@@ -10,6 +10,9 @@
 .grid-cols-6 {
   grid-template-columns: repeat(6, minmax(0, 1fr))
 }
+.grid-cols-7 {
+  grid-template-columns: repeat(7, minmax(0, 1fr))
+}
 .grid-cols-9 {
   grid-template-columns: repeat(9, minmax(0, 1fr))
 }
@@ -19,3 +22,17 @@
 .grid-cols-11 {
   grid-template-columns: repeat(11, minmax(0, 1fr))
 }
+
+mat-paginator {
+  min-height: 30px;
+  margin-top: -10px;
+
+  ::ng-deep .mat-paginator-container {
+    align-items: initial !important;
+  }
+}
+
+.list {
+  margin-top: -10px;
+}
+

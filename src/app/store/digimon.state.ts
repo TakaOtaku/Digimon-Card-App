@@ -22,6 +22,7 @@ export const initialState: IDigimonState = {
     decks: [],
     settings: {
       filter: {
+        searchFilter: '',
         cardCountFilter: null,
         setFilter: [],
         colorFilter: [],

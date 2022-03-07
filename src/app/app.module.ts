@@ -28,22 +28,22 @@ import {saveReducer} from "./store/reducers/save.reducer";
     FilterBoxComponent,
     CardListComponent
   ],
-  imports: [
-    MaterialModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    BrowserModule,
-    BrowserAnimationsModule,
-    FontAwesomeModule,
-    RouterModule.forRoot([{path: '', component: MainPageComponent}]),
-    StoreModule.forRoot({digimonCards: digimonReducer, save: saveReducer}),
-    StoreDevtoolsModule.instrument({
-      name: 'Digimon Card Collector',
-      logOnly: environment.production
-    }),
-    EffectsModule.forRoot([DigimonEffects])
-  ],
+    imports: [
+        MaterialModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        BrowserModule,
+        BrowserAnimationsModule,
+        FontAwesomeModule,
+        RouterModule.forRoot([{path: '', component: MainPageComponent}]),
+        StoreModule.forRoot({digimonCards: digimonReducer, save: saveReducer}),
+        StoreDevtoolsModule.instrument({
+            name: 'Digimon Card Collector',
+            logOnly: environment.production
+        }),
+        EffectsModule.forRoot([DigimonEffects])
+    ],
   providers: [
     ReactiveFormsModule,
     CookieService

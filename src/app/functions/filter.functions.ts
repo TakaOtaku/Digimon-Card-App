@@ -2,6 +2,7 @@ import {ICard, ICollectionCard, IFilter, ISort} from "../models";
 
 export function filterCards(cards: ICard[], collection: ICollectionCard[], filter: IFilter, sort: ISort): ICard[] {
   let filteredCards = applyCardCountFilter(cards, collection, filter.cardCountFilter);
+  filteredCards = applySearchFilter(filteredCards, filter.searchFilter);
   filteredCards = applySetFilter(filteredCards, filter.setFilter);
   filteredCards = applyColorFilter(filteredCards, filter.colorFilter);
   filteredCards = applyCardTypeFilter(filteredCards, filter.cardTypeFilter);
@@ -11,6 +12,17 @@ export function filterCards(cards: ICard[], collection: ICollectionCard[], filte
   filteredCards = applyVersionFilter(filteredCards, filter.versionFilter);
   filteredCards = applySortOrder(filteredCards, sort);
   return filteredCards;
+}
+
+function applySearchFilter(cards: ICard[], searchFilter: string): ICard[] {
+  if(searchFilter === '') {return cards;}
+
+  const nameFiltered: ICard[] = cards.filter(cards => cards.name.includes(searchFilter));
+  const effectFiltered: ICard[] = cards.filter(cards => cards.effect.includes(searchFilter));
+  const inheritedFiltered: ICard[] = cards.filter(cards => cards.digivolveEffect.includes(searchFilter));
+  const securityFiltered: ICard[] = cards.filter(cards => cards.securityEffect.includes(searchFilter));
+
+  return [...new Set([...nameFiltered, ...effectFiltered, ...inheritedFiltered, ...securityFiltered])];
 }
 
 function applyCardCountFilter(cards: ICard[], collection: ICollectionCard[], cardCountFilter: number|null): ICard[] {
@@ -116,6 +128,9 @@ function applyVersionFilter(cards: ICard[], versionFilter: string[]): ICard[] {
 
 function applySortOrder(cards: ICard[], sort: ISort): ICard[] {
   const returnArray = [...new Set([...cards])];
+  if(sort.sortBy.element === 'playCost' || sort.sortBy.element === 'dp' ) {
+    return sort.ascOrder ? returnArray.sort(dynamicSortNumber(sort.sortBy.element)) : returnArray.sort(dynamicSortNumber(`-${sort.sortBy.element}`));
+  }
   return sort.ascOrder ? returnArray.sort(dynamicSort(sort.sortBy.element)) : returnArray.sort(dynamicSort(`-${sort.sortBy.element}`));
 }
 
@@ -127,6 +142,20 @@ function dynamicSort(property: string): any {
   }
   return function (a:any, b:any) {
     let result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+    return result * sortOrder;
+  }
+}
+
+function dynamicSortNumber(property: string): any {
+  let sortOrder = 1;
+  if(property[0] === "-") {
+    sortOrder = -1;
+    property = property.substr(1);
+  }
+  return function (a:any, b:any) {
+    const first: number = a[property]>>>0;
+    const second: number = b[property]>>>0;
+    let result = (first < second) ? -1 : (first > second) ? 1 : 0;
     return result * sortOrder;
   }
 }

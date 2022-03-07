@@ -1,3 +1,42 @@
+.plus {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  cursor: pointer;
+  background: white;
+  opacity: 0.8;
+  color: black;
+  z-index: 2;
+}
+
+.minus {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  cursor: pointer;
+  background: white;
+  opacity: 0.8;
+  color: black;
+  z-index: 2;
+}
+
+.count {
+  position: absolute;
+  bottom: 15px;
+  left: 10px;
+  right: 10px;
+  font-size: 32px;
+  cursor: pointer;
+  opacity: 0.8;
+  color: white;
+  z-index: 2;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+img {
+  z-index: -1;
+}
+
 .grayscale {
   -webkit-filter: grayscale(1);
 }

@@ -1,5 +1,13 @@
-<div class="grid gap-2 m-2" [ngClass]="gridCols">
-    <digimon-full-card
-      *ngFor="let card of cards$ | async" [card]="card" [count]="getCount(card.id)" [collectionMode]="collectionMode$ | async">
-    </digimon-full-card>
+<mat-paginator class="col-span-2"
+               [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="onPageChange($event)">
+</mat-paginator>
+
+<div class="grid gap-2 m-2 list" [ngClass]="gridCols">
+  <digimon-full-card
+    *ngFor="let card of cardsToShow" [card]="card" [count]="getCount(card.id)" [collectionMode]="collectionMode$ | async">
+  </digimon-full-card>
 </div>
+
+<mat-paginator class="col-span-2"
+               [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="onPageChange($event)">
+</mat-paginator>

@@ -55,7 +55,7 @@ export class DigimonEffects {
         SaveActions.changeFilter,
         SaveActions.changeSort,
       ),
-      mergeMap(() =>
+    switchMap(() =>
         combineLatest(
           this.store.select(selectDigimonCards),
           this.store.select(selectCollection),

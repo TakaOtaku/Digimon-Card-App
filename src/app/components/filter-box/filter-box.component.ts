@@ -1,11 +1,9 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
-import {MatChip} from "@angular/material/chips";
 import {Store} from "@ngrx/store";
 import {filter, Subject, takeUntil} from "rxjs";
-import {ISortElement} from "../../models";
-import {changeCardSize, changeCollectionMode, changeFilter, changeSort} from "../../store/actions/save.actions";
-import {selectCardSize, selectCollectionMode, selectFilter, selectSort} from "../../store/digimon.selectors";
+import {changeFilter} from "../../store/actions/save.actions";
+import {selectFilter} from "../../store/digimon.selectors";
 
 @Component({
   selector: 'digimon-filter-box',
@@ -15,6 +13,7 @@ import {selectCardSize, selectCollectionMode, selectFilter, selectSort} from "..
 export class FilterBoxComponent implements OnInit, OnDestroy {
   private filter$ = this.store.select(selectFilter);
   public filterFormGroup: FormGroup = new FormGroup({
+    searchFilter: new FormControl(''),
     cardCountFilter: new FormControl(),
     setFilter: new FormControl([]),
     colorFilter: new FormControl([]),
@@ -32,24 +31,6 @@ export class FilterBoxComponent implements OnInit, OnDestroy {
   public rarityList: string[] = ['C', 'UC', 'R', 'SR', 'SEC'];
   public versionList: string[] = ['Normal', 'AA', 'Stamped'];
 
-  private sort$ = this.store.select(selectSort);
-  public sortFormGroup: FormGroup = new FormGroup({
-    sortBy: new FormControl({name:'ID', element: 'id'}),
-    ascOrder: new FormControl (true)
-  });
-  public sortList: ISortElement[] = [
-    {name:'ID', element: 'id'},
-    {name:'Cost', element: 'playCost'},
-    {name:'DP', element: 'dp'},
-    {name:'Level', element: 'cardLv'},
-    {name:'Name', element: 'name'}];
-
-  private cardSize$ = this.store.select(selectCardSize);
-  public cardSizeFormControl: FormControl = new FormControl(8);
-
-  private collectionMode$ = this.store.select(selectCollectionMode);
-  public collectionModeFormControl: FormControl = new FormControl(true);
-
   private destroy$ = new Subject();
 
   constructor(private store: Store) {}
@@ -61,35 +42,11 @@ export class FilterBoxComponent implements OnInit, OnDestroy {
     this.filter$
       .pipe(takeUntil(this.destroy$), filter(value => !!value && value !== this.filterFormGroup.value))
       .subscribe(filter => this.filterFormGroup.setValue(filter, { emitEvent: false }));
-
-    this.sortFormGroup.valueChanges
-     .pipe(takeUntil(this.destroy$))
-      .subscribe((sort) => this.store.dispatch(changeSort({sort})));
-    this.sort$
-      .pipe(takeUntil(this.destroy$), filter(value => !!value && value !== this.sortFormGroup.value))
-      .subscribe(sort => this.sortFormGroup.setValue(sort, { emitEvent: false }));
-
-    this.cardSizeFormControl.valueChanges
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((cardSize) => this.store.dispatch(changeCardSize({cardSize})));
-    this.cardSize$
-      .pipe(takeUntil(this.destroy$), filter(value => !!value && value !== this.cardSizeFormControl.value))
-      .subscribe(cardSize => this.cardSizeFormControl.setValue(cardSize, { emitEvent: false }));
-
-    this.collectionModeFormControl.valueChanges
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((collectionMode) => this.store.dispatch(changeCollectionMode({collectionMode})));
-    this.collectionMode$
-      .pipe(takeUntil(this.destroy$), filter(value => value !== this.collectionModeFormControl.value))
-      .subscribe(collectionMode => this.collectionModeFormControl.setValue(collectionMode, { emitEvent: false }));
-  }
+    }
 
   public ngOnDestroy() {
     this.destroy$.next(true);
   }
 
-  toggleSelection(chip: MatChip, sort: ISortElement) {
-    chip.toggleSelected();
-    this.sortFormGroup.get('sortBy')?.setValue(sort);
-  }
+
 }
