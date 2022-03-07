@@ -2,7 +2,8 @@ import {Component, Input} from '@angular/core';
 import {faMinus, faPlus} from "@fortawesome/free-solid-svg-icons";
 import {Store} from "@ngrx/store";
 import {ICard} from "../../models";
-import {decreaseCardCount, increaseCardCount} from "../../store/digimon.actions";
+
+import * as CollectionActions from "../../store/actions/collection.actions";
 
 @Component({
   selector: 'digimon-full-card',
@@ -12,6 +13,7 @@ import {decreaseCardCount, increaseCardCount} from "../../store/digimon.actions"
 export class FullCardComponent {
   @Input() card: ICard;
   @Input() count: number;
+  @Input() collectionMode: boolean|null = true;
 
   faPlus = faPlus;
   faMinus = faMinus;
@@ -19,11 +21,15 @@ export class FullCardComponent {
   constructor(private store: Store) {}
 
   public increaseCard(id: string) {
-    this.store.dispatch(increaseCardCount({id}))
+    this.store.dispatch(CollectionActions.increaseCardCount({id}))
   }
 
   public decreaseCard(id: string) {
-    this.store.dispatch(decreaseCardCount({id}))
+    this.store.dispatch(CollectionActions.decreaseCardCount({id}))
+  }
+
+  public countChange(id: string) {
+    this.store.dispatch(CollectionActions.changeCardCount({id, count:this.count}))
   }
 
   public getBackground(): string {

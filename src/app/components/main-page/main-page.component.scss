@@ -1,7 +1,20 @@
 .header {
   background: #3485d5;
+  display: grid !important;
 }
 
 .ml-auto {
   margin-left: auto !important;
+}
+
+.m-auto {
+  margin: auto !important;
+}
+
+mat-icon {
+  transform: scale(1.5);
+}
+
+#file-input {
+  display: none;
 }

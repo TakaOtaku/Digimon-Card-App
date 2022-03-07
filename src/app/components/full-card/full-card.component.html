@@ -1,8 +1,8 @@
-<div class="border-2 rounded-xl border-slate-200 bg-slate-50"  [ngClass]="getBackground()">
-  <img mat-card-image [src]="card.cardImage" alt="Digimon Card" [ngClass]="{'grayscale': count === 0}">
-  <div class="grid grid-cols-3 p-1">
+<div [ngClass]="getBackground()" class="border-2 rounded-xl border-slate-200 bg-slate-50">
+  <img mat-card-image class="m-auto" [src]="card.cardImage" alt="Digimon Card" [ngClass]="{'grayscale': count === 0 && collectionMode}">
+  <div *ngIf="collectionMode" class="grid grid-cols-3 p-1">
     <button class="rounded-full" mat-button (click)="increaseCard(card.id)"><fa-icon [icon]="faPlus"></fa-icon></button>
-    <input  class="text-center" matInput type="number" [value]="count.toString()"/>
+    <input  class="text-center" matInput type="number" [(ngModel)]="count" (ngModelChange)="countChange(card.id)"/>
     <button class="rounded-full" mat-button (click)="decreaseCard(card.id)"><fa-icon [icon]="faMinus"></fa-icon></button>
   </div>
 </div>

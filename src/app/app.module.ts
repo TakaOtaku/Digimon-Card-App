@@ -1,6 +1,6 @@
 import {HttpClientModule} from "@angular/common/http";
 import {NgModule} from '@angular/core';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule} from "@angular/router";
@@ -15,11 +15,10 @@ import {CardListComponent} from './components/card-list/card-list.component';
 import {FilterBoxComponent} from './components/filter-box/filter-box.component';
 import {FullCardComponent} from './components/full-card/full-card.component';
 import {MainPageComponent} from './components/main-page/main-page.component';
-import {SaveDialogComponent} from './components/save-dialog/save-dialog.component';
 import {MaterialModule} from "./material.module";
 import {DigimonEffects} from "./store/digimon.effects";
-import {digimonReducer} from "./store/digimon.reducers";
-import {saveReducer} from "./store/save.reducer";
+import {digimonReducer} from "./store/reducers/digimon.reducers";
+import {saveReducer} from "./store/reducers/save.reducer";
 
 @NgModule({
   declarations: [
@@ -27,20 +26,18 @@ import {saveReducer} from "./store/save.reducer";
     FullCardComponent,
     MainPageComponent,
     FilterBoxComponent,
-    CardListComponent,
-    SaveDialogComponent
+    CardListComponent
   ],
   imports: [
+    MaterialModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot([
-      { path: '', component: MainPageComponent },
-    ]),
     FontAwesomeModule,
-    MaterialModule,
-    StoreModule.forRoot({ digimonCards: digimonReducer, save: saveReducer }),
+    RouterModule.forRoot([{path: '', component: MainPageComponent}]),
+    StoreModule.forRoot({digimonCards: digimonReducer, save: saveReducer}),
     StoreDevtoolsModule.instrument({
       name: 'Digimon Card Collector',
       logOnly: environment.production
@@ -48,6 +45,7 @@ import {saveReducer} from "./store/save.reducer";
     EffectsModule.forRoot([DigimonEffects])
   ],
   providers: [
+    ReactiveFormsModule,
     CookieService
   ],
   bootstrap: [AppComponent]

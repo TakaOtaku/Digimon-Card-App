@@ -1,29 +1,40 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
-import {ICard, ICollectionCard} from "../../models";
-import {selectCollection, selectDigimonCards} from "../../store/digimon.selectors";
+import {filter, Subject, takeUntil} from "rxjs";
+import {ICollectionCard} from "../../models";
+import {selectCollectionMode, selectFilteredDigimonCards, selectSave} from "../../store/digimon.selectors";
 
 @Component({
   selector: 'digimon-card-list',
   templateUrl: './card-list.component.html',
   styleUrls: ['./card-list.component.scss']
 })
-export class CardListComponent implements OnInit {
-  public cards$ = this.store.select(selectDigimonCards);
-  public collection$ = this.store.select(selectCollection);
+export class CardListComponent implements OnInit, OnDestroy {
+  public cards$ = this.store.select(selectFilteredDigimonCards);
+
+  private save$ = this.store.select(selectSave)
   private collection: ICollectionCard[] = [];
+  public gridCols = 'grid-cols-8';
+  public collectionMode$ = this.store.select(selectCollectionMode);
+
+  private destroy$ = new Subject();
 
   constructor(private store: Store) {}
 
   public ngOnInit(): void {
-    this.collection$.subscribe((collection) => {
-      console.log('Collection: ', collection);
-      this.collection = collection;
-    });
+    this.save$
+      .pipe(takeUntil(this.destroy$), filter(value => !!value))
+      .subscribe(save => {
+        this.collection = save.collection;
+        this.gridCols = save.settings.cardSize ? `grid-cols-${save.settings.cardSize}` : 'grid-cols-8';
+      });
   }
 
-  public getCount(card: ICard): number {
-    const collectionCard = this.collection.find(value => value.id === card.id)
-    return collectionCard ? collectionCard.count : 0
+  public ngOnDestroy() {
+    this.destroy$.next(true);
+  }
+
+  public getCount(cardId: string): number {
+    return this.collection.find(value => value.id === cardId)?.count ?? 0;
   }
 }

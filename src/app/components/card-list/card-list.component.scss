@@ -1,0 +1,21 @@
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr))
+}
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr))
+}
+.grid-cols-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr))
+}
+.grid-cols-6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr))
+}
+.grid-cols-9 {
+  grid-template-columns: repeat(9, minmax(0, 1fr))
+}
+.grid-cols-10 {
+  grid-template-columns: repeat(10, minmax(0, 1fr))
+}
+.grid-cols-11 {
+  grid-template-columns: repeat(11, minmax(0, 1fr))
+}

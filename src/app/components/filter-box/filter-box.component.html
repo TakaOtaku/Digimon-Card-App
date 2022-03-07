@@ -1,69 +1,96 @@
-<div class="grid grid-cols-7 border-2 border-slate-300 rounded-md m-5">
-  <!-- Set Dropdown -->
-  <mat-form-field appearance="fill">
-    <mat-label>Set</mat-label>
-    <mat-select multiple>
-      <mat-option *ngFor="let value of setList" [value]="value">{{value}}</mat-option>
-    </mat-select>
-  </mat-form-field>
+<div class="m-2">
+  <!-- Filter Box -->
+  <div [formGroup]="filterFormGroup" class="grid grid-cols-8 border-2 border-slate-300 rounded-md filter">
+    <!-- Number -->
+    <mat-form-field appearance="fill">
+      <mat-label>Card Count</mat-label>
+      <input matInput type="number" formControlName="cardCountFilter">
+    </mat-form-field>
 
-  <!-- Card Type Dropdown -->
-  <mat-form-field appearance="fill">
-    <mat-label>Card-Type</mat-label>
-    <mat-select multiple>
-      <mat-option *ngFor="let value of cardTypeList" [value]="value">{{value}}</mat-option>
-    </mat-select>
-  </mat-form-field>
+    <!-- Set Dropdown -->
+    <mat-form-field appearance="fill">
+      <mat-label>Set</mat-label>
+      <mat-select multiple formControlName="setFilter">
+        <mat-option *ngFor="let value of setList" [value]="value">{{value}}</mat-option>
+      </mat-select>
+    </mat-form-field>
 
-  <!-- Color Dropdown -->
-  <mat-form-field appearance="fill">
-    <mat-label>Color</mat-label>
-    <mat-select multiple>
-      <mat-option *ngFor="let value of colorList" [value]="value">{{value}}</mat-option>
-    </mat-select>
-  </mat-form-field>
+    <!-- Card Type Dropdown -->
+    <mat-form-field appearance="fill">
+      <mat-label>Card-Type</mat-label>
+      <mat-select multiple formControlName="cardTypeFilter">
+        <mat-option *ngFor="let value of cardTypeList" [value]="value">{{value}}</mat-option>
+      </mat-select>
+    </mat-form-field>
 
-  <!-- Type Dropdown -->
-  <mat-form-field appearance="fill">
-    <mat-label>Type</mat-label>
-    <mat-select multiple>
-      <mat-option *ngFor="let value of typeList" [value]="value">{{value}}</mat-option>
-    </mat-select>
-  </mat-form-field>
+    <!-- Color Dropdown -->
+    <mat-form-field appearance="fill">
+      <mat-label>Color</mat-label>
+      <mat-select multiple formControlName="colorFilter">
+        <mat-option *ngFor="let value of colorList" [value]="value">{{value}}</mat-option>
+      </mat-select>
+    </mat-form-field>
 
-  <!-- Lv Dropdown -->
-  <mat-form-field appearance="fill">
-    <mat-label>Lv</mat-label>
-    <mat-select multiple>
-      <mat-option *ngFor="let value of lvList" [value]="value">{{value}}</mat-option>
-    </mat-select>
-  </mat-form-field>
+    <!-- Type Dropdown -->
+    <mat-form-field appearance="fill">
+      <mat-label>Type</mat-label>
+      <mat-select multiple formControlName="typeFilter">
+        <mat-option *ngFor="let value of typeList" [value]="value">{{value}}</mat-option>
+      </mat-select>
+    </mat-form-field>
 
-  <!-- Rarity Dropdown -->
-  <mat-form-field appearance="fill">
-    <mat-label>Rarity</mat-label>
-    <mat-select multiple>
-      <mat-option *ngFor="let value of rarityList" [value]="value">{{value}}</mat-option>
-    </mat-select>
-  </mat-form-field>
+    <!-- Lv Dropdown -->
+    <mat-form-field appearance="fill">
+      <mat-label>Lv</mat-label>
+      <mat-select multiple formControlName="lvFilter">
+        <mat-option *ngFor="let value of lvList" [value]="value">{{value}}</mat-option>
+      </mat-select>
+    </mat-form-field>
 
-  <!-- Version Dropdown -->
-  <mat-form-field appearance="fill">
-    <mat-label>Version</mat-label>
-    <mat-select multiple>
-      <mat-option *ngFor="let value of versionList" [value]="value">{{value}}</mat-option>
-    </mat-select>
-  </mat-form-field>
+    <!-- Rarity Dropdown -->
+    <mat-form-field appearance="fill">
+      <mat-label>Rarity</mat-label>
+      <mat-select multiple formControlName="rarityFilter">
+        <mat-option *ngFor="let value of rarityList" [value]="value">{{value}}</mat-option>
+      </mat-select>
+    </mat-form-field>
 
-  <div>
-    <p>Sort by</p>
+    <!-- Version Dropdown -->
+    <mat-form-field appearance="fill">
+      <mat-label>Version</mat-label>
+      <mat-select multiple formControlName="versionFilter">
+        <mat-option *ngFor="let value of versionList" [value]="value">{{value}}</mat-option>
+      </mat-select>
+    </mat-form-field>
   </div>
 
-  <div>
-    <p>Ascending / Descending</p>
+  <!-- Sort Box -->
+  <div class="flex mt-2 align-middle">
+    <div [formGroup]="sortFormGroup" class="flex">
+      <!-- Sort by Dropdown -->
+      <mat-chip-list selectable class="ml-2 col-span-3  align-middle">
+        <mat-chip *ngFor="let sort of sortList"  #c="matChip" (click)="toggleSelection(c, sort)" [selected]="this.sortFormGroup.get('sortBy')?.value.name === sort.name">
+          <mat-icon *ngIf="c.selected">check</mat-icon>
+          {{sort.name}}
+        </mat-chip>
+      </mat-chip-list>
+
+      <div class="ml-10 align-middle">
+        <mat-slide-toggle class="align-middle" color="primary" formControlName="ascOrder">
+          {{this.sortFormGroup.get('ascOrder')?.value ? 'ASC' : 'DES'}}
+        </mat-slide-toggle>
+      </div>
+    </div>
+
+    <div class="flex flex-grow  align-middle">
+      <mat-icon class="ml-5 align-middle">zoom_out</mat-icon>
+      <mat-slider class="w-full align-middle" thumbLabel min="3" max="12" step="1" [formControl]="cardSizeFormControl"></mat-slider>
+      <mat-icon class="mr-5 align-middle">zoom_in</mat-icon>
+    </div>
+
+    <mat-slide-toggle class="ml-auto mr-auto font-thin align-middle" [formControl]="collectionModeFormControl">Collection Mode</mat-slide-toggle>
   </div>
-
-  <mat-slider aria-label="unit(s)"></mat-slider>
-
-  <mat-slide-toggle>Collection Mode</mat-slide-toggle>
 </div>
+
+
+

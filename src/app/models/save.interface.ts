@@ -1,5 +1,3 @@
-import {ICollectionCard} from "./collection-card.interface";
-import {IDeck} from "./deck.interface";
 import {ISettings} from "./settings.interface";
 
 export interface ISave {
@@ -7,3 +5,10 @@ export interface ISave {
   decks: IDeck[];
   settings: ISettings;
 }
+
+export interface ICollectionCard {
+  id: string;
+  count: number;
+}
+
+export interface IDeck {}
