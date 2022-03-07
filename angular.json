@@ -24,7 +24,10 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/cardlists",
+              "src/assets/images/banner",
+              "src/assets/images/cards"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
@@ -99,6 +102,16 @@
               "src/styles.scss"
             ],
             "scripts": []
+          }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "digimon-card-game-collector:build:production",
+            "firebaseProject": "digimon-card-collector",
+            "firebaseHostingSite": "digimon-card-collector"
           }
         }
       }

@@ -20,7 +20,7 @@ import {
   ST06CardList,
   ST07CardList,
   ST08CardList
-} from "../../assets/cardlists";
+} from "../cardlists";
 import {filterCards} from "../functions/filter.functions";
 import {ICard} from "../models";
 import * as CollectionActions from "./actions/collection.actions";
@@ -65,6 +65,7 @@ export class DigimonEffects {
           tap(([cards, collection, filter, sort]) => {
             if (!cards) { return;}
             const filteredDigimonCards = filterCards(cards, collection, filter, sort);
+            console.log("All Filtered Digimon Cards: ", filteredDigimonCards);
             this.store.dispatch(setFilteredDigimonCards({filteredDigimonCards}));
           }),
           catchError(() => EMPTY)
@@ -85,7 +86,9 @@ export class DigimonEffects {
           .pipe(
             tap(([collection, filter, sort]) => {
               const loadedDigimonCards = this.setupDigimonCards();
+              console.log("All Digimon Cards: ", loadedDigimonCards);
               const filteredDigimonCards = filterCards(loadedDigimonCards, collection, filter, sort);
+              console.log("All Filtered Digimon Cards: ", filteredDigimonCards);
               this.store.dispatch(setFilteredDigimonCards({filteredDigimonCards}));
             })
           )
