@@ -7,6 +7,7 @@ import {MatChipsModule} from "@angular/material/chips";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatIconModule} from "@angular/material/icon";
 import {MatInputModule} from "@angular/material/input";
+import {MatMenuModule} from "@angular/material/menu";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import {MatSelectModule} from "@angular/material/select";
@@ -30,7 +31,8 @@ import {MatToolbarModule} from "@angular/material/toolbar";
     MatProgressBarModule,
     MatChipsModule,
     MatPaginatorModule,
-    DragDropModule
+    DragDropModule,
+    MatMenuModule
   ],
   exports: [
     MatIconModule,
@@ -46,7 +48,8 @@ import {MatToolbarModule} from "@angular/material/toolbar";
     MatProgressBarModule,
     MatChipsModule,
     MatPaginatorModule,
-    DragDropModule
+    DragDropModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: []

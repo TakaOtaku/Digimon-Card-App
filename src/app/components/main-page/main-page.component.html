@@ -30,12 +30,35 @@
     </button>
   </div>
 
-  <div>
-    <a href="https://www.paypal.com/donate/?hosted_button_id=DHQVT7GQ72J98">
-      <img src="assets/blue.svg">
-    </a>
+  <div class="flex mr-10 justify-right">
+    <button class="scale" mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="switchSite(SITES.Collection)">
+        <mat-icon>sd_card</mat-icon>
+        <span>Collection</span>
+      </button>
+      <button mat-menu-item (click)="switchSite(SITES.Decks)">
+        <mat-icon>sim_card</mat-icon>
+        <span>Decks</span>
+      </button>
+      <button mat-menu-item (click)="switchSite(SITES.DeckBuilder)">
+        <mat-icon>build</mat-icon>
+        <span>Deck-Builder</span>
+      </button>
+      <button mat-menu-item onclick="location.href='https://www.paypal.com/donate/?hosted_button_id=DHQVT7GQ72J98'">
+        <mat-icon>attach_money</mat-icon>
+        <span>Donate</span>
+      </button>
+    </mat-menu>
   </div>
 </mat-toolbar>
 
 <digimon-filter-box></digimon-filter-box>
-<digimon-card-list></digimon-card-list>
+<div class="flex">
+  <digimon-deck-builder *ngIf="siteToShow === SITES.DeckBuilder" class="half"></digimon-deck-builder>
+  <digimon-card-list *ngIf="siteToShow === SITES.Collection || siteToShow === SITES.DeckBuilder" [ngClass]="isDeckBuilder()"></digimon-card-list>
+  <digimon-decks *ngIf="siteToShow === SITES.Decks"></digimon-decks>
+</div>
+

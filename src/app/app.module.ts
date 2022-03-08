@@ -12,8 +12,11 @@ import {CookieService} from "ngx-cookie-service";
 import {environment} from "../environments/environment";
 import {AppComponent} from './app.component';
 import {CardListComponent} from './components/card-list/card-list.component';
+import {DeckBuilderComponent} from './components/deck-builder/deck-builder.component';
+import {DecksComponent} from './components/decks/decks.component';
 import {FilterBoxComponent} from './components/filter-box/filter-box.component';
 import {FullCardComponent} from './components/full-card/full-card.component';
+import {ImportDeckComponent} from './components/import-deck/import-deck.component';
 import {MainPageComponent} from './components/main-page/main-page.component';
 import {MaterialModule} from "./material.module";
 import {DigimonEffects} from "./store/digimon.effects";
@@ -26,7 +29,10 @@ import {saveReducer} from "./store/reducers/save.reducer";
     FullCardComponent,
     MainPageComponent,
     FilterBoxComponent,
-    CardListComponent
+    CardListComponent,
+    DecksComponent,
+    DeckBuilderComponent,
+    ImportDeckComponent
   ],
     imports: [
         MaterialModule,

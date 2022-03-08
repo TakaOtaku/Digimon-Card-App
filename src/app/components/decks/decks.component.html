@@ -1,0 +1,15 @@
+<button mat-raised-button class="import" (click)="openImportDialog()">Import Deck</button>
+
+<mat-card *ngFor="let deck of decks" class="h-1/6 m-5 border-8"
+          [ngStyle]="{ 'border-color': deck.color }">
+  <mat-card-header>
+    <mat-card-title>{{deck.title}}</mat-card-title>
+    <mat-card-subtitle>{{deck.description}}</mat-card-subtitle>
+  </mat-card-header>
+  <img class="m-auto" mat-card-image [src]="deck.image">
+  <mat-card-actions>
+    <button mat-button>VIEW</button>
+    <button mat-button>EDIT</button>
+    <button mat-button>DELETE</button>
+  </mat-card-actions>
+</mat-card>

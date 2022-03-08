@@ -8,12 +8,20 @@ import {ISave, ISortElement} from "../../models";
 import {changeCardSize, changeCollectionMode, changeSort, loadSave} from "../../store/actions/save.actions";
 import {selectCardSize, selectCollectionMode, selectSave, selectSort} from "../../store/digimon.selectors";
 
+export enum SITES {
+  'Collection',
+  'Decks',
+  'DeckBuilder'
+}
+
 @Component({
   selector: 'digimon-main-page',
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent {
+  public SITES = SITES;
+  public siteToShow: number = SITES.Collection;
   public save: string = "";
 
   private sort$ = this.store.select(selectSort);
@@ -36,9 +44,7 @@ export class MainPageComponent {
 
   private destroy$ = new Subject();
 
-  constructor(
-    public store: Store
-  ) {}
+  constructor(public store: Store) {}
 
   public ngOnInit(): void {
     this.store.select(selectSave)
@@ -77,6 +83,14 @@ export class MainPageComponent {
   public exportSave(): void {
     let blob = new Blob([this.save], {type: 'text/json' })
     saveAs(blob, "digimon-card-collector.json");
+  }
+
+  public switchSite(site: any): void {
+    this.siteToShow = site;
+  }
+
+  public isDeckBuilder(): string {
+    return this.siteToShow === SITES.DeckBuilder ? 'half' : '';
   }
 
   handleFileInput(input: any) {
