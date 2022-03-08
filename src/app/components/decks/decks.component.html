@@ -1,15 +1,20 @@
 <button mat-raised-button class="import" (click)="openImportDialog()">Import Deck</button>
 
-<mat-card *ngFor="let deck of decks" class="h-1/6 m-5 border-8"
-          [ngStyle]="{ 'border-color': deck.color }">
-  <mat-card-header>
-    <mat-card-title>{{deck.title}}</mat-card-title>
-    <mat-card-subtitle>{{deck.description}}</mat-card-subtitle>
-  </mat-card-header>
-  <img class="m-auto" mat-card-image [src]="deck.image">
-  <mat-card-actions>
-    <button mat-button>VIEW</button>
-    <button mat-button>EDIT</button>
-    <button mat-button>DELETE</button>
-  </mat-card-actions>
-</mat-card>
+<div class="flex flex-wrap">
+  <mat-card *ngFor="let deck of decks" class="deck flex-item border-4 border-black m-2" [ngStyle]="{ 'background': deck.color }">
+    <mat-card-header class="mb-2 text-oneline">
+      <mat-card-title class="text-shadow text-white">{{deck.title}}</mat-card-title>
+    </mat-card-header>
+    <div class="flex justify-center">
+      <img class="m-auto" mat-card-image [src]="deck.image">
+    </div>
+    <mat-card-actions class="flex justify-center">
+      <mat-button-toggle-group class="rounded" name="action" aria-label="Deck Actions">
+        <mat-button-toggle value="view"><mat-icon>zoom_out_map</mat-icon></mat-button-toggle>
+        <mat-button-toggle value="edit"><mat-icon>edit</mat-icon></mat-button-toggle>
+        <mat-button-toggle value="export"><mat-icon>cloud_download</mat-icon></mat-button-toggle>
+      </mat-button-toggle-group>
+    </mat-card-actions>
+  </mat-card>
+</div>
+

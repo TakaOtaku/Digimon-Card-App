@@ -24,7 +24,7 @@
       <mat-icon class="scale">cloud_download</mat-icon>
     </button>
 
-    <input type="file" id="file-input" (change)="handleFileInput($event.target)" #fileUpload>
+    <input type="file" accept=".json" id="file-input" (change)="handleFileInput($event.target)" #fileUpload>
     <button class="m-auto" type="file" mat-icon-button color="warn" aria-label="Import Data from Digimon Card Collector" (click)="fileUpload.click()">
       <mat-icon class="scale">cloud_upload</mat-icon>
     </button>
@@ -55,7 +55,7 @@
   </div>
 </mat-toolbar>
 
-<digimon-filter-box></digimon-filter-box>
+<digimon-filter-box *ngIf="siteToShow === SITES.Collection || siteToShow === SITES.DeckBuilder"></digimon-filter-box>
 <div class="flex">
   <digimon-deck-builder *ngIf="siteToShow === SITES.DeckBuilder" class="half"></digimon-deck-builder>
   <digimon-card-list *ngIf="siteToShow === SITES.Collection || siteToShow === SITES.DeckBuilder" [ngClass]="isDeckBuilder()"></digimon-card-list>

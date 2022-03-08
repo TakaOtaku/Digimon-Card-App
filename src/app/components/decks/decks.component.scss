@@ -1,0 +1,30 @@
+.import {
+  width: 100%;
+}
+
+.text-shadow {
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.flex-item {
+  width: 10%;
+}
+
+.text-oneline ::ng-deep * {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.deck {
+  padding: 2px;
+
+  img {
+    margin-bottom: 5px;
+  }
+
+  mat-card-actions {
+    padding: 0 0 0 14px;
+    margin-bottom: 5px;
+  }
+}
