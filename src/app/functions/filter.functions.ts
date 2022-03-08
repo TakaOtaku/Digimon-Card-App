@@ -14,6 +14,7 @@ export function filterCards(cards: ICard[], collection: ICollectionCard[], filte
   return filteredCards;
 }
 
+//region Filter Functions
 function applySearchFilter(cards: ICard[], searchFilter: string): ICard[] {
   if(searchFilter === '') {return cards;}
 
@@ -40,7 +41,6 @@ function applyCardCountFilter(cards: ICard[], collection: ICollectionCard[], car
   }
   return [...new Set([...filteredCards])];
 }
-
 function containsCard(cardId: string, collectionArray: ICollectionCard[]): boolean {
   let cardInCollection = false;
   collectionArray.forEach(collection => {
@@ -133,6 +133,13 @@ function applySortOrder(cards: ICard[], sort: ISort): ICard[] {
   }
   return sort.ascOrder ? returnArray.sort(dynamicSort(sort.sortBy.element)) : returnArray.sort(dynamicSort(`-${sort.sortBy.element}`));
 }
+//endregion
+
+//region Basic Filter Functions
+function search(user: any){
+  // @ts-ignore
+  return Object.keys(this).every((key) => user[key] === this[key]);
+}
 
 function dynamicSort(property: string): any {
   let sortOrder = 1;
@@ -159,3 +166,4 @@ function dynamicSortNumber(property: string): any {
     return result * sortOrder;
   }
 }
+//endregion

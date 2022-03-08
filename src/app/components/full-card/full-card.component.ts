@@ -32,20 +32,24 @@ export class FullCardComponent {
     this.store.dispatch(CollectionActions.changeCardCount({id, count:this.count}))
   }
 
-  public getBackground(): string {
-    switch (this.count) {
-      case 0:
-        return '';
-      case 1:
-      case 2:
-      case 3:
-        return 'yellow'
-      case 4:
-        return 'green';
-      case 5:
-        return 'light-blue';
+  public getAA(): string {
+    switch (this.card.color) {
+      case 'Red':
+        return 'assets/images/banner/ico_card_detail_red.png';
+      case 'Blue':
+        return 'assets/images/banner/ico_card_detail_blue.png';
+      case 'Yellow':
+        return 'assets/images/banner/ico_card_detail_yellow.png';
+      case 'Green':
+        return 'assets/images/banner/ico_card_detail_green.png';
+      case 'Black':
+        return 'assets/images/banner/ico_card_detail_black.png';
+      case 'Purple':
+        return 'assets/images/banner/ico_card_detail_purple.png';
+      case 'White':
+        return 'assets/images/banner/ico_card_detail_white.png';
       default:
-        return 'blue';
+        return '';
     }
   }
 }
