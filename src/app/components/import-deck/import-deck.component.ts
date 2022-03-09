@@ -1,13 +1,19 @@
-import {Component, OnInit} from '@angular/core';
-import {ISave} from "../../models";
-import {loadSave} from "../../store/actions/save.actions";
+import {Component, OnDestroy} from '@angular/core';
+import {Store} from "@ngrx/store";
+import {Subject, takeUntil} from "rxjs";
+import {importDeck} from 'src/app/store/actions/save.actions';
+import {ICard, IDeck, IDeckCard} from "../../models";
+import {selectDigimonCards} from "../../store/digimon.selectors";
 
 @Component({
   selector: 'digimon-import-deck',
   templateUrl: './import-deck.component.html',
   styleUrls: ['./import-deck.component.css']
 })
-export class ImportDeckComponent {
+export class ImportDeckComponent implements OnDestroy {
+  private digimonCards$ = this.store.select(selectDigimonCards);
+  private digimonCards: ICard[] = [];
+
   public importPlaceholder = "" +
     "Paste Deck here\n" +
     "\n" +
@@ -19,17 +25,24 @@ export class ImportDeckComponent {
 
   public deckText = '';
 
+  private destroy$ = new Subject();
+
   //Import -> Ask for Name, Description, Color, SelectCardID for Image or let empty
-  constructor() { }
+  constructor(private store: Store) {
+    this.digimonCards$.pipe(takeUntil(this.destroy$)).subscribe(cards => this.digimonCards = cards);
+  }
+
+  public ngOnDestroy(): void {
+    this.destroy$.next(true);
+  }
 
   public handleFileInput(input: any) {
     let fileReader = new FileReader();
     fileReader.onload = (e) => {
       try {
-        console.log(fileReader.result as string);
-        debugger;
-        //const save: ISave = JSON.parse(fileReader.result as string);
-        //this.store.dispatch(loadSave({save}));
+        let result = (fileReader.result as string).split("\n");
+        const deck: IDeck = this.parseDeck(result);
+        this.store.dispatch(importDeck({deck}));
       } catch (e) {
 
       }
@@ -38,6 +51,43 @@ export class ImportDeckComponent {
   }
 
   public importDeck() {
+    if(this.deckText === '') {return;}
 
+    let result: string[] = this.deckText.split("\n");
+    const deck: IDeck = this.parseDeck(result);
+    this.store.dispatch(importDeck({deck}));
+  }
+
+  private parseDeck(textArray: string[]): IDeck {
+    const deck: IDeck = {
+      cards: []
+    }
+    textArray.forEach(line => {
+      const cardOrNull = this.parseLine(line);
+      if(cardOrNull) {
+        deck.cards.push(cardOrNull);
+      }
+    })
+    return deck;
+  }
+
+  private parseLine(line: string): IDeckCard | null {
+    let lineSplit: string[] = line.replace(/  +/g, ' ').split(" ");
+    const cardLine: number = +lineSplit[0]>>>0;
+    if(cardLine > 0) {
+      let matches = lineSplit.filter(string => string.includes('-'));
+      matches = matches.filter(string => {
+        const split = string.split('-');
+        return +split[split.length - 1] >>> 0;
+      })
+      if(matches.length === 0) {
+        return null;
+      }
+      if(!this.digimonCards.find(card => card.id === matches[matches.length - 1])) {
+        return null;
+      }
+      return {count: cardLine, id: matches[matches.length - 1]} as IDeckCard;
+    }
+    return null;
   }
 }

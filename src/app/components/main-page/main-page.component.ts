@@ -21,7 +21,7 @@ export enum SITES {
 })
 export class MainPageComponent {
   public SITES = SITES;
-  public siteToShow: number = SITES.Collection;
+  public siteToShow: number = SITES.Decks;
   public save: string = "";
 
   private sort$ = this.store.select(selectSort);

@@ -1,56 +1,67 @@
 .plus {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
   cursor: pointer;
   background: white;
   opacity: 0.8;
   color: black;
   z-index: 2;
+
+  display: block;
+  bottom: 4%;
+  right: 5%;
+  min-height: 10%;
+  min-width: 15%;
 }
 
 .minus {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
   cursor: pointer;
   background: white;
   opacity: 0.8;
   color: black;
   z-index: 2;
+
+  bottom: 4%;
+  left: 5%;
+  min-height: 10%;
+  min-width: 15%;
 }
 
 .count {
   position: absolute;
-  bottom: 15px;
-  left: 10px;
-  right: 10px;
   font-size: 32px;
   opacity: 0.8;
   color: white;
   z-index: 2;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
+  display: block;
+  bottom: 4%;
+  right: 35%;
+  left: 35%;
+  min-height: 10%;
+  min-width: 15%;
 }
 
 .aa {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  top: 5px;
-  z-index: 2;
-  transform: scale(0.7);
+position: absolute;
+left: 0;
+right: 0;
+margin-left: auto;
+margin-right: auto;
+top: 5px;
+z-index: 2;
+transform: scale(0.7);
 }
 
 img {
-  z-index: -1;
+z-index: -1;
 }
 
 .grayscale {
-  -webkit-filter: grayscale(1);
+-webkit-filter: grayscale(1);
 }
 
 .text-center {
-  text-align: center;
+text-align: center;
 }

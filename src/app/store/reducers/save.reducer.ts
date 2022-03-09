@@ -6,6 +6,7 @@ import {initialState} from '../digimon.state';
 
 export const saveReducer = createReducer(
   initialState.save,
+  //region Card Count Reducers
   on(CollectionActions.changeCardCount, (state, { id, count }) => {
     const taken = state.collection.find((card) => card.id === id);
     if (taken) {
@@ -58,8 +59,14 @@ export const saveReducer = createReducer(
     }
     return state;
   }),
+  //endregion
+
+  //region Save Reducers
   on(SaveActions.setSave, (state, {save}) => save),
   on(SaveActions.loadSave, (state, {save}) => save),
+  //endregion
+
+  //region Filter Reducers
   on(SaveActions.changeFilter, (state, {filter}) => ({...state,  settings: {...state.settings, filter}})),
   on(SaveActions.changeSort, (state, {sort}) => ({...state, settings: {...state.settings, sort}})),
   on(SaveActions.changeCardSize, (state, {cardSize}) => {
@@ -70,4 +77,11 @@ export const saveReducer = createReducer(
     if(collectionMode === undefined) {return state;}
     return ({...state, settings: {...state.settings, collectionMode}})
   }),
+  //endregion
+
+  //region Deck Reducers
+  on(SaveActions.importDeck, (state, {deck}) => {
+    return ({...state, decks: [...state.decks, deck]})
+  }),
+  //endregion
 );

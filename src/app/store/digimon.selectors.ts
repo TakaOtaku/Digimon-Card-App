@@ -45,3 +45,8 @@ export const selectCollectionMode = createSelector(
   selectSave,
   (state: ISave) => state.settings.collectionMode
 );
+
+export const selectDecks = createSelector(
+  selectSave,
+  (state: ISave) => state.decks
+);

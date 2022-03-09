@@ -113,9 +113,21 @@
             "firebaseProject": "digimon-card-collector",
             "firebaseHostingSite": "digimon-card-collector"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "digimon-card-game-collector"
+  "defaultProject": "digimon-card-game-collector",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }

@@ -1,12 +1,12 @@
 <button mat-raised-button class="import" (click)="openImportDialog()">Import Deck</button>
 
 <div class="flex flex-wrap">
-  <mat-card *ngFor="let deck of decks" class="deck flex-item border-4 border-black m-2" [ngStyle]="{ 'background': deck.color }">
+  <mat-card *ngFor="let deck of decks$ | async" class="deck flex-item border-4 border-black m-2" [ngStyle]="{ 'background': deck.color }">
     <mat-card-header class="mb-2 text-oneline">
-      <mat-card-title class="text-shadow text-white">{{deck.title}}</mat-card-title>
+      <mat-card-title class="text-shadow text-white">{{deck.title ?? 'Digimon Card Deck'}}</mat-card-title>
     </mat-card-header>
     <div class="flex justify-center">
-      <img class="m-auto" mat-card-image [src]="deck.image">
+      <img class="m-auto" mat-card-image [src]="deck.image ?? 'assets/images/Digimon-Card-Back.webp'">
     </div>
     <mat-card-actions class="flex justify-center">
       <mat-button-toggle-group class="rounded" name="action" aria-label="Deck Actions">

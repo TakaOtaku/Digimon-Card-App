@@ -13,14 +13,13 @@ export interface ICollectionCard {
 
 export interface IDeck {
   cards: IDeckCard[];
-  title: string;
-  description: string;
-  color: string;
-  image: string;
+  title?: string;
+  description?: string;
+  color?: string;
+  image?: string;
 }
 
 export interface IDeckCard {
   count: number;
-  name: string;
   id: string;
 }

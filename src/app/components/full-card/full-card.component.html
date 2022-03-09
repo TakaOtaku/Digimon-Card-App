@@ -1,4 +1,4 @@
-<div class="border-2 rounded-xl border-slate-200 bg-slate-50 relative">
+<div class="relative">
   <button *ngIf="collectionMode" class="plus rounded-full" mat-mini-fab (click)="increaseCard(card.id)"><fa-icon [icon]="faPlus"></fa-icon></button>
   <p *ngIf="collectionMode"  class="count text-center">{{count}}</p>
   <button *ngIf="collectionMode" class="minus rounded-full" mat-mini-fab (click)="decreaseCard(card.id)"><fa-icon [icon]="faMinus"></fa-icon></button>
