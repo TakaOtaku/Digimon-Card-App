@@ -1,5 +1,7 @@
 import {Component, OnDestroy} from '@angular/core';
+import {MatDialogRef} from "@angular/material/dialog";
 import {Store} from "@ngrx/store";
+import {ToastrService} from "ngx-toastr";
 import {Subject, takeUntil} from "rxjs";
 import {importDeck} from 'src/app/store/actions/save.actions';
 import {ICard, IDeck, IDeckCard} from "../../models";
@@ -27,8 +29,11 @@ export class ImportDeckComponent implements OnDestroy {
 
   private destroy$ = new Subject();
 
-  //Import -> Ask for Name, Description, Color, SelectCardID for Image or let empty
-  constructor(private store: Store) {
+  constructor(
+    private store: Store,
+    private toastr: ToastrService,
+    public dialogRef: MatDialogRef<ImportDeckComponent>
+  ) {
     this.digimonCards$.pipe(takeUntil(this.destroy$)).subscribe(cards => this.digimonCards = cards);
   }
 
@@ -43,8 +48,11 @@ export class ImportDeckComponent implements OnDestroy {
         let result = (fileReader.result as string).split("\n");
         const deck: IDeck = this.parseDeck(result);
         this.store.dispatch(importDeck({deck}));
+        this.toastr.success('A new deck was imported.', 'Deck Imported')
+        this.dialogRef.close();
       } catch (e) {
-
+        this.toastr.error('There was an error with the deck import.', 'Error')
+        this.dialogRef.close();
       }
     }
     fileReader.readAsText(input.files[0]);
@@ -56,6 +64,8 @@ export class ImportDeckComponent implements OnDestroy {
     let result: string[] = this.deckText.split("\n");
     const deck: IDeck = this.parseDeck(result);
     this.store.dispatch(importDeck({deck}));
+    this.toastr.success('A new deck was imported.', 'Deck Imported')
+    this.dialogRef.close();
   }
 
   private parseDeck(textArray: string[]): IDeck {

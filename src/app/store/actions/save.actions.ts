@@ -49,7 +49,14 @@ export const changeCollectionMode = createAction(
 );
 //endregion
 
+//region Deck Actions
 export const importDeck = createAction(
   '[Digimon Deck] Import Digimon Deck',
   props<{ deck: IDeck }>()
 );
+
+export const deleteDeck = createAction(
+  '[Digimon Deck] Delete Digimon Deck',
+  props<{ deck: IDeck }>()
+);
+//endregion

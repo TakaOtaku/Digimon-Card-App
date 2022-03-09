@@ -83,5 +83,9 @@ export const saveReducer = createReducer(
   on(SaveActions.importDeck, (state, {deck}) => {
     return ({...state, decks: [...state.decks, deck]})
   }),
+  on(SaveActions.deleteDeck, (state, {deck}) => {
+    const decks = [...new Set(state.decks.filter(item => item !== deck))]
+    return ({...state, decks})
+  }),
   //endregion
 );

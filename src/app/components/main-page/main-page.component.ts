@@ -3,6 +3,7 @@ import {FormControl, FormGroup} from "@angular/forms";
 import {MatChip} from "@angular/material/chips";
 import {Store} from "@ngrx/store";
 import {saveAs} from "file-saver";
+import {ToastrService} from "ngx-toastr";
 import {filter, first, Subject, takeUntil} from "rxjs";
 import {ISave, ISortElement} from "../../models";
 import {changeCardSize, changeCollectionMode, changeSort, loadSave} from "../../store/actions/save.actions";
@@ -44,7 +45,10 @@ export class MainPageComponent {
 
   private destroy$ = new Subject();
 
-  constructor(public store: Store) {}
+  constructor(
+    public store: Store,
+    public toastr: ToastrService
+  ) {}
 
   public ngOnInit(): void {
     this.store.select(selectSave)
@@ -99,8 +103,9 @@ export class MainPageComponent {
       try {
         const save: ISave = JSON.parse(fileReader.result as string);
         this.store.dispatch(loadSave({save}));
+        this.toastr.success('A new save was uploaded.', 'Save Uploaded')
       } catch (e) {
-
+        this.toastr.error('There was an error with the save.', 'Error')
       }
     }
     fileReader.readAsText(input.files[0]);

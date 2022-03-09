@@ -1,11 +1,13 @@
-<h1 mat-dialog-title>Import Deck</h1>
-<div mat-dialog-content>
-  <p>Copy your deck in the text area and press import or press the "Import Text-File"-Button to import a file.</p>
-  <textarea [placeholder]="importPlaceholder" id="text-import" class="border-2 border-black-500" [(ngModel)]="deckText"></textarea>
-</div>
-<div mat-dialog-actions class="w-full flex justify-end">
-  <input type="file" accept=".txt" id="file-input" (change)="handleFileInput($event.target)" #fileUpload>
-  <button mat-button (click)="fileUpload.click()">Import Text-File</button>
-  <button mat-button (click)="importDeck()">Import</button>
-  <button mat-button mat-dialog-close>Close</button>
+<div class="p-3">
+  <h1 mat-dialog-title>Import Deck</h1>
+  <div mat-dialog-content>
+    <p>Copy your deck in the text area and press import or press the "Import Text-File"-Button to import a file.</p>
+    <textarea [placeholder]="importPlaceholder" id="text-import" class="border-2 border-black-500" [(ngModel)]="deckText"></textarea>
+  </div>
+  <div mat-dialog-actions class="w-full flex justify-end">
+    <input type="file" accept=".txt" id="file-input" (change)="handleFileInput($event.target)" #fileUpload>
+    <button mat-button (click)="fileUpload.click()">Import Text-File</button>
+    <button mat-button (click)="importDeck()">Import</button>
+    <button mat-button mat-dialog-close>Close</button>
+  </div>
 </div>

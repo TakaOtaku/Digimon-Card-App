@@ -9,11 +9,14 @@ import {EffectsModule} from '@ngrx/effects';
 import {StoreModule} from '@ngrx/store';
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {CookieService} from "ngx-cookie-service";
+import {ToastrModule} from "ngx-toastr";
 import {environment} from "../environments/environment";
 import {AppComponent} from './app.component';
 import {CardListComponent} from './components/card-list/card-list.component';
+import {ConfirmationDialogComponent} from './components/confirmation-dialog/confirmation-dialog.component';
 import {DeckBuilderComponent} from './components/deck-builder/deck-builder.component';
 import {DecksComponent} from './components/decks/decks.component';
+import {ExportDeckComponent} from './components/export-deck/export-deck.component';
 import {FilterBoxComponent} from './components/filter-box/filter-box.component';
 import {FullCardComponent} from './components/full-card/full-card.component';
 import {ImportDeckComponent} from './components/import-deck/import-deck.component';
@@ -32,10 +35,13 @@ import {saveReducer} from "./store/reducers/save.reducer";
     CardListComponent,
     DecksComponent,
     DeckBuilderComponent,
-    ImportDeckComponent
+    ImportDeckComponent,
+    ExportDeckComponent,
+    ConfirmationDialogComponent
   ],
     imports: [
         MaterialModule,
+        ToastrModule.forRoot({}),
         FormsModule,
         ReactiveFormsModule,
         HttpClientModule,
