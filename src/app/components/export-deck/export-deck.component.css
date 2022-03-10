@@ -1,0 +1,8 @@
+#text-export {
+  width: 100%;
+  height: 300px;
+}
+
+#file-input {
+  display: none;
+}

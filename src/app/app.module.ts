@@ -15,6 +15,7 @@ import {AppComponent} from './app.component';
 import {CardListComponent} from './components/card-list/card-list.component';
 import {ConfirmationDialogComponent} from './components/confirmation-dialog/confirmation-dialog.component';
 import {DeckBuilderComponent} from './components/deck-builder/deck-builder.component';
+import {DeckContextMenuComponent} from './components/deck-context-menu/deck-context-menu.component';
 import {DecksComponent} from './components/decks/decks.component';
 import {ExportDeckComponent} from './components/export-deck/export-deck.component';
 import {FilterBoxComponent} from './components/filter-box/filter-box.component';
@@ -37,7 +38,8 @@ import {saveReducer} from "./store/reducers/save.reducer";
     DeckBuilderComponent,
     ImportDeckComponent,
     ExportDeckComponent,
-    ConfirmationDialogComponent
+    ConfirmationDialogComponent,
+    DeckContextMenuComponent
   ],
     imports: [
         MaterialModule,

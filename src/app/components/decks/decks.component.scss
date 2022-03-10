@@ -31,3 +31,17 @@
     margin-top: -8px;
   }
 }
+
+.hidden {
+  display: none;
+}
+
+.deck:hover .digimon-card {
+  display: block;
+  transform: scale(0.5);
+}
+
+.digimon-card {
+  bottom: 0;
+  left: 0;
+}
