@@ -28,7 +28,7 @@ export class DeckContextMenuComponent {
   }
 
   openExportDialog(): void {
-    this.dialog.open(ExportDeckComponent, {data: this.data, width: '600px', height: '500px'});
+    this.dialog.open(ExportDeckComponent, {data: this.data, width: '90vmin', height: '550px'});
     this.dialogRef.close();
   }
 

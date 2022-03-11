@@ -17,7 +17,7 @@ export class DecksComponent {
   constructor(public dialog: MatDialog, private store: Store) { }
 
   openImportDialog(): void  {
-    this.dialog.open(ImportDeckComponent, {width: '600px', height: '500px'});
+    this.dialog.open(ImportDeckComponent, {width: '90vmin', height: '550px'});
   }
 
   openDeckContext(deck: IDeck): void {

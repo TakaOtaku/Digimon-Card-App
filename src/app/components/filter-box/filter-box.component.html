@@ -5,11 +5,11 @@
     <input matInput type="text" formControlName="searchFilter">
   </mat-form-field>
 
-  <div class="lg:hidden">
+  <div [ngClass]="{'lg:hidden' : !compact}">
     <button mat-stroked-button color="primary" class="h-100" (click)="openFilterDialog()">Filter</button>
   </div>
 
-  <div class="hidden lg:block">
+  <div [ngClass]="{'lg:block' : !compact}" class="hidden">
     <!-- Number -->
     <mat-form-field appearance="fill">
       <mat-label>Card Count</mat-label>
@@ -67,9 +67,9 @@
   </div>
 </div>
 
-<div class="ml-auto mr-auto mt-2 mb-2">
+<div [ngClass]="{'lg:block' : !compact}" class="ml-auto mr-auto mt-2 mb-2 hidden">
   <mat-chip-list [formGroup]="sortFormGroup" selectable>
-    <mat-chip *ngFor="let sort of sortList"  #c="matChip"
+    <mat-chip *ngFor="let sort of sortList" #c="matChip"
               (click)="toggleSelection(c, sort)" [selected]="'ID' === sort.name">
       <mat-icon *ngIf="c.selected && sortFormGroup.get('ascOrder')?.value">arrow_downward</mat-icon>
       <mat-icon *ngIf="c.selected && !sortFormGroup.get('ascOrder')?.value">arrow_upward</mat-icon>

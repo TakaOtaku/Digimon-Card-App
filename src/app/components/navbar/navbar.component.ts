@@ -81,4 +81,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
     this.site = site;
     this.store.dispatch(setSite({site}));
   }
+
+  openPayPal() {
+    window.open('https://www.paypal.com/donate/?hosted_button_id=DHQVT7GQ72J98', '_blank');
+  }
 }

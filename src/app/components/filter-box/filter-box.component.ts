@@ -1,11 +1,11 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {MatChip} from "@angular/material/chips";
 import {MatDialog} from "@angular/material/dialog";
 import {Store} from "@ngrx/store";
 import {Subject, takeUntil} from "rxjs";
 import {ISortElement} from "../../models";
-import {changeFilter, changeSort} from "../../store/digimon.actions";
+import {changeFilter} from "../../store/digimon.actions";
 import {selectFilterBoxViewModel} from "../../store/digimon.selectors";
 import {FilterDialogComponent} from "../dialogs/filter-dialog/filter-dialog.component";
 
@@ -15,6 +15,8 @@ import {FilterDialogComponent} from "../dialogs/filter-dialog/filter-dialog.comp
   styleUrls: ['./filter-box.component.scss']
 })
 export class FilterBoxComponent implements OnInit, OnDestroy {
+  @Input() public compact = false;
+
   filterFormGroup: FormGroup = new FormGroup({
     searchFilter: new FormControl(''),
     cardCountFilter: new FormControl(),
@@ -64,9 +66,7 @@ export class FilterBoxComponent implements OnInit, OnDestroy {
     this.filterFormGroup.valueChanges
       .pipe(takeUntil(this.destroy$))
       .subscribe((filter) => this.store.dispatch(changeFilter({filter})));
-    this.sortFormGroup.valueChanges
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((sort) => this.store.dispatch(changeSort({sort})));
+
     }
 
   ngOnDestroy() {
@@ -74,7 +74,7 @@ export class FilterBoxComponent implements OnInit, OnDestroy {
   }
 
   openFilterDialog() {
-    this.dialog.open(FilterDialogComponent, {width: '600px', height: '500px'});
+    this.dialog.open(FilterDialogComponent, {width: '90vmin', height: '550px'});
   }
 
   toggleSelection(chip: MatChip, sort: ISortElement) {

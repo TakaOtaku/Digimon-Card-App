@@ -27,7 +27,7 @@ export function setupDigimonCards(): ICard[] {
     ST02CardList, ST03CardList,
     ST04CardList, ST05CardList,
     ST06CardList, ST07CardList,
-    ST08CardList
+    ST08CardList,
   );
   allCards.sort(function(a, b){
     if(a.cardNumber < b.cardNumber) { return -1; }

@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
-import {Subject, takeUntil} from "rxjs";
+import {first, Subject, takeUntil} from "rxjs";
 import {ICard, ICollectionCard} from "../../../models";
 import {selectCardListViewModel} from "../../../store/digimon.selectors";
 
@@ -25,11 +25,15 @@ export class CardListComponent implements OnInit, OnDestroy {
   constructor(private store: Store) {}
 
   ngOnInit() {
+    this.store.select(selectCardListViewModel).pipe(first())
+      .subscribe(({cards, collection, collectionMode}) => {
+        this.length = cards.length;
+        this.cardsToShow = cards.slice(0, 25);
+      });
+
     this.store.select(selectCardListViewModel).pipe(takeUntil(this.destroy$))
       .subscribe(({cards, collection, collectionMode}) => {
         this.cards = cards;
-        this.length = cards.length;
-        this.cardsToShow = cards.slice(0, 25);
 
         this.collectionMode = collectionMode;
 

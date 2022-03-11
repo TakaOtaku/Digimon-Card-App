@@ -1,42 +1,43 @@
 <mat-toolbar class="flex header p-0" color="primary">
-  <img class="max-h-8 md:max-h-10 ml-2" src="assets/img_logo.png" alt="Logo">
+  <img alt="Logo" class="max-h-8 md:max-h-10 ml-5" src="assets/img_logo.png">
 
   <div class="flex flex-grow align-middle ml-auto max-w-xl" *ngIf="site !== SITES.Decks">
     <mat-icon class="m-auto align-middle">zoom_out</mat-icon>
-    <mat-slider [formControl]="cardSizeFormControl" class="w-full align-middle" color="warn" max="60" min="30" step="5"></mat-slider>
+    <mat-slider [formControl]="cardSizeFormControl" class="w-full align-middle" color="warn" max="60" min="20" step="5"></mat-slider>
     <mat-icon class="m-auto align-middle">zoom_in</mat-icon>
   </div>
 
-  <button class="scale flex ml-auto mr-2" mat-icon-button [matMenuTriggerFor]="menu">
+  <button [matMenuTriggerFor]="menu" class="scale flex ml-auto mr-5" mat-icon-button>
     <mat-icon class="mr-2">menu</mat-icon>
   </button>
+  <mat-menu #menu="matMenu">
+    <mat-slide-toggle [formControl]="collectionModeFormControl" class="m-auto align-middle" color="warn">CM</mat-slide-toggle>
+    <button (click)="switchSite(SITES.Collection)" mat-menu-item>
+      <mat-icon>sd_card</mat-icon>
+      <span>Collection</span>
+    </button>
+    <button (click)="switchSite(SITES.Decks)" mat-menu-item>
+      <mat-icon>sim_card</mat-icon>
+      <span>Decks</span>
+    </button>
+    <button (click)="switchSite(SITES.DeckBuilder)" mat-menu-item>
+      <mat-icon>build</mat-icon>
+      <span>Deck-Builder</span>
+    </button>
+    <input #fileUpload (change)="handleFileInput($event.target)" accept=".json" id="file-input" type="file">
+    <button (click)="fileUpload.click()" mat-menu-item>
+      <mat-icon>cloud_upload</mat-icon>
+      <span>Import Save</span>
+    </button>
+    <button (click)="exportSave()" mat-menu-item>
+      <mat-icon>cloud_download</mat-icon>
+      <span>Export Save</span>
+    </button>
+    <button (click)="openPayPal()" mat-menu-item>
+      <mat-icon>attach_money</mat-icon>
+      <span>Donate</span>
+    </button>
+  </mat-menu>
 </mat-toolbar>
 
-<mat-menu #menu="matMenu">
-  <mat-slide-toggle color="warn" class="m-auto align-middle" [formControl]="collectionModeFormControl">CM</mat-slide-toggle>
-  <button mat-menu-item (click)="switchSite(SITES.Collection)">
-    <mat-icon>sd_card</mat-icon>
-    <span>Collection</span>
-  </button>
-  <button mat-menu-item (click)="switchSite(SITES.Decks)">
-    <mat-icon>sim_card</mat-icon>
-    <span>Decks</span>
-  </button>
-  <button mat-menu-item (click)="switchSite(SITES.DeckBuilder)">
-    <mat-icon>build</mat-icon>
-    <span>Deck-Builder</span>
-  </button>
-  <input type="file" accept=".json" id="file-input" (change)="handleFileInput($event.target)" #fileUpload>
-  <button mat-menu-item (click)="fileUpload.click()">
-    <mat-icon>cloud_upload</mat-icon>
-    <span>Import Save</span>
-  </button>
-  <button mat-menu-item (click)="exportSave()">
-    <mat-icon>cloud_download</mat-icon>
-    <span>Export Save</span>
-  </button>
-  <button mat-menu-item onclick="location.href='https://www.paypal.com/donate/?hosted_button_id=DHQVT7GQ72J98'">
-    <mat-icon>attach_money</mat-icon>
-    <span>Donate</span>
-  </button>
-</mat-menu>
+
