@@ -5,8 +5,6 @@ export interface IDigimonState {
   site: number,
   filter: IFilter;
   sort : ISort;
-  cardSize: number;
-  collectionMode: boolean;
 }
 
 export interface IFilter {

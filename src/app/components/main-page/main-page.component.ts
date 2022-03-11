@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
-import {Subject} from "rxjs";
-import {setSite} from "../../store/digimon.actions";
+import {Subject, takeUntil} from "rxjs";
+import {selectSite} from "../../store/digimon.selectors";
 
 export enum SITES {
   'Collection',
@@ -25,14 +25,11 @@ export class MainPageComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.store.dispatch(setSite({site: SITES.Collection}));
+    this.store.select(selectSite).pipe(takeUntil(this.destroy$))
+      .subscribe(site => this.site = site);
   }
 
   ngOnDestroy() {
     this.destroy$.next(true);
-  }
-
-  isDeckBuilder(): string {
-    return this.site === SITES.DeckBuilder ? 'half' : '';
   }
 }

@@ -3,8 +3,8 @@ import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog
 import {Store} from "@ngrx/store";
 import {IDeck} from "../../../models";
 import {deleteDeck, setDeck, setSite} from "../../../store/digimon.actions";
-import {ConfirmationDialogComponent} from "../../confirmation-dialog/confirmation-dialog.component";
 import {SITES} from "../../main-page/main-page.component";
+import {ConfirmationDialogComponent} from "../confirmation-dialog/confirmation-dialog.component";
 import {ExportDeckComponent} from "../export-deck/export-deck.component";
 
 @Component({

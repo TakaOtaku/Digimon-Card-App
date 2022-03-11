@@ -1,12 +1,11 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
-import {MatChip} from "@angular/material/chips";
+import {FormControl} from "@angular/forms";
 import {Store} from "@ngrx/store";
 import {saveAs} from "file-saver";
 import {ToastrService} from "ngx-toastr";
 import {Subject, takeUntil} from "rxjs";
-import {ISave, ISortElement} from "../../models";
-import {changeCardSize, changeCollectionMode, changeSort, loadSave, setSite} from "../../store/digimon.actions";
+import {ISave} from "../../models";
+import {changeCardSize, changeCollectionMode, loadSave, setSite} from "../../store/digimon.actions";
 import {selectNavBarViewModel} from "../../store/digimon.selectors";
 import {SITES} from "../main-page/main-page.component";
 
@@ -21,16 +20,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   save: string = "";
 
-  sortFormGroup: FormGroup = new FormGroup({
-    sortBy: new FormControl({name:'ID', element: 'id'}),
-    ascOrder: new FormControl (true)
-  });
-  sortList: ISortElement[] = [
-    {name:'ID', element: 'id'},
-    {name:'Cost', element: 'playCost'},
-    {name:'DP', element: 'dp'},
-    {name:'Level', element: 'cardLv'},
-    {name:'Name', element: 'name'}];
   cardSizeFormControl: FormControl = new FormControl(8);
   collectionModeFormControl: FormControl = new FormControl(true);
 
@@ -51,20 +40,14 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   private headerSubscriptions(): void {
     this.store.select(selectNavBarViewModel).pipe(takeUntil(this.destroy$))
-      .subscribe(({save, sort, cardSize, collectionMode}) => {
+      .subscribe(({save, cardSize, collectionMode}) => {
         this.save = JSON.stringify(save, undefined, 4)
 
-        this.sortFormGroup.setValue(sort,
-          { emitEvent: false })
         this.cardSizeFormControl.setValue(cardSize,
           {emitEvent: false })
         this.collectionModeFormControl.setValue(collectionMode,
           { emitEvent: false })
       });
-
-    this.sortFormGroup.valueChanges
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((sort) => this.store.dispatch(changeSort({sort})));
 
     this.cardSizeFormControl.valueChanges
       .pipe(takeUntil(this.destroy$))
@@ -94,16 +77,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
     fileReader.readAsText(input.files[0]);
   }
 
-  toggleSelection(chip: MatChip, sort: ISortElement) {
-    if(chip.selected) {
-      this.sortFormGroup.get('ascOrder')?.setValue(!this.sortFormGroup.get('ascOrder')?.value);
-      return;
-    }
-    chip.toggleSelected();
-    this.sortFormGroup.get('sortBy')?.setValue(sort);
-  }
-
   switchSite(site: number) {
+    this.site = site;
     this.store.dispatch(setSite({site}));
   }
 }

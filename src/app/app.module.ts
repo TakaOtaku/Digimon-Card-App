@@ -14,12 +14,13 @@ import {environment} from "../environments/environment";
 import {AppComponent} from './app.component';
 import {CardListComponent} from './components/cards/card-list/card-list.component';
 import {FullCardComponent} from './components/cards/full-card/full-card.component';
-import {ConfirmationDialogComponent} from './components/confirmation-dialog/confirmation-dialog.component';
 import {DeckBuilderComponent} from './components/deck/deck-builder/deck-builder.component';
-import {DeckContextMenuComponent} from './components/deck/deck-context-menu/deck-context-menu.component';
 import {DecksComponent} from './components/deck/decks/decks.component';
-import {ExportDeckComponent} from './components/deck/export-deck/export-deck.component';
-import {ImportDeckComponent} from './components/deck/import-deck/import-deck.component';
+import {ConfirmationDialogComponent} from './components/dialogs/confirmation-dialog/confirmation-dialog.component';
+import {DeckContextMenuComponent} from './components/dialogs/deck-context-menu/deck-context-menu.component';
+import {ExportDeckComponent} from './components/dialogs/export-deck/export-deck.component';
+import {FilterDialogComponent} from './components/dialogs/filter-dialog/filter-dialog.component';
+import {ImportDeckComponent} from './components/dialogs/import-deck/import-deck.component';
 import {FilterBoxComponent} from './components/filter-box/filter-box.component';
 import {MainPageComponent} from './components/main-page/main-page.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
@@ -43,7 +44,8 @@ import * as Save from "./store/reducers/save.reducer";
     ExportDeckComponent,
     ConfirmationDialogComponent,
     DeckContextMenuComponent,
-    NavbarComponent
+    NavbarComponent,
+    FilterDialogComponent
   ],
     imports: [
         MaterialModule,

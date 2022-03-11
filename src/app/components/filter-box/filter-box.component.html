@@ -1,16 +1,20 @@
-<div [formGroup]="filterFormGroup" class="grid grid-cols-10 filter">
-    <!-- Search -->
-    <mat-form-field  class="col-span-2" appearance="fill">
-      <mat-label>Search</mat-label>
-      <input matInput type="text" formControlName="searchFilter">
-    </mat-form-field>
+<div [formGroup]="filterFormGroup" class="flex">
+  <!-- Search -->
+  <mat-form-field class="flex-grow" appearance="fill">
+    <mat-label>Text Search</mat-label>
+    <input matInput type="text" formControlName="searchFilter">
+  </mat-form-field>
 
+  <div class="lg:hidden">
+    <button mat-stroked-button color="primary" class="h-100" (click)="openFilterDialog()">Filter</button>
+  </div>
+
+  <div class="hidden lg:block">
     <!-- Number -->
     <mat-form-field appearance="fill">
       <mat-label>Card Count</mat-label>
       <input matInput type="number" formControlName="cardCountFilter">
     </mat-form-field>
-
     <!-- Set Dropdown -->
     <mat-form-field appearance="fill">
       <mat-label>Set</mat-label>
@@ -18,7 +22,6 @@
         <mat-option *ngFor="let value of setList" [value]="value">{{value}}</mat-option>
       </mat-select>
     </mat-form-field>
-
     <!-- Card Type Dropdown -->
     <mat-form-field appearance="fill">
       <mat-label>Card-Type</mat-label>
@@ -26,7 +29,6 @@
         <mat-option *ngFor="let value of cardTypeList" [value]="value">{{value}}</mat-option>
       </mat-select>
     </mat-form-field>
-
     <!-- Color Dropdown -->
     <mat-form-field appearance="fill">
       <mat-label>Color</mat-label>
@@ -34,7 +36,6 @@
         <mat-option *ngFor="let value of colorList" [value]="value">{{value}}</mat-option>
       </mat-select>
     </mat-form-field>
-
     <!-- Type Dropdown -->
     <mat-form-field appearance="fill">
       <mat-label>Type</mat-label>
@@ -42,7 +43,6 @@
         <mat-option *ngFor="let value of typeList" [value]="value">{{value}}</mat-option>
       </mat-select>
     </mat-form-field>
-
     <!-- Lv Dropdown -->
     <mat-form-field appearance="fill">
       <mat-label>Lv</mat-label>
@@ -50,7 +50,6 @@
         <mat-option *ngFor="let value of lvList" [value]="value">{{value}}</mat-option>
       </mat-select>
     </mat-form-field>
-
     <!-- Rarity Dropdown -->
     <mat-form-field appearance="fill">
       <mat-label>Rarity</mat-label>
@@ -58,7 +57,6 @@
         <mat-option *ngFor="let value of rarityList" [value]="value">{{value}}</mat-option>
       </mat-select>
     </mat-form-field>
-
     <!-- Version Dropdown -->
     <mat-form-field appearance="fill">
       <mat-label>Version</mat-label>
@@ -67,3 +65,17 @@
       </mat-select>
     </mat-form-field>
   </div>
+</div>
+
+<div class="ml-auto mr-auto mt-2 mb-2">
+  <mat-chip-list [formGroup]="sortFormGroup" selectable>
+    <mat-chip *ngFor="let sort of sortList"  #c="matChip"
+              (click)="toggleSelection(c, sort)" [selected]="'ID' === sort.name">
+      <mat-icon *ngIf="c.selected && sortFormGroup.get('ascOrder')?.value">arrow_downward</mat-icon>
+      <mat-icon *ngIf="c.selected && !sortFormGroup.get('ascOrder')?.value">arrow_upward</mat-icon>
+      {{sort.name}}
+    </mat-chip>
+  </mat-chip-list>
+</div>
+
+

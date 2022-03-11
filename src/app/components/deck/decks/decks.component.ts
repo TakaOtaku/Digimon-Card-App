@@ -3,8 +3,8 @@ import {MatDialog} from "@angular/material/dialog";
 import {Store} from "@ngrx/store";
 import {IDeck} from "../../../models";
 import {selectDecks} from "../../../store/digimon.selectors";
-import {DeckContextMenuComponent} from "../deck-context-menu/deck-context-menu.component";
-import {ImportDeckComponent} from "../import-deck/import-deck.component";
+import {DeckContextMenuComponent} from "../../dialogs/deck-context-menu/deck-context-menu.component";
+import {ImportDeckComponent} from "../../dialogs/import-deck/import-deck.component";
 
 @Component({
   selector: 'digimon-decks',

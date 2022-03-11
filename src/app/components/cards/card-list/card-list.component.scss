@@ -29,6 +29,7 @@ mat-paginator {
 
   ::ng-deep .mat-paginator-container {
     align-items: initial !important;
+    flex-wrap: nowrap;
   }
 }
 

@@ -5,7 +5,6 @@ import {CookieService} from "ngx-cookie-service";
 import {catchError, EMPTY, map, switchMap, tap} from "rxjs";
 import {filterCards} from "../functions/filter.functions";
 import * as DigimonActions from "./digimon.actions";
-import {setFilteredDigimonCards} from "./digimon.actions";
 import {selectChangeFilterEffect, selectSave} from "./digimon.selectors";
 
 @Injectable()
@@ -17,7 +16,10 @@ export class DigimonEffects {
         DigimonActions.decreaseCardCount,
         DigimonActions.setSave,
         DigimonActions.importDeck,
-        DigimonActions.deleteDeck
+        DigimonActions.deleteDeck,
+        DigimonActions.changeCardSize,
+        DigimonActions.changeCollectionMode,
+        DigimonActions.deleteDeck,
       ),
       switchMap(() => this.store.select(selectSave)
         .pipe(
@@ -37,7 +39,7 @@ export class DigimonEffects {
           tap(({cards, collection, filter, sort}) => {
             if (!cards) { return;}
             const filteredCards = filterCards(cards, collection, filter, sort);
-            this.store.dispatch(setFilteredDigimonCards({filteredCards}));
+            this.store.dispatch(DigimonActions.setFilteredDigimonCards({filteredCards}));
           }),
           catchError(() => EMPTY)
         ))

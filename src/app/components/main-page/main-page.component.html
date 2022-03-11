@@ -1,14 +1,10 @@
 <digimon-navbar></digimon-navbar>
 
-<digimon-filter-box
-  *ngIf="site === SITES.Collection || site === SITES.DeckBuilder"></digimon-filter-box>
+<digimon-filter-box      *ngIf="site === SITES.Collection"></digimon-filter-box>
 
 <div class="flex">
-  <digimon-decks
-    *ngIf="site === SITES.Decks"></digimon-decks>
-  <digimon-deck-builder class="half"
-    *ngIf="site === SITES.DeckBuilder"></digimon-deck-builder>
-  <digimon-card-list [ngClass]="isDeckBuilder()"
-    *ngIf="site === SITES.Collection || site === SITES.DeckBuilder"></digimon-card-list>
+  <digimon-decks         *ngIf="site === SITES.Decks"></digimon-decks>
+  <digimon-deck-builder  *ngIf="site === SITES.DeckBuilder"></digimon-deck-builder>
+  <digimon-card-list     *ngIf="site === SITES.Collection"></digimon-card-list>
 </div>
 

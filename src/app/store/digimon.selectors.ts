@@ -1,5 +1,5 @@
 import {createFeatureSelector, createSelector} from "@ngrx/store";
-import {ICard, ICollectionCard, IDigimonCards, IDigimonState, IFilter, ISave, ISort} from "../models";
+import {ICard, ICollectionCard, IDigimonCards, IDigimonState, IFilter, ISave, ISettings, ISort} from "../models";
 
 export const selectIDigimonCards = createFeatureSelector<IDigimonCards>('digimonCards');
 export const selectSave = createFeatureSelector<ISave>('save');
@@ -17,14 +17,6 @@ export const selectFilter = createSelector(
 export const selectSort = createSelector(
   selectDigimonState,
   (state: IDigimonState) => state.sort
-);
-export const selectCardSize = createSelector(
-  selectDigimonState,
-  (state: IDigimonState) => state.cardSize
-);
-export const selectCollectionMode = createSelector(
-  selectDigimonState,
-  (state: IDigimonState) => state.collectionMode
 );
 export const selectDeck = createSelector(
   selectDigimonState,
@@ -59,6 +51,15 @@ export const selectSettings = createSelector(
   selectSave,
   (state: ISave) => state.settings
 );
+
+export const selectCardSize = createSelector(
+  selectSettings,
+  (state: ISettings) => state.cardSize
+);
+export const selectCollectionMode = createSelector(
+  selectSettings,
+  (state: ISettings) => state.collectionMode
+);
 //endregion
 
 export const selectCardListViewModel = createSelector(
@@ -72,10 +73,15 @@ export const selectCardListViewModel = createSelector(
 
 export const selectNavBarViewModel = createSelector(
   selectSave,
-  selectSort,
   selectCardSize,
   selectCollectionMode,
-  (save: ISave, sort: ISort, cardSize: number, collectionMode: boolean) => ({save, sort, cardSize, collectionMode})
+  (save: ISave, cardSize: number, collectionMode: boolean) => ({save, cardSize, collectionMode})
+);
+
+export const selectFilterBoxViewModel = createSelector(
+  selectFilter,
+  selectSort,
+  (filter: IFilter, sort: ISort) => ({filter, sort})
 );
 
 
