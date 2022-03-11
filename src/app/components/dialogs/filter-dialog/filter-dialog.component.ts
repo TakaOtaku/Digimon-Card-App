@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {MatDialogRef} from "@angular/material/dialog";
 import {Store} from "@ngrx/store";
@@ -11,7 +11,7 @@ import {selectFilterBoxViewModel} from "../../../store/digimon.selectors";
   templateUrl: './filter-dialog.component.html',
   styleUrls: ['./filter-dialog.component.css']
 })
-export class FilterDialogComponent implements OnInit {
+export class FilterDialogComponent implements OnInit, OnDestroy {
   filterFormGroup: FormGroup = new FormGroup({
     searchFilter: new FormControl(''),
     cardCountFilter: new FormControl(),

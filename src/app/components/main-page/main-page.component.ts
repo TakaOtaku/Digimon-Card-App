@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {Subject, takeUntil} from "rxjs";
 import {selectSite} from "../../store/digimon.selectors";
@@ -14,7 +14,7 @@ export enum SITES {
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.scss']
 })
-export class MainPageComponent implements OnInit {
+export class MainPageComponent implements OnInit, OnDestroy {
   SITES = SITES;
   site: number = SITES.Collection;
 
@@ -22,7 +22,8 @@ export class MainPageComponent implements OnInit {
 
   constructor(
     public store: Store
-  ) {}
+  ) {
+  }
 
   ngOnInit() {
     this.store.select(selectSite).pipe(takeUntil(this.destroy$))

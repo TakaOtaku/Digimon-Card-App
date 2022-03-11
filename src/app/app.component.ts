@@ -5,7 +5,7 @@ import {ISave} from "./models";
 import {loadSave} from './store/digimon.actions';
 
 @Component({
-  selector: 'app-root',
+  selector: 'digimon-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
