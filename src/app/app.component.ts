@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {CookieService} from "ngx-cookie-service";
 import {ISave} from "./models";
-import {loadSave} from './store/actions/save.actions';
+import {loadSave} from './store/digimon.actions';
 
 @Component({
   selector: 'app-root',

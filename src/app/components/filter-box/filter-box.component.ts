@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {Store} from "@ngrx/store";
 import {filter, Subject, takeUntil} from "rxjs";
-import {changeFilter} from "../../store/actions/save.actions";
+import {changeFilter} from "../../store/digimon.actions";
 import {selectFilter} from "../../store/digimon.selectors";
 
 @Component({

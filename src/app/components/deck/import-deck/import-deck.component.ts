@@ -3,7 +3,7 @@ import {MatDialogRef} from "@angular/material/dialog";
 import {Store} from "@ngrx/store";
 import {ToastrService} from "ngx-toastr";
 import {Subject, takeUntil} from "rxjs";
-import {importDeck} from 'src/app/store/actions/save.actions';
+import {importDeck} from 'src/app/store/digimon.actions';
 import {ICard, IDeck, IDeckCard} from "../../../models";
 import {selectAllCards} from "../../../store/digimon.selectors";
 

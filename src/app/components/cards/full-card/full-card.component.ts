@@ -2,8 +2,7 @@ import {Component, Input} from '@angular/core';
 import {faMinus, faPlus} from "@fortawesome/free-solid-svg-icons";
 import {Store} from "@ngrx/store";
 import {ICard} from "../../../models";
-
-import * as SaveActions from "../../../store/actions/save.actions";
+import {changeCardCount, decreaseCardCount, increaseCardCount} from "../../../store/digimon.actions";
 
 @Component({
   selector: 'digimon-full-card',
@@ -21,15 +20,15 @@ export class FullCardComponent {
   constructor(private store: Store) {}
 
   increaseCard(id: string) {
-    this.store.dispatch(SaveActions.increaseCardCount({id}))
+    this.store.dispatch(increaseCardCount({id}))
   }
 
   decreaseCard(id: string) {
-    this.store.dispatch(SaveActions.decreaseCardCount({id}))
+    this.store.dispatch(decreaseCardCount({id}))
   }
 
   countChange(id: string) {
-    this.store.dispatch(SaveActions.changeCardCount({id, count:this.count}))
+    this.store.dispatch(changeCardCount({id, count:this.count}))
   }
 
   getAA(): string {

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {Subject} from "rxjs";
-import {setSite} from "../../store/actions/digimon.actions";
+import {setSite} from "../../store/digimon.actions";
 
 export enum SITES {
   'Collection',
@@ -30,10 +30,6 @@ export class MainPageComponent implements OnInit {
 
   ngOnDestroy() {
     this.destroy$.next(true);
-  }
-
-  public changeSite(site: any) {
-    this.site = site;
   }
 
   isDeckBuilder(): string {

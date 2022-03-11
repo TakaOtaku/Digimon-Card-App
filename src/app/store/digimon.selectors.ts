@@ -1,11 +1,36 @@
 import {createFeatureSelector, createSelector} from "@ngrx/store";
-import {ICard, ICollectionCard, IDeck, IFilter, ISave, ISort} from "../models";
-import {IDigimonCards} from "./digimon.state";
+import {ICard, ICollectionCard, IDigimonCards, IDigimonState, IFilter, ISave, ISort} from "../models";
 
 export const selectIDigimonCards = createFeatureSelector<IDigimonCards>('digimonCards');
 export const selectSave = createFeatureSelector<ISave>('save');
-export const selectSite = createFeatureSelector<number>('site');
-export const selectDeck = createFeatureSelector<IDeck>('deck');
+export const selectDigimonState = createFeatureSelector<IDigimonState>('digimon');
+
+//region Digimon Selectors
+export const selectSite = createSelector(
+  selectDigimonState,
+  (state: IDigimonState) => state.site
+);
+export const selectFilter = createSelector(
+  selectDigimonState,
+  (state: IDigimonState) => state.filter
+);
+export const selectSort = createSelector(
+  selectDigimonState,
+  (state: IDigimonState) => state.sort
+);
+export const selectCardSize = createSelector(
+  selectDigimonState,
+  (state: IDigimonState) => state.cardSize
+);
+export const selectCollectionMode = createSelector(
+  selectDigimonState,
+  (state: IDigimonState) => state.collectionMode
+);
+export const selectDeck = createSelector(
+  selectDigimonState,
+  (state: IDigimonState) => state.deck
+);
+//endregion
 
 //region Digimon Card Selectors
 export const selectAllCards = createSelector(
@@ -24,36 +49,15 @@ export const selectCollection = createSelector(
   selectSave,
   (state: ISave) => state.collection
 );
+
 export const selectDecks = createSelector(
   selectSave,
   (state: ISave) => state.decks
 );
-//endregion
 
-//region Settings Selectors
 export const selectSettings = createSelector(
   selectSave,
   (state: ISave) => state.settings
-);
-
-export const selectFilter = createSelector(
-  selectSave,
-  (state: ISave) => state.settings.filter
-);
-
-export const selectSort = createSelector(
-  selectSave,
-  (state: ISave) => state.settings.sort
-);
-
-export const selectCardSize = createSelector(
-  selectSave,
-  (state: ISave) => state.settings.cardSize
-);
-
-export const selectCollectionMode = createSelector(
-  selectSave,
-  (state: ISave) => state.settings.collectionMode
 );
 //endregion
 
@@ -68,7 +72,10 @@ export const selectCardListViewModel = createSelector(
 
 export const selectNavBarViewModel = createSelector(
   selectSave,
-  (save: ISave) => ({save})
+  selectSort,
+  selectCardSize,
+  selectCollectionMode,
+  (save: ISave, sort: ISort, cardSize: number, collectionMode: boolean) => ({save, sort, cardSize, collectionMode})
 );
 
 

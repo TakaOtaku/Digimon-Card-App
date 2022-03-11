@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {MatChip} from "@angular/material/chips";
 import {Store} from "@ngrx/store";
@@ -6,7 +6,7 @@ import {saveAs} from "file-saver";
 import {ToastrService} from "ngx-toastr";
 import {Subject, takeUntil} from "rxjs";
 import {ISave, ISortElement} from "../../models";
-import {changeCardSize, changeCollectionMode, changeSort, loadSave} from "../../store/actions/save.actions";
+import {changeCardSize, changeCollectionMode, changeSort, loadSave, setSite} from "../../store/digimon.actions";
 import {selectNavBarViewModel} from "../../store/digimon.selectors";
 import {SITES} from "../main-page/main-page.component";
 
@@ -17,8 +17,7 @@ import {SITES} from "../main-page/main-page.component";
 })
 export class NavbarComponent implements OnInit, OnDestroy {
   SITES = SITES;
-  @Input() public site = SITES.Collection;
-  @Output() public onSiteChange = new EventEmitter<number>();
+  site = SITES.Collection;
 
   save: string = "";
 
@@ -52,14 +51,14 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   private headerSubscriptions(): void {
     this.store.select(selectNavBarViewModel).pipe(takeUntil(this.destroy$))
-      .subscribe(({save}) => {
+      .subscribe(({save, sort, cardSize, collectionMode}) => {
         this.save = JSON.stringify(save, undefined, 4)
 
-        this.sortFormGroup.setValue(save.settings.sort,
+        this.sortFormGroup.setValue(sort,
           { emitEvent: false })
-        this.cardSizeFormControl.setValue(save.settings.cardSize,
+        this.cardSizeFormControl.setValue(cardSize,
           {emitEvent: false })
-        this.collectionModeFormControl.setValue(save.settings.collectionMode,
+        this.collectionModeFormControl.setValue(collectionMode,
           { emitEvent: false })
       });
 
@@ -79,10 +78,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
   exportSave(): void {
     let blob = new Blob([this.save], {type: 'text/json' })
     saveAs(blob, "digimon-card-collector.json");
-  }
-
-  switchSite(site: number): void {
-    this.onSiteChange.emit(site);
   }
 
   handleFileInput(input: any) {
@@ -106,5 +101,9 @@ export class NavbarComponent implements OnInit, OnDestroy {
     }
     chip.toggleSelected();
     this.sortFormGroup.get('sortBy')?.setValue(sort);
+  }
+
+  switchSite(site: number) {
+    this.store.dispatch(setSite({site}));
   }
 }

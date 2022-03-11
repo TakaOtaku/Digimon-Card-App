@@ -1,12 +1,25 @@
 import {createReducer, on} from '@ngrx/store';
-import {ICollectionCard} from "../../models";
-import * as SaveActions from "../actions/save.actions";
-import {initialState} from '../digimon.state';
+import {ICollectionCard, ISave} from "../../models";
+import {
+  changeCardCount,
+  decreaseCardCount,
+  deleteDeck,
+  importDeck,
+  increaseCardCount,
+  loadSave,
+  setSave
+} from "../digimon.actions";
+
+export const initialState: ISave = {
+  collection: [],
+  decks: [],
+  settings: {}
+}
 
 export const saveReducer = createReducer(
-  initialState.save,
+  initialState,
   //region Card Count Reducers
-  on(SaveActions.changeCardCount, (state, { id, count }) => {
+  on(changeCardCount, (state, { id, count }) => {
     const taken = state.collection.find((card) => card.id === id);
     if (taken) {
       // Increase the Cards Count
@@ -24,7 +37,7 @@ export const saveReducer = createReducer(
       return {...state, collection};
     }
   }),
-  on(SaveActions.increaseCardCount, (state, { id }) => {
+  on(increaseCardCount, (state, { id }) => {
     const taken = state.collection.find((card) => card.id === id);
     if (taken) {
       // Increase the Cards Count
@@ -43,7 +56,7 @@ export const saveReducer = createReducer(
       return {...state, collection};
     }
   }),
-  on(SaveActions.decreaseCardCount, (state, { id }) => {
+  on(decreaseCardCount, (state, { id }) => {
     const taken = state.collection.find((card) => card.id === id);
     if (taken && taken.count > 0) {
       // Increase the Cards Count
@@ -61,30 +74,12 @@ export const saveReducer = createReducer(
   //endregion
 
   //region Save Reducers
-  on(SaveActions.setSave, (state, {save}) => save),
-  on(SaveActions.loadSave, (state, {save}) => save),
-  //endregion
-
-  //region Filter Reducers
-  on(SaveActions.changeFilter, (state, {filter}) => ({...state,  settings: {...state.settings, filter}})),
-  on(SaveActions.changeSort, (state, {sort}) => ({...state, settings: {...state.settings, sort}})),
-  on(SaveActions.changeCardSize, (state, {cardSize}) => {
-    if(cardSize === undefined) {return state;}
-    return ({...state, settings: {...state.settings, cardSize}})
-  }),
-  on(SaveActions.changeCollectionMode, (state, {collectionMode}) => {
-    if(collectionMode === undefined) {return state;}
-    return ({...state, settings: {...state.settings, collectionMode}})
-  }),
+  on(setSave, (state, {save}) => save),
+  on(loadSave, (state, {save}) => save),
   //endregion
 
   //region Deck Reducers
-  on(SaveActions.importDeck, (state, {deck}) => {
-    return ({...state, decks: [...state.decks, deck]})
-  }),
-  on(SaveActions.deleteDeck, (state, {deck}) => {
-    const decks = [...new Set(state.decks.filter(item => item !== deck))]
-    return ({...state, decks})
-  }),
+  on(importDeck, (state, {deck}) => ({...state, decks: [...state.decks, deck]})),
+  on(deleteDeck, (state, {deck}) => ({...state, decks: [...new Set(state.decks.filter(item => item !== deck))]})),
   //endregion
 );

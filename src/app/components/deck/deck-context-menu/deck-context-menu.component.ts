@@ -1,9 +1,8 @@
 import {Component, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {Store} from "@ngrx/store";
-import {deleteDeck} from 'src/app/store/actions/save.actions';
 import {IDeck} from "../../../models";
-import {setDeck, setSite} from "../../../store/actions/digimon.actions";
+import {deleteDeck, setDeck, setSite} from "../../../store/digimon.actions";
 import {ConfirmationDialogComponent} from "../../confirmation-dialog/confirmation-dialog.component";
 import {SITES} from "../../main-page/main-page.component";
 import {ExportDeckComponent} from "../export-deck/export-deck.component";
