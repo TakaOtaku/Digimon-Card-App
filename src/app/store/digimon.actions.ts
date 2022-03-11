@@ -69,6 +69,11 @@ export const setSettings = createAction(
 //endregion
 
 //region Collection Actions
+export const addToCollection = createAction(
+  '[Digimon Cards Collection] Add Digimon Cards to Collection',
+  props<{ collectionCards: ICollectionCard[] }>()
+);
+
 export const changeCardCount = createAction(
   '[Digimon Cards] Change Digimon Card Count',
   props<{ id: string, count: number }>()

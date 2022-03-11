@@ -1,6 +1,7 @@
 import {createReducer, on} from '@ngrx/store';
 import {ICollectionCard, ISave} from "../../models";
 import {
+  addToCollection,
   changeCardCount,
   changeCardSize,
   changeCollectionMode,
@@ -21,14 +22,19 @@ export const initialState: ISave = {
   }
 }
 
+
 export const saveReducer = createReducer(
   initialState,
 
+  on(addToCollection, (state, {collectionCards}) => ({
+    ...state,
+    collection: [...new Set([...state.collection, ...collectionCards])]
+  })),
   on(changeCardSize, (state, {cardSize}) => ({...state, settings: {...state.settings, cardSize}})),
   on(changeCollectionMode, (state, {collectionMode}) => ({...state, settings: {...state.settings, collectionMode}})),
 
   //region Card Count Reducers
-  on(changeCardCount, (state, { id, count }) => {
+  on(changeCardCount, (state, {id, count}) => {
     const taken = state.collection.find((card) => card.id === id);
     if (taken) {
       // Increase the Cards Count

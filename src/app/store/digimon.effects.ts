@@ -20,6 +20,7 @@ export class DigimonEffects {
         DigimonActions.changeCardSize,
         DigimonActions.changeCollectionMode,
         DigimonActions.deleteDeck,
+        DigimonActions.addToCollection
       ),
       switchMap(() => this.store.select(selectSave)
         .pipe(

@@ -1,5 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl} from "@angular/forms";
+import {MatDialog} from "@angular/material/dialog";
 import {Store} from "@ngrx/store";
 import {saveAs} from "file-saver";
 import {ToastrService} from "ngx-toastr";
@@ -7,6 +8,7 @@ import {Subject, takeUntil} from "rxjs";
 import {ISave} from "../../models";
 import {changeCardSize, changeCollectionMode, loadSave, setSite} from "../../store/digimon.actions";
 import {selectNavBarViewModel} from "../../store/digimon.selectors";
+import {ImportCollectionComponent} from "../dialogs/import-collection/import-collection.component";
 import {SITES} from "../main-page/main-page.component";
 
 @Component({
@@ -27,7 +29,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   constructor(
     public store: Store,
-    public toastr: ToastrService
+    public toastr: ToastrService,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -80,6 +83,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
   switchSite(site: number) {
     this.site = site;
     this.store.dispatch(setSite({site}));
+  }
+
+  importCollection() {
+    this.dialog.open(ImportCollectionComponent, {width: '90vmin', height: '550px'})
   }
 
   openPayPal() {

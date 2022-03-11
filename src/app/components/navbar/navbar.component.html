@@ -24,6 +24,10 @@
       <mat-icon>build</mat-icon>
       <span>Deck-Builder</span>
     </button>
+    <button (click)="importCollection()" mat-menu-item>
+      <mat-icon>cloud_upload</mat-icon>
+      <span>Import Collection</span>
+    </button>
     <input #fileUpload (change)="handleFileInput($event.target)" accept=".json" id="file-input" type="file">
     <button (click)="fileUpload.click()" mat-menu-item>
       <mat-icon>cloud_upload</mat-icon>

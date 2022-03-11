@@ -20,6 +20,7 @@ import {ConfirmationDialogComponent} from './components/dialogs/confirmation-dia
 import {DeckContextMenuComponent} from './components/dialogs/deck-context-menu/deck-context-menu.component';
 import {ExportDeckComponent} from './components/dialogs/export-deck/export-deck.component';
 import {FilterDialogComponent} from './components/dialogs/filter-dialog/filter-dialog.component';
+import {ImportCollectionComponent} from './components/dialogs/import-collection/import-collection.component';
 import {ImportDeckComponent} from './components/dialogs/import-deck/import-deck.component';
 import {FilterBoxComponent} from './components/filter-box/filter-box.component';
 import {MainPageComponent} from './components/main-page/main-page.component';
@@ -45,7 +46,8 @@ import * as Save from "./store/reducers/save.reducer";
     ConfirmationDialogComponent,
     DeckContextMenuComponent,
     NavbarComponent,
-    FilterDialogComponent
+    FilterDialogComponent,
+    ImportCollectionComponent
   ],
     imports: [
         MaterialModule,
