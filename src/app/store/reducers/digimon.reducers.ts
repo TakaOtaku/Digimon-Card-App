@@ -4,6 +4,6 @@ import {initialState} from '../digimon.state';
 
 export const digimonReducer = createReducer(
   initialState.digimonCards,
-  on(DigimonActions.setDigimonCards, (state, { digimonCards }) => ({...state, digimonCards})),
-  on(DigimonActions.setFilteredDigimonCards, (state, { filteredDigimonCards }) => ({...state, filteredDigimonCards}))
+  on(DigimonActions.setDigimonCards, (state, { allCards }) => ({...state, allCards})),
+  on(DigimonActions.setFilteredDigimonCards, (state, { filteredCards }) => ({...state,  filteredCards}))
 );

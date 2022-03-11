@@ -1,22 +1,24 @@
-import {ICard, ISave} from "../models";
-
-export const featureName = "digimonCards";
-
-export interface IDigimonCards {
-  digimonCards: ICard[];
-  filteredDigimonCards: ICard[];
-}
+import {ICard, IDeck, ISave} from "../models";
 
 export interface IDigimonState {
   digimonCards: IDigimonCards;
+  deck: IDeck | null;
+  site: number;
   save: ISave;
+}
+
+export interface IDigimonCards {
+  allCards: ICard[];
+  filteredCards: ICard[];
 }
 
 export const initialState: IDigimonState = {
   digimonCards: {
-    digimonCards: [],
-    filteredDigimonCards: []
+    allCards: [],
+    filteredCards: []
   },
+  deck: null,
+  site: 0,
   save: {
     collection: [],
     decks: [],

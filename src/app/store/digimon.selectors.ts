@@ -1,26 +1,36 @@
 import {createFeatureSelector, createSelector} from "@ngrx/store";
-import {ISave} from "../models";
+import {ICard, ICollectionCard, IDeck, IFilter, ISave, ISort} from "../models";
 import {IDigimonCards} from "./digimon.state";
 
 export const selectIDigimonCards = createFeatureSelector<IDigimonCards>('digimonCards');
-
 export const selectSave = createFeatureSelector<ISave>('save');
+export const selectSite = createFeatureSelector<number>('site');
+export const selectDeck = createFeatureSelector<IDeck>('deck');
 
-export const selectDigimonCards = createSelector(
+//region Digimon Card Selectors
+export const selectAllCards = createSelector(
   selectIDigimonCards,
-  (state: IDigimonCards) => state.digimonCards
+  (state: IDigimonCards) => state.allCards
 );
 
-export const selectFilteredDigimonCards = createSelector(
+export const selectFilteredCards = createSelector(
   selectIDigimonCards,
-  (state: IDigimonCards) => state.filteredDigimonCards
+  (state: IDigimonCards) => state.filteredCards
 );
+//endregion
 
+//region Save Selectors
 export const selectCollection = createSelector(
   selectSave,
   (state: ISave) => state.collection
 );
+export const selectDecks = createSelector(
+  selectSave,
+  (state: ISave) => state.decks
+);
+//endregion
 
+//region Settings Selectors
 export const selectSettings = createSelector(
   selectSave,
   (state: ISave) => state.settings
@@ -45,8 +55,28 @@ export const selectCollectionMode = createSelector(
   selectSave,
   (state: ISave) => state.settings.collectionMode
 );
+//endregion
 
-export const selectDecks = createSelector(
-  selectSave,
-  (state: ISave) => state.decks
+export const selectCardListViewModel = createSelector(
+  selectFilteredCards,
+  selectCollection,
+  selectCardSize,
+  selectCollectionMode,
+  ( cards: ICard[], collection: ICollectionCard[], cardSize: number, collectionMode: boolean) =>
+    ({cards, collection, cardSize, collectionMode})
 );
+
+export const selectNavBarViewModel = createSelector(
+  selectSave,
+  (save: ISave) => ({save})
+);
+
+
+export const selectChangeFilterEffect = createSelector(
+  selectAllCards,
+  selectCollection,
+  selectFilter,
+  selectSort,
+  ( cards: ICard[], collection: ICollectionCard[], filter: IFilter, sort: ISort) => ({cards, collection, filter, sort})
+);
+

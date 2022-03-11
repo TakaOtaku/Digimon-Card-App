@@ -1,28 +1,3 @@
-.header {
-  background: #3485d5;
-  display: grid !important;
-}
-
-.ml-auto {
-  margin-left: auto !important;
-}
-
-.m-auto {
-  margin: auto !important;
-}
-
-.scale {
-  transform: scale(1.5);
-}
-
-#file-input {
-  display: none;
-}
-
-.justify-right {
-  justify-content: right;
-}
-
 .half {
   max-width: 50%;
   width: 50%;
@@ -31,6 +6,7 @@
 digimon-decks {
   width: 100%;
 }
+
 digimon-card-list {
   width: 100%;
 }

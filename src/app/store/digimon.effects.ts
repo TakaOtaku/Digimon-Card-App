@@ -23,18 +23,24 @@ import {
 } from "../cardlists";
 import {filterCards} from "../functions/filter.functions";
 import {ICard} from "../models";
-import * as CollectionActions from "./actions/collection.actions";
 import {setDigimonCards, setFilteredDigimonCards} from "./actions/digimon.actions";
 import * as SaveActions from "./actions/save.actions";
-import {selectCollection, selectDigimonCards, selectFilter, selectSave, selectSort} from "./digimon.selectors";
+import {
+  selectAllCards,
+  selectChangeFilterEffect,
+  selectCollection,
+  selectFilter,
+  selectSave,
+  selectSort
+} from "./digimon.selectors";
 
 @Injectable()
 export class DigimonEffects {
   saveCookie$ = createEffect(() => this.actions$.pipe(
       ofType(
-        CollectionActions.changeCardCount,
-        CollectionActions.increaseCardCount,
-        CollectionActions.decreaseCardCount,
+        SaveActions.changeCardCount,
+        SaveActions.increaseCardCount,
+        SaveActions.decreaseCardCount,
         SaveActions.setSave,
         SaveActions.changeFilter,
         SaveActions.changeSort,
@@ -57,18 +63,13 @@ export class DigimonEffects {
         SaveActions.changeFilter,
         SaveActions.changeSort,
       ),
-    switchMap(() =>
-        combineLatest(
-          this.store.select(selectDigimonCards),
-          this.store.select(selectCollection),
-          this.store.select(selectFilter),
-          this.store.select(selectSort))
+    switchMap(() => this.store.select(selectChangeFilterEffect)
         .pipe(
-          tap(([cards, collection, filter, sort]) => {
+          tap(({cards, collection, filter, sort}) => {
             if (!cards) { return;}
-            const filteredDigimonCards = filterCards(cards, collection, filter, sort);
-            console.log("All Filtered Digimon Cards: ", filteredDigimonCards);
-            this.store.dispatch(setFilteredDigimonCards({filteredDigimonCards}));
+            const filteredCards = filterCards(cards, collection, filter, sort);
+            console.log("All Filtered Digimon Cards: ", filteredCards);
+            this.store.dispatch(setFilteredDigimonCards({filteredCards}));
           }),
           catchError(() => EMPTY)
         ))
@@ -89,9 +90,9 @@ export class DigimonEffects {
             tap(([collection, filter, sort]) => {
               const loadedDigimonCards = this.setupDigimonCards();
               console.log("All Digimon Cards: ", loadedDigimonCards);
-              const filteredDigimonCards = filterCards(loadedDigimonCards, collection, filter, sort);
-              console.log("All Filtered Digimon Cards: ", filteredDigimonCards);
-              this.store.dispatch(setFilteredDigimonCards({filteredDigimonCards}));
+              const filteredCards = filterCards(loadedDigimonCards, collection, filter, sort);
+              console.log("All Filtered Digimon Cards: ", filteredCards);
+              this.store.dispatch(setFilteredDigimonCards({filteredCards}));
             })
           )
       )
@@ -105,7 +106,7 @@ export class DigimonEffects {
   ) {}
 
   private setupDigimonCards(): ICard[] {
-    const digimonCards = PromotionCardList.concat(
+    const allCards = PromotionCardList.concat(
       BT01_03_1_0CardList, BT01_03_1_5CardList,
       BT04CardList, BT05CardList,
       BT06CardList, BT07CardList,
@@ -115,12 +116,12 @@ export class DigimonEffects {
       ST06CardList, ST07CardList,
       ST08CardList
     );
-    digimonCards.sort(function(a, b){
+    allCards.sort(function(a, b){
       if(a.cardNumber < b.cardNumber) { return -1; }
       if(a.cardNumber > b.cardNumber) { return 1; }
       return 0;
     })
-    this.store.dispatch(setDigimonCards({ digimonCards }));
-    return digimonCards;
+    this.store.dispatch(setDigimonCards({ allCards }));
+    return allCards;
   }
 }

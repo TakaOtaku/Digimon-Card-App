@@ -1,0 +1,19 @@
+<div class="relative">
+
+  <button *ngIf="collectionMode" class="plus rounded-full" mat-mini-fab (click)="increaseCard(card.id)">
+    <fa-icon [icon]="faPlus"></fa-icon>
+  </button>
+
+  <p *ngIf="collectionMode"  class="count text-center">{{count}}</p>
+
+  <button *ngIf="collectionMode" class="minus rounded-full" mat-mini-fab (click)="decreaseCard(card.id)">
+    <fa-icon [icon]="faMinus"></fa-icon>
+  </button>
+
+  <div class="hover:scale-105 transition-transform">
+    <img *ngIf="card.version !== 'Normal'" class="aa" [src]="getAA()" alt="AA-Banner">
+
+    <img mat-card-image class="m-auto" [src]="card.cardImage" alt="Digimon Card"
+         [ngClass]="{'grayscale': count === 0 && collectionMode}">
+  </div>
+</div>

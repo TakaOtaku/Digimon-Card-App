@@ -1,7 +1,9 @@
 <button mat-raised-button class="import" (click)="openImportDialog()">Import Deck</button>
 
 <div class="flex flex-wrap">
-  <mat-card *ngFor="let deck of decks$ | async" (click)="openDeckContext(deck)" class="deck flex-item border-4 border-black m-2 bg-slate-500 hover:border-amber-400">
+  <mat-card *ngFor="let deck of decks$ | async"
+            class="deck flex-item border-4 border-black m-2 bg-slate-500 hover:border-amber-400"
+            (click)="openDeckContext(deck)">
 
     <div class="flex justify-center">
       <img mat-card-image [src]="deck.color ?? 'assets/decks/white.svg'" alt="Digimon Deck Image">

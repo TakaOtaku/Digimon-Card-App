@@ -4,8 +4,8 @@ import {Store} from "@ngrx/store";
 import {ToastrService} from "ngx-toastr";
 import {Subject, takeUntil} from "rxjs";
 import {importDeck} from 'src/app/store/actions/save.actions';
-import {ICard, IDeck, IDeckCard} from "../../models";
-import {selectDigimonCards} from "../../store/digimon.selectors";
+import {ICard, IDeck, IDeckCard} from "../../../models";
+import {selectAllCards} from "../../../store/digimon.selectors";
 
 @Component({
   selector: 'digimon-import-deck',
@@ -13,10 +13,10 @@ import {selectDigimonCards} from "../../store/digimon.selectors";
   styleUrls: ['./import-deck.component.css']
 })
 export class ImportDeckComponent implements OnDestroy {
-  private digimonCards$ = this.store.select(selectDigimonCards);
+  private digimonCards$ = this.store.select(selectAllCards);
   private digimonCards: ICard[] = [];
 
-  public importPlaceholder = "" +
+  importPlaceholder = "" +
     "Paste Deck here\n" +
     "\n" +
     " Format:\n" +
@@ -25,7 +25,7 @@ export class ImportDeckComponent implements OnDestroy {
     "   Each card can only be declared once\n" +
     "   Import will always pick the regular art card\""
 
-  public deckText = '';
+  deckText = '';
 
   private destroy$ = new Subject();
 
@@ -37,11 +37,11 @@ export class ImportDeckComponent implements OnDestroy {
     this.digimonCards$.pipe(takeUntil(this.destroy$)).subscribe(cards => this.digimonCards = cards);
   }
 
-  public ngOnDestroy(): void {
+  ngOnDestroy(): void {
     this.destroy$.next(true);
   }
 
-  public handleFileInput(input: any) {
+  handleFileInput(input: any) {
     let fileReader = new FileReader();
     fileReader.onload = (e) => {
       try {
@@ -58,7 +58,7 @@ export class ImportDeckComponent implements OnDestroy {
     fileReader.readAsText(input.files[0]);
   }
 
-  public importDeck() {
+  importDeck() {
     if(this.deckText === '') {return;}
 
     let result: string[] = this.deckText.split("\n");

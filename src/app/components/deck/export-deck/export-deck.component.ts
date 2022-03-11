@@ -4,8 +4,8 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {Store} from "@ngrx/store";
 import {ToastrService} from "ngx-toastr";
 import {Subject, takeUntil} from "rxjs";
-import {ICard, IDeck} from "../../models";
-import {selectDigimonCards} from "../../store/digimon.selectors";
+import {ICard, IDeck} from "../../../models";
+import {selectAllCards} from "../../../store/digimon.selectors";
 
 @Component({
   selector: 'digimon-export-deck',
@@ -13,12 +13,12 @@ import {selectDigimonCards} from "../../store/digimon.selectors";
   styleUrls: ['./export-deck.component.css']
 })
 export class ExportDeckComponent implements OnInit, OnDestroy {
-  private digimonCards$ = this.store.select(selectDigimonCards);
+  private digimonCards$ = this.store.select(selectAllCards);
   private digimonCards: ICard[] = [];
 
-  public deckText = '';
+  deckText = '';
 
-  public exportTypeControl = new FormControl('text');
+  exportTypeControl = new FormControl('text');
 
   private destroy$ = new Subject();
 
@@ -31,21 +31,21 @@ export class ExportDeckComponent implements OnInit, OnDestroy {
     this.digimonCards$.pipe(takeUntil(this.destroy$)).subscribe(cards => this.digimonCards = cards);
   }
 
-  public ngOnInit(): void {
+  ngOnInit(): void {
     this.setExportTypeText()
 
     this.exportTypeControl.valueChanges.pipe(takeUntil(this.destroy$)).subscribe(type => this.setExportType(type))
   }
 
-  public ngOnDestroy(): void {
+  ngOnDestroy(): void {
     this.destroy$.next(true);
   }
 
-  public exportDeck(): void {
+  exportDeck(): void {
     console.log(this.deck);
   }
 
-  public setExportType(type: string): void {
+  setExportType(type: string): void {
     switch(type) {
       default:
       case 'text':

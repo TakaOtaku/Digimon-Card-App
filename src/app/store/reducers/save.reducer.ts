@@ -1,13 +1,12 @@
 import {createReducer, on} from '@ngrx/store';
 import {ICollectionCard} from "../../models";
-import * as CollectionActions from "../actions/collection.actions";
 import * as SaveActions from "../actions/save.actions";
 import {initialState} from '../digimon.state';
 
 export const saveReducer = createReducer(
   initialState.save,
   //region Card Count Reducers
-  on(CollectionActions.changeCardCount, (state, { id, count }) => {
+  on(SaveActions.changeCardCount, (state, { id, count }) => {
     const taken = state.collection.find((card) => card.id === id);
     if (taken) {
       // Increase the Cards Count
@@ -25,7 +24,7 @@ export const saveReducer = createReducer(
       return {...state, collection};
     }
   }),
-  on(CollectionActions.increaseCardCount, (state, { id }) => {
+  on(SaveActions.increaseCardCount, (state, { id }) => {
     const taken = state.collection.find((card) => card.id === id);
     if (taken) {
       // Increase the Cards Count
@@ -44,7 +43,7 @@ export const saveReducer = createReducer(
       return {...state, collection};
     }
   }),
-  on(CollectionActions.decreaseCardCount, (state, { id }) => {
+  on(SaveActions.decreaseCardCount, (state, { id }) => {
     const taken = state.collection.find((card) => card.id === id);
     if (taken && taken.count > 0) {
       // Increase the Cards Count

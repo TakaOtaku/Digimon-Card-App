@@ -1,9 +1,9 @@
 import {Component, Input} from '@angular/core';
 import {faMinus, faPlus} from "@fortawesome/free-solid-svg-icons";
 import {Store} from "@ngrx/store";
-import {ICard} from "../../models";
+import {ICard} from "../../../models";
 
-import * as CollectionActions from "../../store/actions/collection.actions";
+import * as SaveActions from "../../../store/actions/save.actions";
 
 @Component({
   selector: 'digimon-full-card',
@@ -20,19 +20,19 @@ export class FullCardComponent {
 
   constructor(private store: Store) {}
 
-  public increaseCard(id: string) {
-    this.store.dispatch(CollectionActions.increaseCardCount({id}))
+  increaseCard(id: string) {
+    this.store.dispatch(SaveActions.increaseCardCount({id}))
   }
 
-  public decreaseCard(id: string) {
-    this.store.dispatch(CollectionActions.decreaseCardCount({id}))
+  decreaseCard(id: string) {
+    this.store.dispatch(SaveActions.decreaseCardCount({id}))
   }
 
-  public countChange(id: string) {
-    this.store.dispatch(CollectionActions.changeCardCount({id, count:this.count}))
+  countChange(id: string) {
+    this.store.dispatch(SaveActions.changeCardCount({id, count:this.count}))
   }
 
-  public getAA(): string {
+  getAA(): string {
     switch (this.card.color) {
       case 'Red':
         return 'assets/images/banner/ico_card_detail_red.png';

@@ -12,7 +12,7 @@ import {selectFilter} from "../../store/digimon.selectors";
 })
 export class FilterBoxComponent implements OnInit, OnDestroy {
   private filter$ = this.store.select(selectFilter);
-  public filterFormGroup: FormGroup = new FormGroup({
+  filterFormGroup: FormGroup = new FormGroup({
     searchFilter: new FormControl(''),
     cardCountFilter: new FormControl(),
     setFilter: new FormControl([]),
@@ -23,19 +23,19 @@ export class FilterBoxComponent implements OnInit, OnDestroy {
     rarityFilter: new FormControl([]),
     versionFilter: new FormControl([]),
   });
-  public setList: string[] = ['P-', 'BT1', 'BT2', 'BT3', 'BT4', 'BT5', 'BT6', 'BT7', 'EX1', 'ST1', 'ST2', 'ST3', 'ST4', 'ST5', 'ST6', 'ST7', 'ST8'];
-  public colorList: string[] = ['Red', 'Blue', 'Yellow', 'Green', 'Black', 'Purple', 'White'];
-  public cardTypeList: string[] = ['Digitama', 'Digimon', 'Tamer', 'Option'];
-  public typeList: string[] = ['Data', 'Vaccine', 'Virus', 'Free', 'Variable'];
-  public lvList: string[] = ['Lv.2', 'Lv.3', 'Lv.4', 'Lv.5', 'Lv.6', 'Lv.7'];
-  public rarityList: string[] = ['C', 'UC', 'R', 'SR', 'SEC'];
-  public versionList: string[] = ['Normal', 'AA', 'Stamped'];
+  setList: string[] = ['P-', 'BT1', 'BT2', 'BT3', 'BT4', 'BT5', 'BT6', 'BT7', 'EX1', 'ST1', 'ST2', 'ST3', 'ST4', 'ST5', 'ST6', 'ST7', 'ST8'];
+  colorList: string[] = ['Red', 'Blue', 'Yellow', 'Green', 'Black', 'Purple', 'White'];
+  cardTypeList: string[] = ['Digitama', 'Digimon', 'Tamer', 'Option'];
+  typeList: string[] = ['Data', 'Vaccine', 'Virus', 'Free', 'Variable'];
+  lvList: string[] = ['Lv.2', 'Lv.3', 'Lv.4', 'Lv.5', 'Lv.6', 'Lv.7'];
+  rarityList: string[] = ['C', 'UC', 'R', 'SR', 'SEC'];
+  versionList: string[] = ['Normal', 'AA', 'Stamped'];
 
   private destroy$ = new Subject();
 
   constructor(private store: Store) {}
 
-  public ngOnInit(): void {
+  ngOnInit(): void {
     this.filterFormGroup.valueChanges
       .pipe(takeUntil(this.destroy$))
       .subscribe((filter) => this.store.dispatch(changeFilter({filter})));
@@ -44,7 +44,7 @@ export class FilterBoxComponent implements OnInit, OnDestroy {
       .subscribe(filter => this.filterFormGroup.setValue(filter, { emitEvent: false }));
     }
 
-  public ngOnDestroy() {
+  ngOnDestroy() {
     this.destroy$.next(true);
   }
 

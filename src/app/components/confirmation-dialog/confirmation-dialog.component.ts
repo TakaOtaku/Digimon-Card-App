@@ -15,9 +15,9 @@ class ConfirmDialogComponent {
   styleUrls: ['./confirmation-dialog.component.css']
 })
 export class ConfirmationDialogComponent {
-  public dialogData: IDialogData;
-  public title:string;
-  public message:string;
+  dialogData: IDialogData;
+  title:string;
+  message:string;
 
   constructor(
     public dialogRef: MatDialogRef<ConfirmDialogComponent>,
