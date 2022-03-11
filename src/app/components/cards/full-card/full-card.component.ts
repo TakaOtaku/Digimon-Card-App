@@ -1,23 +1,39 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {faMinus, faPlus} from "@fortawesome/free-solid-svg-icons";
 import {Store} from "@ngrx/store";
+import {Subject, takeUntil} from "rxjs";
 import {ICard} from "../../../models";
 import {changeCardCount, decreaseCardCount, increaseCardCount} from "../../../store/digimon.actions";
+import {selectCardSize} from "../../../store/digimon.selectors";
 
 @Component({
   selector: 'digimon-full-card',
   templateUrl: './full-card.component.html',
   styleUrls: ['./full-card.component.scss']
 })
-export class FullCardComponent {
+export class FullCardComponent implements OnInit, OnDestroy {
   @Input() card: ICard;
   @Input() count: number;
-  @Input() collectionMode: boolean|null = true;
+  @Input() collectionMode: boolean | null = true;
 
   faPlus = faPlus;
   faMinus = faMinus;
 
-  constructor(private store: Store) {}
+  cardWidth = 5;
+
+  private onDestroy$ = new Subject();
+
+  constructor(private store: Store) {
+  }
+
+  ngOnInit() {
+    this.store.select(selectCardSize).pipe(takeUntil(this.onDestroy$))
+      .subscribe(cardSize => this.cardWidth = cardSize);
+  }
+
+  ngOnDestroy() {
+    this.onDestroy$.next(true);
+  }
 
   increaseCard(id: string) {
     this.store.dispatch(increaseCardCount({id}))

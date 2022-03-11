@@ -16,3 +16,8 @@ mat-icon {
 .h-100 {
   height: 100%;
 }
+
+
+::ng-deep .mat-chip-list-wrapper {
+  justify-content: center;
+}

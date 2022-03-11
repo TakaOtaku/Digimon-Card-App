@@ -65,10 +65,9 @@ export const selectCollectionMode = createSelector(
 export const selectCardListViewModel = createSelector(
   selectFilteredCards,
   selectCollection,
-  selectCardSize,
   selectCollectionMode,
-  ( cards: ICard[], collection: ICollectionCard[], cardSize: number, collectionMode: boolean) =>
-    ({cards, collection, cardSize, collectionMode})
+  (cards: ICard[], collection: ICollectionCard[], collectionMode: boolean) =>
+    ({cards, collection, collectionMode})
 );
 
 export const selectNavBarViewModel = createSelector(

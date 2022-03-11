@@ -3,7 +3,7 @@
 
   <div class="flex flex-grow align-middle ml-auto max-w-xl" *ngIf="site !== SITES.Decks">
     <mat-icon class="m-auto align-middle">zoom_out</mat-icon>
-    <mat-slider class="w-full align-middle" thumbLabel min="3" max="12" step="1" color="warn" [formControl]="cardSizeFormControl"></mat-slider>
+    <mat-slider [formControl]="cardSizeFormControl" class="w-full align-middle" color="warn" max="60" min="30" step="5"></mat-slider>
     <mat-icon class="m-auto align-middle">zoom_in</mat-icon>
   </div>
 

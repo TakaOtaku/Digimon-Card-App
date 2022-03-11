@@ -1,4 +1,4 @@
-.plus {
+.card-button {
   position: absolute;
   cursor: pointer;
   background: white;
@@ -6,25 +6,18 @@
   color: black;
   z-index: 2;
 
-  display: block;
-  bottom: 4%;
-  right: 5%;
   min-height: 10%;
   min-width: 15%;
 }
 
-.minus {
-  position: absolute;
-  cursor: pointer;
-  background: white;
-  opacity: 0.8;
-  color: black;
-  z-index: 2;
+.plus {
+  bottom: 4%;
+  right: 5%;
+}
 
+.minus {
   bottom: 4%;
   left: 5%;
-  min-height: 10%;
-  min-width: 15%;
 }
 
 .count {

@@ -14,7 +14,6 @@ export class CardListComponent implements OnInit, OnDestroy {
   cardsToShow: ICard[] = [];
 
   private collection: ICollectionCard[] = [];
-  gridCols = 'grid-cols-8';
   collectionMode = true;
 
   length = 100;
@@ -27,7 +26,7 @@ export class CardListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.store.select(selectCardListViewModel).pipe(takeUntil(this.destroy$))
-      .subscribe(({cards, collection, cardSize, collectionMode}) => {
+      .subscribe(({cards, collection, collectionMode}) => {
         this.cards = cards;
         this.length = cards.length;
         this.cardsToShow = cards.slice(0, 25);
@@ -35,7 +34,6 @@ export class CardListComponent implements OnInit, OnDestroy {
         this.collectionMode = collectionMode;
 
         this.collection = collection;
-        this.gridCols = cardSize ? `grid-cols-${cardSize}` : 'grid-cols-8';
       });
   }
 

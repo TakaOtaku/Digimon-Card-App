@@ -16,7 +16,7 @@ export const initialState: ISave = {
   collection: [],
   decks: [],
   settings: {
-    cardSize: 3,
+    cardSize: 40,
     collectionMode: false,
   }
 }

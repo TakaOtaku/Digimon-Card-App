@@ -3,9 +3,9 @@
   (page)="onPageChange($event)">
 </mat-paginator>
 
-<div class="grid gap-2 m-2 list" [ngClass]="gridCols">
-  <digimon-full-card *ngFor="let card of cardsToShow"
-    [card]="card" [count]="getCount(card.id)" [collectionMode]="collectionMode">
+<div class="flex flex-wrap justify-center">
+  <digimon-full-card *ngFor="let card of cardsToShow" class="transition scale-95"
+                     [card]="card" [count]="getCount(card.id)" [collectionMode]="collectionMode">
   </digimon-full-card>
 </div>
 
