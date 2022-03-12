@@ -1,15 +1,6 @@
-<mat-paginator
-  [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
-  (page)="onPageChange($event)">
-</mat-paginator>
-
 <div class="flex flex-wrap justify-center">
-  <digimon-full-card *ngFor="let card of cardsToShow" class="transition scale-95"
-                     [card]="card" [count]="getCount(card.id)" [collectionMode]="collectionMode">
+  <digimon-full-card
+    *ngFor="let card of cards"
+    [card]="card" [collectionMode]="collectionMode" [count]="getCount(card.id)" class="transition scale-95">
   </digimon-full-card>
 </div>
-
-<mat-paginator
-  [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
-  (page)="onPageChange($event)">
-</mat-paginator>

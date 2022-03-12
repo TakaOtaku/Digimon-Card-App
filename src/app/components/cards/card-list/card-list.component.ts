@@ -2,7 +2,7 @@ import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {Subject, takeUntil} from "rxjs";
 import {ICard, ICollectionCard} from "../../../models";
-import {selectCardListViewModel, selectFilteredCards} from "../../../store/digimon.selectors";
+import {selectCardListViewModel} from "../../../store/digimon.selectors";
 
 @Component({
   selector: 'digimon-card-list',
@@ -12,32 +12,20 @@ import {selectCardListViewModel, selectFilteredCards} from "../../../store/digim
 export class CardListComponent implements OnInit, OnDestroy {
   @Input() public deckBuilder = false;
 
-  private cards: ICard[] = []
-  cardsToShow: ICard[] = [];
+  cards: ICard[] = []
 
   private collection: ICollectionCard[] = [];
   collectionMode = true;
-
-  length = 100;
-  pageSize = 25;
-  pageSizeOptions: number[] = [25, 50, 100];
 
   private destroy$ = new Subject();
 
   constructor(private store: Store) {}
 
   ngOnInit() {
-    this.store.select(selectFilteredCards).pipe(takeUntil(this.destroy$))
-      .subscribe((cards) => {
-        this.length = cards.length;
-        this.cardsToShow = cards.slice(0, 25);
-        this.cards = cards;
-      });
-
     this.store.select(selectCardListViewModel).pipe(takeUntil(this.destroy$))
       .subscribe(({cards, collection, collectionMode}) => {
+        this.cards = cards;
         this.collectionMode = this.deckBuilder ? false : collectionMode;
-
         this.collection = collection;
       });
   }
@@ -48,9 +36,5 @@ export class CardListComponent implements OnInit, OnDestroy {
 
   getCount(cardId: string): number {
     return this.collection.find(value => value.id === cardId)?.count ?? 0;
-  }
-
-  onPageChange($event: any) {
-    this.cardsToShow =  this.cards.slice($event.pageIndex*$event.pageSize, $event.pageIndex*$event.pageSize + $event.pageSize);
   }
 }

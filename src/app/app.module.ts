@@ -9,6 +9,7 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {EffectsModule} from '@ngrx/effects';
 import {StoreModule} from '@ngrx/store';
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
+import {LazyLoadImageModule} from "ng-lazyload-image";
 import {CookieService} from "ngx-cookie-service";
 import {ToastrModule} from "ngx-toastr";
 import {environment} from "../environments/environment";
@@ -63,7 +64,7 @@ import * as Save from "./store/reducers/save.reducer";
       BrowserAnimationsModule,
       FontAwesomeModule,
       AppRoutingModule,
-
+      LazyLoadImageModule,
       StoreModule.forRoot({
           digimon: Digimon.digimonReducer, digimonCards: DigimonCards.digimonCardReducer, save: Save.saveReducer
         },
@@ -79,7 +80,6 @@ import * as Save from "./store/reducers/save.reducer";
         logOnly: environment.production
       }),
       EffectsModule.forRoot([DigimonEffects]),
-
       AngularFireModule.initializeApp(environment.firebaseConfig),
       AngularFireDatabaseModule
     ],

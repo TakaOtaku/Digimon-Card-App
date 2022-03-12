@@ -53,9 +53,13 @@ img {
 }
 
 .grayscale {
--webkit-filter: grayscale(1);
+  -webkit-filter: grayscale(1);
 }
 
 .text-center {
-text-align: center;
+  text-align: center;
+}
+
+.min-h-50 {
+  min-height: 50px;
 }
