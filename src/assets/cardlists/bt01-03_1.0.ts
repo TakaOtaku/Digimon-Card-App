@@ -1,4 +1,4 @@
-import {ICard} from "../models";
+import {ICard} from "../../app/models";
 
 export const BT01_03_1_0CardList: ICard[] = [
   {"id": "BT1-001", "name": "Yokomon", "cardImage": "assets/images/cards/BT1-001.png", "cardType": "Digi-Egg", "dp": "-", "playCost": "-", "digivolveCost1": "-", "digivolveCost2": "-", "cardLv": "Lv.2", "form": "In-Training", "attribute": "-", "type": "Bulb", "rarity": "R", "cardNumber": "BT1-001", "effect": "-", "digivolveEffect": "[When Attacking] When you attack an opponent's Digimon\uff0c this Digimon gets +1000 DP for the turn.", "securityEffect": "-", "notes": "\u25b9RELEASE SPECIAL BOOSTER Ver.1.0\u3010BT01-03\u3011", "color": "Red", "version": "Normal"},

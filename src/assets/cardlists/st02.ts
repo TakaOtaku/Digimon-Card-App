@@ -1,4 +1,4 @@
-import {ICard} from "../models";
+import {ICard} from "../../app/models";
 
 export const ST02CardList: ICard[] = [
   {"id": "ST2-01", "name": "Tsunomon", "cardImage": "assets/images/cards/ST2-01.png", "cardType": "Digi-Egg", "dp": "-", "playCost": "-", "digivolveCost1": "-", "digivolveCost2": "-", "cardLv": "Lv.2", "form": "In-Training", "attribute": "-", "type": "Lesser", "rarity": "U", "cardNumber": "ST2-01", "effect": "-", "digivolveEffect": "[Your Turn] This Digimon gets +1000 DP when battling an opponent's Digimon that has no digivolution cards.", "securityEffect": "-", "notes": "\u25b9Starter Deck, COCYTUS BLUE\u3010ST-2\u3011", "color": "Blue", "version": "Normal"},

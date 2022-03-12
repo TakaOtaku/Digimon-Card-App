@@ -1,4 +1,4 @@
-import {ICard} from "../models";
+import {ICard} from "../../app/models";
 
 export const BT01_03_1_5CardList: ICard[] = [
   {"id": "BT2-001", "name": "Gigimon", "cardImage": "assets/images/cards/BT2-001.png", "cardType": "Digi-Egg", "dp": "-", "playCost": "-", "digivolveCost1": "-", "digivolveCost2": "-", "cardLv": "Lv.2", "form": "In-Training", "attribute": "-", "type": "Lesser", "rarity": "U", "cardNumber": "BT2-001", "effect": "-", "digivolveEffect": "[Your Turn] While there are 5 or more cards in your opponent's trash, this Digimon gets +1000 DP.", "securityEffect": "-", "notes": "\u25b9RELEASE SPECIAL BOOSTER Ver.1.5\u3010BT01-03\u3011", "color": "Red", "version": "Normal"},

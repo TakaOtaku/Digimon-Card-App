@@ -1,4 +1,4 @@
-import {ICard} from "../models";
+import {ICard} from "../../app/models";
 
 export const ST08CardList: ICard[] = [
   {"id": "ST8-01", "name": "DemiVeemon", "cardImage": "assets/images/cards/ST8-01.png", "cardType": "Digi-Egg", "dp": "-", "playCost": "-", "digivolveCost1": "-", "digivolveCost2": "-", "cardLv": "Lv.2", "form": "In-Training", "attribute": "-", "type": "Baby Dragon", "rarity": "U", "cardNumber": "ST8-01", "effect": "-", "digivolveEffect": "[Your Turn] While you have 8 or more cards in your hand, this Digimon gets +1000 DP.", "securityEffect": "-", "notes": "\u25b9Starter Deck, ULFORCEVEEDRAMON [ST-8]", "color": "Blue", "version": "Normal"},

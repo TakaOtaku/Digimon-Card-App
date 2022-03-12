@@ -1,4 +1,4 @@
-import {ICard} from "../models";
+import {ICard} from "../../app/models";
 
 export const ST04CardList: ICard[] = [
   {"id": "ST4-01", "name": "Motimon", "cardImage": "assets/images/cards/ST4-01.png", "cardType": "Digi-Egg", "dp": "-", "playCost": "-", "digivolveCost1": "-", "digivolveCost2": "-", "cardLv": "Lv.2", "form": "In-Training", "attribute": "-", "type": "Lesser", "rarity": "U", "cardNumber": "ST4-01", "effect": "-", "digivolveEffect": "[Your Turn] While this Digimon is level 6 or higher, it gets +1000 DP.", "securityEffect": "-", "notes": "\u25b9Starter Deck, GIGA GREEN[ST-4]", "color": "Green", "version": "Normal"},

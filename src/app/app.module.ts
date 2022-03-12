@@ -1,9 +1,10 @@
 import {HttpClientModule} from "@angular/common/http";
 import {NgModule} from '@angular/core';
+import {AngularFireModule} from "@angular/fire/compat";
+import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {RouterModule} from "@angular/router";
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {EffectsModule} from '@ngrx/effects';
 import {StoreModule} from '@ngrx/store';
@@ -11,6 +12,7 @@ import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {CookieService} from "ngx-cookie-service";
 import {ToastrModule} from "ngx-toastr";
 import {environment} from "../environments/environment";
+import {AppRoutingModule} from "./app-routing.module";
 import {AppComponent} from './app.component';
 import {CardListComponent} from './components/cards/card-list/card-list.component';
 import {FullCardComponent} from './components/cards/full-card/full-card.component';
@@ -50,23 +52,34 @@ import * as Save from "./store/reducers/save.reducer";
     ImportCollectionComponent
   ],
     imports: [
-        MaterialModule,
-        ToastrModule.forRoot({}),
-        FormsModule,
-        ReactiveFormsModule,
-        HttpClientModule,
-        BrowserModule,
-        BrowserAnimationsModule,
-        FontAwesomeModule,
-        RouterModule.forRoot([{path: '', component: MainPageComponent}]),
-        StoreModule.forRoot({
-          digimon: Digimon.digimonReducer, digimonCards: DigimonCards.digimonCardReducer, save: Save.saveReducer},
-          {initialState: {digimon: Digimon.initialState, digimonCards: DigimonCards.initialState, save: Save.initialState}}),
-        StoreDevtoolsModule.instrument({
-            name: 'Digimon Card Collector',
-            logOnly: environment.production
+      MaterialModule,
+      ToastrModule.forRoot({}),
+      FormsModule,
+      ReactiveFormsModule,
+      HttpClientModule,
+      BrowserModule,
+      BrowserAnimationsModule,
+      FontAwesomeModule,
+      AppRoutingModule,
+
+      StoreModule.forRoot({
+          digimon: Digimon.digimonReducer, digimonCards: DigimonCards.digimonCardReducer, save: Save.saveReducer
+        },
+        {
+          initialState: {
+            digimon: Digimon.initialState,
+            digimonCards: DigimonCards.initialState,
+            save: Save.initialState
+          }
         }),
-        EffectsModule.forRoot([DigimonEffects])
+      StoreDevtoolsModule.instrument({
+        name: 'Digimon Card Collector',
+        logOnly: environment.production
+      }),
+      EffectsModule.forRoot([DigimonEffects]),
+
+      AngularFireModule.initializeApp(environment.firebaseConfig),
+      AngularFireDatabaseModule
     ],
   providers: [
     ReactiveFormsModule,

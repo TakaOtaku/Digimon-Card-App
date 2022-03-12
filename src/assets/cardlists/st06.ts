@@ -1,4 +1,4 @@
-import {ICard} from "../models";
+import {ICard} from "../../app/models";
 
 export const ST06CardList: ICard[] = [
   {"id": "ST6-01", "name": "Pagumon", "cardImage": "assets/images/cards/ST6-01.png", "cardType": "Digi-Egg", "dp": "-", "playCost": "-", "digivolveCost1": "-", "digivolveCost2": "-", "cardLv": "Lv.2", "form": "In-Training", "attribute": "-", "type": "Lesser", "rarity": "U", "cardNumber": "ST6-01", "effect": "-", "digivolveEffect": "[On Deletion] Trash the top 2 cards of your deck.", "securityEffect": "-", "notes": "\u25b9Starter Deck, VENOMOUS VIOLET[ST-6]", "color": "Purple", "version": "Normal"},

@@ -18,9 +18,9 @@ export class AppComponent {
   }
 
   private loadSave(): void {
-    if (this.cookies.check('Digimon-Card-Collector')) {
-      const cookie = this.cookies.get('Digimon-Card-Collector');
-      const save: ISave = JSON.parse(cookie);
+    const save = localStorage.getItem('Digimon-Card-Collector');
+    if (save) {
+      const save: ISave = JSON.parse(localStorage.getItem('Digimon-Card-Collector')!)
       this.store.dispatch(loadSave({save}));
     }
   }

@@ -1,4 +1,4 @@
-import {ICard} from "../models";
+import {ICard} from "../../app/models";
 
 export const BT05CardList: ICard[] = [
   {"id": "BT5-001", "name": "Koromon", "cardImage": "assets/images/cards/BT5-001.png", "cardType": "Digi-Egg", "dp": "-", "playCost": "-", "digivolveCost1": "-", "digivolveCost2": "-", "cardLv": "Lv.2", "form": "In-Training", "attribute": "-", "type": "Lesser", "rarity": "U", "cardNumber": "BT5-001", "effect": "-", "digivolveEffect": "[When Attacking][Once Per Turn] If this Digimon has [Omnimon] or [Greymon] (other than [DoruGreymon], [BurningGreymon], or [DexDoruGreymon]) in its name, trigger \uff1cDraw 1\uff1e. (Draw 1 card from your deck.)", "securityEffect": "-", "notes": "\u25b9BOOSTER -BATTLE OF OMNI- [BT05]", "color": "Red", "version": "Normal"},

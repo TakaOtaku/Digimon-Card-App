@@ -1,4 +1,4 @@
-import {ICard} from "../models";
+import {ICard} from "../../app/models";
 
 export const BT04CardList: ICard[] = [
   {"id": "BT4-001", "name": "Sakuttomon", "cardImage": "assets/images/cards/BT4-001.png", "cardType": "Digi-Egg", "dp": "-", "playCost": "-", "digivolveCost1": "-", "digivolveCost2": "-", "cardLv": "Lv.2", "form": "In-Training", "attribute": "-", "type": "Weapon", "rarity": "U", "cardNumber": "BT4-001", "effect": "-", "digivolveEffect": "[When Attacking][Once Per Turn] If this Digimon is level 7, gain 1 memory.", "securityEffect": "-", "notes": "\u25b9BOOSTER -GREAT LEGEND- [BT04]", "color": "Red", "version": "Normal"},

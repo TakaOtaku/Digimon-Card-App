@@ -1,4 +1,4 @@
-import {ICard} from "../models";
+import {ICard} from "../../app/models";
 
 export const ST05CardList: ICard[] = [
   {"id": "ST5-01", "name": "Kapurimon", "cardImage": "assets/images/cards/ST5-01.png", "cardType": "Digi-Egg", "dp": "-", "playCost": "-", "digivolveCost1": "-", "digivolveCost2": "-", "cardLv": "Lv.2", "form": "In-Training", "attribute": "-", "type": "Lesser", "rarity": "U", "cardNumber": "ST5-01", "effect": "-", "digivolveEffect": "[Your Turn] While this Digimon has \uff1cBlocker\uff1e, it gets +1000 DP.", "securityEffect": "-", "notes": "\u25b9Starter Deck, MACHINE BLACK[ST-5]", "color": "Black", "version": "Normal"},

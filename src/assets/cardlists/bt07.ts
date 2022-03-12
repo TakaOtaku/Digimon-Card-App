@@ -1,4 +1,4 @@
-import {ICard} from "../models";
+import {ICard} from "../../app/models";
 
 export const BT07CardList: ICard[] = [
   {"id": "BT7-001", "name": "Kapurimon", "cardImage": "assets/images/cards/BT7-001.png", "cardType": "Digi-Egg", "dp": "-", "playCost": "-", "digivolveCost1": "-", "digivolveCost2": "-", "cardLv": "Lv.2", "form": "In-Training", "attribute": "-", "type": "Lesser", "rarity": "U", "cardNumber": "BT7-001", "effect": "-", "digivolveEffect": "[Your Turn] While you have a Tamer in play, this Digimon gets +1000 DP.", "securityEffect": "-", "notes": "\u25b9BOOSTER -NEXT ADVENTURE- [BT-07]", "color": "Red", "version": "Normal"},

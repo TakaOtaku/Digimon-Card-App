@@ -1,4 +1,4 @@
-import {ICard} from "../models";
+import {ICard} from "../../app/models";
 
 export const ST03CardList: ICard[] = [
   {"id": "ST3-01", "name": "Tokomon", "cardImage": "assets/images/cards/ST3-01.png", "cardType": "Digi-Egg", "dp": "-", "playCost": "-", "digivolveCost1": "-", "digivolveCost2": "-", "cardLv": "Lv.2", "form": "In-Training", "attribute": "-", "type": "Lesser", "rarity": "U", "cardNumber": "ST3-01", "effect": "-", "digivolveEffect": "[Your Turn][Once Per Turn] When an opponent's Digimon is deleted by dropping to 0 DP, this Digimon gets +1000 DP for the turn.", "securityEffect": "-", "notes": "\u25b9Starter Deck, HEAVEN\u2019S YELLOW\u3010ST-3\u3011", "color": "Yellow", "version": "Normal"},

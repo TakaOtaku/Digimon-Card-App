@@ -1,4 +1,4 @@
-import {ICard} from "../models";
+import {ICard} from "../../app/models";
 
 export const ST01CardList: ICard[] = [
   {"id": "ST1-01", "name": "Koromon", "cardImage": "assets/images/cards/ST1-01.png", "cardType": "Digi-Egg", "dp": "-", "playCost": "-", "digivolveCost1": "-", "digivolveCost2": "-", "cardLv": "Lv.2", "form": "In-Training", "attribute": "-", "type": "Lesser", "rarity": "U", "cardNumber": "ST1-01", "effect": "-", "digivolveEffect": "[Your Turn] While this Digimon has 4 or more digivolution cards, it gets +1000 DP.", "securityEffect": "-", "notes": "\u25b9Starter Deck, GAIA RED\u3010ST-1\u3011", "color": "Red", "version": "Normal"},

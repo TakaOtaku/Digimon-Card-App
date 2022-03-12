@@ -1,4 +1,4 @@
-import {ICard} from "../models";
+import {ICard} from "../../app/models";
 
 export const ST07CardList: ICard[] = [
   {"id": "ST7-01", "name": "Gigimon", "cardImage": "assets/images/cards/ST7-01.png", "cardType": "Digi-Egg", "dp": "-", "playCost": "-", "digivolveCost1": "-", "digivolveCost2": "-", "cardLv": "Lv.2", "form": "In-Training", "attribute": "-", "type": "Lesser", "rarity": "U", "cardNumber": "ST7-01", "effect": "-", "digivolveEffect": "[Your Turn][Once Per Turn] When an opponent's Digimon is deleted, this Digimon gets +2000 DP for the turn.", "securityEffect": "-", "notes": "\u25b9Starter Deck, GALLANTMON [ST-7]", "color": "Red", "version": "Normal"},

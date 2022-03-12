@@ -24,8 +24,12 @@ export class DigimonEffects {
       ),
       switchMap(() => this.store.select(selectSave)
         .pipe(
-          map(save => this.cookies.set('Digimon-Card-Collector', JSON.stringify(save), new Date(2100, 1))),
-          catchError(() => EMPTY)
+          map(save => {
+            localStorage.setItem('Digimon-Card-Collector', JSON.stringify(save));
+          }),
+          catchError((err) => {
+            return EMPTY
+          })
         ))
     ), {dispatch: false}
   );

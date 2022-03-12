@@ -1,4 +1,4 @@
-import {ICard} from "../models";
+import {ICard} from "../../app/models";
 
 export const PromotionCardList: ICard[] = [
   {"id": "P-047", "name": "AeroVeedramon Zero", "cardImage": "assets/images/cards/P-047.png", "cardType": "Digimon", "dp": "7000", "playCost": "8", "digivolveCost1": "3 from Lv.4", "digivolveCost2": "-", "cardLv": "Lv.5", "form": "Ultimate", "attribute": "Vaccine", "type": "Holy Dragon", "rarity": "P", "cardNumber": "P-047", "effect": "[When Digivolving] Trash the top 3 cards of your deck. Then, if you have a Tamer in play, this Digimon gets +3000 DP for the turn.", "digivolveEffect": "[When Attacking] You may place 3 non-Digi-Egg cards from your trash at the bottom of your deck in any order to have this Digimon get +2000 DP for the turn.", "securityEffect": "-", "notes": "NEXT ADVENTURE\uff08BT-07\uff09Pre-Release Tournament", "color": "Blue", "version": "Normal"},

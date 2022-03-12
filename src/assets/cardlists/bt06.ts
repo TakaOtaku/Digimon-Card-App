@@ -1,4 +1,4 @@
-import {ICard} from "../models";
+import {ICard} from "../../app/models";
 
 export const BT06CardList: ICard[] = [
   {"id": "BT6-001", "name": "DemiMeramon", "cardImage": "assets/images/cards/BT6-001.png", "cardType": "Digi-Egg", "dp": "-", "playCost": "-", "digivolveCost1": "-", "digivolveCost2": "-", "cardLv": "Lv.2", "form": "In-Training", "attribute": "-", "type": "Flame", "rarity": "U", "cardNumber": "BT6-001", "effect": "-", "digivolveEffect": "[When Attacking] When this Digimon attacks a player, it gets +1000 DP for the turn.", "securityEffect": "-", "notes": "\u25b9BOOSTER DOUBLE DIAMOND [BT-06]", "color": "Red", "version": "Normal"},

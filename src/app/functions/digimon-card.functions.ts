@@ -15,7 +15,7 @@ import {
   ST06CardList,
   ST07CardList,
   ST08CardList
-} from "../cardlists";
+} from "../../assets/cardlists";
 import {ICard} from "../models";
 
 export function setupDigimonCards(): ICard[] {
