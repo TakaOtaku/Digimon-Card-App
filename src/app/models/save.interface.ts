@@ -16,7 +16,8 @@ export interface IDeck {
   title?: string;
   description?: string;
   color?: string;
-  image?: string;
+  cardImage?: string;
+  tags?: string[];
 }
 
 export interface IDeckCard {

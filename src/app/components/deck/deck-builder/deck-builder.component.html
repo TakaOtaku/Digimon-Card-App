@@ -1,34 +1,67 @@
 <div class="inline-flex w-100">
-  <div class="inline-flex grow w-1/2 border-2 border-slate-300 mr-2">
-    <div>
-      <div>DeckName</div>
-      <mat-icon>edit</mat-icon>
+  <div class="grow w-2/3 border-2 border-slate-300 mr-2">
+    <!-- Deck Top Line -->
+    <div class="inline-flex flex-grow justify-between w-100 border-b-2 border-slate-600">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Deck Name</mat-label>
+        <input matInput placeholder="Digimon Card Deck">
+      </mat-form-field>
+
+      <p class="border-l-2 border-slate-600">0/5 Eggs</p>
+      <p class="border-l-2 border-slate-600">0/50 Cards</p>
+      <p class="border-l-2 border-slate-600">0/10 Side</p>
+
+      <div class="border-l-2 border-slate-600">
+        <button mat-flat-button>Full Cards</button>
+      </div>
+
+      <div class="border-l-2 border-slate-600">
+        <button mat-flat-button>Stack</button>
+      </div>
+
+      <div class="border-l-2 border-slate-600">
+        <button mat-flat-button>Stats</button>
+      </div>
+
+      <div class="border-l-2 border-slate-600">
+        <button mat-flat-button>Import/Export</button>
+      </div>
+
+      <div class="border-l-2 border-slate-600">
+        <button aria-label="Share Deck on Social Media." mat-icon-button>
+          <mat-icon>share</mat-icon>
+        </button>
+      </div>
+
+
+      <div class="border-l-2 border-slate-600">
+        <button aria-label="Edit Deck Accessory." mat-icon-button>
+          <mat-icon>edit</mat-icon>
+        </button>
+      </div>
+
+      <div class="border-l-2 border-slate-600">
+        <button aria-label="Trash all Cards in the Deck." mat-icon-button>
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
     </div>
+
     <div>
       <div>Main Deck</div>
-      <div>Deck COunt/50</div>
+      <div>Cards</div>
     </div>
-    <div>
-      Deck Cards
-    </div>
-    <div>
-      <div>Digi Eggs</div>
-      <div>Deck COunt/5</div>
-    </div>
-    <div>
-      Deck Egg Cards
-    </div>
+
     <div>
       <div>Side Deck</div>
-      <div>Deck COunt/10</div>
-    </div>
-    <div>
-      Side Deck Cards
+      <div>Cards</div>
     </div>
   </div>
 
-  <div class="inline-flex grow w-1/2 border-2 border-slate-300 ml-2">
-    <digimon-filter-box [compact]="true"></digimon-filter-box>
+  <div class="grow w-1/3 border-2 border-slate-300 ml-2">
+    <digimon-filter-box [compact]="true" class="w-100"></digimon-filter-box>
+    <digimon-card-list [deckBuilder]="true" class="w-100"></digimon-card-list>
   </div>
 </div>
 

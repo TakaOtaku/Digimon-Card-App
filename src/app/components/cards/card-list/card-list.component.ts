@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {Subject, takeUntil} from "rxjs";
 import {ICard, ICollectionCard} from "../../../models";
@@ -10,6 +10,8 @@ import {selectCardListViewModel, selectFilteredCards} from "../../../store/digim
   styleUrls: ['./card-list.component.scss']
 })
 export class CardListComponent implements OnInit, OnDestroy {
+  @Input() public deckBuilder = false;
+
   private cards: ICard[] = []
   cardsToShow: ICard[] = [];
 
@@ -34,7 +36,7 @@ export class CardListComponent implements OnInit, OnDestroy {
 
     this.store.select(selectCardListViewModel).pipe(takeUntil(this.destroy$))
       .subscribe(({cards, collection, collectionMode}) => {
-        this.collectionMode = collectionMode;
+        this.collectionMode = this.deckBuilder ? false : collectionMode;
 
         this.collection = collection;
       });

@@ -24,6 +24,7 @@ import {ExportDeckComponent} from './components/dialogs/export-deck/export-deck.
 import {FilterDialogComponent} from './components/dialogs/filter-dialog/filter-dialog.component';
 import {ImportCollectionComponent} from './components/dialogs/import-collection/import-collection.component';
 import {ImportDeckComponent} from './components/dialogs/import-deck/import-deck.component';
+import {ImportExportDialogComponent} from './components/dialogs/import-export-dialog/import-export-dialog.component';
 import {FilterBoxComponent} from './components/filter-box/filter-box.component';
 import {MainPageComponent} from './components/main-page/main-page.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
@@ -49,7 +50,8 @@ import * as Save from "./store/reducers/save.reducer";
     DeckContextMenuComponent,
     NavbarComponent,
     FilterDialogComponent,
-    ImportCollectionComponent
+    ImportCollectionComponent,
+    ImportExportDialogComponent
   ],
     imports: [
       MaterialModule,

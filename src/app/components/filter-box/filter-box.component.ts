@@ -5,7 +5,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {Store} from "@ngrx/store";
 import {Subject, takeUntil} from "rxjs";
 import {ISortElement} from "../../models";
-import {changeFilter} from "../../store/digimon.actions";
+import {changeFilter, changeSort} from "../../store/digimon.actions";
 import {selectFilterBoxViewModel} from "../../store/digimon.selectors";
 import {FilterDialogComponent} from "../dialogs/filter-dialog/filter-dialog.component";
 
@@ -58,16 +58,18 @@ export class FilterBoxComponent implements OnInit, OnDestroy {
     this.store.select(selectFilterBoxViewModel).pipe(takeUntil(this.destroy$))
       .subscribe(({filter, sort}) => {
         this.filterFormGroup.setValue(filter,
-          { emitEvent: false });
+          {emitEvent: false});
         this.sortFormGroup.setValue(sort,
-          { emitEvent: false });
+          {emitEvent: false});
       });
 
     this.filterFormGroup.valueChanges
       .pipe(takeUntil(this.destroy$))
       .subscribe((filter) => this.store.dispatch(changeFilter({filter})));
-
-    }
+    this.sortFormGroup.valueChanges
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((sort) => this.store.dispatch(changeSort({sort})));
+  }
 
   ngOnDestroy() {
     this.destroy$.next(true);

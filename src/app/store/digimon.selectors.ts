@@ -71,10 +71,9 @@ export const selectCardListViewModel = createSelector(
 );
 
 export const selectNavBarViewModel = createSelector(
-  selectSave,
   selectCardSize,
   selectCollectionMode,
-  (save: ISave, cardSize: number, collectionMode: boolean) => ({save, cardSize, collectionMode})
+  (cardSize: number, collectionMode: boolean) => ({cardSize, collectionMode})
 );
 
 export const selectFilterBoxViewModel = createSelector(
