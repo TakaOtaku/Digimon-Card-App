@@ -10,6 +10,7 @@
   <button [matMenuTriggerFor]="menu" class="scale flex ml-auto mr-5" mat-icon-button>
     <mat-icon class="mr-2">menu</mat-icon>
   </button>
+
   <mat-menu #menu="matMenu">
     <mat-slide-toggle [formControl]="collectionModeFormControl" class="m-auto align-middle" color="warn">CM</mat-slide-toggle>
     <button (click)="switchSite(SITES.Collection)" mat-menu-item>
@@ -34,5 +35,3 @@
     </button>
   </mat-menu>
 </mat-toolbar>
-
-

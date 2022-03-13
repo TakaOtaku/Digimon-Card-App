@@ -1,15 +1,20 @@
 <div [formGroup]="filterFormGroup" class="flex">
-  <!-- Search -->
-  <mat-form-field class="flex-grow" appearance="fill">
-    <mat-label>Text Search</mat-label>
-    <input matInput type="text" formControlName="searchFilter">
-  </mat-form-field>
 
-  <div [ngClass]="{'lg:hidden' : !compact}">
+  <div *ngIf="compact">
+    <!-- Search -->
+    <mat-form-field class="flex-grow" appearance="fill">
+      <mat-label>Text Search</mat-label>
+      <input matInput type="text" formControlName="searchFilter">
+    </mat-form-field>
     <button mat-stroked-button color="primary" class="h-100" (click)="openFilterDialog()">Filter</button>
   </div>
 
-  <div [ngClass]="{'lg:block' : !compact}" class="hidden">
+  <div *ngIf="!compact">
+    <!-- Search -->
+    <mat-form-field class="flex-grow" appearance="fill">
+      <mat-label>Text Search</mat-label>
+      <input matInput type="text" formControlName="searchFilter">
+    </mat-form-field>
     <!-- Number -->
     <mat-form-field appearance="fill">
       <mat-label>Card Count</mat-label>
@@ -67,7 +72,7 @@
   </div>
 </div>
 
-<div [ngClass]="{'lg:block' : !compact}" class="ml-auto mr-auto mt-2 mb-2 hidden">
+<div *ngIf="!compact" class="ml-auto mr-auto mt-2 mb-2 hidden">
   <mat-chip-list [formGroup]="sortFormGroup" selectable>
     <mat-chip #c="matChip" *ngFor="let sort of sortList"
               (click)="toggleSelection(c, sort)" [selected]="'ID' === sort.name">

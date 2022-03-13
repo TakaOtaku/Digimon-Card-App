@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   SITES = SITES;
   site = SITES.Collection;
 
-  cardSizeFormControl: FormControl = new FormControl(8);
+  cardSizeFormControl: FormControl = new FormControl(40);
   collectionModeFormControl: FormControl = new FormControl(true);
 
   private destroy$ = new Subject();
@@ -27,8 +27,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     public store: Store,
     public toastr: ToastrService,
     public dialog: MatDialog
-  ) {
-  }
+  ) {}
 
   ngOnInit(): void {
     this.headerSubscriptions();
@@ -36,15 +35,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.destroy$.next(true);
-  }
-
-  importDialog() {
-    this.dialog.open(ImportExportDialogComponent);
-  }
-
-  switchSite(site: number) {
-    this.site = site;
-    this.store.dispatch(setSite({site}));
   }
 
   private headerSubscriptions(): void {
@@ -63,6 +53,15 @@ export class NavbarComponent implements OnInit, OnDestroy {
     this.collectionModeFormControl.valueChanges
       .pipe(takeUntil(this.destroy$))
       .subscribe((collectionMode) => this.store.dispatch(changeCollectionMode({collectionMode})));
+  }
+
+  importDialog() {
+    this.dialog.open(ImportExportDialogComponent);
+  }
+
+  switchSite(site: number) {
+    this.site = site;
+    this.store.dispatch(setSite({site}));
   }
 
   openPayPal() {

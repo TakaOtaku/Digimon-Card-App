@@ -1,6 +1,6 @@
 <div class="flex flex-wrap justify-center">
   <digimon-full-card
     *ngFor="let card of cards"
-    [card]="card" [collectionMode]="collectionMode" [count]="getCount(card.id)" class="transition scale-95">
+    [card]="card" [scale]="true" [collectionMode]="collectionMode" [count]="getCount(card.id)" class="transition scale-95">
   </digimon-full-card>
 </div>
