@@ -49,13 +49,20 @@
     </div>
 
     <div>
-      <div>Main Deck</div>
-      <div>Cards</div>
+      <h2>Main Deck</h2>
+      <div #MainDeckList="cdkDropList" (cdkDropListDropped)="drop($event)" [cdkDropListConnectedTo]="[SideDeckList]" [cdkDropListData]="mappedDeck.mainDeck" cdkDropList
+           class="card-list flex justify-between border-2 border-amber-500">
+        <digimon-full-card *ngFor="let card of mappedDeck.mainDeck" [card]="card" [collectionMode]="false" [count]="0" cdkDrag class="transition scale-95"></digimon-full-card>
+      </div>
     </div>
 
     <div>
-      <div>Side Deck</div>
-      <div>Cards</div>
+      <h2>Side Deck</h2>
+      <div #SideDeckList="cdkDropList" (cdkDropListDropped)="drop($event)" [cdkDropListConnectedTo]="[MainDeckList]" [cdkDropListData]="mappedDeck.sideDeck" cdkDropList
+           class="flex justify-between border-2 border-amber-200 min-h-screen">
+        <digimon-full-card *ngFor="let card of mappedDeck.sideDeck" [card]="card"
+                           [collectionMode]="false" [count]="0" [scale]="false" cdkDrag class="transition scale-95"></digimon-full-card>
+      </div>
     </div>
   </div>
 

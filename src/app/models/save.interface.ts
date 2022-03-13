@@ -13,6 +13,7 @@ export interface ICollectionCard {
 
 export interface IDeck {
   cards: IDeckCard[];
+  sideDeck?: IDeckCard[];
   title?: string;
   description?: string;
   color?: string;

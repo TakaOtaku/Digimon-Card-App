@@ -14,12 +14,13 @@ import {selectCardSize} from "../../../store/digimon.selectors";
 export class FullCardComponent implements OnInit, OnDestroy {
   @Input() card: ICard;
   @Input() count: number;
-  @Input() collectionMode: boolean | null = true;
+  @Input() collectionMode: boolean = true;
+  @Input() scale: boolean = false;
 
   faPlus = faPlus;
   faMinus = faMinus;
 
-  cardWidth = 5;
+  cardWidth = 5 + 'vmin';
 
   private onDestroy$ = new Subject();
 
@@ -27,8 +28,10 @@ export class FullCardComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.store.select(selectCardSize).pipe(takeUntil(this.onDestroy$))
-      .subscribe(cardSize => this.cardWidth = cardSize);
+    if (this.scale) {
+      this.store.select(selectCardSize).pipe(takeUntil(this.onDestroy$))
+        .subscribe(cardSize => this.cardWidth = cardSize + 'vmin');
+    }
   }
 
   ngOnDestroy() {

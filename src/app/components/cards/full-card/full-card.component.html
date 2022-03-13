@@ -10,7 +10,7 @@
     <fa-icon [icon]="faMinus"></fa-icon>
   </button>
 
-  <div [ngStyle]="{'width': cardWidth + 'vmin'}" class="hover:scale-105 transition-transform">
+  <div [ngStyle]="{'width': cardWidth}" class="hover:scale-105 transition-transform">
     <img *ngIf="card.version !== 'Normal'" class="aa" [src]="getAA()" alt="AA-Banner">
 
     <img [lazyLoad]="card.cardImage" alt="Digimon Card" class="m-auto min-h-50" defaultImage="assets/images/Digimon-Card-Back.webp" mat-card-image

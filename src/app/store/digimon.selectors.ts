@@ -1,5 +1,5 @@
 import {createFeatureSelector, createSelector} from "@ngrx/store";
-import {ICard, ICollectionCard, IDigimonCards, IDigimonState, IFilter, ISave, ISettings, ISort} from "../models";
+import {ICard, ICollectionCard, IDeck, IDigimonCards, IDigimonState, IFilter, ISave, ISettings, ISort} from "../models";
 
 export const selectIDigimonCards = createFeatureSelector<IDigimonCards>('digimonCards');
 export const selectSave = createFeatureSelector<ISave>('save');
@@ -91,3 +91,8 @@ export const selectChangeFilterEffect = createSelector(
   ( cards: ICard[], collection: ICollectionCard[], filter: IFilter, sort: ISort) => ({cards, collection, filter, sort})
 );
 
+export const selectDeckBuilderViewModel = createSelector(
+  selectDeck,
+  selectAllCards,
+  (deck: IDeck | null, cards: ICard[]) => ({deck, cards})
+);
