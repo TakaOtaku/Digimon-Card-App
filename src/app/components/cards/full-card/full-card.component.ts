@@ -20,7 +20,9 @@ export class FullCardComponent implements OnInit, OnDestroy {
   faPlus = faPlus;
   faMinus = faMinus;
 
-  cardWidth = 5 + 'vmin';
+  cardWidth = 5 + 'vw';
+  cardBorder = '2px solid black';
+  cardRadius = '5px';
 
   private onDestroy$ = new Subject();
 
@@ -30,7 +32,9 @@ export class FullCardComponent implements OnInit, OnDestroy {
   ngOnInit() {
     if (this.scale) {
       this.store.select(selectCardSize).pipe(takeUntil(this.onDestroy$))
-        .subscribe(cardSize => this.cardWidth = cardSize + 'vmin');
+        .subscribe(cardSize => this.cardWidth = this.setCardSize(cardSize));
+    } else {
+
     }
   }
 
@@ -69,5 +73,22 @@ export class FullCardComponent implements OnInit, OnDestroy {
       default:
         return '';
     }
+  }
+
+  setCardSize(size: number): string {
+    if (this.isMobile()) {
+      return this.rangeToRangeMobile(size) + 'vmin';
+    }
+    return this.rangeToRange(size) + 'vw';
+  }
+
+  isMobile = () => window.screen.width <= 1024;
+
+  rangeToRange = (input: number) => {
+    return (input - 5) * (20 - 10) / (100 - 5) + 10;
+  }
+
+  rangeToRangeMobile = (input: number) => {
+    return (input - 5) * (50 - 20) / (100 - 5) + 20;
   }
 }

@@ -1,27 +1,22 @@
 import {ISettings} from "./settings.interface";
 
 export interface ISave {
-  collection: ICollectionCard[];
+  collection: ICountCard[];
   decks: IDeck[];
   settings: ISettings;
 }
 
-export interface ICollectionCard {
+export interface ICountCard {
   id: string;
   count: number;
 }
 
 export interface IDeck {
-  cards: IDeckCard[];
-  sideDeck?: IDeckCard[];
+  cards: ICountCard[];
+  sideDeck?: ICountCard[];
   title?: string;
   description?: string;
   color?: string;
   cardImage?: string;
   tags?: string[];
-}
-
-export interface IDeckCard {
-  count: number;
-  id: string;
 }

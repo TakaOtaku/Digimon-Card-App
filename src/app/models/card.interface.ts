@@ -20,3 +20,7 @@ export interface ICard {
   securityEffect: string;
   notes: string;
 }
+
+export interface IDeckCard extends ICard {
+  count: number;
+}

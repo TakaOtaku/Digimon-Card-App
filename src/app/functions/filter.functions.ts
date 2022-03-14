@@ -1,6 +1,6 @@
-import {ICard, ICollectionCard, IFilter, ISort} from "../models";
+import {ICard, ICountCard, IFilter, ISort} from "../models";
 
-export function filterCards(cards: ICard[], collection: ICollectionCard[], filter: IFilter, sort: ISort): ICard[] {
+export function filterCards(cards: ICard[], collection: ICountCard[], filter: IFilter, sort: ISort): ICard[] {
   let filteredCards = applyCardCountFilter(cards, collection, filter.cardCountFilter);
   filteredCards = applySearchFilter(filteredCards, filter.searchFilter);
   filteredCards = applySetFilter(filteredCards, filter.setFilter);
@@ -26,13 +26,15 @@ function applySearchFilter(cards: ICard[], searchFilter: string): ICard[] {
   return [...new Set([...nameFiltered, ...effectFiltered, ...inheritedFiltered, ...securityFiltered])];
 }
 
-function applyCardCountFilter(cards: ICard[], collection: ICollectionCard[], cardCountFilter: number|null): ICard[] {
-  if(cardCountFilter == null) {return cards;}
+function applyCardCountFilter(cards: ICard[], collection: ICountCard[], cardCountFilter: number | null): ICard[] {
+  if (cardCountFilter == null) {
+    return cards;
+  }
 
   // 0: Take all Cards that are 0 or not in the Collection
   // >0: Take all Cards that are >0 that are in the Collection
   let filteredCards: ICard[] = [];
-  if (cardCountFilter === 0)  {
+  if (cardCountFilter === 0) {
     const collectionCards = collection.filter(card => card.count !== cardCountFilter);
     filteredCards = cards.filter(card => !containsCard(card.id, collectionCards))
   } else {
@@ -41,10 +43,13 @@ function applyCardCountFilter(cards: ICard[], collection: ICollectionCard[], car
   }
   return [...new Set([...filteredCards])];
 }
-function containsCard(cardId: string, collectionArray: ICollectionCard[]): boolean {
+
+function containsCard(cardId: string, collectionArray: ICountCard[]): boolean {
   let cardInCollection = false;
   collectionArray.forEach(collection => {
-    if (cardId === collection.id) {cardInCollection = true;}
+    if (cardId === collection.id) {
+      cardInCollection = true;
+    }
   });
   return cardInCollection;
 }
@@ -141,13 +146,13 @@ function search(user: any){
   return Object.keys(this).every((key) => user[key] === this[key]);
 }
 
-function dynamicSort(property: string): any {
+export function dynamicSort(property: string): any {
   let sortOrder = 1;
-  if(property[0] === "-") {
+  if (property[0] === "-") {
     sortOrder = -1;
     property = property.substr(1);
   }
-  return function (a:any, b:any) {
+  return function (a: any, b: any) {
     let result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
     return result * sortOrder;
   }

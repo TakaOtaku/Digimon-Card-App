@@ -3,7 +3,7 @@ import {MatDialogRef} from "@angular/material/dialog";
 import {Store} from "@ngrx/store";
 import {ToastrService} from "ngx-toastr";
 import {first, Subject} from "rxjs";
-import {ICard, ICollectionCard} from "../../../models";
+import {ICard, ICountCard} from "../../../models";
 import {addToCollection} from "../../../store/digimon.actions";
 import {selectAllCards} from "../../../store/digimon.selectors";
 
@@ -43,9 +43,9 @@ export class ImportCollectionComponent implements OnInit, OnDestroy {
     }
 
     let result: string[] = this.collectionText.split("\n");
-    const collectionCards: ICollectionCard[] = [];
+    const collectionCards: ICountCard[] = [];
     result.forEach(line => {
-      const card: ICollectionCard | null = this.parseLine(line);
+      const card: ICountCard | null = this.parseLine(line);
       if (card) {
         collectionCards.push(card);
       }
@@ -56,7 +56,7 @@ export class ImportCollectionComponent implements OnInit, OnDestroy {
     this.dialogRef.close();
   }
 
-  private parseLine(line: string): ICollectionCard | null {
+  private parseLine(line: string): ICountCard | null {
     line = line.replace('\t', ' ');
     const lineSplit: string[] = line.replace(/  +/g, ' ').split(" ");
     const cardLine: number = +lineSplit[0] >>> 0;
@@ -64,7 +64,7 @@ export class ImportCollectionComponent implements OnInit, OnDestroy {
       if (!this.digimonCards.find(card => card.id === lineSplit[1])) {
         return null;
       }
-      return {count: cardLine, id: lineSplit[1]} as ICollectionCard;
+      return {count: cardLine, id: lineSplit[1]} as ICountCard;
     }
     return null;
   }

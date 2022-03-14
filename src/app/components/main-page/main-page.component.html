@@ -3,6 +3,6 @@
 <digimon-filter-box    *ngIf="site === SITES.Collection" [compact]="isMobile()"></digimon-filter-box>
 
 <digimon-decks         *ngIf="site === SITES.Decks"></digimon-decks>
-<digimon-deck-builder  *ngIf="site === SITES.DeckBuilder"></digimon-deck-builder>
-<digimon-card-list     *ngIf="site === SITES.Collection"></digimon-card-list>
+<digimon-deck-builder *ngIf="site === SITES.DeckBuilder"></digimon-deck-builder>
+<digimon-card-list *ngIf="site === SITES.Collection" [showCount]="100"></digimon-card-list>
 

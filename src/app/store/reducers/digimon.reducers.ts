@@ -1,6 +1,6 @@
 import {createReducer, on} from '@ngrx/store';
 import {IDeck, IDigimonState} from "../../models";
-import {changeFilter, changeSort, setDeck, setSite} from '../digimon.actions';
+import {addToDeck, changeFilter, changeSort, setDeck, setSite} from '../digimon.actions';
 
 const testDeck: IDeck = {
   cards: [
@@ -125,8 +125,25 @@ export const initialState: IDigimonState = {
 
 export const digimonReducer = createReducer(
   initialState,
-  on(changeFilter, (state, {filter}) => ({...state,  filter})),
+  on(changeFilter, (state, {filter}) => ({...state, filter})),
   on(changeSort, (state, {sort}) => ({...state, sort})),
   on(setSite, (state, {site}) => ({...state, site})),
   on(setDeck, (state, {deck}) => ({...state, deck})),
+  on(addToDeck, (state, {card}) => {
+    if (state.deck) {
+      const foundCard = state.deck.cards.find(deckCard => deckCard.id === card.id);
+      if (foundCard) {
+        //Increase Card Count
+        const cards = state.deck.cards.filter(deckCard => deckCard.id !== card.id);
+        cards.push({id: foundCard.id, count: foundCard.count + 1})
+        return {...state, deck: {...state.deck, cards}};
+      } else {
+        //Add Card
+        const cards = [...state?.deck?.cards, card];
+        return {...state, deck: {...state.deck, cards}};
+      }
+    } else {
+      return {...state};
+    }
+  }),
 );

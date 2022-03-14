@@ -1,7 +1,8 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {Subject, takeUntil} from "rxjs";
-import {ICard, ICollectionCard} from "../../../models";
+import {addToDeck} from 'src/app/store/digimon.actions';
+import {ICard, ICountCard} from "../../../models";
 import {selectCardListViewModel} from "../../../store/digimon.selectors";
 
 @Component({
@@ -11,20 +12,22 @@ import {selectCardListViewModel} from "../../../store/digimon.selectors";
 })
 export class CardListComponent implements OnInit, OnDestroy {
   @Input() public deckBuilder = false;
-
-  cards: ICard[] = []
-
-  private collection: ICollectionCard[] = [];
+  @Input() public showCount = 100;
+  public cardsToShow: ICard[] = [];
+  private cards: ICard[] = [];
+  private collection: ICountCard[] = [];
   collectionMode = true;
 
   private destroy$ = new Subject();
 
-  constructor(private store: Store) {}
+  constructor(private store: Store) {
+  }
 
   ngOnInit() {
     this.store.select(selectCardListViewModel).pipe(takeUntil(this.destroy$))
       .subscribe(({cards, collection, collectionMode}) => {
         this.cards = cards;
+        this.cardsToShow = this.cards.slice(0, this.showCount);
         this.collectionMode = this.deckBuilder ? false : collectionMode;
         this.collection = collection;
       });
@@ -36,5 +39,17 @@ export class CardListComponent implements OnInit, OnDestroy {
 
   getCount(cardId: string): number {
     return this.collection.find(value => value.id === cardId)?.count ?? 0;
+  }
+
+  showMore() {
+    const length = this.cardsToShow.length;
+    this.cardsToShow = this.cards.slice(0, length + this.showCount);
+  }
+
+  addToDeck(card: ICard) {
+    if (this.deckBuilder) {
+      const countCard = {id: card.cardNumber, count: 1};
+      this.store.dispatch(addToDeck({card: countCard}));
+    }
   }
 }

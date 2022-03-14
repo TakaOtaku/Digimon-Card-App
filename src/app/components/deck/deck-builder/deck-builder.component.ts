@@ -2,14 +2,9 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {filter, Subject, takeUntil} from "rxjs";
-import {ICard, IDeck} from "../../../models";
+import {dynamicSort} from "../../../functions/filter.functions";
+import {ICard, IDeck, IDeckCard} from "../../../models";
 import {selectDeckBuilderViewModel} from "../../../store/digimon.selectors";
-
-export interface IDeckBuilder {
-  eggs: ICard[];
-  mainDeck: ICard[];
-  sideDeck: ICard[];
-}
 
 @Component({
   selector: 'digimon-deck-builder',
@@ -17,12 +12,10 @@ export interface IDeckBuilder {
   styleUrls: ['./deck-builder.component.scss']
 })
 export class DeckBuilderComponent implements OnInit, OnDestroy {
-  public mappedDeck: IDeckBuilder = {
-    eggs: [],
-    mainDeck: [],
-    sideDeck: []
-  }
-  public deck: IDeck = {cards: []};
+  public eggs: IDeckCard[] = [];
+  public mainDeck: IDeckCard[] = [];
+
+  private deck: IDeck = {cards: []};
   private allCards: ICard[] = [];
 
   private onDestroy$ = new Subject();
@@ -36,7 +29,7 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
         this.allCards = cards;
         if (deck) {
           this.deck = deck;
-          this.mappedDeck = this.mapDeck(deck);
+          this.mapDeck(deck);
         }
       });
   }
@@ -45,22 +38,34 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
     this.onDestroy$.next(true);
   }
 
-  mapDeck(deck: IDeck): IDeckBuilder {
-    const deckBuilder: IDeckBuilder = {eggs: [], mainDeck: [], sideDeck: []};
+  mapDeck(deck: IDeck) {
+    this.mainDeck = [];
+    this.eggs = [];
+    const iDeckCards: IDeckCard[] = [];
     deck.cards.forEach(card => {
-      const completeCard = this.allCards.find(item => item.id === card.id);
-      if (completeCard?.cardLv === 'Lv.2') {
-        deckBuilder.eggs.push(completeCard);
-      } else if (completeCard) {
-        deckBuilder.mainDeck.push(completeCard);
+      const foundCard = this.allCards.find(item => item.id === card.id);
+      if (foundCard) {
+        iDeckCards.push({...foundCard, count: card.count});
       }
     });
-    return deckBuilder;
+
+    const sortedCards = iDeckCards.sort(dynamicSort('cardLv'));
+    sortedCards.forEach(card => {
+      if (card.cardLv === 'Lv.2') {
+        this.eggs.push({...card, count: card.count});
+      } else if (card) {
+        this.mainDeck.push({...card, count: card.count});
+      }
+    });
   }
 
-  drop(event: CdkDragDrop<ICard[]>) {
+  drop(event: CdkDragDrop<IDeckCard[]>) {
     if (event.previousContainer === event.container) {
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+      moveItemInArray(
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      );
     } else {
       transferArrayItem(
         event.previousContainer.data,

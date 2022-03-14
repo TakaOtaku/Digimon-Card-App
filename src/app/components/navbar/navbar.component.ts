@@ -39,7 +39,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   private headerSubscriptions(): void {
     this.store.select(selectNavBarViewModel).pipe(takeUntil(this.destroy$))
-      .subscribe(({cardSize, collectionMode}) => {
+      .subscribe(({cardSize, collectionMode, site}) => {
+        this.site = site;
         this.cardSizeFormControl.setValue(cardSize,
           {emitEvent: false})
         this.collectionModeFormControl.setValue(collectionMode,

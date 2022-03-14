@@ -1,5 +1,5 @@
 import {createFeatureSelector, createSelector} from "@ngrx/store";
-import {ICard, ICollectionCard, IDeck, IDigimonCards, IDigimonState, IFilter, ISave, ISettings, ISort} from "../models";
+import {ICard, ICountCard, IDeck, IDigimonCards, IDigimonState, IFilter, ISave, ISettings, ISort} from "../models";
 
 export const selectIDigimonCards = createFeatureSelector<IDigimonCards>('digimonCards');
 export const selectSave = createFeatureSelector<ISave>('save');
@@ -66,14 +66,15 @@ export const selectCardListViewModel = createSelector(
   selectFilteredCards,
   selectCollection,
   selectCollectionMode,
-  (cards: ICard[], collection: ICollectionCard[], collectionMode: boolean) =>
+  (cards: ICard[], collection: ICountCard[], collectionMode: boolean) =>
     ({cards, collection, collectionMode})
 );
 
 export const selectNavBarViewModel = createSelector(
   selectCardSize,
   selectCollectionMode,
-  (cardSize: number, collectionMode: boolean) => ({cardSize, collectionMode})
+  selectSite,
+  (cardSize: number, collectionMode: boolean, site: number) => ({cardSize, collectionMode, site})
 );
 
 export const selectFilterBoxViewModel = createSelector(
@@ -88,11 +89,12 @@ export const selectChangeFilterEffect = createSelector(
   selectCollection,
   selectFilter,
   selectSort,
-  ( cards: ICard[], collection: ICollectionCard[], filter: IFilter, sort: ISort) => ({cards, collection, filter, sort})
+  (cards: ICard[], collection: ICountCard[], filter: IFilter, sort: ISort) => ({cards, collection, filter, sort})
 );
 
 export const selectDeckBuilderViewModel = createSelector(
   selectDeck,
   selectAllCards,
-  (deck: IDeck | null, cards: ICard[]) => ({deck, cards})
+  selectCollection,
+  (deck: IDeck | null, cards: ICard[], collection: ICountCard[]) => ({deck, cards, collection})
 );

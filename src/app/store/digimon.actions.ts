@@ -1,12 +1,8 @@
 import {createAction, props} from '@ngrx/store';
-import {ICard, ICollectionCard, IDeck, ISave, ISettings} from "../models";
+import {ICard, ICountCard, IDeck, ISave, ISettings} from "../models";
 import {IFilter, ISort} from "../models/digimon-state.interface";
 
 //region Digimon Card Actions
-export const setDigimonCards = createAction(
-  '[Digimon Cards] Set all Digimon Cards',
-  props<{ allCards: ICard[] }>()
-);
 export const setFilteredDigimonCards = createAction(
   '[Digimon Cards] Set Filtered Digimon Cards',
   props<{ filteredCards: ICard[] }>()
@@ -56,7 +52,7 @@ export const setSave = createAction(
 );
 export const setCollection = createAction(
   '[Digimon Card Save] Set Digimon Card Collection',
-  props<{ collection: ICollectionCard[] }>()
+  props<{ collection: ICountCard[] }>()
 );
 export const setDecks = createAction(
   '[Digimon Card Save] Set Digimon Card Decks',
@@ -71,7 +67,7 @@ export const setSettings = createAction(
 //region Collection Actions
 export const addToCollection = createAction(
   '[Digimon Cards Collection] Add Digimon Cards to Collection',
-  props<{ collectionCards: ICollectionCard[] }>()
+  props<{ collectionCards: ICountCard[] }>()
 );
 
 export const changeCardCount = createAction(
@@ -99,6 +95,11 @@ export const importDeck = createAction(
 export const deleteDeck = createAction(
   '[Digimon Deck] Delete Digimon Deck',
   props<{ deck: IDeck }>()
+);
+
+export const addToDeck = createAction(
+  '[Digimon Deck] Add a Digimon Card',
+  props<{ card: ICountCard }>()
 );
 //endregion
 

@@ -18,7 +18,7 @@ export class MainPageComponent implements OnDestroy {
   SITES = SITES;
   site: number = SITES.Collection;
 
-  isMobile = () => window.screen.width === 1024;
+  isMobile = () => window.screen.width <= 1024;
 
   private destroy$ = new Subject();
 

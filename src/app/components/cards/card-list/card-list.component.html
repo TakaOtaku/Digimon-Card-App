@@ -1,6 +1,9 @@
 <div class="flex flex-wrap justify-center">
-  <digimon-full-card
-    *ngFor="let card of cards"
-    [card]="card" [scale]="true" [collectionMode]="collectionMode" [count]="getCount(card.id)" class="transition scale-95">
+  <digimon-full-card (click)="addToDeck(card)"
+                     *ngFor="let card of cardsToShow" [card]="card"
+                     [collectionMode]="collectionMode" [count]="getCount(card.id)" [scale]="!deckBuilder" class="transition scale-95">
   </digimon-full-card>
+  <button (click)="showMore()" class="basis-full" color="primary" mat-raised-button>Show more...</button>
 </div>
+
+

@@ -48,27 +48,32 @@
       </div>
     </div>
 
-    <div>
-      <h2>Main Deck</h2>
-      <div #MainDeckList="cdkDropList" (cdkDropListDropped)="drop($event)" [cdkDropListConnectedTo]="[SideDeckList]" [cdkDropListData]="mappedDeck.mainDeck" cdkDropList
-           class="card-list flex justify-between border-2 border-amber-500">
-        <digimon-full-card *ngFor="let card of mappedDeck.mainDeck" [card]="card" [collectionMode]="false" [count]="0" cdkDrag class="transition scale-95"></digimon-full-card>
+    <div class="card-container w-100">
+      <h2 class="text-center">EGG-DECK</h2>
+      <div #EggList="cdkDropList"
+           (cdkDropListDropped)="drop($event)" [cdkDropListConnectedTo]="[MainDeckList]" [cdkDropListData]="eggs" cdkDropList class="card-list flex flex-wrap border-2 border-slate-800 min-h-fit">
+        <div *ngFor="let card of eggs" cdkDrag class="card-box">
+          <img [src]="card.cardImage" alt="Digimon Card" class="card-image m-auto" mat-card-image>
+        </div>
       </div>
     </div>
 
-    <div>
-      <h2>Side Deck</h2>
-      <div #SideDeckList="cdkDropList" (cdkDropListDropped)="drop($event)" [cdkDropListConnectedTo]="[MainDeckList]" [cdkDropListData]="mappedDeck.sideDeck" cdkDropList
-           class="flex justify-between border-2 border-amber-200 min-h-screen">
-        <digimon-full-card *ngFor="let card of mappedDeck.sideDeck" [card]="card"
-                           [collectionMode]="false" [count]="0" [scale]="false" cdkDrag class="transition scale-95"></digimon-full-card>
+
+    <div class="card-container w-100 border-2 border-slate-800">
+      <h2 class="text-center">MAIN-DECK</h2>
+      <div #MainDeckList="cdkDropList"
+           (cdkDropListDropped)="drop($event)" [cdkDropListConnectedTo]="[EggList]" [cdkDropListData]="mainDeck" cdkDropList class="card-list flex flex-wrap border-2 border-slate-800">
+        <div *ngFor="let card of mainDeck" cdkDrag class="card-box">
+          <img [src]="card.cardImage" alt="Digimon Card" class="card-image m-auto" mat-card-image>
+        </div>
       </div>
     </div>
+
   </div>
 
   <div class="grow w-1/3 border-2 border-slate-300 ml-2">
     <digimon-filter-box [compact]="true" class="w-100"></digimon-filter-box>
-    <digimon-card-list [deckBuilder]="true" class="w-100"></digimon-card-list>
+    <digimon-card-list [deckBuilder]="true" [showCount]="50" class="w-100"></digimon-card-list>
   </div>
 </div>
 

@@ -3,16 +3,16 @@
 
   <div *ngIf="site === SITES.Collection" class="flex flex-grow align-middle ml-auto max-w-xl">
     <mat-icon class="m-auto align-middle">zoom_out</mat-icon>
-    <mat-slider [formControl]="cardSizeFormControl" class="w-full align-middle" color="warn" max="60" min="40" step="5"></mat-slider>
+    <mat-slider [formControl]="cardSizeFormControl" class="w-full align-middle" color="warn" max="100" min="5" step="5"></mat-slider>
     <mat-icon class="m-auto align-middle">zoom_in</mat-icon>
   </div>
 
-  <button [matMenuTriggerFor]="menu" class="scale flex ml-auto mr-5" mat-icon-button>
-    <mat-icon class="mr-2">menu</mat-icon>
+  <button [matMenuTriggerFor]="menu" class="scale flex ml-auto menu" mat-icon-button>
+    <mat-icon>menu</mat-icon>
   </button>
 
   <mat-menu #menu="matMenu">
-    <mat-slide-toggle [formControl]="collectionModeFormControl" class="m-auto align-middle" color="warn">CM</mat-slide-toggle>
+    <mat-slide-toggle [formControl]="collectionModeFormControl" class="" color="warn">CM</mat-slide-toggle>
     <button (click)="switchSite(SITES.Collection)" mat-menu-item>
       <mat-icon>sd_card</mat-icon>
       <span>Collection</span>

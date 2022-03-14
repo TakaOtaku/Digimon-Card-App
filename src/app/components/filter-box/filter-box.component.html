@@ -1,6 +1,6 @@
 <div [formGroup]="filterFormGroup" class="flex">
 
-  <div *ngIf="compact">
+  <div *ngIf="compact" class="flex flex-grow">
     <!-- Search -->
     <mat-form-field class="flex-grow" appearance="fill">
       <mat-label>Text Search</mat-label>
@@ -9,7 +9,7 @@
     <button mat-stroked-button color="primary" class="h-100" (click)="openFilterDialog()">Filter</button>
   </div>
 
-  <div *ngIf="!compact">
+  <div *ngIf="!compact" class="flex flex-grow">
     <!-- Search -->
     <mat-form-field class="flex-grow" appearance="fill">
       <mat-label>Text Search</mat-label>

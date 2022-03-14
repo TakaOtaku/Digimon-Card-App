@@ -1,5 +1,5 @@
 import {createReducer, on} from '@ngrx/store';
-import {ICollectionCard, ISave} from "../../models";
+import {ICountCard, ISave} from "../../models";
 import {
   addToCollection,
   changeCardCount,
@@ -17,7 +17,7 @@ export const initialState: ISave = {
   collection: [],
   decks: [],
   settings: {
-    cardSize: 40,
+    cardSize: 10,
     collectionMode: true,
   }
 }
@@ -42,12 +42,12 @@ export const saveReducer = createReducer(
         if (card.id !== id) {
           return card;
         }
-        return {id, count} as ICollectionCard;
+        return {id, count} as ICountCard;
       });
       return {...state, collection};
     } else {
       // Create new Card and add it to the state
-      const card = {id, count} as ICollectionCard;
+      const card = {id, count} as ICountCard;
       const collection = [...state.collection, card]
       return {...state, collection};
     }
@@ -61,12 +61,12 @@ export const saveReducer = createReducer(
           return card;
         }
         const count = card.count + 1;
-        return {id, count} as ICollectionCard;
+        return {id, count} as ICountCard;
       });
       return {...state, collection};
     } else {
       // Create new Card and add it to the state
-      const card = {id, count: 1} as ICollectionCard;
+      const card = {id, count: 1} as ICountCard;
       const collection = [...state.collection, card]
       return {...state, collection};
     }
@@ -80,7 +80,7 @@ export const saveReducer = createReducer(
           return card;
         }
         const count = card.count - 1;
-        return {id, count} as ICollectionCard;
+        return {id, count} as ICountCard;
       });
       return {...state, collection};
     }
