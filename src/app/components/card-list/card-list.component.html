@@ -1,4 +1,4 @@
-<div class="flex flex-wrap justify-center">
+<div class="flex flex-wrap justify-center overflow-scroll max-h-80vh">
   <digimon-full-card (click)="addToDeck(card)"
                      *ngFor="let card of cardsToShow" [card]="card"
                      [collectionMode]="collectionMode" [count]="getCount(card.id)" [scale]="!deckBuilder" class="transition scale-95">

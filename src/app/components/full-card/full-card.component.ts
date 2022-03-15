@@ -2,9 +2,9 @@ import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {faMinus, faPlus} from "@fortawesome/free-solid-svg-icons";
 import {Store} from "@ngrx/store";
 import {Subject, takeUntil} from "rxjs";
-import {ICard} from "../../../models";
-import {changeCardCount, decreaseCardCount, increaseCardCount} from "../../../store/digimon.actions";
-import {selectCardSize} from "../../../store/digimon.selectors";
+import {ICard} from "../../models";
+import {changeCardCount, decreaseCardCount, increaseCardCount} from "../../store/digimon.actions";
+import {selectCardSize} from "../../store/digimon.selectors";
 
 @Component({
   selector: 'digimon-full-card',

@@ -1,11 +1,9 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
-import {MatChip} from "@angular/material/chips";
 import {MatDialog} from "@angular/material/dialog";
 import {Store} from "@ngrx/store";
 import {Subject, takeUntil} from "rxjs";
-import {ISortElement} from "../../models";
-import {changeFilter, changeSort} from "../../store/digimon.actions";
+import {changeFilter} from "../../store/digimon.actions";
 import {selectFilterBoxViewModel} from "../../store/digimon.selectors";
 import {FilterDialogComponent} from "../dialogs/filter-dialog/filter-dialog.component";
 
@@ -36,17 +34,6 @@ export class FilterBoxComponent implements OnInit, OnDestroy {
   rarityList: string[] = ['C', 'UC', 'R', 'SR', 'SEC'];
   versionList: string[] = ['Normal', 'AA', 'Stamped'];
 
-  sortFormGroup: FormGroup = new FormGroup({
-    sortBy: new FormControl({name:'ID', element: 'id'}),
-    ascOrder: new FormControl (true)
-  });
-  sortList: ISortElement[] = [
-    {name:'ID', element: 'id'},
-    {name:'Cost', element: 'playCost'},
-    {name:'DP', element: 'dp'},
-    {name:'Level', element: 'cardLv'},
-    {name:'Name', element: 'name'}];
-
   private destroy$ = new Subject();
 
   constructor(
@@ -56,19 +43,14 @@ export class FilterBoxComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.store.select(selectFilterBoxViewModel).pipe(takeUntil(this.destroy$))
-      .subscribe(({filter, sort}) => {
+      .subscribe(({filter}) => {
         this.filterFormGroup.setValue(filter,
-          {emitEvent: false});
-        this.sortFormGroup.setValue(sort,
           {emitEvent: false});
       });
 
     this.filterFormGroup.valueChanges
       .pipe(takeUntil(this.destroy$))
       .subscribe((filter) => this.store.dispatch(changeFilter({filter})));
-    this.sortFormGroup.valueChanges
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((sort) => this.store.dispatch(changeSort({sort})));
   }
 
   ngOnDestroy() {
@@ -77,14 +59,5 @@ export class FilterBoxComponent implements OnInit, OnDestroy {
 
   openFilterDialog() {
     this.dialog.open(FilterDialogComponent, {width: '90vmin', height: '550px'});
-  }
-
-  toggleSelection(chip: MatChip, sort: ISortElement) {
-    if(chip.selected) {
-      this.sortFormGroup.get('ascOrder')?.setValue(!this.sortFormGroup.get('ascOrder')?.value);
-      return;
-    }
-    chip.toggleSelected();
-    this.sortFormGroup.get('sortBy')?.setValue(sort);
   }
 }

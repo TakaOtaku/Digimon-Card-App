@@ -2,8 +2,8 @@ import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {Subject, takeUntil} from "rxjs";
 import {addToDeck} from 'src/app/store/digimon.actions';
-import {ICard, ICountCard} from "../../../models";
-import {selectCardListViewModel} from "../../../store/digimon.selectors";
+import {ICard, ICountCard} from "../../models";
+import {selectCardListViewModel} from "../../store/digimon.selectors";
 
 @Component({
   selector: 'digimon-card-list',

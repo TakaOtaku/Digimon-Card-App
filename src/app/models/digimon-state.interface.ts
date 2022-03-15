@@ -1,30 +1,13 @@
-import {IDeck} from "./save.interface";
+import {IDeck} from "./deck.interface";
+import {IFilter} from "./filter.interface";
+import {ISort} from "./sort.interface";
 
 export interface IDigimonState {
-  deck: IDeck | null,
+  deck: IDeck,
   site: number,
   filter: IFilter;
   sort : ISort;
 }
 
-export interface IFilter {
-  searchFilter: string;
-  cardCountFilter: number|null;
-  setFilter: [];
-  colorFilter: [];
-  cardTypeFilter: [];
-  typeFilter: [];
-  lvFilter: [];
-  rarityFilter: [];
-  versionFilter: [];
-}
 
-export interface ISort {
-  sortBy: ISortElement;
-  ascOrder: boolean;
-}
 
-export interface ISortElement {
-  name: string;
-  element: string;
-}

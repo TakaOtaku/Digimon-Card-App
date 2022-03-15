@@ -74,7 +74,8 @@ export const selectNavBarViewModel = createSelector(
   selectCardSize,
   selectCollectionMode,
   selectSite,
-  (cardSize: number, collectionMode: boolean, site: number) => ({cardSize, collectionMode, site})
+  selectSort,
+  (cardSize: number, collectionMode: boolean, site: number, sort: ISort) => ({cardSize, collectionMode, site, sort})
 );
 
 export const selectFilterBoxViewModel = createSelector(

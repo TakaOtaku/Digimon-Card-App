@@ -15,10 +15,10 @@ import {ToastrModule} from "ngx-toastr";
 import {environment} from "../environments/environment";
 import {AppRoutingModule} from "./app-routing.module";
 import {AppComponent} from './app.component';
-import {CardListComponent} from './components/cards/card-list/card-list.component';
-import {FullCardComponent} from './components/cards/full-card/full-card.component';
+import {CardListComponent} from './components/card-list/card-list.component';
 import {DeckBuilderComponent} from './components/deck/deck-builder/deck-builder.component';
 import {DecksComponent} from './components/deck/decks/decks.component';
+import {SmallDeckCardComponent} from './components/deck/small-deck-card/small-deck-card.component';
 import {ConfirmationDialogComponent} from './components/dialogs/confirmation-dialog/confirmation-dialog.component';
 import {DeckContextMenuComponent} from './components/dialogs/deck-context-menu/deck-context-menu.component';
 import {ExportDeckComponent} from './components/dialogs/export-deck/export-deck.component';
@@ -27,6 +27,7 @@ import {ImportCollectionComponent} from './components/dialogs/import-collection/
 import {ImportDeckComponent} from './components/dialogs/import-deck/import-deck.component';
 import {ImportExportDialogComponent} from './components/dialogs/import-export-dialog/import-export-dialog.component';
 import {FilterBoxComponent} from './components/filter-box/filter-box.component';
+import {FullCardComponent} from './components/full-card/full-card.component';
 import {MainPageComponent} from './components/main-page/main-page.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {MaterialModule} from "./material.module";
@@ -35,6 +36,7 @@ import {DigimonEffects} from "./store/digimon.effects";
 import * as DigimonCards from "./store/reducers/digimon-card.reducers";
 import * as Digimon from "./store/reducers/digimon.reducers";
 import * as Save from "./store/reducers/save.reducer";
+import { DeckCardComponent } from './components/deck/deck-card/deck-card.component';
 
 @NgModule({
   declarations: [
@@ -52,11 +54,12 @@ import * as Save from "./store/reducers/save.reducer";
     NavbarComponent,
     FilterDialogComponent,
     ImportCollectionComponent,
-    ImportExportDialogComponent
+    ImportExportDialogComponent,
+    SmallDeckCardComponent,
+    DeckCardComponent
   ],
-    imports: [
+  imports: [
       MaterialModule,
-      ToastrModule.forRoot({}),
       FormsModule,
       ReactiveFormsModule,
       HttpClientModule,
@@ -65,27 +68,24 @@ import * as Save from "./store/reducers/save.reducer";
       FontAwesomeModule,
       AppRoutingModule,
       LazyLoadImageModule,
-      StoreModule.forRoot({
-          digimon: Digimon.digimonReducer, digimonCards: DigimonCards.digimonCardReducer, save: Save.saveReducer
-        },
-        {
-          initialState: {
-            digimon: Digimon.initialState,
-            digimonCards: DigimonCards.initialState,
-            save: Save.initialState
-          }
+
+      AngularFireModule.initializeApp(environment.firebaseConfig),
+      AngularFireDatabaseModule,
+
+      ToastrModule.forRoot({}),
+
+      StoreModule.forRoot(
+        {digimon: Digimon.digimonReducer, digimonCards: DigimonCards.digimonCardReducer, save: Save.saveReducer},
+        {initialState: {digimon: Digimon.initialState, digimonCards: DigimonCards.initialState, save: Save.initialState}
         }),
       StoreDevtoolsModule.instrument({
         name: 'Digimon Card Collector',
         logOnly: environment.production
       }),
-      EffectsModule.forRoot([DigimonEffects]),
-      AngularFireModule.initializeApp(environment.firebaseConfig),
-      AngularFireDatabaseModule
+      EffectsModule.forRoot([DigimonEffects])
     ],
   providers: [
-    ReactiveFormsModule,
-    CookieService
+    ReactiveFormsModule
   ],
   bootstrap: [AppComponent]
 })

@@ -1,3 +1,5 @@
+import {ICountCard} from "./count-card.interface";
+import {IDeck} from "./deck.interface";
 import {ISettings} from "./settings.interface";
 
 export interface ISave {
@@ -6,17 +8,6 @@ export interface ISave {
   settings: ISettings;
 }
 
-export interface ICountCard {
-  id: string;
-  count: number;
-}
 
-export interface IDeck {
-  cards: ICountCard[];
-  sideDeck?: ICountCard[];
-  title?: string;
-  description?: string;
-  color?: string;
-  cardImage?: string;
-  tags?: string[];
-}
+
+

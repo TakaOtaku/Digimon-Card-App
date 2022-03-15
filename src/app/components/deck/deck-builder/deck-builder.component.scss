@@ -2,6 +2,33 @@
   width: 100%;
 }
 
+.margin-top-5 {
+  margin-top: 5px !important;
+}
+
+.toolbar {
+  p {
+    text-align:center;
+    line-height:61px;
+    height:61px;
+  }
+
+  div {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:61px;
+  }
+
+  button {
+    height: 100%;
+  }
+
+  .bottom-font {
+    line-height: 71px;
+  }
+}
+
 .card-container {
   max-width: 100%;
   margin: 0 25px 25px 0;
@@ -33,12 +60,6 @@
   :last-child {
     border: none;
   }
-}
-
-.card-image {
-  width: 10vmin !important;
-  border: 2px solid black;
-  border-radius: 5px;
 }
 
 .cdk-drag-preview {
