@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {ICard} from "../../../models";
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {IDeckCard} from "../../../models";
 
 @Component({
   selector: 'digimon-deck-card',
@@ -7,10 +7,28 @@ import {ICard} from "../../../models";
   styleUrls: ['./deck-card.component.css']
 })
 export class DeckCardComponent implements OnInit {
-  @Input() public card: ICard;
+  @Input() public card: IDeckCard;
   @Input() public stack: boolean;
 
-  constructor() { }
+  @Output() public countChange = new EventEmitter<number>();
 
-  ngOnInit(): void {}
+  constructor() {
+  }
+
+  ngOnInit(): void {
+  }
+
+  increaseCardCount(): void {
+    if (this.card.count === 4) {
+      return;
+    }
+    this.countChange.emit(++this.card.count);
+  }
+
+  decreaseCardCount(): void {
+    if (this.card.count === 0) {
+      return;
+    }
+    this.countChange.emit(--this.card.count);
+  }
 }

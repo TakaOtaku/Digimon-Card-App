@@ -1,1 +1,14 @@
-<img [src]="card.cardImage" alt="Digimon Card" class="card-image m-auto" mat-card-image>
+<div class="inline-flex">
+  <div class="flex flex-col justify-center align-middle">
+    <button (click)="increaseCardCount()" mat-icon-button>
+      <mat-icon>add_circle</mat-icon>
+    </button>
+    <p class="text-center font-bold">{{card.count}}</p>
+    <button (click)="decreaseCardCount()" mat-icon-button>
+      <mat-icon>remove_circle</mat-icon>
+    </button>
+  </div>
+
+  <img [src]="card.cardImage" alt="Digimon Card" class="card-image m-auto" mat-card-image>
+</div>
+

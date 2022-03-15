@@ -1,4 +1,3 @@
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag-drop";
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {Store} from "@ngrx/store";
@@ -109,20 +108,12 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
     return count;
   }
 
-  drop(event: CdkDragDrop<IDeckCard[]>) {
-    if (event.previousContainer === event.container) {
-      moveItemInArray(
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex
-      );
-    } else {
-      transferArrayItem(
-        event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex,
-      );
-    }
+  changeCardCount(event: number, cards: IDeckCard[], card: IDeckCard) {
+    cards = cards.map(value => {
+      if (value.id === card.id) {
+        return {...card, count: event}
+      }
+      return value;
+    });
   }
 }

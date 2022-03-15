@@ -58,7 +58,7 @@
       <h2 class="text-center font-bold">EGG-DECK</h2>
       <div class="card-list flex flex-wrap min-h-fit">
         <div *ngFor="let card of eggs" class="card-box">
-          <digimon-deck-card *ngIf="fullCards" [card]="card" [stack]="stack"></digimon-deck-card>
+          <digimon-deck-card (countChange)="changeCardCount($event, mainDeck, card)" *ngIf="fullCards" [card]="card" [stack]="stack"></digimon-deck-card>
           <digimon-small-deck-card *ngIf="!fullCards" [card]="card"></digimon-small-deck-card>
         </div>
       </div>
@@ -69,7 +69,7 @@
       <h2 class="text-center font-bold">MAIN-DECK</h2>
       <div class="card-list flex flex-wrap">
         <div *ngFor="let card of mainDeck" class="card-box">
-          <digimon-deck-card *ngIf="fullCards" [card]="card" [stack]="stack"></digimon-deck-card>
+          <digimon-deck-card (countChange)="changeCardCount($event, mainDeck, card)" *ngIf="fullCards" [card]="card" [stack]="stack"></digimon-deck-card>
           <digimon-small-deck-card *ngIf="!fullCards" [card]="card"></digimon-small-deck-card>
         </div>
       </div>
