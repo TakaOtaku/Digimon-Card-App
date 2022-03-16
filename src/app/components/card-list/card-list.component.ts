@@ -13,8 +13,10 @@ import {selectCardListViewModel} from "../../store/digimon.selectors";
 export class CardListComponent implements OnInit, OnDestroy {
   @Input() public deckBuilder = false;
   @Input() public showCount = 100;
-  public cardsToShow: ICard[] = [];
+
   private cards: ICard[] = [];
+  public cardsToShow: ICard[] = [];
+
   private collection: ICountCard[] = [];
   collectionMode = true;
 
@@ -26,7 +28,7 @@ export class CardListComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.store.select(selectCardListViewModel).pipe(takeUntil(this.destroy$))
       .subscribe(({cards, collection, collectionMode}) => {
-        this.cards = cards;
+        this.cards = this.deckBuilder ? cards.filter(card => card.version === 'Normal') : cards;
         this.cardsToShow = this.cards.slice(0, this.showCount);
         this.collectionMode = this.deckBuilder ? false : collectionMode;
         this.collection = collection;

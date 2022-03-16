@@ -92,7 +92,7 @@ function applyTypeFilter(cards: ICard[], typeFilter: string[]): ICard[] {
 
   let returnArray = [] as ICard[];
   typeFilter.forEach(filter => {
-    const filteredCards: ICard[] = cards.filter(cards => cards.type.includes(filter));
+    const filteredCards: ICard[] = cards.filter(cards => cards.attribute.includes(filter));
     returnArray = [...new Set([...returnArray,...filteredCards])]
   })
   return returnArray;

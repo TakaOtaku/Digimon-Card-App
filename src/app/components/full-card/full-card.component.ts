@@ -20,7 +20,7 @@ export class FullCardComponent implements OnInit, OnDestroy {
   faPlus = faPlus;
   faMinus = faMinus;
 
-  cardWidth = 5 + 'vw';
+  cardWidth = 7 + 'vw';
   cardBorder = '2px solid black';
   cardRadius = '5px';
 

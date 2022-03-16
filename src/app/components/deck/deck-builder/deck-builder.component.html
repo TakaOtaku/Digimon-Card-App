@@ -1,4 +1,4 @@
-<div class="inline-flex w-100">
+<div class="inline-flex w-100 max-h-screen">
   <div class="grow w-2/3 border-2 border-slate-300 mr-2">
     <!-- Deck Top Line -->
     <div class="toolbar inline-flex flex-grow justify-stretch w-100 border-b-2 border-slate-600">
@@ -52,13 +52,19 @@
           <mat-icon>delete</mat-icon>
         </button>
       </div>
+
+      <div class="border-l-2 border-slate-600">
+        <button aria-label="Save the Deck." mat-flat-button (click)="save()">
+          <mat-icon>save</mat-icon>
+        </button>
+      </div>
     </div>
 
     <div class="card-container margin-top-5 w-100 border-4 border-slate-600 rounded-tl-lg rounded-br-lg">
       <h2 class="text-center font-bold">EGG-DECK</h2>
       <div class="card-list flex flex-wrap min-h-fit">
         <div *ngFor="let card of eggs" class="card-box">
-          <digimon-deck-card (countChange)="changeCardCount($event, mainDeck, card)" *ngIf="fullCards" [card]="card" [stack]="stack"></digimon-deck-card>
+          <digimon-deck-card (removeCard)="removeCard(card, 'eggs')" *ngIf="fullCards" [card]="card" [stack]="stack"></digimon-deck-card>
           <digimon-small-deck-card *ngIf="!fullCards" [card]="card"></digimon-small-deck-card>
         </div>
       </div>
@@ -69,7 +75,7 @@
       <h2 class="text-center font-bold">MAIN-DECK</h2>
       <div class="card-list flex flex-wrap">
         <div *ngFor="let card of mainDeck" class="card-box">
-          <digimon-deck-card (countChange)="changeCardCount($event, mainDeck, card)" *ngIf="fullCards" [card]="card" [stack]="stack"></digimon-deck-card>
+          <digimon-deck-card (removeCard)="removeCard(card, 'main')" *ngIf="fullCards" [card]="card" [stack]="stack"></digimon-deck-card>
           <digimon-small-deck-card *ngIf="!fullCards" [card]="card"></digimon-small-deck-card>
         </div>
       </div>
@@ -78,7 +84,7 @@
 
   <div class="grow w-1/3 border-2 border-slate-300 ml-2 max-h-screen">
     <digimon-filter-box [compact]="true" class="w-100"></digimon-filter-box>
-    <digimon-card-list [deckBuilder]="true" [showCount]="50" class="w-100 max-h-screen"></digimon-card-list>
+    <digimon-card-list [deckBuilder]="true" [showCount]="25" class="w-100 max-h-screen"></digimon-card-list>
   </div>
 </div>
 

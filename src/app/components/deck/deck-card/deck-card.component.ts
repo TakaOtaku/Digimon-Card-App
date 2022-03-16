@@ -10,7 +10,7 @@ export class DeckCardComponent implements OnInit {
   @Input() public card: IDeckCard;
   @Input() public stack: boolean;
 
-  @Output() public countChange = new EventEmitter<number>();
+  @Output() public removeCard = new EventEmitter<boolean>();
 
   constructor() {
   }
@@ -19,16 +19,19 @@ export class DeckCardComponent implements OnInit {
   }
 
   increaseCardCount(): void {
-    if (this.card.count === 4) {
+    this.card.count = this.card.count + 1;
+    if (this.card.count >= 4) {
+      this.card.count = 4;
       return;
     }
-    this.countChange.emit(++this.card.count);
   }
 
   decreaseCardCount(): void {
-    if (this.card.count === 0) {
+    this.card.count = this.card.count - 1;
+    if (this.card.count <= 0) {
+      this.card.count = 0;
+      this.removeCard.emit(true);
       return;
     }
-    this.countChange.emit(--this.card.count);
   }
 }

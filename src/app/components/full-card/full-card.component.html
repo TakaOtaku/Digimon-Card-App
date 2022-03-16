@@ -1,20 +1,19 @@
-<div>
-  <div [ngStyle]="{'width': cardWidth}" class="hover:scale-105 transition-transform relative">
-    <img *ngIf="card.version !== 'Normal'" [src]="getAA()" alt="AA-Banner" class="aa">
 
-    <img [lazyLoad]="card.cardImage" [ngClass]="{'grayscale': count === 0 && collectionMode, 'min-h-150': isMobile()}" [ngStyle]="{'border': cardBorder, 'border-radius': cardRadius}"
-         alt="Digimon Card"
-         class="m-auto" defaultImage="assets/images/Digimon-Card-Back.webp"
-         mat-card-image>
+<div [ngStyle]="{'width': cardWidth}" class="hover:scale-105 transition-transform relative">
+  <img *ngIf="card.version !== 'Normal'" [src]="getAA()" alt="AA-Banner" class="aa">
 
-    <button (click)="increaseCard(card.id)" *ngIf="collectionMode" class="plus card-button" mat-flat-button>
-      <fa-icon [icon]="faPlus"></fa-icon>
-    </button>
+  <img [lazyLoad]="card.cardImage" [ngClass]="{'grayscale': count === 0 && collectionMode, 'min-h-150': isMobile()}" [ngStyle]="{'border': cardBorder, 'border-radius': cardRadius}"
+       alt="Digimon Card"
+       class="m-auto" defaultImage="assets/images/Digimon-Card-Back.webp"
+       mat-card-image>
 
-    <p *ngIf="collectionMode" class="count text-center">{{count}}</p>
+  <button (click)="increaseCard(card.id)" *ngIf="collectionMode" class="plus card-button" mat-flat-button>
+    <fa-icon [icon]="faPlus"></fa-icon>
+  </button>
 
-    <button (click)="decreaseCard(card.id)" *ngIf="collectionMode" class="minus card-button" mat-flat-button>
-      <fa-icon [icon]="faMinus"></fa-icon>
-    </button>
-  </div>
+  <p *ngIf="collectionMode" class="count text-center">{{count}}</p>
+
+  <button (click)="decreaseCard(card.id)" *ngIf="collectionMode" class="minus card-button" mat-flat-button>
+    <fa-icon [icon]="faMinus"></fa-icon>
+  </button>
 </div>

@@ -101,7 +101,7 @@ const testDeck: IDeck = {
 
 export const initialState: IDigimonState = {
   deck: testDeck,
-  site: 2,
+  site: 1,
   filter: {
     searchFilter: '',
     cardCountFilter: null,

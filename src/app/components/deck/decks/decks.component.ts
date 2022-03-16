@@ -21,6 +21,13 @@ export class DecksComponent {
   }
 
   openDeckContext(deck: IDeck): void {
-    this.dialog.open(DeckContextMenuComponent, {data: deck});
+    const dialogRef = this.dialog.open(DeckContextMenuComponent, {data: deck});
+
+    dialogRef.afterClosed().subscribe(dialogResult => {
+      if(dialogResult) {
+        // Überschreibe das Deck hier und füge überschreibe alle Decks
+        debugger;
+      }
+    });
   }
 }

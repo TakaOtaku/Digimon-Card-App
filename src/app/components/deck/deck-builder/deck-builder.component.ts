@@ -102,18 +102,21 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
     });
   }
 
+  save(){
+
+  }
+
   getCardCount(cards: IDeckCard[]): number {
     let count = 0;
     cards.forEach(card => count += card.count);
     return count;
   }
 
-  changeCardCount(event: number, cards: IDeckCard[], card: IDeckCard) {
-    cards = cards.map(value => {
-      if (value.id === card.id) {
-        return {...card, count: event}
-      }
-      return value;
-    });
+  removeCard(card: IDeckCard, cards: string) {
+    if (cards === 'main') {
+      this.mainDeck = this.mainDeck.filter(value => value !== card);
+    } else {
+      this.eggs = this.eggs.filter(value => value !== card);
+    }
   }
 }

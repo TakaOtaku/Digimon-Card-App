@@ -1,6 +1,33 @@
 <div class="grid p-5">
-  <button class="mb-5" mat-flat-button color="primary" (click)="viewDeck()">View/Edit Deck</button>
-  <button class="mb-5" mat-flat-button color="accent" (click)="openExportDialog()">Export</button>
-  <button class="" mat-flat-button color="warn" (click)="deleteDeck()">Delete Deck</button>
+  <div class="flex flex-direction-col justify-evenly">
+    <mat-form-field appearance="fill" class="flex-grow">
+      <mat-label>Deck Name</mat-label>
+      <input matInput placeholder="Digimon Card Deck" [(ngModel)]="data.title">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="flex-grow">
+      <mat-label>Description</mat-label>
+      <input matInput placeholder="Description" [(ngModel)]="data.description">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="flex-grow">
+      <mat-label>Tags</mat-label>
+      <input matInput placeholder="Tags" [(ngModel)]="data.tags">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="width: 130px">
+      <mat-label>Color</mat-label>
+      <mat-select multiple formControlName="colorList">
+        <mat-option *ngFor="let color of colorList" [value]="color.name">{{color.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="flex flex-direction-col justify-evenly mt-5">
+    <button class="mb-5" mat-flat-button color="primary" (click)="saveDeck()">Save</button>
+    <button class="mb-5" mat-flat-button color="primary" (click)="viewDeck()">View/Edit Deck</button>
+    <button class="mb-5" mat-flat-button color="accent" (click)="openExportDialog()">Export</button>
+    <button class="" mat-flat-button color="warn" (click)="deleteDeck()">Delete Deck</button>
+  </div>
 </div>
 
