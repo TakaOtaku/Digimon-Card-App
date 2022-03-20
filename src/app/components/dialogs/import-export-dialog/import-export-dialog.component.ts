@@ -5,8 +5,9 @@ import {saveAs} from "file-saver";
 import {ToastrService} from "ngx-toastr";
 import {Subject, takeUntil} from "rxjs";
 import {ISave} from "../../../models";
-import {loadSave} from "../../../store/digimon.actions";
+import {loadSave, setCollection} from "../../../store/digimon.actions";
 import {selectSave} from "../../../store/digimon.selectors";
+import {ConfirmationDialogComponent} from "../confirmation-dialog/confirmation-dialog.component";
 import {ImportCollectionComponent} from "../import-collection/import-collection.component";
 
 @Component({
@@ -65,4 +66,21 @@ export class ImportExportDialogComponent implements OnInit {
     this.dialogRef.close();
   }
 
+  deleteSave() {
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      maxWidth: "400px",
+      data: {
+        title: "Are you sure?",
+        message: "You are about to permanently delete your collection."
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(dialogResult => {
+      if (dialogResult) {
+        this.store.dispatch(setCollection({collection: []}))
+      }
+    });
+
+    this.dialogRef.close();
+  }
 }

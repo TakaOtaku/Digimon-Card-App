@@ -10,14 +10,14 @@
       <input matInput placeholder="Description" [(ngModel)]="data.description">
     </mat-form-field>
 
-    <mat-form-field appearance="fill" class="flex-grow">
+    <!--mat-form-field appearance="fill" class="flex-grow">
       <mat-label>Tags</mat-label>
       <input matInput placeholder="Tags" [(ngModel)]="data.tags">
-    </mat-form-field>
+    </mat-form-field-->
 
     <mat-form-field appearance="fill" style="width: 130px">
       <mat-label>Color</mat-label>
-      <mat-select [formControl]="colorFilter">
+      <mat-select formControlName="colorFilter">
         <mat-option *ngFor="let color of colorList" [value]="color.name">{{color.name}}</mat-option>
       </mat-select>
     </mat-form-field>

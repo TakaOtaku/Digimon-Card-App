@@ -2,7 +2,7 @@ import {Component, Inject, OnDestroy, OnInit} from '@angular/core';
 import {FormControl} from "@angular/forms";
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {Store} from "@ngrx/store";
-import {Subject, takeUntil} from "rxjs";
+import {Subject} from "rxjs";
 import {IDeck} from "../../../models";
 import {deleteDeck, setDeck, setSite} from "../../../store/digimon.actions";
 import {SITES} from "../../main-page/main-page.component";
@@ -42,9 +42,11 @@ export class DeckContextMenuComponent implements OnInit, OnDestroy {
   }
 
   saveDeck(): void {
-    this.dialogRef.close(
-      {title: this.data.title, description: this.data.description, tags: this.data.tags, color: this.colorFilter.value.img}
-    );
+    this.dialogRef.close({
+      title: this.data.title,
+      description: this.data.description,
+      color: this.colorFilter.value.img
+    });
   }
 
   viewDeck(): void {

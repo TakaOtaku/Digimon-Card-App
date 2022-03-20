@@ -10,6 +10,7 @@ import {
   importDeck,
   increaseCardCount,
   loadSave,
+  setCollection,
   setSave
 } from "../digimon.actions";
 
@@ -26,6 +27,7 @@ export const initialState: ISave = {
 export const saveReducer = createReducer(
   initialState,
 
+  on(setCollection, (state, {collection}) => ({...state, collection})),
   on(addToCollection, (state, {collectionCards}) => ({
     ...state,
     collection: [...new Set([...state.collection, ...collectionCards])]

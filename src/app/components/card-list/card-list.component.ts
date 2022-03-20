@@ -54,4 +54,8 @@ export class CardListComponent implements OnInit, OnDestroy {
       this.store.dispatch(addToDeck({card: countCard}));
     }
   }
+
+  moreCardsThere(): boolean {
+    return this.cards.length > this.cardsToShow.length;
+  }
 }
