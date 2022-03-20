@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {Store} from "@ngrx/store";
 import {filter, Subject, takeUntil} from "rxjs";
+import * as uuid from "uuid";
 import {dynamicSort} from "../../../functions/filter.functions";
 import {ICard, IDeck, IDeckCard} from "../../../models";
 import {setDeck} from "../../../store/digimon.actions";
@@ -18,7 +19,7 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
   public mainDeck: IDeckCard[] = [];
   public sideDeck: IDeckCard[] = [];
 
-  public deck: IDeck = {cards: []};
+  public deck: IDeck = {id: uuid.v4(), cards: []};
   private allCards: ICard[] = [];
 
   public fullCards = true;

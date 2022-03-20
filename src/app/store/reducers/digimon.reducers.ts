@@ -3,6 +3,7 @@ import {IDeck, IDigimonState} from "../../models";
 import {addToDeck, changeFilter, changeSort, setDeck, setSite} from '../digimon.actions';
 
 const testDeck: IDeck = {
+  id: '0',
   cards: [
     {
       "count": 3,

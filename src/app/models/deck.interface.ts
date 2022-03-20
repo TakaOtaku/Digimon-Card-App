@@ -1,6 +1,7 @@
 import {ICountCard} from "./count-card.interface";
 
 export interface IDeck {
+  id: string;
   cards: ICountCard[];
   sideDeck?: ICountCard[];
   title?: string;

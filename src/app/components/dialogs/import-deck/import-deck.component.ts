@@ -6,6 +6,7 @@ import {Subject, takeUntil} from "rxjs";
 import {importDeck} from 'src/app/store/digimon.actions';
 import {ICard, IDeck, IDeckCard} from "../../../models";
 import {selectAllCards} from "../../../store/digimon.selectors";
+import * as uuid from 'uuid';
 
 @Component({
   selector: 'digimon-import-deck',
@@ -59,7 +60,7 @@ export class ImportDeckComponent implements OnDestroy {
   }
 
   importDeck() {
-    if(this.deckText === '') {return;}
+    if(this.deckText === '') return;
 
     let result: string[] = this.deckText.split("\n");
     const deck: IDeck = this.parseDeck(result);
@@ -70,6 +71,7 @@ export class ImportDeckComponent implements OnDestroy {
 
   private parseDeck(textArray: string[]): IDeck {
     const deck: IDeck = {
+      id: uuid.v4(),
       cards: []
     }
     textArray.forEach(line => {
