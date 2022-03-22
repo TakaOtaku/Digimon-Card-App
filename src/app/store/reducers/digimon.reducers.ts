@@ -4,6 +4,8 @@ import {addToDeck, changeFilter, changeSort, setDeck, setSite} from '../digimon.
 
 const testDeck: IDeck = {
   id: '0',
+  title: '[BT7] Three Musketeers',
+  color: {name:'White', img: 'assets/decks/white.svg'},
   cards: [
     {
       "count": 3,
@@ -102,7 +104,7 @@ const testDeck: IDeck = {
 
 export const initialState: IDigimonState = {
   deck: testDeck,
-  site: 1,
+  site: 2,
   filter: {
     searchFilter: '',
     cardCountFilter: null,

@@ -4,6 +4,7 @@ import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog
 import {Store} from "@ngrx/store";
 import {Subject} from "rxjs";
 import {IDeck} from "../../../models";
+import {IColor} from "../../../models/color.interface";
 import {deleteDeck, setDeck, setSite} from "../../../store/digimon.actions";
 import {SITES} from "../../main-page/main-page.component";
 import {ConfirmationDialogComponent} from "../confirmation-dialog/confirmation-dialog.component";
@@ -15,8 +16,10 @@ import {ExportDeckComponent} from "../export-deck/export-deck.component";
   styleUrls: ['./deck-context-menu.component.css']
 })
 export class DeckContextMenuComponent implements OnInit, OnDestroy {
-  colorFilter = new FormControl({});
-  colorList: any[] = [
+  title: string;
+  description: string;
+  color: IColor = {name: 'Red', img: 'assets/decks/red.svg'};
+  colorList: IColor[] = [
     {name: 'Red', img: 'assets/decks/red.svg'},
     {name: 'Blue', img: 'assets/decks/blue.svg'},
     {name: 'Yellow', img: 'assets/decks/yellow.svg'},
@@ -35,28 +38,23 @@ export class DeckContextMenuComponent implements OnInit, OnDestroy {
     @Inject(MAT_DIALOG_DATA) public data: IDeck
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.title = this.data.title ?? '';
+    this.description = this.data.description ?? '';
+    this.color = this.data.color;
+  }
 
   ngOnDestroy() {
     this.destroy$.next(true);
   }
 
   saveDeck(): void {
-    this.dialogRef.close({
-      title: this.data.title,
-      description: this.data.description,
-      color: this.colorFilter.value.img
-    });
+    this.dialogRef.close({deck: {...this.data, title: this.title, description: this.description, color: this.color}});
   }
 
   viewDeck(): void {
     this.store.dispatch(setDeck({deck: this.data}));
     this.store.dispatch(setSite({site: SITES.DeckBuilder}));
-    this.dialogRef.close();
-  }
-
-  openExportDialog(): void {
-    this.dialog.open(ExportDeckComponent, {data: this.data, width: '90vmin', height: '550px'});
     this.dialogRef.close();
   }
 

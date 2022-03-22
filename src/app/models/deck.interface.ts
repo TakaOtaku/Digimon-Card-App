@@ -1,3 +1,4 @@
+import {IColor} from "./color.interface";
 import {ICountCard} from "./count-card.interface";
 
 export interface IDeck {
@@ -6,7 +7,7 @@ export interface IDeck {
   sideDeck?: ICountCard[];
   title?: string;
   description?: string;
-  color?: string;
+  color: IColor;
   cardImage?: string;
   tags?: string[];
 }

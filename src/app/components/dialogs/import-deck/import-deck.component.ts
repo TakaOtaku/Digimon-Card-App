@@ -4,9 +4,9 @@ import {Store} from "@ngrx/store";
 import {ToastrService} from "ngx-toastr";
 import {Subject, takeUntil} from "rxjs";
 import {importDeck} from 'src/app/store/digimon.actions';
+import * as uuid from 'uuid';
 import {ICard, IDeck, IDeckCard} from "../../../models";
 import {selectAllCards} from "../../../store/digimon.selectors";
-import * as uuid from 'uuid';
 
 @Component({
   selector: 'digimon-import-deck',
@@ -46,15 +46,9 @@ export class ImportDeckComponent implements OnDestroy {
     let fileReader = new FileReader();
     fileReader.onload = (e) => {
       try {
-        let result = (fileReader.result as string).split("\n");
-        const deck: IDeck = this.parseDeck(result);
-        this.store.dispatch(importDeck({deck}));
-        this.toastr.success('A new deck was imported.', 'Deck Imported')
-        this.dialogRef.close();
-      } catch (e) {
-        this.toastr.error('There was an error with the deck import.', 'Error')
-        this.dialogRef.close();
-      }
+        this.deckText = (fileReader.result as string);
+        this.importDeck();
+      } catch (e) {}
     }
     fileReader.readAsText(input.files[0]);
   }
@@ -64,6 +58,10 @@ export class ImportDeckComponent implements OnDestroy {
 
     let result: string[] = this.deckText.split("\n");
     const deck: IDeck = this.parseDeck(result);
+    if(deck.cards.length === 0) {
+      this.toastr.warning('No Cards where found. Is your format correct?', 'Deck Import Failed')
+      return;
+    }
     this.store.dispatch(importDeck({deck}));
     this.toastr.success('A new deck was imported.', 'Deck Imported')
     this.dialogRef.close();
@@ -72,6 +70,8 @@ export class ImportDeckComponent implements OnDestroy {
   private parseDeck(textArray: string[]): IDeck {
     const deck: IDeck = {
       id: uuid.v4(),
+      title: 'Imported Deck',
+      color: {name: 'White', img: 'assets/decks/white.svg'},
       cards: []
     }
     textArray.forEach(line => {
@@ -91,6 +91,12 @@ export class ImportDeckComponent implements OnDestroy {
       matches = matches.filter(string => {
         const split = string.split('-');
         return +split[split.length - 1] >>> 0;
+      });
+      matches = matches.map(string => {
+        if(string.includes('\r')) {
+          return string.replace('\r', '');
+        }
+        return string;
       })
       if(matches.length === 0) {
         return null;

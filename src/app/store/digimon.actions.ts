@@ -96,6 +96,11 @@ export const deleteDeck = createAction(
   props<{ deck: IDeck }>()
 );
 
+export const changeDeck = createAction(
+  '[Digimon Deck] Change Digimon Deck',
+  props<{ deck: IDeck }>()
+);
+
 export const addToDeck = createAction(
   '[Digimon Deck] Add a Digimon Card',
   props<{ card: ICountCard }>()

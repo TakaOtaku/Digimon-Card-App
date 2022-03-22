@@ -1,10 +1,11 @@
 import {createReducer, on} from '@ngrx/store';
-import {ICountCard, ISave} from "../../models";
+import * as uuid from "uuid";
+import {ICountCard, IDeck, ISave} from "../../models";
 import {
   addToCollection,
   changeCardCount,
   changeCardSize,
-  changeCollectionMode,
+  changeCollectionMode, changeDeck,
   decreaseCardCount,
   deleteDeck,
   importDeck,
@@ -97,6 +98,15 @@ export const saveReducer = createReducer(
 
   //region Deck Reducers
   on(importDeck, (state, {deck}) => ({...state, decks: [...state.decks, deck]})),
+  on(changeDeck, (state, {deck}) => {
+    const decks = state.decks.map(value => {
+      if(value?.id === deck.id) {
+        return deck;
+      }
+      return value;
+    });
+    return ({...state, decks: [...new Set(decks)]})
+  }),
   on(deleteDeck, (state, {deck}) => ({...state, decks: [...new Set(state.decks.filter(item => item !== deck))]})),
   //endregion
 );

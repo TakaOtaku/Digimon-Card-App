@@ -16,10 +16,10 @@ export class DigimonEffects {
         DigimonActions.decreaseCardCount,
         DigimonActions.setSave,
         DigimonActions.importDeck,
+        DigimonActions.changeDeck,
         DigimonActions.deleteDeck,
         DigimonActions.changeCardSize,
         DigimonActions.changeCollectionMode,
-        DigimonActions.deleteDeck,
         DigimonActions.addToCollection
       ),
       switchMap(() => this.store.select(selectSave)
@@ -53,7 +53,6 @@ export class DigimonEffects {
 
   constructor(
     private store: Store,
-    private actions$: Actions,
-    private cookies: CookieService
+    private actions$: Actions
   ) {}
 }

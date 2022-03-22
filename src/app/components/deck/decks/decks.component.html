@@ -6,7 +6,7 @@
             (click)="openDeckContext(deck)">
 
     <div class="flex justify-center">
-      <img mat-card-image [src]="deck.color ?? 'assets/decks/white.svg'" alt="Digimon Deck Image">
+      <img mat-card-image [src]="deck.color?.img ?? 'assets/decks/white.svg'" alt="Digimon Deck Image">
     </div>
 
     <p class="text-center text-shadow text-white text-oneline">{{deck.title ?? 'Digimon Card Deck'}}</p>

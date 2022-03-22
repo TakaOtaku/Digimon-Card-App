@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {Store} from "@ngrx/store";
 import {IDeck} from "../../../models";
+import {changeDeck} from "../../../store/digimon.actions";
 import {selectDecks} from "../../../store/digimon.selectors";
 import {DeckContextMenuComponent} from "../../dialogs/deck-context-menu/deck-context-menu.component";
 import {ImportDeckComponent} from "../../dialogs/import-deck/import-deck.component";
@@ -25,8 +26,7 @@ export class DecksComponent {
 
     dialogRef.afterClosed().subscribe(dialogResult => {
       if(dialogResult) {
-        // Überschreibe das Deck hier und füge überschreibe alle Decks
-        debugger;
+        this.store.dispatch(changeDeck({deck: dialogResult.deck}));
       }
     });
   }

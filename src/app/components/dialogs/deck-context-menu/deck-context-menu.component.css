@@ -1,3 +1,7 @@
 mat-card-actions {
   padding: 3px;
 }
+
+.m-2 {
+  margin: 2px !important;
+}
