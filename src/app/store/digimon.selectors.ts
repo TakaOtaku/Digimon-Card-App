@@ -1,5 +1,5 @@
 import {createFeatureSelector, createSelector} from "@ngrx/store";
-import {ICard, ICountCard, IDeck, IDigimonCards, IDigimonState, IFilter, ISave, ISettings, ISort} from "../models";
+import {ICard, ICountCard, IDeck, IDigimonCards, IDigimonState, IFilter, ISave, ISettings, ISort} from "../../models";
 
 export const selectIDigimonCards = createFeatureSelector<IDigimonCards>('digimonCards');
 export const selectSave = createFeatureSelector<ISave>('save');
@@ -71,11 +71,9 @@ export const selectCardListViewModel = createSelector(
 );
 
 export const selectNavBarViewModel = createSelector(
-  selectCardSize,
   selectCollectionMode,
   selectSite,
-  selectSort,
-  (cardSize: number, collectionMode: boolean, site: number, sort: ISort) => ({cardSize, collectionMode, site, sort})
+  (collectionMode: boolean, site: number) => ({collectionMode, site})
 );
 
 export const selectFilterBoxViewModel = createSelector(

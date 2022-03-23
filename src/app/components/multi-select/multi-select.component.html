@@ -1,0 +1,7 @@
+<p-multiSelect [options]="options" [group]="group" [formControl]="formControl" defaultLabel="{{label}}" scrollHeight="250px" display="chip">
+  <ng-template let-group pTemplate="group">
+    <div class="flex align-items-center">
+      <span>{{group.label}}</span>
+    </div>
+  </ng-template>
+</p-multiSelect>

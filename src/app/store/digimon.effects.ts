@@ -1,7 +1,6 @@
 import {Injectable} from "@angular/core";
 import {Actions, createEffect, ofType} from "@ngrx/effects";
 import {Store} from "@ngrx/store";
-import {CookieService} from "ngx-cookie-service";
 import {catchError, EMPTY, map, switchMap, tap} from "rxjs";
 import {filterCards} from "../functions/filter.functions";
 import * as DigimonActions from "./digimon.actions";
@@ -9,7 +8,7 @@ import {selectChangeFilterEffect, selectSave} from "./digimon.selectors";
 
 @Injectable()
 export class DigimonEffects {
-  saveCookie$ = createEffect(() => this.actions$.pipe(
+  saveLocalStorage$ = createEffect(() => this.actions$.pipe(
       ofType(
         DigimonActions.changeCardCount,
         DigimonActions.increaseCardCount,
@@ -27,7 +26,7 @@ export class DigimonEffects {
           map(save => {
             localStorage.setItem('Digimon-Card-Collector', JSON.stringify(save));
           }),
-          catchError((err) => {
+          catchError(() => {
             return EMPTY
           })
         ))

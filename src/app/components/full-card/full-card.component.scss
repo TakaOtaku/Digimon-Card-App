@@ -1,31 +1,46 @@
-.card-button {
-  position: absolute;
-  cursor: pointer;
-  background: white;
-  opacity: 0.8;
-  color: black;
-  z-index: 2;
+.card-buttons {
+  button, p {
+    position: absolute;
+    cursor: pointer;
+    z-index: 2;
+    bottom: 0;
 
-  min-height: 10%;
-  min-width: 15%;
+    @media (min-width: 1024px) {
+      bottom: 5px;
+    }
+    @media (min-width: 1536px) {
+      bottom: 7px;
+    }
+  }
+
+  mat-icon {
+    color: white !important;
+  }
 }
 
-.plus {
-  bottom: 5px;
-  right: 5px;
+.plus  {
+  right: 0;
+  @media (min-width: 1024px) {
+    right: 5px;
+  }
+  @media (min-width: 1536px) {
+    right: 7px;
+  }
 }
-
 .minus {
-  bottom: 5px;
-  left: 5px;
+  left:  0;
+  @media (min-width: 1024px) {
+    left: 5px;
+  }
+  @media (min-width: 1536px) {
+    left: 7px;
+  }
 }
 
 .count {
-  position: absolute;
   font-size: 32px;
   color: white;
-  z-index: 2;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
 
   display: block;
   bottom: 5px;
@@ -43,7 +58,7 @@
   margin-right: auto !important;
   top: 5px;
   z-index: 2;
-  transform: scale(1.2);
+  transform: scale(1);
 }
 
 img {
@@ -57,8 +72,4 @@ img {
 
 .text-center {
   text-align: center;
-}
-
-.min-h-150 {
-  min-height: 150px;
 }

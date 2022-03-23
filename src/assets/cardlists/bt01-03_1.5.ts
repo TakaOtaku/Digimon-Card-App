@@ -1,4 +1,4 @@
-import {ICard} from "../../app/models";
+import {ICard} from "../../models";
 
 export const BT01_03_1_5CardList: ICard[] = [
   {

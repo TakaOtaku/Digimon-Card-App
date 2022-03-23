@@ -1,75 +1,46 @@
-<div [formGroup]="filterFormGroup" class="flex">
-
-  <div *ngIf="compact" class="flex flex-grow">
-    <!-- Search -->
-    <mat-form-field class="flex-grow" appearance="fill">
-      <mat-label>Text Search</mat-label>
-      <input matInput type="text" formControlName="searchFilter">
-    </mat-form-field>
-    <button mat-stroked-button color="primary" class="h-100" (click)="openFilterDialog()">Filter</button>
+<div class="flex surface-ground pb-2">
+  <div *ngIf="compact" class="inline-flex w-full justify-center">
+    <span class="p-input-icon-left w-5/6" [ngStyle]="{display: 'inline-flex'}">
+      <i class="pi pi-search"></i>
+      <input type="text" pInputText [formControl]="searchFilter" placeholder="Search" class="w-full">
+    </span>
+    <button (click)="openFilterDialog()" pButton type="button" icon="pi pi-filter-fill w-1/6" label="Filter/Sort"></button>
   </div>
 
-  <div *ngIf="!compact" class="flex flex-grow">
-    <!-- Search -->
-    <mat-form-field class="flex-grow" appearance="fill">
-      <mat-label>Text Search</mat-label>
-      <input matInput type="text" formControlName="searchFilter">
-    </mat-form-field>
-    <!-- Number -->
-    <mat-form-field appearance="fill" style="width: 130px">
-      <mat-label>Card Count</mat-label>
-      <input matInput type="number" formControlName="cardCountFilter">
-    </mat-form-field>
-    <!-- Set Dropdown -->
-    <mat-form-field appearance="fill" style="width: 130px">
-      <mat-label>Set</mat-label>
-      <mat-select multiple formControlName="setFilter">
-        <mat-option *ngFor="let value of setList" [value]="value">{{value}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <!-- Card Type Dropdown -->
-    <mat-form-field appearance="fill" style="width: 130px">
-      <mat-label>Card-Type</mat-label>
-      <mat-select multiple formControlName="cardTypeFilter">
-        <mat-option *ngFor="let value of cardTypeList" [value]="value">{{value}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <!-- Color Dropdown -->
-    <mat-form-field appearance="fill" style="width: 130px">
-      <mat-label>Color</mat-label>
-      <mat-select multiple formControlName="colorFilter">
-        <mat-option *ngFor="let value of colorList" [value]="value">{{value}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <!-- Type Dropdown -->
-    <mat-form-field appearance="fill" style="width: 130px">
-      <mat-label>Type</mat-label>
-      <mat-select multiple formControlName="typeFilter">
-        <mat-option *ngFor="let value of typeList" [value]="value">{{value}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <!-- Lv Dropdown -->
-    <mat-form-field appearance="fill" style="width: 130px">
-      <mat-label>Lv</mat-label>
-      <mat-select multiple formControlName="lvFilter">
-        <mat-option *ngFor="let value of lvList" [value]="value">{{value}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <!-- Rarity Dropdown -->
-    <mat-form-field appearance="fill" style="width: 130px">
-      <mat-label>Rarity</mat-label>
-      <mat-select multiple formControlName="rarityFilter">
-        <mat-option *ngFor="let value of rarityList" [value]="value">{{value}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <!-- Version Dropdown -->
-    <mat-form-field appearance="fill"  style="width: 130px">
-      <mat-label>Version</mat-label>
-      <mat-select multiple formControlName="versionFilter">
-        <mat-option *ngFor="let value of versionList" [value]="value">{{value}}</mat-option>
-      </mat-select>
-    </mat-form-field>
+  <div *ngIf="!compact" class="inline-flex w-full justify-center">
+    <span class="p-input-icon-left" [ngStyle]="{display: 'inline-flex'}">
+      <i class="pi pi-search"></i>
+      <input type="text" pInputText [formControl]="searchFilter" placeholder="Search" class="w-full">
+    </span>
+
+    <p-inputNumber [formControl]="countFilter" [showButtons]="true" mode="decimal" [min]="0"></p-inputNumber>
+
+    <digimon-multi-select ngDefaultControl [formControl]="setFilter" [options]="groupedSets" [group]="true" label="Set"></digimon-multi-select>
+    <digimon-multi-select ngDefaultControl [formControl]="cardTypeFilter" [options]="cardTypes" [group]="false" label="Card-Type"></digimon-multi-select>
+    <digimon-multi-select ngDefaultControl [formControl]="colorFilter" [options]="colors" [group]="false" label="Color"></digimon-multi-select>
+    <digimon-multi-select ngDefaultControl [formControl]="typeFilter" [options]="types" [group]="false" label="Type"></digimon-multi-select>
+    <digimon-multi-select ngDefaultControl [formControl]="lvFilter" [options]="lvs" [group]="false" label="Level"></digimon-multi-select>
+    <digimon-multi-select ngDefaultControl [formControl]="rarityFilter" [options]="rarities" [group]="false" label="Rarity"></digimon-multi-select>
+    <digimon-multi-select ngDefaultControl [formControl]="versionFilter" [options]="versions" [group]="false" label="Version"></digimon-multi-select>
   </div>
 </div>
 
+<p-dialog header="Filter and Sort" [(visible)]="display" [style]="{width: '50vw', height: '55vh'}" [baseZIndex]="10000">
+  <span class="p-input-icon-left" [ngStyle]="{display: 'inline-flex'}">
+    <i class="pi pi-search"></i>
+    <input type="text" pInputText [formControl]="searchFilter" placeholder="Search" class="w-full">
+  </span>
 
+  <p-inputNumber [formControl]="countFilter" [showButtons]="true" mode="decimal" [min]="0"></p-inputNumber>
+
+  <div class="grid grid-cols-3">
+    <digimon-multi-select ngDefaultControl class="dialog" [formControl]="setFilter" [options]="groupedSets" [group]="true" label="Set"></digimon-multi-select>
+    <digimon-multi-select ngDefaultControl class="dialog" [formControl]="cardTypeFilter" [options]="cardTypes" [group]="false" label="Card-Type"></digimon-multi-select>
+    <digimon-multi-select ngDefaultControl class="dialog" [formControl]="colorFilter" [options]="colors" [group]="false" label="Color"></digimon-multi-select>
+    <digimon-multi-select ngDefaultControl class="dialog" [formControl]="typeFilter" [options]="types" [group]="false" label="Type"></digimon-multi-select>
+    <digimon-multi-select ngDefaultControl class="dialog" [formControl]="lvFilter" [options]="lvs" [group]="false" label="Level"></digimon-multi-select>
+    <digimon-multi-select ngDefaultControl class="dialog" [formControl]="rarityFilter" [options]="rarities" [group]="false" label="Rarity"></digimon-multi-select>
+    <div></div>
+    <digimon-multi-select ngDefaultControl class="dialog" [formControl]="versionFilter" [options]="versions" [group]="false" label="Version"></digimon-multi-select>
+  </div>
+</p-dialog>

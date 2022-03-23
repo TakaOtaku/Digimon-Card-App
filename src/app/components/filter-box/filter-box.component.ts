@@ -1,11 +1,9 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
-import {MatDialog} from "@angular/material/dialog";
 import {Store} from "@ngrx/store";
 import {Subject, takeUntil} from "rxjs";
 import {changeFilter} from "../../store/digimon.actions";
-import {selectFilterBoxViewModel} from "../../store/digimon.selectors";
-import {FilterDialogComponent} from "../dialogs/filter-dialog/filter-dialog.component";
+import {selectFilter} from "../../store/digimon.selectors";
 
 @Component({
   selector: 'digimon-filter-box',
@@ -15,42 +13,92 @@ import {FilterDialogComponent} from "../dialogs/filter-dialog/filter-dialog.comp
 export class FilterBoxComponent implements OnInit, OnDestroy {
   @Input() public compact = false;
 
-  filterFormGroup: FormGroup = new FormGroup({
-    searchFilter: new FormControl(''),
-    cardCountFilter: new FormControl(),
-    setFilter: new FormControl([]),
-    colorFilter: new FormControl([]),
-    cardTypeFilter: new FormControl([]),
-    typeFilter: new FormControl([]),
-    lvFilter: new FormControl([]),
-    rarityFilter: new FormControl([]),
-    versionFilter: new FormControl([]),
-  });
-  setList: string[] = ['P-', 'BT1', 'BT2', 'BT3', 'BT4', 'BT5', 'BT6', 'BT7', 'EX1', 'ST1', 'ST2', 'ST3', 'ST4', 'ST5', 'ST6', 'ST7', 'ST8'];
-  colorList: string[] = ['Red', 'Blue', 'Yellow', 'Green', 'Black', 'Purple', 'White'];
-  cardTypeList: string[] = ['Digi-Egg', 'Digimon', 'Tamer', 'Option'];
-  typeList: string[] = ['Data', 'Vaccine', 'Virus', 'Free', 'Variable'];
-  lvList: string[] = ['Lv.2', 'Lv.3', 'Lv.4', 'Lv.5', 'Lv.6', 'Lv.7'];
-  rarityList: string[] = ['C', 'UC', 'R', 'SR', 'SEC'];
-  versionList: string[] = ['Normal', 'AA', 'Stamped'];
+  display = false;
+
+  private formGroup: FormGroup;
+  searchFilter = new FormControl('');
+  countFilter = new FormControl();
+
+  setFilter = new FormControl([]);
+  groupedSets = [
+    {
+      label: 'Standard', value: 'displays',
+      items: [
+        {label: 'BT1', value: 'BT1'},
+        {label: 'BT2', value: 'BT2'},
+        {label: 'BT3', value: 'BT3'},
+        {label: 'BT4', value: 'BT4'},
+        {label: 'BT5', value: 'BT5'},
+        {label: 'BT6', value: 'BT6'},
+        {label: 'BT7', value: 'BT7'}
+      ]
+    },
+    {
+      label: 'Extra', value: 'extra',
+      items: [
+        {label: 'EX1', value: 'EX1'}
+      ]
+    },
+    {
+      label: 'Starter Decks', value: 'starter',
+      items: [
+        {label: 'ST1', value: 'ST1'},
+        {label: 'ST2', value: 'ST2'},
+        {label: 'ST3', value: 'ST3'},
+        {label: 'ST4', value: 'ST4'},
+        {label: 'ST5', value: 'ST5'},
+        {label: 'ST6', value: 'ST6'},
+        {label: 'ST7', value: 'ST7'},
+        {label: 'ST8', value: 'ST8'}
+      ]
+    }
+  ];
+
+  cardTypeFilter = new FormControl([]);
+  cardTypes: string[] = ['Digi-Egg', 'Digimon', 'Tamer', 'Option'];
+
+  colorFilter = new FormControl([]);
+  colors: string[] = ['Red', 'Blue', 'Yellow', 'Green', 'Black', 'Purple', 'White'];
+
+  typeFilter = new FormControl([]);
+  types: string[] = ['Data', 'Vaccine', 'Virus', 'Free', 'Variable'];
+
+  lvFilter = new FormControl([]);
+  lvs: string[] = ['Lv.2', 'Lv.3', 'Lv.4', 'Lv.5', 'Lv.6', 'Lv.7'];
+
+  rarityFilter = new FormControl([]);
+  rarities: string[] = ['P', 'C', 'U', 'R', 'SR', 'SEC'];
+
+  versionFilter = new FormControl([]);
+  versions: string[] = ['Normal', 'AA', 'Stamp'];
 
   private destroy$ = new Subject();
 
-  constructor(
-    private store: Store,
-    public dialog: MatDialog
-  ) {}
+  constructor(private store: Store) {
+    this.formGroup = new FormGroup({
+      searchFilter: this.searchFilter,
+      cardCountFilter: this.countFilter,
+      setFilter: this.setFilter,
+      colorFilter: this.colorFilter,
+      cardTypeFilter: this.cardTypeFilter,
+      typeFilter: this.typeFilter,
+      lvFilter: this.lvFilter,
+      rarityFilter: this.rarityFilter,
+      versionFilter: this.versionFilter,
+    })
+  }
 
   ngOnInit(): void {
-    this.store.select(selectFilterBoxViewModel).pipe(takeUntil(this.destroy$))
-      .subscribe(({filter}) => {
-        this.filterFormGroup.setValue(filter,
-          {emitEvent: false});
+    this.store.select(selectFilter).pipe(takeUntil(this.destroy$))
+      .subscribe((filter) => {
+        this.formGroup.setValue(filter, {emitEvent: false});
       });
 
-    this.filterFormGroup.valueChanges
+    this.formGroup.valueChanges
       .pipe(takeUntil(this.destroy$))
-      .subscribe((filter) => this.store.dispatch(changeFilter({filter})));
+      .subscribe((filter) => {
+        this.store.dispatch(changeFilter({filter}))
+      });
   }
 
   ngOnDestroy() {
@@ -58,6 +106,6 @@ export class FilterBoxComponent implements OnInit, OnDestroy {
   }
 
   openFilterDialog() {
-    this.dialog.open(FilterDialogComponent, {width: '90vmin', height: '550px'});
+    this.display = true;
   }
 }

@@ -4,7 +4,7 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {Store} from "@ngrx/store";
 import {ToastrService} from "ngx-toastr";
 import {Subject, takeUntil} from "rxjs";
-import {ICard, IDeck} from "../../../models";
+import {ICard, IDeck} from "../../../../models";
 import {selectAllCards} from "../../../store/digimon.selectors";
 
 @Component({
@@ -24,7 +24,6 @@ export class ExportDeckComponent implements OnInit, OnDestroy {
 
   constructor(
     private store: Store,
-    private toastr: ToastrService,
     public dialogRef: MatDialogRef<ExportDeckComponent>,
     @Inject(MAT_DIALOG_DATA) public deck: IDeck
   ) {

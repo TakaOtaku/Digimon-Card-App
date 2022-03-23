@@ -1,0 +1,24 @@
+<button type="button" pButton pRipple icon="pi pi-bars" label="" (click)="menu.toggle($event)"></button>
+<p-menu #menu [popup]="true" [model]="items"></p-menu>
+
+<p-dialog header="Import/Export" [(visible)]="display" [style]="{width: '50vw'}" [baseZIndex]="10000">
+  <div class="flex justify-between">
+    <button (click)="importCollectionDialog()" pButton type="button" icon="pi pi-upload" label="Import Collection"></button>
+    <input #fileUpload (change)="handleFileInput($event.target)" accept=".json" [ngStyle]="{display: 'none'}" type="file">
+    <button (click)="fileUpload.click()" pButton type="button" icon="pi pi-upload" label="Import Save"></button>
+    <button (click)="exportSave()" pButton type="button" icon="pi pi-download" label="Export Save"></button>
+    <button (click)="deleteSave($event)" pButton type="button" icon="pi pi-times" label="Delete Save"></button>
+  </div>
+</p-dialog>
+
+<p-dialog header="Import Collection" [(visible)]="importDisplay" [style]="{width: '50vw'}" [baseZIndex]="10000">
+    <div>
+      <p>Copy your collection in the text area and press import.</p>
+      <textarea pInputTextarea [(ngModel)]="collectionText" [placeholder]="importPlaceholder" class="border-2 border-black-500 min-h-[150px] min-w-full" id="text-import"></textarea>
+    </div>
+    <div class="w-full flex justify-end">
+      <button (click)="importCollection()" pButton type="button" icon="pi pi-upload" label="Import"></button>
+    </div>
+</p-dialog>
+
+<p-confirmPopup></p-confirmPopup>

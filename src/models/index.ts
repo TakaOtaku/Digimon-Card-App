@@ -1,4 +1,5 @@
 export * from './card.interface';
+export * from './color.interface';
 export * from './count-card.interface';
 export * from './deck.interface';
 export * from './deck-card.interface';

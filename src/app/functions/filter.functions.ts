@@ -1,4 +1,4 @@
-import {ICard, ICountCard, IFilter, ISort} from "../models";
+import {ICard, ICountCard, IFilter, ISort} from "../../models";
 
 export function filterCards(cards: ICard[], collection: ICountCard[], filter: IFilter, sort: ISort): ICard[] {
   let filteredCards = applyCardCountFilter(cards, collection, filter.cardCountFilter);
@@ -33,7 +33,7 @@ function applyCardCountFilter(cards: ICard[], collection: ICountCard[], cardCoun
 
   // 0: Take all Cards that are 0 or not in the Collection
   // >0: Take all Cards that are >0 that are in the Collection
-  let filteredCards: ICard[] = [];
+  let filteredCards: ICard[];
   if (cardCountFilter === 0) {
     const collectionCards = collection.filter(card => card.count !== cardCountFilter);
     filteredCards = cards.filter(card => !containsCard(card.id, collectionCards))
@@ -139,12 +139,6 @@ function applySortOrder(cards: ICard[], sort: ISort): ICard[] {
   return sort.ascOrder ? returnArray.sort(dynamicSort(sort.sortBy.element)) : returnArray.sort(dynamicSort(`-${sort.sortBy.element}`));
 }
 //endregion
-
-//region Basic Filter Functions
-function search(user: any){
-  // @ts-ignore
-  return Object.keys(this).every((key) => user[key] === this[key]);
-}
 
 export function dynamicSort(property: string): any {
   let sortOrder = 1;

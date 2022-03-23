@@ -1,6 +1,6 @@
 import {createReducer, on} from '@ngrx/store';
 import {setupDigimonCards} from "../../functions/digimon-card.functions";
-import {IDigimonCards} from "../../models";
+import {IDigimonCards} from "../../../models";
 import {setFilteredDigimonCards} from '../digimon.actions';
 
 export const initialState: IDigimonCards = {

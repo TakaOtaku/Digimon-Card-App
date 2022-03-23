@@ -3,11 +3,11 @@ import {MatDialog} from "@angular/material/dialog";
 import {Store} from "@ngrx/store";
 import {filter, Subject, takeUntil} from "rxjs";
 import * as uuid from "uuid";
-import {dynamicSort} from "../../../functions/filter.functions";
+import {dynamicSort} from "../../functions/filter.functions";
 import {ICard, IDeck, IDeckCard} from "../../../models";
-import {setDeck} from "../../../store/digimon.actions";
-import {selectDeckBuilderViewModel} from "../../../store/digimon.selectors";
-import {ConfirmationDialogComponent} from "../../dialogs/confirmation-dialog/confirmation-dialog.component";
+import {setDeck} from "../../store/digimon.actions";
+import {selectDeckBuilderViewModel} from "../../store/digimon.selectors";
+import {ConfirmationDialogComponent} from "../../components/dialogs/confirmation-dialog/confirmation-dialog.component";
 
 @Component({
   selector: 'digimon-deck-builder',

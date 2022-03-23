@@ -8,3 +8,19 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
 mat-dialog-container {
   padding: 0 !important
 }
+
+.primary-color {
+  color: var(--primary-color);
+}
+
+.surface-card {
+  background-color: var(--surface-card);
+}
+
+.surface-ground {
+  background-color: var(--surface-ground);
+}
+
+.c-white {
+  color: white;
+}

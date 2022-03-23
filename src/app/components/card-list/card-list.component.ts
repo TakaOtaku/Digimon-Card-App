@@ -1,8 +1,8 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {Subject, takeUntil} from "rxjs";
 import {addToDeck} from 'src/app/store/digimon.actions';
-import {ICard, ICountCard} from "../../models";
+import {ICard, ICountCard} from "../../../models";
 import {selectCardListViewModel} from "../../store/digimon.selectors";
 
 @Component({
@@ -10,9 +10,9 @@ import {selectCardListViewModel} from "../../store/digimon.selectors";
   templateUrl: './card-list.component.html',
   styleUrls: ['./card-list.component.scss']
 })
-export class CardListComponent implements OnInit, OnDestroy {
-  @Input() public deckBuilder = false;
-  @Input() public showCount = 100;
+export class CardListComponent implements OnDestroy {
+  @Input() public deckBuilder? = false;
+  @Input() public showCount? = 100;
 
   private cards: ICard[] = [];
   public cardsToShow: ICard[] = [];
@@ -20,23 +20,20 @@ export class CardListComponent implements OnInit, OnDestroy {
   private collection: ICountCard[] = [];
   collectionMode = true;
 
-  private destroy$ = new Subject();
+  private onDestroy$ = new Subject();
 
   constructor(private store: Store) {
-  }
-
-  ngOnInit() {
-    this.store.select(selectCardListViewModel).pipe(takeUntil(this.destroy$))
+    this.store.select(selectCardListViewModel).pipe(takeUntil(this.onDestroy$))
       .subscribe(({cards, collection, collectionMode}) => {
         this.cards = this.deckBuilder ? cards.filter(card => card.version === 'Normal') : cards;
-        this.cardsToShow = this.cards.slice(0, this.showCount);
         this.collectionMode = this.deckBuilder ? false : collectionMode;
+        this.cardsToShow = this.cards.slice(0, this.showCount);
         this.collection = collection;
       });
   }
 
   ngOnDestroy() {
-    this.destroy$.next(true);
+    this.onDestroy$.next(true);
   }
 
   getCount(cardId: string): number {
@@ -45,7 +42,7 @@ export class CardListComponent implements OnInit, OnDestroy {
 
   showMore() {
     const length = this.cardsToShow.length;
-    this.cardsToShow = this.cards.slice(0, length + this.showCount);
+    this.cardsToShow = this.cards.slice(0, length + this.showCount!);
   }
 
   addToDeck(card: ICard) {
@@ -56,6 +53,6 @@ export class CardListComponent implements OnInit, OnDestroy {
   }
 
   moreCardsThere(): boolean {
-    return this.cards.length > this.cardsToShow.length;
+    return this.cards.length > this.cardsToShow.length && this.cardsToShow.length > 0;
   }
 }

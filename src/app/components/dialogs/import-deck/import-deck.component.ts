@@ -5,7 +5,7 @@ import {ToastrService} from "ngx-toastr";
 import {Subject, takeUntil} from "rxjs";
 import {importDeck} from 'src/app/store/digimon.actions';
 import * as uuid from 'uuid';
-import {ICard, IDeck, IDeckCard} from "../../../models";
+import {ICard, IDeck, IDeckCard} from "../../../../models";
 import {selectAllCards} from "../../../store/digimon.selectors";
 
 @Component({
@@ -44,7 +44,7 @@ export class ImportDeckComponent implements OnDestroy {
 
   handleFileInput(input: any) {
     let fileReader = new FileReader();
-    fileReader.onload = (e) => {
+    fileReader.onload = () => {
       try {
         this.deckText = (fileReader.result as string);
         this.importDeck();

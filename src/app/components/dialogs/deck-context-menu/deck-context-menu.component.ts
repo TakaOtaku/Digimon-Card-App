@@ -1,14 +1,12 @@
 import {Component, Inject, OnDestroy, OnInit} from '@angular/core';
-import {FormControl} from "@angular/forms";
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {Store} from "@ngrx/store";
 import {Subject} from "rxjs";
-import {IDeck} from "../../../models";
-import {IColor} from "../../../models/color.interface";
+import {IDeck} from "../../../../models";
+import {IColor} from "../../../../models/color.interface";
+import {SITES} from "../../../pages/main-page/main-page.component";
 import {deleteDeck, setDeck, setSite} from "../../../store/digimon.actions";
-import {SITES} from "../../main-page/main-page.component";
 import {ConfirmationDialogComponent} from "../confirmation-dialog/confirmation-dialog.component";
-import {ExportDeckComponent} from "../export-deck/export-deck.component";
 
 @Component({
   selector: 'digimon-deck-context-menu',

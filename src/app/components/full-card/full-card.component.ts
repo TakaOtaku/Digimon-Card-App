@@ -2,8 +2,8 @@ import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {faMinus, faPlus} from "@fortawesome/free-solid-svg-icons";
 import {Store} from "@ngrx/store";
 import {Subject, takeUntil} from "rxjs";
-import {ICard} from "../../models";
-import {changeCardCount, decreaseCardCount, increaseCardCount} from "../../store/digimon.actions";
+import {ICard} from "../../../models";
+import {decreaseCardCount, increaseCardCount} from "../../store/digimon.actions";
 import {selectCardSize} from "../../store/digimon.selectors";
 
 @Component({
@@ -14,28 +14,35 @@ import {selectCardSize} from "../../store/digimon.selectors";
 export class FullCardComponent implements OnInit, OnDestroy {
   @Input() card: ICard;
   @Input() count: number;
-  @Input() collectionMode: boolean = true;
-  @Input() scale: boolean = false;
+  @Input() collectionMode?: boolean = false;
+  @Input() scale?: boolean = false;
 
   faPlus = faPlus;
   faMinus = faMinus;
 
-  cardWidth = 7 + 'vw';
+  cardWidth = 7 + 'vmin';
   cardBorder = '2px solid black';
   cardRadius = '5px';
 
+  aa = new Map<string, string>([
+    ['Red', 'assets/images/banner/ico_card_detail_red.png'],
+    ['Blue', 'assets/images/banner/ico_card_detail_blue.png'],
+    ['Yellow', 'assets/images/banner/ico_card_detail_yellow.png'],
+    ['Green', 'assets/images/banner/ico_card_detail_green.png'],
+    ['Black', 'assets/images/banner/ico_card_detail_black.png'],
+    ['Purple', 'assets/images/banner/ico_card_detail_purple.png'],
+    ['White', 'assets/images/banner/ico_card_detail_white.png'],
+  ])
+
   private onDestroy$ = new Subject();
 
-  constructor(private store: Store) {
-  }
+  constructor(private store: Store) {}
 
   ngOnInit() {
-    if (this.scale) {
-      this.store.select(selectCardSize).pipe(takeUntil(this.onDestroy$))
-        .subscribe(cardSize => this.cardWidth = this.setCardSize(cardSize));
-    } else {
-
-    }
+    this.store.select(selectCardSize).pipe(takeUntil(this.onDestroy$))
+      .subscribe(cardSize => {
+        if (this.scale) this.setCardSize(cardSize);
+      });
   }
 
   ngOnDestroy() {
@@ -50,45 +57,12 @@ export class FullCardComponent implements OnInit, OnDestroy {
     this.store.dispatch(decreaseCardCount({id}))
   }
 
-  countChange(id: string) {
-    this.store.dispatch(changeCardCount({id, count:this.count}))
+  setCardSize(size: number) {
+    this.cardWidth = this.rangeToRange(size) + 'vmin';
   }
-
-  getAA(): string {
-    switch (this.card.color) {
-      case 'Red':
-        return 'assets/images/banner/ico_card_detail_red.png';
-      case 'Blue':
-        return 'assets/images/banner/ico_card_detail_blue.png';
-      case 'Yellow':
-        return 'assets/images/banner/ico_card_detail_yellow.png';
-      case 'Green':
-        return 'assets/images/banner/ico_card_detail_green.png';
-      case 'Black':
-        return 'assets/images/banner/ico_card_detail_black.png';
-      case 'Purple':
-        return 'assets/images/banner/ico_card_detail_purple.png';
-      case 'White':
-        return 'assets/images/banner/ico_card_detail_white.png';
-      default:
-        return '';
-    }
-  }
-
-  setCardSize(size: number): string {
-    if (this.isMobile()) {
-      return this.rangeToRangeMobile(size) + 'vmin';
-    }
-    return this.rangeToRange(size) + 'vw';
-  }
-
-  isMobile = () => window.screen.width <= 1024;
 
   rangeToRange = (input: number) => {
-    return (input - 5) * (20 - 10) / (100 - 5) + 10;
-  }
-
-  rangeToRangeMobile = (input: number) => {
-    return (input - 5) * (50 - 20) / (100 - 5) + 20;
+    //(((OldValue - OldMin) * NewRange) / OldRange) + NewMin
+    return (input - 5) * (30 - 20) / (100 - 5) + 20;
   }
 }

@@ -16,7 +16,7 @@ import {
   ST07CardList,
   ST08CardList
 } from "../../assets/cardlists";
-import {ICard} from "../models";
+import {ICard} from "../../models";
 
 export function setupDigimonCards(): ICard[] {
   const allCards = PromotionCardList.concat(

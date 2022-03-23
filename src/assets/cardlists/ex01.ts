@@ -1,4 +1,4 @@
-import {ICard} from "../../app/models";
+import {ICard} from "../../models";
 
 export const EX01CardList: ICard[] = [{
   "id": "EX1-001",

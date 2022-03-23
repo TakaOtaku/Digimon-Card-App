@@ -2,10 +2,10 @@ import {Component} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {Store} from "@ngrx/store";
 import {IDeck} from "../../../models";
-import {changeDeck} from "../../../store/digimon.actions";
-import {selectDecks} from "../../../store/digimon.selectors";
-import {DeckContextMenuComponent} from "../../dialogs/deck-context-menu/deck-context-menu.component";
-import {ImportDeckComponent} from "../../dialogs/import-deck/import-deck.component";
+import {changeDeck} from "../../store/digimon.actions";
+import {selectDecks} from "../../store/digimon.selectors";
+import {DeckContextMenuComponent} from "../../components/dialogs/deck-context-menu/deck-context-menu.component";
+import {ImportDeckComponent} from "../../components/dialogs/import-deck/import-deck.component";
 
 @Component({
   selector: 'digimon-decks',

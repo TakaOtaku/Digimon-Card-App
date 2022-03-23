@@ -1,0 +1,7 @@
+<p-selectButton [(ngModel)]="sortBy" [options]="sortOptions" (onOptionClick)="changeOrder($event)">
+  <ng-template let-item>
+    <i class="pi" [ngClass]="{'pi-sort-amount-down' : order, 'pi-sort-amount-up' : !order}"></i>
+    <span class="pl-2">{{item.name}}</span>
+  </ng-template>
+</p-selectButton>
+

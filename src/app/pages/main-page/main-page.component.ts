@@ -11,22 +11,26 @@ export enum SITES {
 
 @Component({
   selector: 'digimon-main-page',
-  templateUrl: './main-page.component.html',
-  styleUrls: ['./main-page.component.scss']
+  templateUrl: './main-page.component.html'
 })
 export class MainPageComponent implements OnDestroy {
   SITES = SITES;
   site: number = SITES.Collection;
 
-  isMobile = () => window.screen.width <= 1024;
+  mobile = false;
 
   private destroy$ = new Subject();
 
   constructor(public store: Store) {
     this.store.select(selectSite).pipe(takeUntil(this.destroy$)).subscribe(site => this.site = site);
+    this.onResize();
   }
 
   ngOnDestroy() {
     this.destroy$.next(true);
+  }
+
+  onResize() {
+    this.mobile = window.screen.width <= 1024;
   }
 }

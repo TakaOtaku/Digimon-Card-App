@@ -1,4 +1,4 @@
-import {ICard} from "../../app/models";
+import {ICard} from "../../models";
 
 export const ST04CardList: ICard[] = [
   {

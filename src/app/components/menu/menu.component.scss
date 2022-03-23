@@ -1,0 +1,9 @@
+p-menu {
+  ::ng-deep .pi-circle-fill {
+    color: green !important;
+  }
+
+  ::ng-deep .pi-circle {
+    color: red !important;
+  }
+}

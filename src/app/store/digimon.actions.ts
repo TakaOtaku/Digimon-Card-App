@@ -1,5 +1,5 @@
 import {createAction, props} from '@ngrx/store';
-import {ICard, ICountCard, IDeck, IFilter, ISave, ISettings, ISort} from "../models";
+import {ICard, ICountCard, IDeck, IFilter, ISave, ISettings, ISort} from "../../models";
 
 //region Digimon Card Actions
 export const setFilteredDigimonCards = createAction(

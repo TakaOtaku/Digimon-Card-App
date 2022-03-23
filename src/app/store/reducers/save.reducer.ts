@@ -1,11 +1,11 @@
 import {createReducer, on} from '@ngrx/store';
-import * as uuid from "uuid";
-import {ICountCard, IDeck, ISave} from "../../models";
+import {ICountCard, ISave} from "../../../models";
 import {
   addToCollection,
   changeCardCount,
   changeCardSize,
-  changeCollectionMode, changeDeck,
+  changeCollectionMode,
+  changeDeck,
   decreaseCardCount,
   deleteDeck,
   importDeck,

@@ -1,5 +1,5 @@
 import {createReducer, on} from '@ngrx/store';
-import {IDeck, IDigimonState} from "../../models";
+import {IDeck, IDigimonState} from "../../../models";
 import {addToDeck, changeFilter, changeSort, setDeck, setSite} from '../digimon.actions';
 
 const testDeck: IDeck = {
@@ -104,7 +104,7 @@ const testDeck: IDeck = {
 
 export const initialState: IDigimonState = {
   deck: testDeck,
-  site: 2,
+  site: 0,
   filter: {
     searchFilter: '',
     cardCountFilter: null,
@@ -118,7 +118,7 @@ export const initialState: IDigimonState = {
   },
   sort: {
     sortBy: {
-      name: 'id',
+      name: 'ID',
       element: 'id'
     },
     ascOrder: true
