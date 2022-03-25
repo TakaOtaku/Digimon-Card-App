@@ -3,7 +3,7 @@
 
   <img [lazyLoad]="card.cardImage" [ngClass]="{'grayscale': count === 0 && collectionMode}"
        [ngStyle]="{'border': cardBorder, 'border-radius': cardRadius}"
-       alt="Digimon Card" class="m-auto" defaultImage="assets/images/Digimon-Card-Back.webp" mat-card-image>
+       alt="Digimon Card" class="m-auto" defaultImage="assets/images/digimon-card-back.webp" mat-card-image>
 
   <div class="card-buttons">
     <button *ngIf="collectionMode" (click)="increaseCard(card.id)"

@@ -1,15 +1,45 @@
-<button mat-raised-button class="import" (click)="openImportDialog()">Import Deck</button>
+<button pButton class="import" (click)="openImportDialog()" label="Import Deck"></button>
 
 <div class="flex flex-wrap">
-  <mat-card *ngFor="let deck of decks$ | async"
-            class="deck flex-item border-4 border-black m-2 bg-slate-500 hover:border-amber-400"
-            (click)="openDeckContext(deck)">
+  <div #div *ngFor="let deck of decks$ | async" class="flex flex-wrap" (contextmenu)="onContextMenu(deck)">
+    <p-card class="deck flex-item border-4 border-black m-2 bg-slate-500 hover:border-amber-400">
 
-    <div class="flex justify-center">
-      <img mat-card-image [src]="deck.color?.img ?? 'assets/decks/white.svg'" alt="Digimon Deck Image">
-    </div>
+      <div class="flex justify-center">
+        <img [src]="deck.color?.img ?? 'assets/decks/white.svg'" alt="Digimon Deck Image">
+      </div>
 
-    <p class="text-center text-shadow text-white text-oneline">{{deck.title ?? 'Digimon Card Deck'}}</p>
-  </mat-card>
+      <ng-template pTemplate="footer">
+        <p class="text-center text-shadow text-white text-oneline">{{deck.title ?? 'Digimon Card Deck'}}</p>
+      </ng-template>
+    </p-card>
+    <p-contextMenu [target]="div" [model]="deckContext"></p-contextMenu>
+  </div>
 </div>
 
+<digimon-import-deck-dialog [show]="importDialog"></digimon-import-deck-dialog>
+
+<digimon-export-deck-dialog [deck]="deck" [show]="exportDialog"></digimon-export-deck-dialog>
+
+<p-dialog header="Change Accessory" [(visible)]="accessoryDialog" [style]="{width: '50vw'}" [baseZIndex]="10000">
+  <span class="p-float-label">
+    <input id="float-input" type="text" pInputText [(ngModel)]="title">
+    <label for="float-input">Deck Name</label>
+  </span>
+
+  <span class="p-float-label">
+    <input id="float-input2" type="text" pInputText [(ngModel)]="description">
+    <label for="float-input2">Description</label>
+  </span>
+
+  <p-selectButton [options]="colorList" [(ngModel)]="color" optionLabel="name">
+    <ng-template let-item>
+      <span [ngStyle]="{'color': colorMap.get(item.name)}">{{item.name}}</span>
+    </ng-template>
+  </p-selectButton>
+
+  <div class="w-full flex justify-end mt-5">
+    <button class="m-2" mat-flat-button color="primary" (click)="saveDeck()">Save</button>
+  </div>
+</p-dialog>
+
+<p-confirmDialog key="DeleteDeck" header="Delete Confirmation" icon="pi pi-exclamation-triangle" rejectButtonStyleClass="p-button-outlined"></p-confirmDialog>

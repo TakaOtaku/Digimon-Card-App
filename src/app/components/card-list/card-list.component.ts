@@ -1,4 +1,4 @@
-import {Component, Input, OnDestroy} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {Subject, takeUntil} from "rxjs";
 import {addToDeck} from 'src/app/store/digimon.actions';
@@ -10,9 +10,11 @@ import {selectCardListViewModel} from "../../store/digimon.selectors";
   templateUrl: './card-list.component.html',
   styleUrls: ['./card-list.component.scss']
 })
-export class CardListComponent implements OnDestroy {
+export class CardListComponent implements OnInit, OnDestroy {
   @Input() public deckBuilder? = false;
-  @Input() public showCount? = 100;
+  @Input() public showCount: number;
+
+  @Output() onCardClick = new EventEmitter<string>();
 
   private cards: ICard[] = [];
   public cardsToShow: ICard[] = [];
@@ -22,13 +24,15 @@ export class CardListComponent implements OnDestroy {
 
   private onDestroy$ = new Subject();
 
-  constructor(private store: Store) {
+  constructor(private store: Store) {}
+
+  ngOnInit() {
     this.store.select(selectCardListViewModel).pipe(takeUntil(this.onDestroy$))
       .subscribe(({cards, collection, collectionMode}) => {
         this.cards = this.deckBuilder ? cards.filter(card => card.version === 'Normal') : cards;
-        this.collectionMode = this.deckBuilder ? false : collectionMode;
-        this.cardsToShow = this.cards.slice(0, this.showCount);
         this.collection = collection;
+        this.collectionMode = collectionMode;
+        this.cardsToShow = this.cards.slice(0, this.showCount);
       });
   }
 
@@ -47,8 +51,7 @@ export class CardListComponent implements OnDestroy {
 
   addToDeck(card: ICard) {
     if (this.deckBuilder) {
-      const countCard = {id: card.cardNumber, count: 1};
-      this.store.dispatch(addToDeck({card: countCard}));
+      this.onCardClick.emit(card.cardNumber)
     }
   }
 

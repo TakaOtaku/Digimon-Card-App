@@ -1,21 +1,18 @@
-import {Component, OnDestroy} from '@angular/core';
-import {MatDialogRef} from "@angular/material/dialog";
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
-import {ToastrService} from "ngx-toastr";
 import {Subject, takeUntil} from "rxjs";
-import {importDeck} from 'src/app/store/digimon.actions';
-import * as uuid from 'uuid';
-import {ICard, IDeck, IDeckCard} from "../../../../models";
-import {selectAllCards} from "../../../store/digimon.selectors";
+import {importDeck, setDeck} from 'src/app/store/digimon.actions';
+import * as uuid from "uuid";
+import {ICard, IDeck, IDeckCard} from "../../../models";
+import {selectAllCards} from "../../store/digimon.selectors";
 
 @Component({
-  selector: 'digimon-import-deck',
-  templateUrl: './import-deck.component.html',
-  styleUrls: ['./import-deck.component.css']
+  selector: 'digimon-import-deck-dialog',
+  templateUrl: './import-deck-dialog.component.html'
 })
-export class ImportDeckComponent implements OnDestroy {
-  private digimonCards$ = this.store.select(selectAllCards);
-  private digimonCards: ICard[] = [];
+export class ImportDeckDialogComponent implements OnInit, OnDestroy {
+  @Input() show: boolean = false;
+  @Input() overwrite?: IDeck;
 
   importPlaceholder = "" +
     "Paste Deck here\n" +
@@ -28,18 +25,20 @@ export class ImportDeckComponent implements OnDestroy {
 
   deckText = '';
 
-  private destroy$ = new Subject();
+  private digimonCards$ = this.store.select(selectAllCards);
+  private digimonCards: ICard[] = [];
 
-  constructor(
-    private store: Store,
-    private toastr: ToastrService,
-    public dialogRef: MatDialogRef<ImportDeckComponent>
-  ) {
-    this.digimonCards$.pipe(takeUntil(this.destroy$)).subscribe(cards => this.digimonCards = cards);
+  private onDestroy$ = new Subject();
+
+  constructor(private store: Store) { }
+
+  ngOnInit(): void {
+    this.digimonCards$.pipe(takeUntil(this.onDestroy$))
+      .subscribe(cards => this.digimonCards = cards);
   }
 
   ngOnDestroy(): void {
-    this.destroy$.next(true);
+    this.onDestroy$.next(true);
   }
 
   handleFileInput(input: any) {
@@ -59,21 +58,23 @@ export class ImportDeckComponent implements OnDestroy {
     let result: string[] = this.deckText.split("\n");
     const deck: IDeck = this.parseDeck(result);
     if(deck.cards.length === 0) {
-      this.toastr.warning('No Cards where found. Is your format correct?', 'Deck Import Failed')
       return;
     }
     this.store.dispatch(importDeck({deck}));
-    this.toastr.success('A new deck was imported.', 'Deck Imported')
-    this.dialogRef.close();
+    this.store.dispatch(setDeck({deck}));
+    this.show = false;
   }
 
   private parseDeck(textArray: string[]): IDeck {
-    const deck: IDeck = {
-      id: uuid.v4(),
-      title: 'Imported Deck',
-      color: {name: 'White', img: 'assets/decks/white.svg'},
-      cards: []
-    }
+    const deck: IDeck = this.overwrite ?
+      {...this.overwrite, cards: []} :
+      {
+        id: this.overwrite ? this.overwrite : uuid.v4(),
+        title: 'Imported Deck',
+        color: {name: 'White', img: 'assets/decks/white.svg'},
+        cards: []
+      };
+
     textArray.forEach(line => {
       const cardOrNull = this.parseLine(line);
       if(cardOrNull) {
@@ -108,4 +109,5 @@ export class ImportDeckComponent implements OnDestroy {
     }
     return null;
   }
+
 }

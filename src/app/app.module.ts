@@ -15,12 +15,10 @@ import {AppRoutingModule} from "./app-routing.module";
 import {AppComponent} from './app.component';
 import {CardListComponent} from './components/card-list/card-list.component';
 import {DeckCardComponent} from './components/deck-card/deck-card.component';
-import {ConfirmationDialogComponent} from './components/dialogs/confirmation-dialog/confirmation-dialog.component';
-import {DeckContextMenuComponent} from './components/dialogs/deck-context-menu/deck-context-menu.component';
-import {ExportDeckComponent} from './components/dialogs/export-deck/export-deck.component';
-import {ImportDeckComponent} from './components/dialogs/import-deck/import-deck.component';
+import {ExportDeckDialogComponent} from './components/export-deck-dialog/export-deck-dialog.component';
 import {FilterBoxComponent} from './components/filter-box/filter-box.component';
 import {FullCardComponent} from './components/full-card/full-card.component';
+import {ImportDeckDialogComponent} from './components/import-deck-dialog/import-deck-dialog.component';
 import {MenuComponent} from './components/menu/menu.component';
 import {MultiSelectComponent} from './components/multi-select/multi-select.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
@@ -48,10 +46,6 @@ import * as Save from "./store/reducers/save.reducer";
     CardListComponent,
     DecksComponent,
     DeckBuilderComponent,
-    ImportDeckComponent,
-    ExportDeckComponent,
-    ConfirmationDialogComponent,
-    DeckContextMenuComponent,
     NavbarComponent,
     SmallDeckCardComponent,
     DeckCardComponent,
@@ -59,6 +53,8 @@ import * as Save from "./store/reducers/save.reducer";
     SliderComponent,
     MenuComponent,
     MultiSelectComponent,
+    ExportDeckDialogComponent,
+    ImportDeckDialogComponent,
   ],
   imports: [
     MaterialModule,

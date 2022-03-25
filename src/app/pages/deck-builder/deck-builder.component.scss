@@ -2,6 +2,10 @@
   width: 100%;
 }
 
+.max-h-screen-minus {
+  max-height: calc(100vh - 58px);
+}
+
 .margin-top-5 {
   margin-top: 5px !important;
 }
@@ -9,15 +13,15 @@
 .toolbar {
   p {
     text-align:center;
-    line-height:61px;
-    height:61px;
+    line-height:42px;
+    height:42px;
   }
 
   div {
     display:flex;
     justify-content:center;
     align-items:center;
-    height:61px;
+    height:42px;
   }
 
   button {
@@ -25,7 +29,7 @@
   }
 
   .bottom-font {
-    line-height: 71px;
+    line-height: 60px;
   }
 }
 
@@ -38,7 +42,6 @@
 
 .card-list {
   min-height: 60px;
-  background: white;
   border-radius: 4px;
   overflow: hidden;
   display: flex;
@@ -47,14 +50,12 @@
 .card-box {
   padding: 20px 10px;
   border-bottom: solid 1px #ccc;
-  color: rgba(0, 0, 0, 0.87);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
   cursor: pointer;
-  background: white;
   font-size: 14px;
 
   :last-child {

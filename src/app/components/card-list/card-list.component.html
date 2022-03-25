@@ -2,7 +2,7 @@
   <h1 *ngIf="cardsToShow.length === 0" class="primary-color my-10 text-5xl text-bold">No cards found!</h1>
   <digimon-full-card
     class="transition scale-95"
-    (click)="addToDeck(card)" *ngFor="let card of cardsToShow" [card]="card" [collectionMode]="collectionMode" [count]="getCount(card.id)" [scale]="!deckBuilder" >
+    (click)="addToDeck(card)" *ngFor="let card of cardsToShow" [card]="card" [collectionMode]="collectionMode && !deckBuilder" [count]="getCount(card.id)" [deckBuilder]="deckBuilder" >
   </digimon-full-card>
   <button pButton (click)="showMore()" *ngIf="moreCardsThere()" class="basis-full show-more" label="Show more..."></button>
 </div>

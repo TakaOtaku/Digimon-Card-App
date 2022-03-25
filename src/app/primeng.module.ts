@@ -1,8 +1,13 @@
 import {NgModule} from '@angular/core';
 import {ConfirmationService, MessageService} from "primeng/api";
 import {ButtonModule} from "primeng/button";
+import {CardModule} from "primeng/card";
+import {ChartModule} from "primeng/chart";
+import {ConfirmDialogModule} from "primeng/confirmdialog";
 import {ConfirmPopupModule} from "primeng/confirmpopup";
+import {ContextMenuModule} from "primeng/contextmenu";
 import {DialogModule} from "primeng/dialog";
+import {DropdownModule} from "primeng/dropdown";
 import {InputNumberModule} from "primeng/inputnumber";
 import {InputTextModule} from "primeng/inputtext";
 import {InputTextareaModule} from "primeng/inputtextarea";
@@ -16,10 +21,15 @@ import {SliderModule} from "primeng/slider";
 
 @NgModule({
   imports: [
+    ChartModule,
+    DropdownModule,
+    ContextMenuModule,
+    CardModule,
     InputNumberModule,
     MultiSelectModule,
     InputTextModule,
     InputTextareaModule,
+    ConfirmDialogModule,
     ConfirmPopupModule,
     DialogModule,
     MessagesModule,
@@ -35,10 +45,15 @@ import {SliderModule} from "primeng/slider";
     ConfirmationService
   ],
   exports: [
+    ChartModule,
+    DropdownModule,
+    ContextMenuModule,
+    CardModule,
     InputNumberModule,
     MultiSelectModule,
     InputTextModule,
     InputTextareaModule,
+    ConfirmDialogModule,
     ConfirmPopupModule,
     DialogModule,
     MessagesModule,

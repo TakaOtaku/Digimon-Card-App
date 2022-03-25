@@ -1,14 +1,14 @@
-<div class="inline-flex">
+<div class="inline-flex relative">
   <div class="flex flex-col justify-center align-middle">
-    <button (click)="increaseCardCount()" mat-icon-button>
-      <mat-icon>add_circle</mat-icon>
-    </button>
-    <p class="text-center font-bold">{{card.count}}</p>
-    <button (click)="decreaseCardCount()" mat-icon-button>
-      <mat-icon>remove_circle</mat-icon>
-    </button>
+    <button (click)="increaseCardCount()" pButton pRipple type="button" icon="pi pi-plus-circle" class="p-button-rounded scale-75 p-button-primary"></button>
+    <p class="text-center font-bold primary-color">{{card.count}}</p>
+    <button (click)="decreaseCardCount()" pButton pRipple type="button" icon="pi pi-minus-circle" class="p-button-rounded scale-75 p-button-primary"></button>
   </div>
 
-  <img [src]="card.cardImage" alt="Digimon Card" class="card-image m-auto" mat-card-image>
+  <img [src]="card.cardImage" alt="Digimon Card" class="card-image m-auto z-50" mat-card-image>
+  <!--img [src]="card.cardImage" alt="Digimon Card" class="absolute-stack-1 z-40" mat-card-image>
+  <img [src]="card.cardImage" alt="Digimon Card" class="absolute-stack-2 z-30" mat-card-image>
+  <img [src]="card.cardImage" alt="Digimon Card" class="absolute-stack-3 z-20" mat-card-image>
+  <img [src]="card.cardImage" alt="Digimon Card" class="absolute-stack-4 z-10" mat-card-image-->
 </div>
 

@@ -1,0 +1,34 @@
+.small-card {
+  .egg {
+    width: 1.6vmin;
+    height: 2vmin;
+    border-radius: 50%/60% 60% 40% 40%;
+    border: 1px solid black;
+    background-color: white;
+    margin: auto;
+    margin-left: 10px;
+    margin-top: 7px;
+  }
+
+  .top-bottom-split {
+    width: 0;
+    border-right: 2vmin solid transparent;
+    border-bottom: 30px solid black;
+  }
+
+  .bottom-top-split {
+    width: 0;
+    border-top: 30px solid black;
+    border-left: 2vmin solid transparent;
+  }
+
+  div {
+    height: 100%;
+    line-height: 28px;
+    margin-top: -1px;
+  }
+}
+
+.grid-cols-24 {
+  grid-template-columns: repeat(24, minmax(0, 1fr));
+}

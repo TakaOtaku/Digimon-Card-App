@@ -1,109 +1,14 @@
 import {createReducer, on} from '@ngrx/store';
-import {IDeck, IDigimonState} from "../../../models";
+import * as uuid from "uuid";
+import {IDigimonState} from "../../../models";
 import {addToDeck, changeFilter, changeSort, setDeck, setSite} from '../digimon.actions';
 
-const testDeck: IDeck = {
-  id: '0',
-  title: '[BT7] Three Musketeers',
-  color: {name:'White', img: 'assets/decks/white.svg'},
-  cards: [
-    {
-      "count": 3,
-      "id": "BT2-072"
-    },
-    {
-      "count": 1,
-      "id": "BT2-083"
-    },
-    {
-      "count": 1,
-      "id": "BT2-090"
-    },
-    {
-      "count": 4,
-      "id": "BT2-110"
-    },
-    {
-      "count": 2,
-      "id": "BT2-111"
-    },
-    {
-      "count": 4,
-      "id": "BT3-006"
-    },
-    {
-      "count": 1,
-      "id": "BT3-075"
-    },
-    {
-      "count": 2,
-      "id": "BT3-077"
-    },
-    {
-      "count": 1,
-      "id": "BT3-096"
-    },
-    {
-      "count": 2,
-      "id": "BT4-079"
-    },
-    {
-      "count": 2,
-      "id": "BT5-062"
-    },
-    {
-      "count": 2,
-      "id": "BT5-087"
-    },
-    {
-      "count": 1,
-      "id": "BT6-006"
-    },
-    {
-      "count": 3,
-      "id": "BT6-060"
-    },
-    {
-      "count": 4,
-      "id": "BT6-065"
-    },
-    {
-      "count": 4,
-      "id": "BT6-068"
-    },
-    {
-      "count": 4,
-      "id": "BT6-077"
-    },
-    {
-      "count": 2,
-      "id": "BT6-090"
-    },
-    {
-      "count": 1,
-      "id": "BT6-095"
-    },
-    {
-      "count": 2,
-      "id": "BT6-105"
-    },
-    {
-      "count": 3,
-      "id": "BT6-109"
-    },
-    {
-      "count": 4,
-      "id": "BT6-112"
-    },
-    {
-      "count": 2,
-      "id": "BT7-015"
-    }
-  ]
-}
-
 export const initialState: IDigimonState = {
-  deck: testDeck,
+  deck: {
+    id: uuid.v4(),
+    cards: [],
+    color: {name:'White', img: 'assets/decks/white.svg'},
+  },
   site: 0,
   filter: {
     searchFilter: '',

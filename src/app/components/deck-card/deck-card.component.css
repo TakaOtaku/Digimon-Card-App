@@ -1,5 +1,33 @@
 .card-image {
-  width: 7vw !important;
+  width: 19vmin !important;
   border: 2px solid black;
   border-radius: 5px;
+}
+
+.absolute-stack-1 {
+  width: 19vmin !important;
+  position: absolute;
+  left: 5.1vmin;
+  margin-top: 20px;
+}
+
+.absolute-stack-2 {
+  width: 19vmin !important;
+  position: absolute;
+  left: 5.1vmin;
+  margin-top: 40px;
+}
+
+.absolute-stack-3 {
+  width: 19vmin !important;
+  position: absolute;
+  left: 5.1vmin;
+  margin-top: 60px;
+}
+
+.absolute-stack-4 {
+  width: 19vmin !important;
+  position: absolute;
+  left: 5.1vmin;
+  margin-top: 80px;
 }

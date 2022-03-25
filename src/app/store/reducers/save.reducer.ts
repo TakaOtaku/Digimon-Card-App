@@ -1,5 +1,5 @@
 import {createReducer, on} from '@ngrx/store';
-import {ICountCard, ISave} from "../../../models";
+import {ICountCard, IDeck, ISave} from "../../../models";
 import {
   addToCollection,
   changeCardCount,
@@ -97,7 +97,15 @@ export const saveReducer = createReducer(
   //endregion
 
   //region Deck Reducers
-  on(importDeck, (state, {deck}) => ({...state, decks: [...state.decks, deck]})),
+  on(importDeck, (state, {deck}) => {
+    const foundDeck = state.decks.find(value => value.id === deck.id);
+    if (foundDeck) {
+      const allButFoundDeck: IDeck[] = state.decks.filter(value => value.id !== deck.id);
+      const decks: IDeck[] = [...new Set([...allButFoundDeck, deck])];
+      return ({...state, decks})
+    }
+    return ({...state, decks: [...state.decks, deck]})
+    }),
   on(changeDeck, (state, {deck}) => {
     const decks = state.decks.map(value => {
       if(value?.id === deck.id) {

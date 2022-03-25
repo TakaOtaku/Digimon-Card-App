@@ -11,14 +11,14 @@ export class DeckCardComponent implements OnInit {
   @Input() public stack: boolean;
 
   @Output() public removeCard = new EventEmitter<boolean>();
+  @Output() public onChange = new EventEmitter<boolean>();
 
-  constructor() {
-  }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   increaseCardCount(): void {
+    this.onChange.emit(true);
     this.card.count = this.card.count + 1;
     if (this.card.count >= 4) {
       this.card.count = 4;
@@ -27,6 +27,7 @@ export class DeckCardComponent implements OnInit {
   }
 
   decreaseCardCount(): void {
+    this.onChange.emit(true);
     this.card.count = this.card.count - 1;
     if (this.card.count <= 0) {
       this.card.count = 0;

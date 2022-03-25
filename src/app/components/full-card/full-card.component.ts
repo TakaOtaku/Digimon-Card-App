@@ -15,7 +15,7 @@ export class FullCardComponent implements OnInit, OnDestroy {
   @Input() card: ICard;
   @Input() count: number;
   @Input() collectionMode?: boolean = false;
-  @Input() scale?: boolean = false;
+  @Input() deckBuilder?: boolean = false;
 
   faPlus = faPlus;
   faMinus = faMinus;
@@ -40,9 +40,7 @@ export class FullCardComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.store.select(selectCardSize).pipe(takeUntil(this.onDestroy$))
-      .subscribe(cardSize => {
-        if (this.scale) this.setCardSize(cardSize);
-      });
+      .subscribe(cardSize => this.setCardSize(cardSize));
   }
 
   ngOnDestroy() {
@@ -58,7 +56,7 @@ export class FullCardComponent implements OnInit, OnDestroy {
   }
 
   setCardSize(size: number) {
-    this.cardWidth = this.rangeToRange(size) + 'vmin';
+    this.cardWidth = this.deckBuilder ? this.rangeToRange(size) + 'vmin' : this.rangeToRange(size) + 'vmin';
   }
 
   rangeToRange = (input: number) => {
