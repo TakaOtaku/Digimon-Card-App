@@ -32,7 +32,7 @@
       <input type="text" pInputText [formControl]="searchFilter" placeholder="Search" class="w-full">
     </span>
 
-    <div class="flex flex-row">
+    <div class="flex flex-row my-5">
       <p-inputNumber class="w-full" [formControl]="countFilter" [showButtons]="true" mode="decimal" [min]="0"></p-inputNumber>
 
       <digimon-multi-select ngDefaultControl class="dialog w-full" [formControl]="setFilter" [options]="groupedSets" [group]="true" label="Set"></digimon-multi-select>
@@ -43,5 +43,7 @@
       <digimon-multi-select ngDefaultControl class="dialog w-full" [formControl]="rarityFilter" [options]="rarities" [group]="false" label="Rarity"></digimon-multi-select>
       <digimon-multi-select ngDefaultControl class="dialog w-full" [formControl]="versionFilter" [options]="versions" [group]="false" label="Version"></digimon-multi-select>
     </div>
+
+    <digimon-sort-buttons class="m-auto^"></digimon-sort-buttons>
   </div>
 </p-dialog>

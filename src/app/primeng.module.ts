@@ -18,9 +18,11 @@ import {MultiSelectModule} from "primeng/multiselect";
 import {RippleModule} from "primeng/ripple";
 import {SelectButtonModule} from "primeng/selectbutton";
 import {SliderModule} from "primeng/slider";
+import {ToastModule} from "primeng/toast";
 
 @NgModule({
   imports: [
+    ToastModule,
     ChartModule,
     DropdownModule,
     ContextMenuModule,
@@ -45,6 +47,7 @@ import {SliderModule} from "primeng/slider";
     ConfirmationService
   ],
   exports: [
+    ToastModule,
     ChartModule,
     DropdownModule,
     ContextMenuModule,

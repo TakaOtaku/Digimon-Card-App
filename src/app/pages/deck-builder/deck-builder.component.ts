@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {Store} from "@ngrx/store";
-import {ConfirmationService} from "primeng/api";
+import {ConfirmationService, MessageService} from "primeng/api";
 import {filter, Subject, takeUntil} from "rxjs";
 import * as uuid from "uuid";
 import {ICard, ICountCard, IDeck, IDeckCard} from "../../../models";
@@ -57,7 +57,8 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
 
   constructor(
     private store: Store,
-    private confirmationService: ConfirmationService
+    private confirmationService: ConfirmationService,
+    private messageService: MessageService
   ) {}
 
   ngOnInit() {
@@ -129,6 +130,7 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
           color: {name: 'White', img: 'assets/decks/white.svg'}
         }
         this.store.dispatch(setDeck({deck}));
+        this.messageService.add({severity:'success', summary:'Deck cleared!', detail:'Deckcards were cleared successfully!'});
       }
     });
   }

@@ -1,5 +1,6 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
+import {MessageService} from "primeng/api";
 import {Subject, takeUntil} from "rxjs";
 import {importDeck, setDeck} from 'src/app/store/digimon.actions';
 import * as uuid from "uuid";
@@ -30,7 +31,7 @@ export class ImportDeckDialogComponent implements OnInit, OnDestroy {
 
   private onDestroy$ = new Subject();
 
-  constructor(private store: Store) { }
+  constructor(private store: Store, private messageService: MessageService) { }
 
   ngOnInit(): void {
     this.digimonCards$.pipe(takeUntil(this.onDestroy$))
@@ -63,6 +64,7 @@ export class ImportDeckDialogComponent implements OnInit, OnDestroy {
     this.store.dispatch(importDeck({deck}));
     this.store.dispatch(setDeck({deck}));
     this.show = false;
+    this.messageService.add({severity:'success', summary:'Deck imported!', detail:'The deck was imported successfully!'});
   }
 
   private parseDeck(textArray: string[]): IDeck {

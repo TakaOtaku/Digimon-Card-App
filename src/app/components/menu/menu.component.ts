@@ -113,6 +113,7 @@ export class MenuComponent implements OnInit, OnDestroy {
 
   changeCM() {
     this.store.dispatch(changeCollectionMode({collectionMode: !this.collectionMode})) ;
+    this.messageService.add({severity:'info', summary:'Collection Mode', detail:'Collection Mode was changed!'});
   }
 
   importDialog() {
@@ -130,7 +131,9 @@ export class MenuComponent implements OnInit, OnDestroy {
       try {
         const save: ISave = JSON.parse(fileReader.result as string);
         this.store.dispatch(loadSave({save}));
+        this.messageService.add({severity:'success', summary:'Save loaded!', detail:'The save was loaded successfully!'});
       } catch (e) {
+        this.messageService.add({severity:'warn', summary:'Save Error!', detail:'The save was not loaded!'});
       }
     }
     fileReader.readAsText(input.files[0]);
@@ -148,6 +151,7 @@ export class MenuComponent implements OnInit, OnDestroy {
       accept: () => {
         this.store.dispatch(setCollection({collection: []}));
         this.display = false;
+        this.messageService.add({severity:'success', summary:'Save cleared!', detail:'The save was cleared successfully!'});
       },
       reject: () => {}
     });
@@ -169,6 +173,7 @@ export class MenuComponent implements OnInit, OnDestroy {
 
     this.store.dispatch(addToCollection({collectionCards}));
     this.importDisplay = false;
+    this.messageService.add({severity:'success', summary:'Collection Imported!', detail:'The collection was imported successfully!'});
   }
 
   private parseLine(line: string): ICountCard | null {

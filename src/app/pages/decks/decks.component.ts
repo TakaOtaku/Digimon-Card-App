@@ -1,13 +1,10 @@
-import {Component, OnDestroy, ViewChild} from '@angular/core';
+import {Component} from '@angular/core';
 import {Store} from "@ngrx/store";
-import {ConfirmationService, MenuItem} from "primeng/api";
-import {Subject, takeUntil} from "rxjs";
+import {ConfirmationService, MenuItem, MessageService} from "primeng/api";
 import * as uuid from "uuid";
-import {ICard, IColor, IDeck, IDeckCard} from "../../../models";
-import {ExportDeckDialogComponent} from "../../components/export-deck-dialog/export-deck-dialog.component";
-import {ImportDeckDialogComponent} from "../../components/import-deck-dialog/import-deck-dialog.component";
+import {IColor, IDeck} from "../../../models";
 import {changeDeck, deleteDeck, importDeck, setDeck, setSite} from "../../store/digimon.actions";
-import {selectAllCards, selectDecks} from "../../store/digimon.selectors";
+import {selectDecks} from "../../store/digimon.selectors";
 import {SITES} from "../main-page/main-page.component";
 
 @Component({
@@ -50,6 +47,7 @@ export class DecksComponent {
 
   constructor(
     private store: Store,
+    private messageService: MessageService,
     private confirmationService: ConfirmationService,
   ) {
     this.deckContext = [
@@ -105,6 +103,7 @@ export class DecksComponent {
         color: this.color}
     }));
     this.accessoryDialog = false;
+    this.messageService.add({severity:'success', summary:'Deck saved!', detail:'Deck Accessory was saved successfully!'});
   }
 
   deleteDeck() {
@@ -113,11 +112,14 @@ export class DecksComponent {
       message: 'You are about to permanently delete this deck. Are you sure?',
       accept: () => {
         this.store.dispatch(deleteDeck({deck: this.deck}));
+        this.messageService.add({severity:'success', summary:'Deck deleted!', detail:'Deck was deleted successfully!'});
       }
     });
   }
 
   onContextMenu(deck: IDeck) {
     this.deck = deck;
+    this.title = deck.title ?? '';
+    this.description = deck.description ?? '';
   }
 }

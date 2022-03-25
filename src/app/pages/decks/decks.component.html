@@ -21,15 +21,17 @@
 <digimon-export-deck-dialog [deck]="deck" [show]="exportDialog"></digimon-export-deck-dialog>
 
 <p-dialog header="Change Accessory" [(visible)]="accessoryDialog" [style]="{width: '50vw'}" [baseZIndex]="10000">
-  <span class="p-float-label">
-    <input id="float-input" type="text" pInputText [(ngModel)]="title">
-    <label for="float-input">Deck Name</label>
-  </span>
+  <div class="inline-flex w-full">
+    <span class="p-float-label">
+      <input id="float-input" type="text" pInputText [(ngModel)]="title">
+      <label for="float-input">Deck Name</label>
+    </span>
 
-  <span class="p-float-label">
-    <input id="float-input2" type="text" pInputText [(ngModel)]="description">
-    <label for="float-input2">Description</label>
-  </span>
+    <span class="p-float-label">
+      <input id="float-input2" type="text" pInputText [(ngModel)]="description">
+      <label for="float-input2">Description</label>
+    </span>
+  </div>
 
   <p-selectButton [options]="colorList" [(ngModel)]="color" optionLabel="name">
     <ng-template let-item>
@@ -38,7 +40,7 @@
   </p-selectButton>
 
   <div class="w-full flex justify-end mt-5">
-    <button class="m-2" mat-flat-button color="primary" (click)="saveDeck()">Save</button>
+    <button class="m-2" pButton (click)="saveDeck()">Save</button>
   </div>
 </p-dialog>
 
