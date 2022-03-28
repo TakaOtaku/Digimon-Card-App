@@ -98,14 +98,17 @@ export const saveReducer = createReducer(
 
   //region Deck Reducers
   on(importDeck, (state, {deck}) => {
-    const foundDeck = state.decks.find(value => value.id === deck.id);
+    if (!state.decks) {
+      return ({...state, decks: [deck]})
+    }
+    const foundDeck = state.decks?.find(value => value.id === deck.id);
     if (foundDeck) {
       const allButFoundDeck: IDeck[] = state.decks.filter(value => value.id !== deck.id);
       const decks: IDeck[] = [...new Set([...allButFoundDeck, deck])];
       return ({...state, decks})
     }
     return ({...state, decks: [...state.decks, deck]})
-    }),
+  }),
   on(changeDeck, (state, {deck}) => {
     const decks = state.decks.map(value => {
       if(value?.id === deck.id) {
