@@ -56,7 +56,7 @@ export class FullCardComponent implements OnInit, OnDestroy {
   }
 
   setCardSize(size: number) {
-    this.cardWidth = this.deckBuilder ? this.rangeToRange(size) + 'vmin' : this.rangeToRange(size) + 'vmin';
+    this.cardWidth = this.deckBuilder ? this.rangeToRange(5) + 'vmin' : this.rangeToRange(size) + 'vmin';
   }
 
   rangeToRange = (input: number) => {

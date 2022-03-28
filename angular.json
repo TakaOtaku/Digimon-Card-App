@@ -36,9 +36,7 @@
               "node_modules/primeicons/primeicons.css",
               "node_modules/primeng/resources/primeng.min.css"
             ],
-            "scripts": [
-              "node_modules/chart.js/dist/hart.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {

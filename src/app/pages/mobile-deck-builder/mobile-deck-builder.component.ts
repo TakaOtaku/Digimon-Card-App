@@ -9,11 +9,11 @@ import {importDeck, setDeck} from "../../store/digimon.actions";
 import {selectDeckBuilderViewModel} from "../../store/digimon.selectors";
 
 @Component({
-  selector: 'digimon-deck-builder',
-  templateUrl: './deck-builder.component.html',
-  styleUrls: ['./deck-builder.component.scss']
+  selector: 'digimon-mobile-deck-builder',
+  templateUrl: './mobile-deck-builder.component.html',
+  styleUrls: ['./mobile-deck-builder.component.scss']
 })
-export class DeckBuilderComponent implements OnInit, OnDestroy {
+export class MobileDeckBuilderComponent implements OnInit, OnDestroy {
   public mainDeck: IDeckCard[] = [];
   public sideDeck: IDeckCard[] = [];
 

@@ -11,7 +11,9 @@ import {selectAllCards} from "../../store/digimon.selectors";
 })
 export class ExportDeckDialogComponent implements OnInit, OnDestroy {
   @Input() show?: boolean = false;
+  @Input() width?: string = '50vw';
   @Input() deck: IDeck;
+
 
   exportList = ['TEXT', 'TTS'];
   exportType = '';

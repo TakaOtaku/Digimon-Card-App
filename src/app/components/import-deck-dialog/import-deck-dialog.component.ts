@@ -13,6 +13,7 @@ import {selectAllCards} from "../../store/digimon.selectors";
 })
 export class ImportDeckDialogComponent implements OnInit, OnDestroy {
   @Input() show: boolean = false;
+  @Input() width?: string = '50vw';
   @Input() overwrite?: IDeck;
 
   importPlaceholder = "" +
