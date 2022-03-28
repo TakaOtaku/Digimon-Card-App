@@ -30,7 +30,8 @@ export class FilterBoxComponent implements OnInit, OnDestroy {
         {label: 'BT4', value: 'BT4'},
         {label: 'BT5', value: 'BT5'},
         {label: 'BT6', value: 'BT6'},
-        {label: 'BT7', value: 'BT7'}
+        {label: 'BT7', value: 'BT7'},
+        {label: 'BT8', value: 'BT8'}
       ]
     },
     {
@@ -49,7 +50,8 @@ export class FilterBoxComponent implements OnInit, OnDestroy {
         {label: 'ST5', value: 'ST5'},
         {label: 'ST6', value: 'ST6'},
         {label: 'ST7', value: 'ST7'},
-        {label: 'ST8', value: 'ST8'}
+        {label: 'ST8', value: 'ST8'},
+        {label: 'ST9', value: 'ST9'}
       ]
     }
   ];
@@ -58,7 +60,7 @@ export class FilterBoxComponent implements OnInit, OnDestroy {
   cardTypes: string[] = ['Digi-Egg', 'Digimon', 'Tamer', 'Option'];
 
   colorFilter = new FormControl([]);
-  colors: string[] = ['Red', 'Blue', 'Yellow', 'Green', 'Black', 'Purple', 'White'];
+  colors: string[] = ['Red', 'Blue', 'Yellow', 'Green', 'Black', 'Purple', 'White', 'Multi'];
 
   typeFilter = new FormControl([]);
   types: string[] = ['Data', 'Vaccine', 'Virus', 'Free', 'Variable'];

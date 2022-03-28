@@ -7,9 +7,9 @@ export const initialState: IDigimonState = {
   deck: {
     id: uuid.v4(),
     cards: [],
-    color: {name:'White', img: 'assets/decks/white.svg'},
+    color: {name: 'White', img: 'assets/decks/white.svg'},
   },
-  site: 1,
+  site: 0,
   filter: {
     searchFilter: '',
     cardCountFilter: null,

@@ -1,0 +1,48 @@
+import {ICard} from "../../models";
+
+export const BT08CardList: ICard[] = [
+  {
+    "id": "BT8-032_P1",
+    "name": "Imperialdramon Fighter Mode",
+    "cardImage": "assets/images/cards/BT8-032_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "13000",
+    "playCost": "12",
+    "digivolveCost1": "5 from Lv.5",
+    "digivolveCost2": "5 from Lv.5",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Free",
+    "type": "Ancient Dragonkin",
+    "rarity": "SR",
+    "cardNumber": "BT8-032",
+    "effect": "[When Digivolving] Return 1 of your opponent's Digimon with 10000 DP or less to its owner's hand.[When Attacking][Once Per Turn] If a blue card is in this Digimon's digivolution cards, unsuspend 1 of your Digimon. If a green card is in this Digimon's digivolution cards, suspend 1 of your opponent's Digimon.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "April Ultimate Cup Top 8",
+    "color": "Multi",
+    "version": "Stamp"
+  },
+  {
+    "id": "BT8-112_P1",
+    "name": "Imperialdramon Paladin Mode",
+    "cardImage": "assets/images/cards/BT8-112_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "16000",
+    "playCost": "15",
+    "digivolveCost1": "7 from Lv.6",
+    "digivolveCost2": "7 from Lv.6",
+    "cardLv": "Lv.7",
+    "form": "Mega",
+    "attribute": "Vaccine",
+    "type": "Ancient Holy Warrior",
+    "rarity": "SEC",
+    "cardNumber": "BT8-112",
+    "effect": "When one of your Digimon would digivolve into this card in your hand, you may return 1 white level 7 Digimon card from your trash to the bottom of your deck to reduce the digivolution cost by 4.[When Digivolving][When Attacking] You may return 1 2-color card from this Digimon's digivolution cards to the bottom of its owner's deck to trash all of the digivolution cards of 1 of your opponent's Digimon. Then, return all of your opponent's Digimon with no digivolution cards to the bottom of their owners' decks in any order.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "April Ultimate Cup Champion",
+    "color": "White",
+    "version": "Stamp"
+  },
+];

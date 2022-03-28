@@ -3344,5 +3344,27 @@ export const BT05CardList: ICard[] = [
     "notes": "\u25b9BOOSTER -BATTLE OF OMNI- [BT05]",
     "color": "White",
     "version": "Normal"
+  },
+  {
+    "id": "BT5-007_P3",
+    "name": "Agumon",
+    "cardImage": "assets/images/cards/BT5-007_P3.jpg",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Vaccine",
+    "type": "Reptile",
+    "rarity": "C",
+    "cardNumber": "BT5-007",
+    "effect": "[On Play] Reveal 3 cards from the top of your deck. Add 1 Digimon card with [Greymon] in its name (other than [DoruGreymon], [BurningGreymon], or [DexDoruGreymon]) and 1 Digimon card with [Omnimon] in its name among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "NEW AWAKENING\uff08BT-08\uff09Pre-Release Tournament Winner Card",
+    "color": "Red",
+    "version": "Stamp"
   }
 ];

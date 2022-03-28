@@ -2265,5 +2265,27 @@ export const EX01CardList: ICard[] = [{
     "notes": "\u25b9THEME BOOSTER -CLASSIC COLLECTION-[EX-01]",
     "color": "White",
     "version": "Normal"
+  },
+  {
+    "id": "EX1-014_P1",
+    "name": "ExVeemon",
+    "cardImage": "assets/images/cards/EX1-014_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "4000",
+    "playCost": "5",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "2 from Lv.3",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Free",
+    "type": "Mythical Dragon",
+    "rarity": "C",
+    "cardNumber": "EX1-014",
+    "effect": "\uff1cJamming\uff1e (This Digimon can't be deleted in battles against Security Digimon.)",
+    "digivolveEffect": "[Your Turn] While this Digimon has [Imperialdramon] in its name or [Free] in its traits, it gains \uff1cJamming\uff1e.",
+    "securityEffect": "-",
+    "notes": "April Ultimate Cup Top 64",
+    "color": "Blue",
+    "version": "Stamp"
   }
 ];

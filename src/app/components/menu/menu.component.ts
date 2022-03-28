@@ -6,7 +6,7 @@ import {first, Subject, takeUntil} from "rxjs";
 import {SITES} from 'src/app/pages/main-page/main-page.component';
 import {ICard, ICountCard, ISave} from "../../../models";
 import {AuthService} from "../../service/auth.service";
-import {addToCollection, changeCollectionMode, loadSave, setCollection, setSite} from "../../store/digimon.actions";
+import {addToCollection, changeCollectionMode, loadSave, setSave, setSite} from "../../store/digimon.actions";
 import {selectAllCards, selectCollectionMode, selectSave} from "../../store/digimon.selectors";
 
 @Component({
@@ -75,7 +75,9 @@ export class MenuComponent implements OnInit, OnDestroy {
           {
             label: this.authService.userData?.displayName,
             icon: 'pi pi-google',
-            command: () => {this.login();}
+            command: () => {
+              this.authService.LogOut();
+            }
           }
         ]
       };
@@ -175,14 +177,25 @@ export class MenuComponent implements OnInit, OnDestroy {
   deleteSave(event: Event) {
     this.confirmationService.confirm({
       target: event!.target!,
-      message: 'You are about to permanently delete your collection. Are you sure?',
+      message: 'You are about to permanently delete your save. Are you sure?',
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
-        this.store.dispatch(setCollection({collection: []}));
+        this.store.dispatch(setSave({
+          save: {
+            collection: [],
+            decks: [],
+            settings: {cardSize: 50, collectionMode: true}
+          }
+        }));
         this.display = false;
-        this.messageService.add({severity:'success', summary:'Save cleared!', detail:'The save was cleared successfully!'});
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Save cleared!',
+          detail: 'The save was cleared successfully!'
+        });
       },
-      reject: () => {}
+      reject: () => {
+      }
     });
   }
 

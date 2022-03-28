@@ -28,6 +28,11 @@ export const initialState: ISave = {
 export const saveReducer = createReducer(
   initialState,
 
+  //region Save Reducers
+  on(setSave, (state, {save}) => save),
+  on(loadSave, (state, {save}) => save),
+  //endregion
+
   on(setCollection, (state, {collection}) => ({...state, collection})),
   on(addToCollection, (state, {collectionCards}) => ({
     ...state,
@@ -89,11 +94,6 @@ export const saveReducer = createReducer(
     }
     return state;
   }),
-  //endregion
-
-  //region Save Reducers
-  on(setSave, (state, {save}) => save),
-  on(loadSave, (state, {save}) => save),
   //endregion
 
   //region Deck Reducers

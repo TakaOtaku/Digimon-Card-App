@@ -32,6 +32,7 @@ export class FullCardComponent implements OnInit, OnDestroy {
     ['Black', 'assets/images/banner/ico_card_detail_black.png'],
     ['Purple', 'assets/images/banner/ico_card_detail_purple.png'],
     ['White', 'assets/images/banner/ico_card_detail_white.png'],
+    ['Multi', 'assets/images/banner/ico_card_detail_multi.png'],
   ])
 
   private onDestroy$ = new Subject();

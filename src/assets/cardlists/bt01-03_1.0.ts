@@ -6292,5 +6292,27 @@ export const BT01_03_1_0CardList: ICard[] = [
     "notes": "DIGIMON CARD TAMER'S EVOLUTION BOX\uff3bPB-01\uff3d",
     "color": "Green",
     "version": "AA"
+  },
+  {
+    "id": "BT1-084_P4",
+    "name": "Omnimon",
+    "cardImage": "assets/images/cards/BT1-084_P4.jpg",
+    "cardType": "Digimon",
+    "dp": "15000",
+    "playCost": "15",
+    "digivolveCost1": "6 from Lv.6",
+    "digivolveCost2": "6 from Lv.6",
+    "cardLv": "Lv.7",
+    "form": "Mega",
+    "attribute": "Vaccine",
+    "type": "Holy Warrior/Royal Knight",
+    "rarity": "SR",
+    "cardNumber": "BT1-084",
+    "effect": "[When DigivoLv.ing] Choose 1 of your opponent's Digimon. Delete all of your opponent's Digimon that share a name with it.[When Attacking] You can unsuspend this Digimon by returning 1 of this Digimon's level 6 digivolution cards to your hand.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "April Ultimate Cup Top 2",
+    "color": "White",
+    "version": "Stamp"
   }
 ];

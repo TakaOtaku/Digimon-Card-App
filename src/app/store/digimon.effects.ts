@@ -3,28 +3,34 @@ import {Actions, createEffect, ofType} from "@ngrx/effects";
 import {Store} from "@ngrx/store";
 import {catchError, EMPTY, map, switchMap, tap} from "rxjs";
 import {filterCards} from "../functions/filter.functions";
+import {AuthService} from "../service/auth.service";
+import {DatabaseService} from "../service/database.service";
 import * as DigimonActions from "./digimon.actions";
 import {selectChangeFilterEffect, selectSave} from "./digimon.selectors";
 
 @Injectable()
 export class DigimonEffects {
-  saveLocalStorage$ = createEffect(() => this.actions$.pipe(
-      ofType(
-        DigimonActions.changeCardCount,
-        DigimonActions.increaseCardCount,
-        DigimonActions.decreaseCardCount,
-        DigimonActions.setSave,
-        DigimonActions.importDeck,
-        DigimonActions.changeDeck,
-        DigimonActions.deleteDeck,
-        DigimonActions.changeCardSize,
-        DigimonActions.changeCollectionMode,
+  save$ = createEffect(() => this.actions$.pipe(
+    ofType(
+      DigimonActions.changeCardCount,
+      DigimonActions.increaseCardCount,
+      DigimonActions.decreaseCardCount,
+      DigimonActions.setSave,
+      DigimonActions.importDeck,
+      DigimonActions.changeDeck,
+      DigimonActions.deleteDeck,
+      DigimonActions.changeCardSize,
+      DigimonActions.changeCollectionMode,
         DigimonActions.addToCollection
       ),
       switchMap(() => this.store.select(selectSave)
         .pipe(
           map(save => {
-            localStorage.setItem('Digimon-Card-Collector', JSON.stringify(save));
+            if (this.authService.isLoggedIn) {
+              this.dbService.setSave(this.authService.userData!.uid, save);
+            } else {
+              localStorage.setItem('Digimon-Card-Collector', JSON.stringify(save));
+            }
           }),
           catchError(() => {
             return EMPTY
@@ -52,6 +58,8 @@ export class DigimonEffects {
 
   constructor(
     private store: Store,
+    private authService: AuthService,
+    private dbService: DatabaseService,
     private actions$: Actions
   ) {}
 }

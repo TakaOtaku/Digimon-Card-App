@@ -1496,5 +1496,27 @@ export const PromotionCardList: ICard[] = [
     "notes": "Official Tournament Pack Vol.4",
     "color": "Green",
     "version": "Normal"
+  },
+  {
+    "id": "P-058",
+    "name": "Gammamon",
+    "cardImage": "assets/images/cards/P-058.jpg",
+    "cardType": "Digimon",
+    "dp": "4000",
+    "playCost": "4",
+    "digivolveCost1": "1 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Virus",
+    "type": "Ceratopsian",
+    "rarity": "P",
+    "cardNumber": "P-058",
+    "effect": "[Your Turn] While you have a red Tamer in play, this Digimon can also attack your opponent's unsuspended Digimon.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "NEW AWAKENING\uff08BT-08\uff09Pre-Release Tournament",
+    "color": "Red",
+    "version": "Normal"
   }
 ];

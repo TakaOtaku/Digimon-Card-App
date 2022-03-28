@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {Store} from "@ngrx/store";
+import {first} from "rxjs";
 import {ISave} from "../models";
 import {AuthService} from "./service/auth.service";
 import {DatabaseService} from "./service/database.service";
@@ -25,17 +26,19 @@ export class AppComponent {
    * @private
    */
   private loadSave(): void {
-    //if(this.authService.isLoggedIn) {
-    //  const item = this.databaseService.loadSave(this.authService.userData);
-    //  if (!item) return;
-    //  const save: ISave = JSON.parse(item)
-    //  this.store.dispatch(loadSave({save}));
-    //  return;
-    //}
+    this.authService.checkLocalStorage();
+    if (this.authService.isLoggedIn) {
+      this.databaseService.loadSave(this.authService.userData!.uid).pipe(first())
+        .subscribe((save: ISave) => {
+          this.store.dispatch(loadSave({save}))
+        });
+    } else {
+      const string = localStorage.getItem('Digimon-Card-Collector')
+      if (!string) return;
 
-    const item = localStorage.getItem('Digimon-Card-Collector');
-    if (!item) return;
-    const save: ISave = JSON.parse(item)
-    this.store.dispatch(loadSave({save}));
+      const save: ISave = JSON.parse(string);
+      this.store.dispatch(loadSave({save}));
+    }
+
   }
 }
