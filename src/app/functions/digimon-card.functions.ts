@@ -18,6 +18,7 @@ import {
   ST08CardList,
   ST09CardList
 } from "../../assets/cardlists";
+import {OtherCardList} from "../../assets/cardlists/other";
 import {ICard} from "../../models";
 
 export function setupDigimonCards(): ICard[] {
@@ -30,7 +31,7 @@ export function setupDigimonCards(): ICard[] {
     ST03CardList, ST04CardList,
     ST05CardList, ST06CardList,
     ST07CardList, ST08CardList,
-    ST09CardList
+    ST09CardList, OtherCardList
   );
   allCards.sort(function(a, b){
     if(a.cardNumber < b.cardNumber) { return -1; }

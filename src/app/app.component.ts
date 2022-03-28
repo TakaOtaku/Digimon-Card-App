@@ -34,9 +34,10 @@ export class AppComponent {
         });
     } else {
       const string = localStorage.getItem('Digimon-Card-Collector')
-      if (!string) return;
+      let save: ISave = {collection: [], decks: [], settings: {cardSize: 50, collectionMode: true}};
+      if (string) save = JSON.parse(string);
 
-      const save: ISave = JSON.parse(string);
+
       this.store.dispatch(loadSave({save}));
     }
 
