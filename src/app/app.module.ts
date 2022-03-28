@@ -1,6 +1,7 @@
 import {HttpClientModule} from "@angular/common/http";
 import {NgModule} from '@angular/core';
 import {AngularFireModule} from "@angular/fire/compat";
+import {AngularFireAuthModule} from "@angular/fire/compat/auth";
 import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserModule} from '@angular/platform-browser';
@@ -30,6 +31,8 @@ import {DeckBuilderComponent} from './pages/deck-builder/deck-builder.component'
 import {DecksComponent} from './pages/decks/decks.component';
 import {MainPageComponent} from './pages/main-page/main-page.component';
 import {PrimeNGModule} from "./primeng.module";
+import {AuthService} from "./service/auth.service";
+import {DatabaseService} from "./service/database.service";
 import {DigimonEffects} from "./store/digimon.effects";
 
 import * as DigimonCards from "./store/reducers/digimon-card.reducers";
@@ -71,6 +74,7 @@ import { MobileDeckBuilderComponent } from './pages/mobile-deck-builder/mobile-d
     LazyLoadImageModule,
 
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
     AngularFireDatabaseModule,
 
     ToastrModule.forRoot({}),
@@ -85,7 +89,7 @@ import { MobileDeckBuilderComponent } from './pages/mobile-deck-builder/mobile-d
     }),
     EffectsModule.forRoot([DigimonEffects])
   ],
-  providers: [ReactiveFormsModule],
+  providers: [ReactiveFormsModule, AuthService, DatabaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

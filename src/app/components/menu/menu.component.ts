@@ -5,6 +5,7 @@ import {ConfirmationService, MenuItem, MessageService, PrimeNGConfig} from "prim
 import {first, Subject, takeUntil} from "rxjs";
 import {SITES} from 'src/app/pages/main-page/main-page.component';
 import {ICard, ICountCard, ISave} from "../../../models";
+import {AuthService} from "../../service/auth.service";
 import {addToCollection, changeCollectionMode, loadSave, setCollection, setSite} from "../../store/digimon.actions";
 import {selectAllCards, selectCollectionMode, selectSave} from "../../store/digimon.selectors";
 
@@ -39,6 +40,7 @@ export class MenuComponent implements OnInit, OnDestroy {
     private messageService: MessageService,
     private primengConfig: PrimeNGConfig,
     private confirmationService: ConfirmationService,
+    public authService: AuthService,
     private store: Store
   ) {
     this.store.select(selectCollectionMode).pipe(takeUntil(this.onDestroy$))
@@ -50,6 +52,9 @@ export class MenuComponent implements OnInit, OnDestroy {
       .subscribe((save) => {
         this.save = JSON.stringify(save, undefined, 4)
       });
+    this.authService.authChange.subscribe(change => {
+      this.update();
+    });
   }
 
   ngOnInit() {
@@ -63,7 +68,31 @@ export class MenuComponent implements OnInit, OnDestroy {
   }
 
   update() {
+    let loggedInItem;
+    if(this.authService.isLoggedIn) {
+      loggedInItem = {
+        items: [
+          {
+            label: this.authService.userData?.displayName,
+            icon: 'pi pi-google',
+            command: () => {this.login();}
+          }
+        ]
+      };
+    } else {
+      loggedInItem = {
+        items: [
+          {
+            label: 'Login',
+            icon: 'pi pi-google',
+            command: () => {this.login();}
+          }
+        ]
+      };
+    }
+
     this.items = [
+      loggedInItem,
       {
         label: 'Pages',
         items: [
@@ -155,6 +184,10 @@ export class MenuComponent implements OnInit, OnDestroy {
       },
       reject: () => {}
     });
+  }
+
+  login() {
+    this.authService.GoogleAuth();
   }
 
   importCollection() {
