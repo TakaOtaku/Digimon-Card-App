@@ -112,7 +112,11 @@ export class DecksComponent {
       message: 'You are about to permanently delete this deck. Are you sure?',
       accept: () => {
         this.store.dispatch(deleteDeck({deck: this.deck}));
-        this.messageService.add({severity:'success', summary:'Deck deleted!', detail:'Deck was deleted successfully!'});
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Deck deleted!',
+          detail: 'Deck was deleted successfully!'
+        });
       }
     });
   }
@@ -121,5 +125,15 @@ export class DecksComponent {
     this.deck = deck;
     this.title = deck.title ?? '';
     this.description = deck.description ?? '';
+  }
+
+  createNewDeck() {
+    const deck: IDeck = {
+      id: uuid.v4(),
+      cards: [],
+      title: 'New Deck',
+      color: {name: 'White', img: 'assets/decks/white.svg'},
+    };
+    this.store.dispatch(importDeck({deck}));
   }
 }

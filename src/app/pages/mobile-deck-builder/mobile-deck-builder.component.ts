@@ -4,7 +4,6 @@ import {ConfirmationService, MessageService} from "primeng/api";
 import {filter, Subject, takeUntil} from "rxjs";
 import * as uuid from "uuid";
 import {ICard, ICountCard, IDeck, IDeckCard} from "../../../models";
-import {dynamicSort} from "../../functions/filter.functions";
 import {importDeck, setDeck} from "../../store/digimon.actions";
 import {selectDeckBuilderViewModel} from "../../store/digimon.selectors";
 
@@ -93,8 +92,8 @@ export class MobileDeckBuilderComponent implements OnInit, OnDestroy {
       }
     });
 
-    const sortedCards = iDeckCards.sort(dynamicSort('cardLv'));
-    sortedCards.forEach(card => this.mainDeck.push({...card, count: card.count}));
+    iDeckCards.forEach(card => this.mainDeck.push({...card, count: card.count}));
+    this.deckSort();
   }
 
   switchFullOrSmallCards() {
@@ -156,7 +155,7 @@ export class MobileDeckBuilderComponent implements OnInit, OnDestroy {
     }
     const card = this.allCards.find(card => card.cardNumber === id);
     this.mainDeck.push({...card!, count: 1});
-
+    this.deckSort();
   }
 
   getCardCount(which: string): number {
@@ -181,6 +180,7 @@ export class MobileDeckBuilderComponent implements OnInit, OnDestroy {
 
   removeCard(card: IDeckCard) {
     this.mainDeck = this.mainDeck.filter(value => value !== card);
+    this.deckSort();
   }
 
   getLevelStats() {
@@ -267,5 +267,47 @@ export class MobileDeckBuilderComponent implements OnInit, OnDestroy {
     let count = 0;
     cards.forEach(card => count += card.count);
     return count;
+  }
+
+  deckSort() {
+    const eggs = this.mainDeck.filter(card => card.cardType === 'Digi-Egg').sort((a, b) => {
+      if (a.name < b.name) {
+        return -1;
+      }
+      if (a.name > b.name) {
+        return 1;
+      }
+      return 0;
+    });
+    const digimon = this.mainDeck.filter(card => card.cardType === 'Digimon').sort((a, b) => {
+      const aa: number = +a.cardLv[3];
+      const bb: number = +b.cardLv[3];
+      if (aa < bb) {
+        return -1;
+      }
+      if (aa > bb) {
+        return 1;
+      }
+      return 0;
+    });
+    const tamer = this.mainDeck.filter(card => card.cardType === 'Tamer').sort((a, b) => {
+      if (a.name < b.name) {
+        return -1;
+      }
+      if (a.name > b.name) {
+        return 1;
+      }
+      return 0;
+    });
+    const options = this.mainDeck.filter(card => card.cardType === 'Option').sort((a, b) => {
+      if (a.name < b.name) {
+        return -1;
+      }
+      if (a.name > b.name) {
+        return 1;
+      }
+      return 0;
+    });
+    this.mainDeck = [...new Set([...eggs, ...digimon, ...tamer, ...options])]
   }
 }

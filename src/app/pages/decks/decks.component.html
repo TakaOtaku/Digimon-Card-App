@@ -1,4 +1,5 @@
 <button pButton class="import" (click)="openImportDialog()" label="Import Deck"></button>
+<button (click)="createNewDeck()" class="import" label="Create new Deck" pButton></button>
 
 <div class="flex flex-wrap overflow-scroll">
   <div #div *ngFor="let deck of decks$ | async" class="flex flex-wrap" (contextmenu)="onContextMenu(deck)">
