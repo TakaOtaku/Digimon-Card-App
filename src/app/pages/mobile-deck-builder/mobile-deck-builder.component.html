@@ -1,10 +1,10 @@
 <div class="flex w-100 max-h-screen-minus flex-col">
-  <div class="border-2 border-slate-300 ml-2 w-full overflow-scroll max-h-1/2">
+  <div class="border-2 border-slate-300 w-full overflow-scroll h-[37vh]">
     <digimon-filter-box [compact]="true" class="w-100"></digimon-filter-box>
-    <digimon-card-list (onCardClick)="onCardClick($event)" [deckBuilder]="true" [showCount]="25" class="w-100"></digimon-card-list>
+    <digimon-pagination-card-list (onCardClick)="onCardClick($event)"></digimon-pagination-card-list>
   </div>
 
-  <div class="border-2 border-slate-300 mr-2 overflow-scroll overflow-x-hidden w-full max-h-1/2">
+  <div class="border-2 border-slate-300 overflow-scroll overflow-x-hidden h-[50vh]">
     <!-- Deck Top Line -->
     <div class="toolbar inline-flex w-100 border-b-2 border-slate-600 justify-center surface-ground">
 
@@ -15,21 +15,11 @@
         {{getCardCount('Main')}}</b>/<p class="bottom-font pr-1">50 </p> <p class="text-xs"> Cards</p>
       </div>
 
-      <!--button class="p-button-outlined" pButton (click)="switchFullOrSmallCards()" label="{{this.fullCards ? 'Full Cards' : 'Small Cards'}}"></button>
-
-      <button-- class="p-button-outlined" pButton (click)="switchStack()"  label="{{this.stack ? 'Stacked' : 'Not Stacked'}}"></button-->
-
       <button class="p-button-outlined" pButton (click)="stats()" label="Stats" icon="pi pi-chart-bar" iconPos="left"></button>
-
-      <!--button class="p-button-outlined" pButton (click)="share()" label="Share" icon="pi pi-share-alt" iconPos="left"></button-->
 
       <button class="p-button-outlined" pButton (click)="save()" label="Save" icon="pi pi-save" iconPos="left"></button>
 
-      <button class="p-button-outlined" pButton (click)="import()" label="Import" icon="pi pi-upload" iconPos="left"></button>
-
-      <button class="p-button-outlined" pButton (click)="export()" label="Export" icon="pi pi-download" iconPos="left"></button>
-
-      <button class="p-button-outlined" pButton (click)="delete()" label="Delete" icon="pi pi-trash" iconPos="left"></button>
+      <button class="p-button-outlined" pButton (click)="settingsDialog = true" icon="pi pi-cog" iconPos="left"></button>
     </div>
 
     <div class="card-container w-100 border-4 border-slate-600 rounded-tl-lg rounded-br-lg surface-ground">
@@ -60,6 +50,14 @@
 
 <p-dialog header="Deck Stats" [(visible)]="statDialog" [style]="{width: '100vw', height: '75vh'}" [baseZIndex]="10000">
   <p-chart type="bar" [data]="levelData" [options]="chartOptions"></p-chart>
+</p-dialog>
+
+<p-dialog header="Settings" [(visible)]="settingsDialog" [style]="{width: '100vw', height: '20vh'}" [baseZIndex]="10000">
+  <button class="p-button-outlined" pButton (click)="import()" label="Import" icon="pi pi-upload" iconPos="left"></button>
+
+  <button class="p-button-outlined" pButton (click)="export()" label="Export" icon="pi pi-download" iconPos="left"></button>
+
+  <button class="p-button-outlined" pButton (click)="delete()" label="Delete" icon="pi pi-trash" iconPos="left"></button>
 </p-dialog>
 
 <p-confirmDialog key="DeleteDeck" header="Delete Confirmation" icon="pi pi-exclamation-triangle" rejectButtonStyleClass="p-button-outlined"></p-confirmDialog>

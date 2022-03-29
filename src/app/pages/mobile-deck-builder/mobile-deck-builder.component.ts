@@ -25,6 +25,7 @@ export class MobileDeckBuilderComponent implements OnInit, OnDestroy {
     ['Black', '#211813'],
     ['Purple', '#6555a2'],
     ['White', '#ffffff'],
+    ['Multi', '#ffffff'],
   ]);
 
   levelData: any;
@@ -51,6 +52,7 @@ export class MobileDeckBuilderComponent implements OnInit, OnDestroy {
   exportDialog = false;
   importDialog = false;
   statDialog = false;
+  settingsDialog = false;
 
   private onDestroy$ = new Subject();
 
@@ -189,6 +191,7 @@ export class MobileDeckBuilderComponent implements OnInit, OnDestroy {
     const black = this.getColorLevelStats('Black');
     const purple = this.getColorLevelStats('Purple');
     const white = this.getColorLevelStats('White');
+    const multi = this.getColorLevelStats('Multi');
 
     const datasets = []
 
@@ -233,6 +236,12 @@ export class MobileDeckBuilderComponent implements OnInit, OnDestroy {
       label: 'White',
       backgroundColor: this.colorMap.get('White'),
       data: white
+    });
+    if (multi.length > 0) datasets.push({
+      type: 'bar',
+      label: 'Multi',
+      backgroundColor: this.colorMap.get('Multi'),
+      data: multi
     });
 
     this.levelData = {

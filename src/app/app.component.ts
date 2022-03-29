@@ -23,7 +23,6 @@ export class AppComponent {
    * Load the User-Save
    * a) If the User is logged in, load the data from the database
    * b) If the User is not logged in, load the data from the local storage
-   * @private
    */
   private loadSave(): void {
     this.authService.checkLocalStorage();

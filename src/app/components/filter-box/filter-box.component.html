@@ -15,35 +15,33 @@
 
     <p-inputNumber [formControl]="countFilter" [showButtons]="true" mode="decimal" [min]="0"></p-inputNumber>
 
-    <digimon-multi-select ngDefaultControl [formControl]="setFilter" [options]="groupedSets" [group]="true" label="Set"></digimon-multi-select>
-    <digimon-multi-select ngDefaultControl [formControl]="cardTypeFilter" [options]="cardTypes" [group]="false" label="Card-Type"></digimon-multi-select>
-    <digimon-multi-select ngDefaultControl [formControl]="colorFilter" [options]="colors" [group]="false" label="Color"></digimon-multi-select>
-    <digimon-multi-select ngDefaultControl [formControl]="typeFilter" [options]="types" [group]="false" label="Type"></digimon-multi-select>
-    <digimon-multi-select ngDefaultControl [formControl]="lvFilter" [options]="lvs" [group]="false" label="Level"></digimon-multi-select>
-    <digimon-multi-select ngDefaultControl [formControl]="rarityFilter" [options]="rarities" [group]="false" label="Rarity"></digimon-multi-select>
-    <digimon-multi-select ngDefaultControl [formControl]="versionFilter" [options]="versions" [group]="false" label="Version"></digimon-multi-select>
+    <ng-template [ngTemplateOutlet]="Filter"></ng-template>
   </div>
 </div>
 
 <p-dialog header="Filter and Sort" [(visible)]="display" [style]="{width: '80vw', height: '70vh'}" [baseZIndex]="10000">
   <div class="flex flex-col">
-    <span class="p-input-icon-left w-full" [ngStyle]="{display: 'inline-flex'}">
+    <digimon-sort-buttons class="m-auto mb-2"></digimon-sort-buttons>
+
+    <span class="p-input-icon-left w-full mb-2" [ngStyle]="{display: 'inline-flex'}">
       <i class="pi pi-search"></i>
       <input type="text" pInputText [formControl]="searchFilter" placeholder="Search" class="w-full">
     </span>
 
-    <div class="flex flex-row my-5">
-      <p-inputNumber class="w-full" [formControl]="countFilter" [showButtons]="true" mode="decimal" [min]="0"></p-inputNumber>
+    <p-inputNumber class="w-full" [formControl]="countFilter" [showButtons]="true" mode="decimal" [min]="0"></p-inputNumber>
 
-      <digimon-multi-select ngDefaultControl class="dialog w-full" [formControl]="setFilter" [options]="groupedSets" [group]="true" label="Set"></digimon-multi-select>
-      <digimon-multi-select ngDefaultControl class="dialog w-full" [formControl]="cardTypeFilter" [options]="cardTypes" [group]="false" label="Card-Type"></digimon-multi-select>
-      <digimon-multi-select ngDefaultControl class="dialog w-full" [formControl]="colorFilter" [options]="colors" [group]="false" label="Color"></digimon-multi-select>
-      <digimon-multi-select ngDefaultControl class="dialog w-full" [formControl]="typeFilter" [options]="types" [group]="false" label="Type"></digimon-multi-select>
-      <digimon-multi-select ngDefaultControl class="dialog w-full" [formControl]="lvFilter" [options]="lvs" [group]="false" label="Level"></digimon-multi-select>
-      <digimon-multi-select ngDefaultControl class="dialog w-full" [formControl]="rarityFilter" [options]="rarities" [group]="false" label="Rarity"></digimon-multi-select>
-      <digimon-multi-select ngDefaultControl class="dialog w-full" [formControl]="versionFilter" [options]="versions" [group]="false" label="Version"></digimon-multi-select>
+    <div class="flex flex-col lg:flex-row my-5 justify-center">
+      <ng-template [ngTemplateOutlet]="Filter"></ng-template>
     </div>
-
-    <digimon-sort-buttons class="m-auto^"></digimon-sort-buttons>
   </div>
 </p-dialog>
+
+<ng-template #Filter>
+  <digimon-multi-select ngDefaultControl class="dialog" [formControl]="setFilter" [options]="groupedSets" [group]="true" label="Set"></digimon-multi-select>
+  <digimon-multi-select ngDefaultControl class="dialog" [formControl]="cardTypeFilter" [options]="cardTypes" [group]="false" label="Card-Type"></digimon-multi-select>
+  <digimon-multi-select ngDefaultControl class="dialog" [formControl]="colorFilter" [options]="colors" [group]="false" label="Color"></digimon-multi-select>
+  <digimon-multi-select ngDefaultControl class="dialog" [formControl]="typeFilter" [options]="types" [group]="false" label="Type"></digimon-multi-select>
+  <digimon-multi-select ngDefaultControl class="dialog" [formControl]="lvFilter" [options]="lvs" [group]="false" label="Level"></digimon-multi-select>
+  <digimon-multi-select ngDefaultControl class="dialog" [formControl]="rarityFilter" [options]="rarities" [group]="false" label="Rarity"></digimon-multi-select>
+  <digimon-multi-select ngDefaultControl class="dialog" [formControl]="versionFilter" [options]="versions" [group]="false" label="Version"></digimon-multi-select>
+</ng-template>

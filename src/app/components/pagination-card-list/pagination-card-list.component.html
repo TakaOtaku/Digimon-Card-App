@@ -1,0 +1,10 @@
+<div class="inline-flex max-w-screen h-[30vh] overflow-x-hidden">
+  <button pButton pRipple type="button" icon="pi pi-angle-left" class="p-button p-button-primary" (click)="previous()" [disabled]="previousCards"></button>
+  <div class="inline-flex flex-wrap justify-center">
+    <h1 *ngIf="cardsToShow.length === 0" class="primary-color my-10 text-5xl text-bold">No cards found!</h1>
+    <digimon-full-card *ngFor="let card of cardsToShow" class="transition scale-95"
+                       (click)="addToDeck(card)" [card]="card" [collectionMode]="false" [count]="getCount(card.id)" [deckBuilder]="true">
+    </digimon-full-card>
+  </div>
+  <button pButton pRipple type="button" icon="pi pi-angle-right" class="p-button p-button-primary" (click)="next()" [disabled]="nextCards"></button>
+</div>

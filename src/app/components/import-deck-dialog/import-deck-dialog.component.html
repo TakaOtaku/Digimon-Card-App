@@ -4,9 +4,9 @@
     <textarea pInputTextarea [placeholder]="importPlaceholder" id="text-import" class="border-2 border-black-500 min-w-full min-h-[200px]" [(ngModel)]="deckText"></textarea>
   </div>
 
-  <div class="w-full flex justify-end mt-5">
+  <div class="w-full flex mt-5">
     <input style="display: none" type="file" accept=".txt" id="file-input" (change)="handleFileInput($event.target)" #fileUpload>
     <button pButton (click)="fileUpload.click()">Import Text-File</button>
-    <button pButton (click)="importDeck()" class="ml-5">Import</button>
+    <button pButton (click)="importDeck()" style="margin-left: 5px;">Import</button>
   </div>
 </p-dialog>

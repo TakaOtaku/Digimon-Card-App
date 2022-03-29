@@ -23,13 +23,14 @@ import {ImportDeckDialogComponent} from './components/import-deck-dialog/import-
 import {MenuComponent} from './components/menu/menu.component';
 import {MultiSelectComponent} from './components/multi-select/multi-select.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
+import {PaginationCardListComponent} from './components/pagination-card-list/pagination-card-list.component';
 import {SliderComponent} from './components/slider/slider.component';
 import {SmallDeckCardComponent} from './components/small-deck-card/small-deck-card.component';
 import {SortButtonsComponent} from './components/sort-buttons/sort-buttons.component';
-import {MaterialModule} from "./material.module";
 import {DeckBuilderComponent} from './pages/deck-builder/deck-builder.component';
 import {DecksComponent} from './pages/decks/decks.component';
 import {MainPageComponent} from './pages/main-page/main-page.component';
+import {MobileDeckBuilderComponent} from './pages/mobile-deck-builder/mobile-deck-builder.component';
 import {PrimeNGModule} from "./primeng.module";
 import {AuthService} from "./service/auth.service";
 import {DatabaseService} from "./service/database.service";
@@ -38,7 +39,6 @@ import {DigimonEffects} from "./store/digimon.effects";
 import * as DigimonCards from "./store/reducers/digimon-card.reducers";
 import * as Digimon from "./store/reducers/digimon.reducers";
 import * as Save from "./store/reducers/save.reducer";
-import { MobileDeckBuilderComponent } from './pages/mobile-deck-builder/mobile-deck-builder.component';
 
 
 @NgModule({
@@ -60,9 +60,9 @@ import { MobileDeckBuilderComponent } from './pages/mobile-deck-builder/mobile-d
     ExportDeckDialogComponent,
     ImportDeckDialogComponent,
     MobileDeckBuilderComponent,
+    PaginationCardListComponent,
   ],
   imports: [
-    MaterialModule,
     PrimeNGModule,
     AppRoutingModule,
     FormsModule,

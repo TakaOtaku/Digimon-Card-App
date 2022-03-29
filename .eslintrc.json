@@ -3,6 +3,9 @@
   "ignorePatterns": [
     "projects/**/*"
   ],
+  "rules": {
+    "no-console": "error"
+  },
   "overrides": [
     {
       "files": [

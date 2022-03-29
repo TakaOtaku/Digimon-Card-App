@@ -1,14 +1,10 @@
 <div class="inline-flex relative">
-  <div class="flex flex-col justify-center align-middle">
+  <div class="flex flex-col justify-center align-middle scale-75">
     <button (click)="increaseCardCount()" pButton pRipple type="button" icon="pi pi-plus-circle" class="p-button-rounded scale-75 p-button-primary"></button>
     <p class="text-center font-bold primary-color">{{card.count}}</p>
     <button (click)="decreaseCardCount()" pButton pRipple type="button" icon="pi pi-minus-circle" class="p-button-rounded scale-75 p-button-primary"></button>
   </div>
 
-  <img [src]="card.cardImage" alt="Digimon Card" class="card-image m-auto z-50" mat-card-image>
-  <!--img [src]="card.cardImage" alt="Digimon Card" class="absolute-stack-1 z-40" mat-card-image>
-  <img [src]="card.cardImage" alt="Digimon Card" class="absolute-stack-2 z-30" mat-card-image>
-  <img [src]="card.cardImage" alt="Digimon Card" class="absolute-stack-3 z-20" mat-card-image>
-  <img [src]="card.cardImage" alt="Digimon Card" class="absolute-stack-4 z-10" mat-card-image-->
+  <img [src]="card.cardImage" alt="Digimon Card" class="card-image m-auto z-50">
 </div>
 
