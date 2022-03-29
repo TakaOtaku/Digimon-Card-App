@@ -2,7 +2,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {Subject, takeUntil} from "rxjs";
 import {ICard, ICountCard} from "../../../models";
-import {selectCardListViewModel} from "../../store/digimon.selectors";
+import {selectCollection, selectCollectionMode, selectFilteredCards} from "../../store/digimon.selectors";
 
 @Component({
   selector: 'digimon-pagination-card-list',
@@ -25,12 +25,18 @@ export class PaginationCardListComponent implements OnInit {
   constructor(private store: Store) {}
 
   ngOnInit() {
-    this.store.select(selectCardListViewModel).pipe(takeUntil(this.onDestroy$))
-      .subscribe(({cards, collection, collectionMode}) => {
+    this.store.select(selectFilteredCards).pipe(takeUntil(this.onDestroy$))
+      .subscribe((cards) => {
         this.cards = cards.filter(card => card.version === 'Normal');
-        this.collection = collection;
-        this.collectionMode = collectionMode;
         this.cardsToShow = this.cards.slice(0, this.pagination);
+      });
+    this.store.select(selectCollection).pipe(takeUntil(this.onDestroy$))
+      .subscribe((collection) => {
+        this.collection = collection;
+      });
+    this.store.select(selectCollectionMode).pipe(takeUntil(this.onDestroy$))
+      .subscribe((collectionMode) => {
+        this.collectionMode = collectionMode;
       });
   }
 

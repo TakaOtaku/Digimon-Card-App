@@ -1,9 +1,8 @@
 import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {Subject, takeUntil} from "rxjs";
-import {addToDeck} from 'src/app/store/digimon.actions';
 import {ICard, ICountCard} from "../../../models";
-import {selectCardListViewModel} from "../../store/digimon.selectors";
+import {selectCollection, selectCollectionMode, selectFilteredCards} from "../../store/digimon.selectors";
 
 @Component({
   selector: 'digimon-card-list',
@@ -27,12 +26,19 @@ export class CardListComponent implements OnInit, OnDestroy {
   constructor(private store: Store) {}
 
   ngOnInit() {
-    this.store.select(selectCardListViewModel).pipe(takeUntil(this.onDestroy$))
-      .subscribe(({cards, collection, collectionMode}) => {
-        this.cards = this.deckBuilder ? cards.filter(card => card.version === 'Normal') : cards;
-        this.collection = collection;
-        this.collectionMode = collectionMode;
+    this.store.select(selectFilteredCards).pipe(takeUntil(this.onDestroy$))
+      .subscribe((cards) => {
+        const filteredCards = cards.filter(card => card.version === 'Normal');
+        this.cards = this.deckBuilder ? filteredCards : cards;
         this.cardsToShow = this.cards.slice(0, this.showCount);
+      });
+    this.store.select(selectCollection).pipe(takeUntil(this.onDestroy$))
+      .subscribe((collection) => {
+        this.collection = collection;
+      });
+    this.store.select(selectCollectionMode).pipe(takeUntil(this.onDestroy$))
+      .subscribe((collectionMode) => {
+        this.collectionMode = collectionMode;
       });
   }
 

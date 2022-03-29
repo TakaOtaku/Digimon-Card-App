@@ -62,14 +62,6 @@ export const selectCollectionMode = createSelector(
 );
 //endregion
 
-export const selectCardListViewModel = createSelector(
-  selectFilteredCards,
-  selectCollection,
-  selectCollectionMode,
-  (cards: ICard[], collection: ICountCard[], collectionMode: boolean) =>
-    ({cards, collection, collectionMode})
-);
-
 export const selectNavBarViewModel = createSelector(
   selectCollectionMode,
   selectSite,

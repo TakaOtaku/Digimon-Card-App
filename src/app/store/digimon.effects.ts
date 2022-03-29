@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {Actions, createEffect, ofType} from "@ngrx/effects";
 import {Store} from "@ngrx/store";
-import {catchError, EMPTY, map, switchMap, tap} from "rxjs";
+import {catchError, EMPTY, first, map, switchMap, tap} from "rxjs";
 import {filterCards} from "../functions/filter.functions";
 import {AuthService} from "../service/auth.service";
 import {DatabaseService} from "../service/database.service";
@@ -21,19 +21,19 @@ export class DigimonEffects {
       DigimonActions.deleteDeck,
       DigimonActions.changeCardSize,
       DigimonActions.changeCollectionMode,
-        DigimonActions.addToCollection
+      DigimonActions.addToCollection
       ),
-      switchMap(() => this.store.select(selectSave)
-        .pipe(
-          map(save => {
-            if (this.authService.isLoggedIn) {
-              this.dbService.setSave(this.authService.userData!.uid, save);
-            } else {
-              localStorage.setItem('Digimon-Card-Collector', JSON.stringify(save));
-            }
-          }),
-          catchError(() => {
-            return EMPTY
+    switchMap(() => this.store.select(selectSave).pipe(first())
+      .pipe(
+        map(save => {
+          if (this.authService.isLoggedIn) {
+            this.dbService.setSave(this.authService.userData!.uid, save);
+          } else {
+            localStorage.setItem('Digimon-Card-Collector', JSON.stringify(save));
+          }
+        }),
+        catchError(() => {
+          return EMPTY
           })
         ))
     ), {dispatch: false}
@@ -44,15 +44,17 @@ export class DigimonEffects {
         DigimonActions.changeFilter,
         DigimonActions.changeSort,
       ),
-    switchMap(() => this.store.select(selectChangeFilterEffect)
-        .pipe(
-          tap(({cards, collection, filter, sort}) => {
-            if (!cards) { return;}
-            const filteredCards = filterCards(cards, collection, filter, sort);
-            this.store.dispatch(DigimonActions.setFilteredDigimonCards({filteredCards}));
-          }),
-          catchError(() => EMPTY)
-        ))
+    switchMap(() => this.store.select(selectChangeFilterEffect).pipe(first())
+      .pipe(
+        tap(({cards, collection, filter, sort}) => {
+          if (!cards) {
+            return;
+          }
+          const filteredCards = filterCards(cards, collection, filter, sort);
+          this.store.dispatch(DigimonActions.setFilteredDigimonCards({filteredCards}));
+        }),
+        catchError(() => EMPTY)
+      ))
     ), {dispatch: false}
   );
 
