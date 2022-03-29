@@ -23,11 +23,6 @@
   <div class="flex flex-col">
     <digimon-sort-buttons class="m-auto mb-2"></digimon-sort-buttons>
 
-    <span class="p-input-icon-left w-full mb-2" [ngStyle]="{display: 'inline-flex'}">
-      <i class="pi pi-search"></i>
-      <input type="text" pInputText [formControl]="searchFilter" placeholder="Search" class="w-full">
-    </span>
-
     <p-inputNumber class="w-full" [formControl]="countFilter" [showButtons]="true" mode="decimal" [min]="0"></p-inputNumber>
 
     <div class="flex flex-col lg:flex-row my-5 justify-center">
