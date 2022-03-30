@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {ConfirmationService, MessageService} from "primeng/api";
 import {filter, Subject, takeUntil} from "rxjs";
@@ -13,6 +13,8 @@ import {selectDeckBuilderViewModel} from "../../store/digimon.selectors";
   styleUrls: ['./deck-builder.component.scss']
 })
 export class DeckBuilderComponent implements OnInit, OnDestroy {
+  @Input() public mobile: boolean;
+
   public mainDeck: IDeckCard[] = [];
   public sideDeck: IDeckCard[] = [];
 
@@ -50,6 +52,7 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
   exportDialog = false;
   importDialog = false;
   statDialog = false;
+  settingsDialog = false;
 
   private onDestroy$ = new Subject();
 
@@ -102,24 +105,12 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
     this.stack = !this.stack;
   }
 
-  stats() {
-    this.statDialog = true;
-  }
-
-  import() {
-    this.importDialog = true;
-  }
-
   share() {}
-
-  export() {
-    this.exportDialog = true;
-  }
 
   delete() {
     this.confirmationService.confirm({
       key: 'DeleteDeck',
-      message: 'You are about to clear all cards in the deck. This is not permanent until you save. Are you sure?',
+      message: 'You are about to clear all cards in the deck and make a new one. Are you sure?',
       accept: () => {
         this.mainDeck = [];
         const deck: IDeck = {
@@ -134,8 +125,15 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
   }
 
   save(){
-    this.mapToDeck();
-    this.store.dispatch(importDeck({deck: this.deck}));
+    this.confirmationService.confirm({
+      message: 'You are about to save all changes and overwrite everything changed. Are you sure?',
+      accept: () => {
+        this.mapToDeck();
+        this.store.dispatch(importDeck({deck: this.deck}));
+        this.messageService.add({severity:'success', summary:'Deck saved!', detail:'Deck was saved successfully!'});
+      }
+    });
+
   }
 
   mapToDeck() {

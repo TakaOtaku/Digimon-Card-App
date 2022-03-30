@@ -53,7 +53,7 @@ export class DecksComponent {
     this.deckContext = [
       {
         label:'Open',
-        icon:'pi pi-fw pi-trash',
+        icon:'pi pi-fw pi-info-circle',
         command: () => this.openDeck()
       },
       {
