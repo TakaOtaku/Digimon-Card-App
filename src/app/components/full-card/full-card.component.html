@@ -5,7 +5,7 @@
        [ngStyle]="{'border': cardBorder, 'border-radius': cardRadius}"
        alt="Digimon Card" class="m-auto" defaultImage="assets/images/digimon-card-back.webp">
 
-  <div class="card-buttons">
+  <div *ngIf="collectionMode" class="card-buttons">
     <p-inputNumber
       class="card-count" [min]="0" placeholder="0" [(ngModel)]="count" mode="decimal" [showButtons]="true" (onInput)="changeCardCount($event, card.id)"
       [style]="{'width':'90%', 'margin-left':'auto', 'margin-right':'auto'}"
