@@ -1,10 +1,10 @@
 <div class="flex flex-wrap justify-center overflow-scroll overflow-x-hidden max-h-85vh" [ngClass]="{'overflow-y-hidden' : cardsToShow.length === 0}">
   <h1 *ngIf="cardsToShow.length === 0" class="primary-color my-10 text-5xl text-bold">No cards found!</h1>
-  <digimon-full-card
-    class="transition scale-95"
-    (click)="addToDeck(card)" *ngFor="let card of cardsToShow" [card]="card" [collectionMode]="collectionMode && !deckBuilder" [count]="getCount(card.id)" [deckBuilder]="deckBuilder" >
+  <digimon-full-card *ngFor="let card of cardsToShow" class="transition scale-95"
+    (click)="addToDeck(card)" [card]="card" [collectionMode]="collectionMode && !deckBuilder" [count]="getCount(card.id)" [deckBuilder]="deckBuilder">
   </digimon-full-card>
   <button pButton (click)="showMore()" *ngIf="moreCardsThere()" class="basis-full show-more" label="Show more..."></button>
 </div>
+
 
 

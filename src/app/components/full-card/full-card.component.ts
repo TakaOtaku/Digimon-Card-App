@@ -3,7 +3,7 @@ import {faMinus, faPlus} from "@fortawesome/free-solid-svg-icons";
 import {Store} from "@ngrx/store";
 import {Subject, takeUntil} from "rxjs";
 import {ICard} from "../../../models";
-import {decreaseCardCount, increaseCardCount} from "../../store/digimon.actions";
+import {changeCardCount, decreaseCardCount, increaseCardCount} from "../../store/digimon.actions";
 import {selectCardSize} from "../../store/digimon.selectors";
 
 @Component({
@@ -48,12 +48,9 @@ export class FullCardComponent implements OnInit, OnDestroy {
     this.onDestroy$.next(true);
   }
 
-  increaseCard(id: string) {
-    this.store.dispatch(increaseCardCount({id}))
-  }
-
-  decreaseCard(id: string) {
-    this.store.dispatch(decreaseCardCount({id}))
+  changeCardCount(event: any, id: string) {
+    const count = event.value;
+    this.store.dispatch(changeCardCount({id, count}))
   }
 
   setCardSize(size: number) {

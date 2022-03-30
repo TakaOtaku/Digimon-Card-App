@@ -1,4 +1,10 @@
 .card-buttons {
+  .card-count {
+    position: absolute;
+    z-index: 2;
+    bottom: 5px;
+  }
+
   button, p {
     position: absolute;
     cursor: pointer;

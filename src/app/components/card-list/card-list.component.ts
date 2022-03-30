@@ -21,6 +21,16 @@ export class CardListComponent implements OnInit, OnDestroy {
   private collection: ICountCard[] = [];
   collectionMode = true;
 
+  viewCardDialog = false;
+  viewCard: ICard;
+  cardContext = [
+    {
+      label:'Open',
+      icon:'pi pi-fw pi-info-circle',
+      command: () => this.viewCardDialog = true
+    }
+  ];
+
   private onDestroy$ = new Subject();
 
   constructor(private store: Store) {}
@@ -63,5 +73,9 @@ export class CardListComponent implements OnInit, OnDestroy {
 
   moreCardsThere(): boolean {
     return this.cards.length > this.cardsToShow.length && this.cardsToShow.length > 0;
+  }
+
+  onContextMenu(card: ICard) {
+    this.viewCard = card;
   }
 }
