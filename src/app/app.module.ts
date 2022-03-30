@@ -30,7 +30,6 @@ import {SortButtonsComponent} from './components/sort-buttons/sort-buttons.compo
 import {DeckBuilderComponent} from './pages/deck-builder/deck-builder.component';
 import {DecksComponent} from './pages/decks/decks.component';
 import {MainPageComponent} from './pages/main-page/main-page.component';
-import {MobileDeckBuilderComponent} from './pages/mobile-deck-builder/mobile-deck-builder.component';
 import {PrimeNGModule} from "./primeng.module";
 import {AuthService} from "./service/auth.service";
 import {DatabaseService} from "./service/database.service";
@@ -39,6 +38,7 @@ import {DigimonEffects} from "./store/digimon.effects";
 import * as DigimonCards from "./store/reducers/digimon-card.reducers";
 import * as Digimon from "./store/reducers/digimon.reducers";
 import * as Save from "./store/reducers/save.reducer";
+import { ViewCardDialogComponent } from './components/view-card-dialog/view-card-dialog.component';
 
 
 @NgModule({
@@ -59,8 +59,8 @@ import * as Save from "./store/reducers/save.reducer";
     MultiSelectComponent,
     ExportDeckDialogComponent,
     ImportDeckDialogComponent,
-    MobileDeckBuilderComponent,
     PaginationCardListComponent,
+    ViewCardDialogComponent,
   ],
   imports: [
     PrimeNGModule,
