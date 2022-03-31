@@ -1,59 +1,7 @@
-.card-buttons {
-  .card-count {
-    position: absolute;
-    z-index: 2;
-    bottom: 5px;
-  }
-
-  button, p {
-    position: absolute;
-    cursor: pointer;
-    z-index: 2;
-    bottom: 0;
-
-    @media (min-width: 1024px) {
-      bottom: 5px;
-    }
-    @media (min-width: 1536px) {
-      bottom: 7px;
-    }
-  }
-
-  mat-icon {
-    color: white !important;
-  }
-}
-
-.plus  {
-  right: 0;
-  @media (min-width: 1024px) {
-    right: 5px;
-  }
-  @media (min-width: 1536px) {
-    right: 7px;
-  }
-}
-.minus {
-  left:  0;
-  @media (min-width: 1024px) {
-    left: 5px;
-  }
-  @media (min-width: 1536px) {
-    left: 7px;
-  }
-}
-
-.count {
-  font-size: 32px;
-  color: white;
-  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
-
-  display: block;
-  bottom: 5px;
-  right: 35%;
-  left: 35%;
-  min-height: 10%;
-  min-width: 15%;
+.card-count {
+  position: absolute;
+  z-index: 2;
+  bottom: 7px;
 }
 
 .aa {

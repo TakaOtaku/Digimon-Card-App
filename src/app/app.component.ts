@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {Meta, Title} from "@angular/platform-browser";
 import {Store} from "@ngrx/store";
 import {first} from "rxjs";
 import {ISave} from "../models";
@@ -14,9 +15,12 @@ export class AppComponent {
   constructor(
     private store: Store,
     private authService: AuthService,
-    private databaseService: DatabaseService
+    private databaseService: DatabaseService,
+    private meta: Meta,
+    private title: Title
   ) {
     this.loadSave();
+    this.makeGoogleFriendly();
   }
 
   /**
@@ -40,5 +44,15 @@ export class AppComponent {
       this.store.dispatch(loadSave({save}));
     }
 
+  }
+
+  private makeGoogleFriendly() {
+    this.title.setTitle('Digimon Card APP');
+
+    this.meta.addTags([
+      {name: 'description', content: 'Digimon Card Game Site for collecting cards and building decks'},
+      {name: 'author', content: 'TakaOtaku'},
+      {name: 'keywords', content: 'Digimon, Card, Game, Collecting, Deck, Deckbuilder'}
+    ]);
   }
 }

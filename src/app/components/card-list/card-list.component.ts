@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {Subject, takeUntil} from "rxjs";
+import {PromotionCardList} from "../../../assets/cardlists";
 import {ICard, ICountCard} from "../../../models";
 import {selectCollection, selectCollectionMode, selectFilteredCards} from "../../store/digimon.selectors";
 
@@ -15,17 +16,17 @@ export class CardListComponent implements OnInit, OnDestroy {
 
   @Output() onCardClick = new EventEmitter<string>();
 
-  private cards: ICard[] = [];
+  public cards: ICard[] = [];
   public cardsToShow: ICard[] = [];
 
   private collection: ICountCard[] = [];
   collectionMode = true;
 
+  viewCard: ICard = PromotionCardList[0];
   viewCardDialog = false;
-  viewCard: ICard;
   cardContext = [
     {
-      label:'Open',
+      label:'View',
       icon:'pi pi-fw pi-info-circle',
       command: () => this.viewCardDialog = true
     }

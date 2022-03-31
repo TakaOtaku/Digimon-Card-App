@@ -2,8 +2,9 @@
 <button (click)="createNewDeck()" class="import" label="Create new Deck" pButton></button>
 
 <div class="flex flex-wrap overflow-scroll">
-  <div #div *ngFor="let deck of decks$ | async" class="flex flex-wrap" (contextmenu)="onContextMenu(deck)">
-    <p-card class="deck flex-item border-4 border-black m-2 bg-slate-500 hover:border-amber-400">
+  <div *ngFor="let deck of decks$ | async" class="flex flex-wrap">
+    <p-card #div class="deck flex-item border-4 border-black m-2 bg-slate-500 hover:border-amber-400"
+            (click)="onLeftMouseClick($event,contextMenu, deck)" (contextmenu)="onContextMenu(deck)">
 
       <div class="flex justify-center">
         <img [src]="deck.color?.img ?? 'assets/decks/white.svg'" alt="Digimon Deck Image">
@@ -13,7 +14,7 @@
         <p class="text-center text-shadow text-white text-oneline truncate">{{deck.title ?? 'Digimon Card Deck'}}</p>
       </ng-template>
     </p-card>
-    <p-contextMenu [target]="div" [model]="deckContext"></p-contextMenu>
+    <p-contextMenu #contextMenu [target]="div" [model]="deckContext"></p-contextMenu>
   </div>
 </div>
 

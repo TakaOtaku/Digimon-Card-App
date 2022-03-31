@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {ConfirmationService, MenuItem, MessageService} from "primeng/api";
+import {ContextMenu} from "primeng/contextmenu";
 import * as uuid from "uuid";
 import {IColor, IDeck} from "../../../models";
 import {changeDeck, deleteDeck, importDeck, setDeck, setSite} from "../../store/digimon.actions";
@@ -135,5 +136,12 @@ export class DecksComponent {
       color: {name: 'White', img: 'assets/decks/white.svg'},
     };
     this.store.dispatch(importDeck({deck}));
+  }
+
+  onLeftMouseClick(event: MouseEvent, contextMenu: ContextMenu, deck: IDeck): void {
+    this.onContextMenu(deck);
+    event.stopPropagation();
+    event.preventDefault();
+    contextMenu.show(event);
   }
 }
