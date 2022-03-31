@@ -3,11 +3,11 @@
 
   <img [lazyLoad]="card.cardImage" [ngClass]="{'grayscale': count === 0 && collectionMode}"
        [ngStyle]="{'border': cardBorder, 'border-radius': cardRadius}"
-       alt="Digimon Card" class="m-auto" defaultImage="assets/images/digimon-card-back.webp">
+       alt="{{card.cardNumber + ' ' + card.name}}" class="m-auto" defaultImage="assets/images/digimon-card-back.webp">
 
   <p-inputNumber *ngIf="collectionMode"
     class="card-count" [min]="0" placeholder="0" [(ngModel)]="count" mode="decimal" [showButtons]="true" (onInput)="changeCardCount($event, card.id)"
-    [style]="{'width': cardWidth, 'padding': '5px'}"
-    [inputStyle]="{'width': cardWidth, 'text-align': 'center'}"
+    [style]="{'width': '100%', 'padding': '5px'}"
+    [inputStyle]="{'width': '100%', 'text-align': 'center'}"
     decrementButtonClass="p-button-secondary" incrementButtonClass="p-button-secondary" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus"></p-inputNumber>
 </div>
