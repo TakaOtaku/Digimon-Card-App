@@ -9,6 +9,8 @@ import {IDeckCard} from "../../../models";
 export class DeckCardComponent implements OnInit {
   @Input() public card: IDeckCard;
   @Input() public stack: boolean;
+  @Input() public missingCards: boolean;
+  @Input() public cardHave: number;
 
   @Output() public removeCard = new EventEmitter<boolean>();
   @Output() public onChange = new EventEmitter<boolean>();

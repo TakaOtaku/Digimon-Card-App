@@ -5,7 +5,7 @@ import {filter, Subject, takeUntil} from "rxjs";
 import * as uuid from "uuid";
 import {ICard, ICountCard, IDeck, IDeckCard} from "../../../models";
 import {importDeck, setDeck} from "../../store/digimon.actions";
-import {selectDeckBuilderViewModel} from "../../store/digimon.selectors";
+import {selectCollection, selectDeckBuilderViewModel} from "../../store/digimon.selectors";
 
 @Component({
   selector: 'digimon-deck-builder',
@@ -45,9 +45,12 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
   public deck: IDeck = {id: uuid.v4(), color: {name: 'White', img: 'assets/decks/white.svg'}, cards: []};
   private allCards: ICard[] = [];
 
+  public collection: ICountCard[];
+
   public fullCards = true;
 
   public stack = false;
+  public missingCards = false;
 
   exportDialog = false;
   importDialog = false;
@@ -63,6 +66,8 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
+    this.store.select(selectCollection).pipe(takeUntil(this.onDestroy$), filter(value => !!value))
+      .subscribe(collection => this.collection = collection);
     this.store.select(selectDeckBuilderViewModel).pipe(takeUntil(this.onDestroy$), filter(value => !!value))
       .subscribe(({deck, cards}) => {
         this.allCards = cards;
@@ -298,5 +303,14 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
       return 0;
     });
     this.mainDeck = [...new Set([...eggs, ...digimon, ...tamer, ...options])]
+  }
+
+  getCardHave(card: IDeckCard) {
+    const foundCards = this.collection.filter(colCard => colCard.id === card.cardNumber)
+    let count = 0;
+    foundCards?.forEach(found => {
+      count += found.count;
+    });
+    return count;
   }
 }

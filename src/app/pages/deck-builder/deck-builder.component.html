@@ -10,6 +10,8 @@
         {{getCardCount('Main')}}</b>/<p class="bottom-font pr-1">50 </p> <p class="text-xs"> Cards</p>
       </div>
 
+      <button class="p-button-outlined" pButton (click)="missingCards = !missingCards" label="Stats" icon="pi pi-ban" iconPos="left"></button>
+
       <button class="p-button-outlined" pButton (click)="statDialog = true" label="Stats" icon="pi pi-chart-bar" iconPos="left"></button>
 
       <button class="p-button-outlined" pButton (click)="save()" label="Save" icon="pi pi-save" iconPos="left"></button>
@@ -36,7 +38,8 @@
 
       <div class="card-list flex flex-wrap surface-card">
         <div *ngFor="let card of mainDeck" class="card-box surface-card">
-          <digimon-deck-card (removeCard)="removeCard(card)" (onChange)="mapToDeck()" *ngIf="fullCards" [card]="card" [stack]="stack"></digimon-deck-card>
+          <digimon-deck-card (removeCard)="removeCard(card)" (onChange)="mapToDeck()" *ngIf="fullCards"
+                             [card]="card" [stack]="stack" [missingCards]="missingCards" [cardHave]="getCardHave(card)"></digimon-deck-card>
           <digimon-small-deck-card (removeCard)="removeCard(card)" (onChange)="mapToDeck()" *ngIf="!fullCards" [card]="card"></digimon-small-deck-card>
         </div>
       </div>
@@ -66,6 +69,8 @@
         {{getCardCount('Main')}}</b>/<p class="bottom-font pr-1">50 </p> <p class="text-xs"> Cards</p>
       </div>
 
+      <button class="p-button-outlined" pButton (click)="missingCards = !missingCards" label="Stats" icon="pi pi-ban" iconPos="left"></button>
+
       <button class="p-button-outlined" pButton (click)="statDialog = true" label="Stats" icon="pi pi-chart-bar" iconPos="left"></button>
 
       <button class="p-button-outlined" pButton (click)="save()" label="Save" icon="pi pi-save" iconPos="left"></button>
@@ -88,7 +93,8 @@
 
       <div class="card-list flex flex-wrap surface-card">
         <div *ngFor="let card of mainDeck" class="card-box surface-card">
-          <digimon-deck-card (removeCard)="removeCard(card)" (onChange)="mapToDeck()" *ngIf="fullCards" [card]="card" [stack]="stack"></digimon-deck-card>
+          <digimon-deck-card (removeCard)="removeCard(card)" (onChange)="mapToDeck()" *ngIf="fullCards"
+                             [card]="card" [stack]="stack" [missingCards]="missingCards" [cardHave]="getCardHave(card)"></digimon-deck-card>
           <digimon-small-deck-card (removeCard)="removeCard(card)" (onChange)="mapToDeck()" *ngIf="!fullCards" [card]="card"></digimon-small-deck-card>
         </div>
       </div>

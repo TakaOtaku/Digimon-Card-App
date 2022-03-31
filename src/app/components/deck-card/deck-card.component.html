@@ -6,5 +6,10 @@
   </div>
 
   <img [src]="card.cardImage" alt="Digimon Card" class="card-image m-auto z-50">
+
+  <div *ngIf="missingCards" class="absolute inline-flex ml-auto">
+    <i class="pi pi-times text-white"></i>
+    <p class="font-bold text-xl text-white">{{cardHave - card.count > 0 ? 0 : cardHave - card.count}}</p>
+  </div>
 </div>
 
