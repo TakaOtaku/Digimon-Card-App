@@ -9,7 +9,7 @@ export const initialState: IDigimonState = {
     cards: [],
     color: {name: 'White', img: 'assets/decks/white.svg'},
   },
-  site: 3,
+  site: 0,
   filter: {
     searchFilter: '',
     cardCountFilter: null,
