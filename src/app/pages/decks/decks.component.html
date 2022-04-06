@@ -21,28 +21,6 @@
 
 <digimon-export-deck-dialog [deck]="deck" [show]="exportDialog"></digimon-export-deck-dialog>
 
-<p-dialog header="Change Accessory" [(visible)]="accessoryDialog" [style]="{width: '50vw'}" [baseZIndex]="10000">
-  <div class="inline-flex w-full">
-    <span class="p-float-label">
-      <input id="float-input" type="text" pInputText [(ngModel)]="title">
-      <label for="float-input">Deck Name</label>
-    </span>
-
-    <span class="p-float-label">
-      <input id="float-input2" type="text" pInputText [(ngModel)]="description">
-      <label for="float-input2">Description</label>
-    </span>
-  </div>
-
-  <p-selectButton [options]="colorList" [(ngModel)]="color" optionLabel="name">
-    <ng-template let-item>
-      <span [ngStyle]="{'color': colorMap.get(item.name)}">{{item.name}}</span>
-    </ng-template>
-  </p-selectButton>
-
-  <div class="w-full flex justify-end mt-5">
-    <button class="m-2" pButton (click)="saveDeck()">Save</button>
-  </div>
-</p-dialog>
+<digimon-change-accessorie-dialog [deck]="deck" [title]="title" [description]="description" [tags]="tags" [color]="color" [show]="accessoryDialog"></digimon-change-accessorie-dialog>
 
 <p-confirmDialog key="DeleteDeck" header="Delete Confirmation" icon="pi pi-exclamation-triangle" rejectButtonStyleClass="p-button-outlined"></p-confirmDialog>

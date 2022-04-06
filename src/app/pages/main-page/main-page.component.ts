@@ -6,7 +6,8 @@ import {selectSite} from "../../store/digimon.selectors";
 export enum SITES {
   'Collection',
   'Decks',
-  'DeckBuilder'
+  'DeckBuilder',
+  'CommunityDecks'
 }
 
 @Component({

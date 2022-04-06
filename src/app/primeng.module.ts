@@ -1,8 +1,12 @@
 import {NgModule} from '@angular/core';
 import {ConfirmationService, MessageService} from "primeng/api";
+import {AutoCompleteModule} from "primeng/autocomplete";
 import {ButtonModule} from "primeng/button";
 import {CardModule} from "primeng/card";
 import {ChartModule} from "primeng/chart";
+import {CheckboxModule} from "primeng/checkbox";
+import {ChipModule} from "primeng/chip";
+import {ChipsModule} from "primeng/chips";
 import {ConfirmDialogModule} from "primeng/confirmdialog";
 import {ConfirmPopupModule} from "primeng/confirmpopup";
 import {ContextMenuModule} from "primeng/contextmenu";
@@ -15,13 +19,23 @@ import {MenuModule} from "primeng/menu";
 import {MessageModule} from "primeng/message";
 import {MessagesModule} from "primeng/messages";
 import {MultiSelectModule} from "primeng/multiselect";
+import {RadioButtonModule} from "primeng/radiobutton";
+import {RatingModule} from "primeng/rating";
 import {RippleModule} from "primeng/ripple";
 import {SelectButtonModule} from "primeng/selectbutton";
 import {SliderModule} from "primeng/slider";
+import {TableModule} from "primeng/table";
+import {TagModule} from "primeng/tag";
 import {ToastModule} from "primeng/toast";
 
 @NgModule({
   imports: [
+    AutoCompleteModule,
+    ChipsModule,
+    ChipModule,
+    TagModule,
+    TableModule,
+    RatingModule,
     ToastModule,
     ChartModule,
     DropdownModule,
@@ -40,13 +54,23 @@ import {ToastModule} from "primeng/toast";
     ButtonModule,
     RippleModule,
     SelectButtonModule,
-    SliderModule
+    SliderModule,
+    CheckboxModule,
+    RadioButtonModule
   ],
   providers: [
     MessageService,
     ConfirmationService
   ],
   exports: [
+    AutoCompleteModule,
+    ChipsModule,
+    ChipModule,
+    TagModule,
+    TableModule,
+    RatingModule,
+    RadioButtonModule,
+    CheckboxModule,
     ToastModule,
     ChartModule,
     DropdownModule,

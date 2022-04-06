@@ -11,22 +11,25 @@ import {StoreModule} from '@ngrx/store';
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {LazyLoadImageModule} from "ng-lazyload-image";
 import {ToastrModule} from "ngx-toastr";
+import {DividerModule} from "primeng/divider";
 import {environment} from "../environments/environment";
 import {AppRoutingModule} from "./app-routing.module";
 import {AppComponent} from './app.component';
-import {CardListComponent} from './components/card-list/card-list.component';
-import {DeckCardComponent} from './components/deck-card/deck-card.component';
-import {ExportDeckDialogComponent} from './components/export-deck-dialog/export-deck-dialog.component';
+import {CardListComponent} from './components/card-lists/card-list/card-list.component';
+import {PaginationCardListComponent} from './components/card-lists/pagination-card-list/pagination-card-list.component';
+import {DeckCardComponent} from './components/cards/deck-card/deck-card.component';
+import {FullCardComponent} from './components/cards/full-card/full-card.component';
+import {ChangeAccessorieDialogComponent} from './components/dialogs/change-accessorie-dialog/change-accessorie-dialog.component';
+import {ExportDeckDialogComponent} from './components/dialogs/export-deck-dialog/export-deck-dialog.component';
+import {ImportDeckDialogComponent} from './components/dialogs/import-deck-dialog/import-deck-dialog.component';
+import {ViewCardDialogComponent} from './components/dialogs/view-card-dialog/view-card-dialog.component';
 import {FilterBoxComponent} from './components/filter-box/filter-box.component';
-import {FullCardComponent} from './components/full-card/full-card.component';
-import {ImportDeckDialogComponent} from './components/import-deck-dialog/import-deck-dialog.component';
 import {MenuComponent} from './components/menu/menu.component';
 import {MultiSelectComponent} from './components/multi-select/multi-select.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
-import {PaginationCardListComponent} from './components/pagination-card-list/pagination-card-list.component';
 import {SliderComponent} from './components/slider/slider.component';
-import {SmallDeckCardComponent} from './components/small-deck-card/small-deck-card.component';
 import {SortButtonsComponent} from './components/sort-buttons/sort-buttons.component';
+import {CommunityDecksComponent} from './pages/community-decks/community-decks.component';
 import {DeckBuilderComponent} from './pages/deck-builder/deck-builder.component';
 import {DecksComponent} from './pages/decks/decks.component';
 import {MainPageComponent} from './pages/main-page/main-page.component';
@@ -38,7 +41,6 @@ import {DigimonEffects} from "./store/digimon.effects";
 import * as DigimonCards from "./store/reducers/digimon-card.reducers";
 import * as Digimon from "./store/reducers/digimon.reducers";
 import * as Save from "./store/reducers/save.reducer";
-import { ViewCardDialogComponent } from './components/view-card-dialog/view-card-dialog.component';
 
 
 @NgModule({
@@ -51,7 +53,6 @@ import { ViewCardDialogComponent } from './components/view-card-dialog/view-card
     DecksComponent,
     DeckBuilderComponent,
     NavbarComponent,
-    SmallDeckCardComponent,
     DeckCardComponent,
     SortButtonsComponent,
     SliderComponent,
@@ -61,6 +62,8 @@ import { ViewCardDialogComponent } from './components/view-card-dialog/view-card
     ImportDeckDialogComponent,
     PaginationCardListComponent,
     ViewCardDialogComponent,
+    CommunityDecksComponent,
+    ChangeAccessorieDialogComponent,
   ],
   imports: [
     PrimeNGModule,
@@ -80,14 +83,20 @@ import { ViewCardDialogComponent } from './components/view-card-dialog/view-card
     ToastrModule.forRoot({}),
 
     StoreModule.forRoot(
-      {digimon: Digimon.digimonReducer, digimonCards: DigimonCards.digimonCardReducer, save: Save.saveReducer},
-      {initialState: {digimon: Digimon.initialState, digimonCards: DigimonCards.initialState, save: Save.initialState}
-      }),
+        {digimon: Digimon.digimonReducer, digimonCards: DigimonCards.digimonCardReducer, save: Save.saveReducer},
+        {
+            initialState: {
+                digimon: Digimon.initialState,
+                digimonCards: DigimonCards.initialState,
+                save: Save.initialState
+            }
+        }),
     StoreDevtoolsModule.instrument({
-      name: 'Digimon Card Collector',
-      logOnly: environment.production
+        name: 'Digimon Card Collector',
+        logOnly: environment.production
     }),
-    EffectsModule.forRoot([DigimonEffects])
+    EffectsModule.forRoot([DigimonEffects]),
+    DividerModule
   ],
   providers: [ReactiveFormsModule, AuthService, DatabaseService],
   bootstrap: [AppComponent]

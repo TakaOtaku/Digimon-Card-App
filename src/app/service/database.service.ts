@@ -2,8 +2,8 @@ import {Injectable} from '@angular/core';
 import {AngularFireDatabase} from "@angular/fire/compat/database";
 import {get, getDatabase, ref, set, update} from "@angular/fire/database";
 import {DataSnapshot} from "@firebase/database";
-import {first, Subject} from "rxjs";
-import {ISave} from "../../models";
+import {BehaviorSubject, first, Subject} from "rxjs";
+import {IDeck, ISave, IUser} from "../../models";
 
 
 @Injectable({
@@ -43,7 +43,6 @@ export class DatabaseService {
   }
 
   setSave(uId: string, save: ISave) {
-
     const db = getDatabase();
 
     return update(ref(db, 'users/' + uId), save);
@@ -52,5 +51,24 @@ export class DatabaseService {
   checkEntry(uId: string): Promise<DataSnapshot> {
     const db = getDatabase();
     return get(ref(db, `users/${uId}`))
+  }
+
+  shareDeck(deck: IDeck, user: IUser | null) {
+    const db = getDatabase();
+
+    const newDeck = {...deck, user: user?.displayName ?? 'Unknown'}
+
+    return update(ref(db, 'community-decks/' + deck.id), newDeck);
+  }
+
+  loadCommunityDecks(): BehaviorSubject<IDeck[]> {
+    const deckSubject = new BehaviorSubject<IDeck[]>([]);
+
+    this.database.list(`community-decks`).valueChanges().pipe(first()).subscribe((entry: any) => {
+      if (!entry) { return }
+      deckSubject.next(entry as IDeck[]);
+    });
+
+    return deckSubject;
   }
 }

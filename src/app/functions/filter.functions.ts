@@ -18,10 +18,10 @@ export function filterCards(cards: ICard[], collection: ICountCard[], filter: IF
 function applySearchFilter(cards: ICard[], searchFilter: string): ICard[] {
   if(searchFilter === '') {return cards;}
 
-  const nameFiltered: ICard[] = cards.filter(cards => cards.name.includes(searchFilter));
-  const effectFiltered: ICard[] = cards.filter(cards => cards.effect.includes(searchFilter));
-  const inheritedFiltered: ICard[] = cards.filter(cards => cards.digivolveEffect.includes(searchFilter));
-  const securityFiltered: ICard[] = cards.filter(cards => cards.securityEffect.includes(searchFilter));
+  const nameFiltered: ICard[] = cards.filter(cards => cards.name.toLowerCase().includes(searchFilter.toLowerCase()));
+  const effectFiltered: ICard[] = cards.filter(cards => cards.effect.toLowerCase().includes(searchFilter.toLowerCase()));
+  const inheritedFiltered: ICard[] = cards.filter(cards => cards.digivolveEffect.toLowerCase().includes(searchFilter.toLowerCase()));
+  const securityFiltered: ICard[] = cards.filter(cards => cards.securityEffect.toLowerCase().includes(searchFilter.toLowerCase()));
 
   return [...new Set([...nameFiltered, ...effectFiltered, ...inheritedFiltered, ...securityFiltered])];
 }

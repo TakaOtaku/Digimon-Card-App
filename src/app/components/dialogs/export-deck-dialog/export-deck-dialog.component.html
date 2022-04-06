@@ -1,0 +1,11 @@
+<p-dialog header="Export Deck" [(visible)]="show" [style]="{width: width}" [baseZIndex]="10000" (onHide)="onClose.emit(false)">
+  <p-selectButton [options]="exportList" [(ngModel)]="exportType" (onOptionClick)="changeExportType($event)"></p-selectButton>
+  <div>
+    <p>Copy your deck in the text area and press import or press the "Import Text-File"-Button to import a file.</p>
+    <textarea pInputTextarea id="text-imports" class="border-2 border-black-500 min-w-full min-h-[200px]" [(ngModel)]="deckText"></textarea>
+  </div>
+
+  <div class="w-full flex justify-end mt-5">
+    <button pButton (click)="exportDeckToFile()" class="ml-5">Export to File</button>
+  </div>
+</p-dialog>

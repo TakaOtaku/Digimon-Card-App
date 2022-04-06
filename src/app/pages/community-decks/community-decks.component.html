@@ -1,0 +1,78 @@
+<p-contextMenu #table [model]="deckRowContext"></p-contextMenu>
+
+<p-table [value]="decks" responsiveLayout="scroll" styleClass="p-datatable-striped"
+         [(contextMenuSelection)]="selectedDeck" [contextMenu]="table"
+         [globalFilterFields]="['title','','tags','color.name', 'user']"
+         [paginator]="true" [rows]="10" [showCurrentPageReport]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} decks" [rowsPerPageOptions]="[10,25,50]">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>
+        <div class="flex justify-content-center align-items-center">
+          Title
+          <p-columnFilter type="text" field="title" display="menu"></p-columnFilter>
+        </div>
+      </th>
+      <th>Description</th>
+      <th>
+        <div class="flex justify-content-center align-items-center">
+          Tags
+          <p-columnFilter field="tags.name" matchMode="equals" display="menu">
+            <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+              <p-dropdown [ngModel]="value" [options]="tags" (onChange)="filter($event.value)" placeholder="Any">
+                <ng-template let-option pTemplate="item">
+                  <span [class]="'customer-badge status-' + option">{{option}}</span>
+                </ng-template>
+              </p-dropdown>
+            </ng-template>
+          </p-columnFilter>
+        </div>
+      </th>
+      <th>
+        <div class="flex justify-content-center align-items-center">
+          Color
+          <p-columnFilter field="color.name" matchMode="equals" display="menu">
+            <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+              <p-dropdown [ngModel]="value" [options]="colors" (onChange)="filter($event.value)" placeholder="Any">
+                <ng-template let-option pTemplate="item">
+                  <span [class]="'customer-badge status-' + option">{{option}}</span>
+                </ng-template>
+              </p-dropdown>
+            </ng-template>
+          </p-columnFilter>
+        </div>
+      </th>
+      <th>
+        <div class="flex justify-content-center align-items-center">
+          User
+          <p-columnFilter type="text" field="user" display="menu"></p-columnFilter>
+        </div>
+      </th>
+      <!--th pSortableColumn="rating">
+        <div class="flex justify-content-center align-items-center">
+          Rating
+          <p-columnFilter type="numeric" field="rating" display="menu"></p-columnFilter>
+        </div>
+      </th-->
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-deck>
+    <tr [pContextMenuRow]="deck" class="max-h-[50px]">
+      <td>{{deck.title}}</td>
+      <td>{{deck.description}}</td>
+      <td>
+        <p-chips [(ngModel)]="deck.tags" [disabled]="true">
+          <ng-template let-tag pTemplate="tag">
+            {{tag.name}}
+          </ng-template>
+        </p-chips>
+      </td>
+      <td class="inline-flex">
+        <img class="max-h-[50px]" [src]="deck.color?.img ?? 'assets/decks/white.svg'" alt="Digimon Deck Image">
+      </td>
+      <td>{{deck.user}}</td>
+      <!--td>
+        <p-rating [(ngModel)]="deck.rating" (onRate)="rateDeck(deck)"></p-rating>
+      </td-->
+    </tr>
+  </ng-template>
+</p-table>

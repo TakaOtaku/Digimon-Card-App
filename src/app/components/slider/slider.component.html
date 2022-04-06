@@ -3,7 +3,7 @@
     pButton pRipple type="button" icon="pi pi-search-minus"
     class="p-button-rounded p-button-text m-auto align-middle c-white pl-5"></button>
 </div>
-<p-slider [(ngModel)]="cardSize" class="w-full mt-6 px-5" [min]="0" [max]="100" (onSlideEnd)="cardSizeChange()"></p-slider>
+<p-slider [(ngModel)]="cardSize" class="w-full mt-6 px-5" [min]="0" [max]="100" (onChange)="cardSizeChange()"></p-slider>
 <div class="mt-2">
   <button (click)="decreaseCardSize()"
     pButton pRipple type="button" icon="pi pi-search-plus"

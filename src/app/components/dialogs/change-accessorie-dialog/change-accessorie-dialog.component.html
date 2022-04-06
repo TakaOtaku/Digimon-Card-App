@@ -1,0 +1,28 @@
+<p-dialog header="Change Accessory" [(visible)]="show" [style]="{width: width}" [baseZIndex]="10000">
+  <div class="inline-flex w-full">
+    <span class="p-float-label">
+      <input id="float-input" type="text" pInputText [(ngModel)]="title">
+      <label for="float-input">Deck Name</label>
+    </span>
+
+    <span class="p-float-label">
+      <input id="float-input2" type="text" pInputText [(ngModel)]="description">
+      <label for="float-input2">Description</label>
+    </span>
+  </div>
+
+  <span class="p-fluid">
+    <p-autoComplete [(ngModel)]="tags" [suggestions]="filteredTags" (completeMethod)="filterTags($event)" field="name" [multiple]="true">
+    </p-autoComplete>
+  </span>
+
+  <p-selectButton [options]="colorList" [(ngModel)]="color" optionLabel="name">
+    <ng-template let-item>
+      <span [ngStyle]="{'color': colorMap.get(item.name)}">{{item.name}}</span>
+    </ng-template>
+  </p-selectButton>
+
+  <div class="w-full flex justify-end mt-5">
+    <button class="m-2" pButton (click)="saveDeck()">Save</button>
+  </div>
+</p-dialog>

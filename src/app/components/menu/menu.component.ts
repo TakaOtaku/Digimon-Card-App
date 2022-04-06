@@ -1,4 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
+import {FormControl, FormGroup} from "@angular/forms";
 import {Store} from "@ngrx/store";
 import {saveAs} from "file-saver";
 import {ConfirmationService, MenuItem, MessageService, PrimeNGConfig} from "primeng/api";
@@ -7,7 +8,7 @@ import {SITES} from 'src/app/pages/main-page/main-page.component';
 import {ICard, ICountCard, ISave} from "../../../models";
 import {AuthService} from "../../service/auth.service";
 import {addToCollection, changeCollectionMode, loadSave, setSave, setSite} from "../../store/digimon.actions";
-import {selectAllCards, selectCollectionMode, selectSave} from "../../store/digimon.selectors";
+import {selectAllCards, selectCollection, selectCollectionMode, selectSave} from "../../store/digimon.selectors";
 
 @Component({
   selector: 'digimon-menu',
@@ -25,6 +26,7 @@ export class MenuComponent implements OnInit, OnDestroy {
 
   display = false;
   importDisplay = false;
+  collectionDisplay = false;
 
   importPlaceholder = "" +
     "Paste Collection here\n" +
@@ -32,7 +34,24 @@ export class MenuComponent implements OnInit, OnDestroy {
     " Format:\n" +
     "   Qty Id\n";
   collectionText = '';
+
+  versionForm = new FormGroup( {
+    normal: new FormControl(true),
+    aa: new FormControl(false),
+    stamped: new FormControl(false)
+  });
+
+  collectionData: any;
+  chartOptions = {
+    tooltips: {
+      mode: 'index',
+      intersect: false
+    },
+    responsive: true
+  };
+
   private digimonCards: ICard[] = [];
+  private collection: ICountCard[] = [];
 
   private onDestroy$ = new Subject();
 
@@ -60,6 +79,9 @@ export class MenuComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.store.select(selectAllCards).pipe(first())
       .subscribe(cards => this.digimonCards = cards);
+    this.store.select(selectCollection).pipe(takeUntil(this.onDestroy$))
+      .subscribe(collection => this.collection = collection);
+
     this.primengConfig.ripple = true;
   }
 
@@ -112,7 +134,25 @@ export class MenuComponent implements OnInit, OnDestroy {
             label: 'My Decks',
             icon: 'pi pi-database',
             command: () => {this.switchSite(1);}
+          },
+          {
+            label: 'Community Decks',
+            icon: 'pi pi-database',
+            command: () => {this.switchSite(3);}
           }
+        ]
+      },
+      {
+        label: 'Stats',
+        items: [
+          {
+            label: 'Collection Stats',
+            icon: 'pi pi-book',
+            command: () => {
+              this.getCollectionStats();
+              this.collectionDisplay = true;
+            }
+          },
         ]
       },
       {
@@ -221,6 +261,41 @@ export class MenuComponent implements OnInit, OnDestroy {
     this.importDisplay = false;
     this.messageService.add({severity:'success', summary:'Collection Imported!', detail:'The collection was imported successfully!'});
   }
+
+  getCollectionStats() {
+    const btData = this.getBoosterCards('BT');
+    const exData = this.getBoosterCards('EX');
+    const stData = this.getBoosterCards('ST');
+
+    const datasets = [];
+
+    datasets.push({
+      type: 'bar',
+      label: 'Collected',
+      backgroundColor: '#FFFFFF',
+      data: [btData[0], exData[0], stData[0]]
+    });
+    datasets.push({
+      type: 'bar',
+      label: 'Not Collected',
+      backgroundColor: '#808080',
+      data: [btData[1], exData[1], stData[1]]
+    });
+
+    this.collectionData = {
+      labels: ['BT','EX','ST'],
+      datasets: datasets
+    };
+    debugger;
+  }
+
+  private getBoosterCards(type: string): number[] {
+    const set = this.digimonCards.filter(card => card.cardNumber.includes(type));
+    const have = this.collection.filter(card => card.id.includes(type));
+
+    return [have.length, set.length - have.length];
+  }
+
 
   private parseLine(line: string): ICountCard | null {
     line = line.replace('\t', ' ');

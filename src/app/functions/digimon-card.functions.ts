@@ -1,38 +1,9 @@
-import {
-  BT01_03_1_0CardList,
-  BT01_03_1_5CardList,
-  BT04CardList,
-  BT05CardList,
-  BT06CardList,
-  BT07CardList,
-  BT08CardList,
-  EX01CardList,
-  PromotionCardList,
-  ST01CardList,
-  ST02CardList,
-  ST03CardList,
-  ST04CardList,
-  ST05CardList,
-  ST06CardList,
-  ST07CardList,
-  ST08CardList,
-  ST09CardList
-} from "../../assets/cardlists";
-import {OtherCardList} from "../../assets/cardlists/other";
+import englishJSON from "../../assets/cardlists/english.json";
 import {ICard} from "../../models";
 
 export function setupDigimonCards(): ICard[] {
-  const allCards = PromotionCardList.concat(
-    BT01_03_1_0CardList, BT01_03_1_5CardList,
-    BT04CardList, BT05CardList,
-    BT06CardList, BT07CardList,
-    BT08CardList, EX01CardList,
-    ST01CardList, ST02CardList,
-    ST03CardList, ST04CardList,
-    ST05CardList, ST06CardList,
-    ST07CardList, ST08CardList,
-    ST09CardList, OtherCardList
-  );
+  const allCards: ICard[] = englishJSON;
+
   allCards.sort(function(a, b){
     if(a.cardNumber < b.cardNumber) { return -1; }
     if(a.cardNumber > b.cardNumber) { return 1; }

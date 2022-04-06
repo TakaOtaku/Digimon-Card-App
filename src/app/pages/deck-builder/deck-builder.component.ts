@@ -2,8 +2,12 @@ import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {ConfirmationService, MessageService} from "primeng/api";
 import {filter, Subject, takeUntil} from "rxjs";
+import { tagsList } from 'src/models/tags.data';
 import * as uuid from "uuid";
 import {ICard, ICountCard, IDeck, IDeckCard} from "../../../models";
+import {ITag} from "../../../models/interfaces/tag.interface";
+import {AuthService} from "../../service/auth.service";
+import {DatabaseService} from "../../service/database.service";
 import {importDeck, setDeck} from "../../store/digimon.actions";
 import {selectCollection, selectDeckBuilderViewModel} from "../../store/digimon.selectors";
 
@@ -27,6 +31,10 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
     ['Purple', '#6555a2'],
     ['White', '#ffffff'],
   ]);
+
+  tags: ITag[];
+  tagsList: ITag[] = tagsList;
+  filteredTags: ITag[];
 
   levelData: any;
   chartOptions: any = {
@@ -61,6 +69,8 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
 
   constructor(
     private store: Store,
+    private db: DatabaseService,
+    private authService: AuthService,
     private confirmationService: ConfirmationService,
     private messageService: MessageService
   ) {}
@@ -75,6 +85,7 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
           this.deck = deck;
           this.title = deck.title ?? '';
           this.description = deck.description ?? '';
+          this.tags = deck.tags ?? [];
           this.mapDeck(deck);
         }
       });
@@ -110,7 +121,16 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
     this.stack = !this.stack;
   }
 
-  share() {}
+  share() {
+    this.confirmationService.confirm({
+      message: 'You are about to share the deck. Are you sure?',
+      accept: () => {
+        this.mapToDeck();
+        this.db.shareDeck(this.deck, this.authService.userData);
+        this.messageService.add({severity:'success', summary:'Deck shared!', detail:'Deck was shared successfully!'});
+      }
+    });
+  }
 
   delete() {
     this.confirmationService.confirm({
@@ -313,4 +333,19 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
     });
     return count;
   }
+
+  filterTags(event: any) {
+    let filtered : ITag[] = [];
+    let query = event.query;
+
+    for(let i = 0; i < this.tagsList.length; i++) {
+      let tag = this.tagsList[i];
+      if (tag.name.toLowerCase().indexOf(query.toLowerCase()) == 0) {
+        filtered.push(tag);
+      }
+    }
+
+    this.filteredTags = filtered;
+  }
+
 }

@@ -4,7 +4,10 @@ import {ConfirmationService, MenuItem, MessageService} from "primeng/api";
 import {ContextMenu} from "primeng/contextmenu";
 import * as uuid from "uuid";
 import {IColor, IDeck} from "../../../models";
-import {changeDeck, deleteDeck, importDeck, setDeck, setSite} from "../../store/digimon.actions";
+import {ITag} from "../../../models/interfaces/tag.interface";
+import {AuthService} from "../../service/auth.service";
+import {DatabaseService} from "../../service/database.service";
+import {deleteDeck, importDeck, setDeck, setSite} from "../../store/digimon.actions";
 import {selectDecks} from "../../store/digimon.selectors";
 import {SITES} from "../main-page/main-page.component";
 
@@ -17,45 +20,42 @@ export class DecksComponent {
   deck: IDeck;
   decks$ = this.store.select(selectDecks);
 
-  title: string;
-  description: string;
-  color: IColor = {name: 'Red', img: 'assets/decks/red.svg'};
-  colorList: IColor[] = [
-    {name: 'Red', img: 'assets/decks/red.svg'},
-    {name: 'Blue', img: 'assets/decks/blue.svg'},
-    {name: 'Yellow', img: 'assets/decks/yellow.svg'},
-    {name: 'Green', img: 'assets/decks/green.svg'},
-    {name: 'Black', img: 'assets/decks/black.svg'},
-    {name: 'Purple', img: 'assets/decks/purple.svg'},
-    {name: 'White', img: 'assets/decks/white.svg'}
-  ];
-  colorMap = new Map<string, string>([
-    ['Red', '#e7002c'],
-    ['Blue', '#0097e1'],
-    ['Yellow', '#fee100'],
-    ['Green', '#009c6b'],
-    ['Black', '#211813'],
-    ['Purple', '#6555a2'],
-    ['White', '#ffffff'],
-  ]);
-
   importDialog = false;
   exportDialog = false;
   accessoryDialog = false;
 
-  deckContext: MenuItem[];
+  title: string;
+  description: string;
+  tags: ITag[];
+  color: IColor;
 
+  deckContext: MenuItem[];
 
   constructor(
     private store: Store,
     private messageService: MessageService,
     private confirmationService: ConfirmationService,
+    private authService: AuthService,
+    private db: DatabaseService
   ) {
     this.deckContext = [
       {
         label:'Open',
         icon:'pi pi-fw pi-info-circle',
         command: () => this.openDeck()
+      },
+      {
+        label:'Share',
+        icon:'pi pi-fw pi-share-alt',
+        command: () => {
+          this.confirmationService.confirm({
+            message: 'You are about to share the deck. Are you sure?',
+            accept: () => {
+              this.db.shareDeck(this.deck, this.authService.userData);
+              this.messageService.add({severity:'success', summary:'Deck shared!', detail:'Deck was shared successfully!'});
+            }
+          });
+        }
       },
       {
         label:'Copy',
@@ -96,17 +96,6 @@ export class DecksComponent {
     this.store.dispatch(setSite({site: SITES.DeckBuilder}));
   }
 
-  saveDeck(): void {
-    this.store.dispatch(changeDeck({
-      deck: {...this.deck,
-        title: this.title,
-        description: this.description,
-        color: this.color}
-    }));
-    this.accessoryDialog = false;
-    this.messageService.add({severity:'success', summary:'Deck saved!', detail:'Deck Accessory was saved successfully!'});
-  }
-
   deleteDeck() {
     this.confirmationService.confirm({
       key: 'DeleteDeck',
@@ -126,6 +115,8 @@ export class DecksComponent {
     this.deck = deck;
     this.title = deck.title ?? '';
     this.description = deck.description ?? '';
+    this.tags = deck.tags ?? [];
+    this.color = deck.color ?? {name: 'Red', img: 'assets/decks/red.svg'};
   }
 
   createNewDeck() {

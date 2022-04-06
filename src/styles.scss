@@ -20,3 +20,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
 .c-white {
   color: white;
 }
+
+.text-black-outline {
+  color: #fff;
+  text-shadow: 3px 0 0 #000, 0 -3px 0 #000, 0 3px 0 #000, -3px 0 0 #000;
+}

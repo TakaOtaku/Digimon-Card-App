@@ -21,22 +21,17 @@ export class AuthService {
 
   public authChange = new Subject<boolean>();
 
+  get isLoggedIn(): boolean {
+    return !!this.userData;
+  }
+
   constructor(
     public afs: AngularFirestore,
     public afAuth: AngularFireAuth,
     private dbService: DatabaseService,
     private messageService: MessageService,
     private store: Store
-  ) {
-  }
-
-  get isLoggedIn(): boolean {
-    return !!this.userData;
-  }
-
-  GoogleAuth() {
-    return this.AuthLogin(new GoogleAuthProvider());
-  }
+  ) {}
 
   checkLocalStorage() {
     const userRAW = localStorage.getItem('user');
@@ -45,6 +40,10 @@ export class AuthService {
     }
 
     this.userData = JSON.parse(userRAW);
+  }
+
+  GoogleAuth() {
+    return this.AuthLogin(new GoogleAuthProvider());
   }
 
   AuthLogin(provider: any) {

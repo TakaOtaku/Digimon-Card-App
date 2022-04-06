@@ -33,6 +33,7 @@ export const saveReducer = createReducer(
   on(loadSave, (state, {save}) => save),
   //endregion
 
+  //region Collection Reducers
   on(setCollection, (state, {collection}) => ({...state, collection})),
   on(addToCollection, (state, {collectionCards}) => ({
     ...state,
@@ -40,6 +41,7 @@ export const saveReducer = createReducer(
   })),
   on(changeCardSize, (state, {cardSize}) => ({...state, settings: {...state.settings, cardSize}})),
   on(changeCollectionMode, (state, {collectionMode}) => ({...state, settings: {...state.settings, collectionMode}})),
+  //endregion
 
   //region Card Count Reducers
   on(changeCardCount, (state, {id, count}) => {
