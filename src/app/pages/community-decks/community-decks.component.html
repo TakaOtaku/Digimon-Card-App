@@ -1,9 +1,9 @@
 <p-contextMenu #table [model]="deckRowContext"></p-contextMenu>
 
-<p-table [value]="decks" responsiveLayout="scroll" styleClass="p-datatable-striped"
+<p-table [value]="decks" responsiveLayout="scroll" [scrollable]="true" [scrollHeight]="'calc(100vh - 100px)'" styleClass="p-datatable-striped"
          [(contextMenuSelection)]="selectedDeck" [contextMenu]="table"
          [globalFilterFields]="['title','','tags','color.name', 'user']"
-         [paginator]="true" [rows]="10" [showCurrentPageReport]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} decks" [rowsPerPageOptions]="[10,25,50]">
+         [paginator]="true" [rows]="25" [showCurrentPageReport]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} decks" [rowsPerPageOptions]="[25, 50, 75]">
   <ng-template pTemplate="header">
     <tr>
       <th>
