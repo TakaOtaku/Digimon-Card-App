@@ -9,7 +9,7 @@
 
   <p-inputNumber *ngIf="collectionMode"
     class="card-count" [min]="0" placeholder="0" [(ngModel)]="count" mode="decimal" buttonLayout="vertical" [showButtons]="true" (onInput)="changeCardCount($event, card.id)"
-    [style]="{'width': '50%'}"
+    [style]="{'width': '100%'}"
     [inputStyle]="{'width': '100%', 'text-align': 'center'}"
     decrementButtonClass="p-button-secondary" incrementButtonClass="p-button-secondary" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus"></p-inputNumber>
 </div>

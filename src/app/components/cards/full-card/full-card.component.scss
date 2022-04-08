@@ -20,3 +20,20 @@ img {
 .text-center {
   text-align: center;
 }
+
+p-inputNumber {
+  span {
+    width: 75% !important;
+  }
+  ::ng-deep .p-inputnumber-button {
+    padding: 0.1rem 0;
+  }
+}
+
+@media (min-width: 768px) {
+  p-inputNumber {
+    ::ng-deep .p-inputnumber-button {
+      padding: 0.5rem 0;
+    }
+  }
+}
