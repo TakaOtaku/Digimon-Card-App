@@ -12,6 +12,7 @@ import {selectCollection, selectCollectionMode, selectFilteredCards, selectSite}
 })
 export class CardListComponent implements OnInit, OnDestroy {
   @Input() public showCount: number;
+  @Input() public compact: boolean;
 
   @Output() onCardClick = new EventEmitter<string>();
 

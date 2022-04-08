@@ -1,5 +1,5 @@
 .card {
-  width: 20vmin !important;
+  width: 22vmin !important;
 }
 
 .card-image {
@@ -15,4 +15,18 @@
   right: 2vw;
   top: 60px;
   text-align: center;
+}
+
+p-inputNumber {
+::ng-deep .p-inputnumber-button {
+  padding: 0.1rem 0;
+}
+}
+
+@media (min-width: 768px) {
+  p-inputNumber {
+  ::ng-deep .p-inputnumber-button {
+    padding: 0.5rem 0;
+  }
+}
 }

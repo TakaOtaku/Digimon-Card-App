@@ -16,6 +16,7 @@ import {selectCardSize} from "../../../store/digimon.selectors";
 export class FullCardComponent implements OnInit, OnDestroy {
   @Input() card: ICard;
   @Input() count: number;
+  @Input() compact?: boolean = false;
   @Input() collectionMode?: boolean = false;
   @Input() deckBuilder?: boolean = false;
 
@@ -56,7 +57,7 @@ export class FullCardComponent implements OnInit, OnDestroy {
   }
 
   setCardSize(size: number) {
-    this.cardWidth = this.deckBuilder ? this.rangeToRange(5) + 'vmin' : this.rangeToRange(size) + 'vmin';
+    this.cardWidth = (this.deckBuilder || this.compact) ? this.rangeToRange(100) + 'vmin' : this.rangeToRange(size) + 'vmin';
   }
 
   rangeToRange = (input: number) => {

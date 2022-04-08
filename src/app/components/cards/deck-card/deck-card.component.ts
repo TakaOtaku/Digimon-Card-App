@@ -4,7 +4,7 @@ import {colorMap, IDeckCard} from "../../../../models";
 @Component({
   selector: 'digimon-deck-card',
   templateUrl: './deck-card.component.html',
-  styleUrls: ['./deck-card.component.css']
+  styleUrls: ['./deck-card.component.scss']
 })
 export class DeckCardComponent {
   @Input() public card: IDeckCard;

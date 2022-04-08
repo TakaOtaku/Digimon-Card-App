@@ -25,7 +25,7 @@ export class DatabaseService {
       if (entry) {
         saveSubject.next(entry);
       } else {
-        const string = localStorage.getItem('Digimon-Card-Collector')
+        const string = localStorage.getItem('Digimon-Card-Collector');
         if (string) {
           const save: ISave = JSON.parse(string)
           set(ref(db, 'users/' + uId), save);

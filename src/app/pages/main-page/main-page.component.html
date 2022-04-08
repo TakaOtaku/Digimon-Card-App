@@ -7,7 +7,7 @@
 
   <digimon-deck-builder    *ngIf="site === SITES.DeckBuilder" [mobile]="mobile"></digimon-deck-builder>
 
-  <digimon-card-list       *ngIf="site === SITES.Collection" [showCount]="75"></digimon-card-list>
+  <digimon-card-list       *ngIf="site === SITES.Collection" [showCount]="75" [compact]="mobile"></digimon-card-list>
 
   <digimon-community-decks *ngIf="site === SITES.CommunityDecks"></digimon-community-decks>
 
