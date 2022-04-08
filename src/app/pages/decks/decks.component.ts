@@ -1,14 +1,15 @@
-import {Component} from '@angular/core';
+import {Component, OnDestroy} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {ConfirmationService, MenuItem, MessageService} from "primeng/api";
 import {ContextMenu} from "primeng/contextmenu";
+import {Subject, takeUntil} from "rxjs";
 import * as uuid from "uuid";
-import {IColor, IDeck} from "../../../models";
+import {ICard, IColor, IDeck} from "../../../models";
 import {ITag} from "../../../models/interfaces/tag.interface";
 import {AuthService} from "../../service/auth.service";
 import {DatabaseService} from "../../service/database.service";
 import {deleteDeck, importDeck, setDeck, setSite} from "../../store/digimon.actions";
-import {selectDecks} from "../../store/digimon.selectors";
+import {selectAllCards, selectDecks} from "../../store/digimon.selectors";
 import {SITES} from "../main-page/main-page.component";
 
 @Component({
@@ -16,7 +17,7 @@ import {SITES} from "../main-page/main-page.component";
   templateUrl: './decks.component.html',
   styleUrls: ['./decks.component.scss'],
 })
-export class DecksComponent {
+export class DecksComponent implements OnDestroy {
   deck: IDeck;
   decks$ = this.store.select(selectDecks);
 
@@ -31,6 +32,10 @@ export class DecksComponent {
 
   deckContext: MenuItem[];
 
+  private cards: ICard[];
+
+  private onDestroy$ = new Subject<boolean>();
+
   constructor(
     private store: Store,
     private messageService: MessageService,
@@ -38,25 +43,23 @@ export class DecksComponent {
     private authService: AuthService,
     private db: DatabaseService
   ) {
+    this.store.select(selectAllCards).pipe(takeUntil(this.onDestroy$)).subscribe(cards => this.cards = cards);
     this.deckContext = [
       {
         label:'Open',
         icon:'pi pi-fw pi-info-circle',
         command: () => this.openDeck()
       },
-      {
-        label:'Share',
-        icon:'pi pi-fw pi-share-alt',
-        command: () => {
-          this.confirmationService.confirm({
-            message: 'You are about to share the deck. Are you sure?',
-            accept: () => {
-              this.db.shareDeck(this.deck, this.authService.userData);
-              this.messageService.add({severity:'success', summary:'Deck shared!', detail:'Deck was shared successfully!'});
-            }
-          });
-        }
-      },
+      //{
+      //  label:'Share',
+      //  icon:'pi pi-fw pi-share-alt',
+      //  command: () => {
+      //    this.confirmationService.confirm({
+      //      message: 'You are about to share the deck. Are you sure?',
+      //      accept: () => this.share()
+      //    });
+      //  }
+      //},
       {
         label:'Copy',
         icon:'pi pi-fw pi-copy',
@@ -83,6 +86,10 @@ export class DecksComponent {
     ];
   }
 
+  ngOnDestroy() {
+    this.onDestroy$.next(true);
+  }
+
   openImportDialog(): void  {
     this.importDialog = true;
   }
@@ -94,6 +101,33 @@ export class DecksComponent {
       this.store.dispatch(setDeck({deck: this.deck}));
     }
     this.store.dispatch(setSite({site: SITES.DeckBuilder}));
+  }
+
+  share() {
+    if(this.getCardCount() !== 50) {
+      this.messageService.add({severity:'error', summary:'Deck is not ready!', detail:'Deck was can not be shared! You don\'t have 50 cards.'});
+      return;
+    }
+
+    this.confirmationService.confirm({
+      message: 'You are about to share the deck. Are you sure?',
+      accept: () => {
+        this.db.shareDeck(this.deck, this.authService.userData);
+        this.messageService.add({severity:'success', summary:'Deck shared!', detail:'Deck was shared successfully!'});
+      }
+    });
+  }
+
+  getCardCount(): number {
+    let count = 0;
+    this.deck.cards.forEach(card => {
+      const foundCard = this.cards.find(b => card.id === b.cardNumber);
+      if (foundCard?.cardLv !== 'Lv.2') {
+        count += card.count
+      }
+    });
+
+    return count;
   }
 
   deleteDeck() {

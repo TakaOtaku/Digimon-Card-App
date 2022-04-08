@@ -122,10 +122,16 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
   }
 
   share() {
+    this.mapToDeck();
+
+    if(this.getCardCount('Main') !== 50) {
+      this.messageService.add({severity:'error', summary:'Deck is not ready!', detail:'Deck was can not be shared! You don\'t have 50 cards.'});
+      return;
+    }
+
     this.confirmationService.confirm({
       message: 'You are about to share the deck. Are you sure?',
       accept: () => {
-        this.mapToDeck();
         this.db.shareDeck(this.deck, this.authService.userData);
         this.messageService.add({severity:'success', summary:'Deck shared!', detail:'Deck was shared successfully!'});
       }
