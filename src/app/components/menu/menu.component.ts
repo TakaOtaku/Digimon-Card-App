@@ -286,7 +286,6 @@ export class MenuComponent implements OnInit, OnDestroy {
       labels: ['BT','EX','ST'],
       datasets: datasets
     };
-    debugger;
   }
 
   private getBoosterCards(type: string): number[] {

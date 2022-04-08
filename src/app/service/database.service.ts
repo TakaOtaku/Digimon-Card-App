@@ -19,7 +19,6 @@ export class DatabaseService {
    */
   loadSave(uId: string): Subject<ISave> {
     const db = getDatabase();
-
     const saveSubject = new Subject<ISave>();
 
     this.database.object(`users/${uId}`).valueChanges().pipe(first()).subscribe((entry: any) => {

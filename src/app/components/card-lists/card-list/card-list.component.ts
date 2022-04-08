@@ -79,7 +79,7 @@ export class CardListComponent implements OnInit, OnDestroy {
    * Search the user collection for the number and return the count
    */
   getCount(cardId: string): number {
-    return this.collection.find(value => value.id === cardId)?.count ?? 0;
+    return this.collection?.find(value => value.id === cardId)?.count ?? 0;
   }
 
   /**
