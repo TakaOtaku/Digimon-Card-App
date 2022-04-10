@@ -31,7 +31,7 @@ export class AppComponent {
   private loadSave(): void {
     this.authService.checkLocalStorage();
     if (this.authService.isLoggedIn) {
-      this.databaseService.loadSave(this.authService.userData!.uid).pipe(first())
+      this.databaseService.loadSave(this.authService.userData!.uid, this.authService.userData).pipe(first())
         .subscribe((save: ISave) => {
           this.store.dispatch(loadSave({save}))
         });

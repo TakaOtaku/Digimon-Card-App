@@ -10,20 +10,28 @@ import {IDeck, ISave, IUser} from "../../models";
   providedIn: 'root',
 })
 export class DatabaseService {
-  constructor(public database: AngularFireDatabase) {
-  }
+  constructor(
+    public database: AngularFireDatabase) {}
 
   /**
    * Falls der Nutzer eingeloggt ist und keine Daten hat, erstelle diese
    * Falls der Nutzer sich zum ersten mal einloggt erstelle neue Daten in der DB
    */
-  loadSave(uId: string): Subject<ISave> {
+  loadSave(uId: string, user?: IUser | null): Subject<ISave> {
     const db = getDatabase();
     const saveSubject = new Subject<ISave>();
 
     this.database.object(`users/${uId}`).valueChanges().pipe(first()).subscribe((entry: any) => {
       if (entry) {
-        saveSubject.next(entry);
+        let save = entry;
+
+        if(!save.collection && user) {save = {...save, collection: user.save.collection}}
+        if(!save.decks && user) {save = {...save, decks: user.save.decks}}
+
+        if(!save.collection && !user) {save = {...save, collection: []}}
+        if(!save.decks && !user) {save = {...save, decks: []}}
+
+        saveSubject.next(save);
       } else {
         const string = localStorage.getItem('Digimon-Card-Collector');
         if (string) {
