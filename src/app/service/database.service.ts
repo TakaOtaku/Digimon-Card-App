@@ -63,7 +63,7 @@ export class DatabaseService {
   shareDeck(deck: IDeck, user: IUser | null) {
     const db = getDatabase();
 
-    const newDeck = {...deck, user: user?.displayName ?? 'Unknown'}
+    const newDeck = {...deck, user: user?.displayName ?? 'Unknown', date: new Date()}
 
     return update(ref(db, 'community-decks/' + deck.id), newDeck);
   }

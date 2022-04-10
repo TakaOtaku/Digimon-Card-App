@@ -36,6 +36,8 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
   tagsList: ITag[] = tagsList;
   filteredTags: ITag[];
 
+  cardCount: number;
+
   levelData: any;
   chartOptions: any = {
     plugins: {
@@ -64,6 +66,7 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
   importDialog = false;
   statDialog = false;
   settingsDialog = false;
+  accessoryDialog = false;
 
   private onDestroy$ = new Subject();
 
@@ -124,18 +127,9 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
   share() {
     this.mapToDeck();
 
-    if(this.getCardCount('Main') !== 50) {
-      this.messageService.add({severity:'error', summary:'Deck is not ready!', detail:'Deck was can not be shared! You don\'t have 50 cards.'});
-      return;
-    }
+    this.cardCount = this.getCardCount('Main');
 
-    this.confirmationService.confirm({
-      message: 'You are about to share the deck. Are you sure?',
-      accept: () => {
-        this.db.shareDeck(this.deck, this.authService.userData);
-        this.messageService.add({severity:'success', summary:'Deck shared!', detail:'Deck was shared successfully!'});
-      }
-    });
+    this.accessoryDialog = true;
   }
 
   delete() {

@@ -34,7 +34,8 @@ export class CommunityDecksComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    this.db.loadCommunityDecks().pipe(takeUntil(this.onDestroy$)).subscribe(decks => this.decks = decks);
+    this.db.loadCommunityDecks().pipe(takeUntil(this.onDestroy$))
+      .subscribe(decks => this.decks = decks.sort((a, b) => new Date(b.date!).getTime() - new Date(a.date!).getTime()));
   }
 
   ngOnDestroy() {

@@ -1,9 +1,11 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Store} from "@ngrx/store";
-import {MessageService} from "primeng/api";
+import {ConfirmationService, MessageService} from "primeng/api";
 import {ColorList, colorMap, IColor, IDeck} from "../../../../models";
 import {ITag} from "../../../../models/interfaces/tag.interface";
 import {tagsList} from "../../../../models/tags.data";
+import {AuthService} from "../../../service/auth.service";
+import {DatabaseService} from "../../../service/database.service";
 import {changeDeck} from "../../../store/digimon.actions";
 
 @Component({
@@ -18,6 +20,7 @@ export class ChangeAccessorieDialogComponent {
   @Input() description: string;
   @Input() color: IColor;
   @Input() tags: ITag[];
+  @Input() cardCount?: number;
 
   @Input() width?: string = '50vw';
 
@@ -31,6 +34,9 @@ export class ChangeAccessorieDialogComponent {
 
   constructor(
     private store: Store,
+    private confirmationService: ConfirmationService,
+    private db: DatabaseService,
+    private auth: AuthService,
     private messageService: MessageService
   ) { }
 
@@ -58,5 +64,33 @@ export class ChangeAccessorieDialogComponent {
     }
 
     this.filteredTags = filtered;
+  }
+
+  shareDeck(): void {
+    const deck: IDeck = {
+      ...this.deck,
+      title: this.title,
+      description: this.description,
+      tags: this.tags,
+      color: this.color
+      };
+
+    if(this.cardCount !== 50) {
+      this.messageService.add({severity:'error', summary:'Deck is not ready!', detail:'Deck was can not be shared! You don\'t have 50 cards.'});
+      return;
+    }
+
+    if(!deck.title) {
+      this.messageService.add({severity:'error', summary:'Deck is not ready!', detail:'Deck was can not be shared! You need a title.'});
+      return;
+    }
+
+    this.confirmationService.confirm({
+      message: 'You are about to share the deck. Are you sure?',
+      accept: () => {
+        this.db.shareDeck(deck, this.auth.userData);
+        this.messageService.add({severity:'success', summary:'Deck shared!', detail:'Deck was shared successfully!'});
+      }
+    });
   }
 }

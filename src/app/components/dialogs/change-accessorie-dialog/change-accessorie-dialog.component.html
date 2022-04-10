@@ -22,6 +22,10 @@
     </ng-template>
   </p-selectButton>
 
+  <div *ngIf="cardCount" class="w-full flex justify-end mt-5">
+    <button class="m-2" pButton (click)="shareDeck()">Share</button>
+  </div>
+
   <div class="w-full flex justify-end mt-5">
     <button class="m-2" pButton (click)="saveDeck()">Save</button>
   </div>

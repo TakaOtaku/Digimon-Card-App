@@ -15,6 +15,7 @@ export interface IDeck {
   rating?: number;
   ratingCount?: number;
   user?: string;
+  date?: string;
 
   cardImage?: string;
 }
