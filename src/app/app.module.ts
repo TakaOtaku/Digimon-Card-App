@@ -1,6 +1,7 @@
 import {HttpClientModule} from "@angular/common/http";
 import {NgModule} from '@angular/core';
 import {AngularFireModule} from "@angular/fire/compat";
+import {AngularFireAnalyticsModule} from "@angular/fire/compat/analytics";
 import {AngularFireAuthModule} from "@angular/fire/compat/auth";
 import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
@@ -79,6 +80,7 @@ import * as Save from "./store/reducers/save.reducer";
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
+    AngularFireAnalyticsModule,
 
     ToastrModule.forRoot({}),
 
