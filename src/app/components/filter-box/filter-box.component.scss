@@ -9,3 +9,12 @@ digimon-multi-select {
     width: 100%;
   }
 }
+
+.p-number {
+  ::ng-deep .p-inputnumber {
+    width: 50% !important;
+  }
+  ::ng-deep .p-inputnumber-button {
+    padding: 0.1rem 0;
+  }
+}

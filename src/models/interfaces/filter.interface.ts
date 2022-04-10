@@ -4,6 +4,8 @@ export interface IFilter {
   setFilter: [];
   colorFilter: [];
   cardTypeFilter: [];
+  formFilter: [];
+  attributeFilter: [];
   typeFilter: [];
   lvFilter: [];
   rarityFilter: [];

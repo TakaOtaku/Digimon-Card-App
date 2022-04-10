@@ -16,6 +16,8 @@ export const initialState: IDigimonState = {
     setFilter: [],
     colorFilter: [],
     cardTypeFilter: [],
+    formFilter: [],
+    attributeFilter: [],
     typeFilter: [],
     lvFilter: [],
     rarityFilter: [],

@@ -6,6 +6,8 @@ export function filterCards(cards: ICard[], collection: ICountCard[], filter: IF
   filteredCards = applySetFilter(filteredCards, filter.setFilter);
   filteredCards = applyColorFilter(filteredCards, filter.colorFilter);
   filteredCards = applyCardTypeFilter(filteredCards, filter.cardTypeFilter);
+  filteredCards = applyFormFilter(filteredCards, filter.formFilter);
+  filteredCards = applyAttributeFilter(filteredCards, filter.attributeFilter);
   filteredCards = applyTypeFilter(filteredCards, filter.typeFilter);
   filteredCards = applyLvFilter(filteredCards, filter.lvFilter);
   filteredCards = applyRarityFilter(filteredCards, filter.rarityFilter);
@@ -19,21 +21,28 @@ function applySearchFilter(cards: ICard[], searchFilter: string): ICard[] {
   if(searchFilter === '') {return cards;}
 
   const nameFiltered: ICard[] = cards.filter(cards => cards.name.toLowerCase().includes(searchFilter.toLowerCase()));
+  const formFiltered: ICard[] = cards.filter(cards => cards.form.toLowerCase().includes(searchFilter.toLowerCase()));
+  const attributeFiltered: ICard[] = cards.filter(cards => cards.attribute.toLowerCase().includes(searchFilter.toLowerCase()));
+  const typeFiltered: ICard[] = cards.filter(cards => cards.type.toLowerCase().includes(searchFilter.toLowerCase()));
   const effectFiltered: ICard[] = cards.filter(cards => cards.effect.toLowerCase().includes(searchFilter.toLowerCase()));
   const inheritedFiltered: ICard[] = cards.filter(cards => cards.digivolveEffect.toLowerCase().includes(searchFilter.toLowerCase()));
   const securityFiltered: ICard[] = cards.filter(cards => cards.securityEffect.toLowerCase().includes(searchFilter.toLowerCase()));
 
-  return [...new Set([...nameFiltered, ...effectFiltered, ...inheritedFiltered, ...securityFiltered])];
+  return [...new Set([
+    ...nameFiltered,
+    ...formFiltered,
+    ...attributeFiltered,
+    ...typeFiltered,
+    ...effectFiltered,
+    ...inheritedFiltered,
+    ...securityFiltered
+  ])];
 }
 
-function applyCardCountFilter(cards: ICard[], collection: ICountCard[], cardCountFilter: number | null): ICard[] {
-  if (cardCountFilter == null) {
-    return cards;
-  }
+function applyCardCountFilter(cards: ICard[], collection: ICountCard[], cardCountFilter: number|null): ICard[] {
+  if (cardCountFilter == null) {return cards;}
 
-  // 0: Take all Cards that are 0 or not in the Collection
-  // >0: Take all Cards that are >0 that are in the Collection
-  let filteredCards: ICard[];
+  let filteredCards: ICard[] = [];
   if (cardCountFilter === 0) {
     const collectionCards = collection.filter(card => card.count !== cardCountFilter);
     filteredCards = cards.filter(card => !containsCard(card.id, collectionCards))
@@ -87,12 +96,34 @@ function applyCardTypeFilter(cards: ICard[], cardTypeFilter: string[]): ICard[] 
   return returnArray;
 }
 
+function applyFormFilter(cards: ICard[], formFilter: string[]): ICard[] {
+  if(formFilter.length === 0) {return cards;}
+
+  let returnArray = [] as ICard[];
+  formFilter.forEach(filter => {
+    const filteredCards: ICard[] = cards.filter(cards => cards.form.includes(filter));
+    returnArray = [...new Set([...returnArray,...filteredCards])]
+  })
+  return returnArray;
+}
+
+function applyAttributeFilter(cards: ICard[], attributeFilter: string[]): ICard[] {
+  if(attributeFilter.length === 0) {return cards;}
+
+  let returnArray = [] as ICard[];
+  attributeFilter.forEach(filter => {
+    const filteredCards: ICard[] = cards.filter(cards => cards.attribute.includes(filter));
+    returnArray = [...new Set([...returnArray,...filteredCards])]
+  })
+  return returnArray;
+}
+
 function applyTypeFilter(cards: ICard[], typeFilter: string[]): ICard[] {
   if(typeFilter.length === 0) {return cards;}
 
   let returnArray = [] as ICard[];
   typeFilter.forEach(filter => {
-    const filteredCards: ICard[] = cards.filter(cards => cards.attribute.includes(filter));
+    const filteredCards: ICard[] = cards.filter(cards => cards.type.includes(filter));
     returnArray = [...new Set([...returnArray,...filteredCards])]
   })
   return returnArray;
