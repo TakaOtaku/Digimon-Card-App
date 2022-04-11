@@ -147,6 +147,11 @@ export class MenuComponent implements OnInit, OnDestroy {
             command: () => this.importDisplay = true
           },
           {
+            label: 'What I work on',
+            icon: 'pi pi-history',
+            url: 'https://trello.com/b/LZA0rGZ4/digimon-card-game-app'
+          },
+          {
             label: 'Help the Site!',
             icon: 'pi pi-paypal',
             url: 'https://www.paypal.com/donate/?hosted_button_id=DHQVT7GQ72J98'
