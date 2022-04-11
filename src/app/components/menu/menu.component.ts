@@ -35,23 +35,8 @@ export class MenuComponent implements OnInit, OnDestroy {
     "   Qty Id\n";
   collectionText = '';
 
-  versionForm = new FormGroup( {
-    normal: new FormControl(true),
-    aa: new FormControl(false),
-    stamped: new FormControl(false)
-  });
-
-  collectionData: any;
-  chartOptions = {
-    tooltips: {
-      mode: 'index',
-      intersect: false
-    },
-    responsive: true
-  };
-
-  private digimonCards: ICard[] = [];
-  private collection: ICountCard[] = [];
+  digimonCards: ICard[] = [];
+  collection: ICountCard[] = [];
 
   private onDestroy$ = new Subject();
 
@@ -68,12 +53,8 @@ export class MenuComponent implements OnInit, OnDestroy {
         this.update();
       });
     this.store.select(selectSave).pipe(takeUntil(this.onDestroy$))
-      .subscribe((save) => {
-        this.save = JSON.stringify(save, undefined, 4)
-      });
-    this.authService.authChange.subscribe(change => {
-      this.update();
-    });
+      .subscribe((save) => this.save = JSON.stringify(save, undefined, 4));
+    this.authService.authChange.subscribe(() => this.update());
   }
 
   ngOnInit() {
@@ -148,10 +129,7 @@ export class MenuComponent implements OnInit, OnDestroy {
           {
             label: 'Collection Stats',
             icon: 'pi pi-book',
-            command: () => {
-              this.getCollectionStats();
-              this.collectionDisplay = true;
-            }
+            command: () => this.collectionDisplay = true
           },
         ]
       },
@@ -161,12 +139,12 @@ export class MenuComponent implements OnInit, OnDestroy {
           {
             label: 'Collection Mode',
             icon: this.collectionMode ? 'pi pi-circle-fill' : 'pi pi-circle',
-            command: () => {this.changeCM();}
+            command: () => this.changeCM()
           },
           {
             label: 'Import/Export',
             icon: 'pi pi-cloud',
-            command: () => {this.importDialog();}
+            command: () => this.importDisplay = true
           },
           {
             label: 'Help the Site!',
@@ -187,10 +165,6 @@ export class MenuComponent implements OnInit, OnDestroy {
     this.messageService.add({severity:'info', summary:'Collection Mode', detail:'Collection Mode was changed!'});
   }
 
-  importDialog() {
-    this.display = true;
-  }
-
   exportSave(): void {
     let blob = new Blob([this.save], {type: 'text/json'})
     saveAs(blob, "digimon-card-collector.json");
@@ -208,10 +182,6 @@ export class MenuComponent implements OnInit, OnDestroy {
       }
     }
     fileReader.readAsText(input.files[0]);
-  }
-
-  importCollectionDialog() {
-    this.importDisplay = true;
   }
 
   deleteSave(event: Event) {
@@ -244,9 +214,7 @@ export class MenuComponent implements OnInit, OnDestroy {
   }
 
   importCollection() {
-    if (this.collectionText === '') {
-      return;
-    }
+    if (this.collectionText === '') return;
 
     let result: string[] = this.collectionText.split("\n");
     const collectionCards: ICountCard[] = [];
@@ -261,40 +229,6 @@ export class MenuComponent implements OnInit, OnDestroy {
     this.importDisplay = false;
     this.messageService.add({severity:'success', summary:'Collection Imported!', detail:'The collection was imported successfully!'});
   }
-
-  getCollectionStats() {
-    const btData = this.getBoosterCards('BT');
-    const exData = this.getBoosterCards('EX');
-    const stData = this.getBoosterCards('ST');
-
-    const datasets = [];
-
-    datasets.push({
-      type: 'bar',
-      label: 'Collected',
-      backgroundColor: '#FFFFFF',
-      data: [btData[0], exData[0], stData[0]]
-    });
-    datasets.push({
-      type: 'bar',
-      label: 'Not Collected',
-      backgroundColor: '#808080',
-      data: [btData[1], exData[1], stData[1]]
-    });
-
-    this.collectionData = {
-      labels: ['BT','EX','ST'],
-      datasets: datasets
-    };
-  }
-
-  private getBoosterCards(type: string): number[] {
-    const set = this.digimonCards.filter(card => card.cardNumber.includes(type));
-    const have = this.collection.filter(card => card.id.includes(type));
-
-    return [have.length, set.length - have.length];
-  }
-
 
   private parseLine(line: string): ICountCard | null {
     line = line.replace('\t', ' ');

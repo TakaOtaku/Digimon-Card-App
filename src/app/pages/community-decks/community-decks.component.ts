@@ -1,3 +1,4 @@
+import {DatePipe} from "@angular/common";
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {ConfirmationService, MessageService} from "primeng/api";
@@ -64,6 +65,11 @@ export class CommunityDecksComponent implements OnInit, OnDestroy {
         });
       }
     });
+  }
+
+  dateFormat(date: Date): string {
+    const pipe = new DatePipe('en-US');
+    return pipe.transform(date, 'MMM d, y, h:mm:ss a')!;
   }
 
   rateDeck(deck: IDeck) {

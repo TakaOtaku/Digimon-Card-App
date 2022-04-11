@@ -32,18 +32,14 @@ export class AppComponent {
     this.authService.checkLocalStorage();
     if (this.authService.isLoggedIn) {
       this.databaseService.loadSave(this.authService.userData!.uid, this.authService.userData).pipe(first())
-        .subscribe((save: ISave) => {
-          this.store.dispatch(loadSave({save}))
-        });
+        .subscribe((save: ISave) => this.store.dispatch(loadSave({save})));
     } else {
       const string = localStorage.getItem('Digimon-Card-Collector')
       let save: ISave = {collection: [], decks: [], settings: {cardSize: 50, collectionMode: true}};
       if (string) save = JSON.parse(string);
 
-
       this.store.dispatch(loadSave({save}));
     }
-
   }
 
   private makeGoogleFriendly() {
@@ -52,7 +48,7 @@ export class AppComponent {
     this.meta.addTags([
       {name: 'description', content: 'Digimon Card Game Site for collecting cards and building decks'},
       {name: 'author', content: 'TakaOtaku'},
-      {name: 'keywords', content: 'Digimon, Card, Game, Collecting, Deck, Deckbuilder'}
+      {name: 'keywords', content: 'Digimon, Card, Game, Collecting, Deck, Deckbuilder, Tournament, Casual, TCG'}
     ]);
   }
 }

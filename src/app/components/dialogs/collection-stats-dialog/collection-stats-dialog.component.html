@@ -1,0 +1,26 @@
+<p-dialog header="Collection Stats" [(visible)]="show" [showHeader]="false" [style]="{width: '75vw'}" [baseZIndex]="10000">
+  <button pButton pRipple type="button" icon="pi pi-times" class="p-button-text ml-auto" (click)="this.onClose.next(false)"></button>
+
+  <!--div [formGroup]="versionForm">
+    <p-checkbox name="version" value="Normal" label="Normal" formControlName="normal"></p-checkbox>
+    <p-checkbox name="version" value="AA" label="AA" formControlName="aa"></p-checkbox>
+    <p-checkbox name="version" value="Stamped" label="Stamped" formControlName="stamped"></p-checkbox>
+  </div>
+
+  <div>
+    <div class="field-radiobutton">
+      <p-radioButton name="type" value="Normal" inputId="type1"></p-radioButton>
+      <label for="type1">Normal</label>
+    </div>
+    <div class="field-radiobutton">
+      <p-radioButton name="type" value="Playset" inputId="type2"></p-radioButton>
+      <label for="type2">Playset</label>
+    </div>
+    <div class="field-radiobutton">
+      <p-radioButton name="type" value="Playset+" inputId="type3"></p-radioButton>
+      <label for="type3">Playset+</label>
+    </div>
+  </div-->
+
+  <p-chart type="bar" [data]="collectionData" [options]="chartOptions"></p-chart>
+</p-dialog>

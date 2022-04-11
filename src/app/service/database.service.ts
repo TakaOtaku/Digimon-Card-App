@@ -51,7 +51,6 @@ export class DatabaseService {
 
   setSave(uId: string, save: ISave) {
     const db = getDatabase();
-
     return update(ref(db, 'users/' + uId), save);
   }
 
@@ -62,9 +61,7 @@ export class DatabaseService {
 
   shareDeck(deck: IDeck, user: IUser | null) {
     const db = getDatabase();
-
     const newDeck = {...deck, user: user?.displayName ?? 'Unknown', date: new Date()}
-
     return update(ref(db, 'community-decks/' + deck.id), newDeck);
   }
 
@@ -72,7 +69,8 @@ export class DatabaseService {
     const deckSubject = new BehaviorSubject<IDeck[]>([]);
 
     this.database.list(`community-decks`).valueChanges().pipe(first()).subscribe((entry: any) => {
-      if (!entry) { return }
+      if (!entry) return;
+
       deckSubject.next(entry as IDeck[]);
     });
 

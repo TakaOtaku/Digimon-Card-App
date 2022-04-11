@@ -1,9 +1,9 @@
 <div class="surface-ground flex p-0">
-  <img alt="Logo" class="max-h-8 md:max-h-10 ml-5 mt-2" src="../../../assets/images/img_logo.png">
+  <img alt="Logo" class="max-h-8 md:max-h-10 ml-5 mt-2 cursor-pointer" src="../../../assets/images/img_logo.png" (click)="changeSite(SITES.Collection)">
 
-  <digimon-sort-buttons *ngIf="!compact" class="mx-5 my-2"></digimon-sort-buttons>
+  <digimon-sort-buttons *ngIf="!mobile" class="mx-5 my-2"></digimon-sort-buttons>
 
-  <digimon-slider *ngIf="site === 0 && !compact" class="flex flex-grow"></digimon-slider>
+  <digimon-slider *ngIf="site === 0 && !mobile" class="flex flex-grow"></digimon-slider>
 
   <digimon-menu class="ml-auto mt-2"></digimon-menu>
 </div>

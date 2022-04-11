@@ -21,9 +21,7 @@ export class AuthService {
 
   public authChange = new Subject<boolean>();
 
-  get isLoggedIn(): boolean {
-    return !!this.userData;
-  }
+  get isLoggedIn(): boolean {return !!this.userData;}
 
   constructor(
     public afs: AngularFirestore,
@@ -35,16 +33,12 @@ export class AuthService {
 
   checkLocalStorage() {
     const userRAW = localStorage.getItem('user');
-    if (!userRAW) {
-      return
-    }
+    if (!userRAW) return;
 
     this.userData = JSON.parse(userRAW);
   }
 
-  GoogleAuth() {
-    return this.AuthLogin(new GoogleAuthProvider());
-  }
+  GoogleAuth() {return this.AuthLogin(new GoogleAuthProvider());}
 
   AuthLogin(provider: any) {
     return this.afAuth
@@ -89,9 +83,7 @@ export class AuthService {
    * b) If the db does have an entry for the user load it and check it against the current save. Ask the User which one to keep.
    */
   SetUserData(user: User | null) {
-    if (!user) {
-      return;
-    }
+    if (!user) return;
 
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(
       `users/${user.uid}`
@@ -111,9 +103,7 @@ export class AuthService {
 
         this.userData = userData;
 
-        userRef.set(userData, {
-          merge: true,
-        });
+        userRef.set(userData, {merge: true});
 
         this.authChange.next(true);
       });

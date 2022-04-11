@@ -1,4 +1,6 @@
-<p-dialog header="Change Accessory" [(visible)]="show" [style]="{width: width}" [baseZIndex]="10000">
+<p-dialog [showHeader]="false" header="Change Accessory" [(visible)]="show" [style]="{width: width}" [baseZIndex]="10000">
+  <button pButton pRipple type="button" icon="pi pi-times" class="p-button-text ml-auto" (click)="this.onClose.next(false)"></button>
+
   <div class="inline-flex w-full">
     <span class="p-float-label">
       <input id="float-input" type="text" pInputText [(ngModel)]="title">

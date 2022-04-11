@@ -42,6 +42,7 @@ import {DigimonEffects} from "./store/digimon.effects";
 import * as DigimonCards from "./store/reducers/digimon-card.reducers";
 import * as Digimon from "./store/reducers/digimon.reducers";
 import * as Save from "./store/reducers/save.reducer";
+import { CollectionStatsDialogComponent } from './components/dialogs/collection-stats-dialog/collection-stats-dialog.component';
 
 
 @NgModule({
@@ -65,6 +66,7 @@ import * as Save from "./store/reducers/save.reducer";
     ViewCardDialogComponent,
     CommunityDecksComponent,
     ChangeAccessorieDialogComponent,
+    CollectionStatsDialogComponent,
   ],
   imports: [
     PrimeNGModule,
@@ -97,8 +99,7 @@ import * as Save from "./store/reducers/save.reducer";
         name: 'Digimon Card Collector',
         logOnly: environment.production
     }),
-    EffectsModule.forRoot([DigimonEffects]),
-    DividerModule
+    EffectsModule.forRoot([DigimonEffects])
   ],
   providers: [ReactiveFormsModule, AuthService, DatabaseService],
   bootstrap: [AppComponent]

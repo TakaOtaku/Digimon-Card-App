@@ -11,6 +11,7 @@ import {ConfirmDialogModule} from "primeng/confirmdialog";
 import {ConfirmPopupModule} from "primeng/confirmpopup";
 import {ContextMenuModule} from "primeng/contextmenu";
 import {DialogModule} from "primeng/dialog";
+import {DividerModule} from "primeng/divider";
 import {DropdownModule} from "primeng/dropdown";
 import {InputNumberModule} from "primeng/inputnumber";
 import {InputTextModule} from "primeng/inputtext";
@@ -56,7 +57,8 @@ import {ToastModule} from "primeng/toast";
     SelectButtonModule,
     SliderModule,
     CheckboxModule,
-    RadioButtonModule
+    RadioButtonModule,
+    DividerModule
   ],
   providers: [
     MessageService,
@@ -89,7 +91,8 @@ import {ToastModule} from "primeng/toast";
     ButtonModule,
     RippleModule,
     SelectButtonModule,
-    SliderModule
+    SliderModule,
+    DividerModule
   ]
 })
 export class PrimeNGModule { }

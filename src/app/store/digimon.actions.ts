@@ -14,6 +14,11 @@ export const setDeck = createAction(
   props<{ deck: IDeck }>()
 );
 
+export const setMobile = createAction(
+  '[Set Mobile] Set current to Mobile',
+  props<{ mobile: boolean }>()
+);
+
 export const setSite = createAction(
   '[Set Site] Set current Site',
   props<{ site: number }>()
@@ -72,16 +77,6 @@ export const addToCollection = createAction(
 export const changeCardCount = createAction(
   '[Digimon Cards] Change Digimon Card Count',
   props<{ id: string, count: number }>()
-);
-
-export const increaseCardCount = createAction(
-  '[Digimon Cards] Increase Digimon Card Count',
-  props<{ id: string }>()
-);
-
-export const decreaseCardCount = createAction(
-  '[Digimon Cards] Decreased Digimon Card Count',
-  props<{ id: string }>()
 );
 //endregion
 

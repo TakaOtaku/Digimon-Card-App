@@ -46,8 +46,8 @@
   </div>
 </div>
 
-<digimon-export-deck-dialog [deck]="deck" [show]="exportDialog"></digimon-export-deck-dialog>
-<digimon-import-deck-dialog [show]="importDialog" [overwrite]="deck"></digimon-import-deck-dialog>
+<digimon-export-deck-dialog [deck]="deck" [show]="exportDialog" (onClose)="this.exportDialog = false"></digimon-export-deck-dialog>
+<digimon-import-deck-dialog [show]="importDialog" [overwrite]="deck" (onClose)="this.importDialog = false"></digimon-import-deck-dialog>
 
 <p-dialog header="Deck Stats" [(visible)]="statDialog" [style]="{width: '50vw'}" [baseZIndex]="10000">
   <p-chart type="bar" [data]="levelData" [options]="chartOptions"></p-chart>
@@ -61,7 +61,7 @@
   <button class="p-button-outlined" pButton (click)="delete()" label="Delete" icon="pi pi-trash" iconPos="left"></button>
 </p-dialog>
 
-<digimon-change-accessorie-dialog [cardCount]="cardCount" [deck]="deck" [title]="title" [description]="description" [tags]="tags" [color]="deck.color" [show]="accessoryDialog"></digimon-change-accessorie-dialog>
+<digimon-change-accessorie-dialog (onClose)="this.accessoryDialog = false" [cardCount]="cardCount" [deck]="deck" [title]="title" [description]="description" [tags]="tags" [color]="deck.color" [show]="accessoryDialog"></digimon-change-accessorie-dialog>
 
 <p-confirmDialog key="DeleteDeck" header="Delete Confirmation" icon="pi pi-exclamation-triangle" rejectButtonStyleClass="p-button-outlined"></p-confirmDialog>
 

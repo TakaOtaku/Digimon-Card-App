@@ -61,19 +61,18 @@ export class CardListComponent implements OnInit, OnDestroy {
   storeSubscriptions() {
     this.store.select(selectSite).pipe(takeUntil(this.onDestroy$))
       .subscribe(site => this.deckBuilder = site === SITES.DeckBuilder)
+
     this.store.select(selectFilteredCards).pipe(takeUntil(this.onDestroy$))
       .subscribe((cards) => {
         this.cards = this.deckBuilder ? cards.filter(card => card.version === 'Normal') : cards;
         this.cardsToShow = this.cards.slice(0, this.showCount);
       });
+
     this.store.select(selectCollection).pipe(takeUntil(this.onDestroy$))
-      .subscribe((collection) => {
-        this.collection = collection;
-      });
+      .subscribe((collection) => this.collection = collection);
+
     this.store.select(selectCollectionMode).pipe(takeUntil(this.onDestroy$))
-      .subscribe((collectionMode) => {
-        this.collectionMode = collectionMode;
-      });
+      .subscribe((collectionMode) => this.collectionMode = collectionMode);
   }
 
   /**

@@ -50,16 +50,6 @@ export class DecksComponent implements OnDestroy {
         icon:'pi pi-fw pi-info-circle',
         command: () => this.openDeck()
       },
-      //{
-      //  label:'Share',
-      //  icon:'pi pi-fw pi-share-alt',
-      //  command: () => {
-      //    this.confirmationService.confirm({
-      //      message: 'You are about to share the deck. Are you sure?',
-      //      accept: () => this.share()
-      //    });
-      //  }
-      //},
       {
         label:'Copy',
         icon:'pi pi-fw pi-copy',
@@ -103,33 +93,6 @@ export class DecksComponent implements OnDestroy {
     this.store.dispatch(setSite({site: SITES.DeckBuilder}));
   }
 
-  share() {
-    if(this.getCardCount() !== 50) {
-      this.messageService.add({severity:'error', summary:'Deck is not ready!', detail:'Deck was can not be shared! You don\'t have 50 cards.'});
-      return;
-    }
-
-    this.confirmationService.confirm({
-      message: 'You are about to share the deck. Are you sure?',
-      accept: () => {
-        this.db.shareDeck(this.deck, this.authService.userData);
-        this.messageService.add({severity:'success', summary:'Deck shared!', detail:'Deck was shared successfully!'});
-      }
-    });
-  }
-
-  getCardCount(): number {
-    let count = 0;
-    this.deck.cards.forEach(card => {
-      const foundCard = this.cards.find(b => card.id === b.cardNumber);
-      if (foundCard?.cardLv !== 'Lv.2') {
-        count += card.count
-      }
-    });
-
-    return count;
-  }
-
   deleteDeck() {
     this.confirmationService.confirm({
       key: 'DeleteDeck',
@@ -161,12 +124,5 @@ export class DecksComponent implements OnDestroy {
       color: {name: 'White', img: 'assets/decks/white.svg'},
     };
     this.store.dispatch(importDeck({deck}));
-  }
-
-  onLeftMouseClick(event: MouseEvent, contextMenu: ContextMenu, deck: IDeck): void {
-    this.onContextMenu(deck);
-    event.stopPropagation();
-    event.preventDefault();
-    contextMenu.show(event);
   }
 }

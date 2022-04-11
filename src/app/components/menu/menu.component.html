@@ -3,7 +3,7 @@
 
 <p-dialog header="Import/Export" [(visible)]="display" [style]="{width: '50vw'}" [baseZIndex]="10000">
   <div class="flex justify-between">
-    <button (click)="importCollectionDialog()" pButton type="button" icon="pi pi-upload" label="Import Collection"></button>
+    <button (click)="this.importDisplay = true" pButton type="button" icon="pi pi-upload" label="Import Collection"></button>
     <input #fileUpload (change)="handleFileInput($event.target)" accept=".json" [ngStyle]="{display: 'none'}" type="file">
     <button (click)="fileUpload.click()" pButton type="button" icon="pi pi-upload" label="Import Save"></button>
     <button (click)="exportSave()" pButton type="button" icon="pi pi-download" label="Export Save"></button>
@@ -21,29 +21,6 @@
     </div>
 </p-dialog>
 
-<p-dialog header="Collection Stats" [(visible)]="collectionDisplay" [style]="{width: '75vw'}" [baseZIndex]="10000">
-  <!--div [formGroup]="versionForm">
-    <p-checkbox name="version" value="Normal" label="Normal" formControlName="normal"></p-checkbox>
-    <p-checkbox name="version" value="AA" label="AA" formControlName="aa"></p-checkbox>
-    <p-checkbox name="version" value="Stamped" label="Stamped" formControlName="stamped"></p-checkbox>
-  </div>
-
-  <div>
-    <div class="field-radiobutton">
-      <p-radioButton name="type" value="Normal" inputId="type1"></p-radioButton>
-      <label for="type1">Normal</label>
-    </div>
-    <div class="field-radiobutton">
-      <p-radioButton name="type" value="Playset" inputId="type2"></p-radioButton>
-      <label for="type2">Playset</label>
-    </div>
-    <div class="field-radiobutton">
-      <p-radioButton name="type" value="Playset+" inputId="type3"></p-radioButton>
-      <label for="type3">Playset+</label>
-    </div>
-  </div-->
-
-  <p-chart type="bar" [data]="collectionData" [options]="chartOptions"></p-chart>
-</p-dialog>
+<digimon-collection-stats-dialog [show]="collectionDisplay" [digimonCards]="digimonCards" [collection]="collection" (onClose)="this.collectionDisplay = false"></digimon-collection-stats-dialog>
 
 <p-confirmPopup></p-confirmPopup>

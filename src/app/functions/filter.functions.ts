@@ -3,15 +3,17 @@ import {ICard, ICountCard, IFilter, ISort} from "../../models";
 export function filterCards(cards: ICard[], collection: ICountCard[], filter: IFilter, sort: ISort): ICard[] {
   let filteredCards = applyCardCountFilter(cards, collection, filter.cardCountFilter);
   filteredCards = applySearchFilter(filteredCards, filter.searchFilter);
-  filteredCards = applySetFilter(filteredCards, filter.setFilter);
-  filteredCards = applyColorFilter(filteredCards, filter.colorFilter);
-  filteredCards = applyCardTypeFilter(filteredCards, filter.cardTypeFilter);
-  filteredCards = applyFormFilter(filteredCards, filter.formFilter);
-  filteredCards = applyAttributeFilter(filteredCards, filter.attributeFilter);
-  filteredCards = applyTypeFilter(filteredCards, filter.typeFilter);
-  filteredCards = applyLvFilter(filteredCards, filter.lvFilter);
-  filteredCards = applyRarityFilter(filteredCards, filter.rarityFilter);
-  filteredCards = applyVersionFilter(filteredCards, filter.versionFilter);
+
+  filteredCards = applyFilter(filteredCards, filter.setFilter, 'id');
+  filteredCards = applyFilter(filteredCards, filter.colorFilter, 'color');
+  filteredCards = applyFilter(filteredCards, filter.cardTypeFilter, 'cardType');
+  filteredCards = applyFilter(filteredCards, filter.formFilter, 'form');
+  filteredCards = applyFilter(filteredCards, filter.attributeFilter, 'attribute');
+  filteredCards = applyFilter(filteredCards, filter.typeFilter, 'type');
+  filteredCards = applyFilter(filteredCards, filter.lvFilter, 'cardLv');
+  filteredCards = applyFilter(filteredCards, filter.rarityFilter, 'rarity');
+  filteredCards = applyFilter(filteredCards, filter.versionFilter, 'version');
+
   filteredCards = applySortOrder(filteredCards, sort);
   return filteredCards;
 }
@@ -63,102 +65,59 @@ function containsCard(cardId: string, collectionArray: ICountCard[]): boolean {
   return cardInCollection;
 }
 
-function applySetFilter(cards: ICard[], setFilter: string[]): ICard[] {
-  if(setFilter.length === 0) {return cards;}
+function applyFilter(cards: ICard[], filter: string[], key: string): ICard[] {
+  if(filter.length === 0) {return cards;}
 
   let returnArray = [] as ICard[];
-  setFilter.forEach(filter => {
-    const filteredCards: ICard[] = cards.filter(cards => cards.id.includes(filter));
-    returnArray = [...new Set([...returnArray,...filteredCards])]
-  })
-  return returnArray;
-}
+  switch (key) {
+    default:
+    case 'id':
+      filter.forEach(filter => returnArray = [...new Set(
+        [...returnArray,...cards.filter(cards => cards['id'].includes(filter))]
+      )]);
+      break;
+    case 'color':
+      filter.forEach(filter => returnArray = [...new Set(
+        [...returnArray,...cards.filter(cards => cards['color'].includes(filter))]
+      )]);
+      break;
+    case 'cardType':
+      filter.forEach(filter => returnArray = [...new Set(
+        [...returnArray,...cards.filter(cards => cards['cardType'].includes(filter))]
+      )]);
+      break;
+    case 'form':
+      filter.forEach(filter => returnArray = [...new Set(
+        [...returnArray,...cards.filter(cards => cards['form'].includes(filter))]
+      )]);
+      break;
+    case 'attribute':
+      filter.forEach(filter => returnArray = [...new Set(
+        [...returnArray,...cards.filter(cards => cards['attribute'].includes(filter))]
+      )]);
+      break;
+    case 'type':
+      filter.forEach(filter => returnArray = [...new Set(
+        [...returnArray,...cards.filter(cards => cards['type'].includes(filter))]
+      )]);
+      break;
+    case 'cardLv':
+      filter.forEach(filter => returnArray = [...new Set(
+        [...returnArray,...cards.filter(cards => cards['cardLv'].includes(filter))]
+      )]);
+      break;
+    case 'rarity':
+      filter.forEach(filter => returnArray = [...new Set(
+        [...returnArray,...cards.filter(cards => cards['rarity'].includes(filter))]
+      )]);
+      break;
+    case 'version':
+      filter.forEach(filter => returnArray = [...new Set(
+        [...returnArray,...cards.filter(cards => cards['version'].includes(filter))]
+      )]);
+      break;
+  }
 
-function applyColorFilter(cards: ICard[], colorFilter: string[]): ICard[] {
-  if(colorFilter.length === 0) {return cards;}
-
-  let returnArray = [] as ICard[];
-  colorFilter.forEach(filter => {
-    const filteredCards: ICard[] = cards.filter(cards => cards.color.includes(filter));
-    returnArray = [...new Set([...returnArray,...filteredCards])]
-  })
-  return returnArray;
-}
-
-function applyCardTypeFilter(cards: ICard[], cardTypeFilter: string[]): ICard[] {
-  if(cardTypeFilter.length === 0) {return cards;}
-
-  let returnArray = [] as ICard[];
-  cardTypeFilter.forEach(filter => {
-    const filteredCards: ICard[] = cards.filter(cards => cards.cardType.includes(filter));
-    returnArray = [...new Set([...returnArray,...filteredCards])]
-  })
-  return returnArray;
-}
-
-function applyFormFilter(cards: ICard[], formFilter: string[]): ICard[] {
-  if(formFilter.length === 0) {return cards;}
-
-  let returnArray = [] as ICard[];
-  formFilter.forEach(filter => {
-    const filteredCards: ICard[] = cards.filter(cards => cards.form.includes(filter));
-    returnArray = [...new Set([...returnArray,...filteredCards])]
-  })
-  return returnArray;
-}
-
-function applyAttributeFilter(cards: ICard[], attributeFilter: string[]): ICard[] {
-  if(attributeFilter.length === 0) {return cards;}
-
-  let returnArray = [] as ICard[];
-  attributeFilter.forEach(filter => {
-    const filteredCards: ICard[] = cards.filter(cards => cards.attribute.includes(filter));
-    returnArray = [...new Set([...returnArray,...filteredCards])]
-  })
-  return returnArray;
-}
-
-function applyTypeFilter(cards: ICard[], typeFilter: string[]): ICard[] {
-  if(typeFilter.length === 0) {return cards;}
-
-  let returnArray = [] as ICard[];
-  typeFilter.forEach(filter => {
-    const filteredCards: ICard[] = cards.filter(cards => cards.type.includes(filter));
-    returnArray = [...new Set([...returnArray,...filteredCards])]
-  })
-  return returnArray;
-}
-
-function applyLvFilter(cards: ICard[], lvFilter: string[]): ICard[] {
-  if(lvFilter.length === 0) {return cards;}
-
-  let returnArray = [] as ICard[];
-  lvFilter.forEach(filter => {
-    const filteredCards: ICard[] = cards.filter(cards => cards.cardLv.includes(filter));
-    returnArray = [...new Set([...returnArray,...filteredCards])]
-  })
-  return returnArray;
-}
-
-function applyRarityFilter(cards: ICard[], rarityFilter: string[]): ICard[] {
-  if(rarityFilter.length === 0) {return cards;}
-
-  let returnArray = [] as ICard[];
-  rarityFilter.forEach(filter => {
-    const filteredCards: ICard[] = cards.filter(cards => cards.rarity === filter);
-    returnArray = [...new Set([...returnArray,...filteredCards])]
-  })
-  return returnArray;
-}
-
-function applyVersionFilter(cards: ICard[], versionFilter: string[]): ICard[] {
-  if(versionFilter.length === 0) {return cards;}
-
-  let returnArray = [] as ICard[];
-  versionFilter.forEach(filter => {
-    const filteredCards: ICard[] = cards.filter(cards => cards.version.includes(filter));
-    returnArray = [...new Set([...returnArray,...filteredCards])]
-  })
   return returnArray;
 }
 
@@ -196,4 +155,3 @@ function dynamicSortNumber(property: string): any {
     return result * sortOrder;
   }
 }
-//endregion

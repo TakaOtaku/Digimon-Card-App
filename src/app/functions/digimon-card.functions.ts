@@ -8,6 +8,6 @@ export function setupDigimonCards(): ICard[] {
     if(a.cardNumber < b.cardNumber) { return -1; }
     if(a.cardNumber > b.cardNumber) { return 1; }
     return 0;
-  })
+  });
   return allCards;
 }

@@ -61,12 +61,10 @@ export class ExportDeckDialogComponent implements OnInit, OnDestroy {
     this.deckText = '["Exported from https://digimoncard.app\",';
     this.deck.cards.forEach(card => {
       for(let i = 0; i < card.count; i++) {
-        this.deckText += `"${card.id}"`;
-        if(i < card.count - 1) {
-          this.deckText += ',';
-        }
+        this.deckText += `"${card.id}",`;
       }
     });
+    this.deckText = this.deckText.substring(0, this.deckText.length - 1);
     this.deckText += ']';
   }
 

@@ -4,7 +4,7 @@
       <i class="pi pi-search"></i>
       <input type="text" pInputText [formControl]="searchFilter" placeholder="Search" class="w-full">
     </span>
-    <button (click)="openFilterDialog()" pButton type="button" icon="pi pi-filter-fill w-1/6" label="Filter/Sort"></button>
+    <button (click)="this.display = true" pButton type="button" icon="pi pi-filter-fill w-1/6" label="Filter/Sort"></button>
   </div>
 
   <div *ngIf="!compact" class="inline-flex w-full justify-center">
@@ -12,6 +12,8 @@
       <i class="pi pi-search"></i>
       <input type="text" pInputText [formControl]="searchFilter" placeholder="Search" class="w-full">
     </span>
+
+
 
     <p-inputNumber class="p-number" [formControl]="countFilter" [showButtons]="true" mode="decimal" [min]="0"
                    [inputStyle]="{'text-align': 'center'}"></p-inputNumber>

@@ -1,6 +1,7 @@
 import {Component, OnDestroy} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {Subject, takeUntil} from "rxjs";
+import {setMobile} from "../../store/digimon.actions";
 import {selectSite} from "../../store/digimon.selectors";
 
 export enum SITES {
@@ -18,8 +19,6 @@ export class MainPageComponent implements OnDestroy {
   SITES = SITES;
   site: number = SITES.Collection;
 
-  mobile = false;
-
   private destroy$ = new Subject();
 
   constructor(public store: Store) {
@@ -32,6 +31,6 @@ export class MainPageComponent implements OnDestroy {
   }
 
   onResize() {
-    this.mobile = window.screen.width <= 1024;
+    this.store.dispatch(setMobile({mobile: window.screen.width <= 1024}));
   }
 }

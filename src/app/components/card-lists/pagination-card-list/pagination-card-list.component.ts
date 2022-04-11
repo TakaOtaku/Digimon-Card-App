@@ -6,8 +6,7 @@ import {selectCollection, selectCollectionMode, selectFilteredCards} from "../..
 
 @Component({
   selector: 'digimon-pagination-card-list',
-  templateUrl: './pagination-card-list.component.html',
-  styleUrls: ['./pagination-card-list.component.css']
+  templateUrl: './pagination-card-list.component.html'
 })
 export class PaginationCardListComponent implements OnInit {
   @Output() onCardClick = new EventEmitter<string>();
@@ -30,14 +29,12 @@ export class PaginationCardListComponent implements OnInit {
         this.cards = cards.filter(card => card.version === 'Normal');
         this.cardsToShow = this.cards.slice(0, this.pagination);
       });
+
     this.store.select(selectCollection).pipe(takeUntil(this.onDestroy$))
-      .subscribe((collection) => {
-        this.collection = collection;
-      });
+      .subscribe((collection) => this.collection = collection);
+
     this.store.select(selectCollectionMode).pipe(takeUntil(this.onDestroy$))
-      .subscribe((collectionMode) => {
-        this.collectionMode = collectionMode;
-      });
+      .subscribe((collectionMode) => this.collectionMode = collectionMode);
   }
 
   ngOnDestroy() {

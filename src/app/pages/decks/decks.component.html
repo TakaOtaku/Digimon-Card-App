@@ -17,10 +17,10 @@
   </div>
 </div>
 
-<digimon-import-deck-dialog [show]="importDialog"></digimon-import-deck-dialog>
+<digimon-import-deck-dialog [show]="importDialog"  (onClose)="this.importDialog = false"></digimon-import-deck-dialog>
 
-<digimon-export-deck-dialog [deck]="deck" [show]="exportDialog"></digimon-export-deck-dialog>
+<digimon-export-deck-dialog [deck]="deck" [show]="exportDialog" (onClose)="this.exportDialog = false"></digimon-export-deck-dialog>
 
-<digimon-change-accessorie-dialog [deck]="deck" [title]="title" [description]="description" [tags]="tags" [color]="color" [show]="accessoryDialog"></digimon-change-accessorie-dialog>
+<digimon-change-accessorie-dialog [deck]="deck" [title]="title" [description]="description" [tags]="tags" [color]="color" [show]="accessoryDialog" (onClose)="this.accessoryDialog = false"></digimon-change-accessorie-dialog>
 
 <p-confirmDialog key="DeleteDeck" header="Delete Confirmation" icon="pi pi-exclamation-triangle" rejectButtonStyleClass="p-button-outlined"></p-confirmDialog>

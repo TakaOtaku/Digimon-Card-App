@@ -6,10 +6,8 @@ import {
   changeCardSize,
   changeCollectionMode,
   changeDeck,
-  decreaseCardCount,
   deleteDeck,
   importDeck,
-  increaseCardCount,
   loadSave,
   setCollection,
   setSave
@@ -61,40 +59,6 @@ export const saveReducer = createReducer(
       const collection = [...state.collection, card]
       return {...state, collection};
     }
-  }),
-  on(increaseCardCount, (state, { id }) => {
-    const taken = state.collection.find((card) => card.id === id);
-    if (taken) {
-      // Increase the Cards Count
-      const collection = state.collection.map(card => {
-        if (card.id !== id) {
-          return card;
-        }
-        const count = card.count + 1;
-        return {id, count} as ICountCard;
-      });
-      return {...state, collection};
-    } else {
-      // Create new Card and add it to the state
-      const card = {id, count: 1} as ICountCard;
-      const collection = [...state.collection, card]
-      return {...state, collection};
-    }
-  }),
-  on(decreaseCardCount, (state, { id }) => {
-    const taken = state.collection.find((card) => card.id === id);
-    if (taken && taken.count > 0) {
-      // Increase the Cards Count
-      const collection = state.collection.map(card => {
-        if (card.id !== id) {
-          return card;
-        }
-        const count = card.count - 1;
-        return {id, count} as ICountCard;
-      });
-      return {...state, collection};
-    }
-    return state;
   }),
   //endregion
 

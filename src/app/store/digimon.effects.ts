@@ -13,8 +13,6 @@ export class DigimonEffects {
   save$ = createEffect(() => this.actions$.pipe(
     ofType(
       DigimonActions.changeCardCount,
-      DigimonActions.increaseCardCount,
-      DigimonActions.decreaseCardCount,
       DigimonActions.setSave,
       DigimonActions.importDeck,
       DigimonActions.changeDeck,
@@ -26,15 +24,11 @@ export class DigimonEffects {
     switchMap(() => this.store.select(selectSave).pipe(first())
       .pipe(
         map(save => {
-          if (this.authService.isLoggedIn) {
-            this.dbService.setSave(this.authService.userData!.uid, save);
-          } else {
+          this.authService.isLoggedIn ?
+            this.dbService.setSave(this.authService.userData!.uid, save) :
             localStorage.setItem('Digimon-Card-Collector', JSON.stringify(save));
-          }
         }),
-        catchError(() => {
-          return EMPTY
-          })
+        catchError(() => EMPTY)
         ))
     ), {dispatch: false}
   );
@@ -47,9 +41,8 @@ export class DigimonEffects {
     switchMap(() => this.store.select(selectChangeFilterEffect).pipe(first())
       .pipe(
         tap(({cards, collection, filter, sort}) => {
-          if (!cards) {
-            return;
-          }
+          if (!cards) return
+
           const filteredCards = filterCards(cards, collection, filter, sort);
           this.store.dispatch(DigimonActions.setFilteredDigimonCards({filteredCards}));
         }),

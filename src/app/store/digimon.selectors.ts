@@ -6,6 +6,10 @@ export const selectSave = createFeatureSelector<ISave>('save');
 export const selectDigimonState = createFeatureSelector<IDigimonState>('digimon');
 
 //region Digimon Selectors
+export const selectMobile = createSelector(
+  selectDigimonState,
+  (state: IDigimonState) => state.mobile
+);
 export const selectSite = createSelector(
   selectDigimonState,
   (state: IDigimonState) => state.site
@@ -61,19 +65,6 @@ export const selectCollectionMode = createSelector(
   (state: ISettings) => state.collectionMode
 );
 //endregion
-
-export const selectNavBarViewModel = createSelector(
-  selectCollectionMode,
-  selectSite,
-  (collectionMode: boolean, site: number) => ({collectionMode, site})
-);
-
-export const selectFilterBoxViewModel = createSelector(
-  selectFilter,
-  selectSort,
-  (filter: IFilter, sort: ISort) => ({filter, sort})
-);
-
 
 export const selectChangeFilterEffect = createSelector(
   selectAllCards,

@@ -1,39 +1,48 @@
-<div class="inline-flex relative card" *ngIf="fullCards">
-  <img [src]="card.cardImage" alt="Digimon Card" class="card-image m-auto z-50">
+<ng-template *ngIf="fullCards" [ngTemplateOutlet]="fullCard"></ng-template>
+<ng-template *ngIf="!fullCards" [ngTemplateOutlet]="smallCard"></ng-template>
 
-  <div *ngIf="missingCards" class="absolute inline-flex ml-auto">
-    <i class="pi pi-times text-white"></i>
-    <p class="font-bold text-xl text-white">{{cardHave - card.count > 0 ? 0 : cardHave - card.count}}</p>
-  </div>
+<ng-template #fullCard>
+  <div class="inline-flex relative card">
+    <img [src]="card.cardImage" alt="Digimon Card" class="card-image m-auto z-50">
 
-  <p-inputNumber
-    class="card-count" [min]="0" placeholder="0" [(ngModel)]="card.count" mode="decimal" buttonLayout="vertical" [showButtons]="true" (onInput)="changeCardCount($event)"
-    [style]="{'width': '100%'}" [inputStyle]="{'width': '100%', 'text-align': 'center'}"
-    decrementButtonClass="p-button-secondary" incrementButtonClass="p-button-secondary" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus"></p-inputNumber>
-
-  <p *ngIf="missingCards" class="absolute z-[100] font-bold text-6xl text-red text-black-outline missing">
-    {{cardHave - card.count > 0 ? 0 : cardHave - card.count}}
-  </p>
-</div>
-
-<div class="inline-flex align-center h-[30px]" *ngIf="!fullCards">
-  <p-inputNumber
-    class="card-count" [min]="0" placeholder="0" [(ngModel)]="card.count" mode="decimal" buttonLayout="vertical" [showButtons]="true" (onInput)="changeCardCount($event)"
-    [style]="{'width': '100%'}" [inputStyle]="{'width': '100%', 'text-align': 'center'}"
-    decrementButtonClass="p-button-secondary" incrementButtonClass="p-button-secondary" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus"></p-inputNumber>
-
-  <div class="small-card grid grid-cols-24 gap-0 border-2 border-black rounded-l-2xl min-w-[30vmin] w-[30vmin] max-w-[30vmin] text-xs"
-       [ngStyle]="{'background-color': colorMap.get(card.color)}">
-    <div *ngIf="card.cardLv === 'Lv.2'" class="col-span-4">
-      <div class="egg"></div>
+    <div *ngIf="missingCards" class="absolute inline-flex ml-auto">
+      <i class="pi pi-times text-white"></i>
+      <p class="font-bold text-xl text-white">{{cardHave - card.count > 0 ? 0 : cardHave - card.count}}</p>
     </div>
-    <div *ngIf="card.cardLv !== 'Lv.2'" class="self-center primary-color col-span-3 font-semibold ml-2.5">{{card.playCost}}</div>
-    <div *ngIf="card.cardType !== 'Digimon'" class="self-center bg-black"></div>
-    <div *ngIf="card.cardType === 'Digimon'" class="border-l-2 self-center primary-color col-span-3 pl-2.5 font-semibold">{{transformDCost(card.digivolveCost1)}}</div>
-    <div class="self-center bg-black text-white col-span-2 z-10">{{card.cardLv}}</div>
-    <div class="top-bottom-split"></div>
-    <div class="self-center primary-color truncate text-center font-semibold" [ngClass]="getColSpan(card)">{{card.name}}</div>
-    <div  class="bottom-top-split"></div>
-    <div class="self-center col-span-5 bg-black text-white text-xs truncate">{{card.cardNumber}}</div>
+
+    <p-inputNumber
+      class="card-count" [min]="0" placeholder="0" [(ngModel)]="card.count" mode="decimal" buttonLayout="vertical" [showButtons]="true" (onInput)="changeCardCount($event)"
+      [style]="{'width': '100%'}" [inputStyle]="{'width': '100%', 'text-align': 'center'}"
+      decrementButtonClass="p-button-secondary" incrementButtonClass="p-button-secondary" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus"></p-inputNumber>
+
+    <p *ngIf="missingCards" class="absolute z-[100] font-bold text-6xl text-red text-black-outline missing">
+      {{cardHave - card.count > 0 ? 0 : cardHave - card.count}}
+    </p>
   </div>
-</div>
+</ng-template>
+
+<ng-template #smallCard>
+  <div class="inline-flex align-center h-[30px]">
+    <p-inputNumber
+      class="card-count" [min]="0" placeholder="0" [(ngModel)]="card.count" mode="decimal" buttonLayout="vertical" [showButtons]="true" (onInput)="changeCardCount($event)"
+      [style]="{'width': '100%'}" [inputStyle]="{'width': '100%', 'text-align': 'center'}"
+      decrementButtonClass="p-button-secondary" incrementButtonClass="p-button-secondary" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus"></p-inputNumber>
+
+    <div class="small-card grid grid-cols-24 gap-0 border-2 border-black rounded-l-2xl min-w-[30vmin] w-[30vmin] max-w-[30vmin] text-xs"
+         [ngStyle]="{'background-color': colorMap.get(card.color)}">
+      <div *ngIf="card.cardLv === 'Lv.2'" class="col-span-4">
+        <div class="egg"></div>
+      </div>
+      <div *ngIf="card.cardLv !== 'Lv.2'" class="self-center primary-color col-span-3 font-semibold ml-2.5">{{card.playCost}}</div>
+      <div *ngIf="card.cardType !== 'Digimon'" class="self-center bg-black"></div>
+      <div *ngIf="card.cardType === 'Digimon'" class="border-l-2 self-center primary-color col-span-3 pl-2.5 font-semibold">{{transformDCost(card.digivolveCost1)}}</div>
+      <div class="self-center bg-black text-white col-span-2 z-10">{{card.cardLv}}</div>
+      <div class="top-bottom-split"></div>
+      <div class="self-center primary-color truncate text-center font-semibold" [ngClass]="getColSpan(card)">{{card.name}}</div>
+      <div  class="bottom-top-split"></div>
+      <div class="self-center col-span-5 bg-black text-white text-xs truncate">{{card.cardNumber}}</div>
+    </div>
+  </div>
+</ng-template>
+
+
