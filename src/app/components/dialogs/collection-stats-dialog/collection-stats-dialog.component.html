@@ -1,5 +1,9 @@
-<p-dialog header="Collection Stats" [(visible)]="show" [showHeader]="false" [style]="{width: '75vw'}" [baseZIndex]="10000">
-  <button pButton pRipple type="button" icon="pi pi-times" class="p-button-text ml-auto" (click)="this.onClose.next(false)"></button>
+<p-dialog header="Collection Stats" [(visible)]="show" [showHeader]="false" styleClass="w-[95vw] lg:w-[70vw] xl:w-[60vw] h-[50vh] md:h-[65vh] lg:h-[80vh]" [baseZIndex]="10000">
+  <div class="inline-flex w-full my-5">
+    <h1 class="primary-color text-bolder text-xl">Collection Stats</h1>
+    <button pButton pRipple type="button" icon="pi pi-times" class="p-button-text ml-auto self-end" (click)="this.onClose.next(false)"></button>
+  </div>
+
 
   <!--div [formGroup]="versionForm">
     <p-checkbox name="version" value="Normal" label="Normal" formControlName="normal"></p-checkbox>
@@ -21,6 +25,5 @@
       <label for="type3">Playset+</label>
     </div>
   </div-->
-
   <p-chart type="bar" [data]="collectionData" [options]="chartOptions"></p-chart>
 </p-dialog>

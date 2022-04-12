@@ -11,7 +11,8 @@ import {SITES} from "../main-page/main-page.component";
 
 @Component({
   selector: 'digimon-community-decks',
-  templateUrl: './community-decks.component.html'
+  templateUrl: './community-decks.component.html',
+  styleUrls: ['./community-decks.component.scss'],
 })
 export class CommunityDecksComponent implements OnInit, OnDestroy {
   selectedDeck: IDeck;

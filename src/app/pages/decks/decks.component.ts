@@ -1,4 +1,4 @@
-import {Component, OnDestroy} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {ConfirmationService, MenuItem, MessageService} from "primeng/api";
 import {ContextMenu} from "primeng/contextmenu";
@@ -17,20 +17,18 @@ import {SITES} from "../main-page/main-page.component";
   templateUrl: './decks.component.html',
   styleUrls: ['./decks.component.scss'],
 })
-export class DecksComponent implements OnDestroy {
-  deck: IDeck;
-  decks$ = this.store.select(selectDecks);
+export class DecksComponent implements OnInit, OnDestroy {
+  selectedDeck: IDeck;
+  decks: IDeck[] = [];
 
   importDialog = false;
   exportDialog = false;
   accessoryDialog = false;
 
-  title: string;
-  description: string;
-  tags: ITag[];
-  color: IColor;
+  colors = ['Red', 'Blue', 'Yellow', 'Green', 'Black', 'Purple', 'White', 'Multi'];
 
-  deckContext: MenuItem[];
+
+  deckRowContext: MenuItem[];
 
   private cards: ICard[];
 
@@ -39,12 +37,10 @@ export class DecksComponent implements OnDestroy {
   constructor(
     private store: Store,
     private messageService: MessageService,
-    private confirmationService: ConfirmationService,
-    private authService: AuthService,
-    private db: DatabaseService
+    private confirmationService: ConfirmationService
   ) {
     this.store.select(selectAllCards).pipe(takeUntil(this.onDestroy$)).subscribe(cards => this.cards = cards);
-    this.deckContext = [
+    this.deckRowContext = [
       {
         label:'Open',
         icon:'pi pi-fw pi-info-circle',
@@ -53,7 +49,7 @@ export class DecksComponent implements OnDestroy {
       {
         label:'Copy',
         icon:'pi pi-fw pi-copy',
-        command: () => this.store.dispatch(importDeck({deck: {...this.deck, id: uuid.v4()}}))
+        command: () => this.store.dispatch(importDeck({deck: {...this.selectedDeck, id: uuid.v4()}}))
       },
       {
         label:'Export',
@@ -76,6 +72,10 @@ export class DecksComponent implements OnDestroy {
     ];
   }
 
+  ngOnInit() {
+    this.store.select(selectDecks).pipe(takeUntil(this.onDestroy$)).subscribe(decks => this.decks = decks);
+  }
+
   ngOnDestroy() {
     this.onDestroy$.next(true);
   }
@@ -88,7 +88,7 @@ export class DecksComponent implements OnDestroy {
     if(deck) {
       this.store.dispatch(setDeck({deck}));
     } else {
-      this.store.dispatch(setDeck({deck: this.deck}));
+      this.store.dispatch(setDeck({deck: this.selectedDeck}));
     }
     this.store.dispatch(setSite({site: SITES.DeckBuilder}));
   }
@@ -98,7 +98,7 @@ export class DecksComponent implements OnDestroy {
       key: 'DeleteDeck',
       message: 'You are about to permanently delete this deck. Are you sure?',
       accept: () => {
-        this.store.dispatch(deleteDeck({deck: this.deck}));
+        this.store.dispatch(deleteDeck({deck: this.selectedDeck}));
         this.messageService.add({
           severity: 'success',
           summary: 'Deck deleted!',
@@ -106,14 +106,6 @@ export class DecksComponent implements OnDestroy {
         });
       }
     });
-  }
-
-  onContextMenu(deck: IDeck) {
-    this.deck = deck;
-    this.title = deck.title ?? '';
-    this.description = deck.description ?? '';
-    this.tags = deck.tags ?? [];
-    this.color = deck.color ?? {name: 'Red', img: 'assets/decks/red.svg'};
   }
 
   createNewDeck() {

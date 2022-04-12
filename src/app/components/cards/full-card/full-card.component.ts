@@ -14,6 +14,8 @@ import {selectCardSize} from "../../../store/digimon.selectors";
 export class FullCardComponent implements OnInit, OnDestroy {
   @Input() card: ICard;
   @Input() count: number;
+
+  @Input() width?: string;
   @Input() compact?: boolean = false;
   @Input() collectionMode?: boolean = false;
   @Input() deckBuilder?: boolean = false;

@@ -14,11 +14,6 @@ export const setDeck = createAction(
   props<{ deck: IDeck }>()
 );
 
-export const setMobile = createAction(
-  '[Set Mobile] Set current to Mobile',
-  props<{ mobile: boolean }>()
-);
-
 export const setSite = createAction(
   '[Set Site] Set current Site',
   props<{ site: number }>()

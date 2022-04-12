@@ -1,9 +1,9 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {Subject, takeUntil} from "rxjs";
 import {SITES} from "../../pages/main-page/main-page.component";
 import {setSite} from "../../store/digimon.actions";
-import {selectMobile, selectSite} from "../../store/digimon.selectors";
+import {selectSite} from "../../store/digimon.selectors";
 
 @Component({
   selector: 'digimon-navbar',
@@ -20,9 +20,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
   constructor(private store: Store) {}
 
   ngOnInit() {
-    this.store.select(selectMobile).pipe(takeUntil(this.onDestroy$))
-      .subscribe(mobile => this.mobile = mobile)
-
     this.store.select(selectSite).pipe(takeUntil(this.onDestroy$))
       .subscribe(site => this.site = site);
   }

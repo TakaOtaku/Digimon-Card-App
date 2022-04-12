@@ -1,0 +1,22 @@
+#table {
+  .color {
+    max-width: 120px;
+  }
+  .title {
+    max-width: 600px;
+  }
+  th, td {
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #table {
+    .color {
+      max-width: 120px;
+    }
+    th, td {
+      max-width: 100%;
+    }
+  }
+}

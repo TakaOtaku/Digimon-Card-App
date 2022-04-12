@@ -6,31 +6,13 @@
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-.text-oneline ::ng-deep * {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
 .deck {
-  width: 20vmin;
   padding: 2px;
 
   img {
     margin-top: 0;
     margin-bottom: 5px;
   }
-
-  mat-card-actions {
-    transform: scale(0.7);
-    padding: 0 0 0 18px;
-    margin-bottom: 2px;
-    margin-top: -8px;
-  }
-}
-
-.hidden {
-  display: none;
 }
 
 .deck:hover .digimon-card {
@@ -41,4 +23,27 @@
 .digimon-card {
   bottom: 0;
   left: 0;
+}
+
+#table {
+  .color {
+    max-width: 120px;
+  }
+  .title {
+    max-width: 600px;
+  }
+  th, td {
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #table {
+    .color {
+      max-width: 120px;
+    }
+    th, td {
+      max-width: 100%;
+    }
+  }
 }

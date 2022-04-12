@@ -1,12 +1,26 @@
 <p-contextMenu #table [model]="deckRowContext"></p-contextMenu>
 
-<p-table responsiveLayout="scroll"  styleClass="p-datatable-striped" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} decks"
-         [value]="decks" [scrollable]="true" [scrollHeight]="'calc(100vh - 100px)'" [contextMenu]="table"  [globalFilterFields]="['title','','tags','color.name', 'user']"
+<p-table id="table" responsiveLayout="scroll"  styleClass="p-datatable-striped" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} decks"
+         [value]="decks" [scrollable]="true" [scrollHeight]="'calc(100vh - 100px)'" [contextMenu]="table"  [globalFilterFields]="['color.name', 'title','','tags', 'user']"
          [paginator]="true" [rows]="25" [showCurrentPageReport]="true" [rowsPerPageOptions]="[25, 50, 75]"
          [(contextMenuSelection)]="selectedDeck">
   <ng-template pTemplate="header">
     <tr>
-      <th>
+      <th class="color">
+        <div class="mx-auto">
+          Color
+          <p-columnFilter field="color.name" matchMode="equals" display="menu">
+            <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+              <p-dropdown [ngModel]="value" [options]="colors" (onChange)="filter($event.value)" placeholder="Any">
+                <ng-template let-option pTemplate="item">
+                  <span [class]="'customer-badge status-' + option">{{option}}</span>
+                </ng-template>
+              </p-dropdown>
+            </ng-template>
+          </p-columnFilter>
+        </div>
+      </th>
+      <th class="title">
         <div class="mx-auto">
           Title
           <p-columnFilter type="text" field="title" display="menu"></p-columnFilter>
@@ -20,20 +34,6 @@
       <th>
         <div class="mx-auto">
           Tags
-        </div>
-      </th>
-      <th>
-        <div class="mx-auto">
-          Color
-          <p-columnFilter field="color.name" matchMode="equals" display="menu">
-            <ng-template pTemplate="filter" let-value let-filter="filterCallback">
-              <p-dropdown [ngModel]="value" [options]="colors" (onChange)="filter($event.value)" placeholder="Any">
-                <ng-template let-option pTemplate="item">
-                  <span [class]="'customer-badge status-' + option">{{option}}</span>
-                </ng-template>
-              </p-dropdown>
-            </ng-template>
-          </p-columnFilter>
         </div>
       </th>
       <th>
@@ -58,15 +58,15 @@
   </ng-template>
   <ng-template pTemplate="body" let-deck>
     <tr [pContextMenuRow]="deck" class="max-h-[50px]">
-      <td>{{deck.title}}</td>
+      <td class="inline-flex color">
+        <img class="max-h-[50px] mx-auto" [src]="deck.color?.img ?? 'assets/decks/white.svg'" alt="Digimon Deck Image">
+      </td>
+      <td class="title">{{deck.title}}</td>
       <td class="truncate">{{deck.description}}</td>
       <td>
         <div class="mx-auto">
           <p-chip *ngFor="let tag of deck.tags" label="{{tag.name}}"></p-chip>
         </div>
-      </td>
-      <td class="inline-flex">
-        <img class="max-h-[50px] mx-auto" [src]="deck.color?.img ?? 'assets/decks/white.svg'" alt="Digimon Deck Image">
       </td>
       <td>
         <div class="mx-auto">

@@ -1,5 +1,5 @@
 <div class="max-h-screen overflow-hidden">
-  <digimon-navbar (window:resize)="onResize()"></digimon-navbar>
+  <digimon-navbar></digimon-navbar>
 
   <digimon-filter-box      *ngIf="site === SITES.Collection"></digimon-filter-box>
   <digimon-card-list       *ngIf="site === SITES.Collection" [showCount]="75"></digimon-card-list>

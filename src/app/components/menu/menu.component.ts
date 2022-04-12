@@ -144,7 +144,7 @@ export class MenuComponent implements OnInit, OnDestroy {
           {
             label: 'Import/Export',
             icon: 'pi pi-cloud',
-            command: () => this.importDisplay = true
+            command: () => this.display = true
           },
           {
             label: 'What I work on',

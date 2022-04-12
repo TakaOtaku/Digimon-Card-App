@@ -3,9 +3,8 @@ import {IFilter} from "./filter.interface";
 import {ISort} from "./sort.interface";
 
 export interface IDigimonState {
-  deck: IDeck,
-  mobile: boolean;
-  site: number,
+  deck: IDeck;
+  site: number;
   filter: IFilter;
   sort : ISort;
 }

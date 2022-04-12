@@ -11,7 +11,8 @@ import {selectCollection, selectCollectionMode, selectFilteredCards} from "../..
 export class PaginationCardListComponent implements OnInit {
   @Output() onCardClick = new EventEmitter<string>();
 
-  public pagination = 8;
+  private pagRate = 10;
+  public pagination = 10;
 
   private cards: ICard[] = [];
   public cardsToShow: ICard[] = [];
@@ -50,17 +51,17 @@ export class PaginationCardListComponent implements OnInit {
   }
 
   next() {
-    this.pagination += 8;
-    this.cardsToShow = this.cards.slice(this.pagination - 8, this.pagination);
+    this.pagination += this.pagRate;
+    this.cardsToShow = this.cards.slice(this.pagination - this.pagRate, this.pagination);
   }
 
   previous() {
-    this.pagination -= 8;
-    this.cardsToShow = this.cards.slice(this.pagination - 8, this.pagination);
+    this.pagination -= this.pagRate;
+    this.cardsToShow = this.cards.slice(this.pagination - this.pagRate, this.pagination);
   }
 
   get previousCards(): boolean {
-    return this.pagination === 8;
+    return this.pagination === this.pagRate;
   }
 
   get nextCards(): boolean {

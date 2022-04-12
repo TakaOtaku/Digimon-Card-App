@@ -1,4 +1,4 @@
-<div [ngStyle]="{'width': cardWidth}" class="hover:scale-105 transition-transform relative inline-flex">
+<div [ngStyle]="{'width': width ?? cardWidth}" class="hover:scale-105 transition-transform relative inline-flex">
   <div>
     <img *ngIf="card.version !== 'Normal'" [ngStyle]="{width: '65%'}" [src]="aa.get(this.card.color)" alt="AA-Banner" class="aa">
 
