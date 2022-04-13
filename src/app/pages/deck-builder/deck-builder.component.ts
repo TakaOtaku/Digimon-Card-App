@@ -8,8 +8,8 @@ import {ICard, ICountCard, IDeck, IDeckCard} from "../../../models";
 import {ITag} from "../../../models/interfaces/tag.interface";
 import {AuthService} from "../../service/auth.service";
 import {DatabaseService} from "../../service/database.service";
-import {importDeck, setDeck} from "../../store/digimon.actions";
-import {selectCollection, selectDeckBuilderViewModel} from "../../store/digimon.selectors";
+import {importDeck, setDeck, setEdit} from "../../store/digimon.actions";
+import {selectCollection, selectDeckBuilderViewModel, selectEdit} from "../../store/digimon.selectors";
 
 @Component({
   selector: 'digimon-deck-builder',
@@ -57,7 +57,8 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
 
   public collection: ICountCard[];
 
-  public fullCards = true;
+  fullCards = true;
+  edit = true;
 
   public stack = false;
   public missingCards = false;
@@ -93,6 +94,8 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
         }
       });
 
+    this.store.select(selectEdit).pipe(takeUntil(this.onDestroy$)).subscribe(edit => this.edit = edit);
+
     this.getLevelStats();
   }
 
@@ -122,6 +125,10 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
 
   switchStack() {
     this.stack = !this.stack;
+  }
+
+  editView() {
+    this.store.dispatch(setEdit({edit: !this.edit}))
   }
 
   share() {

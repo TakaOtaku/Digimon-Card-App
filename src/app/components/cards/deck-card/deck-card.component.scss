@@ -18,15 +18,36 @@
 }
 
 p-inputNumber {
-::ng-deep .p-inputnumber-button {
-  padding: 0.1rem 0;
-}
+  ::ng-deep .p-inputnumber-button {
+    padding: 0.1rem 0;
+  }
 }
 
 @media (min-width: 768px) {
   p-inputNumber {
-  ::ng-deep .p-inputnumber-button {
-    padding: 0.5rem 0;
+    ::ng-deep .p-inputnumber-button {
+      padding: 0.5rem 0;
+    }
   }
 }
+
+.egg {
+  width: 14px;
+  height: 18px;
+  border-radius: 50%/60% 60% 40% 40%;
+  background-color: white;
+}
+
+.top-bottom-split {
+  width: 0;
+  height: 0;
+  border-top: 27px solid black;
+  border-left: 15px solid transparent;
+}
+
+.bottom-top-split {
+  width: 0;
+  height: 0;
+  border-right: 15px solid transparent;
+  border-bottom: 27px solid black;
 }

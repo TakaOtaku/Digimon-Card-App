@@ -6,7 +6,7 @@ import {Subject, takeUntil} from "rxjs";
 import * as uuid from "uuid";
 import {IDeck} from "../../../models";
 import {DatabaseService} from "../../service/database.service";
-import {importDeck, setDeck, setSite} from "../../store/digimon.actions";
+import {importDeck, setDeck, setEdit, setSite} from "../../store/digimon.actions";
 import {SITES} from "../main-page/main-page.component";
 
 @Component({
@@ -48,6 +48,7 @@ export class CommunityDecksComponent implements OnInit, OnDestroy {
     this.confirmationService.confirm({
       message: 'You are about to open this deck. Are you sure?',
       accept: () => {
+        this.store.dispatch(setEdit({edit: false}))
         this.store.dispatch(setDeck({deck: {...deck, id: uuid.v4(), rating: 0, ratingCount: 0}}));
         this.store.dispatch(setSite({site: SITES.DeckBuilder}));
       }

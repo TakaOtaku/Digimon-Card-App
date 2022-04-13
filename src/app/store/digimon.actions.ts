@@ -14,6 +14,12 @@ export const setDeck = createAction(
   props<{ deck: IDeck }>()
 );
 
+export const setEdit = createAction(
+  '[Set Edit] Set Edit View',
+  props<{ edit: boolean }>()
+);
+
+
 export const setSite = createAction(
   '[Set Site] Set current Site',
   props<{ site: number }>()

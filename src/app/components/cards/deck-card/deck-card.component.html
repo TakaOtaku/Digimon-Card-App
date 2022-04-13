@@ -10,10 +10,11 @@
       <p class="font-bold text-xl text-white">{{cardHave - card.count > 0 ? 0 : cardHave - card.count}}</p>
     </div>
 
-    <p-inputNumber
+    <p-inputNumber *ngIf="edit"
       class="card-count" [min]="0" placeholder="0" [(ngModel)]="card.count" mode="decimal" buttonLayout="vertical" [showButtons]="true" (onInput)="changeCardCount($event)"
       [style]="{'width': '100%'}" [inputStyle]="{'width': '100%', 'text-align': 'center'}"
       decrementButtonClass="p-button-secondary" incrementButtonClass="p-button-secondary" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus"></p-inputNumber>
+    <span *ngIf="!edit" class="primary-color font-bolder text-3xl px-2">x{{card.count}}</span>
 
     <p *ngIf="missingCards" class="absolute z-[100] font-bold text-6xl text-red text-black-outline missing">
       {{cardHave - card.count > 0 ? 0 : cardHave - card.count}}
@@ -22,25 +23,25 @@
 </ng-template>
 
 <ng-template #smallCard>
-  <div class="inline-flex align-center h-[30px]">
-    <p-inputNumber
-      class="card-count" [min]="0" placeholder="0" [(ngModel)]="card.count" mode="decimal" buttonLayout="vertical" [showButtons]="true" (onInput)="changeCardCount($event)"
-      [style]="{'width': '100%'}" [inputStyle]="{'width': '100%', 'text-align': 'center'}"
-      decrementButtonClass="p-button-secondary" incrementButtonClass="p-button-secondary" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus"></p-inputNumber>
+  <div class="inline-flex align-center h-[30px] my-1 ml-2">
+    <button *ngIf="edit" pButton pRipple type="button" icon="pi pi-plus" class="p-button-outlined p-button-sm" (click)="addCardCount()"></button>
+    <span class="primary-color font-bolder text-3xl px-2">x{{card.count}}</span>
+    <button *ngIf="edit" pButton pRipple type="button" icon="pi pi-minus" class="p-button-outlined p-button-sm" (click)="reduceCardCount()"></button>
 
-    <div class="small-card grid grid-cols-24 gap-0 border-2 border-black rounded-l-2xl min-w-[30vmin] w-[30vmin] max-w-[30vmin] text-xs"
+    <div class="inline-flex ml-1 border-2 border-black rounded-l-2xl min-w-[300px] w-[300px] max-w-[300px] text-xs"
          [ngStyle]="{'background-color': colorMap.get(card.color)}">
-      <div *ngIf="card.cardLv === 'Lv.2'" class="col-span-4">
-        <div class="egg"></div>
+      <div *ngIf="card.cardLv === 'Lv.2'" class="px-5">
+        <div class="egg mt-[4px]"></div>
       </div>
-      <div *ngIf="card.cardLv !== 'Lv.2'" class="self-center primary-color col-span-3 font-semibold ml-2.5">{{card.playCost}}</div>
-      <div *ngIf="card.cardType !== 'Digimon'" class="self-center bg-black"></div>
-      <div *ngIf="card.cardType === 'Digimon'" class="border-l-2 self-center primary-color col-span-3 pl-2.5 font-semibold">{{transformDCost(card.digivolveCost1)}}</div>
-      <div class="self-center bg-black text-white col-span-2 z-10">{{card.cardLv}}</div>
-      <div class="top-bottom-split"></div>
-      <div class="self-center primary-color truncate text-center font-semibold" [ngClass]="getColSpan(card)">{{card.name}}</div>
-      <div  class="bottom-top-split"></div>
-      <div class="self-center col-span-5 bg-black text-white text-xs truncate">{{card.cardNumber}}</div>
+      <div *ngIf="card.cardLv !== 'Lv.2'" class="rounded-full leading-6 self-center px-3 h-full bg-sky-700 text-white text-shadow font-semibold">{{card.playCost}}</div>
+      <div *ngIf="card.cardType === 'Digimon'" class="self-center px-3 text-white text-shadow font-semibold">{{transformDCost(card.digivolveCost1)}}</div>
+      <div *ngIf="card.cardType === 'Tamer'" class="self-center px-3 text-white text-shadow font-semibold">Tamer</div>
+      <div *ngIf="card.cardType === 'Option'" class="self-center px-3 text-white text-shadow font-semibold">Option</div>
+      <div class="self-center px-1 h-full bg-black text-white leading-6 font-bold z-10">{{card.cardLv}}</div>
+      <div class="bottom-top-split"></div>
+      <div class="self-center text-white text-shadow text-md truncate text-center font-semibold" [ngClass]="getColSpan(card)">{{card.name}}</div>
+      <div  class="ml-auto top-bottom-split"></div>
+      <div class="self-center px-1 h-full bg-black  leading-6 font-bold text-white text-xs truncate">{{card.cardNumber}}</div>
     </div>
   </div>
 </ng-template>

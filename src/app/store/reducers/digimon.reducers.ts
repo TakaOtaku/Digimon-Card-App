@@ -1,7 +1,7 @@
 import {createReducer, on} from '@ngrx/store';
 import * as uuid from "uuid";
 import {IDigimonState} from "../../../models";
-import {addToDeck, changeFilter, changeSort, setDeck, setSite} from '../digimon.actions';
+import {addToDeck, changeFilter, changeSort, setDeck, setEdit, setSite} from '../digimon.actions';
 
 export const initialState: IDigimonState = {
   deck: {
@@ -9,6 +9,7 @@ export const initialState: IDigimonState = {
     cards: [],
     color: {name: 'White', img: 'assets/decks/white.svg'},
   },
+  edit: true,
   site: 0,
   filter: {
     searchFilter: '',
@@ -37,6 +38,7 @@ export const digimonReducer = createReducer(
   initialState,
   on(changeFilter, (state, {filter}) => ({...state, filter})),
   on(changeSort, (state, {sort}) => ({...state, sort})),
+  on(setEdit, (state, {edit}) => ({...state, edit})),
   on(setSite, (state, {site}) => ({...state, site})),
   on(setDeck, (state, {deck}) => ({...state, deck})),
   on(addToDeck, (state, {card}) => {

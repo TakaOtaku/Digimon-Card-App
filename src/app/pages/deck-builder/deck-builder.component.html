@@ -13,6 +13,8 @@
 
       <button class="p-button-outlined" pButton (click)="fullCards = !fullCards" label="{{fullCards ? 'Full Cards' : 'Small Cards'}}" icon="pi pi-images" iconPos="left"></button>
 
+      <button class="p-button-outlined" pButton (click)="editView()" label="{{edit ? 'Edit' : 'View'}}" icon="pi pi-pencil" iconPos="left"></button>
+
       <button class="p-button-outlined" pButton (click)="statDialog = true" label="Stats" icon="pi pi-chart-bar" iconPos="left"></button>
 
       <button class="p-button-outlined" pButton (click)="share()" label="Share" icon="pi pi-share-alt" iconPos="left"></button>
@@ -40,10 +42,10 @@
         </p-autoComplete>
       </span>
 
-      <div class="card-list flex flex-wrap surface-card">
-        <div *ngFor="let card of mainDeck" class="card-box surface-card">
+      <div class="card-list flex flex-wrap surface-card pt-3">
+        <div *ngFor="let card of mainDeck" [ngClass]="{'card-box' : fullCards, 'surface-card' : fullCards}">
           <digimon-deck-card
-            (removeCard)="removeCard(card)" (onChange)="mapToDeck()" [fullCards]="fullCards"
+            (removeCard)="removeCard(card)" (onChange)="mapToDeck()" [fullCards]="fullCards" [edit]="edit"
             [card]="card" [stack]="stack" [missingCards]="missingCards" [cardHave]="getCardHave(card)"></digimon-deck-card>
         </div>
       </div>
@@ -52,7 +54,7 @@
 
   <div class="xl:w-[40vw] xl:h-[calc(100vh-58px)] border-2 border-slate-300 m-1 h-[300px]">
     <digimon-filter-box [compact]="true" class="w-100"></digimon-filter-box>
-    <digimon-card-list (onCardClick)="onCardClick($event)" [showCount]="25" class="w-100 hidden xl:block"></digimon-card-list>
+    <digimon-card-list (onCardClick)="onCardClick($event)" [showCount]="50" class="w-100 hidden xl:block"></digimon-card-list>
     <digimon-pagination-card-list (onCardClick)="onCardClick($event)" class="xl:hidden"></digimon-pagination-card-list>
   </div>
 </div>

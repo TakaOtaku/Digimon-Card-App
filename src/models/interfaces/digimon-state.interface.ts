@@ -4,6 +4,7 @@ import {ISort} from "./sort.interface";
 
 export interface IDigimonState {
   deck: IDeck;
+  edit: boolean;
   site: number;
   filter: IFilter;
   sort : ISort;

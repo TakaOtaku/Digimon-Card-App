@@ -13,6 +13,8 @@ export class DeckCardComponent {
   @Input() public cardHave: number;
   @Input() public fullCards: boolean;
 
+  @Input() public edit?: boolean = true;
+
   @Output() public removeCard = new EventEmitter<boolean>();
   @Output() public onChange = new EventEmitter<boolean>();
 
@@ -21,6 +23,21 @@ export class DeckCardComponent {
   changeCardCount(event: any): void {
     this.onChange.emit(true);
     this.card.count = event.value;
+    if (this.card.count <= 0) {
+      this.card.count = 0;
+      this.removeCard.emit(true);
+      return;
+    }
+  }
+
+  addCardCount(): void {
+    this.onChange.emit(true);
+    this.card.count += 1;
+  }
+
+  reduceCardCount(): void {
+    this.onChange.emit(true);
+    this.card.count -= 1;
     if (this.card.count <= 0) {
       this.card.count = 0;
       this.removeCard.emit(true);
