@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {colorMap, IDeckCard} from "../../../../models";
+import englishJSON from "../../../../assets/cardlists/english.json";
+import {colorMap, ICard, IDeckCard} from "../../../../models";
 
 @Component({
   selector: 'digimon-deck-card',
@@ -8,6 +9,7 @@ import {colorMap, IDeckCard} from "../../../../models";
 })
 export class DeckCardComponent {
   @Input() public card: IDeckCard;
+  @Input() public cards: ICard[];
   @Input() public stack: boolean;
   @Input() public missingCards: boolean;
   @Input() public cardHave: number;
@@ -19,6 +21,9 @@ export class DeckCardComponent {
   @Output() public onChange = new EventEmitter<boolean>();
 
   colorMap = colorMap;
+
+  viewCard: ICard = englishJSON[0];
+  viewCardDialog = false;
 
   changeCardCount(event: any): void {
     this.onChange.emit(true);
@@ -49,9 +54,9 @@ export class DeckCardComponent {
     return dCost.split(' ')[0];
   }
 
-  getColSpan(card: IDeckCard): any {
-    if(card.cardLv === 'Lv.2') return {'col-span-11': true};
-    if(card.cardType === 'Digimon') return {'col-span-9': true};
-    return {'col-span-11': true};
+
+  showCardDetails() {
+    this.viewCard = this.cards.find(card => card.cardNumber === this.card.cardNumber)!;
+    this.viewCardDialog = true;
   }
 }

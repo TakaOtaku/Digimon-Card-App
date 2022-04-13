@@ -3,7 +3,7 @@
 
 <ng-template #fullCard>
   <div class="inline-flex relative card">
-    <img [src]="card.cardImage" alt="Digimon Card" class="card-image m-auto z-50">
+    <img [src]="card.cardImage" alt="Digimon Card" class="card-image m-auto z-50" (click)="showCardDetails()" (contextmenu)="showCardDetails()">
 
     <div *ngIf="missingCards" class="absolute inline-flex ml-auto">
       <i class="pi pi-times text-white"></i>
@@ -28,7 +28,7 @@
     <span class="primary-color font-bolder text-3xl px-2">x{{card.count}}</span>
     <button *ngIf="edit" pButton pRipple type="button" icon="pi pi-minus" class="p-button-outlined p-button-sm" (click)="reduceCardCount()"></button>
 
-    <div class="inline-flex ml-1 border-2 border-black rounded-l-2xl min-w-[300px] w-[300px] max-w-[300px] text-xs"
+    <div class="inline-flex ml-1 border-2 border-black rounded-l-2xl min-w-[300px] w-[300px] max-w-[300px] text-xs" (click)="showCardDetails()" (contextmenu)="showCardDetails()"
          [ngStyle]="{'background-color': colorMap.get(card.color)}">
       <div *ngIf="card.cardLv === 'Lv.2'" class="px-5">
         <div class="egg mt-[4px]"></div>
@@ -39,11 +39,12 @@
       <div *ngIf="card.cardType === 'Option'" class="self-center px-3 text-white text-shadow font-semibold">Option</div>
       <div class="self-center px-1 h-full bg-black text-white leading-6 font-bold z-10">{{card.cardLv}}</div>
       <div class="bottom-top-split"></div>
-      <div class="self-center text-white text-shadow text-md truncate text-center font-semibold" [ngClass]="getColSpan(card)">{{card.name}}</div>
+      <div class="self-center text-white text-shadow text-md truncate text-center font-semibold">{{card.name}}</div>
       <div  class="ml-auto top-bottom-split"></div>
       <div class="self-center px-1 h-full bg-black  leading-6 font-bold text-white text-xs truncate">{{card.cardNumber}}</div>
     </div>
   </div>
 </ng-template>
 
+<digimon-view-card-dialog [show]="viewCardDialog" [card]="viewCard" (onClose)="this.viewCardDialog = false"></digimon-view-card-dialog>
 

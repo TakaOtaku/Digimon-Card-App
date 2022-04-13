@@ -46,7 +46,7 @@
         <div *ngFor="let card of mainDeck" [ngClass]="{'card-box' : fullCards, 'surface-card' : fullCards}">
           <digimon-deck-card
             (removeCard)="removeCard(card)" (onChange)="mapToDeck()" [fullCards]="fullCards" [edit]="edit"
-            [card]="card" [stack]="stack" [missingCards]="missingCards" [cardHave]="getCardHave(card)"></digimon-deck-card>
+            [card]="card" [cards]="allCards" [stack]="stack" [missingCards]="missingCards" [cardHave]="getCardHave(card)"></digimon-deck-card>
         </div>
       </div>
     </div>

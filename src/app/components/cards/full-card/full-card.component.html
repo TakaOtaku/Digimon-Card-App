@@ -1,5 +1,5 @@
 <div [ngStyle]="{'width': width ?? cardWidth}" class="hover:scale-105 transition-transform relative inline-flex">
-  <div>
+  <div (click)="showCardDetails()" (contextmenu)="showCardDetails()">
     <img *ngIf="card.version !== 'Normal'" [ngStyle]="{width: '65%'}" [src]="aa.get(this.card.color)" alt="AA-Banner" class="aa">
 
     <img [lazyLoad]="card.cardImage" [ngClass]="{'grayscale': count === 0 && collectionMode}"
@@ -13,3 +13,5 @@
     [inputStyle]="{'width': '100%', 'text-align': 'center'}"
     decrementButtonClass="p-button-secondary" incrementButtonClass="p-button-secondary" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus"></p-inputNumber>
 </div>
+
+<digimon-view-card-dialog [show]="viewCardDialog" [card]="card" (onClose)="this.viewCardDialog = false"></digimon-view-card-dialog>

@@ -21,6 +21,10 @@ export class AppComponent {
   ) {
     this.loadSave();
     this.makeGoogleFriendly();
+
+    document.addEventListener("contextmenu", function (e){
+      e.preventDefault();
+    }, false);
   }
 
   /**

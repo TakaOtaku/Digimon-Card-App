@@ -8,11 +8,12 @@ import {colorMap, ICard} from "../../../../models";
 export class ViewCardDialogComponent implements OnInit, OnChanges {
   @Input() show: boolean = false;
   @Input() card: ICard;
-  @Input() cards: ICard[];
 
   @Input() width?: string = '50vw';
 
   @Output() onClose = new EventEmitter<boolean>();
+
+  allCards: ICard[] = [];
 
   png: string;
   imageAlt: string;
@@ -47,7 +48,7 @@ export class ViewCardDialogComponent implements OnInit, OnChanges {
     this.version = this.versionMap.get(card.version)!;
     this.png = this.getPNG(card.cardImage);
     this.imageAlt = card.cardNumber + ' ' + card.name;
-    this.type = this.card?.cardType;
+    this.type = card?.cardType;
   }
 
   getPNG(cardSRC: string): string {

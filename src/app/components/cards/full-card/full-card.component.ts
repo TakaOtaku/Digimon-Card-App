@@ -2,6 +2,7 @@ import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {faMinus, faPlus} from "@fortawesome/free-solid-svg-icons";
 import {Store} from "@ngrx/store";
 import {Subject, takeUntil} from "rxjs";
+import englishJSON from "../../../../assets/cardlists/english.json";
 import {ICard} from "../../../../models";
 import {changeCardCount} from "../../../store/digimon.actions";
 import {selectCardSize} from "../../../store/digimon.selectors";
@@ -12,13 +13,15 @@ import {selectCardSize} from "../../../store/digimon.selectors";
   styleUrls: ['./full-card.component.scss']
 })
 export class FullCardComponent implements OnInit, OnDestroy {
-  @Input() card: ICard;
+  @Input() card: ICard = englishJSON[0];
   @Input() count: number;
 
   @Input() width?: string;
   @Input() compact?: boolean = false;
   @Input() collectionMode?: boolean = false;
   @Input() deckBuilder?: boolean = false;
+
+  viewCardDialog = false;
 
   faPlus = faPlus;
   faMinus = faMinus;
@@ -71,5 +74,10 @@ export class FullCardComponent implements OnInit, OnDestroy {
   rangeToRange = (input: number) => {
     //(((OldValue - OldMin) * NewRange) / OldRange) + NewMin
     return (input - 5) * (30 - 20) / (100 - 5) + 20;
+  }
+
+  showCardDetails() {
+    if(this.deckBuilder) {return;}
+    this.viewCardDialog = true;
   }
 }

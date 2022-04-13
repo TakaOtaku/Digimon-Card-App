@@ -53,7 +53,7 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
   description: string = '';
 
   public deck: IDeck = {id: uuid.v4(), color: {name: 'White', img: 'assets/decks/white.svg'}, cards: []};
-  private allCards: ICard[] = [];
+  allCards: ICard[] = [];
 
   public collection: ICountCard[];
 
