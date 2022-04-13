@@ -71,40 +71,20 @@ export class MenuComponent implements OnInit, OnDestroy {
   }
 
   update() {
-    let loggedInItem;
-    if(this.authService.isLoggedIn) {
-      loggedInItem = {
-        items: [
-          {
-            label: this.authService.userData?.displayName,
-            icon: 'pi pi-google',
-            command: () => {
-              this.authService.LogOut();
-            }
-          }
-        ]
-      };
-    } else {
-      loggedInItem = {
-        items: [
-          {
-            label: 'Login',
-            icon: 'pi pi-google',
-            command: () => {this.login();}
-          }
-        ]
-      };
-    }
-
+    const user = this.authService.userData?.displayName ?? 'Unknown';
     this.items = [
-      loggedInItem,
       {
-        label: 'Pages',
+        label: 'User: ' + user,
         items: [
           {
             label: 'Collection',
             icon: 'pi pi-book',
             command: () => {this.switchSite(0);}
+          },
+          {
+            label: 'Collection Stats',
+            icon: 'pi pi-book',
+            command: () => this.collectionDisplay = true
           },
           {
             label: 'Deckbuilder',
@@ -115,27 +95,31 @@ export class MenuComponent implements OnInit, OnDestroy {
             label: 'My Decks',
             icon: 'pi pi-database',
             command: () => {this.switchSite(1);}
-          },
+          }
+        ]
+      },
+      {
+        label: 'Community',
+        items: [
           {
-            label: 'Community Decks',
+            label: 'Decks',
             icon: 'pi pi-database',
             command: () => {this.switchSite(3);}
           }
         ]
       },
       {
-        label: 'Stats',
-        items: [
-          {
-            label: 'Collection Stats',
-            icon: 'pi pi-book',
-            command: () => this.collectionDisplay = true
-          },
-        ]
-      },
-      {
         label: 'Settings',
         items: [
+          {
+            label: this.authService.isLoggedIn ? 'Logout' : 'Login',
+            icon: 'pi pi-google',
+            command: () => {
+              this.authService.isLoggedIn ?
+                this.authService.LogOut() :
+                this.login();
+            }
+          },
           {
             label: 'Collection Mode',
             icon: this.collectionMode ? 'pi pi-circle-fill' : 'pi pi-circle',
@@ -155,7 +139,7 @@ export class MenuComponent implements OnInit, OnDestroy {
             label: 'Help the Site!',
             icon: 'pi pi-paypal',
             url: 'https://www.paypal.com/donate/?hosted_button_id=DHQVT7GQ72J98'
-          }
+          },
         ]
       }
     ];

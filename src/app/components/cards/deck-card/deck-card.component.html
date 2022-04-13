@@ -10,8 +10,8 @@
       <p class="font-bold text-xl text-white">{{cardHave - card.count > 0 ? 0 : cardHave - card.count}}</p>
     </div>
 
-    <p-inputNumber *ngIf="edit"
-      class="card-count" [min]="0" placeholder="0" [(ngModel)]="card.count" mode="decimal" buttonLayout="vertical" [showButtons]="true" (onInput)="changeCardCount($event)"
+    <p-inputNumber *ngIf="edit" (onInput)="changeCardCount($event)"
+      class="card-count" [min]="0" [max]="card.cardNumber === 'BT6-085' ? 50 : 4" placeholder="0" [(ngModel)]="card.count" mode="decimal" buttonLayout="vertical" [showButtons]="true"
       [style]="{'width': '100%'}" [inputStyle]="{'width': '100%', 'text-align': 'center'}"
       decrementButtonClass="p-button-secondary" incrementButtonClass="p-button-secondary" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus"></p-inputNumber>
     <span *ngIf="!edit" class="primary-color font-bolder text-3xl px-2">x{{card.count}}</span>

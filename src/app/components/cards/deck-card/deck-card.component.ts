@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {FormControl, ValidatorFn, Validators} from "@angular/forms";
 import englishJSON from "../../../../assets/cardlists/english.json";
 import {colorMap, ICard, IDeckCard} from "../../../../models";
 
@@ -26,18 +27,20 @@ export class DeckCardComponent {
   viewCardDialog = false;
 
   changeCardCount(event: any): void {
-    this.onChange.emit(true);
-    this.card.count = event.value;
-    if (this.card.count <= 0) {
-      this.card.count = 0;
+    if (event.value <= 0) {
       this.removeCard.emit(true);
-      return;
     }
+    this.onChange.emit(true);
   }
 
   addCardCount(): void {
+    if(this.card.cardNumber === 'BT6-085') {
+      this.card.count = this.card.count >= 50 ? 50 : this.card.count + 1;
+      this.onChange.emit(true);
+      return;
+    }
+    this.card.count = this.card.count >= 4 ? 4 : this.card.count + 1;
     this.onChange.emit(true);
-    this.card.count += 1;
   }
 
   reduceCardCount(): void {
@@ -53,7 +56,6 @@ export class DeckCardComponent {
   transformDCost(dCost: string): string {
     return dCost.split(' ')[0];
   }
-
 
   showCardDetails() {
     this.viewCard = this.cards.find(card => card.cardNumber === this.card.cardNumber)!;

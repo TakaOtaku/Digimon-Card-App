@@ -177,11 +177,16 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
 
   onCardClick(id: string) {
     const alreadyInDeck = this.mainDeck.find(value => value.cardNumber === id);
+    const card = this.allCards.find(card => card.cardNumber === id);
     if(alreadyInDeck) {
-      alreadyInDeck.count = alreadyInDeck.count + 1;
+      if(card!.cardNumber === 'BT6-085') {
+        alreadyInDeck.count = alreadyInDeck.count + 1;
+        return;
+      }
+      alreadyInDeck.count = alreadyInDeck.count === 4 ? 4 : alreadyInDeck.count + 1;
       return;
     }
-    const card = this.allCards.find(card => card.cardNumber === id);
+
     this.mainDeck.push({...card!, count: 1});
     this.deckSort();
   }
