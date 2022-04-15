@@ -1,16 +1,34 @@
 import {createReducer, on} from '@ngrx/store';
 import * as uuid from "uuid";
+import englishJSON from "../../../assets/cardlists/english.json";
 import {IDigimonState} from "../../../models";
-import {addToDeck, changeFilter, changeSort, setDeck, setEdit, setSite} from '../digimon.actions';
+import {
+  addToDeck,
+  changeFilter,
+  changeSort, setAccessoryDeckDialog,
+  setDeck,
+  setEdit,
+  setExportDeckDialog,
+  setImportDeckDialog,
+  setSite, setViewCardDialog
+} from '../digimon.actions';
+
+export const emptyDeck = {
+  id: uuid.v4(),
+  cards: [],
+  color: {name: 'White', img: 'assets/decks/white.svg'},
+};
 
 export const initialState: IDigimonState = {
-  deck: {
-    id: uuid.v4(),
-    cards: [],
-    color: {name: 'White', img: 'assets/decks/white.svg'},
-  },
+  deck: emptyDeck,
   edit: true,
   site: 0,
+  dialogs: {
+    exportDeck: {show: false, deck: emptyDeck},
+    importDeck: {show: false},
+    accessoryDeck: {show: false, deck: emptyDeck},
+    viewCard: {show: false, card: englishJSON[0]}
+  },
   filter: {
     searchFilter: '',
     cardCountFilter: null,
@@ -58,4 +76,8 @@ export const digimonReducer = createReducer(
       return {...state};
     }
   }),
+  on(setExportDeckDialog, (state, {show, deck}) => ({...state, dialogs: {...state.dialogs, exportDeck: {show, deck}}})),
+  on(setImportDeckDialog, (state, {show}) => ({...state, dialogs: {...state.dialogs, importDeck: {show}}})),
+  on(setAccessoryDeckDialog, (state, {show, deck}) => ({...state, dialogs: {...state.dialogs, accessoryDeck: {show, deck}}})),
+  on(setViewCardDialog, (state, {show, card}) => ({...state, dialogs: {...state.dialogs, viewCard: {show, card}}})),
 );

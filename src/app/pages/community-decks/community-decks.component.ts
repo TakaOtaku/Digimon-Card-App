@@ -4,7 +4,7 @@ import {Store} from "@ngrx/store";
 import {ConfirmationService, MessageService} from "primeng/api";
 import {Subject, takeUntil} from "rxjs";
 import * as uuid from "uuid";
-import {IDeck} from "../../../models";
+import {COLORS, IDeck, TAGS} from "../../../models";
 import {DatabaseService} from "../../service/database.service";
 import {importDeck, setDeck, setEdit, setSite} from "../../store/digimon.actions";
 import {SITES} from "../main-page/main-page.component";
@@ -18,8 +18,8 @@ export class CommunityDecksComponent implements OnInit, OnDestroy {
   selectedDeck: IDeck;
   decks: IDeck[] = [];
 
-  tags = ['BT1', 'BT2', 'BT3', 'BT4', 'BT5', 'BT6', 'BT7', 'BT8', 'EX1', 'ST1', 'ST2', 'ST3', 'ST4', 'ST5', 'ST6', 'ST7', 'ST8', 'Tournament', 'Casual'];
-  colors = ['Red', 'Blue', 'Yellow', 'Green', 'Black', 'Purple', 'White', 'Multi'];
+  tags = TAGS;
+  colors = COLORS;
 
   deckRowContext = [
     {label: 'View', icon: 'pi pi-fw pi-search', command: () => this.viewDeck(this.selectedDeck)},
@@ -48,7 +48,7 @@ export class CommunityDecksComponent implements OnInit, OnDestroy {
     this.confirmationService.confirm({
       message: 'You are about to open this deck. Are you sure?',
       accept: () => {
-        this.store.dispatch(setEdit({edit: false}))
+        this.store.dispatch(setEdit({edit: false}));
         this.store.dispatch(setDeck({deck: {...deck, id: uuid.v4(), rating: 0, ratingCount: 0}}));
         this.store.dispatch(setSite({site: SITES.DeckBuilder}));
       }
@@ -72,9 +72,5 @@ export class CommunityDecksComponent implements OnInit, OnDestroy {
   dateFormat(date: Date): string {
     const pipe = new DatePipe('en-US');
     return pipe.transform(date, 'MMM d, y, h:mm:ss a')!;
-  }
-
-  rateDeck(deck: IDeck) {
-
   }
 }

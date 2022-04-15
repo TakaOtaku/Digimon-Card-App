@@ -1,4 +1,4 @@
-<p-dialog [showHeader]="false" header="Change Accessory" [(visible)]="show" [style]="{width: width}" [baseZIndex]="10000">
+<p-dialog [showHeader]="false" header="Change Accessory" [(visible)]="show" styleClass="w-[95vw] xl:w-[50vw] h-[400px]"  [baseZIndex]="10000">
   <button pButton pRipple type="button" icon="pi pi-times" class="p-button-text ml-auto" (click)="this.onClose.next(false)"></button>
 
   <p-selectButton class="text-center mt-10" [options]="colorList" [(ngModel)]="color" optionLabel="name">
@@ -24,11 +24,14 @@
     </p-autoComplete>
   </span>
 
-  <div *ngIf="cardCount" class="w-full flex justify-end mt-5">
-    <button class="m-2" pButton (click)="shareDeck()">Share</button>
+  <div class="inline-flex mt-5">
+    <div class="w-full flex justify-end">
+      <button class="m-2" pButton (click)="shareDeck()">Share</button>
+    </div>
+
+    <div class="w-full flex justify-end">
+      <button class="m-2" pButton (click)="saveDeck()">Save</button>
+    </div>
   </div>
 
-  <div class="w-full flex justify-end mt-5">
-    <button class="m-2" pButton (click)="saveDeck()">Save</button>
-  </div>
 </p-dialog>

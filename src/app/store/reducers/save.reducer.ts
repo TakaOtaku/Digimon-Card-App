@@ -1,8 +1,9 @@
 import {createReducer, on} from '@ngrx/store';
 import {ICountCard, IDeck, ISave} from "../../../models";
+import {CARDSET} from "../../../models/card-set.enum";
 import {
   addToCollection,
-  changeCardCount,
+  changeCardCount, changeCardSets,
   changeCardSize,
   changeCollectionMode,
   changeDeck,
@@ -13,13 +14,16 @@ import {
   setSave
 } from "../digimon.actions";
 
+export const emptySettings = {
+  cardSet: CARDSET.English,
+  cardSize: 10,
+  collectionMode: true,
+};
+
 export const initialState: ISave = {
   collection: [],
   decks: [],
-  settings: {
-    cardSize: 10,
-    collectionMode: true,
-  }
+  settings: emptySettings
 }
 
 
@@ -37,6 +41,10 @@ export const saveReducer = createReducer(
     ...state,
     collection: [...new Set([...state.collection, ...collectionCards])]
   })),
+  //endregion
+
+  //region Settings Reducers
+  on(changeCardSets, (state, {cardSet}) => ({...state, settings: {...state.settings, cardSet}})),
   on(changeCardSize, (state, {cardSize}) => ({...state, settings: {...state.settings, cardSize}})),
   on(changeCollectionMode, (state, {collectionMode}) => ({...state, settings: {...state.settings, collectionMode}})),
   //endregion

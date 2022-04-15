@@ -9,6 +9,7 @@ import {ICard, ICountCard, ISave} from "../../../models";
 import {AuthService} from "../../service/auth.service";
 import {addToCollection, changeCollectionMode, loadSave, setSave, setSite} from "../../store/digimon.actions";
 import {selectAllCards, selectCollection, selectCollectionMode, selectSave} from "../../store/digimon.selectors";
+import {emptySettings} from "../../store/reducers/save.reducer";
 
 @Component({
   selector: 'digimon-menu',
@@ -129,7 +130,12 @@ export class MenuComponent implements OnInit, OnDestroy {
             label: 'Import/Export',
             icon: 'pi pi-cloud',
             command: () => this.display = true
-          },
+          }
+        ]
+      },
+      {
+        label: 'External',
+        items: [
           {
             label: 'What I work on',
             icon: 'pi pi-history',
@@ -139,7 +145,7 @@ export class MenuComponent implements OnInit, OnDestroy {
             label: 'Help the Site!',
             icon: 'pi pi-paypal',
             url: 'https://www.paypal.com/donate/?hosted_button_id=DHQVT7GQ72J98'
-          },
+          }
         ]
       }
     ];
@@ -183,7 +189,7 @@ export class MenuComponent implements OnInit, OnDestroy {
           save: {
             collection: [],
             decks: [],
-            settings: {cardSize: 50, collectionMode: true}
+            settings: emptySettings
           }
         }));
         this.display = false;

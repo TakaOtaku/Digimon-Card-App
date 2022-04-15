@@ -43,6 +43,7 @@ import * as DigimonCards from "./store/reducers/digimon-card.reducers";
 import * as Digimon from "./store/reducers/digimon.reducers";
 import * as Save from "./store/reducers/save.reducer";
 import { CollectionStatsDialogComponent } from './components/dialogs/collection-stats-dialog/collection-stats-dialog.component';
+import { CollectionComponent } from './pages/collection/collection.component';
 
 
 @NgModule({
@@ -67,6 +68,7 @@ import { CollectionStatsDialogComponent } from './components/dialogs/collection-
     CommunityDecksComponent,
     ChangeAccessorieDialogComponent,
     CollectionStatsDialogComponent,
+    CollectionComponent,
   ],
   imports: [
     PrimeNGModule,

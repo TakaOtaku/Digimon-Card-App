@@ -1,5 +1,7 @@
 import {ITag} from "./interfaces/tag.interface";
 
+export const TAGS = ['BT1', 'BT2', 'BT3', 'BT4', 'BT5', 'BT6', 'BT7', 'BT8', 'EX1', 'ST1', 'ST2', 'ST3', 'ST4', 'ST5', 'ST6', 'ST7', 'ST8', 'Tournament', 'Casual'];
+
 export const tagsList: ITag[] = [
   {name: 'BT1', color: 'Primary'},
   {name: 'BT2', color: 'Primary'},

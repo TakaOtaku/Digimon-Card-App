@@ -2,14 +2,22 @@ import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {ConfirmationService, MessageService} from "primeng/api";
 import {filter, Subject, takeUntil} from "rxjs";
-import { tagsList } from 'src/models/tags.data';
+import {tagsList} from 'src/models/tags.data';
 import * as uuid from "uuid";
-import {ICard, ICountCard, IDeck, IDeckCard} from "../../../models";
+import {ColorMap, ICard, ICountCard, IDeck, IDeckCard} from "../../../models";
 import {ITag} from "../../../models/interfaces/tag.interface";
 import {AuthService} from "../../service/auth.service";
 import {DatabaseService} from "../../service/database.service";
-import {importDeck, setDeck, setEdit} from "../../store/digimon.actions";
+import {
+  importDeck,
+  setAccessoryDeckDialog,
+  setDeck,
+  setEdit,
+  setExportDeckDialog,
+  setImportDeckDialog
+} from "../../store/digimon.actions";
 import {selectCollection, selectDeckBuilderViewModel, selectEdit} from "../../store/digimon.selectors";
+import {emptyDeck} from "../../store/reducers/digimon.reducers";
 
 @Component({
   selector: 'digimon-deck-builder',
@@ -19,24 +27,19 @@ import {selectCollection, selectDeckBuilderViewModel, selectEdit} from "../../st
 export class DeckBuilderComponent implements OnInit, OnDestroy {
   @Input() public mobile: boolean;
 
-  public mainDeck: IDeckCard[] = [];
-  public sideDeck: IDeckCard[] = [];
-
-  colorMap = new Map<string, string>([
-    ['Red', '#e7002c'],
-    ['Blue', '#0097e1'],
-    ['Yellow', '#fee100'],
-    ['Green', '#009c6b'],
-    ['Black', '#211813'],
-    ['Purple', '#6555a2'],
-    ['White', '#ffffff'],
-  ]);
-
+  title = '';
+  description = '';
   tags: ITag[];
+
+  mainDeck: IDeckCard[] = [];
+  sideDeck: IDeckCard[] = [];
+
+  deck: IDeck = {id: uuid.v4(), color: {name: 'White', img: 'assets/decks/white.svg'}, cards: []};
+
+  colorMap = ColorMap;
+
   tagsList: ITag[] = tagsList;
   filteredTags: ITag[];
-
-  cardCount: number;
 
   levelData: any;
   chartOptions: any = {
@@ -49,25 +52,16 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
     }
   };
 
-  title: string = '';
-  description: string = '';
-
-  public deck: IDeck = {id: uuid.v4(), color: {name: 'White', img: 'assets/decks/white.svg'}, cards: []};
   allCards: ICard[] = [];
-
-  public collection: ICountCard[];
+  collection: ICountCard[];
 
   fullCards = true;
   edit = true;
+  stack = false;
+  missingCards = false;
 
-  public stack = false;
-  public missingCards = false;
-
-  exportDialog = false;
-  importDialog = false;
   statDialog = false;
   settingsDialog = false;
-  accessoryDialog = false;
 
   private onDestroy$ = new Subject();
 
@@ -103,6 +97,9 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
     this.onDestroy$.next(true);
   }
 
+  /**
+   * Map given Deck to Deck from IDeckCards
+   */
   mapDeck(deck: IDeck) {
     this.mainDeck = [];
     this.sideDeck = [];
@@ -119,43 +116,40 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
     this.deckSort();
   }
 
-  switchFullOrSmallCards() {
-    this.fullCards = !this.fullCards;
-  }
-
-  switchStack() {
-    this.stack = !this.stack;
-  }
-
+  /**
+   * Set Edit/View Mode
+   */
   editView() {
     this.store.dispatch(setEdit({edit: !this.edit}))
   }
 
+  /**
+   * Open the accessory dialog
+   */
   share() {
     this.mapToDeck();
-
-    this.cardCount = this.getCardCount('Main');
-
-    this.accessoryDialog = true;
+    this.store.dispatch(setAccessoryDeckDialog({show: true, deck: this.deck}));
   }
 
+  /**
+   * Clear all Cards in the Deck
+   */
   delete() {
     this.confirmationService.confirm({
-      key: 'DeleteDeck',
+      key: 'Delete',
       message: 'You are about to clear all cards in the deck and make a new one. Are you sure?',
       accept: () => {
         this.mainDeck = [];
-        const deck: IDeck = {
-          id: uuid.v4(),
-          cards: [],
-          color: {name: 'White', img: 'assets/decks/white.svg'}
-        }
+        const deck: IDeck = emptyDeck;
         this.store.dispatch(setDeck({deck}));
         this.messageService.add({severity:'success', summary:'Deck cleared!', detail:'Deckcards were cleared successfully!'});
       }
     });
   }
 
+  /**
+   * Save the Deck
+   */
   save(){
     this.confirmationService.confirm({
       message: 'You are about to save all changes and overwrite everything changed. Are you sure?',
@@ -165,22 +159,25 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
         this.messageService.add({severity:'success', summary:'Deck saved!', detail:'Deck was saved successfully!'});
       }
     });
-
   }
 
+  /**
+   * Update the Cards, Title and Description of the Deck
+   */
   mapToDeck() {
-    const cards = this.mainDeck.map(card => {
-      return {id: card.id, count: card.count} as ICountCard;
-    });
+    const cards = this.mainDeck.map(card => ({id: card.id, count:card.count}));
     this.deck = {...this.deck, title: this.title, description: this.description, cards}
   }
 
+  /**
+   * Increase the Card Count but check for Eosmon
+   */
   onCardClick(id: string) {
     const alreadyInDeck = this.mainDeck.find(value => value.cardNumber === id);
     const card = this.allCards.find(card => card.cardNumber === id);
     if(alreadyInDeck) {
       if(card!.cardNumber === 'BT6-085') {
-        alreadyInDeck.count = alreadyInDeck.count + 1;
+        alreadyInDeck.count = alreadyInDeck.count >= 50 ? 50 : alreadyInDeck.count + 1;
         return;
       }
       alreadyInDeck.count = alreadyInDeck.count === 4 ? 4 : alreadyInDeck.count + 1;
@@ -191,6 +188,9 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
     this.deckSort();
   }
 
+  /**
+   * Get Count of how many Cards are in the Main-Deck or Egg Deck
+   */
   getCardCount(which: string): number {
     let count = 0;
     if(which === 'Egg') {
@@ -211,11 +211,17 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
     return count;
   }
 
+  /**
+   * Remove the card from the deck
+   */
   removeCard(card: IDeckCard) {
     this.mainDeck = this.mainDeck.filter(value => value !== card);
     this.deckSort();
   }
 
+  /**
+   * Get Deck Level Stats for the Bar-Chart
+   */
   getLevelStats() {
     const red = this.getColorLevelStats('Red');
     const blue = this.getColorLevelStats('Blue');
@@ -275,7 +281,6 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
       datasets: datasets
     };
   }
-
   getColorLevelStats(color: string): number[] {
     const cards = this.mainDeck.filter(card => card.color === color);
     const lv2 = this.getCountFromCardArray(cards.filter(card => card.cardLv === 'Lv.2'));
@@ -288,13 +293,15 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
     const option = this.getCountFromCardArray(cards.filter(card => card.cardType === 'Option'));
     return [lv2, lv3, lv4, lv5, lv6, lv7, tamer, option];
   }
-
   getCountFromCardArray(cards: IDeckCard[]): number {
     let count = 0;
     cards.forEach(card => count += card.count);
     return count;
   }
 
+  /**
+   * Sort the Deck (Eggs, Digimon, Tamer, Options)
+   */
   deckSort() {
     const eggs = this.mainDeck.filter(card => card.cardType === 'Digi-Egg').sort((a, b) => {
       if (a.name < b.name) {
@@ -337,6 +344,9 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
     this.mainDeck = [...new Set([...eggs, ...digimon, ...tamer, ...options])]
   }
 
+  /**
+   * Compare with the collection if you have all necessary Cards
+   */
   getCardHave(card: IDeckCard) {
     const foundCards = this.collection.filter(colCard => colCard.id === card.cardNumber)
     let count = 0;
@@ -346,6 +356,9 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
     return count;
   }
 
+  /**
+   * For the autocomplete, filter Tags to display
+   */
   filterTags(event: any) {
     let filtered : ITag[] = [];
     let query = event.query;
@@ -360,4 +373,10 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
     this.filteredTags = filtered;
   }
 
+  openImportDeckDialog() {
+    this.store.dispatch(setImportDeckDialog({show: true}));
+  }
+  openExportDeckDialog() {
+    this.store.dispatch(setExportDeckDialog({show: true, deck: this.deck}));
+  }
 }

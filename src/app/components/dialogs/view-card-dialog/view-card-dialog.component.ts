@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
-import {colorMap, ICard} from "../../../../models";
+import {ColorMap, ICard} from "../../../../models";
 
 @Component({
   selector: 'digimon-view-card-dialog',
@@ -20,7 +20,7 @@ export class ViewCardDialogComponent implements OnInit, OnChanges {
 
   color: string;
   backgroundColor: string;
-  colorMap = colorMap;
+  colorMap = ColorMap;
 
   version: string;
   versionMap = new Map<string, string>([
@@ -52,7 +52,7 @@ export class ViewCardDialogComponent implements OnInit, OnChanges {
   }
 
   getPNG(cardSRC: string): string {
-    return cardSRC.replace(new RegExp('\\bcards\\b'), 'cards/png')
+    return cardSRC.replace(new RegExp('\\beng\\b'), 'eng/png')
       .replace(new RegExp('\\b.jpg\\b'), '.png')
   }
 }

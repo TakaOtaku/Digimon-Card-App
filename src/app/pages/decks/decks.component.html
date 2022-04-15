@@ -55,14 +55,3 @@
     </tr>
   </ng-template>
 </p-table>
-
-<digimon-import-deck-dialog [show]="importDialog"  (onClose)="this.importDialog = false"></digimon-import-deck-dialog>
-<digimon-export-deck-dialog [deck]="selectedDeck" [show]="exportDialog" (onClose)="this.exportDialog = false"></digimon-export-deck-dialog>
-<digimon-change-accessorie-dialog
-  [deck]="selectedDeck" [width]="'100vw'"
-  [title]="selectedDeck?.title ?? ''" [description]="selectedDeck?.description ?? ''"
-  [tags]="selectedDeck?.tags ?? []"
-  [color]="selectedDeck?.color ? selectedDeck.color : {name: 'White', img: 'assets/decks/white.svg'}"
-  [show]="accessoryDialog" (onClose)="this.accessoryDialog = false"></digimon-change-accessorie-dialog>
-
-<p-confirmDialog key="DeleteDeck" header="Delete Confirmation" icon="pi pi-exclamation-triangle" rejectButtonStyleClass="p-button-outlined"></p-confirmDialog>

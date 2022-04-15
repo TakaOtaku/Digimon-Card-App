@@ -4,7 +4,7 @@ import {IDigimonCards} from "../../../models";
 import {setFilteredDigimonCards} from '../digimon.actions';
 
 export const initialState: IDigimonCards = {
-  allCards: setupDigimonCards(),
+  allCards: new DigimonCards.setupDigimonCards(),
   filteredCards: setupDigimonCards()
 }
 

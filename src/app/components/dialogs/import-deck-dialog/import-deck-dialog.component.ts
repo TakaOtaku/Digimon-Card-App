@@ -13,8 +13,6 @@ import {selectAllCards} from "../../../store/digimon.selectors";
 })
 export class ImportDeckDialogComponent implements OnInit, OnDestroy {
   @Input() show: boolean = false;
-  @Input() width?: string = '50vw';
-  @Input() overwrite?: IDeck;
 
   @Output() onClose = new EventEmitter<boolean>();
 
@@ -71,10 +69,9 @@ export class ImportDeckDialogComponent implements OnInit, OnDestroy {
   }
 
   private parseDeck(textArray: string[]): IDeck {
-    const deck: IDeck = this.overwrite ?
-      {...this.overwrite, cards: []} :
+    const deck: IDeck =
       {
-        id: this.overwrite ? this.overwrite : uuid.v4(),
+        id: uuid.v4(),
         title: 'Imported Deck',
         color: {name: 'White', img: 'assets/decks/white.svg'},
         cards: []

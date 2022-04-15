@@ -1,7 +1,9 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormControl, ValidatorFn, Validators} from "@angular/forms";
+import {Store} from "@ngrx/store";
 import englishJSON from "../../../../assets/cardlists/english.json";
-import {colorMap, ICard, IDeckCard} from "../../../../models";
+import {ColorMap, ICard, IDeckCard} from "../../../../models";
+import {setViewCardDialog} from "../../../store/digimon.actions";
 
 @Component({
   selector: 'digimon-deck-card',
@@ -21,10 +23,12 @@ export class DeckCardComponent {
   @Output() public removeCard = new EventEmitter<boolean>();
   @Output() public onChange = new EventEmitter<boolean>();
 
-  colorMap = colorMap;
+  colorMap = ColorMap;
 
   viewCard: ICard = englishJSON[0];
   viewCardDialog = false;
+
+  constructor(private store: Store) {}
 
   changeCardCount(event: any): void {
     if (event.value <= 0) {
@@ -59,6 +63,6 @@ export class DeckCardComponent {
 
   showCardDetails() {
     this.viewCard = this.cards.find(card => card.cardNumber === this.card.cardNumber)!;
-    this.viewCardDialog = true;
+    this.store.dispatch(setViewCardDialog({show: true, card: this.viewCard}));
   }
 }

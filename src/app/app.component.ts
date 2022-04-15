@@ -6,6 +6,7 @@ import {ISave} from "../models";
 import {AuthService} from "./service/auth.service";
 import {DatabaseService} from "./service/database.service";
 import {loadSave} from './store/digimon.actions';
+import {emptySettings} from "./store/reducers/save.reducer";
 
 @Component({
   selector: 'digimon-root',
@@ -39,7 +40,7 @@ export class AppComponent {
         .subscribe((save: ISave) => this.store.dispatch(loadSave({save})));
     } else {
       const string = localStorage.getItem('Digimon-Card-Collector')
-      let save: ISave = {collection: [], decks: [], settings: {cardSize: 50, collectionMode: true}};
+      let save: ISave = {collection: [], decks: [], settings: emptySettings};
       if (string) save = JSON.parse(string);
 
       this.store.dispatch(loadSave({save}));

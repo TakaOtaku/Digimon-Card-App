@@ -13,8 +13,6 @@ export class ExportDeckDialogComponent implements OnInit, OnDestroy {
   @Input() show: boolean = false;
   @Input() deck: IDeck;
 
-  @Input() width?: string = '50vw';
-
   @Output() onClose = new EventEmitter<boolean>();
 
   exportList = ['TEXT', 'TTS'];

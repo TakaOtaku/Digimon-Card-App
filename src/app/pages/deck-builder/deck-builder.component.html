@@ -63,19 +63,10 @@
   <p-chart type="bar" [data]="levelData" [options]="chartOptions"></p-chart>
 </p-dialog>
 
-<p-dialog header="Settings" [(visible)]="settingsDialog" [style]="{width: '100vw', height: '20vh'}" [baseZIndex]="10000">
-  <button class="p-button-outlined" pButton (click)="importDialog = true" label="Import" icon="pi pi-upload" iconPos="left"></button>
+<p-dialog header="Settings" [(visible)]="settingsDialog" styleClass="w-[95vw] xl:w-[50vw] h-[200px]" [baseZIndex]="10000">
+  <button class="p-button-outlined" pButton (click)="openImportDeckDialog()" label="Import" icon="pi pi-upload" iconPos="left"></button>
 
-  <button class="p-button-outlined" pButton (click)="exportDialog = true" label="Export" icon="pi pi-download" iconPos="left"></button>
+  <button class="p-button-outlined" pButton (click)="openExportDeckDialog()" label="Export" icon="pi pi-download" iconPos="left"></button>
 
   <button class="p-button-outlined" pButton (click)="delete()" label="Delete" icon="pi pi-trash" iconPos="left"></button>
 </p-dialog>
-
-<digimon-export-deck-dialog [deck]="deck" [show]="exportDialog" (onClose)="this.exportDialog = false"></digimon-export-deck-dialog>
-<digimon-import-deck-dialog [show]="importDialog" [overwrite]="deck" (onClose)="this.importDialog = false"></digimon-import-deck-dialog>
-
-<digimon-change-accessorie-dialog (onClose)="this.accessoryDialog = false" [cardCount]="cardCount" [deck]="deck" [title]="title" [description]="description" [tags]="tags" [color]="deck.color" [show]="accessoryDialog"></digimon-change-accessorie-dialog>
-
-<p-confirmDialog key="DeleteDeck" header="Delete Confirmation" icon="pi pi-exclamation-triangle" rejectButtonStyleClass="p-button-outlined"></p-confirmDialog>
-
-

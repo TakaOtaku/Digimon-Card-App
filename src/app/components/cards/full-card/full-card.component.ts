@@ -4,7 +4,7 @@ import {Store} from "@ngrx/store";
 import {Subject, takeUntil} from "rxjs";
 import englishJSON from "../../../../assets/cardlists/english.json";
 import {ICard} from "../../../../models";
-import {changeCardCount} from "../../../store/digimon.actions";
+import {changeCardCount, setViewCardDialog} from "../../../store/digimon.actions";
 import {selectCardSize} from "../../../store/digimon.selectors";
 
 @Component({
@@ -78,6 +78,6 @@ export class FullCardComponent implements OnInit, OnDestroy {
 
   showCardDetails() {
     if(this.deckBuilder) {return;}
-    this.viewCardDialog = true;
+    this.store.dispatch(setViewCardDialog({show: true, card: this.card}));
   }
 }

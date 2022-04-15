@@ -28,6 +28,25 @@ export const selectDeck = createSelector(
 );
 //endregion
 
+//region Dialog Selectors
+export const selectExportDeckDialog = createSelector(
+  selectDigimonState,
+  (state: IDigimonState) => state.dialogs.exportDeck
+);
+export const selectImportDeckDialog = createSelector(
+  selectDigimonState,
+  (state: IDigimonState) => state.dialogs.importDeck
+);
+export const selectAccessoryDeckDialog = createSelector(
+  selectDigimonState,
+  (state: IDigimonState) => state.dialogs.accessoryDeck
+);
+export const selectViewCardDialog = createSelector(
+  selectDigimonState,
+  (state: IDigimonState) => state.dialogs.viewCard
+);
+//endregion
+
 //region Digimon Card Selectors
 export const selectAllCards = createSelector(
   selectIDigimonCards,
@@ -63,6 +82,10 @@ export const selectCardSize = createSelector(
 export const selectCollectionMode = createSelector(
   selectSettings,
   (state: ISettings) => state.collectionMode
+);
+export const selectCardSet = createSelector(
+  selectSettings,
+  (state: ISettings) => state.cardSet
 );
 //endregion
 

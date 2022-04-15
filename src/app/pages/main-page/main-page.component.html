@@ -1,14 +1,23 @@
+<p-toast></p-toast>
+
 <div class="max-h-screen overflow-hidden">
   <digimon-navbar></digimon-navbar>
 
-  <digimon-filter-box      *ngIf="site === SITES.Collection"></digimon-filter-box>
-  <digimon-card-list       *ngIf="site === SITES.Collection" [showCount]="75"></digimon-card-list>
+  <digimon-collection      *ngIf="site === SITES.Collection"></digimon-collection>
 
   <digimon-decks           *ngIf="site === SITES.Decks"></digimon-decks>
 
   <digimon-deck-builder    *ngIf="site === SITES.DeckBuilder"></digimon-deck-builder>
 
   <digimon-community-decks *ngIf="site === SITES.CommunityDecks"></digimon-community-decks>
-
-  <p-toast></p-toast>
 </div>
+
+<digimon-import-deck-dialog [show]="importDeckDialog"  (onClose)="closeImportDeckDialog()"></digimon-import-deck-dialog>
+<digimon-export-deck-dialog [show]="exportDeckDialog" [deck]="selectedDeck" (onClose)="closeExportDeckDialog()"></digimon-export-deck-dialog>
+<digimon-change-accessorie-dialog [show]="accessoryDeckDialog" [deck]="selectedDeck" (onClose)="closeAccessoryDeckDialog()"></digimon-change-accessorie-dialog>
+<digimon-view-card-dialog [show]="viewCardDialog" [card]="selectedCard" (onClose)="closeViewCardDialog()"></digimon-view-card-dialog>
+
+<p-confirmDialog key="Delete" header="Delete Confirmation" icon="pi pi-exclamation-triangle" rejectButtonStyleClass="p-button-outlined"></p-confirmDialog>
+
+
+

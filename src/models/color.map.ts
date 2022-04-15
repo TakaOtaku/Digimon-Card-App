@@ -1,4 +1,4 @@
-export const colorMap = new Map<string, string>([
+export const ColorMap = new Map<string, string>([
   ['Red', '#e7002c'],
   ['Blue', '#0097e1'],
   ['Yellow', '#fee100'],

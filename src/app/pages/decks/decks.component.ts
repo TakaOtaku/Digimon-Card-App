@@ -1,15 +1,20 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {ConfirmationService, MenuItem, MessageService} from "primeng/api";
-import {ContextMenu} from "primeng/contextmenu";
 import {Subject, takeUntil} from "rxjs";
 import * as uuid from "uuid";
-import {ICard, IColor, IDeck} from "../../../models";
-import {ITag} from "../../../models/interfaces/tag.interface";
-import {AuthService} from "../../service/auth.service";
-import {DatabaseService} from "../../service/database.service";
-import {deleteDeck, importDeck, setDeck, setSite} from "../../store/digimon.actions";
-import {selectAllCards, selectDecks} from "../../store/digimon.selectors";
+import {IDeck} from "../../../models";
+import {COLORS} from "../../../models/color.data";
+import {
+  deleteDeck,
+  importDeck,
+  setAccessoryDeckDialog,
+  setDeck,
+  setExportDeckDialog,
+  setImportDeckDialog,
+  setSite
+} from "../../store/digimon.actions";
+import {selectDecks} from "../../store/digimon.selectors";
 import {SITES} from "../main-page/main-page.component";
 
 @Component({
@@ -21,16 +26,9 @@ export class DecksComponent implements OnInit, OnDestroy {
   selectedDeck: IDeck;
   decks: IDeck[] = [];
 
-  importDialog = false;
-  exportDialog = false;
-  accessoryDialog = false;
-
-  colors = ['Red', 'Blue', 'Yellow', 'Green', 'Black', 'Purple', 'White', 'Multi'];
-
+  colors = COLORS;
 
   deckRowContext: MenuItem[];
-
-  private cards: ICard[];
 
   private onDestroy$ = new Subject<boolean>();
 
@@ -39,7 +37,6 @@ export class DecksComponent implements OnInit, OnDestroy {
     private messageService: MessageService,
     private confirmationService: ConfirmationService
   ) {
-    this.store.select(selectAllCards).pipe(takeUntil(this.onDestroy$)).subscribe(cards => this.cards = cards);
     this.deckRowContext = [
       {
         label:'Open',
@@ -54,12 +51,12 @@ export class DecksComponent implements OnInit, OnDestroy {
       {
         label:'Export',
         icon:'pi pi-fw pi-download',
-        command: () => this.exportDialog = true
+        command: () => this.store.dispatch(setExportDeckDialog({show: true, deck: this.selectedDeck}))
       },
       {
         label:'Change Accessories',
         icon:'pi pi-fw pi-cog',
-        command: () => this.accessoryDialog = true
+        command: () => this.store.dispatch(setAccessoryDeckDialog({show: true, deck: this.selectedDeck}))
       },
       {
         separator:true
@@ -80,22 +77,27 @@ export class DecksComponent implements OnInit, OnDestroy {
     this.onDestroy$.next(true);
   }
 
+  /**
+   * Open the import deck dialog
+   */
   openImportDialog(): void  {
-    this.importDialog = true;
+    this.store.dispatch(setImportDeckDialog({show: true}));
   }
 
-  openDeck(deck?: IDeck): void {
-    if(deck) {
-      this.store.dispatch(setDeck({deck}));
-    } else {
-      this.store.dispatch(setDeck({deck: this.selectedDeck}));
-    }
+  /**
+   * Set the Deck-Builder-Deck and switch to the Deck-Builder
+   */
+  openDeck(): void {
+    this.store.dispatch(setDeck({deck: this.selectedDeck}));
     this.store.dispatch(setSite({site: SITES.DeckBuilder}));
   }
 
+  /**
+   * Delete a Deck permanently.
+   */
   deleteDeck() {
     this.confirmationService.confirm({
-      key: 'DeleteDeck',
+      key: 'Delete',
       message: 'You are about to permanently delete this deck. Are you sure?',
       accept: () => {
         this.store.dispatch(deleteDeck({deck: this.selectedDeck}));
@@ -108,6 +110,9 @@ export class DecksComponent implements OnInit, OnDestroy {
     });
   }
 
+  /**
+   * Create a new empty Deck
+   */
   createNewDeck() {
     const deck: IDeck = {
       id: uuid.v4(),

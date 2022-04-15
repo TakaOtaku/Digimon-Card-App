@@ -2,8 +2,11 @@ import {Injectable} from '@angular/core';
 import {AngularFireDatabase} from "@angular/fire/compat/database";
 import {get, getDatabase, ref, set, update} from "@angular/fire/database";
 import {DataSnapshot} from "@firebase/database";
+import {Card} from "primeng/card";
 import {BehaviorSubject, first, Subject} from "rxjs";
 import {IDeck, ISave, IUser} from "../../models";
+import {CARDSET} from "../../models/card-set.enum";
+import {emptySettings} from "../store/reducers/save.reducer";
 
 
 @Injectable({
@@ -40,8 +43,8 @@ export class DatabaseService {
           saveSubject.next(save);
           return;
         } else {
-          set(ref(db, 'users/' + uId), {collection: [], decks: [], settings: {cardSize: 50, collectionMode: true}});
-          saveSubject.next({collection: [], decks: [], settings: {cardSize: 50, collectionMode: true}});
+          set(ref(db, 'users/' + uId), {collection: [], decks: [], settings: emptySettings});
+          saveSubject.next({collection: [], decks: [], settings: emptySettings});
         }
       }
     });
