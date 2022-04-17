@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {MessageService} from "primeng/api";
 import {Subject, takeUntil} from "rxjs";
@@ -21,6 +21,7 @@ export class ImportDeckDialogComponent implements OnInit, OnDestroy {
     "\n" +
     " Format:\n" +
     "   Qty Name Id\n" +
+    "   The order of the values doesn't matter" +
     "   Name is optional. Qty(quantity) must be positiv\n" +
     "   Each card can only be declared once\n" +
     "   Import will always pick the regular art card\""
@@ -55,11 +56,13 @@ export class ImportDeckDialogComponent implements OnInit, OnDestroy {
   }
 
   importDeck() {
+    debugger;
     if(this.deckText === '') return;
 
     let result: string[] = this.deckText.split("\n");
     const deck: IDeck = this.parseDeck(result);
     if(deck.cards.length === 0) {
+      this.messageService.add({severity:'Warning', summary:'Deck error!', detail:'No card could be found!'});
       return;
     }
     this.store.dispatch(importDeck({deck}));
@@ -88,8 +91,8 @@ export class ImportDeckDialogComponent implements OnInit, OnDestroy {
 
   private parseLine(line: string): IDeckCard | null {
     let lineSplit: string[] = line.replace(/  +/g, ' ').split(" ");
-    const cardLine: number = +lineSplit[0]>>>0;
-    if(cardLine > 0) {
+    const cardLine: boolean = /\d/.test(line)
+    if(cardLine) {
       let matches = lineSplit.filter(string => string.includes('-'));
       matches = matches.filter(string => {
         const split = string.split('-');
@@ -107,9 +110,21 @@ export class ImportDeckDialogComponent implements OnInit, OnDestroy {
       if(!this.digimonCards.find(card => card.id === matches[matches.length - 1])) {
         return null;
       }
-      return {count: cardLine, id: matches[matches.length - 1]} as IDeckCard;
+
+      return {count: this.findNumber(lineSplit), id: matches[matches.length - 1]} as IDeckCard;
     }
     return null;
+  }
+
+  private findNumber(array: string[]): number {
+    let count = 0;
+    array.forEach(string => {
+      let number: number = +string>>>0
+      if(number > 0) {
+        count = number;
+      }
+    });
+    return count;
   }
 
 }

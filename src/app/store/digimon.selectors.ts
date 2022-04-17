@@ -87,7 +87,32 @@ export const selectCardSet = createSelector(
   selectSettings,
   (state: ISettings) => state.cardSet
 );
+export const selectCollectionMinimum = createSelector(
+  selectSettings,
+  (state: ISettings) => state.collectionMinimum
+);
+export const selectShowPreRelease = createSelector(
+  selectSettings,
+  (state: ISettings) => state.showPreRelease
+);
+
+export const selectShowStampedCards = createSelector(
+  selectSettings,
+  (state: ISettings) => state.showStampedCards
+);
+export const selectShowAACards = createSelector(
+  selectSettings,
+  (state: ISettings) => state.showAACards
+);
 //endregion
+
+export const selectChangeAdvancedSettings = createSelector(
+  selectShowPreRelease,
+  selectShowAACards,
+  selectShowStampedCards,
+  selectFilter,
+  (showPreRelease: boolean, showAA: boolean, showStamped: boolean, filter: IFilter) => ({showPreRelease, showAA, showStamped, filter})
+);
 
 export const selectChangeFilterEffect = createSelector(
   selectAllCards,

@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {Meta, Title} from "@angular/platform-browser";
+import {Router} from "@angular/router";
 import {Store} from "@ngrx/store";
 import {first} from "rxjs";
 import {ISave} from "../models";
@@ -18,10 +19,13 @@ export class AppComponent {
     private authService: AuthService,
     private databaseService: DatabaseService,
     private meta: Meta,
-    private title: Title
+    private title: Title,
+    private router: Router
   ) {
     this.loadSave();
     this.makeGoogleFriendly();
+
+    this.checkForDeckLink();
 
     document.addEventListener("contextmenu", function (e){
       e.preventDefault();
@@ -43,6 +47,8 @@ export class AppComponent {
       let save: ISave = {collection: [], decks: [], settings: emptySettings};
       if (string) save = JSON.parse(string);
 
+      save = this.databaseService.checkSaveValidity(save, this.authService.userData);
+
       this.store.dispatch(loadSave({save}));
     }
   }
@@ -55,5 +61,8 @@ export class AppComponent {
       {name: 'author', content: 'TakaOtaku'},
       {name: 'keywords', content: 'Digimon, Card, Game, Collecting, Deck, Deckbuilder, Tournament, Casual, TCG'}
     ]);
+  }
+
+  private checkForDeckLink() {
   }
 }

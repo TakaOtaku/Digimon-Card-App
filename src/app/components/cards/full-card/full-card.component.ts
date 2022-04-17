@@ -5,7 +5,7 @@ import {Subject, takeUntil} from "rxjs";
 import englishJSON from "../../../../assets/cardlists/english.json";
 import {ICard} from "../../../../models";
 import {changeCardCount, setViewCardDialog} from "../../../store/digimon.actions";
-import {selectCardSize} from "../../../store/digimon.selectors";
+import {selectCardSize, selectCollectionMinimum} from "../../../store/digimon.selectors";
 
 @Component({
   selector: 'digimon-full-card',
@@ -28,7 +28,7 @@ export class FullCardComponent implements OnInit, OnDestroy {
 
   cardWidth = 7 + 'vmin';
   cardBorder = '2px solid black';
-  cardRadius = '5px';
+  cardRadius = '5px'
 
   aa = new Map<string, string>([
     ['Red', 'assets/images/banner/ico_card_detail_red.png'],
@@ -39,7 +39,9 @@ export class FullCardComponent implements OnInit, OnDestroy {
     ['Purple', 'assets/images/banner/ico_card_detail_purple.png'],
     ['White', 'assets/images/banner/ico_card_detail_white.png'],
     ['Multi', 'assets/images/banner/ico_card_detail_multi.png'],
-  ])
+  ]);
+
+  collectionMinimum = 0;
 
   private onDestroy$ = new Subject();
 
@@ -48,6 +50,8 @@ export class FullCardComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.store.select(selectCardSize).pipe(takeUntil(this.onDestroy$))
       .subscribe(cardSize => this.setCardSize(cardSize));
+    this.store.select(selectCollectionMinimum).pipe(takeUntil(this.onDestroy$))
+      .subscribe(minimum => this.collectionMinimum = minimum);
   }
 
   ngOnDestroy() {

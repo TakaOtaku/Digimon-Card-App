@@ -180,4 +180,4 @@ export const Lvs: string[] = ['Lv.2', 'Lv.3', 'Lv.4', 'Lv.5', 'Lv.6', 'Lv.7'];
 
 export const Rarities: string[] = ['P', 'C', 'U', 'R', 'SR', 'SEC'];
 
-export const Versions: string[] = ['Normal', 'AA', 'Stamp'];
+export const Versions: string[] = ['Normal', 'AA', 'Stamp', 'Pre-Release'];

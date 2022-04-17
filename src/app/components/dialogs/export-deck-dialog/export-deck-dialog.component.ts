@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {saveAs} from "file-saver";
 import {Subject, takeUntil} from "rxjs";
@@ -9,7 +9,7 @@ import {selectAllCards} from "../../../store/digimon.selectors";
   selector: 'digimon-export-deck-dialog',
   templateUrl: './export-deck-dialog.component.html'
 })
-export class ExportDeckDialogComponent implements OnInit, OnDestroy {
+export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
   @Input() show: boolean = false;
   @Input() deck: IDeck;
 
@@ -24,7 +24,12 @@ export class ExportDeckDialogComponent implements OnInit, OnDestroy {
 
   private onDestroy$ = new Subject();
 
-  constructor(private store: Store) { }
+  constructor(private store: Store) {
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+        this.setExportTypeText();
+    }
 
   ngOnInit(): void {
     this.digimonCards$.pipe(takeUntil(this.onDestroy$))
@@ -51,7 +56,7 @@ export class ExportDeckDialogComponent implements OnInit, OnDestroy {
     this.deckText = "// Digimon DeckList\n\n";
     this.deck.cards.forEach(card => {
       const dc = this.digimonCards.find(dc => dc.id === card.id)
-      this.deckText += `${card.count} ${dc?.name} ${card.id}\n`;
+      this.deckText += `${card.id} ${dc?.name} ${card.count}\n`;
     });
   }
 

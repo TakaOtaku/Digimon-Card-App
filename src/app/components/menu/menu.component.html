@@ -1,5 +1,9 @@
+<p-confirmPopup></p-confirmPopup>
+
 <button type="button" pButton pRipple icon="pi pi-bars" label="" (click)="menu.toggle($event)"></button>
 <p-menu #menu [popup]="true" [model]="items"></p-menu>
+
+<digimon-collection-stats-dialog [show]="collectionDisplay" [digimonCards]="digimonCards" [collection]="collection" (onClose)="this.collectionDisplay = false"></digimon-collection-stats-dialog>
 
 <p-dialog header="Import/Export" [(visible)]="display" styleClass="w-[70vw] lg:w-[50vw] xl:w-[30vw] h-[320px]" [baseZIndex]="10000">
   <div class="flex flex-col justify-between">
@@ -21,6 +25,25 @@
     </div>
 </p-dialog>
 
-<digimon-collection-stats-dialog [show]="collectionDisplay" [digimonCards]="digimonCards" [collection]="collection" (onClose)="this.collectionDisplay = false"></digimon-collection-stats-dialog>
+<p-dialog header="Advanced Settings" [(visible)]="settingsDialog" styleClass="w-[400px] h-[520px]" [baseZIndex]="10000">
+  <div class="w-full flex flex-col justify-end">
+    <span class="p-float-label mx-auto mt-5">
+      <p-inputNumber id="float-input" [(ngModel)]="collectionCount" mode="decimal"></p-inputNumber>
+      <label for="float-input">How many of a card do you collect?</label>
+    </span>
 
-<p-confirmPopup></p-confirmPopup>
+    <h5 class="mt-5 mx-auto font-bold">Pre-Release Cards</h5>
+    <p-selectButton class="mx-auto" [options]="showHideOptions" [(ngModel)]="preRelease" optionLabel="label" optionValue="value"></p-selectButton>
+
+    <h5 class="mt-5 mx-auto font-bold">Alt. Art Cards</h5>
+    <p-selectButton class="mx-auto" [options]="showHideOptions" [(ngModel)]="aa" optionLabel="label" optionValue="value"></p-selectButton>
+
+    <h5 class="mt-5 mx-auto font-bold">Stamped Cards</h5>
+    <p-selectButton class="mx-auto" [options]="showHideOptions" [(ngModel)]="stamped" optionLabel="label" optionValue="value"></p-selectButton>
+  </div>
+
+  <div class="flex flex-row justify-between">
+    <button class="mt-10" (click)="display = true" pButton type="button" icon="pi pi-upload" label="Import/Export"></button>
+    <button class="mt-10" (click)="saveSettings()" pButton type="button" icon="pi pi-save" label="Save Settings"></button>
+  </div>
+</p-dialog>

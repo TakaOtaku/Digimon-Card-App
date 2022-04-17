@@ -2,7 +2,7 @@
   <div (click)="showCardDetails()" (contextmenu)="showCardDetails()">
     <img *ngIf="card.version !== 'Normal'" [ngStyle]="{width: '65%'}" [src]="aa.get(this.card.color)" alt="AA-Banner" class="aa">
 
-    <img [lazyLoad]="card.cardImage" [ngClass]="{'grayscale': count === 0 && collectionMode}"
+    <img [lazyLoad]="card.cardImage" [ngClass]="{'grayscale': count < collectionMinimum && collectionMode}"
          [ngStyle]="{'border': cardBorder, 'border-radius': cardRadius}"
          alt="{{card.cardNumber + ' ' + card.name}}" class="m-auto" defaultImage="assets/images/digimon-card-back.webp">
   </div>

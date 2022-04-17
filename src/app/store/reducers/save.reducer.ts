@@ -3,10 +3,13 @@ import {ICountCard, IDeck, ISave} from "../../../models";
 import {CARDSET} from "../../../models/card-set.enum";
 import {
   addToCollection,
-  changeCardCount, changeCardSets,
+  changeCardCount,
+  changeCardSets,
   changeCardSize,
+  changeCollectionMinimum,
   changeCollectionMode,
   changeDeck,
+  changeShowVersion,
   deleteDeck,
   importDeck,
   loadSave,
@@ -15,9 +18,13 @@ import {
 } from "../digimon.actions";
 
 export const emptySettings = {
-  cardSet: CARDSET.English,
+  cardSet: CARDSET.BothOverwrite,
   cardSize: 10,
   collectionMode: true,
+  collectionMinimum: 1,
+  showPreRelease: true,
+  showStampedCards: true,
+  showAACards: true
 };
 
 export const initialState: ISave = {
@@ -47,6 +54,9 @@ export const saveReducer = createReducer(
   on(changeCardSets, (state, {cardSet}) => ({...state, settings: {...state.settings, cardSet}})),
   on(changeCardSize, (state, {cardSize}) => ({...state, settings: {...state.settings, cardSize}})),
   on(changeCollectionMode, (state, {collectionMode}) => ({...state, settings: {...state.settings, collectionMode}})),
+  on(changeCollectionMinimum, (state, {minimum}) => ({...state, settings: {...state.settings, collectionMinimum: minimum}})),
+  on(changeShowVersion, (state, {showPre, showAA, showStamp}) =>
+    ({...state, settings: {...state.settings, showPreRelease: showPre, showAACards: showAA, showStampedCards: showStamp}})),
   //endregion
 
   //region Card Count Reducers

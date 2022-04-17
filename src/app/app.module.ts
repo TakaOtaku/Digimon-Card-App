@@ -12,7 +12,6 @@ import {StoreModule} from '@ngrx/store';
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {LazyLoadImageModule} from "ng-lazyload-image";
 import {ToastrModule} from "ngx-toastr";
-import {DividerModule} from "primeng/divider";
 import {environment} from "../environments/environment";
 import {AppRoutingModule} from "./app-routing.module";
 import {AppComponent} from './app.component';
@@ -21,8 +20,10 @@ import {PaginationCardListComponent} from './components/card-lists/pagination-ca
 import {DeckCardComponent} from './components/cards/deck-card/deck-card.component';
 import {FullCardComponent} from './components/cards/full-card/full-card.component';
 import {ChangeAccessorieDialogComponent} from './components/dialogs/change-accessorie-dialog/change-accessorie-dialog.component';
+import {CollectionStatsDialogComponent} from './components/dialogs/collection-stats-dialog/collection-stats-dialog.component';
 import {ExportDeckDialogComponent} from './components/dialogs/export-deck-dialog/export-deck-dialog.component';
 import {ImportDeckDialogComponent} from './components/dialogs/import-deck-dialog/import-deck-dialog.component';
+import {SettingsDialogComponent} from './components/dialogs/settings-dialog/settings-dialog.component';
 import {ViewCardDialogComponent} from './components/dialogs/view-card-dialog/view-card-dialog.component';
 import {FilterBoxComponent} from './components/filter-box/filter-box.component';
 import {MenuComponent} from './components/menu/menu.component';
@@ -30,6 +31,7 @@ import {MultiSelectComponent} from './components/multi-select/multi-select.compo
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {SliderComponent} from './components/slider/slider.component';
 import {SortButtonsComponent} from './components/sort-buttons/sort-buttons.component';
+import {CollectionComponent} from './pages/collection/collection.component';
 import {CommunityDecksComponent} from './pages/community-decks/community-decks.component';
 import {DeckBuilderComponent} from './pages/deck-builder/deck-builder.component';
 import {DecksComponent} from './pages/decks/decks.component';
@@ -42,8 +44,6 @@ import {DigimonEffects} from "./store/digimon.effects";
 import * as DigimonCards from "./store/reducers/digimon-card.reducers";
 import * as Digimon from "./store/reducers/digimon.reducers";
 import * as Save from "./store/reducers/save.reducer";
-import { CollectionStatsDialogComponent } from './components/dialogs/collection-stats-dialog/collection-stats-dialog.component';
-import { CollectionComponent } from './pages/collection/collection.component';
 
 
 @NgModule({
@@ -69,6 +69,7 @@ import { CollectionComponent } from './pages/collection/collection.component';
     ChangeAccessorieDialogComponent,
     CollectionStatsDialogComponent,
     CollectionComponent,
+    SettingsDialogComponent,
   ],
   imports: [
     PrimeNGModule,

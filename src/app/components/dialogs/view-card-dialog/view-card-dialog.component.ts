@@ -52,7 +52,19 @@ export class ViewCardDialogComponent implements OnInit, OnChanges {
   }
 
   getPNG(cardSRC: string): string {
-    return cardSRC.replace(new RegExp('\\beng\\b'), 'eng/png')
-      .replace(new RegExp('\\b.jpg\\b'), '.png')
+    let engRegExp = new RegExp('\\beng\\b');
+    let japRegExp = new RegExp('\\bjap\\b');
+    let preReleaseRegExp = new RegExp('\\bpre-release\\b');
+
+    if(engRegExp.test(cardSRC)) {
+      return cardSRC.replace(engRegExp, 'eng/png')
+        .replace(new RegExp('\\b.jpg\\b'), '.png')
+    } else if(japRegExp.test(cardSRC)) {
+      return cardSRC.replace(japRegExp, 'jap/png')
+        .replace(new RegExp('\\b.jpg\\b'), '.png')
+    } else {
+      return cardSRC.replace(preReleaseRegExp, 'pre-release/png')
+        .replace(new RegExp('\\b.jpg\\b'), '.png')
+    }
   }
 }

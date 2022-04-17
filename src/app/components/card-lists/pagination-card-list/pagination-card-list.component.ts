@@ -43,6 +43,7 @@ export class PaginationCardListComponent implements OnInit {
   }
 
   getCount(cardId: string): number {
+    if(this.collection === null) {return 0}
     return this.collection.find(value => value.id === cardId)?.count ?? 0;
   }
 

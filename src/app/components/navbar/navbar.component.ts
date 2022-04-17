@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {Subject, takeUntil} from "rxjs";
 import {SITES} from "../../pages/main-page/main-page.component";
-import {setSite} from "../../store/digimon.actions";
+import {changeCardSets, setSite} from "../../store/digimon.actions";
 import {selectSite} from "../../store/digimon.selectors";
 
 @Component({

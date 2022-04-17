@@ -3,7 +3,7 @@ import {AngularFireDatabase} from "@angular/fire/compat/database";
 import {get, getDatabase, ref, set, update} from "@angular/fire/database";
 import {DataSnapshot} from "@firebase/database";
 import {Card} from "primeng/card";
-import {BehaviorSubject, first, Subject} from "rxjs";
+import {BehaviorSubject, empty, first, Subject} from "rxjs";
 import {IDeck, ISave, IUser} from "../../models";
 import {CARDSET} from "../../models/card-set.enum";
 import {emptySettings} from "../store/reducers/save.reducer";
@@ -28,11 +28,7 @@ export class DatabaseService {
       if (entry) {
         let save = entry;
 
-        if(!save.collection && user) {save = {...save, collection: user.save.collection}}
-        if(!save.decks && user) {save = {...save, decks: user.save.decks}}
-
-        if(!save.collection && !user) {save = {...save, collection: []}}
-        if(!save.decks && !user) {save = {...save, decks: []}}
+        save = this.checkSaveValidity(save, user);
 
         saveSubject.next(save);
       } else {
@@ -50,6 +46,43 @@ export class DatabaseService {
     });
 
     return saveSubject;
+  }
+
+  /**
+   * Check if the User has some data locally if the database didn't have them
+   * If some setting is missing add it to the user
+   * @param save
+   * @param user
+   */
+  checkSaveValidity(save: any, user: any): ISave {
+    if (user) {
+      if(!save.collection) {save = {...save, collection: user.save.collection}}
+      if(!save.decks) {save = {...save, decks: user.save.decks}}
+      if(!save.settings) {save = {...save, settings: user.save.settings}}
+    } else {
+      if(!save.collection) {save = {...save, collection: []}}
+      if(!save.decks) {save = {...save, decks: []}}
+      if(!save.settings) {save = {...save, settings: emptySettings}}
+    }
+
+    if(save.settings.cardSet === undefined) {
+      save = {...save, settings: {...save.settings, cardSet: CARDSET.BothOverwrite}}
+    }
+    if(save.settings.collectionMinimum === undefined) {
+      save = {...save, settings: {...save.settings, collectionMinimum: 1}}
+    }
+    if(save.settings.showPreRelease === undefined) {
+      save = {...save, settings: {...save.settings, showPreRelease: true}}
+    }
+    if(save.settings.showStampedCards === undefined) {
+      save = {...save, settings: {...save.settings, showStampedCards: true}}
+    }
+    if(save.settings.showAACards === undefined) {
+      save = {...save, settings: {...save.settings, showAACards: true}}
+    }
+
+    let newSave: ISave = save;
+    return newSave;
   }
 
   setSave(uId: string, save: ISave) {

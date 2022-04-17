@@ -22,6 +22,7 @@ export function filterCards(cards: ICard[], collection: ICountCard[], filter: IF
 function applySearchFilter(cards: ICard[], searchFilter: string): ICard[] {
   if(searchFilter === '') {return cards;}
 
+  const idFiltered: ICard[] = cards.filter(cards => cards.id.toLowerCase().includes(searchFilter.toLowerCase()));
   const nameFiltered: ICard[] = cards.filter(cards => cards.name.toLowerCase().includes(searchFilter.toLowerCase()));
   const formFiltered: ICard[] = cards.filter(cards => cards.form.toLowerCase().includes(searchFilter.toLowerCase()));
   const attributeFiltered: ICard[] = cards.filter(cards => cards.attribute.toLowerCase().includes(searchFilter.toLowerCase()));
@@ -31,6 +32,7 @@ function applySearchFilter(cards: ICard[], searchFilter: string): ICard[] {
   const securityFiltered: ICard[] = cards.filter(cards => cards.securityEffect.toLowerCase().includes(searchFilter.toLowerCase()));
 
   return [...new Set([
+    ...idFiltered,
     ...nameFiltered,
     ...formFiltered,
     ...attributeFiltered,

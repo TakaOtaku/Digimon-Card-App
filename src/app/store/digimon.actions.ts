@@ -2,6 +2,10 @@ import {createAction, props} from '@ngrx/store';
 import {ICard, ICountCard, IDeck, IFilter, ISave, ISettings, ISort} from "../../models";
 
 //region Digimon Card Actions
+export const setDigimonCards = createAction(
+  '[Digimon Cards] Set Digimon Cards',
+  props<{ digimonCards: ICard[] }>()
+);
 export const setFilteredDigimonCards = createAction(
   '[Digimon Cards] Set Filtered Digimon Cards',
   props<{ filteredCards: ICard[] }>()
@@ -32,6 +36,16 @@ export const changeFilter = createAction(
 export const changeSort = createAction(
   '[Settings] Change Sort',
   props<{ sort: ISort }>()
+);
+
+export const changeCollectionMinimum = createAction(
+  '[Settings] Change Collection Minimum',
+  props<{ minimum: number }>()
+);
+
+export const changeShowVersion = createAction(
+  '[Settings] Change Show Version',
+  props<{ showPre: boolean, showAA: boolean, showStamp: boolean }>()
 );
 //endregion
 

@@ -69,7 +69,9 @@ export class CardListComponent implements OnInit, OnDestroy {
       });
 
     this.store.select(selectCollection).pipe(takeUntil(this.onDestroy$))
-      .subscribe((collection) => this.collection = collection);
+      .subscribe((collection) => {
+        this.collection = collection
+      });
 
     this.store.select(selectCollectionMode).pipe(takeUntil(this.onDestroy$))
       .subscribe((collectionMode) => this.collectionMode = collectionMode);
@@ -79,7 +81,8 @@ export class CardListComponent implements OnInit, OnDestroy {
    * Search the user collection for the number and return the count
    */
   getCount(cardId: string): number {
-    return this.collection?.find(value => value.id === cardId)?.count ?? 0;
+    if(this.collection === null) {return 0}
+    return this.collection.find(value => value.id === cardId)?.count ?? 0;
   }
 
   /**

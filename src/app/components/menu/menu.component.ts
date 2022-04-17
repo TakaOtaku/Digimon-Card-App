@@ -1,5 +1,4 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
 import {Store} from "@ngrx/store";
 import {saveAs} from "file-saver";
 import {ConfirmationService, MenuItem, MessageService, PrimeNGConfig} from "primeng/api";
@@ -7,8 +6,26 @@ import {first, Subject, takeUntil} from "rxjs";
 import {SITES} from 'src/app/pages/main-page/main-page.component';
 import {ICard, ICountCard, ISave} from "../../../models";
 import {AuthService} from "../../service/auth.service";
-import {addToCollection, changeCollectionMode, loadSave, setSave, setSite} from "../../store/digimon.actions";
-import {selectAllCards, selectCollection, selectCollectionMode, selectSave} from "../../store/digimon.selectors";
+import {DatabaseService} from "../../service/database.service";
+import {
+  addToCollection,
+  changeCollectionMinimum,
+  changeCollectionMode,
+  changeShowVersion,
+  loadSave,
+  setSave,
+  setSite
+} from "../../store/digimon.actions";
+import {
+  selectAllCards,
+  selectCollection,
+  selectCollectionMinimum,
+  selectCollectionMode,
+  selectSave,
+  selectShowAACards,
+  selectShowPreRelease,
+  selectShowStampedCards
+} from "../../store/digimon.selectors";
 import {emptySettings} from "../../store/reducers/save.reducer";
 
 @Component({
@@ -28,6 +45,7 @@ export class MenuComponent implements OnInit, OnDestroy {
   display = false;
   importDisplay = false;
   collectionDisplay = false;
+  settingsDialog = false;
 
   importPlaceholder = "" +
     "Paste Collection here\n" +
@@ -39,12 +57,20 @@ export class MenuComponent implements OnInit, OnDestroy {
   digimonCards: ICard[] = [];
   collection: ICountCard[] = [];
 
+  collectionCount = 1;
+
+  preRelease = true;
+  aa = true;
+  stamped = true;
+  showHideOptions = [{label: 'Show', value: true}, {label: 'Hide', value: false}];
+
   private onDestroy$ = new Subject();
 
   constructor(
     private messageService: MessageService,
     private primengConfig: PrimeNGConfig,
     private confirmationService: ConfirmationService,
+    private db: DatabaseService,
     public authService: AuthService,
     private store: Store
   ) {
@@ -63,6 +89,14 @@ export class MenuComponent implements OnInit, OnDestroy {
       .subscribe(cards => this.digimonCards = cards);
     this.store.select(selectCollection).pipe(takeUntil(this.onDestroy$))
       .subscribe(collection => this.collection = collection);
+    this.store.select(selectCollectionMinimum).pipe(takeUntil(this.onDestroy$))
+      .subscribe(minimum => this.collectionCount = minimum);
+    this.store.select(selectShowPreRelease).pipe(takeUntil(this.onDestroy$))
+      .subscribe(show => this.preRelease = show);
+    this.store.select(selectShowAACards).pipe(takeUntil(this.onDestroy$))
+      .subscribe(show => this.aa = show);
+    this.store.select(selectShowStampedCards).pipe(takeUntil(this.onDestroy$))
+      .subscribe(show => this.stamped = show);
 
     this.primengConfig.ripple = true;
   }
@@ -103,7 +137,7 @@ export class MenuComponent implements OnInit, OnDestroy {
         label: 'Community',
         items: [
           {
-            label: 'Decks',
+            label: 'Community Decks',
             icon: 'pi pi-database',
             command: () => {this.switchSite(3);}
           }
@@ -127,9 +161,9 @@ export class MenuComponent implements OnInit, OnDestroy {
             command: () => this.changeCM()
           },
           {
-            label: 'Import/Export',
-            icon: 'pi pi-cloud',
-            command: () => this.display = true
+            label: 'Advanced Settings',
+            icon: 'pi pi-cog',
+            command: () => this.settingsDialog = true
           }
         ]
       },
@@ -169,7 +203,8 @@ export class MenuComponent implements OnInit, OnDestroy {
     let fileReader = new FileReader();
     fileReader.onload = () => {
       try {
-        const save: ISave = JSON.parse(fileReader.result as string);
+        let save: any = JSON.parse(fileReader.result as string);
+        save = this.db.checkSaveValidity(save, null);
         this.store.dispatch(loadSave({save}));
         this.messageService.add({severity:'success', summary:'Save loaded!', detail:'The save was loaded successfully!'});
       } catch (e) {
@@ -236,5 +271,11 @@ export class MenuComponent implements OnInit, OnDestroy {
       return {count: cardLine, id: lineSplit[1]} as ICountCard;
     }
     return null;
+  }
+
+  saveSettings() {
+    this.store.dispatch(changeCollectionMinimum({minimum: this.collectionCount}));
+    this.store.dispatch(changeShowVersion({showPre: this.preRelease, showAA: this.aa, showStamp: this.stamped}));
+    this.settingsDialog = false;
   }
 }
