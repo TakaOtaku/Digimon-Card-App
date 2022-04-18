@@ -29,9 +29,12 @@ export function setupDigimonCards(digimonSet: number): ICard[] {
   }
 
   allCards.sort(function(a, b){
-    if(a.cardNumber < b.cardNumber) { return -1; }
-    if(a.cardNumber > b.cardNumber) { return 1; }
-    return 0;
+    const aSet = a.cardNumber.split('-');
+    const bSet = b.cardNumber.split('-');
+
+    const aNumber: number = +aSet[1] >>> 0;
+    const bNumber: number = +bSet[1] >>> 0;
+    return aSet[0].localeCompare(bSet[0]) || aNumber - bNumber;
   });
   return allCards;
 }

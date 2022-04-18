@@ -9,27 +9,32 @@ export const GroupedSets = [
       {label: 'BT5', value: 'BT5'},
       {label: 'BT6', value: 'BT6'},
       {label: 'BT7', value: 'BT7'},
-      {label: 'BT8', value: 'BT8'}
+      {label: 'BT8', value: 'BT8'},
+      {label: 'BT9', value: 'BT9'}
     ]
   },
   {
     label: 'Extra', value: 'extra',
     items: [
-      {label: 'EX1', value: 'EX1'}
+      {label: 'EX1', value: 'EX1'},
+      {label: 'EX2', value: 'EX2'}
     ]
   },
   {
     label: 'Starter Decks', value: 'starter',
     items: [
-      {label: 'ST1', value: 'ST1'},
-      {label: 'ST2', value: 'ST2'},
-      {label: 'ST3', value: 'ST3'},
-      {label: 'ST4', value: 'ST4'},
-      {label: 'ST5', value: 'ST5'},
-      {label: 'ST6', value: 'ST6'},
-      {label: 'ST7', value: 'ST7'},
-      {label: 'ST8', value: 'ST8'},
-      {label: 'ST9', value: 'ST9'}
+      {label: 'ST01', value: 'ST01'},
+      {label: 'ST02', value: 'ST02'},
+      {label: 'ST03', value: 'ST03'},
+      {label: 'ST04', value: 'ST04'},
+      {label: 'ST05', value: 'ST05'},
+      {label: 'ST06', value: 'ST06'},
+      {label: 'ST07', value: 'ST07'},
+      {label: 'ST08', value: 'ST08'},
+      {label: 'ST09', value: 'ST09'},
+      {label: 'ST10', value: 'ST10'},
+      {label: 'ST12', value: 'ST12'},
+      {label: 'ST13', value: 'ST13'}
     ]
   }
 ];
@@ -38,7 +43,7 @@ export const CardTypes: string[] = ['Digi-Egg', 'Digimon', 'Tamer', 'Option'];
 
 export const Colors: string[] = ['Red', 'Blue', 'Yellow', 'Green', 'Black', 'Purple', 'White', 'Multi'];
 
-export const Forms: string[] = ["In-Training", "Rookie", "Champion", "Ultimate", "Mega", "Hybrid"];
+export const Forms: string[] = ["In-Training", "Rookie", "Champion", "Ultimate", "Mega", "Hybrid", "Armor Form"];
 
 export const Attributes: string[] = ['Data', 'Vaccine', 'Virus', 'Free', 'Variable'];
 
