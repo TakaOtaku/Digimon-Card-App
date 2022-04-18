@@ -107,7 +107,8 @@ export class ImportDeckDialogComponent implements OnInit, OnDestroy {
       if(matches.length === 0) {
         return null;
       }
-      if(!this.digimonCards.find(card => card.id === matches[matches.length - 1])) {
+      let cardId = matches[matches.length - 1].replace('ST0', 'ST');
+      if(!this.digimonCards.find(card => card.id === cardId)) {
         return null;
       }
 

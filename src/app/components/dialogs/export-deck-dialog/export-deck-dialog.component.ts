@@ -56,7 +56,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
     this.deckText = "// Digimon DeckList\n\n";
     this.deck.cards.forEach(card => {
       const dc = this.digimonCards.find(dc => dc.id === card.id)
-      this.deckText += `${card.id} ${dc?.name} ${card.count}\n`;
+      this.deckText += `${card.id.replace('ST0', 'ST')} ${dc?.name} ${card.count}\n`;
     });
   }
 
