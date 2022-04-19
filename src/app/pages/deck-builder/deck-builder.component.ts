@@ -303,44 +303,18 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
    * Sort the Deck (Eggs, Digimon, Tamer, Options)
    */
   deckSort() {
-    const eggs = this.mainDeck.filter(card => card.cardType === 'Digi-Egg').sort((a, b) => {
-      if (a.name < b.name) {
-        return -1;
-      }
-      if (a.name > b.name) {
-        return 1;
-      }
-      return 0;
-    });
-    const digimon = this.mainDeck.filter(card => card.cardType === 'Digimon').sort((a, b) => {
-      const aa: number = +a.cardLv[3];
-      const bb: number = +b.cardLv[3];
-      if (aa < bb) {
-        return -1;
-      }
-      if (aa > bb) {
-        return 1;
-      }
-      return 0;
-    });
-    const tamer = this.mainDeck.filter(card => card.cardType === 'Tamer').sort((a, b) => {
-      if (a.name < b.name) {
-        return -1;
-      }
-      if (a.name > b.name) {
-        return 1;
-      }
-      return 0;
-    });
-    const options = this.mainDeck.filter(card => card.cardType === 'Option').sort((a, b) => {
-      if (a.name < b.name) {
-        return -1;
-      }
-      if (a.name > b.name) {
-        return 1;
-      }
-      return 0;
-    });
+    const eggs = this.mainDeck.filter(card => card.cardType === 'Digi-Egg').sort((a, b) =>
+      a.color.localeCompare(b.color) || a.id.localeCompare(b.id));
+
+    const digimon = this.mainDeck.filter(card => card.cardType === 'Digimon').sort((a, b) =>
+      a.color.localeCompare(b.color) || a.id.localeCompare(b.id));
+
+    const tamer = this.mainDeck.filter(card => card.cardType === 'Tamer').sort((a, b) =>
+      a.color.localeCompare(b.color) || a.id.localeCompare(b.id));
+
+    const options = this.mainDeck.filter(card => card.cardType === 'Option').sort((a, b) =>
+      a.color.localeCompare(b.color) || a.id.localeCompare(b.id));
+
     this.mainDeck = [...new Set([...eggs, ...digimon, ...tamer, ...options])]
   }
 
