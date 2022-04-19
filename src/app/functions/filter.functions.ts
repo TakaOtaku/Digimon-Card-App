@@ -100,7 +100,17 @@ function applyFilter(cards: ICard[], filter: string[], key: string): ICard[] {
       break;
     case 'type':
       filter.forEach(filter => returnArray = [...new Set(
-        [...returnArray,...cards.filter(cards => cards['type'].includes(filter))]
+        [...returnArray,...cards.filter(card => {
+          const types = card['type'].split('/');
+
+          let shouldReturn = false;
+          types.forEach(type => {
+            if (type === filter) {
+              shouldReturn = true;
+            }
+          })
+          return shouldReturn;
+        })]
       )]);
       break;
     case 'cardLv':

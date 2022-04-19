@@ -27970,7 +27970,7 @@
   },
 
   {
-    "id": "ST1-01",
+    "id": "ST01-01",
     "name": "Koromon",
     "cardImage": "assets/images/cards/eng/ST1-01.jpg",
     "cardType": "Digi-Egg",
@@ -27983,7 +27983,7 @@
     "attribute": "-",
     "type": "Lesser",
     "rarity": "U",
-    "cardNumber": "ST1-01",
+    "cardNumber": "ST01-01",
     "effect": "-",
     "digivolveEffect": "[Your Turn] While this Digimon has 4 or more digivolution cards, it gets +1000 DP.",
     "securityEffect": "-",
@@ -27992,7 +27992,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST1-02",
+    "id": "ST01-02",
     "name": "Biyomon",
     "cardImage": "assets/images/cards/eng/ST1-02.jpg",
     "cardType": "Digimon",
@@ -28005,7 +28005,7 @@
     "attribute": "Vaccine",
     "type": "Bird",
     "rarity": "C",
-    "cardNumber": "ST1-02",
+    "cardNumber": "ST01-02",
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -28014,7 +28014,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST1-02_P1",
+    "id": "ST01-02_P1",
     "name": "Biyomon",
     "cardImage": "assets/images/cards/eng/ST1-02_P1.jpg",
     "cardType": "Digimon",
@@ -28027,7 +28027,7 @@
     "attribute": "Vaccine",
     "type": "Bird",
     "rarity": "C",
-    "cardNumber": "ST1-02",
+    "cardNumber": "ST01-02",
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -28036,7 +28036,7 @@
     "version": "AA"
   },
   {
-    "id": "ST1-02_P2",
+    "id": "ST01-02_P2",
     "name": "Biyomon",
     "cardImage": "assets/images/cards/eng/ST1-02_P2.jpg",
     "cardType": "Digimon",
@@ -28049,7 +28049,7 @@
     "attribute": "Vaccine",
     "type": "Bird",
     "rarity": "C",
-    "cardNumber": "ST1-02",
+    "cardNumber": "ST01-02",
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -28058,7 +28058,7 @@
     "version": "AA"
   },
   {
-    "id": "ST1-03",
+    "id": "ST01-03",
     "name": "Agumon",
     "cardImage": "assets/images/cards/eng/ST1-03.jpg",
     "cardType": "Digimon",
@@ -28071,7 +28071,7 @@
     "attribute": "Vaccine",
     "type": "Reptile",
     "rarity": "U",
-    "cardNumber": "ST1-03",
+    "cardNumber": "ST01-03",
     "effect": "-",
     "digivolveEffect": "[Your Turn] This Digimon gets +1000 DP.",
     "securityEffect": "-",
@@ -28080,7 +28080,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST1-03_P1",
+    "id": "ST01-03_P1",
     "name": "Agumon",
     "cardImage": "assets/images/cards/eng/ST1-03_P1.jpg",
     "cardType": "Digimon",
@@ -28093,7 +28093,7 @@
     "attribute": "Vaccine",
     "type": "Reptile",
     "rarity": "U",
-    "cardNumber": "ST1-03",
+    "cardNumber": "ST01-03",
     "effect": "-",
     "digivolveEffect": "[Your Turn] This Digimon gets +1000 DP.",
     "securityEffect": "-",
@@ -28102,7 +28102,7 @@
     "version": "Stamp"
   },
   {
-    "id": "ST1-03_P2",
+    "id": "ST01-03_P2",
     "name": "Agumon",
     "cardImage": "assets/images/cards/eng/ST1-03_P2.jpg",
     "cardType": "Digimon",
@@ -28115,7 +28115,7 @@
     "attribute": "Vaccine",
     "type": "Reptile",
     "rarity": "U",
-    "cardNumber": "ST1-03",
+    "cardNumber": "ST01-03",
     "effect": "-",
     "digivolveEffect": "[Your Turn] This Digimon gets +1000 DP.",
     "securityEffect": "-",
@@ -28124,7 +28124,7 @@
     "version": "Stamp"
   },
   {
-    "id": "ST1-03_P3",
+    "id": "ST01-03_P3",
     "name": "Agumon",
     "cardImage": "assets/images/cards/eng/ST1-03_P3.jpg",
     "cardType": "Digimon",
@@ -28137,7 +28137,7 @@
     "attribute": "Vaccine",
     "type": "Reptile",
     "rarity": "U",
-    "cardNumber": "ST1-03",
+    "cardNumber": "ST01-03",
     "effect": "-",
     "digivolveEffect": "[Your Turn] This Digimon gets +1000 DP.",
     "securityEffect": "-",
@@ -28146,7 +28146,7 @@
     "version": "Stamp"
   },
   {
-    "id": "ST1-03_P4",
+    "id": "ST01-03_P4",
     "name": "Agumon",
     "cardImage": "assets/images/cards/eng/ST1-03_P4.jpg",
     "cardType": "Digimon",
@@ -28159,7 +28159,7 @@
     "attribute": "Vaccine",
     "type": "Reptile",
     "rarity": "U",
-    "cardNumber": "ST1-03",
+    "cardNumber": "ST01-03",
     "effect": "-",
     "digivolveEffect": "[Your Turn] This Digimon gets +1000 DP.",
     "securityEffect": "-",
@@ -28168,7 +28168,7 @@
     "version": "Stamp"
   },
   {
-    "id": "ST1-04",
+    "id": "ST01-04",
     "name": "Dracomon",
     "cardImage": "assets/images/cards/eng/ST1-04.jpg",
     "cardType": "Digimon",
@@ -28181,7 +28181,7 @@
     "attribute": "Data",
     "type": "Dragon",
     "rarity": "C",
-    "cardNumber": "ST1-04",
+    "cardNumber": "ST01-04",
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -28190,7 +28190,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST1-05",
+    "id": "ST01-05",
     "name": "Birdramon",
     "cardImage": "assets/images/cards/eng/ST1-05.jpg",
     "cardType": "Digimon",
@@ -28203,7 +28203,7 @@
     "attribute": "Vaccine",
     "type": "Giant Bird",
     "rarity": "C",
-    "cardNumber": "ST1-05",
+    "cardNumber": "ST01-05",
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -28212,7 +28212,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST1-06",
+    "id": "ST01-06",
     "name": "Coredramon",
     "cardImage": "assets/images/cards/eng/ST1-06.jpg",
     "cardType": "Digimon",
@@ -28225,7 +28225,7 @@
     "attribute": "Virus",
     "type": "Dragon",
     "rarity": "C",
-    "cardNumber": "ST1-06",
+    "cardNumber": "ST01-06",
     "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)[When Attacking] Lose 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -28234,7 +28234,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST1-06_P1",
+    "id": "ST01-06_P1",
     "name": "Coredramon",
     "cardImage": "assets/images/cards/eng/ST1-06_P1.jpg",
     "cardType": "Digimon",
@@ -28247,7 +28247,7 @@
     "attribute": "Virus",
     "type": "Dragon",
     "rarity": "C",
-    "cardNumber": "ST1-06",
+    "cardNumber": "ST01-06",
     "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)[When Attacking] Lose 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -28256,7 +28256,7 @@
     "version": "AA"
   },
   {
-    "id": "ST1-07",
+    "id": "ST01-07",
     "name": "Greymon",
     "cardImage": "assets/images/cards/eng/ST1-07.jpg",
     "cardType": "Digimon",
@@ -28269,7 +28269,7 @@
     "attribute": "Vaccine",
     "type": "Dinosaur",
     "rarity": "U",
-    "cardNumber": "ST1-07",
+    "cardNumber": "ST01-07",
     "effect": "-",
     "digivolveEffect": "\uff1cSecurity Attack +1\uff1e (This Digimon checks 1 additional security card.)",
     "securityEffect": "-",
@@ -28278,7 +28278,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST1-07_P1",
+    "id": "ST01-07_P1",
     "name": "Greymon",
     "cardImage": "assets/images/cards/eng/ST1-07_P1.jpg",
     "cardType": "Digimon",
@@ -28291,7 +28291,7 @@
     "attribute": "Vaccine",
     "type": "Dinosaur",
     "rarity": "U",
-    "cardNumber": "ST1-07",
+    "cardNumber": "ST01-07",
     "effect": "-",
     "digivolveEffect": "(This Digimon checks 1 additional security card.)",
     "securityEffect": "-",
@@ -28300,7 +28300,7 @@
     "version": "AA"
   },
   {
-    "id": "ST1-07_P2",
+    "id": "ST01-07_P2",
     "name": "Greymon",
     "cardImage": "assets/images/cards/eng/ST1-07_P2.jpg",
     "cardType": "Digimon",
@@ -28313,7 +28313,7 @@
     "attribute": "Vaccine",
     "type": "Dinosaur",
     "rarity": "U",
-    "cardNumber": "ST1-07",
+    "cardNumber": "ST01-07",
     "effect": "-",
     "digivolveEffect": "(This Digimon checks 1 additional security card.)",
     "securityEffect": "-",
@@ -28322,7 +28322,7 @@
     "version": "Stamp"
   },
   {
-    "id": "ST1-08",
+    "id": "ST01-08",
     "name": "Garudamon",
     "cardImage": "assets/images/cards/eng/ST1-08.jpg",
     "cardType": "Digimon",
@@ -28335,7 +28335,7 @@
     "attribute": "Vaccine",
     "type": "Birdkin",
     "rarity": "U",
-    "cardNumber": "ST1-08",
+    "cardNumber": "ST01-08",
     "effect": "[When Digivolving] 1 of your Digimon gets +3000 DP for the turn.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -28344,7 +28344,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST1-08_P1",
+    "id": "ST01-08_P1",
     "name": "Garudamon",
     "cardImage": "assets/images/cards/eng/ST1-08_P1.jpg",
     "cardType": "Digimon",
@@ -28357,7 +28357,7 @@
     "attribute": "Vaccine",
     "type": "Birdkin",
     "rarity": "U",
-    "cardNumber": "ST1-08",
+    "cardNumber": "ST01-08",
     "effect": "[When Digivolving] 1 of your Digimon gets +3000 DP for the turn.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -28366,7 +28366,7 @@
     "version": "AA"
   },
   {
-    "id": "ST1-09",
+    "id": "ST01-09",
     "name": "MetalGreymon",
     "cardImage": "assets/images/cards/eng/ST1-09.jpg",
     "cardType": "Digimon",
@@ -28379,7 +28379,7 @@
     "attribute": "Vaccine",
     "type": "Cyborg",
     "rarity": "R",
-    "cardNumber": "ST1-09",
+    "cardNumber": "ST01-09",
     "effect": "-",
     "digivolveEffect": "[Your Turn] When this Digimon is blocked, gain 3 memory.",
     "securityEffect": "-",
@@ -28388,7 +28388,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST1-09_P1",
+    "id": "ST01-09_P1",
     "name": "MetalGreymon",
     "cardImage": "assets/images/cards/eng/ST1-09_P1.jpg",
     "cardType": "Digimon",
@@ -28401,7 +28401,7 @@
     "attribute": "Vaccine",
     "type": "Cyborg",
     "rarity": "R",
-    "cardNumber": "ST1-09",
+    "cardNumber": "ST01-09",
     "effect": "-",
     "digivolveEffect": "[Your Turn] When this Digimon is blocked, gain 3 memory.",
     "securityEffect": "-",
@@ -28410,7 +28410,7 @@
     "version": "AA"
   },
   {
-    "id": "ST1-09_P2",
+    "id": "ST01-09_P2",
     "name": "MetalGreymon",
     "cardImage": "assets/images/cards/eng/ST1-09_P2.jpg",
     "cardType": "Digimon",
@@ -28423,7 +28423,7 @@
     "attribute": "Vaccine",
     "type": "Cyborg",
     "rarity": "R",
-    "cardNumber": "ST1-09",
+    "cardNumber": "ST01-09",
     "effect": "-",
     "digivolveEffect": "[Your Turn] When this Digimon is blocked, gain 3 memory.",
     "securityEffect": "-",
@@ -28432,7 +28432,7 @@
     "version": "AA"
   },
   {
-    "id": "ST1-10",
+    "id": "ST01-10",
     "name": "Phoenixmon",
     "cardImage": "assets/images/cards/eng/ST1-10.jpg",
     "cardType": "Digimon",
@@ -28445,7 +28445,7 @@
     "attribute": "Vaccine",
     "type": "Holy Beast",
     "rarity": "R",
-    "cardNumber": "ST1-10",
+    "cardNumber": "ST01-10",
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -28454,7 +28454,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST1-10_P1",
+    "id": "ST01-10_P1",
     "name": "Phoenixmon",
     "cardImage": "assets/images/cards/eng/ST1-10_P1.jpg",
     "cardType": "Digimon",
@@ -28467,7 +28467,7 @@
     "attribute": "Vaccine",
     "type": "Holy Beast",
     "rarity": "R",
-    "cardNumber": "ST1-10",
+    "cardNumber": "ST01-10",
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -28476,7 +28476,7 @@
     "version": "AA"
   },
   {
-    "id": "ST1-11",
+    "id": "ST01-11",
     "name": "WarGreymon",
     "cardImage": "assets/images/cards/eng/ST1-11.jpg",
     "cardType": "Digimon",
@@ -28489,7 +28489,7 @@
     "attribute": "Vaccine",
     "type": "Dragonkin",
     "rarity": "SR",
-    "cardNumber": "ST1-11",
+    "cardNumber": "ST01-11",
     "effect": "[Your Turn] For every 2 digivolution cards this Digimon has, it gains \uff1cSecurity Attack +1\uff1e. (This Digimon checks 1 additional security card.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -28498,7 +28498,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST1-11_P1",
+    "id": "ST01-11_P1",
     "name": "WarGreymon",
     "cardImage": "assets/images/cards/eng/ST1-11_P1.jpg",
     "cardType": "Digimon",
@@ -28511,7 +28511,7 @@
     "attribute": "Vaccine",
     "type": "Dragonkin",
     "rarity": "SR",
-    "cardNumber": "ST1-11",
+    "cardNumber": "ST01-11",
     "effect": "[Your Turn] For every 2 digivolution cards this Digimon has, it gains \uff1cSecurity Attack +1\uff1e. (This Digimon checks 1 additional security card.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -28520,7 +28520,7 @@
     "version": "AA"
   },
   {
-    "id": "ST1-11_P2",
+    "id": "ST01-11_P2",
     "name": "WarGreymon",
     "cardImage": "assets/images/cards/eng/ST1-11_P2.jpg",
     "cardType": "Digimon",
@@ -28533,7 +28533,7 @@
     "attribute": "Vaccine",
     "type": "Dragonkin",
     "rarity": "SR",
-    "cardNumber": "ST1-11",
+    "cardNumber": "ST01-11",
     "effect": "[Your Turn] For every 2 digivolution cards this Digimon has, it gains \uff1cSecurity Attack +1\uff1e. (This Digimon checks 1 additional security card.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -28542,7 +28542,7 @@
     "version": "AA"
   },
   {
-    "id": "ST1-11_P3",
+    "id": "ST01-11_P3",
     "name": "WarGreymon",
     "cardImage": "assets/images/cards/eng/ST1-11_P3.jpg",
     "cardType": "Digimon",
@@ -28555,7 +28555,7 @@
     "attribute": "Vaccine",
     "type": "Dragonkin",
     "rarity": "SR",
-    "cardNumber": "ST1-11",
+    "cardNumber": "ST01-11",
     "effect": "[Your Turn] For every 2 digivolution cards this Digimon has, it gains \uff1cSecurity Attack +1\uff1e. (This Digimon checks 1 additional security card.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -28564,7 +28564,7 @@
     "version": "Stamp"
   },
   {
-    "id": "ST1-12",
+    "id": "ST01-12",
     "name": "Tai Kamiya",
     "cardImage": "assets/images/cards/eng/ST1-12.jpg",
     "cardType": "Tamer",
@@ -28577,7 +28577,7 @@
     "attribute": "Vaccine",
     "type": "-",
     "rarity": "R",
-    "cardNumber": "ST1-12",
+    "cardNumber": "ST01-12",
     "effect": "[Your Turn] All of your Digimon get +1000 DP.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
@@ -28586,7 +28586,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST1-13",
+    "id": "ST01-13",
     "name": "Shadow Wing",
     "cardImage": "assets/images/cards/eng/ST1-13.jpg",
     "cardType": "Option",
@@ -28599,7 +28599,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "C",
-    "cardNumber": "ST1-13",
+    "cardNumber": "ST01-13",
     "effect": "[Main] 1 of your Digimon gets +3000 DP for the turn.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] All of your Digimon gain \uff1cSecurity Attack +1\uff1e  (This Digimon checks 1 additional security card) until the end of your next turn.",
@@ -28608,7 +28608,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST1-13_P1",
+    "id": "ST01-13_P1",
     "name": "Shadow Wing",
     "cardImage": "assets/images/cards/eng/ST1-13_P1.jpg",
     "cardType": "Option",
@@ -28621,7 +28621,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "C",
-    "cardNumber": "ST1-13",
+    "cardNumber": "ST01-13",
     "effect": "[Main] 1 of your Digimon gets +3000 DP for the turn.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] All of your Digimon gain \uff1cSecurity Attack +1\uff1e  (This Digimon checks 1 additional security card) until the end of your next turn.",
@@ -28630,7 +28630,7 @@
     "version": "AA"
   },
   {
-    "id": "ST1-13_P2",
+    "id": "ST01-13_P2",
     "name": "Shadow Wing",
     "cardImage": "assets/images/cards/eng/ST1-13_P2.jpg",
     "cardType": "Option",
@@ -28643,7 +28643,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "C",
-    "cardNumber": "ST1-13",
+    "cardNumber": "ST01-13",
     "effect": "[Main] 1 of your Digimon gets +3000 DP for the turn.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] All of your Digimon gain \uff1cSecurity Attack +1\uff1e  (This Digimon checks 1 additional security card) until the end of your next turn.",
@@ -28652,7 +28652,7 @@
     "version": "Stamp"
   },
   {
-    "id": "ST1-14",
+    "id": "ST01-14",
     "name": "Starlight Explosion",
     "cardImage": "assets/images/cards/eng/ST1-14.jpg",
     "cardType": "Option",
@@ -28665,7 +28665,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "C",
-    "cardNumber": "ST1-14",
+    "cardNumber": "ST01-14",
     "effect": "[Main] All of your Security Digimon get +7000 DP until the end of your opponent's next turn.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] All of your Security Digimon get +7000 DP for the turn.",
@@ -28674,7 +28674,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST1-15",
+    "id": "ST01-15",
     "name": "Giga Destroyer",
     "cardImage": "assets/images/cards/eng/ST1-15.jpg",
     "cardType": "Option",
@@ -28687,7 +28687,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "C",
-    "cardNumber": "ST1-15",
+    "cardNumber": "ST01-15",
     "effect": "[Main] Delete up to 2 of your opponent's Digimon with 4000 DP or less.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
@@ -28696,7 +28696,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST1-16",
+    "id": "ST01-16",
     "name": "Gaia Force",
     "cardImage": "assets/images/cards/eng/ST1-16.jpg",
     "cardType": "Option",
@@ -28709,7 +28709,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "U",
-    "cardNumber": "ST1-16",
+    "cardNumber": "ST01-16",
     "effect": "[Main] Delete 1 of your opponent's Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
@@ -28718,7 +28718,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST1-16_P1",
+    "id": "ST01-16_P1",
     "name": "Gaia Force",
     "cardImage": "assets/images/cards/eng/ST1-16_P1.jpg",
     "cardType": "Option",
@@ -28731,7 +28731,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "U",
-    "cardNumber": "ST1-16",
+    "cardNumber": "ST01-16",
     "effect": "[Main] Delete 1 of your opponent's Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
@@ -28740,7 +28740,7 @@
     "version": "AA"
   },
   {
-    "id": "ST1-16_P3",
+    "id": "ST01-16_P3",
     "name": "Gaia Force",
     "cardImage": "assets/images/cards/eng/ST1-16_P3.jpg",
     "cardType": "Option",
@@ -28753,7 +28753,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "U",
-    "cardNumber": "ST1-16",
+    "cardNumber": "ST01-16",
     "effect": "[Main] Delete 1 of your opponent's Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
@@ -28763,7 +28763,7 @@
   },
 
   {
-    "id": "ST2-01",
+    "id": "ST02-01",
     "name": "Tsunomon",
     "cardImage": "assets/images/cards/eng/ST2-01.jpg",
     "cardType": "Digi-Egg",
@@ -28776,7 +28776,7 @@
     "attribute": "-",
     "type": "Lesser",
     "rarity": "U",
-    "cardNumber": "ST2-01",
+    "cardNumber": "ST02-01",
     "effect": "-",
     "digivolveEffect": "[Your Turn] This Digimon gets +1000 DP when battling an opponent's Digimon that has no digivolution cards.",
     "securityEffect": "-",
@@ -28785,7 +28785,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST2-02",
+    "id": "ST02-02",
     "name": "Gomamon",
     "cardImage": "assets/images/cards/eng/ST2-02.jpg",
     "cardType": "Digimon",
@@ -28798,7 +28798,7 @@
     "attribute": "Vaccine",
     "type": "Sea Beast",
     "rarity": "C",
-    "cardNumber": "ST2-02",
+    "cardNumber": "ST02-02",
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -28807,7 +28807,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST2-02_P1",
+    "id": "ST02-02_P1",
     "name": "Gomamon",
     "cardImage": "assets/images/cards/eng/ST2-02_P1.jpg",
     "cardType": "Digimon",
@@ -28820,7 +28820,7 @@
     "attribute": "Vaccine",
     "type": "Sea Beast",
     "rarity": "C",
-    "cardNumber": "ST2-02",
+    "cardNumber": "ST02-02",
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -28829,7 +28829,7 @@
     "version": "AA"
   },
   {
-    "id": "ST2-03",
+    "id": "ST02-03",
     "name": "Gabumon",
     "cardImage": "assets/images/cards/eng/ST2-03.jpg",
     "cardType": "Digimon",
@@ -28842,7 +28842,7 @@
     "attribute": "Data",
     "type": "Reptile",
     "rarity": "U",
-    "cardNumber": "ST2-03",
+    "cardNumber": "ST02-03",
     "effect": "-",
     "digivolveEffect": "[When Attacking] Trash the digivolution card at the bottom of 1 of your opponent's Digimon with a level of 5 or less.",
     "securityEffect": "-",
@@ -28851,7 +28851,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST2-04",
+    "id": "ST02-04",
     "name": "Bearmon",
     "cardImage": "assets/images/cards/eng/ST2-04.jpg",
     "cardType": "Digimon",
@@ -28864,7 +28864,7 @@
     "attribute": "Vaccine",
     "type": "Beast",
     "rarity": "C",
-    "cardNumber": "ST2-04",
+    "cardNumber": "ST02-04",
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -28873,7 +28873,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST2-05",
+    "id": "ST02-05",
     "name": "Ikkakumon",
     "cardImage": "assets/images/cards/eng/ST2-05.jpg",
     "cardType": "Digimon",
@@ -28886,7 +28886,7 @@
     "attribute": "Vaccine",
     "type": "Sea Beast",
     "rarity": "C",
-    "cardNumber": "ST2-05",
+    "cardNumber": "ST02-05",
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -28895,7 +28895,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST2-06",
+    "id": "ST02-06",
     "name": "Garurumon",
     "cardImage": "assets/images/cards/eng/ST2-06.jpg",
     "cardType": "Digimon",
@@ -28908,7 +28908,7 @@
     "attribute": "Vaccine",
     "type": "Beast",
     "rarity": "U",
-    "cardNumber": "ST2-06",
+    "cardNumber": "ST02-06",
     "effect": "-",
     "digivolveEffect": "[When Attacking] Trash the digivolution card at the bottom of 1 of your opponent's Digimon.",
     "securityEffect": "-",
@@ -28917,7 +28917,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST2-07",
+    "id": "ST02-07",
     "name": "Grizzlymon",
     "cardImage": "assets/images/cards/eng/ST2-07.jpg",
     "cardType": "Digimon",
@@ -28930,7 +28930,7 @@
     "attribute": "Vaccine",
     "type": "Beast",
     "rarity": "C",
-    "cardNumber": "ST2-07",
+    "cardNumber": "ST02-07",
     "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)[When Attacking] Lose 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -28939,7 +28939,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST2-07_P1",
+    "id": "ST02-07_P1",
     "name": "Grizzlymon",
     "cardImage": "assets/images/cards/eng/ST2-07_P1.jpg",
     "cardType": "Digimon",
@@ -28952,7 +28952,7 @@
     "attribute": "Vaccine",
     "type": "Beast",
     "rarity": "C",
-    "cardNumber": "ST2-07",
+    "cardNumber": "ST02-07",
     "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)[When Attacking] Lose 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -28961,7 +28961,7 @@
     "version": "AA"
   },
   {
-    "id": "ST2-07_P2",
+    "id": "ST02-07_P2",
     "name": "Grizzlymon",
     "cardImage": "assets/images/cards/eng/ST2-07_P2.jpg",
     "cardType": "Digimon",
@@ -28974,7 +28974,7 @@
     "attribute": "Vaccine",
     "type": "Beast",
     "rarity": "C",
-    "cardNumber": "ST2-07",
+    "cardNumber": "ST02-07",
     "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)[When Attacking] Lose 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -28983,7 +28983,7 @@
     "version": "AA"
   },
   {
-    "id": "ST2-08",
+    "id": "ST02-08",
     "name": "WereGarurumon",
     "cardImage": "assets/images/cards/eng/ST2-08.jpg",
     "cardType": "Digimon",
@@ -28996,7 +28996,7 @@
     "attribute": "Vaccine",
     "type": "Beastkin",
     "rarity": "R",
-    "cardNumber": "ST2-08",
+    "cardNumber": "ST02-08",
     "effect": "-",
     "digivolveEffect": "[Your Turn] While your opponent has a Digimon with no digivolution cards, this Digimon gains \uff1cSecurity Attack +1\uff1e. (This Digimon checks 1 additional security card.)",
     "securityEffect": "-",
@@ -29005,7 +29005,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST2-08_P1",
+    "id": "ST02-08_P1",
     "name": "WereGarurumon",
     "cardImage": "assets/images/cards/eng/ST2-08_P1.jpg",
     "cardType": "Digimon",
@@ -29018,7 +29018,7 @@
     "attribute": "Vaccine",
     "type": "Beastkin",
     "rarity": "R",
-    "cardNumber": "ST2-08",
+    "cardNumber": "ST02-08",
     "effect": "-",
     "digivolveEffect": "[Your Turn] While your opponent has a Digimon with no digivolution cards, this Digimon gains \uff1cSecurity Attack +1\uff1e. (This Digimon checks 1 additional security card.)",
     "securityEffect": "-",
@@ -29027,7 +29027,7 @@
     "version": "AA"
   },
   {
-    "id": "ST2-08_P2",
+    "id": "ST02-08_P2",
     "name": "WereGarurumon",
     "cardImage": "assets/images/cards/eng/ST2-08_P2.jpg",
     "cardType": "Digimon",
@@ -29040,7 +29040,7 @@
     "attribute": "Vaccine",
     "type": "Beastkin",
     "rarity": "R",
-    "cardNumber": "ST2-08",
+    "cardNumber": "ST02-08",
     "effect": "-",
     "digivolveEffect": "[Your Turn] While your opponent has a Digimon with no digivolution cards, this Digimon gains \uff1cSecurity Attack +1\uff1e. (This Digimon checks 1 additional security card.)",
     "securityEffect": "-",
@@ -29049,7 +29049,7 @@
     "version": "AA"
   },
   {
-    "id": "ST2-09",
+    "id": "ST02-09",
     "name": "Zudomon",
     "cardImage": "assets/images/cards/eng/ST2-09.jpg",
     "cardType": "Digimon",
@@ -29062,7 +29062,7 @@
     "attribute": "Vaccine",
     "type": "Sea Beast",
     "rarity": "U",
-    "cardNumber": "ST2-09",
+    "cardNumber": "ST02-09",
     "effect": "[When Digivolving] Trash 2 digivolution cards at the bottom of 1 of your opponent's Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -29071,7 +29071,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST2-10",
+    "id": "ST02-10",
     "name": "Plesiomon",
     "cardImage": "assets/images/cards/eng/ST2-10.jpg",
     "cardType": "Digimon",
@@ -29084,7 +29084,7 @@
     "attribute": "Data",
     "type": "Plesiosaur",
     "rarity": "R",
-    "cardNumber": "ST2-10",
+    "cardNumber": "ST02-10",
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -29093,7 +29093,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST2-11",
+    "id": "ST02-11",
     "name": "MetalGarurumon",
     "cardImage": "assets/images/cards/eng/ST2-11.jpg",
     "cardType": "Digimon",
@@ -29106,7 +29106,7 @@
     "attribute": "Data",
     "type": "Cyborg",
     "rarity": "SR",
-    "cardNumber": "ST2-11",
+    "cardNumber": "ST02-11",
     "effect": "[When Attacking][Once Per Turn] Unsuspend this Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -29115,7 +29115,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST2-11_P1",
+    "id": "ST02-11_P1",
     "name": "MetalGarurumon",
     "cardImage": "assets/images/cards/eng/ST2-11_P1.jpg",
     "cardType": "Digimon",
@@ -29128,7 +29128,7 @@
     "attribute": "Data",
     "type": "Cyborg",
     "rarity": "SR",
-    "cardNumber": "ST2-11",
+    "cardNumber": "ST02-11",
     "effect": "[When Attacking][Once Per Turn] Unsuspend this Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -29137,7 +29137,7 @@
     "version": "AA"
   },
   {
-    "id": "ST2-11_P2",
+    "id": "ST02-11_P2",
     "name": "MetalGarurumon",
     "cardImage": "assets/images/cards/eng/ST2-11_P2.jpg",
     "cardType": "Digimon",
@@ -29150,7 +29150,7 @@
     "attribute": "Data",
     "type": "Cyborg",
     "rarity": "SR",
-    "cardNumber": "ST2-11",
+    "cardNumber": "ST02-11",
     "effect": "[When Attacking][Once Per Turn] Unsuspend this Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -29159,7 +29159,7 @@
     "version": "Stamp"
   },
   {
-    "id": "ST2-12",
+    "id": "ST02-12",
     "name": "Matt Ishida",
     "cardImage": "assets/images/cards/eng/ST2-12.jpg",
     "cardType": "Tamer",
@@ -29172,7 +29172,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "R",
-    "cardNumber": "ST2-12",
+    "cardNumber": "ST02-12",
     "effect": "[Start of Your Turn] If your opponent has a Digimon with no digivolution cards, gain 1 memory.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
@@ -29181,7 +29181,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST2-13",
+    "id": "ST02-13",
     "name": "Hammer Spark",
     "cardImage": "assets/images/cards/eng/ST2-13.jpg",
     "cardType": "Option",
@@ -29194,7 +29194,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "C",
-    "cardNumber": "ST2-13",
+    "cardNumber": "ST02-13",
     "effect": "[Main] Gain 1 memory.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Gain 2 memory.",
@@ -29203,7 +29203,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST2-13_P1",
+    "id": "ST02-13_P1",
     "name": "Hammer Spark",
     "cardImage": "assets/images/cards/eng/ST2-13_P1.jpg",
     "cardType": "Option",
@@ -29216,7 +29216,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "C",
-    "cardNumber": "ST2-13",
+    "cardNumber": "ST02-13",
     "effect": "[Main] Gain 1 memory.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Gain 2 memory.",
@@ -29225,7 +29225,7 @@
     "version": "AA"
   },
   {
-    "id": "ST2-13_P3",
+    "id": "ST02-13_P3",
     "name": "Hammer Spark",
     "cardImage": "assets/images/cards/eng/ST2-13_P3.jpg",
     "cardType": "Option",
@@ -29238,7 +29238,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "C",
-    "cardNumber": "ST2-13",
+    "cardNumber": "ST02-13",
     "effect": "[Main] Gain 1 memory.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Gain 2 memory.",
@@ -29247,7 +29247,7 @@
     "version": "Stamp"
   },
   {
-    "id": "ST2-14",
+    "id": "ST02-14",
     "name": "Sorrow Blue",
     "cardImage": "assets/images/cards/eng/ST2-14.jpg",
     "cardType": "Option",
@@ -29260,7 +29260,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "C",
-    "cardNumber": "ST2-14",
+    "cardNumber": "ST02-14",
     "effect": "[Main] Choose 1 of your opponent's Digimon with no digivolution cards. That Digimon can't attack or block until the end of your opponent's next turn.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Choose 1 of your opponent's Digimon with no digivolution cards. That Digimon can't attack or block until the end of your next turn.",
@@ -29269,7 +29269,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST2-15",
+    "id": "ST02-15",
     "name": "Kaiser Nail",
     "cardImage": "assets/images/cards/eng/ST2-15.jpg",
     "cardType": "Option",
@@ -29282,7 +29282,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "C",
-    "cardNumber": "ST2-15",
+    "cardNumber": "ST02-15",
     "effect": "[Main] Choose a Digimon digivolution card placed under 1 of your Digimon and play it as another Digimon without paying its memory cost.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
@@ -29291,7 +29291,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST2-16",
+    "id": "ST02-16",
     "name": "Cocytus Breath",
     "cardImage": "assets/images/cards/eng/ST2-16.jpg",
     "cardType": "Option",
@@ -29304,7 +29304,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "U",
-    "cardNumber": "ST2-16",
+    "cardNumber": "ST02-16",
     "effect": "[Main] Return 1 of your opponent's Digimon to its owner's hand. (Trash all of the digivolution cards of that Digimon.)",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
@@ -29313,7 +29313,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST2-16_P1",
+    "id": "ST02-16_P1",
     "name": "Cocytus Breath",
     "cardImage": "assets/images/cards/eng/ST2-16_P1.jpg",
     "cardType": "Option",
@@ -29326,7 +29326,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "U",
-    "cardNumber": "ST2-16",
+    "cardNumber": "ST02-16",
     "effect": "[Main] Return 1 of your opponent's Digimon to its owner's hand. (Trash all of the digivolution cards of that Digimon.)",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
@@ -29335,7 +29335,7 @@
     "version": "AA"
   },
   {
-    "id": "ST2-16_P2",
+    "id": "ST02-16_P2",
     "name": "Cocytus Breath",
     "cardImage": "assets/images/cards/eng/ST2-16_P2.jpg",
     "cardType": "Option",
@@ -29348,7 +29348,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "U",
-    "cardNumber": "ST2-16",
+    "cardNumber": "ST02-16",
     "effect": "[Main] Return 1 of your opponent's Digimon to its owner's hand. (Trash all of the digivolution cards of that Digimon.)",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
@@ -29357,7 +29357,7 @@
     "version": "Stamp"
   },
   {
-    "id": "ST2-06_P1",
+    "id": "ST02-06_P1",
     "name": "Garurumon",
     "cardImage": "assets/images/cards/eng/ST2-06_P1.jpg",
     "cardType": "Digimon",
@@ -29370,7 +29370,7 @@
     "attribute": "Vaccine",
     "type": "Beast",
     "rarity": "U",
-    "cardNumber": "ST2-06",
+    "cardNumber": "ST02-06",
     "effect": "-",
     "digivolveEffect": "[When Attacking] Trash the digivolution card at the bottom of 1 of your opponent's Digimon.",
     "securityEffect": "-",
@@ -29379,7 +29379,7 @@
     "version": "AA"
   },
   {
-    "id": "ST2-09_P1",
+    "id": "ST02-09_P1",
     "name": "Zudomon",
     "cardImage": "assets/images/cards/eng/ST2-09_P1.jpg",
     "cardType": "Digimon",
@@ -29392,7 +29392,7 @@
     "attribute": "Vaccine",
     "type": "Sea Beast",
     "rarity": "U",
-    "cardNumber": "ST2-09",
+    "cardNumber": "ST02-09",
     "effect": "[When Digivolving] Trash 2 digivolution cards at the bottom of 1 of your opponent's Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -29401,7 +29401,7 @@
     "version": "AA"
   },
   {
-    "id": "ST2-02_P2",
+    "id": "ST02-02_P2",
     "name": "Gomamon",
     "cardImage": "assets/images/cards/eng/ST2-02_P2.jpg",
     "cardType": "Digimon",
@@ -29414,7 +29414,7 @@
     "attribute": "Vaccine",
     "type": "Sea Beast",
     "rarity": "C",
-    "cardNumber": "ST2-02",
+    "cardNumber": "ST02-02",
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -29424,7 +29424,7 @@
   },
 
   {
-    "id": "ST3-01",
+    "id": "ST03-01",
     "name": "Tokomon",
     "cardImage": "assets/images/cards/eng/ST3-01.jpg",
     "cardType": "Digi-Egg",
@@ -29437,7 +29437,7 @@
     "attribute": "-",
     "type": "Lesser",
     "rarity": "U",
-    "cardNumber": "ST3-01",
+    "cardNumber": "ST03-01",
     "effect": "-",
     "digivolveEffect": "[Your Turn][Once Per Turn] When an opponent's Digimon is deleted by dropping to 0 DP, this Digimon gets +1000 DP for the turn.",
     "securityEffect": "-",
@@ -29446,7 +29446,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST3-02",
+    "id": "ST03-02",
     "name": "Salamon",
     "cardImage": "assets/images/cards/eng/ST3-02.jpg",
     "cardType": "Digimon",
@@ -29459,7 +29459,7 @@
     "attribute": "Vaccine",
     "type": "Mammal",
     "rarity": "C",
-    "cardNumber": "ST3-02",
+    "cardNumber": "ST03-02",
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -29468,7 +29468,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST3-02_P1",
+    "id": "ST03-02_P1",
     "name": "Salamon",
     "cardImage": "assets/images/cards/eng/ST3-02_P1.jpg",
     "cardType": "Digimon",
@@ -29481,7 +29481,7 @@
     "attribute": "Vaccine",
     "type": "Mammal",
     "rarity": "C",
-    "cardNumber": "ST3-02",
+    "cardNumber": "ST03-02",
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -29490,7 +29490,7 @@
     "version": "AA"
   },
   {
-    "id": "ST3-03",
+    "id": "ST03-03",
     "name": "Tapirmon",
     "cardImage": "assets/images/cards/eng/ST3-03.jpg",
     "cardType": "Digimon",
@@ -29503,7 +29503,7 @@
     "attribute": "Vaccine",
     "type": "Holy Beast",
     "rarity": "C",
-    "cardNumber": "ST3-03",
+    "cardNumber": "ST03-03",
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -29512,7 +29512,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST3-04",
+    "id": "ST03-04",
     "name": "Patamon",
     "cardImage": "assets/images/cards/eng/ST3-04.jpg",
     "cardType": "Digimon",
@@ -29525,7 +29525,7 @@
     "attribute": "Data",
     "type": "Mammal",
     "rarity": "U",
-    "cardNumber": "ST3-04",
+    "cardNumber": "ST03-04",
     "effect": "-",
     "digivolveEffect": "[Your Turn][Once Per Turn] When an opponent's Digimon is deleted by dropping to 0 DP, gain 1 memory.",
     "securityEffect": "-",
@@ -29534,7 +29534,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST3-04_P1",
+    "id": "ST03-04_P1",
     "name": "Patamon",
     "cardImage": "assets/images/cards/eng/ST3-04_P1.jpg",
     "cardType": "Digimon",
@@ -29547,7 +29547,7 @@
     "attribute": "Data",
     "type": "Mammal",
     "rarity": "U",
-    "cardNumber": "ST3-04",
+    "cardNumber": "ST03-04",
     "effect": "-",
     "digivolveEffect": "[Your Turn][Once Per Turn] When an opponent's Digimon is deleted by dropping to 0 DP, gain 1 memory.",
     "securityEffect": "-",
@@ -29556,7 +29556,7 @@
     "version": "Stamp"
   },
   {
-    "id": "ST3-04_P2",
+    "id": "ST03-04_P2",
     "name": "Patamon",
     "cardImage": "assets/images/cards/eng/ST3-04_P2.jpg",
     "cardType": "Digimon",
@@ -29569,7 +29569,7 @@
     "attribute": "Data",
     "type": "Mammal",
     "rarity": "U",
-    "cardNumber": "ST3-04",
+    "cardNumber": "ST03-04",
     "effect": "-",
     "digivolveEffect": "[Your Turn][Once Per Turn] When an opponent's Digimon is deleted by dropping to 0 DP, gain 1 memory.",
     "securityEffect": "-",
@@ -29578,7 +29578,7 @@
     "version": "Stamp"
   },
   {
-    "id": "ST3-05",
+    "id": "ST03-05",
     "name": "Angemon",
     "cardImage": "assets/images/cards/eng/ST3-05.jpg",
     "cardType": "Digimon",
@@ -29591,7 +29591,7 @@
     "attribute": "Vaccine",
     "type": "Angel",
     "rarity": "U",
-    "cardNumber": "ST3-05",
+    "cardNumber": "ST03-05",
     "effect": "-",
     "digivolveEffect": "[When Attacking] If you have 4 or more security cards, gain 1 memory.",
     "securityEffect": "-",
@@ -29600,7 +29600,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST3-05_P1",
+    "id": "ST03-05_P1",
     "name": "Angemon",
     "cardImage": "assets/images/cards/eng/ST3-05_P1.jpg",
     "cardType": "Digimon",
@@ -29613,7 +29613,7 @@
     "attribute": "Vaccine",
     "type": "Angel",
     "rarity": "U",
-    "cardNumber": "ST3-05",
+    "cardNumber": "ST03-05",
     "effect": "-",
     "digivolveEffect": "[When Attacking] If you have 4 or more security cards, gain 1 memory.",
     "securityEffect": "-",
@@ -29622,7 +29622,7 @@
     "version": "AA"
   },
   {
-    "id": "ST3-05_P2",
+    "id": "ST03-05_P2",
     "name": "Angemon",
     "cardImage": "assets/images/cards/eng/ST3-05_P2.jpg",
     "cardType": "Digimon",
@@ -29635,7 +29635,7 @@
     "attribute": "Vaccine",
     "type": "Angel",
     "rarity": "U",
-    "cardNumber": "ST3-05",
+    "cardNumber": "ST03-05",
     "effect": "-",
     "digivolveEffect": "[When Attacking] If you have 4 or more security cards, gain 1 memory.",
     "securityEffect": "-",
@@ -29644,7 +29644,7 @@
     "version": "AA"
   },
   {
-    "id": "ST3-06",
+    "id": "ST03-06",
     "name": "Gatomon",
     "cardImage": "assets/images/cards/eng/ST3-06.jpg",
     "cardType": "Digimon",
@@ -29657,7 +29657,7 @@
     "attribute": "Vaccine",
     "type": "Holy Beast",
     "rarity": "C",
-    "cardNumber": "ST3-06",
+    "cardNumber": "ST03-06",
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -29666,7 +29666,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST3-07",
+    "id": "ST03-07",
     "name": "Unimon",
     "cardImage": "assets/images/cards/eng/ST3-07.jpg",
     "cardType": "Digimon",
@@ -29679,7 +29679,7 @@
     "attribute": "Vaccine",
     "type": "Mythical Beast",
     "rarity": "C",
-    "cardNumber": "ST3-07",
+    "cardNumber": "ST03-07",
     "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)[When Attacking] Lose 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -29688,7 +29688,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST3-07_P1",
+    "id": "ST03-07_P1",
     "name": "Unimon",
     "cardImage": "assets/images/cards/eng/ST3-07_P1.jpg",
     "cardType": "Digimon",
@@ -29701,7 +29701,7 @@
     "attribute": "Vaccine",
     "type": "Mythical Beast",
     "rarity": "C",
-    "cardNumber": "ST3-07",
+    "cardNumber": "ST03-07",
     "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)[When Attacking] Lose 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -29710,7 +29710,7 @@
     "version": "AA"
   },
   {
-    "id": "ST3-07_P2",
+    "id": "ST03-07_P2",
     "name": "Unimon",
     "cardImage": "assets/images/cards/eng/ST3-07_P2.jpg",
     "cardType": "Digimon",
@@ -29723,7 +29723,7 @@
     "attribute": "Vaccine",
     "type": "Mythical Beast",
     "rarity": "C",
-    "cardNumber": "ST3-07",
+    "cardNumber": "ST03-07",
     "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)[When Attacking] Lose 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -29732,7 +29732,7 @@
     "version": "AA"
   },
   {
-    "id": "ST3-08",
+    "id": "ST03-08",
     "name": "MagnaAngemon",
     "cardImage": "assets/images/cards/eng/ST3-08.jpg",
     "cardType": "Digimon",
@@ -29745,7 +29745,7 @@
     "attribute": "Vaccine",
     "type": "Archangel",
     "rarity": "R",
-    "cardNumber": "ST3-08",
+    "cardNumber": "ST03-08",
     "effect": "-",
     "digivolveEffect": "[When Attacking] 1 of your opponent's Digimon gets -1000 DP for the turn.",
     "securityEffect": "-",
@@ -29754,7 +29754,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST3-08_P1",
+    "id": "ST03-08_P1",
     "name": "MagnaAngemon",
     "cardImage": "assets/images/cards/eng/ST3-08_P1.jpg",
     "cardType": "Digimon",
@@ -29767,7 +29767,7 @@
     "attribute": "Vaccine",
     "type": "Archangel",
     "rarity": "R",
-    "cardNumber": "ST3-08",
+    "cardNumber": "ST03-08",
     "effect": "-",
     "digivolveEffect": "[When Attacking] 1 of your opponent's Digimon gets -1000 DP for the turn.",
     "securityEffect": "-",
@@ -29776,7 +29776,7 @@
     "version": "AA"
   },
   {
-    "id": "ST3-08_P2",
+    "id": "ST03-08_P2",
     "name": "MagnaAngemon",
     "cardImage": "assets/images/cards/eng/ST3-08_P2.jpg",
     "cardType": "Digimon",
@@ -29789,7 +29789,7 @@
     "attribute": "Vaccine",
     "type": "Archangel",
     "rarity": "R",
-    "cardNumber": "ST3-08",
+    "cardNumber": "ST03-08",
     "effect": "-",
     "digivolveEffect": "[When Attacking] 1 of your opponent's Digimon gets -1000 DP for the turn.",
     "securityEffect": "-",
@@ -29798,7 +29798,7 @@
     "version": "AA"
   },
   {
-    "id": "ST3-09",
+    "id": "ST03-09",
     "name": "Angewomon",
     "cardImage": "assets/images/cards/eng/ST3-09.jpg",
     "cardType": "Digimon",
@@ -29811,7 +29811,7 @@
     "attribute": "Vaccine",
     "type": "Archangel",
     "rarity": "U",
-    "cardNumber": "ST3-09",
+    "cardNumber": "ST03-09",
     "effect": "[When Digivolving] When you have 3 security cards or less, trigger \uff1cRecovery +1 (Deck)\uff1e. (Place the top card of your deck on top of your security stack.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -29820,7 +29820,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST3-09_P1",
+    "id": "ST03-09_P1",
     "name": "Angewomon",
     "cardImage": "assets/images/cards/eng/ST3-09_P1.jpg",
     "cardType": "Digimon",
@@ -29833,7 +29833,7 @@
     "attribute": "Vaccine",
     "type": "Archangel",
     "rarity": "U",
-    "cardNumber": "ST3-09",
+    "cardNumber": "ST03-09",
     "effect": "[When Digivolving] When you have 3 security cards or less, trigger \uff1cRecovery +1 (Deck)\uff1e. (Place the top card of your deck on top of your security stack.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -29842,7 +29842,7 @@
     "version": "AA"
   },
   {
-    "id": "ST3-10",
+    "id": "ST03-10",
     "name": "Magnadramon",
     "cardImage": "assets/images/cards/eng/ST3-10.jpg",
     "cardType": "Digimon",
@@ -29855,7 +29855,7 @@
     "attribute": "Vaccine",
     "type": "Holy Dragon/Four Great Dragons",
     "rarity": "R",
-    "cardNumber": "ST3-10",
+    "cardNumber": "ST03-10",
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -29864,7 +29864,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST3-11",
+    "id": "ST03-11",
     "name": "Seraphimon",
     "cardImage": "assets/images/cards/eng/ST3-11.jpg",
     "cardType": "Digimon",
@@ -29877,7 +29877,7 @@
     "attribute": "Vaccine",
     "type": "Seraph/Three Great Angels",
     "rarity": "SR",
-    "cardNumber": "ST3-11",
+    "cardNumber": "ST03-11",
     "effect": "[When Attacking] 1 of your opponent's Digimon gets -4000 DP for the turn.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -29886,7 +29886,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST3-12",
+    "id": "ST03-12",
     "name": "T.K. Takaishi",
     "cardImage": "assets/images/cards/eng/ST3-12.jpg",
     "cardType": "Tamer",
@@ -29899,7 +29899,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "R",
-    "cardNumber": "ST3-12",
+    "cardNumber": "ST03-12",
     "effect": "[Opponent's Turn] All of your Security Digimon get +2000 DP.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
@@ -29908,7 +29908,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST3-13",
+    "id": "ST03-13",
     "name": "Heaven's Gate",
     "cardImage": "assets/images/cards/eng/ST3-13.jpg",
     "cardType": "Option",
@@ -29921,7 +29921,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "C",
-    "cardNumber": "ST3-13",
+    "cardNumber": "ST03-13",
     "effect": "[Main] 1 of your Digimon gets +3000 DP for the turn.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] All of your Digimon and Security Digimon get +5000 DP for the turn. Then add this card to its owner's hand.",
@@ -29930,7 +29930,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST3-13_P1",
+    "id": "ST03-13_P1",
     "name": "Heaven's Gate",
     "cardImage": "assets/images/cards/eng/ST3-13_P1.jpg",
     "cardType": "Option",
@@ -29943,7 +29943,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "C",
-    "cardNumber": "ST3-13",
+    "cardNumber": "ST03-13",
     "effect": "[Main] 1 of your Digimon gets +3000 DP for the turn.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] All of your Digimon and Security Digimon get +5000 DP for the turn. Then add this card to its owner's hand.",
@@ -29952,7 +29952,7 @@
     "version": "AA"
   },
   {
-    "id": "ST3-13_P2",
+    "id": "ST03-13_P2",
     "name": "Heaven's Gate",
     "cardImage": "assets/images/cards/eng/ST3-13_P2.jpg",
     "cardType": "Option",
@@ -29965,7 +29965,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "C",
-    "cardNumber": "ST3-13",
+    "cardNumber": "ST03-13",
     "effect": "[Main] 1 of your Digimon gets +3000 DP for the turn.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] All of your Digimon and Security Digimon get +5000 DP for the turn. Then add this card to its owner's hand.",
@@ -29974,7 +29974,7 @@
     "version": "Stamp"
   },
   {
-    "id": "ST3-14",
+    "id": "ST03-14",
     "name": "Heaven's Charm",
     "cardImage": "assets/images/cards/eng/ST3-14.jpg",
     "cardType": "Option",
@@ -29987,7 +29987,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "C",
-    "cardNumber": "ST3-14",
+    "cardNumber": "ST03-14",
     "effect": "[Main] 1 of your opponent's Digimon gets -2000 DP for the turn.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Add this card to its owner's hand.",
@@ -29996,7 +29996,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST3-14_P1",
+    "id": "ST03-14_P1",
     "name": "Heaven's Charm",
     "cardImage": "assets/images/cards/eng/ST3-14_P1.jpg",
     "cardType": "Option",
@@ -30009,7 +30009,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "C",
-    "cardNumber": "ST3-14",
+    "cardNumber": "ST03-14",
     "effect": "[Main] 1 of your opponent's Digimon gets -2000 DP for the turn.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Add this card to its owner's hand.",
@@ -30018,7 +30018,7 @@
     "version": "AA"
   },
   {
-    "id": "ST3-14_P2",
+    "id": "ST03-14_P2",
     "name": "Heaven's Charm",
     "cardImage": "assets/images/cards/eng/ST3-14_P2.jpg",
     "cardType": "Option",
@@ -30031,7 +30031,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "C",
-    "cardNumber": "ST3-14",
+    "cardNumber": "ST03-14",
     "effect": "[Main] 1 of your opponent's Digimon gets -2000 DP for the turn.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Add this card to its owner's hand.",
@@ -30040,7 +30040,7 @@
     "version": "Stamp"
   },
   {
-    "id": "ST3-15",
+    "id": "ST03-15",
     "name": "Holy Flame",
     "cardImage": "assets/images/cards/eng/ST3-15.jpg",
     "cardType": "Option",
@@ -30053,7 +30053,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "C",
-    "cardNumber": "ST3-15",
+    "cardNumber": "ST03-15",
     "effect": "[Main] 1 of your opponent's Digimon gains \uff1cSecurity Attack -3\uff1e (This Digimon checks 3 fewer security cards) until the end of your opponent's next turn.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] All of your opponent's Digimon gain \uff1cSecurity Attack -1\uff1e (This Digimon checks 1 fewer security card) for the turn.",
@@ -30062,7 +30062,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST3-16",
+    "id": "ST03-16",
     "name": "Seven Heavens",
     "cardImage": "assets/images/cards/eng/ST3-16.jpg",
     "cardType": "Option",
@@ -30075,7 +30075,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "U",
-    "cardNumber": "ST3-16",
+    "cardNumber": "ST03-16",
     "effect": "[Main] 1 of your opponent's Digimon gets -10000 DP for the turn.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
@@ -30085,7 +30085,7 @@
   },
 
   {
-    "id": "ST4-01",
+    "id": "ST04-01",
     "name": "Motimon",
     "cardImage": "assets/images/cards/eng/ST4-01.jpg",
     "cardType": "Digi-Egg",
@@ -30098,7 +30098,7 @@
     "attribute": "-",
     "type": "Lesser",
     "rarity": "U",
-    "cardNumber": "ST4-01",
+    "cardNumber": "ST04-01",
     "effect": "-",
     "digivolveEffect": "[Your Turn] While this Digimon is level 6 or higher, it gets +1000 DP.",
     "securityEffect": "-",
@@ -30107,7 +30107,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST4-02",
+    "id": "ST04-02",
     "name": "Floramon",
     "cardImage": "assets/images/cards/eng/ST4-02.jpg",
     "cardType": "Digimon",
@@ -30120,7 +30120,7 @@
     "attribute": "Data",
     "type": "Vegetation",
     "rarity": "C",
-    "cardNumber": "ST4-02",
+    "cardNumber": "ST04-02",
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -30129,7 +30129,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST4-03",
+    "id": "ST04-03",
     "name": "Tentomon",
     "cardImage": "assets/images/cards/eng/ST4-03.jpg",
     "cardType": "Digimon",
@@ -30142,7 +30142,7 @@
     "attribute": "Vaccine",
     "type": "Insectoid",
     "rarity": "U",
-    "cardNumber": "ST4-03",
+    "cardNumber": "ST04-03",
     "effect": "[On Play] Reveal the top card of your deck. If it's a green Digimon card, add it to your hand. Otherwise, place it at the bottom of your deck.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -30151,7 +30151,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST4-03_P1",
+    "id": "ST04-03_P1",
     "name": "Tentomon",
     "cardImage": "assets/images/cards/eng/ST4-03_P1.jpg",
     "cardType": "Digimon",
@@ -30164,7 +30164,7 @@
     "attribute": "Vaccine",
     "type": "Insectoid",
     "rarity": "U",
-    "cardNumber": "ST4-03",
+    "cardNumber": "ST04-03",
     "effect": "[On Play] Reveal the top card of your deck. If it's a green Digimon card, add it to your hand. Otherwise, place it at the bottom of your deck.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -30173,7 +30173,7 @@
     "version": "AA"
   },
   {
-    "id": "ST4-04",
+    "id": "ST04-04",
     "name": "Palmon",
     "cardImage": "assets/images/cards/eng/ST4-04.jpg",
     "cardType": "Digimon",
@@ -30186,7 +30186,7 @@
     "attribute": "Data",
     "type": "Vegetation",
     "rarity": "C",
-    "cardNumber": "ST4-04",
+    "cardNumber": "ST04-04",
     "effect": "-",
     "digivolveEffect": "[When Attacking] If you attack an opponent's Digimon, this Digimon gets +2000 DP for the turn.",
     "securityEffect": "-",
@@ -30195,7 +30195,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST4-05",
+    "id": "ST04-05",
     "name": "Kunemon",
     "cardImage": "assets/images/cards/eng/ST4-05.jpg",
     "cardType": "Digimon",
@@ -30208,7 +30208,7 @@
     "attribute": "Virus",
     "type": "Larva",
     "rarity": "C",
-    "cardNumber": "ST4-05",
+    "cardNumber": "ST04-05",
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -30217,7 +30217,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST4-06",
+    "id": "ST04-06",
     "name": "Togemon",
     "cardImage": "assets/images/cards/eng/ST4-06.jpg",
     "cardType": "Digimon",
@@ -30230,7 +30230,7 @@
     "attribute": "Data",
     "type": "Vegetation",
     "rarity": "C",
-    "cardNumber": "ST4-06",
+    "cardNumber": "ST04-06",
     "effect": "-",
     "digivolveEffect": "[When Attacking] If you attack an opponent's Digimon, this Digimon gets +2000 DP for the turn.",
     "securityEffect": "-",
@@ -30239,7 +30239,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST4-07",
+    "id": "ST04-07",
     "name": "Kuwagamon",
     "cardImage": "assets/images/cards/eng/ST4-07.jpg",
     "cardType": "Digimon",
@@ -30252,7 +30252,7 @@
     "attribute": "Virus",
     "type": "Insectoid",
     "rarity": "C",
-    "cardNumber": "ST4-07",
+    "cardNumber": "ST04-07",
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -30261,7 +30261,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST4-08",
+    "id": "ST04-08",
     "name": "Kabuterimon",
     "cardImage": "assets/images/cards/eng/ST4-08.jpg",
     "cardType": "Digimon",
@@ -30274,7 +30274,7 @@
     "attribute": "Vaccine",
     "type": "Insectoid",
     "rarity": "U",
-    "cardNumber": "ST4-08",
+    "cardNumber": "ST04-08",
     "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)[When Attacking] Lose 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -30283,7 +30283,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST4-08_P1",
+    "id": "ST04-08_P1",
     "name": "Kabuterimon",
     "cardImage": "assets/images/cards/eng/ST4-08_P1.jpg",
     "cardType": "Digimon",
@@ -30296,7 +30296,7 @@
     "attribute": "Vaccine",
     "type": "Insectoid",
     "rarity": "U",
-    "cardNumber": "ST4-08",
+    "cardNumber": "ST04-08",
     "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)[When Attacking] Lose 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -30305,7 +30305,7 @@
     "version": "Stamp"
   },
   {
-    "id": "ST4-08_P2",
+    "id": "ST04-08_P2",
     "name": "Kabuterimon",
     "cardImage": "assets/images/cards/eng/ST4-08_P2.jpg",
     "cardType": "Digimon",
@@ -30318,7 +30318,7 @@
     "attribute": "Vaccine",
     "type": "Insectoid",
     "rarity": "U",
-    "cardNumber": "ST4-08",
+    "cardNumber": "ST04-08",
     "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)[When Attacking] Lose 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -30327,7 +30327,7 @@
     "version": "Stamp"
   },
   {
-    "id": "ST4-08_P3",
+    "id": "ST04-08_P3",
     "name": "Kabuterimon",
     "cardImage": "assets/images/cards/eng/ST4-08_P3.jpg",
     "cardType": "Digimon",
@@ -30340,7 +30340,7 @@
     "attribute": "Vaccine",
     "type": "Insectoid",
     "rarity": "U",
-    "cardNumber": "ST4-08",
+    "cardNumber": "ST04-08",
     "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)[When Attacking] Lose 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -30349,7 +30349,7 @@
     "version": "Stamp"
   },
   {
-    "id": "ST4-08_P4",
+    "id": "ST04-08_P4",
     "name": "Kabuterimon",
     "cardImage": "assets/images/cards/eng/ST4-08_P4.jpg",
     "cardType": "Digimon",
@@ -30362,7 +30362,7 @@
     "attribute": "Vaccine",
     "type": "Insectoid",
     "rarity": "U",
-    "cardNumber": "ST4-08",
+    "cardNumber": "ST04-08",
     "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)[When Attacking] Lose 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -30371,7 +30371,7 @@
     "version": "Stamp"
   },
   {
-    "id": "ST4-09",
+    "id": "ST04-09",
     "name": "Okuwamon",
     "cardImage": "assets/images/cards/eng/ST4-09.jpg",
     "cardType": "Digimon",
@@ -30384,7 +30384,7 @@
     "attribute": "Virus",
     "type": "Insectoid",
     "rarity": "C",
-    "cardNumber": "ST4-09",
+    "cardNumber": "ST04-09",
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -30393,7 +30393,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST4-10",
+    "id": "ST04-10",
     "name": "Lillymon",
     "cardImage": "assets/images/cards/eng/ST4-10.jpg",
     "cardType": "Digimon",
@@ -30406,7 +30406,7 @@
     "attribute": "Data",
     "type": "Fairy",
     "rarity": "U",
-    "cardNumber": "ST4-10",
+    "cardNumber": "ST04-10",
     "effect": "[When Digivolving] Reveal the top 5 cards of your deck. Add 1 level 6 or higher Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -30415,7 +30415,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST4-10_P1",
+    "id": "ST04-10_P1",
     "name": "Lillymon",
     "cardImage": "assets/images/cards/eng/ST4-10_P1.jpg",
     "cardType": "Digimon",
@@ -30428,7 +30428,7 @@
     "attribute": "Data",
     "type": "Fairy",
     "rarity": "U",
-    "cardNumber": "ST4-10",
+    "cardNumber": "ST04-10",
     "effect": "[When Digivolving] Reveal the top 5 cards of your deck. Add 1 level 6 or higher Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -30437,7 +30437,7 @@
     "version": "AA"
   },
   {
-    "id": "ST4-11",
+    "id": "ST04-11",
     "name": "MegaKabuterimon",
     "cardImage": "assets/images/cards/eng/ST4-11.jpg",
     "cardType": "Digimon",
@@ -30450,7 +30450,7 @@
     "attribute": "Vaccine",
     "type": "Insectoid",
     "rarity": "R",
-    "cardNumber": "ST4-11",
+    "cardNumber": "ST04-11",
     "effect": "-",
     "digivolveEffect": "[Your Turn][Once Per Turn] When this Digimon deletes an opponent's Digimon in battle and survives, trash the top card of your opponent's security stack.",
     "securityEffect": "-",
@@ -30459,7 +30459,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST4-12",
+    "id": "ST04-12",
     "name": "Rosemon",
     "cardImage": "assets/images/cards/eng/ST4-12.jpg",
     "cardType": "Digimon",
@@ -30472,7 +30472,7 @@
     "attribute": "Data",
     "type": "Fairy",
     "rarity": "R",
-    "cardNumber": "ST4-12",
+    "cardNumber": "ST04-12",
     "effect": "[When Digivolving] 1 of your opponent's Digimon can't attack or block until the end of their next turn.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -30481,7 +30481,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST4-13",
+    "id": "ST04-13",
     "name": "HerculesKabuterimon",
     "cardImage": "assets/images/cards/eng/ST4-13.jpg",
     "cardType": "Digimon",
@@ -30494,7 +30494,7 @@
     "attribute": "Vaccine",
     "type": "Insectoid",
     "rarity": "SR",
-    "cardNumber": "ST4-13",
+    "cardNumber": "ST04-13",
     "effect": "\uff1cPiercing\uff1e (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.)[Main] \uff1cDigi-Burst 2\uff1e (Trash 2 of this Digimon's Digivolution cards to activate the effect below.)\u30fbSuspend 1 of your opponent's Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -30503,7 +30503,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST4-13_P1",
+    "id": "ST04-13_P1",
     "name": "HerculesKabuterimon",
     "cardImage": "assets/images/cards/eng/ST4-13_P1.jpg",
     "cardType": "Digimon",
@@ -30516,7 +30516,7 @@
     "attribute": "Vaccine",
     "type": "Insectoid",
     "rarity": "SR",
-    "cardNumber": "ST4-13",
+    "cardNumber": "ST04-13",
     "effect": "\uff1cPiercing\uff1e (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.)[Main] \uff1cDigi-Burst 2\uff1e (Trash 2 of this Digimon's Digivolution cards to activate the effect below.)\u30fbSuspend 1 of your opponent's Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -30525,7 +30525,7 @@
     "version": "AA"
   },
   {
-    "id": "ST4-14",
+    "id": "ST04-14",
     "name": "Izzy Izumi",
     "cardImage": "assets/images/cards/eng/ST4-14.jpg",
     "cardType": "Tamer",
@@ -30538,7 +30538,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "R",
-    "cardNumber": "ST4-14",
+    "cardNumber": "ST04-14",
     "effect": "[Your Turn] When one of your opponent's Digimon becomes suspended, you may suspend this Tamer to gain 1 memory.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
@@ -30547,7 +30547,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST4-15",
+    "id": "ST04-15",
     "name": "Needle Spray",
     "cardImage": "assets/images/cards/eng/ST4-15.jpg",
     "cardType": "Option",
@@ -30560,7 +30560,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "C",
-    "cardNumber": "ST4-15",
+    "cardNumber": "ST04-15",
     "effect": "[Main] Suspend 1 of your opponent's Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect. Then, add this card to your hand.",
@@ -30569,7 +30569,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST4-16",
+    "id": "ST04-16",
     "name": "Electro Shocker",
     "cardImage": "assets/images/cards/eng/ST4-16.jpg",
     "cardType": "Option",
@@ -30582,7 +30582,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "U",
-    "cardNumber": "ST4-16",
+    "cardNumber": "ST04-16",
     "effect": "[Main] Return 1 of your opponent's suspended Digimon to its owner's hand. Trash all of the digivolution cards of that Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
@@ -30592,7 +30592,7 @@
   },
 
   {
-    "id": "ST5-01",
+    "id": "ST05-01",
     "name": "Kapurimon",
     "cardImage": "assets/images/cards/eng/ST5-01.jpg",
     "cardType": "Digi-Egg",
@@ -30605,7 +30605,7 @@
     "attribute": "-",
     "type": "Lesser",
     "rarity": "U",
-    "cardNumber": "ST5-01",
+    "cardNumber": "ST05-01",
     "effect": "-",
     "digivolveEffect": "[Your Turn] While this Digimon has \uff1cBlocker\uff1e, it gets +1000 DP.",
     "securityEffect": "-",
@@ -30614,7 +30614,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST5-02",
+    "id": "ST05-02",
     "name": "Jazamon",
     "cardImage": "assets/images/cards/eng/ST5-02.jpg",
     "cardType": "Digimon",
@@ -30627,7 +30627,7 @@
     "attribute": "Data",
     "type": "Bird Dragon",
     "rarity": "C",
-    "cardNumber": "ST5-02",
+    "cardNumber": "ST05-02",
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -30636,7 +30636,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST5-03",
+    "id": "ST05-03",
     "name": "Agumon",
     "cardImage": "assets/images/cards/eng/ST5-03.jpg",
     "cardType": "Digimon",
@@ -30649,7 +30649,7 @@
     "attribute": "Vaccine",
     "type": "Reptile",
     "rarity": "U",
-    "cardNumber": "ST5-03",
+    "cardNumber": "ST05-03",
     "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -30658,7 +30658,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST5-03_P1",
+    "id": "ST05-03_P1",
     "name": "Agumon",
     "cardImage": "assets/images/cards/eng/ST5-03_P1.jpg",
     "cardType": "Digimon",
@@ -30671,7 +30671,7 @@
     "attribute": "Vaccine",
     "type": "Reptile",
     "rarity": "U",
-    "cardNumber": "ST5-03",
+    "cardNumber": "ST05-03",
     "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -30680,7 +30680,7 @@
     "version": "AA"
   },
   {
-    "id": "ST5-04",
+    "id": "ST05-04",
     "name": "ToyAgumon",
     "cardImage": "assets/images/cards/eng/ST5-04.jpg",
     "cardType": "Digimon",
@@ -30693,7 +30693,7 @@
     "attribute": "Virus",
     "type": "Puppet",
     "rarity": "C",
-    "cardNumber": "ST5-04",
+    "cardNumber": "ST05-04",
     "effect": "-",
     "digivolveEffect": "[End of Opponent's Turn] If your opponent didn't attack with a Digimon this turn, trigger \uff1cDraw 1\uff1e. (Draw 1 card from your deck.)",
     "securityEffect": "-",
@@ -30702,7 +30702,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST5-05",
+    "id": "ST05-05",
     "name": "Commandramon",
     "cardImage": "assets/images/cards/eng/ST5-05.jpg",
     "cardType": "Digimon",
@@ -30715,7 +30715,7 @@
     "attribute": "Virus",
     "type": "Cyborg/D-Brigade",
     "rarity": "C",
-    "cardNumber": "ST5-05",
+    "cardNumber": "ST05-05",
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -30724,7 +30724,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST5-06",
+    "id": "ST05-06",
     "name": "Greymon",
     "cardImage": "assets/images/cards/eng/ST5-06.jpg",
     "cardType": "Digimon",
@@ -30737,7 +30737,7 @@
     "attribute": "Virus",
     "type": "Dinosaur",
     "rarity": "C",
-    "cardNumber": "ST5-06",
+    "cardNumber": "ST05-06",
     "effect": "-",
     "digivolveEffect": "[End of Opponent's Turn] If your opponent didn't attack with a Digimon this turn, trigger \uff1cDraw 1\uff1e. (Draw 1 card from your deck.)",
     "securityEffect": "-",
@@ -30746,7 +30746,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST5-07",
+    "id": "ST05-07",
     "name": "Jazardmon",
     "cardImage": "assets/images/cards/eng/ST5-07.jpg",
     "cardType": "Digimon",
@@ -30759,7 +30759,7 @@
     "attribute": "Data",
     "type": "Machine Dragon",
     "rarity": "C",
-    "cardNumber": "ST5-07",
+    "cardNumber": "ST05-07",
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -30768,7 +30768,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST5-08",
+    "id": "ST05-08",
     "name": "DarkTyrannomon",
     "cardImage": "assets/images/cards/eng/ST5-08.jpg",
     "cardType": "Digimon",
@@ -30781,7 +30781,7 @@
     "attribute": "Virus",
     "type": "Dinosaur",
     "rarity": "U",
-    "cardNumber": "ST5-08",
+    "cardNumber": "ST05-08",
     "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)[When Attacking] Lose 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -30790,7 +30790,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST5-08_P1",
+    "id": "ST05-08_P1",
     "name": "DarkTyrannomon",
     "cardImage": "assets/images/cards/eng/ST5-08_P1.jpg",
     "cardType": "Digimon",
@@ -30803,7 +30803,7 @@
     "attribute": "Virus",
     "type": "Dinosaur",
     "rarity": "U",
-    "cardNumber": "ST5-08",
+    "cardNumber": "ST05-08",
     "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)[When Attacking] Lose 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -30812,7 +30812,7 @@
     "version": "Stamp"
   },
   {
-    "id": "ST5-09",
+    "id": "ST05-09",
     "name": "MetalGreymon",
     "cardImage": "assets/images/cards/eng/ST5-09.jpg",
     "cardType": "Digimon",
@@ -30825,7 +30825,7 @@
     "attribute": "Virus",
     "type": "Cyborg",
     "rarity": "U",
-    "cardNumber": "ST5-09",
+    "cardNumber": "ST05-09",
     "effect": "[When Digivolving] Until the end of your opponent's next turn, 1 of your Digimon gains \uff1cBlocker\uff1e. (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -30834,7 +30834,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST5-10",
+    "id": "ST05-10",
     "name": "MetalTyrannomon",
     "cardImage": "assets/images/cards/eng/ST5-10.jpg",
     "cardType": "Digimon",
@@ -30847,7 +30847,7 @@
     "attribute": "Virus",
     "type": "Cyborg",
     "rarity": "C",
-    "cardNumber": "ST5-10",
+    "cardNumber": "ST05-10",
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -30856,7 +30856,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST5-11",
+    "id": "ST05-11",
     "name": "Megadramon",
     "cardImage": "assets/images/cards/eng/ST5-11.jpg",
     "cardType": "Digimon",
@@ -30869,7 +30869,7 @@
     "attribute": "Virus",
     "type": "Cyborg",
     "rarity": "R",
-    "cardNumber": "ST5-11",
+    "cardNumber": "ST05-11",
     "effect": "-",
     "digivolveEffect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)",
     "securityEffect": "-",
@@ -30878,7 +30878,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST5-12",
+    "id": "ST05-12",
     "name": "Machinedramon",
     "cardImage": "assets/images/cards/eng/ST5-12.jpg",
     "cardType": "Digimon",
@@ -30891,7 +30891,7 @@
     "attribute": "Virus",
     "type": "Machine",
     "rarity": "R",
-    "cardNumber": "ST5-12",
+    "cardNumber": "ST05-12",
     "effect": "[When Digivolving] Up to 2 of your Digimon gain \uff1cReboot\uff1e  (Unsuspend this Digimon during your opponent's unsuspend phase) until the end of your opponent's next turn.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -30900,7 +30900,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST5-13",
+    "id": "ST05-13",
     "name": "BlitzGreymon",
     "cardImage": "assets/images/cards/eng/ST5-13.jpg",
     "cardType": "Digimon",
@@ -30913,7 +30913,7 @@
     "attribute": "Virus",
     "type": "Cyborg",
     "rarity": "SR",
-    "cardNumber": "ST5-13",
+    "cardNumber": "ST05-13",
     "effect": "\uff1cSecurity Attack +1\uff1e (This Digimon checks 1 additional security card.)[Main] \uff1cDigi-Burst 2\uff1e (Trash 2 of this Digimon's Digivolution cards to activate the effect below.)\u30fb1 of your Digimon gets +4000 DP until the end of your opponent's next turn.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -30922,7 +30922,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST5-14",
+    "id": "ST05-14",
     "name": "Tai Kamiya",
     "cardImage": "assets/images/cards/eng/ST5-14.jpg",
     "cardType": "Tamer",
@@ -30935,7 +30935,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "R",
-    "cardNumber": "ST5-14",
+    "cardNumber": "ST05-14",
     "effect": "[Opponent's Turn] When you use \uff1cBlocker\uff1e to suspend one of your Digimon, you may suspend this Tamer to unsuspend 1 of your Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
@@ -30944,7 +30944,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST5-15",
+    "id": "ST05-15",
     "name": "Laser Eye",
     "cardImage": "assets/images/cards/eng/ST5-15.jpg",
     "cardType": "Option",
@@ -30957,7 +30957,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "C",
-    "cardNumber": "ST5-15",
+    "cardNumber": "ST05-15",
     "effect": "[Main] Trigger \uff1cDe-Digivolve 1\uff1e on up to 2 of your opponent's Digimon. (Trash a card from the top of one of your opponent's Digimon. If it has no digivolution cards, or becomes a level 3 Digimon, you can't trash any more cards.)",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
@@ -30966,7 +30966,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST5-16",
+    "id": "ST05-16",
     "name": "Dark Side Attack",
     "cardImage": "assets/images/cards/eng/ST5-16.jpg",
     "cardType": "Option",
@@ -30979,7 +30979,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "U",
-    "cardNumber": "ST5-16",
+    "cardNumber": "ST05-16",
     "effect": "[Main] Delete 1 of your opponent's Digimon with a play cost of 7 or less.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
@@ -30989,7 +30989,7 @@
   },
 
   {
-    "id": "ST6-01",
+    "id": "ST06-01",
     "name": "Pagumon",
     "cardImage": "assets/images/cards/eng/ST6-01.jpg",
     "cardType": "Digi-Egg",
@@ -31002,7 +31002,7 @@
     "attribute": "-",
     "type": "Lesser",
     "rarity": "U",
-    "cardNumber": "ST6-01",
+    "cardNumber": "ST06-01",
     "effect": "-",
     "digivolveEffect": "[On Deletion] Trash the top 2 cards of your deck.",
     "securityEffect": "-",
@@ -31011,7 +31011,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST6-02",
+    "id": "ST06-02",
     "name": "DemiDevimon",
     "cardImage": "assets/images/cards/eng/ST6-02.jpg",
     "cardType": "Digimon",
@@ -31024,7 +31024,7 @@
     "attribute": "Virus",
     "type": "Evil",
     "rarity": "C",
-    "cardNumber": "ST6-02",
+    "cardNumber": "ST06-02",
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -31033,7 +31033,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST6-03",
+    "id": "ST06-03",
     "name": "Gabumon",
     "cardImage": "assets/images/cards/eng/ST6-03.jpg",
     "cardType": "Digimon",
@@ -31046,7 +31046,7 @@
     "attribute": "Data",
     "type": "Reptile",
     "rarity": "C",
-    "cardNumber": "ST6-03",
+    "cardNumber": "ST06-03",
     "effect": "-",
     "digivolveEffect": "[When Attacking] Trigger \uff1cDraw 1\uff1e. (Draw 1 card from your deck.) Then, trash 1 card in your hand.",
     "securityEffect": "-",
@@ -31055,7 +31055,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST6-04",
+    "id": "ST06-04",
     "name": "Dracmon",
     "cardImage": "assets/images/cards/eng/ST6-04.jpg",
     "cardType": "Digimon",
@@ -31068,7 +31068,7 @@
     "attribute": "Virus",
     "type": "Undead",
     "rarity": "U",
-    "cardNumber": "ST6-04",
+    "cardNumber": "ST06-04",
     "effect": "[On Play] You may return 1 purple Option card with a memory cost of 1 or 7 from your trash to your hand.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -31077,7 +31077,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST6-05",
+    "id": "ST06-05",
     "name": "Elecmon",
     "cardImage": "assets/images/cards/eng/ST6-05.jpg",
     "cardType": "Digimon",
@@ -31090,7 +31090,7 @@
     "attribute": "Virus",
     "type": "Mammal",
     "rarity": "C",
-    "cardNumber": "ST6-05",
+    "cardNumber": "ST06-05",
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -31099,7 +31099,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST6-06",
+    "id": "ST06-06",
     "name": "Garurumon",
     "cardImage": "assets/images/cards/eng/ST6-06.jpg",
     "cardType": "Digimon",
@@ -31112,7 +31112,7 @@
     "attribute": "Virus",
     "type": "Beast",
     "rarity": "C",
-    "cardNumber": "ST6-06",
+    "cardNumber": "ST06-06",
     "effect": "-",
     "digivolveEffect": "[When Attacking] Trigger \uff1cDraw 1\uff1e. (Draw 1 card from your deck.) Then, trash 1 card in your hand.",
     "securityEffect": "-",
@@ -31121,7 +31121,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST6-07",
+    "id": "ST06-07",
     "name": "Youkomon",
     "cardImage": "assets/images/cards/eng/ST6-07.jpg",
     "cardType": "Digimon",
@@ -31134,7 +31134,7 @@
     "attribute": "Data",
     "type": "Mysterious Beast",
     "rarity": "C",
-    "cardNumber": "ST6-07",
+    "cardNumber": "ST06-07",
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -31143,7 +31143,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST6-08",
+    "id": "ST06-08",
     "name": "Devimon",
     "cardImage": "assets/images/cards/eng/ST6-08.jpg",
     "cardType": "Digimon",
@@ -31156,7 +31156,7 @@
     "attribute": "Virus",
     "type": "Fallen Angel",
     "rarity": "U",
-    "cardNumber": "ST6-08",
+    "cardNumber": "ST06-08",
     "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)[When Attacking] Lose 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -31165,7 +31165,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST6-08_P1",
+    "id": "ST06-08_P1",
     "name": "Devimon",
     "cardImage": "assets/images/cards/eng/ST6-08_P1.jpg",
     "cardType": "Digimon",
@@ -31178,7 +31178,7 @@
     "attribute": "Virus",
     "type": "Fallen Angel",
     "rarity": "U",
-    "cardNumber": "ST6-08",
+    "cardNumber": "ST06-08",
     "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)[When Attacking] Lose 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -31187,7 +31187,7 @@
     "version": "Stamp"
   },
   {
-    "id": "ST6-08_P2",
+    "id": "ST06-08_P2",
     "name": "Devimon",
     "cardImage": "assets/images/cards/eng/ST6-08_P2.jpg",
     "cardType": "Digimon",
@@ -31200,7 +31200,7 @@
     "attribute": "Virus",
     "type": "Fallen Angel",
     "rarity": "U",
-    "cardNumber": "ST6-08",
+    "cardNumber": "ST06-08",
     "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)[When Attacking] Lose 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -31209,7 +31209,7 @@
     "version": "Stamp"
   },
   {
-    "id": "ST6-08_P3",
+    "id": "ST06-08_P3",
     "name": "Devimon",
     "cardImage": "assets/images/cards/eng/ST6-08_P3.jpg",
     "cardType": "Digimon",
@@ -31222,7 +31222,7 @@
     "attribute": "Virus",
     "type": "Fallen Angel",
     "rarity": "U",
-    "cardNumber": "ST6-08",
+    "cardNumber": "ST06-08",
     "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)[When Attacking] Lose 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -31231,7 +31231,7 @@
     "version": "Stamp"
   },
   {
-    "id": "ST6-08_P4",
+    "id": "ST06-08_P4",
     "name": "Devimon",
     "cardImage": "assets/images/cards/eng/ST6-08_P4.jpg",
     "cardType": "Digimon",
@@ -31244,7 +31244,7 @@
     "attribute": "Virus",
     "type": "Fallen Angel",
     "rarity": "U",
-    "cardNumber": "ST6-08",
+    "cardNumber": "ST06-08",
     "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)[When Attacking] Lose 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -31253,7 +31253,7 @@
     "version": "Stamp"
   },
   {
-    "id": "ST6-09",
+    "id": "ST06-09",
     "name": "Kyukimon",
     "cardImage": "assets/images/cards/eng/ST6-09.jpg",
     "cardType": "Digimon",
@@ -31266,7 +31266,7 @@
     "attribute": "Virus",
     "type": "Mysterious Beast",
     "rarity": "C",
-    "cardNumber": "ST6-09",
+    "cardNumber": "ST06-09",
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -31275,7 +31275,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST6-10",
+    "id": "ST06-10",
     "name": "SkullSatamon",
     "cardImage": "assets/images/cards/eng/ST6-10.jpg",
     "cardType": "Digimon",
@@ -31288,7 +31288,7 @@
     "attribute": "Virus",
     "type": "Undead",
     "rarity": "U",
-    "cardNumber": "ST6-10",
+    "cardNumber": "ST06-10",
     "effect": "[When Digivolving] You may return 1 purple Digimon card from your trash to your hand.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -31297,7 +31297,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST6-11",
+    "id": "ST06-11",
     "name": "WereGarurumon",
     "cardImage": "assets/images/cards/eng/ST6-11.jpg",
     "cardType": "Digimon",
@@ -31310,7 +31310,7 @@
     "attribute": "Virus",
     "type": "Beastkin",
     "rarity": "R",
-    "cardNumber": "ST6-11",
+    "cardNumber": "ST06-11",
     "effect": "-",
     "digivolveEffect": "[Your Turn] While there are 5 or more cards in your trash, this Digimon gets +2000 DP.",
     "securityEffect": "-",
@@ -31319,7 +31319,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST6-12",
+    "id": "ST06-12",
     "name": "VenomMyotismon",
     "cardImage": "assets/images/cards/eng/ST6-12.jpg",
     "cardType": "Digimon",
@@ -31332,7 +31332,7 @@
     "attribute": "Virus",
     "type": "Dark Animal",
     "rarity": "R",
-    "cardNumber": "ST6-12",
+    "cardNumber": "ST06-12",
     "effect": "[When Digivolving] Up to 2 of your Digimon gain \uff1cRetaliation\uff1e (When this Digimon is deleted after losing a battle, delete the Digimon it was battling) until the end of your opponent's next turn.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -31341,7 +31341,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST6-13",
+    "id": "ST06-13",
     "name": "CresGarurumon",
     "cardImage": "assets/images/cards/eng/ST6-13.jpg",
     "cardType": "Digimon",
@@ -31354,7 +31354,7 @@
     "attribute": "Data",
     "type": "Beast Knight",
     "rarity": "SR",
-    "cardNumber": "ST6-13",
+    "cardNumber": "ST06-13",
     "effect": "\uff1cSecurity Attack +1\uff1e (This Digimon checks 1 additional security card.)[Main] \uff1cDigi-Burst 2\uff1e (Trash 2 of this Digimon's Digivolution cards to activate the effect below.)\u30fbPlay 1 purple level 3 Digimon card from your trash without paying its memory cost.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -31363,7 +31363,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST6-14",
+    "id": "ST06-14",
     "name": "Matt Ishida",
     "cardImage": "assets/images/cards/eng/ST6-14.jpg",
     "cardType": "Tamer",
@@ -31376,7 +31376,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "R",
-    "cardNumber": "ST6-14",
+    "cardNumber": "ST06-14",
     "effect": "[Your Turn] When one of your Digimon is deleted, you may suspend this Tamer to gain 1 memory.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
@@ -31385,7 +31385,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST6-15",
+    "id": "ST06-15",
     "name": "Death Claw",
     "cardImage": "assets/images/cards/eng/ST6-15.jpg",
     "cardType": "Option",
@@ -31398,7 +31398,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "C",
-    "cardNumber": "ST6-15",
+    "cardNumber": "ST06-15",
     "effect": "[Main] You may delete 1 of your Digimon to delete 1 of your opponent's level 4 or lower Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Delete 1 of your opponent's level 4 or lower Digimon.",
@@ -31407,7 +31407,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST6-16",
+    "id": "ST06-16",
     "name": "Nail Bone",
     "cardImage": "assets/images/cards/eng/ST6-16.jpg",
     "cardType": "Option",
@@ -31420,7 +31420,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "U",
-    "cardNumber": "ST6-16",
+    "cardNumber": "ST06-16",
     "effect": "[Main] You may play 1 purple level 3 Digimon card and 1 purple level 4 Digimon card from your trash without paying their memory costs. Any [On Play] effects on Digimon played with this effect don't activate.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] You may play 1 purple level 4 or lower Digimon card from your trash without paying its memory cost. Any [On Play] effects on Digimon played with this effect don't activate.",
@@ -31430,7 +31430,7 @@
   },
 
   {
-    "id": "ST7-01",
+    "id": "ST07-01",
     "name": "Gigimon",
     "cardImage": "assets/images/cards/eng/ST7-01.jpg",
     "cardType": "Digi-Egg",
@@ -31443,7 +31443,7 @@
     "attribute": "-",
     "type": "Lesser",
     "rarity": "U",
-    "cardNumber": "ST7-01",
+    "cardNumber": "ST07-01",
     "effect": "-",
     "digivolveEffect": "[Your Turn][Once Per Turn] When an opponent's Digimon is deleted, this Digimon gets +2000 DP for the turn.",
     "securityEffect": "-",
@@ -31474,7 +31474,7 @@
     "version": "AA"
   },
   {
-    "id": "ST7-02",
+    "id": "ST07-02",
     "name": "Agumon",
     "cardImage": "assets/images/cards/eng/ST7-02.jpg",
     "cardType": "Digimon",
@@ -31487,7 +31487,7 @@
     "attribute": "Vaccine",
     "type": "Dinosaur",
     "rarity": "C",
-    "cardNumber": "ST7-02",
+    "cardNumber": "ST07-02",
     "effect": "-",
     "digivolveEffect": "[When Attacking] When this Digimon attacks a player, it gets +2000 DP for the turn.",
     "securityEffect": "-",
@@ -31496,7 +31496,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST7-03",
+    "id": "ST07-03",
     "name": "Guilmon",
     "cardImage": "assets/images/cards/eng/ST7-03.jpg",
     "cardType": "Digimon",
@@ -31509,7 +31509,7 @@
     "attribute": "Virus",
     "type": "Reptile",
     "rarity": "SR",
-    "cardNumber": "ST7-03",
+    "cardNumber": "ST07-03",
     "effect": "[Your Turn] If your opponent has a level 6 or higher Digimon in play, this Digimon can digivolve into a [Gallantmon] in your hand for a memory cost of 4, ignoring its digivolution requirements.",
     "digivolveEffect": "[Your Turn][Once Per Turn] When an opponent's Digimon is deleted, trigger \uff1cDraw 1\uff1e. (Draw 1 card from your deck.)",
     "securityEffect": "-",
@@ -31518,7 +31518,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST7-04",
+    "id": "ST07-04",
     "name": "Biyomon",
     "cardImage": "assets/images/cards/eng/ST7-04.jpg",
     "cardType": "Digimon",
@@ -31531,7 +31531,7 @@
     "attribute": "Vaccine",
     "type": "Bird",
     "rarity": "C",
-    "cardNumber": "ST7-04",
+    "cardNumber": "ST07-04",
     "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)[Your Turn] This Digimon can't attack players.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -31540,7 +31540,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST7-05",
+    "id": "ST07-05",
     "name": "Growlmon",
     "cardImage": "assets/images/cards/eng/ST7-05.jpg",
     "cardType": "Digimon",
@@ -31553,7 +31553,7 @@
     "attribute": "Virus",
     "type": "Dark Dragon",
     "rarity": "R",
-    "cardNumber": "ST7-05",
+    "cardNumber": "ST07-05",
     "effect": "-",
     "digivolveEffect": "[Your Turn][Once Per Turn] When an opponent's Digimon is deleted, gain 1 memory.",
     "securityEffect": "-",
@@ -31562,7 +31562,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST7-06",
+    "id": "ST07-06",
     "name": "GeoGreymon",
     "cardImage": "assets/images/cards/eng/ST7-06.jpg",
     "cardType": "Digimon",
@@ -31575,7 +31575,7 @@
     "attribute": "Vaccine",
     "type": "Dinosaur",
     "rarity": "U",
-    "cardNumber": "ST7-06",
+    "cardNumber": "ST07-06",
     "effect": "[Security] At the end of the battle, play this card without paying its memory cost.[On Play] Delete 1 of your opponent's Digimon with 4000 DP or less.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -31584,7 +31584,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST7-06_P1",
+    "id": "ST07-06_P1",
     "name": "GeoGreymon",
     "cardImage": "assets/images/cards/eng/ST7-06_P1.jpg",
     "cardType": "Digimon",
@@ -31597,7 +31597,7 @@
     "attribute": "Vaccine",
     "type": "Dinosaur",
     "rarity": "U",
-    "cardNumber": "ST7-06",
+    "cardNumber": "ST07-06",
     "effect": "[Security] At the end of the battle, play this card without paying its memory cost.[On Play] Delete 1 of your opponent's Digimon with 4000 DP or less.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -31650,7 +31650,7 @@
     "version": "AA"
   },
   {
-    "id": "ST7-07",
+    "id": "ST07-07",
     "name": "RizeGreymon",
     "cardImage": "assets/images/cards/eng/ST7-07.jpg",
     "cardType": "Digimon",
@@ -31663,7 +31663,7 @@
     "attribute": "Vaccine",
     "type": "Cyborg",
     "rarity": "U",
-    "cardNumber": "ST7-07",
+    "cardNumber": "ST07-07",
     "effect": "[On Play] Delete 1 of your opponent's Digimon with 5000 DP or less.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -31672,7 +31672,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST7-08",
+    "id": "ST07-08",
     "name": "WarGrowlmon",
     "cardImage": "assets/images/cards/eng/ST7-08.jpg",
     "cardType": "Digimon",
@@ -31685,7 +31685,7 @@
     "attribute": "Virus",
     "type": "Cyborg",
     "rarity": "R",
-    "cardNumber": "ST7-08",
+    "cardNumber": "ST07-08",
     "effect": "[When Attacking] Delete 1 of your opponent's Digimon with 3000 DP or less.",
     "digivolveEffect": "[Your Turn][Once Per Turn] When an opponent's Digimon is deleted, this Digimon gains \uff1cSecurity Attack +1\uff1e for the turn. (This Digimon checks 1 additional security card.)",
     "securityEffect": "-",
@@ -31694,7 +31694,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST7-09",
+    "id": "ST07-09",
     "name": "Gallantmon",
     "cardImage": "assets/images/cards/eng/ST7-09.jpg",
     "cardType": "Digimon",
@@ -31707,7 +31707,7 @@
     "attribute": "Virus",
     "type": "Holy Warrior/Royal Knight",
     "rarity": "SR",
-    "cardNumber": "ST7-09",
+    "cardNumber": "ST07-09",
     "effect": "\uff1cSecurity Attack +1\uff1e (This Digimon checks 1 additional security card.)[When Attacking] Delete 1 of your opponent's Digimon with 4000 DP or less. If no Digimon was deleted by this effect, this Digimon gets +3000 DP for the turn.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -31716,7 +31716,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST7-10",
+    "id": "ST07-10",
     "name": "ShineGreymon",
     "cardImage": "assets/images/cards/eng/ST7-10.jpg",
     "cardType": "Digimon",
@@ -31729,7 +31729,7 @@
     "attribute": "Vaccine",
     "type": "Light Dragon",
     "rarity": "R",
-    "cardNumber": "ST7-10",
+    "cardNumber": "ST07-10",
     "effect": "\uff1cSecurity Attack +1\uff1e (This Digimon checks 1 additional security card.)\uff1cPiercing\uff1e (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -31738,7 +31738,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST7-11",
+    "id": "ST07-11",
     "name": "Lightning Joust",
     "cardImage": "assets/images/cards/eng/ST7-11.jpg",
     "cardType": "Option",
@@ -31751,7 +31751,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "U",
-    "cardNumber": "ST7-11",
+    "cardNumber": "ST07-11",
     "effect": "[Main] 1 of your Digimon gets +2000 DP for the turn. Then, if the number of cards in your security stack is less than or equal to your opponent's, 1 of your Digimon gains \uff1cSecurity Attack +1\uff1e for the turn. (This Digimon checks 1 additional security card.)",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Add this card to its owner's hand.",
@@ -31760,7 +31760,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST7-12",
+    "id": "ST07-12",
     "name": "Atomic Blaster",
     "cardImage": "assets/images/cards/eng/ST7-12.jpg",
     "cardType": "Option",
@@ -31773,7 +31773,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "C",
-    "cardNumber": "ST7-12",
+    "cardNumber": "ST07-12",
     "effect": "[Main] Choose any number of your opponent's Digimon whose total DP adds up to 8000 or less and delete them.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
@@ -31782,7 +31782,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST1-16_P2",
+    "id": "ST01-16_P2",
     "name": "Gaia Force",
     "cardImage": "assets/images/cards/eng/ST1-16_P2.jpg",
     "cardType": "Option",
@@ -31795,7 +31795,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "U",
-    "cardNumber": "ST1-16",
+    "cardNumber": "ST01-16",
     "effect": "[Main] Delete 1 of your opponent's Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
@@ -31805,7 +31805,7 @@
   },
 
   {
-    "id": "ST8-01",
+    "id": "ST08-01",
     "name": "DemiVeemon",
     "cardImage": "assets/images/cards/eng/ST8-01.jpg",
     "cardType": "Digi-Egg",
@@ -31818,7 +31818,7 @@
     "attribute": "-",
     "type": "Baby Dragon",
     "rarity": "U",
-    "cardNumber": "ST8-01",
+    "cardNumber": "ST08-01",
     "effect": "-",
     "digivolveEffect": "[Your Turn] While you have 8 or more cards in your hand, this Digimon gets +1000 DP.",
     "securityEffect": "-",
@@ -31849,7 +31849,7 @@
     "version": "AA"
   },
   {
-    "id": "ST8-02",
+    "id": "ST08-02",
     "name": "Gabumon",
     "cardImage": "assets/images/cards/eng/ST8-02.jpg",
     "cardType": "Digimon",
@@ -31862,7 +31862,7 @@
     "attribute": "Data",
     "type": "Reptile",
     "rarity": "C",
-    "cardNumber": "ST8-02",
+    "cardNumber": "ST08-02",
     "effect": "-",
     "digivolveEffect": "[All Turns] While you have 8 or more cards in your hand, this Digimon gets +1000 DP.",
     "securityEffect": "-",
@@ -31871,7 +31871,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST8-03",
+    "id": "ST08-03",
     "name": "Dracomon",
     "cardImage": "assets/images/cards/eng/ST8-03.jpg",
     "cardType": "Digimon",
@@ -31884,7 +31884,7 @@
     "attribute": "Data",
     "type": "Dragon",
     "rarity": "C",
-    "cardNumber": "ST8-03",
+    "cardNumber": "ST08-03",
     "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 Digimon card with [Dramon] in its name among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -31893,7 +31893,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST8-04",
+    "id": "ST08-04",
     "name": "Veemon",
     "cardImage": "assets/images/cards/eng/ST8-04.jpg",
     "cardType": "Digimon",
@@ -31906,7 +31906,7 @@
     "attribute": "Free",
     "type": "Mini Dragon",
     "rarity": "SR",
-    "cardNumber": "ST8-04",
+    "cardNumber": "ST08-04",
     "effect": "[Your Turn] If your opponent has a level 6 or higher Digimon in play, this Digimon can digivolve into an [UlforceVeedramon] in your hand for a memory cost of 4, ignoring its digivolution requirements.",
     "digivolveEffect": "[When Attacking] If you have 7 or fewer cards in your hand, trigger \uff1cDraw 1\uff1e. (Draw 1 card from your deck.)",
     "securityEffect": "-",
@@ -31915,7 +31915,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST8-05",
+    "id": "ST08-05",
     "name": "Veedramon",
     "cardImage": "assets/images/cards/eng/ST8-05.jpg",
     "cardType": "Digimon",
@@ -31928,7 +31928,7 @@
     "attribute": "Vaccine",
     "type": "Mythical Dragon",
     "rarity": "R",
-    "cardNumber": "ST8-05",
+    "cardNumber": "ST08-05",
     "effect": "-",
     "digivolveEffect": "[When Attacking] If you have 8 or more cards in your hand, return 1 of your opponent's level 3 Digimon to its owner's hand. Trash all of the digivolution cards of that Digimon.",
     "securityEffect": "-",
@@ -31937,7 +31937,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST8-06",
+    "id": "ST08-06",
     "name": "Coredramon",
     "cardImage": "assets/images/cards/eng/ST8-06.jpg",
     "cardType": "Digimon",
@@ -31950,7 +31950,7 @@
     "attribute": "Vaccine",
     "type": "Dragon",
     "rarity": "U",
-    "cardNumber": "ST8-06",
+    "cardNumber": "ST08-06",
     "effect": "[Security] At the end of the battle, play this card without paying its memory cost.[On Play] Trigger \uff1cDraw 2\uff1e. (Draw 2 cards from your deck.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -31959,7 +31959,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST8-06_P1",
+    "id": "ST08-06_P1",
     "name": "Coredramon",
     "cardImage": "assets/images/cards/eng/ST8-06_P1.jpg",
     "cardType": "Digimon",
@@ -31972,7 +31972,7 @@
     "attribute": "Vaccine",
     "type": "Dragon",
     "rarity": "U",
-    "cardNumber": "ST8-06",
+    "cardNumber": "ST08-06",
     "effect": "[Security] At the end of the battle, play this card without paying its memory cost.[On Play] Trigger \uff1cDraw 2\uff1e. (Draw 2 cards from your deck.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -32025,7 +32025,7 @@
     "version": "AA"
   },
   {
-    "id": "ST8-07",
+    "id": "ST08-07",
     "name": "Wingdramon",
     "cardImage": "assets/images/cards/eng/ST8-07.jpg",
     "cardType": "Digimon",
@@ -32038,7 +32038,7 @@
     "attribute": "Vaccine",
     "type": "Sky Dragon",
     "rarity": "U",
-    "cardNumber": "ST8-07",
+    "cardNumber": "ST08-07",
     "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -32047,7 +32047,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST8-08",
+    "id": "ST08-08",
     "name": "AeroVeedramon",
     "cardImage": "assets/images/cards/eng/ST8-08.jpg",
     "cardType": "Digimon",
@@ -32060,7 +32060,7 @@
     "attribute": "Vaccine",
     "type": "Holy Dragon",
     "rarity": "R",
-    "cardNumber": "ST8-08",
+    "cardNumber": "ST08-08",
     "effect": "\uff1cJamming\uff1e (This Digimon can't be deleted in battles against Security Digimon.)",
     "digivolveEffect": "[Your Turn] While you have 8 or more cards in your hand, this Digimon gains . (This Digimon checks 1 additional security card.)",
     "securityEffect": "-",
@@ -32069,7 +32069,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST8-09",
+    "id": "ST08-09",
     "name": "Slayerdramon",
     "cardImage": "assets/images/cards/eng/ST8-09.jpg",
     "cardType": "Digimon",
@@ -32082,7 +32082,7 @@
     "attribute": "Vaccine",
     "type": "Dragonkin",
     "rarity": "R",
-    "cardNumber": "ST8-09",
+    "cardNumber": "ST08-09",
     "effect": "[When Digivolving] This Digimon gains \uff1cSecurity Attack +1\uff1e for the turn. (This Digimon checks 1 additional security card.)[Your Turn] This Digimon is unblockable.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -32091,7 +32091,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST8-10",
+    "id": "ST08-10",
     "name": "UlforceVeedramon",
     "cardImage": "assets/images/cards/eng/ST8-10.jpg",
     "cardType": "Digimon",
@@ -32104,7 +32104,7 @@
     "attribute": "Vaccine",
     "type": "Holy Warrior/Royal Knight",
     "rarity": "SR",
-    "cardNumber": "ST8-10",
+    "cardNumber": "ST08-10",
     "effect": "[When Digivolving] Return 1 of your opponent's level 4 or lower Digimon to its owner's hand. Trash all of the digivolution cards of that Digimon.[When Attacking][Once Per Turn] If you have 8 or more cards in your hand, unsuspend this Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -32113,7 +32113,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST2-13_P2",
+    "id": "ST02-13_P2",
     "name": "Hammer Spark",
     "cardImage": "assets/images/cards/eng/ST2-13_P2.jpg",
     "cardType": "Option",
@@ -32126,7 +32126,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "C",
-    "cardNumber": "ST2-13",
+    "cardNumber": "ST02-13",
     "effect": "[Main] Gain 1 memory.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Gain 2 memory.",
@@ -32135,7 +32135,7 @@
     "version": "AA"
   },
   {
-    "id": "ST8-11",
+    "id": "ST08-11",
     "name": "Victory Sword",
     "cardImage": "assets/images/cards/eng/ST8-11.jpg",
     "cardType": "Option",
@@ -32148,7 +32148,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "U",
-    "cardNumber": "ST8-11",
+    "cardNumber": "ST08-11",
     "effect": "[Main] Unsuspend 1 of your blue Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Add this card to its owner's hand.",
@@ -32157,7 +32157,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST8-12",
+    "id": "ST08-12",
     "name": "V-Wing Blade",
     "cardImage": "assets/images/cards/eng/ST8-12.jpg",
     "cardType": "Option",
@@ -32170,7 +32170,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "C",
-    "cardNumber": "ST8-12",
+    "cardNumber": "ST08-12",
     "effect": "[Main] Return 1 of your opponent's level 6 or lower Digimon to its owner's hand. Trash all of the digivolution cards of that Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
@@ -32180,7 +32180,7 @@
   },
 
   {
-    "id": "ST9-05_P1",
+    "id": "ST09-05_P1",
     "name": "Paildramon",
     "cardImage": "assets/images/cards/eng/ST9-05_P1.jpg",
     "cardType": "Digimon",
@@ -32193,7 +32193,7 @@
     "attribute": "Free",
     "type": "Dragonkin",
     "rarity": "SR",
-    "cardNumber": "ST9-05",
+    "cardNumber": "ST09-05",
     "effect": "\uff1cDNA Digivolution: 0 from blue Lv.4 + green Lv.4\uff1e Digivolve unsuspended with the 2 specified Digimon stacked on top of each other.[When Digivolving] When DNA digivolving, return 1 of your opponent's Digimon with 6000 DP or less to the bottom of its owner's deck.[When Attacking][Once Per Turn] Unsuspend this Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "-",

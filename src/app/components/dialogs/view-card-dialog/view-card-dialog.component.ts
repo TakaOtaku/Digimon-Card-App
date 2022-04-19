@@ -37,7 +37,6 @@ export class ViewCardDialogComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     if(changes && changes['card']) {
-      debugger;
       const card: ICard = changes['card'].currentValue;
       this.setupView(card);
     }
