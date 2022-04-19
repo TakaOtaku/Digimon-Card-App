@@ -45,7 +45,7 @@ export const Colors: string[] = ['Red', 'Blue', 'Yellow', 'Green', 'Black', 'Pur
 
 export const Forms: string[] = ["In-Training", "Rookie", "Champion", "Ultimate", "Mega", "Hybrid", "Armor Form", "D-Reaper"];
 
-export const Attributes: string[] = ['Data', 'Vaccine', 'Virus', 'Free', 'Variable'];
+export const Attributes: string[] = ['Data', 'Vaccine', 'Virus', 'Free', 'Variable', 'Unknown'];
 
 export const Types: string[] = [
   "Abnormal",
@@ -65,6 +65,7 @@ export const Types: string[] = [
   "Angel",
   "Ankylosaur",
   "Aquabeast",
+  "Aquatic",
   "Archangel",
   "Armor",
   "Armor",
@@ -177,7 +178,8 @@ export const Types: string[] = [
   "Warrior",
   "Weapon",
   "Wizard",
-  "X-Antibody"
+  "X-Antibody",
+  "X Antibody"
 ].sort();
 
 export const Lvs: string[] = ['Lv.2', 'Lv.3', 'Lv.4', 'Lv.5', 'Lv.6', 'Lv.7'];
