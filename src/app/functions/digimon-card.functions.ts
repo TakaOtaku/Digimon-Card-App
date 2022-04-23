@@ -4,6 +4,16 @@ import preReleaseJSON from "../../assets/cardlists/preRelease.json";
 import {ICard} from "../../models";
 import {CARDSET} from "../../models/card-set.enum";
 
+export function compareIDs(idA: string, idB: string): boolean {
+  const aST = idA.includes('ST');
+  const bST = idB.includes('ST');
+  //if(aST || bST) {
+  //  const splitST = idA.split('ST')
+  //  return cardA
+  //}
+  return idA === idB;
+}
+
 export function setupAllDigimonCards(): ICard[] {
   const allCards: ICard[] = setupDigimonCards(CARDSET.BothOverwrite);
 

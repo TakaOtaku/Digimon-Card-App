@@ -831,9 +831,9 @@
     "effect": "[On Play] Trigger \uff1cDraw 1\uff1e. (Draw 1 card from your deck.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "ST0ore Championship Participant Pack",
+    "notes": "Store Championship Participant Pack",
     "color": "Blue",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT1-029_P3",
@@ -853,9 +853,9 @@
     "effect": "[On Play] Trigger \uff1cDraw 1\uff1e. (Draw 1 card from your deck.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "ST0ore Champion Card Set",
+    "notes": "Store Champion Card Set",
     "color": "Blue",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT1-030",
@@ -1691,7 +1691,7 @@
     "securityEffect": "-",
     "notes": "Fest Set",
     "color": "Yellow",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT1-063",
@@ -1821,9 +1821,9 @@
     "effect": "-",
     "digivolveEffect": "[When Attacking] Suspend 1 of your opponent's Digimon with 3000 DP or less.",
     "securityEffect": "-",
-    "notes": "ST0ore Championship Participant Pack",
+    "notes": "Store Championship Participant Pack",
     "color": "Green",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT1-066_P2",
@@ -1843,9 +1843,9 @@
     "effect": "-",
     "digivolveEffect": "[When Attacking] Suspend 1 of your opponent's Digimon with 3000 DP or less.",
     "securityEffect": "-",
-    "notes": "ST0ore Champion Card Set",
+    "notes": "Store Champion Card Set",
     "color": "Green",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT1-067",
@@ -2263,7 +2263,7 @@
     "securityEffect": "-",
     "notes": "Event Pack Alt-Art Gold Stamp Set",
     "color": "Green",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT1-078",
@@ -2657,9 +2657,9 @@
     "effect": "[When Digivolving] If you have a red Tamer in play\uff0c delete 1 of your opponent's Digimon with 6000 DP or less.[When Attacking] Trash 1 of your opponent's security cards for every 10 cards in their trash.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "ST0ore Championship Participant Pack",
+    "notes": "Store Championship Participant Pack",
     "color": "Red",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT2-020_P3",
@@ -2679,9 +2679,9 @@
     "effect": "[When Digivolving] If you have a red Tamer in play\uff0c delete 1 of your opponent's Digimon with 6000 DP or less.[When Attacking] Trash 1 of your opponent's security cards for every 10 cards in their trash.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "ST0ore Champion Card Set",
+    "notes": "Store Champion Card Set",
     "color": "Red",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT2-030",
@@ -2923,7 +2923,7 @@
     "securityEffect": "-",
     "notes": "Fest Set",
     "color": "Green",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT2-052",
@@ -2965,9 +2965,9 @@
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "ST0ore Championship Participant Pack",
+    "notes": "Store Championship Participant Pack",
     "color": "Black",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT2-052_P2",
@@ -2987,9 +2987,9 @@
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "ST0ore Champion Card Set",
+    "notes": "Store Champion Card Set",
     "color": "Black",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT2-053",
@@ -3121,7 +3121,7 @@
     "securityEffect": "-",
     "notes": "2021 Vault Set",
     "color": "Black",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT2-055_P1",
@@ -3539,7 +3539,7 @@
     "securityEffect": "-",
     "notes": "2021 Online Regionals Participant Pack",
     "color": "Black",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT2-066_P3",
@@ -3561,7 +3561,7 @@
     "securityEffect": "-",
     "notes": "2021 Finalist Card Set",
     "color": "Black",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT2-066_P4",
@@ -3583,7 +3583,7 @@
     "securityEffect": "-",
     "notes": "2021 Champion Card Set",
     "color": "Black",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT2-067",
@@ -3625,9 +3625,9 @@
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "ST0ore Championship Participant Pack",
+    "notes": "Store Championship Participant Pack",
     "color": "Purple",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT2-067_P2",
@@ -3647,9 +3647,9 @@
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "ST0ore Champion Card Set",
+    "notes": "Store Champion Card Set",
     "color": "Purple",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT2-068",
@@ -5409,7 +5409,7 @@
     "securityEffect": "[Security] Suspend 1 of your opponent's Digimon. Then add this card its owner's hand.",
     "notes": "2021 Championship Finals Tamer\u2018s Evolution Pack",
     "color": "Green",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT1-109",
@@ -5475,7 +5475,7 @@
     "securityEffect": "[Security] Suspend all of your opponent's Digimon without \uff1cBlocker\uff1e.",
     "notes": "2021 Championship Finals Tamer\u2018s Evolution Pack",
     "color": "Green",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT1-111",
@@ -6223,7 +6223,7 @@
     "securityEffect": "-",
     "notes": "Fest Stamp SR",
     "color": "Purple",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT3-091_P3",
@@ -6245,7 +6245,7 @@
     "securityEffect": "-",
     "notes": "Fest WINNER Stamp SR",
     "color": "Purple",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT1-110_P1",
@@ -6311,7 +6311,7 @@
     "securityEffect": "-",
     "notes": "April Ultimate Cup Top 2",
     "color": "White",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
 
   {
@@ -6444,7 +6444,7 @@
     "securityEffect": "-",
     "notes": "Digi-Egg Set",
     "color": "Green",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT3-001",
@@ -6510,7 +6510,7 @@
     "securityEffect": "-",
     "notes": "Digi-Egg Set",
     "color": "Blue",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT3-003",
@@ -6554,7 +6554,7 @@
     "securityEffect": "-",
     "notes": "Digi-Egg Set",
     "color": "Yellow",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT3-003_P1",
@@ -6686,7 +6686,7 @@
     "securityEffect": "-",
     "notes": "Digi-Egg Set",
     "color": "Purple",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT1-083",
@@ -10932,7 +10932,7 @@
     "securityEffect": "-",
     "notes": "April Ultimate Cup Top 128",
     "color": "Blue",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT3-112_P2",
@@ -10954,7 +10954,7 @@
     "securityEffect": "-",
     "notes": "2021 World Championship Participation Card",
     "color": "White",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
 
   {
@@ -11108,7 +11108,7 @@
     "securityEffect": "-",
     "notes": "Event Pack Alt-Art Gold Stamp Set",
     "color": "Black",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT4-005_P3",
@@ -11130,7 +11130,7 @@
     "securityEffect": "-",
     "notes": "Digi-Egg Set",
     "color": "Black",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT4-006",
@@ -11174,7 +11174,7 @@
     "securityEffect": "-",
     "notes": "Digi-Egg Set",
     "color": "Purple",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT4-007",
@@ -12186,7 +12186,7 @@
     "securityEffect": "-",
     "notes": "Judge Pack",
     "color": "Yellow",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT4-043",
@@ -12362,7 +12362,7 @@
     "securityEffect": "-",
     "notes": "Judge Pack",
     "color": "Yellow",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT4-049",
@@ -13044,7 +13044,7 @@
     "securityEffect": "-",
     "notes": "Fest Set",
     "color": "Black",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT4-075",
@@ -13484,7 +13484,7 @@
     "securityEffect": "-",
     "notes": "Event Pack Alt-Art Gold Stamp Set",
     "color": "Purple",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT4-089",
@@ -13572,7 +13572,7 @@
     "securityEffect": "-",
     "notes": "2021 Online Regionals Participant Pack",
     "color": "White",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT4-090_P3",
@@ -13594,7 +13594,7 @@
     "securityEffect": "-",
     "notes": "2021 Finalist Card Set",
     "color": "White",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT4-090_P4",
@@ -13616,7 +13616,7 @@
     "securityEffect": "-",
     "notes": "2021 Champion Card Set",
     "color": "White",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT4-091",
@@ -14497,7 +14497,7 @@
     "securityEffect": "-",
     "notes": "Digi-Egg Set",
     "color": "Yellow",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT5-004",
@@ -14805,7 +14805,7 @@
     "securityEffect": "-",
     "notes": "Judge Pack",
     "color": "Red",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT5-013",
@@ -15201,7 +15201,7 @@
     "securityEffect": "-",
     "notes": "Judge Pack",
     "color": "Blue",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT5-027",
@@ -15355,7 +15355,7 @@
     "securityEffect": "-",
     "notes": "Fest Set",
     "color": "Blue",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT5-033",
@@ -15641,7 +15641,7 @@
     "securityEffect": "-",
     "notes": "2021 Online Regionals Participant Pack",
     "color": "Yellow",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT5-042_P2",
@@ -15663,7 +15663,7 @@
     "securityEffect": "-",
     "notes": "2021 Finalist Card Set",
     "color": "Yellow",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT5-042_P3",
@@ -15685,7 +15685,7 @@
     "securityEffect": "-",
     "notes": "2021 Champion Card Set",
     "color": "Yellow",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT5-043",
@@ -15795,7 +15795,7 @@
     "securityEffect": "-",
     "notes": "Event Pack Alt-Art Gold Stamp Set",
     "color": "Yellow",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT5-046",
@@ -16739,9 +16739,9 @@
     "effect": "[When Digivolving] You may play 1 [Diaboromon] Token without paying its memory cost. (Diaboromon Tokens are level 6 white Digimon with a memory cost of 14, 3000 DP, and are Mega form, Unidentified type, and Unknown attribute.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "ST0ore Championship Participant Pack",
+    "notes": "Store Championship Participant Pack",
     "color": "White",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT5-084_P2",
@@ -16761,9 +16761,9 @@
     "effect": "[When Digivolving] You may play 1 [Diaboromon] Token without paying its memory cost. (Diaboromon Tokens are level 6 white Digimon with a memory cost of 14, 3000 DP, and are Mega form, Unidentified type, and Unknown attribute.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "ST0ore Champion Card Set",
+    "notes": "Store Champion Card Set",
     "color": "White",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT5-085",
@@ -17709,7 +17709,7 @@
     "securityEffect": "[Security] Add this card to its owner's hand.",
     "notes": "Judge Pack",
     "color": "White",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT5-110",
@@ -17753,7 +17753,7 @@
     "securityEffect": "-",
     "notes": "NEW AWAKENING\uff08BT-08\uff09Pre-Release Tournament Winner Card",
     "color": "Red",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
 
   {
@@ -17820,7 +17820,7 @@
     "securityEffect": "-",
     "notes": "Digi-Egg Set",
     "color": "Red",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT6-002",
@@ -18018,7 +18018,7 @@
     "securityEffect": "-",
     "notes": "Digi-Egg Set",
     "color": "Black",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT6-006",
@@ -18172,7 +18172,7 @@
     "securityEffect": "-",
     "notes": "Fest Set",
     "color": "Red",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT6-010",
@@ -19404,7 +19404,7 @@
     "securityEffect": "-",
     "notes": "2021 Vault Set",
     "color": "Black",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT6-057",
@@ -19954,7 +19954,7 @@
     "securityEffect": "-",
     "notes": "Fest Set",
     "color": "Purple",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT6-078",
@@ -21011,7 +21011,7 @@
     "securityEffect": "-",
     "notes": "Digi-Egg Set",
     "color": "Green",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT7-005",
@@ -24136,7 +24136,7 @@
     "securityEffect": "-",
     "notes": "April Ultimate Cup Top 8",
     "color": "Multi",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT8-112_P1",
@@ -24158,7 +24158,7 @@
     "securityEffect": "-",
     "notes": "April Ultimate Cup Champion",
     "color": "White",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
 
   {
@@ -26447,7 +26447,7 @@
     "securityEffect": "-",
     "notes": "April Ultimate Cup Top 64",
     "color": "Blue",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
 
   {
@@ -26646,7 +26646,7 @@
     "securityEffect": "-",
     "notes": "2021 Vault Set",
     "color": "Purple",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "P-035",
@@ -27086,7 +27086,7 @@
     "securityEffect": "-",
     "notes": "2021 Vault Set",
     "color": "Green",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "P-033",
@@ -27174,7 +27174,7 @@
     "securityEffect": "-",
     "notes": "2021 Vault Set",
     "color": "Yellow",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "P-028_P1",
@@ -27394,7 +27394,7 @@
     "securityEffect": "-",
     "notes": "2021 Vault Set",
     "color": "Blue",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "P-005",
@@ -27504,7 +27504,7 @@
     "securityEffect": "-",
     "notes": "2021 Online Regionals Participant Pack",
     "color": "Blue",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "P-008_P2",
@@ -27526,7 +27526,7 @@
     "securityEffect": "-",
     "notes": "2021 Finalist Card Set",
     "color": "Blue",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "P-008_P3",
@@ -27548,7 +27548,7 @@
     "securityEffect": "-",
     "notes": "2021 Champion Card Set",
     "color": "Blue",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "P-009",
@@ -27592,7 +27592,7 @@
     "securityEffect": "-",
     "notes": "2021 Vault Set",
     "color": "Red",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "P-010",
@@ -27768,7 +27768,7 @@
     "securityEffect": "-",
     "notes": "2021 Vault Set",
     "color": "Black",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "P-016_P1",
@@ -27790,7 +27790,7 @@
     "securityEffect": "-",
     "notes": "Judge Pack",
     "color": "Black",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT8-008_P1",
@@ -27812,7 +27812,7 @@
     "securityEffect": "-",
     "notes": "Fest Set",
     "color": "Red",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT8-086_P1",
@@ -27834,7 +27834,7 @@
     "securityEffect": "[Security] Play this card without paying its memory cost.",
     "notes": "Fest Set",
     "color": "Red",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "P-017",
@@ -28099,7 +28099,7 @@
     "securityEffect": "-",
     "notes": "July Evolution Cup",
     "color": "Red",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "ST01-03_P2",
@@ -28121,7 +28121,7 @@
     "securityEffect": "-",
     "notes": "2021 Online Regionals Participant Pack",
     "color": "Red",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "ST01-03_P3",
@@ -28143,7 +28143,7 @@
     "securityEffect": "-",
     "notes": "2021 Finalist Card Set",
     "color": "Red",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "ST01-03_P4",
@@ -28165,7 +28165,7 @@
     "securityEffect": "-",
     "notes": "2021 Champion Card Set",
     "color": "Red",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "ST01-04",
@@ -28319,7 +28319,7 @@
     "securityEffect": "-",
     "notes": "Judge Pack",
     "color": "Red",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "ST01-08",
@@ -28561,7 +28561,7 @@
     "securityEffect": "-",
     "notes": "Event Pack Alt-Art Gold Stamp Set",
     "color": "Red",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "ST01-12",
@@ -28649,7 +28649,7 @@
     "securityEffect": "[Security] All of your Digimon gain \uff1cSecurity Attack +1\uff1e  (This Digimon checks 1 additional security card) until the end of your next turn.",
     "notes": "2021 Championship Finals Tamer\u2018s Evolution Pack",
     "color": "Red",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "ST01-14",
@@ -28759,7 +28759,7 @@
     "securityEffect": "[Security] Activate this card's [Main] effect.",
     "notes": "2021 Championship Finals Tamer\u2018s Evolution Pack",
     "color": "Red",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
 
   {
@@ -29156,7 +29156,7 @@
     "securityEffect": "-",
     "notes": "Event Pack Alt-Art Gold Stamp Set",
     "color": "Blue",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "ST02-12",
@@ -29244,7 +29244,7 @@
     "securityEffect": "[Security] Gain 2 memory.",
     "notes": "2021 Championship Finals Tamer\u2018s Evolution Pack",
     "color": "Blue",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "ST02-14",
@@ -29354,7 +29354,7 @@
     "securityEffect": "[Security] Activate this card's [Main] effect.",
     "notes": "2021 Championship Finals Tamer\u2018s Evolution Pack",
     "color": "Blue",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "ST02-06_P1",
@@ -29551,9 +29551,9 @@
     "effect": "-",
     "digivolveEffect": "[Your Turn][Once Per Turn] When an opponent's Digimon is deleted by dropping to 0 DP, gain 1 memory.",
     "securityEffect": "-",
-    "notes": "ST0ore Championship Participant Pack",
+    "notes": "Store Championship Participant Pack",
     "color": "Yellow",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "ST03-04_P2",
@@ -29573,9 +29573,9 @@
     "effect": "-",
     "digivolveEffect": "[Your Turn][Once Per Turn] When an opponent's Digimon is deleted by dropping to 0 DP, gain 1 memory.",
     "securityEffect": "-",
-    "notes": "ST0ore Champion Card Set",
+    "notes": "Store Champion Card Set",
     "color": "Yellow",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "ST03-05",
@@ -29971,7 +29971,7 @@
     "securityEffect": "[Security] All of your Digimon and Security Digimon get +5000 DP for the turn. Then add this card to its owner's hand.",
     "notes": "2021 Championship Finals Tamer\u2018s Evolution Pack",
     "color": "Yellow",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "ST03-14",
@@ -30037,7 +30037,7 @@
     "securityEffect": "[Security] Add this card to its owner's hand.",
     "notes": "2021 Championship Finals Tamer\u2018s Evolution Pack",
     "color": "Yellow",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "ST03-15",
@@ -30302,7 +30302,7 @@
     "securityEffect": "-",
     "notes": "2021 Online Regionals Participant Pack",
     "color": "Green",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "ST04-08_P2",
@@ -30324,7 +30324,7 @@
     "securityEffect": "-",
     "notes": "2021 Finalist Card Set",
     "color": "Green",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "ST04-08_P3",
@@ -30346,7 +30346,7 @@
     "securityEffect": "-",
     "notes": "2021 Champion Card Set",
     "color": "Green",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "ST04-08_P4",
@@ -30368,7 +30368,7 @@
     "securityEffect": "-",
     "notes": "Judge Pack",
     "color": "Green",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "ST04-09",
@@ -30809,7 +30809,7 @@
     "securityEffect": "-",
     "notes": "Judge Pack",
     "color": "Black",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "ST05-09",
@@ -31184,7 +31184,7 @@
     "securityEffect": "-",
     "notes": "2021 Online Regionals Participant Pack",
     "color": "Purple",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "ST06-08_P2",
@@ -31206,7 +31206,7 @@
     "securityEffect": "-",
     "notes": "2021 Finalist Card Set",
     "color": "Purple",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "ST06-08_P3",
@@ -31228,7 +31228,7 @@
     "securityEffect": "-",
     "notes": "2021 Champion Card Set",
     "color": "Purple",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "ST06-08_P4",
@@ -31250,7 +31250,7 @@
     "securityEffect": "-",
     "notes": "Judge Pack",
     "color": "Purple",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "ST06-09",
@@ -31603,7 +31603,7 @@
     "securityEffect": "-",
     "notes": "2021 Vault Set",
     "color": "Red",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT1-019_P1",
@@ -31978,7 +31978,7 @@
     "securityEffect": "-",
     "notes": "2021 Vault Set",
     "color": "Blue",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
   {
     "id": "BT1-037_P1",
@@ -32199,43 +32199,43 @@
     "securityEffect": "-",
     "notes": "April Ultimate Cup Top 32",
     "color": "Multi",
-    "version": "ST0amp"
+    "version": "Stamp"
   },
-  {"id": "ST01-03_P4", "name": "Agumon", "cardImage": "assets/images/cards/eng/ST1-03_P4.jpg", "cardType": "Digimon", "dp": "2000", "playCost": "3", "digivolveCost1": "0 from Lv.2", "digivolveCost2": "-", "cardLv": "Lv.3", "form": "Rookie", "attribute": "Vaccine", "type": "Reptile", "rarity": "U", "cardNumber": "ST01-03", "effect": "-", "digivolveEffect": "[Your Turn] This Digimon gets +1000 DP.", "securityEffect": "-", "notes": "", "color": "Red", "version": "ST0amp"},
-  {"id": "ST06-08_P3", "name": "Devimon", "cardImage": "assets/images/cards/eng/ST6-08_P3.jpg", "cardType": "Digimon", "dp": "5000", "playCost": "6", "digivolveCost1": "1 from Lv.3", "digivolveCost2": "-", "cardLv": "Lv.4", "form": "Champion", "attribute": "Virus", "type": "Fallen Angel", "rarity": "U", "cardNumber": "ST06-08", "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)[When Attacking] Lose 2 memory.", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Purple", "version": "ST0amp"},
-  {"id": "ST04-08_P3", "name": "Kabuterimon", "cardImage": "assets/images/cards/eng/ST4-08_P3.jpg", "cardType": "Digimon", "dp": "5000", "playCost": "6", "digivolveCost1": "1 from Lv.3", "digivolveCost2": "-", "cardLv": "Lv.4", "form": "Champion", "attribute": "Vaccine", "type": "Insectoid", "rarity": "U", "cardNumber": "ST04-08", "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)[When Attacking] Lose 2 memory.", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Green", "version": "ST0amp"},
-  {"id": "BT5-042_P3", "name": "Knightmon", "cardImage": "assets/images/cards/eng/BT5-042_P3.jpg", "cardType": "Digimon", "dp": "7000", "playCost": "7", "digivolveCost1": "3 from Lv.4", "digivolveCost2": "-", "cardLv": "Lv.5", "form": "Ultimate", "attribute": "Data", "type": "Warrior", "rarity": "C", "cardNumber": "BT5-042", "effect": "[On Play] 1 of your opponent's Digimon gets -4000 DP for the turn.", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Yellow", "version": "ST0amp"},
-  {"id": "P-008_P3", "name": "WereGarurumon", "cardImage": "assets/images/cards/eng/P-008_P3.jpg", "cardType": "Digimon", "dp": "6000", "playCost": "7", "digivolveCost1": "3 from Lv.4", "digivolveCost2": "-", "cardLv": "Lv.5", "form": "Ultimate", "attribute": "Vaccine", "type": "Beastkin", "rarity": "P", "cardNumber": "P-008", "effect": "[When Attacking][Once Per Turn] If this Digimon has a [Garurumon] digivolution card\uff0c unsuspend this Digimon.", "digivolveEffect": "[Your Turn] While you have 8 or more cards in your hand\uff0c this Digimon gains \uff1cSecurity Attack +1\uff1e. (This Digimon checks 1 additional security card.)", "securityEffect": "-", "notes": "", "color": "Blue", "version": "ST0amp"},
-  {"id": "BT4-090_P4", "name": "Chaosmon", "cardImage": "assets/images/cards/eng/BT4-090_P4.jpg", "cardType": "Digimon", "dp": "14000", "playCost": "15", "digivolveCost1": "6 from Lv.6", "digivolveCost2": "6 from Lv.6", "cardLv": "Lv.7", "form": "Mega", "attribute": "Vaccine", "type": "Unique", "rarity": "R", "cardNumber": "BT4-090", "effect": "\uff1cPiercing\uff1e (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.)[When Digivolving] Unsuspend this Digimon. Then, it can attack your opponent's Digimon. This effect allows you to attack unsuspended Digimon as well.", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "White", "version": "ST0amp"},
-  {"id": "BT2-066_P4", "name": "Machinedramon", "cardImage": "assets/images/cards/eng/BT2-066_P4.jpg", "cardType": "Digimon", "dp": "11000", "playCost": "12", "digivolveCost1": "4 from Lv.5", "digivolveCost2": "-", "cardLv": "Lv.6", "form": "Mega", "attribute": "Virus", "type": "Machine", "rarity": "SR", "cardNumber": "BT2-066", "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks\uff0c you may suspend this Digimon to force the opponent to attack it instead.)[On Play] Trigger \uff1cDe-Digivolve 2\uff1e  on 2 of your opponent's Digimon. (Trash up to 2 cards from the top of one of your opponent's Digimon. If it has no digivolution cards\uff0c or becomes a level 3 Digimon\uff0c you can't trash any more cards.)", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Black", "version": "ST0amp"},
-  {"id": "ST08-04_P3", "name": "Veemon", "cardImage": "assets/images/cards/eng/ST8-04_P3.jpg", "cardType": "Digimon", "dp": "2000", "playCost": "3", "digivolveCost1": "0 from Lv.2", "digivolveCost2": "-", "cardLv": "Lv.3", "form": "Rookie", "attribute": "Free", "type": "Mini Dragon", "rarity": "SR", "cardNumber": "ST08-04", "effect": "[Your Turn] If your opponent has a level 6 or higher Digimon in play, this Digimon can digivolve into an [UlforceVeedramon] in your hand for a memory cost of 4, ignoring its digivolution requirements.", "digivolveEffect": "[When Attacking] If you have 7 or fewer cards in your hand, trigger \uff1cDraw 1\uff1e. (Draw 1 card from your deck.)", "securityEffect": "-", "notes": "", "color": "Blue", "version": "ST0amp"},
-  {"id": "EX1-007_P3", "name": "Megadramon", "cardImage": "assets/images/cards/eng/EX1-007_P3.jpg", "cardType": "Digimon", "dp": "7000", "playCost": "7", "digivolveCost1": "3 from Lv.4", "digivolveCost2": "3 from Lv.4", "cardLv": "Lv.5", "form": "Ultimate", "attribute": "Virus", "type": "Cyborg", "rarity": "C", "cardNumber": "EX1-007", "effect": "[On Play] Delete up to 2 of your opponent's Digimon with 3000 DP or less.", "digivolveEffect": "[Your Turn] While this Digimon has [Machine] in its traits, it gains \uff1cSecurity Attack +1\uff1e. (This Digimon checks 1 additional security card.)", "securityEffect": "-", "notes": "", "color": "Red", "version": "ST0amp"},
-  {"id": "BT6-038_P3", "name": "Apemon", "cardImage": "assets/images/cards/eng/BT6-038_P3.jpg", "cardType": "Digimon", "dp": "8000", "playCost": "6", "digivolveCost1": "2 from Lv.3", "digivolveCost2": "-", "cardLv": "Lv.4", "form": "Champion", "attribute": "Vaccine", "type": "Beastkin", "rarity": "C", "cardNumber": "BT6-038", "effect": "-", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Yellow", "version": "ST0amp"},
-  {"id": "BT6-048_P3", "name": "Parasaurmon", "cardImage": "assets/images/cards/eng/BT6-048_P3.jpg", "cardType": "Digimon", "dp": "5000", "playCost": "3", "digivolveCost1": "2 from Lv.3", "digivolveCost2": "-", "cardLv": "Lv.4", "form": "Champion", "attribute": "Virus", "type": "Dinosaur", "rarity": "C", "cardNumber": "BT6-048", "effect": "-", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Green", "version": "ST0amp"},
-  {"id": "EX1-048_P3", "name": "Andromon", "cardImage": "assets/images/cards/eng/EX1-048_P3.jpg", "cardType": "Digimon", "dp": "7000", "playCost": "7", "digivolveCost1": "3 from Lv.4", "digivolveCost2": "-", "cardLv": "Lv.5", "form": "Ultimate", "attribute": "Vaccine", "type": "Cyborg", "rarity": "C", "cardNumber": "EX1-048", "effect": "[When Digivolving] You may reveal the top 3 cards of your deck. Add 1 level 6 Digimon card with [Machine] in its traits among them to your hand. Trash the remaining cards.", "digivolveEffect": "[Opponent's Turn] While this Digimon has [Machine] in its traits, it gains \uff1cBlocker\uff1e. (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)", "securityEffect": "-", "notes": "", "color": "Black", "version": "ST0amp"},
-  {"id": "BT7-081_P3", "name": "Bokomon", "cardImage": "assets/images/cards/eng/BT7-081_P3.jpg", "cardType": "Digimon", "dp": "2000", "playCost": "3", "digivolveCost1": "-", "digivolveCost2": "-", "cardLv": "Lv.3", "form": "Rookie", "attribute": "Vaccine", "type": "Mutant", "rarity": "C", "cardNumber": "BT7-081", "effect": "[On Play] Reveal the top 5 cards of your deck. Add 1 card with [Hybrid] or [Ten Warriors] in its traits and 1 Tamer card among them to your hand. Place the remaining cards at the bottom of your deck in any order. [Your Turn][Once Per Turn] When one of your Tamers digivolves, gain 2 memory.", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "White", "version": "ST0amp"},
-  {"id": "BT4-084_P3", "name": "NeoDevimon", "cardImage": "assets/images/cards/eng/BT4-084_P3.jpg", "cardType": "Digimon", "dp": "7000", "playCost": "7", "digivolveCost1": "3 from Lv.4", "digivolveCost2": "-", "cardLv": "Lv.5", "form": "Ultimate", "attribute": "Virus", "type": "Fallen Angel", "rarity": "C", "cardNumber": "BT4-084", "effect": "[Opponent's Turn] When an opponent plays a Tamer, gain 3 memory.", "digivolveEffect": "[Opponent's Turn] When an opponent's Tamer becomes suspended, gain 1 memory.", "securityEffect": "-", "notes": "", "color": "Purple", "version": "ST0amp"},
-  {"id": "ST01-03_P3", "name": "Agumon", "cardImage": "assets/images/cards/eng/ST1-03_P3.jpg", "cardType": "Digimon", "dp": "2000", "playCost": "3", "digivolveCost1": "0 from Lv.2", "digivolveCost2": "-", "cardLv": "Lv.3", "form": "Rookie", "attribute": "Vaccine", "type": "Reptile", "rarity": "U", "cardNumber": "ST01-03", "effect": "-", "digivolveEffect": "[Your Turn] This Digimon gets +1000 DP.", "securityEffect": "-", "notes": "", "color": "Red", "version": "ST0amp"},
-  {"id": "ST06-08_P2", "name": "Devimon", "cardImage": "assets/images/cards/eng/ST6-08_P2.jpg", "cardType": "Digimon", "dp": "5000", "playCost": "6", "digivolveCost1": "1 from Lv.3", "digivolveCost2": "-", "cardLv": "Lv.4", "form": "Champion", "attribute": "Virus", "type": "Fallen Angel", "rarity": "U", "cardNumber": "ST06-08", "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)[When Attacking] Lose 2 memory.", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Purple", "version": "ST0amp"},
-  {"id": "ST04-08_P2", "name": "Kabuterimon", "cardImage": "assets/images/cards/eng/ST4-08_P2.jpg", "cardType": "Digimon", "dp": "5000", "playCost": "6", "digivolveCost1": "1 from Lv.3", "digivolveCost2": "-", "cardLv": "Lv.4", "form": "Champion", "attribute": "Vaccine", "type": "Insectoid", "rarity": "U", "cardNumber": "ST04-08", "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)[When Attacking] Lose 2 memory.", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Green", "version": "ST0amp"},
-  {"id": "BT5-042_P2", "name": "Knightmon", "cardImage": "assets/images/cards/eng/BT5-042_P2.jpg", "cardType": "Digimon", "dp": "7000", "playCost": "7", "digivolveCost1": "3 from Lv.4", "digivolveCost2": "-", "cardLv": "Lv.5", "form": "Ultimate", "attribute": "Data", "type": "Warrior", "rarity": "C", "cardNumber": "BT5-042", "effect": "[On Play] 1 of your opponent's Digimon gets -4000 DP for the turn.", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Yellow", "version": "ST0amp"},
-  {"id": "P-008_P2", "name": "WereGarurumon", "cardImage": "assets/images/cards/eng/P-008_P2.jpg", "cardType": "Digimon", "dp": "6000", "playCost": "7", "digivolveCost1": "3 from Lv.4", "digivolveCost2": "-", "cardLv": "Lv.5", "form": "Ultimate", "attribute": "Vaccine", "type": "Beastkin", "rarity": "P", "cardNumber": "P-008", "effect": "[When Attacking][Once Per Turn] If this Digimon has a [Garurumon] digivolution card\uff0c unsuspend this Digimon.", "digivolveEffect": "[Your Turn] While you have 8 or more cards in your hand\uff0c this Digimon gains \uff1cSecurity Attack +1\uff1e. (This Digimon checks 1 additional security card.)", "securityEffect": "-", "notes": "", "color": "Blue", "version": "ST0amp"},
-  {"id": "BT4-090_P3", "name": "Chaosmon", "cardImage": "assets/images/cards/eng/BT4-090_P3.jpg", "cardType": "Digimon", "dp": "14000", "playCost": "15", "digivolveCost1": "6 from Lv.6", "digivolveCost2": "6 from Lv.6", "cardLv": "Lv.7", "form": "Mega", "attribute": "Vaccine", "type": "Unique", "rarity": "R", "cardNumber": "BT4-090", "effect": "\uff1cPiercing\uff1e (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.)[When Digivolving] Unsuspend this Digimon. Then, it can attack your opponent's Digimon. This effect allows you to attack unsuspended Digimon as well.", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "White", "version": "ST0amp"},
-  {"id": "BT2-066_P3", "name": "Machinedramon", "cardImage": "assets/images/cards/eng/BT2-066_P3.jpg", "cardType": "Digimon", "dp": "11000", "playCost": "12", "digivolveCost1": "4 from Lv.5", "digivolveCost2": "-", "cardLv": "Lv.6", "form": "Mega", "attribute": "Virus", "type": "Machine", "rarity": "SR", "cardNumber": "BT2-066", "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks\uff0c you may suspend this Digimon to force the opponent to attack it instead.)[On Play] Trigger \uff1cDe-Digivolve 2\uff1e  on 2 of your opponent's Digimon. (Trash up to 2 cards from the top of one of your opponent's Digimon. If it has no digivolution cards\uff0c or becomes a level 3 Digimon\uff0c you can't trash any more cards.)", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Black", "version": "ST0amp"},
-  {"id": "ST08-04_P2", "name": "Veemon", "cardImage": "assets/images/cards/eng/ST8-04_P2.jpg", "cardType": "Digimon", "dp": "2000", "playCost": "3", "digivolveCost1": "0 from Lv.2", "digivolveCost2": "-", "cardLv": "Lv.3", "form": "Rookie", "attribute": "Free", "type": "Mini Dragon", "rarity": "SR", "cardNumber": "ST08-04", "effect": "[Your Turn] If your opponent has a level 6 or higher Digimon in play, this Digimon can digivolve into an [UlforceVeedramon] in your hand for a memory cost of 4, ignoring its digivolution requirements.", "digivolveEffect": "[When Attacking] If you have 7 or fewer cards in your hand, trigger \uff1cDraw 1\uff1e. (Draw 1 card from your deck.)", "securityEffect": "-", "notes": "", "color": "Blue", "version": "ST0amp"},
-  {"id": "EX1-007_P2", "name": "Megadramon", "cardImage": "assets/images/cards/eng/EX1-007_P2.jpg", "cardType": "Digimon", "dp": "7000", "playCost": "7", "digivolveCost1": "3 from Lv.4", "digivolveCost2": "3 from Lv.4", "cardLv": "Lv.5", "form": "Ultimate", "attribute": "Virus", "type": "Cyborg", "rarity": "C", "cardNumber": "EX1-007", "effect": "[On Play] Delete up to 2 of your opponent's Digimon with 3000 DP or less.", "digivolveEffect": "[Your Turn] While this Digimon has [Machine] in its traits, it gains \uff1cSecurity Attack +1\uff1e. (This Digimon checks 1 additional security card.)", "securityEffect": "-", "notes": "", "color": "Red", "version": "ST0amp"},
-  {"id": "BT6-038_P2", "name": "Apemon", "cardImage": "assets/images/cards/eng/BT6-038_P2.jpg", "cardType": "Digimon", "dp": "8000", "playCost": "6", "digivolveCost1": "2 from Lv.3", "digivolveCost2": "-", "cardLv": "Lv.4", "form": "Champion", "attribute": "Vaccine", "type": "Beastkin", "rarity": "C", "cardNumber": "BT6-038", "effect": "-", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Yellow", "version": "ST0amp"},
-  {"id": "BT6-048_P2", "name": "Parasaurmon", "cardImage": "assets/images/cards/eng/BT6-048_P2.jpg", "cardType": "Digimon", "dp": "5000", "playCost": "3", "digivolveCost1": "2 from Lv.3", "digivolveCost2": "-", "cardLv": "Lv.4", "form": "Champion", "attribute": "Virus", "type": "Dinosaur", "rarity": "C", "cardNumber": "BT6-048", "effect": "-", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Green", "version": "ST0amp"},
-  {"id": "EX1-048_P2", "name": "Andromon", "cardImage": "assets/images/cards/eng/EX1-048_P2.jpg", "cardType": "Digimon", "dp": "7000", "playCost": "7", "digivolveCost1": "3 from Lv.4", "digivolveCost2": "-", "cardLv": "Lv.5", "form": "Ultimate", "attribute": "Vaccine", "type": "Cyborg", "rarity": "C", "cardNumber": "EX1-048", "effect": "[When Digivolving] You may reveal the top 3 cards of your deck. Add 1 level 6 Digimon card with [Machine] in its traits among them to your hand. Trash the remaining cards.", "digivolveEffect": "[Opponent's Turn] While this Digimon has [Machine] in its traits, it gains \uff1cBlocker\uff1e. (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)", "securityEffect": "-", "notes": "", "color": "Black", "version": "ST0amp"},
-  {"id": "BT7-081_P2", "name": "Bokomon", "cardImage": "assets/images/cards/eng/BT7-081_P2.jpg", "cardType": "Digimon", "dp": "2000", "playCost": "3", "digivolveCost1": "-", "digivolveCost2": "-", "cardLv": "Lv.3", "form": "Rookie", "attribute": "Vaccine", "type": "Mutant", "rarity": "C", "cardNumber": "BT7-081", "effect": "[On Play] Reveal the top 5 cards of your deck. Add 1 card with [Hybrid] or [Ten Warriors] in its traits and 1 Tamer card among them to your hand. Place the remaining cards at the bottom of your deck in any order. [Your Turn][Once Per Turn] When one of your Tamers digivolves, gain 2 memory.", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "White", "version": "ST0amp"},
-  {"id": "BT4-084_P2", "name": "NeoDevimon", "cardImage": "assets/images/cards/eng/BT4-084_P2.jpg", "cardType": "Digimon", "dp": "7000", "playCost": "7", "digivolveCost1": "3 from Lv.4", "digivolveCost2": "-", "cardLv": "Lv.5", "form": "Ultimate", "attribute": "Virus", "type": "Fallen Angel", "rarity": "C", "cardNumber": "BT4-084", "effect": "[Opponent's Turn] When an opponent plays a Tamer, gain 3 memory.", "digivolveEffect": "[Opponent's Turn] When an opponent's Tamer becomes suspended, gain 1 memory.", "securityEffect": "-", "notes": "", "color": "Purple", "version": "ST0amp"},
-  {"id": "ST08-04_P1", "name": "Veemon", "cardImage": "assets/images/cards/eng/ST8-04_P1.jpg", "cardType": "Digimon", "dp": "2000", "playCost": "3", "digivolveCost1": "0 from Lv.2", "digivolveCost2": "-", "cardLv": "Lv.3", "form": "Rookie", "attribute": "Free", "type": "Mini Dragon", "rarity": "SR", "cardNumber": "ST08-04", "effect": "[Your Turn] If your opponent has a level 6 or higher Digimon in play, this Digimon can digivolve into an [UlforceVeedramon] in your hand for a memory cost of 4, ignoring its digivolution requirements.", "digivolveEffect": "[When Attacking] If you have 7 or fewer cards in your hand, trigger \uff1cDraw 1\uff1e. (Draw 1 card from your deck.)", "securityEffect": "-", "notes": "", "color": "Blue", "version": "ST0amp"},
-  {"id": "EX1-007_P1", "name": "Megadramon", "cardImage": "assets/images/cards/eng/EX1-007_P1.jpg", "cardType": "Digimon", "dp": "7000", "playCost": "7", "digivolveCost1": "3 from Lv.4", "digivolveCost2": "3 from Lv.4", "cardLv": "Lv.5", "form": "Ultimate", "attribute": "Virus", "type": "Cyborg", "rarity": "C", "cardNumber": "EX1-007", "effect": "[On Play] Delete up to 2 of your opponent's Digimon with 3000 DP or less.", "digivolveEffect": "[Your Turn] While this Digimon has [Machine] in its traits, it gains \uff1cSecurity Attack +1\uff1e. (This Digimon checks 1 additional security card.)", "securityEffect": "-", "notes": "", "color": "Red", "version": "ST0amp"},
-  {"id": "BT6-038_P1", "name": "Apemon", "cardImage": "assets/images/cards/eng/BT6-038_P1.jpg", "cardType": "Digimon", "dp": "8000", "playCost": "6", "digivolveCost1": "2 from Lv.3", "digivolveCost2": "-", "cardLv": "Lv.4", "form": "Champion", "attribute": "Vaccine", "type": "Beastkin", "rarity": "C", "cardNumber": "BT6-038", "effect": "-", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Yellow", "version": "ST0amp"},
-  {"id": "BT6-048_P1", "name": "Parasaurmon", "cardImage": "assets/images/cards/eng/BT6-048_P1.jpg", "cardType": "Digimon", "dp": "5000", "playCost": "3", "digivolveCost1": "2 from Lv.3", "digivolveCost2": "-", "cardLv": "Lv.4", "form": "Champion", "attribute": "Virus", "type": "Dinosaur", "rarity": "C", "cardNumber": "BT6-048", "effect": "-", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Green", "version": "ST0amp"},
-  {"id": "EX1-048_P1", "name": "Andromon", "cardImage": "assets/images/cards/eng/EX1-048_P1.jpg", "cardType": "Digimon", "dp": "7000", "playCost": "7", "digivolveCost1": "3 from Lv.4", "digivolveCost2": "-", "cardLv": "Lv.5", "form": "Ultimate", "attribute": "Vaccine", "type": "Cyborg", "rarity": "C", "cardNumber": "EX1-048", "effect": "[When Digivolving] You may reveal the top 3 cards of your deck. Add 1 level 6 Digimon card with [Machine] in its traits among them to your hand. Trash the remaining cards.", "digivolveEffect": "[Opponent's Turn] While this Digimon has [Machine] in its traits, it gains \uff1cBlocker\uff1e. (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)", "securityEffect": "-", "notes": "", "color": "Black", "version": "ST0amp"},
-  {"id": "BT7-081_P1", "name": "Bokomon", "cardImage": "assets/images/cards/eng/BT7-081_P1.jpg", "cardType": "Digimon", "dp": "2000", "playCost": "3", "digivolveCost1": "-", "digivolveCost2": "-", "cardLv": "Lv.3", "form": "Rookie", "attribute": "Vaccine", "type": "Mutant", "rarity": "C", "cardNumber": "BT7-081", "effect": "[On Play] Reveal the top 5 cards of your deck. Add 1 card with [Hybrid] or [Ten Warriors] in its traits and 1 Tamer card among them to your hand. Place the remaining cards at the bottom of your deck in any order. [Your Turn][Once Per Turn] When one of your Tamers digivolves, gain 2 memory.", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "White", "version": "ST0amp"},
-  {"id": "BT4-084_P1", "name": "NeoDevimon", "cardImage": "assets/images/cards/eng/BT4-084_P1.jpg", "cardType": "Digimon", "dp": "7000", "playCost": "7", "digivolveCost1": "3 from Lv.4", "digivolveCost2": "-", "cardLv": "Lv.5", "form": "Ultimate", "attribute": "Virus", "type": "Fallen Angel", "rarity": "C", "cardNumber": "BT4-084", "effect": "[Opponent's Turn] When an opponent plays a Tamer, gain 3 memory.", "digivolveEffect": "[Opponent's Turn] When an opponent's Tamer becomes suspended, gain 1 memory.", "securityEffect": "-", "notes": "", "color": "Purple", "version": "ST0amp"},
+  {"id": "ST01-03_P4", "name": "Agumon", "cardImage": "assets/images/cards/eng/ST1-03_P4.jpg", "cardType": "Digimon", "dp": "2000", "playCost": "3", "digivolveCost1": "0 from Lv.2", "digivolveCost2": "-", "cardLv": "Lv.3", "form": "Rookie", "attribute": "Vaccine", "type": "Reptile", "rarity": "U", "cardNumber": "ST01-03", "effect": "-", "digivolveEffect": "[Your Turn] This Digimon gets +1000 DP.", "securityEffect": "-", "notes": "", "color": "Red", "version": "Stamp"},
+  {"id": "ST06-08_P3", "name": "Devimon", "cardImage": "assets/images/cards/eng/ST6-08_P3.jpg", "cardType": "Digimon", "dp": "5000", "playCost": "6", "digivolveCost1": "1 from Lv.3", "digivolveCost2": "-", "cardLv": "Lv.4", "form": "Champion", "attribute": "Virus", "type": "Fallen Angel", "rarity": "U", "cardNumber": "ST06-08", "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)[When Attacking] Lose 2 memory.", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Purple", "version": "Stamp"},
+  {"id": "ST04-08_P3", "name": "Kabuterimon", "cardImage": "assets/images/cards/eng/ST4-08_P3.jpg", "cardType": "Digimon", "dp": "5000", "playCost": "6", "digivolveCost1": "1 from Lv.3", "digivolveCost2": "-", "cardLv": "Lv.4", "form": "Champion", "attribute": "Vaccine", "type": "Insectoid", "rarity": "U", "cardNumber": "ST04-08", "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)[When Attacking] Lose 2 memory.", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Green", "version": "Stamp"},
+  {"id": "BT5-042_P3", "name": "Knightmon", "cardImage": "assets/images/cards/eng/BT5-042_P3.jpg", "cardType": "Digimon", "dp": "7000", "playCost": "7", "digivolveCost1": "3 from Lv.4", "digivolveCost2": "-", "cardLv": "Lv.5", "form": "Ultimate", "attribute": "Data", "type": "Warrior", "rarity": "C", "cardNumber": "BT5-042", "effect": "[On Play] 1 of your opponent's Digimon gets -4000 DP for the turn.", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Yellow", "version": "Stamp"},
+  {"id": "P-008_P3", "name": "WereGarurumon", "cardImage": "assets/images/cards/eng/P-008_P3.jpg", "cardType": "Digimon", "dp": "6000", "playCost": "7", "digivolveCost1": "3 from Lv.4", "digivolveCost2": "-", "cardLv": "Lv.5", "form": "Ultimate", "attribute": "Vaccine", "type": "Beastkin", "rarity": "P", "cardNumber": "P-008", "effect": "[When Attacking][Once Per Turn] If this Digimon has a [Garurumon] digivolution card\uff0c unsuspend this Digimon.", "digivolveEffect": "[Your Turn] While you have 8 or more cards in your hand\uff0c this Digimon gains \uff1cSecurity Attack +1\uff1e. (This Digimon checks 1 additional security card.)", "securityEffect": "-", "notes": "", "color": "Blue", "version": "Stamp"},
+  {"id": "BT4-090_P4", "name": "Chaosmon", "cardImage": "assets/images/cards/eng/BT4-090_P4.jpg", "cardType": "Digimon", "dp": "14000", "playCost": "15", "digivolveCost1": "6 from Lv.6", "digivolveCost2": "6 from Lv.6", "cardLv": "Lv.7", "form": "Mega", "attribute": "Vaccine", "type": "Unique", "rarity": "R", "cardNumber": "BT4-090", "effect": "\uff1cPiercing\uff1e (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.)[When Digivolving] Unsuspend this Digimon. Then, it can attack your opponent's Digimon. This effect allows you to attack unsuspended Digimon as well.", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "White", "version": "Stamp"},
+  {"id": "BT2-066_P4", "name": "Machinedramon", "cardImage": "assets/images/cards/eng/BT2-066_P4.jpg", "cardType": "Digimon", "dp": "11000", "playCost": "12", "digivolveCost1": "4 from Lv.5", "digivolveCost2": "-", "cardLv": "Lv.6", "form": "Mega", "attribute": "Virus", "type": "Machine", "rarity": "SR", "cardNumber": "BT2-066", "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks\uff0c you may suspend this Digimon to force the opponent to attack it instead.)[On Play] Trigger \uff1cDe-Digivolve 2\uff1e  on 2 of your opponent's Digimon. (Trash up to 2 cards from the top of one of your opponent's Digimon. If it has no digivolution cards\uff0c or becomes a level 3 Digimon\uff0c you can't trash any more cards.)", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Black", "version": "Stamp"},
+  {"id": "ST08-04_P3", "name": "Veemon", "cardImage": "assets/images/cards/eng/ST8-04_P3.jpg", "cardType": "Digimon", "dp": "2000", "playCost": "3", "digivolveCost1": "0 from Lv.2", "digivolveCost2": "-", "cardLv": "Lv.3", "form": "Rookie", "attribute": "Free", "type": "Mini Dragon", "rarity": "SR", "cardNumber": "ST08-04", "effect": "[Your Turn] If your opponent has a level 6 or higher Digimon in play, this Digimon can digivolve into an [UlforceVeedramon] in your hand for a memory cost of 4, ignoring its digivolution requirements.", "digivolveEffect": "[When Attacking] If you have 7 or fewer cards in your hand, trigger \uff1cDraw 1\uff1e. (Draw 1 card from your deck.)", "securityEffect": "-", "notes": "", "color": "Blue", "version": "Stamp"},
+  {"id": "EX1-007_P3", "name": "Megadramon", "cardImage": "assets/images/cards/eng/EX1-007_P3.jpg", "cardType": "Digimon", "dp": "7000", "playCost": "7", "digivolveCost1": "3 from Lv.4", "digivolveCost2": "3 from Lv.4", "cardLv": "Lv.5", "form": "Ultimate", "attribute": "Virus", "type": "Cyborg", "rarity": "C", "cardNumber": "EX1-007", "effect": "[On Play] Delete up to 2 of your opponent's Digimon with 3000 DP or less.", "digivolveEffect": "[Your Turn] While this Digimon has [Machine] in its traits, it gains \uff1cSecurity Attack +1\uff1e. (This Digimon checks 1 additional security card.)", "securityEffect": "-", "notes": "", "color": "Red", "version": "Stamp"},
+  {"id": "BT6-038_P3", "name": "Apemon", "cardImage": "assets/images/cards/eng/BT6-038_P3.jpg", "cardType": "Digimon", "dp": "8000", "playCost": "6", "digivolveCost1": "2 from Lv.3", "digivolveCost2": "-", "cardLv": "Lv.4", "form": "Champion", "attribute": "Vaccine", "type": "Beastkin", "rarity": "C", "cardNumber": "BT6-038", "effect": "-", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Yellow", "version": "Stamp"},
+  {"id": "BT6-048_P3", "name": "Parasaurmon", "cardImage": "assets/images/cards/eng/BT6-048_P3.jpg", "cardType": "Digimon", "dp": "5000", "playCost": "3", "digivolveCost1": "2 from Lv.3", "digivolveCost2": "-", "cardLv": "Lv.4", "form": "Champion", "attribute": "Virus", "type": "Dinosaur", "rarity": "C", "cardNumber": "BT6-048", "effect": "-", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Green", "version": "Stamp"},
+  {"id": "EX1-048_P3", "name": "Andromon", "cardImage": "assets/images/cards/eng/EX1-048_P3.jpg", "cardType": "Digimon", "dp": "7000", "playCost": "7", "digivolveCost1": "3 from Lv.4", "digivolveCost2": "-", "cardLv": "Lv.5", "form": "Ultimate", "attribute": "Vaccine", "type": "Cyborg", "rarity": "C", "cardNumber": "EX1-048", "effect": "[When Digivolving] You may reveal the top 3 cards of your deck. Add 1 level 6 Digimon card with [Machine] in its traits among them to your hand. Trash the remaining cards.", "digivolveEffect": "[Opponent's Turn] While this Digimon has [Machine] in its traits, it gains \uff1cBlocker\uff1e. (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)", "securityEffect": "-", "notes": "", "color": "Black", "version": "Stamp"},
+  {"id": "BT7-081_P3", "name": "Bokomon", "cardImage": "assets/images/cards/eng/BT7-081_P3.jpg", "cardType": "Digimon", "dp": "2000", "playCost": "3", "digivolveCost1": "-", "digivolveCost2": "-", "cardLv": "Lv.3", "form": "Rookie", "attribute": "Vaccine", "type": "Mutant", "rarity": "C", "cardNumber": "BT7-081", "effect": "[On Play] Reveal the top 5 cards of your deck. Add 1 card with [Hybrid] or [Ten Warriors] in its traits and 1 Tamer card among them to your hand. Place the remaining cards at the bottom of your deck in any order. [Your Turn][Once Per Turn] When one of your Tamers digivolves, gain 2 memory.", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "White", "version": "Stamp"},
+  {"id": "BT4-084_P3", "name": "NeoDevimon", "cardImage": "assets/images/cards/eng/BT4-084_P3.jpg", "cardType": "Digimon", "dp": "7000", "playCost": "7", "digivolveCost1": "3 from Lv.4", "digivolveCost2": "-", "cardLv": "Lv.5", "form": "Ultimate", "attribute": "Virus", "type": "Fallen Angel", "rarity": "C", "cardNumber": "BT4-084", "effect": "[Opponent's Turn] When an opponent plays a Tamer, gain 3 memory.", "digivolveEffect": "[Opponent's Turn] When an opponent's Tamer becomes suspended, gain 1 memory.", "securityEffect": "-", "notes": "", "color": "Purple", "version": "Stamp"},
+  {"id": "ST01-03_P3", "name": "Agumon", "cardImage": "assets/images/cards/eng/ST1-03_P3.jpg", "cardType": "Digimon", "dp": "2000", "playCost": "3", "digivolveCost1": "0 from Lv.2", "digivolveCost2": "-", "cardLv": "Lv.3", "form": "Rookie", "attribute": "Vaccine", "type": "Reptile", "rarity": "U", "cardNumber": "ST01-03", "effect": "-", "digivolveEffect": "[Your Turn] This Digimon gets +1000 DP.", "securityEffect": "-", "notes": "", "color": "Red", "version": "Stamp"},
+  {"id": "ST06-08_P2", "name": "Devimon", "cardImage": "assets/images/cards/eng/ST6-08_P2.jpg", "cardType": "Digimon", "dp": "5000", "playCost": "6", "digivolveCost1": "1 from Lv.3", "digivolveCost2": "-", "cardLv": "Lv.4", "form": "Champion", "attribute": "Virus", "type": "Fallen Angel", "rarity": "U", "cardNumber": "ST06-08", "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)[When Attacking] Lose 2 memory.", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Purple", "version": "Stamp"},
+  {"id": "ST04-08_P2", "name": "Kabuterimon", "cardImage": "assets/images/cards/eng/ST4-08_P2.jpg", "cardType": "Digimon", "dp": "5000", "playCost": "6", "digivolveCost1": "1 from Lv.3", "digivolveCost2": "-", "cardLv": "Lv.4", "form": "Champion", "attribute": "Vaccine", "type": "Insectoid", "rarity": "U", "cardNumber": "ST04-08", "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)[When Attacking] Lose 2 memory.", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Green", "version": "Stamp"},
+  {"id": "BT5-042_P2", "name": "Knightmon", "cardImage": "assets/images/cards/eng/BT5-042_P2.jpg", "cardType": "Digimon", "dp": "7000", "playCost": "7", "digivolveCost1": "3 from Lv.4", "digivolveCost2": "-", "cardLv": "Lv.5", "form": "Ultimate", "attribute": "Data", "type": "Warrior", "rarity": "C", "cardNumber": "BT5-042", "effect": "[On Play] 1 of your opponent's Digimon gets -4000 DP for the turn.", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Yellow", "version": "Stamp"},
+  {"id": "P-008_P2", "name": "WereGarurumon", "cardImage": "assets/images/cards/eng/P-008_P2.jpg", "cardType": "Digimon", "dp": "6000", "playCost": "7", "digivolveCost1": "3 from Lv.4", "digivolveCost2": "-", "cardLv": "Lv.5", "form": "Ultimate", "attribute": "Vaccine", "type": "Beastkin", "rarity": "P", "cardNumber": "P-008", "effect": "[When Attacking][Once Per Turn] If this Digimon has a [Garurumon] digivolution card\uff0c unsuspend this Digimon.", "digivolveEffect": "[Your Turn] While you have 8 or more cards in your hand\uff0c this Digimon gains \uff1cSecurity Attack +1\uff1e. (This Digimon checks 1 additional security card.)", "securityEffect": "-", "notes": "", "color": "Blue", "version": "Stamp"},
+  {"id": "BT4-090_P3", "name": "Chaosmon", "cardImage": "assets/images/cards/eng/BT4-090_P3.jpg", "cardType": "Digimon", "dp": "14000", "playCost": "15", "digivolveCost1": "6 from Lv.6", "digivolveCost2": "6 from Lv.6", "cardLv": "Lv.7", "form": "Mega", "attribute": "Vaccine", "type": "Unique", "rarity": "R", "cardNumber": "BT4-090", "effect": "\uff1cPiercing\uff1e (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.)[When Digivolving] Unsuspend this Digimon. Then, it can attack your opponent's Digimon. This effect allows you to attack unsuspended Digimon as well.", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "White", "version": "Stamp"},
+  {"id": "BT2-066_P3", "name": "Machinedramon", "cardImage": "assets/images/cards/eng/BT2-066_P3.jpg", "cardType": "Digimon", "dp": "11000", "playCost": "12", "digivolveCost1": "4 from Lv.5", "digivolveCost2": "-", "cardLv": "Lv.6", "form": "Mega", "attribute": "Virus", "type": "Machine", "rarity": "SR", "cardNumber": "BT2-066", "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks\uff0c you may suspend this Digimon to force the opponent to attack it instead.)[On Play] Trigger \uff1cDe-Digivolve 2\uff1e  on 2 of your opponent's Digimon. (Trash up to 2 cards from the top of one of your opponent's Digimon. If it has no digivolution cards\uff0c or becomes a level 3 Digimon\uff0c you can't trash any more cards.)", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Black", "version": "Stamp"},
+  {"id": "ST08-04_P2", "name": "Veemon", "cardImage": "assets/images/cards/eng/ST8-04_P2.jpg", "cardType": "Digimon", "dp": "2000", "playCost": "3", "digivolveCost1": "0 from Lv.2", "digivolveCost2": "-", "cardLv": "Lv.3", "form": "Rookie", "attribute": "Free", "type": "Mini Dragon", "rarity": "SR", "cardNumber": "ST08-04", "effect": "[Your Turn] If your opponent has a level 6 or higher Digimon in play, this Digimon can digivolve into an [UlforceVeedramon] in your hand for a memory cost of 4, ignoring its digivolution requirements.", "digivolveEffect": "[When Attacking] If you have 7 or fewer cards in your hand, trigger \uff1cDraw 1\uff1e. (Draw 1 card from your deck.)", "securityEffect": "-", "notes": "", "color": "Blue", "version": "Stamp"},
+  {"id": "EX1-007_P2", "name": "Megadramon", "cardImage": "assets/images/cards/eng/EX1-007_P2.jpg", "cardType": "Digimon", "dp": "7000", "playCost": "7", "digivolveCost1": "3 from Lv.4", "digivolveCost2": "3 from Lv.4", "cardLv": "Lv.5", "form": "Ultimate", "attribute": "Virus", "type": "Cyborg", "rarity": "C", "cardNumber": "EX1-007", "effect": "[On Play] Delete up to 2 of your opponent's Digimon with 3000 DP or less.", "digivolveEffect": "[Your Turn] While this Digimon has [Machine] in its traits, it gains \uff1cSecurity Attack +1\uff1e. (This Digimon checks 1 additional security card.)", "securityEffect": "-", "notes": "", "color": "Red", "version": "Stamp"},
+  {"id": "BT6-038_P2", "name": "Apemon", "cardImage": "assets/images/cards/eng/BT6-038_P2.jpg", "cardType": "Digimon", "dp": "8000", "playCost": "6", "digivolveCost1": "2 from Lv.3", "digivolveCost2": "-", "cardLv": "Lv.4", "form": "Champion", "attribute": "Vaccine", "type": "Beastkin", "rarity": "C", "cardNumber": "BT6-038", "effect": "-", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Yellow", "version": "Stamp"},
+  {"id": "BT6-048_P2", "name": "Parasaurmon", "cardImage": "assets/images/cards/eng/BT6-048_P2.jpg", "cardType": "Digimon", "dp": "5000", "playCost": "3", "digivolveCost1": "2 from Lv.3", "digivolveCost2": "-", "cardLv": "Lv.4", "form": "Champion", "attribute": "Virus", "type": "Dinosaur", "rarity": "C", "cardNumber": "BT6-048", "effect": "-", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Green", "version": "Stamp"},
+  {"id": "EX1-048_P2", "name": "Andromon", "cardImage": "assets/images/cards/eng/EX1-048_P2.jpg", "cardType": "Digimon", "dp": "7000", "playCost": "7", "digivolveCost1": "3 from Lv.4", "digivolveCost2": "-", "cardLv": "Lv.5", "form": "Ultimate", "attribute": "Vaccine", "type": "Cyborg", "rarity": "C", "cardNumber": "EX1-048", "effect": "[When Digivolving] You may reveal the top 3 cards of your deck. Add 1 level 6 Digimon card with [Machine] in its traits among them to your hand. Trash the remaining cards.", "digivolveEffect": "[Opponent's Turn] While this Digimon has [Machine] in its traits, it gains \uff1cBlocker\uff1e. (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)", "securityEffect": "-", "notes": "", "color": "Black", "version": "Stamp"},
+  {"id": "BT7-081_P2", "name": "Bokomon", "cardImage": "assets/images/cards/eng/BT7-081_P2.jpg", "cardType": "Digimon", "dp": "2000", "playCost": "3", "digivolveCost1": "-", "digivolveCost2": "-", "cardLv": "Lv.3", "form": "Rookie", "attribute": "Vaccine", "type": "Mutant", "rarity": "C", "cardNumber": "BT7-081", "effect": "[On Play] Reveal the top 5 cards of your deck. Add 1 card with [Hybrid] or [Ten Warriors] in its traits and 1 Tamer card among them to your hand. Place the remaining cards at the bottom of your deck in any order. [Your Turn][Once Per Turn] When one of your Tamers digivolves, gain 2 memory.", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "White", "version": "Stamp"},
+  {"id": "BT4-084_P2", "name": "NeoDevimon", "cardImage": "assets/images/cards/eng/BT4-084_P2.jpg", "cardType": "Digimon", "dp": "7000", "playCost": "7", "digivolveCost1": "3 from Lv.4", "digivolveCost2": "-", "cardLv": "Lv.5", "form": "Ultimate", "attribute": "Virus", "type": "Fallen Angel", "rarity": "C", "cardNumber": "BT4-084", "effect": "[Opponent's Turn] When an opponent plays a Tamer, gain 3 memory.", "digivolveEffect": "[Opponent's Turn] When an opponent's Tamer becomes suspended, gain 1 memory.", "securityEffect": "-", "notes": "", "color": "Purple", "version": "Stamp"},
+  {"id": "ST08-04_P1", "name": "Veemon", "cardImage": "assets/images/cards/eng/ST8-04_P1.jpg", "cardType": "Digimon", "dp": "2000", "playCost": "3", "digivolveCost1": "0 from Lv.2", "digivolveCost2": "-", "cardLv": "Lv.3", "form": "Rookie", "attribute": "Free", "type": "Mini Dragon", "rarity": "SR", "cardNumber": "ST08-04", "effect": "[Your Turn] If your opponent has a level 6 or higher Digimon in play, this Digimon can digivolve into an [UlforceVeedramon] in your hand for a memory cost of 4, ignoring its digivolution requirements.", "digivolveEffect": "[When Attacking] If you have 7 or fewer cards in your hand, trigger \uff1cDraw 1\uff1e. (Draw 1 card from your deck.)", "securityEffect": "-", "notes": "", "color": "Blue", "version": "Stamp"},
+  {"id": "EX1-007_P1", "name": "Megadramon", "cardImage": "assets/images/cards/eng/EX1-007_P1.jpg", "cardType": "Digimon", "dp": "7000", "playCost": "7", "digivolveCost1": "3 from Lv.4", "digivolveCost2": "3 from Lv.4", "cardLv": "Lv.5", "form": "Ultimate", "attribute": "Virus", "type": "Cyborg", "rarity": "C", "cardNumber": "EX1-007", "effect": "[On Play] Delete up to 2 of your opponent's Digimon with 3000 DP or less.", "digivolveEffect": "[Your Turn] While this Digimon has [Machine] in its traits, it gains \uff1cSecurity Attack +1\uff1e. (This Digimon checks 1 additional security card.)", "securityEffect": "-", "notes": "", "color": "Red", "version": "Stamp"},
+  {"id": "BT6-038_P1", "name": "Apemon", "cardImage": "assets/images/cards/eng/BT6-038_P1.jpg", "cardType": "Digimon", "dp": "8000", "playCost": "6", "digivolveCost1": "2 from Lv.3", "digivolveCost2": "-", "cardLv": "Lv.4", "form": "Champion", "attribute": "Vaccine", "type": "Beastkin", "rarity": "C", "cardNumber": "BT6-038", "effect": "-", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Yellow", "version": "Stamp"},
+  {"id": "BT6-048_P1", "name": "Parasaurmon", "cardImage": "assets/images/cards/eng/BT6-048_P1.jpg", "cardType": "Digimon", "dp": "5000", "playCost": "3", "digivolveCost1": "2 from Lv.3", "digivolveCost2": "-", "cardLv": "Lv.4", "form": "Champion", "attribute": "Virus", "type": "Dinosaur", "rarity": "C", "cardNumber": "BT6-048", "effect": "-", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Green", "version": "Stamp"},
+  {"id": "EX1-048_P1", "name": "Andromon", "cardImage": "assets/images/cards/eng/EX1-048_P1.jpg", "cardType": "Digimon", "dp": "7000", "playCost": "7", "digivolveCost1": "3 from Lv.4", "digivolveCost2": "-", "cardLv": "Lv.5", "form": "Ultimate", "attribute": "Vaccine", "type": "Cyborg", "rarity": "C", "cardNumber": "EX1-048", "effect": "[When Digivolving] You may reveal the top 3 cards of your deck. Add 1 level 6 Digimon card with [Machine] in its traits among them to your hand. Trash the remaining cards.", "digivolveEffect": "[Opponent's Turn] While this Digimon has [Machine] in its traits, it gains \uff1cBlocker\uff1e. (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)", "securityEffect": "-", "notes": "", "color": "Black", "version": "Stamp"},
+  {"id": "BT7-081_P1", "name": "Bokomon", "cardImage": "assets/images/cards/eng/BT7-081_P1.jpg", "cardType": "Digimon", "dp": "2000", "playCost": "3", "digivolveCost1": "-", "digivolveCost2": "-", "cardLv": "Lv.3", "form": "Rookie", "attribute": "Vaccine", "type": "Mutant", "rarity": "C", "cardNumber": "BT7-081", "effect": "[On Play] Reveal the top 5 cards of your deck. Add 1 card with [Hybrid] or [Ten Warriors] in its traits and 1 Tamer card among them to your hand. Place the remaining cards at the bottom of your deck in any order. [Your Turn][Once Per Turn] When one of your Tamers digivolves, gain 2 memory.", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "White", "version": "Stamp"},
+  {"id": "BT4-084_P1", "name": "NeoDevimon", "cardImage": "assets/images/cards/eng/BT4-084_P1.jpg", "cardType": "Digimon", "dp": "7000", "playCost": "7", "digivolveCost1": "3 from Lv.4", "digivolveCost2": "-", "cardLv": "Lv.5", "form": "Ultimate", "attribute": "Virus", "type": "Fallen Angel", "rarity": "C", "cardNumber": "BT4-084", "effect": "[Opponent's Turn] When an opponent plays a Tamer, gain 3 memory.", "digivolveEffect": "[Opponent's Turn] When an opponent's Tamer becomes suspended, gain 1 memory.", "securityEffect": "-", "notes": "", "color": "Purple", "version": "Stamp"},
 {"id": "ST09-01", "name": "Minomon", "cardImage": "assets/images/cards/eng/ST9-01.jpg", "cardType": "Digi-Egg", "dp": "-", "playCost": "-", "digivolveCost1": "-", "digivolveCost2": "-", "cardLv": "Lv.2", "form": "In-Training", "attribute": "-", "type": "Larva", "rarity": "U", "cardNumber": "ST09-01", "effect": "-", "digivolveEffect": "[Your Turn] While you have a blue Digimon in play, this Digimon gets +1000 DP.", "securityEffect": "-", "notes": "", "color": "Green", "version": "Normal"},
 {"id": "ST09-02", "name": "Veemon", "cardImage": "assets/images/cards/eng/ST9-02.jpg", "cardType": "Digimon", "dp": "2000", "playCost": "3", "digivolveCost1": "0 from Lv.2", "digivolveCost2": "Green", "cardLv": "Lv.3", "form": "Rookie", "attribute": "Free", "type": "Mini Dragon", "rarity": "U", "cardNumber": "ST09-02", "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 card with [Free] in its traits among them to your hand. Place the remaining cards at the bottom of your deck in any order.", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Blue", "version": "Normal"},
 {"id": "ST09-03", "name": "Betamon", "cardImage": "assets/images/cards/eng/ST9-03.jpg", "cardType": "Digimon", "dp": "4000", "playCost": "3", "digivolveCost1": "0 from Lv.2", "digivolveCost2": "Green", "cardLv": "Lv.3", "form": "Rookie", "attribute": "Virus", "type": "Amphibian", "rarity": "C", "cardNumber": "ST09-03", "effect": "-", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Blue", "version": "Normal"},
@@ -32379,5 +32379,5 @@
 {"id": "BT8-109", "name": "Flame Hellscythe", "cardImage": "assets/images/cards/eng/BT8-109.jpg", "cardType": "Option", "dp": "-", "playCost": "6", "digivolveCost1": "-", "digivolveCost2": "-", "cardLv": "", "form": "-", "attribute": "-", "type": "-", "rarity": "R", "cardNumber": "BT8-109", "effect": "[Main] 1 of your opponent's Digimon gets -6000 DP for the turn. Then, play 1 purple or yellow Digimon card with 6000 DP or less from your trash without paying its memory cost.", "digivolveEffect": "-", "securityEffect": "[Security] Activate this card's [Main] effect.", "notes": "", "color": "Purple/Yellow", "version": "Normal"},
 {"id": "BT8-110", "name": "Armor Texture\uff01", "cardImage": "assets/images/cards/eng/BT8-110.jpg", "cardType": "Option", "dp": "-", "playCost": "-", "digivolveCost1": "-", "digivolveCost2": "-", "cardLv": "", "form": "-", "attribute": "-", "type": "-", "rarity": "C", "cardNumber": "BT8-110", "effect": "While you have a Digimon with [Armor Form] in its traits in play, you may use this card without meeting its color requirements.[Main] Trash the top card of 1 of your Digimon with [Armor Form] in its traits. Then, you may digivolve 1 of your Digimon into a Digimon card in your hand with [Armor Form] in its traits for its digivolution cost. If you do, unsuspend that Digimon.", "digivolveEffect": "-", "securityEffect": "[Security] Play 1 level 3 Digimon card with [Free] in its traits from your hand or trash without paying its memory cost.", "notes": "", "color": "White", "version": "Normal"},
 {"id": "BT8-111", "name": "Creepymon", "cardImage": "assets/images/cards/eng/BT8-111.jpg", "cardType": "Digimon", "dp": "11000", "playCost": "12", "digivolveCost1": "3 from Lv.5", "digivolveCost2": "-", "cardLv": "Lv.3", "form": "Mega", "attribute": "Virus", "type": "Demon Lord/Seven Great Demon Lords", "rarity": "SEC", "cardNumber": "BT8-111", "effect": "[When Digivolving] Trash the top 2 cards of your deck for each of your opponent's Digimon in play. If you trash 4 or more cards with this effect, you may play 1 level 5 or lower purple Digimon card from your trash without paying its memory cost.[When Attacking][Once Per Turn] For every 10 cards in your trash, trash the top 3 cards of your opponent's deck, and this Digimon gets +3000 DP for the turn.", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Purple", "version": "Normal"},
-{"id": "BT8-112", "name": "Imperialdramon Paladin Mode", "cardImage": "assets/images/cards/eng/BT8-112.jpg", "cardType": "Digimon", "dp": "16000", "playCost": "15", "digivolveCost1": "7 from Lv.6", "digivolveCost2": "Green", "cardLv": "Lv.3", "form": "Mega", "attribute": "Vaccine", "type": "Ancient Holy Warrior", "rarity": "SEC", "cardNumber": "BT8-112", "effect": "When one of your Digimon would digivolve into this card in your hand, you may return 1 white level 7 Digimon card from your trash to the bottom of your deck to reduce the digivolution cost by 4.[When Digivolving][When Attacking] You may return 1 2-color card from this Digimon's digivolution cards to the bottom of its owner's deck to trash all of the digivolution cards of 1 of your opponent's Digimon. Then, return all of your opponent's Digimon with no digivolution cards to the bottom of their owners' decks in any order.", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "White", "version": "Normal"}
+{"id": "BT8-112", "name": "Imperialdramon Paladin Mode", "cardImage": "assets/images/cards/eng/BT8-112.jpg", "cardType": "Digimon", "dp": "16000", "playCost": "15", "digivolveCost1": "7 from Lv.6", "digivolveCost2": "Green", "cardLv": "Lv.7", "form": "Mega", "attribute": "Vaccine", "type": "Ancient Holy Warrior", "rarity": "SEC", "cardNumber": "BT8-112", "effect": "When one of your Digimon would digivolve into this card in your hand, you may return 1 white level 7 Digimon card from your trash to the bottom of your deck to reduce the digivolution cost by 4.[When Digivolving][When Attacking] You may return 1 2-color card from this Digimon's digivolution cards to the bottom of its owner's deck to trash all of the digivolution cards of 1 of your opponent's Digimon. Then, return all of your opponent's Digimon with no digivolution cards to the bottom of their owners' decks in any order.", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "White", "version": "Normal"}
 ]
