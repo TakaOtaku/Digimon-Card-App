@@ -1,4 +1,4 @@
-<div class="flex flex-wrap justify-center overflow-scroll overflow-x-hidden max-h-[85vh]" [ngClass]="{'overflow-y-hidden' : cardsToShow.length === 0}">
+<div class="flex flex-wrap justify-center overflow-hidden">
   <h1 *ngIf="cardsToShow.length === 0" class="primary-color my-10 text-5xl text-bold">No cards found!</h1>
 
   <div #cardDiv *ngFor="let card of cardsToShow" class="m-1">

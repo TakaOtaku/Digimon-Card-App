@@ -1,13 +1,18 @@
 export interface IFilter {
   searchFilter: string;
-  cardCountFilter: number|null;
   setFilter: string[];
-  colorFilter: string[];
-  cardTypeFilter: string[];
+  cardCountFilter: number[];
+  levelFilter: number[];
+  playCostFilter: number[];
+  digivolutionFilter: number[];
+  dpFilter: number[];
+  rarityFilter: string[];
+  versionFilter: string[];
+  keywordFilter: string[];
   formFilter: string[];
   attributeFilter: string[];
   typeFilter: string[];
-  lvFilter: [];
-  rarityFilter: string[];
-  versionFilter: string[];
+
+  colorFilter: string[];
+  cardTypeFilter: string[];
 }

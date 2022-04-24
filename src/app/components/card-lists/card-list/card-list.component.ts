@@ -112,6 +112,7 @@ export class CardListComponent implements OnInit, OnDestroy {
    */
   addToDeck(card: ICard) {
     if (this.deckBuilder) {
+      console.log('Add Card to Deck: ' + card.id);
       this.onCardClick.emit(card.cardNumber)
     }
   }

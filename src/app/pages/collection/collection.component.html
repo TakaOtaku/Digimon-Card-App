@@ -1,5 +1,11 @@
-<digimon-filter-box></digimon-filter-box>
-<div>
-  <digimon-card-list [showCount]="75"></digimon-card-list>
+<div class="flex flex-row">
+  <div class="w-full lg:w-2/3 xl:w-4/5">
+    <digimon-search></digimon-search>
+    <digimon-card-list [showCount]="75"></digimon-card-list>
+  </div>
+  <div class="hidden lg:flex lg:w-1/3 xl:w-1/5">
+    <digimon-filter-side-box></digimon-filter-side-box>
+  </div>
 </div>
+
 

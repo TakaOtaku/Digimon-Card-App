@@ -5,12 +5,14 @@ import {IDigimonState} from "../../../models";
 import {
   addToDeck,
   changeFilter,
-  changeSort, setAccessoryDeckDialog,
+  changeSort,
+  setAccessoryDeckDialog,
   setDeck,
   setEdit,
   setExportDeckDialog,
   setImportDeckDialog,
-  setSite, setViewCardDialog
+  setSite,
+  setViewCardDialog
 } from '../digimon.actions';
 
 export const emptyDeck = {
@@ -18,6 +20,24 @@ export const emptyDeck = {
   cards: [],
   color: {name: 'White', img: 'assets/decks/white.svg'},
 };
+
+export const emptyFilter = {
+  searchFilter: '',
+  setFilter: [],
+  cardCountFilter: [0, 5],
+  levelFilter: [2, 7],
+  playCostFilter: [0, 15],
+  digivolutionFilter: [0, 6],
+  dpFilter: [1, 15],
+  rarityFilter: [],
+  versionFilter: [],
+  keywordFilter: [],
+  formFilter: [],
+  attributeFilter: [],
+  typeFilter: [],
+  colorFilter: [],
+  cardTypeFilter: [],
+}
 
 export const initialState: IDigimonState = {
   deck: emptyDeck,
@@ -29,19 +49,7 @@ export const initialState: IDigimonState = {
     accessoryDeck: {show: false, deck: emptyDeck},
     viewCard: {show: false, card: englishJSON[0]}
   },
-  filter: {
-    searchFilter: '',
-    cardCountFilter: null,
-    setFilter: [],
-    colorFilter: [],
-    cardTypeFilter: [],
-    formFilter: [],
-    attributeFilter: [],
-    typeFilter: [],
-    lvFilter: [],
-    rarityFilter: [],
-    versionFilter: []
-  },
+  filter: emptyFilter,
   sort: {
     sortBy: {
       name: 'ID',

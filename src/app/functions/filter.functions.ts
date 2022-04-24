@@ -1,8 +1,9 @@
 import {ICard, ICountCard, IFilter, ISort} from "../../models";
 
 export function filterCards(cards: ICard[], collection: ICountCard[], filter: IFilter, sort: ISort): ICard[] {
-  let filteredCards = applyCardCountFilter(cards, collection, filter.cardCountFilter);
-  filteredCards = applySearchFilter(filteredCards, filter.searchFilter);
+  let filteredCards = applySearchFilter(cards, filter.searchFilter);
+
+  filteredCards = applyCardCountFilter(filteredCards, collection, filter.cardCountFilter);
 
   filteredCards = applyFilter(filteredCards, filter.setFilter, 'id');
   filteredCards = applyFilter(filteredCards, filter.colorFilter, 'color');
@@ -10,9 +11,15 @@ export function filterCards(cards: ICard[], collection: ICountCard[], filter: IF
   filteredCards = applyFilter(filteredCards, filter.formFilter, 'form');
   filteredCards = applyFilter(filteredCards, filter.attributeFilter, 'attribute');
   filteredCards = applyFilter(filteredCards, filter.typeFilter, 'type');
-  filteredCards = applyFilter(filteredCards, filter.lvFilter, 'cardLv');
   filteredCards = applyFilter(filteredCards, filter.rarityFilter, 'rarity');
   filteredCards = applyFilter(filteredCards, filter.versionFilter, 'version');
+  filteredCards = applyFilter(filteredCards, filter.keywordFilter, 'keyword');
+
+  filteredCards = applyRangeFilter(filteredCards, filter.levelFilter, 'level');
+  filteredCards = applyRangeFilter(filteredCards, filter.playCostFilter, 'playCost');
+  filteredCards = applyRangeFilter(filteredCards, filter.digivolutionFilter, 'digivolution');
+  filteredCards = applyRangeFilter(filteredCards, filter.dpFilter, 'dp');
+
 
   filteredCards = applySortOrder(filteredCards, sort);
   return filteredCards;
@@ -43,31 +50,27 @@ function applySearchFilter(cards: ICard[], searchFilter: string): ICard[] {
   ])];
 }
 
-function applyCardCountFilter(cards: ICard[], collection: ICountCard[], cardCountFilter: number|null): ICard[] {
-  if (cardCountFilter == null) {return cards;}
+function applyCardCountFilter(cards: ICard[], collection: ICountCard[], cardCountFilter: number[]): ICard[] {
+  const tempCollection: ICountCard[] = [];
+  cards.forEach(card => {
+    const count = collection.find(cc => cc.id === card.id)?.count ?? 0;
+    tempCollection.push({id: card.id, count})
+  });
+
+  const filteredCollection = tempCollection.filter(card => {
+    if(cardCountFilter[1] === 5) {return cardCountFilter[0] <= card.count}
+    return cardCountFilter[0] <= card.count && card.count <= cardCountFilter[1];
+  });
 
   let filteredCards: ICard[] = [];
-  if (cardCountFilter === 0) {
-    const collectionCards = collection.filter(card => card.count !== cardCountFilter);
-    filteredCards = cards.filter(card => !containsCard(card.id, collectionCards))
-  } else {
-    const collectionCards = collection.filter(card => card.count === cardCountFilter);
-    filteredCards = cards.filter(card => containsCard(card.id, collectionCards))
-  }
+  filteredCollection.forEach(card => {
+    filteredCards.push(cards.find(value => value.id === card.id)!);
+  })
+
   return [...new Set([...filteredCards])];
 }
 
-function containsCard(cardId: string, collectionArray: ICountCard[]): boolean {
-  let cardInCollection = false;
-  collectionArray.forEach(collection => {
-    if (cardId === collection.id) {
-      cardInCollection = true;
-    }
-  });
-  return cardInCollection;
-}
-
-function applyFilter(cards: ICard[], filter: string[], key: string): ICard[] {
+function applyFilter(cards: ICard[], filter: any[], key: string): ICard[] {
   if(filter.length === 0) {return cards;}
 
   let returnArray = [] as ICard[];
@@ -79,9 +82,13 @@ function applyFilter(cards: ICard[], filter: string[], key: string): ICard[] {
       )]);
       break;
     case 'color':
-      filter.forEach(filter => returnArray = [...new Set(
-        [...returnArray,...cards.filter(cards => cards['color'].includes(filter))]
-      )]);
+      filter.forEach(filter => {
+        if(filter === 'Multi') {
+          returnArray = [...new Set([...returnArray, ...cards.filter(cards => cards['color'].includes('/'))])];
+        } else {
+          returnArray = [...new Set([...returnArray, ...cards.filter(cards => cards['color'].includes(filter))])];
+        }
+      });
       break;
     case 'cardType':
       filter.forEach(filter => returnArray = [...new Set(
@@ -128,6 +135,67 @@ function applyFilter(cards: ICard[], filter: string[], key: string): ICard[] {
         [...returnArray,...cards.filter(cards => cards['version'].includes(filter))]
       )]);
       break;
+    case 'keyword':
+      filter.forEach(filter => returnArray = [...new Set(
+        [...returnArray,...cards.filter(cards =>
+          cards['effect'].includes(filter) ||
+          cards['digivolveEffect'].includes(filter))]
+      )]);
+      break;
+  }
+
+  return returnArray;
+}
+
+function applyRangeFilter(cards: ICard[], filter: number[], key: string): ICard[] {
+  let returnArray = [] as ICard[];
+  switch (key) {
+    default:
+    case 'level':
+      if(filter[0] === 2 && filter[1] === 7) {return  cards}
+
+      return [...new Set([...cards.filter(cards => {
+        const level: number = +cards['cardLv'].substring(3) >>> 0;
+        return filter[0] <= level && filter[1] >= level
+      })])];
+    case 'playCost':
+      if(filter[0] === 0 && filter[1] === 15) {return  cards}
+
+      return [...new Set([...cards.filter(cards => {
+        const playCost: number = +cards['playCost'] >>> 0;
+        return filter[0] <= playCost && filter[1] >= playCost
+      })])];
+    case 'digivolution':
+      if(filter[0] === 0 && filter[1] === 6) {return  cards}
+
+      return [...new Set([...cards.filter(cards => {
+        const digivolution1: number = +cards['digivolveCost1'].split(' ')[0] >>> 0;
+        const digivolution2: number = +cards['digivolveCost2'].split(' ')[0] >>> 0;
+
+        if(cards['digivolveCost1'] === '-') {
+          return false;
+        }
+        if (cards['digivolveCost2'] === '-') {
+          return (filter[0] <= digivolution1 && filter[1] >= digivolution1);
+        }
+        return (filter[0] <= digivolution1 && filter[1] >= digivolution1) ||
+          (filter[0] <= digivolution2 && filter[1] >= digivolution2);
+      })])];
+    case 'dp':
+      if(filter[0] === 1 && filter[1] === 15) {return  cards}
+
+      return [...new Set([...cards.filter(cards => {
+        const dp: number = +cards['dp'] >>> 0;
+
+        if(cards['dp'] === '-') {
+          return false;
+        }
+
+        const a: number = +(filter[0]+'000') >>> 0;
+        const b: number = +(filter[1]+'000') >>> 0;
+
+        return a <= dp && b >= dp
+      })])];
   }
 
   return returnArray;
@@ -154,7 +222,7 @@ export function dynamicSort(property: string): any {
   }
 }
 
-function dynamicSortNumber(property: string): any {
+export function dynamicSortNumber(property: string): any {
   let sortOrder = 1;
   if(property[0] === "-") {
     sortOrder = -1;

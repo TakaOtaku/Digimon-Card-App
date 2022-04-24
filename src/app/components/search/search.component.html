@@ -1,0 +1,31 @@
+<div class="flex flex-col pl-7 py-3 mb-2 surface-ground">
+  <div class="self-center w-full lg:w-10/12 xl:w-8/12 inline-flex mr-10">
+    <span class="p-input-icon-left w-full" [ngStyle]="{display: 'inline-flex'}">
+      <i class="pi pi-search"></i>
+      <input type="text" pInputText [formControl]="searchFilter" placeholder="Search" class="w-full">
+    </span>
+
+    <button (click)="this.display = true" pButton type="button" icon="pi pi-filter-fill" class="lg:hidden" label="Filter"></button>
+  </div>
+
+  <div class="mt-4 lg:mx-10 flex flex-col lg:flex-row self-center justify-between w-full lg:w-10/12 xl:w-8/12">
+    <div>
+      <p-selectButton class="Colors" [options]="colors" [formControl]="colorFilter" [multiple]="true">
+        <ng-template let-color>
+          <i class="pi" [ngClass]="
+          {'pi-check': colorChecked(color), 'pi-times': !colorChecked(color)}"></i>
+        </ng-template>
+      </p-selectButton>
+    </div>
+
+    <div>
+      <p-selectButton
+        [options]="cardTypes" [formControl]="cardTypeFilter" [multiple]="true">
+      </p-selectButton>
+    </div>
+  </div>
+</div>
+
+<p-dialog header="Filter and Sort" [(visible)]="display" styleClass="w-[95vw] h-[95vh]" [baseZIndex]="10000">
+  <digimon-filter-side-box></digimon-filter-side-box>
+</p-dialog>

@@ -1,6 +1,6 @@
 <p-toast></p-toast>
 
-<div class="max-h-screen overflow-hidden">
+<div class="max-h-screen" [ngClass]="{'overflow-hidden' : site !== SITES.Collection}">
   <digimon-navbar></digimon-navbar>
 
   <digimon-collection      *ngIf="site === SITES.Collection"></digimon-collection>

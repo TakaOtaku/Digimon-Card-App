@@ -41,6 +41,41 @@ export const GroupedSets = [
 
 export const CardTypes: string[] = ['Digi-Egg', 'Digimon', 'Tamer', 'Option'];
 
+export const Keywords: string[] = [
+  '\uff1cDraw 1\uff1e',
+  '\uff1cDraw 2\uff1e',
+  '\uff1cDraw 3\uff1e',
+  '\uff1cPiercing\uff1e',
+  '\uff1cJamming\uff1e',
+  '\uff1cRecovery +1 (Deck)\uff1e',
+  '\uff1cRecovery +2 (Deck)\uff1e',
+  '\uff1cSecurity Attack +1\uff1e',
+  '\uff1cSecurity Attack +2\uff1e',
+  '\uff1cSecurity Attack -1\uff1e',
+  '\uff1cSecurity Attack -2\uff1e',
+  '\uff1cSecurity Attack -3\uff1e',
+  '\uff1cReboot\uff1c',
+  '\uff1cDigisorption\uff1e',
+  '\uff1cDigisorption -2\uff1e',
+  '\uff1cDigisorption -3\uff1e',
+  '\uff1cDe-Digivolve 1\uff1e',
+  '\uff1cDe-Digivolve 2\uff1e',
+  '\uff1cDe-Digivolve 3\uff1e',
+  '\uff1cDe-Digivolve 4\uff1e',
+  '\uff1cDigi-Burst\uff1e',
+  '\uff1cDigi-Burst 1\uff1e',
+  '\uff1cDigi-Burst 2\uff1e',
+  '\uff1cDigi-Burst 3\uff1e',
+  '\uff1cDigi-Burst 4\uff1e',
+  '\uff1cRush\uff1c',
+  '\uff1cBlitz\uff1c',
+  '\uff1cDelay\uff1c',
+  '\uff1cDecoy',
+  'DNA Digivolution: ',
+  '\uff1cRetaliation\uff1e',
+  '\uff1cArmor Purge\uff1e'
+];
+
 export const Colors: string[] = ['Red', 'Blue', 'Yellow', 'Green', 'Black', 'Purple', 'White', 'Multi'];
 
 export const Forms: string[] = ["In-Training", "Rookie", "Champion", "Ultimate", "Mega", "Hybrid", "Armor Form", "D-Reaper"];
@@ -167,7 +202,6 @@ export const Types: string[] = [
   "Ten Warriors",
   "Three Great Angels",
   "Three Musketeers",
-  "Thron",
   "Throne",
   "Undead",
   "Unidentified",

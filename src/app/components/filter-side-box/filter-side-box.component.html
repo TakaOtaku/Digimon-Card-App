@@ -1,0 +1,84 @@
+<div class="flex flex-col px-3 surface-ground h-full">
+  <button
+    class="w-[150px] self-center rounded-tl-lg rounded br-lg my-5"
+    pButton type="button" label="Reset" (click)="reset()"></button>
+
+  <digimon-sort-buttons class="self-center inline-flex lg:hidden mx-auto my-5"></digimon-sort-buttons>
+
+  <p-multiSelect styleClass="w-full" [filter]="false" [showToggleAll]="false" [options]="groupedSets" [showHeader]="false" [group]="true"
+                 [formControl]="setFilter" defaultLabel="Set" scrollHeight="250px" display="chip">
+    <ng-template let-group pTemplate="group">
+      <div class="flex align-items-center">
+        <span>{{group.label}}</span>
+      </div>
+    </ng-template>
+  </p-multiSelect>
+
+  <h1 class="primary-color mt-5">Cards in Collection</h1>
+  <div class="flex flex-row mx-5">
+    <p class="text-white min-w-[35px]">{{cardCountSlider[0]}}</p>
+    <p-slider [(ngModel)]="cardCountSlider" (onSlideEnd)="updateCardCountSlider()"
+              [range]="true" [min]="0" [max]="5" class="flex-grow mx-5 self-center"></p-slider>
+    <p class="text-white min-w-[35px]">{{cardCountSlider[1] === 5 ? '5+' : cardCountSlider[1]}}</p>
+  </div>
+
+  <h1 class="primary-color mt-5">Level</h1>
+  <div class="flex flex-row mx-5">
+    <p class="text-white min-w-[35px]">{{levelSlider[0]}}</p>
+    <p-slider [(ngModel)]="levelSlider" (onSlideEnd)="updateLevelSlider()"
+              [range]="true" [min]="2" [max]="7" class="flex-grow mx-5 self-center"></p-slider>
+    <p class="text-white min-w-[35px]">{{levelSlider[1] === 7 ? '7+' : levelSlider[1]}}</p>
+  </div>
+
+  <h1 class="primary-color mt-5">Play Cost</h1>
+  <div class="flex flex-row mx-5">
+    <p class="text-white min-w-[35px]">{{digivolutionSlider[0]}}</p>
+    <p-slider [(ngModel)]="playCostSlider" (onSlideEnd)="updatePlayCostSlider()"
+              [range]="true" [min]="0" [max]="15" class="flex-grow mx-5 self-center"></p-slider>
+    <p class="text-white min-w-[35px]">{{playCostSlider[1] === 15 ? '15+' : playCostSlider[1]}}</p>
+  </div>
+
+  <h1 class="primary-color mt-5">Digivolve Cost</h1>
+  <div class="flex flex-row mx-5">
+    <p class="text-white min-w-[35px]">{{digivolutionSlider[0]}}</p>
+    <p-slider [(ngModel)]="digivolutionSlider" (onSlideEnd)="updateDigivolutionSlider()"
+              [range]="true" [min]="0" [max]="6" class="flex-grow mx-5 self-center"></p-slider>
+    <p class="text-white min-w-[35px]">{{digivolutionSlider[1] === 6 ? '6+' : digivolutionSlider[1]}}</p>
+  </div>
+
+  <h1 class="primary-color mt-5">DP</h1>
+  <div class="flex flex-row m-5">
+    <p class="text-white min-w-[35px]">{{dpSlider[0]}}000</p>
+    <p-slider [(ngModel)]="dpSlider" (onSlideEnd)="updateDPSlider()"
+              [range]="true" [min]="1" [max]="15" class="flex-grow mx-5 self-center"></p-slider>
+    <p class="text-white min-w-[35px]">{{dpSlider[1] === 15 ? '15000+' : dpSlider[1] + '000'}}</p>
+  </div>
+
+  <h1 class="primary-color mt-5">Rarity</h1>
+  <p-selectButton
+    [options]="rarities" [formControl]="rarityFilter" [multiple]="true">
+  </p-selectButton>
+
+  <h1 class="primary-color mt-5">Version</h1>
+  <p-selectButton
+    [options]="versions" [formControl]="versionFilter" [multiple]="true">
+  </p-selectButton>
+
+  <p-multiSelect styleClass="w-full mt-2" [filter]="true" [showToggleAll]="false" [options]="keywords" [showHeader]="true"
+                 [formControl]="keywordFilter" defaultLabel="Select a Keyword" scrollHeight="250px" display="chip">
+  </p-multiSelect>
+
+  <p-multiSelect styleClass="w-full mt-2" [filter]="false" [showToggleAll]="false" [options]="forms" [showHeader]="false"
+                 [formControl]="formFilter" defaultLabel="Select a Form" scrollHeight="250px" display="chip">
+  </p-multiSelect>
+
+  <p-multiSelect styleClass="w-full mt-2" [filter]="false" [showToggleAll]="false" [options]="attributes" [showHeader]="false"
+                 [formControl]="attributeFilter" defaultLabel="Select an Attribute" scrollHeight="250px" display="chip">
+  </p-multiSelect>
+
+  <p-multiSelect styleClass="w-full mt-2 mb-10" [filter]="true" [showToggleAll]="false" [options]="types" [showHeader]="true"
+                 [formControl]="typeFilter" defaultLabel="Select a Type" scrollHeight="250px" display="chip">
+  </p-multiSelect>
+
+
+</div>

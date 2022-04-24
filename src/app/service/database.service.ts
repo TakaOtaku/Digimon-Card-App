@@ -2,8 +2,7 @@ import {Injectable} from '@angular/core';
 import {AngularFireDatabase} from "@angular/fire/compat/database";
 import {get, getDatabase, ref, set, update} from "@angular/fire/database";
 import {DataSnapshot} from "@firebase/database";
-import {Card} from "primeng/card";
-import {BehaviorSubject, empty, first, Subject} from "rxjs";
+import {BehaviorSubject, first, Subject} from "rxjs";
 import {IDeck, ISave, IUser} from "../../models";
 import {CARDSET} from "../../models/card-set.enum";
 import {emptySettings} from "../store/reducers/save.reducer";
@@ -81,8 +80,7 @@ export class DatabaseService {
       save = {...save, settings: {...save.settings, showAACards: true}}
     }
 
-    let newSave: ISave = save;
-    return newSave;
+    return save;
   }
 
   setSave(uId: string, save: ISave) {

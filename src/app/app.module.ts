@@ -12,6 +12,7 @@ import {StoreModule} from '@ngrx/store';
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {LazyLoadImageModule} from "ng-lazyload-image";
 import {ToastrModule} from "ngx-toastr";
+import {StyleClassModule} from "primeng/styleclass";
 import {environment} from "../environments/environment";
 import {AppRoutingModule} from "./app-routing.module";
 import {AppComponent} from './app.component';
@@ -44,6 +45,8 @@ import {DigimonEffects} from "./store/digimon.effects";
 import * as DigimonCards from "./store/reducers/digimon-card.reducers";
 import * as Digimon from "./store/reducers/digimon.reducers";
 import * as Save from "./store/reducers/save.reducer";
+import { SearchComponent } from './components/search/search.component';
+import { FilterSideBoxComponent } from './components/filter-side-box/filter-side-box.component';
 
 
 @NgModule({
@@ -70,40 +73,43 @@ import * as Save from "./store/reducers/save.reducer";
     CollectionStatsDialogComponent,
     CollectionComponent,
     SettingsDialogComponent,
+    SearchComponent,
+    FilterSideBoxComponent,
   ],
-  imports: [
-    PrimeNGModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    BrowserModule,
-    BrowserAnimationsModule,
+    imports: [
+        PrimeNGModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        BrowserModule,
+        BrowserAnimationsModule,
 
-    LazyLoadImageModule,
+        LazyLoadImageModule,
 
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule,
-    AngularFireDatabaseModule,
-    AngularFireAnalyticsModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFireAuthModule,
+        AngularFireDatabaseModule,
+        AngularFireAnalyticsModule,
 
-    ToastrModule.forRoot({}),
+        ToastrModule.forRoot({}),
 
-    StoreModule.forRoot(
-        {digimon: Digimon.digimonReducer, digimonCards: DigimonCards.digimonCardReducer, save: Save.saveReducer},
-        {
-            initialState: {
-                digimon: Digimon.initialState,
-                digimonCards: DigimonCards.initialState,
-                save: Save.initialState
-            }
+        StoreModule.forRoot(
+            {digimon: Digimon.digimonReducer, digimonCards: DigimonCards.digimonCardReducer, save: Save.saveReducer},
+            {
+                initialState: {
+                    digimon: Digimon.initialState,
+                    digimonCards: DigimonCards.initialState,
+                    save: Save.initialState
+                }
+            }),
+        StoreDevtoolsModule.instrument({
+            name: 'Digimon Card Collector',
+            logOnly: environment.production
         }),
-    StoreDevtoolsModule.instrument({
-        name: 'Digimon Card Collector',
-        logOnly: environment.production
-    }),
-    EffectsModule.forRoot([DigimonEffects])
-  ],
+        EffectsModule.forRoot([DigimonEffects]),
+        StyleClassModule
+    ],
   providers: [ReactiveFormsModule, AuthService, DatabaseService],
   bootstrap: [AppComponent]
 })

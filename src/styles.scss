@@ -29,3 +29,64 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
 .text-shadow {
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
+
+.pentagon {
+  position: relative;
+  width: 19px;
+  box-sizing: content-box;
+  border-width: 17px 6px 0;
+  border-style: solid;
+  border-color: red transparent;
+}
+.pentagon:before {
+  content: "";
+  position: absolute;
+  height: 0;
+  width: 0;
+  top: -29px;
+  left: -6px;
+  border-width: 0 15px 12px;
+  border-style: solid;
+  border-color: transparent transparent red;
+}
+
+.Red {
+  border-color: white !important;
+  color: white !important;
+  background: #ef1919 !important;
+}
+.Blue {
+  background: #19a0e3;
+}
+.Yellow {
+  background: #ffd619;
+}
+.Green {
+  background: #19b383;
+}
+.Black {
+  background: #191919;
+}
+.Purple {
+  background: #8d6fdb;
+}
+.White {
+  background: #ffffff;
+}
+.Multi {
+  background: pink;
+}
+
+digimon-multi-select {
+  ::ng-deep .p-multiselect {
+    max-width: 10rem;
+  }
+}
+
+.dialog {
+  ::ng-deep .p-multiselect {
+    width: 100%;
+  }
+}
+
+

@@ -1,10 +1,10 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl} from "@angular/forms";
 import {Store} from "@ngrx/store";
 import {Subject, takeUntil} from "rxjs";
+import {IFilter} from "../../../models";
 import {changeFilter} from "../../store/digimon.actions";
 import {selectFilter} from "../../store/digimon.selectors";
-import {Attributes, CardTypes, Colors, Forms, GroupedSets, Lvs, Rarities, Types, Versions} from "./filterData";
 
 @Component({
   selector: 'digimon-filter-box',
@@ -16,69 +16,28 @@ export class FilterBoxComponent implements OnInit, OnDestroy {
 
   display = false;
 
-  private formGroup: FormGroup;
   searchFilter = new FormControl('');
-  countFilter = new FormControl();
 
-  setFilter = new FormControl([]);
-  groupedSets = GroupedSets;
+  private filter: IFilter;
+  private onDestroy$ = new Subject();
 
-  cardTypeFilter = new FormControl([]);
-  cardTypes = CardTypes;
-
-  colorFilter = new FormControl([]);
-  colors = Colors;
-
-  formFilter = new FormControl([]);
-  forms = Forms;
-
-  attributeFilter = new FormControl([]);
-  attributes = Attributes;
-
-  typeFilter = new FormControl([]);
-  types = Types;
-
-  lvFilter = new FormControl([]);
-  lvs = Lvs;
-
-  rarityFilter = new FormControl([]);
-  rarities = Rarities;
-
-  versionFilter = new FormControl([]);
-  versions = Versions;
-
-  private destroy$ = new Subject();
-
-  constructor(private store: Store) {
-    this.formGroup = new FormGroup({
-      searchFilter: this.searchFilter,
-      cardCountFilter: this.countFilter,
-      setFilter: this.setFilter,
-      colorFilter: this.colorFilter,
-      cardTypeFilter: this.cardTypeFilter,
-      formFilter: this.formFilter,
-      attributeFilter: this.attributeFilter,
-      typeFilter: this.typeFilter,
-      lvFilter: this.lvFilter,
-      rarityFilter: this.rarityFilter,
-      versionFilter: this.versionFilter,
-    })
-  }
+  constructor(private store: Store) {}
 
   ngOnInit(): void {
-    this.store.select(selectFilter).pipe(takeUntil(this.destroy$))
+    this.store.select(selectFilter).pipe(takeUntil(this.onDestroy$))
       .subscribe((filter) => {
-        this.formGroup.setValue(filter, {emitEvent: false});
+        this.filter = filter;
+        this.searchFilter.setValue(filter.searchFilter, {emitEvent: false});
       });
 
-    this.formGroup.valueChanges
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((filter) => {
-        this.store.dispatch(changeFilter({filter}))
+    this.searchFilter.valueChanges
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((searchFilter) => {
+        this.store.dispatch(changeFilter({filter: {...this.filter, searchFilter}}))
       });
   }
 
   ngOnDestroy() {
-    this.destroy$.next(true);
+    this.onDestroy$.next(true);
   }
 }
