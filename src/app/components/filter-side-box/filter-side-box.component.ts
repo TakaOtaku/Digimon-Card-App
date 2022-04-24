@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {Store} from "@ngrx/store";
 import {Subject, takeUntil} from "rxjs";
@@ -6,13 +6,26 @@ import {IFilter} from "../../../models";
 import {changeFilter} from "../../store/digimon.actions";
 import {selectFilter} from "../../store/digimon.selectors";
 import {emptyFilter} from "../../store/reducers/digimon.reducers";
-import {Attributes, Forms, GroupedSets, Keywords, Rarities, Types, Versions} from "../filter-box/filterData";
+import {
+  Attributes,
+  CardTypes,
+  Colors,
+  Forms,
+  GroupedSets,
+  Keywords,
+  Rarities,
+  Types,
+  Versions
+} from "../filter-box/filterData";
 
 @Component({
   selector: 'digimon-filter-side-box',
-  templateUrl: './filter-side-box.component.html'
+  templateUrl: './filter-side-box.component.html',
+  styleUrls: ['./filter-side-box.component.scss']
 })
 export class FilterSideBoxComponent implements OnInit {
+  @Input() public showColors: boolean;
+
   setFilter = new FormControl([]);
   rarityFilter = new FormControl([]);
   versionFilter = new FormControl([]);
@@ -20,6 +33,9 @@ export class FilterSideBoxComponent implements OnInit {
   formFilter = new FormControl([]);
   attributeFilter = new FormControl([]);
   typeFilter = new FormControl([]);
+  colorFilter = new FormControl([]);
+  cardTypeFilter = new FormControl([]);
+
 
   filterFormGroup: FormGroup = new FormGroup({
     setFilter: this.setFilter,
@@ -29,6 +45,8 @@ export class FilterSideBoxComponent implements OnInit {
     formFilter: this.formFilter,
     attributeFilter: this.attributeFilter,
     typeFilter: this.typeFilter,
+    cardTypeFilter: this.cardTypeFilter,
+    colorFilter: this.colorFilter
   });
 
   cardCountSlider: number[] = [0,5];
@@ -44,6 +62,8 @@ export class FilterSideBoxComponent implements OnInit {
   forms = Forms;
   attributes = Attributes;
   types = Types;
+  cardTypes = CardTypes;
+  colors = Colors;
 
   private filter: IFilter;
   private onDestroy$ = new Subject();
@@ -62,6 +82,8 @@ export class FilterSideBoxComponent implements OnInit {
         this.formFilter.setValue(filter.formFilter, {emitEvent: false});
         this.attributeFilter.setValue(filter.attributeFilter, {emitEvent: false});
         this.typeFilter.setValue(filter.typeFilter, {emitEvent: false});
+        this.cardTypeFilter.setValue(filter.cardTypeFilter, {emitEvent: false});
+        this.colorFilter.setValue(filter.colorFilter, {emitEvent: false});
 
         this.cardCountSlider = [...new Set(filter.cardCountFilter)];
         this.levelSlider = [...new Set(filter.levelFilter)];
@@ -100,5 +122,9 @@ export class FilterSideBoxComponent implements OnInit {
   }
   updateDPSlider() {
     this.store.dispatch(changeFilter({filter: {...this.filter, dpFilter: this.dpSlider}}));
+  }
+
+  colorChecked(color: string): boolean {
+    return this.colorFilter.value.find((value: string) => value === color)
   }
 }

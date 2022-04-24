@@ -9,6 +9,6 @@
   </div>
 </div>
 
-<p-dialog header="Filter and Sort" [(visible)]="display" styleClass="w-[95vw] h-[95vh]" [baseZIndex]="10000">
-  <digimon-filter-side-box></digimon-filter-side-box>
+<p-dialog header="Filter and Sort" [(visible)]="display" styleClass="w-[95vw] h-[95vh] surface-ground" [baseZIndex]="10000">
+  <digimon-filter-side-box [showColors]="compact"></digimon-filter-side-box>
 </p-dialog>

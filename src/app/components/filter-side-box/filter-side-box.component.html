@@ -60,8 +60,21 @@
   </p-selectButton>
 
   <h1 class="primary-color mt-5">Version</h1>
-  <p-selectButton
+  <p-selectButton [ngClass]="{'mb-5': !showColors}"
     [options]="versions" [formControl]="versionFilter" [multiple]="true">
+  </p-selectButton>
+
+  <h1 *ngIf="showColors" class="primary-color mt-5">Colors</h1>
+  <p-selectButton *ngIf="showColors" class="Colors" [options]="colors" [formControl]="colorFilter" [multiple]="true">
+    <ng-template let-color>
+      <i class="pi" [ngClass]="
+          {'pi-check': colorChecked(color), 'pi-times': !colorChecked(color)}"></i>
+    </ng-template>
+  </p-selectButton>
+
+  <h1 *ngIf="showColors" class="primary-color mt-5">Card Type</h1>
+  <p-selectButton *ngIf="showColors" class="mb-5"
+    [options]="cardTypes" [formControl]="cardTypeFilter" [multiple]="true">
   </p-selectButton>
 
   <p-multiSelect styleClass="w-full mt-2" [filter]="true" [showToggleAll]="false" [options]="keywords" [showHeader]="true"
@@ -79,6 +92,4 @@
   <p-multiSelect styleClass="w-full mt-2 mb-10" [filter]="true" [showToggleAll]="false" [options]="types" [showHeader]="true"
                  [formControl]="typeFilter" defaultLabel="Select a Type" scrollHeight="250px" display="chip">
   </p-multiSelect>
-
-
 </div>

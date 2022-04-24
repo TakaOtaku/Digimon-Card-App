@@ -18,3 +18,12 @@ digimon-multi-select {
     padding: 0.1rem 0;
   }
 }
+
+p-dialog::ng-deep {
+  .p-dialog-header {
+    background-color: var(--surface-ground);
+  }
+  .p-dialog-content {
+    background-color: var(--surface-ground);
+  }
+}
