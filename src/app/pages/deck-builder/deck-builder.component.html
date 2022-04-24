@@ -52,7 +52,7 @@
     </div>
   </div>
 
-  <div class="xl:w-[40vw] xl:h-[calc(100vh-58px)] border-2 border-slate-300 m-1 h-[300px]">
+  <div class="xl:w-[40vw] xl:h-[calc(100vh-58px)] border-2 border-slate-300 m-1 h-[300px] overflow-y-scroll">
     <digimon-filter-box [compact]="true" class="w-100"></digimon-filter-box>
     <digimon-card-list (onCardClick)="onCardClick($event)" [showCount]="50" class="w-100 hidden xl:block"></digimon-card-list>
     <digimon-pagination-card-list (onCardClick)="onCardClick($event)" class="xl:hidden"></digimon-pagination-card-list>
