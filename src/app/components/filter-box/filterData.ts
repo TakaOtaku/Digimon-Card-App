@@ -55,7 +55,7 @@ export const Keywords: string[] = [
   '\uff1cSecurity Attack -1\uff1e',
   '\uff1cSecurity Attack -2\uff1e',
   '\uff1cSecurity Attack -3\uff1e',
-  '\uff1cReboot\uff1c',
+  '\uff1cReboot\uff1e',
   '\uff1cDigisorption\uff1e',
   '\uff1cDigisorption -2\uff1e',
   '\uff1cDigisorption -3\uff1e',
