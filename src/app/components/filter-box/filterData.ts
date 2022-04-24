@@ -68,6 +68,7 @@ export const Keywords: string[] = [
   '\uff1cDigi-Burst 2\uff1e',
   '\uff1cDigi-Burst 3\uff1e',
   '\uff1cDigi-Burst 4\uff1e',
+  '\uff1cDigi-Burst up to 4\uff1e',
   '\uff1cRush\uff1e',
   '\uff1cBlitz\uff1e',
   '\uff1cDelay\uff1e',
