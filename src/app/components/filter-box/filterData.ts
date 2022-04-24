@@ -42,6 +42,7 @@ export const GroupedSets = [
 export const CardTypes: string[] = ['Digi-Egg', 'Digimon', 'Tamer', 'Option'];
 
 export const Keywords: string[] = [
+  'Digivolve: ',
   '\uff1cDraw 1\uff1e',
   '\uff1cDraw 2\uff1e',
   '\uff1cDraw 3\uff1e',
@@ -67,11 +68,10 @@ export const Keywords: string[] = [
   '\uff1cDigi-Burst 2\uff1e',
   '\uff1cDigi-Burst 3\uff1e',
   '\uff1cDigi-Burst 4\uff1e',
-  '\uff1cRush\uff1c',
-  '\uff1cBlitz\uff1c',
-  '\uff1cDelay\uff1c',
+  '\uff1cRush\uff1e',
+  '\uff1cBlitz\uff1e',
+  '\uff1cDelay\uff1e',
   '\uff1cDecoy',
-  'DNA Digivolution: ',
   '\uff1cRetaliation\uff1e',
   '\uff1cArmor Purge\uff1e'
 ];

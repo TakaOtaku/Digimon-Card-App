@@ -55,6 +55,14 @@ export class FilterSideBoxComponent implements OnInit {
       .subscribe((filter) => {
         this.filter = filter;
 
+        this.setFilter.setValue(filter.setFilter, {emitEvent: false});
+        this.rarityFilter.setValue(filter.rarityFilter, {emitEvent: false});
+        this.versionFilter.setValue(filter.versionFilter, {emitEvent: false});
+        this.keywordFilter.setValue(filter.keywordFilter, {emitEvent: false});
+        this.formFilter.setValue(filter.formFilter, {emitEvent: false});
+        this.attributeFilter.setValue(filter.attributeFilter, {emitEvent: false});
+        this.typeFilter.setValue(filter.typeFilter, {emitEvent: false});
+
         this.cardCountSlider = [...new Set(filter.cardCountFilter)];
         this.levelSlider = [...new Set(filter.levelFilter)];
         this.playCostSlider = [...new Set(filter.playCostFilter)];
