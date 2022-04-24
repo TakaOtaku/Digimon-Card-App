@@ -71,7 +71,9 @@ export const Keywords: string[] = [
   '\uff1cRush\uff1e',
   '\uff1cBlitz\uff1e',
   '\uff1cDelay\uff1e',
-  '\uff1cDecoy',
+  '\uff1cDecoy (Black)\uff1e',
+  '\uff1cDecoy (Black/White)\uff1e',
+  '\uff1cDecoy (Red)(Black)\uff1e',
   '\uff1cRetaliation\uff1e',
   '\uff1cArmor Purge\uff1e'
 ];
