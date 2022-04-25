@@ -4,7 +4,7 @@ import {ConfirmationService, MessageService} from "primeng/api";
 import {filter, Subject, takeUntil} from "rxjs";
 import {tagsList} from 'src/models/tags.data';
 import * as uuid from "uuid";
-import {ColorMap, ICard, ICountCard, IDeck, IDeckCard} from "../../../models";
+import {ColorMap, ColorOrderMap, ICard, ICountCard, IDeck, IDeckCard} from "../../../models";
 import {ITag} from "../../../models/interfaces/tag.interface";
 import {AuthService} from "../../service/auth.service";
 import {DatabaseService} from "../../service/database.service";
@@ -304,18 +304,24 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
    */
   deckSort() {
     const eggs = this.mainDeck.filter(card => card.cardType === 'Digi-Egg').sort((a, b) =>
-      a.color.localeCompare(b.color) || a.id.localeCompare(b.id));
+      DeckBuilderComponent.sortColors(a.color, b.color) || a.id.localeCompare(b.id));
 
     const digimon = this.mainDeck.filter(card => card.cardType === 'Digimon').sort((a, b) =>
-      a.color.localeCompare(b.color) || a.id.localeCompare(b.id));
+      DeckBuilderComponent.sortColors(a.color, b.color) || a.cardLv.localeCompare(b.cardLv) || a.id.localeCompare(b.id));
 
     const tamer = this.mainDeck.filter(card => card.cardType === 'Tamer').sort((a, b) =>
-      a.color.localeCompare(b.color) || a.id.localeCompare(b.id));
+      DeckBuilderComponent.sortColors(a.color, b.color) || a.id.localeCompare(b.id));
 
     const options = this.mainDeck.filter(card => card.cardType === 'Option').sort((a, b) =>
-      a.color.localeCompare(b.color) || a.id.localeCompare(b.id));
+      DeckBuilderComponent.sortColors(a.color, b.color) || a.id.localeCompare(b.id));
 
     this.mainDeck = [...new Set([...eggs, ...digimon, ...tamer, ...options])]
+  }
+
+  private static sortColors(colorA: string, colorB: string): number {
+    const a: number = ColorOrderMap.get(colorA) ?? 0;
+    const b: number = ColorOrderMap.get(colorB) ?? 0;
+    return a - b;
   }
 
   /**
