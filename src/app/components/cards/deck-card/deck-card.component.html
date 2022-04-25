@@ -7,7 +7,7 @@
 
     <div *ngIf="missingCards" class="absolute inline-flex ml-auto">
       <i class="pi pi-times text-white"></i>
-      <p class="font-bold text-xl text-white">{{cardHave - card.count > 0 ? 0 : cardHave - card.count}}</p>
+      <p class="font-bold text-xl text-white">{{(cardHave ?? 0) - card.count > 0 ? 0 : (cardHave ?? 0) - card.count}}</p>
     </div>
 
     <p-inputNumber *ngIf="edit" (onInput)="changeCardCount($event)"
@@ -17,7 +17,7 @@
     <span *ngIf="!edit" class="primary-color font-bolder text-3xl px-2">x{{card.count}}</span>
 
     <p *ngIf="missingCards" class="absolute z-[100] font-bold text-6xl text-red text-black-outline missing">
-      {{cardHave - card.count > 0 ? 0 : cardHave - card.count}}
+      {{(cardHave ?? 0) - card.count > 0 ? 0 : (cardHave ?? 0) - card.count}}
     </p>
   </div>
 </ng-template>
@@ -29,19 +29,19 @@
     <button *ngIf="edit" pButton pRipple type="button" icon="pi pi-minus" class="p-button-outlined p-button-sm" (click)="reduceCardCount()"></button>
 
     <div class="inline-flex ml-1 border-2 border-black rounded-l-2xl min-w-[300px] w-[300px] max-w-[300px] text-xs" (click)="showCardDetails()" (contextmenu)="showCardDetails()"
-         [ngStyle]="{'background-color': colorMap.get(card.color)}">
-      <div *ngIf="card.cardLv === 'Lv.2'" class="px-5">
+         [ngStyle]="{'background-color': colorMap.get(completeCard.color)}">
+      <div *ngIf="completeCard.cardLv === 'Lv.2'" class="px-5">
         <div class="egg mt-[4px]"></div>
       </div>
-      <div *ngIf="card.cardLv !== 'Lv.2'" class="rounded-full leading-6 self-center px-3 h-full bg-sky-700 text-white text-shadow font-semibold">{{card.playCost}}</div>
-      <div *ngIf="card.cardType === 'Digimon'" class="self-center px-3 text-white text-shadow font-semibold">{{transformDCost(card.digivolveCost1)}}</div>
-      <div *ngIf="card.cardType === 'Tamer'" class="self-center px-3 text-white text-shadow font-semibold">Tamer</div>
-      <div *ngIf="card.cardType === 'Option'" class="self-center px-3 text-white text-shadow font-semibold">Option</div>
-      <div class="self-center px-1 h-full bg-black text-white leading-6 font-bold z-10">{{card.cardLv}}</div>
+      <div *ngIf="completeCard.cardLv !== 'Lv.2'" class="rounded-full leading-6 self-center px-3 h-full bg-sky-700 text-white text-shadow font-semibold">{{completeCard.playCost}}</div>
+      <div *ngIf="completeCard.cardType === 'Digimon'" class="self-center px-3 text-white text-shadow font-semibold">{{transformDCost(completeCard.digivolveCost1)}}</div>
+      <div *ngIf="completeCard.cardType === 'Tamer'" class="self-center px-3 text-white text-shadow font-semibold">Tamer</div>
+      <div *ngIf="completeCard.cardType === 'Option'" class="self-center px-3 text-white text-shadow font-semibold">Option</div>
+      <div class="self-center px-1 h-full bg-black text-white leading-6 font-bold z-10">{{completeCard.cardLv}}</div>
       <div class="bottom-top-split"></div>
-      <div class="self-center text-white text-shadow text-md truncate text-center font-semibold">{{card.name}}</div>
+      <div class="self-center text-white text-shadow text-md truncate text-center font-semibold">{{completeCard.name}}</div>
       <div  class="ml-auto top-bottom-split"></div>
-      <div class="self-center px-1 h-full bg-black  leading-6 font-bold text-white text-xs truncate">{{card.cardNumber}}</div>
+      <div class="self-center px-1 h-full bg-black  leading-6 font-bold text-white text-xs truncate">{{completeCard.cardNumber}}</div>
     </div>
   </div>
 </ng-template>

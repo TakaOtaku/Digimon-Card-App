@@ -1,11 +1,12 @@
 <p-contextMenu #table [model]="deckRowContext"></p-contextMenu>
 
-<p-table id="table" responsiveLayout="scroll"  styleClass="p-datatable-striped" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} decks"
+<p-table responsiveLayout="scroll" dataKey="title" styleClass="p-datatable-striped" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} decks"
          [value]="decks" [scrollable]="true" [scrollHeight]="'calc(100vh - 100px)'" [contextMenu]="table"  [globalFilterFields]="['color.name', 'title','','tags', 'user']"
          [paginator]="true" [rows]="25" [showCurrentPageReport]="true" [rowsPerPageOptions]="[25, 50, 75]"
          [(contextMenuSelection)]="selectedDeck">
   <ng-template pTemplate="header">
     <tr>
+      <th class="expand"></th>
       <th class="color">
         <div class="mx-auto">
           Color
@@ -48,16 +49,13 @@
           <p-sortIcon field="date"></p-sortIcon>
         </div>
       </th>
-      <!--th pSortableColumn="rating">
-        <div class="flex justify-content-center align-items-center">
-          Rating
-          <p-columnFilter type="numeric" field="rating" display="menu"></p-columnFilter>
-        </div>
-      </th-->
     </tr>
   </ng-template>
-  <ng-template pTemplate="body" let-deck>
+  <ng-template pTemplate="body" let-deck let-expanded="expanded">
     <tr [pContextMenuRow]="deck" class="max-h-[50px]">
+      <td class="expand">
+        <button type="button" pButton pRipple [pRowToggler]="deck" class="p-button-text p-button-rounded p-button-plain" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
+      </td>
       <td class="inline-flex color">
         <img class="max-h-[50px] mx-auto" [src]="deck.color?.img ?? 'assets/decks/white.svg'" alt="Digimon Deck Image">
       </td>
@@ -78,9 +76,18 @@
           {{dateFormat(deck.date)}}
         </div>
       </td>
-      <!--td>
-        <p-rating [(ngModel)]="deck.rating" (onRate)="rateDeck(deck)"></p-rating>
-      </td-->
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="rowexpansion" let-deck>
+    <tr>
+      <td colspan="7">
+        <div class="card-list flex flex-wrap surface-card pt-3">
+          <div *ngFor="let card of deck.cards">
+            <digimon-deck-card [fullCards]="false" [edit]="false"
+              [card]="card" [cards]="allCards"></digimon-deck-card>
+          </div>
+        </div>
+      </td>
     </tr>
   </ng-template>
 </p-table>

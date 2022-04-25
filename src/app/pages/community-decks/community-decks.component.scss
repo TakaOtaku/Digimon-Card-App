@@ -1,4 +1,7 @@
-#table {
+p-table {
+  .expand {
+    max-width: 50px;
+  }
   .color {
     max-width: 120px;
   }
@@ -11,7 +14,7 @@
 }
 
 @media (min-width: 1024px) {
-  #table {
+  p-table {
     .color {
       max-width: 120px;
     }

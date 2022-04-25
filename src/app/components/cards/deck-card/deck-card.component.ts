@@ -1,5 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormControl, ValidatorFn, Validators} from "@angular/forms";
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {Store} from "@ngrx/store";
 import englishJSON from "../../../../assets/cardlists/english.json";
 import {ColorMap, ICard, IDeckCard} from "../../../../models";
@@ -10,18 +9,20 @@ import {setViewCardDialog} from "../../../store/digimon.actions";
   templateUrl: './deck-card.component.html',
   styleUrls: ['./deck-card.component.scss']
 })
-export class DeckCardComponent {
+export class DeckCardComponent implements OnChanges, OnInit {
   @Input() public card: IDeckCard;
   @Input() public cards: ICard[];
-  @Input() public stack: boolean;
-  @Input() public missingCards: boolean;
-  @Input() public cardHave: number;
-  @Input() public fullCards: boolean;
+  @Input() public stack?: boolean = false;
+  @Input() public missingCards?: boolean = false;
+  @Input() public cardHave?: number = 0;
+  @Input() public fullCards?: boolean = false;
 
   @Input() public edit?: boolean = true;
 
   @Output() public removeCard = new EventEmitter<boolean>();
   @Output() public onChange = new EventEmitter<boolean>();
+
+  completeCard: ICard = englishJSON[0];
 
   colorMap = ColorMap;
 
@@ -29,6 +30,18 @@ export class DeckCardComponent {
   viewCardDialog = false;
 
   constructor(private store: Store) {}
+
+  ngOnInit() {
+    this.mapCard();
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    this.mapCard();
+  }
+
+  mapCard(): void {
+    this.completeCard = this.cards.find(card => this.card.id === card.id) ?? englishJSON[0] as ICard;
+  }
 
   changeCardCount(event: any): void {
     if (event.value <= 0) {
@@ -62,7 +75,7 @@ export class DeckCardComponent {
   }
 
   showCardDetails() {
-    this.viewCard = this.cards.find(card => card.cardNumber === this.card.cardNumber)!;
+    this.viewCard = this.cards.find(card => card.id === this.card.id)!;
     this.store.dispatch(setViewCardDialog({show: true, card: this.viewCard}));
   }
 }

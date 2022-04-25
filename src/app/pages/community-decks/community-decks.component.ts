@@ -4,9 +4,10 @@ import {Store} from "@ngrx/store";
 import {ConfirmationService, MessageService} from "primeng/api";
 import {Subject, takeUntil} from "rxjs";
 import * as uuid from "uuid";
-import {COLORS, IDeck, TAGS} from "../../../models";
+import {COLORS, ICard, IDeck, TAGS} from "../../../models";
 import {DatabaseService} from "../../service/database.service";
 import {importDeck, setDeck, setEdit, setSite} from "../../store/digimon.actions";
+import {selectAllCards} from "../../store/digimon.selectors";
 import {SITES} from "../main-page/main-page.component";
 
 @Component({
@@ -26,6 +27,8 @@ export class CommunityDecksComponent implements OnInit, OnDestroy {
     {label: 'Copy', icon: 'pi pi-fw pi-copy', command: () => this.copyDeck(this.selectedDeck)}
   ];
 
+  allCards: ICard[] = [];
+
   private onDestroy$ = new Subject<boolean>();
 
   constructor(
@@ -38,6 +41,7 @@ export class CommunityDecksComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.db.loadCommunityDecks().pipe(takeUntil(this.onDestroy$))
       .subscribe(decks => this.decks = decks.sort((a, b) => new Date(b.date!).getTime() - new Date(a.date!).getTime()));
+    this.store.select(selectAllCards).pipe(takeUntil(this.onDestroy$)).subscribe(allCards => this.allCards = allCards);
   }
 
   ngOnDestroy() {
