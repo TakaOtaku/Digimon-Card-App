@@ -306,8 +306,16 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
     const eggs = this.mainDeck.filter(card => card.cardType === 'Digi-Egg').sort((a, b) =>
       DeckBuilderComponent.sortColors(a.color, b.color) || a.id.localeCompare(b.id));
 
-    const digimon = this.mainDeck.filter(card => card.cardType === 'Digimon').sort((a, b) =>
-      DeckBuilderComponent.sortColors(a.color, b.color) || a.cardLv.localeCompare(b.cardLv) || a.id.localeCompare(b.id));
+    const lv3 = this.mainDeck.filter(card => card.cardLv === 'Lv.3').sort((a, b) =>
+      DeckBuilderComponent.sortColors(a.color, b.color) || a.id.localeCompare(b.id));
+    const lv4 = this.mainDeck.filter(card => card.cardLv === 'Lv.4').sort((a, b) =>
+      DeckBuilderComponent.sortColors(a.color, b.color) || a.id.localeCompare(b.id));
+    const lv5 = this.mainDeck.filter(card => card.cardLv === 'Lv.5').sort((a, b) =>
+      DeckBuilderComponent.sortColors(a.color, b.color) || a.id.localeCompare(b.id));
+    const lv6 = this.mainDeck.filter(card => card.cardLv === 'Lv.6').sort((a, b) =>
+      DeckBuilderComponent.sortColors(a.color, b.color) || a.id.localeCompare(b.id));
+    const lv7 = this.mainDeck.filter(card => card.cardLv === 'Lv.7').sort((a, b) =>
+      DeckBuilderComponent.sortColors(a.color, b.color) || a.id.localeCompare(b.id));
 
     const tamer = this.mainDeck.filter(card => card.cardType === 'Tamer').sort((a, b) =>
       DeckBuilderComponent.sortColors(a.color, b.color) || a.id.localeCompare(b.id));
@@ -315,7 +323,15 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
     const options = this.mainDeck.filter(card => card.cardType === 'Option').sort((a, b) =>
       DeckBuilderComponent.sortColors(a.color, b.color) || a.id.localeCompare(b.id));
 
-    this.mainDeck = [...new Set([...eggs, ...digimon, ...tamer, ...options])]
+    this.mainDeck = [...new Set([
+      ...eggs,
+      ...lv3,
+      ...lv4,
+      ...lv5,
+      ...lv6,
+      ...lv7,
+      ...tamer,
+      ...options])]
   }
 
   private static sortColors(colorA: string, colorB: string): number {
