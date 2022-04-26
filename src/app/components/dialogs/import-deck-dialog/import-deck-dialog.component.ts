@@ -1,10 +1,11 @@
-import {Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {MessageService} from "primeng/api";
 import {Subject, takeUntil} from "rxjs";
 import {importDeck, setDeck} from 'src/app/store/digimon.actions';
 import * as uuid from "uuid";
 import {ICard, IDeck, IDeckCard} from "../../../../models";
+import {compareIDs} from "../../../functions/digimon-card.functions";
 import {selectAllCards} from "../../../store/digimon.selectors";
 
 @Component({
@@ -56,7 +57,6 @@ export class ImportDeckDialogComponent implements OnInit, OnDestroy {
   }
 
   importDeck() {
-    debugger;
     if(this.deckText === '') return;
 
     let result: string[] = this.deckText.split("\n");
@@ -107,14 +107,23 @@ export class ImportDeckDialogComponent implements OnInit, OnDestroy {
       if(matches.length === 0) {
         return null;
       }
-      let cardId = matches[matches.length - 1].replace('ST0', 'ST');
-      if(!this.digimonCards.find(card => card.id === cardId)) {
+      let cardId = ImportDeckDialogComponent.findCardId(matches[matches.length - 1]);
+      if(!this.digimonCards.find(card => compareIDs(card.id, cardId))) {
         return null;
       }
 
-      return {count: this.findNumber(lineSplit), id: matches[matches.length - 1]} as IDeckCard;
+      return {count: this.findNumber(lineSplit), id: cardId} as IDeckCard;
     }
     return null;
+  }
+
+  private static findCardId(id: string): string {
+    if(id.includes('ST')) {
+      const splitA = id.split('-');
+      const numberA: number = +splitA[0].substring(2) >>> 0;
+      return 'ST'+(numberA >= 10 ? numberA : '0'+numberA)+'-'+splitA[1];
+    }
+    return id;
   }
 
   private findNumber(array: string[]): number {
