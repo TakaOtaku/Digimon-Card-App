@@ -122,4 +122,9 @@ export class DecksComponent implements OnInit, OnDestroy {
     };
     this.store.dispatch(importDeck({deck}));
   }
+
+  showContextMenu(menu: any, event: any, deck: IDeck) {
+    this.selectedDeck = deck;
+    menu.show(event);
+  }
 }

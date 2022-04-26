@@ -77,4 +77,9 @@ export class CommunityDecksComponent implements OnInit, OnDestroy {
     const pipe = new DatePipe('en-US');
     return pipe.transform(date, 'MMM d, y, h:mm:ss a')!;
   }
+
+  showContextMenu(menu: any, event: any, deck: IDeck) {
+    this.selectedDeck = deck;
+    menu.show(event);
+  }
 }

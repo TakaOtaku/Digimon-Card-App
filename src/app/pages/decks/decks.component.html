@@ -41,7 +41,7 @@
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-deck>
-    <tr [pContextMenuRow]="deck" class="max-h-[50px]">
+    <tr [pContextMenuRow]="deck" (dblclick)="showContextMenu(table, $event, deck)" class="max-h-[50px]">
       <td class="inline-flex color">
         <img class="max-h-[50px] mx-auto" [src]="deck.color?.img ?? 'assets/decks/white.svg'" alt="Digimon Deck Image">
       </td>

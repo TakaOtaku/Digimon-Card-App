@@ -52,7 +52,7 @@
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-deck let-expanded="expanded">
-    <tr [pContextMenuRow]="deck" class="max-h-[50px]">
+    <tr [pContextMenuRow]="deck" (dblclick)="showContextMenu(table, $event, deck)" class="max-h-[50px]">
       <td class="expand">
         <button type="button" pButton pRipple [pRowToggler]="deck" class="p-button-text p-button-rounded p-button-plain" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
       </td>
