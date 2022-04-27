@@ -8978,7 +8978,7 @@
   },
   {
     "id": "BT3-050",
-    "name": "ST0ingmon",
+    "name": "Stingmon",
     "cardImage": "assets/images/cards/eng/BT3-050.jpg",
     "cardType": "Digimon",
     "dp": "5000",
@@ -9000,7 +9000,7 @@
   },
   {
     "id": "BT3-050_P1",
-    "name": "ST0ingmon",
+    "name": "Stingmon",
     "cardImage": "assets/images/cards/eng/BT3-050_P1.jpg",
     "cardType": "Digimon",
     "dp": "5000",
@@ -9022,7 +9022,7 @@
   },
   {
     "id": "BT3-050_P2",
-    "name": "ST0ingmon",
+    "name": "Stingmon",
     "cardImage": "assets/images/cards/eng/BT3-050_P2.jpg",
     "cardType": "Digimon",
     "dp": "5000",
@@ -11618,7 +11618,7 @@
   },
   {
     "id": "BT4-023",
-    "name": "ST0rabimon",
+    "name": "Strabimon",
     "cardImage": "assets/images/cards/eng/BT4-023.jpg",
     "cardType": "Digimon",
     "dp": "2000",
@@ -15403,7 +15403,7 @@
   },
   {
     "id": "BT5-035",
-    "name": "ST0armons",
+    "name": "Starmons",
     "cardImage": "assets/images/cards/eng/BT5-035.jpg",
     "cardType": "Digimon",
     "dp": "1000",
@@ -15425,7 +15425,7 @@
   },
   {
     "id": "BT5-035_P1",
-    "name": "ST0armons",
+    "name": "Starmons",
     "cardImage": "assets/images/cards/eng/BT5-035_P1.jpg",
     "cardType": "Digimon",
     "dp": "1000",
@@ -18528,7 +18528,7 @@
   },
   {
     "id": "BT6-022",
-    "name": "ST0rabimon",
+    "name": "Strabimon",
     "cardImage": "assets/images/cards/eng/BT6-022.jpg",
     "cardType": "Digimon",
     "dp": "3000",
@@ -21411,7 +21411,7 @@
   },
   {
     "id": "BT7-019",
-    "name": "ST0rabimon",
+    "name": "Strabimon",
     "cardImage": "assets/images/cards/eng/BT7-019.jpg",
     "cardType": "Digimon",
     "dp": "1000",
@@ -21433,7 +21433,7 @@
   },
   {
     "id": "BT7-019_P1",
-    "name": "ST0rabimon",
+    "name": "Strabimon",
     "cardImage": "assets/images/cards/eng/BT7-019_P1.jpg",
     "cardType": "Digimon",
     "dp": "1000",
@@ -21939,7 +21939,7 @@
   },
   {
     "id": "BT7-039",
-    "name": "ST0efilmon",
+    "name": "Stefilmon",
     "cardImage": "assets/images/cards/eng/BT7-039.jpg",
     "cardType": "Digimon",
     "dp": "7000",
@@ -23479,7 +23479,7 @@
   },
   {
     "id": "BT7-096",
-    "name": "ST0arlight Velocity",
+    "name": "Starlight Velocity",
     "cardImage": "assets/images/cards/eng/BT7-096.jpg",
     "cardType": "Option",
     "dp": "-",
@@ -25461,7 +25461,7 @@
   },
   {
     "id": "EX1-038",
-    "name": "ST0ingmon",
+    "name": "Stingmon",
     "cardImage": "assets/images/cards/eng/EX1-038.jpg",
     "cardType": "Digimon",
     "dp": "5000",
@@ -28653,7 +28653,7 @@
   },
   {
     "id": "ST01-14",
-    "name": "ST0arlight Explosion",
+    "name": "Starlight Explosion",
     "cardImage": "assets/images/cards/eng/ST1-14.jpg",
     "cardType": "Option",
     "dp": "-",
@@ -32244,7 +32244,7 @@
 {"id": "ST09-06", "name": "Imperialdramon Dragon Mode", "cardImage": "assets/images/cards/eng/ST9-06.jpg", "cardType": "Digimon", "dp": "12000", "playCost": "13", "digivolveCost1": "4 from Lv.5", "digivolveCost2": "Green", "cardLv": "Lv.6", "form": "Mega", "attribute": "Free", "type": "Ancient Dragon", "rarity": "SR", "cardNumber": "ST09-06", "effect": "[When Digivolving] You may play 1 level 4 or lower blue Digimon card and/or 1 level 4 or lower green Digimon card from this Digimon's digivolution cards without paying their memory costs.", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Blue/Green", "version": "Normal"},
 {"id": "ST09-07", "name": "KoKabuterimon", "cardImage": "assets/images/cards/eng/ST9-07.jpg", "cardType": "Digimon", "dp": "2000", "playCost": "3", "digivolveCost1": "0 from Lv.2", "digivolveCost2": "-", "cardLv": "Lv.3", "form": "Rookie", "attribute": "Virus", "type": "Insectoid", "rarity": "C", "cardNumber": "ST09-07", "effect": "[Opponent's Turn] While you have a blue Digimon in play, this Digimon gains . (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Green", "version": "Normal"},
 {"id": "ST09-08", "name": "Wormmon", "cardImage": "assets/images/cards/eng/ST9-08.jpg", "cardType": "Digimon", "dp": "3000", "playCost": "3", "digivolveCost1": "0 from Lv.2", "digivolveCost2": "Blue", "cardLv": "Lv.3", "form": "Rookie", "attribute": "Free", "type": "Larva", "rarity": "C", "cardNumber": "ST09-08", "effect": "-", "digivolveEffect": "[End of Your Turn] You may DNA digivolve this Digimon and one of your other Digimon in play into a Digimon card in your hand by paying its DNA digivolve cost.", "securityEffect": "-", "notes": "", "color": "Green", "version": "Normal"},
-{"id": "ST09-09", "name": "ST0ingmon", "cardImage": "assets/images/cards/eng/ST9-09.jpg", "cardType": "Digimon", "dp": "4000", "playCost": "4", "digivolveCost1": "2 from Lv.3", "digivolveCost2": "Blue", "cardLv": "Lv.4", "form": "Champion", "attribute": "Free", "type": "Insectoid", "rarity": "U", "cardNumber": "ST09-09", "effect": "When you would play this card from your hand, if you have a blue Digimon in play, reduce its play cost by 1.", "digivolveEffect": "[When Attacking] If you have a blue Digimon in play, \uff1cDraw 1\uff1e. (Draw 1 card from your deck.)", "securityEffect": "-", "notes": "", "color": "Green", "version": "Normal"},
+{"id": "ST09-09", "name": "Stingmon", "cardImage": "assets/images/cards/eng/ST9-09.jpg", "cardType": "Digimon", "dp": "4000", "playCost": "4", "digivolveCost1": "2 from Lv.3", "digivolveCost2": "Blue", "cardLv": "Lv.4", "form": "Champion", "attribute": "Free", "type": "Insectoid", "rarity": "U", "cardNumber": "ST09-09", "effect": "When you would play this card from your hand, if you have a blue Digimon in play, reduce its play cost by 1.", "digivolveEffect": "[When Attacking] If you have a blue Digimon in play, \uff1cDraw 1\uff1e. (Draw 1 card from your deck.)", "securityEffect": "-", "notes": "", "color": "Green", "version": "Normal"},
 {"id": "ST09-10", "name": "Snimon", "cardImage": "assets/images/cards/eng/ST9-10.jpg", "cardType": "Digimon", "dp": "4000", "playCost": "6", "digivolveCost1": "2 from Lv.3", "digivolveCost2": "-", "cardLv": "Lv.4", "form": "Champion", "attribute": "Vaccine", "type": "Insectoid", "rarity": "C", "cardNumber": "ST09-10", "effect": "[Security] At the end of the battle, play this card without paying its memory cost.[On Play] Suspend 1 of your opponent's Digimon.", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Green", "version": "Normal"},
 {"id": "ST09-11", "name": "Dinobeemon", "cardImage": "assets/images/cards/eng/ST9-11.jpg", "cardType": "Digimon", "dp": "8000", "playCost": "8", "digivolveCost1": "4 from Lv.4", "digivolveCost2": "Blue", "cardLv": "Lv.5", "form": "Ultimate", "attribute": "Free", "type": "Mutant", "rarity": "R", "cardNumber": "ST09-11", "effect": "\uff1cDNA Digivolution: 0 from green Lv.4 + blue Lv.4\uff1e Digivolve unsuspended with the 2 specified Digimon stacked on top of each other. [When Digivolving] Suspend 1 of your opponent's Digimon. When DNA digivolving, that Digimon doesn't unsuspend during its owner's next unsuspend phase.", "digivolveEffect": "[Your Turn] This Digimon gets +1000 DP for each of its colors.", "securityEffect": "-", "notes": "", "color": "Green/Blue", "version": "Normal"},
 {"id": "ST09-12", "name": "JewelBeemon", "cardImage": "assets/images/cards/eng/ST9-12.jpg", "cardType": "Digimon", "dp": "7000", "playCost": "6", "digivolveCost1": "2 from Lv.4", "digivolveCost2": "-", "cardLv": "Lv.5", "form": "Ultimate", "attribute": "Vaccine", "type": "Insectoid", "rarity": "C", "cardNumber": "ST09-12", "effect": "-", "digivolveEffect": "-", "securityEffect": "-", "notes": "", "color": "Green", "version": "Normal"},
