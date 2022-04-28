@@ -14,7 +14,7 @@
 </p-sidebar>
 
 <!-- With Splitter -->
-<div class="inline-flex flex-row max-h-screen relative">
+<div class="inline-flex flex-row max-h-screen relative w-full">
 
   <div class="w-full inline-flex overflow-y-scroll">
     <div class="h-[calc(100vh-58px)] w-screen lg:w-6/12 2xl:w-5/12">
@@ -90,11 +90,11 @@
       </div>
     </div>
 
-    <div class="flex flex-row w-screen fixed bottom-0 z-[102] h-36">
-      <div *ngIf="statsSidebar" class="w-screen lg:w-5/12 2xl:w-4/12 border-t-2 border-white flex flex-row surface-card bg-opacity-25">
+    <div class="flex flex-row w-screen fixed bottom-0 z-[102] h-36 lg:w-5/12 2xl:w-4/12">
+      <div *ngIf="statsSidebar" class="w-full border-t-2 border-white flex flex-row surface-card bg-opacity-25">
         <digimon-chart-containers class="md:ml-10 mr-auto max-w-[40rem]" [deck]="mainDeck"></digimon-chart-containers>
       </div>
-      <div class="hidden lg:block triangle z-[102] h-36 mr-auto"></div>
+      <div class="hidden lg:block triangle z-[102] h-36 mr-auto w-1/12"></div>
     </div>
 
   </div>
