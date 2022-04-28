@@ -1,11 +1,15 @@
-<div class="inline-flex h-[250px] w-full overflow-x-hidden justify-center">
-  <button pButton pRipple type="button" icon="pi pi-angle-left" class="p-button p-button-primary" (click)="previous()" [disabled]="previousCards"></button>
+<div class="inline-flex w-full h-[calc(100vh-148px)] overflow-hidden justify-center">
+  <button pButton pRipple type="button" icon="pi pi-angle-left" class="p-button p-button-primary min-w-[2rem]" (click)="previous()" [disabled]="previousCards"></button>
+
   <h1 *ngIf="cardsToShow.length === 0" class="primary-color my-10 text-5xl text-bold">No cards found!</h1>
-  <div class="grid grid-cols-5">
-    <digimon-full-card *ngFor="let card of cardsToShow" class="transition scale-95"
-                       (click)="addToDeck(card)" [width]="'90%'"
-                       [card]="card" [collectionMode]="false" [count]="getCount(card.id)" [deckBuilder]="true">
-    </digimon-full-card>
+
+  <div class="grid grid-cols-8">
+    <div #cardDiv *ngFor="let card of cardsToShow" class="mx-auto">
+      <digimon-full-card
+        class="transition scale-95" (click)="addToDeck(card)"
+        [card]="card" [collectionMode]="false" [count]="getCount(card.id)" [deckBuilder]="true"></digimon-full-card>
+    </div>
   </div>
-  <button pButton pRipple type="button" icon="pi pi-angle-right" class="p-button p-button-primary" (click)="next()" [disabled]="nextCards"></button>
+
+  <button pButton pRipple type="button" icon="pi pi-angle-right" class="p-button p-button-primary min-w-[2rem]" (click)="next()" [disabled]="nextCards"></button>
 </div>

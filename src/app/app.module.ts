@@ -20,6 +20,7 @@ import {CardListComponent} from './components/card-lists/card-list/card-list.com
 import {PaginationCardListComponent} from './components/card-lists/pagination-card-list/pagination-card-list.component';
 import {DeckCardComponent} from './components/cards/deck-card/deck-card.component';
 import {FullCardComponent} from './components/cards/full-card/full-card.component';
+import {ChartContainersComponent} from './components/chart-containers/chart-containers.component';
 import {ChangeAccessorieDialogComponent} from './components/dialogs/change-accessorie-dialog/change-accessorie-dialog.component';
 import {CollectionStatsDialogComponent} from './components/dialogs/collection-stats-dialog/collection-stats-dialog.component';
 import {ExportDeckDialogComponent} from './components/dialogs/export-deck-dialog/export-deck-dialog.component';
@@ -27,9 +28,11 @@ import {ImportDeckDialogComponent} from './components/dialogs/import-deck-dialog
 import {SettingsDialogComponent} from './components/dialogs/settings-dialog/settings-dialog.component';
 import {ViewCardDialogComponent} from './components/dialogs/view-card-dialog/view-card-dialog.component';
 import {FilterBoxComponent} from './components/filter-box/filter-box.component';
+import {FilterSideBoxComponent} from './components/filter-side-box/filter-side-box.component';
 import {MenuComponent} from './components/menu/menu.component';
 import {MultiSelectComponent} from './components/multi-select/multi-select.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
+import {SearchComponent} from './components/search/search.component';
 import {SliderComponent} from './components/slider/slider.component';
 import {SortButtonsComponent} from './components/sort-buttons/sort-buttons.component';
 import {CollectionComponent} from './pages/collection/collection.component';
@@ -45,8 +48,7 @@ import {DigimonEffects} from "./store/digimon.effects";
 import * as DigimonCards from "./store/reducers/digimon-card.reducers";
 import * as Digimon from "./store/reducers/digimon.reducers";
 import * as Save from "./store/reducers/save.reducer";
-import { SearchComponent } from './components/search/search.component';
-import { FilterSideBoxComponent } from './components/filter-side-box/filter-side-box.component';
+import { ChartContainerComponent } from './components/chart-containers/chart-container/chart-container.component';
 
 
 @NgModule({
@@ -75,6 +77,8 @@ import { FilterSideBoxComponent } from './components/filter-side-box/filter-side
     SettingsDialogComponent,
     SearchComponent,
     FilterSideBoxComponent,
+    ChartContainersComponent,
+    ChartContainerComponent,
   ],
     imports: [
         PrimeNGModule,

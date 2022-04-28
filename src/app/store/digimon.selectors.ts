@@ -6,10 +6,6 @@ export const selectSave = createFeatureSelector<ISave>('save');
 export const selectDigimonState = createFeatureSelector<IDigimonState>('digimon');
 
 //region Digimon Selectors
-export const selectEdit = createSelector(
-  selectDigimonState,
-  (state: IDigimonState) => state.edit
-);
 export const selectSite = createSelector(
   selectDigimonState,
   (state: IDigimonState) => state.site

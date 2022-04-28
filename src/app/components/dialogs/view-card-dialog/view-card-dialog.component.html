@@ -11,7 +11,11 @@
       <button pButton pRipple type="button" icon="pi pi-times" class="p-button-text" (click)="this.onClose.next(false)"></button>
     </div>
 
-    <h1 id="Card-Name" class="font-black my-5 text-4xl" [ngStyle]="{color}">{{card.name}}</h1>
+    <div class="flex flex-row">
+      <h1 id="Card-Name" class="font-black my-5 text-4xl" [ngStyle]="{color}">{{card.name}}</h1>
+      <button pButton pRipple type="button" icon="pi pi-question-circle" class="p-button-text" (click)="openWiki()"></button>
+    </div>
+
 
     <div id="Image-Attributes" class="w-full flex flex-row">
       <div class="w-1/2">

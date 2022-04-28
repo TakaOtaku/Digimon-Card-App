@@ -1,14 +1,13 @@
 import {createReducer, on} from '@ngrx/store';
 import * as uuid from "uuid";
 import englishJSON from "../../../assets/cardlists/english.json";
-import {IDigimonState} from "../../../models";
+import {IDeck, IDigimonState} from "../../../models";
 import {
   addToDeck,
   changeFilter,
   changeSort,
   setAccessoryDeckDialog,
   setDeck,
-  setEdit,
   setExportDeckDialog,
   setImportDeckDialog,
   setSite,
@@ -18,6 +17,35 @@ import {
 export const emptyDeck = {
   id: uuid.v4(),
   cards: [],
+  color: {name: 'White', img: 'assets/decks/white.svg'},
+};
+
+export const fullDeck: IDeck = {
+  id: uuid.v4(),
+  cards: [
+    {id: 'ST5-01', count: 1},
+    {id: 'BT6-005', count: 4},
+    {id: 'BT2-052', count: 3},
+    {id: 'BT3-061', count: 2},
+    {id: 'BT2-056', count: 3},
+    {id: 'BT5-062', count: 3},
+    {id: 'BT6-058', count: 3},
+    {id: 'BT7-061', count: 3},
+    {id: 'BT3-070', count: 4},
+    {id: 'EX1-052', count: 4},
+    {id: 'BT3-074', count: 4},
+    {id: 'EX1-053', count: 4},
+    {id: 'BT5-087', count: 2},
+    {id: 'EX1-066', count: 1},
+    {id: 'BT4-096', count: 2},
+    {id: 'BT6-090', count: 1},
+    {id: 'BT3-095', count: 2},
+    {id: 'BT2-089', count: 1},
+    {id: 'BT6-106', count: 2},
+    {id: 'BT7-105', count: 2},
+    {id: 'BT5-105', count: 2},
+    {id: 'EX1-071', count: 2}
+  ],
   color: {name: 'White', img: 'assets/decks/white.svg'},
 };
 
@@ -41,7 +69,6 @@ export const emptyFilter = {
 
 export const initialState: IDigimonState = {
   deck: emptyDeck,
-  edit: true,
   site: 0,
   dialogs: {
     exportDeck: {show: false, deck: emptyDeck},
@@ -64,7 +91,6 @@ export const digimonReducer = createReducer(
   initialState,
   on(changeFilter, (state, {filter}) => ({...state, filter})),
   on(changeSort, (state, {sort}) => ({...state, sort})),
-  on(setEdit, (state, {edit}) => ({...state, edit})),
   on(setSite, (state, {site}) => ({...state, site})),
   on(setDeck, (state, {deck}) => ({...state, deck})),
   on(addToDeck, (state, {card}) => {

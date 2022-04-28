@@ -24,8 +24,11 @@ import {RadioButtonModule} from "primeng/radiobutton";
 import {RatingModule} from "primeng/rating";
 import {RippleModule} from "primeng/ripple";
 import {SelectButtonModule} from "primeng/selectbutton";
+import {SidebarModule} from "primeng/sidebar";
 import {SliderModule} from "primeng/slider";
+import {SplitterModule} from "primeng/splitter";
 import {TableModule} from "primeng/table";
+import {TabViewModule} from "primeng/tabview";
 import {TagModule} from "primeng/tag";
 import {ToastModule} from "primeng/toast";
 
@@ -58,13 +61,19 @@ import {ToastModule} from "primeng/toast";
     SliderModule,
     CheckboxModule,
     RadioButtonModule,
-    DividerModule
+    DividerModule,
+    SplitterModule,
+    SidebarModule,
+    TabViewModule
   ],
   providers: [
     MessageService,
     ConfirmationService
   ],
   exports: [
+    TabViewModule,
+    SidebarModule,
+    SplitterModule,
     AutoCompleteModule,
     ChipsModule,
     ChipModule,

@@ -32,4 +32,8 @@ export const tagsList: ITag[] = [
 
   {name: 'Tournament', color: 'Primary'},
   {name: 'Casual', color: 'Primary'},
+
+  {name: '1th Place', color: 'Primary'},
+  {name: '2nd Place', color: 'Primary'},
+  {name: '3rd Place', color: 'Primary'},
 ]

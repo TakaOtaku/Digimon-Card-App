@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormControl} from "@angular/forms";
 import {Store} from "@ngrx/store";
 import {Subject, takeUntil} from "rxjs";
@@ -13,6 +13,10 @@ import {CardTypes, Colors} from "../filter-box/filterData";
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
+  @Input() deckBuilder = false;
+  @Input() colorsShow = false;
+  @Input() cardTypesShow = false;
+
   searchFilter = new FormControl('');
 
   colorFilter = new FormControl([]);

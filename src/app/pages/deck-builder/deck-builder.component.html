@@ -1,72 +1,101 @@
-<div class="flex flex-col-reverse xl:inline-flex xl:flex-row w-100 max-h-screen">
-  <div class="xl:w-[60vw] xl:h-[calc(100vh-58px)] border-2 border-slate-300 m-1 h-[52vh] overflow-scroll overflow-x-hidden">
-    <div class="toolbar flex flex-wrap w-100 border-b-2 border-slate-600 justify-center surface-ground">
-
-      <div class="border-l-2 border-slate-600 pr-2 pl-2 primary-color"><b>
-        {{getCardCount('Egg')}}</b>/<p class="bottom-font pr-1">5 </p> <p class="text-xs">Eggs</p>
-      </div>
-      <div class="border-l-2 border-slate-600 pr-2 pl-2 primary-color"><b>
-        {{getCardCount('Main')}}</b>/<p class="bottom-font pr-1">50 </p> <p class="text-xs"> Cards</p>
-      </div>
-
-      <button class="p-button-outlined" pButton (click)="missingCards = !missingCards" label="Missing" icon="pi pi-ban" iconPos="left"></button>
-
-      <button class="p-button-outlined" pButton (click)="fullCards = !fullCards" label="{{fullCards ? 'Full Cards' : 'Small Cards'}}" icon="pi pi-images" iconPos="left"></button>
-
-      <button class="p-button-outlined" pButton (click)="editView()" label="{{edit ? 'Edit' : 'View'}}" icon="pi pi-pencil" iconPos="left"></button>
-
-      <button class="p-button-outlined" pButton (click)="statDialog = true" label="Stats" icon="pi pi-chart-bar" iconPos="left"></button>
-
-      <button class="p-button-outlined" pButton (click)="share()" label="Share" icon="pi pi-share-alt" iconPos="left"></button>
-
-      <button class="p-button-outlined" pButton (click)="save()" label="Save" icon="pi pi-save" iconPos="left"></button>
-
-      <button class="p-button-outlined" pButton (click)="settingsDialog = true" icon="pi pi-cog" iconPos="left"></button>
-    </div>
-
-    <div class="card-container w-100 border-4 border-slate-600 rounded-tl-lg rounded-br-lg surface-ground">
-      <div class="inline-flex w-full mb-2">
-        <span class="p-float-label mt-6 w-1/6">
-          <input id="float-input" type="text" pInputText [(ngModel)]="title">
-          <label for="float-input">Deck-Name</label>
-        </span>
-
-            <span class="p-float-label mt-6 ml-10 w-4/6">
-          <textarea id="float-input2" class="w-full h-[42px] overflow-hidden" pInputTextarea [(ngModel)]="description"></textarea>
-          <label for="float-input2">Description</label>
-        </span>
-      </div>
-
-      <span class="p-fluid">
-        <p-autoComplete [(ngModel)]="tags" [suggestions]="filteredTags" (completeMethod)="filterTags($event)" field="name" [multiple]="true">
-        </p-autoComplete>
-      </span>
-
-      <div class="card-list flex flex-wrap surface-card pt-3">
-        <div *ngFor="let card of mainDeck" [ngClass]="{'card-box' : fullCards, 'surface-card' : fullCards}">
-          <digimon-deck-card
-            (removeCard)="removeCard(card)" (onChange)="mapToDeck()" [fullCards]="fullCards" [edit]="edit"
-            [card]="card" [cards]="allCards" [stack]="stack" [missingCards]="missingCards" [cardHave]="getCardHave(card)"></digimon-deck-card>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="xl:w-[40vw] xl:h-[calc(100vh-58px)] border-2 border-slate-300 m-1 h-[300px] overflow-y-scroll">
-    <digimon-filter-box [compact]="true" class="w-100"></digimon-filter-box>
-    <digimon-card-list (onCardClick)="onCardClick($event)" [showCount]="50" class="w-100 hidden xl:block"></digimon-card-list>
-    <digimon-pagination-card-list (onCardClick)="onCardClick($event)" class="xl:hidden"></digimon-pagination-card-list>
-  </div>
-</div>
-
-<p-dialog header="Deck Stats" [(visible)]="statDialog" styleClass="w-[95vw] xl:w-[50vw] h-[400px]" [baseZIndex]="10000">
-  <p-chart type="bar" [data]="levelData" [options]="chartOptions"></p-chart>
-</p-dialog>
-
-<p-dialog header="Settings" [(visible)]="settingsDialog" styleClass="w-[95vw] xl:w-[50vw] h-[200px]" [baseZIndex]="10000">
+<p-dialog header="Settings" [(visible)]="settingsDialog" [baseZIndex]="10000">
   <button class="p-button-outlined" pButton (click)="openImportDeckDialog()" label="Import" icon="pi pi-upload" iconPos="left"></button>
 
   <button class="p-button-outlined" pButton (click)="openExportDeckDialog()" label="Export" icon="pi pi-download" iconPos="left"></button>
-
-  <button class="p-button-outlined" pButton (click)="delete()" label="Delete" icon="pi pi-trash" iconPos="left"></button>
 </p-dialog>
+
+<p-sidebar [(visible)]="sidebar" [fullScreen]="true" position="right" styleClass="p-sidebar-lg">
+  <div class="h-[calc(100vh-58px)]">
+    <div class="w-full h-full">
+      <digimon-filter-box [compact]="true" class="w-100"></digimon-filter-box>
+      <digimon-card-list (onCardClick)="onCardClick($event)" [biggerCards]="true" [compact]="true" [showCount]="30"></digimon-card-list>
+    </div>
+  </div>
+</p-sidebar>
+
+<!-- With Splitter -->
+<div class="inline-flex flex-row max-h-screen relative">
+
+  <div class="w-full inline-flex overflow-y-scroll">
+    <div class="h-[calc(100vh-58px)] w-screen lg:w-6/12 2xl:w-5/12">
+      <div class="h-[calc(100vh-58px)] ">
+        <div class="w-full h-[calc(100vh-58px)] border-2 border-slate-300">
+          <div class="toolbar flex flex-wrap w-100 border-b-2 border-slate-600 justify-center surface-ground">
+            <div class="border-2 border-slate-500 pr-2 pl-2 primary-color flex flex-row text-center align-center"><b>
+              {{getCardCount('Egg')}}</b>/<p class="bottom-font pr-1">5 </p> <p class="text-xs">Eggs</p>
+            </div>
+
+            <div class="border-2 border-slate-500 pr-2 pl-2 primary-color flex flex-row text-center align-center"><b>
+              {{getCardCount('Main')}}</b>/<p class="bottom-font pr-1">50 </p> <p class="text-xs"> Cards</p>
+            </div>
+
+            <button class="p-button-outlined" pButton (click)="missingCards = !missingCards" label="Missing" icon="pi pi-ban" iconPos="left"></button>
+
+            <button class="p-button-outlined" pButton (click)="statsSidebar = !statsSidebar" icon="pi pi-chart-bar" iconPos="left"></button>
+
+            <button class="p-button-outlined" pButton (click)="share()" icon="pi pi-share-alt" iconPos="left"></button>
+
+            <button class="p-button-outlined" pButton (click)="save($event)" icon="pi pi-save" iconPos="left"></button>
+
+            <button class="p-button-outlined" pButton (click)="delete()" icon="pi pi-trash" iconPos="left"></button>
+
+            <button class="p-button-outlined" pButton (click)="settingsDialog = true" icon="pi pi-upload" label="Import/Export" iconPos="left"></button>
+
+            <p-button class="lg:hidden absolute right-10 -top-[43px]" type="text" (click)="sidebar = true" icon="pi pi-plus" label="Card-List"></p-button>
+          </div>
+
+          <div class="card-container w-full h-full surface-ground">
+            <div class="inline-flex w-full mb-2 mx-5">
+              <span class="p-float-label mt-6 w-1/2">
+                <input id="float-input" class="w-full" type="text" pInputText [(ngModel)]="title">
+                <label for="float-input">Deck-Name</label>
+              </span>
+
+              <span class="p-float-label ml-5 mr-10 mt-6 w-1/2">
+                <p-autoComplete
+                  panelStyleClass="w-[calc(100%-75px)]" id="float-input3"
+                  [(ngModel)]="tags" [suggestions]="filteredTags" (completeMethod)="filterTags($event)" field="name" [multiple]="true">
+                </p-autoComplete>
+                <label for="float-input3">Tags</label>
+              </span>
+            </div>
+
+            <span class="p-float-label mt-6 ml-5 mr-5">
+              <textarea id="float-input2" class="w-full overflow-hidden" pInputTextarea [(ngModel)]="description"></textarea>
+              <label for="float-input2">Description</label>
+            </span>
+
+            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 pt-3">
+              <div *ngFor="let card of mainDeck">
+                <digimon-deck-card
+                  (removeCard)="removeCard(card)" (onChange)="mapToDeck()" [fullCards]="fullCards" [edit]="true"
+                  [card]="card" [cards]="allCards" [stack]="stack" [missingCards]="missingCards" [cardHave]="getCardHave(card)"></digimon-deck-card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="h-[calc(100vh-58px)] hidden lg:block lg:w-6/12 2xl:w-7/12">
+      <div class="h-[calc(100vh-58px)]">
+        <div class="flex flex-row">
+          <div class="w-full 2xl:w-9/12 hidden lg:block">
+            <digimon-search [deckBuilder]="true" [colorsShow]="false" [cardTypesShow]="false"></digimon-search>
+            <digimon-pagination-card-list (onCardClick)="onCardClick($event)"></digimon-pagination-card-list>
+          </div>
+          <div class="hidden 2xl:flex 2xl:w-3/12">
+            <digimon-filter-side-box [showColors]="true"></digimon-filter-side-box>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-row w-screen fixed bottom-0 z-[102] h-36">
+      <div *ngIf="statsSidebar" class="w-screen lg:w-5/12 2xl:w-4/12 border-t-2 border-white flex flex-row surface-card bg-opacity-25">
+        <digimon-chart-containers class="md:ml-10 mr-auto max-w-[40rem]" [deck]="mainDeck"></digimon-chart-containers>
+      </div>
+      <div class="hidden lg:block triangle z-[102] h-36 mr-auto"></div>
+    </div>
+
+  </div>
+</div>

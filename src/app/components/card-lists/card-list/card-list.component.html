@@ -4,7 +4,7 @@
   <div #cardDiv *ngFor="let card of cardsToShow" class="m-1">
     <digimon-full-card class="transition scale-95"
       (click)="addToDeck(card)" [card]="card" [compact]="compact" [collectionMode]="collectionMode && !deckBuilder"
-                       [count]="getCount(card.id)" [deckBuilder]="deckBuilder">
+                       [count]="getCount(card.id)" [deckBuilder]="deckBuilder" [biggerCards]="biggerCards">
     </digimon-full-card>
   </div>
 

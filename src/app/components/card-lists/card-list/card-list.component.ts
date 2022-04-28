@@ -13,6 +13,7 @@ import {selectCollection, selectCollectionMode, selectFilteredCards, selectSite}
 export class CardListComponent implements OnInit, OnDestroy {
   @Input() public showCount: number;
   @Input() public compact: boolean;
+  @Input() public biggerCards?: boolean = false;
 
   @Output() onCardClick = new EventEmitter<string>();
 
@@ -64,7 +65,7 @@ export class CardListComponent implements OnInit, OnDestroy {
 
     this.store.select(selectFilteredCards).pipe(takeUntil(this.onDestroy$))
       .subscribe((cards) => {
-        this.cards = this.deckBuilder ? cards.filter(card => card.version === 'Normal') : cards;
+        this.cards = cards;
         this.cardsToShow = this.cards.slice(0, this.showCount);
       });
 

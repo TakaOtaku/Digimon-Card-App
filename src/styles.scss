@@ -30,6 +30,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
+.text-shadow-white {
+  text-shadow: -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white, 2px 2px 0 white;
+}
+
 .pentagon {
   position: relative;
   width: 19px;
@@ -51,9 +55,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
 }
 
 .Red {
-  border-color: white !important;
-  color: white !important;
-  background: #ef1919 !important;
+  background: #ef1919;
 }
 .Blue {
   background: #19a0e3;
@@ -74,7 +76,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
   background: #ffffff;
 }
 .Multi {
-  background: pink;
+  background: linear-gradient(
+      90deg,
+      #ef1919 14%,
+      #19a0e3 28%,
+      #ffd619 42%,
+      #19b383 56%,
+      #191919 70%,
+      #8d6fdb 84%,
+      #ffffff 100%
+  );
 }
 
 digimon-multi-select {

@@ -5,6 +5,7 @@ import {DataSnapshot} from "@firebase/database";
 import {BehaviorSubject, first, Subject} from "rxjs";
 import {IDeck, ISave, IUser} from "../../models";
 import {CARDSET} from "../../models/card-set.enum";
+import {emptyDeck} from "../store/reducers/digimon.reducers";
 import {emptySettings} from "../store/reducers/save.reducer";
 
 
@@ -106,6 +107,18 @@ export class DatabaseService {
       if (!entry) return;
 
       deckSubject.next(entry as IDeck[]);
+    });
+
+    return deckSubject;
+  }
+
+  loadDeck(id: string): BehaviorSubject<IDeck> {
+    const deckSubject = new BehaviorSubject<IDeck>(emptyDeck);
+
+    this.database.object(`community-decks/`+id).valueChanges().pipe(first()).subscribe((entry: any) => {
+      if (!entry) return;
+
+      deckSubject.next(entry as IDeck);
     });
 
     return deckSubject;

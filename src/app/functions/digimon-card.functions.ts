@@ -19,6 +19,10 @@ export function compareIDs(idA: string, idB: string): boolean {
   return idA === idB;
 }
 
+export function formatId(id: string): string {
+  return id.replace('ST0', 'ST').split('_P')[0];
+}
+
 export function getPNG(cardSRC: string): string {
   let engRegExp = new RegExp('\\beng\\b');
   let japRegExp = new RegExp('\\bjap\\b');

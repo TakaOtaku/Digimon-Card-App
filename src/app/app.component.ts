@@ -1,12 +1,14 @@
 import {Component} from '@angular/core';
 import {Meta, Title} from "@angular/platform-browser";
-import {Router} from "@angular/router";
+import {NavigationEnd, Router} from "@angular/router";
 import {Store} from "@ngrx/store";
-import {first} from "rxjs";
+import {filter, first} from "rxjs";
+import * as uuid from "uuid";
 import {ISave} from "../models";
+import {SITES} from "./pages/main-page/main-page.component";
 import {AuthService} from "./service/auth.service";
 import {DatabaseService} from "./service/database.service";
-import {loadSave} from './store/digimon.actions';
+import {loadSave, setDeck, setSite} from './store/digimon.actions';
 import {emptySettings} from "./store/reducers/save.reducer";
 
 @Component({
@@ -63,6 +65,17 @@ export class AppComponent {
     ]);
   }
 
+  //deck=1dbb5f5a-afc9-4d5e-a268-08dc9ad333f7
   private checkForDeckLink() {
+    this.router.events.pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe((event: any) => {
+        if(event.url.includes('?deck=')) {
+          this.databaseService.loadDeck(event.url.substring(7)).pipe(filter(value => value.cards.length > 0))
+            .subscribe((deck) => {
+              this.store.dispatch(setDeck({deck: {...deck, id: uuid.v4(), rating: 0, ratingCount: 0}}));
+              this.store.dispatch(setSite({site: SITES.DeckBuilder}));
+          });
+        }
+      });
   }
 }

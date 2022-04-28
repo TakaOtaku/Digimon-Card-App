@@ -13,11 +13,10 @@ export class DeckCardComponent implements OnChanges, OnInit {
   @Input() public card: IDeckCard;
   @Input() public cards: ICard[];
   @Input() public stack?: boolean = false;
+  @Input() public edit?: boolean = false;
   @Input() public missingCards?: boolean = false;
   @Input() public cardHave?: number = 0;
   @Input() public fullCards?: boolean = false;
-
-  @Input() public edit?: boolean = true;
 
   @Output() public removeCard = new EventEmitter<boolean>();
   @Output() public onChange = new EventEmitter<boolean>();
@@ -50,7 +49,11 @@ export class DeckCardComponent implements OnChanges, OnInit {
     this.onChange.emit(true);
   }
 
-  addCardCount(): void {
+  addCardCount(event?: any): void {
+    if(event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
     if(this.card.cardNumber === 'BT6-085') {
       this.card.count = this.card.count >= 50 ? 50 : this.card.count + 1;
       this.onChange.emit(true);
@@ -60,9 +63,13 @@ export class DeckCardComponent implements OnChanges, OnInit {
     this.onChange.emit(true);
   }
 
-  reduceCardCount(): void {
-    this.onChange.emit(true);
+  reduceCardCount(event?: any): void {
+    if(event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
     this.card.count -= 1;
+    this.onChange.emit(true);
     if (this.card.count <= 0) {
       this.card.count = 0;
       this.removeCard.emit(true);

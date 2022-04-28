@@ -6,17 +6,17 @@ import {tagsList} from 'src/models/tags.data';
 import * as uuid from "uuid";
 import {ColorMap, ColorOrderMap, ICard, ICountCard, IDeck, IDeckCard} from "../../../models";
 import {ITag} from "../../../models/interfaces/tag.interface";
+import {compareIDs} from "../../functions/digimon-card.functions";
 import {AuthService} from "../../service/auth.service";
 import {DatabaseService} from "../../service/database.service";
 import {
   importDeck,
   setAccessoryDeckDialog,
   setDeck,
-  setEdit,
   setExportDeckDialog,
   setImportDeckDialog
 } from "../../store/digimon.actions";
-import {selectCollection, selectDeckBuilderViewModel, selectEdit} from "../../store/digimon.selectors";
+import {selectCollection, selectDeckBuilderViewModel} from "../../store/digimon.selectors";
 import {emptyDeck} from "../../store/reducers/digimon.reducers";
 
 @Component({
@@ -56,9 +56,11 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
   collection: ICountCard[];
 
   fullCards = true;
-  edit = true;
   stack = false;
   missingCards = false;
+
+  sidebar = false;
+  statsSidebar = true;
 
   statDialog = false;
   settingsDialog = false;
@@ -79,7 +81,7 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
     this.store.select(selectDeckBuilderViewModel).pipe(takeUntil(this.onDestroy$), filter(value => !!value))
       .subscribe(({deck, cards}) => {
         this.allCards = cards;
-        if (deck) {
+        if (deck && deck !== this.deck) {
           this.deck = deck;
           this.title = deck.title ?? '';
           this.description = deck.description ?? '';
@@ -87,8 +89,6 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
           this.mapDeck(deck);
         }
       });
-
-    this.store.select(selectEdit).pipe(takeUntil(this.onDestroy$)).subscribe(edit => this.edit = edit);
 
     this.getLevelStats();
   }
@@ -106,7 +106,7 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
     const iDeckCards: IDeckCard[] = [];
 
     deck.cards.forEach(card => {
-      const foundCard = this.allCards.find(item => item.id === card.id);
+      const foundCard = this.allCards.find(item => compareIDs(item.id, card.id));
       if (foundCard) {
         iDeckCards.push({...foundCard, count: card.count});
       }
@@ -114,13 +114,6 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
 
     iDeckCards.forEach(card => this.mainDeck.push({...card, count: card.count}));
     this.deckSort();
-  }
-
-  /**
-   * Set Edit/View Mode
-   */
-  editView() {
-    this.store.dispatch(setEdit({edit: !this.edit}))
   }
 
   /**
@@ -150,8 +143,9 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
   /**
    * Save the Deck
    */
-  save(){
+  save(event: any){
     this.confirmationService.confirm({
+      target: event.target,
       message: 'You are about to save all changes and overwrite everything changed. Are you sure?',
       accept: () => {
         this.mapToDeck();
@@ -167,24 +161,28 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
   mapToDeck() {
     const cards = this.mainDeck.map(card => ({id: card.id, count:card.count}));
     this.deck = {...this.deck, title: this.title, description: this.description, cards}
+    this.store.dispatch(setDeck({deck: this.deck}));
   }
 
   /**
    * Increase the Card Count but check for Eosmon
    */
   onCardClick(id: string) {
-    const alreadyInDeck = this.mainDeck.find(value => value.cardNumber === id);
-    const card = this.allCards.find(card => card.id === id);
+    const alreadyInDeck = this.mainDeck.find(value => compareIDs(value.id, id));
+    const card = this.allCards.find(card => compareIDs(card.id, id));
     if(alreadyInDeck) {
       if(card!.cardNumber === 'BT6-085') {
         alreadyInDeck.count = alreadyInDeck.count >= 50 ? 50 : alreadyInDeck.count + 1;
+        this.mapToDeck()
         return;
       }
       alreadyInDeck.count = alreadyInDeck.count === 4 ? 4 : alreadyInDeck.count + 1;
+      this.mapToDeck()
       return;
     }
 
     this.mainDeck.push({...card!, count: 1});
+    this.mapToDeck()
     this.deckSort();
   }
 
@@ -216,6 +214,7 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
    */
   removeCard(card: IDeckCard) {
     this.mainDeck = this.mainDeck.filter(value => value !== card);
+    this.mapToDeck()
     this.deckSort();
   }
 
@@ -344,12 +343,17 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
    * Compare with the collection if you have all necessary Cards
    */
   getCardHave(card: IDeckCard) {
-    const foundCards = this.collection.filter(colCard => colCard.id === card.cardNumber)
+    const foundCards = this.collection.filter(colCard => this.removeP(colCard.id) === card.cardNumber)
     let count = 0;
     foundCards?.forEach(found => {
       count += found.count;
     });
     return count;
+  }
+
+  removeP(id: string): string {
+    if(!id.includes('_P')) {return id}
+    return id.split('_P')[0];
   }
 
   /**

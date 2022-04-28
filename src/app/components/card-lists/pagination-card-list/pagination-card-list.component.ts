@@ -11,8 +11,8 @@ import {selectCollection, selectCollectionMode, selectFilteredCards} from "../..
 export class PaginationCardListComponent implements OnInit {
   @Output() onCardClick = new EventEmitter<string>();
 
-  private pagRate = 10;
-  public pagination = 10;
+  private pagRate = 40;
+  public pagination = 40;
 
   private cards: ICard[] = [];
   public cardsToShow: ICard[] = [];
@@ -27,7 +27,7 @@ export class PaginationCardListComponent implements OnInit {
   ngOnInit() {
     this.store.select(selectFilteredCards).pipe(takeUntil(this.onDestroy$))
       .subscribe((cards) => {
-        this.cards = cards.filter(card => card.version === 'Normal');
+        this.cards = cards;
         this.cardsToShow = this.cards.slice(0, this.pagination);
       });
 
@@ -48,7 +48,7 @@ export class PaginationCardListComponent implements OnInit {
   }
 
   addToDeck(card: ICard) {
-    this.onCardClick.emit(card.cardNumber)
+    this.onCardClick.emit(card.id)
   }
 
   next() {

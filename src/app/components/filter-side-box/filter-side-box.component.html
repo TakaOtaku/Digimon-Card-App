@@ -5,6 +5,19 @@
 
   <digimon-sort-buttons class="self-center inline-flex lg:hidden mx-auto my-5"></digimon-sort-buttons>
 
+  <h1 class="primary-color mt-5" [ngClass]="{'lg:hidden' : !showColors}">Colors</h1>
+  <p-selectButton class="Colors" [ngClass]="{'lg:hidden' : !showColors}" [options]="colors" [formControl]="colorFilter" [multiple]="true">
+    <ng-template let-color>
+      <i class="pi" [ngClass]="
+          {'pi-check': colorChecked(color), 'pi-times': !colorChecked(color)}"></i>
+    </ng-template>
+  </p-selectButton>
+
+  <h1 class="primary-color mt-5" [ngClass]="{'lg:hidden' : !showColors}">Card Type</h1>
+  <p-selectButton class="mb-5" [ngClass]="{'lg:hidden' : !showColors}"
+                  [options]="cardTypes" [formControl]="cardTypeFilter" [multiple]="true">
+  </p-selectButton>
+
   <p-multiSelect styleClass="w-full" [filter]="false" [showToggleAll]="false" [options]="groupedSets" [showHeader]="false" [group]="true"
                  [formControl]="setFilter" defaultLabel="Set" scrollHeight="250px" display="chip">
     <ng-template let-group pTemplate="group">
@@ -32,7 +45,7 @@
 
   <h1 class="primary-color mt-5">Play Cost</h1>
   <div class="flex flex-row mx-5">
-    <p class="text-white min-w-[35px]">{{digivolutionSlider[0]}}</p>
+    <p class="text-white min-w-[35px]">{{playCostSlider[0]}}</p>
     <p-slider [(ngModel)]="playCostSlider" (onSlideEnd)="updatePlayCostSlider()"
               [range]="true" [min]="0" [max]="15" class="flex-grow mx-5 self-center"></p-slider>
     <p class="text-white min-w-[35px]">{{playCostSlider[1] === 15 ? '15+' : playCostSlider[1]}}</p>
@@ -60,21 +73,8 @@
   </p-selectButton>
 
   <h1 class="primary-color mt-5">Version</h1>
-  <p-selectButton [ngClass]="{'mb-5': !showColors}"
+  <p-selectButton
     [options]="versions" [formControl]="versionFilter" [multiple]="true">
-  </p-selectButton>
-
-  <h1 *ngIf="showColors" class="primary-color mt-5">Colors</h1>
-  <p-selectButton *ngIf="showColors" class="Colors" [options]="colors" [formControl]="colorFilter" [multiple]="true">
-    <ng-template let-color>
-      <i class="pi" [ngClass]="
-          {'pi-check': colorChecked(color), 'pi-times': !colorChecked(color)}"></i>
-    </ng-template>
-  </p-selectButton>
-
-  <h1 *ngIf="showColors" class="primary-color mt-5">Card Type</h1>
-  <p-selectButton *ngIf="showColors" class="mb-5"
-    [options]="cardTypes" [formControl]="cardTypeFilter" [multiple]="true">
   </p-selectButton>
 
   <p-multiSelect styleClass="w-full mt-2" [filter]="true" [showToggleAll]="false" [options]="keywords" [showHeader]="true"

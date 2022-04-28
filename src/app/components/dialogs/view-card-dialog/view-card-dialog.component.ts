@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {ColorMap, ICard} from "../../../../models";
+import {formatId} from "../../../functions/digimon-card.functions";
 
 @Component({
   selector: 'digimon-view-card-dialog',
@@ -66,5 +67,10 @@ export class ViewCardDialogComponent implements OnInit, OnChanges {
       return cardSRC.replace(preReleaseRegExp, 'pre-release/png')
         .replace(new RegExp('\\b.jpg\\b'), '.png')
     }
+  }
+
+  openWiki() {
+    const wikiLink = 'https://digimoncardgame.fandom.com/wiki/'+formatId(this.card.id);
+    window.open(wikiLink, '_blank');
   }
 }

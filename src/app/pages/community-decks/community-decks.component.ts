@@ -6,7 +6,7 @@ import {Subject, takeUntil} from "rxjs";
 import * as uuid from "uuid";
 import {COLORS, ICard, IDeck, TAGS} from "../../../models";
 import {DatabaseService} from "../../service/database.service";
-import {importDeck, setDeck, setEdit, setSite} from "../../store/digimon.actions";
+import {importDeck, setDeck, setSite} from "../../store/digimon.actions";
 import {selectAllCards} from "../../store/digimon.selectors";
 import {SITES} from "../main-page/main-page.component";
 
@@ -24,7 +24,8 @@ export class CommunityDecksComponent implements OnInit, OnDestroy {
 
   deckRowContext = [
     {label: 'View', icon: 'pi pi-fw pi-search', command: () => this.viewDeck(this.selectedDeck)},
-    {label: 'Copy', icon: 'pi pi-fw pi-copy', command: () => this.copyDeck(this.selectedDeck)}
+    {label: 'Copy', icon: 'pi pi-fw pi-copy', command: () => this.copyDeck(this.selectedDeck)},
+    {label: 'Get Link', icon: 'pi pi-fw pi-share-alt', command: () => this.copyLink(this.selectedDeck)},
   ];
 
   allCards: ICard[] = [];
@@ -52,7 +53,6 @@ export class CommunityDecksComponent implements OnInit, OnDestroy {
     this.confirmationService.confirm({
       message: 'You are about to open this deck. Are you sure?',
       accept: () => {
-        this.store.dispatch(setEdit({edit: false}));
         this.store.dispatch(setDeck({deck: {...deck, id: uuid.v4(), rating: 0, ratingCount: 0}}));
         this.store.dispatch(setSite({site: SITES.DeckBuilder}));
       }
@@ -71,6 +71,27 @@ export class CommunityDecksComponent implements OnInit, OnDestroy {
         });
       }
     });
+  }
+
+  copyLink(deck: IDeck) {
+    const selBox = document.createElement('textarea');
+    selBox.style.position = 'fixed';
+    selBox.style.left = '0';
+    selBox.style.top = '0';
+    selBox.style.opacity = '0';
+    selBox.value = 'https://digimoncard.app/?deck='+deck.id;
+    document.body.appendChild(selBox);
+    selBox.focus();
+    selBox.select();
+    document.execCommand('copy');
+    document.body.removeChild(selBox);
+
+    this.messageService.add({
+      severity: 'success',
+      summary: 'Link copied!',
+      detail: 'The link was copied to your clipboard!'
+    });
+
   }
 
   dateFormat(date: Date): string {

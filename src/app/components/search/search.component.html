@@ -1,15 +1,18 @@
 <div class="flex flex-col pl-7 py-3 mb-2 surface-ground">
-  <div class="self-center w-full lg:w-10/12 xl:w-8/12 inline-flex mr-10">
+  <div class="self-center w-full inline-flex mr-10"
+       [ngClass]="{'lg:w-10/12 xl:w-8/12': !deckBuilder, 'xl:w-10/12': deckBuilder}">
     <span class="p-input-icon-left w-full" [ngStyle]="{display: 'inline-flex'}">
       <i class="pi pi-search"></i>
       <input type="text" pInputText [formControl]="searchFilter" placeholder="Search" class="w-full">
     </span>
 
-    <button (click)="this.display = true" pButton type="button" icon="pi pi-filter-fill" class="lg:hidden" label="Filter"></button>
+    <button (click)="this.display = true" pButton type="button" icon="pi pi-filter-fill"
+            [ngClass]="{'lg:hidden': !deckBuilder, '2xl:hidden': deckBuilder}" label="Filter"></button>
   </div>
 
-  <div class="mt-4 lg:mx-10 flex flex-col lg:flex-row self-center justify-between w-full lg:w-10/12 xl:w-8/12">
-    <div>
+  <div class="mt-4 flex flex-col self-center justify-between w-full"
+       [ngClass]="{'lg:w-10/12 xl:w-8/12 lg:flex-row lg:mx-10': !deckBuilder, 'w-10/12 xl:flex-row xl:mx-10': deckBuilder}">
+    <div *ngIf="colorsShow">
       <p-selectButton class="Colors" [options]="colors" [formControl]="colorFilter" [multiple]="true">
         <ng-template let-color>
           <i class="pi" [ngClass]="
@@ -18,7 +21,7 @@
       </p-selectButton>
     </div>
 
-    <div>
+    <div *ngIf="cardTypesShow">
       <p-selectButton
         [options]="cardTypes" [formControl]="cardTypeFilter" [multiple]="true">
       </p-selectButton>

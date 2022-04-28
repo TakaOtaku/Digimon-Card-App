@@ -5,7 +5,7 @@ import {Subject, takeUntil} from "rxjs";
 import englishJSON from "../../../../assets/cardlists/english.json";
 import {ICard} from "../../../../models";
 import {changeCardCount, setViewCardDialog} from "../../../store/digimon.actions";
-import {selectCardSize, selectCollectionMinimum} from "../../../store/digimon.selectors";
+import {selectCardSize, selectCollectionMinimum, selectDeck} from "../../../store/digimon.selectors";
 
 @Component({
   selector: 'digimon-full-card',
@@ -20,6 +20,7 @@ export class FullCardComponent implements OnInit, OnDestroy {
   @Input() compact?: boolean = false;
   @Input() collectionMode?: boolean = false;
   @Input() deckBuilder?: boolean = false;
+  @Input() biggerCards?: boolean = false;
 
   viewCardDialog = false;
 
@@ -43,6 +44,8 @@ export class FullCardComponent implements OnInit, OnDestroy {
 
   collectionMinimum = 0;
 
+  countInDeck = 0;
+
   private onDestroy$ = new Subject();
 
   constructor(private store: Store) {}
@@ -52,6 +55,8 @@ export class FullCardComponent implements OnInit, OnDestroy {
       .subscribe(cardSize => this.setCardSize(cardSize));
     this.store.select(selectCollectionMinimum).pipe(takeUntil(this.onDestroy$))
       .subscribe(minimum => this.collectionMinimum = minimum);
+    this.store.select(selectDeck).pipe(takeUntil(this.onDestroy$))
+      .subscribe(deck => this.countInDeck = deck.cards.find(value => value.id === this.card.id)?.count ?? 0);
   }
 
   ngOnDestroy() {
@@ -64,9 +69,13 @@ export class FullCardComponent implements OnInit, OnDestroy {
   }
 
   setCardSize(size: number) {
+    if(this.biggerCards) {
+      this.cardWidth = '20vw';
+      return;
+    }
     if(this.deckBuilder) {
       this.cardWidth = '5vw';
-      return
+      return;
     }
     if(this.compact) {
       this.cardWidth = this.rangeToRange(100) + 'vmin'

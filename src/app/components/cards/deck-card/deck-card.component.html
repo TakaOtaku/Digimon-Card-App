@@ -2,19 +2,34 @@
 <ng-template *ngIf="!fullCards" [ngTemplateOutlet]="smallCard"></ng-template>
 
 <ng-template #fullCard>
-  <div class="inline-flex relative card">
-    <img [src]="card.cardImage" alt="Digimon Card" class="card-image m-auto z-50" (click)="showCardDetails()" (contextmenu)="showCardDetails()">
+  <div class="inline-flex relative p-1">
 
-    <div *ngIf="missingCards" class="absolute inline-flex ml-auto">
-      <i class="pi pi-times text-white"></i>
-      <p class="font-bold text-xl text-white">{{(cardHave ?? 0) - card.count > 0 ? 0 : (cardHave ?? 0) - card.count}}</p>
+    <div class="group flex flex-col absolute w-full h-full z-[101] rounded-lg lg:hover:bg-slate-500 lg:hover:bg-opacity-50"
+         (click)="showCardDetails()" (contextmenu)="showCardDetails()">
+      <button (click)="addCardCount($event)"
+        *ngIf="edit" pButton pRipple type="button" icon="pi pi-plus"
+        class="hidden group-hover:block z-[101] p-button-rounded rounded-full h-9 w-9 flex items-center justify-center absolute mx-auto top-2 lg:right-8"
+        ></button>
+      <button (click)="reduceCardCount($event)"
+        *ngIf="edit" pButton pRipple type="button" icon="pi pi-minus"
+        class="hidden group-hover:block z-[101] p-button-rounded rounded-full h-9 w-9 flex items-center justify-center absolute mx-auto lg:bottom-4 lg:right-8"
+        ></button>
+
+      <button (click)="addCardCount($event)"
+              *ngIf="edit" pButton pRipple type="button" icon="pi pi-plus"
+              class="lg:hidden z-[101] p-button-rounded rounded-full h-9 w-9 flex items-center justify-center absolute mx-auto top-2 right-2.5"
+      ></button>
+      <button (click)="reduceCardCount($event)"
+              *ngIf="edit" pButton pRipple type="button" icon="pi pi-minus"
+              class="lg:hidden z-[101] p-button-rounded rounded-full h-9 w-9 flex items-center justify-center absolute mx-auto top-2 left-2"
+      ></button>
     </div>
 
-    <p-inputNumber *ngIf="edit" (onInput)="changeCardCount($event)"
-      class="card-count" [min]="0" [max]="card.cardNumber === 'BT6-085' ? 50 : 4" placeholder="0" [(ngModel)]="card.count" mode="decimal" buttonLayout="vertical" [showButtons]="true"
-      [style]="{'width': '100%'}" [inputStyle]="{'width': '100%', 'text-align': 'center'}"
-      decrementButtonClass="p-button-secondary" incrementButtonClass="p-button-secondary" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus"></p-inputNumber>
-    <span *ngIf="!edit" class="primary-color font-bolder text-3xl px-2">x{{card.count}}</span>
+    <img [src]="card.cardImage" alt="Digimon Card" class="group card-image w-[40vmin] md:w-[16vmin] md:w-[13vmin] lg:w-[10vmin] z-50" [ngClass]="{'card' : fullCards, 'm-auto': fullCards}">
+
+    <span class="absolute z-[100] bottom-1 right-1 text-orange-500 font-black text-3xl px-2 text-shadow-white">
+      <span class="text-sky-700 pr-1">x</span>{{card.count}}
+    </span>
 
     <p *ngIf="missingCards" class="absolute z-[100] font-bold text-6xl text-red text-black-outline missing">
       {{(cardHave ?? 0) - card.count > 0 ? 0 : (cardHave ?? 0) - card.count}}
