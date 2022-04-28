@@ -2,6 +2,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {Subject, takeUntil} from "rxjs";
 import {ICard, ICountCard} from "../../../../models";
+import {setViewCardDialog} from "../../../store/digimon.actions";
 import {selectCollection, selectCollectionMode, selectFilteredCards} from "../../../store/digimon.selectors";
 
 @Component({
@@ -51,6 +52,19 @@ export class PaginationCardListComponent implements OnInit {
     this.onCardClick.emit(card.id)
   }
 
+  getGridCols(): string {
+    if(this.cardsToShow.length <= 10) {
+      return 'grid-cols-4';
+    }
+    if(this.cardsToShow.length <= 20) {
+      return 'grid-cols-5';
+    }
+    if(this.cardsToShow.length <= 32) {
+      return 'grid-cols-6';
+    }
+    return 'grid-cols-8';
+  }
+
   next() {
     this.pagination += this.pagRate;
     this.cardsToShow = this.cards.slice(this.pagination - this.pagRate, this.pagination);
@@ -67,5 +81,9 @@ export class PaginationCardListComponent implements OnInit {
 
   get nextCards(): boolean {
     return this.pagination >= this.cards.length;
+  }
+
+  showDetails(card: ICard) {
+    this.store.dispatch(setViewCardDialog({show: true, card}));
   }
 }
