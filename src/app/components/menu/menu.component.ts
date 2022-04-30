@@ -173,7 +173,7 @@ export class MenuComponent implements OnInit, OnDestroy {
           {
             label: 'What I work on',
             icon: 'pi pi-history',
-            url: 'https://trello.com/b/LZA0rGZ4/digimon-card-game-app'
+            url: 'https://github.com/users/TakaOtaku/projects/1/views/1?layout=board'
           },
           {
             label: 'Help the Site!',

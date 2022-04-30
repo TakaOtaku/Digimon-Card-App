@@ -13,9 +13,9 @@ import {CardTypes, Colors} from "../filter-box/filterData";
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-  @Input() deckBuilder = false;
-  @Input() colorsShow = false;
-  @Input() cardTypesShow = false;
+  @Input() deckBuilder? = false;
+  @Input() colorsShow? = false;
+  @Input() cardTypesShow? = false;
 
   searchFilter = new FormControl('');
 

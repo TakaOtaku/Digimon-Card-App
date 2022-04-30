@@ -11,17 +11,16 @@
   </div>
 
   <div class="mt-4 flex flex-col self-center justify-between w-full"
-       [ngClass]="{'lg:w-10/12 xl:w-8/12 lg:flex-row lg:mx-10': !deckBuilder, 'w-10/12 xl:flex-row xl:mx-10': deckBuilder}">
-    <div *ngIf="colorsShow">
+       [ngClass]="{'lg:w-10/12 xl:w-8/12 lg:flex-row lg:mx-10': !deckBuilder, 'hidden': deckBuilder}">
+    <div [ngClass]="{'hidden': !colorsShow, 'hidden lg:block': colorsShow}">
       <p-selectButton class="Colors" [options]="colors" [formControl]="colorFilter" [multiple]="true">
         <ng-template let-color>
-          <i class="pi" [ngClass]="
-          {'pi-check': colorChecked(color), 'pi-times': !colorChecked(color)}"></i>
+          <i class="pi" [ngClass]="{'pi-check': colorChecked(color), 'pi-times': !colorChecked(color)}"></i>
         </ng-template>
       </p-selectButton>
     </div>
 
-    <div *ngIf="cardTypesShow">
+    <div [ngClass]="{'hidden': !cardTypesShow, 'hidden lg:block': cardTypesShow}">
       <p-selectButton
         [options]="cardTypes" [formControl]="cardTypeFilter" [multiple]="true">
       </p-selectButton>
@@ -30,5 +29,5 @@
 </div>
 
 <p-dialog header="Filter and Sort" [(visible)]="display" styleClass="w-[95vw] h-[95vh]" [baseZIndex]="10000">
-  <digimon-filter-side-box></digimon-filter-side-box>
+  <digimon-filter-side-box [showColors]="true"></digimon-filter-side-box>
 </p-dialog>
