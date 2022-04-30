@@ -1,16 +1,16 @@
 <div id="top"></div>
-[![Contributors][contributors-shield]][contributors-url]
+<!--[![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]-->
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <a href="https://github.com/TakaOtaku/Digimon-Card-App">
-    <img src="src/assets/images/img_logo.png" alt="Logo" width="80" height="80">
+    <img src="src/assets/images/img_logo.png" alt="Logo" height="80">
   </a>
 
 <h3 align="center">Digimon Card App</h3>
