@@ -154,12 +154,26 @@ function applyRangeFilter(cards: ICard[], filter: number[], key: string): ICard[
     case 'level':
       if(filter[0] === 2 && filter[1] === 7) {return  cards}
 
+      if(filter[1] === 7) {
+        return [...new Set([...cards.filter(cards => {
+          const level: number = +cards['cardLv'].substring(3) >>> 0;
+          return filter[0] <= level;
+        })])];
+      }
+
       return [...new Set([...cards.filter(cards => {
         const level: number = +cards['cardLv'].substring(3) >>> 0;
         return filter[0] <= level && filter[1] >= level
       })])];
     case 'playCost':
       if(filter[0] === 0 && filter[1] === 15) {return  cards}
+
+      if(filter[1] === 15) {
+        return [...new Set([...cards.filter(cards => {
+          const playCost: number = +cards['playCost'] >>> 0;
+          return filter[0] <= playCost && filter[1] >= playCost
+        })])];
+      }
 
       return [...new Set([...cards.filter(cards => {
         const playCost: number = +cards['playCost'] >>> 0;
@@ -176,8 +190,17 @@ function applyRangeFilter(cards: ICard[], filter: number[], key: string): ICard[
           return false;
         }
         if (cards['digivolveCost2'] === '-') {
+          if(filter[1] === 6) {
+            return (filter[0] <= digivolution1);
+          }
+
           return (filter[0] <= digivolution1 && filter[1] >= digivolution1);
         }
+
+        if(filter[1] === 6) {
+          return filter[0] <= digivolution1 || filter[0] <= digivolution2;
+        }
+
         return (filter[0] <= digivolution1 && filter[1] >= digivolution1) ||
           (filter[0] <= digivolution2 && filter[1] >= digivolution2);
       })])];
@@ -194,7 +217,11 @@ function applyRangeFilter(cards: ICard[], filter: number[], key: string): ICard[
         const a: number = +(filter[0]+'000') >>> 0;
         const b: number = +(filter[1]+'000') >>> 0;
 
-        return a <= dp && b >= dp
+        if(filter[1] === 15) {
+          return a <= dp;
+        }
+
+        return a <= dp && b >= dp;
       })])];
   }
 
@@ -238,14 +265,7 @@ export function dynamicSortNumber(property: string): any {
   return function (a:any, b:any) {
     const first: number = a[property]>>>0;
     const second: number = b[property]>>>0;
-    let result = a[property].localeCompare(
-      b[property],
-      undefined,
-      {
-        numeric: true,
-        sensitivity: 'base',
-      }
-    );
+    let result = (first < second) ? -1 : (first > second) ? 1 : 0;
     return result * sortOrder;
   }
 }
