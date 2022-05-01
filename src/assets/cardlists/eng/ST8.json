@@ -1,6 +1,6 @@
 [
   {
-    "id": "ST08-01",
+    "id": "ST8-01",
     "name": "DemiVeemon",
     "cardImage": "assets/images/cards/eng/ST8-01.jpg",
     "cardType": "Digi-Egg",
@@ -13,7 +13,7 @@
     "attribute": "-",
     "type": "Baby Dragon",
     "rarity": "U",
-    "cardNumber": "ST08-01",
+    "cardNumber": "ST8-01",
     "effect": "-",
     "digivolveEffect": "[Your Turn] While you have 8 or more cards in your hand, this Digimon gets +1000 DP.",
     "securityEffect": "-",
@@ -22,7 +22,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST08-02",
+    "id": "ST8-02",
     "name": "Gabumon",
     "cardImage": "assets/images/cards/eng/ST8-02.jpg",
     "cardType": "Digimon",
@@ -35,7 +35,7 @@
     "attribute": "Data",
     "type": "Reptile",
     "rarity": "C",
-    "cardNumber": "ST08-02",
+    "cardNumber": "ST8-02",
     "effect": "-",
     "digivolveEffect": "[All Turns] While you have 8 or more cards in your hand, this Digimon gets +1000 DP.",
     "securityEffect": "-",
@@ -44,7 +44,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST08-03",
+    "id": "ST8-03",
     "name": "Dracomon",
     "cardImage": "assets/images/cards/eng/ST8-03.jpg",
     "cardType": "Digimon",
@@ -57,7 +57,7 @@
     "attribute": "Data",
     "type": "Dragon",
     "rarity": "C",
-    "cardNumber": "ST08-03",
+    "cardNumber": "ST8-03",
     "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 Digimon card with [Dramon] in its name among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -66,7 +66,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST08-04",
+    "id": "ST8-04",
     "name": "Veemon",
     "cardImage": "assets/images/cards/eng/ST8-04.jpg",
     "cardType": "Digimon",
@@ -79,7 +79,7 @@
     "attribute": "Free",
     "type": "Mini Dragon",
     "rarity": "SR",
-    "cardNumber": "ST08-04",
+    "cardNumber": "ST8-04",
     "effect": "[Your Turn] If your opponent has a level 6 or higher Digimon in play, this Digimon can digivolve into an [UlforceVeedramon] in your hand for a memory cost of 4, ignoring its digivolution requirements.",
     "digivolveEffect": "[When Attacking] If you have 7 or fewer cards in your hand, trigger ＜Draw 1＞. (Draw 1 card from your deck.)",
     "securityEffect": "-",
@@ -88,7 +88,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST08-04_P1",
+    "id": "ST8-04_P1",
     "name": "Veemon",
     "cardImage": "assets/images/cards/eng/ST8-04_P1.jpg",
     "cardType": "Digimon",
@@ -101,7 +101,7 @@
     "attribute": "Free",
     "type": "Mini Dragon",
     "rarity": "SR",
-    "cardNumber": "ST08-04",
+    "cardNumber": "ST8-04",
     "effect": "[Your Turn] If your opponent has a level 6 or higher Digimon in play, this Digimon can digivolve into an [UlforceVeedramon] in your hand for a memory cost of 4, ignoring its digivolution requirements.",
     "digivolveEffect": "[When Attacking] If you have 7 or fewer cards in your hand, trigger ＜Draw 1＞. (Draw 1 card from your deck.)",
     "securityEffect": "-",
@@ -110,7 +110,7 @@
     "version": "Stamp"
   },
   {
-    "id": "ST08-04_P2",
+    "id": "ST8-04_P2",
     "name": "Veemon",
     "cardImage": "assets/images/cards/eng/ST8-04_P2.jpg",
     "cardType": "Digimon",
@@ -123,7 +123,7 @@
     "attribute": "Free",
     "type": "Mini Dragon",
     "rarity": "SR",
-    "cardNumber": "ST08-04",
+    "cardNumber": "ST8-04",
     "effect": "[Your Turn] If your opponent has a level 6 or higher Digimon in play, this Digimon can digivolve into an [UlforceVeedramon] in your hand for a memory cost of 4, ignoring its digivolution requirements.",
     "digivolveEffect": "[When Attacking] If you have 7 or fewer cards in your hand, trigger ＜Draw 1＞. (Draw 1 card from your deck.)",
     "securityEffect": "-",
@@ -132,7 +132,7 @@
     "version": "Stamp"
   },
   {
-    "id": "ST08-04_P3",
+    "id": "ST8-04_P3",
     "name": "Veemon",
     "cardImage": "assets/images/cards/eng/ST8-04_P3.jpg",
     "cardType": "Digimon",
@@ -145,7 +145,7 @@
     "attribute": "Free",
     "type": "Mini Dragon",
     "rarity": "SR",
-    "cardNumber": "ST08-04",
+    "cardNumber": "ST8-04",
     "effect": "[Your Turn] If your opponent has a level 6 or higher Digimon in play, this Digimon can digivolve into an [UlforceVeedramon] in your hand for a memory cost of 4, ignoring its digivolution requirements.",
     "digivolveEffect": "[When Attacking] If you have 7 or fewer cards in your hand, trigger ＜Draw 1＞. (Draw 1 card from your deck.)",
     "securityEffect": "-",
@@ -154,7 +154,7 @@
     "version": "Stamp"
   },
   {
-    "id": "ST08-05",
+    "id": "ST8-05",
     "name": "Veedramon",
     "cardImage": "assets/images/cards/eng/ST8-05.jpg",
     "cardType": "Digimon",
@@ -167,7 +167,7 @@
     "attribute": "Vaccine",
     "type": "Mythical Dragon",
     "rarity": "R",
-    "cardNumber": "ST08-05",
+    "cardNumber": "ST8-05",
     "effect": "-",
     "digivolveEffect": "[When Attacking] If you have 8 or more cards in your hand, return 1 of your opponent's level 3 Digimon to its owner's hand. Trash all of the digivolution cards of that Digimon.",
     "securityEffect": "-",
@@ -176,7 +176,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST08-06",
+    "id": "ST8-06",
     "name": "Coredramon",
     "cardImage": "assets/images/cards/eng/ST8-06.jpg",
     "cardType": "Digimon",
@@ -189,7 +189,7 @@
     "attribute": "Vaccine",
     "type": "Dragon",
     "rarity": "U",
-    "cardNumber": "ST08-06",
+    "cardNumber": "ST8-06",
     "effect": "[Security] At the end of the battle, play this card without paying its memory cost.[On Play] Trigger ＜Draw 2＞. (Draw 2 cards from your deck.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -198,7 +198,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST08-06_P1",
+    "id": "ST8-06_P1",
     "name": "Coredramon",
     "cardImage": "assets/images/cards/eng/ST8-06_P1.jpg",
     "cardType": "Digimon",
@@ -211,7 +211,7 @@
     "attribute": "Vaccine",
     "type": "Dragon",
     "rarity": "U",
-    "cardNumber": "ST08-06",
+    "cardNumber": "ST8-06",
     "effect": "[Security] At the end of the battle, play this card without paying its memory cost.[On Play] Trigger ＜Draw 2＞. (Draw 2 cards from your deck.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -220,7 +220,7 @@
     "version": "Stamp"
   },
   {
-    "id": "ST08-07",
+    "id": "ST8-07",
     "name": "Wingdramon",
     "cardImage": "assets/images/cards/eng/ST8-07.jpg",
     "cardType": "Digimon",
@@ -233,7 +233,7 @@
     "attribute": "Vaccine",
     "type": "Sky Dragon",
     "rarity": "U",
-    "cardNumber": "ST08-07",
+    "cardNumber": "ST8-07",
     "effect": "＜Blocker＞ (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -242,7 +242,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST08-08",
+    "id": "ST8-08",
     "name": "AeroVeedramon",
     "cardImage": "assets/images/cards/eng/ST8-08.jpg",
     "cardType": "Digimon",
@@ -255,7 +255,7 @@
     "attribute": "Vaccine",
     "type": "Holy Dragon",
     "rarity": "R",
-    "cardNumber": "ST08-08",
+    "cardNumber": "ST8-08",
     "effect": "＜Jamming＞ (This Digimon can't be deleted in battles against Security Digimon.)",
     "digivolveEffect": "[Your Turn] While you have 8 or more cards in your hand, this Digimon gains . (This Digimon checks 1 additional security card.)",
     "securityEffect": "-",
@@ -264,7 +264,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST08-09",
+    "id": "ST8-09",
     "name": "Slayerdramon",
     "cardImage": "assets/images/cards/eng/ST8-09.jpg",
     "cardType": "Digimon",
@@ -277,7 +277,7 @@
     "attribute": "Vaccine",
     "type": "Dragonkin",
     "rarity": "R",
-    "cardNumber": "ST08-09",
+    "cardNumber": "ST8-09",
     "effect": "[When Digivolving] This Digimon gains ＜Security Attack +1＞ for the turn. (This Digimon checks 1 additional security card.)[Your Turn] This Digimon is unblockable.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -286,7 +286,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST08-10",
+    "id": "ST8-10",
     "name": "UlforceVeedramon",
     "cardImage": "assets/images/cards/eng/ST8-10.jpg",
     "cardType": "Digimon",
@@ -299,7 +299,7 @@
     "attribute": "Vaccine",
     "type": "Holy Warrior/Royal Knight",
     "rarity": "SR",
-    "cardNumber": "ST08-10",
+    "cardNumber": "ST8-10",
     "effect": "[When Digivolving] Return 1 of your opponent's level 4 or lower Digimon to its owner's hand. Trash all of the digivolution cards of that Digimon.[When Attacking][Once Per Turn] If you have 8 or more cards in your hand, unsuspend this Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "-",
@@ -308,7 +308,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST08-11",
+    "id": "ST8-11",
     "name": "Victory Sword",
     "cardImage": "assets/images/cards/eng/ST8-11.jpg",
     "cardType": "Option",
@@ -321,7 +321,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "U",
-    "cardNumber": "ST08-11",
+    "cardNumber": "ST8-11",
     "effect": "[Main] Unsuspend 1 of your blue Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Add this card to its owner's hand.",
@@ -330,7 +330,7 @@
     "version": "Normal"
   },
   {
-    "id": "ST08-12",
+    "id": "ST8-12",
     "name": "V-Wing Blade",
     "cardImage": "assets/images/cards/eng/ST8-12.jpg",
     "cardType": "Option",
@@ -343,7 +343,7 @@
     "attribute": "-",
     "type": "-",
     "rarity": "C",
-    "cardNumber": "ST08-12",
+    "cardNumber": "ST8-12",
     "effect": "[Main] Return 1 of your opponent's level 6 or lower Digimon to its owner's hand. Trash all of the digivolution cards of that Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",

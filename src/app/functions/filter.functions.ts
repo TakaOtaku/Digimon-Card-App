@@ -217,7 +217,14 @@ export function dynamicSort(property: string): any {
     property = property.substr(1);
   }
   return function (a: any, b: any) {
-    let result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+    let result = a[property].toLowerCase().localeCompare(
+      b[property].toLowerCase(),
+      undefined,
+      {
+        numeric: true,
+        sensitivity: 'base',
+      }
+    );
     return result * sortOrder;
   }
 }
@@ -231,7 +238,14 @@ export function dynamicSortNumber(property: string): any {
   return function (a:any, b:any) {
     const first: number = a[property]>>>0;
     const second: number = b[property]>>>0;
-    let result = (first < second) ? -1 : (first > second) ? 1 : 0;
+    let result = a[property].localeCompare(
+      b[property],
+      undefined,
+      {
+        numeric: true,
+        sensitivity: 'base',
+      }
+    );
     return result * sortOrder;
   }
 }
