@@ -17,8 +17,8 @@
 <div class="inline-flex flex-row max-h-screen relative w-full">
 
   <div class="w-full inline-flex overflow-y-scroll">
-    <div class="h-full w-screen lg:w-6/12 2xl:w-5/12">
-      <div class="h-full ">
+    <div [ngClass]="{'h-full w-screen lg:w-6/12 2xl:w-5/12': !fullscreen, 'h-full w-screen ': fullscreen}">
+      <div class="h-full pb-48">
         <div class="w-full h-full border-2 border-slate-300">
           <div class="toolbar flex flex-wrap w-100 border-b-2 border-slate-600 justify-center surface-ground">
             <div class="border-2 border-slate-500 pr-2 pl-2 primary-color flex flex-row text-center align-center"><b>
@@ -34,6 +34,8 @@
             <button class="p-button-outlined" pButton (click)="statsSidebar = !statsSidebar" icon="pi pi-chart-bar" iconPos="left"></button>
 
             <button class="p-button-outlined" pButton (click)="share()" icon="pi pi-share-alt" iconPos="left"></button>
+
+            <button class="p-button-outlined hidden lg:block" pButton (click)="fullscreen = !fullscreen" icon="pi pi-window-maximize" iconPos="left"></button>
 
             <button class="p-button-outlined" pButton (click)="save($event)" icon="pi pi-save" iconPos="left"></button>
 
@@ -65,10 +67,10 @@
               <label for="float-input2">Description</label>
             </span>
 
-            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 pt-3">
+            <div class="grid pt-3 grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 pb-48">
               <div *ngFor="let card of mainDeck">
                 <digimon-deck-card
-                  (removeCard)="removeCard(card)" (onChange)="mapToDeck()" [fullCards]="fullCards" [edit]="true"
+                  (removeCard)="removeCard(card)" (onChange)="mapToDeck()" [fullCards]="fullCards" [edit]="true" [bigCards]="fullscreen"
                   [card]="card" [cards]="allCards" [stack]="stack" [missingCards]="missingCards" [cardHave]="getCardHave(card)"></digimon-deck-card>
               </div>
             </div>
@@ -76,7 +78,7 @@
         </div>
       </div>
     </div>
-    <div class="h-[calc(100vh-58px)] hidden lg:block lg:w-6/12 2xl:w-7/12">
+    <div [ngClass]="{'h-[calc(100vh-58px)] hidden lg:block lg:w-6/12 2xl:w-7/12': !fullscreen, 'hidden': fullscreen}">
       <div class="h-[calc(100vh-58px)]">
         <div class="flex flex-row">
           <div class="w-full 2xl:w-9/12 hidden lg:block">

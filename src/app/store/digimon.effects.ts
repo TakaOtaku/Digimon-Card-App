@@ -2,6 +2,7 @@ import {Injectable} from "@angular/core";
 import {Actions, createEffect, ofType} from "@ngrx/effects";
 import {Store} from "@ngrx/store";
 import {catchError, EMPTY, first, map, switchMap, tap} from "rxjs";
+import {CARDSET} from "../../models/card-set.enum";
 import {setupDigimonCards} from "../functions/digimon-card.functions";
 import {filterCards} from "../functions/filter.functions";
 import {AuthService} from "../service/auth.service";
@@ -14,6 +15,7 @@ export class DigimonEffects {
   save$ = createEffect(() => this.actions$.pipe(
     ofType(
       DigimonActions.changeCardCount,
+      DigimonActions.changeCardSets,
       DigimonActions.setSave,
       DigimonActions.importDeck,
       DigimonActions.changeDeck,
@@ -97,7 +99,7 @@ export class DigimonEffects {
         .pipe(
           tap((cardSet) => {
             if(cardSet === undefined) {return}
-            const digimonCards = setupDigimonCards(cardSet);
+            const digimonCards = +cardSet>>>0 ? setupDigimonCards(CARDSET.Overwrite) : setupDigimonCards(cardSet);
             this.store.dispatch(DigimonActions.setDigimonCards({digimonCards}));
           }),
           catchError(() => EMPTY)

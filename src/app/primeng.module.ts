@@ -27,6 +27,7 @@ import {SelectButtonModule} from "primeng/selectbutton";
 import {SidebarModule} from "primeng/sidebar";
 import {SliderModule} from "primeng/slider";
 import {SplitterModule} from "primeng/splitter";
+import {StyleClassModule} from "primeng/styleclass";
 import {TableModule} from "primeng/table";
 import {TabViewModule} from "primeng/tabview";
 import {TagModule} from "primeng/tag";
@@ -64,7 +65,8 @@ import {ToastModule} from "primeng/toast";
     DividerModule,
     SplitterModule,
     SidebarModule,
-    TabViewModule
+    TabViewModule,
+    StyleClassModule
   ],
   providers: [
     MessageService,
@@ -101,7 +103,8 @@ import {ToastModule} from "primeng/toast";
     RippleModule,
     SelectButtonModule,
     SliderModule,
-    DividerModule
+    DividerModule,
+    StyleClassModule
   ]
 })
 export class PrimeNGModule { }

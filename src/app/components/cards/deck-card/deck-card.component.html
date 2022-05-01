@@ -25,9 +25,15 @@
       ></button>
     </div>
 
-    <img [src]="card.cardImage" alt="Digimon Card" class="group card-image w-[40vmin] md:w-[16vmin] md:w-[13vmin] lg:w-[10vmin] z-50" [ngClass]="{'card' : fullCards, 'm-auto': fullCards}">
+    <img [src]="card.cardImage" alt="Digimon Card" class="group card-image z-50"
+         [ngClass]="{
+          'card' : fullCards,
+          'm-auto': fullCards,
+          'w-[35vmin] md:w-[16vmin] md:w-[13vmin] lg:w-[10vmin]': !bigCards,
+          'w-[40vmin]': !bigCards
+        }">
 
-    <span class="absolute z-[100] bottom-1 right-1 text-orange-500 font-black text-3xl px-2 text-shadow-white">
+    <span class="absolute z-[100] bottom-1 right-1 text-orange-500 font-black px-2 text-shadow-white" [ngClass]="{'text-3xl': !bigCards, ' text-6xl': bigCards}">
       <span class="text-sky-700 pr-1">x</span>{{card.count}}
     </span>
 

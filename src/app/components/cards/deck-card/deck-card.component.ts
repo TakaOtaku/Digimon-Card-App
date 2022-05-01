@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {Store} from "@ngrx/store";
-import englishJSON from "../../../../assets/cardlists/english.json";
+import {englishCards} from "../../../../assets/cardlists/eng/english";
 import {ColorMap, ICard, IDeckCard} from "../../../../models";
 import {setViewCardDialog} from "../../../store/digimon.actions";
 
@@ -17,15 +17,16 @@ export class DeckCardComponent implements OnChanges, OnInit {
   @Input() public missingCards?: boolean = false;
   @Input() public cardHave?: number = 0;
   @Input() public fullCards?: boolean = false;
+  @Input() public bigCards?: boolean = false;
 
   @Output() public removeCard = new EventEmitter<boolean>();
   @Output() public onChange = new EventEmitter<boolean>();
 
-  completeCard: ICard = englishJSON[0];
+  completeCard: ICard = englishCards[0];
 
   colorMap = ColorMap;
 
-  viewCard: ICard = englishJSON[0];
+  viewCard: ICard = englishCards[0];
   viewCardDialog = false;
 
   constructor(private store: Store) {}
@@ -39,7 +40,7 @@ export class DeckCardComponent implements OnChanges, OnInit {
   }
 
   mapCard(): void {
-    this.completeCard = this.cards.find(card => this.card.id === card.id) ?? englishJSON[0] as ICard;
+    this.completeCard = this.cards.find(card => this.card.id === card.id) ?? englishCards[0] as ICard;
   }
 
   changeCardCount(event: any): void {

@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {Subject, takeUntil} from "rxjs";
-import englishJSON from "../../../../assets/cardlists/english.json";
+import {englishCards} from "../../../../assets/cardlists/eng/english";
 import {ICard, ICountCard} from "../../../../models";
 import {SITES} from "../../../pages/main-page/main-page.component";
 import {selectCollection, selectCollectionMode, selectFilteredCards, selectSite} from "../../../store/digimon.selectors";
@@ -24,7 +24,7 @@ export class CardListComponent implements OnInit, OnDestroy {
 
   collectionMode = true;
 
-  viewCard: ICard = englishJSON[0];
+  viewCard: ICard = englishCards[0];
   viewCardDialog = false;
   cardContext = [
     {

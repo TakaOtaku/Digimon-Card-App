@@ -65,6 +65,8 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
   statDialog = false;
   settingsDialog = false;
 
+  fullscreen = false;
+
   private onDestroy$ = new Subject();
 
   constructor(
@@ -162,6 +164,7 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
     const cards = this.mainDeck.map(card => ({id: card.id, count:card.count}));
     this.deck = {...this.deck, title: this.title, description: this.description, cards}
     this.store.dispatch(setDeck({deck: this.deck}));
+    this.deckSort();
   }
 
   /**
@@ -183,7 +186,6 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
 
     this.mainDeck.push({...card!, count: 1});
     this.mapToDeck()
-    this.deckSort();
   }
 
   /**
@@ -215,7 +217,6 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
   removeCard(card: IDeckCard) {
     this.mainDeck = this.mainDeck.filter(value => value !== card);
     this.mapToDeck()
-    this.deckSort();
   }
 
   /**

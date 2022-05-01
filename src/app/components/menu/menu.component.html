@@ -25,8 +25,13 @@
     </div>
 </p-dialog>
 
-<p-dialog header="Advanced Settings" [(visible)]="settingsDialog" styleClass="w-[400px] h-[520px]" [baseZIndex]="10000">
+<p-dialog header="Advanced Settings" [(visible)]="settingsDialog" styleClass="w-[400px]" [baseZIndex]="10000">
   <div class="w-full flex flex-col justify-end">
+
+    <!--h1 class="primary-color mt-5">Which Cards should be loaded?</h1>
+    <p-selectButton class="mb-5" [options]="cardSets" [formControl]="cardSetFilter" [multiple]="false">
+    </p-selectButton-->
+
     <span class="p-float-label mx-auto mt-5">
       <p-inputNumber id="float-input" [(ngModel)]="collectionCount" mode="decimal"></p-inputNumber>
       <label for="float-input">How many of a card do you collect?</label>

@@ -55,17 +55,22 @@ export class AppComponent {
     }
   }
 
+  /**
+   * Optimize Website search engines
+   */
   private makeGoogleFriendly() {
     this.title.setTitle('Digimon Card APP');
 
     this.meta.addTags([
       {name: 'description', content: 'Digimon Card Game Site for collecting cards and building decks'},
       {name: 'author', content: 'TakaOtaku'},
-      {name: 'keywords', content: 'Digimon, Card, Game, Collecting, Deck, Deckbuilder, Tournament, Casual, TCG'}
+      {name: 'keywords', content: 'Digimon, Card, Game, Collecting, Deck, Deckbuilder, Casual, TCG, English, Japanese, Tracking'}
     ]);
   }
 
-  //deck=1dbb5f5a-afc9-4d5e-a268-08dc9ad333f7
+  /**
+   * Check if it is a deck-link, then search for the deck in the database and set the site view to deckbuilder
+   */
   private checkForDeckLink() {
     this.router.events.pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: any) => {

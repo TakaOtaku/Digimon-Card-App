@@ -95,7 +95,7 @@ export const changeCollectionMode = createAction(
 );
 export const changeCardSets = createAction(
   '[Settings] Change Card Sets',
-  props<{ cardSet: number }>()
+  props<{ cardSet: string }>()
 );
 //endregion
 

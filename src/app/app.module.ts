@@ -12,7 +12,6 @@ import {StoreModule} from '@ngrx/store';
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {LazyLoadImageModule} from "ng-lazyload-image";
 import {ToastrModule} from "ngx-toastr";
-import {StyleClassModule} from "primeng/styleclass";
 import {environment} from "../environments/environment";
 import {AppRoutingModule} from "./app-routing.module";
 import {AppComponent} from './app.component';
@@ -20,6 +19,7 @@ import {CardListComponent} from './components/card-lists/card-list/card-list.com
 import {PaginationCardListComponent} from './components/card-lists/pagination-card-list/pagination-card-list.component';
 import {DeckCardComponent} from './components/cards/deck-card/deck-card.component';
 import {FullCardComponent} from './components/cards/full-card/full-card.component';
+import {ChartContainerComponent} from './components/chart-containers/chart-container/chart-container.component';
 import {ChartContainersComponent} from './components/chart-containers/chart-containers.component';
 import {ChangeAccessorieDialogComponent} from './components/dialogs/change-accessorie-dialog/change-accessorie-dialog.component';
 import {CollectionStatsDialogComponent} from './components/dialogs/collection-stats-dialog/collection-stats-dialog.component';
@@ -48,7 +48,6 @@ import {DigimonEffects} from "./store/digimon.effects";
 import * as DigimonCards from "./store/reducers/digimon-card.reducers";
 import * as Digimon from "./store/reducers/digimon.reducers";
 import * as Save from "./store/reducers/save.reducer";
-import { ChartContainerComponent } from './components/chart-containers/chart-container/chart-container.component';
 
 
 @NgModule({
@@ -111,8 +110,7 @@ import { ChartContainerComponent } from './components/chart-containers/chart-con
             name: 'Digimon Card Collector',
             logOnly: environment.production
         }),
-        EffectsModule.forRoot([DigimonEffects]),
-        StyleClassModule
+        EffectsModule.forRoot([DigimonEffects])
     ],
   providers: [ReactiveFormsModule, AuthService, DatabaseService],
   bootstrap: [AppComponent]

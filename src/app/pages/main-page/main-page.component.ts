@@ -1,7 +1,7 @@
 import {Component, OnDestroy} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {Subject, takeUntil} from "rxjs";
-import englishJSON from "../../../assets/cardlists/english.json";
+import {englishCards} from "../../../assets/cardlists/eng/english";
 import {ICard, IDeck} from "../../../models";
 import {
   setAccessoryDeckDialog,
@@ -38,7 +38,7 @@ export class MainPageComponent implements OnDestroy {
   viewCardDialog = false;
 
   selectedDeck: IDeck = emptyDeck;
-  selectedCard: ICard = englishJSON[0];
+  selectedCard: ICard = englishCards[0];
 
   private destroy$ = new Subject();
 
@@ -74,6 +74,6 @@ export class MainPageComponent implements OnDestroy {
     this.store.dispatch(setAccessoryDeckDialog({show: false, deck: emptyDeck}));
   }
   closeViewCardDialog() {
-    this.store.dispatch(setViewCardDialog({show: false, card: englishJSON[0]}));
+    this.store.dispatch(setViewCardDialog({show: false, card: englishCards[0]}));
   }
 }

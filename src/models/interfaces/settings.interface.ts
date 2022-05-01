@@ -1,5 +1,5 @@
 export interface ISettings {
-  cardSet: number; // English/Japanese/Both/Overwrite ---- default = Overwrite
+  cardSet: string; // English/Japanese/Both/Overwrite ---- default = Overwrite
 
   cardSize: number; // How big should the cards be ---- default = 10
 

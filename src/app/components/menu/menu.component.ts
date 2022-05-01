@@ -1,14 +1,16 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
+import {FormControl} from "@angular/forms";
 import {Store} from "@ngrx/store";
 import {saveAs} from "file-saver";
 import {ConfirmationService, MenuItem, MessageService, PrimeNGConfig} from "primeng/api";
 import {first, Subject, takeUntil} from "rxjs";
 import {SITES} from 'src/app/pages/main-page/main-page.component';
 import {ICard, ICountCard, ISave} from "../../../models";
+import {CARDSET} from "../../../models/card-set.enum";
 import {AuthService} from "../../service/auth.service";
 import {DatabaseService} from "../../service/database.service";
 import {
-  addToCollection,
+  addToCollection, changeCardSets,
   changeCollectionMinimum,
   changeCollectionMode,
   changeShowVersion,
@@ -17,7 +19,7 @@ import {
   setSite
 } from "../../store/digimon.actions";
 import {
-  selectAllCards,
+  selectAllCards, selectCardSet,
   selectCollection,
   selectCollectionMinimum,
   selectCollectionMode,
@@ -37,6 +39,7 @@ export class MenuComponent implements OnInit, OnDestroy {
   SITES = SITES;
 
   save = '';
+  iSave: ISave;
 
   collectionMode = true;
 
@@ -59,6 +62,9 @@ export class MenuComponent implements OnInit, OnDestroy {
 
   collectionCount = 1;
 
+  cardSets = ['English', 'Japanese', 'Both', 'Overwrite'];
+  cardSetFilter = new FormControl();
+
   preRelease = true;
   aa = true;
   stamped = true;
@@ -79,8 +85,19 @@ export class MenuComponent implements OnInit, OnDestroy {
         this.collectionMode = collectionMode
         this.update();
       });
+    this.store.select(selectCardSet).pipe(takeUntil(this.onDestroy$))
+      .subscribe((set) => {
+        if(+set>>>0) {
+          this.cardSetFilter.setValue(CARDSET.Overwrite);
+        } else {
+          this.cardSetFilter.setValue(set);
+        }
+      });
     this.store.select(selectSave).pipe(takeUntil(this.onDestroy$))
-      .subscribe((save) => this.save = JSON.stringify(save, undefined, 4));
+      .subscribe((save) => {
+        this.iSave = save;
+        this.save = JSON.stringify(save, undefined, 4)
+      });
     this.authService.authChange.subscribe(() => this.update());
   }
 
@@ -276,6 +293,7 @@ export class MenuComponent implements OnInit, OnDestroy {
   saveSettings() {
     this.store.dispatch(changeCollectionMinimum({minimum: this.collectionCount}));
     this.store.dispatch(changeShowVersion({showPre: this.preRelease, showAA: this.aa, showStamp: this.stamped}));
+    this.store.dispatch(changeCardSets({cardSet: this.cardSetFilter.value}));
     this.settingsDialog = false;
   }
 }

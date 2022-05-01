@@ -1,5 +1,5 @@
-<p-dialog [(visible)]="show" [baseZIndex]="10000" [showHeader]="false">
-  <div class="min-w-full md:min-w-[700px] w-full md:w-[700px] max-w-full md:max-w-[700px]">
+<p-dialog [(visible)]="show" [baseZIndex]="10000" [showHeader]="false" class="overflow-x-hidden">
+  <div class="min-w-full md:min-w-[700px] w-full md:w-[700px] max-w-full md:max-w-[700px] h-full overflow-x-hidden">
     <div id="Header" class="inline-flex justify-between w-full align-center mt-5 h-10">
       <p id="Card-Number" class="font-bold text-gray-500 self-center text-xl">{{card.cardNumber}}</p>
       <p id="Card-Rarity" class="font-bold text-white uppercase self-center text-xl">{{card.rarity}}</p>

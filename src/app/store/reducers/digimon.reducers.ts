@@ -1,6 +1,6 @@
 import {createReducer, on} from '@ngrx/store';
 import * as uuid from "uuid";
-import englishJSON from "../../../assets/cardlists/english.json";
+import {englishCards} from "../../../assets/cardlists/eng/english";
 import {IDeck, IDigimonState} from "../../../models";
 import {
   addToDeck,
@@ -74,7 +74,7 @@ export const initialState: IDigimonState = {
     exportDeck: {show: false, deck: emptyDeck},
     importDeck: {show: false},
     accessoryDeck: {show: false, deck: emptyDeck},
-    viewCard: {show: false, card: englishJSON[0]}
+    viewCard: {show: false, card: englishCards[0]}
   },
   filter: emptyFilter,
   sort: {

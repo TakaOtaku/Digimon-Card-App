@@ -1,6 +1,6 @@
 export enum CARDSET {
-  'English',
-  'Japanese',
-  'Both',
-  'BothOverwrite'
+  'English' = 'English',
+  'Japanese' = 'Japanese',
+  'Both' = 'Both',
+  'Overwrite' = 'Overwrite'
 }
