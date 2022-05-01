@@ -3,7 +3,7 @@ import {Store} from "@ngrx/store";
 import {saveAs} from "file-saver";
 import {Subject, takeUntil} from "rxjs";
 import {ICard, IDeck} from "../../../../models";
-import {compareIDs} from "../../../functions/digimon-card.functions";
+import {compareIDs, formatId} from "../../../functions/digimon-card.functions";
 import {selectAllCards} from "../../../store/digimon.selectors";
 
 @Component({
@@ -65,7 +65,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
     this.deckText = '["Exported from https://digimoncard.app\",';
     this.deck.cards.forEach(card => {
       for(let i = 0; i < card.count; i++) {
-        this.deckText += `"${card.id.replace('ST0', 'ST')}",`;
+        this.deckText += `"${formatId(card.id)}",`;
       }
     });
     this.deckText = this.deckText.substring(0, this.deckText.length - 1);
