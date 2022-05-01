@@ -171,7 +171,7 @@ function applyRangeFilter(cards: ICard[], filter: number[], key: string): ICard[
       if(filter[1] === 15) {
         return [...new Set([...cards.filter(cards => {
           const playCost: number = +cards['playCost'] >>> 0;
-          return filter[0] <= playCost && filter[1] >= playCost
+          return filter[0] <= playCost;
         })])];
       }
 
