@@ -22,31 +22,31 @@
         <img [lazyLoad]="this.png" defaultImage="assets/images/digimon-card-back.webp" alt="{{imageAlt}}">
       </div>
       <div class="w-1/2 max-w-1/2 pl-2 self-center">
-        <div id="Digimon-Form" class="flex flex-col" *ngIf="type === 'Digimon' || type === 'Digi-Egg'">
+        <div id="Digimon-Form" class="flex flex-col" *ngIf="card.form !== '-'">
           <p class="font-extrabold text-lg" [ngStyle]="{color}">Form</p>
           <p class="font-bold font-white text-lg">{{card.form}}</p>
         </div>
-        <div id="Digimon-Attribute" class="flex flex-col" *ngIf="type === 'Digimon'">
+        <div id="Digimon-Attribute" class="flex flex-col" *ngIf="card.attribute !== '-'">
           <p class="font-extrabold text-lg" [ngStyle]="{color}">Attribute</p>
           <p class="font-bold font-white text-lg">{{card.attribute}}</p>
         </div>
-        <div id="Digimon-Type" class="flex flex-col" *ngIf="type === 'Digimon' || type === 'Digi-Egg'">
+        <div id="Digimon-Type" class="flex flex-col" *ngIf="card.type !== '-'">
           <p class="font-extrabold text-lg" [ngStyle]="{color}">Type</p>
           <p class="font-bold font-white text-lg">{{card.type}}</p>
         </div>
-        <div id="Digimon-DP" class="flex flex-col" *ngIf="type === 'Digimon' || type === 'Digi-Egg'">
+        <div id="Digimon-DP" class="flex flex-col" *ngIf="card.dp !== '-'">
           <p class="font-extrabold text-lg" [ngStyle]="{color}">DP</p>
           <p class="font-bold font-white text-lg">{{card.dp}}</p>
         </div>
-        <div id="Digimon-Play-Cost" class="flex flex-col" *ngIf="type !== 'Digi-Egg'">
+        <div id="Digimon-Play-Cost" class="flex flex-col" *ngIf="card.playCost !== '-'">
           <p class="font-extrabold text-lg" [ngStyle]="{color}">Play Cost</p>
           <p class="font-bold font-white text-lg">{{card.playCost}}</p>
         </div>
-        <div id="Digimon-Digivolve-Cost-1" class="flex flex-col" *ngIf="type === 'Digimon'">
+        <div id="Digimon-Digivolve-Cost-1" class="flex flex-col" *ngIf="card.digivolveCost1 !== '-'">
           <p class="font-extrabold text-lg" [ngStyle]="{color}">Digivolve Cost 1</p>
           <p class="font-bold font-white text-lg">{{card.digivolveCost1}}</p>
         </div>
-        <div id="Digimon-Digivolve-Cost-2" class="flex flex-col" *ngIf="type === 'Digimon'">
+        <div id="Digimon-Digivolve-Cost-2" class="flex flex-col" *ngIf="card.digivolveCost2 !== '-'">
           <p class="font-extrabold text-lg" [ngStyle]="{color}">Digivolve Cost 2</p>
           <p class="font-bold font-white text-lg">{{card.digivolveCost2}}</p>
         </div>
@@ -54,15 +54,15 @@
     </div>
 
     <div id="Effects" class="max-w-full">
-      <div id="Digimon-Effect" class="flex flex-col" *ngIf="type !== 'Digi-Egg'">
+      <div id="Digimon-Effect" class="flex flex-col" *ngIf="card.effect !== '-'">
         <p class="font-extrabold text-lg" [ngStyle]="{color}">Effect</p>
         <p class="font-bold font-white text-lg">{{card.effect}}</p>
       </div>
-      <div id="Digimon-Digivolve-Effect" class="flex flex-col" *ngIf="type === 'Digimon' || type === 'Digi-Egg'">
+      <div id="Digimon-Digivolve-Effect" class="flex flex-col" *ngIf="card.digivolveEffect !== '-'">
         <p class="font-extrabold text-lg" [ngStyle]="{color}">Digivolve effect</p>
         <p class="font-bold font-white text-lg">{{card.digivolveEffect}}</p>
       </div>
-      <div id="Security-Effect" class="flex flex-col" *ngIf="type !== 'Digi-Egg'">
+      <div id="Security-Effect" class="flex flex-col" *ngIf="card.securityEffect !== '-'">
         <p class="font-extrabold text-lg" [ngStyle]="{color}">Security effect</p>
         <p class="font-bold font-white text-lg">{{card.securityEffect}}</p>
       </div>
