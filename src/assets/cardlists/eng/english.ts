@@ -15,15 +15,15 @@ import BT8 from './BT8.json';
 import EX1 from './EX1.json';
 
 import ST1 from './ST1.json';
-import ST2 from './ST1.json';
-import ST3 from './ST1.json';
-import ST4 from './ST1.json';
-import ST5 from './ST1.json';
-import ST6 from './ST1.json';
-import ST7 from './ST1.json';
-import ST8 from './ST1.json';
-import ST9 from './ST1.json';
-import ST10 from './ST1.json';
+import ST2 from './ST2.json';
+import ST3 from './ST3.json';
+import ST4 from './ST4.json';
+import ST5 from './ST5.json';
+import ST6 from './ST6.json';
+import ST7 from './ST7.json';
+import ST8 from './ST8.json';
+import ST9 from './ST9.json';
+import ST10 from './ST10.json';
 
 export const englishCards: ICard[] = [
   ...P,
