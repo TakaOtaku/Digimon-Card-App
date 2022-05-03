@@ -11,7 +11,7 @@ import {
   CardTypes,
   Colors,
   Forms,
-  GroupedSets,
+  GroupedSets, Illustrators,
   Keywords,
   Rarities,
   Types,
@@ -35,6 +35,7 @@ export class FilterSideBoxComponent implements OnInit {
   typeFilter = new FormControl([]);
   colorFilter = new FormControl([]);
   cardTypeFilter = new FormControl([]);
+  illustratorFilter = new FormControl([]);
 
 
   filterFormGroup: FormGroup = new FormGroup({
@@ -46,7 +47,8 @@ export class FilterSideBoxComponent implements OnInit {
     attributeFilter: this.attributeFilter,
     typeFilter: this.typeFilter,
     cardTypeFilter: this.cardTypeFilter,
-    colorFilter: this.colorFilter
+    colorFilter: this.colorFilter,
+    illustratorFilter: this.illustratorFilter
   });
 
   cardCountSlider: number[] = [0,5];
@@ -64,6 +66,7 @@ export class FilterSideBoxComponent implements OnInit {
   types = Types;
   cardTypes = CardTypes;
   colors = Colors;
+  illustrators = Illustrators;
 
   private filter: IFilter;
   private onDestroy$ = new Subject();
@@ -84,6 +87,7 @@ export class FilterSideBoxComponent implements OnInit {
         this.typeFilter.setValue(filter.typeFilter, {emitEvent: false});
         this.cardTypeFilter.setValue(filter.cardTypeFilter, {emitEvent: false});
         this.colorFilter.setValue(filter.colorFilter, {emitEvent: false});
+        this.illustratorFilter.setValue(filter.illustratorFilter, {emitEvent: false});
 
         this.cardCountSlider = [...new Set(filter.cardCountFilter)];
         this.levelSlider = [...new Set(filter.levelFilter)];

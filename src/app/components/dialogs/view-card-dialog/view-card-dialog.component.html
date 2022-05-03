@@ -74,5 +74,15 @@
         <p class="font-bold font-white text-lg">{{card.notes}}</p>
       </div>
     </div>
+
+    <div id="Illustrator" class="max-w-full" *ngIf="card.illustrator !== ''">
+      <div id="Card-Illustrator" class="flex flex-col">
+        <p class="font-extrabold text-lg" [ngStyle]="{color}">Illustrator</p>
+        <div class="flex flex-row">
+          <p class="font-bold font-white text-lg">{{card.illustrator}}</p>
+          <button pButton pRipple type="button" icon="pi pi-question-circle" class="p-button-text" (click)="openWikiIllustrator()"></button>
+        </div>
+      </div>
+    </div>
   </div>
 </p-dialog>

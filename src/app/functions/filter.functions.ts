@@ -14,6 +14,7 @@ export function filterCards(cards: ICard[], collection: ICountCard[], filter: IF
   filteredCards = applyFilter(filteredCards, filter.rarityFilter, 'rarity');
   filteredCards = applyFilter(filteredCards, filter.versionFilter, 'version');
   filteredCards = applyFilter(filteredCards, filter.keywordFilter, 'keyword');
+  filteredCards = applyFilter(filteredCards, filter.illustratorFilter, 'illustrator');
 
   filteredCards = applyRangeFilter(filteredCards, filter.levelFilter, 'level');
   filteredCards = applyRangeFilter(filteredCards, filter.playCostFilter, 'playCost');
@@ -140,6 +141,11 @@ function applyFilter(cards: ICard[], filter: any[], key: string): ICard[] {
         [...returnArray,...cards.filter(cards =>
           cards['effect'].includes(filter) ||
           cards['digivolveEffect'].includes(filter))]
+      )]);
+      break;
+    case 'illustrator':
+      filter.forEach(filter => returnArray = [...new Set(
+        [...returnArray,...cards.filter(cards => cards['illustrator'].includes(filter))]
       )]);
       break;
   }

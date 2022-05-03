@@ -80,7 +80,14 @@ export const Keywords: string[] = [
 
 export const Colors: string[] = ['Red', 'Blue', 'Yellow', 'Green', 'Black', 'Purple', 'White', 'Multi'];
 
-export const Forms: string[] = ["In-Training", "Rookie", "Champion", "Ultimate", "Mega", "Hybrid", "Armor Form", "D-Reaper"];
+export const Forms: string[] = ["In-Training",
+  "Rookie",
+  "Champion",
+  "Ultimate",
+  "Mega",
+  "Hybrid",
+  "Armor Form",
+  "D-Reaper"];
 
 export const Attributes: string[] = ['Data', 'Vaccine', 'Virus', 'Free', 'Variable', 'Unknown'];
 
@@ -216,6 +223,67 @@ export const Types: string[] = [
   "Wizard",
   "X-Antibody",
   "X Antibody"
+].sort();
+
+export const Illustrators: string[] = [
+  "TANIMESO",
+  "Kazumasa Yasukuni",
+  "Kirita",
+  "As'Maria",
+  "Qacoro",
+  "yuuki.",
+  "Ryuda",
+  "Takase",
+  "KISUKE",
+  "koki",
+  "shosuke",
+  "Tessy",
+  "Koki",
+  "tyuga",
+  "Hokyyuu",
+  "sasasi",
+  "Horaguchi Kayo",
+  "Sanosuke Sakuma",
+  "Hisashi Fujiwara",
+  "Tomotake Kinoshita",
+  "Banira",
+  "Nakano Haito",
+  "Takumi Kousaka",
+  "Teppei Tadokoro",
+  "Kenji Watanabe",
+  "Shin Sasaki",
+  "Tonamikanji",
+  "Itohiro",
+  "UnnoDaisuke",
+  "Shigeo Niwa",
+  "satsuki may",
+  "P!k@ru",
+  "Ishibashi Yosuke",
+  "DAI-XT.",
+  "p!k@ru",
+  "MATSUMOTO EIGHT",
+  "TSCR",
+  "tessy",
+  "Naochika Morishita",
+  "GOSSAN",
+  "Ryodan",
+  "kaz",
+  "funbolt",
+  "Tsunemi Aosa",
+  "kirita",
+  "banira",
+  "Kaz",
+  "Tyuga",
+  "SENNSU",
+  "sunohara",
+  "Kenji  Watanabe",
+  "Nakano  Haito",
+  "Ishibashi  Yosuke",
+  "Kazumasa  Yasukuni",
+  "Minato Sashima",
+  "toriyufu",
+  "itohiro",
+  "Sasasi"
 ].sort();
 
 export const Lvs: string[] = ['Lv.2', 'Lv.3', 'Lv.4', 'Lv.5', 'Lv.6', 'Lv.7'];

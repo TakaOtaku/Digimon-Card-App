@@ -12,6 +12,7 @@ export interface IFilter {
   formFilter: string[];
   attributeFilter: string[];
   typeFilter: string[];
+  illustratorFilter: string[];
 
   colorFilter: string[];
   cardTypeFilter: string[];

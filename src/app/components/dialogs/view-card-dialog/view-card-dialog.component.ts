@@ -73,4 +73,9 @@ export class ViewCardDialogComponent implements OnInit, OnChanges {
     const wikiLink = 'https://digimoncardgame.fandom.com/wiki/'+formatId(this.card.id);
     window.open(wikiLink, '_blank');
   }
+
+  openWikiIllustrator() {
+    const wikiLink = 'https://digimoncardgame.fandom.com/wiki/'+this.card.illustrator;
+    window.open(wikiLink, '_blank');
+  }
 }

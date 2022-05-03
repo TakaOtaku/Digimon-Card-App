@@ -89,7 +89,11 @@
                  [formControl]="attributeFilter" defaultLabel="Select an Attribute" scrollHeight="250px" display="chip">
   </p-multiSelect>
 
-  <p-multiSelect styleClass="w-full mt-2 mb-10" [filter]="true" [showToggleAll]="false" [options]="types" [showHeader]="true"
+  <p-multiSelect styleClass="w-full mt-2" [filter]="true" [showToggleAll]="false" [options]="types" [showHeader]="true"
                  [formControl]="typeFilter" defaultLabel="Select a Type" scrollHeight="250px" display="chip">
+  </p-multiSelect>
+
+  <p-multiSelect styleClass="w-full mt-2 mb-10" [filter]="true" [showToggleAll]="false" [options]="illustrators" [showHeader]="true"
+                 [formControl]="illustratorFilter" defaultLabel="Select a Illustrator" scrollHeight="250px" display="chip">
   </p-multiSelect>
 </div>
