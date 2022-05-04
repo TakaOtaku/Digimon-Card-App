@@ -50,6 +50,7 @@ function applySearchFilter(cards: ICard[], searchFilter: string): ICard[] {
     ...effectFiltered,
     ...inheritedFiltered,
     ...securityFiltered,
+    ...noteFiltered,
     ...illustratorFiltered
   ])];
 }
