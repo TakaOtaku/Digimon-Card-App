@@ -38250,7 +38250,7 @@
 	},
 	{
 		"id": "ST12-13",
-		"name": "Sistermon Ciel",
+		"name": "Sistermon Noir",
 		"cardImage": "assets/images/cards/jap/ST12-13.jpg",
 		"cardType": "Digimon",
 		"dp": "5000",
@@ -38259,7 +38259,7 @@
 		"digivolveCost2": "-",
 		"cardLv": "Lv.4",
 		"form": "Champion",
-		"attribute": "Data",
+		"attribute": "Virus",
 		"type": "Puppet",
 		"rarity": "U",
 		"cardNumber": "ST12-13",
