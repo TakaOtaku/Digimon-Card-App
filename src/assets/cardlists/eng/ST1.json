@@ -158,7 +158,7 @@
     "notes": "2021 Online Regionals Participant Pack",
     "color": "Red",
     "version": "Stamp",
-    "illustrator": "Hokyyuu"
+    "illustrator": "Takumi Kousaka"
   },
   {
     "id": "ST1-03_P3",
@@ -181,30 +181,7 @@
     "notes": "2021 Finalist Card Set",
     "color": "Red",
     "version": "Stamp",
-    "illustrator": "sasasi"
-  },
-  {
-    "id": "ST1-03_P3",
-    "name": "Agumon",
-    "cardImage": "assets/images/cards/eng/ST1-03_P3.jpg",
-    "cardType": "Digimon",
-    "dp": "2000",
-    "playCost": "3",
-    "digivolveCost1": "0 from Lv.2",
-    "digivolveCost2": "-",
-    "cardLv": "Lv.3",
-    "form": "Rookie",
-    "attribute": "Vaccine",
-    "type": "Reptile",
-    "rarity": "U",
-    "cardNumber": "ST1-03",
-    "effect": "-",
-    "digivolveEffect": "[Your Turn] This Digimon gets +1000 DP.",
-    "securityEffect": "-",
-    "notes": "",
-    "color": "Red",
-    "version": "Stamp",
-    "illustrator": "sasasi"
+    "illustrator": "Takumi Kousaka"
   },
   {
     "id": "ST1-03_P4",
@@ -227,30 +204,7 @@
     "notes": "2021 Champion Card Set",
     "color": "Red",
     "version": "Stamp",
-    "illustrator": "sasasi"
-  },
-  {
-    "id": "ST1-03_P4",
-    "name": "Agumon",
-    "cardImage": "assets/images/cards/eng/ST1-03_P4.jpg",
-    "cardType": "Digimon",
-    "dp": "2000",
-    "playCost": "3",
-    "digivolveCost1": "0 from Lv.2",
-    "digivolveCost2": "-",
-    "cardLv": "Lv.3",
-    "form": "Rookie",
-    "attribute": "Vaccine",
-    "type": "Reptile",
-    "rarity": "U",
-    "cardNumber": "ST1-03",
-    "effect": "-",
-    "digivolveEffect": "[Your Turn] This Digimon gets +1000 DP.",
-    "securityEffect": "-",
-    "notes": "",
-    "color": "Red",
-    "version": "Stamp",
-    "illustrator": "sasasi"
+    "illustrator": "Takumi Kousaka"
   },
   {
     "id": "ST1-04",
@@ -411,7 +365,7 @@
     "notes": "Judge Pack",
     "color": "Red",
     "version": "Stamp",
-    "illustrator": "Hokyyuu"
+    "illustrator": "sasasi"
   },
   {
     "id": "ST1-08",
@@ -457,7 +411,7 @@
     "notes": "Tamer Party Events Vol.2",
     "color": "Red",
     "version": "AA",
-    "illustrator": ""
+    "illustrator": "Tonamikanji"
   },
   {
     "id": "ST1-09",
@@ -664,7 +618,7 @@
     "notes": "Event Pack Alt-Art Gold Stamp Set",
     "color": "Red",
     "version": "Stamp",
-    "illustrator": "sasasi"
+    "illustrator": "Nakano Haito"
   },
   {
     "id": "ST1-12",
@@ -894,6 +848,6 @@
     "notes": "2021 Championship Finals Tamer‘s Evolution Pack",
     "color": "Red",
     "version": "Stamp",
-    "illustrator": "tessy"
+    "illustrator": "Shin Sasaski"
   }
 ]
