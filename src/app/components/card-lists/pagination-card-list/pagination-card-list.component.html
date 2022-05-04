@@ -1,5 +1,5 @@
 <div class="inline-flex w-full h-[calc(100vh-148px)] overflow-hidden justify-center">
-  <button pButton pRipple type="button" icon="pi pi-angle-left" class="p-button p-button-primary min-w-[2rem]" (click)="previous()" [disabled]="previousCards"></button>
+  <button pButton pRipple type="button" icon="pi pi-angle-left" class="p-button p-button-primary min-w-[2rem] mr-auto" (click)="previous()" [disabled]="previousCards"></button>
 
   <h1 *ngIf="cardsToShow.length === 0" class="primary-color my-10 text-5xl text-bold">No cards found!</h1>
 
@@ -11,5 +11,5 @@
     </div>
   </div>
 
-  <button pButton pRipple type="button" icon="pi pi-angle-right" class="p-button p-button-primary min-w-[2rem]" (click)="next()" [disabled]="nextCards"></button>
+  <button pButton pRipple type="button" icon="pi pi-angle-right" class="p-button p-button-primary min-w-[2rem] ml-auto" (click)="next()" [disabled]="nextCards"></button>
 </div>
