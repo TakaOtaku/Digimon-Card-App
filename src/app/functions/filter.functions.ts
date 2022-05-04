@@ -38,6 +38,7 @@ function applySearchFilter(cards: ICard[], searchFilter: string): ICard[] {
   const effectFiltered: ICard[] = cards.filter(cards => cards.effect.toLowerCase().includes(searchFilter.toLowerCase()));
   const inheritedFiltered: ICard[] = cards.filter(cards => cards.digivolveEffect.toLowerCase().includes(searchFilter.toLowerCase()));
   const securityFiltered: ICard[] = cards.filter(cards => cards.securityEffect.toLowerCase().includes(searchFilter.toLowerCase()));
+  const noteFiltered: ICard[] = cards.filter(cards => cards.notes.toLowerCase().includes(searchFilter.toLowerCase()));
   const illustratorFiltered: ICard[] = cards.filter(cards => cards.illustrators.toLowerCase().includes(searchFilter.toLowerCase()));
 
   return [...new Set([
