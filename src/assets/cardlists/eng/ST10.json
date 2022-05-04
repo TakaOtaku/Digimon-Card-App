@@ -17,7 +17,7 @@
     "effect": "-",
     "digivolveEffect": "[When Attacking] If you have a yellow Digimon in play, ＜Draw 1＞. (Draw 1 card from your deck.) If you do, trash 1 card in your hand.",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "▹Starter Deck, PARALLEL WORLD TACTICIAN [ST-10]",
     "color": "Purple",
     "version": "Normal",
     "illustrator": "Takase"
@@ -40,7 +40,7 @@
     "effect": "-",
     "digivolveEffect": "[End of Your Turn] You may DNA digivolve this Digimon and one of your other Digimon in play into a Digimon card in your hand by paying its DNA digivolve cost.",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "▹Starter Deck, PARALLEL WORLD TACTICIAN [ST-10]",
     "color": "Yellow",
     "version": "Normal",
     "illustrator": "Takase"
@@ -63,7 +63,7 @@
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "▹Starter Deck, PARALLEL WORLD TACTICIAN [ST-10]",
     "color": "Yellow",
     "version": "Normal",
     "illustrator": "koki"
@@ -86,7 +86,7 @@
     "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 yellow Digimon card and 1 purple Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order.[Your Turn] When this Digimon would digivolve into a card with [Archangel] or [Fallen Angel] in its traits, reduce the memory cost of the digivolution by 2.",
     "digivolveEffect": "[End of Your Turn] You may DNA digivolve this Digimon and one of your other Digimon in play into a Digimon card in your hand by paying its DNA digivolve cost.",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "▹Starter Deck, PARALLEL WORLD TACTICIAN [ST-10]",
     "color": "Yellow/Purple",
     "version": "Normal",
     "illustrator": "Takase"
@@ -109,7 +109,7 @@
     "effect": "[On Play] 1 of your opponent's Digimon gains ＜Security Attack -2＞ until the end of your opponent's next turn. (This Digimon checks 2 fewer security cards.)",
     "digivolveEffect": "[Your Turn] While you have a purple Digimon in play, this Digimon gains ＜Security Attack +1＞. (This Digimon checks 1 additional security card.)",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "▹Starter Deck, PARALLEL WORLD TACTICIAN [ST-10]",
     "color": "Yellow",
     "version": "Normal",
     "illustrator": "Tonamikanji"
@@ -132,7 +132,7 @@
     "effect": "＜DNA Digivolution: 0 from yellow Lv.5 + purple Lv.5＞ Digivolve unsuspended with the 2 specified Digimon stacked on top of each other. [When Digivolving] Place 1 yellow or purple Digimon card from your trash on top of your security stack face down. When DNA digivolving, you may search your security stack for 1 level 5 or lower Digimon card and play it without paying its memory cost. Then, shuffle your security stack. [All Turns] When you play another Digimon using an effect, delete 1 of your opponent's Digimon whose level is less than or equal to the played Digimon's level.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "▹Starter Deck, PARALLEL WORLD TACTICIAN [ST-10]",
     "color": "Yellow/Purple",
     "version": "Normal",
     "illustrator": "Tonamikanji"
@@ -155,7 +155,7 @@
     "effect": "[Opponent's Turn] While you have a yellow Digimon in play, this Digimon gains ＜Blocker＞. (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "▹Starter Deck, PARALLEL WORLD TACTICIAN [ST-10]",
     "color": "Purple",
     "version": "Normal",
     "illustrator": "koki"
@@ -178,7 +178,7 @@
     "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 card with [Angel], [Archangel], or [Fallen Angel] in its traits among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "▹Starter Deck, PARALLEL WORLD TACTICIAN [ST-10]",
     "color": "Purple",
     "version": "Normal",
     "illustrator": "banira"
@@ -201,7 +201,7 @@
     "effect": "[Security] At the end of the battle, play this card without paying its memory cost.[On Play] Return 1 purple level 5 or lower Digimon card from your trash to your hand.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "▹Starter Deck, PARALLEL WORLD TACTICIAN [ST-10]",
     "color": "Purple",
     "version": "Normal",
     "illustrator": "Ryodan"
@@ -224,7 +224,7 @@
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "▹Starter Deck, PARALLEL WORLD TACTICIAN [ST-10]",
     "color": "Purple/Yellow",
     "version": "Normal",
     "illustrator": "koki"
@@ -247,7 +247,7 @@
     "effect": "[On Play] Delete 1 of your opponent's level 3 Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "▹Starter Deck, PARALLEL WORLD TACTICIAN [ST-10]",
     "color": "Purple",
     "version": "Normal",
     "illustrator": "Teppei Tadokoro"
@@ -270,7 +270,7 @@
     "effect": "[When Digivolving] You may trash 1 card in your hand to reveal the top 3 cards of your deck. Add 1 yellow and 1 purple card with [Angel], [Archangel], or [Fallen Angel] in their traits among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
     "digivolveEffect": "[Your Turn] All of your yellow Digimon gain ＜Retaliation＞. (When this Digimon is deleted after losing a battle, delete the Digimon it was battling.)",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "▹Starter Deck, PARALLEL WORLD TACTICIAN [ST-10]",
     "color": "Purple",
     "version": "Normal",
     "illustrator": "Tonamikanji"
@@ -293,7 +293,7 @@
     "effect": "＜Retaliation＞ (When this Digimon is deleted after losing a battle, delete the Digimon it was battling.)[When Digivolving] Trash the top 3 cards of your deck. Then, return 1 Digimon card from your trash to your hand.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "▹Starter Deck, PARALLEL WORLD TACTICIAN [ST-10]",
     "color": "Purple",
     "version": "Normal",
     "illustrator": "Teppei Tadokoro"
@@ -316,7 +316,7 @@
     "effect": "[Main] Place 1 of your opponent's Digimon face down at the top or bottom of your opponent's security stack. If you do, trash the top card of your opponent's security stack.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] You may place 1 of your opponent's Digimon face down at the top or bottom of its owner's security stack.",
-    "notes": "",
+    "notes": "▹Starter Deck, PARALLEL WORLD TACTICIAN [ST-10]",
     "color": "Yellow/Purple",
     "version": "Normal",
     "illustrator": "Nakano Haito"
@@ -339,7 +339,7 @@
     "effect": "[Main] Trash the top 3 cards of your deck. Then, if you have a yellow Digimon in play, return 1 yellow or purple Digimon card from your trash to your hand.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
-    "notes": "",
+    "notes": "▹Starter Deck, PARALLEL WORLD TACTICIAN [ST-10]",
     "color": "Purple",
     "version": "Normal",
     "illustrator": "banira"
