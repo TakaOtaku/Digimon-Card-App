@@ -174,7 +174,7 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
     const alreadyInDeck = this.mainDeck.find(value => compareIDs(value.id, id));
     const card = this.allCards.find(card => compareIDs(card.id, id));
     if(alreadyInDeck) {
-      if(card!.cardNumber === 'BT6-085') {
+      if(card!.cardNumber === 'BT6-085' || card!.cardNumber === 'EX2-046') {
         alreadyInDeck.count = alreadyInDeck.count >= 50 ? 50 : alreadyInDeck.count + 1;
         this.mapToDeck()
         return;
@@ -306,6 +306,8 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
     const eggs = this.mainDeck.filter(card => card.cardType === 'Digi-Egg').sort((a, b) =>
       DeckBuilderComponent.sortColors(a.color, b.color) || a.id.localeCompare(b.id));
 
+    const lv0 = this.mainDeck.filter(card => card.cardLv === '' && card.cardType === 'Digimon').sort((a, b) =>
+      DeckBuilderComponent.sortColors(a.color, b.color) || a.id.localeCompare(b.id));
     const lv3 = this.mainDeck.filter(card => card.cardLv === 'Lv.3').sort((a, b) =>
       DeckBuilderComponent.sortColors(a.color, b.color) || a.id.localeCompare(b.id));
     const lv4 = this.mainDeck.filter(card => card.cardLv === 'Lv.4').sort((a, b) =>
@@ -325,6 +327,7 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
 
     this.mainDeck = [...new Set([
       ...eggs,
+      ...lv0,
       ...lv3,
       ...lv4,
       ...lv5,

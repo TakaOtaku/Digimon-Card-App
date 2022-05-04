@@ -8,7 +8,7 @@
   </div>
 
   <span *ngIf="deckBuilder && countInDeck !== 0" class="absolute z-[100] bottom-1 right-1 text-orange-500 font-black text-3xl px-2 text-shadow-white">
-    {{countInDeck}}<span class="text-sky-700 pr-1">/</span>{{card.cardNumber === 'BT6-085' ? 50 : 4}}
+    {{countInDeck}}<span class="text-sky-700 pr-1">/</span>{{card.cardNumber === 'BT6-085' || card.cardNumber === 'EX2-046' ? 50 : 4}}
   </span>
 
   <p-inputNumber *ngIf="collectionMode"
