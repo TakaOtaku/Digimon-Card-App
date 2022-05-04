@@ -272,7 +272,7 @@ export const Illustrators: string[] = [
   "tessy",
   "toriyufu",
   "yuuki."
-].sort();
+].sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 
 export const Lvs: string[] = ['Lv.2', 'Lv.3', 'Lv.4', 'Lv.5', 'Lv.6', 'Lv.7'];
 
