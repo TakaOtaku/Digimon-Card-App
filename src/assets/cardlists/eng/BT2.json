@@ -709,7 +709,7 @@
     "securityEffect": "-",
     "notes": "DC-1 Grand Prix Veemon Participation Set",
     "color": "Blue",
-    "version": "AA",
+    "version": "Stamp",
     "illustrator": "Ishibashi Yosuke"
   },
   {
@@ -870,7 +870,7 @@
     "securityEffect": "-",
     "notes": "DC-1 Grand Prix TOP 64",
     "color": "Blue",
-    "version": "AA",
+    "version": "Stamp",
     "illustrator": "Ishibashi Yosuke"
   },
   {
@@ -985,7 +985,7 @@
     "securityEffect": "-",
     "notes": "DC-1 Grand Prix TOP 32",
     "color": "Blue",
-    "version": "AA",
+    "version": "Stamp",
     "illustrator": "Ishibashi Yosuke"
   },
   {
@@ -1146,7 +1146,7 @@
     "securityEffect": "-",
     "notes": "DC-1 Grand Prix TOP 8",
     "color": "Blue",
-    "version": "AA",
+    "version": "Stamp",
     "illustrator": "sasasi"
   },
   {
@@ -3814,8 +3814,8 @@
     "securityEffect": "[Security] Activate this card's [Main] effect.",
     "notes": "DC-1 Grand Prix Veemon Participation Set",
     "color": "Blue",
-    "version": "AA",
-    "illustrator": ""
+    "version": "Stamp",
+    "illustrator": "shosuke"
   },
   {
     "id": "BT2-097",
