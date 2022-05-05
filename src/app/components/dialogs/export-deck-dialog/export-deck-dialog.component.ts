@@ -146,7 +146,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
     let imgs: any[] = [];
 
     let y = 50;
-    let x = 25;
+    let x = 40;
 
     let cardsInCurrentRow = 1;
     const cardsPerRow = 9;
@@ -157,7 +157,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
       );
       if (cardsInCurrentRow >= cardsPerRow) {
         y += 95;
-        x = 25;
+        x = 40;
         cardsInCurrentRow = 1;
       } else {
         x += 70;
@@ -183,7 +183,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
 
   private drawCount(ctx: any) {
     let y = 50+82;
-    let x = 25+50;
+    let x = 40+50;
 
     let cardsInCurrentRow = 1;
     const cardsPerRow = 9;
@@ -193,7 +193,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
 
       if (cardsInCurrentRow >= cardsPerRow) {
         y += 95;
-        x = 25+46;
+        x = 40+46;
         cardsInCurrentRow = 1;
       } else {
         x += 70;
