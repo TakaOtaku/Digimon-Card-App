@@ -261,7 +261,6 @@ export const Illustrators: string[] = [
   "Takase",
   "Takumi Kousaka",
   "Teppei Tadokoro",
-  "Tessy",
   "Tomotake Kinoshita",
   "Tonamikanji",
   "Tsunemi Aosa",

@@ -15,6 +15,8 @@ export interface ICard {
   color: string;
   digivolveCost1: string;
   digivolveCost2: string;
+  specialDigivolve: string;
+  dnaDigivolve: string; 
   effect: string;
   digivolveEffect: string;
   securityEffect: string;
