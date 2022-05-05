@@ -63,7 +63,6 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
   statsSidebar = true;
 
   statDialog = false;
-  settingsDialog = false;
 
   fullscreen = false;
 

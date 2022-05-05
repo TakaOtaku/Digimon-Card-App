@@ -1,13 +1,25 @@
-<p-dialog header="Export Deck" [showHeader]="false" [(visible)]="show" styleClass="w-[95vw] h-[500px]" [baseZIndex]="10000" (onHide)="onClose.emit(false)">
+<p-dialog header="Export Deck" [showHeader]="false" [(visible)]="show" styleClass="min-w-[500px] min-h-[500px]" [baseZIndex]="10000" (onHide)="onClose.emit(false)">
   <button pButton pRipple type="button" icon="pi pi-times" class="p-button-text ml-auto" (click)="this.onClose.next(false)"></button>
 
   <p-selectButton [options]="exportList" [(ngModel)]="exportType" (onOptionClick)="changeExportType($event)"></p-selectButton>
-  <div>
+  <div *ngIf="exportType !== 'IMAGE'">
     <p>Copy your deck in the text area and press import or press the "Import Text-File"-Button to import a file.</p>
     <textarea pInputTextarea id="text-imports" class="border-2 border-black-500 min-w-full min-h-[200px]" [(ngModel)]="deckText"></textarea>
   </div>
 
+  <div *ngIf="exportType === 'IMAGE'">
+    <canvas id="Canvas" width="700" height="400" (contextmenu)="downloadImage()"></canvas>
+    <p-selectButton class="Colors mt-3" [options]="colors" [(ngModel)]="selectedColor" (onChange)="setExportTypeIMAGE()" [multiple]="false">
+      <ng-template let-color>
+        <i class="pi" [ngClass]="
+          {'pi-check': colorChecked(color), 'pi-times': !colorChecked(color)}"></i>
+      </ng-template>
+    </p-selectButton>
+  </div>
+
   <div class="w-full flex justify-end mt-5">
-    <button pButton (click)="exportDeckToFile()" class="ml-5">Export to File</button>
+    <button *ngIf="exportType !== 'IMAGE'" pButton (click)="exportDeckToFile()" class="ml-5">Export to File</button>
+    <button *ngIf="exportType === 'IMAGE'" pButton (click)="setExportTypeIMAGE()" class="ml-5">Generate Image</button>
+    <button *ngIf="exportType === 'IMAGE'" pButton class="ml-5" (click)="downloadImage()">Download Image</button>
   </div>
 </p-dialog>

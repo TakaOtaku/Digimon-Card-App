@@ -80,6 +80,8 @@ export const Keywords: string[] = [
 
 export const Colors: string[] = ['Red', 'Blue', 'Yellow', 'Green', 'Black', 'Purple', 'White', 'Multi'];
 
+export const ColorsWithoutMulti: string[] = ['Red', 'Blue', 'Yellow', 'Green', 'Black', 'Purple', 'White'];
+
 export const Forms: string[] = ["In-Training",
   "Rookie",
   "Champion",
@@ -240,7 +242,7 @@ export const Illustrators: string[] = [
   "Kazumasa Yasukuni",
   "Kenji Watanabe",
   "Kirita",
-  "Koki",
+  "koki",
   "MATSUMOTO EIGHT",
   "Minato Sashima",
   "Nakano Haito",

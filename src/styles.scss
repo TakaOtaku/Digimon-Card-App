@@ -34,26 +34,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
   text-shadow: -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white, 2px 2px 0 white;
 }
 
-.pentagon {
-  position: relative;
-  width: 19px;
-  box-sizing: content-box;
-  border-width: 17px 6px 0;
-  border-style: solid;
-  border-color: red transparent;
-}
-.pentagon:before {
-  content: "";
-  position: absolute;
-  height: 0;
-  width: 0;
-  top: -29px;
-  left: -6px;
-  border-width: 0 15px 12px;
-  border-style: solid;
-  border-color: transparent transparent red;
-}
-
 .Red {
   background: #ef1919;
 }
@@ -128,4 +108,3 @@ p-dialog::ng-deep {
   border-radius: 10px;
   border: 3px solid #ffffff;
 }
-
