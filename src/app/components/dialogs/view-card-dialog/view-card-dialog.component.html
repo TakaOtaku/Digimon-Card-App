@@ -50,6 +50,14 @@
           <p class="font-extrabold text-lg" [ngStyle]="{color}">Digivolve Cost 2</p>
           <p class="font-bold font-white text-lg">{{card.digivolveCost2}}</p>
         </div>
+        <div id="Digimon-Special-Digivolve" class="flex flex-col" *ngIf="card.specialDigivolve !== '-'">
+          <p class="font-extrabold text-lg" [ngStyle]="{color}">Special Digivolve</p>
+          <p class="font-bold font-white text-lg">{{card.specialDigivolve}}</p>
+        </div>
+        <div id="Digimon-DNA-Digivolve" class="flex flex-col" *ngIf="card.dnaDigivolve !== '-'">
+          <p class="font-extrabold text-lg" [ngStyle]="{color}">DNA-Digivolve</p>
+          <p class="font-bold font-white text-lg">{{card.dnaDigivolve}}</p>
+        </div>
       </div>
     </div>
 

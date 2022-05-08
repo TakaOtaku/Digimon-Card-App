@@ -1,5 +1,5 @@
 import {englishCards} from "../../assets/cardlists/eng/english";
-import japaneseJSON from "../../assets/cardlists/jap/japanese.json";
+import {japaneseCards} from "../../assets/cardlists/jap/japanese";
 import preReleaseJSON from "../../assets/cardlists/preRelease.json";
 import {ICard} from "../../models";
 import {CARDSET} from "../../models/card-set.enum";
@@ -54,11 +54,11 @@ export function setupAllDigimonCards(): ICard[] {
 export function setupDigimonCards(digimonSet: string): ICard[] {
   let allCards: ICard[] = [];
   if(digimonSet === CARDSET.English) {allCards = englishCards.concat(preReleaseJSON)}
-  if(digimonSet === CARDSET.Japanese) {allCards = japaneseJSON}
-  if(digimonSet === CARDSET.Both) {allCards = englishCards.concat(preReleaseJSON, japaneseJSON)}
+  if(digimonSet === CARDSET.Japanese) {allCards = japaneseCards}
+  if(digimonSet === CARDSET.Both) {allCards = englishCards.concat(preReleaseJSON, japaneseCards)}
   if(digimonSet === CARDSET.Overwrite) {
     allCards = englishCards.concat(preReleaseJSON);
-    japaneseJSON.forEach(japCard => {
+    japaneseCards.forEach(japCard => {
       if(allCards.find(card => card.id === japCard.id)) {return}
       allCards.push(japCard);
     });

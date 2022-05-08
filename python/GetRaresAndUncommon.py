@@ -9,7 +9,7 @@ import pandas as pd
 cards = list()
 engCards = []
 
-with open('english.json', encoding='utf-8') as fh:
+with open('BT8.json', encoding='utf-8') as fh:
     engCards = json.load(fh)
 
 for card in engCards:
@@ -21,6 +21,6 @@ for card in engCards:
 			card['version']  = 'Pre-Release'
 			cards.append(card)
 
-with open('PreRelease.json', 'w') as f:
+with open('BT8.json', 'w') as f:
     for card in cards:
         f.write("%s\n" % json.dumps(card))

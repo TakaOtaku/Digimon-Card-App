@@ -90,10 +90,19 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   setExportTypeIMAGE(): void {
+    this.generateCanvas();
+    this.generateCanvas(document.getElementById('HDCanvas')! as HTMLCanvasElement);
+  }
+
+  private generateCanvas(canvas?: HTMLCanvasElement): void {
     let loadedCount = 0;
     let imgs: any[] = [];
+    let scale = canvas ? 3 : 1;
 
-    const getContext = () => (document.getElementById('Canvas')! as HTMLCanvasElement).getContext('2d')!;
+    const getContext = () => {
+      if(canvas) { return canvas.getContext('2d')! }
+      return (document.getElementById('Canvas')! as HTMLCanvasElement).getContext('2d')!
+    };
 
     const loadImage = (url: string) => {
       return new Promise((resolve, reject) => {
@@ -108,7 +117,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
       const ctx = getContext();
       const myOptions = Object.assign({}, options);
       return loadImage(myOptions.uri).then((img: any) => {
-        ctx.drawImage(img, myOptions.x, myOptions.y, myOptions.sw, myOptions.sh);
+        ctx.drawImage(img, myOptions.x * scale, myOptions.y * scale, myOptions.sw * scale, myOptions.sh * scale);
 
         imgs = this.getImages();
 
@@ -120,33 +129,39 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
       const ctx = getContext();
       const myOptions = Object.assign({}, options);
       return loadImage(myOptions.uri).then((img: any) => {
-        ctx.drawImage(img, myOptions.x, myOptions.y, myOptions.sw, myOptions.sh);
+        ctx.drawImage(img, myOptions.x * scale, myOptions.y * scale, myOptions.sw * scale, myOptions.sh * scale);
         loadedCount += 1;
         if(loadedCount === imgs.length) {
-          ExportDeckDialogComponent.writeText(ctx, 'https://digimoncard.app', 310, 390)
-          this.drawCount(ctx);
+          this.drawCount(ctx, scale);
         }
       });
     };
 
     const BackgroundMap = new Map<string, string>([
-      ['Red', 'assets/images/image-export/bg-share_red.png'],
-      ['Blue', 'assets/images/image-export/bg-share_blue.png'],
-      ['Yellow', 'assets/images/image-export/bg-share_yellow.png'],
-      ['Green', 'assets/images/image-export/bg-share_green.png'],
-      ['Black', 'assets/images/image-export/bg-share_black.png'],
-      ['Purple', 'assets/images/image-export/bg-share_purple.png'],
-      ['White', 'assets/images/image-export/bg-share_white.png']
+      ['Red', 'assets/images/image-export/bg-share_red.jpg'],
+      ['Blue', 'assets/images/image-export/bg-share_blue.jpg'],
+      ['Yellow', 'assets/images/image-export/bg-share_yellow.jpg'],
+      ['Green', 'assets/images/image-export/bg-share_green.jpg'],
+      ['Black', 'assets/images/image-export/bg-share_black.jpg'],
+      ['Purple', 'assets/images/image-export/bg-share_purple.jpg'],
+      ['White', 'assets/images/image-export/bg-share_white.jpg']
     ]);
 
-    background({ uri: BackgroundMap.get(this.selectedColor), x: 0, y:  0, sw: 700, sh: 400 })
+    background({ uri: BackgroundMap.get(this.selectedColor), x: 0, y:  0, sw: 640, sh: 360 })
   }
 
   private getImages(): any[] {
     let imgs: any[] = [];
 
     let y = 50;
-    let x = 40;
+    let x = 10;
+
+    let cardCount = this.deck.cards.length;
+    if(cardCount <= 9) {
+      y += 95;
+    } else if(cardCount <= 18) {
+      y += 47;
+    }
 
     let cardsInCurrentRow = 1;
     const cardsPerRow = 9;
@@ -157,7 +172,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
       );
       if (cardsInCurrentRow >= cardsPerRow) {
         y += 95;
-        x = 40;
+        x = 10;
         cardsInCurrentRow = 1;
       } else {
         x += 70;
@@ -167,33 +182,40 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
     return imgs;
   }
 
-  private static writeText(ctx: any, text: string, x: number, y: number, fontSize?: number, fillStyle?: string) {
-    ctx.font = fontSize ? fontSize+"px Roboto" : "15px Roboto";
+  private static writeText(ctx: any, text: string, x: number, y: number, scale: number, fontSize?: number, fillStyle?: string) {
+    ctx.font = fontSize ? fontSize * scale +"px Roboto" : "15px Roboto";
     ctx.shadowColor = "black";
-    ctx.shadowBlur = 2;
-    ctx.lineWidth = 5;
+    ctx.shadowBlur = 2 * scale;
+    ctx.lineWidth = 5 * scale;
     ctx.strokeStyle = "#ffffff";
     ctx.textAlign = "center";
-    ctx.strokeText(text, x, y);
+    ctx.strokeText(text, x * scale, y * scale);
     ctx.shadowBlur = 0;
     ctx.fillStyle = fillStyle ? fillStyle : "#f97316";
     ctx.textAlign = "center";
-    ctx.fillText(text, x, y);
+    ctx.fillText(text, x * scale, y * scale);
   }
 
-  private drawCount(ctx: any) {
+  private drawCount(ctx: any, scale: number) {
     let y = 50+82;
-    let x = 40+50;
+    let x = 10+50;
+
+    let cardCount = this.deck.cards.length;
+    if(cardCount <= 9) {
+      y += 95;
+    } else if(cardCount <= 18) {
+      y += 47;
+    }
 
     let cardsInCurrentRow = 1;
     const cardsPerRow = 9;
     this.deck.cards.forEach(card => {
-      ExportDeckDialogComponent.writeText(ctx, 'x', x-20, y, 30, '#0369a1')
-      ExportDeckDialogComponent.writeText(ctx,  card.count.toString(), x, y, 30)
+      ExportDeckDialogComponent.writeText(ctx, 'x', x-20, y, scale, 30, '#0369a1')
+      ExportDeckDialogComponent.writeText(ctx,  card.count.toString(), x, y, scale,  30)
 
       if (cardsInCurrentRow >= cardsPerRow) {
         y += 95;
-        x = 40+46;
+        x = 10+46;
         cardsInCurrentRow = 1;
       } else {
         x += 70;
@@ -203,7 +225,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   downloadImage() {
-    const canvas = document.getElementById('Canvas')! as HTMLCanvasElement;
+    const canvas = document.getElementById('HDCanvas')! as HTMLCanvasElement;
     const img = canvas.toDataURL("image/png", 1.0).replace("image/png", "image/octet-stream");
     const link = document.createElement('a');
     link.download = "deck.png";

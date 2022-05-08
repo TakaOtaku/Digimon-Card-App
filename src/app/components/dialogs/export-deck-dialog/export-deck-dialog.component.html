@@ -8,7 +8,8 @@
   </div>
 
   <div *ngIf="exportType === 'IMAGE'">
-    <canvas id="Canvas" width="700" height="400" (contextmenu)="downloadImage()"></canvas>
+    <canvas id="Canvas" width="640" height="360" (contextmenu)="downloadImage()"></canvas>
+    <canvas id="HDCanvas" width="1920" height="1080" class="hidden"></canvas>
     <p-selectButton class="Colors mt-3" [options]="colors" [(ngModel)]="selectedColor" (onChange)="setExportTypeIMAGE()" [multiple]="false">
       <ng-template let-color>
         <i class="pi" [ngClass]="

@@ -40,6 +40,8 @@ function applySearchFilter(cards: ICard[], searchFilter: string): ICard[] {
   const securityFiltered: ICard[] = cards.filter(cards => cards.securityEffect.toLowerCase().includes(searchFilter.toLowerCase()));
   const noteFiltered: ICard[] = cards.filter(cards => cards.notes.toLowerCase().includes(searchFilter.toLowerCase()));
   const illustratorFiltered: ICard[] = cards.filter(cards => cards.illustrator.toLowerCase().includes(searchFilter.toLowerCase()));
+  const dnaFiltered: ICard[] = cards.filter(cards => cards.dnaDigivolve.toLowerCase().includes(searchFilter.toLowerCase()));
+  const specialFiltered: ICard[] = cards.filter(cards => cards.specialDigivolve.toLowerCase().includes(searchFilter.toLowerCase()));
 
   return [...new Set([
     ...idFiltered,
@@ -51,7 +53,9 @@ function applySearchFilter(cards: ICard[], searchFilter: string): ICard[] {
     ...inheritedFiltered,
     ...securityFiltered,
     ...noteFiltered,
-    ...illustratorFiltered
+    ...illustratorFiltered,
+    ...dnaFiltered,
+    ...specialFiltered
   ])];
 }
 
