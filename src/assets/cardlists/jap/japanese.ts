@@ -27,8 +27,8 @@ import ST7 from './ST7.json';
 import ST8 from './ST8.json';
 import ST9 from './ST9.json';
 import ST10 from './ST10.json';
-import ST12 from './ST10.json';
-import ST13 from './ST10.json';
+import ST12 from './ST12.json';
+import ST13 from './ST13.json';
 
 export const japaneseCards: ICard[] = [
   ...P,
