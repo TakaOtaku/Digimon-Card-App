@@ -1,15 +1,24 @@
-<div class="inline-flex w-full h-[calc(100vh-148px)] overflow-hidden justify-center">
-  <button pButton pRipple type="button" icon="pi pi-angle-left" class="p-button p-button-primary min-w-[2rem] mr-auto" (click)="previous()" [disabled]="previousCards"></button>
+<div class="grid grid-cols-12 align-items-center">
+  <div>
+    <p-dropdown styleClass="h-full" [options]="cardsPerRowOptions" [(ngModel)]="cardsPerRow"></p-dropdown>
+  </div>
+  <div class="col-span-10">
+    <p-paginator [first]="first" [rows]="cardsPerPage" [totalRecords]="cards.length" (onPageChange)="onPageChange($event)"
+                 [showJumpToPageDropdown]="true" [showPageLinks]="false" styleClass="border-0 surface-ground"></p-paginator>
+  </div>
+  <div class="justify-content-end">
+    <p-dropdown styleClass="h-full" [options]="cardsPerPageOptions" [(ngModel)]="cardsPerPage" (onChange)="changeSlice($event)"></p-dropdown>
+  </div>
+</div>
 
-  <h1 *ngIf="cardsToShow.length === 0" class="primary-color my-10 text-5xl text-bold">No cards found!</h1>
+<div class="inline-flex w-full min-h-[calc(100vh-148px)] overflow-hidden justify-center">
+  <h1 *ngIf="cards.length === 0" class="primary-color my-10 text-5xl text-bold">No cards found!</h1>
 
   <div class="grid" [ngClass]="getGridCols()">
-    <div #cardDiv *ngFor="let card of cardsToShow" class="mx-auto w-full" (contextmenu)="showDetails(card)">
+    <div *ngFor="let card of cardsToShow" class="mx-auto w-full" (contextmenu)="showDetails(card)">
       <digimon-full-card
         class="transition scale-95 w-full" (click)="addToDeck(card)"
         [card]="card" [collectionMode]="false" [count]="getCount(card.id)" [deckBuilder]="true"></digimon-full-card>
     </div>
   </div>
-
-  <button pButton pRipple type="button" icon="pi pi-angle-right" class="p-button p-button-primary min-w-[2rem] ml-auto" (click)="next()" [disabled]="nextCards"></button>
 </div>

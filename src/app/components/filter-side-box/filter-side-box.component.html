@@ -27,45 +27,25 @@
     </ng-template>
   </p-multiSelect>
 
-  <h1 class="primary-color mt-5">Cards in Collection</h1>
-  <div class="flex flex-row mx-5">
-    <p class="text-white min-w-[35px]">{{cardCountSlider[0]}}</p>
-    <p-slider [(ngModel)]="cardCountSlider" (onSlideEnd)="updateCardCountSlider()"
-              [range]="true" [min]="0" [max]="5" class="flex-grow mx-5 self-center"></p-slider>
-    <p class="text-white min-w-[35px]">{{cardCountSlider[1] === 5 ? '5+' : cardCountSlider[1]}}</p>
-  </div>
+  <digimon-range-slider
+    title="Cards in Collection" [slider]="cardCountSlider"
+    [minMax]="[0, 5]" (OnSliderChange)="updateCardCountSlider($event)"></digimon-range-slider>
 
-  <h1 class="primary-color mt-5">Level</h1>
-  <div class="flex flex-row mx-5">
-    <p class="text-white min-w-[35px]">{{levelSlider[0]}}</p>
-    <p-slider [(ngModel)]="levelSlider" (onSlideEnd)="updateLevelSlider()"
-              [range]="true" [min]="2" [max]="7" class="flex-grow mx-5 self-center"></p-slider>
-    <p class="text-white min-w-[35px]">{{levelSlider[1] === 7 ? '7+' : levelSlider[1]}}</p>
-  </div>
+  <digimon-range-slider
+    title="Level" [slider]="levelSlider"
+    [minMax]="[2, 7]" (OnSliderChange)="updateLevelSlider($event)"></digimon-range-slider>
 
-  <h1 class="primary-color mt-5">Play Cost</h1>
-  <div class="flex flex-row mx-5">
-    <p class="text-white min-w-[35px]">{{playCostSlider[0]}}</p>
-    <p-slider [(ngModel)]="playCostSlider" (onSlideEnd)="updatePlayCostSlider()"
-              [range]="true" [min]="0" [max]="15" class="flex-grow mx-5 self-center"></p-slider>
-    <p class="text-white min-w-[35px]">{{playCostSlider[1] === 15 ? '15+' : playCostSlider[1]}}</p>
-  </div>
+  <digimon-range-slider
+    title="Digivolve Cost" [slider]="playCostSlider"
+    [minMax]="[0, 15]" (OnSliderChange)="updatePlayCostSlider($event)"></digimon-range-slider>
 
-  <h1 class="primary-color mt-5">Digivolve Cost</h1>
-  <div class="flex flex-row mx-5">
-    <p class="text-white min-w-[35px]">{{digivolutionSlider[0]}}</p>
-    <p-slider [(ngModel)]="digivolutionSlider" (onSlideEnd)="updateDigivolutionSlider()"
-              [range]="true" [min]="0" [max]="6" class="flex-grow mx-5 self-center"></p-slider>
-    <p class="text-white min-w-[35px]">{{digivolutionSlider[1] === 6 ? '6+' : digivolutionSlider[1]}}</p>
-  </div>
+  <digimon-range-slider
+    title="Level" [slider]="digivolutionSlider"
+    [minMax]="[0, 6]" (OnSliderChange)="updateDigivolutionSlider($event)"></digimon-range-slider>
 
-  <h1 class="primary-color mt-5">DP</h1>
-  <div class="flex flex-row m-5">
-    <p class="text-white min-w-[35px]">{{dpSlider[0]}}000</p>
-    <p-slider [(ngModel)]="dpSlider" (onSlideEnd)="updateDPSlider()"
-              [range]="true" [min]="1" [max]="15" class="flex-grow mx-5 self-center"></p-slider>
-    <p class="text-white min-w-[35px]">{{dpSlider[1] === 15 ? '15000+' : dpSlider[1] + '000'}}</p>
-  </div>
+  <digimon-range-slider
+    title="DP" [slider]="dpSlider"
+    [minMax]="[0, 15]" (OnSliderChange)="updateDPSlider($event)"></digimon-range-slider>
 
   <h1 class="primary-color mt-5">Rarity</h1>
   <p-selectButton

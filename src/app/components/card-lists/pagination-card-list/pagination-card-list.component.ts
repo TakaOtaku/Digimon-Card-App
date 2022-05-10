@@ -12,11 +12,17 @@ import {selectCollection, selectCollectionMode, selectFilteredCards} from "../..
 export class PaginationCardListComponent implements OnInit {
   @Output() onCardClick = new EventEmitter<string>();
 
-  private pagRate = 40;
-  public pagination = 40;
+  first = 0;
+  page = 0;
 
-  private cards: ICard[] = [];
-  public cardsToShow: ICard[] = [];
+  cards: ICard[] = [];
+  cardsToShow: ICard[] = [];
+
+  cardsPerRow = 8;
+  cardsPerRowOptions = [2, 4, 6, 8, 10];
+
+  cardsPerPage = 50;
+  cardsPerPageOptions = [25, 50, 100];
 
   private collection: ICountCard[] = [];
   collectionMode = true;
@@ -29,7 +35,7 @@ export class PaginationCardListComponent implements OnInit {
     this.store.select(selectFilteredCards).pipe(takeUntil(this.onDestroy$))
       .subscribe((cards) => {
         this.cards = cards;
-        this.cardsToShow = this.cards.slice(0, this.pagination);
+        this.cardsToShow = cards.slice(0, this.cardsPerPage);
       });
 
     this.store.select(selectCollection).pipe(takeUntil(this.onDestroy$))
@@ -52,38 +58,21 @@ export class PaginationCardListComponent implements OnInit {
     this.onCardClick.emit(card.id)
   }
 
-  getGridCols(): string {
-    if(this.cardsToShow.length <= 10) {
-      return 'grid-cols-4';
-    }
-    if(this.cardsToShow.length <= 20) {
-      return 'grid-cols-5';
-    }
-    if(this.cardsToShow.length <= 32) {
-      return 'grid-cols-6';
-    }
-    return 'grid-cols-8';
-  }
-
-  next() {
-    this.pagination += this.pagRate;
-    this.cardsToShow = this.cards.slice(this.pagination - this.pagRate, this.pagination);
-  }
-
-  previous() {
-    this.pagination -= this.pagRate;
-    this.cardsToShow = this.cards.slice(this.pagination - this.pagRate, this.pagination);
-  }
-
-  get previousCards(): boolean {
-    return this.pagination === this.pagRate;
-  }
-
-  get nextCards(): boolean {
-    return this.pagination >= this.cards.length;
-  }
-
   showDetails(card: ICard) {
     this.store.dispatch(setViewCardDialog({show: true, card}));
+  }
+
+  onPageChange(event: any, slice?: number) {
+    this.first = event.first;
+    this.page = event.page;
+    this.cardsToShow = this.cards.slice(event.first, (slice ?? this.cardsPerPage) * (event.page+1));
+  }
+
+  getGridCols() {
+    return 'grid-cols-'+this.cardsPerRow;
+  }
+
+  changeSlice(event: any) {
+    this.onPageChange({first: this.first, page: this.page}, event.value);
   }
 }

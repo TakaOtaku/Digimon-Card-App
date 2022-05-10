@@ -12,6 +12,7 @@ import {StoreModule} from '@ngrx/store';
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {LazyLoadImageModule} from "ng-lazyload-image";
 import {ToastrModule} from "ngx-toastr";
+import {PaginatorModule} from "primeng/paginator";
 import {environment} from "../environments/environment";
 import {AppRoutingModule} from "./app-routing.module";
 import {AppComponent} from './app.component';
@@ -48,6 +49,7 @@ import {DigimonEffects} from "./store/digimon.effects";
 import * as DigimonCards from "./store/reducers/digimon-card.reducers";
 import * as Digimon from "./store/reducers/digimon.reducers";
 import * as Save from "./store/reducers/save.reducer";
+import { RangeSliderComponent } from './components/range-slider/range-slider.component';
 
 
 @NgModule({
@@ -78,6 +80,7 @@ import * as Save from "./store/reducers/save.reducer";
     FilterSideBoxComponent,
     ChartContainersComponent,
     ChartContainerComponent,
+    RangeSliderComponent,
   ],
     imports: [
         PrimeNGModule,
@@ -110,7 +113,8 @@ import * as Save from "./store/reducers/save.reducer";
             name: 'Digimon Card Collector',
             logOnly: environment.production
         }),
-        EffectsModule.forRoot([DigimonEffects])
+        EffectsModule.forRoot([DigimonEffects]),
+        PaginatorModule
     ],
   providers: [ReactiveFormsModule, AuthService, DatabaseService],
   bootstrap: [AppComponent]

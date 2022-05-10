@@ -37,7 +37,6 @@ export class FilterSideBoxComponent implements OnInit {
   cardTypeFilter = new FormControl([]);
   illustratorFilter = new FormControl([]);
 
-
   filterFormGroup: FormGroup = new FormGroup({
     setFilter: this.setFilter,
     rarityFilter: this.rarityFilter,
@@ -112,20 +111,20 @@ export class FilterSideBoxComponent implements OnInit {
     this.store.dispatch(changeFilter({filter: emptyFilter}));
   }
 
-  updateCardCountSlider() {
-    this.store.dispatch(changeFilter({filter: {...this.filter, cardCountFilter: this.cardCountSlider}}));
+  updateCardCountSlider(event: any) {
+    this.store.dispatch(changeFilter({filter: {...this.filter, cardCountFilter: event.values}}));
   }
-  updateLevelSlider() {
-    this.store.dispatch(changeFilter({filter: {...this.filter, levelFilter: this.levelSlider}}));
+  updateLevelSlider(event: any) {
+    this.store.dispatch(changeFilter({filter: {...this.filter, levelFilter: event.values}}));
   }
-  updatePlayCostSlider() {
-    this.store.dispatch(changeFilter({filter: {...this.filter, playCostFilter: this.playCostSlider}}));
+  updatePlayCostSlider(event: any) {
+    this.store.dispatch(changeFilter({filter: {...this.filter, playCostFilter: event.values}}));
   }
-  updateDigivolutionSlider() {
-    this.store.dispatch(changeFilter({filter: {...this.filter, digivolutionFilter: this.digivolutionSlider}}));
+  updateDigivolutionSlider(event: any) {
+    this.store.dispatch(changeFilter({filter: {...this.filter, digivolutionFilter: event.values}}));
   }
-  updateDPSlider() {
-    this.store.dispatch(changeFilter({filter: {...this.filter, dpFilter: this.dpSlider}}));
+  updateDPSlider(event: any) {
+    this.store.dispatch(changeFilter({filter: {...this.filter, dpFilter: event.values}}));
   }
 
   colorChecked(color: string): boolean {
