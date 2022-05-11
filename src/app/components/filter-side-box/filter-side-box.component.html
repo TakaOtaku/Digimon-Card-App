@@ -36,16 +36,16 @@
     [minMax]="[2, 7]" (OnSliderChange)="updateLevelSlider($event)"></digimon-range-slider>
 
   <digimon-range-slider
-    title="Digivolve Cost" [slider]="playCostSlider"
-    [minMax]="[0, 15]" (OnSliderChange)="updatePlayCostSlider($event)"></digimon-range-slider>
+    title="Play Cost" [slider]="playCostSlider"
+    [minMax]="[0, 20]" (OnSliderChange)="updatePlayCostSlider($event)"></digimon-range-slider>
 
   <digimon-range-slider
-    title="Level" [slider]="digivolutionSlider"
-    [minMax]="[0, 6]" (OnSliderChange)="updateDigivolutionSlider($event)"></digimon-range-slider>
+    title="Digivolve Cost" [slider]="digivolutionSlider"
+    [minMax]="[0, 7]" (OnSliderChange)="updateDigivolutionSlider($event)"></digimon-range-slider>
 
   <digimon-range-slider
     title="DP" [slider]="dpSlider"
-    [minMax]="[0, 15]" (OnSliderChange)="updateDPSlider($event)"></digimon-range-slider>
+    [minMax]="[0, 16000]" (OnSliderChange)="updateDPSlider($event)"></digimon-range-slider>
 
   <h1 class="primary-color mt-5">Rarity</h1>
   <p-selectButton
