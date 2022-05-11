@@ -13,6 +13,7 @@ export interface IFilter {
   attributeFilter: string[];
   typeFilter: string[];
   illustratorFilter: string[];
+  specialRequirementsFilter: string[];
 
   colorFilter: string[];
   cardTypeFilter: string[];

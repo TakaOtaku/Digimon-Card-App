@@ -58,6 +58,10 @@
           <p class="font-extrabold text-lg" [ngStyle]="{color}">DNA-Digivolve</p>
           <p class="font-bold font-white text-lg">{{card.dnaDigivolve}}</p>
         </div>
+        <div id="Digimon-DigiXros" class="flex flex-col" *ngIf="card.digiXros !== '-'">
+          <p class="font-extrabold text-lg" [ngStyle]="{color}">DigiXros</p>
+          <p class="font-bold font-white text-lg">{{card.digiXros}}</p>
+        </div>
       </div>
     </div>
 

@@ -14,6 +14,7 @@ export function filterCards(cards: ICard[], collection: ICountCard[], filter: IF
   filteredCards = applyFilter(filteredCards, filter.rarityFilter, 'rarity');
   filteredCards = applyFilter(filteredCards, filter.versionFilter, 'version');
   filteredCards = applyFilter(filteredCards, filter.keywordFilter, 'keyword');
+  filteredCards = applyFilter(filteredCards, filter.specialRequirementsFilter, 'specialRequirements');
   filteredCards = applyFilter(filteredCards, filter.illustratorFilter, 'illustrator');
 
   filteredCards = applyRangeFilter(filteredCards, filter.levelFilter, 'level');
@@ -150,6 +151,24 @@ function applyFilter(cards: ICard[], filter: any[], key: string): ICard[] {
           cards['effect'].includes(filter) ||
           cards['digivolveEffect'].includes(filter))]
       )]);
+      break;
+    case 'specialRequirements':
+      if(filter.find((value => value === 'Digivolve'))) {
+        returnArray = [...new Set(
+          [...returnArray,...cards.filter(cards => cards['specialDigivolve'] !== '-')]
+        )];
+      }
+      if(filter.find((value => value === 'DNA Digivolution'))) {
+        returnArray = [...new Set(
+          [...returnArray,...cards.filter(cards => cards['dnaDigivolve'] !== '-')]
+        )];
+      }
+      if(filter.find((value => value === 'DigiXros'))) {
+        returnArray = [...new Set(
+          [...returnArray,...cards.filter(cards => cards['digiXros'] !== '-')]
+        )];
+      }
+
       break;
     case 'illustrator':
       filter.forEach(filter => returnArray = [...new Set(

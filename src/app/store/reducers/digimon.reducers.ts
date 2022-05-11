@@ -66,6 +66,7 @@ export const emptyFilter = {
   colorFilter: [],
   cardTypeFilter: [],
   illustratorFilter: [],
+  specialRequirementsFilter: [],
 }
 
 export const initialState: IDigimonState = {
