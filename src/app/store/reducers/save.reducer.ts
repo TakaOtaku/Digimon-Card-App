@@ -18,7 +18,7 @@ import {
 } from "../digimon.actions";
 
 export const emptySettings: ISettings = {
-  cardSet: CARDSET.Overwrite,
+  cardSet: CARDSET.Both,
   cardSize: 10,
   collectionMode: true,
   collectionMinimum: 1,

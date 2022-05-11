@@ -65,8 +65,8 @@ export class DatabaseService {
       if(!save.settings) {save = {...save, settings: emptySettings}}
     }
 
-    if(save.settings.cardSet === undefined || +save.settings.cardSet>>>0) {
-      save = {...save, settings: {...save.settings, cardSet: CARDSET.Overwrite}}
+    if(save.settings.cardSet === undefined || save.settings.cardSet === 'Overwrite' || +save.settings.cardSet>>>0) {
+      save = {...save, settings: {...save.settings, cardSet: CARDSET.Both}}
     }
     if(save.settings.collectionMinimum === undefined) {
       save = {...save, settings: {...save.settings, collectionMinimum: 1}}

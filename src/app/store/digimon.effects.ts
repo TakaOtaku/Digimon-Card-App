@@ -99,7 +99,7 @@ export class DigimonEffects {
         .pipe(
           tap((cardSet) => {
             if(cardSet === undefined) {return}
-            const digimonCards = +cardSet>>>0 ? setupDigimonCards(CARDSET.Overwrite) : setupDigimonCards(cardSet);
+            const digimonCards = +cardSet>>>0 ? setupDigimonCards(CARDSET.Both) : setupDigimonCards(cardSet);
             this.store.dispatch(DigimonActions.setDigimonCards({digimonCards}));
           }),
           catchError(() => EMPTY)

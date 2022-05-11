@@ -62,7 +62,7 @@ export class MenuComponent implements OnInit, OnDestroy {
 
   collectionCount = 1;
 
-  cardSets = ['English', 'Japanese', 'Both', 'Overwrite'];
+  cardSets = ['English', 'Japanese', 'Both'];
   cardSetFilter = new FormControl();
 
   preRelease = true;
@@ -88,7 +88,7 @@ export class MenuComponent implements OnInit, OnDestroy {
     this.store.select(selectCardSet).pipe(takeUntil(this.onDestroy$))
       .subscribe((set) => {
         if(+set>>>0) {
-          this.cardSetFilter.setValue(CARDSET.Overwrite);
+          this.cardSetFilter.setValue(CARDSET.Both);
         } else {
           this.cardSetFilter.setValue(set);
         }

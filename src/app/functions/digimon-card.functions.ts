@@ -41,7 +41,7 @@ export function getPNG(cardSRC: string): string {
 }
 
 export function setupAllDigimonCards(): ICard[] {
-  const allCards: ICard[] = setupDigimonCards(CARDSET.Overwrite);
+  const allCards: ICard[] = setupDigimonCards(CARDSET.Both);
 
   allCards.sort(function(a, b){
     if(a.cardNumber < b.cardNumber) { return -1; }
@@ -55,8 +55,7 @@ export function setupDigimonCards(digimonSet: string): ICard[] {
   let allCards: ICard[] = [];
   if(digimonSet === CARDSET.English) {allCards = englishCards.concat(preReleaseJSON)}
   if(digimonSet === CARDSET.Japanese) {allCards = japaneseCards}
-  if(digimonSet === CARDSET.Both) {allCards = englishCards.concat(preReleaseJSON, japaneseCards)}
-  if(digimonSet === CARDSET.Overwrite) {
+  if(digimonSet === CARDSET.Both) {
     allCards = englishCards.concat(preReleaseJSON);
     japaneseCards.forEach(japCard => {
       if(allCards.find(card => card.id === japCard.id)) {return}
