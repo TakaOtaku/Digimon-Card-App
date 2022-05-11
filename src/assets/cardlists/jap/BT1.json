@@ -4029,6 +4029,32 @@
     "version": "Normal",
     "illustrator": "koki"
   },
+    {
+    "id": "BT1-108_P1",
+    "name": "Horn Buster",
+    "cardImage": "assets/images/cards/jap/BT1-108_P1.jpg",
+    "cardType": "Option",
+    "dp": "-",
+    "playCost": "1",
+    "digivolveCost1": "",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "-",
+    "rarity": "C",
+    "cardNumber": "BT1-108",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Main] 1 of your Digimon gets +3000 DP for the turn.",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Suspend 1 of your opponent's Digimon. Then add this card its owner's hand.",
+    "notes": "TAMER'S EVOLUTION BOX",
+    "color": "Green",
+    "version": "AA",
+    "illustrator": "As'Maria"
+  },
   {
     "id": "BT1-109",
     "name": "Smashed Potatoes",
@@ -4105,7 +4131,7 @@
     "notes": "▹booster NEW EVOLUTION [BT-01]",
     "color": "Green",
     "version": "AA",
-    "illustrator": "Teppei Tadokoro"
+    "illustrator": "As'Maria"
   },
   {
     "id": "BT1-110_P2",
@@ -4128,10 +4154,10 @@
     "effect": "[Main] Suspend 1 of your opponent's Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Suspend all of your opponent's Digimon without ＜Blocker＞.",
-    "notes": "▹start deck Ultimate ancient dragon[ST-9]",
+    "notes": "TAMER'S EVOLUTION BOX",
     "color": "Green",
     "version": "AA",
-    "illustrator": "Hokyyuu"
+    "illustrator": "Teppei Tadokoro"
   },
   {
     "id": "BT1-110_P4",
