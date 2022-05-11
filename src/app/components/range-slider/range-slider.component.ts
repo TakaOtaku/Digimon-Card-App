@@ -9,6 +9,7 @@ export class RangeSliderComponent {
   @Input() slider: number[] = [];
   @Input() minMax: number[] = [];
   @Input() title: string = '';
+  @Input() suffix?: string = '';
   @Output() OnSliderChange = new EventEmitter<any>();
 
   changeMin(event: any) {

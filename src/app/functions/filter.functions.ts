@@ -180,9 +180,9 @@ function applyRangeFilter(cards: ICard[], filter: number[], key: string): ICard[
         return filter[0] <= level && filter[1] >= level
       })])];
     case 'playCost':
-      if(filter[0] === 0 && filter[1] === 15) {return  cards}
+      if(filter[0] === 0 && filter[1] === 20) {return  cards}
 
-      if(filter[1] === 15) {
+      if(filter[1] === 20) {
         return [...new Set([...cards.filter(cards => {
           const playCost: number = +cards['playCost'] >>> 0;
           return filter[0] <= playCost;
@@ -194,7 +194,7 @@ function applyRangeFilter(cards: ICard[], filter: number[], key: string): ICard[
         return filter[0] <= playCost && filter[1] >= playCost
       })])];
     case 'digivolution':
-      if(filter[0] === 0 && filter[1] === 6) {return  cards}
+      if(filter[0] === 0 && filter[1] === 7) {return  cards}
 
       return [...new Set([...cards.filter(cards => {
         const digivolution1: number = +cards['digivolveCost1'].split(' ')[0] >>> 0;
@@ -204,7 +204,7 @@ function applyRangeFilter(cards: ICard[], filter: number[], key: string): ICard[
           return false;
         }
         if (cards['digivolveCost2'] === '-') {
-          if(filter[1] === 6) {
+          if(filter[1] === 7) {
             return (filter[0] <= digivolution1);
           }
 
@@ -219,7 +219,7 @@ function applyRangeFilter(cards: ICard[], filter: number[], key: string): ICard[
           (filter[0] <= digivolution2 && filter[1] >= digivolution2);
       })])];
     case 'dp':
-      if(filter[0] === 1 && filter[1] === 15) {return  cards}
+      if(filter[0] === 1 && filter[1] === 16) {return  cards}
 
       return [...new Set([...cards.filter(cards => {
         const dp: number = +cards['dp'] >>> 0;
@@ -231,7 +231,7 @@ function applyRangeFilter(cards: ICard[], filter: number[], key: string): ICard[
         const a: number = +(filter[0]+'000') >>> 0;
         const b: number = +(filter[1]+'000') >>> 0;
 
-        if(filter[1] === 15) {
+        if(filter[1] === 16) {
           return a <= dp;
         }
 

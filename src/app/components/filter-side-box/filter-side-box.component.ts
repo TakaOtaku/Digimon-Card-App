@@ -52,9 +52,9 @@ export class FilterSideBoxComponent implements OnInit {
 
   cardCountSlider: number[] = [0,5];
   levelSlider: number[] = [2,7];
-  playCostSlider: number[] = [0,15];
-  digivolutionSlider: number[] = [0,6];
-  dpSlider: number[] = [1,15];
+  playCostSlider: number[] = [0,20];
+  digivolutionSlider: number[] = [0,7];
+  dpSlider: number[] = [1,16];
 
   groupedSets = GroupedSets;
   rarities = Rarities;
