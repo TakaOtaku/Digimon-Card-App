@@ -2617,13 +2617,13 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[On Play] You may place 1 [Sistermon Ciel] from your hand or trash at the bottom of this Digimon's digivolution cards to delete 1 of your opponent's Digimon with a play cost of 5 or less. [On Deletion] Return 1 card with [Jesmon], [Huckmon], or [Sistermon] in its name other than [Sistermon Ciel (Awakened)] from your trash to your hand.",
+    "effect": "[On Play] You may place 1 [Sistermon Noir] from your hand or trash at the bottom of this Digimon's digivolution cards to delete 1 of your opponent's Digimon with a play cost of 5 or less. [On Deletion] Return 1 card with [Jesmon], [Huckmon], or [Sistermon] in its name other than [Sistermon Noir (Awakened)] from your trash to your hand.*Also treat as if name is [Sistermon Ciel (Awakaned)] and traits include [Data].",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹booster NEXT ADVENTURE [BT-07]",
     "color": "White",
     "version": "Normal",
-    "illustrator": "Nakano Haito"
+    "illustrator": "Teppei Tadokoro"
   },
   {
     "id": "BT7-084",
