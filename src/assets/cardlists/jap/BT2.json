@@ -647,7 +647,7 @@
     "notes": "Tamer Battle Pack 3",
     "color": "Red",
     "version": "AA",
-    "illustrator": ""
+    "illustrator": "tessy"
   },
   {
     "id": "BT2-018",
@@ -828,7 +828,7 @@
     "securityEffect": "-",
     "notes": "DC-1 Grand Prix set",
     "color": "Blue",
-    "version": "AA",
+    "version": "Stamp",
     "illustrator": "Ishibashi Yosuke"
   },
   {
@@ -1010,7 +1010,7 @@
     "securityEffect": "-",
     "notes": "Prize for DC-1 Grand Prix",
     "color": "Blue",
-    "version": "AA",
+    "version": "Stamp",
     "illustrator": "Ishibashi Yosuke"
   },
   {
@@ -1140,7 +1140,7 @@
     "securityEffect": "-",
     "notes": "prize for DC-1 Grand Prix",
     "color": "Blue",
-    "version": "AA",
+    "version": "Stamp",
     "illustrator": "Ishibashi Yosuke"
   },
   {
@@ -1219,7 +1219,7 @@
     "notes": "▹booster ULTIMATE POWER [BT-02]",
     "color": "Blue",
     "version": "AA",
-    "illustrator": ""
+    "illustrator": "As'Maria"
   },
   {
     "id": "BT2-031",
@@ -1322,7 +1322,7 @@
     "securityEffect": "-",
     "notes": "Prize for DC-1 Grand Prix",
     "color": "Blue",
-    "version": "AA",
+    "version": "Stamp",
     "illustrator": "sasasi"
   },
   {
@@ -1973,7 +1973,7 @@
     "notes": "▹booster ULTIMATE POWER [BT-02]",
     "color": "Green",
     "version": "AA",
-    "illustrator": ""
+    "illustrator": "As'Maria"
   },
   {
     "id": "BT2-050",
@@ -4000,8 +4000,8 @@
     "securityEffect": "[Security] Activate this card's [Main] effect.",
     "notes": "DC-1 Grand Prix set",
     "color": "Blue",
-    "version": "AA",
-    "illustrator": ""
+    "version": "Stamp",
+    "illustrator": "shosuke"
   },
   {
     "id": "BT2-097",
