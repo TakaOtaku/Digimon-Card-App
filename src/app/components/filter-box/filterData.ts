@@ -42,7 +42,6 @@ export const GroupedSets = [
 export const CardTypes: string[] = ['Digi-Egg', 'Digimon', 'Tamer', 'Option'];
 
 export const Keywords: string[] = [
-  'Digivolve: ',
   '\uff1cDraw 1\uff1e',
   '\uff1cDraw 2\uff1e',
   '\uff1cDraw 3\uff1e',
@@ -114,7 +113,6 @@ export const Types: string[] = [
   "Aquatic",
   "Archangel",
   "Armor",
-  "Armor",
   "Authority",
   "Avian",
   "Baby Dragon",
@@ -152,7 +150,6 @@ export const Types: string[] = [
   "Earth Dragon",
   "Elusive Beast",
   "Evil Dragon",
-  "Evil Dragon",
   "Evil",
   "Fairy",
   "Fallen Angel",
@@ -173,10 +170,8 @@ export const Types: string[] = [
   "Larva",
   "Legend-Arms",
   "Lesser",
-  "Lesser",
   "Light Dragon",
   "Machine Dragon",
-  "Machine",
   "Machine",
   "Magic Knight",
   "Magic Warrior",
@@ -189,7 +184,6 @@ export const Types: string[] = [
   "Mini Dragon",
   "Minor",
   "Mollusk",
-  "Mutant",
   "Mutant",
   "Mysterious Beast",
   "Mysterious Bird",
@@ -223,7 +217,6 @@ export const Types: string[] = [
   "Warrior",
   "Weapon",
   "Wizard",
-  "X-Antibody",
   "X Antibody"
 ].sort();
 
