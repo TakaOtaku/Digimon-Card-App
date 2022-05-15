@@ -10,7 +10,8 @@ export const GroupedSets = [
       {label: 'BT6', value: 'BT6'},
       {label: 'BT7', value: 'BT7'},
       {label: 'BT8', value: 'BT8'},
-      {label: 'BT9', value: 'BT9'}
+      {label: 'BT9', value: 'BT9'},
+      {label: 'BT10', value: 'BT10'}
     ]
   },
   {
@@ -74,7 +75,9 @@ export const Keywords: string[] = [
   '\uff1cDecoy (Black/White)\uff1e',
   '\uff1cDecoy (Red)(Black)\uff1e',
   '\uff1cRetaliation\uff1e',
-  '\uff1cArmor Purge\uff1e'
+  '\uff1cArmor Purge\uff1e',
+  '\uff1cSave\uff1e',
+  '\uff1cMaterial Save\uff1e'
 ];
 
 export const Colors: string[] = ['Red', 'Blue', 'Yellow', 'Green', 'Black', 'Purple', 'White', 'Multi'];
@@ -94,6 +97,7 @@ export const Attributes: string[] = ['Data', 'Vaccine', 'Virus', 'Free', 'Variab
 
 export const Types: string[] = [
   "Abnormal",
+  "Alien Humanoid",
   "Amphibian",
   "Ancient Animal",
   "Ancient Bird",
@@ -117,15 +121,14 @@ export const Types: string[] = [
   "Avian",
   "Baby Dragon",
   "Beast Dragon",
+  "Bagra Army",
   "Beast Knight",
-  "Beast",
   "Beast",
   "Beastkin",
   "Big Death-Stars",
   "Bird Dragon",
   "Bird",
   "Birdkin",
-  "Boss",
   "Boss",
   "Bulb",
   "CRT",
@@ -143,7 +146,6 @@ export const Types: string[] = [
   "Demon",
   "Deva",
   "Dinosaur",
-  "Dinosaur",
   "Dragon Warrior",
   "Dragon",
   "Dragonkin",
@@ -159,6 +161,7 @@ export const Types: string[] = [
   "Four Sovereigns",
   "Ghost",
   "Giant Bird",
+  "General",
   "Holy Beast",
   "Holy Bird",
   "Holy Dragon",
@@ -168,6 +171,7 @@ export const Types: string[] = [
   "Insectoid",
   "Invader",
   "Larva",
+  "LCD",
   "Legend-Arms",
   "Lesser",
   "Light Dragon",
@@ -208,6 +212,7 @@ export const Types: string[] = [
   "Three Great Angels",
   "Three Musketeers",
   "Throne",
+  "Twilight",
   "Undead",
   "Unidentified",
   "Unique",
@@ -217,7 +222,8 @@ export const Types: string[] = [
   "Warrior",
   "Weapon",
   "Wizard",
-  "X Antibody"
+  "X Antibody",
+  "Xros Heart"
 ].sort();
 
 export const Illustrators: string[] = [
