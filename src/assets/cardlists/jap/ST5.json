@@ -235,7 +235,7 @@
   },
   {
     "id": "ST5-08_P1",
-    "name": "Devimon",
+    "name": "DarkTyrannomon",
     "cardImage": "assets/images/cards/jap/ST5-08_P1.jpg",
     "cardType": "Digimon",
     "dp": "5000",
@@ -245,9 +245,9 @@
     "cardLv": "Lv.4",
     "form": "Champion",
     "attribute": "Virus",
-    "type": "Fallen Angel",
+    "type": "Dinosaur",
     "rarity": "U",
-    "cardNumber": "ST6-08",
+    "cardNumber": "ST5-08",
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
@@ -255,9 +255,9 @@
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "Tamer Battle Pack 9",
-    "color": "Purple",
+    "color": "Black",
     "version": "AA",
-    "illustrator": "Ishibashi Yosuke"
+    "illustrator": "Hisashi Fujiwara"
   },
   {
     "id": "ST5-09",
