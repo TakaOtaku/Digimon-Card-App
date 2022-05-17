@@ -129,6 +129,7 @@ export const Types: string[] = [
   "Bird Dragon",
   "Bird",
   "Birdkin",
+  "Blue Flare",
   "Boss",
   "Bulb",
   "CRT",
