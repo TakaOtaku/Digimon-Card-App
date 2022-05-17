@@ -146,7 +146,7 @@
     "cardNumber": "ST13-06",
     "digiXros": "-",
     "specialDigivolve": "-",
-    "dnaDigivolve": "DNA Digivolution: 0 from red Lv.6 + black Lv.6.",
+    "dnaDigivolve": "＜DNA Digivolution: 0 from red Lv.6 + black Lv.6＞ Digivolve unsuspended with the 2 specified Digimon stacked on top of each other.",
     "effect": "[When Digivolving] ＜Blitz＞ (This Digimon can attack when your opponent has 1 or more memory.) When DNA digivolving, for every 4 cards in this Digimon's digivolution cards, delete 1 of your opponent's Digimon with a play cost of 20 or less and trash the top card of your opponent's security stack.[All Turns][Once Per Turn] When a card is removed from a player's security stack, unsuspend this Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "-",
