@@ -432,7 +432,8 @@
     "color": "Purple",
     "version": "Normal",
     "block": [
-      "00"
+      "00",
+      "02"
     ],
     "illustrator": ""
   },
@@ -461,7 +462,8 @@
     "color": "Purple",
     "version": "AA",
     "block": [
-      "00"
+      "00",
+      "02"
     ],
     "illustrator": ""
   },
