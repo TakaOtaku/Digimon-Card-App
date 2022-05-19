@@ -28,16 +28,12 @@ export class CollectionStatsDialogComponent implements OnInit, OnChanges {
     },
     responsive: true,
     scales: {
-      xAxes: [
-        {
-          stacked: true,
-        },
-      ],
-      yAxes: [
-        {
-          stacked: true,
-        },
-      ],
+      x: {
+        stacked: true,
+      },
+      y: {
+        stacked: true,
+      },
     },
   };
 
@@ -45,6 +41,11 @@ export class CollectionStatsDialogComponent implements OnInit, OnChanges {
     normal: new FormControl(true),
     aa: new FormControl(false),
     stamped: new FormControl(false),
+  });
+
+  languageForm = new FormGroup({
+    english: new FormControl(true),
+    japanese: new FormControl(false),
   });
 
   constructor() {}
@@ -74,7 +75,7 @@ export class CollectionStatsDialogComponent implements OnInit, OnChanges {
         {
           type: 'bar',
           label: 'Not Collected',
-          backgroundColor: '#808080',
+          backgroundColor: '#000000',
           data: [btData[1], exData[1], stData[1]],
         },
       ],
@@ -82,11 +83,29 @@ export class CollectionStatsDialogComponent implements OnInit, OnChanges {
   }
 
   private getBoosterCards(type: string): number[] {
+    //const allCards = this.filterLanguageAllCards();
     const set = this.digimonCards.filter((card) =>
       card.cardNumber.includes(type)
     );
+
+    //const collection = this.filterLanguageCollection();
     const have = this.collection.filter((card) => card.id.includes(type));
 
     return [have.length, set.length - have.length];
   }
+
+  /*  private filterLanguageAllCards(): ICard[] {
+      let array = [];
+      if(this.languageForm.get('english')?.value) {
+        array = [...new Set(this.digimonCards.filter((card) => card.))];
+      }
+      if(this.languageForm.get('english')?.value) {
+
+      }
+      return array;
+    }
+
+    private filterLanguageCollection(): ICountCard[] {
+      return;
+    }*/
 }

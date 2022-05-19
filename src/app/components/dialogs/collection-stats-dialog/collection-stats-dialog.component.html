@@ -4,6 +4,10 @@
     <button (click)="this.onClose.next(false)" class="p-button-text ml-auto self-end" icon="pi pi-times" pButton pRipple type="button"></button>
   </div>
 
+  <div [formGroup]="languageForm">
+    <p-checkbox class="ml-2" formControlName="english" label="English" name="language"></p-checkbox>
+    <p-checkbox class="ml-2" formControlName="japanese" label="Japanese" name="language"></p-checkbox>
+  </div>
 
   <!--div [formGroup]="versionForm">
     <p-checkbox class="ml-2" formControlName="normal" label="Normal" name="version" value="Normal"></p-checkbox>
@@ -27,5 +31,4 @@
   </div-->
 
   <p-chart [data]="collectionData" [options]="chartOptions" type="bar"></p-chart>
-
 </p-dialog>
