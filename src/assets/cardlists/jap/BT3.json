@@ -3708,7 +3708,8 @@
     "color": "Blue",
     "version": "Normal",
     "block": [
-      "00"
+      "00",
+      "02"
     ],
     "illustrator": ""
   },
@@ -3737,7 +3738,8 @@
     "color": "Blue",
     "version": "AA",
     "block": [
-      "00"
+      "00",
+      "02"
     ],
     "illustrator": ""
   },
@@ -3766,7 +3768,8 @@
     "color": "Green",
     "version": "Normal",
     "block": [
-      "00"
+      "00",
+      "02"
     ],
     "illustrator": ""
   },
@@ -3795,7 +3798,8 @@
     "color": "Green",
     "version": "AA",
     "block": [
-      "00"
+      "00",
+      "02"
     ],
     "illustrator": ""
   },
