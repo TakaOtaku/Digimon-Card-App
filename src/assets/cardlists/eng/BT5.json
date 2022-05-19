@@ -1075,7 +1075,8 @@
     "color": "Blue",
     "version": "Normal",
     "block": [
-      "00"
+      "00",
+      "02"
     ],
     "illustrator": "koki"
   },
@@ -1104,7 +1105,8 @@
     "color": "Blue",
     "version": "Stamp",
     "block": [
-      "00"
+      "00",
+      "02"
     ],
     "illustrator": "koki"
   },
