@@ -2643,7 +2643,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[When DigivoLv.ing] Reveal 3 cards from the top of your deck. Add 1 level 5 or higher Digimon among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
+    "effect": "[Digivolving] Reveal 3 cards from the top of your deck. Add 1 level 5 or higher Digimon among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "1st year Anniversary adventure pack",
