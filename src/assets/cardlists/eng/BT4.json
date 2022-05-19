@@ -3983,7 +3983,8 @@
     "color": "Black",
     "version": "Normal",
     "block": [
-      "00"
+      "00",
+      "02"
     ],
     "illustrator": ""
   },
@@ -4012,7 +4013,8 @@
     "color": "Black",
     "version": "AA",
     "block": [
-      "00"
+      "00",
+      "02"
     ],
     "illustrator": ""
   },
