@@ -23,6 +23,9 @@
     "notes": "▹start deck Ultimate ancient dragon[ST-9]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "sasasi"
   },
   {
@@ -49,6 +52,9 @@
     "notes": "▹start deck Ultimate ancient dragon[ST-9]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "sasasi"
   },
   {
@@ -75,6 +81,9 @@
     "notes": "▹start deck Ultimate ancient dragon[ST-9]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Takase"
   },
   {
@@ -101,6 +110,9 @@
     "notes": "▹start deck Ultimate ancient dragon[ST-9]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "sasasi"
   },
   {
@@ -127,6 +139,9 @@
     "notes": "▹start deck Ultimate ancient dragon[ST-9]",
     "color": "Blue/Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "sasasi"
   },
   {
@@ -153,9 +168,12 @@
     "notes": "▹start deck Ultimate ancient dragon[ST-9]",
     "color": "Blue/Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "sasasi"
   },
-    {
+  {
     "id": "ST9-06_P1",
     "name": "Imperialdramon Dragon Mode",
     "cardImage": "assets/images/cards/jap/ST9-06_P1.jpg",
@@ -179,6 +197,9 @@
     "notes": "▹start deck Ultimate ancient dragon[ST-9]",
     "color": "Blue/Green",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": "Nakano Haito"
   },
   {
@@ -205,6 +226,9 @@
     "notes": "▹start deck Ultimate ancient dragon[ST-9]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "GOSSAN"
   },
   {
@@ -231,6 +255,9 @@
     "notes": "▹start deck Ultimate ancient dragon[ST-9]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "sasasi"
   },
   {
@@ -257,6 +284,9 @@
     "notes": "▹start deck Ultimate ancient dragon[ST-9]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "sasasi"
   },
   {
@@ -283,6 +313,9 @@
     "notes": "▹start deck Ultimate ancient dragon[ST-9]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "koki"
   },
   {
@@ -309,6 +342,9 @@
     "notes": "▹start deck Ultimate ancient dragon[ST-9]",
     "color": "Green/Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "sasasi"
   },
   {
@@ -335,6 +371,9 @@
     "notes": "▹start deck Ultimate ancient dragon[ST-9]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Nakano Haito"
   },
   {
@@ -361,6 +400,9 @@
     "notes": "▹start deck Ultimate ancient dragon[ST-9]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "GOSSAN"
   },
   {
@@ -387,6 +429,9 @@
     "notes": "▹start deck Ultimate ancient dragon[ST-9]",
     "color": "Blue/Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Nakano Haito"
   },
   {
@@ -413,6 +458,9 @@
     "notes": "▹start deck Ultimate ancient dragon[ST-9]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "banira"
   }
 ]

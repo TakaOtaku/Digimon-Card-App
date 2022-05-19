@@ -1,9 +1,9 @@
-<h1 class="primary-color mt-5">{{title}}</h1>
+<h1 class="primary-color mt-5 text-center">{{title}}</h1>
 <div class="flex flex-row mx-5">
-  <p-inputNumber (onInput)="changeMin($event)" inputStyleClass="text-white max-w-[35px]" [(ngModel)]="slider[0]" mode="decimal" [min]="minMax[0]" [max]="minMax[1]"></p-inputNumber>
-  <p class="text-white max-w-[35px] leading-[45px]">{{suffix}}</p>
-  <p-slider [(ngModel)]="slider" (onSlideEnd)="OnSliderChange.emit($event)"
-            [range]="true" [min]="minMax[0]" [max]="minMax[1]" class="flex-grow mx-5 self-center"></p-slider>
-  <p-inputNumber (onInput)="changeMax($event)" inputStyleClass="text-white max-w-[35px]" [(ngModel)]="slider[1]" mode="decimal" [min]="minMax[0]" [max]="minMax[1]"></p-inputNumber>
-  <p class="text-white max-w-[35px] leading-[45px]">{{suffix}}</p>
+  <p-inputNumber (onInput)="changeMin($event)" [(ngModel)]="slider[0]" [max]="minMax[1]" [min]="minMax[0]" inputStyleClass="text-white max-w-[35px]" mode="decimal"></p-inputNumber>
+  <p class="text-white ml-1 max-w-[35px] text-xs leading-[40px]">{{suffix}}</p>
+  <p-slider (onSlideEnd)="OnSliderChange.emit($event)" [(ngModel)]="slider"
+            [max]="minMax[1]" [min]="minMax[0]" [range]="true" class="flex-grow mx-5 self-center"></p-slider>
+  <p-inputNumber (onInput)="changeMax($event)" [(ngModel)]="slider[1]" [max]="minMax[1]" [min]="minMax[0]" inputStyleClass="text-white max-w-[35px]" mode="decimal"></p-inputNumber>
+  <p class="text-white ml-1 max-w-[35px] text-xs leading-[40px]">{{suffix}}</p>
 </div>

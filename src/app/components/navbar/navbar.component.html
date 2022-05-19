@@ -3,9 +3,15 @@
     <img alt="Logo" class="max-h-8 md:max-h-10 ml-5 mt-2 cursor-pointer" src="../../../assets/images/img_logo.png">
   </a>
 
-  <digimon-sort-buttons class="hidden lg:inline-flex mx-5 my-2"></digimon-sort-buttons>
-
   <digimon-slider *ngIf="site === 0" class="hidden lg:flex flex-grow"></digimon-slider>
 
-  <digimon-menu class="ml-auto mt-2"></digimon-menu>
+  <div class="ml-auto mt-2 hidden lg:block">
+    <p-button (onClick)="changeSite(SITES.Collection)" class="mt-2 ml-2" styleClass="font-bold">Collection</p-button>
+    <p-button (onClick)="changeSite(SITES.DeckBuilder)" class="mt-2 ml-2" styleClass="font-bold">Deckbuilder</p-button>
+    <p-button (onClick)="changeSite(SITES.Decks)" class="mt-2 ml-2" styleClass="font-bold">My Decks</p-button>
+    <p-button (onClick)="changeSite(SITES.CommunityDecks)" class="mt-2 mx-2" styleClass="font-bold">Community Decks</p-button>
+  </div>
+
+
+  <digimon-menu class="ml-auto lg:ml-0 mt-2"></digimon-menu>
 </div>

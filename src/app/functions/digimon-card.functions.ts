@@ -1,13 +1,13 @@
-import {englishCards} from "../../assets/cardlists/eng/english";
-import {japaneseCards} from "../../assets/cardlists/jap/japanese";
-import preReleaseJSON from "../../assets/cardlists/preRelease.json";
-import {ICard} from "../../models";
-import {CARDSET} from "../../models/card-set.enum";
+import { englishCards } from '../../assets/cardlists/eng/english';
+import { japaneseCards } from '../../assets/cardlists/jap/japanese';
+import preReleaseJSON from '../../assets/cardlists/preRelease.json';
+import { ICard, IDeck } from '../../models';
+import { CARDSET } from '../../models/card-set.enum';
 
 export function compareIDs(idA: string, idB: string): boolean {
   const aST = idA.includes('ST');
   const bST = idB.includes('ST');
-  if(aST && bST) {
+  if (aST && bST) {
     const splitA = idA.split('-');
     const splitB = idB.split('-');
 
@@ -28,45 +28,84 @@ export function getPNG(cardSRC: string): string {
   let japRegExp = new RegExp('\\bjap\\b');
   let preReleaseRegExp = new RegExp('\\bpre-release\\b');
 
-  if(engRegExp.test(cardSRC)) {
-    return cardSRC.replace(engRegExp, 'eng/png')
-      .replace(new RegExp('\\b.jpg\\b'), '.png')
-  } else if(japRegExp.test(cardSRC)) {
-    return cardSRC.replace(japRegExp, 'jap/png')
-      .replace(new RegExp('\\b.jpg\\b'), '.png')
+  if (engRegExp.test(cardSRC)) {
+    return cardSRC
+      .replace(engRegExp, 'eng/png')
+      .replace(new RegExp('\\b.jpg\\b'), '.png');
+  } else if (japRegExp.test(cardSRC)) {
+    return cardSRC
+      .replace(japRegExp, 'jap/png')
+      .replace(new RegExp('\\b.jpg\\b'), '.png');
   } else {
-    return cardSRC.replace(preReleaseRegExp, 'pre-release/png')
-      .replace(new RegExp('\\b.jpg\\b'), '.png')
+    return cardSRC
+      .replace(preReleaseRegExp, 'pre-release/png')
+      .replace(new RegExp('\\b.jpg\\b'), '.png');
   }
 }
 
 export function setupAllDigimonCards(): ICard[] {
   const allCards: ICard[] = setupDigimonCards(CARDSET.Both);
 
-  allCards.sort(function(a, b){
-    if(a.cardNumber < b.cardNumber) { return -1; }
-    if(a.cardNumber > b.cardNumber) { return 1; }
+  allCards.sort(function(a, b) {
+    if (a.cardNumber < b.cardNumber) {
+      return -1;
+    }
+    if (a.cardNumber > b.cardNumber) {
+      return 1;
+    }
     return 0;
   });
   return allCards;
 }
 
+export function deckIsValid(deck: IDeck, allCards: ICard[]): string {
+  let cardCount = 0;
+  let eggCount = 0;
+
+  deck.cards.forEach((card) => {
+    const fullCard = allCards.find((a) => a.id === card.id)!;
+    if (fullCard.cardType !== 'Digi-Egg') {
+      cardCount += card.count;
+    } else {
+      eggCount += card.count;
+    }
+  });
+
+  if (cardCount != 50) {
+    return "Deck was can not be shared! You don't have 50 cards.";
+  }
+
+  if (eggCount > 5) {
+    return 'Deck was can not be shared! You have more than 5 Eggs.';
+  }
+
+  if (!deck.title) {
+    return 'Deck was can not be shared! You need a title.';
+  }
+  return '';
+}
+
 export function setupDigimonCards(digimonSet: string): ICard[] {
   let allCards: ICard[] = [];
-  if(digimonSet === CARDSET.English) {allCards = englishCards.concat(preReleaseJSON)}
-  if(digimonSet === CARDSET.Japanese) {allCards = japaneseCards}
-  if(digimonSet === CARDSET.Both) {
+  if (digimonSet === CARDSET.English) {
     allCards = englishCards.concat(preReleaseJSON);
-    japaneseCards.forEach(japCard => {
-      if(allCards.find(card => card.id === japCard.id)) {return}
+  }
+  if (digimonSet === CARDSET.Japanese) {
+    allCards = [...new Set(japaneseCards)];
+  }
+  if (digimonSet === CARDSET.Both) {
+    allCards = englishCards.concat(preReleaseJSON);
+    japaneseCards.forEach((japCard) => {
+      if (allCards.find((card) => card.id === japCard.id)) {
+        return;
+      }
       allCards.push(japCard);
     });
   }
 
-  allCards.sort(function(a, b){
+  allCards.sort(function(a, b) {
     const aSet = a.cardNumber.split('-');
     const bSet = b.cardNumber.split('-');
-
     const aNumber: number = +aSet[1] >>> 0;
     const bNumber: number = +bSet[1] >>> 0;
     return aSet[0].localeCompare(bSet[0]) || aNumber - bNumber;

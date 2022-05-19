@@ -1,56 +1,57 @@
 <p-confirmPopup></p-confirmPopup>
 
-<button type="button" pButton pRipple icon="pi pi-bars" label="" (click)="menu.toggle($event)"></button>
-<p-menu #menu [popup]="true" [model]="items"></p-menu>
+<button (click)="menu.toggle($event)" icon="pi pi-bars" label="" pButton pRipple type="button"></button>
+<p-menu #menu [model]="items" [popup]="true"></p-menu>
 
-<digimon-collection-stats-dialog [show]="collectionDisplay" [digimonCards]="digimonCards" [collection]="collection" (onClose)="this.collectionDisplay = false"></digimon-collection-stats-dialog>
+<digimon-collection-stats-dialog (onClose)="this.collectionDisplay = false" [collection]="collection" [digimonCards]="digimonCards" [show]="collectionDisplay"></digimon-collection-stats-dialog>
 
-<p-dialog header="Import/Export" [(visible)]="display" styleClass="w-[70vw] lg:w-[50vw] xl:w-[30vw] h-[320px]" [baseZIndex]="10000">
+<p-dialog [(visible)]="display" [baseZIndex]="10000" header="Import/Export" styleClass="w-[70vw] lg:w-[50vw] xl:w-[30vw] h-[320px]">
   <div class="flex flex-col justify-between">
-    <button class="mb-2 min-w-[200px] max-w-[200px] m-auto" (click)="this.importDisplay = true" pButton type="button" icon="pi pi-upload" label="Import Collection"></button>
-    <input #fileUpload (change)="handleFileInput($event.target)" accept=".json" [ngStyle]="{display: 'none'}" type="file">
-    <button class="mb-2 min-w-[200px] max-w-[200px] m-auto" (click)="fileUpload.click()" pButton type="button" icon="pi pi-upload" label="Import Save"></button>
-    <button class="mb-2 min-w-[200px] max-w-[200px] m-auto" (click)="exportSave()" pButton type="button" icon="pi pi-download" label="Export Save"></button>
-    <button class="mb-2 min-w-[200px] max-w-[200px] m-auto" (click)="deleteSave($event)" pButton type="button" icon="pi pi-times" label="Delete Save"></button>
+    <button (click)="this.importDisplay = true" class="mb-2 min-w-[200px] max-w-[200px] m-auto" icon="pi pi-upload" label="Import Collection" pButton type="button"></button>
+    <input #fileUpload (change)="handleFileInput($event.target)" [ngStyle]="{display: 'none'}" accept=".json" type="file">
+    <button (click)="fileUpload.click()" class="mb-2 min-w-[200px] max-w-[200px] m-auto" icon="pi pi-upload" label="Import Save" pButton type="button"></button>
+    <button (click)="exportSave()" class="mb-2 min-w-[200px] max-w-[200px] m-auto" icon="pi pi-download" label="Export Save" pButton type="button"></button>
+    <button (click)="deleteSave($event)" class="mb-2 min-w-[200px] max-w-[200px] m-auto" icon="pi pi-times" label="Delete Save" pButton type="button"></button>
   </div>
 </p-dialog>
 
-<p-dialog header="Import Collection" [(visible)]="importDisplay" styleClass="w-[95vw] h-[400px]" [baseZIndex]="10000">
-    <div>
-      <p>Copy your collection in the text area and press import.</p>
-      <textarea pInputTextarea [(ngModel)]="collectionText" [placeholder]="importPlaceholder" class="border-2 border-black-500 min-h-[150px] min-w-full" id="text-import"></textarea>
-    </div>
-    <div class="w-full flex justify-end">
-      <button (click)="importCollection()" pButton type="button" icon="pi pi-upload" label="Import"></button>
-    </div>
+<p-dialog [(visible)]="importDisplay" [baseZIndex]="10000" header="Import Collection" styleClass="w-[95vw] h-[400px]">
+  <div>
+    <p>Copy your collection in the text area and press import.</p>
+    <textarea [(ngModel)]="collectionText" [placeholder]="importPlaceholder" class="border-2 border-black-500 min-h-[150px] min-w-full" id="text-import" pInputTextarea></textarea>
+  </div>
+  <div class="w-full flex justify-end">
+    <button (click)="importCollection()" icon="pi pi-upload" label="Import" pButton type="button"></button>
+  </div>
 </p-dialog>
 
-<p-dialog header="Advanced Settings" [(visible)]="settingsDialog" styleClass="w-[400px]" [baseZIndex]="10000">
+<p-dialog [(visible)]="settingsDialog" [baseZIndex]="10000" header="Advanced Settings" styleClass="w-[400px]">
   <div class="w-full flex flex-col justify-end">
 
-    <div class="mx-auto mb-5">
-      <h1 class="primary-color mt-5">Which Cards should be loaded?</h1>
-      <p-selectButton class="mb-5" [options]="cardSets" [formControl]="cardSetFilter" [multiple]="false">
-      </p-selectButton>
+    <div class="mx-auto mb-5 ">
+      <h1 class="primary-color mt-5">Deck-Cards will be sorted first with:</h1>
+      <div class="flex justify-center">
+        <p-selectButton [formControl]="sortOrderFilter" [multiple]="false" [options]="sortOrder" class="mb-5">
+        </p-selectButton>
+      </div>
     </div>
 
     <span class="p-float-label mx-auto mt-5">
-      <p-inputNumber id="float-input" [(ngModel)]="collectionCount" mode="decimal"></p-inputNumber>
+      <p-inputNumber [(ngModel)]="collectionCount" id="float-input" mode="decimal"></p-inputNumber>
       <label for="float-input">How many of a card do you collect?</label>
     </span>
 
     <h5 class="mt-5 mx-auto font-bold">Pre-Release Cards</h5>
-    <p-selectButton class="mx-auto" [options]="showHideOptions" [(ngModel)]="preRelease" optionLabel="label" optionValue="value"></p-selectButton>
+    <p-selectButton [(ngModel)]="preRelease" [options]="showHideOptions" class="mx-auto" optionLabel="label" optionValue="value"></p-selectButton>
 
     <h5 class="mt-5 mx-auto font-bold">Alt. Art Cards</h5>
-    <p-selectButton class="mx-auto" [options]="showHideOptions" [(ngModel)]="aa" optionLabel="label" optionValue="value"></p-selectButton>
+    <p-selectButton [(ngModel)]="aa" [options]="showHideOptions" class="mx-auto" optionLabel="label" optionValue="value"></p-selectButton>
 
     <h5 class="mt-5 mx-auto font-bold">Stamped Cards</h5>
-    <p-selectButton class="mx-auto" [options]="showHideOptions" [(ngModel)]="stamped" optionLabel="label" optionValue="value"></p-selectButton>
+    <p-selectButton [(ngModel)]="stamped" [options]="showHideOptions" class="mx-auto" optionLabel="label" optionValue="value"></p-selectButton>
   </div>
 
   <div class="flex flex-row justify-between">
-    <button class="mt-10" (click)="display = true" pButton type="button" icon="pi pi-upload" label="Import/Export"></button>
-    <button class="mt-10" (click)="saveSettings()" pButton type="button" icon="pi pi-save" label="Save Settings"></button>
+    <button (click)="saveSettings()" class="mt-10" icon="pi pi-save" label="Save Settings" pButton type="button"></button>
   </div>
 </p-dialog>

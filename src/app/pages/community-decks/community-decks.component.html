@@ -1,18 +1,18 @@
 <p-contextMenu #table [model]="deckRowContext"></p-contextMenu>
 
-<p-table responsiveLayout="scroll" dataKey="title" styleClass="p-datatable-striped" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} decks"
-         [value]="decks" [scrollable]="true" [scrollHeight]="'calc(100vh - 100px)'" [contextMenu]="table"  [globalFilterFields]="['color.name', 'title','','tags', 'user']"
-         [paginator]="true" [rows]="25" [showCurrentPageReport]="true" [rowsPerPageOptions]="[25, 50, 75]"
-         [(contextMenuSelection)]="selectedDeck">
+<p-table [(contextMenuSelection)]="selectedDeck" [contextMenu]="table" [globalFilterFields]="['color.name', 'title','','tags', 'user']"
+         [paginator]="true" [rowsPerPageOptions]="[25, 50, 75]" [rows]="25" [scrollHeight]="'calc(100vh - 100px)'" [scrollable]="true"
+         [showCurrentPageReport]="true" [value]="decks" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} decks" dataKey="title"
+         styleClass="p-datatable-striped">
   <ng-template pTemplate="header">
     <tr>
       <th class="expand"></th>
       <th class="color">
         <div class="mx-auto">
           Color
-          <p-columnFilter field="color.name" matchMode="equals" display="menu">
-            <ng-template pTemplate="filter" let-value let-filter="filterCallback">
-              <p-dropdown [ngModel]="value" [options]="colors" (onChange)="filter($event.value)" placeholder="Any">
+          <p-columnFilter display="menu" field="color.name" matchMode="equals">
+            <ng-template let-filter="filterCallback" let-value pTemplate="filter">
+              <p-dropdown (onChange)="filter($event.value)" [ngModel]="value" [options]="colors" placeholder="Any">
                 <ng-template let-option pTemplate="item">
                   <span [class]="'customer-badge status-' + option">{{option}}</span>
                 </ng-template>
@@ -24,7 +24,7 @@
       <th class="title">
         <div class="mx-auto">
           Title
-          <p-columnFilter type="text" field="title" display="menu"></p-columnFilter>
+          <p-columnFilter display="menu" field="title" type="text"></p-columnFilter>
         </div>
       </th>
       <th>
@@ -40,7 +40,7 @@
       <th>
         <div class="mx-auto">
           User
-          <p-columnFilter type="text" field="user" display="menu"></p-columnFilter>
+          <p-columnFilter display="menu" field="user" type="text"></p-columnFilter>
         </div>
       </th>
       <th pSortableColumn="date">
@@ -51,13 +51,13 @@
       </th>
     </tr>
   </ng-template>
-  <ng-template pTemplate="body" let-deck let-expanded="expanded">
-    <tr [pContextMenuRow]="deck" (dblclick)="showContextMenu(table, $event, deck)" class="max-h-[50px]">
+  <ng-template let-deck let-expanded="expanded" pTemplate="body">
+    <tr (dblclick)="showContextMenu(table, $event, deck)" [pContextMenuRow]="deck" class="max-h-[50px]">
       <td class="expand">
-        <button type="button" pButton pRipple [pRowToggler]="deck" class="p-button-text p-button-rounded p-button-plain" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
+        <button [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'" [pRowToggler]="deck" class="p-button-text p-button-rounded p-button-plain" pButton pRipple type="button"></button>
       </td>
       <td class="inline-flex color">
-        <img class="max-h-[50px] mx-auto" [src]="deck.color?.img ?? 'assets/decks/white.svg'" alt="Digimon Deck Image">
+        <img [src]="deck.color?.img ?? 'assets/decks/white.svg'" alt="Digimon Deck Image" class="max-h-[50px] mx-auto">
       </td>
       <td class="title">{{deck.title}}</td>
       <td class="truncate">{{deck.description}}</td>
@@ -78,13 +78,13 @@
       </td>
     </tr>
   </ng-template>
-  <ng-template pTemplate="rowexpansion" let-deck>
+  <ng-template let-deck pTemplate="rowexpansion">
     <tr>
       <td colspan="7">
         <div class="card-list flex flex-wrap surface-card pt-3">
           <div *ngFor="let card of deck.cards">
-            <digimon-deck-card [fullCards]="false" [edit]="false"
-              [card]="card" [cards]="allCards"></digimon-deck-card>
+            <digimon-deck-card [card]="card" [cards]="allCards"
+                               [edit]="false" [fullCards]="false"></digimon-deck-card>
           </div>
         </div>
       </td>
