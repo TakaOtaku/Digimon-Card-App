@@ -615,7 +615,8 @@
     "color": "Red",
     "version": "Normal",
     "block": [
-      "00"
+      "00",
+      "02"
     ],
     "illustrator": ""
   },
@@ -644,7 +645,8 @@
     "color": "Red",
     "version": "AA",
     "block": [
-      "00"
+      "00",
+      "02"
     ],
     "illustrator": ""
   },
