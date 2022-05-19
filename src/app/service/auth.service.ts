@@ -1,17 +1,19 @@
-import {Injectable} from '@angular/core';
-import {AngularFireAuth} from '@angular/fire/compat/auth';
-import {AngularFirestore, AngularFirestoreDocument} from "@angular/fire/compat/firestore";
-import {Store} from "@ngrx/store";
-import {GoogleAuthProvider} from 'firebase/auth';
-import firebase from "firebase/compat";
-import {MessageService} from "primeng/api";
-import {first, Subject} from "rxjs";
-import {IUser} from "../../models";
-import {loadSave} from "../store/digimon.actions";
-import {DatabaseService} from "./database.service";
+import { Injectable } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import {
+  AngularFirestore,
+  AngularFirestoreDocument,
+} from '@angular/fire/compat/firestore';
+import { Store } from '@ngrx/store';
+import { GoogleAuthProvider } from 'firebase/auth';
+import firebase from 'firebase/compat';
+import { MessageService } from 'primeng/api';
+import { first, Subject } from 'rxjs';
+import { IUser } from '../../models';
+import { loadSave } from '../store/digimon.actions';
+import { DatabaseService } from './database.service';
 import UserCredential = firebase.auth.UserCredential;
 import User = firebase.User;
-
 
 @Injectable({
   providedIn: 'root',
@@ -21,8 +23,6 @@ export class AuthService {
 
   public authChange = new Subject<boolean>();
 
-  get isLoggedIn(): boolean {return !!this.userData;}
-
   constructor(
     public afs: AngularFirestore,
     public afAuth: AngularFireAuth,
@@ -31,6 +31,13 @@ export class AuthService {
     private store: Store
   ) {}
 
+  get isLoggedIn(): boolean {
+    return !!this.userData;
+  }
+
+  /**
+   * Login automatically when you were logged in before
+   */
   checkLocalStorage() {
     const userRAW = localStorage.getItem('user');
     if (!userRAW) return;
@@ -38,7 +45,9 @@ export class AuthService {
     this.userData = JSON.parse(userRAW);
   }
 
-  GoogleAuth() {return this.AuthLogin(new GoogleAuthProvider());}
+  GoogleAuth() {
+    return this.AuthLogin(new GoogleAuthProvider());
+  }
 
   AuthLogin(provider: any) {
     return this.afAuth
@@ -48,14 +57,14 @@ export class AuthService {
         this.messageService.add({
           severity: 'success',
           summary: 'Login Successfully!',
-          detail: 'You have been logged in!'
+          detail: 'You have been logged in!',
         });
       })
       .catch((error) => {
         this.messageService.add({
           severity: 'error',
           summary: 'Login Failure!',
-          detail: 'There was an failure with your Login. Please try again!'
+          detail: 'There was an failure with your Login. Please try again!',
         });
       });
   }
@@ -65,15 +74,22 @@ export class AuthService {
       this.messageService.add({
         severity: 'success',
         summary: 'Logout Successful!',
-        detail: 'You have been logged out!'
+        detail: 'You have been logged out!',
       });
       localStorage.setItem('user', '');
       this.userData = null;
       this.authChange.next(true);
 
-      const string = localStorage.getItem('Digimon-Card-Collector')
-      const save = JSON.parse(string ?? '{collection:[], decks: [], settings: {cardSize: 50, collectionMode: true}}')
-      this.store.dispatch(loadSave({save}));
+      const string = localStorage.getItem('Digimon-Card-Collector');
+      const save = JSON.parse(
+        string ??
+          '{version: 1, collection:[], decks: [], settings: {cardSize: 50, collectionMode: false, collectionMode: false, collectionMinimum: 1,' +
+            '  showPreRelease: true,' +
+            '  showStampedCards: true,' +
+            '  showAACards: true,' +
+            '  sortDeckOrder: "Level"}}'
+      );
+      this.store.dispatch(loadSave({ save }));
     });
   }
 
@@ -89,21 +105,23 @@ export class AuthService {
       `users/${user.uid}`
     );
 
-    this.dbService.loadSave(user.uid).pipe(first())
-      .subscribe(save => {
+    this.dbService
+      .loadSave(user.uid)
+      .pipe(first())
+      .subscribe((save) => {
         const userData: IUser = {
           uid: user.uid,
           displayName: user.displayName ?? '',
           photoURL: user.photoURL ?? '',
-          save
+          save,
         };
 
         localStorage.setItem('user', JSON.stringify(userData));
-        this.store.dispatch(loadSave({save}));
+        this.store.dispatch(loadSave({ save }));
 
         this.userData = userData;
 
-        userRef.set(userData, {merge: true});
+        userRef.set(userData, { merge: true });
 
         this.authChange.next(true);
       });

@@ -23,6 +23,9 @@
     "notes": "▹start deck Mugen Black[ST-5]",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Nakano Haito"
   },
   {
@@ -49,6 +52,9 @@
     "notes": "▹start deck Mugen Black[ST-5]",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "TANIMESO"
   },
   {
@@ -75,6 +81,10 @@
     "notes": "▹start deck Mugen Black[ST-5]",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "Nakano Haito"
   },
   {
@@ -101,6 +111,10 @@
     "notes": "1st year Anniversary adventure pack",
     "color": "Black",
     "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "itohiro"
   },
   {
@@ -127,6 +141,9 @@
     "notes": "▹start deck Mugen Black[ST-5]",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Takase"
   },
   {
@@ -153,6 +170,9 @@
     "notes": "▹start deck Mugen Black[ST-5]",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Takase"
   },
   {
@@ -179,6 +199,9 @@
     "notes": "▹start deck Mugen Black[ST-5]",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Nakano Haito"
   },
   {
@@ -205,6 +228,9 @@
     "notes": "▹start deck Mugen Black[ST-5]",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "TANIMESO"
   },
   {
@@ -231,6 +257,10 @@
     "notes": "▹start deck Mugen Black[ST-5]",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -257,6 +287,10 @@
     "notes": "Tamer Battle Pack 9",
     "color": "Black",
     "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "Hisashi Fujiwara"
   },
   {
@@ -283,6 +317,9 @@
     "notes": "▹start deck Mugen Black[ST-5]",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Nakano Haito"
   },
   {
@@ -309,6 +346,9 @@
     "notes": "▹start deck Mugen Black[ST-5]",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -335,6 +375,9 @@
     "notes": "▹start deck Mugen Black[ST-5]",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "tyuga"
   },
   {
@@ -361,6 +404,9 @@
     "notes": "▹start deck Mugen Black[ST-5]",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Tonamikanji"
   },
   {
@@ -387,6 +433,9 @@
     "notes": "▹start deck Mugen Black[ST-5]",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Nakano Haito"
   },
   {
@@ -413,6 +462,9 @@
     "notes": "▹start deck Mugen Black[ST-5]",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": ""
   },
   {
@@ -439,6 +491,9 @@
     "notes": "▹start deck Mugen Black[ST-5]",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "funbolt"
   },
   {
@@ -465,6 +520,9 @@
     "notes": "▹start deck Mugen Black[ST-5]",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "TANIMESO"
   }
 ]

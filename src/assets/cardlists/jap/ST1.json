@@ -23,6 +23,9 @@
     "notes": "▹start deck Gaia Red [ST-1]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "sasasi"
   },
   {
@@ -49,6 +52,10 @@
     "notes": "▹start deck Gaia Red [ST-1]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "KISUKE"
   },
   {
@@ -75,6 +82,10 @@
     "notes": "1st year Anniversary adventure pack",
     "color": "Red",
     "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "Takase"
   },
   {
@@ -101,6 +112,10 @@
     "notes": "▹start deck Gaia Red [ST-1]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "sasasi"
   },
   {
@@ -127,6 +142,10 @@
     "notes": "▹start deck Special Entry Set[ST-11]",
     "color": "Red",
     "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "Ryuda"
   },
   {
@@ -153,6 +172,9 @@
     "notes": "▹start deck Gaia Red [ST-1]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -179,6 +201,9 @@
     "notes": "▹start deck Gaia Red [ST-1]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "KISUKE"
   },
   {
@@ -205,6 +230,9 @@
     "notes": "▹start deck Gaia Red [ST-1]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -231,6 +259,10 @@
     "notes": "▹start deck Gaia Red [ST-1]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "sasasi"
   },
   {
@@ -257,6 +289,10 @@
     "notes": "▹start deck Special Entry Set[ST-11]",
     "color": "Red",
     "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "Hokyyuu"
   },
   {
@@ -283,6 +319,9 @@
     "notes": "▹start deck Gaia Red [ST-1]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "KISUKE"
   },
   {
@@ -309,6 +348,9 @@
     "notes": "Tamer Battle Pack 2",
     "color": "Red",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": ""
   },
   {
@@ -335,6 +377,9 @@
     "notes": "▹start deck Gaia Red [ST-1]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "sasasi"
   },
   {
@@ -361,6 +406,9 @@
     "notes": "Tamer Battle Pack 1",
     "color": "Red",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": "tessy"
   },
   {
@@ -387,6 +435,9 @@
     "notes": "Winner prize for Aug./Sep.2020 Tamer Battle",
     "color": "Red",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": "tessy"
   },
   {
@@ -413,6 +464,10 @@
     "notes": "▹start deck Gaia Red [ST-1]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "KISUKE"
   },
   {
@@ -439,6 +494,10 @@
     "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Red",
     "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "As'Maria"
   },
   {
@@ -465,6 +524,10 @@
     "notes": "▹start deck Gaia Red [ST-1]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "sasasi"
   },
   {
@@ -491,6 +554,10 @@
     "notes": "Prize for Challenge Cup",
     "color": "Red",
     "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "Naochika Morishita"
   },
   {
@@ -517,6 +584,10 @@
     "notes": "Bandai TCG Online Hall battle prize Special Promotion Pack 2021",
     "color": "Red",
     "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "Nakano Haito"
   },
   {
@@ -543,6 +614,9 @@
     "notes": "▹start deck Gaia Red [ST-1]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": ""
   },
   {
@@ -569,6 +643,9 @@
     "notes": "start deck JESMON[ST-12],start deck RAGNALOARDMON[ST-13]",
     "color": "Red",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": ""
   },
   {
@@ -595,9 +672,12 @@
     "notes": "▹start deck Gaia Red [ST-1]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "UnnoDaisuke"
   },
-    {
+  {
     "id": "ST1-13_P1",
     "name": "Shadow Wing",
     "cardImage": "assets/images/cards/jap/ST1-13_P1.jpg",
@@ -621,6 +701,9 @@
     "notes": "TAMER'S EVOLUTION BOX",
     "color": "Red",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": "shosuke"
   },
   {
@@ -647,6 +730,9 @@
     "notes": "▹start deck Gaia Red [ST-1]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "UnnoDaisuke"
   },
   {
@@ -673,6 +759,9 @@
     "notes": "▹start deck Gaia Red [ST-1]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "UnnoDaisuke"
   },
   {
@@ -699,6 +788,10 @@
     "notes": "▹start deck Gaia Red [ST-1]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "Ishibashi Yosuke"
   },
   {
@@ -725,9 +818,13 @@
     "notes": "TAMER'S EVOLUTION BOX",
     "color": "Red",
     "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "Shin Sasaki"
   },
-    {
+  {
     "id": "ST1-16_P2",
     "name": "Gaia Force",
     "cardImage": "assets/images/cards/jap/ST1-16_P2.jpg",
@@ -751,6 +848,10 @@
     "notes": "▹start deck Gallantmon[ST-7]",
     "color": "Red",
     "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "As'Maria"
   },
   {
@@ -777,6 +878,10 @@
     "notes": "▹start deck Special Entry Set[ST-11]",
     "color": "Red",
     "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "tessy"
   }
 ]

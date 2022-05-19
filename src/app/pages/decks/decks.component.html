@@ -1,19 +1,19 @@
-<button pButton class="import font-bold" (click)="openImportDialog()" label="Import Deck"></button>
+<button (click)="openImportDialog()" class="import font-bold" label="Import Deck" pButton></button>
 <button (click)="createNewDeck()" class="import font-bold" label="Create new Deck" pButton></button>
 
 <p-contextMenu #table [model]="deckRowContext"></p-contextMenu>
-<p-table id="table" responsiveLayout="scroll"  styleClass="p-datatable-striped" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} decks"
-         [value]="decks" [scrollable]="true" [scrollHeight]="'calc(100vh - 100px)'" [contextMenu]="table"
-         [paginator]="true" [rows]="25" [showCurrentPageReport]="true" [rowsPerPageOptions]="[25, 50, 75]"
-         [(contextMenuSelection)]="selectedDeck">
+<p-table [(contextMenuSelection)]="selectedDeck" [contextMenu]="table" [paginator]="true"
+         [rowsPerPageOptions]="[25, 50, 75]" [rows]="25" [scrollHeight]="'calc(100vh - 100px)'" [scrollable]="true"
+         [showCurrentPageReport]="true" [value]="decks" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} decks" id="table"
+         styleClass="p-datatable-striped">
   <ng-template pTemplate="header">
     <tr>
       <th class="color">
         <div class="mx-auto max-w-5">
           Color
-          <p-columnFilter field="color.name" matchMode="equals" display="menu">
-            <ng-template pTemplate="filter" let-value let-filter="filterCallback">
-              <p-dropdown [ngModel]="value" [options]="colors" (onChange)="filter($event.value)" placeholder="Any">
+          <p-columnFilter display="menu" field="color.name" matchMode="equals">
+            <ng-template let-filter="filterCallback" let-value pTemplate="filter">
+              <p-dropdown (onChange)="filter($event.value)" [ngModel]="value" [options]="colors" placeholder="Any">
                 <ng-template let-option pTemplate="item">
                   <span [class]="'customer-badge status-' + option">{{option}}</span>
                 </ng-template>
@@ -25,7 +25,7 @@
       <th class="title">
         <div>
           Title
-          <p-columnFilter type="text" field="title" display="menu"></p-columnFilter>
+          <p-columnFilter display="menu" field="title" type="text"></p-columnFilter>
         </div>
       </th>
       <th>
@@ -40,10 +40,10 @@
       </th>
     </tr>
   </ng-template>
-  <ng-template pTemplate="body" let-deck>
-    <tr [pContextMenuRow]="deck" (dblclick)="showContextMenu(table, $event, deck)" class="max-h-[50px]">
+  <ng-template let-deck pTemplate="body">
+    <tr (dblclick)="showContextMenu(table, $event, deck)" [pContextMenuRow]="deck" class="max-h-[50px]">
       <td class="inline-flex color">
-        <img class="max-h-[50px] mx-auto" [src]="deck.color?.img ?? 'assets/decks/white.svg'" alt="Digimon Deck Image">
+        <img [src]="deck.color?.img ?? 'assets/decks/white.svg'" alt="Digimon Deck Image" class="max-h-[50px] mx-auto">
       </td>
       <td class="title">{{deck.title}}</td>
       <td class="truncate">{{deck.description}}</td>

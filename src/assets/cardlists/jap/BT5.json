@@ -23,6 +23,10 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "Sanosuke Sakuma"
   },
   {
@@ -49,6 +53,10 @@
     "notes": "Prize for Challenge Cup",
     "color": "Red",
     "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "TANIMESO"
   },
   {
@@ -75,6 +83,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Sanosuke Sakuma"
   },
   {
@@ -101,6 +112,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Yellow",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Ryodan"
   },
   {
@@ -127,6 +141,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Sanosuke Sakuma"
   },
   {
@@ -153,6 +170,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Kirita"
   },
   {
@@ -179,6 +199,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "yuuki."
   },
   {
@@ -205,6 +228,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "GOSSAN"
   },
   {
@@ -231,6 +257,9 @@
     "notes": "Tamer Battle Pack 7",
     "color": "Red",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": "Takase"
   },
   {
@@ -257,6 +286,9 @@
     "notes": "Winner prize for Aug.2021 Tamer Battle",
     "color": "Red",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": ""
   },
   {
@@ -283,6 +315,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Ryodan"
   },
   {
@@ -309,6 +344,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Tonamikanji"
   },
   {
@@ -335,6 +373,9 @@
     "notes": "TAMER'S EVOLUTION BOX2",
     "color": "Red",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": "TANIMESO"
   },
   {
@@ -361,6 +402,10 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "GOSSAN"
   },
   {
@@ -387,6 +432,10 @@
     "notes": "Prize for Challenge Cup",
     "color": "Red",
     "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -413,6 +462,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "koki"
   },
   {
@@ -439,6 +491,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "tyuga"
   },
   {
@@ -465,6 +520,9 @@
     "notes": "▹start deck Special Entry Set[ST-11]",
     "color": "Red",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": "Nakano Haito"
   },
   {
@@ -491,6 +549,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "UnnoDaisuke"
   },
   {
@@ -517,6 +578,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Tonamikanji"
   },
   {
@@ -543,6 +607,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "sasasi"
   },
   {
@@ -569,6 +636,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Ishibashi Yosuke"
   },
   {
@@ -595,6 +665,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Tonamikanji"
   },
   {
@@ -621,6 +694,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "itohiro"
   },
   {
@@ -647,6 +723,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Tonamikanji"
   },
   {
@@ -673,6 +752,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Red",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": "sasasi"
   },
   {
@@ -699,6 +781,10 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "TANIMESO"
   },
   {
@@ -725,6 +811,10 @@
     "notes": "Tamer Battle Pack 8",
     "color": "Blue",
     "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": ""
   },
   {
@@ -751,6 +841,10 @@
     "notes": "Winner prize for Oct.2021 Tamer Battle",
     "color": "Blue",
     "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": ""
   },
   {
@@ -777,6 +871,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Kirita"
   },
   {
@@ -803,6 +900,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Nakano Haito"
   },
   {
@@ -829,6 +929,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "GOSSAN"
   },
   {
@@ -855,6 +958,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "TANIMESO"
   },
   {
@@ -881,6 +987,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Nakano Haito"
   },
   {
@@ -907,6 +1016,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "koki"
   },
   {
@@ -933,6 +1045,9 @@
     "notes": "Tamer Battle Pack 11",
     "color": "Blue",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": "Shin Sasaki"
   },
   {
@@ -959,6 +1074,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "GOSSAN"
   },
   {
@@ -985,6 +1103,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Nakano Haito"
   },
   {
@@ -1011,6 +1132,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "sasasi"
   },
   {
@@ -1037,6 +1161,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Hisashi Fujiwara"
   },
   {
@@ -1063,6 +1190,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "kaz"
   },
   {
@@ -1089,6 +1219,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Nakano Haito"
   },
   {
@@ -1115,6 +1248,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Yellow",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Takase"
   },
   {
@@ -1141,6 +1277,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Yellow",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Teppei Tadokoro"
   },
   {
@@ -1167,6 +1306,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Yellow",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -1193,6 +1335,10 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Yellow",
     "version": "Normal",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "Tonamikanji"
   },
   {
@@ -1219,6 +1365,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Yellow",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "kaz"
   },
   {
@@ -1245,6 +1394,10 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Yellow",
     "version": "Normal",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "Tonamikanji"
   },
   {
@@ -1271,6 +1424,10 @@
     "notes": "Prize for Online Level-up Matching Battle",
     "color": "Yellow",
     "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "Tonamikanji"
   },
   {
@@ -1297,6 +1454,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Yellow",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "tessy"
   },
   {
@@ -1323,6 +1483,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Yellow",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Kirita"
   },
   {
@@ -1349,6 +1512,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Yellow",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Tonamikanji"
   },
   {
@@ -1375,6 +1541,10 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Yellow",
     "version": "Normal",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "kaz"
   },
   {
@@ -1401,6 +1571,10 @@
     "notes": "Bandai TCG Online Hall battle prize Special Promotion Pack 2021",
     "color": "Yellow",
     "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": ""
   },
   {
@@ -1427,6 +1601,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Yellow",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "yuuki."
   },
   {
@@ -1453,6 +1630,10 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Yellow",
     "version": "Normal",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "Tonamikanji"
   },
   {
@@ -1479,6 +1660,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Yellow",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "sasasi"
   },
   {
@@ -1505,6 +1689,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Takase"
   },
   {
@@ -1531,6 +1718,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Sanosuke Sakuma"
   },
   {
@@ -1557,6 +1747,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "yuuki."
   },
   {
@@ -1583,6 +1776,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "yuuki."
   },
   {
@@ -1609,6 +1805,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "koki"
   },
   {
@@ -1635,6 +1834,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Tsunemi Aosa"
   },
   {
@@ -1661,6 +1863,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "shosuke"
   },
   {
@@ -1687,6 +1892,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "sasasi"
   },
   {
@@ -1713,6 +1921,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "itohiro"
   },
   {
@@ -1739,6 +1950,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "yuuki."
   },
   {
@@ -1765,6 +1979,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Nakano Haito"
   },
   {
@@ -1791,6 +2008,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "yuuki."
   },
   {
@@ -1817,6 +2037,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "shosuke"
   },
   {
@@ -1843,6 +2066,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Kirita"
   },
   {
@@ -1869,6 +2095,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Takase"
   },
   {
@@ -1895,6 +2124,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -1921,6 +2153,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "kaz"
   },
   {
@@ -1947,6 +2182,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "KISUKE"
   },
   {
@@ -1973,6 +2211,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Shin Sasaki"
   },
   {
@@ -1999,6 +2240,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "tessy"
   },
   {
@@ -2025,6 +2269,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Koki"
   },
   {
@@ -2051,6 +2298,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Tsunemi Aosa"
   },
   {
@@ -2077,6 +2327,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Shin Sasaki"
   },
   {
@@ -2103,6 +2356,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Ishibashi Yosuke"
   },
   {
@@ -2129,6 +2385,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "TANIMESO"
   },
   {
@@ -2155,6 +2414,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Takase"
   },
   {
@@ -2181,6 +2443,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Ryuda"
   },
   {
@@ -2207,6 +2472,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Ryodan"
   },
   {
@@ -2233,6 +2501,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "shosuke"
   },
   {
@@ -2259,6 +2530,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "shosuke"
   },
   {
@@ -2285,6 +2559,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Ishibashi Yosuke"
   },
   {
@@ -2311,6 +2588,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Hisashi Fujiwara"
   },
   {
@@ -2337,6 +2617,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "shosuke"
   },
   {
@@ -2363,6 +2646,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Ishibashi Yosuke"
   },
   {
@@ -2389,6 +2675,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "shosuke"
   },
   {
@@ -2415,6 +2704,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Naochika Morishita"
   },
   {
@@ -2441,6 +2733,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Purple",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": "Nakano Haito"
   },
   {
@@ -2467,6 +2762,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Purple",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -2493,6 +2791,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Tonamikanji"
   },
   {
@@ -2519,6 +2820,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "sasasi"
   },
   {
@@ -2545,6 +2849,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "White",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Hisashi Fujiwara"
   },
   {
@@ -2571,6 +2878,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "White",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "sasasi"
   },
   {
@@ -2597,6 +2907,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "White",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": "Tomotake Kinoshita"
   },
   {
@@ -2623,6 +2936,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "White",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "tyuga"
   },
   {
@@ -2649,6 +2965,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "White",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": "sasasi"
   },
   {
@@ -2675,6 +2994,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "White",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": "Nakano Haito"
   },
   {
@@ -2701,6 +3023,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "White",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": "Tomotake Kinoshita"
   },
   {
@@ -2727,6 +3052,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "White",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": "As'Maria"
   },
   {
@@ -2753,6 +3081,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "White",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Naochika Morishita"
   },
   {
@@ -2779,6 +3110,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "White",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -2805,6 +3139,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "White",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": "As'Maria"
   },
   {
@@ -2831,6 +3168,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": ""
   },
   {
@@ -2857,6 +3197,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Blue",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": ""
   },
   {
@@ -2883,6 +3226,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": ""
   },
   {
@@ -2909,6 +3255,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Green",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": ""
   },
   {
@@ -2935,6 +3284,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": ""
   },
   {
@@ -2961,6 +3313,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Black",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": ""
   },
   {
@@ -2987,6 +3342,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "White",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": ""
   },
   {
@@ -3013,6 +3371,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "White",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": ""
   },
   {
@@ -3039,6 +3400,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "White",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": ""
   },
   {
@@ -3065,6 +3429,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "White",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": ""
   },
   {
@@ -3091,6 +3458,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "White",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": ""
   },
   {
@@ -3117,6 +3487,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "White",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": ""
   },
   {
@@ -3143,6 +3516,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Ryuda"
   },
   {
@@ -3169,6 +3545,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Nakano Haito"
   },
   {
@@ -3195,6 +3574,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Nakano Haito"
   },
   {
@@ -3221,6 +3603,10 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "Shin Sasaki"
   },
   {
@@ -3247,6 +3633,10 @@
     "notes": "Grand Tamer Exchange Online 2021Winter Online lobby event original goods",
     "color": "Blue",
     "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "SENNSU"
   },
   {
@@ -3273,6 +3663,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Yellow",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "p!k@ru"
   },
   {
@@ -3299,6 +3692,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Yellow",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "p!k@ru"
   },
   {
@@ -3325,6 +3721,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "p!k@ru"
   },
   {
@@ -3351,6 +3750,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Takase"
   },
   {
@@ -3377,6 +3779,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Teppei Tadokoro"
   },
   {
@@ -3403,6 +3808,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Shin Sasaki"
   },
   {
@@ -3429,6 +3837,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "shosuke"
   },
   {
@@ -3455,6 +3866,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "shosuke"
   },
   {
@@ -3481,6 +3895,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Shin Sasaki"
   },
   {
@@ -3507,6 +3924,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Hisashi Fujiwara"
   },
   {
@@ -3533,6 +3953,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Hisashi Fujiwara"
   },
   {
@@ -3559,6 +3982,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "White",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "sasasi"
   },
   {
@@ -3585,6 +4011,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "White",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "As'Maria"
   },
   {
@@ -3611,6 +4040,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "White",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "As'Maria"
   },
   {
@@ -3637,6 +4069,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "White",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": "As'Maria"
   },
   {
@@ -3663,6 +4098,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "White",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Tonamikanji"
   },
   {
@@ -3689,6 +4127,9 @@
     "notes": "▹booster Battle of Omega [BT-05]",
     "color": "White",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": "sasasi"
   }
 ]

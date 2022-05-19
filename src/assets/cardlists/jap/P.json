@@ -23,6 +23,9 @@
     "notes": "Promotion Pack Ver0.0",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "sasasi"
   },
   {
@@ -49,6 +52,9 @@
     "notes": "TAMER'S EVOLUTION BOX2",
     "color": "Red",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": "Ishibashi Yosuke"
   },
   {
@@ -75,6 +81,9 @@
     "notes": "Promotion Pack Ver0.0",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "KISUKE"
   },
   {
@@ -101,6 +110,9 @@
     "notes": "Promotion Pack Ver0.0",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "As'Maria"
   },
   {
@@ -127,6 +139,10 @@
     "notes": "Promotion Pack Ver0.0",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "Takumi Kousaka"
   },
   {
@@ -153,6 +169,9 @@
     "notes": "Promotion Pack Ver0.0",
     "color": "Yellow",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Nakano Haito"
   },
   {
@@ -179,6 +198,9 @@
     "notes": "Promotion Pack Ver0.0",
     "color": "Yellow",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Tonamikanji"
   },
   {
@@ -205,6 +227,9 @@
     "notes": "Promotion Pack",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Takase"
   },
   {
@@ -231,6 +256,9 @@
     "notes": "Promotion Pack",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "koki"
   },
   {
@@ -257,6 +285,9 @@
     "notes": "Promotion Pack",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Shin Sasaki"
   },
   {
@@ -283,6 +314,9 @@
     "notes": "Promotion Pack",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "As'Maria"
   },
   {
@@ -309,6 +343,9 @@
     "notes": "Promotion Pack",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Takase"
   },
   {
@@ -335,6 +372,9 @@
     "notes": "Promotion Pack",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "As'Maria"
   },
   {
@@ -361,6 +401,9 @@
     "notes": "Promotion Pack",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -387,6 +430,9 @@
     "notes": "Promotion Pack",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Nakano Haito"
   },
   {
@@ -413,6 +459,9 @@
     "notes": "Participation Prize for Oct.2020 Tamer Workshop",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": ""
   },
   {
@@ -439,6 +488,9 @@
     "notes": "Participation Prize for Nov.2020 Tamer Workshop",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": ""
   },
   {
@@ -465,6 +517,9 @@
     "notes": "Participation Prize for Dec.2020 Tamer Workshop",
     "color": "Yellow",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": ""
   },
   {
@@ -491,6 +546,9 @@
     "notes": "Participation Prize for Jan.2021 Tamer Workshop",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": ""
   },
   {
@@ -517,6 +575,9 @@
     "notes": "Campaign for start decks",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Shin Sasaki"
   },
   {
@@ -543,6 +604,9 @@
     "notes": "Campaign for start decks",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Nakano Haito"
   },
   {
@@ -569,6 +633,9 @@
     "notes": "Campaign for start decks",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Tonamikanji"
   },
   {
@@ -595,6 +662,10 @@
     "notes": "Participation Prize for Apr.2021 Tamer Workshop/Participation Prize for BANDAI TCG ONLINE FESTIVAL",
     "color": "Yellow",
     "version": "Normal",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "Nakano Haito"
   },
   {
@@ -621,6 +692,9 @@
     "notes": "1st year Anniversary promotion pack",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Ryuda"
   },
   {
@@ -647,6 +721,9 @@
     "notes": "1st year Anniversary promotion pack",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Ryuda"
   },
   {
@@ -673,6 +750,9 @@
     "notes": "1st year Anniversary promotion pack",
     "color": "Yellow",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Qacoro"
   },
   {
@@ -699,6 +779,9 @@
     "notes": "1st year Anniversary promotion pack",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Kirita"
   },
   {
@@ -725,6 +808,9 @@
     "notes": "1st year Anniversary promotion pack",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "KISUKE"
   },
   {
@@ -751,6 +837,9 @@
     "notes": "1st year Anniversary promotion pack",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "KISUKE"
   },
   {
@@ -777,6 +866,9 @@
     "notes": "1st year Anniversary SR campaign card",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "Shin Sasaki"
   },
   {
@@ -803,6 +895,9 @@
     "notes": "1st year Anniversary SR campaign card",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "Shin Sasaki"
   },
   {
@@ -829,6 +924,9 @@
     "notes": "1st year Anniversary SR campaign card",
     "color": "Yellow",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "Shin Sasaki"
   },
   {
@@ -855,6 +953,9 @@
     "notes": "1st year Anniversary SR campaign card",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "Shin Sasaki"
   },
   {
@@ -881,6 +982,9 @@
     "notes": "1st year Anniversary SR campaign card",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "Shin Sasaki"
   },
   {
@@ -907,6 +1011,9 @@
     "notes": "1st year Anniversary SR campaign card",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "Shin Sasaki"
   },
   {
@@ -933,6 +1040,9 @@
     "notes": "Special Promotion Pack 2022",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "tessy"
   },
   {
@@ -959,6 +1069,9 @@
     "notes": "Special Promotion Pack 2022",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "Takase"
   },
   {
@@ -985,6 +1098,9 @@
     "notes": "Special Promotion Pack 2022",
     "color": "Yellow",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "Teppei Tadokoro"
   },
   {
@@ -1011,6 +1127,9 @@
     "notes": "Special Promotion Pack 2022",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "Shin Sasaki"
   },
   {
@@ -1037,6 +1156,9 @@
     "notes": "Special Promotion Pack 2022",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "Ryodan"
   },
   {
@@ -1063,6 +1185,9 @@
     "notes": "Special Promotion Pack 2022",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "Hokyyuu"
   },
   {
@@ -1089,6 +1214,9 @@
     "notes": "▹booster NEXT ADVENTURE [BT-07]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": ""
   },
   {
@@ -1115,6 +1243,9 @@
     "notes": "▹booster NEXT ADVENTURE [BT-07]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": ""
   },
   {
@@ -1141,6 +1272,9 @@
     "notes": "▹booster NEXT ADVENTURE [BT-07]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": ""
   },
   {
@@ -1167,6 +1301,9 @@
     "notes": "▹booster NEXT ADVENTURE [BT-07]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": ""
   },
   {
@@ -1193,6 +1330,9 @@
     "notes": "▹booster NEXT ADVENTURE [BT-07]",
     "color": "Yellow",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": ""
   },
   {
@@ -1219,6 +1359,9 @@
     "notes": "▹booster NEXT ADVENTURE [BT-07]",
     "color": "Yellow",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": ""
   },
   {
@@ -1245,6 +1388,9 @@
     "notes": "▹booster NEXT ADVENTURE [BT-07]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": ""
   },
   {
@@ -1271,6 +1417,9 @@
     "notes": "▹booster NEXT ADVENTURE [BT-07]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": ""
   },
   {
@@ -1297,6 +1446,9 @@
     "notes": "Participation Prize for Aug.2021 Tamer Workshop",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": ""
   },
   {
@@ -1323,6 +1475,9 @@
     "notes": "Digimon Ghost Game Promotion Pack",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": ""
   },
   {
@@ -1349,6 +1504,9 @@
     "notes": "Digimon Ghost Game Promotion Pack",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": ""
   },
   {
@@ -1375,6 +1533,9 @@
     "notes": "Digimon Ghost Game Promotion Pack",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": ""
   },
   {
@@ -1401,6 +1562,9 @@
     "notes": "Digimon Ghost Game Promotion Pack",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": ""
   },
   {
@@ -1427,6 +1591,9 @@
     "notes": "Digimon Ghost Game Promotion Pack",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": ""
   },
   {
@@ -1453,6 +1620,9 @@
     "notes": "Digimon Ghost Game Promotion Pack",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": ""
   },
   {
@@ -1479,6 +1649,9 @@
     "notes": "▹start deck Special Entry Set[ST-11]",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -1505,6 +1678,9 @@
     "notes": "Grand Tamer Exchange Online 2021Winter Online lobby event original goods",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -1531,6 +1707,9 @@
     "notes": "Grand Tamer Exchange Online 2021Winter Online lobby event original goods",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -1557,6 +1736,9 @@
     "notes": "Grand Tamer Exchange Online 2021Winter Online lobby event original goods",
     "color": "Yellow",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -1583,6 +1765,9 @@
     "notes": "Grand Tamer Exchange Online 2021Winter Online lobby event original goods",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "p!k@ru"
   },
   {
@@ -1609,6 +1794,9 @@
     "notes": "Grand Tamer Exchange Online 2021Winter Online lobby event original goods",
     "color": "Black",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -1635,6 +1823,9 @@
     "notes": "Grand Tamer Exchange Online 2021Winter Online lobby event original goods",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "Takase"
   },
   {
@@ -1661,6 +1852,9 @@
     "notes": "Update Promotion Pack",
     "color": "Red",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -1687,6 +1881,9 @@
     "notes": "Update Promotion Pack",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -1713,6 +1910,9 @@
     "notes": "Update Promotion Pack",
     "color": "Yellow",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "p!k@ru"
   },
   {
@@ -1739,6 +1939,9 @@
     "notes": "Update Promotion Pack",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "itohiro"
   },
   {
@@ -1765,6 +1968,9 @@
     "notes": "Update Promotion Pack",
     "color": "Black/Red",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "itohiro"
   },
   {
@@ -1791,6 +1997,9 @@
     "notes": "Update Promotion Pack",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "p!k@ru"
   }
 ]

@@ -1,7 +1,4 @@
-import {ICard} from "../../../models";
-
-import P from './P.json';
-
+import { ICard } from '../../../models';
 
 import BT1 from './BT1.json';
 import BT2 from './BT2.json';
@@ -12,12 +9,13 @@ import BT6 from './BT6.json';
 import BT7 from './BT7.json';
 import BT8 from './BT8.json';
 import BT9 from './BT9.json';
-import BT10 from './BT10.json';
-
 import EX1 from './EX1.json';
 import EX2 from './EX2.json';
-
+import P from './P.json';
 import ST1 from './ST1.json';
+import ST10 from './ST10.json';
+import ST12 from './ST12.json';
+import ST13 from './ST13.json';
 import ST2 from './ST2.json';
 import ST3 from './ST3.json';
 import ST4 from './ST4.json';
@@ -26,9 +24,6 @@ import ST6 from './ST6.json';
 import ST7 from './ST7.json';
 import ST8 from './ST8.json';
 import ST9 from './ST9.json';
-import ST10 from './ST10.json';
-import ST12 from './ST12.json';
-import ST13 from './ST13.json';
 
 export const japaneseCards: ICard[] = [
   ...P,
@@ -42,7 +37,6 @@ export const japaneseCards: ICard[] = [
   ...BT7,
   ...BT8,
   ...BT9,
-  ...BT10,
 
   ...EX1,
   ...EX2,
@@ -58,5 +52,5 @@ export const japaneseCards: ICard[] = [
   ...ST9,
   ...ST10,
   ...ST12,
-  ...ST13
-]
+  ...ST13,
+];

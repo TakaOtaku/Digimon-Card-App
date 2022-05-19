@@ -23,6 +23,9 @@
     "notes": "▹start deck Cocytus Blue [ST-2]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "As'Maria"
   },
   {
@@ -49,6 +52,10 @@
     "notes": "▹start deck Cocytus Blue [ST-2]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "Takumi Kousaka"
   },
   {
@@ -75,6 +82,10 @@
     "notes": "1st year Anniversary adventure pack",
     "color": "Blue",
     "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "koki"
   },
   {
@@ -101,6 +112,9 @@
     "notes": "▹start deck Cocytus Blue [ST-2]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "As'Maria"
   },
   {
@@ -127,6 +141,9 @@
     "notes": "▹start deck Cocytus Blue [ST-2]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Ryuda"
   },
   {
@@ -153,6 +170,9 @@
     "notes": "▹start deck Cocytus Blue [ST-2]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Takumi Kousaka"
   },
   {
@@ -179,6 +199,9 @@
     "notes": "▹start deck Cocytus Blue [ST-2]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "As'Maria"
   },
   {
@@ -205,6 +228,10 @@
     "notes": "▹start deck Cocytus Blue [ST-2]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "Ryuda"
   },
   {
@@ -231,6 +258,10 @@
     "notes": "Tamer Battle Pack 6",
     "color": "Blue",
     "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "koki"
   },
   {
@@ -257,6 +288,9 @@
     "notes": "▹start deck Cocytus Blue [ST-2]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "As'Maria"
   },
   {
@@ -283,6 +317,9 @@
     "notes": "Tamer Battle Pack 2",
     "color": "Blue",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": "tessy"
   },
   {
@@ -309,6 +346,9 @@
     "notes": "Winner prize for Oct.2020 Tamer Battle",
     "color": "Blue",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": "tessy"
   },
   {
@@ -335,6 +375,9 @@
     "notes": "▹start deck Cocytus Blue [ST-2]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Takumi Kousaka"
   },
   {
@@ -361,6 +404,9 @@
     "notes": "Tamer Battle Pack 1",
     "color": "Blue",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": ""
   },
   {
@@ -387,6 +433,9 @@
     "notes": "▹start deck Cocytus Blue [ST-2]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Takumi Kousaka"
   },
   {
@@ -413,6 +462,9 @@
     "notes": "▹start deck Cocytus Blue [ST-2]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "As'Maria"
   },
   {
@@ -439,6 +491,9 @@
     "notes": "▹start deck Cocytus Blue [ST-2]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": ""
   },
   {
@@ -465,6 +520,10 @@
     "notes": "▹start deck Cocytus Blue [ST-2]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "p!k@ru"
   },
   {
@@ -491,9 +550,13 @@
     "notes": "TAMER'S EVOLUTION BOX",
     "color": "Blue",
     "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "Naochika Morishita"
   },
-    {
+  {
     "id": "ST2-13_P2",
     "name": "Hammer Spark",
     "cardImage": "assets/images/cards/jap/ST2-13_P2.jpg",
@@ -517,6 +580,10 @@
     "notes": "▹start deck UlforceVeedramon[ST-8]",
     "color": "Blue",
     "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "As'Maria"
   },
   {
@@ -543,6 +610,9 @@
     "notes": "▹start deck Cocytus Blue [ST-2]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "satsuki may"
   },
   {
@@ -569,6 +639,9 @@
     "notes": "▹start deck Cocytus Blue [ST-2]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Shigeo Niwa"
   },
   {
@@ -595,6 +668,9 @@
     "notes": "▹start deck Cocytus Blue [ST-2]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "p!k@ru"
   },
   {
@@ -621,6 +697,9 @@
     "notes": "TAMER'S EVOLUTION BOX",
     "color": "Blue",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": "Ishibashi Yosuke"
   }
 ]

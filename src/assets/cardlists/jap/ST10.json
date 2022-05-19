@@ -23,6 +23,9 @@
     "notes": "▹start deck Parallel world tactician[ST-10]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "Takase"
   },
   {
@@ -49,6 +52,9 @@
     "notes": "▹start deck Parallel world tactician[ST-10]",
     "color": "Yellow",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "Takase"
   },
   {
@@ -75,6 +81,9 @@
     "notes": "▹start deck Parallel world tactician[ST-10]",
     "color": "Yellow",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "koki"
   },
   {
@@ -101,6 +110,9 @@
     "notes": "▹start deck Parallel world tactician[ST-10]",
     "color": "Yellow/Purple",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "Takase"
   },
   {
@@ -127,6 +139,9 @@
     "notes": "▹start deck Parallel world tactician[ST-10]",
     "color": "Yellow",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "Tonamikanji"
   },
   {
@@ -153,9 +168,12 @@
     "notes": "▹start deck Parallel world tactician[ST-10]",
     "color": "Yellow/Purple",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "Tonamikanji"
   },
-    {
+  {
     "id": "ST10-06_P1",
     "name": "Mastemon",
     "cardImage": "assets/images/cards/jap/ST10-06_P1.jpg",
@@ -179,6 +197,9 @@
     "notes": "▹start deck Parallel world tactician[ST-10]",
     "color": "Yellow/Purple",
     "version": "AA",
+    "block": [
+      "01"
+    ],
     "illustrator": "Nakano Haito"
   },
   {
@@ -205,6 +226,9 @@
     "notes": "▹start deck Parallel world tactician[ST-10]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "koki"
   },
   {
@@ -231,6 +255,9 @@
     "notes": "▹start deck Parallel world tactician[ST-10]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "banira"
   },
   {
@@ -257,6 +284,9 @@
     "notes": "▹start deck Parallel world tactician[ST-10]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "Ryodan"
   },
   {
@@ -283,6 +313,9 @@
     "notes": "▹start deck Parallel world tactician[ST-10]",
     "color": "Purple/Yellow",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "koki"
   },
   {
@@ -309,6 +342,9 @@
     "notes": "▹start deck Parallel world tactician[ST-10]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "Teppei Tadokoro"
   },
   {
@@ -335,6 +371,9 @@
     "notes": "▹start deck Parallel world tactician[ST-10]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "Tonamikanji"
   },
   {
@@ -361,6 +400,9 @@
     "notes": "▹start deck Parallel world tactician[ST-10]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "Teppei Tadokoro"
   },
   {
@@ -387,6 +429,9 @@
     "notes": "▹start deck Parallel world tactician[ST-10]",
     "color": "Yellow/Purple",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "Nakano Haito"
   },
   {
@@ -413,6 +458,9 @@
     "notes": "▹start deck Parallel world tactician[ST-10]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
     "illustrator": "banira"
   }
 ]

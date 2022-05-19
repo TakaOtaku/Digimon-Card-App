@@ -1,25 +1,28 @@
 <div class="flex flex-col px-3 surface-ground h-full w-full">
   <button
-    class="w-[150px] self-center rounded-tl-lg rounded br-lg my-5"
-    pButton type="button" label="Reset" (click)="reset()"></button>
+    (click)="reset()"
+    class="w-[150px] self-center rounded-tl-lg rounded br-lg my-5" label="Reset" pButton type="button"></button>
 
-  <digimon-sort-buttons class="self-center inline-flex lg:hidden mx-auto my-5"></digimon-sort-buttons>
+  <div class="flex justify-center">
+    <p-selectButton [formControl]="cardSetFilter" [multiple]="false" [options]="cardSets" class="mb-5">
+    </p-selectButton>
+  </div>
 
-  <h1 class="primary-color mt-5" [ngClass]="{'lg:hidden' : !showColors}">Colors</h1>
-  <p-selectButton class="Colors" [ngClass]="{'lg:hidden' : !showColors}" [options]="colors" [formControl]="colorFilter" [multiple]="true">
+  <h1 [ngClass]="{'lg:hidden' : !showColors}" class="primary-color mt-5">Colors</h1>
+  <p-selectButton [formControl]="colorFilter" [multiple]="true" [ngClass]="{'lg:hidden' : !showColors}" [options]="colors" class="Colors">
     <ng-template let-color>
-      <i class="pi" [ngClass]="
-          {'pi-check': colorChecked(color), 'pi-times': !colorChecked(color)}"></i>
+      <i [ngClass]="
+          {'pi-check': colorChecked(color), 'pi-times': !colorChecked(color)}" class="pi"></i>
     </ng-template>
   </p-selectButton>
 
-  <h1 class="primary-color mt-5" [ngClass]="{'lg:hidden' : !showColors}">Card Type</h1>
-  <p-selectButton class="mb-5" [ngClass]="{'lg:hidden' : !showColors}"
-                  [options]="cardTypes" [formControl]="cardTypeFilter" [multiple]="true">
+  <h1 [ngClass]="{'lg:hidden' : !showColors}" class="primary-color mt-5">Card Type</h1>
+  <p-selectButton [formControl]="cardTypeFilter" [multiple]="true"
+                  [ngClass]="{'lg:hidden' : !showColors}" [options]="cardTypes" class="mb-5">
   </p-selectButton>
 
-  <p-multiSelect styleClass="w-full" [filter]="false" [showToggleAll]="false" [options]="groupedSets" [showHeader]="false" [group]="true"
-                 [formControl]="setFilter" defaultLabel="Set" scrollHeight="250px" display="chip">
+  <p-multiSelect [filter]="false" [formControl]="setFilter" [group]="true" [options]="groupedSets" [showHeader]="false" [showToggleAll]="false"
+                 defaultLabel="Set" display="chip" scrollHeight="250px" styleClass="w-full">
     <ng-template let-group pTemplate="group">
       <div class="flex align-items-center">
         <span>{{group.label}}</span>
@@ -28,56 +31,67 @@
   </p-multiSelect>
 
   <digimon-range-slider
-    title="Cards in Collection" [slider]="cardCountSlider"
-    [minMax]="[0, 5]" (OnSliderChange)="updateCardCountSlider($event)"></digimon-range-slider>
+    (OnSliderChange)="updateCardCountSlider($event)" [minMax]="[0, 5]"
+    [slider]="cardCountSlider" title="Cards in Collection"></digimon-range-slider>
 
   <digimon-range-slider
-    title="Level" [slider]="levelSlider"
-    [minMax]="[2, 7]" (OnSliderChange)="updateLevelSlider($event)"></digimon-range-slider>
+    (OnSliderChange)="updateLevelSlider($event)" [minMax]="[2, 7]"
+    [slider]="levelSlider" title="Level"></digimon-range-slider>
 
   <digimon-range-slider
-    title="Play Cost" [slider]="playCostSlider"
-    [minMax]="[0, 20]" (OnSliderChange)="updatePlayCostSlider($event)"></digimon-range-slider>
+    (OnSliderChange)="updatePlayCostSlider($event)" [minMax]="[0, 20]"
+    [slider]="playCostSlider" title="Play Cost"></digimon-range-slider>
 
   <digimon-range-slider
-    title="Digivolution Cost" [slider]="digivolutionSlider"
-    [minMax]="[0, 7]" (OnSliderChange)="updateDigivolutionSlider($event)"></digimon-range-slider>
+    (OnSliderChange)="updateDigivolutionSlider($event)" [minMax]="[0, 7]"
+    [slider]="digivolutionSlider" title="Digivolution Cost"></digimon-range-slider>
 
   <digimon-range-slider
-    title="DP" [slider]="dpSlider" suffix="000"
-    [minMax]="[0, 16]" (OnSliderChange)="updateDPSlider($event)"></digimon-range-slider>
+    (OnSliderChange)="updateDPSlider($event)" [minMax]="[0, 16]" [slider]="dpSlider"
+    suffix="000" title="DP"></digimon-range-slider>
 
-  <h1 class="primary-color mt-5">Rarity</h1>
-  <p-selectButton
-    [options]="rarities" [formControl]="rarityFilter" [multiple]="true">
-  </p-selectButton>
+  <h1 class="primary-color mt-5 text-center">Rarity</h1>
+  <div class="flex justify-center">
+    <p-selectButton
+      [formControl]="rarityFilter" [multiple]="true" [options]="rarities">
+    </p-selectButton>
+  </div>
 
-  <h1 class="primary-color mt-5">Version</h1>
-  <p-selectButton
-    [options]="versions" [formControl]="versionFilter" [multiple]="true">
-  </p-selectButton>
+  <h1 class="primary-color mt-5 text-center">Version</h1>
+  <div class="flex justify-center">
+    <p-selectButton
+      [formControl]="versionFilter" [multiple]="true" [options]="versions">
+    </p-selectButton>
+  </div>
 
-  <p-multiSelect styleClass="w-full mt-2" [filter]="true" [showToggleAll]="false" [options]="keywords" [showHeader]="true"
-                 [formControl]="keywordFilter" defaultLabel="Select a Keyword" scrollHeight="250px" display="chip">
+  <p-multiSelect [filter]="true" [formControl]="keywordFilter" [options]="keywords" [showHeader]="true" [showToggleAll]="false"
+                 defaultLabel="Select a Keyword" display="chip" scrollHeight="250px" styleClass="w-full mt-5">
   </p-multiSelect>
 
-  <p-multiSelect styleClass="w-full mt-2" [filter]="false" [showToggleAll]="false" [options]="forms" [showHeader]="false"
-                 [formControl]="formFilter" defaultLabel="Select a Form" scrollHeight="250px" display="chip">
+  <p-multiSelect [filter]="false" [formControl]="formFilter" [options]="forms" [showHeader]="false" [showToggleAll]="false"
+                 defaultLabel="Select a Form" display="chip" scrollHeight="250px" styleClass="w-full mt-2">
   </p-multiSelect>
 
-  <p-multiSelect styleClass="w-full mt-2" [filter]="false" [showToggleAll]="false" [options]="attributes" [showHeader]="false"
-                 [formControl]="attributeFilter" defaultLabel="Select an Attribute" scrollHeight="250px" display="chip">
+  <p-multiSelect [filter]="false" [formControl]="attributeFilter" [options]="attributes" [showHeader]="false" [showToggleAll]="false"
+                 defaultLabel="Select an Attribute" display="chip" scrollHeight="250px" styleClass="w-full mt-2">
   </p-multiSelect>
 
-  <p-multiSelect styleClass="w-full mt-2" [filter]="true" [showToggleAll]="false" [options]="types" [showHeader]="true"
-                 [formControl]="typeFilter" defaultLabel="Select a Type" scrollHeight="250px" display="chip">
+  <p-multiSelect [filter]="true" [formControl]="typeFilter" [options]="types" [showHeader]="true" [showToggleAll]="false"
+                 defaultLabel="Select a Type" display="chip" scrollHeight="250px" styleClass="w-full mt-2">
   </p-multiSelect>
 
-  <p-multiSelect styleClass="w-full mt-2" [filter]="true" [showToggleAll]="false" [options]="specialRequirements" [showHeader]="true"
-                 [formControl]="specialRequirementsFilter" defaultLabel="Select a Special Requirement" scrollHeight="250px" display="chip">
+  <p-multiSelect [filter]="true" [formControl]="specialRequirementsFilter" [options]="specialRequirements" [showHeader]="true" [showToggleAll]="false"
+                 defaultLabel="Select a Special Requirement" display="chip" scrollHeight="250px" styleClass="w-full mt-2">
   </p-multiSelect>
 
-  <p-multiSelect styleClass="w-full mt-2 mb-10" [filter]="true" [showToggleAll]="false" [options]="illustrators" [showHeader]="true"
-                 [formControl]="illustratorFilter" defaultLabel="Select an Illustrator" scrollHeight="250px" display="chip">
+  <p-multiSelect [filter]="true" [formControl]="illustratorFilter" [options]="illustrators" [showHeader]="true" [showToggleAll]="false"
+                 defaultLabel="Select an Illustrator" display="chip" scrollHeight="250px" styleClass="w-full mt-2">
   </p-multiSelect>
+
+  <p-multiSelect [filter]="true" [formControl]="blockFilter" [options]="blocks" [showHeader]="true" [showToggleAll]="false"
+                 defaultLabel="Select a Block" display="chip" scrollHeight="250px" styleClass="w-full mt-2 mb-5">
+  </p-multiSelect>
+
+  <h1 class="primary-color mt-5 text-center">Sort Order</h1>
+  <digimon-sort-buttons class="self-center inline-flex mx-auto my-5"></digimon-sort-buttons>
 </div>

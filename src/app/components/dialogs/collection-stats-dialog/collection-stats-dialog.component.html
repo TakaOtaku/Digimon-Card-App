@@ -1,29 +1,31 @@
-<p-dialog header="Collection Stats" [(visible)]="show" [showHeader]="false" styleClass="w-[95vw] lg:w-[70vw] xl:w-[60vw] h-[50vh] md:h-[65vh] lg:h-[80vh]" [baseZIndex]="10000">
+<p-dialog [(visible)]="show" [baseZIndex]="10000" [showHeader]="false" header="Collection Stats" styleClass="w-[95vw] lg:w-[70vw] xl:w-[60vw] h-[50vh] md:h-[65vh] lg:h-[80vh]">
   <div class="inline-flex w-full my-5">
     <h1 class="primary-color text-bolder text-xl">Collection Stats</h1>
-    <button pButton pRipple type="button" icon="pi pi-times" class="p-button-text ml-auto self-end" (click)="this.onClose.next(false)"></button>
+    <button (click)="this.onClose.next(false)" class="p-button-text ml-auto self-end" icon="pi pi-times" pButton pRipple type="button"></button>
   </div>
 
 
   <!--div [formGroup]="versionForm">
-    <p-checkbox name="version" value="Normal" label="Normal" formControlName="normal"></p-checkbox>
-    <p-checkbox name="version" value="AA" label="AA" formControlName="aa"></p-checkbox>
-    <p-checkbox name="version" value="Stamped" label="Stamped" formControlName="stamped"></p-checkbox>
+    <p-checkbox class="ml-2" formControlName="normal" label="Normal" name="version" value="Normal"></p-checkbox>
+    <p-checkbox class="ml-2" formControlName="aa" label="AA" name="version" value="AA"></p-checkbox>
+    <p-checkbox class="ml-2" formControlName="stamped" label="Stamped" name="version" value="Stamped"></p-checkbox>
   </div>
 
-  <div>
-    <div class="field-radiobutton">
-      <p-radioButton name="type" value="Normal" inputId="type1"></p-radioButton>
+  <div class="flex flex-row">
+    <div class="field-radiobutton ml-2">
+      <p-radioButton inputId="type1" name="type1" value="Normal"></p-radioButton>
       <label for="type1">Normal</label>
     </div>
-    <div class="field-radiobutton">
-      <p-radioButton name="type" value="Playset" inputId="type2"></p-radioButton>
+    <div class="field-radiobutton ml-2">
+      <p-radioButton inputId="type2" name="type2" value="Playset"></p-radioButton>
       <label for="type2">Playset</label>
     </div>
-    <div class="field-radiobutton">
-      <p-radioButton name="type" value="Playset+" inputId="type3"></p-radioButton>
+    <div class="field-radiobutton ml-2">
+      <p-radioButton inputId="type3" name="type3" value="Playset+"></p-radioButton>
       <label for="type3">Playset+</label>
     </div>
   </div-->
-  <p-chart type="bar" [data]="collectionData" [options]="chartOptions"></p-chart>
+
+  <p-chart [data]="collectionData" [options]="chartOptions" type="bar"></p-chart>
+
 </p-dialog>

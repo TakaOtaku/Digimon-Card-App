@@ -5,6 +5,7 @@ import {Subject, takeUntil} from "rxjs";
 import {ColorList, ColorMap, ICard, IColor, IDeck} from "../../../../models";
 import {ITag} from "../../../../models/interfaces/tag.interface";
 import {tagsList} from "../../../../models/tags.data";
+import {deckIsValid} from "../../../functions/digimon-card.functions";
 import {AuthService} from "../../../service/auth.service";
 import {DatabaseService} from "../../../service/database.service";
 import {changeDeck} from "../../../store/digimon.actions";
@@ -97,31 +98,9 @@ export class ChangeAccessorieDialogComponent implements OnInit, OnChanges, OnDes
   }
 
   deckIsValid(deck: IDeck): boolean {
-    let cardCount = 0;
-    let eggCount = 0;
-
-    this.deck.cards.forEach(card => {
-      const fullCard = this.allCards.find(a => a.cardNumber === card.id)!;
-      if(fullCard.cardType !== 'Digi-Egg') {
-        cardCount += card.count;
-      } else {
-        eggCount += card.count;
-      }
-    });
-
-    if(cardCount != 50) {
-      this.messageService.add({severity:'error', summary:'Deck is not ready!', detail:'Deck was can not be shared! You don\'t have 50 cards.'});
-      return false;
-    }
-
-    if(eggCount > 5) {
-      this.messageService.add({severity:'error', summary:'Deck is not ready!', detail:'Deck was can not be shared! You have more than 5 Eggs.'});
-      return false;
-    }
-
-    if(!deck.title) {
-      this.messageService.add({severity:'error', summary:'Deck is not ready!', detail:'Deck was can not be shared! You need a title.'});
-      return false;
+    const error = deckIsValid(deck, this.allCards);
+    if(error !== '') {
+      this.messageService.add({severity:'error', summary:'Deck is not ready!', detail:error});
     }
     return true;
   }

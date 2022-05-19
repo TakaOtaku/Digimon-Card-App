@@ -23,6 +23,9 @@
     "notes": "▹start deck Venom Violet[ST-6]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Tonamikanji"
   },
   {
@@ -49,6 +52,9 @@
     "notes": "▹start deck Venom Violet[ST-6]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -75,6 +81,9 @@
     "notes": "▹start deck Venom Violet[ST-6]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Tonamikanji"
   },
   {
@@ -101,6 +110,9 @@
     "notes": "▹start deck Venom Violet[ST-6]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "yuuki."
   },
   {
@@ -127,6 +139,9 @@
     "notes": "▹start deck Venom Violet[ST-6]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Takase"
   },
   {
@@ -153,6 +168,9 @@
     "notes": "▹start deck Venom Violet[ST-6]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Tonamikanji"
   },
   {
@@ -179,6 +197,9 @@
     "notes": "▹start deck Venom Violet[ST-6]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "As'Maria"
   },
   {
@@ -205,6 +226,10 @@
     "notes": "▹start deck Venom Violet[ST-6]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -231,7 +256,11 @@
     "notes": "Tamer Battle Pack 9",
     "color": "Purple",
     "version": "AA",
-    "illustrator": "Ishibashi Yosuke"
+    "illustrator": "Ishibashi Yosuke",
+    "block": [
+      "00",
+      "01"
+    ]
   },
   {
     "id": "ST6-09",
@@ -257,6 +286,9 @@
     "notes": "▹start deck Venom Violet[ST-6]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "sasasi"
   },
   {
@@ -283,6 +315,9 @@
     "notes": "▹start deck Venom Violet[ST-6]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "sasasi"
   },
   {
@@ -309,6 +344,9 @@
     "notes": "▹start deck Venom Violet[ST-6]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Tonamikanji"
   },
   {
@@ -335,6 +373,9 @@
     "notes": "▹start deck Venom Violet[ST-6]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "As'Maria"
   },
   {
@@ -361,6 +402,9 @@
     "notes": "▹start deck Venom Violet[ST-6]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Tonamikanji"
   },
   {
@@ -387,6 +431,9 @@
     "notes": "▹start deck Venom Violet[ST-6]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": ""
   },
   {
@@ -413,6 +460,9 @@
     "notes": "start deck JESMON[ST-12],start deck RAGNALOARDMON[ST-13]",
     "color": "Purple",
     "version": "AA",
+    "block": [
+      "00"
+    ],
     "illustrator": ""
   },
   {
@@ -439,6 +489,9 @@
     "notes": "▹start deck Venom Violet[ST-6]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "funbolt"
   },
   {
@@ -465,6 +518,9 @@
     "notes": "▹start deck Venom Violet[ST-6]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Shin Sasaki"
   }
 ]

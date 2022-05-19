@@ -23,6 +23,9 @@
     "notes": "▹start deck Giga Green[ST-4]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "sasasi"
   },
   {
@@ -49,6 +52,9 @@
     "notes": "▹start deck Giga Green[ST-4]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "sasasi"
   },
   {
@@ -75,6 +81,10 @@
     "notes": "▹start deck Giga Green[ST-4]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "sasasi"
   },
   {
@@ -101,6 +111,10 @@
     "notes": "1st year Anniversary adventure pack",
     "color": "Green",
     "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "itohiro"
   },
   {
@@ -127,6 +141,10 @@
     "notes": "▹start deck Giga Green[ST-4]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "Tonamikanji"
   },
   {
@@ -153,6 +171,9 @@
     "notes": "▹start deck Giga Green[ST-4]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Tonamikanji"
   },
   {
@@ -179,6 +200,9 @@
     "notes": "▹start deck Giga Green[ST-4]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Tonamikanji"
   },
   {
@@ -205,6 +229,9 @@
     "notes": "▹start deck Giga Green[ST-4]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Shin Sasaki"
   },
   {
@@ -231,6 +258,10 @@
     "notes": "▹start deck Giga Green[ST-4]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "sasasi"
   },
   {
@@ -257,6 +288,10 @@
     "notes": "Tamer Battle Pack 9",
     "color": "Green",
     "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "koki"
   },
   {
@@ -283,6 +318,9 @@
     "notes": "▹start deck Giga Green[ST-4]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Shin Sasaki"
   },
   {
@@ -309,6 +347,10 @@
     "notes": "▹start deck Giga Green[ST-4]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "Tonamikanji"
   },
   {
@@ -335,6 +377,10 @@
     "notes": "1st year Anniversary adventure pack",
     "color": "Green",
     "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
     "illustrator": "banira"
   },
   {
@@ -361,6 +407,9 @@
     "notes": "▹start deck Giga Green[ST-4]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "sasasi"
   },
   {
@@ -387,6 +436,9 @@
     "notes": "▹start deck Giga Green[ST-4]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "Tonamikanji"
   },
   {
@@ -413,6 +465,9 @@
     "notes": "▹start deck Giga Green[ST-4]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "sasasi"
   },
   {
@@ -439,6 +494,9 @@
     "notes": "▹start deck Giga Green[ST-4]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": ""
   },
   {
@@ -465,6 +523,9 @@
     "notes": "▹start deck Giga Green[ST-4]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "funbolt"
   },
   {
@@ -491,6 +552,9 @@
     "notes": "▹start deck Giga Green[ST-4]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "00"
+    ],
     "illustrator": "funbolt"
   }
 ]
