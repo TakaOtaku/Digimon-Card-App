@@ -492,7 +492,7 @@
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "-",
-    "digivolveEffect": "[Your Turn][Once Per Turn] When this Digimon deletes an opponent's Digimon in battle and survives, trash the top card of your opponent's security stack.",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When this Digimon deletes an opponent's Digimon in battle and survives, trash the top card of your opponent's security stack.",
     "securityEffect": "-",
     "notes": "▹Starter Deck, GIGA GREEN[ST-4]",
     "color": "Green",

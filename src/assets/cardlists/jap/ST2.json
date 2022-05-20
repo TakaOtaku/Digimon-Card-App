@@ -456,7 +456,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[When Attacking][Once Per Turn] Unsuspend this Digimon.",
+    "effect": "[When Attacking] [Once Per Turn] Unsuspend this Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹start deck Cocytus Blue [ST-2]",
