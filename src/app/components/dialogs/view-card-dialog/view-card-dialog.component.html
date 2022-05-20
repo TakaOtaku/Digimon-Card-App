@@ -53,11 +53,11 @@
         </div>
         <div *ngIf="card.specialDigivolve !== '-'" class="flex flex-col" id="Digimon-Special-Digivolve">
           <p [ngStyle]="{color}" class="font-extrabold text-lg">Special Digivolve</p>
-          <p class="font-bold font-white text-lg">{{card.specialDigivolve}}</p>
+          <p class="font-bold font-white text-lg whitespace-pre-wrap">{{card.specialDigivolve}}</p>
         </div>
         <div *ngIf="card.dnaDigivolve !== '-'" class="flex flex-col" id="Digimon-DNA-Digivolve">
           <p [ngStyle]="{color}" class="font-extrabold text-lg">DNA Digivolve</p>
-          <p class="font-bold font-white text-lg">{{card.dnaDigivolve}}</p>
+          <p class="font-bold font-white text-lg whitespace-pre-wrap">{{card.dnaDigivolve}}</p>
         </div>
         <div *ngIf="card.digiXros !== '-'" class="flex flex-col" id="Digimon-DigiXros">
           <p [ngStyle]="{color}" class="font-extrabold text-lg">DigiXros</p>
