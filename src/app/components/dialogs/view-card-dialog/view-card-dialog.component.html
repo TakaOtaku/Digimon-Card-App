@@ -1,99 +1,99 @@
 <p-dialog [(visible)]="show" [baseZIndex]="10000" [showHeader]="false" class="overflow-x-hidden">
   <div class="min-w-full md:min-w-[700px] w-full md:w-[700px] max-w-full md:max-w-[700px] h-full overflow-x-hidden">
-    <div id="Header" class="inline-flex justify-between w-full align-center mt-5 h-10">
-      <p id="Card-Number" class="font-bold text-gray-500 self-center text-xl">{{card.cardNumber}}</p>
-      <p id="Card-Rarity" class="font-bold text-white uppercase self-center text-xl">{{card.rarity}}</p>
-      <p id="Card-Block" class="font-bold text-white uppercase self-center text-xl">{{card.block}}</p>
-      <p id="Card-Type" class="font-bold self-center text-xl" [ngStyle]="{color}">{{card.cardType}}</p>
-      <div id="Digimon-Lv" class=" inline-block my-2 px-6 py-2.5 leading-tight rounded-full shadow-md" [ngStyle]="{backgroundColor}">
+    <div class="inline-flex justify-between w-full align-center mt-5 h-10" id="Header">
+      <p class="font-bold text-gray-500 self-center text-xl" id="Card-Number">{{card.cardNumber}}</p>
+      <p class="font-bold text-white uppercase self-center text-xl" id="Card-Rarity">{{card.rarity}}</p>
+      <p class="font-bold text-white uppercase self-center text-xl" id="Card-Block">{{card.block}}</p>
+      <p [ngStyle]="{color}" class="font-bold self-center text-xl" id="Card-Type">{{card.cardType}}</p>
+      <div [ngStyle]="{backgroundColor}" class=" inline-block my-2 px-6 py-2.5 leading-tight rounded-full shadow-md" id="Digimon-Lv">
         <p class="font-bold text-white text-xl leading-[5px]">{{card.cardLv}}</p>
       </div>
-      <p id="Card-Version" class="font-bold self-center text-xl" [ngStyle]="{color}">{{version}}</p>
-      <button pButton pRipple type="button" icon="pi pi-times" class="p-button-text" (click)="this.onClose.next(false)"></button>
+      <p [ngStyle]="{color}" class="font-bold self-center text-xl" id="Card-Version">{{version}}</p>
+      <button (click)="this.onClose.next(false)" class="p-button-text" icon="pi pi-times" pButton pRipple type="button"></button>
     </div>
 
     <div class="flex flex-row">
-      <h1 id="Card-Name" class="font-black my-5 text-4xl" [ngStyle]="{color}">{{card.name}}</h1>
-      <button pButton pRipple type="button" icon="pi pi-question-circle" class="p-button-text" (click)="openWiki()"></button>
+      <h1 [ngStyle]="{color}" class="font-black my-5 text-4xl" id="Card-Name">{{card.name}}</h1>
+      <button (click)="openWiki()" class="p-button-text" icon="pi pi-question-circle" pButton pRipple type="button"></button>
     </div>
 
 
-    <div id="Image-Attributes" class="w-full flex flex-row">
+    <div class="w-full flex flex-row" id="Image-Attributes">
       <div class="w-1/2">
-        <img [lazyLoad]="this.png" defaultImage="assets/images/digimon-card-back.webp" alt="{{imageAlt}}">
+        <img [lazyLoad]="this.png" alt="{{imageAlt}}" defaultImage="assets/images/digimon-card-back.webp">
       </div>
       <div class="w-1/2 max-w-1/2 pl-2 self-center">
-        <div id="Digimon-Form" class="flex flex-col" *ngIf="card.form !== '-'">
-          <p class="font-extrabold text-lg" [ngStyle]="{color}">Form</p>
+        <div *ngIf="card.form !== '-'" class="flex flex-col" id="Digimon-Form">
+          <p [ngStyle]="{color}" class="font-extrabold text-lg">Form</p>
           <p class="font-bold font-white text-lg">{{card.form}}</p>
         </div>
-        <div id="Digimon-Attribute" class="flex flex-col" *ngIf="card.attribute !== '-'">
-          <p class="font-extrabold text-lg" [ngStyle]="{color}">Attribute</p>
+        <div *ngIf="card.attribute !== '-'" class="flex flex-col" id="Digimon-Attribute">
+          <p [ngStyle]="{color}" class="font-extrabold text-lg">Attribute</p>
           <p class="font-bold font-white text-lg">{{card.attribute}}</p>
         </div>
-        <div id="Digimon-Type" class="flex flex-col" *ngIf="card.type !== '-'">
-          <p class="font-extrabold text-lg" [ngStyle]="{color}">Type</p>
+        <div *ngIf="card.type !== '-'" class="flex flex-col" id="Digimon-Type">
+          <p [ngStyle]="{color}" class="font-extrabold text-lg">Type</p>
           <p class="font-bold font-white text-lg">{{card.type}}</p>
         </div>
-        <div id="Digimon-DP" class="flex flex-col" *ngIf="card.dp !== '-'">
-          <p class="font-extrabold text-lg" [ngStyle]="{color}">DP</p>
+        <div *ngIf="card.dp !== '-'" class="flex flex-col" id="Digimon-DP">
+          <p [ngStyle]="{color}" class="font-extrabold text-lg">DP</p>
           <p class="font-bold font-white text-lg">{{card.dp}}</p>
         </div>
-        <div id="Digimon-Play-Cost" class="flex flex-col" *ngIf="card.playCost !== '-'">
-          <p class="font-extrabold text-lg" [ngStyle]="{color}">Play Cost</p>
+        <div *ngIf="card.playCost !== '-'" class="flex flex-col" id="Digimon-Play-Cost">
+          <p [ngStyle]="{color}" class="font-extrabold text-lg">Play Cost</p>
           <p class="font-bold font-white text-lg">{{card.playCost}}</p>
         </div>
-        <div id="Digimon-Digivolve-Cost-1" class="flex flex-col" *ngIf="card.digivolveCost1 !== '-'">
-          <p class="font-extrabold text-lg" [ngStyle]="{color}">Digivolve Cost 1</p>
+        <div *ngIf="card.digivolveCost1 !== '-'" class="flex flex-col" id="Digimon-Digivolve-Cost-1">
+          <p [ngStyle]="{color}" class="font-extrabold text-lg">Digivolve Cost 1</p>
           <p class="font-bold font-white text-lg">{{card.digivolveCost1}}</p>
         </div>
-        <div id="Digimon-Digivolve-Cost-2" class="flex flex-col" *ngIf="card.digivolveCost2 !== '-'">
-          <p class="font-extrabold text-lg" [ngStyle]="{color}">Digivolve Cost 2</p>
+        <div *ngIf="card.digivolveCost2 !== '-'" class="flex flex-col" id="Digimon-Digivolve-Cost-2">
+          <p [ngStyle]="{color}" class="font-extrabold text-lg">Digivolve Cost 2</p>
           <p class="font-bold font-white text-lg">{{card.digivolveCost2}}</p>
         </div>
-        <div id="Digimon-Special-Digivolve" class="flex flex-col" *ngIf="card.specialDigivolve !== '-'">
-          <p class="font-extrabold text-lg" [ngStyle]="{color}">Special Digivolve</p>
+        <div *ngIf="card.specialDigivolve !== '-'" class="flex flex-col" id="Digimon-Special-Digivolve">
+          <p [ngStyle]="{color}" class="font-extrabold text-lg">Special Digivolve</p>
           <p class="font-bold font-white text-lg">{{card.specialDigivolve}}</p>
         </div>
-        <div id="Digimon-DNA-Digivolve" class="flex flex-col" *ngIf="card.dnaDigivolve !== '-'">
-          <p class="font-extrabold text-lg" [ngStyle]="{color}">DNA Digivolve</p>
+        <div *ngIf="card.dnaDigivolve !== '-'" class="flex flex-col" id="Digimon-DNA-Digivolve">
+          <p [ngStyle]="{color}" class="font-extrabold text-lg">DNA Digivolve</p>
           <p class="font-bold font-white text-lg">{{card.dnaDigivolve}}</p>
         </div>
-        <div id="Digimon-DigiXros" class="flex flex-col" *ngIf="card.digiXros !== '-'">
-          <p class="font-extrabold text-lg" [ngStyle]="{color}">DigiXros</p>
-          <p class="font-bold font-white text-lg">{{card.digiXros}}</p>
+        <div *ngIf="card.digiXros !== '-'" class="flex flex-col" id="Digimon-DigiXros">
+          <p [ngStyle]="{color}" class="font-extrabold text-lg">DigiXros</p>
+          <p class="font-bold font-white text-lg whitespace-pre-wrap">{{card.digiXros}}</p>
         </div>
       </div>
     </div>
 
-    <div id="Effects" class="max-w-full">
-      <div id="Digimon-Effect" class="flex flex-col" *ngIf="card.effect !== '-'">
-        <p class="font-extrabold text-lg" [ngStyle]="{color}">Effect</p>
-        <p class="font-bold font-white text-lg">{{card.effect}}</p>
+    <div class="max-w-full" id="Effects">
+      <div *ngIf="card.effect !== '-'" class="flex flex-col" id="Digimon-Effect">
+        <p [ngStyle]="{color}" class="font-extrabold text-lg">Effect</p>
+        <p class="font-bold font-white text-lg whitespace-pre-wrap">{{card.effect}}</p>
       </div>
-      <div id="Digimon-Digivolve-Effect" class="flex flex-col" *ngIf="card.digivolveEffect !== '-'">
-        <p class="font-extrabold text-lg" [ngStyle]="{color}">Digivolve effect</p>
-        <p class="font-bold font-white text-lg">{{card.digivolveEffect}}</p>
+      <div *ngIf="card.digivolveEffect !== '-'" class="flex flex-col" id="Digimon-Digivolve-Effect">
+        <p [ngStyle]="{color}" class="font-extrabold text-lg">Digivolve effect</p>
+        <p class="font-bold font-white text-lg whitespace-pre-wrap">{{card.digivolveEffect}}</p>
       </div>
-      <div id="Security-Effect" class="flex flex-col" *ngIf="card.securityEffect !== '-'">
-        <p class="font-extrabold text-lg" [ngStyle]="{color}">Security effect</p>
-        <p class="font-bold font-white text-lg">{{card.securityEffect}}</p>
+      <div *ngIf="card.securityEffect !== '-'" class="flex flex-col" id="Security-Effect">
+        <p [ngStyle]="{color}" class="font-extrabold text-lg">Security effect</p>
+        <p class="font-bold font-white text-lg whitespace-pre-wrap">{{card.securityEffect}}</p>
       </div>
     </div>
 
-    <div id="Notes" class="max-w-full">
-      <div id="Card-Notes" class="flex flex-col">
-        <p class="font-extrabold text-lg" [ngStyle]="{color}">Notes</p>
+    <div class="max-w-full" id="Notes">
+      <div class="flex flex-col" id="Card-Notes">
+        <p [ngStyle]="{color}" class="font-extrabold text-lg">Notes</p>
         <p class="font-bold font-white text-lg">{{card.notes}}</p>
       </div>
     </div>
 
-    <div id="Illustrator" class="max-w-full" *ngIf="card.illustrator !== ''">
-      <div id="Card-Illustrator" class="flex flex-col">
-        <p class="font-extrabold text-lg" [ngStyle]="{color}">Illustrator</p>
+    <div *ngIf="card.illustrator !== ''" class="max-w-full" id="Illustrator">
+      <div class="flex flex-col" id="Card-Illustrator">
+        <p [ngStyle]="{color}" class="font-extrabold text-lg">Illustrator</p>
         <div class="flex flex-row">
           <p class="font-bold font-white text-lg">{{card.illustrator}}</p>
-          <button pButton pRipple type="button" icon="pi pi-question-circle" class="p-button-text" (click)="openWikiIllustrator()"></button>
+          <button (click)="openWikiIllustrator()" class="p-button-text" icon="pi pi-question-circle" pButton pRipple type="button"></button>
         </div>
       </div>
     </div>
