@@ -221,6 +221,8 @@ export const Types: string[] = [
   'Mini Dragon',
   'Minor',
   'Mollusk',
+  'Monk',
+  'Musical Instrument',
   'Mutant',
   'Mysterious Beast',
   'Mysterious Bird',
