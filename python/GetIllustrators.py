@@ -6,7 +6,7 @@ import re
 import pandas as pd
 
 cards = []
-with open('preRelease.json', encoding='utf-8') as fh:
+with open('BT10.json', encoding='utf-8') as fh:
     cards = json.load(fh)
 
 
@@ -50,5 +50,5 @@ for card in cards:
     card['illustrator'] = illustrator
     illustrators.append(card)
 
-with open('preRelease.json', 'w') as f:
+with open('BT10.json', 'w') as f:
 	f.write("%s\n" % json.dumps(illustrators))

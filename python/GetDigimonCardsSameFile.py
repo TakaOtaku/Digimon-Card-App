@@ -32,7 +32,7 @@ import pandas as pd
 #'https://en.digimoncard.com/cardlist/?search=true&category=508901',
 
 urls = [
-'https://world.digimoncard.com/cardlist/?search=true&category=522008'
+'https://en.digimoncard.com/cardlist/?search=true&category=508012'
 ]
 
 cards = []
@@ -57,12 +57,17 @@ for url in urls:
             "type": "",
             "rarity": "",
             "cardNumber": "",
+            "digiXros": "-",
+            "specialDigivolve": "-",
+            "dnaDigivolve": "-",
             "effect": "",
             "digivolveEffect": "",
             "securityEffect": "",
             "notes": "",
             "color": "",
-            "version": "Normal"
+            "version": "Normal",
+            "illustrator": "",
+            "block": ["02"]
         }
 
         if cardWithImage.find("div", class_="card_detail_red"):
@@ -151,10 +156,10 @@ for url in urls:
         card = cardWithImage.find("div", class_="card_detail_inner")
         image = cardWithImage.find("a", class_="card_img").find("img")
 
-        imageURL = 'https://world.digimoncard.com' + image['src'][2:]  ### Change URL depending on if you want Japanese Cards or English Cards
+        imageURL = 'https://en.digimoncard.com' + image['src'][2:]  ### Change URL depending on if you want Japanese Cards or English Cards
         imageSave = imageURL.rsplit('/', 1)[-1]
-        #urllib.request.urlretrieve(imageURL, imageSave)  ##### Comment IN/OUT if you want to get the pngs.
-        digimoncard['cardImage'] = 'assets/images/cards/eng/' + imageSave.replace('.png', '.jpg')  ### Change URL depending on if you want Japanese Cards or English Cards
+        urllib.request.urlretrieve(imageURL, imageSave)  ##### Comment IN/OUT if you want to get the pngs.
+        digimoncard['cardImage'] = 'assets/images/cards/jap/' + imageSave.replace('.png', '.jpg')  ### Change URL depending on if you want Japanese Cards or English Cards
         if '_P' in imageSave:
             digimoncard['version'] = 'AA'
             if cardWithImage.find("div", class_="cardParallel"):
@@ -216,5 +221,5 @@ for url in urls:
 
         cards.append(digimoncard)
 
-with open('BT8.json', 'w') as f:
+with open('BT10.json', 'w') as f:
 	f.write("%s\n" % json.dumps(cards))
