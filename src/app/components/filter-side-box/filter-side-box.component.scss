@@ -5,35 +5,43 @@
       color: black !important;
       background: #ef1919 !important;
     }
+
     .p-element:nth-child(2) {
       border-color: white !important;
       color: black !important;
       background: #19a0e3 !important;
     }
+
     .p-element:nth-child(3) {
       border-color: white !important;
       color: black !important;
       background: #ffd619 !important;
     }
+
     .p-element:nth-child(4) {
       border-color: white !important;
       color: black !important;
       background: #19b383 !important;
-    }.p-element:nth-child(5) {
-       border-color: white !important;
-       color: white !important;
-       background: #191919 !important;
-     }
+    }
+
+    .p-element:nth-child(5) {
+      border-color: white !important;
+      color: white !important;
+      background: #191919 !important;
+    }
+
     .p-element:nth-child(6) {
       border-color: white !important;
       color: black !important;
       background: #8d6fdb !important;
     }
+
     .p-element:nth-child(7) {
       border-color: white !important;
       color: black !important;
       background: #ffffff !important;
     }
+
     .p-element:nth-child(8) {
       border-color: white !important;
       color: black !important;
@@ -48,5 +56,15 @@
           #ffffff 100%
       ) !important;
     }
+  }
+}
+
+p-button {
+  ::ng-deep .pi-circle-fill {
+    color: green !important;
+  }
+
+  ::ng-deep .pi-circle {
+    color: red !important;
   }
 }

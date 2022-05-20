@@ -1,10 +1,9 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Store} from "@ngrx/store";
-import {ConfirmationService, MenuItem, MessageService} from "primeng/api";
-import {Subject, takeUntil} from "rxjs";
-import * as uuid from "uuid";
-import {IDeck} from "../../../models";
-import {COLORS} from "../../../models/color.data";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { ConfirmationService, MenuItem, MessageService } from 'primeng/api';
+import { Subject, takeUntil } from 'rxjs';
+import * as uuid from 'uuid';
+import { COLORS, IDeck, TAGS } from '../../../models';
 import {
   deleteDeck,
   importDeck,
@@ -12,10 +11,10 @@ import {
   setDeck,
   setExportDeckDialog,
   setImportDeckDialog,
-  setSite
-} from "../../store/digimon.actions";
-import {selectDecks} from "../../store/digimon.selectors";
-import {SITES} from "../main-page/main-page.component";
+  setSite,
+} from '../../store/digimon.actions';
+import { selectDecks } from '../../store/digimon.selectors';
+import { SITES } from '../main-page/main-page.component';
 
 @Component({
   selector: 'digimon-decks',
@@ -27,6 +26,7 @@ export class DecksComponent implements OnInit, OnDestroy {
   decks: IDeck[] = [];
 
   colors = COLORS;
+  tags = TAGS;
 
   deckRowContext: MenuItem[];
 
@@ -39,38 +39,50 @@ export class DecksComponent implements OnInit, OnDestroy {
   ) {
     this.deckRowContext = [
       {
-        label:'Open',
-        icon:'pi pi-fw pi-info-circle',
-        command: () => this.openDeck()
+        label: 'Open',
+        icon: 'pi pi-fw pi-info-circle',
+        command: () => this.openDeck(),
       },
       {
-        label:'Copy',
-        icon:'pi pi-fw pi-copy',
-        command: () => this.store.dispatch(importDeck({deck: {...this.selectedDeck, id: uuid.v4()}}))
+        label: 'Copy',
+        icon: 'pi pi-fw pi-copy',
+        command: () =>
+          this.store.dispatch(
+            importDeck({ deck: { ...this.selectedDeck, id: uuid.v4() } })
+          ),
       },
       {
-        label:'Export',
-        icon:'pi pi-fw pi-download',
-        command: () => this.store.dispatch(setExportDeckDialog({show: true, deck: this.selectedDeck}))
+        label: 'Export',
+        icon: 'pi pi-fw pi-download',
+        command: () =>
+          this.store.dispatch(
+            setExportDeckDialog({ show: true, deck: this.selectedDeck })
+          ),
       },
       {
-        label:'Change Accessories',
-        icon:'pi pi-fw pi-cog',
-        command: () => this.store.dispatch(setAccessoryDeckDialog({show: true, deck: this.selectedDeck}))
+        label: 'Change Accessories',
+        icon: 'pi pi-fw pi-cog',
+        command: () =>
+          this.store.dispatch(
+            setAccessoryDeckDialog({ show: true, deck: this.selectedDeck })
+          ),
       },
       {
-        separator:true
+        separator: true,
       },
       {
-        label:'Delete',
-        icon:'pi pi-fw pi-trash',
-        command: () => this.deleteDeck()
-      }
+        label: 'Delete',
+        icon: 'pi pi-fw pi-trash',
+        command: () => this.deleteDeck(),
+      },
     ];
   }
 
   ngOnInit() {
-    this.store.select(selectDecks).pipe(takeUntil(this.onDestroy$)).subscribe(decks => this.decks = decks);
+    this.store
+      .select(selectDecks)
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((decks) => (this.decks = decks));
   }
 
   ngOnDestroy() {
@@ -80,16 +92,16 @@ export class DecksComponent implements OnInit, OnDestroy {
   /**
    * Open the import deck dialog
    */
-  openImportDialog(): void  {
-    this.store.dispatch(setImportDeckDialog({show: true}));
+  openImportDialog(): void {
+    this.store.dispatch(setImportDeckDialog({ show: true }));
   }
 
   /**
    * Set the Deck-Builder-Deck and switch to the Deck-Builder
    */
   openDeck(): void {
-    this.store.dispatch(setDeck({deck: this.selectedDeck}));
-    this.store.dispatch(setSite({site: SITES.DeckBuilder}));
+    this.store.dispatch(setDeck({ deck: this.selectedDeck }));
+    this.store.dispatch(setSite({ site: SITES.DeckBuilder }));
   }
 
   /**
@@ -100,13 +112,13 @@ export class DecksComponent implements OnInit, OnDestroy {
       key: 'Delete',
       message: 'You are about to permanently delete this deck. Are you sure?',
       accept: () => {
-        this.store.dispatch(deleteDeck({deck: this.selectedDeck}));
+        this.store.dispatch(deleteDeck({ deck: this.selectedDeck }));
         this.messageService.add({
           severity: 'success',
           summary: 'Deck deleted!',
-          detail: 'Deck was deleted successfully!'
+          detail: 'Deck was deleted successfully!',
         });
-      }
+      },
     });
   }
 
@@ -118,9 +130,9 @@ export class DecksComponent implements OnInit, OnDestroy {
       id: uuid.v4(),
       cards: [],
       title: 'New Deck',
-      color: {name: 'White', img: 'assets/decks/white.svg'},
+      color: { name: 'White', img: 'assets/decks/white.svg' },
     };
-    this.store.dispatch(importDeck({deck}));
+    this.store.dispatch(importDeck({ deck }));
   }
 
   showContextMenu(menu: any, event: any, deck: IDeck) {

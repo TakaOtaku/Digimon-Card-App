@@ -543,6 +543,12 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
         (a, b) => a.cardLv.localeCompare(b.cardLv) || a.id.localeCompare(b.id)
       );
 
+    const multi = this.mainDeck
+      .filter((card) => card.color.includes('/') && card.cardType === 'Digimon')
+      .sort(
+        (a, b) => a.cardLv.localeCompare(b.cardLv) || a.id.localeCompare(b.id)
+      );
+
     const tamer = this.mainDeck
       .filter((card) => card.cardType === 'Tamer')
       .sort(
@@ -569,6 +575,7 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
         ...black,
         ...purple,
         ...white,
+        ...multi,
         ...tamer,
         ...options,
       ]),

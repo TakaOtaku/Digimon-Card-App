@@ -2,7 +2,7 @@
 <button (click)="createNewDeck()" class="import font-bold" label="Create new Deck" pButton></button>
 
 <p-contextMenu #table [model]="deckRowContext"></p-contextMenu>
-<p-table [(contextMenuSelection)]="selectedDeck" [contextMenu]="table" [paginator]="true"
+<p-table [(contextMenuSelection)]="selectedDeck" [contextMenu]="table" [globalFilterFields]="['color.name', 'title','','tags', 'user']" [paginator]="true"
          [rowsPerPageOptions]="[25, 50, 75]" [rows]="25" [scrollHeight]="'calc(100vh - 100px)'" [scrollable]="true"
          [showCurrentPageReport]="true" [value]="decks" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} decks" id="table"
          styleClass="p-datatable-striped">

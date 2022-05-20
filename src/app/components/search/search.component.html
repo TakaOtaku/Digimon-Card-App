@@ -1,33 +1,35 @@
 <div class="flex flex-col pl-7 py-3 mb-2 surface-ground">
-  <div class="self-center w-full inline-flex mr-10"
-       [ngClass]="{'lg:w-10/12 xl:w-8/12': !deckBuilder, 'xl:w-10/12': deckBuilder}">
-    <span class="p-input-icon-left w-full" [ngStyle]="{display: 'inline-flex'}">
+  <div [ngClass]="{'lg:w-10/12 xl:w-8/12': !deckBuilder, 'xl:w-10/12': deckBuilder}"
+       class="self-center w-full inline-flex mr-10">
+    <span [ngStyle]="{display: 'inline-flex'}" class="p-input-icon-left w-full">
       <i class="pi pi-search"></i>
-      <input type="text" pInputText [formControl]="searchFilter" placeholder="Search" class="w-full">
+      <input [formControl]="searchFilter" class="w-full" pInputText placeholder="Search" type="text">
     </span>
 
-    <button (click)="this.display = true" pButton type="button" icon="pi pi-filter-fill"
-            [ngClass]="{'lg:hidden': !deckBuilder, '2xl:hidden': deckBuilder}" label="Filter"></button>
+    <p-dropdown [formControl]="cardSetFilter" [options]="cardSets"></p-dropdown>
+
+    <button (click)="this.display = true" [ngClass]="{'lg:hidden': !deckBuilder, '2xl:hidden': deckBuilder}" icon="pi pi-filter-fill" label="Filter"
+            pButton type="button"></button>
   </div>
 
-  <div class="mt-4 flex flex-col self-center justify-between w-full"
-       [ngClass]="{'lg:w-10/12 xl:w-8/12 lg:flex-row lg:mx-10': !deckBuilder, 'hidden': deckBuilder}">
+  <div [ngClass]="{'lg:w-10/12 xl:w-8/12 lg:flex-row lg:mx-10': !deckBuilder, 'hidden': deckBuilder}"
+       class="mt-4 flex flex-col self-center justify-between w-full">
     <div [ngClass]="{'hidden': !colorsShow, 'hidden lg:block': colorsShow}">
-      <p-selectButton class="Colors" [options]="colors" [formControl]="colorFilter" [multiple]="true">
+      <p-selectButton [formControl]="colorFilter" [multiple]="true" [options]="colors" class="Colors">
         <ng-template let-color>
-          <i class="pi" [ngClass]="{'pi-check': colorChecked(color), 'pi-times': !colorChecked(color)}"></i>
+          <i [ngClass]="{'pi-check': colorChecked(color), 'pi-times': !colorChecked(color)}" class="pi"></i>
         </ng-template>
       </p-selectButton>
     </div>
 
     <div [ngClass]="{'hidden': !cardTypesShow, 'hidden lg:block': cardTypesShow}">
       <p-selectButton
-        [options]="cardTypes" [formControl]="cardTypeFilter" [multiple]="true">
+        [formControl]="cardTypeFilter" [multiple]="true" [options]="cardTypes">
       </p-selectButton>
     </div>
   </div>
 </div>
 
-<p-dialog header="Filter and Sort" [(visible)]="display" styleClass="w-[95vw] h-[95vh]" [baseZIndex]="10000">
+<p-dialog [(visible)]="display" [baseZIndex]="10000" header="Filter and Sort" styleClass="w-[95vw] h-[95vh]">
   <digimon-filter-side-box [showColors]="true"></digimon-filter-side-box>
 </p-dialog>

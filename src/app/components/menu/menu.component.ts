@@ -15,7 +15,6 @@ import { AuthService } from '../../service/auth.service';
 import { DatabaseService } from '../../service/database.service';
 import {
   addToCollection,
-  changeCollectionMode,
   loadSave,
   setSave,
   setSite,
@@ -24,7 +23,6 @@ import {
   selectAllCards,
   selectCollection,
   selectCollectionMinimum,
-  selectCollectionMode,
   selectSave,
   selectShowAACards,
   selectShowPreRelease,
@@ -42,8 +40,6 @@ export class MenuComponent implements OnInit, OnDestroy {
 
   save = '';
   iSave: ISave;
-
-  collectionMode = true;
 
   items: MenuItem[];
 
@@ -83,13 +79,6 @@ export class MenuComponent implements OnInit, OnDestroy {
     private store: Store
   ) {
     this.store
-      .select(selectCollectionMode)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((collectionMode) => {
-        this.collectionMode = collectionMode;
-        this.update();
-      });
-    this.store
       .select(selectSave)
       .pipe(takeUntil(this.onDestroy$))
       .subscribe((save) => {
@@ -103,6 +92,7 @@ export class MenuComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.update();
     this.store
       .select(selectAllCards)
       .pipe(first())
@@ -194,11 +184,6 @@ export class MenuComponent implements OnInit, OnDestroy {
             },
           },
           {
-            label: 'Collection Mode',
-            icon: this.collectionMode ? 'pi pi-circle-fill' : 'pi pi-circle',
-            command: () => this.changeCM(),
-          },
-          {
             label: 'Import/Export',
             icon: 'pi pi-upload',
             command: () => (this.display = !this.display),
@@ -230,17 +215,6 @@ export class MenuComponent implements OnInit, OnDestroy {
 
   switchSite(site: number) {
     this.store.dispatch(setSite({ site }));
-  }
-
-  changeCM() {
-    this.store.dispatch(
-      changeCollectionMode({ collectionMode: !this.collectionMode })
-    );
-    this.messageService.add({
-      severity: 'info',
-      summary: 'Collection Mode',
-      detail: 'Collection Mode was changed!',
-    });
   }
 
   exportSave(): void {

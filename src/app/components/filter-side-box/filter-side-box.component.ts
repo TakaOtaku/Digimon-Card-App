@@ -1,11 +1,17 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
+import { MessageService } from 'primeng/api';
 import { Subject, takeUntil } from 'rxjs';
 import { IFilter } from '../../../models';
-import { CARDSET } from '../../../models/card-set.enum';
-import { changeCardSets, changeFilter } from '../../store/digimon.actions';
-import { selectCardSet, selectFilter } from '../../store/digimon.selectors';
+import {
+  changeCollectionMode,
+  changeFilter,
+} from '../../store/digimon.actions';
+import {
+  selectCollectionMode,
+  selectFilter,
+} from '../../store/digimon.selectors';
 import { emptyFilter } from '../../store/reducers/digimon.reducers';
 import {
   Attributes,
@@ -58,9 +64,6 @@ export class FilterSideBoxComponent implements OnInit {
     blockFilter: this.blockFilter,
   });
 
-  cardSets = [CARDSET.English, CARDSET.Japanese, CARDSET.Both];
-  cardSetFilter = new FormControl();
-
   cardCountSlider: number[] = [0, 5];
   levelSlider: number[] = [2, 7];
   playCostSlider: number[] = [0, 20];
@@ -80,10 +83,12 @@ export class FilterSideBoxComponent implements OnInit {
   specialRequirements = SpecialRequirements;
   blocks = Blocks;
 
+  collectionMode = false;
+
   private filter: IFilter;
   private onDestroy$ = new Subject();
 
-  constructor(private store: Store) {}
+  constructor(private store: Store, private messageService: MessageService) {}
 
   ngOnInit(): void {
     this.store
@@ -129,20 +134,11 @@ export class FilterSideBoxComponent implements OnInit {
       });
 
     this.store
-      .select(selectCardSet)
+      .select(selectCollectionMode)
       .pipe(takeUntil(this.onDestroy$))
-      .subscribe((set) => {
-        if (+set >>> 0) {
-          this.cardSetFilter.setValue(CARDSET.Both);
-        } else {
-          this.cardSetFilter.setValue(set);
-        }
+      .subscribe((collectionMode) => {
+        this.collectionMode = collectionMode;
       });
-    this.cardSetFilter.valueChanges
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((value) =>
-        this.store.dispatch(changeCardSets({ cardSet: value }))
-      );
   }
 
   ngOnDestroy() {
@@ -151,6 +147,17 @@ export class FilterSideBoxComponent implements OnInit {
 
   reset() {
     this.store.dispatch(changeFilter({ filter: emptyFilter }));
+  }
+
+  changeCM() {
+    this.store.dispatch(
+      changeCollectionMode({ collectionMode: !this.collectionMode })
+    );
+    this.messageService.add({
+      severity: 'info',
+      summary: 'Collection Mode',
+      detail: 'Collection Mode was changed!',
+    });
   }
 
   updateCardCountSlider(event: any) {

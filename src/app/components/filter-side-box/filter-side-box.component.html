@@ -1,12 +1,13 @@
 <div class="flex flex-col px-3 surface-ground h-full w-full">
-  <button
-    (click)="reset()"
-    class="w-[150px] self-center rounded-tl-lg rounded br-lg my-5" label="Reset" pButton type="button"></button>
-
-  <div class="flex justify-center">
-    <p-selectButton [formControl]="cardSetFilter" [multiple]="false" [options]="cardSets" class="mb-5">
-    </p-selectButton>
+  <div class="flex flex-row justify-center">
+    <button
+      (click)="reset()"
+      class="w-[150px] self-center rounded-tl-lg rounded br-lg my-5 mr-5" label="Reset" pButton type="button"></button>
+    <p-button (onClick)="changeCM()" [icon]="collectionMode ? 'pi pi-circle-fill' : 'pi pi-circle'" class="my-5" iconPos="left" label="CM"></p-button>
   </div>
+
+  <h1 class="primary-color mt-5 text-center">Sort Order</h1>
+  <digimon-sort-buttons class="self-center inline-flex mx-auto my-5"></digimon-sort-buttons>
 
   <h1 [ngClass]="{'lg:hidden' : !showColors}" class="primary-color mt-5">Colors</h1>
   <p-selectButton [formControl]="colorFilter" [multiple]="true" [ngClass]="{'lg:hidden' : !showColors}" [options]="colors" class="Colors">
@@ -91,7 +92,4 @@
   <p-multiSelect [filter]="true" [formControl]="blockFilter" [options]="blocks" [showHeader]="true" [showToggleAll]="false"
                  defaultLabel="Select a Block" display="chip" scrollHeight="250px" styleClass="w-full mt-2 mb-5">
   </p-multiSelect>
-
-  <h1 class="primary-color mt-5 text-center">Sort Order</h1>
-  <digimon-sort-buttons class="self-center inline-flex mx-auto my-5"></digimon-sort-buttons>
 </div>
