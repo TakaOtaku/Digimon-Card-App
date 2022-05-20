@@ -316,7 +316,7 @@ function applyFilter(cards: ICard[], filter: any[], key: string): ICard[] {
           (returnArray = [
             ...new Set([
               ...returnArray,
-              ...cards.filter((cards) => (cards['illustrator'] = filter)),
+              ...cards.filter((cards) => cards['illustrator'].includes(filter)),
             ]),
           ])
       );
