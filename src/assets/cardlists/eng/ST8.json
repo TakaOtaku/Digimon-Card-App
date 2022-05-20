@@ -365,7 +365,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[When Digivolving] This Digimon gains ＜Security Attack +1＞ for the turn. (This Digimon checks 1 additional security card.)\n [Your Turn] This Digimon is unblockable.",
+    "effect": "[When Digivolving] This Digimon gains ＜Security Attack +1＞ for the turn. (This Digimon checks 1 additional security card.)\n[Your Turn] This Digimon is unblockable.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹Starter Deck, ULFORCEVEEDRAMON [ST-8]",

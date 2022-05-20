@@ -133,7 +133,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[Your Turn][Once Per Turn] When one of your effects places a digivolution card under this Digimon, this Digimon gets +3000 DP and ＜Security Attack +1＞ for the turn. (This Digimon checks 1 additional security card.)\n [When Attacking] Reveal the top 3 cards of your deck. You may play 1 Digimon card with [Legend-Arms] in its traits and a play cost of 7 or less among them without paying its memory cost. Place the rest at the bottom of your deck in any order.",
+    "effect": "[Your Turn][Once Per Turn] When one of your effects places a digivolution card under this Digimon, this Digimon gets +3000 DP and ＜Security Attack +1＞ for the turn. (This Digimon checks 1 additional security card.)\n[When Attacking] Reveal the top 3 cards of your deck. You may play 1 Digimon card with [Legend-Arms] in its traits and a play cost of 7 or less among them without paying its memory cost. Place the rest at the bottom of your deck in any order.",
     "digivolveEffect": "[Your Turn] While this Digimon is [RagnaLoardmon], it doesn't activate [Security] effects on Option cards it checks.",
     "securityEffect": "-",
     "notes": "▹start deck RAGNALOARDMON[ST-13]",
