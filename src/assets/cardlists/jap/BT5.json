@@ -1017,7 +1017,8 @@
     "color": "Blue",
     "version": "Normal",
     "block": [
-      "00"
+      "00",
+      "02"
     ],
     "illustrator": "koki"
   },
@@ -1039,14 +1040,15 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "(When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)[When Attacking] Lose 2 memory.",
+    "effect": "＜Blocker＞ (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)[When Attacking] Lose 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "Tamer Battle Pack 11",
     "color": "Blue",
     "version": "AA",
     "block": [
-      "00"
+      "00",
+      "02"
     ],
     "illustrator": "Shin Sasaki"
   },
