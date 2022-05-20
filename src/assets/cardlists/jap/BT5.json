@@ -2272,9 +2272,40 @@
     "color": "Black",
     "version": "Normal",
     "block": [
-      "00"
+      "00",
+      "02"
     ],
     "illustrator": "Koki"
+  },
+  {
+    "id": "BT5-066_P1",
+    "name": "WaruMonzaemon",
+    "cardImage": "assets/images/cards/jap/BT5-066_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "6000",
+    "playCost": "5",
+    "digivolveCost1": "2 from Lv.4",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.5",
+    "form": "Ultimate",
+    "attribute": "Virus",
+    "type": "Puppet",
+    "rarity": "R",
+    "cardNumber": "BT5-066",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Tamer Battle Pack 12",
+    "color": "Black",
+    "version": "AA",
+    "block": [
+      "00",
+      "02"
+    ],
+    "illustrator": "p!k@ru"
   },
   {
     "id": "BT5-067",
