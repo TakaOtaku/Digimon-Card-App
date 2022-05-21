@@ -401,9 +401,70 @@
     "color": "Purple",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "illustrator": "Teppei Tadokoro"
+  },
+  {
+    "id": "ST10-13_P1",
+    "name": "Junomon",
+    "cardImage": "assets/images/cards/jap/ST10-13_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "11000",
+    "playCost": "11",
+    "digivolveCost1": "3 from Lv.5",
+    "digivolveCost2": "3 from Lv.5",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Virus",
+    "type": "Shaman/Olympos XII",
+    "rarity": "U",
+    "cardNumber": "ST10-13",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "＜Retaliation＞ (When this Digimon is deleted after losing a battle, delete the Digimon it was battling.)\n[When Digivolving] Trash the top 3 cards of your deck. Then, return 1 Digimon card from your trash to your hand.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Tamer Battle Pack 12",
+    "color": "Purple",
+    "version": "AA",
+    "block": [
+      "01",
+      "02"      
+    ],
+    "illustrator": "Shin Sasaki"
+  },
+  {
+    "id": "ST10-13_P2",
+    "name": "Junomon",
+    "cardImage": "assets/images/cards/jap/ST10-13_P2.jpg",
+    "cardType": "Digimon",
+    "dp": "11000",
+    "playCost": "11",
+    "digivolveCost1": "3 from Lv.5",
+    "digivolveCost2": "3 from Lv.5",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Virus",
+    "type": "Shaman/Olympos XII",
+    "rarity": "U",
+    "cardNumber": "ST10-13",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "＜Retaliation＞ (When this Digimon is deleted after losing a battle, delete the Digimon it was battling.)\n[When Digivolving] Trash the top 3 cards of your deck. Then, return 1 Digimon card from your trash to your hand.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Winner prize for Jun.2022 Tamer Battle",
+    "color": "Purple",
+    "version": "AA",
+    "block": [
+      "01",
+      "02"
+    ],
+    "illustrator": "Shin Sasaki"
   },
   {
     "id": "ST10-14",
