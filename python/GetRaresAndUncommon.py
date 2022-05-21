@@ -11,7 +11,7 @@ for name in names:
 	cards = list()
 	engCards = []
 	
-	with open(name+'.json', encoding='utf-8') as fh:
+	with open(name+'.json', encoding='utf-8') as fh:asdasdasd
 	    engCards = json.load(fh)
 	
 	for card in engCards:
