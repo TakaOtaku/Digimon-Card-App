@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 import re
 import pandas as pd
 
-#'https://en.digimoncard.com/cardlist/?search=true&category=508011', 
+#'https://en.digimoncard.com/cardlist/?search=trueasdasd&category=508011', 
 #'https://en.digimoncard.com/cardlist/?search=true&category=508010', 
 #'https://en.digimoncard.com/cardlist/?search=true&category=508009', 
 #'https://en.digimoncard.com/cardlist/?search=true&category=508008', 

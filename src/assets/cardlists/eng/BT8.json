@@ -2369,7 +2369,7 @@
     "effect": "[When Digivolving] You may place 1 card with [X Antibody] in its traits from your hand under this Digimon as its bottom digivolution card to delete 1 of your opponent's Digimon with a play cost of 7 or less.\n[Your Turn] [Once Per Turn] When one of your effects places a digivolution card under one of your Digimon, this Digimon gets +2000 DP and can't be deleted by your opponent's effects until the end of your opponent's next turn.",
     "digivolveEffect": "[End of Attack] [Once Per Turn] If this Digimon has [Alphamon] in its name, unsuspend it.",
     "securityEffect": "-",
-    "notes": "▹BOOSTER -NEW AWAKENING- [BT08]",
+    "notes": "▹BOOSTER -NEW AWAKENING- [BT08] Errata Card",
     "color": "Black",
     "version": "Normal",
     "block": [
@@ -2398,7 +2398,7 @@
     "effect": "[When Digivolving] You may place 1 card with [X Antibody] in its traits from your hand under this Digimon as its bottom digivolution card to delete 1 of your opponent's Digimon with a play cost of 7 or less.\n[Your Turn] [Once Per Turn] When one of your effects places a digivolution card under one of your Digimon, this Digimon gets +2000 DP and can't be deleted by your opponent's effects until the end of your opponent's next turn.",
     "digivolveEffect": "[End of Attack] [Once Per Turn] If this Digimon has [Alphamon] in its name, unsuspend it.",
     "securityEffect": "-",
-    "notes": "▹BOOSTER -NEW AWAKENING- [BT08]",
+    "notes": "▹BOOSTER -NEW AWAKENING- [BT08] Errata Card",
     "color": "Black",
     "version": "AA",
     "block": [
@@ -2424,10 +2424,10 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[When Digivolving] If this Digimon has a red digivolution card, choose any number of your opponent's Digimon. If this Digimon has a black digivolution card, choose any number of your opponent's Tamers. The chosen cards' play costs must add up to 6 or less. Delete the chosen cards.\n[All Turns] [Once Per Turn] When an opponent's Digimon is deleted, unsuspend this Digimon.",
+    "effect": "[When Digivolving] If this Digimon has a red digivolution card, choose any number of your opponent's Digimon. If this Digimon has a black digivolution card, choose any number of your opponent's Tamers. The chosen cards' play costs must add up to 6 or less. Delete the chosen cards.\n[All Turns] [Once Per Turn] When an opponent's Digimon is deleted, you may unsuspend this Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹BOOSTER -NEW AWAKENING- [BT08]",
+    "notes": "▹BOOSTER -NEW AWAKENING- [BT08] Errata Card",
     "color": "Black/Red",
     "version": "Normal",
     "block": [
@@ -2453,10 +2453,10 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[When Digivolving] If this Digimon has a red digivolution card, choose any number of your opponent's Digimon. If this Digimon has a black digivolution card, choose any number of your opponent's Tamers. The chosen cards' play costs must add up to 6 or less. Delete the chosen cards.\n[All Turns] [Once Per Turn] When an opponent's Digimon is deleted, unsuspend this Digimon.",
+    "effect": "[When Digivolving] If this Digimon has a red digivolution card, choose any number of your opponent's Digimon. If this Digimon has a black digivolution card, choose any number of your opponent's Tamers. The chosen cards' play costs must add up to 6 or less. Delete the chosen cards.\n[All Turns] [Once Per Turn] When an opponent's Digimon is deleted, you may unsuspend this Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹BOOSTER -NEW AWAKENING- [BT08]",
+    "notes": "▹BOOSTER -NEW AWAKENING- [BT08] Errata Card",
     "color": "Black/Red",
     "version": "AA",
     "block": [

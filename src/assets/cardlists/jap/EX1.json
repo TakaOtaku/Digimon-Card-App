@@ -1213,9 +1213,40 @@
     "color": "Yellow",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "illustrator": ""
+  },
+  {
+    "id": "EX1-025_P1",
+    "name": "Salamon",
+    "cardImage": "assets/images/cards/jap/EX1-025_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Vaccine",
+    "type": "Mammal",
+    "rarity": "C",
+    "cardNumber": "EX1-025",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "[When Attacking] [Once Per Turn] If you have 3 or more security cards, ＜Draw 1＞. (Draw 1 card from your deck.)",
+    "securityEffect": "-",
+    "notes": "Tamer Battle Pack 12",
+    "color": "Yellow",
+    "version": "AA",
+    "block": [
+      "01",
+      "02"
+    ],
+    "illustrator": "Sanosuke Sakuma"
   },
   {
     "id": "EX1-026",
