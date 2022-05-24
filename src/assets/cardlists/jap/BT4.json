@@ -145,6 +145,36 @@
     "illustrator": "Sanosuke Sakuma"
   },
   {
+    "id": "BT4-005_P1",
+    "name": "Missimon",
+    "cardImage": "assets/images/cards/jap/BT4-005_P1.jpg",
+    "cardType": "Digi-Egg",
+    "dp": "-",
+    "playCost": "-",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.2",
+    "form": "In-Training",
+    "attribute": "-",
+    "type": "Machine",
+    "rarity": "U",
+    "cardNumber": "BT4-005",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "[Your Turn] While this Digimon has [D-Brigade] in its type, it gets +1000 DP.",
+    "securityEffect": "-",
+    "notes": "Special Promotion Pack 2022 Ver2.0",
+    "color": "Black",
+    "version": "AA",
+    "block": [
+      "00",
+      "02"
+    ],
+    "illustrator": "Kirita"
+  },
+  {
     "id": "BT4-006",
     "name": "Xiaomon",
     "cardImage": "assets/images/cards/jap/BT4-006.jpg",
@@ -1396,6 +1426,36 @@
       "00"
     ],
     "illustrator": "Takase"
+  },
+  {
+    "id": "BT4-038_P1",
+    "name": "BushiAgumon",
+    "cardImage": "assets/images/cards/jap/BT4-038_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "3000",
+    "playCost": "5",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Vaccine",
+    "type": "Dinosaur",
+    "rarity": "U",
+    "cardNumber": "BT4-038",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "＜Rush＞ (This Digimon can attack the turn it comes into play.)",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Special Promotion Pack 2022 Ver2.0",
+    "color": "Yellow",
+    "version": "AA",
+    "block": [
+      "00",
+      "02"
+    ],
+    "illustrator": "Kazumasa Yasukuni"
   },
   {
     "id": "BT4-039",
@@ -2964,6 +3024,36 @@
       "00"
     ],
     "illustrator": "As'Maria"
+  },
+  {
+    "id": "BT4-087_P1",
+    "name": "Anubismon",
+    "cardImage": "assets/images/cards/jap/BT4-087_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "10000",
+    "playCost": "11",
+    "digivolveCost1": "3 from Lv.5",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Vaccine",
+    "type": "Shaman",
+    "rarity": "U",
+    "cardNumber": "BT4-087",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Digivolving] You may play 1 level 3 Digimon card from your trash without paying its memory cost.\n[Your Turn] When you play a Digimon from your trash, that Digimon gains ＜Rush＞ for the turn. (This Digimon can attack the turn it comes into play.)",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Special Promotion Pack 2022 Ver2.0",
+    "color": "Purple",
+    "version": "AA",
+    "block": [
+      "00",
+      "02"
+    ],
+    "illustrator": "Ryodan"
   },
   {
     "id": "BT4-088",
