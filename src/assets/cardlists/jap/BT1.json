@@ -3150,6 +3150,36 @@
     "illustrator": "Tonamikanji"
   },
   {
+    "id": "BT1-077_P1",
+    "name": "Okuwamon",
+    "cardImage": "assets/images/cards/jap/BT1-077_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "6000",
+    "playCost": "7",
+    "digivolveCost1": "2 from Lv.4",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.5",
+    "form": "Ultimate",
+    "attribute": "Virus",
+    "type": "Insectoid",
+    "rarity": "C",
+    "cardNumber": "BT1-077",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "[Your Turn] When this Digimon deletes an opponent's Digimon in battle and survives, gain 1 memory.",
+    "securityEffect": "-",
+    "notes": "Special Promotion Pack 2022 Ver2.0",
+    "color": "Green",
+    "version": "AA",
+    "block": [
+      "00",
+      "02"
+    ],
+    "illustrator": "tessy"
+  },
+  {
     "id": "BT1-078",
     "name": "Jagamon",
     "cardImage": "assets/images/cards/jap/BT1-078.jpg",
@@ -3527,6 +3557,35 @@
       "00"
     ],
     "illustrator": "sasasi"
+  },
+  {
+    "id": "BT1-084_P3",
+    "name": "Omnimon",
+    "cardImage": "assets/images/cards/jap/BT1-084_P3.jpg",
+    "cardType": "Digimon",
+    "dp": "15000",
+    "playCost": "15",
+    "digivolveCost1": "6 from Lv.6",
+    "digivolveCost2": "6 from Lv.6",
+    "cardLv": "Lv.7",
+    "form": "Mega",
+    "attribute": "Vaccine",
+    "type": "Holy Warrior/Royal Knight",
+    "rarity": "SR",
+    "cardNumber": "BT1-084",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Digivolving] Choose 1 of your opponent's Digimon. Delete all of your opponent's Digimon that share a name with it.\n[When Attacking] You can unsuspend this Digimon by returning 1 of this Digimon's level 6 digivolution cards to your hand.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Evolution Cup 2022 Winner",
+    "color": "White",
+    "version": "Stamp",
+    "block": [
+      "00"
+    ],
+    "illustrator": "Tonamikanji"
   },
   {
     "id": "BT1-085",

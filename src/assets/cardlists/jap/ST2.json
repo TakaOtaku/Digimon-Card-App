@@ -468,6 +468,36 @@
     "illustrator": "As'Maria"
   },
   {
+    "id": "ST2-11_P1",
+    "name": "MetalGarurumon",
+    "cardImage": "assets/images/cards/jap/ST2-11_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "11000",
+    "playCost": "12",
+    "digivolveCost1": "4  from Lv.5",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Data",
+    "type": "Cyborg",
+    "rarity": "SR",
+    "cardNumber": "ST2-11",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Attacking] [Once Per Turn] Unsuspend this Digimon.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Special Promotion Pack 2022 Ver2.0",
+    "color": "Blue",
+    "version": "AA",
+    "block": [
+      "00",
+      "02"
+    ],
+    "illustrator": "Tonamikanji"
+  },
+  {
     "id": "ST2-12",
     "name": "Matt Ishida",
     "cardImage": "assets/images/cards/jap/ST2-12.jpg",
