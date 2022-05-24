@@ -3443,7 +3443,7 @@
   },
   {
     "id": "BT1-084",
-    "name": "Omegamon",
+    "name": "Omnimon",
     "cardImage": "assets/images/cards/jap/BT1-084.jpg",
     "cardType": "Digimon",
     "dp": "15000",
@@ -3472,7 +3472,7 @@
   },
   {
     "id": "BT1-084_P1",
-    "name": "Omegamon",
+    "name": "Omnimon",
     "cardImage": "assets/images/cards/jap/BT1-084_P1.jpg",
     "cardType": "Digimon",
     "dp": "15000",
@@ -3530,7 +3530,7 @@
   },
   {
     "id": "BT1-085",
-    "name": "Taichi Yagami",
+    "name": "Tai Kamiya",
     "cardImage": "assets/images/cards/jap/BT1-085.jpg",
     "cardType": "Tamer",
     "dp": "-",
@@ -3560,7 +3560,7 @@
   },
   {
     "id": "BT1-085_P1",
-    "name": "Taichi Yagami",
+    "name": "Tai Kamiya",
     "cardImage": "assets/images/cards/jap/BT1-085_P1.jpg",
     "cardType": "Tamer",
     "dp": "-",
@@ -3590,7 +3590,7 @@
   },
   {
     "id": "BT1-085_P2",
-    "name": "Taichi Yagami",
+    "name": "Tai Kamiya",
     "cardImage": "assets/images/cards/jap/BT1-085_P2.jpg",
     "cardType": "Tamer",
     "dp": "-",
@@ -3620,7 +3620,7 @@
   },
   {
     "id": "BT1-086",
-    "name": "Yamato Ishida",
+    "name": "Matt Ishida",
     "cardImage": "assets/images/cards/jap/BT1-086.jpg",
     "cardType": "Tamer",
     "dp": "-",
@@ -3649,7 +3649,7 @@
   },
   {
     "id": "BT1-086_P1",
-    "name": "Yamato Ishida",
+    "name": "Matt Ishida",
     "cardImage": "assets/images/cards/jap/BT1-086_P1.jpg",
     "cardType": "Tamer",
     "dp": "-",
@@ -3678,7 +3678,7 @@
   },
   {
     "id": "BT1-087",
-    "name": "Takeru Takaishi",
+    "name": "T.K. Takaishi",
     "cardImage": "assets/images/cards/jap/BT1-087.jpg",
     "cardType": "Tamer",
     "dp": "-",
@@ -3708,7 +3708,7 @@
   },
   {
     "id": "BT1-087_P1",
-    "name": "Takeru Takaishi",
+    "name": "T.K. Takaishi",
     "cardImage": "assets/images/cards/jap/BT1-087_P1.jpg",
     "cardType": "Tamer",
     "dp": "-",
@@ -3738,7 +3738,7 @@
   },
   {
     "id": "BT1-087_P2",
-    "name": "Takeru Takaishi",
+    "name": "T.K. Takaishi",
     "cardImage": "assets/images/cards/jap/BT1-087_P2.jpg",
     "cardType": "Tamer",
     "dp": "-",
@@ -3768,7 +3768,7 @@
   },
   {
     "id": "BT1-088",
-    "name": "Koshiro Izumi",
+    "name": "Izzy Izumi",
     "cardImage": "assets/images/cards/jap/BT1-088.jpg",
     "cardType": "Tamer",
     "dp": "-",
@@ -3798,7 +3798,7 @@
   },
   {
     "id": "BT1-088_P1",
-    "name": "Koshiro Izumi",
+    "name": "Izzy Izumi",
     "cardImage": "assets/images/cards/jap/BT1-088_P1.jpg",
     "cardType": "Tamer",
     "dp": "-",
@@ -3828,7 +3828,7 @@
   },
   {
     "id": "BT1-088_P2",
-    "name": "Koshiro Izumi",
+    "name": "Izzy Izumi",
     "cardImage": "assets/images/cards/jap/BT1-088_P2.jpg",
     "cardType": "Tamer",
     "dp": "-",
