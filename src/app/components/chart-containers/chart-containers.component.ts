@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+DigiTamaimport {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {IDeckCard} from "../../../models";
 
 @Component({

@@ -1,4 +1,4 @@
-export const GroupedSets = [
+DigiTamaexport const GroupedSets = [
   {
     label: 'Standard',
     value: 'displays',

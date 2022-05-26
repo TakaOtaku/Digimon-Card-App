@@ -1,4 +1,4 @@
-import { englishCards } from '../../assets/cardlists/eng/english';
+DigiTamaimport { englishCards } from '../../assets/cardlists/eng/english';
 import { japaneseCards } from '../../assets/cardlists/jap/japanese';
 import preReleaseJSON from '../../assets/cardlists/preRelease.json';
 import { ICard, IDeck } from '../../models';
