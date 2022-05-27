@@ -465,6 +465,35 @@
     "illustrator": "As'Maria"
   },
   {
+    "id": "BT4-011_P2",
+    "name": "Agunimon",
+    "cardImage": "assets/images/cards/eng/BT4-011_P2.jpg",
+    "cardType": "Digimon",
+    "dp": "5000",
+    "playCost": "5",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Hybrid",
+    "attribute": "Variable",
+    "type": "Wizard",
+    "rarity": "U",
+    "cardNumber": "BT4-011",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "You may Digivolve this card from your hand onto one of your red Tamers as if the Tamer is a level 3 red Digimon.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "TAMER’S EVOLUTION BOX2[PB-06]",
+    "color": "Red",
+    "version": "AA",
+    "block": [
+      "00"
+    ],
+    "illustrator": "Nakano Haito"
+  },
+  {
     "id": "BT4-012",
     "name": "GeoGreymon",
     "cardImage": "assets/images/cards/eng/BT4-012.jpg",
