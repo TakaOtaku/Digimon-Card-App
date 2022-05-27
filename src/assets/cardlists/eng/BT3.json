@@ -1931,6 +1931,35 @@
     "illustrator": "Tonamikanji"
   },
   {
+    "id": "BT3-047_P1",
+    "name": "Wormmon",
+    "cardImage": "assets/images/cards/eng/BT3-047_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "1000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Free",
+    "type": "Larva",
+    "rarity": "R",
+    "cardNumber": "BT3-047",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Deletion] Reveal the top 3 cards of your deck. Add 1 level 4 or 5 Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "TAMER’S EVOLUTION BOX2[PB-06]",
+    "color": "Green",
+    "version": "AA",
+    "block": [
+      "00"
+    ],
+    "illustrator": "Shin Sasaki"
+  },
+  {
     "id": "BT3-048",
     "name": "Gargomon",
     "cardImage": "assets/images/cards/eng/BT3-048.jpg",
