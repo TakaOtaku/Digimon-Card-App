@@ -725,6 +725,35 @@
     "illustrator": ""
   },
   {
+    "id": "EX1-013_P1",
+    "name": "Veemon",
+    "cardImage": "assets/images/cards/eng/EX1-013_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Free",
+    "type": "Mini Dragon",
+    "rarity": "R",
+    "cardNumber": "EX1-013",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When this Digimon becomes unsuspended during your main phase, gain 1 memory.",
+    "securityEffect": "-",
+    "notes": "TAMER’S EVOLUTION BOX2[PB-06]",
+    "color": "Blue",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "illustrator": "Shin Sasaki"
+  },
+  {
     "id": "EX1-014",
     "name": "ExVeemon",
     "cardImage": "assets/images/cards/eng/EX1-014.jpg",
@@ -3103,6 +3132,35 @@
       "01"
     ],
     "illustrator": ""
+  },
+  {
+    "id": "EX1-071_P1",
+    "name": "Win Rate: 60%!",
+    "cardImage": "assets/images/cards/eng/EX1-071_P1.jpg",
+    "cardType": "Option",
+    "dp": "-",
+    "playCost": "2",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "-",
+    "rarity": "R",
+    "cardNumber": "EX1-071",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "If you have a Tamer in play, you may use this Option card without meeting its color requirements.\n[Main] The next time one of your Digimon digivolves this turn, you may trash 1 Digimon card in your hand of the same color as the digivolving Digimon to reduce the memory cost of the digivolution by 4.",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Add this card to its owner's hand.",
+    "notes": "TAMER’S EVOLUTION BOX2[PB-06]",
+    "color": "White",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "illustrator": "Shin Sasaki"
   },
   {
     "id": "EX1-072",
