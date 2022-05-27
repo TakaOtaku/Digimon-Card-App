@@ -3964,12 +3964,12 @@
     "effect": "[Security] At the end of the battle, add this card to its owner's hand. Then, if a Digimon with [Royal Knight] or [X Antibody] in its traits is in play, up to 12 of your opponent's Digimon can't attack players for the turn.[When Attacking] By paying up to 5 memory, this Digimon gets +1000 DP for the turn for each memory paid for this effect.[End of Attack] Gain 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹BOOSTER CROSS ENCOUNTER [BT-10]",
+    "notes": "\u25b9BOOSTER XROS ENCOUNTER [BT-10]",
     "color": "Black",
     "version": "AA",
     "illustrator": "sasasi",
     "block": [
-      "02"
+      "01"
     ]
   },
   {
