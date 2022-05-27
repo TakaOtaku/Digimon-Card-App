@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Subject, takeUntil } from 'rxjs';
@@ -7,10 +7,14 @@ import { changeFilter } from '../../store/digimon.actions';
 import { selectFilter } from '../../store/digimon.selectors';
 
 @Component({
-  selector: 'digimon-search',
-  templateUrl: './search.component.html',
+  selector: 'digimon-filter-and-search',
+  templateUrl: './filter-and-search.component.html',
 })
-export class SearchComponent implements OnInit, OnDestroy {
+export class FilterAndSearchComponent implements OnInit, OnDestroy {
+  @Input() public compact = false;
+
+  display = false;
+
   searchFilter = new FormControl('');
 
   private filter: IFilter;
@@ -29,9 +33,10 @@ export class SearchComponent implements OnInit, OnDestroy {
 
     this.searchFilter.valueChanges
       .pipe(takeUntil(this.onDestroy$))
-      .subscribe((searchValue) => {
-        const filter: IFilter = { ...this.filter, searchFilter: searchValue };
-        this.store.dispatch(changeFilter({ filter }));
+      .subscribe((searchFilter) => {
+        this.store.dispatch(
+          changeFilter({ filter: { ...this.filter, searchFilter } })
+        );
       });
   }
 

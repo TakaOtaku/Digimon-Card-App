@@ -1,11 +1,17 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import {
+  Component,
+  HostListener,
+  Input,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { filter, Subject, takeUntil } from 'rxjs';
 import { tagsList } from 'src/models/tags.data';
 import * as uuid from 'uuid';
 import {
+  ColorList,
   ColorMap,
   ColorOrderMap,
   DeckColorMap,
@@ -16,7 +22,6 @@ import {
   ISave,
 } from '../../../models';
 import { ITag } from '../../../models/interfaces/tag.interface';
-import { Colors } from '../../components/filter-box/filterData';
 import {
   compareIDs,
   deckIsValid,
@@ -44,6 +49,13 @@ import { emptyDeck } from '../../store/reducers/digimon.reducers';
 export class DeckBuilderComponent implements OnInit, OnDestroy {
   @Input() public mobile: boolean;
 
+  //region Accordions
+  deckView = true;
+  collectionView = true;
+  showAccordionButtons = true;
+  showStats = true;
+  //endregion
+
   title = '';
   description = '';
   tags: ITag[];
@@ -57,24 +69,13 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
     cards: [],
   };
 
+  selectedColor: any;
   colorMap = ColorMap;
-
-  colors = Colors;
-  colorFilter = new FormControl();
+  colors = ColorList;
 
   tagsList: ITag[] = tagsList;
-  filteredTags: ITag[];
 
   levelData: any;
-  chartOptions: any = {
-    plugins: {
-      legend: {
-        labels: {
-          color: '#ffffff',
-        },
-      },
-    },
-  };
 
   allCards: ICard[] = [];
   collection: ICountCard[];
@@ -84,12 +85,7 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
   stack = false;
   missingCards = false;
 
-  sidebar = false;
-  statsSidebar = true;
-
-  statDialog = false;
-
-  fullscreen = false;
+  private screenWidth: number;
 
   private onDestroy$ = new Subject();
 
@@ -99,7 +95,24 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
     private authService: AuthService,
     private confirmationService: ConfirmationService,
     private messageService: MessageService
-  ) {}
+  ) {
+    this.onResize();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.screenWidth = window.innerWidth;
+    if (this.screenWidth < 768) {
+      this.showAccordionButtons = false;
+      this.deckView = true;
+      this.collectionView = false;
+    } else if (this.screenWidth >= 768 && this.screenWidth < 1024) {
+      this.deckView = false;
+      this.showStats = false;
+    } else {
+      this.showAccordionButtons = true;
+    }
+  }
 
   private static sortColors(colorA: string, colorB: string): number {
     const a: number = ColorOrderMap.get(colorA) ?? 0;
@@ -135,7 +148,7 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
           this.title = deck.title ?? '';
           this.description = deck.description ?? '';
           this.tags = deck.tags ?? [];
-          this.colorFilter.setValue(deck.color.name);
+          this.selectedColor = deck.color;
           this.mapDeck(deck);
         }
       });
@@ -206,6 +219,27 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
   }
 
   /**
+   * Create a new Deck
+   */
+  newDeck() {
+    this.confirmationService.confirm({
+      key: 'NewDeck',
+      message:
+        'You are about to clear all cards in the deck and make a new one. Are you sure?',
+      accept: () => {
+        this.mainDeck = [];
+        const deck: IDeck = emptyDeck;
+        this.store.dispatch(setDeck({ deck }));
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Deck cleared!',
+          detail: 'Deck-Cards were cleared successfully!',
+        });
+      },
+    });
+  }
+
+  /**
    * Clear all Cards in the Deck
    */
   delete() {
@@ -259,7 +293,7 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
       title: this.title,
       description: this.description,
       tags: this.tags,
-      color: DeckColorMap.get(this.colorFilter.value),
+      color: DeckColorMap.get(this.selectedColor.name),
       cards,
     };
     this.store.dispatch(setDeck({ deck: this.deck }));
@@ -468,33 +502,48 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
     return id.split('_P')[0];
   }
 
-  /**
-   * For the autocomplete, filter Tags to display
-   */
-  filterTags(event: any) {
-    let filtered: ITag[] = [];
-    let query = event.query;
-
-    for (let i = 0; i < this.tagsList.length; i++) {
-      let tag = this.tagsList[i];
-      if (tag.name.toLowerCase().indexOf(query.toLowerCase()) == 0) {
-        filtered.push(tag);
-      }
-    }
-
-    this.filteredTags = filtered;
-  }
-
-  colorChecked(color: string): boolean {
-    return this.colorFilter.value === color;
-  }
-
   openImportDeckDialog() {
     this.store.dispatch(setImportDeckDialog({ show: true }));
   }
 
   openExportDeckDialog() {
     this.store.dispatch(setExportDeckDialog({ show: true, deck: this.deck }));
+  }
+
+  changeColor(color: any) {
+    this.selectedColor = color;
+  }
+
+  changeView(view: string) {
+    if (view === 'Deck') {
+      this.deckView = !this.deckView;
+
+      if (this.screenWidth >= 768 && this.screenWidth < 1024) {
+        if (this.deckView && this.collectionView) {
+          this.collectionView = false;
+          return;
+        }
+      }
+
+      if (!this.collectionView) {
+        this.collectionView = true;
+      }
+    } else if (view === 'Collection') {
+      this.collectionView = !this.collectionView;
+
+      if (this.screenWidth >= 768 && this.screenWidth < 1024) {
+        if (this.deckView && this.collectionView) {
+          this.deckView = false;
+          return;
+        }
+      }
+
+      if (!this.deckView) {
+        this.deckView = true;
+      }
+    }
+
+    this.showStats = !(this.collectionView && !this.deckView);
   }
 
   private colorSort() {

@@ -1,4 +1,4 @@
-import {ISave} from "./save.interface";
+import { ISave } from './save.interface';
 
 export interface IUser {
   uid: string;

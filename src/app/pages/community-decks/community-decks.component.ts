@@ -1,19 +1,18 @@
-import {DatePipe} from "@angular/common";
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Store} from "@ngrx/store";
-import {ConfirmationService, MessageService} from "primeng/api";
-import {Subject, takeUntil} from "rxjs";
-import * as uuid from "uuid";
-import {COLORS, ICard, IDeck, TAGS} from "../../../models";
-import {DatabaseService} from "../../service/database.service";
-import {importDeck, setDeck, setSite} from "../../store/digimon.actions";
-import {selectAllCards} from "../../store/digimon.selectors";
-import {SITES} from "../main-page/main-page.component";
+import { DatePipe } from '@angular/common';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { ConfirmationService, MessageService } from 'primeng/api';
+import { Subject, takeUntil } from 'rxjs';
+import * as uuid from 'uuid';
+import { COLORS, ICard, IDeck, TAGS } from '../../../models';
+import { DatabaseService } from '../../service/database.service';
+import { importDeck, setDeck, setSite } from '../../store/digimon.actions';
+import { selectAllCards } from '../../store/digimon.selectors';
+import { SITES } from '../main-page/main-page.component';
 
 @Component({
   selector: 'digimon-community-decks',
   templateUrl: './community-decks.component.html',
-  styleUrls: ['./community-decks.component.scss'],
 })
 export class CommunityDecksComponent implements OnInit, OnDestroy {
   selectedDeck: IDeck;
@@ -23,9 +22,21 @@ export class CommunityDecksComponent implements OnInit, OnDestroy {
   colors = COLORS;
 
   deckRowContext = [
-    {label: 'View', icon: 'pi pi-fw pi-search', command: () => this.viewDeck(this.selectedDeck)},
-    {label: 'Copy', icon: 'pi pi-fw pi-copy', command: () => this.copyDeck(this.selectedDeck)},
-    {label: 'Get Link', icon: 'pi pi-fw pi-share-alt', command: () => this.copyLink(this.selectedDeck)},
+    {
+      label: 'View',
+      icon: 'pi pi-fw pi-search',
+      command: () => this.viewDeck(this.selectedDeck),
+    },
+    {
+      label: 'Copy',
+      icon: 'pi pi-fw pi-copy',
+      command: () => this.copyDeck(this.selectedDeck),
+    },
+    {
+      label: 'Get Link',
+      icon: 'pi pi-fw pi-share-alt',
+      command: () => this.copyLink(this.selectedDeck),
+    },
   ];
 
   allCards: ICard[] = [];
@@ -37,12 +48,22 @@ export class CommunityDecksComponent implements OnInit, OnDestroy {
     private db: DatabaseService,
     private messageService: MessageService,
     private confirmationService: ConfirmationService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
-    this.db.loadCommunityDecks().pipe(takeUntil(this.onDestroy$))
-      .subscribe(decks => this.decks = decks.sort((a, b) => new Date(b.date!).getTime() - new Date(a.date!).getTime()));
-    this.store.select(selectAllCards).pipe(takeUntil(this.onDestroy$)).subscribe(allCards => this.allCards = allCards);
+    this.db
+      .loadCommunityDecks()
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe(
+        (decks) =>
+          (this.decks = decks.sort(
+            (a, b) => new Date(b.date!).getTime() - new Date(a.date!).getTime()
+          ))
+      );
+    this.store
+      .select(selectAllCards)
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((allCards) => (this.allCards = allCards));
   }
 
   ngOnDestroy() {
@@ -53,9 +74,13 @@ export class CommunityDecksComponent implements OnInit, OnDestroy {
     this.confirmationService.confirm({
       message: 'You are about to open this deck. Are you sure?',
       accept: () => {
-        this.store.dispatch(setDeck({deck: {...deck, id: uuid.v4(), rating: 0, ratingCount: 0}}));
-        this.store.dispatch(setSite({site: SITES.DeckBuilder}));
-      }
+        this.store.dispatch(
+          setDeck({
+            deck: { ...deck, id: uuid.v4(), rating: 0, ratingCount: 0 },
+          })
+        );
+        this.store.dispatch(setSite({ site: SITES.DeckBuilder }));
+      },
     });
   }
 
@@ -63,13 +88,17 @@ export class CommunityDecksComponent implements OnInit, OnDestroy {
     this.confirmationService.confirm({
       message: 'You are about to copy this deck. Are you sure?',
       accept: () => {
-        this.store.dispatch(importDeck({deck: {...deck, id: uuid.v4(), rating: 0, ratingCount: 0}}));
+        this.store.dispatch(
+          importDeck({
+            deck: { ...deck, id: uuid.v4(), rating: 0, ratingCount: 0 },
+          })
+        );
         this.messageService.add({
           severity: 'success',
           summary: 'Deck copied!',
-          detail: 'Deck was copied successfully!'
+          detail: 'Deck was copied successfully!',
         });
-      }
+      },
     });
   }
 
@@ -79,7 +108,7 @@ export class CommunityDecksComponent implements OnInit, OnDestroy {
     selBox.style.left = '0';
     selBox.style.top = '0';
     selBox.style.opacity = '0';
-    selBox.value = 'https://digimoncard.app/?deck='+deck.id;
+    selBox.value = 'https://digimoncard.app/?deck=' + deck.id;
     document.body.appendChild(selBox);
     selBox.focus();
     selBox.select();
@@ -89,9 +118,8 @@ export class CommunityDecksComponent implements OnInit, OnDestroy {
     this.messageService.add({
       severity: 'success',
       summary: 'Link copied!',
-      detail: 'The link was copied to your clipboard!'
+      detail: 'The link was copied to your clipboard!',
     });
-
   }
 
   dateFormat(date: Date): string {

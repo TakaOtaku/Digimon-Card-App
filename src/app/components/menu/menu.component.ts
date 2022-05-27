@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { saveAs } from 'file-saver';
@@ -10,7 +10,7 @@ import {
 } from 'primeng/api';
 import { first, Subject, takeUntil } from 'rxjs';
 import { SITES } from 'src/app/pages/main-page/main-page.component';
-import { ICard, ICountCard, ISave } from '../../../models';
+import { ICard, ICountCard, ISave, IUser } from '../../../models';
 import { AuthService } from '../../service/auth.service';
 import { DatabaseService } from '../../service/database.service';
 import {
@@ -24,6 +24,7 @@ import {
   selectCollection,
   selectCollectionMinimum,
   selectSave,
+  selectSettings,
   selectShowAACards,
   selectShowPreRelease,
   selectShowStampedCards,
@@ -68,6 +69,10 @@ export class MenuComponent implements OnInit, OnDestroy {
   sortOrder = ['Color', 'Level'];
   sortOrderFilter = new FormControl();
 
+  user: IUser | null;
+
+  mobile = false;
+
   private onDestroy$ = new Subject();
 
   constructor(
@@ -77,7 +82,10 @@ export class MenuComponent implements OnInit, OnDestroy {
     private db: DatabaseService,
     public authService: AuthService,
     private store: Store
-  ) {
+  ) {}
+
+  ngOnInit() {
+    this.update();
     this.store
       .select(selectSave)
       .pipe(takeUntil(this.onDestroy$))
@@ -88,11 +96,6 @@ export class MenuComponent implements OnInit, OnDestroy {
         });
         this.save = JSON.stringify(save, undefined, 4);
       });
-    this.authService.authChange.subscribe(() => this.update());
-  }
-
-  ngOnInit() {
-    this.update();
     this.store
       .select(selectAllCards)
       .pipe(first())
@@ -102,115 +105,116 @@ export class MenuComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.onDestroy$))
       .subscribe((collection) => (this.collection = collection));
     this.store
-      .select(selectCollectionMinimum)
+      .select(selectSettings)
       .pipe(takeUntil(this.onDestroy$))
-      .subscribe((minimum) => (this.collectionCount = minimum));
-    this.store
-      .select(selectShowPreRelease)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((show) => (this.preRelease = show));
-    this.store
-      .select(selectShowAACards)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((show) => (this.aa = show));
-    this.store
-      .select(selectShowStampedCards)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((show) => (this.stamped = show));
+      .subscribe((settings) => {
+        this.preRelease = settings.showPreRelease;
+        this.aa = settings.showAACards;
+        this.stamped = settings.showStampedCards;
+        this.collectionCount = settings.collectionMinimum;
+      });
+
+    this.user = this.authService.userData;
+    this.authService.authChange.subscribe(() => {
+      this.update();
+      this.user = this.authService.userData;
+    });
 
     this.primengConfig.ripple = true;
+    this.onResize();
   }
 
   ngOnDestroy() {
     this.onDestroy$.next(true);
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    let screenWidth = window.innerWidth;
+    this.mobile = screenWidth <= 1024;
+  }
+
   update() {
     const user = this.authService.userData?.displayName ?? 'Unknown';
-    this.items = [
-      {
-        label: 'User: ' + user,
-        items: [
-          {
-            label: 'Collection',
-            icon: 'pi pi-book',
-            command: () => {
-              this.switchSite(0);
-            },
+    const userMenu = {
+      label: 'User: ' + user,
+      items: [
+        {
+          label: 'Home',
+          icon: 'pi pi-pencil',
+          command: () => {
+            this.switchSite(SITES.DeckBuilder);
           },
-          {
-            label: 'Collection Stats',
-            icon: 'pi pi-book',
-            command: () => (this.collectionDisplay = true),
+        },
+        {
+          label: 'My Decks',
+          icon: 'pi pi-database',
+          command: () => {
+            this.switchSite(SITES.Decks);
           },
-          {
-            label: 'Deckbuilder',
-            icon: 'pi pi-pencil',
-            command: () => {
-              this.switchSite(2);
-            },
+        },
+        {
+          label: 'Community Decks',
+          icon: 'pi pi-database',
+          command: () => {
+            this.switchSite(SITES.CommunityDecks);
           },
-          {
-            label: 'My Decks',
-            icon: 'pi pi-database',
-            command: () => {
-              this.switchSite(1);
-            },
+        },
+        {
+          label: 'Collection Stats',
+          icon: 'pi pi-book',
+          command: () => (this.collectionDisplay = true),
+        },
+      ],
+    };
+
+    const settingsMenu = {
+      label: 'Settings',
+      items: [
+        {
+          label: this.authService.isLoggedIn ? 'Logout' : 'Login',
+          icon: 'pi pi-google',
+          command: () => {
+            this.authService.isLoggedIn
+              ? this.authService.LogOut()
+              : this.login();
           },
-        ],
-      },
-      {
-        label: 'Community',
-        items: [
-          {
-            label: 'Community Decks',
-            icon: 'pi pi-database',
-            command: () => {
-              this.switchSite(3);
-            },
-          },
-        ],
-      },
-      {
-        label: 'Settings',
-        items: [
-          {
-            label: this.authService.isLoggedIn ? 'Logout' : 'Login',
-            icon: 'pi pi-google',
-            command: () => {
-              this.authService.isLoggedIn
-                ? this.authService.LogOut()
-                : this.login();
-            },
-          },
-          {
-            label: 'Import/Export',
-            icon: 'pi pi-upload',
-            command: () => (this.display = !this.display),
-          },
-          {
-            label: 'Advanced Settings',
-            icon: 'pi pi-cog',
-            command: () => (this.settingsDialog = true),
-          },
-        ],
-      },
-      {
-        label: 'External',
-        items: [
-          {
-            label: 'What I work on',
-            icon: 'pi pi-history',
-            url: 'https://github.com/users/TakaOtaku/projects/1/views/1?layout=board',
-          },
-          {
-            label: 'Help the Site!',
-            icon: 'pi pi-paypal',
-            url: 'https://www.paypal.com/donate/?hosted_button_id=DHQVT7GQ72J98',
-          },
-        ],
-      },
-    ];
+        },
+        {
+          label: 'Import/Export',
+          icon: 'pi pi-upload',
+          command: () => (this.display = !this.display),
+        },
+        {
+          label: 'Advanced Settings',
+          icon: 'pi pi-cog',
+          command: () => (this.settingsDialog = true),
+        },
+      ],
+    };
+
+    const externalMenu = {
+      label: 'External',
+      items: [
+        {
+          label: 'What I work on',
+          icon: 'pi pi-history',
+          url: 'https://github.com/users/TakaOtaku/projects/1/views/1?layout=board',
+        },
+        {
+          label: 'Feature/Bug Request',
+          icon: 'pi pi-plus',
+          url: 'https://github.com/TakaOtaku/Digimon-Card-App/issues',
+        },
+        {
+          label: 'Help the Site!',
+          icon: 'pi pi-paypal',
+          url: 'https://www.paypal.com/donate/?hosted_button_id=DHQVT7GQ72J98',
+        },
+      ],
+    };
+
+    this.items = [userMenu, settingsMenu, externalMenu];
   }
 
   switchSite(site: number) {
@@ -275,6 +279,24 @@ export class MenuComponent implements OnInit, OnDestroy {
     this.authService.GoogleAuth();
   }
 
+  saveSettings() {
+    const save = {
+      ...this.iSave,
+      settings: {
+        ...this.iSave.settings,
+        minimum: this.collectionCount,
+        showPreRelease: this.preRelease,
+        showAACards: this.aa,
+        showStampedCards: this.stamped,
+        sortDeckOrder: this.sortOrderFilter.value,
+      },
+    };
+
+    this.store.dispatch(setSave({ save }));
+
+    this.settingsDialog = false;
+  }
+
   importCollection() {
     if (this.collectionText === '') return;
 
@@ -294,24 +316,6 @@ export class MenuComponent implements OnInit, OnDestroy {
       summary: 'Collection Imported!',
       detail: 'The collection was imported successfully!',
     });
-  }
-
-  saveSettings() {
-    const save = {
-      ...this.iSave,
-      settings: {
-        ...this.iSave.settings,
-        minimum: this.collectionCount,
-        showPreRelease: this.preRelease,
-        showAACards: this.aa,
-        showStampedCards: this.stamped,
-        sortDeckOrder: this.sortOrderFilter.value,
-      },
-    };
-
-    this.store.dispatch(setSave({ save }));
-
-    this.settingsDialog = false;
   }
 
   private parseLine(line: string): ICountCard | null {

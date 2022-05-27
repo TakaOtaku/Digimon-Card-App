@@ -1,48 +1,55 @@
-.card-image {
-  border: 2px solid black;
-  border-radius: 5px;
+.btn-center {
+  -webkit-transform: translateX(80%);
+  -moz-transform: translateX(80%);
+  transform: translateX(80%);
+}
+
+.btn-center-2 {
+  -webkit-transform: translateX(50%);
+  -moz-transform: translateX(50%);
+  transform: translateX(50%);
 }
 
 .missing {
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  top: 40px;
-  text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	top: 40px;
+	text-align: center;
 }
 
 p-inputNumber {
-  ::ng-deep .p-inputnumber-button {
-    padding: 0.1rem 0;
-  }
+	::ng-deep .p-inputnumber-button {
+		padding: 0.1rem 0;
+	}
 }
 
 @media (min-width: 768px) {
-  p-inputNumber {
-    ::ng-deep .p-inputnumber-button {
-      padding: 0.5rem 0;
-    }
-  }
+	p-inputNumber {
+		::ng-deep .p-inputnumber-button {
+			padding: 0.5rem 0;
+		}
+	}
 }
 
 .egg {
-  width: 14px;
-  height: 18px;
-  border-radius: 50%/60% 60% 40% 40%;
-  background-color: white;
+	width: 14px;
+	height: 18px;
+	border-radius: 50%/60% 60% 40% 40%;
+	background-color: white;
 }
 
 .top-bottom-split {
-  width: 0;
-  height: 0;
-  border-top: 27px solid black;
-  border-left: 15px solid transparent;
+	width: 0;
+	height: 0;
+	border-top: 27px solid black;
+	border-left: 15px solid transparent;
 }
 
 .bottom-top-split {
-  width: 0;
-  height: 0;
-  border-right: 15px solid transparent;
-  border-bottom: 27px solid black;
+	width: 0;
+	height: 0;
+	border-right: 15px solid transparent;
+	border-bottom: 27px solid black;
 }

@@ -1,5 +1,13 @@
-import {createAction, props} from '@ngrx/store';
-import {ICard, ICountCard, IDeck, IFilter, ISave, ISettings, ISort} from "../../models";
+import { createAction, props } from '@ngrx/store';
+import {
+  ICard,
+  ICountCard,
+  IDeck,
+  IFilter,
+  ISave,
+  ISettings,
+  ISort,
+} from '../../models';
 
 //region Digimon Card Actions
 export const setDigimonCards = createAction(
@@ -40,14 +48,14 @@ export const changeCollectionMinimum = createAction(
 
 export const changeShowVersion = createAction(
   '[Settings] Change Show Version',
-  props<{ showPre: boolean, showAA: boolean, showStamp: boolean }>()
+  props<{ showPre: boolean; showAA: boolean; showStamp: boolean }>()
 );
 //endregion
 
 //region Dialog Actions
 export const setExportDeckDialog = createAction(
   '[Show Export Deck Dialog] Set Export Deck Dialog',
-  props<{ show: boolean, deck: IDeck }>()
+  props<{ show: boolean; deck: IDeck }>()
 );
 export const setImportDeckDialog = createAction(
   '[Set Import Deck Dialog] Set Import Deck Dialog',
@@ -55,11 +63,11 @@ export const setImportDeckDialog = createAction(
 );
 export const setAccessoryDeckDialog = createAction(
   '[Set Accessory Deck Dialog] Set Accessory Deck Dialog',
-  props<{ show: boolean, deck: IDeck }>()
+  props<{ show: boolean; deck: IDeck }>()
 );
 export const setViewCardDialog = createAction(
   '[Set View Card Dialog] Set View Card Dialog',
-  props<{ show: boolean, card: ICard }>()
+  props<{ show: boolean; card: ICard }>()
 );
 //endregion
 
@@ -97,7 +105,7 @@ export const changeCardSets = createAction(
   '[Settings] Change Card Sets',
   props<{ cardSet: string }>()
 );
-//endregion
+//endregions
 
 //region Collection Actions
 export const addToCollection = createAction(
@@ -107,7 +115,7 @@ export const addToCollection = createAction(
 
 export const changeCardCount = createAction(
   '[Digimon Cards] Change Digimon Card Count',
-  props<{ id: string, count: number }>()
+  props<{ id: string; count: number }>()
 );
 //endregion
 
@@ -132,6 +140,3 @@ export const addToDeck = createAction(
   props<{ card: ICountCard }>()
 );
 //endregion
-
-
-

@@ -1,14 +1,26 @@
-import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
-import {Store} from "@ngrx/store";
-import {Subject, takeUntil} from "rxjs";
-import {englishCards} from "../../../../assets/cardlists/eng/english";
-import {ICard, ICountCard} from "../../../../models";
-import {SITES} from "../../../pages/main-page/main-page.component";
-import {selectCollection, selectCollectionMode, selectFilteredCards, selectSite} from "../../../store/digimon.selectors";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Subject, takeUntil } from 'rxjs';
+import { englishCards } from '../../../../assets/cardlists/eng/english';
+import { ICard, ICountCard } from '../../../../models';
+import { SITES } from '../../../pages/main-page/main-page.component';
+import {
+  selectCollection,
+  selectCollectionMode,
+  selectFilteredCards,
+  selectSite,
+} from '../../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-card-list',
-  templateUrl: './card-list.component.html'
+  templateUrl: './card-list.component.html',
 })
 export class CardListComponent implements OnInit, OnDestroy {
   @Input() public showCount: number;
@@ -28,10 +40,10 @@ export class CardListComponent implements OnInit, OnDestroy {
   viewCardDialog = false;
   cardContext = [
     {
-      label:'View',
-      icon:'pi pi-fw pi-info-circle',
-      command: () => this.viewCardDialog = true
-    }
+      label: 'View',
+      icon: 'pi pi-fw pi-info-circle',
+      command: () => (this.viewCardDialog = true),
+    },
   ];
 
   private collection: ICountCard[] = [];
@@ -60,30 +72,40 @@ export class CardListComponent implements OnInit, OnDestroy {
    * Check if Collection Mode is turned on.
    */
   storeSubscriptions() {
-    this.store.select(selectSite).pipe(takeUntil(this.onDestroy$))
-      .subscribe(site => this.deckBuilder = site === SITES.DeckBuilder)
+    this.store
+      .select(selectSite)
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((site) => (this.deckBuilder = site === SITES.DeckBuilder));
 
-    this.store.select(selectFilteredCards).pipe(takeUntil(this.onDestroy$))
+    this.store
+      .select(selectFilteredCards)
+      .pipe(takeUntil(this.onDestroy$))
       .subscribe((cards) => {
         this.cards = cards;
         this.cardsToShow = this.cards.slice(0, this.showCount);
       });
 
-    this.store.select(selectCollection).pipe(takeUntil(this.onDestroy$))
+    this.store
+      .select(selectCollection)
+      .pipe(takeUntil(this.onDestroy$))
       .subscribe((collection) => {
-        this.collection = collection
+        this.collection = collection;
       });
 
-    this.store.select(selectCollectionMode).pipe(takeUntil(this.onDestroy$))
-      .subscribe((collectionMode) => this.collectionMode = collectionMode);
+    this.store
+      .select(selectCollectionMode)
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((collectionMode) => (this.collectionMode = collectionMode));
   }
 
   /**
    * Search the user collection for the number and return the count
    */
   getCount(cardId: string): number {
-    if(this.collection === null) {return 0}
-    return this.collection.find(value => value.id === cardId)?.count ?? 0;
+    if (this.collection === null) {
+      return 0;
+    }
+    return this.collection.find((value) => value.id === cardId)?.count ?? 0;
   }
 
   /**
@@ -98,7 +120,9 @@ export class CardListComponent implements OnInit, OnDestroy {
    * Check if there are more Cards to show, which aren't shown right now
    */
   moreCardsThere(): boolean {
-    return this.cards.length > this.cardsToShow.length && this.cardsToShow.length > 0;
+    return (
+      this.cards.length > this.cardsToShow.length && this.cardsToShow.length > 0
+    );
   }
 
   /**
@@ -114,7 +138,7 @@ export class CardListComponent implements OnInit, OnDestroy {
   addToDeck(card: ICard) {
     if (this.deckBuilder) {
       console.log('Add Card to Deck: ' + card.id);
-      this.onCardClick.emit(card.cardNumber)
+      this.onCardClick.emit(card.cardNumber);
     }
   }
 }

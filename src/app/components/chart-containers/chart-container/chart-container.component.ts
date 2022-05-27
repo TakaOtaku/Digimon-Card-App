@@ -1,21 +1,20 @@
-import {Component, Input} from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'digimon-chart-container',
   templateUrl: './chart-container.component.html',
-  styleUrls: ['./chart-container.component.scss']
+  styleUrls: ['./chart-container.component.scss'],
 })
 export class ChartContainerComponent {
   @Input() public label: string;
   @Input() public fill: number[];
   @Input() public fillPercent?: string = '3.333';
 
-
-  constructor() { }
+  constructor() {}
 
   getFillCount(): number {
     let num = 0;
-    this.fill.forEach((number) => num += number)
+    this.fill.forEach((number) => (num += number));
     return num;
   }
 }

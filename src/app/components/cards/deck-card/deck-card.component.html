@@ -2,67 +2,130 @@
 <ng-template *ngIf="!fullCards" [ngTemplateOutlet]="smallCard"></ng-template>
 
 <ng-template #fullCard>
-  <div class="inline-flex relative p-1">
+	<div class="relative flex flex-col m-1">
+		<div
+			class="group absolute z-[101] flex h-full w-full flex-col rounded xl:opacity-0 xl:hover:opacity-100"
+			(click)="showCardDetails()" (contextmenu)="showCardDetails()"
+		>
+      <div class="hidden xl:block h-1/2 w-full rounded bg-sky-700 bg-opacity-30">
+        <div class="absolute top-2">
+          <button *ngIf="edit" (click)="addCardCount($event)" type="button"
+                  class="bg-sky-700 z-[101] mx-auto flex h-12 w-12 rounded border border-black hidden group-hover:block"
+                  [ngClass]="{'btn-center': bigCards, 'btn-center-2': !bigCards}">
+            <span class="text-4xl font-black text-white text-shadow">
+              +
+            </span>
+          </button>
+        </div>
+      </div>
+      <div class="hidden xl:block h-1/2 w-full rounded bg-red-500 bg-opacity-30">
+        <div class="absolute bottom-2">
+          <button *ngIf="edit" (click)="reduceCardCount($event)" type="button"
+                  class="bg-sky-700 z-[101] mx-auto flex h-12 w-12 rounded border border-black hidden group-hover:block"
+                  [ngClass]="{'btn-center': bigCards, 'btn-center-2': !bigCards}">
+            <span class="text-4xl font-black text-white text-shadow">
+              -
+            </span>
+          </button>
+        </div>
+      </div>
+		</div>
 
-    <div class="group flex flex-col absolute w-full h-full z-[101] rounded-lg lg:hover:bg-slate-500 lg:hover:bg-opacity-50"
-         (click)="showCardDetails()" (contextmenu)="showCardDetails()">
-      <button (click)="addCardCount($event)"
-        *ngIf="edit" pButton pRipple type="button" icon="pi pi-plus"
-        class="hidden group-hover:block z-[101] p-button-rounded rounded-full h-9 w-9 flex items-center justify-center absolute mx-auto top-2 lg:right-8"
-        ></button>
-      <button (click)="reduceCardCount($event)"
-        *ngIf="edit" pButton pRipple type="button" icon="pi pi-minus"
-        class="hidden group-hover:block z-[101] p-button-rounded rounded-full h-9 w-9 flex items-center justify-center absolute mx-auto lg:bottom-4 lg:right-8"
-        ></button>
+		<img
+			[src]="card.cardImage"
+			alt="Digimon Card"
+			class="rounded border-2 border-black group z-50"
+			[ngClass]="{
+				'm-auto': fullCards,
+				'w-[35vmin] md:w-[16vmin] md:w-[13vmin] lg:w-[10vmin]': !bigCards
+			}"
+		/>
 
-      <button (click)="addCardCount($event)"
-              *ngIf="edit" pButton pRipple type="button" icon="pi pi-plus"
-              class="lg:hidden z-[101] p-button-rounded rounded-full h-9 w-9 flex items-center justify-center absolute mx-auto top-2 right-2.5"
-      ></button>
-      <button (click)="reduceCardCount($event)"
-              *ngIf="edit" pButton pRipple type="button" icon="pi pi-minus"
-              class="lg:hidden z-[101] p-button-rounded rounded-full h-9 w-9 flex items-center justify-center absolute mx-auto top-2 left-2"
-      ></button>
+    <div class="xl:hidden h-1/2 w-full rounded flex flex-row">
+      <button *ngIf="edit" (click)="addCardCount($event)" type="button"
+              class="bg-sky-700 z-[101] flex h-12 w-1/2 rounded-l border border-black">
+        <span class="text-4xl font-black text-white text-shadow mx-auto">
+          +
+        </span>
+      </button>
+
+      <button *ngIf="edit" (click)="reduceCardCount($event)" type="button"
+              class="bg-sky-700 z-[101] flex h-12 w-1/2 rounded-r border border-black">
+        <span class="text-4xl font-black text-white text-shadow mx-auto">
+          -
+        </span>
+      </button>
     </div>
 
-    <img [src]="card.cardImage" alt="Digimon Card" class="group card-image z-50"
-         [ngClass]="{
-          'card' : fullCards,
-          'm-auto': fullCards,
-          'w-[35vmin] md:w-[16vmin] md:w-[13vmin] lg:w-[10vmin]': !bigCards,
-          'w-[40vmin]': !bigCards
-        }">
+		<span
+			class="text-shadow-white absolute bottom-14 xl:bottom-1 right-1 z-[100] px-2 font-black text-orange-500 text-3xl sm:text-4xl lg:text-5xl"
+		>
+			<span class="pr-1 text-sky-700">x</span>{{ card.count }}
+		</span>
 
-    <span class="absolute z-[100] bottom-1 right-1 text-orange-500 font-black px-2 text-shadow-white" [ngClass]="{'text-3xl': !bigCards, ' text-6xl': bigCards}">
-      <span class="text-sky-700 pr-1">x</span>{{card.count}}
-    </span>
-
-    <p *ngIf="missingCards" class="absolute z-[100] font-bold text-6xl text-red text-black-outline missing">
-      {{(cardHave ?? 0) - card.count > 0 ? 0 : (cardHave ?? 0) - card.count}}
-    </p>
-  </div>
+		<p *ngIf="missingCards" class="text-red text-black-outline missing absolute z-[100] text-6xl font-bold">
+			{{ (cardHave ?? 0) - card.count > 0 ? 0 : (cardHave ?? 0) - card.count }}
+		</p>
+	</div>
 </ng-template>
 
 <ng-template #smallCard>
-  <div class="inline-flex align-center h-[30px] my-1 ml-2">
-    <button *ngIf="edit" pButton pRipple type="button" icon="pi pi-plus" class="p-button-outlined p-button-sm" (click)="addCardCount()"></button>
-    <span class="primary-color font-bolder text-3xl px-2">x{{card.count}}</span>
-    <button *ngIf="edit" pButton pRipple type="button" icon="pi pi-minus" class="p-button-outlined p-button-sm" (click)="reduceCardCount()"></button>
+	<div class="align-center my-1 ml-2 inline-flex h-[30px]">
+		<button
+			*ngIf="edit"
+			pButton
+			pRipple
+			type="button"
+			icon="pi pi-plus"
+			class="p-button-outlined p-button-sm"
+			(click)="addCardCount()"
+		></button>
+		<span class="primary-color font-bolder px-2 text-3xl">x{{ card.count }}</span>
+		<button
+			*ngIf="edit"
+			pButton
+			pRipple
+			type="button"
+			icon="pi pi-minus"
+			class="p-button-outlined p-button-sm"
+			(click)="reduceCardCount()"
+		></button>
 
-    <div class="inline-flex ml-1 border-2 border-black rounded-l-2xl min-w-[300px] w-[300px] max-w-[300px] text-xs" (click)="showCardDetails()" (contextmenu)="showCardDetails()"
-         [ngStyle]="{'background-color': colorMap.get(completeCard.color)}">
-      <div *ngIf="completeCard.cardLv === 'Lv.2'" class="px-5">
-        <div class="egg mt-[4px]"></div>
-      </div>
-      <div *ngIf="completeCard.cardLv !== 'Lv.2'" class="rounded-full leading-6 self-center px-3 h-full bg-sky-700 text-white text-shadow font-semibold">{{completeCard.playCost}}</div>
-      <div *ngIf="completeCard.cardType === 'Digimon'" class="self-center px-3 text-white text-shadow font-semibold">{{transformDCost(completeCard.digivolveCost1)}}</div>
-      <div *ngIf="completeCard.cardType === 'Tamer'" class="self-center px-3 text-white text-shadow font-semibold">Tamer</div>
-      <div *ngIf="completeCard.cardType === 'Option'" class="self-center px-3 text-white text-shadow font-semibold">Option</div>
-      <div class="self-center px-1 h-full bg-black text-white leading-6 font-bold z-10">{{completeCard.cardLv}}</div>
-      <div class="bottom-top-split"></div>
-      <div class="self-center text-white text-shadow text-md truncate text-center font-semibold">{{completeCard.name}}</div>
-      <div  class="ml-auto top-bottom-split"></div>
-      <div class="self-center px-1 h-full bg-black  leading-6 font-bold text-white text-xs truncate">{{completeCard.cardNumber}}</div>
-    </div>
-  </div>
+		<div
+			class="ml-1 inline-flex w-[300px] min-w-[300px] max-w-[300px] rounded-l-2xl border-2 border-black text-xs"
+			(click)="showCardDetails()"
+			(contextmenu)="showCardDetails()"
+			[ngStyle]="{ 'background-color': colorMap.get(completeCard.color) }"
+		>
+			<div *ngIf="completeCard.cardLv === 'Lv.2'" class="px-5">
+				<div class="egg mt-[4px]"></div>
+			</div>
+			<div
+				*ngIf="completeCard.cardLv !== 'Lv.2'"
+				class="text-shadow h-full self-center rounded-full bg-sky-700 px-3 font-semibold leading-6 text-white"
+			>
+				{{ completeCard.playCost }}
+			</div>
+			<div *ngIf="completeCard.cardType === 'Digimon'" class="text-shadow self-center px-3 font-semibold text-white">
+				{{ transformDCost(completeCard.digivolveCost1) }}
+			</div>
+			<div *ngIf="completeCard.cardType === 'Tamer'" class="text-shadow self-center px-3 font-semibold text-white">
+				Tamer
+			</div>
+			<div *ngIf="completeCard.cardType === 'Option'" class="text-shadow self-center px-3 font-semibold text-white">
+				Option
+			</div>
+			<div class="z-10 h-full self-center bg-black px-1 font-bold leading-6 text-white">
+				{{ completeCard.cardLv }}
+			</div>
+			<div class="bottom-top-split"></div>
+			<div class="text-shadow text-md self-center truncate text-center font-semibold text-white">
+				{{ completeCard.name }}
+			</div>
+			<div class="top-bottom-split ml-auto"></div>
+			<div class="h-full self-center truncate bg-black px-1 text-xs font-bold leading-6 text-white">
+				{{ completeCard.cardNumber }}
+			</div>
+		</div>
+	</div>
 </ng-template>

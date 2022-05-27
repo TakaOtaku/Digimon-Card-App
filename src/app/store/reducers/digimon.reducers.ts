@@ -71,8 +71,8 @@ export const emptyFilter = {
 };
 
 export const initialState: IDigimonState = {
-  deck: emptyDeck,
-  site: 0,
+  deck: fullDeck,
+  site: 1,
   dialogs: {
     exportDeck: { show: false, deck: emptyDeck },
     importDeck: { show: false },

@@ -15,7 +15,6 @@ export interface IFilter {
   illustratorFilter: string[];
   specialRequirementsFilter: string[];
   blockFilter: string[];
-
   colorFilter: string[];
   cardTypeFilter: string[];
 }

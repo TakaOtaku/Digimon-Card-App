@@ -1,0 +1,26 @@
+<div class="surface-ground flex pb-2">
+	<div class="inline-flex w-full justify-center">
+		<span class="p-input-icon-left" [ngStyle]="{ display: 'inline-flex' }">
+			<i class="pi pi-search"></i>
+			<input type="text" pInputText [formControl]="searchFilter" placeholder="Search" class="w-full" />
+		</span>
+
+		<button
+			(click)="this.display = true"
+			pButton
+			type="button"
+			icon="pi pi-filter-fill"
+			[ngClass]="{ 'xl:hidden': !compact }"
+			label="Filter"
+		></button>
+	</div>
+</div>
+
+<p-dialog
+	header="Filter and Sort"
+	[(visible)]="display"
+	styleClass="w-[95vw] h-[95vh] surface-ground"
+	[baseZIndex]="10000"
+>
+	<digimon-filter-side-box [showColors]="compact"></digimon-filter-side-box>
+</p-dialog>

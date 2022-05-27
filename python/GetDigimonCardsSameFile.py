@@ -158,9 +158,10 @@ for url in urls:
 
         imageURL = 'https://en.digimoncard.com' + image['src'][2:]  ### Change URL depending on if you want Japanese Cards or English Cards
         imageSave = imageURL.rsplit('/', 1)[-1]
-        urllib.request.urlretrieve(imageURL, imageSave)  ##### Comment IN/OUT if you want to get the pngs.
+        #urllib.request.urlretrieve(imageURL, imageSave)  ##### Comment IN/OUT if you want to get the pngs.
         digimoncard['cardImage'] = 'assets/images/cards/jap/' + imageSave.replace('.png', '.jpg')  ### Change URL depending on if you want Japanese Cards or English Cards
         if '_P' in imageSave:
+            urllib.request.urlretrieve(imageURL, imageSave)
             digimoncard['version'] = 'AA'
             if cardWithImage.find("div", class_="cardParallel"):
                 digimoncard['version'] = 'AA'

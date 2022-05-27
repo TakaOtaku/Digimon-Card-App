@@ -1,0 +1,21 @@
+<p-sidebar [(visible)]="sidebar" [fullScreen]="true" position="right" styleClass="p-sidebar-lg">
+  <div class="h-[calc(100vh-58px)]">
+    <div class="h-full w-full">
+      <digimon-filter-and-search [compact]="true" class="w-100"></digimon-filter-and-search>
+      <digimon-card-list
+        (onCardClick)="onCardClick($event)"
+        [biggerCards]="true"
+        [compact]="true"
+        [showCount]="30"
+      ></digimon-card-list>
+    </div>
+  </div>
+</p-sidebar>
+
+<p-button
+  (click)="sidebar = true"
+  class="primary-background p-button-sm mt-1"
+  icon="pi pi-plus"
+  label="Card-List"
+  type="text"
+></p-button>

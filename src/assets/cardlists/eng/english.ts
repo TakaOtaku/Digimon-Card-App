@@ -1,7 +1,6 @@
-import {ICard} from "../../../models";
+import { ICard } from '../../../models';
 
 import P from './P.json';
-
 
 import BT1 from './BT1.json';
 import BT2 from './BT2.json';
@@ -48,5 +47,5 @@ export const englishCards: ICard[] = [
   ...ST7,
   ...ST8,
   ...ST9,
-  ...ST10
-]
+  ...ST10,
+];

@@ -1,21 +1,35 @@
 <div class="flex flex-wrap justify-center overflow-hidden">
-  <h1 *ngIf="cardsToShow.length === 0" class="primary-color my-10 text-5xl text-bold">No cards found!</h1>
+	<h1 *ngIf="cardsToShow.length === 0" class="primary-color text-bold my-10 text-5xl">No cards found!</h1>
 
-  <div #cardDiv *ngFor="let card of cardsToShow" class="m-1">
-    <digimon-full-card class="transition scale-95"
-      (click)="addToDeck(card)" [card]="card" [compact]="compact" [collectionMode]="collectionMode && !deckBuilder"
-                       [count]="getCount(card.id)" [deckBuilder]="deckBuilder" [biggerCards]="biggerCards">
-    </digimon-full-card>
-  </div>
+	<div #cardDiv *ngFor="let card of cardsToShow" class="m-1">
+		<digimon-full-card
+			class="scale-95 transition"
+			(click)="addToDeck(card)"
+			[card]="card"
+			[compact]="compact"
+			[collectionMode]="collectionMode && !deckBuilder"
+			[count]="getCount(card.id)"
+		>
+		</digimon-full-card>
+	</div>
 
-  <button pButton (click)="showMore()" *ngIf="moreCardsThere()" class="basis-full show-more mx-2" label="Show more..."></button>
+	<button
+		pButton
+		(click)="showMore()"
+		*ngIf="moreCardsThere()"
+		class="show-more mx-2 basis-full"
+		label="Show more..."
+	></button>
 
-  <div class="flex flex-col w-full">
-    <span class="font-bold primary-color w-full text-center mt-2">Credits for the Pre-Release Cards go to <a target="_blank" href="https://digimoncardgame.fandom.com/">https://digimoncardgame.fandom.com/</a> and all the wonderful people who maintain it!</span>
-    <span class="font-bold primary-color w-full text-center mt-2">Please support the official releases! Akiyoshi Hongo, Bandai, and Toei Animation respectively own Digimon images, copyrights and trademarks.</span>
-  </div>
+	<div class="flex w-full flex-col">
+		<span class="primary-color mt-2 w-full text-center font-bold"
+			>Credits for the Pre-Release Cards go to
+			<a target="_blank" href="https://digimoncardgame.fandom.com/">https://digimoncardgame.fandom.com/</a>
+			and all the wonderful people who maintain it!</span
+		>
+		<span class="primary-color mt-2 w-full text-center font-bold"
+			>Please support the official releases! Akiyoshi Hongo, Bandai, and Toei Animation respectively own Digimon images,
+			copyrights and trademarks.</span
+		>
+	</div>
 </div>
-
-
-
-

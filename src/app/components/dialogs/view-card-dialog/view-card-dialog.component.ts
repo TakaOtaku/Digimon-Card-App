@@ -1,10 +1,18 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
-import {ColorMap, ICard} from "../../../../models";
-import {formatId} from "../../../functions/digimon-card.functions";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
+import { ColorMap, ICard } from '../../../../models';
+import { formatId } from '../../../functions/digimon-card.functions';
 
 @Component({
   selector: 'digimon-view-card-dialog',
-  templateUrl: './view-card-dialog.component.html'
+  templateUrl: './view-card-dialog.component.html',
 })
 export class ViewCardDialogComponent implements OnInit, OnChanges {
   @Input() show: boolean = false;
@@ -27,17 +35,17 @@ export class ViewCardDialogComponent implements OnInit, OnChanges {
   versionMap = new Map<string, string>([
     ['Normal', 'Normal'],
     ['AA', 'Alternative Art'],
-    ['Stamp', 'Stamped']
+    ['Stamp', 'Stamped'],
   ]);
 
-  type: string ;
+  type: string;
 
   ngOnInit() {
     this.setupView(this.card);
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    if(changes && changes['card']) {
+    if (changes && changes['card']) {
       const card: ICard = changes['card'].currentValue;
       this.setupView(card);
     }
@@ -57,25 +65,30 @@ export class ViewCardDialogComponent implements OnInit, OnChanges {
     let japRegExp = new RegExp('\\bjap\\b');
     let preReleaseRegExp = new RegExp('\\bpre-release\\b');
 
-    if(engRegExp.test(cardSRC)) {
-      return cardSRC.replace(engRegExp, 'eng/png')
-        .replace(new RegExp('\\b.jpg\\b'), '.png')
-    } else if(japRegExp.test(cardSRC)) {
-      return cardSRC.replace(japRegExp, 'jap/png')
-        .replace(new RegExp('\\b.jpg\\b'), '.png')
+    if (engRegExp.test(cardSRC)) {
+      return cardSRC
+        .replace(engRegExp, 'eng/png')
+        .replace(new RegExp('\\b.jpg\\b'), '.png');
+    } else if (japRegExp.test(cardSRC)) {
+      return cardSRC
+        .replace(japRegExp, 'jap/png')
+        .replace(new RegExp('\\b.jpg\\b'), '.png');
     } else {
-      return cardSRC.replace(preReleaseRegExp, 'pre-release/png')
-        .replace(new RegExp('\\b.jpg\\b'), '.png')
+      return cardSRC
+        .replace(preReleaseRegExp, 'pre-release/png')
+        .replace(new RegExp('\\b.jpg\\b'), '.png');
     }
   }
 
   openWiki() {
-    const wikiLink = 'https://digimoncardgame.fandom.com/wiki/'+formatId(this.card.id);
+    const wikiLink =
+      'https://digimoncardgame.fandom.com/wiki/' + formatId(this.card.id);
     window.open(wikiLink, '_blank');
   }
 
   openWikiIllustrator() {
-    const wikiLink = 'https://digimoncardgame.fandom.com/wiki/'+this.card.illustrator;
+    const wikiLink =
+      'https://digimoncardgame.fandom.com/wiki/' + this.card.illustrator;
     window.open(wikiLink, '_blank');
   }
 }

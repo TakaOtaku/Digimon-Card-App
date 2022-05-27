@@ -52,7 +52,7 @@ export function filterCards(
   );
   filteredCards = applyRangeFilter(filteredCards, filter.dpFilter, 'dp');
 
-  filteredCards = applySortOrder(filteredCards, sort);
+  filteredCards = applySortOrder(filteredCards, sort, collection);
   return filteredCards;
 }
 
@@ -458,12 +458,22 @@ function applyRangeFilter(
   return returnArray;
 }
 
-function applySortOrder(cards: ICard[], sort: ISort): ICard[] {
+function applySortOrder(
+  cards: ICard[],
+  sort: ISort,
+  collection: ICountCard[]
+): ICard[] {
   const returnArray = [...new Set([...cards])];
   if (sort.sortBy.element === 'playCost' || sort.sortBy.element === 'dp') {
     return sort.ascOrder
       ? returnArray.sort(dynamicSortNumber(sort.sortBy.element))
       : returnArray.sort(dynamicSortNumber(`-${sort.sortBy.element}`));
+  } else if (sort.sortBy.element === 'count') {
+    return returnArray.sort(
+      (a, b) =>
+        (collection.find((card) => card.id === a.id)?.count ?? 0) -
+        (collection.find((card) => card.id === b.id)?.count ?? 0)
+    );
   }
   return sort.ascOrder
     ? returnArray.sort(dynamicSort(sort.sortBy.element))

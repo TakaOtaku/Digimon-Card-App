@@ -311,14 +311,14 @@ export const Illustrators: string[] = [
 
 export const Lvs: string[] = ['Lv.2', 'Lv.3', 'Lv.4', 'Lv.5', 'Lv.6', 'Lv.7'];
 
-export const Rarities: string[] = ["C", "U", "R", "SR", "SEC", "P"];
+export const Rarities: string[] = ['C', 'U', 'R', 'SR', 'SEC', 'P'];
 
-export const Versions: string[] = ["Normal", "AA", "Stamp", "Pre-Release"];
+export const Versions: string[] = ['Normal', 'AA', 'Stamp', 'Pre-Release'];
 
 export const SpecialRequirements: string[] = [
-  "Digivolve",
-  "DNA Digivolution",
-  "DigiXros"
+  'Digivolve',
+  'DNA Digivolution',
+  'DigiXros',
 ];
 
-export const Blocks: string[] = ["00", "01", "02"];
+export const Blocks: string[] = ['00', '01', '02'];

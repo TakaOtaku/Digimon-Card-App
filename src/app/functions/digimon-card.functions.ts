@@ -46,7 +46,7 @@ export function getPNG(cardSRC: string): string {
 export function setupAllDigimonCards(): ICard[] {
   const allCards: ICard[] = setupDigimonCards(CARDSET.Both);
 
-  allCards.sort(function(a, b) {
+  allCards.sort(function (a, b) {
     if (a.cardNumber < b.cardNumber) {
       return -1;
     }
@@ -103,7 +103,7 @@ export function setupDigimonCards(digimonSet: string): ICard[] {
     });
   }
 
-  allCards.sort(function(a, b) {
+  allCards.sort(function (a, b) {
     const aSet = a.cardNumber.split('-');
     const bSet = b.cardNumber.split('-');
     const aNumber: number = +aSet[1] >>> 0;

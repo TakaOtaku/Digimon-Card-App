@@ -1,15 +1,28 @@
-<p-dialog [(visible)]="show" [baseZIndex]="10000" [showHeader]="false" header="Collection Stats" styleClass="w-[95vw] lg:w-[70vw] xl:w-[60vw] h-[50vh] md:h-[65vh] lg:h-[80vh]">
-  <div class="inline-flex w-full my-5">
-    <h1 class="primary-color text-bolder text-xl">Collection Stats</h1>
-    <button (click)="this.onClose.next(false)" class="p-button-text ml-auto self-end" icon="pi pi-times" pButton pRipple type="button"></button>
-  </div>
+<p-dialog
+	[(visible)]="show"
+	[baseZIndex]="10000"
+	[showHeader]="false"
+	header="Collection Stats"
+	styleClass="w-[95vw] lg:w-[70vw] xl:w-[60vw] h-[50vh] md:h-[65vh] lg:h-[80vh]"
+>
+	<div class="my-5 inline-flex w-full">
+		<h1 class="primary-color text-bolder text-xl">Collection Stats</h1>
+		<button
+			(click)="this.onClose.next(false)"
+			class="p-button-text ml-auto self-end"
+			icon="pi pi-times"
+			pButton
+			pRipple
+			type="button"
+		></button>
+	</div>
 
-  <div [formGroup]="languageForm">
-    <p-checkbox class="ml-2" formControlName="english" label="English" name="language"></p-checkbox>
-    <p-checkbox class="ml-2" formControlName="japanese" label="Japanese" name="language"></p-checkbox>
-  </div>
+	<div [formGroup]="languageForm">
+		<p-checkbox class="ml-2" formControlName="english" label="English" name="language"></p-checkbox>
+		<p-checkbox class="ml-2" formControlName="japanese" label="Japanese" name="language"></p-checkbox>
+	</div>
 
-  <!--div [formGroup]="versionForm">
+	<!--div [formGroup]="versionForm">
     <p-checkbox class="ml-2" formControlName="normal" label="Normal" name="version" value="Normal"></p-checkbox>
     <p-checkbox class="ml-2" formControlName="aa" label="AA" name="version" value="AA"></p-checkbox>
     <p-checkbox class="ml-2" formControlName="stamped" label="Stamped" name="version" value="Stamped"></p-checkbox>
@@ -30,5 +43,5 @@
     </div>
   </div-->
 
-  <p-chart [data]="collectionData" [options]="chartOptions" type="bar"></p-chart>
+	<p-chart [data]="collectionData" [options]="chartOptions" type="bar"></p-chart>
 </p-dialog>

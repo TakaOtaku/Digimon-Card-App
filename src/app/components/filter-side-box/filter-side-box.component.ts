@@ -1,14 +1,17 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { MessageService } from 'primeng/api';
 import { Subject, takeUntil } from 'rxjs';
 import { IFilter } from '../../../models';
+import { CARDSET } from '../../../models/card-set.enum';
 import {
+  changeCardSets,
   changeCollectionMode,
   changeFilter,
 } from '../../store/digimon.actions';
 import {
+  selectCardSet,
   selectCollectionMode,
   selectFilter,
 } from '../../store/digimon.selectors';
@@ -26,15 +29,17 @@ import {
   SpecialRequirements,
   Types,
   Versions,
-} from '../filter-box/filterData';
+} from './filterData';
 
 @Component({
   selector: 'digimon-filter-side-box',
   templateUrl: './filter-side-box.component.html',
   styleUrls: ['./filter-side-box.component.scss'],
 })
-export class FilterSideBoxComponent implements OnInit {
+export class FilterSideBoxComponent implements OnInit, OnDestroy {
   @Input() public showColors: boolean;
+
+  selectedCardSet = 'English';
 
   setFilter = new FormControl([]);
   rarityFilter = new FormControl([]);
@@ -82,6 +87,8 @@ export class FilterSideBoxComponent implements OnInit {
   illustrators = Illustrators;
   specialRequirements = SpecialRequirements;
   blocks = Blocks;
+
+  cardSet = CARDSET;
 
   collectionMode = false;
 
@@ -139,6 +146,17 @@ export class FilterSideBoxComponent implements OnInit {
       .subscribe((collectionMode) => {
         this.collectionMode = collectionMode;
       });
+
+    this.store
+      .select(selectCardSet)
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((set) => {
+        if (+set >>> 0) {
+          this.selectedCardSet = CARDSET.Both;
+        } else {
+          this.selectedCardSet = set;
+        }
+      });
   }
 
   ngOnDestroy() {
@@ -147,16 +165,9 @@ export class FilterSideBoxComponent implements OnInit {
 
   reset() {
     this.store.dispatch(changeFilter({ filter: emptyFilter }));
-  }
-
-  changeCM() {
-    this.store.dispatch(
-      changeCollectionMode({ collectionMode: !this.collectionMode })
-    );
     this.messageService.add({
       severity: 'info',
-      summary: 'Collection Mode',
-      detail: 'Collection Mode was changed!',
+      detail: 'All filter were reset.',
     });
   }
 
@@ -194,7 +205,55 @@ export class FilterSideBoxComponent implements OnInit {
     );
   }
 
-  colorChecked(color: string): boolean {
-    return this.colorFilter.value.find((value: string) => value === color);
+  setCardSet(cardSet: string) {
+    this.store.dispatch(changeCardSets({ cardSet }));
+  }
+
+  changeColor(color: string) {
+    let colors = [];
+    if (this.filter.colorFilter.includes(color)) {
+      colors = this.filter.colorFilter.filter((value) => value !== color);
+    } else {
+      colors = [...new Set(this.filter.colorFilter), color];
+    }
+
+    const filter: IFilter = { ...this.filter, colorFilter: colors };
+    this.store.dispatch(changeFilter({ filter }));
+  }
+
+  changeCardType(type: string) {
+    let types = [];
+    if (this.filter.cardTypeFilter.includes(type)) {
+      types = this.filter.cardTypeFilter.filter((value) => value !== type);
+    } else {
+      types = [...new Set(this.filter.cardTypeFilter), type];
+    }
+
+    const filter: IFilter = { ...this.filter, cardTypeFilter: types };
+    this.store.dispatch(changeFilter({ filter }));
+  }
+
+  changeRarity(rarity: string) {
+    let rarities = [];
+    if (this.filter.rarityFilter.includes(rarity)) {
+      rarities = this.filter.rarityFilter.filter((value) => value !== rarity);
+    } else {
+      rarities = [...new Set(this.filter.rarityFilter), rarity];
+    }
+
+    const filter: IFilter = { ...this.filter, rarityFilter: rarities };
+    this.store.dispatch(changeFilter({ filter }));
+  }
+
+  changeVersion(version: string) {
+    let versions = [];
+    if (this.filter.versionFilter.includes(version)) {
+      versions = this.filter.versionFilter.filter((value) => value !== version);
+    } else {
+      versions = [...new Set(this.filter.versionFilter), version];
+    }
+
+    const filter: IFilter = { ...this.filter, versionFilter: versions };
+    this.store.dispatch(changeFilter({ filter }));
   }
 }

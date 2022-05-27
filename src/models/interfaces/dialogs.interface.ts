@@ -1,5 +1,5 @@
-import {ICard} from "./card.interface";
-import {IDeck} from "./deck.interface";
+import { ICard } from './card.interface';
+import { IDeck } from './deck.interface';
 
 export interface IDialogs {
   exportDeck: IExportDeck;
@@ -26,6 +26,3 @@ export interface IViewCard {
   show: boolean;
   card: ICard;
 }
-
-
-
