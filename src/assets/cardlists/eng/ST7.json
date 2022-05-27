@@ -87,6 +87,35 @@
     "illustrator": "sasasi"
   },
   {
+    "id": "ST7-03_P1",
+    "name": "Guilmon",
+    "cardImage": "assets/images/cards/eng/ST7-03_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Virus",
+    "type": "Reptile",
+    "rarity": "SR",
+    "cardNumber": "ST7-03",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Your Turn] If your opponent has a level 6 or higher Digimon in play, this Digimon can digivolve into a [Gallantmon] in your hand for a memory cost of 4, ignoring its digivolution requirements.",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When an opponent's Digimon is deleted, trigger ＜Draw 1＞. (Draw 1 card from your deck.)",
+    "securityEffect": "-",
+    "notes": "TAMER’S EVOLUTION BOX2[PB-06]",
+    "color": "Red",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "illustrator": "kaz"
+  },
+  {
     "id": "ST7-04",
     "name": "Biyomon",
     "cardImage": "assets/images/cards/eng/ST7-04.jpg",
