@@ -4,18 +4,15 @@
       <digimon-filter-and-search [compact]="true" class="w-100"></digimon-filter-and-search>
       <digimon-card-list
         (onCardClick)="onCardClick($event)"
-        [biggerCards]="true"
-        [compact]="true"
-        [showCount]="30"
+        [showCount]="32"
       ></digimon-card-list>
     </div>
   </div>
 </p-sidebar>
 
-<p-button
+<button
   (click)="sidebar = true"
-  class="primary-background p-button-sm mt-1"
-  icon="pi pi-plus"
-  label="Card-List"
-  type="text"
-></p-button>
+  class="min-w-auto primary-background ml-2 mt-2 h-8 w-32 rounded p-2 text-xs font-semibold text-white"
+>
+  Card-List
+</button>

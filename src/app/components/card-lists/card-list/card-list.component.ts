@@ -24,27 +24,13 @@ import {
 })
 export class CardListComponent implements OnInit, OnDestroy {
   @Input() public showCount: number;
-  @Input() public compact: boolean;
-  @Input() public biggerCards?: boolean = false;
 
   @Output() onCardClick = new EventEmitter<string>();
-
-  deckBuilder = false;
 
   cards: ICard[] = [];
   cardsToShow: ICard[] = [];
 
   collectionMode = true;
-
-  viewCard: ICard = englishCards[0];
-  viewCardDialog = false;
-  cardContext = [
-    {
-      label: 'View',
-      icon: 'pi pi-fw pi-info-circle',
-      command: () => (this.viewCardDialog = true),
-    },
-  ];
 
   private collection: ICountCard[] = [];
 
@@ -72,11 +58,6 @@ export class CardListComponent implements OnInit, OnDestroy {
    * Check if Collection Mode is turned on.
    */
   storeSubscriptions() {
-    this.store
-      .select(selectSite)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((site) => (this.deckBuilder = site === SITES.DeckBuilder));
-
     this.store
       .select(selectFilteredCards)
       .pipe(takeUntil(this.onDestroy$))
@@ -126,19 +107,9 @@ export class CardListComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Set the currently viewed card to the one with the context menu
-   */
-  onContextMenu(card: ICard) {
-    this.viewCard = card;
-  }
-
-  /**
    * Only in DeckBuilder-Mode add the clicked card to the current Deck
    */
-  addToDeck(card: ICard) {
-    if (this.deckBuilder) {
-      console.log('Add Card to Deck: ' + card.id);
-      this.onCardClick.emit(card.cardNumber);
-    }
+  addToDeck(cardId: string) {
+    this.onCardClick.emit(cardId);
   }
 }

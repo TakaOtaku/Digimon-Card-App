@@ -25,6 +25,7 @@ import { ITag } from '../../../models/interfaces/tag.interface';
 import {
   compareIDs,
   deckIsValid,
+  sortColors,
 } from '../../functions/digimon-card.functions';
 import { AuthService } from '../../service/auth.service';
 import { DatabaseService } from '../../service/database.service';
@@ -103,21 +104,27 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
   onResize() {
     this.screenWidth = window.innerWidth;
     if (this.screenWidth < 768) {
-      this.showAccordionButtons = false;
       this.deckView = true;
       this.collectionView = false;
+
+      this.showStats = true;
+
+      this.showAccordionButtons = false;
     } else if (this.screenWidth >= 768 && this.screenWidth < 1024) {
-      this.deckView = false;
-      this.showStats = false;
+      this.deckView = true;
+      this.collectionView = false;
+
+      this.showStats = true;
+
+      this.showAccordionButtons = true;
     } else {
+      this.deckView = true;
+      this.collectionView = true;
+
+      this.showStats = true;
+
       this.showAccordionButtons = true;
     }
-  }
-
-  private static sortColors(colorA: string, colorB: string): number {
-    const a: number = ColorOrderMap.get(colorA) ?? 0;
-    const b: number = ColorOrderMap.get(colorB) ?? 0;
-    return a - b;
   }
 
   ngOnInit() {
@@ -189,21 +196,19 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
   share() {
     this.mapToDeck();
 
-    if (!this.deckIsValid(this.deck)) {
-      return;
+    if (this.deckIsValid(this.deck)) {
+      this.confirmationService.confirm({
+        message: 'You are about to share the deck. Are you sure?',
+        accept: () => {
+          this.db.shareDeck(this.deck, this.authService.userData);
+          this.messageService.add({
+            severity: 'success',
+            summary: 'Deck shared!',
+            detail: 'Deck was shared successfully!',
+          });
+        },
+      });
     }
-
-    this.confirmationService.confirm({
-      message: 'You are about to share the deck. Are you sure?',
-      accept: () => {
-        this.db.shareDeck(this.deck, this.authService.userData);
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Deck shared!',
-          detail: 'Deck was shared successfully!',
-        });
-      },
-    });
   }
 
   deckIsValid(deck: IDeck): boolean {
@@ -214,6 +219,7 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
         summary: 'Deck is not ready!',
         detail: error,
       });
+      return false;
     }
     return true;
   }
@@ -549,11 +555,7 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
   private colorSort() {
     const eggs = this.mainDeck
       .filter((card) => card.cardType === 'Digi-Egg')
-      .sort(
-        (a, b) =>
-          DeckBuilderComponent.sortColors(a.color, b.color) ||
-          a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
 
     const red = this.mainDeck
       .filter((card) => card.color === 'Red' && card.cardType === 'Digimon')
@@ -600,19 +602,11 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
 
     const tamer = this.mainDeck
       .filter((card) => card.cardType === 'Tamer')
-      .sort(
-        (a, b) =>
-          DeckBuilderComponent.sortColors(a.color, b.color) ||
-          a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
 
     const options = this.mainDeck
       .filter((card) => card.cardType === 'Option')
-      .sort(
-        (a, b) =>
-          DeckBuilderComponent.sortColors(a.color, b.color) ||
-          a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
 
     this.mainDeck = [
       ...new Set([
@@ -634,71 +628,35 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
   private levelSort() {
     const eggs = this.mainDeck
       .filter((card) => card.cardType === 'Digi-Egg')
-      .sort(
-        (a, b) =>
-          DeckBuilderComponent.sortColors(a.color, b.color) ||
-          a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
 
     const lv0 = this.mainDeck
       .filter((card) => card.cardLv === '' && card.cardType === 'Digimon')
-      .sort(
-        (a, b) =>
-          DeckBuilderComponent.sortColors(a.color, b.color) ||
-          a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
 
     const lv3 = this.mainDeck
       .filter((card) => card.cardLv === 'Lv.3')
-      .sort(
-        (a, b) =>
-          DeckBuilderComponent.sortColors(a.color, b.color) ||
-          a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
     const lv4 = this.mainDeck
       .filter((card) => card.cardLv === 'Lv.4')
-      .sort(
-        (a, b) =>
-          DeckBuilderComponent.sortColors(a.color, b.color) ||
-          a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
     const lv5 = this.mainDeck
       .filter((card) => card.cardLv === 'Lv.5')
-      .sort(
-        (a, b) =>
-          DeckBuilderComponent.sortColors(a.color, b.color) ||
-          a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
     const lv6 = this.mainDeck
       .filter((card) => card.cardLv === 'Lv.6')
-      .sort(
-        (a, b) =>
-          DeckBuilderComponent.sortColors(a.color, b.color) ||
-          a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
     const lv7 = this.mainDeck
       .filter((card) => card.cardLv === 'Lv.7')
-      .sort(
-        (a, b) =>
-          DeckBuilderComponent.sortColors(a.color, b.color) ||
-          a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
 
     const tamer = this.mainDeck
       .filter((card) => card.cardType === 'Tamer')
-      .sort(
-        (a, b) =>
-          DeckBuilderComponent.sortColors(a.color, b.color) ||
-          a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
 
     const options = this.mainDeck
       .filter((card) => card.cardType === 'Option')
-      .sort(
-        (a, b) =>
-          DeckBuilderComponent.sortColors(a.color, b.color) ||
-          a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
 
     this.mainDeck = [
       ...new Set([

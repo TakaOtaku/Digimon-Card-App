@@ -20,7 +20,7 @@
 
 	<span
 		*ngIf="deckBuilder && countInDeck !== 0"
-		class="text-shadow-white absolute right-1 z-[100] px-2 text-3xl font-black text-orange-500" [ngClass]="{ 'bottom-1': !collectionMode, ' bottom-10' : collectionMode }"
+		class="text-shadow-white absolute right-1 z-[100] px-1 text-3xl font-black text-orange-500" [ngClass]="{ 'bottom-1': !collectionMode, ' bottom-10' : collectionMode }"
 	>
 		{{ countInDeck }}<span class="pr-1 text-sky-700">/</span
 		>{{ card.cardNumber === "BT6-085" || card.cardNumber === "EX2-046" ? 50 : 4 }}

@@ -1,5 +1,5 @@
-<div class="m-1 h-full w-10">
-	<p class="primary-color text-center text-lg font-bold">
+<div class="m-1 h-full w-8">
+	<p class="primary-color text-center md:text-lg font-bold">
 		{{ getFillCount() }}
 	</p>
 	<div class="container">
@@ -12,5 +12,5 @@
 		<div class="Blue w-full" [ngStyle]="{ height: 'calc(' + fill[1] + ' * ' + fillPercent + '%)' }"></div>
 		<div class="Red w-full" [ngStyle]="{ height: 'calc(' + fill[0] + ' * ' + fillPercent + '%)' }"></div>
 	</div>
-	<p class="primary-color text-center text-lg font-bold">{{ label }}</p>
+	<p class="primary-color text-center md:text-lg font-bold">{{ label }}</p>
 </div>

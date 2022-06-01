@@ -1,7 +1,7 @@
 import { englishCards } from '../../assets/cardlists/eng/english';
 import { japaneseCards } from '../../assets/cardlists/jap/japanese';
 import preReleaseJSON from '../../assets/cardlists/preRelease.json';
-import { ICard, IDeck } from '../../models';
+import { ColorOrderMap, ICard, IDeck } from '../../models';
 import { CARDSET } from '../../models/card-set.enum';
 
 export function compareIDs(idA: string, idB: string): boolean {
@@ -111,4 +111,10 @@ export function setupDigimonCards(digimonSet: string): ICard[] {
     return aSet[0].localeCompare(bSet[0]) || aNumber - bNumber;
   });
   return allCards;
+}
+
+export function sortColors(colorA: string, colorB: string): number {
+  const a: number = ColorOrderMap.get(colorA) ?? 0;
+  const b: number = ColorOrderMap.get(colorB) ?? 0;
+  return a - b;
 }

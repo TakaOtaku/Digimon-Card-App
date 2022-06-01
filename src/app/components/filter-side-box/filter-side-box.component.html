@@ -14,21 +14,21 @@
 			<button
 				(click)="setCardSet(cardSet.English)"
 				[ngClass]="{ 'primary-border': selectedCardSet === cardSet.English }"
-				class="min-w-auto primary-background ml-2 mt-2 h-8 w-20 rounded p-2 text-xs font-semibold text-white"
+				class="min-w-auto primary-background mt-2 h-8 w-20 border-r-2 border-slate-200 rounded-l p-2 text-xs font-semibold text-white"
 			>
 				English
 			</button>
 			<button
 				(click)="setCardSet(cardSet.Japanese)"
 				[ngClass]="{ 'primary-border': selectedCardSet === cardSet.Japanese }"
-				class="min-w-auto primary-background ml-2 mt-2 h-8 w-20 rounded p-2 text-xs font-semibold text-white"
+				class="min-w-auto primary-background mt-2 h-8 w-20 border-slate-200 p-2 text-xs font-semibold text-white"
 			>
 				日本語
 			</button>
 			<button
 				(click)="setCardSet(cardSet.Both)"
 				[ngClass]="{ 'primary-border': selectedCardSet === cardSet.Both }"
-				class="min-w-auto primary-background ml-2 mt-2 h-8 w-20 rounded p-2 text-xs font-semibold text-white"
+				class="min-w-auto primary-background  mt-2 h-8 w-20 border-l-2 border-slate-200 rounded-r p-2 text-xs font-semibold text-white"
 			>
 				Both
 			</button>
@@ -115,34 +115,34 @@
 				[ngClass]="{
 					'primary-border': cardTypeFilter.value.includes('Digi-Egg')
 				}"
-				class="min-w-auto primary-background ml-1 mt-2 h-8 w-20 rounded p-1 text-xs font-semibold text-white"
+				class="min-w-auto primary-background mt-2 h-8 w-20 border-r-2 border-slate-200 rounded-l p-1 text-xs font-semibold text-white"
 			>
-				Digi-Eggs
+				Digi-Egg
 			</button>
 			<button
 				(click)="changeCardType('Digimon')"
 				[ngClass]="{
 					'primary-border': cardTypeFilter.value.includes('Digimon')
 				}"
-				class="min-w-auto primary-background ml-1 mt-2 h-8 w-20 rounded p-1 text-xs font-semibold text-white"
+				class="min-w-auto primary-background mt-2 h-8 w-20 border-r-2 border-slate-200 p-1 text-xs font-semibold text-white"
 			>
 				Digimon
 			</button>
 			<button
 				(click)="changeCardType('Tamer')"
 				[ngClass]="{ 'primary-border': cardTypeFilter.value.includes('Tamer') }"
-				class="min-w-auto primary-background ml-1 mt-2 h-8 w-20 rounded p-1 text-xs font-semibold text-white"
+				class="min-w-auto primary-background mt-2 h-8 w-20 border-r-2 border-slate-200 p-1 text-xs font-semibold text-white"
 			>
-				Tamers
+				Tamer
 			</button>
 			<button
 				(click)="changeCardType('Option')"
 				[ngClass]="{
 					'primary-border': cardTypeFilter.value.includes('Option')
 				}"
-				class="min-w-auto primary-background ml-1 mt-2 h-8 w-20 rounded p-1 text-xs font-semibold text-white"
+				class="min-w-auto primary-background mt-2 h-8 w-20 border-slate-200 rounded-r p-1 text-xs font-semibold text-white"
 			>
-				Options
+				Option
 			</button>
 		</div>
 	</div>
@@ -210,35 +210,35 @@
 			<button
 				(click)="changeRarity('C')"
 				[ngClass]="{ 'primary-border': rarityFilter.value.includes('C') }"
-				class="min-w-auto primary-background ml-1 mt-2 h-8 w-10 rounded p-1 text-xs font-semibold text-white"
+				class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 rounded-l p-1 text-xs font-semibold text-white"
 			>
 				C
 			</button>
 			<button
 				(click)="changeRarity('UC')"
 				[ngClass]="{ 'primary-border': rarityFilter.value.includes('UC') }"
-				class="min-w-auto primary-background ml-1 mt-2 h-8 w-10 rounded p-1 text-xs font-semibold text-white"
+				class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 p-1 text-xs font-semibold text-white"
 			>
 				UC
 			</button>
 			<button
 				(click)="changeRarity('R')"
 				[ngClass]="{ 'primary-border': rarityFilter.value.includes('R') }"
-				class="min-w-auto primary-background ml-1 mt-2 h-8 w-10 rounded p-1 text-xs font-semibold text-white"
+				class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 p-1 text-xs font-semibold text-white"
 			>
 				R
 			</button>
 			<button
 				(click)="changeRarity('SR')"
 				[ngClass]="{ 'primary-border': rarityFilter.value.includes('SR') }"
-				class="min-w-auto primary-background ml-1 mt-2 h-8 w-10 rounded p-1 text-xs font-semibold text-white"
+				class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 p-1 text-xs font-semibold text-white"
 			>
 				SR
 			</button>
 			<button
 				(click)="changeRarity('SEC')"
 				[ngClass]="{ 'primary-border': rarityFilter.value.includes('SEC') }"
-				class="min-w-auto primary-background ml-1 mt-2 h-8 w-10 rounded p-1 text-xs font-semibold text-white"
+				class="min-w-auto primary-background mt-2 h-8 w-10 border-slate-200 rounded-r p-1 text-xs font-semibold text-white"
 			>
 				SEC
 			</button>
@@ -252,14 +252,14 @@
 			<button
 				(click)="changeVersion('Normal')"
 				[ngClass]="{ 'primary-border': versionFilter.value.includes('Normal') }"
-				class="min-w-auto primary-background ml-1 mt-2 h-8 w-20 rounded p-1 text-xs font-semibold text-white"
+				class="min-w-auto primary-background mt-2 h-8 w-20 border-r-2 border-slate-200 rounded-l p-1 text-xs font-semibold text-white"
 			>
 				Normal
 			</button>
 			<button
 				(click)="changeVersion('AA')"
 				[ngClass]="{ 'primary-border': versionFilter.value.includes('AA') }"
-				class="min-w-auto primary-background ml-1 mt-2 h-8 w-20 rounded p-1 text-xs font-semibold text-white"
+				class="min-w-auto primary-background mt-2 h-8 w-20 border-r-2 border-slate-200 p-1 text-xs font-semibold text-white"
 			>
 				Alt. Art
 			</button>
@@ -268,14 +268,14 @@
 				[ngClass]="{
 					'primary-border': versionFilter.value.includes('Pre-Release')
 				}"
-				class="min-w-auto primary-background ml-1 mt-2 h-8 w-20 rounded p-1 text-xs font-semibold text-white"
+				class="min-w-auto primary-background mt-2 h-8 w-20 border-r-2 border-slate-200 p-1 text-xs font-semibold text-white"
 			>
 				Pre-Release
 			</button>
 			<button
 				(click)="changeVersion('Stamp')"
 				[ngClass]="{ 'primary-border': versionFilter.value.includes('Stamp') }"
-				class="min-w-auto primary-background ml-1 mt-2 h-8 w-20 rounded p-1 text-xs font-semibold text-white"
+				class="min-w-auto primary-background mt-2 h-8 w-20 border-slate-200 rounded-r p-1 text-xs font-semibold text-white"
 			>
 				Stamp
 			</button>

@@ -1,13 +1,16 @@
 import {
+  AfterViewInit,
   Component,
+  ElementRef,
   EventEmitter,
   Input,
   OnDestroy,
   OnInit,
   Output,
+  ViewChild,
 } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { debounceTime, Subject, takeUntil } from 'rxjs';
+import { debounceTime, fromEvent, merge, Subject, takeUntil } from 'rxjs';
 import { englishCards } from '../../../../assets/cardlists/eng/english';
 import { ICard } from '../../../../models';
 import {
@@ -58,7 +61,7 @@ export class FullCardComponent implements OnInit, OnDestroy {
 
   countInDeck = 0;
 
-  isSingleClick: Boolean = true;
+  clickTimer: any;
 
   private onDestroy$ = new Subject();
 
@@ -88,16 +91,21 @@ export class FullCardComponent implements OnInit, OnDestroy {
   }
 
   addCardToDeck() {
-    this.isSingleClick = true;
-    setTimeout(() => {
-      if (this.isSingleClick) {
-        this.addCard.emit(this.card.id);
-      }
-    }, 200);
+    this.clickTimer = setTimeout(() => {
+      this.clickTest();
+    }, 300);
+  }
+
+  clickTest() {
+    if (!this.clickTimer) {
+      return;
+    }
+    this.addCard.emit(this.card.id);
   }
 
   showCardDetails() {
-    this.isSingleClick = false;
+    clearTimeout(this.clickTimer);
+    this.clickTimer = undefined;
     this.store.dispatch(setViewCardDialog({ show: true, card: this.card }));
   }
 

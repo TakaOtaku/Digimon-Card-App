@@ -48,6 +48,7 @@ export class MenuComponent implements OnInit, OnDestroy {
   importDisplay = false;
   collectionDisplay = false;
   settingsDialog = false;
+  creditsDisplay = false;
 
   importPlaceholder =
     '' + 'Paste Collection here\n' + '\n' + ' Format:\n' + '   Qty Id\n';
@@ -189,6 +190,11 @@ export class MenuComponent implements OnInit, OnDestroy {
           label: 'Advanced Settings',
           icon: 'pi pi-cog',
           command: () => (this.settingsDialog = true),
+        },
+        {
+          label: 'Credits',
+          icon: 'pi pi-file',
+          command: () => (this.creditsDisplay = true),
         },
       ],
     };

@@ -23,6 +23,9 @@
         "plugin:prettier/recommended"
       ],
       "rules": {
+        "@angular-eslint/no-output-on-prefix": [
+          "off"
+        ],
         "@angular-eslint/directive-selector": [
           "error",
           {

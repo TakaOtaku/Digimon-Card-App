@@ -41,6 +41,8 @@ export class PaginationCardListComponent implements OnInit, OnDestroy {
   cardsPerPage = 50;
   cardsPerPageOptions = [25, 50, 100];
 
+  filterBox = false;
+
   private collection: ICountCard[] = [];
   collectionMode = new FormControl();
 

@@ -43,24 +43,24 @@
 
     <div class="xl:hidden h-1/2 w-full rounded flex flex-row">
       <button *ngIf="edit" (click)="addCardCount($event)" type="button"
-              class="bg-sky-700 z-[101] flex h-12 w-1/2 rounded-l border border-black">
-        <span class="text-4xl font-black text-white text-shadow mx-auto">
+              class="bg-sky-700 z-[101] flex h-8 w-1/2 rounded-l border border-black">
+        <span class="text-2xl font-black text-white text-shadow mx-auto">
           +
         </span>
       </button>
 
       <button *ngIf="edit" (click)="reduceCardCount($event)" type="button"
-              class="bg-sky-700 z-[101] flex h-12 w-1/2 rounded-r border border-black">
-        <span class="text-4xl font-black text-white text-shadow mx-auto">
+              class="bg-sky-700 z-[101] flex h-8 w-1/2 rounded-r border border-black">
+        <span class="text-2xl font-black text-white text-shadow mx-auto">
           -
         </span>
       </button>
     </div>
 
 		<span
-			class="text-shadow-white absolute bottom-14 xl:bottom-1 right-1 z-[100] px-2 font-black text-orange-500 text-3xl sm:text-4xl lg:text-5xl"
+			class="text-shadow-white absolute bottom-8 xl:bottom-1 right-1 z-[100] font-black text-orange-500 text-2xl sm:text-3xl lg:text-2xl"
 		>
-			<span class="pr-1 text-sky-700">x</span>{{ card.count }}
+			<span class="text-sky-700">x</span>{{ card.count }}
 		</span>
 
 		<p *ngIf="missingCards" class="text-red text-black-outline missing absolute z-[100] text-6xl font-bold">

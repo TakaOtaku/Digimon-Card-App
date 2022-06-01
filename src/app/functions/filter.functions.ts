@@ -157,7 +157,7 @@ function applyFilter(cards: ICard[], filter: any[], key: string): ICard[] {
           (returnArray = [
             ...new Set([
               ...returnArray,
-              ...cards.filter((cards) => cards['id'].includes(filter)),
+              ...cards.filter((cards) => cards['id'].split('-')[0] === filter),
             ]),
           ])
       );
