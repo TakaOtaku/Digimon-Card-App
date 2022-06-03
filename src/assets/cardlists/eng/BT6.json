@@ -3335,6 +3335,35 @@
     "illustrator": "TANIMESO"
   },
   {
+    "id": "BT6-083_P1",
+    "name": "Eosmon",
+    "cardImage": "assets/images/cards/eng/BT6-083_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "4000",
+    "playCost": "4",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Unknown",
+    "type": "Unknown",
+    "rarity": "C",
+    "cardNumber": "BT6-083",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Play] You may play 1 white Tamer card with a play cost of 4 or less from your hand without paying its memory cost. Then, your opponent may play 1 Tamer card from their hand without paying its memory cost.",
+    "digivolveEffect": "[When Attacking] You may play 1 white Tamer card with a play cost of 4 or less from your hand without paying its memory cost.",
+    "securityEffect": "-",
+    "notes": "Tamer Party Vol.5",
+    "color": "White",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "illustrator": "Kenji Watanabe"
+  },
+  {
     "id": "BT6-084",
     "name": "Sistermon Ciel",
     "cardImage": "assets/images/cards/eng/BT6-084.jpg",
