@@ -2284,6 +2284,35 @@
     "illustrator": "koki"
   },
   {
+    "id": "BT3-054_P1",
+    "name": "Blossomon",
+    "cardImage": "assets/images/cards/eng/BT3-054_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "7000",
+    "playCost": "7",
+    "digivolveCost1": "3 from Lv.4",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.5",
+    "form": "Ultimate",
+    "attribute": "Data",
+    "type": "Vegetation",
+    "rarity": "C",
+    "cardNumber": "BT3-054",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "＜Digisorption -3＞ (When one of your Digimon digivolves into this card from your hand, you may suspend 1 of your Digimon to reduce the memory cost of the digivolution by 3.)",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Tamer Party Vol.5",
+    "color": "Green",
+    "version": "AA",
+    "block": [
+      "00"
+    ],
+    "illustrator": "Tomotake Kinoshita"
+  },
+  {
     "id": "BT3-055",
     "name": "Dinobeemon",
     "cardImage": "assets/images/cards/eng/BT3-055.jpg",
