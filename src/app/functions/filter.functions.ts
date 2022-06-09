@@ -479,7 +479,6 @@ function applySortOrder(
     ? returnArray.sort(dynamicSort(sort.sortBy.element))
     : returnArray.sort(dynamicSort(`-${sort.sortBy.element}`));
 }
-
 //endregion
 
 export function dynamicSort(property: string): any {

@@ -13,7 +13,6 @@ import * as uuid from 'uuid';
 import {
   ColorList,
   ColorMap,
-  ColorOrderMap,
   DeckColorMap,
   ICard,
   ICountCard,
@@ -111,10 +110,10 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
 
       this.showAccordionButtons = false;
     } else if (this.screenWidth >= 768 && this.screenWidth < 1024) {
-      this.deckView = true;
-      this.collectionView = false;
+      this.deckView = false;
+      this.collectionView = true;
 
-      this.showStats = true;
+      this.showStats = false;
 
       this.showAccordionButtons = true;
     } else {

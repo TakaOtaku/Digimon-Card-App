@@ -29,12 +29,7 @@
   </div>
 </p-dialog>
 
-<p-dialog
-	[(visible)]="display"
-	[baseZIndex]="10000"
-	header="Import/Export"
-	styleClass="w-[70vw] lg:w-[50vw] xl:w-[30vw] h-[320px]"
->
+<p-dialog [(visible)]="display" [baseZIndex]="10000" header="Import/Export" styleClass="w-[70vw] lg:w-[50vw] xl:w-[30vw] h-[370px]">
 	<div class="flex flex-col justify-between">
 		<button
 			(click)="this.importDisplay = true"
@@ -44,6 +39,14 @@
 			pButton
 			type="button"
 		></button>
+    <button
+      (click)="exportDialog = true"
+      class="m-auto mb-2 min-w-[200px] max-w-[200px]"
+      icon="pi pi-download"
+      label="Export Collection"
+      pButton
+      type="button"
+    ></button>
 		<input
 			#fileUpload
 			(change)="handleFileInput($event.target)"
@@ -92,6 +95,168 @@
 	<div class="flex w-full justify-end">
 		<button (click)="importCollection()" icon="pi pi-upload" label="Import" pButton type="button"></button>
 	</div>
+</p-dialog>
+
+<p-dialog [(visible)]="exportDialog" [baseZIndex]="10000" header="Export Collection" styleClass="w-[95vw] max-w-[600px] h-[550px]">
+  <div class="flex flex-col mx-auto justify-center">
+    <p class="text-center font-bold">What cards you want to export?</p>
+    <p class="text-center text-xs">(Select nothing for all cards)</p>
+    <div class="mx-auto">
+        <p-multiSelect
+          [filter]="false"
+          [(ngModel)]="sets"
+          [group]="true"
+          [options]="groupedSets"
+          [showHeader]="false"
+          [showToggleAll]="false"
+          defaultLabel="Select a Set"
+          display="chip"
+          scrollHeight="250px"
+          class="mt-2"
+          styleClass="w-full max-w-[300px] h-8 text-sm"
+        >
+          <ng-template let-group pTemplate="group">
+            <div class="align-items-center flex">
+              <span>{{ group.label }}</span>
+            </div>
+          </ng-template>
+        </p-multiSelect>
+    </div>
+
+    <div class="mt-5">
+      <h1 class="text-center text-xs font-bold text-white">Rarity:</h1>
+      <div class="flex inline-flex w-full justify-center">
+        <button
+          (click)="changeRarity('C')"
+          [ngClass]="{ 'primary-border': rarities.includes('C') }"
+          class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 rounded-l p-1 text-xs font-semibold text-white"
+        >
+          C
+        </button>
+        <button
+          (click)="changeRarity('UC')"
+          [ngClass]="{ 'primary-border': rarities.includes('UC') }"
+          class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 p-1 text-xs font-semibold text-white"
+        >
+          UC
+        </button>
+        <button
+          (click)="changeRarity('R')"
+          [ngClass]="{ 'primary-border': rarities.includes('R') }"
+          class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 p-1 text-xs font-semibold text-white"
+        >
+          R
+        </button>
+        <button
+          (click)="changeRarity('SR')"
+          [ngClass]="{ 'primary-border': rarities.includes('SR') }"
+          class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 p-1 text-xs font-semibold text-white"
+        >
+          SR
+        </button>
+        <button
+          (click)="changeRarity('SEC')"
+          [ngClass]="{ 'primary-border': rarities.includes('SEC') }"
+          class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 rounded-r p-1 text-xs font-semibold text-white"
+        >
+          SEC
+        </button>
+        <button
+          (click)="changeRarity('P')"
+          [ngClass]="{ 'primary-border': rarities.includes('P') }"
+          class="min-w-auto primary-background mt-2 h-8 w-10 border-slate-200 rounded-r p-1 text-xs font-semibold text-white"
+        >
+          P
+        </button>
+      </div>
+    </div>
+
+    <div class="mt-5">
+      <h1 class="text-center text-xs font-bold text-white">Version:</h1>
+      <div class="flex inline-flex w-full justify-center">
+        <button
+          (click)="changeVersion('Normal')"
+          [ngClass]="{ 'primary-border': versions.includes('Normal') }"
+          class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 rounded-l p-1 text-xs font-semibold text-white"
+        >
+          Normal
+        </button>
+        <button
+          (click)="changeVersion('AA')"
+          [ngClass]="{ 'primary-border': versions.includes('AA') }"
+          class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 p-1 text-xs font-semibold text-white"
+        >
+          AA
+        </button>
+        <button
+          (click)="changeVersion('Pre-Release')"
+          [ngClass]="{ 'primary-border': versions.includes('Pre-Release') }"
+          class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 p-1 text-xs font-semibold text-white"
+        >
+          Pre-Release
+        </button>
+        <button
+          (click)="changeVersion('Stamp')"
+          [ngClass]="{ 'primary-border': versions.includes('Stamp') }"
+          class="min-w-auto primary-background mt-2 h-8 w-10 border-slate-200 p-1 text-xs font-semibold text-white"
+        >
+          Stamp
+        </button>
+      </div>
+    </div>
+
+    <p class="text-center font-bold mt-5">Missing Cards or Collected Cards?</p>
+    <div class="flex flex-row mx-auto">
+      <span class="mr-2">Missing</span>
+      <p-inputSwitch [(ngModel)]="collectedCards"></p-inputSwitch>
+      <span class="ml-2">Collected</span>
+    </div>
+  </div>
+
+  <div *ngIf="!collectedCards" class="my-5">
+    <h1 class="text-center text-xs font-bold text-white">Collection Goal:</h1>
+    <div class="flex inline-flex w-full justify-center">
+      <button
+        (click)="goal = 1"
+        [ngClass]="{ 'primary-border': goal === 1 }"
+        class="min-w-auto primary-background mt-2 h-8 w-20 border-r-2 border-slate-200 rounded-l p-1 text-xs font-semibold text-white"
+      >
+        1
+      </button>
+      <button
+        (click)="goal = 2"
+        [ngClass]="{ 'primary-border': goal === 2 }"
+        class="min-w-auto primary-background mt-2 h-8 w-20 border-r-2 border-slate-200 rounded-l p-1 text-xs font-semibold text-white"
+      >
+        2
+      </button>
+      <button
+        (click)="goal = 3"
+        [ngClass]="{ 'primary-border': goal === 3 }"
+        class="min-w-auto primary-background mt-2 h-8 w-20 border-r-2 border-slate-200 rounded-l p-1 text-xs font-semibold text-white"
+      >
+        3
+      </button>
+      <button
+        (click)="goal = 4"
+        [ngClass]="{ 'primary-border': goal === 4 }"
+        class="min-w-auto primary-background mt-2 h-8 w-20 border-r-2 border-slate-200 rounded-l p-1 text-xs font-semibold text-white"
+      >
+        4
+      </button>
+      <button
+        (click)="goal = 5"
+        [ngClass]="{ 'primary-border': goal === 5 }"
+        class="min-w-auto primary-background mt-2 h-8 w-20 border-slate-200 rounded-l p-1 text-xs font-semibold text-white"
+      >
+        5
+      </button>
+    </div>
+  </div>
+
+  <div class="flex w-full justify-end mt-5">
+    <button (click)="exportCollection()" icon="pi pi-download" label="Export" pButton type="button"></button>
+  </div>
 </p-dialog>
 
 <p-dialog [(visible)]="settingsDialog" [baseZIndex]="10000" header="Advanced Settings" styleClass="w-[400px]">

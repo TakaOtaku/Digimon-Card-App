@@ -238,10 +238,17 @@
 			<button
 				(click)="changeRarity('SEC')"
 				[ngClass]="{ 'primary-border': rarityFilter.value.includes('SEC') }"
-				class="min-w-auto primary-background mt-2 h-8 w-10 border-slate-200 rounded-r p-1 text-xs font-semibold text-white"
+				class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 rounded-r p-1 text-xs font-semibold text-white"
 			>
 				SEC
 			</button>
+      <button
+        (click)="changeRarity('P')"
+        [ngClass]="{ 'primary-border': rarityFilter.value.includes('P') }"
+        class="min-w-auto primary-background mt-2 h-8 w-10 border-slate-200 rounded-r p-1 text-xs font-semibold text-white"
+      >
+        P
+      </button>
 		</div>
 	</div>
 

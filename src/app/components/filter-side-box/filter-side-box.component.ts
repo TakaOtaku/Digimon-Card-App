@@ -76,13 +76,10 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
   dpSlider: number[] = [1, 16];
 
   groupedSets = GroupedSets;
-  rarities = Rarities;
-  versions = Versions;
   keywords = Keywords;
   forms = Forms;
   attributes = Attributes;
   types = Types;
-  cardTypes = CardTypes;
   colors = Colors;
   illustrators = Illustrators;
   specialRequirements = SpecialRequirements;

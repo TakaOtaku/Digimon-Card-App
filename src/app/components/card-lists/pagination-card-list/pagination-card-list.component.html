@@ -42,7 +42,7 @@
 
     <button
       (click)="filterBox = true"
-      class="min-w-auto primary-background mx-auto mt-2 h-8 w-32 rounded p-2 text-xs font-semibold text-white"
+      class="min-w-auto primary-background mx-auto mt-2 h-8 w-32 rounded p-2 text-xs font-semibold text-white 2xl:hidden"
     >
       <i class="pi pi-filter-fill mr-3"></i>Filter
     </button>
@@ -73,7 +73,7 @@
 <p-dialog
   header="Filter and Sort"
   [(visible)]="filterBox"
-  styleClass="w-[95vw] h-[95vh] surface-ground"
+  styleClass="w-[95vw] max-w-[500px] h-[95vh] surface-ground"
   [baseZIndex]="10000"
 >
   <digimon-filter-side-box></digimon-filter-side-box>

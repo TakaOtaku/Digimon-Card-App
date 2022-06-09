@@ -13,6 +13,7 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { ToastrModule } from 'ngx-toastr';
+import { InputSwitchModule } from 'primeng/inputswitch';
 import { PaginatorModule } from 'primeng/paginator';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
@@ -116,6 +117,7 @@ import * as Save from './store/reducers/save.reducer';
     }),
     EffectsModule.forRoot([DigimonEffects]),
     PaginatorModule,
+    InputSwitchModule,
   ],
   providers: [ReactiveFormsModule, AuthService, DatabaseService],
   bootstrap: [AppComponent],

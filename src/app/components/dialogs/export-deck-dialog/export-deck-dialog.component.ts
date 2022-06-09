@@ -17,7 +17,10 @@ import {
   formatId,
   getPNG,
 } from '../../../functions/digimon-card.functions';
-import { selectAllCards } from '../../../store/digimon.selectors';
+import {
+  selectAllCards,
+  selectExportDeckDialog,
+} from '../../../store/digimon.selectors';
 import { ColorsWithoutMulti } from '../../filter-side-box/filterData';
 
 @Component({
@@ -55,6 +58,16 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
     this.digimonCards$
       .pipe(takeUntil(this.onDestroy$))
       .subscribe((cards) => (this.digimonCards = cards));
+
+    this.store
+      .select(selectExportDeckDialog)
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((dialog) => {
+        this.setExportTypeText();
+        this.selectedColor = dialog.deck.color.name;
+        this.deck = dialog.deck;
+        this.exportType = 'TEXT';
+      });
   }
 
   ngOnDestroy(): void {
@@ -110,6 +123,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
     this.generateCanvas(
       document.getElementById('HDCanvas')! as HTMLCanvasElement
     );
+    this.generateTTS(document.getElementById('TTS')! as HTMLCanvasElement);
   }
 
   private generateCanvas(canvas?: HTMLCanvasElement): void {
@@ -228,6 +242,106 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
     return imgs;
   }
 
+  private generateTTS(canvas?: HTMLCanvasElement): void {
+    let loadedCount = 0;
+    let imgs: any[] = [];
+
+    const getContext = () => {
+      if (canvas) {
+        return canvas.getContext('2d')!;
+      }
+      return (
+        document.getElementById('Canvas')! as HTMLCanvasElement
+      ).getContext('2d')!;
+    };
+
+    const loadImage = (url: string) => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.onerror = () => reject(new Error(`load ${url} fail`));
+        img.src = url;
+      });
+    };
+
+    const background = (options: any) => {
+      const ctx = getContext();
+      const myOptions = Object.assign({}, options);
+      return loadImage(myOptions.uri).then((img: any) => {
+        ctx.drawImage(
+          img,
+          myOptions.x,
+          myOptions.y,
+          myOptions.sw,
+          myOptions.sh
+        );
+
+        imgs = this.getImagesAll();
+
+        imgs.forEach(depict);
+      });
+    };
+
+    const depict = (options: any) => {
+      const ctx = getContext();
+      const myOptions = Object.assign({}, options);
+      return loadImage(myOptions.uri).then((img: any) => {
+        ctx.drawImage(
+          img,
+          myOptions.x,
+          myOptions.y,
+          myOptions.sw,
+          myOptions.sh
+        );
+        loadedCount += 1;
+        if (loadedCount === imgs.length) {
+          this.drawCount(ctx, 1);
+        }
+      });
+    };
+
+    background({
+      uri: 'assets/images/image-export/bg-share_white.jpg',
+      x: 0,
+      y: 0,
+      sw: 7440,
+      sh: 6240,
+    });
+  }
+
+  private getImagesAll(): any[] {
+    let imgs: any[] = [];
+
+    let y = 0;
+    let x = 0;
+
+    let cardsInCurrentRow = 1;
+    const cardsPerRow = 10;
+    this.deck.cards.forEach((card) => {
+      const fullCard = this.digimonCards.find((search: ICard) =>
+        compareIDs(card.id, search.id)
+      );
+      for (let i = 1; i <= card.count; i++) {
+        imgs.push({
+          uri: getPNG(fullCard!.cardImage),
+          x: x,
+          y: y,
+          sw: 744,
+          sh: 1040,
+        });
+        if (cardsInCurrentRow >= cardsPerRow) {
+          y += 1040;
+          x = 0;
+          cardsInCurrentRow = 1;
+        } else {
+          x += 744;
+          cardsInCurrentRow += 1;
+        }
+      }
+    });
+    return imgs;
+  }
+
   private static writeText(
     ctx: any,
     text: string,
@@ -291,6 +405,17 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
         cardsInCurrentRow += 1;
       }
     });
+  }
+
+  downloadImageTTS() {
+    const canvas = document.getElementById('TTS')! as HTMLCanvasElement;
+    const img = canvas
+      .toDataURL('image/jpg', 0.7)
+      .replace('image/jpg', 'image/octet-stream');
+    const link = document.createElement('a');
+    link.download = 'deck.png';
+    link.href = img;
+    link.click();
   }
 
   downloadImage() {

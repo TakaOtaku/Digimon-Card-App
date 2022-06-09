@@ -10,11 +10,12 @@ import {
 } from 'primeng/api';
 import { first, Subject, takeUntil } from 'rxjs';
 import { SITES } from 'src/app/pages/main-page/main-page.component';
-import { ICard, ICountCard, ISave, IUser } from '../../../models';
+import { ICard, ICountCard, IFilter, ISave, IUser } from '../../../models';
 import { AuthService } from '../../service/auth.service';
 import { DatabaseService } from '../../service/database.service';
 import {
   addToCollection,
+  changeFilter,
   loadSave,
   setSave,
   setSite,
@@ -22,14 +23,11 @@ import {
 import {
   selectAllCards,
   selectCollection,
-  selectCollectionMinimum,
   selectSave,
   selectSettings,
-  selectShowAACards,
-  selectShowPreRelease,
-  selectShowStampedCards,
 } from '../../store/digimon.selectors';
 import { emptySettings } from '../../store/reducers/save.reducer';
+import { GroupedSets } from '../filter-side-box/filterData';
 
 @Component({
   selector: 'digimon-menu',
@@ -46,6 +44,7 @@ export class MenuComponent implements OnInit, OnDestroy {
 
   display = false;
   importDisplay = false;
+  exportDialog = false;
   collectionDisplay = false;
   settingsDialog = false;
   creditsDisplay = false;
@@ -73,6 +72,13 @@ export class MenuComponent implements OnInit, OnDestroy {
   user: IUser | null;
 
   mobile = false;
+
+  collectedCards = true;
+  groupedSets = GroupedSets;
+  sets: string[];
+  goal = 4;
+  rarities: string[] = [];
+  versions: string[] = [];
 
   private onDestroy$ = new Subject();
 
@@ -322,6 +328,165 @@ export class MenuComponent implements OnInit, OnDestroy {
       summary: 'Collection Imported!',
       detail: 'The collection was imported successfully!',
     });
+  }
+
+  changeRarity(rarity: string) {
+    if (this.rarities.includes(rarity)) {
+      this.rarities = this.rarities.filter((value) => value !== rarity);
+    } else {
+      this.rarities = [...new Set(this.rarities), rarity];
+    }
+  }
+
+  changeVersion(version: string) {
+    if (this.versions.includes(version)) {
+      this.versions = this.versions.filter((value) => value !== version);
+    } else {
+      this.versions = [...new Set(this.versions), version];
+    }
+  }
+
+  exportCollection() {
+    const exportCards = this.getSetCards().sort((a, b) =>
+      a.id.localeCompare(b.id)
+    );
+
+    if (exportCards.length === 0) {
+      this.messageService.add({
+        severity: 'warning',
+        summary: 'No cards found!',
+        detail: 'No cards, that match your filter were found!',
+      });
+      return;
+    }
+
+    const header = Object.keys(exportCards[0]);
+
+    let csv = exportCards.map((row) =>
+      // @ts-ignore
+      header.map((fieldName) => JSON.stringify(row[fieldName])).join(',')
+    );
+    csv.unshift(header.join(','));
+    let csvArray = csv.join('\r\n');
+
+    let blob = new Blob([csvArray], { type: 'text/csv' });
+    saveAs(blob, 'digimon-card-app.csv');
+  }
+
+  private getSetCards(): ICountCard[] {
+    // If no filter is selected filter all cards
+    let returnCards: ICountCard[] = [];
+    let allCards: ICard[] = this.setupAllCards();
+    let collection: ICountCard[] = this.setupCollection();
+
+    if (this.collectedCards) {
+      collection
+        .filter((card) => !card.id.includes('P-'))
+        .forEach((collectionCard) => returnCards.push(collectionCard));
+    } else {
+      allCards
+        .filter((card) => !card.id.includes('P-'))
+        .forEach((card) => {
+          const foundCard = collection.find(
+            (collectionCard) => collectionCard.id === card.id
+          );
+          if (foundCard) {
+            if (this.goal - foundCard.count > 0) {
+              returnCards.push({
+                id: foundCard.id,
+                count: this.goal - foundCard.count,
+              } as ICountCard);
+            }
+          } else {
+            returnCards.push({ id: card.id, count: this.goal } as ICountCard);
+          }
+        });
+    }
+
+    return returnCards;
+  }
+
+  private setupAllCards(): ICard[] {
+    let setFiltered: ICard[] = this.sets.length === 0 ? this.digimonCards : [];
+    this.sets.forEach((filter) => {
+      setFiltered = [
+        ...new Set([
+          ...setFiltered,
+          ...this.digimonCards.filter(
+            (cards) => cards['id'].split('-')[0] === filter
+          ),
+        ]),
+      ];
+    });
+
+    let raritiesFiltered: ICard[] = [];
+    this.rarities.forEach((filter) => {
+      raritiesFiltered = [
+        ...new Set([
+          ...raritiesFiltered,
+          ...setFiltered.filter((cards) => cards['rarity'] === filter),
+        ]),
+      ];
+    });
+
+    let versionsFiltered: ICard[] = [];
+    this.versions.forEach((filter) => {
+      versionsFiltered = [
+        ...new Set([
+          ...versionsFiltered,
+          ...raritiesFiltered.filter((cards) => cards['version'] === filter),
+        ]),
+      ];
+    });
+
+    return versionsFiltered;
+  }
+
+  private setupCollection(): ICountCard[] {
+    let setFiltered: ICountCard[] =
+      this.sets.length === 0 ? this.collection : [];
+    this.sets.forEach((filter) => {
+      setFiltered = [
+        ...new Set([
+          ...setFiltered,
+          ...this.collection.filter(
+            (cards) => cards['id'].split('-')[0] === filter
+          ),
+        ]),
+      ];
+    });
+
+    if (this.rarities.length === 0) {
+      return setFiltered;
+    }
+
+    let collectionCardsForRarity: ICountCard[] = [];
+    setFiltered.forEach((collectionCard) => {
+      const foundCard = this.digimonCards.find(
+        (card) => card.id === collectionCard.id
+      );
+
+      if (this.rarities.includes(foundCard!.rarity)) {
+        collectionCardsForRarity.push(collectionCard);
+      }
+    });
+
+    if (this.versions.length === 0) {
+      return collectionCardsForRarity;
+    }
+
+    let collectionCardsForVersion: ICountCard[] = [];
+    collectionCardsForRarity.forEach((collectionCard) => {
+      const foundCard = this.digimonCards.find(
+        (card) => card.id === collectionCard.id
+      );
+
+      if (this.versions.includes(foundCard!.version)) {
+        collectionCardsForVersion.push(collectionCard);
+      }
+    });
+
+    return collectionCardsForVersion;
   }
 
   private parseLine(line: string): ICountCard | null {

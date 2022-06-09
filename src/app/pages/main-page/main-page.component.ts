@@ -10,14 +10,7 @@ import {
   setImportDeckDialog,
   setViewCardDialog,
 } from '../../store/digimon.actions';
-import {
-  selectAccessoryDeckDialog,
-  selectDialogs,
-  selectExportDeckDialog,
-  selectImportDeckDialog,
-  selectSite,
-  selectViewCardDialog,
-} from '../../store/digimon.selectors';
+import { selectDialogs, selectSite } from '../../store/digimon.selectors';
 import { emptyDeck } from '../../store/reducers/digimon.reducers';
 
 export enum SITES {

@@ -35,7 +35,7 @@ export class PaginationCardListComponent implements OnInit, OnDestroy {
   cards: ICard[] = [];
   cardsToShow: ICard[] = [];
 
-  cardsPerRow = 8;
+  cardsPerRow = 10;
   cardsPerRowOptions = [2, 4, 6, 8, 10];
 
   cardsPerPage = 50;
