@@ -3789,7 +3789,7 @@
     "dnaDigivolve": "-",
     "effect": "While you have a Digimon in play, you may use this card without meeting its color requirements.\n[Security] Gain 1 memory, and add this card to its owner's hand.\n[Main] Place this card under 1 of your Digimon without [X Antibody] in its digivolution cards as its bottom digivolution card.",
     "digivolveEffect": "[All Turns] Effects can't trash [X Antibody] in this Digimon's digivolution cards.\n[When Attacking] This Digimon can digivolve into a Digimon card with [X Antibody] in its traits in your hand for its digivolution cost.",
-    "securityEffect": "[All Turns] Effects can't trash [X Antibody] in this Digimon's digivolution cards.\n[When Attacking] This Digimon can digivolve into a Digimon card with [X Antibody] in its traits in your hand for its digivolution cost.",
+    "securityEffect": "",
     "notes": "▹BOOSTER X RECORD [BT-09]",
     "color": "White",
     "version": "Normal",
