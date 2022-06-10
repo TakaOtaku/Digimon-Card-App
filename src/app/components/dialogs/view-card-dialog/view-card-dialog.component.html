@@ -111,7 +111,7 @@
 				</p>
 			</div>
 			<div *ngIf="card.digivolveEffect !== '-'" class="flex flex-col" id="Digimon-Digivolve-Effect">
-				<p [ngStyle]="{color}" class="text-lg font-extrabold">Digivolve effect</p>
+				<p [ngStyle]="{color}" class="text-lg font-extrabold">Inherited effect</p>
 				<p class="font-white whitespace-pre-wrap text-lg font-bold">
 					{{ card.digivolveEffect }}
 				</p>
@@ -123,6 +123,13 @@
 				</p>
 			</div>
 		</div>
+
+    <div *ngIf="card.restriction !== ''" class="max-w-full" id="Restriction">
+      <div class="flex flex-col" id="Card-Restriction">
+        <p [ngStyle]="{color}" class="text-lg font-extrabold">Restriction</p>
+        <p class="font-white text-lg font-bold">{{ card.restriction }}</p>
+      </div>
+    </div>
 
 		<div class="max-w-full" id="Notes">
 			<div class="flex flex-col" id="Card-Notes">
