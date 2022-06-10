@@ -39,6 +39,7 @@ import {
 export class FilterSideBoxComponent implements OnInit, OnDestroy {
   @Input() public showColors: boolean;
 
+  cardSets = ['English', '日本語', 'Both'];
   selectedCardSet = 'English';
 
   setFilter = new FormControl([]);
@@ -144,6 +145,14 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
         this.collectionMode = collectionMode;
       });
 
+    this.setCardSetSubscriptions();
+  }
+
+  ngOnDestroy() {
+    this.onDestroy$.next(true);
+  }
+
+  private setCardSetSubscriptions() {
     this.store
       .select(selectCardSet)
       .pipe(takeUntil(this.onDestroy$))
@@ -154,10 +163,6 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
           this.selectedCardSet = set;
         }
       });
-  }
-
-  ngOnDestroy() {
-    this.onDestroy$.next(true);
   }
 
   reset() {
@@ -202,10 +207,6 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
     );
   }
 
-  setCardSet(cardSet: string) {
-    this.store.dispatch(changeCardSets({ cardSet }));
-  }
-
   changeColor(color: string) {
     let colors = [];
     if (this.filter.colorFilter.includes(color)) {
@@ -216,6 +217,10 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
 
     const filter: IFilter = { ...this.filter, colorFilter: colors };
     this.store.dispatch(changeFilter({ filter }));
+  }
+
+  setCardSet(cardSet: string) {
+    this.store.dispatch(changeCardSets({ cardSet }));
   }
 
   changeCardType(type: string) {

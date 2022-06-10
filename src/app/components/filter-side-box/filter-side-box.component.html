@@ -13,22 +13,22 @@
 		<div class="flex inline-flex w-full justify-center">
 			<button
 				(click)="setCardSet(cardSet.English)"
-				[ngClass]="{ 'primary-border': selectedCardSet === cardSet.English }"
-				class="min-w-auto primary-background mt-2 h-8 w-20 border-r-2 border-slate-200 rounded-l p-2 text-xs font-semibold text-white"
+				[ngClass]="{ 'primary-background': selectedCardSet === cardSet.English }"
+				class="min-w-auto mt-2 h-8 w-20 border border-slate-100 rounded-l-sm p-2 text-xs font-semibold text-white"
 			>
 				English
 			</button>
 			<button
 				(click)="setCardSet(cardSet.Japanese)"
-				[ngClass]="{ 'primary-border': selectedCardSet === cardSet.Japanese }"
-				class="min-w-auto primary-background mt-2 h-8 w-20 border-slate-200 p-2 text-xs font-semibold text-white"
+				[ngClass]="{ 'primary-background': selectedCardSet === cardSet.Japanese }"
+				class="min-w-auto mt-2 h-8 w-20 border border-slate-100 p-2 text-xs font-semibold text-white"
 			>
 				日本語
 			</button>
 			<button
 				(click)="setCardSet(cardSet.Both)"
-				[ngClass]="{ 'primary-border': selectedCardSet === cardSet.Both }"
-				class="min-w-auto primary-background  mt-2 h-8 w-20 border-l-2 border-slate-200 rounded-r p-2 text-xs font-semibold text-white"
+				[ngClass]="{ 'primary-background': selectedCardSet === cardSet.Both }"
+				class="min-w-auto mt-2 h-8 w-20 border border-slate-100 rounded-r-sm p-2 text-xs font-semibold text-white"
 			>
 				Both
 			</button>
@@ -113,34 +113,34 @@
 			<button
 				(click)="changeCardType('Digi-Egg')"
 				[ngClass]="{
-					'primary-border': cardTypeFilter.value.includes('Digi-Egg')
+					'primary-background': cardTypeFilter.value.includes('Digi-Egg')
 				}"
-				class="min-w-auto primary-background mt-2 h-8 w-20 border-r-2 border-slate-200 rounded-l p-1 text-xs font-semibold text-white"
+				class="min-w-auto mt-2 h-8 w-20 border border-slate-100 rounded-l-sm p-1 text-xs font-semibold text-white"
 			>
 				Digi-Egg
 			</button>
 			<button
 				(click)="changeCardType('Digimon')"
 				[ngClass]="{
-					'primary-border': cardTypeFilter.value.includes('Digimon')
+					'primary-background': cardTypeFilter.value.includes('Digimon')
 				}"
-				class="min-w-auto primary-background mt-2 h-8 w-20 border-r-2 border-slate-200 p-1 text-xs font-semibold text-white"
+				class="min-w-auto mt-2 h-8 w-20 border border-slate-100 p-1 text-xs font-semibold text-white"
 			>
 				Digimon
 			</button>
 			<button
 				(click)="changeCardType('Tamer')"
-				[ngClass]="{ 'primary-border': cardTypeFilter.value.includes('Tamer') }"
-				class="min-w-auto primary-background mt-2 h-8 w-20 border-r-2 border-slate-200 p-1 text-xs font-semibold text-white"
+				[ngClass]="{ 'primary-background': cardTypeFilter.value.includes('Tamer') }"
+				class="min-w-auto mt-2 h-8 w-20 border border-slate-100 p-1 text-xs font-semibold text-white"
 			>
 				Tamer
 			</button>
 			<button
 				(click)="changeCardType('Option')"
 				[ngClass]="{
-					'primary-border': cardTypeFilter.value.includes('Option')
+					'primary-background': cardTypeFilter.value.includes('Option')
 				}"
-				class="min-w-auto primary-background mt-2 h-8 w-20 border-slate-200 rounded-r p-1 text-xs font-semibold text-white"
+				class="min-w-auto mt-2 h-8 w-20 border border-slate-100 rounded-r-sm p-1 text-xs font-semibold text-white"
 			>
 				Option
 			</button>
@@ -204,48 +204,48 @@
 	></digimon-range-slider>
 
 	<!-- Rarity Select -->
-	<div class="mb-5">
+	<div class="my-5">
 		<h1 class="text-center text-xs font-bold text-white">Rarity:</h1>
 		<div class="flex inline-flex w-full justify-center">
 			<button
 				(click)="changeRarity('C')"
-				[ngClass]="{ 'primary-border': rarityFilter.value.includes('C') }"
-				class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 rounded-l p-1 text-xs font-semibold text-white"
+				[ngClass]="{ 'primary-background': rarityFilter.value.includes('C') }"
+				class="min-w-auto mt-2 h-8 w-10 border border-slate-100 rounded-l-sm p-1 text-xs font-semibold text-white"
 			>
 				C
 			</button>
 			<button
 				(click)="changeRarity('UC')"
-				[ngClass]="{ 'primary-border': rarityFilter.value.includes('UC') }"
-				class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 p-1 text-xs font-semibold text-white"
+				[ngClass]="{ 'primary-background': rarityFilter.value.includes('UC') }"
+				class="min-w-auto mt-2 h-8 w-10 border border-slate-100 p-1 text-xs font-semibold text-white"
 			>
 				UC
 			</button>
 			<button
 				(click)="changeRarity('R')"
-				[ngClass]="{ 'primary-border': rarityFilter.value.includes('R') }"
-				class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 p-1 text-xs font-semibold text-white"
+				[ngClass]="{ 'primary-background': rarityFilter.value.includes('R') }"
+				class="min-w-auto mt-2 h-8 w-10 border border-slate-100 p-1 text-xs font-semibold text-white"
 			>
 				R
 			</button>
 			<button
 				(click)="changeRarity('SR')"
-				[ngClass]="{ 'primary-border': rarityFilter.value.includes('SR') }"
-				class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 p-1 text-xs font-semibold text-white"
+				[ngClass]="{ 'primary-background': rarityFilter.value.includes('SR') }"
+				class="min-w-auto mt-2 h-8 w-10 border border-slate-100 p-1 text-xs font-semibold text-white"
 			>
 				SR
 			</button>
 			<button
 				(click)="changeRarity('SEC')"
-				[ngClass]="{ 'primary-border': rarityFilter.value.includes('SEC') }"
-				class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 rounded-r p-1 text-xs font-semibold text-white"
+				[ngClass]="{ 'primary-background': rarityFilter.value.includes('SEC') }"
+				class="min-w-auto mt-2 h-8 w-10 border border-slate-100 p-1 text-xs font-semibold text-white"
 			>
 				SEC
 			</button>
       <button
         (click)="changeRarity('P')"
-        [ngClass]="{ 'primary-border': rarityFilter.value.includes('P') }"
-        class="min-w-auto primary-background mt-2 h-8 w-10 border-slate-200 rounded-r p-1 text-xs font-semibold text-white"
+        [ngClass]="{ 'primary-background': rarityFilter.value.includes('P') }"
+        class="min-w-auto mt-2 h-8 w-10 border border-slate-100 rounded-r-sm p-1 text-xs font-semibold text-white"
       >
         P
       </button>
@@ -258,31 +258,31 @@
 		<div class="flex inline-flex w-full justify-center">
 			<button
 				(click)="changeVersion('Normal')"
-				[ngClass]="{ 'primary-border': versionFilter.value.includes('Normal') }"
-				class="min-w-auto primary-background mt-2 h-8 w-20 border-r-2 border-slate-200 rounded-l p-1 text-xs font-semibold text-white"
+				[ngClass]="{ 'primary-background': versionFilter.value.includes('Normal') }"
+				class="min-w-auto mt-2 h-8 w-20 border border-r-2 border-slate-100 rounded-l-sm p-1 text-xs font-semibold text-white"
 			>
 				Normal
 			</button>
 			<button
 				(click)="changeVersion('AA')"
-				[ngClass]="{ 'primary-border': versionFilter.value.includes('AA') }"
-				class="min-w-auto primary-background mt-2 h-8 w-20 border-r-2 border-slate-200 p-1 text-xs font-semibold text-white"
+				[ngClass]="{ 'primary-background': versionFilter.value.includes('AA') }"
+				class="min-w-auto mt-2 h-8 w-20 border border-slate-100 p-1 text-xs font-semibold text-white"
 			>
 				Alt. Art
 			</button>
 			<button
 				(click)="changeVersion('Pre-Release')"
 				[ngClass]="{
-					'primary-border': versionFilter.value.includes('Pre-Release')
+					'primary-background': versionFilter.value.includes('Pre-Release')
 				}"
-				class="min-w-auto primary-background mt-2 h-8 w-20 border-r-2 border-slate-200 p-1 text-xs font-semibold text-white"
+				class="min-w-auto mt-2 h-8 w-20 border border-slate-100 p-1 text-xs font-semibold text-white"
 			>
 				Pre-Release
 			</button>
 			<button
 				(click)="changeVersion('Stamp')"
-				[ngClass]="{ 'primary-border': versionFilter.value.includes('Stamp') }"
-				class="min-w-auto primary-background mt-2 h-8 w-20 border-slate-200 rounded-r p-1 text-xs font-semibold text-white"
+				[ngClass]="{ 'primary-background': versionFilter.value.includes('Stamp') }"
+				class="min-w-auto mt-2 h-8 w-20 border border-slate-100 rounded-r-sm p-1 text-xs font-semibold text-white"
 			>
 				Stamp
 			</button>
