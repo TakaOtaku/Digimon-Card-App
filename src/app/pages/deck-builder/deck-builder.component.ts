@@ -526,6 +526,7 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
       if (this.screenWidth >= 768 && this.screenWidth < 1024) {
         if (this.deckView && this.collectionView) {
           this.collectionView = false;
+          this.showStats = true;
           return;
         }
       }
@@ -539,6 +540,7 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
       if (this.screenWidth >= 768 && this.screenWidth < 1024) {
         if (this.deckView && this.collectionView) {
           this.deckView = false;
+          this.showStats = false;
           return;
         }
       }
