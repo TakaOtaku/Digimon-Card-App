@@ -35,11 +35,11 @@ export class PaginationCardListComponent implements OnInit, OnDestroy {
   cards: ICard[] = [];
   cardsToShow: ICard[] = [];
 
-  cardsPerRow = 10;
-  cardsPerRowOptions = [2, 4, 6, 8, 10];
+  cardsPerRow = 8;
+  cardsPerRowOptions = [4, 8];
 
-  cardsPerPage = 50;
-  cardsPerPageOptions = [25, 50, 100];
+  cardsPerPage = 48;
+  cardsPerPageOptions = [32, 48, 64, 128];
 
   filterBox = false;
 
@@ -105,8 +105,8 @@ export class PaginationCardListComponent implements OnInit, OnDestroy {
     );
   }
 
-  getGridCols() {
-    return 'grid-cols-' + this.cardsPerRow;
+  getCardsInARow() {
+    return 'cards-in-a-row-' + this.cardsPerRow;
   }
 
   changeSlice(event: any) {

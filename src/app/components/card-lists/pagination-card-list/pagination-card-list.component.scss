@@ -3,3 +3,17 @@ p-dropdown::ng-deep {
 		display: none;
 	}
 }
+
+.card-box {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  .cards-in-a-row-4 {
+    flex: 1 1 25%;
+  }
+
+  .cards-in-a-row-8 {
+    flex: 1 1 12.5%;
+  }
+}

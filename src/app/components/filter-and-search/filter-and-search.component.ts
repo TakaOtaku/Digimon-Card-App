@@ -3,8 +3,14 @@ import { FormControl } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Subject, takeUntil } from 'rxjs';
 import { IFilter } from '../../../models';
-import { changeFilter } from '../../store/digimon.actions';
-import { selectFilter } from '../../store/digimon.selectors';
+import {
+  changeCollectionMode,
+  changeFilter,
+} from '../../store/digimon.actions';
+import {
+  selectCollectionMode,
+  selectFilter,
+} from '../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-filter-and-search',
@@ -16,6 +22,7 @@ export class FilterAndSearchComponent implements OnInit, OnDestroy {
   display = false;
 
   searchFilter = new FormControl('');
+  collectionMode = new FormControl(false);
 
   private filter: IFilter;
   private onDestroy$ = new Subject();
@@ -38,6 +45,17 @@ export class FilterAndSearchComponent implements OnInit, OnDestroy {
           changeFilter({ filter: { ...this.filter, searchFilter } })
         );
       });
+    this.store
+      .select(selectCollectionMode)
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((collectionMode) =>
+        this.collectionMode.setValue(collectionMode, { emitEvent: false })
+      );
+    this.collectionMode.valueChanges
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((collectionMode) =>
+        this.store.dispatch(changeCollectionMode({ collectionMode }))
+      );
   }
 
   ngOnDestroy() {
