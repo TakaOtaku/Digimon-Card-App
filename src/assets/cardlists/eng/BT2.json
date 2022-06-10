@@ -1546,6 +1546,35 @@
     "illustrator": "sasasi"
   },
   {
+    "id": "BT2-033_P1",
+    "name": "Agumon",
+    "cardImage": "assets/images/cards/eng/BT2-033_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "3000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Vaccine",
+    "type": "Dinosaur",
+    "rarity": "C",
+    "cardNumber": "BT2-033",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "[When Attacking] If you have 3 or more yellow Tamers in play, trigger ＜Draw 1＞. (Draw 1 card from your deck.)",
+    "securityEffect": "-",
+    "notes": "TAMER’S EVOLUTION BOX2[PB-06]",
+    "color": "Yellow",
+    "version": "AA",
+    "block": [
+      "00"
+    ],
+    "illustrator": "GOSSAN"
+  },
+  {
     "id": "BT2-034",
     "name": "Salamon",
     "cardImage": "assets/images/cards/eng/BT2-034.jpg",
@@ -5408,9 +5437,9 @@
     "illustrator": "p!k@ru"
   },
   {
-    "id": "BT2-108",
+    "id": "BT2-108_P1",
     "name": "Night Raid",
-    "cardImage": "assets/images/cards/eng/BT2-108.jpg",
+    "cardImage": "assets/images/cards/eng/BT2-108_P1.jpg",
     "cardType": "Option",
     "dp": "-",
     "playCost": "2",
@@ -5428,15 +5457,15 @@
     "effect": "[Main] Play 1 purple level 3 Digimon card from your trash without paying its memory cost. Any [On Play] effects on Digimon played with this effect don't activate.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
-    "notes": "",
+    "notes": "▹Starter Deck, PARALLEL WORLD TACTICIAN [ST-10]",
     "color": "Purple",
-    "version": "Normal",
+    "version": "AA",
     "block": [
       "00",
       "01"
     ],
     "restriction": "",
-    "illustrator": "p!k@ru"
+    "illustrator": "shosuke"
   },
   {
     "id": "BT2-109",

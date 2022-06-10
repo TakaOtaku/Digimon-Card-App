@@ -1449,6 +1449,35 @@
     "illustrator": "Teppei Tadokoro"
   },
   {
+    "id": "BT5-034_P1",
+    "name": "Kotemon",
+    "cardImage": "assets/images/cards/eng/BT5-034_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Data",
+    "type": "Reptile",
+    "rarity": "C",
+    "cardNumber": "BT5-034",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Play] Reveal 5 cards from the top of your deck. Add up to 2 yellow Digimon cards with [Warrior] and/or [Holy Warrior] in their types among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Tamer Party Vol.5",
+    "color": "Yellow",
+    "version": "AA",
+    "block": [
+      "00"
+    ],
+    "illustrator": "Ryodan"
+  },
+  {
     "id": "BT5-035",
     "name": "Starmons",
     "cardImage": "assets/images/cards/eng/BT5-035.jpg",

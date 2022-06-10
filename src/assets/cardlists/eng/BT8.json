@@ -4007,10 +4007,10 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[Main] 1 of your opponent's Digimon gets -6000 DP for the turn. Then, play 1 purple or yellow Digimon card with 6000 DP or less from your trash without paying its memory cost.",
+    "effect": "[Main] 1 of your opponent's Digimon gets -6000 DP for the turn. Then, you may play 1 purple or yellow Digimon card with 6000 DP or less from your trash without paying its memory cost.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
-    "notes": "▹BOOSTER -NEW AWAKENING- [BT08]",
+    "notes": "▹BOOSTER -NEW AWAKENING- [BT08] Errata Card",
     "color": "Purple/Yellow",
     "version": "Normal",
     "block": [
@@ -4039,8 +4039,8 @@
     "dnaDigivolve": "-",
     "effect": "While you have a Digimon with [Armor Form] in its traits in play, you may use this card without meeting its color requirements.\n[Main] Trash the top card of 1 of your Digimon with [Armor Form] in its traits. Then, you may digivolve 1 of your Digimon into a Digimon card in your hand with [Armor Form] in its traits for its digivolution cost. If you do, unsuspend that Digimon.",
     "digivolveEffect": "-",
-    "securityEffect": "[Security] Play 1 level 3 Digimon card with [Free] in its traits from your hand or trash without paying its memory cost.",
-    "notes": "▹BOOSTER -NEW AWAKENING- [BT08]",
+    "securityEffect": "[Security] You may play 1 level 3 Digimon card with [Free] in its traits from your hand or trash without paying its memory cost.",
+    "notes": "▹BOOSTER -NEW AWAKENING- [BT08] Errata Card",
     "color": "White",
     "version": "Normal",
     "block": [
