@@ -10,9 +10,9 @@
       <div class="hidden xl:block h-1/2 w-full rounded bg-sky-700 bg-opacity-30">
         <div class="absolute top-2">
           <button *ngIf="edit" (click)="addCardCount($event)" type="button"
-                  class="bg-sky-700 z-[101] mx-auto flex h-12 w-12 rounded border border-black hidden group-hover:block"
+                  class="bg-sky-700 z-[101] mx-auto flex h-8 w-8 rounded border border-black hidden group-hover:block"
                   [ngClass]="{'btn-center': bigCards, 'btn-center-2': !bigCards}">
-            <span class="text-4xl font-black text-white text-shadow">
+            <span class="text-2xl font-black text-white text-shadow">
               +
             </span>
           </button>
@@ -21,9 +21,9 @@
       <div class="hidden xl:block h-1/2 w-full rounded bg-red-500 bg-opacity-30">
         <div class="absolute bottom-2">
           <button *ngIf="edit" (click)="reduceCardCount($event)" type="button"
-                  class="bg-sky-700 z-[101] mx-auto flex h-12 w-12 rounded border border-black hidden group-hover:block"
+                  class="bg-sky-700 z-[101] mx-auto flex h-8 w-8 rounded border border-black hidden group-hover:block"
                   [ngClass]="{'btn-center': bigCards, 'btn-center-2': !bigCards}">
-            <span class="text-4xl font-black text-white text-shadow">
+            <span class="text-2xl font-black text-white text-shadow">
               -
             </span>
           </button>

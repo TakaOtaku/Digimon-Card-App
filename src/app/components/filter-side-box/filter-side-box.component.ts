@@ -26,6 +26,7 @@ import {
   Illustrators,
   Keywords,
   Rarities,
+  Restrictions,
   SpecialRequirements,
   Types,
   Versions,
@@ -54,6 +55,7 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
   illustratorFilter = new FormControl([]);
   specialRequirementsFilter = new FormControl([]);
   blockFilter = new FormControl([]);
+  restrictionsFilter = new FormControl([]);
 
   filterFormGroup: FormGroup = new FormGroup({
     setFilter: this.setFilter,
@@ -68,6 +70,7 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
     illustratorFilter: this.illustratorFilter,
     specialRequirementsFilter: this.specialRequirementsFilter,
     blockFilter: this.blockFilter,
+    restrictionsFilter: this.restrictionsFilter,
   });
 
   cardCountSlider: number[] = [0, 5];
@@ -85,6 +88,7 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
   illustrators = Illustrators;
   specialRequirements = SpecialRequirements;
   blocks = Blocks;
+  restrictions = Restrictions;
 
   cardSet = CARDSET;
 
@@ -123,6 +127,9 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
           { emitEvent: false }
         );
         this.blockFilter.setValue(filter.blockFilter, { emitEvent: false });
+        this.restrictionsFilter.setValue(filter.restrictionsFilter, {
+          emitEvent: false,
+        });
 
         this.cardCountSlider = [...new Set(filter.cardCountFilter)];
         this.levelSlider = [...new Set(filter.levelFilter)];

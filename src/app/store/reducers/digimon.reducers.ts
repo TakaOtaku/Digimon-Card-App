@@ -68,6 +68,7 @@ export const emptyFilter = {
   illustratorFilter: [],
   specialRequirementsFilter: [],
   blockFilter: [],
+  restrictionsFilter: [],
 };
 
 export const initialState: IDigimonState = {

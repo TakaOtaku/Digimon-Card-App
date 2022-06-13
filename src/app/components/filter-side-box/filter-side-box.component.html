@@ -381,7 +381,21 @@
 		display="chip"
 		scrollHeight="250px"
 		class="mx-5"
-		styleClass="w-full mt-1 mb-5 h-8 text-sm"
+		styleClass="w-full mt-1 h-8 text-sm"
 	>
 	</p-multiSelect>
+
+  <p-multiSelect
+    [filter]="true"
+    [formControl]="restrictionsFilter"
+    [options]="restrictions"
+    [showHeader]="true"
+    [showToggleAll]="false"
+    defaultLabel="Select a Restrictions"
+    display="chip"
+    scrollHeight="250px"
+    class="mx-5"
+    styleClass="w-full mt-1 mb-5 h-8 text-sm"
+  >
+  </p-multiSelect>
 </div>

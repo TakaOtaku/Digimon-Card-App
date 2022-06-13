@@ -50,7 +50,6 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
 
   ngOnChanges(changes: SimpleChanges): void {
     this.setExportTypeText();
-    this.selectedColor = changes['deck'].currentValue.color.name;
     this.exportType = 'TEXT';
   }
 
@@ -88,6 +87,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
         this.setExportTypeTTS();
         break;
       case 'IMAGE':
+        this.setExportTypeIMAGE();
         break;
     }
   }
@@ -301,7 +301,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
     };
 
     background({
-      uri: 'assets/images/image-export/bg-share_white.jpg',
+      uri: 'assets/images/image-export/TTS.jpg',
       x: 0,
       y: 0,
       sw: 7440,

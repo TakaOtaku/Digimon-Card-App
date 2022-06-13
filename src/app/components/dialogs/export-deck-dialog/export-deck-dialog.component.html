@@ -30,10 +30,10 @@
 		></textarea>
 	</div>
 
-	<div *ngIf="exportType === 'IMAGE'">
-		<canvas id="Canvas" width="640" height="360" (contextmenu)="downloadImage()"></canvas>
-    <canvas id="HDCanvas" width="1920" height="1080" class="hidden"></canvas>
-    <canvas id="TTS" width="7440" height="6240" class="hidden"></canvas>
+	<div [ngClass]="{'hidden': exportType !== 'IMAGE'}">
+		<canvas #Canvas id="Canvas" width="640" height="360" (contextmenu)="downloadImage()"></canvas>
+    <canvas #HDCanvas id="HDCanvas" width="1920" height="1080" class="hidden"></canvas>
+    <canvas #TTSCanvas id="TTS" width="7440" height="6240" class="hidden"></canvas>
 		<p-selectButton
 			class="Colors mt-3"
 			[options]="colors"

@@ -321,4 +321,6 @@ export const SpecialRequirements: string[] = [
   'DigiXros',
 ];
 
+export const Restrictions: string[] = ['Banned', 'Restricted to 1'];
+
 export const Blocks: string[] = ['00', '01', '02'];

@@ -17,4 +17,5 @@ export interface IFilter {
   blockFilter: string[];
   colorFilter: string[];
   cardTypeFilter: string[];
+  restrictionsFilter: string[];
 }

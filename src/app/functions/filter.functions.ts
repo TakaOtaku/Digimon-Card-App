@@ -38,6 +38,11 @@ export function filterCards(
     'illustrator'
   );
   filteredCards = applyFilter(filteredCards, filter.blockFilter, 'block');
+  filteredCards = applyFilter(
+    filteredCards,
+    filter.restrictionsFilter,
+    'restriction'
+  );
 
   filteredCards = applyRangeFilter(filteredCards, filter.levelFilter, 'level');
   filteredCards = applyRangeFilter(
@@ -328,6 +333,17 @@ function applyFilter(cards: ICard[], filter: any[], key: string): ICard[] {
             ...new Set([
               ...returnArray,
               ...cards.filter((cards) => cards['block'].includes(filter)),
+            ]),
+          ])
+      );
+      break;
+    case 'restriction':
+      filter.forEach(
+        (filter) =>
+          (returnArray = [
+            ...new Set([
+              ...returnArray,
+              ...cards.filter((cards) => cards['restriction'] === filter),
             ]),
           ])
       );
