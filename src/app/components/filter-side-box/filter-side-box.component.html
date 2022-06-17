@@ -288,10 +288,8 @@
 	</div>
 
 	<p-multiSelect
-		[filter]="true"
 		[formControl]="keywordFilter"
 		[options]="keywords"
-		[showHeader]="true"
 		[showToggleAll]="false"
 		defaultLabel="Select a Keyword"
 		display="chip"
@@ -302,10 +300,8 @@
 	</p-multiSelect>
 
 	<p-multiSelect
-		[filter]="false"
 		[formControl]="formFilter"
 		[options]="forms"
-		[showHeader]="false"
 		[showToggleAll]="false"
 		defaultLabel="Select a Form"
 		display="chip"
@@ -316,10 +312,8 @@
 	</p-multiSelect>
 
 	<p-multiSelect
-		[filter]="false"
 		[formControl]="attributeFilter"
 		[options]="attributes"
-		[showHeader]="false"
 		[showToggleAll]="false"
 		defaultLabel="Select an Attribute"
 		display="chip"
@@ -330,10 +324,8 @@
 	</p-multiSelect>
 
 	<p-multiSelect
-		[filter]="true"
 		[formControl]="typeFilter"
 		[options]="types"
-		[showHeader]="true"
 		[showToggleAll]="false"
 		defaultLabel="Select a Type"
 		display="chip"
@@ -344,10 +336,8 @@
 	</p-multiSelect>
 
 	<p-multiSelect
-		[filter]="true"
-		[formControl]="specialRequirementsFilter"
-		[options]="specialRequirements"
-		[showHeader]="true"
+    [formControl]="specialRequirementsFilter"
+    [options]="specialRequirements"
 		[showToggleAll]="false"
 		defaultLabel="Select a Special Requirement"
 		display="chip"
@@ -358,10 +348,8 @@
 	</p-multiSelect>
 
 	<p-multiSelect
-		[filter]="true"
-		[formControl]="illustratorFilter"
-		[options]="illustrators"
-		[showHeader]="true"
+    [formControl]="illustratorFilter"
+    [options]="illustrators"
 		[showToggleAll]="false"
 		defaultLabel="Select an Illustrator"
 		display="chip"
@@ -372,10 +360,8 @@
 	</p-multiSelect>
 
 	<p-multiSelect
-		[filter]="true"
-		[formControl]="blockFilter"
-		[options]="blocks"
-		[showHeader]="true"
+    [formControl]="blockFilter"
+    [options]="blocks"
 		[showToggleAll]="false"
 		defaultLabel="Select a Block"
 		display="chip"
@@ -386,10 +372,8 @@
 	</p-multiSelect>
 
   <p-multiSelect
-    [filter]="true"
     [formControl]="restrictionsFilter"
     [options]="restrictions"
-    [showHeader]="true"
     [showToggleAll]="false"
     defaultLabel="Select a Restrictions"
     display="chip"

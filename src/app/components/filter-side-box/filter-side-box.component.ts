@@ -5,6 +5,7 @@ import { MessageService } from 'primeng/api';
 import { Subject, takeUntil } from 'rxjs';
 import { IFilter } from '../../../models';
 import { CARDSET } from '../../../models/card-set.enum';
+import { ISelectItem } from '../../../models/interfaces/select-item.interface';
 import {
   changeCardSets,
   changeCollectionMode,
@@ -80,15 +81,15 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
   dpSlider: number[] = [1, 16];
 
   groupedSets = GroupedSets;
-  keywords = Keywords;
-  forms = Forms;
-  attributes = Attributes;
-  types = Types;
-  colors = Colors;
-  illustrators = Illustrators;
-  specialRequirements = SpecialRequirements;
-  blocks = Blocks;
-  restrictions = Restrictions;
+  keywords = this.itemsAsSelectItem(Keywords);
+  forms = this.itemsAsSelectItem(Forms);
+  attributes = this.itemsAsSelectItem(Attributes);
+  types = this.itemsAsSelectItem(Types);
+  colors = this.itemsAsSelectItem(Colors);
+  illustrators = this.itemsAsSelectItem(Illustrators);
+  specialRequirements = this.itemsAsSelectItem(SpecialRequirements);
+  blocks = this.itemsAsSelectItem(Blocks);
+  restrictions = this.itemsAsSelectItem(Restrictions);
 
   cardSet = CARDSET;
 
@@ -264,5 +265,9 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
 
     const filter: IFilter = { ...this.filter, versionFilter: versions };
     this.store.dispatch(changeFilter({ filter }));
+  }
+
+  itemsAsSelectItem(array: string[]): ISelectItem[] {
+    return array.map((item) => ({ label: item, value: item } as ISelectItem));
   }
 }

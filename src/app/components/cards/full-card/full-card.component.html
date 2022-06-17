@@ -1,12 +1,14 @@
 <div class="relative inline-flex transition-transform hover:scale-105 w-full">
 	<div (click)="addCardToDeck()" (dblclick)="showCardDetails()" (contextmenu)="showCardDetails()">
-		<img
-			*ngIf="card.version !== 'Normal'"
-			[ngStyle]="{ width: '65%' }"
-			[src]="aa.get(this.card.color) ?? 'assets/images/banner/ico_card_detail_multi.png'"
-			alt="AA-Banner"
-			class="aa"
-		/>
+    <div class="absolute w-full top-1 z-10 grid grid-cols-5 gap-0">
+      <div></div>
+      <img
+        *ngIf="card.version !== 'Normal'"
+        [src]="aa.get(this.card.color) ?? 'assets/images/banner/ico_card_detail_multi.png'"
+        alt="AA-Banner"
+        class="w-full col-span-3"
+      />
+    </div>
 
 		<img
 			[lazyLoad]="card.cardImage"
