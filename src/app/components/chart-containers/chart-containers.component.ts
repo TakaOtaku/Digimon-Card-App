@@ -1,10 +1,15 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import {IDeckCard} from "../../../models";
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
+import { IDeckCard } from '../../../models';
 
 @Component({
   selector: 'digimon-chart-containers',
   templateUrl: './chart-containers.component.html',
-  styleUrls: ['./chart-containers.component.scss']
 })
 export class ChartContainersComponent implements OnInit, OnChanges {
   @Input() public deck: IDeckCard[];
@@ -18,7 +23,7 @@ export class ChartContainersComponent implements OnInit, OnChanges {
   tamer: number[];
   options: number[];
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     this.setupChart();
@@ -29,36 +34,38 @@ export class ChartContainersComponent implements OnInit, OnChanges {
   }
 
   private setupChart() {
-    const eggs = this.deck.filter(card => card.cardType === 'Digi-Egg');
+    const eggs = this.deck.filter((card) => card.cardType === 'Digi-Egg');
     this.digiEggs = this.filterColor(eggs);
 
-    const lv3 = this.deck.filter(card => card.cardLv === 'Lv.3');
+    const lv3 = this.deck.filter((card) => card.cardLv === 'Lv.3');
     this.lv3 = this.filterColor(lv3);
-    const lv4 = this.deck.filter(card => card.cardLv === 'Lv.4');
+    const lv4 = this.deck.filter((card) => card.cardLv === 'Lv.4');
     this.lv4 = this.filterColor(lv4);
-    const lv5 = this.deck.filter(card => card.cardLv === 'Lv.5');
+    const lv5 = this.deck.filter((card) => card.cardLv === 'Lv.5');
     this.lv5 = this.filterColor(lv5);
-    const lv6 = this.deck.filter(card => card.cardLv === 'Lv.6');
+    const lv6 = this.deck.filter((card) => card.cardLv === 'Lv.6');
     this.lv6 = this.filterColor(lv6);
-    const lv7 = this.deck.filter(card => card.cardLv === 'Lv.7');
+    const lv7 = this.deck.filter((card) => card.cardLv === 'Lv.7');
     this.lv7 = this.filterColor(lv7);
 
-    const tamer = this.deck.filter(card => card.cardType === 'Tamer');
+    const tamer = this.deck.filter((card) => card.cardType === 'Tamer');
     this.tamer = this.filterColor(tamer);
 
-    const options = this.deck.filter(card => card.cardType === 'Option');
+    const options = this.deck.filter((card) => card.cardType === 'Option');
     this.options = this.filterColor(options);
   }
 
   private filterColor(array: IDeckCard[]): number[] {
-    const red = array.filter(card => card.color === 'Red');
-    const blue = array.filter(card => card.color === 'Blue');
-    const yellow = array.filter(card => card.color === 'Yellow');
-    const green = array.filter(card => card.color === 'Green');
-    const black = array.filter(card => card.color === 'Black');
-    const purple = array.filter(card => card.color === 'Purple');
-    const white = array.filter(card => card.color === 'White');
-    const multi = array.filter(card => card.color.includes('/') || card.color === 'Multi');
+    const red = array.filter((card) => card.color === 'Red');
+    const blue = array.filter((card) => card.color === 'Blue');
+    const yellow = array.filter((card) => card.color === 'Yellow');
+    const green = array.filter((card) => card.color === 'Green');
+    const black = array.filter((card) => card.color === 'Black');
+    const purple = array.filter((card) => card.color === 'Purple');
+    const white = array.filter((card) => card.color === 'White');
+    const multi = array.filter(
+      (card) => card.color.includes('/') || card.color === 'Multi'
+    );
 
     return [
       this.getCount(red),
@@ -68,13 +75,13 @@ export class ChartContainersComponent implements OnInit, OnChanges {
       this.getCount(black),
       this.getCount(purple),
       this.getCount(white),
-      this.getCount(multi)
+      this.getCount(multi),
     ];
   }
 
   private getCount(array: IDeckCard[]): number {
-    let number =  0;
-    array.forEach(card => number += card.count);
+    let number = 0;
+    array.forEach((card) => (number += card.count));
     return number;
   }
 }

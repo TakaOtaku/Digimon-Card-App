@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subject, takeUntil } from 'rxjs';
 import { ISortElement } from '../../../models';
@@ -9,7 +9,7 @@ import { selectSort } from '../../store/digimon.selectors';
   selector: 'digimon-sort-buttons',
   templateUrl: './sort-buttons.component.html',
 })
-export class SortButtonsComponent {
+export class SortButtonsComponent implements OnDestroy {
   sortBy: ISortElement = { name: 'ID', element: 'id' };
   order = true;
 
@@ -38,12 +38,12 @@ export class SortButtonsComponent {
     this.onDestroy$.next(true);
   }
 
-  changeOrder(event: any) {
-    if (event.option.element === this.sortBy.element) {
+  changeSortOrder(sortBy: ISortElement) {
+    if (sortBy === this.sortBy) {
       this.order = !this.order;
     }
     this.store.dispatch(
-      changeSort({ sort: { sortBy: event.option, ascOrder: this.order } })
+      changeSort({ sort: { sortBy: sortBy, ascOrder: this.order } })
     );
   }
 }

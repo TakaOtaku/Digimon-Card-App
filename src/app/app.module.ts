@@ -1,3 +1,4 @@
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire/compat';
@@ -12,6 +13,7 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { ToastrModule } from 'ngx-toastr';
+import { InputSwitchModule } from 'primeng/inputswitch';
 import { PaginatorModule } from 'primeng/paginator';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
@@ -26,18 +28,15 @@ import { ChangeAccessorieDialogComponent } from './components/dialogs/change-acc
 import { CollectionStatsDialogComponent } from './components/dialogs/collection-stats-dialog/collection-stats-dialog.component';
 import { ExportDeckDialogComponent } from './components/dialogs/export-deck-dialog/export-deck-dialog.component';
 import { ImportDeckDialogComponent } from './components/dialogs/import-deck-dialog/import-deck-dialog.component';
-import { SettingsDialogComponent } from './components/dialogs/settings-dialog/settings-dialog.component';
 import { ViewCardDialogComponent } from './components/dialogs/view-card-dialog/view-card-dialog.component';
-import { FilterBoxComponent } from './components/filter-box/filter-box.component';
+import { FilterAndSearchComponent } from './components/filter-and-search/filter-and-search.component';
+import { FilterButtonComponent } from './components/filter-button/filter-button.component';
 import { FilterSideBoxComponent } from './components/filter-side-box/filter-side-box.component';
 import { MenuComponent } from './components/menu/menu.component';
-import { MultiSelectComponent } from './components/multi-select/multi-select.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { RangeSliderComponent } from './components/range-slider/range-slider.component';
 import { SearchComponent } from './components/search/search.component';
-import { SliderComponent } from './components/slider/slider.component';
 import { SortButtonsComponent } from './components/sort-buttons/sort-buttons.component';
-import { CollectionComponent } from './pages/collection/collection.component';
 import { CommunityDecksComponent } from './pages/community-decks/community-decks.component';
 import { DeckBuilderComponent } from './pages/deck-builder/deck-builder.component';
 import { DecksComponent } from './pages/decks/decks.component';
@@ -56,16 +55,14 @@ import * as Save from './store/reducers/save.reducer';
     AppComponent,
     FullCardComponent,
     MainPageComponent,
-    FilterBoxComponent,
+    FilterAndSearchComponent,
     CardListComponent,
     DecksComponent,
     DeckBuilderComponent,
     NavbarComponent,
     DeckCardComponent,
     SortButtonsComponent,
-    SliderComponent,
     MenuComponent,
-    MultiSelectComponent,
     ExportDeckDialogComponent,
     ImportDeckDialogComponent,
     PaginationCardListComponent,
@@ -73,13 +70,12 @@ import * as Save from './store/reducers/save.reducer';
     CommunityDecksComponent,
     ChangeAccessorieDialogComponent,
     CollectionStatsDialogComponent,
-    CollectionComponent,
-    SettingsDialogComponent,
     SearchComponent,
     FilterSideBoxComponent,
     ChartContainersComponent,
     ChartContainerComponent,
     RangeSliderComponent,
+    FilterButtonComponent,
   ],
   imports: [
     PrimeNGModule,
@@ -89,6 +85,8 @@ import * as Save from './store/reducers/save.reducer';
     HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
+
+    NgxSliderModule,
 
     LazyLoadImageModule,
 
@@ -119,6 +117,7 @@ import * as Save from './store/reducers/save.reducer';
     }),
     EffectsModule.forRoot([DigimonEffects]),
     PaginatorModule,
+    InputSwitchModule,
   ],
   providers: [ReactiveFormsModule, AuthService, DatabaseService],
   bootstrap: [AppComponent],

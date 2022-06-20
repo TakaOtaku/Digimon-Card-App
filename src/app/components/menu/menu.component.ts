@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { saveAs } from 'file-saver';
@@ -10,11 +10,12 @@ import {
 } from 'primeng/api';
 import { first, Subject, takeUntil } from 'rxjs';
 import { SITES } from 'src/app/pages/main-page/main-page.component';
-import { ICard, ICountCard, ISave } from '../../../models';
+import { ICard, ICountCard, IFilter, ISave, IUser } from '../../../models';
 import { AuthService } from '../../service/auth.service';
 import { DatabaseService } from '../../service/database.service';
 import {
   addToCollection,
+  changeFilter,
   loadSave,
   setSave,
   setSite,
@@ -22,13 +23,11 @@ import {
 import {
   selectAllCards,
   selectCollection,
-  selectCollectionMinimum,
   selectSave,
-  selectShowAACards,
-  selectShowPreRelease,
-  selectShowStampedCards,
+  selectSettings,
 } from '../../store/digimon.selectors';
 import { emptySettings } from '../../store/reducers/save.reducer';
+import { GroupedSets } from '../filter-side-box/filterData';
 
 @Component({
   selector: 'digimon-menu',
@@ -45,8 +44,10 @@ export class MenuComponent implements OnInit, OnDestroy {
 
   display = false;
   importDisplay = false;
+  exportDialog = false;
   collectionDisplay = false;
   settingsDialog = false;
+  creditsDisplay = false;
 
   importPlaceholder =
     '' + 'Paste Collection here\n' + '\n' + ' Format:\n' + '   Qty Id\n';
@@ -68,6 +69,17 @@ export class MenuComponent implements OnInit, OnDestroy {
   sortOrder = ['Color', 'Level'];
   sortOrderFilter = new FormControl();
 
+  user: IUser | null;
+
+  mobile = false;
+
+  collectedCards = true;
+  groupedSets = GroupedSets;
+  sets: string[];
+  goal = 4;
+  rarities: string[] = [];
+  versions: string[] = [];
+
   private onDestroy$ = new Subject();
 
   constructor(
@@ -77,7 +89,10 @@ export class MenuComponent implements OnInit, OnDestroy {
     private db: DatabaseService,
     public authService: AuthService,
     private store: Store
-  ) {
+  ) {}
+
+  ngOnInit() {
+    this.update();
     this.store
       .select(selectSave)
       .pipe(takeUntil(this.onDestroy$))
@@ -88,11 +103,6 @@ export class MenuComponent implements OnInit, OnDestroy {
         });
         this.save = JSON.stringify(save, undefined, 4);
       });
-    this.authService.authChange.subscribe(() => this.update());
-  }
-
-  ngOnInit() {
-    this.update();
     this.store
       .select(selectAllCards)
       .pipe(first())
@@ -102,115 +112,121 @@ export class MenuComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.onDestroy$))
       .subscribe((collection) => (this.collection = collection));
     this.store
-      .select(selectCollectionMinimum)
+      .select(selectSettings)
       .pipe(takeUntil(this.onDestroy$))
-      .subscribe((minimum) => (this.collectionCount = minimum));
-    this.store
-      .select(selectShowPreRelease)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((show) => (this.preRelease = show));
-    this.store
-      .select(selectShowAACards)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((show) => (this.aa = show));
-    this.store
-      .select(selectShowStampedCards)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((show) => (this.stamped = show));
+      .subscribe((settings) => {
+        this.preRelease = settings.showPreRelease;
+        this.aa = settings.showAACards;
+        this.stamped = settings.showStampedCards;
+        this.collectionCount = settings.collectionMinimum;
+      });
+
+    this.user = this.authService.userData;
+    this.authService.authChange.subscribe(() => {
+      this.update();
+      this.user = this.authService.userData;
+    });
 
     this.primengConfig.ripple = true;
+    this.onResize();
   }
 
   ngOnDestroy() {
     this.onDestroy$.next(true);
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    let screenWidth = window.innerWidth;
+    this.mobile = screenWidth <= 1024;
+  }
+
   update() {
     const user = this.authService.userData?.displayName ?? 'Unknown';
-    this.items = [
-      {
-        label: 'User: ' + user,
-        items: [
-          {
-            label: 'Collection',
-            icon: 'pi pi-book',
-            command: () => {
-              this.switchSite(0);
-            },
+    const userMenu = {
+      label: 'User: ' + user,
+      items: [
+        {
+          label: 'Home',
+          icon: 'pi pi-pencil',
+          command: () => {
+            this.switchSite(SITES.DeckBuilder);
           },
-          {
-            label: 'Collection Stats',
-            icon: 'pi pi-book',
-            command: () => (this.collectionDisplay = true),
+        },
+        {
+          label: 'My Decks',
+          icon: 'pi pi-database',
+          command: () => {
+            this.switchSite(SITES.Decks);
           },
-          {
-            label: 'Deckbuilder',
-            icon: 'pi pi-pencil',
-            command: () => {
-              this.switchSite(2);
-            },
+        },
+        {
+          label: 'Community Decks',
+          icon: 'pi pi-database',
+          command: () => {
+            this.switchSite(SITES.CommunityDecks);
           },
-          {
-            label: 'My Decks',
-            icon: 'pi pi-database',
-            command: () => {
-              this.switchSite(1);
-            },
+        },
+        {
+          label: 'Collection Stats',
+          icon: 'pi pi-book',
+          command: () => (this.collectionDisplay = true),
+        },
+      ],
+    };
+
+    const settingsMenu = {
+      label: 'Settings',
+      items: [
+        {
+          label: this.authService.isLoggedIn ? 'Logout' : 'Login',
+          icon: 'pi pi-google',
+          command: () => {
+            this.authService.isLoggedIn
+              ? this.authService.LogOut()
+              : this.login();
           },
-        ],
-      },
-      {
-        label: 'Community',
-        items: [
-          {
-            label: 'Community Decks',
-            icon: 'pi pi-database',
-            command: () => {
-              this.switchSite(3);
-            },
-          },
-        ],
-      },
-      {
-        label: 'Settings',
-        items: [
-          {
-            label: this.authService.isLoggedIn ? 'Logout' : 'Login',
-            icon: 'pi pi-google',
-            command: () => {
-              this.authService.isLoggedIn
-                ? this.authService.LogOut()
-                : this.login();
-            },
-          },
-          {
-            label: 'Import/Export',
-            icon: 'pi pi-upload',
-            command: () => (this.display = !this.display),
-          },
-          {
-            label: 'Advanced Settings',
-            icon: 'pi pi-cog',
-            command: () => (this.settingsDialog = true),
-          },
-        ],
-      },
-      {
-        label: 'External',
-        items: [
-          {
-            label: 'What I work on',
-            icon: 'pi pi-history',
-            url: 'https://github.com/users/TakaOtaku/projects/1/views/1?layout=board',
-          },
-          {
-            label: 'Help the Site!',
-            icon: 'pi pi-paypal',
-            url: 'https://www.paypal.com/donate/?hosted_button_id=DHQVT7GQ72J98',
-          },
-        ],
-      },
-    ];
+        },
+        {
+          label: 'Import/Export',
+          icon: 'pi pi-upload',
+          command: () => (this.display = !this.display),
+        },
+        {
+          label: 'Advanced Settings',
+          icon: 'pi pi-cog',
+          command: () => (this.settingsDialog = true),
+        },
+        {
+          label: 'Credits',
+          icon: 'pi pi-file',
+          command: () => (this.creditsDisplay = true),
+        },
+      ],
+    };
+
+    const externalMenu = {
+      label: 'External',
+      items: [
+        {
+          label: 'What I work on',
+          icon: 'pi pi-history',
+          url: 'https://github.com/users/TakaOtaku/projects/1/views/1?layout=board',
+        },
+        {
+          label: 'Feature/Bug Request',
+          icon: 'pi pi-plus',
+          url: 'https://github.com/TakaOtaku/Digimon-Card-App/issues',
+        },
+        {
+          label: 'Help the Site!',
+          icon: 'pi pi-paypal',
+          url: 'https://www.paypal.com/donate/?hosted_button_id=DHQVT7GQ72J98',
+        },
+      ],
+    };
+
+    this.items = [userMenu, settingsMenu, externalMenu];
   }
 
   switchSite(site: number) {
@@ -275,6 +291,24 @@ export class MenuComponent implements OnInit, OnDestroy {
     this.authService.GoogleAuth();
   }
 
+  saveSettings() {
+    const save = {
+      ...this.iSave,
+      settings: {
+        ...this.iSave.settings,
+        minimum: this.collectionCount,
+        showPreRelease: this.preRelease,
+        showAACards: this.aa,
+        showStampedCards: this.stamped,
+        sortDeckOrder: this.sortOrderFilter.value,
+      },
+    };
+
+    this.store.dispatch(setSave({ save }));
+
+    this.settingsDialog = false;
+  }
+
   importCollection() {
     if (this.collectionText === '') return;
 
@@ -296,22 +330,163 @@ export class MenuComponent implements OnInit, OnDestroy {
     });
   }
 
-  saveSettings() {
-    const save = {
-      ...this.iSave,
-      settings: {
-        ...this.iSave.settings,
-        minimum: this.collectionCount,
-        showPreRelease: this.preRelease,
-        showAACards: this.aa,
-        showStampedCards: this.stamped,
-        sortDeckOrder: this.sortOrderFilter.value,
-      },
-    };
+  changeRarity(rarity: string) {
+    if (this.rarities.includes(rarity)) {
+      this.rarities = this.rarities.filter((value) => value !== rarity);
+    } else {
+      this.rarities = [...new Set(this.rarities), rarity];
+    }
+  }
 
-    this.store.dispatch(setSave({ save }));
+  changeVersion(version: string) {
+    if (this.versions.includes(version)) {
+      this.versions = this.versions.filter((value) => value !== version);
+    } else {
+      this.versions = [...new Set(this.versions), version];
+    }
+  }
 
-    this.settingsDialog = false;
+  exportCollection() {
+    const exportCards = this.getSetCards().sort((a, b) =>
+      a.id.localeCompare(b.id)
+    );
+
+    if (exportCards.length === 0) {
+      this.messageService.add({
+        severity: 'warn',
+        summary: 'No cards found!',
+        detail: 'No cards, that match your filter were found!',
+      });
+      return;
+    }
+
+    const header = Object.keys(exportCards[0]);
+
+    let csv = exportCards.map((row) =>
+      // @ts-ignore
+      header.map((fieldName) => JSON.stringify(row[fieldName])).join(',')
+    );
+    csv.unshift(header.join(','));
+    let csvArray = csv.join('\r\n');
+
+    let blob = new Blob([csvArray], { type: 'text/csv' });
+    saveAs(blob, 'digimon-card-app.csv');
+  }
+
+  private getSetCards(): ICountCard[] {
+    // If no filter is selected filter all cards
+    let returnCards: ICountCard[] = [];
+    let allCards: ICard[] = this.setupAllCards();
+    let collection: ICountCard[] = this.setupCollection();
+
+    if (this.collectedCards) {
+      collection
+        .filter((card) => !card.id.includes('P-'))
+        .forEach((collectionCard) => returnCards.push(collectionCard));
+    } else {
+      allCards
+        .filter((card) => !card.id.includes('P-'))
+        .forEach((card) => {
+          const foundCard = collection.find(
+            (collectionCard) => collectionCard.id === card.id
+          );
+          if (foundCard) {
+            if (this.goal - foundCard.count > 0) {
+              returnCards.push({
+                id: foundCard.id,
+                count: this.goal - foundCard.count,
+              } as ICountCard);
+            }
+          } else {
+            returnCards.push({ id: card.id, count: this.goal } as ICountCard);
+          }
+        });
+    }
+
+    return returnCards;
+  }
+
+  private setupAllCards(): ICard[] {
+    let setFiltered: ICard[] = this.sets.length === 0 ? this.digimonCards : [];
+    this.sets.forEach((filter) => {
+      setFiltered = [
+        ...new Set([
+          ...setFiltered,
+          ...this.digimonCards.filter(
+            (cards) => cards['id'].split('-')[0] === filter
+          ),
+        ]),
+      ];
+    });
+
+    let raritiesFiltered: ICard[] = [];
+    this.rarities.forEach((filter) => {
+      raritiesFiltered = [
+        ...new Set([
+          ...raritiesFiltered,
+          ...setFiltered.filter((cards) => cards['rarity'] === filter),
+        ]),
+      ];
+    });
+
+    let versionsFiltered: ICard[] = [];
+    this.versions.forEach((filter) => {
+      versionsFiltered = [
+        ...new Set([
+          ...versionsFiltered,
+          ...raritiesFiltered.filter((cards) => cards['version'] === filter),
+        ]),
+      ];
+    });
+
+    return versionsFiltered;
+  }
+
+  private setupCollection(): ICountCard[] {
+    let setFiltered: ICountCard[] =
+      this.sets.length === 0 ? this.collection : [];
+    this.sets.forEach((filter) => {
+      setFiltered = [
+        ...new Set([
+          ...setFiltered,
+          ...this.collection.filter(
+            (cards) => cards['id'].split('-')[0] === filter
+          ),
+        ]),
+      ];
+    });
+
+    if (this.rarities.length === 0) {
+      return setFiltered;
+    }
+
+    let collectionCardsForRarity: ICountCard[] = [];
+    setFiltered.forEach((collectionCard) => {
+      const foundCard = this.digimonCards.find(
+        (card) => card.id === collectionCard.id
+      );
+
+      if (this.rarities.includes(foundCard!.rarity)) {
+        collectionCardsForRarity.push(collectionCard);
+      }
+    });
+
+    if (this.versions.length === 0) {
+      return collectionCardsForRarity;
+    }
+
+    let collectionCardsForVersion: ICountCard[] = [];
+    collectionCardsForRarity.forEach((collectionCard) => {
+      const foundCard = this.digimonCards.find(
+        (card) => card.id === collectionCard.id
+      );
+
+      if (this.versions.includes(foundCard!.version)) {
+        collectionCardsForVersion.push(collectionCard);
+      }
+    });
+
+    return collectionCardsForVersion;
   }
 
   private parseLine(line: string): ICountCard | null {

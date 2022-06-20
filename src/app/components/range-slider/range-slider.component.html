@@ -1,9 +1,7 @@
-<h1 class="primary-color mt-5 text-center">{{title}}</h1>
-<div class="flex flex-row mx-5">
-  <p-inputNumber (onInput)="changeMin($event)" [(ngModel)]="slider[0]" [max]="minMax[1]" [min]="minMax[0]" inputStyleClass="text-white max-w-[35px]" mode="decimal"></p-inputNumber>
-  <p class="text-white ml-1 max-w-[35px] text-xs leading-[40px]">{{suffix}}</p>
-  <p-slider (onSlideEnd)="OnSliderChange.emit($event)" [(ngModel)]="slider"
-            [max]="minMax[1]" [min]="minMax[0]" [range]="true" class="flex-grow mx-5 self-center"></p-slider>
-  <p-inputNumber (onInput)="changeMax($event)" [(ngModel)]="slider[1]" [max]="minMax[1]" [min]="minMax[0]" inputStyleClass="text-white max-w-[35px]" mode="decimal"></p-inputNumber>
-  <p class="text-white ml-1 max-w-[35px] text-xs leading-[40px]">{{suffix}}</p>
+<div class="custom-slider mx-5 flex flex-row">
+	<ngx-slider [formControl]="sliderControl" class="w-full" [options]="options"></ngx-slider>
 </div>
+
+<h1 class="mb-1 mt-[-8px] text-center text-xs font-bold text-white">
+  {{ title }}
+</h1>

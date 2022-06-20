@@ -23,5 +23,6 @@ export interface ICard {
   securityEffect: string;
   notes: string;
   illustrator: string;
+  restriction?: string;
   block: string[];
 }

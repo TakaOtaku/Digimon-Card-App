@@ -1,9 +1,21 @@
-import {createFeatureSelector, createSelector} from "@ngrx/store";
-import {ICard, ICountCard, IDeck, IDigimonCards, IDigimonState, IFilter, ISave, ISettings, ISort} from "../../models";
+import { createFeatureSelector, createSelector } from '@ngrx/store';
+import {
+  ICard,
+  ICountCard,
+  IDeck,
+  IDigimonCards,
+  IDigimonState,
+  IFilter,
+  ISave,
+  ISettings,
+  ISort,
+} from '../../models';
 
-export const selectIDigimonCards = createFeatureSelector<IDigimonCards>('digimonCards');
+export const selectIDigimonCards =
+  createFeatureSelector<IDigimonCards>('digimonCards');
 export const selectSave = createFeatureSelector<ISave>('save');
-export const selectDigimonState = createFeatureSelector<IDigimonState>('digimon');
+export const selectDigimonState =
+  createFeatureSelector<IDigimonState>('digimon');
 
 //region Digimon Selectors
 export const selectSite = createSelector(
@@ -25,6 +37,10 @@ export const selectDeck = createSelector(
 //endregion
 
 //region Dialog Selectors
+export const selectDialogs = createSelector(
+  selectDigimonState,
+  (state: IDigimonState) => state.dialogs
+);
 export const selectExportDeckDialog = createSelector(
   selectDigimonState,
   (state: IDigimonState) => state.dialogs.exportDeck
@@ -107,7 +123,17 @@ export const selectChangeAdvancedSettings = createSelector(
   selectShowAACards,
   selectShowStampedCards,
   selectFilter,
-  (showPreRelease: boolean, showAA: boolean, showStamped: boolean, filter: IFilter) => ({showPreRelease, showAA, showStamped, filter})
+  (
+    showPreRelease: boolean,
+    showAA: boolean,
+    showStamped: boolean,
+    filter: IFilter
+  ) => ({
+    showPreRelease,
+    showAA,
+    showStamped,
+    filter,
+  })
 );
 
 export const selectChangeFilterEffect = createSelector(
@@ -115,12 +141,19 @@ export const selectChangeFilterEffect = createSelector(
   selectCollection,
   selectFilter,
   selectSort,
-  (cards: ICard[], collection: ICountCard[], filter: IFilter, sort: ISort) => ({cards, collection, filter, sort})
+  (cards: ICard[], collection: ICountCard[], filter: IFilter, sort: ISort) => ({
+    cards,
+    collection,
+    filter,
+    sort,
+  })
 );
 
 export const selectDeckBuilderViewModel = createSelector(
   selectDeck,
   selectAllCards,
-  selectCollection,
-  (deck: IDeck | null, cards: ICard[], collection: ICountCard[]) => ({deck, cards, collection})
+  (deck: IDeck | null, cards: ICard[]) => ({
+    deck,
+    cards,
+  })
 );

@@ -11,6 +11,7 @@ yarn-error.log
 
 # IDEs and editorsasdasd
 .idea/
+.angular
 .project
 .classpath
 .c9/

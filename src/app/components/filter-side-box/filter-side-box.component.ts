@@ -1,14 +1,18 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { MessageService } from 'primeng/api';
 import { Subject, takeUntil } from 'rxjs';
 import { IFilter } from '../../../models';
+import { CARDSET } from '../../../models/card-set.enum';
+import { ISelectItem } from '../../../models/interfaces/select-item.interface';
 import {
+  changeCardSets,
   changeCollectionMode,
   changeFilter,
 } from '../../store/digimon.actions';
 import {
+  selectCardSet,
   selectCollectionMode,
   selectFilter,
 } from '../../store/digimon.selectors';
@@ -23,18 +27,22 @@ import {
   Illustrators,
   Keywords,
   Rarities,
+  Restrictions,
   SpecialRequirements,
   Types,
   Versions,
-} from '../filter-box/filterData';
+} from './filterData';
 
 @Component({
   selector: 'digimon-filter-side-box',
   templateUrl: './filter-side-box.component.html',
   styleUrls: ['./filter-side-box.component.scss'],
 })
-export class FilterSideBoxComponent implements OnInit {
+export class FilterSideBoxComponent implements OnInit, OnDestroy {
   @Input() public showColors: boolean;
+
+  cardSets = ['English', '日本語', 'Both'];
+  selectedCardSet = 'English';
 
   setFilter = new FormControl([]);
   rarityFilter = new FormControl([]);
@@ -48,6 +56,7 @@ export class FilterSideBoxComponent implements OnInit {
   illustratorFilter = new FormControl([]);
   specialRequirementsFilter = new FormControl([]);
   blockFilter = new FormControl([]);
+  restrictionsFilter = new FormControl([]);
 
   filterFormGroup: FormGroup = new FormGroup({
     setFilter: this.setFilter,
@@ -62,6 +71,7 @@ export class FilterSideBoxComponent implements OnInit {
     illustratorFilter: this.illustratorFilter,
     specialRequirementsFilter: this.specialRequirementsFilter,
     blockFilter: this.blockFilter,
+    restrictionsFilter: this.restrictionsFilter,
   });
 
   cardCountSlider: number[] = [0, 5];
@@ -71,17 +81,17 @@ export class FilterSideBoxComponent implements OnInit {
   dpSlider: number[] = [1, 16];
 
   groupedSets = GroupedSets;
-  rarities = Rarities;
-  versions = Versions;
-  keywords = Keywords;
-  forms = Forms;
-  attributes = Attributes;
-  types = Types;
-  cardTypes = CardTypes;
-  colors = Colors;
-  illustrators = Illustrators;
-  specialRequirements = SpecialRequirements;
-  blocks = Blocks;
+  keywords = this.itemsAsSelectItem(Keywords);
+  forms = this.itemsAsSelectItem(Forms);
+  attributes = this.itemsAsSelectItem(Attributes);
+  types = this.itemsAsSelectItem(Types);
+  colors = this.itemsAsSelectItem(Colors);
+  illustrators = this.itemsAsSelectItem(Illustrators);
+  specialRequirements = this.itemsAsSelectItem(SpecialRequirements);
+  blocks = this.itemsAsSelectItem(Blocks);
+  restrictions = this.itemsAsSelectItem(Restrictions);
+
+  cardSet = CARDSET;
 
   collectionMode = false;
 
@@ -118,6 +128,9 @@ export class FilterSideBoxComponent implements OnInit {
           { emitEvent: false }
         );
         this.blockFilter.setValue(filter.blockFilter, { emitEvent: false });
+        this.restrictionsFilter.setValue(filter.restrictionsFilter, {
+          emitEvent: false,
+        });
 
         this.cardCountSlider = [...new Set(filter.cardCountFilter)];
         this.levelSlider = [...new Set(filter.levelFilter)];
@@ -139,24 +152,32 @@ export class FilterSideBoxComponent implements OnInit {
       .subscribe((collectionMode) => {
         this.collectionMode = collectionMode;
       });
+
+    this.setCardSetSubscriptions();
   }
 
   ngOnDestroy() {
     this.onDestroy$.next(true);
   }
 
-  reset() {
-    this.store.dispatch(changeFilter({ filter: emptyFilter }));
+  private setCardSetSubscriptions() {
+    this.store
+      .select(selectCardSet)
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((set) => {
+        if (+set >>> 0) {
+          this.selectedCardSet = CARDSET.Both;
+        } else {
+          this.selectedCardSet = set;
+        }
+      });
   }
 
-  changeCM() {
-    this.store.dispatch(
-      changeCollectionMode({ collectionMode: !this.collectionMode })
-    );
+  reset() {
+    this.store.dispatch(changeFilter({ filter: emptyFilter }));
     this.messageService.add({
       severity: 'info',
-      summary: 'Collection Mode',
-      detail: 'Collection Mode was changed!',
+      detail: 'All filter were reset.',
     });
   }
 
@@ -194,7 +215,59 @@ export class FilterSideBoxComponent implements OnInit {
     );
   }
 
-  colorChecked(color: string): boolean {
-    return this.colorFilter.value.find((value: string) => value === color);
+  changeColor(color: string) {
+    let colors = [];
+    if (this.filter.colorFilter.includes(color)) {
+      colors = this.filter.colorFilter.filter((value) => value !== color);
+    } else {
+      colors = [...new Set(this.filter.colorFilter), color];
+    }
+
+    const filter: IFilter = { ...this.filter, colorFilter: colors };
+    this.store.dispatch(changeFilter({ filter }));
+  }
+
+  setCardSet(cardSet: string) {
+    this.store.dispatch(changeCardSets({ cardSet }));
+  }
+
+  changeCardType(type: string) {
+    let types = [];
+    if (this.filter.cardTypeFilter.includes(type)) {
+      types = this.filter.cardTypeFilter.filter((value) => value !== type);
+    } else {
+      types = [...new Set(this.filter.cardTypeFilter), type];
+    }
+
+    const filter: IFilter = { ...this.filter, cardTypeFilter: types };
+    this.store.dispatch(changeFilter({ filter }));
+  }
+
+  changeRarity(rarity: string) {
+    let rarities = [];
+    if (this.filter.rarityFilter.includes(rarity)) {
+      rarities = this.filter.rarityFilter.filter((value) => value !== rarity);
+    } else {
+      rarities = [...new Set(this.filter.rarityFilter), rarity];
+    }
+
+    const filter: IFilter = { ...this.filter, rarityFilter: rarities };
+    this.store.dispatch(changeFilter({ filter }));
+  }
+
+  changeVersion(version: string) {
+    let versions = [];
+    if (this.filter.versionFilter.includes(version)) {
+      versions = this.filter.versionFilter.filter((value) => value !== version);
+    } else {
+      versions = [...new Set(this.filter.versionFilter), version];
+    }
+
+    const filter: IFilter = { ...this.filter, versionFilter: versions };
+    this.store.dispatch(changeFilter({ filter }));
+  }
+
+  itemsAsSelectItem(array: string[]): ISelectItem[] {
+    return array.map((item) => ({ label: item, value: item } as ISelectItem));
   }
 }

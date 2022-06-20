@@ -19,7 +19,6 @@ import { SITES } from '../main-page/main-page.component';
 @Component({
   selector: 'digimon-decks',
   templateUrl: './decks.component.html',
-  styleUrls: ['./decks.component.scss'],
 })
 export class DecksComponent implements OnInit, OnDestroy {
   selectedDeck: IDeck;
@@ -82,7 +81,18 @@ export class DecksComponent implements OnInit, OnDestroy {
     this.store
       .select(selectDecks)
       .pipe(takeUntil(this.onDestroy$))
-      .subscribe((decks) => (this.decks = decks));
+      .subscribe((decks) => {
+        try {
+          const test = [...new Set(decks)];
+          this.decks = test.sort((a, b) => {
+            const timeA = new Date(a?.date ?? '').getTime() ?? 0;
+            const timeB = new Date(b?.date ?? '').getTime() ?? 0;
+            return timeB - timeA || a.title!.localeCompare(b.title!);
+          });
+        } catch (e) {
+          this.decks = decks;
+        }
+      });
   }
 
   ngOnDestroy() {
@@ -97,11 +107,21 @@ export class DecksComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Set the Deck-Builder-Deck and switch to the Deck-Builder
+   * Create a new empty Deck
    */
-  openDeck(): void {
-    this.store.dispatch(setDeck({ deck: this.selectedDeck }));
-    this.store.dispatch(setSite({ site: SITES.DeckBuilder }));
+  createNewDeck() {
+    const deck: IDeck = {
+      id: uuid.v4(),
+      cards: [],
+      title: 'New Deck',
+      color: { name: 'White', img: 'assets/decks/white.svg' },
+    };
+    this.store.dispatch(importDeck({ deck }));
+    this.messageService.add({
+      severity: 'success',
+      summary: 'New Deck created!',
+      detail: 'A new Deck was created successfully!',
+    });
   }
 
   /**
@@ -123,16 +143,11 @@ export class DecksComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Create a new empty Deck
+   * Set the Deck-Builder-Deck and switch to the Deck-Builder
    */
-  createNewDeck() {
-    const deck: IDeck = {
-      id: uuid.v4(),
-      cards: [],
-      title: 'New Deck',
-      color: { name: 'White', img: 'assets/decks/white.svg' },
-    };
-    this.store.dispatch(importDeck({ deck }));
+  openDeck(): void {
+    this.store.dispatch(setDeck({ deck: this.selectedDeck }));
+    this.store.dispatch(setSite({ site: SITES.DeckBuilder }));
   }
 
   showContextMenu(menu: any, event: any, deck: IDeck) {
