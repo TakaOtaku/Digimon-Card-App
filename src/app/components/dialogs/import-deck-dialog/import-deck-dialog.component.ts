@@ -72,7 +72,7 @@ export class ImportDeckDialogComponent implements OnInit, OnDestroy {
     const deck: IDeck = this.parseDeck(result);
     if (deck.cards.length === 0) {
       this.messageService.add({
-        severity: 'Warning',
+        severity: 'warn',
         summary: 'Deck error!',
         detail: 'No card could be found!',
       });

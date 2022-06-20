@@ -353,7 +353,7 @@ export class MenuComponent implements OnInit, OnDestroy {
 
     if (exportCards.length === 0) {
       this.messageService.add({
-        severity: 'warning',
+        severity: 'warn',
         summary: 'No cards found!',
         detail: 'No cards, that match your filter were found!',
       });

@@ -299,7 +299,7 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
   mulligan() {
     if (this.didMulligan) {
       this.messageService.add({
-        severity: 'warning',
+        severity: 'warn',
         summary: 'You already did a Mulligan!',
         detail: 'You can only mulligan once, before resetting.',
       });
