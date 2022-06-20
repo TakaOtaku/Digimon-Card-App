@@ -2023,7 +2023,7 @@
     "effect": "[On Play] If you have a red Tamer in play, delete 1 of your opponent's Digimon with 3000 DP or less.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "Digimon Survive Release Commemorative Promotion Pack",
+    "notes": "Digimon Survive Promotion Pack",
     "color": "Red",
     "version": "Normal",
     "block": [
@@ -2052,7 +2052,7 @@
     "effect": "[On Play] If you have a purple Tamer in play, delete 1 of your opponent's level 3 Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "Digimon Survive Release Commemorative Promotion Pack",
+    "notes": "Digimon Survive Promotion Pack",
     "color": "Purple",
     "version": "Normal",
     "block": [
@@ -2081,7 +2081,7 @@
     "effect": "[On Play] If you have a yellow Tamer in play, 1 of your opponent's Digimon gets -2000 DP until the end of their turn.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "Digimon Survive Release Commemorative Promotion Pack",
+    "notes": "Digimon Survive Promotion Pack",
     "color": "Yellow",
     "version": "Normal",
     "block": [
