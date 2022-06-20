@@ -91,9 +91,10 @@ export class FullCardComponent implements OnInit, OnDestroy {
   }
 
   addCardToDeck() {
-    this.clickTimer = setTimeout(() => {
-      this.clickTest();
-    }, 300);
+    this.addCard.emit(this.card.id);
+    //this.clickTimer = setTimeout(() => {
+    //  this.clickTest();
+    //}, 300);
   }
 
   clickTest() {
@@ -104,8 +105,8 @@ export class FullCardComponent implements OnInit, OnDestroy {
   }
 
   showCardDetails() {
-    clearTimeout(this.clickTimer);
-    this.clickTimer = undefined;
+    //clearTimeout(this.clickTimer);
+    //this.clickTimer = undefined;
     this.store.dispatch(setViewCardDialog({ show: true, card: this.card }));
   }
 
