@@ -85,6 +85,12 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
   stack = false;
   missingCards = false;
 
+  securityStack: ICard[];
+  drawHand: ICard[];
+  allDeckCards: ICard[];
+  didMulligan = false;
+  simulateDialog = false;
+
   private screenWidth: number;
 
   private onDestroy$ = new Subject();
@@ -283,6 +289,60 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
         });
       },
     });
+  }
+
+  simulate() {
+    this.simulateDialog = true;
+    this.resetSimulation();
+  }
+
+  mulligan() {
+    if (this.didMulligan) {
+      this.messageService.add({
+        severity: 'warning',
+        summary: 'You already did a Mulligan!',
+        detail: 'You can only mulligan once, before resetting.',
+      });
+      return;
+    }
+
+    this.drawHand = this.allDeckCards.slice(10, 15);
+
+    this.didMulligan = true;
+  }
+
+  resetSimulation() {
+    this.didMulligan = false;
+
+    this.allDeckCards = DeckBuilderComponent.shuffle(
+      this.deck.cards.map((card) => this.allCards.find((a) => a.id === card.id))
+    );
+    this.allDeckCards = this.allDeckCards.filter(
+      (card) => card.cardType !== 'Digi-Egg'
+    );
+
+    this.securityStack = this.allDeckCards.slice(0, 5);
+    this.drawHand = this.allDeckCards.slice(5, 10);
+  }
+
+  private static shuffle(array: any[]) {
+    let currentIndex = array.length,
+      randomIndex;
+
+    // While there remain elements to shuffle.
+    while (currentIndex != 0) {
+      // Pick a remaining element.
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex],
+        array[currentIndex],
+      ];
+    }
+
+    return array;
   }
 
   /**

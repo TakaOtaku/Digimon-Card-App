@@ -12,6 +12,7 @@ import BT7 from './BT7.json';
 import BT8 from './BT8.json';
 
 import EX1 from './EX1.json';
+import EX2 from './EX2.json';
 
 import ST1 from './ST1.json';
 import ST2 from './ST2.json';
@@ -37,6 +38,7 @@ export const englishCards: ICard[] = [
   ...BT8,
 
   ...EX1,
+  ...EX2,
 
   ...ST1,
   ...ST2,

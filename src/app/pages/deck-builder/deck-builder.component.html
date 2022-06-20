@@ -69,7 +69,7 @@
           <p class="text-xs">Cards</p>
         </div>
 
-        <button (click)="missingCards = !missingCards" class="p-button-outlined col-span-2" label="Missing" pButton></button>
+        <button (click)="missingCards = !missingCards" class="p-button-outlined w-full" icon="pi pi-times" iconPos="left" pButton></button>
 
         <button (click)="newDeck()" class="p-button-outlined w-full" icon="pi pi-file" iconPos="left" pButton></button>
 
@@ -100,6 +100,8 @@
         ></button>
 
         <button (click)="share()" class="p-button-outlined w-full" icon="pi pi-share-alt" iconPos="left" pButton></button>
+
+        <button (click)="simulate()" class="p-button-outlined w-full" icon="pi pi-refresh" iconPos="left" pButton></button>
       </div>
     </div>
 
@@ -148,3 +150,32 @@
   </div>
 
 </div>
+
+
+<p-dialog
+  header="Simulate Security/Draw"
+  [(visible)]="simulateDialog"
+  styleClass="w-[100%] min-w-[250px] sm:min-w-[500px] sm:w-[700px] min-h-[500px]"
+  [baseZIndex]="10000"
+  (onHide)="simulateDialog = false"
+>
+  <!-- Security Stack -->
+  <h1 class="font-bold text-2xl text-center">Security Stack</h1>
+  <div class="flex flex-row mt-5">
+    <div *ngFor="let secCard of securityStack" class="cards-in-a-row-5 mr-1">
+      <img [src]="secCard.cardImage" [alt]="secCard.id + ' - ' + secCard.name"/>
+    </div>
+  </div>
+
+  <h1 class="font-bold text-2xl text-center">Draw Hand</h1>
+  <div class="flex flex-row mt-5">
+    <div *ngFor="let drawCard of drawHand" class="cards-in-a-row-5 mr-1">
+      <img [src]="drawCard.cardImage" [alt]="drawCard.id + ' - ' + drawCard.name"/>
+    </div>
+  </div>
+
+  <div class="mt-5 flex w-full justify-end">
+    <button pButton (click)="mulligan()">Mulligan</button>
+    <button pButton class="ml-5" (click)="resetSimulation()">Reset</button>
+  </div>
+</p-dialog>
