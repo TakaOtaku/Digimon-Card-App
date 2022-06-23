@@ -508,7 +508,7 @@
     ],
     "restriction": "",
     "illustrator": "As'Maria"
-},
+  },
   {
     "id": "EX2-011_P2",
     "name": "Gallantmon",
@@ -533,6 +533,36 @@
     "notes": "DC-1 2022 TOP 8",
     "color": "Red",
     "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Naochika Morishita"
+  },
+  {
+    "id": "EX2-011_P0",
+    "name": "Gallantmon",
+    "cardImage": "assets/images/cards/eng/EX2-011_P0.jpg",
+    "cardType": "Digimon",
+    "dp": "12000",
+    "playCost": "12",
+    "digivolveCost1": "4 from Lv.5",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Virus",
+    "type": "Holy Warrior/Royal Knight",
+    "rarity": "SR",
+    "cardNumber": "EX2-011",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Your Turn] This Digimon gets +2000 DP.\n[Your Turn] While you have a red Tamer in play, add 2000 to the maximum DP you can choose with DP-based deletion effects.\n[When Attacking] Choose any number of your opponent's Digimon whose total DP adds up to 6000 or less and delete them.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "DC-1 2022 TOP 8",
+    "color": "Red",
+    "version": "Stamp",
     "block": [
       "01"
     ],
