@@ -508,7 +508,7 @@
     ],
     "restriction": "",
     "illustrator": "As'Maria"
-},
+  },
   {
     "id": "EX2-011_P2",
     "name": "Gallantmon",
@@ -533,6 +533,36 @@
     "notes": "DC-1 2022 TOP 8",
     "color": "Red",
     "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Naochika Morishita"
+  },
+  {
+    "id": "EX2-011_P0",
+    "name": "Gallantmon",
+    "cardImage": "assets/images/cards/eng/EX2-011_P0.jpg",
+    "cardType": "Digimon",
+    "dp": "12000",
+    "playCost": "12",
+    "digivolveCost1": "4 from Lv.5",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Virus",
+    "type": "Holy Warrior/Royal Knight",
+    "rarity": "SR",
+    "cardNumber": "EX2-011",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Your Turn] This Digimon gets +2000 DP.\n[Your Turn] While you have a red Tamer in play, add 2000 to the maximum DP you can choose with DP-based deletion effects.\n[When Attacking] Choose any number of your opponent's Digimon whose total DP adds up to 6000 or less and delete them.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "DC-1 2022 TOP 8",
+    "color": "Red",
+    "version": "Stamp",
     "block": [
       "01"
     ],
@@ -2267,10 +2297,10 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[On Play] [When Attacking] [Once Per Turn] If one of your [Mother D-Reaper]s has 5 or more digivolution cards, reveal the top 3 cards of your deck. You may play 1 card with [D-Reaper] in its traits and a play cost of 10 or less among them without paying its memory cost. Place the remaining cards at the bottom of your deck in any order.",
+    "effect": "[On Play] [When Attacking] [Once Per Turn] If one of your [Mother D-Reaper]s has 5 or more digivolution cards, reveal the top 3 cards of your deck. You may play 1 card with [D-Reaper] in its traits and a play cost of 10 or less among them without paying its memory cost. Place the remaining cards at the top of your deck in any order.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹theme booster DIGITAL HAZARD [EX-02] Errata Card",
     "color": "White",
     "version": "Normal",
     "block": [
@@ -2327,10 +2357,10 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "When you would play this Digimon, you may trash 7 or more digivolution cards from the bottom of 1 of your [Mother D-Reaper]s to reduce this Digimon's play cost to 0.\n＜Rush＞ (This Digimon can attack the turn it comes into play.)\n[When Attacking] You may place 2 [ADR-02 Searcher]s from your trash under this Digimon in any order as its digivolution cards to unsuspend this Digimon.",
+    "effect": "When you would play this Digimon, you may trash 7 or more digivolution cards from the bottom of 1 of your [Mother D-Reaper]s to set this Digimon's play cost to 0.\n＜Rush＞ (This Digimon can attack the turn it comes into play.)\n[When Attacking] You may place 2 [ADR-02 Searcher]s from your trash under this Digimon in any order as its digivolution cards to unsuspend this Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹theme booster DIGITAL HAZARD [EX-02] Errata Card",
     "color": "White",
     "version": "Normal",
     "block": [
