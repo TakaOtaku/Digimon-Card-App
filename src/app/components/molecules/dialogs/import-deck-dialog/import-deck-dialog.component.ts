@@ -11,9 +11,9 @@ import { MessageService } from 'primeng/api';
 import { Subject, takeUntil } from 'rxjs';
 import { importDeck, setDeck } from 'src/app/store/digimon.actions';
 import * as uuid from 'uuid';
-import { ICard, IDeck, IDeckCard } from '../../../../models';
-import { compareIDs } from '../../../functions/digimon-card.functions';
-import { selectAllCards } from '../../../store/digimon.selectors';
+import { ICard, IDeck, IDeckCard } from '../../../../../models';
+import { compareIDs } from '../../../../functions/digimon-card.functions';
+import { selectAllCards } from '../../../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-import-deck-dialog',

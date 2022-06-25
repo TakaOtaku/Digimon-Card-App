@@ -18,27 +18,29 @@ import { PaginatorModule } from 'primeng/paginator';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ChangeAccessorieDialogComponent } from './components/molecules/change-accessorie-dialog/change-accessorie-dialog.component';
 import { ChartContainerComponent } from './components/atoms/chart-container/chart-container.component';
-import { CollectionStatsDialogComponent } from './components/molecules/collection-stats-dialog/collection-stats-dialog.component';
-import { ExportDeckDialogComponent } from './components/molecules/export-deck-dialog/export-deck-dialog.component';
-import { ImportDeckDialogComponent } from './components/molecules/import-deck-dialog/import-deck-dialog.component';
 import { SortButtonsComponent } from './components/atoms/sort-buttons/sort-buttons.component';
-import { ViewCardDialogComponent } from './components/molecules/view-card-dialog/view-card-dialog.component';
+import { ChangeAccessorieDialogComponent } from './components/molecules/dialogs/change-accessorie-dialog/change-accessorie-dialog.component';
 import { ChartContainersComponent } from './components/molecules/chart-containers/chart-containers.component';
+import { CollectionStatsDialogComponent } from './components/molecules/dialogs/collection-stats-dialog/collection-stats-dialog.component';
 import { DeckCardComponent } from './components/molecules/deck-card/deck-card.component';
+import { DeckStatsComponent } from './components/molecules/deck-stats/deck-stats.component';
+import { ExportDeckDialogComponent } from './components/molecules/dialogs/export-deck-dialog/export-deck-dialog.component';
 import { FullCardComponent } from './components/molecules/full-card/full-card.component';
+import { ImportDeckDialogComponent } from './components/molecules/dialogs/import-deck-dialog/import-deck-dialog.component';
 import { RangeSliderComponent } from './components/molecules/range-slider/range-slider.component';
 import { SearchComponent } from './components/molecules/search/search.component';
+import { ViewCardDialogComponent } from './components/molecules/dialogs/view-card-dialog/view-card-dialog.component';
 import { CardListComponent } from './components/organisms/card-list/card-list.component';
+import { CollectionViewComponent } from './components/organisms/collection-view/collection-view.component';
+import { DeckViewComponent } from './components/organisms/deck-view/deck-view.component';
 import { FilterAndSearchComponent } from './components/organisms/filter-and-search/filter-and-search.component';
 import { FilterButtonComponent } from './components/organisms/filter-button/filter-button.component';
 import { FilterSideBoxComponent } from './components/organisms/filter-side-box/filter-side-box.component';
 import { MenuComponent } from './components/organisms/menu/menu.component';
 import { NavbarComponent } from './components/organisms/navbar/navbar.component';
 import { PaginationCardListComponent } from './components/organisms/pagination-card-list/pagination-card-list.component';
-import { CommunityComponent } from './pages/community/community-decks.component';
-import { UserComponent } from './pages/user/decks.component';
+import { CommunityComponent } from './pages/community/community.component';
 import { HomeComponent } from './pages/home/home.component';
 import { UserComponent } from './pages/user/user.component';
 import { PrimeNGModule } from './primeng.module';
@@ -49,9 +51,8 @@ import { DigimonEffects } from './store/digimon.effects';
 import * as DigimonCards from './store/reducers/digimon-card.reducers';
 import * as Digimon from './store/reducers/digimon.reducers';
 import * as Save from './store/reducers/save.reducer';
-import { DeckStatsComponent } from './components/molecules/deck-stats/deck-stats.component';
-import { CollectionViewComponent } from './components/organisms/collection-view/collection-view.component';
-import { DeckViewComponent } from './components/organisms/deck-view/deck-view.component';
+import { DeckMetadataComponent } from './components/molecules/deck-metadata/deck-metadata.component';
+import { DeckToolbarComponent } from './components/molecules/deck-toolbar/deck-toolbar.component';
 
 @NgModule({
   declarations: [
@@ -83,6 +84,8 @@ import { DeckViewComponent } from './components/organisms/deck-view/deck-view.co
     DeckStatsComponent,
     CollectionViewComponent,
     DeckViewComponent,
+    DeckMetadataComponent,
+    DeckToolbarComponent,
   ],
   imports: [
     PrimeNGModule,

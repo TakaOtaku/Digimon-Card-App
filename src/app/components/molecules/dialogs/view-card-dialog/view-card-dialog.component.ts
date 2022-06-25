@@ -7,8 +7,8 @@ import {
   Output,
   SimpleChanges,
 } from '@angular/core';
-import { ColorMap, ICard } from '../../../../models';
-import { formatId } from '../../../functions/digimon-card.functions';
+import { ColorMap, ICard } from '../../../../../models';
+import { formatId } from '../../../../functions/digimon-card.functions';
 
 @Component({
   selector: 'digimon-view-card-dialog',

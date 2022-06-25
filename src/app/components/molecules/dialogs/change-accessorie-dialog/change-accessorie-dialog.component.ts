@@ -11,14 +11,20 @@ import {
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { Subject, takeUntil } from 'rxjs';
-import { ColorList, ColorMap, ICard, IColor, IDeck } from '../../../../models';
-import { ITag } from '../../../../models/interfaces/tag.interface';
-import { tagsList } from '../../../../models/tags.data';
-import { deckIsValid } from '../../../functions/digimon-card.functions';
-import { AuthService } from '../../../service/auth.service';
-import { DatabaseService } from '../../../service/database.service';
-import { saveDeck } from '../../../store/digimon.actions';
-import { selectAllCards } from '../../../store/digimon.selectors';
+import {
+  ColorList,
+  ColorMap,
+  ICard,
+  IColor,
+  IDeck,
+} from '../../../../../models';
+import { ITag } from '../../../../../models/interfaces/tag.interface';
+import { tagsList } from '../../../../../models/tags.data';
+import { deckIsValid } from '../../../../functions/digimon-card.functions';
+import { AuthService } from '../../../../service/auth.service';
+import { DatabaseService } from '../../../../service/database.service';
+import { saveDeck } from '../../../../store/digimon.actions';
+import { selectAllCards } from '../../../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-change-accessorie-dialog',
