@@ -1,0 +1,103 @@
+
+<button
+  pButton
+  pRipple
+  type="button"
+  icon="pi pi-times"
+  class="p-button-text ml-auto"
+  (click)="this.onClose.next(false)"
+></button>
+
+<p-selectButton
+  [options]="exportList"
+  [(ngModel)]="exportType"
+  (onOptionClick)="changeExportType($event)"
+></p-selectButton>
+<div *ngIf="exportType !== 'IMAGE'">
+  <p>
+    Copy your deck in the text area and press import or press the "Import
+    Text-File"-Button to import a file.
+  </p>
+  <textarea
+    pInputTextarea
+    id="text-imports"
+    class="border-black-500 min-h-[200px] min-w-full border-2"
+    [(ngModel)]="deckText"
+  ></textarea>
+</div>
+
+<div [ngClass]="{ hidden: exportType !== 'IMAGE' }">
+  <canvas
+    #Canvas
+    id="Canvas"
+    width="640"
+    height="360"
+    (contextmenu)="downloadImage()"
+  ></canvas>
+  <canvas
+    #HDCanvas
+    id="HDCanvas"
+    width="1920"
+    height="1080"
+    class="hidden"
+  ></canvas>
+  <canvas
+    #TTSCanvas
+    id="TTS"
+    width="7440"
+    height="6240"
+    class="hidden"
+  ></canvas>
+  <p-selectButton
+    class="Colors mt-3"
+    [options]="colors"
+    [(ngModel)]="selectedColor"
+    (onChange)="setExportTypeIMAGE()"
+    [multiple]="false"
+  >
+    <ng-template let-color>
+      <i
+        class="pi"
+        [ngClass]="{
+          'pi-check': colorChecked(color),
+          'pi-times': !colorChecked(color)
+        }"
+      ></i>
+    </ng-template>
+  </p-selectButton>
+</div>
+
+<div class="mt-5 flex w-full justify-end">
+  <button
+    *ngIf="exportType !== 'IMAGE'"
+    pButton
+    (click)="exportDeckToFile()"
+    class="ml-5"
+  >
+    Export to File
+  </button>
+  <button
+    *ngIf="exportType === 'IMAGE'"
+    pButton
+    (click)="setExportTypeIMAGE()"
+    class="ml-5"
+  >
+    Generate Image
+  </button>
+  <button
+    *ngIf="exportType === 'IMAGE'"
+    pButton
+    class="ml-5"
+    (click)="downloadImageTTS()"
+  >
+    Download Deck (TTS)
+  </button>
+  <button
+    *ngIf="exportType === 'IMAGE'"
+    pButton
+    class="ml-5"
+    (click)="downloadImage()"
+  >
+    Download Image
+  </button>
+</div>

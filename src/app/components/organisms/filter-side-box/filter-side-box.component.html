@@ -1,0 +1,395 @@
+<div class="surface-card flex h-full w-full flex-col pt-1">
+  <div class="row mt-1 flex flex w-full justify-end">
+    <button (click)="reset()" class="ml-auto mr-5 text-white" type="button">
+      <i class="pi pi-refresh"></i>
+    </button>
+  </div>
+
+  <!-- Language Select -->
+  <div class="mb-3">
+    <h1 class="text-center text-xs font-bold text-white">Language:</h1>
+    <div class="flex inline-flex w-full justify-center">
+      <button
+        (click)="setCardSet(cardSet.English)"
+        [ngClass]="{
+          'primary-background': selectedCardSet === cardSet.English
+        }"
+        class="min-w-auto mt-2 h-8 w-20 rounded-l-sm border border-slate-100 p-2 text-xs font-semibold text-white"
+      >
+        English
+      </button>
+      <button
+        (click)="setCardSet(cardSet.Japanese)"
+        [ngClass]="{
+          'primary-background': selectedCardSet === cardSet.Japanese
+        }"
+        class="min-w-auto mt-2 h-8 w-20 border border-slate-100 p-2 text-xs font-semibold text-white"
+      >
+        日本語
+      </button>
+      <button
+        (click)="setCardSet(cardSet.Both)"
+        [ngClass]="{ 'primary-background': selectedCardSet === cardSet.Both }"
+        class="min-w-auto mt-2 h-8 w-20 rounded-r-sm border border-slate-100 p-2 text-xs font-semibold text-white"
+      >
+        Both
+      </button>
+    </div>
+  </div>
+
+  <!-- Colors Select -->
+  <div class="mb-3">
+    <h1 class="mb-2 text-center text-xs font-bold text-white">Color:</h1>
+    <div class="flex inline-flex w-full justify-center">
+      <button
+        (click)="changeColor('Red')"
+        [ngClass]="{
+          'border-selected': colorFilter.value.includes('Red'),
+          'border-unselected': !colorFilter.value.includes('Red')
+        }"
+        class="Red mr-1 h-7 w-7 rounded-full"
+      ></button>
+      <button
+        (click)="changeColor('Blue')"
+        [ngClass]="{
+          'border-selected': colorFilter.value.includes('Blue'),
+          'border-unselected': !colorFilter.value.includes('Blue')
+        }"
+        class="Blue mr-1 h-7 w-7 rounded-full"
+      ></button>
+      <button
+        (click)="changeColor('Yellow')"
+        [ngClass]="{
+          'border-selected': colorFilter.value.includes('Yellow'),
+          'border-unselected': !colorFilter.value.includes('Yellow')
+        }"
+        class="Yellow mr-1 h-7 w-7 rounded-full"
+      ></button>
+      <button
+        (click)="changeColor('Green')"
+        [ngClass]="{
+          'border-selected': colorFilter.value.includes('Green'),
+          'border-unselected': !colorFilter.value.includes('Green')
+        }"
+        class="Green mr-1 h-7 w-7 rounded-full"
+      ></button>
+      <button
+        (click)="changeColor('Black')"
+        [ngClass]="{
+          'border-selected': colorFilter.value.includes('Black'),
+          'border-unselected': !colorFilter.value.includes('Black')
+        }"
+        class="Black mr-1 h-7 w-7 rounded-full"
+      ></button>
+      <button
+        (click)="changeColor('Purple')"
+        [ngClass]="{
+          'border-selected': colorFilter.value.includes('Purple'),
+          'border-unselected': !colorFilter.value.includes('Purple')
+        }"
+        class="Purple mr-1 h-7 w-7 rounded-full"
+      ></button>
+      <button
+        (click)="changeColor('White')"
+        [ngClass]="{
+          'border-selected': colorFilter.value.includes('White'),
+          'border-unselected': !colorFilter.value.includes('White')
+        }"
+        class="White mr-1 h-7 w-7 rounded-full"
+      ></button>
+      <button
+        (click)="changeColor('Multi')"
+        [ngClass]="{
+          'border-selected': colorFilter.value.includes('Multi'),
+          'border-unselected': !colorFilter.value.includes('Multi')
+        }"
+        class="Multi h-7 w-7 rounded-full"
+      ></button>
+    </div>
+  </div>
+
+  <!-- Card Type Select -->
+  <div class="mb-3">
+    <h1 class="text-center text-xs font-bold text-white">Card Type:</h1>
+    <div class="flex inline-flex w-full justify-center">
+      <button
+        (click)="changeCardType('Digi-Egg')"
+        [ngClass]="{
+          'primary-background': cardTypeFilter.value.includes('Digi-Egg')
+        }"
+        class="min-w-auto mt-2 h-8 w-20 rounded-l-sm border border-slate-100 p-1 text-xs font-semibold text-white"
+      >
+        Digi-Egg
+      </button>
+      <button
+        (click)="changeCardType('Digimon')"
+        [ngClass]="{
+          'primary-background': cardTypeFilter.value.includes('Digimon')
+        }"
+        class="min-w-auto mt-2 h-8 w-20 border border-slate-100 p-1 text-xs font-semibold text-white"
+      >
+        Digimon
+      </button>
+      <button
+        (click)="changeCardType('Tamer')"
+        [ngClass]="{
+          'primary-background': cardTypeFilter.value.includes('Tamer')
+        }"
+        class="min-w-auto mt-2 h-8 w-20 border border-slate-100 p-1 text-xs font-semibold text-white"
+      >
+        Tamer
+      </button>
+      <button
+        (click)="changeCardType('Option')"
+        [ngClass]="{
+          'primary-background': cardTypeFilter.value.includes('Option')
+        }"
+        class="min-w-auto mt-2 h-8 w-20 rounded-r-sm border border-slate-100 p-1 text-xs font-semibold text-white"
+      >
+        Option
+      </button>
+    </div>
+  </div>
+
+  <p-multiSelect
+    [filter]="false"
+    [formControl]="setFilter"
+    [group]="true"
+    [options]="groupedSets"
+    [showHeader]="false"
+    [showToggleAll]="false"
+    defaultLabel="Select a Set"
+    display="chip"
+    scrollHeight="250px"
+    class="mx-5"
+    styleClass="w-full h-8 text-sm"
+  >
+    <ng-template let-group pTemplate="group">
+      <div class="align-items-center flex">
+        <span>{{ group.label }}</span>
+      </div>
+    </ng-template>
+  </p-multiSelect>
+
+  <digimon-range-slider
+    (OnSliderChange)="updateLevelSlider($event)"
+    [minMax]="[2, 7]"
+    [slider]="levelSlider"
+    title="Level:"
+  ></digimon-range-slider>
+
+  <digimon-range-slider
+    (OnSliderChange)="updatePlayCostSlider($event)"
+    [minMax]="[0, 20]"
+    [slider]="playCostSlider"
+    title="Play Cost:"
+  ></digimon-range-slider>
+
+  <digimon-range-slider
+    (OnSliderChange)="updateDigivolutionSlider($event)"
+    [minMax]="[0, 7]"
+    [slider]="digivolutionSlider"
+    title="Digivolution Cost:"
+  ></digimon-range-slider>
+
+  <digimon-range-slider
+    (OnSliderChange)="updateDPSlider($event)"
+    [minMax]="[1, 16]"
+    [slider]="dpSlider"
+    suffix="000"
+    title="DP:"
+  ></digimon-range-slider>
+
+  <digimon-range-slider
+    (OnSliderChange)="updateCardCountSlider($event)"
+    [minMax]="[0, 5]"
+    [slider]="cardCountSlider"
+    title="Number in Collection:"
+  ></digimon-range-slider>
+
+  <!-- Rarity Select -->
+  <div class="my-3">
+    <h1 class="text-center text-xs font-bold text-white">Rarity:</h1>
+    <div class="flex inline-flex w-full justify-center">
+      <button
+        (click)="changeRarity('C')"
+        [ngClass]="{ 'primary-background': rarityFilter.value.includes('C') }"
+        class="min-w-auto mt-2 h-8 w-10 rounded-l-sm border border-slate-100 p-1 text-xs font-semibold text-white"
+      >
+        C
+      </button>
+      <button
+        (click)="changeRarity('UC')"
+        [ngClass]="{ 'primary-background': rarityFilter.value.includes('UC') }"
+        class="min-w-auto mt-2 h-8 w-10 border border-slate-100 p-1 text-xs font-semibold text-white"
+      >
+        UC
+      </button>
+      <button
+        (click)="changeRarity('R')"
+        [ngClass]="{ 'primary-background': rarityFilter.value.includes('R') }"
+        class="min-w-auto mt-2 h-8 w-10 border border-slate-100 p-1 text-xs font-semibold text-white"
+      >
+        R
+      </button>
+      <button
+        (click)="changeRarity('SR')"
+        [ngClass]="{ 'primary-background': rarityFilter.value.includes('SR') }"
+        class="min-w-auto mt-2 h-8 w-10 border border-slate-100 p-1 text-xs font-semibold text-white"
+      >
+        SR
+      </button>
+      <button
+        (click)="changeRarity('SEC')"
+        [ngClass]="{ 'primary-background': rarityFilter.value.includes('SEC') }"
+        class="min-w-auto mt-2 h-8 w-10 border border-slate-100 p-1 text-xs font-semibold text-white"
+      >
+        SEC
+      </button>
+      <button
+        (click)="changeRarity('P')"
+        [ngClass]="{ 'primary-background': rarityFilter.value.includes('P') }"
+        class="min-w-auto mt-2 h-8 w-10 rounded-r-sm border border-slate-100 p-1 text-xs font-semibold text-white"
+      >
+        P
+      </button>
+    </div>
+  </div>
+
+  <!-- Version Select -->
+  <div class="mb-3">
+    <h1 class="text-center text-xs font-bold text-white">Version:</h1>
+    <div class="flex inline-flex w-full justify-center">
+      <button
+        (click)="changeVersion('Normal')"
+        [ngClass]="{
+          'primary-background': versionFilter.value.includes('Normal')
+        }"
+        class="min-w-auto mt-2 h-8 w-20 rounded-l-sm border border-r-2 border-slate-100 p-1 text-xs font-semibold text-white"
+      >
+        Normal
+      </button>
+      <button
+        (click)="changeVersion('AA')"
+        [ngClass]="{ 'primary-background': versionFilter.value.includes('AA') }"
+        class="min-w-auto mt-2 h-8 w-20 border border-slate-100 p-1 text-xs font-semibold text-white"
+      >
+        Alt. Art
+      </button>
+      <button
+        (click)="changeVersion('Pre-Release')"
+        [ngClass]="{
+          'primary-background': versionFilter.value.includes('Pre-Release')
+        }"
+        class="min-w-auto mt-2 h-8 w-20 border border-slate-100 p-1 text-xs font-semibold text-white"
+      >
+        Pre-Release
+      </button>
+      <button
+        (click)="changeVersion('Stamp')"
+        [ngClass]="{
+          'primary-background': versionFilter.value.includes('Stamp')
+        }"
+        class="min-w-auto mt-2 h-8 w-20 rounded-r-sm border border-slate-100 p-1 text-xs font-semibold text-white"
+      >
+        Stamp
+      </button>
+    </div>
+  </div>
+
+  <p-multiSelect
+    [formControl]="keywordFilter"
+    [options]="keywords"
+    [showToggleAll]="false"
+    defaultLabel="Select a Keyword"
+    display="chip"
+    scrollHeight="250px"
+    class="mx-5"
+    styleClass="w-full mt-1 h-8 text-sm"
+  >
+  </p-multiSelect>
+
+  <p-multiSelect
+    [formControl]="formFilter"
+    [options]="forms"
+    [showToggleAll]="false"
+    defaultLabel="Select a Form"
+    display="chip"
+    scrollHeight="250px"
+    class="mx-5"
+    styleClass="w-full mt-1 h-8 text-sm"
+  >
+  </p-multiSelect>
+
+  <p-multiSelect
+    [formControl]="attributeFilter"
+    [options]="attributes"
+    [showToggleAll]="false"
+    defaultLabel="Select an Attribute"
+    display="chip"
+    scrollHeight="250px"
+    class="mx-5"
+    styleClass="w-full mt-1 h-8 text-sm"
+  >
+  </p-multiSelect>
+
+  <p-multiSelect
+    [formControl]="typeFilter"
+    [options]="types"
+    [showToggleAll]="false"
+    defaultLabel="Select a Type"
+    display="chip"
+    scrollHeight="250px"
+    class="mx-5"
+    styleClass="w-full mt-1 h-8 text-sm"
+  >
+  </p-multiSelect>
+
+  <p-multiSelect
+    [formControl]="specialRequirementsFilter"
+    [options]="specialRequirements"
+    [showToggleAll]="false"
+    defaultLabel="Select a Special Requirement"
+    display="chip"
+    scrollHeight="250px"
+    class="mx-5"
+    styleClass="w-full mt-1 h-8 text-sm"
+  >
+  </p-multiSelect>
+
+  <p-multiSelect
+    [formControl]="illustratorFilter"
+    [options]="illustrators"
+    [showToggleAll]="false"
+    defaultLabel="Select an Illustrator"
+    display="chip"
+    scrollHeight="250px"
+    class="mx-5"
+    styleClass="w-full mt-1 h-8 text-sm"
+  >
+  </p-multiSelect>
+
+  <p-multiSelect
+    [formControl]="blockFilter"
+    [options]="blocks"
+    [showToggleAll]="false"
+    defaultLabel="Select a Block"
+    display="chip"
+    scrollHeight="250px"
+    class="mx-5"
+    styleClass="w-full mt-1 h-8 text-sm"
+  >
+  </p-multiSelect>
+
+  <p-multiSelect
+    [formControl]="restrictionsFilter"
+    [options]="restrictions"
+    [showToggleAll]="false"
+    defaultLabel="Select a Restrictions"
+    display="chip"
+    scrollHeight="250px"
+    class="mx-5"
+    styleClass="w-full mt-1 mb-5 h-8 text-sm"
+  >
+  </p-multiSelect>
+</div>

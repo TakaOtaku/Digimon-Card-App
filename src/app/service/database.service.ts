@@ -115,7 +115,7 @@ export class DatabaseService {
 
   setSave(uId: string, save: ISave) {
     const db = getDatabase();
-    return update(ref(db, 'users/' + uId), save);
+    //return update(ref(db, 'users/' + uId), save);
   }
 
   shareDeck(deck: IDeck, user: IUser | null) {

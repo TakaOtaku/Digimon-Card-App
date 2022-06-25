@@ -1,0 +1,166 @@
+<div class="mx-auto max-w-[760px]">
+  <div class="mx-3 mb-1 inline-flex w-full">
+        <span class="mt-2 w-1/2">
+          <input
+            [(ngModel)]="title"
+            placeholder="Deck Name:"
+            class="h-8 w-full text-sm"
+            pInputText
+            type="text"
+          />
+        </span>
+
+    <span class="p-float-label ml-2 mr-6 mt-2 w-1/2">
+          <p-multiSelect
+            [filter]="true"
+            [(ngModel)]="tags"
+            [options]="tagsList"
+            optionLabel="name"
+            [showHeader]="false"
+            [showToggleAll]="false"
+            defaultLabel="Tags:"
+            display="chip"
+            scrollHeight="250px"
+            styleClass="w-full h-8 text-sm"
+          >
+          </p-multiSelect>
+        </span>
+  </div>
+
+  <div class="mx-3 mb-1 inline-flex w-full">
+        <span class="mr-2 w-full">
+          <textarea
+            [(ngModel)]="description"
+            placeholder="Description:"
+            class="w-full overflow-hidden"
+            pInputTextarea
+          ></textarea>
+        </span>
+    <div
+      class="mr-6 flex h-[66px] w-full flex-row justify-center border border-[#304562]"
+    >
+      <div
+        *ngFor="let deckBox of colors"
+        class="h-full w-full cursor-pointer"
+        [ngClass]="{
+              'primary-background': selectedColor.name === deckBox.name,
+              'surface-ground': selectedColor.name !== deckBox.name
+            }"
+      >
+        <img
+          [src]="deckBox.img"
+          alt="Deckbox"
+          (click)="changeColor(deckBox)"
+          class="h-full"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="toolbar ml-3 mr-3 grid w-[100%-3rem] grid-cols-6 justify-evenly border-b-2 border-slate-600 md:grid-cols-12"
+  >
+    <div
+      class="primary-color align-center col-span-2 flex flex-row border-2 border-slate-500 text-center"
+    >
+      <b>{{ getCardCount("Egg") }}</b
+      >/
+      <p class="bottom-font pr-1">5</p>
+      <p class="text-xs">Eggs</p>
+    </div>
+
+    <div
+      class="primary-color align-center col-span-2 flex flex-row border-2 border-slate-500 text-center"
+    >
+      <b>{{ getCardCount("Main") }}</b
+      >/
+      <p class="bottom-font pr-1">50</p>
+      <p class="text-xs">Cards</p>
+    </div>
+
+    <button
+      (click)="missingCards = !missingCards"
+      class="p-button-outlined w-full"
+      icon="pi pi-times"
+      iconPos="left"
+      pButton
+    ></button>
+
+    <button
+      (click)="newDeck()"
+      class="p-button-outlined w-full"
+      icon="pi pi-file"
+      iconPos="left"
+      pButton
+    ></button>
+
+    <button
+      (click)="saveDeck($event)"
+      class="p-button-outlined w-full"
+      icon="pi pi-save"
+      iconPos="left"
+      pButton
+    ></button>
+
+    <button
+      (click)="delete()"
+      class="p-button-outlined w-full"
+      icon="pi pi-trash"
+      iconPos="left"
+      pButton
+    ></button>
+
+    <button
+      (click)="openImportDeckDialog()"
+      class="p-button-outlined w-full"
+      icon="pi pi-upload"
+      iconPos="left"
+      pButton
+    ></button>
+
+    <button
+      (click)="openExportDeckDialog()"
+      class="p-button-outlined w-full"
+      icon="pi pi-download"
+      iconPos="left"
+      pButton
+    ></button>
+
+    <button
+      (click)="share()"
+      class="p-button-outlined w-full"
+      icon="pi pi-share-alt"
+      iconPos="left"
+      pButton
+    ></button>
+
+    <button
+      (click)="simulate()"
+      class="p-button-outlined w-full"
+      icon="pi pi-refresh"
+      iconPos="left"
+      pButton
+    ></button>
+  </div>
+</div>
+
+<div class="mx-auto h-full max-w-[1080px]">
+  <div
+    class="grid w-full grid-cols-4 pb-32 md:grid-cols-6 lg:grid-cols-8 lg:pb-0"
+  >
+    <div *ngFor="let card of mainDeck">
+      <digimon-deck-card
+        (onChange)="mapToDeck()"
+        (removeCard)="removeCard(card)"
+        [bigCards]="!collectionView"
+        [cardHave]="getCardHave(card)"
+        [card]="card"
+        [cards]="allCards"
+        [edit]="true"
+        [fullCards]="fullCards"
+        [missingCards]="missingCards"
+        [stack]="stack"
+      ></digimon-deck-card>
+    </div>
+  </div>
+</div>

@@ -8,7 +8,7 @@ import {
   changeCardSize,
   changeCollectionMinimum,
   changeCollectionMode,
-  changeDeck,
+  saveDeck,
   changeShowVersion,
   deleteDeck,
   importDeck,
@@ -19,12 +19,13 @@ import {
 
 export const emptySettings: ISettings = {
   cardSet: CARDSET.Both,
-  cardSize: 10,
   collectionMode: false,
   collectionMinimum: 1,
+
   showPreRelease: true,
   showStampedCards: true,
   showAACards: true,
+
   sortDeckOrder: 'Level',
 };
 
@@ -38,48 +39,14 @@ export const emptySave: ISave = {
 export const saveReducer = createReducer(
   emptySave,
 
-  //region Save Reducers
   on(setSave, (state, { save }) => save),
   on(loadSave, (state, { save }) => save),
-  //endregion
 
-  //region Collection Reducers
   on(setCollection, (state, { collection }) => ({ ...state, collection })),
   on(addToCollection, (state, { collectionCards }) => ({
     ...state,
     collection: [...new Set([...state.collection, ...collectionCards])],
   })),
-  //endregion
-
-  //region Settings Reducers
-  on(changeCardSets, (state, { cardSet }) => ({
-    ...state,
-    settings: { ...state.settings, cardSet },
-  })),
-  on(changeCardSize, (state, { cardSize }) => ({
-    ...state,
-    settings: { ...state.settings, cardSize },
-  })),
-  on(changeCollectionMode, (state, { collectionMode }) => ({
-    ...state,
-    settings: { ...state.settings, collectionMode },
-  })),
-  on(changeCollectionMinimum, (state, { minimum }) => ({
-    ...state,
-    settings: { ...state.settings, collectionMinimum: minimum },
-  })),
-  on(changeShowVersion, (state, { showPre, showAA, showStamp }) => ({
-    ...state,
-    settings: {
-      ...state.settings,
-      showPreRelease: showPre,
-      showAACards: showAA,
-      showStampedCards: showStamp,
-    },
-  })),
-  //endregion
-
-  //region Card Count Reducers
   on(changeCardCount, (state, { id, count }) => {
     const taken = state.collection.find((card) => card.id === id);
     if (taken) {
@@ -98,9 +65,29 @@ export const saveReducer = createReducer(
       return { ...state, collection };
     }
   }),
-  //endregion
 
-  //region Deck Reducers
+  on(changeCardSets, (state, { cardSet }) => ({
+    ...state,
+    settings: { ...state.settings, cardSet },
+  })),
+  on(changeCollectionMode, (state, { collectionMode }) => ({
+    ...state,
+    settings: { ...state.settings, collectionMode },
+  })),
+  on(changeCollectionMinimum, (state, { minimum }) => ({
+    ...state,
+    settings: { ...state.settings, collectionMinimum: minimum },
+  })),
+  on(changeShowVersion, (state, { showPre, showAA, showStamp }) => ({
+    ...state,
+    settings: {
+      ...state.settings,
+      showPreRelease: showPre,
+      showAACards: showAA,
+      showStampedCards: showStamp,
+    },
+  })),
+
   on(importDeck, (state, { deck }) => {
     if (!state.decks) {
       return { ...state, decks: [deck] };
@@ -115,7 +102,7 @@ export const saveReducer = createReducer(
     }
     return { ...state, decks: [...state.decks, deck] };
   }),
-  on(changeDeck, (state, { deck }) => {
+  on(saveDeck, (state, { deck }) => {
     const decks = state.decks.map((value) => {
       if (value?.id === deck.id) {
         return deck;
@@ -128,5 +115,4 @@ export const saveReducer = createReducer(
     ...state,
     decks: [...new Set(state.decks.filter((item) => item !== deck))],
   }))
-  //endregion
 );

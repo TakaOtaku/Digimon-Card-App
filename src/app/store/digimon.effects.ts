@@ -25,7 +25,7 @@ export class DigimonEffects {
           DigimonActions.changeCardSets,
           DigimonActions.setSave,
           DigimonActions.importDeck,
-          DigimonActions.changeDeck,
+          DigimonActions.saveDeck,
           DigimonActions.deleteDeck,
           DigimonActions.changeCardSize,
           DigimonActions.changeCollectionMode,

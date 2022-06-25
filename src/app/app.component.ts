@@ -1,19 +1,16 @@
 import { Component } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
-import { NavigationEnd, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { filter, first } from 'rxjs';
-import * as uuid from 'uuid';
+import { first } from 'rxjs';
 import { ISave } from '../models';
-import { SITES } from './pages/main-page/main-page.component';
 import { AuthService } from './service/auth.service';
 import { DatabaseService } from './service/database.service';
-import { loadSave, setDeck, setSite } from './store/digimon.actions';
+import { loadSave } from './store/digimon.actions';
 import { emptySave } from './store/reducers/save.reducer';
 
 @Component({
   selector: 'digimon-root',
-  template: '<router-outlet></router-outlet>',
+  templateUrl: './app.component.html',
 })
 export class AppComponent {
   constructor(
@@ -21,14 +18,11 @@ export class AppComponent {
     private authService: AuthService,
     private databaseService: DatabaseService,
     private meta: Meta,
-    private title: Title,
-    private router: Router
+    private title: Title
   ) {
     this.makeGoogleFriendly();
 
     this.loadSave();
-
-    this.checkForDeckLink();
 
     document.addEventListener(
       'contextmenu',
@@ -73,40 +67,18 @@ export class AppComponent {
         .loadSave(this.authService.userData!.uid, this.authService.userData)
         .pipe(first())
         .subscribe((save: ISave) => this.store.dispatch(loadSave({ save })));
-    } else {
-      const string = localStorage.getItem('Digimon-Card-Collector');
-      let save: ISave = emptySave;
-      if (string) save = JSON.parse(string);
-
-      save = this.databaseService.checkSaveValidity(
-        save,
-        this.authService.userData
-      );
-
-      this.store.dispatch(loadSave({ save }));
+      return;
     }
-  }
 
-  /**
-   * Check if it is a deck-link, then search for the deck in the database and set the site view to deckbuilder
-   */
-  private checkForDeckLink() {
-    this.router.events
-      .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe((event: any) => {
-        if (event.url.includes('?deck=')) {
-          this.databaseService
-            .loadDeck(event.url.substring(7))
-            .pipe(filter((value) => value.cards.length > 0))
-            .subscribe((deck) => {
-              this.store.dispatch(
-                setDeck({
-                  deck: { ...deck, id: uuid.v4(), rating: 0, ratingCount: 0 },
-                })
-              );
-              this.store.dispatch(setSite({ site: SITES.DeckBuilder }));
-            });
-        }
-      });
+    const string = localStorage.getItem('Digimon-Card-Collector');
+    let save: ISave = emptySave;
+    if (string) save = JSON.parse(string);
+
+    save = this.databaseService.checkSaveValidity(
+      save,
+      this.authService.userData
+    );
+
+    this.store.dispatch(loadSave({ save }));
   }
 }

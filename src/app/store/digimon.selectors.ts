@@ -18,10 +18,6 @@ export const selectDigimonState =
   createFeatureSelector<IDigimonState>('digimon');
 
 //region Digimon Selectors
-export const selectSite = createSelector(
-  selectDigimonState,
-  (state: IDigimonState) => state.site
-);
 export const selectFilter = createSelector(
   selectDigimonState,
   (state: IDigimonState) => state.filter
@@ -33,29 +29,6 @@ export const selectSort = createSelector(
 export const selectDeck = createSelector(
   selectDigimonState,
   (state: IDigimonState) => state.deck
-);
-//endregion
-
-//region Dialog Selectors
-export const selectDialogs = createSelector(
-  selectDigimonState,
-  (state: IDigimonState) => state.dialogs
-);
-export const selectExportDeckDialog = createSelector(
-  selectDigimonState,
-  (state: IDigimonState) => state.dialogs.exportDeck
-);
-export const selectImportDeckDialog = createSelector(
-  selectDigimonState,
-  (state: IDigimonState) => state.dialogs.importDeck
-);
-export const selectAccessoryDeckDialog = createSelector(
-  selectDigimonState,
-  (state: IDigimonState) => state.dialogs.accessoryDeck
-);
-export const selectViewCardDialog = createSelector(
-  selectDigimonState,
-  (state: IDigimonState) => state.dialogs.viewCard
 );
 //endregion
 
@@ -87,10 +60,6 @@ export const selectSettings = createSelector(
   (state: ISave) => state.settings
 );
 
-export const selectCardSize = createSelector(
-  selectSettings,
-  (state: ISettings) => state.cardSize
-);
 export const selectCollectionMode = createSelector(
   selectSettings,
   (state: ISettings) => state.collectionMode

@@ -1,0 +1,75 @@
+<div class="relative inline-flex h-[calc(100vh-58px)] w-full flex-row max-h-screen overflow-x-hidden">
+  <button
+    *ngIf="showAccordionButtons"
+    class="primary-background my-1 h-full w-6 border-y border-slate-200"
+    (click)="changeView('Deck')"
+  >
+    <span
+      class="h-full w-full rotate-180 text-center font-bold text-white"
+      [ngStyle]="{ writingMode: 'vertical-rl' }"
+      >{{ deckView ? "Hide Deck View" : "Show Deck View" }}</span
+    >
+  </button>
+  <div
+    *ngIf="deckView"
+    class="my-1 mr-1 h-full justify-center border border-slate-200 pb-48 md:pb-0"
+    [ngClass]="{ 'w-5/12': collectionView, 'w-full': !collectionView }"
+  >
+    <digimon-deck-view></digimon-deck-view>
+  </div>
+
+  <div
+    *ngIf="collectionView"
+    class="my-1 h-full"
+    [ngClass]="{ 'w-7/12': deckView, 'w-full': !deckView }"
+  >
+    <digimon-collection-view></digimon-collection-view>
+  </div>
+  <button
+    *ngIf="showAccordionButtons"
+    class="primary-background my-1 h-full w-6 border-y border-slate-200"
+    (click)="changeView('Collection')"
+  >
+    <span
+      class="h-full w-full rotate-180 text-center font-bold text-white"
+      [ngStyle]="{ writingMode: 'vertical-rl' }"
+      >{{ collectionView ? "Hide Card View" : "Show Card View" }}</span
+    >
+  </button>
+
+  <digimon-deck-stats></digimon-deck-stats>
+</div>
+
+<p-dialog
+  header="Simulate Security/Draw"
+  [(visible)]="simulateDialog"
+  styleClass="w-[100%] min-w-[250px] sm:min-w-[500px] sm:w-[700px] min-h-[500px]"
+  [baseZIndex]="10000"
+  (onHide)="simulateDialog = false"
+>
+  <!-- Security Stack -->
+  <h1 class="text-center text-2xl font-bold">Security Stack</h1>
+  <div class="mt-5 flex flex-row">
+    <div *ngFor="let secCard of securityStack" class="cards-in-a-row-5 mr-1">
+      <img
+        [src]="secCard.cardImage"
+        [alt]="secCard.id + ' - ' + secCard.name"
+      />
+    </div>
+  </div>
+
+  <h1 class="text-center text-2xl font-bold">Draw Hand</h1>
+  <div class="mt-5 flex flex-row">
+    <div *ngFor="let drawCard of drawHand" class="cards-in-a-row-5 mr-1">
+      <img
+        [src]="drawCard.cardImage"
+        [alt]="drawCard.id + ' - ' + drawCard.name"
+      />
+    </div>
+  </div>
+
+  <div class="mt-5 flex w-full justify-end">
+    <button pButton (click)="mulligan()">Mulligan</button>
+    <button pButton class="ml-5" (click)="resetSimulation()">Reset</button>
+  </div>
+</p-dialog>

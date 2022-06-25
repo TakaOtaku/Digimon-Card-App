@@ -1,0 +1,230 @@
+<div
+  class="h-full w-full min-w-full max-w-full overflow-x-hidden md:w-[700px] md:min-w-[700px] md:max-w-[700px]">
+  <div
+    class="align-center mt-5 inline-flex h-10 w-full justify-between"
+    id="Header"
+  >
+    <p class="self-center text-xl font-bold text-gray-500" id="Card-Number">
+      {{ card.cardNumber }}
+    </p>
+    <p
+      class="self-center text-xl font-bold uppercase text-white"
+      id="Card-Rarity"
+    >
+      {{ card.rarity }}
+    </p>
+    <p
+      class="self-center text-xl font-bold uppercase text-white"
+      id="Card-Block"
+    >
+      {{ card.block }}
+    </p>
+    <p
+      [ngStyle]="{color}"
+      class="self-center text-xl font-bold"
+      id="Card-Type"
+    >
+      {{ card.cardType }}
+    </p>
+    <div
+      [ngStyle]="{backgroundColor}"
+      class="my-2 inline-block rounded-full px-6 py-2.5 leading-tight shadow-md"
+      id="Digimon-Lv"
+    >
+      <p class="text-xl font-bold leading-[5px] text-white">
+        {{ card.cardLv }}
+      </p>
+    </div>
+    <p
+      [ngStyle]="{color}"
+      class="self-center text-xl font-bold"
+      id="Card-Version"
+    >
+      {{ version }}
+    </p>
+    <button
+      (click)="this.onClose.next(false)"
+      class="p-button-text"
+      icon="pi pi-times"
+      pButton
+      pRipple
+      type="button"
+    ></button>
+  </div>
+
+  <div class="flex flex-row">
+    <h1 [ngStyle]="{color}" class="my-5 text-4xl font-black" id="Card-Name">
+      {{ card.name }}
+    </h1>
+    <button
+      (click)="openWiki()"
+      class="p-button-text"
+      icon="pi pi-question-circle"
+      pButton
+      pRipple
+      type="button"
+    ></button>
+  </div>
+
+  <div class="flex w-full flex-row" id="Image-Attributes">
+    <div class="w-1/2">
+      <img
+        [lazyLoad]="this.png"
+        alt="{{ imageAlt }}"
+        defaultImage="assets/images/digimon-card-back.webp"
+      />
+    </div>
+    <div class="max-w-1/2 w-1/2 self-center pl-2">
+      <div *ngIf="card.form !== '-'" class="flex flex-col" id="Digimon-Form">
+        <p [ngStyle]="{color}" class="text-lg font-extrabold">Form</p>
+        <p class="font-white text-lg font-bold">{{ card.form }}</p>
+      </div>
+      <div
+        *ngIf="card.attribute !== '-'"
+        class="flex flex-col"
+        id="Digimon-Attribute"
+      >
+        <p [ngStyle]="{color}" class="text-lg font-extrabold">Attribute</p>
+        <p class="font-white text-lg font-bold">{{ card.attribute }}</p>
+      </div>
+      <div *ngIf="card.type !== '-'" class="flex flex-col" id="Digimon-Type">
+        <p [ngStyle]="{color}" class="text-lg font-extrabold">Type</p>
+        <p class="font-white text-lg font-bold">{{ card.type }}</p>
+      </div>
+      <div *ngIf="card.dp !== '-'" class="flex flex-col" id="Digimon-DP">
+        <p [ngStyle]="{color}" class="text-lg font-extrabold">DP</p>
+        <p class="font-white text-lg font-bold">{{ card.dp }}</p>
+      </div>
+      <div
+        *ngIf="card.playCost !== '-'"
+        class="flex flex-col"
+        id="Digimon-Play-Cost"
+      >
+        <p [ngStyle]="{color}" class="text-lg font-extrabold">Play Cost</p>
+        <p class="font-white text-lg font-bold">{{ card.playCost }}</p>
+      </div>
+      <div
+        *ngIf="card.digivolveCost1 !== '-'"
+        class="flex flex-col"
+        id="Digimon-Digivolve-Cost-1"
+      >
+        <p [ngStyle]="{color}" class="text-lg font-extrabold">
+          Digivolve Cost 1
+        </p>
+        <p class="font-white text-lg font-bold">{{ card.digivolveCost1 }}</p>
+      </div>
+      <div
+        *ngIf="card.digivolveCost2 !== '-'"
+        class="flex flex-col"
+        id="Digimon-Digivolve-Cost-2"
+      >
+        <p [ngStyle]="{color}" class="text-lg font-extrabold">
+          Digivolve Cost 2
+        </p>
+        <p class="font-white text-lg font-bold">{{ card.digivolveCost2 }}</p>
+      </div>
+      <div
+        *ngIf="card.specialDigivolve !== '-'"
+        class="flex flex-col"
+        id="Digimon-Special-Digivolve"
+      >
+        <p [ngStyle]="{color}" class="text-lg font-extrabold">
+          Special Digivolve
+        </p>
+        <p class="font-white whitespace-pre-wrap text-lg font-bold">
+          {{ card.specialDigivolve }}
+        </p>
+      </div>
+      <div
+        *ngIf="card.dnaDigivolve !== '-'"
+        class="flex flex-col"
+        id="Digimon-DNA-Digivolve"
+      >
+        <p [ngStyle]="{color}" class="text-lg font-extrabold">
+          DNA Digivolve
+        </p>
+        <p class="font-white whitespace-pre-wrap text-lg font-bold">
+          {{ card.dnaDigivolve }}
+        </p>
+      </div>
+      <div
+        *ngIf="card.digiXros !== '-'"
+        class="flex flex-col"
+        id="Digimon-DigiXros"
+      >
+        <p [ngStyle]="{color}" class="text-lg font-extrabold">DigiXros</p>
+        <p class="font-white whitespace-pre-wrap text-lg font-bold">
+          {{ card.digiXros }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-full" id="Effects">
+    <div
+      *ngIf="card.effect !== '-'"
+      class="flex flex-col"
+      id="Digimon-Effect"
+    >
+      <p [ngStyle]="{color}" class="text-lg font-extrabold">Effect</p>
+      <p class="font-white whitespace-pre-wrap text-lg font-bold">
+        {{ card.effect }}
+      </p>
+    </div>
+    <div
+      *ngIf="card.digivolveEffect !== '-'"
+      class="flex flex-col"
+      id="Digimon-Digivolve-Effect"
+    >
+      <p [ngStyle]="{color}" class="text-lg font-extrabold">
+        Inherited effect
+      </p>
+      <p class="font-white whitespace-pre-wrap text-lg font-bold">
+        {{ card.digivolveEffect }}
+      </p>
+    </div>
+    <div
+      *ngIf="card.securityEffect !== '-'"
+      class="flex flex-col"
+      id="Security-Effect"
+    >
+      <p [ngStyle]="{color}" class="text-lg font-extrabold">
+        Security effect
+      </p>
+      <p class="font-white whitespace-pre-wrap text-lg font-bold">
+        {{ card.securityEffect }}
+      </p>
+    </div>
+  </div>
+
+  <div *ngIf="card.restriction !== ''" class="max-w-full" id="Restriction">
+    <div class="flex flex-col" id="Card-Restriction">
+      <p [ngStyle]="{color}" class="text-lg font-extrabold">Restriction</p>
+      <p class="font-white text-lg font-bold">{{ card.restriction }}</p>
+    </div>
+  </div>
+
+  <div class="max-w-full" id="Notes">
+    <div class="flex flex-col" id="Card-Notes">
+      <p [ngStyle]="{color}" class="text-lg font-extrabold">Notes</p>
+      <p class="font-white text-lg font-bold">{{ card.notes }}</p>
+    </div>
+  </div>
+
+  <div *ngIf="card.illustrator !== ''" class="max-w-full" id="Illustrator">
+    <div class="flex flex-col" id="Card-Illustrator">
+      <p [ngStyle]="{color}" class="text-lg font-extrabold">Illustrator</p>
+      <div class="flex flex-row">
+        <p class="font-white text-lg font-bold">{{ card.illustrator }}</p>
+        <button
+          (click)="openWikiIllustrator()"
+          class="p-button-text"
+          icon="pi pi-question-circle"
+          pButton
+          pRipple
+          type="button"
+        ></button>
+      </div>
+    </div>
+  </div>
+</div>

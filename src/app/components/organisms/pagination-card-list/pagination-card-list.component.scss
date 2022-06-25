@@ -1,0 +1,21 @@
+p-dropdown::ng-deep {
+  .p-dropdown-trigger {
+    display: none;
+  }
+}
+
+.card-box {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  .cards-in-a-row-4 {
+    flex: 1 1 25%;
+    max-width: 25%;
+  }
+
+  .cards-in-a-row-8 {
+    flex: 1 1 12.5%;
+    max-width: 12.5%;
+  }
+}

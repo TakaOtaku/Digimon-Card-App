@@ -1,6 +1,6 @@
 import { englishCards } from '../../assets/cardlists/eng/english';
 import { japaneseCards } from '../../assets/cardlists/jap/japanese';
-import preReleaseJSON from '../../assets/cardlists/preRelease.json';
+import preReleaseJSON from '../../assets/cardlists/eng/preRelease.json';
 import { ColorOrderMap, ICard, IDeck } from '../../models';
 import { CARDSET } from '../../models/card-set.enum';
 

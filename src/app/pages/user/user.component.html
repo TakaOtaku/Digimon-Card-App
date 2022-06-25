@@ -1,0 +1,122 @@
+<button
+  (click)="importDeckDialog = true"
+  class="w-1/2 font-bold"
+  label="Import Deck"
+  pButton
+></button>
+<button
+  (click)="createNewDeck()"
+  class="w-1/2 font-bold"
+  label="Create new Deck"
+  pButton
+></button>
+
+<p-contextMenu #table [model]="deckRowContext"></p-contextMenu>
+<p-table
+  [(contextMenuSelection)]="selectedDeck"
+  [contextMenu]="table"
+  [globalFilterFields]="['color.name', 'title', '', 'tags', 'user']"
+  [paginator]="true"
+  [rowsPerPageOptions]="[25, 50, 75]"
+  [rows]="25"
+  [scrollHeight]="'calc(100vh - 100px)'"
+  [scrollable]="true"
+  [showCurrentPageReport]="true"
+  [value]="decks"
+  currentPageReportTemplate="Showing {first} to {last} of {totalRecords} decks"
+  styleClass="p-datatable-striped"
+>
+  <ng-template pTemplate="header">
+    <tr>
+      <th class="max-w-[120px]">
+        <div class="max-w-5 mx-auto">
+          Color
+          <p-columnFilter display="menu" field="color.name" matchMode="equals">
+            <ng-template
+              let-filter="filterCallback"
+              let-value
+              pTemplate="filter"
+            >
+              <p-dropdown
+                (onChange)="filter($event.value)"
+                [ngModel]="value"
+                [options]="colors"
+                placeholder="Any"
+              >
+                <ng-template let-option pTemplate="item">
+                  <span [class]="'customer-badge status-' + option">{{
+                    option
+                  }}</span>
+                </ng-template>
+              </p-dropdown>
+            </ng-template>
+          </p-columnFilter>
+        </div>
+      </th>
+      <th class="max-w-[600px] lg:max-w-[100%]">
+        <div>
+          Title
+          <p-columnFilter
+            display="menu"
+            field="title"
+            type="text"
+          ></p-columnFilter>
+        </div>
+      </th>
+      <th class="max-w-[400px] lg:max-w-[100%]">
+        <div>Description</div>
+      </th>
+      <th class="max-w-[400px] lg:max-w-[100%]">
+        <div class="mx-auto">Tags</div>
+      </th>
+    </tr>
+  </ng-template>
+  <ng-template let-deck pTemplate="body">
+    <tr
+      (dblclick)="showContextMenu(table, $event, deck)"
+      [pContextMenuRow]="deck"
+      class="max-h-[50px]"
+    >
+      <td class="inline-flex max-w-[120px]">
+        <img
+          [src]="deck.color?.img ?? 'assets/decks/white.svg'"
+          alt="Digimon Deck Image"
+          class="mx-auto max-h-[50px]"
+        />
+      </td>
+      <td class="max-w-[600px] lg:max-w-[100%]">{{ deck.title }}</td>
+      <td class="max-w-[400px] truncate lg:max-w-[100%]">
+        {{ deck.description }}
+      </td>
+      <td class="max-w-[400px] lg:max-w-[100%]">
+        <div class="mx-auto">
+          <p-chip *ngFor="let tag of deck.tags" label="{{ tag.name }}"></p-chip>
+        </div>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
+
+<p-dialog
+  header="Export Deck"
+  [showHeader]="false"
+  [(visible)]="exportDeckDialog"
+  styleClass="w-[100%] min-w-[250px] sm:min-w-[500px] sm:w-[700px] min-h-[500px]"
+  [baseZIndex]="10000"
+><digimon-export-deck-dialog></digimon-export-deck-dialog></p-dialog>
+
+<p-dialog
+  header="Import Deck"
+  [showHeader]="false"
+  [(visible)]="importDeckDialog"
+  styleClass="w-[100%] min-w-[250px] sm:min-w-[500px] sm:w-[700px] min-h-[500px]"
+  [baseZIndex]="10000"
+><digimon-import-deck-dialog></digimon-import-deck-dialog></p-dialog>
+
+<p-dialog
+  [showHeader]="false"
+  header="Change Accessory"
+  [(visible)]="accessoryDialog"
+  styleClass="w-[95vw] xl:w-[50vw] h-[400px]"
+  [baseZIndex]="10000"
+><digimon-change-accessorie-dialog></digimon-change-accessorie-dialog></p-dialog>
