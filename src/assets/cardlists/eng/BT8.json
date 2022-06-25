@@ -3110,7 +3110,7 @@
     "effect": "[Start of Your Main Phase] If you have a red Digimon in play, gain 1 memory.\n[Your Turn] When one of your Digimon with 2 or more colors attacks, you may suspend this Tamer to delete 1 of your opponent's Digimon with 3000 DP or less.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
-    "notes": "▹BOOSTER -NEW AWAKENING- [BT08]",
+    "notes": "▹BOOSTER -NEW AWAKENING- [BT08] Box Promotion",
     "color": "Red",
     "version": "AA",
     "block": [
@@ -3230,7 +3230,7 @@
     "effect": "[Start of Your Turn] If you have 2 memory or less, set your memory to 3.\n[Opponent's Turn] When one of your opponent's Digimon attacks one of your blue Digimon, you may suspend this Tamer to ＜Draw 1＞. (Draw 1 card from your deck.)",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
-    "notes": "▹BOOSTER -NEW AWAKENING- [BT08]",
+    "notes": "▹BOOSTER -NEW AWAKENING- [BT08] Box Promotion",
     "color": "Blue",
     "version": "AA",
     "block": [
@@ -3290,7 +3290,7 @@
     "effect": "[Start of Your Main Phase] If you have a blue Digimon in play, gain 1 memory. If you have a green Digimon in play, gain 1 memory.\n[Your Turn] When one of your Digimon digivolves into a Digimon with 2 or more colors, you may suspend this Tamer to unsuspend that Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
-    "notes": "▹BOOSTER -NEW AWAKENING- [BT08]",
+    "notes": "▹BOOSTER -NEW AWAKENING- [BT08] Box Promotion",
     "color": "Blue/Green",
     "version": "AA",
     "block": [
@@ -3350,7 +3350,7 @@
     "effect": "[Start of Your Main Phase] If you have a yellow Digimon in play, gain 1 memory.\n[Your Turn] When one of your Digimon with 2 or more colors attacks, you may suspend this Tamer to give 1 of your opponent's Digimon -2000 DP for the turn.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
-    "notes": "▹BOOSTER -NEW AWAKENING- [BT08]",
+    "notes": "▹BOOSTER -NEW AWAKENING- [BT08] Box Promotion",
     "color": "Yellow",
     "version": "AA",
     "block": [
@@ -3410,7 +3410,7 @@
     "effect": "[Start of Your Turn] If you have 2 memory or less, set your memory to 3.\n[Your Turn] When a card is added to your security stack, you may suspend this Tamer to gain 1 memory.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
-    "notes": "▹BOOSTER -NEW AWAKENING- [BT08]",
+    "notes": "▹BOOSTER -NEW AWAKENING- [BT08] Box Promotion",
     "color": "Yellow",
     "version": "AA",
     "block": [
@@ -3470,7 +3470,7 @@
     "effect": "[On Play] You may hatch 1 Digi-Egg card to an empty space in your breeding area.\n[Your Turn] When one of your Digimon would digivolve into a Digimon with [Gargomon] or [Rapidmon] in its name, you may suspend this Tamer to reduce the digivolution cost by 1.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
-    "notes": "▹BOOSTER -NEW AWAKENING- [BT08]",
+    "notes": "▹BOOSTER -NEW AWAKENING- [BT08] Box Promotion",
     "color": "Green",
     "version": "AA",
     "block": [
