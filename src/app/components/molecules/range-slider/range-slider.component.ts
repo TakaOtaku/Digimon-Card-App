@@ -2,15 +2,12 @@ import {
   Component,
   EventEmitter,
   Input,
-  OnChanges,
   OnDestroy,
   OnInit,
   Output,
-  SimpleChanges,
 } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 import { Subject } from 'rxjs';
-import { ICard } from '../../../../models';
 
 @Component({
   selector: 'digimon-range-slider',

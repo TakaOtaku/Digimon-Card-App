@@ -6,11 +6,7 @@ import { Subject, takeUntil } from 'rxjs';
 import { IFilter } from '../../../../models';
 import { CARDSET } from '../../../../models/card-set.enum';
 import { ISelectItem } from '../../../../models/interfaces/select-item.interface';
-import {
-  changeCardSets,
-  changeCollectionMode,
-  changeFilter,
-} from '../../../store/digimon.actions';
+import { changeCardSets, changeFilter } from '../../../store/digimon.actions';
 import {
   selectCardSet,
   selectCollectionMode,
@@ -20,17 +16,14 @@ import { emptyFilter } from '../../../store/reducers/digimon.reducers';
 import {
   Attributes,
   Blocks,
-  CardTypes,
   Colors,
   Forms,
   GroupedSets,
   Illustrators,
   Keywords,
-  Rarities,
   Restrictions,
   SpecialRequirements,
   Types,
-  Versions,
 } from './filterData';
 
 @Component({

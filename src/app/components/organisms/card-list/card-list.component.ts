@@ -8,14 +8,11 @@ import {
 } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subject, takeUntil } from 'rxjs';
-import { englishCards } from '../../../../assets/cardlists/eng/english';
 import { ICard, ICountCard } from '../../../../models';
-import { SITES } from '../../../pages/home/main-page.component';
 import {
   selectCollection,
   selectCollectionMode,
   selectFilteredCards,
-  selectSite,
 } from '../../../store/digimon.selectors';
 
 @Component({

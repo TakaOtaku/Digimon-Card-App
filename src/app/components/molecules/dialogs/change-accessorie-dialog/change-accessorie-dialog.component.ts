@@ -17,9 +17,9 @@ import {
   ICard,
   IColor,
   IDeck,
+  tagsList,
 } from '../../../../../models';
 import { ITag } from '../../../../../models/interfaces/tag.interface';
-import { tagsList } from '../../../../../models/tags.data';
 import { deckIsValid } from '../../../../functions/digimon-card.functions';
 import { AuthService } from '../../../../service/auth.service';
 import { DatabaseService } from '../../../../service/database.service';

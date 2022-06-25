@@ -116,7 +116,7 @@ export class DeckToolbarComponent implements OnDestroy {
   resetSimulation() {
     this.didMulligan = false;
 
-    this.allDeckCards = this.shuffle(
+    this.allDeckCards = DeckToolbarComponent.shuffle(
       this.deck.cards.map((card) => this.allCards.find((a) => a.id === card.id))
     );
     this.allDeckCards = this.allDeckCards.filter(
@@ -127,7 +127,7 @@ export class DeckToolbarComponent implements OnDestroy {
     this.drawHand = this.allDeckCards.slice(5, 10);
   }
 
-  private shuffle(array: any[]) {
+  private static shuffle(array: any[]) {
     let currentIndex = array.length,
       randomIndex;
 

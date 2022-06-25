@@ -1,24 +1,17 @@
 import {
-  AfterViewInit,
   Component,
-  ElementRef,
   EventEmitter,
   Input,
   OnDestroy,
   OnInit,
   Output,
-  ViewChild,
 } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { debounceTime, fromEvent, merge, Subject, takeUntil } from 'rxjs';
+import { Subject, takeUntil } from 'rxjs';
 import { englishCards } from '../../../../assets/cardlists/eng/english';
 import { ICard } from '../../../../models';
+import { changeCardCount } from '../../../store/digimon.actions';
 import {
-  changeCardCount,
-  setViewCardDialog,
-} from '../../../store/digimon.actions';
-import {
-  selectCardSize,
   selectCollectionMinimum,
   selectDeck,
 } from '../../../store/digimon.selectors';
@@ -46,6 +39,8 @@ export class FullCardComponent implements OnInit, OnDestroy {
   cardBorder = '2px solid black';
   cardRadius = '5px';
 
+  viewCardDialog = false;
+
   aa = new Map<string, string>([
     ['Red', 'assets/images/banner/ico_card_detail_red.png'],
     ['Blue', 'assets/images/banner/ico_card_detail_blue.png'],
@@ -61,17 +56,11 @@ export class FullCardComponent implements OnInit, OnDestroy {
 
   countInDeck = 0;
 
-  clickTimer: any;
-
   private onDestroy$ = new Subject();
 
   constructor(private store: Store) {}
 
   ngOnInit() {
-    this.store
-      .select(selectCardSize)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((cardSize) => this.setCardSize(cardSize));
     this.store
       .select(selectCollectionMinimum)
       .pipe(takeUntil(this.onDestroy$))
@@ -97,17 +86,8 @@ export class FullCardComponent implements OnInit, OnDestroy {
     //}, 300);
   }
 
-  clickTest() {
-    if (!this.clickTimer) {
-      return;
-    }
-    this.addCard.emit(this.card.id);
-  }
-
   showCardDetails() {
-    //clearTimeout(this.clickTimer);
-    //this.clickTimer = undefined;
-    this.store.dispatch(setViewCardDialog({ show: true, card: this.card }));
+    this.viewCardDialog = true;
   }
 
   changeCardCount(event: any, id: string) {

@@ -1,5 +1,6 @@
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { saveAs } from 'file-saver';
 import {
@@ -9,16 +10,13 @@ import {
   PrimeNGConfig,
 } from 'primeng/api';
 import { first, Subject, takeUntil } from 'rxjs';
-import { SITES } from 'src/app/pages/home/main-page.component';
-import { ICard, ICountCard, IFilter, ISave, IUser } from '../../../../models';
+import { ICard, ICountCard, ISave, IUser } from '../../../../models';
 import { AuthService } from '../../../service/auth.service';
 import { DatabaseService } from '../../../service/database.service';
 import {
   addToCollection,
-  changeFilter,
   loadSave,
   setSave,
-  setSite,
 } from '../../../store/digimon.actions';
 import {
   selectAllCards,
@@ -35,8 +33,6 @@ import { GroupedSets } from '../filter-side-box/filterData';
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent implements OnInit, OnDestroy {
-  SITES = SITES;
-
   save = '';
   iSave: ISave;
 
@@ -85,6 +81,7 @@ export class MenuComponent implements OnInit, OnDestroy {
   constructor(
     private messageService: MessageService,
     private primengConfig: PrimeNGConfig,
+    private router: Router,
     private confirmationService: ConfirmationService,
     private db: DatabaseService,
     public authService: AuthService,
@@ -149,23 +146,17 @@ export class MenuComponent implements OnInit, OnDestroy {
         {
           label: 'Home',
           icon: 'pi pi-pencil',
-          command: () => {
-            this.switchSite(SITES.DeckBuilder);
-          },
+          command: () => this.router.navigateByUrl(''),
         },
         {
           label: 'My Decks',
           icon: 'pi pi-database',
-          command: () => {
-            this.switchSite(SITES.Decks);
-          },
+          command: () => this.router.navigateByUrl(''),
         },
         {
           label: 'Community Decks',
           icon: 'pi pi-database',
-          command: () => {
-            this.switchSite(SITES.CommunityDecks);
-          },
+          command: () => this.router.navigateByUrl('/community'),
         },
         {
           label: 'Collection Stats',
@@ -227,10 +218,6 @@ export class MenuComponent implements OnInit, OnDestroy {
     };
 
     this.items = [userMenu, settingsMenu, externalMenu];
-  }
-
-  switchSite(site: number) {
-    this.store.dispatch(setSite({ site }));
   }
 
   exportSave(): void {

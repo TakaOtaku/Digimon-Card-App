@@ -17,10 +17,7 @@ import {
   formatId,
   getPNG,
 } from '../../../../functions/digimon-card.functions';
-import {
-  selectAllCards,
-  selectExportDeckDialog,
-} from '../../../../store/digimon.selectors';
+import { selectAllCards } from '../../../../store/digimon.selectors';
 import { ColorsWithoutMulti } from '../../../organisms/filter-side-box/filterData';
 
 @Component({
@@ -57,16 +54,6 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
     this.digimonCards$
       .pipe(takeUntil(this.onDestroy$))
       .subscribe((cards) => (this.digimonCards = cards));
-
-    this.store
-      .select(selectExportDeckDialog)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((dialog) => {
-        this.setExportTypeText();
-        this.selectedColor = dialog.deck.color.name;
-        this.deck = dialog.deck;
-        this.exportType = 'TEXT';
-      });
   }
 
   ngOnDestroy(): void {

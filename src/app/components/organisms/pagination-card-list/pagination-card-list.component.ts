@@ -10,10 +10,7 @@ import { FormControl } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Subject, takeUntil } from 'rxjs';
 import { ICard, ICountCard } from '../../../../models';
-import {
-  changeCollectionMode,
-  setViewCardDialog,
-} from '../../../store/digimon.actions';
+import { changeCollectionMode } from '../../../store/digimon.actions';
 import {
   selectCollection,
   selectCollectionMode,
@@ -36,12 +33,13 @@ export class PaginationCardListComponent implements OnInit, OnDestroy {
   cardsToShow: ICard[] = [];
 
   cardsPerRow = 8;
-  cardsPerRowOptions = [4, 8];
 
   cardsPerPage = 48;
-  cardsPerPageOptions = [32, 48, 64, 128];
 
   filterBox = false;
+
+  card: ICard;
+  viewCardDialog = false;
 
   private collection: ICountCard[] = [];
   collectionMode = new FormControl();
@@ -93,7 +91,8 @@ export class PaginationCardListComponent implements OnInit, OnDestroy {
   }
 
   showDetails(card: ICard) {
-    this.store.dispatch(setViewCardDialog({ show: true, card }));
+    this.card = card;
+    this.viewCardDialog = true;
   }
 
   onPageChange(event: any, slice?: number) {

@@ -1,17 +1,16 @@
 import {
   Component,
-  HostListener,
+  EventEmitter,
   Input,
   OnDestroy,
   OnInit,
+  Output,
 } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { filter, Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
 import {
-  ColorList,
-  ColorMap,
   DeckColorMap,
   ICard,
   ICountCard,
@@ -22,9 +21,9 @@ import {
 import { ITag } from '../../../../models/interfaces/tag.interface';
 import {
   compareIDs,
+  deckIsValid,
   sortColors,
 } from '../../../functions/digimon-card.functions';
-import { tagsList } from 'src/models/tags.data';
 import { AuthService } from '../../../service/auth.service';
 import { DatabaseService } from '../../../service/database.service';
 import { importDeck, setDeck } from '../../../store/digimon.actions';
@@ -40,6 +39,10 @@ import { emptyDeck } from '../../../store/reducers/digimon.reducers';
   templateUrl: './deck-view.component.html',
 })
 export class DeckViewComponent implements OnInit, OnDestroy {
+  @Input() updateMainDeck: EventEmitter<string>;
+  @Input() collectionView: boolean;
+  @Output() onMainDeck = new EventEmitter<IDeckCard[]>();
+
   title = '';
   description = '';
   tags: ITag[];
@@ -104,6 +107,10 @@ export class DeckViewComponent implements OnInit, OnDestroy {
           this.mapDeck(deck);
         }
       });
+
+    this.updateMainDeck
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((id) => this.onCardClick(id));
   }
 
   ngOnDestroy() {
@@ -226,6 +233,7 @@ export class DeckViewComponent implements OnInit, OnDestroy {
     };
     this.store.dispatch(setDeck({ deck: this.deck }));
     this.deckSort();
+    this.onMainDeck.emit(this.mainDeck);
   }
 
   /**

@@ -1,35 +1,14 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { Subject, takeUntil } from 'rxjs';
-import { SITES } from '../../../pages/home/main-page.component';
-import { setSite } from '../../../store/digimon.actions';
-import { selectSite } from '../../../store/digimon.selectors';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'digimon-navbar',
   templateUrl: './navbar.component.html',
 })
-export class NavbarComponent implements OnInit, OnDestroy {
-  SITES = SITES;
-  mobile = false;
-  site = 1;
+export class NavbarComponent {
+  constructor(private router: Router) {}
 
-  private onDestroy$ = new Subject<boolean>();
-
-  constructor(private store: Store) {}
-
-  ngOnInit() {
-    this.store
-      .select(selectSite)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((site) => (this.site = site));
-  }
-
-  ngOnDestroy() {
-    this.onDestroy$.next(true);
-  }
-
-  changeSite(site: number) {
-    this.store.dispatch(setSite({ site }));
+  changeSite(url: string) {
+    this.router.navigateByUrl(url);
   }
 }

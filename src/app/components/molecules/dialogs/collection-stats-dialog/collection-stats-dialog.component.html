@@ -1,51 +1,44 @@
-<p-dialog
-  [(visible)]="show"
-  [baseZIndex]="10000"
-  [showHeader]="false"
-  header="Collection Stats"
-  styleClass="w-[95vw] lg:w-[70vw] xl:w-[60vw] h-[50vh] md:h-[65vh] lg:h-[80vh]"
->
-  <div class="my-5 inline-flex w-full">
-    <h1 class="primary-color text-bolder text-xl">Collection Stats</h1>
-    <button
-      (click)="this.onClose.next(false)"
-      class="p-button-text ml-auto self-end"
-      icon="pi pi-times"
-      pButton
-      pRipple
-      type="button"
-    ></button>
+
+<div class="my-5 inline-flex w-full">
+  <h1 class="primary-color text-bolder text-xl">Collection Stats</h1>
+  <button
+    (click)="this.onClose.next(false)"
+    class="p-button-text ml-auto self-end"
+    icon="pi pi-times"
+    pButton
+    pRipple
+    type="button"
+  ></button>
+</div>
+
+<!--div [formGroup]="languageForm">
+  <p-checkbox class="ml-2" formControlName="english" label="English" name="language"></p-checkbox>
+  <p-checkbox class="ml-2" formControlName="japanese" label="Japanese" name="language"></p-checkbox>
+</div>
+
+<div [formGroup]="versionForm">
+  <p-checkbox class="ml-2" formControlName="normal" label="Normal" name="version" value="Normal"></p-checkbox>
+  <p-checkbox class="ml-2" formControlName="aa" label="AA" name="version" value="AA"></p-checkbox>
+  <p-checkbox class="ml-2" formControlName="stamped" label="Stamped" name="version" value="Stamped"></p-checkbox>
+</div>
+
+<div class="flex flex-row">
+  <div class="field-radiobutton ml-2">
+    <p-radioButton inputId="type1" name="type1" value="Normal"></p-radioButton>
+    <label for="type1">Normal</label>
   </div>
-
-  <!--div [formGroup]="languageForm">
-		<p-checkbox class="ml-2" formControlName="english" label="English" name="language"></p-checkbox>
-		<p-checkbox class="ml-2" formControlName="japanese" label="Japanese" name="language"></p-checkbox>
-	</div>
-
-	<div [formGroup]="versionForm">
-    <p-checkbox class="ml-2" formControlName="normal" label="Normal" name="version" value="Normal"></p-checkbox>
-    <p-checkbox class="ml-2" formControlName="aa" label="AA" name="version" value="AA"></p-checkbox>
-    <p-checkbox class="ml-2" formControlName="stamped" label="Stamped" name="version" value="Stamped"></p-checkbox>
+  <div class="field-radiobutton ml-2">
+    <p-radioButton inputId="type2" name="type2" value="Playset"></p-radioButton>
+    <label for="type2">Playset</label>
   </div>
+  <div class="field-radiobutton ml-2">
+    <p-radioButton inputId="type3" name="type3" value="Playset+"></p-radioButton>
+    <label for="type3">Playset+</label>
+  </div>
+</div-->
 
-  <div class="flex flex-row">
-    <div class="field-radiobutton ml-2">
-      <p-radioButton inputId="type1" name="type1" value="Normal"></p-radioButton>
-      <label for="type1">Normal</label>
-    </div>
-    <div class="field-radiobutton ml-2">
-      <p-radioButton inputId="type2" name="type2" value="Playset"></p-radioButton>
-      <label for="type2">Playset</label>
-    </div>
-    <div class="field-radiobutton ml-2">
-      <p-radioButton inputId="type3" name="type3" value="Playset+"></p-radioButton>
-      <label for="type3">Playset+</label>
-    </div>
-  </div-->
-
-  <p-chart
-    [data]="collectionData"
-    [options]="chartOptions"
-    type="bar"
-  ></p-chart>
-</p-dialog>
+<p-chart
+  [data]="collectionData"
+  [options]="chartOptions"
+  type="bar"
+></p-chart>

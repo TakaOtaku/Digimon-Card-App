@@ -390,3 +390,11 @@
 </p-dialog>
 
 <p-confirmPopup></p-confirmPopup>
+
+<p-dialog
+  [(visible)]="collectionDisplay"
+  [baseZIndex]="10000"
+  [showHeader]="false"
+  header="Collection Stats"
+  styleClass="w-[95vw] lg:w-[70vw] xl:w-[60vw] h-[50vh] md:h-[65vh] lg:h-[80vh]"
+><digimon-collection-stats-dialog></digimon-collection-stats-dialog></p-dialog>

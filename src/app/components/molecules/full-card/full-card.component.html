@@ -77,3 +77,12 @@
 		placeholder="0"
 	></p-inputNumber-->
 </div>
+
+<p-dialog
+  [(visible)]="viewCardDialog"
+  [baseZIndex]="10000"
+  [showHeader]="false"
+  class="overflow-x-hidden"
+>
+  <digimon-view-card-dialog [card]="card"></digimon-view-card-dialog>
+</p-dialog>

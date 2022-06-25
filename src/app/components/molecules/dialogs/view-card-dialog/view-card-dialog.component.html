@@ -1,5 +1,6 @@
 <div
-  class="h-full w-full min-w-full max-w-full overflow-x-hidden md:w-[700px] md:min-w-[700px] md:max-w-[700px]">
+  class="h-full w-full min-w-full max-w-full overflow-x-hidden md:w-[700px] md:min-w-[700px] md:max-w-[700px]"
+>
   <div
     class="align-center mt-5 inline-flex h-10 w-full justify-between"
     id="Header"
@@ -19,11 +20,7 @@
     >
       {{ card.block }}
     </p>
-    <p
-      [ngStyle]="{color}"
-      class="self-center text-xl font-bold"
-      id="Card-Type"
-    >
+    <p [ngStyle]="{color}" class="self-center text-xl font-bold" id="Card-Type">
       {{ card.cardType }}
     </p>
     <div
@@ -140,9 +137,7 @@
         class="flex flex-col"
         id="Digimon-DNA-Digivolve"
       >
-        <p [ngStyle]="{color}" class="text-lg font-extrabold">
-          DNA Digivolve
-        </p>
+        <p [ngStyle]="{color}" class="text-lg font-extrabold">DNA Digivolve</p>
         <p class="font-white whitespace-pre-wrap text-lg font-bold">
           {{ card.dnaDigivolve }}
         </p>
@@ -161,11 +156,7 @@
   </div>
 
   <div class="max-w-full" id="Effects">
-    <div
-      *ngIf="card.effect !== '-'"
-      class="flex flex-col"
-      id="Digimon-Effect"
-    >
+    <div *ngIf="card.effect !== '-'" class="flex flex-col" id="Digimon-Effect">
       <p [ngStyle]="{color}" class="text-lg font-extrabold">Effect</p>
       <p class="font-white whitespace-pre-wrap text-lg font-bold">
         {{ card.effect }}
@@ -176,9 +167,7 @@
       class="flex flex-col"
       id="Digimon-Digivolve-Effect"
     >
-      <p [ngStyle]="{color}" class="text-lg font-extrabold">
-        Inherited effect
-      </p>
+      <p [ngStyle]="{color}" class="text-lg font-extrabold">Inherited effect</p>
       <p class="font-white whitespace-pre-wrap text-lg font-bold">
         {{ card.digivolveEffect }}
       </p>
@@ -188,9 +177,7 @@
       class="flex flex-col"
       id="Security-Effect"
     >
-      <p [ngStyle]="{color}" class="text-lg font-extrabold">
-        Security effect
-      </p>
+      <p [ngStyle]="{color}" class="text-lg font-extrabold">Security effect</p>
       <p class="font-white whitespace-pre-wrap text-lg font-bold">
         {{ card.securityEffect }}
       </p>

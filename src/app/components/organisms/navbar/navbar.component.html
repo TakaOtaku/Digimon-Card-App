@@ -11,19 +11,19 @@
     <digimon-filter-button class="md:hidden"></digimon-filter-button>
 
     <button
-      (click)="changeSite(SITES.DeckBuilder)"
+      (click)="changeSite('')"
       class="min-w-auto primary-background ml-2 mt-2 hidden h-8 w-32 rounded p-2 text-xs font-semibold text-white lg:block"
     >
       Home
     </button>
     <button
-      (click)="changeSite(SITES.Decks)"
+      (click)="changeSite('decks')"
       class="min-w-auto primary-background ml-2 mt-2 hidden h-8 w-32 rounded p-2 text-xs font-semibold text-white lg:block"
     >
       My Decks
     </button>
     <button
-      (click)="changeSite(SITES.CommunityDecks)"
+      (click)="changeSite('/community')"
       class="min-w-auto primary-background ml-2 mt-2 hidden h-8 w-32 rounded p-2 text-xs font-semibold text-white lg:block"
     >
       Community Decks

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, HostListener } from '@angular/core';
+import { IDeckCard } from '../../../models';
 
 @Component({
   selector: 'digimon-home',
@@ -12,7 +13,8 @@ export class HomeComponent {
   showStats = true;
   //endregion
 
-  mainDeckChanged = new EventEmitter<string>();
+  mainDeck: IDeckCard[];
+  updateMainDeck = new EventEmitter<string>();
 
   private screenWidth: number;
 
@@ -47,8 +49,12 @@ export class HomeComponent {
     }
   }
 
+  setMainDeck(event: any) {
+    this.mainDeck = event;
+  }
+
   onCardClick(id: string) {
-    this.mainDeckChanged.emit(id);
+    this.updateMainDeck.emit(id);
   }
 
   changeView(view: string) {

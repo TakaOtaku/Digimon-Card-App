@@ -1,4 +1,6 @@
-<div class="relative inline-flex h-[calc(100vh-58px)] w-full flex-row max-h-screen overflow-x-hidden">
+<div
+  class="relative inline-flex h-[calc(100vh-58px)] max-h-screen w-full flex-row overflow-x-hidden"
+>
   <button
     *ngIf="showAccordionButtons"
     class="primary-background my-1 h-full w-6 border-y border-slate-200"
@@ -15,7 +17,11 @@
     class="my-1 mr-1 h-full justify-center border border-slate-200 pb-48 md:pb-0"
     [ngClass]="{ 'w-5/12': collectionView, 'w-full': !collectionView }"
   >
-    <digimon-deck-view [mainDeckChanged]="mainDeckChanged"></digimon-deck-view>
+    <digimon-deck-view
+      (onMainDeck)="setMainDeck($event)"
+      [collectionView]="collectionView"
+      [updateMainDeck]="updateMainDeck"
+    ></digimon-deck-view>
   </div>
 
   <div
@@ -23,7 +29,10 @@
     class="my-1 h-full"
     [ngClass]="{ 'w-7/12': deckView, 'w-full': !deckView }"
   >
-    <digimon-collection-view [deckView]="deckView" (onCardClick)="onCardClick($event)"></digimon-collection-view>
+    <digimon-collection-view
+      [deckView]="deckView"
+      (onCardClick)="onCardClick($event)"
+    ></digimon-collection-view>
   </div>
   <button
     *ngIf="showAccordionButtons"
@@ -37,5 +46,9 @@
     >
   </button>
 
-  <digimon-deck-stats [collectionView]="collectionView" [showStats]="showStats" [mainDeck]="mainDeck"></digimon-deck-stats>
+  <digimon-deck-stats
+    [collectionView]="collectionView"
+    [showStats]="showStats"
+    [mainDeck]="mainDeck"
+  ></digimon-deck-stats>
 </div>
