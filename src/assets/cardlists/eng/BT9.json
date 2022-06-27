@@ -50,7 +50,7 @@
     "effect": "-",
     "digivolveEffect": "[Your Turn] While this Digimon has [Agumon] or [Greymon] in its name, it gets +1000 DP.",
     "securityEffect": "-",
-    "notes": "▹BOOSTER X RECORD [BT-09]",
+    "notes": "▹BOOSTER X RECORD [BT-09] Box Promotion",
     "color": "Red",
     "version": "AA",
     "block": [
@@ -110,7 +110,7 @@
     "effect": "-",
     "digivolveEffect": "[Your Turn] [Once Per Turn] When an effect adds a card to your hand, this Digimon gets +1000 DP for the turn.",
     "securityEffect": "-",
-    "notes": "▹BOOSTER X RECORD [BT-09]",
+    "notes": "▹BOOSTER X RECORD [BT-09] Box Promotion",
     "color": "Blue",
     "version": "AA",
     "block": [
@@ -170,7 +170,7 @@
     "effect": "-",
     "digivolveEffect": "[Your Turn] [Once Per Turn] When a card is added to your security stack, 1 of your opponent's Digimon gets -1000 DP for the turn.",
     "securityEffect": "-",
-    "notes": "▹BOOSTER X RECORD [BT-09]",
+    "notes": "▹BOOSTER X RECORD [BT-09] Box Promotion",
     "color": "Yellow",
     "version": "AA",
     "block": [
@@ -230,7 +230,7 @@
     "effect": "-",
     "digivolveEffect": "[Your Turn] While this Digimon has [Insectoid] in its traits, it gets +1000 DP.",
     "securityEffect": "-",
-    "notes": "▹BOOSTER X RECORD [BT-09]",
+    "notes": "▹BOOSTER X RECORD [BT-09] Box Promotion",
     "color": "Green",
     "version": "AA",
     "block": [
@@ -290,7 +290,7 @@
     "effect": "-",
     "digivolveEffect": "[Opponent's Turn] While this Digimon has ＜Blocker＞, it gets +1000 DP.",
     "securityEffect": "-",
-    "notes": "▹BOOSTER X RECORD [BT-09]",
+    "notes": "▹BOOSTER X RECORD [BT-09] Box Promotion",
     "color": "Black",
     "version": "AA",
     "block": [
@@ -350,7 +350,7 @@
     "effect": "-",
     "digivolveEffect": "[When Attacking] You may trash 1 card in your hand to have this Digimon get +1000 DP for the turn.",
     "securityEffect": "-",
-    "notes": "▹BOOSTER X RECORD [BT-09]",
+    "notes": "▹BOOSTER X RECORD [BT-09] Box Promotion",
     "color": "Purple",
     "version": "AA",
     "block": [
@@ -3751,7 +3751,7 @@
   },
   {
     "id": "BT9-104",
-    "name": "X-Digivolution",
+    "name": "X Digivolution",
     "cardImage": "assets/images/cards/eng/BT9-104.jpg",
     "cardType": "Option",
     "dp": "-",
