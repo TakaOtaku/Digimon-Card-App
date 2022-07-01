@@ -3810,6 +3810,36 @@
     "illustrator": "Shin Sasaki"
   },
   {
+    "id": "BT8-102_P1",
+    "name": "Samādhi Śānti",
+    "cardImage": "assets/images/cards/eng/BT8-102_P1.jpg",
+    "cardType": "Option",
+    "dp": "-",
+    "playCost": "1",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "-",
+    "rarity": "U",
+    "cardNumber": "BT8-102",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Main] You may suspend 1 of your Digimon to suspend 1 of your opponent's Digimon or Tamers. Your opponent's cards suspended with this effect can't unsuspend until the end of their next turn.",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Suspend 1 of your opponent's Digimon or Tamers.",
+    "notes": "Summer 2022 Dash Pack",
+    "color": "Green",
+    "version": "Normal",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "p!k@ru"
+  },
+  {
     "id": "BT8-103",
     "name": "Lightning Blade",
     "cardImage": "assets/images/cards/eng/BT8-103.jpg",
