@@ -2000,7 +2000,7 @@
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "[Your Turn] When this Digimon would digivolve into a card with [Insectoid] in its traits, all of your opponent's Digimon gain \"[All Turns] When this Digimon becomes suspended, lose 1 memory.\" until the end of your opponent's turn.",
-    "digivolveEffect": "[Your Turn] While this Digimon has [Insectoid] in its traits, it gains . (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.)",
+    "digivolveEffect": "[Your Turn] While this Digimon has [Insectoid] in its traits, it gains ＜Piercing＞. (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.)",
     "securityEffect": "-",
     "notes": "Update Promotion Pack",
     "color": "Green",
