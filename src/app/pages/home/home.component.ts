@@ -1,5 +1,10 @@
 import { Component, EventEmitter, HostListener } from '@angular/core';
-import { IDeckCard } from '../../../models';
+import { ActivatedRoute } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { AuthService } from '../../service/auth.service';
+import { DatabaseService } from '../../service/database.service';
+import { setDeck } from '../../store/digimon.actions';
+import * as uuid from 'uuid';
 
 @Component({
   selector: 'digimon-home',
@@ -12,13 +17,24 @@ export class HomeComponent {
   showAccordionButtons = true;
   showStats = true;
   //endregion
-
-  mainDeck: IDeckCard[];
   updateMainDeck = new EventEmitter<string>();
 
   private screenWidth: number;
 
-  constructor() {
+  constructor(
+    private route: ActivatedRoute,
+    private store: Store,
+    private databaseService: DatabaseService
+  ) {
+    route.params.subscribe((params) => {
+      this.databaseService.loadDeck(params['id']).subscribe((deck) => {
+        this.store.dispatch(
+          setDeck({
+            deck: { ...deck, id: uuid.v4(), rating: 0, ratingCount: 0 },
+          })
+        );
+      });
+    });
     this.onResize();
   }
 
@@ -47,10 +63,6 @@ export class HomeComponent {
 
       this.showAccordionButtons = true;
     }
-  }
-
-  setMainDeck(event: any) {
-    this.mainDeck = event;
   }
 
   onCardClick(id: string) {

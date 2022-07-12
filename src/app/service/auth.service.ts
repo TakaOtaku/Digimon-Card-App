@@ -10,7 +10,8 @@ import firebase from 'firebase/compat';
 import { MessageService } from 'primeng/api';
 import { first, Subject } from 'rxjs';
 import { IUser } from '../../models';
-import { loadSave } from '../store/digimon.actions';
+import { loadSave, setSave } from '../store/digimon.actions';
+import { emptySave } from '../store/reducers/save.reducer';
 import { DatabaseService } from './database.service';
 import UserCredential = firebase.auth.UserCredential;
 import User = firebase.User;
@@ -93,11 +94,6 @@ export class AuthService {
     });
   }
 
-  /**
-   * Set the user data of the current User
-   * a) If the db doesn't have an entry for the user create a new blank entry. And use the current Save if there is one
-   * b) If the db does have an entry for the user load it and check it against the current save. Ask the User which one to keep.
-   */
   SetUserData(user: User | null) {
     if (!user) return;
 
@@ -109,15 +105,25 @@ export class AuthService {
       .loadSave(user.uid)
       .pipe(first())
       .subscribe((save) => {
-        const userData: IUser = {
-          uid: user.uid,
-          displayName: user.displayName ?? '',
-          photoURL: user.photoURL ?? '',
-          save,
-        };
+        let userData: IUser;
+        if (!save) {
+          userData = {
+            uid: user.uid,
+            displayName: user.displayName ?? '',
+            photoURL: user.photoURL ?? '',
+            save: emptySave,
+          };
+        } else {
+          userData = {
+            uid: user.uid,
+            displayName: user.displayName ?? '',
+            photoURL: user.photoURL ?? '',
+            save,
+          };
+        }
 
         localStorage.setItem('user', JSON.stringify(userData));
-        this.store.dispatch(loadSave({ save }));
+        this.store.dispatch(setSave({ save: save ?? emptySave }));
 
         this.userData = userData;
 

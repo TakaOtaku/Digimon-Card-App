@@ -10,6 +10,10 @@ const routes: Routes = [
     component: CommunityComponent,
   },
   {
+    path: 'user',
+    component: UserComponent,
+  },
+  {
     path: 'user/:id',
     component: UserComponent,
   },

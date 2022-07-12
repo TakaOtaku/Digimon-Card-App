@@ -35,14 +35,12 @@
 <div class="card-box w-full overflow-hidden">
   <h1
     *ngIf="cards.length === 0"
-    class="primary-color text-bold my-10 text-center text-5xl"
-  >
+    class="primary-color text-bold my-10 text-center text-5xl">
     No cards found!
   </h1>
 
   <digimon-full-card
     *ngFor="let card of cardsToShow"
-    (contextmenu)="showDetails(card)"
     [collectionMode]="collectionMode.value"
     (addCard)="addToDeck(card)"
     [deckView]="deckView"
@@ -51,20 +49,6 @@
     [deckBuilder]="true"
     [ngClass]="getCardsInARow()"
   ></digimon-full-card>
-
-  <!--div [ngClass]="getGridCols()" class="grid">
-		<div (contextmenu)="showDetails(card)" *ngFor="let card of cardsToShow" class="mx-auto w-full">
-			<digimon-full-card
-				[collectionMode]="collectionMode.value"
-        (addCard)="addToDeck(card)"
-        [deckView]="deckView"
-				[card]="card"
-				[count]="getCount(card.id)"
-				[deckBuilder]="true"
-				class="w-full scale-95 transition"
-			></digimon-full-card>
-		</div>
-	</div-->
 </div>
 
 <p-dialog
@@ -74,13 +58,4 @@
   [baseZIndex]="10000"
 >
   <digimon-filter-side-box></digimon-filter-side-box>
-</p-dialog>
-
-<p-dialog
-  [(visible)]="viewCardDialog"
-  [baseZIndex]="10000"
-  [showHeader]="false"
-  class="overflow-x-hidden"
->
-  <digimon-view-card-dialog [card]="card"></digimon-view-card-dialog>
 </p-dialog>

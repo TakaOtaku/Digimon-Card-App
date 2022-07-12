@@ -2,6 +2,7 @@
   <span class="mt-2 w-1/2">
     <input
       [(ngModel)]="title"
+      (ngModelChange)="this.titleChange.emit($event)"
       placeholder="Deck Name:"
       class="h-8 w-full text-sm"
       pInputText
@@ -13,6 +14,7 @@
     <p-multiSelect
       [filter]="true"
       [(ngModel)]="tags"
+      (ngModelChange)="this.tagsChange.emit($event)"
       [options]="tagsList"
       optionLabel="name"
       [showHeader]="false"
@@ -30,6 +32,7 @@
   <span class="mr-2 w-full">
     <textarea
       [(ngModel)]="description"
+      (ngModelChange)="this.descriptionChange.emit($event)"
       placeholder="Description:"
       class="w-full overflow-hidden"
       pInputTextarea

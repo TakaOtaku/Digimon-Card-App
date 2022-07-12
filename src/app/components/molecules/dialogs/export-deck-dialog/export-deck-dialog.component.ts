@@ -18,7 +18,7 @@ import {
   getPNG,
 } from '../../../../functions/digimon-card.functions';
 import { selectAllCards } from '../../../../store/digimon.selectors';
-import { ColorsWithoutMulti } from '../../../organisms/filter-side-box/filterData';
+import { ColorsWithoutMulti } from '../../../organisms/filter/filter-side-box/filterData';
 
 @Component({
   selector: 'digimon-export-deck-dialog',

@@ -29,6 +29,7 @@ export const emptyFilter = {
   specialRequirementsFilter: [],
   blockFilter: [],
   restrictionsFilter: [],
+  sourceFilter: [],
 };
 
 export const initialState: IDigimonState = {

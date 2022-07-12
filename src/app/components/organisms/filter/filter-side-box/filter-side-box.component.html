@@ -219,11 +219,11 @@
         C
       </button>
       <button
-        (click)="changeRarity('UC')"
-        [ngClass]="{ 'primary-background': rarityFilter.value.includes('UC') }"
+        (click)="changeRarity('U')"
+        [ngClass]="{ 'primary-background': rarityFilter.value.includes('U') }"
         class="min-w-auto mt-2 h-8 w-10 border border-slate-100 p-1 text-xs font-semibold text-white"
       >
-        UC
+        U
       </button>
       <button
         (click)="changeRarity('R')"
@@ -305,7 +305,7 @@
     display="chip"
     scrollHeight="250px"
     class="mx-5"
-    styleClass="w-full mt-1 h-8 text-sm"
+    styleClass="w-full mt-1 h-8 text-sm max-w-[250px]"
   >
   </p-multiSelect>
 
@@ -317,7 +317,7 @@
     display="chip"
     scrollHeight="250px"
     class="mx-5"
-    styleClass="w-full mt-1 h-8 text-sm"
+    styleClass="w-full mt-1 h-8 text-sm max-w-[250px]"
   >
   </p-multiSelect>
 
@@ -329,7 +329,7 @@
     display="chip"
     scrollHeight="250px"
     class="mx-5"
-    styleClass="w-full mt-1 h-8 text-sm"
+    styleClass="w-full mt-1 h-8 text-sm max-w-[250px]"
   >
   </p-multiSelect>
 
@@ -341,7 +341,7 @@
     display="chip"
     scrollHeight="250px"
     class="mx-5"
-    styleClass="w-full mt-1 h-8 text-sm"
+    styleClass="w-full mt-1 h-8 text-sm max-w-[250px]"
   >
   </p-multiSelect>
 
@@ -353,7 +353,7 @@
     display="chip"
     scrollHeight="250px"
     class="mx-5"
-    styleClass="w-full mt-1 h-8 text-sm"
+    styleClass="w-full mt-1 h-8 text-sm max-w-[250px]"
   >
   </p-multiSelect>
 
@@ -365,7 +365,7 @@
     display="chip"
     scrollHeight="250px"
     class="mx-5"
-    styleClass="w-full mt-1 h-8 text-sm"
+    styleClass="w-full mt-1 h-8 text-sm max-w-[250px]"
   >
   </p-multiSelect>
 
@@ -377,7 +377,7 @@
     display="chip"
     scrollHeight="250px"
     class="mx-5"
-    styleClass="w-full mt-1 h-8 text-sm"
+    styleClass="w-full mt-1 h-8 text-sm max-w-[250px]"
   >
   </p-multiSelect>
 
@@ -389,7 +389,19 @@
     display="chip"
     scrollHeight="250px"
     class="mx-5"
-    styleClass="w-full mt-1 mb-5 h-8 text-sm"
+    styleClass="w-full mt-1 h-8 text-sm max-w-[250px]"
+  >
+  </p-multiSelect>
+
+  <p-multiSelect
+    [formControl]="sourceFilter"
+    [options]="sources"
+    [showToggleAll]="false"
+    defaultLabel="Select a Source"
+    display="chip"
+    scrollHeight="250px"
+    class="mx-5"
+    styleClass="w-full mt-1 mb-5 h-8 text-sm max-w-[250px]"
   >
   </p-multiSelect>
 </div>

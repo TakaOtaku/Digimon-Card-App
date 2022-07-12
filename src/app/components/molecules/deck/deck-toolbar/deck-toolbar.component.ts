@@ -8,10 +8,10 @@ import {
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { Subject, takeUntil } from 'rxjs';
-import { ICard, IDeck, IDeckCard } from '../../../../models';
-import { setDeck } from '../../../store/digimon.actions';
-import { selectAllCards } from '../../../store/digimon.selectors';
-import { emptyDeck } from '../../../store/reducers/digimon.reducers';
+import { ICard, IDeck, IDeckCard } from '../../../../../models';
+import { setDeck } from '../../../../store/digimon.actions';
+import { selectAllCards } from '../../../../store/digimon.selectors';
+import { emptyDeck } from '../../../../store/reducers/digimon.reducers';
 
 @Component({
   selector: 'digimon-deck-toolbar',
@@ -60,13 +60,13 @@ export class DeckToolbarComponent implements OnDestroy {
     let count = 0;
     if (which === 'Egg') {
       this.mainDeck.forEach((card) => {
-        if (card.cardLv === 'Lv.2') {
+        if (card.cardType === 'Digi-Egg') {
           count += card.count;
         }
       });
     } else {
       this.mainDeck.forEach((card) => {
-        if (card.cardLv !== 'Lv.2') {
+        if (card.cardType !== 'Digi-Egg') {
           count += card.count;
         }
       });

@@ -89,7 +89,6 @@
   [(visible)]="simulateDialog"
   styleClass="w-[100%] min-w-[250px] sm:min-w-[500px] sm:w-[700px] min-h-[500px]"
   [baseZIndex]="10000"
-  (onHide)="simulateDialog = false"
 >
   <!-- Security Stack -->
   <h1 class="text-center text-2xl font-bold">Security Stack</h1>
@@ -120,16 +119,14 @@
 
 <p-dialog
   header="Export Deck"
-  [showHeader]="false"
   [(visible)]="exportDeckDialog"
   styleClass="w-[100%] min-w-[250px] sm:min-w-[500px] sm:w-[700px] min-h-[500px]"
   [baseZIndex]="10000"
-  ><digimon-export-deck-dialog></digimon-export-deck-dialog
+  ><digimon-export-deck-dialog [deck]="deck"></digimon-export-deck-dialog
 ></p-dialog>
 
 <p-dialog
   header="Import Deck"
-  [showHeader]="false"
   [(visible)]="importDeckDialog"
   styleClass="w-[100%] min-w-[250px] sm:min-w-[500px] sm:w-[700px] min-h-[500px]"
   [baseZIndex]="10000"

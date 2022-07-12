@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { AutoCompleteModule } from 'primeng/autocomplete';
+import { BlockUIModule } from 'primeng/blockui';
 import { ButtonModule } from 'primeng/button';
 import { ChartModule } from 'primeng/chart';
 import { ChipModule } from 'primeng/chip';
@@ -17,6 +18,7 @@ import { MenuModule } from 'primeng/menu';
 import { MessageModule } from 'primeng/message';
 import { MessagesModule } from 'primeng/messages';
 import { MultiSelectModule } from 'primeng/multiselect';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { RatingModule } from 'primeng/rating';
 import { RippleModule } from 'primeng/ripple';
@@ -55,6 +57,8 @@ import { ToastModule } from 'primeng/toast';
     RadioButtonModule,
     SidebarModule,
     StyleClassModule,
+    ProgressSpinnerModule,
+    BlockUIModule,
   ],
   providers: [MessageService, ConfirmationService],
   exports: [
@@ -84,6 +88,8 @@ import { ToastModule } from 'primeng/toast';
     RippleModule,
     SelectButtonModule,
     StyleClassModule,
+    ProgressSpinnerModule,
+    BlockUIModule,
   ],
 })
 export class PrimeNGModule {}

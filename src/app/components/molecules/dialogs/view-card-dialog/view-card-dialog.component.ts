@@ -7,6 +7,7 @@ import {
   Output,
   SimpleChanges,
 } from '@angular/core';
+import { englishCards } from '../../../../../assets/cardlists/eng/english';
 import { ColorMap, ICard } from '../../../../../models';
 import { formatId } from '../../../../functions/digimon-card.functions';
 
@@ -16,7 +17,7 @@ import { formatId } from '../../../../functions/digimon-card.functions';
 })
 export class ViewCardDialogComponent implements OnInit, OnChanges {
   @Input() show: boolean = false;
-  @Input() card: ICard;
+  @Input() card: ICard = englishCards[0];
 
   @Input() width?: string = '50vw';
 
@@ -41,7 +42,9 @@ export class ViewCardDialogComponent implements OnInit, OnChanges {
   type: string;
 
   ngOnInit() {
-    this.setupView(this.card);
+    if (this.card) {
+      this.setupView(this.card);
+    }
   }
 
   ngOnChanges(changes: SimpleChanges) {

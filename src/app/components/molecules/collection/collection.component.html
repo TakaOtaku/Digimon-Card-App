@@ -1,0 +1,116 @@
+<div class="h-1/2 text-white border-2 border-red overflow-y-scroll">
+  <div class="w-full h-12 primary-background font-bold text-3xl border-2 border-slate-500 text-center">Collection</div>
+
+  <button *ngIf="selectedSet !== ''" (click)="setSelectedSet('')" class="min-w-auto primary-background mt-2 hidden h-8 w-full mx-2 rounded text-xs font-semibold text-white lg:block">
+    Back
+  </button>
+
+  <div class="w-full flex flex-col mt-2 mx-2">
+    <div *ngIf="selectedSet === ''">
+      <button (click)="setSelectedSet('BT')" class="min-w-auto primary-background mt-2 hidden h-8 w-full rounded text-xs font-semibold text-white lg:block">
+        BT
+      </button>
+      <button (click)="setSelectedSet('EX')" class="min-w-auto primary-background mt-2 hidden h-8 w-full rounded text-xs font-semibold text-white lg:block">
+        EX
+      </button>
+      <button (click)="setSelectedSet('ST')" class="min-w-auto primary-background mt-2 hidden h-8 w-full rounded text-xs font-semibold text-white lg:block">
+        ST
+      </button>
+      <button (click)="setSelectedSet('P')" class="min-w-auto primary-background mt-2 hidden h-8 w-full rounded text-xs font-semibold text-white lg:block">
+        P
+      </button>
+    </div>
+
+    <div *ngIf="selectedSet === 'BT' && collectionList.length === 0">
+      <button (click)="switch('BT1')" class="min-w-auto primary-background mt-2 hidden h-8 w-full rounded text-xs font-semibold text-white lg:block">
+        BT-1
+      </button>
+      <button (click)="switch('BT2')" class="min-w-auto primary-background mt-2 hidden h-8 w-full rounded text-xs font-semibold text-white lg:block">
+        BT-2
+      </button>
+      <button (click)="switch('BT3')" class="min-w-auto primary-background mt-2 hidden h-8 w-full rounded text-xs font-semibold text-white lg:block">
+        BT-3
+      </button>
+      <button (click)="switch('BT4')" class="min-w-auto primary-background mt-2 hidden h-8 w-full rounded text-xs font-semibold text-white lg:block">
+        BT-4
+      </button>
+      <button (click)="switch('BT5')" class="min-w-auto primary-background mt-2 hidden h-8 w-full rounded text-xs font-semibold text-white lg:block">
+        BT-5
+      </button>
+      <button (click)="switch('BT6')" class="min-w-auto primary-background mt-2 hidden h-8 w-full rounded text-xs font-semibold text-white lg:block">
+        BT-6
+      </button>
+      <button (click)="switch('BT7')" class="min-w-auto primary-background mt-2 hidden h-8 w-full rounded text-xs font-semibold text-white lg:block">
+        BT-7
+      </button>
+      <button (click)="switch('BT8')" class="min-w-auto primary-background mt-2 hidden h-8 w-full rounded text-xs font-semibold text-white lg:block">
+        BT-8
+      </button>
+      <button (click)="switch('BT9')" class="min-w-auto primary-background mt-2 hidden h-8 w-full rounded text-xs font-semibold text-white lg:block">
+        BT-9
+      </button>
+      <button (click)="switch('BT10')" class="min-w-auto primary-background mt-2 hidden h-8 w-full rounded text-xs font-semibold text-white lg:block">
+        BT-10
+      </button>
+    </div>
+    <div *ngIf="selectedSet === 'EX' && collectionList.length === 0">
+      <button (click)="switch('EX1')" class="min-w-auto primary-background mt-2 hidden h-8 w-full rounded text-xs font-semibold text-white lg:block">
+        EX-1
+      </button>
+      <button (click)="switch('EX2')" class="min-w-auto primary-background mt-2 hidden h-8 w-full rounded text-xs font-semibold text-white lg:block">
+        EX-2
+      </button>
+      <button (click)="switch('EX3')" class="min-w-auto primary-background mt-2 hidden h-8 w-full rounded text-xs font-semibold text-white lg:block">
+        EX-3
+      </button>
+    </div>
+    <div *ngIf="selectedSet === 'ST' && collectionList.length === 0">
+      <button (click)="switch('ST1')" class="min-w-auto primary-background mt-2 hidden h-8 w-full rounded text-xs font-semibold text-white lg:block">
+        ST-1
+      </button>
+      <button (click)="switch('ST2')" class="min-w-auto primary-background mt-2 hidden h-8 w-full rounded text-xs font-semibold text-white lg:block">
+        ST-2
+      </button>
+      <button (click)="switch('ST3')" class="min-w-auto primary-background mt-2 hidden h-8 w-full rounded text-xs font-semibold text-white lg:block">
+        ST-3
+      </button>
+      <button (click)="switch('ST4')" class="min-w-auto primary-background mt-2 hidden h-8 w-full rounded text-xs font-semibold text-white lg:block">
+        ST-4
+      </button>
+      <button (click)="switch('ST5')" class="min-w-auto primary-background mt-2 hidden h-8 w-full rounded text-xs font-semibold text-white lg:block">
+        ST-5
+      </button>
+      <button (click)="switch('ST6')" class="min-w-auto primary-background mt-2 hidden h-8 w-full rounded text-xs font-semibold text-white lg:block">
+        ST-6
+      </button>
+      <button (click)="switch('ST7')" class="min-w-auto primary-background mt-2 hidden h-8 w-full rounded text-xs font-semibold text-white lg:block">
+        ST-7
+      </button>
+      <button (click)="switch('ST8')" class="min-w-auto primary-background mt-2 hidden h-8 w-full rounded text-xs font-semibold text-white lg:block">
+        ST-8
+      </button>
+      <button (click)="switch('ST9')" class="min-w-auto primary-background mt-2 hidden h-8 w-full rounded text-xs font-semibold text-white lg:block">
+        ST-9
+      </button>
+      <button (click)="switch('ST10')" class="min-w-auto primary-background mt-2 hidden h-8 w-full rounded text-xs font-semibold text-white lg:block">
+        ST-10
+      </button>
+      <button (click)="switch('ST12')" class="min-w-auto primary-background mt-2 hidden h-8 w-full rounded text-xs font-semibold text-white lg:block">
+        ST-12
+      </button>
+      <button (click)="switch('ST13')" class="min-w-auto primary-background mt-2 hidden h-8 w-full rounded text-xs font-semibold text-white lg:block">
+        ST-13
+      </button>
+    </div>
+
+
+    <div *ngIf="showCollection">
+      <div *ngFor="let card of collectionList" class="primary-background border-b-2 border-slate-500 text-white text-center w-full grid grid-cols-6 mx-2">
+        <div class="col-span-1">{{card.id}}</div>
+        <div class="col-span-4">{{card.name}}</div>
+        <div class="col-span-1">{{card.count}}</div>
+      </div>
+    </div>
+
+  </div>
+</div>

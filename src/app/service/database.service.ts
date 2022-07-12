@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { get, getDatabase, ref, set, update } from '@angular/fire/database';
 import { DataSnapshot } from '@firebase/database';
-import { BehaviorSubject, first, Subject } from 'rxjs';
+import { BehaviorSubject, first, from, Subject } from 'rxjs';
 import { IDeck, ISave, IUser } from '../../models';
 import { CARDSET } from '../../models/card-set.enum';
 import { emptyDeck } from '../store/reducers/digimon.reducers';
@@ -18,9 +18,8 @@ export class DatabaseService {
    * Falls der Nutzer eingeloggt ist und keine Daten hat, erstelle diese
    * Falls der Nutzer sich zum ersten mal einloggt erstelle neue Daten in der DB
    */
-  loadSave(uId: string, user?: IUser | null): Subject<ISave> {
-    const db = getDatabase();
-    const saveSubject = new Subject<ISave>();
+  loadSave(uId: string, user?: IUser | null): Subject<ISave | null> {
+    const saveSubject = new Subject<ISave | null>();
 
     this.database
       .object(`users/${uId}`)
@@ -33,26 +32,9 @@ export class DatabaseService {
           save = this.checkSaveValidity(save, user);
 
           saveSubject.next(save);
-        } else {
-          const string = localStorage.getItem('Digimon-Card-Collector');
-          if (string) {
-            const save: ISave = JSON.parse(string);
-            set(ref(db, 'users/' + uId), save);
-            saveSubject.next(save);
-            return;
-          } else {
-            set(ref(db, 'users/' + uId), {
-              collection: [],
-              decks: [],
-              settings: emptySettings,
-            });
-            saveSubject.next({
-              collection: [],
-              decks: [],
-              settings: emptySettings,
-            });
-          }
+          return;
         }
+        saveSubject.next(null);
       });
 
     return saveSubject;
@@ -123,6 +105,7 @@ export class DatabaseService {
     const newDeck = {
       ...deck,
       user: user?.displayName ?? 'Unknown',
+      userId: user?.uid ?? 'Unknown',
       date: new Date(),
     };
     return update(ref(db, 'community-decks/' + deck.id), newDeck);

@@ -3,16 +3,19 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { MessageService } from 'primeng/api';
 import { Subject, takeUntil } from 'rxjs';
-import { IFilter } from '../../../../models';
-import { CARDSET } from '../../../../models/card-set.enum';
-import { ISelectItem } from '../../../../models/interfaces/select-item.interface';
-import { changeCardSets, changeFilter } from '../../../store/digimon.actions';
+import { IFilter } from '../../../../../models';
+import { CARDSET } from '../../../../../models/card-set.enum';
+import { ISelectItem } from '../../../../../models/interfaces/select-item.interface';
+import {
+  changeCardSets,
+  changeFilter,
+} from '../../../../store/digimon.actions';
 import {
   selectCardSet,
   selectCollectionMode,
   selectFilter,
-} from '../../../store/digimon.selectors';
-import { emptyFilter } from '../../../store/reducers/digimon.reducers';
+} from '../../../../store/digimon.selectors';
+import { emptyFilter } from '../../../../store/reducers/digimon.reducers';
 import {
   Attributes,
   Blocks,
@@ -22,6 +25,7 @@ import {
   Illustrators,
   Keywords,
   Restrictions,
+  Sources,
   SpecialRequirements,
   Types,
 } from './filterData';
@@ -50,6 +54,7 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
   specialRequirementsFilter = new FormControl([]);
   blockFilter = new FormControl([]);
   restrictionsFilter = new FormControl([]);
+  sourceFilter = new FormControl([]);
 
   filterFormGroup: FormGroup = new FormGroup({
     setFilter: this.setFilter,
@@ -65,6 +70,7 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
     specialRequirementsFilter: this.specialRequirementsFilter,
     blockFilter: this.blockFilter,
     restrictionsFilter: this.restrictionsFilter,
+    sourceFilter: this.sourceFilter,
   });
 
   cardCountSlider: number[] = [0, 5];
@@ -83,6 +89,7 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
   specialRequirements = this.itemsAsSelectItem(SpecialRequirements);
   blocks = this.itemsAsSelectItem(Blocks);
   restrictions = this.itemsAsSelectItem(Restrictions);
+  sources = this.itemsAsSelectItem(Sources);
 
   cardSet = CARDSET;
 
@@ -122,6 +129,9 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
         );
         this.blockFilter.setValue(filter.blockFilter, { emitEvent: false });
         this.restrictionsFilter.setValue(filter.restrictionsFilter, {
+          emitEvent: false,
+        });
+        this.sourceFilter.setValue(filter.sourceFilter, {
           emitEvent: false,
         });
 

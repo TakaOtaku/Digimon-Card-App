@@ -20,23 +20,28 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChartContainerComponent } from './components/atoms/chart-container/chart-container.component';
 import { SortButtonsComponent } from './components/atoms/sort-buttons/sort-buttons.component';
-import { ChangeAccessorieDialogComponent } from './components/molecules/dialogs/change-accessorie-dialog/change-accessorie-dialog.component';
 import { ChartContainersComponent } from './components/molecules/chart-containers/chart-containers.component';
+import { CollectionComponent } from './components/molecules/collection/collection.component';
+import { DeckCardComponent } from './components/molecules/deck/deck-card/deck-card.component';
+import { DeckMetadataComponent } from './components/molecules/deck/deck-metadata/deck-metadata.component';
+import { DeckStatsComponent } from './components/molecules/deck/deck-stats/deck-stats.component';
+import { DeckToolbarComponent } from './components/molecules/deck/deck-toolbar/deck-toolbar.component';
+import { DecksComponent } from './components/molecules/decks/decks.component';
+import { ChangeAccessorieDialogComponent } from './components/molecules/dialogs/change-accessorie-dialog/change-accessorie-dialog.component';
 import { CollectionStatsDialogComponent } from './components/molecules/dialogs/collection-stats-dialog/collection-stats-dialog.component';
-import { DeckCardComponent } from './components/molecules/deck-card/deck-card.component';
-import { DeckStatsComponent } from './components/molecules/deck-stats/deck-stats.component';
 import { ExportDeckDialogComponent } from './components/molecules/dialogs/export-deck-dialog/export-deck-dialog.component';
-import { FullCardComponent } from './components/molecules/full-card/full-card.component';
 import { ImportDeckDialogComponent } from './components/molecules/dialogs/import-deck-dialog/import-deck-dialog.component';
+import { ViewCardDialogComponent } from './components/molecules/dialogs/view-card-dialog/view-card-dialog.component';
+import { FullCardComponent } from './components/molecules/full-card/full-card.component';
 import { RangeSliderComponent } from './components/molecules/range-slider/range-slider.component';
 import { SearchComponent } from './components/molecules/search/search.component';
-import { ViewCardDialogComponent } from './components/molecules/dialogs/view-card-dialog/view-card-dialog.component';
+import { UserStatsComponent } from './components/molecules/user-stats/user-stats.component';
 import { CardListComponent } from './components/organisms/card-list/card-list.component';
 import { CollectionViewComponent } from './components/organisms/collection-view/collection-view.component';
 import { DeckViewComponent } from './components/organisms/deck-view/deck-view.component';
-import { FilterAndSearchComponent } from './components/organisms/filter-and-search/filter-and-search.component';
-import { FilterButtonComponent } from './components/organisms/filter-button/filter-button.component';
-import { FilterSideBoxComponent } from './components/organisms/filter-side-box/filter-side-box.component';
+import { FilterAndSearchComponent } from './components/organisms/filter/filter-and-search/filter-and-search.component';
+import { FilterButtonComponent } from './components/organisms/filter/filter-button/filter-button.component';
+import { FilterSideBoxComponent } from './components/organisms/filter/filter-side-box/filter-side-box.component';
 import { MenuComponent } from './components/organisms/menu/menu.component';
 import { NavbarComponent } from './components/organisms/navbar/navbar.component';
 import { PaginationCardListComponent } from './components/organisms/pagination-card-list/pagination-card-list.component';
@@ -51,8 +56,6 @@ import { DigimonEffects } from './store/digimon.effects';
 import * as DigimonCards from './store/reducers/digimon-card.reducers';
 import * as Digimon from './store/reducers/digimon.reducers';
 import * as Save from './store/reducers/save.reducer';
-import { DeckMetadataComponent } from './components/molecules/deck-metadata/deck-metadata.component';
-import { DeckToolbarComponent } from './components/molecules/deck-toolbar/deck-toolbar.component';
 
 @NgModule({
   declarations: [
@@ -86,6 +89,9 @@ import { DeckToolbarComponent } from './components/molecules/deck-toolbar/deck-t
     DeckViewComponent,
     DeckMetadataComponent,
     DeckToolbarComponent,
+    UserStatsComponent,
+    CollectionComponent,
+    DecksComponent,
   ],
   imports: [
     PrimeNGModule,

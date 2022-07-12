@@ -7,8 +7,8 @@ import {
   Output,
   SimpleChanges,
 } from '@angular/core';
-import { englishCards } from '../../../../assets/cardlists/eng/english';
-import { ColorMap, ICard, IDeckCard } from '../../../../models';
+import { englishCards } from '../../../../../assets/cardlists/eng/english';
+import { ColorMap, ICard, IDeckCard } from '../../../../../models';
 
 @Component({
   selector: 'digimon-deck-card',

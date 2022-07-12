@@ -2,15 +2,15 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Subject, takeUntil } from 'rxjs';
-import { IFilter } from '../../../../models';
+import { IFilter } from '../../../../../models';
 import {
   changeCollectionMode,
   changeFilter,
-} from '../../../store/digimon.actions';
+} from '../../../../store/digimon.actions';
 import {
   selectCollectionMode,
   selectFilter,
-} from '../../../store/digimon.selectors';
+} from '../../../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-filter-and-search',

@@ -83,6 +83,7 @@
   [baseZIndex]="10000"
   [showHeader]="false"
   class="overflow-x-hidden"
+  (close)="viewCardDialog = false"
 >
-  <digimon-view-card-dialog [card]="card"></digimon-view-card-dialog>
+  <digimon-view-card-dialog [card]="card" (onClose)="viewCardDialog = false"></digimon-view-card-dialog>
 </p-dialog>

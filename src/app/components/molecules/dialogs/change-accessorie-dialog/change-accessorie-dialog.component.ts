@@ -25,6 +25,7 @@ import { AuthService } from '../../../../service/auth.service';
 import { DatabaseService } from '../../../../service/database.service';
 import { saveDeck } from '../../../../store/digimon.actions';
 import { selectAllCards } from '../../../../store/digimon.selectors';
+import { emptyDeck } from '../../../../store/reducers/digimon.reducers';
 
 @Component({
   selector: 'digimon-change-accessorie-dialog',
@@ -34,7 +35,7 @@ export class ChangeAccessorieDialogComponent
   implements OnInit, OnChanges, OnDestroy
 {
   @Input() show: boolean = false;
-  @Input() deck: IDeck;
+  @Input() deck: IDeck = emptyDeck;
 
   @Output() onClose = new EventEmitter<boolean>();
 

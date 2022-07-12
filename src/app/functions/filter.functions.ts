@@ -43,6 +43,7 @@ export function filterCards(
     filter.restrictionsFilter,
     'restriction'
   );
+  filteredCards = applyFilter(filteredCards, filter.sourceFilter, 'source');
 
   filteredCards = applyRangeFilter(filteredCards, filter.levelFilter, 'level');
   filteredCards = applyRangeFilter(
@@ -73,15 +74,6 @@ function applySearchFilter(cards: ICard[], searchFilter: string): ICard[] {
   const nameFiltered: ICard[] = cards.filter((cards) =>
     cards.name.toLowerCase().includes(searchFilter.toLowerCase())
   );
-  const formFiltered: ICard[] = cards.filter((cards) =>
-    cards.form.toLowerCase().includes(searchFilter.toLowerCase())
-  );
-  const attributeFiltered: ICard[] = cards.filter((cards) =>
-    cards.attribute.toLowerCase().includes(searchFilter.toLowerCase())
-  );
-  const typeFiltered: ICard[] = cards.filter((cards) =>
-    cards.type.toLowerCase().includes(searchFilter.toLowerCase())
-  );
   const effectFiltered: ICard[] = cards.filter((cards) =>
     cards.effect.toLowerCase().includes(searchFilter.toLowerCase())
   );
@@ -90,9 +82,6 @@ function applySearchFilter(cards: ICard[], searchFilter: string): ICard[] {
   );
   const securityFiltered: ICard[] = cards.filter((cards) =>
     cards.securityEffect.toLowerCase().includes(searchFilter.toLowerCase())
-  );
-  const noteFiltered: ICard[] = cards.filter((cards) =>
-    cards.notes.toLowerCase().includes(searchFilter.toLowerCase())
   );
   const illustratorFiltered: ICard[] = cards.filter((cards) =>
     cards.illustrator.toLowerCase().includes(searchFilter.toLowerCase())
@@ -108,13 +97,9 @@ function applySearchFilter(cards: ICard[], searchFilter: string): ICard[] {
     ...new Set([
       ...idFiltered,
       ...nameFiltered,
-      ...formFiltered,
-      ...attributeFiltered,
-      ...typeFiltered,
       ...effectFiltered,
       ...inheritedFiltered,
       ...securityFiltered,
-      ...noteFiltered,
       ...illustratorFiltered,
       ...dnaFiltered,
       ...specialFiltered,
@@ -344,6 +329,17 @@ function applyFilter(cards: ICard[], filter: any[], key: string): ICard[] {
             ...new Set([
               ...returnArray,
               ...cards.filter((cards) => cards['restriction'] === filter),
+            ]),
+          ])
+      );
+      break;
+    case 'source':
+      filter.forEach(
+        (filter) =>
+          (returnArray = [
+            ...new Set([
+              ...returnArray,
+              ...cards.filter((cards) => cards['notes'] === filter),
             ]),
           ])
       );

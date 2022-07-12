@@ -12,50 +12,37 @@
 
 <p-menu #menu [model]="items" [popup]="true"></p-menu>
 
-<digimon-collection-stats-dialog
-  (onClose)="this.collectionDisplay = false"
-  [collection]="collection"
-  [digimonCards]="digimonCards"
-  [show]="collectionDisplay"
-></digimon-collection-stats-dialog>
+<p-confirmPopup></p-confirmPopup>
 
 <p-dialog
   [(visible)]="creditsDisplay"
   [baseZIndex]="10000"
   header="Credits"
-  styleClass="w-[95vw] h-[400px]"
+  styleClass="w-[95vw] max-w-[700px] max-h-screen"
 >
   <div class="flex w-full flex-col">
-    <span class="primary-color mt-5 w-full text-center font-bold"
+    <span class="text-white mt-5 w-full text-center font-bold"
       >A huge thanks goes to tari101190 who helps me with all the new card
       releases and tests the website completly so I don't have to worry to
       much!</span
     >
 
-    <span class="primary-color mt-5 w-full text-center font-bold"
+    <span class="text-white mt-5 w-full text-center font-bold"
       >Another big thank you goes to
-      <a target="_blank" href="https://www.instagram.com/oscstudios/">TheOSC</a>
+      <a target="_blank" class="primary-color" href="https://www.instagram.com/oscstudios/">TheOSC</a>
       he send me a cool new design which I took much inspiration from and helped
       with other design questions! Go Check him out he makes great art!</span
     >
 
-    <span class="primary-color mt-5 w-full text-center font-bold"
+    <span class="text-white mt-5 w-full text-center font-bold"
       >Credits for the Pre-Release Cards go to
-      <a target="_blank" href="https://digimoncardgame.fandom.com/"
+      <a target="_blank" class="primary-color" href="https://digimoncardgame.fandom.com/"
         >https://digimoncardgame.fandom.com/</a
       >
       and all the wonderful people who maintain it!</span
     >
 
-    <span class="primary-color mt-5 w-full text-center font-bold"
-      >Credits for the Pre-Release Cards go to
-      <a target="_blank" href="https://digimoncardgame.fandom.com/"
-        >https://digimoncardgame.fandom.com/</a
-      >
-      and all the wonderful people who maintain it!</span
-    >
-
-    <span class="primary-color mt-5 w-full text-center font-bold"
+    <span class="text-white mt-5 w-full text-center font-bold"
       >Please support the official releases! Akiyoshi Hongo, Bandai, and Toei
       Animation respectively own Digimon images, copyrights and
       trademarks.</span
@@ -67,7 +54,7 @@
   [(visible)]="display"
   [baseZIndex]="10000"
   header="Import/Export"
-  styleClass="w-[70vw] lg:w-[50vw] xl:w-[30vw] h-[370px]"
+  styleClass="w-[70vw] lg:w-[50vw] xl:w-[30vw] max-w-[250px] max-h-screen"
 >
   <div class="flex flex-col justify-between">
     <button
@@ -124,7 +111,7 @@
   [(visible)]="importDisplay"
   [baseZIndex]="10000"
   header="Import Collection"
-  styleClass="w-[95vw] h-[400px]"
+  styleClass="w-[95vw] max-w-[500px] max-h-screen"
 >
   <div>
     <p>Copy your collection in the text area and press import.</p>
@@ -151,7 +138,7 @@
   [(visible)]="exportDialog"
   [baseZIndex]="10000"
   header="Export Collection"
-  styleClass="w-[95vw] max-w-[600px] h-[550px]"
+  styleClass="w-[95vw] max-w-[500px] max-h-screen"
 >
   <div class="mx-auto flex flex-col justify-center">
     <p class="text-center font-bold">What cards you want to export?</p>
@@ -324,11 +311,11 @@
   [(visible)]="settingsDialog"
   [baseZIndex]="10000"
   header="Advanced Settings"
-  styleClass="w-[400px]"
+  styleClass="w-[550px] max-h-screen"
 >
   <div class="flex w-full flex-col justify-end">
     <div class="mx-auto mb-5">
-      <h1 class="primary-color mt-5">Deck-Cards will be sorted first with:</h1>
+      <span class="text-white mt-5">Deck-Cards will be sorted first with:</span>
       <div class="flex justify-center">
         <p-selectButton
           [formControl]="sortOrderFilter"
@@ -349,35 +336,43 @@
       <label for="float-input">How many of a card do you collect?</label>
     </span>
 
-    <h5 class="mx-auto mt-5 font-bold">Pre-Release Cards</h5>
-    <p-selectButton
-      [(ngModel)]="preRelease"
-      [options]="showHideOptions"
-      class="mx-auto"
-      optionLabel="label"
-      optionValue="value"
-    ></p-selectButton>
+    <div class="flex flex-row">
+      <div>
+        <h5 class="text-center mt-5 font-bold">Pre-Release Cards</h5>
+        <p-selectButton
+          [(ngModel)]="preRelease"
+          [options]="showHideOptions"
+          class="mx-auto"
+          optionLabel="label"
+          optionValue="value"
+        ></p-selectButton>
+      </div>
 
-    <h5 class="mx-auto mt-5 font-bold">Alt. Art Cards</h5>
-    <p-selectButton
-      [(ngModel)]="aa"
-      [options]="showHideOptions"
-      class="mx-auto"
-      optionLabel="label"
-      optionValue="value"
-    ></p-selectButton>
+      <div class="mx-5">
+        <h5 class="text-center mt-5 font-bold">Alt. Art Cards</h5>
+        <p-selectButton
+          [(ngModel)]="aa"
+          [options]="showHideOptions"
+          class="mx-auto"
+          optionLabel="label"
+          optionValue="value"
+        ></p-selectButton>
+      </div>
 
-    <h5 class="mx-auto mt-5 font-bold">Stamped Cards</h5>
-    <p-selectButton
-      [(ngModel)]="stamped"
-      [options]="showHideOptions"
-      class="mx-auto"
-      optionLabel="label"
-      optionValue="value"
-    ></p-selectButton>
+      <div>
+        <h5 class="text-center mt-5 font-bold">Stamped Cards</h5>
+        <p-selectButton
+          [(ngModel)]="stamped"
+          [options]="showHideOptions"
+          class="mx-auto"
+          optionLabel="label"
+          optionValue="value"
+        ></p-selectButton>
+      </div>
+    </div>
   </div>
 
-  <div class="flex flex-row justify-between">
+  <div class="flex flex-row justify-end">
     <button
       (click)="saveSettings()"
       class="mt-10"
@@ -389,12 +384,4 @@
   </div>
 </p-dialog>
 
-<p-confirmPopup></p-confirmPopup>
 
-<p-dialog
-  [(visible)]="collectionDisplay"
-  [baseZIndex]="10000"
-  [showHeader]="false"
-  header="Collection Stats"
-  styleClass="w-[95vw] lg:w-[70vw] xl:w-[60vw] h-[50vh] md:h-[65vh] lg:h-[80vh]"
-><digimon-collection-stats-dialog></digimon-collection-stats-dialog></p-dialog>

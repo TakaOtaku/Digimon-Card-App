@@ -25,7 +25,7 @@ import {
   selectSettings,
 } from '../../../store/digimon.selectors';
 import { emptySettings } from '../../../store/reducers/save.reducer';
-import { GroupedSets } from '../filter-side-box/filterData';
+import { GroupedSets } from '../filter/filter-side-box/filterData';
 
 @Component({
   selector: 'digimon-menu',
@@ -149,7 +149,7 @@ export class MenuComponent implements OnInit, OnDestroy {
           command: () => this.router.navigateByUrl(''),
         },
         {
-          label: 'My Decks',
+          label: 'Profile',
           icon: 'pi pi-database',
           command: () => this.router.navigateByUrl(''),
         },
@@ -157,11 +157,6 @@ export class MenuComponent implements OnInit, OnDestroy {
           label: 'Community Decks',
           icon: 'pi pi-database',
           command: () => this.router.navigateByUrl('/community'),
-        },
-        {
-          label: 'Collection Stats',
-          icon: 'pi pi-book',
-          command: () => (this.collectionDisplay = true),
         },
       ],
     };
@@ -184,7 +179,7 @@ export class MenuComponent implements OnInit, OnDestroy {
           command: () => (this.display = !this.display),
         },
         {
-          label: 'Advanced Settings',
+          label: 'Settings',
           icon: 'pi pi-cog',
           command: () => (this.settingsDialog = true),
         },

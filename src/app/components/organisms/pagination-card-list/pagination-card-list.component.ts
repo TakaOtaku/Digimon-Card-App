@@ -38,9 +38,6 @@ export class PaginationCardListComponent implements OnInit, OnDestroy {
 
   filterBox = false;
 
-  card: ICard;
-  viewCardDialog = false;
-
   private collection: ICountCard[] = [];
   collectionMode = new FormControl();
 
@@ -88,11 +85,6 @@ export class PaginationCardListComponent implements OnInit, OnDestroy {
 
   addToDeck(card: ICard) {
     this.onCardClick.emit(card.id);
-  }
-
-  showDetails(card: ICard) {
-    this.card = card;
-    this.viewCardDialog = true;
   }
 
   onPageChange(event: any, slice?: number) {

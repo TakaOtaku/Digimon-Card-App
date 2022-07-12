@@ -18,7 +18,6 @@
     [ngClass]="{ 'w-5/12': collectionView, 'w-full': !collectionView }"
   >
     <digimon-deck-view
-      (onMainDeck)="setMainDeck($event)"
       [collectionView]="collectionView"
       [updateMainDeck]="updateMainDeck"
     ></digimon-deck-view>
@@ -49,6 +48,5 @@
   <digimon-deck-stats
     [collectionView]="collectionView"
     [showStats]="showStats"
-    [mainDeck]="mainDeck"
   ></digimon-deck-stats>
 </div>
