@@ -197,6 +197,14 @@ def getCardDataFromWiki():
         digimoncard['cardImage'] = digimoncard['cardImage'] + \
             digimoncard['id']+".jpg"
 
+        imagediv = soup.find("div", class_="image")
+        image = imagediv.find("img")
+        if(image is not None):
+            imageSrc = image['src']
+            # Change URL depending on if you want Japanese Cards or English Cards
+            urllib.request.urlretrieve(
+                imageSrc, digimoncard['cardNumber']+".png")
+
         cards.append(digimoncard)
 
 
