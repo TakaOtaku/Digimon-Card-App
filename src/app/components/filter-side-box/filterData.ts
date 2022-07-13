@@ -284,6 +284,7 @@ export const Illustrators: string[] = [
   'Minato Sashima',
   'Nakano Haito',
   'Naochika Morishita',
+  'Okada Anmitsu',
   'p!k@ru',
   'Qacoro',
   'Ryodan',
