@@ -1178,7 +1178,7 @@
 		"specialDigivolve": "-",
 		"dnaDigivolve": "-",
 		"effect": "-",
-		"digivolveEffect": "[Your Turn] [Once Per Turn] When you play a Digimon with [Four Great Dragons] in its traits or place [Trial of the Four Great Dragons] in your battle area, <Draw 1> (Draw 1 card from your deck.)",
+		"digivolveEffect": "[Your Turn] [Once Per Turn] When you play a Digimon with [Four Great Dragons] in its traits or place [Trial of the Four Great Dragons] in your battle area, <Draw 1>.",
 		"securityEffect": "-",
 		"notes": "▹THEME BOOSTER DRAGON'S ROAR [EX-03]",
 		"color": "Yellow",
