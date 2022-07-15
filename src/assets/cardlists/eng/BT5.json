@@ -4190,6 +4190,37 @@
     "illustrator": "Shin Sasaki"
   },
   {
+    "id": "BT5-097_P1",
+    "name": "Absolute Blast",
+    "cardImage": "assets/images/cards/eng/BT5-097_P1.jpg",
+    "cardType": "Option",
+    "dp": "-",
+    "playCost": "6",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "-",
+    "rarity": "U",
+    "cardNumber": "BT5-097",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Main] Trash the bottom digivolution card of 1 of your opponent's Digimon. Then, return 1 of your opponent's Digimon with no digivolution cards to the bottom of its owner's deck.",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Activate this card's [Main] effect.",
+    "notes": "Summer 2022 Dash Pack",
+    "color": "Blue",
+    "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "SENNSU"
+  },
+  {
     "id": "BT5-098",
     "name": "Meteor Shower",
     "cardImage": "assets/images/cards/eng/BT5-098.jpg",
@@ -4426,7 +4457,7 @@
     "block": [
       "00"
     ],
-    "restriction": "Banned",
+    "restriction": "",
     "illustrator": "shosuke"
   },
   {
@@ -4546,7 +4577,7 @@
     "block": [
       "00"
     ],
-    "restriction": "",
+    "restriction": "Banned",
     "illustrator": "sasasi"
   },
   {
@@ -4576,7 +4607,7 @@
     "block": [
       "00"
     ],
-    "restriction": "",
+    "restriction": "Banned",
     "illustrator": "sasasi"
   },
   {

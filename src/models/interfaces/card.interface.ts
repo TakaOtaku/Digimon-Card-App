@@ -14,7 +14,11 @@ export interface ICard {
   cardNumber: string;
   color: string;
   digivolveCost1: string;
+  digivolveColor1?: string;
+  digivolveLevel1?: string;
   digivolveCost2: string;
+  digivolveColor2?: string;
+  digivolveLevel2?: string;
   digiXros: string;
   specialDigivolve: string;
   dnaDigivolve: string;

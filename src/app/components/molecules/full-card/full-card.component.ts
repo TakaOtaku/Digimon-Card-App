@@ -91,15 +91,15 @@ export class FullCardComponent implements OnInit, OnDestroy {
   }
 
   changeCardCount(event: any, id: string) {
-    if (event.value <= 0) {
+    if (event.target.value <= 0) {
       return;
     }
-    const count = event.value;
+    const count = event.target.value;
     this.store.dispatch(changeCardCount({ id, count }));
   }
 
   increaseCardCount(id: string) {
-    const count = this.count++;
+    const count = ++this.count;
     this.store.dispatch(changeCardCount({ id, count }));
   }
 
@@ -107,7 +107,7 @@ export class FullCardComponent implements OnInit, OnDestroy {
     if (this.count <= 0) {
       return;
     }
-    const count = this.count--;
+    const count = --this.count;
     this.store.dispatch(changeCardCount({ id, count }));
   }
 

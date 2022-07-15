@@ -3955,6 +3955,36 @@
     "illustrator": "banira"
   },
   {
+    "id": "BT7-100_P1",
+    "name": "Qualialise Blast",
+    "cardImage": "assets/images/cards/eng/BT7-100_P1.jpg",
+    "cardType": "Option",
+    "dp": "-",
+    "playCost": "5",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "-",
+    "rarity": "R",
+    "cardNumber": "BT7-100",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "When using this card from your hand, its memory cost is equal to the number of cards in your security stack.\n[Main] 1 of your opponent's Digimon gets -3000 DP for the turn. Then, 1 of your [Rasenmon] gains ＜Security Attack +1＞ for the turn. (This Digimon checks 1 additional security card.)",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Add this card to its owner's hand.",
+    "notes": "Summer 2022 Dash Pack",
+    "color": "Yellow",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "SENNSU"
+  },
+  {
     "id": "BT7-101",
     "name": "Thunder Laser",
     "cardImage": "assets/images/cards/eng/BT7-101.jpg",

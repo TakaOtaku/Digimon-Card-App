@@ -21,6 +21,7 @@ export const GroupedSets = [
     items: [
       { label: 'EX1', value: 'EX1' },
       { label: 'EX2', value: 'EX2' },
+      { label: 'EX3', value: 'EX3' },
     ],
   },
   {
@@ -52,6 +53,7 @@ export const Keywords: string[] = [
   '\uff1cDecoy (Black)\uff1e',
   '\uff1cDecoy (Black/White)\uff1e',
   '\uff1cDecoy (Red)(Black)\uff1e',
+  '\uff1cDecoy (D-Brigade)\uff1e',
   '\uff1cDe-Digivolve 1\uff1e',
   '\uff1cDe-Digivolve 2\uff1e',
   '\uff1cDe-Digivolve 3\uff1e',
@@ -68,6 +70,7 @@ export const Keywords: string[] = [
   '\uff1cDraw 1\uff1e',
   '\uff1cDraw 2\uff1e',
   '\uff1cDraw 3\uff1e',
+  '\uff1cEvade\uff1e',
   '\uff1cJamming\uff1e',
   '\uff1cMaterial Save 1\uff1e',
   '\uff1cMaterial Save 2\uff1e',
@@ -281,6 +284,7 @@ export const Illustrators: string[] = [
   'Minato Sashima',
   'Nakano Haito',
   'Naochika Morishita',
+  'Okada Anmitsu',
   'p!k@ru',
   'Qacoro',
   'Ryodan',
