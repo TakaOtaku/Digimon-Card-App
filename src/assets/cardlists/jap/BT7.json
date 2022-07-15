@@ -2220,6 +2220,36 @@
     "illustrator": "sasasi"
   },
   {
+    "id": "BT7-062_P1",
+    "name": "Dorugamon",
+    "cardImage": "assets/images/cards/jap/BT7-062_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "5000",
+    "playCost": "6",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Data",
+    "type": "Beast Dragon/X Antibody",
+    "rarity": "C",
+    "cardNumber": "BT7-062",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Opponent's Turn] While you have another Digimon in play with [X Antibody] in its traits, or a card with [X Antibody] in its traits is in this Digimon's digivolution cards, this Digimon gains ＜Blocker＞. (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)",
+    "digivolveEffect": "[All Turns] While this Digimon has [X Antibody] in its traits, it gets +1000 DP.",
+    "securityEffect": "-",
+    "notes": "TAMER'S SELECTION BOX Evolution Cup 2022",
+    "color": "Black",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Kenji Watanabe"
+  },
+  {
     "id": "BT7-063",
     "name": "DarkKnightmon",
     "cardImage": "assets/images/cards/jap/BT7-063.jpg",

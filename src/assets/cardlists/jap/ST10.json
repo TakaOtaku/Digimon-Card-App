@@ -120,6 +120,36 @@
     "illustrator": "Takase"
   },
   {
+    "id": "ST10-04_P1",
+    "name": "Gatomon",
+    "cardImage": "assets/images/cards/jap/ST10-04_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "4000",
+    "playCost": "5",
+    "digivolveCost1": "3 from Lv.3",
+    "digivolveCost2": "3 from Lv.3",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Vaccine",
+    "type": "Holy Beast",
+    "rarity": "SR",
+    "cardNumber": "ST10-04",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 yellow Digimon card and 1 purple Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order.\n[Your Turn] When this Digimon would digivolve into a card with [Archangel] or [Fallen Angel] in its traits, reduce the memory cost of the digivolution by 2.",
+    "digivolveEffect": "[End of Your Turn] You may DNA digivolve this Digimon and one of your other Digimon in play into a Digimon card in your hand by paying its DNA digivolve cost.",
+    "securityEffect": "-",
+    "notes": "TAMER'S SELECTION BOX Evolution Cup 2022",
+    "color": "Yellow/Purple",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "koki"
+  },
+  {
     "id": "ST10-05",
     "name": "Angewomon",
     "cardImage": "assets/images/cards/jap/ST10-05.jpg",
