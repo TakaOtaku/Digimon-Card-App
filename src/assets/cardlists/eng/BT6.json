@@ -930,6 +930,36 @@
     "illustrator": "Tonamikanji"
   },
   {
+    "id": "BT6-018_P2",
+    "name": "Agumon - Bond of Bravery",
+    "cardImage": "assets/images/cards/eng/BT6-018_P2.jpg",
+    "cardType": "Digimon",
+    "dp": "14000",
+    "playCost": "14",
+    "digivolveCost1": "3 from Lv.6",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.7",
+    "form": "Mega",
+    "attribute": "Unknown",
+    "type": "Unknown",
+    "rarity": "SR",
+    "cardNumber": "BT6-018",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Attacking] If you have a Tamer in play, delete 1 of your opponent's Digimon with 13000 DP or less.\n[Your Turn] [Once Per Turn] When an opponent's Digimon is deleted, trash the top card of their security stack.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Championship 2021 Finals Trophy Card 1st Place",
+    "color": "Red",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Nakano Haito"
+  },
+  {
     "id": "BT6-019",
     "name": "Gabumon",
     "cardImage": "assets/images/cards/eng/BT6-019.jpg",

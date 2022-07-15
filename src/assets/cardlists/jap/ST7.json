@@ -300,6 +300,36 @@
     "illustrator": "sasasi"
   },
   {
+    "id": "ST7-09_P1",
+    "name": "Gallantmon",
+    "cardImage": "assets/images/cards/jap/ST7-09_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "11000",
+    "playCost": "11",
+    "digivolveCost1": "3 from Lv.5",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Virus",
+    "type": "Holy Warrior/Royal Knight",
+    "rarity": "SR",
+    "cardNumber": "ST7-09",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "＜Security Attack +1＞ (This Digimon checks 1 additional security card.)\n[When Attacking] Delete 1 of your opponent's Digimon with 4000 DP or less. If no Digimon was deleted by this effect, this Digimon gets +3000 DP for the turn.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Memorial Collection 02",
+    "color": "Red",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Ishibashi Yosuke"
+  },
+  {
     "id": "ST7-10",
     "name": "ShineGreymon",
     "cardImage": "assets/images/cards/jap/ST7-10.jpg",
