@@ -179,7 +179,7 @@
       "01"
     ],
     "restriction": "",
-    "illustrator": "Horaguchi Kayo"
+    "illustrator": "Kayo Horaguchi"
   },
   {
     "id": "P-005",
@@ -2475,9 +2475,9 @@
     "cardLv": "Lv.3",
     "form": "Rookie",
     "attribute": "Cyborg",
-    "type": "Data",
+    "type": "Virus",
     "rarity": "P",
-    "cardNumber": "P-077",
+    "cardNumber": "P-078",
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",

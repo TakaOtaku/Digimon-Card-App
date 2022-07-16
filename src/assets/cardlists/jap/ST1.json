@@ -89,12 +89,12 @@
       "01"
     ],
     "restriction": "",
-    "illustrator": "Horaguchi Kayo"
+    "illustrator": "Kayo Horaguchi"
   },
   {
-    "id": "ST1-02_P1",
+    "id": "ST1-02_P2",
     "name": "Biyomon",
-    "cardImage": "assets/images/cards/jap/ST1-02_P1.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-02_P2.jpg",
     "cardType": "Digimon",
     "dp": "3000",
     "playCost": "2",
