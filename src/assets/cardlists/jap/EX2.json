@@ -444,10 +444,73 @@
     "color": "Red",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "",
     "illustrator": "Tonamikanji"
+  },
+  {
+    "id": "EX2-010_P1",
+    "name": "WarGrowlmon",
+    "cardImage": "assets/images/cards/jap/EX2-010_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "8000",
+    "playCost": "8",
+    "digivolveCost1": "3 from Lv.4",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.5",
+    "form": "Ultimate",
+    "attribute": "Virus",
+    "type": "Cyborg",
+    "rarity": "U",
+    "cardNumber": "EX2-010",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Attacking] Delete 1 of your opponent's Digimon with 4000 DP or less. If you have a red Tamer in play, delete 1 of your opponent's Digimon with 6000 DP or less instead.",
+    "digivolveEffect": "[Your Turn] Add 1000 to the maximum DP you can choose with DP-based deletion effects.",
+    "securityEffect": "-",
+    "notes": "Tamer Battle Pack 13",
+    "color": "Red",
+    "version": "AA",
+    "block": [
+      "01",
+      "02"
+    ],
+    "restriction": "",
+    "illustrator": "KISUKE"
+  },
+  {
+    "id": "EX2-010_P2",
+    "name": "WarGrowlmon",
+    "cardImage": "assets/images/cards/jap/EX2-010_P2.jpg",
+    "cardType": "Digimon",
+    "dp": "8000",
+    "playCost": "8",
+    "digivolveCost1": "3 from Lv.4",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.5",
+    "form": "Ultimate",
+    "attribute": "Virus",
+    "type": "Cyborg",
+    "rarity": "U",
+    "cardNumber": "EX2-010",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Attacking] Delete 1 of your opponent's Digimon with 4000 DP or less. If you have a red Tamer in play, delete 1 of your opponent's Digimon with 6000 DP or less instead.",
+    "digivolveEffect": "[Your Turn] Add 1000 to the maximum DP you can choose with DP-based deletion effects.",
+    "securityEffect": "-",
+    "notes": "Tamer Battle Pack 13",
+    "color": "Red",
+    "version": "AA",
+    "block": [
+      "01",
+      "02"
+    ],
+    "restriction": "",
+    "illustrator": "KISUKE"
   },
   {
     "id": "EX2-011",
@@ -1014,10 +1077,42 @@
     "color": "Yellow",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "",
     "illustrator": "As'Maria"
+  },
+  {
+    "id": "EX2-023_P1",
+    "name": "Taomon",
+    "cardImage": "assets/images/cards/jap/EX2-023_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "7000",
+    "playCost": "8",
+    "digivolveCost1": "3 from Lv.4",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.5",
+    "form": "Ultimate",
+    "attribute": "Data",
+    "type": "Wizard",
+    "rarity": "U",
+    "cardNumber": "EX2-023",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Digivolving] You may play 1 [Rika Nonaka] from your hand without paying its memory cost.",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When you use an Option card with a cost of 2 or more, 1 of your opponent's Digimon gets -2000 DP for the turn.",
+    "securityEffect": "-",
+    "notes": "Tamer Battle Pack 13",
+    "color": "Yellow",
+    "version": "AA",
+    "block": [
+      "01",
+      "02"
+    ],
+    "restriction": "",
+    "illustrator": "KISUKE"
   },
   {
     "id": "EX2-024",
@@ -1104,8 +1199,9 @@
     "color": "Green",
     "version": "Normal",
     "block": [
-      "01"
-    ],
+      "01",
+      "02"
+        ],
     "restriction": "",
     "illustrator": "GOSSAN"
   },
@@ -1134,10 +1230,42 @@
     "color": "Green",
     "version": "AA",
     "block": [
-      "01"
-    ],
+      "01",
+      "02"
+        ],
     "restriction": "",
     "illustrator": ""
+  },
+  {
+    "id": "EX2-025_P2",
+    "name": "Terriermon",
+    "cardImage": "assets/images/cards/jap/EX2-025_P2.jpg",
+    "cardType": "Digimon",
+    "dp": "1000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Vaccine",
+    "type": "Beast",
+    "rarity": "R",
+    "cardNumber": "EX2-025",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Your Turn] [Once Per Turn] When you play a green Tamer, gain 1 memory.",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When an opponent's Digimon becomes suspended, this Digimon gets +2000 DP for the turn.",
+    "securityEffect": "-",
+    "notes": "Digimon Illustration Competition Promotion Pack",
+    "color": "Green",
+    "version": "AA",
+    "block": [
+      "01",
+      "02"
+    ],
+    "restriction": "",
+    "illustrator": "YAMURETSU"
   },
   {
     "id": "EX2-026",
@@ -1194,10 +1322,42 @@
     "color": "Green",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "",
     "illustrator": "GOSSAN"
+  },
+  {
+    "id": "EX2-027_P1",
+    "name": "Rapidmon",
+    "cardImage": "assets/images/cards/jap/EX2-027_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "7000",
+    "playCost": "8",
+    "digivolveCost1": "3 from Lv.4",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.5",
+    "form": "Ultimate",
+    "attribute": "Vaccine",
+    "type": "Cyborg",
+    "rarity": "U",
+    "cardNumber": "EX2-027",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Digivolving] If you have a green Tamer in play, suspend 1 of your opponent's Digimon.",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When an opponent's Digimon becomes suspended, this Digimon gains ＜Security Attack +1＞ for the turn. (This Digimon checks 1 additional security card.)",
+    "securityEffect": "-",
+    "notes": "Tamer Battle Pack 13",
+    "color": "Green",
+    "version": "AA",
+    "block": [
+      "01",
+      "02"
+    ],
+    "restriction": "",
+    "illustrator": "KISUKE"
   },
   {
     "id": "EX2-028",

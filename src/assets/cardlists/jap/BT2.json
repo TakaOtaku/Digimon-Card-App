@@ -2635,10 +2635,42 @@
     "color": "Black",
     "version": "Normal",
     "block": [
-      "00"
+      "00",
+      "02"    
     ],
     "restriction": "",
     "illustrator": "koki"
+  },
+  {
+    "id": "BT2-056_P1",
+    "name": "Numemon",
+    "cardImage": "assets/images/cards/jap/BT2-056_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "3000",
+    "playCost": "3",
+    "digivolveCost1": "1 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Virus",
+    "type": "Mollusk",
+    "rarity": "C",
+    "cardNumber": "BT2-056",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Digimon Illustration Competition Promotion Pack",
+    "color": "Black",
+    "version": "AA",
+    "block": [
+      "00",
+      "02"    
+    ],
+    "restriction": "",
+    "illustrator": "Yuki Mukai"
   },
   {
     "id": "BT2-057",
