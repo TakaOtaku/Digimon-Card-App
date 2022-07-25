@@ -368,7 +368,7 @@
     "effect": "[On Play] Delete up to 2 of your opponent's Digimon with 3000 DP or less.",
     "digivolveEffect": "[Your Turn] While this Digimon has [Machine] in its traits, it gains ＜Security Attack +1＞. (This Digimon checks 1 additional security card.)",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "2022 Regionals Participant Card Set",
     "color": "Red",
     "version": "Stamp",
     "block": [
@@ -397,7 +397,7 @@
     "effect": "[On Play] Delete up to 2 of your opponent's Digimon with 3000 DP or less.",
     "digivolveEffect": "[Your Turn] While this Digimon has [Machine] in its traits, it gains ＜Security Attack +1＞. (This Digimon checks 1 additional security card.)",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "2022 Regionals Finalist Card Set",
     "color": "Red",
     "version": "Stamp",
     "block": [
@@ -426,7 +426,7 @@
     "effect": "[On Play] Delete up to 2 of your opponent's Digimon with 3000 DP or less.",
     "digivolveEffect": "[Your Turn] While this Digimon has [Machine] in its traits, it gains ＜Security Attack +1＞. (This Digimon checks 1 additional security card.)",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "2022 Regionals Champion Card Set",
     "color": "Red",
     "version": "Stamp",
     "block": [
@@ -1423,6 +1423,36 @@
     "illustrator": ""
   },
   {
+    "id": "EX1-027_P1",
+    "name": "Leomon",
+    "cardImage": "assets/images/cards/eng/EX1-027_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "5000",
+    "playCost": "5",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Vaccine",
+    "type": "Beastkin",
+    "rarity": "R",
+    "cardNumber": "EX1-027",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Security] At the end of the battle, if you have 3 or fewer security cards, ＜Recovery +1 (Deck)＞. (Place the top card of your deck on top of your security stack.)",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "X RECORD (BT-09) Pre-Release Tournaments",
+    "color": "Yellow",
+    "version": "AA",
+    "block": [
+      "01",
+      "02"
+    ],
+    "illustrator": "koki"
+  },
+  {
     "id": "EX1-028",
     "name": "Angemon",
     "cardImage": "assets/images/cards/eng/EX1-028.jpg",
@@ -2284,7 +2314,7 @@
     "effect": "[When Digivolving] You may reveal the top 3 cards of your deck. Add 1 level 6 Digimon card with [Machine] in its traits among them to your hand. Trash the remaining cards.",
     "digivolveEffect": "[Opponent's Turn] While this Digimon has [Machine] in its traits, it gains ＜Blocker＞. (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "2022 Regionals Participant Card Set",
     "color": "Black",
     "version": "Stamp",
     "block": [
@@ -2313,7 +2343,7 @@
     "effect": "[When Digivolving] You may reveal the top 3 cards of your deck. Add 1 level 6 Digimon card with [Machine] in its traits among them to your hand. Trash the remaining cards.",
     "digivolveEffect": "[Opponent's Turn] While this Digimon has [Machine] in its traits, it gains ＜Blocker＞. (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "2022 Regionals Finalist Card Set",
     "color": "Black",
     "version": "Stamp",
     "block": [
@@ -2342,7 +2372,7 @@
     "effect": "[When Digivolving] You may reveal the top 3 cards of your deck. Add 1 level 6 Digimon card with [Machine] in its traits among them to your hand. Trash the remaining cards.",
     "digivolveEffect": "[Opponent's Turn] While this Digimon has [Machine] in its traits, it gains ＜Blocker＞. (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "2022 Regionals Champion Card Set",
     "color": "Black",
     "version": "Stamp",
     "block": [
@@ -2755,6 +2785,35 @@
       "01"
     ],
     "illustrator": ""
+  },
+  {
+    "id": "EX1-061_P1",
+    "name": "Myotismon",
+    "cardImage": "assets/images/cards/eng/EX1-061_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "7000",
+    "playCost": "8",
+    "digivolveCost1": "3 from Lv.4",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.5",
+    "form": "Ultimate",
+    "attribute": "Virus",
+    "type": "Undead",
+    "rarity": "U",
+    "cardNumber": "EX1-061",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Your Turn] When this Digimon digivolves into a Digimon card with [Myotismon] in its name in your hand, reduce the memory cost of the digivolution by 1.",
+    "digivolveEffect": "[Your Turn] While this Digimon has [Myotismon] in its name, all of your Digimon with ＜Retaliation＞ can also attack your opponent's unsuspended level 4 or lower Digimon.",
+    "securityEffect": "-",
+    "notes": "Winner Pack X RECORD",
+    "color": "Purple",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "illustrator": "koki"
   },
   {
     "id": "EX1-062",

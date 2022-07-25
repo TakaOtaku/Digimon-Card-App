@@ -620,6 +620,35 @@
     "illustrator": "tessy"
   },
   {
+    "id": "ST1-09_P3",
+    "name": "MetalGreymon",
+    "cardImage": "assets/images/cards/eng/ST1-09_P3.jpg",
+    "cardType": "Digimon",
+    "dp": "7000",
+    "playCost": "7",
+    "digivolveCost1": "3 from Lv.4",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.5",
+    "form": "Ultimate",
+    "attribute": "Vaccine",
+    "type": "Cyborg",
+    "rarity": "R",
+    "cardNumber": "ST1-09",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "[Your Turn] When this Digimon is blocked, gain 3 memory.",
+    "securityEffect": "-",
+    "notes": "Official Tournament Pack Vol.6",
+    "color": "Red",
+    "version": "AA",
+    "block": [
+      "00"
+    ],
+    "illustrator": "tessy"
+  },
+  {
     "id": "ST1-10",
     "name": "Phoenixmon",
     "cardImage": "assets/images/cards/eng/ST1-10.jpg",

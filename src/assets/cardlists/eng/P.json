@@ -1101,7 +1101,7 @@
     "effect": "[On Play] If you have 3 or more security cards, trigger ＜Draw 1＞. (Draw 1 card from your deck.) If you have 3 or fewer security cards, gain 1 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "Great Legend (BT-04) Pre-Release Tournaments",
+    "notes": "GREAT LEGEND (BT-04) Pre-Release Tournaments",
     "color": "Yellow",
     "version": "Normal",
     "block": [
@@ -1131,7 +1131,7 @@
     "effect": "[On Play] If you have 3 or more security cards, trigger ＜Draw 1＞. (Draw 1 card from your deck.) If you have 3 or fewer security cards, gain 1 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "DOUBLE DIAMOND(BT-06) Pre-Release Tournament Winner Card",
+    "notes": "DOUBLE DIAMOND (BT-06) Pre-Release Tournament Winner Card",
     "color": "Yellow",
     "version": "AA",
     "block": [
@@ -2264,7 +2264,7 @@
     "effect": "[Your Turn] While you have a red Tamer in play, this Digimon can also attack your opponent's unsuspended Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "NEW AWAKENING（BT-08）Pre-Release Tournament",
+    "notes": "NEW AWAKENING（BT-08）Pre-Release Tournaments",
     "color": "Red",
     "version": "Normal",
     "block": [
