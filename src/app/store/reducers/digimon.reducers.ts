@@ -68,11 +68,12 @@ export const emptyFilter = {
   illustratorFilter: [],
   specialRequirementsFilter: [],
   blockFilter: [],
+  restrictionsFilter: [],
 };
 
 export const initialState: IDigimonState = {
   deck: emptyDeck,
-  site: 0,
+  site: 1,
   dialogs: {
     exportDeck: { show: false, deck: emptyDeck },
     importDeck: { show: false },

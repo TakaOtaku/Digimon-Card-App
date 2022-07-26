@@ -26,6 +26,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -55,6 +56,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "TANIMESO"
   },
   {
@@ -84,6 +86,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -113,7 +116,66 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "kaz"
+  },
+  {
+    "id": "ST7-03_P2",
+    "name": "Guilmon",
+    "cardImage": "assets/images/cards/eng/ST7-03_P2.jpg",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Virus",
+    "type": "Reptile",
+    "rarity": "SR",
+    "cardNumber": "ST7-03",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Your Turn] If your opponent has a level 6 or higher Digimon in play, this Digimon can digivolve into a [Gallantmon] in your hand for a memory cost of 4, ignoring its digivolution requirements.",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When an opponent's Digimon is deleted, trigger ＜Draw 1＞. (Draw 1 card from your deck.)",
+    "securityEffect": "-",
+    "notes": "Store Championship 2022 Participant Pack",
+    "color": "Red",
+    "version": "Stamp",
+    "block": [
+      "01"
+    ],
+    "illustrator": "Kenji Watanabe"
+  },
+  {
+    "id": "ST7-03_P3",
+    "name": "Guilmon",
+    "cardImage": "assets/images/cards/eng/ST7-03_P3.jpg",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Virus",
+    "type": "Reptile",
+    "rarity": "SR",
+    "cardNumber": "ST7-03",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Your Turn] If your opponent has a level 6 or higher Digimon in play, this Digimon can digivolve into a [Gallantmon] in your hand for a memory cost of 4, ignoring its digivolution requirements.",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When an opponent's Digimon is deleted, trigger ＜Draw 1＞. (Draw 1 card from your deck.)",
+    "securityEffect": "-",
+    "notes": "Store Championship 2022 Champion Card Set",
+    "color": "Red",
+    "version": "Stamp",
+    "block": [
+      "01"
+    ],
+    "illustrator": "Kenji Watanabe"
   },
   {
     "id": "ST7-04",
@@ -142,6 +204,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Sanosuke Sakuma"
   },
   {
@@ -171,7 +234,68 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
+  },
+  {
+    "id": "ST7-05_P1",
+    "name": "Growlmon",
+    "cardImage": "assets/images/cards/eng/ST7-05_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "5000",
+    "playCost": "4",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Virus",
+    "type": "Dark Dragon",
+    "rarity": "R",
+    "cardNumber": "ST7-05",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When an opponent's Digimon is deleted, gain 1 memory.",
+    "securityEffect": "-",
+    "notes": "DC-1 2022 TOP 64",
+    "color": "Red",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "toriyufu"
+  },
+  {
+    "id": "ST7-05_P0",
+    "name": "Growlmon",
+    "cardImage": "assets/images/cards/eng/ST7-05_P0.jpg",
+    "cardType": "Digimon",
+    "dp": "5000",
+    "playCost": "4",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Virus",
+    "type": "Dark Dragon",
+    "rarity": "R",
+    "cardNumber": "ST7-05",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When an opponent's Digimon is deleted, gain 1 memory.",
+    "securityEffect": "-",
+    "notes": "DC-1 2022 TOP 64",
+    "color": "Red",
+    "version": "Stamp",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "toriyufu"
   },
   {
     "id": "ST7-06",
@@ -200,6 +324,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "TANIMESO"
   },
   {
@@ -229,6 +354,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "TANIMESO"
   },
   {
@@ -345,6 +471,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "TANIMESO"
   },
   {
@@ -374,7 +501,68 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
+  },
+  {
+    "id": "ST7-08_P1",
+    "name": "WarGrowlmon",
+    "cardImage": "assets/images/cards/eng/ST7-08_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "8000",
+    "playCost": "8",
+    "digivolveCost1": "3 from Lv.4",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.5",
+    "form": "Ultimate",
+    "attribute": "Virus",
+    "type": "Cyborg",
+    "rarity": "R",
+    "cardNumber": "ST7-08",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Attacking] Delete 1 of your opponent's Digimon with 3000 DP or less.",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When an opponent's Digimon is deleted, this Digimon gains ＜Security Attack +1＞ for the turn. (This Digimon checks 1 additional security card.)",
+    "securityEffect": "-",
+    "notes": "DC-1 2022 TOP 32",
+    "color": "Red",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "toriyufu"
+  },
+  {
+    "id": "ST7-08_P0",
+    "name": "WarGrowlmon",
+    "cardImage": "assets/images/cards/eng/ST7-08_P0.jpg",
+    "cardType": "Digimon",
+    "dp": "8000",
+    "playCost": "8",
+    "digivolveCost1": "3 from Lv.4",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.5",
+    "form": "Ultimate",
+    "attribute": "Virus",
+    "type": "Cyborg",
+    "rarity": "R",
+    "cardNumber": "ST7-08",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Attacking] Delete 1 of your opponent's Digimon with 3000 DP or less.",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When an opponent's Digimon is deleted, this Digimon gains ＜Security Attack +1＞ for the turn. (This Digimon checks 1 additional security card.)",
+    "securityEffect": "-",
+    "notes": "DC-1 2022 TOP 32",
+    "color": "Red",
+    "version": "Stamp",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "toriyufu"
   },
   {
     "id": "ST7-09",
@@ -403,6 +591,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -461,6 +650,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "TANIMESO"
   },
   {
@@ -490,6 +680,67 @@
     "block": [
       "01"
     ],
+    "restriction": "",
+    "illustrator": "Nakano Haito"
+  },
+  {
+    "id": "ST7-11_P1",
+    "name": "Lightning Joust",
+    "cardImage": "assets/images/cards/eng/ST7-11_P1.jpg",
+    "cardType": "Option",
+    "dp": "-",
+    "playCost": "1",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "-",
+    "rarity": "U",
+    "cardNumber": "ST7-11",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Main] 1 of your Digimon gets +2000 DP for the turn. Then, if the number of cards in your security stack is less than or equal to your opponent's, 1 of your Digimon gains ＜Security Attack +1＞ for the turn. (This Digimon checks 1 additional security card.)",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Add this card to its owner's hand.",
+    "notes": "DC-1 2022",
+    "color": "Red",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Nakano Haito"
+  },
+  {
+    "id": "ST7-11_P0",
+    "name": "Lightning Joust",
+    "cardImage": "assets/images/cards/eng/ST7-11_P0.jpg",
+    "cardType": "Option",
+    "dp": "-",
+    "playCost": "1",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "-",
+    "rarity": "U",
+    "cardNumber": "ST7-11",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Main] 1 of your Digimon gets +2000 DP for the turn. Then, if the number of cards in your security stack is less than or equal to your opponent's, 1 of your Digimon gains ＜Security Attack +1＞ for the turn. (This Digimon checks 1 additional security card.)",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Add this card to its owner's hand.",
+    "notes": "DC-1 2022",
+    "color": "Red",
+    "version": "Stamp",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -519,6 +770,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   }
 ]

@@ -1,43 +1,53 @@
-.aa {
+.counter {
   position: absolute;
-  left: 5px;
-  right: 0;
   margin-right: auto !important;
-  top: 5px;
+  margin-left: auto !important;
+  bottom: 0;
   z-index: 2;
-  transform: scale(1);
 }
 
 img {
-  z-index: -1;
-  margin: 0 !important;
+	z-index: -1;
+	margin: 0 !important;
 }
 
 .grayscale {
-  -webkit-filter: grayscale(1);
+	-webkit-filter: grayscale(1);
 }
 
 .text-center {
-  text-align: center;
+	text-align: center;
 }
 
 .text-shadow {
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 p-inputNumber {
-  span {
-    width: 75% !important;
-  }
-  ::ng-deep .p-inputnumber-button {
-    padding: 0.1rem 0;
-  }
+	span {
+		width: 75% !important;
+	}
+	::ng-deep .p-inputnumber-button {
+		padding: 0.1rem 0;
+	}
 }
 
 @media (min-width: 768px) {
-  p-inputNumber {
-    ::ng-deep .p-inputnumber-button {
-      padding: 0.5rem 0;
-    }
-  }
+	p-inputNumber {
+		::ng-deep .p-inputnumber-button {
+			padding: 0.5rem 0;
+		}
+	}
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+  -moz-appearance:textfield; /* Firefox */
 }

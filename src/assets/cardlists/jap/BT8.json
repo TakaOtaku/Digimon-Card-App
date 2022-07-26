@@ -26,6 +26,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -55,6 +56,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kirita"
   },
   {
@@ -84,6 +86,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ryodan"
   },
   {
@@ -113,6 +116,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kirita"
   },
   {
@@ -142,6 +146,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -171,6 +176,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "koki"
   },
   {
@@ -200,6 +206,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "tessy"
   },
   {
@@ -227,8 +234,10 @@
     "color": "Red",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -256,9 +265,42 @@
     "color": "Red",
     "version": "AA",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
+  },
+  {
+    "id": "BT8-008_P2",
+    "name": "Gammamon",
+    "cardImage": "assets/images/cards/jap/BT8-008_P2.jpg",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Virus",
+    "type": "Ceratopsian",
+    "rarity": "R",
+    "cardNumber": "BT8-008",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Your Turn] [Once Per Turn] When you play a red Tamer, ＜Draw 1＞. (Draw 1 card from your deck.)",
+    "digivolveEffect": "[When Attacking] If this Digimon has 6000 DP or more, delete 1 of your opponent's Digimon with 3000 DP or less.",
+    "securityEffect": "-",
+    "notes": "Digimon Illustration Competition Promotion Pack",
+    "color": "Red",
+    "version": "AA",
+    "block": [
+      "01",
+      "02"
+    ],
+    "restriction": "",
+    "illustrator": "61"
   },
   {
     "id": "BT8-009",
@@ -287,6 +329,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -316,6 +359,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Takase"
   },
   {
@@ -345,6 +389,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "shosuke"
   },
   {
@@ -374,6 +419,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Hisashi Fujiwara"
   },
   {
@@ -403,6 +449,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -432,6 +479,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -461,6 +509,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -490,6 +539,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Hisashi Fujiwara"
   },
   {
@@ -519,6 +569,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ishibashi Yosuke"
   },
   {
@@ -543,11 +594,12 @@
     "digivolveEffect": "＜Security Attack +1＞ (This Digimon checks 1 additional security card.)",
     "securityEffect": "-",
     "notes": "▹booster NEW HERO[BT-08]",
-    "color": "Red/Yellow",
+    "color": "Red/Green",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "itohiro"
   },
   {
@@ -577,6 +629,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Hisashi Fujiwara"
   },
   {
@@ -606,6 +659,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Hokyyuu"
   },
   {
@@ -635,6 +689,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Naochika Morishita"
   },
   {
@@ -664,6 +719,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "koki"
   },
   {
@@ -693,6 +749,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -722,6 +779,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Hisashi Fujiwara"
   },
   {
@@ -751,7 +809,38 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "TANIMESO"
+  },
+  {
+    "id": "BT8-023_P1",
+    "name": "Submarimon",
+    "cardImage": "assets/images/cards/jap/BT8-023_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "4000",
+    "playCost": "4",
+    "digivolveCost1": "3 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Armor Form",
+    "attribute": "Free",
+    "type": "Aquatic",
+    "rarity": "U",
+    "cardNumber": "BT8-023",
+    "digiXros": "-",
+    "specialDigivolve": "Digivolve: 2 from [Armadillomon]",
+    "dnaDigivolve": "-",
+    "effect": "＜Armor Purge＞ (When this Digimon would be deleted, you may trash the top card of this Digimon to prevent that deletion.)\n[When Digivolving] Trash the bottom digivolution card of 1 of your opponent's Digimon. Then, 1 of your opponent's Digimon with no digivolution cards gets -3000 DP for the turn.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "TAMER'S SELECTION BOX Evolution Cup 2022",
+    "color": "Blue/Yellow",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Kenji Watanabe"
   },
   {
     "id": "BT8-024",
@@ -780,7 +869,38 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "koki"
+  },
+  {
+    "id": "BT8-024_P1",
+    "name": "Angemon",
+    "cardImage": "assets/images/cards/jap/BT8-024_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "6000",
+    "playCost": "5",
+    "digivolveCost1": "3 from Lv.3",
+    "digivolveCost2": "3 from Lv.3",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Vaccine",
+    "type": "Angel",
+    "rarity": "C",
+    "cardNumber": "BT8-024",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Your Turn] When this Digimon would digivolve, if you have 3 or fewer security cards, ＜Recovery +1 (Deck)＞. (Place the top card of your deck on top of your security stack.)",
+    "digivolveEffect": "[When Attacking] If you have 3 or more security cards, return 1 of your opponent's level 3 Digimon to its owner's hand.",
+    "securityEffect": "-",
+    "notes": "TAMER'S SELECTION BOX Evolution Cup 2022",
+    "color": "Blue/Yellow",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Kenji Watanabe"
   },
   {
     "id": "BT8-025",
@@ -809,6 +929,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -838,6 +959,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "GOSSAN"
   },
   {
@@ -867,6 +989,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -896,6 +1019,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "koki"
   },
   {
@@ -925,6 +1049,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -954,6 +1079,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "SENNSU"
   },
   {
@@ -983,6 +1109,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -1012,6 +1139,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Hokyyuu"
   },
   {
@@ -1041,6 +1169,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -1070,6 +1199,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -1099,6 +1229,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -1128,6 +1259,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Takase"
   },
   {
@@ -1157,6 +1289,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Teppei Tadokoro"
   },
   {
@@ -1186,6 +1319,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Teppei Tadokoro"
   },
   {
@@ -1215,6 +1349,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "shosuke"
   },
   {
@@ -1244,6 +1379,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -1273,6 +1409,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -1302,6 +1439,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -1331,6 +1469,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -1360,6 +1499,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -1389,6 +1529,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Teppei Tadokoro"
   },
   {
@@ -1418,6 +1559,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -1447,6 +1589,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ishibashi Yosuke"
   },
   {
@@ -1476,6 +1619,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Teppei Tadokoro"
   },
   {
@@ -1505,6 +1649,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "UnnoDaisuke"
   },
   {
@@ -1534,6 +1679,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kirita"
   },
   {
@@ -1563,6 +1709,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -1592,6 +1739,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Minato Sashima"
   },
   {
@@ -1621,7 +1769,38 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Takase"
+  },
+  {
+    "id": "BT8-048_P1",
+    "name": "Shurimon",
+    "cardImage": "assets/images/cards/jap/BT8-048_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "4000",
+    "playCost": "4",
+    "digivolveCost1": "3 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Armor Form",
+    "attribute": "Free",
+    "type": "Mutant",
+    "rarity": "U",
+    "cardNumber": "BT8-048",
+    "digiXros": "-",
+    "specialDigivolve": "Digivolve: 2 from [Hawkmon]",
+    "dnaDigivolve": "-",
+    "effect": "＜Armor Purge＞ (When this Digimon would be deleted, you may trash the top card of this Digimon to prevent that deletion.)\n[When Digivolving] 1 of your opponent's Digimon with ＜Blocker＞ can't attack or block until the end of your opponent's next turn.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "TAMER'S SELECTION BOX Evolution Cup 2022",
+    "color": "Green",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Kenji Watanabe"
   },
   {
     "id": "BT8-049",
@@ -1650,6 +1829,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "yuuki."
   },
   {
@@ -1679,6 +1859,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -1708,6 +1889,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "GOSSAN"
   },
   {
@@ -1737,6 +1919,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -1766,6 +1949,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "GOSSAN"
   },
   {
@@ -1795,7 +1979,38 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
+  },
+  {
+    "id": "BT8-053_P1",
+    "name": "Lighdramon",
+    "cardImage": "assets/images/cards/jap/BT8-053_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "5000",
+    "playCost": "5",
+    "digivolveCost1": "3 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Armor Form",
+    "attribute": "Free",
+    "type": "Beast",
+    "rarity": "R",
+    "cardNumber": "BT8-053",
+    "digiXros": "-",
+    "specialDigivolve": "Digivolve: 2 from [Veemon]",
+    "dnaDigivolve": "-",
+    "effect": "＜Armor Purge＞ (When this Digimon would be deleted, you may trash the top card of this Digimon to prevent that deletion.)\n[When Digivolving] Suspend 1 of your opponent's level 4 or lower Digimon.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "TAMER'S SELECTION BOX Evolution Cup 2022",
+    "color": "Green/Blue",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Kenji Watanabe"
   },
   {
     "id": "BT8-054",
@@ -1824,6 +2039,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -1853,6 +2069,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Hisashi Fujiwara"
   },
   {
@@ -1882,6 +2099,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "itohiro"
   },
   {
@@ -1911,6 +2129,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "GOSSAN"
   },
   {
@@ -1940,6 +2159,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tomotake Kinoshita"
   },
   {
@@ -1969,7 +2189,39 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
+  },
+  {
+    "id": "BT8-058_P1",
+    "name": "Agumon",
+    "cardImage": "assets/images/cards/jap/BT8-058_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "0 from Lv.2",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Virus",
+    "type": "Reptile",
+    "rarity": "R",
+    "cardNumber": "BT8-058",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Play] Reveal the top 4 cards of your deck. Add 1 card with [Greymon] in its name and 1 card with [Dragonkin] in its traits among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Tamer Battle Pack 13",
+    "color": "Black",
+    "version": "AA",
+    "block": [
+      "01",
+      "02"
+    ],
+    "restriction": "",
+    "illustrator": "p!k@ru"
   },
   {
     "id": "BT8-059",
@@ -1998,6 +2250,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "funbolt"
   },
   {
@@ -2027,6 +2280,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Takase"
   },
   {
@@ -2056,6 +2310,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -2085,6 +2340,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "yuuki."
   },
   {
@@ -2114,6 +2370,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "TANIMESO"
   },
   {
@@ -2143,6 +2400,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -2172,6 +2430,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -2201,6 +2460,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "yuuki."
   },
   {
@@ -2230,6 +2490,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -2259,6 +2520,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -2288,6 +2550,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tomotake Kinoshita"
   },
   {
@@ -2317,6 +2580,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -2346,6 +2610,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -2375,6 +2640,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "toriyufu"
   },
   {
@@ -2404,6 +2670,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -2433,6 +2700,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "koki"
   },
   {
@@ -2462,6 +2730,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "shosuke"
   },
   {
@@ -2491,6 +2760,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "shosuke"
   },
   {
@@ -2520,6 +2790,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Hisashi Fujiwara"
   },
   {
@@ -2549,6 +2820,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ryodan"
   },
   {
@@ -2578,6 +2850,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "koki"
   },
   {
@@ -2607,6 +2880,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ryodan"
   },
   {
@@ -2636,6 +2910,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "shosuke"
   },
   {
@@ -2665,6 +2940,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Hisashi Fujiwara"
   },
   {
@@ -2694,6 +2970,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ishibashi Yosuke"
   },
   {
@@ -2723,6 +3000,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -2752,6 +3030,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -2781,6 +3060,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Naochika Morishita"
   },
   {
@@ -2810,6 +3090,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ishibashi Yosuke"
   },
   {
@@ -2839,6 +3120,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Naochika Morishita"
   },
   {
@@ -2868,6 +3150,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "GOSSAN"
   },
   {
@@ -2897,6 +3180,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -2926,6 +3210,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -2955,6 +3240,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -2984,6 +3270,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3013,6 +3300,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3042,6 +3330,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3071,6 +3360,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3100,6 +3390,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3129,6 +3420,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3158,6 +3450,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3187,6 +3480,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3216,6 +3510,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3245,6 +3540,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3274,6 +3570,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3303,6 +3600,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -3332,6 +3630,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3361,6 +3660,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3390,6 +3690,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -3419,6 +3720,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Teppei Tadokoro"
   },
   {
@@ -3448,6 +3750,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "banira"
   },
   {
@@ -3477,6 +3780,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "itohiro"
   },
   {
@@ -3506,6 +3810,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -3535,6 +3840,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Teppei Tadokoro"
   },
   {
@@ -3564,6 +3870,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -3593,6 +3900,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -3622,6 +3930,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "p!k@ru"
   },
   {
@@ -3651,6 +3960,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -3680,6 +3990,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "itohiro"
   },
   {
@@ -3709,6 +4020,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -3738,6 +4050,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "banira"
   },
   {
@@ -3767,6 +4080,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Hisashi Fujiwara"
   },
   {
@@ -3796,6 +4110,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "tessy"
   },
   {
@@ -3825,6 +4140,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "KISUKE"
   },
   {
@@ -3854,6 +4170,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "banira"
   },
   {
@@ -3883,6 +4200,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Naochika Morishita"
   },
   {
@@ -3912,6 +4230,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3941,6 +4260,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -3970,6 +4290,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   }
 ]

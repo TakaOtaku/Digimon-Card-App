@@ -26,6 +26,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -56,6 +57,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Takumi Kousaka"
   },
   {
@@ -86,6 +88,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "koki"
   },
   {
@@ -115,6 +118,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -144,6 +148,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Ryuda"
   },
   {
@@ -173,11 +178,12 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Takumi Kousaka"
   },
   {
     "id": "ST2-06",
-    "name": "MetalGarurumon",
+    "name": "Garurumon",
     "cardImage": "assets/images/cards/jap/ST2-06.jpg",
     "cardType": "Digimon",
     "dp": "4000",
@@ -202,7 +208,38 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
+  },
+  {
+    "id": "ST2-06_P1",
+    "name": "Garurumon",
+    "cardImage": "assets/images/cards/jap/ST2-06_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "4000",
+    "playCost": "5",
+    "digivolveCost1": "2  from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Vaccine",
+    "type": "Beast",
+    "rarity": "U",
+    "cardNumber": "ST2-06",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "[When Attacking] Trash a digivolution card under an opponent's Digimon.",
+    "securityEffect": "-",
+    "notes": "Premium Bandai Apparel Promotional Cards",
+    "color": "Blue",
+    "version": "AA",
+    "block": [
+      "00"
+    ],
+    "restriction": "",
+    "illustrator": "koki"
   },
   {
     "id": "ST2-07",
@@ -232,6 +269,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ryuda"
   },
   {
@@ -262,6 +300,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "koki"
   },
   {
@@ -291,6 +330,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -320,6 +360,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "tessy"
   },
   {
@@ -349,6 +390,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "tessy"
   },
   {
@@ -378,6 +420,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Takumi Kousaka"
   },
   {
@@ -407,6 +450,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -436,6 +480,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Takumi Kousaka"
   },
   {
@@ -466,6 +511,7 @@
       "00",
       "02"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -496,6 +542,7 @@
       "00",
       "02"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -525,6 +572,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -555,6 +603,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "p!k@ru"
   },
   {
@@ -585,6 +634,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Naochika Morishita"
   },
   {
@@ -615,6 +665,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -644,6 +695,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "satsuki may"
   },
   {
@@ -673,6 +725,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Shigeo Niwa"
   },
   {
@@ -702,6 +755,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "p!k@ru"
   },
   {
@@ -731,6 +785,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Ishibashi Yosuke"
   }
 ]

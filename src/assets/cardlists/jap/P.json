@@ -26,6 +26,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -55,6 +56,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Ishibashi Yosuke"
   },
   {
@@ -84,6 +86,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "KISUKE"
   },
   {
@@ -113,6 +116,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -143,7 +147,39 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Takumi Kousaka"
+  },
+  {
+    "id": "P-004_P1",
+    "name": "Gomamon",
+    "cardImage": "assets/images/cards/jap/P-004_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "1000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Vaccine",
+    "type": "Sea Beast",
+    "rarity": "P",
+    "cardNumber": "P-004",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When you trash a digivolution card of 1 of your opponent's Digimon, gain 1 memory.",
+    "securityEffect": "-",
+    "notes": "Memorial Collection 03",
+    "color": "Blue",
+    "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Kayo Horaguchi"
   },
   {
     "id": "P-005",
@@ -170,9 +206,44 @@
     "color": "Yellow",
     "version": "Normal",
     "block": [
-      "00"
-    ],
+      "00",
+      "01",
+      "02"
+        ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
+  },
+  {
+    "id": "P-005_P1",
+    "name": "Patamon",
+    "cardImage": "assets/images/cards/jap/P-005_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "4",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Data",
+    "type": "Mammal",
+    "rarity": "P",
+    "cardNumber": "P-005",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Play] If you have 1 or fewer security cards, trigger ＜Recovery +1 (Deck)＞. (Place the top card of your deck on top of your security stack.)",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Digimon Illustration Competition Promotion Pack",
+    "color": "Yellow",
+    "version": "AA",
+    "block": [
+      "00",
+      "01",
+      "02"
+    ],
+    "restriction": "",
+    "illustrator": "mojuke"
   },
   {
     "id": "P-006",
@@ -201,7 +272,189 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
+  },
+  {
+    "id": "P-007",
+    "name": "Garurumon",
+    "cardImage": "assets/images/cards/jap/P-007.jpg",
+    "cardType": "Digimon",
+    "dp": "4000",
+    "playCost": "4",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Vaccine",
+    "type": "Beast",
+    "rarity": "P",
+    "cardNumber": "P-007",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "[When Attacking] If this Digimon has [Garurumon] in its name， trigger ＜Draw 1＞. (Draw 1 card from your deck.)",
+    "securityEffect": "-",
+    "notes": "V-Jump Magazine Promotional Cards",
+    "color": "Blue",
+    "version": "Normal",
+    "block": [
+      "00"
+    ],
+    "restriction": "",
+    "illustrator": "Takase"
+  },
+  {
+    "id": "P-008",
+    "name": "WereGarurumon",
+    "cardImage": "assets/images/cards/jap/P-008.jpg",
+    "cardType": "Digimon",
+    "dp": "6000",
+    "playCost": "7",
+    "digivolveCost1": "3 from Lv.4",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.5",
+    "form": "Ultimate",
+    "attribute": "Vaccine",
+    "type": "Beastkin",
+    "rarity": "P",
+    "cardNumber": "P-008",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Attacking] [Once Per Turn] If this Digimon has a [Garurumon] digivolution card， unsuspend this Digimon.",
+    "digivolveEffect": "[Your Turn] While you have 8 or more cards in your hand， this Digimon gains ＜Security Attack +1＞. (This Digimon checks 1 additional security card.)",
+    "securityEffect": "-",
+    "notes": "V-Jump Magazine Promotional Cards",
+    "color": "Blue",
+    "version": "Normal",
+    "block": [
+      "00",
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Takase"
+  },
+  {
+    "id": "P-009",
+    "name": "Agumon",
+    "cardImage": "assets/images/cards/jap/P-009.jpg",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Vaccine",
+    "type": "Reptile",
+    "rarity": "P",
+    "cardNumber": "P-009",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "[Your Turn] While this Digimon has [Greymon] in its name， it gets +2000 DP.",
+    "securityEffect": "-",
+    "notes": "Saikyo Jump Magazine Promotional Cards",
+    "color": "Red",
+    "version": "Normal",
+    "block": [
+      "00"
+    ],
+    "restriction": "",
+    "illustrator": "Tomotake Kinoshita"
+  },
+  {
+    "id": "P-010",
+    "name": "Greymon",
+    "cardImage": "assets/images/cards/jap/P-010.jpg",
+    "cardType": "Digimon",
+    "dp": "5000",
+    "playCost": "5",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Vaccine",
+    "type": "Dinosaur",
+    "rarity": "P",
+    "cardNumber": "P-010",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Your Turn] While this Digimon has an [Agumon] digivolution card， it gains ＜Security Attack +1＞. (This Digimon checks 1 additional security card.)",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Saikyo Jump Magazine Promotional Cards",
+    "color": "Red",
+    "version": "Normal",
+    "block": [
+      "00"
+    ],
+    "restriction": "",
+    "illustrator": "Tomotake Kinoshita"
+  },
+  {
+    "id": "P-011",
+    "name": "Veedramon Zero",
+    "cardImage": "assets/images/cards/jap/P-011.jpg",
+    "cardType": "Digimon",
+    "dp": "5000",
+    "playCost": "6",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Vaccine",
+    "type": "Mythical Dragon",
+    "rarity": "P",
+    "cardNumber": "P-011",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Attacking] If you have a blue Tamer， you may trash the top 3 cards of your deck to give this Digimon +2000 DP for the turn.",
+    "digivolveEffect": "[When Attacking] You may place 3 non-Digi-Egg cards from your trash at the bottom of your deck in any order to activate ＜Draw 1＞. (Draw 1 card from your deck.)",
+    "securityEffect": "-",
+    "notes": "V-Jump Magazine Promotional Cards",
+    "color": "Blue",
+    "version": "Normal",
+    "block": [
+      "00"
+    ],
+    "restriction": "",
+    "illustrator": "TENYA YABUNO"
+  },
+  {
+    "id": "P-012",
+    "name": "Tai Kamiya (V-Tamer)",
+    "cardImage": "assets/images/cards/jap/P-012.jpg",
+    "cardType": "Tamer",
+    "dp": "-",
+    "playCost": "2",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "-",
+    "rarity": "P",
+    "cardNumber": "P-012",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Main] If you have a Digimon with [Veedramon] in its name, you may suspend this Tamer to activate one of the following effects:\n・Trigger . (Draw 1 card from your deck.)\n・1 of your Digimon gets +1000 DP for the turn.",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Play this card without paying its memory cost.",
+    "notes": "V-Jump Magazine Promotional Cards",
+    "color": "Blue",
+    "version": "Normal",
+    "block": [
+      "00"
+    ],
+    "restriction": "",
+    "illustrator": "TENYA YABUNO"
   },
   {
     "id": "P-013",
@@ -230,6 +483,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Takase"
   },
   {
@@ -259,6 +513,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "koki"
   },
   {
@@ -288,6 +543,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -317,6 +573,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -346,6 +603,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Takase"
   },
   {
@@ -375,6 +633,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -404,6 +663,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -433,7 +693,38 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
+  },
+  {
+    "id": "P-020_P1",
+    "name": "VenomMyotismon",
+    "cardImage": "assets/images/cards/jap/P-020_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "11000",
+    "playCost": "11",
+    "digivolveCost1": "3 from Lv.5",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Virus",
+    "type": "Dark Animal",
+    "rarity": "P",
+    "cardNumber": "P-020",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Deletion] You may play a purple Digimon Card with a level of 4 or less from your trash without paying its memory cost. Any [On Play] effects on Digimon played with this effect don't activate.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "TAMER'S SELECTION BOX Evolution Cup 2022",
+    "color": "Purple",
+    "version": "AA",
+    "block": [
+      "00"
+    ],
+    "restriction": "",
+    "illustrator": "koki"
   },
   {
     "id": "P-021",
@@ -462,6 +753,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -491,6 +783,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -520,6 +813,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -549,6 +843,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -578,6 +873,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -607,6 +903,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -636,6 +933,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -666,6 +964,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -695,6 +994,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Ryuda"
   },
   {
@@ -724,6 +1024,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Ryuda"
   },
   {
@@ -753,6 +1054,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Qacoro"
   },
   {
@@ -782,6 +1084,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Kirita"
   },
   {
@@ -811,6 +1114,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "KISUKE"
   },
   {
@@ -840,12 +1144,13 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "KISUKE"
   },
   {
-    "id": "P-035",
+    "id": "P-035_P1",
     "name": "Red Memory Boost!",
-    "cardImage": "assets/images/cards/jap/P-035.jpg",
+    "cardImage": "assets/images/cards/jap/P-035_P1.jpg",
     "cardType": "Option",
     "dp": "-",
     "playCost": "3",
@@ -855,21 +1160,22 @@
     "form": "-",
     "attribute": "-",
     "type": "-",
-    "rarity": "SR",
+    "rarity": "P",
     "cardNumber": "P-035",
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 red Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] ＜Delay＞ (Trash this card in your battle area to activate the effect below. You can't activate this effect the turn this card enters play.) \n・Gain 2 memory.",
+    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 red Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] ＜Delay＞ (Trash this card in your battle area to activate the effect below. You can't activate this effect the turn this card enters play.)  \n・Gain 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Place this card in its owner's battle area.",
-    "notes": "1st year Anniversary SR campaign card",
+    "notes": "Memorial Collection 03",
     "color": "Red",
-    "version": "Normal",
+    "version": "AA",
     "block": [
       "01"
     ],
-    "illustrator": "Shin Sasaki"
+    "restriction": "",
+    "illustrator": "Takase"
   },
   {
     "id": "P-036",
@@ -884,12 +1190,12 @@
     "form": "-",
     "attribute": "-",
     "type": "-",
-    "rarity": "SR",
+    "rarity": "P",
     "cardNumber": "P-036",
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 blue Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] ＜Delay＞ (Trash this card in your battle area to activate the effect below. You can't activate this effect the turn this card enters play.) \n・Gain 2 memory.",
+    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 blue Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] ＜Delay＞ (Trash this card in your battle area to activate the effect below. You can't activate this effect the turn this card enters play.)  \n・Gain 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Place this card in its owner's battle area.",
     "notes": "1st year Anniversary SR campaign card",
@@ -898,7 +1204,38 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
+  },
+  {
+    "id": "P-036_P1",
+    "name": "Blue Memory Boost!",
+    "cardImage": "assets/images/cards/jap/P-036_P1.jpg",
+    "cardType": "Option",
+    "dp": "-",
+    "playCost": "3",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "-",
+    "rarity": "P",
+    "cardNumber": "P-036",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 blue Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] ＜Delay＞ (Trash this card in your battle area to activate the effect below. You can't activate this effect the turn this card enters play.)  \n・Gain 2 memory.",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Place this card in its owner's battle area.",
+    "notes": "Memorial Collection 03",
+    "color": "Blue",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Takase"
   },
   {
     "id": "P-037",
@@ -913,12 +1250,12 @@
     "form": "-",
     "attribute": "-",
     "type": "-",
-    "rarity": "SR",
+    "rarity": "P",
     "cardNumber": "P-037",
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 yellow Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] ＜Delay＞ (Trash this card in your battle area to activate the effect below. You can't activate this effect the turn this card enters play.) \n・Gain 2 memory.",
+    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 yellow Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] ＜Delay＞ (Trash this card in your battle area to activate the effect below. You can't activate this effect the turn this card enters play.)  \n・Gain 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Place this card in its owner's battle area.",
     "notes": "1st year Anniversary SR campaign card",
@@ -927,7 +1264,38 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
+  },
+  {
+    "id": "P-037_P1",
+    "name": "Yellow Memory Boost!",
+    "cardImage": "assets/images/cards/jap/P-037_P1.jpg",
+    "cardType": "Option",
+    "dp": "-",
+    "playCost": "3",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "-",
+    "rarity": "P",
+    "cardNumber": "P-037",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 yellow Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] ＜Delay＞ (Trash this card in your battle area to activate the effect below. You can't activate this effect the turn this card enters play.)  \n・Gain 2 memory.",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Place this card in its owner's battle area.",
+    "notes": "Memorial Collection 03",
+    "color": "Yellow",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Takase"
   },
   {
     "id": "P-038",
@@ -942,12 +1310,12 @@
     "form": "-",
     "attribute": "-",
     "type": "-",
-    "rarity": "SR",
+    "rarity": "P",
     "cardNumber": "P-038",
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 green Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] ＜Delay＞ (Trash this card in your battle area to activate the effect below. You can't activate this effect the turn this card enters play.) \n・Gain 2 memory.",
+    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 green Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] ＜Delay＞ (Trash this card in your battle area to activate the effect below. You can't activate this effect the turn this card enters play.)  \n・Gain 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Place this card in its owner's battle area.",
     "notes": "1st year Anniversary SR campaign card",
@@ -956,7 +1324,38 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
+  },
+  {
+    "id": "P-038_P1",
+    "name": "Green Memory Boost!",
+    "cardImage": "assets/images/cards/jap/P-038_P1.jpg",
+    "cardType": "Option",
+    "dp": "-",
+    "playCost": "3",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "-",
+    "rarity": "P",
+    "cardNumber": "P-038",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 green Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] ＜Delay＞ (Trash this card in your battle area to activate the effect below. You can't activate this effect the turn this card enters play.)  \n・Gain 2 memory.",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Place this card in its owner's battle area.",
+    "notes": "Memorial Collection 03",
+    "color": "Green",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Takase"
   },
   {
     "id": "P-039",
@@ -971,12 +1370,12 @@
     "form": "-",
     "attribute": "-",
     "type": "-",
-    "rarity": "SR",
+    "rarity": "P",
     "cardNumber": "P-039",
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 black Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] ＜Delay＞ (Trash this card in your battle area to activate the effect below. You can't activate this effect the turn this card enters play.) \n・Gain 2 memory.",
+    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 black Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] ＜Delay＞ (Trash this card in your battle area to activate the effect below. You can't activate this effect the turn this card enters play.)  \n・Gain 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Place this card in its owner's battle area.",
     "notes": "1st year Anniversary SR campaign card",
@@ -985,7 +1384,38 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
+  },
+  {
+    "id": "P-039_P1",
+    "name": "Black Memory Boost!",
+    "cardImage": "assets/images/cards/jap/P-039_P1.jpg",
+    "cardType": "Option",
+    "dp": "-",
+    "playCost": "3",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "-",
+    "rarity": "P",
+    "cardNumber": "P-039",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 black Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] ＜Delay＞ (Trash this card in your battle area to activate the effect below. You can't activate this effect the turn this card enters play.)  \n・Gain 2 memory.",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Place this card in its owner's battle area.",
+    "notes": "Memorial Collection 03",
+    "color": "Black",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Takase"
   },
   {
     "id": "P-040",
@@ -1000,12 +1430,12 @@
     "form": "-",
     "attribute": "-",
     "type": "-",
-    "rarity": "SR",
+    "rarity": "P",
     "cardNumber": "P-040",
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 purple Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] ＜Delay＞ (Trash this card in your battle area to activate the effect below. You can't activate this effect the turn this card enters play.) \n・Gain 2 memory.",
+    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 purple Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] ＜Delay＞ (Trash this card in your battle area to activate the effect below. You can't activate this effect the turn this card enters play.)  \n・Gain 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Place this card in its owner's battle area.",
     "notes": "1st year Anniversary SR campaign card",
@@ -1014,7 +1444,38 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
+  },
+  {
+    "id": "P-040_P1",
+    "name": "Purple Memory Boost!",
+    "cardImage": "assets/images/cards/jap/P-040_P1.jpg",
+    "cardType": "Option",
+    "dp": "-",
+    "playCost": "3",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "-",
+    "rarity": "P",
+    "cardNumber": "P-040",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 purple Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] ＜Delay＞ (Trash this card in your battle area to activate the effect below. You can't activate this effect the turn this card enters play.)  \n・Gain 2 memory.",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Place this card in its owner's battle area.",
+    "notes": "Memorial Collection 03",
+    "color": "Purple",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Takase"
   },
   {
     "id": "P-041",
@@ -1043,6 +1504,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "tessy"
   },
   {
@@ -1072,6 +1534,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Takase"
   },
   {
@@ -1101,6 +1564,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Teppei Tadokoro"
   },
   {
@@ -1130,6 +1594,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -1159,6 +1624,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ryodan"
   },
   {
@@ -1188,6 +1654,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Hokyyuu"
   },
   {
@@ -1217,6 +1684,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -1246,6 +1714,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -1275,6 +1744,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -1304,6 +1774,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -1333,6 +1804,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -1362,6 +1834,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -1391,6 +1864,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -1420,6 +1894,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -1449,6 +1924,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -1478,6 +1954,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -1507,6 +1984,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -1536,6 +2014,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -1565,6 +2044,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -1594,6 +2074,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -1623,6 +2104,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -1652,6 +2134,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -1681,6 +2164,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -1710,6 +2194,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -1739,6 +2224,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -1768,6 +2254,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "p!k@ru"
   },
   {
@@ -1797,6 +2284,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -1826,6 +2314,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Takase"
   },
   {
@@ -1855,6 +2344,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -1884,6 +2374,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -1913,6 +2404,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "p!k@ru"
   },
   {
@@ -1934,7 +2426,7 @@
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "[Your Turn] When this Digimon would digivolve into a card with [Insectoid] in its traits, all of your opponent's Digimon gain \"[All Turns] When this Digimon becomes suspended, lose 1 memory.\" until the end of your opponent's turn.",
-    "digivolveEffect": "[Your Turn] While this Digimon has [Insectoid] in its traits, it gains . (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.)",
+    "digivolveEffect": "[Your Turn] While this Digimon has [Insectoid] in its traits, it gains ＜Piercing＞. (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.)",
     "securityEffect": "-",
     "notes": "Update Promotion Pack",
     "color": "Green",
@@ -1942,6 +2434,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "itohiro"
   },
   {
@@ -1971,6 +2464,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "itohiro"
   },
   {
@@ -2000,7 +2494,38 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "p!k@ru"
+  },
+  {
+    "id": "P-078",
+    "name": "Espimon",
+    "cardImage": "assets/images/cards/jap/P-078.jpg",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Cyborg",
+    "type": "Virus",
+    "rarity": "P",
+    "cardNumber": "P-078",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "[On Play] Reveal the top card of your opponent's security stack. If that card is a Digimon card, <Draw 1> (Draw 1 card from your deck). Place the revealed card on top of your opponent's security stack face down.",
+    "securityEffect": "-",
+    "notes": "Saikyo Jump Magazine Promotional Cards",
+    "color": "Black",
+    "version": "Normal",
+    "block": [
+      "02"
+    ],
+    "restriction": "",
+    "illustrator": ""
   },
   {
     "id": "P-079",
@@ -2023,7 +2548,7 @@
     "effect": "[On Play] If you have a red Tamer in play, delete 1 of your opponent's Digimon with 3000 DP or less.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "Digimon Survive Release Commemorative Promotion Pack",
+    "notes": "Digimon Survive Promotion Pack",
     "color": "Red",
     "version": "Normal",
     "block": [
@@ -2052,7 +2577,7 @@
     "effect": "[On Play] If you have a purple Tamer in play, delete 1 of your opponent's level 3 Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "Digimon Survive Release Commemorative Promotion Pack",
+    "notes": "Digimon Survive Promotion Pack",
     "color": "Purple",
     "version": "Normal",
     "block": [
@@ -2081,7 +2606,7 @@
     "effect": "[On Play] If you have a yellow Tamer in play, 1 of your opponent's Digimon gets -2000 DP until the end of their turn.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "Digimon Survive Release Commemorative Promotion Pack",
+    "notes": "Digimon Survive Promotion Pack",
     "color": "Yellow",
     "version": "Normal",
     "block": [

@@ -20,12 +20,13 @@
     "effect": "-",
     "digivolveEffect": "[When Attacking] When this Digimon attacks a player, it gets +1000 DP for the turn.",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Red",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kirita"
   },
   {
@@ -49,12 +50,13 @@
     "effect": "-",
     "digivolveEffect": "[When Attacking] When this Digimon attacks a player, it gets +1000 DP for the turn.",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Red",
     "version": "AA",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kirita"
   },
   {
@@ -78,12 +80,13 @@
     "effect": "-",
     "digivolveEffect": "[Your Turn] [Once Per Turn] When one of your opponent's digivolution cards is trashed, trigger \uff1cDraw 1\uff1e. (Draw 1 card from your deck.)",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Blue",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Sanosuke Sakuma"
   },
   {
@@ -107,12 +110,13 @@
     "effect": "-",
     "digivolveEffect": "[Your Turn] [Once Per Turn] When one of your opponent's digivolution cards is trashed, trigger \uff1cDraw 1\uff1e. (Draw 1 card from your deck.)",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Blue",
     "version": "AA",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Sanosuke Sakuma"
   },
   {
@@ -136,12 +140,13 @@
     "effect": "-",
     "digivolveEffect": "[When Attacking] [Once Per Turn] If you have 3 security cards, gain 1 memory.",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Yellow",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -165,12 +170,13 @@
     "effect": "-",
     "digivolveEffect": "[When Attacking] [Once Per Turn] If you have 3 security cards, gain 1 memory.",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Yellow",
     "version": "AA",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -194,12 +200,13 @@
     "effect": "-",
     "digivolveEffect": "[When Attacking] [Once Per Turn] If you attack an opponent's Digimon, trigger \uff1cDraw 1\uff1e. (Draw 1 card from your deck.)",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Green",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Sanosuke Sakuma"
   },
   {
@@ -223,12 +230,13 @@
     "effect": "-",
     "digivolveEffect": "[When Attacking] [Once Per Turn] If you attack an opponent's Digimon, trigger \uff1cDraw 1\uff1e. (Draw 1 card from your deck.)",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Green",
     "version": "AA",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Sanosuke Sakuma"
   },
   {
@@ -252,12 +260,13 @@
     "effect": "-",
     "digivolveEffect": "[On Deletion] Reveal the top card of your deck. Add it to your hand if it's a black Digimon card. Otherwise, place it at the bottom of your deck.",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Black",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Takase"
   },
   {
@@ -281,12 +290,13 @@
     "effect": "-",
     "digivolveEffect": "[On Deletion] Reveal the top card of your deck. Add it to your hand if it's a black Digimon card. Otherwise, place it at the bottom of your deck.",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Black",
     "version": "AA",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Takase"
   },
   {
@@ -310,12 +320,13 @@
     "effect": "-",
     "digivolveEffect": "[Your Turn] [Once Per Turn] When you trash a card in your hand using one of your effects, trigger \uff1cDraw 1\uff1e. (Draw 1 card from your deck.)",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Purple",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "banira"
   },
   {
@@ -339,12 +350,13 @@
     "effect": "-",
     "digivolveEffect": "[Your Turn] [Once Per Turn] When you trash a card in your hand using one of your effects, trigger \uff1cDraw 1\uff1e. (Draw 1 card from your deck.)",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Purple",
     "version": "AA",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "banira"
   },
   {
@@ -368,12 +380,13 @@
     "effect": "[All Turns] [Once Per Turn] When you play a Tamer with [Tai Kamiya] in its name, gain 1 memory.",
     "digivolveEffect": "[Your Turn] While this Digimon is [Agumon - Bond of Bravery], it gains \uff1cSecurity Attack +1\uff1e. (This Digimon checks 1 additional security card.)",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Red",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "tessy"
   },
   {
@@ -397,12 +410,13 @@
     "effect": "[All Turns] [Once Per Turn] When you play a Tamer with [Tai Kamiya] in its name, gain 1 memory.",
     "digivolveEffect": "[Your Turn] While this Digimon is [Agumon - Bond of Bravery], it gains \uff1cSecurity Attack +1\uff1e. (This Digimon checks 1 additional security card.)",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Red",
     "version": "AA",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Teppei Tadokoro"
   },
   {
@@ -426,12 +440,13 @@
     "effect": "-",
     "digivolveEffect": "[When Attacking] [Once Per Turn] If this Digimon has \uff1cBlitz\uff1e, trigger \uff1cDraw 1\uff1e. (Draw 1 card from your deck.)",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Red",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Takase"
   },
   {
@@ -455,12 +470,13 @@
     "effect": "[On Play] Reveal the top 5 cards of your deck. Add up to 2 Digimon cards with [Huckmon], [Jesmon], or [Sistermon] in their names among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Red",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -484,12 +500,13 @@
     "effect": "-",
     "digivolveEffect": "[Your Turn] While this Digimon has [Hybrid] or [Ten Warriors] in its form or type, it gains \uff1cPiercing\uff1e. (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.)",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Red",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "p!k@ru"
   },
   {
@@ -513,12 +530,13 @@
     "effect": "-",
     "digivolveEffect": "[When Attacking] [Once Per Turn] If you have a Digimon with [Sistermon] in its name in play, delete 1 of your opponent's Digimon with 5000 DP or less.",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Red",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -542,12 +560,13 @@
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Red",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "GOSSAN"
   },
   {
@@ -571,12 +590,13 @@
     "effect": "[Your Turn] This Digimon is also treated as black.",
     "digivolveEffect": "[Your Turn] This Digimon gets +2000 DP.",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Red",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "itohiro"
   },
   {
@@ -600,12 +620,13 @@
     "effect": "[When Digivolving] \uff1cBlitz\uff1e (This Digimon can attack when your opponent has 1 or more memory.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Red",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "KISUKE"
   },
   {
@@ -629,12 +650,13 @@
     "effect": "[When Digivolving] You may play 1 Digimon card with [Sistermon] in its name from your hand without paying its memory cost.",
     "digivolveEffect": "[When Attacking] [Once Per Turn] If you have a Digimon with [Sistermon] in its name in play, unsuspend this Digimon.",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Red",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "Restricted to 1",
     "illustrator": "sasasi"
   },
   {
@@ -658,12 +680,13 @@
     "effect": "[When Attacking] You may play 1 Digimon card with [Sistermon] in its name from your hand or trash without paying its memory cost.\n[Your Turn] [Once Per Turn] When you play another Digimon, this Digimon gets +3000 DP and \uff1cPiercing\uff1e for the turn. (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Red",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -687,13 +710,44 @@
     "effect": "[When Attacking] You may play 1 Digimon card with [Sistermon] in its name from your hand or trash without paying its memory cost.\n[Your Turn] [Once Per Turn] When you play another Digimon, this Digimon gets +3000 DP and \uff1cPiercing\uff1e for the turn. (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Red",
     "version": "AA",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
+  },
+  {
+    "id": "BT6-016_P2",
+    "name": "Jesmon",
+    "cardImage": "assets/images/cards/jap/BT6-016_P2.jpg",
+    "cardType": "Digimon",
+    "dp": "11000",
+    "playCost": "11",
+    "digivolveCost1": "3 from Lv.5",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Data",
+    "type": "Holy Warrior/Royal Knight",
+    "rarity": "SR",
+    "cardNumber": "BT6-016",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Attacking] You may play 1 Digimon card with [Sistermon] in its name from your hand or trash without paying its memory cost.\n[Your Turn] [Once Per Turn] When you play another Digimon, this Digimon gets +3000 DP and \uff1cPiercing\uff1e for the turn. (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.)",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "TAMER'S SELECTION BOX Evolution Cup 2022",
+    "color": "Red",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "toriyufu"
   },
   {
     "id": "BT6-017",
@@ -716,12 +770,13 @@
     "effect": "\uff1cSecurity Attack +1\uff1e (This Digimon checks 1 additional security card.)\n[When Digivolving] You may use 1 Option card with a memory cost of 7 in your hand without paying its memory cost. If you don't, delete 1 of your opponent's Digimon with 4000 DP or less.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Red",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -745,12 +800,13 @@
     "effect": "[When Attacking] If you have a Tamer in play, delete 1 of your opponent's Digimon with 13000 DP or less.\n[Your Turn] [Once Per Turn] When an opponent's Digimon is deleted, trash the top card of their security stack.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Red",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Naochika Morishita"
   },
   {
@@ -774,12 +830,13 @@
     "effect": "[When Attacking] If you have a Tamer in play, delete 1 of your opponent's Digimon with 13000 DP or less.\n[Your Turn] [Once Per Turn] When an opponent's Digimon is deleted, trash the top card of their security stack.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Red",
     "version": "AA",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -803,12 +860,13 @@
     "effect": "[All Turns] [Once Per Turn] When you play a Tamer with [Matt Ishida] in its name, gain 1 memory.",
     "digivolveEffect": "[When Attacking] [Once Per Turn] If this Digimon is [Gabumon - Bond of Friendship], you may unsuspend it.",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Blue",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "tessy"
   },
   {
@@ -832,12 +890,13 @@
     "effect": "[All Turns] [Once Per Turn] When you play a Tamer with [Matt Ishida] in its name, gain 1 memory.",
     "digivolveEffect": "[When Attacking] [Once Per Turn] If this Digimon is [Gabumon - Bond of Friendship], you may unsuspend it.",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Blue",
     "version": "AA",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Teppei Tadokoro"
   },
   {
@@ -861,12 +920,13 @@
     "effect": "-",
     "digivolveEffect": "[Your Turn] While your opponent has no Digimon with digivolution cards in play, this Digimon gets +2000 DP.",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Blue",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "GOSSAN"
   },
   {
@@ -890,12 +950,13 @@
     "effect": "[All Turns] Your opponent can't gain memory except with Tamer effects.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Blue",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kirita"
   },
   {
@@ -919,12 +980,13 @@
     "effect": "-",
     "digivolveEffect": "[When Attacking] [Once Per Turn] If this Digimon has [Hybrid] or [Ten Warriors] in its form or type, gain 1 memory.",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Blue",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "p!k@ru"
   },
   {
@@ -948,12 +1010,13 @@
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Blue",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -977,12 +1040,13 @@
     "effect": "[Your Turn] While your opponent has no Digimon with digivolution cards in play, this Digimon gains \uff1cJamming\uff1e. (This Digimon can't be deleted in battles against Security Digimon.)",
     "digivolveEffect": "[When Attacking] Trash 1 digivolution card from the bottom of 1 of your opponent's Digimon.",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Blue",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "yuuki."
   },
   {
@@ -1006,12 +1070,13 @@
     "effect": "-",
     "digivolveEffect": "[When Attacking] [Once Per Turn] Gain 1 memory.",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Blue",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "banira"
   },
   {
@@ -1035,12 +1100,13 @@
     "effect": "[When Digivolving] Return 1 of your opponent's level 4 or lower Digimon with no digivolution cards to its owner's hand.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Blue",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -1064,12 +1130,13 @@
     "effect": "[When Digivolving] Trash 1 digivolution card from the top of 1 of your opponent's Digimon.",
     "digivolveEffect": "[When Attacking] [Once Per Turn] If your opponent has no Digimon with digivolution cards in play, unsuspend this Digimon.",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Blue",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "itohiro"
   },
   {
@@ -1093,12 +1160,13 @@
     "effect": "[Main] \uff1cDigi-Burst 2\uff1e (Trash 2 of this Digimon's Digivolution cards to activate the effect below.)\u30fbYour Digimon can't be blocked by your opponent's Digimon this turn.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Blue",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "GOSSAN"
   },
   {
@@ -1122,12 +1190,13 @@
     "effect": "[When Digivolving] Trash 1 digivolution card from the bottom of all of your opponent's Digimon. Then, gain 1 memory for each of your opponent's Digimon with no digivolution cards.\n[Your Turn] For each Digimon with no digivolution cards your opponent has in play, this Digimon gains \uff1cSecurity Attack +1\uff1e. (This Digimon checks 1 additional security card.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Blue",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Naochika Morishita"
   },
   {
@@ -1151,12 +1220,13 @@
     "effect": "[When Attacking] [Once Per Turn] If you have a Tamer in play, you may unsuspend this Digimon.\n[When Attacking] Return 1 of your opponent's level 5 or lower Digimon to the bottom of its owner's deck. Trash all of the digivolution cards of that Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Blue",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Naochika Morishita"
   },
   {
@@ -1180,12 +1250,13 @@
     "effect": "[When Attacking] [Once Per Turn] If you have a Tamer in play, you may unsuspend this Digimon.\n[When Attacking] Return 1 of your opponent's level 5 or lower Digimon to the bottom of its owner's deck. Trash all of the digivolution cards of that Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Blue",
     "version": "AA",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -1209,12 +1280,13 @@
     "effect": "[On Deletion] 1 of your opponent's Digimon gains \uff1cSecurity Attack -1\uff1e (This Digimon checks 1 fewer security cards) until the end of your opponent's next turn.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Yellow",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tsunemi Aosa"
   },
   {
@@ -1238,12 +1310,13 @@
     "effect": "-",
     "digivolveEffect": "[Your Turn] [Once Per Turn] When a card is removed from your security stack, trigger \uff1cDraw 1\uff1e. (Draw 1 card from your deck.)",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Yellow",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Teppei Tadokoro"
   },
   {
@@ -1267,12 +1340,13 @@
     "effect": "[On Play] You may trash cards from the top of your security stack until there are 3 left; gain 1 memory for each security card trashed.",
     "digivolveEffect": "[Your Turn] While you have 3 security cards, this Digimon gains \uff1cJamming\uff1e. (This Digimon can't be deleted in battles against Security Digimon.)",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Yellow",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -1296,12 +1370,13 @@
     "effect": "[On Play] You may trash cards from the top of your security stack until there are 3 left; gain 1 memory for each security card trashed.",
     "digivolveEffect": "[Your Turn] While you have 3 security cards, this Digimon gains \uff1cJamming\uff1e. (This Digimon can't be deleted in battles against Security Digimon.)",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Yellow",
     "version": "AA",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -1325,12 +1400,13 @@
     "effect": "-",
     "digivolveEffect": "[Your Turn] [Once Per Turn] When a card is removed from your security stack, gain 1 memory.",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Yellow",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Teppei Tadokoro"
   },
   {
@@ -1354,12 +1430,13 @@
     "effect": "[On Play] If you have 3 or fewer security cards, trigger \uff1cDraw 2\uff1e. (Draw 2 cards from your deck.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Yellow",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "koki"
   },
   {
@@ -1383,12 +1460,13 @@
     "effect": "[On Play] If you have 3 or fewer security cards, gain 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Yellow",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -1412,12 +1490,13 @@
     "effect": "[Your Turn] While you have 3 or more security cards, this Digimon gains \uff1cSecurity Attack +1\uff1e. (This Digimon checks 1 additional security card.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Yellow",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ryuda"
   },
   {
@@ -1441,12 +1520,13 @@
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Yellow",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "banira"
   },
   {
@@ -1470,12 +1550,13 @@
     "effect": "-",
     "digivolveEffect": "[All Turns] While you have 3 or fewer security cards, this Digimon gets +1000 DP.",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Yellow",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "koki"
   },
   {
@@ -1499,12 +1580,13 @@
     "effect": "-",
     "digivolveEffect": "[Your Turn] [Once Per Turn] When a card is removed from your security stack, 1 of your opponent's Digimon gets -2000 DP for the turn.",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Yellow",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Teppei Tadokoro"
   },
   {
@@ -1528,12 +1610,13 @@
     "effect": "[When Attacking] You may trash the top card of your security stack to have 1 of your opponent's Digimon get -5000 DP for the turn.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Yellow",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -1557,12 +1640,13 @@
     "effect": "[On Deletion] You may play 1 [Rosemon] or up to 2 yellow level 3 Digimon cards from your hand without paying their memory costs.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Yellow",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "yuuki."
   },
   {
@@ -1586,12 +1670,13 @@
     "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)\n[All Turns] While you have 3 or fewer security cards, this Digimon gets +2000 DP.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Yellow",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "koki"
   },
   {
@@ -1615,12 +1700,13 @@
     "effect": "[When Digivolving] You may trash the top card of your security stack to reveal the top 6 cards of your deck. Add up to 2 level 6 or lower Digimon cards among them to your hand. Trash the remaining cards.\n[All Turns] [Once Per Turn] When a card is removed from your security stack, if you have 3 or fewer security cards, trigger \uff1cRecovery +1 (Deck)\uff1e. (Place the top card of your deck on top of your security stack.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Yellow",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -1644,12 +1730,13 @@
     "effect": "[When Digivolving] You may trash the top card of your security stack to reveal the top 6 cards of your deck. Add up to 2 level 6 or lower Digimon cards among them to your hand. Trash the remaining cards.\n[All Turns] [Once Per Turn] When a card is removed from your security stack, if you have 3 or fewer security cards, trigger \uff1cRecovery +1 (Deck)\uff1e. (Place the top card of your deck on top of your security stack.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Yellow",
     "version": "AA",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -1673,12 +1760,13 @@
     "effect": "-",
     "digivolveEffect": "[When Attacking] If your opponent has 2 or more suspended Digimon, gain 1 memory.",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Green",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Takase"
   },
   {
@@ -1702,12 +1790,13 @@
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Green",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -1731,12 +1820,13 @@
     "effect": "[On Deletion] Reveal the top 5 cards of your deck. Add 1 [Menoa Bellucci] and 1 Digimon card with [Eosmon] in its name among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Green",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Sanosuke Sakuma"
   },
   {
@@ -1760,12 +1850,13 @@
     "effect": "[On Deletion] Reveal the top 5 cards of your deck. Add 1 [Menoa Bellucci] and 1 Digimon card with [Eosmon] in its name among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Green",
     "version": "AA",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Takase"
   },
   {
@@ -1789,12 +1880,13 @@
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Green",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -1818,12 +1910,13 @@
     "effect": "You may digivolve this card from your hand onto one of your green Tamers as if the Tamer is a level 3 Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Green",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Hisashi Fujiwara"
   },
   {
@@ -1847,12 +1940,13 @@
     "effect": "You may digivolve this card from your hand onto one of your green Tamers as if the Tamer is a level 3 Digimon.\uff1cPiercing\uff1e (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Green",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Hisashi Fujiwara"
   },
   {
@@ -1876,12 +1970,13 @@
     "effect": "-",
     "digivolveEffect": "[When Attacking] Suspend 1 of your opponent's Digimon with 5000 DP or less.",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Green",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -1905,12 +2000,13 @@
     "effect": "[Your Turn] [Once Per Turn] When this Digimon deletes an opponent's Digimon in battle and survives, unsuspend it.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Green",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -1934,12 +2030,13 @@
     "effect": "\uff1cSecurity Attack +1\uff1e (This Digimon checks 1 additional security card.)\n[Opponent's Turn] Your opponent's effects can't reduce this Digimon's DP.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Green",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "itohiro"
   },
   {
@@ -1963,12 +2060,13 @@
     "effect": "[Opponent's Turn] When an opponent's Digimon attacks, suspend up to 2 of their Digimon without \uff1cBlocker\uff1e.\n[On Deletion] You may play 1 green level 4 or lower Digimon card with Hybrid in its form from your hand without paying its memory cost.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Green",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Naochika Morishita"
   },
   {
@@ -1992,12 +2090,13 @@
     "effect": "-",
     "digivolveEffect": "[On Deletion] Gain 1 memory.",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Black",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Takase"
   },
   {
@@ -2021,12 +2120,13 @@
     "effect": "[Security] At the end of the battle, trigger \uff1cDe-Digivolve 1\uff1e on 1 of your opponent's Digimon. (Trash 1 card from the top of one of your opponent's Digimon. If it has no digivolution cards, or becomes a level 3 Digimon, you can't trash any more cards.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Black",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kirita"
   },
   {
@@ -2050,12 +2150,13 @@
     "effect": "-",
     "digivolveEffect": "[All Turns] While this Digimon has \uff1cBlocker\uff1e, it gets +1000 DP.",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Black",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kirita"
   },
   {
@@ -2079,12 +2180,13 @@
     "effect": "[Security] At the end of the battle, play this card without paying its memory cost.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Black",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -2108,12 +2210,13 @@
     "effect": "\uff1cDecoy (Black)\uff1e (When one of your other black Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent that deletion.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Black",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -2137,12 +2240,13 @@
     "effect": "[On Play] Reveal the top 4 cards of your deck. Add 1 Digimon card with [Three Musketeers] in its type and/or 1 Option card with a memory cost of 7 among them to your hand. Trash the remaining cards.\n[Your Turn] This Digimon can digivolve into a Digimon card with [Three Musketeers] in its type from your hand for a memory cost of 6, ignoring its digivolution requirements.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Black",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "kaz"
   },
   {
@@ -2166,12 +2270,13 @@
     "effect": "[Your Turn] This Digimon is also treated as red.",
     "digivolveEffect": "[Opponent's Turn] This Digimon gets +2000 DP.",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Black",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "itohiro"
   },
   {
@@ -2195,13 +2300,14 @@
     "effect": "-",
     "digivolveEffect": "[Your Turn] While your opponent has an unsuspended Digimon in play, this Digimon gains \uff1cSecurity Attack +1\uff1e. (This Digimon checks 1 additional security card.)",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Black",
     "version": "Normal",
     "block": [
       "01"
     ],
-    "illustrator": "Kenji Watanabe"
+    "restriction": "",
+    "illustrator": "sasasi"
   },
   {
     "id": "BT6-063",
@@ -2224,12 +2330,13 @@
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Black",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "TANIMESO"
   },
   {
@@ -2253,12 +2360,13 @@
     "effect": "\uff1cDecoy (Black)\uff1e (When one of your other black Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent that deletion.)\n[On Deletion] Delete 1 of your opponent's Digimon with a play cost of 7 or less.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Black",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -2282,12 +2390,13 @@
     "effect": "\uff1cDecoy (Black)\uff1e (When one of your other black Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent that deletion.)\n[On Deletion] Delete 1 of your opponent's Digimon with a play cost of 7 or less.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Black",
     "version": "AA",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -2311,12 +2420,13 @@
     "effect": "\uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)\n[When Digivolving] Reveal the top 5 cards of your deck. You may use 1 Option card with a memory cost of 7 among them without paying its memory cost. Trash the remaining cards. If you don't use an Option card with this effect, delete 1 of your opponent's Digimon with a play cost of 4 or less.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Black",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -2340,12 +2450,13 @@
     "effect": "\uff1cReboot\uff1e (Unsuspend this Digimon during your opponent's unsuspend phase.)\n[Opponent's Turn] [Once Per Turn] When one of your other Digimon is deleted, trigger \uff1cDe-Digivolve 1\uff1e on 1 of your opponent's Digimon. (Trash 1 card from the top of one of your opponent's Digimon. If it has no digivolution cards, or becomes a level 3 Digimon, you can't trash any more cards.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Black",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "kaz"
   },
   {
@@ -2369,12 +2480,13 @@
     "effect": "[When Digivolving] Delete all of your opponent's Digimon with the lowest play cost.\n[Your Turn] While your opponent has an unsuspended Digimon, this Digimon gains \uff1cSecurity Attack +1\uff1e. (This Digimon checks 1 additional security card.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Black",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -2398,12 +2510,13 @@
     "effect": "[When Digivolving] Delete all of your opponent's Digimon with the lowest play cost.\n[Your Turn] While your opponent has an unsuspended Digimon, this Digimon gains \uff1cSecurity Attack +1\uff1e. (This Digimon checks 1 additional security card.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Black",
     "version": "AA",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -2427,12 +2540,13 @@
     "effect": "[On Play] You may trash 1 card in your hand. If you do, return 1 Digimon card with [Seven Great Demon Lords] or [Three Musketeers] in its type from your trash to your hand.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Purple",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -2456,12 +2570,13 @@
     "effect": "[On Play] You may trash 1 card in your hand. If you do, return 1 Digimon card with [Seven Great Demon Lords] or [Three Musketeers] in its type from your trash to your hand.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Purple",
     "version": "AA",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "yuuki."
   },
   {
@@ -2485,12 +2600,13 @@
     "effect": "-",
     "digivolveEffect": "[Your Turn] [Once Per Turn] When you trash a card in your hand using one of your effects, this Digimon gets +2000 DP for the turn.",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Purple",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "GOSSAN"
   },
   {
@@ -2514,12 +2630,13 @@
     "effect": "[On Deletion] Delete 1 of your opponent's level 3 Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Purple",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Sanosuke Sakuma"
   },
   {
@@ -2543,12 +2660,13 @@
     "effect": "-",
     "digivolveEffect": "[When Attacking] You may trash 1 card in your hand to delete 1 of your opponent's level 3 Digimon.",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Purple",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ishibashi Yosuke"
   },
   {
@@ -2572,12 +2690,13 @@
     "effect": "[On Play] You may trash 1 card in your hand to delete 1 of your opponent's level 4 or lower Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Purple",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "GOSSAN"
   },
   {
@@ -2601,12 +2720,13 @@
     "effect": "-",
     "digivolveEffect": "[Your Turn] [Once Per Turn] When you trash a card in your hand using one of your effects, gain 1 memory.",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Purple",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ishibashi Yosuke"
   },
   {
@@ -2630,12 +2750,13 @@
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Purple",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Hisashi Fujiwara"
   },
   {
@@ -2659,12 +2780,13 @@
     "effect": "\uff1cRush\uff1e (This Digimon can attack the turn it comes into play.)\n[On Play] You may place 1 [Kinkakumon] and/or 1 [Ginkakumon] from your trash in this card's digivolution cards in any order. If you place 2 cards with this effect, trigger \uff1cDraw 1\uff1e (Draw 1 card from your deck) and gain 1 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Purple",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ishibashi Yosuke"
   },
   {
@@ -2688,12 +2810,13 @@
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Purple",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Hisashi Fujiwara"
   },
   {
@@ -2717,12 +2840,13 @@
     "effect": "[When Digivolving] You may trash 1 card in your hand to have this Digimon gain \uff1cBlocker\uff1e (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead) and \uff1cRetaliation\uff1e (When this Digimon is deleted after losing a battle, delete the Digimon it was battling) until the end of your opponent's next turn.\n[All Turns] This Digimon is also treated as black.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Purple",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -2746,12 +2870,13 @@
     "effect": "When you trash this card in your hand using one of your effects, you may place it under 1 of your purple Digimon at the bottom of its digivolution cards.\n[When Attacking] You may trash 1 card in your hand to have this Digimon get +3000 DP for the turn.",
     "digivolveEffect": "\uff1cRetaliation\uff1e (When this Digimon is deleted after losing a battle, delete the Digimon it was battling.)",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Purple",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -2775,12 +2900,13 @@
     "effect": "When you trash this card in your hand using one of your effects, you may place it under 1 of your purple Digimon at the bottom of its digivolution cards.\n[When Attacking] You may trash 1 card in your hand to have this Digimon get +3000 DP for the turn.",
     "digivolveEffect": "\uff1cRetaliation\uff1e (When this Digimon is deleted after losing a battle, delete the Digimon it was battling.)",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Purple",
     "version": "AA",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -2804,12 +2930,13 @@
     "effect": "\uff1cRetaliation\uff1e (When this Digimon is deleted after losing a battle, delete the Digimon it was battling.)\n[On Deletion] If you have 10 or more cards in your trash, you may play 1 [Ornismon] from your trash without paying its memory cost.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Purple",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Hisashi Fujiwara"
   },
   {
@@ -2833,12 +2960,13 @@
     "effect": "\uff1cSecurity Attack +1\uff1e (This Digimon checks 1 additional security card.)\n[On Play] Delete 1 of your opponent's level 5 or lower Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Purple",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Hisashi Fujiwara"
   },
   {
@@ -2862,12 +2990,13 @@
     "effect": "[When Digivolving] Trash 1 card in your hand. Then, you may play 1 purple level 4 or lower Digimon card from your trash without paying its memory cost.\n[Your Turn] [Once Per Turn] When you trash a card in your hand using one of your effects, this Digimon gets +2000 DP and \uff1cSecurity Attack +1\uff1e for the turn. (This Digimon checks 1 additional security card.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Purple",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -2891,12 +3020,13 @@
     "effect": "[When Digivolving] Trash 1 card in your hand. Then, you may play 1 purple level 4 or lower Digimon card from your trash without paying its memory cost.\n[Your Turn] [Once Per Turn] When you trash a card in your hand using one of your effects, this Digimon gets +2000 DP and \uff1cSecurity Attack +1\uff1e for the turn. (This Digimon checks 1 additional security card.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Purple",
     "version": "AA",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -2920,12 +3050,13 @@
     "effect": "[All Turns] While you have a Digimon with [Huckmon] in its name or [Royal Knight] in its type in play, all of your Digimon with [Sistermon] in their names gain \uff1cBlocker\uff1e. (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)\n[On Play] Trigger \uff1cDraw 1\uff1e. (Draw 1 card from your deck.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "White",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -2949,12 +3080,13 @@
     "effect": "[All Turns] While you have a Digimon with [Huckmon] in its name or [Royal Knight] in its type in play, all of your Digimon with [Sistermon] in their names gain \uff1cBlocker\uff1e. (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)\n[On Play] Trigger \uff1cDraw 1\uff1e. (Draw 1 card from your deck.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "White",
     "version": "AA",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -2978,12 +3110,13 @@
     "effect": "[On Play] You may play 1 white Tamer card with a play cost of 4 or less from your hand without paying its memory cost. Then, your opponent may play 1 Tamer card from their hand without paying its memory cost.",
     "digivolveEffect": "[When Attacking] You may play 1 white Tamer card with a play cost of 4 or less from your hand without paying its memory cost.",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "White",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "TANIMESO"
   },
   {
@@ -3007,12 +3140,13 @@
     "effect": "[All Turns] All of your Digimon with [Huckmon] in their names or [Royal Knight] in their types get +2000 DP.\n[On Play] Gain 1 memory.*Also treat as if name is [Sistermon Ciel] and traits include [Data].",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "White",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -3036,12 +3170,13 @@
     "effect": "[All Turns] All of your Digimon with [Huckmon] in their names or [Royal Knight] in their types get +2000 DP.\n[On Play] Gain 1 memory.*Also treat as if name is [Sistermon Ciel] and traits include [Data].",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "White",
     "version": "AA",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -3065,12 +3200,13 @@
     "effect": "You can include up to 50 copies of cards with this card's card number in your deck.\n[When Attacking] You may play 1 level 5 or lower [Eosmon] from your hand without paying its memory cost.",
     "digivolveEffect": "[Your Turn] This Digimon gets +1000 DP.",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "White",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "TANIMESO"
   },
   {
@@ -3094,12 +3230,13 @@
     "effect": "[When Digivolving] For each Tamer in play, you may place 1 level 5 or lower [Eosmon] from your trash at the top of this Digimon's digivolution cards in any order. If you place 2 or more cards with this effect, delete 1 of your opponent's Digimon.\n[Your Turn] For every 3 digivolution cards this Digimon has, it gains \uff1cSecurity Attack +1\uff1e. (This Digimon checks 1 additional security card.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "White",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -3123,12 +3260,13 @@
     "effect": "[When Digivolving] For each Tamer in play, you may place 1 level 5 or lower [Eosmon] from your trash at the top of this Digimon's digivolution cards in any order. If you place 2 or more cards with this effect, delete 1 of your opponent's Digimon.\n[Your Turn] For every 3 digivolution cards this Digimon has, it gains \uff1cSecurity Attack +1\uff1e. (This Digimon checks 1 additional security card.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "White",
     "version": "AA",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "kaz"
   },
   {
@@ -3152,12 +3290,13 @@
     "effect": "[Your Turn] When one of your Digimon with [Agumon] or [Greymon] in its name moves from the breeding area to the battle area, gain 1 memory and trigger \uff1cDraw 1\uff1e. (Draw 1 card from your deck.)\n[Main] [Once Per Turn] Digivolve your [Agumon] into 1 [Agumon - Bond of Bravery] in your hand for its digivolution cost, ignoring its level. If you do, trash the top 2 cards of your security stack. Then, if you have 1 or more security cards, delete that Digimon at the end of the turn.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Red",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3181,12 +3320,13 @@
     "effect": "[Your Turn] When one of your Digimon with [Gabumon] or [Garurumon] in its name moves from the breeding area to the battle area, gain 1 memory and trigger \uff1cDraw 1\uff1e. (Draw 1 card from your deck.)\n[Main] [Once Per Turn] Digivolve your [Gabumon] into 1 [Gabumon - Bond of Friendship] in your hand for its digivolution cost, ignoring its level. If you do, trash the top 2 cards of your security stack. Then, if you have 1 or more security cards, delete that Digimon at the end of the turn.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Blue",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3210,12 +3350,13 @@
     "effect": "[Start of Your Turn] If you have fewer security cards than your opponent, gain 2 memory.\n[Your Turn] When one of your yellow Digimon attacks, you may suspend this Tamer to have 1 of your opponent's Digimon get -1000 DP for the turn.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Yellow",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3239,12 +3380,13 @@
     "effect": "[Start of Your Turn] If your opponent has 2 or more Digimon in play, gain 2 memory.\n[Opponent's Turn] When one of your black Digimon is deleted, you may suspend this Tamer to trigger \uff1cDraw 1\uff1e. (Draw 1 card from your deck.)",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Black",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3268,12 +3410,13 @@
     "effect": "[Start of Your Turn] If your opponent doesn't have a level 4 or lower Digimon in play, gain 2 memory.\n[Your Turn] When one of your purple Digimon attacks, you may suspend this Tamer to trigger \uff1cDraw 1\uff1e. (Draw 1 card from your deck.) Then, trash 1 card in your hand.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Purple",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3297,12 +3440,13 @@
     "effect": "[Start of Your Turn] If you have 2 memory or less, set your memory to 3.\n[Your Turn] When you play an [Eosmon], you may suspend this Tamer to reveal the top 3 cards of your deck. Add 1 Tamer card or 1 Digimon card with [Eosmon] in its name among them to your hand. Place the remaining cards at the bottom of your deck in any order.\n[Opponent's Turn] While you have an [Eosmon] in play, your opponent's Tamers don't unsuspend during their unsuspend phase.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "White",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3326,12 +3470,13 @@
     "effect": "[Main] 1 of your Digimon with [Huckmon] in its name or [Royal Knight] in its type can attack your opponent's unsuspended Digimon for the turn.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] You may play 1 Digimon card with [Sistermon] in its name from your hand or trash without paying its memory cost. Then, add this card to your hand.",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Red",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -3361,6 +3506,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "kaz"
   },
   {
@@ -3384,12 +3530,13 @@
     "effect": "[Main] Delete 1 of your opponent's Digimon with 6000 DP or less. If your opponent has 3 or more Digimon in play, delete 1 of your opponent's Digimon with 13000 DP or less instead.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Red",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -3413,12 +3560,13 @@
     "effect": "If you have a Digimon with [Three Musketeers] in its type in play, you may use this Option card without meeting its color requirements.\n[Main] Delete all of your opponent's Digimon with the lowest DP.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Red",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ryuda"
   },
   {
@@ -3442,12 +3590,13 @@
     "effect": "[Main] 1 of your Digimon gets +2000 DP and \"[When Attacking] Return 1 of your opponent's level 3 Digimon to its owner's hand. Trash all of the digivolution cards of that Digimon\" for the turn.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Add this card to its owner's hand.",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Blue",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ryuda"
   },
   {
@@ -3471,12 +3620,13 @@
     "effect": "[Main] Trash up to 2 digivolution cards from the bottom of 1 of your opponent's Digimon. Then, 1 of your opponent's Digimon with no digivolution cards can't attack or block until the end of your opponent's next turn. Then, place this card in your battle area.\n[Main] \uff1cDelay\uff1e (Trash this card in your battle area to activate the effect below. You can't activate this effect the turn this card enters play.)\n・Gain 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Place this card in its owner's battle area.",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Blue",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Sanosuke Sakuma"
   },
   {
@@ -3500,12 +3650,13 @@
     "effect": "[Main] Return 1 of your opponent's level 5 or lower Digimon to its owner's hand. If your opponent has 3 or more Digimon in play, return 1 of your opponent's Digimon to the bottom of its owner's deck instead. Trash all of the digivolution cards of that Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Blue",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -3529,12 +3680,13 @@
     "effect": "[Main] Trash the top card of your security stack. Then, 1 of your opponent's Digimon gets -5000 DP for the turn.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Add this card to its owner's hand.",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Yellow",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "shosuke"
   },
   {
@@ -3558,12 +3710,13 @@
     "effect": "[Main] Reveal the top 2 cards of your deck. Place 1 of them on top of your security stack face down. Add the remaining card to your hand. Then, place this card in your battle area.\n[Main] \uff1cDelay\uff1e (Trash this card in your battle area to activate the effect below. You can't activate this effect the turn this card enters play.)\n・Gain 3 memory.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Place this card in its owner's battle area.",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Yellow",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "Restricted to 1",
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -3587,12 +3740,13 @@
     "effect": "[Main] 1 of your opponent's Digimon gets -15000 DP for the turn.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Yellow",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "KISUKE"
   },
   {
@@ -3616,12 +3770,13 @@
     "effect": "[Main] 1 of your opponent's Digimon gains \"[On Deletion] Lose 2 memory\" until the end of their next turn.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Green",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ryuda"
   },
   {
@@ -3645,12 +3800,13 @@
     "effect": "[Main] Suspend all of your opponent's Digimon. Then, gain 1 memory for each of your opponent's suspended Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Suspend 1 of your opponent's Digimon.",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Green",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "shosuke"
   },
   {
@@ -3674,12 +3830,13 @@
     "effect": "[Main] 1 of your Digimon gains \"[On Deletion] Gain 2 memory\" until the end of your opponent's next turn.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Add this card to its owner's hand.",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Black",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "banira"
   },
   {
@@ -3703,12 +3860,13 @@
     "effect": "If you have a Digimon with [Three Musketeers] in its type in play, you may use this Option card without meeting its color requirements.\n[Main] Delete all Digimon with play costs of 7 or less.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Add this card to its owner's hand.",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Black",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "funbolt"
   },
   {
@@ -3732,12 +3890,13 @@
     "effect": "[Main] Delete all of your opponent's Digimon with the highest play cost.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Black",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -3761,12 +3920,13 @@
     "effect": "[Main] Return 1 purple Digimon card from your trash to your hand. Then, place this card in your battle area.\n[Main] \uff1cDelay\uff1e (Trash this card in your battle area to activate the effect below. You can't activate this effect the turn this card enters play.)\n・Gain 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Place this card in its owner's battle area.",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Purple",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "yuuki."
   },
   {
@@ -3790,12 +3950,13 @@
     "effect": "When you trash this card in your hand using one of your effects, trigger \uff1cDraw 1\uff1e. (Draw 1 card from your deck.)\n[Main] You may play 1 purple level 4 or lower Digimon card from your trash without paying its memory cost.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Purple",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "KISUKE"
   },
   {
@@ -3819,12 +3980,13 @@
     "effect": "If you have a Digimon with [Three Musketeers] in its type in play, you may use this Option card without meeting its color requirements.\n[Main] Delete 1 of your opponent's level 6 or lower Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Purple",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ishibashi Yosuke"
   },
   {
@@ -3854,6 +4016,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "sunohara"
   },
   {
@@ -3877,12 +4040,13 @@
     "effect": "[Main] You may play 1 level 5 or lower [Eosmon] from your hand without paying its memory cost. Then, delete 1 of your opponent's Digimon with DP less than or equal to the Digimon played with this effect.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "White",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "funbolt"
   },
   {
@@ -3906,12 +4070,13 @@
     "effect": "[Security] At the end of the battle, add this card to your hand. Then, if a Digimon with [Royal Knight] or [X Antibody] in its type is in play, up to 12 of your opponent's Digimon can't attack players for the turn.\n[When Attacking] You may pay up to 5 memory. If you do, this Digimon gets +1000 DP for the turn for each memory paid.\n[End of Attack] Gain 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Black",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -3935,12 +4100,13 @@
     "effect": "[Security] At the end of the battle, add this card to your hand. Then, if a Digimon with [Royal Knight] or [X Antibody] in its type is in play, up to 12 of your opponent's Digimon can't attack players for the turn.\n[When Attacking] You may pay up to 5 memory. If you do, this Digimon gets +1000 DP for the turn for each memory paid.\n[End of Attack] Gain 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Black",
     "version": "AA",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -3964,9 +4130,10 @@
     "effect": "[Security] At the end of the battle, add this card to its owner's hand. Then, if a Digimon with [Royal Knight] or [X Antibody] in its traits is in play, up to 12 of your opponent's Digimon can't attack players for the turn.[When Attacking] By paying up to 5 memory, this Digimon gets +1000 DP for the turn for each memory paid for this effect.[End of Attack] Gain 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9BOOSTER XROS ENCOUNTER [BT-10]",
+    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
     "color": "Black",
     "version": "AA",
+    "restriction": "",
     "illustrator": "sasasi",
     "block": [
       "01"
@@ -3993,12 +4160,13 @@
     "effect": "When playing this card from your hand, reduce its play cost by 1 for each [Three Musketeers] Digimon card and Option card with a memory cost of 7 in your trash.\n[On Play] Return 1 Option card with a memory cost of 7 from your trash to your hand. Then, use 1 Option card with a memory cost of 7 in your hand without paying its memory cost.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Purple",
     "version": "Normal",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -4022,12 +4190,13 @@
     "effect": "When playing this card from your hand, reduce its play cost by 1 for each [Three Musketeers] Digimon card and Option card with a memory cost of 7 in your trash.\n[On Play] Return 1 Option card with a memory cost of 7 from your trash to your hand. Then, use 1 Option card with a memory cost of 7 in your hand without paying its memory cost.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9booster DOUBLE DIAMOND [BT-06]",
+    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
     "color": "Purple",
     "version": "AA",
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   }
 ]

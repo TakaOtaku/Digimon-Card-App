@@ -26,6 +26,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "TANIMESO"
   },
   {
@@ -55,6 +56,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -85,6 +87,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kirita"
   },
   {
@@ -115,6 +118,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -144,6 +148,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Kirita"
   },
   {
@@ -173,6 +178,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Qacoro"
   },
   {
@@ -202,6 +208,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Kirita"
   },
   {
@@ -231,6 +238,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "yuuki."
   },
   {
@@ -260,6 +268,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Kirita"
   },
   {
@@ -290,6 +299,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ryuda"
   },
   {
@@ -320,6 +330,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Takase"
   },
   {
@@ -350,6 +361,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "TANIMESO"
   },
   {
@@ -380,7 +392,39 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ryuda"
+  },
+  {
+    "id": "BT1-010_P2",
+    "name": "Agumon",
+    "cardImage": "assets/images/cards/jap/BT1-010_P2.jpg",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Vaccine",
+    "type": "Reptile",
+    "rarity": "R",
+    "cardNumber": "BT1-010",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Play] Reveal 5 cards from the top of your deck. Add 1 Tamer card among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Memorial Collection 01",
+    "color": "Red",
+    "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Kayo Horaguchi"
   },
   {
     "id": "BT1-011",
@@ -400,7 +444,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[On Play] Return 1 Digimon card with [Agumon] in its name from your recycle bin to your hand.",
+    "effect": "[On Play] Return 1 Digimon card with [Agumon] in its name from your trash to your hand.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹booster NEW EVOLUTION [BT-01]",
@@ -409,6 +453,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Ryuda"
   },
   {
@@ -438,6 +483,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "KISUKE"
   },
   {
@@ -467,6 +513,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Ryuda"
   },
   {
@@ -496,6 +543,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -526,6 +574,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "TANIMESO"
   },
   {
@@ -556,6 +605,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "koki"
   },
   {
@@ -585,6 +635,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "KISUKE"
   },
   {
@@ -614,6 +665,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "TANIMESO"
   },
   {
@@ -643,6 +695,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "shosuke"
   },
   {
@@ -673,6 +726,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "shosuke"
   },
   {
@@ -703,6 +757,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tessy"
   },
   {
@@ -733,6 +788,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -763,6 +819,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Koki"
   },
   {
@@ -792,6 +849,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "TANIMESO"
   },
   {
@@ -821,6 +879,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "TANIMESO"
   },
   {
@@ -851,6 +910,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "tyuga"
   },
   {
@@ -881,6 +941,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "shosuke"
   },
   {
@@ -910,6 +971,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "KISUKE"
   },
   {
@@ -930,7 +992,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[When Digivolving] This Digimon gains ＜Security Attack +1＞ (This Digimon checks 1 additional security card) for the turn.\n[Your Turn] This card doesn't activate [Security] skills on Option Cards it checks.",
+    "effect": "[When Digivolving] This Digimon gains ＜Security Attack +1＞ (This Digimon checks 1 additional security card) for the turn.\n[Your Turn] This card doesn't activate [Security] effects on Option Cards it checks.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹booster NEW EVOLUTION [BT-01]",
@@ -939,6 +1001,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "TANIMESO"
   },
   {
@@ -959,7 +1022,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[When Digivolving] This Digimon gains ＜Security Attack +1＞ (This Digimon checks 1 additional security card) for the turn.\n[Your Turn] This card doesn't activate [Security] skills on Option Cards it checks.",
+    "effect": "[When Digivolving] This Digimon gains ＜Security Attack +1＞ (This Digimon checks 1 additional security card) for the turn.\n[Your Turn] This card doesn't activate [Security] effects on Option Cards it checks.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹booster NEW EVOLUTION [BT-01]",
@@ -968,6 +1031,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -988,7 +1052,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[When DigivoLv.ing] This Digimon gains ＜Security Attack +1＞ (This Digimon checks 1 additional security card) for the turn.\n[Your Turn] This card doesn't activate [Security] skills on Option Cards it checks.",
+    "effect": "[When Digivolving] This Digimon gains ＜Security Attack +1＞ (This Digimon checks 1 additional security card) for the turn.\n[Your Turn] This card doesn't activate [Security] effects on Option Cards it checks.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹start deck Special Entry Set[ST-11]",
@@ -997,6 +1061,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Hokyyuu"
   },
   {
@@ -1026,6 +1091,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -1055,6 +1121,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Kirita"
   },
   {
@@ -1085,6 +1152,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ryuda"
   },
   {
@@ -1115,6 +1183,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Takase"
   },
   {
@@ -1145,6 +1214,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -1175,6 +1245,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ryuda"
   },
   {
@@ -1205,7 +1276,39 @@
       "00",
       "01"
     ],
-    "illustrator": "Horaguchi Kayo"
+    "restriction": "",
+    "illustrator": "koki"
+  },
+  {
+    "id": "BT1-029_P3",
+    "name": "Gabumon",
+    "cardImage": "assets/images/cards/jap/BT1-029_P3.jpg",
+    "cardType": "Digimon",
+    "dp": "1000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Data",
+    "type": "Reptile",
+    "rarity": "R",
+    "cardNumber": "BT1-029",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Play] Trigger ＜Draw 1＞ (Draw 1 card from your deck).",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Memorial Collection 01",
+    "color": "Blue",
+    "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Kayo Horaguchi"
   },
   {
     "id": "BT1-030",
@@ -1234,6 +1337,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "shosuke"
   },
   {
@@ -1263,6 +1367,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Sanosuke Sakuma"
   },
   {
@@ -1292,6 +1397,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Qacoro"
   },
   {
@@ -1321,6 +1427,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Hisashi Fujiwara"
   },
   {
@@ -1350,6 +1457,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "shosuke"
   },
   {
@@ -1380,7 +1488,39 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Hisashi Fujiwara"
+  },
+  {
+    "id": "BT1-035_P1",
+    "name": "Leomon",
+    "cardImage": "assets/images/cards/jap/BT1-035_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "5000",
+    "playCost": "5",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Vaccine",
+    "type": "Beastkin",
+    "rarity": "U",
+    "cardNumber": "BT1-035",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Deletion] Gain 2 memory.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Memorial Collection 02",
+    "color": "Blue",
+    "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "shosuke"
   },
   {
     "id": "BT1-036",
@@ -1409,6 +1549,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -1439,6 +1580,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "KISUKE"
   },
   {
@@ -1469,6 +1611,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "koki"
   },
   {
@@ -1499,6 +1642,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tomotake Kinoshita"
   },
   {
@@ -1529,6 +1673,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "koki"
   },
   {
@@ -1559,6 +1704,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "banira"
   },
   {
@@ -1588,6 +1734,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "shosuke"
   },
   {
@@ -1617,6 +1764,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -1646,6 +1794,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "shosuke"
   },
   {
@@ -1675,6 +1824,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Hisashi Fujiwara"
   },
   {
@@ -1704,6 +1854,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Hisashi Fujiwara"
   },
   {
@@ -1733,6 +1884,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -1762,6 +1914,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -1792,6 +1945,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ryuda"
   },
   {
@@ -1822,6 +1976,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "koki"
   },
   {
@@ -1851,6 +2006,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Takumi Kousaka"
   },
   {
@@ -1880,6 +2036,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Teppei Tadokoro"
   },
   {
@@ -1910,6 +2067,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -1940,6 +2098,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tessy"
   },
   {
@@ -1969,6 +2128,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Teppei Tadokoro"
   },
   {
@@ -1998,6 +2158,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Sanosuke Sakuma"
   },
   {
@@ -2027,6 +2188,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Takumi Kousaka"
   },
   {
@@ -2056,6 +2218,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Teppei Tadokoro"
   },
   {
@@ -2085,6 +2248,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Teppei Tadokoro"
   },
   {
@@ -2114,6 +2278,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Sanosuke Sakuma"
   },
   {
@@ -2143,6 +2308,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -2163,7 +2329,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[On Play] Play 1 [Tinkermon] from your hand or recycle bin without paying its memory cost.",
+    "effect": "[On Play] Play 1 [Tinkermon] from your hand or trash without paying its memory cost.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹booster NEW EVOLUTION [BT-01]",
@@ -2172,6 +2338,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Qacoro"
   },
   {
@@ -2201,6 +2368,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Teppei Tadokoro"
   },
   {
@@ -2230,6 +2398,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -2259,6 +2428,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Takumi Kousaka"
   },
   {
@@ -2288,6 +2458,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Qacoro"
   },
   {
@@ -2317,6 +2488,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -2346,6 +2518,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -2375,6 +2548,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Hisashi Fujiwara"
   },
   {
@@ -2405,6 +2579,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Takumi Kousaka"
   },
   {
@@ -2425,7 +2600,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[When DigivoLv.ing] 1 of your opponent's Digimon gets -8000 DP for the turn.",
+    "effect": "[When Digivolving] 1 of your opponent's Digimon gets -8000 DP for the turn.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "Tamer Battle Pack 9",
@@ -2435,6 +2610,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -2455,7 +2631,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[When DigivoLv.ing] 1 of your opponent's Digimon gets -8000 DP for the turn.",
+    "effect": "[When Digivolving] 1 of your opponent's Digimon gets -8000 DP for the turn.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "Winner prize for Dec.2021 Tamer Battle",
@@ -2465,6 +2641,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -2494,6 +2671,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -2524,6 +2702,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -2554,6 +2733,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -2583,6 +2763,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Kirita"
   },
   {
@@ -2613,6 +2794,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -2643,6 +2825,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -2673,6 +2856,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "yuuki."
   },
   {
@@ -2703,6 +2887,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "banira"
   },
   {
@@ -2732,6 +2917,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -2761,6 +2947,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -2790,6 +2977,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -2819,6 +3007,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -2849,6 +3038,7 @@
       "00",
       "02"
     ],
+    "restriction": "",
     "illustrator": "KISUKE"
   },
   {
@@ -2879,6 +3069,7 @@
       "00",
       "02"
     ],
+    "restriction": "",
     "illustrator": "koki"
   },
   {
@@ -2909,6 +3100,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -2939,6 +3131,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "itohiro"
   },
   {
@@ -2969,6 +3162,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "yuuki."
   },
   {
@@ -2999,6 +3193,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "banira"
   },
   {
@@ -3028,6 +3223,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -3058,6 +3254,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -3088,6 +3285,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -3118,6 +3316,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "itohiro"
   },
   {
@@ -3148,6 +3347,7 @@
       "00",
       "02"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -3178,6 +3378,7 @@
       "00",
       "02"
     ],
+    "restriction": "",
     "illustrator": "tessy"
   },
   {
@@ -3208,6 +3409,7 @@
       "00",
       "02"
     ],
+    "restriction": "",
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -3238,6 +3440,7 @@
       "00",
       "02"
     ],
+    "restriction": "",
     "illustrator": "koki"
   },
   {
@@ -3267,6 +3470,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "yuuki."
   },
   {
@@ -3296,6 +3500,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3325,6 +3530,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -3354,6 +3560,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -3383,6 +3590,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "yuuki."
   },
   {
@@ -3412,6 +3620,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -3441,6 +3650,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -3470,6 +3680,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -3499,6 +3710,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -3528,6 +3740,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -3557,6 +3770,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -3586,6 +3800,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -3616,6 +3831,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3646,6 +3862,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3676,6 +3893,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3705,6 +3923,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3734,6 +3953,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3764,6 +3984,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3794,6 +4015,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3824,6 +4046,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3854,6 +4077,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3884,6 +4108,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3914,6 +4139,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3944,6 +4170,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3974,6 +4201,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -4004,6 +4232,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -4033,6 +4262,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "UnnoDaisuke"
   },
   {
@@ -4062,6 +4292,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "UnnoDaisuke"
   },
   {
@@ -4091,6 +4322,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "UnnoDaisuke"
   },
   {
@@ -4120,6 +4352,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Shigeo Niwa"
   },
   {
@@ -4149,6 +4382,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "UnnoDaisuke"
   },
   {
@@ -4178,6 +4412,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "satsuki may"
   },
   {
@@ -4207,6 +4442,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -4236,6 +4472,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "p!k@ru"
   },
   {
@@ -4265,6 +4502,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "satsuki may"
   },
   {
@@ -4294,6 +4532,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Ishibashi Yosuke"
   },
   {
@@ -4323,6 +4562,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "p!k@ru"
   },
   {
@@ -4352,6 +4592,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "DAI-XT."
   },
   {
@@ -4381,6 +4622,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "p!k@ru"
   },
   {
@@ -4410,6 +4652,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -4439,6 +4682,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "satsuki may"
   },
   {
@@ -4468,6 +4712,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "MATSUMOTO EIGHT"
   },
   {
@@ -4497,6 +4742,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "MATSUMOTO EIGHT"
   },
   {
@@ -4526,6 +4772,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "MATSUMOTO EIGHT"
   },
   {
@@ -4555,6 +4802,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -4584,6 +4832,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "satsuki may"
   },
   {
@@ -4613,6 +4862,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -4642,6 +4892,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "koki"
   },
   {
@@ -4671,6 +4922,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -4700,6 +4952,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Takase"
   },
   {
@@ -4730,6 +4983,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "TSCR"
   },
   {
@@ -4760,6 +5014,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -4790,6 +5045,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Teppei Tadokoro"
   },
   {
@@ -4820,6 +5076,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Hokyyuu"
   },
   {
@@ -4849,6 +5106,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "tessy"
   },
   {
@@ -4878,6 +5136,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "koki"
   },
   {
@@ -4907,6 +5166,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "TSCR"
   },
   {
@@ -4936,6 +5196,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Naochika Morishita"
   },
   {
@@ -4965,6 +5226,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -4994,6 +5256,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -5023,6 +5286,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   }
 ]

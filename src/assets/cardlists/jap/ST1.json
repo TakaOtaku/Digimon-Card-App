@@ -26,6 +26,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -56,12 +57,44 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "KISUKE"
   },
   {
     "id": "ST1-02_P1",
     "name": "Biyomon",
     "cardImage": "assets/images/cards/jap/ST1-02_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "3000",
+    "playCost": "2",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Vaccine",
+    "type": "Bird",
+    "rarity": "C",
+    "cardNumber": "ST1-02",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Memorial Collection 01",
+    "color": "Red",
+    "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Kayo Horaguchi"
+  },
+  {
+    "id": "ST1-02_P2",
+    "name": "Biyomon",
+    "cardImage": "assets/images/cards/jap/ST1-02_P2.jpg",
     "cardType": "Digimon",
     "dp": "3000",
     "playCost": "2",
@@ -86,6 +119,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Takase"
   },
   {
@@ -114,8 +148,10 @@
     "version": "Normal",
     "block": [
       "00",
-      "01"
+      "01",
+      "02"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -144,8 +180,10 @@
     "version": "AA",
     "block": [
       "00",
-      "01"
+      "01",
+      "02"
     ],
+    "restriction": "",
     "illustrator": "Hokyyuu"
   },
   {
@@ -174,9 +212,43 @@
     "version": "Stamp",
     "block": [
       "00",
-      "01"
+      "01",
+      "02"
     ],
+    "restriction": "",
     "illustrator": "Ryuda"
+  },
+  {
+    "id": "ST1-03_P3",
+    "name": "Agumon",
+    "cardImage": "assets/images/cards/jap/ST1-03_P3.jpg",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Vaccine",
+    "type": "Reptile",
+    "rarity": "U",
+    "cardNumber": "ST1-03",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "[Your Turn] This Digimon gets +1000 DP.",
+    "securityEffect": "-",
+    "notes": "Digimon Illustration Competition Promotion Pack",
+    "color": "Red",
+    "version": "AA",
+    "block": [
+      "00",
+      "01",
+      "02"
+    ],
+    "restriction": "",
+    "illustrator": "Gosha"
   },
   {
     "id": "ST1-04",
@@ -205,6 +277,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -234,6 +307,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "KISUKE"
   },
   {
@@ -263,6 +337,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -284,7 +359,7 @@
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "-",
-    "digivolveEffect": "＜Security Attack +1＞ (This Digimon checks 1 extra security card.).",
+    "digivolveEffect": "＜Security Attack +1＞ (This Digimon checks 1 extra security card.)",
     "securityEffect": "-",
     "notes": "▹start deck Gaia Red [ST-1]",
     "color": "Red",
@@ -293,7 +368,39 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
+  },
+  {
+    "id": "ST1-07_P1",
+    "name": "Greymon",
+    "cardImage": "assets/images/cards/jap/ST1-07_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "4000",
+    "playCost": "5",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Vaccine",
+    "type": "Dinosaur",
+    "rarity": "U",
+    "cardNumber": "ST1-07",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "＜Security Attack +1＞ (This Digimon checks 1 extra security card.)",
+    "securityEffect": "-",
+    "notes": "Premium Bandai Apparel Promotional Cards",
+    "color": "Red",
+    "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Ryuda"
   },
   {
     "id": "ST1-07_P2",
@@ -314,7 +421,7 @@
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "-",
-    "digivolveEffect": "＜Security Attack +1＞ (This Digimon checks 1 extra security card.).",
+    "digivolveEffect": "＜Security Attack +1＞ (This Digimon checks 1 extra security card.)",
     "securityEffect": "-",
     "notes": "▹start deck Special Entry Set[ST-11]",
     "color": "Red",
@@ -323,6 +430,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Hokyyuu"
   },
   {
@@ -352,6 +460,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "KISUKE"
   },
   {
@@ -381,6 +490,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -410,6 +520,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -439,6 +550,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "tessy"
   },
   {
@@ -468,6 +580,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "tessy"
   },
   {
@@ -498,6 +611,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "KISUKE"
   },
   {
@@ -528,6 +642,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -558,6 +673,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -588,6 +704,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Naochika Morishita"
   },
   {
@@ -618,6 +735,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -648,6 +766,7 @@
       "00",
       "02"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -678,6 +797,7 @@
       "00",
       "02"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -707,6 +827,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "UnnoDaisuke"
   },
   {
@@ -736,6 +857,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "shosuke"
   },
   {
@@ -765,6 +887,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "UnnoDaisuke"
   },
   {
@@ -794,6 +917,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "UnnoDaisuke"
   },
   {
@@ -824,6 +948,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ishibashi Yosuke"
   },
   {
@@ -854,6 +979,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -884,6 +1010,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -914,6 +1041,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "tessy"
   }
 ]

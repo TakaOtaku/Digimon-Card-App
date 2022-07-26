@@ -26,6 +26,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -56,6 +57,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "KISUKE"
   },
   {
@@ -86,6 +88,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Takase"
   },
   {
@@ -116,6 +119,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "KISUKE"
   },
   {
@@ -146,6 +150,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -176,6 +181,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ryuda"
   },
   {
@@ -206,6 +212,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Takumi Kousaka"
   },
   {
@@ -236,6 +243,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Takumi Kousaka"
   },
   {
@@ -266,6 +274,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Takumi Kousaka"
   },
   {
@@ -295,6 +304,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -324,6 +334,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "KISUKE"
   },
   {
@@ -353,6 +364,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -382,6 +394,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -412,6 +425,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -433,7 +447,7 @@
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "-",
-    "digivolveEffect": "(This Digimon checks 1 additional security card.)",
+    "digivolveEffect": "＜Security Attack +1＞ (This Digimon checks 1 additional security card.)",
     "securityEffect": "-",
     "notes": "Tamer Party events",
     "color": "Red",
@@ -442,6 +456,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ryuda"
   },
   {
@@ -463,7 +478,7 @@
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "-",
-    "digivolveEffect": "(This Digimon checks 1 additional security card.)",
+    "digivolveEffect": "＜Security Attack +1＞ (This Digimon checks 1 additional security card.)",
     "securityEffect": "-",
     "notes": "Judge Pack",
     "color": "Red",
@@ -472,7 +487,39 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
+  },
+  {
+    "id": "ST1-07_P3",
+    "name": "Greymon",
+    "cardImage": "assets/images/cards/eng/ST1-07_P3.jpg",
+    "cardType": "Digimon",
+    "dp": "4000",
+    "playCost": "5",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Vaccine",
+    "type": "Dinosaur",
+    "rarity": "U",
+    "cardNumber": "ST1-07",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "＜Security Attack +1＞ (This Digimon checks 1 additional security card.)",
+    "securityEffect": "-",
+    "notes": "Championship 2021 Finals Trophy Card Top 16",
+    "color": "Red",
+    "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Nakano Haito"
   },
   {
     "id": "ST1-08",
@@ -501,6 +548,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "KISUKE"
   },
   {
@@ -530,6 +578,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -559,6 +608,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -588,6 +638,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "tessy"
   },
   {
@@ -617,6 +668,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "tessy"
   },
   {
@@ -647,6 +699,37 @@
       "00"
     ],
     "illustrator": "tessy"
+    "restriction": "",
+  },
+  {
+    "id": "ST1-09_P4",
+    "name": "MetalGreymon",
+    "cardImage": "assets/images/cards/eng/ST1-09_P4.jpg",
+    "cardType": "Digimon",
+    "dp": "7000",
+    "playCost": "7",
+    "digivolveCost1": "3 from Lv.4",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.5",
+    "form": "Ultimate",
+    "attribute": "Vaccine",
+    "type": "Cyborg",
+    "rarity": "R",
+    "cardNumber": "ST1-09",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "[Your Turn] When this Digimon is blocked, gain 3 memory.",
+    "securityEffect": "-",
+    "notes": "World Championship 2021 Trophy Card 3rd Place",
+    "color": "Red",
+    "version": "AA",
+    "block": [
+      "00"
+    ],
+    "restriction": "",
+    "illustrator": "Nakano Haito"
   },
   {
     "id": "ST1-10",
@@ -676,6 +759,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "KISUKE"
   },
   {
@@ -706,6 +790,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -736,6 +821,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -766,6 +852,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Naochika Morishita"
   },
   {
@@ -796,6 +883,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -826,6 +914,69 @@
       "00",
       "01"
     ],
+    "restriction": "",
+    "illustrator": "Nakano Haito"
+  },
+  {
+    "id": "ST1-11_P4",
+    "name": "WarGreymon",
+    "cardImage": "assets/images/cards/eng/ST1-11_P4.jpg",
+    "cardType": "Digimon",
+    "dp": "12000",
+    "playCost": "12",
+    "digivolveCost1": "4 from Lv.5",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Vaccine",
+    "type": "Dragonkin",
+    "rarity": "SR",
+    "cardNumber": "ST1-11",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Your Turn] For every 2 digivolution cards this Digimon has, it gains ＜Security Attack +1＞. (This Digimon checks 1 additional security card.)",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Championship 2021 Finals Trophy Card 2nd Place",
+    "color": "Red",
+    "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Nakano Haito"
+  },
+  {
+    "id": "ST1-11_P5",
+    "name": "WarGreymon",
+    "cardImage": "assets/images/cards/eng/ST1-11_P5.jpg",
+    "cardType": "Digimon",
+    "dp": "12000",
+    "playCost": "12",
+    "digivolveCost1": "4 from Lv.5",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Vaccine",
+    "type": "Dragonkin",
+    "rarity": "SR",
+    "cardNumber": "ST1-11",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Your Turn] For every 2 digivolution cards this Digimon has, it gains ＜Security Attack +1＞. (This Digimon checks 1 additional security card.)",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "World Championship 2021 Trophy Card 2nd Place",
+    "color": "Red",
+    "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -856,6 +1007,7 @@
       "00",
       "02"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -885,6 +1037,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "UnnoDaisuke"
   },
   {
@@ -914,6 +1067,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "shosuke"
   },
   {
@@ -943,6 +1097,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "UnnoDaisuke"
   },
   {
@@ -972,6 +1127,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "UnnoDaisuke"
   },
   {
@@ -1001,6 +1157,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "UnnoDaisuke"
   },
   {
@@ -1031,6 +1188,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ishibashi Yosuke"
   },
   {
@@ -1061,6 +1219,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -1091,6 +1250,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -1121,6 +1281,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaski"
   }
 ]

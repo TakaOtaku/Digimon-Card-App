@@ -1,19 +1,60 @@
-<div [ngStyle]="{'width': (width && !deckBuilder) ?? cardWidth}" class="hover:scale-105 transition-transform relative inline-flex" [ngClass]="{'w-full': deckBuilder}">
-  <div (click)="showCardDetails()" (contextmenu)="showCardDetails()">
-    <img *ngIf="card.version !== 'Normal'" [ngStyle]="{width: '65%'}" [src]="aa.get(this.card.color) ?? 'assets/images/banner/ico_card_detail_multi.png'" alt="AA-Banner" class="aa">
+<div class="relative inline-flex transition-transform hover:scale-105 w-full">
+	<div (click)="addCardToDeck()" (contextmenu)="showCardDetails()">
+    <div class="absolute w-full top-1 z-10 grid grid-cols-5 gap-0">
+      <div></div>
+      <img
+        *ngIf="card.version !== 'Normal'"
+        [src]="aa.get(this.card.color) ?? 'assets/images/banner/ico_card_detail_multi.png'"
+        alt="AA-Banner"
+        class="w-full col-span-3"
+      />
+    </div>
 
-    <img [lazyLoad]="card.cardImage" [ngClass]="{'grayscale': count < collectionMinimum && collectionMode}"
-         [ngStyle]="{'border': cardBorder, 'border-radius': cardRadius}"
-         alt="{{card.cardNumber + ' ' + card.name}}" class="m-auto" defaultImage="assets/images/digimon-card-back.webp">
+		<img
+			[lazyLoad]="card.cardImage"
+			[ngClass]="{ grayscale: count < collectionMinimum && collectionMode }"
+			[ngStyle]="{ border: cardBorder, 'border-radius': cardRadius }"
+			alt="{{ card.cardNumber + ' ' + card.name }}"
+			class="m-auto"
+			defaultImage="assets/images/digimon-card-back.webp"
+		/>
+	</div>
+
+	<span
+		*ngIf="deckBuilder && countInDeck !== 0"
+		class="text-shadow-white absolute right-1 z-[100] px-1 text-3xl font-black text-orange-500" [ngClass]="{ 'bottom-1': !collectionMode, ' bottom-10' : collectionMode }"
+	>
+		{{ countInDeck }}<span class="pr-1 text-sky-700">/</span
+		>{{ card.cardNumber === "BT6-085" || card.cardNumber === "EX2-046" ? 50 : 4 }}
+	</span>
+
+  <div *ngIf="collectionMode" class="counter flex flex-row h-8 w-full rounded-lg bg-transparent mx-5">
+    <button (click)="decreaseCardCount(card.id)" class="primary-background text-white h-full w-1/3 rounded-l cursor-pointer outline-none">
+      <span class="m-auto text-2xl font-thin">−</span>
+    </button>
+    <input type="number" min="0"
+           class="outline-none appearance-none focus:outline-none text-center
+           w-1/3 primary-background font-semibold text-md text-white md:text-base cursor-default flex items-center" [(ngModel)]="count" (change)="changeCardCount($event, card.id)"/>
+    <button (click)="increaseCardCount(card.id)" class="primary-background text-white h-full w-1/3 rounded-r cursor-pointer outline-none">
+      <span class="m-auto text-2xl font-thin">+</span>
+    </button>
   </div>
 
-  <span *ngIf="deckBuilder && countInDeck !== 0" class="absolute z-[100] bottom-1 right-1 text-orange-500 font-black text-3xl px-2 text-shadow-white">
-    {{countInDeck}}<span class="text-sky-700 pr-1">/</span>{{card.cardNumber === 'BT6-085' || card.cardNumber === 'EX2-046' ? 50 : 4}}
-  </span>
-
-  <p-inputNumber *ngIf="collectionMode"
-    class="card-count" [min]="0" placeholder="0" [(ngModel)]="count" mode="decimal" buttonLayout="vertical" [showButtons]="true" (onInput)="changeCardCount($event, card.id)"
-    [style]="{'width': '100%'}"
-    [inputStyle]="{'width': '100%', 'text-align': 'center'}"
-    decrementButtonClass="p-button-secondary" incrementButtonClass="p-button-secondary" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus"></p-inputNumber>
+	<!--p-inputNumber
+		(onInput)="changeCardCount($event, card.id)"
+		*ngIf="collectionMode"
+		[(ngModel)]="count"
+		[inputStyle]="{ width: '100%', 'text-align': 'center' }"
+		[min]="0"
+		[readonly]="true"
+		[showButtons]="true"
+		[style]="{ width: '100%' }"
+		buttonLayout="vertical"
+		class="card-count"
+		decrementButtonClass="p-button-secondary"
+		decrementButtonIcon="pi pi-minus"
+		incrementButtonClass="p-button-secondary"
+		incrementButtonIcon="pi pi-plus"
+		placeholder="0"
+	></p-inputNumber-->
 </div>

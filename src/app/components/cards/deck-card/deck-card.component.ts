@@ -1,13 +1,21 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
-import {Store} from "@ngrx/store";
-import {englishCards} from "../../../../assets/cardlists/eng/english";
-import {ColorMap, ICard, IDeckCard} from "../../../../models";
-import {setViewCardDialog} from "../../../store/digimon.actions";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
+import { Store } from '@ngrx/store';
+import { englishCards } from '../../../../assets/cardlists/eng/english';
+import { ColorMap, ICard, IDeckCard } from '../../../../models';
+import { setViewCardDialog } from '../../../store/digimon.actions';
 
 @Component({
   selector: 'digimon-deck-card',
   templateUrl: './deck-card.component.html',
-  styleUrls: ['./deck-card.component.scss']
+  styleUrls: ['./deck-card.component.scss'],
 })
 export class DeckCardComponent implements OnChanges, OnInit {
   @Input() public card: IDeckCard;
@@ -40,7 +48,9 @@ export class DeckCardComponent implements OnChanges, OnInit {
   }
 
   mapCard(): void {
-    this.completeCard = this.cards.find(card => this.card.id === card.id) ?? englishCards[0] as ICard;
+    this.completeCard =
+      this.cards.find((card) => this.card.id === card.id) ??
+      (englishCards[0] as ICard);
   }
 
   changeCardCount(event: any): void {
@@ -51,11 +61,11 @@ export class DeckCardComponent implements OnChanges, OnInit {
   }
 
   addCardCount(event?: any): void {
-    if(event) {
+    if (event) {
       event.preventDefault();
       event.stopPropagation();
     }
-    if(this.card.cardNumber === 'BT6-085') {
+    if (this.card.cardNumber === 'BT6-085') {
       this.card.count = this.card.count >= 50 ? 50 : this.card.count + 1;
       this.onChange.emit(true);
       return;
@@ -65,7 +75,7 @@ export class DeckCardComponent implements OnChanges, OnInit {
   }
 
   reduceCardCount(event?: any): void {
-    if(event) {
+    if (event) {
       event.preventDefault();
       event.stopPropagation();
     }
@@ -83,7 +93,7 @@ export class DeckCardComponent implements OnChanges, OnInit {
   }
 
   showCardDetails() {
-    this.viewCard = this.cards.find(card => card.id === this.card.id)!;
-    this.store.dispatch(setViewCardDialog({show: true, card: this.viewCard}));
+    this.viewCard = this.cards.find((card) => card.id === this.card.id)!;
+    this.store.dispatch(setViewCardDialog({ show: true, card: this.viewCard }));
   }
 }

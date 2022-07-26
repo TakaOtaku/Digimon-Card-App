@@ -1,7 +1,11 @@
-<p-selectButton class="text-center" [(ngModel)]="sortBy" [options]="sortOptions" (onOptionClick)="changeOrder($event)">
-  <ng-template let-item>
-    <i class="pi" [ngClass]="{'pi-sort-amount-down' : order, 'pi-sort-amount-up' : !order}"></i>
-    <span class="pl-2">{{item.name}}</span>
-  </ng-template>
-</p-selectButton>
-
+<div class="flex inline-flex w-full justify-center surface-card">
+	<button
+		(click)="changeSortOrder(sort)"
+		*ngFor="let sort of sortOptions"
+		[ngClass]="{ 'primary-background': sortBy.name === sort.name, 'surface-card': sortBy.name !== sort.name }"
+		class="inline-flex h-10 w-24 border border-black p-4"
+	>
+		<i [ngClass]="{ 'pi-sort-amount-down': order, 'pi-sort-amount-up': !order }" class="pi text-white"></i>
+		<span class="pl-2 text-center text-sm font-bold text-white">{{ sort.name }}</span>
+	</button>
+</div>

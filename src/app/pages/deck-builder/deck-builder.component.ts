@@ -1,13 +1,18 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import {
+  Component,
+  HostListener,
+  Input,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { filter, Subject, takeUntil } from 'rxjs';
 import { tagsList } from 'src/models/tags.data';
 import * as uuid from 'uuid';
 import {
+  ColorList,
   ColorMap,
-  ColorOrderMap,
   DeckColorMap,
   ICard,
   ICountCard,
@@ -16,10 +21,10 @@ import {
   ISave,
 } from '../../../models';
 import { ITag } from '../../../models/interfaces/tag.interface';
-import { Colors } from '../../components/filter-box/filterData';
 import {
   compareIDs,
   deckIsValid,
+  sortColors,
 } from '../../functions/digimon-card.functions';
 import { AuthService } from '../../service/auth.service';
 import { DatabaseService } from '../../service/database.service';
@@ -44,6 +49,13 @@ import { emptyDeck } from '../../store/reducers/digimon.reducers';
 export class DeckBuilderComponent implements OnInit, OnDestroy {
   @Input() public mobile: boolean;
 
+  //region Accordions
+  deckView = true;
+  collectionView = true;
+  showAccordionButtons = true;
+  showStats = true;
+  //endregion
+
   title = '';
   description = '';
   tags: ITag[];
@@ -57,24 +69,13 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
     cards: [],
   };
 
+  selectedColor: any;
   colorMap = ColorMap;
-
-  colors = Colors;
-  colorFilter = new FormControl();
+  colors = ColorList;
 
   tagsList: ITag[] = tagsList;
-  filteredTags: ITag[];
 
   levelData: any;
-  chartOptions: any = {
-    plugins: {
-      legend: {
-        labels: {
-          color: '#ffffff',
-        },
-      },
-    },
-  };
 
   allCards: ICard[] = [];
   collection: ICountCard[];
@@ -84,12 +85,13 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
   stack = false;
   missingCards = false;
 
-  sidebar = false;
-  statsSidebar = true;
+  securityStack: ICard[];
+  drawHand: ICard[];
+  allDeckCards: ICard[];
+  didMulligan = false;
+  simulateDialog = false;
 
-  statDialog = false;
-
-  fullscreen = false;
+  private screenWidth: number;
 
   private onDestroy$ = new Subject();
 
@@ -99,12 +101,35 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
     private authService: AuthService,
     private confirmationService: ConfirmationService,
     private messageService: MessageService
-  ) {}
+  ) {
+    this.onResize();
+  }
 
-  private static sortColors(colorA: string, colorB: string): number {
-    const a: number = ColorOrderMap.get(colorA) ?? 0;
-    const b: number = ColorOrderMap.get(colorB) ?? 0;
-    return a - b;
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.screenWidth = window.innerWidth;
+    if (this.screenWidth < 768) {
+      this.deckView = true;
+      this.collectionView = false;
+
+      this.showStats = true;
+
+      this.showAccordionButtons = false;
+    } else if (this.screenWidth >= 768 && this.screenWidth < 1024) {
+      this.deckView = false;
+      this.collectionView = true;
+
+      this.showStats = false;
+
+      this.showAccordionButtons = true;
+    } else {
+      this.deckView = true;
+      this.collectionView = true;
+
+      this.showStats = true;
+
+      this.showAccordionButtons = true;
+    }
   }
 
   ngOnInit() {
@@ -135,7 +160,7 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
           this.title = deck.title ?? '';
           this.description = deck.description ?? '';
           this.tags = deck.tags ?? [];
-          this.colorFilter.setValue(deck.color.name);
+          this.selectedColor = deck.color;
           this.mapDeck(deck);
         }
       });
@@ -176,21 +201,19 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
   share() {
     this.mapToDeck();
 
-    if (!this.deckIsValid(this.deck)) {
-      return;
+    if (this.deckIsValid(this.deck)) {
+      this.confirmationService.confirm({
+        message: 'You are about to share the deck. Are you sure?',
+        accept: () => {
+          this.db.shareDeck(this.deck, this.authService.userData);
+          this.messageService.add({
+            severity: 'success',
+            summary: 'Deck shared!',
+            detail: 'Deck was shared successfully!',
+          });
+        },
+      });
     }
-
-    this.confirmationService.confirm({
-      message: 'You are about to share the deck. Are you sure?',
-      accept: () => {
-        this.db.shareDeck(this.deck, this.authService.userData);
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Deck shared!',
-          detail: 'Deck was shared successfully!',
-        });
-      },
-    });
   }
 
   deckIsValid(deck: IDeck): boolean {
@@ -201,8 +224,30 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
         summary: 'Deck is not ready!',
         detail: error,
       });
+      return false;
     }
     return true;
+  }
+
+  /**
+   * Create a new Deck
+   */
+  newDeck() {
+    this.confirmationService.confirm({
+      key: 'NewDeck',
+      message:
+        'You are about to clear all cards in the deck and make a new one. Are you sure?',
+      accept: () => {
+        this.mainDeck = [];
+        const deck: IDeck = emptyDeck;
+        this.store.dispatch(setDeck({ deck }));
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Deck cleared!',
+          detail: 'Deck-Cards were cleared successfully!',
+        });
+      },
+    });
   }
 
   /**
@@ -246,6 +291,60 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
     });
   }
 
+  simulate() {
+    this.simulateDialog = true;
+    this.resetSimulation();
+  }
+
+  mulligan() {
+    if (this.didMulligan) {
+      this.messageService.add({
+        severity: 'warn',
+        summary: 'You already did a Mulligan!',
+        detail: 'You can only mulligan once, before resetting.',
+      });
+      return;
+    }
+
+    this.drawHand = this.allDeckCards.slice(10, 15);
+
+    this.didMulligan = true;
+  }
+
+  resetSimulation() {
+    this.didMulligan = false;
+
+    this.allDeckCards = DeckBuilderComponent.shuffle(
+      this.deck.cards.map((card) => this.allCards.find((a) => a.id === card.id))
+    );
+    this.allDeckCards = this.allDeckCards.filter(
+      (card) => card.cardType !== 'Digi-Egg'
+    );
+
+    this.securityStack = this.allDeckCards.slice(0, 5);
+    this.drawHand = this.allDeckCards.slice(5, 10);
+  }
+
+  private static shuffle(array: any[]) {
+    let currentIndex = array.length,
+      randomIndex;
+
+    // While there remain elements to shuffle.
+    while (currentIndex != 0) {
+      // Pick a remaining element.
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex],
+        array[currentIndex],
+      ];
+    }
+
+    return array;
+  }
+
   /**
    * Update the Cards, Title and Description of the Deck
    */
@@ -259,7 +358,7 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
       title: this.title,
       description: this.description,
       tags: this.tags,
-      color: DeckColorMap.get(this.colorFilter.value),
+      color: DeckColorMap.get(this.selectedColor.name),
       cards,
     };
     this.store.dispatch(setDeck({ deck: this.deck }));
@@ -468,27 +567,6 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
     return id.split('_P')[0];
   }
 
-  /**
-   * For the autocomplete, filter Tags to display
-   */
-  filterTags(event: any) {
-    let filtered: ITag[] = [];
-    let query = event.query;
-
-    for (let i = 0; i < this.tagsList.length; i++) {
-      let tag = this.tagsList[i];
-      if (tag.name.toLowerCase().indexOf(query.toLowerCase()) == 0) {
-        filtered.push(tag);
-      }
-    }
-
-    this.filteredTags = filtered;
-  }
-
-  colorChecked(color: string): boolean {
-    return this.colorFilter.value === color;
-  }
-
   openImportDeckDialog() {
     this.store.dispatch(setImportDeckDialog({ show: true }));
   }
@@ -497,14 +575,48 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
     this.store.dispatch(setExportDeckDialog({ show: true, deck: this.deck }));
   }
 
+  changeColor(color: any) {
+    this.selectedColor = color;
+  }
+
+  changeView(view: string) {
+    if (view === 'Deck') {
+      this.deckView = !this.deckView;
+
+      if (this.screenWidth >= 768 && this.screenWidth < 1024) {
+        if (this.deckView && this.collectionView) {
+          this.collectionView = false;
+          this.showStats = true;
+          return;
+        }
+      }
+
+      if (!this.collectionView) {
+        this.collectionView = true;
+      }
+    } else if (view === 'Collection') {
+      this.collectionView = !this.collectionView;
+
+      if (this.screenWidth >= 768 && this.screenWidth < 1024) {
+        if (this.deckView && this.collectionView) {
+          this.deckView = false;
+          this.showStats = false;
+          return;
+        }
+      }
+
+      if (!this.deckView) {
+        this.deckView = true;
+      }
+    }
+
+    this.showStats = !(this.collectionView && !this.deckView);
+  }
+
   private colorSort() {
     const eggs = this.mainDeck
       .filter((card) => card.cardType === 'Digi-Egg')
-      .sort(
-        (a, b) =>
-          DeckBuilderComponent.sortColors(a.color, b.color) ||
-          a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
 
     const red = this.mainDeck
       .filter((card) => card.color === 'Red' && card.cardType === 'Digimon')
@@ -551,19 +663,11 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
 
     const tamer = this.mainDeck
       .filter((card) => card.cardType === 'Tamer')
-      .sort(
-        (a, b) =>
-          DeckBuilderComponent.sortColors(a.color, b.color) ||
-          a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
 
     const options = this.mainDeck
       .filter((card) => card.cardType === 'Option')
-      .sort(
-        (a, b) =>
-          DeckBuilderComponent.sortColors(a.color, b.color) ||
-          a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
 
     this.mainDeck = [
       ...new Set([
@@ -585,71 +689,35 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
   private levelSort() {
     const eggs = this.mainDeck
       .filter((card) => card.cardType === 'Digi-Egg')
-      .sort(
-        (a, b) =>
-          DeckBuilderComponent.sortColors(a.color, b.color) ||
-          a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
 
     const lv0 = this.mainDeck
       .filter((card) => card.cardLv === '' && card.cardType === 'Digimon')
-      .sort(
-        (a, b) =>
-          DeckBuilderComponent.sortColors(a.color, b.color) ||
-          a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
 
     const lv3 = this.mainDeck
       .filter((card) => card.cardLv === 'Lv.3')
-      .sort(
-        (a, b) =>
-          DeckBuilderComponent.sortColors(a.color, b.color) ||
-          a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
     const lv4 = this.mainDeck
       .filter((card) => card.cardLv === 'Lv.4')
-      .sort(
-        (a, b) =>
-          DeckBuilderComponent.sortColors(a.color, b.color) ||
-          a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
     const lv5 = this.mainDeck
       .filter((card) => card.cardLv === 'Lv.5')
-      .sort(
-        (a, b) =>
-          DeckBuilderComponent.sortColors(a.color, b.color) ||
-          a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
     const lv6 = this.mainDeck
       .filter((card) => card.cardLv === 'Lv.6')
-      .sort(
-        (a, b) =>
-          DeckBuilderComponent.sortColors(a.color, b.color) ||
-          a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
     const lv7 = this.mainDeck
       .filter((card) => card.cardLv === 'Lv.7')
-      .sort(
-        (a, b) =>
-          DeckBuilderComponent.sortColors(a.color, b.color) ||
-          a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
 
     const tamer = this.mainDeck
       .filter((card) => card.cardType === 'Tamer')
-      .sort(
-        (a, b) =>
-          DeckBuilderComponent.sortColors(a.color, b.color) ||
-          a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
 
     const options = this.mainDeck
       .filter((card) => card.cardType === 'Option')
-      .sort(
-        (a, b) =>
-          DeckBuilderComponent.sortColors(a.color, b.color) ||
-          a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
 
     this.mainDeck = [
       ...new Set([

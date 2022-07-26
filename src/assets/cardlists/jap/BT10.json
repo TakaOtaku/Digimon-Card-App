@@ -23,7 +23,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Red",
 		"version": "Normal",
-		"illustrator": "Teppei Tadokoro",
+		"restriction": "",
+    "illustrator": "Teppei Tadokoro",
 		"block": [
 			"02"
 		]
@@ -52,7 +53,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Blue",
 		"version": "Normal",
-		"illustrator": "itohiro",
+		"restriction": "",
+    "illustrator": "itohiro",
 		"block": [
 			"02"
 		]
@@ -81,7 +83,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Yellow",
 		"version": "Normal",
-		"illustrator": "GOSSAN",
+		"restriction": "",
+    "illustrator": "GOSSAN",
 		"block": [
 			"02"
 		]
@@ -110,7 +113,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Green",
 		"version": "Normal",
-		"illustrator": "Takase",
+		"restriction": "",
+    "illustrator": "Takase",
 		"block": [
 			"02"
 		]
@@ -139,7 +143,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Black",
 		"version": "Normal",
-		"illustrator": "yuuki.",
+		"restriction": "",
+    "illustrator": "yuuki.",
 		"block": [
 			"02"
 		]
@@ -168,7 +173,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Purple",
 		"version": "Normal",
-		"illustrator": "banira",
+		"restriction": "",
+    "illustrator": "banira",
 		"block": [
 			"02"
 		]
@@ -197,7 +203,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Red",
 		"version": "Normal",
-		"illustrator": "GOSSAN",
+		"restriction": "",
+    "illustrator": "GOSSAN",
 		"block": [
 			"02"
 		]
@@ -226,7 +233,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Red",
 		"version": "Normal",
-		"illustrator": "TANIMESO",
+		"restriction": "",
+    "illustrator": "TANIMESO",
 		"block": [
 			"02"
 		]
@@ -255,7 +263,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Red/Green",
 		"version": "Normal",
-		"illustrator": "TANIMESO",
+		"restriction": "",
+    "illustrator": "TANIMESO",
 		"block": [
 			"02"
 		]
@@ -284,7 +293,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Red",
 		"version": "Normal",
-		"illustrator": "GOSSAN",
+		"restriction": "",
+    "illustrator": "GOSSAN",
 		"block": [
 			"02"
 		]
@@ -313,7 +323,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Red",
 		"version": "Normal",
-		"illustrator": "Nakano Haito",
+		"restriction": "",
+    "illustrator": "Nakano Haito",
 		"block": [
 			"02"
 		]
@@ -342,7 +353,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Red",
 		"version": "AA",
-		"illustrator": "sasasi",
+		"restriction": "",
+    "illustrator": "sasasi",
 		"block": [
 			"02"
 		]
@@ -371,7 +383,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Red/Purple",
 		"version": "Normal",
-		"illustrator": "Ishibashi Yosuke",
+		"restriction": "",
+    "illustrator": "Ishibashi Yosuke",
 		"block": [
 			"02"
 		]
@@ -400,7 +413,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Red/Black",
 		"version": "Normal",
-		"illustrator": "sasasi",
+		"restriction": "",
+    "illustrator": "sasasi",
 		"block": [
 			"02"
 		]
@@ -429,7 +443,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Red/Black",
 		"version": "AA",
-		"illustrator": "Tonamikanji",
+		"restriction": "",
+    "illustrator": "Tonamikanji",
 		"block": [
 			"02"
 		]
@@ -458,7 +473,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Red",
 		"version": "Normal",
-		"illustrator": "GOSSAN",
+		"restriction": "",
+    "illustrator": "GOSSAN",
 		"block": [
 			"02"
 		]
@@ -487,7 +503,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Red/Purple",
 		"version": "Normal",
-		"illustrator": "TANIMESO",
+		"restriction": "",
+    "illustrator": "TANIMESO",
 		"block": [
 			"02"
 		]
@@ -516,7 +533,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Red",
 		"version": "Normal",
-		"illustrator": "Tonamikanji",
+		"restriction": "",
+    "illustrator": "Tonamikanji",
 		"block": [
 			"02"
 		]
@@ -545,7 +563,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Red",
 		"version": "AA",
-		"illustrator": "As'Maria",
+		"restriction": "",
+    "illustrator": "As'Maria",
 		"block": [
 			"02"
 		]
@@ -574,7 +593,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Blue",
 		"version": "Normal",
-		"illustrator": "p!k@ru",
+		"restriction": "",
+    "illustrator": "p!k@ru",
 		"block": [
 			"02"
 		]
@@ -603,7 +623,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Blue",
 		"version": "Normal",
-		"illustrator": "sasasi",
+		"restriction": "",
+    "illustrator": "sasasi",
 		"block": [
 			"02"
 		]
@@ -632,7 +653,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Blue",
 		"version": "Normal",
-		"illustrator": "sasasi",
+		"restriction": "",
+    "illustrator": "sasasi",
 		"block": [
 			"02"
 		]
@@ -661,7 +683,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Blue",
 		"version": "Normal",
-		"illustrator": "sasasi",
+		"restriction": "",
+    "illustrator": "sasasi",
 		"block": [
 			"02"
 		]
@@ -690,7 +713,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Blue",
 		"version": "Normal",
-		"illustrator": "sasasi",
+		"restriction": "",
+    "illustrator": "sasasi",
 		"block": [
 			"02"
 		]
@@ -719,7 +743,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Blue/Black",
 		"version": "Normal",
-		"illustrator": "Kazumasa Yasukuni",
+		"restriction": "",
+    "illustrator": "Kazumasa Yasukuni",
 		"block": [
 			"02"
 		]
@@ -748,7 +773,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Blue",
 		"version": "Normal",
-		"illustrator": "Nakano Haito",
+		"restriction": "",
+    "illustrator": "Nakano Haito",
 		"block": [
 			"02"
 		]
@@ -777,7 +803,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Blue",
 		"version": "AA",
-		"illustrator": "sasasi",
+		"restriction": "",
+    "illustrator": "sasasi",
 		"block": [
 			"02"
 		]
@@ -806,7 +833,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Blue",
 		"version": "Normal",
-		"illustrator": "sasasi",
+		"restriction": "",
+    "illustrator": "sasasi",
 		"block": [
 			"02"
 		]
@@ -835,7 +863,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Blue",
 		"version": "AA",
-		"illustrator": "Naochika Morishita",
+		"restriction": "",
+    "illustrator": "Naochika Morishita",
 		"block": [
 			"02"
 		]
@@ -864,7 +893,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Blue",
 		"version": "Normal",
-		"illustrator": "sasasi",
+		"restriction": "",
+    "illustrator": "sasasi",
 		"block": [
 			"02"
 		]
@@ -893,7 +923,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Blue",
 		"version": "Normal",
-		"illustrator": "sasasi",
+		"restriction": "",
+    "illustrator": "sasasi",
 		"block": [
 			"02"
 		]
@@ -922,7 +953,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Blue",
 		"version": "Normal",
-		"illustrator": "koki",
+		"restriction": "",
+    "illustrator": "koki",
 		"block": [
 			"02"
 		]
@@ -951,7 +983,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Blue/Black",
 		"version": "Normal",
-		"illustrator": "Kazumasa Yasukuni",
+		"restriction": "",
+    "illustrator": "Kazumasa Yasukuni",
 		"block": [
 			"02"
 		]
@@ -980,7 +1013,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Yellow",
 		"version": "Normal",
-		"illustrator": "GOSSAN",
+		"restriction": "",
+    "illustrator": "GOSSAN",
 		"block": [
 			"02"
 		]
@@ -1009,7 +1043,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Yellow",
 		"version": "Normal",
-		"illustrator": "Tonamikanji",
+		"restriction": "",
+    "illustrator": "Tonamikanji",
 		"block": [
 			"02"
 		]
@@ -1038,7 +1073,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Yellow",
 		"version": "Normal",
-		"illustrator": "banira",
+		"restriction": "",
+    "illustrator": "banira",
 		"block": [
 			"02"
 		]
@@ -1067,7 +1103,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Yellow",
 		"version": "Normal",
-		"illustrator": "Takase",
+		"restriction": "",
+    "illustrator": "Takase",
 		"block": [
 			"02"
 		]
@@ -1096,7 +1133,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Yellow",
 		"version": "Normal",
-		"illustrator": "Takase",
+		"restriction": "",
+    "illustrator": "Takase",
 		"block": [
 			"02"
 		]
@@ -1125,7 +1163,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Yellow",
 		"version": "Normal",
-		"illustrator": "TANIMESO",
+		"restriction": "",
+    "illustrator": "TANIMESO",
 		"block": [
 			"02"
 		]
@@ -1154,7 +1193,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Yellow",
 		"version": "Normal",
-		"illustrator": "Tonamikanji",
+		"restriction": "",
+    "illustrator": "Tonamikanji",
 		"block": [
 			"02"
 		]
@@ -1177,13 +1217,14 @@
 		"digiXros": "-",
 		"specialDigivolve": "-",
 		"dnaDigivolve": "-",
-		"effect": "[When Digivolving] You may activate 1 of the effects below.・Return 1 Option card with [Plug-In] in its name from your trash to your hand.・By trashing 1 Option card with [Plug-In] in its name in your hand, ＜Draw 2＞. (Draw 2 cards from your deck.)",
+		"effect": "[When Digivolving] You may activate 1 of the effects below.\n・Return 1 Option card with [Plug-In] in its name from your trash to your hand.\n・By trashing 1 Option card with [Plug-In] in its name in your hand, ＜Draw 2＞. (Draw 2 cards from your deck.)",
 		"digivolveEffect": "-",
 		"securityEffect": "-",
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Yellow",
 		"version": "Normal",
-		"illustrator": "Takase",
+		"restriction": "",
+    "illustrator": "Takase",
 		"block": [
 			"02"
 		]
@@ -1212,7 +1253,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Yellow",
 		"version": "Normal",
-		"illustrator": "Takase",
+		"restriction": "",
+    "illustrator": "Takase",
 		"block": [
 			"02"
 		]
@@ -1241,7 +1283,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Yellow",
 		"version": "Normal",
-		"illustrator": "Tonamikanji",
+		"restriction": "",
+    "illustrator": "Tonamikanji",
 		"block": [
 			"02"
 		]
@@ -1270,7 +1313,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Yellow",
 		"version": "Normal",
-		"illustrator": "Takase",
+		"restriction": "",
+    "illustrator": "Takase",
 		"block": [
 			"02"
 		]
@@ -1299,7 +1343,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Yellow",
 		"version": "Normal",
-		"illustrator": "Shin Sasaski",
+		"restriction": "",
+    "illustrator": "Shin Sasaski",
 		"block": [
 			"02"
 		]
@@ -1328,7 +1373,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Yellow",
 		"version": "Normal",
-		"illustrator": "Takase",
+		"restriction": "",
+    "illustrator": "Takase",
 		"block": [
 			"02"
 		]
@@ -1357,7 +1403,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Yellow",
 		"version": "AA",
-		"illustrator": "Tonamikanji",
+		"restriction": "",
+    "illustrator": "Tonamikanji",
 		"block": [
 			"02"
 		]
@@ -1386,7 +1433,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Yellow",
 		"version": "Normal",
-		"illustrator": "Teppei Tadokoro",
+		"restriction": "",
+    "illustrator": "Teppei Tadokoro",
 		"block": [
 			"02"
 		]
@@ -1415,7 +1463,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Yellow",
 		"version": "AA",
-		"illustrator": "Tonamikanji",
+		"restriction": "",
+    "illustrator": "Tonamikanji",
 		"block": [
 			"02"
 		]
@@ -1444,7 +1493,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Green",
 		"version": "Normal",
-		"illustrator": "koki",
+		"restriction": "",
+    "illustrator": "koki",
 		"block": [
 			"02"
 		]
@@ -1473,7 +1523,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Green",
 		"version": "Normal",
-		"illustrator": "Nakano Haito",
+		"restriction": "",
+    "illustrator": "Nakano Haito",
 		"block": [
 			"02"
 		]
@@ -1502,7 +1553,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Green",
 		"version": "AA",
-		"illustrator": "Takase",
+		"restriction": "",
+    "illustrator": "Takase",
 		"block": [
 			"02"
 		]
@@ -1531,7 +1583,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Green",
 		"version": "Normal",
-		"illustrator": "banira",
+		"restriction": "",
+    "illustrator": "banira",
 		"block": [
 			"02"
 		]
@@ -1560,7 +1613,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Green",
 		"version": "Normal",
-		"illustrator": "koki",
+		"restriction": "",
+    "illustrator": "koki",
 		"block": [
 			"02"
 		]
@@ -1589,7 +1643,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Green",
 		"version": "Normal",
-		"illustrator": "koki",
+		"restriction": "",
+    "illustrator": "koki",
 		"block": [
 			"02"
 		]
@@ -1618,7 +1673,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Green",
 		"version": "Normal",
-		"illustrator": "koki",
+		"restriction": "",
+    "illustrator": "koki",
 		"block": [
 			"02"
 		]
@@ -1647,7 +1703,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Green",
 		"version": "Normal",
-		"illustrator": "TANIMESO",
+		"restriction": "",
+    "illustrator": "TANIMESO",
 		"block": [
 			"02"
 		]
@@ -1676,7 +1733,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Green",
 		"version": "Normal",
-		"illustrator": "Sanosuke Sakuma",
+		"restriction": "",
+    "illustrator": "Sanosuke Sakuma",
 		"block": [
 			"02"
 		]
@@ -1705,7 +1763,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Green",
 		"version": "Normal",
-		"illustrator": "Nakano Haito",
+		"restriction": "",
+    "illustrator": "Nakano Haito",
 		"block": [
 			"02"
 		]
@@ -1734,7 +1793,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Green",
 		"version": "Normal",
-		"illustrator": "itohiro",
+		"restriction": "",
+    "illustrator": "itohiro",
 		"block": [
 			"02"
 		]
@@ -1763,7 +1823,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Green",
 		"version": "Normal",
-		"illustrator": "Nakano Haito",
+		"restriction": "",
+    "illustrator": "Nakano Haito",
 		"block": [
 			"02"
 		]
@@ -1792,7 +1853,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Green",
 		"version": "Normal",
-		"illustrator": "Nakano Haito",
+		"restriction": "",
+    "illustrator": "Nakano Haito",
 		"block": [
 			"02"
 		]
@@ -1821,7 +1883,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Green",
 		"version": "AA",
-		"illustrator": "sasasi",
+		"restriction": "",
+    "illustrator": "sasasi",
 		"block": [
 			"02"
 		]
@@ -1850,7 +1913,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Green/Yellow",
 		"version": "Normal",
-		"illustrator": "Ishibashi Yosuke",
+		"restriction": "",
+    "illustrator": "Ishibashi Yosuke",
 		"block": [
 			"02"
 		]
@@ -1879,7 +1943,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Green",
 		"version": "Normal",
-		"illustrator": "toriyufu",
+		"restriction": "",
+    "illustrator": "toriyufu",
 		"block": [
 			"02"
 		]
@@ -1908,7 +1973,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Green",
 		"version": "Normal",
-		"illustrator": "Nakano Haito",
+		"restriction": "",
+    "illustrator": "Nakano Haito",
 		"block": [
 			"02"
 		]
@@ -1937,7 +2003,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Green",
 		"version": "AA",
-		"illustrator": "Naochika Morishita",
+		"restriction": "",
+    "illustrator": "Naochika Morishita",
 		"block": [
 			"02"
 		]
@@ -1966,7 +2033,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Black",
 		"version": "Normal",
-		"illustrator": "yuuki.",
+		"restriction": "",
+    "illustrator": "yuuki.",
 		"block": [
 			"02"
 		]
@@ -1995,7 +2063,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Black/Red",
 		"version": "Normal",
-		"illustrator": "Takase",
+		"restriction": "",
+    "illustrator": "Takase",
 		"block": [
 			"02"
 		]
@@ -2024,7 +2093,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Black",
 		"version": "Normal",
-		"illustrator": "TANIMESO",
+		"restriction": "",
+    "illustrator": "TANIMESO",
 		"block": [
 			"02"
 		]
@@ -2053,7 +2123,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Black",
 		"version": "AA",
-		"illustrator": "Takase",
+		"restriction": "",
+    "illustrator": "Takase",
 		"block": [
 			"02"
 		]
@@ -2082,7 +2153,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Black",
 		"version": "Normal",
-		"illustrator": "kaz",
+		"restriction": "",
+    "illustrator": "kaz",
 		"block": [
 			"02"
 		]
@@ -2111,7 +2183,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Black",
 		"version": "Normal",
-		"illustrator": "Kazumasa Yasukuni",
+		"restriction": "",
+    "illustrator": "Kazumasa Yasukuni",
 		"block": [
 			"02"
 		]
@@ -2140,7 +2213,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Black",
 		"version": "Normal",
-		"illustrator": "yuuki.",
+		"restriction": "",
+    "illustrator": "yuuki.",
 		"block": [
 			"02"
 		]
@@ -2169,7 +2243,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Black",
 		"version": "Normal",
-		"illustrator": "GOSSAN",
+		"restriction": "",
+    "illustrator": "GOSSAN",
 		"block": [
 			"02"
 		]
@@ -2198,7 +2273,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Black",
 		"version": "Normal",
-		"illustrator": "Kazumasa Yasukuni",
+		"restriction": "",
+    "illustrator": "Kazumasa Yasukuni",
 		"block": [
 			"02"
 		]
@@ -2227,7 +2303,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Black",
 		"version": "Normal",
-		"illustrator": "TANIMESO",
+		"restriction": "",
+    "illustrator": "TANIMESO",
 		"block": [
 			"02"
 		]
@@ -2256,7 +2333,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Black",
 		"version": "Normal",
-		"illustrator": "Tonamikanji",
+		"restriction": "",
+    "illustrator": "Tonamikanji",
 		"block": [
 			"02"
 		]
@@ -2285,7 +2363,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Black",
 		"version": "Normal",
-		"illustrator": "Nakano Haito",
+		"restriction": "",
+    "illustrator": "Nakano Haito",
 		"block": [
 			"02"
 		]
@@ -2314,7 +2393,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Black",
 		"version": "AA",
-		"illustrator": "Naochika Morishita",
+		"restriction": "",
+    "illustrator": "Naochika Morishita",
 		"block": [
 			"02"
 		]
@@ -2343,7 +2423,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Black/Purple",
 		"version": "Normal",
-		"illustrator": "Tonamikanji",
+		"restriction": "",
+    "illustrator": "Tonamikanji",
 		"block": [
 			"02"
 		]
@@ -2372,7 +2453,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Black/Purple",
 		"version": "AA",
-		"illustrator": "As'Maria",
+		"restriction": "",
+    "illustrator": "As'Maria",
 		"block": [
 			"02"
 		]
@@ -2401,7 +2483,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Black/Purple",
 		"version": "Normal",
-		"illustrator": "Kazumasa Yasukuni",
+		"restriction": "",
+    "illustrator": "Kazumasa Yasukuni",
 		"block": [
 			"02"
 		]
@@ -2430,7 +2513,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Purple",
 		"version": "Normal",
-		"illustrator": "Teppei Tadokoro",
+		"restriction": "",
+    "illustrator": "Teppei Tadokoro",
 		"block": [
 			"02"
 		]
@@ -2459,7 +2543,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Purple",
 		"version": "Normal",
-		"illustrator": "yuuki.",
+		"restriction": "",
+    "illustrator": "yuuki.",
 		"block": [
 			"02"
 		]
@@ -2488,7 +2573,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Purple",
 		"version": "Normal",
-		"illustrator": "GOSSAN",
+		"restriction": "",
+    "illustrator": "GOSSAN",
 		"block": [
 			"02"
 		]
@@ -2517,7 +2603,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Purple",
 		"version": "Normal",
-		"illustrator": "koki",
+		"restriction": "",
+    "illustrator": "koki",
 		"block": [
 			"02"
 		]
@@ -2546,7 +2633,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Purple",
 		"version": "Normal",
-		"illustrator": "GOSSAN",
+		"restriction": "",
+    "illustrator": "GOSSAN",
 		"block": [
 			"02"
 		]
@@ -2575,7 +2663,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Purple",
 		"version": "Normal",
-		"illustrator": "Hisashi Fujiwara",
+		"restriction": "",
+    "illustrator": "Hisashi Fujiwara",
 		"block": [
 			"02"
 		]
@@ -2604,7 +2693,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Purple",
 		"version": "Normal",
-		"illustrator": "Hisashi Fujiwara",
+		"restriction": "",
+    "illustrator": "Hisashi Fujiwara",
 		"block": [
 			"02"
 		]
@@ -2633,7 +2723,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Purple",
 		"version": "Normal",
-		"illustrator": "Hisashi Fujiwara",
+		"restriction": "",
+    "illustrator": "Hisashi Fujiwara",
 		"block": [
 			"02"
 		]
@@ -2662,7 +2753,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Purple",
 		"version": "Normal",
-		"illustrator": "koki",
+		"restriction": "",
+    "illustrator": "koki",
 		"block": [
 			"02"
 		]
@@ -2691,7 +2783,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Purple",
 		"version": "Normal",
-		"illustrator": "koki",
+		"restriction": "",
+    "illustrator": "koki",
 		"block": [
 			"02"
 		]
@@ -2720,7 +2813,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Purple",
 		"version": "Normal",
-		"illustrator": "Tonamikanji",
+		"restriction": "",
+    "illustrator": "Tonamikanji",
 		"block": [
 			"02"
 		]
@@ -2749,7 +2843,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Purple",
 		"version": "Normal",
-		"illustrator": "Tonamikanji",
+		"restriction": "",
+    "illustrator": "Tonamikanji",
 		"block": [
 			"02"
 		]
@@ -2778,7 +2873,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Purple",
 		"version": "Normal",
-		"illustrator": "Takase",
+		"restriction": "",
+    "illustrator": "Takase",
 		"block": [
 			"02"
 		]
@@ -2807,7 +2903,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Purple",
 		"version": "AA",
-		"illustrator": "Tonamikanji",
+		"restriction": "",
+    "illustrator": "Tonamikanji",
 		"block": [
 			"02"
 		]
@@ -2836,7 +2933,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Purple",
 		"version": "Normal",
-		"illustrator": "Hisashi Fujiwara",
+		"restriction": "",
+    "illustrator": "Hisashi Fujiwara",
 		"block": [
 			"02"
 		]
@@ -2865,7 +2963,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "White",
 		"version": "Normal",
-		"illustrator": "Takase",
+		"restriction": "",
+    "illustrator": "Takase",
 		"block": [
 			"02"
 		]
@@ -2894,7 +2993,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "White",
 		"version": "AA",
-		"illustrator": "Tonamikanji",
+		"restriction": "",
+    "illustrator": "Tonamikanji",
 		"block": [
 			"02"
 		]
@@ -2908,7 +3008,7 @@
 		"playCost": "16",
 		"digivolveCost1": "7 from Lv.6",
 		"digivolveCost2": "7 from Lv.6",
-		"cardLv": "Lv.6",
+		"cardLv": "Lv.7",
 		"form": "Mega",
 		"attribute": "Vaccine",
 		"type": "Holy Warrior/Royal Knight/X Antibody",
@@ -2923,7 +3023,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "White",
 		"version": "Normal",
-		"illustrator": "sasasi",
+		"restriction": "",
+    "illustrator": "sasasi",
 		"block": [
 			"02"
 		]
@@ -2937,7 +3038,7 @@
 		"playCost": "16",
 		"digivolveCost1": "7 from Lv.6",
 		"digivolveCost2": "7 from Lv.6",
-		"cardLv": "Lv.6",
+		"cardLv": "Lv.7",
 		"form": "Mega",
 		"attribute": "Vaccine",
 		"type": "Holy Warrior/Royal Knight/X Antibody",
@@ -2952,7 +3053,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "White",
 		"version": "AA",
-		"illustrator": "As'Maria",
+		"restriction": "",
+    "illustrator": "As'Maria",
 		"block": [
 			"02"
 		]
@@ -2981,7 +3083,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Red",
 		"version": "Normal",
-		"illustrator": "",
+		"restriction": "",
+    "illustrator": "",
 		"block": [
 			"02"
 		]
@@ -3010,7 +3113,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Red",
 		"version": "AA",
-		"illustrator": "",
+		"restriction": "",
+    "illustrator": "",
 		"block": [
 			"02"
 		]
@@ -3039,7 +3143,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Blue",
 		"version": "Normal",
-		"illustrator": "",
+		"restriction": "",
+    "illustrator": "",
 		"block": [
 			"02"
 		]
@@ -3068,7 +3173,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Blue",
 		"version": "AA",
-		"illustrator": "",
+		"restriction": "",
+    "illustrator": "",
 		"block": [
 			"02"
 		]
@@ -3097,7 +3203,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Yellow",
 		"version": "Normal",
-		"illustrator": "",
+		"restriction": "",
+    "illustrator": "",
 		"block": [
 			"02"
 		]
@@ -3126,7 +3233,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Yellow",
 		"version": "AA",
-		"illustrator": "",
+		"restriction": "",
+    "illustrator": "",
 		"block": [
 			"02"
 		]
@@ -3155,7 +3263,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Green",
 		"version": "Normal",
-		"illustrator": "",
+		"restriction": "",
+    "illustrator": "",
 		"block": [
 			"02"
 		]
@@ -3184,7 +3293,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Green",
 		"version": "AA",
-		"illustrator": "",
+		"restriction": "",
+    "illustrator": "",
 		"block": [
 			"02"
 		]
@@ -3213,7 +3323,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Green",
 		"version": "Normal",
-		"illustrator": "",
+		"restriction": "",
+    "illustrator": "",
 		"block": [
 			"02"
 		]
@@ -3242,7 +3353,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Black",
 		"version": "Normal",
-		"illustrator": "",
+		"restriction": "",
+    "illustrator": "",
 		"block": [
 			"02"
 		]
@@ -3271,7 +3383,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Black",
 		"version": "AA",
-		"illustrator": "",
+		"restriction": "",
+    "illustrator": "",
 		"block": [
 			"02"
 		]
@@ -3300,7 +3413,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Purple",
 		"version": "Normal",
-		"illustrator": "",
+		"restriction": "",
+    "illustrator": "",
 		"block": [
 			"02"
 		]
@@ -3329,7 +3443,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Purple",
 		"version": "AA",
-		"illustrator": "",
+		"restriction": "",
+    "illustrator": "",
 		"block": [
 			"02"
 		]
@@ -3358,7 +3473,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Red",
 		"version": "Normal",
-		"illustrator": "",
+		"restriction": "",
+    "illustrator": "",
 		"block": [
 			"02"
 		]
@@ -3387,7 +3503,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Red",
 		"version": "Normal",
-		"illustrator": "Shin Sasaki",
+		"restriction": "",
+    "illustrator": "Shin Sasaki",
 		"block": [
 			"02"
 		]
@@ -3416,7 +3533,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Red",
 		"version": "Normal",
-		"illustrator": "SENNSU",
+		"restriction": "",
+    "illustrator": "SENNSU",
 		"block": [
 			"02"
 		]
@@ -3445,7 +3563,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Blue",
 		"version": "Normal",
-		"illustrator": "Shin Sasaki",
+		"restriction": "",
+    "illustrator": "Shin Sasaki",
 		"block": [
 			"02"
 		]
@@ -3474,7 +3593,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Blue",
 		"version": "Normal",
-		"illustrator": "hokuyuu",
+		"restriction": "",
+    "illustrator": "hokuyuu",
 		"block": [
 			"02"
 		]
@@ -3503,7 +3623,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Yellow",
 		"version": "Normal",
-		"illustrator": "Ishibashi Yosuke",
+		"restriction": "",
+    "illustrator": "Ishibashi Yosuke",
 		"block": [
 			"02"
 		]
@@ -3532,7 +3653,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Yellow",
 		"version": "Normal",
-		"illustrator": "p!k@ru",
+		"restriction": "",
+    "illustrator": "p!k@ru",
 		"block": [
 			"02"
 		]
@@ -3561,7 +3683,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Yellow",
 		"version": "Normal",
-		"illustrator": "itohiro",
+		"restriction": "",
+    "illustrator": "itohiro",
 		"block": [
 			"02"
 		]
@@ -3590,7 +3713,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Green",
 		"version": "Normal",
-		"illustrator": "",
+		"restriction": "",
+    "illustrator": "",
 		"block": [
 			"02"
 		]
@@ -3619,7 +3743,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Green",
 		"version": "Normal",
-		"illustrator": "itohiro",
+		"restriction": "",
+    "illustrator": "itohiro",
 		"block": [
 			"02"
 		]
@@ -3648,7 +3773,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Black/Purple",
 		"version": "Normal",
-		"illustrator": "Shin Sasaki",
+		"restriction": "",
+    "illustrator": "Shin Sasaki",
 		"block": [
 			"02"
 		]
@@ -3677,7 +3803,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Black",
 		"version": "Normal",
-		"illustrator": "",
+		"restriction": "",
+    "illustrator": "",
 		"block": [
 			"02"
 		]
@@ -3706,7 +3833,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Black",
 		"version": "Normal",
-		"illustrator": "SENNSU",
+		"restriction": "",
+    "illustrator": "SENNSU",
 		"block": [
 			"02"
 		]
@@ -3735,7 +3863,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Purple",
 		"version": "Normal",
-		"illustrator": "banira",
+		"restriction": "",
+    "illustrator": "banira",
 		"block": [
 			"02"
 		]
@@ -3764,7 +3893,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Purple",
 		"version": "Normal",
-		"illustrator": "Ishibashi Yosuke",
+		"restriction": "",
+    "illustrator": "Ishibashi Yosuke",
 		"block": [
 			"02"
 		]
@@ -3793,7 +3923,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "White",
 		"version": "Normal",
-		"illustrator": "",
+		"restriction": "",
+    "illustrator": "",
 		"block": [
 			"02"
 		]
@@ -3822,7 +3953,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "White",
 		"version": "Normal",
-		"illustrator": "Shin Sasaski",
+		"restriction": "",
+    "illustrator": "Shin Sasaski",
 		"block": [
 			"02"
 		]
@@ -3851,7 +3983,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Red",
 		"version": "Normal",
-		"illustrator": "Tonamikanji",
+		"restriction": "",
+    "illustrator": "Tonamikanji",
 		"block": [
 			"02"
 		]
@@ -3880,7 +4013,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Red",
 		"version": "AA",
-		"illustrator": "sasasi",
+		"restriction": "",
+    "illustrator": "sasasi",
 		"block": [
 			"02"
 		]
@@ -3909,7 +4043,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Red/Black",
 		"version": "Normal",
-		"illustrator": "Tonamikanji",
+		"restriction": "",
+    "illustrator": "Tonamikanji",
 		"block": [
 			"02"
 		]
@@ -3938,7 +4073,8 @@
 		"notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
 		"color": "Red/Black",
 		"version": "AA",
-		"illustrator": "As'Maria",
+		"restriction": "",
+    "illustrator": "As'Maria",
 		"block": [
 			"02"
 		]

@@ -26,6 +26,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -55,6 +56,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -84,6 +86,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Ryuda"
   },
   {
@@ -114,7 +117,39 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
+  },
+  {
+    "id": "ST3-04_P1",
+    "name": "Patamon",
+    "cardImage": "assets/images/cards/jap/ST3-04_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "1000",
+    "playCost": "3",
+    "digivolveCost1": "0  from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Data",
+    "type": "Mammal",
+    "rarity": "U",
+    "cardNumber": "ST3-04",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When an opponent's Digimon is deleted by dropping to 0 DP, gain 1 memory.",
+    "securityEffect": "-",
+    "notes": "Memorial Collection 01",
+    "color": "Yellow",
+    "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Kayo Horaguchi"
   },
   {
     "id": "ST3-05",
@@ -144,7 +179,39 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
+  },
+  {
+    "id": "ST3-05_P1",
+    "name": "Angemon",
+    "cardImage": "assets/images/cards/jap/ST3-05_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "4000",
+    "playCost": "5",
+    "digivolveCost1": "2  from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Vaccine",
+    "type": "Angel",
+    "rarity": "U",
+    "cardNumber": "ST3-05",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "[When Attacking] If you have 4 or more security cards, gain 1 memory.",
+    "securityEffect": "-",
+    "notes": "Premium Bandai Apparel Promotional Cards",
+    "color": "Yellow",
+    "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Qacoro"
   },
   {
     "id": "ST3-05_P2",
@@ -174,6 +241,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tessy"
   },
   {
@@ -203,6 +271,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -232,6 +301,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Ryuda"
   },
   {
@@ -261,6 +331,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Ryuda"
   },
   {
@@ -291,6 +362,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -321,6 +393,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tessy"
   },
   {
@@ -351,6 +424,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -380,6 +454,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -409,6 +484,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Qacoro"
   },
   {
@@ -438,6 +514,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -467,6 +544,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -497,6 +575,7 @@
       "00",
       "02"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -527,6 +606,7 @@
       "00",
       "02"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -556,6 +636,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "MATSUMOTO EIGHT"
   },
   {
@@ -585,6 +666,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Takase"
   },
   {
@@ -614,6 +696,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "p!k@ru"
   },
   {
@@ -643,6 +726,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "NAKAMURA 8"
   },
   {
@@ -672,6 +756,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Takase"
   },
   {
@@ -701,6 +786,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Ishibashi Yosuke"
   }
 ]

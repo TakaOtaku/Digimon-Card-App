@@ -1,16 +1,30 @@
-<div class="surface-ground flex p-0">
-  <a href="https://digimoncard.app">
-    <img alt="Logo" class="max-h-8 md:max-h-10 ml-5 mt-2 cursor-pointer" src="../../../assets/images/img_logo.png">
-  </a>
+<div class="surface-ground flex max-h-12 p-0">
+	<a href="https://digimoncard.app">
+		<img alt="Logo" class="ml-5 mt-2 max-h-6 cursor-pointer md:max-h-8" src="../../../assets/images/img_logo.png" />
+	</a>
 
-  <digimon-slider *ngIf="site === 0" class="hidden lg:flex flex-grow"></digimon-slider>
+	<div class="ml-auto flex flex-row">
+    <digimon-filter-button class="md:hidden"></digimon-filter-button>
 
-  <div class="ml-auto mt-2 hidden lg:block">
-    <p-button (onClick)="changeSite(SITES.DeckBuilder)" class="mt-2 ml-2" styleClass="font-bold">Deckbuilder</p-button>
-    <p-button (onClick)="changeSite(SITES.Decks)" class="mt-2 ml-2" styleClass="font-bold">My Decks</p-button>
-    <p-button (onClick)="changeSite(SITES.CommunityDecks)" class="mt-2 mx-2" styleClass="font-bold">Community Decks</p-button>
-  </div>
+		<button
+			(click)="changeSite(SITES.DeckBuilder)"
+			class="hidden lg:block min-w-auto primary-background ml-2 mt-2 h-8 w-32 rounded p-2 text-xs font-semibold text-white"
+		>
+			Home
+		</button>
+		<button
+			(click)="changeSite(SITES.Decks)"
+			class="hidden lg:block min-w-auto primary-background ml-2 mt-2 h-8 w-32 rounded p-2 text-xs font-semibold text-white"
+		>
+			My Decks
+		</button>
+		<button
+			(click)="changeSite(SITES.CommunityDecks)"
+			class="hidden lg:block min-w-auto primary-background ml-2 mt-2 h-8 w-32 rounded p-2 text-xs font-semibold text-white"
+		>
+			Community Decks
+		</button>
+	</div>
 
-
-  <digimon-menu class="ml-auto lg:ml-0 mt-2"></digimon-menu>
+	<digimon-menu class="ml-auto mt-2 lg:ml-0"></digimon-menu>
 </div>

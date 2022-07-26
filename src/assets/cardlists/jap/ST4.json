@@ -26,6 +26,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -55,6 +56,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -85,6 +87,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -115,7 +118,39 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "itohiro"
+  },
+  {
+    "id": "ST4-03_P2",
+    "name": "Tentomon",
+    "cardImage": "assets/images/cards/jap/ST4-03_P2.jpg",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Vaccine",
+    "type": "Insectoid",
+    "rarity": "U",
+    "cardNumber": "ST4-03",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Play] Reveal the top card of your deck. If it's a green Digimon card, add it to your hand. Otherwise, place it at the bottom of your deck.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Memorial Collection 01",
+    "color": "Green",
+    "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Kayo Horaguchi"
   },
   {
     "id": "ST4-04",
@@ -145,7 +180,39 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
+  },
+  {
+    "id": "ST4-04_P1",
+    "name": "Palmon",
+    "cardImage": "assets/images/cards/jap/ST4-04_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "3",
+    "digivolveCost1": "0  from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Data",
+    "type": "Vegetation",
+    "rarity": "C",
+    "cardNumber": "ST4-04",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "[When Attacking] If you attack an opponent's Digimon, this Digimon gets +2000 DP for the turn.",
+    "securityEffect": "-",
+    "notes": "Memorial Collection 01",
+    "color": "Green",
+    "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Kayo Horaguchi"
   },
   {
     "id": "ST4-05",
@@ -174,6 +241,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -203,6 +271,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -232,6 +301,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -262,6 +332,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -292,6 +363,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "koki"
   },
   {
@@ -321,6 +393,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -351,6 +424,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -381,6 +455,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "banira"
   },
   {
@@ -410,6 +485,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -439,6 +515,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -468,6 +545,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -497,6 +575,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -526,6 +605,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "funbolt"
   },
   {
@@ -555,6 +635,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "funbolt"
   }
 ]

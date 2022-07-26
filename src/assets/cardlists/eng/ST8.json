@@ -26,6 +26,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -55,6 +56,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Sanosuke Sakuma"
   },
   {
@@ -84,6 +86,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "itohiro"
   },
   {
@@ -113,6 +116,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -142,6 +146,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -171,6 +176,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -200,6 +206,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -229,6 +236,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -258,6 +266,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "itohiro"
   },
   {
@@ -287,7 +296,66 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "itohiro"
+  },
+  {
+    "id": "ST8-06_P2",
+    "name": "Coredramon",
+    "cardImage": "assets/images/cards/eng/ST8-06_P2.jpg",
+    "cardType": "Digimon",
+    "dp": "5000",
+    "playCost": "6",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Vaccine",
+    "type": "Dragon",
+    "rarity": "U",
+    "cardNumber": "ST8-06",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Security] At the end of the battle, play this card without paying its memory cost.\n[On Play] Trigger ＜Draw 2＞. (Draw 2 cards from your deck.)",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Store Championship 2022 Participant Pack",
+    "color": "Blue",
+    "version": "Stamp",
+    "block": [
+      "01"
+    ],
+    "illustrator": "Kazumasa Yasukuni"
+  },
+  {
+    "id": "ST8-06_P3",
+    "name": "Coredramon",
+    "cardImage": "assets/images/cards/eng/ST8-06_P3.jpg",
+    "cardType": "Digimon",
+    "dp": "5000",
+    "playCost": "6",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Vaccine",
+    "type": "Dragon",
+    "rarity": "U",
+    "cardNumber": "ST8-06",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Security] At the end of the battle, play this card without paying its memory cost.\n[On Play] Trigger ＜Draw 2＞. (Draw 2 cards from your deck.)",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Store Championship 2022 Champion Card Set",
+    "color": "Blue",
+    "version": "Stamp",
+    "block": [
+      "01"
+    ],
+    "illustrator": "Kazumasa Yasukuni"
   },
   {
     "id": "ST8-07",
@@ -316,6 +384,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "itohiro"
   },
   {
@@ -345,6 +414,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -374,6 +444,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "itohiro"
   },
   {
@@ -403,6 +474,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -432,6 +504,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -461,6 +534,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   }
 ]

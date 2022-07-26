@@ -18,7 +18,7 @@
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "-",
-    "digivolveEffect": "[Your Turn] While there are 5 or more cards in your opponent's recycle bin, this Digimon gets +1000 DP.",
+    "digivolveEffect": "[Your Turn] While there are 5 or more cards in your opponent's trash, this Digimon gets +1000 DP.",
     "securityEffect": "-",
     "notes": "▹booster ULTIMATE POWER [BT-02]",
     "color": "Red",
@@ -27,6 +27,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kirita"
   },
   {
@@ -48,7 +49,7 @@
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "-",
-    "digivolveEffect": "[Your Turn] While there are 5 or more cards in your opponent's recycle bin, this Digimon gets +1000 DP.",
+    "digivolveEffect": "[Your Turn] While there are 5 or more cards in your opponent's trash, this Digimon gets +1000 DP.",
     "securityEffect": "-",
     "notes": "▹start deck Special Entry Set[ST-11]",
     "color": "Red",
@@ -57,6 +58,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "tessy"
   },
   {
@@ -86,6 +88,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Kirita"
   },
   {
@@ -115,6 +118,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -144,6 +148,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -173,6 +178,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Sanosuke Sakuma"
   },
   {
@@ -202,6 +208,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "koki"
   },
   {
@@ -231,6 +238,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Kirita"
   },
   {
@@ -252,7 +260,7 @@
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "-",
-    "digivolveEffect": "[Your Turn] While you have 5 or more cards in your recycle bin, this Digimon gets +1000 DP.",
+    "digivolveEffect": "[Your Turn] While you have 5 or more cards in your trash, this Digimon gets +1000 DP.",
     "securityEffect": "-",
     "notes": "▹booster ULTIMATE POWER [BT-02]",
     "color": "Purple",
@@ -260,6 +268,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "yuuki."
   },
   {
@@ -281,7 +290,7 @@
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "-",
-    "digivolveEffect": "[Your Turn] While there are 5 or more cards in your opponent's recycle bin, this Digimon gets +1000 DP.",
+    "digivolveEffect": "[Your Turn] While there are 5 or more cards in your opponent's trash, this Digimon gets +1000 DP.",
     "securityEffect": "-",
     "notes": "▹booster ULTIMATE POWER [BT-02]",
     "color": "Red",
@@ -290,7 +299,39 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
+  },
+  {
+    "id": "BT2-009_P1",
+    "name": "Guilmon",
+    "cardImage": "assets/images/cards/jap/BT2-009_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "3000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Virus",
+    "type": "Reptile",
+    "rarity": "C",
+    "cardNumber": "BT2-009",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "[Your Turn] While there are 5 or more cards in your opponent's trash, this Digimon gets +1000 DP.",
+    "securityEffect": "-",
+    "notes": "Memorial Collection 02",
+    "color": "Red",
+    "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Ishibashi Yosuke"
   },
   {
     "id": "BT2-010",
@@ -320,6 +361,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Takumi Kousaka"
   },
   {
@@ -350,6 +392,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "yuuki."
   },
   {
@@ -380,6 +423,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "KISUKE"
   },
   {
@@ -410,6 +454,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -440,6 +485,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Takumi Kousaka"
   },
   {
@@ -470,6 +516,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Takase"
   },
   {
@@ -500,6 +547,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -530,6 +578,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -559,6 +608,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "KISUKE"
   },
   {
@@ -589,6 +639,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Takumi Kousaka"
   },
   {
@@ -619,6 +670,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Takase"
   },
   {
@@ -649,6 +701,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "KISUKE"
   },
   {
@@ -679,6 +732,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -700,7 +754,7 @@
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "[When Digivolving] If you have a red Tamer in play, delete 1 of your opponent's Digimon with 3000 DP or less.",
-    "digivolveEffect": "[Your Turn] While there are 5 or more cards in your opponent's recycle bin, this Digimon gets +1000 DP.",
+    "digivolveEffect": "[Your Turn] While there are 5 or more cards in your opponent's trash, this Digimon gets +1000 DP.",
     "securityEffect": "-",
     "notes": "▹booster ULTIMATE POWER [BT-02]",
     "color": "Red",
@@ -708,6 +762,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -729,7 +784,7 @@
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "[When Digivolving] If you have a red Tamer in play, delete 1 of your opponent's Digimon with 3000 DP or less.",
-    "digivolveEffect": "[Your Turn] While there are 5 or more cards in your opponent's recycle bin, this Digimon gets +1000 DP.",
+    "digivolveEffect": "[Your Turn] While there are 5 or more cards in your opponent's trash, this Digimon gets +1000 DP.",
     "securityEffect": "-",
     "notes": "Tamer Battle Pack 3",
     "color": "Red",
@@ -737,6 +792,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "tessy"
   },
   {
@@ -767,6 +823,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "KISUKE"
   },
   {
@@ -797,6 +854,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -826,6 +884,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Takumi Kousaka"
   },
   {
@@ -846,7 +905,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[When Digivolving] If you have a red Tamer in play, delete 1 of your opponent's Digimon with 6000 DP or less.\n[When Attacking] Trash 1 of your opponent's security cards for every 10 cards in their recycle bin.",
+    "effect": "[When Digivolving] If you have a red Tamer in play, delete 1 of your opponent's Digimon with 6000 DP or less.\n[When Attacking] Trash 1 of your opponent's security cards for every 10 cards in their trash.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹booster ULTIMATE POWER [BT-02]",
@@ -855,6 +914,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -875,7 +935,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[When Digivolving] If you have a red Tamer in play, delete 1 of your opponent's Digimon with 6000 DP or less.\n[When Attacking] Trash 1 of your opponent's security cards for every 10 cards in their recycle bin.",
+    "effect": "[When Digivolving] If you have a red Tamer in play, delete 1 of your opponent's Digimon with 6000 DP or less.\n[When Attacking] Trash 1 of your opponent's security cards for every 10 cards in their trash.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹booster ULTIMATE POWER [BT-02]",
@@ -884,6 +944,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -913,6 +974,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Kirita"
   },
   {
@@ -942,6 +1004,7 @@
       "00"
     ],
     "version": "Stamp",
+    "restriction": "",
     "illustrator": "Ishibashi Yosuke"
   },
   {
@@ -971,6 +1034,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -1000,6 +1064,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "TANIMESO"
   },
   {
@@ -1029,6 +1094,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -1059,6 +1125,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "TANIMESO"
   },
   {
@@ -1089,6 +1156,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "koki"
   },
   {
@@ -1118,6 +1186,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -1147,6 +1216,7 @@
       "00"
     ],
     "version": "Stamp",
+    "restriction": "",
     "illustrator": "Ishibashi Yosuke"
   },
   {
@@ -1177,6 +1247,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "TANIMESO"
   },
   {
@@ -1207,6 +1278,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "koki"
   },
   {
@@ -1236,6 +1308,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -1265,6 +1338,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -1294,6 +1368,7 @@
       "00"
     ],
     "version": "Stamp",
+    "restriction": "",
     "illustrator": "Ishibashi Yosuke"
   },
   {
@@ -1323,6 +1398,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -1352,6 +1428,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -1381,6 +1458,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -1410,6 +1488,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "TANIMESO"
   },
   {
@@ -1439,6 +1518,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -1468,6 +1548,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -1497,6 +1578,7 @@
       "00"
     ],
     "version": "Stamp",
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -1526,6 +1608,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -1555,6 +1638,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "GOSSAN"
   },
   {
@@ -1585,6 +1669,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Teppei Tadokoro"
   },
   {
@@ -1615,6 +1700,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ryodan"
   },
   {
@@ -1644,6 +1730,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -1674,7 +1761,39 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Teppei Tadokoro"
+  },
+  {
+    "id": "BT2-036_P1",
+    "name": "Gatomon",
+    "cardImage": "assets/images/cards/jap/BT2-036_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "3000",
+    "playCost": "5",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Vaccine",
+    "type": "Holy Beast",
+    "rarity": "U",
+    "cardNumber": "BT2-036",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Play] If you have a purple Digimon in play, 1 of your opponent's Digimon gets -4000 DP for the turn.\n[Your Turn] When one of your other Digimon is deleted, this Digimon gets +3000 DP for the turn.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Memorial Collection 01",
+    "color": "Yellow",
+    "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Kayo Horaguchi"
   },
   {
     "id": "BT2-037",
@@ -1704,6 +1823,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Teppei Tadokoro"
   },
   {
@@ -1734,6 +1854,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ryodan"
   },
   {
@@ -1763,6 +1884,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -1792,6 +1914,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -1821,6 +1944,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -1850,6 +1974,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Ishibashi Yosuke"
   },
   {
@@ -1879,6 +2004,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Teppei Tadokoro"
   },
   {
@@ -1908,6 +2034,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -1937,6 +2064,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -1966,6 +2094,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -1995,6 +2124,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -2024,6 +2154,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -2053,6 +2184,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -2082,6 +2214,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -2111,6 +2244,7 @@
     "block": [
       "00"
     ],
+    "restriction": "Restricted to 1",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -2140,6 +2274,7 @@
     "block": [
       "00"
     ],
+    "restriction": "Restricted to 1",
     "illustrator": "shosuke"
   },
   {
@@ -2169,6 +2304,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "koki"
   },
   {
@@ -2198,6 +2334,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -2227,6 +2364,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -2256,6 +2394,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -2285,6 +2424,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -2314,6 +2454,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "kaz"
   },
   {
@@ -2344,6 +2485,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "shosuke"
   },
   {
@@ -2374,6 +2516,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "koki"
   },
   {
@@ -2404,6 +2547,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "koki"
   },
   {
@@ -2433,6 +2577,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "koki"
   },
   {
@@ -2462,6 +2607,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -2489,9 +2635,42 @@
     "color": "Black",
     "version": "Normal",
     "block": [
-      "00"
+      "00",
+      "02"    
     ],
+    "restriction": "",
     "illustrator": "koki"
+  },
+  {
+    "id": "BT2-056_P1",
+    "name": "Numemon",
+    "cardImage": "assets/images/cards/jap/BT2-056_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "3000",
+    "playCost": "3",
+    "digivolveCost1": "1 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Virus",
+    "type": "Mollusk",
+    "rarity": "C",
+    "cardNumber": "BT2-056",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Digimon Illustration Competition Promotion Pack",
+    "color": "Black",
+    "version": "AA",
+    "block": [
+      "00",
+      "02"    
+    ],
+    "restriction": "",
+    "illustrator": "Yuki Mukai"
   },
   {
     "id": "BT2-057",
@@ -2521,6 +2700,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -2551,6 +2731,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "itohiro"
   },
   {
@@ -2581,6 +2762,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "kaz"
   },
   {
@@ -2611,6 +2793,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tomotake Kinoshita"
   },
   {
@@ -2640,6 +2823,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "shosuke"
   },
   {
@@ -2669,6 +2853,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -2698,6 +2883,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "kaz"
   },
   {
@@ -2727,6 +2913,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "TANIMESO"
   },
   {
@@ -2756,6 +2943,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "shosuke"
   },
   {
@@ -2786,6 +2974,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -2816,6 +3005,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "itohiro"
   },
   {
@@ -2845,6 +3035,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "kaz"
   },
   {
@@ -2874,6 +3065,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -2903,6 +3095,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -2933,6 +3126,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -2963,7 +3157,39 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
+  },
+  {
+    "id": "BT2-066_P2",
+    "name": "Machinedramon",
+    "cardImage": "assets/images/cards/jap/BT2-066_P2.jpg",
+    "cardType": "Digimon",
+    "dp": "11000",
+    "playCost": "12",
+    "digivolveCost1": "4 from Lv.5",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Virus",
+    "type": "Machine",
+    "rarity": "SR",
+    "cardNumber": "BT2-066",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "＜Blocker＞ (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)\n[On Play] Trigger ＜De-Digivolve 2＞ on 2 of your opponent's Digimon. (Trash up to 2 cards from the top of one of your opponent's Digimon. If it has no digivolution cards, or becomes a level 3 Digimon, you can't trash any more cards.)",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "TAMER'S SELECTION BOX Evolution Cup 2022",
+    "color": "Black",
+    "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "toriyufu"
   },
   {
     "id": "BT2-067",
@@ -2993,6 +3219,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Hisashi Fujiwara"
   },
   {
@@ -3023,6 +3250,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "GOSSAN"
   },
   {
@@ -3053,7 +3281,39 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "yuuki."
+  },
+  {
+    "id": "BT2-068_P1",
+    "name": "Impmon",
+    "cardImage": "assets/images/cards/jap/BT2-068_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "1000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Virus",
+    "type": "Evil",
+    "rarity": "C",
+    "cardNumber": "BT2-068",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Deletion] Trash the top 3 cards of your deck.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Memorial Collection 02",
+    "color": "Purple",
+    "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Shin Sasaki"
   },
   {
     "id": "BT2-069",
@@ -3083,6 +3343,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -3113,6 +3374,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "GOSSAN"
   },
   {
@@ -3142,6 +3404,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Takase"
   },
   {
@@ -3171,6 +3434,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Takase"
   },
   {
@@ -3200,6 +3464,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "koki"
   },
   {
@@ -3229,6 +3494,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "koki"
   },
   {
@@ -3259,6 +3525,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -3289,6 +3556,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "GOSSAN"
   },
   {
@@ -3319,6 +3587,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Hisashi Fujiwara"
   },
   {
@@ -3349,6 +3618,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "koki"
   },
   {
@@ -3378,6 +3648,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Hisashi Fujiwara"
   },
   {
@@ -3407,6 +3678,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "koki"
   },
   {
@@ -3436,6 +3708,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -3465,6 +3738,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Naochika Morishita"
   },
   {
@@ -3494,6 +3768,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Naochika Morishita"
   },
   {
@@ -3524,6 +3799,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -3554,6 +3830,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "GOSSAN"
   },
   {
@@ -3583,6 +3860,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Hisashi Fujiwara"
   },
   {
@@ -3603,7 +3881,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "＜Retaliation＞ (When this Digimon is deleted after losing a battle, delete the Digimon it was battling.)\n[On Play] You may play up to 2 purple level 4 or lower Digimon from your recycle bin. Any [On Play] effects on Digimon played with this effect don't activate.",
+    "effect": "＜Retaliation＞ (When this Digimon is deleted after losing a battle, delete the Digimon it was battling.)\n[On Play] You may play up to 2 purple level 4 or lower Digimon from your trash. Any [On Play] effects on Digimon played with this effect don't activate.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹booster ULTIMATE POWER [BT-02]",
@@ -3612,6 +3890,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Naochika Morishita"
   },
   {
@@ -3632,7 +3911,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "＜Retaliation＞ (When this Digimon is deleted after losing a battle, delete the Digimon it was battling.)\n[On Play] You may play up to 2 purple level 4 or lower Digimon from your recycle bin. Any [On Play] effects on Digimon played with this effect don't activate.",
+    "effect": "＜Retaliation＞ (When this Digimon is deleted after losing a battle, delete the Digimon it was battling.)\n[On Play] You may play up to 2 purple level 4 or lower Digimon from your trash. Any [On Play] effects on Digimon played with this effect don't activate.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹booster ULTIMATE POWER [BT-02]",
@@ -3641,6 +3920,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -3661,7 +3941,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[When Attacking] You may play 1 purple level 3 or lower Digimon from your recycle bin. Any [On Play] effects on Digimon played with this effect don't activate.",
+    "effect": "[When Attacking] You may play 1 purple level 3 or lower Digimon from your trash. Any [On Play] effects on Digimon played with this effect don't activate.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹booster ULTIMATE POWER [BT-02]",
@@ -3670,6 +3950,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -3690,7 +3971,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[When Attacking] You may play 1 purple level 3 or lower Digimon from your recycle bin. Any [On Play] effects on Digimon played with this effect don't activate.",
+    "effect": "[When Attacking] You may play 1 purple level 3 or lower Digimon from your trash. Any [On Play] effects on Digimon played with this effect don't activate.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹booster ULTIMATE POWER [BT-02]",
@@ -3699,6 +3980,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -3728,6 +4010,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "TANIMESO"
   },
   {
@@ -3757,6 +4040,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "As'Maria"
   },
   {
@@ -3777,7 +4061,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[When Digivolving] Return 1 of your opponent's Digimon to the bottom of their deck. Trash all of the digivolution cards on that Digimon.\n[On Deletion] If this card had digivolution cards, you may play this card from your recycle bin without paying its memory cost.",
+    "effect": "[When Digivolving] Return 1 of your opponent's Digimon to the bottom of their deck. Trash all of the digivolution cards on that Digimon.\n[On Deletion] If this card had digivolution cards, you may play this card from your trash without paying its memory cost.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹booster ULTIMATE POWER [BT-02]",
@@ -3787,6 +4071,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "sasasi"
   },
   {
@@ -3817,6 +4102,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "GOSSAN"
   },
   {
@@ -3847,6 +4133,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3877,6 +4164,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3907,6 +4195,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3937,6 +4226,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3967,6 +4257,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -3997,6 +4288,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -4026,6 +4318,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -4056,6 +4349,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -4086,6 +4380,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -4116,6 +4411,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -4145,6 +4441,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -4175,6 +4472,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -4205,6 +4503,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -4235,6 +4534,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -4255,7 +4555,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[Start of Your Turn] If you have 2 memory or less, set your memory to 3.\n[On Play] Return 1 purple Digimon card or purple Option card from your recycle bin to your hand.",
+    "effect": "[Start of Your Turn] If you have 2 memory or less, set your memory to 3.\n[On Play] Return 1 purple Digimon card or purple Option card from your trash to your hand.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
     "notes": "▹booster ULTIMATE POWER [BT-02]",
@@ -4265,6 +4565,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -4285,7 +4586,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[Start of Your Turn] If you have 2 memory or less, set your memory to 3.\n[On Play] Return 1 purple Digimon card or purple Option card from your recycle bin to your hand.",
+    "effect": "[Start of Your Turn] If you have 2 memory or less, set your memory to 3.\n[On Play] Return 1 purple Digimon card or purple Option card from your trash to your hand.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
     "notes": "▹booster ULTIMATE POWER [BT-02]",
@@ -4295,6 +4596,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -4315,7 +4617,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[Start of Your Turn] If you have 2 memory or less, set your memory to 3.\n[On Play] Return 1 purple Digimon card or purple Option card from your recycle bin to your hand.",
+    "effect": "[Start of Your Turn] If you have 2 memory or less, set your memory to 3.\n[On Play] Return 1 purple Digimon card or purple Option card from your trash to your hand.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
     "notes": "1st year Anniversary adventure pack",
@@ -4325,6 +4627,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": ""
   },
   {
@@ -4354,6 +4657,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "itohiro"
   },
   {
@@ -4383,6 +4687,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "funbolt"
   },
   {
@@ -4412,6 +4717,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -4441,6 +4747,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "p!k@ru"
   },
   {
@@ -4470,6 +4777,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "UnnoDaisuke"
   },
   {
@@ -4499,6 +4807,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "shosuke"
   },
   {
@@ -4528,6 +4837,7 @@
       "00"
     ],
     "version": "Stamp",
+    "restriction": "",
     "illustrator": "shosuke"
   },
   {
@@ -4557,6 +4867,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Sanosuke Sakuma"
   },
   {
@@ -4586,6 +4897,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "p!k@ru"
   },
   {
@@ -4615,6 +4927,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "shosuke"
   },
   {
@@ -4644,6 +4957,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "funbolt"
   },
   {
@@ -4673,6 +4987,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Takase"
   },
   {
@@ -4702,6 +5017,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "funbolt"
   },
   {
@@ -4731,6 +5047,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Tomotake Kinoshita"
   },
   {
@@ -4760,6 +5077,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "funbolt"
   },
   {
@@ -4789,6 +5107,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Takase"
   },
   {
@@ -4818,6 +5137,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "UnnoDaisuke"
   },
   {
@@ -4847,6 +5167,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Nakano Haito"
   },
   {
@@ -4867,7 +5188,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[Main] Play 1 purple level 3 Digimon from your recycle bin without paying its memory cost. Any [On Play] effects on the Digimon played with this effect don't activate.",
+    "effect": "[Main] Play 1 purple level 3 Digimon from your trash without paying its memory cost. Any [On Play] effects on the Digimon played with this effect don't activate.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
     "notes": "▹booster ULTIMATE POWER [BT-02]",
@@ -4877,6 +5198,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "p!k@ru"
   },
   {
@@ -4907,6 +5229,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "shosuke"
   },
   {
@@ -4936,6 +5259,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "UnnoDaisuke"
   },
   {
@@ -4965,6 +5289,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "p!k@ru"
   },
   {
@@ -4985,7 +5310,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "While you have 10 or more cards in your recycle bin, your [Impmon] can digivolve into this card in your hand for a memory cost of 4, ignoring this card's digivolution requirements.\n[When Digivolving] Delete 1 of your opponent's level 4 or lower Digimon.",
+    "effect": "While you have 10 or more cards in your trash, your [Impmon] can digivolve into this card in your hand for a memory cost of 4, ignoring this card's digivolution requirements.\n[When Digivolving] Delete 1 of your opponent's level 4 or lower Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹booster ULTIMATE POWER [BT-02]",
@@ -4994,6 +5319,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -5014,7 +5340,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "While you have 10 or more cards in your recycle bin, your [Impmon] can digivolve into this card in your hand for a memory cost of 4, ignoring this card's digivolution requirements.\n[When Digivolving] Delete 1 of your opponent's level 4 or lower Digimon.",
+    "effect": "While you have 10 or more cards in your trash, your [Impmon] can digivolve into this card in your hand for a memory cost of 4, ignoring this card's digivolution requirements.\n[When Digivolving] Delete 1 of your opponent's level 4 or lower Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹booster ULTIMATE POWER [BT-02]",
@@ -5023,6 +5349,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Naochika Morishita"
   },
   {
@@ -5052,6 +5379,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Tonamikanji"
   },
   {
@@ -5081,6 +5409,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Naochika Morishita"
   }
 ]
