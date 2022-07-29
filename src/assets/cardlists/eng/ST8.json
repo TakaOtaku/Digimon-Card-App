@@ -140,7 +140,7 @@
     "effect": "[Your Turn] If your opponent has a level 6 or higher Digimon in play, this Digimon can digivolve into an [UlforceVeedramon] in your hand for a memory cost of 4, ignoring its digivolution requirements.",
     "digivolveEffect": "[When Attacking] If you have 7 or fewer cards in your hand, trigger ＜Draw 1＞. (Draw 1 card from your deck.)",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "2022 Regionals Participant Card Set",
     "color": "Blue",
     "version": "Stamp",
     "block": [
@@ -170,7 +170,7 @@
     "effect": "[Your Turn] If your opponent has a level 6 or higher Digimon in play, this Digimon can digivolve into an [UlforceVeedramon] in your hand for a memory cost of 4, ignoring its digivolution requirements.",
     "digivolveEffect": "[When Attacking] If you have 7 or fewer cards in your hand, trigger ＜Draw 1＞. (Draw 1 card from your deck.)",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "2022 Regionals Finalist Card Set",
     "color": "Blue",
     "version": "Stamp",
     "block": [
@@ -200,7 +200,7 @@
     "effect": "[Your Turn] If your opponent has a level 6 or higher Digimon in play, this Digimon can digivolve into an [UlforceVeedramon] in your hand for a memory cost of 4, ignoring its digivolution requirements.",
     "digivolveEffect": "[When Attacking] If you have 7 or fewer cards in your hand, trigger ＜Draw 1＞. (Draw 1 card from your deck.)",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "2022 Regionals Champion Card Set",
     "color": "Blue",
     "version": "Stamp",
     "block": [
@@ -326,6 +326,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -355,6 +356,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kazumasa Yasukuni"
   },
   {

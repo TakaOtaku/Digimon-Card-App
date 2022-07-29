@@ -1400,6 +1400,37 @@
     "illustrator": "Hisashi Fujiwara"
   },
   {
+    "id": "BT1-035_P1",
+    "name": "Leomon",
+    "cardImage": "assets/images/cards/eng/BT1-035_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "5000",
+    "playCost": "5",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Vaccine",
+    "type": "Beastkin",
+    "rarity": "U",
+    "cardNumber": "BT1-035",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Deletion] Gain 2 memory.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Digimon Card Game Playmat and Card Set 1 -Digimon Tamers-[PB-08]",
+    "color": "Blue",
+    "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "shosuke"
+  },
+  {
     "id": "BT1-036",
     "name": "Garurumon",
     "cardImage": "assets/images/cards/eng/BT1-036.jpg",
@@ -2269,7 +2300,7 @@
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "Winner Pack",
+    "notes": "Winner Pack DOUBLE DIAMOND",
     "color": "Yellow",
     "version": "AA",
     "block": [
@@ -2947,6 +2978,37 @@
       "02"
     ],
     "restriction": "",
+    "illustrator": "KISUKE"
+  },
+  {
+    "id": "BT1-072_P2",
+    "name": "Woodmon",
+    "cardImage": "assets/images/cards/eng/BT1-072_P2.jpg",
+    "cardType": "Digimon",
+    "dp": "6000",
+    "playCost": "5",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Virus",
+    "type": "Vegetation",
+    "rarity": "U",
+    "cardNumber": "BT1-072",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "＜Blocker＞ (When an opponent's Digimon attacks， you may suspend this Digimon to force the opponent to attack it instead.)\n[When Attacking] Lose 2 memory.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Official Tournament Pack Vol.6",
+    "color": "Green",
+    "version": "AA",
+    "block": [
+      "00",
+      "02"
+    ],
+    "restriction": "",
     "illustrator": "koki"
   },
   {
@@ -3195,6 +3257,37 @@
     ],
     "restriction": "",
     "illustrator": "itohiro"
+  },
+  {
+    "id": "BT1-076_P3",
+    "name": "MegaKabuterimon",
+    "cardImage": "assets/images/cards/eng/BT1-076_P3.jpg",
+    "cardType": "Digimon",
+    "dp": "6000",
+    "playCost": "7",
+    "digivolveCost1": "2 from Lv.4",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.5",
+    "form": "Ultimate",
+    "attribute": "Vaccine",
+    "type": "Insectoid",
+    "rarity": "U",
+    "cardNumber": "BT1-076",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "[When Attacking] If your opponent has 2 or more suspended Digimon， gain 1 memory.",
+    "securityEffect": "-",
+    "notes": "Official Tournament Pack Vol.6",
+    "color": "Green",
+    "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Shin Sasaki"
   },
   {
     "id": "BT1-077",
@@ -5041,6 +5134,7 @@
       "00",
       "01"
     ],
+    "restriction": "",
     "illustrator": "Hokyyuu"
   },
   {

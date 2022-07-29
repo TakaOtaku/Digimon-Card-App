@@ -1556,6 +1556,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ryodan"
   },
   {
@@ -1585,6 +1586,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ryodan"
   },
   {
@@ -1728,7 +1730,7 @@
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "2022 Regionals Participant Card Set",
     "color": "Yellow",
     "version": "Stamp",
     "block": [
@@ -1758,7 +1760,7 @@
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "2022 Regionals Finalist Card Set",
     "color": "Yellow",
     "version": "Stamp",
     "block": [
@@ -1788,7 +1790,7 @@
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "2022 Regionals Champion Card Set",
     "color": "Yellow",
     "version": "Stamp",
     "block": [
@@ -2178,7 +2180,7 @@
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "2022 Regionals Participant Card Set",
     "color": "Green",
     "version": "Stamp",
     "block": [
@@ -2208,7 +2210,7 @@
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "2022 Regionals Finalist Card Set",
     "color": "Green",
     "version": "Stamp",
     "block": [
@@ -2238,7 +2240,7 @@
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "2022 Regionals Champion Card Set",
     "color": "Green",
     "version": "Stamp",
     "block": [
@@ -3564,6 +3566,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kenji Watanabe"
   },
   {

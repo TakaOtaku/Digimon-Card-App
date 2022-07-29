@@ -692,14 +692,14 @@
     "effect": "-",
     "digivolveEffect": "[Your Turn] When this Digimon is blocked, gain 3 memory.",
     "securityEffect": "-",
-    "notes": "Championship 2021 Finals Trophy Card 3rd Place",
+    "notes": "Official Tournament Pack Vol.6",
     "color": "Red",
     "version": "AA",
     "block": [
       "00"
     ],
-    "restriction": "",
-    "illustrator": "Nakano Haito"
+    "illustrator": "tessy",
+    "restriction": ""
   },
   {
     "id": "ST1-09_P4",

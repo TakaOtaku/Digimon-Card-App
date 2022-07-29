@@ -1736,6 +1736,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -1765,6 +1766,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -2308,6 +2310,96 @@
     "illustrator": "sasasi"
   },
   {
+    "id": "BT7-062_P1",
+    "name": "Dorugamon",
+    "cardImage": "assets/images/cards/eng/BT7-062_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "5000",
+    "playCost": "6",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Data",
+    "type": "Beast Dragon/X Antibody",
+    "rarity": "C",
+    "cardNumber": "BT7-062",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Opponent's Turn] While you have another Digimon in play with [X Antibody] in its traits, or a card with [X Antibody] in its traits is in this Digimon's digivolution cards, this Digimon gains ＜Blocker＞. (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)",
+    "digivolveEffect": "[All Turns] While this Digimon has [X Antibody] in its traits, it gets +1000 DP.",
+    "securityEffect": "-",
+    "notes": "2022 August Regionals Participant Card Set",
+    "color": "Black",
+    "version": "Stamp",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Kenji Watanabe"
+  },
+  {
+    "id": "BT7-062_P2",
+    "name": "Dorugamon",
+    "cardImage": "assets/images/cards/eng/BT7-062_P2.jpg",
+    "cardType": "Digimon",
+    "dp": "5000",
+    "playCost": "6",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Data",
+    "type": "Beast Dragon/X Antibody",
+    "rarity": "C",
+    "cardNumber": "BT7-062",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Opponent's Turn] While you have another Digimon in play with [X Antibody] in its traits, or a card with [X Antibody] in its traits is in this Digimon's digivolution cards, this Digimon gains ＜Blocker＞. (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)",
+    "digivolveEffect": "[All Turns] While this Digimon has [X Antibody] in its traits, it gets +1000 DP.",
+    "securityEffect": "-",
+    "notes": "2022 August Regionals Finalist Card Set",
+    "color": "Black",
+    "version": "Stamp",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Kenji Watanabe"
+  },
+  {
+    "id": "BT7-062_P3",
+    "name": "Dorugamon",
+    "cardImage": "assets/images/cards/eng/BT7-062_P3.jpg",
+    "cardType": "Digimon",
+    "dp": "5000",
+    "playCost": "6",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Data",
+    "type": "Beast Dragon/X Antibody",
+    "rarity": "C",
+    "cardNumber": "BT7-062",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Opponent's Turn] While you have another Digimon in play with [X Antibody] in its traits, or a card with [X Antibody] in its traits is in this Digimon's digivolution cards, this Digimon gains ＜Blocker＞. (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)",
+    "digivolveEffect": "[All Turns] While this Digimon has [X Antibody] in its traits, it gets +1000 DP.",
+    "securityEffect": "-",
+    "notes": "2022 August Regionals Champion Card Set",
+    "color": "Black",
+    "version": "Stamp",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Kenji Watanabe"
+  },
+  {
     "id": "BT7-063",
     "name": "DarkKnightmon",
     "cardImage": "assets/images/cards/eng/BT7-063.jpg",
@@ -2397,6 +2489,37 @@
     ],
     "restriction": "",
     "illustrator": "sasasi"
+  },
+  {
+    "id": "BT7-064_P1",
+    "name": "DoruGreymon",
+    "cardImage": "assets/images/cards/eng/BT7-064_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "7000",
+    "playCost": "8",
+    "digivolveCost1": "3 from Lv.4",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.5",
+    "form": "Ultimate",
+    "attribute": "Data",
+    "type": "Beast Dragon/X Antibody",
+    "rarity": "U",
+    "cardNumber": "BT7-064",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Digivolving] You may place 1 black card with [X Antibody] in its traits from your hand at the bottom of this Digimon's digivolution cards to prevent effects from deleting it or reducing its DP until the end of your opponent's next turn.",
+    "digivolveEffect": "[Your Turn] While this Digimon has [X Antibody] in its traits, it gains ＜Security Attack +1＞. (This Digimon checks 1 additional security card.)",
+    "securityEffect": "-",
+    "notes": "Official Tournament Pack Vol.6",
+    "color": "Black",
+    "version": "AA",
+    "block": [
+      "01",
+      "02"
+    ],
+    "restriction": "",
+    "illustrator": "Hisashi Fujiwara"
   },
   {
     "id": "BT7-065",
@@ -2635,6 +2758,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "banira"
   },
   {
@@ -2664,6 +2788,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "banira"
   },
   {
@@ -3053,6 +3178,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ryodan"
   },
   {
@@ -3082,6 +3208,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ryodan"
   },
   {
@@ -3135,7 +3262,7 @@
     "effect": "[On Play] Reveal the top 5 cards of your deck. Add 1 card with [Hybrid] or [Ten Warriors] in its traits and 1 Tamer card among them to your hand. Place the remaining cards at the bottom of your deck in any order.\n[Your Turn] [Once Per Turn] When one of your Tamers digivolves, gain 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "2022 Regionals Participant Card Set",
     "color": "White",
     "version": "Stamp",
     "block": [
@@ -3165,7 +3292,7 @@
     "effect": "[On Play] Reveal the top 5 cards of your deck. Add 1 card with [Hybrid] or [Ten Warriors] in its traits and 1 Tamer card among them to your hand. Place the remaining cards at the bottom of your deck in any order.\n[Your Turn] [Once Per Turn] When one of your Tamers digivolves, gain 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "2022 Regionals Finalist Card Set",
     "color": "White",
     "version": "Stamp",
     "block": [
@@ -3195,7 +3322,7 @@
     "effect": "[On Play] Reveal the top 5 cards of your deck. Add 1 card with [Hybrid] or [Ten Warriors] in its traits and 1 Tamer card among them to your hand. Place the remaining cards at the bottom of your deck in any order.\n[Your Turn] [Once Per Turn] When one of your Tamers digivolves, gain 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "2022 Regionals Champion Card Set",
     "color": "White",
     "version": "Stamp",
     "block": [
@@ -4312,7 +4439,97 @@
       "01"
     ],
     "restriction": "",
-    "illustrator": ""
+    "illustrator": "Shin Sasaki"
+  },
+  {
+    "id": "BT7-110_P2",
+    "name": "Evolution Ancient",
+    "cardImage": "assets/images/cards/eng/BT7-110_P2.jpg",
+    "cardType": "Option",
+    "dp": "-",
+    "playCost": "-",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "-",
+    "rarity": "R",
+    "cardNumber": "BT7-110",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "If you have a Digimon with [Hybrid] in its traits in play, you may use this Option card without meeting its color requirements.\n[Main] Your level 4 Digimon can digivolve into 1 Digimon card in your hand with matching colors and [Ten Warriors] in its traits for its digivolution cost, ignoring its level.",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Add this card to its owner's hand.",
+    "color": "White",
+    "version": "AA",
+    "notes": "2022 August Regionals Participant Card Set",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "banira"
+  },
+  {
+    "id": "BT7-110_P3",
+    "name": "Evolution Ancient",
+    "cardImage": "assets/images/cards/eng/BT7-110_P3.jpg",
+    "cardType": "Option",
+    "dp": "-",
+    "playCost": "-",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "-",
+    "rarity": "R",
+    "cardNumber": "BT7-110",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "If you have a Digimon with [Hybrid] in its traits in play, you may use this Option card without meeting its color requirements.\n[Main] Your level 4 Digimon can digivolve into 1 Digimon card in your hand with matching colors and [Ten Warriors] in its traits for its digivolution cost, ignoring its level.",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Add this card to its owner's hand.",
+    "color": "White",
+    "version": "AA",
+    "notes": "2022 August Regionals Finalist Card Set",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "banira"
+  },
+  {
+    "id": "BT7-110_P4",
+    "name": "Evolution Ancient",
+    "cardImage": "assets/images/cards/eng/BT7-110_P4.jpg",
+    "cardType": "Option",
+    "dp": "-",
+    "playCost": "-",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "-",
+    "rarity": "R",
+    "cardNumber": "BT7-110",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "If you have a Digimon with [Hybrid] in its traits in play, you may use this Option card without meeting its color requirements.\n[Main] Your level 4 Digimon can digivolve into 1 Digimon card in your hand with matching colors and [Ten Warriors] in its traits for its digivolution cost, ignoring its level.",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Add this card to its owner's hand.",
+    "color": "White",
+    "notes": "2022 August Regionals Champion Card Set",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "banira"
   },
   {
     "id": "BT7-111",

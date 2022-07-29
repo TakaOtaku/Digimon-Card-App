@@ -1716,6 +1716,37 @@
     "illustrator": "Ryuda"
   },
   {
+    "id": "BT4-042_P2",
+    "name": "Piddomon",
+    "cardImage": "assets/images/cards/eng/BT4-042_P2.jpg",
+    "cardType": "Digimon",
+    "dp": "5000",
+    "playCost": "6",
+    "digivolveCost1": "1 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Vaccine",
+    "type": "Angel",
+    "rarity": "C",
+    "cardNumber": "BT4-042",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "＜Blocker＞ (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)\n[When Attacking] Lose 2 memory.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Winner Pack X RECORD",
+    "color": "Yellow",
+    "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "tessy"
+  },
+  {
     "id": "BT4-043",
     "name": "Crowmon",
     "cardImage": "assets/images/cards/eng/BT4-043.jpg",
@@ -3266,7 +3297,7 @@
     "effect": "[Opponent's Turn] When an opponent plays a Tamer, gain 3 memory.",
     "digivolveEffect": "[Opponent's Turn] When an opponent's Tamer becomes suspended, gain 1 memory.",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "2022 Regionals Participant Card Set",
     "color": "Purple",
     "version": "Stamp",
     "block": [
@@ -3296,7 +3327,7 @@
     "effect": "[Opponent's Turn] When an opponent plays a Tamer, gain 3 memory.",
     "digivolveEffect": "[Opponent's Turn] When an opponent's Tamer becomes suspended, gain 1 memory.",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "2022 Regionals Finalist Card Set",
     "color": "Purple",
     "version": "Stamp",
     "block": [
@@ -3326,7 +3357,7 @@
     "effect": "[Opponent's Turn] When an opponent plays a Tamer, gain 3 memory.",
     "digivolveEffect": "[Opponent's Turn] When an opponent's Tamer becomes suspended, gain 1 memory.",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "2022 Regionals Champion Card Set",
     "color": "Purple",
     "version": "Stamp",
     "block": [

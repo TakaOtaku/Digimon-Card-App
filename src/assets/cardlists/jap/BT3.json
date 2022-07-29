@@ -4536,6 +4536,36 @@
     "illustrator": "Naochika Morishita"
   },
   {
+    "id": "BT3-111_P3",
+    "name": "Imperialdramon Dragon Mode",
+    "cardImage": "assets/images/cards/jap/BT3-111_P3.jpg",
+    "cardType": "Digimon",
+    "dp": "12000",
+    "playCost": "13",
+    "digivolveCost1": "5 from Lv.5",
+    "digivolveCost2": "5 from Lv.5",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Virus",
+    "type": "Ancient Dragon",
+    "rarity": "SEC",
+    "cardNumber": "BT3-111",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "When one of your [Paildramon] or [Dinobeemon] would digivolve into this card in your hand, reduce the memory cost of the digivolution by 2.\n＜Piercing＞ (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.)\n[Your Turn] [Once Per Turn] When this Digimon deletes an opponent's Digimon in battle and survives, unsuspend this Digimon.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+		"notes": "▹THEME BOOSTER DRAGON'S ROAR [EX-03]",
+    "color": "Green",
+    "version": "AA",
+    "block": [
+      "00"
+    ],
+    "restriction": "",
+    "illustrator": ""
+  },
+  {
     "id": "BT3-112",
     "name": "Omnimon Alter-S",
     "cardImage": "assets/images/cards/jap/BT3-112.jpg",

@@ -242,6 +242,37 @@
     "illustrator": "Tonamikanji"
   },
   {
+    "id": "BT3-004_P2",
+    "name": "Minomon",
+    "cardImage": "assets/images/cards/eng/BT3-004_P2.jpg",
+    "cardType": "Digi-Egg",
+    "dp": "-",
+    "playCost": "-",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.2",
+    "form": "In-Training",
+    "attribute": "-",
+    "type": "Larva",
+    "rarity": "U",
+    "cardNumber": "BT3-004",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "[When Attacking] If you attack one of your opponent's Digimon, this Digimon gets +1000 DP for the turn.",
+    "securityEffect": "-",
+    "notes": "Winner Pack X RECORD",
+    "color": "Green",
+    "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Sanosuke Sakuma"
+  },
+  {
     "id": "BT3-005",
     "name": "Kakkinmon",
     "cardImage": "assets/images/cards/eng/BT3-005.jpg",
@@ -1109,7 +1140,7 @@
     "effect": "[When Digivolving] Unsuspend 1 of your level 4 or lower Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "Winner Pack",
+    "notes": "Winner Pack DOUBLE DIAMOND",
     "color": "Blue",
     "version": "AA",
     "block": [
@@ -1967,6 +1998,37 @@
     "illustrator": "Takase"
   },
   {
+    "id": "BT3-046_P2",
+    "name": "Terriermon",
+    "cardImage": "assets/images/cards/eng/BT3-046_P2.jpg",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Vaccine",
+    "type": "Beast",
+    "rarity": "U",
+    "cardNumber": "BT3-046",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[All Turns] Your opponent can't gain memory except with Tamer effects.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Digimon Card Game Playmat and Card Set 1 -Digimon Tamers-[PB-08]",
+    "color": "Green",
+    "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "As'Maria"
+  },
+  {
     "id": "BT3-047",
     "name": "Wormmon",
     "cardImage": "assets/images/cards/eng/BT3-047.jpg",
@@ -2200,7 +2262,7 @@
     "effect": "-",
     "digivolveEffect": "[Your Turn] [Once Per Turn] When this Digimon deletes an opponent's Digimon in battle and survives, gain 1 memory.",
     "securityEffect": "-",
-    "notes": "Winner Pack",
+    "notes": "Winner Pack DOUBLE DIAMOND",
     "color": "Green",
     "version": "AA",
     "block": [
@@ -2388,6 +2450,7 @@
     "block": [
       "00"
     ],
+    "restriction": "",
     "illustrator": "Tomotake Kinoshita"
   },
   {
@@ -2541,6 +2604,37 @@
     ],
     "restriction": "",
     "illustrator": "Tomotake Kinoshita"
+  },
+  {
+    "id": "BT3-057_P2",
+    "name": "MegaGargomon",
+    "cardImage": "assets/images/cards/eng/BT3-057_P2.jpg",
+    "cardType": "Digimon",
+    "dp": "11000",
+    "playCost": "12",
+    "digivolveCost1": "4 from Lv.5",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Vaccine",
+    "type": "Machine",
+    "rarity": "R",
+    "cardNumber": "BT3-057",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Digivolving] Suspend 1 of your opponent's Digimon. It doesn't unsuspend during your opponent's next unsuspend phase.\n[Your Turn] While your opponent has a suspended Digimon in play, this Digimon gains ＜Security Attack +1＞. (This Digimon checks 1 additional security card.)",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Digimon Card Game Playmat and Card Set 1 -Digimon Tamers-[PB-08]",
+    "color": "Green",
+    "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "As'Maria"
   },
   {
     "id": "BT3-058",
