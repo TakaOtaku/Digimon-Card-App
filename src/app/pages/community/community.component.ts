@@ -2,7 +2,12 @@ import { DatePipe } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { ConfirmationService, MessageService } from 'primeng/api';
+import {
+  ConfirmationService,
+  FilterService,
+  MessageService,
+  SelectItem,
+} from 'primeng/api';
 import { Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
 import { COLORS, ICard, IDeck, TAGS } from '../../../models';
@@ -48,7 +53,8 @@ export class CommunityComponent implements OnInit, OnDestroy {
     private router: Router,
     private db: DatabaseService,
     private messageService: MessageService,
-    private confirmationService: ConfirmationService
+    private confirmationService: ConfirmationService,
+    private filterService: FilterService
   ) {}
 
   ngOnInit(): void {
@@ -65,6 +71,15 @@ export class CommunityComponent implements OnInit, OnDestroy {
       .select(selectAllCards)
       .pipe(takeUntil(this.onDestroy$))
       .subscribe((allCards) => (this.allCards = allCards));
+
+    this.filterService.register('array-some', (value: any[], filters: any) => {
+      debugger;
+      if (filters === undefined || filters === null || filters.length === 0) {
+        return true;
+      }
+
+      return value.some((v) => filters.includes(v));
+    });
   }
 
   ngOnDestroy() {
@@ -80,7 +95,7 @@ export class CommunityComponent implements OnInit, OnDestroy {
             deck: { ...deck, id: uuid.v4(), rating: 0, ratingCount: 0 },
           })
         );
-        this.router.navigateByUrl('');
+        this.router.navigateByUrl('/deck/' + deck.id);
       },
     });
   }

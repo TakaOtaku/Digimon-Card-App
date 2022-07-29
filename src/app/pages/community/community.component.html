@@ -3,7 +3,7 @@
 <p-table
   [(contextMenuSelection)]="selectedDeck"
   [contextMenu]="table"
-  [globalFilterFields]="['color.name', 'title', '', 'tags', 'user']"
+  [globalFilterFields]="['', 'color.name', 'title', '', 'tags.0.name', 'user', '']"
   [paginator]="true"
   [rowsPerPageOptions]="[25, 50, 75]"
   [rows]="25"
@@ -57,7 +57,28 @@
         <div class="mx-auto">Description</div>
       </th>
       <th class="max-w-[100%]max-w-[400px] max-w-[100%]">
-        <div class="mx-auto">Tags</div>
+        <div class="mx-auto">Tags
+          <p-columnFilter display="menu" field="tags.0.name" matchMode="contains">
+            <ng-template
+              let-filter="filterCallback"
+              let-value
+              pTemplate="filter"
+            >
+              <p-dropdown
+                (onChange)="filter($event.value);"
+                [ngModel]="value"
+                [options]="tags"
+                placeholder="Any"
+              >
+                <ng-template let-option pTemplate="item">
+                  <span [class]="'customer-badge status-' + option">{{
+                    option
+                    }}</span>
+                </ng-template>
+              </p-dropdown>
+            </ng-template>
+          </p-columnFilter>
+        </div>
       </th>
       <th class="max-w-[400px] max-w-[100%]">
         <div class="mx-auto">

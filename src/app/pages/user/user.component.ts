@@ -35,6 +35,7 @@ export class UserComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.onDestroy$))
       .subscribe(() => {
         this.changeURL();
+        this.user = this.authService.userData;
       });
 
     route.params.subscribe((params: Params) => {
