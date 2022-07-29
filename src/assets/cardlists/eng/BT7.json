@@ -1736,6 +1736,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -1765,6 +1766,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -2334,6 +2336,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -2363,6 +2366,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -2392,6 +2396,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -2513,6 +2518,7 @@
       "01",
       "02"
     ],
+    "restriction": "",
     "illustrator": "Hisashi Fujiwara"
   },
   {
@@ -2752,6 +2758,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "banira"
   },
   {
@@ -2781,6 +2788,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "banira"
   },
   {
@@ -3170,6 +3178,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ryodan"
   },
   {
@@ -3199,6 +3208,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ryodan"
   },
   {
@@ -4452,8 +4462,8 @@
     "effect": "If you have a Digimon with [Hybrid] in its traits in play, you may use this Option card without meeting its color requirements.\n[Main] Your level 4 Digimon can digivolve into 1 Digimon card in your hand with matching colors and [Ten Warriors] in its traits for its digivolution cost, ignoring its level.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Add this card to its owner's hand.",
-    "notes": "Fest Set",
     "color": "White",
+    "version": "AA",
     "notes": "2022 August Regionals Participant Card Set",
     "block": [
       "01"
@@ -4482,8 +4492,8 @@
     "effect": "If you have a Digimon with [Hybrid] in its traits in play, you may use this Option card without meeting its color requirements.\n[Main] Your level 4 Digimon can digivolve into 1 Digimon card in your hand with matching colors and [Ten Warriors] in its traits for its digivolution cost, ignoring its level.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Add this card to its owner's hand.",
-    "notes": "Fest Set",
     "color": "White",
+    "version": "AA",
     "notes": "2022 August Regionals Finalist Card Set",
     "block": [
       "01"
@@ -4512,9 +4522,9 @@
     "effect": "If you have a Digimon with [Hybrid] in its traits in play, you may use this Option card without meeting its color requirements.\n[Main] Your level 4 Digimon can digivolve into 1 Digimon card in your hand with matching colors and [Ten Warriors] in its traits for its digivolution cost, ignoring its level.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Add this card to its owner's hand.",
-    "notes": "Fest Set",
     "color": "White",
     "notes": "2022 August Regionals Champion Card Set",
+    "version": "AA",
     "block": [
       "01"
     ],

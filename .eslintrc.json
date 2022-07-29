@@ -6,6 +6,7 @@
   "rules": {
     "no-console": "error"
   },
+  "plugins": ["prettier"],
   "overrides": [
     {
       "files": [
@@ -14,8 +15,7 @@
       "parserOptions": {
         "project": [
           "tsconfig.json"
-        ],
-        "createDefaultProgram": true
+        ]
       },
       "extends": [
         "plugin:@angular-eslint/recommended",
@@ -50,8 +50,7 @@
       ],
       "extends": [
         "plugin:@angular-eslint/template/recommended"
-      ],
-      "rules": {}
+      ]
     }
   ]
 }
