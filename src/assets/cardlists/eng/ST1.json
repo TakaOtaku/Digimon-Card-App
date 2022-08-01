@@ -692,13 +692,13 @@
     "effect": "-",
     "digivolveEffect": "[Your Turn] When this Digimon is blocked, gain 3 memory.",
     "securityEffect": "-",
-    "notes": "Official Tournament Pack Vol.6",
+    "notes": "Championship 2021 Finals Trophy Card 3rd Place",
     "color": "Red",
     "version": "AA",
     "block": [
       "00"
     ],
-    "illustrator": "tessy",
+    "illustrator": "Nakano Haito",
     "restriction": ""
   },
   {
@@ -730,6 +730,36 @@
     ],
     "restriction": "",
     "illustrator": "Nakano Haito"
+  },
+  {
+    "id": "ST1-09_P5",
+    "name": "MetalGreymon",
+    "cardImage": "assets/images/cards/eng/ST1-09_P4.jpg",
+    "cardType": "Digimon",
+    "dp": "7000",
+    "playCost": "7",
+    "digivolveCost1": "3 from Lv.4",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.5",
+    "form": "Ultimate",
+    "attribute": "Vaccine",
+    "type": "Cyborg",
+    "rarity": "R",
+    "cardNumber": "ST1-09",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "[Your Turn] When this Digimon is blocked, gain 3 memory.",
+    "securityEffect": "-",
+    "notes": "Official Tournament Pack Vol.6",
+    "color": "Red",
+    "version": "AA",
+    "block": [
+      "00"
+    ],
+    "restriction": "",
+    "illustrator": "tessy"
   },
   {
     "id": "ST1-10",
