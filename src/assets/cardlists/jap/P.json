@@ -998,6 +998,36 @@
     "illustrator": "Ryuda"
   },
   {
+    "id": "P-029_P1",
+    "name": "Agunimon",
+    "cardImage": "assets/images/cards/jap/P-029_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "4000",
+    "playCost": "5",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Hybrid",
+    "attribute": "Variable",
+    "type": "Wizard",
+    "rarity": "P",
+    "cardNumber": "P-029",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Attacking] This Digimon can digivolve into an [AncientGreymon] in your hand for a memory cost of 2, ignoring its digivolution requirements. If it does, delete this Digimon at the end of the turn.",
+    "digivolveEffect": "[Your Turn] When digivolving this Digimon into an [AncientGreymon] in your hand, reduce its digivolution cost by 2.",
+    "securityEffect": "-",
+    "notes": "DIGIMON FRONTIER 20TH MEMORIAL SET【PB-12】",
+    "color": "Red",
+    "version": "AA",
+    "block": [
+      "00"
+    ],
+    "restriction": "",
+    "illustrator": "Naochika Morishita"
+  },
+  {
     "id": "P-030",
     "name": "Lobomon",
     "cardImage": "assets/images/cards/jap/P-030.jpg",
@@ -1026,6 +1056,36 @@
     ],
     "restriction": "",
     "illustrator": "Ryuda"
+  },
+  {
+    "id": "P-030_P1",
+    "name": "Lobomon",
+    "cardImage": "assets/images/cards/jap/P-030_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "4000",
+    "playCost": "5",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Hybrid",
+    "attribute": "Variable",
+    "type": "Warrior",
+    "rarity": "P",
+    "cardNumber": "P-030",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Digivolving] This Digimon can digivolve into an [AncientGarurumon] in your hand for a memory cost of 1, ignoring its digivolution requirements. If it does, delete this Digimon at the end of the turn.",
+    "digivolveEffect": "[Your Turn] When digivolving this Digimon into an [AncientGarurumon] in your hand, reduce its digivolution cost by 2.",
+    "securityEffect": "-",
+    "notes": "DIGIMON FRONTIER 20TH MEMORIAL SET【PB-12】",
+    "color": "Blue",
+    "version": "AA",
+    "block": [
+      "00"
+    ],
+    "restriction": "",
+    "illustrator": "Naochika Morishita"
   },
   {
     "id": "P-031",
