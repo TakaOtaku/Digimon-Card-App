@@ -2614,6 +2614,37 @@
     "illustrator": "Shin Sasaki"
   },
   {
+    "id": "BT1-064_P2",
+    "name": "Goblimon",
+    "cardImage": "assets/images/cards/eng/BT1-064_P2.jpg",
+    "cardType": "Digimon",
+    "dp": "3000",
+    "playCost": "2",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Virus",
+    "type": "Demon",
+    "rarity": "C",
+    "cardNumber": "BT1-064",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Winner Pack NEW AWAKENING",
+    "color": "Green",
+    "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Kirita"
+  },
+  {
     "id": "BT1-065",
     "name": "Mushroomon",
     "cardImage": "assets/images/cards/eng/BT1-065.jpg",
