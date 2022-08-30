@@ -183,7 +183,7 @@
   },
   {
     "id": "ST2-06",
-    "name": "MetalGarurumon",
+    "name": "Garurumon",
     "cardImage": "assets/images/cards/jap/ST2-06.jpg",
     "cardType": "Digimon",
     "dp": "4000",
@@ -210,6 +210,36 @@
     ],
     "restriction": "",
     "illustrator": "As'Maria"
+  },
+  {
+    "id": "ST2-06_P1",
+    "name": "Garurumon",
+    "cardImage": "assets/images/cards/jap/ST2-06_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "4000",
+    "playCost": "5",
+    "digivolveCost1": "2  from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Vaccine",
+    "type": "Beast",
+    "rarity": "U",
+    "cardNumber": "ST2-06",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "[When Attacking] Trash a digivolution card under an opponent's Digimon.",
+    "securityEffect": "-",
+    "notes": "Premium Bandai Apparel Promotional Cards",
+    "color": "Blue",
+    "version": "AA",
+    "block": [
+      "00"
+    ],
+    "restriction": "",
+    "illustrator": "koki"
   },
   {
     "id": "ST2-07",
@@ -421,7 +451,7 @@
       "00"
     ],
     "restriction": "",
-    "illustrator": ""
+    "illustrator": "Tonamikanji"
   },
   {
     "id": "ST2-10",

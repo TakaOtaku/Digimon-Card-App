@@ -304,6 +304,37 @@
     "illustrator": "Kenji Watanabe"
   },
   {
+    "id": "ST5-08_P2",
+    "name": "DarkTyrannomon",
+    "cardImage": "assets/images/cards/eng/ST5-08_P2.jpg",
+    "cardType": "Digimon",
+    "dp": "5000",
+    "playCost": "6",
+    "digivolveCost1": "1 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Virus",
+    "type": "Dinosaur",
+    "rarity": "U",
+    "cardNumber": "ST5-08",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "＜Blocker＞ (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)\n[When Attacking] Lose 2 memory.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Winner Pack X RECORD",
+    "color": "Black",
+    "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Hisashi Fujiwara"
+  },
+  {
     "id": "ST5-09",
     "name": "MetalGreymon",
     "cardImage": "assets/images/cards/eng/ST5-09.jpg",

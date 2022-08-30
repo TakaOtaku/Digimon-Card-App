@@ -477,7 +477,7 @@
     "effect": "-",
     "digivolveEffect": "[When Attacking] 1 of your opponent's Digimon gets -1000 DP for the turn.",
     "securityEffect": "-",
-    "notes": "Great Legend (BT-04) Pre-Release Tournaments",
+    "notes": "GREAT LEGEND (BT-04) Pre-Release Tournament Winner Card",
     "color": "Yellow",
     "version": "AA",
     "block": [
@@ -576,7 +576,37 @@
       "00"
     ],
     "restriction": "",
-    "illustrator": ""
+    "illustrator": "Qacoro"
+  },
+  {
+    "id": "ST3-09_P2",
+    "name": "Angewomon",
+    "cardImage": "assets/images/cards/eng/ST3-09_P2.jpg",
+    "cardType": "Digimon",
+    "dp": "7000",
+    "playCost": "6",
+    "digivolveCost1": "3 from Lv.4",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.5",
+    "form": "Ultimate",
+    "attribute": "Vaccine",
+    "type": "Archangel",
+    "rarity": "U",
+    "cardNumber": "ST3-09",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Digivolving] When you have 3 security cards or less, trigger ＜Recovery +1 (Deck)＞. (Place the top card of your deck on top of your security stack.)",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Official Tournament Pack Vol.6",
+    "color": "Yellow",
+    "version": "AA",
+    "block": [
+      "00"
+    ],
+    "restriction": "",
+    "illustrator": "Qacoro"
   },
   {
     "id": "ST3-10",

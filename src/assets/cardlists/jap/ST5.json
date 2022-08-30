@@ -418,10 +418,44 @@
     "color": "Black",
     "version": "Normal",
     "block": [
-      "00"
+      "00",
+      "01",
+      "02"
     ],
     "restriction": "",
     "illustrator": "Tonamikanji"
+  },
+  {
+    "id": "ST5-12_P1",
+    "name": "Machinedramon",
+    "cardImage": "assets/images/cards/jap/ST5-12_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "11000",
+    "playCost": "10",
+    "digivolveCost1": "3  from Lv.5",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Virus",
+    "type": "Machine",
+    "rarity": "R",
+    "cardNumber": "ST5-12",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Digivolving] Up to 2 of your Digimon gain ＜Reboot＞  (Unsuspend this Digimon during your opponent's unsuspend phase) until the end of your opponent's next turn.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Digimon Illustration Competition Promotion Pack",
+    "color": "Black",
+    "version": "AA",
+    "block": [
+      "00",
+      "01",
+      "02"
+    ],
+    "restriction": "",
+    "illustrator": "Atarime"
   },
   {
     "id": "ST5-13",

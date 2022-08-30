@@ -780,6 +780,36 @@
     "illustrator": "TANIMESO"
   },
   {
+    "id": "BT7-021_P1",
+    "name": "Kumamon",
+    "cardImage": "assets/images/cards/jap/BT7-021_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "4000",
+    "playCost": "5",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Hybrid",
+    "attribute": "Variable",
+    "type": "Beastkin",
+    "rarity": "C",
+    "cardNumber": "BT7-021",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "You may digivolve this card from your hand onto one of your blue Tamers as if the Tamer is a level 3 blue Digimon.\n[When Digivolving] Trash 1 digivolution card from the bottom of 1 of your opponent's Digimon.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "DIGIMON FRONTIER 20TH MEMORIAL SET【PB-12】",
+    "color": "Blue",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Takase"
+  },
+  {
     "id": "BT7-022",
     "name": "KendoGarurumon",
     "cardImage": "assets/images/cards/jap/BT7-022.jpg",
@@ -1290,6 +1320,36 @@
     "illustrator": "Tonamikanji"
   },
   {
+    "id": "BT7-035_P1",
+    "name": "Kazemon",
+    "cardImage": "assets/images/cards/jap/BT7-035_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "5000",
+    "playCost": "5",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Hybrid",
+    "attribute": "Variable",
+    "type": "Fairy",
+    "rarity": "C",
+    "cardNumber": "BT7-035",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "You may digivolve this card from your hand onto one of your yellow Tamers as if the Tamer is a level 3 yellow Digimon.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "DIGIMON FRONTIER 20TH MEMORIAL SET【PB-12】",
+    "color": "Yellow",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Tsunemi Aosa"
+  },
+  {
     "id": "BT7-036",
     "name": "Zephyrmon",
     "cardImage": "assets/images/cards/jap/BT7-036.jpg",
@@ -1376,7 +1436,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "Restricted to 1",
     "illustrator": "Tonamikanji"
   },
   {
@@ -1708,6 +1768,36 @@
     ],
     "restriction": "",
     "illustrator": "GOSSAN"
+  },
+  {
+    "id": "BT7-046_P1",
+    "name": "Beetlemon",
+    "cardImage": "assets/images/cards/jap/BT7-046_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "5000",
+    "playCost": "6",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Hybrid",
+    "attribute": "Variable",
+    "type": "Cyborg",
+    "rarity": "U",
+    "cardNumber": "BT7-046",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "You may digivolve this card from your hand onto one of your green Tamers as if the Tamer is a level 3 Digimon.\n[When Digivolving] Reveal the top 5 cards of your deck. Add 1 card with [Hybrid] in its traits and 1 [J.P. Shibayama] among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "DIGIMON FRONTIER 20TH MEMORIAL SET【PB-12】",
+    "color": "Green",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "kaz"
   },
   {
     "id": "BT7-047",
@@ -2220,6 +2310,36 @@
     "illustrator": "sasasi"
   },
   {
+    "id": "BT7-062_P1",
+    "name": "Dorugamon",
+    "cardImage": "assets/images/cards/jap/BT7-062_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "5000",
+    "playCost": "6",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Data",
+    "type": "Beast Dragon/X Antibody",
+    "rarity": "C",
+    "cardNumber": "BT7-062",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Opponent's Turn] While you have another Digimon in play with [X Antibody] in its traits, or a card with [X Antibody] in its traits is in this Digimon's digivolution cards, this Digimon gains ＜Blocker＞. (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)",
+    "digivolveEffect": "[All Turns] While this Digimon has [X Antibody] in its traits, it gets +1000 DP.",
+    "securityEffect": "-",
+    "notes": "TAMER'S SELECTION BOX Evolution Cup 2022",
+    "color": "Black",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Kenji Watanabe"
+  },
+  {
     "id": "BT7-063",
     "name": "DarkKnightmon",
     "cardImage": "assets/images/cards/jap/BT7-063.jpg",
@@ -2307,7 +2427,7 @@
       "01",
       "02"
     ],
-    "restriction": "",
+    "restriction": "Restricted to 1",
     "illustrator": "sasasi"
   },
   {
@@ -2338,7 +2458,7 @@
       "01",
       "02"
     ],
-    "restriction": "",
+    "restriction": "Restricted to 1",
     "illustrator": "Hisashi Fujiwara"
   },
   {
@@ -2643,6 +2763,36 @@
     "illustrator": "Hisashi Fujiwara"
   },
   {
+    "id": "BT7-071_P1",
+    "name": "Loweemon",
+    "cardImage": "assets/images/cards/jap/BT7-071_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "5000",
+    "playCost": "5",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Hybrid",
+    "attribute": "Variable",
+    "type": "Warrior",
+    "rarity": "C",
+    "cardNumber": "BT7-071",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "You may digivolve this card from your hand onto one of your purple Tamers as if the Tamer is a level 3 purple Digimon.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "DIGIMON FRONTIER 20TH MEMORIAL SET【PB-12】",
+    "color": "Purple",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "toriyufu"
+  },
+  {
     "id": "BT7-072",
     "name": "Eyesmon",
     "cardImage": "assets/images/cards/jap/BT7-072.jpg",
@@ -2943,6 +3093,36 @@
     "illustrator": "Teppei Tadokoro"
   },
   {
+    "id": "BT7-080_P1",
+    "name": "Neemon",
+    "cardImage": "assets/images/cards/jap/BT7-080_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "3",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Data",
+    "type": "Beast",
+    "rarity": "C",
+    "cardNumber": "BT7-080",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Play] You may play 1 Tamer card with an inherited effect from your hand without paying its memory cost.\n[All Turns] [Once Per Turn] When one of your Digimon with a Tamer card in its digivolution cards is deleted, you may play 1 Tamer card from your trash without paying its memory cost.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "DIGIMON FRONTIER 20TH MEMORIAL SET【PB-12】",
+    "color": "White",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "koki"
+  },
+  {
     "id": "BT7-081",
     "name": "Bokomon",
     "cardImage": "assets/images/cards/jap/BT7-081.jpg",
@@ -2971,6 +3151,36 @@
     ],
     "restriction": "",
     "illustrator": "Teppei Tadokoro"
+  },
+  {
+    "id": "BT7-081_P1",
+    "name": "Bokomon",
+    "cardImage": "assets/images/cards/jap/BT7-081_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "3",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Vaccine",
+    "type": "Mutant",
+    "rarity": "C",
+    "cardNumber": "BT7-081",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Play] Reveal the top 5 cards of your deck. Add 1 card with [Hybrid] or [Ten Warriors] in its traits and 1 Tamer card among them to your hand. Place the remaining cards at the bottom of your deck in any order.\n[Your Turn] [Once Per Turn] When one of your Tamers digivolves, gain 2 memory.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "DIGIMON FRONTIER 20TH MEMORIAL SET【PB-12】",
+    "color": "White",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "koki"
   },
   {
     "id": "BT7-082",
@@ -3149,7 +3359,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "Restricted to 1",
     "illustrator": ""
   },
   {
@@ -3179,7 +3389,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "Restricted to 1",
     "illustrator": ""
   },
   {

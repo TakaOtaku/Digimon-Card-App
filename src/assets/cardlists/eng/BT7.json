@@ -810,6 +810,36 @@
     "illustrator": "TANIMESO"
   },
   {
+    "id": "BT7-021_P1",
+    "name": "Kumamon",
+    "cardImage": "assets/images/cards/eng/BT7-021_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "4000",
+    "playCost": "5",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Hybrid",
+    "attribute": "Variable",
+    "type": "Beastkin",
+    "rarity": "C",
+    "cardNumber": "BT7-021",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "You may digivolve this card from your hand onto one of your blue Tamers as if the Tamer is a level 3 blue Digimon.\n[When Digivolving] Trash 1 digivolution card from the bottom of 1 of your opponent's Digimon.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Event Pack 3",
+    "color": "Blue",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "TANIMESO"
+  },
+  {
     "id": "BT7-022",
     "name": "KendoGarurumon",
     "cardImage": "assets/images/cards/eng/BT7-022.jpg",
@@ -863,6 +893,36 @@
     "notes": "▹BOOSTER -NEXT ADVENTURE- [BT-07]",
     "color": "Blue",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "TANIMESO"
+  },
+  {
+    "id": "BT7-023_P1",
+    "name": "Korikakumon",
+    "cardImage": "assets/images/cards/eng/BT7-023_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "6000",
+    "playCost": "6",
+    "digivolveCost1": "3 from Lv.3",
+    "digivolveCost2": "1 from Lv.4",
+    "cardLv": "Lv.4",
+    "form": "Hybrid",
+    "attribute": "Variable",
+    "type": "Beast",
+    "rarity": "C",
+    "cardNumber": "BT7-023",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "You may digivolve this card from your hand onto one of your blue Tamers as if the Tamer is a level 3 blue Digimon for a memory cost of 2.\n[When Digivolving] If a card with [Hybrid] in its traits or [Tommy Himi] is in this Digimon's digivolution cards, 1 of your opponent's Digimon with no digivolution cards can't attack or block until the end of their next turn.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Event Pack 3",
+    "color": "Blue",
+    "version": "AA",
     "block": [
       "01"
     ],
@@ -1140,6 +1200,36 @@
     "illustrator": "TANIMESO"
   },
   {
+    "id": "BT7-030_P1",
+    "name": "AncientMegatheriummon",
+    "cardImage": "assets/images/cards/eng/BT7-030_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "13000",
+    "playCost": "13",
+    "digivolveCost1": "5 from Lv.5",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Data",
+    "type": "Ancient Animal/Ten Warriors",
+    "rarity": "R",
+    "cardNumber": "BT7-030",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Digivolving] For each card with [Hybrid] in its traits in this Digimon's digivolution cards, trash 1 digivolution card from the bottom of each of your opponent's Digimon. Then, for each Digimon your opponent has with no digivolution cards, ＜Draw 2＞. (Draw 2 cards from your deck.)\n[On Deletion] You may play 1 blue level 4 or lower card with [Hybrid] in its traits from your hand without paying its memory cost.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Event Pack 3",
+    "color": "Blue",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Tomotake Kinoshita"
+  },
+  {
     "id": "BT7-031",
     "name": "Herissmon",
     "cardImage": "assets/images/cards/eng/BT7-031.jpg",
@@ -1320,6 +1410,36 @@
     "illustrator": "Tonamikanji"
   },
   {
+    "id": "BT7-035_P1",
+    "name": "Kazemon",
+    "cardImage": "assets/images/cards/eng/BT7-035_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "5000",
+    "playCost": "5",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Hybrid",
+    "attribute": "Variable",
+    "type": "Fairy",
+    "rarity": "C",
+    "cardNumber": "BT7-035",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "You may digivolve this card from your hand onto one of your yellow Tamers as if the Tamer is a level 3 yellow Digimon.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Event Pack 3",
+    "color": "Yellow",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Tonamikanji"
+  },
+  {
     "id": "BT7-036",
     "name": "Zephyrmon",
     "cardImage": "assets/images/cards/eng/BT7-036.jpg",
@@ -1343,6 +1463,36 @@
     "notes": "▹BOOSTER -NEXT ADVENTURE- [BT-07]",
     "color": "Yellow",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Tonamikanji"
+  },
+  {
+    "id": "BT7-036_P1",
+    "name": "Zephyrmon",
+    "cardImage": "assets/images/cards/eng/BT7-036_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "6000",
+    "playCost": "6",
+    "digivolveCost1": "3 from Lv.3",
+    "digivolveCost2": "1 from Lv.4",
+    "cardLv": "Lv.4",
+    "form": "Hybrid",
+    "attribute": "Variable",
+    "type": "Birdkin",
+    "rarity": "U",
+    "cardNumber": "BT7-036",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "You may digivolve this card from your hand onto one of your yellow Tamers as if the Tamer is a level 3 yellow Digimon for a memory cost of 2.\n[When Digivolving] If a card with [Hybrid] in its traits or [Zoe Orimoto] is in this Digimon's digivolution cards, all of your Security Digimon get +3000 DP until the end of your opponent's next turn.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Event Pack 3",
+    "color": "Yellow",
+    "version": "AA",
     "block": [
       "01"
     ],
@@ -1406,7 +1556,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "Restricted to 1",
     "illustrator": "Tonamikanji"
   },
   {
@@ -1590,6 +1740,36 @@
     "illustrator": "Tonamikanji"
   },
   {
+    "id": "BT7-042_P1",
+    "name": "AncientKazemon",
+    "cardImage": "assets/images/cards/eng/BT7-042_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "13000",
+    "playCost": "13",
+    "digivolveCost1": "5 from Lv.5",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Vaccine",
+    "type": "Ancient Birdkin/Ten Warriors",
+    "rarity": "R",
+    "cardNumber": "BT7-042",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Opponent's Turn] While a card with [Hybrid] in its traits is in this Digimon's digivolution cards, all of your Security Digimon get +4000 DP.\n[On Deletion] You may play 1 yellow level 4 or lower card with [Hybrid] in its traits from your hand without paying its memory cost.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Event Pack 3",
+    "color": "Yellow",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Tomotake Kinoshita"
+  },
+  {
     "id": "BT7-043",
     "name": "Gotsumon",
     "cardImage": "assets/images/cards/eng/BT7-043.jpg",
@@ -1736,6 +1916,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -1765,6 +1946,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Kazumasa Yasukuni"
   },
   {
@@ -1798,6 +1980,36 @@
     "illustrator": "GOSSAN"
   },
   {
+    "id": "BT7-046_P1",
+    "name": "Beetlemon",
+    "cardImage": "assets/images/cards/eng/BT7-046_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "5000",
+    "playCost": "6",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Hybrid",
+    "attribute": "Variable",
+    "type": "Cyborg",
+    "rarity": "U",
+    "cardNumber": "BT7-046",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "You may digivolve this card from your hand onto one of your green Tamers as if the Tamer is a level 3 green Digimon.\n[When Digivolving] Reveal the top 5 cards of your deck. Add 1 card with [Hybrid] in its traits and 1 [J.P. Shibayama] among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Event Pack 3",
+    "color": "Green",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "GOSSAN"
+  },
+  {
     "id": "BT7-047",
     "name": "MetalKabuterimon",
     "cardImage": "assets/images/cards/eng/BT7-047.jpg",
@@ -1821,6 +2033,36 @@
     "notes": "▹BOOSTER -NEXT ADVENTURE- [BT-07]",
     "color": "Green",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "GOSSAN"
+  },
+  {
+    "id": "BT7-047_P1",
+    "name": "MetalKabuterimon",
+    "cardImage": "assets/images/cards/eng/BT7-047_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "6000",
+    "playCost": "6",
+    "digivolveCost1": "3 from Lv.3",
+    "digivolveCost2": "1 from Lv.4",
+    "cardLv": "Lv.4",
+    "form": "Hybrid",
+    "attribute": "Variable",
+    "type": "Cyborg",
+    "rarity": "C",
+    "cardNumber": "BT7-047",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "You may digivolve this card from your hand onto one of your green Tamers as if the Tamer is a level 3 green Digimon for a memory cost of 2.\n[When Digivolving] If a card with [Hybrid] in its traits or [J.P. Shibayama] is in this Digimon's digivolution cards, suspend 1 of your opponent's Digimon with 6000 DP or less.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Event Pack 3",
+    "color": "Green",
+    "version": "AA",
     "block": [
       "01"
     ],
@@ -2036,6 +2278,36 @@
     ],
     "restriction": "",
     "illustrator": "GOSSAN"
+  },
+  {
+    "id": "BT7-054_P1",
+    "name": "AncientBeetlemon",
+    "cardImage": "assets/images/cards/eng/BT7-054_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "13000",
+    "playCost": "13",
+    "digivolveCost1": "5 from Lv.5",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Vaccine",
+    "type": "Ancient Insect/Ten Warriors",
+    "rarity": "R",
+    "cardNumber": "BT7-054",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Your Turn] [Once Per Turn] When one of your Digimon with [Ten Warriors] or [Hybrid] in its traits deletes an opponent's Digimon in battle and survives, trash the top card of your opponent's security stack.\n[On Deletion] You may play 1 green level 4 or lower card with [Hybrid] in its traits from your hand without paying its memory cost.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Event Pack 3",
+    "color": "Green",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Tomotake Kinoshita"
   },
   {
     "id": "BT7-055",
@@ -2308,6 +2580,96 @@
     "illustrator": "sasasi"
   },
   {
+    "id": "BT7-062_P1",
+    "name": "Dorugamon",
+    "cardImage": "assets/images/cards/eng/BT7-062_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "5000",
+    "playCost": "6",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Data",
+    "type": "Beast Dragon/X Antibody",
+    "rarity": "C",
+    "cardNumber": "BT7-062",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Opponent's Turn] While you have another Digimon in play with [X Antibody] in its traits, or a card with [X Antibody] in its traits is in this Digimon's digivolution cards, this Digimon gains ＜Blocker＞. (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)",
+    "digivolveEffect": "[All Turns] While this Digimon has [X Antibody] in its traits, it gets +1000 DP.",
+    "securityEffect": "-",
+    "notes": "2022 August Regionals Participant Card Set",
+    "color": "Black",
+    "version": "Stamp",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Kenji Watanabe"
+  },
+  {
+    "id": "BT7-062_P2",
+    "name": "Dorugamon",
+    "cardImage": "assets/images/cards/eng/BT7-062_P2.jpg",
+    "cardType": "Digimon",
+    "dp": "5000",
+    "playCost": "6",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Data",
+    "type": "Beast Dragon/X Antibody",
+    "rarity": "C",
+    "cardNumber": "BT7-062",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Opponent's Turn] While you have another Digimon in play with [X Antibody] in its traits, or a card with [X Antibody] in its traits is in this Digimon's digivolution cards, this Digimon gains ＜Blocker＞. (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)",
+    "digivolveEffect": "[All Turns] While this Digimon has [X Antibody] in its traits, it gets +1000 DP.",
+    "securityEffect": "-",
+    "notes": "2022 August Regionals Finalist Card Set",
+    "color": "Black",
+    "version": "Stamp",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Kenji Watanabe"
+  },
+  {
+    "id": "BT7-062_P3",
+    "name": "Dorugamon",
+    "cardImage": "assets/images/cards/eng/BT7-062_P3.jpg",
+    "cardType": "Digimon",
+    "dp": "5000",
+    "playCost": "6",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Data",
+    "type": "Beast Dragon/X Antibody",
+    "rarity": "C",
+    "cardNumber": "BT7-062",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Opponent's Turn] While you have another Digimon in play with [X Antibody] in its traits, or a card with [X Antibody] in its traits is in this Digimon's digivolution cards, this Digimon gains ＜Blocker＞. (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)",
+    "digivolveEffect": "[All Turns] While this Digimon has [X Antibody] in its traits, it gets +1000 DP.",
+    "securityEffect": "-",
+    "notes": "2022 August Regionals Champion Card Set",
+    "color": "Black",
+    "version": "Stamp",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Kenji Watanabe"
+  },
+  {
     "id": "BT7-063",
     "name": "DarkKnightmon",
     "cardImage": "assets/images/cards/eng/BT7-063.jpg",
@@ -2397,6 +2759,37 @@
     ],
     "restriction": "",
     "illustrator": "sasasi"
+  },
+  {
+    "id": "BT7-064_P1",
+    "name": "DoruGreymon",
+    "cardImage": "assets/images/cards/eng/BT7-064_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "7000",
+    "playCost": "8",
+    "digivolveCost1": "3 from Lv.4",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.5",
+    "form": "Ultimate",
+    "attribute": "Data",
+    "type": "Beast Dragon/X Antibody",
+    "rarity": "U",
+    "cardNumber": "BT7-064",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Digivolving] You may place 1 black card with [X Antibody] in its traits from your hand at the bottom of this Digimon's digivolution cards to prevent effects from deleting it or reducing its DP until the end of your opponent's next turn.",
+    "digivolveEffect": "[Your Turn] While this Digimon has [X Antibody] in its traits, it gains ＜Security Attack +1＞. (This Digimon checks 1 additional security card.)",
+    "securityEffect": "-",
+    "notes": "Official Tournament Pack Vol.6",
+    "color": "Black",
+    "version": "AA",
+    "block": [
+      "01",
+      "02"
+    ],
+    "restriction": "",
+    "illustrator": "Hisashi Fujiwara"
   },
   {
     "id": "BT7-065",
@@ -2635,6 +3028,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "banira"
   },
   {
@@ -2664,6 +3058,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "banira"
   },
   {
@@ -2727,6 +3122,36 @@
     "illustrator": "Hisashi Fujiwara"
   },
   {
+    "id": "BT7-071_P1",
+    "name": "Loweemon",
+    "cardImage": "assets/images/cards/eng/BT7-071_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "5000",
+    "playCost": "5",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Hybrid",
+    "attribute": "Variable",
+    "type": "Warrior",
+    "rarity": "C",
+    "cardNumber": "BT7-071",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "You may digivolve this card from your hand onto one of your purple Tamers as if the Tamer is a level 3 purple Digimon.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Event Pack 3",
+    "color": "Purple",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Hisashi Fujiwara"
+  },
+  {
     "id": "BT7-072",
     "name": "Eyesmon",
     "cardImage": "assets/images/cards/eng/BT7-072.jpg",
@@ -2780,6 +3205,36 @@
     "notes": "▹BOOSTER -NEXT ADVENTURE- [BT-07]",
     "color": "Purple",
     "version": "Normal",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Hisashi Fujiwara"
+  },
+  {
+    "id": "BT7-073_P1",
+    "name": "KaiserLeomon",
+    "cardImage": "assets/images/cards/eng/BT7-073_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "6000",
+    "playCost": "6",
+    "digivolveCost1": "3 from Lv.3",
+    "digivolveCost2": "1 from Lv.4",
+    "cardLv": "Lv.4",
+    "form": "Hybrid",
+    "attribute": "Variable",
+    "type": "Cyborg",
+    "rarity": "U",
+    "cardNumber": "BT7-073",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "You may digivolve this card from your hand onto one of your purple Tamers as if the Tamer is a level 3 purple Digimon for a memory cost of 2.\n[When Digivolving] If a card with [Hybrid] in its traits or [Koichi Kimura] is in this Digimon's digivolution cards, this Digimon gains ＜Retaliation＞ until the end of your opponent's next turn. (When this Digimon is deleted after losing a battle, delete the Digimon it was battling.)",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Event Pack 3",
+    "color": "Purple",
+    "version": "AA",
     "block": [
       "01"
     ],
@@ -2937,6 +3392,36 @@
     "illustrator": "Hisashi Fujiwara"
   },
   {
+    "id": "BT7-078_P1",
+    "name": "AncientSphinxmon",
+    "cardImage": "assets/images/cards/eng/BT7-078_P1.jpg",
+    "cardType": "Digimon",
+    "dp": "13000",
+    "playCost": "13",
+    "digivolveCost1": "5 from Lv.5",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Virus",
+    "type": "Ancient Mythical Beast/Ten Warriors",
+    "rarity": "R",
+    "cardNumber": "BT7-078",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Digivolving] You may delete 1 of your Digimon with [Ten Warriors] or [Hybrid] in its traits to delete 1 of your opponent's Digimon whose level is less than or equal to the deleted Digimon's level.\n[On Deletion] You may play 1 purple level 4 or lower card with [Hybrid] in its traits from your hand without paying its memory cost.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Event Pack 3",
+    "color": "Purple",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "Tomotake Kinoshita"
+  },
+  {
     "id": "BT7-079",
     "name": "Cherubimon",
     "cardImage": "assets/images/cards/eng/BT7-079.jpg",
@@ -3053,6 +3538,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ryodan"
   },
   {
@@ -3082,6 +3568,7 @@
     "block": [
       "01"
     ],
+    "restriction": "",
     "illustrator": "Ryodan"
   },
   {
@@ -3135,7 +3622,7 @@
     "effect": "[On Play] Reveal the top 5 cards of your deck. Add 1 card with [Hybrid] or [Ten Warriors] in its traits and 1 Tamer card among them to your hand. Place the remaining cards at the bottom of your deck in any order.\n[Your Turn] [Once Per Turn] When one of your Tamers digivolves, gain 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "2022 Regionals Participant Card Set",
     "color": "White",
     "version": "Stamp",
     "block": [
@@ -3165,7 +3652,7 @@
     "effect": "[On Play] Reveal the top 5 cards of your deck. Add 1 card with [Hybrid] or [Ten Warriors] in its traits and 1 Tamer card among them to your hand. Place the remaining cards at the bottom of your deck in any order.\n[Your Turn] [Once Per Turn] When one of your Tamers digivolves, gain 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "2022 Regionals Finalist Card Set",
     "color": "White",
     "version": "Stamp",
     "block": [
@@ -3195,7 +3682,7 @@
     "effect": "[On Play] Reveal the top 5 cards of your deck. Add 1 card with [Hybrid] or [Ten Warriors] in its traits and 1 Tamer card among them to your hand. Place the remaining cards at the bottom of your deck in any order.\n[Your Turn] [Once Per Turn] When one of your Tamers digivolves, gain 2 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "",
+    "notes": "2022 Regionals Champion Card Set",
     "color": "White",
     "version": "Stamp",
     "block": [
@@ -3381,7 +3868,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "Restricted to 1",
     "illustrator": ""
   },
   {
@@ -3411,7 +3898,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "Restricted to 1",
     "illustrator": ""
   },
   {
@@ -4312,7 +4799,97 @@
       "01"
     ],
     "restriction": "",
-    "illustrator": ""
+    "illustrator": "Shin Sasaki"
+  },
+  {
+    "id": "BT7-110_P2",
+    "name": "Evolution Ancient",
+    "cardImage": "assets/images/cards/eng/BT7-110_P2.jpg",
+    "cardType": "Option",
+    "dp": "-",
+    "playCost": "-",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "-",
+    "rarity": "R",
+    "cardNumber": "BT7-110",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "If you have a Digimon with [Hybrid] in its traits in play, you may use this Option card without meeting its color requirements.\n[Main] Your level 4 Digimon can digivolve into 1 Digimon card in your hand with matching colors and [Ten Warriors] in its traits for its digivolution cost, ignoring its level.",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Add this card to its owner's hand.",
+    "color": "White",
+    "version": "Stamp",
+    "notes": "2022 August Regionals Participant Card Set",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "banira"
+  },
+  {
+    "id": "BT7-110_P3",
+    "name": "Evolution Ancient",
+    "cardImage": "assets/images/cards/eng/BT7-110_P3.jpg",
+    "cardType": "Option",
+    "dp": "-",
+    "playCost": "-",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "-",
+    "rarity": "R",
+    "cardNumber": "BT7-110",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "If you have a Digimon with [Hybrid] in its traits in play, you may use this Option card without meeting its color requirements.\n[Main] Your level 4 Digimon can digivolve into 1 Digimon card in your hand with matching colors and [Ten Warriors] in its traits for its digivolution cost, ignoring its level.",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Add this card to its owner's hand.",
+    "color": "White",
+    "version": "Stamp",
+    "notes": "2022 August Regionals Finalist Card Set",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "banira"
+  },
+  {
+    "id": "BT7-110_P4",
+    "name": "Evolution Ancient",
+    "cardImage": "assets/images/cards/eng/BT7-110_P4.jpg",
+    "cardType": "Option",
+    "dp": "-",
+    "playCost": "-",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "-",
+    "rarity": "R",
+    "cardNumber": "BT7-110",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "If you have a Digimon with [Hybrid] in its traits in play, you may use this Option card without meeting its color requirements.\n[Main] Your level 4 Digimon can digivolve into 1 Digimon card in your hand with matching colors and [Ten Warriors] in its traits for its digivolution cost, ignoring its level.",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Add this card to its owner's hand.",
+    "color": "White",
+    "notes": "2022 August Regionals Champion Card Set",
+    "version": "Stamp",
+    "block": [
+      "01"
+    ],
+    "restriction": "",
+    "illustrator": "banira"
   },
   {
     "id": "BT7-111",

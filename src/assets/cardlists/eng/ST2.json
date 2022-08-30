@@ -516,6 +516,36 @@
     "illustrator": "Tonamikanji"
   },
   {
+    "id": "ST2-09_P2",
+    "name": "Zudomon",
+    "cardImage": "assets/images/cards/eng/ST2-09_P2.jpg",
+    "cardType": "Digimon",
+    "dp": "7000",
+    "playCost": "6",
+    "digivolveCost1": "3 from Lv.4",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.5",
+    "form": "Ultimate",
+    "attribute": "Vaccine",
+    "type": "Sea Beast",
+    "rarity": "U",
+    "cardNumber": "ST2-09",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Digivolving] Trash 2 digivolution cards at the bottom of 1 of your opponent's Digimon.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Official Tournament Pack Vol.6",
+    "color": "Blue",
+    "version": "AA",
+    "block": [
+      "00"
+    ],
+    "restriction": "",
+    "illustrator": "Tonamikanji"
+  },
+  {
     "id": "ST2-10",
     "name": "Plesiomon",
     "cardImage": "assets/images/cards/eng/ST2-10.jpg",
