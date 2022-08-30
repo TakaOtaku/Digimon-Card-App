@@ -152,7 +152,11 @@ export class AppComponent {
   }
 
   loginWithGoogle() {
-    this.authService.GoogleAuth().then(() => this.retry());
+    this.authService.GoogleAuth().then(() => {
+      this.hide = false;
+      this.noSaveDialog = false;
+      this.retryDialog = false;
+    });
   }
 
   createANewSave() {
