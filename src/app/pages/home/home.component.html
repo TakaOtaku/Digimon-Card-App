@@ -1,5 +1,5 @@
 <div
-  class="relative inline-flex h-[calc(100vh-58px)] max-h-screen w-full flex-row overflow-x-hidden"
+  class="relative inline-flex h-[calc(100vh-50px)] w-full flex-row overflow-hidden"
 >
   <button
     *ngIf="showAccordionButtons"
@@ -25,10 +25,11 @@
 
   <div
     *ngIf="collectionView"
-    class="my-1 h-full"
+    class="my-1 max-h-full h-full"
     [ngClass]="{ 'w-7/12': deckView, 'w-full': !deckView }"
   >
     <digimon-collection-view
+      class="max-h-full h-full"
       [deckView]="deckView"
       (onCardClick)="onCardClick($event)"
     ></digimon-collection-view>
@@ -46,6 +47,7 @@
   </button>
 
   <digimon-deck-stats
+    class="fixed"
     [collectionView]="collectionView"
     [showStats]="showStats"
   ></digimon-deck-stats>

@@ -1,33 +1,34 @@
-<div class="flex flex-row h-1/2 text-white border-2 border-slate-500">
-  <div class="w-1/3 flex flex-col">
-    <div class="h-2/3">
-      <div
-        class="min-w-auto primary-background mx-2 h-full w-full rounded-full text-xs font-semibold text-white"
-      >
-        <i *ngIf="!user" class="pi pi-user"></i>
-        <img
-          *ngIf="user"
-          alt="{{ user.displayName }}"
-          src="{{ user.photoURL }}"
-        />
-      </div>
-    </div>
-    <div class="h-1/3 text-center vertical-align">
+<div class="flex flex-col h-1/2 text-white border-2 border-slate-500">
+  <div class="h-1/2 mx-auto grid grid-cols-2">
+    <i *ngIf="!user" class="pi pi-user min-w-auto primary-background p-10 h-full rounded-full text-xs font-semibold text-white"></i>
+
+    <img
+      class="rounded-full min-w-auto p-10 h-full rounded-full text-xs font-semibold text-white"
+      *ngIf="user"
+      alt="{{ user.displayName }}"
+      src="{{ user.photoURL }}"
+    />
+
+    <div class="ml-10 text-center my-auto text-2xl font-bold vertical-align">
       {{ user?.displayName ?? 'User' }}
     </div>
   </div>
-  <div class="w-1/3 flex flex-row">
-    <div class="w-1/2 h-1/2">
-      BT Circle
+  <div class="grid grid-cols-4">
+    <div class="flex flex-col">
+      <digimon-collection-circle class="mx-4" [type]="'BT'"></digimon-collection-circle>
+      <label class="text-center">BT</label>
     </div>
-    <div class="w-1/2 h-1/2">
-      EX Circle
+    <div class="flex flex-col">
+      <digimon-collection-circle class="mx-4" [type]="'EX'"></digimon-collection-circle>
+      <label class="text-center">EX</label>
     </div>
-    <div class="w-1/2 h-1/2">
-      ST Circle
+    <div class="flex flex-col">
+      <digimon-collection-circle class="mx-4" [type]="'ST'"></digimon-collection-circle>
+      <label class="text-center">ST</label>
     </div>
-    <div class="w-1/2 h-1/2">
-      P Circle
+    <div class="flex flex-col">
+      <digimon-collection-circle class="mx-4" [type]="'P'"></digimon-collection-circle>
+      <label class="text-center">P</label>
     </div>
   </div>
 </div>

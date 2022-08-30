@@ -56,6 +56,7 @@ import { DigimonEffects } from './store/digimon.effects';
 import * as DigimonCards from './store/reducers/digimon-card.reducers';
 import * as Digimon from './store/reducers/digimon.reducers';
 import * as Save from './store/reducers/save.reducer';
+import { CollectionCircleComponent } from './components/molecules/collection-circle/collection-circle.component';
 
 @NgModule({
   declarations: [
@@ -92,6 +93,7 @@ import * as Save from './store/reducers/save.reducer';
     UserStatsComponent,
     CollectionComponent,
     DecksComponent,
+    CollectionCircleComponent,
   ],
   imports: [
     PrimeNGModule,

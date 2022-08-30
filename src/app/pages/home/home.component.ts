@@ -63,6 +63,13 @@ export class HomeComponent {
 
       this.showAccordionButtons = true;
     }
+
+    console.log(
+      'Show Stats: ',
+      this.showStats,
+      'Show AccordionButtons: ',
+      this.showAccordionButtons
+    );
   }
 
   onCardClick(id: string) {

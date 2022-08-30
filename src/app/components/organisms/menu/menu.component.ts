@@ -278,7 +278,7 @@ export class MenuComponent implements OnInit, OnDestroy {
       ...this.iSave,
       settings: {
         ...this.iSave.settings,
-        minimum: this.collectionCount,
+        collectionMinimum: this.collectionCount,
         showPreRelease: this.preRelease,
         showAACards: this.aa,
         showStampedCards: this.stamped,
