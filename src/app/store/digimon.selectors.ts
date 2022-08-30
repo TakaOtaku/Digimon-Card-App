@@ -1,15 +1,5 @@
-import { createFeatureSelector, createSelector } from '@ngrx/store';
-import {
-  ICard,
-  ICountCard,
-  IDeck,
-  IDigimonCards,
-  IDigimonState,
-  IFilter,
-  ISave,
-  ISettings,
-  ISort,
-} from '../../models';
+import {createFeatureSelector, createSelector} from '@ngrx/store';
+import {ICard, ICountCard, IDeck, IDigimonCards, IDigimonState, IFilter, ISave, ISettings, ISort,} from '../../models';
 
 export const selectIDigimonCards =
   createFeatureSelector<IDigimonCards>('digimonCards');
@@ -84,6 +74,10 @@ export const selectShowStampedCards = createSelector(
 export const selectShowAACards = createSelector(
   selectSettings,
   (state: ISettings) => state.showAACards
+);
+export const selectShowUserStats = createSelector(
+  selectSettings,
+  (state: ISettings) => state.showUserStats
 );
 //endregion
 

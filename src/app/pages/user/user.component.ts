@@ -1,16 +1,12 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
-import { Store } from '@ngrx/store';
-import { Subject, takeUntil } from 'rxjs';
-import { ICard, ICountCard, IDeck, IUser } from '../../../models';
-import { AuthService } from '../../service/auth.service';
-import { DatabaseService } from '../../service/database.service';
-import {
-  selectAllCards,
-  selectCollection,
-  selectDecks,
-} from '../../store/digimon.selectors';
-import { Location } from '@angular/common';
+import {Location} from '@angular/common';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {ActivatedRoute, Params} from '@angular/router';
+import {Store} from '@ngrx/store';
+import {Subject, takeUntil} from 'rxjs';
+import {ICard, ICountCard, IDeck, IUser} from '../../../models';
+import {AuthService} from '../../service/auth.service';
+import {DatabaseService} from '../../service/database.service';
+import {selectAllCards, selectCollection, selectDecks, selectShowUserStats,} from '../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-user',
@@ -21,6 +17,7 @@ export class UserComponent implements OnInit, OnDestroy {
   user: IUser | null;
   decks: IDeck[];
   allCards: ICard[];
+  showUserStats = true;
 
   private onDestroy$ = new Subject<boolean>();
 
@@ -65,6 +62,10 @@ export class UserComponent implements OnInit, OnDestroy {
       .select(selectAllCards)
       .pipe(takeUntil(this.onDestroy$))
       .subscribe((cards) => (this.allCards = cards));
+    this.store
+      .select(selectShowUserStats)
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((showUserStats) => (this.showUserStats = showUserStats));
 
     this.user = this.authService.userData;
   }

@@ -336,7 +336,7 @@
       <label for="float-input">How many of a card do you collect?</label>
     </span>
 
-    <div class="flex flex-row">
+    <div class="flex flex-row mx-auto">
       <div>
         <h5 class="text-center mt-5 font-bold">Pre-Release Cards</h5>
         <p-selectButton
@@ -369,6 +369,17 @@
           optionValue="value"
         ></p-selectButton>
       </div>
+    </div>
+
+    <div class="mx-auto">
+      <h5 class="text-center mt-5 font-bold">Show User-Stats</h5>
+      <p-selectButton
+        [(ngModel)]="userStats"
+        [options]="showHideOptions"
+        class="mx-auto"
+        optionLabel="label"
+        optionValue="value"
+      ></p-selectButton>
     </div>
   </div>
 

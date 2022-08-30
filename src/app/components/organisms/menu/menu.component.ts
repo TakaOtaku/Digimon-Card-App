@@ -1,31 +1,17 @@
-import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { Router } from '@angular/router';
-import { Store } from '@ngrx/store';
-import { saveAs } from 'file-saver';
-import {
-  ConfirmationService,
-  MenuItem,
-  MessageService,
-  PrimeNGConfig,
-} from 'primeng/api';
-import { first, Subject, takeUntil } from 'rxjs';
-import { ICard, ICountCard, ISave, IUser } from '../../../../models';
-import { AuthService } from '../../../service/auth.service';
-import { DatabaseService } from '../../../service/database.service';
-import {
-  addToCollection,
-  loadSave,
-  setSave,
-} from '../../../store/digimon.actions';
-import {
-  selectAllCards,
-  selectCollection,
-  selectSave,
-  selectSettings,
-} from '../../../store/digimon.selectors';
-import { emptySettings } from '../../../store/reducers/save.reducer';
-import { GroupedSets } from '../filter/filter-side-box/filterData';
+import {Component, HostListener, OnDestroy, OnInit} from '@angular/core';
+import {FormControl} from '@angular/forms';
+import {Router} from '@angular/router';
+import {Store} from '@ngrx/store';
+import {saveAs} from 'file-saver';
+import {ConfirmationService, MenuItem, MessageService, PrimeNGConfig,} from 'primeng/api';
+import {first, Subject, takeUntil} from 'rxjs';
+import {ICard, ICountCard, ISave, IUser} from '../../../../models';
+import {AuthService} from '../../../service/auth.service';
+import {DatabaseService} from '../../../service/database.service';
+import {addToCollection, loadSave, setSave,} from '../../../store/digimon.actions';
+import {selectAllCards, selectCollection, selectSave, selectSettings,} from '../../../store/digimon.selectors';
+import {emptySettings} from '../../../store/reducers/save.reducer';
+import {GroupedSets} from '../filter/filter-side-box/filterData';
 
 @Component({
   selector: 'digimon-menu',
@@ -58,9 +44,11 @@ export class MenuComponent implements OnInit, OnDestroy {
   aa = true;
   stamped = true;
   showHideOptions = [
-    { label: 'Show', value: true },
-    { label: 'Hide', value: false },
+    {label: 'Show', value: true},
+    {label: 'Hide', value: false},
   ];
+
+  userStats = true;
 
   sortOrder = ['Color', 'Level'];
   sortOrderFilter = new FormControl();
@@ -283,6 +271,7 @@ export class MenuComponent implements OnInit, OnDestroy {
         showAACards: this.aa,
         showStampedCards: this.stamped,
         sortDeckOrder: this.sortOrderFilter.value,
+        showUserStats: this.userStats
       },
     };
 

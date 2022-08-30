@@ -1,17 +1,18 @@
-import { Injectable } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/compat/database';
-import { getDatabase, ref, update } from '@angular/fire/database';
-import { BehaviorSubject, first, Subject } from 'rxjs';
-import { IDeck, ISave, IUser } from '../../models';
-import { CARDSET } from '../../models/card-set.enum';
-import { emptyDeck } from '../store/reducers/digimon.reducers';
-import { emptySettings } from '../store/reducers/save.reducer';
+import {Injectable} from '@angular/core';
+import {AngularFireDatabase} from '@angular/fire/compat/database';
+import {getDatabase, ref, update} from '@angular/fire/database';
+import {BehaviorSubject, first, Subject} from 'rxjs';
+import {IDeck, ISave, IUser} from '../../models';
+import {CARDSET} from '../../models/card-set.enum';
+import {emptyDeck} from '../store/reducers/digimon.reducers';
+import {emptySettings} from '../store/reducers/save.reducer';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DatabaseService {
-  constructor(public database: AngularFireDatabase) {}
+  constructor(public database: AngularFireDatabase) {
+  }
 
   /**
    * Falls der Nutzer eingeloggt ist und keine Daten hat, erstelle diese
@@ -84,11 +85,14 @@ export class DatabaseService {
     if (save.settings.showStampedCards === undefined) {
       save = {
         ...save,
-        settings: { ...save.settings, showStampedCards: true },
+        settings: {...save.settings, showStampedCards: true},
       };
     }
     if (save.settings.showAACards === undefined) {
-      save = { ...save, settings: { ...save.settings, showAACards: true } };
+      save = {...save, settings: {...save.settings, showAACards: true}};
+    }
+    if (save.settings.showUserStats === undefined) {
+      save = {...save, settings: {...save.settings, showUserStats: true}};
     }
 
     return save;

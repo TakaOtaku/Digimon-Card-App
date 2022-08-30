@@ -1,5 +1,5 @@
-import { createAction, props } from '@ngrx/store';
-import { ICard, ICountCard, IDeck, IFilter, ISave, ISort } from '../../models';
+import {createAction, props} from '@ngrx/store';
+import {ICard, ICountCard, IDeck, IFilter, ISave, ISort} from '../../models';
 
 //region Digimon Card Actions
 export const setDigimonCards = createAction(
@@ -63,6 +63,10 @@ export const changeCollectionMode = createAction(
 export const changeCardSets = createAction(
   '[Settings] Change Card Sets',
   props<{ cardSet: string }>()
+);
+export const changeShowUserStats = createAction(
+  '[Settings] Change Show User Stats',
+  props<{ showUserStats: boolean }>()
 );
 //endregions
 

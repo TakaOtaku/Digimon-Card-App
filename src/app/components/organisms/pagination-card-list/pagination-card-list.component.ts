@@ -1,21 +1,10 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnDestroy,
-  OnInit,
-  Output,
-} from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { Store } from '@ngrx/store';
-import { Subject, takeUntil } from 'rxjs';
-import { ICard, ICountCard } from '../../../../models';
-import { changeCollectionMode } from '../../../store/digimon.actions';
-import {
-  selectCollection,
-  selectCollectionMode,
-  selectFilteredCards,
-} from '../../../store/digimon.selectors';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output,} from '@angular/core';
+import {FormControl} from '@angular/forms';
+import {Store} from '@ngrx/store';
+import {Subject, takeUntil} from 'rxjs';
+import {ICard, ICountCard} from '../../../../models';
+import {changeCollectionMode} from '../../../store/digimon.actions';
+import {selectCollection, selectCollectionMode, selectFilteredCards,} from '../../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-pagination-card-list',
@@ -84,6 +73,10 @@ export class PaginationCardListComponent implements OnInit, OnDestroy {
   }
 
   addToDeck(card: ICard) {
+    if (this.collectionMode.value) {
+      return;
+    }
+
     this.onCardClick.emit(card.id);
   }
 
