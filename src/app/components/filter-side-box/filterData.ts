@@ -52,7 +52,7 @@ export const Keywords: string[] = [
   '\uff1cBlocker\uff1e',
   '\uff1cDecoy (Black)\uff1e',
   '\uff1cDecoy (Black/White)\uff1e',
-  '\uff1cDecoy (Red)(Black)\uff1e',
+  '\uff1cDecoy (Red/Black)\uff1e',
   '\uff1cDecoy (D-Brigade)\uff1e',
   '\uff1cDe-Digivolve 1\uff1e',
   '\uff1cDe-Digivolve 2\uff1e',
