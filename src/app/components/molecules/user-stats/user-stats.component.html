@@ -2,13 +2,13 @@
   <div class="h-1/2 mx-auto grid grid-cols-2">
     <img
       class="rounded-full min-w-auto p-10 h-full rounded-full text-xs font-semibold text-white"
-      *ngIf="user"
-      alt="{{ user.displayName }}"
-      src="{{ user.photoURL }}"
+      *ngIf="save"
+      alt="{{ save.displayName }}"
+      src="{{ save.photoURL }}"
     />
 
     <div class="ml-10 text-center my-auto text-2xl font-bold vertical-align">
-      {{ user?.displayName ?? 'User' }}
+      {{ save?.displayName ?? 'User' }}
     </div>
   </div>
   <div class="grid grid-cols-4">

@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ICountCard, IUser } from '../../../../models';
+import {Component, Input, OnInit} from '@angular/core';
+import {ICountCard, ISave} from '../../../../models';
 
 @Component({
   selector: 'digimon-user-stats',
@@ -7,7 +7,7 @@ import { ICountCard, IUser } from '../../../../models';
   styleUrls: ['./user-stats.component.css'],
 })
 export class UserStatsComponent implements OnInit {
-  @Input() user: IUser | null;
+  @Input() save: ISave | null;
   @Input() collection: ICountCard[];
 
   constructor() {}

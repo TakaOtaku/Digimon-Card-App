@@ -32,6 +32,9 @@ export const emptySettings: ISettings = {
 };
 
 export const emptySave: ISave = {
+  uid: '',
+  photoURL: '',
+  displayName: '',
   version: 1,
   collection: [],
   decks: [],

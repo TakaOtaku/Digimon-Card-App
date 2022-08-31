@@ -1,6 +1,6 @@
 <div class="w-screen lg:h-[calc(100vh-50px)] flex flex-col lg:flex-row lg:overflow-hidden">
   <div *ngIf="showUserStats" class="hidden lg:block lg:w-2/5 h-full">
-    <digimon-user-stats [user]="user" [collection]="collection"></digimon-user-stats>
+    <digimon-user-stats [collection]="collection" [save]="save"></digimon-user-stats>
     <digimon-collection [collection]="collection" [allCards]="allCards"></digimon-collection>
   </div>
   <div [ngClass]="{ 'lg:w-3/5': showUserStats, 'w-full': !showUserStats }" class="h-full lg:max-h-[calc(100vh-58px)]">

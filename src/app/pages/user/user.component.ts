@@ -2,8 +2,8 @@ import {Location} from '@angular/common';
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Params} from '@angular/router';
 import {Store} from '@ngrx/store';
-import {Subject, takeUntil} from 'rxjs';
-import {ICard, ICountCard, IDeck, IUser} from '../../../models';
+import {first, Subject, takeUntil} from 'rxjs';
+import {ICard, ICountCard, IDeck, ISave} from '../../../models';
 import {AuthService} from '../../service/auth.service';
 import {DatabaseService} from '../../service/database.service';
 import {selectAllCards, selectCollection, selectDecks, selectShowUserStats,} from '../../store/digimon.selectors';
@@ -14,7 +14,7 @@ import {selectAllCards, selectCollection, selectDecks, selectShowUserStats,} fro
 })
 export class UserComponent implements OnInit, OnDestroy {
   collection: ICountCard[];
-  user: IUser | null;
+  save: ISave | null;
   decks: IDeck[];
   allCards: ICard[];
   showUserStats = true;
@@ -32,17 +32,18 @@ export class UserComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.onDestroy$))
       .subscribe(() => {
         this.changeURL();
-        this.user = this.authService.userData;
+        this.databaseService.loadSave(this.authService.userData!.uid).pipe(first()).subscribe((save) => {
+          this.save = save;
+        });
       });
 
-    route.params.subscribe((params: Params) => {
-      //this.databaseService.loadUser(params['id']).subscribe((user) => {
-      //  this.store.dispatch(
-      //    setUser({
-      //      user: user,
-      //    })
-      //  );
-      //});
+    route.params.pipe(takeUntil(this.onDestroy$)).subscribe((params: Params) => {
+      this.databaseService.loadSave(params['id']).pipe(first()).subscribe((save) => {
+        debugger;
+        this.save = save;
+        this.decks = save?.decks ?? [];
+        this.collection = save?.collection ?? [];
+      });
       if (!params['id']) {
         this.changeURL();
       }
@@ -67,7 +68,9 @@ export class UserComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.onDestroy$))
       .subscribe((showUserStats) => (this.showUserStats = showUserStats));
 
-    this.user = this.authService.userData;
+    this.databaseService.loadSave(this.authService.userData!.uid).pipe(first()).subscribe((save) => {
+      this.save = save;
+    });
   }
 
   ngOnDestroy() {

@@ -8,7 +8,7 @@ import {MessageService} from 'primeng/api';
 import {first, Subject} from 'rxjs';
 import {IUser} from '../../models';
 import {loadSave, setSave} from '../store/digimon.actions';
-import {emptySave} from '../store/reducers/save.reducer';
+import {emptySettings} from '../store/reducers/save.reducer';
 import {DatabaseService} from './database.service';
 import UserCredential = firebase.auth.UserCredential;
 import User = firebase.User;
@@ -110,7 +110,15 @@ export class AuthService {
             uid: user.uid,
             displayName: user.displayName ?? '',
             photoURL: user.photoURL ?? '',
-            save: emptySave,
+            save: {
+              uid: user.uid,
+              photoURL: user.photoURL ?? '',
+              displayName: user.displayName ?? '',
+              version: 1,
+              collection: [],
+              decks: [],
+              settings: emptySettings,
+            },
           };
         } else {
           userData = {
@@ -121,12 +129,32 @@ export class AuthService {
           };
         }
 
+        if (!userData.save.uid) {
+          userData.save.uid = user.uid;
+        }
+        if (!userData.save.displayName) {
+          userData.save.displayName = user.displayName ?? '';
+        }
+        if (!userData.save.photoURL) {
+          userData.save.photoURL = user.photoURL ?? '';
+        }
+
         localStorage.setItem('user', JSON.stringify(userData));
-        this.store.dispatch(setSave({ save: save ?? emptySave }));
+        this.store.dispatch(setSave({
+          save: save ?? {
+            uid: user.uid,
+            photoURL: user.photoURL ?? '',
+            displayName: user.displayName ?? '',
+            version: 1,
+            collection: [],
+            decks: [],
+            settings: emptySettings,
+          }
+        }));
 
         this.userData = userData;
 
-        userRef.set(userData, { merge: true });
+        userRef.set(userData, {merge: true});
 
         this.authChange.next(true);
       });
