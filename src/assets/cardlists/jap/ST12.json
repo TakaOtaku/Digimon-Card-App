@@ -347,7 +347,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[On Play] By trashing 1 card in your hand, ＜Draw 2＞. (Draw 2 cards from your deck.)\n[All Turns] While you have a Digimon in play with [Huckmon] in its name or [Royal Knight] in its traits, this Digimon gains ＜Decoy (Red)(Black)＞. (When one of your other red or black Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent that deletion.)",
+    "effect": "[On Play] By trashing 1 card in your hand, ＜Draw 2＞. (Draw 2 cards from your deck.)\n[All Turns] While you have a Digimon in play with [Huckmon] in its name or [Royal Knight] in its traits, this Digimon gains ＜Decoy (Red/Black)＞. (When one of your other red or black Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent that deletion.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹start deck JESMON[ST-12]",
