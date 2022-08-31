@@ -1,13 +1,13 @@
-import {Component} from '@angular/core';
-import {Meta, Title} from '@angular/platform-browser';
-import {Store} from '@ngrx/store';
-import {MessageService} from 'primeng/api';
-import {first} from 'rxjs';
-import {ISave} from '../models';
-import {AuthService} from './service/auth.service';
-import {DatabaseService} from './service/database.service';
-import {loadSave, setSave} from './store/digimon.actions';
-import {emptySave} from './store/reducers/save.reducer';
+import { Component } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
+import { Store } from '@ngrx/store';
+import { MessageService } from 'primeng/api';
+import { first } from 'rxjs';
+import { ISave } from '../models';
+import { AuthService } from './service/auth.service';
+import { DatabaseService } from './service/database.service';
+import { loadSave, setSave } from './store/digimon.actions';
+import { emptySave } from './store/reducers/save.reducer';
 
 @Component({
   selector: 'digimon-root',
@@ -20,6 +20,7 @@ export class AppComponent {
 
   noSaveDialog = false;
   retryDialog = false;
+  test = true;
 
   constructor(
     private store: Store,

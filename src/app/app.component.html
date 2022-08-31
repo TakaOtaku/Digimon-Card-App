@@ -37,7 +37,9 @@
   </div>
 </p-dialog>
 
-<p-dialog header="We could not load your save!" [(visible)]="retryDialog" [modal]="true" class="max-w-500px" [draggable]="false" [resizable]="false" [closable]="false">
+<h1 class="text-white text-3xl">{{retryDialog}}</h1>
+
+<p-dialog *ngIf="retryDialog" header="We could not load your save!" [(visible)]="test" [modal]="true" class="max-w-500px" [draggable]="false" [resizable]="false" [closable]="false">
   <p>There was an error with loading your save from the server.</p>
   <p>
     It could be that you have a slow internet right now and a timeout happened.
