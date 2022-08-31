@@ -195,7 +195,7 @@ def getCardDataFromWiki():
         digimoncard['id'] = splitUrl[2]
         digimoncard['cardNumber'] = splitUrl[2]
         digimoncard['cardImage'] = digimoncard['cardImage'] + \
-            digimoncard['id']+".jpg"
+            digimoncard['id']+".webp"
 
         imagediv = soup.find("div", class_="image")
         image = imagediv.find("img")
@@ -221,7 +221,7 @@ def makeAACardDatas():
                 newCard['version'] = "AA"
                 newCard['id'] = cardID + "_P1"
                 newCard['cardImage'] = 'assets/images/cards/jap/' + \
-                    newCard['id']+".jpg"
+                    newCard['id']+".webp"
                 cards.append(newCard)
                 break
 

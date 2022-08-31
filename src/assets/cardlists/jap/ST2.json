@@ -2,7 +2,7 @@
   {
     "id": "ST2-01",
     "name": "Tsunomon",
-    "cardImage": "assets/images/cards/jap/ST2-01.jpg",
+    "cardImage": "assets/images/cards/jap/ST2-01.webp",
     "cardType": "Digi-Egg",
     "dp": "-",
     "playCost": "ー",
@@ -32,7 +32,7 @@
   {
     "id": "ST2-02",
     "name": "Gomamon",
-    "cardImage": "assets/images/cards/jap/ST2-02.jpg",
+    "cardImage": "assets/images/cards/jap/ST2-02.webp",
     "cardType": "Digimon",
     "dp": "3000",
     "playCost": "2",
@@ -63,7 +63,7 @@
   {
     "id": "ST2-02_P1",
     "name": "Gomamon",
-    "cardImage": "assets/images/cards/jap/ST2-02_P1.jpg",
+    "cardImage": "assets/images/cards/jap/ST2-02_P1.webp",
     "cardType": "Digimon",
     "dp": "3000",
     "playCost": "2",
@@ -94,7 +94,7 @@
   {
     "id": "ST2-03",
     "name": "Gabumon",
-    "cardImage": "assets/images/cards/jap/ST2-03.jpg",
+    "cardImage": "assets/images/cards/jap/ST2-03.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -124,7 +124,7 @@
   {
     "id": "ST2-04",
     "name": "Bearmon",
-    "cardImage": "assets/images/cards/jap/ST2-04.jpg",
+    "cardImage": "assets/images/cards/jap/ST2-04.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "3",
@@ -154,7 +154,7 @@
   {
     "id": "ST2-05",
     "name": "Ikkakumon",
-    "cardImage": "assets/images/cards/jap/ST2-05.jpg",
+    "cardImage": "assets/images/cards/jap/ST2-05.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "4",
@@ -184,7 +184,7 @@
   {
     "id": "ST2-06",
     "name": "Garurumon",
-    "cardImage": "assets/images/cards/jap/ST2-06.jpg",
+    "cardImage": "assets/images/cards/jap/ST2-06.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "5",
@@ -214,7 +214,7 @@
   {
     "id": "ST2-06_P1",
     "name": "Garurumon",
-    "cardImage": "assets/images/cards/jap/ST2-06_P1.jpg",
+    "cardImage": "assets/images/cards/jap/ST2-06_P1.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "5",
@@ -244,7 +244,7 @@
   {
     "id": "ST2-07",
     "name": "Grizzlymon",
-    "cardImage": "assets/images/cards/jap/ST2-07.jpg",
+    "cardImage": "assets/images/cards/jap/ST2-07.webp",
     "cardType": "Digimon",
     "dp": "6000",
     "playCost": "5",
@@ -275,7 +275,7 @@
   {
     "id": "ST2-07_P1",
     "name": "Grizzlymon",
-    "cardImage": "assets/images/cards/jap/ST2-07_P1.jpg",
+    "cardImage": "assets/images/cards/jap/ST2-07_P1.webp",
     "cardType": "Digimon",
     "dp": "6000",
     "playCost": "5",
@@ -306,7 +306,7 @@
   {
     "id": "ST2-08",
     "name": "WereGarurumon",
-    "cardImage": "assets/images/cards/jap/ST2-08.jpg",
+    "cardImage": "assets/images/cards/jap/ST2-08.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "7",
@@ -336,7 +336,7 @@
   {
     "id": "ST2-08_P1",
     "name": "WereGarurumon",
-    "cardImage": "assets/images/cards/jap/ST2-08_P1.jpg",
+    "cardImage": "assets/images/cards/jap/ST2-08_P1.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "7",
@@ -366,7 +366,7 @@
   {
     "id": "ST2-08_P2",
     "name": "WereGarurumon",
-    "cardImage": "assets/images/cards/jap/ST2-08_P2.jpg",
+    "cardImage": "assets/images/cards/jap/ST2-08_P2.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "7",
@@ -396,7 +396,7 @@
   {
     "id": "ST2-09",
     "name": "Zudomon",
-    "cardImage": "assets/images/cards/jap/ST2-09.jpg",
+    "cardImage": "assets/images/cards/jap/ST2-09.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "6",
@@ -426,7 +426,7 @@
   {
     "id": "ST2-09_P1",
     "name": "Zudomon",
-    "cardImage": "assets/images/cards/jap/ST2-09_P1.jpg",
+    "cardImage": "assets/images/cards/jap/ST2-09_P1.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "6",
@@ -456,7 +456,7 @@
   {
     "id": "ST2-10",
     "name": "Plesiomon",
-    "cardImage": "assets/images/cards/jap/ST2-10.jpg",
+    "cardImage": "assets/images/cards/jap/ST2-10.webp",
     "cardType": "Digimon",
     "dp": "12000",
     "playCost": "10",
@@ -486,7 +486,7 @@
   {
     "id": "ST2-11",
     "name": "MetalGarurumon",
-    "cardImage": "assets/images/cards/jap/ST2-11.jpg",
+    "cardImage": "assets/images/cards/jap/ST2-11.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "12",
@@ -517,7 +517,7 @@
   {
     "id": "ST2-11_P1",
     "name": "MetalGarurumon",
-    "cardImage": "assets/images/cards/jap/ST2-11_P1.jpg",
+    "cardImage": "assets/images/cards/jap/ST2-11_P1.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "12",
@@ -548,7 +548,7 @@
   {
     "id": "ST2-12",
     "name": "Matt Ishida",
-    "cardImage": "assets/images/cards/jap/ST2-12.jpg",
+    "cardImage": "assets/images/cards/jap/ST2-12.webp",
     "cardType": "Tamer",
     "dp": "-",
     "playCost": "2",
@@ -578,7 +578,7 @@
   {
     "id": "ST2-13",
     "name": "Hammer Spark",
-    "cardImage": "assets/images/cards/jap/ST2-13.jpg",
+    "cardImage": "assets/images/cards/jap/ST2-13.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "-",
@@ -609,7 +609,7 @@
   {
     "id": "ST2-13_P1",
     "name": "Hammer Spark",
-    "cardImage": "assets/images/cards/jap/ST2-13_P1.jpg",
+    "cardImage": "assets/images/cards/jap/ST2-13_P1.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "-",
@@ -640,7 +640,7 @@
   {
     "id": "ST2-13_P2",
     "name": "Hammer Spark",
-    "cardImage": "assets/images/cards/jap/ST2-13_P2.jpg",
+    "cardImage": "assets/images/cards/jap/ST2-13_P2.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "-",
@@ -671,7 +671,7 @@
   {
     "id": "ST2-14",
     "name": "Sorrow Blue",
-    "cardImage": "assets/images/cards/jap/ST2-14.jpg",
+    "cardImage": "assets/images/cards/jap/ST2-14.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "2",
@@ -701,7 +701,7 @@
   {
     "id": "ST2-15",
     "name": "Kaiser Nail",
-    "cardImage": "assets/images/cards/jap/ST2-15.jpg",
+    "cardImage": "assets/images/cards/jap/ST2-15.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "4",
@@ -731,7 +731,7 @@
   {
     "id": "ST2-16",
     "name": "Cocytus Breath",
-    "cardImage": "assets/images/cards/jap/ST2-16.jpg",
+    "cardImage": "assets/images/cards/jap/ST2-16.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "7",
@@ -761,7 +761,7 @@
   {
     "id": "ST2-16_P1",
     "name": "Cocytus Breath",
-    "cardImage": "assets/images/cards/jap/ST2-16_P1.jpg",
+    "cardImage": "assets/images/cards/jap/ST2-16_P1.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "7",

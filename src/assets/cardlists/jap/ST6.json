@@ -2,7 +2,7 @@
   {
     "id": "ST6-01",
     "name": "Pagumon",
-    "cardImage": "assets/images/cards/jap/ST6-01.jpg",
+    "cardImage": "assets/images/cards/jap/ST6-01.webp",
     "cardType": "Digi-Egg",
     "dp": "-",
     "playCost": "-",
@@ -32,7 +32,7 @@
   {
     "id": "ST6-02",
     "name": "DemiDevimon",
-    "cardImage": "assets/images/cards/jap/ST6-02.jpg",
+    "cardImage": "assets/images/cards/jap/ST6-02.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "2",
@@ -62,7 +62,7 @@
   {
     "id": "ST6-03",
     "name": "Gabumon",
-    "cardImage": "assets/images/cards/jap/ST6-03.jpg",
+    "cardImage": "assets/images/cards/jap/ST6-03.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -92,7 +92,7 @@
   {
     "id": "ST6-04",
     "name": "Dracmon",
-    "cardImage": "assets/images/cards/jap/ST6-04.jpg",
+    "cardImage": "assets/images/cards/jap/ST6-04.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -122,7 +122,7 @@
   {
     "id": "ST6-05",
     "name": "Elecmon",
-    "cardImage": "assets/images/cards/jap/ST6-05.jpg",
+    "cardImage": "assets/images/cards/jap/ST6-05.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "4",
@@ -152,7 +152,7 @@
   {
     "id": "ST6-06",
     "name": "Garurumon",
-    "cardImage": "assets/images/cards/jap/ST6-06.jpg",
+    "cardImage": "assets/images/cards/jap/ST6-06.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "4",
@@ -182,7 +182,7 @@
   {
     "id": "ST6-07",
     "name": "Youkomon",
-    "cardImage": "assets/images/cards/jap/ST6-07.jpg",
+    "cardImage": "assets/images/cards/jap/ST6-07.webp",
     "cardType": "Digimon",
     "dp": "6000",
     "playCost": "5",
@@ -212,7 +212,7 @@
   {
     "id": "ST6-08",
     "name": "Devimon",
-    "cardImage": "assets/images/cards/jap/ST6-08.jpg",
+    "cardImage": "assets/images/cards/jap/ST6-08.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "6",
@@ -244,7 +244,7 @@
   {
     "id": "ST6-08_P1",
     "name": "Devimon",
-    "cardImage": "assets/images/cards/jap/ST6-08_P1.jpg",
+    "cardImage": "assets/images/cards/jap/ST6-08_P1.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "6",
@@ -276,7 +276,7 @@
   {
     "id": "ST6-08_P2",
     "name": "Devimon",
-    "cardImage": "assets/images/cards/jap/ST6-08_P2.jpg",
+    "cardImage": "assets/images/cards/jap/ST6-08_P2.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "6",
@@ -308,7 +308,7 @@
   {
     "id": "ST6-09",
     "name": "Kyukimon",
-    "cardImage": "assets/images/cards/jap/ST6-09.jpg",
+    "cardImage": "assets/images/cards/jap/ST6-09.webp",
     "cardType": "Digimon",
     "dp": "9000",
     "playCost": "6",
@@ -338,7 +338,7 @@
   {
     "id": "ST6-10",
     "name": "SkullSatamon",
-    "cardImage": "assets/images/cards/jap/ST6-10.jpg",
+    "cardImage": "assets/images/cards/jap/ST6-10.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "6",
@@ -368,7 +368,7 @@
   {
     "id": "ST6-11",
     "name": "WereGarurumon",
-    "cardImage": "assets/images/cards/jap/ST6-11.jpg",
+    "cardImage": "assets/images/cards/jap/ST6-11.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "7",
@@ -398,7 +398,7 @@
   {
     "id": "ST6-12",
     "name": "VenomMyotismon",
-    "cardImage": "assets/images/cards/jap/ST6-12.jpg",
+    "cardImage": "assets/images/cards/jap/ST6-12.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "10",
@@ -428,7 +428,7 @@
   {
     "id": "ST6-13",
     "name": "CresGarurumon",
-    "cardImage": "assets/images/cards/jap/ST6-13.jpg",
+    "cardImage": "assets/images/cards/jap/ST6-13.webp",
     "cardType": "Digimon",
     "dp": "12000",
     "playCost": "12",
@@ -458,7 +458,7 @@
   {
     "id": "ST6-14",
     "name": "Matt Ishida",
-    "cardImage": "assets/images/cards/jap/ST6-14.jpg",
+    "cardImage": "assets/images/cards/jap/ST6-14.webp",
     "cardType": "Tamer",
     "dp": "-",
     "playCost": "2",
@@ -489,7 +489,7 @@
   {
     "id": "ST6-14_P1",
     "name": "Matt Ishida",
-    "cardImage": "assets/images/cards/jap/ST6-14_P1.jpg",
+    "cardImage": "assets/images/cards/jap/ST6-14_P1.webp",
     "cardType": "Tamer",
     "dp": "-",
     "playCost": "2",
@@ -520,7 +520,7 @@
   {
     "id": "ST6-15",
     "name": "Death Claw",
-    "cardImage": "assets/images/cards/jap/ST6-15.jpg",
+    "cardImage": "assets/images/cards/jap/ST6-15.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "1",
@@ -550,7 +550,7 @@
   {
     "id": "ST6-16",
     "name": "Nail Bone",
-    "cardImage": "assets/images/cards/jap/ST6-16.jpg",
+    "cardImage": "assets/images/cards/jap/ST6-16.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "7",

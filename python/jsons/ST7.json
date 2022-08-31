@@ -2,7 +2,7 @@
   {
     "id": "ST7-01",
     "name": "Gigimon",
-    "cardImage": "assets/images/cards/eng/ST7-01.jpg",
+    "cardImage": "assets/images/cards/eng/ST7-01.webp",
     "cardType": "Digi-Egg",
     "dp": "-",
     "playCost": "-",
@@ -32,7 +32,7 @@
   {
     "id": "ST7-02",
     "name": "Agumon",
-    "cardImage": "assets/images/cards/eng/ST7-02.jpg",
+    "cardImage": "assets/images/cards/eng/ST7-02.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -62,7 +62,7 @@
   {
     "id": "ST7-03",
     "name": "Guilmon",
-    "cardImage": "assets/images/cards/eng/ST7-03.jpg",
+    "cardImage": "assets/images/cards/eng/ST7-03.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -92,7 +92,7 @@
   {
     "id": "ST7-03_P1",
     "name": "Guilmon",
-    "cardImage": "assets/images/cards/eng/ST7-03_P1.jpg",
+    "cardImage": "assets/images/cards/eng/ST7-03_P1.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -122,7 +122,7 @@
   {
     "id": "ST7-03_P2",
     "name": "Guilmon",
-    "cardImage": "assets/images/cards/eng/ST7-03_P2.jpg",
+    "cardImage": "assets/images/cards/eng/ST7-03_P2.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -151,7 +151,7 @@
   {
     "id": "ST7-03_P3",
     "name": "Guilmon",
-    "cardImage": "assets/images/cards/eng/ST7-03_P3.jpg",
+    "cardImage": "assets/images/cards/eng/ST7-03_P3.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -180,7 +180,7 @@
   {
     "id": "ST7-04",
     "name": "Biyomon",
-    "cardImage": "assets/images/cards/eng/ST7-04.jpg",
+    "cardImage": "assets/images/cards/eng/ST7-04.webp",
     "cardType": "Digimon",
     "dp": "3000",
     "playCost": "4",
@@ -210,7 +210,7 @@
   {
     "id": "ST7-05",
     "name": "Growlmon",
-    "cardImage": "assets/images/cards/eng/ST7-05.jpg",
+    "cardImage": "assets/images/cards/eng/ST7-05.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "4",
@@ -240,7 +240,7 @@
   {
     "id": "ST7-06",
     "name": "GeoGreymon",
-    "cardImage": "assets/images/cards/eng/ST7-06.jpg",
+    "cardImage": "assets/images/cards/eng/ST7-06.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "6",
@@ -270,7 +270,7 @@
   {
     "id": "ST7-06_P1",
     "name": "GeoGreymon",
-    "cardImage": "assets/images/cards/eng/ST7-06_P1.jpg",
+    "cardImage": "assets/images/cards/eng/ST7-06_P1.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "6",
@@ -300,7 +300,7 @@
   {
     "id": "ST7-07",
     "name": "RizeGreymon",
-    "cardImage": "assets/images/cards/eng/ST7-07.jpg",
+    "cardImage": "assets/images/cards/eng/ST7-07.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "7",
@@ -330,7 +330,7 @@
   {
     "id": "ST7-08",
     "name": "WarGrowlmon",
-    "cardImage": "assets/images/cards/eng/ST7-08.jpg",
+    "cardImage": "assets/images/cards/eng/ST7-08.webp",
     "cardType": "Digimon",
     "dp": "8000",
     "playCost": "8",
@@ -360,7 +360,7 @@
   {
     "id": "ST7-09",
     "name": "Gallantmon",
-    "cardImage": "assets/images/cards/eng/ST7-09.jpg",
+    "cardImage": "assets/images/cards/eng/ST7-09.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "11",
@@ -390,7 +390,7 @@
   {
     "id": "ST7-10",
     "name": "ShineGreymon",
-    "cardImage": "assets/images/cards/eng/ST7-10.jpg",
+    "cardImage": "assets/images/cards/eng/ST7-10.webp",
     "cardType": "Digimon",
     "dp": "12000",
     "playCost": "12",
@@ -420,7 +420,7 @@
   {
     "id": "ST7-11",
     "name": "Lightning Joust",
-    "cardImage": "assets/images/cards/eng/ST7-11.jpg",
+    "cardImage": "assets/images/cards/eng/ST7-11.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "1",
@@ -450,7 +450,7 @@
   {
     "id": "ST7-12",
     "name": "Atomic Blaster",
-    "cardImage": "assets/images/cards/eng/ST7-12.jpg",
+    "cardImage": "assets/images/cards/eng/ST7-12.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "5",

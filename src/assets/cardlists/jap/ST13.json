@@ -2,7 +2,7 @@
   {
     "id": "ST13-01",
     "name": "Sakuttomon",
-    "cardImage": "assets/images/cards/jap/ST13-01.jpg",
+    "cardImage": "assets/images/cards/jap/ST13-01.webp",
     "cardType": "Digi-Egg",
     "dp": "-",
     "playCost": "-",
@@ -32,7 +32,7 @@
   {
     "id": "ST13-02",
     "name": "Zubamon",
-    "cardImage": "assets/images/cards/jap/ST13-02.jpg",
+    "cardImage": "assets/images/cards/jap/ST13-02.webp",
     "cardType": "Digimon",
     "dp": "1000",
     "playCost": "3",
@@ -62,7 +62,7 @@
   {
     "id": "ST13-03",
     "name": "ZubaEagermon",
-    "cardImage": "assets/images/cards/jap/ST13-03.jpg",
+    "cardImage": "assets/images/cards/jap/ST13-03.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "5",
@@ -92,7 +92,7 @@
   {
     "id": "ST13-04",
     "name": "Duramon",
-    "cardImage": "assets/images/cards/jap/ST13-04.jpg",
+    "cardImage": "assets/images/cards/jap/ST13-04.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "7",
@@ -122,7 +122,7 @@
   {
     "id": "ST13-05",
     "name": "Durandamon",
-    "cardImage": "assets/images/cards/jap/ST13-05.jpg",
+    "cardImage": "assets/images/cards/jap/ST13-05.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "11",
@@ -152,7 +152,7 @@
   {
     "id": "ST13-06",
     "name": "RagnaLoardmon",
-    "cardImage": "assets/images/cards/jap/ST13-06.jpg",
+    "cardImage": "assets/images/cards/jap/ST13-06.webp",
     "cardType": "Digimon",
     "dp": "15000",
     "playCost": "15",
@@ -182,7 +182,7 @@
   {
     "id": "ST13-07",
     "name": "Kotemon",
-    "cardImage": "assets/images/cards/jap/ST13-07.jpg",
+    "cardImage": "assets/images/cards/jap/ST13-07.webp",
     "cardType": "Digimon",
     "dp": "3000",
     "playCost": "2",
@@ -212,7 +212,7 @@
   {
     "id": "ST13-08",
     "name": "Chikurimon",
-    "cardImage": "assets/images/cards/jap/ST13-08.jpg",
+    "cardImage": "assets/images/cards/jap/ST13-08.webp",
     "cardType": "Digimon",
     "dp": "3000",
     "playCost": "3",
@@ -242,7 +242,7 @@
   {
     "id": "ST13-09",
     "name": "Ludomon",
-    "cardImage": "assets/images/cards/jap/ST13-09.jpg",
+    "cardImage": "assets/images/cards/jap/ST13-09.webp",
     "cardType": "Digimon",
     "dp": "1000",
     "playCost": "3",
@@ -272,7 +272,7 @@
   {
     "id": "ST13-10",
     "name": "Gladimon",
-    "cardImage": "assets/images/cards/jap/ST13-10.jpg",
+    "cardImage": "assets/images/cards/jap/ST13-10.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "4",
@@ -302,7 +302,7 @@
   {
     "id": "ST13-11",
     "name": "TiaLudomon",
-    "cardImage": "assets/images/cards/jap/ST13-11.jpg",
+    "cardImage": "assets/images/cards/jap/ST13-11.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "5",
@@ -332,7 +332,7 @@
   {
     "id": "ST13-12",
     "name": "Knightmon",
-    "cardImage": "assets/images/cards/jap/ST13-12.jpg",
+    "cardImage": "assets/images/cards/jap/ST13-12.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "5",
@@ -362,7 +362,7 @@
   {
     "id": "ST13-13",
     "name": "RaijiLudomon",
-    "cardImage": "assets/images/cards/jap/ST13-13.jpg",
+    "cardImage": "assets/images/cards/jap/ST13-13.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "7",
@@ -392,7 +392,7 @@
   {
     "id": "ST13-14",
     "name": "BryweLudramon",
-    "cardImage": "assets/images/cards/jap/ST13-14.jpg",
+    "cardImage": "assets/images/cards/jap/ST13-14.webp",
     "cardType": "Digimon",
     "dp": "12000",
     "playCost": "11",
@@ -422,7 +422,7 @@
   {
     "id": "ST13-15",
     "name": "Direct Smasher",
-    "cardImage": "assets/images/cards/jap/ST13-15.jpg",
+    "cardImage": "assets/images/cards/jap/ST13-15.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "7",
@@ -452,7 +452,7 @@
   {
     "id": "ST13-16",
     "name": "Legend-Arms Alliance",
-    "cardImage": "assets/images/cards/jap/ST13-16.jpg",
+    "cardImage": "assets/images/cards/jap/ST13-16.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "4",

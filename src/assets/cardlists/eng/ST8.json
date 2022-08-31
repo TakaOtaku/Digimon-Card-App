@@ -2,7 +2,7 @@
   {
     "id": "ST8-01",
     "name": "DemiVeemon",
-    "cardImage": "assets/images/cards/eng/ST8-01.jpg",
+    "cardImage": "assets/images/cards/eng/ST8-01.webp",
     "cardType": "Digi-Egg",
     "dp": "-",
     "playCost": "-",
@@ -32,7 +32,7 @@
   {
     "id": "ST8-02",
     "name": "Gabumon",
-    "cardImage": "assets/images/cards/eng/ST8-02.jpg",
+    "cardImage": "assets/images/cards/eng/ST8-02.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -62,7 +62,7 @@
   {
     "id": "ST8-03",
     "name": "Dracomon",
-    "cardImage": "assets/images/cards/eng/ST8-03.jpg",
+    "cardImage": "assets/images/cards/eng/ST8-03.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -92,7 +92,7 @@
   {
     "id": "ST8-04",
     "name": "Veemon",
-    "cardImage": "assets/images/cards/eng/ST8-04.jpg",
+    "cardImage": "assets/images/cards/eng/ST8-04.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -122,7 +122,7 @@
   {
     "id": "ST8-04_P1",
     "name": "Veemon",
-    "cardImage": "assets/images/cards/eng/ST8-04_P1.jpg",
+    "cardImage": "assets/images/cards/eng/ST8-04_P1.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -152,7 +152,7 @@
   {
     "id": "ST8-04_P2",
     "name": "Veemon",
-    "cardImage": "assets/images/cards/eng/ST8-04_P2.jpg",
+    "cardImage": "assets/images/cards/eng/ST8-04_P2.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -182,7 +182,7 @@
   {
     "id": "ST8-04_P3",
     "name": "Veemon",
-    "cardImage": "assets/images/cards/eng/ST8-04_P3.jpg",
+    "cardImage": "assets/images/cards/eng/ST8-04_P3.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -212,7 +212,7 @@
   {
     "id": "ST8-05",
     "name": "Veedramon",
-    "cardImage": "assets/images/cards/eng/ST8-05.jpg",
+    "cardImage": "assets/images/cards/eng/ST8-05.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "4",
@@ -242,7 +242,7 @@
   {
     "id": "ST8-06",
     "name": "Coredramon",
-    "cardImage": "assets/images/cards/eng/ST8-06.jpg",
+    "cardImage": "assets/images/cards/eng/ST8-06.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "6",
@@ -272,7 +272,7 @@
   {
     "id": "ST8-06_P1",
     "name": "Coredramon",
-    "cardImage": "assets/images/cards/eng/ST8-06_P1.jpg",
+    "cardImage": "assets/images/cards/eng/ST8-06_P1.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "6",
@@ -302,7 +302,7 @@
   {
     "id": "ST8-06_P2",
     "name": "Coredramon",
-    "cardImage": "assets/images/cards/eng/ST8-06_P2.jpg",
+    "cardImage": "assets/images/cards/eng/ST8-06_P2.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "6",
@@ -332,7 +332,7 @@
   {
     "id": "ST8-06_P3",
     "name": "Coredramon",
-    "cardImage": "assets/images/cards/eng/ST8-06_P3.jpg",
+    "cardImage": "assets/images/cards/eng/ST8-06_P3.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "6",
@@ -362,7 +362,7 @@
   {
     "id": "ST8-07",
     "name": "Wingdramon",
-    "cardImage": "assets/images/cards/eng/ST8-07.jpg",
+    "cardImage": "assets/images/cards/eng/ST8-07.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "7",
@@ -392,7 +392,7 @@
   {
     "id": "ST8-08",
     "name": "AeroVeedramon",
-    "cardImage": "assets/images/cards/eng/ST8-08.jpg",
+    "cardImage": "assets/images/cards/eng/ST8-08.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "7",
@@ -422,7 +422,7 @@
   {
     "id": "ST8-09",
     "name": "Slayerdramon",
-    "cardImage": "assets/images/cards/eng/ST8-09.jpg",
+    "cardImage": "assets/images/cards/eng/ST8-09.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "11",
@@ -452,7 +452,7 @@
   {
     "id": "ST8-10",
     "name": "UlforceVeedramon",
-    "cardImage": "assets/images/cards/eng/ST8-10.jpg",
+    "cardImage": "assets/images/cards/eng/ST8-10.webp",
     "cardType": "Digimon",
     "dp": "12000",
     "playCost": "12",
@@ -482,7 +482,7 @@
   {
     "id": "ST8-11",
     "name": "Victory Sword",
-    "cardImage": "assets/images/cards/eng/ST8-11.jpg",
+    "cardImage": "assets/images/cards/eng/ST8-11.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "3",
@@ -512,7 +512,7 @@
   {
     "id": "ST8-12",
     "name": "V-Wing Blade",
-    "cardImage": "assets/images/cards/eng/ST8-12.jpg",
+    "cardImage": "assets/images/cards/eng/ST8-12.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "6",

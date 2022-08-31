@@ -2,7 +2,7 @@
   {
     "id": "ST10-01",
     "name": "Nyaromon",
-    "cardImage": "assets/images/cards/jap/ST10-01.jpg",
+    "cardImage": "assets/images/cards/jap/ST10-01.webp",
     "cardType": "Digi-Egg",
     "dp": "-",
     "playCost": "-",
@@ -32,7 +32,7 @@
   {
     "id": "ST10-02",
     "name": "Salamon",
-    "cardImage": "assets/images/cards/jap/ST10-02.jpg",
+    "cardImage": "assets/images/cards/jap/ST10-02.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -62,7 +62,7 @@
   {
     "id": "ST10-03",
     "name": "Lopmon",
-    "cardImage": "assets/images/cards/jap/ST10-03.jpg",
+    "cardImage": "assets/images/cards/jap/ST10-03.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "3",
@@ -92,7 +92,7 @@
   {
     "id": "ST10-04",
     "name": "Gatomon",
-    "cardImage": "assets/images/cards/jap/ST10-04.jpg",
+    "cardImage": "assets/images/cards/jap/ST10-04.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "5",
@@ -122,7 +122,7 @@
   {
     "id": "ST10-04_P1",
     "name": "Gatomon",
-    "cardImage": "assets/images/cards/jap/ST10-04_P1.jpg",
+    "cardImage": "assets/images/cards/jap/ST10-04_P1.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "5",
@@ -152,7 +152,7 @@
   {
     "id": "ST10-05",
     "name": "Angewomon",
-    "cardImage": "assets/images/cards/jap/ST10-05.jpg",
+    "cardImage": "assets/images/cards/jap/ST10-05.webp",
     "cardType": "Digimon",
     "dp": "6000",
     "playCost": "6",
@@ -182,7 +182,7 @@
   {
     "id": "ST10-06",
     "name": "Mastemon",
-    "cardImage": "assets/images/cards/jap/ST10-06.jpg",
+    "cardImage": "assets/images/cards/jap/ST10-06.webp",
     "cardType": "Digimon",
     "dp": "13000",
     "playCost": "13",
@@ -212,7 +212,7 @@
   {
     "id": "ST10-06_P1",
     "name": "Mastemon",
-    "cardImage": "assets/images/cards/jap/ST10-06_P1.jpg",
+    "cardImage": "assets/images/cards/jap/ST10-06_P1.webp",
     "cardType": "Digimon",
     "dp": "13000",
     "playCost": "13",
@@ -242,7 +242,7 @@
   {
     "id": "ST10-07",
     "name": "Ghostmon",
-    "cardImage": "assets/images/cards/jap/ST10-07.jpg",
+    "cardImage": "assets/images/cards/jap/ST10-07.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -272,7 +272,7 @@
   {
     "id": "ST10-08",
     "name": "Tsukaimon",
-    "cardImage": "assets/images/cards/jap/ST10-08.jpg",
+    "cardImage": "assets/images/cards/jap/ST10-08.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -302,7 +302,7 @@
   {
     "id": "ST10-09",
     "name": "Witchmon",
-    "cardImage": "assets/images/cards/jap/ST10-09.jpg",
+    "cardImage": "assets/images/cards/jap/ST10-09.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "6",
@@ -332,7 +332,7 @@
   {
     "id": "ST10-10",
     "name": "Wizardmon",
-    "cardImage": "assets/images/cards/jap/ST10-10.jpg",
+    "cardImage": "assets/images/cards/jap/ST10-10.webp",
     "cardType": "Digimon",
     "dp": "6000",
     "playCost": "5",
@@ -362,7 +362,7 @@
   {
     "id": "ST10-11",
     "name": "Bastemon",
-    "cardImage": "assets/images/cards/jap/ST10-11.jpg",
+    "cardImage": "assets/images/cards/jap/ST10-11.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "6",
@@ -392,7 +392,7 @@
   {
     "id": "ST10-12",
     "name": "LadyDevimon",
-    "cardImage": "assets/images/cards/jap/ST10-12.jpg",
+    "cardImage": "assets/images/cards/jap/ST10-12.webp",
     "cardType": "Digimon",
     "dp": "6000",
     "playCost": "6",
@@ -422,7 +422,7 @@
   {
     "id": "ST10-13",
     "name": "Junomon",
-    "cardImage": "assets/images/cards/jap/ST10-13.jpg",
+    "cardImage": "assets/images/cards/jap/ST10-13.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "11",
@@ -453,7 +453,7 @@
   {
     "id": "ST10-13_P1",
     "name": "Junomon",
-    "cardImage": "assets/images/cards/jap/ST10-13_P1.jpg",
+    "cardImage": "assets/images/cards/jap/ST10-13_P1.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "11",
@@ -484,7 +484,7 @@
   {
     "id": "ST10-13_P2",
     "name": "Junomon",
-    "cardImage": "assets/images/cards/jap/ST10-13_P2.jpg",
+    "cardImage": "assets/images/cards/jap/ST10-13_P2.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "11",
@@ -515,7 +515,7 @@
   {
     "id": "ST10-14",
     "name": "Chaos Degradation",
-    "cardImage": "assets/images/cards/jap/ST10-14.jpg",
+    "cardImage": "assets/images/cards/jap/ST10-14.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "8",
@@ -545,7 +545,7 @@
   {
     "id": "ST10-15",
     "name": "Darkness Wave",
-    "cardImage": "assets/images/cards/jap/ST10-15.jpg",
+    "cardImage": "assets/images/cards/jap/ST10-15.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "1",

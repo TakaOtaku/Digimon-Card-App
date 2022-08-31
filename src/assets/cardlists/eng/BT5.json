@@ -2,7 +2,7 @@
   {
     "id": "BT5-001",
     "name": "Koromon",
-    "cardImage": "assets/images/cards/eng/BT5-001.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-001.webp",
     "cardType": "Digi-Egg",
     "dp": "-",
     "playCost": "-",
@@ -33,7 +33,7 @@
   {
     "id": "BT5-001_P1",
     "name": "Koromon",
-    "cardImage": "assets/images/cards/eng/BT5-001_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-001_P1.webp",
     "cardType": "Digi-Egg",
     "dp": "-",
     "playCost": "-",
@@ -64,7 +64,7 @@
   {
     "id": "BT5-002",
     "name": "Tsunomon",
-    "cardImage": "assets/images/cards/eng/BT5-002.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-002.webp",
     "cardType": "Digi-Egg",
     "dp": "-",
     "playCost": "-",
@@ -94,7 +94,7 @@
   {
     "id": "BT5-003",
     "name": "Pickmon",
-    "cardImage": "assets/images/cards/eng/BT5-003.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-003.webp",
     "cardType": "Digi-Egg",
     "dp": "-",
     "playCost": "-",
@@ -124,7 +124,7 @@
   {
     "id": "BT5-003_P1",
     "name": "Pickmon",
-    "cardImage": "assets/images/cards/eng/BT5-003_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-003_P1.webp",
     "cardType": "Digi-Egg",
     "dp": "-",
     "playCost": "-",
@@ -154,7 +154,7 @@
   {
     "id": "BT5-004",
     "name": "Yokomon",
-    "cardImage": "assets/images/cards/eng/BT5-004.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-004.webp",
     "cardType": "Digi-Egg",
     "dp": "-",
     "playCost": "-",
@@ -184,7 +184,7 @@
   {
     "id": "BT5-005",
     "name": "Tsumemon",
-    "cardImage": "assets/images/cards/eng/BT5-005.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-005.webp",
     "cardType": "Digi-Egg",
     "dp": "-",
     "playCost": "-",
@@ -214,7 +214,7 @@
   {
     "id": "BT5-006",
     "name": "Gigimon",
-    "cardImage": "assets/images/cards/eng/BT5-006.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-006.webp",
     "cardType": "Digi-Egg",
     "dp": "-",
     "playCost": "-",
@@ -244,7 +244,7 @@
   {
     "id": "BT5-007",
     "name": "Agumon",
-    "cardImage": "assets/images/cards/eng/BT5-007.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-007.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -274,7 +274,7 @@
   {
     "id": "BT5-007_P1",
     "name": "Agumon",
-    "cardImage": "assets/images/cards/eng/BT5-007_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-007_P1.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -304,7 +304,7 @@
   {
     "id": "BT5-007_P2",
     "name": "Agumon",
-    "cardImage": "assets/images/cards/eng/BT5-007_P2.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-007_P2.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -334,7 +334,7 @@
   {
     "id": "BT5-007_P3",
     "name": "Agumon",
-    "cardImage": "assets/images/cards/eng/BT5-007_P3.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-007_P3.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -364,7 +364,7 @@
   {
     "id": "BT5-008",
     "name": "Gaossmon",
-    "cardImage": "assets/images/cards/eng/BT5-008.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-008.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -394,7 +394,7 @@
   {
     "id": "BT5-009",
     "name": "Shoutmon",
-    "cardImage": "assets/images/cards/eng/BT5-009.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-009.webp",
     "cardType": "Digimon",
     "dp": "1000",
     "playCost": "3",
@@ -424,7 +424,7 @@
   {
     "id": "BT5-009_P1",
     "name": "Shoutmon",
-    "cardImage": "assets/images/cards/eng/BT5-009_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-009_P1.webp",
     "cardType": "Digimon",
     "dp": "1000",
     "playCost": "3",
@@ -454,7 +454,7 @@
   {
     "id": "BT5-010",
     "name": "Greymon",
-    "cardImage": "assets/images/cards/eng/BT5-010.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-010.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "5",
@@ -485,7 +485,7 @@
   {
     "id": "BT5-010_P1",
     "name": "Greymon",
-    "cardImage": "assets/images/cards/eng/BT5-010_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-010_P1.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "5",
@@ -516,7 +516,7 @@
   {
     "id": "BT5-010_P2",
     "name": "Greymon",
-    "cardImage": "assets/images/cards/eng/BT5-010_P2.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-010_P2.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "5",
@@ -547,7 +547,7 @@
   {
     "id": "BT5-011",
     "name": "Meramon",
-    "cardImage": "assets/images/cards/eng/BT5-011.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-011.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "5",
@@ -577,7 +577,7 @@
   {
     "id": "BT5-012",
     "name": "Monochromon",
-    "cardImage": "assets/images/cards/eng/BT5-012.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-012.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "6",
@@ -607,7 +607,7 @@
   {
     "id": "BT5-012_P1",
     "name": "Monochromon",
-    "cardImage": "assets/images/cards/eng/BT5-012_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-012_P1.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "6",
@@ -637,7 +637,7 @@
   {
     "id": "BT5-013",
     "name": "Triceramon",
-    "cardImage": "assets/images/cards/eng/BT5-013.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-013.webp",
     "cardType": "Digimon",
     "dp": "8000",
     "playCost": "5",
@@ -667,7 +667,7 @@
   {
     "id": "BT5-014",
     "name": "OmniShoutmon",
-    "cardImage": "assets/images/cards/eng/BT5-014.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-014.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "8",
@@ -697,7 +697,7 @@
   {
     "id": "BT5-015",
     "name": "MetalGreymon: Alterous Mode",
-    "cardImage": "assets/images/cards/eng/BT5-015.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-015.webp",
     "cardType": "Digimon",
     "dp": "8000",
     "playCost": "8",
@@ -727,7 +727,7 @@
   {
     "id": "BT5-016",
     "name": "WarGreymon",
-    "cardImage": "assets/images/cards/eng/BT5-016.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-016.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "11",
@@ -757,7 +757,7 @@
   {
     "id": "BT5-017",
     "name": "ZeigGreymon",
-    "cardImage": "assets/images/cards/eng/BT5-017.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-017.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "12",
@@ -787,7 +787,7 @@
   {
     "id": "BT5-018",
     "name": "Dorbickmon",
-    "cardImage": "assets/images/cards/eng/BT5-018.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-018.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "12",
@@ -817,7 +817,7 @@
   {
     "id": "BT5-019",
     "name": "Shoutmon DX",
-    "cardImage": "assets/images/cards/eng/BT5-019.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-019.webp",
     "cardType": "Digimon",
     "dp": "12000",
     "playCost": "13",
@@ -847,7 +847,7 @@
   {
     "id": "BT5-019_P1",
     "name": "Shoutmon DX",
-    "cardImage": "assets/images/cards/eng/BT5-019_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-019_P1.webp",
     "cardType": "Digimon",
     "dp": "12000",
     "playCost": "13",
@@ -877,7 +877,7 @@
   {
     "id": "BT5-020",
     "name": "Gabumon",
-    "cardImage": "assets/images/cards/eng/BT5-020.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-020.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -908,7 +908,7 @@
   {
     "id": "BT5-020_P1",
     "name": "Gabumon",
-    "cardImage": "assets/images/cards/eng/BT5-020_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-020_P1.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -939,7 +939,7 @@
   {
     "id": "BT5-020_P2",
     "name": "Gabumon",
-    "cardImage": "assets/images/cards/eng/BT5-020_P2.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-020_P2.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -970,7 +970,7 @@
   {
     "id": "BT5-020_P3",
     "name": "Gabumon",
-    "cardImage": "assets/images/cards/eng/BT5-020_P3.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-020_P3.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -1001,7 +1001,7 @@
   {
     "id": "BT5-021",
     "name": "Syakomon",
-    "cardImage": "assets/images/cards/eng/BT5-021.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-021.webp",
     "cardType": "Digimon",
     "dp": "3000",
     "playCost": "3",
@@ -1031,7 +1031,7 @@
   {
     "id": "BT5-022",
     "name": "Bulucomon",
-    "cardImage": "assets/images/cards/eng/BT5-022.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-022.webp",
     "cardType": "Digimon",
     "dp": "3000",
     "playCost": "4",
@@ -1061,7 +1061,7 @@
   {
     "id": "BT5-023",
     "name": "Gesomon",
-    "cardImage": "assets/images/cards/eng/BT5-023.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-023.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "3",
@@ -1091,7 +1091,7 @@
   {
     "id": "BT5-024",
     "name": "Garurumon",
-    "cardImage": "assets/images/cards/eng/BT5-024.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-024.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "5",
@@ -1121,7 +1121,7 @@
   {
     "id": "BT5-024_P1",
     "name": "Garurumon",
-    "cardImage": "assets/images/cards/eng/BT5-024_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-024_P1.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "5",
@@ -1151,7 +1151,7 @@
   {
     "id": "BT5-025",
     "name": "Paledramon",
-    "cardImage": "assets/images/cards/eng/BT5-025.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-025.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "5",
@@ -1181,7 +1181,7 @@
   {
     "id": "BT5-026",
     "name": "Coelamon",
-    "cardImage": "assets/images/cards/eng/BT5-026.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-026.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "6",
@@ -1212,7 +1212,7 @@
   {
     "id": "BT5-026_P1",
     "name": "Coelamon",
-    "cardImage": "assets/images/cards/eng/BT5-026_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-026_P1.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "6",
@@ -1243,7 +1243,7 @@
   {
     "id": "BT5-027",
     "name": "MarineDevimon",
-    "cardImage": "assets/images/cards/eng/BT5-027.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-027.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "6",
@@ -1273,7 +1273,7 @@
   {
     "id": "BT5-028",
     "name": "CrysPaledramon",
-    "cardImage": "assets/images/cards/eng/BT5-028.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-028.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "8",
@@ -1303,7 +1303,7 @@
   {
     "id": "BT5-029",
     "name": "WereGarurumon: Sagittarius Mode",
-    "cardImage": "assets/images/cards/eng/BT5-029.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-029.webp",
     "cardType": "Digimon",
     "dp": "8000",
     "playCost": "8",
@@ -1333,7 +1333,7 @@
   {
     "id": "BT5-030",
     "name": "Neptunemon",
-    "cardImage": "assets/images/cards/eng/BT5-030.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-030.webp",
     "cardType": "Digimon",
     "dp": "10000",
     "playCost": "10",
@@ -1363,7 +1363,7 @@
   {
     "id": "BT5-031",
     "name": "MetalGarurumon",
-    "cardImage": "assets/images/cards/eng/BT5-031.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-031.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "11",
@@ -1393,7 +1393,7 @@
   {
     "id": "BT5-032",
     "name": "Hexeblaumon",
-    "cardImage": "assets/images/cards/eng/BT5-032.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-032.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "12",
@@ -1423,7 +1423,7 @@
   {
     "id": "BT5-032_P1",
     "name": "Hexeblaumon",
-    "cardImage": "assets/images/cards/eng/BT5-032_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-032_P1.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "12",
@@ -1453,7 +1453,7 @@
   {
     "id": "BT5-033",
     "name": "Cutemon",
-    "cardImage": "assets/images/cards/eng/BT5-033.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-033.webp",
     "cardType": "Digimon",
     "dp": "3000",
     "playCost": "3",
@@ -1483,7 +1483,7 @@
   {
     "id": "BT5-034",
     "name": "Kotemon",
-    "cardImage": "assets/images/cards/eng/BT5-034.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-034.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -1513,7 +1513,7 @@
   {
     "id": "BT5-034_P1",
     "name": "Kotemon",
-    "cardImage": "assets/images/cards/eng/BT5-034_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-034_P1.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -1543,7 +1543,7 @@
   {
     "id": "BT5-035",
     "name": "Starmons",
-    "cardImage": "assets/images/cards/eng/BT5-035.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-035.webp",
     "cardType": "Digimon",
     "dp": "1000",
     "playCost": "3",
@@ -1573,7 +1573,7 @@
   {
     "id": "BT5-035_P1",
     "name": "Starmons",
-    "cardImage": "assets/images/cards/eng/BT5-035_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-035_P1.webp",
     "cardType": "Digimon",
     "dp": "1000",
     "playCost": "3",
@@ -1603,7 +1603,7 @@
   {
     "id": "BT5-036",
     "name": "Renamon",
-    "cardImage": "assets/images/cards/eng/BT5-036.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-036.webp",
     "cardType": "Digimon",
     "dp": "3000",
     "playCost": "4",
@@ -1634,7 +1634,7 @@
   {
     "id": "BT5-036_P1",
     "name": "Renamon",
-    "cardImage": "assets/images/cards/eng/BT5-036_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-036_P1.webp",
     "cardType": "Digimon",
     "dp": "3000",
     "playCost": "4",
@@ -1665,7 +1665,7 @@
   {
     "id": "BT5-037",
     "name": "Gladimon",
-    "cardImage": "assets/images/cards/eng/BT5-037.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-037.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "4",
@@ -1695,7 +1695,7 @@
   {
     "id": "BT5-038",
     "name": "Kyubimon",
-    "cardImage": "assets/images/cards/eng/BT5-038.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-038.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "5",
@@ -1726,7 +1726,7 @@
   {
     "id": "BT5-038_P1",
     "name": "Kyubimon",
-    "cardImage": "assets/images/cards/eng/BT5-038_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-038_P1.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "5",
@@ -1757,7 +1757,7 @@
   {
     "id": "BT5-039",
     "name": "ShootingStarmon",
-    "cardImage": "assets/images/cards/eng/BT5-039.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-039.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "5",
@@ -1787,7 +1787,7 @@
   {
     "id": "BT5-040",
     "name": "SuperStarmon",
-    "cardImage": "assets/images/cards/eng/BT5-040.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-040.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "6",
@@ -1817,7 +1817,7 @@
   {
     "id": "BT5-041",
     "name": "Taomon",
-    "cardImage": "assets/images/cards/eng/BT5-041.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-041.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "6",
@@ -1847,7 +1847,7 @@
   {
     "id": "BT5-042",
     "name": "Knightmon",
-    "cardImage": "assets/images/cards/eng/BT5-042.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-042.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "7",
@@ -1878,7 +1878,7 @@
   {
     "id": "BT5-042_P1",
     "name": "Knightmon",
-    "cardImage": "assets/images/cards/eng/BT5-042_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-042_P1.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "7",
@@ -1909,7 +1909,7 @@
   {
     "id": "BT5-042_P2",
     "name": "Knightmon",
-    "cardImage": "assets/images/cards/eng/BT5-042_P2.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-042_P2.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "7",
@@ -1940,7 +1940,7 @@
   {
     "id": "BT5-042_P2",
     "name": "Knightmon",
-    "cardImage": "assets/images/cards/eng/BT5-042_P2.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-042_P2.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "7",
@@ -1971,7 +1971,7 @@
   {
     "id": "BT5-042_P3",
     "name": "Knightmon",
-    "cardImage": "assets/images/cards/eng/BT5-042_P3.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-042_P3.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "7",
@@ -2002,7 +2002,7 @@
   {
     "id": "BT5-042_P3",
     "name": "Knightmon",
-    "cardImage": "assets/images/cards/eng/BT5-042_P3.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-042_P3.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "7",
@@ -2033,7 +2033,7 @@
   {
     "id": "BT5-043",
     "name": "Jijimon",
-    "cardImage": "assets/images/cards/eng/BT5-043.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-043.webp",
     "cardType": "Digimon",
     "dp": "10000",
     "playCost": "10",
@@ -2063,7 +2063,7 @@
   {
     "id": "BT5-044",
     "name": "Sakuyamon",
-    "cardImage": "assets/images/cards/eng/BT5-044.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-044.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "12",
@@ -2094,7 +2094,7 @@
   {
     "id": "BT5-044_P1",
     "name": "Sakuyamon",
-    "cardImage": "assets/images/cards/eng/BT5-044_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-044_P1.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "12",
@@ -2125,7 +2125,7 @@
   {
     "id": "BT5-045",
     "name": "LordKnightmon",
-    "cardImage": "assets/images/cards/eng/BT5-045.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-045.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "13",
@@ -2155,7 +2155,7 @@
   {
     "id": "BT5-045_P1",
     "name": "LordKnightmon",
-    "cardImage": "assets/images/cards/eng/BT5-045_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-045_P1.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "13",
@@ -2185,7 +2185,7 @@
   {
     "id": "BT5-045_P2",
     "name": "LordKnightmon",
-    "cardImage": "assets/images/cards/eng/BT5-045_P2.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-045_P2.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "13",
@@ -2215,7 +2215,7 @@
   {
     "id": "BT5-046",
     "name": "Terriermon Assistant",
-    "cardImage": "assets/images/cards/eng/BT5-046.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-046.webp",
     "cardType": "Digimon",
     "dp": "1000",
     "playCost": "3",
@@ -2245,7 +2245,7 @@
   {
     "id": "BT5-047",
     "name": "Palmon",
-    "cardImage": "assets/images/cards/eng/BT5-047.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-047.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -2275,7 +2275,7 @@
   {
     "id": "BT5-048",
     "name": "Floramon",
-    "cardImage": "assets/images/cards/eng/BT5-048.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-048.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "3",
@@ -2305,7 +2305,7 @@
   {
     "id": "BT5-049",
     "name": "Kiwimon",
-    "cardImage": "assets/images/cards/eng/BT5-049.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-049.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "4",
@@ -2335,7 +2335,7 @@
   {
     "id": "BT5-050",
     "name": "Weedmon",
-    "cardImage": "assets/images/cards/eng/BT5-050.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-050.webp",
     "cardType": "Digimon",
     "dp": "3000",
     "playCost": "4",
@@ -2365,7 +2365,7 @@
   {
     "id": "BT5-051",
     "name": "MoriShellmon",
-    "cardImage": "assets/images/cards/eng/BT5-051.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-051.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "6",
@@ -2395,7 +2395,7 @@
   {
     "id": "BT5-052",
     "name": "Garbagemon",
-    "cardImage": "assets/images/cards/eng/BT5-052.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-052.webp",
     "cardType": "Digimon",
     "dp": "8000",
     "playCost": "5",
@@ -2425,7 +2425,7 @@
   {
     "id": "BT5-053",
     "name": "Deramon",
-    "cardImage": "assets/images/cards/eng/BT5-053.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-053.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "7",
@@ -2455,7 +2455,7 @@
   {
     "id": "BT5-054",
     "name": "Piximon",
-    "cardImage": "assets/images/cards/eng/BT5-054.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-054.webp",
     "cardType": "Digimon",
     "dp": "8000",
     "playCost": "7",
@@ -2485,7 +2485,7 @@
   {
     "id": "BT5-055",
     "name": "BanchoLillymon",
-    "cardImage": "assets/images/cards/eng/BT5-055.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-055.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "11",
@@ -2515,7 +2515,7 @@
   {
     "id": "BT5-056",
     "name": "Rafflesimon",
-    "cardImage": "assets/images/cards/eng/BT5-056.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-056.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "12",
@@ -2545,7 +2545,7 @@
   {
     "id": "BT5-057",
     "name": "Rosemon",
-    "cardImage": "assets/images/cards/eng/BT5-057.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-057.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "12",
@@ -2575,7 +2575,7 @@
   {
     "id": "BT5-058",
     "name": "Argomon",
-    "cardImage": "assets/images/cards/eng/BT5-058.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-058.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "13",
@@ -2605,7 +2605,7 @@
   {
     "id": "BT5-059",
     "name": "Keramon",
-    "cardImage": "assets/images/cards/eng/BT5-059.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-059.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -2635,7 +2635,7 @@
   {
     "id": "BT5-060",
     "name": "Monitamon",
-    "cardImage": "assets/images/cards/eng/BT5-060.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-060.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -2665,7 +2665,7 @@
   {
     "id": "BT5-061",
     "name": "Commandramon",
-    "cardImage": "assets/images/cards/eng/BT5-061.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-061.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "4",
@@ -2695,7 +2695,7 @@
   {
     "id": "BT5-062",
     "name": "Mekanorimon",
-    "cardImage": "assets/images/cards/eng/BT5-062.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-062.webp",
     "cardType": "Digimon",
     "dp": "6000",
     "playCost": "4",
@@ -2725,7 +2725,7 @@
   {
     "id": "BT5-062_P1",
     "name": "Mekanorimon",
-    "cardImage": "assets/images/cards/eng/BT5-062_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-062_P1.webp",
     "cardType": "Digimon",
     "dp": "6000",
     "playCost": "4",
@@ -2755,7 +2755,7 @@
   {
     "id": "BT5-063",
     "name": "Kurisarimon",
-    "cardImage": "assets/images/cards/eng/BT5-063.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-063.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "5",
@@ -2785,7 +2785,7 @@
   {
     "id": "BT5-064",
     "name": "BlackGaogamon",
-    "cardImage": "assets/images/cards/eng/BT5-064.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-064.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "5",
@@ -2815,7 +2815,7 @@
   {
     "id": "BT5-065",
     "name": "Shademon",
-    "cardImage": "assets/images/cards/eng/BT5-065.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-065.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "6",
@@ -2845,7 +2845,7 @@
   {
     "id": "BT5-066",
     "name": "WaruMonzaemon",
-    "cardImage": "assets/images/cards/eng/BT5-066.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-066.webp",
     "cardType": "Digimon",
     "dp": "6000",
     "playCost": "5",
@@ -2876,7 +2876,7 @@
   {
     "id": "BT5-067",
     "name": "Infermon",
-    "cardImage": "assets/images/cards/eng/BT5-067.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-067.webp",
     "cardType": "Digimon",
     "dp": "6000",
     "playCost": "7",
@@ -2906,7 +2906,7 @@
   {
     "id": "BT5-068",
     "name": "BlackMachGaogamon",
-    "cardImage": "assets/images/cards/eng/BT5-068.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-068.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "8",
@@ -2936,7 +2936,7 @@
   {
     "id": "BT5-069",
     "name": "BlackWarGreymon",
-    "cardImage": "assets/images/cards/eng/BT5-069.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-069.webp",
     "cardType": "Digimon",
     "dp": "12000",
     "playCost": "11",
@@ -2966,7 +2966,7 @@
   {
     "id": "BT5-070",
     "name": "MetalGarurumon",
-    "cardImage": "assets/images/cards/eng/BT5-070.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-070.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "11",
@@ -2996,7 +2996,7 @@
   {
     "id": "BT5-071",
     "name": "Guilmon",
-    "cardImage": "assets/images/cards/eng/BT5-071.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-071.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -3026,7 +3026,7 @@
   {
     "id": "BT5-071_P1",
     "name": "Guilmon",
-    "cardImage": "assets/images/cards/eng/BT5-071_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-071_P1.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -3056,7 +3056,7 @@
   {
     "id": "BT5-071_P2",
     "name": "Guilmon",
-    "cardImage": "assets/images/cards/eng/BT5-071_P2.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-071_P2.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -3086,7 +3086,7 @@
   {
     "id": "BT5-071_P3",
     "name": "Guilmon",
-    "cardImage": "assets/images/cards/eng/BT5-071_P3.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-071_P3.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -3116,7 +3116,7 @@
   {
     "id": "BT5-072",
     "name": "Fake Agumon Expert",
-    "cardImage": "assets/images/cards/eng/BT5-072.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-072.webp",
     "cardType": "Digimon",
     "dp": "1000",
     "playCost": "3",
@@ -3146,7 +3146,7 @@
   {
     "id": "BT5-073",
     "name": "Pillomon",
-    "cardImage": "assets/images/cards/eng/BT5-073.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-073.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "3",
@@ -3176,7 +3176,7 @@
   {
     "id": "BT5-074",
     "name": "Troopmon",
-    "cardImage": "assets/images/cards/eng/BT5-074.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-074.webp",
     "cardType": "Digimon",
     "dp": "3000",
     "playCost": "4",
@@ -3206,7 +3206,7 @@
   {
     "id": "BT5-075",
     "name": "Musyamon",
-    "cardImage": "assets/images/cards/eng/BT5-075.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-075.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "4",
@@ -3236,7 +3236,7 @@
   {
     "id": "BT5-076",
     "name": "BlackGrowlmon",
-    "cardImage": "assets/images/cards/eng/BT5-076.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-076.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "5",
@@ -3266,7 +3266,7 @@
   {
     "id": "BT5-077",
     "name": "Vajramon",
-    "cardImage": "assets/images/cards/eng/BT5-077.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-077.webp",
     "cardType": "Digimon",
     "dp": "8000",
     "playCost": "7",
@@ -3296,7 +3296,7 @@
   {
     "id": "BT5-078",
     "name": "Jokermon",
-    "cardImage": "assets/images/cards/eng/BT5-078.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-078.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "7",
@@ -3326,7 +3326,7 @@
   {
     "id": "BT5-079",
     "name": "BlackWarGrowlmon",
-    "cardImage": "assets/images/cards/eng/BT5-079.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-079.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "8",
@@ -3356,7 +3356,7 @@
   {
     "id": "BT5-080",
     "name": "Zanbamon",
-    "cardImage": "assets/images/cards/eng/BT5-080.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-080.webp",
     "cardType": "Digimon",
     "dp": "10000",
     "playCost": "10",
@@ -3386,7 +3386,7 @@
   {
     "id": "BT5-081",
     "name": "ChaosGallantmon",
-    "cardImage": "assets/images/cards/eng/BT5-081.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-081.webp",
     "cardType": "Digimon",
     "dp": "12000",
     "playCost": "12",
@@ -3416,7 +3416,7 @@
   {
     "id": "BT5-081_P1",
     "name": "ChaosGallantmon",
-    "cardImage": "assets/images/cards/eng/BT5-081_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-081_P1.webp",
     "cardType": "Digimon",
     "dp": "12000",
     "playCost": "12",
@@ -3446,7 +3446,7 @@
   {
     "id": "BT5-081_P2",
     "name": "ChaosGallantmon",
-    "cardImage": "assets/images/cards/eng/BT5-081_P2.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-081_P2.webp",
     "cardType": "Digimon",
     "dp": "12000",
     "playCost": "12",
@@ -3476,7 +3476,7 @@
   {
     "id": "BT5-082",
     "name": "Tactimon",
-    "cardImage": "assets/images/cards/eng/BT5-082.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-082.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "12",
@@ -3506,7 +3506,7 @@
   {
     "id": "BT5-083",
     "name": "Megidramon",
-    "cardImage": "assets/images/cards/eng/BT5-083.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-083.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "12",
@@ -3536,7 +3536,7 @@
   {
     "id": "BT5-084",
     "name": "Diaboromon",
-    "cardImage": "assets/images/cards/eng/BT5-084.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-084.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "11",
@@ -3566,7 +3566,7 @@
   {
     "id": "BT5-084_P1",
     "name": "Diaboromon",
-    "cardImage": "assets/images/cards/eng/BT5-084_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-084_P1.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "11",
@@ -3596,7 +3596,7 @@
   {
     "id": "BT5-084_P2",
     "name": "Diaboromon",
-    "cardImage": "assets/images/cards/eng/BT5-084_P2.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-084_P2.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "11",
@@ -3626,7 +3626,7 @@
   {
     "id": "BT5-085",
     "name": "Armageddemon",
-    "cardImage": "assets/images/cards/eng/BT5-085.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-085.webp",
     "cardType": "Digimon",
     "dp": "15000",
     "playCost": "15",
@@ -3656,7 +3656,7 @@
   {
     "id": "BT5-085_P1",
     "name": "Armageddemon",
-    "cardImage": "assets/images/cards/eng/BT5-085_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-085_P1.webp",
     "cardType": "Digimon",
     "dp": "15000",
     "playCost": "15",
@@ -3686,7 +3686,7 @@
   {
     "id": "BT5-086",
     "name": "Omnimon",
-    "cardImage": "assets/images/cards/eng/BT5-086.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-086.webp",
     "cardType": "Digimon",
     "dp": "14000",
     "playCost": "15",
@@ -3716,7 +3716,7 @@
   {
     "id": "BT5-086_P1",
     "name": "Omnimon",
-    "cardImage": "assets/images/cards/eng/BT5-086_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-086_P1.webp",
     "cardType": "Digimon",
     "dp": "14000",
     "playCost": "15",
@@ -3746,7 +3746,7 @@
   {
     "id": "BT5-086_P2",
     "name": "Omnimon",
-    "cardImage": "assets/images/cards/eng/BT5-086_P2.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-086_P2.webp",
     "cardType": "Digimon",
     "dp": "14000",
     "playCost": "15",
@@ -3776,7 +3776,7 @@
   {
     "id": "BT5-086_P3",
     "name": "Omnimon",
-    "cardImage": "assets/images/cards/eng/BT5-086_P3.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-086_P3.webp",
     "cardType": "Digimon",
     "dp": "14000",
     "playCost": "15",
@@ -3806,7 +3806,7 @@
   {
     "id": "BT5-086_P4",
     "name": "Omnimon",
-    "cardImage": "assets/images/cards/eng/BT5-086_P4.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-086_P4.webp",
     "cardType": "Digimon",
     "dp": "14000",
     "playCost": "15",
@@ -3836,7 +3836,7 @@
   {
     "id": "BT5-086_P5",
     "name": "Omnimon",
-    "cardImage": "assets/images/cards/eng/BT5-086_P5.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-086_P5.webp",
     "cardType": "Digimon",
     "dp": "14000",
     "playCost": "15",
@@ -3866,7 +3866,7 @@
   {
     "id": "BT5-087",
     "name": "Omnimon Zwart",
-    "cardImage": "assets/images/cards/eng/BT5-087.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-087.webp",
     "cardType": "Digimon",
     "dp": "15000",
     "playCost": "15",
@@ -3896,7 +3896,7 @@
   {
     "id": "BT5-087_P1",
     "name": "Omnimon Zwart",
-    "cardImage": "assets/images/cards/eng/BT5-087_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-087_P1.webp",
     "cardType": "Digimon",
     "dp": "15000",
     "playCost": "15",
@@ -3926,7 +3926,7 @@
   {
     "id": "BT5-087_P2",
     "name": "Omnimon Zwart",
-    "cardImage": "assets/images/cards/eng/BT5-087_P2.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-087_P2.webp",
     "cardType": "Digimon",
     "dp": "15000",
     "playCost": "15",
@@ -3956,7 +3956,7 @@
   {
     "id": "BT5-088",
     "name": "Sora Takenouchi & Joe Kido",
-    "cardImage": "assets/images/cards/eng/BT5-088.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-088.webp",
     "cardType": "Tamer",
     "dp": "-",
     "playCost": "4",
@@ -3986,7 +3986,7 @@
   {
     "id": "BT5-088_P1",
     "name": "Sora Takenouchi & Joe Kido",
-    "cardImage": "assets/images/cards/eng/BT5-088_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-088_P1.webp",
     "cardType": "Tamer",
     "dp": "-",
     "playCost": "4",
@@ -4016,7 +4016,7 @@
   {
     "id": "BT5-089",
     "name": "Izzy Izumi & Mimi Tachikawa",
-    "cardImage": "assets/images/cards/eng/BT5-089.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-089.webp",
     "cardType": "Tamer",
     "dp": "-",
     "playCost": "4",
@@ -4046,7 +4046,7 @@
   {
     "id": "BT5-089_P1",
     "name": "Izzy Izumi & Mimi Tachikawa",
-    "cardImage": "assets/images/cards/eng/BT5-089_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-089_P1.webp",
     "cardType": "Tamer",
     "dp": "-",
     "playCost": "4",
@@ -4076,7 +4076,7 @@
   {
     "id": "BT5-090",
     "name": "Arata Sanada",
-    "cardImage": "assets/images/cards/eng/BT5-090.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-090.webp",
     "cardType": "Tamer",
     "dp": "-",
     "playCost": "3",
@@ -4106,7 +4106,7 @@
   {
     "id": "BT5-090_P1",
     "name": "Arata Sanada",
-    "cardImage": "assets/images/cards/eng/BT5-090_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-090_P1.webp",
     "cardType": "Tamer",
     "dp": "-",
     "playCost": "3",
@@ -4136,7 +4136,7 @@
   {
     "id": "BT5-091",
     "name": "Takumi Aiba",
-    "cardImage": "assets/images/cards/eng/BT5-091.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-091.webp",
     "cardType": "Tamer",
     "dp": "-",
     "playCost": "2",
@@ -4166,7 +4166,7 @@
   {
     "id": "BT5-091_P1",
     "name": "Takumi Aiba",
-    "cardImage": "assets/images/cards/eng/BT5-091_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-091_P1.webp",
     "cardType": "Tamer",
     "dp": "-",
     "playCost": "2",
@@ -4196,7 +4196,7 @@
   {
     "id": "BT5-092",
     "name": "Nokia Shiramine",
-    "cardImage": "assets/images/cards/eng/BT5-092.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-092.webp",
     "cardType": "Tamer",
     "dp": "-",
     "playCost": "3",
@@ -4226,7 +4226,7 @@
   {
     "id": "BT5-092_P1",
     "name": "Nokia Shiramine",
-    "cardImage": "assets/images/cards/eng/BT5-092_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-092_P1.webp",
     "cardType": "Tamer",
     "dp": "-",
     "playCost": "3",
@@ -4256,7 +4256,7 @@
   {
     "id": "BT5-093",
     "name": "Tai Kamiya & Matt Ishida",
-    "cardImage": "assets/images/cards/eng/BT5-093.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-093.webp",
     "cardType": "Tamer",
     "dp": "-",
     "playCost": "4",
@@ -4286,7 +4286,7 @@
   {
     "id": "BT5-093_P1",
     "name": "Tai Kamiya & Matt Ishida",
-    "cardImage": "assets/images/cards/eng/BT5-093_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-093_P1.webp",
     "cardType": "Tamer",
     "dp": "-",
     "playCost": "4",
@@ -4316,7 +4316,7 @@
   {
     "id": "BT5-094",
     "name": "Rowdy Rocker",
-    "cardImage": "assets/images/cards/eng/BT5-094.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-094.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "2",
@@ -4346,7 +4346,7 @@
   {
     "id": "BT5-095",
     "name": "Transcendent Sword",
-    "cardImage": "assets/images/cards/eng/BT5-095.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-095.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "7",
@@ -4376,7 +4376,7 @@
   {
     "id": "BT5-096",
     "name": "Supreme Cannon",
-    "cardImage": "assets/images/cards/eng/BT5-096.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-096.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "3",
@@ -4406,7 +4406,7 @@
   {
     "id": "BT5-097",
     "name": "Absolute Blast",
-    "cardImage": "assets/images/cards/eng/BT5-097.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-097.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "6",
@@ -4437,7 +4437,7 @@
   {
     "id": "BT5-097_P1",
     "name": "Absolute Blast",
-    "cardImage": "assets/images/cards/eng/BT5-097_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-097_P1.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "6",
@@ -4468,7 +4468,7 @@
   {
     "id": "BT5-098",
     "name": "Meteor Shower",
-    "cardImage": "assets/images/cards/eng/BT5-098.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-098.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "3",
@@ -4498,7 +4498,7 @@
   {
     "id": "BT5-099",
     "name": "Spiral Masquerade",
-    "cardImage": "assets/images/cards/eng/BT5-099.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-099.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "4",
@@ -4528,7 +4528,7 @@
   {
     "id": "BT5-100",
     "name": "Royal Nuts",
-    "cardImage": "assets/images/cards/eng/BT5-100.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-100.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "1",
@@ -4558,7 +4558,7 @@
   {
     "id": "BT5-101",
     "name": "You Can't Actually Fly?",
-    "cardImage": "assets/images/cards/eng/BT5-101.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-101.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "3",
@@ -4588,7 +4588,7 @@
   {
     "id": "BT5-102",
     "name": "Wisselen",
-    "cardImage": "assets/images/cards/eng/BT5-102.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-102.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "6",
@@ -4618,7 +4618,7 @@
   {
     "id": "BT5-103",
     "name": "A Blazing Storm of Metal!",
-    "cardImage": "assets/images/cards/eng/BT5-103.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-103.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "1",
@@ -4648,7 +4648,7 @@
   {
     "id": "BT5-104",
     "name": "Catastrophe Cannon",
-    "cardImage": "assets/images/cards/eng/BT5-104.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-104.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "4",
@@ -4678,7 +4678,7 @@
   {
     "id": "BT5-105",
     "name": "Ultimate Flare",
-    "cardImage": "assets/images/cards/eng/BT5-105.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-105.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "8",
@@ -4708,7 +4708,7 @@
   {
     "id": "BT5-106",
     "name": "Demonic Disaster",
-    "cardImage": "assets/images/cards/eng/BT5-106.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-106.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "1",
@@ -4738,7 +4738,7 @@
   {
     "id": "BT5-107",
     "name": "Revive From the Darkness!",
-    "cardImage": "assets/images/cards/eng/BT5-107.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-107.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "4",
@@ -4768,7 +4768,7 @@
   {
     "id": "BT5-108",
     "name": "Earth Shaker",
-    "cardImage": "assets/images/cards/eng/BT5-108.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-108.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "6",
@@ -4798,7 +4798,7 @@
   {
     "id": "BT5-109",
     "name": "Mega Digimon Fusion!",
-    "cardImage": "assets/images/cards/eng/BT5-109.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-109.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "-",
@@ -4828,7 +4828,7 @@
   {
     "id": "BT5-109_P1",
     "name": "Mega Digimon Fusion!",
-    "cardImage": "assets/images/cards/eng/BT5-109_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-109_P1.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "-",
@@ -4858,7 +4858,7 @@
   {
     "id": "BT5-110",
     "name": "All Delete",
-    "cardImage": "assets/images/cards/eng/BT5-110.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-110.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "10",
@@ -4888,7 +4888,7 @@
   {
     "id": "BT5-111",
     "name": "Omnimon X Anti-body",
-    "cardImage": "assets/images/cards/eng/BT5-111.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-111.webp",
     "cardType": "Digimon",
     "dp": "15000",
     "playCost": "15",
@@ -4918,7 +4918,7 @@
   {
     "id": "BT5-111_P1",
     "name": "Omnimon X Anti-body",
-    "cardImage": "assets/images/cards/eng/BT5-111_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-111_P1.webp",
     "cardType": "Digimon",
     "dp": "15000",
     "playCost": "15",
@@ -4948,7 +4948,7 @@
   {
     "id": "BT5-112",
     "name": "Omnimon Zwart Defeat",
-    "cardImage": "assets/images/cards/eng/BT5-112.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-112.webp",
     "cardType": "Digimon",
     "dp": "13000",
     "playCost": "15",
@@ -4978,7 +4978,7 @@
   {
     "id": "BT5-112_P1",
     "name": "Omnimon Zwart Defeat",
-    "cardImage": "assets/images/cards/eng/BT5-112_P1.jpg",
+    "cardImage": "assets/images/cards/eng/BT5-112_P1.webp",
     "cardType": "Digimon",
     "dp": "13000",
     "playCost": "15",

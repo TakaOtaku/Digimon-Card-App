@@ -173,13 +173,13 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
     };
 
     const BackgroundMap = new Map<string, string>([
-      ['Red', 'assets/images/image-export/bg-share_red.jpg'],
-      ['Blue', 'assets/images/image-export/bg-share_blue.jpg'],
-      ['Yellow', 'assets/images/image-export/bg-share_yellow.jpg'],
-      ['Green', 'assets/images/image-export/bg-share_green.jpg'],
-      ['Black', 'assets/images/image-export/bg-share_black.jpg'],
-      ['Purple', 'assets/images/image-export/bg-share_purple.jpg'],
-      ['White', 'assets/images/image-export/bg-share_white.jpg'],
+      ['Red', 'assets/images/image-export/bg-share_red.webp'],
+      ['Blue', 'assets/images/image-export/bg-share_blue.webp'],
+      ['Yellow', 'assets/images/image-export/bg-share_yellow.webp'],
+      ['Green', 'assets/images/image-export/bg-share_green.webp'],
+      ['Black', 'assets/images/image-export/bg-share_black.webp'],
+      ['Purple', 'assets/images/image-export/bg-share_purple.webp'],
+      ['White', 'assets/images/image-export/bg-share_white.webp'],
     ]);
 
     background({
@@ -288,7 +288,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
     };
 
     background({
-      uri: 'assets/images/image-export/TTS.jpg',
+      uri: 'assets/images/image-export/TTS.webp',
       x: 0,
       y: 0,
       sw: 7440,

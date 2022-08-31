@@ -37,15 +37,15 @@ export function getPNG(cardSRC: string): string {
   if (engRegExp.test(cardSRC)) {
     return cardSRC
       .replace(engRegExp, 'eng/png')
-      .replace(new RegExp('\\b.jpg\\b'), '.png');
+      .replace(new RegExp('\\b.webp\\b'), '.png');
   } else if (japRegExp.test(cardSRC)) {
     return cardSRC
       .replace(japRegExp, 'jap/png')
-      .replace(new RegExp('\\b.jpg\\b'), '.png');
+      .replace(new RegExp('\\b.webp\\b'), '.png');
   } else {
     return cardSRC
       .replace(preReleaseRegExp, 'pre-release/png')
-      .replace(new RegExp('\\b.jpg\\b'), '.png');
+      .replace(new RegExp('\\b.webp\\b'), '.png');
   }
 }
 

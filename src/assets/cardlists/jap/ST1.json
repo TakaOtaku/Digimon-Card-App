@@ -2,7 +2,7 @@
   {
     "id": "ST1-01",
     "name": "Koromon",
-    "cardImage": "assets/images/cards/jap/ST1-01.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-01.webp",
     "cardType": "Digi-Egg",
     "dp": "-",
     "playCost": "-",
@@ -32,7 +32,7 @@
   {
     "id": "ST1-02",
     "name": "Biyomon",
-    "cardImage": "assets/images/cards/jap/ST1-02.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-02.webp",
     "cardType": "Digimon",
     "dp": "3000",
     "playCost": "2",
@@ -63,7 +63,7 @@
   {
     "id": "ST1-02_P1",
     "name": "Biyomon",
-    "cardImage": "assets/images/cards/jap/ST1-02_P1.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-02_P1.webp",
     "cardType": "Digimon",
     "dp": "3000",
     "playCost": "2",
@@ -94,7 +94,7 @@
   {
     "id": "ST1-02_P2",
     "name": "Biyomon",
-    "cardImage": "assets/images/cards/jap/ST1-02_P2.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-02_P2.webp",
     "cardType": "Digimon",
     "dp": "3000",
     "playCost": "2",
@@ -125,7 +125,7 @@
   {
     "id": "ST1-03",
     "name": "Agumon",
-    "cardImage": "assets/images/cards/jap/ST1-03.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-03.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -157,7 +157,7 @@
   {
     "id": "ST1-03_P1",
     "name": "Agumon",
-    "cardImage": "assets/images/cards/jap/ST1-03_P1.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-03_P1.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -189,7 +189,7 @@
   {
     "id": "ST1-03_P2",
     "name": "Agumon",
-    "cardImage": "assets/images/cards/jap/ST1-03_P2.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-03_P2.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -221,7 +221,7 @@
   {
     "id": "ST1-03_P3",
     "name": "Agumon",
-    "cardImage": "assets/images/cards/jap/ST1-03_P3.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-03_P3.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -253,7 +253,7 @@
   {
     "id": "ST1-04",
     "name": "Dracomon",
-    "cardImage": "assets/images/cards/jap/ST1-04.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-04.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "3",
@@ -283,7 +283,7 @@
   {
     "id": "ST1-05",
     "name": "Birdramon",
-    "cardImage": "assets/images/cards/jap/ST1-05.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-05.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "4",
@@ -313,7 +313,7 @@
   {
     "id": "ST1-06",
     "name": "Coredramon",
-    "cardImage": "assets/images/cards/jap/ST1-06.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-06.webp",
     "cardType": "Digimon",
     "dp": "6000",
     "playCost": "5",
@@ -343,7 +343,7 @@
   {
     "id": "ST1-07",
     "name": "Greymon",
-    "cardImage": "assets/images/cards/jap/ST1-07.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-07.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "5",
@@ -374,7 +374,7 @@
   {
     "id": "ST1-07_P1",
     "name": "Greymon",
-    "cardImage": "assets/images/cards/jap/ST1-07_P1.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-07_P1.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "5",
@@ -405,7 +405,7 @@
   {
     "id": "ST1-07_P2",
     "name": "Greymon",
-    "cardImage": "assets/images/cards/jap/ST1-07_P2.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-07_P2.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "5",
@@ -436,7 +436,7 @@
   {
     "id": "ST1-08",
     "name": "Garudamon",
-    "cardImage": "assets/images/cards/jap/ST1-08.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-08.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "6",
@@ -466,7 +466,7 @@
   {
     "id": "ST1-08_P1",
     "name": "Garudamon",
-    "cardImage": "assets/images/cards/jap/ST1-08_P1.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-08_P1.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "6",
@@ -496,7 +496,7 @@
   {
     "id": "ST1-09",
     "name": "MetalGreymon",
-    "cardImage": "assets/images/cards/jap/ST1-09.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-09.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "7",
@@ -526,7 +526,7 @@
   {
     "id": "ST1-09_P1",
     "name": "MetalGreymon",
-    "cardImage": "assets/images/cards/jap/ST1-09_P1.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-09_P1.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "7",
@@ -556,7 +556,7 @@
   {
     "id": "ST1-09_P2",
     "name": "MetalGreymon",
-    "cardImage": "assets/images/cards/jap/ST1-09_P2.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-09_P2.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "7",
@@ -586,7 +586,7 @@
   {
     "id": "ST1-10",
     "name": "Phoenixmon",
-    "cardImage": "assets/images/cards/jap/ST1-10.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-10.webp",
     "cardType": "Digimon",
     "dp": "12000",
     "playCost": "10",
@@ -617,7 +617,7 @@
   {
     "id": "ST1-10_P1",
     "name": "Phoenixmon",
-    "cardImage": "assets/images/cards/jap/ST1-10_P1.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-10_P1.webp",
     "cardType": "Digimon",
     "dp": "12000",
     "playCost": "10",
@@ -648,7 +648,7 @@
   {
     "id": "ST1-11",
     "name": "WarGreymon",
-    "cardImage": "assets/images/cards/jap/ST1-11.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-11.webp",
     "cardType": "Digimon",
     "dp": "12000",
     "playCost": "12",
@@ -679,7 +679,7 @@
   {
     "id": "ST1-11_P1",
     "name": "WarGreymon",
-    "cardImage": "assets/images/cards/jap/ST1-11_P1.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-11_P1.webp",
     "cardType": "Digimon",
     "dp": "12000",
     "playCost": "12",
@@ -710,7 +710,7 @@
   {
     "id": "ST1-11_P2",
     "name": "WarGreymon",
-    "cardImage": "assets/images/cards/jap/ST1-11_P2.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-11_P2.webp",
     "cardType": "Digimon",
     "dp": "12000",
     "playCost": "12",
@@ -741,7 +741,7 @@
   {
     "id": "ST1-12",
     "name": "Tai Kamiya",
-    "cardImage": "assets/images/cards/jap/ST1-12.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-12.webp",
     "cardType": "Tamer",
     "dp": "-",
     "playCost": "2",
@@ -772,7 +772,7 @@
   {
     "id": "ST1-12_P1",
     "name": "Tai Kamiya",
-    "cardImage": "assets/images/cards/jap/ST1-12_P1.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-12_P1.webp",
     "cardType": "Tamer",
     "dp": "-",
     "playCost": "2",
@@ -803,7 +803,7 @@
   {
     "id": "ST1-13",
     "name": "Shadow Wing",
-    "cardImage": "assets/images/cards/jap/ST1-13.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-13.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "1",
@@ -833,7 +833,7 @@
   {
     "id": "ST1-13_P1",
     "name": "Shadow Wing",
-    "cardImage": "assets/images/cards/jap/ST1-13_P1.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-13_P1.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "1",
@@ -863,7 +863,7 @@
   {
     "id": "ST1-14",
     "name": "Starlight Explosion",
-    "cardImage": "assets/images/cards/jap/ST1-14.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-14.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "2",
@@ -893,7 +893,7 @@
   {
     "id": "ST1-15",
     "name": "Giga Destroyer",
-    "cardImage": "assets/images/cards/jap/ST1-15.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-15.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "6",
@@ -923,7 +923,7 @@
   {
     "id": "ST1-16",
     "name": "Gaia Force",
-    "cardImage": "assets/images/cards/jap/ST1-16.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-16.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "8",
@@ -954,7 +954,7 @@
   {
     "id": "ST1-16_P1",
     "name": "Gaia Force",
-    "cardImage": "assets/images/cards/jap/ST1-16_P1.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-16_P1.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "8",
@@ -985,7 +985,7 @@
   {
     "id": "ST1-16_P2",
     "name": "Gaia Force",
-    "cardImage": "assets/images/cards/jap/ST1-16_P2.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-16_P2.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "8",
@@ -1016,7 +1016,7 @@
   {
     "id": "ST1-16_P3",
     "name": "Gaia Force",
-    "cardImage": "assets/images/cards/jap/ST1-16_P3.jpg",
+    "cardImage": "assets/images/cards/jap/ST1-16_P3.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "8",
