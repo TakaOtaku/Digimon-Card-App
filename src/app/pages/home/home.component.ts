@@ -27,6 +27,9 @@ export class HomeComponent {
     private databaseService: DatabaseService
   ) {
     route.params.subscribe((params) => {
+      if (!params['id']) {
+        return;
+      }
       this.databaseService.loadDeck(params['id']).subscribe((deck) => {
         this.store.dispatch(
           setDeck({
