@@ -1,5 +1,5 @@
-<div class="w-screen lg:h-[calc(100vh-50px)] flex flex-col lg:flex-row overflow-y-scroll lg:overflow-hidden">
-  <div *ngIf="showUserStats" class="lg:w-2/5 h-full">
+<div class="w-screen lg:h-[calc(100vh-50px)] flex flex-col lg:flex-row lg:overflow-hidden">
+  <div *ngIf="showUserStats" class="hidden lg:block lg:w-2/5 h-full">
     <digimon-user-stats [user]="user" [collection]="collection"></digimon-user-stats>
     <digimon-collection [collection]="collection" [allCards]="allCards"></digimon-collection>
   </div>

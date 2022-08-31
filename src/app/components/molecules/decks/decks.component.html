@@ -17,14 +17,11 @@
     [(contextMenuSelection)]="selectedDeck"
     [contextMenu]="table"
     [globalFilterFields]="['color.name', 'title', 'tags', '', 'user']"
-    [paginator]="true"
-    [rowsPerPageOptions]="[25, 50, 75]"
-    [rows]="25"
-    [scrollHeight]="'calc(100vh - 100px)'"
+    [scrollHeight]="'calc(100vh - 55px)'"
     [scrollable]="true"
     [showCurrentPageReport]="true"
     [value]="decks"
-    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} decks"
+    [virtualScroll]="true"
     styleClass="p-datatable-striped"
   >
     <ng-template pTemplate="header">
