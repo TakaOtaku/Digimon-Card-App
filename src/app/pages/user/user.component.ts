@@ -6,7 +6,13 @@ import {first, Subject, takeUntil} from 'rxjs';
 import {ICard, ICountCard, IDeck, ISave} from '../../../models';
 import {AuthService} from '../../service/auth.service';
 import {DatabaseService} from '../../service/database.service';
-import {selectAllCards, selectCollection, selectDecks, selectShowUserStats,} from '../../store/digimon.selectors';
+import {
+  selectAllCards,
+  selectCollection,
+  selectDecks,
+  selectSave,
+  selectShowUserStats,
+} from '../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-user',
@@ -28,29 +34,25 @@ export class UserComponent implements OnInit, OnDestroy {
     private databaseService: DatabaseService,
     private store: Store
   ) {
-    this.authService.authChange
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe(() => {
-        this.changeURL();
-        this.databaseService.loadSave(this.authService.userData!.uid).pipe(first()).subscribe((save) => {
-          this.save = save;
-        });
-      });
-
-    route.params.pipe(takeUntil(this.onDestroy$)).subscribe((params: Params) => {
-      this.databaseService.loadSave(params['id']).pipe(first()).subscribe((save) => {
-        debugger;
-        this.save = save;
-        this.decks = save?.decks ?? [];
-        this.collection = save?.collection ?? [];
-      });
-      if (!params['id']) {
-        this.changeURL();
-      }
-    });
   }
 
   ngOnInit() {
+    this.storeSubscriptions();
+
+    this.userChange();
+
+    this.checkURL();
+  }
+
+  ngOnDestroy() {
+    this.onDestroy$.next(true);
+  }
+
+  storeSubscriptions() {
+    this.store
+      .select(selectSave)
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((save) => (this.save = save));
     this.store
       .select(selectCollection)
       .pipe(takeUntil(this.onDestroy$))
@@ -67,14 +69,33 @@ export class UserComponent implements OnInit, OnDestroy {
       .select(selectShowUserStats)
       .pipe(takeUntil(this.onDestroy$))
       .subscribe((showUserStats) => (this.showUserStats = showUserStats));
-
-    this.databaseService.loadSave(this.authService.userData!.uid).pipe(first()).subscribe((save) => {
-      this.save = save;
-    });
   }
 
-  ngOnDestroy() {
-    this.onDestroy$.next(true);
+  userChange() {
+    this.authService.authChange
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe(() => {
+        this.changeURL();
+        this.databaseService.loadSave(this.authService.userData!.uid).pipe(first()).subscribe((save) => {
+          this.save = save;
+        });
+      });
+  }
+
+  checkURL() {
+    this.route.params.pipe(takeUntil(this.onDestroy$)).subscribe((params: Params) => {
+      this.databaseService.loadSave(params['id']).pipe(first()).subscribe((save) => {
+        if (this.authService.userData?.uid === params['id']) {
+          return;
+        }
+        this.save = save;
+        this.decks = save?.decks ?? this.decks;
+        this.collection = save?.collection ?? this.collection;
+      });
+      if (!params['id']) {
+        this.changeURL();
+      }
+    });
   }
 
   changeURL() {

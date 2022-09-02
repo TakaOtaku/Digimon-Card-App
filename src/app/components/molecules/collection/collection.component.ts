@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ICard, ICountCard } from '../../../../models';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {ICard, ICountCard} from '../../../../models';
 
 interface MappedCollection {
   id: string;
@@ -13,7 +13,7 @@ interface MappedCollection {
   templateUrl: './collection.component.html',
   styleUrls: ['./collection.component.css'],
 })
-export class CollectionComponent implements OnInit {
+export class CollectionComponent implements OnInit, OnChanges {
   @Input() collection: ICountCard[];
   @Input() allCards: ICard[];
 
@@ -32,6 +32,20 @@ export class CollectionComponent implements OnInit {
         rarity: foundCard?.rarity ?? '',
       };
     });
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes && changes['collection']) {
+      this.mappedCollection = this.collection.map((countCard) => {
+        const foundCard = this.allCards.find((card) => card.id === countCard.id);
+        return {
+          id: countCard.id,
+          name: foundCard?.name ?? 'Not Found',
+          count: countCard.count,
+          rarity: foundCard?.rarity ?? '',
+        };
+      });
+    }
   }
 
   switch(set: string) {

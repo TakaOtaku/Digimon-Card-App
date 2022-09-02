@@ -3,7 +3,7 @@
     <img
       class="rounded-full min-w-auto p-10 h-full rounded-full text-xs font-semibold text-white"
       *ngIf="save"
-      alt="{{ save.displayName }}"
+      alt="{{ save.displayName ?? 'Username not Found' }}"
       src="{{ save.photoURL }}"
     />
 

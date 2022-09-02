@@ -195,7 +195,7 @@ export class MenuComponent implements OnInit, OnDestroy {
         {
           label: 'Help the Site!',
           icon: 'pi pi-paypal',
-          url: 'https://www.paypal.com/donate/?hosted_button_id=DHQVT7GQ72J98',
+          url: 'https://www.paypal.com/donate/?hosted_button_id=WLM58Q785D4H4',
         },
       ],
     };
