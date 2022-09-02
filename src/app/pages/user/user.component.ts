@@ -85,9 +85,6 @@ export class UserComponent implements OnInit, OnDestroy {
   checkURL() {
     this.route.params.pipe(takeUntil(this.onDestroy$)).subscribe((params: Params) => {
       this.databaseService.loadSave(params['id']).pipe(first()).subscribe((save) => {
-        if (this.authService.userData?.uid === params['id']) {
-          return;
-        }
         this.save = save;
         this.decks = save?.decks ?? this.decks;
         this.collection = save?.collection ?? this.collection;
