@@ -3827,10 +3827,10 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "Reduce the memory cost of this card in your hand by 1 for each Digimon your opponent has in play.\n[Main] Delete all of your opponent's Digimon with 6000 DP or less. Your opponent can't play Digimon by effects until the end of their next turn.",
+    "effect": "Reduce the memory cost of this card in your hand by 1 for each Digimon your opponent has in play.\n[Main] Your opponent can't play Digimon by effects until the end of their turn. Delete all of your opponent's Digimon with 6000 DP or less.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
-    "notes": "▹BOOSTER -NEW AWAKENING- [BT08]",
+    "notes": "▹BOOSTER -NEW AWAKENING- [BT08] Errata Card",
     "color": "Red",
     "version": "Normal",
     "block": [
