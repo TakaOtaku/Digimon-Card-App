@@ -1,20 +1,17 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { combineLatest, Subject, takeUntil } from 'rxjs';
-import { ICard } from '../../../../models';
-import {
-  selectAllCards,
-  selectCollection,
-  selectCollectionMinimum,
-} from '../../../store/digimon.selectors';
+import {Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
+import {Store} from '@ngrx/store';
+import {combineLatest, first, Subject} from 'rxjs';
+import {ICard, ICountCard} from '../../../../models';
+import {selectAllCards, selectCollectionMinimum,} from '../../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-collection-circle',
   templateUrl: './collection-circle.component.html',
   styleUrls: ['./collection-circle.component.css'],
 })
-export class CollectionCircleComponent implements OnInit, OnDestroy {
+export class CollectionCircleComponent implements OnInit, OnChanges, OnDestroy {
   @Input() type: 'BT' | 'EX' | 'ST' | 'P';
+  @Input() collection: ICountCard[];
 
   data: any;
 
@@ -22,13 +19,11 @@ export class CollectionCircleComponent implements OnInit, OnDestroy {
 
   private onDestroy$ = new Subject<boolean>();
 
-  constructor(private store: Store) {}
+  constructor(private store: Store) {
+  }
+
 
   ngOnInit(): void {
-    const collection$ = this.store.select(selectCollection);
-    const cards$ = this.store.select(selectAllCards);
-    const settings$ = this.store.select(selectCollectionMinimum);
-
     this.chartOptions = {
       plugins: {
         legend: {
@@ -40,15 +35,28 @@ export class CollectionCircleComponent implements OnInit, OnDestroy {
       },
     };
 
-    combineLatest([collection$, cards$, settings$])
-      .pipe(takeUntil(this.onDestroy$))
+    this.updateCircle();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes && changes['collection']) {
+      this.updateCircle();
+    }
+  }
+
+  updateCircle() {
+    const cards$ = this.store.select(selectAllCards);
+    const settings$ = this.store.select(selectCollectionMinimum);
+
+    combineLatest([cards$, settings$])
+      .pipe(first())
       .subscribe((values) => {
-        const collectionMinimum: number = values[2];
-        const normalCards = values[1].filter(
+        const collectionMinimum: number = values[1];
+        const normalCards = values[0].filter(
           (card) => card.version === 'Normal'
         );
-        const collection = values[0].filter(
-          (card) => card.id.includes('_P') === false
+        const collection = this.collection.filter(
+          (card) => !card.id.includes('_P')
         );
 
         const setCards = normalCards.filter((card) =>
