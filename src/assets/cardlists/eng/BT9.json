@@ -2477,10 +2477,10 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[On Play] [When Digivolving] Place 1 [Raijinmon], 1 [Fuijinmon], and 1 [Suijinmon] from your trash under this Digimon in any order as its bottom digivolution cards. Gain 1 memory for each card placed.\n[When Attacking] If the level 6 cards in this Digimon's digivolution cards have 3 or more colors among them, this Digimon gets +3000 DP until the end of your opponent's turn. If they have 4 or more colors, ＜De-Digivolve 1＞ 1 of your opponent's Digimon.",
+    "effect": "[On Play] [When Digivolving] Place 1 [Raijinmon], 1 [Fujinmon], and 1 [Suijinmon] from your trash under this Digimon in any order as its bottom digivolution cards. Gain 1 memory for each card placed.\n[When Attacking] If the level 6 cards in this Digimon's digivolution cards have 3 or more colors among them, this Digimon gets +3000 DP until the end of your opponent's turn. If they have 4 or more colors, ＜De-Digivolve 1＞ 1 of your opponent's Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹BOOSTER X RECORD [BT-09]",
+    "notes": "▹BOOSTER X RECORD [BT-09] Errata Card",
     "color": "Black",
     "version": "Normal",
     "block": [
