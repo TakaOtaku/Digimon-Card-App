@@ -1,20 +1,13 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnDestroy,
-  OnInit,
-  Output,
-} from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { Subject } from 'rxjs';
+import {Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges,} from '@angular/core';
+import {FormControl} from '@angular/forms';
+import {Subject} from 'rxjs';
 
 @Component({
   selector: 'digimon-range-slider',
   templateUrl: './range-slider.component.html',
   styleUrls: ['./range-slider.component.scss'],
 })
-export class RangeSliderComponent implements OnInit, OnDestroy {
+export class RangeSliderComponent implements OnInit, OnChanges, OnDestroy {
   @Input() slider: number[] = [];
   @Input() minMax: number[] = [];
   @Input() title: string = '';
@@ -37,8 +30,14 @@ export class RangeSliderComponent implements OnInit, OnDestroy {
       },
     };
     this.sliderControl.valueChanges.subscribe((values) =>
-      this.OnSliderChange.emit({ values })
+      this.OnSliderChange.emit({values})
     );
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes && changes['slider']) {
+      //this.sliderControl.setValue(this.slider);
+    }
   }
 
   ngOnDestroy() {

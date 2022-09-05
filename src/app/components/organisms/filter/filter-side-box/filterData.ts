@@ -1,12 +1,14 @@
+import {MultiButtons} from "../../../molecules/multi-buttons/multi-buttons.component";
+
 export const GroupedSets = [
   {
     label: 'Standard',
     value: 'displays',
     items: [
-      { label: 'BT1', value: 'BT1' },
-      { label: 'BT2', value: 'BT2' },
-      { label: 'BT3', value: 'BT3' },
-      { label: 'BT4', value: 'BT4' },
+      {label: 'BT1', value: 'BT1'},
+      {label: 'BT2', value: 'BT2'},
+      {label: 'BT3', value: 'BT3'},
+      {label: 'BT4', value: 'BT4'},
       { label: 'BT5', value: 'BT5' },
       { label: 'BT6', value: 'BT6' },
       { label: 'BT7', value: 'BT7' },
@@ -444,4 +446,82 @@ export const Sources: string[] = [
   'Winner Pack',
 ];
 
-export const Blocks: string[] = ['00', '01', '02'];
+export const BlockButtons: MultiButtons[] = [
+  {
+    name: '00',
+    value: '00'
+  },
+  {
+    name: '01',
+    value: '01'
+  },
+  {
+    name: '02',
+    value: '02'
+  }
+];
+
+export const CardTypeButtons: MultiButtons[] = [
+  {
+    name: 'Digi-Egg',
+    value: 'Digi-Egg'
+  },
+  {
+    name: 'Digimon',
+    value: 'Digimon'
+  },
+  {
+    name: 'Tamer',
+    value: 'Tamer'
+  },
+  {
+    name: 'Option',
+    value: 'Option'
+  },
+];
+
+export const RarityButtons: MultiButtons[] = [
+  {
+    name: 'C',
+    value: 'C'
+  },
+  {
+    name: 'U',
+    value: 'U'
+  },
+  {
+    name: 'R',
+    value: 'R'
+  },
+  {
+    name: 'SR',
+    value: 'SR'
+  },
+  {
+    name: 'SEC',
+    value: 'SEC'
+  },
+  {
+    name: 'P',
+    value: 'P'
+  },
+];
+
+export const VersionButtons: MultiButtons[] = [
+  {
+    name: 'Normal',
+    value: 'Normal'
+  },
+  {
+    name: 'Alt. Art',
+    value: 'Alt. Art'
+  },
+  {
+    name: 'Pre-Release',
+    value: 'Pre-Release'
+  },
+  {
+    name: 'Stamp',
+    value: 'Stamp'
+  }
+];

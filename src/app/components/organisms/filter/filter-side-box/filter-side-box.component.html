@@ -108,48 +108,12 @@
     </div>
   </div>
 
-  <!-- Card Type Select -->
-  <div class="mb-3">
-    <h1 class="text-center text-xs font-bold text-white">Card Type:</h1>
-    <div class="flex inline-flex w-full justify-center">
-      <button
-        (click)="changeCardType('Digi-Egg')"
-        [ngClass]="{
-          'primary-background': cardTypeFilter.value.includes('Digi-Egg')
-        }"
-        class="min-w-auto mt-2 h-8 w-20 rounded-l-sm border border-slate-100 p-1 text-xs font-semibold text-white"
-      >
-        Digi-Egg
-      </button>
-      <button
-        (click)="changeCardType('Digimon')"
-        [ngClass]="{
-          'primary-background': cardTypeFilter.value.includes('Digimon')
-        }"
-        class="min-w-auto mt-2 h-8 w-20 border border-slate-100 p-1 text-xs font-semibold text-white"
-      >
-        Digimon
-      </button>
-      <button
-        (click)="changeCardType('Tamer')"
-        [ngClass]="{
-          'primary-background': cardTypeFilter.value.includes('Tamer')
-        }"
-        class="min-w-auto mt-2 h-8 w-20 border border-slate-100 p-1 text-xs font-semibold text-white"
-      >
-        Tamer
-      </button>
-      <button
-        (click)="changeCardType('Option')"
-        [ngClass]="{
-          'primary-background': cardTypeFilter.value.includes('Option')
-        }"
-        class="min-w-auto mt-2 h-8 w-20 rounded-r-sm border border-slate-100 p-1 text-xs font-semibold text-white"
-      >
-        Option
-      </button>
-    </div>
-  </div>
+  <digimon-multi-buttons
+    (clickEvent)="changeCardType($event)"
+    [buttonArray]="cardTypeButtons"
+    [filterFormControl]="cardTypeFilter"
+    title="Card-Types"
+  ></digimon-multi-buttons>
 
   <p-multiSelect
     [filter]="false"
@@ -207,95 +171,26 @@
     title="Number in Collection:"
   ></digimon-range-slider>
 
-  <!-- Rarity Select -->
-  <div class="my-3">
-    <h1 class="text-center text-xs font-bold text-white">Rarity:</h1>
-    <div class="flex inline-flex w-full justify-center">
-      <button
-        (click)="changeRarity('C')"
-        [ngClass]="{ 'primary-background': rarityFilter.value.includes('C') }"
-        class="min-w-auto mt-2 h-8 w-10 rounded-l-sm border border-slate-100 p-1 text-xs font-semibold text-white"
-      >
-        C
-      </button>
-      <button
-        (click)="changeRarity('U')"
-        [ngClass]="{ 'primary-background': rarityFilter.value.includes('U') }"
-        class="min-w-auto mt-2 h-8 w-10 border border-slate-100 p-1 text-xs font-semibold text-white"
-      >
-        U
-      </button>
-      <button
-        (click)="changeRarity('R')"
-        [ngClass]="{ 'primary-background': rarityFilter.value.includes('R') }"
-        class="min-w-auto mt-2 h-8 w-10 border border-slate-100 p-1 text-xs font-semibold text-white"
-      >
-        R
-      </button>
-      <button
-        (click)="changeRarity('SR')"
-        [ngClass]="{ 'primary-background': rarityFilter.value.includes('SR') }"
-        class="min-w-auto mt-2 h-8 w-10 border border-slate-100 p-1 text-xs font-semibold text-white"
-      >
-        SR
-      </button>
-      <button
-        (click)="changeRarity('SEC')"
-        [ngClass]="{ 'primary-background': rarityFilter.value.includes('SEC') }"
-        class="min-w-auto mt-2 h-8 w-10 border border-slate-100 p-1 text-xs font-semibold text-white"
-      >
-        SEC
-      </button>
-      <button
-        (click)="changeRarity('P')"
-        [ngClass]="{ 'primary-background': rarityFilter.value.includes('P') }"
-        class="min-w-auto mt-2 h-8 w-10 rounded-r-sm border border-slate-100 p-1 text-xs font-semibold text-white"
-      >
-        P
-      </button>
-    </div>
-  </div>
+  <digimon-multi-buttons
+    (clickEvent)="changeRarity($event)"
+    [buttonArray]="rarityButtons"
+    [filterFormControl]="rarityFilter"
+    title="Rarity"
+  ></digimon-multi-buttons>
 
-  <!-- Version Select -->
-  <div class="mb-3">
-    <h1 class="text-center text-xs font-bold text-white">Version:</h1>
-    <div class="flex inline-flex w-full justify-center">
-      <button
-        (click)="changeVersion('Normal')"
-        [ngClass]="{
-          'primary-background': versionFilter.value.includes('Normal')
-        }"
-        class="min-w-auto mt-2 h-8 w-20 rounded-l-sm border border-r-2 border-slate-100 p-1 text-xs font-semibold text-white"
-      >
-        Normal
-      </button>
-      <button
-        (click)="changeVersion('AA')"
-        [ngClass]="{ 'primary-background': versionFilter.value.includes('AA') }"
-        class="min-w-auto mt-2 h-8 w-20 border border-slate-100 p-1 text-xs font-semibold text-white"
-      >
-        Alt. Art
-      </button>
-      <button
-        (click)="changeVersion('Pre-Release')"
-        [ngClass]="{
-          'primary-background': versionFilter.value.includes('Pre-Release')
-        }"
-        class="min-w-auto mt-2 h-8 w-20 border border-slate-100 p-1 text-xs font-semibold text-white"
-      >
-        Pre-Release
-      </button>
-      <button
-        (click)="changeVersion('Stamp')"
-        [ngClass]="{
-          'primary-background': versionFilter.value.includes('Stamp')
-        }"
-        class="min-w-auto mt-2 h-8 w-20 rounded-r-sm border border-slate-100 p-1 text-xs font-semibold text-white"
-      >
-        Stamp
-      </button>
-    </div>
-  </div>
+  <digimon-multi-buttons
+    (clickEvent)="changeVersion($event)"
+    [buttonArray]="versionButtons"
+    [filterFormControl]="versionFilter"
+    title="Version"
+  ></digimon-multi-buttons>
+
+  <digimon-multi-buttons
+    (clickEvent)="changeBlock($event)"
+    [buttonArray]="blockButtons"
+    [filterFormControl]="blockFilter"
+    title="Block"
+  ></digimon-multi-buttons>
 
   <p-multiSelect
     [formControl]="keywordFilter"
@@ -362,18 +257,6 @@
     [options]="illustrators"
     [showToggleAll]="false"
     defaultLabel="Select an Illustrator"
-    display="chip"
-    scrollHeight="250px"
-    class="mx-5"
-    styleClass="w-full mt-1 h-8 text-sm max-w-[250px]"
-  >
-  </p-multiSelect>
-
-  <p-multiSelect
-    [formControl]="blockFilter"
-    [options]="blocks"
-    [showToggleAll]="false"
-    defaultLabel="Select a Block"
     display="chip"
     scrollHeight="250px"
     class="mx-5"

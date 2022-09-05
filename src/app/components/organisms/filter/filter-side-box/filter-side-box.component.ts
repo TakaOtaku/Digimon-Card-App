@@ -1,33 +1,29 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import { Store } from '@ngrx/store';
-import { MessageService } from 'primeng/api';
-import { Subject, takeUntil } from 'rxjs';
-import { IFilter } from '../../../../../models';
-import { CARDSET } from '../../../../../models/card-set.enum';
-import { ISelectItem } from '../../../../../models/interfaces/select-item.interface';
-import {
-  changeCardSets,
-  changeFilter,
-} from '../../../../store/digimon.actions';
-import {
-  selectCardSet,
-  selectCollectionMode,
-  selectFilter,
-} from '../../../../store/digimon.selectors';
-import { emptyFilter } from '../../../../store/reducers/digimon.reducers';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {FormControl, FormGroup} from '@angular/forms';
+import {Store} from '@ngrx/store';
+import {MessageService} from 'primeng/api';
+import {Subject, takeUntil} from 'rxjs';
+import {IFilter} from '../../../../../models';
+import {CARDSET} from '../../../../../models/card-set.enum';
+import {ISelectItem} from '../../../../../models/interfaces/select-item.interface';
+import {changeCardSets, changeFilter,} from '../../../../store/digimon.actions';
+import {selectCardSet, selectCollectionMode, selectFilter,} from '../../../../store/digimon.selectors';
+import {emptyFilter} from '../../../../store/reducers/digimon.reducers';
 import {
   Attributes,
-  Blocks,
+  BlockButtons,
+  CardTypeButtons,
   Colors,
   Forms,
   GroupedSets,
   Illustrators,
   Keywords,
+  RarityButtons,
   Restrictions,
   Sources,
   SpecialRequirements,
   Types,
+  VersionButtons,
 } from './filterData';
 
 @Component({
@@ -87,7 +83,6 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
   colors = this.itemsAsSelectItem(Colors);
   illustrators = this.itemsAsSelectItem(Illustrators);
   specialRequirements = this.itemsAsSelectItem(SpecialRequirements);
-  blocks = this.itemsAsSelectItem(Blocks);
   restrictions = this.itemsAsSelectItem(Restrictions);
   sources = this.itemsAsSelectItem(Sources);
 
@@ -95,10 +90,16 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
 
   collectionMode = false;
 
+  cardTypeButtons = CardTypeButtons;
+  rarityButtons = RarityButtons;
+  versionButtons = VersionButtons;
+  blockButtons = BlockButtons;
+
   private filter: IFilter;
   private onDestroy$ = new Subject();
 
-  constructor(private store: Store, private messageService: MessageService) {}
+  constructor(private store: Store, private messageService: MessageService) {
+  }
 
   ngOnInit(): void {
     this.store
@@ -214,10 +215,19 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
 
   updateDPSlider(event: any) {
     this.store.dispatch(
-      changeFilter({ filter: { ...this.filter, dpFilter: event.values } })
+      changeFilter({filter: {...this.filter, dpFilter: event.values}})
     );
   }
 
+  setCardSet(cardSet: string) {
+    this.store.dispatch(changeCardSets({cardSet}));
+  }
+
+  itemsAsSelectItem(array: string[]): ISelectItem[] {
+    return array.map((item) => ({label: item, value: item} as ISelectItem));
+  }
+
+  //region Multi-Button Functions
   changeColor(color: string) {
     let colors = [];
     if (this.filter.colorFilter.includes(color)) {
@@ -226,12 +236,8 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
       colors = [...new Set(this.filter.colorFilter), color];
     }
 
-    const filter: IFilter = { ...this.filter, colorFilter: colors };
-    this.store.dispatch(changeFilter({ filter }));
-  }
-
-  setCardSet(cardSet: string) {
-    this.store.dispatch(changeCardSets({ cardSet }));
+    const filter: IFilter = {...this.filter, colorFilter: colors};
+    this.store.dispatch(changeFilter({filter}));
   }
 
   changeCardType(type: string) {
@@ -266,11 +272,21 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
       versions = [...new Set(this.filter.versionFilter), version];
     }
 
-    const filter: IFilter = { ...this.filter, versionFilter: versions };
-    this.store.dispatch(changeFilter({ filter }));
+    const filter: IFilter = {...this.filter, versionFilter: versions};
+    this.store.dispatch(changeFilter({filter}));
   }
 
-  itemsAsSelectItem(array: string[]): ISelectItem[] {
-    return array.map((item) => ({ label: item, value: item } as ISelectItem));
+  changeBlock(block: string) {
+    let blocks = [];
+    if (this.filter.blockFilter.includes(block)) {
+      blocks = this.filter.blockFilter.filter((value) => value !== block);
+    } else {
+      blocks = [...new Set(this.filter.blockFilter), block];
+    }
+
+    const filter: IFilter = {...this.filter, blockFilter: blocks};
+    this.store.dispatch(changeFilter({filter}));
   }
+
+  //endregion
 }

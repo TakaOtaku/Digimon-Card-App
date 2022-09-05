@@ -1,8 +1,8 @@
 import {Location} from '@angular/common';
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ActivatedRoute, Params} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 import {Store} from '@ngrx/store';
-import {first, Subject, takeUntil} from 'rxjs';
+import {filter, first, Subject, switchMap, takeUntil} from 'rxjs';
 import {ICard, ICountCard, IDeck, ISave} from '../../../models';
 import {AuthService} from '../../service/auth.service';
 import {DatabaseService} from '../../service/database.service';
@@ -83,15 +83,19 @@ export class UserComponent implements OnInit, OnDestroy {
   }
 
   checkURL() {
-    this.route.params.pipe(takeUntil(this.onDestroy$)).subscribe((params: Params) => {
-      this.databaseService.loadSave(params['id']).pipe(first()).subscribe((save) => {
-        this.save = save;
-        this.decks = save?.decks ?? this.decks;
-        this.collection = save?.collection ?? this.collection;
-      });
-      if (!params['id']) {
-        this.changeURL();
-      }
+    this.route.params.pipe(
+      first(),
+      filter((params) => {
+        if (!params['id']) {
+          this.changeURL();
+        }
+        return !!params['id'];
+      }),
+      switchMap((params) => this.databaseService.loadSave(params['id']).pipe(first()))
+    ).subscribe((save) => {
+      this.save = save;
+      this.decks = save?.decks ?? this.decks;
+      this.collection = save?.collection ?? this.collection;
     });
   }
 
