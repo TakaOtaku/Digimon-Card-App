@@ -1,0 +1,20 @@
+/* ===== Slider Thumb CSS ===== */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  border-radius: 50%;
+  border: transparent 1px solid;
+  width: 20px; /* Set a specific slider handle width */
+  height: 20px; /* Slider handle height */
+  background: #08528d; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 20px; /* Set a specific slider handle width */
+  height: 20px; /* Slider handle height */
+  border-radius: 50%;
+  border: transparent 1px solid;
+  background: #08528d; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}

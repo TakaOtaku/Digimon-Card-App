@@ -20,7 +20,7 @@ for name in names:
                 card['cardImage'] = re.sub(
                     r'eng', 'pre-release', card['cardImage'])
                 card['cardImage'] = re.sub(
-                    r'.jpg', '_P0.jpg', card['cardImage'])
+                    r'.webp', '_P0.webp', card['cardImage'])
                 card['version'] = 'Pre-Release'
                 cards.append(card)
 

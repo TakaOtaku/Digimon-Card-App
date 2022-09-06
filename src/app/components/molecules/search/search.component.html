@@ -1,0 +1,12 @@
+<div class="surface-card my-2 flex flex-col px-2">
+  <span [ngStyle]="{ display: 'inline-flex' }" class="p-input-icon-left w-full">
+    <i class="pi pi-search h-3"></i>
+    <input
+      [formControl]="searchFilter"
+      class="h-6 w-full text-xs"
+      pInputText
+      placeholder="Search"
+      type="text"
+    />
+  </span>
+</div>

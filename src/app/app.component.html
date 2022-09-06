@@ -1,0 +1,70 @@
+<div class="relative">
+  <digimon-navbar></digimon-navbar>
+
+  <router-outlet #router *ngIf="!hide"></router-outlet>
+  <div *ngIf="hide" class="w-screen h-[calc(100vh-58px)]"></div>
+
+  <p-toast></p-toast>
+
+  <p-confirmDialog
+    header="Delete Confirmation"
+    icon="pi pi-exclamation-triangle"
+    key="Delete"
+    rejectButtonStyleClass="p-button-outlined"
+  ></p-confirmDialog>
+
+  <p-confirmDialog
+    header="New Deck Confirmation"
+    icon="pi pi-file"
+    key="NewDeck"
+    rejectButtonStyleClass="p-button-outlined"
+  ></p-confirmDialog>
+
+  <p-blockUI [blocked]="spinner"></p-blockUI>
+  <p-progressSpinner *ngIf="spinner" class="top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 absolute z-[5000]"></p-progressSpinner>
+</div>
+
+<p-dialog header="Hello, and welcome to DigimonCard.App" [(visible)]="noSaveDialog" [modal]="true" class="max-w-500px" [draggable]="false" [resizable]="false" [closable]="false">
+  <p>You seem to be new on this site, so welcome!</p>
+  <p>Do you want to create a new save locally, or do you want to login with Google have your data synced on all devices?</p>
+  <div>
+    <button (click)="createANewSave()" class="min-w-auto mt-2 h-8 w-40 rounded-l-sm border border-slate-100 p-2 text-xs font-semibold text-white hover:bg-slate-500">
+      Create a new save
+    </button>
+    <button (click)="loginWithGoogle()" class="min-w-auto ml-3 mt-2 h-8 w-40 rounded-l-sm border border-slate-100 p-2 text-xs font-semibold text-white hover:bg-slate-500">
+      Login with Google
+    </button>
+  </div>
+</p-dialog>
+
+<h1 class="text-white text-3xl">{{retryDialog}}</h1>
+
+<p-dialog *ngIf="retryDialog" header="We could not load your save!" [(visible)]="test" [modal]="true" class="max-w-500px" [draggable]="false" [resizable]="false" [closable]="false">
+  <p>There was an error with loading your save from the server.</p>
+  <p>
+    It could be that you have a slow internet right now and a timeout happened.
+    If so you can press Retry, to try loading your save again.
+    If that didn't work you could either contact me TakaOtaku#8538 and I will try to help you,
+    or you can create a new save or import a backup.
+  </p>
+  <p>I am sorry for the inconvenience!</p>
+  <div>
+    <button (click)="retry()" class="min-w-auto mt-2 h-8 w-40 rounded-l-sm border border-slate-100 p-2 text-xs font-semibold text-white hover:bg-slate-500">
+      Retry
+    </button>
+    <button (click)="createANewSave()" class="min-w-auto ml-3 mt-2 h-8 w-40 rounded-l-sm border border-slate-100 p-2 text-xs font-semibold text-white hover:bg-slate-500">
+      Create a new save
+    </button>
+    <input
+      style="display: none"
+      type="file"
+      accept=".txt"
+      id="file-input"
+      (change)="loadBackup($event.target)"
+      #fileUpload
+    />
+    <button (click)="fileUpload.click()" class="min-w-auto ml-3 mt-2 h-8 w-40 rounded-l-sm border border-slate-100 p-2 text-xs font-semibold text-white hover:bg-slate-500">
+      Load a backup
+    </button>
+  </div>
+</p-dialog>

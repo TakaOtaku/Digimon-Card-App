@@ -2,7 +2,7 @@
 	{
 		"id": "EX3-001",
 		"name": "Bebydomon",
-		"cardImage": "assets/images/cards/jap/EX3-001.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-001.webp",
 		"cardType": "Digi-Egg",
 		"dp": "-",
 		"playCost": "-",
@@ -36,7 +36,7 @@
 	{
 		"id": "EX3-002",
 		"name": "Missimon",
-		"cardImage": "assets/images/cards/jap/EX3-002.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-002.webp",
 		"cardType": "Digi-Egg",
 		"dp": "-",
 		"playCost": "-",
@@ -70,7 +70,7 @@
 	{
 		"id": "EX3-003",
 		"name": "Sunarizamon",
-		"cardImage": "assets/images/cards/jap/EX3-003.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-003.webp",
 		"cardType": "Digimon",
 		"dp": "2000",
 		"playCost": "3",
@@ -104,7 +104,7 @@
 	{
 		"id": "EX3-004",
 		"name": "Veemon",
-		"cardImage": "assets/images/cards/jap/EX3-004.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-004.webp",
 		"cardType": "Digimon",
 		"dp": "1000",
 		"playCost": "3",
@@ -138,7 +138,7 @@
 	{
 		"id": "EX3-005",
 		"name": "Vorvomon",
-		"cardImage": "assets/images/cards/jap/EX3-005.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-005.webp",
 		"cardType": "Digimon",
 		"dp": "1000",
 		"playCost": "3",
@@ -172,7 +172,7 @@
 	{
 		"id": "EX3-006",
 		"name": "Flarerizamon",
-		"cardImage": "assets/images/cards/jap/EX3-006.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-006.webp",
 		"cardType": "Digimon",
 		"dp": "5000",
 		"playCost": "4",
@@ -206,7 +206,7 @@
 	{
 		"id": "EX3-007",
 		"name": "Lavorvomon",
-		"cardImage": "assets/images/cards/jap/EX3-007.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-007.webp",
 		"cardType": "Digimon",
 		"dp": "4000",
 		"playCost": "4",
@@ -240,7 +240,7 @@
 	{
 		"id": "EX3-008",
 		"name": "Flamedramon",
-		"cardImage": "assets/images/cards/jap/EX3-008.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-008.webp",
 		"cardType": "Digimon",
 		"dp": "5000",
 		"playCost": "5",
@@ -274,7 +274,7 @@
 	{
 		"id": "EX3-009",
 		"name": "Volcdramon",
-		"cardImage": "assets/images/cards/jap/EX3-009.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-009.webp",
 		"cardType": "Digimon",
 		"dp": "7000",
 		"playCost": "6",
@@ -308,7 +308,7 @@
 	{
 		"id": "EX3-010",
 		"name": "Paildramon",
-		"cardImage": "assets/images/cards/jap/EX3-010.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-010.webp",
 		"cardType": "Digimon",
 		"dp": "8000",
 		"playCost": "8",
@@ -342,7 +342,7 @@
 	{
 		"id": "EX3-010_P1",
 		"name": "Paildramon",
-		"cardImage": "assets/images/cards/jap/EX3-010_P1.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-010_P1.webp",
 		"cardType": "Digimon",
 		"dp": "8000",
 		"playCost": "8",
@@ -376,7 +376,7 @@
 	{
 		"id": "EX3-011",
 		"name": "Lavogaritamon",
-		"cardImage": "assets/images/cards/jap/EX3-011.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-011.webp",
 		"cardType": "Digimon",
 		"dp": "7000",
 		"playCost": "8",
@@ -410,7 +410,7 @@
 	{
 		"id": "EX3-012",
 		"name": "Volcanicdramon",
-		"cardImage": "assets/images/cards/jap/EX3-012.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-012.webp",
 		"cardType": "Digimon",
 		"dp": "12000",
 		"playCost": "12",
@@ -444,7 +444,7 @@
 	{
 		"id": "EX3-012_P1",
 		"name": "Volcanicdramon",
-		"cardImage": "assets/images/cards/jap/EX3-012_P1.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-012_P1.webp",
 		"cardType": "Digimon",
 		"dp": "12000",
 		"playCost": "12",
@@ -478,7 +478,7 @@
 	{
 		"id": "EX3-013",
 		"name": "Chaosdramon",
-		"cardImage": "assets/images/cards/jap/EX3-013.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-013.webp",
 		"cardType": "Digimon",
 		"dp": "12000",
 		"playCost": "12",
@@ -512,7 +512,7 @@
 	{
 		"id": "EX3-013_P1",
 		"name": "Chaosdramon",
-		"cardImage": "assets/images/cards/jap/EX3-013_P1.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-013_P1.webp",
 		"cardType": "Digimon",
 		"dp": "12000",
 		"playCost": "12",
@@ -546,7 +546,7 @@
 	{
 		"id": "EX3-014",
 		"name": "Dorbickmon",
-		"cardImage": "assets/images/cards/jap/EX3-014.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-014.webp",
 		"cardType": "Digimon",
 		"dp": "12000",
 		"playCost": "13",
@@ -580,7 +580,7 @@
 	{
 		"id": "EX3-014_P1",
 		"name": "Dorbickmon",
-		"cardImage": "assets/images/cards/jap/EX3-014_P1.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-014_P1.webp",
 		"cardType": "Digimon",
 		"dp": "12000",
 		"playCost": "13",
@@ -614,7 +614,7 @@
 	{
 		"id": "EX3-015",
 		"name": "Crabmon",
-		"cardImage": "assets/images/cards/jap/EX3-015.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-015.webp",
 		"cardType": "Digimon",
 		"dp": "2000",
 		"playCost": "3",
@@ -648,7 +648,7 @@
 	{
 		"id": "EX3-016",
 		"name": "SnowAgumon",
-		"cardImage": "assets/images/cards/jap/EX3-016.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-016.webp",
 		"cardType": "Digimon",
 		"dp": "2000",
 		"playCost": "3",
@@ -682,7 +682,7 @@
 	{
 		"id": "EX3-017",
 		"name": "Ebidramon",
-		"cardImage": "assets/images/cards/jap/EX3-017.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-017.webp",
 		"cardType": "Digimon",
 		"dp": "5000",
 		"playCost": "5",
@@ -716,7 +716,7 @@
 	{
 		"id": "EX3-018",
 		"name": "Coredramon",
-		"cardImage": "assets/images/cards/jap/EX3-018.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-018.webp",
 		"cardType": "Digimon",
 		"dp": "6000",
 		"playCost": "5",
@@ -750,7 +750,7 @@
 	{
 		"id": "EX3-019",
 		"name": "Paledramon",
-		"cardImage": "assets/images/cards/jap/EX3-019.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-019.webp",
 		"cardType": "Digimon",
 		"dp": "5000",
 		"playCost": "5",
@@ -784,7 +784,7 @@
 	{
 		"id": "EX3-020",
 		"name": "Wingdramon",
-		"cardImage": "assets/images/cards/jap/EX3-020.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-020.webp",
 		"cardType": "Digimon",
 		"dp": "7000",
 		"playCost": "7",
@@ -818,7 +818,7 @@
 	{
 		"id": "EX3-020_P1",
 		"name": "Wingdramon",
-		"cardImage": "assets/images/cards/jap/EX3-020_P1.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-020_P1.webp",
 		"cardType": "Digimon",
 		"dp": "7000",
 		"playCost": "7",
@@ -852,7 +852,7 @@
 	{
 		"id": "EX3-021",
 		"name": "CrysPaledramon",
-		"cardImage": "assets/images/cards/jap/EX3-021.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-021.webp",
 		"cardType": "Digimon",
 		"dp": "7000",
 		"playCost": "7",
@@ -886,7 +886,7 @@
 	{
 		"id": "EX3-022",
 		"name": "MegaSeadramon",
-		"cardImage": "assets/images/cards/jap/EX3-022.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-022.webp",
 		"cardType": "Digimon",
 		"dp": "7000",
 		"playCost": "7",
@@ -920,7 +920,7 @@
 	{
 		"id": "EX3-023",
 		"name": "Plesiomon",
-		"cardImage": "assets/images/cards/jap/EX3-023.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-023.webp",
 		"cardType": "Digimon",
 		"dp": "11000",
 		"playCost": "11",
@@ -954,7 +954,7 @@
 	{
 		"id": "EX3-024",
 		"name": "Slayerdramon",
-		"cardImage": "assets/images/cards/jap/EX3-024.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-024.webp",
 		"cardType": "Digimon",
 		"dp": "12000",
 		"playCost": "12",
@@ -988,7 +988,7 @@
 	{
 		"id": "EX3-024_P1",
 		"name": "Slayerdramon",
-		"cardImage": "assets/images/cards/jap/EX3-024_P1.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-024_P1.webp",
 		"cardType": "Digimon",
 		"dp": "12000",
 		"playCost": "12",
@@ -1022,7 +1022,7 @@
 	{
 		"id": "EX3-025",
 		"name": "Azulongmon",
-		"cardImage": "assets/images/cards/jap/EX3-025.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-025.webp",
 		"cardType": "Digimon",
 		"dp": "12000",
 		"playCost": "12",
@@ -1056,7 +1056,7 @@
 	{
 		"id": "EX3-025",
 		"name": "Azulongmon",
-		"cardImage": "assets/images/cards/jap/EX3-025.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-025.webp",
 		"cardType": "Digimon",
 		"dp": "12000",
 		"playCost": "12",
@@ -1090,7 +1090,7 @@
 	{
 		"id": "EX3-026",
 		"name": "Aegisdramon",
-		"cardImage": "assets/images/cards/jap/EX3-026.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-026.webp",
 		"cardType": "Digimon",
 		"dp": "1400",
 		"playCost": "14",
@@ -1124,7 +1124,7 @@
 	{
 		"id": "EX3-026_P1",
 		"name": "Aegisdramon",
-		"cardImage": "assets/images/cards/jap/EX3-026_P1.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-026_P1.webp",
 		"cardType": "Digimon",
 		"dp": "1400",
 		"playCost": "14",
@@ -1158,7 +1158,7 @@
 	{
 		"id": "EX3-027",
 		"name": "Agumon",
-		"cardImage": "assets/images/cards/jap/EX3-027.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-027.webp",
 		"cardType": "Digimon",
 		"dp": "2000",
 		"playCost": "3",
@@ -1192,7 +1192,7 @@
 	{
 		"id": "EX3-028",
 		"name": "Patamon",
-		"cardImage": "assets/images/cards/jap/EX3-028.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-028.webp",
 		"cardType": "Digimon",
 		"dp": "-",
 		"playCost": "3",
@@ -1226,7 +1226,7 @@
 	{
 		"id": "EX3-029",
 		"name": "Airdramon",
-		"cardImage": "assets/images/cards/jap/EX3-029.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-029.webp",
 		"cardType": "Digimon",
 		"dp": "-",
 		"playCost": "5",
@@ -1260,7 +1260,7 @@
 	{
 		"id": "EX3-030",
 		"name": "Gatomon",
-		"cardImage": "assets/images/cards/jap/EX3-030.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-030.webp",
 		"cardType": "Digimon",
 		"dp": "-",
 		"playCost": "4",
@@ -1294,7 +1294,7 @@
 	{
 		"id": "EX3-031",
 		"name": "Veedramon",
-		"cardImage": "assets/images/cards/jap/EX3-031.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-031.webp",
 		"cardType": "Digimon",
 		"dp": "5000",
 		"playCost": "5",
@@ -1328,7 +1328,7 @@
 	{
 		"id": "EX3-031_P1",
 		"name": "Veedramon",
-		"cardImage": "assets/images/cards/jap/EX3-031_P1.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-031_P1.webp",
 		"cardType": "Digimon",
 		"dp": "5000",
 		"playCost": "5",
@@ -1362,7 +1362,7 @@
 	{
 		"id": "EX3-032",
 		"name": "Majiramon",
-		"cardImage": "assets/images/cards/jap/EX3-032.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-032.webp",
 		"cardType": "Digimon",
 		"dp": "7000",
 		"playCost": "7",
@@ -1396,7 +1396,7 @@
 	{
 		"id": "EX3-033",
 		"name": "AeroVeedramon",
-		"cardImage": "assets/images/cards/jap/EX3-033.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-033.webp",
 		"cardType": "Digimon",
 		"dp": "5000",
 		"playCost": "8",
@@ -1430,7 +1430,7 @@
 	{
 		"id": "EX3-034",
 		"name": "Angewomon",
-		"cardImage": "assets/images/cards/jap/EX3-034.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-034.webp",
 		"cardType": "Digimon",
 		"dp": "-",
 		"playCost": "8",
@@ -1464,7 +1464,7 @@
 	{
 		"id": "EX3-035",
 		"name": "Goldramon",
-		"cardImage": "assets/images/cards/jap/EX3-035.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-035.webp",
 		"cardType": "Digimon",
 		"dp": "11000",
 		"playCost": "12",
@@ -1498,7 +1498,7 @@
 	{
 		"id": "EX3-035_P1",
 		"name": "Goldramon",
-		"cardImage": "assets/images/cards/jap/EX3-035_P1.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-035_P1.webp",
 		"cardType": "Digimon",
 		"dp": "11000",
 		"playCost": "12",
@@ -1532,7 +1532,7 @@
 	{
 		"id": "EX3-036",
 		"name": "Magnadramon",
-		"cardImage": "assets/images/cards/jap/EX3-036.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-036.webp",
 		"cardType": "Digimon",
 		"dp": "12000",
 		"playCost": "12",
@@ -1566,7 +1566,7 @@
 	{
 		"id": "EX3-036_P1",
 		"name": "Magnadramon",
-		"cardImage": "assets/images/cards/jap/EX3-036_P1.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-036_P1.webp",
 		"cardType": "Digimon",
 		"dp": "12000",
 		"playCost": "12",
@@ -1600,7 +1600,7 @@
 	{
 		"id": "EX3-037",
 		"name": "Dracomon",
-		"cardImage": "assets/images/cards/jap/EX3-037.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-037.webp",
 		"cardType": "Digimon",
 		"dp": "2000",
 		"playCost": "3",
@@ -1634,7 +1634,7 @@
 	{
 		"id": "EX3-037_P1",
 		"name": "Dracomon",
-		"cardImage": "assets/images/cards/jap/EX3-037_P1.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-037_P1.webp",
 		"cardType": "Digimon",
 		"dp": "2000",
 		"playCost": "3",
@@ -1668,7 +1668,7 @@
 	{
 		"id": "EX3-038",
 		"name": "Pomumon",
-		"cardImage": "assets/images/cards/jap/EX3-038.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-038.webp",
 		"cardType": "Digimon",
 		"dp": "2000",
 		"playCost": "3",
@@ -1702,7 +1702,7 @@
 	{
 		"id": "EX3-039",
 		"name": "Coredramon",
-		"cardImage": "assets/images/cards/jap/EX3-039.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-039.webp",
 		"cardType": "Digimon",
 		"dp": "6000",
 		"playCost": "5",
@@ -1736,7 +1736,7 @@
 	{
 		"id": "EX3-040",
 		"name": "Parasaurmon",
-		"cardImage": "assets/images/cards/jap/EX3-040.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-040.webp",
 		"cardType": "Digimon",
 		"dp": "4000",
 		"playCost": "5",
@@ -1770,7 +1770,7 @@
 	{
 		"id": "EX3-041",
 		"name": "Groundramon",
-		"cardImage": "assets/images/cards/jap/EX3-041.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-041.webp",
 		"cardType": "Digimon",
 		"dp": "7000",
 		"playCost": "7",
@@ -1804,7 +1804,7 @@
 	{
 		"id": "EX3-041_P1",
 		"name": "Groundramon",
-		"cardImage": "assets/images/cards/jap/EX3-041_P1.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-041_P1.webp",
 		"cardType": "Digimon",
 		"dp": "7000",
 		"playCost": "7",
@@ -1838,7 +1838,7 @@
 	{
 		"id": "EX3-042",
 		"name": "Toropiamon",
-		"cardImage": "assets/images/cards/jap/EX3-042.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-042.webp",
 		"cardType": "Digimon",
 		"dp": "7000",
 		"playCost": "7",
@@ -1872,7 +1872,7 @@
 	{
 		"id": "EX3-043",
 		"name": "Entmon",
-		"cardImage": "assets/images/cards/jap/EX3-043.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-043.webp",
 		"cardType": "Digimon",
 		"dp": "8000",
 		"playCost": "8",
@@ -1906,7 +1906,7 @@
 	{
 		"id": "EX3-044",
 		"name": "Breakdramon",
-		"cardImage": "assets/images/cards/jap/EX3-044.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-044.webp",
 		"cardType": "Digimon",
 		"dp": "12000",
 		"playCost": "12",
@@ -1940,7 +1940,7 @@
 	{
 		"id": "EX3-044_P1",
 		"name": "Breakdramon",
-		"cardImage": "assets/images/cards/jap/EX3-044_P1.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-044_P1.webp",
 		"cardType": "Digimon",
 		"dp": "12000",
 		"playCost": "12",
@@ -1974,7 +1974,7 @@
 	{
 		"id": "EX3-045",
 		"name": "Hydramon",
-		"cardImage": "assets/images/cards/jap/EX3-045.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-045.webp",
 		"cardType": "Digimon",
 		"dp": "13000",
 		"playCost": "13",
@@ -2008,7 +2008,7 @@
 	{
 		"id": "EX3-045_P1",
 		"name": "Hydramon",
-		"cardImage": "assets/images/cards/jap/EX3-045_P1.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-045_P1.webp",
 		"cardType": "Digimon",
 		"dp": "13000",
 		"playCost": "13",
@@ -2042,7 +2042,7 @@
 	{
 		"id": "EX3-046",
 		"name": "Commandramon",
-		"cardImage": "assets/images/cards/jap/EX3-046.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-046.webp",
 		"cardType": "Digimon",
 		"dp": "2000",
 		"playCost": "3",
@@ -2076,7 +2076,7 @@
 	{
 		"id": "EX3-047",
 		"name": "Jazamon",
-		"cardImage": "assets/images/cards/jap/EX3-047.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-047.webp",
 		"cardType": "Digimon",
 		"dp": "1000",
 		"playCost": "3",
@@ -2110,7 +2110,7 @@
 	{
 		"id": "EX3-048",
 		"name": "Jazardmon",
-		"cardImage": "assets/images/cards/jap/EX3-048.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-048.webp",
 		"cardType": "Digimon",
 		"dp": "4000",
 		"playCost": "4",
@@ -2144,7 +2144,7 @@
 	{
 		"id": "EX3-049",
 		"name": "Sealsdramon",
-		"cardImage": "assets/images/cards/jap/EX3-049.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-049.webp",
 		"cardType": "Digimon",
 		"dp": "4000",
 		"playCost": "5",
@@ -2178,7 +2178,7 @@
 	{
 		"id": "EX3-049_P1",
 		"name": "Sealsdramon",
-		"cardImage": "assets/images/cards/jap/EX3-049_P1.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-049_P1.webp",
 		"cardType": "Digimon",
 		"dp": "4000",
 		"playCost": "5",
@@ -2212,7 +2212,7 @@
 	{
 		"id": "EX3-050",
 		"name": "Cyberdramon",
-		"cardImage": "assets/images/cards/jap/EX3-050.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-050.webp",
 		"cardType": "Digimon",
 		"dp": "7000",
 		"playCost": "6",
@@ -2246,7 +2246,7 @@
 	{
 		"id": "EX3-051",
 		"name": "Tankdramon",
-		"cardImage": "assets/images/cards/jap/EX3-051.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-051.webp",
 		"cardType": "Digimon",
 		"dp": "7000",
 		"playCost": "7",
@@ -2280,7 +2280,7 @@
 	{
 		"id": "EX3-052",
 		"name": "Jazarichmon",
-		"cardImage": "assets/images/cards/jap/EX3-052.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-052.webp",
 		"cardType": "Digimon",
 		"dp": "7000",
 		"playCost": "8",
@@ -2314,7 +2314,7 @@
 	{
 		"id": "EX3-053",
 		"name": "Metallicdramon",
-		"cardImage": "assets/images/cards/jap/EX3-053.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-053.webp",
 		"cardType": "Digimon",
 		"dp": "12000",
 		"playCost": "12",
@@ -2348,7 +2348,7 @@
 	{
 		"id": "EX3-053_P1",
 		"name": "Metallicdramon",
-		"cardImage": "assets/images/cards/jap/EX3-053_P1.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-053_P1.webp",
 		"cardType": "Digimon",
 		"dp": "12000",
 		"playCost": "12",
@@ -2382,7 +2382,7 @@
 	{
 		"id": "EX3-054",
 		"name": "Darkdramon",
-		"cardImage": "assets/images/cards/jap/EX3-054.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-054.webp",
 		"cardType": "Digimon",
 		"dp": "12000",
 		"playCost": "13",
@@ -2416,7 +2416,7 @@
 	{
 		"id": "EX3-054_P1",
 		"name": "Darkdramon",
-		"cardImage": "assets/images/cards/jap/EX3-054_P1.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-054_P1.webp",
 		"cardType": "Digimon",
 		"dp": "12000",
 		"playCost": "13",
@@ -2450,7 +2450,7 @@
 	{
 		"id": "EX3-055",
 		"name": "Wormmon",
-		"cardImage": "assets/images/cards/jap/EX3-055.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-055.webp",
 		"cardType": "Digimon",
 		"dp": "1000",
 		"playCost": "3",
@@ -2484,7 +2484,7 @@
 	{
 		"id": "EX3-056",
 		"name": "Guilmon",
-		"cardImage": "assets/images/cards/jap/EX3-056.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-056.webp",
 		"cardType": "Digimon",
 		"dp": "3000",
 		"playCost": "4",
@@ -2518,7 +2518,7 @@
 	{
 		"id": "EX3-057",
 		"name": "Growlmon",
-		"cardImage": "assets/images/cards/jap/EX3-057.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-057.webp",
 		"cardType": "Digimon",
 		"dp": "5000",
 		"playCost": "5",
@@ -2552,7 +2552,7 @@
 	{
 		"id": "EX3-058",
 		"name": "Shadramon",
-		"cardImage": "assets/images/cards/jap/EX3-058.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-058.webp",
 		"cardType": "Digimon",
 		"dp": "5000",
 		"playCost": "5",
@@ -2586,7 +2586,7 @@
 	{
 		"id": "EX3-059",
 		"name": "DarkTyrannomon",
-		"cardImage": "assets/images/cards/jap/EX3-059.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-059.webp",
 		"cardType": "Digimon",
 		"dp": "5000",
 		"playCost": "5",
@@ -2620,7 +2620,7 @@
 	{
 		"id": "EX3-060",
 		"name": "ExTyrannomon",
-		"cardImage": "assets/images/cards/jap/EX3-060.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-060.webp",
 		"cardType": "Digimon",
 		"dp": "9000",
 		"playCost": "7",
@@ -2654,7 +2654,7 @@
 	{
 		"id": "EX3-061",
 		"name": "Dinobeemon",
-		"cardImage": "assets/images/cards/jap/EX3-061.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-061.webp",
 		"cardType": "Digimon",
 		"dp": "8000",
 		"playCost": "8",
@@ -2688,7 +2688,7 @@
 	{
 		"id": "EX3-061_P1",
 		"name": "Dinobeemon",
-		"cardImage": "assets/images/cards/jap/EX3-061_P1.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-061_P1.webp",
 		"cardType": "Digimon",
 		"dp": "8000",
 		"playCost": "8",
@@ -2722,7 +2722,7 @@
 	{
 		"id": "EX3-062",
 		"name": "WarGrowlmon",
-		"cardImage": "assets/images/cards/jap/EX3-062.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-062.webp",
 		"cardType": "Digimon",
 		"dp": "8000",
 		"playCost": "8",
@@ -2756,7 +2756,7 @@
 	{
 		"id": "EX3-063",
 		"name": "Imperialdramon: Dragon Mode",
-		"cardImage": "assets/images/cards/jap/EX3-063.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-063.webp",
 		"cardType": "Digimon",
 		"dp": "12000",
 		"playCost": "12",
@@ -2790,7 +2790,7 @@
 	{
 		"id": "EX3-063_P1",
 		"name": "Imperialdramon: Dragon Mode",
-		"cardImage": "assets/images/cards/jap/EX3-063_P1.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-063_P1.webp",
 		"cardType": "Digimon",
 		"dp": "12000",
 		"playCost": "12",
@@ -2824,7 +2824,7 @@
 	{
 		"id": "EX3-064",
 		"name": "Megidramon",
-		"cardImage": "assets/images/cards/jap/EX3-064.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-064.webp",
 		"cardType": "Digimon",
 		"dp": "12000",
 		"playCost": "12",
@@ -2858,7 +2858,7 @@
 	{
 		"id": "EX3-064_P1",
 		"name": "Megidramon",
-		"cardImage": "assets/images/cards/jap/EX3-064_P1.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-064_P1.webp",
 		"cardType": "Digimon",
 		"dp": "12000",
 		"playCost": "12",
@@ -2892,7 +2892,7 @@
 	{
 		"id": "EX3-065",
 		"name": "Hina Kurihara",
-		"cardImage": "assets/images/cards/jap/EX3-065.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-065.webp",
 		"cardType": "Tamer",
 		"dp": "-",
 		"playCost": "3",
@@ -2926,7 +2926,7 @@
 	{
 		"id": "EX3-065_P1",
 		"name": "Hina Kurihara",
-		"cardImage": "assets/images/cards/jap/EX3-065_P1.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-065_P1.webp",
 		"cardType": "Tamer",
 		"dp": "-",
 		"playCost": "3",
@@ -2960,7 +2960,7 @@
 	{
 		"id": "EX3-066",
 		"name": "Hyper Infinity Cannon",
-		"cardImage": "assets/images/cards/jap/EX3-066.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-066.webp",
 		"cardType": "Option",
 		"dp": "-",
 		"playCost": "6",
@@ -2994,7 +2994,7 @@
 	{
 		"id": "EX3-067",
 		"name": "Sourai",
-		"cardImage": "assets/images/cards/jap/EX3-067.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-067.webp",
 		"cardType": "Option",
 		"dp": "-",
 		"playCost": "4",
@@ -3028,7 +3028,7 @@
 	{
 		"id": "EX3-068",
 		"name": "God Flame",
-		"cardImage": "assets/images/cards/jap/EX3-068.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-068.webp",
 		"cardType": "Option",
 		"dp": "-",
 		"playCost": "5",
@@ -3062,7 +3062,7 @@
 	{
 		"id": "EX3-069",
 		"name": "Trial of the Four Great Dragons",
-		"cardImage": "assets/images/cards/jap/EX3-069.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-069.webp",
 		"cardType": "Option",
 		"dp": "-",
 		"playCost": "8",
@@ -3096,7 +3096,7 @@
 	{
 		"id": "EX3-070",
 		"name": "Avalon's Gate",
-		"cardImage": "assets/images/cards/jap/EX3-070.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-070.webp",
 		"cardType": "Option",
 		"dp": "-",
 		"playCost": "3",
@@ -3130,7 +3130,7 @@
 	{
 		"id": "EX3-071",
 		"name": "Laser Cannon",
-		"cardImage": "assets/images/cards/jap/EX3-071.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-071.webp",
 		"cardType": "Option",
 		"dp": "-",
 		"playCost": "5",
@@ -3164,7 +3164,7 @@
 	{
 		"id": "EX3-072",
 		"name": "Meggido Flame",
-		"cardImage": "assets/images/cards/jap/EX3-072.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-072.webp",
 		"cardType": "Option",
 		"dp": "-",
 		"playCost": "4",
@@ -3198,7 +3198,7 @@
 	{
 		"id": "EX3-073",
 		"name": "Imperialdramon: Fighter Mode",
-		"cardImage": "assets/images/cards/jap/EX3-073.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-073.webp",
 		"cardType": "Digimon",
 		"dp": "13000",
 		"playCost": "13",
@@ -3232,7 +3232,7 @@
 	{
 		"id": "EX3-073_P1",
 		"name": "Imperialdramon: Fighter Mode",
-		"cardImage": "assets/images/cards/jap/EX3-073_P1.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-073_P1.webp",
 		"cardType": "Digimon",
 		"dp": "13000",
 		"playCost": "13",
@@ -3266,7 +3266,7 @@
 	{
 		"id": "EX3-074",
 		"name": "Examon",
-		"cardImage": "assets/images/cards/jap/EX3-074.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-074.webp",
 		"cardType": "Digimon",
 		"dp": "15000",
 		"playCost": "15",
@@ -3300,7 +3300,7 @@
 	{
 		"id": "EX3-074_P1",
 		"name": "Examon",
-		"cardImage": "assets/images/cards/jap/EX3-074_P1.jpg",
+		"cardImage": "assets/images/cards/jap/EX3-074_P1.webp",
 		"cardType": "Digimon",
 		"dp": "15000",
 		"playCost": "15",

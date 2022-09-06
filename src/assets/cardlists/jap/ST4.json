@@ -2,7 +2,7 @@
   {
     "id": "ST4-01",
     "name": "Motimon",
-    "cardImage": "assets/images/cards/jap/ST4-01.jpg",
+    "cardImage": "assets/images/cards/jap/ST4-01.webp",
     "cardType": "Digi-Egg",
     "dp": "-",
     "playCost": "-",
@@ -32,7 +32,7 @@
   {
     "id": "ST4-02",
     "name": "Floramon",
-    "cardImage": "assets/images/cards/jap/ST4-02.jpg",
+    "cardImage": "assets/images/cards/jap/ST4-02.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "2",
@@ -62,7 +62,7 @@
   {
     "id": "ST4-03",
     "name": "Tentomon",
-    "cardImage": "assets/images/cards/jap/ST4-03.jpg",
+    "cardImage": "assets/images/cards/jap/ST4-03.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -93,7 +93,7 @@
   {
     "id": "ST4-03_P1",
     "name": "Tentomon",
-    "cardImage": "assets/images/cards/jap/ST4-03_P1.jpg",
+    "cardImage": "assets/images/cards/jap/ST4-03_P1.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -124,7 +124,7 @@
   {
     "id": "ST4-03_P2",
     "name": "Tentomon",
-    "cardImage": "assets/images/cards/jap/ST4-03_P2.jpg",
+    "cardImage": "assets/images/cards/jap/ST4-03_P2.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -155,7 +155,7 @@
   {
     "id": "ST4-04",
     "name": "Palmon",
-    "cardImage": "assets/images/cards/jap/ST4-04.jpg",
+    "cardImage": "assets/images/cards/jap/ST4-04.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -186,7 +186,7 @@
   {
     "id": "ST4-04_P1",
     "name": "Palmon",
-    "cardImage": "assets/images/cards/jap/ST4-04_P1.jpg",
+    "cardImage": "assets/images/cards/jap/ST4-04_P1.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -217,7 +217,7 @@
   {
     "id": "ST4-05",
     "name": "Kunemon",
-    "cardImage": "assets/images/cards/jap/ST4-05.jpg",
+    "cardImage": "assets/images/cards/jap/ST4-05.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "4",
@@ -247,7 +247,7 @@
   {
     "id": "ST4-06",
     "name": "Togemon",
-    "cardImage": "assets/images/cards/jap/ST4-06.jpg",
+    "cardImage": "assets/images/cards/jap/ST4-06.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "4",
@@ -277,7 +277,7 @@
   {
     "id": "ST4-07",
     "name": "Kuwagamon",
-    "cardImage": "assets/images/cards/jap/ST4-07.jpg",
+    "cardImage": "assets/images/cards/jap/ST4-07.webp",
     "cardType": "Digimon",
     "dp": "6000",
     "playCost": "5",
@@ -307,7 +307,7 @@
   {
     "id": "ST4-08",
     "name": "Kabuterimon",
-    "cardImage": "assets/images/cards/jap/ST4-08.jpg",
+    "cardImage": "assets/images/cards/jap/ST4-08.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "6",
@@ -338,7 +338,7 @@
   {
     "id": "ST4-08_P1",
     "name": "Kabuterimon",
-    "cardImage": "assets/images/cards/jap/ST4-08_P1.jpg",
+    "cardImage": "assets/images/cards/jap/ST4-08_P1.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "6",
@@ -369,7 +369,7 @@
   {
     "id": "ST4-09",
     "name": "Okuwamon",
-    "cardImage": "assets/images/cards/jap/ST4-09.jpg",
+    "cardImage": "assets/images/cards/jap/ST4-09.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "6",
@@ -399,7 +399,7 @@
   {
     "id": "ST4-10",
     "name": "Lillymon",
-    "cardImage": "assets/images/cards/jap/ST4-10.jpg",
+    "cardImage": "assets/images/cards/jap/ST4-10.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "6",
@@ -430,7 +430,7 @@
   {
     "id": "ST4-10_P1",
     "name": "Lillymon",
-    "cardImage": "assets/images/cards/jap/ST4-10_P1.jpg",
+    "cardImage": "assets/images/cards/jap/ST4-10_P1.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "6",
@@ -461,7 +461,7 @@
   {
     "id": "ST4-11",
     "name": "MegaKabuterimon",
-    "cardImage": "assets/images/cards/jap/ST4-11.jpg",
+    "cardImage": "assets/images/cards/jap/ST4-11.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "7",
@@ -491,7 +491,7 @@
   {
     "id": "ST4-12",
     "name": "Rosemon",
-    "cardImage": "assets/images/cards/jap/ST4-12.jpg",
+    "cardImage": "assets/images/cards/jap/ST4-12.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "10",
@@ -521,7 +521,7 @@
   {
     "id": "ST4-13",
     "name": "HerculesKabuterimon",
-    "cardImage": "assets/images/cards/jap/ST4-13.jpg",
+    "cardImage": "assets/images/cards/jap/ST4-13.webp",
     "cardType": "Digimon",
     "dp": "12000",
     "playCost": "12",
@@ -551,7 +551,7 @@
   {
     "id": "ST4-14",
     "name": "Izzy Izumi",
-    "cardImage": "assets/images/cards/jap/ST4-14.jpg",
+    "cardImage": "assets/images/cards/jap/ST4-14.webp",
     "cardType": "Tamer",
     "dp": "-",
     "playCost": "2",
@@ -581,7 +581,7 @@
   {
     "id": "ST4-15",
     "name": "Needle Spray",
-    "cardImage": "assets/images/cards/jap/ST4-15.jpg",
+    "cardImage": "assets/images/cards/jap/ST4-15.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "2",
@@ -611,7 +611,7 @@
   {
     "id": "ST4-16",
     "name": "Electro Shocker",
-    "cardImage": "assets/images/cards/jap/ST4-16.jpg",
+    "cardImage": "assets/images/cards/jap/ST4-16.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "5",

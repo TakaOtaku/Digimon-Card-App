@@ -1,0 +1,23 @@
+<!-- Deck Stats -->
+<div
+  *ngIf="showStats"
+  class="fixed bottom-0 z-[102] flex h-32 w-screen flex-row"
+  [ngClass]="{ 'lg:w-5/12 2xl:w-4/12': collectionView }"
+>
+  <div
+    class="surface-card flex w-full flex-row border-t-2 border-white bg-opacity-25"
+  >
+    <digimon-chart-containers
+      [deck]="mainDeck"
+      class="max-w-[40rem]"
+      [ngClass]="{
+        'mr-auto md:ml-3': collectionView,
+        'mx-auto': !collectionView
+      }"
+    ></digimon-chart-containers>
+  </div>
+  <div
+    *ngIf="collectionView"
+    class="triangle z-[102] mr-auto hidden h-36 w-1/12 lg:block"
+  ></div>
+</div>

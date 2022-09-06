@@ -1,17 +1,15 @@
-import { Injectable } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-import {
-  AngularFirestore,
-  AngularFirestoreDocument,
-} from '@angular/fire/compat/firestore';
-import { Store } from '@ngrx/store';
-import { GoogleAuthProvider } from 'firebase/auth';
+import {Injectable} from '@angular/core';
+import {AngularFireAuth} from '@angular/fire/compat/auth';
+import {AngularFirestore, AngularFirestoreDocument,} from '@angular/fire/compat/firestore';
+import {Store} from '@ngrx/store';
+import {GoogleAuthProvider} from 'firebase/auth';
 import firebase from 'firebase/compat';
-import { MessageService } from 'primeng/api';
-import { first, Subject } from 'rxjs';
-import { IUser } from '../../models';
-import { loadSave } from '../store/digimon.actions';
-import { DatabaseService } from './database.service';
+import {MessageService} from 'primeng/api';
+import {first, Subject} from 'rxjs';
+import {IUser} from '../../models';
+import {loadSave, setSave} from '../store/digimon.actions';
+import {emptySettings} from '../store/reducers/save.reducer';
+import {DatabaseService} from './database.service';
 import UserCredential = firebase.auth.UserCredential;
 import User = firebase.User;
 
@@ -93,11 +91,6 @@ export class AuthService {
     });
   }
 
-  /**
-   * Set the user data of the current User
-   * a) If the db doesn't have an entry for the user create a new blank entry. And use the current Save if there is one
-   * b) If the db does have an entry for the user load it and check it against the current save. Ask the User which one to keep.
-   */
   SetUserData(user: User | null) {
     if (!user) return;
 
@@ -105,23 +98,63 @@ export class AuthService {
       `users/${user.uid}`
     );
 
+    console.log('User-ID: ', user.uid)
+
     this.dbService
       .loadSave(user.uid)
       .pipe(first())
       .subscribe((save) => {
-        const userData: IUser = {
-          uid: user.uid,
-          displayName: user.displayName ?? '',
-          photoURL: user.photoURL ?? '',
-          save,
-        };
+        let userData: IUser;
+        if (!save) {
+          userData = {
+            uid: user.uid,
+            displayName: user.displayName ?? '',
+            photoURL: user.photoURL ?? '',
+            save: {
+              uid: user.uid,
+              photoURL: user.photoURL ?? '',
+              displayName: user.displayName ?? '',
+              version: 1,
+              collection: [],
+              decks: [],
+              settings: emptySettings,
+            },
+          };
+        } else {
+          userData = {
+            uid: user.uid,
+            displayName: user.displayName ?? '',
+            photoURL: user.photoURL ?? '',
+            save,
+          };
+        }
+
+        if (!userData.save.uid) {
+          userData.save.uid = user.uid;
+        }
+        if (!userData.save.displayName) {
+          userData.save.displayName = user.displayName ?? '';
+        }
+        if (!userData.save.photoURL) {
+          userData.save.photoURL = user.photoURL ?? '';
+        }
 
         localStorage.setItem('user', JSON.stringify(userData));
-        this.store.dispatch(loadSave({ save }));
+        this.store.dispatch(setSave({
+          save: save ?? {
+            uid: user.uid,
+            photoURL: user.photoURL ?? '',
+            displayName: user.displayName ?? '',
+            version: 1,
+            collection: [],
+            decks: [],
+            settings: emptySettings,
+          }
+        }));
 
         this.userData = userData;
 
-        userRef.set(userData, { merge: true });
+        userRef.set(userData, {merge: true});
 
         this.authChange.next(true);
       });

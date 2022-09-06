@@ -1,0 +1,38 @@
+<div class="mx-auto max-w-[760px]">
+  <digimon-deck-metadata
+    [(title)]="title"
+    [(tags)]="tags"
+    [(description)]="description"
+    [(selectedColor)]="selectedColor"
+  ></digimon-deck-metadata>
+
+  <digimon-deck-toolbar
+    [deck]="deck"
+    [mainDeck]="mainDeck"
+    [missingCards]="missingCards"
+    (share)="share()"
+    (save)="saveDeck($event)"
+    (delete)="delete()"
+  ></digimon-deck-toolbar>
+</div>
+
+<div class="mx-auto h-full max-w-[1080px]">
+  <div
+    class="grid w-full grid-cols-4 pb-32 md:grid-cols-6 lg:grid-cols-8 lg:pb-0"
+  >
+    <div *ngFor="let card of mainDeck">
+      <digimon-deck-card
+        (onChange)="mapToDeck()"
+        (removeCard)="removeCard(card)"
+        [bigCards]="!collectionView"
+        [cardHave]="getCardHave(card)"
+        [card]="card"
+        [cards]="allCards"
+        [edit]="true"
+        [fullCards]="fullCards"
+        [missingCards]="missingCards"
+        [stack]="stack"
+      ></digimon-deck-card>
+    </div>
+  </div>
+</div>

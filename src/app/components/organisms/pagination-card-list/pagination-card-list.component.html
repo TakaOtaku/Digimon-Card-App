@@ -1,0 +1,61 @@
+<digimon-sort-buttons></digimon-sort-buttons>
+
+<div class="align-items-center surface-card flex h-14 flex-row justify-evenly">
+  <div class="col-span-2 my-auto">
+    <p-paginator
+      (onPageChange)="onPageChange($event)"
+      [first]="first"
+      [rows]="cardsPerPage"
+      [showJumpToPageDropdown]="true"
+      [showPageLinks]="false"
+      [totalRecords]="cards.length"
+      styleClass="border-0 h-12"
+    ></p-paginator>
+  </div>
+
+  <div class="m-auto flex flex-row justify-center">
+    <span class="text-xs font-bold leading-9 text-white">Collection Mode:</span>
+    <input
+      type="checkbox"
+      class="my-auto ml-1 h-5 w-5"
+      [formControl]="collectionMode"
+    />
+  </div>
+
+  <button
+    (click)="filterBox = true"
+    class="min-w-auto primary-background m-auto h-8 w-32 rounded p-2 text-xs font-semibold text-white 2xl:hidden"
+  >
+    <i class="pi pi-filter-fill mr-3"></i>Filter
+  </button>
+</div>
+
+<digimon-search></digimon-search>
+
+<div class="card-box w-full overflow-hidden">
+  <h1
+    *ngIf="cards.length === 0"
+    class="primary-color text-bold my-10 text-center text-5xl">
+    No cards found!
+  </h1>
+
+  <digimon-full-card
+    *ngFor="let card of cardsToShow"
+    [collectionMode]="collectionMode.value"
+    (addCard)="addToDeck(card)"
+    [deckView]="deckView"
+    [card]="card"
+    [count]="getCount(card.id)"
+    [deckBuilder]="true"
+    [ngClass]="getCardsInARow()"
+  ></digimon-full-card>
+</div>
+
+<p-dialog
+  header="Filter and Sort"
+  [(visible)]="filterBox"
+  styleClass="w-[95vw] max-w-[500px] h-[95vh] surface-ground"
+  [baseZIndex]="10000"
+>
+  <digimon-filter-side-box></digimon-filter-side-box>
+</p-dialog>

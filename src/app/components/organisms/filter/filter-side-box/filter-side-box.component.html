@@ -1,0 +1,278 @@
+<div class="surface-card flex h-full w-full flex-col pt-1">
+  <div class="row mt-1 flex flex w-full justify-end">
+    <button (click)="reset()" class="ml-auto mr-5 text-white" type="button">
+      <i class="pi pi-refresh"></i>
+    </button>
+  </div>
+
+  <!-- Language Select -->
+  <div class="mb-3">
+    <h1 class="text-center text-xs font-bold text-white">Language:</h1>
+    <div class="flex inline-flex w-full justify-center">
+      <button
+        (click)="setCardSet(cardSet.English)"
+        [ngClass]="{
+          'primary-background': selectedCardSet === cardSet.English
+        }"
+        class="min-w-auto mt-2 h-8 w-20 rounded-l-sm border border-slate-100 p-2 text-xs font-semibold text-white"
+      >
+        English
+      </button>
+      <button
+        (click)="setCardSet(cardSet.Japanese)"
+        [ngClass]="{
+          'primary-background': selectedCardSet === cardSet.Japanese
+        }"
+        class="min-w-auto mt-2 h-8 w-20 border border-slate-100 p-2 text-xs font-semibold text-white"
+      >
+        日本語
+      </button>
+      <button
+        (click)="setCardSet(cardSet.Both)"
+        [ngClass]="{ 'primary-background': selectedCardSet === cardSet.Both }"
+        class="min-w-auto mt-2 h-8 w-20 rounded-r-sm border border-slate-100 p-2 text-xs font-semibold text-white"
+      >
+        Both
+      </button>
+    </div>
+  </div>
+
+  <!-- Colors Select -->
+  <div class="mb-3">
+    <h1 class="mb-2 text-center text-xs font-bold text-white">Color:</h1>
+    <div class="flex inline-flex w-full justify-center">
+      <button
+        (click)="changeColor('Red')"
+        [ngClass]="{
+          'border-selected': colorFilter.value.includes('Red'),
+          'border-unselected': !colorFilter.value.includes('Red')
+        }"
+        class="Red mr-1 h-7 w-7 rounded-full"
+      ></button>
+      <button
+        (click)="changeColor('Blue')"
+        [ngClass]="{
+          'border-selected': colorFilter.value.includes('Blue'),
+          'border-unselected': !colorFilter.value.includes('Blue')
+        }"
+        class="Blue mr-1 h-7 w-7 rounded-full"
+      ></button>
+      <button
+        (click)="changeColor('Yellow')"
+        [ngClass]="{
+          'border-selected': colorFilter.value.includes('Yellow'),
+          'border-unselected': !colorFilter.value.includes('Yellow')
+        }"
+        class="Yellow mr-1 h-7 w-7 rounded-full"
+      ></button>
+      <button
+        (click)="changeColor('Green')"
+        [ngClass]="{
+          'border-selected': colorFilter.value.includes('Green'),
+          'border-unselected': !colorFilter.value.includes('Green')
+        }"
+        class="Green mr-1 h-7 w-7 rounded-full"
+      ></button>
+      <button
+        (click)="changeColor('Black')"
+        [ngClass]="{
+          'border-selected': colorFilter.value.includes('Black'),
+          'border-unselected': !colorFilter.value.includes('Black')
+        }"
+        class="Black mr-1 h-7 w-7 rounded-full"
+      ></button>
+      <button
+        (click)="changeColor('Purple')"
+        [ngClass]="{
+          'border-selected': colorFilter.value.includes('Purple'),
+          'border-unselected': !colorFilter.value.includes('Purple')
+        }"
+        class="Purple mr-1 h-7 w-7 rounded-full"
+      ></button>
+      <button
+        (click)="changeColor('White')"
+        [ngClass]="{
+          'border-selected': colorFilter.value.includes('White'),
+          'border-unselected': !colorFilter.value.includes('White')
+        }"
+        class="White mr-1 h-7 w-7 rounded-full"
+      ></button>
+      <button
+        (click)="changeColor('Multi')"
+        [ngClass]="{
+          'border-selected': colorFilter.value.includes('Multi'),
+          'border-unselected': !colorFilter.value.includes('Multi')
+        }"
+        class="Multi h-7 w-7 rounded-full"
+      ></button>
+    </div>
+  </div>
+
+  <digimon-multi-buttons
+    (clickEvent)="changeCardType($event)"
+    [buttonArray]="cardTypeButtons"
+    [filterFormControl]="cardTypeFilter"
+    title="Card-Types"
+  ></digimon-multi-buttons>
+
+  <p-multiSelect
+    [filter]="false"
+    [formControl]="setFilter"
+    [group]="true"
+    [options]="groupedSets"
+    [showHeader]="false"
+    [showToggleAll]="false"
+    defaultLabel="Select a Set"
+    display="chip"
+    scrollHeight="250px"
+    class="mx-5"
+    styleClass="w-full max-w-[250px] h-8 text-sm"
+  >
+    <ng-template let-group pTemplate="group">
+      <div class="align-items-center flex">
+        <span>{{ group.label }}</span>
+      </div>
+    </ng-template>
+  </p-multiSelect>
+
+  <digimon-range-slider
+    (OnSliderChange)="updateLevelSlider($event)"
+    [minMax]="[2, 7]"
+    [slider]="levelSlider"
+    title="Level:"
+  ></digimon-range-slider>
+
+  <digimon-range-slider
+    (OnSliderChange)="updatePlayCostSlider($event)"
+    [minMax]="[0, 20]"
+    [slider]="playCostSlider"
+    title="Play Cost:"
+  ></digimon-range-slider>
+
+  <digimon-range-slider
+    (OnSliderChange)="updateDigivolutionSlider($event)"
+    [minMax]="[0, 7]"
+    [slider]="digivolutionSlider"
+    title="Digivolution Cost:"
+  ></digimon-range-slider>
+
+  <digimon-range-slider
+    (OnSliderChange)="updateDPSlider($event)"
+    [minMax]="[1, 16]"
+    [slider]="dpSlider"
+    suffix="000"
+    title="DP:"
+  ></digimon-range-slider>
+
+  <digimon-range-slider
+    (OnSliderChange)="updateCardCountSlider($event)"
+    [minMax]="[0, 5]"
+    [slider]="cardCountSlider"
+    title="Number in Collection:"
+  ></digimon-range-slider>
+
+  <digimon-multi-buttons
+    (clickEvent)="changeRarity($event)"
+    [buttonArray]="rarityButtons"
+    [filterFormControl]="rarityFilter"
+    title="Rarity"
+  ></digimon-multi-buttons>
+
+  <digimon-multi-buttons
+    (clickEvent)="changeVersion($event)"
+    [buttonArray]="versionButtons"
+    [filterFormControl]="versionFilter"
+    title="Version"
+  ></digimon-multi-buttons>
+
+  <digimon-multi-buttons
+    (clickEvent)="changeBlock($event)"
+    [buttonArray]="blockButtons"
+    [filterFormControl]="blockFilter"
+    title="Block"
+  ></digimon-multi-buttons>
+
+  <p-multiSelect
+    [formControl]="keywordFilter"
+    [options]="keywords"
+    [showToggleAll]="false"
+    defaultLabel="Select a Keyword"
+    display="chip"
+    scrollHeight="250px"
+    class="mx-5"
+    styleClass="w-full mt-1 h-8 text-sm max-w-[250px]"
+  >
+  </p-multiSelect>
+
+  <p-multiSelect
+    [formControl]="formFilter"
+    [options]="forms"
+    [showToggleAll]="false"
+    defaultLabel="Select a Form"
+    display="chip"
+    scrollHeight="250px"
+    class="mx-5"
+    styleClass="w-full mt-1 h-8 text-sm max-w-[250px]"
+  >
+  </p-multiSelect>
+
+  <p-multiSelect
+    [formControl]="attributeFilter"
+    [options]="attributes"
+    [showToggleAll]="false"
+    defaultLabel="Select an Attribute"
+    display="chip"
+    scrollHeight="250px"
+    class="mx-5"
+    styleClass="w-full mt-1 h-8 text-sm max-w-[250px]"
+  >
+  </p-multiSelect>
+
+  <p-multiSelect
+    [formControl]="typeFilter"
+    [options]="types"
+    [showToggleAll]="false"
+    defaultLabel="Select a Type"
+    display="chip"
+    scrollHeight="250px"
+    class="mx-5"
+    styleClass="w-full mt-1 h-8 text-sm max-w-[250px]"
+  >
+  </p-multiSelect>
+
+  <p-multiSelect
+    [formControl]="specialRequirementsFilter"
+    [options]="specialRequirements"
+    [showToggleAll]="false"
+    defaultLabel="Select a Special Requirement"
+    display="chip"
+    scrollHeight="250px"
+    class="mx-5"
+    styleClass="w-full mt-1 h-8 text-sm max-w-[250px]"
+  >
+  </p-multiSelect>
+
+  <p-multiSelect
+    [formControl]="illustratorFilter"
+    [options]="illustrators"
+    [showToggleAll]="false"
+    defaultLabel="Select an Illustrator"
+    display="chip"
+    scrollHeight="250px"
+    class="mx-5"
+    styleClass="w-full mt-1 h-8 text-sm max-w-[250px]"
+  >
+  </p-multiSelect>
+
+  <p-multiSelect
+    [formControl]="restrictionsFilter"
+    [options]="restrictions"
+    [showToggleAll]="false"
+    defaultLabel="Select a Restrictions"
+    display="chip"
+    scrollHeight="250px"
+    class="mx-5"
+    styleClass="w-full mt-1 h-8 text-sm max-w-[250px]"
+  >
+  </p-multiSelect>
+</div>

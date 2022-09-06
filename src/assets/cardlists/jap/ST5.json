@@ -2,7 +2,7 @@
   {
     "id": "ST5-01",
     "name": "Kapurimon",
-    "cardImage": "assets/images/cards/jap/ST5-01.jpg",
+    "cardImage": "assets/images/cards/jap/ST5-01.webp",
     "cardType": "Digi-Egg",
     "dp": "-",
     "playCost": "-",
@@ -32,7 +32,7 @@
   {
     "id": "ST5-02",
     "name": "Jazamon",
-    "cardImage": "assets/images/cards/jap/ST5-02.jpg",
+    "cardImage": "assets/images/cards/jap/ST5-02.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "2",
@@ -62,7 +62,7 @@
   {
     "id": "ST5-03",
     "name": "Agumon",
-    "cardImage": "assets/images/cards/jap/ST5-03.jpg",
+    "cardImage": "assets/images/cards/jap/ST5-03.webp",
     "cardType": "Digimon",
     "dp": "1000",
     "playCost": "3",
@@ -93,7 +93,7 @@
   {
     "id": "ST5-03_P1",
     "name": "Agumon",
-    "cardImage": "assets/images/cards/jap/ST5-03_P1.jpg",
+    "cardImage": "assets/images/cards/jap/ST5-03_P1.webp",
     "cardType": "Digimon",
     "dp": "1000",
     "playCost": "3",
@@ -124,7 +124,7 @@
   {
     "id": "ST5-04",
     "name": "ToyAgumon",
-    "cardImage": "assets/images/cards/jap/ST5-04.jpg",
+    "cardImage": "assets/images/cards/jap/ST5-04.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -154,7 +154,7 @@
   {
     "id": "ST5-05",
     "name": "Commandramon",
-    "cardImage": "assets/images/cards/jap/ST5-05.jpg",
+    "cardImage": "assets/images/cards/jap/ST5-05.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "4",
@@ -184,7 +184,7 @@
   {
     "id": "ST5-06",
     "name": "Greymon",
-    "cardImage": "assets/images/cards/jap/ST5-06.jpg",
+    "cardImage": "assets/images/cards/jap/ST5-06.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "4",
@@ -214,7 +214,7 @@
   {
     "id": "ST5-07",
     "name": "Jazardmon",
-    "cardImage": "assets/images/cards/jap/ST5-07.jpg",
+    "cardImage": "assets/images/cards/jap/ST5-07.webp",
     "cardType": "Digimon",
     "dp": "6000",
     "playCost": "5",
@@ -244,7 +244,7 @@
   {
     "id": "ST5-08",
     "name": "DarkTyrannomon",
-    "cardImage": "assets/images/cards/jap/ST5-08.jpg",
+    "cardImage": "assets/images/cards/jap/ST5-08.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "6",
@@ -275,7 +275,7 @@
   {
     "id": "ST5-08_P1",
     "name": "DarkTyrannomon",
-    "cardImage": "assets/images/cards/jap/ST5-08_P1.jpg",
+    "cardImage": "assets/images/cards/jap/ST5-08_P1.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "6",
@@ -306,7 +306,7 @@
   {
     "id": "ST5-09",
     "name": "MetalGreymon",
-    "cardImage": "assets/images/cards/jap/ST5-09.jpg",
+    "cardImage": "assets/images/cards/jap/ST5-09.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "6",
@@ -336,7 +336,7 @@
   {
     "id": "ST5-10",
     "name": "MetalTyrannomon",
-    "cardImage": "assets/images/cards/jap/ST5-10.jpg",
+    "cardImage": "assets/images/cards/jap/ST5-10.webp",
     "cardType": "Digimon",
     "dp": "9000",
     "playCost": "6",
@@ -366,7 +366,7 @@
   {
     "id": "ST5-11",
     "name": "Megadramon",
-    "cardImage": "assets/images/cards/jap/ST5-11.jpg",
+    "cardImage": "assets/images/cards/jap/ST5-11.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "7",
@@ -396,7 +396,7 @@
   {
     "id": "ST5-12",
     "name": "Machinedramon",
-    "cardImage": "assets/images/cards/jap/ST5-12.jpg",
+    "cardImage": "assets/images/cards/jap/ST5-12.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "10",
@@ -428,7 +428,7 @@
   {
     "id": "ST5-12_P1",
     "name": "Machinedramon",
-    "cardImage": "assets/images/cards/jap/ST5-12_P1.jpg",
+    "cardImage": "assets/images/cards/jap/ST5-12_P1.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "10",
@@ -460,7 +460,7 @@
   {
     "id": "ST5-13",
     "name": "BlitzGreymon",
-    "cardImage": "assets/images/cards/jap/ST5-13.jpg",
+    "cardImage": "assets/images/cards/jap/ST5-13.webp",
     "cardType": "Digimon",
     "dp": "12000",
     "playCost": "12",
@@ -490,7 +490,7 @@
   {
     "id": "ST5-14",
     "name": "Tai Kamiya",
-    "cardImage": "assets/images/cards/jap/ST5-14.jpg",
+    "cardImage": "assets/images/cards/jap/ST5-14.webp",
     "cardType": "Tamer",
     "dp": "-",
     "playCost": "2",
@@ -520,7 +520,7 @@
   {
     "id": "ST5-15",
     "name": "Laser Eye",
-    "cardImage": "assets/images/cards/jap/ST5-15.jpg",
+    "cardImage": "assets/images/cards/jap/ST5-15.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "4",
@@ -550,7 +550,7 @@
   {
     "id": "ST5-16",
     "name": "Dark Side Attack",
-    "cardImage": "assets/images/cards/jap/ST5-16.jpg",
+    "cardImage": "assets/images/cards/jap/ST5-16.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "5",

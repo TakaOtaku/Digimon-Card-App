@@ -2,7 +2,7 @@
   {
     "id": "BT9-001",
     "name": "Koromon",
-    "cardImage": "assets/images/cards/jap/BT9-001.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-001.webp",
     "cardType": "Digi-Egg",
     "dp": "-",
     "playCost": "-",
@@ -32,7 +32,7 @@
   {
     "id": "BT9-001_P1",
     "name": "Koromon",
-    "cardImage": "assets/images/cards/jap/BT9-001_P1.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-001_P1.webp",
     "cardType": "Digi-Egg",
     "dp": "-",
     "playCost": "-",
@@ -62,7 +62,7 @@
   {
     "id": "BT9-002",
     "name": "Puyoyomon",
-    "cardImage": "assets/images/cards/jap/BT9-002.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-002.webp",
     "cardType": "Digi-Egg",
     "dp": "-",
     "playCost": "-",
@@ -92,7 +92,7 @@
   {
     "id": "BT9-002_P1",
     "name": "Puyoyomon",
-    "cardImage": "assets/images/cards/jap/BT9-002_P1.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-002_P1.webp",
     "cardType": "Digi-Egg",
     "dp": "-",
     "playCost": "-",
@@ -122,7 +122,7 @@
   {
     "id": "BT9-003",
     "name": "Tokomon (X Antibody)",
-    "cardImage": "assets/images/cards/jap/BT9-003.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-003.webp",
     "cardType": "Digi-Egg",
     "dp": "-",
     "playCost": "-",
@@ -152,7 +152,7 @@
   {
     "id": "BT9-003_P1",
     "name": "Tokomon (X Antibody)",
-    "cardImage": "assets/images/cards/jap/BT9-003_P1.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-003_P1.webp",
     "cardType": "Digi-Egg",
     "dp": "-",
     "playCost": "-",
@@ -182,7 +182,7 @@
   {
     "id": "BT9-004",
     "name": "Motimon",
-    "cardImage": "assets/images/cards/jap/BT9-004.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-004.webp",
     "cardType": "Digi-Egg",
     "dp": "-",
     "playCost": "-",
@@ -212,7 +212,7 @@
   {
     "id": "BT9-004_P1",
     "name": "Motimon",
-    "cardImage": "assets/images/cards/jap/BT9-004_P1.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-004_P1.webp",
     "cardType": "Digi-Egg",
     "dp": "-",
     "playCost": "-",
@@ -242,7 +242,7 @@
   {
     "id": "BT9-005",
     "name": "Tumblemon",
-    "cardImage": "assets/images/cards/jap/BT9-005.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-005.webp",
     "cardType": "Digi-Egg",
     "dp": "-",
     "playCost": "-",
@@ -272,7 +272,7 @@
   {
     "id": "BT9-005_P1",
     "name": "Tumblemon",
-    "cardImage": "assets/images/cards/jap/BT9-005_P1.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-005_P1.webp",
     "cardType": "Digi-Egg",
     "dp": "-",
     "playCost": "-",
@@ -302,7 +302,7 @@
   {
     "id": "BT9-006",
     "name": "Pagumon",
-    "cardImage": "assets/images/cards/jap/BT9-006.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-006.webp",
     "cardType": "Digi-Egg",
     "dp": "-",
     "playCost": "-",
@@ -332,7 +332,7 @@
   {
     "id": "BT9-006_P1",
     "name": "Pagumon",
-    "cardImage": "assets/images/cards/jap/BT9-006_P1.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-006_P1.webp",
     "cardType": "Digi-Egg",
     "dp": "-",
     "playCost": "-",
@@ -362,7 +362,7 @@
   {
     "id": "BT9-007",
     "name": "Minidekachimon",
-    "cardImage": "assets/images/cards/jap/BT9-007.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-007.webp",
     "cardType": "Digimon",
     "dp": "3000",
     "playCost": "2",
@@ -392,7 +392,7 @@
   {
     "id": "BT9-008",
     "name": "Agumon (X Antibody)",
-    "cardImage": "assets/images/cards/jap/BT9-008.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-008.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -422,7 +422,7 @@
   {
     "id": "BT9-008_P1",
     "name": "Agumon (X Antibody)",
-    "cardImage": "assets/images/cards/jap/BT9-008_P1.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-008_P1.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -452,7 +452,7 @@
   {
     "id": "BT9-009",
     "name": "Guilmon (X Antibody)",
-    "cardImage": "assets/images/cards/jap/BT9-009.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-009.webp",
     "cardType": "Digimon",
     "dp": "3000",
     "playCost": "4",
@@ -482,7 +482,7 @@
   {
     "id": "BT9-010",
     "name": "Atamadekachimon",
-    "cardImage": "assets/images/cards/jap/BT9-010.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-010.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "5",
@@ -512,7 +512,7 @@
   {
     "id": "BT9-011",
     "name": "Growlmon (X Antibody)",
-    "cardImage": "assets/images/cards/jap/BT9-011.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-011.webp",
     "cardType": "Digimon",
     "dp": "6000",
     "playCost": "5",
@@ -542,7 +542,7 @@
   {
     "id": "BT9-012",
     "name": "Greymon (X Antibody)",
-    "cardImage": "assets/images/cards/jap/BT9-012.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-012.webp",
     "cardType": "Digimon",
     "dp": "6000",
     "playCost": "5",
@@ -572,7 +572,7 @@
   {
     "id": "BT9-013",
     "name": "OmniShoutmon (X Antibody)",
-    "cardImage": "assets/images/cards/jap/BT9-013.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-013.webp",
     "cardType": "Digimon",
     "dp": "8000",
     "playCost": "8",
@@ -602,7 +602,7 @@
   {
     "id": "BT9-014",
     "name": "WarGrowlmon (X Antibody)",
-    "cardImage": "assets/images/cards/jap/BT9-014.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-014.webp",
     "cardType": "Digimon",
     "dp": "8000",
     "playCost": "8",
@@ -632,7 +632,7 @@
   {
     "id": "BT9-015",
     "name": "MetalGreymon (X Antibody)",
-    "cardImage": "assets/images/cards/jap/BT9-015.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-015.webp",
     "cardType": "Digimon",
     "dp": "8000",
     "playCost": "8",
@@ -662,7 +662,7 @@
   {
     "id": "BT9-016",
     "name": "WarGreymon (X Antibody)",
-    "cardImage": "assets/images/cards/jap/BT9-016.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-016.webp",
     "cardType": "Digimon",
     "dp": "12000",
     "playCost": "12",
@@ -692,7 +692,7 @@
   {
     "id": "BT9-016_P1",
     "name": "WarGreymon (X Antibody)",
-    "cardImage": "assets/images/cards/jap/BT9-016_P1.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-016_P1.webp",
     "cardType": "Digimon",
     "dp": "12000",
     "playCost": "12",
@@ -722,7 +722,7 @@
   {
     "id": "BT9-017",
     "name": "Gallantmon (X Antibody)",
-    "cardImage": "assets/images/cards/jap/BT9-017.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-017.webp",
     "cardType": "Digimon",
     "dp": "12000",
     "playCost": "12",
@@ -752,7 +752,7 @@
   {
     "id": "BT9-017_P1",
     "name": "Gallantmon (X Antibody)",
-    "cardImage": "assets/images/cards/jap/BT9-017_P1.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-017_P1.webp",
     "cardType": "Digimon",
     "dp": "12000",
     "playCost": "12",
@@ -782,7 +782,7 @@
   {
     "id": "BT9-018",
     "name": "Dinorexmon",
-    "cardImage": "assets/images/cards/jap/BT9-018.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-018.webp",
     "cardType": "Digimon",
     "dp": "13000",
     "playCost": "13",
@@ -812,7 +812,7 @@
   {
     "id": "BT9-019",
     "name": "Crabmon",
-    "cardImage": "assets/images/cards/jap/BT9-019.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-019.webp",
     "cardType": "Digimon",
     "dp": "3000",
     "playCost": "2",
@@ -842,7 +842,7 @@
   {
     "id": "BT9-020",
     "name": "Gabumon (X Antibody)",
-    "cardImage": "assets/images/cards/jap/BT9-020.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-020.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -872,7 +872,7 @@
   {
     "id": "BT9-020_P1",
     "name": "Gabumon (X Antibody)",
-    "cardImage": "assets/images/cards/jap/BT9-020_P1.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-020_P1.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -902,7 +902,7 @@
   {
     "id": "BT9-021",
     "name": "Jellymon",
-    "cardImage": "assets/images/cards/jap/BT9-021.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-021.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -932,7 +932,7 @@
   {
     "id": "BT9-021_P1",
     "name": "Jellymon",
-    "cardImage": "assets/images/cards/jap/BT9-021_P1.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-021_P1.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -962,7 +962,7 @@
   {
     "id": "BT9-022",
     "name": "Ebidramon",
-    "cardImage": "assets/images/cards/jap/BT9-022.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-022.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "3",
@@ -992,7 +992,7 @@
   {
     "id": "BT9-023",
     "name": "KausGammamon",
-    "cardImage": "assets/images/cards/jap/BT9-023.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-023.webp",
     "cardType": "Digimon",
     "dp": "6000",
     "playCost": "5",
@@ -1022,7 +1022,7 @@
   {
     "id": "BT9-024",
     "name": "Garurumon (X Antibody)",
-    "cardImage": "assets/images/cards/jap/BT9-024.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-024.webp",
     "cardType": "Digimon",
     "dp": "6000",
     "playCost": "5",
@@ -1052,7 +1052,7 @@
   {
     "id": "BT9-025",
     "name": "TeslaJellymon",
-    "cardImage": "assets/images/cards/jap/BT9-025.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-025.webp",
     "cardType": "Digimon",
     "dp": "6000",
     "playCost": "5",
@@ -1082,7 +1082,7 @@
   {
     "id": "BT9-026",
     "name": "Piranimon",
-    "cardImage": "assets/images/cards/jap/BT9-026.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-026.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "6",
@@ -1112,7 +1112,7 @@
   {
     "id": "BT9-027",
     "name": "Divermon",
-    "cardImage": "assets/images/cards/jap/BT9-027.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-027.webp",
     "cardType": "Digimon",
     "dp": "8000",
     "playCost": "7",
@@ -1142,7 +1142,7 @@
   {
     "id": "BT9-028",
     "name": "WereGarurumon (X Antibody)",
-    "cardImage": "assets/images/cards/jap/BT9-028.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-028.webp",
     "cardType": "Digimon",
     "dp": "8000",
     "playCost": "8",
@@ -1172,7 +1172,7 @@
   {
     "id": "BT9-029",
     "name": "Suijinmon",
-    "cardImage": "assets/images/cards/jap/BT9-029.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-029.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "11",
@@ -1202,7 +1202,7 @@
   {
     "id": "BT9-030",
     "name": "MetalPiranimon",
-    "cardImage": "assets/images/cards/jap/BT9-030.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-030.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "11",
@@ -1232,7 +1232,7 @@
   {
     "id": "BT9-031",
     "name": "MetalGarurumon (X Antibody)",
-    "cardImage": "assets/images/cards/jap/BT9-031.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-031.webp",
     "cardType": "Digimon",
     "dp": "12000",
     "playCost": "12",
@@ -1262,7 +1262,7 @@
   {
     "id": "BT9-031_P1",
     "name": "MetalGarurumon (X Antibody)",
-    "cardImage": "assets/images/cards/jap/BT9-031_P1.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-031_P1.webp",
     "cardType": "Digimon",
     "dp": "12000",
     "playCost": "12",
@@ -1292,7 +1292,7 @@
   {
     "id": "BT9-032",
     "name": "ToyAgumon",
-    "cardImage": "assets/images/cards/jap/BT9-032.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-032.webp",
     "cardType": "Digimon",
     "dp": "3000",
     "playCost": "2",
@@ -1322,7 +1322,7 @@
   {
     "id": "BT9-033",
     "name": "Pillomon",
-    "cardImage": "assets/images/cards/jap/BT9-033.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-033.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -1352,7 +1352,7 @@
   {
     "id": "BT9-034",
     "name": "Salamon (X Antibody)",
-    "cardImage": "assets/images/cards/jap/BT9-034.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-034.webp",
     "cardType": "Digimon",
     "dp": "3000",
     "playCost": "3",
@@ -1382,7 +1382,7 @@
   {
     "id": "BT9-035",
     "name": "Starmon",
-    "cardImage": "assets/images/cards/jap/BT9-035.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-035.webp",
     "cardType": "Digimon",
     "dp": "6000",
     "playCost": "4",
@@ -1412,7 +1412,7 @@
   {
     "id": "BT9-036",
     "name": "Gatomon (X Antibody)",
-    "cardImage": "assets/images/cards/jap/BT9-036.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-036.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "4",
@@ -1442,7 +1442,7 @@
   {
     "id": "BT9-037",
     "name": "Nefertimon",
-    "cardImage": "assets/images/cards/jap/BT9-037.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-037.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "5",
@@ -1472,7 +1472,7 @@
   {
     "id": "BT9-038",
     "name": "Pegasusmon",
-    "cardImage": "assets/images/cards/jap/BT9-038.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-038.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "5",
@@ -1502,7 +1502,7 @@
   {
     "id": "BT9-039",
     "name": "DarkSuperStarmon",
-    "cardImage": "assets/images/cards/jap/BT9-039.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-039.webp",
     "cardType": "Digimon",
     "dp": "9000",
     "playCost": "7",
@@ -1532,7 +1532,7 @@
   {
     "id": "BT9-040",
     "name": "Angewomon (X Antibody)",
-    "cardImage": "assets/images/cards/jap/BT9-040.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-040.webp",
     "cardType": "Digimon",
     "dp": "8000",
     "playCost": "8",
@@ -1562,7 +1562,7 @@
   {
     "id": "BT9-041",
     "name": "RizeGreymon (X Antibody)",
-    "cardImage": "assets/images/cards/jap/BT9-041.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-041.webp",
     "cardType": "Digimon",
     "dp": "8000",
     "playCost": "8",
@@ -1592,7 +1592,7 @@
   {
     "id": "BT9-042",
     "name": "Raijinmon",
-    "cardImage": "assets/images/cards/jap/BT9-042.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-042.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "11",
@@ -1622,7 +1622,7 @@
   {
     "id": "BT9-043",
     "name": "Magnadramon (X Antibody)",
-    "cardImage": "assets/images/cards/jap/BT9-043.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-043.webp",
     "cardType": "Digimon",
     "dp": "12000",
     "playCost": "12",
@@ -1652,7 +1652,7 @@
   {
     "id": "BT9-044",
     "name": "Magnamon (X Antibody)",
-    "cardImage": "assets/images/cards/jap/BT9-044.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-044.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "12",
@@ -1682,7 +1682,7 @@
   {
     "id": "BT9-044_P1",
     "name": "Magnamon (X Antibody)",
-    "cardImage": "assets/images/cards/jap/BT9-044_P1.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-044_P1.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "12",
@@ -1712,7 +1712,7 @@
   {
     "id": "BT9-045",
     "name": "Elecmon",
-    "cardImage": "assets/images/cards/jap/BT9-045.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-045.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "3",
@@ -1742,7 +1742,7 @@
   {
     "id": "BT9-046",
     "name": "Kokuwamon (X Antibody)",
-    "cardImage": "assets/images/cards/jap/BT9-046.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-046.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -1772,7 +1772,7 @@
   {
     "id": "BT9-047",
     "name": "Pomumon",
-    "cardImage": "assets/images/cards/jap/BT9-047.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-047.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -1802,7 +1802,7 @@
   {
     "id": "BT9-048",
     "name": "Ninjamon",
-    "cardImage": "assets/images/cards/jap/BT9-048.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-048.webp",
     "cardType": "Digimon",
     "dp": "6000",
     "playCost": "4",
@@ -1832,7 +1832,7 @@
   {
     "id": "BT9-049",
     "name": "Kuwagamon (X Antibody)",
-    "cardImage": "assets/images/cards/jap/BT9-049.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-049.webp",
     "cardType": "Digimon",
     "dp": "6000",
     "playCost": "5",
@@ -1862,7 +1862,7 @@
   {
     "id": "BT9-050",
     "name": "Leomon (X Antibody)",
-    "cardImage": "assets/images/cards/jap/BT9-050.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-050.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "5",
@@ -1892,7 +1892,7 @@
   {
     "id": "BT9-051",
     "name": "Panjyamon (X Antibody)",
-    "cardImage": "assets/images/cards/jap/BT9-051.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-051.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "7",
@@ -1922,7 +1922,7 @@
   {
     "id": "BT9-052",
     "name": "Okuwamon (X Antibody)",
-    "cardImage": "assets/images/cards/jap/BT9-052.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-052.webp",
     "cardType": "Digimon",
     "dp": "8000",
     "playCost": "8",
@@ -1952,7 +1952,7 @@
   {
     "id": "BT9-053",
     "name": "Zamielmon",
-    "cardImage": "assets/images/cards/jap/BT9-053.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-053.webp",
     "cardType": "Digimon",
     "dp": "9000",
     "playCost": "8",
@@ -1982,7 +1982,7 @@
   {
     "id": "BT9-054",
     "name": "Fujinmon",
-    "cardImage": "assets/images/cards/jap/BT9-054.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-054.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "11",
@@ -2012,7 +2012,7 @@
   {
     "id": "BT9-055",
     "name": "GrandisKuwagamon",
-    "cardImage": "assets/images/cards/jap/BT9-055.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-055.webp",
     "cardType": "Digimon",
     "dp": "12000",
     "playCost": "12",
@@ -2042,7 +2042,7 @@
   {
     "id": "BT9-055_P1",
     "name": "GrandisKuwagamon",
-    "cardImage": "assets/images/cards/jap/BT9-055_P1.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-055_P1.webp",
     "cardType": "Digimon",
     "dp": "12000",
     "playCost": "12",
@@ -2072,7 +2072,7 @@
   {
     "id": "BT9-056",
     "name": "Dinotigermon",
-    "cardImage": "assets/images/cards/jap/BT9-056.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-056.webp",
     "cardType": "Digimon",
     "dp": "12000",
     "playCost": "12",
@@ -2102,7 +2102,7 @@
   {
     "id": "BT9-057",
     "name": "Bearmon",
-    "cardImage": "assets/images/cards/jap/BT9-057.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-057.webp",
     "cardType": "Digimon",
     "dp": "3000",
     "playCost": "2",
@@ -2132,7 +2132,7 @@
   {
     "id": "BT9-058",
     "name": "Dorumon",
-    "cardImage": "assets/images/cards/jap/BT9-058.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-058.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -2162,7 +2162,7 @@
   {
     "id": "BT9-059",
     "name": "Tapirmon",
-    "cardImage": "assets/images/cards/jap/BT9-059.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-059.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -2192,7 +2192,7 @@
   {
     "id": "BT9-060",
     "name": "Grizzlymon",
-    "cardImage": "assets/images/cards/jap/BT9-060.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-060.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "5",
@@ -2222,7 +2222,7 @@
   {
     "id": "BT9-061",
     "name": "Monochromon",
-    "cardImage": "assets/images/cards/jap/BT9-061.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-061.webp",
     "cardType": "Digimon",
     "dp": "6000",
     "playCost": "5",
@@ -2252,7 +2252,7 @@
   {
     "id": "BT9-062",
     "name": "Raptordramon",
-    "cardImage": "assets/images/cards/jap/BT9-062.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-062.webp",
     "cardType": "Digimon",
     "dp": "6000",
     "playCost": "5",
@@ -2282,7 +2282,7 @@
   {
     "id": "BT9-063",
     "name": "LoaderLeomon",
-    "cardImage": "assets/images/cards/jap/BT9-063.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-063.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "6",
@@ -2312,7 +2312,7 @@
   {
     "id": "BT9-064",
     "name": "Grademon",
-    "cardImage": "assets/images/cards/jap/BT9-064.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-064.webp",
     "cardType": "Digimon",
     "dp": "8000",
     "playCost": "8",
@@ -2342,7 +2342,7 @@
   {
     "id": "BT9-064_P1",
     "name": "Grademon",
-    "cardImage": "assets/images/cards/jap/BT9-064_P1.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-064_P1.webp",
     "cardType": "Digimon",
     "dp": "8000",
     "playCost": "8",
@@ -2372,7 +2372,7 @@
   {
     "id": "BT9-065",
     "name": "Megadramon",
-    "cardImage": "assets/images/cards/jap/BT9-065.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-065.webp",
     "cardType": "Digimon",
     "dp": "8000",
     "playCost": "8",
@@ -2402,7 +2402,7 @@
   {
     "id": "BT9-066",
     "name": "Alphamon",
-    "cardImage": "assets/images/cards/jap/BT9-066.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-066.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "12",
@@ -2432,7 +2432,7 @@
   {
     "id": "BT9-066_P1",
     "name": "Alphamon",
-    "cardImage": "assets/images/cards/jap/BT9-066_P1.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-066_P1.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "12",
@@ -2462,7 +2462,7 @@
   {
     "id": "BT9-067",
     "name": "Raidenmon",
-    "cardImage": "assets/images/cards/jap/BT9-067.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-067.webp",
     "cardType": "Digimon",
     "dp": "12000",
     "playCost": "12",
@@ -2492,7 +2492,7 @@
   {
     "id": "BT9-068",
     "name": "Gaiomon",
-    "cardImage": "assets/images/cards/jap/BT9-068.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-068.webp",
     "cardType": "Digimon",
     "dp": "13000",
     "playCost": "13",
@@ -2522,7 +2522,7 @@
   {
     "id": "BT9-068_P1",
     "name": "Gaiomon",
-    "cardImage": "assets/images/cards/jap/BT9-068_P1.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-068_P1.webp",
     "cardType": "Digimon",
     "dp": "13000",
     "playCost": "13",
@@ -2552,7 +2552,7 @@
   {
     "id": "BT9-069",
     "name": "Baihumon",
-    "cardImage": "assets/images/cards/jap/BT9-069.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-069.webp",
     "cardType": "Digimon",
     "dp": "13000",
     "playCost": "13",
@@ -2582,7 +2582,7 @@
   {
     "id": "BT9-070",
     "name": "Gazimon (X Antibody)",
-    "cardImage": "assets/images/cards/jap/BT9-070.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-070.webp",
     "cardType": "Digimon",
     "dp": "3000",
     "playCost": "3",
@@ -2612,7 +2612,7 @@
   {
     "id": "BT9-071",
     "name": "Dracmon",
-    "cardImage": "assets/images/cards/jap/BT9-071.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-071.webp",
     "cardType": "Digimon",
     "dp": "1000",
     "playCost": "3",
@@ -2642,7 +2642,7 @@
   {
     "id": "BT9-072",
     "name": "Salamon",
-    "cardImage": "assets/images/cards/jap/BT9-072.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-072.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -2672,7 +2672,7 @@
   {
     "id": "BT9-073",
     "name": "Sangloupmon",
-    "cardImage": "assets/images/cards/jap/BT9-073.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-073.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "5",
@@ -2702,7 +2702,7 @@
   {
     "id": "BT9-074",
     "name": "Meicoomon",
-    "cardImage": "assets/images/cards/jap/BT9-074.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-074.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "5",
@@ -2732,7 +2732,7 @@
   {
     "id": "BT9-074_P1",
     "name": "Meicoomon",
-    "cardImage": "assets/images/cards/jap/BT9-074_P1.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-074_P1.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "5",
@@ -2762,7 +2762,7 @@
   {
     "id": "BT9-075",
     "name": "DexDorugamon",
-    "cardImage": "assets/images/cards/jap/BT9-075.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-075.webp",
     "cardType": "Digimon",
     "dp": "6000",
     "playCost": "6",
@@ -2792,7 +2792,7 @@
   {
     "id": "BT9-076",
     "name": "Maycrackmon: Vicious Mode",
-    "cardImage": "assets/images/cards/jap/BT9-076.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-076.webp",
     "cardType": "Digimon",
     "dp": "6000",
     "playCost": "6",
@@ -2822,7 +2822,7 @@
   {
     "id": "BT9-077",
     "name": "Matadormon",
-    "cardImage": "assets/images/cards/jap/BT9-077.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-077.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "7",
@@ -2852,7 +2852,7 @@
   {
     "id": "BT9-078",
     "name": "DexDoruGreymon",
-    "cardImage": "assets/images/cards/jap/BT9-078.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-078.webp",
     "cardType": "Digimon",
     "dp": "8000",
     "playCost": "8",
@@ -2882,7 +2882,7 @@
   {
     "id": "BT9-079",
     "name": "GranDracmon",
-    "cardImage": "assets/images/cards/jap/BT9-079.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-079.webp",
     "cardType": "Digimon",
     "dp": "12000",
     "playCost": "12",
@@ -2912,7 +2912,7 @@
   {
     "id": "BT9-080",
     "name": "Raguelmon",
-    "cardImage": "assets/images/cards/jap/BT9-080.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-080.webp",
     "cardType": "Digimon",
     "dp": "12000",
     "playCost": "12",
@@ -2942,7 +2942,7 @@
   {
     "id": "BT9-080_P1",
     "name": "Raguelmon",
-    "cardImage": "assets/images/cards/jap/BT9-080_P1.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-080_P1.webp",
     "cardType": "Digimon",
     "dp": "12000",
     "playCost": "12",
@@ -2972,7 +2972,7 @@
   {
     "id": "BT9-081",
     "name": "DexDorugoramon",
-    "cardImage": "assets/images/cards/jap/BT9-081.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-081.webp",
     "cardType": "Digimon",
     "dp": "13000",
     "playCost": "13",
@@ -3002,7 +3002,7 @@
   {
     "id": "BT9-081_P1",
     "name": "DexDorugoramon",
-    "cardImage": "assets/images/cards/jap/BT9-081_P1.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-081_P1.webp",
     "cardType": "Digimon",
     "dp": "13000",
     "playCost": "13",
@@ -3032,7 +3032,7 @@
   {
     "id": "BT9-082",
     "name": "Ordinemon",
-    "cardImage": "assets/images/cards/jap/BT9-082.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-082.webp",
     "cardType": "Digimon",
     "dp": "15000",
     "playCost": "15",
@@ -3062,7 +3062,7 @@
   {
     "id": "BT9-082_P1",
     "name": "Ordinemon",
-    "cardImage": "assets/images/cards/jap/BT9-082_P1.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-082_P1.webp",
     "cardType": "Digimon",
     "dp": "15000",
     "playCost": "15",
@@ -3092,7 +3092,7 @@
   {
     "id": "BT9-083",
     "name": "Omnimon: Merciful Mode",
-    "cardImage": "assets/images/cards/jap/BT9-083.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-083.webp",
     "cardType": "Digimon",
     "dp": "15000",
     "playCost": "15",
@@ -3122,7 +3122,7 @@
   {
     "id": "BT9-083_P1",
     "name": "Omnimon: Merciful Mode",
-    "cardImage": "assets/images/cards/jap/BT9-083_P1.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-083_P1.webp",
     "cardType": "Digimon",
     "dp": "15000",
     "playCost": "15",
@@ -3152,7 +3152,7 @@
   {
     "id": "BT9-084",
     "name": "Tai Kamiya & Kari Kamiya",
-    "cardImage": "assets/images/cards/jap/BT9-084.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-084.webp",
     "cardType": "Tamer",
     "dp": "-",
     "playCost": "4",
@@ -3171,7 +3171,7 @@
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
     "notes": "▹BOOSTER X RECORD [BT-09]",
-    "color": "Red/Green",
+    "color": "Red/Yellow",
     "version": "Normal",
     "block": [
       "01"
@@ -3182,7 +3182,7 @@
   {
     "id": "BT9-085",
     "name": "Matt Ishida & Sora Takenouchi",
-    "cardImage": "assets/images/cards/jap/BT9-085.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-085.webp",
     "cardType": "Tamer",
     "dp": "-",
     "playCost": "4",
@@ -3212,7 +3212,7 @@
   {
     "id": "BT9-086",
     "name": "Kiyoshiro Higashimitarai",
-    "cardImage": "assets/images/cards/jap/BT9-086.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-086.webp",
     "cardType": "Tamer",
     "dp": "-",
     "playCost": "4",
@@ -3242,7 +3242,7 @@
   {
     "id": "BT9-087",
     "name": "T.K. Takaishi & Izzy Izumi",
-    "cardImage": "assets/images/cards/jap/BT9-087.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-087.webp",
     "cardType": "Tamer",
     "dp": "-",
     "playCost": "4",
@@ -3272,7 +3272,7 @@
   {
     "id": "BT9-088",
     "name": "Mimi Tachikawa & Joe Kido",
-    "cardImage": "assets/images/cards/jap/BT9-088.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-088.webp",
     "cardType": "Tamer",
     "dp": "-",
     "playCost": "4",
@@ -3302,7 +3302,7 @@
   {
     "id": "BT9-089",
     "name": "Daigo Nishijima",
-    "cardImage": "assets/images/cards/jap/BT9-089.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-089.webp",
     "cardType": "Tamer",
     "dp": "-",
     "playCost": "3",
@@ -3332,7 +3332,7 @@
   {
     "id": "BT9-090",
     "name": "Maki Himekawa",
-    "cardImage": "assets/images/cards/jap/BT9-090.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-090.webp",
     "cardType": "Tamer",
     "dp": "-",
     "playCost": "3",
@@ -3362,7 +3362,7 @@
   {
     "id": "BT9-091",
     "name": "Meiko Mochizuki",
-    "cardImage": "assets/images/cards/jap/BT9-091.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-091.webp",
     "cardType": "Tamer",
     "dp": "-",
     "playCost": "3",
@@ -3392,7 +3392,7 @@
   {
     "id": "BT9-092",
     "name": "Cool Boy",
-    "cardImage": "assets/images/cards/jap/BT9-092.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-092.webp",
     "cardType": "Tamer",
     "dp": "-",
     "playCost": "2",
@@ -3422,7 +3422,7 @@
   {
     "id": "BT9-093",
     "name": "Flare Rock Soul",
-    "cardImage": "assets/images/cards/jap/BT9-093.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-093.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "3",
@@ -3452,7 +3452,7 @@
   {
     "id": "BT9-094",
     "name": "Atomic Megalo Blaster",
-    "cardImage": "assets/images/cards/jap/BT9-094.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-094.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "6",
@@ -3482,7 +3482,7 @@
   {
     "id": "BT9-095",
     "name": "Gaia Force ZERO",
-    "cardImage": "assets/images/cards/jap/BT9-095.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-095.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "8",
@@ -3512,7 +3512,7 @@
   {
     "id": "BT9-096",
     "name": "Startling Thunder",
-    "cardImage": "assets/images/cards/jap/BT9-096.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-096.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "4",
@@ -3542,7 +3542,7 @@
   {
     "id": "BT9-097",
     "name": "Metal Storm",
-    "cardImage": "assets/images/cards/jap/BT9-097.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-097.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "7",
@@ -3572,7 +3572,7 @@
   {
     "id": "BT9-098",
     "name": "Awakening of the Golden Knight",
-    "cardImage": "assets/images/cards/jap/BT9-098.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-098.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "3",
@@ -3602,7 +3602,7 @@
   {
     "id": "BT9-099",
     "name": "Sunrise Buster",
-    "cardImage": "assets/images/cards/jap/BT9-099.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-099.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "5",
@@ -3632,7 +3632,7 @@
   {
     "id": "BT9-100",
     "name": "Grandis Scissor",
-    "cardImage": "assets/images/cards/jap/BT9-100.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-100.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "4",
@@ -3662,7 +3662,7 @@
   {
     "id": "BT9-101",
     "name": "Ground Fang",
-    "cardImage": "assets/images/cards/jap/BT9-101.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-101.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "8",
@@ -3692,7 +3692,7 @@
   {
     "id": "BT9-102",
     "name": "Attack of the Heavy Mobile Digimon!",
-    "cardImage": "assets/images/cards/jap/BT9-102.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-102.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "-",
@@ -3722,7 +3722,7 @@
   {
     "id": "BT9-103",
     "name": "Kongou",
-    "cardImage": "assets/images/cards/jap/BT9-103.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-103.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "2",
@@ -3752,7 +3752,7 @@
   {
     "id": "BT9-104",
     "name": "X Digivolution",
-    "cardImage": "assets/images/cards/jap/BT9-104.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-104.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "3",
@@ -3782,7 +3782,7 @@
   {
     "id": "BT9-105",
     "name": "Soul Digitalization",
-    "cardImage": "assets/images/cards/jap/BT9-105.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-105.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "5",
@@ -3812,7 +3812,7 @@
   {
     "id": "BT9-106",
     "name": "DeathXDigivolution!",
-    "cardImage": "assets/images/cards/jap/BT9-106.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-106.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "-",
@@ -3842,7 +3842,7 @@
   {
     "id": "BT9-107",
     "name": "Metal Impulse",
-    "cardImage": "assets/images/cards/jap/BT9-107.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-107.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "6",
@@ -3872,7 +3872,7 @@
   {
     "id": "BT9-108",
     "name": "Eye of the Gorgon",
-    "cardImage": "assets/images/cards/jap/BT9-108.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-108.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "8",
@@ -3902,7 +3902,7 @@
   {
     "id": "BT9-109",
     "name": "X Antibody",
-    "cardImage": "assets/images/cards/jap/BT9-109.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-109.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "-",
@@ -3932,7 +3932,7 @@
   {
     "id": "BT9-110",
     "name": "X Program",
-    "cardImage": "assets/images/cards/jap/BT9-110.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-110.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "8",
@@ -3962,7 +3962,7 @@
   {
     "id": "BT9-111",
     "name": "Alphamon: Ouryuken",
-    "cardImage": "assets/images/cards/jap/BT9-111.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-111.webp",
     "cardType": "Digimon",
     "dp": "16000",
     "playCost": "15",
@@ -3992,7 +3992,7 @@
   {
     "id": "BT9-111_P1",
     "name": "Alphamon: Ouryuken",
-    "cardImage": "assets/images/cards/jap/BT9-111_P1.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-111_P1.webp",
     "cardType": "Digimon",
     "dp": "16000",
     "playCost": "15",
@@ -4022,7 +4022,7 @@
   {
     "id": "BT9-112",
     "name": "DeathXmon",
-    "cardImage": "assets/images/cards/jap/BT9-112.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-112.webp",
     "cardType": "Digimon",
     "dp": "15000",
     "playCost": "20",
@@ -4052,7 +4052,7 @@
   {
     "id": "BT9-112_P1",
     "name": "DeathXmon",
-    "cardImage": "assets/images/cards/jap/BT9-112_P1.jpg",
+    "cardImage": "assets/images/cards/jap/BT9-112_P1.webp",
     "cardType": "Digimon",
     "dp": "15000",
     "playCost": "20",

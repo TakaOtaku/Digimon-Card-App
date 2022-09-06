@@ -5,17 +5,17 @@ from bs4 import BeautifulSoup
 import re
 import pandas as pd
 
-#'https://en.digimoncard.com/cardlist/?search=trueasdasd&category=508011', 
-#'https://en.digimoncard.com/cardlist/?search=true&category=508010', 
-#'https://en.digimoncard.com/cardlist/?search=true&category=508009', 
-#'https://en.digimoncard.com/cardlist/?search=true&category=508008', 
+#'https://en.digimoncard.com/cardlist/?search=trueasdasd&category=508011',
+#'https://en.digimoncard.com/cardlist/?search=true&category=508010',
+#'https://en.digimoncard.com/cardlist/?search=true&category=508009',
+#'https://en.digimoncard.com/cardlist/?search=true&category=508008',
 #'https://en.digimoncard.com/cardlist/?search=true&category=508007',
-#'https://en.digimoncard.com/cardlist/?search=true&category=508006', 
-#'https://en.digimoncard.com/cardlist/?search=true&category=508005', 
-#'https://en.digimoncard.com/cardlist/?search=true&category=508004', 
-#'https://en.digimoncard.com/cardlist/?search=true&category=508003', 
-#'https://en.digimoncard.com/cardlist/?search=true&category=508002', 
-#'https://en.digimoncard.com/cardlist/?search=true&category=508001', 
+#'https://en.digimoncard.com/cardlist/?search=true&category=508006',
+#'https://en.digimoncard.com/cardlist/?search=true&category=508005',
+#'https://en.digimoncard.com/cardlist/?search=true&category=508004',
+#'https://en.digimoncard.com/cardlist/?search=true&category=508003',
+#'https://en.digimoncard.com/cardlist/?search=true&category=508002',
+#'https://en.digimoncard.com/cardlist/?search=true&category=508001',
 #'https://en.digimoncard.com/cardlist/?search=true&category=508113',
 #'https://en.digimoncard.com/cardlist/?search=true&category=508112',
 #'https://en.digimoncard.com/cardlist/?search=true&category=508111',
@@ -159,13 +159,13 @@ for url in urls:
         imageURL = 'https://en.digimoncard.com' + image['src'][2:]  ### Change URL depending on if you want Japanese Cards or English Cards
         imageSave = imageURL.rsplit('/', 1)[-1]
         #urllib.request.urlretrieve(imageURL, imageSave)  ##### Comment IN/OUT if you want to get the pngs.
-        digimoncard['cardImage'] = 'assets/images/cards/jap/' + imageSave.replace('.png', '.jpg')  ### Change URL depending on if you want Japanese Cards or English Cards
+        digimoncard['cardImage'] = 'assets/images/cards/jap/' + imageSave.replace('.png', '.webp')  ### Change URL depending on if you want Japanese Cards or English Cards
         if '_P' in imageSave:
             urllib.request.urlretrieve(imageURL, imageSave)
             digimoncard['version'] = 'AA'
             if cardWithImage.find("div", class_="cardParallel"):
                 digimoncard['version'] = 'AA'
-             
+
         digimoncard['id'] = imageSave.replace('.png', '')
 
         #Card Header

@@ -1,8 +1,28 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MainPageComponent } from './pages/main-page/main-page.component';
+import { CommunityComponent } from './pages/community/community.component';
+import { HomeComponent } from './pages/home/home.component';
+import { UserComponent } from './pages/user/user.component';
 
-const routes: Routes = [{ path: '**', component: MainPageComponent }];
+const routes: Routes = [
+  {
+    path: 'community',
+    component: CommunityComponent,
+  },
+  {
+    path: 'user',
+    component: UserComponent,
+  },
+  {
+    path: 'user/:id',
+    component: UserComponent,
+  },
+  {
+    path: 'deck/:id',
+    component: HomeComponent,
+  },
+  { path: '**', component: HomeComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

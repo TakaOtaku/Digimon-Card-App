@@ -1,34 +1,38 @@
 import { Component } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
-import { NavigationEnd, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { filter, first } from 'rxjs';
-import * as uuid from 'uuid';
+import { MessageService } from 'primeng/api';
+import { first } from 'rxjs';
 import { ISave } from '../models';
-import { SITES } from './pages/main-page/main-page.component';
 import { AuthService } from './service/auth.service';
 import { DatabaseService } from './service/database.service';
-import { loadSave, setDeck, setSite } from './store/digimon.actions';
+import { loadSave, setSave } from './store/digimon.actions';
 import { emptySave } from './store/reducers/save.reducer';
 
 @Component({
   selector: 'digimon-root',
-  template: '<router-outlet></router-outlet>',
+  templateUrl: './app.component.html',
 })
 export class AppComponent {
+  localStorageSave: ISave;
+  spinner = true;
+  hide = true;
+
+  noSaveDialog = false;
+  retryDialog = false;
+  test = true;
+
   constructor(
     private store: Store,
     private authService: AuthService,
     private databaseService: DatabaseService,
+    private messageService: MessageService,
     private meta: Meta,
-    private title: Title,
-    private router: Router
+    private title: Title
   ) {
     this.makeGoogleFriendly();
 
     this.loadSave();
-
-    this.checkForDeckLink();
 
     document.addEventListener(
       'contextmenu',
@@ -66,47 +70,100 @@ export class AppComponent {
    * b) If the User is not logged in, load the data from the local storage
    */
   private loadSave(): void {
-    this.authService.checkLocalStorage();
+    this.checkForSave();
 
-    if (this.authService.isLoggedIn) {
-      this.databaseService
-        .loadSave(this.authService.userData!.uid, this.authService.userData)
-        .pipe(first())
-        .subscribe((save: ISave) => this.store.dispatch(loadSave({ save })));
-    } else {
-      const string = localStorage.getItem('Digimon-Card-Collector');
-      let save: ISave = emptySave;
-      if (string) save = JSON.parse(string);
-
-      save = this.databaseService.checkSaveValidity(
-        save,
-        this.authService.userData
-      );
-
-      this.store.dispatch(loadSave({ save }));
+    if (!this.authService.isLoggedIn) {
+      this.startLoginOfflineDialog();
+      return;
     }
+
+    this.databaseService
+      .loadSave(this.authService.userData!.uid, this.authService.userData)
+      .pipe(first())
+      .subscribe((saveOrNull: ISave | null) => {
+        if (!saveOrNull) {
+          this.startRetryDialog();
+          return;
+        }
+        this.spinner = false;
+        this.hide = false;
+        let save = saveOrNull as ISave;
+        this.store.dispatch(loadSave({ save }));
+      });
   }
 
-  /**
-   * Check if it is a deck-link, then search for the deck in the database and set the site view to deckbuilder
-   */
-  private checkForDeckLink() {
-    this.router.events
-      .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe((event: any) => {
-        if (event.url.includes('?deck=')) {
-          this.databaseService
-            .loadDeck(event.url.substring(7))
-            .pipe(filter((value) => value.cards.length > 0))
-            .subscribe((deck) => {
-              this.store.dispatch(
-                setDeck({
-                  deck: { ...deck, id: uuid.v4(), rating: 0, ratingCount: 0 },
-                })
-              );
-              this.store.dispatch(setSite({ site: SITES.DeckBuilder }));
-            });
-        }
-      });
+  private startRetryDialog() {
+    this.spinner = false;
+    this.retryDialog = true;
+  }
+
+  retry() {
+    this.spinner = true;
+    this.retryDialog = false;
+    this.loadSave();
+  }
+
+  loadBackup(input: any) {
+    let fileReader = new FileReader();
+    fileReader.onload = () => {
+      try {
+        let save: any = JSON.parse(fileReader.result as string);
+        save = this.databaseService.checkSaveValidity(save, null);
+        this.store.dispatch(loadSave({ save }));
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Save loaded!',
+          detail: 'The save was loaded successfully!',
+        });
+        this.retryDialog = false;
+        this.spinner = false;
+        this.hide = false;
+      } catch (e) {
+        this.messageService.add({
+          severity: 'warn',
+          summary: 'Save Error!',
+          detail: 'The save was not loaded!',
+        });
+      }
+    };
+    fileReader.readAsText(input.files[0]);
+  }
+
+  private checkForSave() {
+    this.authService.checkLocalStorage();
+
+    const found = localStorage.getItem('Digimon-Card-Collector');
+    this.localStorageSave = found ? JSON.parse(found) : null;
+  }
+
+  private startLoginOfflineDialog() {
+    if (this.localStorageSave) {
+      this.localStorageSave = this.databaseService.checkSaveValidity(
+        this.localStorageSave,
+        this.authService.userData
+      );
+      this.store.dispatch(loadSave({ save: this.localStorageSave }));
+      this.spinner = false;
+      this.hide = false;
+      return;
+    }
+
+    this.spinner = false;
+    this.noSaveDialog = true;
+  }
+
+  loginWithGoogle() {
+    this.authService.GoogleAuth().then(() => {
+      this.hide = false;
+      this.noSaveDialog = false;
+      this.retryDialog = false;
+    });
+  }
+
+  createANewSave() {
+    this.hide = false;
+    this.noSaveDialog = false;
+    this.retryDialog = false;
+    this.store.dispatch(setSave({ save: emptySave }));
   }
 }

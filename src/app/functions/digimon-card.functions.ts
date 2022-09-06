@@ -1,7 +1,13 @@
 import { englishCards } from '../../assets/cardlists/eng/english';
+import preReleaseJSON from '../../assets/cardlists/eng/preRelease.json';
 import { japaneseCards } from '../../assets/cardlists/jap/japanese';
-import preReleaseJSON from '../../assets/cardlists/preRelease.json';
-import { ColorOrderMap, ICard, IDeck } from '../../models';
+import {
+  ColorOrderMap,
+  ICard,
+  ICountCard,
+  IDeck,
+  IDeckCard,
+} from '../../models';
 import { CARDSET } from '../../models/card-set.enum';
 
 export function compareIDs(idA: string, idB: string): boolean {
@@ -31,15 +37,15 @@ export function getPNG(cardSRC: string): string {
   if (engRegExp.test(cardSRC)) {
     return cardSRC
       .replace(engRegExp, 'eng/png')
-      .replace(new RegExp('\\b.jpg\\b'), '.png');
+      .replace(new RegExp('\\b.webp\\b'), '.png');
   } else if (japRegExp.test(cardSRC)) {
     return cardSRC
       .replace(japRegExp, 'jap/png')
-      .replace(new RegExp('\\b.jpg\\b'), '.png');
+      .replace(new RegExp('\\b.webp\\b'), '.png');
   } else {
     return cardSRC
       .replace(preReleaseRegExp, 'pre-release/png')
-      .replace(new RegExp('\\b.jpg\\b'), '.png');
+      .replace(new RegExp('\\b.webp\\b'), '.png');
   }
 }
 
@@ -117,4 +123,18 @@ export function sortColors(colorA: string, colorB: string): number {
   const a: number = ColorOrderMap.get(colorA) ?? 0;
   const b: number = ColorOrderMap.get(colorB) ?? 0;
   return a - b;
+}
+
+export function mapToDeckCards(
+  cards: ICountCard[],
+  allCards: ICard[]
+): IDeckCard[] {
+  const deckCards: IDeckCard[] = [];
+
+  cards.forEach((card) => {
+    let found = allCards.find((allCard) => card.id === allCard.id);
+    deckCards.push({ ...found, count: card.count } as IDeckCard);
+  });
+
+  return deckCards;
 }
