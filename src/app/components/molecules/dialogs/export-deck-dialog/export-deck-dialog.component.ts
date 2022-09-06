@@ -1,24 +1,11 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnChanges,
-  OnDestroy,
-  OnInit,
-  Output,
-  SimpleChanges,
-} from '@angular/core';
-import { Store } from '@ngrx/store';
-import { saveAs } from 'file-saver';
-import { Subject, takeUntil } from 'rxjs';
-import { ICard, IDeck } from '../../../../../models';
-import {
-  compareIDs,
-  formatId,
-  getPNG,
-} from '../../../../functions/digimon-card.functions';
-import { selectAllCards } from '../../../../store/digimon.selectors';
-import { ColorsWithoutMulti } from '../../../organisms/filter/filter-side-box/filterData';
+import {Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges,} from '@angular/core';
+import {Store} from '@ngrx/store';
+import {saveAs} from 'file-saver';
+import {Subject, takeUntil} from 'rxjs';
+import {ICard, IDeck} from '../../../../../models';
+import {compareIDs, formatId, getPNG,} from '../../../../functions/digimon-card.functions';
+import {selectAllCards} from '../../../../store/digimon.selectors';
+import {ColorsWithoutMulti} from '../../../organisms/filter/filter-side-box/filterData';
 
 @Component({
   selector: 'digimon-export-deck-dialog',
@@ -173,13 +160,13 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
     };
 
     const BackgroundMap = new Map<string, string>([
-      ['Red', 'assets/images/image-export/bg-share_red.webp'],
-      ['Blue', 'assets/images/image-export/bg-share_blue.webp'],
-      ['Yellow', 'assets/images/image-export/bg-share_yellow.webp'],
-      ['Green', 'assets/images/image-export/bg-share_green.webp'],
-      ['Black', 'assets/images/image-export/bg-share_black.webp'],
-      ['Purple', 'assets/images/image-export/bg-share_purple.webp'],
-      ['White', 'assets/images/image-export/bg-share_white.webp'],
+      ['Red', 'assets/images/image-export/bg-share_red.jpg'],
+      ['Blue', 'assets/images/image-export/bg-share_blue.jpg'],
+      ['Yellow', 'assets/images/image-export/bg-share_yellow.jpg'],
+      ['Green', 'assets/images/image-export/bg-share_green.jpg'],
+      ['Black', 'assets/images/image-export/bg-share_black.jpg'],
+      ['Purple', 'assets/images/image-export/bg-share_purple.jpg'],
+      ['White', 'assets/images/image-export/bg-share_white.jpg'],
     ]);
 
     background({
@@ -288,7 +275,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
     };
 
     background({
-      uri: 'assets/images/image-export/TTS.webp',
+      uri: 'assets/images/image-export/TTS.jpg',
       x: 0,
       y: 0,
       sw: 7440,
