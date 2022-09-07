@@ -90,6 +90,36 @@
     "illustrator": "Tonamikanji"
   },
   {
+    "id": "BT3-002_P2",
+    "name": "DemiVeemon",
+    "cardImage": "assets/images/cards/eng/BT3-002_P2.webp",
+    "cardType": "Digi-Egg",
+    "dp": "-",
+    "playCost": "-",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.2",
+    "form": "In-Training",
+    "attribute": "-",
+    "type": "Baby Dragon",
+    "rarity": "U",
+    "cardNumber": "BT3-002",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "[When Attacking] [Once Per Turn] If this Digimon has ＜Jamming＞, trigger ＜Draw 1＞. (Draw 1 card from your deck.)",
+    "securityEffect": "-",
+    "notes": "April Ultimate Cup Participation Prize",
+    "color": "Blue",
+    "version": "Stamp",
+    "block": [
+      "00"
+    ],
+    "restriction": "",
+    "illustrator": "Takase"
+  },
+  {
     "id": "BT3-003",
     "name": "Upamon",
     "cardImage": "assets/images/cards/eng/BT3-003.webp",
