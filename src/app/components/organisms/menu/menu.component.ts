@@ -139,7 +139,7 @@ export class MenuComponent implements OnInit, OnDestroy {
         {
           label: 'Profile',
           icon: 'pi pi-database',
-          command: () => this.router.navigateByUrl(''),
+          command: () => this.router.navigateByUrl('/user'),
         },
         {
           label: 'Community Decks',
