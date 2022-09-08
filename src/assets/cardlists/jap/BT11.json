@@ -671,7 +671,7 @@
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
-    "color": "Red / Blue",
+    "color": "Red/Blue",
     "version": "Normal",
     "illustrator": "TANIMESO",
     "block": [
@@ -705,7 +705,7 @@
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
-    "color": "Red / White",
+    "color": "Red/White",
     "version": "Normal",
     "illustrator": "Tonamikanji",
     "block": [
@@ -739,7 +739,7 @@
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
-    "color": "Red / White",
+    "color": "Red/White",
     "version": "AA",
     "illustrator": "Tonamikanji",
     "block": [
@@ -1385,7 +1385,7 @@
     "digivolveEffect": "[On Deletion] If this Digimon has [Sukamon] or [Etemon] in its name, you may play 1 [Chuumon] from your trash suspended without paying the cost.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
-    "color": "Yellow / Black",
+    "color": "Yellow/Black",
     "version": "Normal",
     "illustrator": "GOSSAN",
     "block": [
@@ -1521,7 +1521,7 @@
     "digivolveEffect": "[All Turns] When this Digimon would be deleted, by deleting 1 other Digimon with [Sukamon] in its name, prevent that deletion.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
-    "color": "Yellow / Black",
+    "color": "Yellow/Black",
     "version": "Normal",
     "illustrator": "GOSSAN",
     "block": [
@@ -1623,7 +1623,7 @@
     "digivolveEffect": "[All Turns] When this Digimon would be deleted, by deleting 1 other Digimon with [Sukamon] in its name, prevent that deletion.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
-    "color": "Yellow / Black",
+    "color": "Yellow/Black",
     "version": "Normal",
     "illustrator": "GOSSAN",
     "block": [
@@ -1929,7 +1929,7 @@
     "digivolveEffect": "[On Play] While you have a Tamer in play, this Digimon gets +2000 DP.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
-    "color": "Green / Red",
+    "color": "Green/Red",
     "version": "Normal",
     "illustrator": "koki",
     "block": [
@@ -2031,7 +2031,7 @@
     "digivolveEffect": "[All Turns] [Once Per Turn] When this Digimon deletes an opponent's Digimon in battle, trash the top card of your opponent's security stack.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
-    "color": "Green / Black",
+    "color": "Green/Black",
     "version": "Normal",
     "illustrator": "Hisashi Fujiwara",
     "block": [
@@ -2201,7 +2201,7 @@
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
-    "color": "Green / Black",
+    "color": "Green/Black",
     "version": "Normal",
     "illustrator": "Nakano Haito",
     "block": [
@@ -2371,7 +2371,7 @@
     "digivolveEffect": "[All Turns] When this Digimon with [Greymon] or [Omnimon] in its name would be deleted or returned to your hand or deck by an effect, by placing 1 [X Antibody] from this Digimon's digivolution cards at the bottom of its owner's deck, prevent this Digimon from leaving play.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
-    "color": "Black / Red",
+    "color": "Black/Red",
     "version": "Normal",
     "illustrator": "koki",
     "block": [
@@ -2541,7 +2541,7 @@
     "digivolveEffect": "[Opponent's Turn] [Once Per Turn] When a Digimon becomes unsuspended, if this Digimon has [Greymon] or [Omnimon] in its name, trash the top card of your opponent's security stack.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
-    "color": "Black / Red",
+    "color": "Black/Red",
     "version": "Normal",
     "illustrator": "As'Maria",
     "block": [
@@ -2609,7 +2609,7 @@
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
-    "color": "Black / Purple",
+    "color": "Black/Purple",
     "version": "Normal",
     "illustrator": "Kazumasa Yasukuni",
     "block": [
@@ -2711,7 +2711,7 @@
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
-    "color": "Black / Red",
+    "color": "Black/Red",
     "version": "Normal",
     "illustrator": "tyuga",
     "block": [
@@ -2745,7 +2745,7 @@
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
-    "color": "Black / Red",
+    "color": "Black/Red",
     "version": "AA",
     "illustrator": "tyuga",
     "block": [
@@ -3017,7 +3017,7 @@
     "digivolveEffect": "[Opponent's Turn] When an effect trashes this card from digivolution cards, gain 1 memory.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
-    "color": "Purple / Black",
+    "color": "Purple/Black",
     "version": "Normal",
     "illustrator": "GOSSAN",
     "block": [
@@ -3119,7 +3119,7 @@
     "digivolveEffect": "[All Turns] [Once Per Turn] When you play a Digimon by an effect, gain 1 memory.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
-    "color": "Purple / Blue",
+    "color": "Purple/Blue",
     "version": "Normal",
     "illustrator": "GOSSAN",
     "block": [
@@ -3493,7 +3493,7 @@
     "digivolveEffect": "[Security] Play this card without paying its memory cost.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
-    "color": "Purple / Yellow",
+    "color": "Purple/Yellow",
     "version": "Normal",
     "illustrator": "-",
     "block": [
@@ -3527,7 +3527,7 @@
     "digivolveEffect": "[Security] Play this card without paying its memory cost.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
-    "color": "Purple / Yellow",
+    "color": "Purple/Yellow",
     "version": "AA",
     "illustrator": "-",
     "block": [
@@ -3969,7 +3969,7 @@
     "digivolveEffect": "[Security] Activate this card's [Main] effect Delete 1 of your opponent's Digimon with the highest play cost.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
-    "color": "Black / Red",
+    "color": "Black/Red",
     "version": "Normal",
     "illustrator": "Shin Sasaski",
     "block": [
