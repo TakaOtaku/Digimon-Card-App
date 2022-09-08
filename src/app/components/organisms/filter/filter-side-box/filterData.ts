@@ -514,7 +514,7 @@ export const VersionButtons: MultiButtons[] = [
   },
   {
     name: 'Alt. Art',
-    value: 'Alt. Art'
+    value: 'AA'
   },
   {
     name: 'Pre-Release',
