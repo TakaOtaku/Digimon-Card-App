@@ -26,7 +26,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "sasasi"
   },
   {
@@ -56,7 +56,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "TANIMESO"
   },
   {
@@ -86,7 +86,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "sasasi"
   },
   {
@@ -116,7 +116,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "kaz"
   },
   {
@@ -146,7 +146,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Sanosuke Sakuma"
   },
   {
@@ -176,7 +176,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "sasasi"
   },
   {
@@ -206,7 +206,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "TANIMESO"
   },
   {
@@ -236,7 +236,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "TANIMESO"
   },
   {
@@ -266,7 +266,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "sasasi"
   },
   {
@@ -296,7 +296,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "sasasi"
   },
   {
@@ -326,7 +326,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Ishibashi Yosuke"
   },
   {
@@ -356,7 +356,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "TANIMESO"
   },
   {
@@ -386,7 +386,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Nakano Haito"
   },
   {
@@ -416,7 +416,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Nakano Haito"
   }
 ]

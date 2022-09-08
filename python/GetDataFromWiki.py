@@ -183,7 +183,7 @@ def getCardDataFromWiki():
             "version": "Normal",
             "illustrator": "",
             "block": ["02"],
-            "restriction": "",
+            "restriction": "-",
         }
 
         digimoncard = getMainInfo(infoMain, digimoncard)

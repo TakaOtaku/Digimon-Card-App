@@ -174,7 +174,7 @@
     </div>
   </div>
 
-  <div *ngIf="card.restriction !== ''" class="max-w-full" id="Restriction">
+  <div *ngIf="card.restriction !== '-'" class="max-w-full" id="Restriction">
     <div class="flex flex-col" id="Card-Restriction">
       <p [ngStyle]="{color}" class="text-lg font-extrabold">Restriction</p>
       <p class="font-white text-lg font-bold">{{ card.restriction }}</p>
