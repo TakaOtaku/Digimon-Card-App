@@ -31,7 +31,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-002",
@@ -65,7 +65,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-003",
@@ -99,7 +99,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-004",
@@ -133,7 +133,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-005",
@@ -167,7 +167,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-006",
@@ -201,7 +201,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-007",
@@ -235,7 +235,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-008",
@@ -269,7 +269,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-009",
@@ -303,7 +303,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-010",
@@ -337,7 +337,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-011",
@@ -371,7 +371,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-012",
@@ -405,7 +405,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-013",
@@ -439,7 +439,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-014",
@@ -473,7 +473,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-015",
@@ -507,7 +507,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-016",
@@ -541,7 +541,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-016_P1",
@@ -575,7 +575,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-017",
@@ -609,7 +609,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-017_P1",
@@ -643,7 +643,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-018",
@@ -677,7 +677,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-019",
@@ -711,7 +711,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-019_P1",
@@ -745,7 +745,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-020",
@@ -779,7 +779,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-021",
@@ -813,7 +813,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-022",
@@ -847,7 +847,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-023",
@@ -881,7 +881,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-024",
@@ -915,7 +915,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-025",
@@ -949,7 +949,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-026",
@@ -983,7 +983,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-027",
@@ -1017,7 +1017,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-028",
@@ -1051,7 +1051,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-029",
@@ -1085,7 +1085,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-030",
@@ -1119,7 +1119,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-031",
@@ -1153,7 +1153,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-032",
@@ -1187,7 +1187,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-032_P1",
@@ -1221,7 +1221,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-033",
@@ -1255,7 +1255,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-033_P1",
@@ -1289,7 +1289,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-034",
@@ -1323,7 +1323,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-035",
@@ -1357,7 +1357,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-036",
@@ -1391,7 +1391,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-037",
@@ -1425,7 +1425,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-038",
@@ -1459,7 +1459,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-039",
@@ -1493,7 +1493,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-040",
@@ -1527,7 +1527,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-041",
@@ -1561,7 +1561,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-042",
@@ -1595,7 +1595,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-043",
@@ -1629,7 +1629,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-044",
@@ -1663,7 +1663,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-045",
@@ -1697,7 +1697,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-046",
@@ -1731,7 +1731,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-047",
@@ -1765,7 +1765,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-048",
@@ -1799,7 +1799,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-049",
@@ -1833,7 +1833,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-050",
@@ -1867,7 +1867,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-051",
@@ -1901,7 +1901,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-052",
@@ -1935,7 +1935,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-053",
@@ -1969,7 +1969,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-054",
@@ -2003,7 +2003,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-055",
@@ -2037,7 +2037,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-056",
@@ -2071,7 +2071,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-056_P1",
@@ -2105,7 +2105,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-057",
@@ -2139,7 +2139,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-058",
@@ -2173,7 +2173,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-059",
@@ -2207,7 +2207,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-060",
@@ -2241,7 +2241,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-061",
@@ -2275,7 +2275,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-062",
@@ -2309,7 +2309,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-063",
@@ -2343,7 +2343,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-064",
@@ -2377,7 +2377,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-065",
@@ -2411,7 +2411,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-066",
@@ -2445,7 +2445,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-067",
@@ -2479,7 +2479,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-068",
@@ -2513,7 +2513,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-069",
@@ -2547,7 +2547,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-070",
@@ -2581,7 +2581,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-071",
@@ -2615,7 +2615,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-072",
@@ -2649,7 +2649,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-073",
@@ -2683,7 +2683,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-074",
@@ -2717,7 +2717,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-074_P1",
@@ -2751,7 +2751,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-075",
@@ -2785,7 +2785,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-076",
@@ -2819,7 +2819,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-077",
@@ -2853,7 +2853,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-078",
@@ -2887,7 +2887,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-079",
@@ -2921,7 +2921,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-080",
@@ -2955,7 +2955,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-081",
@@ -2989,7 +2989,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-082",
@@ -3023,7 +3023,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-083",
@@ -3057,7 +3057,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-084",
@@ -3091,7 +3091,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-085",
@@ -3125,7 +3125,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-086",
@@ -3159,7 +3159,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-086_P1",
@@ -3193,7 +3193,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-087",
@@ -3227,7 +3227,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-088",
@@ -3261,7 +3261,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-088_P1",
@@ -3295,7 +3295,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-089",
@@ -3329,7 +3329,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-090",
@@ -3363,7 +3363,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-091",
@@ -3397,7 +3397,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-092",
@@ -3431,7 +3431,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-093",
@@ -3465,7 +3465,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-094",
@@ -3499,7 +3499,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-094_P1",
@@ -3533,7 +3533,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-095",
@@ -3567,7 +3567,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-096",
@@ -3601,7 +3601,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-097",
@@ -3635,7 +3635,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-098",
@@ -3669,7 +3669,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-099",
@@ -3703,7 +3703,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-100",
@@ -3737,7 +3737,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-101",
@@ -3771,7 +3771,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-102",
@@ -3805,7 +3805,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-103",
@@ -3839,7 +3839,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-104",
@@ -3873,7 +3873,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-105",
@@ -3907,7 +3907,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-106",
@@ -3941,7 +3941,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-107",
@@ -3975,7 +3975,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-108",
@@ -4009,7 +4009,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-109",
@@ -4043,7 +4043,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-110",
@@ -4077,7 +4077,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-111",
@@ -4111,7 +4111,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-112",
@@ -4145,7 +4145,7 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   },
   {
     "id": "BT11-112_P1",
@@ -4179,6 +4179,6 @@
     "block": [
       "02"
     ],
-    "restriction": ""
+    "restriction": "-"
   }
 ]
