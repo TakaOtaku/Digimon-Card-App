@@ -26,7 +26,7 @@
     "block": [
       "00"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Nakano Haito"
   },
   {
@@ -56,7 +56,7 @@
     "block": [
       "00"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Tonamikanji"
   },
   {
@@ -86,7 +86,7 @@
     "block": [
       "00"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Ryuda"
   },
   {
@@ -117,7 +117,7 @@
       "00",
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Nakano Haito"
   },
   {
@@ -148,7 +148,7 @@
       "00",
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Kayo Horaguchi"
   },
   {
@@ -179,7 +179,7 @@
       "00",
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Nakano Haito"
   },
   {
@@ -210,7 +210,7 @@
       "00",
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Qacoro"
   },
   {
@@ -241,7 +241,7 @@
       "00",
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Tessy"
   },
   {
@@ -271,7 +271,7 @@
     "block": [
       "00"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Tonamikanji"
   },
   {
@@ -301,7 +301,7 @@
     "block": [
       "00"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Ryuda"
   },
   {
@@ -331,7 +331,7 @@
     "block": [
       "00"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Ryuda"
   },
   {
@@ -362,7 +362,7 @@
       "00",
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Nakano Haito"
   },
   {
@@ -393,7 +393,7 @@
       "00",
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Tessy"
   },
   {
@@ -424,7 +424,7 @@
       "00",
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": ""
   },
   {
@@ -454,7 +454,7 @@
     "block": [
       "00"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Tonamikanji"
   },
   {
@@ -484,7 +484,7 @@
     "block": [
       "00"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Qacoro"
   },
   {
@@ -514,7 +514,7 @@
     "block": [
       "00"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Nakano Haito"
   },
   {
@@ -544,7 +544,7 @@
     "block": [
       "00"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Nakano Haito"
   },
   {
@@ -575,7 +575,7 @@
       "00",
       "02"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": ""
   },
   {
@@ -606,7 +606,7 @@
       "00",
       "02"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": ""
   },
   {
@@ -636,7 +636,7 @@
     "block": [
       "00"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "MATSUMOTO EIGHT"
   },
   {
@@ -666,7 +666,7 @@
     "block": [
       "00"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Takase"
   },
   {
@@ -696,7 +696,7 @@
     "block": [
       "00"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "p!k@ru"
   },
   {
@@ -726,7 +726,7 @@
     "block": [
       "00"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "NAKAMURA 8"
   },
   {
@@ -756,7 +756,7 @@
     "block": [
       "00"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Takase"
   },
   {
@@ -786,7 +786,7 @@
     "block": [
       "00"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Ishibashi Yosuke"
   }
 ]

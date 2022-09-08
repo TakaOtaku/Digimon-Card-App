@@ -9,7 +9,7 @@ import copy
 
 wikiLink = 'https://digimoncardgame.fandom.com'
 wikiPageLinks = [
-    'https://digimoncardgame.fandom.com/wiki/EX-03:_Theme_Booster_Draconic_Roar'
+    'https://digimoncardgame.fandom.com/wiki/BT-11:_Booster_Dimensional_Phase'
 ]
 cardLinks = []
 NormalCards = []
@@ -135,6 +135,7 @@ def getRarityInfo(html, digimoncard):
         "Rare": 'R',
         "Super Rare": 'SR',
         "Secret Rare": 'SEC',
+        "Alternative Art": "AA"
     }
 
     digimoncard['rarity'] = rarityDict[rarity]
@@ -182,7 +183,7 @@ def getCardDataFromWiki():
             "version": "Normal",
             "illustrator": "",
             "block": ["02"],
-            "restriction": "",
+            "restriction": "-",
         }
 
         digimoncard = getMainInfo(infoMain, digimoncard)
@@ -202,8 +203,8 @@ def getCardDataFromWiki():
         if(image is not None):
             imageSrc = image['src']
             # Change URL depending on if you want Japanese Cards or English Cards
-            urllib.request.urlretrieve(
-                imageSrc, digimoncard['cardNumber']+".png")
+            # urllib.request.urlretrieve(
+            #    imageSrc, digimoncard['cardNumber']+".png")
 
         cards.append(digimoncard)
 

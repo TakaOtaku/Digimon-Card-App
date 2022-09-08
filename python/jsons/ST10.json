@@ -26,7 +26,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Takase"
   },
   {
@@ -56,7 +56,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Takase"
   },
   {
@@ -86,7 +86,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "koki"
   },
   {
@@ -116,7 +116,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Takase"
   },
   {
@@ -146,7 +146,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Tonamikanji"
   },
   {
@@ -176,7 +176,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Tonamikanji"
   },
     {
@@ -196,19 +196,19 @@
     "cardNumber": "ST10-06",
     "digiXros": "-",
     "specialDigivolve": "-",
-    "dnaDigivolve": "＜DNA Digivolution: 0 from yellow Lv.5 + purple Lv.5＞ Digivolve unsuspended with the 2 specified Digimon stacked on top of each other.",
-    "effect": "[When Digivolving] Place 1 yellow or purple Digimon card from your trash on top of your security stack face down. When DNA digivolving, you may search your security stack for 1 level 5 or lower Digimon card and play it without paying its memory cost. Then, shuffle your security stack.\n[All Turns] When you play another Digimon using an effect, delete 1 of your opponent's Digimon whose level is less than or equal to the played Digimon's level.",
-    "digivolveEffect": "-",
-    "securityEffect": "-",
-    "notes": "THEME BOOSTER -DIGITAL HAZRAD-[EX-02] Box Promotion,DIGIMON CARD GAME ADVENTURE BOX [AB-01] Box Promotion",
-    "color": "Yellow/Purple",
-    "version": "AA",
-    "block": [
-      "01"
-    ],
-    "restriction": "",
-    "illustrator": "Nakano Haito"
-  },
+      "dnaDigivolve": "＜DNA Digivolution: 0 from yellow Lv.5 + purple Lv.5＞ Digivolve unsuspended with the 2 specified Digimon stacked on top of each other.",
+      "effect": "[When Digivolving] Place 1 yellow or purple Digimon card from your trash on top of your security stack face down. When DNA digivolving, you may search your security stack for 1 level 5 or lower Digimon card and play it without paying its memory cost. Then, shuffle your security stack.\n[All Turns] When you play another Digimon using an effect, delete 1 of your opponent's Digimon whose level is less than or equal to the played Digimon's level.",
+      "digivolveEffect": "-",
+      "securityEffect": "-",
+      "notes": "THEME BOOSTER -DIGITAL HAZRAD-[EX-02] Box Promotion,DIGIMON CARD GAME ADVENTURE BOX [AB-01] Box Promotion",
+      "color": "Yellow/Purple",
+      "version": "AA",
+      "block": [
+        "01"
+      ],
+      "restriction": "-",
+      "illustrator": "Nakano Haito"
+    },
   {
     "id": "ST10-07",
     "name": "Ghostmon",
@@ -236,7 +236,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "koki"
   },
   {
@@ -266,7 +266,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "banira"
   },
   {
@@ -296,7 +296,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Ryodan"
   },
   {
@@ -326,7 +326,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "koki"
   },
   {
@@ -356,7 +356,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Teppei Tadokoro"
   },
   {
@@ -386,7 +386,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Tonamikanji"
   },
   {
@@ -417,7 +417,7 @@
       "01",
       "02"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Teppei Tadokoro"
   },
   {
@@ -447,7 +447,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Nakano Haito"
   },
   {
@@ -477,7 +477,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "banira"
   }
 ]

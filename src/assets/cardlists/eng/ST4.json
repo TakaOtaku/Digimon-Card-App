@@ -26,7 +26,7 @@
     "block": [
       "00"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "sasasi"
   },
   {
@@ -56,7 +56,7 @@
     "block": [
       "00"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "sasasi"
   },
   {
@@ -87,7 +87,7 @@
       "00",
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "sasasi"
   },
   {
@@ -118,7 +118,7 @@
       "00",
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "itohiro"
   },
   {
@@ -149,7 +149,7 @@
       "00",
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Tonamikanji"
   },
   {
@@ -179,7 +179,7 @@
     "block": [
       "00"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Tonamikanji"
   },
   {
@@ -209,7 +209,7 @@
     "block": [
       "00"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Tonamikanji"
   },
   {
@@ -239,7 +239,7 @@
     "block": [
       "00"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -270,7 +270,7 @@
       "00",
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "sasasi"
   },
   {
@@ -301,7 +301,7 @@
       "00",
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -332,7 +332,7 @@
       "00",
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -363,7 +363,7 @@
       "00",
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -394,7 +394,7 @@
       "00",
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "sasasi"
   },
   {
@@ -424,7 +424,7 @@
     "block": [
       "00"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Shin Sasaki"
   },
   {
@@ -455,7 +455,7 @@
       "00",
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Tonamikanji"
   },
   {
@@ -486,7 +486,7 @@
       "00",
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "banira"
   },
   {
@@ -516,7 +516,7 @@
     "block": [
       "00"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "sasasi"
   },
   {
@@ -546,7 +546,7 @@
     "block": [
       "00"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Tonamikanji"
   },
   {
@@ -576,7 +576,7 @@
     "block": [
       "00"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "sasasi"
   },
   {
@@ -606,7 +606,7 @@
     "block": [
       "00"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Ishibashi Yosuke"
   },
   {
@@ -636,7 +636,7 @@
     "block": [
       "00"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": ""
   },
   {
@@ -666,7 +666,7 @@
     "block": [
       "00"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "funbolt"
   },
   {
@@ -696,7 +696,7 @@
     "block": [
       "00"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "funbolt"
   }
 ]

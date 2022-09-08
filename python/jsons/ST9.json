@@ -26,7 +26,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "sasasi"
   },
   {
@@ -56,7 +56,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "sasasi"
   },
   {
@@ -86,7 +86,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Takase"
   },
   {
@@ -116,7 +116,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "sasasi"
   },
   {
@@ -146,7 +146,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "sasasi"
   },
   {
@@ -176,7 +176,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Kenji Watanabe"
   },
   {
@@ -206,7 +206,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "sasasi"
   },
     {
@@ -226,19 +226,19 @@
     "cardNumber": "ST9-06",
     "digiXros": "-",
     "specialDigivolve": "-",
-    "dnaDigivolve": "-",
-    "effect": "[When Digivolving] You may play 1 level 4 or lower blue Digimon card and/or 1 level 4 or lower green Digimon card from this Digimon's digivolution cards without paying their memory costs.",
-    "digivolveEffect": "-",
-    "securityEffect": "-",
-    "notes": "THEME BOOSTER -DIGITAL HAZRAD-[EX-02] Box Promotion,DIGIMON CARD GAME ADVENTURE BOX [AB-01] Box Promotion",
-    "color": "Blue/Green",
-    "version": "AA",
-    "block": [
-      "01"
-    ],
-    "restriction": "",
-    "illustrator": "Nakano Haito"
-  },
+      "dnaDigivolve": "-",
+      "effect": "[When Digivolving] You may play 1 level 4 or lower blue Digimon card and/or 1 level 4 or lower green Digimon card from this Digimon's digivolution cards without paying their memory costs.",
+      "digivolveEffect": "-",
+      "securityEffect": "-",
+      "notes": "THEME BOOSTER -DIGITAL HAZRAD-[EX-02] Box Promotion,DIGIMON CARD GAME ADVENTURE BOX [AB-01] Box Promotion",
+      "color": "Blue/Green",
+      "version": "AA",
+      "block": [
+        "01"
+      ],
+      "restriction": "-",
+      "illustrator": "Nakano Haito"
+    },
   {
     "id": "ST9-07",
     "name": "KoKabuterimon",
@@ -266,7 +266,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "GOSSAN"
   },
   {
@@ -296,7 +296,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "sasasi"
   },
   {
@@ -326,7 +326,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "sasasi"
   },
   {
@@ -356,7 +356,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "koki"
   },
   {
@@ -386,7 +386,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "sasasi"
   },
   {
@@ -416,7 +416,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Nakano Haito"
   },
   {
@@ -446,7 +446,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "GOSSAN"
   },
   {
@@ -476,7 +476,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "Nakano Haito"
   },
   {
@@ -506,7 +506,7 @@
     "block": [
       "01"
     ],
-    "restriction": "",
+    "restriction": "-",
     "illustrator": "banira"
   }
 ]
