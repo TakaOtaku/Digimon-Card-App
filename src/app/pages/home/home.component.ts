@@ -1,25 +1,30 @@
-import { Component, EventEmitter, HostListener } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Store } from '@ngrx/store';
-import { AuthService } from '../../service/auth.service';
-import { DatabaseService } from '../../service/database.service';
-import { setDeck } from '../../store/digimon.actions';
+import {Component, EventEmitter, HostListener, OnDestroy, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {Store} from '@ngrx/store';
+import {Subject, takeUntil} from "rxjs";
 import * as uuid from 'uuid';
+import {DatabaseService} from '../../service/database.service';
+import {setDeck} from '../../store/digimon.actions';
+import {selectMobileCollectionView} from "../../store/digimon.selectors";
 
 @Component({
   selector: 'digimon-home',
   templateUrl: './home.component.html',
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit, OnDestroy {
   //region Accordions
   deckView = true;
   collectionView = true;
   showAccordionButtons = true;
   showStats = true;
   //endregion
+
+  mobileCollectionView = false;
+
   updateMainDeck = new EventEmitter<string>();
 
   private screenWidth: number;
+  private onDestroy$ = new Subject();
 
   constructor(
     private route: ActivatedRoute,
@@ -33,13 +38,27 @@ export class HomeComponent {
       this.databaseService.loadDeck(params['id']).subscribe((deck) => {
         this.store.dispatch(
           setDeck({
-            deck: { ...deck, id: uuid.v4(), rating: 0, ratingCount: 0 },
+            deck: {...deck, id: uuid.v4(), rating: 0, ratingCount: 0},
           })
         );
       });
     });
     this.onResize();
   }
+
+  ngOnInit() {
+    this.store
+      .select(selectMobileCollectionView)
+      .pipe(
+        takeUntil(this.onDestroy$)
+      )
+      .subscribe((mobileCollectionView) => (this.mobileCollectionView = mobileCollectionView));
+  }
+
+  ngOnDestroy(): void {
+    this.onDestroy$.next(true);
+  }
+
 
   @HostListener('window:resize', ['$event'])
   onResize() {

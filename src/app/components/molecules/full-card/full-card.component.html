@@ -58,32 +58,14 @@
       <span class="m-auto text-2xl font-thin">+</span>
     </button>
   </div>
-
-  <!--p-inputNumber
-		(onInput)="changeCardCount($event, card.id)"
-		*ngIf="collectionMode"
-		[(ngModel)]="count"
-		[inputStyle]="{ width: '100%', 'text-align': 'center' }"
-		[min]="0"
-		[readonly]="true"
-		[showButtons]="true"
-		[style]="{ width: '100%' }"
-		buttonLayout="vertical"
-		class="card-count"
-		decrementButtonClass="p-button-secondary"
-		decrementButtonIcon="pi pi-minus"
-		incrementButtonClass="p-button-secondary"
-		incrementButtonIcon="pi pi-plus"
-		placeholder="0"
-	></p-inputNumber-->
 </div>
 
 <p-dialog
-  [(visible)]="viewCardDialog"
-  [baseZIndex]="10000"
-  [showHeader]="false"
-  class="overflow-x-hidden"
-  (close)="viewCardDialog = false"
+        [(visible)]="viewCardDialog"
+        [baseZIndex]="100000"
+        [showHeader]="false"
+        class="overflow-x-hidden"
+        (close)="viewCardDialog = false"
 >
   <digimon-view-card-dialog [card]="card" (onClose)="viewCardDialog = false"></digimon-view-card-dialog>
 </p-dialog>

@@ -1,12 +1,12 @@
-import { createReducer, on } from '@ngrx/store';
+import {createReducer, on} from '@ngrx/store';
 import * as uuid from 'uuid';
-import { IDigimonState } from '../../../models';
-import { changeFilter, changeSort, setDeck } from '../digimon.actions';
+import {IDigimonState} from '../../../models';
+import {changeFilter, changeSort, setDeck, setMobileCollectionView} from '../digimon.actions';
 
 export const emptyDeck = {
   id: uuid.v4(),
   cards: [],
-  color: { name: 'White', img: 'assets/decks/white.svg' },
+  color: {name: 'White', img: 'assets/decks/white.svg'},
 };
 
 export const emptyFilter = {
@@ -35,6 +35,7 @@ export const emptyFilter = {
 export const initialState: IDigimonState = {
   deck: emptyDeck,
   filter: emptyFilter,
+  mobileCollectionView: false,
   sort: {
     sortBy: {
       name: 'ID',
@@ -46,7 +47,8 @@ export const initialState: IDigimonState = {
 
 export const digimonReducer = createReducer(
   initialState,
-  on(changeFilter, (state, { filter }) => ({ ...state, filter })),
-  on(changeSort, (state, { sort }) => ({ ...state, sort })),
-  on(setDeck, (state, { deck }) => ({ ...state, deck }))
+  on(changeFilter, (state, {filter}) => ({...state, filter})),
+  on(changeSort, (state, {sort}) => ({...state, sort})),
+  on(setDeck, (state, {deck}) => ({...state, deck})),
+  on(setMobileCollectionView, (state, {mobileCollectionView}) => ({...state, mobileCollectionView}))
 );

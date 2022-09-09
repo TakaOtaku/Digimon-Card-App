@@ -28,6 +28,11 @@ export const changeSort = createAction(
   props<{ sort: ISort }>()
 );
 
+export const setMobileCollectionView = createAction(
+  '[Settings] Change Mobile CollectionView',
+  props<{ mobileCollectionView: boolean }>()
+);
+
 export const changeCollectionMinimum = createAction(
   '[Settings] Change Collection Minimum',
   props<{ minimum: number }>()

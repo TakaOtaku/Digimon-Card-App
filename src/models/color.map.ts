@@ -12,36 +12,42 @@ export const ColorMap = new Map<string, string>([
   ['Red/Green', '#e7002c'],
   ['Red/Black', '#e7002c'],
   ['Red/Purple', '#e7002c'],
+  ['Red/White', '#e7002c'],
 
   ['Blue/Red', '#0097e1'],
   ['Blue/Yellow', '#0097e1'],
   ['Blue/Green', '#0097e1'],
   ['Blue/Black', '#0097e1'],
   ['Blue/Purple', '#0097e1'],
+  ['Blue/White', '#0097e1'],
 
   ['Yellow/Red', '#fee100'],
   ['Yellow/Blue', '#fee100'],
   ['Yellow/Green', '#fee100'],
   ['Yellow/Black', '#fee100'],
   ['Yellow/Purple', '#fee100'],
+  ['Yellow/White', '#fee100'],
 
   ['Green/Red', '#009c6b'],
   ['Green/Blue', '#009c6b'],
   ['Green/Yellow', '#009c6b'],
   ['Green/Black', '#009c6b'],
   ['Green/Purple', '#009c6b'],
+  ['Green/White', '#009c6b'],
 
   ['Black/Red', '#211813'],
   ['Black/Blue', '#211813'],
   ['Black/Yellow', '#211813'],
   ['Black/Green', '#211813'],
   ['Black/Purple', '#211813'],
+  ['Black/White', '#211813'],
 
   ['Purple/Red', '#6555a2'],
   ['Purple/Blue', '#6555a2'],
   ['Purple/Yellow', '#6555a2'],
   ['Purple/Green', '#6555a2'],
   ['Purple/Black', '#6555a2'],
+  ['Purple/White', '#6555a2'],
 ]);
 
 export const DeckColorMap = new Map<string, any>([
