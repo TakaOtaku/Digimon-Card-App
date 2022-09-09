@@ -1,5 +1,5 @@
 <div
-  class="relative inline-flex h-[calc(100vh-50px)] w-full flex-row overflow-hidden"
+  class="relative inline-flex h-[calc(100vh-50px)] w-full flex-row lg:overflow-hidden overflow-y-scroll"
 >
   <button
     *ngIf="showAccordionButtons"
@@ -47,7 +47,7 @@
   </button>
 
   <digimon-deck-stats
-    class="fixed"
+    class="fixed z-[300]"
     [collectionView]="collectionView"
     [showStats]="showStats"
   ></digimon-deck-stats>
