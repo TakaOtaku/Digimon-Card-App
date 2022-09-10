@@ -10,7 +10,6 @@
     <digimon-full-card
       *ngFor="let card of cardsToShow"
       class="m-1 scale-95 transition"
-      (addCard)="addToDeck($event)"
       [card]="card"
       [collectionMode]="collectionMode"
       [count]="getCount(card.id)"

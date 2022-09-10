@@ -72,14 +72,6 @@ export class PaginationCardListComponent implements OnInit, OnDestroy {
     return this.collection.find((value) => value.id === cardId)?.count ?? 0;
   }
 
-  addToDeck(card: ICard) {
-    if (this.collectionMode.value) {
-      return;
-    }
-
-    this.onCardClick.emit(card.id);
-  }
-
   onPageChange(event: any, slice?: number) {
     this.first = event.first;
     this.page = event.page;

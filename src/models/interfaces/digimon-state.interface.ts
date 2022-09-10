@@ -6,5 +6,6 @@ export interface IDigimonState {
   deck: IDeck;
   filter: IFilter;
   mobileCollectionView: boolean;
+  addCardToDeck: string;
   sort: ISort;
 }

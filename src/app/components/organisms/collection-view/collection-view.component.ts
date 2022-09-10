@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'digimon-collection-view',
@@ -7,5 +7,4 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class CollectionViewComponent {
   @Input() deckView: boolean;
-  @Output() onCardClick = new EventEmitter<string>();
 }

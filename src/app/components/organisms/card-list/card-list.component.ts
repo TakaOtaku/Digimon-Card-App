@@ -1,19 +1,8 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnDestroy,
-  OnInit,
-  Output,
-} from '@angular/core';
-import { Store } from '@ngrx/store';
-import { Subject, takeUntil } from 'rxjs';
-import { ICard, ICountCard } from '../../../../models';
-import {
-  selectCollection,
-  selectCollectionMode,
-  selectFilteredCards,
-} from '../../../store/digimon.selectors';
+import {Component, Input, OnDestroy, OnInit,} from '@angular/core';
+import {Store} from '@ngrx/store';
+import {Subject, takeUntil} from 'rxjs';
+import {ICard, ICountCard} from '../../../../models';
+import {selectCollection, selectCollectionMode, selectFilteredCards,} from '../../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-card-list',
@@ -21,8 +10,6 @@ import {
 })
 export class CardListComponent implements OnInit, OnDestroy {
   @Input() public showCount: number;
-
-  @Output() onCardClick = new EventEmitter<string>();
 
   cards: ICard[] = [];
   cardsToShow: ICard[] = [];
@@ -101,12 +88,5 @@ export class CardListComponent implements OnInit, OnDestroy {
     return (
       this.cards.length > this.cardsToShow.length && this.cardsToShow.length > 0
     );
-  }
-
-  /**
-   * Only in DeckBuilder-Mode add the clicked card to the current Deck
-   */
-  addToDeck(cardId: string) {
-    this.onCardClick.emit(cardId);
   }
 }

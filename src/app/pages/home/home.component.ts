@@ -1,4 +1,4 @@
-import {Component, EventEmitter, HostListener, OnDestroy, OnInit} from '@angular/core';
+import {Component, HostListener, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Store} from '@ngrx/store';
 import {Subject, takeUntil} from "rxjs";
@@ -20,8 +20,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   //endregion
 
   mobileCollectionView = false;
-
-  updateMainDeck = new EventEmitter<string>();
 
   private screenWidth: number;
   private onDestroy$ = new Subject();
@@ -92,10 +90,6 @@ export class HomeComponent implements OnInit, OnDestroy {
       'Show AccordionButtons: ',
       this.showAccordionButtons
     );
-  }
-
-  onCardClick(id: string) {
-    this.updateMainDeck.emit(id);
   }
 
   changeView(view: string) {

@@ -1,7 +1,7 @@
 import {createReducer, on} from '@ngrx/store';
 import * as uuid from 'uuid';
 import {IDigimonState} from '../../../models';
-import {changeFilter, changeSort, setDeck, setMobileCollectionView} from '../digimon.actions';
+import {addCardToDeck, changeFilter, changeSort, setDeck, setMobileCollectionView} from '../digimon.actions';
 
 export const emptyDeck = {
   id: uuid.v4(),
@@ -36,6 +36,7 @@ export const initialState: IDigimonState = {
   deck: emptyDeck,
   filter: emptyFilter,
   mobileCollectionView: false,
+  addCardToDeck: '',
   sort: {
     sortBy: {
       name: 'ID',
@@ -50,5 +51,6 @@ export const digimonReducer = createReducer(
   on(changeFilter, (state, {filter}) => ({...state, filter})),
   on(changeSort, (state, {sort}) => ({...state, sort})),
   on(setDeck, (state, {deck}) => ({...state, deck})),
-  on(setMobileCollectionView, (state, {mobileCollectionView}) => ({...state, mobileCollectionView}))
+  on(setMobileCollectionView, (state, {mobileCollectionView}) => ({...state, mobileCollectionView})),
+  on(addCardToDeck, (state, {addCardToDeck}) => ({...state, addCardToDeck}))
 );

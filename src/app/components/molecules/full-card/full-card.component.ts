@@ -1,20 +1,10 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnDestroy,
-  OnInit,
-  Output,
-} from '@angular/core';
-import { Store } from '@ngrx/store';
-import { Subject, takeUntil } from 'rxjs';
-import { englishCards } from '../../../../assets/cardlists/eng/english';
-import { ICard } from '../../../../models';
-import { changeCardCount } from '../../../store/digimon.actions';
-import {
-  selectCollectionMinimum,
-  selectDeck,
-} from '../../../store/digimon.selectors';
+import {Component, Input, OnDestroy, OnInit,} from '@angular/core';
+import {Store} from '@ngrx/store';
+import {Subject, takeUntil} from 'rxjs';
+import {englishCards} from '../../../../assets/cardlists/eng/english';
+import {ICard} from '../../../../models';
+import {addCardToDeck, changeCardCount} from '../../../store/digimon.actions';
+import {selectCollectionMinimum, selectDeck,} from '../../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-full-card',
@@ -32,8 +22,6 @@ export class FullCardComponent implements OnInit, OnDestroy {
   @Input() biggerCards?: boolean = false;
 
   @Input() deckView: boolean;
-
-  @Output() addCard = new EventEmitter<string>();
 
   cardWidth = 7 + 'vmin';
   cardBorder = '2px solid black';
@@ -80,10 +68,7 @@ export class FullCardComponent implements OnInit, OnDestroy {
   }
 
   addCardToDeck() {
-    this.addCard.emit(this.card.id);
-    //this.clickTimer = setTimeout(() => {
-    //  this.clickTest();
-    //}, 300);
+    this.store.dispatch(addCardToDeck({addCardToDeck: this.card.id}))
   }
 
   showCardDetails() {

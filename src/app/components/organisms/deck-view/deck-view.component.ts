@@ -1,45 +1,27 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnDestroy,
-  OnInit,
-  Output,
-} from '@angular/core';
-import { Store } from '@ngrx/store';
-import { ConfirmationService, MessageService } from 'primeng/api';
-import { filter, Subject, takeUntil } from 'rxjs';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output,} from '@angular/core';
+import {Store} from '@ngrx/store';
+import {ConfirmationService, MessageService} from 'primeng/api';
+import {filter, Subject, takeUntil} from 'rxjs';
 import * as uuid from 'uuid';
+import {DeckColorMap, ICard, ICountCard, IDeck, IDeckCard, ISave,} from '../../../../models';
+import {ITag} from '../../../../models/interfaces/tag.interface';
+import {compareIDs, deckIsValid, sortColors,} from '../../../functions/digimon-card.functions';
+import {AuthService} from '../../../service/auth.service';
+import {DatabaseService} from '../../../service/database.service';
+import {addCardToDeck, importDeck, setDeck} from '../../../store/digimon.actions';
 import {
-  DeckColorMap,
-  ICard,
-  ICountCard,
-  IDeck,
-  IDeckCard,
-  ISave,
-} from '../../../../models';
-import { ITag } from '../../../../models/interfaces/tag.interface';
-import {
-  compareIDs,
-  deckIsValid,
-  sortColors,
-} from '../../../functions/digimon-card.functions';
-import { AuthService } from '../../../service/auth.service';
-import { DatabaseService } from '../../../service/database.service';
-import { importDeck, setDeck } from '../../../store/digimon.actions';
-import {
+  selectAddCardToDeck,
   selectCollection,
   selectDeckBuilderViewModel,
   selectSave,
 } from '../../../store/digimon.selectors';
-import { emptyDeck } from '../../../store/reducers/digimon.reducers';
+import {emptyDeck} from '../../../store/reducers/digimon.reducers';
 
 @Component({
   selector: 'digimon-deck-view',
   templateUrl: './deck-view.component.html',
 })
 export class DeckViewComponent implements OnInit, OnDestroy {
-  @Input() updateMainDeck: EventEmitter<string>;
   @Input() collectionView: boolean;
   @Output() onMainDeck = new EventEmitter<IDeckCard[]>();
 
@@ -108,9 +90,16 @@ export class DeckViewComponent implements OnInit, OnDestroy {
         }
       });
 
-    this.updateMainDeck
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((id) => this.onCardClick(id));
+    this.store
+      .select(selectAddCardToDeck)
+      .pipe(
+        takeUntil(this.onDestroy$),
+        filter((value) => !!value)
+      )
+      .subscribe((cardToAdd) => {
+        this.onCardClick(cardToAdd);
+        this.store.dispatch(addCardToDeck({addCardToDeck: ''}))
+      });
   }
 
   ngOnDestroy() {

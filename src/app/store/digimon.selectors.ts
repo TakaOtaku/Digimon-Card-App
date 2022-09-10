@@ -24,6 +24,11 @@ export const selectMobileCollectionView = createSelector(
   selectDigimonState,
   (state: IDigimonState) => state.mobileCollectionView
 );
+
+export const selectAddCardToDeck = createSelector(
+  selectDigimonState,
+  (state: IDigimonState) => state.addCardToDeck
+);
 //endregion
 
 //region Digimon Card Selectors

@@ -42,6 +42,11 @@ export const changeShowVersion = createAction(
   '[Settings] Change Show Version',
   props<{ showPre: boolean; showAA: boolean; showStamp: boolean }>()
 );
+
+export const addCardToDeck = createAction(
+  '[Deck] Add Card to Deck',
+  props<{ addCardToDeck: string }>()
+);
 //endregion
 
 //region Save Actions

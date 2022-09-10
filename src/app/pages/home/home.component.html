@@ -1,4 +1,4 @@
-<div *ngIf="!mobileCollectionView"
+<div [ngClass]="{'hidden': mobileCollectionView }"
      class="relative inline-flex h-[calc(100vh-50px)] w-full flex-row lg:overflow-hidden overflow-y-scroll"
 >
   <button
@@ -19,7 +19,6 @@
   >
     <digimon-deck-view
       [collectionView]="collectionView"
-      [updateMainDeck]="updateMainDeck"
     ></digimon-deck-view>
   </div>
 
@@ -31,7 +30,6 @@
     <digimon-collection-view
       class="max-h-full h-full"
       [deckView]="deckView"
-      (onCardClick)="onCardClick($event)"
     ></digimon-collection-view>
   </div>
   <button
@@ -53,14 +51,13 @@
   ></digimon-deck-stats>
 </div>
 
-<div *ngIf="mobileCollectionView" class="h-[calc(100vh-58px)] overflow-y-scroll">
+<div [ngClass]="{'hidden': !mobileCollectionView }" class="h-[calc(100vh-58px)] overflow-y-scroll">
   <div class="h-full w-full">
     <digimon-filter-and-search
       [compact]="true"
       class="w-100"
     ></digimon-filter-and-search>
     <digimon-card-list
-      (onCardClick)="onCardClick($event)"
       [showCount]="32"
     ></digimon-card-list>
   </div>

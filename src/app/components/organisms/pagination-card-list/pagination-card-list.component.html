@@ -42,7 +42,6 @@
   <digimon-full-card
     *ngFor="let card of cardsToShow"
     [collectionMode]="collectionMode.value"
-    (addCard)="addToDeck(card)"
     [deckView]="deckView"
     [card]="card"
     [count]="getCount(card.id)"
