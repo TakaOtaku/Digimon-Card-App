@@ -159,7 +159,7 @@ Project Link: [https://github.com/TakaOtaku/Digimon-Card-App](https://github.com
 
 ## Donations
 
-* Khem M. , Alec S., Joshua P., Ηρακλής Χ.
+* Khem M. , Alec S., Joshua P., Ηρακλής Χ., Ebikinei E.
 
 
 
