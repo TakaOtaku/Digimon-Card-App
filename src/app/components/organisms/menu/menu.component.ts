@@ -127,9 +127,8 @@ export class MenuComponent implements OnInit, OnDestroy {
   }
 
   update() {
-    const user = this.authService.userData?.displayName ?? 'Unknown';
     const userMenu = {
-      label: 'User: ' + user,
+      label: 'Sites',
       items: [
         {
           label: 'Home',
@@ -142,7 +141,7 @@ export class MenuComponent implements OnInit, OnDestroy {
           command: () => this.router.navigateByUrl('/user'),
         },
         {
-          label: 'Community Decks',
+          label: 'Community',
           icon: 'pi pi-database',
           command: () => this.router.navigateByUrl('/community'),
         },
@@ -162,19 +161,14 @@ export class MenuComponent implements OnInit, OnDestroy {
           },
         },
         {
-          label: 'Import/Export',
-          icon: 'pi pi-upload',
-          command: () => (this.display = !this.display),
-        },
-        {
           label: 'Settings',
           icon: 'pi pi-cog',
           command: () => (this.settingsDialog = true),
         },
         {
-          label: 'Credits',
-          icon: 'pi pi-file',
-          command: () => (this.creditsDisplay = true),
+          label: 'Import/Export',
+          icon: 'pi pi-upload',
+          command: () => (this.display = !this.display),
         },
       ],
     };
@@ -185,7 +179,7 @@ export class MenuComponent implements OnInit, OnDestroy {
         {
           label: 'What I work on',
           icon: 'pi pi-history',
-          url: 'https://github.com/users/TakaOtaku/projects/1/views/1?layout=board',
+          url: 'https://github.com/users/TakaOtaku/projects/1/views/3',
         },
         {
           label: 'Feature/Bug Request',
@@ -196,6 +190,11 @@ export class MenuComponent implements OnInit, OnDestroy {
           label: 'Help the Site!',
           icon: 'pi pi-paypal',
           url: 'https://www.paypal.com/donate/?hosted_button_id=WLM58Q785D4H4',
+        },
+        {
+          label: 'Credits',
+          icon: 'pi pi-file',
+          command: () => (this.creditsDisplay = true),
         },
       ],
     };

@@ -112,6 +112,7 @@
     (clickEvent)="changeCardType($event)"
     [buttonArray]="cardTypeButtons"
     [filterFormControl]="cardTypeFilter"
+    [perRow]="4"
     title="Card-Types"
   ></digimon-multi-buttons>
 
@@ -175,6 +176,7 @@
     (clickEvent)="changeRarity($event)"
     [buttonArray]="rarityButtons"
     [filterFormControl]="rarityFilter"
+    [perRow]="6"
     title="Rarity"
   ></digimon-multi-buttons>
 
@@ -182,6 +184,7 @@
     (clickEvent)="changeVersion($event)"
     [buttonArray]="versionButtons"
     [filterFormControl]="versionFilter"
+    [perRow]="4"
     title="Version"
   ></digimon-multi-buttons>
 

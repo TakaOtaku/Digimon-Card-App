@@ -1,14 +1,25 @@
-import { Component } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
-import { Store } from '@ngrx/store';
-import { MessageService } from 'primeng/api';
-import { first } from 'rxjs';
-import { ISave } from '../models';
-import { AuthService } from './service/auth.service';
-import { DatabaseService } from './service/database.service';
-import { loadSave, setSave } from './store/digimon.actions';
-import { emptySave } from './store/reducers/save.reducer';
+import {Component} from '@angular/core';
+import {Meta, Title} from '@angular/platform-browser';
+import {Store} from '@ngrx/store';
+import {MessageService} from 'primeng/api';
+import {first} from 'rxjs';
+import {ISave} from '../models';
+import {AuthService} from './service/auth.service';
+import {DatabaseService} from './service/database.service';
+import {loadSave, setSave} from './store/digimon.actions';
+import {emptySave} from './store/reducers/save.reducer';
 
+/**
+ * Make the Website SEO-Friendly
+ * Block right-clicking
+ * Check for a Save in the local Storage
+ *  found: Load the current save from the database
+ *  not found: Ask the user to login or create a new save
+ *    new save: Create a New Save
+ *    login: Try to login with google
+ *      success: Log-in with Google
+ *      error: try again or contact me
+ */
 @Component({
   selector: 'digimon-root',
   templateUrl: './app.component.html',
