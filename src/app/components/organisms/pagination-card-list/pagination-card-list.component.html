@@ -1,6 +1,6 @@
 <digimon-sort-buttons></digimon-sort-buttons>
 
-<div class="align-items-center surface-card flex h-14 flex-row justify-evenly">
+<div class="align-items-center surface-card flex h-10 flex-row justify-evenly">
   <div class="col-span-2 my-auto">
     <p-paginator
       (onPageChange)="onPageChange($event)"
@@ -9,11 +9,11 @@
       [showJumpToPageDropdown]="true"
       [showPageLinks]="false"
       [totalRecords]="cards.length"
-      styleClass="border-0 h-12"
+      styleClass="border-0 h-10"
     ></p-paginator>
   </div>
 
-  <div class="m-auto flex flex-row justify-center">
+  <div class="m-auto flex flex-row justify-center mt-2">
     <span class="text-xs font-bold leading-9 text-white">Collection Mode:</span>
     <input
       type="checkbox"
