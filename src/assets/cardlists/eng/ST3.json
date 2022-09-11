@@ -700,6 +700,37 @@
     "illustrator": ""
   },
   {
+    "id": "ST3-12_P1",
+    "name": "T.K. Takaishi",
+    "cardImage": "assets/images/cards/eng/ST3-12_P1.webp",
+    "cardType": "Tamer",
+    "dp": "-",
+    "playCost": "2",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "-",
+    "rarity": "R",
+    "cardNumber": "ST3-12",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Opponent's Turn] All of your Security Digimon get +2000 DP.",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Play this card without paying its memory cost.",
+    "notes": "▹Starter Deck, JESMON [ST-12], ▹Starter Deck, RAGNALOARDMON [ST-13]",
+    "color": "Yellow",
+    "version": "AA",
+    "block": [
+      "00",
+      "02"
+    ],
+    "restriction": "-",
+    "illustrator": ""
+  },
+  {
     "id": "ST3-13",
     "name": "Heaven's Gate",
     "cardImage": "assets/images/cards/eng/ST3-13.webp",

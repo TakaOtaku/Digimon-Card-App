@@ -599,7 +599,8 @@
     "color": "Red",
     "version": "Normal",
     "block": [
-      "00"
+      "00",
+      "01"
     ],
     "restriction": "-",
     "illustrator": "tyuga"
@@ -629,7 +630,39 @@
     "color": "Red",
     "version": "Stamp",
     "block": [
-      "00"
+      "00",
+      "01"
+    ],
+    "restriction": "-",
+    "illustrator": "tyuga"
+  },
+  {
+    "id": "BT5-012_P2",
+    "name": "Monochromon",
+    "cardImage": "assets/images/cards/eng/BT5-012_P2.webp",
+    "cardType": "Digimon",
+    "dp": "5000",
+    "playCost": "6",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Data",
+    "type": "Ankylosaur",
+    "rarity": "C",
+    "cardNumber": "BT5-012",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "＜Blocker＞ (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)\n[When Attacking] Lose 2 memory.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "ST-11 SPECIAL ENTRY PACK",
+    "color": "Red",
+    "version": "AA",
+    "block": [
+      "00",
+      "01"
     ],
     "restriction": "-",
     "illustrator": "tyuga"

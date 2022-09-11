@@ -115,7 +115,8 @@
     "version": "Normal",
     "block": [
       "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Nakano Haito"
@@ -146,10 +147,43 @@
     "version": "AA",
     "block": [
       "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Kayo Horaguchi"
+  },
+  {
+    "id": "ST3-04_P2",
+    "name": "Patamon",
+    "cardImage": "assets/images/cards/jap/ST3-04_P2.webp",
+    "cardType": "Digimon",
+    "dp": "1000",
+    "playCost": "3",
+    "digivolveCost1": "0  from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Data",
+    "type": "Mammal",
+    "rarity": "U",
+    "cardNumber": "ST3-04",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When an opponent's Digimon is deleted by dropping to 0 DP, gain 1 memory.",
+    "securityEffect": "-",
+    "notes": "Special Promotion Pack 2022 Ver.3.0",
+    "color": "Yellow",
+    "version": "AA",
+    "block": [
+      "00",
+      "01",
+      "02"
+    ],
+    "restriction": "-",
+    "illustrator": "Qacoro"
   },
   {
     "id": "ST3-05",

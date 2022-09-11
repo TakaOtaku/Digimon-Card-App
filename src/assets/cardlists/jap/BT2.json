@@ -2452,10 +2452,42 @@
     "color": "Black",
     "version": "Normal",
     "block": [
-      "00"
+      "00",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "kaz"
+  },
+  {
+    "id": "BT2-052_P1",
+    "name": "Hagurumon",
+    "cardImage": "assets/images/cards/jap/BT2-052_P1.webp",
+    "cardType": "Digimon",
+    "dp": "3000",
+    "playCost": "2",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Virus",
+    "type": "Machine",
+    "rarity": "C",
+    "cardNumber": "BT2-052",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Special Promotion Pack 2022 Ver.3.0",
+    "color": "Black",
+    "version": "AA",
+    "block": [
+      "00",
+      "02"
+    ],
+    "restriction": "-",
+    "illustrator": "Kazumasa Yasukuni"
   },
   {
     "id": "BT2-053",
