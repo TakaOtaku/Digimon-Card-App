@@ -546,6 +546,37 @@
     "illustrator": ""
   },
   {
+    "id": "ST6-14_P1",
+    "name": "Matt Ishida",
+    "cardImage": "assets/images/cards/eng/ST6-14_P1.webp",
+    "cardType": "Tamer",
+    "dp": "-",
+    "playCost": "2",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "-",
+    "rarity": "R",
+    "cardNumber": "ST6-14",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Your Turn] When one of your Digimon is deleted, you may suspend this Tamer to gain 1 memory.",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Play this card without paying its memory cost.",
+    "notes": "▹Starter Deck, JESMON [ST-12], ▹Starter Deck, RAGNALOARDMON [ST-13]",
+    "color": "Purple",
+    "version": "AA",
+    "block": [
+      "00",
+      "02"
+    ],
+    "restriction": "-",
+    "illustrator": ""
+  },
+  {
     "id": "ST6-15",
     "name": "Death Claw",
     "cardImage": "assets/images/cards/eng/ST6-15.webp",

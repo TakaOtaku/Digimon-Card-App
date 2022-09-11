@@ -883,6 +883,37 @@
     "illustrator": "tyuga"
   },
   {
+    "id": "BT1-023_P1",
+    "name": "SkullGreymon",
+    "cardImage": "assets/images/cards/eng/BT1-023_P1.webp",
+    "cardType": "Digimon",
+    "dp": "7000",
+    "playCost": "7",
+    "digivolveCost1": "3 from Lv.4",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.5",
+    "form": "Ultimate",
+    "attribute": "Virus",
+    "type": "Undead",
+    "rarity": "R",
+    "cardNumber": "BT1-023",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Play] Delete 1 of your opponent's Digimon with ＜Blocker＞.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "ST-11 SPECIAL ENTRY PACK",
+    "color": "Red",
+    "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
+    "restriction": "-",
+    "illustrator": "shosuke"
+  },
+  {
     "id": "BT1-024",
     "name": "MetalTyrannomon",
     "cardImage": "assets/images/cards/eng/BT1-024.webp",
@@ -937,7 +968,8 @@
     "color": "Red",
     "version": "Normal",
     "block": [
-      "00"
+      "00",
+      "01"
     ],
     "restriction": "-",
     "illustrator": "TANIMESO"
@@ -967,10 +999,42 @@
     "color": "Red",
     "version": "AA",
     "block": [
-      "00"
+      "00",
+      "01"
     ],
     "restriction": "-",
     "illustrator": "As'Maria"
+  },
+  {
+    "id": "BT1-025_P2",
+    "name": "WarGreymon",
+    "cardImage": "assets/images/cards/eng/BT1-025_P2.webp",
+    "cardType": "Digimon",
+    "dp": "11000",
+    "playCost": "12",
+    "digivolveCost1": "3 from Lv.5",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Vaccine",
+    "type": "Dragonkin",
+    "rarity": "SR",
+    "cardNumber": "BT1-025",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Digivolving] This Digimon gains ＜Security Attack +1＞ (This Digimon checks 1 additional security card) for the turn.\n[Your Turn] This Digimon doesn't activate [Security] effects on Option cards it checks.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "ST-11 SPECIAL ENTRY PACK",
+    "color": "Red",
+    "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
+    "restriction": "-",
+    "illustrator": "Hokyyuu"
   },
   {
     "id": "BT1-026",
@@ -3884,6 +3948,37 @@
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
     "notes": "RELEASE SPECIAL BOOSTER Ver.1.0【BT01-03】Box Promotion",
+    "color": "Red",
+    "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
+    "restriction": "-",
+    "illustrator": ""
+  },
+  {
+    "id": "BT1-085_P2",
+    "name": "Tai Kamiya",
+    "cardImage": "assets/images/cards/eng/BT1-085_P2.webp",
+    "cardType": "Tamer",
+    "dp": "-",
+    "playCost": "4",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "-",
+    "rarity": "R",
+    "cardNumber": "BT1-085",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Start of Your Turn] If you have 2 or less memory， set your memory to 3.\n[Your Turn] All of your red Digimon with 4 or more digivolution cards gain ＜Security Attack +1＞ (This Digimon checks 1 additional security card).",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Play this card without paying its memory cost.",
+    "notes": "ST-11 SPECIAL ENTRY PACK",
     "color": "Red",
     "version": "AA",
     "block": [
