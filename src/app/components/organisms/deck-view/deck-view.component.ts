@@ -289,44 +289,38 @@ export class DeckViewComponent implements OnInit, OnDestroy {
       .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
 
     const red = this.mainDeck
-      .filter((card) => card.color === 'Red' && card.cardType === 'Digimon')
+      .filter((card) => card.color.startsWith('Red') && card.cardType === 'Digimon')
       .sort(
         (a, b) => a.cardLv.localeCompare(b.cardLv) || a.id.localeCompare(b.id)
       );
     const blue = this.mainDeck
-      .filter((card) => card.color === 'Blue' && card.cardType === 'Digimon')
+      .filter((card) => card.color.startsWith('Blue') && card.cardType === 'Digimon')
       .sort(
         (a, b) => a.cardLv.localeCompare(b.cardLv) || a.id.localeCompare(b.id)
       );
     const yellow = this.mainDeck
-      .filter((card) => card.color === 'Yellow' && card.cardType === 'Digimon')
+      .filter((card) => card.color.startsWith('Yellow') && card.cardType === 'Digimon')
       .sort(
         (a, b) => a.cardLv.localeCompare(b.cardLv) || a.id.localeCompare(b.id)
       );
     const green = this.mainDeck
-      .filter((card) => card.color === 'Green' && card.cardType === 'Digimon')
+      .filter((card) => card.color.startsWith('Green') && card.cardType === 'Digimon')
       .sort(
         (a, b) => a.cardLv.localeCompare(b.cardLv) || a.id.localeCompare(b.id)
       );
     const black = this.mainDeck
-      .filter((card) => card.color === 'Black' && card.cardType === 'Digimon')
+      .filter((card) => card.color.startsWith('Black') && card.cardType === 'Digimon')
       .sort(
         (a, b) => a.cardLv.localeCompare(b.cardLv) || a.id.localeCompare(b.id)
       );
     const purple = this.mainDeck
-      .filter((card) => card.color === 'Purple' && card.cardType === 'Digimon')
+      .filter((card) => card.color.startsWith('Purple') && card.cardType === 'Digimon')
       .sort(
         (a, b) => a.cardLv.localeCompare(b.cardLv) || a.id.localeCompare(b.id)
       );
 
     const white = this.mainDeck
-      .filter((card) => card.color === 'White' && card.cardType === 'Digimon')
-      .sort(
-        (a, b) => a.cardLv.localeCompare(b.cardLv) || a.id.localeCompare(b.id)
-      );
-
-    const multi = this.mainDeck
-      .filter((card) => card.color.includes('/') && card.cardType === 'Digimon')
+      .filter((card) => card.color.startsWith('White') && card.cardType === 'Digimon')
       .sort(
         (a, b) => a.cardLv.localeCompare(b.cardLv) || a.id.localeCompare(b.id)
       );
@@ -349,7 +343,6 @@ export class DeckViewComponent implements OnInit, OnDestroy {
         ...black,
         ...purple,
         ...white,
-        ...multi,
         ...tamer,
         ...options,
       ]),
