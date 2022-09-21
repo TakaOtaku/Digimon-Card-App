@@ -377,7 +377,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 card with [Huckmon] in its name or [Royal Knight] in its traits among them to your hand. Trash the rest.\n[All Turns] All of your Digimon with [Huckmon] in their names and [Royal Knight] in their traits gain ＜Reboot＞. (Unsuspend this Digimon during your opponent's unsuspend phase.)*Also treat as if name is [Sistermon Ciel] and traits include [Data].",
+    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 card with [Huckmon] in its name or [Royal Knight] in its traits among them to your hand. Trash the rest.\n[All Turns] All of your Digimon with [Huckmon] in their names and [Royal Knight] in their traits gain ＜Reboot＞. (Unsuspend this Digimon during your opponent's unsuspend phase.)\n*Also treat as if name is [Sistermon Ciel] and traits include [Data].",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹start deck JESMON[ST-12]",
