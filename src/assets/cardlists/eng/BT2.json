@@ -3825,6 +3825,7 @@
     "color": "Purple",
     "version": "Normal",
     "block": [
+      "00",
       "00"
     ],
     "restriction": "-",

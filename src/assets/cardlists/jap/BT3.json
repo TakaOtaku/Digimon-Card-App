@@ -842,7 +842,8 @@
     "version": "Normal",
     "block": [
       "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Tonamikanji"
@@ -868,15 +869,80 @@
     "effect": "＜Jamming＞ (This Digimon can't be deleted in battles against Security Digimon.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
+    "notes": "1st year Anniversary BT-06 Special Box Topper",
     "color": "Blue",
     "version": "AA",
     "block": [
       "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Takase"
+  },
+  {
+    "id": "BT3-021_P2",
+    "name": "Veemon",
+    "cardImage": "assets/images/cards/jap/BT3-021_P2.webp",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Free",
+    "type": "Mini Dragon",
+    "rarity": "R",
+    "cardNumber": "BT3-021",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "＜Jamming＞ (This Digimon can't be deleted in battles against Security Digimon.)",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Tamer Battle Pack 14",
+    "color": "Blue",
+    "version": "AA",
+    "block": [
+      "00",
+      "01",
+      "02"
+    ],
+    "restriction": "-",
+    "illustrator": "koki"
+  },
+  {
+    "id": "BT3-021_P3",
+    "name": "Veemon",
+    "cardImage": "assets/images/cards/jap/BT3-021_P3.webp",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Free",
+    "type": "Mini Dragon",
+    "rarity": "R",
+    "cardNumber": "BT3-021",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "＜Jamming＞ (This Digimon can't be deleted in battles against Security Digimon.)",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Winner prize for Oct.2022 Tamer Battle",
+    "color": "Blue",
+    "version": "AA",
+    "block": [
+      "00",
+      "01",
+      "02"
+    ],
+    "restriction": "-",
+    "illustrator": "koki"
   },
   {
     "id": "BT3-022",
@@ -1656,7 +1722,7 @@
     "effect": "[When Digivolving] 1 of your opponent's Digimon gains ＜Security Attack -2＞ (This Digimon checks 2 fewer security cards) until the end of your opponent's next turn.",
     "digivolveEffect": "[When Attacking] If you have 3 or fewer security cards, you may play 1 yellow level 3 Digimon card from your hand without paying its memory cost.",
     "securityEffect": "-",
-    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
+    "notes": "1st year Anniversary BT-06 Special Box Topper",
     "color": "Yellow",
     "version": "AA",
     "block": [
@@ -1928,7 +1994,7 @@
     "effect": "[All Turns] Your opponent can't gain memory except with Tamer effects.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
+    "notes": "1st year Anniversary BT-06 Special Box Topper",
     "color": "Green",
     "version": "AA",
     "block": [
@@ -2506,7 +2572,7 @@
     "effect": "[When Digivolving] Suspend 1 of your opponent's Digimon. It doesn't unsuspend during your opponent's next unsuspend phase.\n[Your Turn] While your opponent has a suspended Digimon in play, this Digimon gains ＜Security Attack +1＞. (This Digimon checks 1 additional security card.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹booster DOUBLE DIAMOND [BT-06]",
+    "notes": "1st year Anniversary BT-06 Special Box Topper",
     "color": "Green",
     "version": "AA",
     "block": [

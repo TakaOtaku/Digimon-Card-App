@@ -993,7 +993,8 @@
     "version": "Normal",
     "block": [
       "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Tonamikanji"
@@ -1024,7 +1025,8 @@
     "version": "AA",
     "block": [
       "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Takase"
@@ -1055,7 +1057,8 @@
     "version": "Stamp",
     "block": [
       "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Takase"
