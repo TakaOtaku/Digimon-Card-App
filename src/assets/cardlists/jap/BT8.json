@@ -2434,6 +2434,37 @@
     "illustrator": "As'Maria"
   },
   {
+    "id": "BT8-064_P1",
+    "name": "Greymon",
+    "cardImage": "assets/images/cards/jap/BT8-064_P1.webp",
+    "cardType": "Digimon",
+    "dp": "6000",
+    "playCost": "5",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "2 from Lv.3",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Virus",
+    "type": "Dinosaur",
+    "rarity": "C",
+    "cardNumber": "BT8-064",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "[Opponent's Turn] While you have a red Digimon in play, this Digimon gains ＜Blocker＞. (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)",
+    "securityEffect": "-",
+    "notes": "Tamer Battle Pack 14",
+    "color": "Black",
+    "version": "AA",
+    "block": [
+      "01",
+      "02"
+    ],
+    "restriction": "-",
+    "illustrator": "GOSSAN"
+  },
+  {
     "id": "BT8-065",
     "name": "CatchMamemon",
     "cardImage": "assets/images/cards/jap/BT8-065.webp",

@@ -3825,7 +3825,8 @@
     "color": "Purple",
     "version": "Normal",
     "block": [
-      "00"
+      "00",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Takase"

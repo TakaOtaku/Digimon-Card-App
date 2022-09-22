@@ -2,7 +2,7 @@
   {
     "id": "ST12-01",
     "name": "Gurimon",
-    "cardImage": "assets/images/cards/jap/ST12-01.webp",
+    "cardImage": "assets/images/cards/eng/ST12-01.webp",
     "cardType": "Digi-Egg",
     "dp": "-",
     "playCost": "-",
@@ -20,7 +20,7 @@
     "effect": "-",
     "digivolveEffect": "[Your Turn] While you have 2 or more Digimon in play, this Digimon gets +1000 DP.",
     "securityEffect": "-",
-    "notes": "▹start deck JESMON[ST-12]",
+    "notes": "▹Starter Deck, JESMON [ST-12]",
     "color": "Red",
     "version": "Normal",
     "block": [
@@ -32,7 +32,7 @@
   {
     "id": "ST12-02",
     "name": "Candlemon",
-    "cardImage": "assets/images/cards/jap/ST12-02.webp",
+    "cardImage": "assets/images/cards/eng/ST12-02.webp",
     "cardType": "Digimon",
     "dp": "3000",
     "playCost": "2",
@@ -50,7 +50,7 @@
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹start deck JESMON[ST-12]",
+    "notes": "▹Starter Deck, JESMON [ST-12]",
     "color": "Red",
     "version": "Normal",
     "block": [
@@ -62,7 +62,7 @@
   {
     "id": "ST12-03",
     "name": "Solarmon",
-    "cardImage": "assets/images/cards/jap/ST12-03.webp",
+    "cardImage": "assets/images/cards/eng/ST12-03.webp",
     "cardType": "Digimon",
     "dp": "3000",
     "playCost": "3",
@@ -80,7 +80,7 @@
     "effect": "[All Turns] Players can't reduce play costs.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹start deck JESMON[ST-12]",
+    "notes": "▹Starter Deck, JESMON [ST-12]",
     "color": "Red",
     "version": "Normal",
     "block": [
@@ -92,7 +92,7 @@
   {
     "id": "ST12-04",
     "name": "Huckmon",
-    "cardImage": "assets/images/cards/jap/ST12-04.webp",
+    "cardImage": "assets/images/cards/eng/ST12-04.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -110,7 +110,7 @@
     "effect": "[Your Turn] [Once Per Turn] When you play a Digimon with [Sistermon] in its name, gain 1 memory.",
     "digivolveEffect": "[All Turns] While this Digimon has [Huckmon] in its name or [Royal Knight] in its traits, it gets +1000 DP.",
     "securityEffect": "-",
-    "notes": "▹start deck JESMON[ST-12]",
+    "notes": "▹Starter Deck, JESMON [ST-12]",
     "color": "Red",
     "version": "Normal",
     "block": [
@@ -122,7 +122,7 @@
   {
     "id": "ST12-05",
     "name": "Meramon",
-    "cardImage": "assets/images/cards/jap/ST12-05.webp",
+    "cardImage": "assets/images/cards/eng/ST12-05.webp",
     "cardType": "Digimon",
     "dp": "4000",
     "playCost": "4",
@@ -140,7 +140,7 @@
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹start deck JESMON[ST-12]",
+    "notes": "▹Starter Deck, JESMON [ST-12]",
     "color": "Red",
     "version": "Normal",
     "block": [
@@ -152,7 +152,7 @@
   {
     "id": "ST12-06",
     "name": "BaoHuckmon",
-    "cardImage": "assets/images/cards/jap/ST12-06.webp",
+    "cardImage": "assets/images/cards/eng/ST12-06.webp",
     "cardType": "Digimon",
     "dp": "6000",
     "playCost": "5",
@@ -170,7 +170,7 @@
     "effect": "-",
     "digivolveEffect": "[All Turns] While this Digimon has [Huckmon] in its name or [Royal Knight] in its traits, it gets +1000 DP.",
     "securityEffect": "-",
-    "notes": "▹start deck JESMON[ST-12]",
+    "notes": "▹Starter Deck, JESMON [ST-12]",
     "color": "Red",
     "version": "Normal",
     "block": [
@@ -182,7 +182,7 @@
   {
     "id": "ST12-07",
     "name": "SkullMeramon",
-    "cardImage": "assets/images/cards/jap/ST12-07.webp",
+    "cardImage": "assets/images/cards/eng/ST12-07.webp",
     "cardType": "Digimon",
     "dp": "9000",
     "playCost": "6",
@@ -200,7 +200,7 @@
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹start deck JESMON[ST-12]",
+    "notes": "▹Starter Deck, JESMON [ST-12]",
     "color": "Red",
     "version": "Normal",
     "block": [
@@ -212,7 +212,7 @@
   {
     "id": "ST12-08",
     "name": "SaviorHuckmon",
-    "cardImage": "assets/images/cards/jap/ST12-08.webp",
+    "cardImage": "assets/images/cards/eng/ST12-08.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "7",
@@ -230,7 +230,7 @@
     "effect": "[When Digivolving] This Digimon may also attack your opponent's unsuspended Digimon for the turn.",
     "digivolveEffect": "[When Attacking] [Once Per Turn] If this Digimon has [Royal Knight] in its traits, you may play 1 Digimon card with [Sistermon] in its name from your hand or trash without paying its memory cost.",
     "securityEffect": "-",
-    "notes": "▹start deck JESMON[ST-12]",
+    "notes": "▹Starter Deck, JESMON [ST-12]",
     "color": "Red",
     "version": "Normal",
     "block": [
@@ -242,7 +242,7 @@
   {
     "id": "ST12-09",
     "name": "Volcanomon",
-    "cardImage": "assets/images/cards/jap/ST12-09.webp",
+    "cardImage": "assets/images/cards/eng/ST12-09.webp",
     "cardType": "Digimon",
     "dp": "9000",
     "playCost": "8",
@@ -260,7 +260,7 @@
     "effect": "＜Blocker＞ (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)",
     "digivolveEffect": "＜Security Attack +1＞ (This Digimon checks 1 additional security card.)",
     "securityEffect": "-",
-    "notes": "▹start deck JESMON[ST-12]",
+    "notes": "▹Starter Deck, JESMON [ST-12]",
     "color": "Red/Black",
     "version": "Normal",
     "block": [
@@ -272,7 +272,7 @@
   {
     "id": "ST12-10",
     "name": "Jesmon",
-    "cardImage": "assets/images/cards/jap/ST12-10.webp",
+    "cardImage": "assets/images/cards/eng/ST12-10.webp",
     "cardType": "Digimon",
     "dp": "12000",
     "playCost": "12",
@@ -290,7 +290,7 @@
     "effect": "[When Digivolving] ＜Blitz＞ (This Digimon can attack when your opponent has 1 or more memory.)\n[When Attacking] You may play 1 Digimon card with [Sistermon] in its name from your hand without paying its memory cost.\n[Your Turn] [Once Per Turn] When you play another Digimon by an effect, this Digimon gets +3000 DP and gains ＜Security Attack +1＞ for the turn. (This Digimon checks 1 additional security card.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹start deck JESMON[ST-12]",
+    "notes": "▹Starter Deck, JESMON [ST-12]",
     "color": "Red",
     "version": "Normal",
     "block": [
@@ -302,7 +302,7 @@
   {
     "id": "ST12-11",
     "name": "Gankoomon",
-    "cardImage": "assets/images/cards/jap/ST12-11.webp",
+    "cardImage": "assets/images/cards/eng/ST12-11.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "12",
@@ -320,7 +320,7 @@
     "effect": "[When Digivolving] You may play 1 Digimon card with [Huckmon] or [Sistermon] in its name in your trash without paying its memory cost.\n[Your Turn] [Once Per Turn] When you play another Digimon by an effect, ＜De-Digivolve 1＞ up to 2 of your opponent's Digimon. (Trash 1 card from the top of one of your opponent's Digimon. If it has no digivolution cards, or becomes a level 3 Digimon, you can't trash any more cards.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹start deck JESMON[ST-12]",
+    "notes": "▹Starter Deck, JESMON [ST-12]",
     "color": "Black",
     "version": "Normal",
     "block": [
@@ -332,7 +332,7 @@
   {
     "id": "ST12-12",
     "name": "Sistermon Blanc",
-    "cardImage": "assets/images/cards/jap/ST12-12.webp",
+    "cardImage": "assets/images/cards/eng/ST12-12.webp",
     "cardType": "Digimon",
     "dp": "3000",
     "playCost": "3",
@@ -350,7 +350,7 @@
     "effect": "[On Play] By trashing 1 card in your hand, ＜Draw 2＞. (Draw 2 cards from your deck.)\n[All Turns] While you have a Digimon in play with [Huckmon] in its name or [Royal Knight] in its traits, this Digimon gains ＜Decoy (Red/Black)＞. (When one of your other red or black Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent that deletion.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹start deck JESMON[ST-12]",
+    "notes": "▹Starter Deck, JESMON [ST-12]",
     "color": "White",
     "version": "Normal",
     "block": [
@@ -361,8 +361,8 @@
   },
   {
     "id": "ST12-13",
-    "name": "Sistermon Noir",
-    "cardImage": "assets/images/cards/jap/ST12-13.webp",
+    "name": "Sistermon Ciel",
+    "cardImage": "assets/images/cards/eng/ST12-13.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "4",
@@ -370,17 +370,17 @@
     "digivolveCost2": "-",
     "cardLv": "Lv.4",
     "form": "Champion",
-    "attribute": "Virus",
+    "attribute": "Data",
     "type": "Puppet",
     "rarity": "U",
     "cardNumber": "ST12-13",
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 card with [Huckmon] in its name or [Royal Knight] in its traits among them to your hand. Trash the rest.\n[All Turns] All of your Digimon with [Huckmon] in their names and [Royal Knight] in their traits gain ＜Reboot＞. (Unsuspend this Digimon during your opponent's unsuspend phase.)\n*Also treat as if name is [Sistermon Ciel] and traits include [Data].",
+    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 card with [Huckmon] in its name or [Royal Knight] in its traits among them to your hand. Trash the rest.\n[All Turns] All of your Digimon with [Huckmon] in their names and [Royal Knight] in their traits gain ＜Reboot＞. (Unsuspend this Digimon during your opponent's unsuspend phase.)\n*Also treat as if name is [Sistermon Noir] and traits include [Virus].",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹start deck JESMON[ST-12]",
+    "notes": "▹Starter Deck, JESMON [ST-12]",
     "color": "White",
     "version": "Normal",
     "block": [
@@ -392,7 +392,7 @@
   {
     "id": "ST12-14",
     "name": "Aus Generics",
-    "cardImage": "assets/images/cards/jap/ST12-14.webp",
+    "cardImage": "assets/images/cards/eng/ST12-14.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "1",
@@ -410,7 +410,7 @@
     "effect": "[Main] 1 of your Digimon gets +2000 DP for the turn. Then, if you have a Digimon with [Huckmon] in its name or [Royal Knight] in its traits in play, gain 1 memory, and 1 of your Digimon gains ＜Piercing＞ for the turn. (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.)",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Gain 1 memory, and add this card to its owner's hand.",
-    "notes": "▹start deck JESMON[ST-12]",
+    "notes": "▹Starter Deck, JESMON [ST-12]",
     "color": "Red",
     "version": "Normal",
     "block": [
@@ -422,7 +422,7 @@
   {
     "id": "ST12-15",
     "name": "From Master to Disciple",
-    "cardImage": "assets/images/cards/jap/ST12-15.webp",
+    "cardImage": "assets/images/cards/eng/ST12-15.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "2",
@@ -440,7 +440,7 @@
     "effect": "[Main] Reveal the top 3 cards of your deck. Add 1 card with [Huckmon] or [Sistermon] in its name or [Royal Knight] in its traits among them to your hand. Trash the rest. Then, place this card in your Battle Area.\n[Main] ＜Delay＞ (Trash this card in your battle area to activate the effect below. You can't activate this effect the turn this card enters play.)\n・The next time one of your Digimon would digivolve this turn, reduce the digivolution cost by 1.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Reveal 3 cards from the top of your deck. Add 1 card with [Huckmon] or [Sistermon] in its name or [Royal Knight] in its traits among them to your hand. Trash the rest. Then, place this card in your Battle Area.",
-    "notes": "▹start deck JESMON[ST-12]",
+    "notes": "▹Starter Deck, JESMON [ST-12]",
     "color": "Red",
     "version": "Normal",
     "block": [
@@ -452,7 +452,7 @@
   {
     "id": "ST12-16",
     "name": "Quake! Blast! Fire! Father!",
-    "cardImage": "assets/images/cards/jap/ST12-16.webp",
+    "cardImage": "assets/images/cards/eng/ST12-16.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "7",
@@ -470,7 +470,7 @@
     "effect": "While you have a Digimon with [Huckmon] or [Sistermon] in its name or [Royal Knight] in its traits in play, you may use this card without meeting its color requirements.\n[Main] Delete 1 of your opponent's Digimon with a play cost of 13 or less.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
-    "notes": "▹start deck JESMON[ST-12]",
+    "notes": "▹Starter Deck, JESMON [ST-12]",
     "color": "Black",
     "version": "Normal",
     "block": [

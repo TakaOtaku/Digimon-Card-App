@@ -1314,7 +1314,8 @@
     "color": "Yellow",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": ""
@@ -1344,7 +1345,8 @@
     "color": "Yellow",
     "version": "AA",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": ""

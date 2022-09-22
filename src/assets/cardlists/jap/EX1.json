@@ -1194,7 +1194,8 @@
     "color": "Yellow",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": ""
@@ -1224,10 +1225,42 @@
     "color": "Yellow",
     "version": "AA",
     "block": [
-      "01"
+      "01",
+      "02"      
     ],
     "restriction": "-",
     "illustrator": ""
+  },
+  {
+    "id": "EX1-024_P2",
+    "name": "Patamon",
+    "cardImage": "assets/images/cards/jap/EX1-024_P2.webp",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Data",
+    "type": "Mammal",
+    "rarity": "U",
+    "cardNumber": "EX1-024",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Play] Reveal the top 4 cards of your deck. Add 1 Digimon card with [Angel], [Archangel], or [Three Great Angels] in its traits among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Tamer Battle Pack 14",
+    "color": "Yellow",
+    "version": "AA",
+    "block": [
+      "01",
+      "02"
+    ],
+    "restriction": "-",
+    "illustrator": "Sanosuke Sakuma"
   },
   {
     "id": "EX1-025",
