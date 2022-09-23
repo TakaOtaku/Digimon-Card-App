@@ -1,21 +1,21 @@
-import {MultiButtons} from "../../../molecules/multi-buttons/multi-buttons.component";
+import { MultiButtons } from '../../../molecules/multi-buttons/multi-buttons.component';
 
 export const GroupedSets = [
   {
     label: 'Standard',
     value: 'displays',
     items: [
-      {label: 'BT1', value: 'BT1'},
-      {label: 'BT2', value: 'BT2'},
-      {label: 'BT3', value: 'BT3'},
-      {label: 'BT4', value: 'BT4'},
-      {label: 'BT5', value: 'BT5'},
-      {label: 'BT6', value: 'BT6'},
-      {label: 'BT7', value: 'BT7'},
-      {label: 'BT8', value: 'BT8'},
-      {label: 'BT9', value: 'BT9'},
-      {label: 'BT10', value: 'BT10'},
-      {label: 'BT11', value: 'BT11'},
+      { label: 'BT1', value: 'BT1' },
+      { label: 'BT2', value: 'BT2' },
+      { label: 'BT3', value: 'BT3' },
+      { label: 'BT4', value: 'BT4' },
+      { label: 'BT5', value: 'BT5' },
+      { label: 'BT6', value: 'BT6' },
+      { label: 'BT7', value: 'BT7' },
+      { label: 'BT8', value: 'BT8' },
+      { label: 'BT9', value: 'BT9' },
+      { label: 'BT10', value: 'BT10' },
+      { label: 'BT11', value: 'BT11' },
     ],
   },
   {
@@ -53,7 +53,7 @@ export const Keywords: string[] = [
   '\uff1cArmor Purge\uff1e',
   '\uff1cBlitz\uff1e',
   '\uff1cBlocker\uff1e',
-  '\uff1cCharge\uff1e',
+  '\uff1cRaid\uff1e',
   '\uff1cDecoy (Black)\uff1e',
   '\uff1cDecoy (Black/White)\uff1e',
   '\uff1cDecoy (Red/Black)\uff1e',
@@ -452,79 +452,79 @@ export const Sources: string[] = [
 export const BlockButtons: MultiButtons[] = [
   {
     name: '00',
-    value: '00'
+    value: '00',
   },
   {
     name: '01',
-    value: '01'
+    value: '01',
   },
   {
     name: '02',
-    value: '02'
-  }
+    value: '02',
+  },
 ];
 
 export const CardTypeButtons: MultiButtons[] = [
   {
     name: 'Digi-Egg',
-    value: 'Digi-Egg'
+    value: 'Digi-Egg',
   },
   {
     name: 'Digimon',
-    value: 'Digimon'
+    value: 'Digimon',
   },
   {
     name: 'Tamer',
-    value: 'Tamer'
+    value: 'Tamer',
   },
   {
     name: 'Option',
-    value: 'Option'
+    value: 'Option',
   },
 ];
 
 export const RarityButtons: MultiButtons[] = [
   {
     name: 'C',
-    value: 'C'
+    value: 'C',
   },
   {
     name: 'U',
-    value: 'U'
+    value: 'U',
   },
   {
     name: 'R',
-    value: 'R'
+    value: 'R',
   },
   {
     name: 'SR',
-    value: 'SR'
+    value: 'SR',
   },
   {
     name: 'SEC',
-    value: 'SEC'
+    value: 'SEC',
   },
   {
     name: 'P',
-    value: 'P'
+    value: 'P',
   },
 ];
 
 export const VersionButtons: MultiButtons[] = [
   {
     name: 'Normal',
-    value: 'Normal'
+    value: 'Normal',
   },
   {
     name: 'Alt. Art',
-    value: 'AA'
+    value: 'AA',
   },
   {
     name: 'Pre-Rel',
-    value: 'Pre-Release'
+    value: 'Pre-Release',
   },
   {
     name: 'Stamp',
-    value: 'Stamp'
-  }
+    value: 'Stamp',
+  },
 ];

@@ -5,34 +5,35 @@ from bs4 import BeautifulSoup
 import re
 import pandas as pd
 
-#'https://en.digimoncard.com/cardlist/?search=trueasdasd&category=508011',
-#'https://en.digimoncard.com/cardlist/?search=true&category=508010',
-#'https://en.digimoncard.com/cardlist/?search=true&category=508009',
-#'https://en.digimoncard.com/cardlist/?search=true&category=508008',
-#'https://en.digimoncard.com/cardlist/?search=true&category=508007',
-#'https://en.digimoncard.com/cardlist/?search=true&category=508006',
-#'https://en.digimoncard.com/cardlist/?search=true&category=508005',
-#'https://en.digimoncard.com/cardlist/?search=true&category=508004',
-#'https://en.digimoncard.com/cardlist/?search=true&category=508003',
-#'https://en.digimoncard.com/cardlist/?search=true&category=508002',
-#'https://en.digimoncard.com/cardlist/?search=true&category=508001',
-#'https://en.digimoncard.com/cardlist/?search=true&category=508113',
-#'https://en.digimoncard.com/cardlist/?search=true&category=508112',
-#'https://en.digimoncard.com/cardlist/?search=true&category=508111',
-#'https://en.digimoncard.com/cardlist/?search=true&category=508110',
-#'https://en.digimoncard.com/cardlist/?search=true&category=508109',
-#'https://en.digimoncard.com/cardlist/?search=true&category=508108',
-#'https://en.digimoncard.com/cardlist/?search=true&category=508107',
-#'https://en.digimoncard.com/cardlist/?search=true&category=508106',
-#'https://en.digimoncard.com/cardlist/?search=true&category=508105',
-#'https://en.digimoncard.com/cardlist/?search=true&category=508104',
-#'https://en.digimoncard.com/cardlist/?search=true&category=508103',
-#'https://en.digimoncard.com/cardlist/?search=true&category=508102',
-#'https://en.digimoncard.com/cardlist/?search=true&category=508101',
-#'https://en.digimoncard.com/cardlist/?search=true&category=508901',
+# 'https://en.digimoncard.com/cardlist/?search=trueasdasd&category=508011',
+# 'https://en.digimoncard.com/cardlist/?search=true&category=508010',
+# 'https://en.digimoncard.com/cardlist/?search=true&category=508009',
+# 'https://en.digimoncard.com/cardlist/?search=true&category=508008',
+# 'https://en.digimoncard.com/cardlist/?search=true&category=508007',
+# 'https://en.digimoncard.com/cardlist/?search=true&category=508006',
+# 'https://en.digimoncard.com/cardlist/?search=true&category=508005',
+# 'https://en.digimoncard.com/cardlist/?search=true&category=508004',
+# 'https://en.digimoncard.com/cardlist/?search=true&category=508003',
+# 'https://en.digimoncard.com/cardlist/?search=true&category=508002',
+# 'https://en.digimoncard.com/cardlist/?search=true&category=508001',
+# 'https://en.digimoncard.com/cardlist/?search=true&category=508113',
+# 'https://en.digimoncard.com/cardlist/?search=true&category=508112',
+# 'https://en.digimoncard.com/cardlist/?search=true&category=508111',
+# 'https://en.digimoncard.com/cardlist/?search=true&category=508110',
+# 'https://en.digimoncard.com/cardlist/?search=true&category=508109',
+# 'https://en.digimoncard.com/cardlist/?search=true&category=508108',
+# 'https://en.digimoncard.com/cardlist/?search=true&category=508107',
+# 'https://en.digimoncard.com/cardlist/?search=true&category=508106',
+# 'https://en.digimoncard.com/cardlist/?search=true&category=508105',
+# 'https://en.digimoncard.com/cardlist/?search=true&category=508104',
+# 'https://en.digimoncard.com/cardlist/?search=true&category=508103',
+# 'https://en.digimoncard.com/cardlist/?search=true&category=508102',
+# 'https://en.digimoncard.com/cardlist/?search=true&category=508101',
+# 'https://en.digimoncard.com/cardlist/?search=true&category=508901',
+# 'https://en.digimoncard.com/cardlist/?search=true&category=508012'
 
 urls = [
-'https://en.digimoncard.com/cardlist/?search=true&category=508012'
+    'https://en.digimoncard.com/cardlist/?search=true&category=508014'
 ]
 
 cards = []
@@ -156,33 +157,39 @@ for url in urls:
         card = cardWithImage.find("div", class_="card_detail_inner")
         image = cardWithImage.find("a", class_="card_img").find("img")
 
-        imageURL = 'https://en.digimoncard.com' + image['src'][2:]  ### Change URL depending on if you want Japanese Cards or English Cards
+        # Change URL depending on if you want Japanese Cards or English Cards
+        imageURL = 'https://en.digimoncard.com' + image['src'][2:]
         imageSave = imageURL.rsplit('/', 1)[-1]
-        #urllib.request.urlretrieve(imageURL, imageSave)  ##### Comment IN/OUT if you want to get the pngs.
-        digimoncard['cardImage'] = 'assets/images/cards/jap/' + imageSave.replace('.png', '.webp')  ### Change URL depending on if you want Japanese Cards or English Cards
+        # Comment IN/OUT if you want to get the pngs.
+        #urllib.request.urlretrieve(imageURL, imageSave)
+        # Change URL depending on if you want Japanese Cards or English Cards
+        digimoncard['cardImage'] = 'assets/images/cards/jap/' + \
+            imageSave.replace('.png', '.webp')
         if '_P' in imageSave:
-            urllib.request.urlretrieve(imageURL, imageSave)
+            #urllib.request.urlretrieve(imageURL, imageSave)
             digimoncard['version'] = 'AA'
             if cardWithImage.find("div", class_="cardParallel"):
                 digimoncard['version'] = 'AA'
 
         digimoncard['id'] = imageSave.replace('.png', '')
 
-        #Card Header
+        # Card Header
         cardinfo_head = card.find("ul", class_="cardinfo_head")
-        digimoncard['cardNumber'] = cardinfo_head.find("li", class_="cardno").text.strip()
+        digimoncard['cardNumber'] = cardinfo_head.find(
+            "li", class_="cardno").text.strip()
         digimoncard['rarity'] = cardinfo_head.select('ul > li')[1].text.strip()
-        digimoncard['cardType'] = cardinfo_head.find("li", class_="cardtype").text.strip()
+        digimoncard['cardType'] = cardinfo_head.find(
+            "li", class_="cardtype").text.strip()
         cardLv = cardinfo_head.find("li", class_="cardlv")
         if cardLv:
             digimoncard['cardLv'] = cardLv.text.strip()
         else:
             digimoncard['cardLv'] = ''
 
-        #Card Name
+        # Card Name
         digimoncard['name'] = card.find("div", class_="card_name").text.strip()
 
-        #Card Top
+        # Card Top
         cardinfo_top = card.find("div", class_="cardinfo_top_body")
         dls = cardinfo_top.select("div > dl")
         for dl in dls:
@@ -204,7 +211,7 @@ for url in urls:
                 case 'Digivolve Cost 2':
                     digimoncard['digivolveCost2'] = dd
 
-        #Card Bottom
+        # Card Bottom
         cardinfo_bottom = card.find("div", class_="cardinfo_bottom")
         dls = cardinfo_bottom.select("div > dl")
         for dl in dls:
@@ -222,5 +229,5 @@ for url in urls:
 
         cards.append(digimoncard)
 
-with open('BT10.json', 'w') as f:
-	f.write("%s\n" % json.dumps(cards))
+with open('BT11.json', 'w') as f:
+    f.write("%s\n" % json.dumps(cards))
