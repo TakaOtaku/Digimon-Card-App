@@ -1,17 +1,11 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnDestroy,
-  Output,
-} from '@angular/core';
-import { Store } from '@ngrx/store';
-import { ConfirmationService, MessageService } from 'primeng/api';
-import { Subject, takeUntil } from 'rxjs';
-import { ICard, IDeck, IDeckCard } from '../../../../../models';
-import { setDeck } from '../../../../store/digimon.actions';
-import { selectAllCards } from '../../../../store/digimon.selectors';
-import { emptyDeck } from '../../../../store/reducers/digimon.reducers';
+import {Component, EventEmitter, Input, OnDestroy, Output,} from '@angular/core';
+import {Store} from '@ngrx/store';
+import {ConfirmationService, MessageService} from 'primeng/api';
+import {Subject, takeUntil} from 'rxjs';
+import {ICard, IDeck, IDeckCard} from '../../../../../models';
+import {setDeck} from '../../../../store/digimon.actions';
+import {selectAllCards} from '../../../../store/digimon.selectors';
+import {emptyDeck} from '../../../../store/reducers/digimon.reducers';
 
 @Component({
   selector: 'digimon-deck-toolbar',
@@ -81,8 +75,12 @@ export class DeckToolbarComponent implements OnDestroy {
       message:
         'You are about to clear all cards in the deck and make a new one. Are you sure?',
       accept: () => {
+        if (this.deck.cards.length > 0) {
+          this.save.next(true);
+        }
+
         const deck: IDeck = emptyDeck;
-        this.store.dispatch(setDeck({ deck }));
+        this.store.dispatch(setDeck({deck}));
         this.messageService.add({
           severity: 'success',
           summary: 'Deck cleared!',
