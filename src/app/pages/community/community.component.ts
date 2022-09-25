@@ -6,11 +6,11 @@ import {
   ConfirmationService,
   FilterService,
   MessageService,
-  SelectItem,
 } from 'primeng/api';
 import { Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
 import { COLORS, ICard, IDeck, TAGS } from '../../../models';
+import { AuthService } from '../../service/auth.service';
 import { DatabaseService } from '../../service/database.service';
 import { importDeck, setDeck } from '../../store/digimon.actions';
 import { selectAllCards } from '../../store/digimon.selectors';
@@ -52,6 +52,7 @@ export class CommunityComponent implements OnInit, OnDestroy {
     private store: Store,
     private router: Router,
     private db: DatabaseService,
+    private authService: AuthService,
     private messageService: MessageService,
     private confirmationService: ConfirmationService,
     private filterService: FilterService
@@ -73,13 +74,25 @@ export class CommunityComponent implements OnInit, OnDestroy {
       .subscribe((allCards) => (this.allCards = allCards));
 
     this.filterService.register('array-some', (value: any[], filters: any) => {
-      debugger;
       if (filters === undefined || filters === null || filters.length === 0) {
         return true;
       }
 
       return value.some((v) => filters.includes(v));
     });
+
+    if (this.authService.isLoggedIn) {
+      if (
+        this.authService.userData?.uid === 'S3rWXPtCYRN8vSrxY3qE6aeewy43' ||
+        this.authService.userData?.uid === 'loBLZPOIL0ZlDzt6A1rgDiTomTw2'
+      ) {
+        this.deckRowContext.push({
+          label: 'Delete',
+          icon: 'pi pi-fw pi-delete',
+          command: () => this.delete(this.selectedDeck),
+        });
+      }
+    }
   }
 
   ngOnDestroy() {
@@ -135,6 +148,18 @@ export class CommunityComponent implements OnInit, OnDestroy {
       severity: 'success',
       summary: 'Link copied!',
       detail: 'The link was copied to your clipboard!',
+    });
+  }
+
+  delete(deck: IDeck) {
+    this.db.deleteDeck(deck.id);
+
+    this.decks = this.decks.filter((currentDeck) => currentDeck.id !== deck.id);
+
+    this.messageService.add({
+      severity: 'success',
+      summary: 'Deck delted!',
+      detail: 'The deck was deleted!',
     });
   }
 
