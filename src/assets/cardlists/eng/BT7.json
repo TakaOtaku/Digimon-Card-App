@@ -4652,6 +4652,36 @@
     "illustrator": "tessy"
   },
   {
+    "id": "BT7-106_P1",
+    "name": "Brave Metal",
+    "cardImage": "assets/images/cards/eng/BT7-106_P1.webp",
+    "cardType": "Option",
+    "dp": "-",
+    "playCost": "5",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "-",
+    "rarity": "C",
+    "cardNumber": "BT7-106",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Main] Delete 1 of your opponent's Digimon with a play cost of 6 or less. If you have a Digimon with 5 or more digivolution cards and [X Antibody] in its traits in play, you may delete 1 of your opponent's Digimon without [X Antibody] in its traits instead.",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Activate this card's [Main] effect.",
+    "notes": "",
+    "color": "Black",
+    "version": "Normal",
+    "block": [
+      "01"
+    ],
+    "restriction": "-",
+    "illustrator": "Kenji Watanabe"
+  },
+  {
     "id": "BT7-107",
     "name": "Calling From the Darkness",
     "cardImage": "assets/images/cards/eng/BT7-107.webp",

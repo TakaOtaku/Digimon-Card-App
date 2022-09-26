@@ -4020,6 +4020,36 @@
     "illustrator": "Shin Sasaki"
   },
   {
+    "id": "BT6-093_P1",
+    "name": "Judgement of the Blade",
+    "cardImage": "assets/images/cards/eng/BT6-093_P1.webp",
+    "cardType": "Option",
+    "dp": "-",
+    "playCost": "1",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "-",
+    "rarity": "C",
+    "cardNumber": "BT6-093",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Main] 1 of your Digimon with [Huckmon] in its name or [Royal Knight] in its type can attack your opponent's unsuspended Digimon for the turn.",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] You may play 1 Digimon card with [Sistermon] in its name from your hand or trash without paying its memory cost. Then, add this card to your hand.",
+    "notes": "",
+    "color": "Red",
+    "version": "Normal",
+    "block": [
+      "01"
+    ],
+    "restriction": "-",
+    "illustrator": "kaz"
+  },
+  {
     "id": "BT6-094",
     "name": "Red Reamer",
     "cardImage": "assets/images/cards/eng/BT6-094.webp",
@@ -4498,6 +4528,36 @@
     ],
     "restriction": "-",
     "illustrator": "Ishibashi Yosuke"
+  },
+  {
+    "id": "BT6-109_P1",
+    "name": "Fly Bullet",
+    "cardImage": "assets/images/cards/eng/BT6-109_P1.webp",
+    "cardType": "Option",
+    "dp": "-",
+    "playCost": "7",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "-",
+    "rarity": "U",
+    "cardNumber": "BT6-109",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "If you have a Digimon with [Three Musketeers] in its type in play, you may use this Option card without meeting its color requirements.\n[Main] Delete 1 of your opponent's level 6 or lower Digimon.",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Activate this card's [Main] effect.",
+    "notes": "",
+    "color": "Purple",
+    "version": "Normal",
+    "block": [
+      "01"
+    ],
+    "restriction": "-",
+    "illustrator": "sunohara"
   },
   {
     "id": "BT6-110",
