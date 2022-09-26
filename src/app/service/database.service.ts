@@ -1,18 +1,17 @@
-import {Injectable} from '@angular/core';
-import {AngularFireDatabase} from '@angular/fire/compat/database';
-import {getDatabase, ref, update} from '@angular/fire/database';
-import {BehaviorSubject, first, Subject} from 'rxjs';
-import {IDeck, ISave, IUser} from '../../models';
-import {CARDSET} from '../../models/card-set.enum';
-import {emptyDeck} from '../store/reducers/digimon.reducers';
-import {emptySettings} from '../store/reducers/save.reducer';
+import { Injectable } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { getDatabase, ref, update, remove } from '@angular/fire/database';
+import { BehaviorSubject, first, Subject } from 'rxjs';
+import { IDeck, ISave, IUser } from '../../models';
+import { CARDSET } from '../../models/card-set.enum';
+import { emptyDeck } from '../store/reducers/digimon.reducers';
+import { emptySettings } from '../store/reducers/save.reducer';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DatabaseService {
-  constructor(public database: AngularFireDatabase) {
-  }
+  constructor(public database: AngularFireDatabase) {}
 
   /**
    * Falls der Nutzer eingeloggt ist und keine Daten hat, erstelle diese
@@ -48,52 +47,52 @@ export class DatabaseService {
     let changedSave = false;
     if (user) {
       if (!save.collection) {
-        save = {...save, collection: user.save.collection};
+        save = { ...save, collection: user.save.collection };
         changedSave = true;
       }
       if (!save.decks) {
-        save = {...save, decks: user.save.decks};
+        save = { ...save, decks: user.save.decks };
         changedSave = true;
       }
       if (!save.settings) {
-        save = {...save, settings: user.save.settings};
+        save = { ...save, settings: user.save.settings };
         changedSave = true;
       }
       if (!save.uid) {
-        save = {...save, uid: user.uid};
+        save = { ...save, uid: user.uid };
         changedSave = true;
       }
       if (!save.displayName) {
-        save = {...save, displayName: user.displayName};
+        save = { ...save, displayName: user.displayName };
         changedSave = true;
       }
       if (!save.photoURL) {
-        save = {...save, photoURL: user.photoURL};
+        save = { ...save, photoURL: user.photoURL };
         changedSave = true;
       }
     } else {
       if (!save.collection) {
-        save = {...save, collection: []};
+        save = { ...save, collection: [] };
         changedSave = true;
       }
       if (!save.decks) {
-        save = {...save, decks: []};
+        save = { ...save, decks: [] };
         changedSave = true;
       }
       if (!save.settings) {
-        save = {...save, settings: emptySettings};
+        save = { ...save, settings: emptySettings };
         changedSave = true;
       }
       if (!save.uid) {
-        save = {...save, uid: ''};
+        save = { ...save, uid: '' };
         changedSave = true;
       }
       if (!save.displayName) {
-        save = {...save, displayName: ''};
+        save = { ...save, displayName: '' };
         changedSave = true;
       }
       if (!save.photoURL) {
-        save = {...save, photoURL: ''};
+        save = { ...save, photoURL: '' };
         changedSave = true;
       }
     }
@@ -103,33 +102,32 @@ export class DatabaseService {
       save.settings.cardSet === 'Overwrite' ||
       +save.settings.cardSet >>> 0
     ) {
-      save = {...save, settings: {...save.settings, cardSet: CARDSET.Both}};
+      save = { ...save, settings: { ...save.settings, cardSet: CARDSET.Both } };
       changedSave = true;
     }
     if (save.settings.collectionMinimum === undefined) {
-      save = {...save, settings: {...save.settings, collectionMinimum: 1}};
+      save = { ...save, settings: { ...save.settings, collectionMinimum: 1 } };
       changedSave = true;
     }
     if (save.settings.showPreRelease === undefined) {
-      save = {...save, settings: {...save.settings, showPreRelease: true}};
+      save = { ...save, settings: { ...save.settings, showPreRelease: true } };
       changedSave = true;
     }
     if (save.settings.showStampedCards === undefined) {
       save = {
         ...save,
-        settings: {...save.settings, showStampedCards: true},
+        settings: { ...save.settings, showStampedCards: true },
       };
       changedSave = true;
     }
     if (save.settings.showAACards === undefined) {
-      save = {...save, settings: {...save.settings, showAACards: true}};
+      save = { ...save, settings: { ...save.settings, showAACards: true } };
       changedSave = true;
     }
     if (save.settings.showUserStats === undefined) {
-      save = {...save, settings: {...save.settings, showUserStats: true}};
+      save = { ...save, settings: { ...save.settings, showUserStats: true } };
       changedSave = true;
     }
-
 
     if (changedSave && user?.uid) {
       this.setSave(user.uid, save);
@@ -141,7 +139,6 @@ export class DatabaseService {
     const db = getDatabase();
     return update(ref(db, 'users/' + uId), save);
   }
-
 
   shareDeck(deck: IDeck, user: IUser | null) {
     const db = getDatabase();
@@ -184,5 +181,10 @@ export class DatabaseService {
       });
 
     return deckSubject;
+  }
+
+  deleteDeck(uId: string) {
+    const db = getDatabase();
+    return remove(ref(db, 'community-decks/' + uId));
   }
 }

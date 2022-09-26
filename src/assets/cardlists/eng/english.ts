@@ -17,6 +17,8 @@ import P from './P.json';
 
 import ST1 from './ST1.json';
 import ST10 from './ST10.json';
+import ST12 from './ST12.json';
+import ST13 from './ST13.json';
 import ST2 from './ST2.json';
 import ST3 from './ST3.json';
 import ST4 from './ST4.json';
@@ -52,4 +54,6 @@ export const englishCards: ICard[] = [
   ...ST8,
   ...ST9,
   ...ST10,
+  ...ST12,
+  ...ST13,
 ];
