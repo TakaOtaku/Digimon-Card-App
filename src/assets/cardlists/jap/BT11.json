@@ -23,6 +23,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Red",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -47,11 +48,12 @@
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "-",
-    "digivolveEffect": "[When Attacking][Once Per Turn] If you have a blue Tamer in play, ＜Draw 1＞. (Draw 1 card from your deck.)",
+    "digivolveEffect": "[When Attacking] [Once Per Turn] If you have a blue Tamer in play, ＜Draw 1＞. (Draw 1 card from your deck.)",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Blue",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -76,11 +78,12 @@
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "-",
-    "digivolveEffect": "[Your Turn][Once Per Turn] When you play a Digimon with [Angel], [Archangel], or [Fallen Angel] in its traits, ＜Draw 1＞. (Draw 1 card from your deck.)",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When you play a Digimon with [Angel], [Archangel], or [Fallen Angel] in its traits, ＜Draw 1＞. (Draw 1 card from your deck.)",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Yellow",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -105,11 +108,12 @@
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "-",
-    "digivolveEffect": "[Your Turn][Once Per Turn] When you play a green Tamer, ＜Draw 1＞. (Draw 1 card from your deck.)",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When you play a green Tamer, ＜Draw 1＞. (Draw 1 card from your deck.)",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Green",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -134,11 +138,12 @@
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "-",
-    "digivolveEffect": "[Opponent's Turn][Once Per Turn] When an opponent's Digimon is deleted, if this Digimon has [Greymon] in its name, ＜Draw 1＞. (Draw 1 card from your deck.)",
+    "digivolveEffect": "[Opponent's Turn] [Once Per Turn] When an opponent's Digimon is deleted, if this Digimon has [Greymon] in its name, ＜Draw 1＞. (Draw 1 card from your deck.)",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Black",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -163,11 +168,12 @@
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "-",
-    "digivolveEffect": "[Your Turn][Once Per Turn] When an effect trashes a card in your hand, this Digimon gets +1000 DP for the turn.",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When an effect trashes a card in your hand, this Digimon gets +1000 DP for the turn.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Purple",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -197,6 +203,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Red",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -221,11 +228,12 @@
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "-",
-    "digivolveEffect": "[Your Turn][Once Per Turn] When this Digimon's attack target is switched, this Digimon gets +3000 DP for the turn.",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When this Digimon's attack target is switched, this Digimon gets +3000 DP for the turn.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Red",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -255,6 +263,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Red/Green",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -279,11 +288,12 @@
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "＜Raid＞ (When this Digimon attacks, you may switch the target of attack to 1 of your opponent's unsuspended Digimon with the highest DP.)",
-    "digivolveEffect": "[Your Turn][Once Per Turn] When this Digimon's attack target is switched, this Digimon gets +3000 DP for the turn.",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When this Digimon's attack target is switched, this Digimon gets +3000 DP for the turn.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Red",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -313,6 +323,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Red",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -342,6 +353,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Red/Green",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -371,6 +383,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Red",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -395,11 +408,12 @@
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "＜Raid＞ (When this Digimon attacks, you may switch the target of attack to 1 of your opponent's unsuspended Digimon with the highest DP.)",
-    "digivolveEffect": "[Your Turn][Once Per Turn] When this Digimon's attack target is switched, trash the top card of your opponent's security stack.",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When this Digimon's attack target is switched, trash the top card of your opponent's security stack.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Red",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -429,6 +443,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Red",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -452,12 +467,13 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[Your Turn][Once Per Turn] When a card is removed from your opponent's security stack, you may activate 1 of this Digimon's [On Deletion] effects.\n[On Deletion] You may play 1 red Digimon with [Avian], [Bird], [Beast], [Animal], or [Sovereign] in one of its traits and 3000 DP or less from your hand without paying the cost. For each red Tamer you have in play, add 2000 to the maximum DP of the card you can play by this effect.",
+    "effect": "[Your Turn] [Once Per Turn] When a card is removed from your opponent's security stack, you may activate 1 of this Digimon's [On Deletion] effects.\n[On Deletion] You may play 1 red Digimon with [Avian], [Bird], [Beast], [Animal], or [Sovereign] in one of its traits and 3000 DP or less from your hand without paying the cost. For each red Tamer you have in play, add 2000 to the maximum DP of the card you can play by this effect.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Red",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -481,12 +497,13 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "＜Raid＞ (When this Digimon attacks, you may switch the target of attack to 1 of your opponent's unsuspended Digimon with the highest DP.)[When Digivolving] ＜Blitz＞ (If your opponent has 1 or more memory, this Digimon may attack.)[Your Turn][Once Per Turn] When one of your Digimon's attack targets is switched, unsuspend this Digimon, and gain 1 memory for each red Tamer you have in play.",
+    "effect": "＜Raid＞ (When this Digimon attacks, you may switch the target of attack to 1 of your opponent's unsuspended Digimon with the highest DP.)[When Digivolving] ＜Blitz＞ (If your opponent has 1 or more memory, this Digimon may attack.)[Your Turn] [Once Per Turn] When one of your Digimon's attack targets is switched, unsuspend this Digimon, and gain 1 memory for each red Tamer you have in play.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Red",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -516,6 +533,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Red/Blue",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -543,8 +561,9 @@
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
-    "color": "",
+    "color": "Red/White",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -569,11 +588,12 @@
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 Digimon card with [Gaogamon] in its name and 1 blue Tamer card among them to your hand. Trash the rest.",
-    "digivolveEffect": "[When Attacking][Once Per Turn] If you have a Tamer in play, return 1 of your opponent's level 3 Digimon to its owner's hand.",
+    "digivolveEffect": "[When Attacking] [Once Per Turn] If you have a Tamer in play, return 1 of your opponent's level 3 Digimon to its owner's hand.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Blue",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -603,6 +623,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Blue",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -626,12 +647,13 @@
     "digiXros": "-",
     "specialDigivolve": "Digivolve: 0 from [Bebydomon]",
     "dnaDigivolve": "-",
-    "effect": "[Your Turn][Once Per Turn] When you play another Digimon with [Dramon] in its name or [Blue Flare] in its traits, ＜Draw 1＞.",
-    "digivolveEffect": "[Your Turn][Once Per Turn] When you play another Digimon with [Dramon] in its name or [Blue Flare] in its traits, gain 1 memory.",
+    "effect": "[Your Turn] [Once Per Turn] When you play another Digimon with [Dramon] in its name or [Blue Flare] in its traits, ＜Draw 1＞.",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When you play another Digimon with [Dramon] in its name or [Blue Flare] in its traits, gain 1 memory.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Blue",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -656,11 +678,12 @@
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 Digimon card with [Veedramon] in its name and 1 blue Tamer card among them to your hand. Place the rest at the bottom of your deck in any order.",
-    "digivolveEffect": "[Your Turn][Once Per Turn] When you play a blue Tamer, gain 1 memory.",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When you play a blue Tamer, gain 1 memory.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Blue",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -690,6 +713,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Blue",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -713,12 +737,13 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[When Attacking][Once Per Turn] If your opponent has 8 or more cards in their hand, gain 1 memory.",
-    "digivolveEffect": "[When Attacking][Once Per Turn] If you have a Tamer in play, return 1 of your opponent's level 3 Digimon to its owner's hand.",
+    "effect": "[When Attacking] [Once Per Turn] If your opponent has 8 or more cards in their hand, gain 1 memory.",
+    "digivolveEffect": "[When Attacking] [Once Per Turn] If you have a Tamer in play, return 1 of your opponent's level 3 Digimon to its owner's hand.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Blue",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -748,6 +773,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Blue",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -771,12 +797,13 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[Your Turn][Once Per Turn] When you play a blue Tamer, ＜Draw 1＞. (Draw 1 card from your deck.)",
-    "digivolveEffect": "[Your Turn][Once Per Turn] When you play a blue Tamer, gain 1 memory.",
+    "effect": "[Your Turn] [Once Per Turn] When you play a blue Tamer, ＜Draw 1＞. (Draw 1 card from your deck.)",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When you play a blue Tamer, gain 1 memory.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Blue",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -801,11 +828,12 @@
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "[When Digivolving] Until the end of your opponent's turn, this Digimon gains ＜Blocker＞ (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead) and gets +2000 DP for every 4 cards in your opponent's hand.",
-    "digivolveEffect": "[All Turns][Once Per Turn] When an effect adds cards to your opponent's hand, unsuspend this Digimon.",
+    "digivolveEffect": "[All Turns] [Once Per Turn] When an effect adds cards to your opponent's hand, unsuspend this Digimon.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Blue",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -829,12 +857,13 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[Main][Once Per Turn] By suspending this Digimon, reveal the top 3 cards of your deck. Add all blue Tamer cards among them to your hand. Place the rest at the bottom of your deck in any order.",
-    "digivolveEffect": "[When Attacking][Once Per Turn] Activate 1 of your [Rina Shinomiya]'s [On Play] effects.",
+    "effect": "[Main] [Once Per Turn] By suspending this Digimon, reveal the top 3 cards of your deck. Add all blue Tamer cards among them to your hand. Place the rest at the bottom of your deck in any order.",
+    "digivolveEffect": "[When Attacking] [Once Per Turn] Activate 1 of your [Rina Shinomiya]'s [On Play] effects.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Blue",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -858,12 +887,13 @@
     "digiXros": "DigiXros -2: [MetalGreymon] × [Cyberdramon] ",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "When you would play this card, you may place specified cards from your hand/battle area under it. Each placed card reduces the play cost.The name of this card/Digimon is also treated as [MetalGreymon] and [Cyberdramon].＜Armor Purge＞[On Play][When Digivolving] You may place 1 Digimon card with [Blue Flare] in its traits from your hand, or from under your Tamers, under this Digimon as its bottom digivolution card. Then, return 1 of your opponent's level 3 Digimon to the bottom of its owner's deck. If [Cyberdramon] is in this Digimon's digivolution cards, return 1 of your opponent's level 4 or lower Digimon to the bottom of its owner's deck.",
+    "effect": "When you would play this card, you may place specified cards from your hand/battle area under it. Each placed card reduces the play cost.The name of this card/Digimon is also treated as [MetalGreymon] and [Cyberdramon].＜Armor Purge＞[On Play] [When Digivolving] You may place 1 Digimon card with [Blue Flare] in its traits from your hand, or from under your Tamers, under this Digimon as its bottom digivolution card. Then, return 1 of your opponent's level 3 Digimon to the bottom of its owner's deck. If [Cyberdramon] is in this Digimon's digivolution cards, return 1 of your opponent's level 4 or lower Digimon to the bottom of its owner's deck.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Blue",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -893,6 +923,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Blue",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -916,12 +947,13 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[When Digivolving] You may play 1 blue Tamer card from your hand without paying the cost.\n[Your Turn] When you play a blue Tamer, unsuspend this Digimon.\n[Your Turn][Once Per Turn] When this Digimon becomes unsuspended, return 1 of your opponent's level 3 or lower Digimon to its owner's hand. For every blue Tamer you have in play, add 1 to the max level of the Digimon you can choose with this effect.",
+    "effect": "[When Digivolving] You may play 1 blue Tamer card from your hand without paying the cost.\n[Your Turn] When you play a blue Tamer, unsuspend this Digimon.\n[Your Turn] [Once Per Turn] When this Digimon becomes unsuspended, return 1 of your opponent's level 3 or lower Digimon to its owner's hand. For every blue Tamer you have in play, add 1 to the max level of the Digimon you can choose with this effect.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Blue",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -945,12 +977,13 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[When Digivolving] Return 1 of your opponent's level 5 or lower Digimon to its owner's hand. If no Digimon was returned by this effect, your opponent adds the top card of their security stack to their hand.\n[All Turns][Once Per Turn] When an effect adds cards to your opponent's hand, gain 1 memory for every 4 cards in your opponent's hand.",
+    "effect": "[When Digivolving] Return 1 of your opponent's level 5 or lower Digimon to its owner's hand. If no Digimon was returned by this effect, your opponent adds the top card of their security stack to their hand.\n[All Turns] [Once Per Turn] When an effect adds cards to your opponent's hand, gain 1 memory for every 4 cards in your opponent's hand.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Blue",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -980,6 +1013,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Yellow",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1009,6 +1043,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Yellow",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1038,6 +1073,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Yellow/Black",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1067,6 +1103,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Yellow",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1096,6 +1133,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Yellow",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1125,6 +1163,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Yellow",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1154,6 +1193,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Yellow/Black",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1177,12 +1217,13 @@
     "digiXros": "-",
     "specialDigivolve": "Digivolve: 3 from Lv.4 w/[Sukamon] in name",
     "dnaDigivolve": "-",
-    "effect": "[When Digivolving][On Play] By trashing 1 card with [Sukamon] in its name in your hand or in this Digimon's digivolution cards, until the end of your opponent's turn, 1 of your opponent's Digimon gets -3000 DP and gains ＜Security Attack -1＞. (This Digimon checks 1 fewer security cards.)",
+    "effect": "[When Digivolving] [On Play] By trashing 1 card with [Sukamon] in its name in your hand or in this Digimon's digivolution cards, until the end of your opponent's turn, 1 of your opponent's Digimon gets -3000 DP and gains ＜Security Attack -1＞. (This Digimon checks 1 fewer security cards.)",
     "digivolveEffect": "[All Turns] When this Digimon would be deleted, by deleting 1 other Digimon with [Sukamon] in its name, prevent that deletion.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Yellow/Black",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1206,12 +1247,13 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[When Digivolving] You may search your security stack, reveal 1 card with [Angel], [Archangel], or [Fallen Angel] in its traits from it, and add it to your hand. If you added a card, ＜Recovery +1 (Deck)＞. Then, shuffle your security stack.\n[Your Turn][Once Per Turn] When you play [LadyDevimon] or [Mirei Mikagura], gain 1 memory.",
+    "effect": "[When Digivolving] You may search your security stack, reveal 1 card with [Angel], [Archangel], or [Fallen Angel] in its traits from it, and add it to your hand. If you added a card, ＜Recovery +1 (Deck)＞. Then, shuffle your security stack.\n[Your Turn] [Once Per Turn] When you play [LadyDevimon] or [Mirei Mikagura], gain 1 memory.",
     "digivolveEffect": "[Opponent's Turn] While you have a purple Digimon in play, all of your Digimon with [Angel], [Archangel], or [Fallen Angel] in their traits gain ＜Blocker＞.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Yellow",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1235,12 +1277,13 @@
     "digiXros": "-",
     "specialDigivolve": "Digivolve: 3 from Lv.4 w/[Sukamon] in name",
     "dnaDigivolve": "-",
-    "effect": "[On Play][When Digivolving] If your opponent has 16 or more cards in their trash, or you have 3 or more cards with [Sukamon] in their names in your trash, change 1 of your opponent's Digimon into a white Digimon with 3000 DP and an original name of [Sukamon] until the end of your opponent's turn.\n[When Attacking] For each other Digimon with [Sukamon] in its name in play, this Digimon gains ＜Security Attack +1＞ for the turn.",
+    "effect": "[On Play] [When Digivolving] If your opponent has 16 or more cards in their trash, or you have 3 or more cards with [Sukamon] in their names in your trash, change 1 of your opponent's Digimon into a white Digimon with 3000 DP and an original name of [Sukamon] until the end of your opponent's turn.\n[When Attacking] For each other Digimon with [Sukamon] in its name in play, this Digimon gains ＜Security Attack +1＞ for the turn.",
     "digivolveEffect": "[All Turns] When this Digimon would be deleted, by deleting 1 other Digimon with [Sukamon] in its name, prevent that deletion.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Yellow/Black",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1264,12 +1307,13 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[On Play][When Digivolving] Reveal the top 4 cards of your deck. You may play any number of Digimon cards with [Chuumon], [Sukamon], or [Etemon] in their names whose total play costs add up to 7 or less among them without paying the costs. Trash the rest.",
+    "effect": "[On Play] [When Digivolving] Reveal the top 4 cards of your deck. You may play any number of Digimon cards with [Chuumon], [Sukamon], or [Etemon] in their names whose total play costs add up to 7 or less among them without paying the costs. Trash the rest.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Yellow/Black",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1299,6 +1343,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Yellow",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1328,6 +1373,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Green",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1357,6 +1403,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Green",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1386,6 +1433,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Green",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1415,6 +1463,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Green",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1439,11 +1488,12 @@
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "-",
-    "digivolveEffect": "[Your Turn][Once Per Turn] When you play a Tamer, suspend 1 of your opponent's Digimon.",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When you play a Tamer, suspend 1 of your opponent's Digimon.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Green",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1473,6 +1523,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Green",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1496,12 +1547,13 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[On Play][When Digivolving] You may play 1 Tamer card with a play cost of 3 or less from your hand without paying the cost.",
+    "effect": "[On Play] [When Digivolving] You may play 1 Tamer card with a play cost of 3 or less from your hand without paying the cost.",
     "digivolveEffect": "[Your Turn] While you have a Tamer in play, this Digimon gets +2000 DP.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Green/Red",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1531,6 +1583,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Green",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1555,11 +1608,12 @@
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "This card/Digimon is also treated as having [Leomon] in its name.\n[When Digivolving] You may play 1 green or blue Tamer card with a play cost of 4 or less from your hand without paying the cost.",
-    "digivolveEffect": "[Your Turn][Once Per Turn] When you play another Digimon by an effect, 1 of your Digimon gains ＜Rush＞ for the turn. (This Digimon may attack the turn it was played.)",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When you play another Digimon by an effect, 1 of your Digimon gains ＜Rush＞ for the turn. (This Digimon may attack the turn it was played.)",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Green",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1583,12 +1637,13 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[When Digivolving][On Play] For each green or black Tamer you have in play, suspend 1 of your opponent's Digimon. Then, 1 of your opponent's suspended Digimon can't unsuspend during your opponent's next unsuspend phase.",
-    "digivolveEffect": "[All Turns][Once Per Turn] When this Digimon deletes an opponent's Digimon in battle, trash the top card of your opponent's security stack.",
+    "effect": "[When Digivolving] [On Play] For each green or black Tamer you have in play, suspend 1 of your opponent's Digimon. Then, 1 of your opponent's suspended Digimon can't unsuspend during your opponent's next unsuspend phase.",
+    "digivolveEffect": "[All Turns] [Once Per Turn] When this Digimon deletes an opponent's Digimon in battle, trash the top card of your opponent's security stack.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Green/Black",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1612,12 +1667,13 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[When Digivolving] Reveal the top 3 cards of your deck. You may play 1 Tamer card among them without paying the cost. Place the rest at the top or bottom of your deck in any order.\n[When Attacking][Once Per Turn] For each green or black Tamer you have in play, reveal 1 card from the top of your deck. You may play any number of green or black Digimon cards whose total play costs add up to 10 or less among them without paying the costs. Place the rest at the bottom of your deck in any order.",
+    "effect": "[When Digivolving] Reveal the top 3 cards of your deck. You may play 1 Tamer card among them without paying the cost. Place the rest at the top or bottom of your deck in any order.\n[When Attacking] [Once Per Turn] For each green or black Tamer you have in play, reveal 1 card from the top of your deck. You may play any number of green or black Digimon cards whose total play costs add up to 10 or less among them without paying the costs. Place the rest at the bottom of your deck in any order.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Green",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1647,6 +1703,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Green/Purple",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1676,6 +1733,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Green",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1699,12 +1757,13 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "When one of your Digimon would digivolve into this card, reduce the digivolution cost by 1 for each green or black Tamer you have in play.\n[All Turns][Once Per Turn] When this Digimon deletes an opponent's Digimon in battle, unsuspend this Digimon.",
+    "effect": "When one of your Digimon would digivolve into this card, reduce the digivolution cost by 1 for each green or black Tamer you have in play.\n[All Turns] [Once Per Turn] When this Digimon deletes an opponent's Digimon in battle, unsuspend this Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Green/Black",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1734,6 +1793,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Black",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1758,11 +1818,12 @@
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "You can include up to 50 copies of cards with this card's card number in your deck.\n[Main] By suspending this Digimon, reveal the top 3 cards of your deck. Add up to 1 [Snatchmon], [Destromon], [Galacticmon], or [Fusionize] among them to your hand, and place 1 [Vemmon] among them under this Digimon as its bottom digivolution card. Place the rest at the bottom of your deck in any order.",
-    "digivolveEffect": "[Your Turn][Once Per Turn] When this Digimon would digivolve into [Destromon] or [Galacticmon], reduce the digivolution cost by 1.",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When this Digimon would digivolve into [Destromon] or [Galacticmon], reduce the digivolution cost by 1.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Black",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1786,12 +1847,13 @@
     "digiXros": "-",
     "specialDigivolve": "Digivolve: 0 from [Agumon]",
     "dnaDigivolve": "-",
-    "effect": "[On Play][When Digivolving] Reveal the top 3 cards of your deck. Add 1 card with [Greymon] or [X Antibody] in its name and 1 black Tamer card among them to your hand. Place the rest at the bottom of your deck in any order.",
+    "effect": "[On Play] [When Digivolving] Reveal the top 3 cards of your deck. Add 1 card with [Greymon] or [X Antibody] in its name and 1 black Tamer card among them to your hand. Place the rest at the bottom of your deck in any order.",
     "digivolveEffect": "[All Turns] When this Digimon with [Greymon] or [Omnimon] in its name would be deleted or returned to your hand or deck by an effect, by placing 1 [X Antibody] from this Digimon's digivolution cards at the bottom of its owner's deck, prevent this Digimon from leaving play.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Black",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1821,6 +1883,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Black",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1850,6 +1913,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Black/Red",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1874,11 +1938,12 @@
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "[When Digivolving] You may place up to 2 [Vemmon] from your trash under this Digimon as its bottom digivolution cards. Then, if there are 4 or more [Vemmon] in this Digimon's digivolution cards, return 1 [Fusionize] from your trash to your hand.",
-    "digivolveEffect": "[All Turns][Once Per Turn] When [Vemmon] is placed from this Digimon's digivolution cards at the bottom of its owner's deck, unsuspend this Digimon, and it gains ＜Blocker＞ until the end of your opponent's turn.",
+    "digivolveEffect": "[All Turns] [Once Per Turn] When [Vemmon] is placed from this Digimon's digivolution cards at the bottom of its owner's deck, unsuspend this Digimon, and it gains ＜Blocker＞ until the end of your opponent's turn.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Black",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1908,6 +1973,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Black",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1937,6 +2003,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Black",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1960,12 +2027,13 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[On Play][When Digivolving] Reveal the top 5 cards of your deck. You may play 1 Tamer card with a play cost of 4 or less among them without paying the cost. Place the rest at the top or bottom of your deck in any order.",
-    "digivolveEffect": "[Your Turn][Once Per Turn] When you play another Digimon by an effect, 1 of your Digimon gains ＜Blocker＞ until the end of your opponent's turn.",
+    "effect": "[On Play] [When Digivolving] Reveal the top 5 cards of your deck. You may play 1 Tamer card with a play cost of 4 or less among them without paying the cost. Place the rest at the top or bottom of your deck in any order.",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When you play another Digimon by an effect, 1 of your Digimon gains ＜Blocker＞ until the end of your opponent's turn.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Black",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -1990,11 +2058,12 @@
     "specialDigivolve": "Digivolve: 1 from [MetalGreymon]",
     "dnaDigivolve": "-",
     "effect": "[When Digivolving] Until the end of your opponent's turn, this Digimon can't have its DP reduced by your opponent's effects, and isn't affected by ＜De-Digivolve＞ effects. Then, if [MetalGreymon] or [X Antibody] is in this Digimon's digivolution cards, delete 1 of your opponent's Digimon with 6000 DP or less.",
-    "digivolveEffect": "[Opponent's Turn][Once Per Turn] When a Digimon becomes unsuspended, if this Digimon has [Greymon] or [Omnimon] in its name, trash the top card of your opponent's security stack.",
+    "digivolveEffect": "[Opponent's Turn] [Once Per Turn] When a Digimon becomes unsuspended, if this Digimon has [Greymon] or [Omnimon] in its name, trash the top card of your opponent's security stack.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Black/Red",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -2019,11 +2088,12 @@
     "specialDigivolve": "Digivolve: 6 from [Vemmon]",
     "dnaDigivolve": "-",
     "effect": "[When Digivolving] Reveal the top 3 cards of your deck. Place 1 [Vemmon] among them under this Digimon as its bottom digivolution card. Trash the rest. Then, if there are 5 or more [Vemmon] in this Digimon's digivolution cards, delete 1 of your opponent's Tamers.",
-    "digivolveEffect": "[Opponent's Turn][Once Per Turn] When an opponent's Digimon attacks, by placing 2 [Vemmon] from 1 of your [Galacticmon]'s digivolution cards at the bottom of their owners' decks, switch the target of attack to this Digimon.",
+    "digivolveEffect": "[Opponent's Turn] [Once Per Turn] When an opponent's Digimon attacks, by placing 2 [Vemmon] from 1 of your [Galacticmon]'s digivolution cards at the bottom of their owners' decks, switch the target of attack to this Digimon.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Black",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -2047,12 +2117,13 @@
     "digiXros": "DigiXros -2: [DarkKnightmon] × [Tuwarmon] ",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "When you would play this card, you may place specified cards from your hand/battle area under it. Each placed card reduces the play cost.This card/Digimon is also treated as [DarkKnightmon] and [Tuwarmon].\n[On Play][When Digivolving] You may place 1 Digimon card with [Knightmon] in its name or [Bagra Army] in its traits from your hand or trash under this Digimon as its top digivolution card. Then, if [Tuwarmon] is in this Digimon's digivolution cards, ＜De-Digivolve 1＞ 3 of your opponent's Digimon.\n[On Deletion] You may return up to 2 black and/or purple Digimon cards from your Trash to your hand.",
+    "effect": "When you would play this card, you may place specified cards from your hand/battle area under it. Each placed card reduces the play cost.This card/Digimon is also treated as [DarkKnightmon] and [Tuwarmon].\n[On Play] [When Digivolving] You may place 1 Digimon card with [Knightmon] in its name or [Bagra Army] in its traits from your hand or trash under this Digimon as its top digivolution card. Then, if [Tuwarmon] is in this Digimon's digivolution cards, ＜De-Digivolve 1＞ 3 of your opponent's Digimon.\n[On Deletion] You may return up to 2 black and/or purple Digimon cards from your Trash to your hand.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Black/Purple",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -2076,12 +2147,13 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[When Digivolving][On Play] Reveal the top 5 cards of your deck. Add 1 [Analogman] among them to your hand, and add 1 card with [Cyborg] or [Machine] in its traits to your hand or place it under this Digimon as its bottom digivolution card. Trash the rest.\n[On Deletion] By placing 1 of your [Analogman]s in play at the bottom of its owner's deck, you may play 1 [Machinedramon] from your hand without paying the cost.",
+    "effect": "[When Digivolving] [On Play] Reveal the top 5 cards of your deck. Add 1 [Analogman] among them to your hand, and add 1 card with [Cyborg] or [Machine] in its traits to your hand or place it under this Digimon as its bottom digivolution card. Trash the rest.\n[On Deletion] By placing 1 of your [Analogman]s in play at the bottom of its owner's deck, you may play 1 [Machinedramon] from your hand without paying the cost.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Black",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -2111,6 +2183,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Black",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -2134,12 +2207,13 @@
     "digiXros": "-",
     "specialDigivolve": "Digivolve: 2 from [BlackWarGreymon]",
     "dnaDigivolve": "-",
-    "effect": "＜Reboot＞[Opponent's Turn][Once Per Turn] When your opponent's Digimon with the highest DP attacks, you may switch the target of attack to this Digimon.\n[Opponent's Turn][Once Per Turn] When a Digimon becomes unsuspended, if this Digimon has [BlackWarGreymon] or [X Antibody] in its digivolution cards, you may delete 1 of your opponent's Digimon with the lowest play cost.",
+    "effect": "＜Reboot＞[Opponent's Turn] [Once Per Turn] When your opponent's Digimon with the highest DP attacks, you may switch the target of attack to this Digimon.\n[Opponent's Turn] [Once Per Turn] When a Digimon becomes unsuspended, if this Digimon has [BlackWarGreymon] or [X Antibody] in its digivolution cards, you may delete 1 of your opponent's Digimon with the lowest play cost.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Black/Red",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -2169,6 +2243,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Purple",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -2193,11 +2268,12 @@
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "[When Attacking] By deleting 1 of your other Digimon, delete 1 of your opponent's unsuspended Digimon with a level less than or equal to the deleted Digimon's level.",
-    "digivolveEffect": "[All Turns][Once Per Turn] When you play a Digimon by an effect, gain 1 memory.",
+    "digivolveEffect": "[All Turns] [Once Per Turn] When you play a Digimon by an effect, gain 1 memory.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Purple",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -2227,6 +2303,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Purple",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -2256,6 +2333,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Purple",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -2285,6 +2363,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Purple",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -2314,6 +2393,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Purple",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -2337,12 +2417,13 @@
     "digiXros": "DigiXros -2: [MadLeomon] × 1 Digimon card w/[Bagra Army] in traits ",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "When you would play this card, you may place specified cards from your hand/battle area under it. Each placed card reduces the play cost.\n[Opponent's Turn][Once Per Turn] When an effect adds cards to your opponent's hand, by trashing 1 of this Digimon's digivolution cards, ＜Draw 2＞. (Draw 2 cards from your deck.)[On Deletion] ＜Save＞ (You may place this card under one of your Tamers.)",
+    "effect": "When you would play this card, you may place specified cards from your hand/battle area under it. Each placed card reduces the play cost.\n[Opponent's Turn] [Once Per Turn] When an effect adds cards to your opponent's hand, by trashing 1 of this Digimon's digivolution cards, ＜Draw 2＞. (Draw 2 cards from your deck.)[On Deletion] ＜Save＞ (You may place this card under one of your Tamers.)",
     "digivolveEffect": "[Opponent's Turn] When an effect trashes this card from digivolution cards, gain 1 memory.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Purple",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -2372,6 +2453,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Purple/Black",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -2395,12 +2477,13 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[When Digivolving] You may trash 1 card in your hand. If you do, return 1 [Mirei Mikagura] or 1 card with [Angel], [Archangel], or [Fallen Angel] in its traits from your trash to your hand.\n[Your Turn][Once Per Turn] When you play [Angewomon] or [Mirei Mikagura], gain 1 memory.",
+    "effect": "[When Digivolving] You may trash 1 card in your hand. If you do, return 1 [Mirei Mikagura] or 1 card with [Angel], [Archangel], or [Fallen Angel] in its traits from your trash to your hand.\n[Your Turn] [Once Per Turn] When you play [Angewomon] or [Mirei Mikagura], gain 1 memory.",
     "digivolveEffect": "[Opponent's Turn] While you have a yellow Digimon in play, all of your Digimon with [Angel], [Archangel], or [Fallen Angel] in their traits gain ＜Retaliation＞.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Purple",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -2425,11 +2508,12 @@
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "＜Retaliation＞ (When this Digimon is deleted in battle, delete the Digimon it battled.)\n[When Digivolving] ＜Draw 2＞. (Draw 2 cards from your deck.) Then, trash 2 cards in your hand.",
-    "digivolveEffect": "[All Turns][Once Per Turn] When you play a Digimon by an effect, gain 1 memory.",
+    "digivolveEffect": "[All Turns] [Once Per Turn] When you play a Digimon by an effect, gain 1 memory.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Purple",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -2453,12 +2537,13 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[On Play][When Digivolving] You may play 1 purple or blue level 3 Digimon card from 1 of your purple or blue Digimon's digivolution cards without paying the cost.",
-    "digivolveEffect": "[All Turns][Once Per Turn] When you play a Digimon by an effect, gain 1 memory.",
+    "effect": "[On Play] [When Digivolving] You may play 1 purple or blue level 3 Digimon card from 1 of your purple or blue Digimon's digivolution cards without paying the cost.",
+    "digivolveEffect": "[All Turns] [Once Per Turn] When you play a Digimon by an effect, gain 1 memory.",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Purple/Blue",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -2482,12 +2567,13 @@
     "digiXros": "DigiXros -3: 1 Digimon card w/[Xros Heart] in traits",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "When you would play this card, you may place specified cards from your hand/battle area under it. Each placed card reduces the play cost.When you would play this card, you can also place cards from your trash in digivolution cards for a DigiXros.\n[On Play][When Digivolving] You may play 1 purple level 4 or lower Digimon card or 1 level 4 or lower Digimon card with [Xros Heart] in its traits from your trash without paying the cost. If DigiXrosing, add 1 to the number of cards you play with this effect.\n[All Turns] All of your Digimon with [Xros Heart] in their traits or with ＜Retaliation＞ gain ＜Rush＞ and ＜Blocker＞.",
+    "effect": "When you would play this card, you may place specified cards from your hand/battle area under it. Each placed card reduces the play cost.When you would play this card, you can also place cards from your trash in digivolution cards for a DigiXros.\n[On Play] [When Digivolving] You may play 1 purple level 4 or lower Digimon card or 1 level 4 or lower Digimon card with [Xros Heart] in its traits from your trash without paying the cost. If DigiXrosing, add 1 to the number of cards you play with this effect.\n[All Turns] All of your Digimon with [Xros Heart] in their traits or with ＜Retaliation＞ gain ＜Rush＞ and ＜Blocker＞.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Purple",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -2517,6 +2603,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Purple",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -2540,12 +2627,13 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[On Play][When Digivolving] If your opponent has 1 or fewer Digimon in play, look at your opponent's hand and trash 1 card in it. If your opponent has 2 or more Digimon in play, place 1 of your opponent's Digimon under 1 of your opponent's other Digimon as its bottom digivolution card.\n[All Turns][Once Per Turn] When an opponent's Digimon digivolves or an effect adds cards to the digivolution cards of an opponent's Digimon, by trashing 1 card in this Digimon's digivolution cards, trash the top card of your opponent's security stack.",
+    "effect": "[On Play] [When Digivolving] If your opponent has 1 or fewer Digimon in play, look at your opponent's hand and trash 1 card in it. If your opponent has 2 or more Digimon in play, place 1 of your opponent's Digimon under 1 of your opponent's other Digimon as its bottom digivolution card.\n[All Turns] [Once Per Turn] When an opponent's Digimon digivolves or an effect adds cards to the digivolution cards of an opponent's Digimon, by trashing 1 card in this Digimon's digivolution cards, trash the top card of your opponent's security stack.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Purple",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -2575,6 +2663,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Red",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -2604,6 +2693,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Blue",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -2633,6 +2723,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Green",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -2662,6 +2753,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Black",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -2691,6 +2783,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Black",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -2720,6 +2813,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Purple/Yellow",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -2749,6 +2843,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "White",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -2778,6 +2873,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Red",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -2807,6 +2903,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Red",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -2836,6 +2933,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Blue",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -2865,6 +2963,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Blue",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -2894,6 +2993,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Yellow",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -2923,6 +3023,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Yellow",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -2952,6 +3053,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Green",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -2981,6 +3083,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Green",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -3010,6 +3113,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Green",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -3039,6 +3143,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Black",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -3068,6 +3173,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Black",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -3097,6 +3203,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Black/Red",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -3126,6 +3233,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Black",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -3155,6 +3263,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Purple",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -3184,6 +3293,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Purple",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -3213,6 +3323,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Black",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
@@ -3236,12 +3347,13 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[On Play] Until the end of your opponent's turn, 1 of your Digimon with [Veemon] or [Veedramon] in its name gains ＜Blocker＞ and ＜Evade＞.\n[All Turns] When one of your Digimon with [Veedramon] in its name becomes suspended, by suspending this Tamer, activate 1 of that Digimon's [When Digivolving] effects.\n[Your Turn][Once Per Turn] When one of your blue Digimon becomes unsuspended, gain 1 memory.",
+    "effect": "[On Play] Until the end of your opponent's turn, 1 of your Digimon with [Veemon] or [Veedramon] in its name gains ＜Blocker＞ and ＜Evade＞.\n[All Turns] When one of your Digimon with [Veedramon] in its name becomes suspended, by suspending this Tamer, activate 1 of that Digimon's [When Digivolving] effects.\n[Your Turn] [Once Per Turn] When one of your blue Digimon becomes unsuspended, gain 1 memory.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Blue",
     "version": "Normal",
+    "restriction": "-",
     "illustrator": "",
     "block": [
       "02"
