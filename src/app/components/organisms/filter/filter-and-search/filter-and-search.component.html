@@ -1,4 +1,4 @@
-<div class="surface-ground flex pb-2">
+<div class="surface-ground flex py-1 h-[50px]">
   <div class="inline-flex w-full justify-center">
     <span class="p-input-icon-left" [ngStyle]="{ display: 'inline-flex' }">
       <i class="pi pi-search"></i>
@@ -18,10 +18,9 @@
       icon="pi pi-filter-fill"
       label="Filter"
     ></button>
-    <div class="m-auto flex flex-row justify-center">
-      <span class="text-xs font-bold leading-9 text-white"
-        >Collection Mode:</span
-      >
+
+    <div class="m-auto flex flex-row justify-center mx-2">
+      <span class="text-xs font-bold text-white">Collection Mode:</span>
       <input
         type="checkbox"
         class="my-auto ml-1 h-5 w-5"
@@ -34,7 +33,7 @@
 <p-dialog
   header="Filter and Sort"
   [(visible)]="display"
-  styleClass="w-[95vw] h-[95vh] surface-ground"
+  styleClass="w-[100vw] h-[100vh] surface-ground"
   [baseZIndex]="10000"
 >
   <digimon-filter-side-box [showColors]="compact"></digimon-filter-side-box>

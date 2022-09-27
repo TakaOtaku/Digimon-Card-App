@@ -19,6 +19,7 @@ export class DeckToolbarComponent implements OnDestroy {
   @Output() share = new EventEmitter<boolean>();
   @Output() save = new EventEmitter<any>();
   @Output() delete = new EventEmitter<boolean>();
+  @Output() hideStats = new EventEmitter<boolean>();
 
   importDeckDialog = false;
   exportDeckDialog = false;

@@ -6,10 +6,10 @@
     No cards found!
   </h1>
 
-  <div class="grid grid-cols-4">
+  <div class="w-full flex flex-row flex-wrap">
     <digimon-full-card
       *ngFor="let card of cardsToShow"
-      class="m-1 scale-95 transition"
+      class="scale-95 transition flex-[1 1 25%] max-w-[25%]"
       [card]="card"
       [collectionMode]="collectionMode"
       [count]="getCount(card.id)"

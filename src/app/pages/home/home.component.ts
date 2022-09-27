@@ -1,8 +1,10 @@
 import {Component, HostListener, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Store} from '@ngrx/store';
-import {Subject, takeUntil} from "rxjs";
+import {filter, first, of, Subject, switchMap, takeUntil} from "rxjs";
 import * as uuid from 'uuid';
+import {IDeck, ISave} from "../../../models";
+import {AuthService} from "../../service/auth.service";
 import {DatabaseService} from '../../service/database.service';
 import {setDeck} from '../../store/digimon.actions';
 import {selectMobileCollectionView} from "../../store/digimon.selectors";
@@ -20,6 +22,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   //endregion
 
   mobileCollectionView = false;
+  hideStats = false;
+
+  private deckId = '';
 
   private screenWidth: number;
   private onDestroy$ = new Subject();
@@ -27,20 +32,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
     private store: Store,
-    private databaseService: DatabaseService
+    private databaseService: DatabaseService,
+    private authService: AuthService
   ) {
-    route.params.subscribe((params) => {
-      if (!params['id']) {
-        return;
-      }
-      this.databaseService.loadDeck(params['id']).subscribe((deck) => {
-        this.store.dispatch(
-          setDeck({
-            deck: {...deck, id: uuid.v4(), rating: 0, ratingCount: 0},
-          })
-        );
-      });
-    });
     this.onResize();
   }
 
@@ -51,12 +45,57 @@ export class HomeComponent implements OnInit, OnDestroy {
         takeUntil(this.onDestroy$)
       )
       .subscribe((mobileCollectionView) => (this.mobileCollectionView = mobileCollectionView));
+
+    this.checkURL();
   }
 
   ngOnDestroy(): void {
     this.onDestroy$.next(true);
   }
 
+  checkURL() {
+    this.route.params.pipe(
+      first(),
+      filter((params) => {
+        return !!params['id'] || (!!params['userId'] && !!params['deckId']);
+      }),
+      switchMap((params) => {
+        if (params['userId'] && params['deckId']) {
+          this.deckId = params['deckId'];
+          return this.databaseService.loadSave(params['userId']).pipe(first())
+        } else {
+          this.databaseService.loadDeck(params['id']).subscribe((deck) => {
+            this.store.dispatch(
+              setDeck({
+                deck: {...deck, id: uuid.v4(), rating: 0, ratingCount: 0},
+              })
+            );
+          });
+          return of(false);
+        }
+      })
+    ).subscribe((save) => {
+      //http://localhost:4200/user/S3rWXPtCYRN8vSrxY3qE6aeewy43/deck/160a3fb2-3703-4183-9f52-65411dfd080e
+      if (!save) {
+        return;
+      }
+      const iSave = (save as unknown as ISave);
+
+      const foundDeck = iSave.decks.find((deck) => deck.id === this.deckId)
+      if (!foundDeck) {
+        return;
+      }
+
+      const iDeck = foundDeck as unknown as IDeck;
+      const sameUser = iSave.uid === this.authService.userData?.uid;
+
+      this.store.dispatch(
+        setDeck({
+          deck: {...iDeck, id: sameUser ? iDeck.id : uuid.v4(), rating: 0, ratingCount: 0},
+        })
+      );
+    });
+  }
 
   @HostListener('window:resize', ['$event'])
   onResize() {

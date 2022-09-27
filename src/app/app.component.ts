@@ -31,7 +31,7 @@ export class AppComponent {
 
   noSaveDialog = false;
   retryDialog = false;
-  test = true;
+  hideChangelog = true;
 
   constructor(
     private store: Store,
@@ -99,7 +99,9 @@ export class AppComponent {
         this.spinner = false;
         this.hide = false;
         let save = saveOrNull as ISave;
-        this.store.dispatch(loadSave({ save }));
+        this.store.dispatch(loadSave({save}));
+        this.hideChangelog = save.version === emptySave.version;
+        //this.store.dispatch(setSave({save: {...save, version: emptySave.version}}))
       });
   }
 

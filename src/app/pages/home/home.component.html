@@ -1,5 +1,5 @@
 <div [ngClass]="{'hidden': mobileCollectionView }"
-     class="relative inline-flex h-[calc(100vh-50px)] w-full flex-row lg:overflow-hidden overflow-y-scroll"
+     class="relative inline-flex h-[calc(100vh-50px)] w-full flex-row overflow-hidden"
 >
   <button
     *ngIf="showAccordionButtons"
@@ -14,17 +14,18 @@
   </button>
   <div
     *ngIf="deckView"
-    class="my-1 mr-1 h-full justify-center border border-slate-200 pb-48 md:pb-0"
+    class="my-1 mr-1 h-full justify-center border border-slate-200 overflow-x-hidden overflow-y-scroll"
     [ngClass]="{ 'w-5/12': collectionView, 'w-full': !collectionView }"
   >
     <digimon-deck-view
       [collectionView]="collectionView"
+      (hideStats)="hideStats = !hideStats"
     ></digimon-deck-view>
   </div>
 
   <div
     *ngIf="collectionView"
-    class="my-1 max-h-full h-full"
+    class="my-1 max-h-full h-full overflow-y-scroll"
     [ngClass]="{ 'w-7/12': deckView, 'w-full': !deckView }"
   >
     <digimon-collection-view
@@ -46,6 +47,7 @@
 
   <digimon-deck-stats
     class="fixed z-[300]"
+    [ngClass]="{'hidden': hideStats}"
     [collectionView]="collectionView"
     [showStats]="showStats"
   ></digimon-deck-stats>

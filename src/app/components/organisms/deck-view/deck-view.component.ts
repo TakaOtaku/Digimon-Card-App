@@ -3,9 +3,9 @@ import {Store} from '@ngrx/store';
 import {ConfirmationService, MessageService} from 'primeng/api';
 import {filter, Subject, takeUntil} from 'rxjs';
 import * as uuid from 'uuid';
-import {DeckColorMap, ICard, ICountCard, IDeck, IDeckCard, ISave,} from '../../../../models';
+import {DeckColorMap, ICard, ICountCard, IDeck, IDeckCard, ISave, tagsList,} from '../../../../models';
 import {ITag} from '../../../../models/interfaces/tag.interface';
-import {compareIDs, deckIsValid, sortColors,} from '../../../functions/digimon-card.functions';
+import {compareIDs, deckIsValid, mapToDeckCards, sortColors,} from '../../../functions/digimon-card.functions';
 import {AuthService} from '../../../service/auth.service';
 import {DatabaseService} from '../../../service/database.service';
 import {addCardToDeck, importDeck, setDeck} from '../../../store/digimon.actions';
@@ -24,6 +24,7 @@ import {emptyDeck} from '../../../store/reducers/digimon.reducers';
 export class DeckViewComponent implements OnInit, OnDestroy {
   @Input() collectionView: boolean;
   @Output() onMainDeck = new EventEmitter<IDeckCard[]>();
+  @Output() hideStats = new EventEmitter<boolean>();
 
   title = '';
   description = '';
@@ -220,8 +221,10 @@ export class DeckViewComponent implements OnInit, OnDestroy {
       color: DeckColorMap.get(this.selectedColor.name),
       cards,
     };
-    this.store.dispatch(setDeck({ deck: this.deck }));
+    this.store.dispatch(setDeck({deck: this.deck}));
     this.deckSort();
+    this.setTags();
+    this.setColors();
     this.onMainDeck.emit(this.mainDeck);
   }
 
@@ -395,6 +398,90 @@ export class DeckViewComponent implements OnInit, OnDestroy {
         ...options,
       ]),
     ];
+  }
+
+  private setTags() {
+    this.tags = [];
+
+    this.tags.push(this.setNewestSet(this.deck.cards))
+
+    if (this.bannedCardsIncluded(this.deck.cards)) {
+      this.tags.push({name: 'Illegal', color: 'Primary'});
+    }
+
+    if (this.tooManyRestrictedCardsIncluded(this.deck.cards)) {
+      if (!this.tags.find(tag => tag.name === 'Illegal')) {
+        this.tags.push({name: 'Illegal', color: 'Primary'});
+      }
+    }
+  }
+
+  private setNewestSet(cards: ICountCard[]): ITag {
+    const releaseOrder = ['BT11', 'EX3', 'BT10', 'BT9', 'EX2', 'BT8', 'BT7', 'EX1', 'BT6', 'BT5', 'BT4', 'BT3', 'BT2', 'BT1'];
+    let set = '';
+    releaseOrder.forEach(value => {
+      if (set) {
+        return;
+      }
+      if (cards.find(card => card.id.includes(value))) {
+        set = value;
+      }
+    })
+    return tagsList.find(tag => tag.name === set) ?? {name: '', color: 'Primary'};
+  }
+
+  private bannedCardsIncluded(cards: ICountCard[]): boolean {
+    let banned = false;
+    cards.forEach(card => {
+      if (banned) {
+        return;
+      }
+
+      const foundCard = this.allCards.find(allCard => allCard.id === card.id);
+      if (foundCard) {
+        banned = foundCard.restriction === 'Banned';
+      }
+    })
+    return banned;
+  }
+
+  private tooManyRestrictedCardsIncluded(cards: ICountCard[]): boolean {
+    let restricted = false;
+    cards.forEach(card => {
+      if (restricted) {
+        return;
+      }
+
+      const foundCard = this.allCards.find(allCard => allCard.id === card.id);
+      if (foundCard) {
+        const res = foundCard.restriction === 'Restricted to 1';
+        restricted = res ? card.count > 1 : false;
+      }
+    })
+    return restricted;
+  }
+
+  private setColors() {
+    const cards: IDeckCard[] = mapToDeckCards(this.deck.cards, this.allCards);
+    const colorArray = [
+      {name: 'Red', count: 0},
+      {name: 'Blue', count: 0},
+      {name: 'Yellow', count: 0},
+      {name: 'Green', count: 0},
+      {name: 'Black', count: 0},
+      {name: 'Purple', count: 0},
+      {name: 'White', count: 0},
+    ]
+    cards.forEach(card => {
+      colorArray.forEach((color, index) => {
+        if (card.color.includes(color.name)) {
+          colorArray[index].count += card.count;
+        }
+      });
+    })
+
+    const highest = colorArray.reduce((prev, current) => (prev.count > current.count) ? prev : current)
+    this.selectedColor = DeckColorMap.get(highest.name);
   }
 
   /**

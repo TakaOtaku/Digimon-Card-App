@@ -1,27 +1,21 @@
-<div
-  class="toolbar ml-3 mr-3 grid w-[100%-3rem] grid-cols-6 justify-evenly border-b-2 border-slate-600 md:grid-cols-12"
->
-  <div
-    class="primary-color align-center col-span-2 flex flex-row border-2 border-slate-500 text-center"
-  >
-    <b>{{ getCardCount("Egg") }}</b
-    >/
+<div class="toolbar ml-3 mr-3 grid w-[100%-3rem] grid-cols-6 justify-evenly border-b-2 border-slate-600 md:grid-cols-12">
+  <div class="primary-color flex flex-row border-2 border-slate-500 text-center justify-center pt-1 h-[30px]">
+    <b>{{ getCardCount("Egg") }}</b>
+    /
     <p class="bottom-font pr-1">5</p>
     <p class="text-xs">Eggs</p>
   </div>
 
-  <div
-    class="primary-color align-center col-span-2 flex flex-row border-2 border-slate-500 text-center"
-  >
-    <b>{{ getCardCount("Main") }}</b
-    >/
+  <div class="primary-color col-span-2 flex flex-row border-2 border-slate-500 text-center justify-center pt-1 h-[30px]">
+    <b>{{ getCardCount("Main") }}</b>
+    /
     <p class="bottom-font pr-1">50</p>
     <p class="text-xs">Cards</p>
   </div>
 
   <button
     (click)="missingCards = !missingCards"
-    class="p-button-outlined w-full"
+    class="p-button-outlined w-full h-[30px]"
     icon="pi pi-times"
     iconPos="left"
     pButton
@@ -29,7 +23,7 @@
 
   <button
     (click)="newDeck()"
-    class="p-button-outlined w-full"
+    class="p-button-outlined w-full h-[30px]"
     icon="pi pi-file"
     iconPos="left"
     pButton
@@ -37,7 +31,7 @@
 
   <button
     (click)="save.emit($event)"
-    class="p-button-outlined w-full"
+    class="p-button-outlined w-full h-[30px]"
     icon="pi pi-save"
     iconPos="left"
     pButton
@@ -45,7 +39,7 @@
 
   <button
     (click)="delete.emit(true)"
-    class="p-button-outlined w-full"
+    class="p-button-outlined w-full h-[30px]"
     icon="pi pi-trash"
     iconPos="left"
     pButton
@@ -53,7 +47,7 @@
 
   <button
     (click)="importDeckDialog = true"
-    class="p-button-outlined w-full"
+    class="p-button-outlined w-full h-[30px]"
     icon="pi pi-upload"
     iconPos="left"
     pButton
@@ -61,15 +55,23 @@
 
   <button
     (click)="exportDeckDialog = true"
-    class="p-button-outlined w-full"
+    class="p-button-outlined w-full h-[30px]"
     icon="pi pi-download"
     iconPos="left"
     pButton
   ></button>
 
   <button
+    (click)="hideStats.emit(true)"
+    class="p-button-outlined w-full h-[30px]"
+    icon="pi pi-chart-bar"
+    iconPos="left"
+    pButton
+  ></button>
+
+  <button
     (click)="share.emit(true)"
-    class="p-button-outlined w-full"
+    class="p-button-outlined w-full h-[30px]"
     icon="pi pi-share-alt"
     iconPos="left"
     pButton
@@ -77,7 +79,7 @@
 
   <button
     (click)="simulate()"
-    class="p-button-outlined w-full"
+    class="p-button-outlined w-full h-[30px]"
     icon="pi pi-refresh"
     iconPos="left"
     pButton

@@ -1,4 +1,4 @@
-import { MultiButtons } from '../../../molecules/multi-buttons/multi-buttons.component';
+import {MultiButtons} from '../../../molecules/multi-buttons/multi-buttons.component';
 
 export const GroupedSets = [
   {
@@ -326,12 +326,6 @@ export const Illustrators: string[] = [
   'yuuki.',
 ].sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 
-export const Lvs: string[] = ['Lv.2', 'Lv.3', 'Lv.4', 'Lv.5', 'Lv.6', 'Lv.7'];
-
-export const Rarities: string[] = ['C', 'U', 'R', 'SR', 'SEC', 'P'];
-
-export const Versions: string[] = ['Normal', 'AA', 'Stamp', 'Pre-Release'];
-
 export const SpecialRequirements: string[] = [
   'Digivolve',
   'DNA Digivolution',
@@ -339,115 +333,6 @@ export const SpecialRequirements: string[] = [
 ];
 
 export const Restrictions: string[] = ['Banned', 'Restricted to 1'];
-
-export const Sources: string[] = [
-  '\u25b9RELEASE SPECIAL BOOSTER Ver.1.0\u3010BT01-03\u3011',
-  '\u25b9RELEASE SPECIAL BOOSTER Ver.1.5\u3010BT01-03\u3011',
-  '\u25b9BOOSTER -GREAT LEGEND- [BT04]',
-  '\u25b9BOOSTER -BATTLE OF OMNI- [BT05]',
-  '\u25b9BOOSTER DOUBLE DIAMOND [BT-06]',
-  '\u25b9BOOSTER -NEXT ADVENTURE- [BT-07]',
-  '\u25b9BOOSTER -NEW AWAKENING- [BT08]',
-  '\u25b9BOOSTER X RECORD [BT-09]',
-  '\u25b9BOOSTER XROS ENCOUNTER [BT-10]',
-
-  '\u25b9THEME BOOSTER -CLASSIC COLLECTION-[EX-01]',
-  '\u25b9theme booster DIGITAL HAZARD [EX-02]',
-
-  '\u25b9Starter Deck, GAIA RED\u3010ST-1\u3011',
-  '\u25b9Starter Deck, COCYTUS BLUE\u3010ST-2\u3011',
-  '\u25b9Starter Deck, HEAVEN\u2019S YELLOW\u3010ST-3\u3011',
-  '\u25b9Starter Deck, GIGA GREEN[ST-4]',
-  '\u25b9Starter Deck, MACHINE BLACK[ST-5]',
-  '\u25b9Starter Deck, GALLANTMON [ST-7]',
-  '\u25b9Starter Deck, VENOMOUS VIOLET[ST-6]',
-  '\u25b9Starter Deck, PARALLEL WORLD TACTICIAN [ST-10]',
-  '\u25b9Starter Deck, ULFORCEVEEDRAMON [ST-8]',
-  '\u25b9Starter Deck, ULTIMATE ANCIENT DRAGON  [ST-9]',
-  '\u25b9start deck JESMON[ST-12]',
-  '\u25b9start deck RAGNALOARDMON[ST-13]',
-  "DIGIMON CARD TAMER'S EVOLUTION BOX\uff3bPB-01\uff3d",
-  '1-Year Anniversary Promo Pack',
-  '2021 Champion Card Set',
-  '2021 Championship Finals Tamer\u2018s Evolution Pack',
-  '2021 Finalist Card Set',
-  '2021 Online Regionals Participant Pack',
-  '2021 Vault Set',
-  '2021 World Championship Participation Card',
-  'April Ultimate Cup Champion',
-  'April Ultimate Cup Top 128',
-  'April Ultimate Cup Top 2',
-  'April Ultimate Cup Top 32',
-  'April Ultimate Cup Top 64',
-  'April Ultimate Cup Top 8',
-  'BATTLE OF OMNI (BT-05) Pre-Release Tournaments',
-  'BOOSTER -BATTLE OF OMNI- [BT05] Box Promotion',
-  'BOOSTER -DOUBLE DIAMOND- [BT-06] Box Promotion',
-  'BOOSTER -GREAT LEGEND- [BT04] Box Promotion',
-  'BOOSTER -GREAT LEGEND- [BT04]Errata Card',
-  'BOOSTER -NEXT ADVENTURE- [BT-07]Box Toppers',
-  'BOOSTER DOUBLE DIAMOND [BT-06] Errata Card',
-  'Box Promotion Pack -Next Adventure-',
-  'DC-1 2022 TOP 8',
-  'DC-1 Grand Prix TOP 32',
-  'DC-1 Grand Prix TOP 64',
-  'DC-1 Grand Prix TOP 8',
-  'DC-1 Grand Prix Veemon Participation Set',
-  'DIGIMON CARD GAME GALLANTMON [ST-7],DIGIMON CARD GAME ULFORCEVEEDRAMON [ST-8]',
-  'DIGIMON CARD GAME PREMIUM PACK SET 01',
-  'DOUBLE DIAMOND DASH PACK',
-  'DOUBLE DIAMOND DASH PACKErrata Card',
-  'DOUBLE DIAMOND(BT-06) Pre-Release Tournament Participation Card',
-  'DOUBLE DIAMOND(BT-06) Pre-Release Tournament Winner Card',
-  'Dash Pack Ver. 1.0',
-  'Dash Pack Ver. 1.5',
-  'Digi-Egg Set',
-  'Event Pack 2',
-  'Event Pack Alt-Art Gold Stamp Set',
-  'Event Pack',
-  'Fest Set',
-  'Fest Stamp SR',
-  'Fest WINNER Stamp SR',
-  'Great Dash Pack',
-  'Great Legend (BT-04) Pre-Release Tournaments',
-  'Great Legend Power Up Pack Errata Card',
-  'Great Legend Power Up Pack',
-  'Judge Pack',
-  'July Evolution Cup',
-  'June Premier TO Events',
-  'NEW AWAKENING\uff08BT-08\uff09Pre-Release Tournament Winner Card',
-  'NEW AWAKENING\uff08BT-08\uff09Pre-Release Tournament',
-  'NEXT ADVENTURE\uff08BT-07\uff09Pre-Release Tournament, BOOSTER -NEW AWAKENING- [BT08] Box Promotion',
-  'Official Tournament Pack VOL.1',
-  'Official Tournament Pack Vol.3',
-  'Official Tournament Pack Vol.4',
-  'Official Tournament Pack Vol.5 Errata Card',
-  'Official Tournament Pack Vol.5',
-  'Promotion Pack Ver 0.0',
-  'RELEASE SPECIAL BOOSTER Ver.1.0\u3010BT01-03\u3011Box Promotion',
-  'RELEASE SPECIAL BOOSTER Ver.1.5\u3010BT01-03\u3011Box Promotion',
-  'RELEASE SPECIAL BOOSTER Ver.1.5\u3010BT01-03\u3011Errata Card',
-  'RELEASE SPECIAL BOOSTER Ver.1.5\u3010BT01-03\u3011Restricted Cards (1)',
-  'Special Box Promotion Pack Errata Card',
-  'Special Box Promotion Pack',
-  'Special Release Memorial Pack',
-  'Store Champion Card Set',
-  'Store Championship 2022 Champion Card Set',
-  'Store Championship 2022 Participant Pack',
-  'Store Championship Participant Pack',
-  'TAMER\u2019S EVOLUTION BOX2[PB-06]',
-  'THEME BOOSTER -CLASSIC COLLECTION-[EX-01] Box Promotion',
-  'THEME BOOSTER -DIGITAL HAZRAD-[EX-02] Box Promotion,DIGIMON CARD GAME ADVENTURE BOX [AB-01] Box Promotion',
-  'Tamer Battle Pack 1',
-  'Tamer Battle Pack Vol.2',
-  'Tamer Party Events Vol.2',
-  'Tamer Party Vol.3',
-  'Tamer Party Vol.4',
-  'Tamer Party Vol.5',
-  'Tamer Party events',
-  'Winner Pack NEXT ADVENTURE',
-  'Winner Pack',
-];
 
 export const BlockButtons: MultiButtons[] = [
   {

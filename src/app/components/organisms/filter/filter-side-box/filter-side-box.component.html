@@ -1,4 +1,4 @@
-<div class="surface-card flex h-full w-full flex-col pt-1">
+<div class="surface-card flex h-full w-full flex-col pt-1 mx-1">
   <div class="row mt-1 flex flex w-full justify-end">
     <button (click)="reset()" class="ml-auto mr-5 text-white" type="button">
       <i class="pi pi-refresh"></i>
@@ -108,14 +108,6 @@
     </div>
   </div>
 
-  <digimon-multi-buttons
-    (clickEvent)="changeCardType($event)"
-    [buttonArray]="cardTypeButtons"
-    [filterFormControl]="cardTypeFilter"
-    [perRow]="4"
-    title="Card-Types"
-  ></digimon-multi-buttons>
-
   <p-multiSelect
     [filter]="false"
     [formControl]="setFilter"
@@ -126,7 +118,7 @@
     defaultLabel="Select a Set"
     display="chip"
     scrollHeight="250px"
-    class="mx-5"
+    class="mx-auto w-full max-w-[250px] mb-2"
     styleClass="w-full max-w-[250px] h-8 text-sm"
   >
     <ng-template let-group pTemplate="group">
@@ -137,38 +129,38 @@
   </p-multiSelect>
 
   <digimon-range-slider
-    (OnSliderChange)="updateLevelSlider($event)"
+    (change)="updateLevelSlider($event)"
+    [reset]="resetEmitter"
     [minMax]="[2, 7]"
-    [slider]="levelSlider"
     title="Level:"
   ></digimon-range-slider>
 
   <digimon-range-slider
-    (OnSliderChange)="updatePlayCostSlider($event)"
+    (change)="updatePlayCostSlider($event)"
+    [reset]="resetEmitter"
     [minMax]="[0, 20]"
-    [slider]="playCostSlider"
     title="Play Cost:"
   ></digimon-range-slider>
 
   <digimon-range-slider
-    (OnSliderChange)="updateDigivolutionSlider($event)"
+    (change)="updateDigivolutionSlider($event)"
+    [reset]="resetEmitter"
     [minMax]="[0, 7]"
-    [slider]="digivolutionSlider"
     title="Digivolution Cost:"
   ></digimon-range-slider>
 
   <digimon-range-slider
-    (OnSliderChange)="updateDPSlider($event)"
+    (change)="updateDPSlider($event)"
+    [reset]="resetEmitter"
     [minMax]="[1, 16]"
-    [slider]="dpSlider"
     suffix="000"
     title="DP:"
   ></digimon-range-slider>
 
   <digimon-range-slider
-    (OnSliderChange)="updateCardCountSlider($event)"
+    (change)="updateCardCountSlider($event)"
+    [reset]="resetEmitter"
     [minMax]="[0, 5]"
-    [slider]="cardCountSlider"
     title="Number in Collection:"
   ></digimon-range-slider>
 
@@ -202,7 +194,7 @@
     defaultLabel="Select a Keyword"
     display="chip"
     scrollHeight="250px"
-    class="mx-5"
+    class="mx-auto w-full max-w-[250px] my-1"
     styleClass="w-full mt-1 h-8 text-sm max-w-[250px]"
   >
   </p-multiSelect>
@@ -214,7 +206,7 @@
     defaultLabel="Select a Form"
     display="chip"
     scrollHeight="250px"
-    class="mx-5"
+    class="mx-auto w-full max-w-[250px] mb-1"
     styleClass="w-full mt-1 h-8 text-sm max-w-[250px]"
   >
   </p-multiSelect>
@@ -226,7 +218,7 @@
     defaultLabel="Select an Attribute"
     display="chip"
     scrollHeight="250px"
-    class="mx-5"
+    class="mx-auto w-full max-w-[250px] mb-1"
     styleClass="w-full mt-1 h-8 text-sm max-w-[250px]"
   >
   </p-multiSelect>
@@ -238,7 +230,7 @@
     defaultLabel="Select a Type"
     display="chip"
     scrollHeight="250px"
-    class="mx-5"
+    class="mx-auto w-full max-w-[250px] mb-1"
     styleClass="w-full mt-1 h-8 text-sm max-w-[250px]"
   >
   </p-multiSelect>
@@ -250,7 +242,7 @@
     defaultLabel="Select a Special Requirement"
     display="chip"
     scrollHeight="250px"
-    class="mx-5"
+    class="mx-auto w-full max-w-[250px] mb-1"
     styleClass="w-full mt-1 h-8 text-sm max-w-[250px]"
   >
   </p-multiSelect>
@@ -262,7 +254,7 @@
     defaultLabel="Select an Illustrator"
     display="chip"
     scrollHeight="250px"
-    class="mx-5"
+    class="mx-auto w-full max-w-[250px] mb-1"
     styleClass="w-full mt-1 h-8 text-sm max-w-[250px]"
   >
   </p-multiSelect>
@@ -274,7 +266,7 @@
     defaultLabel="Select a Restrictions"
     display="chip"
     scrollHeight="250px"
-    class="mx-5"
+    class="mx-auto w-full max-w-[250px] mb-1"
     styleClass="w-full mt-1 h-8 text-sm max-w-[250px]"
   >
   </p-multiSelect>

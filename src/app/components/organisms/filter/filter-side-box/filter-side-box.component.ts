@@ -1,4 +1,4 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {Store} from '@ngrx/store';
 import {MessageService} from 'primeng/api';
@@ -20,7 +20,6 @@ import {
   Keywords,
   RarityButtons,
   Restrictions,
-  Sources,
   SpecialRequirements,
   Types,
   VersionButtons,
@@ -33,9 +32,6 @@ import {
 })
 export class FilterSideBoxComponent implements OnInit, OnDestroy {
   @Input() public showColors: boolean;
-
-  cardSets = ['English', '日本語', 'Both'];
-  selectedCardSet = 'English';
 
   setFilter = new FormControl([]);
   rarityFilter = new FormControl([]);
@@ -69,12 +65,6 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
     sourceFilter: this.sourceFilter,
   });
 
-  cardCountSlider: number[] = [0, 5];
-  levelSlider: number[] = [2, 7];
-  playCostSlider: number[] = [0, 20];
-  digivolutionSlider: number[] = [0, 7];
-  dpSlider: number[] = [1, 16];
-
   groupedSets = GroupedSets;
   keywords = this.itemsAsSelectItem(Keywords);
   forms = this.itemsAsSelectItem(Forms);
@@ -84,16 +74,17 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
   illustrators = this.itemsAsSelectItem(Illustrators);
   specialRequirements = this.itemsAsSelectItem(SpecialRequirements);
   restrictions = this.itemsAsSelectItem(Restrictions);
-  sources = this.itemsAsSelectItem(Sources);
-
-  cardSet = CARDSET;
 
   collectionMode = false;
+  selectedCardSet = 'English';
 
+  cardSet = CARDSET;
   cardTypeButtons = CardTypeButtons;
   rarityButtons = RarityButtons;
   versionButtons = VersionButtons;
   blockButtons = BlockButtons;
+
+  resetEmitter = new EventEmitter<void>();
 
   private filter: IFilter;
   private onDestroy$ = new Subject();
@@ -135,12 +126,6 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
         this.sourceFilter.setValue(filter.sourceFilter, {
           emitEvent: false,
         });
-
-        this.cardCountSlider = [...new Set(filter.cardCountFilter)];
-        this.levelSlider = [...new Set(filter.levelFilter)];
-        this.playCostSlider = [...new Set(filter.playCostFilter)];
-        this.digivolutionSlider = [...new Set(filter.digivolutionFilter)];
-        this.dpSlider = [...new Set(filter.dpFilter)];
       });
 
     this.filterFormGroup.valueChanges
@@ -178,45 +163,12 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
   }
 
   reset() {
-    this.store.dispatch(changeFilter({ filter: emptyFilter }));
+    this.resetEmitter.emit();
+    this.store.dispatch(changeFilter({filter: emptyFilter}));
     this.messageService.add({
       severity: 'info',
       detail: 'All filter were reset.',
     });
-  }
-
-  updateCardCountSlider(event: any) {
-    this.store.dispatch(
-      changeFilter({
-        filter: { ...this.filter, cardCountFilter: event.values },
-      })
-    );
-  }
-
-  updateLevelSlider(event: any) {
-    this.store.dispatch(
-      changeFilter({ filter: { ...this.filter, levelFilter: event.values } })
-    );
-  }
-
-  updatePlayCostSlider(event: any) {
-    this.store.dispatch(
-      changeFilter({ filter: { ...this.filter, playCostFilter: event.values } })
-    );
-  }
-
-  updateDigivolutionSlider(event: any) {
-    this.store.dispatch(
-      changeFilter({
-        filter: { ...this.filter, digivolutionFilter: event.values },
-      })
-    );
-  }
-
-  updateDPSlider(event: any) {
-    this.store.dispatch(
-      changeFilter({filter: {...this.filter, dpFilter: event.values}})
-    );
   }
 
   setCardSet(cardSet: string) {
@@ -226,6 +178,43 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
   itemsAsSelectItem(array: string[]): ISelectItem[] {
     return array.map((item) => ({label: item, value: item} as ISelectItem));
   }
+
+  //region Slider Functions
+  updateCardCountSlider(event: any) {
+    this.store.dispatch(
+      changeFilter({
+        filter: {...this.filter, cardCountFilter: event},
+      })
+    );
+  }
+
+  updateLevelSlider(event: any) {
+    this.store.dispatch(
+      changeFilter({filter: {...this.filter, levelFilter: event}})
+    );
+  }
+
+  updatePlayCostSlider(event: any) {
+    this.store.dispatch(
+      changeFilter({filter: {...this.filter, playCostFilter: event}})
+    );
+  }
+
+  updateDigivolutionSlider(event: any) {
+    this.store.dispatch(
+      changeFilter({
+        filter: {...this.filter, digivolutionFilter: event},
+      })
+    );
+  }
+
+  updateDPSlider(event: any) {
+    this.store.dispatch(
+      changeFilter({filter: {...this.filter, dpFilter: event}})
+    );
+  }
+
+  //endregion
 
   //region Multi-Button Functions
   changeColor(color: string) {
@@ -287,6 +276,5 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
     const filter: IFilter = {...this.filter, blockFilter: blocks};
     this.store.dispatch(changeFilter({filter}));
   }
-
   //endregion
 }

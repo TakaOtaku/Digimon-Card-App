@@ -39,7 +39,7 @@
 
 <h1 class="text-white text-3xl">{{retryDialog}}</h1>
 
-<p-dialog *ngIf="retryDialog" header="We could not load your save!" [(visible)]="test" [modal]="true" class="max-w-500px" [draggable]="false" [resizable]="false" [closable]="false">
+<p-dialog *ngIf="retryDialog" [closable]="false" [draggable]="false" [modal]="true" [resizable]="false" [visible]="true" class="max-w-500px" header="We could not load your save!">
   <p>There was an error with loading your save from the server.</p>
   <p>
     It could be that you have a slow internet right now and a timeout happened.
@@ -67,4 +67,8 @@
       Load a backup
     </button>
   </div>
+</p-dialog>
+
+<p-dialog [(visible)]="!hideChangelog" [modal]="true" class="max-w-700px" header="Changelog">
+  <digimon-changelog-dialog></digimon-changelog-dialog>
 </p-dialog>

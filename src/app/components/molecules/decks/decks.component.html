@@ -71,7 +71,7 @@
     </ng-template>
     <ng-template let-deck pTemplate="body">
       <tr
-        (dblclick)="showContextMenu(table, $event, deck)"
+        (click)="showContextMenu(table, $event, deck)"
         [pContextMenuRow]="deck"
         class="max-h-[50px]"
       >

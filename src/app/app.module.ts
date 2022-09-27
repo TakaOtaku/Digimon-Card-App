@@ -31,6 +31,7 @@ import {DecksComponent} from './components/molecules/decks/decks.component';
 import {
   ChangeAccessorieDialogComponent
 } from './components/molecules/dialogs/change-accessorie-dialog/change-accessorie-dialog.component';
+import {ChangelogDialogComponent} from './components/molecules/dialogs/changelog-dialog/changelog-dialog.component';
 import {
   CollectionStatsDialogComponent
 } from './components/molecules/dialogs/collection-stats-dialog/collection-stats-dialog.component';
@@ -58,6 +59,7 @@ import {PaginationCardListComponent} from './components/organisms/pagination-car
 import {CommunityComponent} from './pages/community/community.component';
 import {HomeComponent} from './pages/home/home.component';
 import {UserComponent} from './pages/user/user.component';
+import {ObscenityPipe} from "./pipes/obscenity.pipe";
 import {PrimeNGModule} from './primeng.module';
 import {AuthService} from './service/auth.service';
 import {DatabaseService} from './service/database.service';
@@ -104,6 +106,8 @@ import * as Save from './store/reducers/save.reducer';
     DecksComponent,
     CollectionCircleComponent,
     MultiButtonsComponent,
+    ObscenityPipe,
+    ChangelogDialogComponent
   ],
   imports: [
     PrimeNGModule,
@@ -147,6 +151,7 @@ import * as Save from './store/reducers/save.reducer';
     PaginatorModule,
     InputSwitchModule,
   ],
+  exports: [ObscenityPipe],
   providers: [ReactiveFormsModule, AuthService, DatabaseService],
   bootstrap: [AppComponent],
 })

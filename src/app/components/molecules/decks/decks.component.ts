@@ -1,18 +1,14 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Store } from '@ngrx/store';
-import { ConfirmationService, MenuItem, MessageService } from 'primeng/api';
-import { Subject, takeUntil } from 'rxjs';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Store} from '@ngrx/store';
+import {ConfirmationService, MenuItem, MessageService} from 'primeng/api';
+import {Subject, takeUntil} from 'rxjs';
 import * as uuid from 'uuid';
-import { COLORS, ICountCard, IDeck, IUser, TAGS } from '../../../../models';
-import { AuthService } from '../../../service/auth.service';
-import { DatabaseService } from '../../../service/database.service';
-import {
-  deleteDeck,
-  importDeck,
-  setDeck,
-} from '../../../store/digimon.actions';
-import { selectDecks } from '../../../store/digimon.selectors';
+import {COLORS, ICountCard, IDeck, IUser, TAGS} from '../../../../models';
+import {AuthService} from '../../../service/auth.service';
+import {DatabaseService} from '../../../service/database.service';
+import {deleteDeck, importDeck, setDeck,} from '../../../store/digimon.actions';
+import {selectDecks} from '../../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-decks',
@@ -79,11 +75,6 @@ export class DecksComponent implements OnInit, OnDestroy {
         label: 'Export',
         icon: 'pi pi-fw pi-download',
         command: () => (this.exportDeckDialog = true),
-      },
-      {
-        label: 'Change Accessories',
-        icon: 'pi pi-fw pi-cog',
-        command: () => (this.accessoryDialog = true),
       },
       {
         separator: true,
@@ -158,8 +149,12 @@ export class DecksComponent implements OnInit, OnDestroy {
    * Set the Deck-Builder-Deck and switch to the Deck-Builder
    */
   openDeck(): void {
-    this.store.dispatch(setDeck({ deck: this.selectedDeck }));
-    this.router.navigateByUrl('');
+    if (this.authService.isLoggedIn) {
+      this.router.navigateByUrl(`user/${this.authService.userData?.uid}/deck/${this.selectedDeck.id}`);
+    } else {
+      this.store.dispatch(setDeck({deck: this.selectedDeck}));
+      this.router.navigateByUrl('');
+    }
   }
 
   showContextMenu(menu: any, event: any, deck: IDeck) {

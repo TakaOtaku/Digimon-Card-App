@@ -15,7 +15,7 @@ export class MultiButtonsComponent implements OnInit {
   @Input() title = '';
   @Input() buttonArray: MultiButtons[];
   @Input() filterFormControl: FormControl;
-  @Input() perRow: 2 | 3 | 4 | 5 | 6 = 3;
+  @Input() perRow: 2 | 3 | 4 | 5 | 6 | 7 | 8 | 10 = 3;
   @Output() clickEvent = new EventEmitter<any>();
 
   grid = 'grid-cols-3';
@@ -27,6 +27,10 @@ export class MultiButtonsComponent implements OnInit {
       [4, 'grid-cols-4'],
       [5, 'grid-cols-5'],
       [6, 'grid-cols-6'],
+      [7, 'grid-cols-7'],
+      [8, 'grid-cols-8'],
+      [9, 'grid-cols-9'],
+      [10, 'grid-cols-10'],
     ])
 
     this.grid = gridMap.get(this.perRow)!;
