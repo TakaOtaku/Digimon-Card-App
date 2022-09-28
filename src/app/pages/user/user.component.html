@@ -1,9 +1,20 @@
-<div class="w-screen lg:h-[calc(100vh-50px)] flex flex-col lg:flex-row lg:overflow-hidden">
-  <div *ngIf="showUserStats" class="hidden lg:block lg:w-2/5 h-full">
-    <digimon-user-stats [collection]="collection" [save]="save"></digimon-user-stats>
-    <digimon-collection [collection]="collection" [allCards]="allCards"></digimon-collection>
+<div
+  class="flex w-screen flex-col lg:h-[calc(100vh-50px)] lg:flex-row lg:overflow-hidden"
+>
+  <div *ngIf="showUserStats" class="hidden h-full lg:block lg:w-2/5">
+    <digimon-user-stats
+      [collection]="collection"
+      [save]="save"
+    ></digimon-user-stats>
+    <digimon-collection
+      [allCards]="allCards"
+      [collection]="collection"
+    ></digimon-collection>
   </div>
-  <div [ngClass]="{ 'lg:w-3/5': showUserStats, 'w-full': !showUserStats }" class="h-full lg:max-h-[calc(100vh-58px)]">
+  <div
+    [ngClass]="{ 'lg:w-3/5': showUserStats, 'w-full': !showUserStats }"
+    class="h-full lg:max-h-[calc(100vh-58px)]"
+  >
     <digimon-decks [decks]="decks"></digimon-decks>
   </div>
 </div>

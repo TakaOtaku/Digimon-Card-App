@@ -2,7 +2,7 @@
   <digimon-navbar></digimon-navbar>
 
   <router-outlet #router *ngIf="!hide"></router-outlet>
-  <div *ngIf="hide" class="w-screen h-[calc(100vh-58px)]"></div>
+  <div *ngIf="hide" class="h-[calc(100vh-58px)] w-screen"></div>
 
   <p-toast></p-toast>
 
@@ -21,38 +21,73 @@
   ></p-confirmDialog>
 
   <p-blockUI [blocked]="spinner"></p-blockUI>
-  <p-progressSpinner *ngIf="spinner" class="top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 absolute z-[5000]"></p-progressSpinner>
+  <p-progressSpinner
+    *ngIf="spinner"
+    class="absolute top-1/2 left-1/2 z-[5000] -translate-x-1/2 -translate-y-1/2 transform"
+  ></p-progressSpinner>
 </div>
 
-<p-dialog header="Hello, and welcome to DigimonCard.App" [(visible)]="noSaveDialog" [modal]="true" class="max-w-500px" [draggable]="false" [resizable]="false" [closable]="false">
+<p-dialog
+  [(visible)]="noSaveDialog"
+  [closable]="false"
+  [draggable]="false"
+  [modal]="true"
+  [resizable]="false"
+  class="max-w-500px"
+  header="Hello, and welcome to DigimonCard.App"
+>
   <p>You seem to be new on this site, so welcome!</p>
-  <p>Do you want to create a new save locally, or do you want to login with Google have your data synced on all devices?</p>
+  <p>
+    Do you want to create a new save locally, or do you want to login with
+    Google have your data synced on all devices?
+  </p>
   <div>
-    <button (click)="createANewSave()" class="min-w-auto mt-2 h-8 w-40 rounded-l-sm border border-slate-100 p-2 text-xs font-semibold text-white hover:bg-slate-500">
+    <button
+      (click)="createANewSave()"
+      class="min-w-auto mt-2 h-8 w-40 rounded-l-sm border border-slate-100 p-2 text-xs font-semibold text-white hover:bg-slate-500"
+    >
       Create a new save
     </button>
-    <button (click)="loginWithGoogle()" class="min-w-auto ml-3 mt-2 h-8 w-40 rounded-l-sm border border-slate-100 p-2 text-xs font-semibold text-white hover:bg-slate-500">
+    <button
+      (click)="loginWithGoogle()"
+      class="min-w-auto ml-3 mt-2 h-8 w-40 rounded-l-sm border border-slate-100 p-2 text-xs font-semibold text-white hover:bg-slate-500"
+    >
       Login with Google
     </button>
   </div>
 </p-dialog>
 
-<h1 class="text-white text-3xl">{{retryDialog}}</h1>
+<h1 class="text-3xl text-white">{{ retryDialog }}</h1>
 
-<p-dialog *ngIf="retryDialog" header="We could not load your save!" [(visible)]="test" [modal]="true" class="max-w-500px" [draggable]="false" [resizable]="false" [closable]="false">
+<p-dialog
+  *ngIf="retryDialog"
+  [closable]="false"
+  [draggable]="false"
+  [modal]="true"
+  [resizable]="false"
+  [visible]="true"
+  class="max-w-500px"
+  header="We could not load your save!"
+>
   <p>There was an error with loading your save from the server.</p>
   <p>
     It could be that you have a slow internet right now and a timeout happened.
-    If so you can press Retry, to try loading your save again.
-    If that didn't work you could either contact me TakaOtaku#8538 and I will try to help you,
+    If so you can press Retry, to try loading your save again. If that didn't
+    work you could either contact me TakaOtaku#8538 and I will try to help you,
     or you can create a new save or import a backup.
   </p>
   <p>I am sorry for the inconvenience!</p>
   <div>
-    <button (click)="retry()" class="min-w-auto mt-2 h-8 w-40 rounded-l-sm border border-slate-100 p-2 text-xs font-semibold text-white hover:bg-slate-500">
+    <button
+      (click)="retry()"
+      class="min-w-auto mt-2 h-8 w-40 rounded-l-sm border border-slate-100 p-2 text-xs font-semibold text-white hover:bg-slate-500"
+    >
       Retry
     </button>
-    <button (click)="createANewSave()" class="min-w-auto ml-3 mt-2 h-8 w-40 rounded-l-sm border border-slate-100 p-2 text-xs font-semibold text-white hover:bg-slate-500">
+    <button
+      (click)="createANewSave()"
+      class="min-w-auto ml-3 mt-2 h-8 w-40 rounded-l-sm border border-slate-100 p-2 text-xs font-semibold text-white hover:bg-slate-500"
+    >
       Create a new save
     </button>
     <input
@@ -63,8 +98,23 @@
       (change)="loadBackup($event.target)"
       #fileUpload
     />
-    <button (click)="fileUpload.click()" class="min-w-auto ml-3 mt-2 h-8 w-40 rounded-l-sm border border-slate-100 p-2 text-xs font-semibold text-white hover:bg-slate-500">
+    <button
+      (click)="fileUpload.click()"
+      class="min-w-auto ml-3 mt-2 h-8 w-40 rounded-l-sm border border-slate-100 p-2 text-xs font-semibold text-white hover:bg-slate-500"
+    >
       Load a backup
     </button>
   </div>
+</p-dialog>
+
+<p-dialog
+  (close)="showChangelog = !showChangelog"
+  [(visible)]="showChangelog"
+  [closable]="true"
+  [closeOnEscape]="true"
+  [modal]="true"
+  class="min-h-[95vw] min-w-[95vw]"
+  header="Changelog"
+>
+  <digimon-changelog-dialog></digimon-changelog-dialog>
 </p-dialog>

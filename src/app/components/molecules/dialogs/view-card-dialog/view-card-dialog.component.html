@@ -138,7 +138,9 @@
         id="Digimon-DNA-Digivolve"
       >
         <p [ngStyle]="{color}" class="text-lg font-extrabold">DNA Digivolve</p>
-        <p class="font-white whitespace-pre-wrap text-lg font-bold">{{ card.dnaDigivolve }}</p>
+        <p class="font-white whitespace-pre-wrap text-lg font-bold">
+          {{ card.dnaDigivolve }}
+        </p>
       </div>
       <div
         *ngIf="card.digiXros !== '-'"
@@ -146,7 +148,9 @@
         id="Digimon-DigiXros"
       >
         <p [ngStyle]="{color}" class="text-lg font-extrabold">DigiXros</p>
-        <p class="font-white whitespace-pre-wrap text-lg font-bold">{{ card.digiXros }}</p>
+        <p class="font-white whitespace-pre-wrap text-lg font-bold">
+          {{ card.digiXros }}
+        </p>
       </div>
     </div>
   </div>
@@ -154,7 +158,9 @@
   <div class="max-w-full" id="Effects">
     <div *ngIf="card.effect !== '-'" class="flex flex-col" id="Digimon-Effect">
       <p [ngStyle]="{color}" class="text-lg font-extrabold">Effect</p>
-      <p class="font-white whitespace-pre-wrap text-lg font-bold">{{ card.effect }}</p>
+      <p class="font-white whitespace-pre-wrap text-lg font-bold">
+        {{ card.effect }}
+      </p>
     </div>
     <div
       *ngIf="card.digivolveEffect !== '-'"
@@ -162,7 +168,9 @@
       id="Digimon-Digivolve-Effect"
     >
       <p [ngStyle]="{color}" class="text-lg font-extrabold">Inherited effect</p>
-      <p class="font-white whitespace-pre-wrap text-lg font-bold">{{ card.digivolveEffect }}</p>
+      <p class="font-white whitespace-pre-wrap text-lg font-bold">
+        {{ card.digivolveEffect }}
+      </p>
     </div>
     <div
       *ngIf="card.securityEffect !== '-'"
@@ -170,7 +178,9 @@
       id="Security-Effect"
     >
       <p [ngStyle]="{color}" class="text-lg font-extrabold">Security effect</p>
-      <p class="font-white whitespace-pre-wrap text-lg font-bold">{{ card.securityEffect }}</p>
+      <p class="font-white whitespace-pre-wrap text-lg font-bold">
+        {{ card.securityEffect }}
+      </p>
     </div>
   </div>
 

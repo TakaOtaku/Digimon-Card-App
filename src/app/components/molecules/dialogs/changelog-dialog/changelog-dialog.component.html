@@ -1,0 +1,14 @@
+<quill-view
+  [content]="content"
+  [preserveWhitespace]="true"
+  format="object"
+></quill-view>
+
+<quill-editor
+  *ngIf="authService.userData?.uid === 'S3rWXPtCYRN8vSrxY3qE6aeewy43'"
+  [(ngModel)]="content"
+  format="object"
+>
+</quill-editor>
+
+<button (click)="save()" *ngIf="authService.userData?.uid === 'S3rWXPtCYRN8vSrxY3qE6aeewy43'">Save</button>

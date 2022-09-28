@@ -10,16 +10,16 @@
     [deck]="deck"
     [mainDeck]="mainDeck"
     [missingCards]="missingCards"
+    (missingCardsChange)="missingCards = $event"
     (share)="share()"
     (save)="saveDeck($event)"
     (delete)="delete()"
+    (hideStats)="hideStats.emit(true)"
   ></digimon-deck-toolbar>
 </div>
 
 <div class="mx-auto h-full max-w-[1080px]">
-  <div
-    class="grid w-full grid-cols-4 pb-32 md:grid-cols-6 lg:grid-cols-8 lg:pb-0"
-  >
+  <div class="grid w-full grid-cols-4 pb-32 md:grid-cols-6 lg:grid-cols-8">
     <div *ngFor="let card of mainDeck">
       <digimon-deck-card
         (onChange)="mapToDeck()"

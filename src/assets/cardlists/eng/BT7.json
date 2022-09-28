@@ -4672,9 +4672,9 @@
     "effect": "[Main] Delete 1 of your opponent's Digimon with a play cost of 6 or less. If you have a Digimon with 5 or more digivolution cards and [X Antibody] in its traits in play, you may delete 1 of your opponent's Digimon without [X Antibody] in its traits instead.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
-    "notes": "",
+    "notes": "PREMIUM DECK SET [PD-01]",
     "color": "Black",
-    "version": "Normal",
+    "version": "AA",
     "block": [
       "01"
     ],

@@ -1,19 +1,23 @@
-import {Component, EventEmitter, Input, OnDestroy, OnInit, Output,} from '@angular/core';
-import {FormControl} from '@angular/forms';
-import {Store} from '@ngrx/store';
-import {Subject, takeUntil} from 'rxjs';
-import {ICard, ICountCard} from '../../../../models';
-import {changeCollectionMode} from '../../../store/digimon.actions';
-import {selectCollection, selectCollectionMode, selectFilteredCards,} from '../../../store/digimon.selectors';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from "@angular/core";
+import { FormControl } from "@angular/forms";
+import { Store } from "@ngrx/store";
+import { Subject, takeUntil } from "rxjs";
+import { englishCards } from "../../../../assets/cardlists/eng/english";
+import { ICard, ICountCard } from "../../../../models";
+import { changeCollectionMode } from "../../../store/digimon.actions";
+import { selectCollection, selectCollectionMode, selectFilteredCards } from "../../../store/digimon.selectors";
 
 @Component({
-  selector: 'digimon-pagination-card-list',
-  templateUrl: './pagination-card-list.component.html',
-  styleUrls: ['./pagination-card-list.component.scss'],
+  selector: "digimon-pagination-card-list",
+  templateUrl: "./pagination-card-list.component.html",
+  styleUrls: ["./pagination-card-list.component.scss"]
 })
 export class PaginationCardListComponent implements OnInit, OnDestroy {
   @Input() deckView: boolean;
   @Output() onCardClick = new EventEmitter<string>();
+
+  viewCardDialog = false;
+  card = englishCards[0];
 
   first = 0;
   page = 0;
@@ -82,10 +86,15 @@ export class PaginationCardListComponent implements OnInit, OnDestroy {
   }
 
   getCardsInARow() {
-    return 'cards-in-a-row-' + this.cardsPerRow;
+    return "cards-in-a-row-" + this.cardsPerRow;
   }
 
   changeSlice(event: any) {
     this.onPageChange({ first: this.first, page: this.page }, event.value);
+  }
+
+  viewCard(card: ICard) {
+    this.viewCardDialog = true;
+    this.card = card;
   }
 }

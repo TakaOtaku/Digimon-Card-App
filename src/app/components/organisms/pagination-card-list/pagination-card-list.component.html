@@ -13,7 +13,7 @@
     ></p-paginator>
   </div>
 
-  <div class="m-auto flex flex-row justify-center mt-2">
+  <div class="m-auto mt-2 flex flex-row justify-center">
     <span class="text-xs font-bold leading-9 text-white">Collection Mode:</span>
     <input
       type="checkbox"
@@ -32,10 +32,11 @@
 
 <digimon-search></digimon-search>
 
-<div class="card-box w-full overflow-hidden">
+<div class="card-box flex w-full flex-row flex-wrap overflow-hidden">
   <h1
     *ngIf="cards.length === 0"
-    class="primary-color text-bold my-10 text-center text-5xl">
+    class="primary-color text-bold my-10 text-center text-5xl"
+  >
     No cards found!
   </h1>
 
@@ -47,6 +48,7 @@
     [count]="getCount(card.id)"
     [deckBuilder]="true"
     [ngClass]="getCardsInARow()"
+    (viewCard)="viewCard($event)"
   ></digimon-full-card>
 </div>
 
@@ -57,4 +59,17 @@
   [baseZIndex]="10000"
 >
   <digimon-filter-side-box></digimon-filter-side-box>
+</p-dialog>
+
+<p-dialog
+  (close)="viewCardDialog = false"
+  [(visible)]="viewCardDialog"
+  [baseZIndex]="100000"
+  [showHeader]="false"
+  class="overflow-x-hidden"
+>
+  <digimon-view-card-dialog
+    (onClose)="viewCardDialog = false"
+    [card]="card"
+  ></digimon-view-card-dialog>
 </p-dialog>

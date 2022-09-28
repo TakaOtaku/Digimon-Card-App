@@ -510,6 +510,36 @@
     "illustrator": ""
   },
   {
+    "id": "EX1-008_P2",
+    "name": "MetalGreymon",
+    "cardImage": "assets/images/cards/eng/EX1-008_P2.webp",
+    "cardType": "Digimon",
+    "dp": "7000",
+    "playCost": "7",
+    "digivolveCost1": "3 from Lv.4",
+    "digivolveCost2": "3 from Lv.4",
+    "cardLv": "Lv.5",
+    "form": "Ultimate",
+    "attribute": "Vaccine",
+    "type": "Cyborg",
+    "rarity": "R",
+    "cardNumber": "EX1-008",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Attacking] When this Digimon attacks a player, delete 1 of your opponent's Digimon with 4000 DP or less.",
+    "digivolveEffect": "[Your Turn] While this Digimon has [Machine] or [Dragonkin] in its traits, it gains ＜Piercing＞. (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.)",
+    "securityEffect": "-",
+    "notes": "Premium Deck Set Lucky Pack",
+    "color": "Red",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "-",
+    "illustrator": "Nakano Haito"
+  },
+  {
     "id": "EX1-009",
     "name": "WarGreymon",
     "cardImage": "assets/images/cards/eng/EX1-009.webp",
@@ -2493,6 +2523,36 @@
     ],
     "restriction": "-",
     "illustrator": ""
+  },
+  {
+    "id": "EX1-049_P1",
+    "name": "MetalTyrannomon",
+    "cardImage": "assets/images/cards/eng/EX1-049_P1.webp",
+    "cardType": "Digimon",
+    "dp": "7000",
+    "playCost": "7",
+    "digivolveCost1": "3 from Lv.4",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.5",
+    "form": "Ultimate",
+    "attribute": "Virus",
+    "type": "Cyborg",
+    "rarity": "C",
+    "cardNumber": "EX1-049",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Digivolving] You may reveal the top 3 cards of your deck. Add 1 level 6 Digimon card with [Machine] in its traits among them to your hand. Trash the remaining cards.",
+    "digivolveEffect": "[Opponent's Turn] While this Digimon has [Machine] in its traits, it gains ＜Reboot＞. (Unsuspend this Digimon during your opponent's unsuspend phase.)",
+    "securityEffect": "-",
+    "notes": "Premium Deck Set Lucky Pack",
+    "color": "Black",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "-",
+    "illustrator": "tessy"
   },
   {
     "id": "EX1-050",

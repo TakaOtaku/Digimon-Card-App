@@ -61,11 +61,14 @@
 </div>
 
 <p-dialog
-        [(visible)]="viewCardDialog"
-        [baseZIndex]="100000"
-        [showHeader]="false"
-        class="overflow-x-hidden"
-        (close)="viewCardDialog = false"
+  (close)="viewCardDialog = false"
+  [(visible)]="viewCardDialog"
+  [baseZIndex]="100000"
+  [showHeader]="false"
+  class="overflow-x-hidden"
 >
-  <digimon-view-card-dialog [card]="card" (onClose)="viewCardDialog = false"></digimon-view-card-dialog>
+  <digimon-view-card-dialog
+    (onClose)="viewCardDialog = false"
+    [card]="card"
+  ></digimon-view-card-dialog>
 </p-dialog>
