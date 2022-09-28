@@ -1582,6 +1582,36 @@
     "illustrator": "sasasi"
   },
   {
+    "id": "BT2-032_P3",
+    "name": "UlforceVeedramon",
+    "cardImage": "assets/images/cards/jap/BT2-032_P3.webp",
+    "cardType": "Digimon",
+    "dp": "11000",
+    "playCost": "13",
+    "digivolveCost1": "3 from Lv.5",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Vaccine",
+    "type": "Holy Warrior/Royal Knight",
+    "rarity": "SR",
+    "cardNumber": "BT2-032",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Your Turn] When one of your blue Tamers becomes suspended, unsuspend this Digimon.\n[Your Turn] [Once Per Turn] When this Digimon becomes unsuspended during your Main Phase, gain 1 memory.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
+    "color": "Blue",
+    "block": [
+      "00"
+    ],
+    "version": "AA",
+    "restriction": "-",
+    "illustrator": "sasasi"
+  },
+  {
     "id": "BT2-033",
     "name": "Agumon",
     "cardImage": "assets/images/cards/jap/BT2-033.webp",
