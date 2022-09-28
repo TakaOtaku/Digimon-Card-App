@@ -1170,6 +1170,36 @@
     "illustrator": "Kirita"
   },
   {
+    "id": "BT6-021_P1",
+    "name": "ModokiBetamon",
+    "cardImage": "assets/images/cards/eng/BT6-021_P1.webp",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Data",
+    "type": "Amphibian",
+    "rarity": "C",
+    "cardNumber": "BT6-021",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[All Turns] Your opponent can't gain memory except with Tamer effects.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Premium Deck Set Lucky Pack",
+    "color": "Blue",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "-",
+    "illustrator": "banira"
+  },
+  {
     "id": "BT6-022",
     "name": "Strabimon",
     "cardImage": "assets/images/cards/eng/BT6-022.webp",

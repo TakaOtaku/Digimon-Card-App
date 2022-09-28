@@ -530,14 +530,14 @@
     "effect": "[When Attacking] When this Digimon attacks a player, delete 1 of your opponent's Digimon with 4000 DP or less.",
     "digivolveEffect": "[Your Turn] While this Digimon has [Machine] or [Dragonkin] in its traits, it gains ＜Piercing＞. (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.)",
     "securityEffect": "-",
-    "notes": "PREMIUM DECK SET [PD-01]",
+    "notes": "Premium Deck Set Lucky Pack",
     "color": "Red",
     "version": "AA",
     "block": [
       "01"
     ],
     "restriction": "-",
-    "illustrator": ""
+    "illustrator": "Nakano Haito"
   },
   {
     "id": "EX1-009",
@@ -2545,14 +2545,14 @@
     "effect": "[When Digivolving] You may reveal the top 3 cards of your deck. Add 1 level 6 Digimon card with [Machine] in its traits among them to your hand. Trash the remaining cards.",
     "digivolveEffect": "[Opponent's Turn] While this Digimon has [Machine] in its traits, it gains ＜Reboot＞. (Unsuspend this Digimon during your opponent's unsuspend phase.)",
     "securityEffect": "-",
-    "notes": "PREMIUM DECK SET [PD-01]",
+    "notes": "Premium Deck Set Lucky Pack",
     "color": "Black",
     "version": "AA",
     "block": [
       "01"
     ],
     "restriction": "-",
-    "illustrator": ""
+    "illustrator": "tessy"
   },
   {
     "id": "EX1-050",

@@ -5288,5 +5288,35 @@
     ],
     "restriction": "-",
     "illustrator": "sasasi"
+  },
+  {
+    "id": "BT1-115_P2",
+    "name": "Veedramon",
+    "cardImage": "assets/images/cards/jap/BT1-115_P2.webp",
+    "cardType": "Digimon",
+    "dp": "6000",
+    "playCost": "6",
+    "digivolveCost1": "3 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Vaccine",
+    "type": "Mythical Dragon",
+    "rarity": "SEC",
+    "cardNumber": "BT1-115",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Attacking] [Once Per Turn] If you have a Tamer in play, unsuspend this Digimon.",
+    "digivolveEffect": "[All Turns] While you have a blue Tamer in play, this Digimon gets +1000 DP.",
+    "securityEffect": "-",
+    "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11] Box Topper",
+    "color": "Blue",
+    "version": "AA",
+    "block": [
+      "00"
+    ],
+    "restriction": "-",
+    "illustrator": ""
   }
 ]
