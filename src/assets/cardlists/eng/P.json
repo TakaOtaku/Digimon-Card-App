@@ -998,6 +998,36 @@
     "illustrator": "Nakano Haito"
   },
   {
+    "id": "P-020_P1",
+    "name": "VenomMyotismon",
+    "cardImage": "assets/images/cards/eng/P-020_P1.webp",
+    "cardType": "Digimon",
+    "dp": "11000",
+    "playCost": "11",
+    "digivolveCost1": "3 from Lv.5",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Virus",
+    "type": "Dark Animal",
+    "rarity": "P",
+    "cardNumber": "P-020",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Deletion] You may play a purple Digimon Card with a level of 4 or less from your trash without paying its memory cost. Any [On Play] effects on Digimon played with this effect don't activate.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "PREMIUM DECK SET [PD-01]",
+    "color": "Purple",
+    "version": "AA",
+    "block": [
+      "00"
+    ],
+    "restriction": "-",
+    "illustrator": "Nakano Haito"
+  },
+  {
     "id": "P-021",
     "name": "A New World",
     "cardImage": "assets/images/cards/eng/P-021.webp",
