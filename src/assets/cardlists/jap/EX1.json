@@ -3308,5 +3308,35 @@
     ],
     "restriction": "-",
     "illustrator": "sasasi"
+  },
+  {
+    "id": "EX1-073_P2",
+    "name": "Machinedramon",
+    "cardImage": "assets/images/cards/eng/EX1-073_P2.webp",
+    "cardType": "Digimon",
+    "dp": "11000",
+    "playCost": "12",
+    "digivolveCost1": "3 from Lv.5",
+    "digivolveCost2": "3 from Lv.5",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Virus",
+    "type": "Machine",
+    "rarity": "SEC",
+    "cardNumber": "EX1-073",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Play] You may place up to 5 level 5 red and/or black cards with [Cyborg] in their traits and different card numbers from your hand and/or trash in this Digimon's digivolution cards to gain 1 memory for each card placed.\n[All Turns] This Digimon's DP can't be reduced.\n[All Turns] When this Digimon would be deleted, you may trash 2 level 5 Digimon cards in this Digimon's digivolution cards to prevent this Digimon from being deleted.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
+    "color": "Black",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "-",
+    "illustrator": "sasasi"
   }
 ]
