@@ -1,13 +1,13 @@
-import {Component} from '@angular/core';
-import {Meta, Title} from '@angular/platform-browser';
-import {Store} from '@ngrx/store';
-import {MessageService} from 'primeng/api';
-import {first} from 'rxjs';
-import {ISave} from '../models';
-import {AuthService} from './service/auth.service';
-import {DatabaseService} from './service/database.service';
-import {loadSave, setSave} from './store/digimon.actions';
-import {emptySave} from './store/reducers/save.reducer';
+import { Component } from "@angular/core";
+import { Meta, Title } from "@angular/platform-browser";
+import { Store } from "@ngrx/store";
+import { MessageService } from "primeng/api";
+import { first } from "rxjs";
+import { ISave } from "../models";
+import { AuthService } from "./service/auth.service";
+import { DatabaseService } from "./service/database.service";
+import { loadSave, setSave } from "./store/digimon.actions";
+import { emptySave } from "./store/reducers/save.reducer";
 
 /**
  * Make the Website SEO-Friendly
@@ -31,7 +31,7 @@ export class AppComponent {
 
   noSaveDialog = false;
   retryDialog = false;
-  hideChangelog = true;
+  showChangelog = false;
 
   constructor(
     private store: Store,
@@ -99,9 +99,11 @@ export class AppComponent {
         this.spinner = false;
         this.hide = false;
         let save = saveOrNull as ISave;
-        this.store.dispatch(loadSave({save}));
-        this.hideChangelog = save.version === emptySave.version;
-        //this.store.dispatch(setSave({save: {...save, version: emptySave.version}}))
+        this.store.dispatch(loadSave({ save }));
+        this.showChangelog = save.version !== emptySave.version;
+        this.store.dispatch(
+          setSave({ save: { ...save, version: emptySave.version } })
+        );
       });
   }
 

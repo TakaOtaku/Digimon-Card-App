@@ -4040,9 +4040,9 @@
     "effect": "[Main] 1 of your Digimon with [Huckmon] in its name or [Royal Knight] in its type can attack your opponent's unsuspended Digimon for the turn.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] You may play 1 Digimon card with [Sistermon] in its name from your hand or trash without paying its memory cost. Then, add this card to your hand.",
-    "notes": "",
+    "notes": "PD-01: Premium Deck Set",
     "color": "Red",
-    "version": "Normal",
+    "version": "AA",
     "block": [
       "01"
     ],
@@ -4550,9 +4550,9 @@
     "effect": "If you have a Digimon with [Three Musketeers] in its type in play, you may use this Option card without meeting its color requirements.\n[Main] Delete 1 of your opponent's level 6 or lower Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
-    "notes": "",
+    "notes": "PD-01: Premium Deck Set",
     "color": "Purple",
-    "version": "Normal",
+    "version": "AA",
     "block": [
       "01"
     ],

@@ -1,11 +1,11 @@
-import {createFeatureSelector, createSelector} from '@ngrx/store';
-import {ICard, ICountCard, IDeck, IDigimonCards, IDigimonState, IFilter, ISave, ISettings, ISort,} from '../../models';
+import { createFeatureSelector, createSelector } from "@ngrx/store";
+import { ICard, ICountCard, IDeck, IDigimonCards, IDigimonState, IFilter, ISave, ISettings, ISort } from "../../models";
 
 export const selectIDigimonCards =
-  createFeatureSelector<IDigimonCards>('digimonCards');
-export const selectSave = createFeatureSelector<ISave>('save');
+  createFeatureSelector<IDigimonCards>("digimonCards");
+export const selectSave = createFeatureSelector<ISave>("save");
 export const selectDigimonState =
-  createFeatureSelector<IDigimonState>('digimon');
+  createFeatureSelector<IDigimonState>("digimon");
 
 //region Digimon Selectors
 export const selectFilter = createSelector(

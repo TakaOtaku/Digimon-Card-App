@@ -1,19 +1,19 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
-import {Store} from '@ngrx/store';
-import {ConfirmationService, MenuItem, MessageService} from 'primeng/api';
-import {Subject, takeUntil} from 'rxjs';
-import * as uuid from 'uuid';
-import {COLORS, ICountCard, IDeck, IUser, TAGS} from '../../../../models';
-import {AuthService} from '../../../service/auth.service';
-import {DatabaseService} from '../../../service/database.service';
-import {deleteDeck, importDeck, setDeck,} from '../../../store/digimon.actions';
-import {selectDecks} from '../../../store/digimon.selectors';
+import { Component, Input, OnDestroy, OnInit } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
+import { Store } from "@ngrx/store";
+import { ConfirmationService, MenuItem, MessageService } from "primeng/api";
+import { Subject, takeUntil } from "rxjs";
+import * as uuid from "uuid";
+import { COLORS, ICountCard, IDeck, IUser, TAGS } from "../../../../models";
+import { AuthService } from "../../../service/auth.service";
+import { DatabaseService } from "../../../service/database.service";
+import { deleteDeck, importDeck, setDeck } from "../../../store/digimon.actions";
+import { selectDecks } from "../../../store/digimon.selectors";
 
 @Component({
-  selector: 'digimon-decks',
-  templateUrl: './decks.component.html',
-  styleUrls: ['./decks.component.css'],
+  selector: "digimon-decks",
+  templateUrl: "./decks.component.html",
+  styleUrls: ["./decks.component.css"]
 })
 export class DecksComponent implements OnInit, OnDestroy {
   selectedDeck: IDeck;
@@ -150,10 +150,12 @@ export class DecksComponent implements OnInit, OnDestroy {
    */
   openDeck(): void {
     if (this.authService.isLoggedIn) {
-      this.router.navigateByUrl(`user/${this.authService.userData?.uid}/deck/${this.selectedDeck.id}`);
+      this.router.navigateByUrl(
+        `user/${this.authService.userData?.uid}/deck/${this.selectedDeck.id}`
+      );
     } else {
-      this.store.dispatch(setDeck({deck: this.selectedDeck}));
-      this.router.navigateByUrl('');
+      this.store.dispatch(setDeck({ deck: this.selectedDeck }));
+      this.router.navigateByUrl("");
     }
   }
 

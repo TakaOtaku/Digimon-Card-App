@@ -1,21 +1,22 @@
-import {Component, EventEmitter, Input, OnDestroy, Output,} from '@angular/core';
-import {Store} from '@ngrx/store';
-import {ConfirmationService, MessageService} from 'primeng/api';
-import {Subject, takeUntil} from 'rxjs';
-import {ICard, IDeck, IDeckCard} from '../../../../../models';
-import {setDeck} from '../../../../store/digimon.actions';
-import {selectAllCards} from '../../../../store/digimon.selectors';
-import {emptyDeck} from '../../../../store/reducers/digimon.reducers';
+import { Component, EventEmitter, Input, OnDestroy, Output } from "@angular/core";
+import { Store } from "@ngrx/store";
+import { ConfirmationService, MessageService } from "primeng/api";
+import { Subject, takeUntil } from "rxjs";
+import { ICard, IDeck, IDeckCard } from "../../../../../models";
+import { setDeck } from "../../../../store/digimon.actions";
+import { selectAllCards } from "../../../../store/digimon.selectors";
+import { emptyDeck } from "../../../../store/reducers/digimon.reducers";
 
 @Component({
-  selector: 'digimon-deck-toolbar',
-  templateUrl: './deck-toolbar.component.html',
+  selector: "digimon-deck-toolbar",
+  templateUrl: "./deck-toolbar.component.html"
 })
 export class DeckToolbarComponent implements OnDestroy {
   @Input() deck: IDeck;
   @Input() mainDeck: IDeckCard[];
   @Input() missingCards: boolean;
 
+  @Output() missingCardsChange = new EventEmitter<boolean>();
   @Output() share = new EventEmitter<boolean>();
   @Output() save = new EventEmitter<any>();
   @Output() delete = new EventEmitter<boolean>();
@@ -81,11 +82,11 @@ export class DeckToolbarComponent implements OnDestroy {
         }
 
         const deck: IDeck = emptyDeck;
-        this.store.dispatch(setDeck({deck}));
+        this.store.dispatch(setDeck({ deck }));
         this.messageService.add({
-          severity: 'success',
-          summary: 'Deck cleared!',
-          detail: 'Deck-Cards were cleared successfully!',
+          severity: "success",
+          summary: "Deck cleared!",
+          detail: "Deck-Cards were cleared successfully!"
         });
       },
     });

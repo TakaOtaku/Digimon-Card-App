@@ -1,12 +1,12 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Store} from '@ngrx/store';
-import {Subject, takeUntil} from 'rxjs';
-import {setMobileCollectionView} from '../../../../store/digimon.actions';
-import {selectMobileCollectionView,} from '../../../../store/digimon.selectors';
+import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Store } from "@ngrx/store";
+import { Subject, takeUntil } from "rxjs";
+import { setMobileCollectionView } from "../../../../store/digimon.actions";
+import { selectMobileCollectionView } from "../../../../store/digimon.selectors";
 
 @Component({
-  selector: 'digimon-filter-button',
-  templateUrl: './filter-button.component.html',
+  selector: "digimon-filter-button",
+  templateUrl: "./filter-button.component.html"
 })
 export class FilterButtonComponent implements OnInit, OnDestroy {
   mobileCollectionView = false;
@@ -18,10 +18,11 @@ export class FilterButtonComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.store
       .select(selectMobileCollectionView)
-      .pipe(
-        takeUntil(this.onDestroy$)
-      )
-      .subscribe((mobileCollectionView) => (this.mobileCollectionView = mobileCollectionView));
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe(
+        (mobileCollectionView) =>
+          (this.mobileCollectionView = mobileCollectionView)
+      );
   }
 
   ngOnDestroy(): void {
@@ -29,6 +30,10 @@ export class FilterButtonComponent implements OnInit, OnDestroy {
   }
 
   setMobileCollectionView() {
-    this.store.dispatch(setMobileCollectionView({mobileCollectionView: !this.mobileCollectionView}));
+    this.store.dispatch(
+      setMobileCollectionView({
+        mobileCollectionView: !this.mobileCollectionView
+      })
+    );
   }
 }

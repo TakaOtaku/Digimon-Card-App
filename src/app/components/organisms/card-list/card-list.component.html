@@ -6,15 +6,16 @@
     No cards found!
   </h1>
 
-  <div class="w-full flex flex-row flex-wrap">
+  <div class="flex w-full flex-row flex-wrap">
     <digimon-full-card
       *ngFor="let card of cardsToShow"
-      class="scale-95 transition flex-[1 1 25%] max-w-[25%]"
+      (viewCard)="viewCard($event)"
       [card]="card"
       [collectionMode]="collectionMode"
       [count]="getCount(card.id)"
       [deckView]="true"
       [deckBuilder]="true"
+      class="flex-[1 1 25%] max-w-[25%] scale-95 transition"
     >
     </digimon-full-card>
   </div>
@@ -27,3 +28,16 @@
     Show more...
   </button>
 </div>
+
+<p-dialog
+  (close)="viewCardDialog = false"
+  [(visible)]="viewCardDialog"
+  [baseZIndex]="100000"
+  [showHeader]="false"
+  class="overflow-x-hidden"
+>
+  <digimon-view-card-dialog
+    (onClose)="viewCardDialog = false"
+    [card]="card"
+  ></digimon-view-card-dialog>
+</p-dialog>

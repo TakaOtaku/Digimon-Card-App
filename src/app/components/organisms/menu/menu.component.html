@@ -21,29 +21,37 @@
   styleClass="w-[95vw] max-w-[700px] max-h-screen"
 >
   <div class="flex w-full flex-col">
-    <span class="text-white mt-5 w-full text-center font-bold"
-      >A huge thanks goes to tari101190 who helps me with all the new card
+    <span class="mt-5 w-full text-center font-bold text-white"
+    >A huge thanks goes to tari101190 who helps me with all the new card
       releases and tests the website completly so I don't have to worry to
       much!</span
     >
 
-    <span class="text-white mt-5 w-full text-center font-bold"
-      >Another big thank you goes to
-      <a target="_blank" class="primary-color" href="https://www.instagram.com/oscstudios/">TheOSC</a>
+    <span class="mt-5 w-full text-center font-bold text-white"
+    >Another big thank you goes to
+      <a
+        class="primary-color"
+        href="https://www.instagram.com/oscstudios/"
+        target="_blank"
+      >TheOSC</a
+      >
       he send me a cool new design which I took much inspiration from and helped
       with other design questions! Go Check him out he makes great art!</span
     >
 
-    <span class="text-white mt-5 w-full text-center font-bold"
-      >Credits for the Pre-Release Cards go to
-      <a target="_blank" class="primary-color" href="https://digimoncardgame.fandom.com/"
-        >https://digimoncardgame.fandom.com/</a
+    <span class="mt-5 w-full text-center font-bold text-white"
+    >Credits for the Pre-Release Cards go to
+      <a
+        class="primary-color"
+        href="https://digimoncardgame.fandom.com/"
+        target="_blank"
+      >https://digimoncardgame.fandom.com/</a
       >
       and all the wonderful people who maintain it!</span
     >
 
-    <span class="text-white mt-5 w-full text-center font-bold"
-      >Please support the official releases! Akiyoshi Hongo, Bandai, and Toei
+    <span class="mt-5 w-full text-center font-bold text-white"
+    >Please support the official releases! Akiyoshi Hongo, Bandai, and Toei
       Animation respectively own Digimon images, copyrights and
       trademarks.</span
     >
@@ -315,7 +323,7 @@
 >
   <div class="flex w-full flex-col justify-end">
     <div class="mx-auto mb-5">
-      <span class="text-white mt-5">Deck-Cards will be sorted first with:</span>
+      <span class="mt-5 text-white">Deck-Cards will be sorted first with:</span>
       <div class="flex justify-center">
         <p-selectButton
           [formControl]="sortOrderFilter"
@@ -336,9 +344,9 @@
       <label for="float-input">How many of a card do you collect?</label>
     </span>
 
-    <div class="flex flex-row mx-auto">
+    <div class="mx-auto flex flex-row">
       <div>
-        <h5 class="text-center mt-5 font-bold">Pre-Release Cards</h5>
+        <h5 class="mt-5 text-center font-bold">Pre-Release Cards</h5>
         <p-selectButton
           [(ngModel)]="preRelease"
           [options]="showHideOptions"
@@ -349,7 +357,7 @@
       </div>
 
       <div class="mx-5">
-        <h5 class="text-center mt-5 font-bold">Alt. Art Cards</h5>
+        <h5 class="mt-5 text-center font-bold">Alt. Art Cards</h5>
         <p-selectButton
           [(ngModel)]="aa"
           [options]="showHideOptions"
@@ -360,7 +368,7 @@
       </div>
 
       <div>
-        <h5 class="text-center mt-5 font-bold">Stamped Cards</h5>
+        <h5 class="mt-5 text-center font-bold">Stamped Cards</h5>
         <p-selectButton
           [(ngModel)]="stamped"
           [options]="showHideOptions"
@@ -372,7 +380,7 @@
     </div>
 
     <div class="mx-auto">
-      <h5 class="text-center mt-5 font-bold">Show User-Stats</h5>
+      <h5 class="mt-5 text-center font-bold">Show User-Stats</h5>
       <p-selectButton
         [(ngModel)]="userStats"
         [options]="showHideOptions"
@@ -395,4 +403,14 @@
   </div>
 </p-dialog>
 
-
+<p-dialog
+  (close)="showChangelog = !showChangelog"
+  [(visible)]="showChangelog"
+  [closable]="true"
+  [closeOnEscape]="true"
+  [modal]="true"
+  class="min-h-[95vw] min-w-[95vw]"
+  header="Changelog"
+>
+  <digimon-changelog-dialog></digimon-changelog-dialog>
+</p-dialog>

@@ -1,15 +1,15 @@
-import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
-import {ColorList, IColor, tagsList} from '../../../../../models';
-import {ITag} from '../../../../../models/interfaces/tag.interface';
-import {ObscenityPipe} from "../../../../pipes/obscenity.pipe";
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from "@angular/core";
+import { ColorList, IColor, tagsList } from "../../../../../models";
+import { ITag } from "../../../../../models/interfaces/tag.interface";
+import { ObscenityPipe } from "../../../../pipes/obscenity.pipe";
 
 @Component({
-  selector: 'digimon-deck-metadata',
-  templateUrl: './deck-metadata.component.html',
+  selector: "digimon-deck-metadata",
+  templateUrl: "./deck-metadata.component.html"
 })
 export class DeckMetadataComponent implements OnChanges {
-  @Input() title = '';
-  @Input() description = '';
+  @Input() title = "";
+  @Input() description = "";
   @Input() tags: ITag[];
   @Input() selectedColor: any;
 

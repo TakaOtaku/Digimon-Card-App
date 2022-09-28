@@ -174,5 +174,8 @@
   class="overflow-x-hidden"
   (close)="viewCardDialog = false"
 >
-  <digimon-view-card-dialog [card]="viewCard" (onClose)="viewCardDialog = false"></digimon-view-card-dialog>
+  <digimon-view-card-dialog
+    (onClose)="viewCardDialog = false"
+    [card]="viewCard"
+  ></digimon-view-card-dialog>
 </p-dialog>

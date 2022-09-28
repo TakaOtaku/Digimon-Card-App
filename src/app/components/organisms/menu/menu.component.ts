@@ -1,25 +1,25 @@
-import {Component, HostListener, OnDestroy, OnInit} from '@angular/core';
-import {FormControl} from '@angular/forms';
-import {Router} from '@angular/router';
-import {Store} from '@ngrx/store';
-import {saveAs} from 'file-saver';
-import {ConfirmationService, MenuItem, MessageService, PrimeNGConfig,} from 'primeng/api';
-import {first, Subject, takeUntil} from 'rxjs';
-import {ICard, ICountCard, ISave, IUser} from '../../../../models';
-import {AuthService} from '../../../service/auth.service';
-import {DatabaseService} from '../../../service/database.service';
-import {addToCollection, loadSave, setSave,} from '../../../store/digimon.actions';
-import {selectAllCards, selectCollection, selectSave, selectSettings,} from '../../../store/digimon.selectors';
-import {emptySettings} from '../../../store/reducers/save.reducer';
-import {GroupedSets} from '../filter/filter-side-box/filterData';
+import { Component, HostListener, OnDestroy, OnInit } from "@angular/core";
+import { FormControl } from "@angular/forms";
+import { Router } from "@angular/router";
+import { Store } from "@ngrx/store";
+import { saveAs } from "file-saver";
+import { ConfirmationService, MenuItem, MessageService, PrimeNGConfig } from "primeng/api";
+import { first, Subject, takeUntil } from "rxjs";
+import { ICard, ICountCard, ISave, IUser } from "../../../../models";
+import { AuthService } from "../../../service/auth.service";
+import { DatabaseService } from "../../../service/database.service";
+import { addToCollection, loadSave, setSave } from "../../../store/digimon.actions";
+import { selectAllCards, selectCollection, selectSave, selectSettings } from "../../../store/digimon.selectors";
+import { emptySettings } from "../../../store/reducers/save.reducer";
+import { GroupedSets } from "../filter/filter-side-box/filterData";
 
 @Component({
-  selector: 'digimon-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss'],
+  selector: "digimon-menu",
+  templateUrl: "./menu.component.html",
+  styleUrls: ["./menu.component.scss"]
 })
 export class MenuComponent implements OnInit, OnDestroy {
-  save = '';
+  save = "";
   iSave: ISave;
 
   items: MenuItem[];
@@ -30,6 +30,7 @@ export class MenuComponent implements OnInit, OnDestroy {
   collectionDisplay = false;
   settingsDialog = false;
   creditsDisplay = false;
+  showChangelog = false;
 
   importPlaceholder =
     '' + 'Paste Collection here\n' + '\n' + ' Format:\n' + '   Qty Id\n';
@@ -44,8 +45,8 @@ export class MenuComponent implements OnInit, OnDestroy {
   aa = true;
   stamped = true;
   showHideOptions = [
-    {label: 'Show', value: true},
-    {label: 'Hide', value: false},
+    { label: "Show", value: true },
+    { label: "Hide", value: false }
   ];
 
   userStats = true;
@@ -182,20 +183,25 @@ export class MenuComponent implements OnInit, OnDestroy {
           url: 'https://github.com/users/TakaOtaku/projects/1/views/3',
         },
         {
-          label: 'Feature/Bug Request',
-          icon: 'pi pi-plus',
-          url: 'https://github.com/TakaOtaku/Digimon-Card-App/issues',
+          label: "Feature/Bug Request",
+          icon: "pi pi-plus",
+          url: "https://github.com/TakaOtaku/Digimon-Card-App/issues"
         },
         {
-          label: 'Help the Site!',
-          icon: 'pi pi-paypal',
-          url: 'https://www.paypal.com/donate/?hosted_button_id=WLM58Q785D4H4',
+          label: "Help the Site!",
+          icon: "pi pi-paypal",
+          url: "https://www.paypal.com/donate/?hosted_button_id=WLM58Q785D4H4"
         },
         {
-          label: 'Credits',
-          icon: 'pi pi-file',
-          command: () => (this.creditsDisplay = true),
+          label: "Changelog",
+          icon: "pi pi-history",
+          command: () => (this.showChangelog = true)
         },
+        {
+          label: "Credits",
+          icon: "pi pi-file",
+          command: () => (this.creditsDisplay = true)
+        }
       ],
     };
 

@@ -4,7 +4,13 @@
     "projects/**/*"
   ],
   "rules": {
-    "no-console": "error"
+    "no-console": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
   },
   "plugins": ["prettier"],
   "overrides": [

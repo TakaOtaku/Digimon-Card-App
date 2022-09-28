@@ -1,15 +1,19 @@
-import {Component, Input, OnDestroy, OnInit,} from '@angular/core';
-import {Store} from '@ngrx/store';
-import {Subject, takeUntil} from 'rxjs';
-import {ICard, ICountCard} from '../../../../models';
-import {selectCollection, selectCollectionMode, selectFilteredCards,} from '../../../store/digimon.selectors';
+import { Component, Input, OnDestroy, OnInit } from "@angular/core";
+import { Store } from "@ngrx/store";
+import { Subject, takeUntil } from "rxjs";
+import { englishCards } from "../../../../assets/cardlists/eng/english";
+import { ICard, ICountCard } from "../../../../models";
+import { selectCollection, selectCollectionMode, selectFilteredCards } from "../../../store/digimon.selectors";
 
 @Component({
-  selector: 'digimon-card-list',
-  templateUrl: './card-list.component.html',
+  selector: "digimon-card-list",
+  templateUrl: "./card-list.component.html"
 })
 export class CardListComponent implements OnInit, OnDestroy {
   @Input() public showCount: number;
+
+  viewCardDialog = false;
+  card = englishCards[0];
 
   cards: ICard[] = [];
   cardsToShow: ICard[] = [];
@@ -88,5 +92,10 @@ export class CardListComponent implements OnInit, OnDestroy {
     return (
       this.cards.length > this.cardsToShow.length && this.cardsToShow.length > 0
     );
+  }
+
+  viewCard(card: ICard) {
+    this.viewCardDialog = true;
+    this.card = card;
   }
 }

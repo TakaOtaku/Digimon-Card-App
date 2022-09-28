@@ -1,15 +1,15 @@
-import {Component, Input, OnDestroy, OnInit,} from '@angular/core';
-import {Store} from '@ngrx/store';
-import {Subject, takeUntil} from 'rxjs';
-import {englishCards} from '../../../../assets/cardlists/eng/english';
-import {ICard} from '../../../../models';
-import {addCardToDeck, changeCardCount} from '../../../store/digimon.actions';
-import {selectCollectionMinimum, selectDeck,} from '../../../store/digimon.selectors';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from "@angular/core";
+import { Store } from "@ngrx/store";
+import { Subject, takeUntil } from "rxjs";
+import { englishCards } from "../../../../assets/cardlists/eng/english";
+import { ICard } from "../../../../models";
+import { addCardToDeck, changeCardCount } from "../../../store/digimon.actions";
+import { selectCollectionMinimum, selectDeck } from "../../../store/digimon.selectors";
 
 @Component({
-  selector: 'digimon-full-card',
-  templateUrl: './full-card.component.html',
-  styleUrls: ['./full-card.component.scss'],
+  selector: "digimon-full-card",
+  templateUrl: "./full-card.component.html",
+  styleUrls: ["./full-card.component.scss"]
 })
 export class FullCardComponent implements OnInit, OnDestroy {
   @Input() card: ICard = englishCards[0];
@@ -23,15 +23,17 @@ export class FullCardComponent implements OnInit, OnDestroy {
 
   @Input() deckView: boolean;
 
-  cardWidth = 7 + 'vmin';
-  cardBorder = '2px solid black';
-  cardRadius = '5px';
+  @Output() viewCard = new EventEmitter<ICard>();
+
+  cardWidth = 7 + "vmin";
+  cardBorder = "2px solid black";
+  cardRadius = "5px";
 
   viewCardDialog = false;
 
   aa = new Map<string, string>([
-    ['Red', 'assets/images/banner/ico_card_detail_red.png'],
-    ['Blue', 'assets/images/banner/ico_card_detail_blue.png'],
+    ["Red", "assets/images/banner/ico_card_detail_red.png"],
+    ["Blue", "assets/images/banner/ico_card_detail_blue.png"],
     ['Yellow', 'assets/images/banner/ico_card_detail_yellow.png'],
     ['Green', 'assets/images/banner/ico_card_detail_green.png'],
     ['Black', 'assets/images/banner/ico_card_detail_black.png'],
@@ -68,11 +70,12 @@ export class FullCardComponent implements OnInit, OnDestroy {
   }
 
   addCardToDeck() {
-    this.store.dispatch(addCardToDeck({addCardToDeck: this.card.id}))
+    this.store.dispatch(addCardToDeck({ addCardToDeck: this.card.id }));
   }
 
   showCardDetails() {
-    this.viewCardDialog = true;
+    this.viewCard.emit(this.card);
+    //this.viewCardDialog = true;
   }
 
   changeCardCount(event: any, id: string) {

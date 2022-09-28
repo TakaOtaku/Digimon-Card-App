@@ -1,17 +1,18 @@
-import { Injectable } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/compat/database';
-import { getDatabase, ref, update, remove } from '@angular/fire/database';
-import { BehaviorSubject, first, Subject } from 'rxjs';
-import { IDeck, ISave, IUser } from '../../models';
-import { CARDSET } from '../../models/card-set.enum';
-import { emptyDeck } from '../store/reducers/digimon.reducers';
-import { emptySettings } from '../store/reducers/save.reducer';
+import { Injectable } from "@angular/core";
+import { AngularFireDatabase } from "@angular/fire/compat/database";
+import { get, getDatabase, ref, remove, update } from "@angular/fire/database";
+import { BehaviorSubject, first, Subject } from "rxjs";
+import { IDeck, ISave, IUser } from "../../models";
+import { CARDSET } from "../../models/card-set.enum";
+import { emptyDeck } from "../store/reducers/digimon.reducers";
+import { emptySettings } from "../store/reducers/save.reducer";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root"
 })
 export class DatabaseService {
-  constructor(public database: AngularFireDatabase) {}
+  constructor(public database: AngularFireDatabase) {
+  }
 
   /**
    * Falls der Nutzer eingeloggt ist und keine Daten hat, erstelle diese
@@ -185,6 +186,16 @@ export class DatabaseService {
 
   deleteDeck(uId: string) {
     const db = getDatabase();
-    return remove(ref(db, 'community-decks/' + uId));
+    return remove(ref(db, "community-decks/" + uId));
+  }
+
+  loadChangelog(): Promise<any> {
+    const db = getDatabase();
+    return get(ref(db, "blog/changelog"));
+  }
+
+  saveChangelog(changelog: any) {
+    const db = getDatabase();
+    return update(ref(db, "blog/changelog"), changelog);
   }
 }

@@ -21,12 +21,12 @@
       [(ngModel)]="descriptionInput"
       (ngModelChange)="this.descriptionChange.emit($event)"
       placeholder="Description:"
-      class="w-full overflow-hidden h-[40px] md:h-[66px]"
+      class="h-[40px] w-full overflow-hidden md:h-[66px]"
       pInputTextarea
     ></textarea>
   </span>
   <div
-    class="mr-6 flex h-[40px] md:h-[66px] w-full flex-row justify-center border border-[#304562]"
+    class="mr-6 flex h-[40px] w-full flex-row justify-center border border-[#304562] md:h-[66px]"
   >
     <div
       *ngFor="let deckBox of colors"
@@ -36,11 +36,7 @@
         'surface-ground': selectedColor.name !== deckBox.name
       }"
     >
-      <img
-        [src]="deckBox.img"
-        alt="Deckbox"
-        class="h-full"
-      />
+      <img [src]="deckBox.img" alt="Deckbox" class="h-full" />
     </div>
   </div>
 </div>

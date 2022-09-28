@@ -1,4 +1,4 @@
-<div class="text-white border-2 border-white">
+<div class="border-2 border-white text-white">
   <!--button
     (click)="importDeckDialog = true"
     class="w-1/2 font-bold"
@@ -29,7 +29,11 @@
         <th class="max-w-[120px]">
           <div class="max-w-5 mx-auto">
             Color
-            <p-columnFilter display="menu" field="color.name" matchMode="equals">
+            <p-columnFilter
+              display="menu"
+              field="color.name"
+              matchMode="equals"
+            >
               <ng-template
                 let-filter="filterCallback"
                 let-value
@@ -85,7 +89,10 @@
         <td class="max-w-[400px] lg:max-w-[100%]">{{ deck.title }}</td>
         <td class="max-w-[400px] lg:max-w-[100%]">
           <div class="mx-auto">
-            <p-chip *ngFor="let tag of deck.tags" label="{{ tag.name }}"></p-chip>
+            <p-chip
+              *ngFor="let tag of deck.tags"
+              label="{{ tag.name }}"
+            ></p-chip>
           </div>
         </td>
         <td class="max-w-[400px] truncate lg:max-w-[100%]">

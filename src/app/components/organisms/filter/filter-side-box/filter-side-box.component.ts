@@ -1,14 +1,14 @@
-import {Component, EventEmitter, Input, OnDestroy, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
-import {Store} from '@ngrx/store';
-import {MessageService} from 'primeng/api';
-import {Subject, takeUntil} from 'rxjs';
-import {IFilter} from '../../../../../models';
-import {CARDSET} from '../../../../../models/card-set.enum';
-import {ISelectItem} from '../../../../../models/interfaces/select-item.interface';
-import {changeCardSets, changeFilter,} from '../../../../store/digimon.actions';
-import {selectCardSet, selectCollectionMode, selectFilter,} from '../../../../store/digimon.selectors';
-import {emptyFilter} from '../../../../store/reducers/digimon.reducers';
+import { Component, EventEmitter, Input, OnDestroy, OnInit } from "@angular/core";
+import { FormControl, FormGroup } from "@angular/forms";
+import { Store } from "@ngrx/store";
+import { MessageService } from "primeng/api";
+import { Subject, takeUntil } from "rxjs";
+import { IFilter } from "../../../../../models";
+import { CARDSET } from "../../../../../models/card-set.enum";
+import { ISelectItem } from "../../../../../models/interfaces/select-item.interface";
+import { changeCardSets, changeFilter } from "../../../../store/digimon.actions";
+import { selectCardSet, selectCollectionMode, selectFilter } from "../../../../store/digimon.selectors";
+import { emptyFilter } from "../../../../store/reducers/digimon.reducers";
 import {
   Attributes,
   BlockButtons,
@@ -22,8 +22,8 @@ import {
   Restrictions,
   SpecialRequirements,
   Types,
-  VersionButtons,
-} from './filterData';
+  VersionButtons
+} from "./filterData";
 
 @Component({
   selector: 'digimon-filter-side-box',
@@ -164,53 +164,53 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
 
   reset() {
     this.resetEmitter.emit();
-    this.store.dispatch(changeFilter({filter: emptyFilter}));
+    this.store.dispatch(changeFilter({ filter: emptyFilter }));
     this.messageService.add({
-      severity: 'info',
-      detail: 'All filter were reset.',
+      severity: "info",
+      detail: "All filter were reset."
     });
   }
 
   setCardSet(cardSet: string) {
-    this.store.dispatch(changeCardSets({cardSet}));
+    this.store.dispatch(changeCardSets({ cardSet }));
   }
 
   itemsAsSelectItem(array: string[]): ISelectItem[] {
-    return array.map((item) => ({label: item, value: item} as ISelectItem));
+    return array.map((item) => ({ label: item, value: item } as ISelectItem));
   }
 
   //region Slider Functions
   updateCardCountSlider(event: any) {
     this.store.dispatch(
       changeFilter({
-        filter: {...this.filter, cardCountFilter: event},
+        filter: { ...this.filter, cardCountFilter: event }
       })
     );
   }
 
   updateLevelSlider(event: any) {
     this.store.dispatch(
-      changeFilter({filter: {...this.filter, levelFilter: event}})
+      changeFilter({ filter: { ...this.filter, levelFilter: event } })
     );
   }
 
   updatePlayCostSlider(event: any) {
     this.store.dispatch(
-      changeFilter({filter: {...this.filter, playCostFilter: event}})
+      changeFilter({ filter: { ...this.filter, playCostFilter: event } })
     );
   }
 
   updateDigivolutionSlider(event: any) {
     this.store.dispatch(
       changeFilter({
-        filter: {...this.filter, digivolutionFilter: event},
+        filter: { ...this.filter, digivolutionFilter: event }
       })
     );
   }
 
   updateDPSlider(event: any) {
     this.store.dispatch(
-      changeFilter({filter: {...this.filter, dpFilter: event}})
+      changeFilter({ filter: { ...this.filter, dpFilter: event } })
     );
   }
 
@@ -225,8 +225,8 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
       colors = [...new Set(this.filter.colorFilter), color];
     }
 
-    const filter: IFilter = {...this.filter, colorFilter: colors};
-    this.store.dispatch(changeFilter({filter}));
+    const filter: IFilter = { ...this.filter, colorFilter: colors };
+    this.store.dispatch(changeFilter({ filter }));
   }
 
   changeCardType(type: string) {
@@ -261,8 +261,8 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
       versions = [...new Set(this.filter.versionFilter), version];
     }
 
-    const filter: IFilter = {...this.filter, versionFilter: versions};
-    this.store.dispatch(changeFilter({filter}));
+    const filter: IFilter = { ...this.filter, versionFilter: versions };
+    this.store.dispatch(changeFilter({ filter }));
   }
 
   changeBlock(block: string) {
@@ -273,8 +273,8 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
       blocks = [...new Set(this.filter.blockFilter), block];
     }
 
-    const filter: IFilter = {...this.filter, blockFilter: blocks};
-    this.store.dispatch(changeFilter({filter}));
+    const filter: IFilter = { ...this.filter, blockFilter: blocks };
+    this.store.dispatch(changeFilter({ filter }));
   }
   //endregion
 }
