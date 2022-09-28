@@ -108,6 +108,14 @@
     </div>
   </div>
 
+  <digimon-multi-buttons
+    (clickEvent)="changeCardType($event)"
+    [buttonArray]="cardTypeButtons"
+    [filterFormControl]="cardTypeFilter"
+    [perRow]="4"
+    title="Card-Types"
+  ></digimon-multi-buttons>
+
   <p-multiSelect
     [filter]="false"
     [formControl]="setFilter"
