@@ -2741,6 +2741,36 @@
     "illustrator": "Kenji Watanabe"
   },
   {
+    "id": "P-065",
+    "name": "Gammamon",
+    "cardImage": "assets/images/cards/eng/P-065.webp",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "4",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Virus",
+    "type": "Ceratopsian",
+    "rarity": "P",
+    "cardNumber": "P-065",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Play] Delete 1 of your opponent's Digimon with 2000 DP or less.",
+    "digivolveEffect": "[When Attacking] Delete 1 of your opponent's Digimon with 2000 DP or less.",
+    "securityEffect": "-",
+    "notes": "ST-11 SPECIAL ENTRY PACK",
+    "color": "Red",
+    "version": "Normal",
+    "block": [
+      "01"
+    ],
+    "restriction": "-",
+    "illustrator": "Kenji Watanabe"
+  },
+  {
     "id": "P-072",
     "name": "MetalGreymon: Alterous Mode",
     "cardImage": "assets/images/cards/eng/P-072.webp",
