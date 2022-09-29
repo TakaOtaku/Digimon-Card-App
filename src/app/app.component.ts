@@ -62,16 +62,20 @@ export class AppComponent {
 
     this.meta.addTags([
       {
-        name: 'description',
+        name: "description",
         content:
-          'Digimon Card Game Site for collecting cards and building decks',
+          "Digimon Card Game (TCG) Deckbuilder for keeping track of your collection of cards and building casual decks and tournament decks." +
+          "You can very easily create decks with various filters for the cards, you can even check which cards are missing in your collection" +
+          "Share your decks and your profil with the community or just your friends, to share insights and make trading a whole lot easier." +
+          "All english and japanese cards are available when they release." +
+          "Currently we have: BT1, BT2, BT3, BT4, BT5, BT6, BT7, BT8, BT9, BT10, BT11, EX1, EX2, EX3, ST1, ST2, ST3, ST4, ST5, ST6, ST7, ST8, ST9, ST10, ST12 and ST13"
       },
       { name: 'author', content: 'TakaOtaku' },
       {
-        name: 'keywords',
+        name: "keywords",
         content:
-          'Digimon, Card, Game, Collecting, Deck, Deckbuilder, Casual, TCG, English, Japanese, Tracking',
-      },
+          "Digimon, digimon, Card, card, Game, game, Cardgame, Collecting, Deck, Deckbuilder, Casual, TCG, English, Japanese, Tracking"
+      }
     ]);
   }
 
