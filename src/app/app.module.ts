@@ -42,6 +42,7 @@ import {
 import {
   ImportDeckDialogComponent
 } from "./components/molecules/dialogs/import-deck-dialog/import-deck-dialog.component";
+import { SettingsDialogComponent } from "./components/molecules/dialogs/settings-dialog/settings-dialog.component";
 import { ViewCardDialogComponent } from "./components/molecules/dialogs/view-card-dialog/view-card-dialog.component";
 import { FullCardComponent } from "./components/molecules/full-card/full-card.component";
 import { MultiButtonsComponent } from "./components/molecules/multi-buttons/multi-buttons.component";
@@ -59,7 +60,9 @@ import { NavbarComponent } from "./components/organisms/navbar/navbar.component"
 import {
   PaginationCardListComponent
 } from "./components/organisms/pagination-card-list/pagination-card-list.component";
+import { CollectionPageComponent } from "./pages/collection-page/collection-page.component";
 import { CommunityComponent } from "./pages/community/community.component";
+import { DeckbuilderComponent } from "./pages/deckbuilder/deckbuilder.component";
 import { HomeComponent } from "./pages/home/home.component";
 import { UserComponent } from "./pages/user/user.component";
 import { ObscenityPipe } from "./pipes/obscenity.pipe";
@@ -110,7 +113,10 @@ import * as Save from "./store/reducers/save.reducer";
     CollectionCircleComponent,
     MultiButtonsComponent,
     ObscenityPipe,
-    ChangelogDialogComponent
+    ChangelogDialogComponent,
+    DeckbuilderComponent,
+    CollectionPageComponent,
+    SettingsDialogComponent,
   ],
   imports: [
     PrimeNGModule,
@@ -147,13 +153,13 @@ import * as Save from "./store/reducers/save.reducer";
       }
     ),
     StoreDevtoolsModule.instrument({
-      name: "Digimon Card Collector",
-      logOnly: environment.production
+      name: 'Digimon Card Collector',
+      logOnly: environment.production,
     }),
     EffectsModule.forRoot([DigimonEffects]),
     PaginatorModule,
     InputSwitchModule,
-    QuillModule.forRoot()
+    QuillModule.forRoot(),
   ],
   exports: [ObscenityPipe],
   providers: [ReactiveFormsModule, AuthService, DatabaseService],

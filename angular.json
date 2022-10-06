@@ -40,6 +40,7 @@
               "node_modules/quill/dist/quill.snow.css"
             ],
             "scripts": [
+              "node_modules/tw-elements/dist/js/index.min.js",
               "node_modules/quill/dist/quill.min.js"
             ]
           },

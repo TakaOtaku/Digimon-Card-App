@@ -8,7 +8,7 @@ describe('CollectionCircleComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [CollectionCircleComponent]
+      declarations: [CollectionCircleComponent],
     }).compileComponents();
   });
 

@@ -1,5 +1,3 @@
-<digimon-sort-buttons></digimon-sort-buttons>
-
 <div class="align-items-center surface-card flex h-10 flex-row justify-evenly">
   <div class="col-span-2 my-auto">
     <p-paginator
@@ -48,6 +46,7 @@
     [count]="getCount(card.id)"
     [deckBuilder]="true"
     [ngClass]="getCardsInARow()"
+    [collectionOnly]="collectionOnly"
     (viewCard)="viewCard($event)"
   ></digimon-full-card>
 </div>

@@ -86,7 +86,7 @@
                 <ng-template let-option pTemplate="item">
                   <span [class]="'customer-badge status-' + option">{{
                     option
-                    }}</span>
+                  }}</span>
                 </ng-template>
               </p-dropdown>
             </ng-template>
@@ -114,6 +114,7 @@
   <ng-template let-deck let-expanded="expanded" pTemplate="body">
     <tr
       class="max-h-[50px]"
+      (click)="showContextMenu(table, $event, deck)"
       (dblclick)="showContextMenu(table, $event, deck)"
       [pContextMenuRow]="deck"
     >

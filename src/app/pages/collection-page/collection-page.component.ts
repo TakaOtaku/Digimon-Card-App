@@ -1,21 +1,19 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { Subject, takeUntil } from "rxjs";
-import { setMobileCollectionView } from "../../../../store/digimon.actions";
-import { selectMobileCollectionView } from "../../../../store/digimon.selectors";
+import { selectMobileCollectionView } from "../../store/digimon.selectors";
 
 @Component({
-  selector: 'digimon-filter-button',
-  templateUrl: './filter-button.component.html',
+  selector: 'digimon-collection-page',
+  templateUrl: './collection-page.component.html',
 })
-export class FilterButtonComponent implements OnInit, OnDestroy {
+export class CollectionPageComponent implements OnInit, OnDestroy {
   mobileCollectionView = false;
 
   private onDestroy$ = new Subject();
-
   constructor(private store: Store) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.store
       .select(selectMobileCollectionView)
       .pipe(takeUntil(this.onDestroy$))
@@ -27,13 +25,5 @@ export class FilterButtonComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.onDestroy$.next(true);
-  }
-
-  setMobileCollectionView() {
-    this.store.dispatch(
-      setMobileCollectionView({
-        mobileCollectionView: !this.mobileCollectionView,
-      })
-    );
   }
 }

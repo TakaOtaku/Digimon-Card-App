@@ -15,7 +15,7 @@ import {
 } from "../../store/digimon.selectors";
 
 @Component({
-  selector: "digimon-user",
+  selector: 'digimon-user',
   templateUrl: './user.component.html',
 })
 export class UserComponent implements OnInit, OnDestroy {
@@ -33,8 +33,7 @@ export class UserComponent implements OnInit, OnDestroy {
     private authService: AuthService,
     private databaseService: DatabaseService,
     private store: Store
-  ) {
-  }
+  ) {}
 
   ngOnInit() {
     this.storeSubscriptions();
@@ -90,13 +89,13 @@ export class UserComponent implements OnInit, OnDestroy {
       .pipe(
         first(),
         filter((params) => {
-          if (!params["id"]) {
+          if (!params['id']) {
             this.changeURL();
           }
-          return !!params["id"];
+          return !!params['id'];
         }),
         switchMap((params) =>
-          this.databaseService.loadSave(params["id"]).pipe(first())
+          this.databaseService.loadSave(params['id']).pipe(first())
         )
       )
       .subscribe((save) => {

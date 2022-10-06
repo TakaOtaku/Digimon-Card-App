@@ -2,6 +2,9 @@ import { MultiButtons } from "../../../molecules/multi-buttons/multi-buttons.com
 
 export const GroupedSets = [
   {
+    items: [{ label: 'P', value: 'P' }],
+  },
+  {
     label: 'Standard',
     value: 'displays',
     items: [

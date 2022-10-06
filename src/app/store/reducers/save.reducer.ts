@@ -73,19 +73,19 @@ export const saveReducer = createReducer(
 
   on(changeCardSets, (state, { cardSet }) => ({
     ...state,
-    settings: { ...state.settings, cardSet }
+    settings: { ...state.settings, cardSet },
   })),
   on(changeCollectionMode, (state, { collectionMode }) => ({
     ...state,
-    settings: { ...state.settings, collectionMode }
+    settings: { ...state.settings, collectionMode },
   })),
   on(changeShowUserStats, (state, { showUserStats }) => ({
     ...state,
-    settings: { ...state.settings, showUserStats }
+    settings: { ...state.settings, showUserStats },
   })),
   on(changeCollectionMinimum, (state, { minimum }) => ({
     ...state,
-    settings: { ...state.settings, collectionMinimum: minimum }
+    settings: { ...state.settings, collectionMinimum: minimum },
   })),
   on(changeShowVersion, (state, { showPre, showAA, showStamp }) => ({
     ...state,
@@ -93,8 +93,8 @@ export const saveReducer = createReducer(
       ...state.settings,
       showPreRelease: showPre,
       showAACards: showAA,
-      showStampedCards: showStamp
-    }
+      showStampedCards: showStamp,
+    },
   })),
 
   on(importDeck, (state, { deck }) => {

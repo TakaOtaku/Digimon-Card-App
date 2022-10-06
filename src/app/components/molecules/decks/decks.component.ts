@@ -11,9 +11,9 @@ import { deleteDeck, importDeck, setDeck } from "../../../store/digimon.actions"
 import { selectDecks } from "../../../store/digimon.selectors";
 
 @Component({
-  selector: "digimon-decks",
-  templateUrl: "./decks.component.html",
-  styleUrls: ["./decks.component.css"]
+  selector: 'digimon-decks',
+  templateUrl: './decks.component.html',
+  styleUrls: ['./decks.component.css'],
 })
 export class DecksComponent implements OnInit, OnDestroy {
   selectedDeck: IDeck;
@@ -151,11 +151,11 @@ export class DecksComponent implements OnInit, OnDestroy {
   openDeck(): void {
     if (this.authService.isLoggedIn) {
       this.router.navigateByUrl(
-        `user/${this.authService.userData?.uid}/deck/${this.selectedDeck.id}`
+        `deckbuilder/user/${this.authService.userData?.uid}/deck/${this.selectedDeck.id}`
       );
     } else {
       this.store.dispatch(setDeck({ deck: this.selectedDeck }));
-      this.router.navigateByUrl("");
+      this.router.navigateByUrl('deckbuilder');
     }
   }
 

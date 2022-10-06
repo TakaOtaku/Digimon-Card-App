@@ -106,7 +106,7 @@ function applySearchFilter(cards: ICard[], searchFilter: string): ICard[] {
       ...illustratorFiltered,
       ...dnaFiltered,
       ...specialFiltered,
-      ...noteFiltered
+      ...noteFiltered,
     ]),
   ];
 }

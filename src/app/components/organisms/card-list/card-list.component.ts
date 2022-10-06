@@ -6,8 +6,8 @@ import { ICard, ICountCard } from "../../../../models";
 import { selectCollection, selectCollectionMode, selectFilteredCards } from "../../../store/digimon.selectors";
 
 @Component({
-  selector: "digimon-card-list",
-  templateUrl: "./card-list.component.html"
+  selector: 'digimon-card-list',
+  templateUrl: './card-list.component.html',
 })
 export class CardListComponent implements OnInit, OnDestroy {
   @Input() public showCount: number;

@@ -8,9 +8,9 @@ import { selectAllCards } from "../../../../store/digimon.selectors";
 import { ColorsWithoutMulti } from "../../../organisms/filter/filter-side-box/filterData";
 
 @Component({
-  selector: "digimon-export-deck-dialog",
-  templateUrl: "./export-deck-dialog.component.html",
-  styleUrls: ["./export-deck-dialog.component.scss"]
+  selector: 'digimon-export-deck-dialog',
+  templateUrl: './export-deck-dialog.component.html',
+  styleUrls: ['./export-deck-dialog.component.scss'],
 })
 export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
   @Input() show: boolean = false;
@@ -77,7 +77,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   private setExportTypeTTS(): void {
-    this.deckText = "[\"Exported from https://digimoncard.app\",";
+    this.deckText = '["Exported from https://digimoncard.app",';
     const cards = mapToDeckCards(this.deck.cards, this.digimonCards);
     cards.forEach((card) => {
       for (let i = 0; i < card.count; i++) {
@@ -85,7 +85,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
       }
     });
     this.deckText = this.deckText.substring(0, this.deckText.length - 1);
-    this.deckText += "]";
+    this.deckText += ']';
   }
 
   exportDeckToFile(): void {

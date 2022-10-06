@@ -8,11 +8,10 @@ import { emptyDeck } from "../store/reducers/digimon.reducers";
 import { emptySettings } from "../store/reducers/save.reducer";
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root',
 })
 export class DatabaseService {
-  constructor(public database: AngularFireDatabase) {
-  }
+  constructor(public database: AngularFireDatabase) {}
 
   /**
    * Falls der Nutzer eingeloggt ist und keine Daten hat, erstelle diese
@@ -186,16 +185,16 @@ export class DatabaseService {
 
   deleteDeck(uId: string) {
     const db = getDatabase();
-    return remove(ref(db, "community-decks/" + uId));
+    return remove(ref(db, 'community-decks/' + uId));
   }
 
   loadChangelog(): Promise<any> {
     const db = getDatabase();
-    return get(ref(db, "blog/changelog"));
+    return get(ref(db, 'blog/changelog-dev'));
   }
 
   saveChangelog(changelog: any) {
     const db = getDatabase();
-    return update(ref(db, "blog/changelog"), changelog);
+    return update(ref(db, 'blog/changelog-dev'), changelog);
   }
 }

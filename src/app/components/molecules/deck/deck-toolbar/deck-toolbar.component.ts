@@ -8,8 +8,8 @@ import { selectAllCards } from "../../../../store/digimon.selectors";
 import { emptyDeck } from "../../../../store/reducers/digimon.reducers";
 
 @Component({
-  selector: "digimon-deck-toolbar",
-  templateUrl: "./deck-toolbar.component.html"
+  selector: 'digimon-deck-toolbar',
+  templateUrl: './deck-toolbar.component.html',
 })
 export class DeckToolbarComponent implements OnDestroy {
   @Input() deck: IDeck;
@@ -84,9 +84,9 @@ export class DeckToolbarComponent implements OnDestroy {
         const deck: IDeck = emptyDeck;
         this.store.dispatch(setDeck({ deck }));
         this.messageService.add({
-          severity: "success",
-          summary: "Deck cleared!",
-          detail: "Deck-Cards were cleared successfully!"
+          severity: 'success',
+          summary: 'Deck cleared!',
+          detail: 'Deck-Cards were cleared successfully!',
         });
       },
     });

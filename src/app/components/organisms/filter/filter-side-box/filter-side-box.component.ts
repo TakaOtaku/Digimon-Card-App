@@ -89,8 +89,7 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
   private filter: IFilter;
   private onDestroy$ = new Subject();
 
-  constructor(private store: Store, private messageService: MessageService) {
-  }
+  constructor(private store: Store, private messageService: MessageService) {}
 
   ngOnInit(): void {
     this.store
@@ -166,8 +165,8 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
     this.resetEmitter.emit();
     this.store.dispatch(changeFilter({ filter: emptyFilter }));
     this.messageService.add({
-      severity: "info",
-      detail: "All filter were reset."
+      severity: 'info',
+      detail: 'All filter were reset.',
     });
   }
 
@@ -183,7 +182,7 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
   updateCardCountSlider(event: any) {
     this.store.dispatch(
       changeFilter({
-        filter: { ...this.filter, cardCountFilter: event }
+        filter: { ...this.filter, cardCountFilter: event },
       })
     );
   }
@@ -203,7 +202,7 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
   updateDigivolutionSlider(event: any) {
     this.store.dispatch(
       changeFilter({
-        filter: { ...this.filter, digivolutionFilter: event }
+        filter: { ...this.filter, digivolutionFilter: event },
       })
     );
   }

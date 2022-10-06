@@ -1,0 +1,393 @@
+<ul
+  class="nav nav-tabs mx-auto mb-4 flex w-full list-none flex-col flex-wrap border-b-0 pl-0 md:flex-row"
+  id="tabs-tab"
+  role="tablist"
+>
+  <li class="nav-item" role="presentation">
+    <a
+      href="#tabs-home"
+      class="nav-link active my-2 block border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 text-xs font-medium uppercase leading-tight hover:border-transparent hover:bg-gray-100 focus:border-transparent"
+      id="tabs-home-tab"
+      data-bs-toggle="pill"
+      data-bs-target="#tabs-home"
+      role="tab"
+      aria-controls="tabs-home"
+      aria-selected="true"
+      >General</a
+    >
+  </li>
+  <li class="nav-item" role="presentation">
+    <a
+      href="#tabs-profile"
+      class="nav-link my-2 block border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 text-xs font-medium uppercase leading-tight hover:border-transparent hover:bg-gray-100 focus:border-transparent"
+      id="tabs-profile-tab"
+      data-bs-toggle="pill"
+      data-bs-target="#tabs-profile"
+      role="tab"
+      aria-controls="tabs-profile"
+      aria-selected="false"
+      >Collection Export</a
+    >
+  </li>
+  <li class="nav-item" role="presentation">
+    <a
+      href="#tabs-messages"
+      class="nav-link my-2 block border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 text-xs font-medium uppercase leading-tight hover:border-transparent hover:bg-gray-100 focus:border-transparent"
+      id="tabs-messages-tab"
+      data-bs-toggle="pill"
+      data-bs-target="#tabs-messages"
+      role="tab"
+      aria-controls="tabs-messages"
+      aria-selected="false"
+      >Collection Import</a
+    >
+  </li>
+  <li class="nav-item" role="presentation">
+    <a
+      href="#tabs-contact"
+      class="nav-link my-2 block border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 text-xs font-medium uppercase leading-tight hover:border-transparent hover:bg-gray-100 focus:border-transparent"
+      id="tabs-contact-tab"
+      data-bs-toggle="pill"
+      data-bs-target="#tabs-contact"
+      role="tab"
+      aria-controls="tabs-contact"
+      aria-selected="false"
+      >Links</a
+    >
+  </li>
+</ul>
+<div class="tab-content" id="tabs-tabContent">
+  <div
+    class="active show tab-pane fade"
+    id="tabs-home"
+    role="tabpanel"
+    aria-labelledby="tabs-home-tab"
+  >
+    <div class="flex w-full flex-col justify-end">
+      <div class="mx-auto my-5 flex flex-row">
+        <div>
+          <span class="text-white">Deck-Cards will be sorted first with:</span>
+          <div class="flex justify-center">
+            <p-selectButton
+              [formControl]="sortOrderFilter"
+              [multiple]="false"
+              [options]="sortOrder"
+            >
+            </p-selectButton>
+          </div>
+        </div>
+
+        <span class="ml-5 flex flex-col">
+          <span class="text-white">
+            Deck-Cards will be sorted first with:
+          </span>
+          <p-inputNumber
+            [(ngModel)]="collectionCount"
+            mode="decimal"
+          ></p-inputNumber>
+        </span>
+      </div>
+
+      <div class="mx-auto flex flex-row">
+        <div>
+          <h5 class="mt-5 text-center font-bold">Pre-Release Cards</h5>
+          <p-selectButton
+            [(ngModel)]="preRelease"
+            [options]="showHideOptions"
+            class="mx-auto"
+            optionLabel="label"
+            optionValue="value"
+          ></p-selectButton>
+        </div>
+
+        <div class="mx-5">
+          <h5 class="mt-5 text-center font-bold">Alt. Art Cards</h5>
+          <p-selectButton
+            [(ngModel)]="aa"
+            [options]="showHideOptions"
+            class="mx-auto"
+            optionLabel="label"
+            optionValue="value"
+          ></p-selectButton>
+        </div>
+
+        <div>
+          <h5 class="mt-5 text-center font-bold">Stamped Cards</h5>
+          <p-selectButton
+            [(ngModel)]="stamped"
+            [options]="showHideOptions"
+            class="mx-auto"
+            optionLabel="label"
+            optionValue="value"
+          ></p-selectButton>
+        </div>
+      </div>
+
+      <div class="mx-auto">
+        <h5 class="mt-5 text-center font-bold">Show User-Stats</h5>
+        <p-selectButton
+          [(ngModel)]="userStats"
+          [options]="showHideOptions"
+          class="mx-auto"
+          optionLabel="label"
+          optionValue="value"
+        ></p-selectButton>
+      </div>
+    </div>
+
+    <div class="flex flex-row justify-end">
+      <button
+        (click)="saveSettings()"
+        class="mt-10"
+        icon="pi pi-save"
+        label="Save Settings"
+        pButton
+        type="button"
+      ></button>
+    </div>
+  </div>
+  <div
+    class="fade tab-pane"
+    id="tabs-profile"
+    role="tabpanel"
+    aria-labelledby="tabs-profile-tab"
+  >
+    <div class="mx-auto flex flex-col justify-center">
+      <p class="text-center font-bold">What cards you want to export?</p>
+      <p class="text-center text-xs">(Select nothing for all cards)</p>
+      <div class="mx-auto">
+        <p-multiSelect
+          [filter]="false"
+          [(ngModel)]="sets"
+          [group]="true"
+          [options]="groupedSets"
+          [showHeader]="false"
+          [showToggleAll]="false"
+          defaultLabel="Select a Set"
+          display="chip"
+          scrollHeight="250px"
+          class="mt-2"
+          styleClass="w-full max-w-[300px] h-8 text-sm"
+        >
+          <ng-template let-group pTemplate="group">
+            <div class="align-items-center flex">
+              <span>{{ group.label }}</span>
+            </div>
+          </ng-template>
+        </p-multiSelect>
+      </div>
+
+      <div class="mx-auto mt-5 flex flex-row">
+        <div>
+          <h1 class="text-center text-xs font-bold text-white">Rarity:</h1>
+          <div class="flex inline-flex w-full justify-center">
+            <button
+              (click)="changeRarity('C')"
+              [ngClass]="{ 'primary-border': rarities.includes('C') }"
+              class="min-w-auto primary-background mt-2 h-8 w-10 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-white"
+            >
+              C
+            </button>
+            <button
+              (click)="changeRarity('UC')"
+              [ngClass]="{ 'primary-border': rarities.includes('UC') }"
+              class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 p-1 text-xs font-semibold text-white"
+            >
+              UC
+            </button>
+            <button
+              (click)="changeRarity('R')"
+              [ngClass]="{ 'primary-border': rarities.includes('R') }"
+              class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 p-1 text-xs font-semibold text-white"
+            >
+              R
+            </button>
+            <button
+              (click)="changeRarity('SR')"
+              [ngClass]="{ 'primary-border': rarities.includes('SR') }"
+              class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 p-1 text-xs font-semibold text-white"
+            >
+              SR
+            </button>
+            <button
+              (click)="changeRarity('SEC')"
+              [ngClass]="{ 'primary-border': rarities.includes('SEC') }"
+              class="min-w-auto primary-background mt-2 h-8 w-10 rounded-r border-r-2 border-slate-200 p-1 text-xs font-semibold text-white"
+            >
+              SEC
+            </button>
+            <button
+              (click)="changeRarity('P')"
+              [ngClass]="{ 'primary-border': rarities.includes('P') }"
+              class="min-w-auto primary-background mt-2 h-8 w-10 rounded-r border-slate-200 p-1 text-xs font-semibold text-white"
+            >
+              P
+            </button>
+          </div>
+        </div>
+
+        <div class="ml-5">
+          <h1 class="text-center text-xs font-bold text-white">Version:</h1>
+          <div class="flex inline-flex w-full justify-center">
+            <button
+              (click)="changeVersion('Normal')"
+              [ngClass]="{ 'primary-border': versions.includes('Normal') }"
+              class="min-w-auto primary-background mt-2 h-8 w-10 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-white"
+            >
+              Normal
+            </button>
+            <button
+              (click)="changeVersion('AA')"
+              [ngClass]="{ 'primary-border': versions.includes('AA') }"
+              class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 p-1 text-xs font-semibold text-white"
+            >
+              AA
+            </button>
+            <button
+              (click)="changeVersion('Pre-Release')"
+              [ngClass]="{ 'primary-border': versions.includes('Pre-Release') }"
+              class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 p-1 text-xs font-semibold text-white"
+            >
+              Pre-Release
+            </button>
+            <button
+              (click)="changeVersion('Stamp')"
+              [ngClass]="{ 'primary-border': versions.includes('Stamp') }"
+              class="min-w-auto primary-background mt-2 h-8 w-10 border-slate-200 p-1 text-xs font-semibold text-white"
+            >
+              Stamp
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-5 text-center font-bold">
+        Missing Cards or Collected Cards?
+      </p>
+      <div class="mx-auto flex flex-row">
+        <span class="mr-2">Missing</span>
+        <p-inputSwitch [(ngModel)]="collectedCards"></p-inputSwitch>
+        <span class="ml-2">Collected</span>
+      </div>
+
+      <div *ngIf="!collectedCards" class="my-5">
+        <h1 class="text-center text-xs font-bold text-white">
+          Collection Goal:
+        </h1>
+        <div class="flex inline-flex w-full justify-center">
+          <button
+            (click)="goal = 1"
+            [ngClass]="{ 'primary-border': goal === 1 }"
+            class="min-w-auto primary-background mt-2 h-8 w-20 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-white"
+          >
+            1
+          </button>
+          <button
+            (click)="goal = 2"
+            [ngClass]="{ 'primary-border': goal === 2 }"
+            class="min-w-auto primary-background mt-2 h-8 w-20 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-white"
+          >
+            2
+          </button>
+          <button
+            (click)="goal = 3"
+            [ngClass]="{ 'primary-border': goal === 3 }"
+            class="min-w-auto primary-background mt-2 h-8 w-20 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-white"
+          >
+            3
+          </button>
+          <button
+            (click)="goal = 4"
+            [ngClass]="{ 'primary-border': goal === 4 }"
+            class="min-w-auto primary-background mt-2 h-8 w-20 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-white"
+          >
+            4
+          </button>
+          <button
+            (click)="goal = 5"
+            [ngClass]="{ 'primary-border': goal === 5 }"
+            class="min-w-auto primary-background mt-2 h-8 w-20 rounded-l border-slate-200 p-1 text-xs font-semibold text-white"
+          >
+            5
+          </button>
+        </div>
+      </div>
+
+      <div class="mt-5 flex w-full justify-end">
+        <button
+          (click)="exportCollection()"
+          icon="pi pi-download"
+          label="Export"
+          pButton
+          type="button"
+        ></button>
+      </div>
+    </div>
+  </div>
+  <div
+    class="fade tab-pane"
+    id="tabs-messages"
+    role="tabpanel"
+    aria-labelledby="tabs-profile-tab"
+  >
+    <div>
+      <p>Copy your collection in the text area and press import.</p>
+      <textarea
+        [(ngModel)]="collectionText"
+        [placeholder]="importPlaceholder"
+        class="border-black-500 min-h-[150px] min-w-full border-2"
+        id="text-import"
+        pInputTextarea
+      ></textarea>
+    </div>
+    <div class="flex w-full justify-end">
+      <button
+        (click)="importCollection()"
+        icon="pi pi-upload"
+        label="Import"
+        pButton
+        type="button"
+      ></button>
+    </div>
+  </div>
+  <div
+    class="fade tab-pane"
+    id="tabs-contact"
+    role="tabpanel"
+    aria-labelledby="tabs-contact-tab"
+  >
+    <div class="flex flex-row justify-between">
+      <input
+        #fileUpload
+        (change)="handleFileInput($event.target)"
+        [ngStyle]="{ display: 'none' }"
+        accept=".json"
+        type="file"
+      />
+      <button
+        (click)="fileUpload.click()"
+        class="m-auto mb-2 min-w-[200px] max-w-[200px]"
+        icon="pi pi-upload"
+        label="Import Save"
+        pButton
+        type="button"
+      ></button>
+      <button
+        (click)="exportSave()"
+        class="m-auto mb-2 min-w-[200px] max-w-[200px]"
+        icon="pi pi-download"
+        label="Export Save"
+        pButton
+        type="button"
+      ></button>
+      <button
+        (click)="deleteSave($event)"
+        class="m-auto mb-2 min-w-[200px] max-w-[200px]"
+        icon="pi pi-times"
+        label="Delete Save"
+        pButton
+        type="button"
+      ></button>
+    </div>
+  </div>
+</div>

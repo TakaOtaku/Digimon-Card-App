@@ -18,8 +18,8 @@ import {
 import { emptyDeck } from "../../../store/reducers/digimon.reducers";
 
 @Component({
-  selector: "digimon-deck-view",
-  templateUrl: "./deck-view.component.html"
+  selector: 'digimon-deck-view',
+  templateUrl: './deck-view.component.html',
 })
 export class DeckViewComponent implements OnInit, OnDestroy {
   @Input() collectionView: boolean;
@@ -99,7 +99,7 @@ export class DeckViewComponent implements OnInit, OnDestroy {
       )
       .subscribe((cardToAdd) => {
         this.onCardClick(cardToAdd);
-        this.store.dispatch(addCardToDeck({ addCardToDeck: "" }));
+        this.store.dispatch(addCardToDeck({ addCardToDeck: '' }));
       });
   }
 
@@ -219,7 +219,7 @@ export class DeckViewComponent implements OnInit, OnDestroy {
       description: this.description,
       tags: this.tags,
       color: DeckColorMap.get(this.selectedColor.name),
-      cards
+      cards,
     };
     this.store.dispatch(setDeck({ deck: this.deck }));
     this.deckSort();
@@ -238,9 +238,9 @@ export class DeckViewComponent implements OnInit, OnDestroy {
     const card = this.allCards.find((card) => compareIDs(card.id, id));
     if (alreadyInDeck) {
       if (
-        card!.cardNumber === "BT6-085" ||
-        card!.cardNumber === "EX2-046" ||
-        card!.cardNumber === "BT11-061"
+        card!.cardNumber === 'BT6-085' ||
+        card!.cardNumber === 'EX2-046' ||
+        card!.cardNumber === 'BT11-061'
       ) {
         alreadyInDeck.count =
           alreadyInDeck.count >= 50 ? 50 : alreadyInDeck.count + 1;
@@ -297,42 +297,42 @@ export class DeckViewComponent implements OnInit, OnDestroy {
 
     const red = this.mainDeck
       .filter(
-        (card) => card.color.startsWith("Red") && card.cardType === "Digimon"
+        (card) => card.color.startsWith('Red') && card.cardType === 'Digimon'
       )
       .sort(
         (a, b) => a.cardLv.localeCompare(b.cardLv) || a.id.localeCompare(b.id)
       );
     const blue = this.mainDeck
       .filter(
-        (card) => card.color.startsWith("Blue") && card.cardType === "Digimon"
+        (card) => card.color.startsWith('Blue') && card.cardType === 'Digimon'
       )
       .sort(
         (a, b) => a.cardLv.localeCompare(b.cardLv) || a.id.localeCompare(b.id)
       );
     const yellow = this.mainDeck
       .filter(
-        (card) => card.color.startsWith("Yellow") && card.cardType === "Digimon"
+        (card) => card.color.startsWith('Yellow') && card.cardType === 'Digimon'
       )
       .sort(
         (a, b) => a.cardLv.localeCompare(b.cardLv) || a.id.localeCompare(b.id)
       );
     const green = this.mainDeck
       .filter(
-        (card) => card.color.startsWith("Green") && card.cardType === "Digimon"
+        (card) => card.color.startsWith('Green') && card.cardType === 'Digimon'
       )
       .sort(
         (a, b) => a.cardLv.localeCompare(b.cardLv) || a.id.localeCompare(b.id)
       );
     const black = this.mainDeck
       .filter(
-        (card) => card.color.startsWith("Black") && card.cardType === "Digimon"
+        (card) => card.color.startsWith('Black') && card.cardType === 'Digimon'
       )
       .sort(
         (a, b) => a.cardLv.localeCompare(b.cardLv) || a.id.localeCompare(b.id)
       );
     const purple = this.mainDeck
       .filter(
-        (card) => card.color.startsWith("Purple") && card.cardType === "Digimon"
+        (card) => card.color.startsWith('Purple') && card.cardType === 'Digimon'
       )
       .sort(
         (a, b) => a.cardLv.localeCompare(b.cardLv) || a.id.localeCompare(b.id)
@@ -340,7 +340,7 @@ export class DeckViewComponent implements OnInit, OnDestroy {
 
     const white = this.mainDeck
       .filter(
-        (card) => card.color.startsWith("White") && card.cardType === "Digimon"
+        (card) => card.color.startsWith('White') && card.cardType === 'Digimon'
       )
       .sort(
         (a, b) => a.cardLv.localeCompare(b.cardLv) || a.id.localeCompare(b.id)
@@ -424,34 +424,34 @@ export class DeckViewComponent implements OnInit, OnDestroy {
     this.tags.push(this.setNewestSet(this.deck.cards));
 
     if (this.bannedCardsIncluded(this.deck.cards)) {
-      this.tags.push({ name: "Illegal", color: "Primary" });
+      this.tags.push({ name: 'Illegal', color: 'Primary' });
     }
 
     if (this.tooManyRestrictedCardsIncluded(this.deck.cards)) {
-      if (!this.tags.find((tag) => tag.name === "Illegal")) {
-        this.tags.push({ name: "Illegal", color: "Primary" });
+      if (!this.tags.find((tag) => tag.name === 'Illegal')) {
+        this.tags.push({ name: 'Illegal', color: 'Primary' });
       }
     }
   }
 
   private setNewestSet(cards: ICountCard[]): ITag {
     const releaseOrder = [
-      "BT11",
-      "EX3",
-      "BT10",
-      "BT9",
-      "EX2",
-      "BT8",
-      "BT7",
-      "EX1",
-      "BT6",
-      "BT5",
-      "BT4",
-      "BT3",
-      "BT2",
-      "BT1"
+      'BT11',
+      'EX3',
+      'BT10',
+      'BT9',
+      'EX2',
+      'BT8',
+      'BT7',
+      'EX1',
+      'BT6',
+      'BT5',
+      'BT4',
+      'BT3',
+      'BT2',
+      'BT1',
     ];
-    let set = "";
+    let set = '';
     releaseOrder.forEach((value) => {
       if (set) {
         return;
@@ -461,7 +461,7 @@ export class DeckViewComponent implements OnInit, OnDestroy {
       }
     });
     return (
-      tagsList.find((tag) => tag.name === set) ?? { name: "", color: "Primary" }
+      tagsList.find((tag) => tag.name === set) ?? { name: '', color: 'Primary' }
     );
   }
 
@@ -474,7 +474,7 @@ export class DeckViewComponent implements OnInit, OnDestroy {
 
       const foundCard = this.allCards.find((allCard) => allCard.id === card.id);
       if (foundCard) {
-        banned = foundCard.restriction === "Banned";
+        banned = foundCard.restriction === 'Banned';
       }
     });
     return banned;
@@ -489,7 +489,7 @@ export class DeckViewComponent implements OnInit, OnDestroy {
 
       const foundCard = this.allCards.find((allCard) => allCard.id === card.id);
       if (foundCard) {
-        const res = foundCard.restriction === "Restricted to 1";
+        const res = foundCard.restriction === 'Restricted to 1';
         restricted = res ? card.count > 1 : false;
       }
     });
@@ -499,13 +499,13 @@ export class DeckViewComponent implements OnInit, OnDestroy {
   private setColors() {
     const cards: IDeckCard[] = mapToDeckCards(this.deck.cards, this.allCards);
     const colorArray = [
-      { name: "Red", count: 0 },
-      { name: "Blue", count: 0 },
-      { name: "Yellow", count: 0 },
-      { name: "Green", count: 0 },
-      { name: "Black", count: 0 },
-      { name: "Purple", count: 0 },
-      { name: "White", count: 0 }
+      { name: 'Red', count: 0 },
+      { name: 'Blue', count: 0 },
+      { name: 'Yellow', count: 0 },
+      { name: 'Green', count: 0 },
+      { name: 'Black', count: 0 },
+      { name: 'Purple', count: 0 },
+      { name: 'White', count: 0 },
     ];
     cards.forEach((card) => {
       colorArray.forEach((color, index) => {

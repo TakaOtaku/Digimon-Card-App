@@ -1,19 +1,15 @@
-import { DatePipe } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Store } from '@ngrx/store';
-import {
-  ConfirmationService,
-  FilterService,
-  MessageService,
-} from 'primeng/api';
-import { Subject, takeUntil } from 'rxjs';
-import * as uuid from 'uuid';
-import { COLORS, ICard, IDeck, TAGS } from '../../../models';
-import { AuthService } from '../../service/auth.service';
-import { DatabaseService } from '../../service/database.service';
-import { importDeck, setDeck } from '../../store/digimon.actions';
-import { selectAllCards } from '../../store/digimon.selectors';
+import { DatePipe } from "@angular/common";
+import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { Store } from "@ngrx/store";
+import { ConfirmationService, FilterService, MessageService } from "primeng/api";
+import { Subject, takeUntil } from "rxjs";
+import * as uuid from "uuid";
+import { COLORS, ICard, IDeck, TAGS } from "../../../models";
+import { AuthService } from "../../service/auth.service";
+import { DatabaseService } from "../../service/database.service";
+import { importDeck, setDeck } from "../../store/digimon.actions";
+import { selectAllCards } from "../../store/digimon.selectors";
 
 @Component({
   selector: 'digimon-community',
@@ -108,7 +104,7 @@ export class CommunityComponent implements OnInit, OnDestroy {
             deck: { ...deck, id: uuid.v4(), rating: 0, ratingCount: 0 },
           })
         );
-        this.router.navigateByUrl('/deck/' + deck.id);
+        this.router.navigateByUrl('/deckbuilder/' + deck.id);
       },
     });
   }

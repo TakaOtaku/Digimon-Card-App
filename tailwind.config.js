@@ -1,8 +1,9 @@
 module.exports = {
-  mode: 'jit',
+  mode: "jit",
   important: true,
   content: [
     "./src/**/*.{html,ts}",
+    "./node_modules/tw-elements/dist/js/**/*.js",
   ],
   theme: {
     extend: {},
@@ -12,5 +13,5 @@ module.exports = {
       display: ["group-hover"],
     },
   },
-  plugins: [],
-}
+  plugins: [require("tw-elements/dist/plugin")],
+};

@@ -9,8 +9,8 @@ import { compareIDs } from "../../../../functions/digimon-card.functions";
 import { selectAllCards } from "../../../../store/digimon.selectors";
 
 @Component({
-  selector: "digimon-import-deck-dialog",
-  templateUrl: "./import-deck-dialog.component.html"
+  selector: 'digimon-import-deck-dialog',
+  templateUrl: './import-deck-dialog.component.html',
 })
 export class ImportDeckDialogComponent implements OnInit, OnDestroy {
   @Input() show: boolean = false;
@@ -69,9 +69,9 @@ export class ImportDeckDialogComponent implements OnInit, OnDestroy {
       deck = this.parseTTSDeck();
       if (deck.cards.length === 0) {
         this.messageService.add({
-          severity: "warn",
-          summary: "Deck error!",
-          detail: "No card could be found!"
+          severity: 'warn',
+          summary: 'Deck error!',
+          detail: 'No card could be found!',
         });
         return;
       }
@@ -80,18 +80,18 @@ export class ImportDeckDialogComponent implements OnInit, OnDestroy {
     this.store.dispatch(setDeck({ deck }));
     this.show = false;
     this.messageService.add({
-      severity: "success",
-      summary: "Deck imported!",
-      detail: "The deck was imported successfully!"
+      severity: 'success',
+      summary: 'Deck imported!',
+      detail: 'The deck was imported successfully!',
     });
   }
 
   private parseTTSDeck(): IDeck {
     const deck: IDeck = {
       id: uuid.v4(),
-      title: "Imported Deck",
-      color: { name: "White", img: "assets/decks/white.svg" },
-      cards: []
+      title: 'Imported Deck',
+      color: { name: 'White', img: 'assets/decks/white.svg' },
+      cards: [],
     };
 
     const deckJson: string[] = JSON.parse(this.deckText);
@@ -115,9 +115,9 @@ export class ImportDeckDialogComponent implements OnInit, OnDestroy {
   private parseDeck(textArray: string[]): IDeck {
     const deck: IDeck = {
       id: uuid.v4(),
-      title: "Imported Deck",
-      color: { name: "White", img: "assets/decks/white.svg" },
-      cards: []
+      title: 'Imported Deck',
+      color: { name: 'White', img: 'assets/decks/white.svg' },
+      cards: [],
     };
 
     textArray.forEach((line) => {

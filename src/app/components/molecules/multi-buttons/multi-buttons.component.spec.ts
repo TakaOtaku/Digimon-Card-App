@@ -8,7 +8,7 @@ describe('MultiButtonsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [MultiButtonsComponent]
+      declarations: [MultiButtonsComponent],
     }).compileComponents();
   });
 
