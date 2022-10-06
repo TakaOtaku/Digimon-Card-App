@@ -1,11 +1,15 @@
-import { Component, Input, OnDestroy, OnInit } from "@angular/core";
-import { FormControl } from "@angular/forms";
-import { Store } from "@ngrx/store";
-import { Subject, takeUntil } from "rxjs";
-import { englishCards } from "../../../../assets/cardlists/eng/english";
-import { ICard, ICountCard } from "../../../../models";
-import { changeCollectionMode } from "../../../store/digimon.actions";
-import { selectCollection, selectCollectionMode, selectFilteredCards } from "../../../store/digimon.selectors";
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { Subject, takeUntil } from 'rxjs';
+import { englishCards } from '../../../../assets/cardlists/eng/english';
+import { ICard, ICountCard } from '../../../../models';
+import { changeCollectionMode } from '../../../store/digimon.actions';
+import {
+  selectCollection,
+  selectCollectionMode,
+  selectFilteredCards,
+} from '../../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-pagination-card-list',

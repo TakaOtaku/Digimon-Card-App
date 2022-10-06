@@ -1,4 +1,4 @@
-import { ITag } from "./interfaces/tag.interface";
+import { ITag } from './interfaces/tag.interface';
 
 export const TAGS = [
   'BT1',

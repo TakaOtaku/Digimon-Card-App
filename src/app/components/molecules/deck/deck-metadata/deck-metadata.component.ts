@@ -1,7 +1,14 @@
-import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from "@angular/core";
-import { ColorList, IColor, tagsList } from "../../../../../models";
-import { ITag } from "../../../../../models/interfaces/tag.interface";
-import { ObscenityPipe } from "../../../../pipes/obscenity.pipe";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
+import { ColorList, IColor, tagsList } from '../../../../../models';
+import { ITag } from '../../../../../models/interfaces/tag.interface';
+import { ObscenityPipe } from '../../../../pipes/obscenity.pipe';
 
 @Component({
   selector: 'digimon-deck-metadata',

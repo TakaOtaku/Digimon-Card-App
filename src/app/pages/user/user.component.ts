@@ -1,18 +1,18 @@
-import { Location } from "@angular/common";
-import { Component, OnDestroy, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
-import { Store } from "@ngrx/store";
-import { filter, first, Subject, switchMap, takeUntil } from "rxjs";
-import { ICard, ICountCard, IDeck, ISave } from "../../../models";
-import { AuthService } from "../../service/auth.service";
-import { DatabaseService } from "../../service/database.service";
+import { Location } from '@angular/common';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { filter, first, Subject, switchMap, takeUntil } from 'rxjs';
+import { ICard, ICountCard, IDeck, ISave } from '../../../models';
+import { AuthService } from '../../service/auth.service';
+import { DatabaseService } from '../../service/database.service';
 import {
   selectAllCards,
   selectCollection,
   selectDecks,
   selectSave,
-  selectShowUserStats
-} from "../../store/digimon.selectors";
+  selectShowUserStats,
+} from '../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-user',

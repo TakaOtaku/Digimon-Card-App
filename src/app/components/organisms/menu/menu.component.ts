@@ -1,9 +1,9 @@
-import { Component, HostListener, OnDestroy, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
-import { MenuItem, MessageService, PrimeNGConfig } from "primeng/api";
-import { Subject } from "rxjs";
-import { IUser } from "../../../../models";
-import { AuthService } from "../../../service/auth.service";
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { MenuItem, MessageService, PrimeNGConfig } from 'primeng/api';
+import { Subject } from 'rxjs';
+import { IUser } from '../../../../models';
+import { AuthService } from '../../../service/auth.service';
 
 @Component({
   selector: 'digimon-menu',

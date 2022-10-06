@@ -1,5 +1,11 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from "@angular/core";
-import { ICard, ICountCard } from "../../../../models";
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
+import { ICard, ICountCard } from '../../../../models';
 
 interface MappedCollection {
   id: string;

@@ -1,14 +1,27 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit } from "@angular/core";
-import { FormControl, FormGroup } from "@angular/forms";
-import { Store } from "@ngrx/store";
-import { MessageService } from "primeng/api";
-import { Subject, takeUntil } from "rxjs";
-import { IFilter } from "../../../../../models";
-import { CARDSET } from "../../../../../models/card-set.enum";
-import { ISelectItem } from "../../../../../models/interfaces/select-item.interface";
-import { changeCardSets, changeFilter } from "../../../../store/digimon.actions";
-import { selectCardSet, selectCollectionMode, selectFilter } from "../../../../store/digimon.selectors";
-import { emptyFilter } from "../../../../store/reducers/digimon.reducers";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { MessageService } from 'primeng/api';
+import { Subject, takeUntil } from 'rxjs';
+import { IFilter } from '../../../../../models';
+import { CARDSET } from '../../../../../models/card-set.enum';
+import { ISelectItem } from '../../../../../models/interfaces/select-item.interface';
+import {
+  changeCardSets,
+  changeFilter,
+} from '../../../../store/digimon.actions';
+import {
+  selectCardSet,
+  selectCollectionMode,
+  selectFilter,
+} from '../../../../store/digimon.selectors';
+import { emptyFilter } from '../../../../store/reducers/digimon.reducers';
 import {
   Attributes,
   BlockButtons,
@@ -22,8 +35,8 @@ import {
   Restrictions,
   SpecialRequirements,
   Types,
-  VersionButtons
-} from "./filterData";
+  VersionButtons,
+} from './filterData';
 
 @Component({
   selector: 'digimon-filter-side-box',

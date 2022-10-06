@@ -1,6 +1,6 @@
-import { createReducer, on } from "@ngrx/store";
-import { ICountCard, IDeck, ISave, ISettings } from "../../../models";
-import { CARDSET } from "../../../models/card-set.enum";
+import { createReducer, on } from '@ngrx/store';
+import { ICountCard, IDeck, ISave, ISettings } from '../../../models';
+import { CARDSET } from '../../../models/card-set.enum';
 import {
   addToCollection,
   changeCardCount,
@@ -14,8 +14,8 @@ import {
   loadSave,
   saveDeck,
   setCollection,
-  setSave
-} from "../digimon.actions";
+  setSave,
+} from '../digimon.actions';
 
 export const emptySettings: ISettings = {
   cardSet: CARDSET.Both,

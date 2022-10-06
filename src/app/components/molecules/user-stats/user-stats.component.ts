@@ -1,5 +1,5 @@
-import { Component, Input } from "@angular/core";
-import { ICountCard, ISave } from "../../../../models";
+import { Component, Input } from '@angular/core';
+import { ICountCard, ISave } from '../../../../models';
 
 @Component({
   selector: 'digimon-user-stats',

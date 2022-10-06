@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MultiButtonsComponent } from "./multi-buttons.component";
+import { MultiButtonsComponent } from './multi-buttons.component';
 
 describe('MultiButtonsComponent', () => {
   let component: MultiButtonsComponent;

@@ -1,8 +1,18 @@
-import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from "@angular/core";
-import { Store } from "@ngrx/store";
-import { combineLatest, first, Subject } from "rxjs";
-import { ICard, ICountCard } from "../../../../models";
-import { selectAllCards, selectCollectionMinimum } from "../../../store/digimon.selectors";
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
+import { Store } from '@ngrx/store';
+import { combineLatest, first, Subject } from 'rxjs';
+import { ICard, ICountCard } from '../../../../models';
+import {
+  selectAllCards,
+  selectCollectionMinimum,
+} from '../../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-collection-circle',

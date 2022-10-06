@@ -1,7 +1,13 @@
-import { createReducer, on } from "@ngrx/store";
-import * as uuid from "uuid";
-import { IDigimonState } from "../../../models";
-import { addCardToDeck, changeFilter, changeSort, setDeck, setMobileCollectionView } from "../digimon.actions";
+import { createReducer, on } from '@ngrx/store';
+import * as uuid from 'uuid';
+import { IDigimonState } from '../../../models';
+import {
+  addCardToDeck,
+  changeFilter,
+  changeSort,
+  setDeck,
+  setMobileCollectionView,
+} from '../digimon.actions';
 
 export const emptyDeck = {
   id: uuid.v4(),

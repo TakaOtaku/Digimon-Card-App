@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CollectionCircleComponent } from "./collection-circle.component";
+import { CollectionCircleComponent } from './collection-circle.component';
 
 describe('CollectionCircleComponent', () => {
   let component: CollectionCircleComponent;

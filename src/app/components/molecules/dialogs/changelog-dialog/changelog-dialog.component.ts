@@ -1,9 +1,9 @@
-import { Component, OnInit } from "@angular/core";
-import firebase from "firebase/compat";
-import { EditorChangeContent, EditorChangeSelection } from "ngx-quill";
-import Quill from "quill";
-import { AuthService } from "../../../../service/auth.service";
-import { DatabaseService } from "../../../../service/database.service";
+import { Component, OnInit } from '@angular/core';
+import firebase from 'firebase/compat';
+import { EditorChangeContent, EditorChangeSelection } from 'ngx-quill';
+import Quill from 'quill';
+import { AuthService } from '../../../../service/auth.service';
+import { DatabaseService } from '../../../../service/database.service';
 import DataSnapshot = firebase.database.DataSnapshot;
 
 @Component({

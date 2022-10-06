@@ -1,10 +1,20 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from "@angular/core";
-import { Store } from "@ngrx/store";
-import { Subject, takeUntil } from "rxjs";
-import { englishCards } from "../../../../assets/cardlists/eng/english";
-import { ICard } from "../../../../models";
-import { addCardToDeck, changeCardCount } from "../../../store/digimon.actions";
-import { selectCollectionMinimum, selectDeck } from "../../../store/digimon.selectors";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Subject, takeUntil } from 'rxjs';
+import { englishCards } from '../../../../assets/cardlists/eng/english';
+import { ICard } from '../../../../models';
+import { addCardToDeck, changeCardCount } from '../../../store/digimon.actions';
+import {
+  selectCollectionMinimum,
+  selectDeck,
+} from '../../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-full-card',

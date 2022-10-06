@@ -1,11 +1,25 @@
-import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from "@angular/core";
-import { Store } from "@ngrx/store";
-import { saveAs } from "file-saver";
-import { Subject, takeUntil } from "rxjs";
-import { ICard, IDeck } from "../../../../../models";
-import { compareIDs, formatId, getPNG, mapToDeckCards } from "../../../../functions/digimon-card.functions";
-import { selectAllCards } from "../../../../store/digimon.selectors";
-import { ColorsWithoutMulti } from "../../../organisms/filter/filter-side-box/filterData";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
+import { Store } from '@ngrx/store';
+import { saveAs } from 'file-saver';
+import { Subject, takeUntil } from 'rxjs';
+import { ICard, IDeck } from '../../../../../models';
+import {
+  compareIDs,
+  formatId,
+  getPNG,
+  mapToDeckCards,
+} from '../../../../functions/digimon-card.functions';
+import { selectAllCards } from '../../../../store/digimon.selectors';
+import { ColorsWithoutMulti } from '../../../organisms/filter/filter-side-box/filterData';
 
 @Component({
   selector: 'digimon-export-deck-dialog',

@@ -1,15 +1,18 @@
-import { Injectable } from "@angular/core";
-import { AngularFireAuth } from "@angular/fire/compat/auth";
-import { AngularFirestore, AngularFirestoreDocument } from "@angular/fire/compat/firestore";
-import { Store } from "@ngrx/store";
-import { GoogleAuthProvider } from "firebase/auth";
-import firebase from "firebase/compat";
-import { MessageService } from "primeng/api";
-import { first, Subject } from "rxjs";
-import { IUser } from "../../models";
-import { loadSave, setSave } from "../store/digimon.actions";
-import { emptySettings } from "../store/reducers/save.reducer";
-import { DatabaseService } from "./database.service";
+import { Injectable } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import {
+  AngularFirestore,
+  AngularFirestoreDocument,
+} from '@angular/fire/compat/firestore';
+import { Store } from '@ngrx/store';
+import { GoogleAuthProvider } from 'firebase/auth';
+import firebase from 'firebase/compat';
+import { MessageService } from 'primeng/api';
+import { first, Subject } from 'rxjs';
+import { IUser } from '../../models';
+import { loadSave, setSave } from '../store/digimon.actions';
+import { emptySettings } from '../store/reducers/save.reducer';
+import { DatabaseService } from './database.service';
 import UserCredential = firebase.auth.UserCredential;
 import User = firebase.User;
 

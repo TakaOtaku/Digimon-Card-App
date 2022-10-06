@@ -1,12 +1,19 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from "@angular/core";
-import { Store } from "@ngrx/store";
-import { MessageService } from "primeng/api";
-import { Subject, takeUntil } from "rxjs";
-import { importDeck, setDeck } from "src/app/store/digimon.actions";
-import * as uuid from "uuid";
-import { ICard, ICountCard, IDeck, IDeckCard } from "../../../../../models";
-import { compareIDs } from "../../../../functions/digimon-card.functions";
-import { selectAllCards } from "../../../../store/digimon.selectors";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
+import { Store } from '@ngrx/store';
+import { MessageService } from 'primeng/api';
+import { Subject, takeUntil } from 'rxjs';
+import { importDeck, setDeck } from 'src/app/store/digimon.actions';
+import * as uuid from 'uuid';
+import { ICard, ICountCard, IDeck, IDeckCard } from '../../../../../models';
+import { compareIDs } from '../../../../functions/digimon-card.functions';
+import { selectAllCards } from '../../../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-import-deck-dialog',

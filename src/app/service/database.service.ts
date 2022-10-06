@@ -1,11 +1,11 @@
-import { Injectable } from "@angular/core";
-import { AngularFireDatabase } from "@angular/fire/compat/database";
-import { get, getDatabase, ref, remove, update } from "@angular/fire/database";
-import { BehaviorSubject, first, Subject } from "rxjs";
-import { IDeck, ISave, IUser } from "../../models";
-import { CARDSET } from "../../models/card-set.enum";
-import { emptyDeck } from "../store/reducers/digimon.reducers";
-import { emptySettings } from "../store/reducers/save.reducer";
+import { Injectable } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { get, getDatabase, ref, remove, update } from '@angular/fire/database';
+import { BehaviorSubject, first, Subject } from 'rxjs';
+import { IDeck, ISave, IUser } from '../../models';
+import { CARDSET } from '../../models/card-set.enum';
+import { emptyDeck } from '../store/reducers/digimon.reducers';
+import { emptySettings } from '../store/reducers/save.reducer';
 
 @Injectable({
   providedIn: 'root',

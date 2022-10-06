@@ -1,14 +1,18 @@
-import { Component, Input, OnDestroy, OnInit } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
-import { Store } from "@ngrx/store";
-import { ConfirmationService, MenuItem, MessageService } from "primeng/api";
-import { Subject, takeUntil } from "rxjs";
-import * as uuid from "uuid";
-import { COLORS, ICountCard, IDeck, IUser, TAGS } from "../../../../models";
-import { AuthService } from "../../../service/auth.service";
-import { DatabaseService } from "../../../service/database.service";
-import { deleteDeck, importDeck, setDeck } from "../../../store/digimon.actions";
-import { selectDecks } from "../../../store/digimon.selectors";
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { ConfirmationService, MenuItem, MessageService } from 'primeng/api';
+import { Subject, takeUntil } from 'rxjs';
+import * as uuid from 'uuid';
+import { COLORS, ICountCard, IDeck, IUser, TAGS } from '../../../../models';
+import { AuthService } from '../../../service/auth.service';
+import { DatabaseService } from '../../../service/database.service';
+import {
+  deleteDeck,
+  importDeck,
+  setDeck,
+} from '../../../store/digimon.actions';
+import { selectDecks } from '../../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-decks',

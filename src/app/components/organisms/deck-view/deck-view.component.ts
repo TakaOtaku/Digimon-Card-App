@@ -1,21 +1,45 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from "@angular/core";
-import { Store } from "@ngrx/store";
-import { ConfirmationService, MessageService } from "primeng/api";
-import { filter, Subject, takeUntil } from "rxjs";
-import * as uuid from "uuid";
-import { DeckColorMap, ICard, ICountCard, IDeck, IDeckCard, ISave, tagsList } from "../../../../models";
-import { ITag } from "../../../../models/interfaces/tag.interface";
-import { compareIDs, deckIsValid, mapToDeckCards, sortColors } from "../../../functions/digimon-card.functions";
-import { AuthService } from "../../../service/auth.service";
-import { DatabaseService } from "../../../service/database.service";
-import { addCardToDeck, importDeck, setDeck } from "../../../store/digimon.actions";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
+import { Store } from '@ngrx/store';
+import { ConfirmationService, MessageService } from 'primeng/api';
+import { filter, Subject, takeUntil } from 'rxjs';
+import * as uuid from 'uuid';
+import {
+  DeckColorMap,
+  ICard,
+  ICountCard,
+  IDeck,
+  IDeckCard,
+  ISave,
+  tagsList,
+} from '../../../../models';
+import { ITag } from '../../../../models/interfaces/tag.interface';
+import {
+  compareIDs,
+  deckIsValid,
+  mapToDeckCards,
+  sortColors,
+} from '../../../functions/digimon-card.functions';
+import { AuthService } from '../../../service/auth.service';
+import { DatabaseService } from '../../../service/database.service';
+import {
+  addCardToDeck,
+  importDeck,
+  setDeck,
+} from '../../../store/digimon.actions';
 import {
   selectAddCardToDeck,
   selectCollection,
   selectDeckBuilderViewModel,
-  selectSave
-} from "../../../store/digimon.selectors";
-import { emptyDeck } from "../../../store/reducers/digimon.reducers";
+  selectSave,
+} from '../../../store/digimon.selectors';
+import { emptyDeck } from '../../../store/reducers/digimon.reducers';
 
 @Component({
   selector: 'digimon-deck-view',

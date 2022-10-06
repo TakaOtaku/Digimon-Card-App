@@ -1,7 +1,7 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
-import { Store } from "@ngrx/store";
-import { Subject, takeUntil } from "rxjs";
-import { selectMobileCollectionView } from "../../store/digimon.selectors";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Subject, takeUntil } from 'rxjs';
+import { selectMobileCollectionView } from '../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-collection-page',

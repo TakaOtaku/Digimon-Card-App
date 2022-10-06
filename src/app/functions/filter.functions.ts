@@ -1,4 +1,4 @@
-import { ICard, ICountCard, IFilter, ISort } from "../../models";
+import { ICard, ICountCard, IFilter, ISort } from '../../models';
 
 export function filterCards(
   cards: ICard[],
