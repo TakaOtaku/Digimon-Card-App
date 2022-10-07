@@ -167,6 +167,11 @@ export class DatabaseService {
     return deckSubject;
   }
 
+  updateCommunityDeck(deck: IDeck) {
+    const db = getDatabase();
+    return update(ref(db, 'community-decks/' + deck.id), deck);
+  }
+
   loadDeck(id: string): BehaviorSubject<IDeck> {
     const deckSubject = new BehaviorSubject<IDeck>(emptyDeck);
 

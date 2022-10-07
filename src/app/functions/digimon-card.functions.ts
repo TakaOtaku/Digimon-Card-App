@@ -3,12 +3,125 @@ import preReleaseJSON from '../../assets/cardlists/eng/preRelease.json';
 import { japaneseCards } from '../../assets/cardlists/jap/japanese';
 import {
   ColorOrderMap,
+  DeckColorMap,
   ICard,
   ICountCard,
   IDeck,
   IDeckCard,
+  tagsList,
 } from '../../models';
 import { CARDSET } from '../../models/card-set.enum';
+import { ITag } from '../../models/interfaces/tag.interface';
+
+export function setTags(tags: ITag[], deck: IDeck, allCards: ICard[]) {
+  tags = [];
+
+  tags.push(setNewestSet(deck.cards));
+
+  if (bannedCardsIncluded(deck.cards, allCards)) {
+    tags.push({ name: 'Illegal', color: 'Primary' });
+  }
+
+  if (tooManyRestrictedCardsIncluded(deck.cards, allCards)) {
+    if (!tags.find((tag) => tag.name === 'Illegal')) {
+      tags.push({ name: 'Illegal', color: 'Primary' });
+    }
+  }
+  return tags;
+}
+
+export function setNewestSet(cards: ICountCard[]): ITag {
+  const releaseOrder = [
+    'BT11',
+    'EX3',
+    'BT10',
+    'BT9',
+    'EX2',
+    'BT8',
+    'BT7',
+    'EX1',
+    'BT6',
+    'BT5',
+    'BT4',
+    'BT3',
+    'BT2',
+    'BT1',
+  ];
+  let set = '';
+  releaseOrder.forEach((value) => {
+    if (set) {
+      return;
+    }
+    if (cards.find((card) => card.id.includes(value))) {
+      set = value;
+    }
+  });
+  return (
+    tagsList.find((tag) => tag.name === set) ?? { name: '', color: 'Primary' }
+  );
+}
+
+export function bannedCardsIncluded(
+  cards: ICountCard[],
+  allCards: ICard[]
+): boolean {
+  let banned = false;
+  cards.forEach((card) => {
+    if (banned) {
+      return;
+    }
+
+    const foundCard = allCards.find((allCard) => allCard.id === card.id);
+    if (foundCard) {
+      banned = foundCard.restriction === 'Banned';
+    }
+  });
+  return banned;
+}
+
+export function tooManyRestrictedCardsIncluded(
+  cards: ICountCard[],
+  allCards: ICard[]
+): boolean {
+  let restricted = false;
+  cards.forEach((card) => {
+    if (restricted) {
+      return;
+    }
+
+    const foundCard = allCards.find((allCard) => allCard.id === card.id);
+    if (foundCard) {
+      const res = foundCard.restriction === 'Restricted to 1';
+      restricted = res ? card.count > 1 : false;
+    }
+  });
+  return restricted;
+}
+
+export function setColors(deck: IDeck, allCards: ICard[], selectedColor: any) {
+  const cards: IDeckCard[] = mapToDeckCards(deck.cards, allCards);
+  const colorArray = [
+    { name: 'Red', count: 0 },
+    { name: 'Blue', count: 0 },
+    { name: 'Yellow', count: 0 },
+    { name: 'Green', count: 0 },
+    { name: 'Black', count: 0 },
+    { name: 'Purple', count: 0 },
+    { name: 'White', count: 0 },
+  ];
+  cards.forEach((card) => {
+    colorArray.forEach((color, index) => {
+      if (card.color && card.color.includes(color.name)) {
+        colorArray[index].count += card.count;
+      }
+    });
+  });
+
+  const highest = colorArray.reduce((prev, current) =>
+    prev.count > current.count ? prev : current
+  );
+  return DeckColorMap.get(highest.name);
+}
 
 export function compareIDs(idA: string, idB: string): boolean {
   const aST = idA.includes('ST');
@@ -68,8 +181,12 @@ export function deckIsValid(deck: IDeck, allCards: ICard[]): string {
   let cardCount = 0;
   let eggCount = 0;
 
+  if (!deck.cards) {
+    return 'Deck has no cards.';
+  }
+
   deck.cards.forEach((card) => {
-    const fullCard = allCards.find((a) => a.id === card.id)!;
+    const fullCard = allCards.find((a) => a.id === formatId(card.id))!;
     if (fullCard.cardType !== 'Digi-Egg') {
       cardCount += card.count;
     } else {

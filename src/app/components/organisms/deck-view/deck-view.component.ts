@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { filter, Subject, takeUntil } from 'rxjs';
+import { filter, first, Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
 import {
   DeckColorMap,
@@ -24,6 +24,8 @@ import {
   compareIDs,
   deckIsValid,
   mapToDeckCards,
+  setColors,
+  setTags,
   sortColors,
 } from '../../../functions/digimon-card.functions';
 import { AuthService } from '../../../service/auth.service';
@@ -247,8 +249,12 @@ export class DeckViewComponent implements OnInit, OnDestroy {
     };
     this.store.dispatch(setDeck({ deck: this.deck }));
     this.deckSort();
-    this.setTags();
-    this.setColors();
+    this.tags = setTags(this.tags, this.deck, this.allCards);
+    this.selectedColor = setColors(
+      this.deck,
+      this.allCards,
+      this.selectedColor
+    );
     this.onMainDeck.emit(this.mainDeck);
   }
 
@@ -442,114 +448,30 @@ export class DeckViewComponent implements OnInit, OnDestroy {
     ];
   }
 
-  private setTags() {
-    this.tags = [];
-
-    this.tags.push(this.setNewestSet(this.deck.cards));
-
-    if (this.bannedCardsIncluded(this.deck.cards)) {
-      this.tags.push({ name: 'Illegal', color: 'Primary' });
-    }
-
-    if (this.tooManyRestrictedCardsIncluded(this.deck.cards)) {
-      if (!this.tags.find((tag) => tag.name === 'Illegal')) {
-        this.tags.push({ name: 'Illegal', color: 'Primary' });
-      }
-    }
-  }
-
-  private setNewestSet(cards: ICountCard[]): ITag {
-    const releaseOrder = [
-      'BT11',
-      'EX3',
-      'BT10',
-      'BT9',
-      'EX2',
-      'BT8',
-      'BT7',
-      'EX1',
-      'BT6',
-      'BT5',
-      'BT4',
-      'BT3',
-      'BT2',
-      'BT1',
-    ];
-    let set = '';
-    releaseOrder.forEach((value) => {
-      if (set) {
-        return;
-      }
-      if (cards.find((card) => card.id.includes(value))) {
-        set = value;
-      }
-    });
-    return (
-      tagsList.find((tag) => tag.name === set) ?? { name: '', color: 'Primary' }
-    );
-  }
-
-  private bannedCardsIncluded(cards: ICountCard[]): boolean {
-    let banned = false;
-    cards.forEach((card) => {
-      if (banned) {
-        return;
-      }
-
-      const foundCard = this.allCards.find((allCard) => allCard.id === card.id);
-      if (foundCard) {
-        banned = foundCard.restriction === 'Banned';
-      }
-    });
-    return banned;
-  }
-
-  private tooManyRestrictedCardsIncluded(cards: ICountCard[]): boolean {
-    let restricted = false;
-    cards.forEach((card) => {
-      if (restricted) {
-        return;
-      }
-
-      const foundCard = this.allCards.find((allCard) => allCard.id === card.id);
-      if (foundCard) {
-        const res = foundCard.restriction === 'Restricted to 1';
-        restricted = res ? card.count > 1 : false;
-      }
-    });
-    return restricted;
-  }
-
-  private setColors() {
-    const cards: IDeckCard[] = mapToDeckCards(this.deck.cards, this.allCards);
-    const colorArray = [
-      { name: 'Red', count: 0 },
-      { name: 'Blue', count: 0 },
-      { name: 'Yellow', count: 0 },
-      { name: 'Green', count: 0 },
-      { name: 'Black', count: 0 },
-      { name: 'Purple', count: 0 },
-      { name: 'White', count: 0 },
-    ];
-    cards.forEach((card) => {
-      colorArray.forEach((color, index) => {
-        if (card.color.includes(color.name)) {
-          colorArray[index].count += card.count;
-        }
-      });
-    });
-
-    const highest = colorArray.reduce((prev, current) =>
-      prev.count > current.count ? prev : current
-    );
-    this.selectedColor = DeckColorMap.get(highest.name);
-  }
-
   /**
    * Remove the card from the deck
    */
   removeCard(card: IDeckCard) {
     this.mainDeck = this.mainDeck.filter((value) => value !== card);
     this.mapToDeck();
+  }
+
+  deckThingy() {
+    this.db
+      .loadCommunityDecks()
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((decks) => {
+        decks.forEach((deck) => {
+          const newDeck = deck;
+
+          if (deckIsValid(deck, this.allCards) === '') {
+            newDeck.tags = setTags(deck.tags ?? [], deck, this.allCards);
+            newDeck.color = setColors(deck, this.allCards, deck.color);
+            this.db.updateCommunityDeck(newDeck);
+          } else {
+            this.db.deleteDeck(deck.id);
+          }
+        });
+      });
   }
 }

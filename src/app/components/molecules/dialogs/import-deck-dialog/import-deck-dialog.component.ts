@@ -12,7 +12,11 @@ import { Subject, takeUntil } from 'rxjs';
 import { importDeck, setDeck } from 'src/app/store/digimon.actions';
 import * as uuid from 'uuid';
 import { ICard, ICountCard, IDeck, IDeckCard } from '../../../../../models';
-import { compareIDs } from '../../../../functions/digimon-card.functions';
+import {
+  compareIDs,
+  setColors,
+  setTags,
+} from '../../../../functions/digimon-card.functions';
 import { selectAllCards } from '../../../../store/digimon.selectors';
 
 @Component({
@@ -83,6 +87,8 @@ export class ImportDeckDialogComponent implements OnInit, OnDestroy {
         return;
       }
     }
+    deck.tags = setTags(deck.tags ?? [], deck, this.digimonCards);
+    deck.color = setColors(deck, this.digimonCards, deck.color);
     this.store.dispatch(importDeck({ deck }));
     this.store.dispatch(setDeck({ deck }));
     this.show = false;
