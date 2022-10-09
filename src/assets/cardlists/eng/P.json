@@ -938,6 +938,36 @@
     "illustrator": "As'Maria"
   },
   {
+    "id": "P-018_P1",
+    "name": "Devimon",
+    "cardImage": "assets/images/cards/eng/P-018_P1.webp",
+    "cardType": "Digimon",
+    "dp": "3000",
+    "playCost": "5",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Virus",
+    "type": "Fallen Angel",
+    "rarity": "P",
+    "cardNumber": "P-018",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Play] Delete 1 of your opponent's level 3 Digimon.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "25th Special Memorial Pack",
+    "color": "Purple",
+    "version": "AA",
+    "block": [
+      "00"
+    ],
+    "restriction": "-",
+    "illustrator": "/"
+  },
+  {
     "id": "P-019",
     "name": "Myotismon",
     "cardImage": "assets/images/cards/eng/P-019.webp",

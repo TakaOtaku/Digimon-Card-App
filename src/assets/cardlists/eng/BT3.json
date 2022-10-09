@@ -1184,6 +1184,36 @@
     "illustrator": "Nakano Haito"
   },
   {
+    "id": "BT3-024_P2",
+    "name": "Airdramon",
+    "cardImage": "assets/images/cards/eng/BT3-024_P2.webp",
+    "cardType": "Digimon",
+    "dp": "4000",
+    "playCost": "5",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Vaccine",
+    "type": "Mythical Beast",
+    "rarity": "U",
+    "cardNumber": "BT3-024",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Security] At the end of the battle, play this card without paying its memory cost.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "25th Special Memorial Pack",
+    "color": "Blue",
+    "version": "AA",
+    "block": [
+      "00"
+    ],
+    "restriction": "-",
+    "illustrator": "/"
+  },
+  {
     "id": "BT3-025",
     "name": "ExVeemon",
     "cardImage": "assets/images/cards/eng/BT3-025.webp",

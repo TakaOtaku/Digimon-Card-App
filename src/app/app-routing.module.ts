@@ -24,7 +24,7 @@ const routes: Routes = [
     component: DeckbuilderComponent,
   },
   {
-    path: 'deckbuilder/deck/:id',
+    path: 'deckbuilder/:id',
     component: DeckbuilderComponent,
   },
   {
