@@ -29,31 +29,6 @@ export class ChangelogDialogComponent implements OnInit {
     this.load();
   }
 
-  created(event: Quill) {
-    // tslint:disable-next-line:no-console
-    console.log('editor-created', event);
-  }
-
-  changedEditor(event: EditorChangeContent | EditorChangeSelection) {
-    // tslint:disable-next-line:no-console
-    console.log('editor-change', event);
-  }
-
-  focus($event: any) {
-    // tslint:disable-next-line:no-console
-    console.log('focus', $event);
-    this.focused = true;
-    this.blurred = false;
-  }
-
-  blur($event: any) {
-    // tslint:disable-next-line:no-console
-    console.log('blur', $event);
-    this.focused = false;
-    this.blurred = true;
-    debugger;
-  }
-
   load() {
     this.dbService.loadChangelog().then((r) => {
       const value: DataSnapshot = r;

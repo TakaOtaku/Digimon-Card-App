@@ -15,3 +15,5 @@ export * from './color.map';
 
 export * from './color.data';
 export * from './tags.data';
+export * from './admins.data';
+export * from './tierlist.data';

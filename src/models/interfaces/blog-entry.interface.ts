@@ -1,6 +1,6 @@
 export interface IBlog {
   uid: string;
-  date: string;
+  date: Date;
   title: string;
   text: any;
   approved: boolean;

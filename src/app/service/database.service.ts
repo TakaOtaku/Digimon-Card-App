@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { get, getDatabase, ref, remove, update } from '@angular/fire/database';
-import { BehaviorSubject, first, Subject } from 'rxjs';
+import { BehaviorSubject, first, from, Observable, Subject } from 'rxjs';
 import { IDeck, ISave, IUser } from '../../models';
 import { CARDSET } from '../../models/card-set.enum';
+import { IBlog } from '../../models/interfaces/blog-entry.interface';
 import { emptyDeck } from '../store/reducers/digimon.reducers';
 import { emptySettings } from '../store/reducers/save.reducer';
 
@@ -201,5 +202,20 @@ export class DatabaseService {
   saveChangelog(changelog: any) {
     const db = getDatabase();
     return update(ref(db, 'blog/changelog-dev'), changelog);
+  }
+
+  loadBlogEntries(): Observable<any> {
+    const db = getDatabase();
+    return from(get(ref(db, 'blog/entries')));
+  }
+
+  saveBlogEntry(blog: IBlog) {
+    const db = getDatabase();
+    return update(ref(db, 'blog/entries/' + blog.uid), blog);
+  }
+
+  deleteBlogEntry(blogId: string) {
+    const db = getDatabase();
+    return remove(ref(db, 'blog/entries/' + blogId));
   }
 }

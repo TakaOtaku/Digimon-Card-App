@@ -74,6 +74,7 @@ import { DigimonEffects } from "./store/digimon.effects";
 import * as DigimonCards from "./store/reducers/digimon-card.reducers";
 import * as Digimon from "./store/reducers/digimon.reducers";
 import * as Save from "./store/reducers/save.reducer";
+import { BlogComponent } from './pages/blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -117,6 +118,7 @@ import * as Save from "./store/reducers/save.reducer";
     DeckbuilderComponent,
     CollectionPageComponent,
     SettingsDialogComponent,
+    BlogComponent,
   ],
   imports: [
     PrimeNGModule,

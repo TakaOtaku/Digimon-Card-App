@@ -83,10 +83,6 @@ export class DeckToolbarComponent implements OnDestroy {
       message:
         'You are about to clear all cards in the deck and make a new one. Are you sure?',
       accept: () => {
-        if (this.deck.cards.length > 0) {
-          this.save.next(true);
-        }
-
         const deck: IDeck = emptyDeck;
         this.store.dispatch(setDeck({ deck }));
         this.messageService.add({
