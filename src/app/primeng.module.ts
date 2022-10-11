@@ -14,6 +14,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { MegaMenuModule } from 'primeng/megamenu';
 import { MenuModule } from 'primeng/menu';
 import { MessageModule } from 'primeng/message';
 import { MessagesModule } from 'primeng/messages';
@@ -59,6 +60,7 @@ import { ToastModule } from 'primeng/toast';
     StyleClassModule,
     ProgressSpinnerModule,
     BlockUIModule,
+    MegaMenuModule,
   ],
   providers: [MessageService, ConfirmationService],
   exports: [
@@ -90,6 +92,7 @@ import { ToastModule } from 'primeng/toast';
     StyleClassModule,
     ProgressSpinnerModule,
     BlockUIModule,
+    MegaMenuModule,
   ],
 })
 export class PrimeNGModule {}

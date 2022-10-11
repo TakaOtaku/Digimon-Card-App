@@ -151,7 +151,7 @@
       </td>
       <td class="max-w-[400px] max-w-[100%]">
         <div class="mx-auto">
-          {{ dateFormat(deck.date) }}
+          {{ deck.date | date: "dd.MM.yyyy" }}
         </div>
       </td>
     </tr>

@@ -1,9 +1,6 @@
-import { MultiButtons } from "../../../molecules/multi-buttons/multi-buttons.component";
+import { MultiButtons } from '../../../molecules/multi-buttons/multi-buttons.component';
 
 export const GroupedSets = [
-  {
-    items: [{ label: 'P', value: 'P' }],
-  },
   {
     label: 'Standard',
     value: 'displays',
@@ -47,6 +44,9 @@ export const GroupedSets = [
       { label: 'ST12', value: 'ST12' },
       { label: 'ST13', value: 'ST13' },
     ],
+  },
+  {
+    items: [{ label: 'P', value: 'P' }],
   },
 ];
 
