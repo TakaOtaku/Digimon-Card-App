@@ -3,14 +3,11 @@ import { DataSnapshot } from '@angular/fire/compat/database/interfaces';
 import { Router } from '@angular/router';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { first, Subject, takeUntil } from 'rxjs';
-import { englishCards } from 'src/assets/cardlists/eng/english';
 import * as uuid from 'uuid';
 import { ADMINS, IUser, TIERLIST } from '../../../models';
 import { IBlog } from '../../../models/interfaces/blog-entry.interface';
 import { AuthService } from '../../service/auth.service';
 import { DatabaseService } from '../../service/database.service';
-import { setSave } from '../../store/digimon.actions';
-import { emptySettings } from '../../store/reducers/save.reducer';
 
 @Component({
   selector: 'digimon-home',
@@ -83,35 +80,25 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   approve(blog: IBlog) {
     blog.approved = true;
-    this.blogEntriesHidden = this.blogEntriesHidden.map((entry) => {
-      if (entry.uid === blog.uid) {
-        return { ...entry, approved: true };
-      }
-      return entry;
-    });
-    this.blogEntries = this.blogEntries.map((entry) => {
-      if (entry.uid === blog.uid) {
-        return { ...entry, approved: true };
-      }
-      return entry;
-    });
+    this.blogEntriesHidden = this.blogEntriesHidden.filter(
+      (entry) => entry.uid !== blog.uid
+    );
+    this.blogEntries = this.blogEntries.filter(
+      (entry) => entry.uid !== blog.uid
+    );
+    this.blogEntries.push(blog);
     this.dbService.saveBlogEntry(blog);
   }
 
   hide(blog: IBlog) {
     blog.approved = false;
-    this.blogEntriesHidden = this.blogEntriesHidden.map((entry) => {
-      if (entry.uid === blog.uid) {
-        return { ...entry, approved: false };
-      }
-      return entry;
-    });
-    this.blogEntries = this.blogEntries.map((entry) => {
-      if (entry.uid === blog.uid) {
-        return { ...entry, approved: false };
-      }
-      return entry;
-    });
+    this.blogEntriesHidden = this.blogEntriesHidden.filter(
+      (entry) => entry.uid !== blog.uid
+    );
+    this.blogEntries = this.blogEntries.filter(
+      (entry) => entry.uid !== blog.uid
+    );
+    this.blogEntriesHidden.push(blog);
     this.dbService.saveBlogEntry(blog);
   }
 

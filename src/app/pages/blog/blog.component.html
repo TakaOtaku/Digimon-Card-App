@@ -1,1 +1,19 @@
-<p>blog works!</p>
+<div class="w-full">
+  <div class="mx-auto h-[calc(100vh-150px)] max-w-7xl">
+    <h1 class="mb-2 w-full text-3xl font-extrabold text-white">
+      {{ title }}
+    </h1>
+    <div class="flex flex-row">
+      <span class="mb-2 w-full text-lg font-bold text-white"
+        >{{ author }} / {{ date | date: "dd.MM.yyyy" }}</span
+      >
+    </div>
+
+    <quill-view
+      class="text-white"
+      [content]="content"
+      [preserveWhitespace]="true"
+      format="object"
+    ></quill-view>
+  </div>
+</div>

@@ -209,6 +209,11 @@ export class DatabaseService {
     return from(get(ref(db, 'blog/entries')));
   }
 
+  loadBlogEntry(blogId: string): Observable<any> {
+    const db = getDatabase();
+    return from(get(ref(db, 'blog/entries/' + blogId)));
+  }
+
   saveBlogEntry(blog: IBlog) {
     const db = getDatabase();
     return update(ref(db, 'blog/entries/' + blog.uid), blog);
