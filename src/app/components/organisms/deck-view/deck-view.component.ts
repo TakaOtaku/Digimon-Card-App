@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { filter, first, Subject, takeUntil } from 'rxjs';
+import { filter, Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
 import {
   DeckColorMap,
@@ -17,13 +17,11 @@ import {
   IDeck,
   IDeckCard,
   ISave,
-  tagsList,
 } from '../../../../models';
 import { ITag } from '../../../../models/interfaces/tag.interface';
 import {
   compareIDs,
   deckIsValid,
-  mapToDeckCards,
   setColors,
   setTags,
   sortColors,
