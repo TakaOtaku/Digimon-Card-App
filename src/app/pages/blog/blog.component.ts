@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataSnapshot } from '@angular/fire/compat/database/interfaces';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { filter, first } from 'rxjs';
 import { IBlog } from '../../../models/interfaces/blog-entry.interface';
 import { DatabaseService } from '../../service/database.service';
@@ -18,6 +18,7 @@ export class BlogComponent implements OnInit {
   category = '';
 
   constructor(
+    public router: Router,
     private active: ActivatedRoute,
     private databaseService: DatabaseService
   ) {}

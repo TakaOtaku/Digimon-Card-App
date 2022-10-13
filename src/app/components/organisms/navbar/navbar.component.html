@@ -1,5 +1,5 @@
 <nav
-  class="navbar navbar-expand-lg relative flex w-full items-center justify-between shadow-lg"
+  class="navbar navbar-expand-lg relative flex w-full flex-col items-center justify-between shadow-lg"
 >
   <div class="surface-ground grid max-h-12 w-full grid-cols-3 p-0">
     <a href="https://digimoncard.app">
@@ -23,12 +23,12 @@
       />
     </a>
 
-    <digimon-filter-button class="m-auto md:hidden"></digimon-filter-button>
+    <digimon-filter-button *ngIf="showCardList" class="m-auto md:hidden"></digimon-filter-button>
+    <div *ngIf="!showCardList" class="m-auto md:hidden"></div>
 
     <div class="ml-auto mr-2 mt-2 flex flex-row">
       <button
-        (click)="megamenu = !megamenu"
-        (mouseenter)="megamenu = !megamenu"
+        (click)="changeMenu()"
         class="min-w-auto primary-background mx-2 h-9 w-9 overflow-hidden rounded-full text-xs font-semibold text-white"
       >
         <i *ngIf="!user" class="pi pi-user"></i>
@@ -42,6 +42,7 @@
   </div>
 
   <div
+    [ngClass]="{ show: megamenu }"
     class="collapse navbar-collapse grow items-center"
     id="navbarSupportedContentX"
   >
@@ -177,18 +178,15 @@
   [(visible)]="settingsDialog"
   [baseZIndex]="10000"
   header="Settings"
-  styleClass="lg:w-[950px] min-h-[350px] max-h-screen"
+  styleClass="w-full h-full lg:w-[950px] min-h-[350px] max-h-screen"
 >
   <digimon-settings-dialog></digimon-settings-dialog>
 </p-dialog>
 
 <p-dialog
-  (close)="showChangelog = !showChangelog"
   [(visible)]="showChangelog"
-  [closable]="true"
   [closeOnEscape]="true"
-  [modal]="true"
-  class="min-h-[95vw] min-w-[95vw]"
+  styleClass="h-screen w-screen lg:max-h-[600px] lg:max-w-3xl"
   header="Changelog"
 >
   <digimon-changelog-dialog></digimon-changelog-dialog>

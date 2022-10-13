@@ -1,6 +1,11 @@
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Subject } from 'rxjs';
+import {
+  ActivatedRoute,
+  NavigationEnd,
+  Router,
+  UrlSegment,
+} from '@angular/router';
+import { Subject, takeUntil } from 'rxjs';
 import { IUser } from '../../../../models';
 import { AuthService } from '../../../service/auth.service';
 
@@ -16,18 +21,30 @@ export class NavbarComponent implements OnInit, OnDestroy {
   showChangelog = false;
 
   user: IUser | null;
+  showCardList = false;
 
   mobile = false;
 
   private onDestroy$ = new Subject();
 
-  constructor(public router: Router, public authService: AuthService) {}
+  constructor(
+    private route: ActivatedRoute,
+    public router: Router,
+    public authService: AuthService
+  ) {}
 
   ngOnInit() {
     this.user = this.authService.userData;
     this.authService.authChange.subscribe(() => {
       this.user = this.authService.userData;
     });
+
+    this.router.events.pipe(takeUntil(this.onDestroy$)).subscribe((event) => {
+      event instanceof NavigationEnd
+        ? (this.showCardList = event.url.includes('deckbuilder'))
+        : null;
+    });
+
     this.onResize();
   }
 
@@ -43,5 +60,9 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   login() {
     this.authService.GoogleAuth();
+  }
+
+  changeMenu() {
+    this.megamenu = !this.megamenu;
   }
 }

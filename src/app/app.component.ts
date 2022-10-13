@@ -58,7 +58,7 @@ export class AppComponent {
    * Optimize Website search engines
    */
   private makeGoogleFriendly() {
-    this.title.setTitle('Digimon Card APP');
+    this.title.setTitle('Digimon Card Game Deckbuilder');
 
     this.meta.addTags([
       {
