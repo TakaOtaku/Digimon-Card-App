@@ -1,101 +1,69 @@
 <div class="border-2 border-slate-500 text-white">
-  <!--button
-    (click)="importDeckDialog = true"
-    class="w-1/2 font-bold"
-    label="Import Deck"
-    pButton
-  ></button>
-  <button
-    (click)="createNewDeck()"
-    class="w-1/2 font-bold"
-    label="Create new Deck"
-    pButton
-  ></button-->
-
   <p-contextMenu #table [model]="deckRowContext"></p-contextMenu>
   <p-table
     [(contextMenuSelection)]="selectedDeck"
     [contextMenu]="table"
     [globalFilterFields]="['color.name', 'title', 'tags', '', 'user']"
-    [scrollHeight]="'calc(100vh - 55px)'"
+    [scrollHeight]="'calc(100vh - 48px)'"
     [scrollable]="true"
     [showCurrentPageReport]="true"
     [value]="decks"
-    [virtualScroll]="true"
+    responsiveLayout="scroll"
     styleClass="p-datatable-striped"
   >
     <ng-template pTemplate="header">
-      <tr>
-        <th class="max-w-[120px]">
-          <div class="max-w-5 mx-auto">
-            Color
-            <p-columnFilter
-              display="menu"
-              field="color.name"
-              matchMode="equals"
+      <tr class="p-0">
+        <th class="mx-auto max-w-[70px] p-0">
+          Color
+          <p-columnFilter display="menu" field="color.name" matchMode="equals">
+            <ng-template
+              let-filter="filterCallback"
+              let-value
+              pTemplate="filter"
             >
-              <ng-template
-                let-filter="filterCallback"
-                let-value
-                pTemplate="filter"
+              <p-dropdown
+                (onChange)="filter($event.value)"
+                [ngModel]="value"
+                [options]="colors"
+                placeholder="Any"
               >
-                <p-dropdown
-                  (onChange)="filter($event.value)"
-                  [ngModel]="value"
-                  [options]="colors"
-                  placeholder="Any"
-                >
-                  <ng-template let-option pTemplate="item">
-                    <span [class]="'customer-badge status-' + option">{{
-                      option
-                    }}</span>
-                  </ng-template>
-                </p-dropdown>
-              </ng-template>
-            </p-columnFilter>
-          </div>
+                <ng-template let-option pTemplate="item">
+                  <span [class]="'customer-badge status-' + option">{{
+                    option
+                  }}</span>
+                </ng-template>
+              </p-dropdown>
+            </ng-template>
+          </p-columnFilter>
         </th>
-        <th class="max-w-[400px] lg:max-w-[100%]">
-          <div>
-            Title
-            <p-columnFilter
-              display="menu"
-              field="title"
-              type="text"
-            ></p-columnFilter>
-          </div>
+        <th class="max-w-[400px] p-0 text-center">
+          Title
+          <p-columnFilter
+            display="menu"
+            field="title"
+            type="text"
+          ></p-columnFilter>
         </th>
-        <th class="max-w-[400px] lg:max-w-[100%]">
-          <div class="mx-auto">Tags</div>
-        </th>
-        <th class="max-w-[400px] lg:max-w-[100%]">
-          <div>Description</div>
-        </th>
+        <th class="max-w-[400px] p-0 text-center">Tags</th>
+        <th class="max-w-[400px] p-0 text-center">Description</th>
       </tr>
     </ng-template>
     <ng-template let-deck pTemplate="body">
-      <tr
-        (click)="showContextMenu(table, $event, deck)"
-        [pContextMenuRow]="deck"
-        class="max-h-[50px]"
-      >
-        <td class="inline-flex max-w-[120px]">
+      <tr [pContextMenuRow]="deck" class="max-h-[50px]">
+        <td class="inline-flex max-w-[70px] p-0">
           <img
             [src]="deck.color?.img ?? 'assets/decks/white.svg'"
             alt="Digimon Deck Image"
             class="mx-auto max-h-[50px]"
           />
         </td>
-        <td class="max-w-[400px] lg:max-w-[100%]">{{ deck.title }}</td>
-        <td class="max-w-[400px] lg:max-w-[100%]">
-          <div class="mx-auto">
-            <p-chip
-              *ngFor="let tag of deck.tags"
-              label="{{ tag.name }}"
-            ></p-chip>
-          </div>
+        <td class="max-w-[400px] truncate p-0 lg:max-w-[100%]">
+          {{ deck.title }}
         </td>
-        <td class="max-w-[400px] truncate lg:max-w-[100%]">
+        <td class="max-w-[400px] p-0 lg:max-w-[100%]">
+          <p-chip *ngFor="let tag of deck.tags" label="{{ tag.name }}"></p-chip>
+        </td>
+        <td class="max-w-[400px] truncate p-0 lg:max-w-[100%]">
           {{ deck.description }}
         </td>
       </tr>

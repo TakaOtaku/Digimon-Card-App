@@ -17,11 +17,10 @@ import { selectDecks } from '../../../store/digimon.selectors';
 @Component({
   selector: 'digimon-decks',
   templateUrl: './decks.component.html',
-  styleUrls: ['./decks.component.css'],
 })
 export class DecksComponent implements OnInit, OnDestroy {
-  selectedDeck: IDeck;
   @Input() decks: IDeck[] = [];
+  selectedDeck: IDeck;
 
   colors = COLORS;
   tags = TAGS;
@@ -98,11 +97,12 @@ export class DecksComponent implements OnInit, OnDestroy {
       .subscribe((decks) => {
         try {
           const test = [...new Set(decks)];
-          this.decks = test.sort((a, b) => {
-            const timeA = new Date(a?.date ?? '').getTime() ?? 0;
-            const timeB = new Date(b?.date ?? '').getTime() ?? 0;
-            return timeB - timeA || a.title!.localeCompare(b.title!);
-          });
+          this.decks = test.sort((a, b) => a.title!.localeCompare(b.title!));
+          //this.decks = test.sort((a, b) => {
+          //  const timeA = new Date(a?.date ?? '').getTime() ?? 0;
+          //  const timeB = new Date(b?.date ?? '').getTime() ?? 0;
+          //  return timeB - timeA || a.title!.localeCompare(b.title!);
+          //});
         } catch (e) {
           this.decks = decks;
         }

@@ -1,5 +1,6 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import {
@@ -22,6 +23,8 @@ import { selectAllCards } from '../../store/digimon.selectors';
 export class CommunityComponent implements OnInit, OnDestroy {
   public selectedDeck: IDeck;
   public decks: IDeck[] = [];
+
+  searchFilter = new FormControl('');
 
   public tags = TAGS;
   public colors = COLORS;

@@ -23,7 +23,10 @@
       />
     </a>
 
-    <digimon-filter-button *ngIf="showCardList" class="m-auto md:hidden"></digimon-filter-button>
+    <digimon-filter-button
+      *ngIf="showCardList"
+      class="m-auto md:hidden"
+    ></digimon-filter-button>
     <div *ngIf="!showCardList" class="m-auto md:hidden"></div>
 
     <div class="ml-auto mr-2 mt-2 flex flex-row">
@@ -196,7 +199,7 @@
   [(visible)]="creditsDisplay"
   [baseZIndex]="10000"
   header="Credits"
-  styleClass="w-[95vw] max-w-[700px] max-h-screen"
+  styleClass="w-screen lg:max-h-[600px] lg:max-w-3xl"
 >
   <div class="flex w-full flex-col">
     <span class="mt-5 w-full text-center font-bold text-white"

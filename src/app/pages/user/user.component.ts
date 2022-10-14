@@ -109,7 +109,7 @@ export class UserComponent implements OnInit, OnDestroy {
     if (this.authService.userData?.uid) {
       this.location.replaceState('/user/' + this.authService.userData?.uid);
     } else {
-      this.location.replaceState('');
+      this.location.replaceState('/user');
     }
   }
 }
