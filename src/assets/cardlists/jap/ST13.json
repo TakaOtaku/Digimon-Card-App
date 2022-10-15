@@ -18,7 +18,7 @@
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "-",
-    "digivolveEffect": "[Your Turn] [Once Per Turn] When you play another Digimon with [Legend-Arms] in its traits, gain 1 memory.",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When you play another Digimon with [Legend-Arms] in its traits by an effect, gain 1 memory.",
     "securityEffect": "-",
     "notes": "▹start deck RAGNALOARDMON[ST-13]",
     "color": "Black",
