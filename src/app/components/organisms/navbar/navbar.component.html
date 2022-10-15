@@ -69,7 +69,7 @@
                   (click)="router.navigateByUrl(''); this.megamenu = false"
                   aria-current="true"
                   class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
-                  >Home</a
+                  ><i class="pi pi-book mr-2"></i>Home</a
                 >
                 <a
                   (click)="
@@ -77,7 +77,7 @@
                   "
                   aria-current="true"
                   class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
-                  >Deckbuilder</a
+                  ><i class="pi pi-pencil mr-2"></i>Deckbuilder</a
                 >
                 <a
                   (click)="
@@ -85,13 +85,13 @@
                   "
                   aria-current="true"
                   class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
-                  >Collection</a
+                  ><i class="pi pi-database mr-2"></i>Collection</a
                 >
                 <a
                   (click)="router.navigateByUrl('/user'); this.megamenu = false"
                   aria-current="true"
                   class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
-                  >Profile</a
+                  ><i class="pi pi-user mr-2"></i>Profile</a
                 >
                 <a
                   (click)="
@@ -99,7 +99,7 @@
                   "
                   aria-current="true"
                   class="block w-full cursor-pointer px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
-                  >Community</a
+                  ><i class="pi pi-users mr-2"></i>Community</a
                 >
               </div>
               <div class="surface-ground text-white">
@@ -112,19 +112,19 @@
                   (click)="this.showChangelog = true; this.megamenu = false"
                   aria-current="true"
                   class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
-                  >Changelog</a
+                  ><i class="pi pi-info-circle mr-2"></i>Changelog</a
                 >
                 <a
                   (click)="this.creditsDisplay = true; this.megamenu = false"
                   aria-current="true"
                   class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
-                  >Credits</a
+                  ><i class="pi pi-info-circle mr-2"></i>Credits</a
                 >
                 <a
                   (click)="this.settingsDialog = true; this.megamenu = false"
                   aria-current="true"
                   class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
-                  >Settings</a
+                  ><i class="pi pi-cog mr-2"></i>Settings</a
                 >
                 <a
                   (click)="
@@ -135,6 +135,13 @@
                   "
                   aria-current="true"
                   class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
+                  ><i
+                    [ngClass]="{
+                      'pi-sign-in': !this.authService.isLoggedIn,
+                      'pi-sign-out': this.authService.isLoggedIn
+                    }"
+                    class="pi mr-2"
+                  ></i
                   >{{ this.authService.isLoggedIn ? "Logout" : "Login" }}</a
                 >
               </div>
@@ -149,21 +156,21 @@
                   target="_blank"
                   aria-current="true"
                   class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
-                  >What I work on</a
+                  ><i class="pi pi-ticket mr-2"></i>What I work on</a
                 >
                 <a
                   href="https://github.com/TakaOtaku/Digimon-Card-App/issues"
                   target="_blank"
                   aria-current="true"
                   class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
-                  >Feature/Bug Request</a
+                  ><i class="pi pi-question mr-2"></i>Feature/Bug Request</a
                 >
                 <a
                   href="https://www.paypal.com/donate/?hosted_button_id=WLM58Q785D4H4"
                   target="_blank"
                   aria-current="true"
                   class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
-                  >Help the Site!</a
+                  ><i class="pi pi-paypal mr-2"></i>Help the Site!</a
                 >
               </div>
               <div class="hidden lg:block"></div>

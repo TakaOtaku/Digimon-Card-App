@@ -11,6 +11,7 @@ import {
 import { Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
 import { COLORS, ICard, IDeck, TAGS } from '../../../models';
+import { mapToDeckCards } from '../../functions/digimon-card.functions';
 import { AuthService } from '../../service/auth.service';
 import { DatabaseService } from '../../service/database.service';
 import { importDeck, setDeck } from '../../store/digimon.actions';
@@ -23,6 +24,7 @@ import { selectAllCards } from '../../store/digimon.selectors';
 export class CommunityComponent implements OnInit, OnDestroy {
   public selectedDeck: IDeck;
   public decks: IDeck[] = [];
+  private allDecks: IDeck[] = [];
 
   searchFilter = new FormControl('');
 
@@ -65,12 +67,12 @@ export class CommunityComponent implements OnInit, OnDestroy {
     this.db
       .loadCommunityDecks()
       .pipe(takeUntil(this.onDestroy$))
-      .subscribe(
-        (decks) =>
-          (this.decks = decks.sort(
-            (a, b) => new Date(b.date!).getTime() - new Date(a.date!).getTime()
-          ))
-      );
+      .subscribe((decks) => {
+        this.allDecks = decks.sort(
+          (a, b) => new Date(b.date!).getTime() - new Date(a.date!).getTime()
+        );
+        this.decks = this.allDecks;
+      });
     this.store
       .select(selectAllCards)
       .pipe(takeUntil(this.onDestroy$))
@@ -96,6 +98,8 @@ export class CommunityComponent implements OnInit, OnDestroy {
         });
       }
     }
+
+    this.onSearch();
   }
 
   ngOnDestroy() {
@@ -174,5 +178,18 @@ export class CommunityComponent implements OnInit, OnDestroy {
   showContextMenu(menu: any, event: any, deck: IDeck) {
     this.selectedDeck = deck;
     menu.show(event);
+  }
+
+  onSearch() {
+    this.searchFilter.valueChanges
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((value) => {
+        this.decks = this.allDecks.filter((deck) => {
+          const deckCards = mapToDeckCards(deck.cards, this.allCards);
+          return !!deckCards.find(
+            (card) => card.id?.includes(value) || card.name?.includes(value)
+          );
+        });
+      });
   }
 }

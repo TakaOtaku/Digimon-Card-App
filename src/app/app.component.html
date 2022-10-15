@@ -106,12 +106,9 @@
 </p-dialog>
 
 <p-dialog
-  (close)="showChangelog = !showChangelog"
   [(visible)]="showChangelog"
-  [closable]="true"
   [closeOnEscape]="true"
-  [modal]="true"
-  class="min-h-[95vw] min-w-[95vw]"
+  styleClass="h-screen w-screen lg:max-h-[600px] lg:max-w-3xl"
   header="Changelog"
 >
   <digimon-changelog-dialog></digimon-changelog-dialog>
