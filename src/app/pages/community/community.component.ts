@@ -8,6 +8,7 @@ import {
   FilterService,
   MessageService,
 } from 'primeng/api';
+import { ContextMenu } from 'primeng/contextmenu';
 import { Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
 import { COLORS, ICard, IDeck, TAGS } from '../../../models';
@@ -175,8 +176,10 @@ export class CommunityComponent implements OnInit, OnDestroy {
     return pipe.transform(date, 'MMM d, y, h:mm:ss a')!;
   }
 
-  showContextMenu(menu: any, event: any, deck: IDeck) {
+  showContextMenu(menu: ContextMenu, event: MouseEvent, deck: IDeck) {
     this.selectedDeck = deck;
+    event.stopPropagation();
+    event.preventDefault();
     menu.show(event);
   }
 

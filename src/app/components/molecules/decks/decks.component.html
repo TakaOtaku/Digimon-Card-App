@@ -57,7 +57,10 @@
             class="mx-auto max-h-[50px]"
           />
         </td>
-        <td class="max-w-[400px] truncate p-0 lg:max-w-[100%]">
+        <td
+          (click)="showContextMenu(table, $event, deck)"
+          class="max-w-[400px] cursor-pointer truncate p-0 lg:max-w-[100%]"
+        >
           {{ deck.title }}
         </td>
         <td class="max-w-[400px] p-0 lg:max-w-[100%]">

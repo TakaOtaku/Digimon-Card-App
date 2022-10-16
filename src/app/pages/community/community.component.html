@@ -100,12 +100,7 @@
     </tr>
   </ng-template>
   <ng-template let-deck let-expanded="expanded" pTemplate="body">
-    <tr
-      class="max-h-[50px]"
-      (click)="showContextMenu(table, $event, deck)"
-      (dblclick)="showContextMenu(table, $event, deck)"
-      [pContextMenuRow]="deck"
-    >
+    <tr class="max-h-[50px]" [pContextMenuRow]="deck">
       <td class="max-w-[30px] p-0">
         <button
           [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"
@@ -123,7 +118,12 @@
           class="mx-auto max-h-[50px]"
         />
       </td>
-      <td class="max-w-[400px] p-0">{{ deck.title }}</td>
+      <td
+        (click)="showContextMenu(table, $event, deck)"
+        class="cursor-pointer p-0"
+      >
+        {{ deck.title }}
+      </td>
       <td class="max-w-[400px] p-0">
         <p-chip *ngFor="let tag of deck.tags" label="{{ tag.name }}"></p-chip>
       </td>

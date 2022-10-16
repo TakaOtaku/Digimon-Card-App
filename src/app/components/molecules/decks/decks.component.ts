@@ -2,6 +2,7 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MenuItem, MessageService } from 'primeng/api';
+import { ContextMenu } from 'primeng/contextmenu';
 import { Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
 import { COLORS, ICountCard, IDeck, IUser, TAGS } from '../../../../models';
@@ -163,7 +164,9 @@ export class DecksComponent implements OnInit, OnDestroy {
     }
   }
 
-  showContextMenu(menu: any, event: any, deck: IDeck) {
+  showContextMenu(menu: ContextMenu, event: MouseEvent, deck: IDeck) {
+    event.stopPropagation();
+    event.preventDefault();
     this.selectedDeck = deck;
     menu.show(event);
   }
