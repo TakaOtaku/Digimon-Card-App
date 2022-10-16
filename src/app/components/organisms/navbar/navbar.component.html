@@ -1,8 +1,8 @@
 <nav
   class="navbar navbar-expand-lg relative flex w-full flex-col items-center justify-between shadow-lg"
 >
-  <div class="surface-ground grid max-h-12 w-full grid-cols-3 p-0">
-    <a href="https://digimoncard.app">
+  <div class="surface-ground flex max-h-12 w-full flex-row p-0">
+    <a href="https://digimoncard.app/deckbuilder">
       <img
         alt="Logo"
         class="ml-5 mt-2 max-h-6 cursor-pointer md:max-h-8"
@@ -22,6 +22,39 @@
         width="150px"
       />
     </a>
+
+    <button
+      (click)="router.navigateByUrl('')"
+      class="min-w-auto primary-background mt-2 ml-2 hidden h-8 w-24 rounded p-2 text-xs font-semibold text-white lg:block"
+    >
+      Home
+    </button>
+
+    <button
+      (click)="router.navigateByUrl('/deckbuilder')"
+      class="min-w-auto primary-background mt-2 ml-2 hidden h-8 w-24 rounded p-2 text-xs font-semibold text-white lg:block"
+    >
+      Deckbuilder
+    </button>
+
+    <button
+      (click)="router.navigateByUrl('/collection')"
+      class="min-w-auto primary-background mt-2 ml-2 hidden h-8 w-24 rounded p-2 text-xs font-semibold text-white lg:block"
+    >
+      Collection
+    </button>
+    <button
+      (click)="router.navigateByUrl('/user')"
+      class="min-w-auto primary-background mt-2 ml-2 hidden h-8 w-24 rounded p-2 text-xs font-semibold text-white lg:block"
+    >
+      Profile
+    </button>
+    <button
+      (click)="router.navigateByUrl('/community')"
+      class="min-w-auto primary-background mt-2 ml-2 hidden h-8 w-24 rounded p-2 text-xs font-semibold text-white lg:block"
+    >
+      Community
+    </button>
 
     <digimon-filter-button
       *ngIf="showCardList"
