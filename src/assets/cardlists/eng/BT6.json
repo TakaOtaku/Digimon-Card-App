@@ -2940,6 +2940,36 @@
     "illustrator": "sasasi"
   },
   {
+    "id": "BT6-064_P2",
+    "name": "Mamemon",
+    "cardImage": "assets/images/cards/eng/BT6-064_P2.webp",
+    "cardType": "Digimon",
+    "dp": "6000",
+    "playCost": "7",
+    "digivolveCost1": "3 from Lv.4",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.5",
+    "form": "Ultimate",
+    "attribute": "Data",
+    "type": "Mutant",
+    "rarity": "SR",
+    "cardNumber": "BT6-064",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "＜Decoy (Black)＞ (When one of your other black Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent that deletion.)\n[On Deletion] Delete 1 of your opponent's Digimon with a play cost of 7 or less.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "25th Special Memorial Pack",
+    "color": "Black",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "-",
+    "illustrator": "/"
+  },
+  {
     "id": "BT6-065",
     "name": "Gundramon",
     "cardImage": "assets/images/cards/eng/BT6-065.webp",
@@ -4708,6 +4738,36 @@
     ],
     "restriction": "-",
     "illustrator": "sasasi"
+  },
+  {
+    "id": "BT6-111_P2",
+    "name": "Alphamon",
+    "cardImage": "assets/images/cards/eng/BT6-111_P2.webp",
+    "cardType": "Digimon",
+    "dp": "11000",
+    "playCost": "13",
+    "digivolveCost1": "3 from Lv.5",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Vaccine",
+    "type": "Holy Warrior/Royal Knight/X Antibody",
+    "rarity": "SEC",
+    "cardNumber": "BT6-111",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Security] At the end of the battle, add this card to its owner's hand. Then, if a Digimon with [Royal Knight] or [X Antibody] in its traits is in play, up to 12 of your opponent's Digimon can't attack players for the turn.[When Attacking] By paying up to 5 memory, this Digimon gets +1000 DP for the turn for each memory paid for this effect.[End of Attack] Gain 2 memory.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10] Ghost Rare",
+    "color": "Black",
+    "version": "AA",
+    "restriction": "-",
+    "illustrator": "sasasi",
+    "block": [
+      "01"
+    ]
   },
   {
     "id": "BT6-112",

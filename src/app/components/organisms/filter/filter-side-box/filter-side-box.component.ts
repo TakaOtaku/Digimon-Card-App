@@ -1,14 +1,27 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit } from "@angular/core";
-import { FormControl, FormGroup } from "@angular/forms";
-import { Store } from "@ngrx/store";
-import { MessageService } from "primeng/api";
-import { Subject, takeUntil } from "rxjs";
-import { IFilter } from "../../../../../models";
-import { CARDSET } from "../../../../../models/card-set.enum";
-import { ISelectItem } from "../../../../../models/interfaces/select-item.interface";
-import { changeCardSets, changeFilter } from "../../../../store/digimon.actions";
-import { selectCardSet, selectCollectionMode, selectFilter } from "../../../../store/digimon.selectors";
-import { emptyFilter } from "../../../../store/reducers/digimon.reducers";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { MessageService } from 'primeng/api';
+import { Subject, takeUntil } from 'rxjs';
+import { IFilter } from '../../../../../models';
+import { CARDSET } from '../../../../../models/card-set.enum';
+import { ISelectItem } from '../../../../../models/interfaces/select-item.interface';
+import {
+  changeCardSets,
+  changeFilter,
+} from '../../../../store/digimon.actions';
+import {
+  selectCardSet,
+  selectCollectionMode,
+  selectFilter,
+} from '../../../../store/digimon.selectors';
+import { emptyFilter } from '../../../../store/reducers/digimon.reducers';
 import {
   Attributes,
   BlockButtons,
@@ -22,8 +35,8 @@ import {
   Restrictions,
   SpecialRequirements,
   Types,
-  VersionButtons
-} from "./filterData";
+  VersionButtons,
+} from './filterData';
 
 @Component({
   selector: 'digimon-filter-side-box',
@@ -89,8 +102,7 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
   private filter: IFilter;
   private onDestroy$ = new Subject();
 
-  constructor(private store: Store, private messageService: MessageService) {
-  }
+  constructor(private store: Store, private messageService: MessageService) {}
 
   ngOnInit(): void {
     this.store
@@ -166,8 +178,8 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
     this.resetEmitter.emit();
     this.store.dispatch(changeFilter({ filter: emptyFilter }));
     this.messageService.add({
-      severity: "info",
-      detail: "All filter were reset."
+      severity: 'info',
+      detail: 'All filter were reset.',
     });
   }
 
@@ -183,7 +195,7 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
   updateCardCountSlider(event: any) {
     this.store.dispatch(
       changeFilter({
-        filter: { ...this.filter, cardCountFilter: event }
+        filter: { ...this.filter, cardCountFilter: event },
       })
     );
   }
@@ -203,7 +215,7 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
   updateDigivolutionSlider(event: any) {
     this.store.dispatch(
       changeFilter({
-        filter: { ...this.filter, digivolutionFilter: event }
+        filter: { ...this.filter, digivolutionFilter: event },
       })
     );
   }

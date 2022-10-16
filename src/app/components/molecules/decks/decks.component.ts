@@ -1,23 +1,27 @@
-import { Component, Input, OnDestroy, OnInit } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
-import { Store } from "@ngrx/store";
-import { ConfirmationService, MenuItem, MessageService } from "primeng/api";
-import { Subject, takeUntil } from "rxjs";
-import * as uuid from "uuid";
-import { COLORS, ICountCard, IDeck, IUser, TAGS } from "../../../../models";
-import { AuthService } from "../../../service/auth.service";
-import { DatabaseService } from "../../../service/database.service";
-import { deleteDeck, importDeck, setDeck } from "../../../store/digimon.actions";
-import { selectDecks } from "../../../store/digimon.selectors";
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { ConfirmationService, MenuItem, MessageService } from 'primeng/api';
+import { ContextMenu } from 'primeng/contextmenu';
+import { Subject, takeUntil } from 'rxjs';
+import * as uuid from 'uuid';
+import { COLORS, ICountCard, IDeck, IUser, TAGS } from '../../../../models';
+import { AuthService } from '../../../service/auth.service';
+import { DatabaseService } from '../../../service/database.service';
+import {
+  deleteDeck,
+  importDeck,
+  setDeck,
+} from '../../../store/digimon.actions';
+import { selectDecks } from '../../../store/digimon.selectors';
 
 @Component({
-  selector: "digimon-decks",
-  templateUrl: "./decks.component.html",
-  styleUrls: ["./decks.component.css"]
+  selector: 'digimon-decks',
+  templateUrl: './decks.component.html',
 })
 export class DecksComponent implements OnInit, OnDestroy {
-  selectedDeck: IDeck;
   @Input() decks: IDeck[] = [];
+  selectedDeck: IDeck;
 
   colors = COLORS;
   tags = TAGS;
@@ -94,11 +98,12 @@ export class DecksComponent implements OnInit, OnDestroy {
       .subscribe((decks) => {
         try {
           const test = [...new Set(decks)];
-          this.decks = test.sort((a, b) => {
-            const timeA = new Date(a?.date ?? '').getTime() ?? 0;
-            const timeB = new Date(b?.date ?? '').getTime() ?? 0;
-            return timeB - timeA || a.title!.localeCompare(b.title!);
-          });
+          this.decks = test.sort((a, b) => a.title!.localeCompare(b.title!));
+          //this.decks = test.sort((a, b) => {
+          //  const timeA = new Date(a?.date ?? '').getTime() ?? 0;
+          //  const timeB = new Date(b?.date ?? '').getTime() ?? 0;
+          //  return timeB - timeA || a.title!.localeCompare(b.title!);
+          //});
         } catch (e) {
           this.decks = decks;
         }
@@ -151,15 +156,17 @@ export class DecksComponent implements OnInit, OnDestroy {
   openDeck(): void {
     if (this.authService.isLoggedIn) {
       this.router.navigateByUrl(
-        `user/${this.authService.userData?.uid}/deck/${this.selectedDeck.id}`
+        `deckbuilder/user/${this.authService.userData?.uid}/deck/${this.selectedDeck.id}`
       );
     } else {
       this.store.dispatch(setDeck({ deck: this.selectedDeck }));
-      this.router.navigateByUrl("");
+      this.router.navigateByUrl('deckbuilder');
     }
   }
 
-  showContextMenu(menu: any, event: any, deck: IDeck) {
+  showContextMenu(menu: ContextMenu, event: MouseEvent, deck: IDeck) {
+    event.stopPropagation();
+    event.preventDefault();
     this.selectedDeck = deck;
     menu.show(event);
   }

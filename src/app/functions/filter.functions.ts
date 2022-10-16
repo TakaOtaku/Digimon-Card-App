@@ -1,4 +1,4 @@
-import { ICard, ICountCard, IFilter, ISort } from "../../models";
+import { ICard, ICountCard, IFilter, ISort } from '../../models';
 
 export function filterCards(
   cards: ICard[],
@@ -95,6 +95,15 @@ function applySearchFilter(cards: ICard[], searchFilter: string): ICard[] {
   const noteFiltered: ICard[] = cards.filter((cards) =>
     cards.notes.toLowerCase().includes(searchFilter.toLowerCase())
   );
+  const typeFiltered: ICard[] = cards.filter((cards) =>
+    cards.type.toLowerCase().includes(searchFilter.toLowerCase())
+  );
+  const digiXrosFiltered: ICard[] = cards.filter((cards) =>
+    cards.digiXros.toLowerCase().includes(searchFilter.toLowerCase())
+  );
+  const specialDigivolveFiltered: ICard[] = cards.filter((cards) =>
+    cards.specialDigivolve.toLowerCase().includes(searchFilter.toLowerCase())
+  );
 
   return [
     ...new Set([
@@ -106,7 +115,10 @@ function applySearchFilter(cards: ICard[], searchFilter: string): ICard[] {
       ...illustratorFiltered,
       ...dnaFiltered,
       ...specialFiltered,
-      ...noteFiltered
+      ...noteFiltered,
+      ...typeFiltered,
+      ...digiXrosFiltered,
+      ...specialDigivolveFiltered,
     ]),
   ];
 }

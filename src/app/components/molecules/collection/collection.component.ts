@@ -1,5 +1,11 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from "@angular/core";
-import { ICard, ICountCard } from "../../../../models";
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
+import { ICard, ICountCard } from '../../../../models';
 
 interface MappedCollection {
   id: string;
@@ -9,7 +15,7 @@ interface MappedCollection {
 }
 
 @Component({
-  selector: "digimon-collection",
+  selector: 'digimon-collection',
   templateUrl: './collection.component.html',
   styleUrls: ['./collection.component.css'],
 })
@@ -42,9 +48,9 @@ export class CollectionComponent implements OnInit, OnChanges {
         );
         return {
           id: countCard.id,
-          name: foundCard?.name ?? "Not Found",
+          name: foundCard?.name ?? 'Not Found',
           count: countCard.count,
-          rarity: foundCard?.rarity ?? ""
+          rarity: foundCard?.rarity ?? '',
         };
       });
     }

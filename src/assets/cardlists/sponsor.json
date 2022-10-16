@@ -1,0 +1,30 @@
+[
+  {
+    "id": "0",
+    "name": "CardTrader",
+    "cardImage": "assets/images/cards/cardtrader.webp",
+    "cardType": "-",
+    "dp": "-",
+    "playCost": "-",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "-",
+    "form": "-",
+    "attribute": "-",
+    "type": "-",
+    "rarity": "-",
+    "cardNumber": "0",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "-",
+    "color": "-",
+    "version": "Normal",
+    "block": [],
+    "restriction": "-",
+    "illustrator": "-"
+  }
+]

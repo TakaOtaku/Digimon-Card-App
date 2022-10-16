@@ -1,49 +1,247 @@
-<div class="surface-ground flex max-h-12 w-full p-0">
-  <a href="https://digimoncard.app">
-    <img
-      alt="Logo"
-      class="ml-5 mt-2 max-h-6 cursor-pointer md:max-h-8"
-      src="../../../../assets/images/img_logo.png"
-    />
-  </a>
+<nav
+  class="navbar navbar-expand-lg relative flex w-full flex-col items-center justify-between shadow-lg"
+>
+  <div class="surface-ground grid max-h-12 w-full grid-cols-3 p-0">
+    <a href="https://digimoncard.app">
+      <img
+        alt="Logo"
+        class="ml-5 mt-2 max-h-6 cursor-pointer md:max-h-8"
+        src="../../../../assets/images/img_logo.png"
+      />
+    </a>
 
-  <a
-    class="mx-auto mt-2 hidden lg:block"
-    href="https://www.paypal.com/donate/?hosted_button_id=WLM58Q785D4H4"
-    target="_blank"
-  >
-    <img
-      alt="PayPal Donate Button"
-      height="48px"
-      src="assets/images/blue.png"
-      width="150px"
-    />
-  </a>
-
-  <digimon-filter-button class="m-auto md:hidden"></digimon-filter-button>
-
-  <div class="ml-auto mr-2 mt-2 flex flex-row">
-    <button
-      (click)="changeSite('')"
-      class="min-w-auto primary-background ml-2 hidden h-8 w-24 rounded p-2 text-xs font-semibold text-white lg:block"
+    <a
+      class="mx-auto mt-2 hidden md:block"
+      href="https://www.paypal.com/donate/?hosted_button_id=WLM58Q785D4H4"
+      target="_blank"
     >
-      Home
-    </button>
+      <img
+        alt="PayPal Donate Button"
+        height="48px"
+        src="assets/images/blue.png"
+        width="150px"
+      />
+    </a>
 
-    <button
-      (click)="changeSite('/user')"
-      class="min-w-auto primary-background ml-2 hidden h-8 w-24 rounded p-2 text-xs font-semibold text-white lg:block"
-    >
-      Profile
-    </button>
+    <digimon-filter-button
+      *ngIf="showCardList"
+      class="m-auto md:hidden"
+    ></digimon-filter-button>
+    <div *ngIf="!showCardList" class="m-auto md:hidden"></div>
 
-    <button
-      (click)="changeSite('/community')"
-      class="min-w-auto primary-background ml-2 hidden h-8 w-24 rounded p-2 text-xs font-semibold text-white lg:block"
-    >
-      Community
-    </button>
-
-    <digimon-menu></digimon-menu>
+    <div class="ml-auto mr-2 mt-2 flex flex-row">
+      <button
+        (click)="changeMenu()"
+        class="min-w-auto primary-background mx-2 h-9 w-9 overflow-hidden rounded-full text-xs font-semibold text-white"
+      >
+        <i *ngIf="!user" class="pi pi-user"></i>
+        <img
+          *ngIf="user"
+          alt="{{ this.user.displayName }}"
+          src="{{ this.user.photoURL }}"
+        />
+      </button>
+    </div>
   </div>
-</div>
+
+  <div
+    [ngClass]="{ show: megamenu }"
+    class="collapse navbar-collapse grow items-center"
+    id="navbarSupportedContentX"
+  >
+    <ul class="navbar-nav mr-auto flex flex-row">
+      <li class="dropdown nav-item static">
+        <div
+          [ngClass]="{ hidden: !megamenu }"
+          class="surface-ground dropdown-menu absolute left-0 top-full mt-0 w-full shadow-lg"
+          aria-labelledby="dropdownMenuButtonX"
+        >
+          <div class="px-6 py-5 lg:px-8">
+            <div class="grid gap-6 md:grid-cols-3 lg:grid-cols-5">
+              <div class="hidden lg:block"></div>
+              <div class="surface-ground text-white">
+                <p
+                  class="block w-full border-b border-gray-200 px-6 py-2 font-semibold uppercase text-white"
+                >
+                  Sites
+                </p>
+                <a
+                  (click)="router.navigateByUrl(''); this.megamenu = false"
+                  aria-current="true"
+                  class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
+                  ><i class="pi pi-book mr-2"></i>Home</a
+                >
+                <a
+                  (click)="
+                    router.navigateByUrl('/deckbuilder'); this.megamenu = false
+                  "
+                  aria-current="true"
+                  class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
+                  ><i class="pi pi-pencil mr-2"></i>Deckbuilder</a
+                >
+                <a
+                  (click)="
+                    router.navigateByUrl('/collection'); this.megamenu = false
+                  "
+                  aria-current="true"
+                  class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
+                  ><i class="pi pi-database mr-2"></i>Collection</a
+                >
+                <a
+                  (click)="router.navigateByUrl('/user'); this.megamenu = false"
+                  aria-current="true"
+                  class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
+                  ><i class="pi pi-user mr-2"></i>Profile</a
+                >
+                <a
+                  (click)="
+                    router.navigateByUrl('/community'); this.megamenu = false
+                  "
+                  aria-current="true"
+                  class="block w-full cursor-pointer px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
+                  ><i class="pi pi-users mr-2"></i>Community</a
+                >
+              </div>
+              <div class="surface-ground text-white">
+                <p
+                  class="block w-full border-b border-gray-200 px-6 py-2 font-semibold uppercase text-white"
+                >
+                  Miscellaneous
+                </p>
+                <a
+                  (click)="this.showChangelog = true; this.megamenu = false"
+                  aria-current="true"
+                  class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
+                  ><i class="pi pi-info-circle mr-2"></i>Changelog</a
+                >
+                <a
+                  (click)="this.creditsDisplay = true; this.megamenu = false"
+                  aria-current="true"
+                  class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
+                  ><i class="pi pi-info-circle mr-2"></i>Credits</a
+                >
+                <a
+                  (click)="this.settingsDialog = true; this.megamenu = false"
+                  aria-current="true"
+                  class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
+                  ><i class="pi pi-cog mr-2"></i>Settings</a
+                >
+                <a
+                  (click)="
+                    this.authService.isLoggedIn
+                      ? this.authService.LogOut()
+                      : this.login();
+                    this.megamenu = false
+                  "
+                  aria-current="true"
+                  class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
+                  ><i
+                    [ngClass]="{
+                      'pi-sign-in': !this.authService.isLoggedIn,
+                      'pi-sign-out': this.authService.isLoggedIn
+                    }"
+                    class="pi mr-2"
+                  ></i
+                  >{{ this.authService.isLoggedIn ? "Logout" : "Login" }}</a
+                >
+              </div>
+              <div class="surface-ground text-white">
+                <p
+                  class="block w-full border-b border-gray-200 px-6 py-2 font-semibold uppercase text-white"
+                >
+                  External
+                </p>
+                <a
+                  href="https://github.com/users/TakaOtaku/projects/1/views/3"
+                  target="_blank"
+                  aria-current="true"
+                  class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
+                  ><i class="pi pi-ticket mr-2"></i>What I work on</a
+                >
+                <a
+                  href="https://github.com/TakaOtaku/Digimon-Card-App/issues"
+                  target="_blank"
+                  aria-current="true"
+                  class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
+                  ><i class="pi pi-question mr-2"></i>Feature/Bug Request</a
+                >
+                <a
+                  href="https://www.paypal.com/donate/?hosted_button_id=WLM58Q785D4H4"
+                  target="_blank"
+                  aria-current="true"
+                  class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
+                  ><i class="pi pi-paypal mr-2"></i>Help the Site!</a
+                >
+              </div>
+              <div class="hidden lg:block"></div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<p-confirmPopup></p-confirmPopup>
+
+<p-dialog
+  [(visible)]="settingsDialog"
+  [baseZIndex]="10000"
+  header="Settings"
+  styleClass="w-full h-full lg:w-[950px] min-h-[350px] max-h-screen"
+>
+  <digimon-settings-dialog></digimon-settings-dialog>
+</p-dialog>
+
+<p-dialog
+  [(visible)]="showChangelog"
+  [closeOnEscape]="true"
+  styleClass="h-screen w-screen lg:max-h-[600px] lg:max-w-3xl"
+  header="Changelog"
+>
+  <digimon-changelog-dialog></digimon-changelog-dialog>
+</p-dialog>
+
+<p-dialog
+  [(visible)]="creditsDisplay"
+  [baseZIndex]="10000"
+  header="Credits"
+  styleClass="w-screen lg:max-h-[600px] lg:max-w-3xl"
+>
+  <div class="flex w-full flex-col">
+    <span class="mt-5 w-full text-center font-bold text-white"
+      >A huge thanks goes to tari101190 who helps me with all the new card
+      releases and tests the website completly so I don't have to worry to
+      much!</span
+    >
+
+    <span class="mt-5 w-full text-center font-bold text-white"
+      >Another big thank you goes to
+      <a
+        class="primary-color"
+        href="https://www.instagram.com/oscstudios/"
+        target="_blank"
+        >TheOSC</a
+      >
+      he send me a cool new design which I took much inspiration from and helped
+      with other design questions! Go Check him out he makes great art!</span
+    >
+
+    <span class="mt-5 w-full text-center font-bold text-white"
+      >Credits for the Pre-Release Cards go to
+      <a
+        class="primary-color"
+        href="https://digimoncardgame.fandom.com/"
+        target="_blank"
+        >https://digimoncardgame.fandom.com/</a
+      >
+      and all the wonderful people who maintain it!</span
+    >
+
+    <span class="mt-5 w-full text-center font-bold text-white"
+      >Please support the official releases! Akiyoshi Hongo, Bandai, and Toei
+      Animation respectively own Digimon images, copyrights and
+      trademarks.</span
+    >
+  </div>
+</p-dialog>

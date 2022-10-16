@@ -1,31 +1,46 @@
-import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
-import { CommunityComponent } from "./pages/community/community.component";
-import { HomeComponent } from "./pages/home/home.component";
-import { UserComponent } from "./pages/user/user.component";
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { BlogComponent } from './pages/blog/blog.component';
+import { CollectionPageComponent } from './pages/collection-page/collection-page.component';
+import { CommunityComponent } from './pages/community/community.component';
+import { DeckbuilderComponent } from './pages/deckbuilder/deckbuilder.component';
+import { HomeComponent } from './pages/home/home.component';
+import { UserComponent } from './pages/user/user.component';
 
 const routes: Routes = [
   {
-    path: "community",
-    component: CommunityComponent
+    path: 'community',
+    component: CommunityComponent,
   },
   {
-    path: "user",
-    component: UserComponent
+    path: 'user',
+    component: UserComponent,
   },
   {
     path: 'user/:id',
-    component: UserComponent
+    component: UserComponent,
   },
   {
-    path: "user/:userId/deck/:deckId",
-    component: HomeComponent
+    path: 'deckbuilder/user/:userId/deck/:deckId',
+    component: DeckbuilderComponent,
   },
   {
-    path: "deck/:id",
-    component: HomeComponent
+    path: 'deckbuilder/:id',
+    component: DeckbuilderComponent,
   },
-  { path: "**", component: HomeComponent }
+  {
+    path: 'deckbuilder',
+    component: DeckbuilderComponent,
+  },
+  {
+    path: 'collection',
+    component: CollectionPageComponent,
+  },
+  {
+    path: 'blog/:id',
+    component: BlogComponent,
+  },
+  { path: '**', component: HomeComponent },
 ];
 
 @NgModule({

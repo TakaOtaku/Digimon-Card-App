@@ -1,20 +1,23 @@
-import { Injectable } from "@angular/core";
-import { AngularFireAuth } from "@angular/fire/compat/auth";
-import { AngularFirestore, AngularFirestoreDocument } from "@angular/fire/compat/firestore";
-import { Store } from "@ngrx/store";
-import { GoogleAuthProvider } from "firebase/auth";
-import firebase from "firebase/compat";
-import { MessageService } from "primeng/api";
-import { first, Subject } from "rxjs";
-import { IUser } from "../../models";
-import { loadSave, setSave } from "../store/digimon.actions";
-import { emptySettings } from "../store/reducers/save.reducer";
-import { DatabaseService } from "./database.service";
+import { Injectable } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import {
+  AngularFirestore,
+  AngularFirestoreDocument,
+} from '@angular/fire/compat/firestore';
+import { Store } from '@ngrx/store';
+import { GoogleAuthProvider } from 'firebase/auth';
+import firebase from 'firebase/compat';
+import { MessageService } from 'primeng/api';
+import { first, Subject } from 'rxjs';
+import { IUser } from '../../models';
+import { loadSave, setSave } from '../store/digimon.actions';
+import { emptySettings } from '../store/reducers/save.reducer';
+import { DatabaseService } from './database.service';
 import UserCredential = firebase.auth.UserCredential;
 import User = firebase.User;
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root',
 })
 export class AuthService {
   public userData: IUser | null;
@@ -98,7 +101,7 @@ export class AuthService {
       `users/${user.uid}`
     );
 
-    console.log("User-ID: ", user.uid);
+    console.log('User-ID: ', user.uid);
 
     this.dbService
       .loadSave(user.uid)
@@ -133,24 +136,24 @@ export class AuthService {
           userData.save.uid = user.uid;
         }
         if (!userData.save.displayName) {
-          userData.save.displayName = user.displayName ?? "";
+          userData.save.displayName = user.displayName ?? '';
         }
         if (!userData.save.photoURL) {
-          userData.save.photoURL = user.photoURL ?? "";
+          userData.save.photoURL = user.photoURL ?? '';
         }
 
-        localStorage.setItem("user", JSON.stringify(userData));
+        localStorage.setItem('user', JSON.stringify(userData));
         this.store.dispatch(
           setSave({
             save: save ?? {
               uid: user.uid,
-              photoURL: user.photoURL ?? "",
-              displayName: user.displayName ?? "",
+              photoURL: user.photoURL ?? '',
+              displayName: user.displayName ?? '',
               version: 1,
               collection: [],
               decks: [],
-              settings: emptySettings
-            }
+              settings: emptySettings,
+            },
           })
         );
 

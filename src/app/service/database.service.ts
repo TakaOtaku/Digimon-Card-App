@@ -1,18 +1,18 @@
-import { Injectable } from "@angular/core";
-import { AngularFireDatabase } from "@angular/fire/compat/database";
-import { get, getDatabase, ref, remove, update } from "@angular/fire/database";
-import { BehaviorSubject, first, Subject } from "rxjs";
-import { IDeck, ISave, IUser } from "../../models";
-import { CARDSET } from "../../models/card-set.enum";
-import { emptyDeck } from "../store/reducers/digimon.reducers";
-import { emptySettings } from "../store/reducers/save.reducer";
+import { Injectable } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { get, getDatabase, ref, remove, update } from '@angular/fire/database';
+import { BehaviorSubject, first, from, Observable, Subject } from 'rxjs';
+import { IDeck, ISave, IUser } from '../../models';
+import { CARDSET } from '../../models/card-set.enum';
+import { IBlog } from '../../models/interfaces/blog-entry.interface';
+import { emptyDeck } from '../store/reducers/digimon.reducers';
+import { emptySettings } from '../store/reducers/save.reducer';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root',
 })
 export class DatabaseService {
-  constructor(public database: AngularFireDatabase) {
-  }
+  constructor(public database: AngularFireDatabase) {}
 
   /**
    * Falls der Nutzer eingeloggt ist und keine Daten hat, erstelle diese
@@ -168,6 +168,11 @@ export class DatabaseService {
     return deckSubject;
   }
 
+  updateCommunityDeck(deck: IDeck) {
+    const db = getDatabase();
+    return update(ref(db, 'community-decks/' + deck.id), deck);
+  }
+
   loadDeck(id: string): BehaviorSubject<IDeck> {
     const deckSubject = new BehaviorSubject<IDeck>(emptyDeck);
 
@@ -186,16 +191,36 @@ export class DatabaseService {
 
   deleteDeck(uId: string) {
     const db = getDatabase();
-    return remove(ref(db, "community-decks/" + uId));
+    return remove(ref(db, 'community-decks/' + uId));
   }
 
   loadChangelog(): Promise<any> {
     const db = getDatabase();
-    return get(ref(db, "blog/changelog"));
+    return get(ref(db, 'blog/changelog-dev'));
   }
 
   saveChangelog(changelog: any) {
     const db = getDatabase();
-    return update(ref(db, "blog/changelog"), changelog);
+    return update(ref(db, 'blog/changelog-dev'), changelog);
+  }
+
+  loadBlogEntries(): Observable<any> {
+    const db = getDatabase();
+    return from(get(ref(db, 'blog/entries')));
+  }
+
+  loadBlogEntry(blogId: string): Observable<any> {
+    const db = getDatabase();
+    return from(get(ref(db, 'blog/entries/' + blogId)));
+  }
+
+  saveBlogEntry(blog: IBlog) {
+    const db = getDatabase();
+    return update(ref(db, 'blog/entries/' + blog.uid), blog);
+  }
+
+  deleteBlogEntry(blogId: string) {
+    const db = getDatabase();
+    return remove(ref(db, 'blog/entries/' + blogId));
   }
 }

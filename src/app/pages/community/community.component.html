@@ -1,4 +1,16 @@
 <p-contextMenu #table [model]="deckRowContext"></p-contextMenu>
+<div class="surface-card flex flex-col p-2">
+  <span [ngStyle]="{ display: 'inline-flex' }" class="p-input-icon-left w-full">
+    <i class="pi pi-search h-3"></i>
+    <input
+      [formControl]="searchFilter"
+      class="h-6 w-full text-xs"
+      pInputText
+      placeholder="Search for cards! (Name or ID e.g. BT3-063"
+      type="text"
+    />
+  </span>
+</div>
 
 <p-table
   [(contextMenuSelection)]="selectedDeck"
@@ -7,8 +19,8 @@
     '',
     'color.name',
     'title',
-    '',
     'tags.0.name',
+    '',
     'user',
     ''
   ]"
@@ -25,99 +37,71 @@
 >
   <ng-template pTemplate="header">
     <tr>
-      <th class="max-w-[50px]"></th>
-      <th class="max-w-[120px]">
-        <div class="mx-auto">
-          Color
-          <p-columnFilter display="menu" field="color.name" matchMode="equals">
-            <ng-template
-              let-filter="filterCallback"
-              let-value
-              pTemplate="filter"
+      <th class="max-w-[30px] p-0"></th>
+      <th class="max-w-[70px] p-0">
+        Color
+        <p-columnFilter display="menu" field="color.name" matchMode="equals">
+          <ng-template let-filter="filterCallback" let-value pTemplate="filter">
+            <p-dropdown
+              (onChange)="filter($event.value)"
+              [ngModel]="value"
+              [options]="colors"
+              placeholder="Any"
             >
-              <p-dropdown
-                (onChange)="filter($event.value)"
-                [ngModel]="value"
-                [options]="colors"
-                placeholder="Any"
-              >
-                <ng-template let-option pTemplate="item">
-                  <span [class]="'customer-badge status-' + option">{{
-                    option
-                  }}</span>
-                </ng-template>
-              </p-dropdown>
-            </ng-template>
-          </p-columnFilter>
-        </div>
+              <ng-template let-option pTemplate="item">
+                <span [class]="'customer-badge status-' + option">{{
+                  option
+                }}</span>
+              </ng-template>
+            </p-dropdown>
+          </ng-template>
+        </p-columnFilter>
       </th>
-      <th class="max-w-[600px] max-w-[100%]">
-        <div class="mx-auto">
-          Title
-          <p-columnFilter
-            display="menu"
-            field="title"
-            type="text"
-          ></p-columnFilter>
-        </div>
+      <th class="max-w-[400px] p-0">
+        Title
+        <p-columnFilter
+          display="menu"
+          field="title"
+          type="text"
+        ></p-columnFilter>
       </th>
-      <th class="max-w-[400px] max-w-[100%]">
-        <div class="mx-auto">Description</div>
-      </th>
-      <th class="max-w-[100%]max-w-[400px] max-w-[100%]">
-        <div class="mx-auto">
-          Tags
-          <p-columnFilter
-            display="menu"
-            field="tags.0.name"
-            matchMode="contains"
-          >
-            <ng-template
-              let-filter="filterCallback"
-              let-value
-              pTemplate="filter"
+      <th class="max-w-[400px] p-0">
+        Tags
+        <p-columnFilter display="menu" field="tags.0.name" matchMode="contains">
+          <ng-template let-filter="filterCallback" let-value pTemplate="filter">
+            <p-dropdown
+              (onChange)="filter($event.value)"
+              [ngModel]="value"
+              [options]="tags"
+              placeholder="Any"
             >
-              <p-dropdown
-                (onChange)="filter($event.value)"
-                [ngModel]="value"
-                [options]="tags"
-                placeholder="Any"
-              >
-                <ng-template let-option pTemplate="item">
-                  <span [class]="'customer-badge status-' + option">{{
-                    option
-                    }}</span>
-                </ng-template>
-              </p-dropdown>
-            </ng-template>
-          </p-columnFilter>
-        </div>
+              <ng-template let-option pTemplate="item">
+                <span [class]="'customer-badge status-' + option">{{
+                  option
+                }}</span>
+              </ng-template>
+            </p-dropdown>
+          </ng-template>
+        </p-columnFilter>
       </th>
-      <th class="max-w-[400px] max-w-[100%]">
-        <div class="mx-auto">
-          User
-          <p-columnFilter
-            display="menu"
-            field="user"
-            type="text"
-          ></p-columnFilter>
-        </div>
+      <th class="max-w-[400px] p-0">Description</th>
+      <th class="max-w-[400px] p-0">
+        User
+        <p-columnFilter
+          display="menu"
+          field="user"
+          type="text"
+        ></p-columnFilter>
       </th>
-      <th class="max-w-[400px] max-w-[100%]" pSortableColumn="date">
-        <div class="mx-auto">
-          Date
-          <p-sortIcon field="date"></p-sortIcon>
-        </div>
+      <th class="max-w-[400px] p-0" pSortableColumn="date">
+        Date
+        <p-sortIcon field="date"></p-sortIcon>
       </th>
     </tr>
   </ng-template>
   <ng-template let-deck let-expanded="expanded" pTemplate="body">
-    <tr
-      class="max-h-[50px]"
-      (dblclick)="showContextMenu(table, $event, deck)"
-      [pContextMenuRow]="deck"
-    >
-      <td class="max-w-[50px]">
+    <tr class="max-h-[50px]" [pContextMenuRow]="deck">
+      <td class="max-w-[30px] p-0">
         <button
           [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"
           [pRowToggler]="deck"
@@ -127,31 +111,30 @@
           type="button"
         ></button>
       </td>
-      <td class="inline-flex max-w-[120px]">
+      <td class="inline-flex max-w-[70px] p-0">
         <img
           [src]="deck.color?.img ?? 'assets/decks/white.svg'"
           alt="Digimon Deck Image"
           class="mx-auto max-h-[50px]"
         />
       </td>
-      <td class="max-w-[600px]">{{ deck.title }}</td>
-      <td class="max-w-[400px] max-w-[100%] truncate">
+      <td
+        (click)="showContextMenu(table, $event, deck)"
+        class="cursor-pointer p-0"
+      >
+        {{ deck.title }}
+      </td>
+      <td class="max-w-[400px] p-0">
+        <p-chip *ngFor="let tag of deck.tags" label="{{ tag.name }}"></p-chip>
+      </td>
+      <td class="max-w-[400px] truncate p-0">
         {{ deck.description }}
       </td>
-      <td class="max-w-[400px] max-w-[100%]">
-        <div class="mx-auto">
-          <p-chip *ngFor="let tag of deck.tags" label="{{ tag.name }}"></p-chip>
-        </div>
+      <td class="max-w-[400px] p-0">
+        {{ deck.user }}
       </td>
-      <td class="max-w-[400px] max-w-[100%]">
-        <div class="mx-auto">
-          {{ deck.user }}
-        </div>
-      </td>
-      <td class="max-w-[400px] max-w-[100%]">
-        <div class="mx-auto">
-          {{ dateFormat(deck.date) }}
-        </div>
+      <td class="max-w-[400px] p-0">
+        {{ deck.date | date: "dd.MM.yyyy" }}
       </td>
     </tr>
   </ng-template>

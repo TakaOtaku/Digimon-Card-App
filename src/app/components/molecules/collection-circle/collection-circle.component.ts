@@ -1,16 +1,26 @@
-import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from "@angular/core";
-import { Store } from "@ngrx/store";
-import { combineLatest, first, Subject } from "rxjs";
-import { ICard, ICountCard } from "../../../../models";
-import { selectAllCards, selectCollectionMinimum } from "../../../store/digimon.selectors";
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
+import { Store } from '@ngrx/store';
+import { combineLatest, first, Subject } from 'rxjs';
+import { ICard, ICountCard } from '../../../../models';
+import {
+  selectAllCards,
+  selectCollectionMinimum,
+} from '../../../store/digimon.selectors';
 
 @Component({
-  selector: "digimon-collection-circle",
-  templateUrl: "./collection-circle.component.html",
-  styleUrls: ["./collection-circle.component.css"]
+  selector: 'digimon-collection-circle',
+  templateUrl: './collection-circle.component.html',
+  styleUrls: ['./collection-circle.component.css'],
 })
 export class CollectionCircleComponent implements OnInit, OnChanges, OnDestroy {
-  @Input() type: "BT" | "EX" | "ST" | "P";
+  @Input() type: 'BT' | 'EX' | 'ST' | 'P';
   @Input() collection: ICountCard[];
 
   data: any;
@@ -19,8 +29,7 @@ export class CollectionCircleComponent implements OnInit, OnChanges, OnDestroy {
 
   private onDestroy$ = new Subject<boolean>();
 
-  constructor(private store: Store) {
-  }
+  constructor(private store: Store) {}
 
   ngOnInit(): void {
     this.chartOptions = {

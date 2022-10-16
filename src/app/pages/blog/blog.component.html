@@ -1,0 +1,29 @@
+<div class="w-full">
+  <div class="mx-auto h-[calc(100vh-150px)] max-w-7xl">
+    <div class="relative">
+      <h1 class="mb-2 w-full text-center text-3xl font-extrabold text-white">
+        {{ title }}
+      </h1>
+      <button
+        class="p-button-outlined p-button-rounded absolute left-[5px] top-[20px]"
+        icon="pi pi-arrow-left"
+        pButton
+        pRipple
+        type="button"
+        (click)="router.navigateByUrl('')"
+      ></button>
+    </div>
+    <div class="flex flex-row">
+      <span class="mb-2 w-full text-center font-bold text-white"
+        >{{ author }} / {{ date | date: "dd.MM.yyyy" }}</span
+      >
+    </div>
+
+    <quill-view
+      class="text-white"
+      [content]="content"
+      [preserveWhitespace]="true"
+      format="object"
+    ></quill-view>
+  </div>
+</div>

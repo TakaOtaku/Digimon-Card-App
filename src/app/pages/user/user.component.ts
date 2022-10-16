@@ -1,21 +1,21 @@
-import { Location } from "@angular/common";
-import { Component, OnDestroy, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
-import { Store } from "@ngrx/store";
-import { filter, first, Subject, switchMap, takeUntil } from "rxjs";
-import { ICard, ICountCard, IDeck, ISave } from "../../../models";
-import { AuthService } from "../../service/auth.service";
-import { DatabaseService } from "../../service/database.service";
+import { Location } from '@angular/common';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { filter, first, Subject, switchMap, takeUntil } from 'rxjs';
+import { ICard, ICountCard, IDeck, ISave } from '../../../models';
+import { AuthService } from '../../service/auth.service';
+import { DatabaseService } from '../../service/database.service';
 import {
   selectAllCards,
   selectCollection,
   selectDecks,
   selectSave,
-  selectShowUserStats
-} from "../../store/digimon.selectors";
+  selectShowUserStats,
+} from '../../store/digimon.selectors';
 
 @Component({
-  selector: "digimon-user",
+  selector: 'digimon-user',
   templateUrl: './user.component.html',
 })
 export class UserComponent implements OnInit, OnDestroy {
@@ -33,8 +33,7 @@ export class UserComponent implements OnInit, OnDestroy {
     private authService: AuthService,
     private databaseService: DatabaseService,
     private store: Store
-  ) {
-  }
+  ) {}
 
   ngOnInit() {
     this.storeSubscriptions();
@@ -90,13 +89,13 @@ export class UserComponent implements OnInit, OnDestroy {
       .pipe(
         first(),
         filter((params) => {
-          if (!params["id"]) {
+          if (!params['id']) {
             this.changeURL();
           }
-          return !!params["id"];
+          return !!params['id'];
         }),
         switchMap((params) =>
-          this.databaseService.loadSave(params["id"]).pipe(first())
+          this.databaseService.loadSave(params['id']).pipe(first())
         )
       )
       .subscribe((save) => {
@@ -110,7 +109,7 @@ export class UserComponent implements OnInit, OnDestroy {
     if (this.authService.userData?.uid) {
       this.location.replaceState('/user/' + this.authService.userData?.uid);
     } else {
-      this.location.replaceState('');
+      this.location.replaceState('/user');
     }
   }
 }
