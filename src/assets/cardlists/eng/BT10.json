@@ -2880,6 +2880,36 @@
     ]
   },
 	{
+		"id": "BT10-082_P1",
+		"name": "Beelzemon",
+		"cardImage": "assets/images/cards/eng/BT10-082_P1.webp",
+		"cardType": "Digimon",
+		"dp": "11000",
+		"playCost": "11",
+		"digivolveCost1": "3 from Lv.5",
+		"digivolveCost2": "-",
+		"cardLv": "Lv.6",
+		"form": "Mega",
+		"attribute": "Virus",
+		"type": "Demon Lord/Xros Heart",
+		"rarity": "U",
+    "cardNumber": "BT10-082",
+    "digiXros": "-",
+    "specialDigivolve": "Digivolve: 3 from Lv.5 w/[Xros Heart] in traits",
+    "dnaDigivolve": "-",
+    "effect": "[On Play] [When Digivolving] You may trash 3 cards from the top of your deck. Then, for every 10 cards in your trash, delete 1 of your opponent's level 4 or lower Digimon.",
+    "digivolveEffect": "[End of Attack] [Once Per Turn] For every 10 cards in your trash, gain 1 memory.",
+    "securityEffect": "-",
+    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
+    "color": "Purple",
+    "version": "AA",
+    "restriction": "-",
+    "illustrator": "Hisashi Fujiwara",
+    "block": [
+      "02"
+    ]
+  },
+	{
 		"id": "BT10-083",
 		"name": "Minervamon",
 		"cardImage": "assets/images/cards/eng/BT10-083.webp",
