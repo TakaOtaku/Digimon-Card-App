@@ -2400,6 +2400,36 @@
     "illustrator": "sasasi"
   },
   {
+    "id": "BT6-064_P2",
+    "name": "Mamemon",
+    "cardImage": "assets/images/cards/jap/BT6-064_P2.webp",
+    "cardType": "Digimon",
+    "dp": "6000",
+    "playCost": "7",
+    "digivolveCost1": "3 from Lv.4",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.5",
+    "form": "Ultimate",
+    "attribute": "Data",
+    "type": "Mutant",
+    "rarity": "SR",
+    "cardNumber": "BT6-064",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "＜Decoy (Black)＞ (When one of your other black Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent that deletion.)\n[On Deletion] Delete 1 of your opponent's Digimon with a play cost of 7 or less.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Memorial Collection 25th Anniversary",
+    "color": "Black",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "-",
+    "illustrator": "Soh Moriyama"
+  },
+  {
     "id": "BT6-065",
     "name": "Gundramon",
     "cardImage": "assets/images/cards/jap/BT6-065.webp",
