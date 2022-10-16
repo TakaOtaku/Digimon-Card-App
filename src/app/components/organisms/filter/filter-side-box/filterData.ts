@@ -43,6 +43,7 @@ export const GroupedSets = [
       { label: 'ST10', value: 'ST10' },
       { label: 'ST12', value: 'ST12' },
       { label: 'ST13', value: 'ST13' },
+      { label: 'ST14', value: 'ST14' },
     ],
   },
   {
