@@ -1710,6 +1710,36 @@
     "illustrator": "Ryuda"
   },
   {
+    "id": "BT7-044_P2",
+    "name": "Betamon",
+    "cardImage": "assets/images/cards/jap/BT7-044_P2.webp",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Virus",
+    "type": "Amphibian",
+    "rarity": "R",
+    "cardNumber": "BT7-044",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 green level 4 Digimon card or 1 green Tamer card among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Memorial Collection 25th Anniversary",
+    "color": "Green",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "-",
+    "illustrator": "As'Maria"
+  },
+  {
     "id": "BT7-045",
     "name": "Tortomon",
     "cardImage": "assets/images/cards/jap/BT7-045.webp",
