@@ -145,7 +145,7 @@ export class CommunityComponent implements OnInit, OnDestroy {
     selBox.style.left = '0';
     selBox.style.top = '0';
     selBox.style.opacity = '0';
-    selBox.value = 'https://digimoncard.app/deck/' + deck.id;
+    selBox.value = 'https://digimoncard.app/deckbuilder/' + deck.id;
     document.body.appendChild(selBox);
     selBox.focus();
     selBox.select();
