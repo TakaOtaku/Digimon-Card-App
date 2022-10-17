@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DataSnapshot } from '@angular/fire/compat/database/interfaces';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { first, Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
@@ -8,6 +9,7 @@ import { ADMINS, IUser, TIERLIST } from '../../../models';
 import { IBlog } from '../../../models/interfaces/blog-entry.interface';
 import { AuthService } from '../../service/auth.service';
 import { DatabaseService } from '../../service/database.service';
+import { setCommunityDeckSearch } from '../../store/digimon.actions';
 
 @Component({
   selector: 'digimon-home',
@@ -17,6 +19,12 @@ export class HomeComponent implements OnInit, OnDestroy {
   blogEntries: IBlog[] = [];
   blogEntriesHidden: IBlog[] = [];
   tierlist = TIERLIST;
+  tiers = [
+    { tier: 'S', color: 'bg-red-500' },
+    { tier: 'A', color: 'bg-orange-500' },
+    { tier: 'B', color: 'bg-yellow-500' },
+    { tier: 'C', color: 'bg-green-500' },
+  ];
 
   user: IUser | null;
   admins = ADMINS;
@@ -32,7 +40,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     private dbService: DatabaseService,
     private confirmationService: ConfirmationService,
     private messageService: MessageService,
-    private router: Router
+    private router: Router,
+    private store: Store
   ) {}
 
   ngOnInit() {
@@ -146,5 +155,10 @@ export class HomeComponent implements OnInit, OnDestroy {
       detail: 'The Blog-Entry was saved successfully!',
     });
     this.editView = false;
+  }
+
+  openCommunityWithSearch(card: string) {
+    this.store.dispatch(setCommunityDeckSearch({ communityDeckSearch: card }));
+    this.router.navigateByUrl('/community');
   }
 }

@@ -47,6 +47,11 @@ export const addCardToDeck = createAction(
   '[Deck] Add Card to Deck',
   props<{ addCardToDeck: string }>()
 );
+
+export const setCommunityDeckSearch = createAction(
+  '[Search] Set Community Deck Search Term',
+  props<{ communityDeckSearch: string }>()
+);
 //endregion
 
 //region Save Actions

@@ -8,4 +8,5 @@ export interface IDigimonState {
   mobileCollectionView: boolean;
   addCardToDeck: string;
   sort: ISort;
+  communityDeckSearch: string;
 }

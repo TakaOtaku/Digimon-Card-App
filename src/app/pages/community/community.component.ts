@@ -16,7 +16,10 @@ import { mapToDeckCards } from '../../functions/digimon-card.functions';
 import { AuthService } from '../../service/auth.service';
 import { DatabaseService } from '../../service/database.service';
 import { importDeck, setDeck } from '../../store/digimon.actions';
-import { selectAllCards } from '../../store/digimon.selectors';
+import {
+  selectAllCards,
+  selectCommunityDeckSearch,
+} from '../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-community',
@@ -65,6 +68,8 @@ export class CommunityComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    this.onSearch();
+
     this.db
       .loadCommunityDecks()
       .pipe(takeUntil(this.onDestroy$))
@@ -73,11 +78,20 @@ export class CommunityComponent implements OnInit, OnDestroy {
           (a, b) => new Date(b.date!).getTime() - new Date(a.date!).getTime()
         );
         this.decks = this.allDecks;
+        this.filterDecks(this.searchFilter.value);
       });
     this.store
       .select(selectAllCards)
       .pipe(takeUntil(this.onDestroy$))
       .subscribe((allCards) => (this.allCards = allCards));
+
+    this.store
+      .select(selectCommunityDeckSearch)
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((search) => {
+        this.searchFilter.setValue(search);
+        this.filterDecks(search);
+      });
 
     this.filterService.register('array-some', (value: any[], filters: any) => {
       if (filters === undefined || filters === null || filters.length === 0) {
@@ -99,8 +113,6 @@ export class CommunityComponent implements OnInit, OnDestroy {
         });
       }
     }
-
-    this.onSearch();
   }
 
   ngOnDestroy() {
@@ -187,12 +199,18 @@ export class CommunityComponent implements OnInit, OnDestroy {
     this.searchFilter.valueChanges
       .pipe(takeUntil(this.onDestroy$))
       .subscribe((value) => {
-        this.decks = this.allDecks.filter((deck) => {
-          const deckCards = mapToDeckCards(deck.cards, this.allCards);
-          return !!deckCards.find(
-            (card) => card.id?.includes(value) || card.name?.includes(value)
-          );
-        });
+        this.filterDecks(value);
       });
+  }
+
+  private filterDecks(filter: string) {
+    this.decks = this.allDecks.filter((deck) => {
+      const deckCards = mapToDeckCards(deck.cards, this.allCards);
+      return !!deckCards.find(
+        (card) =>
+          card.id?.includes(filter) ||
+          card.name?.toLocaleLowerCase().includes(filter.toLocaleLowerCase())
+      );
+    });
   }
 }

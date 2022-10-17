@@ -5,6 +5,7 @@ import {
   addCardToDeck,
   changeFilter,
   changeSort,
+  setCommunityDeckSearch,
   setDeck,
   setMobileCollectionView,
 } from '../digimon.actions';
@@ -50,6 +51,7 @@ export const initialState: IDigimonState = {
     },
     ascOrder: true,
   },
+  communityDeckSearch: '',
 };
 
 export const digimonReducer = createReducer(
@@ -61,5 +63,12 @@ export const digimonReducer = createReducer(
     ...state,
     mobileCollectionView,
   })),
-  on(addCardToDeck, (state, { addCardToDeck }) => ({ ...state, addCardToDeck }))
+  on(addCardToDeck, (state, { addCardToDeck }) => ({
+    ...state,
+    addCardToDeck,
+  })),
+  on(setCommunityDeckSearch, (state, { communityDeckSearch }) => ({
+    ...state,
+    communityDeckSearch,
+  }))
 );
