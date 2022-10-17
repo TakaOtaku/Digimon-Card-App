@@ -1915,6 +1915,37 @@
     "illustrator": "Teppei Tadokoro"
   },
   {
+    "id": "BT2-036_P1",
+    "name": "Gatomon",
+    "cardImage": "assets/images/cards/eng/BT2-036_P1.webp",
+    "cardType": "Digimon",
+    "dp": "3000",
+    "playCost": "5",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Vaccine",
+    "type": "Holy Beast",
+    "rarity": "U",
+    "cardNumber": "BT2-036",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Play] If you have a purple Digimon in play, 1 of your opponent's Digimon gets -4000 DP for the turn.\n[Your Turn] When one of your other Digimon is deleted, this Digimon gets +3000 DP for the turn.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Playmat and Card Set 2 -Floral Fun- [PB-09]",
+    "color": "Yellow",
+    "version": "Normal",
+    "block": [
+      "00",
+      "01"
+    ],
+    "restriction": "-",
+    "illustrator": "/"
+  },
+  {
     "id": "BT2-037",
     "name": "Angewomon",
     "cardImage": "assets/images/cards/eng/BT2-037.webp",

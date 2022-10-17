@@ -416,7 +416,7 @@
     "effect": "[On Play] Reveal 5 cards from the top of your deck. Add 1 Tamer card among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": " Playmat and Card Set 2 -Floral Fun- [PB-09]",
+    "notes": "Playmat and Card Set 2 -Floral Fun- [PB-09]",
     "color": "Red",
     "version": "AA",
     "block": [
@@ -1281,6 +1281,37 @@
     ],
     "restriction": "-",
     "illustrator": "Ryuda"
+  },
+  {
+    "id": "BT1-029_P2",
+    "name": "Gabumon",
+    "cardImage": "assets/images/cards/eng/BT1-029_P2.webp",
+    "cardType": "Digimon",
+    "dp": "1000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Data",
+    "type": "Reptile",
+    "rarity": "R",
+    "cardNumber": "BT1-029",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Play] Trigger ＜Draw 1＞. (Draw 1 card from your deck.)",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Playmat and Card Set 2 -Floral Fun- [PB-09]",
+    "color": "Blue",
+    "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
+    "restriction": "-",
+    "illustrator": "/"
   },
   {
     "id": "BT1-029_P2",
