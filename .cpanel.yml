@@ -1,7 +1,6 @@
 ---
 deployment:
   tasks:
-    - npm run install
-    - npm run build
     - export DEPLOYPATH=/home/digimonc/public_html/
-    - /bin/cp -R dist/ $DEPLOYPATH
+    - /bin/cp -R dist/digimon-card-game-collector/ $DEPLOYPATH
+    - /bin/cp -R src/assets/ $DEPLOYPATH

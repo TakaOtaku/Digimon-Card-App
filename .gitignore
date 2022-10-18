@@ -1,8 +1,8 @@
 # Compiled output
-/dist
 /tmp
 /out-tsc
 /bazel-out
+/dist/digimon-card-game-collector/assets
 
 # Node
 /node_modules
