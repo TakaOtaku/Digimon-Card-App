@@ -1,3 +1,10 @@
+name: Deploy to host
+
+on:
+  push:
+    branches:
+      - main
+      
 jobs:
   web-deploy:
     name: 🎉 Deploy
