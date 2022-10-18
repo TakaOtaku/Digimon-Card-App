@@ -24,7 +24,8 @@ jobs:
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
-          server: ftp.digimoncard.app:21
+          server: ftp.digimoncard.app
+          port: 21
           username: ${{ secrets.PROD_USER }}
           password: ${{ secrets.PROD_PASSWORD }}
           local-dir: ./dist/
