@@ -1,15 +1,15 @@
 declare var require: any;
-import { Pipe, PipeTransform } from "@angular/core";
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: "obscenity"
+  name: 'obscenity',
 })
 export class ObscenityPipe implements PipeTransform {
   public readonly obscenities = require('badwords-list');
 
   transform(value: any, ...args: any[]): any {
     let newVal: string = value;
-    const grawlix: string = "@#$%&!";
+    const grawlix: string = '@#$%&!';
 
     this.obscenities.array.forEach((curse: any) => {
       newVal = this.replaceAll(newVal, curse, grawlix);
@@ -26,10 +26,10 @@ export class ObscenityPipe implements PipeTransform {
   ) {
     return text.replace(
       new RegExp(
-        str1.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g, "\\$&"),
-        ignore ? "gi" : "g"
+        str1.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g, '\\$&'),
+        ignore ? 'gi' : 'g'
       ),
-      typeof str2 == "string" ? str2.replace(/\$/g, "$$$$") : str2
+      typeof str2 == 'string' ? str2.replace(/\$/g, '$$$$') : str2
     );
   }
 }

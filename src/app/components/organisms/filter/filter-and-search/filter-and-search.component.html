@@ -1,25 +1,30 @@
-<div class="surface-ground flex h-[50px] py-1">
-  <div class="inline-flex w-full justify-center">
-    <span class="p-input-icon-left" [ngStyle]="{ display: 'inline-flex' }">
-      <i class="pi pi-search"></i>
-      <input
-        type="text"
-        pInputText
-        [formControl]="searchFilter"
-        placeholder="Search"
-        class="w-full"
-      />
-    </span>
+<div class="surface-ground flex h-[70px] py-1">
+  <div class="flex w-full flex-col justify-center">
+    <div class="my-1 inline-flex w-full">
+      <span
+        class="p-input-icon-left w-full"
+        [ngStyle]="{ display: 'inline-flex' }"
+      >
+        <i class="pi pi-search h-3"></i>
+        <input
+          type="text"
+          class="h-6 w-full text-xs"
+          pInputText
+          [formControl]="searchFilter"
+          placeholder="Search"
+          class="w-full"
+        />
+      </span>
+      <button
+        (click)="this.display = true"
+        pButton
+        type="button"
+        icon="pi pi-filter-fill"
+        label="Filter"
+      ></button>
+    </div>
 
-    <button
-      (click)="this.display = true"
-      pButton
-      type="button"
-      icon="pi pi-filter-fill"
-      label="Filter"
-    ></button>
-
-    <div class="m-auto mx-2 flex flex-row justify-center">
+    <div class="mx-auto my-1 flex flex-row justify-center">
       <span class="text-xs font-bold text-white">Collection Mode:</span>
       <input
         type="checkbox"

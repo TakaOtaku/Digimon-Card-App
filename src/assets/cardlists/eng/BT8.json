@@ -2280,6 +2280,36 @@
     "illustrator": "As'Maria"
   },
   {
+    "id": "BT8-058_P1",
+    "name": "Agumon",
+    "cardImage": "assets/images/cards/eng/BT8-058_p1.webp",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "0 from Lv.2",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Virus",
+    "type": "Reptile",
+    "rarity": "R",
+    "cardNumber": "BT8-058",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Play] Reveal the top 4 cards of your deck. Add 1 card with [Greymon] in its name and 1 card with [Dragonkin] in its traits among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "XROS ENCOUNTER (BT-10) Pre-Release Tournaments",
+    "color": "Black",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "-",
+    "illustrator": "As'Maria"
+  },
+  {
     "id": "BT8-059",
     "name": "Kokuwamon",
     "cardImage": "assets/images/cards/eng/BT8-059.webp",
@@ -2579,6 +2609,36 @@
     ],
     "restriction": "-",
     "illustrator": "As'Maria"
+  },
+  {
+    "id": "BT8-067_P1",
+    "name": "MetalGreymon",
+    "cardImage": "assets/images/cards/eng/BT8-067_P1.webp",
+    "cardType": "Digimon",
+    "dp": "8000",
+    "playCost": "8",
+    "digivolveCost1": "4 from Lv.4",
+    "digivolveCost2": "4 from Lv.4",
+    "cardLv": "Lv.5",
+    "form": "Ultimate",
+    "attribute": "Virus",
+    "type": "Cyborg",
+    "rarity": "R",
+    "cardNumber": "BT8-067",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Digivolving] ＜De-Digivolve 1＞ 1 of your opponent's Digimon. (Trash 1 card from the top of one of your opponent's Digimon. If it has no digivolution cards, or becomes a level 3 Digimon, you can't trash any more cards.) Then, delete 1 of your opponent's Digimon with 3000 DP or less.",
+    "digivolveEffect": "[Your Turn] While this Digimon has [Dragonkin] or [Machine] in its traits, it can also attack your opponent's unsuspended Digimon.",
+    "securityEffect": "-",
+    "notes": "25th Special Memorial Pack",
+    "color": "Black/Red",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "-",
+    "illustrator": "Nakano Haito"
   },
   {
     "id": "BT8-068",

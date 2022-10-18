@@ -1,13 +1,13 @@
-import { createAction, props } from "@ngrx/store";
-import { ICard, ICountCard, IDeck, IFilter, ISave, ISort } from "../../models";
+import { createAction, props } from '@ngrx/store';
+import { ICard, ICountCard, IDeck, IFilter, ISave, ISort } from '../../models';
 
 //region Digimon Card Actions
 export const setDigimonCards = createAction(
-  "[Digimon Cards] Set Digimon Cards",
+  '[Digimon Cards] Set Digimon Cards',
   props<{ digimonCards: ICard[] }>()
 );
 export const setFilteredDigimonCards = createAction(
-  "[Digimon Cards] Set Filtered Digimon Cards",
+  '[Digimon Cards] Set Filtered Digimon Cards',
   props<{ filteredCards: ICard[] }>()
 );
 //endregion
@@ -46,6 +46,11 @@ export const changeShowVersion = createAction(
 export const addCardToDeck = createAction(
   '[Deck] Add Card to Deck',
   props<{ addCardToDeck: string }>()
+);
+
+export const setCommunityDeckSearch = createAction(
+  '[Search] Set Community Deck Search Term',
+  props<{ communityDeckSearch: string }>()
 );
 //endregion
 

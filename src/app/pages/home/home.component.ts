@@ -1,177 +1,164 @@
-import { Component, HostListener, OnDestroy, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
-import { Store } from "@ngrx/store";
-import { filter, first, of, Subject, switchMap, takeUntil } from "rxjs";
-import * as uuid from "uuid";
-import { IDeck, ISave } from "../../../models";
-import { AuthService } from "../../service/auth.service";
-import { DatabaseService } from "../../service/database.service";
-import { setDeck } from "../../store/digimon.actions";
-import { selectMobileCollectionView } from "../../store/digimon.selectors";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { DataSnapshot } from '@angular/fire/compat/database/interfaces';
+import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { ConfirmationService, MessageService } from 'primeng/api';
+import { first, Subject, takeUntil } from 'rxjs';
+import * as uuid from 'uuid';
+import { ADMINS, IUser, TIERLIST } from '../../../models';
+import { IBlog } from '../../../models/interfaces/blog-entry.interface';
+import { AuthService } from '../../service/auth.service';
+import { DatabaseService } from '../../service/database.service';
+import { setCommunityDeckSearch } from '../../store/digimon.actions';
 
 @Component({
-  selector: "digimon-home",
-  templateUrl: "./home.component.html"
+  selector: 'digimon-home',
+  templateUrl: './home.component.html',
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  //region Accordions
-  deckView = true;
-  collectionView = true;
-  showAccordionButtons = true;
-  showStats = true;
-  //endregion
+  blogEntries: IBlog[] = [];
+  blogEntriesHidden: IBlog[] = [];
+  tierlist = TIERLIST;
+  tiers = [
+    { tier: 'S', color: 'bg-red-500' },
+    { tier: 'A', color: 'bg-orange-500' },
+    { tier: 'B', color: 'bg-yellow-500' },
+    { tier: 'C', color: 'bg-green-500' },
+  ];
 
-  mobileCollectionView = false;
-  hideStats = false;
+  user: IUser | null;
+  admins = ADMINS;
 
-  private deckId = '';
+  editView = false;
+  currentBlog: IBlog;
+  currentTitle = 'Empty Title';
+  currentQuill: any[] = [];
 
-  private screenWidth: number;
   private onDestroy$ = new Subject();
-
   constructor(
-    private route: ActivatedRoute,
-    private store: Store,
-    private databaseService: DatabaseService,
-    private authService: AuthService
-  ) {
-    this.onResize();
-  }
+    private authService: AuthService,
+    private dbService: DatabaseService,
+    private confirmationService: ConfirmationService,
+    private messageService: MessageService,
+    private router: Router,
+    private store: Store
+  ) {}
 
   ngOnInit() {
-    this.store
-      .select(selectMobileCollectionView)
+    this.user = this.authService.userData;
+    this.authService.authChange
       .pipe(takeUntil(this.onDestroy$))
-      .subscribe(
-        (mobileCollectionView) =>
-          (this.mobileCollectionView = mobileCollectionView)
-      );
+      .subscribe(() => (this.user = this.authService.userData));
 
-    this.checkURL();
-  }
-
-  ngOnDestroy(): void {
-    this.onDestroy$.next(true);
-  }
-
-  checkURL() {
-    this.route.params
-      .pipe(
-        first(),
-        filter((params) => {
-          return !!params["id"] || (!!params["userId"] && !!params["deckId"]);
-        }),
-        switchMap((params) => {
-          if (params["userId"] && params["deckId"]) {
-            this.deckId = params["deckId"];
-            return this.databaseService
-              .loadSave(params["userId"])
-              .pipe(first());
-          } else {
-            this.databaseService.loadDeck(params["id"]).subscribe((deck) => {
-              this.store.dispatch(
-                setDeck({
-                  deck: { ...deck, id: uuid.v4(), rating: 0, ratingCount: 0 }
-                })
-              );
-            });
-            return of(false);
-          }
-        })
-      )
-      .subscribe((save) => {
-        //http://localhost:4200/user/S3rWXPtCYRN8vSrxY3qE6aeewy43/deck/160a3fb2-3703-4183-9f52-65411dfd080e
-        if (!save) {
+    this.dbService
+      .loadBlogEntries()
+      .pipe(first())
+      .subscribe((r) => {
+        const value: DataSnapshot = r;
+        if (!value) {
           return;
         }
-        const iSave = save as unknown as ISave;
+        const entries: IBlog[] = Object.values(value.val());
 
-        const foundDeck = iSave.decks.find((deck) => deck.id === this.deckId);
-        if (!foundDeck) {
-          return;
-        }
-
-        const iDeck = foundDeck as unknown as IDeck;
-        const sameUser = iSave.uid === this.authService.userData?.uid;
-
-        this.store.dispatch(
-          setDeck({
-            deck: {
-              ...iDeck,
-              id: sameUser ? iDeck.id : uuid.v4(),
-              rating: 0,
-              ratingCount: 0
-            }
-          })
-        );
+        this.blogEntriesHidden = entries.filter((entry) => !entry.approved);
+        this.blogEntries = entries.filter((entry) => entry.approved);
       });
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize() {
-    this.screenWidth = window.innerWidth;
-    if (this.screenWidth < 768) {
-      this.deckView = true;
-      this.collectionView = false;
-
-      this.showStats = true;
-
-      this.showAccordionButtons = false;
-    } else if (this.screenWidth >= 768 && this.screenWidth < 1024) {
-      this.deckView = false;
-      this.collectionView = true;
-
-      this.showStats = false;
-
-      this.showAccordionButtons = true;
-    } else {
-      this.deckView = true;
-      this.collectionView = true;
-
-      this.showStats = true;
-
-      this.showAccordionButtons = true;
-    }
-
-    console.log(
-      'Show Stats: ',
-      this.showStats,
-      'Show AccordionButtons: ',
-      this.showAccordionButtons
-    );
+  ngOnDestroy() {
+    this.onDestroy$.next(true);
   }
 
-  changeView(view: string) {
-    if (view === 'Deck') {
-      this.deckView = !this.deckView;
+  newEntry() {
+    const newBlog: IBlog = {
+      uid: uuid.v4(),
+      date: new Date(),
+      title: 'Empty Entry',
+      text: '',
+      approved: false,
+      author: this.user!.displayName,
+      category: 'Tournament Report',
+    };
+    this.blogEntriesHidden.push(newBlog);
+    this.dbService.saveBlogEntry(newBlog);
+  }
 
-      if (this.screenWidth >= 768 && this.screenWidth < 1024) {
-        if (this.deckView && this.collectionView) {
-          this.collectionView = false;
-          this.showStats = true;
-          return;
-        }
-      }
+  open(blog: IBlog) {
+    this.router.navigateByUrl('blog/' + blog.uid);
+  }
 
-      if (!this.collectionView) {
-        this.collectionView = true;
-      }
-    } else if (view === 'Collection') {
-      this.collectionView = !this.collectionView;
+  approve(blog: IBlog) {
+    blog.approved = true;
+    this.blogEntriesHidden = this.blogEntriesHidden.filter(
+      (entry) => entry.uid !== blog.uid
+    );
+    this.blogEntries = this.blogEntries.filter(
+      (entry) => entry.uid !== blog.uid
+    );
+    this.blogEntries.push(blog);
+    this.dbService.saveBlogEntry(blog);
+  }
 
-      if (this.screenWidth >= 768 && this.screenWidth < 1024) {
-        if (this.deckView && this.collectionView) {
-          this.deckView = false;
-          this.showStats = false;
-          return;
-        }
-      }
+  hide(blog: IBlog) {
+    blog.approved = false;
+    this.blogEntriesHidden = this.blogEntriesHidden.filter(
+      (entry) => entry.uid !== blog.uid
+    );
+    this.blogEntries = this.blogEntries.filter(
+      (entry) => entry.uid !== blog.uid
+    );
+    this.blogEntriesHidden.push(blog);
+    this.dbService.saveBlogEntry(blog);
+  }
 
-      if (!this.deckView) {
-        this.deckView = true;
-      }
-    }
+  edit(blog: IBlog) {
+    this.editView = true;
+    this.currentQuill = blog.text;
+    this.currentTitle = blog.title;
+    this.currentBlog = blog;
+  }
 
-    this.showStats = !(this.collectionView && !this.deckView);
+  delete(blog: IBlog, event: any) {
+    this.confirmationService.confirm({
+      target: event!.target!,
+      message:
+        'You are about to permanently delete your this Blog-Entry. Are you sure?',
+      icon: 'pi pi-exclamation-triangle',
+      accept: () => {
+        this.blogEntriesHidden = this.blogEntriesHidden.filter(
+          (entry) => entry.uid !== blog.uid
+        );
+        this.blogEntries = this.blogEntries.filter(
+          (entry) => entry.uid !== blog.uid
+        );
+        this.dbService.deleteBlogEntry(blog.uid);
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Blog-Entry deleted!',
+          detail: 'The Blog-Entry was deleted successfully!',
+        });
+      },
+      reject: () => {},
+    });
+  }
+
+  save() {
+    this.currentBlog.title = this.currentTitle;
+    this.currentBlog.text = this.currentQuill;
+    this.currentBlog.date = new Date();
+
+    this.dbService.saveBlogEntry(this.currentBlog);
+
+    this.messageService.add({
+      severity: 'success',
+      summary: 'Blog-Entry saved!',
+      detail: 'The Blog-Entry was saved successfully!',
+    });
+    this.editView = false;
+  }
+
+  openCommunityWithSearch(card: string) {
+    this.store.dispatch(setCommunityDeckSearch({ communityDeckSearch: card }));
+    this.router.navigateByUrl('/community');
   }
 }

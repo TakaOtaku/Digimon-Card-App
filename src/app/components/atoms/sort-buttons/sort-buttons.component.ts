@@ -1,19 +1,20 @@
-import { Component, OnDestroy } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { Subject, takeUntil } from 'rxjs';
-import { ISortElement } from '../../../../models';
-import { changeSort } from '../../../store/digimon.actions';
-import { selectSort } from '../../../store/digimon.selectors';
+import { Component, OnDestroy } from "@angular/core";
+import { FormControl } from "@angular/forms";
+import { Store } from "@ngrx/store";
+import { filter, Subject, takeUntil } from "rxjs";
+import { ISort, ISortElement } from "../../../../models";
+import { changeSort } from "../../../store/digimon.actions";
+import { selectSort } from "../../../store/digimon.selectors";
 
 @Component({
   selector: 'digimon-sort-buttons',
   templateUrl: './sort-buttons.component.html',
 })
 export class SortButtonsComponent implements OnDestroy {
-  public sortBy: ISortElement = { name: 'ID', element: 'id' };
-  public order = true;
+  sortForm = new FormControl({ name: 'ID', element: 'id' });
+  order = true;
 
-  public sortOptions: ISortElement[] = [
+  sortOptions: ISortElement[] = [
     { name: 'ID', element: 'id' },
     { name: 'Cost', element: 'playCost' },
     { name: 'DP', element: 'dp' },
@@ -27,10 +28,27 @@ export class SortButtonsComponent implements OnDestroy {
   constructor(public store: Store) {
     this.store
       .select(selectSort)
+      .pipe(
+        filter((newSort) => {
+          const currentSort: ISort = {
+            sortBy: this.sortForm.value,
+            ascOrder: this.order,
+          };
+          return newSort !== currentSort;
+        }),
+        takeUntil(this.onDestroy$)
+      )
+      .subscribe((sort) => {
+        this.sortForm.setValue(sort.sortBy, { emitEvent: false });
+        this.order = sort.ascOrder;
+      });
+
+    this.sortForm.valueChanges
       .pipe(takeUntil(this.onDestroy$))
       .subscribe((sort) => {
-        this.sortBy = sort.sortBy;
-        this.order = sort.ascOrder;
+        this.store.dispatch(
+          changeSort({ sort: { sortBy: sort, ascOrder: this.order } })
+        );
       });
   }
 
@@ -38,12 +56,12 @@ export class SortButtonsComponent implements OnDestroy {
     this.onDestroy$.next(true);
   }
 
-  public changeSortOrder(sortBy: ISortElement) {
-    if (sortBy === this.sortBy) {
-      this.order = !this.order;
-    }
+  changeOrder() {
+    this.order = !this.order;
     this.store.dispatch(
-      changeSort({ sort: { sortBy: sortBy, ascOrder: this.order } })
+      changeSort({
+        sort: { sortBy: this.sortForm.value, ascOrder: this.order },
+      })
     );
   }
 }

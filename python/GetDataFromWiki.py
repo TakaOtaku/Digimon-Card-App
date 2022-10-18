@@ -6,17 +6,18 @@ from bs4 import BeautifulSoup
 import re
 import pandas as pd
 import copy
+#'https://digimoncardgame.fandom.com/wiki/ST-14:_Advanced_Deck_Beelzemon/Gallery#Japanese'
 
 wikiLink = 'https://digimoncardgame.fandom.com'
 wikiPageLinks = [
-    'https://digimoncardgame.fandom.com/wiki/BT-11:_Booster_Dimensional_Phase'
+    'https://digimoncardgame.fandom.com/wiki/ST-14:_Advanced_Deck_Beelzemon'
 ]
 cardLinks = []
 NormalCards = []
 AACards = []
 cards = []
 
-
+# Get all Tables and add the Links to the cards to an Array
 def getLinksFromWiki():
     for wikiPage in wikiPageLinks:
         page = requests.get(wikiPage)
@@ -31,7 +32,7 @@ def getLinksFromWiki():
                 if "Card_Types" not in cardLink["href"]:
                     cardLinks.append(cardLink["href"])
 
-
+# Iterate through the card links and put them in normal array and if already there in the aa array
 def splitCardsForNormalAndAA():
     for cardLink in cardLinks:
         if cardLink not in NormalCards:
@@ -39,7 +40,7 @@ def splitCardsForNormalAndAA():
         else:
             AACards.append(cardLink)
 
-
+# Get the Data from the main table and return it as an digimon card
 def getMainInfo(html, digimoncard):
     rows = html.find_all("tr")
 
@@ -68,11 +69,11 @@ def getMainInfo(html, digimoncard):
                 digimoncard['attribute'] = rowData[1]
             case 'Type':
                 digimoncard['type'] = rowData[1]
-            case 'Illustrator':
-                digimoncard['illustrator'] = rowData[1]
+            case 'Rarity':
+                digimoncard['rarity'] = rowData[1]
     return digimoncard
 
-
+# Get digivolve requirements and return the digimon card
 def getDigivolveInfo(html, digimoncard):
     evoCons = html.find_all("table", class_="evocon")
     specialEvoCons = html.find_all("table", class_="effect")
@@ -115,30 +116,6 @@ def getExtraInfo(html, digimoncard):
             td = table.find("td")
             digimoncard['digivolveEffect'] = td.text.replace("\n", "").strip()
 
-    return digimoncard
-
-
-def getRestrictedInfo(html, digimoncard):
-    return digimoncard
-
-
-def getRarityInfo(html, digimoncard):
-    rows = html.find_all("tr")
-    cells = rows[1].find_all("td")
-
-    rarity = cells[2].text.replace("\n", "").strip()
-
-    rarityDict = {
-        "": "",
-        "Common": "C",
-        "Uncommon": "U",
-        "Rare": 'R',
-        "Super Rare": 'SR',
-        "Secret Rare": 'SEC',
-        "Alternative Art": "AA"
-    }
-
-    digimoncard['rarity'] = rarityDict[rarity]
     return digimoncard
 
 
@@ -189,8 +166,19 @@ def getCardDataFromWiki():
         digimoncard = getMainInfo(infoMain, digimoncard)
         digimoncard = getDigivolveInfo(infoDigivolve, digimoncard)
         digimoncard = getExtraInfo(infoExtra, digimoncard)
-        digimoncard = getRestrictedInfo(infoRestricted, digimoncard)
-        digimoncard = getRarityInfo(infoRarity, digimoncard)
+
+        rarityDict = {
+            "": "",
+            "Common": "C",
+            "Uncommon": "U",
+            "Rare": 'R',
+            "Super Rare": 'SR',
+            "Secret Rare": 'SEC',
+            "Alternative Art": "AA",
+            "Promo": "P"
+        }
+
+        digimoncard['rarity'] = rarityDict[digimoncard['rarity']]
 
         splitUrl = url.split("/")
         digimoncard['id'] = splitUrl[2]
@@ -203,8 +191,8 @@ def getCardDataFromWiki():
         if(image is not None):
             imageSrc = image['src']
             # Change URL depending on if you want Japanese Cards or English Cards
-            # urllib.request.urlretrieve(
-            #    imageSrc, digimoncard['cardNumber']+".png")
+            urllib.request.urlretrieve(
+               imageSrc, digimoncard['cardNumber']+".png")
 
         cards.append(digimoncard)
 
@@ -228,7 +216,7 @@ def makeAACardDatas():
 
 
 def saveCardsToJSON():
-    with open('ex3.json', 'w') as fp:
+    with open('st14.json', 'w') as fp:
         json.dump(cards, fp)
 
 

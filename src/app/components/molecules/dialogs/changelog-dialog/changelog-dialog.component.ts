@@ -1,20 +1,18 @@
-import { Component, OnInit } from "@angular/core";
-import firebase from "firebase/compat";
-import { EditorChangeContent, EditorChangeSelection } from "ngx-quill";
-import Quill from "quill";
-import { AuthService } from "../../../../service/auth.service";
-import { DatabaseService } from "../../../../service/database.service";
+import { Component, OnInit } from '@angular/core';
+import firebase from 'firebase/compat';
+import { AuthService } from '../../../../service/auth.service';
+import { DatabaseService } from '../../../../service/database.service';
 import DataSnapshot = firebase.database.DataSnapshot;
 
 @Component({
-  selector: "digimon-changelog-dialog",
-  templateUrl: "./changelog-dialog.component.html"
+  selector: 'digimon-changelog-dialog',
+  templateUrl: './changelog-dialog.component.html',
 })
 export class ChangelogDialogComponent implements OnInit {
   content: Object = [
-    { insert: "Hello " },
-    { insert: "World!", attributes: { bold: true } },
-    { insert: "\n" }
+    { insert: 'Hello ' },
+    { insert: 'World!', attributes: { bold: true } },
+    { insert: '\n' },
   ];
 
   blurred = false;
@@ -23,36 +21,10 @@ export class ChangelogDialogComponent implements OnInit {
   constructor(
     public authService: AuthService,
     private dbService: DatabaseService
-  ) {
-  }
+  ) {}
 
   ngOnInit() {
     this.load();
-  }
-
-  created(event: Quill) {
-    // tslint:disable-next-line:no-console
-    console.log("editor-created", event);
-  }
-
-  changedEditor(event: EditorChangeContent | EditorChangeSelection) {
-    // tslint:disable-next-line:no-console
-    console.log("editor-change", event);
-  }
-
-  focus($event: any) {
-    // tslint:disable-next-line:no-console
-    console.log("focus", $event);
-    this.focused = true;
-    this.blurred = false;
-  }
-
-  blur($event: any) {
-    // tslint:disable-next-line:no-console
-    console.log("blur", $event);
-    this.focused = false;
-    this.blurred = true;
-    debugger;
   }
 
   load() {

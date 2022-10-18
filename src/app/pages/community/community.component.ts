@@ -1,5 +1,6 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import {
@@ -7,13 +8,18 @@ import {
   FilterService,
   MessageService,
 } from 'primeng/api';
+import { ContextMenu } from 'primeng/contextmenu';
 import { Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
 import { COLORS, ICard, IDeck, TAGS } from '../../../models';
+import { mapToDeckCards } from '../../functions/digimon-card.functions';
 import { AuthService } from '../../service/auth.service';
 import { DatabaseService } from '../../service/database.service';
 import { importDeck, setDeck } from '../../store/digimon.actions';
-import { selectAllCards } from '../../store/digimon.selectors';
+import {
+  selectAllCards,
+  selectCommunityDeckSearch,
+} from '../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-community',
@@ -22,6 +28,9 @@ import { selectAllCards } from '../../store/digimon.selectors';
 export class CommunityComponent implements OnInit, OnDestroy {
   public selectedDeck: IDeck;
   public decks: IDeck[] = [];
+  private allDecks: IDeck[] = [];
+
+  searchFilter = new FormControl('');
 
   public tags = TAGS;
   public colors = COLORS;
@@ -59,19 +68,30 @@ export class CommunityComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    this.onSearch();
+
     this.db
       .loadCommunityDecks()
       .pipe(takeUntil(this.onDestroy$))
-      .subscribe(
-        (decks) =>
-          (this.decks = decks.sort(
-            (a, b) => new Date(b.date!).getTime() - new Date(a.date!).getTime()
-          ))
-      );
+      .subscribe((decks) => {
+        this.allDecks = decks.sort(
+          (a, b) => new Date(b.date!).getTime() - new Date(a.date!).getTime()
+        );
+        this.decks = this.allDecks;
+        this.filterDecks(this.searchFilter.value);
+      });
     this.store
       .select(selectAllCards)
       .pipe(takeUntil(this.onDestroy$))
       .subscribe((allCards) => (this.allCards = allCards));
+
+    this.store
+      .select(selectCommunityDeckSearch)
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((search) => {
+        this.searchFilter.setValue(search);
+        this.filterDecks(search);
+      });
 
     this.filterService.register('array-some', (value: any[], filters: any) => {
       if (filters === undefined || filters === null || filters.length === 0) {
@@ -108,7 +128,7 @@ export class CommunityComponent implements OnInit, OnDestroy {
             deck: { ...deck, id: uuid.v4(), rating: 0, ratingCount: 0 },
           })
         );
-        this.router.navigateByUrl('/deck/' + deck.id);
+        this.router.navigateByUrl('/deckbuilder/' + deck.id);
       },
     });
   }
@@ -137,7 +157,7 @@ export class CommunityComponent implements OnInit, OnDestroy {
     selBox.style.left = '0';
     selBox.style.top = '0';
     selBox.style.opacity = '0';
-    selBox.value = 'https://digimoncard.app/deck/' + deck.id;
+    selBox.value = 'https://digimoncard.app/deckbuilder/' + deck.id;
     document.body.appendChild(selBox);
     selBox.focus();
     selBox.select();
@@ -168,8 +188,29 @@ export class CommunityComponent implements OnInit, OnDestroy {
     return pipe.transform(date, 'MMM d, y, h:mm:ss a')!;
   }
 
-  showContextMenu(menu: any, event: any, deck: IDeck) {
+  showContextMenu(menu: ContextMenu, event: MouseEvent, deck: IDeck) {
     this.selectedDeck = deck;
+    event.stopPropagation();
+    event.preventDefault();
     menu.show(event);
+  }
+
+  onSearch() {
+    this.searchFilter.valueChanges
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((value) => {
+        this.filterDecks(value);
+      });
+  }
+
+  private filterDecks(filter: string) {
+    this.decks = this.allDecks.filter((deck) => {
+      const deckCards = mapToDeckCards(deck.cards, this.allCards);
+      return !!deckCards.find(
+        (card) =>
+          card.id?.includes(filter) ||
+          card.name?.toLocaleLowerCase().includes(filter.toLocaleLowerCase())
+      );
+    });
   }
 }

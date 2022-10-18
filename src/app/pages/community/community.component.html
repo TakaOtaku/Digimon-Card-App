@@ -1,33 +1,47 @@
-<p-contextMenu #table [model]="deckRowContext"></p-contextMenu>
+<div class="h-[calc(100vh-58px)] overflow-y-scroll">
+  <p-contextMenu #table [model]="deckRowContext"></p-contextMenu>
+  <div class="surface-card flex flex-col p-2">
+    <span
+      [ngStyle]="{ display: 'inline-flex' }"
+      class="p-input-icon-left w-full"
+    >
+      <i class="pi pi-search h-3"></i>
+      <input
+        [formControl]="searchFilter"
+        class="h-6 w-full text-xs"
+        pInputText
+        placeholder="Search for cards! (Name or ID e.g. BT3-063"
+        type="text"
+      />
+    </span>
+  </div>
 
-<p-table
-  [(contextMenuSelection)]="selectedDeck"
-  [contextMenu]="table"
-  [globalFilterFields]="[
-    '',
-    'color.name',
-    'title',
-    '',
-    'tags.0.name',
-    'user',
-    ''
-  ]"
-  [paginator]="true"
-  [rowsPerPageOptions]="[25, 50, 75]"
-  [rows]="25"
-  [scrollHeight]="'calc(100vh - 100px)'"
-  [scrollable]="true"
-  [showCurrentPageReport]="true"
-  [value]="decks"
-  currentPageReportTemplate="Showing {first} to {last} of {totalRecords} decks"
-  dataKey="title"
-  styleClass="p-datatable-striped"
->
-  <ng-template pTemplate="header">
-    <tr>
-      <th class="max-w-[50px]"></th>
-      <th class="max-w-[120px]">
-        <div class="mx-auto">
+  <p-table
+    [(contextMenuSelection)]="selectedDeck"
+    [contextMenu]="table"
+    [globalFilterFields]="[
+      '',
+      'color.name',
+      'title',
+      'tags.0.name',
+      '',
+      'user',
+      ''
+    ]"
+    [paginator]="true"
+    [rowsPerPageOptions]="[25, 50, 75]"
+    [rows]="25"
+    [scrollable]="true"
+    [showCurrentPageReport]="true"
+    [value]="decks"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} decks"
+    dataKey="title"
+    styleClass="p-datatable-striped"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th class="max-w-[30px] p-0"></th>
+        <th class="max-w-[70px] p-0">
           Color
           <p-columnFilter display="menu" field="color.name" matchMode="equals">
             <ng-template
@@ -49,23 +63,16 @@
               </p-dropdown>
             </ng-template>
           </p-columnFilter>
-        </div>
-      </th>
-      <th class="max-w-[600px] max-w-[100%]">
-        <div class="mx-auto">
+        </th>
+        <th class="max-w-[400px] p-0">
           Title
           <p-columnFilter
             display="menu"
             field="title"
             type="text"
           ></p-columnFilter>
-        </div>
-      </th>
-      <th class="max-w-[400px] max-w-[100%]">
-        <div class="mx-auto">Description</div>
-      </th>
-      <th class="max-w-[100%]max-w-[400px] max-w-[100%]">
-        <div class="mx-auto">
+        </th>
+        <th class="max-w-[400px] p-0">
           Tags
           <p-columnFilter
             display="menu"
@@ -86,89 +93,83 @@
                 <ng-template let-option pTemplate="item">
                   <span [class]="'customer-badge status-' + option">{{
                     option
-                    }}</span>
+                  }}</span>
                 </ng-template>
               </p-dropdown>
             </ng-template>
           </p-columnFilter>
-        </div>
-      </th>
-      <th class="max-w-[400px] max-w-[100%]">
-        <div class="mx-auto">
+        </th>
+        <th class="max-w-[400px] p-0">Description</th>
+        <th class="max-w-[400px] p-0">
           User
           <p-columnFilter
             display="menu"
             field="user"
             type="text"
           ></p-columnFilter>
-        </div>
-      </th>
-      <th class="max-w-[400px] max-w-[100%]" pSortableColumn="date">
-        <div class="mx-auto">
+        </th>
+        <th class="max-w-[400px] p-0" pSortableColumn="date">
           Date
           <p-sortIcon field="date"></p-sortIcon>
-        </div>
-      </th>
-    </tr>
-  </ng-template>
-  <ng-template let-deck let-expanded="expanded" pTemplate="body">
-    <tr
-      class="max-h-[50px]"
-      (dblclick)="showContextMenu(table, $event, deck)"
-      [pContextMenuRow]="deck"
-    >
-      <td class="max-w-[50px]">
-        <button
-          [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"
-          [pRowToggler]="deck"
-          class="p-button-text p-button-rounded p-button-plain"
-          pButton
-          pRipple
-          type="button"
-        ></button>
-      </td>
-      <td class="inline-flex max-w-[120px]">
-        <img
-          [src]="deck.color?.img ?? 'assets/decks/white.svg'"
-          alt="Digimon Deck Image"
-          class="mx-auto max-h-[50px]"
-        />
-      </td>
-      <td class="max-w-[600px]">{{ deck.title }}</td>
-      <td class="max-w-[400px] max-w-[100%] truncate">
-        {{ deck.description }}
-      </td>
-      <td class="max-w-[400px] max-w-[100%]">
-        <div class="mx-auto">
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template let-deck let-expanded="expanded" pTemplate="body">
+      <tr class="max-h-[50px]" [pContextMenuRow]="deck">
+        <td class="max-w-[30px] p-0">
+          <button
+            [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"
+            [pRowToggler]="deck"
+            class="p-button-text p-button-rounded p-button-plain"
+            pButton
+            pRipple
+            type="button"
+          ></button>
+        </td>
+        <td class="inline-flex max-w-[70px] p-0">
+          <img
+            [src]="deck.color?.img ?? 'assets/decks/white.svg'"
+            alt="Digimon Deck Image"
+            class="mx-auto max-h-[50px]"
+          />
+        </td>
+        <td
+          (click)="showContextMenu(table, $event, deck)"
+          class="cursor-pointer p-0"
+        >
+          {{ deck.title }}
+        </td>
+        <td class="max-w-[400px] p-0">
           <p-chip *ngFor="let tag of deck.tags" label="{{ tag.name }}"></p-chip>
-        </div>
-      </td>
-      <td class="max-w-[400px] max-w-[100%]">
-        <div class="mx-auto">
+        </td>
+        <td class="max-w-[400px] truncate p-0">
+          {{ deck.description }}
+        </td>
+        <td class="max-w-[400px] p-0">
           {{ deck.user }}
-        </div>
-      </td>
-      <td class="max-w-[400px] max-w-[100%]">
-        <div class="mx-auto">
-          {{ dateFormat(deck.date) }}
-        </div>
-      </td>
-    </tr>
-  </ng-template>
-  <ng-template let-deck pTemplate="rowexpansion">
-    <tr>
-      <td colspan="7">
-        <div class="card-list surface-card flex flex-wrap pt-3">
-          <div *ngFor="let card of deck.cards">
-            <digimon-deck-card
-              [card]="card"
-              [cards]="allCards"
-              [edit]="false"
-              [fullCards]="false"
-            ></digimon-deck-card>
+        </td>
+        <td class="max-w-[400px] p-0">
+          {{ deck.date | date: "dd.MM.yyyy" }}
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template let-deck pTemplate="rowexpansion">
+      <tr>
+        <td colspan="7">
+          <div class="card-list surface-card flex flex-wrap pt-3">
+            <div *ngFor="let card of deck.cards">
+              <digimon-deck-card
+                [card]="card"
+                [cards]="allCards"
+                [edit]="false"
+                [fullCards]="false"
+              ></digimon-deck-card>
+            </div>
           </div>
-        </div>
-      </td>
-    </tr>
-  </ng-template>
-</p-table>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+  <div class="h-24 w-full lg:hidden"></div>
+</div>

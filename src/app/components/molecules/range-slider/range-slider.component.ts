@@ -1,16 +1,23 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from "@angular/core";
-import { FormControl } from "@angular/forms";
-import { Subject, takeUntil } from "rxjs";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
-  selector: "digimon-range-slider",
-  templateUrl: "./range-slider.component.html",
-  styleUrls: ["./range-slider.component.scss"]
+  selector: 'digimon-range-slider',
+  templateUrl: './range-slider.component.html',
+  styleUrls: ['./range-slider.component.scss'],
 })
 export class RangeSliderComponent implements OnInit, OnDestroy {
   @Input() minMax: number[] = [];
-  @Input() title: string = "";
-  @Input() suffix?: string = "";
+  @Input() title: string = '';
+  @Input() suffix?: string = '';
   @Input() reset: EventEmitter<void>;
   @Output() change = new EventEmitter<number[]>();
 
@@ -30,8 +37,8 @@ export class RangeSliderComponent implements OnInit, OnDestroy {
       floor: this.minMax[0],
       ceil: this.minMax[1],
       translate: (value: number): string => {
-        return this.suffix ? value + this.suffix : value + "";
-      }
+        return this.suffix ? value + this.suffix : value + '';
+      },
     };
 
     this.reset.pipe(takeUntil(this.onDestroy$)).subscribe(() => {

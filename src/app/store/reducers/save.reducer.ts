@@ -1,6 +1,6 @@
-import { createReducer, on } from "@ngrx/store";
-import { ICountCard, IDeck, ISave, ISettings } from "../../../models";
-import { CARDSET } from "../../../models/card-set.enum";
+import { createReducer, on } from '@ngrx/store';
+import { ICountCard, IDeck, ISave, ISettings } from '../../../models';
+import { CARDSET } from '../../../models/card-set.enum';
 import {
   addToCollection,
   changeCardCount,
@@ -14,8 +14,8 @@ import {
   loadSave,
   saveDeck,
   setCollection,
-  setSave
-} from "../digimon.actions";
+  setSave,
+} from '../digimon.actions';
 
 export const emptySettings: ISettings = {
   cardSet: CARDSET.Both,
@@ -35,7 +35,7 @@ export const emptySave: ISave = {
   uid: '',
   photoURL: '',
   displayName: '',
-  version: 1.1,
+  version: 1.21,
   collection: [],
   decks: [],
   settings: emptySettings,
@@ -73,19 +73,19 @@ export const saveReducer = createReducer(
 
   on(changeCardSets, (state, { cardSet }) => ({
     ...state,
-    settings: { ...state.settings, cardSet }
+    settings: { ...state.settings, cardSet },
   })),
   on(changeCollectionMode, (state, { collectionMode }) => ({
     ...state,
-    settings: { ...state.settings, collectionMode }
+    settings: { ...state.settings, collectionMode },
   })),
   on(changeShowUserStats, (state, { showUserStats }) => ({
     ...state,
-    settings: { ...state.settings, showUserStats }
+    settings: { ...state.settings, showUserStats },
   })),
   on(changeCollectionMinimum, (state, { minimum }) => ({
     ...state,
-    settings: { ...state.settings, collectionMinimum: minimum }
+    settings: { ...state.settings, collectionMinimum: minimum },
   })),
   on(changeShowVersion, (state, { showPre, showAA, showStamp }) => ({
     ...state,
@@ -93,8 +93,8 @@ export const saveReducer = createReducer(
       ...state.settings,
       showPreRelease: showPre,
       showAACards: showAA,
-      showStampedCards: showStamp
-    }
+      showStampedCards: showStamp,
+    },
   })),
 
   on(importDeck, (state, { deck }) => {

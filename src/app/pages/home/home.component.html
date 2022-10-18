@@ -1,68 +1,293 @@
-<div
-  [ngClass]="{ hidden: mobileCollectionView }"
-  class="relative inline-flex h-[calc(100vh-50px)] w-full flex-row overflow-hidden"
->
-  <button
-    *ngIf="showAccordionButtons"
-    class="primary-background my-1 h-full w-6 border-y border-slate-200"
-    (click)="changeView('Deck')"
-  >
-    <span
-      class="h-full w-full rotate-180 text-center font-bold text-white"
-      [ngStyle]="{ writingMode: 'vertical-rl' }"
-    >{{ deckView ? "Hide Deck View" : "Show Deck View" }}</span
-    >
-  </button>
-  <div
-    *ngIf="deckView"
-    class="my-1 mr-1 h-full justify-center overflow-x-hidden overflow-y-scroll border border-slate-200"
-    [ngClass]="{ 'w-5/12': collectionView, 'w-full': !collectionView }"
-  >
-    <digimon-deck-view
-      [collectionView]="collectionView"
-      (hideStats)="hideStats = !hideStats"
-    ></digimon-deck-view>
-  </div>
+<div class="h-[calc(100vh-50px)] w-full overflow-y-scroll">
+  <div class="mx-auto flex max-w-7xl flex-col">
+    <div class="mb-5 w-full border-2 border-slate-500 p-1">
+      <div class="flex flex-row">
+        <h1 class="mb-2 w-full text-3xl font-extrabold text-white">
+          Digimon Forum
+        </h1>
+        <button
+          *ngIf="admins.includes(this.user?.uid ?? '')"
+          class="p-button-outlined p-button-rounded ml-auto mr-2"
+          icon="pi pi-plus"
+          pButton
+          pRipple
+          type="button"
+          (click)="newEntry()"
+        ></button>
+      </div>
 
-  <div
-    *ngIf="collectionView"
-    class="my-1 h-full max-h-full overflow-y-scroll"
-    [ngClass]="{ 'w-7/12': deckView, 'w-full': !deckView }"
-  >
-    <digimon-collection-view
-      class="h-full max-h-full"
-      [deckView]="deckView"
-    ></digimon-collection-view>
-  </div>
-  <button
-    *ngIf="showAccordionButtons"
-    class="primary-background my-1 h-full w-6 border-y border-slate-200"
-    (click)="changeView('Collection')"
-  >
-    <span
-      class="h-full w-full rotate-180 text-center font-bold text-white"
-      [ngStyle]="{ writingMode: 'vertical-rl' }"
-      >{{ collectionView ? "Hide Card View" : "Show Card View" }}</span
-    >
-  </button>
+      <div class="overflow-x-auto">
+        <div class="inline-block h-64 min-w-full overflow-auto py-2">
+          <table class="min-w-full">
+            <thead class="surface-card border-b">
+              <tr>
+                <th
+                  scope="col"
+                  class="px-6 py-2 text-left text-sm font-medium text-white"
+                >
+                  Title
+                </th>
+                <th
+                  scope="col"
+                  class="px-6 py-2 text-left text-sm font-medium text-white"
+                >
+                  Author
+                </th>
+                <th
+                  scope="col"
+                  class="px-6 py-2 text-left text-sm font-medium text-white"
+                >
+                  Date
+                </th>
+                <th
+                  *ngIf="admins.includes(this.user?.uid ?? '')"
+                  scope="col"
+                  class="px-6 py-2 text-left text-sm font-medium text-white"
+                ></th>
+              </tr>
+            </thead>
+            <tbody>
+              <ng-container *ngIf="admins.includes(this.user?.uid ?? '')">
+                <tr
+                  *ngFor="let blog of blogEntriesHidden"
+                  class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150"
+                >
+                  <td
+                    class="cursor-pointer whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                    (click)="open(blog)"
+                  >
+                    {{ blog.title }}
+                  </td>
+                  <td
+                    class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                  >
+                    {{ blog.author }}
+                  </td>
+                  <td
+                    class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                  >
+                    {{ blog.date | date: "MM/dd/yy" }}
+                  </td>
+                  <td
+                    *ngIf="admins.includes(this.user?.uid ?? '')"
+                    class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                  >
+                    <button
+                      class="p-button p-button-rounded ml-auto mr-2"
+                      icon="pi pi-check"
+                      pButton
+                      pRipple
+                      type="button"
+                      (click)="approve(blog)"
+                    ></button>
+                    <button
+                      class="p-button p-button-rounded ml-auto mr-2"
+                      icon="pi pi-pencil"
+                      pButton
+                      pRipple
+                      type="button"
+                      (click)="edit(blog)"
+                    ></button>
+                    <button
+                      class="p-button p-button-rounded ml-auto mr-2"
+                      icon="pi pi-trash"
+                      pButton
+                      pRipple
+                      type="button"
+                      (click)="delete(blog, $event)"
+                    ></button>
+                  </td>
+                </tr>
+              </ng-container>
+              <tr
+                *ngFor="let blog of blogEntries"
+                class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150"
+              >
+                <td
+                  class="cursor-pointer whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                  (click)="open(blog)"
+                >
+                  {{ blog.title }}
+                </td>
+                <td
+                  class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                >
+                  {{ blog.author }}
+                </td>
+                <td
+                  class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                >
+                  {{ blog.date | date: "dd.MM.yyyy" }}
+                </td>
+                <td
+                  *ngIf="admins.includes(this.user?.uid ?? '')"
+                  class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                >
+                  <button
+                    class="p-button p-button-rounded ml-auto mr-2"
+                    icon="pi pi-times"
+                    pButton
+                    pRipple
+                    type="button"
+                    (click)="hide(blog)"
+                  ></button>
+                  <button
+                    class="p-button p-button-rounded ml-auto mr-2"
+                    icon="pi pi-pencil"
+                    pButton
+                    pRipple
+                    type="button"
+                    (click)="edit(blog)"
+                  ></button>
+                  <button
+                    class="p-button p-button-rounded ml-auto mr-2"
+                    icon="pi pi-trash"
+                    pButton
+                    pRipple
+                    type="button"
+                    (click)="delete(blog, $event)"
+                  ></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
 
-  <digimon-deck-stats
-    class="fixed z-[300]"
-    [ngClass]="{ hidden: hideStats }"
-    [collectionView]="collectionView"
-    [showStats]="showStats"
-  ></digimon-deck-stats>
+    <!--div class="flex flex-row">
+      <div class="w-full w-1/2 border-2 border-slate-500 p-1">
+        Most used Cards (Filter by Color and Set)
+        <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+          <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+            <div class="overflow-hidden">
+              <table class="min-w-full">
+                <thead class="surface-card border-b">
+                  <tr>
+                    <th
+                      scope="col"
+                      class="px-6 py-2 text-left text-sm font-medium text-white"
+                    >
+                      #
+                    </th>
+                    <th
+                      scope="col"
+                      class="px-6 py-2 text-left text-sm font-medium text-white"
+                    >
+                      Card
+                    </th>
+                    <th
+                      scope="col"
+                      class="px-6 py-2 text-left text-sm font-medium text-white"
+                    >
+                      Number
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    *ngFor="let card of mostUsedCards; let i = index"
+                    class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150"
+                  >
+                    <td
+                      class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                    >
+                      {{ i }}
+                    </td>
+                    <td
+                      class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                    >
+                      {{ card.card.name }} {{ card.card.cardNumber }}
+                    </td>
+                    <td
+                      class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                    >
+                      {{ card.count }}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex w-full w-1/2 flex-col border-2 border-slate-500 p-1">
+        Median of DDTO (Filter by Color and Set)
+        <div>Digiegg 5</div>
+        <div>Digimon lv3 12</div>
+        <div>Digimon lv4 12</div>
+        <div>Digimon lv5 12</div>
+        <div>Digimon lv6 12</div>
+        <div>Digimon lv7 12</div>
+        <div>Tamer 12</div>
+        <div>Option 12</div>
+      </div>
+    </div-->
+
+    <div class="mb-5 w-full border-2 border-slate-500 p-1">
+      <h1 class="mb-2 w-full text-3xl font-extrabold text-white">
+        Digimon Deck Tierlist
+        <span
+          class="surface-card inline-block whitespace-nowrap rounded py-1.5 px-2.5 text-center align-baseline font-bold leading-none text-white"
+          >BT10</span
+        >
+      </h1>
+      <div
+        *ngFor="let key of tiers; let i = index"
+        class="flex w-full flex-row border border-black"
+      >
+        <div
+          [ngClass]="key.color"
+          class="text-black-outline w-24 text-center text-7xl font-black leading-[5.5rem] text-white"
+        >
+          {{ key.tier }}
+        </div>
+        <div class="flex h-full w-full flex-row flex-wrap bg-slate-800">
+          <div *ngFor="let deck of tierlist[i]">
+            <img
+              (click)="openCommunityWithSearch(deck.card)"
+              pTooltip="{{ deck.name }}"
+              tooltipPosition="top"
+              [lazyLoad]="deck.image"
+              [ngStyle]="{ border: '2px solid black', 'border-radius': '5px' }"
+              class="m-auto h-24 cursor-pointer"
+              defaultImage="assets/images/digimon-card-back.webp"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="h-24 w-full lg:hidden"></div>
 </div>
 
-<div
-  [ngClass]="{ hidden: !mobileCollectionView }"
-  class="h-[calc(100vh-58px)] overflow-y-scroll"
+<p-dialog
+  (close)="editView = !editView"
+  [(visible)]="editView"
+  [closable]="true"
+  [closeOnEscape]="true"
+  [modal]="true"
+  class="min-h-[95vw] min-w-[95vw]"
+  header="Edit Blog-Entry"
 >
-  <div class="h-full w-full">
-    <digimon-filter-and-search
-      [compact]="true"
-      class="w-100"
-    ></digimon-filter-and-search>
-    <digimon-card-list [showCount]="32"></digimon-card-list>
-  </div>
-</div>
+  <span class="mt-2 w-1/2">
+    <input
+      [(ngModel)]="currentTitle"
+      placeholder="Title:"
+      class="mb-3 h-8 w-full text-sm"
+      pInputText
+      type="text"
+    />
+  </span>
+  <quill-editor [(ngModel)]="currentQuill" format="object"> </quill-editor>
+  <button
+    class="p-button mt-3"
+    icon="pi pi-save"
+    pButton
+    pRipple
+    type="button"
+    label="Save"
+    (click)="save()"
+  ></button>
+</p-dialog>
