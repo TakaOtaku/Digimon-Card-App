@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - npm run install
+    - npm run build
+    - export DEPLOYPATH=/home/digimonc/public_html/
+    - /bin/cp -R dist/ $DEPLOYPATH
