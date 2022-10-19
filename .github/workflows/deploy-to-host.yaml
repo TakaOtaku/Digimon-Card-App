@@ -20,17 +20,17 @@ jobs:
         run: npm install
       - name: 🔨 Build Project
         run: npm run build
-      - name: 📂 Sync assets files
-        uses: SamKirkland/FTP-Deploy-Action@4.0.0
-        with:
-          server: ftp.digimoncard.app
-          port: 21
-          username: ${{ secrets.PROD_USER }}
-          password: ${{ secrets.PROD_PASSWORD }}
-          local-dir: ./dist/digimon-card-game-collector/assets/
-          server-dir: ./public_html/assets/
+#      - name: 📂 Sync assets files
+#        uses: SamKirkland/FTP-Deploy-Action@4.3.2
+#        with:
+#          server: ftp.digimoncard.app
+#          port: 21
+#          username: ${{ secrets.PROD_USER }}
+#          password: ${{ secrets.PROD_PASSWORD }}
+#          local-dir: ./dist/digimon-card-game-collector/assets/
+#          server-dir: ./public_html/assets/
       - name: 📂 Sync server files
-        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        uses: SamKirkland/FTP-Deploy-Action@4.3.2
         with:
           server: ftp.digimoncard.app
           port: 21
@@ -42,4 +42,5 @@ jobs:
             **/.git*/**
             **/node_modules/**
             **/assets/**
+            **/dist/digimon-card-game-collector/assets/**
           server-dir: ./public_html/
