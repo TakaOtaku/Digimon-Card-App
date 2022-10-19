@@ -1,4 +1,4 @@
-name: Deploy to FTP
+name: Deploy Assets to FTP
 'on':
   push:
     branches:
@@ -27,11 +27,9 @@ jobs:
           port: 21
           username: ${{ secrets.PROD_USER }}
           password: ${{ secrets.PROD_PASSWORD }}
-          local-dir: ./dist/
+          local-dir: ./dist/assets
           exclude: |
             **/.git*
             **/.git*/**
             **/node_modules/**
-            **/assets/**
           server-dir: ./public_html/
-          dangerous-clean-slate: true
