@@ -2,7 +2,7 @@
 /tmp
 /out-tsc
 /bazel-out
-/dist/digimon-card-game-collector/assets
+/dist
 
 # Node
 /node_modules
@@ -42,6 +42,6 @@ Thumbs.db
 /.vscode/
 
 # Firebase
-.firebase
+/.firebase
 *-debug.log
 .runtimeconfig.json
