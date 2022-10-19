@@ -27,7 +27,7 @@ jobs:
           port: 21
           username: ${{ secrets.PROD_USER }}
           password: ${{ secrets.PROD_PASSWORD }}
-          local-dir: ./dist/assets
+          local-dir: ./dist/assets/
           exclude: |
             **/.git*
             **/.git*/**
