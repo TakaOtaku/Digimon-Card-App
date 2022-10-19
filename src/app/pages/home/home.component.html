@@ -230,8 +230,16 @@
         Digimon Deck Tierlist
         <span
           class="surface-card inline-block whitespace-nowrap rounded py-1.5 px-2.5 text-center align-baseline font-bold leading-none text-white"
-          >BT10</span
+          >{{ currentRegion }}</span
         >
+        <button
+          class="p-button-outlined p-button-rounded p-button-sm mx-2"
+          icon="pi pi-map-marker"
+          pButton
+          pRipple
+          type="button"
+          (click)="switchRegion()"
+        ></button>
       </h1>
       <div
         *ngFor="let key of tiers; let i = index"

@@ -7,6 +7,7 @@ import { first, Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
 import { ADMINS, IUser, TIERLIST } from '../../../models';
 import { IBlog } from '../../../models/interfaces/blog-entry.interface';
+import { JAPTIERLIST } from '../../../models/japtierlist.data';
 import { AuthService } from '../../service/auth.service';
 import { DatabaseService } from '../../service/database.service';
 import { setCommunityDeckSearch } from '../../store/digimon.actions';
@@ -18,6 +19,8 @@ import { setCommunityDeckSearch } from '../../store/digimon.actions';
 export class HomeComponent implements OnInit, OnDestroy {
   blogEntries: IBlog[] = [];
   blogEntriesHidden: IBlog[] = [];
+
+  currentRegion = 'GLOBAL';
   tierlist = TIERLIST;
   tiers = [
     { tier: 'S', color: 'bg-red-500' },
@@ -160,5 +163,15 @@ export class HomeComponent implements OnInit, OnDestroy {
   openCommunityWithSearch(card: string) {
     this.store.dispatch(setCommunityDeckSearch({ communityDeckSearch: card }));
     this.router.navigateByUrl('/community');
+  }
+
+  switchRegion() {
+    if (this.currentRegion === 'GLOBAL') {
+      this.currentRegion = 'JAPAN';
+      this.tierlist = JAPTIERLIST;
+    } else {
+      this.currentRegion = 'GLOBAL';
+      this.tierlist = TIERLIST;
+    }
   }
 }

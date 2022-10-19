@@ -109,6 +109,11 @@ export const TIERLIST = [
       card: 'BT8-032',
       image: 'assets/images/cards/eng/BT8-032.webp',
     }, // Imperialdramon
+    {
+      name: 'Machinedramon',
+      card: 'EX1-073',
+      image: 'assets/images/cards/eng/EX1-073.webp',
+    },
   ],
   [
     {
