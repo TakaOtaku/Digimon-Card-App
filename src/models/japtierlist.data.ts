@@ -147,4 +147,5 @@ export const JAPTIERLIST = [
       image: 'assets/images/cards/jap/P-016.webp',
     }, // Diaboromon
   ],
+  [],
 ];

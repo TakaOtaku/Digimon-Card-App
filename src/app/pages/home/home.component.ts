@@ -27,6 +27,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     { tier: 'A', color: 'bg-orange-500' },
     { tier: 'B', color: 'bg-yellow-500' },
     { tier: 'C', color: 'bg-green-500' },
+    { tier: 'D', color: 'bg-blue-500' },
   ];
 
   user: IUser | null;
