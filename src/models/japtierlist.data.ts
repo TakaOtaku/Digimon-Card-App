@@ -9,7 +9,7 @@ export const JAPTIERLIST = [
       name: 'BlackWarGreymon (X Antibody)',
       card: 'BT11-074',
       image: 'assets/images/cards/jap/BT11-074.webp',
-    }, // Gaiomon
+    },
   ],
   [
     {
@@ -47,6 +47,16 @@ export const JAPTIERLIST = [
       card: 'EX3-045',
       image: 'assets/images/cards/jap/EX3-045.webp',
     }, // BloomLordmon
+    {
+      name: 'Galacticmon',
+      card: 'BT11-112',
+      image: 'assets/images/cards/jap/BT11-112.webp',
+    },
+    {
+      name: 'Ulforce',
+      card: 'BT11-111',
+      image: 'assets/images/cards/jap/BT11-111.webp',
+    },
     {
       name: 'Machinedramon',
       card: 'EX1-073',
@@ -114,6 +124,11 @@ export const JAPTIERLIST = [
       card: 'BT8-032',
       image: 'assets/images/cards/jap/BT8-032.webp',
     }, // Imperialdramon
+    {
+      name: 'Marsmon',
+      card: 'BT11-017',
+      image: 'assets/images/cards/jap/BT11-017.webp',
+    },
   ],
   [
     {
