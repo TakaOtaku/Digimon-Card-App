@@ -28,7 +28,7 @@ jobs:
           username: ${{ secrets.PROD_USER }}
           password: ${{ secrets.PROD_PASSWORD }}
           local-dir: ./dist/digimon-card-game-collector/assets/
-          server-dir: ./public_html/
+          server-dir: ./public_html/assets/
       - name: 📂 Sync server files
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
