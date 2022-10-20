@@ -7,6 +7,7 @@ import { first, Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
 import { ADMINS, IDeckCard, IUser, RIGHTS, TIERLIST } from '../../../models';
 import { IBlog } from '../../../models/interfaces/blog-entry.interface';
+import { JAPTIERLIST } from '../../../models/japtierlist.data';
 import { AuthService } from '../../service/auth.service';
 import { DatabaseService } from '../../service/database.service';
 import { setCommunityDeckSearch } from '../../store/digimon.actions';
@@ -22,12 +23,14 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   mostUsedCards: IDeckCard[] = [];
 
+  currentRegion = 'GLOBAL';
   tierlist = TIERLIST;
   tiers = [
     { tier: 'S', color: 'bg-red-500' },
     { tier: 'A', color: 'bg-orange-500' },
     { tier: 'B', color: 'bg-yellow-500' },
     { tier: 'C', color: 'bg-green-500' },
+    { tier: 'D', color: 'bg-blue-500' },
   ];
 
   user: IUser | null;
@@ -173,6 +176,15 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.router.navigateByUrl('/community');
   }
 
+  switchRegion() {
+    if (this.currentRegion === 'GLOBAL') {
+      this.currentRegion = 'JAPAN';
+      this.tierlist = JAPTIERLIST;
+    } else {
+      this.currentRegion = 'GLOBAL';
+      this.tierlist = TIERLIST;
+    }
+  }
   isAdmin(): boolean {
     return !!ADMINS.find((user) => {
       if (this.user?.uid === user.id) {

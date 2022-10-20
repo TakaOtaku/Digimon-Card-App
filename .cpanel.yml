@@ -1,6 +1,0 @@
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/digimonc/public_html/
-    - /bin/cp -R dist/digimon-card-game-collector/ $DEPLOYPATH
-    - /bin/cp -R src/assets/ $DEPLOYPATH
