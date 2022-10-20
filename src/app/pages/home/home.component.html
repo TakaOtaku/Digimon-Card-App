@@ -6,7 +6,7 @@
           Digimon Forum
         </h1>
         <button
-          *ngIf="admins.includes(this.user?.uid ?? '')"
+          *ngIf="showWrite()"
           class="p-button-outlined p-button-rounded ml-auto mr-2"
           icon="pi pi-plus"
           pButton
@@ -40,14 +40,14 @@
                   Date
                 </th>
                 <th
-                  *ngIf="admins.includes(this.user?.uid ?? '')"
+                  *ngIf="showButtons()"
                   scope="col"
                   class="px-6 py-2 text-left text-sm font-medium text-white"
                 ></th>
               </tr>
             </thead>
             <tbody>
-              <ng-container *ngIf="admins.includes(this.user?.uid ?? '')">
+              <ng-container *ngIf="showWrite()">
                 <tr
                   *ngFor="let blog of blogEntriesHidden"
                   class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150"
@@ -56,7 +56,7 @@
                     class="cursor-pointer whitespace-nowrap px-6 py-2 text-sm font-light text-white"
                     (click)="open(blog)"
                   >
-                    {{ blog.title }}
+                    <h2>{{ blog.title }}</h2>
                   </td>
                   <td
                     class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
@@ -66,21 +66,24 @@
                   <td
                     class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
                   >
-                    {{ blog.date | date: "MM/dd/yy" }}
+                    {{ blog.date | date: "dd.MM.yyyy" }}
                   </td>
                   <td
-                    *ngIf="admins.includes(this.user?.uid ?? '')"
+                    *ngIf="showButtons()"
                     class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
                   >
                     <button
+                      *ngIf="showButtons()"
+                      [disabled]="!isAdmin()"
                       class="p-button p-button-rounded ml-auto mr-2"
-                      icon="pi pi-check"
+                      icon="pi pi-times"
                       pButton
                       pRipple
                       type="button"
                       (click)="approve(blog)"
                     ></button>
                     <button
+                      *ngIf="showEdit(blog)"
                       class="p-button p-button-rounded ml-auto mr-2"
                       icon="pi pi-pencil"
                       pButton
@@ -89,6 +92,7 @@
                       (click)="edit(blog)"
                     ></button>
                     <button
+                      *ngIf="isAdmin()"
                       class="p-button p-button-rounded ml-auto mr-2"
                       icon="pi pi-trash"
                       pButton
@@ -120,18 +124,21 @@
                   {{ blog.date | date: "dd.MM.yyyy" }}
                 </td>
                 <td
-                  *ngIf="admins.includes(this.user?.uid ?? '')"
+                  *ngIf="showButtons()"
                   class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
                 >
                   <button
+                    *ngIf="showButtons()"
+                    [disabled]="!isAdmin()"
                     class="p-button p-button-rounded ml-auto mr-2"
-                    icon="pi pi-times"
+                    icon="pi pi-check"
                     pButton
                     pRipple
                     type="button"
                     (click)="hide(blog)"
                   ></button>
                   <button
+                    *ngIf="showEdit(blog)"
                     class="p-button p-button-rounded ml-auto mr-2"
                     icon="pi pi-pencil"
                     pButton
@@ -140,6 +147,7 @@
                     (click)="edit(blog)"
                   ></button>
                   <button
+                    *ngIf="isAdmin()"
                     class="p-button p-button-rounded ml-auto mr-2"
                     icon="pi pi-trash"
                     pButton
@@ -197,7 +205,7 @@
                     <td
                       class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
                     >
-                      {{ card.card.name }} {{ card.card.cardNumber }}
+                      {{ card.name }} {{ card.cardNumber }}
                     </td>
                     <td
                       class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"

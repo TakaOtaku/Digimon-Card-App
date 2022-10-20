@@ -5,5 +5,6 @@ export interface IBlog {
   text: any;
   approved: boolean;
   author: string;
+  authorId: string;
   category: 'Tournament Report';
 }

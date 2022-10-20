@@ -5,7 +5,7 @@ import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { first, Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
-import { ADMINS, IUser, TIERLIST } from '../../../models';
+import { ADMINS, IDeckCard, IUser, RIGHTS, TIERLIST } from '../../../models';
 import { IBlog } from '../../../models/interfaces/blog-entry.interface';
 import { AuthService } from '../../service/auth.service';
 import { DatabaseService } from '../../service/database.service';
@@ -16,8 +16,12 @@ import { setCommunityDeckSearch } from '../../store/digimon.actions';
   templateUrl: './home.component.html',
 })
 export class HomeComponent implements OnInit, OnDestroy {
+  allBlogEntries: IBlog[] = [];
   blogEntries: IBlog[] = [];
   blogEntriesHidden: IBlog[] = [];
+
+  mostUsedCards: IDeckCard[] = [];
+
   tierlist = TIERLIST;
   tiers = [
     { tier: 'S', color: 'bg-red-500' },
@@ -27,7 +31,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   ];
 
   user: IUser | null;
-  admins = ADMINS;
+  rights = RIGHTS;
 
   editView = false;
   currentBlog: IBlog;
@@ -60,6 +64,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         }
         const entries: IBlog[] = Object.values(value.val());
 
+        this.allBlogEntries = entries;
         this.blogEntriesHidden = entries.filter((entry) => !entry.approved);
         this.blogEntries = entries.filter((entry) => entry.approved);
       });
@@ -77,10 +82,16 @@ export class HomeComponent implements OnInit, OnDestroy {
       text: '',
       approved: false,
       author: this.user!.displayName,
+      authorId: this.user!.uid,
       category: 'Tournament Report',
     };
     this.blogEntriesHidden.push(newBlog);
     this.dbService.saveBlogEntry(newBlog);
+    this.messageService.add({
+      severity: 'success',
+      summary: 'Blog-Entry created!',
+      detail: 'New Blog-Entry was created successfully!',
+    });
   }
 
   open(blog: IBlog) {
@@ -160,5 +171,60 @@ export class HomeComponent implements OnInit, OnDestroy {
   openCommunityWithSearch(card: string) {
     this.store.dispatch(setCommunityDeckSearch({ communityDeckSearch: card }));
     this.router.navigateByUrl('/community');
+  }
+
+  isAdmin(): boolean {
+    return !!ADMINS.find((user) => {
+      if (this.user?.uid === user.id) {
+        return user.admin;
+      }
+      return false;
+    });
+  }
+
+  showWrite(): boolean {
+    if (this.isAdmin()) {
+      return true;
+    }
+
+    return !!ADMINS.find((user) => {
+      if (this.user?.uid === user.id) {
+        return user.writeBlog;
+      }
+      return false;
+    });
+  }
+
+  showButtons(): boolean {
+    if (this.isAdmin()) {
+      return true;
+    }
+
+    const writeRights = !!ADMINS.find((user) => {
+      if (this.user?.uid === user.id) {
+        return user.writeBlog;
+      }
+      return false;
+    });
+
+    const entryWritten = !!this.allBlogEntries.find(
+      (blog) => blog.authorId === this.user?.uid
+    );
+    return writeRights ? entryWritten : false;
+  }
+
+  showEdit(blog: IBlog): boolean {
+    if (this.isAdmin()) {
+      return true;
+    }
+
+    const writeRights = !!ADMINS.find((user) => {
+      if (this.user?.uid === user.id) {
+        return user.writeBlog;
+      }
+      return false;
+    });
+
+    return writeRights ? blog.authorId === this.user?.uid : false;
   }
 }
