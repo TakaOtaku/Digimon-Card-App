@@ -1,0 +1,71 @@
+<div class="flex flex-row">
+  <div class="w-full w-1/2 border-2 border-slate-500 p-1">
+    <h1 class="mb-2 w-full text-xl font-extrabold text-white">
+      Most used Cards in all Community Decks (Set Filter missing, Most Used
+      Digitama, Digimon, Tamer, Option)
+    </h1>
+    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+      <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+        <div class="overflow-hidden">
+          <table class="min-w-full">
+            <thead class="surface-card border-b">
+              <tr>
+                <th
+                  scope="col"
+                  class="px-6 py-2 text-left text-sm font-medium text-white"
+                >
+                  #
+                </th>
+                <th
+                  scope="col"
+                  class="px-6 py-2 text-left text-sm font-medium text-white"
+                >
+                  Card
+                </th>
+                <th
+                  scope="col"
+                  class="px-6 py-2 text-left text-sm font-medium text-white"
+                >
+                  % of Decks
+                </th>
+                <th
+                  scope="col"
+                  class="px-6 py-2 text-left text-sm font-medium text-white"
+                >
+                  # Played
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                *ngFor="let card of mostUsedCards; let i = index"
+                class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150"
+              >
+                <td
+                  class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                >
+                  {{ i }}
+                </td>
+                <td
+                  class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                >
+                  {{ card.name }} {{ card.cardNumber }}
+                </td>
+                <td
+                  class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                >
+                  {{ card.count }}
+                </td>
+                <td
+                  class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                >
+                  {{ card.count }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

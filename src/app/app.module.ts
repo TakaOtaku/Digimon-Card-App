@@ -65,6 +65,8 @@ import { DigimonEffects } from './store/digimon.effects';
 import * as DigimonCards from './store/reducers/digimon-card.reducers';
 import * as Digimon from './store/reducers/digimon.reducers';
 import * as Save from './store/reducers/save.reducer';
+import { TierlistComponent } from './components/molecules/tierlist/tierlist.component';
+import { DeckStatisticsComponent } from './components/molecules/deck-statistics/deck-statistics.component';
 
 @NgModule({
   declarations: [
@@ -108,6 +110,8 @@ import * as Save from './store/reducers/save.reducer';
     CollectionPageComponent,
     SettingsDialogComponent,
     BlogComponent,
+    TierlistComponent,
+    DeckStatisticsComponent,
   ],
   imports: [
     PrimeNGModule,
