@@ -266,7 +266,8 @@
     "color": "Red",
     "version": "Normal",
     "block": [
-      "00"
+      "00",
+      "01"
     ],
     "restriction": "-",
     "illustrator": "GOSSAN"
@@ -296,7 +297,8 @@
     "color": "Red",
     "version": "AA",
     "block": [
-      "00"
+      "00",
+      "01"
     ],
     "restriction": "-",
     "illustrator": "GOSSAN"
@@ -326,7 +328,8 @@
     "color": "Red",
     "version": "AA",
     "block": [
-      "00"
+      "00",
+      "01"
     ],
     "restriction": "-",
     "illustrator": "Takase"
@@ -356,7 +359,8 @@
     "color": "Red",
     "version": "AA",
     "block": [
-      "00"
+      "00",
+      "01"
     ],
     "restriction": "-",
     "illustrator": "Takase"
