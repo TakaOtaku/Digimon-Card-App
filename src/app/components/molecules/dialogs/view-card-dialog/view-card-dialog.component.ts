@@ -58,7 +58,7 @@ export class ViewCardDialogComponent implements OnInit, OnChanges {
     this.color = this.colorMap.get(card.color)!;
     this.backgroundColor = this.color;
     this.version = this.versionMap.get(card.version)!;
-    this.png = this.getPNG(card.cardImage);
+    this.png = card.cardImage;
     this.imageAlt = card.cardNumber + ' ' + card.name;
     this.type = card?.cardType;
   }

@@ -48,12 +48,12 @@ export const JAPTIERLIST = [
       image: 'assets/images/cards/jap/EX3-045.webp',
     }, // BloomLordmon
     {
-      name: 'Galacticmon',
+      name: 'Ulforce',
       card: 'BT11-112',
       image: 'assets/images/cards/jap/BT11-112.webp',
     },
     {
-      name: 'Ulforce',
+      name: 'Galacticmon',
       card: 'BT11-111',
       image: 'assets/images/cards/jap/BT11-111.webp',
     },
