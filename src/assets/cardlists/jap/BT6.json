@@ -480,6 +480,36 @@
     "illustrator": "sasasi"
   },
   {
+    "id": "BT6-009_P1",
+    "name": "Huckmon",
+    "cardImage": "assets/images/cards/jap/BT6-009_P1.webp",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Data",
+    "type": "Mini Dragon",
+    "rarity": "R",
+    "cardNumber": "BT6-009",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Play] Reveal the top 5 cards of your deck. Add up to 2 Digimon cards with [Huckmon], [Jesmon], or [Sistermon] in their names among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Digimon Card Game Royal Knights Binder Set [PB-13]",
+    "color": "Red",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "-",
+    "illustrator": "Takase"
+  },
+  {
     "id": "BT6-010",
     "name": "Flamemon",
     "cardImage": "assets/images/cards/jap/BT6-010.webp",

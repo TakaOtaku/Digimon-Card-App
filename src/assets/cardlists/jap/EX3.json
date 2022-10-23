@@ -1054,9 +1054,9 @@
     "restriction": "-"
 	},
 	{
-		"id": "EX3-025",
+		"id": "EX3-025_P1",
 		"name": "Azulongmon",
-		"cardImage": "assets/images/cards/jap/EX3-025.webp",
+		"cardImage": "assets/images/cards/jap/EX3-025_P1.webp",
 		"cardType": "Digimon",
 		"dp": "12000",
 		"playCost": "12",
