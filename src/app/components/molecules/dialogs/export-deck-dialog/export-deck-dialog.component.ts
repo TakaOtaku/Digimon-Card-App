@@ -15,7 +15,6 @@ import { ICard, IDeck } from '../../../../../models';
 import {
   compareIDs,
   formatId,
-  getPNG,
   mapToDeckCards,
 } from '../../../../functions/digimon-card.functions';
 import { selectAllCards } from '../../../../store/digimon.selectors';
@@ -213,7 +212,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
         compareIDs(card.id, search.id)
       );
       imgs.push({
-        uri: getPNG(fullCard!.cardImage),
+        uri: fullCard!.cardImage,
         x: x,
         y: y,
         sw: 64,
@@ -312,7 +311,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
       );
       for (let i = 1; i <= card.count; i++) {
         imgs.push({
-          uri: getPNG(fullCard!.cardImage),
+          uri: fullCard!.cardImage,
           x: x,
           y: y,
           sw: 744,
