@@ -1598,35 +1598,6 @@
     "illustrator": "tessy"
   },
   {
-    "id": "P-041",
-    "name": "Guilmon",
-    "cardImage": "assets/images/cards/jap/P-041.webp",
-    "cardType": "Digimon",
-    "dp": "2000",
-    "playCost": "3",
-    "digivolveCost1": "0 from Lv.2",
-    "digivolveCost2": "-",
-    "cardLv": "Lv.3",
-    "form": "Rookie",
-    "attribute": "Virus",
-    "type": "Reptile",
-    "rarity": "P",
-    "cardNumber": "P-041",
-    "digiXros": "-",
-    "specialDigivolve": "-",
-    "dnaDigivolve": "-",
-    "effect": "[When Attacking] Trigger ＜Draw 1＞. (Draw 1 card from your deck.)",
-    "digivolveEffect": "-",
-    "securityEffect": "-",
-    "color": "Red",
-    "version": "Normal",
-    "block": [
-      "01"
-    ],
-    "restriction": "-",
-    "illustrator": "tessy"
-  },
-  {
     "id": "P-041_P1",
     "name": "Guilmon",
     "cardImage": "assets/images/cards/jap/P-041_P1.webp",
