@@ -1,16 +1,18 @@
-<quill-view
+<ckeditor
   *ngIf="authService.userData?.uid !== 'S3rWXPtCYRN8vSrxY3qE6aeewy43'"
-  [content]="content"
-  [preserveWhitespace]="true"
-  format="object"
-></quill-view>
-
-<quill-editor
-  *ngIf="authService.userData?.uid === 'S3rWXPtCYRN8vSrxY3qE6aeewy43'"
+  [editor]="Editor"
+  class="text-white"
+  [disabled]="true"
   [(ngModel)]="content"
-  format="object"
->
-</quill-editor>
+></ckeditor>
+
+<ckeditor
+  *ngIf="authService.userData?.uid === 'S3rWXPtCYRN8vSrxY3qE6aeewy43'"
+  [editor]="Editor"
+  class="text-white"
+  [(ngModel)]="content"
+  (ready)="onReady($event)"
+></ckeditor>
 
 <button
   *ngIf="authService.userData?.uid === 'S3rWXPtCYRN8vSrxY3qE6aeewy43'"

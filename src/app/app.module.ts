@@ -1,5 +1,5 @@
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
-import {HashLocationStrategy, LocationStrategy} from '@angular/common';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire/compat';
@@ -9,6 +9,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -25,6 +26,9 @@ import { SortButtonsComponent } from './components/atoms/sort-buttons/sort-butto
 import { ChartContainersComponent } from './components/molecules/chart-containers/chart-containers.component';
 import { CollectionCircleComponent } from './components/molecules/collection-circle/collection-circle.component';
 import { CollectionComponent } from './components/molecules/collection/collection.component';
+import { ColorSpreadComponent } from './components/molecules/color-spread/color-spread.component';
+import { DdtoSpreadComponent } from './components/molecules/ddto-spread/ddto-spread.component';
+import { DeckStatisticsComponent } from './components/molecules/deck-statistics/deck-statistics.component';
 import { DeckCardComponent } from './components/molecules/deck/deck-card/deck-card.component';
 import { DeckMetadataComponent } from './components/molecules/deck/deck-metadata/deck-metadata.component';
 import { DeckStatsComponent } from './components/molecules/deck/deck-stats/deck-stats.component';
@@ -38,9 +42,11 @@ import { ImportDeckDialogComponent } from './components/molecules/dialogs/import
 import { SettingsDialogComponent } from './components/molecules/dialogs/settings-dialog/settings-dialog.component';
 import { ViewCardDialogComponent } from './components/molecules/dialogs/view-card-dialog/view-card-dialog.component';
 import { FullCardComponent } from './components/molecules/full-card/full-card.component';
+import { LevelSpreadComponent } from './components/molecules/level-spread/level-spread.component';
 import { MultiButtonsComponent } from './components/molecules/multi-buttons/multi-buttons.component';
 import { RangeSliderComponent } from './components/molecules/range-slider/range-slider.component';
 import { SearchComponent } from './components/molecules/search/search.component';
+import { TierlistComponent } from './components/molecules/tierlist/tierlist.component';
 import { UserStatsComponent } from './components/molecules/user-stats/user-stats.component';
 import { CardListComponent } from './components/organisms/card-list/card-list.component';
 import { CollectionViewComponent } from './components/organisms/collection-view/collection-view.component';
@@ -65,11 +71,6 @@ import { DigimonEffects } from './store/digimon.effects';
 import * as DigimonCards from './store/reducers/digimon-card.reducers';
 import * as Digimon from './store/reducers/digimon.reducers';
 import * as Save from './store/reducers/save.reducer';
-import { TierlistComponent } from './components/molecules/tierlist/tierlist.component';
-import { DeckStatisticsComponent } from './components/molecules/deck-statistics/deck-statistics.component';
-import { ColorSpreadComponent } from './components/molecules/color-spread/color-spread.component';
-import { LevelSpreadComponent } from './components/molecules/level-spread/level-spread.component';
-import { DdtoSpreadComponent } from './components/molecules/ddto-spread/ddto-spread.component';
 
 @NgModule({
   declarations: [
@@ -120,6 +121,8 @@ import { DdtoSpreadComponent } from './components/molecules/ddto-spread/ddto-spr
     DdtoSpreadComponent,
   ],
   imports: [
+    CKEditorModule,
+
     PrimeNGModule,
     AppRoutingModule,
     FormsModule,

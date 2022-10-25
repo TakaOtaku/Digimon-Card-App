@@ -1,10 +1,14 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DataSnapshot } from '@angular/fire/compat/database/interfaces';
 import { ActivatedRoute, Router } from '@angular/router';
+
+// @ts-ignore
+import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 import { MessageService } from 'primeng/api';
 import { filter, first, Subject, takeUntil } from 'rxjs';
+import { Base64Adapter } from 'src/app/functions/base64-adapter';
 import { ADMINS, IUser } from '../../../models';
-import { IBlog } from '../../../models/interfaces/blog-entry.interface';
+import { IBlogWithText } from '../../../models/interfaces/blog-entry.interface';
 import { AuthService } from '../../service/auth.service';
 import { DatabaseService } from '../../service/database.service';
 
@@ -14,10 +18,12 @@ import { DatabaseService } from '../../service/database.service';
   styleUrls: ['./blog.component.scss'],
 })
 export class BlogComponent implements OnInit, OnDestroy {
-  blog: IBlog;
+  public Editor = DecoupledEditor;
+
+  blog: IBlogWithText;
 
   title = '';
-  content = [];
+  content: any;
   author = '';
   date: Date;
   category = '';
@@ -63,7 +69,7 @@ export class BlogComponent implements OnInit, OnDestroy {
               return;
             }
 
-            const newBlog: IBlog = value.val();
+            const newBlog = value.val();
             this.blog = newBlog;
             this.title = newBlog.title;
             this.content = newBlog.text;
@@ -87,7 +93,7 @@ export class BlogComponent implements OnInit, OnDestroy {
     });
   }
 
-  showEdit(blog: IBlog): boolean {
+  showEdit(blog: IBlogWithText): boolean {
     if (this.isAdmin()) {
       return true;
     }
@@ -108,7 +114,7 @@ export class BlogComponent implements OnInit, OnDestroy {
       text: this.content,
       title: this.title,
       date: new Date(),
-    } as IBlog;
+    } as IBlogWithText;
 
     this.databaseService.saveBlogEntry(newBlog);
     this.messageService.add({
@@ -116,5 +122,20 @@ export class BlogComponent implements OnInit, OnDestroy {
       summary: 'Blog-Entry saved!',
       detail: 'The Blog-Entry was saved successfully!',
     });
+  }
+
+  public onReady(editor: any) {
+    editor.ui
+      .getEditableElement()
+      .parentElement.insertBefore(
+        editor.ui.view.toolbar.element,
+        editor.ui.getEditableElement()
+      );
+
+    editor.plugins.get('FileRepository').createUploadAdapter = (
+      loader: any
+    ) => {
+      return new Base64Adapter(loader);
+    };
   }
 }

@@ -1,5 +1,5 @@
 <div *ngIf="!edit" class="w-full">
-  <div class="mx-auto h-[calc(100vh-150px)] max-w-7xl">
+  <div class="mx-auto h-[calc(100vh-50px)] max-w-7xl overflow-y-scroll">
     <div class="relative">
       <h1 class="mb-2 w-full text-center text-3xl font-extrabold text-white">
         {{ title }}
@@ -28,19 +28,22 @@
       >
     </div>
 
-    <quill-view
+    <ckeditor
+      [editor]="Editor"
       class="text-white"
-      [content]="content"
-      [preserveWhitespace]="true"
-      format="object"
-    ></quill-view>
+      [(ngModel)]="content"
+      [disabled]="true"
+    ></ckeditor>
 
     <div class="h-24 w-full lg:hidden"></div>
   </div>
 </div>
 
-<div *ngIf="edit" class="mx-auto h-[calc(100vh-200px)] max-w-7xl">
-  <div class="flex-rowm t-5 flex">
+<div
+  *ngIf="edit"
+  class="mx-auto h-[calc(100vh-50px)] max-w-7xl overflow-y-scroll"
+>
+  <div class="t-5 flex flex-row">
     <button
       class="p-button-outlined p-button-rounded mr-2"
       icon="pi pi-arrow-left"
@@ -69,7 +72,13 @@
     ></button>
   </div>
 
-  <quill-editor [(ngModel)]="content" format="object"> </quill-editor>
+  <ckeditor
+    [editor]="Editor"
+    class="text-white"
+    [(ngModel)]="content"
+    (ready)="onReady($event)"
+  ></ckeditor>
+
   <button
     class="p-button mt-3"
     icon="pi pi-save"

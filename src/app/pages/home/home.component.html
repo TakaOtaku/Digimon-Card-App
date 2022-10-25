@@ -83,15 +83,6 @@
                       (click)="approve(blog)"
                     ></button>
                     <button
-                      *ngIf="showEdit(blog)"
-                      class="p-button p-button-rounded ml-auto mr-2"
-                      icon="pi pi-pencil"
-                      pButton
-                      pRipple
-                      type="button"
-                      (click)="edit(blog)"
-                    ></button>
-                    <button
                       *ngIf="isAdmin()"
                       class="p-button p-button-rounded ml-auto mr-2"
                       icon="pi pi-trash"
@@ -138,15 +129,6 @@
                     (click)="hide(blog)"
                   ></button>
                   <button
-                    *ngIf="showEdit(blog)"
-                    class="p-button p-button-rounded ml-auto mr-2"
-                    icon="pi pi-pencil"
-                    pButton
-                    pRipple
-                    type="button"
-                    (click)="edit(blog)"
-                  ></button>
-                  <button
                     *ngIf="isAdmin()"
                     class="p-button p-button-rounded ml-auto mr-2"
                     icon="pi pi-trash"
@@ -169,33 +151,3 @@
   </div>
   <div class="h-24 w-full lg:hidden"></div>
 </div>
-
-<p-dialog
-  (close)="editView = !editView"
-  [(visible)]="editView"
-  [closable]="true"
-  [closeOnEscape]="true"
-  [modal]="true"
-  class="min-h-[95vw] min-w-[95vw]"
-  header="Edit Blog-Entry"
->
-  <span class="mt-2 w-1/2">
-    <input
-      [(ngModel)]="currentTitle"
-      placeholder="Title:"
-      class="mb-3 h-8 w-full text-sm"
-      pInputText
-      type="text"
-    />
-  </span>
-  <quill-editor [(ngModel)]="currentQuill" format="object"> </quill-editor>
-  <button
-    class="p-button mt-3"
-    icon="pi pi-save"
-    pButton
-    pRipple
-    type="button"
-    label="Save"
-    (click)="save()"
-  ></button>
-</p-dialog>

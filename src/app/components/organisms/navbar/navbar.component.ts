@@ -1,10 +1,11 @@
-import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import {
-  ActivatedRoute,
-  NavigationEnd,
-  Router,
-  UrlSegment,
-} from '@angular/router';
+  Component,
+  EventEmitter,
+  HostListener,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { IUser } from '../../../../models';
 import { AuthService } from '../../../service/auth.service';
@@ -19,6 +20,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
   settingsDialog = false;
   creditsDisplay = false;
   showChangelog = false;
+
+  loadChangelog = new EventEmitter<boolean>();
 
   user: IUser | null;
   showCardList = false;
@@ -64,5 +67,11 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   changeMenu() {
     this.megamenu = !this.megamenu;
+  }
+
+  showChangelogModal() {
+    this.showChangelog = true;
+    this.megamenu = false;
+    this.loadChangelog.emit(true);
   }
 }

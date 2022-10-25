@@ -4,7 +4,10 @@ import { get, getDatabase, ref, remove, update } from '@angular/fire/database';
 import { BehaviorSubject, first, from, Observable, Subject } from 'rxjs';
 import { IDeck, ISave, IUser } from '../../models';
 import { CARDSET } from '../../models/card-set.enum';
-import { IBlog } from '../../models/interfaces/blog-entry.interface';
+import {
+  IBlog,
+  IBlogWithText,
+} from '../../models/interfaces/blog-entry.interface';
 import { emptyDeck } from '../store/reducers/digimon.reducers';
 import { emptySettings } from '../store/reducers/save.reducer';
 
@@ -201,7 +204,7 @@ export class DatabaseService {
 
   saveChangelog(changelog: any) {
     const db = getDatabase();
-    return update(ref(db, 'blog/changelog'), changelog);
+    return update(ref(db, 'blog/changelog-dev'), { text: changelog });
   }
 
   loadBlogEntries(): Observable<any> {
@@ -211,12 +214,22 @@ export class DatabaseService {
 
   loadBlogEntry(blogId: string): Observable<any> {
     const db = getDatabase();
-    return from(get(ref(db, 'blog/entries/' + blogId)));
+    return from(get(ref(db, 'blog/text/' + blogId)));
   }
 
-  saveBlogEntry(blog: IBlog) {
+  saveBlogEntry(toSave: IBlogWithText) {
     const db = getDatabase();
-    return update(ref(db, 'blog/entries/' + blog.uid), blog);
+    const blog: IBlog = {
+      uid: toSave.uid,
+      date: toSave.date,
+      title: toSave.title,
+      approved: toSave.approved,
+      author: toSave.author,
+      authorId: toSave.authorId,
+      category: 'Tournament Report',
+    };
+    update(ref(db, 'blog/entries/' + blog.uid), blog);
+    update(ref(db, 'blog/text/' + blog.uid), toSave);
   }
 
   deleteBlogEntry(blogId: string) {

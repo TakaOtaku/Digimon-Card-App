@@ -142,7 +142,7 @@
                   Miscellaneous
                 </p>
                 <a
-                  (click)="this.showChangelog = true; this.megamenu = false"
+                  (click)="showChangelogModal()"
                   aria-current="true"
                   class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
                   ><i class="pi pi-info-circle mr-2"></i>Changelog</a
@@ -232,7 +232,9 @@
   styleClass="h-screen w-screen lg:max-h-[600px] lg:max-w-3xl"
   header="Changelog"
 >
-  <digimon-changelog-dialog></digimon-changelog-dialog>
+  <digimon-changelog-dialog
+    [loadChangelog]="loadChangelog"
+  ></digimon-changelog-dialog>
 </p-dialog>
 
 <p-dialog

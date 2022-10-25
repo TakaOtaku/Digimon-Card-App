@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Store } from '@ngrx/store';
 import { MessageService } from 'primeng/api';
@@ -32,6 +32,8 @@ export class AppComponent {
   noSaveDialog = false;
   retryDialog = false;
   showChangelog = false;
+
+  loadChangelog = new EventEmitter<boolean>();
 
   constructor(
     private store: Store,
@@ -104,7 +106,9 @@ export class AppComponent {
         this.hide = false;
         let save = saveOrNull as ISave;
         this.store.dispatch(loadSave({ save }));
-        this.showChangelog = save.version !== emptySave.version;
+        if (save.version !== emptySave.version) {
+          this.showChangelogModal();
+        }
         this.store.dispatch(
           setSave({ save: { ...save, version: emptySave.version } })
         );
@@ -184,5 +188,10 @@ export class AppComponent {
     this.noSaveDialog = false;
     this.retryDialog = false;
     this.store.dispatch(setSave({ save: emptySave }));
+  }
+
+  showChangelogModal() {
+    this.showChangelog = true;
+    this.loadChangelog.emit(true);
   }
 }

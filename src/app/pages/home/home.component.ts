@@ -6,7 +6,7 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 import { first, Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
 import { ADMINS, IUser, RIGHTS } from '../../../models';
-import { IBlog } from '../../../models/interfaces/blog-entry.interface';
+import { IBlogWithText } from '../../../models/interfaces/blog-entry.interface';
 import { AuthService } from '../../service/auth.service';
 import { DatabaseService } from '../../service/database.service';
 
@@ -15,15 +15,15 @@ import { DatabaseService } from '../../service/database.service';
   templateUrl: './home.component.html',
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  allBlogEntries: IBlog[] = [];
-  blogEntries: IBlog[] = [];
-  blogEntriesHidden: IBlog[] = [];
+  allBlogEntries: IBlogWithText[] = [];
+  blogEntries: IBlogWithText[] = [];
+  blogEntriesHidden: IBlogWithText[] = [];
 
   user: IUser | null;
   rights = RIGHTS;
 
   editView = false;
-  currentBlog: IBlog;
+  currentBlog: IBlogWithText;
   currentTitle = 'Empty Title';
   currentQuill: any[] = [];
 
@@ -51,7 +51,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         if (!value) {
           return;
         }
-        const entries: IBlog[] = Object.values(value.val());
+        const entries: IBlogWithText[] = Object.values(value.val());
 
         this.allBlogEntries = entries;
         this.blogEntriesHidden = entries.filter((entry) => !entry.approved);
@@ -64,11 +64,11 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   newEntry() {
-    const newBlog: IBlog = {
+    const newBlog: IBlogWithText = {
       uid: uuid.v4(),
       date: new Date(),
       title: 'Empty Entry',
-      text: '',
+      text: '<p>Hello World!</p>',
       approved: false,
       author: this.user!.displayName,
       authorId: this.user!.uid,
@@ -83,11 +83,11 @@ export class HomeComponent implements OnInit, OnDestroy {
     });
   }
 
-  open(blog: IBlog) {
+  open(blog: IBlogWithText) {
     this.router.navigateByUrl('blog/' + blog.uid);
   }
 
-  approve(blog: IBlog) {
+  approve(blog: IBlogWithText) {
     blog.approved = true;
     this.blogEntriesHidden = this.blogEntriesHidden.filter(
       (entry) => entry.uid !== blog.uid
@@ -99,7 +99,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.dbService.saveBlogEntry(blog);
   }
 
-  hide(blog: IBlog) {
+  hide(blog: IBlogWithText) {
     blog.approved = false;
     this.blogEntriesHidden = this.blogEntriesHidden.filter(
       (entry) => entry.uid !== blog.uid
@@ -111,14 +111,14 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.dbService.saveBlogEntry(blog);
   }
 
-  edit(blog: IBlog) {
+  edit(blog: IBlogWithText) {
     this.editView = true;
     this.currentQuill = blog.text;
     this.currentTitle = blog.title;
     this.currentBlog = blog;
   }
 
-  delete(blog: IBlog, event: any) {
+  delete(blog: IBlogWithText, event: any) {
     this.confirmationService.confirm({
       target: event!.target!,
       message:
@@ -140,21 +140,6 @@ export class HomeComponent implements OnInit, OnDestroy {
       },
       reject: () => {},
     });
-  }
-
-  save() {
-    this.currentBlog.title = this.currentTitle;
-    this.currentBlog.text = this.currentQuill;
-    this.currentBlog.date = new Date();
-
-    this.dbService.saveBlogEntry(this.currentBlog);
-
-    this.messageService.add({
-      severity: 'success',
-      summary: 'Blog-Entry saved!',
-      detail: 'The Blog-Entry was saved successfully!',
-    });
-    this.editView = false;
   }
 
   isAdmin(): boolean {
@@ -197,7 +182,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     return writeRights ? entryWritten : false;
   }
 
-  showEdit(blog: IBlog): boolean {
+  showEdit(blog: IBlogWithText): boolean {
     if (this.isAdmin()) {
       return true;
     }
