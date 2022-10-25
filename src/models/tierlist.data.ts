@@ -11,16 +11,6 @@ const testTierList = [
       card: 'BT9-031',
       image: 'assets/images/cards/eng/BT9-031.webp',
     },
-    {
-      name: 'Gaiomon',
-      card: 'BT9-068',
-      image: 'assets/images/cards/eng/BT9-068.webp',
-    },
-    {
-      name: 'Alphamon',
-      card: 'BT9-111',
-      image: 'assets/images/cards/eng/BT9-111.webp',
-    },
   ],
   //A
   [
@@ -63,6 +53,16 @@ const testTierList = [
       name: 'Blue Flare',
       card: 'BT10-026',
       image: 'assets/images/cards/eng/BT10-026.webp',
+    },
+    {
+      name: 'Gaiomon',
+      card: 'BT9-068',
+      image: 'assets/images/cards/eng/BT9-068.webp',
+    },
+    {
+      name: 'Alphamon',
+      card: 'BT9-111',
+      image: 'assets/images/cards/eng/BT9-111.webp',
     },
   ],
   //B

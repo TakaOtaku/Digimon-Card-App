@@ -5,12 +5,10 @@ import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { first, Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
-import { ADMINS, IDeckCard, IUser, RIGHTS, TIERLIST } from '../../../models';
+import { ADMINS, IUser, RIGHTS } from '../../../models';
 import { IBlog } from '../../../models/interfaces/blog-entry.interface';
-import { JAPTIERLIST } from '../../../models/japtierlist.data';
 import { AuthService } from '../../service/auth.service';
 import { DatabaseService } from '../../service/database.service';
-import { setCommunityDeckSearch } from '../../store/digimon.actions';
 
 @Component({
   selector: 'digimon-home',
@@ -20,18 +18,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   allBlogEntries: IBlog[] = [];
   blogEntries: IBlog[] = [];
   blogEntriesHidden: IBlog[] = [];
-
-  mostUsedCards: IDeckCard[] = [];
-
-  currentRegion = 'GLOBAL';
-  tierlist = TIERLIST;
-  tiers = [
-    { tier: 'S', color: 'bg-red-500' },
-    { tier: 'A', color: 'bg-orange-500' },
-    { tier: 'B', color: 'bg-yellow-500' },
-    { tier: 'C', color: 'bg-green-500' },
-    { tier: 'D', color: 'bg-blue-500' },
-  ];
 
   user: IUser | null;
   rights = RIGHTS;
@@ -171,20 +157,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.editView = false;
   }
 
-  openCommunityWithSearch(card: string) {
-    this.store.dispatch(setCommunityDeckSearch({ communityDeckSearch: card }));
-    this.router.navigateByUrl('/community');
-  }
-
-  switchRegion() {
-    if (this.currentRegion === 'GLOBAL') {
-      this.currentRegion = 'JAPAN';
-      this.tierlist = JAPTIERLIST;
-    } else {
-      this.currentRegion = 'GLOBAL';
-      this.tierlist = TIERLIST;
-    }
-  }
   isAdmin(): boolean {
     return !!ADMINS.find((user) => {
       if (this.user?.uid === user.id) {

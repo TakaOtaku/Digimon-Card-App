@@ -3,7 +3,16 @@
   <p-table
     [(contextMenuSelection)]="selectedDeck"
     [contextMenu]="table"
-    [globalFilterFields]="['color.name', 'title', 'tags', '', 'user']"
+    [globalFilterFields]="[
+      'color.name',
+      'title',
+      'tags',
+      '',
+      ' ',
+      '',
+      '',
+      'user'
+    ]"
     [scrollHeight]="'calc(100vh - 48px)'"
     [scrollable]="true"
     [showCurrentPageReport]="true"
@@ -46,6 +55,9 @@
         </th>
         <th class="max-w-[400px] p-0 text-center">Tags</th>
         <th class="max-w-[400px] p-0 text-center">Description</th>
+        <th class="max-w-[400px] p-0 text-center">Color</th>
+        <th class="max-w-[400px] p-0 text-center">Level</th>
+        <th class="max-w-[400px] p-0 text-center">Card-Types</th>
       </tr>
     </ng-template>
     <ng-template let-deck pTemplate="body">
@@ -66,8 +78,31 @@
         <td class="max-w-[400px] p-0 lg:max-w-[100%]">
           <p-chip *ngFor="let tag of deck.tags" label="{{ tag.name }}"></p-chip>
         </td>
-        <td class="max-w-[400px] truncate p-0 lg:max-w-[100%]">
-          {{ deck.description }}
+        <td class="max-w-[400px] overflow-hidden whitespace-nowrap p-0">
+          <p class="animate-scroll">
+            {{ deck.description }}
+          </p>
+        </td>
+        <td class="max-w-[400px] p-0">
+          <digimon-color-spread
+            class="mx-0.5 w-full"
+            [deck]="deck"
+            [allCards]="allCards"
+          ></digimon-color-spread>
+        </td>
+        <td class="max-w-[400px] p-0">
+          <digimon-level-spread
+            class="mx-0.5 w-full"
+            [deck]="deck"
+            [allCards]="allCards"
+          ></digimon-level-spread>
+        </td>
+        <td class="max-w-[400px] p-0">
+          <digimon-ddto-spread
+            class="mx-0.5 w-full"
+            [deck]="deck"
+            [allCards]="allCards"
+          ></digimon-ddto-spread>
         </td>
       </tr>
     </ng-template>

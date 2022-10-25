@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import firebase from 'firebase/compat';
+import { MessageService } from 'primeng/api';
 import { AuthService } from '../../../../service/auth.service';
 import { DatabaseService } from '../../../../service/database.service';
 import DataSnapshot = firebase.database.DataSnapshot;
@@ -20,7 +21,8 @@ export class ChangelogDialogComponent implements OnInit {
 
   constructor(
     public authService: AuthService,
-    private dbService: DatabaseService
+    private dbService: DatabaseService,
+    private messageService: MessageService
   ) {}
 
   ngOnInit() {
@@ -39,5 +41,11 @@ export class ChangelogDialogComponent implements OnInit {
 
   save() {
     this.dbService.saveChangelog(this.content);
+
+    this.messageService.add({
+      severity: 'success',
+      summary: 'Changelog saved!',
+      detail: 'The Changelog was saved successfully!',
+    });
   }
 }

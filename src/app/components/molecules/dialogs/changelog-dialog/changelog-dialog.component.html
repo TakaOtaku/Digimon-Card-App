@@ -1,4 +1,5 @@
 <quill-view
+  *ngIf="authService.userData?.uid !== 'S3rWXPtCYRN8vSrxY3qE6aeewy43'"
   [content]="content"
   [preserveWhitespace]="true"
   format="object"
@@ -12,8 +13,12 @@
 </quill-editor>
 
 <button
-  (click)="save()"
   *ngIf="authService.userData?.uid === 'S3rWXPtCYRN8vSrxY3qE6aeewy43'"
->
-  Save
-</button>
+  class="p-button mt-3"
+  icon="pi pi-save"
+  pButton
+  pRipple
+  type="button"
+  label="Save"
+  (click)="save()"
+></button>
