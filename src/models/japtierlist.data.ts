@@ -1,56 +1,61 @@
 export const JAPTIERLIST = [
+  //S
   [
     {
       name: 'Xros Heart',
       card: 'BT11-019',
       image: 'assets/images/cards/jap/BT11-019.webp',
-    }, // Xros Heart
+    },
     {
       name: 'BlackWarGreymon (X Antibody)',
       card: 'BT11-074',
       image: 'assets/images/cards/jap/BT11-074.webp',
     },
   ],
+  //A
   [
-    {
-      name: 'WarGreymon X',
-      card: 'BT9-016',
-      image: 'assets/images/cards/jap/BT9-016.webp',
-    }, // WarGreymon
-    {
-      name: 'Yellow Hybrid',
-      card: 'BT7-038',
-      image: 'assets/images/cards/jap/BT7-038.webp',
-    }, // Yellow Hybrid
-    {
-      name: 'Jesmon',
-      card: 'ST12-10',
-      image: 'assets/images/cards/jap/ST12-10.webp',
-    }, // Jesmon
     {
       name: 'Blue Flare',
       card: 'BT10-026',
       image: 'assets/images/cards/jap/BT10-026.webp',
-    }, // Blue Flare
+    },
     {
-      name: 'MetalGarurumon X',
-      card: 'BT9-031',
-      image: 'assets/images/cards/jap/BT9-031.webp',
-    }, // MetalGaruru X
+      name: 'Mastemon',
+      card: 'ST10-06',
+      image: 'assets/images/cards/jap/ST10-06.webp',
+    },
     {
-      name: 'Alphamon',
-      card: 'BT9-111',
-      image: 'assets/images/cards/jap/BT9-111.webp',
-    }, // Alphamon
+      name: 'GrandisKuwagamon',
+      card: 'BT9-055',
+      image: 'assets/images/cards/jap/BT9-055.webp',
+    },
     {
-      name: 'BloomHydra',
-      card: 'EX3-045',
-      image: 'assets/images/cards/jap/EX3-045.webp',
-    }, // BloomLordmon
+      name: 'Machinedramon',
+      card: 'BT11-072',
+      image: 'assets/images/cards/jap/BT11-072.webp',
+    },
     {
       name: 'Ulforce',
       card: 'BT11-112',
       image: 'assets/images/cards/jap/BT11-112.webp',
+    },
+    {
+      name: 'WarGreymon X',
+      card: 'BT9-016',
+      image: 'assets/images/cards/jap/BT9-016.webp',
+    },
+    {
+      name: 'BloomLordmon',
+      card: 'BT10-057',
+      image: 'assets/images/cards/jap/BT10-057.webp',
+    },
+  ],
+  //B
+  [
+    {
+      name: 'Examon',
+      card: 'EX3-074',
+      image: 'assets/images/cards/jap/EX3-074.webp',
     },
     {
       name: 'Galacticmon',
@@ -58,94 +63,160 @@ export const JAPTIERLIST = [
       image: 'assets/images/cards/jap/BT11-111.webp',
     },
     {
-      name: 'Machinedramon',
-      card: 'EX1-073',
-      image: 'assets/images/cards/eng/EX1-073.webp',
+      name: 'Jesmon',
+      card: 'ST12-10',
+      image: 'assets/images/cards/jap/ST12-10.webp',
     },
-  ],
-  [
-    {
-      name: 'Mastemon',
-      card: 'ST10-06',
-      image: 'assets/images/cards/jap/ST10-06.webp',
-    }, // Mastemon
-    {
-      name: 'GrandisKuwagamon',
-      card: 'BT9-055',
-      image: 'assets/images/cards/jap/BT9-055.webp',
-    }, // GrandisKuwagamon
-    {
-      name: 'Magnamon X',
-      card: 'BT9-044',
-      image: 'assets/images/cards/jap/BT9-044.webp',
-    }, // Magnamon
-    {
-      name: 'Minervamon',
-      card: 'BT10-083',
-      image: 'assets/images/cards/jap/BT10-083.webp',
-    }, // Minervamon
-    {
-      name: 'Sakuyamon Maid Mode',
-      card: 'BT10-041',
-      image: 'assets/images/cards/jap/BT10-041.webp',
-    }, // Sakuyamon Maid Mode
-    {
-      name: 'Green Hybrid',
-      card: 'BT7-051',
-      image: 'assets/images/cards/jap/BT7-051.webp',
-    }, // Green Hybrid
-    {
-      name: 'DarkKnightmon',
-      card: 'BT10-069',
-      image: 'assets/images/cards/jap/BT10-069.webp',
-    }, // Darknightmon
-    {
-      name: 'Beelzemon',
-      card: 'EX2-074',
-      image: 'assets/images/cards/jap/EX2-074.webp',
-    }, // Beelzemon
-    {
-      name: 'Gallantmon',
-      card: 'EX2-073',
-      image: 'assets/images/cards/jap/EX2-073.webp',
-    }, // Gallantmon
-    {
-      name: 'Beelstarmon',
-      card: 'BT6-112',
-      image: 'assets/images/cards/jap/BT6-112.webp',
-    }, // Beelstarmon
-    {
-      name: 'D-Reaper',
-      card: 'EX2-007',
-      image: 'assets/images/cards/jap/EX2-007.webp',
-    }, // D-Reaper
-    {
-      name: 'Imperialdramon',
-      card: 'BT8-032',
-      image: 'assets/images/cards/jap/BT8-032.webp',
-    }, // Imperialdramon
     {
       name: 'Marsmon',
       card: 'BT11-017',
       image: 'assets/images/cards/jap/BT11-017.webp',
     },
+    {
+      name: 'Mervamon',
+      card: 'BT11-086',
+      image: 'assets/images/cards/jap/BT11-086.webp',
+    },
+    {
+      name: 'MetalGarurumon X',
+      card: 'BT9-031',
+      image: 'assets/images/cards/jap/BT9-031.webp',
+    },
+    {
+      name: 'Bagramon',
+      card: 'BT11-088',
+      image: 'assets/images/cards/jap/BT11-088.webp',
+    },
+    {
+      name: 'Magnamon X',
+      card: 'BT9-044',
+      image: 'assets/images/cards/jap/BT9-044.webp',
+    },
+    {
+      name: 'DarkKnightmon (X Antibody)',
+      card: 'BT10-069',
+      image: 'assets/images/cards/jap/BT10-069.webp',
+    },
+    {
+      name: 'KingSukamon',
+      card: 'BT11-043',
+      image: 'assets/images/cards/jap/BT11-043.webp',
+    },
   ],
+  //C
   [
     {
-      name: 'Etemon',
-      card: 'BT3-070',
-      image: 'assets/images/cards/jap/BT3-070.webp',
-    }, // Etemon
+      name: 'Gallantmon X',
+      card: 'BT9-017',
+      image: 'assets/images/cards/jap/BT9-017.webp',
+    },
+    {
+      name: 'Sakuyamon Maid Mode',
+      card: 'BT10-041',
+      image: 'assets/images/cards/jap/BT10-041.webp',
+    },
+    {
+      name: 'Venusmon',
+      card: 'BT10-042',
+      image: 'assets/images/cards/jap/BT10-042.webp',
+    },
+    {
+      name: 'Alphamon',
+      card: 'BT9-111',
+      image: 'assets/images/cards/jap/BT9-111.webp',
+    },
+  ],
+  //D
+  [
     {
       name: 'D-Brigade',
       card: 'BT4-074',
       image: 'assets/images/cards/jap/BT4-074.webp',
-    }, // D-Brigade
+    },
+    {
+      name: 'Ophanimon Falldown Mode',
+      card: 'BT8-082',
+      image: 'assets/images/cards/jap/BT8-082.webp',
+    },
+    {
+      name: 'Imperialdramon',
+      card: 'BT8-032',
+      image: 'assets/images/cards/jap/BT8-032.webp',
+    },
+    {
+      name: 'Ragnalordmon',
+      card: 'ST13-06',
+      image: 'assets/images/cards/jap/ST13-06.webp',
+    },
+    {
+      name: 'D-Reaper',
+      card: 'EX2-007',
+      image: 'assets/images/cards/jap/EX2-007.webp',
+    },
+    {
+      name: 'Yellow Hybrid',
+      card: 'BT7-038',
+      image: 'assets/images/cards/jap/BT7-038.webp',
+    },
+    {
+      name: 'Beelstarmon',
+      card: 'BT6-112',
+      image: 'assets/images/cards/jap/BT6-112.webp',
+    },
+    {
+      name: 'Ancient Greymon',
+      card: 'BT4-113',
+      image: 'assets/images/cards/jap/BT4-113.webp',
+    },
+    {
+      name: 'Etemon',
+      card: 'BT3-070',
+      image: 'assets/images/cards/jap/BT3-070.webp',
+    },
     {
       name: 'Diaboromon',
       card: 'P-016',
       image: 'assets/images/cards/jap/P-016.webp',
-    }, // Diaboromon
+    },
+    {
+      name: 'Canoweissmon',
+      card: 'BT10-011',
+      image: 'assets/images/cards/jap/BT10-011.webp',
+    },
+    {
+      name: 'Beelzemon',
+      card: 'EX2-074',
+      image: 'assets/images/cards/jap/EX2-074.webp',
+    },
+    {
+      name: 'Justimon',
+      card: 'BT10-067',
+      image: 'assets/images/cards/jap/BT10-067.webp',
+    },
+    {
+      name: 'Green Hybrid',
+      card: 'BT7-051',
+      image: 'assets/images/cards/jap/BT7-051.webp',
+    },
+    {
+      name: 'RizeGreymon',
+      card: 'BT9-041',
+      image: 'assets/images/cards/jap/BT9-041.webp',
+    },
+    {
+      name: 'Bond of Friendship',
+      card: 'BT6-030',
+      image: 'assets/images/cards/jap/BT6-030.webp',
+    },
+    {
+      name: 'Bond of Barvery',
+      card: 'BT6-018',
+      image: 'assets/images/cards/jap/BT6-018.webp',
+    },
+    {
+      name: 'Blue Hybrid',
+      card: 'BT7-023',
+      image: 'assets/images/cards/jap/BT7-023.webp',
+    },
   ],
-  [],
 ];
