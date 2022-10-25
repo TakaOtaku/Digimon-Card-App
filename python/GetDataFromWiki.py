@@ -12,6 +12,7 @@ wikiLink = 'https://digimoncardgame.fandom.com'
 wikiPageLinks = [
     'https://digimoncardgame.fandom.com/wiki/BT-12:_Booster_Across_Time'
 ]
+setName = "▹THEME BOOSTER DRACONIC ROAR [EX-03]"
 cardLinks = []
 NormalCards = []
 AACards = []
@@ -62,9 +63,9 @@ def getMainInfo(html, digimoncard):
             case 'Play Cost':
                 digimoncard['playCost'] = rowData[1]
             case 'DP':
-                digimoncard['dp'] = rowData[1]
+                digimoncard['dp'] = rowData[1].replace(" DP", "")
             case 'Level':
-                digimoncard['cardLv'] = rowData[1]
+                digimoncard['cardLv'] = "Lv." + rowData[1]
             case 'Form':
                 digimoncard['form'] = rowData[1]
             case 'Attribute':
@@ -137,34 +138,34 @@ def getCardDataFromWiki():
         infoRarity = soup.find("table", class_="settable")
 
         digimoncard = {
-            "id": "",
-            "name": "",
+            "id": "-",
+            "name": "-",
             "cardImage": "assets/images/cards/jap/",
-            "cardType": "",
-            "dp": 0,
-            "playCost": 0,
-            "digivolveCost1": "",
-            "digivolveColor1": "",
-            "digivolveLevel1": "",
-            "digivolveCost2": "",
-            "digivolveColor2": "",
-            "digivolveLevel2": "",
-            "cardLv": 0,
-            "form": "",
-            "attribute": "",
-            "type": "",
-            "rarity": "",
-            "cardNumber": "",
+            "cardType": "-",
+            "dp": "-",
+            "playCost": "-",
+            "digivolveCost1": "-",
+            "digivolveColor1": "-",
+            "digivolveLevel1": "-",
+            "digivolveCost2": "-",
+            "digivolveColor2": "-",
+            "digivolveLevel2": "-",
+            "cardLv": "-",
+            "form": "-",
+            "attribute": "-",
+            "type": "-",
+            "rarity": "-",
+            "cardNumber": "-",
             "digiXros": "-",
             "specialDigivolve": "-",
             "dnaDigivolve": "-",
-            "effect": "",
-            "digivolveEffect": "",
-            "securityEffect": "",
-            "notes": "▹THEME BOOSTER DRACONIC ROAR [EX-03]",
-            "color": "",
+            "effect": "-",
+            "digivolveEffect": "-",
+            "securityEffect": "-",
+            "notes": setName,
+            "color": "-",
             "version": "Normal",
-            "illustrator": "",
+            "illustrator": "-",
             "block": ["02"],
             "restriction": "-",
         }
@@ -220,7 +221,6 @@ def makeAACardDatas():
                     newCard['id']+".webp"
                 cards.append(newCard)
                 break
-
 
 def saveCardsToJSON():
     with open('bt12.json', 'w') as fp:
