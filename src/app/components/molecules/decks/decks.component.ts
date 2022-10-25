@@ -5,7 +5,14 @@ import { ConfirmationService, MenuItem, MessageService } from 'primeng/api';
 import { ContextMenu } from 'primeng/contextmenu';
 import { Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
-import { COLORS, ICountCard, IDeck, IUser, TAGS } from '../../../../models';
+import {
+  COLORS,
+  ICard,
+  ICountCard,
+  IDeck,
+  IUser,
+  TAGS,
+} from '../../../../models';
 import { AuthService } from '../../../service/auth.service';
 import { DatabaseService } from '../../../service/database.service';
 import {
@@ -13,7 +20,7 @@ import {
   importDeck,
   setDeck,
 } from '../../../store/digimon.actions';
-import { selectDecks } from '../../../store/digimon.selectors';
+import { selectAllCards, selectDecks } from '../../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-decks',
@@ -37,6 +44,8 @@ export class DecksComponent implements OnInit, OnDestroy {
 
   correctUser = false;
   params = '';
+
+  allCards: ICard[] = [];
 
   private onDestroy$ = new Subject<boolean>();
 
@@ -108,6 +117,10 @@ export class DecksComponent implements OnInit, OnDestroy {
           this.decks = decks;
         }
       });
+    this.store
+      .select(selectAllCards)
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((allCards) => (this.allCards = allCards));
   }
 
   ngOnDestroy() {

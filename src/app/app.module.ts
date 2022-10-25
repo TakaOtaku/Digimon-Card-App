@@ -67,6 +67,9 @@ import * as Digimon from './store/reducers/digimon.reducers';
 import * as Save from './store/reducers/save.reducer';
 import { TierlistComponent } from './components/molecules/tierlist/tierlist.component';
 import { DeckStatisticsComponent } from './components/molecules/deck-statistics/deck-statistics.component';
+import { ColorSpreadComponent } from './components/molecules/color-spread/color-spread.component';
+import { LevelSpreadComponent } from './components/molecules/level-spread/level-spread.component';
+import { DdtoSpreadComponent } from './components/molecules/ddto-spread/ddto-spread.component';
 
 @NgModule({
   declarations: [
@@ -112,6 +115,9 @@ import { DeckStatisticsComponent } from './components/molecules/deck-statistics/
     BlogComponent,
     TierlistComponent,
     DeckStatisticsComponent,
+    ColorSpreadComponent,
+    LevelSpreadComponent,
+    DdtoSpreadComponent,
   ],
   imports: [
     PrimeNGModule,

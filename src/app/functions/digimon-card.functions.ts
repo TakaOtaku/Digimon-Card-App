@@ -268,3 +268,13 @@ export function mapToDeckCards(
 
   return deckCards;
 }
+
+export function getCountFromDeckCards(
+  deckCards: IDeckCard[] | ICountCard[]
+): number {
+  let number = 0;
+  deckCards.forEach((card) => {
+    number += card.count;
+  });
+  return number;
+}

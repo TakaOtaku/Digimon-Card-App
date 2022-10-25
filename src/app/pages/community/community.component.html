@@ -25,6 +25,9 @@
       'title',
       'tags.0.name',
       '',
+      '',
+      '',
+      '',
       'user',
       ''
     ]"
@@ -72,7 +75,7 @@
             type="text"
           ></p-columnFilter>
         </th>
-        <th class="max-w-[400px] p-0">
+        <th class="max-w-[300px] p-0">
           Tags
           <p-columnFilter
             display="menu"
@@ -100,6 +103,9 @@
           </p-columnFilter>
         </th>
         <th class="max-w-[400px] p-0">Description</th>
+        <th class="max-w-[400px] p-0">Color</th>
+        <th class="max-w-[400px] p-0">Level</th>
+        <th class="max-w-[400px] p-0">Card-Types</th>
         <th class="max-w-[400px] p-0">
           User
           <p-columnFilter
@@ -139,11 +145,34 @@
         >
           {{ deck.title }}
         </td>
-        <td class="max-w-[400px] p-0">
+        <td class="max-w-[300px] p-0">
           <p-chip *ngFor="let tag of deck.tags" label="{{ tag.name }}"></p-chip>
         </td>
-        <td class="max-w-[400px] truncate p-0">
-          {{ deck.description }}
+        <td class="max-w-[400px] overflow-hidden whitespace-nowrap p-0">
+          <p class="animate-scroll">
+            {{ deck.description }}
+          </p>
+        </td>
+        <td class="max-w-[400px] p-0">
+          <digimon-color-spread
+            class="mx-0.5 w-full"
+            [deck]="deck"
+            [allCards]="allCards"
+          ></digimon-color-spread>
+        </td>
+        <td class="max-w-[400px] p-0">
+          <digimon-level-spread
+            class="mx-0.5 w-full"
+            [deck]="deck"
+            [allCards]="allCards"
+          ></digimon-level-spread>
+        </td>
+        <td class="max-w-[400px] p-0">
+          <digimon-ddto-spread
+            class="mx-0.5 w-full"
+            [deck]="deck"
+            [allCards]="allCards"
+          ></digimon-ddto-spread>
         </td>
         <td class="max-w-[400px] p-0">
           {{ deck.user }}

@@ -70,6 +70,11 @@ body {
   text-shadow: 3px 0 0 #000, 0 -3px 0 #000, 0 3px 0 #000, -3px 0 0 #000;
 }
 
+.text-black-outline-xs {
+  color: #fff;
+  text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
+}
+
 .text-shadow {
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
@@ -159,6 +164,19 @@ digimon-multi-select {
 
 .grid-cols-13 {
   grid-template-columns: repeat(13, minmax(0, 1fr));
+}
+
+/* ===== ===== */
+
+.animate-scroll{
+  display: inline-block;
+  color: #FFF;
+  padding-left: 100%;
+  animation: move 25s linear infinite;
+}
+@keyframes move {
+  0%   { transform: translate(0, 0); }
+  100% { transform: translate(-100%, 0); }
 }
 
 /* ===== ===== */

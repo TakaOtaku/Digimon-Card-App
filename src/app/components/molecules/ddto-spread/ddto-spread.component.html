@@ -1,0 +1,39 @@
+<div class="no-gap grid h-full w-full grid-cols-4">
+  <div
+    class="h-full w-full text-center"
+    [ngStyle]="{
+      background: linearGradientEgg()
+    }"
+  >
+    <span class="text-black-outline-xs">{{ ddto[0] }}</span>
+  </div>
+  <div
+    class="h-full w-full text-center"
+    [ngStyle]="{
+      background: linearGradient(ddto[1])
+    }"
+  >
+    <span class="text-black-outline-xs">{{ ddto[1] }}</span>
+  </div>
+  <div
+    class="h-full w-full text-center"
+    [ngStyle]="{
+      background: linearGradient(ddto[2])
+    }"
+  >
+    <span class="text-black-outline-xs">{{ ddto[2] }}</span>
+  </div>
+  <div
+    class="h-full w-full text-center"
+    [ngStyle]="{
+      background: linearGradient(ddto[3])
+    }"
+  >
+    <span class="text-black-outline-xs">{{ ddto[3] }}</span>
+  </div>
+
+  <h3 class="h-1/2 text-center text-xs">Egg</h3>
+  <h3 class="h-1/2 text-center text-xs">Digimon</h3>
+  <h3 class="h-1/2 text-center text-xs">Tamer</h3>
+  <h3 class="h-1/2 text-center text-xs">Option</h3>
+</div>

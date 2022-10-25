@@ -1,26 +1,37 @@
-<div class="flex flex-row">
-  <div class="w-full w-1/2 border-2 border-slate-500 p-1">
+<div class="flex flex-col lg:grid lg:grid-cols-2">
+  <div class="w-full border-2 border-slate-500 p-1">
     <h1 class="mb-2 w-full text-xl font-extrabold text-white">
-      Most used Cards in all Community Decks (Set Filter missing, Most Used
-      Digitama, Digimon, Tamer, Option)
+      Most used Cards in all Community Decks
     </h1>
     <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
       <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-        <div class="overflow-hidden">
+        <div class="max-h-[200px] overflow-x-hidden overflow-y-scroll">
           <table class="min-w-full">
             <thead class="surface-card border-b">
               <tr>
                 <th
                   scope="col"
-                  class="px-6 py-2 text-left text-sm font-medium text-white"
+                  class="max-w-[50px] px-6 py-2 text-left text-sm font-medium text-white"
                 >
                   #
                 </th>
                 <th
                   scope="col"
-                  class="px-6 py-2 text-left text-sm font-medium text-white"
+                  class="maw-w-[150px] px-6 py-2 text-left text-sm font-medium text-white"
                 >
                   Card
+                </th>
+                <th
+                  scope="col"
+                  class="px-6 py-2 text-left text-sm font-medium text-white"
+                >
+                  ID
+                </th>
+                <th
+                  scope="col"
+                  class="px-6 py-2 text-left text-sm font-medium text-white"
+                >
+                  # Played
                 </th>
                 <th
                   scope="col"
@@ -32,34 +43,326 @@
                   scope="col"
                   class="px-6 py-2 text-left text-sm font-medium text-white"
                 >
-                  # Played
+                  # Average
                 </th>
               </tr>
             </thead>
             <tbody>
               <tr
-                *ngFor="let card of mostUsedCards; let i = index"
+                *ngFor="let card of mostUsedCards | slice: 0:100; let i = index"
                 class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150"
               >
                 <td
-                  class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                  class="max-w-[50px] whitespace-nowrap px-6 py-2 text-sm font-light text-white"
                 >
-                  {{ i }}
+                  {{ i + 1 }}.
+                </td>
+                <td
+                  class="max-w-[150px] overflow-hidden whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                >
+                  {{ card.name }}
                 </td>
                 <td
                   class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
                 >
-                  {{ card.name }} {{ card.cardNumber }}
+                  {{ card.cardNumber }}
                 </td>
                 <td
                   class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
                 >
-                  {{ card.count }}
+                  {{ card.count }}x
                 </td>
                 <td
                   class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
                 >
-                  {{ card.count }}
+                  {{ percentInDecks(card) }}%
+                </td>
+                <td
+                  class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                >
+                  {{ averagePlayed(card) }}x
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full border-2 border-slate-500 p-1">
+    <h1 class="mb-2 w-full text-xl font-extrabold text-white">
+      Most used Digimon in all Community Decks
+    </h1>
+    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+      <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+        <div class="max-h-[200px] overflow-x-hidden overflow-y-scroll">
+          <table class="min-w-full">
+            <thead class="surface-card border-b">
+              <tr>
+                <th
+                  scope="col"
+                  class="max-w-[50px] px-6 py-2 text-left text-sm font-medium text-white"
+                >
+                  #
+                </th>
+                <th
+                  scope="col"
+                  class="maw-w-[150px] px-6 py-2 text-left text-sm font-medium text-white"
+                >
+                  Card
+                </th>
+                <th
+                  scope="col"
+                  class="px-6 py-2 text-left text-sm font-medium text-white"
+                >
+                  ID
+                </th>
+                <th
+                  scope="col"
+                  class="px-6 py-2 text-left text-sm font-medium text-white"
+                >
+                  # Played
+                </th>
+                <th
+                  scope="col"
+                  class="px-6 py-2 text-left text-sm font-medium text-white"
+                >
+                  % of Decks
+                </th>
+                <th
+                  scope="col"
+                  class="px-6 py-2 text-left text-sm font-medium text-white"
+                >
+                  # Average
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                *ngFor="
+                  let card of filter(mostUsedCards, 'Digimon') | slice: 0:100;
+                  let i = index
+                "
+                class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150"
+              >
+                <td
+                  class="max-w-[50px] whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                >
+                  {{ i + 1 }}.
+                </td>
+                <td
+                  class="max-w-[150px] overflow-hidden whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                >
+                  {{ card.name }}
+                </td>
+                <td
+                  class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                >
+                  {{ card.cardNumber }}
+                </td>
+                <td
+                  class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                >
+                  {{ card.count }}x
+                </td>
+                <td
+                  class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                >
+                  {{ percentInDecks(card) }}%
+                </td>
+                <td
+                  class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                >
+                  {{ averagePlayed(card) }}x
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full border-2 border-slate-500 p-1">
+    <h1 class="mb-2 w-full text-xl font-extrabold text-white">
+      Most used Tamer in all Community Decks
+    </h1>
+    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+      <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+        <div class="max-h-[200px] overflow-x-hidden overflow-y-scroll">
+          <table class="min-w-full">
+            <thead class="surface-card border-b">
+              <tr>
+                <th
+                  scope="col"
+                  class="max-w-[50px] px-6 py-2 text-left text-sm font-medium text-white"
+                >
+                  #
+                </th>
+                <th
+                  scope="col"
+                  class="maw-w-[150px] px-6 py-2 text-left text-sm font-medium text-white"
+                >
+                  Card
+                </th>
+                <th
+                  scope="col"
+                  class="px-6 py-2 text-left text-sm font-medium text-white"
+                >
+                  ID
+                </th>
+                <th
+                  scope="col"
+                  class="px-6 py-2 text-left text-sm font-medium text-white"
+                >
+                  # Played
+                </th>
+                <th
+                  scope="col"
+                  class="px-6 py-2 text-left text-sm font-medium text-white"
+                >
+                  % of Decks
+                </th>
+                <th
+                  scope="col"
+                  class="px-6 py-2 text-left text-sm font-medium text-white"
+                >
+                  # Average
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                *ngFor="
+                  let card of filter(mostUsedCards, 'Tamer') | slice: 0:100;
+                  let i = index
+                "
+                class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150"
+              >
+                <td
+                  class="max-w-[50px] whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                >
+                  {{ i + 1 }}.
+                </td>
+                <td
+                  class="max-w-[150px] overflow-hidden whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                >
+                  {{ card.name }}
+                </td>
+                <td
+                  class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                >
+                  {{ card.cardNumber }}
+                </td>
+                <td
+                  class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                >
+                  {{ card.count }}x
+                </td>
+                <td
+                  class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                >
+                  {{ percentInDecks(card) }}%
+                </td>
+                <td
+                  class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                >
+                  {{ averagePlayed(card) }}x
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full border-2 border-slate-500 p-1">
+    <h1 class="mb-2 w-full text-xl font-extrabold text-white">
+      Most used Options in all Community Decks
+    </h1>
+    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+      <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+        <div class="max-h-[200px] overflow-x-hidden overflow-y-scroll">
+          <table class="min-w-full">
+            <thead class="surface-card border-b">
+              <tr>
+                <th
+                  scope="col"
+                  class="max-w-[50px] px-6 py-2 text-left text-sm font-medium text-white"
+                >
+                  #
+                </th>
+                <th
+                  scope="col"
+                  class="maw-w-[150px] px-6 py-2 text-left text-sm font-medium text-white"
+                >
+                  Card
+                </th>
+                <th
+                  scope="col"
+                  class="px-6 py-2 text-left text-sm font-medium text-white"
+                >
+                  ID
+                </th>
+                <th
+                  scope="col"
+                  class="px-6 py-2 text-left text-sm font-medium text-white"
+                >
+                  # Played
+                </th>
+                <th
+                  scope="col"
+                  class="px-6 py-2 text-left text-sm font-medium text-white"
+                >
+                  % of Decks
+                </th>
+                <th
+                  scope="col"
+                  class="px-6 py-2 text-left text-sm font-medium text-white"
+                >
+                  # Average
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                *ngFor="
+                  let card of filter(mostUsedCards, 'Option') | slice: 0:100;
+                  let i = index
+                "
+                class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150"
+              >
+                <td
+                  class="max-w-[50px] whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                >
+                  {{ i + 1 }}.
+                </td>
+                <td
+                  class="max-w-[150px] overflow-hidden whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                >
+                  {{ card.name }}
+                </td>
+                <td
+                  class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                >
+                  {{ card.cardNumber }}
+                </td>
+                <td
+                  class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                >
+                  {{ card.count }}x
+                </td>
+                <td
+                  class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                >
+                  {{ percentInDecks(card) }}%
+                </td>
+                <td
+                  class="whitespace-nowrap px-6 py-2 text-sm font-light text-white"
+                >
+                  {{ averagePlayed(card) }}x
                 </td>
               </tr>
             </tbody>
