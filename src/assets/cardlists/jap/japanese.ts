@@ -3,6 +3,7 @@ import { ICard } from '../../../models';
 import BT1 from './BT1.json';
 import BT10 from './BT10.json';
 import BT11 from './BT11.json';
+import BT12 from './BT12.json';
 import BT2 from './BT2.json';
 import BT3 from './BT3.json';
 import BT4 from './BT4.json';
@@ -43,6 +44,7 @@ export const japaneseCards: ICard[] = [
   ...BT9,
   ...BT10,
   ...BT11,
+  ...BT12,
 
   ...EX1,
   ...EX2,

@@ -10,7 +10,7 @@ import copy
 
 wikiLink = 'https://digimoncardgame.fandom.com'
 wikiPageLinks = [
-    'https://digimoncardgame.fandom.com/wiki/ST-14:_Advanced_Deck_Beelzemon'
+    'https://digimoncardgame.fandom.com/wiki/BT-12:_Booster_Across_Time'
 ]
 cardLinks = []
 NormalCards = []
@@ -42,6 +42,8 @@ def splitCardsForNormalAndAA():
 
 # Get the Data from the main table and return it as an digimon card
 def getMainInfo(html, digimoncard):
+    if html == None:
+        return digimoncard
     rows = html.find_all("tr")
 
     for row in rows:
@@ -75,6 +77,8 @@ def getMainInfo(html, digimoncard):
 
 # Get digivolve requirements and return the digimon card
 def getDigivolveInfo(html, digimoncard):
+    if html == None:
+        return digimoncard
     evoCons = html.find_all("table", class_="evocon")
     specialEvoCons = html.find_all("table", class_="effect")
 
@@ -102,6 +106,8 @@ def getDigivolveInfo(html, digimoncard):
 
 
 def getExtraInfo(html, digimoncard):
+    if html == None:
+        return digimoncard
     tables = html.find_all("table")
     for table in tables:
         th = table.find("th")
@@ -187,7 +193,8 @@ def getCardDataFromWiki():
             digimoncard['id']+".webp"
 
         imagediv = soup.find("div", class_="image")
-        image = imagediv.find("img")
+        if imagediv:
+            image = imagediv.find("img")
         if(image is not None):
             imageSrc = image['src']
             # Change URL depending on if you want Japanese Cards or English Cards
@@ -216,7 +223,7 @@ def makeAACardDatas():
 
 
 def saveCardsToJSON():
-    with open('st14.json', 'w') as fp:
+    with open('bt12.json', 'w') as fp:
         json.dump(cards, fp)
 
 
