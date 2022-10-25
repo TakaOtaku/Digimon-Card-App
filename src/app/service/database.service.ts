@@ -196,12 +196,12 @@ export class DatabaseService {
 
   loadChangelog(): Promise<any> {
     const db = getDatabase();
-    return get(ref(db, 'blog/changelog-dev'));
+    return get(ref(db, 'blog/changelog'));
   }
 
   saveChangelog(changelog: any) {
     const db = getDatabase();
-    return update(ref(db, 'blog/changelog-dev'), changelog);
+    return update(ref(db, 'blog/changelog'), changelog);
   }
 
   loadBlogEntries(): Observable<any> {
