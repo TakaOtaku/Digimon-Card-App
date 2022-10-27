@@ -78,8 +78,8 @@
   </div>
 
   <div
-    [ngClass]="{ show: megamenu }"
-    class="collapse navbar-collapse grow items-center"
+    [ngClass]="{ show: megamenu, collapse: !megamenu }"
+    class="navbar-collapse grow items-center"
     id="navbarSupportedContentX"
   >
     <ul class="navbar-nav mr-auto flex flex-row">
