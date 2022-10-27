@@ -6,18 +6,10 @@ export interface IDeck {
   id: string;
   cards: ICountCard[];
   color: IColor;
-
-  sideDeck?: ICountCard[];
-
   title?: string;
   description?: string;
   tags?: ITag[];
-  rating?: number;
-  ratingCount?: number;
+  date?: string;
   user?: string;
   userId?: string;
-  date?: string;
-  folder?: string;
-
-  cardImage?: string;
 }

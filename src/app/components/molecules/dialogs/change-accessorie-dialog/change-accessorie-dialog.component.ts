@@ -10,7 +10,7 @@ import {
 } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { Subject, takeUntil } from 'rxjs';
+import { Subject, Subscription, takeUntil } from 'rxjs';
 import {
   ColorList,
   ColorMap,
@@ -22,7 +22,7 @@ import {
 import { ITag } from '../../../../../models/interfaces/tag.interface';
 import { deckIsValid } from '../../../../functions/digimon-card.functions';
 import { AuthService } from '../../../../service/auth.service';
-import { DatabaseService } from '../../../../service/database.service';
+import { DigimonBackendService } from '../../../../service/digimon-backend.service';
 import { saveDeck } from '../../../../store/digimon.actions';
 import { selectAllCards } from '../../../../store/digimon.selectors';
 import { emptyDeck } from '../../../../store/reducers/digimon.reducers';
@@ -56,7 +56,7 @@ export class ChangeAccessorieDialogComponent
   constructor(
     private store: Store,
     private confirmationService: ConfirmationService,
-    private db: DatabaseService,
+    private digimonCardService: DigimonBackendService,
     private auth: AuthService,
     private messageService: MessageService
   ) {}
@@ -122,7 +122,9 @@ export class ChangeAccessorieDialogComponent
     this.confirmationService.confirm({
       message: 'You are about to share the deck. Are you sure?',
       accept: () => {
-        this.db.shareDeck(deck, this.auth.userData);
+        const sub: Subscription = this.digimonCardService
+          .updateDeck(deck, this.auth.userData)
+          .subscribe((value) => sub.unsubscribe());
         this.messageService.add({
           severity: 'success',
           summary: 'Deck shared!',

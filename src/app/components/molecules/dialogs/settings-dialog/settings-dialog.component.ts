@@ -5,7 +5,7 @@ import { saveAs } from 'file-saver';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { first, Subject, takeUntil } from 'rxjs';
 import { ICard, ICountCard, ISave } from '../../../../../models';
-import { DatabaseService } from '../../../../service/database.service';
+import { DigimonBackendService } from '../../../../service/digimon-backend.service';
 import {
   addToCollection,
   loadSave,
@@ -60,7 +60,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
   private onDestroy$ = new Subject();
   constructor(
     private store: Store,
-    private db: DatabaseService,
+    private digimonBackendService: DigimonBackendService,
     private messageService: MessageService,
     private confirmationService: ConfirmationService
   ) {}
@@ -146,7 +146,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
     fileReader.onload = () => {
       try {
         let save: any = JSON.parse(fileReader.result as string);
-        save = this.db.checkSaveValidity(save, null);
+        save = this.digimonBackendService.checkSaveValidity(save, null);
         this.store.dispatch(loadSave({ save }));
         this.messageService.add({
           severity: 'success',

@@ -120,8 +120,13 @@ export const saveReducer = createReducer(
     });
     return { ...state, decks: [...new Set(decks)] };
   }),
-  on(deleteDeck, (state, { deck }) => ({
-    ...state,
-    decks: [...new Set(state.decks.filter((item) => item !== deck))],
-  }))
+  on(deleteDeck, (state, { deck }) => {
+    const decks = [
+      ...new Set(state.decks.filter((item) => item.id !== deck.id)),
+    ];
+    return {
+      ...state,
+      decks,
+    };
+  })
 );

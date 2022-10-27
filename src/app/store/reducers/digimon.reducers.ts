@@ -5,6 +5,8 @@ import {
   addCardToDeck,
   changeFilter,
   changeSort,
+  setBlogs,
+  setCommunityDecks,
   setCommunityDeckSearch,
   setDeck,
   setMobileCollectionView,
@@ -52,6 +54,8 @@ export const initialState: IDigimonState = {
     ascOrder: true,
   },
   communityDeckSearch: '',
+  communityDecks: [],
+  blogs: [],
 };
 
 export const digimonReducer = createReducer(
@@ -70,5 +74,13 @@ export const digimonReducer = createReducer(
   on(setCommunityDeckSearch, (state, { communityDeckSearch }) => ({
     ...state,
     communityDeckSearch,
+  })),
+  on(setCommunityDecks, (state, { communityDecks }) => ({
+    ...state,
+    communityDecks,
+  })),
+  on(setBlogs, (state, { blogs }) => ({
+    ...state,
+    blogs,
   }))
 );

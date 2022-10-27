@@ -1,5 +1,6 @@
 import { createAction, props } from '@ngrx/store';
 import { ICard, ICountCard, IDeck, IFilter, ISave, ISort } from '../../models';
+import { IBlog } from '../../models/interfaces/blog-entry.interface';
 
 //region Digimon Card Actions
 export const setDigimonCards = createAction(
@@ -51,6 +52,15 @@ export const addCardToDeck = createAction(
 export const setCommunityDeckSearch = createAction(
   '[Search] Set Community Deck Search Term',
   props<{ communityDeckSearch: string }>()
+);
+
+export const setCommunityDecks = createAction(
+  '[Digimon Decks] Save Community Decks',
+  props<{ communityDecks: IDeck[] }>()
+);
+export const setBlogs = createAction(
+  '[Digimon Blog Entries] Save Blog Entries',
+  props<{ blogs: IBlog[] }>()
 );
 //endregion
 

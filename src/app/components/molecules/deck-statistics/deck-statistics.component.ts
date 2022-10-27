@@ -6,8 +6,11 @@ import {
   getCountFromDeckCards,
   mapToDeckCards,
 } from '../../../functions/digimon-card.functions';
-import { DatabaseService } from '../../../service/database.service';
-import { selectAllCards } from '../../../store/digimon.selectors';
+import { DigimonBackendService } from '../../../service/digimon-backend.service';
+import {
+  selectAllCards,
+  selectCommunityDecks,
+} from '../../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-deck-statistics',
@@ -18,15 +21,19 @@ export class DeckStatisticsComponent implements OnInit {
   allCards: ICard[] = [];
   communityDecks: IDeck[] = [];
 
-  constructor(private store: Store, private dbService: DatabaseService) {}
+  constructor(
+    private store: Store,
+    private digimonBackendService: DigimonBackendService
+  ) {}
 
   ngOnInit(): void {
-    const subscription = this.store
+    this.store
       .select(selectAllCards)
       .pipe(
+        first(),
         tap((allCards) => (this.allCards = allCards)),
         switchMap(() =>
-          this.dbService.loadCommunityDecks().pipe(
+          this.store.select(selectCommunityDecks).pipe(
             filter((value) => value != null && value.length > 0),
             first()
           )
@@ -35,7 +42,6 @@ export class DeckStatisticsComponent implements OnInit {
       .subscribe((decks) => {
         this.communityDecks = decks;
         this.findMostUsedCards();
-        subscription.unsubscribe();
       });
   }
 

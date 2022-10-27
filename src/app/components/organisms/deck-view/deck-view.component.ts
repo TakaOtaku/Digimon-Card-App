@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { filter, Subject, takeUntil } from 'rxjs';
+import { filter, Subject, Subscription, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
 import {
   DeckColorMap,
@@ -27,7 +27,7 @@ import {
   sortColors,
 } from '../../../functions/digimon-card.functions';
 import { AuthService } from '../../../service/auth.service';
-import { DatabaseService } from '../../../service/database.service';
+import { DigimonBackendService } from '../../../service/digimon-backend.service';
 import {
   addCardToDeck,
   importDeck,
@@ -36,6 +36,7 @@ import {
 import {
   selectAddCardToDeck,
   selectCollection,
+  selectCommunityDecks,
   selectDeckBuilderViewModel,
   selectSave,
 } from '../../../store/digimon.selectors';
@@ -76,7 +77,7 @@ export class DeckViewComponent implements OnInit, OnDestroy {
 
   constructor(
     private store: Store,
-    private db: DatabaseService,
+    private digimonBackendService: DigimonBackendService,
     private authService: AuthService,
     private confirmationService: ConfirmationService,
     private messageService: MessageService
@@ -164,7 +165,9 @@ export class DeckViewComponent implements OnInit, OnDestroy {
       this.confirmationService.confirm({
         message: 'You are about to share the deck. Are you sure?',
         accept: () => {
-          this.db.shareDeck(this.deck, this.authService.userData);
+          const sub: Subscription = this.digimonBackendService
+            .updateDeck(this.deck, this.authService.userData)
+            .subscribe((value) => sub.unsubscribe());
           this.messageService.add({
             severity: 'success',
             summary: 'Deck shared!',
@@ -455,8 +458,8 @@ export class DeckViewComponent implements OnInit, OnDestroy {
   }
 
   deckThingy() {
-    this.db
-      .loadCommunityDecks()
+    this.store
+      .select(selectCommunityDecks)
       .pipe(takeUntil(this.onDestroy$))
       .subscribe((decks) => {
         decks.forEach((deck) => {
@@ -465,9 +468,13 @@ export class DeckViewComponent implements OnInit, OnDestroy {
           if (deckIsValid(deck, this.allCards) === '') {
             newDeck.tags = setTags(deck.tags ?? [], deck, this.allCards);
             newDeck.color = setColors(deck, this.allCards, deck.color);
-            this.db.updateCommunityDeck(newDeck);
+            const sub: Subscription = this.digimonBackendService
+              .updateDeck(newDeck)
+              .subscribe((value) => sub.unsubscribe());
           } else {
-            this.db.deleteDeck(deck.id);
+            const sub: Subscription = this.digimonBackendService
+              .deleteDeck(deck.id)
+              .subscribe((value) => sub.unsubscribe());
           }
         });
       });

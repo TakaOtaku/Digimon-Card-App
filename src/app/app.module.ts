@@ -66,6 +66,7 @@ import { ObscenityPipe } from './pipes/obscenity.pipe';
 import { PrimeNGModule } from './primeng.module';
 import { AuthService } from './service/auth.service';
 import { DatabaseService } from './service/database.service';
+import { DigimonBackendService } from './service/digimon-backend.service';
 import { DigimonEffects } from './store/digimon.effects';
 
 import * as DigimonCards from './store/reducers/digimon-card.reducers';
@@ -170,6 +171,7 @@ import * as Save from './store/reducers/save.reducer';
     ReactiveFormsModule,
     AuthService,
     DatabaseService,
+    DigimonBackendService,
     { provide: LocationStrategy, useClass: HashLocationStrategy },
   ],
   bootstrap: [AppComponent],
