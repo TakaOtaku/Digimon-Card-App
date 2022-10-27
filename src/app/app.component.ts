@@ -60,7 +60,7 @@ export class AppComponent {
    * Optimize Website search engines
    */
   private makeGoogleFriendly() {
-    this.title.setTitle('Digimon Card Game Deckbuilder');
+    this.title.setTitle('Digimon Card Game');
 
     this.meta.addTags([
       {
@@ -68,9 +68,7 @@ export class AppComponent {
         content:
           'Digimon Card Game (TCG) Deckbuilder for keeping track of your collection of cards and building casual decks and tournament decks.' +
           'You can very easily create decks with various filters for the cards, you can even check which cards are missing in your collection' +
-          'Share your decks and your profil with the community or just your friends, to share insights and make trading a whole lot easier.' +
-          'All english and japanese cards are available when they release.' +
-          'Currently we have: BT1, BT2, BT3, BT4, BT5, BT6, BT7, BT8, BT9, BT10, BT11, EX1, EX2, EX3, ST1, ST2, ST3, ST4, ST5, ST6, ST7, ST8, ST9, ST10, ST12, ST13 and ST14',
+          'Share your decks and your profil with the community or just your friends, to share insights and make trading a whole lot easier.',
       },
       { name: 'author', content: 'TakaOtaku' },
       {

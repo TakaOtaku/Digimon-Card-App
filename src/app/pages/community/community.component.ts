@@ -1,6 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import {
@@ -64,10 +65,14 @@ export class CommunityComponent implements OnInit, OnDestroy {
     private authService: AuthService,
     private messageService: MessageService,
     private confirmationService: ConfirmationService,
-    private filterService: FilterService
+    private filterService: FilterService,
+    private meta: Meta,
+    private title: Title
   ) {}
 
   ngOnInit(): void {
+    this.makeGoogleFriendly();
+
     this.onSearch();
 
     this.db
@@ -117,6 +122,23 @@ export class CommunityComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.onDestroy$.next(true);
+  }
+
+  private makeGoogleFriendly() {
+    this.title.setTitle('Digimon Card Game - Community');
+
+    this.meta.addTags([
+      {
+        name: 'description',
+        content:
+          'Meta decks, fun decks, tournament decks and many more, find new decks for every set.',
+      },
+      { name: 'author', content: 'TakaOtaku' },
+      {
+        name: 'keywords',
+        content: 'Meta, decks, tournament, fun',
+      },
+    ]);
   }
 
   viewDeck(deck: IDeck) {

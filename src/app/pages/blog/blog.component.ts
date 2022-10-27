@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DataSnapshot } from '@angular/fire/compat/database/interfaces';
+import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 
 // @ts-ignore
@@ -37,10 +38,14 @@ export class BlogComponent implements OnInit, OnDestroy {
     private active: ActivatedRoute,
     private databaseService: DatabaseService,
     private authService: AuthService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private meta: Meta,
+    private metaTitle: Title
   ) {}
 
   ngOnInit(): void {
+    this.makeGoogleFriendly();
+
     this.checkURL();
 
     this.user = this.authService.userData;
@@ -52,6 +57,22 @@ export class BlogComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.onDestroy$.next(true);
     this.onDestroy$.unsubscribe();
+  }
+
+  private makeGoogleFriendly() {
+    this.metaTitle.setTitle('Digimon Card Game - ' + this.title);
+
+    this.meta.addTags([
+      {
+        name: 'description',
+        content: this.title,
+      },
+      { name: 'author', content: 'TakaOtaku' },
+      {
+        name: 'keywords',
+        content: 'Forum, decks, tournament',
+      },
+    ]);
   }
 
   checkURL() {
