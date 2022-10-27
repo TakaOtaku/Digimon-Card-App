@@ -1,4 +1,5 @@
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { filter, first, of, Subject, switchMap, takeUntil } from 'rxjs';
@@ -33,12 +34,16 @@ export class DeckbuilderComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private store: Store,
     private digimonBackendService: DigimonBackendService,
-    private authService: AuthService
+    private authService: AuthService,
+    private meta: Meta,
+    private title: Title
   ) {
     this.onResize();
   }
 
   ngOnInit() {
+    this.makeGoogleFriendly();
+
     this.store
       .select(selectMobileCollectionView)
       .pipe(takeUntil(this.onDestroy$))
@@ -52,6 +57,24 @@ export class DeckbuilderComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.onDestroy$.next(true);
+  }
+
+  private makeGoogleFriendly() {
+    this.title.setTitle('Digimon Card Game - Deck Builder');
+
+    this.meta.addTags([
+      {
+        name: 'description',
+        content:
+          'Build tournament winning decks with the best deck builder for the Digimon TCG and share them with the community or your friends.',
+      },
+      { name: 'author', content: 'TakaOtaku' },
+      {
+        name: 'keywords',
+        content:
+          'Digimon, decks, deck builder, tournament, TCG, community, friends, share',
+      },
+    ]);
   }
 
   checkURL() {

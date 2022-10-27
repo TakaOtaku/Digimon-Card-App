@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
@@ -37,10 +38,14 @@ export class HomeComponent implements OnInit, OnDestroy {
     private confirmationService: ConfirmationService,
     private messageService: MessageService,
     private router: Router,
-    private store: Store
+    private store: Store,
+    private meta: Meta,
+    private title: Title
   ) {}
 
   ngOnInit() {
+    this.makeGoogleFriendly();
+
     this.user = this.authService.userData;
     this.authService.authChange
       .pipe(takeUntil(this.onDestroy$))
@@ -58,6 +63,24 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.onDestroy$.next(true);
+  }
+
+  private makeGoogleFriendly() {
+    this.title.setTitle('Digimon Card Game - Home');
+
+    this.meta.addTags([
+      {
+        name: 'description',
+        content:
+          'Tournament Reports, Deck Builder, Collection Tracker, Tier list, Card Statistics and many more things at the Digimon TCG site.',
+      },
+      { name: 'author', content: 'TakaOtaku' },
+      {
+        name: 'keywords',
+        content:
+          'Tournament, Reports, Deck Builder, Collection Tracker, Tier list, Card, Statistics, Digimon, TCG',
+      },
+    ]);
   }
 
   newEntry() {

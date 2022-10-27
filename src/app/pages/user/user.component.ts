@@ -1,5 +1,6 @@
 import { Location } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { filter, first, Subject, switchMap, takeUntil } from 'rxjs';
@@ -32,10 +33,14 @@ export class UserComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private authService: AuthService,
     private digimonBackendService: DigimonBackendService,
-    private store: Store
+    private store: Store,
+    private meta: Meta,
+    private title: Title
   ) {}
 
   ngOnInit() {
+    this.makeGoogleFriendly();
+
     this.storeSubscriptions();
 
     this.userChange();
@@ -45,6 +50,23 @@ export class UserComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.onDestroy$.next(true);
+  }
+
+  private makeGoogleFriendly() {
+    this.title.setTitle('Digimon Card Game - Profil');
+
+    this.meta.addTags([
+      {
+        name: 'description',
+        content:
+          'See your Collection and Decks in one view. Share them with your friends, for easy insights in your decks and trading.',
+      },
+      { name: 'author', content: 'TakaOtaku' },
+      {
+        name: 'keywords',
+        content: 'Collection, Decks, Share, insights, trading',
+      },
+    ]);
   }
 
   storeSubscriptions() {
