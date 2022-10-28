@@ -3497,7 +3497,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[All Turns] [Once Per Turn] When a purple card is placed under this Tamer, ＜Draw 1＞ (Draw 1 card from your deck), and gain 1 memory.\n[Your Turn] [Once Per Turn] When you would play a level 4 or higher Digimon card with [Bagra Army] in its traits, by placing up to 3 purple Digimon cards from under your Tamers in the played Digimon card's digivolution cards, reduce the play cost of that Digimon by 2 for each card placed.",
+    "effect": "[All Turns] [Once Per Turn] When a purple card is placed under this Tamer, ＜Draw 1＞ (Draw 1 card from your deck), and gain 1 memory.\n[Your Turn] [Once Per Turn] When you would play 1 level 4 or higher Digimon card with [Bagra Army] in its traits, by placing up to 3 purple Digimon cards from under your Tamers in the played Digimon card's digivolution cards, reduce the play cost of that Digimon by 2 for each card placed.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
     "notes": "▹BOOSTER XROS ENCOUNTER [BT-10] Errata Card",
