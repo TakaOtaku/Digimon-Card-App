@@ -34,8 +34,8 @@ export class UserComponent implements OnInit, OnDestroy {
     private authService: AuthService,
     private digimonBackendService: DigimonBackendService,
     private store: Store,
-    private meta: Meta,
-    private title: Title
+  private meta: Meta,
+  private title: Title
   ) {}
 
   ngOnInit() {
