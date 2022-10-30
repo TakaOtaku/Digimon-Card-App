@@ -1895,7 +1895,7 @@
   },
   {
     "id": "BT1-042",
-    "name": "LoaderLiomon",
+    "name": "LoaderLeomon",
     "cardImage": "assets/images/cards/eng/BT1-042.webp",
     "cardType": "Digimon",
     "dp": "10000",
@@ -1914,7 +1914,7 @@
     "effect": "-",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹RELEASE SPECIAL BOOSTER Ver.1.0【BT01-03】",
+    "notes": "▹RELEASE SPECIAL BOOSTER Ver.1.0【BT01-03】Errata Card",
     "color": "Blue",
     "version": "Normal",
     "block": [
