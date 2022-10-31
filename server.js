@@ -29,7 +29,7 @@ fs.access(dir, fs.constants.F_OK, (err) => {
       console.log(str);
     }
   } catch (e) {
-    console.log(error);
+    console.log(e);
     process.exit(1);
   }
 });
