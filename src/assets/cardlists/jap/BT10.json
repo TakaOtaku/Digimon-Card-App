@@ -2327,7 +2327,7 @@
     "digiXros": "-",
     "specialDigivolve": "Digivolve: 1 if name contains [Justimon]",
     "dnaDigivolve": "-",
-    "effect": "[When Digivolving] By returning 1 non-[Justimon: Critical Arm] card with [Justimon] in its name from this Digimon's digivolution cards to its owner's hand, delete 1 of your opponent's Digimon with a play cost of 9 or less.\n[When Attacking] If you have a Tamer in play, you may digivolve this Digimon into a non-[Justimon: Critical Arm] Digimon card with [Justimon] in its name in your hand for 2 memory, ignoring its digivolution requirements.",
+    "effect": "[When Digivolving] By returning 1 card with [Justimon] in its name other than [Justimon: Critical Arm] from this Digimon's digivolution cards to its owner's hand, delete 1 of your opponent's Digimon with a play cost of 9 or less.\n[When Attacking] If you have a Tamer in play, this Digimon may digivolve into a Digimon with [Justimon] in its name other than [Justimon: Critical Arm] in your hand for a memory cost of 2, ignoring its digivolution requirements.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",

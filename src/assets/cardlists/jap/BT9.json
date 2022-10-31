@@ -2657,7 +2657,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[On Play] Reveal the top 3 cards of your deck. Trash 1 card with [Undead] or [Dark Animal] in its traits among them and add 1 card with [Undead] or [Dark Animal] in its traits among them to your hand. Place the rest at the bottom of your deck in any order.    ",
+    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 card with [Undead] or [Dark Animal] in its traits among them to your hand and trash 1 card with [Undead] or [Dark Animal] in its traits among them. Place the rest at the bottom of your deck in any order.",
     "digivolveEffect": "[When Attacking] This Digimon may digivolve into a Digimon card with [Undead] or [Dark Animal] in its traits from your trash for its digivolution cost.",
     "securityEffect": "-",
     "notes": "▹BOOSTER X RECORD [BT-09]",
