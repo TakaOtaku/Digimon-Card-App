@@ -10,8 +10,8 @@ import {
 import { ITag } from '../../models/interfaces/tag.interface';
 import { emptySettings } from '../store/reducers/save.reducer';
 
-const baseUrl = 'https://backend.digimoncard.app/api/';
-const baseUrl2 = 'http://localhost:8080/api/';
+const baseUrl2 = 'https://backend.digimoncard.app/api/';
+const baseUrl = 'http://localhost:8080/api/';
 
 @Injectable({
   providedIn: 'root',
