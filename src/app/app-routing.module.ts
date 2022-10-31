@@ -6,8 +6,13 @@ import { CommunityComponent } from './pages/community/community.component';
 import { DeckbuilderComponent } from './pages/deckbuilder/deckbuilder.component';
 import { HomeComponent } from './pages/home/home.component';
 import { UserComponent } from './pages/user/user.component';
+import { TestPageComponent } from './pages/test-page/test-page.component';
 
 const routes: Routes = [
+  {
+    path: 'test',
+    component: TestPageComponent,
+  },
   {
     path: 'community',
     component: CommunityComponent,
