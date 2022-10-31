@@ -42,6 +42,10 @@ Thumbs.db
 /.vscode/
 
 # Firebase
-/.firebase
+.firebase
 *-debug.log
 .runtimeconfig.json
+
+src/environments/
+environment.prod.ts
+environment.ts

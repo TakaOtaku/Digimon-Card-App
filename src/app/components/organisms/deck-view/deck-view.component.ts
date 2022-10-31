@@ -41,6 +41,7 @@ import {
   selectSave,
 } from '../../../store/digimon.selectors';
 import { emptyDeck } from '../../../store/reducers/digimon.reducers';
+import { sortID } from '../../../functions/filter.functions';
 
 @Component({
   selector: 'digimon-deck-view',
@@ -324,66 +325,52 @@ export class DeckViewComponent implements OnInit, OnDestroy {
   private colorSort() {
     const eggs = this.mainDeck
       .filter((card) => card.cardType === 'Digi-Egg')
-      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
+      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
     const red = this.mainDeck
       .filter(
         (card) => card.color.startsWith('Red') && card.cardType === 'Digimon'
       )
-      .sort(
-        (a, b) => a.cardLv.localeCompare(b.cardLv) || a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
     const blue = this.mainDeck
       .filter(
         (card) => card.color.startsWith('Blue') && card.cardType === 'Digimon'
       )
-      .sort(
-        (a, b) => a.cardLv.localeCompare(b.cardLv) || a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
     const yellow = this.mainDeck
       .filter(
         (card) => card.color.startsWith('Yellow') && card.cardType === 'Digimon'
       )
-      .sort(
-        (a, b) => a.cardLv.localeCompare(b.cardLv) || a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
     const green = this.mainDeck
       .filter(
         (card) => card.color.startsWith('Green') && card.cardType === 'Digimon'
       )
-      .sort(
-        (a, b) => a.cardLv.localeCompare(b.cardLv) || a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
     const black = this.mainDeck
       .filter(
         (card) => card.color.startsWith('Black') && card.cardType === 'Digimon'
       )
-      .sort(
-        (a, b) => a.cardLv.localeCompare(b.cardLv) || a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
     const purple = this.mainDeck
       .filter(
         (card) => card.color.startsWith('Purple') && card.cardType === 'Digimon'
       )
-      .sort(
-        (a, b) => a.cardLv.localeCompare(b.cardLv) || a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
 
     const white = this.mainDeck
       .filter(
         (card) => card.color.startsWith('White') && card.cardType === 'Digimon'
       )
-      .sort(
-        (a, b) => a.cardLv.localeCompare(b.cardLv) || a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
 
     const tamer = this.mainDeck
       .filter((card) => card.cardType === 'Tamer')
-      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
+      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
     const options = this.mainDeck
       .filter((card) => card.cardType === 'Option')
-      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
+      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
     this.mainDeck = [
       ...new Set([
@@ -404,35 +391,35 @@ export class DeckViewComponent implements OnInit, OnDestroy {
   private levelSort() {
     const eggs = this.mainDeck
       .filter((card) => card.cardType === 'Digi-Egg')
-      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
+      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
     const lv0 = this.mainDeck
       .filter((card) => card.cardLv === '' && card.cardType === 'Digimon')
-      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
+      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
     const lv3 = this.mainDeck
       .filter((card) => card.cardLv === 'Lv.3')
-      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
+      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
     const lv4 = this.mainDeck
       .filter((card) => card.cardLv === 'Lv.4')
-      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
+      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
     const lv5 = this.mainDeck
       .filter((card) => card.cardLv === 'Lv.5')
-      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
+      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
     const lv6 = this.mainDeck
       .filter((card) => card.cardLv === 'Lv.6')
-      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
+      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
     const lv7 = this.mainDeck
       .filter((card) => card.cardLv === 'Lv.7')
-      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
+      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
     const tamer = this.mainDeck
       .filter((card) => card.cardType === 'Tamer')
-      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
+      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
     const options = this.mainDeck
       .filter((card) => card.cardType === 'Option')
-      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
+      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
     this.mainDeck = [
       ...new Set([

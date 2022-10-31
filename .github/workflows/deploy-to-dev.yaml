@@ -16,6 +16,11 @@ jobs:
         with:
           node-version: '16'
 
+      - name: Create Environment Files
+        run: node.server.js
+        env:
+          ANGULAR_ENVIRONMENT_SECRET: '${{ secrets.ANGULAR_ENVIRONMENT_SECRET }}'
+
       - name: Install dependencies
         run: npm install
       - name: 🔨 Build Project
