@@ -17,7 +17,7 @@ jobs:
           node-version: '16'
 
       - name: Create Environment Files
-        run: node.server.js
+        run: node server.js
         env:
           ANGULAR_ENVIRONMENT_SECRET: '${{ secrets.ANGULAR_ENVIRONMENT_SECRET }}'
 
