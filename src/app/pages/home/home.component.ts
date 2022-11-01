@@ -3,7 +3,7 @@ import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { first, Subject, Subscription, takeUntil } from 'rxjs';
+import { Subject, Subscription, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
 import { ADMINS, IUser, RIGHTS } from '../../../models';
 import {
@@ -25,11 +25,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   user: IUser | null;
   rights = RIGHTS;
-
-  editView = false;
-  currentBlog: IBlog;
-  currentTitle = 'Empty Title';
-  currentQuill: any[] = [];
 
   private onDestroy$ = new Subject();
   constructor(
@@ -53,7 +48,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     this.store
       .select(selectBlogs)
-      .pipe(first())
+      .pipe(takeUntil(this.onDestroy$))
       .subscribe((entries) => {
         this.allBlogEntries = entries;
         this.blogEntriesHidden = entries.filter((entry) => !entry.approved);

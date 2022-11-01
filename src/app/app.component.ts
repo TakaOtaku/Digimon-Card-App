@@ -40,9 +40,11 @@ export class AppComponent {
     private digimonBackendService: DigimonBackendService
   ) {
     this.makeGoogleFriendly();
-    this.loadSave();
+
     this.getDecks();
     this.getBlogs();
+
+    this.loadSave();
 
     document.addEventListener(
       'contextmenu',
@@ -94,7 +96,7 @@ export class AppComponent {
       .pipe(first())
       .subscribe((saveOrNull: ISave | null) => {
         if (!saveOrNull) {
-          this.startRetryDialog();
+          this.retry();
           return;
         }
         this.spinner = false;
@@ -168,7 +170,7 @@ export class AppComponent {
     }
 
     this.spinner = false;
-    this.noSaveDialog = true;
+    this.createANewSave();
   }
 
   loginWithGoogle() {
