@@ -10,7 +10,7 @@ const content = `${process.env.ANGULAR_ENVIRONMENT_SECRET}`;
 fs.access(dir, fs.constants.F_OK, (err) => {
   if (err) {
     //Directory doesn't exist
-    console.log("src doesn't exits, creatign now", process.cwd());
+    console.log("src doesn't exits, creating now", process.cwd());
     fs.mkdir(dir, { recursive: true }, (err) => {
       if (err) throw err;
     });
