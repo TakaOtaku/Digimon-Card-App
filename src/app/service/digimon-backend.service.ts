@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable, Subscription } from 'rxjs';
 import { IColor, ICountCard, IDeck, ISave, ISettings, IUser } from 'src/models';
@@ -122,7 +122,21 @@ export class DigimonBackendService {
   }
 
   updateSave(save: ISave): Observable<any> {
+    const headers = new HttpHeaders({
+      'access-control-allow-methods': 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+      'access-control-allow-headers':
+        'access-control-allow-origin,content-type',
+      'access-control-allow-credentials': 'true',
+      'access-control-allow-origin': '*',
+      //'Content-Type': 'application/json',
+      //'Access-Control-Allow-Credentials': 'true',
+      //'Access-Control-Allow-Origin': '*',
+      //'Access-Control-Allow-Methods': 'GET, POST, PATCH, DELETE, PUT, OPTIONS',
+      //'Access-Control-Allow-Headers':
+      //  'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With',
+    });
     return this.http.put(`${baseUrl}users/${save.uid}`, save);
+    return this.http.put(`${baseUrl}users/${save.uid}`, save, { headers });
   }
 
   updateBlog(blog: IBlog): Observable<any> {
