@@ -135,6 +135,7 @@ export class DigimonBackendService {
       //'Access-Control-Allow-Headers':
       //  'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With',
     });
+    console.log('ffs');
     return this.http.put(`${baseUrl}users/${save.uid}`, save);
     return this.http.put(`${baseUrl}users/${save.uid}`, save, { headers });
   }
