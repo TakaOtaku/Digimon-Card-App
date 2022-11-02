@@ -1,4 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
+import { DataSnapshot } from '@angular/fire/compat/database/interfaces';
 
 // @ts-ignore
 import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
@@ -8,11 +9,10 @@ import {
   IBlog,
   IBlogWithText,
 } from '../../../models/interfaces/blog-entry.interface';
-import { DigimonBackendService } from '../../service/digimon-backend.service';
-import { DataSnapshot } from '@angular/fire/compat/database/interfaces';
-import { emptySettings } from '../../store/reducers/save.reducer';
-import { DatabaseService } from '../../service/database.service';
 import { AuthService } from '../../service/auth.service';
+import { DatabaseService } from '../../service/database.service';
+import { DigimonBackendService } from '../../service/digimon-backend.service';
+import { emptySettings } from '../../store/reducers/save.reducer';
 
 @Component({
   selector: 'digimon-test-page',
@@ -33,9 +33,9 @@ export class TestPageComponent implements OnDestroy {
 
   transferAllDataToSQL() {
     this.transferDecks();
-    this.transferUsers();
-    this.transferBlogs();
-    this.transferBlogsWithText();
+    //this.transferUsers();
+    //this.transferBlogs();
+    //this.transferBlogsWithText();
   }
 
   transferDecks() {

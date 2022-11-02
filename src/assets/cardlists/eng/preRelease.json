@@ -6142,7 +6142,7 @@
       "01",
       "02"
     ],
-    "restriction": "-",
+    "restriction": "Restricted to 1",
     "illustrator": "sasasi"
 
   },
@@ -6886,7 +6886,7 @@
     "block": [
       "01"
     ],
-    "restriction": "-",
+    "restriction": "Restricted to 1",
     "illustrator": "Takase"
 
   },
@@ -10265,7 +10265,7 @@
     "block": [
       "01"
     ],
-    "restriction": "-",
+    "restriction": "Restricted to 1",
     "illustrator": "Shin Sasaki"
 
   },
@@ -10645,7 +10645,7 @@
     "notes": "\u25b9BOOSTER XROS ENCOUNTER [BT-10]",
     "color": "Red/Yellow",
     "version": "Pre-Release",
-    "restriction": "-",
+    "restriction": "Restricted to 1",
     "illustrator": "TANIMESO",
     "block": ["02"]
   },
