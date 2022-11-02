@@ -6,7 +6,7 @@ import { filter, first, of, Subject, switchMap, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
 import { IDeck, ISave } from '../../../models';
 import { AuthService } from '../../service/auth.service';
-import { DatabaseService } from '../../service/database.service';
+import { DigimonBackendService } from '../../service/digimon-backend.service';
 import { setDeck } from '../../store/digimon.actions';
 import { selectMobileCollectionView } from '../../store/digimon.selectors';
 
@@ -33,10 +33,10 @@ export class DeckbuilderComponent implements OnInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
     private store: Store,
+    private digimonBackendService: DigimonBackendService,
+    private authService: AuthService,
     private meta: Meta,
-    private title: Title,
-    private databaseService: DatabaseService,
-    private authService: AuthService
+    private title: Title
   ) {
     this.onResize();
   }
@@ -87,17 +87,19 @@ export class DeckbuilderComponent implements OnInit, OnDestroy {
         switchMap((params) => {
           if (params['userId'] && params['deckId']) {
             this.deckId = params['deckId'];
-            return this.databaseService
-              .loadSave(params['userId'])
+            return this.digimonBackendService
+              .getSave(params['userId'])
               .pipe(first());
           } else {
-            this.databaseService.loadDeck(params['id']).subscribe((deck) => {
-              this.store.dispatch(
-                setDeck({
-                  deck: { ...deck, id: uuid.v4(), rating: 0, ratingCount: 0 },
-                })
-              );
-            });
+            this.digimonBackendService
+              .getDeck(params['id'])
+              .subscribe((deck) => {
+                this.store.dispatch(
+                  setDeck({
+                    deck: { ...deck, id: uuid.v4() },
+                  })
+                );
+              });
             return of(false);
           }
         })

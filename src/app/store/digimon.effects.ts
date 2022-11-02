@@ -1,12 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
-import { catchError, EMPTY, first, map, switchMap, tap } from 'rxjs';
+import {
+  catchError,
+  EMPTY,
+  first,
+  map,
+  Subscription,
+  switchMap,
+  tap,
+} from 'rxjs';
 import { CARDSET } from '../../models/card-set.enum';
 import { setupDigimonCards } from '../functions/digimon-card.functions';
 import { filterCards } from '../functions/filter.functions';
 import { AuthService } from '../service/auth.service';
-import { DatabaseService } from '../service/database.service';
+import { DigimonBackendService } from '../service/digimon-backend.service';
 import * as DigimonActions from './digimon.actions';
 import {
   selectCardSet,
@@ -39,12 +47,18 @@ export class DigimonEffects {
             .pipe(first())
             .pipe(
               map((save) => {
-                this.authService.isLoggedIn
-                  ? this.dbService.setSave(this.authService.userData!.uid, save)
-                  : localStorage.setItem(
-                      'Digimon-Card-Collector',
-                      JSON.stringify(save)
-                    );
+                if (this.authService.isLoggedIn) {
+                  const sub: Subscription = this.digimonBackendService
+                    .updateSave(save)
+                    .subscribe((value) => {
+                      sub.unsubscribe();
+                    });
+                } else {
+                  localStorage.setItem(
+                    'Digimon-Card-Collector',
+                    JSON.stringify(save)
+                  );
+                }
               }),
               catchError(() => EMPTY)
             )
@@ -180,7 +194,7 @@ export class DigimonEffects {
   constructor(
     private store: Store,
     private authService: AuthService,
-    private dbService: DatabaseService,
+    private digimonBackendService: DigimonBackendService,
     private actions$: Actions
   ) {}
 }

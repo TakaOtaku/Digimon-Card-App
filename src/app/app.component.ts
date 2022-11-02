@@ -6,20 +6,15 @@ import { first } from 'rxjs';
 import { ISave } from '../models';
 import { AuthService } from './service/auth.service';
 import { DatabaseService } from './service/database.service';
-import { loadSave, setSave } from './store/digimon.actions';
+import { DigimonBackendService } from './service/digimon-backend.service';
+import {
+  loadSave,
+  setBlogs,
+  setCommunityDecks,
+  setSave,
+} from './store/digimon.actions';
 import { emptySave } from './store/reducers/save.reducer';
 
-/**
- * Make the Website SEO-Friendly
- * Block right-clicking
- * Check for a Save in the local Storage
- *  found: Load the current save from the database
- *  not found: Ask the user to login or create a new save
- *    new save: Create a New Save
- *    login: Try to login with google
- *      success: Log-in with Google
- *      error: try again or contact me
- */
 @Component({
   selector: 'digimon-root',
   templateUrl: './app.component.html',
@@ -41,9 +36,13 @@ export class AppComponent {
     private databaseService: DatabaseService,
     private messageService: MessageService,
     private meta: Meta,
-    private title: Title
+    private title: Title,
+    private digimonBackendService: DigimonBackendService
   ) {
     this.makeGoogleFriendly();
+
+    this.getDecks();
+    this.getBlogs();
 
     this.loadSave();
 
@@ -92,21 +91,22 @@ export class AppComponent {
       return;
     }
 
-    this.databaseService
-      .loadSave(this.authService.userData!.uid, this.authService.userData)
+    this.digimonBackendService
+      .getSave(this.authService.userData!.uid)
       .pipe(first())
       .subscribe((saveOrNull: ISave | null) => {
         if (!saveOrNull) {
-          this.startRetryDialog();
+          this.retry();
           return;
         }
         this.spinner = false;
         this.hide = false;
         let save = saveOrNull as ISave;
-        this.store.dispatch(loadSave({ save }));
+
         if (save.version !== emptySave.version) {
           this.showChangelogModal();
         }
+
         this.store.dispatch(
           setSave({ save: { ...save, version: emptySave.version } })
         );
@@ -129,7 +129,7 @@ export class AppComponent {
     fileReader.onload = () => {
       try {
         let save: any = JSON.parse(fileReader.result as string);
-        save = this.databaseService.checkSaveValidity(save, null);
+        save = this.digimonBackendService.checkSaveValidity(save, null);
         this.store.dispatch(loadSave({ save }));
         this.messageService.add({
           severity: 'success',
@@ -159,7 +159,7 @@ export class AppComponent {
 
   private startLoginOfflineDialog() {
     if (this.localStorageSave) {
-      this.localStorageSave = this.databaseService.checkSaveValidity(
+      this.localStorageSave = this.digimonBackendService.checkSaveValidity(
         this.localStorageSave,
         this.authService.userData
       );
@@ -170,7 +170,7 @@ export class AppComponent {
     }
 
     this.spinner = false;
-    this.noSaveDialog = true;
+    this.createANewSave();
   }
 
   loginWithGoogle() {
@@ -191,5 +191,23 @@ export class AppComponent {
   showChangelogModal() {
     this.showChangelog = true;
     this.loadChangelog.emit(true);
+  }
+
+  getDecks() {
+    const sub = this.digimonBackendService
+      .getDecks()
+      .subscribe((communityDecks) => {
+        this.store.dispatch(setCommunityDecks({ communityDecks }));
+        sub.unsubscribe();
+      });
+  }
+
+  getBlogs() {
+    const sub = this.digimonBackendService
+      .getBlockEntries()
+      .subscribe((blogs) => {
+        this.store.dispatch(setBlogs({ blogs }));
+        sub.unsubscribe();
+      });
   }
 }

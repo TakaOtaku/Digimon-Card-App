@@ -539,3 +539,37 @@ export function dynamicSortNumber(property: string): any {
     return result * sortOrder;
   };
 }
+
+export function sortID(a: string, b: string) {
+  const aSplit = a.split('-');
+  const bSplit = b.split('-');
+
+  const aSetName = hasNumber(aSplit[0]) ? aSplit[0].slice(0, 2) : 'P';
+  const bSetName = hasNumber(bSplit[0]) ? bSplit[0].slice(0, 2) : 'P';
+
+  const aSetNumber = hasNumber(aSplit[0])
+    ? (aSplit[0].substring(2) as any) >>> 0
+    : 99;
+  const bSetNumber = hasNumber(bSplit[0])
+    ? (bSplit[0].substring(2) as any) >>> 0
+    : 99;
+
+  const aSetID = aSplit[1];
+  const bSetID = bSplit[1];
+
+  const SetResult = aSetName.localeCompare(bSetName, undefined, {
+    numeric: true,
+    sensitivity: 'base',
+  });
+
+  const SetNumberResult =
+    aSetNumber < bSetNumber ? -1 : aSetNumber > bSetNumber ? 1 : 0;
+
+  const IDResult = aSetID < bSetID ? -1 : aSetID > bSetID ? 1 : 0;
+
+  return SetResult || SetNumberResult || IDResult;
+}
+
+function hasNumber(myString: string) {
+  return /\d/.test(myString);
+}

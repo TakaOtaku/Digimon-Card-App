@@ -49,7 +49,7 @@
             </thead>
             <tbody>
               <tr
-                *ngFor="let card of mostUsedCards | slice: 0:100; let i = index"
+                *ngFor="let card of mostUsedCards | slice: 0:50; let i = index"
                 class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150"
               >
                 <td
@@ -141,7 +141,7 @@
             <tbody>
               <tr
                 *ngFor="
-                  let card of filter(mostUsedCards, 'Digimon') | slice: 0:100;
+                  let card of filter(mostUsedCards, 'Digimon') | slice: 0:50;
                   let i = index
                 "
                 class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150"
@@ -235,7 +235,7 @@
             <tbody>
               <tr
                 *ngFor="
-                  let card of filter(mostUsedCards, 'Tamer') | slice: 0:100;
+                  let card of filter(mostUsedCards, 'Tamer') | slice: 0:50;
                   let i = index
                 "
                 class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150"
@@ -329,7 +329,7 @@
             <tbody>
               <tr
                 *ngFor="
-                  let card of filter(mostUsedCards, 'Option') | slice: 0:100;
+                  let card of filter(mostUsedCards, 'Option') | slice: 0:50;
                   let i = index
                 "
                 class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150"

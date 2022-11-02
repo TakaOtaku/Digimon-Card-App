@@ -10,15 +10,16 @@ import {
   MessageService,
 } from 'primeng/api';
 import { ContextMenu } from 'primeng/contextmenu';
-import { Subject, takeUntil } from 'rxjs';
+import { Subject, Subscription, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
 import { COLORS, ICard, IDeck, TAGS } from '../../../models';
 import { mapToDeckCards } from '../../functions/digimon-card.functions';
 import { AuthService } from '../../service/auth.service';
-import { DatabaseService } from '../../service/database.service';
+import { DigimonBackendService } from '../../service/digimon-backend.service';
 import { importDeck, setDeck } from '../../store/digimon.actions';
 import {
   selectAllCards,
+  selectCommunityDecks,
   selectCommunityDeckSearch,
 } from '../../store/digimon.selectors';
 
@@ -61,7 +62,7 @@ export class CommunityComponent implements OnInit, OnDestroy {
   constructor(
     private store: Store,
     private router: Router,
-    private db: DatabaseService,
+    private digimonBackendService: DigimonBackendService,
     private authService: AuthService,
     private messageService: MessageService,
     private confirmationService: ConfirmationService,
@@ -75,13 +76,15 @@ export class CommunityComponent implements OnInit, OnDestroy {
 
     this.onSearch();
 
-    this.db
-      .loadCommunityDecks()
+    this.store
+      .select(selectCommunityDecks)
       .pipe(takeUntil(this.onDestroy$))
       .subscribe((decks) => {
-        this.allDecks = decks.sort(
-          (a, b) => new Date(b.date!).getTime() - new Date(a.date!).getTime()
-        );
+        this.allDecks = [...decks].sort((a, b) => {
+          const aTime = new Date(a.date!).getTime();
+          const bTime = new Date(b.date!).getTime();
+          return bTime - aTime;
+        });
         this.decks = this.allDecks;
         this.filterDecks(this.searchFilter.value);
       });
@@ -147,7 +150,7 @@ export class CommunityComponent implements OnInit, OnDestroy {
       accept: () => {
         this.store.dispatch(
           setDeck({
-            deck: { ...deck, id: uuid.v4(), rating: 0, ratingCount: 0 },
+            deck: { ...deck, id: uuid.v4() },
           })
         );
         this.router.navigateByUrl('/deckbuilder/' + deck.id);
@@ -161,7 +164,7 @@ export class CommunityComponent implements OnInit, OnDestroy {
       accept: () => {
         this.store.dispatch(
           importDeck({
-            deck: { ...deck, id: uuid.v4(), rating: 0, ratingCount: 0 },
+            deck: { ...deck, id: uuid.v4() },
           })
         );
         this.messageService.add({
@@ -194,7 +197,9 @@ export class CommunityComponent implements OnInit, OnDestroy {
   }
 
   delete(deck: IDeck) {
-    this.db.deleteDeck(deck.id);
+    const sub: Subscription = this.digimonBackendService
+      .deleteDeck(deck.id)
+      .subscribe((value) => sub.unsubscribe());
 
     this.decks = this.decks.filter((currentDeck) => currentDeck.id !== deck.id);
 

@@ -6,7 +6,7 @@ import { Store } from '@ngrx/store';
 import { filter, first, Subject, switchMap, takeUntil } from 'rxjs';
 import { ICard, ICountCard, IDeck, ISave } from '../../../models';
 import { AuthService } from '../../service/auth.service';
-import { DatabaseService } from '../../service/database.service';
+import { DigimonBackendService } from '../../service/digimon-backend.service';
 import {
   selectAllCards,
   selectCollection,
@@ -32,10 +32,10 @@ export class UserComponent implements OnInit, OnDestroy {
     private location: Location,
     private route: ActivatedRoute,
     private authService: AuthService,
-    private databaseService: DatabaseService,
+    private digimonBackendService: DigimonBackendService,
     private store: Store,
-    private meta: Meta,
-    private title: Title
+  private meta: Meta,
+  private title: Title
   ) {}
 
   ngOnInit() {
@@ -97,8 +97,8 @@ export class UserComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.onDestroy$))
       .subscribe(() => {
         this.changeURL();
-        this.databaseService
-          .loadSave(this.authService.userData!.uid)
+        this.digimonBackendService
+          .getSave(this.authService.userData!.uid)
           .pipe(first())
           .subscribe((save) => {
             this.save = save;
@@ -117,7 +117,7 @@ export class UserComponent implements OnInit, OnDestroy {
           return !!params['id'];
         }),
         switchMap((params) =>
-          this.databaseService.loadSave(params['id']).pipe(first())
+          this.digimonBackendService.getSave(params['id']).pipe(first())
         )
       )
       .subscribe((save) => {

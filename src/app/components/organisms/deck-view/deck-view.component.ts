@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { filter, Subject, takeUntil } from 'rxjs';
+import { filter, Subject, Subscription, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
 import {
   DeckColorMap,
@@ -27,7 +27,7 @@ import {
   sortColors,
 } from '../../../functions/digimon-card.functions';
 import { AuthService } from '../../../service/auth.service';
-import { DatabaseService } from '../../../service/database.service';
+import { DigimonBackendService } from '../../../service/digimon-backend.service';
 import {
   addCardToDeck,
   importDeck,
@@ -36,10 +36,12 @@ import {
 import {
   selectAddCardToDeck,
   selectCollection,
+  selectCommunityDecks,
   selectDeckBuilderViewModel,
   selectSave,
 } from '../../../store/digimon.selectors';
 import { emptyDeck } from '../../../store/reducers/digimon.reducers';
+import { sortID } from '../../../functions/filter.functions';
 
 @Component({
   selector: 'digimon-deck-view',
@@ -76,7 +78,7 @@ export class DeckViewComponent implements OnInit, OnDestroy {
 
   constructor(
     private store: Store,
-    private db: DatabaseService,
+    private digimonBackendService: DigimonBackendService,
     private authService: AuthService,
     private confirmationService: ConfirmationService,
     private messageService: MessageService
@@ -164,7 +166,9 @@ export class DeckViewComponent implements OnInit, OnDestroy {
       this.confirmationService.confirm({
         message: 'You are about to share the deck. Are you sure?',
         accept: () => {
-          this.db.shareDeck(this.deck, this.authService.userData);
+          const sub: Subscription = this.digimonBackendService
+            .updateDeck(this.deck, this.authService.userData)
+            .subscribe((value) => sub.unsubscribe());
           this.messageService.add({
             severity: 'success',
             summary: 'Deck shared!',
@@ -321,66 +325,52 @@ export class DeckViewComponent implements OnInit, OnDestroy {
   private colorSort() {
     const eggs = this.mainDeck
       .filter((card) => card.cardType === 'Digi-Egg')
-      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
+      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
     const red = this.mainDeck
       .filter(
         (card) => card.color.startsWith('Red') && card.cardType === 'Digimon'
       )
-      .sort(
-        (a, b) => a.cardLv.localeCompare(b.cardLv) || a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
     const blue = this.mainDeck
       .filter(
         (card) => card.color.startsWith('Blue') && card.cardType === 'Digimon'
       )
-      .sort(
-        (a, b) => a.cardLv.localeCompare(b.cardLv) || a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
     const yellow = this.mainDeck
       .filter(
         (card) => card.color.startsWith('Yellow') && card.cardType === 'Digimon'
       )
-      .sort(
-        (a, b) => a.cardLv.localeCompare(b.cardLv) || a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
     const green = this.mainDeck
       .filter(
         (card) => card.color.startsWith('Green') && card.cardType === 'Digimon'
       )
-      .sort(
-        (a, b) => a.cardLv.localeCompare(b.cardLv) || a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
     const black = this.mainDeck
       .filter(
         (card) => card.color.startsWith('Black') && card.cardType === 'Digimon'
       )
-      .sort(
-        (a, b) => a.cardLv.localeCompare(b.cardLv) || a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
     const purple = this.mainDeck
       .filter(
         (card) => card.color.startsWith('Purple') && card.cardType === 'Digimon'
       )
-      .sort(
-        (a, b) => a.cardLv.localeCompare(b.cardLv) || a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
 
     const white = this.mainDeck
       .filter(
         (card) => card.color.startsWith('White') && card.cardType === 'Digimon'
       )
-      .sort(
-        (a, b) => a.cardLv.localeCompare(b.cardLv) || a.id.localeCompare(b.id)
-      );
+      .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
 
     const tamer = this.mainDeck
       .filter((card) => card.cardType === 'Tamer')
-      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
+      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
     const options = this.mainDeck
       .filter((card) => card.cardType === 'Option')
-      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
+      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
     this.mainDeck = [
       ...new Set([
@@ -401,35 +391,35 @@ export class DeckViewComponent implements OnInit, OnDestroy {
   private levelSort() {
     const eggs = this.mainDeck
       .filter((card) => card.cardType === 'Digi-Egg')
-      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
+      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
     const lv0 = this.mainDeck
       .filter((card) => card.cardLv === '' && card.cardType === 'Digimon')
-      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
+      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
     const lv3 = this.mainDeck
       .filter((card) => card.cardLv === 'Lv.3')
-      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
+      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
     const lv4 = this.mainDeck
       .filter((card) => card.cardLv === 'Lv.4')
-      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
+      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
     const lv5 = this.mainDeck
       .filter((card) => card.cardLv === 'Lv.5')
-      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
+      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
     const lv6 = this.mainDeck
       .filter((card) => card.cardLv === 'Lv.6')
-      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
+      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
     const lv7 = this.mainDeck
       .filter((card) => card.cardLv === 'Lv.7')
-      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
+      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
     const tamer = this.mainDeck
       .filter((card) => card.cardType === 'Tamer')
-      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
+      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
     const options = this.mainDeck
       .filter((card) => card.cardType === 'Option')
-      .sort((a, b) => sortColors(a.color, b.color) || a.id.localeCompare(b.id));
+      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
     this.mainDeck = [
       ...new Set([
@@ -455,8 +445,8 @@ export class DeckViewComponent implements OnInit, OnDestroy {
   }
 
   deckThingy() {
-    this.db
-      .loadCommunityDecks()
+    this.store
+      .select(selectCommunityDecks)
       .pipe(takeUntil(this.onDestroy$))
       .subscribe((decks) => {
         decks.forEach((deck) => {
@@ -465,9 +455,13 @@ export class DeckViewComponent implements OnInit, OnDestroy {
           if (deckIsValid(deck, this.allCards) === '') {
             newDeck.tags = setTags(deck.tags ?? [], deck, this.allCards);
             newDeck.color = setColors(deck, this.allCards, deck.color);
-            this.db.updateCommunityDeck(newDeck);
+            const sub: Subscription = this.digimonBackendService
+              .updateDeck(newDeck)
+              .subscribe((value) => sub.unsubscribe());
           } else {
-            this.db.deleteDeck(deck.id);
+            const sub: Subscription = this.digimonBackendService
+              .deleteDeck(deck.id)
+              .subscribe((value) => sub.unsubscribe());
           }
         });
       });

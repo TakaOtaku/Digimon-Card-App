@@ -1,17 +1,16 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { DataSnapshot } from '@angular/fire/compat/database/interfaces';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 
 // @ts-ignore
 import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 import { MessageService } from 'primeng/api';
-import { filter, first, Subject, takeUntil } from 'rxjs';
+import { filter, first, Subject, Subscription, takeUntil } from 'rxjs';
 import { Base64Adapter } from 'src/app/functions/base64-adapter';
 import { ADMINS, IUser } from '../../../models';
 import { IBlogWithText } from '../../../models/interfaces/blog-entry.interface';
 import { AuthService } from '../../service/auth.service';
-import { DatabaseService } from '../../service/database.service';
+import { DigimonBackendService } from '../../service/digimon-backend.service';
 
 @Component({
   selector: 'digimon-blog',
@@ -36,7 +35,7 @@ export class BlogComponent implements OnInit, OnDestroy {
   constructor(
     public router: Router,
     private active: ActivatedRoute,
-    private databaseService: DatabaseService,
+    private digimonBackendService: DigimonBackendService,
     private authService: AuthService,
     private messageService: MessageService,
     private meta: Meta,
@@ -82,26 +81,21 @@ export class BlogComponent implements OnInit, OnDestroy {
         filter((params) => !!params['id'])
       )
       .subscribe((params) => {
-        this.databaseService.loadBlogEntry(params['id']).subscribe((blog) => {
-          try {
-            const value: DataSnapshot = blog;
-
-            if (!value) {
-              return;
+        this.digimonBackendService
+          .getBlogEntryWithText(params['id'])
+          .subscribe((blog) => {
+            try {
+              this.blog = blog;
+              this.title = blog.title;
+              this.content = blog.text;
+              this.author = blog.author;
+              this.date = blog.date;
+              this.category = blog.category;
+            } catch (e) {
+              // eslint-disable-next-line no-console
+              console.log(e);
             }
-
-            const newBlog = value.val();
-            this.blog = newBlog;
-            this.title = newBlog.title;
-            this.content = newBlog.text;
-            this.author = newBlog.author;
-            this.date = newBlog.date;
-            this.category = newBlog.category;
-          } catch (e) {
-            // eslint-disable-next-line no-console
-            console.log(e);
-          }
-        });
+          });
       });
   }
 
@@ -137,7 +131,9 @@ export class BlogComponent implements OnInit, OnDestroy {
       date: new Date(),
     } as IBlogWithText;
 
-    this.databaseService.saveBlogEntry(newBlog);
+    const sub: Subscription = this.digimonBackendService
+      .updateBlogWithText(newBlog)
+      .subscribe((value) => sub.unsubscribe());
     this.messageService.add({
       severity: 'success',
       summary: 'Blog-Entry saved!',

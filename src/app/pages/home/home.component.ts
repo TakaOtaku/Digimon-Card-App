@@ -1,37 +1,35 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { DataSnapshot } from '@angular/fire/compat/database/interfaces';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { first, Subject, takeUntil } from 'rxjs';
+import { Subject, Subscription, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
 import { ADMINS, IUser, RIGHTS } from '../../../models';
-import { IBlogWithText } from '../../../models/interfaces/blog-entry.interface';
+import {
+  IBlog,
+  IBlogWithText,
+} from '../../../models/interfaces/blog-entry.interface';
 import { AuthService } from '../../service/auth.service';
-import { DatabaseService } from '../../service/database.service';
+import { DigimonBackendService } from '../../service/digimon-backend.service';
+import { selectBlogs } from '../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-home',
   templateUrl: './home.component.html',
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  allBlogEntries: IBlogWithText[] = [];
-  blogEntries: IBlogWithText[] = [];
-  blogEntriesHidden: IBlogWithText[] = [];
+  allBlogEntries: IBlog[] = [];
+  blogEntries: IBlog[] = [];
+  blogEntriesHidden: IBlog[] = [];
 
   user: IUser | null;
   rights = RIGHTS;
 
-  editView = false;
-  currentBlog: IBlogWithText;
-  currentTitle = 'Empty Title';
-  currentQuill: any[] = [];
-
   private onDestroy$ = new Subject();
   constructor(
     private authService: AuthService,
-    private dbService: DatabaseService,
+    private digimonBackendService: DigimonBackendService,
     private confirmationService: ConfirmationService,
     private messageService: MessageService,
     private router: Router,
@@ -48,16 +46,10 @@ export class HomeComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.onDestroy$))
       .subscribe(() => (this.user = this.authService.userData));
 
-    this.dbService
-      .loadBlogEntries()
-      .pipe(first())
-      .subscribe((r) => {
-        const value: DataSnapshot = r;
-        if (!value) {
-          return;
-        }
-        const entries: IBlogWithText[] = Object.values(value.val());
-
+    this.store
+      .select(selectBlogs)
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((entries) => {
         this.allBlogEntries = entries;
         this.blogEntriesHidden = entries.filter((entry) => !entry.approved);
         this.blogEntries = entries.filter((entry) => entry.approved);
@@ -87,18 +79,27 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   newEntry() {
-    const newBlog: IBlogWithText = {
+    const newBlog: IBlog = {
       uid: uuid.v4(),
       date: new Date(),
       title: 'Empty Entry',
-      text: '<p>Hello World!</p>',
       approved: false,
       author: this.user!.displayName,
       authorId: this.user!.uid,
       category: 'Tournament Report',
     };
+    const newBlogWithText: IBlogWithText = {
+      ...newBlog,
+      text: '<p>Hello World!</p>',
+    };
+
     this.blogEntriesHidden.push(newBlog);
-    this.dbService.saveBlogEntry(newBlog);
+    const sub: Subscription = this.digimonBackendService
+      .createBlog(newBlog)
+      .subscribe((value) => sub.unsubscribe());
+    const sub2: Subscription = this.digimonBackendService
+      .createBlogWithText(newBlogWithText)
+      .subscribe((value) => sub2.unsubscribe());
     this.messageService.add({
       severity: 'success',
       summary: 'Blog-Entry created!',
@@ -106,11 +107,11 @@ export class HomeComponent implements OnInit, OnDestroy {
     });
   }
 
-  open(blog: IBlogWithText) {
+  open(blog: IBlog) {
     this.router.navigateByUrl('blog/' + blog.uid);
   }
 
-  approve(blog: IBlogWithText) {
+  approve(blog: IBlog) {
     blog.approved = true;
     this.blogEntriesHidden = this.blogEntriesHidden.filter(
       (entry) => entry.uid !== blog.uid
@@ -119,10 +120,12 @@ export class HomeComponent implements OnInit, OnDestroy {
       (entry) => entry.uid !== blog.uid
     );
     this.blogEntries.push(blog);
-    this.dbService.saveBlogEntry(blog);
+    const sub: Subscription = this.digimonBackendService
+      .updateBlog(blog)
+      .subscribe((value) => sub.unsubscribe());
   }
 
-  hide(blog: IBlogWithText) {
+  hide(blog: IBlog) {
     blog.approved = false;
     this.blogEntriesHidden = this.blogEntriesHidden.filter(
       (entry) => entry.uid !== blog.uid
@@ -131,17 +134,12 @@ export class HomeComponent implements OnInit, OnDestroy {
       (entry) => entry.uid !== blog.uid
     );
     this.blogEntriesHidden.push(blog);
-    this.dbService.saveBlogEntry(blog);
+    const sub: Subscription = this.digimonBackendService
+      .updateBlog(blog)
+      .subscribe((value) => sub.unsubscribe());
   }
 
-  edit(blog: IBlogWithText) {
-    this.editView = true;
-    this.currentQuill = blog.text;
-    this.currentTitle = blog.title;
-    this.currentBlog = blog;
-  }
-
-  delete(blog: IBlogWithText, event: any) {
+  delete(blog: IBlog, event: any) {
     this.confirmationService.confirm({
       target: event!.target!,
       message:
@@ -154,7 +152,14 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.blogEntries = this.blogEntries.filter(
           (entry) => entry.uid !== blog.uid
         );
-        this.dbService.deleteBlogEntry(blog.uid);
+
+        const sub: Subscription = this.digimonBackendService
+          .deleteBlogEntry(blog.uid)
+          .subscribe((value) => sub.unsubscribe());
+        const sub2: Subscription = this.digimonBackendService
+          .deleteBlogEntryWithText(blog.uid)
+          .subscribe((value) => sub2.unsubscribe());
+
         this.messageService.add({
           severity: 'success',
           summary: 'Blog-Entry deleted!',
@@ -205,7 +210,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     return writeRights ? entryWritten : false;
   }
 
-  showEdit(blog: IBlogWithText): boolean {
+  showEdit(blog: IBlog): boolean {
     if (this.isAdmin()) {
       return true;
     }

@@ -44,6 +44,16 @@ export const selectCommunityDeckSearch = createSelector(
   selectDigimonState,
   (state: IDigimonState) => state.communityDeckSearch
 );
+
+export const selectCommunityDecks = createSelector(
+  selectDigimonState,
+  (state: IDigimonState) => state.communityDecks
+);
+
+export const selectBlogs = createSelector(
+  selectDigimonState,
+  (state: IDigimonState) => state.blogs
+);
 //endregion
 
 //region Digimon Card Selectors
