@@ -2,25 +2,25 @@
   class="h-full w-full min-w-full max-w-full overflow-x-hidden md:w-[700px] md:min-w-[700px] md:max-w-[700px]"
 >
   <div
-    class="align-center mt-5 inline-flex h-10 w-full justify-between"
+    class="align-center mt-2 inline-flex h-10 w-full justify-between"
     id="Header"
   >
-    <p class="self-center text-xl font-bold text-gray-500" id="Card-Number">
+    <p class="self-center text-lg font-bold text-gray-500" id="Card-Number">
       {{ card.cardNumber }}
     </p>
     <p
-      class="self-center text-xl font-bold uppercase text-white"
+      class="self-center text-lg font-bold uppercase text-white"
       id="Card-Rarity"
     >
       {{ card.rarity }}
     </p>
     <p
-      class="self-center text-xl font-bold uppercase text-white"
+      class="self-center text-lg font-bold uppercase text-white"
       id="Card-Block"
     >
       {{ card.block }}
     </p>
-    <p [ngStyle]="{color}" class="self-center text-xl font-bold" id="Card-Type">
+    <p [ngStyle]="{color}" class="self-center text-lg font-bold" id="Card-Type">
       {{ card.cardType }}
     </p>
     <div
@@ -28,13 +28,13 @@
       class="my-2 inline-block rounded-full px-6 py-2.5 leading-tight shadow-md"
       id="Digimon-Lv"
     >
-      <p class="text-xl font-bold leading-[5px] text-white">
+      <p class="text-lg font-bold leading-[5px] text-white">
         {{ card.cardLv }}
       </p>
     </div>
     <p
       [ngStyle]="{color}"
-      class="self-center text-xl font-bold"
+      class="text-lg-xl self-center font-bold"
       id="Card-Version"
     >
       {{ version }}
@@ -50,7 +50,7 @@
   </div>
 
   <div class="flex flex-row">
-    <h1 [ngStyle]="{color}" class="my-5 text-4xl font-black" id="Card-Name">
+    <h1 [ngStyle]="{color}" class="my-3 text-3xl font-black" id="Card-Name">
       {{ card.name }}
     </h1>
     <button
@@ -74,7 +74,7 @@
     <div class="max-w-1/2 w-1/2 self-center pl-2">
       <div *ngIf="card.form !== '-'" class="flex flex-col" id="Digimon-Form">
         <p [ngStyle]="{color}" class="text-lg font-extrabold">Form</p>
-        <p class="font-white text-lg font-bold">{{ card.form }}</p>
+        <p class="font-white font-bold">{{ card.form }}</p>
       </div>
       <div
         *ngIf="card.attribute !== '-'"
@@ -86,11 +86,11 @@
       </div>
       <div *ngIf="card.type !== '-'" class="flex flex-col" id="Digimon-Type">
         <p [ngStyle]="{color}" class="text-lg font-extrabold">Type</p>
-        <p class="font-white text-lg font-bold">{{ card.type }}</p>
+        <p class="font-white font-bold">{{ card.type }}</p>
       </div>
       <div *ngIf="card.dp !== '-'" class="flex flex-col" id="Digimon-DP">
         <p [ngStyle]="{color}" class="text-lg font-extrabold">DP</p>
-        <p class="font-white text-lg font-bold">{{ card.dp }}</p>
+        <p class="font-white font-bold">{{ card.dp }}</p>
       </div>
       <div
         *ngIf="card.playCost !== '-'"
@@ -98,7 +98,7 @@
         id="Digimon-Play-Cost"
       >
         <p [ngStyle]="{color}" class="text-lg font-extrabold">Play Cost</p>
-        <p class="font-white text-lg font-bold">{{ card.playCost }}</p>
+        <p class="font-white font-bold">{{ card.playCost }}</p>
       </div>
       <div
         *ngIf="card.digivolveCost1 !== '-'"
@@ -108,7 +108,7 @@
         <p [ngStyle]="{color}" class="text-lg font-extrabold">
           Digivolve Cost 1
         </p>
-        <p class="font-white text-lg font-bold">{{ card.digivolveCost1 }}</p>
+        <p class="font-white font-bold">{{ card.digivolveCost1 }}</p>
       </div>
       <div
         *ngIf="card.digivolveCost2 !== '-'"
@@ -118,7 +118,7 @@
         <p [ngStyle]="{color}" class="text-lg font-extrabold">
           Digivolve Cost 2
         </p>
-        <p class="font-white text-lg font-bold">{{ card.digivolveCost2 }}</p>
+        <p class="font-white font-bold">{{ card.digivolveCost2 }}</p>
       </div>
       <div
         *ngIf="card.specialDigivolve !== '-'"
@@ -128,7 +128,7 @@
         <p [ngStyle]="{color}" class="text-lg font-extrabold">
           Special Digivolve
         </p>
-        <p class="font-white whitespace-pre-wrap text-lg font-bold">
+        <p class="font-white whitespace-pre-wrap font-bold">
           {{ card.specialDigivolve }}
         </p>
       </div>
@@ -138,7 +138,7 @@
         id="Digimon-DNA-Digivolve"
       >
         <p [ngStyle]="{color}" class="text-lg font-extrabold">DNA Digivolve</p>
-        <p class="font-white whitespace-pre-wrap text-lg font-bold">
+        <p class="font-white whitespace-pre-wrap font-bold">
           {{ card.dnaDigivolve }}
         </p>
       </div>
@@ -148,7 +148,7 @@
         id="Digimon-DigiXros"
       >
         <p [ngStyle]="{color}" class="text-lg font-extrabold">DigiXros</p>
-        <p class="font-white whitespace-pre-wrap text-lg font-bold">
+        <p class="font-white whitespace-pre-wrap font-bold">
           {{ card.digiXros }}
         </p>
       </div>
@@ -158,7 +158,7 @@
   <div class="max-w-full" id="Effects">
     <div *ngIf="card.effect !== '-'" class="flex flex-col" id="Digimon-Effect">
       <p [ngStyle]="{color}" class="text-lg font-extrabold">Effect</p>
-      <p class="font-white whitespace-pre-wrap text-lg font-bold">
+      <p class="font-white whitespace-pre-wrap font-bold">
         {{ card.effect }}
       </p>
     </div>
@@ -168,7 +168,7 @@
       id="Digimon-Digivolve-Effect"
     >
       <p [ngStyle]="{color}" class="text-lg font-extrabold">Inherited effect</p>
-      <p class="font-white whitespace-pre-wrap text-lg font-bold">
+      <p class="font-white whitespace-pre-wrap font-bold">
         {{ card.digivolveEffect }}
       </p>
     </div>
@@ -178,7 +178,7 @@
       id="Security-Effect"
     >
       <p [ngStyle]="{color}" class="text-lg font-extrabold">Security effect</p>
-      <p class="font-white whitespace-pre-wrap text-lg font-bold">
+      <p class="font-white whitespace-pre-wrap font-bold">
         {{ card.securityEffect }}
       </p>
     </div>
@@ -187,14 +187,14 @@
   <div *ngIf="card.restriction !== '-'" class="max-w-full" id="Restriction">
     <div class="flex flex-col" id="Card-Restriction">
       <p [ngStyle]="{color}" class="text-lg font-extrabold">Restriction</p>
-      <p class="font-white text-lg font-bold">{{ card.restriction }}</p>
+      <p class="font-white font-bold">{{ card.restriction }}</p>
     </div>
   </div>
 
   <div class="max-w-full" id="Notes">
     <div class="flex flex-col" id="Card-Notes">
       <p [ngStyle]="{color}" class="text-lg font-extrabold">Notes</p>
-      <p class="font-white text-lg font-bold">{{ card.notes }}</p>
+      <p class="font-white font-bold">{{ card.notes }}</p>
     </div>
   </div>
 
@@ -202,7 +202,7 @@
     <div class="flex flex-col" id="Card-Illustrator">
       <p [ngStyle]="{color}" class="text-lg font-extrabold">Illustrator</p>
       <div class="flex flex-row">
-        <p class="font-white text-lg font-bold">{{ card.illustrator }}</p>
+        <p class="font-white font-bold">{{ card.illustrator }}</p>
         <button
           (click)="openWikiIllustrator()"
           class="p-button-text"
