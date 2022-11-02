@@ -7,6 +7,22 @@
   <div
     class="surface-card flex w-full flex-row border-t-2 border-white bg-opacity-25"
   >
+    <digimon-ddto-spread
+      *ngIf="!collectionView"
+      [deck]="deck"
+      [allCards]="allCards"
+    ></digimon-ddto-spread>
+    <digimon-level-spread
+      *ngIf="!collectionView"
+      [deck]="deck"
+      [allCards]="allCards"
+    ></digimon-level-spread>
+    <digimon-color-spread
+      *ngIf="!collectionView"
+      [deck]="deck"
+      [allCards]="allCards"
+    ></digimon-color-spread>
+
     <digimon-chart-containers
       [deck]="mainDeck"
       class="max-w-[40rem]"

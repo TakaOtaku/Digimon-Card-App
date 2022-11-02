@@ -1,9 +1,12 @@
 import { Component, Input, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { filter, Subject, takeUntil } from 'rxjs';
-import { IDeckCard } from '../../../../../models';
+import { ICard, IDeck, IDeckCard } from '../../../../../models';
 import { mapToDeckCards } from '../../../../functions/digimon-card.functions';
-import { selectDeckBuilderViewModel } from '../../../../store/digimon.selectors';
+import {
+  selectAllCards,
+  selectDeckBuilderViewModel,
+} from '../../../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-deck-stats',
@@ -14,6 +17,9 @@ export class DeckStatsComponent implements OnDestroy {
   @Input() collectionView = false;
 
   mainDeck: IDeckCard[];
+
+  deck: IDeck;
+  allCards: ICard[];
 
   private onDestroy$ = new Subject<boolean>();
 
@@ -28,8 +34,16 @@ export class DeckStatsComponent implements OnDestroy {
         if (!deck) {
           return;
         }
+        this.deck = deck;
         this.mainDeck = mapToDeckCards(deck.cards, cards);
       });
+    this.store
+      .select(selectAllCards)
+      .pipe(
+        takeUntil(this.onDestroy$),
+        filter((value) => !!value)
+      )
+      .subscribe((cards) => (this.allCards = cards));
   }
 
   ngOnDestroy(): void {
