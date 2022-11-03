@@ -1,5 +1,4 @@
 import { Component, EventEmitter } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
 import { Store } from '@ngrx/store';
 import { MessageService } from 'primeng/api';
 import { first } from 'rxjs';
@@ -23,9 +22,8 @@ export class AppComponent {
   localStorageSave: ISave;
   spinner = true;
   hide = true;
+  retryCounter = 0;
 
-  noSaveDialog = false;
-  retryDialog = false;
   showChangelog = false;
 
   loadChangelog = new EventEmitter<boolean>();
@@ -35,12 +33,8 @@ export class AppComponent {
     private authService: AuthService,
     private databaseService: DatabaseService,
     private messageService: MessageService,
-    private meta: Meta,
-    private title: Title,
     private digimonBackendService: DigimonBackendService
   ) {
-    this.makeGoogleFriendly();
-
     this.getDecks();
     this.getBlogs();
 
@@ -56,29 +50,6 @@ export class AppComponent {
   }
 
   /**
-   * Optimize Website search engines
-   */
-  private makeGoogleFriendly() {
-    this.title.setTitle('Digimon Card Game');
-
-    this.meta.addTags([
-      {
-        name: 'description',
-        content:
-          'Digimon Card Game (TCG) Deckbuilder for keeping track of your collection of cards and building casual decks and tournament decks.' +
-          'You can very easily create decks with various filters for the cards, you can even check which cards are missing in your collection' +
-          'Share your decks and your profil with the community or just your friends, to share insights and make trading a whole lot easier.',
-      },
-      { name: 'author', content: 'TakaOtaku' },
-      {
-        name: 'keywords',
-        content:
-          'Digimon, digimon, Card, card, Game, game, Cardgame, Collecting, Deck, Deckbuilder, Casual, TCG, English, Japanese, Tracking, builder, tournament, reports',
-      },
-    ]);
-  }
-
-  /**
    * Load the User-Save
    * a) If the User is logged in, load the data from the database
    * b) If the User is not logged in, load the data from the local storage
@@ -87,7 +58,7 @@ export class AppComponent {
     this.checkForSave();
 
     if (!this.authService.isLoggedIn) {
-      this.startLoginOfflineDialog();
+      this.loadBackupSave();
       return;
     }
 
@@ -95,59 +66,40 @@ export class AppComponent {
       .getSave(this.authService.userData!.uid)
       .pipe(first())
       .subscribe((saveOrNull: ISave | null) => {
+        /*if (this.retryCounter < 3) {
+          this.messageService.add({
+            severity: 'error',
+            summary: 'Could not load your Save!',
+            detail:
+              'There was an error with loading your save. A new local save will be created.',
+          });
+          this.hide = false;
+          this.spinner = false;
+          this.store.dispatch(setSave({ save: emptySave }));
+          return;
+        }*/
         if (!saveOrNull) {
           this.retry();
+          this.retryCounter += 1;
+          console.log('Retry: ', this.retryCounter);
           return;
         }
-        this.spinner = false;
-        this.hide = false;
-        let save = saveOrNull as ISave;
 
+        let save = saveOrNull as ISave;
         if (save.version !== emptySave.version) {
           this.showChangelogModal();
         }
-
+        this.spinner = false;
+        this.hide = false;
         this.store.dispatch(
           setSave({ save: { ...save, version: emptySave.version } })
         );
       });
   }
 
-  private startRetryDialog() {
-    this.spinner = false;
-    this.retryDialog = true;
-  }
-
   retry() {
     this.spinner = true;
-    this.retryDialog = false;
     this.loadSave();
-  }
-
-  loadBackup(input: any) {
-    let fileReader = new FileReader();
-    fileReader.onload = () => {
-      try {
-        let save: any = JSON.parse(fileReader.result as string);
-        save = this.digimonBackendService.checkSaveValidity(save, null);
-        this.store.dispatch(loadSave({ save }));
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Save loaded!',
-          detail: 'The save was loaded successfully!',
-        });
-        this.retryDialog = false;
-        this.spinner = false;
-        this.hide = false;
-      } catch (e) {
-        this.messageService.add({
-          severity: 'warn',
-          summary: 'Save Error!',
-          detail: 'The save was not loaded!',
-        });
-      }
-    };
-    fileReader.readAsText(input.files[0]);
   }
 
   private checkForSave() {
@@ -157,7 +109,8 @@ export class AppComponent {
     this.localStorageSave = found ? JSON.parse(found) : null;
   }
 
-  private startLoginOfflineDialog() {
+  // Check local storage for a backup save, if there is none create a new save
+  private loadBackupSave() {
     if (this.localStorageSave) {
       this.localStorageSave = this.digimonBackendService.checkSaveValidity(
         this.localStorageSave,
@@ -169,22 +122,8 @@ export class AppComponent {
       return;
     }
 
-    this.spinner = false;
-    this.createANewSave();
-  }
-
-  loginWithGoogle() {
-    this.authService.GoogleAuth().then(() => {
-      this.hide = false;
-      this.noSaveDialog = false;
-      this.retryDialog = false;
-    });
-  }
-
-  createANewSave() {
     this.hide = false;
-    this.noSaveDialog = false;
-    this.retryDialog = false;
+    this.spinner = false;
     this.store.dispatch(setSave({ save: emptySave }));
   }
 
@@ -204,7 +143,7 @@ export class AppComponent {
 
   getBlogs() {
     const sub = this.digimonBackendService
-      .getBlockEntries()
+      .getBlogEntries()
       .subscribe((blogs) => {
         this.store.dispatch(setBlogs({ blogs }));
         sub.unsubscribe();
