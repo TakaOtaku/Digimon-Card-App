@@ -32,10 +32,14 @@ export class TestPageComponent implements OnDestroy {
   }
 
   transferAllDataToSQL() {
-    this.transferDecks();
+    //this.transferDecks();
     //this.transferUsers();
     //this.transferBlogs();
     //this.transferBlogsWithText();
+    //this.transferFromSQLDecks();
+    this.transferFromSQLUsers();
+    //this.transferFromSQLBlogs();
+    //this.transferFromSQLBlogsWithText();
   }
 
   transferDecks() {
@@ -148,5 +152,73 @@ export class TestPageComponent implements OnDestroy {
           .subscribe((message) => console.log(message));
       });
     });
+  }
+
+  transferFromSQLDecks() {
+    this.digimonBackendService
+      .getDecks('https://backend.digimoncard.app/api/')
+      .pipe(filter((value) => value.length > 0))
+      .subscribe((decks) => {
+        decks.forEach((deck) => {
+          this.digimonBackendService
+            .updateDeckWithoutUser(deck)
+            .pipe(
+              first(),
+              tap(() => console.log('Update Deck' + deck.id))
+            )
+            .subscribe((message) => console.log(message));
+        });
+      });
+  }
+
+  transferFromSQLUsers() {
+    this.digimonBackendService
+      .getSaves('https://backend.digimoncard.app/api/')
+      .pipe(filter((value) => value.length > 0))
+      .subscribe((saves) => {
+        saves.forEach((save) => {
+          this.digimonBackendService
+            .updateSave(save)
+            .pipe(
+              first(),
+              tap(() => console.log('Update Save' + save.uid))
+            )
+            .subscribe((message) => console.log(message));
+        });
+      });
+  }
+
+  transferFromSQLBlogs() {
+    this.digimonBackendService
+      .getBlogEntries('https://backend.digimoncard.app/api/')
+      .pipe(filter((value) => value.length > 0))
+      .subscribe((blogs) => {
+        blogs.forEach((blog) => {
+          this.digimonBackendService
+            .updateBlog(blog)
+            .pipe(
+              first(),
+              tap(() => console.log('Update Blog' + blog.uid))
+            )
+            .subscribe((message) => console.log(message));
+        });
+      });
+  }
+
+  transferFromSQLBlogsWithText() {
+    this.digimonBackendService
+      .getBlogEntriesWithText('https://backend.digimoncard.app/api/')
+      .pipe(filter((value) => value.length > 0))
+      .subscribe((blogs) => {
+        blogs.forEach((blog) => {
+          this.digimonBackendService
+            .updateBlogWithText(blog)
+            .pipe(
+              first(),
+              tap(() => console.log('Update Blog' + blog.uid))
+            )
+            .subscribe((message) => console.log(message));
+        });
+      });
   }
 }

@@ -10,8 +10,9 @@ import {
 import { ITag } from '../../models/interfaces/tag.interface';
 import { emptySettings } from '../store/reducers/save.reducer';
 
-const baseUrl = 'https://backend.digimoncard.app/api/';
-const baseUrl_inactiv = 'http://localhost:8080/api/';
+const baseUrl_inactiv = 'https://backend.digimoncard.app/api/';
+const baseUrl = 'http://localhost:8080/api/';
+const baseUrl_inactiv2 = 'https://179.61.219.98:8090/preview/digimoncard.app/';
 
 @Injectable({
   providedIn: 'root',
@@ -19,8 +20,8 @@ const baseUrl_inactiv = 'http://localhost:8080/api/';
 export class DigimonBackendService {
   constructor(private http: HttpClient) {}
 
-  getDecks(): Observable<IDeck[]> {
-    return this.http.get<any[]>(baseUrl + 'decks').pipe(
+  getDecks(url: string = baseUrl): Observable<IDeck[]> {
+    return this.http.get<any[]>(url + 'decks').pipe(
       map((decks) => {
         return decks.map((deck) => {
           const cards: ICountCard = JSON.parse(deck.cards);
@@ -37,8 +38,30 @@ export class DigimonBackendService {
     );
   }
 
-  getBlockEntries(): Observable<IBlog[]> {
-    return this.http.get<IBlog[]>(baseUrl + 'blogs');
+  getBlogEntries(url: string = baseUrl): Observable<IBlog[]> {
+    return this.http.get<IBlog[]>(url + 'blogs');
+  }
+
+  getSaves(url: string = baseUrl): Observable<ISave[]> {
+    return this.http.get<any[]>(url + 'users').pipe(
+      map((saves) => {
+        return saves.map((save) => {
+          const collection: ICountCard[] = JSON.parse(save.collection);
+          const decks: IDeck[] = JSON.parse(save.decks);
+          const settings: ISettings = JSON.parse(save.settings);
+          return {
+            ...save,
+            collection,
+            decks,
+            settings,
+          } as ISave;
+        });
+      })
+    );
+  }
+
+  getBlogEntriesWithText(url: string = baseUrl): Observable<IBlogWithText[]> {
+    return this.http.get<IBlogWithText[]>(url + 'blogs-with-text');
   }
 
   getDeck(id: any): Observable<IDeck> {

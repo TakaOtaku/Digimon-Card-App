@@ -57,7 +57,7 @@ def getMainInfo(html, digimoncard):
             case 'Name':
                 digimoncard['name'] = rowData[1]
             case 'Colour':
-                digimoncard['color'] = rowData[1]
+                digimoncard['color'] = rowData[1].replace(" / ", "/")
             case 'Card Type':
                 digimoncard['cardType'] = rowData[1]
             case 'Play Cost':
