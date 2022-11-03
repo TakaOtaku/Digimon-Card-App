@@ -3,19 +3,23 @@ import {
   EventEmitter,
   Input,
   OnChanges,
+  OnDestroy,
   OnInit,
   Output,
   SimpleChanges,
 } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Subject, takeUntil } from 'rxjs';
 import { englishCards } from '../../../../../assets/cardlists/eng/english';
-import { ColorMap, ICard } from '../../../../../models';
+import { ColorMap, ICard, IDeck } from '../../../../../models';
 import { formatId } from '../../../../functions/digimon-card.functions';
+import { selectDeck } from '../../../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-view-card-dialog',
   templateUrl: './view-card-dialog.component.html',
 })
-export class ViewCardDialogComponent implements OnInit, OnChanges {
+export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
   @Input() show: boolean = false;
   @Input() card: ICard = englishCards[0];
 
@@ -41,10 +45,24 @@ export class ViewCardDialogComponent implements OnInit, OnChanges {
 
   type: string;
 
+  deck: IDeck;
+
+  private onDestroy$ = new Subject();
+  constructor(private store: Store) {}
+
   ngOnInit() {
     if (this.card) {
       this.setupView(this.card);
     }
+    this.store
+      .select(selectDeck)
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((deck) => (this.deck = deck));
+  }
+
+  ngOnDestroy() {
+    this.onDestroy$.next(true);
+    this.onDestroy$.unsubscribe();
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -93,5 +111,14 @@ export class ViewCardDialogComponent implements OnInit, OnChanges {
     const wikiLink =
       'https://digimoncardgame.fandom.com/wiki/' + this.card.illustrator;
     window.open(wikiLink, '_blank');
+  }
+
+  inDeck(): boolean {
+    return !!this.deck.cards.find((card) => card.id === this.card.id);
+  }
+
+  deckCount(): number {
+    const card = this.deck.cards.find((card) => card.id === this.card.id);
+    return card?.count ?? 0;
   }
 }
