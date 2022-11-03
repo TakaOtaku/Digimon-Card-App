@@ -10,8 +10,8 @@ import {
 import { ITag } from '../../models/interfaces/tag.interface';
 import { emptySettings } from '../store/reducers/save.reducer';
 
-const baseUrl_inactiv = 'https://backend.digimoncard.app/api/';
-const baseUrl = 'http://localhost:8080/api/';
+const baseUrl = 'https://backend.digimoncard.app/api/';
+const baseUrl_inactiv = 'http://localhost:8080/api/';
 const baseUrl_inactiv2 = 'https://179.61.219.98:8090/preview/digimoncard.app/';
 
 @Injectable({
