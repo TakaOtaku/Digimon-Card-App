@@ -51,8 +51,16 @@ export class HomeComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.onDestroy$))
       .subscribe((entries) => {
         this.allBlogEntries = entries;
-        this.blogEntriesHidden = entries.filter((entry) => !entry.approved);
-        this.blogEntries = entries.filter((entry) => entry.approved);
+        this.blogEntriesHidden = entries
+          .filter((entry) => !entry.approved)
+          .sort(
+            (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+          );
+        this.blogEntries = entries
+          .filter((entry) => entry.approved)
+          .sort(
+            (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+          );
       });
   }
 
@@ -223,5 +231,11 @@ export class HomeComponent implements OnInit, OnDestroy {
     });
 
     return writeRights ? blog.authorId === this.user?.uid : false;
+  }
+
+  getIcon(category: string): string {
+    return category === 'Tournament Report'
+      ? 'assets/icons/trophy-svgrepo-com.svg'
+      : 'assets/icons/exam-svgrepo-com.svg';
   }
 }

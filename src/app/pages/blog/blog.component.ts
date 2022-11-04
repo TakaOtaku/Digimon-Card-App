@@ -8,7 +8,10 @@ import { MessageService } from 'primeng/api';
 import { filter, first, Subject, Subscription, takeUntil } from 'rxjs';
 import { Base64Adapter } from 'src/app/functions/base64-adapter';
 import { ADMINS, IUser } from '../../../models';
-import { IBlogWithText } from '../../../models/interfaces/blog-entry.interface';
+import {
+  IBlog,
+  IBlogWithText,
+} from '../../../models/interfaces/blog-entry.interface';
 import { AuthService } from '../../service/auth.service';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
 
@@ -128,12 +131,26 @@ export class BlogComponent implements OnInit, OnDestroy {
       ...this.blog,
       text: this.content,
       title: this.title,
+      category: this.category,
       date: new Date(),
     } as IBlogWithText;
+
+    const newBlogWithoutText = {
+      uid: this.blog.uid,
+      date: new Date(),
+      title: this.title,
+      approved: this.blog.approved,
+      author: this.blog.author,
+      authorId: this.blog.authorId,
+      category: this.category,
+    } as IBlog;
 
     const sub: Subscription = this.digimonBackendService
       .updateBlogWithText(newBlog)
       .subscribe((value) => sub.unsubscribe());
+    const sub2: Subscription = this.digimonBackendService
+      .updateBlog(newBlogWithoutText)
+      .subscribe((value) => sub2.unsubscribe());
     this.messageService.add({
       severity: 'success',
       summary: 'Blog-Entry saved!',

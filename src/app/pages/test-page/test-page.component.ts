@@ -32,12 +32,12 @@ export class TestPageComponent implements OnDestroy {
   }
 
   transferAllDataToSQL() {
-    //this.transferDecks();
-    //this.transferUsers();
-    //this.transferBlogs();
-    //this.transferBlogsWithText();
+    this.transferDecks();
+    this.transferUsers();
+    this.transferBlogs();
+    this.transferBlogsWithText();
     //this.transferFromSQLDecks();
-    this.transferFromSQLUsers();
+    //this.transferFromSQLUsers();
     //this.transferFromSQLBlogs();
     //this.transferFromSQLBlogsWithText();
   }
