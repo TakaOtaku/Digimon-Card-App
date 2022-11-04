@@ -2,7 +2,7 @@
   class="toolbar ml-3 mr-3 grid w-[100%-3rem] grid-cols-6 justify-evenly border-b-2 border-slate-600 md:grid-cols-12"
 >
   <div
-    class="primary-color flex h-[30px] flex-row justify-center border-2 border-slate-500 pt-1 text-center"
+    class="primary-color col-span-2 flex h-[30px] flex-row justify-center border-2 border-slate-500 pt-1 text-center"
   >
     <b>{{ getCardCount("Egg") }}</b>
     /
@@ -47,16 +47,6 @@
     iconPos="left"
     pButton
     pTooltip="Click to save the current Deck!"
-    tooltipPosition="top"
-  ></button>
-
-  <button
-    (click)="delete.emit(true)"
-    class="p-button-outlined h-[30px] w-full"
-    icon="pi pi-trash"
-    iconPos="left"
-    pButton
-    pTooltip="Click to clear all cards currently in the deck!"
     tooltipPosition="top"
   ></button>
 
