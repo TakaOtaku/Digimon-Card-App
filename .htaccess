@@ -5,4 +5,4 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} -f
 RewriteCond %{REQUEST_FILENAME} !/(sitemap.xml)/
 RewriteRule ^/?(.*)\ index.html [L,QSA]
-RewriteRule sitemap.xml sitemap.xml [L]
+RewriteRule sitemap.xml sitemap/sitemap.xml [L]
