@@ -1,6 +1,7 @@
 import { ICard } from '../../../models';
 
 import BT1 from './BT1.json';
+import BT10 from './BT10.json';
 import BT2 from './BT2.json';
 import BT3 from './BT3.json';
 import BT4 from './BT4.json';
@@ -9,10 +10,10 @@ import BT6 from './BT6.json';
 import BT7 from './BT7.json';
 import BT8 from './BT8.json';
 import BT9 from './BT9.json';
-import BT10 from './BT10.json';
 
 import EX1 from './EX1.json';
 import EX2 from './EX2.json';
+import EX3 from './EX3.json';
 
 import P from './P.json';
 
@@ -45,6 +46,7 @@ export const englishCards: ICard[] = [
 
   ...EX1,
   ...EX2,
+  ...EX3,
 
   ...ST1,
   ...ST2,
