@@ -1,4 +1,7 @@
-<div class="flex h-full w-full flex-row flex-nowrap items-stretch">
+<div
+  *ngIf="!container"
+  class="flex h-full w-full flex-row flex-nowrap items-stretch"
+>
   <div
     *ngIf="colorSpread[0] !== 0"
     class="h-full w-full grow text-center"
@@ -62,4 +65,49 @@
   >
     <span class="text-black-outline-xs">{{ colorSpread[6] }}</span>
   </div>
+</div>
+
+<div *ngIf="container" class="flex w-full flex-row">
+  <digimon-single-container
+    label="Red"
+    color="#ef1919"
+    class="w-12"
+    [value]="colorSpread[0]"
+  ></digimon-single-container>
+  <digimon-single-container
+    label="Blue"
+    color="#19a0e3"
+    class="w-12"
+    [value]="colorSpread[1]"
+  ></digimon-single-container>
+  <digimon-single-container
+    label="Yellow"
+    color="#ffd619"
+    class="w-12"
+    [value]="colorSpread[2]"
+  ></digimon-single-container>
+  <digimon-single-container
+    label="Green"
+    color="#19b383"
+    class="w-12"
+    [value]="colorSpread[3]"
+  ></digimon-single-container>
+  <digimon-single-container
+    label="Black"
+    color="#191919"
+    class="w-12"
+    [value]="colorSpread[4]"
+  ></digimon-single-container>
+  <digimon-single-container
+    label="Purple"
+    color="#8d6fdb"
+    class="w-12"
+    [value]="colorSpread[5]"
+  ></digimon-single-container>
+  <digimon-single-container
+    label="White"
+    color="#ffffff"
+    class="w-12"
+    [value]="colorSpread[6]"
+  ></digimon-single-container>
 </div>

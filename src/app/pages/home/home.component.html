@@ -2,8 +2,10 @@
   <div class="mx-auto flex max-w-7xl flex-col">
     <div class="mb-5 w-full border-2 border-slate-500 p-1">
       <div class="flex flex-row">
-        <h1 class="mb-2 w-full text-3xl font-extrabold text-white">
-          Digimon Forum
+        <h1
+          class="mb-2 w-full text-center text-3xl font-extrabold uppercase text-white"
+        >
+          Digimon Card Game Forum
         </h1>
         <button
           *ngIf="showWrite()"
@@ -160,9 +162,9 @@
       </div>
     </div>
 
-    <digimon-deck-statistics class="mb-5"></digimon-deck-statistics>
+    <digimon-tierlist class="mb-5"></digimon-tierlist>
 
-    <digimon-tierlist></digimon-tierlist>
+    <digimon-deck-statistics></digimon-deck-statistics>
   </div>
   <div class="h-24 w-full lg:hidden"></div>
 </div>

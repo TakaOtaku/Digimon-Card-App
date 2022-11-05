@@ -9,17 +9,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
-import { QuillModule } from 'ngx-quill';
 import { ToastrModule } from 'ngx-toastr';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { PaginatorModule } from 'primeng/paginator';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ComponentsModule } from './components.module';
 import { ChartContainerComponent } from './components/atoms/chart-container/chart-container.component';
 import { SortButtonsComponent } from './components/atoms/sort-buttons/sort-buttons.component';
 import { ChartContainersComponent } from './components/molecules/chart-containers/chart-containers.component';
@@ -60,19 +61,19 @@ import { CollectionPageComponent } from './pages/collection-page/collection-page
 import { CommunityComponent } from './pages/community/community.component';
 import { DeckbuilderComponent } from './pages/deckbuilder/deckbuilder.component';
 import { HomeComponent } from './pages/home/home.component';
+import { TestPageComponent } from './pages/test-page/test-page.component';
 import { UserComponent } from './pages/user/user.component';
 import { ObscenityPipe } from './pipes/obscenity.pipe';
 import { PrimeNGModule } from './primeng.module';
 import { AuthService } from './service/auth.service';
+import { CardMarketService } from './service/card-market.service';
 import { DatabaseService } from './service/database.service';
+import { DigimonBackendService } from './service/digimon-backend.service';
 import { DigimonEffects } from './store/digimon.effects';
 
 import * as DigimonCards from './store/reducers/digimon-card.reducers';
 import * as Digimon from './store/reducers/digimon.reducers';
 import * as Save from './store/reducers/save.reducer';
-import { TestPageComponent } from './pages/test-page/test-page.component';
-import { DigimonBackendService } from './service/digimon-backend.service';
-import { CardMarketService } from './service/card-market.service';
 
 @NgModule({
   declarations: [
@@ -124,8 +125,9 @@ import { CardMarketService } from './service/card-market.service';
     TestPageComponent,
   ],
   imports: [
+    ComponentsModule,
     CKEditorModule,
-
+    FontAwesomeModule,
     PrimeNGModule,
     AppRoutingModule,
     FormsModule,
@@ -166,7 +168,6 @@ import { CardMarketService } from './service/card-market.service';
     EffectsModule.forRoot([DigimonEffects]),
     PaginatorModule,
     InputSwitchModule,
-    QuillModule.forRoot(),
   ],
   exports: [ObscenityPipe],
   providers: [

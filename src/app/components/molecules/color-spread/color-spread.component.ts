@@ -12,6 +12,7 @@ import {
 export class ColorSpreadComponent implements OnInit {
   @Input() deck: IDeck;
   @Input() allCards: ICard[];
+  @Input() container = false;
 
   colorSpread = [0, 0, 0, 0, 0, 0, 0];
 

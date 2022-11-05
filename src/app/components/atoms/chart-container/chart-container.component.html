@@ -1,8 +1,8 @@
 <div class="m-1 h-full w-8">
-  <p class="primary-color text-center font-bold md:text-lg">
+  <p class="primary-color text-center font-bold">
     {{ getFillCount() }}
   </p>
-  <div class="container">
+  <div class="stat-container">
     <div
       class="Multi w-full"
       [ngStyle]="{ height: 'calc(' + fill[7] + ' * ' + fillPercent + '%)' }"
@@ -36,5 +36,5 @@
       [ngStyle]="{ height: 'calc(' + fill[0] + ' * ' + fillPercent + '%)' }"
     ></div>
   </div>
-  <p class="primary-color text-center font-bold md:text-lg">{{ label }}</p>
+  <p class="primary-color text-center font-bold">{{ label }}</p>
 </div>
