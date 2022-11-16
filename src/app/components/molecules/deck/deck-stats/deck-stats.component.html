@@ -2,7 +2,7 @@
 <div
   *ngIf="showStats"
   class="fixed bottom-0 z-[102] flex h-32 w-screen flex-row"
-  [ngClass]="{ 'lg:w-5/12 2xl:w-4/12': collectionView }"
+  [ngClass]="{ 'lg:w-[350px]': collectionView }"
 >
   <div
     class="surface-card flex w-full flex-row border-t-2 border-white bg-opacity-25"
@@ -11,17 +11,9 @@
       *ngIf="!collectionView"
       [deck]="deck"
       [allCards]="allCards"
+      [container]="true"
+      class="mx-5"
     ></digimon-ddto-spread>
-    <digimon-level-spread
-      *ngIf="!collectionView"
-      [deck]="deck"
-      [allCards]="allCards"
-    ></digimon-level-spread>
-    <digimon-color-spread
-      *ngIf="!collectionView"
-      [deck]="deck"
-      [allCards]="allCards"
-    ></digimon-color-spread>
 
     <digimon-chart-containers
       [deck]="mainDeck"
@@ -31,9 +23,13 @@
         'mx-auto': !collectionView
       }"
     ></digimon-chart-containers>
+
+    <digimon-color-spread
+      *ngIf="!collectionView"
+      [deck]="deck"
+      [allCards]="allCards"
+      [container]="true"
+      class="mx-5"
+    ></digimon-color-spread>
   </div>
-  <div
-    *ngIf="collectionView"
-    class="triangle z-[102] mr-auto hidden h-36 w-1/12 lg:block"
-  ></div>
 </div>

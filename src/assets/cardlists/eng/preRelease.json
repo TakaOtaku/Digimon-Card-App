@@ -6142,7 +6142,7 @@
       "01",
       "02"
     ],
-    "restriction": "-",
+    "restriction": "Restricted to 1",
     "illustrator": "sasasi"
 
   },
@@ -6886,7 +6886,7 @@
     "block": [
       "01"
     ],
-    "restriction": "-",
+    "restriction": "Restricted to 1",
     "illustrator": "Takase"
 
   },
@@ -8430,7 +8430,7 @@
     "effect": "Reduce the memory cost of this card in your hand by 1 for each Digimon your opponent has in play. [Main] Delete all of your opponent's Digimon with 6000 DP or less. Your opponent can't play Digimon by effects until the end of their next turn.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
-    "notes": "\u25b9BOOSTER -NEW AWAKENING- [BT08]",
+    "notes": "\u25b9BOOSTER -NEW AWAKENING- [BT08] Errata Card",
     "color": "Red",
     "version": "Pre-Release",
     "block": [
@@ -8678,7 +8678,7 @@
     "effect": "[Main] 1 of your opponent's Digimon gets -6000 DP for the turn. Then, you may play 1 purple or yellow Digimon card with 6000 DP or less from your trash without paying its memory cost.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
-    "notes": "\u25b9BOOSTER -NEW AWAKENING- [BT08]",
+    "notes": "\u25b9BOOSTER -NEW AWAKENING- [BT08] Errata Card",
     "color": "Purple/Yellow",
     "version": "Pre-Release",
     "block": [
@@ -9670,7 +9670,7 @@
     "effect": "[On Play] [When Digivolving] Place 1 [Raijinmon], 1 [Fuijinmon], and 1 [Suijinmon] from your trash under this Digimon in any order as its bottom digivolution cards. Gain 1 memory for each card placed.\n[When Attacking] If the level 6 cards in this Digimon's digivolution cards have 3 or more colors among them, this Digimon gets +3000 DP until the end of your opponent's turn. If they have 4 or more colors, \uff1cDe-Digivolve 1\uff1e 1 of your opponent's Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "\u25b9BOOSTER X RECORD [BT-09]",
+    "notes": "\u25b9BOOSTER X RECORD [BT-09] Errata Card",
     "color": "Black",
     "version": "Pre-Release",
     "block": [
@@ -10265,7 +10265,7 @@
     "block": [
       "01"
     ],
-    "restriction": "-",
+    "restriction": "Restricted to 1",
     "illustrator": "Shin Sasaki"
 
   },
@@ -10530,7 +10530,7 @@
     "effect": "-",
     "digivolveEffect": "[Your Turn] [Once Per Turn] When an effect suspends a Digimon, this Digimon gets +1000 DP for the turn.",
     "securityEffect": "-",
-    "notes": "\u25b9BOOSTER XROS ENCOUNTER [BT-10]",
+    "notes": "\u25b9BOOSTER XROS ENCOUNTER [BT-10] Errata Card",
     "color": "Green",
     "version": "Pre-Release",
     "restriction": "-",
@@ -10645,7 +10645,7 @@
     "notes": "\u25b9BOOSTER XROS ENCOUNTER [BT-10]",
     "color": "Red/Yellow",
     "version": "Pre-Release",
-    "restriction": "-",
+    "restriction": "Restricted to 1",
     "illustrator": "TANIMESO",
     "block": ["02"]
   },
@@ -11706,7 +11706,7 @@
     "effect": "[All Turns] [Once Per Turn] When a purple card is placed under this Tamer, \uff1cDraw 1\uff1e (Draw 1 card from your deck), and gain 1 memory.\n[Your Turn] [Once Per Turn] When you would play a level 4 or higher Digimon card with [Bagra Army] in its traits, by placing up to 3 purple Digimon cards from under your Tamers in the played Digimon card's digivolution cards, reduce the play cost of that Digimon by 2 for each card placed.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
-    "notes": "\u25b9BOOSTER XROS ENCOUNTER [BT-10]",
+    "notes": "\u25b9BOOSTER XROS ENCOUNTER [BT-10] Errata Card",
     "color": "Purple",
     "version": "Pre-Release",
     "restriction": "-",

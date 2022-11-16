@@ -2,8 +2,10 @@
   <div class="mx-auto flex max-w-7xl flex-col">
     <div class="mb-5 w-full border-2 border-slate-500 p-1">
       <div class="flex flex-row">
-        <h1 class="mb-2 w-full text-3xl font-extrabold text-white">
-          Digimon Forum
+        <h1
+          class="mb-2 w-full text-center text-3xl font-extrabold uppercase text-white"
+        >
+          Digimon Card Game Forum
         </h1>
         <button
           *ngIf="showWrite()"
@@ -21,6 +23,7 @@
           <table class="min-w-full">
             <thead class="surface-card border-b">
               <tr>
+                <th scope="col" class="w-7 px-1 py-2"></th>
                 <th
                   scope="col"
                   class="px-6 py-2 text-left text-sm font-medium text-white"
@@ -52,6 +55,13 @@
                   *ngFor="let blog of blogEntriesHidden"
                   class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150"
                 >
+                  <td class="w-7 whitespace-nowrap px-1 py-2">
+                    <img
+                      alt="Blog Category"
+                      class="m-auto text-white"
+                      [src]="getIcon(blog.category)"
+                    />
+                  </td>
                   <td
                     class="cursor-pointer whitespace-nowrap px-6 py-2 text-sm font-light text-white"
                     (click)="open(blog)"
@@ -98,6 +108,13 @@
                 *ngFor="let blog of blogEntries"
                 class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150"
               >
+                <td class="w-7 whitespace-nowrap px-1 py-2">
+                  <img
+                    alt="Blog Category"
+                    class="m-auto text-white"
+                    [src]="getIcon(blog.category)"
+                  />
+                </td>
                 <td
                   class="cursor-pointer whitespace-nowrap px-6 py-2 text-sm font-light text-white"
                   (click)="open(blog)"
@@ -145,9 +162,9 @@
       </div>
     </div>
 
-    <digimon-deck-statistics class="mb-5"></digimon-deck-statistics>
+    <digimon-tierlist class="mb-5"></digimon-tierlist>
 
-    <digimon-tierlist></digimon-tierlist>
+    <digimon-deck-statistics></digimon-deck-statistics>
   </div>
   <div class="h-24 w-full lg:hidden"></div>
 </div>

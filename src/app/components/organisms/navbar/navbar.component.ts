@@ -6,6 +6,15 @@ import {
   OnInit,
 } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import {
+  faCog,
+  faFolder,
+  faHouseUser,
+  faInfoCircle,
+  faPen,
+  faUser,
+  faUsers,
+} from '@fortawesome/free-solid-svg-icons';
 import { Subject, takeUntil } from 'rxjs';
 import { IUser } from '../../../../models';
 import { AuthService } from '../../../service/auth.service';
@@ -15,6 +24,14 @@ import { AuthService } from '../../../service/auth.service';
   templateUrl: './navbar.component.html',
 })
 export class NavbarComponent implements OnInit, OnDestroy {
+  faUser = faUser;
+  faHouse = faHouseUser;
+  faDeckbuilder = faPen;
+  faCollection = faFolder;
+  faCommunity = faUsers;
+  faInfo = faInfoCircle;
+  faCog = faCog;
+
   megamenu = false;
 
   settingsDialog = false;

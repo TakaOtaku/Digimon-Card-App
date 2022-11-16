@@ -218,5 +218,10 @@ export const JAPTIERLIST = [
       card: 'BT7-023',
       image: 'assets/images/cards/jap/BT7-023.webp',
     },
+    {
+      name: 'Aegisdramon',
+      card: 'EX3-026',
+      image: 'assets/images/cards/eng/EX3-026.webp',
+    },
   ],
 ];

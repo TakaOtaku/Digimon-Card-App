@@ -515,7 +515,7 @@
       "00"
     ],
     "restriction": "-",
-    "illustrator": "KISUKE"
+    "illustrator": "TANIMESO"
   },
   {
     "id": "BT1-013",
@@ -1861,7 +1861,7 @@
   },
   {
     "id": "BT1-042",
-    "name": "LoaderLiomon",
+    "name": "LoaderLeomon",
     "cardImage": "assets/images/cards/jap/BT1-042.webp",
     "cardType": "Digimon",
     "dp": "10000",

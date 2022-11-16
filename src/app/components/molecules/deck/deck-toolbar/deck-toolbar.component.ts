@@ -8,6 +8,7 @@ import {
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { Subject, takeUntil } from 'rxjs';
+import * as uuid from 'uuid';
 import { ICard, IDeck, IDeckCard } from '../../../../../models';
 import { setDeck } from '../../../../store/digimon.actions';
 import { selectAllCards } from '../../../../store/digimon.selectors';
@@ -25,7 +26,6 @@ export class DeckToolbarComponent implements OnDestroy {
   @Output() missingCardsChange = new EventEmitter<boolean>();
   @Output() share = new EventEmitter<boolean>();
   @Output() save = new EventEmitter<any>();
-  @Output() delete = new EventEmitter<boolean>();
   @Output() hideStats = new EventEmitter<boolean>();
 
   importDeckDialog = false;
@@ -83,7 +83,7 @@ export class DeckToolbarComponent implements OnDestroy {
       message:
         'You are about to clear all cards in the deck and make a new one. Are you sure?',
       accept: () => {
-        const deck: IDeck = emptyDeck;
+        const deck: IDeck = { ...emptyDeck, id: uuid.v4() };
         this.store.dispatch(setDeck({ deck }));
         this.messageService.add({
           severity: 'success',

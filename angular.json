@@ -31,24 +31,30 @@
               "src/styles.scss",
               "node_modules/primeng/resources/themes/vela-blue/theme.css",
               "node_modules/ngx-toastr/toastr.css",
-              "node_modules/primeicons/primeicons.css",
               "node_modules/primeng/resources/primeng.min.css",
-              "node_modules/quill/dist/quill.core.css",
-              "node_modules/quill/dist/quill.bubble.css",
-              "node_modules/quill/dist/quill.snow.css"
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.css"
             ],
             "scripts": [
               "node_modules/tw-elements/dist/js/index.min.js",
-              "node_modules/quill/dist/quill.min.js"
+              "node_modules/@fortawesome/fontawesome-free/js/all.js"
             ]
           },
           "configurations": {
             "production": {
+              "optimization": true,
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": true,
+              "buildOptimizer": true,
+              "deleteOutputPath": true,
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "4mb",
-                  "maximumError": "8mb"
+                  "maximumWarning": "10mb",
+                  "maximumError": "12mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -135,6 +141,6 @@
   },
   "defaultProject": "digimon-card-game-collector",
   "cli": {
-    "defaultCollection": "@angular-eslint/schematics"
+    "schematicCollections": ["@angular-eslint/schematics"]
   }
 }

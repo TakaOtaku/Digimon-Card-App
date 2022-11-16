@@ -30,7 +30,7 @@
 
     <ckeditor
       [editor]="Editor"
-      class="text-white"
+      class="list-disc text-white"
       [(ngModel)]="content"
       [disabled]="true"
     ></ckeditor>
@@ -71,10 +71,32 @@
       (click)="edit = false"
     ></button>
   </div>
+  <div class="mb-3">
+    <div class="flex inline-flex w-full justify-center">
+      <button
+        (click)="category = 'Tournament Report'"
+        [ngClass]="{
+          'primary-background': category === 'Tournament Report'
+        }"
+        class="min-w-auto mt-2 h-8 w-36 rounded-l-sm border border-slate-100 p-2 text-xs font-semibold text-white"
+      >
+        Tournament Report
+      </button>
+      <button
+        (click)="category = 'Deck-Review'"
+        [ngClass]="{
+          'primary-background': category === 'Deck-Review'
+        }"
+        class="min-w-auto mt-2 h-8 w-36 border border-slate-100 p-2 text-xs font-semibold text-white"
+      >
+        Deck-Review
+      </button>
+    </div>
+  </div>
 
   <ckeditor
     [editor]="Editor"
-    class="text-white"
+    class="list-disc text-white"
     [(ngModel)]="content"
     (ready)="onReady($event)"
   ></ckeditor>

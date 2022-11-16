@@ -1,5 +1,5 @@
 <nav
-  class="navbar navbar-expand-lg relative flex w-full flex-col items-center justify-between shadow-lg"
+  class="navbar navbar-expand-lg relative flex w-full flex-col items-center justify-between border-b border-slate-100 shadow-2xl"
 >
   <div class="surface-ground flex max-h-12 w-full flex-row p-0">
     <a href="https://digimoncard.app/deckbuilder">
@@ -25,35 +25,35 @@
 
     <button
       (click)="router.navigateByUrl('')"
-      class="min-w-auto primary-background mt-2 ml-2 hidden h-8 w-24 rounded p-2 text-xs font-semibold text-white lg:block"
+      class="min-w-auto mt-1 ml-2 hidden h-8 w-24 p-2 font-bold text-white hover:text-[#64B5F6] lg:block"
     >
-      Home
+      HOME
     </button>
 
     <button
       (click)="router.navigateByUrl('/deckbuilder')"
-      class="min-w-auto primary-background mt-2 ml-2 hidden h-8 w-24 rounded p-2 text-xs font-semibold text-white lg:block"
+      class="min-w-auto mt-1 ml-2 hidden h-8 w-32 p-2 font-bold text-white hover:text-[#64B5F6] lg:block"
     >
-      Deckbuilder
+      DECKBUILDER
     </button>
 
     <button
       (click)="router.navigateByUrl('/collection')"
-      class="min-w-auto primary-background mt-2 ml-2 hidden h-8 w-24 rounded p-2 text-xs font-semibold text-white lg:block"
+      class="min-w-auto mt-1 ml-2 hidden h-8 w-32 p-2 font-bold text-white hover:text-[#64B5F6] lg:block"
     >
-      Collection
+      COLLECTION
     </button>
     <button
       (click)="router.navigateByUrl('/user')"
-      class="min-w-auto primary-background mt-2 ml-2 hidden h-8 w-24 rounded p-2 text-xs font-semibold text-white lg:block"
+      class="min-w-auto mt-1 ml-2 hidden h-8 w-24 p-2 font-bold text-white hover:text-[#64B5F6] lg:block"
     >
-      Profile
+      PROFILE
     </button>
     <button
       (click)="router.navigateByUrl('/community')"
-      class="min-w-auto primary-background mt-2 ml-2 hidden h-8 w-24 rounded p-2 text-xs font-semibold text-white lg:block"
+      class="min-w-auto mt-1 ml-2 hidden h-8 w-24 p-2 font-bold text-white hover:text-[#64B5F6] lg:block"
     >
-      Community
+      COMMUNITY
     </button>
 
     <digimon-filter-button
@@ -62,12 +62,12 @@
     ></digimon-filter-button>
     <div *ngIf="!showCardList" class="m-auto md:hidden"></div>
 
-    <div class="ml-auto mr-2 mt-2 flex flex-row">
+    <div class="my-1 ml-auto mr-2 flex flex-row">
       <button
         (click)="changeMenu()"
-        class="min-w-auto primary-background mx-2 h-9 w-9 overflow-hidden rounded-full text-xs font-semibold text-white"
+        class="min-w-auto primary-background mx-2 h-9 w-9 overflow-hidden rounded-full text-xs font-semibold text-white hover:bg-[#64B5F6]"
       >
-        <i *ngIf="!user" class="pi pi-user"></i>
+        <fa-icon *ngIf="!user" [icon]="faUser"></fa-icon>
         <img
           *ngIf="user"
           alt="{{ this.user.displayName }}"
@@ -94,70 +94,78 @@
               <div class="hidden lg:block"></div>
               <div class="surface-ground text-white">
                 <p
-                  class="block w-full border-b border-gray-200 px-6 py-2 font-semibold uppercase text-white"
+                  class="block w-full border-b border-gray-200 px-6 py-2 font-bold uppercase text-white"
                 >
                   Sites
                 </p>
                 <a
                   (click)="router.navigateByUrl(''); this.megamenu = false"
                   aria-current="true"
-                  class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
-                  ><i class="pi pi-book mr-2"></i>Home</a
+                  class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-[#64B5F6] hover:backdrop-brightness-150"
+                  ><fa-icon [icon]="faHouse" class="mr-2 w-5"></fa-icon>Home</a
                 >
                 <a
                   (click)="
                     router.navigateByUrl('/deckbuilder'); this.megamenu = false
                   "
                   aria-current="true"
-                  class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
-                  ><i class="pi pi-pencil mr-2"></i>Deckbuilder</a
+                  class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-[#64B5F6] hover:backdrop-brightness-150"
                 >
+                  <fa-icon [icon]="faDeckbuilder" class="mr-2"></fa-icon>
+                  Deckbuilder
+                </a>
                 <a
                   (click)="
                     router.navigateByUrl('/collection'); this.megamenu = false
                   "
                   aria-current="true"
-                  class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
-                  ><i class="pi pi-database mr-2"></i>Collection</a
+                  class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-[#64B5F6] hover:backdrop-brightness-150"
+                  ><fa-icon [icon]="faCollection" class="mr-2 w-5"></fa-icon
+                  >Collection</a
                 >
                 <a
                   (click)="router.navigateByUrl('/user'); this.megamenu = false"
                   aria-current="true"
-                  class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
-                  ><i class="pi pi-user mr-2"></i>Profile</a
+                  class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-[#64B5F6] hover:backdrop-brightness-150"
+                  ><fa-icon [icon]="faUser" class="mr-2 w-5"></fa-icon
+                  >Profile</a
                 >
                 <a
                   (click)="
                     router.navigateByUrl('/community'); this.megamenu = false
                   "
                   aria-current="true"
-                  class="block w-full cursor-pointer px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
-                  ><i class="pi pi-users mr-2"></i>Community</a
+                  class="block w-full cursor-pointer px-6 py-2 transition duration-150 ease-in-out hover:text-[#64B5F6] hover:backdrop-brightness-150"
+                  ><fa-icon [icon]="faCommunity" class="mr-2 w-5"></fa-icon
+                  >Community</a
                 >
               </div>
               <div class="surface-ground text-white">
                 <p
-                  class="block w-full border-b border-gray-200 px-6 py-2 font-semibold uppercase text-white"
+                  class="block w-full border-b border-gray-200 px-6 py-2 font-bold uppercase text-white"
                 >
                   Miscellaneous
                 </p>
                 <a
                   (click)="showChangelogModal()"
                   aria-current="true"
-                  class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
-                  ><i class="pi pi-info-circle mr-2"></i>Changelog</a
+                  class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-[#64B5F6] hover:backdrop-brightness-150"
+                  ><fa-icon [icon]="faInfo" class="mr-1 w-5"></fa-icon
+                  >Changelog</a
                 >
                 <a
                   (click)="this.creditsDisplay = true; this.megamenu = false"
                   aria-current="true"
-                  class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
-                  ><i class="pi pi-info-circle mr-2"></i>Credits</a
+                  class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-[#64B5F6] hover:backdrop-brightness-150"
+                  ><fa-icon [icon]="faInfo" class="mr-1 w-5"></fa-icon
+                  >Credits</a
                 >
                 <a
                   (click)="this.settingsDialog = true; this.megamenu = false"
                   aria-current="true"
-                  class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
-                  ><i class="pi pi-cog mr-2"></i>Settings</a
+                  class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-[#64B5F6] hover:backdrop-brightness-150"
+                  ><fa-icon [icon]="faCog" class="mr-1 w-5"></fa-icon
+                  >Settings</a
                 >
                 <a
                   (click)="
@@ -167,20 +175,15 @@
                     this.megamenu = false
                   "
                   aria-current="true"
-                  class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
-                  ><i
-                    [ngClass]="{
-                      'pi-sign-in': !this.authService.isLoggedIn,
-                      'pi-sign-out': this.authService.isLoggedIn
-                    }"
-                    class="pi mr-2"
-                  ></i
-                  >{{ this.authService.isLoggedIn ? "Logout" : "Login" }}</a
+                  class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-[#64B5F6] hover:backdrop-brightness-150"
+                >
+                  <i class="fa-solid fa-right-from-bracket"></i>
+                  {{ this.authService.isLoggedIn ? "Logout" : "Login" }}</a
                 >
               </div>
               <div class="surface-ground text-white">
                 <p
-                  class="block w-full border-b border-gray-200 px-6 py-2 font-semibold uppercase text-white"
+                  class="block w-full border-b border-gray-200 px-6 py-2 font-bold uppercase text-white"
                 >
                   External
                 </p>
@@ -188,22 +191,22 @@
                   href="https://github.com/users/TakaOtaku/projects/1/views/3"
                   target="_blank"
                   aria-current="true"
-                  class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
-                  ><i class="pi pi-ticket mr-2"></i>What I work on</a
+                  class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-[#64B5F6] hover:backdrop-brightness-150"
+                  ><i class="fa-solid fa-circle-info mr-1"></i>What I work on</a
                 >
                 <a
                   href="https://github.com/TakaOtaku/Digimon-Card-App/issues"
                   target="_blank"
                   aria-current="true"
-                  class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
-                  ><i class="pi pi-question mr-2"></i>Feature/Bug Request</a
+                  class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-[#64B5F6] hover:backdrop-brightness-150"
+                  ><i class="fa-solid fa-bug mr-1"></i>Feature/Bug Request</a
                 >
                 <a
                   href="https://www.paypal.com/donate/?hosted_button_id=WLM58Q785D4H4"
                   target="_blank"
                   aria-current="true"
-                  class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-white hover:backdrop-brightness-150"
-                  ><i class="pi pi-paypal mr-2"></i>Help the Site!</a
+                  class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-[#64B5F6] hover:backdrop-brightness-150"
+                  ><i class="fa-brands fa-cc-paypal mr-1"></i>Help the Site!</a
                 >
               </div>
               <div class="hidden lg:block"></div>
@@ -262,6 +265,11 @@
       with other design questions! Go Check him out he makes great art!</span
     >
 
+    <span class="mt-5 w-full text-center font-bold text-white">
+      Another big thank you goes to Yondaime, he posted the Adventure Series
+      Post, helps promote the site and gives general good feedback!</span
+    >
+
     <span class="mt-5 w-full text-center font-bold text-white"
       >Credits for the Pre-Release Cards go to
       <a
@@ -271,6 +279,11 @@
         >https://digimoncardgame.fandom.com/</a
       >
       and all the wonderful people who maintain it!</span
+    >
+
+    <span class="mt-5 w-full text-center font-bold text-white">
+      Another Thank you to mr_pyro for creating the tierlist and helping me with
+      it!</span
     >
 
     <span class="mt-5 w-full text-center font-bold text-white"

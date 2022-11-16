@@ -12,6 +12,7 @@ import {
 export class DdtoSpreadComponent implements OnInit {
   @Input() deck: IDeck;
   @Input() allCards: ICard[];
+  @Input() container = false;
 
   ddto = [0, 0, 0, 0];
 

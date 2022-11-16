@@ -12,7 +12,7 @@ wikiLink = 'https://digimoncardgame.fandom.com'
 wikiPageLinks = [
     'https://digimoncardgame.fandom.com/wiki/BT-12:_Booster_Across_Time'
 ]
-setName = "▹THEME BOOSTER DRACONIC ROAR [EX-03]"
+setName = "▹THEME BOOSTER ACROSS TIME [BT-12]"
 cardLinks = []
 NormalCards = []
 AACards = []
@@ -175,7 +175,8 @@ def getCardDataFromWiki():
         digimoncard = getExtraInfo(infoExtra, digimoncard)
 
         rarityDict = {
-            "": "",
+            "-": "-",
+            "": "-",
             "Common": "C",
             "Uncommon": "U",
             "Rare": 'R',
@@ -201,7 +202,7 @@ def getCardDataFromWiki():
             # Change URL depending on if you want Japanese Cards or English Cards
             urllib.request.urlretrieve(
                imageSrc, digimoncard['cardNumber']+".png")
-
+        print(digimoncard['name'])
         cards.append(digimoncard)
 
 
@@ -223,6 +224,7 @@ def makeAACardDatas():
                 break
 
 def saveCardsToJSON():
+    print('Saving now!')
     with open('bt12.json', 'w') as fp:
         json.dump(cards, fp)
 

@@ -5,7 +5,7 @@ export interface IBlog {
   approved: boolean;
   author: string;
   authorId: string;
-  category: 'Tournament Report';
+  category: 'Tournament Report' | 'Deck-Review';
 }
 
 export interface IBlogWithText extends IBlog {

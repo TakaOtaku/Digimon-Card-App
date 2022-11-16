@@ -26,6 +26,7 @@ import {
   setTags,
   sortColors,
 } from '../../../functions/digimon-card.functions';
+import { sortID } from '../../../functions/filter.functions';
 import { AuthService } from '../../../service/auth.service';
 import { DigimonBackendService } from '../../../service/digimon-backend.service';
 import {
@@ -40,8 +41,6 @@ import {
   selectDeckBuilderViewModel,
   selectSave,
 } from '../../../store/digimon.selectors';
-import { emptyDeck } from '../../../store/reducers/digimon.reducers';
-import { sortID } from '../../../functions/filter.functions';
 
 @Component({
   selector: 'digimon-deck-view',
@@ -190,27 +189,6 @@ export class DeckViewComponent implements OnInit, OnDestroy {
       return false;
     }
     return true;
-  }
-
-  /**
-   * Clear all Cards in the Deck
-   */
-  delete() {
-    this.confirmationService.confirm({
-      key: 'Delete',
-      message:
-        'You are about to clear all cards in the deck and make a new one. Are you sure?',
-      accept: () => {
-        this.mainDeck = [];
-        const deck: IDeck = emptyDeck;
-        this.store.dispatch(setDeck({ deck }));
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Deck cleared!',
-          detail: 'Deckcards were cleared successfully!',
-        });
-      },
-    });
   }
 
   /**

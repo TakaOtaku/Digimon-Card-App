@@ -21,7 +21,7 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComponentsModule } from './components.module';
-import { ChartContainerComponent } from './components/atoms/chart-container.component';
+import { ChartContainerComponent } from './components/atoms/chart-container/chart-container.component';
 import { SortButtonsComponent } from './components/atoms/sort-buttons/sort-buttons.component';
 import { ChartContainersComponent } from './components/molecules/chart-containers/chart-containers.component';
 import { CollectionCircleComponent } from './components/molecules/collection-circle/collection-circle.component';
