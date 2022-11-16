@@ -16,7 +16,47 @@ import { emptySave } from './store/reducers/save.reducer';
 
 @Component({
   selector: 'digimon-root',
-  templateUrl: './app.component.html',
+  template: `
+    <div class="relative">
+      <digimon-navbar></digimon-navbar>
+
+      <router-outlet #router *ngIf="!hide"></router-outlet>
+
+      <div *ngIf="hide" class="h-[calc(100vh-58px)] w-screen"></div>
+      <p-blockUI [blocked]="spinner"></p-blockUI>
+      <p-progressSpinner
+        *ngIf="spinner"
+        class="absolute top-1/2 left-1/2 z-[5000] -translate-x-1/2 -translate-y-1/2 transform"
+      ></p-progressSpinner>
+
+      <p-toast></p-toast>
+
+      <p-confirmDialog
+        header="Delete Confirmation"
+        icon="pi pi-exclamation-triangle"
+        key="Delete"
+        rejectButtonStyleClass="p-button-outlined"
+      ></p-confirmDialog>
+
+      <p-confirmDialog
+        header="New Deck Confirmation"
+        icon="pi pi-file"
+        key="NewDeck"
+        rejectButtonStyleClass="p-button-outlined"
+      ></p-confirmDialog>
+    </div>
+
+    <p-dialog
+      [(visible)]="showChangelog"
+      [closeOnEscape]="true"
+      styleClass="h-screen w-screen lg:max-h-[600px] lg:max-w-3xl"
+      header="Changelog"
+    >
+      <digimon-changelog-dialog
+        [loadChangelog]="loadChangelog"
+      ></digimon-changelog-dialog>
+    </p-dialog>
+  `,
 })
 export class AppComponent {
   localStorageSave: ISave;
