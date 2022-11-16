@@ -50,7 +50,10 @@
   </div>
 
   <div class="flex flex-row">
-    <h1 [ngStyle]="{color}" class="my-3 text-3xl font-black" id="Card-Name">
+    <button class="mr-1" (click)="previousCard()">
+      <i class="fa-solid fa-circle-arrow-left text-white"></i>
+    </button>
+    <h1 [ngStyle]="{color}" class="my-1 text-3xl font-black" id="Card-Name">
       {{ card.name }}
     </h1>
     <button
@@ -61,6 +64,9 @@
       pRipple
       type="button"
     ></button>
+    <button class="ml-1" (click)="nextCard()">
+      <i class="fa-solid fa-circle-arrow-right text-white"></i>
+    </button>
   </div>
 
   <div class="flex w-full flex-row" id="Image-Attributes">

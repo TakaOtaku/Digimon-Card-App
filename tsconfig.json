@@ -3,6 +3,14 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    "paths": {
+      "deckbuilder": [
+        "dist/deckbuilder/deckbuilder",
+        "dist/deckbuilder",
+        "dist/deckbuilder/deckbuilder",
+        "dist/deckbuilder"
+      ]
+    },
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,

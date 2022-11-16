@@ -10,7 +10,7 @@ import {
   IDeckCard,
   tagsList,
 } from '../../models';
-import { CARDSET } from '../../models/card-set.enum';
+import { CARDSET } from '../../models/enums/card-set.enum';
 import { ITag } from '../../models/interfaces/tag.interface';
 
 export function setTags(tags: ITag[], deck: IDeck, allCards: ICard[]) {
@@ -32,6 +32,7 @@ export function setTags(tags: ITag[], deck: IDeck, allCards: ICard[]) {
 
 export function setNewestSet(cards: ICountCard[]): ITag {
   const releaseOrder = [
+    'BT12',
     'ST14',
     'BT11',
     'EX3',

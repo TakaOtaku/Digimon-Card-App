@@ -81,7 +81,6 @@ export class AppComponent {
         if (!saveOrNull) {
           this.retry();
           this.retryCounter += 1;
-          console.log('Retry: ', this.retryCounter);
           return;
         }
 

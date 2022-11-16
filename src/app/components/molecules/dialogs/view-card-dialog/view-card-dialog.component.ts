@@ -1,6 +1,7 @@
 import {
   Component,
   EventEmitter,
+  HostListener,
   Input,
   OnChanges,
   OnInit,
@@ -10,6 +11,11 @@ import {
 import { englishCards } from '../../../../../assets/cardlists/eng/english';
 import { ColorMap, ICard } from '../../../../../models';
 import { formatId } from '../../../../functions/digimon-card.functions';
+import {
+  selectAllCards,
+  selectDeck,
+  selectFilteredCards,
+} from '../../../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-view-card-dialog',
@@ -45,6 +51,19 @@ export class ViewCardDialogComponent implements OnInit, OnChanges {
     if (this.card) {
       this.setupView(this.card);
     }
+    this.store
+      .select(selectDeck)
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((deck) => (this.deck = deck));
+    this.store
+      .select(selectFilteredCards)
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((cards) => (this.allCards = cards));
+  }
+
+  ngOnDestroy() {
+    this.onDestroy$.next(true);
+    this.onDestroy$.unsubscribe();
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -93,5 +112,52 @@ export class ViewCardDialogComponent implements OnInit, OnChanges {
     const wikiLink =
       'https://digimoncardgame.fandom.com/wiki/' + this.card.illustrator;
     window.open(wikiLink, '_blank');
+  }
+
+  inDeck(): boolean {
+    return !!this.deck.cards.find((card) => card.id === this.card.id);
+  }
+
+  deckCount(): number {
+    const card = this.deck.cards.find((card) => card.id === this.card.id);
+    return card?.count ?? 0;
+  }
+
+  @HostListener('window:keyup', ['$event'])
+  keyEvent(event: KeyboardEvent) {
+    if (event.key == 'ArrowRight') {
+      this.nextCard();
+    }
+    if (event.key == 'ArrowLeft') {
+      this.previousCard();
+    }
+  }
+
+  previousCard() {
+    const id = this.allCards.findIndex((card) => this.card.id === card.id);
+    if (id === -1 || id === 0) {
+      return;
+    }
+    const newCard = this.allCards[id - 1];
+    if (!newCard) {
+      return;
+    }
+    console.log(newCard);
+    this.card = newCard;
+    this.setupView(newCard);
+  }
+
+  nextCard() {
+    const id = this.allCards.findIndex((card) => this.card.id === card.id);
+    if (id === -1 || id === this.allCards.length + 1) {
+      return;
+    }
+    const newCard = this.allCards[id + 1];
+    if (!newCard) {
+      return;
+    }
+    console.log(newCard);
+    this.card = newCard;
+    this.setupView(newCard);
   }
 }

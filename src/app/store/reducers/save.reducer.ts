@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import { ICountCard, IDeck, ISave, ISettings } from '../../../models';
-import { CARDSET } from '../../../models/card-set.enum';
+import { CARDSET } from '../../../models/enums/card-set.enum';
 import {
   addToCollection,
   changeCardCount,

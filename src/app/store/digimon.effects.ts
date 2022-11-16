@@ -10,7 +10,7 @@ import {
   switchMap,
   tap,
 } from 'rxjs';
-import { CARDSET } from '../../models/card-set.enum';
+import { CARDSET } from '../../models/enums/card-set.enum';
 import { setupDigimonCards } from '../functions/digimon-card.functions';
 import { filterCards } from '../functions/filter.functions';
 import { AuthService } from '../service/auth.service';

@@ -10,7 +10,7 @@ import { Store } from '@ngrx/store';
 import { MessageService } from 'primeng/api';
 import { Subject, takeUntil } from 'rxjs';
 import { IFilter } from '../../../../../models';
-import { CARDSET } from '../../../../../models/card-set.enum';
+import { CARDSET } from '../../../../../models/enums/card-set.enum';
 import { ISelectItem } from '../../../../../models/interfaces/select-item.interface';
 import {
   changeCardSets,

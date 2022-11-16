@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {TIERLIST} from "../../../../models";
-import {setCommunityDeckSearch} from "../../../store/digimon.actions";
-import {JAPTIERLIST} from "../../../../models/japtierlist.data";
-import {Store} from "@ngrx/store";
-import {Router} from "@angular/router";
+import { TIERLIST } from '../../../../models';
+import { setCommunityDeckSearch } from '../../../store/digimon.actions';
+import { JAPTIERLIST } from '../../../../models/data/japtierlist.data';
+import { Store } from '@ngrx/store';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'digimon-tierlist',
   templateUrl: './tierlist.component.html',
-  styleUrls: ['./tierlist.component.css']
+  styleUrls: ['./tierlist.component.css'],
 })
 export class TierlistComponent {
   currentRegion = 'GLOBAL';
@@ -21,8 +21,7 @@ export class TierlistComponent {
     { tier: 'D', color: 'bg-blue-500' },
   ];
 
-  constructor(private store: Store, private router: Router) {
-  }
+  constructor(private store: Store, private router: Router) {}
 
   openCommunityWithSearch(card: string) {
     this.store.dispatch(setCommunityDeckSearch({ communityDeckSearch: card }));
@@ -38,5 +37,4 @@ export class TierlistComponent {
       this.tierlist = TIERLIST;
     }
   }
-
 }

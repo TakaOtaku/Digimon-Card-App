@@ -1,7 +1,3 @@
-export enum RIGHTS {
-  writeBlog,
-}
-
 export const ADMINS = [
   {
     id: 'S3rWXPtCYRN8vSrxY3qE6aeewy43', //ruffycbruffycb@gmail.com
@@ -9,7 +5,7 @@ export const ADMINS = [
     writeBlog: true,
   },
   {
-    id: 'EN0yzEjtqhbPQKMezZ61jZ8eQYs1',
+    id: 'EN0yzEjtqhbPQKMezZ61jZ8eQYs1', // Yondaime
     admin: false,
     writeBlog: true,
   },

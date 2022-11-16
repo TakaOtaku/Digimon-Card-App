@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable, Subscription } from 'rxjs';
 import { IColor, ICountCard, IDeck, ISave, ISettings, IUser } from 'src/models';
-import { CARDSET } from '../../models/card-set.enum';
+import { CARDSET } from '../../models/enums/card-set.enum';
 import {
   IBlog,
   IBlogWithText,
