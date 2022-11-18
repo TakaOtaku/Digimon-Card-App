@@ -35,7 +35,7 @@ export const emptySave: ISave = {
   uid: '',
   photoURL: '',
   displayName: '',
-  version: 1.6,
+  version: 1.7,
   collection: [],
   decks: [],
   settings: emptySettings,
