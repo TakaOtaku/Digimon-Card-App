@@ -18,22 +18,21 @@ import {
       [ngClass]="{ 'lg:w-[350px]': collectionView }"
     >
       <div
-        class="surface-card flex w-full flex-row border-t-2 border-white bg-opacity-25"
+        class="surface-card mx-auto flex w-full flex-row border-t-2 border-white bg-opacity-25"
       >
         <digimon-ddto-spread
           *ngIf="!collectionView"
           [deck]="deck"
           [allCards]="allCards"
           [container]="true"
-          class="mx-5"
+          class="ml-auto border-r border-slate-200 px-5"
         ></digimon-ddto-spread>
 
         <digimon-chart-containers
           [deck]="mainDeck"
           class="max-w-[40rem]"
           [ngClass]="{
-            'mr-auto md:ml-3': collectionView,
-            'mx-auto': !collectionView
+            'mr-auto md:ml-3': collectionView
           }"
         ></digimon-chart-containers>
 
@@ -42,7 +41,7 @@ import {
           [deck]="deck"
           [allCards]="allCards"
           [container]="true"
-          class="mx-5"
+          class="mr-auto border-l border-slate-200 px-5"
         ></digimon-color-spread>
       </div>
     </div>

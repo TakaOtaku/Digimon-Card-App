@@ -91,27 +91,7 @@ import {
         [card]="card"
       ></digimon-view-card-dialog>
     </p-dialog> `,
-  styles: [
-    `
-      p-dropdown::ng-deep {
-        .p-dropdown-trigger {
-          display: none;
-        }
-      }
-
-      .card-box {
-        .cards-in-a-row-4 {
-          flex: 1 1 25%;
-          max-width: 25%;
-        }
-
-        .cards-in-a-row-8 {
-          flex: 1 1 12.5%;
-          max-width: 12.5%;
-        }
-      }
-    `,
-  ],
+  styleUrls: ['pagination-card-list.component.scss'],
 })
 export class PaginationCardListComponent implements OnInit, OnDestroy {
   @Input() deckView: boolean;

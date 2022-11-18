@@ -1,17 +1,25 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 
 // @ts-ignore
 import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 import { MessageService } from 'primeng/api';
-import { filter, first, Subject, Subscription, takeUntil } from 'rxjs';
-import { Base64Adapter } from 'src/app/functions/base64-adapter';
-import { ADMINS, IUser } from '../../models';
 import {
-  IBlog,
-  IBlogWithText,
-} from '../../models/interfaces/blog-entry.interface';
+  filter,
+  first,
+  Subject,
+  Subscription,
+  switchMap,
+  takeUntil,
+} from 'rxjs';
+import { Base64Adapter } from 'src/app/functions/base64-adapter';
+import { ADMINS, IBlog, IBlogWithText, IUser } from '../../models';
 import { AuthService } from '../service/auth.service';
 import { DigimonBackendService } from '../service/digimon-backend.service';
 
@@ -176,44 +184,25 @@ export class BlogComponent implements OnInit, OnDestroy {
     this.onDestroy$.unsubscribe();
   }
 
-  private makeGoogleFriendly() {
-    this.metaTitle.setTitle('Digimon Card Game - ' + this.title);
-
-    this.meta.addTags([
-      {
-        name: 'description',
-        content: this.title,
-      },
-      { name: 'author', content: 'TakaOtaku' },
-      {
-        name: 'keywords',
-        content: 'Forum, decks, tournament',
-      },
-    ]);
-  }
-
   checkURL() {
     this.active.params
       .pipe(
-        first(),
-        filter((params) => !!params['id'])
+        switchMap((params) =>
+          this.digimonBackendService.getBlogEntryWithText(params['id'])
+        )
       )
-      .subscribe((params) => {
-        this.digimonBackendService
-          .getBlogEntryWithText(params['id'])
-          .subscribe((blog) => {
-            try {
-              this.blog = blog;
-              this.title = blog.title;
-              this.content = blog.text;
-              this.author = blog.author;
-              this.date = blog.date;
-              this.category = blog.category;
-            } catch (e) {
-              // eslint-disable-next-line no-console
-              console.log(e);
-            }
-          });
+      .subscribe((blog) => {
+        try {
+          this.blog = blog;
+          this.title = blog.title;
+          this.content = blog.text;
+          this.author = blog.author;
+          this.date = blog.date;
+          this.category = blog.category;
+        } catch (e) {
+          // eslint-disable-next-line no-console
+          console.log(e);
+        }
       });
   }
 
@@ -273,7 +262,7 @@ export class BlogComponent implements OnInit, OnDestroy {
     });
   }
 
-  public onReady(editor: any) {
+  onReady(editor: any) {
     editor.ui
       .getEditableElement()
       .parentElement.insertBefore(
@@ -286,5 +275,21 @@ export class BlogComponent implements OnInit, OnDestroy {
     ) => {
       return new Base64Adapter(loader);
     };
+  }
+
+  private makeGoogleFriendly() {
+    this.metaTitle.setTitle('Digimon Card Game - ' + this.title);
+
+    this.meta.addTags([
+      {
+        name: 'description',
+        content: this.title,
+      },
+      { name: 'author', content: 'TakaOtaku' },
+      {
+        name: 'keywords',
+        content: 'Forum, decks, tournament',
+      },
+    ]);
   }
 }

@@ -1,10 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'digimon-single-container',
   template: `
-    <div class="m-1 h-full">
-      <p class="primary-color text-center font-bold">
+    <div class="m-0.5 h-full">
+      <p class="text-center text-white">
         {{ value }}
       </p>
       <div class="stat-container">
@@ -16,9 +16,10 @@ import { Component, Input } from '@angular/core';
           }"
         ></div>
       </div>
-      <p class="primary-color text-center text-xs font-bold">{{ label }}</p>
+      <p class="text-center text-xs text-white">{{ label }}</p>
     </div>
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SingleContainerComponent {
   @Input() public label: string;

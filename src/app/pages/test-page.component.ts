@@ -3,17 +3,12 @@ import { DataSnapshot } from '@angular/fire/compat/database/interfaces';
 
 // @ts-ignore
 import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
+import * as fs from 'fs';
+import { join } from 'path';
 import { filter, first, Subject, tap } from 'rxjs';
-import { ISave } from '../../models';
-import {
-  IBlog,
-  IBlogWithText,
-} from '../../models/interfaces/blog-entry.interface';
+import { IBlog, IBlogWithText, ISave } from '../../models';
 import { AuthService } from '../service/auth.service';
-import {
-  CardTraderService,
-  IMarket_Place_Item_CT,
-} from '../service/card-trader.service';
+import { CardTraderService } from '../service/card-trader.service';
 import { DatabaseService } from '../service/database.service';
 import { DigimonBackendService } from '../service/digimon-backend.service';
 import { emptySettings } from '../store/reducers/save.reducer';
@@ -37,34 +32,11 @@ export class TestPageComponent implements OnDestroy {
     private digimonBackendService: DigimonBackendService,
     private cardTraderService: CardTraderService
   ) {
-    const cardIdsWithPrice: any[] = [];
-    cardTraderService.getExpansions().subscribe((expansions) => {
-      expansions
-        .filter((expansion) => expansion.game_id === 8)
-        .forEach((expansion) => {
-          cardTraderService
-            .getMarketPlaceItems(expansion.id)
-            .subscribe((marketPlaceItems) => {
-              for (let [key, value] of Object.entries(marketPlaceItems)) {
-                const items = value as IMarket_Place_Item_CT[];
-
-                items.reduce(function (prev, curr) {
-                  return prev.price.cents < curr.price.cents ? prev : curr;
-                });
-
-                if (!items[0].properties_hash.collector_number) {
-                  return;
-                }
-
-                cardIdsWithPrice.push({
-                  cardId: items[0].properties_hash.collector_number,
-                  price: items[0].price.formatted,
-                });
-              }
-            });
-        });
-      console.log(cardIdsWithPrice);
-    });
+    //cardTraderService.getCardPrices().subscribe((value) => {
+    //  //fs.writeFileSync('./price-data-cardtrader.json', value, {
+    //  //  flag: 'w',
+    //  //});
+    //});
   }
 
   ngOnDestroy() {

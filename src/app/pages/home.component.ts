@@ -5,11 +5,7 @@ import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { Subject, Subscription, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
-import { ADMINS, IUser } from '../../models';
-import {
-  IBlog,
-  IBlogWithText,
-} from '../../models/interfaces/blog-entry.interface';
+import { IBlog, IBlogWithText, ADMINS, IUser } from '../../models';
 import { AuthService } from '../service/auth.service';
 import { DigimonBackendService } from '../service/digimon-backend.service';
 import { selectBlogs } from '../store/digimon.selectors';
@@ -17,9 +13,9 @@ import { selectBlogs } from '../store/digimon.selectors';
 @Component({
   selector: 'digimon-home',
   template: `
-    <div class="h-[calc(100vh-50px)] w-full overflow-y-scroll">
+    <div class="h-[calc(100vh-50px)] w-full overflow-y-scroll bg-repeat">
       <div class="mx-auto flex max-w-7xl flex-col">
-        <div class="mb-5 w-full border-2 border-slate-500 p-1">
+        <div class="bg mb-5 w-full border-2 border-slate-500 p-1">
           <div class="flex flex-row">
             <h1
               class="mb-2 w-full text-center text-3xl font-extrabold uppercase text-white"
@@ -181,9 +177,9 @@ import { selectBlogs } from '../store/digimon.selectors';
           </div>
         </div>
 
-        <digimon-tierlist class="mb-5"></digimon-tierlist>
+        <digimon-tierlist class="bg mb-5"></digimon-tierlist>
 
-        <digimon-deck-statistics></digimon-deck-statistics>
+        <digimon-deck-statistics class="bg"></digimon-deck-statistics>
       </div>
       <div class="h-24 w-full lg:hidden"></div>
     </div>

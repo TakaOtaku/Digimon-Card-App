@@ -26,12 +26,17 @@ import { AuthService } from '../../service/auth.service';
       class="navbar navbar-expand-lg relative flex w-full flex-col items-center justify-between border-b border-slate-100 shadow-2xl"
     >
       <div class="surface-ground flex max-h-12 w-full flex-row p-0">
-        <a href="https://digimoncard.app/deckbuilder">
+        <a class="flex flex-row" href="https://digimoncard.app/deckbuilder">
           <img
             alt="Logo"
             class="ml-5 mt-2 max-h-6 cursor-pointer md:max-h-8"
             src="../../../assets/images/img_logo.png"
           />
+          <h1
+            class="mt-2 bg-gradient-to-b from-[#1b245d] to-[#1b97d5] bg-clip-text text-2xl font-black text-transparent"
+          >
+            .APP
+          </h1>
         </a>
 
         <a
@@ -268,7 +273,7 @@ import { AuthService } from '../../service/auth.service';
       [(visible)]="settingsDialog"
       [baseZIndex]="10000"
       header="Settings"
-      styleClass="w-full h-full lg:w-[950px] min-h-[350px] max-h-screen"
+      styleClass="w-full h-[500px] lg:w-[950px] min-h-[350px] max-h-screen"
     >
       <digimon-settings-dialog></digimon-settings-dialog>
     </p-dialog>

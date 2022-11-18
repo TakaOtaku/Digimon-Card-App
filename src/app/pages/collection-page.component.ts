@@ -49,6 +49,7 @@ export class CollectionPageComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.onDestroy$.next(true);
+    this.onDestroy$.unsubscribe();
   }
 
   private makeGoogleFriendly() {

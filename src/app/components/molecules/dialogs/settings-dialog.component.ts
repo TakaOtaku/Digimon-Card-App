@@ -223,13 +223,6 @@ import { emptySettings } from '../../../store/reducers/save.reducer';
             >
               SEC
             </button>
-            <button
-              (click)="changeRarity('P')"
-              [ngClass]="{ 'primary-border': rarities.includes('P') }"
-              class="min-w-auto primary-background mt-2 h-8 w-10 rounded-r border-slate-200 p-1 text-xs font-semibold text-white"
-            >
-              P
-            </button>
           </div>
 
           <h1 class="mt-3 text-center text-xs font-bold text-white">
@@ -403,7 +396,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
 
   collectedCards = true;
   groupedSets = GroupedSets;
-  sets: string[];
+  sets: string[] = [];
   goal = 4;
   rarities: string[] = [];
   versions: string[] = [];
@@ -579,9 +572,9 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
   }
 
   exportCollection() {
-    const exportCards = this.getSetCards().sort((a, b) =>
-      a.id.localeCompare(b.id)
-    );
+    const exportCards = this.getSetCards()
+      .filter((card) => card.count !== 0)
+      .sort((a, b) => a.id.localeCompare(b.id));
 
     if (exportCards.length === 0) {
       this.messageService.add({
@@ -612,27 +605,23 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
     let collection: ICountCard[] = this.setupCollection();
 
     if (this.collectedCards) {
-      collection
-        .filter((card) => !card.id.includes('P-'))
-        .forEach((collectionCard) => returnCards.push(collectionCard));
+      collection.forEach((collectionCard) => returnCards.push(collectionCard));
     } else {
-      allCards
-        .filter((card) => !card.id.includes('P-'))
-        .forEach((card) => {
-          const foundCard = collection.find(
-            (collectionCard) => collectionCard.id === card.id
-          );
-          if (foundCard) {
-            if (this.goal - foundCard.count > 0) {
-              returnCards.push({
-                id: foundCard.id,
-                count: this.goal - foundCard.count,
-              } as ICountCard);
-            }
-          } else {
-            returnCards.push({ id: card.id, count: this.goal } as ICountCard);
+      allCards.forEach((card) => {
+        const foundCard = collection.find(
+          (collectionCard) => collectionCard.id === card.id
+        );
+        if (foundCard) {
+          if (this.goal - foundCard.count > 0) {
+            returnCards.push({
+              id: foundCard.id,
+              count: this.goal - foundCard.count,
+            } as ICountCard);
           }
-        });
+        } else {
+          returnCards.push({ id: card.id, count: this.goal } as ICountCard);
+        }
+      });
     }
 
     return returnCards;
@@ -652,6 +641,9 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
     });
 
     let raritiesFiltered: ICard[] = [];
+    if (this.rarities.length === 0) {
+      raritiesFiltered = setFiltered;
+    }
     this.rarities.forEach((filter) => {
       raritiesFiltered = [
         ...new Set([
@@ -662,6 +654,9 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
     });
 
     let versionsFiltered: ICard[] = [];
+    if (this.versions.length === 0) {
+      versionsFiltered = raritiesFiltered;
+    }
     this.versions.forEach((filter) => {
       versionsFiltered = [
         ...new Set([
@@ -718,7 +713,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
       }
     });
 
-    return collectionCardsForVersion;
+    return collectionCardsForVersion.filter((card) => card.count !== 0);
   }
 
   private parseLine(line: string): ICountCard | null {

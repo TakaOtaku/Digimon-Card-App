@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ICard, IDeck } from '../../../models';
+import { ICard, IDeck } from '../../../../models';
 import {
   getCountFromDeckCards,
   mapToDeckCards,
-} from '../../functions/digimon-card.functions';
+} from '../../../functions/digimon-card.functions';
 
 @Component({
   selector: 'digimon-color-spread',
@@ -80,43 +80,43 @@ import {
       <digimon-single-container
         label="Red"
         color="#ef1919"
-        class="w-12"
+        class="w-10"
         [value]="colorSpread[0]"
       ></digimon-single-container>
       <digimon-single-container
         label="Blue"
         color="#19a0e3"
-        class="w-12"
+        class="w-10"
         [value]="colorSpread[1]"
       ></digimon-single-container>
       <digimon-single-container
         label="Yellow"
         color="#ffd619"
-        class="w-12"
+        class="w-10"
         [value]="colorSpread[2]"
       ></digimon-single-container>
       <digimon-single-container
         label="Green"
         color="#19b383"
-        class="w-12"
+        class="w-10"
         [value]="colorSpread[3]"
       ></digimon-single-container>
       <digimon-single-container
         label="Black"
         color="#191919"
-        class="w-12"
+        class="w-10"
         [value]="colorSpread[4]"
       ></digimon-single-container>
       <digimon-single-container
         label="Purple"
         color="#8d6fdb"
-        class="w-12"
+        class="w-10"
         [value]="colorSpread[5]"
       ></digimon-single-container>
       <digimon-single-container
         label="White"
         color="#ffffff"
-        class="w-12"
+        class="w-10"
         [value]="colorSpread[6]"
       ></digimon-single-container>
     </div> `,

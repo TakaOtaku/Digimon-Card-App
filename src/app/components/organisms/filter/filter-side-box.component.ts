@@ -8,7 +8,7 @@ import {
 import { FormControl, FormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { MessageService } from 'primeng/api';
-import { Subject, takeUntil } from 'rxjs';
+import { debounceTime, distinctUntilChanged, Subject, takeUntil } from 'rxjs';
 import { IFilter } from '../../../../models';
 import {
   Attributes,
@@ -326,80 +326,7 @@ import { emptyFilter } from '../../../store/reducers/digimon.reducers';
       </p-multiSelect>
     </div>
   `,
-  styles: [
-    `
-      .Colors::ng-deep {
-        .p-selectbutton {
-          .p-element:nth-child(1) {
-            border-color: white !important;
-            color: black !important;
-            background: #ef1919 !important;
-          }
-
-          .p-element:nth-child(2) {
-            border-color: white !important;
-            color: black !important;
-            background: #19a0e3 !important;
-          }
-
-          .p-element:nth-child(3) {
-            border-color: white !important;
-            color: black !important;
-            background: #ffd619 !important;
-          }
-
-          .p-element:nth-child(4) {
-            border-color: white !important;
-            color: black !important;
-            background: #19b383 !important;
-          }
-
-          .p-element:nth-child(5) {
-            border-color: white !important;
-            color: white !important;
-            background: #191919 !important;
-          }
-
-          .p-element:nth-child(6) {
-            border-color: white !important;
-            color: black !important;
-            background: #8d6fdb !important;
-          }
-
-          .p-element:nth-child(7) {
-            border-color: white !important;
-            color: black !important;
-            background: #ffffff !important;
-          }
-
-          .p-element:nth-child(8) {
-            border-color: white !important;
-            color: black !important;
-            background: linear-gradient(
-              90deg,
-              #ef1919 14%,
-              #19a0e3 28%,
-              #ffd619 42%,
-              #19b383 56%,
-              #191919 70%,
-              #8d6fdb 84%,
-              #ffffff 100%
-            ) !important;
-          }
-        }
-      }
-
-      .cm {
-        ::ng-deep .pi-circle-fill {
-          color: green !important;
-        }
-
-        ::ng-deep .pi-circle {
-          color: red !important;
-        }
-      }
-    `,
-  ],
+  styleUrls: ['filter-side-box.component.scss'],
 })
 export class FilterSideBoxComponent implements OnInit, OnDestroy {
   @Input() public showColors: boolean;
@@ -499,7 +426,7 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
       });
 
     this.filterFormGroup.valueChanges
-      .pipe(takeUntil(this.onDestroy$))
+      .pipe(debounceTime(500), takeUntil(this.onDestroy$))
       .subscribe((filterValue) => {
         const filter: IFilter = { ...this.filter, ...filterValue };
         this.store.dispatch(changeFilter({ filter }));

@@ -3,7 +3,7 @@ export const ColorMap = new Map<string, string>([
   ['Blue', '#0097e1'],
   ['Yellow', '#fee100'],
   ['Green', '#009c6b'],
-  ['Black', '#211813'],
+  ['Black', '#808080'],
   ['Purple', '#6555a2'],
   ['White', '#ffffff'],
 
@@ -35,12 +35,12 @@ export const ColorMap = new Map<string, string>([
   ['Green/Purple', '#009c6b'],
   ['Green/White', '#009c6b'],
 
-  ['Black/Red', '#211813'],
-  ['Black/Blue', '#211813'],
-  ['Black/Yellow', '#211813'],
-  ['Black/Green', '#211813'],
-  ['Black/Purple', '#211813'],
-  ['Black/White', '#211813'],
+  ['Black/Red', '#808080'],
+  ['Black/Blue', '#808080'],
+  ['Black/Yellow', '#808080'],
+  ['Black/Green', '#808080'],
+  ['Black/Purple', '#808080'],
+  ['Black/White', '#808080'],
 
   ['Purple/Red', '#6555a2'],
   ['Purple/Blue', '#6555a2'],
@@ -51,13 +51,13 @@ export const ColorMap = new Map<string, string>([
 ]);
 
 export const DeckColorMap = new Map<string, any>([
-  ['Red', { name: 'Red', img: 'assets/images/decks/red.svg' }],
-  ['Blue', { name: 'Blue', img: 'assets/images/decks/blue.svg' }],
-  ['Yellow', { name: 'Yellow', img: 'assets/images/decks/yellow.svg' }],
-  ['Green', { name: 'Green', img: 'assets/images/decks/green.svg' }],
-  ['Black', { name: 'Black', img: 'assets/images/decks/black.svg' }],
-  ['Purple', { name: 'Purple', img: 'assets/images/decks/purple.svg' }],
-  ['White', { name: 'White', img: 'assets/images/decks/white.svg' }],
+  ['Red', { name: 'Red', img: 'assets/decks/red.svg' }],
+  ['Blue', { name: 'Blue', img: 'assets/decks/blue.svg' }],
+  ['Yellow', { name: 'Yellow', img: 'assets/decks/yellow.svg' }],
+  ['Green', { name: 'Green', img: 'assets/decks/green.svg' }],
+  ['Black', { name: 'Black', img: 'assets/decks/black.svg' }],
+  ['Purple', { name: 'Purple', img: 'assets/decks/purple.svg' }],
+  ['White', { name: 'White', img: 'assets/decks/white.svg' }],
 ]);
 
 export const ColorOrderMap = new Map<string, number>([

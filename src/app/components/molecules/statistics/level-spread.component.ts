@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ICard, IDeck } from '../../../models';
+import { ICard, IDeck } from '../../../../models';
 import {
   getCountFromDeckCards,
   mapToDeckCards,
-} from '../../functions/digimon-card.functions';
+} from '../../../functions/digimon-card.functions';
 
 @Component({
   selector: 'digimon-level-spread',

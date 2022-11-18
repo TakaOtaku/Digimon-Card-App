@@ -222,12 +222,10 @@ import {
             <td colspan="7">
               <div class="card-list surface-card flex flex-wrap pt-3">
                 <div *ngFor="let card of deck.cards">
-                  <digimon-deck-card
+                  <digimon-small-card
                     [card]="card"
                     [cards]="allCards"
-                    [edit]="false"
-                    [fullCards]="false"
-                  ></digimon-deck-card>
+                  ></digimon-small-card>
                 </div>
               </div>
             </td>

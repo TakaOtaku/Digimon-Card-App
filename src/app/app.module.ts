@@ -26,23 +26,24 @@ import { SortButtonsComponent } from './components/atoms/sort-buttons.component'
 import { ChartContainersComponent } from './components/molecules/chart-containers.component';
 import { CollectionCircleComponent } from './components/molecules/collection-circle.component';
 import { CollectionComponent } from './components/molecules/collection.component';
-import { ColorSpreadComponent } from './components/molecules/color-spread.component';
-import { DdtoSpreadComponent } from './components/molecules/ddto-spread.component';
-import { DeckStatisticsComponent } from './components/molecules/deck-statistics.component';
-import { DeckCardComponent } from './components/molecules/deck/deck-card.component';
-import { DeckMetadataComponent } from './components/molecules/deck/deck-metadata.component';
-import { DeckStatsComponent } from './components/molecules/deck/deck-stats.component';
-import { DeckToolbarComponent } from './components/molecules/deck/deck-toolbar.component';
+import { ColorSpreadComponent } from './components/molecules/statistics/color-spread.component';
+import { DdtoSpreadComponent } from './components/molecules/statistics/ddto-spread.component';
+import { DeckStatisticsComponent } from './components/molecules/statistics/deck-statistics.component';
+import { DeckCardComponent } from './components/molecules/deckview/deck-card.component';
+import { DeckMetadataComponent } from './components/molecules/deckview/deck-metadata.component';
+import { DeckStatsComponent } from './components/molecules/deckview/deck-stats.component';
+import { DeckToolbarComponent } from './components/molecules/deckview/deck-toolbar.component';
 import { DecksComponent } from './components/molecules/decks.component';
 import { ChangeAccessorieDialogComponent } from './components/molecules/dialogs/change-accessorie-dialog.component';
 import { ChangelogDialogComponent } from './components/molecules/dialogs/changelog-dialog.component';
 import { CollectionStatsDialogComponent } from './components/molecules/dialogs/collection-stats-dialog.component';
 import { ExportDeckDialogComponent } from './components/molecules/dialogs/export-deck-dialog.component';
 import { ImportDeckDialogComponent } from './components/molecules/dialogs/import-deck-dialog.component';
+import { ProxyPrintDialogComponent } from './components/molecules/dialogs/proxy-print-dialog.component';
 import { SettingsDialogComponent } from './components/molecules/dialogs/settings-dialog.component';
 import { ViewCardDialogComponent } from './components/molecules/dialogs/view-card-dialog.component';
 import { FullCardComponent } from './components/molecules/full-card.component';
-import { LevelSpreadComponent } from './components/molecules/level-spread.component';
+import { LevelSpreadComponent } from './components/molecules/statistics/level-spread.component';
 import { MultiButtonsComponent } from './components/molecules/multi-buttons.component';
 import { RangeSliderComponent } from './components/molecules/range-slider.component';
 import { SearchComponent } from './components/molecules/search.component';
@@ -75,6 +76,7 @@ import { DigimonEffects } from './store/digimon.effects';
 import * as DigimonCards from './store/reducers/digimon-card.reducers';
 import * as Digimon from './store/reducers/digimon.reducers';
 import * as Save from './store/reducers/save.reducer';
+import { SmallCardComponent } from './components/molecules/small-card.component';
 
 @NgModule({
   declarations: [
@@ -124,6 +126,8 @@ import * as Save from './store/reducers/save.reducer';
     LevelSpreadComponent,
     DdtoSpreadComponent,
     TestPageComponent,
+    SmallCardComponent,
+    ProxyPrintDialogComponent,
   ],
   imports: [
     ComponentsModule,

@@ -12,7 +12,8 @@ import {
 import { Store } from '@ngrx/store';
 import { Subject, takeUntil } from 'rxjs';
 import { englishCards } from '../../../../assets/cardlists/eng/english';
-import { ColorMap, ICard, IDeck } from '../../../../models';
+import { ICard, IDeck } from '../../../../models';
+import { ColorMap } from '../../../../models/maps/color.map';
 import { formatId } from '../../../functions/digimon-card.functions';
 import {
   selectDeck,
@@ -37,7 +38,11 @@ import {
       <p class="self-center font-bold uppercase text-white" id="Card-Block">
         {{ card.block }}
       </p>
-      <p [ngStyle]="{color}" class="self-center font-bold" id="Card-Type">
+      <p
+        [ngStyle]="{color}"
+        class="text-black-outline-xs self-center font-bold"
+        id="Card-Type"
+      >
         {{ card.cardType }}
       </p>
       <div
@@ -50,7 +55,11 @@ import {
           {{ card.cardLv }}
         </p>
       </div>
-      <p [ngStyle]="{color}" class="self-center font-bold" id="Card-Version">
+      <p
+        [ngStyle]="{color}"
+        class="text-black-outline-xs self-center font-bold"
+        id="Card-Version"
+      >
         {{ version }}
       </p>
       <button
@@ -67,7 +76,11 @@ import {
       <button class="mr-1" (click)="previousCard()">
         <i class="fa-solid fa-circle-arrow-left text-white"></i>
       </button>
-      <h1 [ngStyle]="{color}" class="my-1 text-3xl font-black" id="Card-Name">
+      <h1
+        [ngStyle]="{color}"
+        class="text-black-outline-xs my-1 text-3xl font-black"
+        id="Card-Name"
+      >
         {{ card.name }}
       </h1>
       <button
@@ -97,7 +110,10 @@ import {
           class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150"
           id="Digimon-Deck-Count"
         >
-          <p [ngStyle]="{color}" class="ml-1.5 text-lg font-extrabold">
+          <p
+            [ngStyle]="{color}"
+            class="text-black-outline-xs ml-1.5 text-lg font-extrabold"
+          >
             In Deck
           </p>
           <p class="font-white ml-auto mr-1.5 font-bold">{{ deckCount() }}x</p>
@@ -107,7 +123,12 @@ import {
           class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150"
           id="Digimon-Form"
         >
-          <p [ngStyle]="{color}" class="ml-1.5 text-lg font-extrabold">Form</p>
+          <p
+            [ngStyle]="{color}"
+            class="text-black-outline-xs ml-1.5 text-lg font-extrabold"
+          >
+            Form
+          </p>
           <p class="font-white ml-auto mr-1.5 font-bold">{{ card.form }}</p>
         </div>
         <div
@@ -115,7 +136,10 @@ import {
           class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150"
           id="Digimon-Attribute"
         >
-          <p [ngStyle]="{color}" class="ml-1.5 text-lg font-extrabold">
+          <p
+            [ngStyle]="{color}"
+            class="text-black-outline-xs ml-1.5 text-lg font-extrabold"
+          >
             Attribute
           </p>
           <p class="font-white ml-auto mr-1.5 text-lg font-bold">
@@ -127,7 +151,12 @@ import {
           class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150"
           id="Digimon-Type"
         >
-          <p [ngStyle]="{color}" class="ml-1.5 text-lg font-extrabold">Type</p>
+          <p
+            [ngStyle]="{color}"
+            class="text-black-outline-xs ml-1.5 text-lg font-extrabold"
+          >
+            Type
+          </p>
           <p class="font-white ml-auto mr-1.5 font-bold">{{ card.type }}</p>
         </div>
         <div
@@ -135,7 +164,12 @@ import {
           class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150"
           id="Digimon-DP"
         >
-          <p [ngStyle]="{color}" class="ml-1.5 text-lg font-extrabold">DP</p>
+          <p
+            [ngStyle]="{color}"
+            class="text-black-outline-xs ml-1.5 text-lg font-extrabold"
+          >
+            DP
+          </p>
           <p class="font-white ml-auto mr-1.5 font-bold">{{ card.dp }}</p>
         </div>
         <div
@@ -143,7 +177,10 @@ import {
           class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150"
           id="Digimon-Play-Cost"
         >
-          <p [ngStyle]="{color}" class="ml-1.5 text-lg font-extrabold">
+          <p
+            [ngStyle]="{color}"
+            class="text-black-outline-xs ml-1.5 text-lg font-extrabold"
+          >
             Play Cost
           </p>
           <p class="font-white ml-auto mr-1.5 font-bold">{{ card.playCost }}</p>
@@ -153,7 +190,10 @@ import {
           class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150"
           id="Digimon-Digivolve-Cost-1"
         >
-          <p [ngStyle]="{color}" class="ml-1.5 text-lg font-extrabold">
+          <p
+            [ngStyle]="{color}"
+            class="text-black-outline-xs ml-1.5 text-lg font-extrabold"
+          >
             Digivolve Cost 1
           </p>
           <p class="font-white ml-auto mr-1.5 font-bold">
@@ -165,7 +205,10 @@ import {
           class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150"
           id="Digimon-Digivolve-Cost-2"
         >
-          <p [ngStyle]="{color}" class="ml-1.5 text-lg font-extrabold">
+          <p
+            [ngStyle]="{color}"
+            class="text-black-outline-xs ml-1.5 text-lg font-extrabold"
+          >
             Digivolve Cost 2
           </p>
           <p class="font-white ml-auto mr-1.5 font-bold">
@@ -177,7 +220,10 @@ import {
           class="my-0.5 flex w-full flex-col rounded-full"
           id="Digimon-Special-Digivolve"
         >
-          <p [ngStyle]="{color}" class="text-lg font-extrabold">
+          <p
+            [ngStyle]="{color}"
+            class="text-black-outline-xs text-lg font-extrabold"
+          >
             Special Digivolve
           </p>
           <p class="font-white whitespace-pre-wrap font-bold">
@@ -189,7 +235,10 @@ import {
           class="my-0.5 flex w-full flex-col rounded-full"
           id="Digimon-DNA-Digivolve"
         >
-          <p [ngStyle]="{color}" class="text-lg font-extrabold">
+          <p
+            [ngStyle]="{color}"
+            class="text-black-outline-xs text-lg font-extrabold"
+          >
             DNA Digivolve
           </p>
           <p class="font-white whitespace-pre-wrap font-bold">
@@ -201,7 +250,12 @@ import {
           class="my-0.5 flex w-full flex-col rounded-full"
           id="Digimon-DigiXros"
         >
-          <p [ngStyle]="{color}" class="text-lg font-extrabold">DigiXros</p>
+          <p
+            [ngStyle]="{color}"
+            class="text-black-outline-xs text-lg font-extrabold"
+          >
+            DigiXros
+          </p>
           <p class="font-white whitespace-pre-wrap font-bold">
             {{ card.digiXros }}
           </p>
@@ -215,7 +269,12 @@ import {
         class="flex flex-col"
         id="Digimon-Effect"
       >
-        <p [ngStyle]="{color}" class="text-lg font-extrabold">Effect</p>
+        <p
+          [ngStyle]="{color}"
+          class="text-black-outline-xs text-lg font-extrabold"
+        >
+          Effect
+        </p>
         <p class="font-white whitespace-pre-wrap font-bold">
           {{ card.effect }}
         </p>
@@ -225,7 +284,10 @@ import {
         class="flex flex-col"
         id="Digimon-Digivolve-Effect"
       >
-        <p [ngStyle]="{color}" class="text-lg font-extrabold">
+        <p
+          [ngStyle]="{color}"
+          class="text-black-outline-xs text-lg font-extrabold"
+        >
           Inherited effect
         </p>
         <p class="font-white whitespace-pre-wrap font-bold">
@@ -237,7 +299,10 @@ import {
         class="flex flex-col"
         id="Security-Effect"
       >
-        <p [ngStyle]="{color}" class="text-lg font-extrabold">
+        <p
+          [ngStyle]="{color}"
+          class="text-black-outline-xs text-lg font-extrabold"
+        >
           Security effect
         </p>
         <p class="font-white whitespace-pre-wrap font-bold">
@@ -248,21 +313,36 @@ import {
 
     <div *ngIf="card.restriction !== '-'" class="max-w-full" id="Restriction">
       <div class="flex flex-col" id="Card-Restriction">
-        <p [ngStyle]="{color}" class="text-lg font-extrabold">Restriction</p>
+        <p
+          [ngStyle]="{color}"
+          class="text-black-outline-xs text-lg font-extrabold"
+        >
+          Restriction
+        </p>
         <p class="font-white font-bold">{{ card.restriction }}</p>
       </div>
     </div>
 
     <div class="max-w-full" id="Notes">
       <div class="flex flex-col" id="Card-Notes">
-        <p [ngStyle]="{color}" class="text-lg font-extrabold">Notes</p>
+        <p
+          [ngStyle]="{color}"
+          class="text-black-outline-xs text-lg font-extrabold"
+        >
+          Notes
+        </p>
         <p class="font-white font-bold">{{ card.notes }}</p>
       </div>
     </div>
 
     <div *ngIf="card.illustrator !== ''" class="max-w-full" id="Illustrator">
       <div class="flex flex-col" id="Card-Illustrator">
-        <p [ngStyle]="{color}" class="text-lg font-extrabold">Illustrator</p>
+        <p
+          [ngStyle]="{color}"
+          class="text-black-outline-xs text-lg font-extrabold"
+        >
+          Illustrator
+        </p>
         <div class="flex flex-row">
           <p class="font-white font-bold">{{ card.illustrator }}</p>
           <button

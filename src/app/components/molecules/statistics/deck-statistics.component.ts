@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { filter, first, switchMap, tap } from 'rxjs';
-import { ICard, IDeck, IDeckCard } from '../../../models';
+import { ICard, IDeck, IDeckCard } from '../../../../models';
 import {
   getCountFromDeckCards,
   mapToDeckCards,
-} from '../../functions/digimon-card.functions';
-import { DigimonBackendService } from '../../service/digimon-backend.service';
+} from '../../../functions/digimon-card.functions';
+import { DigimonBackendService } from '../../../service/digimon-backend.service';
 import {
   selectAllCards,
   selectCommunityDecks,
-} from '../../store/digimon.selectors';
+} from '../../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-deck-statistics',

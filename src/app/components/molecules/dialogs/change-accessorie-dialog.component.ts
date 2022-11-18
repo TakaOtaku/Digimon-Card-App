@@ -11,15 +11,9 @@ import {
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { Subject, Subscription, takeUntil } from 'rxjs';
-import {
-  ColorList,
-  ColorMap,
-  ICard,
-  IColor,
-  IDeck,
-  tagsList,
-} from '../../../../models';
+import { ColorList, ICard, IColor, IDeck, tagsList } from '../../../../models';
 import { ITag } from '../../../../models/interfaces/tag.interface';
+import { ColorMap } from '../../../../models/maps/color.map';
 import { deckIsValid } from '../../../functions/digimon-card.functions';
 import { AuthService } from '../../../service/auth.service';
 import { DigimonBackendService } from '../../../service/digimon-backend.service';

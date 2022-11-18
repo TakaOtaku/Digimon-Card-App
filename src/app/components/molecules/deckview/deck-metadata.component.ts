@@ -6,8 +6,7 @@ import {
   Output,
   SimpleChanges,
 } from '@angular/core';
-import { ColorList, IColor, tagsList } from '../../../../models';
-import { ITag } from '../../../../models/interfaces/tag.interface';
+import { ColorList, IColor, tagsList, ITag } from '../../../../models';
 import { ObscenityPipe } from '../../../pipes/obscenity.pipe';
 
 @Component({

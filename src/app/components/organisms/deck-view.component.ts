@@ -10,15 +10,9 @@ import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { filter, Subject, Subscription, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
-import {
-  DeckColorMap,
-  ICard,
-  ICountCard,
-  IDeck,
-  IDeckCard,
-  ISave,
-} from '../../../models';
-import { ITag } from '../../../models/interfaces/tag.interface';
+import { ICard, ICountCard, IDeck, IDeckCard, ISave } from '../../../models';
+import { ITag } from '../../../models';
+import { DeckColorMap } from '../../../models/maps/color.map';
 import {
   compareIDs,
   deckIsValid,
@@ -70,14 +64,10 @@ import {
           <digimon-deck-card
             (onChange)="mapToDeck()"
             (removeCard)="removeCard(card)"
-            [bigCards]="!collectionView"
             [cardHave]="getCardHave(card)"
             [card]="card"
             [cards]="allCards"
-            [edit]="true"
-            [fullCards]="fullCards"
             [missingCards]="missingCards"
-            [stack]="stack"
           ></digimon-deck-card>
         </div>
       </div>
