@@ -1,17 +1,10 @@
 import { englishCards } from '../../assets/cardlists/eng/english';
 import preReleaseJSON from '../../assets/cardlists/eng/preRelease.json';
 import { japaneseCards } from '../../assets/cardlists/jap/japanese';
-import {
-  ColorOrderMap,
-  DeckColorMap,
-  ICard,
-  ICountCard,
-  IDeck,
-  IDeckCard,
-  tagsList,
-} from '../../models';
-import { CARDSET } from '../../models/card-set.enum';
-import { ITag } from '../../models/interfaces/tag.interface';
+import { ICard, ICountCard, IDeck, IDeckCard, tagsList } from '../../models';
+import { CARDSET } from '../../models';
+import { ITag } from '../../models';
+import { ColorOrderMap, DeckColorMap } from '../../models/maps/color.map';
 
 export function setTags(tags: ITag[], deck: IDeck, allCards: ICard[]) {
   tags = [];

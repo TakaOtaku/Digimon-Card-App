@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import { ICountCard, IDeck, ISave, ISettings } from '../../../models';
-import { CARDSET } from '../../../models/card-set.enum';
+import { CARDSET } from '../../../models/enums/card-set.enum';
 import {
   addToCollection,
   changeCardCount,
@@ -35,7 +35,7 @@ export const emptySave: ISave = {
   uid: '',
   photoURL: '',
   displayName: '',
-  version: 1.6,
+  version: 1.7,
   collection: [],
   decks: [],
   settings: emptySettings,

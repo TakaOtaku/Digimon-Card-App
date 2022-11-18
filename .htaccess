@@ -4,5 +4,7 @@ RewriteRule ^ %1 [R=301,L]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} -f
 RewriteCond %{REQUEST_FILENAME} !/(sitemap.xml)/
+RewriteCond %{REQUEST_FILENAME} !/(robots.txt)/
 RewriteRule ^/?(.*)\ index.html [L,QSA]
 RewriteRule sitemap.xml sitemap/sitemap.xml [L]
+RewriteRule robots.txt robots.txt [L]
