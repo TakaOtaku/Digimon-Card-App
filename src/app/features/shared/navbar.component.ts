@@ -199,7 +199,7 @@ import { AuthService } from '../../service/auth.service';
                       aria-current="true"
                       class="block w-full cursor-pointer px-6 py-2 transition duration-150 ease-in-out hover:text-[#64B5F6] hover:backdrop-brightness-150"
                     >
-                      <fa-icon [icon]="faCommunity" class="mr-2 w-5"></fa-icon>
+                      <fa-icon [icon]="faInfo" class="mr-1 w-5"></fa-icon>
                       Products</a
                     >
                   </div>

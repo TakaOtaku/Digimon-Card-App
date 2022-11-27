@@ -36,7 +36,7 @@ import { selectBlogs } from '../../store/digimon.selectors';
           </div>
 
           <div class="overflow-x-auto">
-            <div class="inline-block h-64 min-w-full overflow-auto py-2">
+            <div class="inline-block h-full min-w-full overflow-auto py-2">
               <table class="min-w-full">
                 <thead class="surface-card border-b">
                   <tr>

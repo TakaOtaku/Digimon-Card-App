@@ -7,6 +7,7 @@ import { ContextMenuModule } from 'primeng/contextmenu';
 import { DialogModule } from 'primeng/dialog';
 import { InputTextModule } from 'primeng/inputtext';
 import { MultiSelectModule } from 'primeng/multiselect';
+import { PaginatorModule } from 'primeng/paginator';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { DigimonStoreModule } from '../../digimon-store.module';
 import { AuthService } from '../../service/auth.service';
@@ -43,6 +44,7 @@ import { UserStatsComponent } from './user-stats.component';
     InputTextModule,
     ContextMenuModule,
     DialogModule,
+    PaginatorModule,
   ],
   providers: [AuthService, DigimonBackendService],
 })

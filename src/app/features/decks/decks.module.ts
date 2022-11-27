@@ -10,6 +10,7 @@ import { DialogModule } from 'primeng/dialog';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
 import { MultiSelectModule } from 'primeng/multiselect';
+import { PaginatorModule } from 'primeng/paginator';
 import { RippleModule } from 'primeng/ripple';
 import { TableModule } from 'primeng/table';
 import { DigimonStoreModule } from '../../digimon-store.module';
@@ -18,6 +19,7 @@ import { DigimonBackendService } from '../../service/digimon-backend.service';
 import { DeckbuilderModule } from '../deckbuilder/deckbuilder.module';
 import { SharedModule } from '../shared/shared.module';
 import { DeckStatisticsComponent } from './deck-statistics.component';
+import { DeckSubmissionComponent } from './deck-submission.component';
 import { DecksPageComponent } from './decks-page.component';
 import { SmallCardComponent } from './small-card.component';
 
@@ -26,6 +28,7 @@ import { SmallCardComponent } from './small-card.component';
     DecksPageComponent,
     SmallCardComponent,
     DeckStatisticsComponent,
+    DeckSubmissionComponent,
   ],
   imports: [
     CommonModule,
@@ -45,6 +48,7 @@ import { SmallCardComponent } from './small-card.component';
     SharedModule,
     MultiSelectModule,
     DialogModule,
+    PaginatorModule,
   ],
   providers: [AuthService, DigimonBackendService],
 })

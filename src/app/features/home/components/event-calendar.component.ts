@@ -7,9 +7,9 @@ import {
 } from '@angular/core';
 import { Observable, Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
-import { ADMINS, IUser } from '../../../models';
-import { AuthService } from '../../service/auth.service';
-import { DigimonBackendService } from '../../service/digimon-backend.service';
+import { ADMINS, IUser } from '../../../../models';
+import { AuthService } from '../../../service/auth.service';
+import { DigimonBackendService } from '../../../service/digimon-backend.service';
 
 export interface IEvent {
   uid: string;

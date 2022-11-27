@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { first, map, Observable } from 'rxjs';
 import { IColor, ICountCard, IDeck, ISave, ISettings, IUser } from 'src/models';
 import { CARDSET, IBlog, IBlogWithText, ITag } from '../../models';
-import { IEvent } from '../features/home/event-calendar.component';
+import { IEvent } from '../features/home/components/event-calendar.component';
 import { emptySettings } from '../store/reducers/save.reducer';
 
 const baseUrl = 'https://backend.digimoncard.app/api/';
@@ -23,8 +23,10 @@ export class DigimonBackendService {
           const cards: ICountCard = JSON.parse(deck.cards);
           const color: IColor = JSON.parse(deck.color);
           const tags: ITag[] = JSON.parse(deck.tags);
+          const likes: string[] = deck.likes ? JSON.parse(deck.likes) : [];
           return {
             ...deck,
+            likes,
             cards,
             color,
             tags,
@@ -70,8 +72,10 @@ export class DigimonBackendService {
         const cards: ICountCard = JSON.parse(deck.cards);
         const color: IColor = JSON.parse(deck.color);
         const tags: ITag[] = JSON.parse(deck.tags);
+        const likes: string[] = deck.likes ? JSON.parse(deck.likes) : [];
         return {
           ...deck,
+          likes,
           cards,
           color,
           tags,

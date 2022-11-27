@@ -1,159 +1,68 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
-// @ts-ignore
-import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 import { MessageService } from 'primeng/api';
-import { Subject, switchMap, takeUntil, withLatestFrom } from 'rxjs';
-import { Base64Adapter } from 'src/app/functions/base64-adapter';
-import { ADMINS, IBlog, IBlogWithText, IUser } from '../../../models';
-import { AuthService } from '../../service/auth.service';
+import {
+  BehaviorSubject,
+  Observable,
+  switchMap,
+  tap,
+  withLatestFrom,
+} from 'rxjs';
+import { IBlog, IBlogWithText } from '../../../models';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
 
 @Component({
   selector: 'digimon-blog',
   template: `
-    <div class="w-full bg-gradient-to-b from-[#17212f] to-[#08528d]">
-      <div
-        *ngIf="!edit"
-        class="mx-auto h-[calc(100vh-50px)] max-w-7xl overflow-y-scroll"
-      >
-        <div class="relative">
-          <h1
-            class="mb-2 w-full text-center text-3xl font-extrabold text-[#e2e4e6]"
-          >
-            {{ title }}
-          </h1>
-          <button
-            class="p-button-outlined p-button-rounded absolute left-[5px] top-[20px]"
-            icon="pi pi-arrow-left"
-            pButton
-            pRipple
-            type="button"
-            (click)="router.navigateByUrl('/community')"
-          ></button>
-          <button
-            *ngIf="showEdit(blog)"
-            class="p-button-outlined p-button-rounded absolute right-[5px] top-[20px]"
-            icon="pi pi-pencil"
-            pButton
-            pRipple
-            type="button"
-            (click)="edit = true"
-          ></button>
-        </div>
-        <div class="flex flex-row">
-          <span class="mb-2 w-full text-center font-bold text-[#e2e4e6]"
-            >{{ author }} / {{ date | date: 'dd.MM.yyyy' }}</span
-          >
-        </div>
+    <div
+      *ngIf="blog$ | async as blog"
+      class="w-full overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d]"
+    >
+      <div class="mx-auto h-[calc(100vh-50px)] max-w-7xl">
+        <digimon-header [edit$]="edit" [form]="form"></digimon-header>
 
-        <ckeditor
-          [editor]="Editor"
+        <div
+          *ngIf="(edit | async) === false; else editor"
           class="list-disc text-[#e2e4e6]"
-          [(ngModel)]="content"
-          [disabled]="true"
-        ></ckeditor>
-
-        <div class="h-24 w-full lg:hidden"></div>
-      </div>
-
-      <div
-        *ngIf="edit"
-        class="mx-auto h-[calc(100vh-50px)] max-w-7xl overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d]"
-      >
-        <div class="t-5 flex flex-row">
-          <button
-            class="p-button-outlined p-button-rounded mr-2"
-            icon="pi pi-arrow-left"
-            pButton
-            pRipple
-            type="button"
-            (click)="router.navigateByUrl('/community')"
-          ></button>
-          <span class="w-full">
-            <input
-              [(ngModel)]="title"
-              placeholder="Title:"
-              class="mb-3 h-8 w-full text-sm"
-              pInputText
-              type="text"
-            />
-          </span>
-          <button
-            *ngIf="showEdit(blog)"
-            class="p-button-outlined p-button-rounded ml-2"
-            icon="pi pi-pencil"
-            pButton
-            pRipple
-            type="button"
-            (click)="edit = false"
-          ></button>
-        </div>
-        <div class="mb-3">
-          <div class="flex inline-flex w-full justify-center">
-            <button
-              (click)="category = 'Tournament Report'"
-              [ngClass]="{
-                'primary-background': category === 'Tournament Report'
-              }"
-              class="min-w-auto mt-2 h-8 w-36 rounded-l-sm border border-slate-100 p-2 text-xs font-semibold text-[#e2e4e6]"
-            >
-              Tournament Report
-            </button>
-            <button
-              (click)="category = 'Deck-Review'"
-              [ngClass]="{
-                'primary-background': category === 'Deck-Review'
-              }"
-              class="min-w-auto mt-2 h-8 w-36 border border-slate-100 p-2 text-xs font-semibold text-[#e2e4e6]"
-            >
-              Deck-Review
-            </button>
-          </div>
-        </div>
-
-        <ckeditor
-          [editor]="Editor"
-          class="list-disc text-[#e2e4e6]"
-          [(ngModel)]="content"
-          (ready)="onReady($event)"
-        ></ckeditor>
+          [innerHTML]="form.get('content')"
+        ></div>
+        <ng-template #editor>
+          <digimon-ckeditor [content]="form.get('content')"></digimon-ckeditor>
+        </ng-template>
 
         <button
+          *ngIf="edit | async"
           class="p-button mt-3"
           icon="pi pi-save"
           pButton
           pRipple
           type="button"
           label="Save"
-          (click)="save()"
+          (click)="save(blog)"
         ></button>
       </div>
     </div>
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class BlogComponent implements OnInit, OnDestroy {
-  public Editor = DecoupledEditor;
+export class BlogComponent implements OnInit {
+  blog$: Observable<IBlogWithText>;
+  edit = new BehaviorSubject(false);
 
-  blog: IBlogWithText;
+  form = new FormGroup({
+    title: new FormControl(''),
+    content: new FormControl(),
+    author: new FormControl(''),
+    date: new FormControl(new Date()),
+    category: new FormControl(''),
+  });
 
-  title = '';
-  content: any;
-  author = '';
-  date: Date;
-  category = '';
-  edit = false;
-
-  user: IUser | null;
-
-  private onDestroy$ = new Subject();
   constructor(
-    public router: Router,
     private active: ActivatedRoute,
     private digimonBackendService: DigimonBackendService,
-    private authService: AuthService,
     private messageService: MessageService,
     private meta: Meta,
     private metaTitle: Title
@@ -161,83 +70,62 @@ export class BlogComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.makeGoogleFriendly();
-
     this.checkURL();
-
-    this.user = this.authService.userData;
-    this.authService.authChange
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe(() => (this.user = this.authService.userData));
   }
 
-  ngOnDestroy() {
-    this.onDestroy$.next(true);
-    this.onDestroy$.unsubscribe();
+  private makeGoogleFriendly() {
+    this.metaTitle.setTitle(
+      'Digimon Card Game - ' + this.form.get('title')?.value
+    );
+
+    this.meta.addTags([
+      {
+        name: 'description',
+        content: this.form.get('title')?.value,
+      },
+      { name: 'author', content: 'TakaOtaku' },
+      {
+        name: 'keywords',
+        content: 'Forum, decks, tournament',
+      },
+    ]);
   }
 
   checkURL() {
-    this.active.params
-      .pipe(
-        switchMap((params) =>
-          this.digimonBackendService.getBlogEntryWithText(params['id'])
-        )
-      )
-      .subscribe((blog) => {
-        try {
-          this.blog = blog;
-          this.title = blog.title;
-          this.content = blog.text;
-          this.author = blog.author;
-          this.date = blog.date;
-          this.category = blog.category;
-        } catch (e) {
-          // eslint-disable-next-line no-console
-          console.log(e);
-        }
-      });
+    this.blog$ = this.active.params.pipe(
+      switchMap((params) =>
+        this.digimonBackendService.getBlogEntryWithText(params['id'])
+      ),
+      tap((blog) => {
+        this.form.setValue({
+          title: blog.title,
+          content: blog.text,
+          author: blog.author,
+          date: blog.date,
+          category: blog.category,
+        });
+      })
+    );
   }
 
-  isAdmin(): boolean {
-    return !!ADMINS.find((user) => {
-      if (this.user?.uid === user.id) {
-        return user.admin;
-      }
-      return false;
-    });
-  }
-
-  showEdit(blog: IBlogWithText): boolean {
-    if (this.isAdmin()) {
-      return true;
-    }
-
-    const writeRights = !!ADMINS.find((user) => {
-      if (this.user?.uid === user.id) {
-        return user.writeBlog;
-      }
-      return false;
-    });
-
-    return writeRights ? blog.authorId === this.user?.uid : false;
-  }
-
-  save() {
+  save(blog: IBlogWithText) {
+    const formValue = this.form.value;
     const newBlog = {
-      ...this.blog,
-      text: this.content,
-      title: this.title,
-      category: this.category,
+      ...blog,
+      text: formValue.content,
+      title: formValue.title,
+      category: formValue.category,
       date: new Date(),
     } as IBlogWithText;
 
     const newBlogWithoutText = {
-      uid: this.blog.uid,
+      uid: blog.uid,
       date: new Date(),
-      title: this.title,
-      approved: this.blog.approved,
-      author: this.blog.author,
-      authorId: this.blog.authorId,
-      category: this.category,
+      title: formValue.title,
+      approved: blog.approved,
+      author: blog.author,
+      authorId: blog.authorId,
+      category: formValue.category,
     } as IBlog;
 
     this.digimonBackendService
@@ -247,43 +135,12 @@ export class BlogComponent implements OnInit, OnDestroy {
           this.digimonBackendService.updateBlog(newBlogWithoutText)
         )
       )
-      .subscribe((value) => {
+      .subscribe(() => {
         this.messageService.add({
           severity: 'success',
           summary: 'Blog-Entry saved!',
           detail: 'The Blog-Entry was saved successfully!',
         });
       });
-  }
-
-  onReady(editor: any) {
-    editor.ui
-      .getEditableElement()
-      .parentElement.insertBefore(
-        editor.ui.view.toolbar.element,
-        editor.ui.getEditableElement()
-      );
-
-    editor.plugins.get('FileRepository').createUploadAdapter = (
-      loader: any
-    ) => {
-      return new Base64Adapter(loader);
-    };
-  }
-
-  private makeGoogleFriendly() {
-    this.metaTitle.setTitle('Digimon Card Game - ' + this.title);
-
-    this.meta.addTags([
-      {
-        name: 'description',
-        content: this.title,
-      },
-      { name: 'author', content: 'TakaOtaku' },
-      {
-        name: 'keywords',
-        content: 'Forum, decks, tournament',
-      },
-    ]);
   }
 }

@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { ICard, ICountCard, IDeck, IUser } from '../../../models';
 import { emptyDeck } from '../../store/reducers/digimon.reducers';
 
@@ -10,15 +17,25 @@ import { emptyDeck } from '../../store/reducers/digimon.reducers';
         class="max-w-[370px]"
         (click)="showDeckDialog(deck)"
         (contextmenu)="showDeckDialog(deck)"
-        *ngFor="let deck of decks"
+        *ngFor="let deck of decksToShow"
         [deck]="deck"
       ></digimon-deck-container>
     </div>
 
+    <p-paginator
+      (onPageChange)="onPageChange($event)"
+      [first]="first"
+      [rows]="20"
+      [showJumpToPageDropdown]="true"
+      [showPageLinks]="false"
+      [totalRecords]="decks.length"
+      styleClass="border-0 bg-transparent mx-auto"
+    ></p-paginator>
+
     <p-dialog
       header="Deck Details"
       [(visible)]="deckDialog"
-      styleClass="w-full h-full max-w-6xl min-h-[500px]"
+      styleClass="padding w-full h-full max-w-6xl min-h-[500px]"
       [baseZIndex]="10000"
     >
       <digimon-deck-dialog
@@ -30,9 +47,11 @@ import { emptyDeck } from '../../store/reducers/digimon.reducers';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DecksComponent {
+export class DecksComponent implements OnInit, OnChanges {
   @Input() decks: IDeck[];
   @Input() editable = true;
+
+  decksToShow: IDeck[] = [];
 
   emptyDeck = emptyDeck;
 
@@ -44,11 +63,31 @@ export class DecksComponent {
   correctUser = false;
   params = '';
 
+  first = 0;
+  page = 0;
+
   deck: IDeck;
   deckDialog = false;
+
+  ngOnInit() {
+    this.decksToShow = this.decks.slice(0, 20);
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    this.decksToShow = changes['decks'].currentValue.slice(0, 20);
+  }
 
   showDeckDialog(deck: IDeck) {
     this.deck = deck;
     this.deckDialog = true;
+  }
+
+  onPageChange(event: any, slice?: number) {
+    this.first = event.first;
+    this.page = event.page;
+    this.decksToShow = this.decks.slice(
+      event.first,
+      (slice ?? 20) * (event.page + 1)
+    );
   }
 }

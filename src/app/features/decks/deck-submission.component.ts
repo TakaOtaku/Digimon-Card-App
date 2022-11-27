@@ -18,126 +18,14 @@ import {
 import { emptyDeck } from '../../store/reducers/digimon.reducers';
 
 @Component({
-  selector: 'digimon-decks-page',
+  selector: 'digimon-deck-submission',
   template: `
     <div
       class="flex h-[calc(100vh-50px)] w-full flex-col overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d]"
-    >
-      <div class="mx-auto w-full max-w-6xl">
-        <div class="flex flex-row">
-          <button>
-            <h1
-              [ngClass]="{ 'text-[#64B5F6]': mode === 'Community' }"
-              (click)="mode = 'Community'"
-              class="raise-xs surface-card text-shadow mt-6 border border-slate-200 p-1 text-4xl font-black text-[#e2e4e6] transition-all xl:mt-2"
-            >
-              Community Decks
-            </h1>
-          </button>
-
-          <button
-            pButton
-            class="p-button-outlined p-button-rounded mt-3 ml-1"
-            icon="pi pi-chart-line"
-            type="button"
-            (click)="deckStatsDialog = true"
-          ></button>
-
-          <button class="ml-auto">
-            <h1
-              [ngClass]="{ 'text-[#64B5F6]': mode === 'Tournament' }"
-              (click)="mode = 'Tournament'"
-              class="raise-xs surface-card text-shadow mt-6 border border-slate-200 p-1 text-4xl font-black text-[#e2e4e6] transition-all xl:mt-2"
-            >
-              Tournament Decks
-            </h1>
-          </button>
-        </div>
-
-        <div class="my-1 mx-auto flex max-w-6xl flex-row">
-          <div class="my-1 flex w-full flex-col px-2">
-            <span class="p-input-icon-left w-full">
-              <i class="pi pi-search h-3"></i>
-              <input
-                [formControl]="searchFilter"
-                class="w-full text-xs"
-                pInputText
-                placeholder="Search (Title, Description, User, Card-Ids, Color)"
-                type="text"
-              />
-            </span>
-          </div>
-          <p-multiSelect
-            [formControl]="tagFilter"
-            [options]="tags"
-            [showToggleAll]="false"
-            defaultLabel="Select a Tag"
-            display="chip"
-            scrollHeight="250px"
-            class="my-1 mx-auto w-full max-w-[250px]"
-            styleClass="w-full h-[34px] text-sm max-w-[250px]"
-          >
-          </p-multiSelect>
-        </div>
-
-        <div class="grid grid-cols-4 gap-2">
-          <digimon-deck-container
-            *ngFor="let deck of decksToShow"
-            (click)="showDeckDetails(deck)"
-            (contextmenu)="showDeckDetails(deck)"
-            [deck]="deck"
-            [community]="true"
-          ></digimon-deck-container>
-        </div>
-
-        <p-paginator
-          (onPageChange)="onPageChange($event)"
-          [first]="first"
-          [rows]="20"
-          [showJumpToPageDropdown]="true"
-          [showPageLinks]="false"
-          [totalRecords]="filteredDecks.length"
-          styleClass="border-0 bg-transparent mx-auto"
-        ></p-paginator>
-      </div>
-    </div>
-
-    <p-dialog
-      header="Deck Details"
-      [(visible)]="deckDialog"
-      styleClass="w-full h-full max-w-6xl min-h-[500px]"
-      [baseZIndex]="10000"
-    >
-      <digimon-deck-dialog
-        [deck]="selectedDeck ?? emptyDeck"
-        [editable]="false"
-        (closeDialog)="deckDialog = false"
-      ></digimon-deck-dialog>
-    </p-dialog>
-
-    <p-dialog
-      header="Tournament Deck Submission"
-      [(visible)]="deckSubmissionDialog"
-      styleClass="w-full h-full max-w-6xl min-h-[500px]"
-      [baseZIndex]="10000"
-    >
-      <digimon-deck-submission></digimon-deck-submission>
-    </p-dialog>
-
-    <p-dialog
-      header="Deck Statistics for the filtered decks"
-      [(visible)]="deckStatsDialog"
-      styleClass="w-full h-full max-w-6xl min-h-[500px]"
-      [baseZIndex]="10000"
-    >
-      <digimon-deck-statistics
-        [decks]="filteredDecks"
-        [allCards]="allCards"
-      ></digimon-deck-statistics>
-    </p-dialog>
+    ></div>
   `,
 })
-export class DecksPageComponent implements OnInit, OnDestroy {
+export class DeckSubmissionComponent implements OnInit, OnDestroy {
   mode: 'Community' | 'Tournament' = 'Community';
   filteredDecks: IDeck[] = [];
   decksToShow: IDeck[] = [];
@@ -152,8 +40,6 @@ export class DecksPageComponent implements OnInit, OnDestroy {
   emptyDeck = emptyDeck;
 
   deckSubmissionDialog = false;
-
-  deckStatsDialog = false;
 
   first = 0;
   page = 0;
@@ -249,10 +135,6 @@ export class DecksPageComponent implements OnInit, OnDestroy {
       const bTime = new Date(b.date!).getTime();
       return bTime - aTime;
     });
-
-    this.first = 0;
-    this.page = 0;
-    this.decksToShow = this.filteredDecks.slice(0, 20);
   }
 
   showDeckDetails(deck: IDeck) {

@@ -14,10 +14,13 @@ import { StyleClassModule } from 'primeng/styleclass';
 import { TooltipModule } from 'primeng/tooltip';
 import { DigimonStoreModule } from '../../digimon-store.module';
 import { SharedModule } from '../shared/shared.module';
-import { EventCalendarComponent } from './event-calendar.component';
+import { EventCalendarComponent } from './components/event-calendar.component';
+import { FAQComponent } from './components/faq.component';
+import { HomeIntroComponent } from './components/home-intro.component';
 import { HomePageComponent } from './home-page.component';
-import { SplitBoxComponent } from './split-box.component';
-import { TierlistComponent } from './tierlist.component';
+import { SiteLinksComponent } from './components/site-links.component';
+import { SplitBoxComponent } from './components/split-box.component';
+import { TierlistComponent } from './components/tierlist.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { TierlistComponent } from './tierlist.component';
     SplitBoxComponent,
     HomePageComponent,
     TierlistComponent,
+    FAQComponent,
+    SiteLinksComponent,
+    HomeIntroComponent,
   ],
   imports: [
     SharedModule,

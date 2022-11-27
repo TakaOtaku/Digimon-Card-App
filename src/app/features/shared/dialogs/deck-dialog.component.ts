@@ -3,6 +3,7 @@ import {
   EventEmitter,
   Input,
   OnChanges,
+  OnDestroy,
   OnInit,
   Output,
   SimpleChanges,
@@ -11,10 +12,11 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { first } from 'rxjs';
+import { first, Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
 import { ICard, IDeck, IDeckCard } from '../../../../models';
 import { mapToDeckCards } from '../../../functions/digimon-card.functions';
+import { ObscenityPipe } from '../../../pipes/obscenity.pipe';
 import { AuthService } from '../../../service/auth.service';
 import { DigimonBackendService } from '../../../service/digimon-backend.service';
 import {
@@ -35,7 +37,7 @@ export interface ICardImage {
   template: `
     <div class="flex h-full w-full flex-col">
       <div
-        class="grid h-full max-h-[375px] w-full grid-cols-4 overflow-y-scroll border-2 border-slate-200 pb-32 md:grid-cols-6 lg:grid-cols-8"
+        class="grid max-h-[375px] w-full grid-cols-4 overflow-y-scroll border-2 border-slate-200 md:grid-cols-6 lg:grid-cols-8"
       >
         <digimon-deck-card
           *ngFor="let card of mainDeck"
@@ -46,7 +48,7 @@ export interface ICardImage {
       </div>
 
       <div
-        class="surface-card my-1 mx-auto flex flex max-h-[200px] w-full flex-row flex-row border border-white"
+        class="surface-card my-1 mx-auto flex max-h-[200px] w-full flex-row border border-white"
       >
         <digimon-ddto-spread
           [deck]="deck"
@@ -57,7 +59,7 @@ export interface ICardImage {
 
         <digimon-chart-containers
           [deck]="mainDeck"
-          class="max-w-[40rem]"
+          class="mx-auto max-w-[40rem]"
         ></digimon-chart-containers>
 
         <digimon-color-spread
@@ -69,130 +71,133 @@ export interface ICardImage {
       </div>
 
       <div *ngIf="!editable; else edit" class="border border-slate-200 p-2">
-        <div class="flex flex-row">
+        <div class="flex flex-col">
           <div class="text-shadow mr-3 text-3xl font-black text-[#e2e4e6]">
             {{ deck?.title }}
           </div>
-          <div
-            *ngFor="let tag of deck?.tags"
-            class="surface-ground mr-2 rounded-full border border-black px-3 font-bold leading-[35px]"
-          >
-            {{ tag.name }}
+
+          <div class="flex flex-row">
+            <div>{{ deck?.description }}</div>
+            <div
+              *ngFor="let tag of deck?.tags"
+              class="surface-ground mx-0.5 my-0.5 h-10 rounded-full border border-black px-1.5 text-xs font-bold leading-[35px] lg:mt-2.5"
+            >
+              {{ tag.name }}
+            </div>
           </div>
         </div>
-
-        <div>{{ deck?.description }}</div>
-
-        <div>{{ deck?.imageCardId }}</div>
       </div>
       <ng-template #edit [formGroup]="deckFormGroup">
-        <div class="my-1 flex flex-row">
-          <input
-            formControlName="title"
-            placeholder="Deck Name:"
-            class="mr-2 w-full text-sm"
-            pInputText
-            type="text"
-          />
-          <p-dropdown
-            styleClass="truncate w-[250px]"
-            [options]="cardImageOptions"
-            formControlName="cardImage"
-            optionLabel="name"
-            appendTo="body"
-          >
-          </p-dropdown>
-          <div
-            *ngFor="let tag of deck?.tags"
-            class="surface-ground mx-2 my-1 rounded-full border border-black px-3 font-bold leading-[35px]"
-          >
-            {{ tag.name }}
+        <div class="my-1 mx-auto grid lg:grid-cols-2">
+          <div class="col-span-2 flex flex-row">
+            <input
+              formControlName="title"
+              placeholder="Deck Name:"
+              class="mr-2 w-full text-sm"
+              pInputText
+              type="text"
+            />
+            <p-dropdown
+              styleClass="truncate w-full lg:w-[250px]"
+              [options]="cardImageOptions"
+              formControlName="cardImage"
+              optionLabel="name"
+              appendTo="body"
+            >
+            </p-dropdown>
+          </div>
+          <textarea
+            formControlName="description"
+            placeholder="Description:"
+            class="h-[66px] w-full overflow-hidden"
+            pInputTextarea
+          ></textarea>
+          <div class="mx-auto flex flex-row align-middle">
+            <div
+              *ngFor="let tag of deck?.tags"
+              class="surface-ground mx-0.5 my-0.5 h-10 rounded-full border border-black px-1.5 text-xs font-bold leading-[35px] lg:mt-2.5"
+            >
+              {{ tag.name }}
+            </div>
           </div>
         </div>
-
-        <textarea
-          formControlName="description"
-          placeholder="Description:"
-          class="h-[40px] w-full overflow-hidden md:h-[66px]"
-          pInputTextarea
-        ></textarea>
       </ng-template>
 
       <div
         *ngIf="editable; else editButtons"
-        class="mx-auto mt-1 grid grid-cols-6"
+        class="mx-auto mt-1 grid grid-cols-3 lg:grid-cols-6"
       >
         <button
           (click)="saveDeck()"
           [disabled]="!deckFormGroup.dirty"
           pButton
-          class="p-button-outlined"
+          class="p-button-sm lg:p-button p-button-outlined"
           type="button"
           label="Save"
         ></button>
         <button
           (click)="openDeck()"
           pButton
-          class="p-button-outlined"
+          class="p-button-sm lg:p-button p-button-outlined"
           type="button"
           label="Open"
         ></button>
         <button
           (click)="copyDeck()"
           pButton
-          class="p-button-outlined"
+          class="p-button-sm lg:p-button p-button-outlined"
           type="button"
           label="Copy"
         ></button>
         <button
           (click)="showExportDeckDialog()"
           pButton
-          class="p-button-outlined"
+          class="p-button-sm lg:p-button p-button-outlined"
           type="button"
           label="Export"
         ></button>
         <button
           (click)="getLink()"
           pButton
-          class="p-button-outlined"
+          class="p-button-sm lg:p-button p-button-outlined"
           type="button"
           label="Get Link"
         ></button>
         <button
           (click)="deleteDeck()"
           pButton
-          class="p-button-outlined"
+          class="p-button-sm lg:p-button p-button-outlined"
           type="button"
           label="Delete"
         ></button>
       </div>
       <ng-template #editButtons>
-        <div class="mx-auto mt-1 grid grid-cols-5">
+        <div class="mx-auto mt-1 grid grid-cols-3 lg:grid-cols-5">
           <button
             (click)="openDeck()"
             pButton
-            class="p-button-outlined"
+            class="p-button-sm lg:p-button p-button-outlined"
             type="button"
             label="Open"
           ></button>
           <button
             (click)="copyDeck()"
             pButton
-            class="p-button-outlined"
+            class="p-button-sm lg:p-button p-button-outlined"
             type="button"
             label="Copy"
           ></button>
           <button
             (click)="showExportDeckDialog()"
             pButton
-            class="p-button-outlined"
+            class="p-button-sm lg:p-button p-button-outlined"
             type="button"
             label="Export"
           ></button>
           <button
             (click)="getLink()"
             pButton
-            class="p-button-outlined"
+            class="p-button-sm lg:p-button p-button-outlined"
             type="button"
             label="Get Link"
           ></button>
@@ -200,7 +205,7 @@ export interface ICardImage {
             *ngIf="isAdmin"
             (click)="deleteDeck()"
             pButton
-            class="p-button-outlined"
+            class="p-button-sm lg:p-button p-button-outlined"
             type="button"
             label="Delete"
           ></button>
@@ -211,7 +216,7 @@ export interface ICardImage {
     <p-dialog
       header="Export Deck"
       [(visible)]="exportDeckDialog"
-      styleClass="w-[100%] min-w-[250px] sm:min-w-[500px] sm:w-[700px] min-h-[500px]"
+      styleClass="w-full h-full max-w-6xl min-h-[500px]"
       [baseZIndex]="10000"
     >
       <digimon-export-deck-dialog [deck]="deck"></digimon-export-deck-dialog>

@@ -12,9 +12,11 @@ import { DigimonStoreModule } from '../../digimon-store.module';
 import { AuthService } from '../../service/auth.service';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
 import { BlogComponent } from './blog.component';
+import { CKEditorComponent } from './ckeditor.component';
+import { HeaderComponent } from './header.component';
 
 @NgModule({
-  declarations: [BlogComponent],
+  declarations: [BlogComponent, HeaderComponent, CKEditorComponent],
   imports: [
     CommonModule,
     DigimonStoreModule,

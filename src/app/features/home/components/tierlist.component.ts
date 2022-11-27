@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { JAPTIERLIST, TIERLIST } from '../../../models';
-import { setCommunityDeckSearch } from '../../store/digimon.actions';
+import { JAPTIERLIST, TIERLIST } from '../../../../models';
+import { setCommunityDeckSearch } from '../../../store/digimon.actions';
 
 @Component({
   selector: 'digimon-tierlist',
