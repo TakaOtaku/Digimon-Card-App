@@ -1,10 +1,15 @@
-import { DatePipe } from "@angular/common";
-import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from "@angular/core";
-import { Observable, Subject, takeUntil } from "rxjs";
-import * as uuid from "uuid";
-import { ADMINS, IUser } from "../../../models";
-import { AuthService } from "../../service/auth.service";
-import { DigimonBackendService } from "../../service/digimon-backend.service";
+import { DatePipe } from '@angular/common';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
+import { Observable, Subject, takeUntil } from 'rxjs';
+import * as uuid from 'uuid';
+import { ADMINS, IUser } from '../../../models';
+import { AuthService } from '../../service/auth.service';
+import { DigimonBackendService } from '../../service/digimon-backend.service';
 
 export interface IEvent {
   uid: string;
@@ -14,7 +19,7 @@ export interface IEvent {
 }
 
 @Component({
-  selector: "digimon-event-calendar",
+  selector: 'digimon-event-calendar',
   template: `
     <div
       *ngIf="events$ | async as events"
@@ -150,24 +155,24 @@ export interface IEvent {
       </div>
     </p-dialog>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EventCalendarComponent implements OnInit, OnDestroy {
   MONTHS = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December"
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
   ];
-  DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
   currentDate: Date;
   events$: Observable<IEvent[]> = this.digimonBackend.getEvents();
@@ -178,10 +183,10 @@ export class EventCalendarComponent implements OnInit, OnDestroy {
   noOfDays: any;
 
   eventModal = false;
-  uid = "";
-  title = "";
-  date = "";
-  theme = "Release";
+  uid = '';
+  title = '';
+  date = '';
+  theme = 'Release';
   edit = false;
 
   user: IUser | null;
@@ -263,11 +268,11 @@ export class EventCalendarComponent implements OnInit, OnDestroy {
   }
 
   addLeadingZeros(num: number, totalLength: number): string {
-    return String(num).padStart(totalLength, "0");
+    return String(num).padStart(totalLength, '0');
   }
 
   saveEvent() {
-    const date = this.datepipe.transform(this.date, "dd.MM.yyyy");
+    const date = this.datepipe.transform(this.date, 'dd.MM.yyyy');
     if (!date) {
       return;
     }
@@ -276,7 +281,7 @@ export class EventCalendarComponent implements OnInit, OnDestroy {
       title: this.title,
       theme: this.theme,
       date,
-      uid: uuid.v4()
+      uid: uuid.v4(),
     } as IEvent;
 
     this.digimonBackend.updateEvent(newEvent).subscribe();
@@ -293,10 +298,10 @@ export class EventCalendarComponent implements OnInit, OnDestroy {
       return;
     }
     this.eventModal = true;
-    this.uid = event ? event.uid : "";
-    this.title = event ? event.title : "";
-    this.date = event ? event.date : "";
-    this.theme = event ? event.theme : "Release";
+    this.uid = event ? event.uid : '';
+    this.title = event ? event.title : '';
+    this.date = event ? event.date : '';
+    this.theme = event ? event.theme : 'Release';
     this.edit = !!event;
   }
 
@@ -324,8 +329,8 @@ export class EventCalendarComponent implements OnInit, OnDestroy {
 
   getThemeColor(event: IEvent) {
     const themeMap = new Map<string, string>([
-      ["Release", "#ef1919"],
-      ["Tournament", " #19a0e3"]
+      ['Release', '#ef1919'],
+      ['Tournament', ' #19a0e3'],
     ]);
     return themeMap.get(event.theme);
   }

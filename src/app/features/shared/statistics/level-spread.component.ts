@@ -1,9 +1,12 @@
-import { Component, Input, OnInit } from "@angular/core";
-import { ICard, IDeck } from "../../../../models";
-import { getCountFromDeckCards, mapToDeckCards } from "../../../functions/digimon-card.functions";
+import { Component, Input, OnInit } from '@angular/core';
+import { ICard, IDeck } from '../../../../models';
+import {
+  getCountFromDeckCards,
+  mapToDeckCards,
+} from '../../../functions/digimon-card.functions';
 
 @Component({
-  selector: "digimon-level-spread",
+  selector: 'digimon-level-spread',
   template: `
     <div class="no-gap grid h-full w-full grid-cols-6">
       <div

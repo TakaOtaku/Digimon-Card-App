@@ -1,25 +1,49 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from "@angular/core";
-import { Store } from "@ngrx/store";
-import { ConfirmationService, MessageService } from "primeng/api";
-import { filter, first, Subject, takeUntil } from "rxjs";
-import * as uuid from "uuid";
-import { ICard, ICountCard, IDeck, IDeckCard, ISave, ITag } from "../../../../models";
-import { DeckColorMap } from "../../../../models/maps/color.map";
-import { compareIDs, deckIsValid, setColors, setTags, sortColors } from "../../../functions/digimon-card.functions";
-import { sortID } from "../../../functions/filter.functions";
-import { AuthService } from "../../../service/auth.service";
-import { DigimonBackendService } from "../../../service/digimon-backend.service";
-import { addCardToDeck, importDeck, setDeck } from "../../../store/digimon.actions";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
+import { Store } from '@ngrx/store';
+import { ConfirmationService, MessageService } from 'primeng/api';
+import { filter, first, Subject, takeUntil } from 'rxjs';
+import * as uuid from 'uuid';
+import {
+  ICard,
+  ICountCard,
+  IDeck,
+  IDeckCard,
+  ISave,
+  ITag,
+} from '../../../../models';
+import { DeckColorMap } from '../../../../models/maps/color.map';
+import {
+  compareIDs,
+  deckIsValid,
+  setColors,
+  setTags,
+  sortColors,
+} from '../../../functions/digimon-card.functions';
+import { sortID } from '../../../functions/filter.functions';
+import { AuthService } from '../../../service/auth.service';
+import { DigimonBackendService } from '../../../service/digimon-backend.service';
+import {
+  addCardToDeck,
+  importDeck,
+  setDeck,
+} from '../../../store/digimon.actions';
 import {
   selectAddCardToDeck,
   selectCollection,
   selectCommunityDecks,
   selectDeckBuilderViewModel,
-  selectSave
-} from "../../../store/digimon.selectors";
+  selectSave,
+} from '../../../store/digimon.selectors';
 
 @Component({
-  selector: "digimon-deck-view",
+  selector: 'digimon-deck-view',
   template: `
     <div class="mx-auto max-w-[760px]">
       <digimon-deck-metadata
@@ -71,16 +95,16 @@ export class DeckViewComponent implements OnInit, OnDestroy {
 
   deck: IDeck = {
     id: uuid.v4(),
-    title: "",
-    description: "",
+    title: '',
+    description: '',
     date: new Date().toString(),
-    color: { name: "White", img: "assets/decks/white.svg" },
+    color: { name: 'White', img: 'assets/decks/white.svg' },
     cards: [],
     tags: [],
-    user: "",
-    userId: "",
-    imageCardId: "BT1-001",
-    likes: []
+    user: '',
+    userId: '',
+    imageCardId: 'BT1-001',
+    likes: [],
   };
 
   allCards: ICard[] = [];
@@ -186,12 +210,11 @@ export class DeckViewComponent implements OnInit, OnDestroy {
           this.digimonBackendService
             .updateDeck(this.deck, this.authService.userData)
             .pipe(first())
-            .subscribe(() => {
-            });
+            .subscribe(() => {});
           this.messageService.add({
-            severity: "success",
-            summary: "Deck shared!",
-            detail: "Deck was shared successfully!"
+            severity: 'success',
+            summary: 'Deck shared!',
+            detail: 'Deck was shared successfully!',
           });
         },
       });

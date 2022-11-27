@@ -1,13 +1,13 @@
-import { Component, EventEmitter, Input, OnInit } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit } from '@angular/core';
 
 // @ts-ignore
-import * as DecoupledEditor from "@ckeditor/ckeditor5-build-decoupled-document";
-import firebase from "firebase/compat";
-import { MessageService } from "primeng/api";
-import { first } from "rxjs";
-import { Base64Adapter } from "../../../functions/base64-adapter";
-import { AuthService } from "../../../service/auth.service";
-import { DatabaseService } from "../../../service/database.service";
+import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
+import firebase from 'firebase/compat';
+import { MessageService } from 'primeng/api';
+import { first } from 'rxjs';
+import { Base64Adapter } from '../../../functions/base64-adapter';
+import { AuthService } from '../../../service/auth.service';
+import { DatabaseService } from '../../../service/database.service';
 import DataSnapshot = firebase.database.DataSnapshot;
 
 @Component({

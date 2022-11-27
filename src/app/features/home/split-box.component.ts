@@ -1,7 +1,7 @@
-import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
-  selector: "digimon-split-box",
+  selector: 'digimon-split-box',
   template: `
     <div
       class="raise mx-auto flex h-24 w-full max-w-sm cursor-pointer flex-row opacity-90 transition-all"
@@ -27,7 +27,7 @@ import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
       </div>
     </div>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SplitBoxComponent {
   @Input() public image: string;

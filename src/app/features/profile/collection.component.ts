@@ -1,5 +1,12 @@
-import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from "@angular/core";
-import { ICard, ICountCard } from "../../../models";
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
+import { ICard, ICountCard } from '../../../models';
 
 interface MappedCollection {
   id: string;
@@ -9,7 +16,7 @@ interface MappedCollection {
 }
 
 @Component({
-  selector: "digimon-collection",
+  selector: 'digimon-collection',
   template: `
     <div
       class="border-red h-[250px] overflow-y-scroll border-2 text-[#e2e4e6] lg:h-1/2"
@@ -226,7 +233,7 @@ interface MappedCollection {
       </div>
     </div>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CollectionComponent implements OnInit, OnChanges {
   @Input() collection: ICountCard[];

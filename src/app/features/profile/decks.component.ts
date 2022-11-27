@@ -1,9 +1,9 @@
-import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
-import { ICard, ICountCard, IDeck, IUser } from "../../../models";
-import { emptyDeck } from "../../store/reducers/digimon.reducers";
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ICard, ICountCard, IDeck, IUser } from '../../../models';
+import { emptyDeck } from '../../store/reducers/digimon.reducers';
 
 @Component({
-  selector: "digimon-decks",
+  selector: 'digimon-decks',
   template: `
     <div class="mx-auto grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4">
       <digimon-deck-container
@@ -28,7 +28,7 @@ import { emptyDeck } from "../../store/reducers/digimon.reducers";
       ></digimon-deck-dialog>
     </p-dialog>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DecksComponent {
   @Input() decks: IDeck[];
@@ -42,7 +42,7 @@ export class DecksComponent {
   user: IUser;
 
   correctUser = false;
-  params = "";
+  params = '';
 
   deck: IDeck;
   deckDialog = false;

@@ -1,24 +1,23 @@
-import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { first, map, Observable } from "rxjs";
-import { IColor, ICountCard, IDeck, ISave, ISettings, IUser } from "src/models";
-import { CARDSET, IBlog, IBlogWithText, ITag } from "../../models";
-import { IEvent } from "../features/home/event-calendar.component";
-import { emptySettings } from "../store/reducers/save.reducer";
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { first, map, Observable } from 'rxjs';
+import { IColor, ICountCard, IDeck, ISave, ISettings, IUser } from 'src/models';
+import { CARDSET, IBlog, IBlogWithText, ITag } from '../../models';
+import { IEvent } from '../features/home/event-calendar.component';
+import { emptySettings } from '../store/reducers/save.reducer';
 
-const baseUrl = "https://backend.digimoncard.app/api/";
-const baseUrl_inactiv = "http://localhost:8080/api/";
-const baseUrl_inactiv2 = "https://179.61.219.98:8090/preview/digimoncard.app/";
+const baseUrl = 'https://backend.digimoncard.app/api/';
+const baseUrl_inactiv = 'http://localhost:8080/api/';
+const baseUrl_inactiv2 = 'https://179.61.219.98:8090/preview/digimoncard.app/';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root',
 })
 export class DigimonBackendService {
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) {}
 
   getDecks(url: string = baseUrl): Observable<IDeck[]> {
-    return this.http.get<any[]>(url + "decks").pipe(
+    return this.http.get<any[]>(url + 'decks').pipe(
       map((decks) => {
         return decks.map((deck) => {
           const cards: ICountCard = JSON.parse(deck.cards);
@@ -28,7 +27,7 @@ export class DigimonBackendService {
             ...deck,
             cards,
             color,
-            tags
+            tags,
           } as IDeck;
         });
       })
@@ -50,7 +49,7 @@ export class DigimonBackendService {
             ...save,
             collection,
             decks,
-            settings
+            settings,
           } as ISave;
         });
       })
@@ -62,7 +61,7 @@ export class DigimonBackendService {
   }
 
   getBlogEntriesWithText(url: string = baseUrl): Observable<IBlogWithText[]> {
-    return this.http.get<IBlogWithText[]>(url + "blogs-with-text");
+    return this.http.get<IBlogWithText[]>(url + 'blogs-with-text');
   }
 
   getDeck(id: any): Observable<IDeck> {
@@ -118,15 +117,15 @@ export class DigimonBackendService {
   }
 
   createBlog(data: IBlog): Observable<any> {
-    return this.http.post(baseUrl + "blogs", data);
+    return this.http.post(baseUrl + 'blogs', data);
   }
 
   createBlogWithText(data: IBlogWithText): Observable<any> {
-    return this.http.post(baseUrl + "blogs-with-text", data);
+    return this.http.post(baseUrl + 'blogs-with-text', data);
   }
 
   createEvent(data: IEvent): Observable<any> {
-    return this.http.post(baseUrl + "events", data);
+    return this.http.post(baseUrl + 'events', data);
   }
 
   updateDeck(deck: IDeck, user: IUser | null = null): Observable<any> {
@@ -134,9 +133,9 @@ export class DigimonBackendService {
     if (user) {
       newDeck = {
         ...deck,
-        user: user.displayName ?? "Unknown",
-        userId: user.uid ?? "Unknown",
-        date: new Date()
+        user: user.displayName ?? 'Unknown',
+        userId: user.uid ?? 'Unknown',
+        date: new Date(),
       };
     } else {
       newDeck = deck;

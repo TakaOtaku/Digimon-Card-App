@@ -1,9 +1,16 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from "@angular/core";
-import { FormControl, FormGroup } from "@angular/forms";
-import { ICard, ICountCard } from "../../../../models";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+} from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { ICard, ICountCard } from '../../../../models';
 
 @Component({
-  selector: "digimon-collection-stats-dialog",
+  selector: 'digimon-collection-stats-dialog',
   template: `<!--div [formGroup]="languageForm">
   <p-checkbox class="ml-2" formControlName="english" label="English" name="language"></p-checkbox>
   <p-checkbox class="ml-2" formControlName="japanese" label="Japanese" name="language"></p-checkbox>

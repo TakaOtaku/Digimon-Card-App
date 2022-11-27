@@ -1,10 +1,18 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from "@angular/core";
-import { englishCards } from "../../../assets/cardlists/eng/english";
-import { ICard, IDeckCard } from "../../../models";
-import { ColorMap } from "../../../models/maps/color.map";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
+import { englishCards } from '../../../assets/cardlists/eng/english';
+import { ICard, IDeckCard } from '../../../models';
+import { ColorMap } from '../../../models/maps/color.map';
 
 @Component({
-  selector: "digimon-deck-card",
+  selector: 'digimon-deck-card',
   template: `
     <div class="relative m-1 flex flex-col">
       <div

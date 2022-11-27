@@ -1,9 +1,9 @@
-import { ChangeDetectionStrategy, Component } from "@angular/core";
-import { Meta, Title } from "@angular/platform-browser";
-import { Router } from "@angular/router";
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: "digimon-home-page",
+  selector: 'digimon-home-page',
   template: `
     <div
       class="flex h-[calc(100vh-50px)] w-full flex-row overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d] px-1"
@@ -104,7 +104,7 @@ import { Router } from "@angular/router";
       </div>
     </div>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomePageComponent {
   faqs = [
@@ -134,7 +134,7 @@ export class HomePageComponent {
         <li><strong>Add and remove cards</strong> from your collection. They turn from <strong>grey to color</strong> if you have achieved your <strong>collection goal.</strong></li>
         <li>Click on a card to open it in <strong>detail view</strong>.</li>
       </ul>
-      `
+      `,
     },
     {
       header: `Profile`,
@@ -145,7 +145,7 @@ export class HomePageComponent {
         <li>See all your created decks.</li>
         <li>Click on a Deck-Name or right click to open a context menu, to <strong>open</strong>, <strong>copy</strong>, <strong>export</strong> or <strong>delete</strong> the deck.</li>
       </ul>
-      `
+      `,
     },
     {
       header: `Decks`,
@@ -156,7 +156,7 @@ export class HomePageComponent {
         <li>Click on a deck-name or right click to open a context menu, to <strong>open</strong>, <strong>copy</strong> or <strong>get the link</strong> to a deck.</li>
         <li>Press the arrow next to a deck to open a preview.</li>
       </ul>
-      `
+      `,
     },
     {
       header: `Community`,
@@ -165,7 +165,7 @@ export class HomePageComponent {
         <li>Overview of <strong>official tournaments</strong> and <strong>deck reports</strong>.</li>
         <li>Miscellaneous stats for all <strong>community decks</strong>.</li>
       </ul>
-      `
+      `,
     },
     {
       header: `Products`,
@@ -174,7 +174,7 @@ export class HomePageComponent {
         <li>See all currently released Digimon TCG products in one place.</li>
         <li>Click on a product to open the corresponding <strong>wiki-link</strong> in a new tab.</li>
       </ul>
-      `
+      `,
     },
     {
       header: `Settings`,
@@ -187,7 +187,7 @@ export class HomePageComponent {
         <li>Import your collection in the format <strong>"id count"</strong.</li>
         <li>Import/Export/Delete your Save File</li>
       </ul>
-      `
+      `,
     },
   ];
 
@@ -196,20 +196,20 @@ export class HomePageComponent {
   }
 
   private makeGoogleFriendly() {
-    this.title.setTitle("Digimon Card Game - Home");
+    this.title.setTitle('Digimon Card Game - Home');
 
     this.meta.addTags([
       {
-        name: "description",
+        name: 'description',
         content:
-          "Digimoncard.App is a website to to keep track of your Digimon card collection, build great decks and keep you posted about the result of any major events."
+          'Digimoncard.App is a website to to keep track of your Digimon card collection, build great decks and keep you posted about the result of any major events.',
       },
-      { name: "author", content: "TakaOtaku" },
+      { name: 'author', content: 'TakaOtaku' },
       {
-        name: "keywords",
+        name: 'keywords',
         content:
-          "Digimon, decks, deck builder, collection,  tournament, TCG, community, friends, share"
-      }
+          'Digimon, decks, deck builder, collection,  tournament, TCG, community, friends, share',
+      },
     ]);
   }
 }

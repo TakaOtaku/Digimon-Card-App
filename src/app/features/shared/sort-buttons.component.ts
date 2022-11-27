@@ -1,13 +1,13 @@
-import { Component } from "@angular/core";
-import { FormControl } from "@angular/forms";
-import { Store } from "@ngrx/store";
-import { filter, startWith } from "rxjs";
-import { ISort, ISortElement } from "../../../models";
-import { changeSort } from "../../store/digimon.actions";
-import { selectSort } from "../../store/digimon.selectors";
+import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { filter, startWith } from 'rxjs';
+import { ISort, ISortElement } from '../../../models';
+import { changeSort } from '../../store/digimon.actions';
+import { selectSort } from '../../store/digimon.selectors';
 
 @Component({
-  selector: "digimon-sort-buttons",
+  selector: 'digimon-sort-buttons',
   template: `
     <div class="mb-1 inline-flex rounded-md shadow-sm" role="group">
       <button

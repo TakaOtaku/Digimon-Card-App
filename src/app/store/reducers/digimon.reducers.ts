@@ -1,6 +1,6 @@
-import { createReducer, on } from "@ngrx/store";
-import * as uuid from "uuid";
-import { IDeck, IDigimonState } from "../../../models";
+import { createReducer, on } from '@ngrx/store';
+import * as uuid from 'uuid';
+import { IDeck, IDigimonState } from '../../../models';
 import {
   addCardToDeck,
   changeFilter,
@@ -9,21 +9,21 @@ import {
   setCommunityDecks,
   setCommunityDeckSearch,
   setDeck,
-  setMobileCollectionView
-} from "../digimon.actions";
+  setMobileCollectionView,
+} from '../digimon.actions';
 
 export const emptyDeck: IDeck = {
   id: uuid.v4(),
-  title: "",
-  description: "",
+  title: '',
+  description: '',
   date: new Date().toString(),
-  color: { name: "White", img: "assets/decks/white.svg" },
+  color: { name: 'White', img: 'assets/decks/white.svg' },
   cards: [],
   tags: [],
-  user: "",
-  userId: "",
-  imageCardId: "BT1-001",
-  likes: []
+  user: '',
+  userId: '',
+  imageCardId: 'BT1-001',
+  likes: [],
 };
 
 export const emptyFilter = {

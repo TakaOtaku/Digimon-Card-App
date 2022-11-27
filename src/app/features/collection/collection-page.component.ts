@@ -1,11 +1,11 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
-import { Meta, Title } from "@angular/platform-browser";
-import { Store } from "@ngrx/store";
-import { Subject, takeUntil } from "rxjs";
-import { selectMobileCollectionView } from "../../store/digimon.selectors";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
+import { Store } from '@ngrx/store';
+import { Subject, takeUntil } from 'rxjs';
+import { selectMobileCollectionView } from '../../store/digimon.selectors';
 
 @Component({
-  selector: "digimon-collection-page",
+  selector: 'digimon-collection-page',
   template: `
     <div
       class="relative hidden h-[calc(100vh-50px)] w-full flex-row overflow-hidden bg-gradient-to-b from-[#17212f] to-[#08528d] md:inline-flex"

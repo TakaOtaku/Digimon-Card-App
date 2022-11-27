@@ -1,15 +1,20 @@
-import { Component, EventEmitter } from "@angular/core";
-import { Store } from "@ngrx/store";
-import { MessageService } from "primeng/api";
-import { first } from "rxjs";
-import { ISave } from "../models";
-import { AuthService } from "./service/auth.service";
-import { DigimonBackendService } from "./service/digimon-backend.service";
-import { loadSave, setBlogs, setCommunityDecks, setSave } from "./store/digimon.actions";
-import { emptySave } from "./store/reducers/save.reducer";
+import { Component, EventEmitter } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { MessageService } from 'primeng/api';
+import { first } from 'rxjs';
+import { ISave } from '../models';
+import { AuthService } from './service/auth.service';
+import { DigimonBackendService } from './service/digimon-backend.service';
+import {
+  loadSave,
+  setBlogs,
+  setCommunityDecks,
+  setSave,
+} from './store/digimon.actions';
+import { emptySave } from './store/reducers/save.reducer';
 
 @Component({
-  selector: "digimon-root",
+  selector: 'digimon-root',
   template: `
     <div class="relative">
       <digimon-navbar></digimon-navbar>

@@ -1,17 +1,17 @@
-import { Component, HostListener, OnDestroy, OnInit } from "@angular/core";
-import { Meta, Title } from "@angular/platform-browser";
-import { ActivatedRoute } from "@angular/router";
-import { Store } from "@ngrx/store";
-import { filter, first, Observable, of, Subject, switchMap } from "rxjs";
-import * as uuid from "uuid";
-import { IDeck, ISave } from "../../../models";
-import { AuthService } from "../../service/auth.service";
-import { DigimonBackendService } from "../../service/digimon-backend.service";
-import { setDeck } from "../../store/digimon.actions";
-import { selectMobileCollectionView } from "../../store/digimon.selectors";
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { filter, first, Observable, of, Subject, switchMap } from 'rxjs';
+import * as uuid from 'uuid';
+import { IDeck, ISave } from '../../../models';
+import { AuthService } from '../../service/auth.service';
+import { DigimonBackendService } from '../../service/digimon-backend.service';
+import { setDeck } from '../../store/digimon.actions';
+import { selectMobileCollectionView } from '../../store/digimon.selectors';
 
 @Component({
-  selector: "digimon-deckbuilder",
+  selector: 'digimon-deckbuilder',
   template: `
     <div
       [ngClass]="{ hidden: mobileCollectionView$ | async }"
@@ -25,7 +25,7 @@ import { selectMobileCollectionView } from "../../store/digimon.selectors";
         <span
           class="h-full w-full rotate-180 text-center font-bold text-[#e2e4e6]"
           [ngStyle]="{ writingMode: 'vertical-rl' }"
-        >{{ deckView ? 'Hide Deck View' : 'Show Deck View' }}</span
+          >{{ deckView ? 'Hide Deck View' : 'Show Deck View' }}</span
         >
       </button>
       <div
@@ -57,7 +57,7 @@ import { selectMobileCollectionView } from "../../store/digimon.selectors";
         <span
           class="h-full w-full rotate-180 text-center font-bold text-[#e2e4e6]"
           [ngStyle]="{ writingMode: 'vertical-rl' }"
-        >{{ collectionView ? 'Hide Card View' : 'Show Card View' }}</span
+          >{{ collectionView ? 'Hide Card View' : 'Show Card View' }}</span
         >
       </button>
 
@@ -97,7 +97,7 @@ export class DeckbuilderPageComponent implements OnInit, OnDestroy {
   );
   hideStats = false;
 
-  private deckId = "";
+  private deckId = '';
 
   private screenWidth: number;
   private onDestroy$ = new Subject();
@@ -109,8 +109,7 @@ export class DeckbuilderPageComponent implements OnInit, OnDestroy {
     private authService: AuthService,
     private meta: Meta,
     private title: Title
-  ) {
-  }
+  ) {}
 
   ngOnInit() {
     this.onResize();

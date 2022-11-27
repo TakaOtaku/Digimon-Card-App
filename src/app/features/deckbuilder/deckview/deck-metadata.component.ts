@@ -1,9 +1,16 @@
-import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from "@angular/core";
-import { ColorList, IColor, ITag, tagsList } from "../../../../models";
-import { ObscenityPipe } from "../../../pipes/obscenity.pipe";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
+import { ColorList, IColor, ITag, tagsList } from '../../../../models';
+import { ObscenityPipe } from '../../../pipes/obscenity.pipe';
 
 @Component({
-  selector: "digimon-deck-metadata",
+  selector: 'digimon-deck-metadata',
   template: `
     <div class="mx-3 mb-1 inline-flex w-full">
       <span class="mt-2 w-1/2">

@@ -1,6 +1,15 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from "@angular/core";
-import { ICard, IDeck } from "../../../../models";
-import { getCountFromDeckCards, mapToDeckCards } from "../../../functions/digimon-card.functions";
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
+import { ICard, IDeck } from '../../../../models';
+import {
+  getCountFromDeckCards,
+  mapToDeckCards,
+} from '../../../functions/digimon-card.functions';
 
 @Component({
   selector: 'digimon-color-spread',
@@ -127,8 +136,7 @@ export class ColorSpreadComponent implements OnInit, OnChanges {
 
   colorSpread = [0, 0, 0, 0, 0, 0, 0];
 
-  constructor() {
-  }
+  constructor() {}
 
   ngOnInit(): void {
     this.getColorSpread();
@@ -140,17 +148,17 @@ export class ColorSpreadComponent implements OnInit, OnChanges {
 
   getColorSpread() {
     const cards = mapToDeckCards(this.deck.cards, this.allCards);
-    const red = cards.filter((card) => card.color.split("/")[0] === "Red");
-    const blue = cards.filter((card) => card.color.split("/")[0] === "Blue");
+    const red = cards.filter((card) => card.color.split('/')[0] === 'Red');
+    const blue = cards.filter((card) => card.color.split('/')[0] === 'Blue');
     const yellow = cards.filter(
-      (card) => card.color.split("/")[0] === "Yellow"
+      (card) => card.color.split('/')[0] === 'Yellow'
     );
-    const green = cards.filter((card) => card.color.split("/")[0] === "Green");
-    const black = cards.filter((card) => card.color.split("/")[0] === "Black");
+    const green = cards.filter((card) => card.color.split('/')[0] === 'Green');
+    const black = cards.filter((card) => card.color.split('/')[0] === 'Black');
     const purple = cards.filter(
-      (card) => card.color.split("/")[0] === "Purple"
+      (card) => card.color.split('/')[0] === 'Purple'
     );
-    const white = cards.filter((card) => card.color.split("/")[0] === "White");
+    const white = cards.filter((card) => card.color.split('/')[0] === 'White');
 
     this.colorSpread[0] = getCountFromDeckCards(red);
     this.colorSpread[1] = getCountFromDeckCards(blue);

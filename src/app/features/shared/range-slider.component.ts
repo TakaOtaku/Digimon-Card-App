@@ -1,9 +1,16 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from "@angular/core";
-import { FormControl } from "@angular/forms";
-import { Subject, takeUntil } from "rxjs";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
-  selector: "digimon-range-slider",
+  selector: 'digimon-range-slider',
   template: `
     <div class="custom-slider mx-5 flex flex-row">
       <ngx-slider
@@ -17,7 +24,7 @@ import { Subject, takeUntil } from "rxjs";
       {{ title }}
     </h1>
   `,
-  styleUrls: ["../collection/range-slider.component.scss"]
+  styleUrls: ['../collection/range-slider.component.scss'],
 })
 export class RangeSliderComponent implements OnInit, OnDestroy {
   @Input() minMax: number[] = [];

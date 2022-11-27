@@ -1,17 +1,35 @@
-import { Location } from "@angular/common";
-import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from "@angular/core";
-import { FormControl } from "@angular/forms";
-import { Meta, Title } from "@angular/platform-browser";
-import { ActivatedRoute } from "@angular/router";
-import { Store } from "@ngrx/store";
-import { filter, first, merge, Observable, Subject, switchMap, takeUntil, tap } from "rxjs";
-import { IDeck, ISave } from "../../../models";
-import { AuthService } from "../../service/auth.service";
-import { DigimonBackendService } from "../../service/digimon-backend.service";
-import { selectDecks, selectSave, selectShowUserStats } from "../../store/digimon.selectors";
+import { Location } from '@angular/common';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { Meta, Title } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
+import { Store } from '@ngrx/store';
+import {
+  filter,
+  first,
+  merge,
+  Observable,
+  Subject,
+  switchMap,
+  takeUntil,
+  tap,
+} from 'rxjs';
+import { IDeck, ISave } from '../../../models';
+import { AuthService } from '../../service/auth.service';
+import { DigimonBackendService } from '../../service/digimon-backend.service';
+import {
+  selectDecks,
+  selectSave,
+  selectShowUserStats,
+} from '../../store/digimon.selectors';
 
 @Component({
-  selector: "digimon-profile-page",
+  selector: 'digimon-profile-page',
   template: `
     <div
       *ngIf="save$ | async as save"
@@ -35,7 +53,7 @@ import { selectDecks, selectSave, selectShowUserStats } from "../../store/digimo
       ></digimon-decks>
     </div>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProfilePageComponent implements OnInit, OnDestroy {
   save$: Observable<ISave | null>;
@@ -43,7 +61,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
   filteredDecks: IDeck[];
   showUserStats$ = this.store.select(selectShowUserStats);
 
-  searchFilter = new FormControl("");
+  searchFilter = new FormControl('');
   tagFilter = new FormControl([]);
 
   private onDestroy$ = new Subject<boolean>();
@@ -56,8 +74,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
     private store: Store,
     private meta: Meta,
     private title: Title
-  ) {
-  }
+  ) {}
 
   ngOnInit() {
     this.makeGoogleFriendly();
@@ -74,13 +91,13 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
       ),
       this.route.params.pipe(
         filter((params) => {
-          if (!params["id"]) {
+          if (!params['id']) {
             this.changeURL();
           }
-          return !!params["id"];
+          return !!params['id'];
         }),
         switchMap((params) =>
-          this.digimonBackendService.getSave(params["id"]).pipe(first())
+          this.digimonBackendService.getSave(params['id']).pipe(first())
         ),
         tap((save) => {
           this.decks = save?.decks ?? [];
@@ -111,8 +128,8 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.onDestroy$))
       .subscribe((decks) => {
         this.decks = decks.sort((a, b) => {
-          const aTitle = a.title ?? "";
-          const bTitle = b.title ?? "";
+          const aTitle = a.title ?? '';
+          const bTitle = b.title ?? '';
           return aTitle.localeCompare(bTitle);
         });
         this.filteredDecks = this.decks;
@@ -122,9 +139,9 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
 
   changeURL() {
     if (this.authService.userData?.uid) {
-      this.location.replaceState("/user/" + this.authService.userData?.uid);
+      this.location.replaceState('/user/' + this.authService.userData?.uid);
     } else {
-      this.location.replaceState("/user");
+      this.location.replaceState('/user');
     }
   }
 
@@ -137,26 +154,26 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
         ? this.applyTagFilter()
         : this.filteredDecks;
     this.filteredDecks = this.filteredDecks.sort((a, b) => {
-      const aTitle = a.title ?? "";
-      const bTitle = b.title ?? "";
+      const aTitle = a.title ?? '';
+      const bTitle = b.title ?? '';
       return aTitle.localeCompare(bTitle);
     });
   }
 
   private makeGoogleFriendly() {
-    this.title.setTitle("Digimon Card Game - Profil");
+    this.title.setTitle('Digimon Card Game - Profil');
 
     this.meta.addTags([
       {
-        name: "description",
+        name: 'description',
         content:
-          "See your Collection and Decks in one view. Share them with your friends, for easy insights in your decks and trading."
+          'See your Collection and Decks in one view. Share them with your friends, for easy insights in your decks and trading.',
       },
-      { name: "author", content: "TakaOtaku" },
+      { name: 'author', content: 'TakaOtaku' },
       {
-        name: "keywords",
-        content: "Collection, Decks, Share, insights, trading"
-      }
+        name: 'keywords',
+        content: 'Collection, Decks, Share, insights, trading',
+      },
     ]);
   }
 

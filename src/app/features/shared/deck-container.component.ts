@@ -1,12 +1,17 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from "@angular/core";
-import { Store } from "@ngrx/store";
-import { first } from "rxjs";
-import { ICard, IDeck } from "../../../models";
-import { ColorMap } from "../../../models/maps/color.map";
-import { selectAllCards } from "../../store/digimon.selectors";
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit,
+} from '@angular/core';
+import { Store } from '@ngrx/store';
+import { first } from 'rxjs';
+import { ICard, IDeck } from '../../../models';
+import { ColorMap } from '../../../models/maps/color.map';
+import { selectAllCards } from '../../store/digimon.selectors';
 
 @Component({
-  selector: "digimon-deck-container",
+  selector: 'digimon-deck-container',
   template: `
     <div
       class="surface-card relative h-32 w-full border border-black"
@@ -45,7 +50,7 @@ import { selectAllCards } from "../../store/digimon.selectors";
       </div>
     </div>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DeckContainerComponent implements OnInit {
   @Input() deck: IDeck;
@@ -55,8 +60,7 @@ export class DeckContainerComponent implements OnInit {
 
   private allCards: ICard[];
 
-  constructor(private store: Store) {
-  }
+  constructor(private store: Store) {}
 
   ngOnInit() {
     this.store
@@ -71,7 +75,7 @@ export class DeckContainerComponent implements OnInit {
     if (this.deck.imageCardId) {
       return (
         this.allCards.find((card) => card.id === this.deck.imageCardId)
-          ?.cardImage ?? "../../../assets/images/cards/eng/BT1-001.webp"
+          ?.cardImage ?? '../../../assets/images/cards/eng/BT1-001.webp'
       );
     }
 
@@ -81,6 +85,6 @@ export class DeckContainerComponent implements OnInit {
 
     return card
       ? card.cardImage
-      : "../../../assets/images/cards/eng/BT1-001.webp";
+      : '../../../assets/images/cards/eng/BT1-001.webp';
   }
 }

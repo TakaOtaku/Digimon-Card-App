@@ -1,9 +1,15 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit } from "@angular/core";
-import { FormControl, FormGroup } from "@angular/forms";
-import { Store } from "@ngrx/store";
-import { MessageService } from "primeng/api";
-import { debounceTime, Subject, takeUntil } from "rxjs";
-import { IFilter } from "../../../../models";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { MessageService } from 'primeng/api';
+import { debounceTime, Subject, takeUntil } from 'rxjs';
+import { IFilter } from '../../../../models';
 import {
   Attributes,
   BlockButtons,
@@ -17,16 +23,20 @@ import {
   Restrictions,
   SpecialRequirements,
   Types,
-  VersionButtons
-} from "../../../../models/data/filter.data";
-import { CARDSET } from "../../../../models/enums/card-set.enum";
-import { ISelectItem } from "../../../../models/interfaces/select-item.interface";
-import { changeCardSets, changeFilter } from "../../../store/digimon.actions";
-import { selectCardSet, selectCollectionMode, selectFilter } from "../../../store/digimon.selectors";
-import { emptyFilter } from "../../../store/reducers/digimon.reducers";
+  VersionButtons,
+} from '../../../../models/data/filter.data';
+import { CARDSET } from '../../../../models/enums/card-set.enum';
+import { ISelectItem } from '../../../../models/interfaces/select-item.interface';
+import { changeCardSets, changeFilter } from '../../../store/digimon.actions';
+import {
+  selectCardSet,
+  selectCollectionMode,
+  selectFilter,
+} from '../../../store/digimon.selectors';
+import { emptyFilter } from '../../../store/reducers/digimon.reducers';
 
 @Component({
-  selector: "digimon-filter-side-box",
+  selector: 'digimon-filter-side-box',
   template: `
     <div class="mx-1 flex h-full w-full flex-col pt-1">
       <div class="mt-1 grid w-full grid-cols-4">

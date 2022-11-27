@@ -1,17 +1,17 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
-import { Meta, Title } from "@angular/platform-browser";
-import { Router } from "@angular/router";
-import { Store } from "@ngrx/store";
-import { ConfirmationService, MessageService } from "primeng/api";
-import { first, Subject, takeUntil } from "rxjs";
-import * as uuid from "uuid";
-import { ADMINS, IBlog, IBlogWithText, IUser } from "../../../models";
-import { AuthService } from "../../service/auth.service";
-import { DigimonBackendService } from "../../service/digimon-backend.service";
-import { selectBlogs } from "../../store/digimon.selectors";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
+import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { ConfirmationService, MessageService } from 'primeng/api';
+import { first, Subject, takeUntil } from 'rxjs';
+import * as uuid from 'uuid';
+import { ADMINS, IBlog, IBlogWithText, IUser } from '../../../models';
+import { AuthService } from '../../service/auth.service';
+import { DigimonBackendService } from '../../service/digimon-backend.service';
+import { selectBlogs } from '../../store/digimon.selectors';
 
 @Component({
-  selector: "digimon-community",
+  selector: 'digimon-community',
   template: `
     <div
       class="h-[calc(100vh-50px)] w-full overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d]"
@@ -39,37 +39,90 @@ import { selectBlogs } from "../../store/digimon.selectors";
             <div class="inline-block h-64 min-w-full overflow-auto py-2">
               <table class="min-w-full">
                 <thead class="surface-card border-b">
-                <tr>
-                  <th scope="col" class="w-7 px-1 py-2"></th>
-                  <th
-                    scope="col"
-                    class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
-                  >
-                    Title
-                  </th>
-                  <th
-                    scope="col"
-                    class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
-                  >
-                    Author
-                  </th>
-                  <th
-                    scope="col"
-                    class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
-                  >
-                    Date
-                  </th>
-                  <th
-                    *ngIf="showButtons()"
-                    scope="col"
-                    class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
-                  ></th>
-                </tr>
+                  <tr>
+                    <th scope="col" class="w-7 px-1 py-2"></th>
+                    <th
+                      scope="col"
+                      class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
+                    >
+                      Title
+                    </th>
+                    <th
+                      scope="col"
+                      class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
+                    >
+                      Author
+                    </th>
+                    <th
+                      scope="col"
+                      class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
+                    >
+                      Date
+                    </th>
+                    <th
+                      *ngIf="showButtons()"
+                      scope="col"
+                      class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
+                    ></th>
+                  </tr>
                 </thead>
                 <tbody>
-                <ng-container *ngIf="showWrite()">
+                  <ng-container *ngIf="showWrite()">
+                    <tr
+                      *ngFor="let blog of blogEntriesHidden"
+                      class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150"
+                    >
+                      <td class="w-7 whitespace-nowrap px-1 py-2">
+                        <img
+                          alt="Blog Category"
+                          class="m-auto text-[#e2e4e6]"
+                          [src]="getIcon(blog.category)"
+                        />
+                      </td>
+                      <td
+                        class="cursor-pointer whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
+                        (click)="open(blog)"
+                      >
+                        <h2>{{ blog.title }}</h2>
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
+                      >
+                        {{ blog.author }}
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
+                      >
+                        {{ blog.date | date: 'dd.MM.yyyy' }}
+                      </td>
+                      <td
+                        *ngIf="showButtons()"
+                        class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
+                      >
+                        <button
+                          *ngIf="showButtons()"
+                          [disabled]="!isAdmin()"
+                          class="p-button p-button-rounded ml-auto mr-2"
+                          icon="pi pi-times"
+                          pButton
+                          pRipple
+                          type="button"
+                          (click)="approve(blog)"
+                        ></button>
+                        <button
+                          *ngIf="isAdmin()"
+                          class="p-button p-button-rounded ml-auto mr-2"
+                          icon="pi pi-trash"
+                          pButton
+                          pRipple
+                          type="button"
+                          (click)="delete(blog, $event)"
+                        ></button>
+                      </td>
+                    </tr>
+                  </ng-container>
                   <tr
-                    *ngFor="let blog of blogEntriesHidden"
+                    *ngFor="let blog of blogEntries"
                     class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150"
                   >
                     <td class="w-7 whitespace-nowrap px-1 py-2">
@@ -83,7 +136,7 @@ import { selectBlogs } from "../../store/digimon.selectors";
                       class="cursor-pointer whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
                       (click)="open(blog)"
                     >
-                      <h2>{{ blog.title }}</h2>
+                      {{ blog.title }}
                     </td>
                     <td
                       class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
@@ -103,11 +156,11 @@ import { selectBlogs } from "../../store/digimon.selectors";
                         *ngIf="showButtons()"
                         [disabled]="!isAdmin()"
                         class="p-button p-button-rounded ml-auto mr-2"
-                        icon="pi pi-times"
+                        icon="pi pi-check"
                         pButton
                         pRipple
                         type="button"
-                        (click)="approve(blog)"
+                        (click)="hide(blog)"
                       ></button>
                       <button
                         *ngIf="isAdmin()"
@@ -120,59 +173,6 @@ import { selectBlogs } from "../../store/digimon.selectors";
                       ></button>
                     </td>
                   </tr>
-                </ng-container>
-                <tr
-                  *ngFor="let blog of blogEntries"
-                  class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150"
-                >
-                  <td class="w-7 whitespace-nowrap px-1 py-2">
-                    <img
-                      alt="Blog Category"
-                      class="m-auto text-[#e2e4e6]"
-                      [src]="getIcon(blog.category)"
-                    />
-                  </td>
-                  <td
-                    class="cursor-pointer whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
-                    (click)="open(blog)"
-                  >
-                    {{ blog.title }}
-                  </td>
-                  <td
-                    class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
-                  >
-                    {{ blog.author }}
-                  </td>
-                  <td
-                    class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
-                  >
-                    {{ blog.date | date: 'dd.MM.yyyy' }}
-                  </td>
-                  <td
-                    *ngIf="showButtons()"
-                    class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
-                  >
-                    <button
-                      *ngIf="showButtons()"
-                      [disabled]="!isAdmin()"
-                      class="p-button p-button-rounded ml-auto mr-2"
-                      icon="pi pi-check"
-                      pButton
-                      pRipple
-                      type="button"
-                      (click)="hide(blog)"
-                    ></button>
-                    <button
-                      *ngIf="isAdmin()"
-                      class="p-button p-button-rounded ml-auto mr-2"
-                      icon="pi pi-trash"
-                      pButton
-                      pRipple
-                      type="button"
-                      (click)="delete(blog, $event)"
-                    ></button>
-                  </td>
-                </tr>
                 </tbody>
               </table>
             </div>
@@ -237,15 +237,15 @@ export class CommunityComponent implements OnInit, OnDestroy {
     const newBlog: IBlog = {
       uid: uuid.v4(),
       date: new Date(),
-      title: "Empty Entry",
+      title: 'Empty Entry',
       approved: false,
       author: this.user!.displayName,
       authorId: this.user!.uid,
-      category: "Tournament Report"
+      category: 'Tournament Report',
     };
     const newBlogWithText: IBlogWithText = {
       ...newBlog,
-      text: "<p>Hello World!</p>"
+      text: '<p>Hello World!</p>',
     };
 
     this.blogEntriesHidden.push(newBlog);
@@ -255,9 +255,9 @@ export class CommunityComponent implements OnInit, OnDestroy {
       .pipe(first())
       .subscribe();
     this.messageService.add({
-      severity: "success",
-      summary: "Blog-Entry created!",
-      detail: "New Blog-Entry was created successfully!"
+      severity: 'success',
+      summary: 'Blog-Entry created!',
+      detail: 'New Blog-Entry was created successfully!',
     });
   }
 
@@ -274,7 +274,7 @@ export class CommunityComponent implements OnInit, OnDestroy {
   }
 
   open(blog: IBlog) {
-    this.router.navigateByUrl("blog/" + blog.uid);
+    this.router.navigateByUrl('blog/' + blog.uid);
   }
 
   hide(blog: IBlog) {
@@ -313,31 +313,30 @@ export class CommunityComponent implements OnInit, OnDestroy {
           .subscribe();
 
         this.messageService.add({
-          severity: "success",
-          summary: "Blog-Entry deleted!",
-          detail: "The Blog-Entry was deleted successfully!"
+          severity: 'success',
+          summary: 'Blog-Entry deleted!',
+          detail: 'The Blog-Entry was deleted successfully!',
         });
       },
-      reject: () => {
-      }
+      reject: () => {},
     });
   }
 
   private makeGoogleFriendly() {
-    this.title.setTitle("Digimon Card Game - Community");
+    this.title.setTitle('Digimon Card Game - Community');
 
     this.meta.addTags([
       {
-        name: "description",
+        name: 'description',
         content:
-          "Tournament Reports, Deck Builder, Collection Tracker, Tier list, Card Statistics and many more things at the Digimon TCG site."
+          'Tournament Reports, Deck Builder, Collection Tracker, Tier list, Card Statistics and many more things at the Digimon TCG site.',
       },
-      { name: "author", content: "TakaOtaku" },
+      { name: 'author', content: 'TakaOtaku' },
       {
-        name: "keywords",
+        name: 'keywords',
         content:
-          "Tournament, Reports, Deck Builder, Collection Tracker, Tier list, Card, Statistics, Digimon, TCG"
-      }
+          'Tournament, Reports, Deck Builder, Collection Tracker, Tier list, Card, Statistics, Digimon, TCG',
+      },
     ]);
   }
 

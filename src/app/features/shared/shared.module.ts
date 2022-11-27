@@ -1,51 +1,51 @@
-import { NgxSliderModule } from "@angular-slider/ngx-slider";
-import { CommonModule } from "@angular/common";
-import { NgModule } from "@angular/core";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { CKEditorModule } from "@ckeditor/ckeditor5-angular";
-import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
-import { LazyLoadImageModule } from "ng-lazyload-image";
-import { ConfirmationService, MessageService } from "primeng/api";
-import { AutoCompleteModule } from "primeng/autocomplete";
-import { ButtonModule } from "primeng/button";
-import { ChartModule } from "primeng/chart";
-import { ConfirmPopupModule } from "primeng/confirmpopup";
-import { ContextMenuModule } from "primeng/contextmenu";
-import { DialogModule } from "primeng/dialog";
-import { DropdownModule } from "primeng/dropdown";
-import { InputTextModule } from "primeng/inputtext";
-import { InputTextareaModule } from "primeng/inputtextarea";
-import { MultiSelectModule } from "primeng/multiselect";
-import { SelectButtonModule } from "primeng/selectbutton";
-import { StyleClassModule } from "primeng/styleclass";
-import { DigimonStoreModule } from "../../digimon-store.module";
-import { AuthService } from "../../service/auth.service";
-import { DeckCardComponent } from "./deck-card.component";
-import { DeckContainerComponent } from "./deck-container.component";
-import { ChangeAccessorieDialogComponent } from "./dialogs/change-accessorie-dialog.component";
-import { ChangelogDialogComponent } from "./dialogs/changelog-dialog.component";
-import { CollectionStatsDialogComponent } from "./dialogs/collection-stats-dialog.component";
-import { DeckDialogComponent } from "./dialogs/deck-dialog.component";
-import { ExportDeckDialogComponent } from "./dialogs/export-deck-dialog.component";
-import { ImportDeckDialogComponent } from "./dialogs/import-deck-dialog.component";
-import { ProxyPrintDialogComponent } from "./dialogs/proxy-print-dialog.component";
-import { SettingsDialogComponent } from "./dialogs/settings-dialog.component";
-import { ViewCardDialogComponent } from "./dialogs/view-card-dialog.component";
-import { FilterAndSearchComponent } from "./filter/filter-and-search.component";
-import { FilterButtonComponent } from "./filter/filter-button.component";
-import { FilterSideBoxComponent } from "./filter/filter-side-box.component";
-import { FullCardComponent } from "./full-card.component";
-import { MultiButtonsComponent } from "./multi-buttons.component";
-import { NavbarComponent } from "./navbar.component";
-import { RangeSliderComponent } from "./range-slider.component";
-import { SingleContainerComponent } from "./single-container.component";
-import { SortButtonsComponent } from "./sort-buttons.component";
-import { ChartContainerComponent } from "./statistics/chart-container.component";
-import { ChartContainersComponent } from "./statistics/chart-containers.component";
-import { ColorSpreadComponent } from "./statistics/color-spread.component";
-import { DdtoSpreadComponent } from "./statistics/ddto-spread.component";
-import { DeckStatsComponent } from "./statistics/deck-stats.component";
-import { LevelSpreadComponent } from "./statistics/level-spread.component";
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { ConfirmationService, MessageService } from 'primeng/api';
+import { AutoCompleteModule } from 'primeng/autocomplete';
+import { ButtonModule } from 'primeng/button';
+import { ChartModule } from 'primeng/chart';
+import { ConfirmPopupModule } from 'primeng/confirmpopup';
+import { ContextMenuModule } from 'primeng/contextmenu';
+import { DialogModule } from 'primeng/dialog';
+import { DropdownModule } from 'primeng/dropdown';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { SelectButtonModule } from 'primeng/selectbutton';
+import { StyleClassModule } from 'primeng/styleclass';
+import { DigimonStoreModule } from '../../digimon-store.module';
+import { AuthService } from '../../service/auth.service';
+import { DeckCardComponent } from './deck-card.component';
+import { DeckContainerComponent } from './deck-container.component';
+import { ChangeAccessorieDialogComponent } from './dialogs/change-accessorie-dialog.component';
+import { ChangelogDialogComponent } from './dialogs/changelog-dialog.component';
+import { CollectionStatsDialogComponent } from './dialogs/collection-stats-dialog.component';
+import { DeckDialogComponent } from './dialogs/deck-dialog.component';
+import { ExportDeckDialogComponent } from './dialogs/export-deck-dialog.component';
+import { ImportDeckDialogComponent } from './dialogs/import-deck-dialog.component';
+import { ProxyPrintDialogComponent } from './dialogs/proxy-print-dialog.component';
+import { SettingsDialogComponent } from './dialogs/settings-dialog.component';
+import { ViewCardDialogComponent } from './dialogs/view-card-dialog.component';
+import { FilterAndSearchComponent } from './filter/filter-and-search.component';
+import { FilterButtonComponent } from './filter/filter-button.component';
+import { FilterSideBoxComponent } from './filter/filter-side-box.component';
+import { FullCardComponent } from './full-card.component';
+import { MultiButtonsComponent } from './multi-buttons.component';
+import { NavbarComponent } from './navbar.component';
+import { RangeSliderComponent } from './range-slider.component';
+import { SingleContainerComponent } from './single-container.component';
+import { SortButtonsComponent } from './sort-buttons.component';
+import { ChartContainerComponent } from './statistics/chart-container.component';
+import { ChartContainersComponent } from './statistics/chart-containers.component';
+import { ColorSpreadComponent } from './statistics/color-spread.component';
+import { DdtoSpreadComponent } from './statistics/ddto-spread.component';
+import { DeckStatsComponent } from './statistics/deck-stats.component';
+import { LevelSpreadComponent } from './statistics/level-spread.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +75,7 @@ import { LevelSpreadComponent } from "./statistics/level-spread.component";
     ChartContainerComponent,
     ColorSpreadComponent,
     DdtoSpreadComponent,
-    LevelSpreadComponent
+    LevelSpreadComponent,
   ],
   exports: [
     DeckContainerComponent,
@@ -99,7 +99,7 @@ import { LevelSpreadComponent } from "./statistics/level-spread.component";
     ChartContainerComponent,
     ColorSpreadComponent,
     DdtoSpreadComponent,
-    LevelSpreadComponent
+    LevelSpreadComponent,
   ],
   imports: [
     CommonModule,
@@ -124,9 +124,8 @@ import { LevelSpreadComponent } from "./statistics/level-spread.component";
     DropdownModule,
     ReactiveFormsModule,
     ChartModule,
-    StyleClassModule
+    StyleClassModule,
   ],
-  providers: [AuthService, MessageService, ConfirmationService]
+  providers: [AuthService, MessageService, ConfirmationService],
 })
-export class SharedModule {
-}
+export class SharedModule {}

@@ -1,9 +1,9 @@
-import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
-import { FormControl } from "@angular/forms";
-import { TAGS } from "../../../models";
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { TAGS } from '../../../models';
 
 @Component({
-  selector: "digimon-deck-filter",
+  selector: 'digimon-deck-filter',
   template: `
     <div class="my-1 mx-auto flex max-w-6xl flex-row border border-slate-200">
       <div class="my-1 flex w-full flex-col px-2">
@@ -31,7 +31,7 @@ import { TAGS } from "../../../models";
       </p-multiSelect>
     </div>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DeckFilterComponent {
   @Input() searchFilter: FormControl;

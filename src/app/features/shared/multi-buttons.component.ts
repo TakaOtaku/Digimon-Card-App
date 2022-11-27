@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
-import { FormControl } from "@angular/forms";
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 export interface MultiButtons {
   name: string;
@@ -7,7 +7,7 @@ export interface MultiButtons {
 }
 
 @Component({
-  selector: "digimon-multi-buttons",
+  selector: 'digimon-multi-buttons',
   template: `
     <div class="mx-auto mb-2 max-w-[250px]">
       <h1 class="mb-1 text-center text-xs font-bold text-[#e2e4e6]">

@@ -1,14 +1,19 @@
-import { Injectable } from "@angular/core";
-import { Actions, createEffect, ofType } from "@ngrx/effects";
-import { Store } from "@ngrx/store";
-import { catchError, EMPTY, first, map, switchMap, tap } from "rxjs";
-import { CARDSET } from "../../models/enums/card-set.enum";
-import { setupDigimonCards } from "../functions/digimon-card.functions";
-import { filterCards } from "../functions/filter.functions";
-import { AuthService } from "../service/auth.service";
-import { DigimonBackendService } from "../service/digimon-backend.service";
-import * as DigimonActions from "./digimon.actions";
-import { selectCardSet, selectChangeAdvancedSettings, selectChangeFilterEffect, selectSave } from "./digimon.selectors";
+import { Injectable } from '@angular/core';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
+import { Store } from '@ngrx/store';
+import { catchError, EMPTY, first, map, switchMap, tap } from 'rxjs';
+import { CARDSET } from '../../models/enums/card-set.enum';
+import { setupDigimonCards } from '../functions/digimon-card.functions';
+import { filterCards } from '../functions/filter.functions';
+import { AuthService } from '../service/auth.service';
+import { DigimonBackendService } from '../service/digimon-backend.service';
+import * as DigimonActions from './digimon.actions';
+import {
+  selectCardSet,
+  selectChangeAdvancedSettings,
+  selectChangeFilterEffect,
+  selectSave,
+} from './digimon.selectors';
 
 @Injectable()
 export class DigimonEffects {
@@ -38,8 +43,7 @@ export class DigimonEffects {
                   this.digimonBackendService
                     .updateSave(save)
                     .pipe(first())
-                    .subscribe(() => {
-                    });
+                    .subscribe(() => {});
                 } else {
                   localStorage.setItem(
                     'Digimon-Card-Collector',

@@ -1,8 +1,14 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from "@angular/core";
-import { IDeckCard } from "../../../../models";
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
+import { IDeckCard } from '../../../../models';
 
 @Component({
-  selector: "digimon-chart-containers",
+  selector: 'digimon-chart-containers',
   template: `
     <div class="jusify-between flex flex-row">
       <digimon-chart-container

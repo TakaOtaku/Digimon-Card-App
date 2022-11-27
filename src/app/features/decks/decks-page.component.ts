@@ -1,20 +1,24 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
-import { FormControl } from "@angular/forms";
-import { Meta, Title } from "@angular/platform-browser";
-import { Router } from "@angular/router";
-import { Store } from "@ngrx/store";
-import { ConfirmationService, MessageService } from "primeng/api";
-import { Subject, takeUntil } from "rxjs";
-import * as uuid from "uuid";
-import { ICard, IDeck, TAGS } from "../../../models";
-import { AuthService } from "../../service/auth.service";
-import { DigimonBackendService } from "../../service/digimon-backend.service";
-import { importDeck } from "../../store/digimon.actions";
-import { selectAllCards, selectCommunityDecks, selectCommunityDeckSearch } from "../../store/digimon.selectors";
-import { emptyDeck } from "../../store/reducers/digimon.reducers";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { Meta, Title } from '@angular/platform-browser';
+import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { ConfirmationService, MessageService } from 'primeng/api';
+import { Subject, takeUntil } from 'rxjs';
+import * as uuid from 'uuid';
+import { ICard, IDeck, TAGS } from '../../../models';
+import { AuthService } from '../../service/auth.service';
+import { DigimonBackendService } from '../../service/digimon-backend.service';
+import { importDeck } from '../../store/digimon.actions';
+import {
+  selectAllCards,
+  selectCommunityDecks,
+  selectCommunityDeckSearch,
+} from '../../store/digimon.selectors';
+import { emptyDeck } from '../../store/reducers/digimon.reducers';
 
 @Component({
-  selector: "digimon-decks-page",
+  selector: 'digimon-decks-page',
   template: `
     <div
       class="flex h-[calc(100vh-50px)] w-full flex-col overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d]"
@@ -97,12 +101,12 @@ import { emptyDeck } from "../../store/reducers/digimon.reducers";
   `,
 })
 export class DecksPageComponent implements OnInit, OnDestroy {
-  mode: "Community" | "Tournament" = "Community";
+  mode: 'Community' | 'Tournament' = 'Community';
   decks: IDeck[] = [];
   filteredDecks: IDeck[] = [];
   selectedDeck: IDeck;
 
-  searchFilter = new FormControl("");
+  searchFilter = new FormControl('');
   tagFilter = new FormControl([]);
 
   tags = TAGS;
@@ -124,8 +128,7 @@ export class DecksPageComponent implements OnInit, OnDestroy {
     private confirmationService: ConfirmationService,
     private meta: Meta,
     private title: Title
-  ) {
-  }
+  ) {}
 
   ngOnInit(): void {
     this.makeGoogleFriendly();
@@ -171,19 +174,19 @@ export class DecksPageComponent implements OnInit, OnDestroy {
 
   copyDeck(deck: IDeck) {
     this.confirmationService.confirm({
-      message: "You are about to copy this deck. Are you sure?",
+      message: 'You are about to copy this deck. Are you sure?',
       accept: () => {
         this.store.dispatch(
           importDeck({
-            deck: { ...deck, id: uuid.v4() }
+            deck: { ...deck, id: uuid.v4() },
           })
         );
         this.messageService.add({
-          severity: "success",
-          summary: "Deck copied!",
-          detail: "Deck was copied successfully!"
+          severity: 'success',
+          summary: 'Deck copied!',
+          detail: 'Deck was copied successfully!',
         });
-      }
+      },
     });
   }
 
@@ -208,19 +211,19 @@ export class DecksPageComponent implements OnInit, OnDestroy {
   }
 
   private makeGoogleFriendly() {
-    this.title.setTitle("Digimon Card Game - Community");
+    this.title.setTitle('Digimon Card Game - Community');
 
     this.meta.addTags([
       {
-        name: "description",
+        name: 'description',
         content:
-          "Meta decks, fun decks, tournament decks and many more, find new decks for every set."
+          'Meta decks, fun decks, tournament decks and many more, find new decks for every set.',
       },
-      { name: "author", content: "TakaOtaku" },
+      { name: 'author', content: 'TakaOtaku' },
       {
-        name: "keywords",
-        content: "Meta, decks, tournament, fun"
-      }
+        name: 'keywords',
+        content: 'Meta, decks, tournament, fun',
+      },
     ]);
   }
 

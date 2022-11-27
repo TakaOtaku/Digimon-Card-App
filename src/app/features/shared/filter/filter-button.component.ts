@@ -1,11 +1,11 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
-import { Store } from "@ngrx/store";
-import { Subject, takeUntil } from "rxjs";
-import { setMobileCollectionView } from "../../../store/digimon.actions";
-import { selectMobileCollectionView } from "../../../store/digimon.selectors";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Subject, takeUntil } from 'rxjs';
+import { setMobileCollectionView } from '../../../store/digimon.actions';
+import { selectMobileCollectionView } from '../../../store/digimon.selectors';
 
 @Component({
-  selector: "digimon-filter-button",
+  selector: 'digimon-filter-button',
   template: `
     <button
       (click)="setMobileCollectionView()"
@@ -13,7 +13,7 @@ import { selectMobileCollectionView } from "../../../store/digimon.selectors";
     >
       Card-List
     </button>
-  `
+  `,
 })
 export class FilterButtonComponent implements OnInit, OnDestroy {
   mobileCollectionView = false;

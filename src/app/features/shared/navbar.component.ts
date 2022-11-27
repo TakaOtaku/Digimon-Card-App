@@ -1,12 +1,26 @@
-import { Component, EventEmitter, HostListener, OnDestroy, OnInit } from "@angular/core";
-import { NavigationEnd, Router } from "@angular/router";
-import { faCog, faFolder, faHouseUser, faInfoCircle, faPen, faUser, faUsers } from "@fortawesome/free-solid-svg-icons";
-import { Subject, takeUntil } from "rxjs";
-import { IUser } from "../../../models";
-import { AuthService } from "../../service/auth.service";
+import {
+  Component,
+  EventEmitter,
+  HostListener,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import {
+  faCog,
+  faFolder,
+  faHouseUser,
+  faInfoCircle,
+  faPen,
+  faUser,
+  faUsers,
+} from '@fortawesome/free-solid-svg-icons';
+import { Subject, takeUntil } from 'rxjs';
+import { IUser } from '../../../models';
+import { AuthService } from '../../service/auth.service';
 
 @Component({
-  selector: "digimon-navbar",
+  selector: 'digimon-navbar',
   template: `
     <nav
       class="navbar navbar-expand-lg relative flex w-full flex-col items-center justify-between border-b border-slate-100 shadow-2xl"
@@ -248,7 +262,7 @@ import { AuthService } from "../../service/auth.service";
                       target="_blank"
                       aria-current="true"
                       class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-[#64B5F6] hover:backdrop-brightness-150"
-                    ><i class="fa-solid fa-bug mr-1"></i>Feature/Bug
+                      ><i class="fa-solid fa-bug mr-1"></i>Feature/Bug
                       Request</a
                     >
                     <a
@@ -256,7 +270,7 @@ import { AuthService } from "../../service/auth.service";
                       target="_blank"
                       aria-current="true"
                       class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-[#64B5F6] hover:backdrop-brightness-150"
-                    ><i class="fa-brands fa-cc-paypal mr-1"></i>Help the
+                      ><i class="fa-brands fa-cc-paypal mr-1"></i>Help the
                       Site!</a
                     >
                   </div>
@@ -299,18 +313,18 @@ import { AuthService } from "../../service/auth.service";
     >
       <div class="flex w-full flex-col">
         <span class="mt-5 w-full text-center font-bold text-[#e2e4e6]"
-        >A huge thanks goes to tari101190 who helps me with all the new card
+          >A huge thanks goes to tari101190 who helps me with all the new card
           releases and tests the website completly so I don't have to worry to
           much!</span
         >
 
         <span class="mt-5 w-full text-center font-bold text-[#e2e4e6]"
-        >Another big thank you goes to
+          >Another big thank you goes to
           <a
             class="primary-color"
             href="https://www.instagram.com/oscstudios/"
             target="_blank"
-          >TheOSC</a
+            >TheOSC</a
           >
           he send me a cool new design which I took much inspiration from and
           helped with other design questions! Go Check him out he makes great
@@ -323,12 +337,12 @@ import { AuthService } from "../../service/auth.service";
         >
 
         <span class="mt-5 w-full text-center font-bold text-[#e2e4e6]"
-        >Credits for the Pre-Release Cards go to
+          >Credits for the Pre-Release Cards go to
           <a
             class="primary-color"
             href="https://digimoncardgame.fandom.com/"
             target="_blank"
-          >https://digimoncardgame.fandom.com/</a
+            >https://digimoncardgame.fandom.com/</a
           >
           and all the wonderful people who maintain it!</span
         >
@@ -339,7 +353,7 @@ import { AuthService } from "../../service/auth.service";
         >
 
         <span class="mt-5 w-full text-center font-bold text-[#e2e4e6]"
-        >Please support the official releases! Akiyoshi Hongo, Bandai, and
+          >Please support the official releases! Akiyoshi Hongo, Bandai, and
           Toei Animation respectively own Digimon images, copyrights and
           trademarks.</span
         >
@@ -368,12 +382,11 @@ export class NavbarComponent implements OnInit, OnDestroy {
   showCardList = false;
 
   mobile = false;
-  route = "";
+  route = '';
 
   private onDestroy$ = new Subject();
 
-  constructor(public router: Router, public authService: AuthService) {
-  }
+  constructor(public router: Router, public authService: AuthService) {}
 
   ngOnInit() {
     this.user = this.authService.userData;
@@ -383,7 +396,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
     this.router.events.pipe(takeUntil(this.onDestroy$)).subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.showCardList = event.url.includes("deckbuilder");
+        this.showCardList = event.url.includes('deckbuilder');
         this.route = event.url;
       }
     });

@@ -1,9 +1,19 @@
-import { Component, EventEmitter, Input, OnDestroy, Output } from "@angular/core";
-import { MessageService } from "primeng/api";
-import { Subject } from "rxjs";
-import * as uuid from "uuid";
-import { ICard, ICountCard, IDeck, IDeckCard } from "../../../../models";
-import { compareIDs, setColors, setTags } from "../../../functions/digimon-card.functions";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  Output,
+} from '@angular/core';
+import { MessageService } from 'primeng/api';
+import { Subject } from 'rxjs';
+import * as uuid from 'uuid';
+import { ICard, ICountCard, IDeck, IDeckCard } from '../../../../models';
+import {
+  compareIDs,
+  setColors,
+  setTags,
+} from '../../../functions/digimon-card.functions';
 
 @Component({
   selector: 'digimon-import-deck-dialog',
@@ -61,8 +71,7 @@ export class ImportDeckDialogComponent implements OnDestroy {
 
   private onDestroy$ = new Subject();
 
-  constructor(private messageService: MessageService) {
-  }
+  constructor(private messageService: MessageService) {}
 
   ngOnDestroy(): void {
     this.onDestroy$.next(true);
@@ -109,17 +118,17 @@ export class ImportDeckDialogComponent implements OnDestroy {
 
   private parseTTSDeck(): IDeck {
     const deck: IDeck = {
-      title: "Imported Deck",
+      title: 'Imported Deck',
       id: uuid.v4(),
-      description: "",
+      description: '',
       date: new Date().toString(),
-      color: { name: "White", img: "assets/decks/white.svg" },
+      color: { name: 'White', img: 'assets/decks/white.svg' },
       cards: [],
       tags: [],
-      user: "",
-      userId: "",
-      imageCardId: "BT1-001",
-      likes: []
+      user: '',
+      userId: '',
+      imageCardId: 'BT1-001',
+      likes: [],
     };
 
     const deckJson: string[] = JSON.parse(this.deckText);
@@ -142,17 +151,17 @@ export class ImportDeckDialogComponent implements OnDestroy {
 
   private parseDeck(textArray: string[]): IDeck {
     const deck: IDeck = {
-      title: "Imported Deck",
+      title: 'Imported Deck',
       id: uuid.v4(),
-      description: "",
+      description: '',
       date: new Date().toString(),
-      color: { name: "White", img: "assets/decks/white.svg" },
+      color: { name: 'White', img: 'assets/decks/white.svg' },
       cards: [],
       tags: [],
-      user: "",
-      userId: "",
-      imageCardId: "BT1-001",
-      likes: []
+      user: '',
+      userId: '',
+      imageCardId: 'BT1-001',
+      likes: [],
     };
 
     textArray.forEach((line) => {

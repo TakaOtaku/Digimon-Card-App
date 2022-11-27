@@ -1,9 +1,15 @@
-import { Component, OnInit } from "@angular/core";
-import { Store } from "@ngrx/store";
-import { filter, first, switchMap, tap } from "rxjs";
-import { ICard, IDeck, IDeckCard } from "../../../models";
-import { getCountFromDeckCards, mapToDeckCards } from "../../functions/digimon-card.functions";
-import { selectAllCards, selectCommunityDecks } from "../../store/digimon.selectors";
+import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { filter, first, switchMap, tap } from 'rxjs';
+import { ICard, IDeck, IDeckCard } from '../../../models';
+import {
+  getCountFromDeckCards,
+  mapToDeckCards,
+} from '../../functions/digimon-card.functions';
+import {
+  selectAllCards,
+  selectCommunityDecks,
+} from '../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-deck-statistics',
@@ -24,84 +30,84 @@ import { selectAllCards, selectCommunityDecks } from "../../store/digimon.select
               <div class="max-h-[200px] overflow-x-hidden overflow-y-scroll">
                 <table class="min-w-full overflow-x-hidden">
                   <thead class="surface-card border-b">
-                  <tr>
-                    <th
-                      scope="col"
-                      class="max-w-[50px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
-                    >
-                      #
-                    </th>
-                    <th
-                      scope="col"
-                      class="maw-w-[150px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
-                    >
-                      Card
-                    </th>
-                    <th
-                      scope="col"
-                      class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
-                    >
-                      ID
-                    </th>
-                    <th
-                      scope="col"
-                      class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
-                    >
-                      # Played
-                    </th>
-                    <th
-                      scope="col"
-                      class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
-                    >
-                      % of Decks
-                    </th>
-                    <th
-                      scope="col"
-                      class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
-                    >
-                      # Average
-                    </th>
-                  </tr>
+                    <tr>
+                      <th
+                        scope="col"
+                        class="max-w-[50px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
+                      >
+                        #
+                      </th>
+                      <th
+                        scope="col"
+                        class="maw-w-[150px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
+                      >
+                        Card
+                      </th>
+                      <th
+                        scope="col"
+                        class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
+                      >
+                        ID
+                      </th>
+                      <th
+                        scope="col"
+                        class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
+                      >
+                        # Played
+                      </th>
+                      <th
+                        scope="col"
+                        class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
+                      >
+                        % of Decks
+                      </th>
+                      <th
+                        scope="col"
+                        class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
+                      >
+                        # Average
+                      </th>
+                    </tr>
                   </thead>
                   <tbody>
-                  <tr
-                    *ngFor="
+                    <tr
+                      *ngFor="
                         let card of mostUsedCards | slice: 0:50;
                         let i = index
                       "
-                    class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150"
-                  >
-                    <td
-                      class="max-w-[50px] whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
+                      class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150"
                     >
-                      {{ i + 1 }}.
-                    </td>
-                    <td
-                      class="max-w-[150px] overflow-hidden whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
-                    >
-                      {{ card.name }}
-                    </td>
-                    <td
-                      class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
-                    >
-                      {{ card.cardNumber }}
-                    </td>
-                    <td
-                      class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
-                    >
-                      {{ card.count }}x
-                    </td>
-                    <td
-                      class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
-                    >
-                      {{ percentInDecks(card) }}%
-                    </td>
-                    <td
-                      class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
-                    >
-                      {{ averagePlayed(card) }}x
-                    </td>
-                  </tr>
+                      <td
+                        class="max-w-[50px] whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
+                      >
+                        {{ i + 1 }}.
+                      </td>
+                      <td
+                        class="max-w-[150px] overflow-hidden whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
+                      >
+                        {{ card.name }}
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
+                      >
+                        {{ card.cardNumber }}
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
+                      >
+                        {{ card.count }}x
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
+                      >
+                        {{ percentInDecks(card) }}%
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
+                      >
+                        {{ averagePlayed(card) }}x
+                      </td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -118,85 +124,85 @@ import { selectAllCards, selectCommunityDecks } from "../../store/digimon.select
               <div class="max-h-[200px] overflow-x-hidden overflow-y-scroll">
                 <table class="min-w-full overflow-x-hidden">
                   <thead class="surface-card border-b">
-                  <tr>
-                    <th
-                      scope="col"
-                      class="max-w-[50px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
-                    >
-                      #
-                    </th>
-                    <th
-                      scope="col"
-                      class="maw-w-[150px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
-                    >
-                      Card
-                    </th>
-                    <th
-                      scope="col"
-                      class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
-                    >
-                      ID
-                    </th>
-                    <th
-                      scope="col"
-                      class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
-                    >
-                      # Played
-                    </th>
-                    <th
-                      scope="col"
-                      class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
-                    >
-                      % of Decks
-                    </th>
-                    <th
-                      scope="col"
-                      class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
-                    >
-                      # Average
-                    </th>
-                  </tr>
+                    <tr>
+                      <th
+                        scope="col"
+                        class="max-w-[50px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
+                      >
+                        #
+                      </th>
+                      <th
+                        scope="col"
+                        class="maw-w-[150px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
+                      >
+                        Card
+                      </th>
+                      <th
+                        scope="col"
+                        class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
+                      >
+                        ID
+                      </th>
+                      <th
+                        scope="col"
+                        class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
+                      >
+                        # Played
+                      </th>
+                      <th
+                        scope="col"
+                        class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
+                      >
+                        % of Decks
+                      </th>
+                      <th
+                        scope="col"
+                        class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
+                      >
+                        # Average
+                      </th>
+                    </tr>
                   </thead>
                   <tbody>
-                  <tr
-                    *ngFor="
+                    <tr
+                      *ngFor="
                         let card of filter(mostUsedCards, 'Digimon')
                           | slice: 0:50;
                         let i = index
                       "
-                    class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150"
-                  >
-                    <td
-                      class="max-w-[50px] whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
+                      class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150"
                     >
-                      {{ i + 1 }}.
-                    </td>
-                    <td
-                      class="max-w-[150px] overflow-hidden whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
-                    >
-                      {{ card.name }}
-                    </td>
-                    <td
-                      class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
-                    >
-                      {{ card.cardNumber }}
-                    </td>
-                    <td
-                      class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
-                    >
-                      {{ card.count }}x
-                    </td>
-                    <td
-                      class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
-                    >
-                      {{ percentInDecks(card) }}%
-                    </td>
-                    <td
-                      class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
-                    >
-                      {{ averagePlayed(card) }}x
-                    </td>
-                  </tr>
+                      <td
+                        class="max-w-[50px] whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
+                      >
+                        {{ i + 1 }}.
+                      </td>
+                      <td
+                        class="max-w-[150px] overflow-hidden whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
+                      >
+                        {{ card.name }}
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
+                      >
+                        {{ card.cardNumber }}
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
+                      >
+                        {{ card.count }}x
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
+                      >
+                        {{ percentInDecks(card) }}%
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
+                      >
+                        {{ averagePlayed(card) }}x
+                      </td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -213,85 +219,85 @@ import { selectAllCards, selectCommunityDecks } from "../../store/digimon.select
               <div class="max-h-[200px] overflow-x-hidden overflow-y-scroll">
                 <table class="min-w-full overflow-x-hidden">
                   <thead class="surface-card border-b">
-                  <tr>
-                    <th
-                      scope="col"
-                      class="max-w-[50px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
-                    >
-                      #
-                    </th>
-                    <th
-                      scope="col"
-                      class="maw-w-[150px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
-                    >
-                      Card
-                    </th>
-                    <th
-                      scope="col"
-                      class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
-                    >
-                      ID
-                    </th>
-                    <th
-                      scope="col"
-                      class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
-                    >
-                      # Played
-                    </th>
-                    <th
-                      scope="col"
-                      class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
-                    >
-                      % of Decks
-                    </th>
-                    <th
-                      scope="col"
-                      class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
-                    >
-                      # Average
-                    </th>
-                  </tr>
+                    <tr>
+                      <th
+                        scope="col"
+                        class="max-w-[50px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
+                      >
+                        #
+                      </th>
+                      <th
+                        scope="col"
+                        class="maw-w-[150px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
+                      >
+                        Card
+                      </th>
+                      <th
+                        scope="col"
+                        class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
+                      >
+                        ID
+                      </th>
+                      <th
+                        scope="col"
+                        class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
+                      >
+                        # Played
+                      </th>
+                      <th
+                        scope="col"
+                        class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
+                      >
+                        % of Decks
+                      </th>
+                      <th
+                        scope="col"
+                        class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
+                      >
+                        # Average
+                      </th>
+                    </tr>
                   </thead>
                   <tbody>
-                  <tr
-                    *ngFor="
+                    <tr
+                      *ngFor="
                         let card of filter(mostUsedCards, 'Tamer')
                           | slice: 0:50;
                         let i = index
                       "
-                    class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150"
-                  >
-                    <td
-                      class="max-w-[50px] whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
+                      class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150"
                     >
-                      {{ i + 1 }}.
-                    </td>
-                    <td
-                      class="max-w-[150px] overflow-hidden whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
-                    >
-                      {{ card.name }}
-                    </td>
-                    <td
-                      class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
-                    >
-                      {{ card.cardNumber }}
-                    </td>
-                    <td
-                      class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
-                    >
-                      {{ card.count }}x
-                    </td>
-                    <td
-                      class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
-                    >
-                      {{ percentInDecks(card) }}%
-                    </td>
-                    <td
-                      class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
-                    >
-                      {{ averagePlayed(card) }}x
-                    </td>
-                  </tr>
+                      <td
+                        class="max-w-[50px] whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
+                      >
+                        {{ i + 1 }}.
+                      </td>
+                      <td
+                        class="max-w-[150px] overflow-hidden whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
+                      >
+                        {{ card.name }}
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
+                      >
+                        {{ card.cardNumber }}
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
+                      >
+                        {{ card.count }}x
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
+                      >
+                        {{ percentInDecks(card) }}%
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
+                      >
+                        {{ averagePlayed(card) }}x
+                      </td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -308,85 +314,85 @@ import { selectAllCards, selectCommunityDecks } from "../../store/digimon.select
               <div class="max-h-[200px] overflow-x-hidden overflow-y-scroll">
                 <table class="min-w-full overflow-x-hidden">
                   <thead class="surface-card border-b">
-                  <tr>
-                    <th
-                      scope="col"
-                      class="max-w-[50px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
-                    >
-                      #
-                    </th>
-                    <th
-                      scope="col"
-                      class="maw-w-[150px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
-                    >
-                      Card
-                    </th>
-                    <th
-                      scope="col"
-                      class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
-                    >
-                      ID
-                    </th>
-                    <th
-                      scope="col"
-                      class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
-                    >
-                      # Played
-                    </th>
-                    <th
-                      scope="col"
-                      class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
-                    >
-                      % of Decks
-                    </th>
-                    <th
-                      scope="col"
-                      class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
-                    >
-                      # Average
-                    </th>
-                  </tr>
+                    <tr>
+                      <th
+                        scope="col"
+                        class="max-w-[50px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
+                      >
+                        #
+                      </th>
+                      <th
+                        scope="col"
+                        class="maw-w-[150px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
+                      >
+                        Card
+                      </th>
+                      <th
+                        scope="col"
+                        class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
+                      >
+                        ID
+                      </th>
+                      <th
+                        scope="col"
+                        class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
+                      >
+                        # Played
+                      </th>
+                      <th
+                        scope="col"
+                        class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
+                      >
+                        % of Decks
+                      </th>
+                      <th
+                        scope="col"
+                        class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
+                      >
+                        # Average
+                      </th>
+                    </tr>
                   </thead>
                   <tbody>
-                  <tr
-                    *ngFor="
+                    <tr
+                      *ngFor="
                         let card of filter(mostUsedCards, 'Option')
                           | slice: 0:50;
                         let i = index
                       "
-                    class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150"
-                  >
-                    <td
-                      class="max-w-[50px] whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
+                      class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150"
                     >
-                      {{ i + 1 }}.
-                    </td>
-                    <td
-                      class="max-w-[150px] overflow-hidden whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
-                    >
-                      {{ card.name }}
-                    </td>
-                    <td
-                      class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
-                    >
-                      {{ card.cardNumber }}
-                    </td>
-                    <td
-                      class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
-                    >
-                      {{ card.count }}x
-                    </td>
-                    <td
-                      class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
-                    >
-                      {{ percentInDecks(card) }}%
-                    </td>
-                    <td
-                      class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
-                    >
-                      {{ averagePlayed(card) }}x
-                    </td>
-                  </tr>
+                      <td
+                        class="max-w-[50px] whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
+                      >
+                        {{ i + 1 }}.
+                      </td>
+                      <td
+                        class="max-w-[150px] overflow-hidden whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
+                      >
+                        {{ card.name }}
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
+                      >
+                        {{ card.cardNumber }}
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
+                      >
+                        {{ card.count }}x
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
+                      >
+                        {{ percentInDecks(card) }}%
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
+                      >
+                        {{ averagePlayed(card) }}x
+                      </td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -402,8 +408,7 @@ export class DeckStatisticsComponent implements OnInit {
   allCards: ICard[] = [];
   communityDecks: IDeck[] = [];
 
-  constructor(private store: Store) {
-  }
+  constructor(private store: Store) {}
 
   ngOnInit(): void {
     this.store

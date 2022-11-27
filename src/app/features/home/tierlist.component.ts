@@ -1,11 +1,11 @@
-import { ChangeDetectionStrategy, Component } from "@angular/core";
-import { Router } from "@angular/router";
-import { Store } from "@ngrx/store";
-import { JAPTIERLIST, TIERLIST } from "../../../models";
-import { setCommunityDeckSearch } from "../../store/digimon.actions";
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { JAPTIERLIST, TIERLIST } from '../../../models';
+import { setCommunityDeckSearch } from '../../store/digimon.actions';
 
 @Component({
-  selector: "digimon-tierlist",
+  selector: 'digimon-tierlist',
   template: `
     <div class="mb-5 w-full p-1">
       <h1
@@ -14,7 +14,7 @@ import { setCommunityDeckSearch } from "../../store/digimon.actions";
         Digimon Deck Tierlist
         <span
           class="surface-card ml-auto inline-block whitespace-nowrap rounded border border-black py-1.5 px-2.5 text-center align-baseline font-bold leading-none text-[#e2e4e6]"
-        >{{ currentRegion }}</span
+          >{{ currentRegion }}</span
         >
         <button
           class="p-button-outlined p-button-rounded p-button-sm mx-2"
@@ -52,7 +52,7 @@ import { setCommunityDeckSearch } from "../../store/digimon.actions";
       </div>
     </div>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TierlistComponent {
   currentRegion = 'GLOBAL';
@@ -69,7 +69,7 @@ export class TierlistComponent {
 
   openCommunityWithSearch(card: string) {
     this.store.dispatch(setCommunityDeckSearch({ communityDeckSearch: card }));
-    this.router.navigateByUrl("/decks");
+    this.router.navigateByUrl('/decks');
   }
 
   switchRegion() {

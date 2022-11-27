@@ -1,6 +1,15 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from "@angular/core";
-import { ICard, IDeck } from "../../../../models";
-import { getCountFromDeckCards, mapToDeckCards } from "../../../functions/digimon-card.functions";
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
+import { ICard, IDeck } from '../../../../models';
+import {
+  getCountFromDeckCards,
+  mapToDeckCards,
+} from '../../../functions/digimon-card.functions';
 
 @Component({
   selector: 'digimon-ddto-spread',
@@ -87,10 +96,10 @@ export class DdtoSpreadComponent implements OnInit, OnChanges {
 
   getDDTO() {
     const cards = mapToDeckCards(this.deck.cards, this.allCards);
-    const digieggs = cards.filter((card) => card.cardType === "Digi-Egg");
-    const digimon = cards.filter((card) => card.cardType === "Digimon");
-    const tamer = cards.filter((card) => card.cardType === "Tamer");
-    const options = cards.filter((card) => card.cardType === "Option");
+    const digieggs = cards.filter((card) => card.cardType === 'Digi-Egg');
+    const digimon = cards.filter((card) => card.cardType === 'Digimon');
+    const tamer = cards.filter((card) => card.cardType === 'Tamer');
+    const options = cards.filter((card) => card.cardType === 'Option');
 
     this.ddto[0] = getCountFromDeckCards(digieggs);
     this.ddto[1] = getCountFromDeckCards(digimon);

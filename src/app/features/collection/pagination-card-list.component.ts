@@ -1,14 +1,18 @@
-import { Component, Input, OnDestroy, OnInit } from "@angular/core";
-import { FormControl } from "@angular/forms";
-import { Store } from "@ngrx/store";
-import { Subject, takeUntil } from "rxjs";
-import { englishCards } from "../../../assets/cardlists/eng/english";
-import { ICard, ICountCard } from "../../../models";
-import { changeCollectionMode } from "../../store/digimon.actions";
-import { selectCollection, selectCollectionMode, selectFilteredCards } from "../../store/digimon.selectors";
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { Subject, takeUntil } from 'rxjs';
+import { englishCards } from '../../../assets/cardlists/eng/english';
+import { ICard, ICountCard } from '../../../models';
+import { changeCollectionMode } from '../../store/digimon.actions';
+import {
+  selectCollection,
+  selectCollectionMode,
+  selectFilteredCards,
+} from '../../store/digimon.selectors';
 
 @Component({
-  selector: "digimon-pagination-card-list",
+  selector: 'digimon-pagination-card-list',
   template: `
     <div class="flex h-10 w-full flex-row">
       <p-paginator
@@ -24,7 +28,7 @@ import { selectCollection, selectCollectionMode, selectFilteredCards } from "../
 
       <div class="mx-2 mt-2 flex flex-row justify-center">
         <span class="text-xs font-bold leading-9 text-[#e2e4e6]"
-        >Collection Mode:</span
+          >Collection Mode:</span
         >
         <input
           type="checkbox"
@@ -86,7 +90,7 @@ import { selectCollection, selectCollectionMode, selectFilteredCards } from "../
       ></digimon-view-card-dialog>
     </p-dialog>
   `,
-  styleUrls: ["./pagination-card-list.component.scss"]
+  styleUrls: ['./pagination-card-list.component.scss'],
 })
 export class PaginationCardListComponent implements OnInit, OnDestroy {
   @Input() deckView: boolean;

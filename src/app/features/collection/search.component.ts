@@ -1,13 +1,13 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
-import { FormControl } from "@angular/forms";
-import { Store } from "@ngrx/store";
-import { Subject, takeUntil } from "rxjs";
-import { IFilter } from "../../../models";
-import { changeFilter } from "../../store/digimon.actions";
-import { selectFilter } from "../../store/digimon.selectors";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { Subject, takeUntil } from 'rxjs';
+import { IFilter } from '../../../models';
+import { changeFilter } from '../../store/digimon.actions';
+import { selectFilter } from '../../store/digimon.selectors';
 
 @Component({
-  selector: "digimon-search",
+  selector: 'digimon-search',
   template: `
     <div class="my-2 flex flex-col px-2">
       <span

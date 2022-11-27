@@ -1,19 +1,19 @@
-import { ChangeDetectionStrategy, Component, OnDestroy } from "@angular/core";
-import { DataSnapshot } from "@angular/fire/compat/database/interfaces";
+import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
+import { DataSnapshot } from '@angular/fire/compat/database/interfaces';
 
 // @ts-ignore
-import * as DecoupledEditor from "@ckeditor/ckeditor5-build-decoupled-document";
-import { filter, first, Subject, tap } from "rxjs";
-import { IBlog, IBlogWithText, ISave } from "../../../models";
-import { AuthService } from "../../service/auth.service";
-import { CardMarketService } from "../../service/card-market.service";
-import { CardTraderService } from "../../service/card-trader.service";
-import { DatabaseService } from "../../service/database.service";
-import { DigimonBackendService } from "../../service/digimon-backend.service";
-import { emptySettings } from "../../store/reducers/save.reducer";
+import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
+import { filter, first, Subject, tap } from 'rxjs';
+import { IBlog, IBlogWithText, ISave } from '../../../models';
+import { AuthService } from '../../service/auth.service';
+import { CardMarketService } from '../../service/card-market.service';
+import { CardTraderService } from '../../service/card-trader.service';
+import { DatabaseService } from '../../service/database.service';
+import { DigimonBackendService } from '../../service/digimon-backend.service';
+import { emptySettings } from '../../store/reducers/save.reducer';
 
 @Component({
-  selector: "digimon-test-page",
+  selector: 'digimon-test-page',
   template: `
     <button
       class="border-2 border-amber-200 bg-amber-400"
@@ -22,7 +22,7 @@ import { emptySettings } from "../../store/reducers/save.reducer";
       Realtime Database to MySQL
     </button>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TestPageComponent implements OnDestroy {
   private onDestroy$ = new Subject();

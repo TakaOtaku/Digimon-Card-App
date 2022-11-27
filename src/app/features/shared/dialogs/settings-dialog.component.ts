@@ -1,15 +1,24 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
-import { FormControl } from "@angular/forms";
-import { Store } from "@ngrx/store";
-import { saveAs } from "file-saver";
-import { ConfirmationService, MessageService } from "primeng/api";
-import { first, Subject, takeUntil } from "rxjs";
-import { ICard, ICountCard, ISave } from "../../../../models";
-import { GroupedSets } from "../../../../models/data/filter.data";
-import { DigimonBackendService } from "../../../service/digimon-backend.service";
-import { addToCollection, loadSave, setSave } from "../../../store/digimon.actions";
-import { selectAllCards, selectCollection, selectSave, selectSettings } from "../../../store/digimon.selectors";
-import { emptySettings } from "../../../store/reducers/save.reducer";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { saveAs } from 'file-saver';
+import { ConfirmationService, MessageService } from 'primeng/api';
+import { first, Subject, takeUntil } from 'rxjs';
+import { ICard, ICountCard, ISave } from '../../../../models';
+import { GroupedSets } from '../../../../models/data/filter.data';
+import { DigimonBackendService } from '../../../service/digimon-backend.service';
+import {
+  addToCollection,
+  loadSave,
+  setSave,
+} from '../../../store/digimon.actions';
+import {
+  selectAllCards,
+  selectCollection,
+  selectSave,
+  selectSettings,
+} from '../../../store/digimon.selectors';
+import { emptySettings } from '../../../store/reducers/save.reducer';
 
 @Component({
   selector: 'digimon-settings-dialog',

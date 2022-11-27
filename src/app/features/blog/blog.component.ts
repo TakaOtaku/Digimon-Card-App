@@ -1,18 +1,18 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
-import { Meta, Title } from "@angular/platform-browser";
-import { ActivatedRoute, Router } from "@angular/router";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
+import { ActivatedRoute, Router } from '@angular/router';
 
 // @ts-ignore
-import * as DecoupledEditor from "@ckeditor/ckeditor5-build-decoupled-document";
-import { MessageService } from "primeng/api";
-import { first, Subject, switchMap, takeUntil } from "rxjs";
-import { Base64Adapter } from "src/app/functions/base64-adapter";
-import { ADMINS, IBlog, IBlogWithText, IUser } from "../../../models";
-import { AuthService } from "../../service/auth.service";
-import { DigimonBackendService } from "../../service/digimon-backend.service";
+import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
+import { MessageService } from 'primeng/api';
+import { first, Subject, switchMap, takeUntil } from 'rxjs';
+import { Base64Adapter } from 'src/app/functions/base64-adapter';
+import { ADMINS, IBlog, IBlogWithText, IUser } from '../../../models';
+import { AuthService } from '../../service/auth.service';
+import { DigimonBackendService } from '../../service/digimon-backend.service';
 
 @Component({
-  selector: "digimon-blog",
+  selector: 'digimon-blog',
   template: `
     <div class="w-full bg-gradient-to-b from-[#17212f] to-[#08528d]">
       <div
@@ -45,7 +45,7 @@ import { DigimonBackendService } from "../../service/digimon-backend.service";
         </div>
         <div class="flex flex-row">
           <span class="mb-2 w-full text-center font-bold text-[#e2e4e6]"
-          >{{ author }} / {{ date | date: 'dd.MM.yyyy' }}</span
+            >{{ author }} / {{ date | date: 'dd.MM.yyyy' }}</span
           >
         </div>
 
@@ -237,7 +237,7 @@ export class BlogComponent implements OnInit, OnDestroy {
       approved: this.blog.approved,
       author: this.blog.author,
       authorId: this.blog.authorId,
-      category: this.category
+      category: this.category,
     } as IBlog;
 
     this.digimonBackendService
@@ -249,9 +249,9 @@ export class BlogComponent implements OnInit, OnDestroy {
       .pipe(first())
       .subscribe();
     this.messageService.add({
-      severity: "success",
-      summary: "Blog-Entry saved!",
-      detail: "The Blog-Entry was saved successfully!"
+      severity: 'success',
+      summary: 'Blog-Entry saved!',
+      detail: 'The Blog-Entry was saved successfully!',
     });
   }
 

@@ -1,12 +1,19 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from "@angular/core";
-import { Store } from "@ngrx/store";
-import { Subject, takeUntil } from "rxjs";
-import { ICard, IDeck } from "../../../../models";
-import { compareIDs } from "../../../functions/digimon-card.functions";
-import { selectAllCards } from "../../../store/digimon.selectors";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Subject, takeUntil } from 'rxjs';
+import { ICard, IDeck } from '../../../../models';
+import { compareIDs } from '../../../functions/digimon-card.functions';
+import { selectAllCards } from '../../../store/digimon.selectors';
 
 @Component({
-  selector: "digimon-proxy-print-dialog",
+  selector: 'digimon-proxy-print-dialog',
   template: `
     <div>
       <canvas

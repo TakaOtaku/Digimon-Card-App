@@ -1,13 +1,19 @@
-import { Component, Input, OnDestroy, OnInit } from "@angular/core";
-import { FormControl } from "@angular/forms";
-import { Store } from "@ngrx/store";
-import { Subject, takeUntil } from "rxjs";
-import { IFilter } from "../../../../models";
-import { changeCollectionMode, changeFilter } from "../../../store/digimon.actions";
-import { selectCollectionMode, selectFilter } from "../../../store/digimon.selectors";
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { Subject, takeUntil } from 'rxjs';
+import { IFilter } from '../../../../models';
+import {
+  changeCollectionMode,
+  changeFilter,
+} from '../../../store/digimon.actions';
+import {
+  selectCollectionMode,
+  selectFilter,
+} from '../../../store/digimon.selectors';
 
 @Component({
-  selector: "digimon-filter-and-search",
+  selector: 'digimon-filter-and-search',
   template: `
     <div class="surface-ground flex h-[70px] py-1">
       <div class="flex w-full flex-col justify-center">

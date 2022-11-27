@@ -1,16 +1,29 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from "@angular/core";
-import { FormControl, FormGroup } from "@angular/forms";
-import { Router } from "@angular/router";
-import { Store } from "@ngrx/store";
-import { ConfirmationService, MessageService } from "primeng/api";
-import { first } from "rxjs";
-import * as uuid from "uuid";
-import { ICard, IDeck, IDeckCard } from "../../../../models";
-import { mapToDeckCards } from "../../../functions/digimon-card.functions";
-import { AuthService } from "../../../service/auth.service";
-import { DigimonBackendService } from "../../../service/digimon-backend.service";
-import { deleteDeck, importDeck, saveDeck, setDeck } from "../../../store/digimon.actions";
-import { selectAllCards } from "../../../store/digimon.selectors";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { ConfirmationService, MessageService } from 'primeng/api';
+import { first } from 'rxjs';
+import * as uuid from 'uuid';
+import { ICard, IDeck, IDeckCard } from '../../../../models';
+import { mapToDeckCards } from '../../../functions/digimon-card.functions';
+import { AuthService } from '../../../service/auth.service';
+import { DigimonBackendService } from '../../../service/digimon-backend.service';
+import {
+  deleteDeck,
+  importDeck,
+  saveDeck,
+  setDeck,
+} from '../../../store/digimon.actions';
+import { selectAllCards } from '../../../store/digimon.selectors';
 
 export interface ICardImage {
   name: string;
@@ -18,7 +31,7 @@ export interface ICardImage {
 }
 
 @Component({
-  selector: "digimon-deck-dialog",
+  selector: 'digimon-deck-dialog',
   template: `
     <div class="flex h-full w-full flex-col">
       <div
@@ -212,9 +225,9 @@ export class DeckDialogComponent implements OnInit, OnChanges {
   @Output() closeDialog = new EventEmitter<boolean>();
 
   deckFormGroup = new FormGroup({
-    title: new FormControl(""),
-    description: new FormControl(""),
-    cardImage: new FormControl({ name: "BT1-001 - Yokomon", value: "BT1-001" })
+    title: new FormControl(''),
+    description: new FormControl(''),
+    cardImage: new FormControl({ name: 'BT1-001 - Yokomon', value: 'BT1-001' }),
   });
 
   saveDisabled = true;
@@ -236,8 +249,8 @@ export class DeckDialogComponent implements OnInit, OnChanges {
     private messageService: MessageService
   ) {
     this.isAdmin =
-      this.authService.userData?.uid === "S3rWXPtCYRN8vSrxY3qE6aeewy43" ||
-      this.authService.userData?.uid === "loBLZPOIL0ZlDzt6A1rgDiTomTw2";
+      this.authService.userData?.uid === 'S3rWXPtCYRN8vSrxY3qE6aeewy43' ||
+      this.authService.userData?.uid === 'loBLZPOIL0ZlDzt6A1rgDiTomTw2';
   }
 
   ngOnInit() {
@@ -250,7 +263,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (!changes["deck"].currentValue) {
+    if (!changes['deck'].currentValue) {
       return;
     }
 
@@ -259,7 +272,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
     this.deckFormGroup = new FormGroup({
       title: new FormControl(this.deck.title),
       description: new FormControl(this.deck.description),
-      cardImage: new FormControl(this.getCardImage(this.deck.imageCardId))
+      cardImage: new FormControl(this.getCardImage(this.deck.imageCardId)),
     });
 
     this.cardImageOptions = this.createImageOptions();
@@ -273,19 +286,19 @@ export class DeckDialogComponent implements OnInit, OnChanges {
         );
       } else {
         this.store.dispatch(setDeck({ deck: this.deck }));
-        this.router.navigateByUrl("deckbuilder");
+        this.router.navigateByUrl('deckbuilder');
       }
     } else {
       this.confirmationService.confirm({
-        message: "You are about to open this deck. Are you sure?",
+        message: 'You are about to open this deck. Are you sure?',
         accept: () => {
           this.store.dispatch(
             setDeck({
-              deck: { ...this.deck, id: uuid.v4() }
+              deck: { ...this.deck, id: uuid.v4() },
             })
           );
-          this.router.navigateByUrl("/deckbuilder/" + this.deck.id);
-        }
+          this.router.navigateByUrl('/deckbuilder/' + this.deck.id);
+        },
       });
     }
   }
@@ -293,54 +306,54 @@ export class DeckDialogComponent implements OnInit, OnChanges {
   deleteDeck() {
     if (this.editable) {
       this.confirmationService.confirm({
-        key: "Delete",
-        message: "You are about to permanently delete this deck. Are you sure?",
+        key: 'Delete',
+        message: 'You are about to permanently delete this deck. Are you sure?',
         accept: () => {
           this.store.dispatch(deleteDeck({ deck: this.deck }));
           this.messageService.add({
-            severity: "success",
-            summary: "Deck deleted!",
-            detail: "Deck was deleted successfully!"
+            severity: 'success',
+            summary: 'Deck deleted!',
+            detail: 'Deck was deleted successfully!',
           });
           this.closeDialog.emit(true);
-        }
+        },
       });
     } else {
       this.confirmationService.confirm({
-        key: "Delete",
-        message: "You are about to permanently delete this deck. Are you sure?",
+        key: 'Delete',
+        message: 'You are about to permanently delete this deck. Are you sure?',
         accept: () => {
           this.digimonBackendService
             .deleteDeck(this.deck.id)
             .pipe(first())
             .subscribe();
           this.messageService.add({
-            severity: "success",
-            summary: "Deck deleted!",
-            detail: "Deck was deleted successfully!"
+            severity: 'success',
+            summary: 'Deck deleted!',
+            detail: 'Deck was deleted successfully!',
           });
           this.closeDialog.emit(true);
-        }
+        },
       });
     }
   }
 
   copyDeck() {
     this.confirmationService.confirm({
-      message: "You are about to copy this deck. Are you sure?",
+      message: 'You are about to copy this deck. Are you sure?',
       accept: () => {
         this.store.dispatch(
           importDeck({
-            deck: { ...this.deck, id: uuid.v4() }
+            deck: { ...this.deck, id: uuid.v4() },
           })
         );
         this.messageService.add({
-          severity: "success",
-          summary: "Deck copied!",
-          detail: "Deck was copied successfully!"
+          severity: 'success',
+          summary: 'Deck copied!',
+          detail: 'Deck was copied successfully!',
         });
         this.closeDialog.emit(true);
-      }
+      },
     });
   }
 
@@ -352,46 +365,46 @@ export class DeckDialogComponent implements OnInit, OnChanges {
     return (
       this.mainDeck.map((card) => ({
         name: `${card.id} - ${card.name}`,
-        value: card.id
+        value: card.id,
       })) ?? []
     );
   }
 
   getLink() {
-    const selBox = document.createElement("textarea");
-    selBox.style.position = "fixed";
-    selBox.style.left = "0";
-    selBox.style.top = "0";
-    selBox.style.opacity = "0";
+    const selBox = document.createElement('textarea');
+    selBox.style.position = 'fixed';
+    selBox.style.left = '0';
+    selBox.style.top = '0';
+    selBox.style.opacity = '0';
     selBox.value = this.editable
       ? `https://digimoncard.app/deckbuilder/user/${this.authService.userData?.uid}/deck/${this.deck.id}`
       : `https://digimoncard.app/deckbuilder/${this.deck.id}`;
     document.body.appendChild(selBox);
     selBox.focus();
     selBox.select();
-    document.execCommand("copy");
+    document.execCommand('copy');
     document.body.removeChild(selBox);
 
     this.messageService.add({
-      severity: "success",
-      summary: "Deck-Link saved!",
-      detail: "The deck-link was saved to your clipboard!"
+      severity: 'success',
+      summary: 'Deck-Link saved!',
+      detail: 'The deck-link was saved to your clipboard!',
     });
   }
 
   saveDeck() {
     const deck: IDeck = {
       ...this.deck,
-      title: this.deckFormGroup.get("title")?.value,
-      description: this.deckFormGroup.get("description")?.value,
-      imageCardId: this.deckFormGroup.get("cardImage")?.value.value
+      title: this.deckFormGroup.get('title')?.value,
+      description: this.deckFormGroup.get('description')?.value,
+      imageCardId: this.deckFormGroup.get('cardImage')?.value.value,
     };
 
     this.store.dispatch(saveDeck({ deck }));
     this.messageService.add({
-      severity: "success",
-      summary: "Deck saved!",
-      detail: "The deck was saved successfully!"
+      severity: 'success',
+      summary: 'Deck saved!',
+      detail: 'The deck was saved successfully!',
     });
     this.closeDialog.emit(true);
   }
@@ -401,7 +414,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
     if (foundCard) {
       return {
         name: `${foundCard!.id} - ${foundCard!.name}`,
-        value: foundCard!.id
+        value: foundCard!.id,
       };
     } else {
       foundCard = this.allCards.find(
@@ -409,10 +422,10 @@ export class DeckDialogComponent implements OnInit, OnChanges {
       );
       return foundCard
         ? {
-          name: `${foundCard!.id} - ${foundCard!.name}`,
-          value: foundCard!.id
-        }
-        : { name: "BT1-001 - Yokomon", value: "BT1-001" };
+            name: `${foundCard!.id} - ${foundCard!.name}`,
+            value: foundCard!.id,
+          }
+        : { name: 'BT1-001 - Yokomon', value: 'BT1-001' };
     }
   }
 }

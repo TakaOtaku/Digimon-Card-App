@@ -7,15 +7,18 @@ import {
   OnDestroy,
   OnInit,
   Output,
-  SimpleChanges
-} from "@angular/core";
-import { Store } from "@ngrx/store";
-import { Subject, takeUntil } from "rxjs";
-import { englishCards } from "../../../../assets/cardlists/eng/english";
-import { ICard, IDeck } from "../../../../models";
-import { ColorMap } from "../../../../models/maps/color.map";
-import { formatId } from "../../../functions/digimon-card.functions";
-import { selectDeck, selectFilteredCards } from "../../../store/digimon.selectors";
+  SimpleChanges,
+} from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Subject, takeUntil } from 'rxjs';
+import { englishCards } from '../../../../assets/cardlists/eng/english';
+import { ICard, IDeck } from '../../../../models';
+import { ColorMap } from '../../../../models/maps/color.map';
+import { formatId } from '../../../functions/digimon-card.functions';
+import {
+  selectDeck,
+  selectFilteredCards,
+} from '../../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-view-card-dialog',

@@ -1,11 +1,24 @@
-import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from "@angular/core";
-import { Store } from "@ngrx/store";
-import { saveAs } from "file-saver";
-import { first, Subject } from "rxjs";
-import { ICard, IDeck } from "../../../../models";
-import { ColorsWithoutMulti } from "../../../../models/data/filter.data";
-import { compareIDs, formatId, mapToDeckCards } from "../../../functions/digimon-card.functions";
-import { selectAllCards } from "../../../store/digimon.selectors";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
+import { Store } from '@ngrx/store';
+import { saveAs } from 'file-saver';
+import { first, Subject } from 'rxjs';
+import { ICard, IDeck } from '../../../../models';
+import { ColorsWithoutMulti } from '../../../../models/data/filter.data';
+import {
+  compareIDs,
+  formatId,
+  mapToDeckCards,
+} from '../../../functions/digimon-card.functions';
+import { selectAllCards } from '../../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-export-deck-dialog',
@@ -104,7 +117,7 @@ import { selectAllCards } from "../../../store/digimon.selectors";
       </button>
     </div>
   `,
-  styleUrls: ["./export-deck-dialog.component.scss"]
+  styleUrls: ['./export-deck-dialog.component.scss'],
 })
 export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
   @Input() show: boolean = false;
@@ -123,8 +136,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
 
   private onDestroy$ = new Subject();
 
-  constructor(private store: Store) {
-  }
+  constructor(private store: Store) {}
 
   ngOnInit() {
     this.store
@@ -137,7 +149,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
 
   ngOnChanges(changes: SimpleChanges): void {
     this.setExportTypeText();
-    this.exportType = "TEXT";
+    this.exportType = 'TEXT';
   }
 
   ngOnDestroy(): void {

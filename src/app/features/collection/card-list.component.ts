@@ -1,12 +1,16 @@
-import { Component, Input, OnDestroy, OnInit } from "@angular/core";
-import { Store } from "@ngrx/store";
-import { Subject, takeUntil } from "rxjs";
-import { englishCards } from "../../../assets/cardlists/eng/english";
-import { ICard, ICountCard } from "../../../models";
-import { selectCollection, selectCollectionMode, selectFilteredCards } from "../../store/digimon.selectors";
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Subject, takeUntil } from 'rxjs';
+import { englishCards } from '../../../assets/cardlists/eng/english';
+import { ICard, ICountCard } from '../../../models';
+import {
+  selectCollection,
+  selectCollectionMode,
+  selectFilteredCards,
+} from '../../store/digimon.selectors';
 
 @Component({
-  selector: "digimon-card-list",
+  selector: 'digimon-card-list',
   template: `
     <div class="flex flex-wrap justify-center overflow-hidden">
       <h1

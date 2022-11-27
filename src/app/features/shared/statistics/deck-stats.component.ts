@@ -1,12 +1,15 @@
-import { Component, Input, OnDestroy } from "@angular/core";
-import { Store } from "@ngrx/store";
-import { filter, Subject, takeUntil } from "rxjs";
-import { ICard, IDeck, IDeckCard } from "../../../../models";
-import { mapToDeckCards } from "../../../functions/digimon-card.functions";
-import { selectAllCards, selectDeckBuilderViewModel } from "../../../store/digimon.selectors";
+import { Component, Input, OnDestroy } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { filter, Subject, takeUntil } from 'rxjs';
+import { ICard, IDeck, IDeckCard } from '../../../../models';
+import { mapToDeckCards } from '../../../functions/digimon-card.functions';
+import {
+  selectAllCards,
+  selectDeckBuilderViewModel,
+} from '../../../store/digimon.selectors';
 
 @Component({
-  selector: "digimon-deck-stats",
+  selector: 'digimon-deck-stats',
   template: `
     <!-- Deck Stats -->
     <div

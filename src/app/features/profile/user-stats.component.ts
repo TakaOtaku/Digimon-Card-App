@@ -1,8 +1,8 @@
-import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
-import { ISave } from "../../../models";
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ISave } from '../../../models';
 
 @Component({
-  selector: "digimon-user-stats",
+  selector: 'digimon-user-stats',
   template: `
     <div
       class="surface-card flex w-full flex-col border border-slate-200 p-4 text-[#e2e4e6] md:flex-row"
@@ -61,7 +61,7 @@ import { ISave } from "../../../models";
       </button-->
     </div>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserStatsComponent {
   @Input() save: ISave | null;

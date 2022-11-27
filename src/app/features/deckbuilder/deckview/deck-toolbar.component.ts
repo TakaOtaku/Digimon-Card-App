@@ -1,15 +1,21 @@
-import { Component, EventEmitter, Input, OnDestroy, Output } from "@angular/core";
-import { Store } from "@ngrx/store";
-import { ConfirmationService, MessageService } from "primeng/api";
-import { Subject, takeUntil } from "rxjs";
-import * as uuid from "uuid";
-import { ICard, IDeck, IDeckCard } from "../../../../models";
-import { setDeck } from "../../../store/digimon.actions";
-import { selectAllCards } from "../../../store/digimon.selectors";
-import { emptyDeck } from "../../../store/reducers/digimon.reducers";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  Output,
+} from '@angular/core';
+import { Store } from '@ngrx/store';
+import { ConfirmationService, MessageService } from 'primeng/api';
+import { Subject, takeUntil } from 'rxjs';
+import * as uuid from 'uuid';
+import { ICard, IDeck, IDeckCard } from '../../../../models';
+import { setDeck } from '../../../store/digimon.actions';
+import { selectAllCards } from '../../../store/digimon.selectors';
+import { emptyDeck } from '../../../store/reducers/digimon.reducers';
 
 @Component({
-  selector: "digimon-deck-toolbar",
+  selector: 'digimon-deck-toolbar',
   template: `
     <div
       class="toolbar ml-3 mr-3 grid w-[100%-3rem] grid-cols-6 justify-evenly border-b-2 border-slate-600 md:grid-cols-12"

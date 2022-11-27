@@ -1,10 +1,20 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from "@angular/core";
-import { Store } from "@ngrx/store";
-import { Subject, takeUntil } from "rxjs";
-import { englishCards } from "../../../assets/cardlists/eng/english";
-import { ICard } from "../../../models";
-import { addCardToDeck, changeCardCount } from "../../store/digimon.actions";
-import { selectCollectionMinimum, selectDeck } from "../../store/digimon.selectors";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Subject, takeUntil } from 'rxjs';
+import { englishCards } from '../../../assets/cardlists/eng/english';
+import { ICard } from '../../../models';
+import { addCardToDeck, changeCardCount } from '../../store/digimon.actions';
+import {
+  selectCollectionMinimum,
+  selectDeck,
+} from '../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-full-card',
@@ -93,7 +103,7 @@ import { selectCollectionMinimum, selectDeck } from "../../store/digimon.selecto
       ></digimon-view-card-dialog>
     </p-dialog>
   `,
-  styleUrls: ["./full-card.component.scss"]
+  styleUrls: ['./full-card.component.scss'],
 })
 export class FullCardComponent implements OnInit, OnDestroy {
   @Input() card: ICard = englishCards[0];

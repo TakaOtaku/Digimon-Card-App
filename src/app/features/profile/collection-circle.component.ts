@@ -1,11 +1,22 @@
-import { ChangeDetectionStrategy, Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from "@angular/core";
-import { Store } from "@ngrx/store";
-import { combineLatest, first, Subject } from "rxjs";
-import { ICard, ICountCard } from "../../../models";
-import { selectAllCards, selectCollectionMinimum } from "../../store/digimon.selectors";
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
+import { Store } from '@ngrx/store';
+import { combineLatest, first, Subject } from 'rxjs';
+import { ICard, ICountCard } from '../../../models';
+import {
+  selectAllCards,
+  selectCollectionMinimum,
+} from '../../store/digimon.selectors';
 
 @Component({
-  selector: "digimon-collection-circle",
+  selector: 'digimon-collection-circle',
   template: `
     <p-chart
       type="doughnut"
@@ -15,7 +26,7 @@ import { selectAllCards, selectCollectionMinimum } from "../../store/digimon.sel
       [options]="chartOptions"
     ></p-chart>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CollectionCircleComponent implements OnInit, OnChanges, OnDestroy {
   @Input() type: 'BT' | 'EX' | 'ST' | 'P';
@@ -37,10 +48,10 @@ export class CollectionCircleComponent implements OnInit, OnChanges, OnDestroy {
         legend: {
           display: false,
           labels: {
-            color: "#ebedef"
-          }
-        }
-      }
+            color: '#ebedef',
+          },
+        },
+      },
     };
 
     this.updateCircle();
