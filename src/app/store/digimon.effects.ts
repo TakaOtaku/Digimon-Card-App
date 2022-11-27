@@ -1,15 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
-import {
-  catchError,
-  EMPTY,
-  first,
-  map,
-  Subscription,
-  switchMap,
-  tap,
-} from 'rxjs';
+import { catchError, EMPTY, first, map, switchMap, tap } from 'rxjs';
 import { CARDSET } from '../../models/enums/card-set.enum';
 import { setupDigimonCards } from '../functions/digimon-card.functions';
 import { filterCards } from '../functions/filter.functions';
@@ -48,11 +40,10 @@ export class DigimonEffects {
             .pipe(
               map((save) => {
                 if (this.authService.isLoggedIn) {
-                  const sub: Subscription = this.digimonBackendService
+                  this.digimonBackendService
                     .updateSave(save)
-                    .subscribe((value) => {
-                      sub.unsubscribe();
-                    });
+                    .pipe(first())
+                    .subscribe(() => {});
                 } else {
                   localStorage.setItem(
                     'Digimon-Card-Collector',

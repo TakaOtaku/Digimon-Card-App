@@ -1,13 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable, Subscription } from 'rxjs';
+import { first, map, Observable } from 'rxjs';
 import { IColor, ICountCard, IDeck, ISave, ISettings, IUser } from 'src/models';
-import { CARDSET } from '../../models/enums/card-set.enum';
-import {
-  IBlog,
-  IBlogWithText,
-} from '../../models/interfaces/blog-entry.interface';
-import { ITag } from '../../models/interfaces/tag.interface';
+import { CARDSET, IBlog, IBlogWithText, ITag } from '../../models';
+import { IEvent } from '../features/home/event-calendar.component';
 import { emptySettings } from '../store/reducers/save.reducer';
 
 const baseUrl = 'https://backend.digimoncard.app/api/';
@@ -58,6 +54,10 @@ export class DigimonBackendService {
         });
       })
     );
+  }
+
+  getEvents(): Observable<IEvent[]> {
+    return this.http.get<any>(`${baseUrl}events`);
   }
 
   getBlogEntriesWithText(url: string = baseUrl): Observable<IBlogWithText[]> {
@@ -124,13 +124,17 @@ export class DigimonBackendService {
     return this.http.post(baseUrl + 'blogs-with-text', data);
   }
 
+  createEvent(data: IEvent): Observable<any> {
+    return this.http.post(baseUrl + 'events', data);
+  }
+
   updateDeck(deck: IDeck, user: IUser | null = null): Observable<any> {
     let newDeck: any;
     if (user) {
       newDeck = {
         ...deck,
-        user: user?.displayName ?? 'Unknown',
-        userId: user?.uid ?? 'Unknown',
+        user: user.displayName ?? 'Unknown',
+        userId: user.uid ?? 'Unknown',
         date: new Date(),
       };
     } else {
@@ -156,6 +160,10 @@ export class DigimonBackendService {
     return this.http.put(`${baseUrl}blogs-with-text/${blog.uid}`, blog);
   }
 
+  updateEvent(event: IEvent): Observable<any> {
+    return this.http.put(`${baseUrl}events/${event.uid}`, event);
+  }
+
   deleteDeck(id: any): Observable<any> {
     return this.http.delete(`${baseUrl}decks/${id}`);
   }
@@ -166,6 +174,10 @@ export class DigimonBackendService {
 
   deleteBlogEntryWithText(id: any): Observable<any> {
     return this.http.delete(`${baseUrl}blogs-with-text/${id}`);
+  }
+
+  deleteEvent(id: string): Observable<any> {
+    return this.http.delete(`${baseUrl}events/${id}`);
   }
 
   checkSaveValidity(save: any, user?: any): ISave {
@@ -255,9 +267,7 @@ export class DigimonBackendService {
     }
 
     if (changedSave && user?.uid) {
-      const sub: Subscription = this.updateSave(save).subscribe((value) =>
-        sub.unsubscribe()
-      );
+      this.updateSave(save).pipe(first()).subscribe();
     }
     return save;
   }

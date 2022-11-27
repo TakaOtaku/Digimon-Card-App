@@ -29,8 +29,6 @@ export const TAGS = [
   'ST12',
   'ST13',
   'ST14',
-  'Tournament',
-  'Casual',
 ];
 
 export const tagsList: ITag[] = [

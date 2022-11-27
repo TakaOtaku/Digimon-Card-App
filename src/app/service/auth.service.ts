@@ -5,7 +5,7 @@ import { Store } from '@ngrx/store';
 import { GoogleAuthProvider } from 'firebase/auth';
 import firebase from 'firebase/compat';
 import { MessageService } from 'primeng/api';
-import { first, Subject, Subscription } from 'rxjs';
+import { first, Subject } from 'rxjs';
 import { IUser } from '../../models';
 import { loadSave, setSave } from '../store/digimon.actions';
 import { emptySettings } from '../store/reducers/save.reducer';
@@ -152,9 +152,10 @@ export class AuthService {
 
         this.userData = userData;
 
-        const sub: Subscription = this.digimonBackendService
+        this.digimonBackendService
           .updateSave(this.userData.save)
-          .subscribe((value) => sub.unsubscribe());
+          .pipe(first())
+          .subscribe();
 
         this.authChange.next(true);
       });

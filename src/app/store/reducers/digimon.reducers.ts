@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import * as uuid from 'uuid';
-import { IDigimonState } from '../../../models';
+import { IDeck, IDigimonState } from '../../../models';
 import {
   addCardToDeck,
   changeFilter,
@@ -12,10 +12,18 @@ import {
   setMobileCollectionView,
 } from '../digimon.actions';
 
-export const emptyDeck = {
+export const emptyDeck: IDeck = {
   id: uuid.v4(),
-  cards: [],
+  title: '',
+  description: '',
+  date: new Date().toString(),
   color: { name: 'White', img: 'assets/decks/white.svg' },
+  cards: [],
+  tags: [],
+  user: '',
+  userId: '',
+  imageCardId: 'BT1-001',
+  likes: [],
 };
 
 export const emptyFilter = {

@@ -4,7 +4,6 @@ import { MessageService } from 'primeng/api';
 import { first } from 'rxjs';
 import { ISave } from '../models';
 import { AuthService } from './service/auth.service';
-import { DatabaseService } from './service/database.service';
 import { DigimonBackendService } from './service/digimon-backend.service';
 import {
   loadSave,
@@ -71,7 +70,6 @@ export class AppComponent {
   constructor(
     private store: Store,
     private authService: AuthService,
-    private databaseService: DatabaseService,
     private messageService: MessageService,
     private digimonBackendService: DigimonBackendService
   ) {
@@ -172,20 +170,20 @@ export class AppComponent {
   }
 
   getDecks() {
-    const sub = this.digimonBackendService
+    this.digimonBackendService
       .getDecks()
+      .pipe(first())
       .subscribe((communityDecks) => {
         this.store.dispatch(setCommunityDecks({ communityDecks }));
-        sub.unsubscribe();
       });
   }
 
   getBlogs() {
-    const sub = this.digimonBackendService
+    this.digimonBackendService
       .getBlogEntries()
+      .pipe(first())
       .subscribe((blogs) => {
         this.store.dispatch(setBlogs({ blogs }));
-        sub.unsubscribe();
       });
   }
 }

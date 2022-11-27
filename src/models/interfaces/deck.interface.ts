@@ -6,10 +6,12 @@ export interface IDeck {
   id: string;
   cards: ICountCard[];
   color: IColor;
-  title?: string;
-  description?: string;
-  tags?: ITag[];
-  date?: string;
-  user?: string;
-  userId?: string;
+  title: string;
+  description: string;
+  tags: ITag[];
+  date: string;
+  user: string;
+  userId: string;
+  imageCardId: string;
+  likes: string[];
 }

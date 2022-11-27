@@ -121,15 +121,27 @@ body {
   background: #ffffff;
 }
 
+.raise:hover,
+.raise:focus {
+  box-shadow: .2em .5em .5em 0 gray;
+  transform: translateY(-0.25em);
+}
+
+.raise-xs:hover,
+.raise-xs:focus {
+  box-shadow: .1em .25em .25em 0 gray;
+  transform: translateY(-0.12em);
+}
+
 .Multi {
   background: linear-gradient(
-    90deg,
-    #ef1919 14%,
-    #19a0e3 28%,
-    #ffd619 42%,
-    #19b383 56%,
-    #191919 70%,
-    #8d6fdb 84%,
+      90deg,
+      #ef1919 14%,
+      #19a0e3 28%,
+      #ffd619 42%,
+      #19b383 56%,
+      #191919 70%,
+      #8d6fdb 84%,
     #ffffff 100%
   );
 }
