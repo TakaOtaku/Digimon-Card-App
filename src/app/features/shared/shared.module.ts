@@ -16,6 +16,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { MultiSelectModule } from 'primeng/multiselect';
+import { RippleModule } from 'primeng/ripple';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { StyleClassModule } from 'primeng/styleclass';
 import { DigimonStoreModule } from '../../digimon-store.module';
@@ -125,6 +126,7 @@ import { LevelSpreadComponent } from './statistics/level-spread.component';
     ReactiveFormsModule,
     ChartModule,
     StyleClassModule,
+    RippleModule,
   ],
   providers: [AuthService, MessageService, ConfirmationService],
 })

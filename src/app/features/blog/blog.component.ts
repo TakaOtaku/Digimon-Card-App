@@ -5,7 +5,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 // @ts-ignore
 import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 import { MessageService } from 'primeng/api';
-import { first, Subject, switchMap, takeUntil } from 'rxjs';
+import { first, Subject, switchMap, takeUntil, withLatestFrom } from 'rxjs';
+import { merge } from 'rxjs/operators';
 import { Base64Adapter } from 'src/app/functions/base64-adapter';
 import { ADMINS, IBlog, IBlogWithText, IUser } from '../../../models';
 import { AuthService } from '../../service/auth.service';
@@ -242,17 +243,18 @@ export class BlogComponent implements OnInit, OnDestroy {
 
     this.digimonBackendService
       .updateBlogWithText(newBlog)
-      .pipe(first())
-      .subscribe();
-    this.digimonBackendService
-      .updateBlog(newBlogWithoutText)
-      .pipe(first())
-      .subscribe();
-    this.messageService.add({
-      severity: 'success',
-      summary: 'Blog-Entry saved!',
-      detail: 'The Blog-Entry was saved successfully!',
-    });
+      .pipe(
+        withLatestFrom(
+          this.digimonBackendService.updateBlog(newBlogWithoutText)
+        )
+      )
+      .subscribe((value) => {
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Blog-Entry saved!',
+          detail: 'The Blog-Entry was saved successfully!',
+        });
+      });
   }
 
   onReady(editor: any) {
