@@ -1,27 +1,24 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { map, Observable, Subscription } from 'rxjs';
-import { IColor, ICountCard, IDeck, ISave, ISettings, IUser } from 'src/models';
-import { CARDSET } from '../../models/enums/card-set.enum';
-import {
-  IBlog,
-  IBlogWithText,
-} from '../../models/interfaces/blog-entry.interface';
-import { ITag } from '../../models/interfaces/tag.interface';
-import { emptySettings } from '../store/reducers/save.reducer';
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { first, map, Observable } from "rxjs";
+import { IColor, ICountCard, IDeck, ISave, ISettings, IUser } from "src/models";
+import { CARDSET, IBlog, IBlogWithText, ITag } from "../../models";
+import { IEvent } from "../features/home/event-calendar.component";
+import { emptySettings } from "../store/reducers/save.reducer";
 
-const baseUrl = 'https://backend.digimoncard.app/api/';
-const baseUrl_inactiv = 'http://localhost:8080/api/';
-const baseUrl_inactiv2 = 'https://179.61.219.98:8090/preview/digimoncard.app/';
+const baseUrl = "https://backend.digimoncard.app/api/";
+const baseUrl_inactiv = "http://localhost:8080/api/";
+const baseUrl_inactiv2 = "https://179.61.219.98:8090/preview/digimoncard.app/";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root"
 })
 export class DigimonBackendService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   getDecks(url: string = baseUrl): Observable<IDeck[]> {
-    return this.http.get<any[]>(url + 'decks').pipe(
+    return this.http.get<any[]>(url + "decks").pipe(
       map((decks) => {
         return decks.map((deck) => {
           const cards: ICountCard = JSON.parse(deck.cards);
@@ -53,15 +50,19 @@ export class DigimonBackendService {
             ...save,
             collection,
             decks,
-            settings,
+            settings
           } as ISave;
         });
       })
     );
   }
 
+  getEvents(): Observable<IEvent[]> {
+    return this.http.get<any>(`${baseUrl}events`);
+  }
+
   getBlogEntriesWithText(url: string = baseUrl): Observable<IBlogWithText[]> {
-    return this.http.get<IBlogWithText[]>(url + 'blogs-with-text');
+    return this.http.get<IBlogWithText[]>(url + "blogs-with-text");
   }
 
   getDeck(id: any): Observable<IDeck> {
@@ -117,11 +118,15 @@ export class DigimonBackendService {
   }
 
   createBlog(data: IBlog): Observable<any> {
-    return this.http.post(baseUrl + 'blogs', data);
+    return this.http.post(baseUrl + "blogs", data);
   }
 
   createBlogWithText(data: IBlogWithText): Observable<any> {
-    return this.http.post(baseUrl + 'blogs-with-text', data);
+    return this.http.post(baseUrl + "blogs-with-text", data);
+  }
+
+  createEvent(data: IEvent): Observable<any> {
+    return this.http.post(baseUrl + "events", data);
   }
 
   updateDeck(deck: IDeck, user: IUser | null = null): Observable<any> {
@@ -129,9 +134,9 @@ export class DigimonBackendService {
     if (user) {
       newDeck = {
         ...deck,
-        user: user?.displayName ?? 'Unknown',
-        userId: user?.uid ?? 'Unknown',
-        date: new Date(),
+        user: user.displayName ?? "Unknown",
+        userId: user.uid ?? "Unknown",
+        date: new Date()
       };
     } else {
       newDeck = deck;
@@ -156,6 +161,10 @@ export class DigimonBackendService {
     return this.http.put(`${baseUrl}blogs-with-text/${blog.uid}`, blog);
   }
 
+  updateEvent(event: IEvent): Observable<any> {
+    return this.http.put(`${baseUrl}events/${event.uid}`, event);
+  }
+
   deleteDeck(id: any): Observable<any> {
     return this.http.delete(`${baseUrl}decks/${id}`);
   }
@@ -166,6 +175,10 @@ export class DigimonBackendService {
 
   deleteBlogEntryWithText(id: any): Observable<any> {
     return this.http.delete(`${baseUrl}blogs-with-text/${id}`);
+  }
+
+  deleteEvent(id: string): Observable<any> {
+    return this.http.delete(`${baseUrl}events/${id}`);
   }
 
   checkSaveValidity(save: any, user?: any): ISave {
@@ -255,9 +268,7 @@ export class DigimonBackendService {
     }
 
     if (changedSave && user?.uid) {
-      const sub: Subscription = this.updateSave(save).subscribe((value) =>
-        sub.unsubscribe()
-      );
+      this.updateSave(save).pipe(first()).subscribe();
     }
     return save;
   }

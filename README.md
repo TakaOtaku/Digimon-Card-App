@@ -10,7 +10,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/TakaOtaku/Digimon-Card-App">
-    <img src="src/assets/images/img_logo.png" alt="Logo" height="80">
+    <img src="src/assets/images/logo.png" alt="Logo" height="80">
   </a>
 
 <h3 align="center">Digimon Card App</h3>
@@ -108,16 +108,6 @@ To get a local copy up and running follow these simple example steps.
 4. See the site served on https://localhost:4200
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-!!In Work!!
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 
 <!-- CONTRIBUTING -->
 ## Contributing

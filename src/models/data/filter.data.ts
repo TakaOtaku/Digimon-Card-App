@@ -1,4 +1,4 @@
-import { MultiButtons } from '../../app/components/molecules/multi-buttons.component';
+import { MultiButtons } from "../../app/features/shared/multi-buttons.component";
 
 export const GroupedSets = [
   {

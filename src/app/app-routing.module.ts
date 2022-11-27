@@ -1,51 +1,61 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { BlogComponent } from './pages/blog.component';
-import { CollectionPageComponent } from './pages/collection-page.component';
-import { CommunityComponent } from './pages/community.component';
-import { DeckbuilderComponent } from './pages/deckbuilder.component';
-import { HomeComponent } from './pages/home.component';
-import { TestPageComponent } from './pages/test-page.component';
-import { UserComponent } from './pages/user.component';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { BlogComponent } from "./features/blog/blog.component";
+import { CollectionPageComponent } from "./features/collection/collection-page.component";
+import { CommunityComponent } from "./features/community/community.component";
+import { DeckbuilderPageComponent } from "./features/deckbuilder/deckbuilder-page.component";
+import { DecksPageComponent } from "./features/decks/decks-page.component";
+import { HomePageComponent } from "./features/home/home-page.component";
+import { ProductsComponent } from "./features/products/products.component.ts";
+import { ProfilePageComponent } from "./features/profile/profile-page.component";
+import { TestPageComponent } from "./features/test/test-page.component";
 
 const routes: Routes = [
   {
-    path: 'test',
-    component: TestPageComponent,
+    path: "test",
+    component: TestPageComponent
   },
   {
-    path: 'community',
-    component: CommunityComponent,
+    path: "community",
+    component: CommunityComponent
   },
   {
-    path: 'user',
-    component: UserComponent,
+    path: "decks",
+    component: DecksPageComponent
   },
   {
-    path: 'user/:id',
-    component: UserComponent,
+    path: "products",
+    component: ProductsComponent
   },
   {
-    path: 'deckbuilder/user/:userId/deck/:deckId',
-    component: DeckbuilderComponent,
+    path: "user",
+    component: ProfilePageComponent
   },
   {
-    path: 'deckbuilder/:id',
-    component: DeckbuilderComponent,
+    path: "user/:id",
+    component: ProfilePageComponent
   },
   {
-    path: 'deckbuilder',
-    component: DeckbuilderComponent,
+    path: "deckbuilder/user/:userId/deck/:deckId",
+    component: DeckbuilderPageComponent
   },
   {
-    path: 'collection',
-    component: CollectionPageComponent,
+    path: "deckbuilder/:id",
+    component: DeckbuilderPageComponent
   },
   {
-    path: 'blog/:id',
-    component: BlogComponent,
+    path: "deckbuilder",
+    component: DeckbuilderPageComponent
   },
-  { path: '**', component: HomeComponent },
+  {
+    path: "collection",
+    component: CollectionPageComponent
+  },
+  {
+    path: "blog/:id",
+    component: BlogComponent
+  },
+  { path: "**", component: HomePageComponent }
 ];
 
 @NgModule({

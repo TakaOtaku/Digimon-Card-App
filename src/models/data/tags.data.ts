@@ -1,4 +1,4 @@
-import { ITag } from '../interfaces';
+import { ITag } from "../interfaces";
 
 export const TAGS = [
   'BT1',
@@ -29,8 +29,6 @@ export const TAGS = [
   'ST12',
   'ST13',
   'ST14',
-  'Tournament',
-  'Casual',
 ];
 
 export const tagsList: ITag[] = [
