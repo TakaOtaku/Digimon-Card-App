@@ -5,10 +5,7 @@ import { getCountFromDeckCards, mapToDeckCards } from "../../../functions/digimo
 @Component({
   selector: 'digimon-ddto-spread',
   template: `
-    <div
-      *ngIf="!container"
-      class="no-gap grid h-full w-full grid-cols-4"
-    >
+    <div *ngIf="!container" class="no-gap grid h-full w-full grid-cols-4">
       <div
         class="h-full w-full text-center"
         [ngStyle]="{
@@ -70,7 +67,8 @@ import { getCountFromDeckCards, mapToDeckCards } from "../../../functions/digimo
         [value]="ddto[3]"
         class="w-12"
       ></digimon-single-container>
-    </div> `,
+    </div>
+  `,
 })
 export class DdtoSpreadComponent implements OnInit, OnChanges {
   @Input() deck: IDeck;

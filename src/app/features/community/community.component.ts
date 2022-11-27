@@ -171,8 +171,8 @@ import { selectBlogs } from "../../store/digimon.selectors";
                       type="button"
                       (click)="delete(blog, $event)"
                     ></button>
-                    </td>
-                  </tr>
+                  </td>
+                </tr>
                 </tbody>
               </table>
             </div>

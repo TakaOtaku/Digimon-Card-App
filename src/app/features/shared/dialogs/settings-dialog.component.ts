@@ -22,7 +22,7 @@ import { emptySettings } from "../../../store/reducers/save.reducer";
       <li class="nav-item" role="presentation">
         <a
           href="#tabs-home"
-          class="active nav-link my-2 block border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 text-xs font-medium uppercase leading-tight hover:border-transparent hover:bg-gray-100 focus:border-transparent"
+          class="nav-link active my-2 block border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 text-xs font-medium uppercase leading-tight hover:border-transparent hover:bg-gray-100 focus:border-transparent"
           id="tabs-home-tab"
           data-bs-toggle="pill"
           data-bs-target="#tabs-home"
@@ -382,7 +382,8 @@ import { emptySettings } from "../../../store/reducers/save.reducer";
           ></button>
         </div>
       </div>
-    </div> `,
+    </div>
+  `,
 })
 export class SettingsDialogComponent implements OnInit, OnDestroy {
   save = '';

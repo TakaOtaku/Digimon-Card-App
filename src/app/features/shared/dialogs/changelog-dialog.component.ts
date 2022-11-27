@@ -38,7 +38,8 @@ import DataSnapshot = firebase.database.DataSnapshot;
       type="button"
       label="Save"
       (click)="save()"
-    ></button> `,
+    ></button>
+  `,
 })
 export class ChangelogDialogComponent implements OnInit {
   @Input() loadChangelog: EventEmitter<boolean>;

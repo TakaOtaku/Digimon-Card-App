@@ -117,7 +117,8 @@ import { getCountFromDeckCards, mapToDeckCards } from "../../../functions/digimo
         class="w-10"
         [value]="colorSpread[6]"
       ></digimon-single-container>
-    </div> `,
+    </div>
+  `,
 })
 export class ColorSpreadComponent implements OnInit, OnChanges {
   @Input() deck: IDeck;

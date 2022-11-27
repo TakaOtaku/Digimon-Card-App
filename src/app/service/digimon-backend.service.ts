@@ -28,7 +28,7 @@ export class DigimonBackendService {
             ...deck,
             cards,
             color,
-            tags,
+            tags
           } as IDeck;
         });
       })

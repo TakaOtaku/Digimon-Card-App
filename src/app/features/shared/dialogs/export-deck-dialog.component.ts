@@ -102,8 +102,9 @@ import { selectAllCards } from "../../../store/digimon.selectors";
       >
         Download Image
       </button>
-    </div> `,
-  styleUrls: ['./export-deck-dialog.component.scss'],
+    </div>
+  `,
+  styleUrls: ["./export-deck-dialog.component.scss"]
 })
 export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
   @Input() show: boolean = false;
