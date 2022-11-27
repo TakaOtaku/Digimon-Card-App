@@ -5,8 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 // @ts-ignore
 import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 import { MessageService } from 'primeng/api';
-import { first, Subject, switchMap, takeUntil, withLatestFrom } from 'rxjs';
-import { merge } from 'rxjs/operators';
+import { Subject, switchMap, takeUntil, withLatestFrom } from 'rxjs';
 import { Base64Adapter } from 'src/app/functions/base64-adapter';
 import { ADMINS, IBlog, IBlogWithText, IUser } from '../../../models';
 import { AuthService } from '../../service/auth.service';
