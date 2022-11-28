@@ -1,4 +1,10 @@
-import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  HostListener,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
@@ -69,6 +75,7 @@ import { selectMobileCollectionView } from '../../store/digimon.selectors';
       <digimon-card-list [showCount]="32"></digimon-card-list>
     </div>
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DeckbuilderPageComponent implements OnInit, OnDestroy {
   //region Accordions

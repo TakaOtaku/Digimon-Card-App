@@ -1,4 +1,5 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   EventEmitter,
   Input,
@@ -172,6 +173,7 @@ import { emptyDeck } from '../../../store/reducers/digimon.reducers';
       ><digimon-import-deck-dialog></digimon-import-deck-dialog
     ></p-dialog>
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DeckToolbarComponent implements OnDestroy {
   @Input() deck: IDeck;

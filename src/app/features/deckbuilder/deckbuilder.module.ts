@@ -17,9 +17,9 @@ import { DigimonBackendService } from '../../service/digimon-backend.service';
 import { CollectionModule } from '../collection/collection.module';
 import { SharedModule } from '../shared/shared.module';
 import { DeckbuilderPageComponent } from './deckbuilder-page.component';
-import { DeckMetadataComponent } from './deckview/deck-metadata.component';
-import { DeckToolbarComponent } from './deckview/deck-toolbar.component';
-import { DeckViewComponent } from './deckview/deck-view.component';
+import { DeckMetadataComponent } from './components/deck-metadata.component';
+import { DeckToolbarComponent } from './components/deck-toolbar.component';
+import { DeckViewComponent } from './components/deck-view.component';
 
 @NgModule({
   declarations: [

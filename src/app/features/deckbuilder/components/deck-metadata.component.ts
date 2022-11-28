@@ -1,4 +1,5 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   EventEmitter,
   Input,
@@ -55,6 +56,7 @@ import { ObscenityPipe } from '../../../pipes/obscenity.pipe';
       </div>
     </div>
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DeckMetadataComponent implements OnChanges {
   @Input() title = '';
