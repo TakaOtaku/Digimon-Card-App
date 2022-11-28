@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BlogPageComponent } from './features/blog/blog-page.component';
 import { CollectionPageComponent } from './features/collection/collection-page.component';
-import { CommunityComponent } from './features/community/community.component';
+import { CommunityPageComponent } from './features/community/community-page.component';
 import { DeckbuilderPageComponent } from './features/deckbuilder/deckbuilder-page.component';
 import { DecksPageComponent } from './features/decks/decks-page.component';
 import { HomePageComponent } from './features/home/home-page.component';
@@ -17,7 +17,7 @@ const routes: Routes = [
   },
   {
     path: 'community',
-    component: CommunityComponent,
+    component: CommunityPageComponent,
   },
   {
     path: 'decks',

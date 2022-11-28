@@ -9,10 +9,10 @@ import { RippleModule } from 'primeng/ripple';
 import { DigimonStoreModule } from '../../digimon-store.module';
 import { AuthService } from '../../service/auth.service';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
-import { CommunityComponent } from './community.component';
+import { CommunityPageComponent } from './community-page.component';
 
 @NgModule({
-  declarations: [CommunityComponent],
+  declarations: [CommunityPageComponent],
   imports: [
     CommonModule,
     DigimonStoreModule,
