@@ -75,7 +75,6 @@ import { selectMobileCollectionView } from '../../store/digimon.selectors';
       <digimon-card-list [showCount]="32"></digimon-card-list>
     </div>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DeckbuilderPageComponent implements OnInit, OnDestroy {
   //region Accordions

@@ -21,12 +21,10 @@ import { SharedModule } from '../shared/shared.module';
 import { DeckStatisticsComponent } from './deck-statistics.component';
 import { DeckSubmissionComponent } from './deck-submission.component';
 import { DecksPageComponent } from './decks-page.component';
-import { SmallCardComponent } from './small-card.component';
 
 @NgModule({
   declarations: [
     DecksPageComponent,
-    SmallCardComponent,
     DeckStatisticsComponent,
     DeckSubmissionComponent,
   ],
