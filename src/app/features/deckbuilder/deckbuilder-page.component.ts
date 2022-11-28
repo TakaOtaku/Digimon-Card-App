@@ -2,7 +2,7 @@ import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { filter, first, Observable, of, Subject, switchMap } from 'rxjs';
+import { filter, first, of, Subject, switchMap } from 'rxjs';
 import * as uuid from 'uuid';
 import { IDeck, ISave } from '../../../models';
 import { AuthService } from '../../service/auth.service';
@@ -11,15 +11,15 @@ import { setDeck } from '../../store/digimon.actions';
 import { selectMobileCollectionView } from '../../store/digimon.selectors';
 
 @Component({
-  selector: 'digimon-deckbuilder',
+  selector: 'digimon-deckbuilder-page',
   template: `
     <div
       [ngClass]="{ hidden: mobileCollectionView$ | async }"
-      class="relative inline-flex h-[calc(100vh-50px)] w-full flex-row overflow-hidden bg-gradient-to-b from-[#17212f] to-[#08528d]"
+      class="relative inline-flex h-full w-full flex-row overflow-hidden bg-gradient-to-b from-[#17212f] to-[#08528d]"
     >
       <button
         *ngIf="showAccordionButtons"
-        class="surface-card h-full w-6 border-y border-slate-200"
+        class="surface-card h-full w-6 border-r border-slate-200"
         (click)="changeView('Deck')"
       >
         <span
@@ -28,30 +28,22 @@ import { selectMobileCollectionView } from '../../store/digimon.selectors';
           >{{ deckView ? 'Hide Deck View' : 'Show Deck View' }}</span
         >
       </button>
-      <div
+      <digimon-deck-view
         *ngIf="deckView"
-        class="h-full justify-center overflow-x-hidden overflow-y-scroll border border-slate-200"
         [ngClass]="{ 'w-5/12': collectionView, 'w-full': !collectionView }"
-      >
-        <digimon-deck-view
-          [collectionView]="collectionView"
-          (hideStats)="hideStats = !hideStats"
-        ></digimon-deck-view>
-      </div>
+        [collectionView]="collectionView"
+        (hideStats)="hideStats = !hideStats"
+      ></digimon-deck-view>
 
-      <div
+      <digimon-collection-view
         *ngIf="collectionView"
-        class="h-full max-h-full"
         [ngClass]="{ 'w-7/12': deckView, 'w-full': !deckView }"
-      >
-        <digimon-collection-view
-          class="h-full max-h-full"
-          [deckView]="deckView"
-        ></digimon-collection-view>
-      </div>
+        class="border-l border-slate-200"
+        [deckView]="deckView"
+      ></digimon-collection-view>
       <button
         *ngIf="showAccordionButtons"
-        class="surface-card h-full w-6 border-y border-slate-200"
+        class="surface-card h-full w-6 border-l border-slate-200"
         (click)="changeView('Collection')"
       >
         <span
@@ -70,14 +62,11 @@ import { selectMobileCollectionView } from '../../store/digimon.selectors';
     </div>
 
     <div
+      class="h-full w-full"
       [ngClass]="{ hidden: (mobileCollectionView$ | async) === false }"
-      class="h-[calc(100vh-58px)] overflow-y-scroll"
     >
-      <div class="h-full w-full">
-        <digimon-filter-and-search></digimon-filter-and-search>
-        <digimon-card-list [showCount]="32"></digimon-card-list>
-        <div class="h-24 w-full lg:hidden"></div>
-      </div>
+      <digimon-filter-and-search></digimon-filter-and-search>
+      <digimon-card-list [showCount]="32"></digimon-card-list>
     </div>
   `,
 })
@@ -89,9 +78,7 @@ export class DeckbuilderPageComponent implements OnInit, OnDestroy {
   showStats = true;
   //endregion
 
-  mobileCollectionView$: Observable<boolean> = this.store.select(
-    selectMobileCollectionView
-  );
+  mobileCollectionView$ = this.store.select(selectMobileCollectionView);
   hideStats = false;
 
   private deckId = '';

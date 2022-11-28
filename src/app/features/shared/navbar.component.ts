@@ -47,8 +47,7 @@ import { AuthService } from '../../service/auth.service';
         <button
           (click)="router.navigateByUrl('/deckbuilder')"
           [ngClass]="{
-            'text-[#64B5F6]':
-              route.includes('deckbuilder') && !route.includes('user')
+            'text-[#64B5F6]': route.includes('deckbuilder')
           }"
           class="min-w-auto mt-1 ml-2 hidden h-8 p-2 font-bold text-[#e2e4e6] hover:text-[#64B5F6] lg:block"
         >
@@ -63,7 +62,10 @@ import { AuthService } from '../../service/auth.service';
         </button>
         <button
           (click)="router.navigateByUrl('/user')"
-          [ngClass]="{ 'text-[#64B5F6]': route.includes('user') }"
+          [ngClass]="{
+            'text-[#64B5F6]':
+              route.includes('user') && !route.includes('deckbuilder')
+          }"
           class="min-w-auto mt-1 ml-2 hidden h-8 p-2 font-bold text-[#e2e4e6] hover:text-[#64B5F6] lg:block"
         >
           PROFILE

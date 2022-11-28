@@ -24,7 +24,7 @@ import {
 
     <digimon-search></digimon-search>
 
-    <div class="flex w-full flex-row flex-wrap overflow-hidden">
+    <div class="mx-1 flex w-full flex-row flex-wrap overflow-hidden">
       <h1
         *ngIf="cards.length === 0"
         class="primary-color text-bold my-10 text-center text-5xl"

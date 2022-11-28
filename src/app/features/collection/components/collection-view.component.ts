@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 @Component({
   selector: 'digimon-collection-view',
   template: `
-    <div class="flex h-full flex-row overflow-x-hidden border border-slate-200">
+    <div class="flex h-full flex-row overflow-x-hidden">
       <div class="2xl:w-8/10 hidden w-full md:block">
         <digimon-pagination-card-list
           [collectionOnly]="collectionOnly"
