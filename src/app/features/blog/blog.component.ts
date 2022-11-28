@@ -4,13 +4,7 @@ import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 
 import { MessageService } from 'primeng/api';
-import {
-  BehaviorSubject,
-  Observable,
-  switchMap,
-  tap,
-  withLatestFrom,
-} from 'rxjs';
+import { Observable, switchMap, tap, withLatestFrom } from 'rxjs';
 import { IBlog, IBlogWithText } from '../../../models';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
 
@@ -22,19 +16,17 @@ import { DigimonBackendService } from '../../service/digimon-backend.service';
       class="w-full overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d]"
     >
       <div class="mx-auto h-[calc(100vh-50px)] max-w-7xl">
-        <digimon-header [edit$]="edit" [form]="form"></digimon-header>
+        <digimon-header
+          [edit]="edit"
+          [form]="form"
+          (editChanged)="edit = $event"
+          [authorId]="blog.authorId"
+        ></digimon-header>
 
-        <div
-          *ngIf="(edit | async) === false; else editor"
-          class="list-disc text-[#e2e4e6]"
-          [innerHTML]="form.get('content')"
-        ></div>
-        <ng-template #editor>
-          <digimon-ckeditor [content]="form.get('content')"></digimon-ckeditor>
-        </ng-template>
+        <digimon-ckeditor [edit]="edit" [content]="form"></digimon-ckeditor>
 
         <button
-          *ngIf="edit | async"
+          *ngIf="edit"
           class="p-button mt-3"
           icon="pi pi-save"
           pButton
@@ -50,7 +42,7 @@ import { DigimonBackendService } from '../../service/digimon-backend.service';
 })
 export class BlogComponent implements OnInit {
   blog$: Observable<IBlogWithText>;
-  edit = new BehaviorSubject(false);
+  edit = false;
 
   form = new FormGroup({
     title: new FormControl(''),

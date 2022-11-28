@@ -7,13 +7,23 @@ import { Base64Adapter } from 'src/app/functions/base64-adapter';
 @Component({
   selector: 'digimon-ckeditor',
   template: `
-    <ckeditor
-      *ngIf="edit"
-      [editor]="Editor"
-      class="list-disc text-[#e2e4e6]"
-      [(ngModel)]="content"
-      (ready)="onReady($event)"
-    ></ckeditor>
+    <div [formGroup]="content">
+      <ckeditor
+        *ngIf="!edit"
+        [editor]="Editor"
+        class="list-disc text-[#e2e4e6]"
+        formControlName="content"
+        [disabled]="true"
+      ></ckeditor>
+
+      <ckeditor
+        *ngIf="edit"
+        [editor]="Editor"
+        class="list-disc text-[#e2e4e6]"
+        formControlName="content"
+        (ready)="onReady($event)"
+      ></ckeditor>
+    </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
