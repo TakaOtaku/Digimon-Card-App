@@ -9,13 +9,13 @@ import { IBlog, IBlogWithText } from '../../../models';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
 
 @Component({
-  selector: 'digimon-blog',
+  selector: 'digimon-blog-page',
   template: `
     <div
       *ngIf="blog$ | async as blog"
-      class="w-full overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d]"
+      class="w-full bg-gradient-to-b from-[#17212f] to-[#08528d]"
     >
-      <div class="mx-auto h-[calc(100vh-50px)] max-w-7xl">
+      <div class="mx-auto max-w-7xl">
         <digimon-header
           [edit]="edit"
           [form]="form"
@@ -40,7 +40,7 @@ import { DigimonBackendService } from '../../service/digimon-backend.service';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class BlogComponent implements OnInit {
+export class BlogPageComponent implements OnInit {
   blog$: Observable<IBlogWithText>;
   edit = false;
 

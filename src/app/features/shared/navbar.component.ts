@@ -35,6 +35,7 @@ import { AuthService } from '../../service/auth.service';
           src="../../../assets/images/logo.png"
         />
       </a>
+
       <div class="surface-ground flex max-h-12 w-full flex-row p-0">
         <button
           (click)="router.navigateByUrl('')"
@@ -95,7 +96,7 @@ import { AuthService } from '../../service/auth.service';
         ></digimon-filter-button>
         <div *ngIf="!showCardList" class="m-auto md:hidden"></div>
 
-        <div class="my-1 mx-2 flex flex-row lg:ml-4">
+        <div class="my-1 mx-2 ml-auto flex flex-row lg:ml-4">
           <button
             (click)="changeMenu()"
             class="min-w-auto primary-background mx-2 h-9 w-9 overflow-hidden rounded-full text-xs font-semibold text-[#e2e4e6] hover:bg-[#64B5F6]"

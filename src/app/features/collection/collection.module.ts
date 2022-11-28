@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { InputTextModule } from 'primeng/inputtext';
 import { PaginatorModule } from 'primeng/paginator';
@@ -10,11 +11,12 @@ import { DigimonStoreModule } from '../../digimon-store.module';
 import { AuthService } from '../../service/auth.service';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
 import { SharedModule } from '../shared/shared.module';
-import { CardListComponent } from './card-list.component';
 import { CollectionPageComponent } from './collection-page.component';
-import { CollectionViewComponent } from './collection-view.component';
-import { PaginationCardListComponent } from './pagination-card-list.component';
-import { SearchComponent } from './search.component';
+import { CardListComponent } from './components/card-list.component';
+import { CollectionViewComponent } from './components/collection-view.component';
+import { PaginationCardListHeaderComponent } from './components/pagination-card-list-header.component';
+import { PaginationCardListComponent } from './components/pagination-card-list.component';
+import { SearchComponent } from './components/search.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { SearchComponent } from './search.component';
     SearchComponent,
     CollectionPageComponent,
     CardListComponent,
+    PaginationCardListHeaderComponent,
   ],
   imports: [
     SharedModule,
@@ -32,9 +35,11 @@ import { SearchComponent } from './search.component';
     BrowserModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+
     PaginatorModule,
     DialogModule,
     InputTextModule,
+    ButtonModule,
   ],
   exports: [CollectionViewComponent, CardListComponent],
   providers: [AuthService, DigimonBackendService],

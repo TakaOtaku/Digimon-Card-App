@@ -74,10 +74,7 @@ import { selectMobileCollectionView } from '../../store/digimon.selectors';
       class="h-[calc(100vh-58px)] overflow-y-scroll"
     >
       <div class="h-full w-full">
-        <digimon-filter-and-search
-          [compact]="true"
-          class="w-100"
-        ></digimon-filter-and-search>
+        <digimon-filter-and-search></digimon-filter-and-search>
         <digimon-card-list [showCount]="32"></digimon-card-list>
         <div class="h-24 w-full lg:hidden"></div>
       </div>

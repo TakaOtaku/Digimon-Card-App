@@ -1,13 +1,19 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subject, takeUntil } from 'rxjs';
-import { englishCards } from '../../../assets/cardlists/eng/english';
-import { ICard, ICountCard } from '../../../models';
+import { englishCards } from '../../../../assets/cardlists/eng/english';
+import { ICard, ICountCard } from '../../../../models';
 import {
   selectCollection,
   selectCollectionMode,
   selectFilteredCards,
-} from '../../store/digimon.selectors';
+} from '../../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-card-list',
@@ -25,7 +31,7 @@ import {
           *ngFor="let card of cardsToShow"
           (viewCard)="viewCard($event)"
           [card]="card"
-          [collectionMode]="collectionMode"
+          [collectionMode]="(collectionMode$ | async) ?? false"
           [count]="getCount(card.id)"
           [deckView]="true"
           [deckBuilder]="true"
@@ -36,11 +42,11 @@ import {
 
       <button
         *ngIf="moreCardsThere()"
+        pButton
+        label="Show more..."
         (click)="showMore()"
-        class="min-w-auto primary-background mt-2 mt-2 h-8 w-full rounded p-2 text-xs font-semibold text-[#e2e4e6]"
-      >
-        Show more...
-      </button>
+        class="p-button-outlined surface-ground min-w-auto mt-2 h-8 w-full p-2 text-xs font-semibold text-[#e2e4e6]"
+      ></button>
     </div>
 
     <p-dialog
@@ -48,7 +54,7 @@ import {
       [(visible)]="viewCardDialog"
       [baseZIndex]="100000"
       [showHeader]="false"
-      class="overflow-x-hidden"
+      styleClass="w-full h-full max-w-6xl min-h-[500px]"
     >
       <digimon-view-card-dialog
         (onClose)="viewCardDialog = false"
@@ -56,6 +62,7 @@ import {
       ></digimon-view-card-dialog>
     </p-dialog>
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CardListComponent implements OnInit, OnDestroy {
   @Input() public showCount: number;
@@ -66,7 +73,7 @@ export class CardListComponent implements OnInit, OnDestroy {
   cards: ICard[] = [];
   cardsToShow: ICard[] = [];
 
-  collectionMode = true;
+  collectionMode$ = this.store.select(selectCollectionMode);
 
   private collection: ICountCard[] = [];
 
@@ -80,19 +87,9 @@ export class CardListComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.onDestroy$.next(true);
+    this.onDestroy$.unsubscribe();
   }
 
-  /**
-   * All Store Subscriptions.
-   *
-   * Check if the DeckBuilder-Mode should be used.
-   *
-   * Use either only Normal Cards in Deckbuilder-Mode or all Cards.
-   *
-   * Slice the Cards based on the Show Count.
-   *
-   * Check if Collection Mode is turned on.
-   */
   storeSubscriptions() {
     this.store
       .select(selectFilteredCards)
@@ -108,11 +105,6 @@ export class CardListComponent implements OnInit, OnDestroy {
       .subscribe((collection) => {
         this.collection = collection;
       });
-
-    this.store
-      .select(selectCollectionMode)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((collectionMode) => (this.collectionMode = collectionMode));
   }
 
   /**

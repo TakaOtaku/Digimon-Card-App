@@ -24,7 +24,7 @@ import { Subject, takeUntil } from 'rxjs';
       {{ title }}
     </h1>
   `,
-  styleUrls: ['../collection/range-slider.component.scss'],
+  styleUrls: ['./range-slider.component.scss'],
 })
 export class RangeSliderComponent implements OnInit, OnDestroy {
   @Input() minMax: number[] = [];

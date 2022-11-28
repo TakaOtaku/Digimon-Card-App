@@ -11,12 +11,12 @@ import { RippleModule } from 'primeng/ripple';
 import { DigimonStoreModule } from '../../digimon-store.module';
 import { AuthService } from '../../service/auth.service';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
-import { BlogComponent } from './blog.component';
-import { CKEditorComponent } from './ckeditor.component';
-import { HeaderComponent } from './header.component';
+import { BlogPageComponent } from './blog-page.component';
+import { CKEditorComponent } from './components/ckeditor.component';
+import { HeaderComponent } from './components/header.component';
 
 @NgModule({
-  declarations: [BlogComponent, HeaderComponent, CKEditorComponent],
+  declarations: [BlogPageComponent, HeaderComponent, CKEditorComponent],
   imports: [
     CommonModule,
     DigimonStoreModule,

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BlogComponent } from './features/blog/blog.component';
+import { BlogPageComponent } from './features/blog/blog-page.component';
 import { CollectionPageComponent } from './features/collection/collection-page.component';
 import { CommunityComponent } from './features/community/community.component';
 import { DeckbuilderPageComponent } from './features/deckbuilder/deckbuilder-page.component';
@@ -53,7 +53,7 @@ const routes: Routes = [
   },
   {
     path: 'blog/:id',
-    component: BlogComponent,
+    component: BlogPageComponent,
   },
   { path: '**', component: HomePageComponent },
 ];

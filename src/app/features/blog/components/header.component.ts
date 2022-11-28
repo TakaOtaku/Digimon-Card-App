@@ -10,8 +10,8 @@ import {
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
-import { ADMINS, IUser } from '../../../models';
-import { AuthService } from '../../service/auth.service';
+import { ADMINS, IUser } from '../../../../models';
+import { AuthService } from '../../../service/auth.service';
 
 @Component({
   selector: 'digimon-header',

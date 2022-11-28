@@ -35,7 +35,7 @@ import { emptyDeck } from '../../store/reducers/digimon.reducers';
     <p-dialog
       header="Deck Details"
       [(visible)]="deckDialog"
-      styleClass="padding w-full h-full max-w-6xl min-h-[500px]"
+      styleClass="w-full h-full max-w-6xl min-h-[500px]"
       [baseZIndex]="10000"
     >
       <digimon-deck-dialog
