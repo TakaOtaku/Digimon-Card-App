@@ -4,3 +4,4 @@ export * from './japtierlist.data';
 export * from './tags.data';
 export * from './tierlist.data';
 export * from './filter.data';
+export * from './countries.data';

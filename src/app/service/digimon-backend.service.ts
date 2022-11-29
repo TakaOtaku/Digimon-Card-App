@@ -1,7 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { first, map, Observable } from 'rxjs';
-import { IColor, ICountCard, IDeck, ISave, ISettings, IUser } from 'src/models';
+import {
+  IColor,
+  ICountCard,
+  IDeck,
+  ISave,
+  ISettings,
+  ITournamentDeck,
+  IUser,
+} from 'src/models';
 import { CARDSET, IBlog, IBlogWithText, ITag } from '../../models';
 import { IEvent } from '../features/home/components/event-calendar.component';
 import { emptySettings } from '../store/reducers/save.reducer';
@@ -31,6 +39,26 @@ export class DigimonBackendService {
             color,
             tags,
           } as IDeck;
+        });
+      })
+    );
+  }
+
+  getTournamentDecks(url: string = baseUrl): Observable<ITournamentDeck[]> {
+    return this.http.get<any[]>(url + 'tournament-decks').pipe(
+      map((decks) => {
+        return decks.map((deck) => {
+          const cards: ICountCard = JSON.parse(deck.cards);
+          const color: IColor = JSON.parse(deck.color);
+          const tags: ITag[] = JSON.parse(deck.tags);
+          const likes: string[] = deck.likes ? JSON.parse(deck.likes) : [];
+          return {
+            ...deck,
+            likes,
+            cards,
+            color,
+            tags,
+          } as ITournamentDeck;
         });
       })
     );
@@ -84,6 +112,24 @@ export class DigimonBackendService {
     );
   }
 
+  getTournamentDeck(id: any): Observable<ITournamentDeck> {
+    return this.http.get<any>(`${baseUrl}tournament-decks/${id}`).pipe(
+      map((deck) => {
+        const cards: ICountCard = JSON.parse(deck.cards);
+        const color: IColor = JSON.parse(deck.color);
+        const tags: ITag[] = JSON.parse(deck.tags);
+        const likes: string[] = deck.likes ? JSON.parse(deck.likes) : [];
+        return {
+          ...deck,
+          likes,
+          cards,
+          color,
+          tags,
+        } as ITournamentDeck;
+      })
+    );
+  }
+
   getSave(id: any): Observable<ISave> {
     return this.http.get<any>(`${baseUrl}users/${id}`).pipe(
       map((save) => {
@@ -114,6 +160,10 @@ export class DigimonBackendService {
 
   createDeck(data: IDeck): Observable<any> {
     return this.http.post(baseUrl + 'decks', data);
+  }
+
+  createTournamentDeck(data: ITournamentDeck): Observable<any> {
+    return this.http.post(baseUrl + 'tournament-decks', data);
   }
 
   createSave(data: ISave): Observable<any> {
@@ -148,6 +198,10 @@ export class DigimonBackendService {
     return this.http.put(`${baseUrl}decks/${deck.id}`, newDeck);
   }
 
+  updateTournamentDeck(deck: ITournamentDeck): Observable<any> {
+    return this.http.put(`${baseUrl}tournament-decks/${deck.id}`, deck);
+  }
+
   updateDeckWithoutUser(deck: IDeck): Observable<any> {
     return this.http.put(`${baseUrl}decks/${deck.id}`, deck);
   }
@@ -170,6 +224,10 @@ export class DigimonBackendService {
 
   deleteDeck(id: any): Observable<any> {
     return this.http.delete(`${baseUrl}decks/${id}`);
+  }
+
+  deleteTournamentDeck(id: any): Observable<any> {
+    return this.http.delete(`${baseUrl}tournament-decks/${id}`);
   }
 
   deleteBlogEntry(id: any): Observable<any> {

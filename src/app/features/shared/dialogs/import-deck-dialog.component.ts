@@ -105,8 +105,8 @@ export class ImportDeckDialogComponent implements OnDestroy {
         return;
       }
     }
-    deck.tags = setTags(deck.tags ?? [], deck, this.digimonCards);
-    deck.color = setColors(deck, this.digimonCards, deck.color);
+    deck.tags = setTags(deck, this.digimonCards);
+    deck.color = setColors(deck, this.digimonCards);
     this.onDeckImport.emit(deck);
     this.show = false;
     this.messageService.add({

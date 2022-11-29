@@ -2,15 +2,15 @@ import {
   ChangeDetectionStrategy,
   Component,
   Input,
-  OnChanges,
+  OnDestroy,
   OnInit,
-  SimpleChanges,
 } from '@angular/core';
-import { ICard, IDeck, IDeckCard } from '../../../models';
+import { Subject, takeUntil } from 'rxjs';
+import { ICard, IDeck, IDeckCard } from '../../../../models';
 import {
   getCountFromDeckCards,
   mapToDeckCards,
-} from '../../functions/digimon-card.functions';
+} from '../../../functions/digimon-card.functions';
 
 @Component({
   selector: 'digimon-deck-statistics',
@@ -396,20 +396,24 @@ import {
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DeckStatisticsComponent implements OnInit, OnChanges {
+export class DeckStatisticsComponent implements OnInit, OnDestroy {
   @Input() allCards: ICard[];
   @Input() decks: IDeck[];
+  @Input() updateCards: Subject<boolean>;
 
   mostUsedCards: IDeckCard[] = [];
 
-  constructor() {}
+  private onDestroy$ = new Subject();
 
-  ngOnInit(): void {
-    this.findMostUsedCards();
+  ngOnInit() {
+    this.updateCards
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe(() => this.findMostUsedCards());
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-    this.findMostUsedCards();
+  ngOnDestroy() {
+    this.onDestroy$.next(true);
+    this.onDestroy$.unsubscribe();
   }
 
   findMostUsedCards() {

@@ -1,13 +1,19 @@
 import { englishCards } from '../../assets/cardlists/eng/english';
 import preReleaseJSON from '../../assets/cardlists/eng/preRelease.json';
 import { japaneseCards } from '../../assets/cardlists/jap/japanese';
-import { ICard, ICountCard, IDeck, IDeckCard, tagsList } from '../../models';
-import { CARDSET } from '../../models';
-import { ITag } from '../../models';
+import {
+  CARDSET,
+  ICard,
+  ICountCard,
+  IDeck,
+  IDeckCard,
+  ITag,
+  tagsList,
+} from '../../models';
 import { ColorOrderMap, DeckColorMap } from '../../models/maps/color.map';
 
-export function setTags(tags: ITag[], deck: IDeck, allCards: ICard[]) {
-  tags = [];
+export function setTags(deck: IDeck, allCards: ICard[]) {
+  let tags = [];
 
   tags.push(setNewestSet(deck.cards));
 
@@ -105,7 +111,7 @@ export function tooManyRestrictedCardsIncluded(
   return restricted;
 }
 
-export function setColors(deck: IDeck, allCards: ICard[], selectedColor: any) {
+export function setColors(deck: IDeck, allCards: ICard[]) {
   const cards: IDeckCard[] = mapToDeckCards(deck.cards, allCards);
   const colorArray = [
     { name: 'Red', count: 0 },

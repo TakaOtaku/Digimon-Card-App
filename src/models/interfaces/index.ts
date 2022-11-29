@@ -13,3 +13,4 @@ export * from './settings.interface';
 export * from './sort.interface';
 export * from './tag.interface';
 export * from './user.interface';
+export * from './tournament-deck.interface';

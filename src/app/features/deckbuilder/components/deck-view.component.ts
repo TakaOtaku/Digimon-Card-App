@@ -272,12 +272,8 @@ export class DeckViewComponent implements OnInit, OnDestroy {
     };
     this.store.dispatch(setDeck({ deck: this.deck }));
     this.deckSort();
-    this.tags = setTags(this.tags, this.deck, this.allCards);
-    this.selectedColor = setColors(
-      this.deck,
-      this.allCards,
-      this.selectedColor
-    );
+    this.tags = setTags(this.deck, this.allCards);
+    this.selectedColor = setColors(this.deck, this.allCards);
     this.onMainDeck.emit(this.mainDeck);
   }
 
@@ -474,8 +470,8 @@ export class DeckViewComponent implements OnInit, OnDestroy {
           const newDeck = deck;
 
           if (deckIsValid(deck, this.allCards) === '') {
-            newDeck.tags = setTags(deck.tags ?? [], deck, this.allCards);
-            newDeck.color = setColors(deck, this.allCards, deck.color);
+            newDeck.tags = setTags(deck, this.allCards);
+            newDeck.color = setColors(deck, this.allCards);
             this.digimonBackendService
               .updateDeck(newDeck)
               .pipe(first())

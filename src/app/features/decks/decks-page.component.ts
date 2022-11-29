@@ -40,7 +40,16 @@ import { emptyDeck } from '../../store/reducers/digimon.reducers';
             class="p-button-outlined p-button-rounded mt-3 ml-1"
             icon="pi pi-chart-line"
             type="button"
-            (click)="deckStatsDialog = true"
+            (click)="deckStatsDialog = true; updateStatistics.next(true)"
+          ></button>
+
+          <button
+            pButton
+            class="p-button-outlined p-button-rounded mt-3 ml-1"
+            icon="pi pi-chart-line"
+            type="button"
+            label="Submit Tournament Deck"
+            (click)="deckSubmissionDialog = true"
           ></button>
 
           <button class="ml-auto">
@@ -54,31 +63,10 @@ import { emptyDeck } from '../../store/reducers/digimon.reducers';
           </button>
         </div>
 
-        <div class="my-1 mx-auto flex max-w-6xl flex-row">
-          <div class="my-1 flex w-full flex-col px-2">
-            <span class="p-input-icon-left w-full">
-              <i class="pi pi-search h-3"></i>
-              <input
-                [formControl]="searchFilter"
-                class="w-full text-xs"
-                pInputText
-                placeholder="Search (Title, Description, User, Card-Ids, Color)"
-                type="text"
-              />
-            </span>
-          </div>
-          <p-multiSelect
-            [formControl]="tagFilter"
-            [options]="tags"
-            [showToggleAll]="false"
-            defaultLabel="Select a Tag"
-            display="chip"
-            scrollHeight="250px"
-            class="my-1 mx-auto w-full max-w-[250px]"
-            styleClass="w-full h-[34px] text-sm max-w-[250px]"
-          >
-          </p-multiSelect>
-        </div>
+        <digimon-decks-filter
+          [searchFilter]="searchFilter"
+          [tagFilter]="tagFilter"
+        ></digimon-decks-filter>
 
         <div class="grid grid-cols-4 gap-2">
           <digimon-deck-container
@@ -133,6 +121,7 @@ import { emptyDeck } from '../../store/reducers/digimon.reducers';
       <digimon-deck-statistics
         [decks]="filteredDecks"
         [allCards]="allCards"
+        [updateCards]="updateStatistics"
       ></digimon-deck-statistics>
     </p-dialog>
   `,
@@ -152,8 +141,8 @@ export class DecksPageComponent implements OnInit, OnDestroy {
   emptyDeck = emptyDeck;
 
   deckSubmissionDialog = false;
-
   deckStatsDialog = false;
+  updateStatistics = new Subject<boolean>();
 
   first = 0;
   page = 0;
