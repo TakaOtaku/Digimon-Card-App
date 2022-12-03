@@ -26,6 +26,7 @@ export const GroupedSets = [
       { label: 'EX1', value: 'EX1' },
       { label: 'EX2', value: 'EX2' },
       { label: 'EX3', value: 'EX3' },
+      { label: 'EX4', value: 'EX4' },
     ],
   },
   {

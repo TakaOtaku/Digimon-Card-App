@@ -76,6 +76,8 @@ export interface IEvent {
             class="m-1 rounded-full border border-black text-center"
           >
             <span
+              [pTooltip]="event.title"
+              tooltipPosition="top"
               class="text-shadow ml-2 w-full truncate text-sm font-black text-[#e2e4e6]"
               >{{ event.title }}</span
             >

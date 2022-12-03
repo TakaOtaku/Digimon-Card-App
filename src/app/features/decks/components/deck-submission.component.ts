@@ -1,10 +1,26 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validator, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { debounceTime, distinctUntilChanged, Subject, takeUntil } from 'rxjs';
-import { Countries, ICard, IDeck, IDeckCard, TAGS } from '../../../../models';
+import {
+  debounceTime,
+  distinctUntilChanged,
+  first,
+  Subject,
+  takeUntil,
+} from 'rxjs';
+import {
+  Countries,
+  ICard,
+  IColor,
+  ICountCard,
+  IDeck,
+  IDeckCard,
+  ITag,
+  ITournamentDeck,
+  TAGS,
+} from '../../../../models';
 import {
   compareIDs,
   sortColors,
@@ -15,6 +31,7 @@ import { AuthService } from '../../../service/auth.service';
 import { DigimonBackendService } from '../../../service/digimon-backend.service';
 import { selectAllCards } from '../../../store/digimon.selectors';
 import { ICardImage } from '../../shared/dialogs/deck-dialog.component';
+import * as uuid from 'uuid';
 
 interface IDropDownItem {
   name: string;
@@ -48,16 +65,15 @@ interface IDropDownItem {
       </div>
 
       <div class="my-3 grid grid-cols-3">
-        <span class="p-float-label col-span-2">
-          <input
-            id="title-input"
-            type="text"
-            class="w-full"
-            pInputText
-            formControlName="title"
-          />
-          <label for="title-input">Title*</label>
-        </span>
+        <label class="col-span-2">Title:</label>
+        <label>Card Image:</label>
+        <input
+          id="title-input"
+          type="text"
+          class="col-span-2 w-full"
+          pInputText
+          formControlName="title"
+        />
 
         <p-dropdown
           styleClass="ml-1 truncate w-full"
@@ -69,26 +85,28 @@ interface IDropDownItem {
         </p-dropdown>
       </div>
 
-      <span class="p-float-label my-3">
-        <textarea
-          id="description-input"
-          class="w-full"
-          formControlName="description"
-          pInputTextarea
-        ></textarea>
-        <label for="description-input">Description</label>
-      </span>
+      <label>Description:</label>
+      <textarea
+        id="description-input"
+        class="w-full"
+        formControlName="description"
+        pInputTextarea
+      ></textarea>
 
-      <div class="my-3 grid grid-cols-4">
-        <p-dropdown
-          styleClass="truncate w-full mr-1"
-          [options]="formatOptions"
-          formControlName="format"
-          appendTo="body"
-        >
-        </p-dropdown>
+      <div class="my-3 grid grid-cols-2 lg:grid-cols-4">
+        <div class="flex flex-col">
+          <label>Format:</label>
+          <p-dropdown
+            styleClass="truncate w-full mr-1"
+            [options]="formatOptions"
+            formControlName="format"
+            appendTo="body"
+          >
+          </p-dropdown>
+        </div>
 
-        <span class="p-float-label mr-1 w-full">
+        <div class="flex flex-col">
+          <label for="player-input">Player:</label>
           <input
             id="player-input"
             type="text"
@@ -96,31 +114,34 @@ interface IDropDownItem {
             formControlName="player"
             pInputText
           />
-          <label for="player-input">Player*</label>
-        </span>
+        </div>
 
-        <span class="p-float-label mr-1 w-full">
+        <div class="flex flex-col">
+          <label for="placement-input">Placement:</label>
           <input
             id="placement-input"
             type="number"
             class="w-full"
             formControlName="placement"
+            min="1"
             pInputText
           />
-          <label for="placement-input">Placement*</label>
-        </span>
+        </div>
 
-        <p-dropdown
-          styleClass="truncate w-full mr-1"
-          [options]="sizeOptions"
-          formControlName="size"
-          appendTo="body"
-          optionLabel="name"
-        >
-        </p-dropdown>
+        <div class="flex flex-col">
+          <label>Tournament Size:</label>
+          <p-dropdown
+            styleClass="truncate w-full mr-1"
+            [options]="sizeOptions"
+            formControlName="size"
+            appendTo="body"
+            optionLabel="name"
+          >
+          </p-dropdown>
+        </div>
       </div>
 
-      <div class="my-3 grid grid-cols-3">
+      <div class="my-3 flex flex-col lg:grid lg:grid-cols-3">
         <span class="p-float-label mr-1 w-full">
           <input
             id="host-input"
@@ -153,22 +174,24 @@ interface IDropDownItem {
         pButton
         class="p-button-outlined"
         label="Submit the Deck"
+        [disabled]="!form.valid"
+        (click)="submit()"
       ></button>
     </div>
   `,
 })
 export class DeckSubmissionComponent implements OnInit, OnDestroy {
   form = new FormGroup({
-    title: new FormControl(''),
+    title: new FormControl('', [Validators.required]),
     description: new FormControl(''),
-    deckList: new FormControl(''),
+    deckList: new FormControl('', [Validators.required]),
     cardImageId: new FormControl(''),
     format: new FormControl(''),
-    placement: new FormControl(1),
+    placement: new FormControl(1, [Validators.required, Validators.min(1)]),
     size: new FormControl(''),
     country: new FormControl(''),
-    player: new FormControl(''),
-    host: new FormControl(''),
+    player: new FormControl('', [Validators.required]),
+    host: new FormControl('', [Validators.required]),
     date: new FormControl(new Date()),
   });
 
@@ -299,5 +322,33 @@ export class DeckSubmissionComponent implements OnInit, OnDestroy {
     );
   }
 
-  save() {}
+  submit() {
+    const formValues = this.form.value;
+    const tournamentDeck: ITournamentDeck = {
+      id: uuid.v4(),
+      cards: this.deck!.cards,
+      color: this.deck!.color,
+      title: formValues.title,
+      description: formValues.description,
+      tags: this.deck!.tags,
+      date: formValues.date,
+      user: formValues.player,
+      userId: '',
+      imageCardId: formValues.cardImageId.value,
+      likes: [],
+      placement: formValues.placement,
+      country: formValues.country.name,
+      player: formValues.player,
+      host: formValues.host,
+      format: formValues.format,
+      size: formValues.size.value,
+    };
+
+    this.digimonBackendService
+      .createTournamentDeck(tournamentDeck)
+      .pipe(first())
+      .subscribe((value) => {
+        debugger;
+      });
+  }
 }

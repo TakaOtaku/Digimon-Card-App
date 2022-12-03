@@ -13,6 +13,8 @@ import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { ContextMenuModule } from 'primeng/contextmenu';
 import { DialogModule } from 'primeng/dialog';
 import { DropdownModule } from 'primeng/dropdown';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { InputSwitchModule } from 'primeng/inputswitch';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { MultiSelectModule } from 'primeng/multiselect';
@@ -127,6 +129,8 @@ import { LevelSpreadComponent } from './statistics/level-spread.component';
     ChartModule,
     StyleClassModule,
     RippleModule,
+    InputNumberModule,
+    InputSwitchModule,
   ],
   providers: [AuthService, MessageService, ConfirmationService],
 })

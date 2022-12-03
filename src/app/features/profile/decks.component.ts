@@ -12,14 +12,15 @@ import { emptyDeck } from '../../store/reducers/digimon.reducers';
 @Component({
   selector: 'digimon-decks',
   template: `
-    <div class="mx-auto grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4">
+    <div class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       <digimon-deck-container
-        class="max-w-[370px]"
+        class="mx-auto min-w-[280px] max-w-[285px]"
         (click)="showDeckDialog(deck)"
         (contextmenu)="showDeckDialog(deck)"
         *ngFor="let deck of decksToShow"
         [deck]="deck"
-      ></digimon-deck-container>
+      >
+      </digimon-deck-container>
     </div>
 
     <p-paginator
@@ -39,7 +40,7 @@ import { emptyDeck } from '../../store/reducers/digimon.reducers';
       [baseZIndex]="10000"
     >
       <digimon-deck-dialog
-        [deck]="deck ?? emptyDeck"
+        [deck]="deck"
         [editable]="editable"
         (closeDialog)="deckDialog = false"
       ></digimon-deck-dialog>
@@ -66,7 +67,7 @@ export class DecksComponent implements OnInit, OnChanges {
   first = 0;
   page = 0;
 
-  deck: IDeck;
+  deck: IDeck = emptyDeck;
   deckDialog = false;
 
   ngOnInit() {

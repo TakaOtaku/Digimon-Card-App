@@ -31,6 +31,7 @@ export function setTags(deck: IDeck, allCards: ICard[]) {
 
 export function setNewestSet(cards: ICountCard[]): ITag {
   const releaseOrder = [
+    'EX4',
     'BT12',
     'ST14',
     'BT11',

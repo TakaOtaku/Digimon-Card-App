@@ -1,12 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { Subject, takeUntil } from 'rxjs';
+import { first, Subject, takeUntil, tap } from 'rxjs';
 import * as uuid from 'uuid';
-import { ICard, IDeck, TAGS } from '../../../models';
+import { ICard, IDeck, ITournamentDeck, TAGS } from '../../../models';
 import { AuthService } from '../../service/auth.service';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
 import { importDeck } from '../../store/digimon.actions';
@@ -24,57 +24,54 @@ import { emptyDeck } from '../../store/reducers/digimon.reducers';
       class="flex h-[calc(100vh-50px)] w-full flex-col overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d]"
     >
       <div class="mx-auto w-full max-w-6xl">
-        <div class="flex flex-row">
-          <button>
-            <h1
-              [ngClass]="{ 'text-[#64B5F6]': mode === 'Community' }"
-              (click)="mode = 'Community'"
-              class="raise-xs surface-card text-shadow mt-6 border border-slate-200 p-1 text-4xl font-black text-[#e2e4e6] transition-all xl:mt-2"
-            >
-              Community Decks
-            </h1>
-          </button>
+        <h1
+          class="text-shadow mt-6 pb-1 text-4xl font-black text-[#e2e4e6] xl:mt-2"
+        >
+          {{ this.mode + ' Decks' }}
+        </h1>
+
+        <div class="lg:px-auto flex flex-col px-1 lg:flex-row">
+          <button
+            pButton
+            class="p-button-outlined mt-1 lg:mt-3 lg:mr-2"
+            icon="pi pi-arrow-right-arrow-left"
+            type="button"
+            [label]="getSwitchLabel()"
+            (click)="switchMode()"
+          ></button>
 
           <button
             pButton
-            class="p-button-outlined p-button-rounded mt-3 ml-1"
+            class="p-button-outlined mt-1 lg:mt-3 lg:mr-2"
             icon="pi pi-chart-line"
             type="button"
+            label="Deck Statistics"
             (click)="deckStatsDialog = true; updateStatistics.next(true)"
           ></button>
 
           <button
             pButton
-            class="p-button-outlined p-button-rounded mt-3 ml-1"
-            icon="pi pi-chart-line"
+            class="p-button-outlined mt-1 lg:mt-3"
+            icon="pi pi-cloud-upload"
             type="button"
-            label="Submit Tournament Deck"
+            label="Submit a Tournament Deck"
             (click)="deckSubmissionDialog = true"
           ></button>
-
-          <button class="ml-auto">
-            <h1
-              [ngClass]="{ 'text-[#64B5F6]': mode === 'Tournament' }"
-              (click)="mode = 'Tournament'"
-              class="raise-xs surface-card text-shadow mt-6 border border-slate-200 p-1 text-4xl font-black text-[#e2e4e6] transition-all xl:mt-2"
-            >
-              Tournament Decks
-            </h1>
-          </button>
         </div>
 
         <digimon-decks-filter
-          [searchFilter]="searchFilter"
-          [tagFilter]="tagFilter"
+          [form]="form"
+          [mode]="this.mode"
         ></digimon-decks-filter>
 
-        <div class="grid grid-cols-4 gap-2">
+        <div class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           <digimon-deck-container
+            class="mx-auto min-w-[280px] max-w-[285px]"
             *ngFor="let deck of decksToShow"
             (click)="showDeckDetails(deck)"
             (contextmenu)="showDeckDetails(deck)"
             [deck]="deck"
-            [community]="true"
+            [mode]="this.mode"
           ></digimon-deck-container>
         </div>
 
@@ -97,7 +94,8 @@ import { emptyDeck } from '../../store/reducers/digimon.reducers';
       [baseZIndex]="10000"
     >
       <digimon-deck-dialog
-        [deck]="selectedDeck ?? emptyDeck"
+        [deck]="selectedDeck"
+        [mode]="mode"
         [editable]="false"
         (closeDialog)="deckDialog = false"
       ></digimon-deck-dialog>
@@ -128,12 +126,17 @@ import { emptyDeck } from '../../store/reducers/digimon.reducers';
 })
 export class DecksPageComponent implements OnInit, OnDestroy {
   mode: 'Community' | 'Tournament' = 'Community';
-  filteredDecks: IDeck[] = [];
-  decksToShow: IDeck[] = [];
-  selectedDeck: IDeck;
+  filteredDecks: IDeck[] | ITournamentDeck[] = [];
+  decksToShow: IDeck[] | ITournamentDeck[] = [];
+  selectedDeck: IDeck | ITournamentDeck = emptyDeck;
 
-  searchFilter = new FormControl('');
-  tagFilter = new FormControl([]);
+  form = new FormGroup({
+    searchFilter: new FormControl(''),
+    tagFilter: new FormControl([]),
+    placementFilter: new FormControl(''),
+    formatFilter: new FormControl([]),
+    sizeFilter: new FormControl([]),
+  });
 
   tags = TAGS;
 
@@ -148,7 +151,7 @@ export class DecksPageComponent implements OnInit, OnDestroy {
   page = 0;
 
   public allCards: ICard[] = [];
-  private decks: IDeck[] = [];
+  private decks: IDeck[] | ITournamentDeck[] = [];
   private allDecks: IDeck[] = [];
 
   private onDestroy$ = new Subject<boolean>();
@@ -190,14 +193,11 @@ export class DecksPageComponent implements OnInit, OnDestroy {
       .select(selectCommunityDeckSearch)
       .pipe(takeUntil(this.onDestroy$))
       .subscribe((search) => {
-        this.searchFilter.setValue(search);
+        this.form.get('searchFilter')!.setValue(search);
         this.filterChanges();
       });
 
-    this.searchFilter.valueChanges
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe(() => this.filterChanges());
-    this.tagFilter.valueChanges
+    this.form.valueChanges
       .pipe(takeUntil(this.onDestroy$))
       .subscribe(() => this.filterChanges());
   }
@@ -223,25 +223,6 @@ export class DecksPageComponent implements OnInit, OnDestroy {
         });
       },
     });
-  }
-
-  filterChanges() {
-    this.filteredDecks = this.searchFilter.value
-      ? this.applySearchFilter()
-      : this.decks;
-    this.filteredDecks =
-      this.tagFilter.value.length > 0
-        ? this.applyTagFilter()
-        : this.filteredDecks;
-    this.filteredDecks = this.filteredDecks.sort((a, b) => {
-      const aTime = new Date(a.date!).getTime();
-      const bTime = new Date(b.date!).getTime();
-      return bTime - aTime;
-    });
-
-    this.first = 0;
-    this.page = 0;
-    this.decksToShow = this.filteredDecks.slice(0, 20);
   }
 
   showDeckDetails(deck: IDeck) {
@@ -275,9 +256,31 @@ export class DecksPageComponent implements OnInit, OnDestroy {
     ]);
   }
 
-  private applySearchFilter(): IDeck[] {
+  filterChanges() {
+    const formValues = this.form.value;
+    this.filteredDecks = this.applySearchFilter(formValues);
+    this.filteredDecks = this.applyTagFilter(formValues);
+    this.filteredDecks = this.applyPlacementFilter(formValues);
+    this.filteredDecks = this.applySizeFilter(formValues);
+    this.filteredDecks = this.applyFormatFilter(formValues);
+
+    this.filteredDecks = this.filteredDecks.sort((a, b) => {
+      const aTime = new Date(a.date!).getTime();
+      const bTime = new Date(b.date!).getTime();
+      return bTime - aTime;
+    });
+
+    this.first = 0;
+    this.page = 0;
+    this.decksToShow = this.filteredDecks.slice(0, 20);
+  }
+
+  private applySearchFilter(formValues: any): IDeck[] | ITournamentDeck[] {
+    if (!formValues.searchFilter) {
+      return this.decks;
+    }
     return this.decks.filter((deck) => {
-      const search = this.searchFilter.value.toLocaleLowerCase();
+      const search = formValues.searchFilter.toLocaleLowerCase();
 
       const titleInText =
         deck.title?.toLocaleLowerCase().includes(search) ?? false;
@@ -302,13 +305,97 @@ export class DecksPageComponent implements OnInit, OnDestroy {
     });
   }
 
-  private applyTagFilter(): IDeck[] {
-    return this.decks.filter((deck) => {
+  private applyTagFilter(formValues: any): IDeck[] | ITournamentDeck[] {
+    if (formValues.tagFilter.length === 0) {
+      return this.filteredDecks;
+    }
+    return this.filteredDecks.filter((deck) => {
       let isTrue = false;
       deck.tags?.forEach((tag) => {
-        isTrue = this.tagFilter.value.includes(tag.name);
+        isTrue = formValues.tagFilter.includes(tag.name);
       });
       return isTrue;
     });
+  }
+
+  private applyPlacementFilter(formValues: any): IDeck[] | ITournamentDeck[] {
+    if (!formValues.placementFilter) {
+      return this.filteredDecks;
+    }
+    if (!(this.filteredDecks as unknown as ITournamentDeck[])[0].format) {
+      return this.filteredDecks;
+    }
+
+    const tournamentDecks: ITournamentDeck[] = this
+      .filteredDecks as unknown as ITournamentDeck[];
+
+    return tournamentDecks.filter(
+      (deck) => deck.placement === formValues.placementFilter
+    );
+  }
+
+  private applySizeFilter(formValues: any): IDeck[] | ITournamentDeck[] {
+    if (formValues.sizeFilter.length === 0) {
+      return this.filteredDecks;
+    }
+    if (!(this.filteredDecks as unknown as ITournamentDeck[])[0].format) {
+      return this.filteredDecks;
+    }
+
+    const tournamentDecks: ITournamentDeck[] = this
+      .filteredDecks as unknown as ITournamentDeck[];
+
+    return tournamentDecks.filter((deck) => {
+      return !!formValues.sizeFilter.find(
+        (size: any) => size.value === deck.size
+      );
+    });
+  }
+
+  private applyFormatFilter(formValues: any): IDeck[] | ITournamentDeck[] {
+    if (formValues.formatFilter.length === 0) {
+      return this.filteredDecks;
+    }
+    if (!(this.filteredDecks as unknown as ITournamentDeck[])[0].format) {
+      return this.filteredDecks;
+    }
+
+    const tournamentDecks: ITournamentDeck[] = this
+      .filteredDecks as unknown as ITournamentDeck[];
+
+    return tournamentDecks.filter((deck) => {
+      return formValues.formatFilter.includes(deck.format);
+    });
+  }
+
+  getSwitchLabel(): string {
+    return this.mode === 'Community'
+      ? `Switch to Tournament Decks`
+      : `Switch to Community Decks`;
+  }
+
+  switchMode() {
+    this.mode = this.mode === 'Community' ? 'Tournament' : 'Community';
+    if (this.mode === 'Community') {
+      this.digimonBackendService
+        .getDecks()
+        .pipe(first())
+        .subscribe((decks) => {
+          this.decks = decks;
+          this.filteredDecks = this.decks;
+          this.decksToShow = this.filteredDecks.slice(0, 20);
+          this.filterChanges();
+        });
+    } else {
+      this.digimonBackendService
+        .getTournamentDecks()
+        .pipe(first())
+        .subscribe((decks) => {
+          this.decks = decks;
+          this.filteredDecks = this.decks;
+          this.decksToShow = this.filteredDecks.slice(0, 20);
+          this.filterChanges();
+        });
+    }
   }
 }

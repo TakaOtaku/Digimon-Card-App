@@ -95,7 +95,7 @@ import {
       [(visible)]="viewCardDialog"
       [baseZIndex]="100000"
       [showHeader]="false"
-      class="overflow-x-hidden"
+      styleClass="overflow-x-hidden"
     >
       <digimon-view-card-dialog
         (onClose)="viewCardDialog = false"

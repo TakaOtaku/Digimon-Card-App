@@ -6,4 +6,5 @@ export interface ITournamentDeck extends IDeck {
   player: string;
   host: string;
   format: string;
+  size: string;
 }

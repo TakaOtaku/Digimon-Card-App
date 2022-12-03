@@ -292,7 +292,7 @@ import { AuthService } from '../../service/auth.service';
       [(visible)]="settingsDialog"
       [baseZIndex]="10000"
       header="Settings"
-      styleClass="w-full h-[500px] lg:w-[950px] min-h-[350px] max-h-screen"
+      styleClass="w-full h-full max-w-6xl min-h-[500px]"
     >
       <digimon-settings-dialog></digimon-settings-dialog>
     </p-dialog>

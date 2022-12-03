@@ -102,7 +102,7 @@ import { ColorMap } from '../../../models/maps/color.map';
     <p-dialog
       [(visible)]="viewCardDialog"
       [showHeader]="false"
-      class="overflow-x-hidden"
+      styleClass="overflow-x-hidden"
       (close)="viewCardDialog = false"
     >
       <digimon-view-card-dialog

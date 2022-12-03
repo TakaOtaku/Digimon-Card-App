@@ -10,9 +10,9 @@ import copy
 
 wikiLink = 'https://digimoncardgame.fandom.com'
 wikiPageLinks = [
-    'https://digimoncardgame.fandom.com/wiki/BT-12:_Booster_Across_Time'
+    'https://digimoncardgame.fandom.com/wiki/EX-04:_Theme_Booster_Alternative_Being'
 ]
-setName = "▹THEME BOOSTER ACROSS TIME [BT-12]"
+setName = "▹THEME BOOSTER ALTERNATIVE BEING [EX-04]"
 cardLinks = []
 NormalCards = []
 AACards = []
@@ -125,6 +125,18 @@ def getExtraInfo(html, digimoncard):
 
     return digimoncard
 
+def getIllustratorsInfo(html, digimoncard):
+    if html == None:
+        return digimoncard
+    tr = html.find_all("tr")
+    # if th includes Card Effect
+    if tr[1] is not None:
+        td = tr[1].find_all("td")
+        if td[0] is not None:
+            digimoncard['illustrator'] = td[0].text.replace("\n", "").strip()
+
+    return digimoncard
+
 
 def getCardDataFromWiki():
     for url in NormalCards:
@@ -135,7 +147,7 @@ def getCardDataFromWiki():
         infoDigivolve = soup.find("div", class_="info-digivolve")
         infoExtra = soup.find("div", class_="info-extra")
         infoRestricted = soup.find("div", class_="info-restricted")
-        infoRarity = soup.find("table", class_="settable")
+        infoSets = soup.find("table", class_="settable")
 
         digimoncard = {
             "id": "-",
@@ -173,6 +185,8 @@ def getCardDataFromWiki():
         digimoncard = getMainInfo(infoMain, digimoncard)
         digimoncard = getDigivolveInfo(infoDigivolve, digimoncard)
         digimoncard = getExtraInfo(infoExtra, digimoncard)
+
+        digimoncard = getIllustratorsInfo(infoSets, digimoncard)
 
         rarityDict = {
             "-": "-",
@@ -225,7 +239,7 @@ def makeAACardDatas():
 
 def saveCardsToJSON():
     print('Saving now!')
-    with open('bt12.json', 'w') as fp:
+    with open('ex4.json', 'w') as fp:
         json.dump(cards, fp)
 
 

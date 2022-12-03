@@ -50,10 +50,10 @@ export class FAQComponent {
       header: `Profile`,
       text: `
       <ul class="list-disc p-2">
-        <li>See your <strong>collection stats</strong> and your collected cards in a list.</li>
-        <li>Share your <strong>profile link</strong> with other users.</li>
-        <li>See all your created decks.</li>
-        <li>Click on a Deck-Name or right click to open a context menu, to <strong>open</strong>, <strong>copy</strong>, <strong>export</strong> or <strong>delete</strong> the deck.</li>
+        <li>See your <strong>collection stats</strong>, based on your settings in a cake diagram.</li>
+        <li>Copy your URL to get your <strong>profile link</strong>, which you can share with friends.</li>
+        <li>See all of your created decks.</li>
+        <li>Click on a deck or right click to open a dialog, to view more details to the deck. There you can also open, copy, export the deck or just copy a link to the deck.</li>
       </ul>
       `,
     },
@@ -61,10 +61,12 @@ export class FAQComponent {
       header: `Decks`,
       text: `
       <ul class="list-disc p-2">
-        <li>Overview of all <strong>community-created</strong> decks.</li>
-        <li>Filter those decks for a <strong>specific format</strong> or other attributes like <strong>contained cards</strong>.</li>
-        <li>Click on a deck-name or right click to open a context menu, to <strong>open</strong>, <strong>copy</strong> or <strong>get the link</strong> to a deck.</li>
-        <li>Press the arrow next to a deck to open a preview.</li>
+        <li>Overview of all <strong>community-created</strong> decks. (Casual and Tournament)</li>
+        <li>Switch between <strong>Community</strong> Decks and <strong>Tournament</strong> Decks.</li>
+        <li>Show various statistics for the filtered decks.</li>
+        <li>Filter those decks for a <strong>specific format</strong>, <strong>contained cards</strong>, <strong>placement</strong> and <strong>various</strong> other attributes.</li>
+        <li>Click on a deck or right click to open a dialog, to view more details to the deck. There you can also open, copy, export the deck or just copy a link to the deck.</li>
+        <li>Press the heart on a deck to like it.</li>
       </ul>
       `,
     },
@@ -73,7 +75,6 @@ export class FAQComponent {
       text: `
       <ul class="list-disc p-2">
         <li>Overview of <strong>official tournaments</strong> and <strong>deck reports</strong>.</li>
-        <li>Miscellaneous stats for all <strong>community decks</strong>.</li>
       </ul>
       `,
     },
@@ -81,8 +82,8 @@ export class FAQComponent {
       header: `Products`,
       text: `
       <ul class="list-disc p-2">
-        <li>See all currently released Digimon TCG products in one place.</li>
-        <li>Click on a product to open the corresponding <strong>wiki-link</strong> in a new tab.</li>
+        <li>See all Digimon TCG products in one place.</li>
+        <li>Click on a product to open the corresponding <strong>wiki-page</strong> in a new tab.</li>
       </ul>
       `,
     },

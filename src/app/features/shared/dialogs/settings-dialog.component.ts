@@ -88,7 +88,7 @@ import { emptySettings } from '../../../store/reducers/save.reducer';
         role="tabpanel"
         aria-labelledby="tabs-home-tab"
       >
-        <div class="mx-auto flex w-full flex-col justify-end">
+        <div class="mx-auto grid w-full grid-cols-2  justify-end">
           <div class="flex flex-col">
             <h5 class="mt-5 text-center font-bold">Collection Goal:</h5>
             <p-inputNumber
@@ -98,51 +98,61 @@ import { emptySettings } from '../../../store/reducers/save.reducer';
             ></p-inputNumber>
           </div>
 
-          <h5 class="mt-5 text-center font-bold">Deck-Sort</h5>
-          <div class="flex justify-center">
-            <p-selectButton
-              [formControl]="sortOrderFilter"
-              [multiple]="false"
-              [options]="sortOrder"
-            >
-            </p-selectButton>
+          <div class="flex flex-col">
+            <h5 class="mt-5 text-center font-bold">Deck-Sort</h5>
+            <div class="flex justify-center">
+              <p-selectButton
+                [formControl]="sortOrderFilter"
+                [multiple]="false"
+                [options]="sortOrder"
+              >
+              </p-selectButton>
+            </div>
           </div>
 
-          <h5 class="mt-5 text-center font-bold">Pre-Release Cards</h5>
-          <p-selectButton
-            [(ngModel)]="preRelease"
-            [options]="showHideOptions"
-            class="mx-auto"
-            optionLabel="label"
-            optionValue="value"
-          ></p-selectButton>
+          <div class="flex flex-col">
+            <h5 class="mt-5 text-center font-bold">Pre-Release Cards</h5>
+            <p-selectButton
+              [(ngModel)]="preRelease"
+              [options]="showHideOptions"
+              class="mx-auto"
+              optionLabel="label"
+              optionValue="value"
+            ></p-selectButton>
+          </div>
 
-          <h5 class="mt-5 text-center font-bold">Alt. Art Cards</h5>
-          <p-selectButton
-            [(ngModel)]="aa"
-            [options]="showHideOptions"
-            class="mx-auto"
-            optionLabel="label"
-            optionValue="value"
-          ></p-selectButton>
+          <div class="flex flex-col">
+            <h5 class="mt-5 text-center font-bold">Alt. Art Cards</h5>
+            <p-selectButton
+              [(ngModel)]="aa"
+              [options]="showHideOptions"
+              class="mx-auto"
+              optionLabel="label"
+              optionValue="value"
+            ></p-selectButton>
+          </div>
 
-          <h5 class="mt-5 text-center font-bold">Stamped Cards</h5>
-          <p-selectButton
-            [(ngModel)]="stamped"
-            [options]="showHideOptions"
-            class="mx-auto"
-            optionLabel="label"
-            optionValue="value"
-          ></p-selectButton>
+          <div class="flex flex-col">
+            <h5 class="mt-5 text-center font-bold">Stamped Cards</h5>
+            <p-selectButton
+              [(ngModel)]="stamped"
+              [options]="showHideOptions"
+              class="mx-auto"
+              optionLabel="label"
+              optionValue="value"
+            ></p-selectButton>
+          </div>
 
-          <h5 class="mt-5 text-center font-bold">Show User-Stats</h5>
-          <p-selectButton
-            [(ngModel)]="userStats"
-            [options]="showHideOptions"
-            class="mx-auto"
-            optionLabel="label"
-            optionValue="value"
-          ></p-selectButton>
+          <div class="flex flex-col">
+            <h5 class="mt-5 text-center font-bold">Show User-Stats</h5>
+            <p-selectButton
+              [(ngModel)]="userStats"
+              [options]="showHideOptions"
+              class="mx-auto"
+              optionLabel="label"
+              optionValue="value"
+            ></p-selectButton>
+          </div>
         </div>
 
         <div class="flex flex-row justify-end">

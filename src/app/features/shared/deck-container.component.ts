@@ -1,12 +1,13 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  ContentChild,
   Input,
   OnInit,
 } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { first } from 'rxjs';
-import { ICard, IDeck } from '../../../models';
+import { ICard, IDeck, ITournamentDeck } from '../../../models';
 import { ColorMap } from '../../../models/maps/color.map';
 import { AuthService } from '../../service/auth.service';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
@@ -29,11 +30,20 @@ import { selectAllCards } from '../../store/digimon.selectors';
         [ngStyle]="{ background: colorMap.get(deck.color.name) }"
         class="text-shadow-white-xs relative top-[10px] left-[-5px] w-24 border border-black bg-opacity-80 text-center text-xs font-bold uppercase"
       >
-        <span class="mr-1">{{ deck!.tags![0].name }}</span>
+        <span *ngIf="mode !== 'Tournament'" class="mr-1">{{
+          deck!.tags![0].name
+        }}</span>
+        <span *ngIf="mode === 'Tournament'" class="mr-1">{{
+          getTournamentDeck(deck).format
+        }}</span>
+      </div>
+
+      <div *ngIf="isIllegal()" class="absolute top-[5px] right-[35px]">
+        <i class="fa-solid fa-exclamation h-8 w-8 text-[#ef4444]"></i>
       </div>
 
       <div
-        *ngIf="community"
+        *ngIf="mode !== 'Basic'"
         class="absolute top-[5px] right-[5px]"
         (click)="changeLike($event)"
       >
@@ -61,15 +71,36 @@ import { selectAllCards } from '../../store/digimon.selectors';
           <div class="text-shadow min-h-[16px] truncate text-xs text-[#e2e4e6]">
             {{ deck.description }}
           </div>
+
           <div
-            class="text-shadow flex w-full flex-row truncate text-xs text-[#e2e4e6]"
+            *ngIf="mode !== 'Tournament'; else tournament"
+            class="text-shadow flex w-full flex-row text-xs text-[#e2e4e6]"
           >
-            <div *ngFor="let tag of deck.tags" class="mr-1">{{ tag.name }}</div>
-            <div *ngIf="community" class="ml-1 font-bold">{{ deck.user }}</div>
+            <div *ngIf="mode === 'Community'" class="ml-1 font-bold">
+              {{ deck.user }}
+            </div>
             <div class="ml-auto font-bold">
-              {{ deck.date | date: 'dd.MM.YYYY' }}
+              {{ deck.date | date: 'dd.MM.YY' }}
             </div>
           </div>
+          <ng-template #tournament>
+            <div
+              class="text-shadow grid w-full grid-cols-5 text-xs text-[#e2e4e6]"
+            >
+              <div class="ml-1 font-bold">
+                {{ placementString(getTournamentDeck(deck).placement) }}
+              </div>
+              <div class="col-span-2 ml-1 truncate font-bold">
+                {{ getTournamentDeck(deck).user }}
+              </div>
+              <div class="mx-auto font-bold">
+                {{ getTournamentDeck(deck).size }}
+              </div>
+              <div class="ml-auto font-bold">
+                {{ getTournamentDeck(deck).date | date: 'dd.MM.YY' }}
+              </div>
+            </div>
+          </ng-template>
         </div>
       </div>
     </div>
@@ -77,8 +108,8 @@ import { selectAllCards } from '../../store/digimon.selectors';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DeckContainerComponent implements OnInit {
-  @Input() deck: IDeck;
-  @Input() community = false;
+  @Input() deck: IDeck | ITournamentDeck;
+  @Input() mode = 'Basic';
 
   colorMap = ColorMap;
 
@@ -148,5 +179,24 @@ export class DeckContainerComponent implements OnInit {
       return 0;
     }
     return this.deck.likes.length;
+  }
+
+  getTournamentDeck(deck: IDeck | ITournamentDeck): ITournamentDeck {
+    return deck as ITournamentDeck;
+  }
+
+  isIllegal(): boolean {
+    return !!this.deck.tags.find((tag) => tag.name === 'Illegal');
+  }
+
+  placementString(placement: number): string {
+    if (placement === 1) {
+      return '1st';
+    } else if (placement === 2) {
+      return '2nd';
+    } else if (placement === 3) {
+      return '3th';
+    }
+    return placement + 'th';
   }
 }

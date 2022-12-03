@@ -394,7 +394,6 @@ import {
       </div>
     </div>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DeckStatisticsComponent implements OnInit, OnDestroy {
   @Input() allCards: ICard[];

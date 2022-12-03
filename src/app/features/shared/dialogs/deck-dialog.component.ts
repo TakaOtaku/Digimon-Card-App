@@ -3,7 +3,6 @@ import {
   EventEmitter,
   Input,
   OnChanges,
-  OnDestroy,
   OnInit,
   Output,
   SimpleChanges,
@@ -12,11 +11,10 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { first, Subject, takeUntil } from 'rxjs';
+import { first } from 'rxjs';
 import * as uuid from 'uuid';
-import { ICard, IDeck, IDeckCard } from '../../../../models';
+import { ICard, IDeck, IDeckCard, ITournamentDeck } from '../../../../models';
 import { mapToDeckCards } from '../../../functions/digimon-card.functions';
-import { ObscenityPipe } from '../../../pipes/obscenity.pipe';
 import { AuthService } from '../../../service/auth.service';
 import { DigimonBackendService } from '../../../service/digimon-backend.service';
 import {
@@ -37,7 +35,7 @@ export interface ICardImage {
   template: `
     <div class="flex h-full w-full flex-col">
       <div
-        class="grid max-h-[375px] w-full grid-cols-4 overflow-y-scroll border-2 border-slate-200 md:grid-cols-6 lg:grid-cols-8"
+        class="grid max-h-[375px] min-h-[200px] w-full grid-cols-4 overflow-y-scroll border-2 border-slate-200 md:grid-cols-6 lg:grid-cols-8"
       >
         <digimon-deck-card
           *ngFor="let card of mainDeck"
@@ -70,52 +68,99 @@ export interface ICardImage {
         ></digimon-color-spread>
       </div>
 
-      <div *ngIf="!editable; else edit" class="border border-slate-200 p-2">
-        <div class="flex flex-col">
-          <div class="text-shadow mr-3 text-3xl font-black text-[#e2e4e6]">
-            {{ deck?.title }}
-          </div>
+      <div
+        *ngIf="!editable; else edit"
+        class="my-1 mx-auto grid grid-cols-3 gap-y-1"
+      >
+        <label>Title</label>
+        <div
+          [pTooltip]="deck?.title ?? ''"
+          tooltipPosition="top"
+          class="text-shadow col-span-2 mr-3 truncate text-3xl font-black text-[#e2e4e6]"
+        >
+          {{ deck?.title }}
+        </div>
 
-          <div class="flex flex-row">
-            <div>{{ deck?.description }}</div>
-            <div
-              *ngFor="let tag of deck?.tags"
-              class="surface-ground mx-0.5 my-0.5 h-10 rounded-full border border-black px-1.5 text-xs font-bold leading-[35px] lg:mt-2.5"
-            >
-              {{ tag.name }}
-            </div>
+        <label>Description</label>
+        <div class="col-span-2">{{ deck?.description }}</div>
+
+        <label *ngIf="mode === 'Community'">User</label>
+        <div *ngIf="mode === 'Community'" class="col-span-2">
+          {{ deck?.user }}
+        </div>
+
+        <label>Tags</label>
+        <div class="col-span-2 flex flex-row align-middle">
+          <div
+            *ngFor="let tag of deck?.tags"
+            class="surface-ground mr-0.5 h-8 border border-black px-1.5 text-xs font-bold leading-[35px]"
+          >
+            {{ tag.name }}
           </div>
+        </div>
+
+        <label *ngIf="mode === 'Tournament'">Placement</label>
+        <div *ngIf="mode === 'Tournament'" class="col-span-2">
+          {{ placementString(getTournamentDeck(deck).placement) }}
+        </div>
+
+        <label *ngIf="mode === 'Tournament'">Country</label>
+        <div *ngIf="mode === 'Tournament'" class="col-span-2">
+          {{ getTournamentDeck(deck).country }}
+        </div>
+
+        <label *ngIf="mode === 'Tournament'">Player</label>
+        <div *ngIf="mode === 'Tournament'" class="col-span-2">
+          {{ getTournamentDeck(deck).user }}
+        </div>
+
+        <label *ngIf="mode === 'Tournament'">Host</label>
+        <div *ngIf="mode === 'Tournament'" class="col-span-2">
+          {{ getTournamentDeck(deck).host }}
+        </div>
+
+        <label *ngIf="mode === 'Tournament'">Format</label>
+        <div *ngIf="mode === 'Tournament'" class="col-span-2">
+          {{ getTournamentDeck(deck).format }}
+        </div>
+
+        <label *ngIf="mode === 'Tournament'">Size</label>
+        <div *ngIf="mode === 'Tournament'" class="col-span-2">
+          {{ mapTournamentSize(getTournamentDeck(deck).size) }}
         </div>
       </div>
       <ng-template #edit [formGroup]="deckFormGroup">
-        <div class="my-1 mx-auto grid lg:grid-cols-2">
-          <div class="col-span-2 flex flex-row">
-            <input
-              formControlName="title"
-              placeholder="Deck Name:"
-              class="mr-2 w-full text-sm"
-              pInputText
-              type="text"
-            />
-            <p-dropdown
-              styleClass="truncate w-full lg:w-[250px]"
-              [options]="cardImageOptions"
-              formControlName="cardImage"
-              optionLabel="name"
-              appendTo="body"
-            >
-            </p-dropdown>
-          </div>
+        <div class="my-1 mx-auto grid grid-cols-3 gap-y-1">
+          <label>Titel</label>
+          <input
+            formControlName="title"
+            placeholder="Deck Name:"
+            class="col-span-2 mr-2 w-full text-sm"
+            pInputText
+            type="text"
+          />
+          <label>Image</label>
+          <p-dropdown
+            styleClass="truncate w-full lg:w-[250px]"
+            class=" col-span-2"
+            [options]="cardImageOptions"
+            formControlName="cardImage"
+            optionLabel="name"
+            appendTo="body"
+          >
+          </p-dropdown>
+          <label>Description</label>
           <textarea
             formControlName="description"
             placeholder="Description:"
-            class="h-[66px] w-full overflow-hidden"
+            class="col-span-2 h-[66px] w-full overflow-hidden"
             pInputTextarea
           ></textarea>
-          <div class="mx-auto flex flex-row align-middle">
+          <label>Tags</label>
+          <div class="col-span-2 flex flex-row align-middle">
             <div
               *ngFor="let tag of deck?.tags"
-              class="surface-ground mx-0.5 my-0.5 h-10 rounded-full border border-black px-1.5 text-xs font-bold leading-[35px] lg:mt-2.5"
+              class="surface-ground mr-0.5 h-8 border border-black px-1.5 text-xs font-bold leading-[35px]"
             >
               {{ tag.name }}
             </div>
@@ -136,14 +181,14 @@ export interface ICardImage {
           label="Save"
         ></button>
         <button
-          (click)="openDeck()"
+          (click)="openDeck($event)"
           pButton
           class="p-button-sm lg:p-button p-button-outlined"
           type="button"
           label="Open"
         ></button>
         <button
-          (click)="copyDeck()"
+          (click)="copyDeck($event)"
           pButton
           class="p-button-sm lg:p-button p-button-outlined"
           type="button"
@@ -164,7 +209,7 @@ export interface ICardImage {
           label="Get Link"
         ></button>
         <button
-          (click)="deleteDeck()"
+          (click)="deleteDeck($event)"
           pButton
           class="p-button-sm lg:p-button p-button-outlined"
           type="button"
@@ -174,14 +219,14 @@ export interface ICardImage {
       <ng-template #editButtons>
         <div class="mx-auto mt-1 grid grid-cols-3 lg:grid-cols-5">
           <button
-            (click)="openDeck()"
+            (click)="openDeck($event)"
             pButton
             class="p-button-sm lg:p-button p-button-outlined"
             type="button"
             label="Open"
           ></button>
           <button
-            (click)="copyDeck()"
+            (click)="copyDeck($event)"
             pButton
             class="p-button-sm lg:p-button p-button-outlined"
             type="button"
@@ -203,7 +248,7 @@ export interface ICardImage {
           ></button>
           <button
             *ngIf="isAdmin"
-            (click)="deleteDeck()"
+            (click)="deleteDeck($event)"
             pButton
             class="p-button-sm lg:p-button p-button-outlined"
             type="button"
@@ -224,8 +269,9 @@ export interface ICardImage {
   `,
 })
 export class DeckDialogComponent implements OnInit, OnChanges {
-  @Input() deck: IDeck;
+  @Input() deck: IDeck | ITournamentDeck;
   @Input() editable = true;
+  @Input() mode = 'Basic';
 
   @Output() closeDialog = new EventEmitter<boolean>();
 
@@ -268,7 +314,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (!changes['deck'].currentValue) {
+    if (!changes['deck']?.currentValue) {
       return;
     }
 
@@ -283,7 +329,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
     this.cardImageOptions = this.createImageOptions();
   }
 
-  openDeck() {
+  openDeck(event: Event) {
     if (this.editable) {
       if (this.authService.isLoggedIn) {
         this.router.navigateByUrl(
@@ -295,6 +341,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
       }
     } else {
       this.confirmationService.confirm({
+        target: event.target ?? undefined,
         message: 'You are about to open this deck. Are you sure?',
         accept: () => {
           this.store.dispatch(
@@ -308,9 +355,10 @@ export class DeckDialogComponent implements OnInit, OnChanges {
     }
   }
 
-  deleteDeck() {
+  deleteDeck(event: Event) {
     if (this.editable) {
       this.confirmationService.confirm({
+        target: event.target ?? undefined,
         key: 'Delete',
         message: 'You are about to permanently delete this deck. Are you sure?',
         accept: () => {
@@ -325,6 +373,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
       });
     } else {
       this.confirmationService.confirm({
+        target: event.target ?? undefined,
         key: 'Delete',
         message: 'You are about to permanently delete this deck. Are you sure?',
         accept: () => {
@@ -343,8 +392,9 @@ export class DeckDialogComponent implements OnInit, OnChanges {
     }
   }
 
-  copyDeck() {
+  copyDeck(event: Event) {
     this.confirmationService.confirm({
+      target: event.target ?? undefined,
       message: 'You are about to copy this deck. Are you sure?',
       accept: () => {
         this.store.dispatch(
@@ -414,6 +464,21 @@ export class DeckDialogComponent implements OnInit, OnChanges {
     this.closeDialog.emit(true);
   }
 
+  getTournamentDeck(deck: IDeck | ITournamentDeck): ITournamentDeck {
+    return deck as ITournamentDeck;
+  }
+
+  placementString(placement: number): string {
+    if (placement === 1) {
+      return '1st';
+    } else if (placement === 2) {
+      return '2nd';
+    } else if (placement === 3) {
+      return '3th';
+    }
+    return placement + 'th';
+  }
+
   private getCardImage(imageCardId: string): ICardImage {
     let foundCard = this.allCards.find((card) => card.id === imageCardId);
     if (foundCard) {
@@ -432,5 +497,15 @@ export class DeckDialogComponent implements OnInit, OnChanges {
           }
         : { name: 'BT1-001 - Yokomon', value: 'BT1-001' };
     }
+  }
+
+  mapTournamentSize(size: string) {
+    const map = new Map<string, string>([
+      ['Small', 'Small (4-8 Player)'],
+      ['Medium', 'Medium (8-16 Player)'],
+      ['Large', 'Large (16-32 Player)'],
+      ['Major', 'Major (32+ Player)'],
+    ]);
+    return map.get(size);
   }
 }
