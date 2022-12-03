@@ -3385,6 +3385,36 @@
     "illustrator": "As'Maria"
   },
   {
+    "id": "BT5-086_P5",
+    "name": "Omnimon",
+    "cardImage": "assets/images/cards/jap/BT5-086_P5.webp",
+    "cardType": "Digimon",
+    "dp": "14000",
+    "playCost": "15",
+    "digivolveCost1": "4 from Lv.6",
+    "digivolveCost2": "4 from Lv.6",
+    "cardLv": "Lv.7",
+    "form": "Mega",
+    "attribute": "Vaccine",
+    "type": "Holy Warrior/Royal Knight",
+    "rarity": "SR",
+    "cardNumber": "BT5-086",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Digivolving] ＜Blitz＞ (This Digimon can attack when your opponent has 1 or more memory.)\n[When Digivolving] Unsuspend this Digimon.\n[All Turns] If an opponent's effect would delete this Digimon or return it to its owner's hand or deck, you may prevent it from leaving play by trashing a level 6 Digimon card in this card's digivolution cards.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "▹booster Battle of Omega [BT-05]",
+    "color": "White",
+    "version": "AA",
+    "block": [
+      "00"
+    ],
+    "restriction": "-",
+    "illustrator": "-"
+  },
+  {
     "id": "BT5-087",
     "name": "Omnimon Zwart",
     "cardImage": "assets/images/cards/jap/BT5-087.webp",
