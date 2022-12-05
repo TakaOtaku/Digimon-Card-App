@@ -66,6 +66,9 @@ export function setNewestSet(cards: ICountCard[]): ITag {
     if (set) {
       return;
     }
+    if (!cards) {
+      return;
+    }
     if (cards.find((card) => card.id.includes(value))) {
       set = value;
     }
@@ -80,6 +83,9 @@ export function bannedCardsIncluded(
   allCards: ICard[]
 ): boolean {
   let banned = false;
+  if (!cards) {
+    return false;
+  }
   cards.forEach((card) => {
     if (banned) {
       return;
@@ -98,6 +104,9 @@ export function tooManyRestrictedCardsIncluded(
   allCards: ICard[]
 ): boolean {
   let restricted = false;
+  if (!cards) {
+    return false;
+  }
   cards.forEach((card) => {
     if (restricted) {
       return;
@@ -123,6 +132,9 @@ export function setColors(deck: IDeck, allCards: ICard[]) {
     { name: 'Purple', count: 0 },
     { name: 'White', count: 0 },
   ];
+  if (!cards) {
+    return ['White', { name: 'White', img: 'assets/decks/white.svg' }];
+  }
   cards.forEach((card) => {
     colorArray.forEach((color, index) => {
       if (card.color && card.color.includes(color.name)) {
@@ -261,6 +273,10 @@ export function mapToDeckCards(
   allCards: ICard[]
 ): IDeckCard[] {
   const deckCards: IDeckCard[] = [];
+
+  if (!cards) {
+    return deckCards;
+  }
 
   cards.forEach((card) => {
     let found = allCards.find((allCard) => card.id === allCard.id);

@@ -107,7 +107,9 @@ import { emptyDeck } from '../../store/reducers/digimon.reducers';
       styleClass="w-full h-full max-w-6xl min-h-[500px]"
       [baseZIndex]="10000"
     >
-      <digimon-deck-submission></digimon-deck-submission>
+      <digimon-deck-submission
+        (onClose)="deckSubmissionDialog = false"
+      ></digimon-deck-submission>
     </p-dialog>
 
     <p-dialog

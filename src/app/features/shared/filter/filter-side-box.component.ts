@@ -192,41 +192,91 @@ import { emptyFilter } from '../../../store/reducers/digimon.reducers';
         </ng-template>
       </p-multiSelect>
 
-      <digimon-range-slider
-        (change)="updateLevelSlider($event)"
-        [reset]="resetEmitter"
-        [minMax]="[2, 7]"
-        title="Level:"
-      ></digimon-range-slider>
+      <div class="flex flex-row">
+        <digimon-range-slider
+          [reset]="resetEmitter"
+          [minMax]="[2, 7]"
+          [filterFormControl]="levelFilter"
+          title="Level:"
+          class="w-full"
+        ></digimon-range-slider>
+        <button
+          (click)="levelFilter.setValue([2, 7], { emitEvent: false })"
+          class="w-12 text-[#e2e4e6]"
+          type="button"
+        >
+          <i class="pi pi-refresh"></i>
+        </button>
+      </div>
 
-      <digimon-range-slider
-        (change)="updatePlayCostSlider($event)"
-        [reset]="resetEmitter"
-        [minMax]="[0, 20]"
-        title="Play Cost:"
-      ></digimon-range-slider>
+      <div class="flex flex-row">
+        <digimon-range-slider
+          [reset]="resetEmitter"
+          [minMax]="[0, 20]"
+          [filterFormControl]="playCostFilter"
+          title="Play Cost:"
+          class="w-full"
+        ></digimon-range-slider>
+        <button
+          (click)="playCostFilter.setValue([0, 20], { emitEvent: false })"
+          class="w-12 text-[#e2e4e6]"
+          type="button"
+        >
+          <i class="pi pi-refresh"></i>
+        </button>
+      </div>
 
-      <digimon-range-slider
-        (change)="updateDigivolutionSlider($event)"
-        [reset]="resetEmitter"
-        [minMax]="[0, 7]"
-        title="Digivolution Cost:"
-      ></digimon-range-slider>
+      <div class="flex flex-row">
+        <digimon-range-slider
+          [reset]="resetEmitter"
+          [minMax]="[0, 7]"
+          [filterFormControl]="digivolutionFilter"
+          title="Digivolution Cost:"
+          class="w-full"
+        ></digimon-range-slider>
+        <button
+          (click)="digivolutionFilter.setValue([0, 7], { emitEvent: false })"
+          class="w-12 text-[#e2e4e6]"
+          type="button"
+        >
+          <i class="pi pi-refresh"></i>
+        </button>
+      </div>
 
-      <digimon-range-slider
-        (change)="updateDPSlider($event)"
-        [reset]="resetEmitter"
-        [minMax]="[1, 16]"
-        suffix="000"
-        title="DP:"
-      ></digimon-range-slider>
+      <div class="flex flex-row">
+        <digimon-range-slider
+          [reset]="resetEmitter"
+          [minMax]="[1, 16]"
+          [filterFormControl]="dpFilter"
+          suffix="000"
+          title="DP:"
+          class="w-full"
+        ></digimon-range-slider>
+        <button
+          (click)="dpFilter.setValue([1, 16], { emitEvent: false })"
+          class="w-12 text-[#e2e4e6]"
+          type="button"
+        >
+          <i class="pi pi-refresh"></i>
+        </button>
+      </div>
 
-      <digimon-range-slider
-        (change)="updateCardCountSlider($event)"
-        [reset]="resetEmitter"
-        [minMax]="[0, 5]"
-        title="Number in Collection:"
-      ></digimon-range-slider>
+      <div class="flex flex-row">
+        <digimon-range-slider
+          [reset]="resetEmitter"
+          [minMax]="[0, 5]"
+          [filterFormControl]="cardCountFilter"
+          title="Number in Collection:"
+          class="w-full"
+        ></digimon-range-slider>
+        <button
+          (click)="cardCountFilter.setValue([0, 5], { emitEvent: false })"
+          class="w-12 text-[#e2e4e6]"
+          type="button"
+        >
+          <i class="pi pi-refresh"></i>
+        </button>
+      </div>
 
       <digimon-multi-buttons
         (clickEvent)="changeRarity($event)"
@@ -355,6 +405,11 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
   blockFilter = new FormControl([]);
   restrictionsFilter = new FormControl([]);
   sourceFilter = new FormControl([]);
+  levelFilter = new FormControl([]);
+  playCostFilter = new FormControl([]);
+  digivolutionFilter = new FormControl([]);
+  dpFilter = new FormControl([]);
+  cardCountFilter = new FormControl([]);
 
   filterFormGroup: FormGroup = new FormGroup({
     setFilter: this.setFilter,
@@ -371,6 +426,11 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
     blockFilter: this.blockFilter,
     restrictionsFilter: this.restrictionsFilter,
     sourceFilter: this.sourceFilter,
+    levelFilter: this.levelFilter,
+    playCostFilter: this.playCostFilter,
+    digivolutionFilter: this.digivolutionFilter,
+    dpFilter: this.dpFilter,
+    cardCountFilter: this.cardCountFilter,
   });
 
   groupedSets = GroupedSets;
@@ -405,6 +465,18 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.onDestroy$))
       .subscribe((filter) => {
         this.filter = filter;
+
+        this.levelFilter.setValue(filter.levelFilter, { emitEvent: false });
+        this.playCostFilter.setValue(filter.playCostFilter, {
+          emitEvent: false,
+        });
+        this.digivolutionFilter.setValue(filter.digivolutionFilter, {
+          emitEvent: false,
+        });
+        this.dpFilter.setValue(filter.dpFilter, { emitEvent: false });
+        this.cardCountFilter.setValue(filter.cardCountFilter, {
+          emitEvent: false,
+        });
 
         this.setFilter.setValue(filter.setFilter, { emitEvent: false });
         this.rarityFilter.setValue(filter.rarityFilter, { emitEvent: false });
@@ -485,43 +557,6 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
   itemsAsSelectItem(array: string[]): ISelectItem[] {
     return array.map((item) => ({ label: item, value: item } as ISelectItem));
   }
-
-  //region Slider Functions
-  updateCardCountSlider(event: any) {
-    this.store.dispatch(
-      changeFilter({
-        filter: { ...this.filter, cardCountFilter: event },
-      })
-    );
-  }
-
-  updateLevelSlider(event: any) {
-    this.store.dispatch(
-      changeFilter({ filter: { ...this.filter, levelFilter: event } })
-    );
-  }
-
-  updatePlayCostSlider(event: any) {
-    this.store.dispatch(
-      changeFilter({ filter: { ...this.filter, playCostFilter: event } })
-    );
-  }
-
-  updateDigivolutionSlider(event: any) {
-    this.store.dispatch(
-      changeFilter({
-        filter: { ...this.filter, digivolutionFilter: event },
-      })
-    );
-  }
-
-  updateDPSlider(event: any) {
-    this.store.dispatch(
-      changeFilter({ filter: { ...this.filter, dpFilter: event } })
-    );
-  }
-
-  //endregion
 
   //region Multi-Button Functions
   changeColor(color: string) {

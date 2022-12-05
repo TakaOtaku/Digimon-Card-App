@@ -170,7 +170,7 @@ export interface ICardImage {
 
       <div
         *ngIf="editable; else editButtons"
-        class="mx-auto mt-1 grid grid-cols-3 lg:grid-cols-6"
+        class="mx-auto mt-1 grid grid-cols-4"
       >
         <button
           (click)="saveDeck()"
@@ -214,6 +214,13 @@ export interface ICardImage {
           class="p-button-sm lg:p-button p-button-outlined"
           type="button"
           label="Delete"
+        ></button>
+        <button
+          (click)="deckSubmissionDialog = true"
+          pButton
+          class="p-button-sm lg:p-button p-button-outlined col-span-2"
+          type="button"
+          label="Submit Tournament"
         ></button>
       </div>
       <ng-template #editButtons>
@@ -266,6 +273,18 @@ export interface ICardImage {
     >
       <digimon-export-deck-dialog [deck]="deck"></digimon-export-deck-dialog>
     </p-dialog>
+
+    <p-dialog
+      header="Tournament Deck Submission"
+      [(visible)]="deckSubmissionDialog"
+      styleClass="w-full h-full max-w-6xl min-h-[500px]"
+      [baseZIndex]="10000"
+    >
+      <digimon-deck-submission
+        [inputDeck]="deck"
+        (onClose)="deckSubmissionDialog = false"
+      ></digimon-deck-submission>
+    </p-dialog>
   `,
 })
 export class DeckDialogComponent implements OnInit, OnChanges {
@@ -274,6 +293,8 @@ export class DeckDialogComponent implements OnInit, OnChanges {
   @Input() mode = 'Basic';
 
   @Output() closeDialog = new EventEmitter<boolean>();
+
+  deckSubmissionDialog = false;
 
   deckFormGroup = new FormGroup({
     title: new FormControl(''),

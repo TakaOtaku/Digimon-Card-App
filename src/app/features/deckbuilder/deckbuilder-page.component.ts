@@ -21,7 +21,7 @@ import { selectMobileCollectionView } from '../../store/digimon.selectors';
   template: `
     <div
       [ngClass]="{ hidden: mobileCollectionView$ | async }"
-      class="relative inline-flex h-full w-full flex-row overflow-hidden bg-gradient-to-b from-[#17212f] to-[#08528d]"
+      class="relative inline-flex h-full w-full flex-row overflow-hidden lg:bg-gradient-to-b lg:from-[#17212f] lg:to-[#08528d]"
     >
       <button
         *ngIf="showAccordionButtons"

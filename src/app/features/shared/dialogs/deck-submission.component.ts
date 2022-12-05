@@ -1,4 +1,13 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import { FormControl, FormGroup, Validator, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
@@ -30,7 +39,8 @@ import { stringToDeck } from '../../../functions/parse-deck';
 import { AuthService } from '../../../service/auth.service';
 import { DigimonBackendService } from '../../../service/digimon-backend.service';
 import { selectAllCards } from '../../../store/digimon.selectors';
-import { ICardImage } from '../../shared/dialogs/deck-dialog.component';
+import { emptyDeck } from '../../../store/reducers/digimon.reducers';
+import { ICardImage } from './deck-dialog.component';
 import * as uuid from 'uuid';
 
 interface IDropDownItem {
@@ -180,7 +190,10 @@ interface IDropDownItem {
     </div>
   `,
 })
-export class DeckSubmissionComponent implements OnInit, OnDestroy {
+export class DeckSubmissionComponent implements OnInit, OnChanges, OnDestroy {
+  @Input() inputDeck: IDeck | null = null;
+  @Output() onClose = new EventEmitter();
+
   form = new FormGroup({
     title: new FormControl('', [Validators.required]),
     description: new FormControl(''),
@@ -213,6 +226,7 @@ export class DeckSubmissionComponent implements OnInit, OnDestroy {
   allCards: ICard[] = [];
 
   private onDestroy$ = new Subject();
+
   constructor(
     private store: Store,
     private router: Router,
@@ -241,6 +255,15 @@ export class DeckSubmissionComponent implements OnInit, OnDestroy {
         this.cardImageOptions = this.createImageOptions();
         this.form.get('cardImageId')?.setValue(this.cardImageOptions[0]);
       });
+    if (this.inputDeck) {
+      this.updateValues(this.inputDeck);
+    }
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['inputDeck']?.currentValue) {
+      this.updateValues(changes['inputDeck']?.currentValue);
+    }
   }
 
   ngOnDestroy() {
@@ -347,8 +370,31 @@ export class DeckSubmissionComponent implements OnInit, OnDestroy {
     this.digimonBackendService
       .createTournamentDeck(tournamentDeck)
       .pipe(first())
-      .subscribe((value) => {
-        debugger;
-      });
+      .subscribe();
+
+    this.onClose.emit(true);
+  }
+
+  private updateValues(inputDeck: IDeck) {
+    const formValues = this.form.value;
+    let decklist = '// Digimon DeckList\n\n';
+    inputDeck.cards.forEach((card) => {
+      const dc = this.allCards.find((dc) => compareIDs(dc.id, card.id));
+      decklist += `${card.id.replace('ST0', 'ST')} ${dc?.name} ${card.count}\n`;
+    });
+    this.form.setValue({
+      title: inputDeck.title,
+      description: inputDeck.description,
+      deckList: decklist,
+      cardImageId: inputDeck.imageCardId,
+      format: formValues.format,
+      placement: formValues.placement,
+      size: formValues.size,
+      country: formValues.country,
+      player: formValues.player,
+      host: formValues.host,
+      date: formValues.date,
+    });
+    this.deck = inputDeck;
   }
 }

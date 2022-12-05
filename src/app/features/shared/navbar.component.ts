@@ -31,7 +31,7 @@ import { AuthService } from '../../service/auth.service';
       >
         <img
           alt="Logo"
-          class="max-h-[2.75rem] cursor-pointer md:mt-2 md:max-h-[4rem]"
+          class="mt-[0.25rem] max-h-[3.25rem] cursor-pointer md:mt-[-0.5rem] md:max-h-[5.5rem]"
           src="../../../assets/images/logo.png"
         />
       </a>
@@ -98,7 +98,10 @@ import { AuthService } from '../../service/auth.service';
         ></digimon-filter-button>
         <div *ngIf="!showCardList" class="m-auto md:hidden"></div>
 
-        <div class="my-1 mx-2 ml-auto flex flex-row lg:ml-4">
+        <div
+          [ngClass]="{ 'ml-auto': !showCardList, 'ml-2': showCardList }"
+          class="my-1 mx-2 flex flex-row lg:ml-4"
+        >
           <button
             (click)="changeMenu()"
             class="min-w-auto primary-background mx-2 h-9 w-9 overflow-hidden rounded-full text-xs font-semibold text-[#e2e4e6] hover:bg-[#64B5F6]"

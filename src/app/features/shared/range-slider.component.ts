@@ -12,9 +12,9 @@ import { Subject, takeUntil } from 'rxjs';
 @Component({
   selector: 'digimon-range-slider',
   template: `
-    <div class="custom-slider mx-5 flex flex-row">
+    <div class="custom-slider flex flex-row px-3">
       <ngx-slider
-        [formControl]="sliderControl"
+        [formControl]="filterFormControl"
         class="w-full"
         [options]="options"
       ></ngx-slider>
@@ -31,19 +31,14 @@ export class RangeSliderComponent implements OnInit, OnDestroy {
   @Input() title: string = '';
   @Input() suffix?: string = '';
   @Input() reset: EventEmitter<void>;
-  @Output() change = new EventEmitter<number[]>();
-
-  sliderControl = new FormControl([20, 80]);
+  @Input() filterFormControl: FormControl;
 
   options = {};
 
   private onDestroy$ = new Subject();
 
   ngOnInit(): void {
-    this.sliderControl.setValue(this.minMax, { emitEvent: false });
-    this.sliderControl.valueChanges
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((values) => this.change.emit(values));
+    this.filterFormControl.setValue(this.minMax, { emitEvent: false });
 
     this.options = {
       floor: this.minMax[0],
@@ -54,7 +49,7 @@ export class RangeSliderComponent implements OnInit, OnDestroy {
     };
 
     this.reset.pipe(takeUntil(this.onDestroy$)).subscribe(() => {
-      this.sliderControl.setValue(this.minMax, { emitEvent: false });
+      this.filterFormControl.setValue(this.minMax, { emitEvent: false });
     });
   }
 

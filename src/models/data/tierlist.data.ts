@@ -11,24 +11,24 @@ export const TIERLIST = [
       card: 'BT9-031',
       image: 'assets/images/cards/eng/BT9-031.webp',
     },
+  ],
+  //A
+  [
     {
       name: 'Jesmon GX',
       card: 'BT10-112',
       image: 'assets/images/cards/eng/BT10-112.webp',
     },
     {
-      name: 'Venusmon',
-      card: 'BT10-042',
-      image: 'assets/images/cards/eng/BT10-042.webp',
-    },
-    {
       name: 'Blue Flare',
       card: 'BT10-026',
       image: 'assets/images/cards/eng/BT10-026.webp',
     },
-  ],
-  //A
-  [
+    {
+      name: 'Venusmon',
+      card: 'BT10-042',
+      image: 'assets/images/cards/eng/BT10-042.webp',
+    },
     {
       name: 'GrandisKuwagamon',
       card: 'BT9-055',

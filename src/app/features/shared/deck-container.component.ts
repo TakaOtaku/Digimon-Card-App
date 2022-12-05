@@ -31,7 +31,7 @@ import { selectAllCards } from '../../store/digimon.selectors';
         class="text-shadow-white-xs relative top-[10px] left-[-5px] w-24 border border-black bg-opacity-80 text-center text-xs font-bold uppercase"
       >
         <span *ngIf="mode !== 'Tournament'" class="mr-1">{{
-          deck!.tags![0].name
+          deck.tags ? deck!.tags![0].name : null
         }}</span>
         <span *ngIf="mode === 'Tournament'" class="mr-1">{{
           getTournamentDeck(deck).format
@@ -39,7 +39,7 @@ import { selectAllCards } from '../../store/digimon.selectors';
       </div>
 
       <div *ngIf="isIllegal()" class="absolute top-[5px] right-[35px]">
-        <i class="fa-solid fa-exclamation h-8 w-8 text-[#ef4444]"></i>
+        <span class="text-shadow text-4xl text-[#ef4444]">!</span>
       </div>
 
       <div
@@ -186,7 +186,9 @@ export class DeckContainerComponent implements OnInit {
   }
 
   isIllegal(): boolean {
-    return !!this.deck.tags.find((tag) => tag.name === 'Illegal');
+    return this.deck.tags
+      ? !!this.deck.tags.find((tag) => tag.name === 'Illegal')
+      : false;
   }
 
   placementString(placement: number): string {

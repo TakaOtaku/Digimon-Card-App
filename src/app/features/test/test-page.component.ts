@@ -1,32 +1,57 @@
-import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 import { DataSnapshot } from '@angular/fire/compat/database/interfaces';
 
 // @ts-ignore
 import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
+import { Store } from '@ngrx/store';
 import { filter, first, Subject, tap } from 'rxjs';
-import { IBlog, IBlogWithText, ISave } from '../../../models';
+import {
+  ADMINS,
+  IBlog,
+  IBlogWithText,
+  ICard,
+  IDeck,
+  ISave,
+} from '../../../models';
+import { setColors, setTags } from '../../functions/digimon-card.functions';
 import { AuthService } from '../../service/auth.service';
 import { CardMarketService } from '../../service/card-market.service';
 import { CardTraderService } from '../../service/card-trader.service';
 import { DatabaseService } from '../../service/database.service';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
+import { selectAllCards } from '../../store/digimon.selectors';
 import { emptySettings } from '../../store/reducers/save.reducer';
 
 @Component({
   selector: 'digimon-test-page',
   template: `
     <button
+      *ngIf="isAdmin()"
       class="border-2 border-amber-200 bg-amber-400"
       (click)="transferAllDataToSQL()"
     >
       Realtime Database to MySQL
     </button>
+    <button
+      *ngIf="isAdmin()"
+      class="border-2 border-amber-200 bg-amber-400"
+      (click)="updateAllDecks()"
+    >
+      Update all Decks
+    </button>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TestPageComponent implements OnDestroy {
+export class TestPageComponent implements OnInit, OnDestroy {
+  private allCards: ICard[] = [];
   private onDestroy$ = new Subject();
   constructor(
+    private store: Store,
     public authService: AuthService,
     private databaseService: DatabaseService,
     private digimonBackendService: DigimonBackendService,
@@ -43,9 +68,25 @@ export class TestPageComponent implements OnDestroy {
     //});
   }
 
+  ngOnInit() {
+    this.store
+      .select(selectAllCards)
+      .pipe(first())
+      .subscribe((allCards) => (this.allCards = allCards));
+  }
+
   ngOnDestroy() {
     this.onDestroy$.next(true);
     this.onDestroy$.unsubscribe();
+  }
+
+  isAdmin(): boolean {
+    return !!ADMINS.find((user) => {
+      if (this.authService.userData?.uid === user.id) {
+        return user.admin;
+      }
+      return false;
+    });
   }
 
   transferAllDataToSQL() {
@@ -237,5 +278,33 @@ export class TestPageComponent implements OnDestroy {
             .subscribe((message) => console.log(message));
         });
       });
+  }
+
+  updateAllDecks() {
+    this.digimonBackendService
+      .getSaves()
+      .pipe(first())
+      .subscribe((saves) => {
+        saves.forEach((save) => {
+          this.updateDecks(save);
+        });
+      });
+  }
+
+  private updateDecks(save: ISave) {
+    const newDecks: IDeck[] = save.decks.map((deck) => {
+      const tags = setTags(deck, this.allCards);
+      const color = setColors(deck, this.allCards);
+
+      return {
+        ...deck,
+        tags,
+        color,
+      };
+    });
+    const newSave: ISave = { ...save, decks: newDecks };
+    if (save != newSave) {
+      this.digimonBackendService.updateSave(newSave).pipe(first()).subscribe();
+    }
   }
 }

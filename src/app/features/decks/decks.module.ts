@@ -22,7 +22,7 @@ import { DigimonBackendService } from '../../service/digimon-backend.service';
 import { DeckbuilderModule } from '../deckbuilder/deckbuilder.module';
 import { SharedModule } from '../shared/shared.module';
 import { DeckStatisticsComponent } from './components/deck-statistics.component';
-import { DeckSubmissionComponent } from './components/deck-submission.component';
+import { DeckSubmissionComponent } from '../shared/dialogs/deck-submission.component';
 import { DecksFilterComponent } from './components/decks-filter.component';
 import { DecksPageComponent } from './decks-page.component';
 
@@ -30,7 +30,6 @@ import { DecksPageComponent } from './decks-page.component';
   declarations: [
     DecksPageComponent,
     DeckStatisticsComponent,
-    DeckSubmissionComponent,
     DecksFilterComponent,
   ],
   imports: [

@@ -8,6 +8,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { ButtonModule } from 'primeng/button';
+import { CalendarModule } from 'primeng/calendar';
 import { ChartModule } from 'primeng/chart';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { ContextMenuModule } from 'primeng/contextmenu';
@@ -29,6 +30,7 @@ import { ChangeAccessorieDialogComponent } from './dialogs/change-accessorie-dia
 import { ChangelogDialogComponent } from './dialogs/changelog-dialog.component';
 import { CollectionStatsDialogComponent } from './dialogs/collection-stats-dialog.component';
 import { DeckDialogComponent } from './dialogs/deck-dialog.component';
+import { DeckSubmissionComponent } from './dialogs/deck-submission.component';
 import { ExportDeckDialogComponent } from './dialogs/export-deck-dialog.component';
 import { ImportDeckDialogComponent } from './dialogs/import-deck-dialog.component';
 import { ProxyPrintDialogComponent } from './dialogs/proxy-print-dialog.component';
@@ -79,6 +81,7 @@ import { LevelSpreadComponent } from './statistics/level-spread.component';
     ColorSpreadComponent,
     DdtoSpreadComponent,
     LevelSpreadComponent,
+    DeckSubmissionComponent,
   ],
   exports: [
     DeckContainerComponent,
@@ -103,6 +106,7 @@ import { LevelSpreadComponent } from './statistics/level-spread.component';
     ColorSpreadComponent,
     DdtoSpreadComponent,
     LevelSpreadComponent,
+    DeckSubmissionComponent,
   ],
   imports: [
     CommonModule,
@@ -131,6 +135,7 @@ import { LevelSpreadComponent } from './statistics/level-spread.component';
     RippleModule,
     InputNumberModule,
     InputSwitchModule,
+    CalendarModule,
   ],
   providers: [AuthService, MessageService, ConfirmationService],
 })

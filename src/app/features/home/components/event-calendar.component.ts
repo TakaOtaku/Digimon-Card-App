@@ -44,7 +44,36 @@ export interface IEvent {
         </div>
       </div>
 
-      <div class="no-gap grid grid-cols-3 lg:grid-cols-7">
+      <div
+        class="lg:hidden"
+        *ngIf="eventsInMonth(events) as eventsInMonth; else noEvents"
+      >
+        <div
+          *ngFor="let event of eventsInMonth"
+          [ngStyle]="{ background: getThemeColor(event) }"
+          class="my-1 flex w-full flex-row border px-3 px-1"
+        >
+          <div
+            class="text-shadow w-full truncate text-sm font-black text-[#e2e4e6]"
+          >
+            {{ event.title }}
+          </div>
+          <div
+            class="text-shadow ml-auto w-full truncate text-right text-sm font-black text-[#e2e4e6]"
+          >
+            {{ event.date }}
+          </div>
+        </div>
+      </div>
+      <ng-template #noEvents>
+        <h1
+          class="text-shadow my-2 text-lg font-black text-[#e2e4e6] lg:text-2xl"
+        >
+          No events this month.
+        </h1>
+      </ng-template>
+
+      <div class="no-gap hidden grid-cols-3 lg:grid lg:grid-cols-7">
         <div
           *ngFor="let day of DAYS"
           class="text-shadow my-2 hidden text-center font-black text-[#e2e4e6] lg:block lg:text-xl"
@@ -75,12 +104,13 @@ export interface IEvent {
             (click)="openEventModal(event)"
             class="m-1 rounded-full border border-black text-center"
           >
-            <span
+            <div
               [pTooltip]="event.title"
               tooltipPosition="top"
-              class="text-shadow ml-2 w-full truncate text-sm font-black text-[#e2e4e6]"
-              >{{ event.title }}</span
+              class="text-shadow w-full truncate px-2 text-xs font-black text-[#e2e4e6]"
             >
+              {{ event.title }}
+            </div>
           </div>
         </div>
       </div>
@@ -335,5 +365,13 @@ export class EventCalendarComponent implements OnInit, OnDestroy {
       ['Tournament', ' #19a0e3'],
     ]);
     return themeMap.get(event.theme);
+  }
+
+  eventsInMonth(events: IEvent[]): IEvent[] {
+    const currentEvents = events.filter((event) => {
+      const currentMonth = Number(event.date.split('.')[1]);
+      return currentMonth === this.month + 1;
+    });
+    return currentEvents;
   }
 }
