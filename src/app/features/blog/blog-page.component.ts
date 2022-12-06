@@ -13,14 +13,14 @@ import { DigimonBackendService } from '../../service/digimon-backend.service';
   template: `
     <div
       *ngIf="blog$ | async as blog"
-      class="w-full bg-gradient-to-b from-[#17212f] to-[#08528d]"
+      class="w-full bg-gradient-to-b from-[#17212f] to-[#08528d] pt-5"
     >
       <div class="mx-auto max-w-7xl">
         <digimon-header
           [edit]="edit"
           [form]="form"
           (editChanged)="edit = $event"
-          [authorId]="blog.authorId"
+          [authorid]="blog.authorid"
         ></digimon-header>
 
         <digimon-ckeditor [edit]="edit" [content]="form"></digimon-ckeditor>
@@ -116,7 +116,7 @@ export class BlogPageComponent implements OnInit {
       title: formValue.title,
       approved: blog.approved,
       author: blog.author,
-      authorId: blog.authorId,
+      authorid: blog.authorid,
       category: formValue.category,
     } as IBlog;
 

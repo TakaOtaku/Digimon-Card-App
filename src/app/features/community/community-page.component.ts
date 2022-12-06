@@ -8,12 +8,19 @@ import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { first, Subject, takeUntil } from 'rxjs';
+import { first, map, Observable, Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
 import { ADMINS, IBlog, IBlogWithText, IUser } from '../../../models';
 import { AuthService } from '../../service/auth.service';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
+import { setBlogs } from '../../store/digimon.actions';
 import { selectBlogs } from '../../store/digimon.selectors';
+
+interface IBlogs {
+  allBlogs: IBlog[];
+  shownBlogs: IBlog[];
+  hiddenBlogs: IBlog[];
+}
 
 @Component({
   selector: 'digimon-community-page',
@@ -22,6 +29,7 @@ import { selectBlogs } from '../../store/digimon.selectors';
       class="min-h-[calc(100vh-50px)] w-full bg-gradient-to-b from-[#17212f] to-[#08528d]"
     >
       <div
+        *ngIf="blogs$ | async as blogs"
         class="surface-ground mx-auto w-full max-w-7xl border border-slate-200"
       >
         <div class="flex flex-row">
@@ -37,7 +45,7 @@ import { selectBlogs } from '../../store/digimon.selectors';
             pButton
             pRipple
             type="button"
-            (click)="newEntry()"
+            (click)="newEntry(blogs)"
           ></button>
         </div>
 
@@ -65,16 +73,15 @@ import { selectBlogs } from '../../store/digimon.selectors';
                   Date
                 </th>
                 <th
-                  *ngIf="showButtons()"
                   scope="col"
                   class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"
                 ></th>
               </tr>
             </thead>
             <tbody>
-              <ng-container *ngIf="showWrite()">
+              <ng-container>
                 <tr
-                  *ngFor="let blog of blogEntriesHidden"
+                  *ngFor="let blog of blogs.hiddenBlogs"
                   class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150"
                 >
                   <td class="w-7 whitespace-nowrap px-1 py-2">
@@ -101,33 +108,30 @@ import { selectBlogs } from '../../store/digimon.selectors';
                     {{ blog.date | date: 'dd.MM.yyyy' }}
                   </td>
                   <td
-                    *ngIf="showButtons()"
                     class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
                   >
                     <button
-                      *ngIf="showButtons()"
                       [disabled]="!isAdmin()"
                       class="p-button p-button-rounded ml-auto mr-2"
                       icon="pi pi-times"
                       pButton
                       pRipple
                       type="button"
-                      (click)="approve(blog)"
+                      (click)="approve(blog, blogs)"
                     ></button>
                     <button
-                      *ngIf="isAdmin()"
                       class="p-button p-button-rounded ml-auto mr-2"
                       icon="pi pi-trash"
                       pButton
                       pRipple
                       type="button"
-                      (click)="delete(blog, $event)"
+                      (click)="delete(blog, blogs, $event)"
                     ></button>
                   </td>
                 </tr>
               </ng-container>
               <tr
-                *ngFor="let blog of blogEntries"
+                *ngFor="let blog of blogs.shownBlogs"
                 class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150"
               >
                 <td class="w-7 whitespace-nowrap px-1 py-2">
@@ -154,27 +158,24 @@ import { selectBlogs } from '../../store/digimon.selectors';
                   {{ blog.date | date: 'dd.MM.yyyy' }}
                 </td>
                 <td
-                  *ngIf="showButtons()"
+                  *ngIf="isAdmin()"
                   class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]"
                 >
                   <button
-                    *ngIf="showButtons()"
-                    [disabled]="!isAdmin()"
                     class="p-button p-button-rounded ml-auto mr-2"
                     icon="pi pi-check"
                     pButton
                     pRipple
                     type="button"
-                    (click)="hide(blog)"
+                    (click)="hide(blog, blogs)"
                   ></button>
                   <button
-                    *ngIf="isAdmin()"
                     class="p-button p-button-rounded ml-auto mr-2"
                     icon="pi pi-trash"
                     pButton
                     pRipple
                     type="button"
-                    (click)="delete(blog, $event)"
+                    (click)="delete(blog, blogs, $event)"
                   ></button>
                 </td>
               </tr>
@@ -187,9 +188,27 @@ import { selectBlogs } from '../../store/digimon.selectors';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CommunityPageComponent implements OnInit, OnDestroy {
-  allBlogEntries: IBlog[] = [];
-  blogEntries: IBlog[] = [];
-  blogEntriesHidden: IBlog[] = [];
+  blogs$: Observable<IBlogs> = this.store.select(selectBlogs).pipe(
+    map((entries) => {
+      const allBlogs = entries;
+      const shownBlogs = entries
+        .filter((entry) => entry.approved)
+        .sort(
+          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+        );
+      const hiddenBlogs = entries
+        .filter((entry) => !entry.approved)
+        .filter((entry) =>
+          this.isAdmin()
+            ? true
+            : entry.authorid === this.authService.userData?.uid
+        )
+        .sort(
+          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+        );
+      return { allBlogs, shownBlogs, hiddenBlogs } as IBlogs;
+    })
+  );
 
   user: IUser | null;
 
@@ -213,117 +232,11 @@ export class CommunityPageComponent implements OnInit, OnDestroy {
     this.authService.authChange
       .pipe(takeUntil(this.onDestroy$))
       .subscribe(() => (this.user = this.authService.userData));
-
-    this.store
-      .select(selectBlogs)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((entries) => {
-        this.allBlogEntries = entries;
-        this.blogEntriesHidden = entries
-          .filter((entry) => !entry.approved)
-          .sort(
-            (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-          );
-        this.blogEntries = entries
-          .filter((entry) => entry.approved)
-          .sort(
-            (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-          );
-      });
   }
 
   ngOnDestroy() {
     this.onDestroy$.next(true);
     this.onDestroy$.unsubscribe();
-  }
-
-  newEntry() {
-    const newBlog: IBlog = {
-      uid: uuid.v4(),
-      date: new Date(),
-      title: 'Empty Entry',
-      approved: false,
-      author: this.user!.displayName,
-      authorId: this.user!.uid,
-      category: 'Tournament Report',
-    };
-    const newBlogWithText: IBlogWithText = {
-      ...newBlog,
-      text: '<p>Hello World!</p>',
-    };
-
-    this.blogEntriesHidden.push(newBlog);
-    this.digimonBackendService.createBlog(newBlog).pipe(first()).subscribe();
-    this.digimonBackendService
-      .createBlogWithText(newBlogWithText)
-      .pipe(first())
-      .subscribe();
-    this.messageService.add({
-      severity: 'success',
-      summary: 'Blog-Entry created!',
-      detail: 'New Blog-Entry was created successfully!',
-    });
-  }
-
-  approve(blog: IBlog) {
-    blog.approved = true;
-    this.blogEntriesHidden = this.blogEntriesHidden.filter(
-      (entry) => entry.uid !== blog.uid
-    );
-    this.blogEntries = this.blogEntries.filter(
-      (entry) => entry.uid !== blog.uid
-    );
-    this.blogEntries.push(blog);
-    this.digimonBackendService.updateBlog(blog).pipe(first()).subscribe();
-  }
-
-  open(blog: IBlog) {
-    this.router.navigateByUrl('blog/' + blog.uid);
-  }
-
-  hide(blog: IBlog) {
-    blog.approved = false;
-    this.blogEntriesHidden = this.blogEntriesHidden.filter(
-      (entry) => entry.uid !== blog.uid
-    );
-    this.blogEntries = this.blogEntries.filter(
-      (entry) => entry.uid !== blog.uid
-    );
-    this.blogEntriesHidden.push(blog);
-    this.digimonBackendService.updateBlog(blog).pipe(first()).subscribe();
-  }
-
-  delete(blog: IBlog, event: any) {
-    this.confirmationService.confirm({
-      target: event!.target!,
-      message:
-        'You are about to permanently delete your this Blog-Entry. Are you sure?',
-      icon: 'pi pi-exclamation-triangle',
-      accept: () => {
-        this.blogEntriesHidden = this.blogEntriesHidden.filter(
-          (entry) => entry.uid !== blog.uid
-        );
-        this.blogEntries = this.blogEntries.filter(
-          (entry) => entry.uid !== blog.uid
-        );
-
-        this.digimonBackendService
-          .deleteBlogEntry(blog.uid)
-          .pipe(first())
-          .subscribe();
-        this.digimonBackendService
-          .deleteBlogEntryWithText(blog.uid)
-          .pipe(first())
-          .subscribe();
-
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Blog-Entry deleted!',
-          detail: 'The Blog-Entry was deleted successfully!',
-        });
-      },
-      reject: () => {},
-    });
   }
 
   private makeGoogleFriendly() {
@@ -342,6 +255,96 @@ export class CommunityPageComponent implements OnInit, OnDestroy {
           'Tournament, Reports, Deck Builder, Collection Tracker, Tier list, Card, Statistics, Digimon, TCG',
       },
     ]);
+  }
+
+  newEntry(currentBlogs: IBlogs) {
+    const newBlog: IBlog = {
+      uid: uuid.v4(),
+      date: new Date(),
+      title: 'Empty Entry',
+      approved: false,
+      author: this.user!.displayName,
+      authorid: this.user!.uid,
+      category: 'Tournament Report',
+    };
+    const newBlogWithText: IBlogWithText = {
+      ...newBlog,
+      text: '<p>Hello World!</p>',
+    };
+
+    this.store.dispatch(
+      setBlogs({ blogs: [...currentBlogs.allBlogs, newBlog] })
+    );
+    this.digimonBackendService.createBlog(newBlog).pipe(first()).subscribe();
+    this.digimonBackendService
+      .createBlogWithText(newBlogWithText)
+      .pipe(first())
+      .subscribe();
+    this.messageService.add({
+      severity: 'success',
+      summary: 'Blog-Entry created!',
+      detail: 'New Blog-Entry was created successfully!',
+    });
+  }
+
+  approve(blog: IBlog, blogs: IBlogs) {
+    blog.approved = true;
+
+    const newBlogs = blogs.allBlogs.map((entry) => {
+      if (blog.uid === entry.uid) {
+        return blog;
+      }
+      return entry;
+    });
+    this.store.dispatch(setBlogs({ blogs: newBlogs }));
+    this.digimonBackendService.updateBlog(blog).pipe(first()).subscribe();
+  }
+
+  open(blog: IBlog) {
+    this.router.navigateByUrl('blog/' + blog.uid);
+  }
+
+  hide(blog: IBlog, blogs: IBlogs) {
+    blog.approved = false;
+
+    const newBlogs = blogs.allBlogs.map((entry) => {
+      if (blog.uid === entry.uid) {
+        return blog;
+      }
+      return entry;
+    });
+    this.store.dispatch(setBlogs({ blogs: newBlogs }));
+    this.digimonBackendService.updateBlog(blog).pipe(first()).subscribe();
+  }
+
+  delete(blog: IBlog, blogs: IBlogs, event: any) {
+    this.confirmationService.confirm({
+      target: event!.target!,
+      message:
+        'You are about to permanently delete your this Blog-Entry. Are you sure?',
+      icon: 'pi pi-exclamation-triangle',
+      accept: () => {
+        const newBlogs = blogs.allBlogs.filter(
+          (entry) => entry.uid !== blog.uid
+        );
+        this.store.dispatch(setBlogs({ blogs: newBlogs }));
+        this.digimonBackendService
+          .deleteBlogEntry(blog.uid)
+          .pipe(first())
+          .subscribe();
+        this.digimonBackendService
+          .deleteBlogEntryWithText(blog.uid)
+          .pipe(first())
+          .subscribe();
+
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Blog-Entry deleted!',
+          detail: 'The Blog-Entry was deleted successfully!',
+        });
+      },
+      reject: () => {},
+    });
   }
 
   isAdmin(): boolean {
@@ -366,7 +369,7 @@ export class CommunityPageComponent implements OnInit, OnDestroy {
     });
   }
 
-  showButtons(): boolean {
+  showButtons(allBlogEntries: IBlog[]): boolean {
     if (this.isAdmin()) {
       return true;
     }
@@ -378,8 +381,8 @@ export class CommunityPageComponent implements OnInit, OnDestroy {
       return false;
     });
 
-    const entryWritten = !!this.allBlogEntries.find(
-      (blog) => blog.authorId === this.user?.uid
+    const entryWritten = !!allBlogEntries.find(
+      (blog) => blog.authorid === this.user?.uid
     );
     return writeRights ? entryWritten : false;
   }
@@ -396,7 +399,7 @@ export class CommunityPageComponent implements OnInit, OnDestroy {
       return false;
     });
 
-    return writeRights ? blog.authorId === this.user?.uid : false;
+    return writeRights ? blog.authorid === this.user?.uid : false;
   }
 
   getIcon(category: string): string {

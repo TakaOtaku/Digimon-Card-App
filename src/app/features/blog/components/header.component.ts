@@ -108,7 +108,7 @@ import { AuthService } from '../../../service/auth.service';
 export class HeaderComponent implements OnInit, OnDestroy {
   @Input() edit: boolean;
   @Input() form: FormGroup;
-  @Input() authorId: string;
+  @Input() authorid: string;
 
   @Output() editChanged = new EventEmitter<boolean>();
 
@@ -150,6 +150,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
       return false;
     });
 
-    return writeRights ? this.authorId === this.user?.uid : false;
+    return writeRights ? this.authorid === this.user?.uid : false;
   }
 }

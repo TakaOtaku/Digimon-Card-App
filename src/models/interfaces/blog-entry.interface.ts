@@ -4,7 +4,7 @@ export interface IBlog {
   title: string;
   approved: boolean;
   author: string;
-  authorId: string;
+  authorid: string;
   category: 'Tournament Report' | 'Deck-Review';
 }
 
