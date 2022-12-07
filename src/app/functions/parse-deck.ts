@@ -6,6 +6,7 @@ export function stringToDeck(
   deckList: string,
   allCards: ICard[]
 ): IDeck | null {
+  debugger;
   let result: string[] = deckList.split('\n');
 
   let deck: IDeck = parseDeck(result, allCards);
