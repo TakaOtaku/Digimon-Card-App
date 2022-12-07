@@ -13,8 +13,16 @@ import { ObscenityPipe } from '../../../pipes/obscenity.pipe';
 @Component({
   selector: 'digimon-deck-metadata',
   template: `
-    <div class="mx-3 mb-1 inline-flex w-full">
-      <span class="mt-2 w-1/2">
+    <div class="mb-1 inline-flex w-full px-3">
+      <div class="ml-auto mt-2 flex w-1/2 pr-2">
+        <p-chip
+          class="ml-auto"
+          *ngFor="let tag of tags"
+          label="{{ tag.name }}"
+        ></p-chip>
+      </div>
+
+      <div class="mt-2 w-1/2 pl-1">
         <input
           [(ngModel)]="titleInput"
           (ngModelChange)="this.titleChange.emit($event)"
@@ -23,11 +31,7 @@ import { ObscenityPipe } from '../../../pipes/obscenity.pipe';
           pInputText
           type="text"
         />
-      </span>
-
-      <span class="p-float-label ml-2 mr-6 mt-2 w-1/2">
-        <p-chip *ngFor="let tag of tags" label="{{ tag.name }}"></p-chip>
-      </span>
+      </div>
     </div>
 
     <div class="mx-3.5 inline-flex w-full">

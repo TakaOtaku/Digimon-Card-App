@@ -48,7 +48,7 @@ import { emptySave } from './store/reducers/save.reducer';
     <p-dialog
       [(visible)]="showChangelog"
       [closeOnEscape]="true"
-      styleClass="h-screen w-screen lg:max-h-[600px] lg:max-w-3xl"
+      styleClass="w-full h-full max-w-6xl min-h-[500px]"
       header="Changelog"
     >
       <digimon-changelog-dialog

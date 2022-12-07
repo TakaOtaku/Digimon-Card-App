@@ -1303,37 +1303,6 @@
     "effect": "[On Play] Trigger ＜Draw 1＞. (Draw 1 card from your deck.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "Playmat and Card Set 2 -Floral Fun- [PB-09]",
-    "color": "Blue",
-    "version": "AA",
-    "block": [
-      "00",
-      "01"
-    ],
-    "restriction": "-",
-    "illustrator": "/"
-  },
-  {
-    "id": "BT1-029_P2",
-    "name": "Gabumon",
-    "cardImage": "assets/images/cards/eng/BT1-029_P2.webp",
-    "cardType": "Digimon",
-    "dp": "1000",
-    "playCost": "3",
-    "digivolveCost1": "0 from Lv.2",
-    "digivolveCost2": "-",
-    "cardLv": "Lv.3",
-    "form": "Rookie",
-    "attribute": "Data",
-    "type": "Reptile",
-    "rarity": "R",
-    "cardNumber": "BT1-029",
-    "digiXros": "-",
-    "specialDigivolve": "-",
-    "dnaDigivolve": "-",
-    "effect": "[On Play] Trigger ＜Draw 1＞. (Draw 1 card from your deck.)",
-    "digivolveEffect": "-",
-    "securityEffect": "-",
     "notes": "Store Championship Participant Pack",
     "color": "Blue",
     "version": "Stamp",
@@ -1342,7 +1311,7 @@
       "01"
     ],
     "restriction": "-",
-    "illustrator": "koki"
+    "illustrator": "/"
   },
   {
     "id": "BT1-029_P3",
@@ -1368,6 +1337,37 @@
     "notes": "Store Champion Card Set",
     "color": "Blue",
     "version": "Stamp",
+    "block": [
+      "00",
+      "01"
+    ],
+    "restriction": "-",
+    "illustrator": "koki"
+  },
+  {
+    "id": "BT1-029_P4",
+    "name": "Gabumon",
+    "cardImage": "assets/images/cards/eng/BT1-029_P4.webp",
+    "cardType": "Digimon",
+    "dp": "1000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Data",
+    "type": "Reptile",
+    "rarity": "R",
+    "cardNumber": "BT1-029",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Play] Trigger ＜Draw 1＞. (Draw 1 card from your deck.)",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Playmat and Card Set 2 -Floral Fun- [PB-09]",
+    "color": "Blue",
+    "version": "AA",
     "block": [
       "00",
       "01"
