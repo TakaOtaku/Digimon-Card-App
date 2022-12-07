@@ -71,11 +71,16 @@ export class DecksComponent implements OnInit, OnChanges {
   deckDialog = false;
 
   ngOnInit() {
+    if (!this.decks) {
+      this.decks = [];
+    }
     this.decksToShow = this.decks.slice(0, 20);
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    this.decksToShow = changes['decks'].currentValue.slice(0, 20);
+    if (changes['decks']?.currentValue) {
+      this.decksToShow = changes['decks'].currentValue.slice(0, 20);
+    }
   }
 
   showDeckDialog(deck: IDeck) {

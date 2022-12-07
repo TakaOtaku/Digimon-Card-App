@@ -40,7 +40,12 @@ function parseTTSDeck(deckList: string, allCards: ICard[]): IDeck {
     likes: [],
   };
 
-  const deckJson: string[] = JSON.parse(deckList);
+  let deckJson: string[] = [];
+  try {
+    deckJson = JSON.parse(deckList);
+  } catch (e) {
+    return deck;
+  }
 
   deckJson.forEach((entry) => {
     const foundCard = allCards.find((card) => card.id === entry);
