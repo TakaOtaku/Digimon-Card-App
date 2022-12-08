@@ -457,7 +457,7 @@ function applyRangeFilter(
         ]),
       ];
     case 'dp':
-      if (filter[0] === 1 && filter[1] === 16) {
+      if (filter[0] === 1 && filter[1] === 17) {
         return cards;
       }
 

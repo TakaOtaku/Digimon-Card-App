@@ -31,7 +31,7 @@ import { selectAllCards } from '../../store/digimon.selectors';
         class="text-shadow-white-xs relative top-[10px] left-[-5px] w-24 border border-black bg-opacity-80 text-center text-xs font-bold uppercase"
       >
         <span *ngIf="mode !== 'Tournament'" class="mr-1">{{
-          deck.tags ? deck!.tags![0].name : null
+          deck.tags ? deck!.tags[0]?.name : null
         }}</span>
         <span *ngIf="mode === 'Tournament'" class="mr-1">{{
           getTournamentDeck(deck).format
