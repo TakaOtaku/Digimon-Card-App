@@ -246,14 +246,14 @@ import { emptyFilter } from '../../../store/reducers/digimon.reducers';
       <div class="flex flex-row">
         <digimon-range-slider
           [reset]="resetEmitter"
-          [minMax]="[1, 16]"
+          [minMax]="[1, 17]"
           [filterFormControl]="dpFilter"
           suffix="000"
           title="DP:"
           class="w-full"
         ></digimon-range-slider>
         <button
-          (click)="dpFilter.setValue([1, 16], { emitEvent: false })"
+          (click)="dpFilter.setValue([1, 17], { emitEvent: false })"
           class="w-12 text-[#e2e4e6]"
           type="button"
         >

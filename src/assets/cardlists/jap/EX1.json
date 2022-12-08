@@ -1226,7 +1226,7 @@
     "version": "AA",
     "block": [
       "01",
-      "02"      
+      "02"
     ],
     "restriction": "-",
     "illustrator": ""
@@ -3312,7 +3312,7 @@
   {
     "id": "EX1-073_P2",
     "name": "Machinedramon",
-    "cardImage": "assets/images/cards/eng/EX1-073_P2.webp",
+    "cardImage": "assets/images/cards/jap/EX1-073_P2.webp",
     "cardType": "Digimon",
     "dp": "11000",
     "playCost": "12",
