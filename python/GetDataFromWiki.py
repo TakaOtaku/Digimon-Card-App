@@ -10,7 +10,9 @@ import copy
 
 wikiLink = 'https://digimoncardgame.fandom.com'
 wikiPageLinks = [
-    'https://digimoncardgame.fandom.com/wiki/EX-04:_Theme_Booster_Alternative_Being'
+    #'https://digimoncardgame.fandom.com/wiki/BT-12:_Booster_Across_Time'
+    'https://digimoncardgame.fandom.com/wiki/ST-14:_Advanced_Deck_Beelzemon'
+    #'https://digimoncardgame.fandom.com/wiki/EX-04:_Theme_Booster_Alternative_Being'
 ]
 setName = "▹THEME BOOSTER ALTERNATIVE BEING [EX-04]"
 cardLinks = []
@@ -89,7 +91,7 @@ def getDigivolveInfo(html, digimoncard):
         digimoncard["digivolveColor" +
                     str(evoNumber)] = cells[1].text.replace("\n", "").strip()
         digimoncard["digivolveLevel" +
-                    str(evoNumber)] = cells[3].text.replace("\n", "").strip()
+                    str(evoNumber)] = cells[3].text.replace("\n", "").strip() + 'from Lv.' + cells[5].text.replace("\n", "").strip()
         digimoncard["digivolveCost" +
                     str(evoNumber)] = cells[5].text.replace("\n", "").strip()
         evoNumber += 1
@@ -104,7 +106,6 @@ def getDigivolveInfo(html, digimoncard):
                 digimoncard['specialDigivolve'] = specialEvo
 
     return digimoncard
-
 
 def getExtraInfo(html, digimoncard):
     if html == None:
@@ -136,7 +137,6 @@ def getIllustratorsInfo(html, digimoncard):
             digimoncard['illustrator'] = td[0].text.replace("\n", "").strip()
 
     return digimoncard
-
 
 def getCardDataFromWiki():
     for url in NormalCards:
@@ -219,7 +219,6 @@ def getCardDataFromWiki():
         print(digimoncard['name'])
         cards.append(digimoncard)
 
-
 def makeAACardDatas():
     for aaCard in AACards:
         splitUrl = aaCard.split("/")
@@ -239,7 +238,7 @@ def makeAACardDatas():
 
 def saveCardsToJSON():
     print('Saving now!')
-    with open('ex4.json', 'w') as fp:
+    with open('ST14.json', 'w') as fp:
         json.dump(cards, fp)
 
 

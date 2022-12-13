@@ -4104,6 +4104,36 @@
     "illustrator": "Takase"
   },
   {
+    "id": "BT4-105_P1",
+    "name": "Tactical Retreat!",
+    "cardImage": "assets/images/cards/jap/BT4-105_P1.webp",
+    "cardType": "Option",
+    "dp": "-",
+    "playCost": "1",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "-",
+    "rarity": "U",
+    "cardNumber": "BT4-105",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Main] Place 1 of your Digimon on top of your security stack face down. Trash all of the digivolution cards of that Digimon.",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Trigger ＜Recovery +1 (Deck)＞. (Place the top card of your deck on top of your security stack.)",
+    "notes": "▹ADVANCED DECK BEELZEMON[ST-14]",
+    "color": "Yellow",
+    "version": "Normal",
+    "block": [
+      "00"
+    ],
+    "restriction": "-",
+    "illustrator": "Shin Sasaki"
+  },
+  {
     "id": "BT4-106",
     "name": "Purge Shine",
     "cardImage": "assets/images/cards/jap/BT4-106.webp",

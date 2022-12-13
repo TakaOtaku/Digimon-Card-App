@@ -2640,6 +2640,36 @@
     "illustrator": "yuuki."
   },
   {
+    "id": "BT6-068_P2",
+    "name": "Impmon",
+    "cardImage": "assets/images/cards/jap/BT6-068_P2.webp",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Virus",
+    "type": "Evil",
+    "rarity": "U",
+    "cardNumber": "BT6-068",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Play] You may trash 1 card in your hand. If you do, return 1 Digimon card with [Seven Great Demon Lords] or [Three Musketeers] in its type from your trash to your hand.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "-",
+    "color": "Purple",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "-",
+    "illustrator": "Kenji Watanabe."
+  },
+  {
     "id": "BT6-069",
     "name": "Goblimon",
     "cardImage": "assets/images/cards/jap/BT6-069.webp",

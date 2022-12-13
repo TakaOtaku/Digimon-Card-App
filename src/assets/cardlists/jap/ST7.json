@@ -60,6 +60,36 @@
     "illustrator": "TANIMESO"
   },
   {
+    "id": "ST7-02_P1",
+    "name": "Agumon",
+    "cardImage": "assets/images/cards/jap/ST7-02_P1.webp",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Vaccine",
+    "type": "Dinosaur",
+    "rarity": "C",
+    "cardNumber": "ST7-02",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "[When Attacking] When this Digimon attacks a player, it gets +2000 DP for the turn.",
+    "securityEffect": "-",
+    "notes": "-",
+    "color": "Red",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "-",
+    "illustrator": "yuuki"
+  },
+  {
     "id": "ST7-03",
     "name": "Guilmon",
     "cardImage": "assets/images/cards/jap/ST7-03.webp",
@@ -118,6 +148,36 @@
     ],
     "restriction": "-",
     "illustrator": "kaz"
+  },
+  {
+    "id": "ST7-03_P2",
+    "name": "Guilmon",
+    "cardImage": "assets/images/cards/jap/ST7-03_P2.webp",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Virus",
+    "type": "Reptile",
+    "rarity": "SR",
+    "cardNumber": "ST7-03",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Your Turn] If your opponent has a level 6 or higher Digimon in play, this Digimon can digivolve into a [Gallantmon] in your hand for a memory cost of 4, ignoring its digivolution requirements.",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When an opponent's Digimon is deleted, trigger ＜Draw 1＞. (Draw 1 card from your deck.)",
+    "securityEffect": "-",
+    "notes": "-",
+    "color": "Red",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "-",
+    "illustrator": "Nakano Haito"
   },
   {
     "id": "ST7-04",

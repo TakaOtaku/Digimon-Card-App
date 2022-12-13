@@ -48,7 +48,7 @@ import {
 
       <digimon-decks
         class="mx-auto mt-2 w-full max-w-6xl"
-        [editable]="save.uid === authService.userData?.uid"
+        [editable]="editable"
         [decks]="filteredDecks"
       ></digimon-decks>
     </div>
@@ -63,6 +63,8 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
 
   searchFilter = new FormControl('');
   tagFilter = new FormControl([]);
+
+  editable = true;
 
   private onDestroy$ = new Subject<boolean>();
 
@@ -84,6 +86,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
       this.authService.authChange.pipe(
         tap(() => this.changeURL()),
         switchMap(() => {
+          this.editable = true;
           return this.digimonBackendService.getSave(
             this.authService.userData!.uid
           );
@@ -100,6 +103,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
           this.digimonBackendService.getSave(params['id']).pipe(first())
         ),
         tap((save) => {
+          this.editable = save.uid === this.authService.userData?.uid;
           this.decks = save?.decks ?? [];
           this.filteredDecks = this.decks;
           this.filterChanges();

@@ -6,7 +6,7 @@ import {
   OnInit,
 } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Subject, takeUntil } from 'rxjs';
+import { map, Subject, takeUntil, tap } from 'rxjs';
 import { englishCards } from '../../../../assets/cardlists/eng/english';
 import { ICard, ICountCard } from '../../../../models';
 import {
@@ -18,7 +18,10 @@ import {
 @Component({
   selector: 'digimon-card-list',
   template: `
-    <div class="flex flex-wrap justify-center overflow-hidden">
+    <div
+      class="flex flex-wrap justify-center overflow-hidden"
+      *ngIf="cards$ | async"
+    >
       <h1
         *ngIf="cardsToShow.length === 0"
         class="primary-color text-bold my-10 text-5xl"
@@ -62,10 +65,14 @@ import {
       ></digimon-view-card-dialog>
     </p-dialog>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CardListComponent implements OnInit, OnDestroy {
   @Input() public showCount: number;
+
+  cards$ = this.store.select(selectFilteredCards).pipe(
+    tap((cards) => (this.cards = cards)),
+    tap((cards) => (this.cardsToShow = this.cards.slice(0, this.showCount)))
+  );
 
   viewCardDialog = false;
   card = englishCards[0];
@@ -91,14 +98,6 @@ export class CardListComponent implements OnInit, OnDestroy {
   }
 
   storeSubscriptions() {
-    this.store
-      .select(selectFilteredCards)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((cards) => {
-        this.cards = cards;
-        this.cardsToShow = this.cards.slice(0, this.showCount);
-      });
-
     this.store
       .select(selectCollection)
       .pipe(takeUntil(this.onDestroy$))

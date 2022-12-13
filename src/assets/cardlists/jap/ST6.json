@@ -30,6 +30,36 @@
     "illustrator": "Tonamikanji"
   },
   {
+    "id": "ST6-01_P1",
+    "name": "Pagumon",
+    "cardImage": "assets/images/cards/jap/ST6-01_P1.webp",
+    "cardType": "Digi-Egg",
+    "dp": "-",
+    "playCost": "-",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.2",
+    "form": "In-Training",
+    "attribute": "-",
+    "type": "Lesser",
+    "rarity": "U",
+    "cardNumber": "ST6-01",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "[On Deletion] Trash the top 2 cards of your deck.",
+    "securityEffect": "-",
+    "notes": "▹ADVANCED DECK BEELZEMON[ST-14]",
+    "color": "Purple",
+    "version": "AA",
+    "block": [
+      "00"
+    ],
+    "restriction": "-",
+    "illustrator": "Tonamikanji"
+  },
+  {
     "id": "ST6-02",
     "name": "DemiDevimon",
     "cardImage": "assets/images/cards/jap/ST6-02.webp",

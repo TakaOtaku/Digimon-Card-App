@@ -1178,6 +1178,36 @@
     "illustrator": "KISUKE"
   },
   {
+    "id": "P-033_P1",
+    "name": "Sunarizamon",
+    "cardImage": "assets/images/cards/jap/P-033_P1.webp",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Virus",
+    "type": "Reptile",
+    "rarity": "P",
+    "cardNumber": "P-033",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Your Turn] All of your black Digimon with 13000 DP or more gain ＜Piercing＞. (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.)",
+    "digivolveEffect": "[Your Turn] While this Digimon is black and has 13000 DP or more, this Digimon gains ＜Security Attack +1＞. (This Digimon checks 1 additional security card.)",
+    "securityEffect": "-",
+    "notes": "▹ADVANCED DECK BEELZEMON[ST-14]",
+    "color": "Black",
+    "version": "AA",
+    "block": [
+      "00"
+    ],
+    "restriction": "-",
+    "illustrator": "GOSSAN"
+  },
+  {
     "id": "P-034",
     "name": "DemiDevimon",
     "cardImage": "assets/images/cards/jap/P-034.webp",

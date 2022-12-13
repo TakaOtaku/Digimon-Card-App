@@ -122,6 +122,37 @@
     "illustrator": "As'Maria"
   },
   {
+    "id": "BT1-003_P2",
+    "name": "Upamon",
+    "cardImage": "assets/images/cards/jap/BT1-003_P2.webp",
+    "cardType": "Digi-Egg",
+    "dp": "-",
+    "playCost": "-",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.2",
+    "form": "In-Training",
+    "attribute": "-",
+    "type": "Amphibian",
+    "rarity": "R",
+    "cardNumber": "BT1-003",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "[When Attacking] [Once Per Turn] If your opponent has a Digimon with no digivolution cards in play, trigger ＜Draw 1＞. (Draw 1 card from your deck.)",
+    "securityEffect": "-",
+    "notes": "-",
+    "color": "Blue",
+    "version": "AA",
+    "block": [
+      "00",
+      "01"
+    ],
+    "restriction": "-",
+    "illustrator": "koki"
+  },
+  {
     "id": "BT1-004",
     "name": "Wanyamon",
     "cardImage": "assets/images/cards/jap/BT1-004.webp",

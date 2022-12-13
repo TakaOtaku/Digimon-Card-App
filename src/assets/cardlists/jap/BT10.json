@@ -89,6 +89,36 @@
       "02"
     ]
   },
+  {
+    "id": "BT10-003_P1",
+    "name": "Pickmons",
+    "cardImage": "assets/images/cards/jap/BT10-003_P1.webp",
+    "cardType": "Digi-Egg",
+    "dp": "-",
+    "playCost": "-",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.2",
+    "form": "In-Training",
+    "attribute": "-",
+    "type": "Minor/Xros Heart",
+    "rarity": "U",
+    "cardNumber": "BT10-003",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "[When Attacking] If this Digimon has [Xros Heart] in its traits, ＜Draw 1＞. (Draw 1 card from your deck.)",
+    "securityEffect": "-",
+    "notes": "-",
+    "color": "Yellow",
+    "version": "Normal",
+    "restriction": "-",
+    "illustrator": "koki",
+    "block": [
+      "02"
+    ]
+  },
 	{
 		"id": "BT10-004",
 		"name": "Bosamon",
