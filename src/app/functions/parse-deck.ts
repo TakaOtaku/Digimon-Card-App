@@ -119,7 +119,7 @@ function findCardId(id: string): string {
   if (id.includes('ST')) {
     const splitA = id.split('-');
     const numberA: number = +splitA[0].substring(2) >>> 0;
-    return 'ST' + (numberA >= 10 ? numberA : '0' + numberA) + '-' + splitA[1];
+    return 'ST' + numberA + '-' + splitA[1];
   }
   return id;
 }

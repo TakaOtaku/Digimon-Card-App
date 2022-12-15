@@ -279,6 +279,14 @@ export function mapToDeckCards(
   }
 
   cards.forEach((card) => {
+    let cardSplit = card.id.split('-');
+    if (cardSplit[0].includes('ST') && cardSplit[0].includes('0')) {
+      let searchId = cardSplit[0].replace('0', '') + '-' + cardSplit[1];
+      let found = allCards.find((allCard) => searchId === allCard.id);
+      deckCards.push({ ...found, count: card.count } as IDeckCard);
+      return;
+    }
+
     let found = allCards.find((allCard) => card.id === allCard.id);
     deckCards.push({ ...found, count: card.count } as IDeckCard);
   });
