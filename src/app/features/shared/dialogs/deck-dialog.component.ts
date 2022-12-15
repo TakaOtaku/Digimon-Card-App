@@ -501,6 +501,10 @@ export class DeckDialogComponent implements OnInit, OnChanges {
   }
 
   private getCardImage(imageCardId: string): ICardImage {
+    if (this.deck.cards.length === 0) {
+      return { name: 'BT1-001 - Yokomon', value: 'BT1-001' };
+    }
+
     let foundCard = this.allCards.find((card) => card.id === imageCardId);
     if (foundCard) {
       return {

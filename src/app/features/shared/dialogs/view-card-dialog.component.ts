@@ -64,10 +64,17 @@ import {
         </div>
         <p
           [ngStyle]="{color}"
-          class="text-black-outline-xs self-center font-bold"
+          class="text-black-outline-xs hidden self-center font-bold lg:flex"
           id="Card-Version"
         >
           {{ version }}
+        </p>
+        <p
+          [ngStyle]="{color}"
+          class="text-black-outline-xs self-center font-bold lg:hidden"
+          id="Card-Version"
+        >
+          {{ card.version }}
         </p>
         <button
           (click)="this.onClose.next(false)"
