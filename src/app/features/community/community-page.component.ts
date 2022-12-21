@@ -183,6 +183,37 @@ interface IBlogs {
           </table>
         </div>
       </div>
+
+      <div
+        class="surface-ground mx-auto mt-5 w-full max-w-7xl border border-slate-200"
+      >
+        <div class="flex flex-row">
+          <h1
+            class="mb-2 w-full text-center text-3xl font-extrabold uppercase text-[#e2e4e6]"
+          >
+            Partners
+          </h1>
+        </div>
+
+        <div class="mx-auto">
+          <a
+            class="mx-auto flex flex-col"
+            href="https://discord.gg/digimon-tcg-dach-759562127513223168"
+            target="_blank"
+          >
+            <img
+              class="mx-auto max-h-24"
+              src="assets/images/partners/dach.png"
+              alt="Digimon DACH Discord"
+            />
+            <div
+              class="text-shadow text-center text-xl font-black text-[#e2e4e6]"
+            >
+              Digimon TCG DACH
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
