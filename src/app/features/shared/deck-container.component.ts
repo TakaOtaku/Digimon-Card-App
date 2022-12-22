@@ -131,6 +131,7 @@ export class DeckContainerComponent implements OnInit {
   }
 
   getCardImage(): string {
+    // If there is a ImageCardId set it
     if (this.deck.imageCardId) {
       return (
         this.allCards.find((card) => card.id === this.deck.imageCardId)
@@ -138,13 +139,16 @@ export class DeckContainerComponent implements OnInit {
       );
     }
 
-    const card = this.allCards.find(
-      (card) => card.id === this.deck.cards[0].id
-    );
+    //If there are no cards in the deck set it to the Yokomon
+    if (!this.deck.cards || this.deck.cards.length === 0) {
+      return '../../../assets/images/cards/eng/BT1-001.webp';
+    }
 
-    return card
-      ? card.cardImage
-      : '../../../assets/images/cards/eng/BT1-001.webp';
+    //If there are cards in the deck set it to the first card
+    return (
+      this.allCards.find((card) => card.id === this.deck.cards[0].id)
+        ?.cardImage ?? '../../../assets/images/cards/eng/BT1-001.webp'
+    );
   }
 
   changeLike(event: any) {
