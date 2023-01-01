@@ -3630,6 +3630,37 @@
     "illustrator": "Kazumasa Yasukuni"
   },
   {
+    "id": "BT1-078_P1",
+    "name": "Jagamon",
+    "cardImage": "assets/images/cards/eng/BT1-078_P1.webp",
+    "cardType": "Digimon",
+    "dp": "7000",
+    "playCost": "7",
+    "digivolveCost1": "3 from Lv.4",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.5",
+    "form": "Ultimate",
+    "attribute": "Vaccine",
+    "type": "Vegetation",
+    "rarity": "U",
+    "cardNumber": "BT1-078",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Attacking] Reveal 3 cards from the top of your deck. You can digivoLv.e this card into 1 level 6 green Digimon card among them without paying its memory cost. Place the remaining cards at the bottom of your deck in any order.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "Official Tournament Pack Vol.7",
+    "color": "Green",
+    "version": "AA",
+    "block": [
+      "00",
+      "02"
+    ],
+    "restriction": "-",
+    "illustrator": "koki"
+  },
+  {
     "id": "BT1-079",
     "name": "Lillymon",
     "cardImage": "assets/images/cards/eng/BT1-079.webp",

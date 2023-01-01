@@ -1413,6 +1413,37 @@
     "illustrator": ""
   },
   {
+    "id": "EX1-025_P1",
+    "name": "Salamon",
+    "cardImage": "assets/images/cards/eng/EX1-025_P1.webp",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Vaccine",
+    "type": "Mammal",
+    "rarity": "C",
+    "cardNumber": "EX1-025",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "[When Attacking] [Once Per Turn] If you have 3 or more security cards, ＜Draw 1＞. (Draw 1 card from your deck.)",
+    "securityEffect": "-",
+    "notes": "Official Tournament Pack Vol.7",
+    "color": "Yellow",
+    "version": "AA",
+    "block": [
+      "01",
+      "02"
+    ],
+    "restriction": "-",
+    "illustrator": "Sanosuke Sakuma"
+  },
+  {
     "id": "EX1-026",
     "name": "Gatomon",
     "cardImage": "assets/images/cards/eng/EX1-026.webp",
