@@ -368,10 +368,11 @@ export class EventCalendarComponent implements OnInit, OnDestroy {
   }
 
   eventsInMonth(events: IEvent[]): IEvent[] {
-    const currentEvents = events.filter((event) => {
-      const currentMonth = Number(event.date.split('.')[1]);
-      return currentMonth === this.month + 1;
+    return events.filter((event) => {
+      const splitDate = event.date.split('.');
+      const currentMonth = Number(splitDate[1]);
+      const currentYear = Number(splitDate[2]);
+      return currentMonth === this.month + 1 && currentYear === this.year;
     });
-    return currentEvents;
   }
 }
