@@ -117,6 +117,16 @@ export const TIERLIST = [
       card: 'BT6-030',
       image: 'assets/images/cards/eng/BT6-030.webp',
     },
+    {
+      name: 'Alphamon',
+      card: 'BT9-111',
+      image: 'assets/images/cards/eng/BT9-111.webp',
+    },
+    {
+      name: 'Ancient Greymon',
+      card: 'BT4-113',
+      image: 'assets/images/cards/eng/BT4-113.webp',
+    },
   ],
   //C
   [
@@ -124,11 +134,6 @@ export const TIERLIST = [
       name: 'Ragnalordmon',
       card: 'ST13-06',
       image: 'assets/images/cards/eng/ST13-06.webp',
-    },
-    {
-      name: 'Alphamon',
-      card: 'BT9-111',
-      image: 'assets/images/cards/eng/BT9-111.webp',
     },
     {
       name: 'Sakuyamon Maid Mode',
@@ -159,11 +164,6 @@ export const TIERLIST = [
       name: 'Beelstarmon',
       card: 'BT6-112',
       image: 'assets/images/cards/eng/BT6-112.webp',
-    },
-    {
-      name: 'Ancient Grymon',
-      card: 'BT4-113',
-      image: 'assets/images/cards/eng/BT4-113.webp',
     },
   ],
   //D
