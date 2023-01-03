@@ -25,8 +25,8 @@ interface IOAUTH {
   providedIn: 'root',
 })
 export class CardMarketService {
-  appToken = environment.cardmarket.APPTOKEN;
-  appSecret = environment.cardmarket.APPSECRET;
+  appToken = '';
+  appSecret = '';
 
   signatureMethod = 'HMAC-SHA1';
 
@@ -47,41 +47,54 @@ export class CardMarketService {
     });
   }
 
-  getOauthHeader(method: 'GET' | 'POST' | 'PUT', url: string): HttpHeaders {
+  getOauthHeader(
+    method: 'GET' | 'POST' | 'PUT',
+    url: string,
+    query: string = ''
+  ): HttpHeaders {
     const nonce = uuid.v4();
     const timestamp = Math.floor(new Date().getTime() / 1000);
 
     const baseString = method + '&' + encodeURIComponent(url) + '&';
 
-    let parameters = 'oauth_consumer_key=' + this.appToken + '&';
-    parameters += 'oauth_nonce=' + nonce + '&';
-    parameters += 'oauth_signature_method=' + 'HMAC-SHA1' + '&';
-    parameters += 'oauth_timestamp=' + timestamp + '&';
-    parameters += 'oauth_token=""' + '&';
-    parameters += 'oauth_version=1.0';
+    console.log('Base String: ', baseString);
 
-    parameters = encodeURIComponent(parameters);
+    let parameters = [];
+    parameters.push(query);
+    parameters.push('oauth_consumer_key=' + this.appToken + '&');
+    parameters.push('oauth_nonce=' + nonce + '&');
+    parameters.push('oauth_signature_method=HMAC-SHA1&');
+    parameters.push('oauth_timestamp=' + timestamp + '&');
+    parameters.push('oauth_token=&');
+    parameters.push('oauth_version=1.0');
+
+    parameters = parameters.sort();
+
+    let parameterString = '';
+
+    parameters.forEach((parameter) => (parameterString += parameter));
+
+    parameterString = encodeURIComponent(parameterString);
+
+    console.log('Parameter String: ', parameterString);
 
     const signing_key = encodeURIComponent(this.appSecret) + '&';
-    const signature_base_string = baseString + parameters;
+    const signature_base_string = baseString + parameterString;
+
+    console.log('Signature String: ', signature_base_string);
 
     let signature = crypto.HmacSHA1(signature_base_string, signing_key);
     signature = crypto.enc.Base64.stringify(signature);
 
-    const Authorization =
-      'OAuth realm=' +
-      url +
-      ', oauth_consumer_key=' +
-      this.appToken +
-      ', oauth_token=""' +
-      ', oauth_nonce=' +
-      nonce +
-      ', oauth_timestamp=' +
-      timestamp +
-      ', oauth_signature_method=HMAC-SHA1' +
-      ', oauth_version=1.0' +
-      ', oauth_signature=' +
-      signature;
+    let Authorization = '';
+    Authorization += 'OAuth realm="' + url + '", ';
+    Authorization += 'oauth_consumer_key="' + this.appToken + '", ';
+    Authorization += 'oauth_token="", ';
+    Authorization += 'oauth_nonce="' + nonce + '", ';
+    Authorization += 'oauth_timestamp="' + timestamp + '", ';
+    Authorization += 'oauth_signature_method="HMAC-SHA1", ';
+    Authorization += 'oauth_version="1.0", ';
+    Authorization += 'oauth_signature="' + signature + '"';
 
     return new HttpHeaders({
       Authorization,
@@ -93,22 +106,27 @@ export class CardMarketService {
 
     const httpHeader = this.getOauthHeader('GET', url);
 
-    this.http.get(url, { headers: httpHeader }).subscribe((value) => {
-      debugger;
+    return this.http.get(url, { headers: httpHeader, responseType: 'text' });
+  }
+
+  getExpansions(): Observable<any> {
+    const url = 'https://api.cardmarket.com/ws/v2.0/games/17/expansions';
+
+    const httpHeader = this.getOauthHeader('GET', url);
+
+    return this.http.get(url, { headers: httpHeader, responseType: 'text' });
+  }
+
+  getPrizeGuide(): Observable<any> {
+    const url = 'https://api.cardmarket.com/ws/v2.0/priceguide';
+
+    const query = 'idGame=17&';
+
+    const httpHeader = this.getOauthHeader('GET', url, query);
+
+    return this.http.get(url + '?idGame=17', {
+      headers: httpHeader,
+      responseType: 'text',
     });
-
-    const request_data = {
-      url: 'https://api.cardmarket.com/ws/v2.0/games',
-      method: 'GET',
-    };
-    const test1 = this.oauth.toHeader(this.oauth.authorize(request_data));
-
-    //this.http
-    //  .get(url, { headers: { Authorization: test1.Authorization } })
-    //  .subscribe((value) => {
-    //    debugger;
-    //  });
-
-    return of();
   }
 }
