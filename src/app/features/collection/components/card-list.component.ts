@@ -48,7 +48,7 @@ import {
         pButton
         label="Show more..."
         (click)="showMore()"
-        class="p-button-outlined surface-ground min-w-auto mt-2 h-8 w-full p-2 text-xs font-semibold text-[#e2e4e6]"
+        class="p-button-outlined surface-ground min-w-auto mt-2 mb-6 h-8 w-full p-2 text-xs font-semibold text-[#e2e4e6]"
       ></button>
     </div>
 
