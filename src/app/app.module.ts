@@ -30,6 +30,7 @@ import { SharedModule } from './features/shared/shared.module';
 import { TestModule } from './features/test/test.module';
 import { AuthService } from './service/auth.service';
 import { DigimonBackendService } from './service/digimon-backend.service';
+import { HammerModule } from "../../node_modules/@angular/platform-browser";
 
 @NgModule({
   declarations: [AppComponent],
@@ -52,6 +53,7 @@ import { DigimonBackendService } from './service/digimon-backend.service';
     HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
+    HammerModule,
 
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,

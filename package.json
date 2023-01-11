@@ -45,6 +45,7 @@
     "file-saver": "^2.0.5",
     "firebase": "^9.6.8",
     "firebase-tools": "^9.23.3",
+    "hammerjs": "^2.0.8",
     "ng-lazyload-image": "^9.1.2",
     "ngrx-etc": "^7.0.1",
     "ngx-toastr": "^14.2.2",
