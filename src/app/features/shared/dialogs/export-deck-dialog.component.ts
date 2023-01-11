@@ -127,7 +127,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
 
   @Output() onClose = new EventEmitter<boolean>();
 
-  exportList = ['TEXT', 'TTS', 'IMAGE'];
+  exportList = ['TEXT', 'TTS', 'UNTAP', 'IMAGE'];
   exportType = 'TEXT';
   deckText = '';
 
@@ -169,6 +169,9 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
       case 'TTS':
         this.setExportTypeTTS();
         break;
+      case 'UNTAP':
+        this.setExportTypeUNTAP();
+        break;
       case 'IMAGE':
         this.setExportTypeIMAGE();
         break;
@@ -195,6 +198,17 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
     });
     this.deckText = this.deckText.substring(0, this.deckText.length - 1);
     this.deckText += ']';
+  }
+
+  private setExportTypeUNTAP(): void {
+    this.deckText = '// Digimon DeckList\n\n';
+    this.deck.cards.forEach((card) => {
+      const dc = this.digimonCards.find((dc) => compareIDs(dc.id, card.id));
+      this.deckText += `${card.count} ${dc?.name} (DCG) (${card.id.replace(
+        'ST0',
+        'ST'
+      )})\n`;
+    });
   }
 
   exportDeckToFile(): void {
