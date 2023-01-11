@@ -90,6 +90,9 @@ import { emptyDeck } from '../../store/reducers/digimon.reducers';
     <p-dialog
       header="Deck Details"
       [(visible)]="deckDialog"
+      [modal]="true"
+      [dismissableMask]="true"
+      [resizable]="false"
       styleClass="w-full h-full max-w-6xl min-h-[500px]"
       [baseZIndex]="10000"
     >
@@ -104,6 +107,9 @@ import { emptyDeck } from '../../store/reducers/digimon.reducers';
     <p-dialog
       header="Tournament Deck Submission"
       [(visible)]="deckSubmissionDialog"
+      [modal]="true"
+      [dismissableMask]="true"
+      [resizable]="false"
       styleClass="w-full h-full max-w-6xl min-h-[500px]"
       [baseZIndex]="10000"
     >
@@ -115,6 +121,9 @@ import { emptyDeck } from '../../store/reducers/digimon.reducers';
     <p-dialog
       header="Deck Statistics for the filtered decks"
       [(visible)]="deckStatsDialog"
+      [modal]="true"
+      [dismissableMask]="true"
+      [resizable]="false"
       styleClass="w-full h-full max-w-6xl min-h-[500px]"
       [baseZIndex]="10000"
     >

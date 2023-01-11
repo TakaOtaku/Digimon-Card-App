@@ -59,6 +59,9 @@ import {
     <p-dialog
       header="Filter and Sort"
       [(visible)]="display"
+      [modal]="true"
+      [dismissableMask]="true"
+      [resizable]="false"
       styleClass="w-full h-full max-w-6xl min-h-[500px]"
       [baseZIndex]="10000"
     >

@@ -268,6 +268,9 @@ export interface ICardImage {
     <p-dialog
       header="Export Deck"
       [(visible)]="exportDeckDialog"
+      [modal]="true"
+      [dismissableMask]="true"
+      [resizable]="false"
       styleClass="w-full h-full max-w-6xl min-h-[500px]"
       [baseZIndex]="10000"
     >
@@ -277,6 +280,9 @@ export interface ICardImage {
     <p-dialog
       header="Tournament Deck Submission"
       [(visible)]="deckSubmissionDialog"
+      [modal]="true"
+      [dismissableMask]="true"
+      [resizable]="false"
       styleClass="w-full h-full max-w-6xl min-h-[500px]"
       [baseZIndex]="10000"
     >
