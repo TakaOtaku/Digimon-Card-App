@@ -57,6 +57,9 @@ import {
       [(visible)]="viewCardDialog"
       [baseZIndex]="100000"
       [showHeader]="false"
+      [modal]="true"
+      [dismissableMask]="true"
+      [resizable]="false"
       styleClass="overflow-x-hidden"
     >
       <digimon-view-card-dialog

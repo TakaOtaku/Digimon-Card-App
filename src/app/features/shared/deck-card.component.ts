@@ -102,6 +102,9 @@ import { ColorMap } from '../../../models/maps/color.map';
     <p-dialog
       [(visible)]="viewCardDialog"
       [showHeader]="false"
+      [modal]="true"
+      [dismissableMask]="true"
+      [resizable]="false"
       styleClass="overflow-x-hidden"
       (close)="viewCardDialog = false"
     >

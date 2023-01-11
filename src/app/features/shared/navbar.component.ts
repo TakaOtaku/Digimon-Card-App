@@ -294,6 +294,9 @@ import { AuthService } from '../../service/auth.service';
     <p-dialog
       [(visible)]="settingsDialog"
       [baseZIndex]="10000"
+      [modal]="true"
+      [dismissableMask]="true"
+      [resizable]="false"
       header="Settings"
       styleClass="w-full h-full max-w-6xl min-h-[500px]"
     >
@@ -303,6 +306,9 @@ import { AuthService } from '../../service/auth.service';
     <p-dialog
       [(visible)]="showChangelog"
       [closeOnEscape]="true"
+      [modal]="true"
+      [dismissableMask]="true"
+      [resizable]="false"
       styleClass="w-full h-full max-w-6xl min-h-[500px]"
       header="Changelog"
     >
@@ -314,6 +320,9 @@ import { AuthService } from '../../service/auth.service';
     <p-dialog
       [(visible)]="creditsDisplay"
       [baseZIndex]="10000"
+      [modal]="true"
+      [dismissableMask]="true"
+      [resizable]="false"
       header="Credits"
       styleClass="w-screen lg:max-h-[600px] lg:max-w-3xl"
     >

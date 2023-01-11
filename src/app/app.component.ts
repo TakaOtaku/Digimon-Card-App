@@ -48,6 +48,9 @@ import { emptySave } from './store/reducers/save.reducer';
     <p-dialog
       [(visible)]="showChangelog"
       [closeOnEscape]="true"
+      [modal]="true"
+      [dismissableMask]="true"
+      [resizable]="false"
       styleClass="w-full h-full max-w-6xl min-h-[500px]"
       header="Changelog"
     >

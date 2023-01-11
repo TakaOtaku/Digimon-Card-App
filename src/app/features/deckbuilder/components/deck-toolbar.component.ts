@@ -124,6 +124,9 @@ import { emptyDeck } from '../../../store/reducers/digimon.reducers';
     <p-dialog
       header="Simulate Security/Draw"
       [(visible)]="simulateDialog"
+      [modal]="true"
+      [dismissableMask]="true"
+      [resizable]="false"
       styleClass="w-[100%] min-w-[250px] sm:min-w-[500px] sm:w-[700px] min-h-[500px]"
       [baseZIndex]="10000"
     >
@@ -162,6 +165,9 @@ import { emptyDeck } from '../../../store/reducers/digimon.reducers';
       [(visible)]="exportDeckDialog"
       styleClass="w-[100%] min-w-[250px] sm:min-w-[500px] sm:w-[700px] min-h-[500px]"
       [baseZIndex]="10000"
+      [modal]="true"
+      [dismissableMask]="true"
+      [resizable]="false"
       ><digimon-export-deck-dialog [deck]="deck"></digimon-export-deck-dialog
     ></p-dialog>
 
@@ -170,6 +176,9 @@ import { emptyDeck } from '../../../store/reducers/digimon.reducers';
       [(visible)]="importDeckDialog"
       styleClass="w-[100%] min-w-[250px] sm:min-w-[500px] sm:w-[700px] min-h-[500px]"
       [baseZIndex]="10000"
+      [modal]="true"
+      [dismissableMask]="true"
+      [resizable]="false"
       ><digimon-import-deck-dialog></digimon-import-deck-dialog
     ></p-dialog>
   `,

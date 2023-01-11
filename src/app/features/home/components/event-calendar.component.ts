@@ -119,6 +119,9 @@ export interface IEvent {
     <p-dialog
       [(visible)]="eventModal"
       [baseZIndex]="10000"
+      [modal]="true"
+      [dismissableMask]="true"
+      [resizable]="false"
       [header]="edit ? 'Edit Event' : 'Create Event'"
       styleClass="w-[400px]"
     >
