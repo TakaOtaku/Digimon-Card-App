@@ -361,7 +361,7 @@
         "digiXros": "-",
         "specialDigivolve": "Digivolve: 3 from Lv.5 w/[WarGrowlmon] in its name",
         "dnaDigivolve": "-",
-        "effect": "(Trash) [End of Your Turn] By Deleting 1 of your Digimon with a digivolution card and [Gallantmon] in its name, you may play this card without paying its cost.\n[On Play] Delete 1 of your opponent's Digimon with 7000 DP or less. For every 10 total cards in both player's trashes, add 2000 to the maximum DP you can choose with DP-based deletion effects.",
+        "effect": "[Trash] [End of Your Turn] By Deleting 1 of your Digimon with a digivolution card and [Gallantmon] in its name, you may play this card without paying its cost.\n[On Play] Delete 1 of your opponent's Digimon with 7000 DP or less. For every 10 total cards in both player's trashes, add 2000 to the maximum DP you can choose with DP-based deletion effects.",
         "digivolveEffect": "-",
         "securityEffect": "-",
         "notes": "▹THEME BOOSTER ALTERNATIVE BEING [EX-04]",
