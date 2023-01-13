@@ -320,11 +320,12 @@
     "effect": "-",
     "digivolveEffect": "[Your Turn] While there are 10 or more cards in your trash, this Digimon gets +2000 DP.",
     "securityEffect": "-",
-    "notes": "▹ADVANCED DECK BEELZEMON[ST-14]",
+    "notes": "Magic Bullet Cup",
     "color": "Purple",
-    "version": "AA",
+    "version": "Stamp",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "sasasi"
@@ -1864,7 +1865,8 @@
     "color": "Purple",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "sasasi"
@@ -1894,7 +1896,8 @@
     "color": "Purple",
     "version": "AA",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": ""
@@ -1924,7 +1927,8 @@
     "color": "Purple",
     "version": "AA",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Takase"
@@ -2134,7 +2138,8 @@
     "color": "Purple",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02",
     ],
     "restriction": "-",
     "illustrator": "sasasi"
@@ -2164,7 +2169,8 @@
     "color": "Purple",
     "version": "AA",
     "block": [
-      "01"
+      "01",
+      "02",
     ],
     "restriction": "-",
     "illustrator": ""
@@ -2190,11 +2196,12 @@
     "effect": "When this card is trashed from your deck, you may play 1 [Impmon] from your trash without paying its memory cost.\n[When Digivolving] [When Attacking] You may trash the top 2 cards of your deck. Then, delete 1 of your opponent's level 3 or lower Digimon. For every 10 cards in your trash, add 1 to the maximum level of the Digimon you can choose with this effect.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "-",
+    "notes": "Magic Bullet Cup WINNER",
     "color": "Purple",
-    "version": "AA",
+    "version": "Stamp",
     "block": [
-      "01"
+      "01",
+      "02",
     ],
     "restriction": "-",
     "illustrator": "sasasi"
