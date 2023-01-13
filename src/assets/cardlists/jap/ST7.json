@@ -170,11 +170,12 @@
     "effect": "[Your Turn] If your opponent has a level 6 or higher Digimon in play, this Digimon can digivolve into a [Gallantmon] in your hand for a memory cost of 4, ignoring its digivolution requirements.",
     "digivolveEffect": "[Your Turn] [Once Per Turn] When an opponent's Digimon is deleted, trigger ＜Draw 1＞. (Draw 1 card from your deck.)",
     "securityEffect": "-",
-    "notes": "-",
+    "notes": "▹ADVANCED DECK BEELZEMON[ST-14]",
     "color": "Red",
     "version": "AA",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Nakano Haito"
