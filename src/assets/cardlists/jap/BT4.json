@@ -4098,7 +4098,8 @@
     "color": "Yellow",
     "version": "Normal",
     "block": [
-      "00"
+      "00",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Takase"
@@ -4126,9 +4127,10 @@
     "securityEffect": "[Security] Trigger ＜Recovery +1 (Deck)＞. (Place the top card of your deck on top of your security stack.)",
     "notes": "▹ADVANCED DECK BEELZEMON[ST-14]",
     "color": "Yellow",
-    "version": "Normal",
+    "version": "AA",
     "block": [
-      "00"
+      "00",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Shin Sasaki"
