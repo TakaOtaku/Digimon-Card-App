@@ -3217,11 +3217,12 @@
     "effect": "When this card is trashed from your deck, gain 1 memory.\n[Main] Delete 1 of your opponent's level 4 or lower Digimon. For every 10 cards in your trash, add 1 to the maximum level of the Digimon you can choose with this effect.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹theme booster DIGITAL HAZARD [EX-02], ▹ADVANCED DECK BEELZEMON[ST-14]",
     "color": "Purple",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02",
     ],
     "restriction": "-",
     "illustrator": "Shin Sasaki"
