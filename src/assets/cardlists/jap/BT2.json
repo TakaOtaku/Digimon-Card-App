@@ -146,7 +146,8 @@
     "color": "Green",
     "version": "Normal",
     "block": [
-      "00"
+      "00",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Kenji Watanabe"
@@ -172,11 +173,12 @@
     "effect": "-",
     "digivolveEffect": "[Your Turn] When this Digimon becomes unsuspended during your unsuspend phase, gain 1 memory.",
     "securityEffect": "-",
-    "notes": "-",
+    "notes": "▹ADVANCED DECK BEELZEMON[ST-14]",
     "color": "Green",
-    "version": "Normal",
+    "version": "AA",
     "block": [
-      "00"
+      "00",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "koki"
@@ -5531,7 +5533,8 @@
     "color": "Purple",
     "version": "Normal",
     "block": [
-      "00"
+      "00",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Kenji Watanabe"
@@ -5561,7 +5564,8 @@
     "color": "Purple",
     "version": "AA",
     "block": [
-      "00"
+      "00",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Naochika Morishita"
@@ -5591,7 +5595,8 @@
     "color": "Purple",
     "version": "AA",
     "block": [
-      "00"
+      "00",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Naochika Morishita"
