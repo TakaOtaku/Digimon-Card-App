@@ -24,7 +24,8 @@
     "color": "Purple",
     "version": "Normal",
     "block": [
-      "00"
+      "00",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Tonamikanji"
@@ -54,7 +55,7 @@
     "color": "Purple",
     "version": "AA",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "restriction": "-",
