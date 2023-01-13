@@ -1202,7 +1202,8 @@
     "color": "Black",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "GOSSAN"
