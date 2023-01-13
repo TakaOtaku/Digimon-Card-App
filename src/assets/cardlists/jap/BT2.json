@@ -3458,12 +3458,13 @@
     "effect": "[On Deletion] Trash the top 3 cards of your deck.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹booster ULTIMATE POWER [BT-02]",
+    "notes": "▹booster ULTIMATE POWER [BT-02], ▹ADVANCED DECK BEELZEMON[ST-14]",
     "color": "Purple",
     "version": "Normal",
     "block": [
       "00",
-      "01"
+      "01",
+      "02"      
     ],
     "restriction": "-",
     "illustrator": "yuuki."
@@ -3494,7 +3495,8 @@
     "version": "AA",
     "block": [
       "00",
-      "01"
+      "01",
+      "02"  
     ],
     "restriction": "-",
     "illustrator": "Shin Sasaki"
