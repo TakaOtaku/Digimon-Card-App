@@ -2995,11 +2995,12 @@
     "effect": "[When Digivolving] Trash the top 2 cards of your deck. Then, return 1 card with [Demon Lord] in its traits from your trash to your hand.",
     "digivolveEffect": "[Your Turn] [Once Per Turn] When a card is trashed from your deck, gain 1 memory.",
     "securityEffect": "-",
-    "notes": "▹booster NEW HERO[BT-08]",
+    "notes": "▹booster NEW HERO[BT-08], ▹ADVANCED DECK BEELZEMON[ST-14]",
     "color": "Purple",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02"  
     ],
     "restriction": "-",
     "illustrator": "Hisashi Fujiwara"
