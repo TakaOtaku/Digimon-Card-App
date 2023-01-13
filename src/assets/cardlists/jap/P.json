@@ -1829,11 +1829,12 @@
     "effect": "-",
     "digivolveEffect": "[Your Turn] [Once Per Turn] When you use an Option card, gain 1 memory.",
     "securityEffect": "-",
-    "notes": "Special Promotion Pack 2022",
+    "notes": "Special Promotion Pack 2022, ▹ADVANCED DECK BEELZEMON[ST-14]",
     "color": "Purple",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02"  
     ],
     "restriction": "-",
     "illustrator": "Hokyyuu"
