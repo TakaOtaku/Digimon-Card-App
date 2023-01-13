@@ -4491,8 +4491,7 @@
     "color": "White",
     "version": "Normal",
     "block": [
-      "00",
-      "02"
+      "00"
 ],
     "restriction": "-",
     "illustrator": "Tonamikanji"
@@ -4522,8 +4521,7 @@
     "color": "White",
     "version": "AA",
     "block": [
-      "00",
-      "02"
+      "00"
     ],
     "restriction": "-",
     "illustrator": "sasasi"
@@ -4558,9 +4556,7 @@
         "version": "AA",
         "illustrator": "Tonamikanji",
         "block": [
-      "00",
-      "02"
-        ],
+      "00"        ],
         "restriction": "-"
     }
 ]
