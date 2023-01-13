@@ -2660,11 +2660,12 @@
     "effect": "[On Play] You may trash 1 card in your hand. If you do, return 1 Digimon card with [Seven Great Demon Lords] or [Three Musketeers] in its type from your trash to your hand.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "-",
+    "notes": "Magic Bullet Cup",
     "color": "Purple",
-    "version": "AA",
+    "version": "Stamp",
     "block": [
-      "01"
+      "01",
+      "02",      
     ],
     "restriction": "-",
     "illustrator": "Kenji Watanabe."
