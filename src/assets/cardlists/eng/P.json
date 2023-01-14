@@ -447,7 +447,7 @@
     "effect": "[When Attacking] [Once Per Turn] If this Digimon has a [Garurumon] digivolution card， unsuspend this Digimon.",
     "digivolveEffect": "[Your Turn] While you have 8 or more cards in your hand， this Digimon gains ＜Security Attack +1＞. (This Digimon checks 1 additional security card.)",
     "securityEffect": "-",
-    "notes": "GB-02: Digimon Card Game Gift Box 2",
+    "notes": "DIGIMON CARD GAME GIFT BOX 2022",
     "color": "Blue",
     "version": "AA",
     "block": [
@@ -455,7 +455,7 @@
       "01"
     ],
     "restriction": "-",
-    "illustrator": "koki"
+    "illustrator": "Takase"
   },
   {
     "id": "P-009",
@@ -538,7 +538,7 @@
     "effect": "-",
     "digivolveEffect": "[Your Turn] While this Digimon has [Greymon] in its name， it gets +2000 DP.",
     "securityEffect": "-",
-    "notes": "GB-02: Digimon Card Game Gift Box 2",
+    "notes": "DIGIMON CARD GAME GIFT BOX 2022",
     "color": "Red",
     "version": "AA",
     "block": [
@@ -928,7 +928,7 @@
     "effect": "[Your Turn] For each [Diaboromon] you have in play, this Digimon gets ＜Security Attack +1＞. (This Digimon checks 1 additional security card.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "GB-02: Digimon Card Game Gift Box 2",
+    "notes": "DIGIMON CARD GAME GIFT BOX 2022",
     "color": "Black",
     "version": "AA",
     "block": [
@@ -1621,7 +1621,7 @@
     "effect": "[Your Turn] All of your black Digimon with 13000 DP or more gain ＜Piercing＞. (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.)",
     "digivolveEffect": "[Your Turn] While this Digimon is black and has 13000 DP or more, this Digimon gains ＜Security Attack +1＞. (This Digimon checks 1 additional security card.)",
     "securityEffect": "-",
-    "notes": "GB-02: Digimon Card Game Gift Box 2",
+    "notes": "DIGIMON CARD GAME GIFT BOX 2022",
     "color": "Black",
     "version": "AA",
     "block": [
