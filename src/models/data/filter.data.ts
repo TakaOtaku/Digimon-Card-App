@@ -56,6 +56,7 @@ export const GroupedSets = [
 export const CardTypes: string[] = ['Digi-Egg', 'Digimon', 'Tamer', 'Option'];
 
 export const Keywords: string[] = [
+  '\uff1cAlliance\uff1e',
   '\uff1cArmor Purge\uff1e',
   '\uff1cBlitz\uff1e',
   '\uff1cBlocker\uff1e',
