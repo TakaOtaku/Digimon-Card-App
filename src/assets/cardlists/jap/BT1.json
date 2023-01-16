@@ -85,7 +85,8 @@
     "version": "Normal",
     "block": [
       "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Kirita"
@@ -116,7 +117,8 @@
     "version": "AA",
     "block": [
       "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "As'Maria"
@@ -147,9 +149,10 @@
     "version": "AA",
     "block": [
       "00",
-      "01"
+      "01",
+      "02"
     ],
-    "restriction": "-",
+    "restriction": "Tamer Battle Pack 15",
     "illustrator": "koki"
   },
   {
