@@ -144,7 +144,7 @@
     "effect": "-",
     "digivolveEffect": "[When Attacking] [Once Per Turn] If your opponent has a Digimon with no digivolution cards in play, trigger ＜Draw 1＞. (Draw 1 card from your deck.)",
     "securityEffect": "-",
-    "notes": "-",
+    "notes": "Tamer Battle Pack 15",
     "color": "Blue",
     "version": "AA",
     "block": [
@@ -152,7 +152,7 @@
       "01",
       "02"
     ],
-    "restriction": "Tamer Battle Pack 15",
+    "restriction": "-",
     "illustrator": "koki"
   },
   {
