@@ -639,7 +639,7 @@
         "notes": "▹BOOSTER ACROSS TIME [BT-12]",
         "color": "Red",
         "version": "AA",
-        "illustrator": "Nakano Haito",
+        "illustrator": "tyuga",
         "block": [
             "02"
         ],
@@ -707,7 +707,7 @@
         "notes": "▹BOOSTER ACROSS TIME [BT-12]",
         "color": "Red",
         "version": "AA",
-        "illustrator": "Takase",
+        "illustrator": "toriyufu",
         "block": [
             "02"
         ],
@@ -1115,7 +1115,7 @@
         "notes": "▹BOOSTER ACROSS TIME [BT-12]",
         "color": "Blue",
         "version": "AA",
-        "illustrator": "sasasi",
+        "illustrator": "As'Maria",
         "block": [
             "02"
         ],
@@ -1217,7 +1217,7 @@
         "notes": "▹BOOSTER ACROSS TIME [BT-12]",
         "color": "Blue/Green",
         "version": "AA",
-        "illustrator": "toriyufu",
+        "illustrator": "tyuga",
         "block": [
             "02"
         ],
@@ -1693,7 +1693,7 @@
         "notes": "▹BOOSTER ACROSS TIME [BT-12]",
         "color": "Yellow/Red",
         "version": "AA",
-        "illustrator": "Takase",
+        "illustrator": "Tonamikanji",
         "block": [
             "02"
         ],
@@ -2240,7 +2240,7 @@
         "notes": "▹BOOSTER ACROSS TIME [BT-12]",
         "color": "Green",
         "version": "AA",
-        "illustrator": "sasasi",
+        "illustrator": "Naochika Morishita",
         "block": [
             "02"
         ],
@@ -2753,7 +2753,7 @@
         "notes": "▹BOOSTER ACROSS TIME [BT-12]",
         "color": "Black/Red",
         "version": "AA",
-        "illustrator": "toriyufu",
+        "illustrator": "Tonamikanji",
         "block": [
             "02"
         ],
@@ -3297,7 +3297,7 @@
         "notes": "▹BOOSTER ACROSS TIME [BT-12]",
         "color": "Purple",
         "version": "AA",
-        "illustrator": "Tonamikanji",
+        "illustrator": "sasasi",
         "block": [
             "02"
         ],
@@ -3399,7 +3399,7 @@
         "notes": "▹BOOSTER ACROSS TIME [BT-12]",
         "color": "Purple",
         "version": "AA",
-        "illustrator": "sasasi",
+        "illustrator": "Tonamikanji",
         "block": [
             "02"
         ],
@@ -4555,16 +4555,16 @@
         "notes": "▹BOOSTER ACROSS TIME [BT-12]",
         "color": "Purple/Black",
         "version": "AA",
-        "illustrator": "Hisashi Fujiwara",
+        "illustrator": "Naochika Morishita",
         "block": [
             "02"
         ],
         "restriction": "-"
     },
     {
-        "id": "BT12-111_P1",
+        "id": "BT12-111_P2",
         "name": "DarknessBagramon",
-        "cardImage": "assets/images/cards/jap/BT12-111_P1.webp",
+        "cardImage": "assets/images/cards/jap/BT12-111_P2.webp",
         "cardType": "Digimon",
         "dp": "15000",
         "playCost": "16",
@@ -4589,7 +4589,7 @@
         "notes": "▹BOOSTER ACROSS TIME [BT-12]",
         "color": "Purple/Black",
         "version": "AA",
-        "illustrator": "Hisashi Fujiwara",
+        "illustrator": "Naochika Morishita",
         "block": [
             "02"
         ],
@@ -4657,16 +4657,16 @@
         "notes": "▹BOOSTER ACROSS TIME [BT-12]",
         "color": "White/Red",
         "version": "AA",
-        "illustrator": "Tonamikanji",
+        "illustrator": "Naochika Morishita",
         "block": [
             "02"
         ],
         "restriction": "-"
     },
     {
-        "id": "BT12-112_P1",
+        "id": "BT12-112_P2",
         "name": "Shoutmon X7: Superior Mode",
-        "cardImage": "assets/images/cards/jap/BT12-112_P1.webp",
+        "cardImage": "assets/images/cards/jap/BT12-112_P2.webp",
         "cardType": "Digimon",
         "dp": "17000",
         "playCost": "15",
@@ -4691,7 +4691,7 @@
         "notes": "▹BOOSTER ACROSS TIME [BT-12]",
         "color": "White/Red",
         "version": "AA",
-        "illustrator": "Tonamikanji",
+        "illustrator": "Naochika Morishita",
         "block": [
             "02"
         ],
