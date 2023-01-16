@@ -204,7 +204,8 @@
     "color": "Green",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02", 
     ],
     "restriction": "-",
     "illustrator": "yuuki."
@@ -234,7 +235,8 @@
     "color": "Green",
     "version": "AA",
     "block": [
-      "01"
+      "01",
+      "02", 
     ],
     "restriction": "-",
     "illustrator": "yuuki."
@@ -260,14 +262,14 @@
     "effect": "-",
     "digivolveEffect": "[Your Turn] While this Digimon has [Insectoid] in its traits, it gets +1000 DP.",
     "securityEffect": "-",
-    "notes": "-",
+    "notes": "Tamer Battle Pack 15",
     "color": "Green",
     "version": "AA",
     "block": [
       "01",
       "02",      
     ],
-    "restriction": "Tamer Battle Pack 15",
+    "restriction": "-",
     "illustrator": "Ryodan"
   },
   {
