@@ -1263,7 +1263,8 @@
     "color": "Red",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Shin Sasaki"
@@ -1293,10 +1294,42 @@
     "color": "Red",
     "version": "AA",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Takase"
+  },
+  {
+    "id": "P-035_P2",
+    "name": "Red Memory Boost!",
+    "cardImage": "assets/images/cards/jap/P-035_P2.webp",
+    "cardType": "Option",
+    "dp": "-",
+    "playCost": "3",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "-",
+    "rarity": "SR",
+    "cardNumber": "P-035",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 red Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] ＜Delay＞ (Trash this card in your battle area to activate the effect below. You can't activate this effect the turn this card enters play.)  \n・Gain 2 memory.",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Place this card in its owner's battle area.",
+    "notes": "REBOOT BOOSTER RISING WIND [RB-01]",
+    "color": "Red",
+    "version": "AA",
+    "block": [
+      "01",
+      "02"
+    ],
+    "restriction": "-",
+    "illustrator": "p!k@ru"
   },
   {
     "id": "P-036",
@@ -1323,7 +1356,8 @@
     "color": "Blue",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Shin Sasaki"
@@ -1353,10 +1387,42 @@
     "color": "Blue",
     "version": "AA",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Takase"
+  },
+  {
+    "id": "P-036_P2",
+    "name": "Blue Memory Boost!",
+    "cardImage": "assets/images/cards/jap/P-036_P2.webp",
+    "cardType": "Option",
+    "dp": "-",
+    "playCost": "3",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "-",
+    "rarity": "SR",
+    "cardNumber": "P-036",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 blue Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] ＜Delay＞ (Trash this card in your battle area to activate the effect below. You can't activate this effect the turn this card enters play.)  \n・Gain 2 memory.",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Place this card in its owner's battle area.",
+    "notes": "REBOOT BOOSTER RISING WIND [RB-01]",
+    "color": "Blue",
+    "version": "AA",
+    "block": [
+      "01",
+      "02"
+    ],
+    "restriction": "-",
+    "illustrator": "p!k@ru"
   },
   {
     "id": "P-037",
@@ -1383,7 +1449,8 @@
     "color": "Yellow",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Shin Sasaki"
@@ -1413,10 +1480,42 @@
     "color": "Yellow",
     "version": "AA",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Takase"
+  },
+  {
+    "id": "P-037_P2",
+    "name": "Yellow Memory Boost!",
+    "cardImage": "assets/images/cards/jap/P-037_P2.webp",
+    "cardType": "Option",
+    "dp": "-",
+    "playCost": "3",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "-",
+    "rarity": "SR",
+    "cardNumber": "P-037",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 yellow Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] ＜Delay＞ (Trash this card in your battle area to activate the effect below. You can't activate this effect the turn this card enters play.)  \n・Gain 2 memory.",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Place this card in its owner's battle area.",
+    "notes": "REBOOT BOOSTER RISING WIND [RB-01]",
+    "color": "Yellow",
+    "version": "AA",
+    "block": [
+      "01",
+      "02"
+    ],
+    "restriction": "-",
+    "illustrator": "p!k@ru"
   },
   {
     "id": "P-038",
@@ -1443,7 +1542,8 @@
     "color": "Green",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Shin Sasaki"
@@ -1473,10 +1573,42 @@
     "color": "Green",
     "version": "AA",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Takase"
+  },
+  {
+    "id": "P-038_P2",
+    "name": "Green Memory Boost!",
+    "cardImage": "assets/images/cards/jap/P-038_P2.webp",
+    "cardType": "Option",
+    "dp": "-",
+    "playCost": "3",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "-",
+    "rarity": "SR",
+    "cardNumber": "P-038",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 green Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] ＜Delay＞ (Trash this card in your battle area to activate the effect below. You can't activate this effect the turn this card enters play.)  \n・Gain 2 memory.",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Place this card in its owner's battle area.",
+    "notes": "REBOOT BOOSTER RISING WIND [RB-01]",
+    "color": "Green",
+    "version": "AA",
+    "block": [
+      "01",
+      "02"
+    ],
+    "restriction": "-",
+    "illustrator": "p!k@ru"
   },
   {
     "id": "P-039",
@@ -1503,7 +1635,8 @@
     "color": "Black",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Shin Sasaki"
@@ -1533,10 +1666,42 @@
     "color": "Black",
     "version": "AA",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Takase"
+  },
+  {
+    "id": "P-039_P2",
+    "name": "Black Memory Boost!",
+    "cardImage": "assets/images/cards/jap/P-039_P2.webp",
+    "cardType": "Option",
+    "dp": "-",
+    "playCost": "3",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "-",
+    "rarity": "SR",
+    "cardNumber": "P-039",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 black Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] ＜Delay＞ (Trash this card in your battle area to activate the effect below. You can't activate this effect the turn this card enters play.)  \n・Gain 2 memory.",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Place this card in its owner's battle area.",
+    "notes": "REBOOT BOOSTER RISING WIND [RB-01]",
+    "color": "Black",
+    "version": "AA",
+    "block": [
+      "01",
+      "02"
+    ],
+    "restriction": "-",
+    "illustrator": "p!k@ru"
   },
   {
     "id": "P-040",
@@ -1563,7 +1728,8 @@
     "color": "Purple",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Shin Sasaki"
@@ -1593,10 +1759,42 @@
     "color": "Purple",
     "version": "AA",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Takase"
+  },
+  {
+    "id": "P-040_P2",
+    "name": "Purple Memory Boost!",
+    "cardImage": "assets/images/cards/jap/P-040_P2.webp",
+    "cardType": "Option",
+    "dp": "-",
+    "playCost": "3",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "-",
+    "rarity": "SR",
+    "cardNumber": "P-040",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 purple Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] ＜Delay＞ (Trash this card in your battle area to activate the effect below. You can't activate this effect the turn this card enters play.)  \n・Gain 2 memory.",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Place this card in its owner's battle area.",
+    "notes": "REBOOT BOOSTER RISING WIND [RB-01]",
+    "color": "Purple",
+    "version": "AA",
+    "block": [
+      "01",
+      "02"
+    ],
+    "restriction": "-",
+    "illustrator": "p!k@ru"
   },
   {
     "id": "P-041",
