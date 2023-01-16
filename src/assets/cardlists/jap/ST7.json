@@ -20,7 +20,7 @@
     "effect": "-",
     "digivolveEffect": "[Your Turn] [Once Per Turn] When an opponent's Digimon is deleted, this Digimon gets +2000 DP for the turn.",
     "securityEffect": "-",
-    "notes": "▹start deck Gallantmon[ST-7]",
+    "notes": "▹start deck Dukemon[ST-7]",
     "color": "Red",
     "version": "Normal",
     "block": [
@@ -50,11 +50,12 @@
     "effect": "-",
     "digivolveEffect": "[When Attacking] When this Digimon attacks a player, it gets +2000 DP for the turn.",
     "securityEffect": "-",
-    "notes": "▹start deck Gallantmon[ST-7]",
+    "notes": "▹start deck Dukemon[ST-7]",
     "color": "Red",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02", 
     ],
     "restriction": "-",
     "illustrator": "TANIMESO"
@@ -80,11 +81,12 @@
     "effect": "-",
     "digivolveEffect": "[When Attacking] When this Digimon attacks a player, it gets +2000 DP for the turn.",
     "securityEffect": "-",
-    "notes": "-",
+    "notes": "Tamer Battle Pack 15",
     "color": "Red",
     "version": "AA",
     "block": [
-      "01"
+      "01",
+      "02",      
     ],
     "restriction": "-",
     "illustrator": "yuuki"
@@ -110,7 +112,7 @@
     "effect": "[Your Turn] If your opponent has a level 6 or higher Digimon in play, this Digimon can digivolve into a [Gallantmon] in your hand for a memory cost of 4, ignoring its digivolution requirements.",
     "digivolveEffect": "[Your Turn] [Once Per Turn] When an opponent's Digimon is deleted, trigger ＜Draw 1＞. (Draw 1 card from your deck.)",
     "securityEffect": "-",
-    "notes": "▹start deck Gallantmon[ST-7]",
+    "notes": "▹start deck Dukemon[ST-7]",
     "color": "Red",
     "version": "Normal",
     "block": [
@@ -203,7 +205,7 @@
     "effect": "＜Blocker＞ (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)\n[Your Turn] This Digimon can't attack players.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹start deck Gallantmon[ST-7]",
+    "notes": "▹start deck Dukemon[ST-7]",
     "color": "Red",
     "version": "Normal",
     "block": [
@@ -233,7 +235,7 @@
     "effect": "-",
     "digivolveEffect": "[Your Turn] [Once Per Turn] When an opponent's Digimon is deleted, gain 1 memory.",
     "securityEffect": "-",
-    "notes": "▹start deck Gallantmon[ST-7]",
+    "notes": "▹start deck Dukemon[ST-7]",
     "color": "Red",
     "version": "Normal",
     "block": [
@@ -263,7 +265,7 @@
     "effect": "[Security] At the end of the battle, play this card without paying its memory cost.\n[On Play] Delete 1 of your opponent's Digimon with 4000 DP or less.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹start deck Gallantmon[ST-7]",
+    "notes": "▹start deck Dukemon[ST-7]",
     "color": "Red",
     "version": "Normal",
     "block": [
@@ -293,7 +295,7 @@
     "effect": "[On Play] Delete 1 of your opponent's Digimon with 5000 DP or less.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹start deck Gallantmon[ST-7]",
+    "notes": "▹start deck Dukemon[ST-7]",
     "color": "Red",
     "version": "Normal",
     "block": [
@@ -323,7 +325,7 @@
     "effect": "[When Attacking] Delete 1 of your opponent's Digimon with 3000 DP or less.",
     "digivolveEffect": "[Your Turn] [Once Per Turn] When an opponent's Digimon is deleted, this Digimon gains ＜Security Attack +1＞ for the turn. (This Digimon checks 1 additional security card.)",
     "securityEffect": "-",
-    "notes": "▹start deck Gallantmon[ST-7]",
+    "notes": "▹start deck Dukemon[ST-7]",
     "color": "Red",
     "version": "Normal",
     "block": [
@@ -353,7 +355,7 @@
     "effect": "＜Security Attack +1＞ (This Digimon checks 1 additional security card.)\n[When Attacking] Delete 1 of your opponent's Digimon with 4000 DP or less. If no Digimon was deleted by this effect, this Digimon gets +3000 DP for the turn.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹start deck Gallantmon[ST-7]",
+    "notes": "▹start deck Dukemon[ST-7]",
     "color": "Red",
     "version": "Normal",
     "block": [
@@ -413,7 +415,7 @@
     "effect": "＜Security Attack +1＞ (This Digimon checks 1 additional security card.)\n＜Piercing＞ (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹start deck Gallantmon[ST-7]",
+    "notes": "▹start deck Dukemon[ST-7]",
     "color": "Red",
     "version": "Normal",
     "block": [
@@ -443,7 +445,7 @@
     "effect": "[Main] 1 of your Digimon gets +2000 DP for the turn. Then, if the number of cards in your security stack is less than or equal to your opponent's, 1 of your Digimon gains ＜Security Attack +1＞ for the turn. (This Digimon checks 1 additional security card.)",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Add this card to its owner's hand.",
-    "notes": "▹start deck Gallantmon[ST-7]",
+    "notes": "▹start deck Dukemon[ST-7]",
     "color": "Red",
     "version": "Normal",
     "block": [
@@ -473,7 +475,7 @@
     "effect": "[Main] Choose any number of your opponent's Digimon whose total DP adds up to 8000 or less and delete them.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
-    "notes": "▹start deck Gallantmon[ST-7]",
+    "notes": "▹start deck Dukemon[ST-7]",
     "color": "Red",
     "version": "Normal",
     "block": [
