@@ -264,10 +264,11 @@
     "color": "Green",
     "version": "AA",
     "block": [
-      "01"
+      "01",
+      "02",      
     ],
-    "restriction": "-",
-    "illustrator": "koki"
+    "restriction": "Tamer Battle Pack 15",
+    "illustrator": "Ryodan"
   },
   {
     "id": "BT9-005",
