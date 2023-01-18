@@ -1,5 +1,5 @@
 import { englishCards } from '../../assets/cardlists/eng/english';
-import preReleaseJSON from '../../assets/cardlists/eng/preRelease.json';
+import preReleaseJSON from '../../assets/cardlists/eng/PreRelease.json';
 import { japaneseCards } from '../../assets/cardlists/jap/japanese';
 import {
   CARDSET,

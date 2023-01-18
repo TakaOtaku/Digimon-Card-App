@@ -9,7 +9,16 @@ import { DataSnapshot } from '@angular/fire/compat/database/interfaces';
 // @ts-ignore
 import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 import { Store } from '@ngrx/store';
-import { filter, first, Subject, tap } from 'rxjs';
+import {
+  concat,
+  filter,
+  first,
+  map,
+  Observable,
+  Subject,
+  switchMap,
+  tap,
+} from 'rxjs';
 import {
   ADMINS,
   IBlog,
@@ -43,6 +52,13 @@ import { emptySettings } from '../../store/reducers/save.reducer';
       (click)="updateAllDecks()"
     >
       Update all Decks
+    </button>
+    <button
+      *ngIf="isAdmin()"
+      class="border-2 border-amber-200 bg-amber-400"
+      (click)="updatePriceGuideIds()"
+    >
+      Update PriceGuide Ids
     </button>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -306,5 +322,23 @@ export class TestPageComponent implements OnInit, OnDestroy {
     if (save != newSave) {
       this.digimonBackendService.updateSave(newSave).pipe(first()).subscribe();
     }
+  }
+
+  updatePriceGuideIds() {
+    this.cardMarketService.getPrizeGuide().subscribe((priceGuide: any[]) => {
+      const observable: Observable<any>[] = [];
+      priceGuide.forEach((entry) => {
+        this.cardMarketService
+          .getProductId(entry.idProduct)
+          .pipe(
+            switchMap((id) => {
+              return this.cardMarketService.updateProductId(id, entry);
+            })
+          )
+          .subscribe((value) => console.log(value));
+      });
+
+      //concat(...observable).subscribe((value) => console.log(value));
+    });
   }
 }
