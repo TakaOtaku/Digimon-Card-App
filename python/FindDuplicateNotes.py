@@ -1,9 +1,4 @@
-import requests
-import urllib
 import json
-from bs4 import BeautifulSoup
-import re
-import pandas as pd
 
 jsons = [
     'BT1.json',
@@ -46,5 +41,5 @@ for current in jsons:
         else:
             notes.append(card['notes'])
 
-with open('notes.json', 'w') as f:
+with open('duplicates.json', 'w') as f:
     f.write("%s\n" % json.dumps(notes))

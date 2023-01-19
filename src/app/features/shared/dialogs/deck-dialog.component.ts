@@ -13,8 +13,17 @@ import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { first } from 'rxjs';
 import * as uuid from 'uuid';
-import { ICard, IDeck, IDeckCard, ITournamentDeck } from '../../../../models';
-import { mapToDeckCards } from '../../../functions/digimon-card.functions';
+import {
+  CARDSET,
+  ICard,
+  IDeck,
+  IDeckCard,
+  ITournamentDeck,
+} from '../../../../models';
+import {
+  mapToDeckCards,
+  setupDigimonCards,
+} from '../../../functions/digimon-card.functions';
 import { AuthService } from '../../../service/auth.service';
 import { DigimonBackendService } from '../../../service/digimon-backend.service';
 import {
@@ -326,17 +335,13 @@ export class DeckDialogComponent implements OnInit, OnChanges {
     private confirmationService: ConfirmationService,
     private messageService: MessageService
   ) {
+    this.allCards = this.allCards = setupDigimonCards(CARDSET.Both);
     this.isAdmin =
       this.authService.userData?.uid === 'S3rWXPtCYRN8vSrxY3qE6aeewy43' ||
       this.authService.userData?.uid === 'loBLZPOIL0ZlDzt6A1rgDiTomTw2';
   }
 
   ngOnInit() {
-    this.store
-      .select(selectAllCards)
-      .pipe(first())
-      .subscribe((allCards) => (this.allCards = allCards));
-
     this.mainDeck = mapToDeckCards(this.deck.cards, this.allCards);
   }
 
