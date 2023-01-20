@@ -3696,7 +3696,7 @@
         "digiXros": "-",
         "specialDigivolve": "-",
         "dnaDigivolve": "-",
-        "effect": "While you have a Tamer with the [Hunter] trait in play, you may use this card without meeting its color requirements.\n[Main] By placing 1 of your Digimon under one of your Tamers, digivolve 1 of your Digimon into a Digimon card with ＜Save＞ in text for its digivolution cost.",
+        "effect": "While you have a Tamer with the [Hunter] trait in play, you may use this card without meeting its color requirements.\n[Main] Digivolve 1 of your Digimon with ＜Save＞ in its card text under 1 of your Tamers, for its digivolution cost.",
         "digivolveEffect": "[Security] Add this card to its owner's hand.",
         "securityEffect": "-",
         "notes": "▹BOOSTER ACROSS TIME [BT-12]",
