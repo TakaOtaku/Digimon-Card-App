@@ -1926,7 +1926,8 @@
     "color": "Red",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Kenji Watanabe"
@@ -1956,7 +1957,8 @@
     "color": "Blue",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Kazumasa Yasukuni"
@@ -1986,7 +1988,8 @@
     "color": "Yellow",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Kazumasa Yasukuni"
@@ -2016,7 +2019,8 @@
     "color": "Green",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "p!k@ru"
@@ -2046,7 +2050,8 @@
     "color": "Black",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Kenji Watanabe"
@@ -2076,7 +2081,8 @@
     "color": "Purple",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Takase"
