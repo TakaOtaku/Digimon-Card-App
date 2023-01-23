@@ -11,10 +11,11 @@ import copy
 wikiLink = 'https://digimoncardgame.fandom.com'
 wikiPageLinks = [
     #'https://digimoncardgame.fandom.com/wiki/BT-12:_Booster_Across_Time'
-    'https://digimoncardgame.fandom.com/wiki/ST-14:_Advanced_Deck_Beelzemon'
+    #'https://digimoncardgame.fandom.com/wiki/ST-14:_Advanced_Deck_Beelzemon'
     #'https://digimoncardgame.fandom.com/wiki/EX-04:_Theme_Booster_Alternative_Being'
+    'https://digimoncardgame.fandom.com/wiki/RB-01:_Reboot_Booster_Rising_Wind'
 ]
-setName = "▹THEME BOOSTER ALTERNATIVE BEING [EX-04]"
+setName = "REBOOT BOOSTER RISING WIND [RB-01]"
 cardLinks = []
 NormalCards = []
 AACards = []
@@ -238,7 +239,7 @@ def makeAACardDatas():
 
 def saveCardsToJSON():
     print('Saving now!')
-    with open('ST14.json', 'w') as fp:
+    with open('RB01.json', 'w') as fp:
         json.dump(cards, fp)
 
 
