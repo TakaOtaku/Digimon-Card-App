@@ -1,6 +1,7 @@
 import { createAction, props } from '@ngrx/store';
 import { ICard, ICountCard, IDeck, IFilter, ISave, ISort } from '../../models';
 import { IBlog } from '../../models/interfaces/blog-entry.interface';
+import { ProductCM } from '../service/card-market.service';
 
 //region Digimon Card Actions
 export const setDigimonCards = createAction(
@@ -14,6 +15,11 @@ export const setFilteredDigimonCards = createAction(
 //endregion
 
 //region Website Actions
+export const setPriceGuideCM = createAction(
+  '[Set PriceGuide] Set CardMarket PriceGuide',
+  props<{ products: ProductCM[] }>()
+);
+
 export const setDeck = createAction(
   '[Set Deck] Set current Deck',
   props<{ deck: IDeck }>()

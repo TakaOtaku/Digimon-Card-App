@@ -14,12 +14,16 @@ import { IDeck, ISave } from '../../../models';
 import { AuthService } from '../../service/auth.service';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
 import { setDeck } from '../../store/digimon.actions';
-import { selectMobileCollectionView } from '../../store/digimon.selectors';
+import {
+  selectDeckBuilderViewModel,
+  selectMobileCollectionView,
+} from '../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-deckbuilder-page',
   template: `
     <div
+      *ngIf="deckBuilderViewModel$ | async as deckBuilderViewModel"
       [ngClass]="{ hidden: mobileCollectionView$ | async }"
       class="relative inline-flex h-full w-full flex-row overflow-hidden lg:bg-gradient-to-b lg:from-[#17212f] lg:to-[#08528d]"
     >
@@ -38,6 +42,7 @@ import { selectMobileCollectionView } from '../../store/digimon.selectors';
         *ngIf="deckView"
         [ngClass]="{ 'w-5/12': collectionView, 'w-full': !collectionView }"
         [collectionView]="collectionView"
+        [deckBuilderViewModel]="deckBuilderViewModel"
         (hideStats)="hideStats = !hideStats"
       ></digimon-deck-view>
 
@@ -64,6 +69,7 @@ import { selectMobileCollectionView } from '../../store/digimon.selectors';
         [ngClass]="{ hidden: hideStats }"
         [collectionView]="collectionView"
         [showStats]="showStats"
+        [deckBuilderViewModel]="deckBuilderViewModel"
       ></digimon-deck-stats>
     </div>
 
@@ -83,6 +89,8 @@ export class DeckbuilderPageComponent implements OnInit, OnDestroy {
   showAccordionButtons = true;
   showStats = true;
   //endregion
+
+  deckBuilderViewModel$ = this.store.select(selectDeckBuilderViewModel);
 
   mobileCollectionView$ = this.store.select(selectMobileCollectionView);
   hideStats = false;
@@ -114,6 +122,40 @@ export class DeckbuilderPageComponent implements OnInit, OnDestroy {
     this.onDestroy$.unsubscribe();
   }
 
+  changeView(view: string) {
+    if (view === 'Deck') {
+      this.deckView = !this.deckView;
+
+      if (this.screenWidth >= 768 && this.screenWidth < 1024) {
+        if (this.deckView && this.collectionView) {
+          this.collectionView = false;
+          this.showStats = true;
+          return;
+        }
+      }
+
+      if (!this.collectionView) {
+        this.collectionView = true;
+      }
+    } else if (view === 'Collection') {
+      this.collectionView = !this.collectionView;
+
+      if (this.screenWidth >= 768 && this.screenWidth < 1024) {
+        if (this.deckView && this.collectionView) {
+          this.deckView = false;
+          this.showStats = false;
+          return;
+        }
+      }
+
+      if (!this.deckView) {
+        this.deckView = true;
+      }
+    }
+
+    this.showStats = !(this.collectionView && !this.deckView);
+  }
+
   private makeGoogleFriendly() {
     this.title.setTitle('Digimon Card Game - Deck Builder');
 
@@ -132,7 +174,7 @@ export class DeckbuilderPageComponent implements OnInit, OnDestroy {
     ]);
   }
 
-  checkURL() {
+  private checkURL() {
     this.route.params
       .pipe(
         first(),
@@ -185,7 +227,7 @@ export class DeckbuilderPageComponent implements OnInit, OnDestroy {
   }
 
   @HostListener('window:resize', ['$event'])
-  onResize() {
+  private onResize() {
     this.screenWidth = window.innerWidth;
     if (this.screenWidth < 768) {
       this.deckView = true;
@@ -209,39 +251,5 @@ export class DeckbuilderPageComponent implements OnInit, OnDestroy {
 
       this.showAccordionButtons = true;
     }
-  }
-
-  changeView(view: string) {
-    if (view === 'Deck') {
-      this.deckView = !this.deckView;
-
-      if (this.screenWidth >= 768 && this.screenWidth < 1024) {
-        if (this.deckView && this.collectionView) {
-          this.collectionView = false;
-          this.showStats = true;
-          return;
-        }
-      }
-
-      if (!this.collectionView) {
-        this.collectionView = true;
-      }
-    } else if (view === 'Collection') {
-      this.collectionView = !this.collectionView;
-
-      if (this.screenWidth >= 768 && this.screenWidth < 1024) {
-        if (this.deckView && this.collectionView) {
-          this.deckView = false;
-          this.showStats = false;
-          return;
-        }
-      }
-
-      if (!this.deckView) {
-        this.deckView = true;
-      }
-    }
-
-    this.showStats = !(this.collectionView && !this.deckView);
   }
 }

@@ -1,12 +1,9 @@
-import { Component, Input, OnDestroy } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { filter, Subject, takeUntil } from 'rxjs';
 import { ICard, IDeck, IDeckCard } from '../../../../models';
 import { mapToDeckCards } from '../../../functions/digimon-card.functions';
-import {
-  selectAllCards,
-  selectDeckBuilderViewModel,
-} from '../../../store/digimon.selectors';
+import { ProductCM } from '../../../service/card-market.service';
+import { DeckBuilderViewModel } from '../../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-deck-stats',
@@ -23,8 +20,8 @@ import {
       >
         <digimon-ddto-spread
           *ngIf="!collectionView"
-          [deck]="deck"
-          [allCards]="allCards"
+          [deck]="this.deckBuilderViewModel.deck"
+          [allCards]="deckBuilderViewModel.cards"
           [container]="true"
           class="ml-auto hidden border-r border-slate-200 px-5 lg:block"
         ></digimon-ddto-spread>
@@ -39,8 +36,8 @@ import {
 
         <digimon-color-spread
           *ngIf="!collectionView"
-          [deck]="deck"
-          [allCards]="allCards"
+          [deck]="this.deckBuilderViewModel.deck"
+          [allCards]="deckBuilderViewModel.cards"
           [container]="true"
           class="mr-auto hidden border-l border-slate-200 px-5 lg:block"
         ></digimon-color-spread>
@@ -48,41 +45,21 @@ import {
     </div>
   `,
 })
-export class DeckStatsComponent implements OnDestroy {
+export class DeckStatsComponent implements OnChanges {
   @Input() showStats = false;
   @Input() collectionView = false;
+  @Input() deckBuilderViewModel: DeckBuilderViewModel;
 
   mainDeck: IDeckCard[];
 
-  deck: IDeck;
-  allCards: ICard[];
-
-  private onDestroy$ = new Subject<boolean>();
-
-  constructor(private store: Store) {
-    this.store
-      .select(selectDeckBuilderViewModel)
-      .pipe(
-        takeUntil(this.onDestroy$),
-        filter((value) => !!value)
-      )
-      .subscribe(({ deck, cards }) => {
-        if (!deck) {
-          return;
-        }
-        this.deck = deck;
-        this.mainDeck = mapToDeckCards(deck.cards, cards);
-      });
-    this.store
-      .select(selectAllCards)
-      .pipe(
-        takeUntil(this.onDestroy$),
-        filter((value) => !!value)
-      )
-      .subscribe((cards) => (this.allCards = cards));
-  }
-
-  ngOnDestroy(): void {
-    this.onDestroy$.next(true);
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['deckBuilderViewModel']) {
+      if (this.deckBuilderViewModel.deck) {
+        this.mainDeck = mapToDeckCards(
+          this.deckBuilderViewModel.deck.cards,
+          this.deckBuilderViewModel.cards
+        );
+      }
+    }
   }
 }

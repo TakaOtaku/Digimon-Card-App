@@ -22,6 +22,7 @@ import {
 } from '../../../../models';
 import {
   mapToDeckCards,
+  setDeckImage,
   setupDigimonCards,
 } from '../../../functions/digimon-card.functions';
 import { AuthService } from '../../../service/auth.service';
@@ -523,15 +524,11 @@ export class DeckDialogComponent implements OnInit, OnChanges {
         value: foundCard!.id,
       };
     } else {
-      foundCard = this.allCards.find(
-        (card) => card.id === this.deck.cards[0].id
-      );
-      return foundCard
-        ? {
-            name: `${foundCard!.id} - ${foundCard!.name}`,
-            value: foundCard!.id,
-          }
-        : { name: 'BT1-001 - Yokomon', value: 'BT1-001' };
+      const imageCard = setDeckImage(this.deck);
+      return {
+        name: `${imageCard!.id} - ${imageCard!.name}`,
+        value: imageCard!.id,
+      };
     }
   }
 

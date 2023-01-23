@@ -17,6 +17,7 @@ export const GroupedSets = [
       { label: 'BT10', value: 'BT10' },
       { label: 'BT11', value: 'BT11' },
       { label: 'BT12', value: 'BT12' },
+      { label: 'BT13', value: 'BT13' },
     ],
   },
   {
@@ -49,11 +50,12 @@ export const GroupedSets = [
     ],
   },
   {
-    items: [{ label: 'P', value: 'P' }],
+    items: [
+      { label: 'RB', value: 'RB1' },
+      { label: 'P', value: 'P' },
+    ],
   },
 ];
-
-export const CardTypes: string[] = ['Digi-Egg', 'Digimon', 'Tamer', 'Option'];
 
 export const Keywords: string[] = [
   '\uff1cAlliance\uff1e',

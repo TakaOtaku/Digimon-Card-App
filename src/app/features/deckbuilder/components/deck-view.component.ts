@@ -28,6 +28,7 @@ import {
 } from '../../../functions/digimon-card.functions';
 import { sortID } from '../../../functions/filter.functions';
 import { AuthService } from '../../../service/auth.service';
+import { ProductCM } from '../../../service/card-market.service';
 import { DigimonBackendService } from '../../../service/digimon-backend.service';
 import {
   addCardToDeck,
@@ -35,12 +36,14 @@ import {
   setDeck,
 } from '../../../store/digimon.actions';
 import {
+  DeckBuilderViewModel,
   selectAddCardToDeck,
   selectCollection,
   selectCommunityDecks,
   selectDeckBuilderViewModel,
   selectSave,
 } from '../../../store/digimon.selectors';
+import { emptyDeck } from '../../../store/reducers/digimon.reducers';
 
 @Component({
   selector: 'digimon-deck-view',
@@ -57,6 +60,7 @@ import {
         [deck]="deck"
         [mainDeck]="mainDeck"
         [missingCards]="missingCards"
+        [deckBuilderViewModel]="deckBuilderViewModel"
         (missingCardsChange)="missingCards = $event"
         (share)="share()"
         (save)="saveDeck($event)"
@@ -82,6 +86,8 @@ import {
 })
 export class DeckViewComponent implements OnInit, OnDestroy {
   @Input() collectionView: boolean;
+  @Input() deckBuilderViewModel: DeckBuilderViewModel;
+
   @Output() onMainDeck = new EventEmitter<IDeckCard[]>();
   @Output() hideStats = new EventEmitter<boolean>();
 

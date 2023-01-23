@@ -10,12 +10,14 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Subject, takeUntil } from 'rxjs';
+import { map, Subject, takeUntil } from 'rxjs';
 import { englishCards } from '../../../../assets/cardlists/eng/english';
 import { ICard, IDeck } from '../../../../models';
 import { ColorMap } from '../../../../models/maps/color.map';
 import { formatId } from '../../../functions/digimon-card.functions';
 import {
+  selectCollection,
+  selectCollectionMode,
   selectDeck,
   selectFilteredCards,
 } from '../../../store/digimon.selectors';
@@ -140,6 +142,24 @@ import {
             </p>
             <p class="font-white ml-auto mr-1.5 font-bold leading-[1.7em]">
               {{ deckCount() }}x
+            </p>
+          </div>
+          <div
+            *ngIf="collectionMode$ | async"
+            class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150"
+            id="Digimon-Deck-Count"
+          >
+            <p
+              [ngStyle]="{color}"
+              class="text-black-outline-xs ml-1.5 text-lg font-extrabold"
+            >
+              In Collection
+            </p>
+            <p
+              *ngIf="collectionCard$ | async as collectionCard"
+              class="font-white ml-auto mr-1.5 font-bold leading-[1.7em]"
+            >
+              {{ collectionCard.count }}x
             </p>
           </div>
           <div
@@ -307,7 +327,9 @@ import {
           >
             Effect
           </p>
-          <p class="font-white whitespace-pre-wrap font-bold">{{ card.effect }}</p>
+          <p class="font-white whitespace-pre-wrap font-bold">
+            {{ card.effect }}
+          </p>
         </div>
         <div
           *ngIf="card.digivolveEffect !== '-'"
@@ -425,6 +447,11 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
 
   deck: IDeck;
 
+  collectionMode$ = this.store.select(selectCollectionMode);
+  collectionCard$ = this.store
+    .select(selectCollection)
+    .pipe(map((cards) => cards.find((colCard) => colCard.id === this.card.id)));
+
   private onDestroy$ = new Subject();
 
   constructor(private store: Store) {}
@@ -453,6 +480,12 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
     if (changes && changes['card']) {
       const card: ICard = changes['card'].currentValue;
       this.setupView(card);
+
+      this.collectionCard$ = this.store
+        .select(selectCollection)
+        .pipe(
+          map((cards) => cards.find((colCard) => colCard.id === this.card.id))
+        );
     }
   }
 

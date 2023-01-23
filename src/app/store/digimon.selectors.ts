@@ -10,6 +10,8 @@ import {
   ISettings,
   ISort,
 } from '../../models';
+import { ProductCM } from '../service/card-market.service';
+import { emptyDeck } from './reducers/digimon.reducers';
 
 export const selectIDigimonCards =
   createFeatureSelector<IDigimonCards>('digimonCards');
@@ -54,6 +56,12 @@ export const selectBlogs = createSelector(
   selectDigimonState,
   (state: IDigimonState) => state.blogs
 );
+
+export const selectPriceGuideCM = createSelector(
+  selectDigimonState,
+  (state: IDigimonState) => state.priceGuideCM
+);
+
 //endregion
 
 //region Digimon Card Selectors
@@ -146,11 +154,17 @@ export const selectChangeFilterEffect = createSelector(
   })
 );
 
+export interface DeckBuilderViewModel {
+  deck: IDeck;
+  cards: ICard[];
+  priceGuideCM: ProductCM[];
+}
 export const selectDeckBuilderViewModel = createSelector(
   selectDeck,
   selectAllCards,
-  (deck: IDeck | null, cards: ICard[]) => ({
-    deck,
-    cards,
-  })
+  selectPriceGuideCM,
+  (deck: IDeck | null, cards: ICard[], priceGuideCM: ProductCM[]) => {
+    const noEmptyDeck = deck ?? emptyDeck;
+    return { deck: noEmptyDeck, cards, priceGuideCM } as DeckBuilderViewModel;
+  }
 );
