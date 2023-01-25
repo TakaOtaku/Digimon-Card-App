@@ -8,4 +8,5 @@ export interface ISettings {
   showAACards: boolean; // Show AA Cards ---- default = true
   sortDeckOrder: string; // Set Deck-Sort Order ---- default = Level
   showUserStats: boolean; // Show User-Stats in the Profil Yes or no ---- default = true
+  deckDisplayTable: boolean; // Display Decks as Table instead of Big Blocks
 }

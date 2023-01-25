@@ -42,8 +42,7 @@ export class CardMarketService {
   }
 
   updateProductId(id: string, product: any): Observable<any> {
-    debugger;
     const newProduct = { ...product, cardId: id };
-    return this.http.put<any>(`${baseUrl}/price-guide`, newProduct);
+    return this.http.put<any>(`${baseUrl}/product`, newProduct);
   }
 }

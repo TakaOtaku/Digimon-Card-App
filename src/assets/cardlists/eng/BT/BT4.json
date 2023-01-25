@@ -174,7 +174,8 @@
     "color": "Purple",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Sanosuke Sakuma"
@@ -325,7 +326,8 @@
     "color": "Red",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "sasasi"
@@ -507,7 +509,8 @@
     "color": "Red",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Tonamikanji"
@@ -747,7 +750,8 @@
     "color": "Blue",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Tonamikanji"
@@ -1858,7 +1862,8 @@
     "color": "Green",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Hisashi Fujiwara"
@@ -2368,7 +2373,8 @@
     "color": "Purple",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Kirita"
@@ -2880,7 +2886,7 @@
     "color": "Black",
     "version": "Normal",
     "block": [
-      "00",
+      "01",
       "02"
     ],
     "restriction": "-",
@@ -2911,7 +2917,8 @@
     "color": "Purple",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": ""
@@ -3122,7 +3129,8 @@
     "color": "Yellow",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "p!k@ru"
@@ -3332,7 +3340,8 @@
     "color": "Purple",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Ryuda"
@@ -3452,7 +3461,8 @@
     "color": "Yellow",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Nakano Haito"

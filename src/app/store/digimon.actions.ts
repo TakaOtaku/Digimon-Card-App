@@ -99,6 +99,10 @@ export const changeShowUserStats = createAction(
   '[Settings] Change Show User Stats',
   props<{ showUserStats: boolean }>()
 );
+export const setDeckDisplayTable = createAction(
+  '[Settings] Set Deck Display Table',
+  props<{ deckDisplayTable: boolean }>()
+);
 //endregions
 
 //region Collection Actions

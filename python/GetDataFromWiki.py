@@ -91,9 +91,9 @@ def getDigivolveInfo(html, digimoncard):
         cells = evoCon.find_all("td")
         digimoncard["digivolveColor" +
                     str(evoNumber)] = cells[1].text.replace("\n", "").strip()
-        digimoncard["digivolveLevel" +
-                    str(evoNumber)] = cells[3].text.replace("\n", "").strip() + 'from Lv.' + cells[5].text.replace("\n", "").strip()
         digimoncard["digivolveCost" +
+                    str(evoNumber)] = cells[3].text.replace("\n", "").strip() + 'from Lv.' + cells[5].text.replace("\n", "").strip()
+        digimoncard["digivolveLevel" +
                     str(evoNumber)] = cells[5].text.replace("\n", "").strip()
         evoNumber += 1
 

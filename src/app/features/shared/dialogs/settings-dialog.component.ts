@@ -153,6 +153,19 @@ import { emptySettings } from '../../../store/reducers/save.reducer';
               optionValue="value"
             ></p-selectButton>
           </div>
+
+          <div class="flex flex-col">
+            <h5 class="mt-5 text-center font-bold">
+              Display Decks in a Table:
+            </h5>
+            <p-selectButton
+              [(ngModel)]="deckDisplayTable"
+              [options]="yesNoOptions"
+              class="mx-auto"
+              optionLabel="label"
+              optionValue="value"
+            ></p-selectButton>
+          </div>
         </div>
 
         <div class="flex flex-row justify-end">
@@ -431,8 +444,12 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
     { label: 'Show', value: true },
     { label: 'Hide', value: false },
   ];
-
+  yesNoOptions = [
+    { label: 'Yes', value: true },
+    { label: 'No', value: false },
+  ];
   userStats = true;
+  deckDisplayTable = true;
 
   sortOrder = ['Color', 'Level'];
   sortOrderFilter = new FormControl();
@@ -472,6 +489,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
         this.aa = settings.showAACards;
         this.stamped = settings.showStampedCards;
         this.collectionCount = settings.collectionMinimum;
+        this.deckDisplayTable = settings.deckDisplayTable;
       });
   }
 
@@ -490,10 +508,15 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
         showStampedCards: this.stamped,
         sortDeckOrder: this.sortOrderFilter.value,
         showUserStats: this.userStats,
+        deckDisplayTable: this.deckDisplayTable,
       },
     };
 
     this.store.dispatch(setSave({ save }));
+    this.messageService.add({
+      severity: 'success',
+      summary: 'Settings saved!',
+    });
   }
 
   importCollection() {

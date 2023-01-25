@@ -54,7 +54,8 @@
     "color": "Blue",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Tonamikanji"
@@ -84,7 +85,8 @@
     "color": "Yellow",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Sanosuke Sakuma"
@@ -175,8 +177,8 @@
     "color": "Purple",
     "version": "Normal",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Sanosuke Sakuma"
@@ -627,7 +629,6 @@
     "color": "Blue",
     "version": "Normal",
     "block": [
-      "00",
       "01",
       "02"
     ],
@@ -1172,8 +1173,8 @@
     "color": "Yellow",
     "version": "Normal",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "yuuki."
@@ -1383,8 +1384,8 @@
     "color": "Green",
     "version": "Normal",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Tonamikanji"
@@ -1414,7 +1415,8 @@
     "color": "Green",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Tonamikanji"
@@ -1626,7 +1628,8 @@
     "color": "Green",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "koki"
@@ -1837,8 +1840,8 @@
     "color": "Black",
     "version": "Normal",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Kenji Watanabe"
@@ -2258,7 +2261,8 @@
     "color": "Black",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "sasasi"
@@ -2648,8 +2652,8 @@
     "color": "Purple",
     "version": "Normal",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "yuuki."
@@ -2739,7 +2743,8 @@
     "color": "Purple",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Tonamikanji"
@@ -2921,7 +2926,8 @@
     "color": "Red",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "sasasi"
@@ -3101,7 +3107,8 @@
     "color": "Green",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "Restricted to 1",
     "illustrator": "Takase"

@@ -121,6 +121,10 @@ export const selectShowUserStats = createSelector(
   selectSettings,
   (state: ISettings) => state.showUserStats
 );
+export const selectDeckDisplayTable = createSelector(
+  selectSettings,
+  (state: ISettings) => state.deckDisplayTable
+);
 //endregion
 
 export const selectChangeAdvancedSettings = createSelector(

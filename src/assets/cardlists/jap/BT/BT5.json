@@ -24,8 +24,8 @@
     "color": "Red",
     "version": "Normal",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Sanosuke Sakuma"
@@ -628,7 +628,8 @@
     "color": "Blue",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Kirita"
@@ -1503,7 +1504,8 @@
     "color": "Green",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "koki"
@@ -1863,7 +1865,8 @@
     "color": "Black",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "kaz"
@@ -1953,7 +1956,8 @@
     "color": "Black",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "tessy"
@@ -2584,7 +2588,8 @@
     "color": "White",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "tyuga"
@@ -2614,7 +2619,8 @@
     "color": "White",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Naochika Morishita"
@@ -2644,7 +2650,8 @@
     "color": "Blue",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": ""
@@ -2764,7 +2771,8 @@
     "color": "White",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": ""
@@ -3155,7 +3163,8 @@
     "color": "Black",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "shosuke"
@@ -3335,7 +3344,8 @@
     "color": "White",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "As'Maria"
@@ -3365,8 +3375,9 @@
     "color": "White",
     "version": "Normal",
     "block": [
-      "00"
-],
+      "01",
+      "02"
+    ],
     "restriction": "-",
     "illustrator": "Tonamikanji"
   }

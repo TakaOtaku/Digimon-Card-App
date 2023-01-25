@@ -14,6 +14,7 @@ import {
   loadSave,
   saveDeck,
   setCollection,
+  setDeckDisplayTable,
   setSave,
 } from '../digimon.actions';
 
@@ -29,6 +30,8 @@ export const emptySettings: ISettings = {
   sortDeckOrder: 'Level',
 
   showUserStats: true,
+
+  deckDisplayTable: false,
 };
 
 export const emptySave: ISave = {
@@ -95,6 +98,10 @@ export const saveReducer = createReducer(
       showAACards: showAA,
       showStampedCards: showStamp,
     },
+  })),
+  on(setDeckDisplayTable, (state, { deckDisplayTable }) => ({
+    ...state,
+    settings: { ...state.settings, deckDisplayTable },
   })),
 
   on(importDeck, (state, { deck }) => {

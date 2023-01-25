@@ -167,7 +167,10 @@ for cardList in cardLists:
 
     index = 0
     for card in cards:
-        card['block'] = blocks
+      if card['cardNumber'] in listsOfCardIds:
+          card['block'] = blocks
+          cardsWithBlocks.append(card)
+      else:
         cardsWithBlocks.append(card)
 
     with open('jsons/' + cardList + '.json', 'w') as f:

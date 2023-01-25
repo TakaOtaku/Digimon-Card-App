@@ -175,7 +175,8 @@
     "color": "Black",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "koki"
@@ -965,7 +966,8 @@
     "color": "Blue",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "sasasi"
@@ -1025,8 +1027,8 @@
     "color": "Yellow",
     "version": "Normal",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Teppei Tadokoro"
@@ -1148,7 +1150,8 @@
     "color": "Yellow",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "sasasi"
@@ -1238,7 +1241,8 @@
     "color": "Yellow",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "sasasi"
@@ -1659,7 +1663,8 @@
     "color": "Black",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Tonamikanji"
@@ -2085,8 +2090,8 @@
     "color": "Purple",
     "version": "Normal",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Nakano Haito"
@@ -2116,7 +2121,7 @@
     "color": "Purple",
     "version": "Normal",
     "block": [
-      "00",
+      "01",
       "02"
     ],
     "restriction": "-",
@@ -2238,8 +2243,8 @@
     "color": "Purple",
     "version": "Normal",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Hisashi Fujiwara"
@@ -2725,8 +2730,8 @@
     "color": "Purple",
     "version": "Normal",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": ""
@@ -3387,7 +3392,8 @@
     "color": "Black",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Tonamikanji"

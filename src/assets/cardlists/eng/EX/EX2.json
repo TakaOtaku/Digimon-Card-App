@@ -300,36 +300,6 @@
     "illustrator": "Tonamikanji"
   },
   {
-    "id": "EX2-012",
-    "name": "Megidramon",
-    "cardImage": "assets/images/cards/eng/EX2-012.webp",
-    "cardType": "Digimon",
-    "dp": "13000",
-    "playCost": "13",
-    "digivolveCost1": "5 from Lv.5",
-    "digivolveCost2": "5 from Lv.5",
-    "cardLv": "Lv.6",
-    "form": "Mega",
-    "attribute": "Virus",
-    "type": "Evil Dragon/Four Great Dragons",
-    "rarity": "SR",
-    "cardNumber": "EX2-012",
-    "digiXros": "-",
-    "specialDigivolve": "-",
-    "dnaDigivolve": "-",
-    "effect": "The name of this card/Digimon is also treated as [ChaosGallantmon].\n[When Digivolving] Delete 1 of your opponent's Digimon with 10000 DP or less. If no Digimon was deleted by this effect, trash the top 5 cards of both players' decks.\n[On Deletion] You may play 1 [Guilmon] and 1 [Takato Matsuki] from your hand and/or trash without paying their memory costs.",
-    "digivolveEffect": "-",
-    "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
-    "color": "Red/Purple",
-    "version": "Normal",
-    "block": [
-      "01"
-    ],
-    "restriction": "-",
-    "illustrator": "Tonamikanji"
-  },
-  {
     "id": "EX2-011",
     "name": "Gallantmon",
     "cardImage": "assets/images/cards/eng/EX2-011.webp",
@@ -352,6 +322,36 @@
     "securityEffect": "-",
     "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
     "color": "Red",
+    "version": "Normal",
+    "block": [
+      "01"
+    ],
+    "restriction": "-",
+    "illustrator": "Tonamikanji"
+  },
+  {
+    "id": "EX2-012",
+    "name": "Megidramon",
+    "cardImage": "assets/images/cards/eng/EX2-012.webp",
+    "cardType": "Digimon",
+    "dp": "13000",
+    "playCost": "13",
+    "digivolveCost1": "5 from Lv.5",
+    "digivolveCost2": "5 from Lv.5",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Virus",
+    "type": "Evil Dragon/Four Great Dragons",
+    "rarity": "SR",
+    "cardNumber": "EX2-012",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "The name of this card/Digimon is also treated as [ChaosGallantmon].\n[When Digivolving] Delete 1 of your opponent's Digimon with 10000 DP or less. If no Digimon was deleted by this effect, trash the top 5 cards of both players' decks.\n[On Deletion] You may play 1 [Guilmon] and 1 [Takato Matsuki] from your hand and/or trash without paying their memory costs.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "color": "Red/Purple",
     "version": "Normal",
     "block": [
       "01"

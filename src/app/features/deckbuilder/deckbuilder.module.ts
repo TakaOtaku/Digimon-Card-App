@@ -13,6 +13,7 @@ import { TableModule } from 'primeng/table';
 import { TooltipModule } from 'primeng/tooltip';
 import { DigimonStoreModule } from '../../digimon-store.module';
 import { ObscenityPipe } from '../../pipes/obscenity.pipe';
+import { SafePipe } from '../../pipes/safe.pipe';
 import { AuthService } from '../../service/auth.service';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
 import { CollectionModule } from '../collection/collection.module';
