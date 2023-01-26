@@ -17,7 +17,7 @@ export const GroupedSets = [
       { label: 'BT10', value: 'BT10' },
       { label: 'BT11', value: 'BT11' },
       { label: 'BT12', value: 'BT12' },
-      { label: 'BT12', value: 'BT13' },
+      { label: 'BT13', value: 'BT13' },
     ],
   },
   {
@@ -340,6 +340,7 @@ export const SpecialRequirements: string[] = [
   'Digivolve',
   'DNA Digivolution',
   'DigiXros',
+  'Burst Digivolve',
 ];
 
 export const Restrictions: string[] = ['Banned', 'Restricted to 1'];
