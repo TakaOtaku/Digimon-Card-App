@@ -125,22 +125,29 @@ export const selectDeckDisplayTable = createSelector(
   selectSettings,
   (state: ISettings) => state.deckDisplayTable
 );
+export const selectShowReprintCards = createSelector(
+  selectSettings,
+  (state: ISettings) => state.showReprintCards
+);
 //endregion
 
 export const selectChangeAdvancedSettings = createSelector(
   selectShowPreRelease,
   selectShowAACards,
   selectShowStampedCards,
+  selectShowReprintCards,
   selectFilter,
   (
     showPreRelease: boolean,
     showAA: boolean,
     showStamped: boolean,
+    showReprint: boolean,
     filter: IFilter
   ) => ({
     showPreRelease,
     showAA,
     showStamped,
+    showReprint,
     filter,
   })
 );

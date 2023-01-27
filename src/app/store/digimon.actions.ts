@@ -103,6 +103,10 @@ export const setDeckDisplayTable = createAction(
   '[Settings] Set Deck Display Table',
   props<{ deckDisplayTable: boolean }>()
 );
+export const setShowReprintCards = createAction(
+  '[Settings] Set ShowReprintCards',
+  props<{ showReprintCards: boolean }>()
+);
 //endregions
 
 //region Collection Actions

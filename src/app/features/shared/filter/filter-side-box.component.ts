@@ -290,7 +290,7 @@ import { emptyFilter } from '../../../store/reducers/digimon.reducers';
         (clickEvent)="changeVersion($event)"
         [buttonArray]="versionButtons"
         [filterFormControl]="versionFilter"
-        [perRow]="4"
+        [perRow]="3"
         title="Version"
       ></digimon-multi-buttons>
 

@@ -6,6 +6,7 @@ export interface ISettings {
   showPreRelease: boolean; // Show Pre-Release Stamped Cards ---- default = false
   showStampedCards: boolean; // Show Stamped Cards ---- default = true
   showAACards: boolean; // Show AA Cards ---- default = true
+  showReprintCards: boolean; // Show Reprint Cards ---- default = false
   sortDeckOrder: string; // Set Deck-Sort Order ---- default = Level
   showUserStats: boolean; // Show User-Stats in the Profil Yes or no ---- default = true
   deckDisplayTable: boolean; // Display Decks as Table instead of Big Blocks

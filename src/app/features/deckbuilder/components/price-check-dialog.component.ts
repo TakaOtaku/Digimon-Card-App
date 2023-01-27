@@ -6,6 +6,14 @@ import { DeckBuilderViewModel } from '../../../store/digimon.selectors';
 @Component({
   selector: 'digimon-price-check-dialog',
   template: `
+    <div>
+      Information is from CardMarker. Disclaimer: Not all cards may have a
+      price. The Prices are updated once a day. TCGPlayer hasnt given me access
+      yet.
+    </div>
+
+    <div>Switch between Missing Cards and complete deck.</div>
+
     <p-table [value]="products" styleClass="p-datatable-sm p-datatable-striped">
       <ng-template pTemplate="header">
         <tr>

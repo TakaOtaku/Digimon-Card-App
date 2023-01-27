@@ -16,6 +16,7 @@ import {
   setCollection,
   setDeckDisplayTable,
   setSave,
+  setShowReprintCards,
 } from '../digimon.actions';
 
 export const emptySettings: ISettings = {
@@ -26,6 +27,7 @@ export const emptySettings: ISettings = {
   showPreRelease: true,
   showStampedCards: true,
   showAACards: true,
+  showReprintCards: false,
 
   sortDeckOrder: 'Level',
 
@@ -102,6 +104,10 @@ export const saveReducer = createReducer(
   on(setDeckDisplayTable, (state, { deckDisplayTable }) => ({
     ...state,
     settings: { ...state.settings, deckDisplayTable },
+  })),
+  on(setShowReprintCards, (state, { showReprintCards }) => ({
+    ...state,
+    settings: { ...state.settings, showReprintCards },
   })),
 
   on(importDeck, (state, { deck }) => {

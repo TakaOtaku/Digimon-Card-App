@@ -144,6 +144,17 @@ import { emptySettings } from '../../../store/reducers/save.reducer';
           </div>
 
           <div class="flex flex-col">
+            <h5 class="mt-5 text-center font-bold">Reprint Cards</h5>
+            <p-selectButton
+              [(ngModel)]="reprint"
+              [options]="showHideOptions"
+              class="mx-auto"
+              optionLabel="label"
+              optionValue="value"
+            ></p-selectButton>
+          </div>
+
+          <div class="flex flex-col">
             <h5 class="mt-5 text-center font-bold">Show User-Stats</h5>
             <p-selectButton
               [(ngModel)]="userStats"
@@ -282,6 +293,13 @@ import { emptySettings } from '../../../store/reducers/save.reducer';
               class="min-w-auto primary-background mt-2 h-8 w-10 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]"
             >
               Stamp
+            </button>
+            <button
+              (click)="changeVersion('Reprint')"
+              [ngClass]="{ 'primary-border': versions.includes('Reprint') }"
+              class="min-w-auto primary-background mt-2 h-8 w-10 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]"
+            >
+              Reprint
             </button>
           </div>
 
@@ -440,6 +458,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
   preRelease = true;
   aa = true;
   stamped = true;
+  reprint = false;
   showHideOptions = [
     { label: 'Show', value: true },
     { label: 'Hide', value: false },
@@ -488,6 +507,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
         this.preRelease = settings.showPreRelease;
         this.aa = settings.showAACards;
         this.stamped = settings.showStampedCards;
+        this.reprint = settings.showReprintCards;
         this.collectionCount = settings.collectionMinimum;
         this.deckDisplayTable = settings.deckDisplayTable;
       });
@@ -506,6 +526,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
         showPreRelease: this.preRelease,
         showAACards: this.aa,
         showStampedCards: this.stamped,
+        showReprintCards: this.reprint,
         sortDeckOrder: this.sortOrderFilter.value,
         showUserStats: this.userStats,
         deckDisplayTable: this.deckDisplayTable,

@@ -27,8 +27,13 @@ import {
   ICard,
   IDeck,
   ISave,
+  ITournamentDeck,
 } from '../../../models';
-import { setColors, setTags } from '../../functions/digimon-card.functions';
+import {
+  setColors,
+  setDeckImage,
+  setTags,
+} from '../../functions/digimon-card.functions';
 import { AuthService } from '../../service/auth.service';
 import { CardMarketService } from '../../service/card-market.service';
 import { CardTraderService } from '../../service/card-trader.service';
@@ -43,9 +48,9 @@ import { emptySettings } from '../../store/reducers/save.reducer';
     <button
       *ngIf="isAdmin()"
       class="border-2 border-amber-200 bg-amber-400"
-      (click)="updateAllDecks()"
+      (click)="updateAllSaves()"
     >
-      Update all Decks
+      Update all Saves
     </button>
     <button
       *ngIf="isAdmin()"
@@ -60,6 +65,14 @@ import { emptySettings } from '../../store/reducers/save.reducer';
       (click)="updatePriceGuideIdsAAs()"
     >
       Update PriceGuide Ids AAs
+    </button>
+
+    <button
+      *ngIf="isAdmin()"
+      class="border-2 border-amber-200 bg-amber-400"
+      (click)="updateAllDecks()"
+    >
+      Update all Decks
     </button>
 
     <p-dialog
@@ -142,7 +155,7 @@ export class TestPageComponent implements OnInit, OnDestroy {
     });
   }
 
-  updateAllDecks() {
+  updateAllSaves() {
     this.digimonBackendService
       .getSaves()
       .pipe(first())
@@ -239,9 +252,7 @@ export class TestPageComponent implements OnInit, OnDestroy {
           }
         });
 
-        concat(...ofArray$).subscribe((value) => {
-          console.log(value);
-        });
+        concat(...ofArray$).subscribe();
 
         Object.entries(ArrayObject).forEach((entry) => {
           const [key, value] = entry;
@@ -262,7 +273,57 @@ export class TestPageComponent implements OnInit, OnDestroy {
     this.cardMarketService
       .updateProductId(id, product)
       .pipe(first())
-      .subscribe((value) => console.log(value));
+      .subscribe();
     this.productsWithoutCorrectID = this.productsWithoutCorrectID.slice(1);
+  }
+
+  updateAllDecks() {
+    const obsArray$: Observable<any>[] = [];
+
+    this.digimonBackendService
+      .getDecks()
+      .pipe(
+        tap((decks) => {
+          decks.forEach((deck) => {
+            const of = this.updateDeckImage(deck);
+            if (of) {
+              obsArray$.push(of);
+            }
+          });
+        }),
+        switchMap(() => this.digimonBackendService.getTournamentDecks()),
+        tap((tournamentDecks) => {
+          tournamentDecks.forEach((deck) => {
+            const of = this.updateTournamentDeckImage(deck);
+            if (of) {
+              obsArray$.push(of);
+            }
+          });
+        })
+      )
+      .subscribe((decks) => {
+        concat(...obsArray$).subscribe();
+      });
+  }
+  private updateDeckImage(deck: IDeck): Observable<any> | null {
+    if (!deck.imageCardId || deck.imageCardId === 'BT1-001') {
+      const newDecks: IDeck = { ...deck, imageCardId: setDeckImage(deck).id };
+      return this.digimonBackendService.updateDeck(newDecks).pipe(first());
+    }
+    return null;
+  }
+  private updateTournamentDeckImage(
+    deck: ITournamentDeck
+  ): Observable<any> | null {
+    if (!deck.imageCardId || deck.imageCardId === 'BT1-001') {
+      const newDecks: ITournamentDeck = {
+        ...deck,
+        imageCardId: setDeckImage(deck).id,
+      };
+      return this.digimonBackendService
+        .updateTournamentDeck(newDecks)
+        .pipe(first());
+    }
+    return null;
   }
 }

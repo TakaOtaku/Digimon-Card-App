@@ -104,45 +104,73 @@ export class DigimonEffects {
             .select(selectChangeAdvancedSettings)
             .pipe(first())
             .pipe(
-              tap(({ showPreRelease, showAA, showStamped, filter }) => {
-                if (
-                  showPreRelease === undefined ||
-                  showAA === undefined ||
-                  showStamped === undefined
-                ) {
-                  return;
-                }
+              tap(
+                ({
+                  showPreRelease,
+                  showAA,
+                  showStamped,
+                  showReprint,
+                  filter,
+                }) => {
+                  if (
+                    showPreRelease === undefined ||
+                    showAA === undefined ||
+                    showStamped === undefined ||
+                    showReprint === undefined
+                  ) {
+                    return;
+                  }
 
-                filter = { ...filter, versionFilter: [] };
-                if (!showPreRelease) {
-                  let versionFilter = filter.versionFilter.filter(
-                    (filter) => filter !== 'Pre-Release'
-                  );
-                  if (versionFilter.length === 0) {
-                    versionFilter = ['Normal', 'AA', 'Stamp'];
+                  filter = { ...filter, versionFilter: [] };
+                  if (!showPreRelease) {
+                    let versionFilter = filter.versionFilter.filter(
+                      (filter) => filter !== 'Pre-Release'
+                    );
+                    if (versionFilter.length === 0) {
+                      versionFilter = ['Normal', 'AA', 'Stamp', 'Reprint'];
+                    }
+                    filter = { ...filter, versionFilter };
                   }
-                  filter = { ...filter, versionFilter };
-                }
-                if (!showAA) {
-                  let versionFilter = filter.versionFilter.filter(
-                    (filter) => filter !== 'AA'
-                  );
-                  if (versionFilter.length === 0) {
-                    versionFilter = ['Normal', 'Stamp', 'Pre-Release'];
+                  if (!showAA) {
+                    let versionFilter = filter.versionFilter.filter(
+                      (filter) => filter !== 'AA'
+                    );
+                    if (versionFilter.length === 0) {
+                      versionFilter = [
+                        'Normal',
+                        'Stamp',
+                        'Pre-Release',
+                        'Reprint',
+                      ];
+                    }
+                    filter = { ...filter, versionFilter };
                   }
-                  filter = { ...filter, versionFilter };
-                }
-                if (!showStamped) {
-                  let versionFilter = filter.versionFilter.filter(
-                    (filter) => filter !== 'Stamp'
-                  );
-                  if (versionFilter.length === 0) {
-                    versionFilter = ['Normal', 'AA', 'Pre-Release'];
+                  if (!showStamped) {
+                    let versionFilter = filter.versionFilter.filter(
+                      (filter) => filter !== 'Stamp'
+                    );
+                    if (versionFilter.length === 0) {
+                      versionFilter = [
+                        'Normal',
+                        'AA',
+                        'Pre-Release',
+                        'Reprint',
+                      ];
+                    }
+                    filter = { ...filter, versionFilter };
                   }
-                  filter = { ...filter, versionFilter };
+                  if (!showReprint) {
+                    let versionFilter = filter.versionFilter.filter(
+                      (filter) => filter !== 'Reprint'
+                    );
+                    if (versionFilter.length === 0) {
+                      versionFilter = ['Normal', 'AA', 'Pre-Release', 'Stamp'];
+                    }
+                    filter = { ...filter, versionFilter };
+                  }
+                  this.store.dispatch(DigimonActions.changeFilter({ filter }));
                 }
-                this.store.dispatch(DigimonActions.changeFilter({ filter }));
-              }),
+              ),
               catchError(() => EMPTY)
             )
         )
