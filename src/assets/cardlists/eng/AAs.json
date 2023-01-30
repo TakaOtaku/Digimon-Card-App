@@ -12706,9 +12706,9 @@
     "illustrator": "Tonamikanji"
   },
   {
-    "id": "BT7-036_P1",
+    "id": "BT7-036_P2",
     "name": "Zephyrmon",
-    "cardImage": "assets/images/cards/eng/BT7-036_P1.webp",
+    "cardImage": "assets/images/cards/eng/BT7-036_P2.webp",
     "cardType": "Digimon",
     "dp": "6000",
     "playCost": "6",
@@ -20517,7 +20517,7 @@
   {
     "id": "ST1-03_P6",
     "name": "Agumon",
-    "cardImage": "assets/images/cards/eng/ST1-03_P3.webp",
+    "cardImage": "assets/images/cards/eng/ST1-03_P6.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",

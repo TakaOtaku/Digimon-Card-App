@@ -60,6 +60,7 @@ export const GroupedSets = [
 export const Keywords: string[] = [
   '\uff1cAlliance\uff1e',
   '\uff1cArmor Purge\uff1e',
+  '\uff1cBarrier\uff1e',
   '\uff1cBlitz\uff1e',
   '\uff1cBlocker\uff1e',
   '\uff1cDecoy (Black)\uff1e',
@@ -340,6 +341,7 @@ export const SpecialRequirements: string[] = [
   'Digivolve',
   'DNA Digivolution',
   'DigiXros',
+  'Burst Digivolve',
 ];
 
 export const Restrictions: string[] = ['Banned', 'Restricted to 1'];

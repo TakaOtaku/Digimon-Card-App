@@ -24,6 +24,7 @@
     "color": "Blue",
     "version": "AA",
     "block": [
+      "00",
       "01",
       "02"
     ],
@@ -55,6 +56,7 @@
     "color": "Blue",
     "version": "AA",
     "block": [
+      "00",
       "01",
       "02"
     ],
@@ -117,6 +119,7 @@
     "color": "Red",
     "version": "AA",
     "block": [
+      "00",
       "01",
       "02"
     ],
@@ -148,6 +151,7 @@
     "color": "Red",
     "version": "AA",
     "block": [
+      "00",
       "01",
       "02"
     ],
@@ -179,6 +183,7 @@
     "color": "Red",
     "version": "AA",
     "block": [
+      "00",
       "01",
       "02"
     ],
@@ -734,6 +739,7 @@
     "color": "Yellow",
     "version": "AA",
     "block": [
+      "00",
       "01",
       "02"
     ],
@@ -795,7 +801,7 @@
     "color": "Yellow",
     "version": "AA",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "restriction": "-",
@@ -950,6 +956,7 @@
     "color": "Green",
     "version": "AA",
     "block": [
+      "00",
       "01",
       "02"
     ],
@@ -1378,6 +1385,7 @@
     "color": "Red",
     "version": "AA",
     "block": [
+      "00",
       "01",
       "02"
     ],
@@ -1409,6 +1417,7 @@
     "color": "Red",
     "version": "AA",
     "block": [
+      "00",
       "01",
       "02"
     ],
@@ -1470,6 +1479,7 @@
     "color": "Yellow",
     "version": "AA",
     "block": [
+      "00",
       "01",
       "02"
     ],
@@ -1501,6 +1511,7 @@
     "color": "Yellow",
     "version": "AA",
     "block": [
+      "00",
       "01",
       "02"
     ],
@@ -1594,6 +1605,7 @@
     "color": "Green",
     "version": "AA",
     "block": [
+      "00",
       "01",
       "02"
     ],
@@ -1625,6 +1637,7 @@
     "color": "Green",
     "version": "AA",
     "block": [
+      "00",
       "01",
       "02"
     ],
@@ -1869,7 +1882,7 @@
     "color": "Red",
     "version": "AA",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "restriction": "-",
@@ -4953,7 +4966,7 @@
     "color": "Blue",
     "version": "AA",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "restriction": "-",
@@ -4983,7 +4996,7 @@
     "notes": "Prize for DC-1 Grand Prix",
     "color": "Blue",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "version": "Stamp",
@@ -5014,7 +5027,7 @@
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
     "color": "Blue",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "version": "AA",
@@ -5076,6 +5089,7 @@
     "color": "Yellow",
     "version": "AA",
     "block": [
+      "00",
       "01",
       "02"
     ],
@@ -5169,7 +5183,7 @@
     "color": "Yellow",
     "version": "AA",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "restriction": "-",
@@ -5200,7 +5214,7 @@
     "color": "Yellow",
     "version": "AA",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "restriction": "-",
@@ -5231,7 +5245,7 @@
     "color": "Yellow",
     "version": "AA",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "restriction": "-",
@@ -5784,6 +5798,7 @@
     "color": "Purple",
     "version": "AA",
     "block": [
+      "00",
       "01",
       "02"
     ],
@@ -5815,7 +5830,7 @@
     "color": "Purple",
     "version": "AA",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "restriction": "-",
@@ -5907,6 +5922,7 @@
     "color": "Purple",
     "version": "AA",
     "block": [
+      "00",
       "01",
       "02"
     ],
@@ -6398,6 +6414,7 @@
     "color": "Purple",
     "version": "AA",
     "block": [
+      "00",
       "01",
       "02"
     ],
@@ -6429,6 +6446,7 @@
     "color": "Purple",
     "version": "AA",
     "block": [
+      "00",
       "01",
       "02"
     ],
@@ -6583,7 +6601,7 @@
     "color": "Black",
     "version": "AA",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "restriction": "-",
@@ -6676,6 +6694,7 @@
     "color": "Purple",
     "version": "AA",
     "block": [
+      "00",
       "01",
       "02"
     ],
@@ -6828,6 +6847,7 @@
     "color": "Blue",
     "version": "AA",
     "block": [
+      "00",
       "01",
       "02"
     ],
@@ -6859,6 +6879,7 @@
     "color": "Blue",
     "version": "AA",
     "block": [
+      "00",
       "01",
       "02"
     ],
@@ -6890,6 +6911,7 @@
     "color": "Blue",
     "version": "AA",
     "block": [
+      "00",
       "01",
       "02"
     ],
@@ -7164,6 +7186,7 @@
     "color": "Yellow",
     "version": "AA",
     "block": [
+      "00",
       "01",
       "02"
     ],
@@ -7225,6 +7248,7 @@
     "color": "Green",
     "version": "AA",
     "block": [
+      "00",
       "01",
       "02"
     ],
@@ -7256,6 +7280,7 @@
     "color": "Green",
     "version": "AA",
     "block": [
+      "00",
       "01",
       "02"
     ],
@@ -7287,7 +7312,7 @@
     "color": "Green",
     "version": "AA",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "restriction": "-",
@@ -7533,6 +7558,7 @@
     "color": "Black",
     "version": "AA",
     "block": [
+      "00",
       "01",
       "02"
     ],
@@ -7654,7 +7680,7 @@
     "color": "Black",
     "version": "AA",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "restriction": "-",
@@ -7715,6 +7741,7 @@
     "color": "Purple",
     "version": "AA",
     "block": [
+      "00",
       "01",
       "02"
     ],
@@ -7776,7 +7803,7 @@
     "color": "Purple",
     "version": "AA",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "restriction": "-",
@@ -8021,7 +8048,7 @@
     "color": "Red",
     "version": "AA",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "restriction": "-",
@@ -8052,7 +8079,7 @@
     "color": "Red",
     "version": "AA",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "restriction": "-",
@@ -8145,7 +8172,7 @@
     "color": "Red",
     "version": "AA",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "restriction": "-",
@@ -8206,7 +8233,7 @@
     "color": "Blue",
     "version": "AA",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "restriction": "-",
@@ -8419,7 +8446,7 @@
     "color": "Green",
     "version": "AA",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "restriction": "-",
@@ -8784,7 +8811,7 @@
     "color": "Black",
     "version": "AA",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "restriction": "-",
@@ -8815,7 +8842,7 @@
     "color": "Black",
     "version": "AA",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "restriction": "-",
@@ -8846,7 +8873,7 @@
     "color": "Purple",
     "version": "AA",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "restriction": "-",
@@ -8999,7 +9026,7 @@
     "color": "Yellow",
     "version": "AA",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "restriction": "-",
@@ -9030,6 +9057,7 @@
     "color": "Red",
     "version": "AA",
     "block": [
+      "00",
       "01",
       "02"
     ],
@@ -9705,7 +9733,7 @@
     "color": "White",
     "version": "AA",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "restriction": "-",
@@ -9736,7 +9764,7 @@
     "color": "White",
     "version": "AA",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "restriction": "-",
@@ -9767,7 +9795,7 @@
     "color": "White",
     "version": "AA",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "restriction": "-",
@@ -9798,7 +9826,7 @@
     "color": "White",
     "version": "AA",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "restriction": "-",
@@ -9829,7 +9857,7 @@
     "color": "White",
     "version": "AA",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "restriction": "-",
@@ -9860,7 +9888,7 @@
     "color": "White",
     "version": "AA",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "restriction": "-",
@@ -9891,7 +9919,7 @@
     "color": "White",
     "version": "AA",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "restriction": "-",
@@ -9922,7 +9950,7 @@
     "color": "Blue",
     "version": "AA",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "restriction": "-",
@@ -10043,7 +10071,7 @@
     "color": "White",
     "version": "AA",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "restriction": "-",
@@ -10135,7 +10163,7 @@
     "color": "White",
     "version": "AA",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "restriction": "-",
@@ -10166,7 +10194,7 @@
     "color": "White",
     "version": "AA",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "restriction": "-",
@@ -10202,7 +10230,7 @@
     "version": "AA",
     "illustrator": "Tonamikanji",
     "block": [
-      "01",
+      "00",
       "02"
     ],
     "restriction": "-"
@@ -17726,9 +17754,9 @@
     "illustrator": "Takase"
   },
   {
-    "id": "P-035_P2",
+    "id": "P-035_P3",
     "name": "Red Memory Boost!",
-    "cardImage": "assets/images/cards/jap/P-035_P2.webp",
+    "cardImage": "assets/images/cards/jap/P-035_P3.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "3",
@@ -17788,9 +17816,9 @@
     "illustrator": "Takase"
   },
   {
-    "id": "P-036_P2",
+    "id": "P-036_P3",
     "name": "Blue Memory Boost!",
-    "cardImage": "assets/images/cards/jap/P-036_P2.webp",
+    "cardImage": "assets/images/cards/jap/P-036_P3.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "3",
@@ -17850,9 +17878,9 @@
     "illustrator": "Takase"
   },
   {
-    "id": "P-037_P2",
+    "id": "P-037_P3",
     "name": "Yellow Memory Boost!",
-    "cardImage": "assets/images/cards/jap/P-037_P2.webp",
+    "cardImage": "assets/images/cards/jap/P-037_P3.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "3",
@@ -17912,9 +17940,9 @@
     "illustrator": "Takase"
   },
   {
-    "id": "P-038_P2",
+    "id": "P-038_P3",
     "name": "Green Memory Boost!",
-    "cardImage": "assets/images/cards/jap/P-038_P2.webp",
+    "cardImage": "assets/images/cards/jap/P-038_P3.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "3",
@@ -17974,9 +18002,9 @@
     "illustrator": "Takase"
   },
   {
-    "id": "P-039_P2",
+    "id": "P-039_P3",
     "name": "Black Memory Boost!",
-    "cardImage": "assets/images/cards/jap/P-039_P2.webp",
+    "cardImage": "assets/images/cards/jap/P-039_P3.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "3",
@@ -18036,9 +18064,9 @@
     "illustrator": "Takase"
   },
   {
-    "id": "P-040_P2",
+    "id": "P-040_P3",
     "name": "Purple Memory Boost!",
-    "cardImage": "assets/images/cards/jap/P-040_P2.webp",
+    "cardImage": "assets/images/cards/jap/P-040_P3.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "3",
@@ -18127,9 +18155,9 @@
     "illustrator": "Nakano Haito"
   },
   {
-    "id": "P-066_P1",
+    "id": "P-066_P2",
     "name": "Huckmon",
-    "cardImage": "assets/images/cards/jap/P-066_P1.webp",
+    "cardImage": "assets/images/cards/jap/P-066_P2.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -18158,9 +18186,9 @@
     "illustrator": "Spareribs"
   },
   {
-    "id": "P-067_P1",
+    "id": "P-067_P2",
     "name": "Bulucomon",
-    "cardImage": "assets/images/cards/jap/P-067_P1.webp",
+    "cardImage": "assets/images/cards/jap/P-067_P2.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -18189,9 +18217,9 @@
     "illustrator": "GOSSAN"
   },
   {
-    "id": "P-068_P1",
+    "id": "P-068_P2",
     "name": "Herissmon",
-    "cardImage": "assets/images/cards/jap/P-068_P1.webp",
+    "cardImage": "assets/images/cards/jap/P-068_P2.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -18220,9 +18248,9 @@
     "illustrator": "tessy"
   },
   {
-    "id": "P-069_P1",
+    "id": "P-069_P2",
     "name": "Pulsemon",
-    "cardImage": "assets/images/cards/jap/P-069_P1.webp",
+    "cardImage": "assets/images/cards/jap/P-069_P2.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -18251,9 +18279,9 @@
     "illustrator": "Kazumasa Yasukuni"
   },
   {
-    "id": "P-070_P1",
+    "id": "P-070_P2",
     "name": "Dorumon",
-    "cardImage": "assets/images/cards/jap/P-070_P1.webp",
+    "cardImage": "assets/images/cards/jap/P-070_P2.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -18282,9 +18310,9 @@
     "illustrator": "koki"
   },
   {
-    "id": "P-071_P1",
+    "id": "P-071_P2",
     "name": "Impmon",
-    "cardImage": "assets/images/cards/jap/P-071_P1.webp",
+    "cardImage": "assets/images/cards/jap/P-071_P2.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -18617,6 +18645,7 @@
     "color": "Red",
     "version": "AA",
     "block": [
+      "00",
       "01",
       "02"
     ],
@@ -18648,6 +18677,7 @@
     "color": "Red",
     "version": "AA",
     "block": [
+      "00",
       "01",
       "02"
     ],
@@ -19474,6 +19504,7 @@
     "color": "Yellow",
     "version": "AA",
     "block": [
+      "00",
       "01",
       "02"
     ],
@@ -19505,6 +19536,7 @@
     "color": "Yellow",
     "version": "AA",
     "block": [
+      "00",
       "01",
       "02"
     ],
