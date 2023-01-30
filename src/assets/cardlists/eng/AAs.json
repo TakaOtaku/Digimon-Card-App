@@ -24,8 +24,8 @@
     "color": "Blue",
     "version": "AA",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "As'Maria"
@@ -86,8 +86,8 @@
     "color": "Red",
     "version": "AA",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Ryuda"
@@ -117,8 +117,8 @@
     "color": "Red",
     "version": "AA",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Kayo Horaguchi"
@@ -148,8 +148,8 @@
     "color": "Red",
     "version": "AA",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "PLEX Fumiya Kobayashi"
@@ -736,8 +736,8 @@
     "color": "Yellow",
     "version": "AA",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "tessy"
@@ -797,7 +797,8 @@
     "color": "Yellow",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Kenji Watanabe"
@@ -1012,8 +1013,8 @@
     "color": "Green",
     "version": "AA",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "banira"
@@ -1561,8 +1562,8 @@
     "color": "Red",
     "version": "AA",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": ""
@@ -1592,8 +1593,8 @@
     "color": "Red",
     "version": "AA",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": ""
@@ -1653,8 +1654,8 @@
     "color": "Yellow",
     "version": "AA",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": ""
@@ -1684,8 +1685,8 @@
     "color": "Yellow",
     "version": "AA",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": ""
@@ -1777,8 +1778,8 @@
     "color": "Green",
     "version": "AA",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": ""
@@ -1808,8 +1809,8 @@
     "color": "Green",
     "version": "AA",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": ""
@@ -2113,7 +2114,8 @@
     "color": "Red",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Kenji Watanabe"
@@ -2147,6 +2149,786 @@
     ],
     "restriction": "-",
     "illustrator": "sasasi"
+  },
+  {
+    "id": "BT10-011_P1",
+    "name": "Canoweissmon",
+    "cardImage": "assets/images/cards/eng/BT10-011_P1.webp",
+    "cardType": "Digimon",
+    "dp": "8000",
+    "playCost": "8",
+    "digivolveCost1": "4 from Lv.4",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.5",
+    "form": "Ultimate",
+    "attribute": "Vaccine",
+    "type": "Sky Dragon",
+    "rarity": "R",
+    "cardNumber": "BT10-011",
+    "digiXros": "-",
+    "specialDigivolve": "Digivolve: 3 from Lv.4 w/[Gammamon] in name",
+    "dnaDigivolve": "-",
+    "effect": "[Your Turn] [Once Per Turn] When one of your Tamers becomes suspended, this Digimon gets +2000 DP for the turn. Then, if this Digimon has 12000 DP or more, it gains ＜Security Attack +1＞ for the turn. (This Digimon checks 1 additional security card.)\n[All Turns] This Digimon gains all effects of cards with [Gammamon] in their names in this Digimon's digivolution cards.",
+    "digivolveEffect": "[All Turns] This Digimon gains all effects of cards with [Gammamon] in their names in this Digimon's digivolution cards.",
+    "securityEffect": "-",
+    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
+    "color": "Red",
+    "version": "AA",
+    "restriction": "-",
+    "illustrator": "sasasi",
+    "block": [
+      "02"
+    ]
+  },
+  {
+    "id": "BT10-013_P1",
+    "name": "Shoutmon X5",
+    "cardImage": "assets/images/cards/eng/BT10-013_P1.webp",
+    "cardType": "Digimon",
+    "dp": "10000",
+    "playCost": "10",
+    "digivolveCost1": "4 from Lv.4",
+    "digivolveCost2": "4 from Lv.4",
+    "cardLv": "Lv.5",
+    "form": "Ultimate",
+    "attribute": "Data",
+    "type": "Composite/Xros Heart",
+    "rarity": "SR",
+    "cardNumber": "BT10-013",
+    "digiXros": "＜DigiXros -2: [Shoutmon] x [Ballistamon] x [Dorulumon] x [Starmons] x [Sparrowmon]＞ When you would play this card, you may place specified cards from your hand/battle area under it. Each placed card reduces the play cost.",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "＜Security Attack +1＞\n＜Blocker＞\n＜Material Save 3＞ (When this Digimon would be deleted, you may place 3 cards in this Digimon's DigiXros requirements from this Digimon's digivolution cards under 1 of your Tamers.)",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
+    "color": "Red/Black",
+    "version": "AA",
+    "restriction": "-",
+    "illustrator": "Tonamikanji",
+    "block": [
+      "02"
+    ]
+  },
+  {
+    "id": "BT10-016_P1",
+    "name": "Jesmon (X Antibody)",
+    "cardImage": "assets/images/cards/eng/BT10-016_P1.webp",
+    "cardType": "Digimon",
+    "dp": "11000",
+    "playCost": "12",
+    "digivolveCost1": "3 from Lv.5",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Data",
+    "type": "Holy Warrior/Royal Knight/X Antibody",
+    "rarity": "SR",
+    "cardNumber": "BT10-016",
+    "digiXros": "-",
+    "specialDigivolve": "Digivolve: 0 from [Jesmon]",
+    "dnaDigivolve": "-",
+    "effect": "＜Piercing＞\n[When Digivolving] You may play 1 Digimon card with [Sistermon] in its name from your hand or trash without paying its play cost. Then, if [Jesmon] is in this Digimon's digivolution cards or you have a Digimon with [Sistermon] in its name in play, until the end of your opponent's turn, all of your Digimon may also attack unsuspended Digimon and get +2000 DP.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
+    "color": "Red",
+    "version": "AA",
+    "restriction": "-",
+    "illustrator": "As'Maria",
+    "block": [
+      "02"
+    ]
+  },
+  {
+    "id": "BT10-023_P1",
+    "name": "Thetismon",
+    "cardImage": "assets/images/cards/eng/BT10-023_P1.webp",
+    "cardType": "Digimon",
+    "dp": "7000",
+    "playCost": "7",
+    "digivolveCost1": "3 from Lv.4",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.5",
+    "form": "Ultimate",
+    "attribute": "Data",
+    "type": "Aquabeast",
+    "rarity": "R",
+    "cardNumber": "BT10-023",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Digivolving] If you have 6 or fewer cards in your hand, ＜Draw 2＞. (Draw 2 cards from your deck.)\n[When Attacking] [Once Per Turn] If you have 8 or more cards in your hand, by trashing 2 cards in your hand, unsuspend this Digimon.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
+    "color": "Blue",
+    "version": "AA",
+    "restriction": "-",
+    "illustrator": "sasasi",
+    "block": [
+      "02"
+    ]
+  },
+  {
+    "id": "BT10-024_P1",
+    "name": "MetalGreymon",
+    "cardImage": "assets/images/cards/eng/BT10-024_P1.webp",
+    "cardType": "Digimon",
+    "dp": "8000",
+    "playCost": "7",
+    "digivolveCost1": "4 from Lv.4",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.5",
+    "form": "Ultimate",
+    "attribute": "Virus",
+    "type": "Cyborg/Blue Flare",
+    "rarity": "SR",
+    "cardNumber": "BT10-024",
+    "digiXros": "＜DigiXros -2: [Greymon] x [MailBirdramon]＞ When you would play this card, you may place specified cards from your hand/battle area under it. Each placed card reduces the play cost.",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "＜Material Save 2＞ (When this Digimon would be deleted, you may place 2 cards in this Digimon's DigiXros requirements from this Digimon's digivolution cards under 1 of your Tamers.)\n[On Play] This Digimon gains ＜Rush＞ for the turn. Then, if DigiXrosing, 3 of your opponent's Digimon with digivolution cards less than or equal to this Digimon's digivolution cards can't attack or block until the end of your opponent's turn.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
+    "color": "Blue",
+    "version": "AA",
+    "restriction": "-",
+    "illustrator": "Naochika Morishita",
+    "block": [
+      "02"
+    ]
+  },
+  {
+    "id": "BT10-026_P1",
+    "name": "DeckerGreymon",
+    "cardImage": "assets/images/cards/eng/BT10-026_P1.webp",
+    "cardType": "Digimon",
+    "dp": "10000",
+    "playCost": "9",
+    "digivolveCost1": "4 from Lv.4",
+    "digivolveCost2": "2 from Lv.5",
+    "cardLv": "Lv.5",
+    "form": "Ultimate",
+    "attribute": "Virus",
+    "type": "Enhancement/Blue Flare",
+    "rarity": "R",
+    "cardNumber": "BT10-026",
+    "digiXros": "＜DigiXros -2: [MetalGreymon] x [Deckerdramon]＞ When you would play this card, you may place specified cards from your hand/battle area under it. Each placed card reduces the play cost.",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "＜Armor Purge＞\n[On Play] [When Digivolving] You may place 1 Digimon card with [Blue Flare] in its traits from your hand or from under one of your Tamers under this Digimon as its bottom digivolution card. Then, if [Deckerdramon] is in this Digimon's digivolution cards, 1 of your opponent's Digimon can't attack or block until the end of your opponent's turn.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
+    "color": "Blue",
+    "version": "AA",
+    "restriction": "-",
+    "illustrator": "TANIMESO",
+    "block": [
+      "02"
+    ]
+  },
+  {
+    "id": "BT10-041_P1",
+    "name": "Sakuyamon: Maid Mode",
+    "cardImage": "assets/images/cards/eng/BT10-041_P1.webp",
+    "cardType": "Digimon",
+    "dp": "11000",
+    "playCost": "12",
+    "digivolveCost1": "3 from Lv.5",
+    "digivolveCost2": "2 from Lv.6",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Data",
+    "type": "Shaman",
+    "rarity": "SR",
+    "cardNumber": "BT10-041",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Digivolving] You may use 1 Option card with [Plug-In] in its name or that's yellow and has a cost of 5 or less from your hand without meeting its color requirements or paying its cost. Place the Option card used with this effect on top of your security stack face down instead of placing it in your trash.\n[When Attacking] This Digimon may digivolve into a [Sakuyamon] in your hand for a cost of 1, ignoring its digivolution requirements.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
+    "color": "Yellow",
+    "version": "AA",
+    "restriction": "-",
+    "illustrator": "Tonamikanji",
+    "block": [
+      "02"
+    ]
+  },
+  {
+    "id": "BT10-042_P1",
+    "name": "Venusmon",
+    "cardImage": "assets/images/cards/eng/BT10-042_P1.webp",
+    "cardType": "Digimon",
+    "dp": "12000",
+    "playCost": "13",
+    "digivolveCost1": "4 from Lv.5",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Vaccine",
+    "type": "Shaman/Olympos XII",
+    "rarity": "SR",
+    "cardNumber": "BT10-042",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Digivolving] All of your opponent's Digimon gain ＜Security Attack -1＞ until the end of your opponent's turn. (This Digimon checks 1 fewer security cards.)\n[Opponent's Turn] Your opponent's Digimon with ＜Security Attack＞ can't attack this Digimon and can't activate [When Attacking] and [When Digivolving] effects.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
+    "color": "Yellow",
+    "version": "AA",
+    "restriction": "-",
+    "illustrator": "Tonamikanji",
+    "block": [
+      "02"
+    ]
+  },
+  {
+    "id": "BT10-044_P1",
+    "name": "Angoramon",
+    "cardImage": "assets/images/cards/eng/BT10-044_P1.webp",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Vaccine",
+    "type": "Beast",
+    "rarity": "R",
+    "cardNumber": "BT10-044",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Your Turn] [Once Per Turn] When you play a green Tamer, ＜Draw 1＞. (Draw 1 card from your deck.)",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When an opponent's Digimon becomes suspended, ＜Draw 1＞. (Draw 1 card from your deck.)",
+    "securityEffect": "-",
+    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
+    "color": "Green",
+    "version": "AA",
+    "restriction": "-",
+    "illustrator": "Takase",
+    "block": [
+      "02"
+    ]
+  },
+  {
+    "id": "BT10-054_P1",
+    "name": "Lamortmon",
+    "cardImage": "assets/images/cards/eng/BT10-054_P1.webp",
+    "cardType": "Digimon",
+    "dp": "9000",
+    "playCost": "8",
+    "digivolveCost1": "3 from Lv.4",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.5",
+    "form": "Ultimate",
+    "attribute": "Vaccine",
+    "type": "Beast",
+    "rarity": "R",
+    "cardNumber": "BT10-054",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Digivolving] Suspend 1 of your opponent's Digimon.\n[Your Turn] [Once Per Turn] When this Digimon deletes an opponent's Digimon in battle, unsuspend it.\n[When Attacking] If you don't have a Tamer in play, lose 2 memory.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
+    "color": "Green",
+    "version": "AA",
+    "restriction": "-",
+    "illustrator": "sasasi",
+    "block": [
+      "02"
+    ]
+  },
+  {
+    "id": "BT10-057_P1",
+    "name": "Bloomlordmon",
+    "cardImage": "assets/images/cards/eng/BT10-057_P1.webp",
+    "cardType": "Digimon",
+    "dp": "12000",
+    "playCost": "12",
+    "digivolveCost1": "4 from Lv.5",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Vaccine",
+    "type": "Fairy",
+    "rarity": "SR",
+    "cardNumber": "BT10-057",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Digivolving] You may suspend 1 of your Digimon. Then, gain 1 memory for each suspended Digimon with [Vegetation], [Plant], or [Fairy] in one of their traits you have in play. If you gain 2 or more memory by this effect, unsuspend this Digimon and it gains ＜Piercing＞ for the turn.\n[Your Turn] For every 2 suspended Digimon you have in play, this Digimon gets +2000 DP and gains ＜Security Attack +1＞.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
+    "color": "Green",
+    "version": "AA",
+    "restriction": "-",
+    "illustrator": "Naochika Morishita",
+    "block": [
+      "02"
+    ]
+  },
+  {
+    "id": "BT10-060_P1",
+    "name": "Sparrowmon",
+    "cardImage": "assets/images/cards/eng/BT10-060_P1.webp",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "4",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Data",
+    "type": "Bird/Twilight/Xros Heart",
+    "rarity": "R",
+    "cardNumber": "BT10-060",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[All Turns] While you have another Digimon or Tamer with [Xros Heart] or [Twilight] in its traits in play, this Digimon gets +3000 DP.\n[On Deletion] ＜Save＞ (You may place this card under one of your Tamers.)",
+    "digivolveEffect": "[Opponent's Turn] While this Digimon has [Shoutmon] or [Mervamon] in its name, it gains ＜Reboot＞. (Unsuspend this Digimon during your opponent's unsuspend phase.)",
+    "securityEffect": "-",
+    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
+    "color": "Black",
+    "version": "AA",
+    "restriction": "-",
+    "illustrator": "Takase",
+    "block": [
+      "02"
+    ]
+  },
+  {
+    "id": "BT10-068_P1",
+    "name": "Gankoomon (X Antibody)",
+    "cardImage": "assets/images/cards/eng/BT10-068_P1.webp",
+    "cardType": "Digimon",
+    "dp": "12000",
+    "playCost": "13",
+    "digivolveCost1": "4 from Lv.5",
+    "digivolveCost2": "4 from Lv.5",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Data",
+    "type": "Holy Warrior/Royal Knight/X Antibody",
+    "rarity": "SR",
+    "cardNumber": "BT10-068",
+    "digiXros": "-",
+    "specialDigivolve": "Digivolve: 1 from [Gankoomon]",
+    "dnaDigivolve": "-",
+    "effect": "＜Blocker＞\n[When Digivolving] You may play 1 Digimon card with [Sistermon] in its name from your hand or trash without paying its play cost. Then, if [Gankoomon] is in this Digimon's digivolution cards or you have a Digimon with [Sistermon] in its name in play, until the end of your opponent's turn, all of your Digimon get +2000 DP and your opponent's effects can't return them to hands or decks or reduce their DP.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
+    "color": "Black",
+    "version": "AA",
+    "restriction": "-",
+    "illustrator": "Naochika Morishita",
+    "block": [
+      "02"
+    ]
+  },
+  {
+    "id": "BT10-069_P1",
+    "name": "DarkKnightmon (X Antibody)",
+    "cardImage": "assets/images/cards/eng/BT10-069_P1.webp",
+    "cardType": "Digimon",
+    "dp": "12000",
+    "playCost": "13",
+    "digivolveCost1": "5 from Lv.5",
+    "digivolveCost2": "5 from Lv.5",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Virus",
+    "type": "Dark Knight/X Antibody",
+    "rarity": "SR",
+    "cardNumber": "BT10-069",
+    "digiXros": "-",
+    "specialDigivolve": "Digivolve: 4 from [DarkKnightmon]",
+    "dnaDigivolve": "-",
+    "effect": "[When Digivolving] Return 1 black or purple Digimon card other than [DarkKnightmon (X Antibody)] from your trash to your hand. Then, if [DarkKnightmon] or [X Antibody] is in this Digimon's digivolution cards, delete 1 Tamer, and unsuspend this Digimon.\n[On Deletion] You may play 1 [DarkKnightmon] from your trash without paying its play cost.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
+    "color": "Black/Purple",
+    "version": "AA",
+    "restriction": "-",
+    "illustrator": "As'Maria",
+    "block": [
+      "02"
+    ]
+  },
+  {
+    "id": "BT10-082_P1",
+    "name": "Beelzemon",
+    "cardImage": "assets/images/cards/eng/BT10-082_P1.webp",
+    "cardType": "Digimon",
+    "dp": "11000",
+    "playCost": "11",
+    "digivolveCost1": "3 from Lv.5",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Virus",
+    "type": "Demon Lord/Xros Heart",
+    "rarity": "U",
+    "cardNumber": "BT10-082",
+    "digiXros": "-",
+    "specialDigivolve": "Digivolve: 3 from Lv.5 w/[Xros Heart] in traits",
+    "dnaDigivolve": "-",
+    "effect": "[On Play] [When Digivolving] You may trash 3 cards from the top of your deck. Then, for every 10 cards in your trash, delete 1 of your opponent's level 4 or lower Digimon.",
+    "digivolveEffect": "[End of Attack] [Once Per Turn] For every 10 cards in your trash, gain 1 memory.",
+    "securityEffect": "-",
+    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
+    "color": "Purple",
+    "version": "AA",
+    "restriction": "-",
+    "illustrator": "Hisashi Fujiwara",
+    "block": [
+      "02"
+    ]
+  },
+  {
+    "id": "BT10-083_P1",
+    "name": "Minervamon",
+    "cardImage": "assets/images/cards/eng/BT10-083_P1.webp",
+    "cardType": "Digimon",
+    "dp": "11000",
+    "playCost": "12",
+    "digivolveCost1": "3 from Lv.5",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Virus",
+    "type": "Shaman/Olympos XII",
+    "rarity": "SR",
+    "cardNumber": "BT10-083",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "＜Retaliation＞ (When this Digimon is deleted in battle, delete the Digimon it battled.)\n[Opponent's Turn] When an opponent plays a Digimon, you may play 1 level 4 or lower purple Digimon card from your trash without paying its play cost. Any [On Play] effects on Digimon played by this effect don't activate.\n[On Deletion] If your opponent has 2 or fewer Digimon in play, you may play 1 purple level 5 or lower Digimon card or 1 [Mervamon] from your trash without paying its play cost.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
+    "color": "Purple",
+    "version": "AA",
+    "restriction": "-",
+    "illustrator": "Tonamikanji",
+    "block": [
+      "02"
+    ]
+  },
+  {
+    "id": "BT10-085_P1",
+    "name": "Sistermon Ciel",
+    "cardImage": "assets/images/cards/eng/BT10-085_P1.webp",
+    "cardType": "Digimon",
+    "dp": "5000",
+    "playCost": "4",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Data",
+    "type": "Puppet",
+    "rarity": "R",
+    "cardNumber": "BT10-085",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Play] If it's your turn, you may digivolve 1 of your Digimon into a Digimon card with [Royal Knight] in its traits from your hand for its digivolution cost.\n[Your Turn] [Once Per Turn] When you digivolve one of your Digimon into a Digimon with [Huckmon] in its name or [Royal Knight] in its traits, gain 1 memory.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
+    "color": "White",
+    "version": "AA",
+    "restriction": "-",
+    "illustrator": "Tonamikanji",
+    "block": [
+      "02"
+    ]
+  },
+  {
+    "id": "BT10-086_P1",
+    "name": "Omnimon (X Antibody)",
+    "cardImage": "assets/images/cards/eng/BT10-086_P1.webp",
+    "cardType": "Digimon",
+    "dp": "16000",
+    "playCost": "16",
+    "digivolveCost1": "7 from Lv.6",
+    "digivolveCost2": "7 from Lv.6",
+    "cardLv": "Lv.7",
+    "form": "Mega",
+    "attribute": "Vaccine",
+    "type": "Holy Warrior/Royal Knight/X Antibody",
+    "rarity": "SR",
+    "cardNumber": "BT10-086",
+    "digiXros": "-",
+    "specialDigivolve": "Digivolve: 3 from [Omnimon]",
+    "dnaDigivolve": "-",
+    "effect": "When a Digimon with [X Antibody] in its digivolution cards would digivolve into this card, reduce the digivolution cost by 2.\n[When Digivolving] Return all of your opponent's Digimon with the highest level to the bottom of their owners' decks in any order.\n[When Digivolving] [When Attacking] [Once Per Turn] By placing 1 [X Antibody] or level 6 card from this Digimon's digivolution cards at the bottom of its owner's deck, reveal all of your opponent's security cards, and trash 1 of them. Place the rest in your opponent's security stack face down. Then, your opponent shuffles their security stack.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10] Errata Card",
+    "color": "White",
+    "version": "AA",
+    "restriction": "-",
+    "illustrator": "As'Maria",
+    "block": [
+      "02"
+    ]
+  },
+  {
+    "id": "BT10-087_P1",
+    "name": "Taiki Kudo",
+    "cardImage": "assets/images/cards/eng/BT10-087_P1.webp",
+    "cardType": "Tamer",
+    "dp": "-",
+    "playCost": "3",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "General/Xros Heart",
+    "rarity": "R",
+    "cardNumber": "BT10-087",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Play] Reveal the top 4 cards of your deck. Add 1 card with [Xros Heart] in its traits among them to your hand, and place 1 Digimon card with [Xros Heart] in its traits among them under this Tamer. Place the rest at the bottom of your deck in any order.\n[Your Turn] When you would play 1 Digimon with DigiXros requirements, by suspending this Tamer, you may place cards from under your Tamers as digivolution cards for a DigiXros.",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Play this card without paying its memory cost.",
+    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
+    "color": "Red",
+    "version": "AA",
+    "restriction": "-",
+    "illustrator": "",
+    "block": [
+      "02"
+    ]
+  },
+  {
+    "id": "BT10-088_P1",
+    "name": "Kiriha Aonuma",
+    "cardImage": "assets/images/cards/eng/BT10-088_P1.webp",
+    "cardType": "Tamer",
+    "dp": "-",
+    "playCost": "4",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "General/Blue Flare",
+    "rarity": "R",
+    "cardNumber": "BT10-088",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Start of Your Turn] If you have 2 memory or less, set your memory to 3.\n[Your Turn] When you would play 1 Digimon with DigiXros requirements, by suspending this Tamer, you may place cards from under your Tamers as digivolution cards for a DigiXros.",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Play this card without paying its memory cost.",
+    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
+    "color": "Blue",
+    "version": "AA",
+    "restriction": "-",
+    "illustrator": "",
+    "block": [
+      "02"
+    ]
+  },
+  {
+    "id": "BT10-089_P1",
+    "name": "Akari Hinomoto",
+    "cardImage": "assets/images/cards/eng/BT10-089_P1.webp",
+    "cardType": "Tamer",
+    "dp": "-",
+    "playCost": "3",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "Xros Heart",
+    "rarity": "R",
+    "cardNumber": "BT10-089",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Play] You may play 1 [Dorulumon] from your hand or from under one of your Tamers without paying its memory cost.\n[Your Turn] When you play a Digimon with [Xros Heart] in its traits, by suspending this Tamer, ＜Draw 1＞. (Draw 1 card from your deck.)",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Play this card without paying its memory cost.",
+    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
+    "color": "Yellow",
+    "version": "AA",
+    "restriction": "-",
+    "illustrator": "",
+    "block": [
+      "02"
+    ]
+  },
+  {
+    "id": "BT10-090_P1",
+    "name": "Zenjiro Tsurugi",
+    "cardImage": "assets/images/cards/eng/BT10-090_P1.webp",
+    "cardType": "Tamer",
+    "dp": "-",
+    "playCost": "3",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "Xros Heart",
+    "rarity": "R",
+    "cardNumber": "BT10-090",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Play] You may play 1 [Ballistamon] from your hand or from under one of your Tamers without paying its memory cost.\n[Your Turn] When you play a Digimon with [Xros Heart] in its traits, by suspending this Tamer, gain 1 memory.",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Play this card without paying its memory cost.",
+    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
+    "color": "Green",
+    "version": "AA",
+    "restriction": "-",
+    "illustrator": "",
+    "block": [
+      "02"
+    ]
+  },
+  {
+    "id": "BT10-092_P1",
+    "name": "Nene Amano",
+    "cardImage": "assets/images/cards/eng/BT10-092_P1.webp",
+    "cardType": "Tamer",
+    "dp": "-",
+    "playCost": "3",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "General/Twilight",
+    "rarity": "R",
+    "cardNumber": "BT10-092",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Play] Reveal the top 4 cards of your deck. Add 1 card with [Knightmon] or [DeadlyAxemon] in its name or [Twilight] in its traits among them to your hand. Place the rest at the bottom of your deck in any order.\n[Opponent's Turn] All of your Digimon with [DarkKnightmon] in their names or [Twilight] in their traits gain ＜Blocker＞.\n[On Deletion] Gain 2 memory.",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Play this card without paying its memory cost.",
+    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
+    "color": "Black",
+    "version": "AA",
+    "restriction": "-",
+    "illustrator": "",
+    "block": [
+      "02"
+    ]
+  },
+  {
+    "id": "BT10-093_P1",
+    "name": "Yuu Amano",
+    "cardImage": "assets/images/cards/eng/BT10-093_P1.webp",
+    "cardType": "Tamer",
+    "dp": "-",
+    "playCost": "3",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "General/Bagra Army",
+    "rarity": "R",
+    "cardNumber": "BT10-093",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[All Turns] [Once Per Turn] When a purple card is placed under this Tamer, ＜Draw 1＞ (Draw 1 card from your deck), and gain 1 memory.\n[Your Turn] [Once Per Turn] When you would play 1 level 4 or higher Digimon card with [Bagra Army] in its traits, by placing up to 3 purple Digimon cards from under your Tamers in the played Digimon card's digivolution cards, reduce the play cost of that Digimon by 2 for each card placed.",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Play this card without paying its memory cost.",
+    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10] Errata Card",
+    "color": "Purple",
+    "version": "AA",
+    "restriction": "-",
+    "illustrator": "",
+    "block": [
+      "02"
+    ]
+  },
+  {
+    "id": "BT10-111_P1",
+    "name": "Shoutmon (King Version)",
+    "cardImage": "assets/images/cards/eng/BT10-111_P1.webp",
+    "cardType": "Digimon",
+    "dp": "4000",
+    "playCost": "5",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Data",
+    "type": "Mini Dragon/Xros Heart",
+    "rarity": "SEC",
+    "cardNumber": "BT10-111",
+    "digiXros": "＜DigiXros -2: 1 Digimon card w/[Xros Heart] in traits＞ When you would play this card, you may place specified cards from your hand/battle area under it. Each placed card reduces the play cost.",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "The name of this card/Digimon is also treated as [Shoutmon].\n[On Play] You may return 1 card with a DigiXros requirement from your trash to your hand. When you would DigiXros this turn, this Digimon may replace 1 of the DigiXros requirements.\n＜Material Save 1＞ (When this Digimon would be deleted, you may place 1 card in this Digimon's DigiXros requirements from this Digimon's digivolution cards under 1 of your Tamers.)",
+    "digivolveEffect": "[Your Turn] While this Digimon has [Shoutmon] in its name, it gets +2000 DP.",
+    "securityEffect": "-",
+    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
+    "color": "Red",
+    "version": "AA",
+    "restriction": "-",
+    "illustrator": "sasasi",
+    "block": [
+      "02"
+    ]
+  },
+  {
+    "id": "BT10-112_P1",
+    "name": "Jesmon GX",
+    "cardImage": "assets/images/cards/eng/BT10-112_P1.webp",
+    "cardType": "Digimon",
+    "dp": "15000",
+    "playCost": "15",
+    "digivolveCost1": "5 from Lv.6",
+    "digivolveCost2": "5 from Lv.6",
+    "cardLv": "Lv.7",
+    "form": "Mega",
+    "attribute": "Data",
+    "type": "Holy Warrior/Royal Knight/X Antibody",
+    "rarity": "SEC",
+    "cardNumber": "BT10-112",
+    "digiXros": "-",
+    "specialDigivolve": "Digivolve: 5 from Lv.6 w/[Royal Knight] in traits",
+    "dnaDigivolve": "-",
+    "effect": "[When Digivolving] You may place 1 card with [Royal Knight] in its traits and a play cost of 13 or less from your hand or trash under this Digimon as its bottom digivolution card. Activate 1 of that card's [When Digivolving] effects as an effect of this Digimon. Then, ＜Blitz＞.\n[All Turns] While a card with [Royal Knight] in its traits is in this Digimon's digivolution cards, this Digimon gains ＜Piercing＞ and ＜Blocker＞, and gains ＜Security Attack +1＞ for each such card.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
+    "color": "Red/Black",
+    "version": "AA",
+    "restriction": "-",
+    "illustrator": "As'Maria",
+    "block": [
+      "02"
+    ]
   },
   {
     "id": "BT2-001_P1",
@@ -2874,7 +3656,8 @@
     "color": "Blue",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "As'Maria"
@@ -2904,7 +3687,8 @@
     "color": "Blue",
     "version": "Stamp",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "sasasi"
@@ -2964,8 +3748,8 @@
     "color": "Yellow",
     "version": "AA",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Ryodan"
@@ -3057,7 +3841,8 @@
     "color": "Yellow",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Nakano Haito"
@@ -3087,7 +3872,8 @@
     "color": "Yellow",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Nakano Haito"
@@ -3117,7 +3903,8 @@
     "color": "Yellow",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "As'Maria"
@@ -3449,7 +4236,8 @@
     "color": "Black",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Tonamikanji"
@@ -3479,7 +4267,8 @@
     "color": "Black",
     "version": "Stamp",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Tonamikanji"
@@ -4062,8 +4851,8 @@
     "color": "Purple",
     "version": "AA",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "GOSSAN"
@@ -4184,8 +4973,8 @@
     "color": "Purple",
     "version": "AA",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "koki"
@@ -4675,8 +5464,8 @@
     "color": "Purple",
     "version": "AA",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": ""
@@ -4706,8 +5495,8 @@
     "color": "Purple",
     "version": "AA",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": ""
@@ -4828,7 +5617,8 @@
     "color": "Black",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Naochika Morishita"
@@ -4858,7 +5648,8 @@
     "color": "Blue",
     "version": "Stamp",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Tonamikanji"
@@ -4888,7 +5679,8 @@
     "color": "Blue",
     "version": "Stamp",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Takase"
@@ -4918,7 +5710,8 @@
     "color": "Yellow",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Sanosuke Sakuma"
@@ -4948,7 +5741,8 @@
     "color": "Yellow",
     "version": "Stamp",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Sanosuke Sakuma"
@@ -5040,8 +5834,8 @@
     "color": "Purple",
     "version": "Stamp",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Sanosuke Sakuma"
@@ -5071,8 +5865,8 @@
     "color": "Purple",
     "version": "AA",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "GOSSAN"
@@ -5223,7 +6017,6 @@
     "color": "Blue",
     "version": "AA",
     "block": [
-      "00",
       "01",
       "02"
     ],
@@ -5255,7 +6048,6 @@
     "color": "Blue",
     "version": "Stamp",
     "block": [
-      "00",
       "01",
       "02"
     ],
@@ -5530,8 +6322,8 @@
     "color": "Yellow",
     "version": "AA",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "tessy"
@@ -5591,8 +6383,8 @@
     "color": "Green",
     "version": "AA",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Takase"
@@ -5622,8 +6414,8 @@
     "color": "Green",
     "version": "AA",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "As'Maria"
@@ -5653,7 +6445,8 @@
     "color": "Green",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Shin Sasaki"
@@ -5806,7 +6599,8 @@
     "color": "Green",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Tomotake Kinoshita"
@@ -5958,8 +6752,8 @@
     "color": "Black",
     "version": "AA",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "koki"
@@ -6079,7 +6873,8 @@
     "color": "Black",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Kenji Watanabe"
@@ -6199,8 +6994,8 @@
     "color": "Purple",
     "version": "AA",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Hisashi Fujiwara"
@@ -6260,7 +7055,8 @@
     "color": "Purple",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Kenji Watanabe"
@@ -6290,7 +7086,8 @@
     "color": "Purple",
     "version": "Stamp",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Tonamikanji"
@@ -6320,7 +7117,8 @@
     "color": "Purple",
     "version": "Stamp",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Tonamikanji"
@@ -6412,7 +7210,8 @@
     "color": "Green",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "Restricted to 1",
     "illustrator": "Spareribs"
@@ -6652,7 +7451,8 @@
     "color": "Purple",
     "version": "Stamp",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Sanosuke Sakuma"
@@ -6713,7 +7513,8 @@
     "color": "Red",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "As'Maria"
@@ -6743,7 +7544,8 @@
     "color": "Red",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Nakano Haito"
@@ -6835,7 +7637,8 @@
     "color": "Red",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "As'Maria"
@@ -6895,7 +7698,8 @@
     "color": "Blue",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Kenji Watanabe"
@@ -7197,7 +8001,8 @@
     "color": "Green",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "KISUKE"
@@ -7954,7 +8759,7 @@
     "color": "Black",
     "version": "AA",
     "block": [
-      "00",
+      "01",
       "02"
     ],
     "restriction": "-",
@@ -7985,7 +8790,7 @@
     "color": "Black",
     "version": "AA",
     "block": [
-      "00",
+      "01",
       "02"
     ],
     "restriction": "-",
@@ -8016,7 +8821,8 @@
     "color": "Purple",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": ""
@@ -8137,7 +8943,8 @@
     "color": "Yellow",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Naochika Morishita"
@@ -8167,8 +8974,8 @@
     "color": "Red",
     "version": "AA",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "TANIMESO"
@@ -9179,7 +9986,8 @@
     "color": "Black",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "kaz"
@@ -9480,7 +10288,8 @@
     "color": "White",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "sasasi"
@@ -9510,7 +10319,8 @@
     "color": "White",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Nakano Haito"
@@ -9540,7 +10350,8 @@
     "color": "White",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Tomotake Kinoshita"
@@ -9570,7 +10381,8 @@
     "color": "White",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "As'Maria"
@@ -9600,7 +10412,8 @@
     "color": "White",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Nakano Haito"
@@ -9630,7 +10443,8 @@
     "color": "White",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Kenji Watanabe"
@@ -9660,7 +10474,8 @@
     "color": "White",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "As'Maria"
@@ -9690,7 +10505,8 @@
     "color": "Blue",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": ""
@@ -9810,7 +10626,8 @@
     "color": "White",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": ""
@@ -9931,7 +10748,8 @@
     "color": "White",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "As'Maria"
@@ -9961,7 +10779,8 @@
     "color": "White",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "sasasi"
@@ -15068,786 +15887,6 @@
     "illustrator": "sasasi"
   },
   {
-    "id": "BT10-011_P1",
-    "name": "Canoweissmon",
-    "cardImage": "assets/images/cards/eng/BT10-011_P1.webp",
-    "cardType": "Digimon",
-    "dp": "8000",
-    "playCost": "8",
-    "digivolveCost1": "4 from Lv.4",
-    "digivolveCost2": "-",
-    "cardLv": "Lv.5",
-    "form": "Ultimate",
-    "attribute": "Vaccine",
-    "type": "Sky Dragon",
-    "rarity": "R",
-    "cardNumber": "BT10-011",
-    "digiXros": "-",
-    "specialDigivolve": "Digivolve: 3 from Lv.4 w/[Gammamon] in name",
-    "dnaDigivolve": "-",
-    "effect": "[Your Turn] [Once Per Turn] When one of your Tamers becomes suspended, this Digimon gets +2000 DP for the turn. Then, if this Digimon has 12000 DP or more, it gains ＜Security Attack +1＞ for the turn. (This Digimon checks 1 additional security card.)\n[All Turns] This Digimon gains all effects of cards with [Gammamon] in their names in this Digimon's digivolution cards.",
-    "digivolveEffect": "[All Turns] This Digimon gains all effects of cards with [Gammamon] in their names in this Digimon's digivolution cards.",
-    "securityEffect": "-",
-    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
-    "color": "Red",
-    "version": "AA",
-    "restriction": "-",
-    "illustrator": "sasasi",
-    "block": [
-      "02"
-    ]
-  },
-  {
-    "id": "BT10-013_P1",
-    "name": "Shoutmon X5",
-    "cardImage": "assets/images/cards/eng/BT10-013_P1.webp",
-    "cardType": "Digimon",
-    "dp": "10000",
-    "playCost": "10",
-    "digivolveCost1": "4 from Lv.4",
-    "digivolveCost2": "4 from Lv.4",
-    "cardLv": "Lv.5",
-    "form": "Ultimate",
-    "attribute": "Data",
-    "type": "Composite/Xros Heart",
-    "rarity": "SR",
-    "cardNumber": "BT10-013",
-    "digiXros": "＜DigiXros -2: [Shoutmon] x [Ballistamon] x [Dorulumon] x [Starmons] x [Sparrowmon]＞ When you would play this card, you may place specified cards from your hand/battle area under it. Each placed card reduces the play cost.",
-    "specialDigivolve": "-",
-    "dnaDigivolve": "-",
-    "effect": "＜Security Attack +1＞\n＜Blocker＞\n＜Material Save 3＞ (When this Digimon would be deleted, you may place 3 cards in this Digimon's DigiXros requirements from this Digimon's digivolution cards under 1 of your Tamers.)",
-    "digivolveEffect": "-",
-    "securityEffect": "-",
-    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
-    "color": "Red/Black",
-    "version": "AA",
-    "restriction": "-",
-    "illustrator": "Tonamikanji",
-    "block": [
-      "02"
-    ]
-  },
-  {
-    "id": "BT10-016_P1",
-    "name": "Jesmon (X Antibody)",
-    "cardImage": "assets/images/cards/eng/BT10-016_P1.webp",
-    "cardType": "Digimon",
-    "dp": "11000",
-    "playCost": "12",
-    "digivolveCost1": "3 from Lv.5",
-    "digivolveCost2": "-",
-    "cardLv": "Lv.6",
-    "form": "Mega",
-    "attribute": "Data",
-    "type": "Holy Warrior/Royal Knight/X Antibody",
-    "rarity": "SR",
-    "cardNumber": "BT10-016",
-    "digiXros": "-",
-    "specialDigivolve": "Digivolve: 0 from [Jesmon]",
-    "dnaDigivolve": "-",
-    "effect": "＜Piercing＞\n[When Digivolving] You may play 1 Digimon card with [Sistermon] in its name from your hand or trash without paying its play cost. Then, if [Jesmon] is in this Digimon's digivolution cards or you have a Digimon with [Sistermon] in its name in play, until the end of your opponent's turn, all of your Digimon may also attack unsuspended Digimon and get +2000 DP.",
-    "digivolveEffect": "-",
-    "securityEffect": "-",
-    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
-    "color": "Red",
-    "version": "AA",
-    "restriction": "-",
-    "illustrator": "As'Maria",
-    "block": [
-      "02"
-    ]
-  },
-  {
-    "id": "BT10-023_P1",
-    "name": "Thetismon",
-    "cardImage": "assets/images/cards/eng/BT10-023_P1.webp",
-    "cardType": "Digimon",
-    "dp": "7000",
-    "playCost": "7",
-    "digivolveCost1": "3 from Lv.4",
-    "digivolveCost2": "-",
-    "cardLv": "Lv.5",
-    "form": "Ultimate",
-    "attribute": "Data",
-    "type": "Aquabeast",
-    "rarity": "R",
-    "cardNumber": "BT10-023",
-    "digiXros": "-",
-    "specialDigivolve": "-",
-    "dnaDigivolve": "-",
-    "effect": "[When Digivolving] If you have 6 or fewer cards in your hand, ＜Draw 2＞. (Draw 2 cards from your deck.)\n[When Attacking] [Once Per Turn] If you have 8 or more cards in your hand, by trashing 2 cards in your hand, unsuspend this Digimon.",
-    "digivolveEffect": "-",
-    "securityEffect": "-",
-    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
-    "color": "Blue",
-    "version": "AA",
-    "restriction": "-",
-    "illustrator": "sasasi",
-    "block": [
-      "02"
-    ]
-  },
-  {
-    "id": "BT10-024_P1",
-    "name": "MetalGreymon",
-    "cardImage": "assets/images/cards/eng/BT10-024_P1.webp",
-    "cardType": "Digimon",
-    "dp": "8000",
-    "playCost": "7",
-    "digivolveCost1": "4 from Lv.4",
-    "digivolveCost2": "-",
-    "cardLv": "Lv.5",
-    "form": "Ultimate",
-    "attribute": "Virus",
-    "type": "Cyborg/Blue Flare",
-    "rarity": "SR",
-    "cardNumber": "BT10-024",
-    "digiXros": "＜DigiXros -2: [Greymon] x [MailBirdramon]＞ When you would play this card, you may place specified cards from your hand/battle area under it. Each placed card reduces the play cost.",
-    "specialDigivolve": "-",
-    "dnaDigivolve": "-",
-    "effect": "＜Material Save 2＞ (When this Digimon would be deleted, you may place 2 cards in this Digimon's DigiXros requirements from this Digimon's digivolution cards under 1 of your Tamers.)\n[On Play] This Digimon gains ＜Rush＞ for the turn. Then, if DigiXrosing, 3 of your opponent's Digimon with digivolution cards less than or equal to this Digimon's digivolution cards can't attack or block until the end of your opponent's turn.",
-    "digivolveEffect": "-",
-    "securityEffect": "-",
-    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
-    "color": "Blue",
-    "version": "AA",
-    "restriction": "-",
-    "illustrator": "Naochika Morishita",
-    "block": [
-      "02"
-    ]
-  },
-  {
-    "id": "BT10-026_P1",
-    "name": "DeckerGreymon",
-    "cardImage": "assets/images/cards/eng/BT10-026_P1.webp",
-    "cardType": "Digimon",
-    "dp": "10000",
-    "playCost": "9",
-    "digivolveCost1": "4 from Lv.4",
-    "digivolveCost2": "2 from Lv.5",
-    "cardLv": "Lv.5",
-    "form": "Ultimate",
-    "attribute": "Virus",
-    "type": "Enhancement/Blue Flare",
-    "rarity": "R",
-    "cardNumber": "BT10-026",
-    "digiXros": "＜DigiXros -2: [MetalGreymon] x [Deckerdramon]＞ When you would play this card, you may place specified cards from your hand/battle area under it. Each placed card reduces the play cost.",
-    "specialDigivolve": "-",
-    "dnaDigivolve": "-",
-    "effect": "＜Armor Purge＞\n[On Play] [When Digivolving] You may place 1 Digimon card with [Blue Flare] in its traits from your hand or from under one of your Tamers under this Digimon as its bottom digivolution card. Then, if [Deckerdramon] is in this Digimon's digivolution cards, 1 of your opponent's Digimon can't attack or block until the end of your opponent's turn.",
-    "digivolveEffect": "-",
-    "securityEffect": "-",
-    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
-    "color": "Blue",
-    "version": "AA",
-    "restriction": "-",
-    "illustrator": "TANIMESO",
-    "block": [
-      "02"
-    ]
-  },
-  {
-    "id": "BT10-041_P1",
-    "name": "Sakuyamon: Maid Mode",
-    "cardImage": "assets/images/cards/eng/BT10-041_P1.webp",
-    "cardType": "Digimon",
-    "dp": "11000",
-    "playCost": "12",
-    "digivolveCost1": "3 from Lv.5",
-    "digivolveCost2": "2 from Lv.6",
-    "cardLv": "Lv.6",
-    "form": "Mega",
-    "attribute": "Data",
-    "type": "Shaman",
-    "rarity": "SR",
-    "cardNumber": "BT10-041",
-    "digiXros": "-",
-    "specialDigivolve": "-",
-    "dnaDigivolve": "-",
-    "effect": "[When Digivolving] You may use 1 Option card with [Plug-In] in its name or that's yellow and has a cost of 5 or less from your hand without meeting its color requirements or paying its cost. Place the Option card used with this effect on top of your security stack face down instead of placing it in your trash.\n[When Attacking] This Digimon may digivolve into a [Sakuyamon] in your hand for a cost of 1, ignoring its digivolution requirements.",
-    "digivolveEffect": "-",
-    "securityEffect": "-",
-    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
-    "color": "Yellow",
-    "version": "AA",
-    "restriction": "-",
-    "illustrator": "Tonamikanji",
-    "block": [
-      "02"
-    ]
-  },
-  {
-    "id": "BT10-042_P1",
-    "name": "Venusmon",
-    "cardImage": "assets/images/cards/eng/BT10-042_P1.webp",
-    "cardType": "Digimon",
-    "dp": "12000",
-    "playCost": "13",
-    "digivolveCost1": "4 from Lv.5",
-    "digivolveCost2": "-",
-    "cardLv": "Lv.6",
-    "form": "Mega",
-    "attribute": "Vaccine",
-    "type": "Shaman/Olympos XII",
-    "rarity": "SR",
-    "cardNumber": "BT10-042",
-    "digiXros": "-",
-    "specialDigivolve": "-",
-    "dnaDigivolve": "-",
-    "effect": "[When Digivolving] All of your opponent's Digimon gain ＜Security Attack -1＞ until the end of your opponent's turn. (This Digimon checks 1 fewer security cards.)\n[Opponent's Turn] Your opponent's Digimon with ＜Security Attack＞ can't attack this Digimon and can't activate [When Attacking] and [When Digivolving] effects.",
-    "digivolveEffect": "-",
-    "securityEffect": "-",
-    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
-    "color": "Yellow",
-    "version": "AA",
-    "restriction": "-",
-    "illustrator": "Tonamikanji",
-    "block": [
-      "02"
-    ]
-  },
-  {
-    "id": "BT10-044_P1",
-    "name": "Angoramon",
-    "cardImage": "assets/images/cards/eng/BT10-044_P1.webp",
-    "cardType": "Digimon",
-    "dp": "2000",
-    "playCost": "3",
-    "digivolveCost1": "0 from Lv.2",
-    "digivolveCost2": "-",
-    "cardLv": "Lv.3",
-    "form": "Rookie",
-    "attribute": "Vaccine",
-    "type": "Beast",
-    "rarity": "R",
-    "cardNumber": "BT10-044",
-    "digiXros": "-",
-    "specialDigivolve": "-",
-    "dnaDigivolve": "-",
-    "effect": "[Your Turn] [Once Per Turn] When you play a green Tamer, ＜Draw 1＞. (Draw 1 card from your deck.)",
-    "digivolveEffect": "[Your Turn] [Once Per Turn] When an opponent's Digimon becomes suspended, ＜Draw 1＞. (Draw 1 card from your deck.)",
-    "securityEffect": "-",
-    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
-    "color": "Green",
-    "version": "AA",
-    "restriction": "-",
-    "illustrator": "Takase",
-    "block": [
-      "02"
-    ]
-  },
-  {
-    "id": "BT10-054_P1",
-    "name": "Lamortmon",
-    "cardImage": "assets/images/cards/eng/BT10-054_P1.webp",
-    "cardType": "Digimon",
-    "dp": "9000",
-    "playCost": "8",
-    "digivolveCost1": "3 from Lv.4",
-    "digivolveCost2": "-",
-    "cardLv": "Lv.5",
-    "form": "Ultimate",
-    "attribute": "Vaccine",
-    "type": "Beast",
-    "rarity": "R",
-    "cardNumber": "BT10-054",
-    "digiXros": "-",
-    "specialDigivolve": "-",
-    "dnaDigivolve": "-",
-    "effect": "[When Digivolving] Suspend 1 of your opponent's Digimon.\n[Your Turn] [Once Per Turn] When this Digimon deletes an opponent's Digimon in battle, unsuspend it.\n[When Attacking] If you don't have a Tamer in play, lose 2 memory.",
-    "digivolveEffect": "-",
-    "securityEffect": "-",
-    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
-    "color": "Green",
-    "version": "AA",
-    "restriction": "-",
-    "illustrator": "sasasi",
-    "block": [
-      "02"
-    ]
-  },
-  {
-    "id": "BT10-057_P1",
-    "name": "Bloomlordmon",
-    "cardImage": "assets/images/cards/eng/BT10-057_P1.webp",
-    "cardType": "Digimon",
-    "dp": "12000",
-    "playCost": "12",
-    "digivolveCost1": "4 from Lv.5",
-    "digivolveCost2": "-",
-    "cardLv": "Lv.6",
-    "form": "Mega",
-    "attribute": "Vaccine",
-    "type": "Fairy",
-    "rarity": "SR",
-    "cardNumber": "BT10-057",
-    "digiXros": "-",
-    "specialDigivolve": "-",
-    "dnaDigivolve": "-",
-    "effect": "[When Digivolving] You may suspend 1 of your Digimon. Then, gain 1 memory for each suspended Digimon with [Vegetation], [Plant], or [Fairy] in one of their traits you have in play. If you gain 2 or more memory by this effect, unsuspend this Digimon and it gains ＜Piercing＞ for the turn.\n[Your Turn] For every 2 suspended Digimon you have in play, this Digimon gets +2000 DP and gains ＜Security Attack +1＞.",
-    "digivolveEffect": "-",
-    "securityEffect": "-",
-    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
-    "color": "Green",
-    "version": "AA",
-    "restriction": "-",
-    "illustrator": "Naochika Morishita",
-    "block": [
-      "02"
-    ]
-  },
-  {
-    "id": "BT10-060_P1",
-    "name": "Sparrowmon",
-    "cardImage": "assets/images/cards/eng/BT10-060_P1.webp",
-    "cardType": "Digimon",
-    "dp": "2000",
-    "playCost": "4",
-    "digivolveCost1": "0 from Lv.2",
-    "digivolveCost2": "-",
-    "cardLv": "Lv.3",
-    "form": "Rookie",
-    "attribute": "Data",
-    "type": "Bird/Twilight/Xros Heart",
-    "rarity": "R",
-    "cardNumber": "BT10-060",
-    "digiXros": "-",
-    "specialDigivolve": "-",
-    "dnaDigivolve": "-",
-    "effect": "[All Turns] While you have another Digimon or Tamer with [Xros Heart] or [Twilight] in its traits in play, this Digimon gets +3000 DP.\n[On Deletion] ＜Save＞ (You may place this card under one of your Tamers.)",
-    "digivolveEffect": "[Opponent's Turn] While this Digimon has [Shoutmon] or [Mervamon] in its name, it gains ＜Reboot＞. (Unsuspend this Digimon during your opponent's unsuspend phase.)",
-    "securityEffect": "-",
-    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
-    "color": "Black",
-    "version": "AA",
-    "restriction": "-",
-    "illustrator": "Takase",
-    "block": [
-      "02"
-    ]
-  },
-  {
-    "id": "BT10-068_P1",
-    "name": "Gankoomon (X Antibody)",
-    "cardImage": "assets/images/cards/eng/BT10-068_P1.webp",
-    "cardType": "Digimon",
-    "dp": "12000",
-    "playCost": "13",
-    "digivolveCost1": "4 from Lv.5",
-    "digivolveCost2": "4 from Lv.5",
-    "cardLv": "Lv.6",
-    "form": "Mega",
-    "attribute": "Data",
-    "type": "Holy Warrior/Royal Knight/X Antibody",
-    "rarity": "SR",
-    "cardNumber": "BT10-068",
-    "digiXros": "-",
-    "specialDigivolve": "Digivolve: 1 from [Gankoomon]",
-    "dnaDigivolve": "-",
-    "effect": "＜Blocker＞\n[When Digivolving] You may play 1 Digimon card with [Sistermon] in its name from your hand or trash without paying its play cost. Then, if [Gankoomon] is in this Digimon's digivolution cards or you have a Digimon with [Sistermon] in its name in play, until the end of your opponent's turn, all of your Digimon get +2000 DP and your opponent's effects can't return them to hands or decks or reduce their DP.",
-    "digivolveEffect": "-",
-    "securityEffect": "-",
-    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
-    "color": "Black",
-    "version": "AA",
-    "restriction": "-",
-    "illustrator": "Naochika Morishita",
-    "block": [
-      "02"
-    ]
-  },
-  {
-    "id": "BT10-069_P1",
-    "name": "DarkKnightmon (X Antibody)",
-    "cardImage": "assets/images/cards/eng/BT10-069_P1.webp",
-    "cardType": "Digimon",
-    "dp": "12000",
-    "playCost": "13",
-    "digivolveCost1": "5 from Lv.5",
-    "digivolveCost2": "5 from Lv.5",
-    "cardLv": "Lv.6",
-    "form": "Mega",
-    "attribute": "Virus",
-    "type": "Dark Knight/X Antibody",
-    "rarity": "SR",
-    "cardNumber": "BT10-069",
-    "digiXros": "-",
-    "specialDigivolve": "Digivolve: 4 from [DarkKnightmon]",
-    "dnaDigivolve": "-",
-    "effect": "[When Digivolving] Return 1 black or purple Digimon card other than [DarkKnightmon (X Antibody)] from your trash to your hand. Then, if [DarkKnightmon] or [X Antibody] is in this Digimon's digivolution cards, delete 1 Tamer, and unsuspend this Digimon.\n[On Deletion] You may play 1 [DarkKnightmon] from your trash without paying its play cost.",
-    "digivolveEffect": "-",
-    "securityEffect": "-",
-    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
-    "color": "Black/Purple",
-    "version": "AA",
-    "restriction": "-",
-    "illustrator": "As'Maria",
-    "block": [
-      "02"
-    ]
-  },
-  {
-    "id": "BT10-082_P1",
-    "name": "Beelzemon",
-    "cardImage": "assets/images/cards/eng/BT10-082_P1.webp",
-    "cardType": "Digimon",
-    "dp": "11000",
-    "playCost": "11",
-    "digivolveCost1": "3 from Lv.5",
-    "digivolveCost2": "-",
-    "cardLv": "Lv.6",
-    "form": "Mega",
-    "attribute": "Virus",
-    "type": "Demon Lord/Xros Heart",
-    "rarity": "U",
-    "cardNumber": "BT10-082",
-    "digiXros": "-",
-    "specialDigivolve": "Digivolve: 3 from Lv.5 w/[Xros Heart] in traits",
-    "dnaDigivolve": "-",
-    "effect": "[On Play] [When Digivolving] You may trash 3 cards from the top of your deck. Then, for every 10 cards in your trash, delete 1 of your opponent's level 4 or lower Digimon.",
-    "digivolveEffect": "[End of Attack] [Once Per Turn] For every 10 cards in your trash, gain 1 memory.",
-    "securityEffect": "-",
-    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
-    "color": "Purple",
-    "version": "AA",
-    "restriction": "-",
-    "illustrator": "Hisashi Fujiwara",
-    "block": [
-      "02"
-    ]
-  },
-  {
-    "id": "BT10-083_P1",
-    "name": "Minervamon",
-    "cardImage": "assets/images/cards/eng/BT10-083_P1.webp",
-    "cardType": "Digimon",
-    "dp": "11000",
-    "playCost": "12",
-    "digivolveCost1": "3 from Lv.5",
-    "digivolveCost2": "-",
-    "cardLv": "Lv.6",
-    "form": "Mega",
-    "attribute": "Virus",
-    "type": "Shaman/Olympos XII",
-    "rarity": "SR",
-    "cardNumber": "BT10-083",
-    "digiXros": "-",
-    "specialDigivolve": "-",
-    "dnaDigivolve": "-",
-    "effect": "＜Retaliation＞ (When this Digimon is deleted in battle, delete the Digimon it battled.)\n[Opponent's Turn] When an opponent plays a Digimon, you may play 1 level 4 or lower purple Digimon card from your trash without paying its play cost. Any [On Play] effects on Digimon played by this effect don't activate.\n[On Deletion] If your opponent has 2 or fewer Digimon in play, you may play 1 purple level 5 or lower Digimon card or 1 [Mervamon] from your trash without paying its play cost.",
-    "digivolveEffect": "-",
-    "securityEffect": "-",
-    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
-    "color": "Purple",
-    "version": "AA",
-    "restriction": "-",
-    "illustrator": "Tonamikanji",
-    "block": [
-      "02"
-    ]
-  },
-  {
-    "id": "BT10-085_P1",
-    "name": "Sistermon Ciel",
-    "cardImage": "assets/images/cards/eng/BT10-085_P1.webp",
-    "cardType": "Digimon",
-    "dp": "5000",
-    "playCost": "4",
-    "digivolveCost1": "-",
-    "digivolveCost2": "-",
-    "cardLv": "Lv.4",
-    "form": "Champion",
-    "attribute": "Data",
-    "type": "Puppet",
-    "rarity": "R",
-    "cardNumber": "BT10-085",
-    "digiXros": "-",
-    "specialDigivolve": "-",
-    "dnaDigivolve": "-",
-    "effect": "[On Play] If it's your turn, you may digivolve 1 of your Digimon into a Digimon card with [Royal Knight] in its traits from your hand for its digivolution cost.\n[Your Turn] [Once Per Turn] When you digivolve one of your Digimon into a Digimon with [Huckmon] in its name or [Royal Knight] in its traits, gain 1 memory.",
-    "digivolveEffect": "-",
-    "securityEffect": "-",
-    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
-    "color": "White",
-    "version": "AA",
-    "restriction": "-",
-    "illustrator": "Tonamikanji",
-    "block": [
-      "02"
-    ]
-  },
-  {
-    "id": "BT10-086_P1",
-    "name": "Omnimon (X Antibody)",
-    "cardImage": "assets/images/cards/eng/BT10-086_P1.webp",
-    "cardType": "Digimon",
-    "dp": "16000",
-    "playCost": "16",
-    "digivolveCost1": "7 from Lv.6",
-    "digivolveCost2": "7 from Lv.6",
-    "cardLv": "Lv.7",
-    "form": "Mega",
-    "attribute": "Vaccine",
-    "type": "Holy Warrior/Royal Knight/X Antibody",
-    "rarity": "SR",
-    "cardNumber": "BT10-086",
-    "digiXros": "-",
-    "specialDigivolve": "Digivolve: 3 from [Omnimon]",
-    "dnaDigivolve": "-",
-    "effect": "When a Digimon with [X Antibody] in its digivolution cards would digivolve into this card, reduce the digivolution cost by 2.\n[When Digivolving] Return all of your opponent's Digimon with the highest level to the bottom of their owners' decks in any order.\n[When Digivolving] [When Attacking] [Once Per Turn] By placing 1 [X Antibody] or level 6 card from this Digimon's digivolution cards at the bottom of its owner's deck, reveal all of your opponent's security cards, and trash 1 of them. Place the rest in your opponent's security stack face down. Then, your opponent shuffles their security stack.",
-    "digivolveEffect": "-",
-    "securityEffect": "-",
-    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10] Errata Card",
-    "color": "White",
-    "version": "AA",
-    "restriction": "-",
-    "illustrator": "As'Maria",
-    "block": [
-      "02"
-    ]
-  },
-  {
-    "id": "BT10-087_P1",
-    "name": "Taiki Kudo",
-    "cardImage": "assets/images/cards/eng/BT10-087_P1.webp",
-    "cardType": "Tamer",
-    "dp": "-",
-    "playCost": "3",
-    "digivolveCost1": "-",
-    "digivolveCost2": "-",
-    "cardLv": "",
-    "form": "-",
-    "attribute": "-",
-    "type": "General/Xros Heart",
-    "rarity": "R",
-    "cardNumber": "BT10-087",
-    "digiXros": "-",
-    "specialDigivolve": "-",
-    "dnaDigivolve": "-",
-    "effect": "[On Play] Reveal the top 4 cards of your deck. Add 1 card with [Xros Heart] in its traits among them to your hand, and place 1 Digimon card with [Xros Heart] in its traits among them under this Tamer. Place the rest at the bottom of your deck in any order.\n[Your Turn] When you would play 1 Digimon with DigiXros requirements, by suspending this Tamer, you may place cards from under your Tamers as digivolution cards for a DigiXros.",
-    "digivolveEffect": "-",
-    "securityEffect": "[Security] Play this card without paying its memory cost.",
-    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
-    "color": "Red",
-    "version": "AA",
-    "restriction": "-",
-    "illustrator": "",
-    "block": [
-      "02"
-    ]
-  },
-  {
-    "id": "BT10-088_P1",
-    "name": "Kiriha Aonuma",
-    "cardImage": "assets/images/cards/eng/BT10-088_P1.webp",
-    "cardType": "Tamer",
-    "dp": "-",
-    "playCost": "4",
-    "digivolveCost1": "-",
-    "digivolveCost2": "-",
-    "cardLv": "",
-    "form": "-",
-    "attribute": "-",
-    "type": "General/Blue Flare",
-    "rarity": "R",
-    "cardNumber": "BT10-088",
-    "digiXros": "-",
-    "specialDigivolve": "-",
-    "dnaDigivolve": "-",
-    "effect": "[Start of Your Turn] If you have 2 memory or less, set your memory to 3.\n[Your Turn] When you would play 1 Digimon with DigiXros requirements, by suspending this Tamer, you may place cards from under your Tamers as digivolution cards for a DigiXros.",
-    "digivolveEffect": "-",
-    "securityEffect": "[Security] Play this card without paying its memory cost.",
-    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
-    "color": "Blue",
-    "version": "AA",
-    "restriction": "-",
-    "illustrator": "",
-    "block": [
-      "02"
-    ]
-  },
-  {
-    "id": "BT10-089_P1",
-    "name": "Akari Hinomoto",
-    "cardImage": "assets/images/cards/eng/BT10-089_P1.webp",
-    "cardType": "Tamer",
-    "dp": "-",
-    "playCost": "3",
-    "digivolveCost1": "-",
-    "digivolveCost2": "-",
-    "cardLv": "",
-    "form": "-",
-    "attribute": "-",
-    "type": "Xros Heart",
-    "rarity": "R",
-    "cardNumber": "BT10-089",
-    "digiXros": "-",
-    "specialDigivolve": "-",
-    "dnaDigivolve": "-",
-    "effect": "[On Play] You may play 1 [Dorulumon] from your hand or from under one of your Tamers without paying its memory cost.\n[Your Turn] When you play a Digimon with [Xros Heart] in its traits, by suspending this Tamer, ＜Draw 1＞. (Draw 1 card from your deck.)",
-    "digivolveEffect": "-",
-    "securityEffect": "[Security] Play this card without paying its memory cost.",
-    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
-    "color": "Yellow",
-    "version": "AA",
-    "restriction": "-",
-    "illustrator": "",
-    "block": [
-      "02"
-    ]
-  },
-  {
-    "id": "BT10-090_P1",
-    "name": "Zenjiro Tsurugi",
-    "cardImage": "assets/images/cards/eng/BT10-090_P1.webp",
-    "cardType": "Tamer",
-    "dp": "-",
-    "playCost": "3",
-    "digivolveCost1": "-",
-    "digivolveCost2": "-",
-    "cardLv": "",
-    "form": "-",
-    "attribute": "-",
-    "type": "Xros Heart",
-    "rarity": "R",
-    "cardNumber": "BT10-090",
-    "digiXros": "-",
-    "specialDigivolve": "-",
-    "dnaDigivolve": "-",
-    "effect": "[On Play] You may play 1 [Ballistamon] from your hand or from under one of your Tamers without paying its memory cost.\n[Your Turn] When you play a Digimon with [Xros Heart] in its traits, by suspending this Tamer, gain 1 memory.",
-    "digivolveEffect": "-",
-    "securityEffect": "[Security] Play this card without paying its memory cost.",
-    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
-    "color": "Green",
-    "version": "AA",
-    "restriction": "-",
-    "illustrator": "",
-    "block": [
-      "02"
-    ]
-  },
-  {
-    "id": "BT10-092_P1",
-    "name": "Nene Amano",
-    "cardImage": "assets/images/cards/eng/BT10-092_P1.webp",
-    "cardType": "Tamer",
-    "dp": "-",
-    "playCost": "3",
-    "digivolveCost1": "-",
-    "digivolveCost2": "-",
-    "cardLv": "",
-    "form": "-",
-    "attribute": "-",
-    "type": "General/Twilight",
-    "rarity": "R",
-    "cardNumber": "BT10-092",
-    "digiXros": "-",
-    "specialDigivolve": "-",
-    "dnaDigivolve": "-",
-    "effect": "[On Play] Reveal the top 4 cards of your deck. Add 1 card with [Knightmon] or [DeadlyAxemon] in its name or [Twilight] in its traits among them to your hand. Place the rest at the bottom of your deck in any order.\n[Opponent's Turn] All of your Digimon with [DarkKnightmon] in their names or [Twilight] in their traits gain ＜Blocker＞.\n[On Deletion] Gain 2 memory.",
-    "digivolveEffect": "-",
-    "securityEffect": "[Security] Play this card without paying its memory cost.",
-    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
-    "color": "Black",
-    "version": "AA",
-    "restriction": "-",
-    "illustrator": "",
-    "block": [
-      "02"
-    ]
-  },
-  {
-    "id": "BT10-093_P1",
-    "name": "Yuu Amano",
-    "cardImage": "assets/images/cards/eng/BT10-093_P1.webp",
-    "cardType": "Tamer",
-    "dp": "-",
-    "playCost": "3",
-    "digivolveCost1": "-",
-    "digivolveCost2": "-",
-    "cardLv": "",
-    "form": "-",
-    "attribute": "-",
-    "type": "General/Bagra Army",
-    "rarity": "R",
-    "cardNumber": "BT10-093",
-    "digiXros": "-",
-    "specialDigivolve": "-",
-    "dnaDigivolve": "-",
-    "effect": "[All Turns] [Once Per Turn] When a purple card is placed under this Tamer, ＜Draw 1＞ (Draw 1 card from your deck), and gain 1 memory.\n[Your Turn] [Once Per Turn] When you would play 1 level 4 or higher Digimon card with [Bagra Army] in its traits, by placing up to 3 purple Digimon cards from under your Tamers in the played Digimon card's digivolution cards, reduce the play cost of that Digimon by 2 for each card placed.",
-    "digivolveEffect": "-",
-    "securityEffect": "[Security] Play this card without paying its memory cost.",
-    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10] Errata Card",
-    "color": "Purple",
-    "version": "AA",
-    "restriction": "-",
-    "illustrator": "",
-    "block": [
-      "02"
-    ]
-  },
-  {
-    "id": "BT10-111_P1",
-    "name": "Shoutmon (King Version)",
-    "cardImage": "assets/images/cards/eng/BT10-111_P1.webp",
-    "cardType": "Digimon",
-    "dp": "4000",
-    "playCost": "5",
-    "digivolveCost1": "2 from Lv.3",
-    "digivolveCost2": "-",
-    "cardLv": "Lv.4",
-    "form": "Champion",
-    "attribute": "Data",
-    "type": "Mini Dragon/Xros Heart",
-    "rarity": "SEC",
-    "cardNumber": "BT10-111",
-    "digiXros": "＜DigiXros -2: 1 Digimon card w/[Xros Heart] in traits＞ When you would play this card, you may place specified cards from your hand/battle area under it. Each placed card reduces the play cost.",
-    "specialDigivolve": "-",
-    "dnaDigivolve": "-",
-    "effect": "The name of this card/Digimon is also treated as [Shoutmon].\n[On Play] You may return 1 card with a DigiXros requirement from your trash to your hand. When you would DigiXros this turn, this Digimon may replace 1 of the DigiXros requirements.\n＜Material Save 1＞ (When this Digimon would be deleted, you may place 1 card in this Digimon's DigiXros requirements from this Digimon's digivolution cards under 1 of your Tamers.)",
-    "digivolveEffect": "[Your Turn] While this Digimon has [Shoutmon] in its name, it gets +2000 DP.",
-    "securityEffect": "-",
-    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
-    "color": "Red",
-    "version": "AA",
-    "restriction": "-",
-    "illustrator": "sasasi",
-    "block": [
-      "02"
-    ]
-  },
-  {
-    "id": "BT10-112_P1",
-    "name": "Jesmon GX",
-    "cardImage": "assets/images/cards/eng/BT10-112_P1.webp",
-    "cardType": "Digimon",
-    "dp": "15000",
-    "playCost": "15",
-    "digivolveCost1": "5 from Lv.6",
-    "digivolveCost2": "5 from Lv.6",
-    "cardLv": "Lv.7",
-    "form": "Mega",
-    "attribute": "Data",
-    "type": "Holy Warrior/Royal Knight/X Antibody",
-    "rarity": "SEC",
-    "cardNumber": "BT10-112",
-    "digiXros": "-",
-    "specialDigivolve": "Digivolve: 5 from Lv.6 w/[Royal Knight] in traits",
-    "dnaDigivolve": "-",
-    "effect": "[When Digivolving] You may place 1 card with [Royal Knight] in its traits and a play cost of 13 or less from your hand or trash under this Digimon as its bottom digivolution card. Activate 1 of that card's [When Digivolving] effects as an effect of this Digimon. Then, ＜Blitz＞.\n[All Turns] While a card with [Royal Knight] in its traits is in this Digimon's digivolution cards, this Digimon gains ＜Piercing＞ and ＜Blocker＞, and gains ＜Security Attack +1＞ for each such card.",
-    "digivolveEffect": "-",
-    "securityEffect": "-",
-    "notes": "▹BOOSTER XROS ENCOUNTER [BT-10]",
-    "color": "Red/Black",
-    "version": "AA",
-    "restriction": "-",
-    "illustrator": "As'Maria",
-    "block": [
-      "02"
-    ]
-  },
-  {
     "id": "EX1-001_P1",
     "name": "Agumon",
     "cardImage": "assets/images/cards/eng/EX1-001_P1.webp",
@@ -17441,6 +17480,36 @@
     "illustrator": "Tonamikanji"
   },
   {
+    "id": "EX2-011_P0",
+    "name": "Gallantmon",
+    "cardImage": "assets/images/cards/eng/EX2-011_P0.webp",
+    "cardType": "Digimon",
+    "dp": "12000",
+    "playCost": "12",
+    "digivolveCost1": "4 from Lv.5",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Virus",
+    "type": "Holy Warrior/Royal Knight",
+    "rarity": "SR",
+    "cardNumber": "EX2-011",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Your Turn] This Digimon gets +2000 DP.\n[Your Turn] While you have a red Tamer in play, add 2000 to the maximum DP you can choose with DP-based deletion effects.\n[When Attacking] Choose any number of your opponent's Digimon whose total DP adds up to 6000 or less and delete them.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "DC-1 2022 TOP 8",
+    "color": "Red",
+    "version": "Stamp",
+    "block": [
+      "01"
+    ],
+    "restriction": "-",
+    "illustrator": "Naochika Morishita"
+  },
+  {
     "id": "EX2-011_P1",
     "name": "Gallantmon",
     "cardImage": "assets/images/cards/eng/EX2-011_P1.webp",
@@ -17494,36 +17563,6 @@
     "notes": "DC-1 2022 TOP 8",
     "color": "Red",
     "version": "AA",
-    "block": [
-      "01"
-    ],
-    "restriction": "-",
-    "illustrator": "Naochika Morishita"
-  },
-  {
-    "id": "EX2-011_P0",
-    "name": "Gallantmon",
-    "cardImage": "assets/images/cards/eng/EX2-011_P0.webp",
-    "cardType": "Digimon",
-    "dp": "12000",
-    "playCost": "12",
-    "digivolveCost1": "4 from Lv.5",
-    "digivolveCost2": "-",
-    "cardLv": "Lv.6",
-    "form": "Mega",
-    "attribute": "Virus",
-    "type": "Holy Warrior/Royal Knight",
-    "rarity": "SR",
-    "cardNumber": "EX2-011",
-    "digiXros": "-",
-    "specialDigivolve": "-",
-    "dnaDigivolve": "-",
-    "effect": "[Your Turn] This Digimon gets +2000 DP.\n[Your Turn] While you have a red Tamer in play, add 2000 to the maximum DP you can choose with DP-based deletion effects.\n[When Attacking] Choose any number of your opponent's Digimon whose total DP adds up to 6000 or less and delete them.",
-    "digivolveEffect": "-",
-    "securityEffect": "-",
-    "notes": "DC-1 2022 TOP 8",
-    "color": "Red",
-    "version": "Stamp",
     "block": [
       "01"
     ],
@@ -19244,8 +19283,8 @@
     "color": "Blue",
     "version": "Stamp",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "koki"
@@ -19275,8 +19314,8 @@
     "color": "Blue",
     "version": "Stamp",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "koki"
@@ -19306,8 +19345,8 @@
     "color": "Blue",
     "version": "Stamp",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "koki"
@@ -19337,8 +19376,8 @@
     "color": "Blue",
     "version": "AA",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Takase"
@@ -19428,7 +19467,8 @@
     "color": "Black",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Takase"
@@ -19488,7 +19528,8 @@
     "color": "Black",
     "version": "Stamp",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "As'Maria"
@@ -19518,7 +19559,8 @@
     "color": "Black",
     "version": "Stamp",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "As'Maria"
@@ -19548,7 +19590,8 @@
     "color": "Black",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "toriyufu"
@@ -19578,7 +19621,8 @@
     "color": "Black",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "toriyufu"
@@ -19668,8 +19712,8 @@
     "color": "Yellow",
     "version": "AA",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Ryuda"
@@ -19699,8 +19743,8 @@
     "color": "Yellow",
     "version": "Stamp",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Nakano Haito"
@@ -19730,7 +19774,8 @@
     "color": "Green",
     "version": "Stamp",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Kirita"
@@ -19790,7 +19835,8 @@
     "color": "Red",
     "version": "AA",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Takase"
@@ -19820,7 +19866,8 @@
     "color": "Blue",
     "version": "AA",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Takase"
@@ -19850,7 +19897,8 @@
     "color": "Yellow",
     "version": "AA",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Takase"
@@ -19880,7 +19928,8 @@
     "color": "Green",
     "version": "AA",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Takase"
@@ -19910,7 +19959,8 @@
     "color": "Black",
     "version": "AA",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Takase"
@@ -19940,40 +19990,11 @@
     "color": "Purple",
     "version": "AA",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Takase"
-  },
-  {
-    "id": "P-041_P1",
-    "name": "Guilmon",
-    "cardImage": "assets/images/cards/eng/P-041_P1.webp",
-    "cardType": "Digimon",
-    "dp": "2000",
-    "playCost": "3",
-    "digivolveCost1": "0 from Lv.2",
-    "digivolveCost2": "-",
-    "cardLv": "Lv.3",
-    "form": "Rookie",
-    "attribute": "Virus",
-    "type": "Reptile",
-    "rarity": "P",
-    "cardNumber": "P-041",
-    "digiXros": "-",
-    "specialDigivolve": "-",
-    "dnaDigivolve": "-",
-    "effect": "[When Attacking] Trigger ＜Draw 1＞. (Draw 1 card from your deck.)",
-    "digivolveEffect": "-",
-    "securityEffect": "-",
-    "notes": "DC-1 2022",
-    "color": "Red",
-    "version": "AA",
-    "block": [
-      "01"
-    ],
-    "restriction": "-",
-    "illustrator": "Naochika Morishita"
   },
   {
     "id": "P-041_P0",
@@ -19999,6 +20020,36 @@
     "notes": "DC-1 2022",
     "color": "Red",
     "version": "Stamp",
+    "block": [
+      "01"
+    ],
+    "restriction": "-",
+    "illustrator": "Naochika Morishita"
+  },
+  {
+    "id": "P-041_P1",
+    "name": "Guilmon",
+    "cardImage": "assets/images/cards/eng/P-041_P1.webp",
+    "cardType": "Digimon",
+    "dp": "2000",
+    "playCost": "3",
+    "digivolveCost1": "0 from Lv.2",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.3",
+    "form": "Rookie",
+    "attribute": "Virus",
+    "type": "Reptile",
+    "rarity": "P",
+    "cardNumber": "P-041",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Attacking] Trigger ＜Draw 1＞. (Draw 1 card from your deck.)",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "DC-1 2022",
+    "color": "Red",
+    "version": "AA",
     "block": [
       "01"
     ],
@@ -20549,8 +20600,8 @@
     "color": "Red",
     "version": "AA",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Ryuda"
@@ -20580,8 +20631,8 @@
     "color": "Red",
     "version": "Stamp",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "sasasi"
@@ -20611,8 +20662,8 @@
     "color": "Red",
     "version": "AA",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Nakano Haito"
@@ -20642,8 +20693,8 @@
     "color": "Red",
     "version": "AA",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Hokyyuu"
@@ -21230,6 +21281,36 @@
     "illustrator": "tessy"
   },
   {
+    "id": "ST10-06_P1",
+    "name": "Mastemon",
+    "cardImage": "assets/images/cards/eng/ST10-06_P1.webp",
+    "cardType": "Digimon",
+    "dp": "13000",
+    "playCost": "13",
+    "digivolveCost1": "5 from Lv.5",
+    "digivolveCost2": "5 from Lv.5",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Vaccine",
+    "type": "Angel",
+    "rarity": "SR",
+    "cardNumber": "ST10-06",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "＜DNA Digivolution: 0 from yellow Lv.5 + purple Lv.5＞ Digivolve unsuspended with the 2 specified Digimon stacked on top of each other.",
+    "effect": "[When Digivolving] Place 1 yellow or purple Digimon card from your trash on top of your security stack face down. When DNA digivolving, you may search your security stack for 1 level 5 or lower Digimon card and play it without paying its memory cost. Then, shuffle your security stack.\n[All Turns] When you play another Digimon using an effect, delete 1 of your opponent's Digimon whose level is less than or equal to the played Digimon's level.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "THEME BOOSTER -DIGITAL HAZRAD-[EX-02] Box Promotion,DIGIMON CARD GAME ADVENTURE BOX [AB-01] Box Promotion",
+    "color": "Yellow/Purple",
+    "version": "AA",
+    "block": [
+      "01"
+    ],
+    "restriction": "-",
+    "illustrator": "Nakano Haito"
+  },
+  {
     "id": "ST2-02_P1",
     "name": "Gomamon",
     "cardImage": "assets/images/cards/eng/ST2-02_P1.webp",
@@ -21681,7 +21762,8 @@
     "color": "Blue",
     "version": "AA",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Ishibashi Yosuke"
@@ -21711,7 +21793,8 @@
     "color": "Blue",
     "version": "Stamp",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Ishibashi Yosuke"
@@ -21771,8 +21854,8 @@
     "color": "Yellow",
     "version": "Stamp",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Qacoro"
@@ -21802,8 +21885,8 @@
     "color": "Yellow",
     "version": "Stamp",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Qacoro"
@@ -21833,8 +21916,8 @@
     "color": "Yellow",
     "version": "Stamp",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Kayo Horaguchi"
@@ -22944,36 +23027,6 @@
     "illustrator": "Kenji Watanabe"
   },
   {
-    "id": "ST7-05_P1",
-    "name": "Growlmon",
-    "cardImage": "assets/images/cards/eng/ST7-05_P1.webp",
-    "cardType": "Digimon",
-    "dp": "5000",
-    "playCost": "4",
-    "digivolveCost1": "2 from Lv.3",
-    "digivolveCost2": "-",
-    "cardLv": "Lv.4",
-    "form": "Champion",
-    "attribute": "Virus",
-    "type": "Dark Dragon",
-    "rarity": "R",
-    "cardNumber": "ST7-05",
-    "digiXros": "-",
-    "specialDigivolve": "-",
-    "dnaDigivolve": "-",
-    "effect": "-",
-    "digivolveEffect": "[Your Turn] [Once Per Turn] When an opponent's Digimon is deleted, gain 1 memory.",
-    "securityEffect": "-",
-    "notes": "DC-1 2022 TOP 64",
-    "color": "Red",
-    "version": "AA",
-    "block": [
-      "01"
-    ],
-    "restriction": "-",
-    "illustrator": "toriyufu"
-  },
-  {
     "id": "ST7-05_P0",
     "name": "Growlmon",
     "cardImage": "assets/images/cards/eng/ST7-05_P0.webp",
@@ -22997,6 +23050,36 @@
     "notes": "DC-1 2022 TOP 64",
     "color": "Red",
     "version": "Stamp",
+    "block": [
+      "01"
+    ],
+    "restriction": "-",
+    "illustrator": "toriyufu"
+  },
+  {
+    "id": "ST7-05_P1",
+    "name": "Growlmon",
+    "cardImage": "assets/images/cards/eng/ST7-05_P1.webp",
+    "cardType": "Digimon",
+    "dp": "5000",
+    "playCost": "4",
+    "digivolveCost1": "2 from Lv.3",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.4",
+    "form": "Champion",
+    "attribute": "Virus",
+    "type": "Dark Dragon",
+    "rarity": "R",
+    "cardNumber": "ST7-05",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "-",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When an opponent's Digimon is deleted, gain 1 memory.",
+    "securityEffect": "-",
+    "notes": "DC-1 2022 TOP 64",
+    "color": "Red",
+    "version": "AA",
     "block": [
       "01"
     ],
@@ -23124,36 +23207,6 @@
     "illustrator": "Kazumasa Yasukuni"
   },
   {
-    "id": "ST7-08_P1",
-    "name": "WarGrowlmon",
-    "cardImage": "assets/images/cards/eng/ST7-08_P1.webp",
-    "cardType": "Digimon",
-    "dp": "8000",
-    "playCost": "8",
-    "digivolveCost1": "3 from Lv.4",
-    "digivolveCost2": "-",
-    "cardLv": "Lv.5",
-    "form": "Ultimate",
-    "attribute": "Virus",
-    "type": "Cyborg",
-    "rarity": "R",
-    "cardNumber": "ST7-08",
-    "digiXros": "-",
-    "specialDigivolve": "-",
-    "dnaDigivolve": "-",
-    "effect": "[When Attacking] Delete 1 of your opponent's Digimon with 3000 DP or less.",
-    "digivolveEffect": "[Your Turn] [Once Per Turn] When an opponent's Digimon is deleted, this Digimon gains ＜Security Attack +1＞ for the turn. (This Digimon checks 1 additional security card.)",
-    "securityEffect": "-",
-    "notes": "DC-1 2022 TOP 32",
-    "color": "Red",
-    "version": "AA",
-    "block": [
-      "01"
-    ],
-    "restriction": "-",
-    "illustrator": "toriyufu"
-  },
-  {
     "id": "ST7-08_P0",
     "name": "WarGrowlmon",
     "cardImage": "assets/images/cards/eng/ST7-08_P0.webp",
@@ -23177,6 +23230,36 @@
     "notes": "DC-1 2022 TOP 32",
     "color": "Red",
     "version": "Stamp",
+    "block": [
+      "01"
+    ],
+    "restriction": "-",
+    "illustrator": "toriyufu"
+  },
+  {
+    "id": "ST7-08_P1",
+    "name": "WarGrowlmon",
+    "cardImage": "assets/images/cards/eng/ST7-08_P1.webp",
+    "cardType": "Digimon",
+    "dp": "8000",
+    "playCost": "8",
+    "digivolveCost1": "3 from Lv.4",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.5",
+    "form": "Ultimate",
+    "attribute": "Virus",
+    "type": "Cyborg",
+    "rarity": "R",
+    "cardNumber": "ST7-08",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Attacking] Delete 1 of your opponent's Digimon with 3000 DP or less.",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When an opponent's Digimon is deleted, this Digimon gains ＜Security Attack +1＞ for the turn. (This Digimon checks 1 additional security card.)",
+    "securityEffect": "-",
+    "notes": "DC-1 2022 TOP 32",
+    "color": "Red",
+    "version": "AA",
     "block": [
       "01"
     ],
@@ -23214,36 +23297,6 @@
     "illustrator": "Ishibashi Yosuke"
   },
   {
-    "id": "ST7-11_P1",
-    "name": "Lightning Joust",
-    "cardImage": "assets/images/cards/eng/ST7-11_P1.webp",
-    "cardType": "Option",
-    "dp": "-",
-    "playCost": "1",
-    "digivolveCost1": "-",
-    "digivolveCost2": "-",
-    "cardLv": "",
-    "form": "-",
-    "attribute": "-",
-    "type": "-",
-    "rarity": "U",
-    "cardNumber": "ST7-11",
-    "digiXros": "-",
-    "specialDigivolve": "-",
-    "dnaDigivolve": "-",
-    "effect": "[Main] 1 of your Digimon gets +2000 DP for the turn. Then, if the number of cards in your security stack is less than or equal to your opponent's, 1 of your Digimon gains ＜Security Attack +1＞ for the turn. (This Digimon checks 1 additional security card.)",
-    "digivolveEffect": "-",
-    "securityEffect": "[Security] Add this card to its owner's hand.",
-    "notes": "DC-1 2022",
-    "color": "Red",
-    "version": "AA",
-    "block": [
-      "01"
-    ],
-    "restriction": "-",
-    "illustrator": "Nakano Haito"
-  },
-  {
     "id": "ST7-11_P0",
     "name": "Lightning Joust",
     "cardImage": "assets/images/cards/eng/ST7-11_P0.webp",
@@ -23267,6 +23320,36 @@
     "notes": "DC-1 2022",
     "color": "Red",
     "version": "Stamp",
+    "block": [
+      "01"
+    ],
+    "restriction": "-",
+    "illustrator": "Nakano Haito"
+  },
+  {
+    "id": "ST7-11_P1",
+    "name": "Lightning Joust",
+    "cardImage": "assets/images/cards/eng/ST7-11_P1.webp",
+    "cardType": "Option",
+    "dp": "-",
+    "playCost": "1",
+    "digivolveCost1": "-",
+    "digivolveCost2": "-",
+    "cardLv": "",
+    "form": "-",
+    "attribute": "-",
+    "type": "-",
+    "rarity": "U",
+    "cardNumber": "ST7-11",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[Main] 1 of your Digimon gets +2000 DP for the turn. Then, if the number of cards in your security stack is less than or equal to your opponent's, 1 of your Digimon gains ＜Security Attack +1＞ for the turn. (This Digimon checks 1 additional security card.)",
+    "digivolveEffect": "-",
+    "securityEffect": "[Security] Add this card to its owner's hand.",
+    "notes": "DC-1 2022",
+    "color": "Red",
+    "version": "AA",
     "block": [
       "01"
     ],
@@ -23596,36 +23679,6 @@
     "securityEffect": "-",
     "notes": "THEME BOOSTER -DIGITAL HAZRAD-[EX-02] Box Promotion,DIGIMON CARD GAME ADVENTURE BOX [AB-01] Box Promotion",
     "color": "Blue/Green",
-    "version": "AA",
-    "block": [
-      "01"
-    ],
-    "restriction": "-",
-    "illustrator": "Nakano Haito"
-  },
-  {
-    "id": "ST10-06_P1",
-    "name": "Mastemon",
-    "cardImage": "assets/images/cards/eng/ST10-06_P1.webp",
-    "cardType": "Digimon",
-    "dp": "13000",
-    "playCost": "13",
-    "digivolveCost1": "5 from Lv.5",
-    "digivolveCost2": "5 from Lv.5",
-    "cardLv": "Lv.6",
-    "form": "Mega",
-    "attribute": "Vaccine",
-    "type": "Angel",
-    "rarity": "SR",
-    "cardNumber": "ST10-06",
-    "digiXros": "-",
-    "specialDigivolve": "-",
-    "dnaDigivolve": "＜DNA Digivolution: 0 from yellow Lv.5 + purple Lv.5＞ Digivolve unsuspended with the 2 specified Digimon stacked on top of each other.",
-    "effect": "[When Digivolving] Place 1 yellow or purple Digimon card from your trash on top of your security stack face down. When DNA digivolving, you may search your security stack for 1 level 5 or lower Digimon card and play it without paying its memory cost. Then, shuffle your security stack.\n[All Turns] When you play another Digimon using an effect, delete 1 of your opponent's Digimon whose level is less than or equal to the played Digimon's level.",
-    "digivolveEffect": "-",
-    "securityEffect": "-",
-    "notes": "THEME BOOSTER -DIGITAL HAZRAD-[EX-02] Box Promotion,DIGIMON CARD GAME ADVENTURE BOX [AB-01] Box Promotion",
-    "color": "Yellow/Purple",
     "version": "AA",
     "block": [
       "01"

@@ -205,7 +205,8 @@
     "color": "Blue",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Takase"
@@ -235,8 +236,8 @@
     "color": "Blue",
     "version": "Normal",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Takase"
@@ -326,7 +327,8 @@
     "color": "Blue",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "TENYA YABUNO"
@@ -356,7 +358,8 @@
     "color": "Blue",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "TENYA YABUNO"
@@ -386,7 +389,8 @@
     "color": "Black",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Takase"
@@ -476,7 +480,8 @@
     "color": "Black",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "As'Maria"
@@ -506,7 +511,8 @@
     "color": "Purple",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Takase"
@@ -836,8 +842,8 @@
     "color": "Yellow",
     "version": "Normal",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Nakano Haito"
@@ -957,7 +963,8 @@
     "color": "Green",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Kirita"
@@ -1047,7 +1054,8 @@
     "color": "Red",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Shin Sasaki"
@@ -1077,7 +1085,8 @@
     "color": "Blue",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Shin Sasaki"
@@ -1107,7 +1116,8 @@
     "color": "Yellow",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Shin Sasaki"
@@ -1137,7 +1147,8 @@
     "color": "Green",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Shin Sasaki"
@@ -1167,7 +1178,8 @@
     "color": "Black",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Shin Sasaki"
@@ -1197,7 +1209,8 @@
     "color": "Purple",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Shin Sasaki"
@@ -1407,7 +1420,8 @@
     "color": "Blue",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "TENYA YABUNO"
@@ -1437,7 +1451,8 @@
     "color": "Blue",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "TENYA YABUNO"

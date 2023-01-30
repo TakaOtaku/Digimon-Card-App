@@ -6,13 +6,18 @@ import {
   OnInit,
   SimpleChanges,
 } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { ICard, ICountCard, IDeck, IUser } from '../../../models';
+import { selectDeckDisplayTable } from '../../store/digimon.selectors';
 import { emptyDeck } from '../../store/reducers/digimon.reducers';
 
 @Component({
   selector: 'digimon-decks',
   template: `
-    <div class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <div
+      *ngIf="(displayTables$ | async) === false; else deckTable"
+      class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+    >
       <digimon-deck-container
         class="mx-auto min-w-[280px] max-w-[285px]"
         (click)="showDeckDialog(deck)"
@@ -21,17 +26,24 @@ import { emptyDeck } from '../../store/reducers/digimon.reducers';
         [deck]="deck"
       >
       </digimon-deck-container>
+
+      <p-paginator
+        (onPageChange)="onPageChange($event)"
+        [first]="first"
+        [rows]="20"
+        [showJumpToPageDropdown]="true"
+        [showPageLinks]="false"
+        [totalRecords]="decks.length"
+        styleClass="border-0 bg-transparent mx-auto"
+      ></p-paginator>
     </div>
 
-    <p-paginator
-      (onPageChange)="onPageChange($event)"
-      [first]="first"
-      [rows]="20"
-      [showJumpToPageDropdown]="true"
-      [showPageLinks]="false"
-      [totalRecords]="decks.length"
-      styleClass="border-0 bg-transparent mx-auto"
-    ></p-paginator>
+    <ng-template #deckTable>
+      <digimon-decks-table
+        [decks]="decks"
+        (onDeckClick)="showDeckDialog($event)"
+      ></digimon-decks-table>
+    </ng-template>
 
     <p-dialog
       header="Deck Details"
@@ -72,6 +84,10 @@ export class DecksComponent implements OnInit, OnChanges {
 
   deck: IDeck = emptyDeck;
   deckDialog = false;
+
+  displayTables$ = this.store.select(selectDeckDisplayTable);
+
+  constructor(private store: Store) {}
 
   ngOnInit() {
     if (!this.decks) {

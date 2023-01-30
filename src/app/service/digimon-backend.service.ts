@@ -12,6 +12,7 @@ import {
 } from 'src/models';
 import { CARDSET, IBlog, IBlogWithText, ITag } from '../../models';
 import { IEvent } from '../features/home/components/event-calendar.component';
+import { setDeckImage } from '../functions/digimon-card.functions';
 import { emptySettings } from '../store/reducers/save.reducer';
 
 const baseUrl = 'https://backend.digimoncard.app/api/';
@@ -136,12 +137,19 @@ export class DigimonBackendService {
         const collection: ICountCard[] = JSON.parse(save.collection);
         const decks: IDeck[] = JSON.parse(save.decks);
         const settings: ISettings = JSON.parse(save.settings);
-        return {
+        const newSave = {
           ...save,
           collection,
           decks,
           settings,
         } as ISave;
+
+        newSave.settings.aaCollectionMinimum =
+          newSave.settings.aaCollectionMinimum !== undefined
+            ? newSave.settings.aaCollectionMinimum
+            : 1;
+
+        return newSave;
       })
     );
   }
@@ -193,6 +201,10 @@ export class DigimonBackendService {
       };
     } else {
       newDeck = deck;
+    }
+
+    if (!newDeck.cardImage || newDeck.cardImage === 'BT1-001') {
+      newDeck.cardImage = setDeckImage(newDeck).id;
     }
 
     return this.http.put(`${baseUrl}decks/${deck.id}`, newDeck);

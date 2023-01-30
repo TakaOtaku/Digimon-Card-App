@@ -1,6 +1,7 @@
 import { createAction, props } from '@ngrx/store';
 import { ICard, ICountCard, IDeck, IFilter, ISave, ISort } from '../../models';
 import { IBlog } from '../../models/interfaces/blog-entry.interface';
+import { ProductCM } from '../service/card-market.service';
 
 //region Digimon Card Actions
 export const setDigimonCards = createAction(
@@ -14,6 +15,11 @@ export const setFilteredDigimonCards = createAction(
 //endregion
 
 //region Website Actions
+export const setPriceGuideCM = createAction(
+  '[Set PriceGuide] Set CardMarket PriceGuide',
+  props<{ products: ProductCM[] }>()
+);
+
 export const setDeck = createAction(
   '[Set Deck] Set current Deck',
   props<{ deck: IDeck }>()
@@ -36,6 +42,11 @@ export const setMobileCollectionView = createAction(
 
 export const changeCollectionMinimum = createAction(
   '[Settings] Change Collection Minimum',
+  props<{ minimum: number }>()
+);
+
+export const changeAACollectionMinimum = createAction(
+  '[Settings] Change AA Collection Minimum',
   props<{ minimum: number }>()
 );
 
@@ -92,6 +103,14 @@ export const changeCardSets = createAction(
 export const changeShowUserStats = createAction(
   '[Settings] Change Show User Stats',
   props<{ showUserStats: boolean }>()
+);
+export const setDeckDisplayTable = createAction(
+  '[Settings] Set Deck Display Table',
+  props<{ deckDisplayTable: boolean }>()
+);
+export const setShowReprintCards = createAction(
+  '[Settings] Set ShowReprintCards',
+  props<{ showReprintCards: boolean }>()
 );
 //endregions
 

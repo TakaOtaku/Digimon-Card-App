@@ -326,7 +326,8 @@
     "color": "Black",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "tyuga"

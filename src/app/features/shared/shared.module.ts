@@ -49,7 +49,6 @@ import { ChartContainerComponent } from './statistics/chart-container.component'
 import { ChartContainersComponent } from './statistics/chart-containers.component';
 import { ColorSpreadComponent } from './statistics/color-spread.component';
 import { DdtoSpreadComponent } from './statistics/ddto-spread.component';
-import { DeckStatsComponent } from './statistics/deck-stats.component';
 import { LevelSpreadComponent } from './statistics/level-spread.component';
 
 @NgModule({
@@ -75,7 +74,6 @@ import { LevelSpreadComponent } from './statistics/level-spread.component';
     RangeSliderComponent,
     DeckDialogComponent,
     DeckCardComponent,
-    DeckStatsComponent,
     ChartContainersComponent,
     ChartContainerComponent,
     ColorSpreadComponent,
@@ -100,7 +98,6 @@ import { LevelSpreadComponent } from './statistics/level-spread.component';
     FilterSideBoxComponent,
     DeckDialogComponent,
     DeckCardComponent,
-    DeckStatsComponent,
     ChartContainersComponent,
     ChartContainerComponent,
     ColorSpreadComponent,

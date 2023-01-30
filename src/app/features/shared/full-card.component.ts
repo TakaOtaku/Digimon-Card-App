@@ -14,6 +14,7 @@ import { addCardToDeck, changeCardCount } from '../../store/digimon.actions';
 import {
   selectCollectionMinimum,
   selectDeck,
+  selectSettings,
 } from '../../store/digimon.selectors';
 
 @Component({
@@ -26,10 +27,19 @@ import {
         <div class="absolute top-1 z-10 grid w-full grid-cols-5 gap-0">
           <div></div>
           <img
-            *ngIf="card.version !== 'Normal'"
+            *ngIf="card.version !== 'Normal' && card.version !== 'Reprint'"
             [src]="
               aa.get(this.card.color) ??
               'assets/images/banner/ico_card_detail_multi.png'
+            "
+            alt="AA-Banner"
+            class="col-span-3 w-full"
+          />
+          <img
+            *ngIf="card.version === 'Reprint'"
+            [src]="
+              reprint.get(this.card.color) ??
+              'assets/images/banner/reprint_multi.png'
             "
             alt="AA-Banner"
             class="col-span-3 w-full"
@@ -38,7 +48,7 @@ import {
 
         <img
           [lazyLoad]="card.cardImage"
-          [ngClass]="{ grayscale: count < collectionMinimum && collectionMode }"
+          [ngClass]="{ grayscale: setGrayScale() }"
           [ngStyle]="{ border: cardBorder, 'border-radius': cardRadius }"
           alt="{{ card.cardNumber + ' ' + card.name }}"
           class="m-auto"
@@ -140,7 +150,19 @@ export class FullCardComponent implements OnInit, OnDestroy {
     ['Multi', 'assets/images/banner/ico_card_detail_multi.png'],
   ]);
 
+  reprint = new Map<string, string>([
+    ['Red', 'assets/images/banner/reprint_red.png'],
+    ['Blue', 'assets/images/banner/reprint_blue.png'],
+    ['Yellow', 'assets/images/banner/reprint_yellow.png'],
+    ['Green', 'assets/images/banner/reprint_green.png'],
+    ['Black', 'assets/images/banner/reprint_black.png'],
+    ['Purple', 'assets/images/banner/reprint_purple.png'],
+    ['White', 'assets/images/banner/reprint_white.png'],
+    ['Multi', 'assets/images/banner/reprint_multi.png'],
+  ]);
+
   collectionMinimum = 0;
+  aaCollectionMinimum = 0;
 
   countInDeck = 0;
 
@@ -150,9 +172,12 @@ export class FullCardComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.store
-      .select(selectCollectionMinimum)
+      .select(selectSettings)
       .pipe(takeUntil(this.onDestroy$))
-      .subscribe((minimum) => (this.collectionMinimum = minimum));
+      .subscribe((settings) => {
+        this.collectionMinimum = settings.collectionMinimum;
+        this.aaCollectionMinimum = settings.aaCollectionMinimum;
+      });
     this.store
       .select(selectDeck)
       .pipe(takeUntil(this.onDestroy$))
@@ -221,4 +246,11 @@ export class FullCardComponent implements OnInit, OnDestroy {
     //(((OldValue - OldMin) * NewRange) / OldRange) + NewMin
     return ((input - 5) * (30 - 20)) / (100 - 5) + 20;
   };
+
+  setGrayScale(): boolean | undefined {
+    if (this.card.version !== 'Normal') {
+      return this.count < this.aaCollectionMinimum && this.collectionMode;
+    }
+    return this.count < this.collectionMinimum && this.collectionMode;
+  }
 }

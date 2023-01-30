@@ -11,6 +11,7 @@ import {
   tagsList,
 } from '../../models';
 import { ColorOrderMap, DeckColorMap } from '../../models/maps/color.map';
+import { ICardImage } from '../features/shared/dialogs/deck-dialog.component';
 
 export function setTags(deck: IDeck, allCards: ICard[]) {
   let tags = [];
@@ -304,4 +305,15 @@ export function getCountFromDeckCards(
     number += card.count;
   });
   return number;
+}
+
+export function setDeckImage(deck: IDeck): ICard {
+  let deckCards = mapToDeckCards(deck.cards, setupDigimonCards(CARDSET.Both));
+
+  deckCards = deckCards.sort(
+    (a, b) =>
+      Number(b.cardLv.replace('Lv.', '')) - Number(a.cardLv.replace('Lv.', ''))
+  );
+
+  return deckCards.length > 0 ? deckCards[0] : englishCards[0];
 }

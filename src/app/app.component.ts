@@ -4,11 +4,13 @@ import { MessageService } from 'primeng/api';
 import { first } from 'rxjs';
 import { ISave } from '../models';
 import { AuthService } from './service/auth.service';
+import { CardMarketService } from './service/card-market.service';
 import { DigimonBackendService } from './service/digimon-backend.service';
 import {
   loadSave,
   setBlogs,
   setCommunityDecks,
+  setPriceGuideCM,
   setSave,
 } from './store/digimon.actions';
 import { emptySave } from './store/reducers/save.reducer';
@@ -74,12 +76,15 @@ export class AppComponent {
     private store: Store,
     private authService: AuthService,
     private messageService: MessageService,
-    private digimonBackendService: DigimonBackendService
+    private digimonBackendService: DigimonBackendService,
+    private cardMarketService: CardMarketService
   ) {
     this.getDecks();
     this.getBlogs();
 
     this.loadSave();
+
+    this.loadPriceGuide();
 
     document.addEventListener(
       'contextmenu',
@@ -187,6 +192,15 @@ export class AppComponent {
       .pipe(first())
       .subscribe((blogs) => {
         this.store.dispatch(setBlogs({ blogs }));
+      });
+  }
+
+  loadPriceGuide() {
+    this.cardMarketService
+      .getPrizeGuide()
+      .pipe(first())
+      .subscribe((products) => {
+        this.store.dispatch(setPriceGuideCM({ products }));
       });
   }
 }

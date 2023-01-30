@@ -3,6 +3,7 @@ import { ICountCard, IDeck, ISave, ISettings } from '../../../models';
 import { CARDSET } from '../../../models/enums/card-set.enum';
 import {
   addToCollection,
+  changeAACollectionMinimum,
   changeCardCount,
   changeCardSets,
   changeCollectionMinimum,
@@ -14,21 +15,27 @@ import {
   loadSave,
   saveDeck,
   setCollection,
+  setDeckDisplayTable,
   setSave,
+  setShowReprintCards,
 } from '../digimon.actions';
 
 export const emptySettings: ISettings = {
   cardSet: CARDSET.Both,
   collectionMode: false,
   collectionMinimum: 1,
+  aaCollectionMinimum: 1,
 
   showPreRelease: true,
   showStampedCards: true,
   showAACards: true,
+  showReprintCards: false,
 
   sortDeckOrder: 'Level',
 
   showUserStats: true,
+
+  deckDisplayTable: false,
 };
 
 export const emptySave: ISave = {
@@ -87,6 +94,10 @@ export const saveReducer = createReducer(
     ...state,
     settings: { ...state.settings, collectionMinimum: minimum },
   })),
+  on(changeAACollectionMinimum, (state, { minimum }) => ({
+    ...state,
+    settings: { ...state.settings, aaCollectionMinimum: minimum },
+  })),
   on(changeShowVersion, (state, { showPre, showAA, showStamp }) => ({
     ...state,
     settings: {
@@ -95,6 +106,14 @@ export const saveReducer = createReducer(
       showAACards: showAA,
       showStampedCards: showStamp,
     },
+  })),
+  on(setDeckDisplayTable, (state, { deckDisplayTable }) => ({
+    ...state,
+    settings: { ...state.settings, deckDisplayTable },
+  })),
+  on(setShowReprintCards, (state, { showReprintCards }) => ({
+    ...state,
+    settings: { ...state.settings, showReprintCards },
   })),
 
   on(importDeck, (state, { deck }) => {

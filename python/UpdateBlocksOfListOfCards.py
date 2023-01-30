@@ -95,7 +95,66 @@ listsOfCardIds = [
 ]
 
 cardLists = [
+  'eng/BT/BT1',
+  'eng/BT/BT2',
+  'eng/BT/BT3',
+  'eng/BT/BT4',
+  'eng/BT/BT5',
+  'eng/BT/BT6',
+  'eng/BT/BT7',
+  'eng/BT/BT8',
+  'eng/BT/BT9',
+  'eng/BT/BT10',
+  'eng/EX/EX1',
+  'eng/EX/EX2',
+  'eng/EX/EX3',
+  'eng/ST/ST1',
+  'eng/ST/ST2',
+  'eng/ST/ST3',
+  'eng/ST/ST4',
+  'eng/ST/ST5',
+  'eng/ST/ST6',
+  'eng/ST/ST7',
+  'eng/ST/ST8',
+  'eng/ST/ST9',
+  'eng/ST/ST10',
+  'eng/ST/ST12',
+  'eng/ST/ST13',
+  'eng/AAs',
+  'eng/P',
+  'eng/PreRelease',
 
+  'jap/BT/BT1',
+  'jap/BT/BT2',
+  'jap/BT/BT3',
+  'jap/BT/BT4',
+  'jap/BT/BT5',
+  'jap/BT/BT6',
+  'jap/BT/BT7',
+  'jap/BT/BT8',
+  'jap/BT/BT9',
+  'jap/BT/BT10',
+  'jap/BT/BT11',
+  'jap/BT/BT12',
+  'jap/EX/EX1',
+  'jap/EX/EX2',
+  'jap/EX/EX3',
+  'jap/EX/EX4',
+  'jap/ST/ST1',
+  'jap/ST/ST2',
+  'jap/ST/ST3',
+  'jap/ST/ST4',
+  'jap/ST/ST5',
+  'jap/ST/ST6',
+  'jap/ST/ST7',
+  'jap/ST/ST8',
+  'jap/ST/ST9',
+  'jap/ST/ST10',
+  'jap/ST/ST12',
+  'jap/ST/ST13',
+  'jap/ST/ST14',
+  'jap/AAs',
+  'jap/P',
 ]
 
 blocks = ['01', '02']
@@ -103,13 +162,16 @@ blocks = ['01', '02']
 for cardList in cardLists:
     cards = []
     cardsWithBlocks = []
-    with open(cardList, encoding='utf-8') as fh:
+    with open('jsons/' + cardList + '.json', encoding='utf-8') as fh:
       cards = json.load(fh)
 
     index = 0
     for card in cards:
-        card['block'] = blocks
+      if card['cardNumber'] in listsOfCardIds:
+          card['block'] = blocks
+          cardsWithBlocks.append(card)
+      else:
         cardsWithBlocks.append(card)
 
-    with open(cardList, 'w') as f:
+    with open('jsons/' + cardList + '.json', 'w') as f:
         f.write("%s\n" % json.dumps(cardsWithBlocks))

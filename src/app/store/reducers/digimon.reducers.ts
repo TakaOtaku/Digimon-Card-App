@@ -10,6 +10,7 @@ import {
   setCommunityDeckSearch,
   setDeck,
   setMobileCollectionView,
+  setPriceGuideCM,
 } from '../digimon.actions';
 
 export const emptyDeck: IDeck = {
@@ -64,6 +65,7 @@ export const initialState: IDigimonState = {
   communityDeckSearch: '',
   communityDecks: [],
   blogs: [],
+  priceGuideCM: [],
 };
 
 export const digimonReducer = createReducer(
@@ -90,5 +92,9 @@ export const digimonReducer = createReducer(
   on(setBlogs, (state, { blogs }) => ({
     ...state,
     blogs,
+  })),
+  on(setPriceGuideCM, (state, { products }) => ({
+    ...state,
+    priceGuideCM: products,
   }))
 );

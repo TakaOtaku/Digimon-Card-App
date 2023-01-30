@@ -50,11 +50,12 @@ export const GroupedSets = [
     ],
   },
   {
-    items: [{ label: 'P', value: 'P' }],
+    items: [
+      { label: 'RB', value: 'RB1' },
+      { label: 'P', value: 'P' },
+    ],
   },
 ];
-
-export const CardTypes: string[] = ['Digi-Egg', 'Digimon', 'Tamer', 'Option'];
 
 export const Keywords: string[] = [
   '\uff1cAlliance\uff1e',
@@ -422,5 +423,9 @@ export const VersionButtons: MultiButtons[] = [
   {
     name: 'Stamp',
     value: 'Stamp',
+  },
+  {
+    name: 'Reprint',
+    value: 'Reprint',
   },
 ];

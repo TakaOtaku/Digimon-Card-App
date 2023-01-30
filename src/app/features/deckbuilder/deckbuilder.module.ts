@@ -9,13 +9,18 @@ import { DialogModule } from 'primeng/dialog';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { RippleModule } from 'primeng/ripple';
+import { SelectButtonModule } from 'primeng/selectbutton';
+import { TableModule } from 'primeng/table';
 import { TooltipModule } from 'primeng/tooltip';
 import { DigimonStoreModule } from '../../digimon-store.module';
 import { ObscenityPipe } from '../../pipes/obscenity.pipe';
+import { SafePipe } from '../../pipes/safe.pipe';
 import { AuthService } from '../../service/auth.service';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
 import { CollectionModule } from '../collection/collection.module';
 import { SharedModule } from '../shared/shared.module';
+import { DeckStatsComponent } from './components/deck-stats.component';
+import { PriceCheckDialogComponent } from './components/price-check-dialog.component';
 import { DeckbuilderPageComponent } from './deckbuilder-page.component';
 import { DeckMetadataComponent } from './components/deck-metadata.component';
 import { DeckToolbarComponent } from './components/deck-toolbar.component';
@@ -27,7 +32,9 @@ import { DeckViewComponent } from './components/deck-view.component';
     DeckViewComponent,
     DeckToolbarComponent,
     DeckMetadataComponent,
+    DeckStatsComponent,
     ObscenityPipe,
+    PriceCheckDialogComponent,
   ],
   imports: [
     CommonModule,
@@ -44,6 +51,8 @@ import { DeckViewComponent } from './components/deck-view.component';
     TooltipModule,
     RippleModule,
     ButtonModule,
+    TableModule,
+    SelectButtonModule,
   ],
   providers: [AuthService, DigimonBackendService],
 })

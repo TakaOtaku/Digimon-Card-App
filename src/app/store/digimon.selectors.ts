@@ -10,6 +10,8 @@ import {
   ISettings,
   ISort,
 } from '../../models';
+import { ProductCM } from '../service/card-market.service';
+import { emptyDeck } from './reducers/digimon.reducers';
 
 export const selectIDigimonCards =
   createFeatureSelector<IDigimonCards>('digimonCards');
@@ -54,6 +56,12 @@ export const selectBlogs = createSelector(
   selectDigimonState,
   (state: IDigimonState) => state.blogs
 );
+
+export const selectPriceGuideCM = createSelector(
+  selectDigimonState,
+  (state: IDigimonState) => state.priceGuideCM
+);
+
 //endregion
 
 //region Digimon Card Selectors
@@ -96,6 +104,10 @@ export const selectCollectionMinimum = createSelector(
   selectSettings,
   (state: ISettings) => state.collectionMinimum
 );
+export const selectAACollectionMinimum = createSelector(
+  selectSettings,
+  (state: ISettings) => state.aaCollectionMinimum
+);
 export const selectShowPreRelease = createSelector(
   selectSettings,
   (state: ISettings) => state.showPreRelease
@@ -113,22 +125,33 @@ export const selectShowUserStats = createSelector(
   selectSettings,
   (state: ISettings) => state.showUserStats
 );
+export const selectDeckDisplayTable = createSelector(
+  selectSettings,
+  (state: ISettings) => state.deckDisplayTable
+);
+export const selectShowReprintCards = createSelector(
+  selectSettings,
+  (state: ISettings) => state.showReprintCards
+);
 //endregion
 
 export const selectChangeAdvancedSettings = createSelector(
   selectShowPreRelease,
   selectShowAACards,
   selectShowStampedCards,
+  selectShowReprintCards,
   selectFilter,
   (
     showPreRelease: boolean,
     showAA: boolean,
     showStamped: boolean,
+    showReprint: boolean,
     filter: IFilter
   ) => ({
     showPreRelease,
     showAA,
     showStamped,
+    showReprint,
     filter,
   })
 );
@@ -146,11 +169,40 @@ export const selectChangeFilterEffect = createSelector(
   })
 );
 
+export interface DeckBuilderViewModel {
+  deck: IDeck;
+  cards: ICard[];
+  priceGuideCM: ProductCM[];
+  collection: ICountCard[];
+}
 export const selectDeckBuilderViewModel = createSelector(
   selectDeck,
   selectAllCards,
-  (deck: IDeck | null, cards: ICard[]) => ({
-    deck,
-    cards,
-  })
+  selectPriceGuideCM,
+  selectCollection,
+  (
+    deck: IDeck | null,
+    cards: ICard[],
+    priceGuideCM: ProductCM[],
+    collection: ICountCard[]
+  ) => {
+    const noEmptyDeck = deck ?? emptyDeck;
+    return {
+      deck: noEmptyDeck,
+      cards,
+      priceGuideCM,
+      collection,
+    } as DeckBuilderViewModel;
+  }
+);
+
+export interface ProfileViewModel {
+  save: ISave;
+  priceGuideCM: ProductCM[];
+}
+export const selectProfileViewModel = createSelector(
+  selectSave,
+  selectPriceGuideCM,
+  (save: ISave, priceGuideCM: ProductCM[]) =>
+    ({ save, priceGuideCM } as ProfileViewModel)
 );

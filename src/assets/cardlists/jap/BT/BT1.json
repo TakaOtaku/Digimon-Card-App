@@ -84,7 +84,6 @@
     "color": "Blue",
     "version": "Normal",
     "block": [
-      "00",
       "01",
       "02"
     ],
@@ -176,7 +175,8 @@
     "color": "Yellow",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Kirita"
@@ -206,7 +206,8 @@
     "color": "Green",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "yuuki."
@@ -297,8 +298,8 @@
     "color": "Red",
     "version": "Normal",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "TANIMESO"
@@ -1448,8 +1449,8 @@
     "color": "Yellow",
     "version": "Normal",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "As'Maria"
@@ -1809,7 +1810,8 @@
     "color": "Yellow",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "As'Maria"
@@ -2022,8 +2024,8 @@
     "color": "Green",
     "version": "Normal",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "yuuki."
@@ -2569,8 +2571,8 @@
     "color": "Red",
     "version": "Normal",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": ""
@@ -2630,8 +2632,8 @@
     "color": "Yellow",
     "version": "Normal",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": ""
@@ -2692,8 +2694,8 @@
     "color": "Green",
     "version": "Normal",
     "block": [
-      "00",
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": ""
@@ -3444,7 +3446,8 @@
     "color": "Red",
     "version": "Normal",
     "block": [
-      "00"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "Naochika Morishita"

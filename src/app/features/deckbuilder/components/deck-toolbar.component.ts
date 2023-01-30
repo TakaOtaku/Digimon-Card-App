@@ -8,11 +8,14 @@ import {
 } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { Subject, takeUntil } from 'rxjs';
+import { BehaviorSubject, Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
 import { ICard, IDeck, IDeckCard } from '../../../../models';
 import { setDeck } from '../../../store/digimon.actions';
-import { selectAllCards } from '../../../store/digimon.selectors';
+import {
+  DeckBuilderViewModel,
+  selectAllCards,
+} from '../../../store/digimon.selectors';
 import { emptyDeck } from '../../../store/reducers/digimon.reducers';
 
 @Component({
@@ -22,7 +25,7 @@ import { emptyDeck } from '../../../store/reducers/digimon.reducers';
       class="toolbar ml-3 mr-3 grid w-[100%-3rem] grid-cols-6 justify-evenly border-b-2 border-slate-600 md:grid-cols-12"
     >
       <div
-        class="primary-color col-span-2 flex h-[30px] flex-row justify-center border-2 border-slate-500 pt-1 text-center"
+        class="primary-color flex h-[30px] flex-row justify-center border-2 border-slate-500 pt-1 text-center"
       >
         <b>{{ getCardCount('Egg') }}</b>
         /
@@ -119,7 +122,32 @@ import { emptyDeck } from '../../../store/reducers/digimon.reducers';
         pTooltip="Click to simulate your draw hand and the security stack!"
         tooltipPosition="top"
       ></button>
+
+      <button
+        (click)="priceCheckDialog = true; checkPrice$.next(true)"
+        class="p-button-outlined h-[30px] w-full"
+        icon="pi pi-dollar"
+        iconPos="left"
+        pButton
+        pTooltip="Click to check the price of this Deck!"
+        tooltipPosition="top"
+      ></button>
     </div>
+
+    <p-dialog
+      header="Price Check"
+      [(visible)]="priceCheckDialog"
+      styleClass="w-[100%] min-w-[250px] sm:min-w-[500px] sm:w-[900px] min-h-[500px]"
+      [baseZIndex]="10000"
+      [modal]="true"
+      [dismissableMask]="true"
+      [resizable]="false"
+    >
+      <digimon-price-check-dialog
+        [deckBuilderViewModel]="deckBuilderViewModel"
+        [checkPrice]="checkPrice$"
+      ></digimon-price-check-dialog>
+    </p-dialog>
 
     <p-dialog
       header="Simulate Security/Draw"
@@ -188,6 +216,7 @@ export class DeckToolbarComponent implements OnDestroy {
   @Input() deck: IDeck;
   @Input() mainDeck: IDeckCard[];
   @Input() missingCards: boolean;
+  @Input() deckBuilderViewModel: DeckBuilderViewModel;
 
   @Output() missingCardsChange = new EventEmitter<boolean>();
   @Output() share = new EventEmitter<boolean>();
@@ -196,6 +225,9 @@ export class DeckToolbarComponent implements OnDestroy {
 
   importDeckDialog = false;
   exportDeckDialog = false;
+
+  priceCheckDialog = false;
+  checkPrice$ = new BehaviorSubject(false);
 
   securityStack: ICard[];
   drawHand: ICard[];

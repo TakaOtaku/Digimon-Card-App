@@ -15,6 +15,7 @@ import {
   first,
   map,
   Observable,
+  of,
   Subject,
   switchMap,
   tap,
@@ -26,8 +27,13 @@ import {
   ICard,
   IDeck,
   ISave,
+  ITournamentDeck,
 } from '../../../models';
-import { setColors, setTags } from '../../functions/digimon-card.functions';
+import {
+  setColors,
+  setDeckImage,
+  setTags,
+} from '../../functions/digimon-card.functions';
 import { AuthService } from '../../service/auth.service';
 import { CardMarketService } from '../../service/card-market.service';
 import { CardTraderService } from '../../service/card-trader.service';
@@ -42,16 +48,9 @@ import { emptySettings } from '../../store/reducers/save.reducer';
     <button
       *ngIf="isAdmin()"
       class="border-2 border-amber-200 bg-amber-400"
-      (click)="transferAllDataToSQL()"
+      (click)="updateAllSaves()"
     >
-      Realtime Database to MySQL
-    </button>
-    <button
-      *ngIf="isAdmin()"
-      class="border-2 border-amber-200 bg-amber-400"
-      (click)="updateAllDecks()"
-    >
-      Update all Decks
+      Update all Saves
     </button>
     <button
       *ngIf="isAdmin()"
@@ -60,12 +59,63 @@ import { emptySettings } from '../../store/reducers/save.reducer';
     >
       Update PriceGuide Ids
     </button>
+    <button
+      *ngIf="isAdmin()"
+      class="border-2 border-amber-200 bg-amber-400"
+      (click)="updatePriceGuideIdsAAs()"
+    >
+      Update PriceGuide Ids AAs
+    </button>
+
+    <button
+      *ngIf="isAdmin()"
+      class="border-2 border-amber-200 bg-amber-400"
+      (click)="updateAllDecks()"
+    >
+      Update all Decks
+    </button>
+
+    <p-dialog
+      [(visible)]="updateIDDialog"
+      [baseZIndex]="100000"
+      [dismissableMask]="true"
+      [resizable]="false"
+    >
+      <h1>
+        There are still <b>{{ productsWithoutCorrectID.length }}</b> without
+        correct ID.
+      </h1>
+
+      <a
+        class="my-3"
+        [href]="productsWithoutCorrectID[0]?.link"
+        target="_blank"
+        >{{ productsWithoutCorrectID[0]?.link }}</a
+      >
+
+      <div class="my-3 flex flex-row">
+        <div>Enter a ID:</div>
+        <input
+          [(ngModel)]="currentID"
+          type="number"
+          min="1"
+          max="10"
+          class="text-center font-bold text-black"
+        />
+      </div>
+
+      <button (click)="updateFirstObject()">Save and Next</button>
+    </p-dialog>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TestPageComponent implements OnInit, OnDestroy {
+  updateIDDialog = false;
+  productsWithoutCorrectID: any[] = [];
+  currentID = 1;
+
   private allCards: ICard[] = [];
   private onDestroy$ = new Subject();
+
   constructor(
     private store: Store,
     public authService: AuthService,
@@ -105,198 +155,7 @@ export class TestPageComponent implements OnInit, OnDestroy {
     });
   }
 
-  transferAllDataToSQL() {
-    this.transferDecks();
-    this.transferUsers();
-    this.transferBlogs();
-    this.transferBlogsWithText();
-    //this.transferFromSQLDecks();
-    //this.transferFromSQLUsers();
-    //this.transferFromSQLBlogs();
-    //this.transferFromSQLBlogsWithText();
-  }
-
-  transferDecks() {
-    this.databaseService
-      .loadCommunityDecks()
-      .pipe(filter((value) => value.length > 0))
-      .subscribe((decks) => {
-        decks.forEach((deck) => {
-          this.digimonBackendService
-            .updateDeckWithoutUser(deck)
-            .pipe(
-              first(),
-              tap(() => console.log('Update Deck' + deck.id))
-            )
-            .subscribe((message) => console.log(message));
-        });
-      });
-  }
-
-  transferUsers() {
-    this.databaseService.loadUsers().subscribe((r) => {
-      const value: DataSnapshot = r;
-      if (!value) {
-        return;
-      }
-      const keys: any[] = Object.keys(value.val());
-      const saves: ISave[] = Object.values(value.val());
-
-      const savesWithID = saves.map((value, index) => {
-        if (value.uid) {
-          return value;
-        } else {
-          value.uid = keys[index];
-          return value;
-        }
-      });
-
-      const uniqueIds: any[] = [];
-      const duplicatesRemoved = savesWithID.filter((element) => {
-        const isDuplicate = uniqueIds.includes(element.uid);
-
-        if (!isDuplicate) {
-          uniqueIds.push(element.uid);
-          return true;
-        }
-
-        return false;
-      });
-
-      duplicatesRemoved
-        .filter((value1) => value1.uid)
-        .forEach((save: ISave) => {
-          if (!save.collection) {
-            save.collection = [];
-          }
-          if (!save.decks) {
-            save.decks = [];
-          }
-          if (!save.displayName) {
-            save.displayName = '';
-          }
-          if (!save.photoURL) {
-            save.photoURL = '';
-          }
-          if (!save.settings) {
-            save.settings = emptySettings;
-          }
-          if (!save.version) {
-            save.version = 1.3;
-          }
-
-          this.digimonBackendService
-            .updateSave(save)
-            .pipe(
-              first(),
-              tap(() => console.log('Update Save' + save.uid))
-            )
-            .subscribe((message) => console.log(message));
-        });
-    });
-  }
-
-  transferBlogs() {
-    this.databaseService.loadBlogEntries().subscribe((value: DataSnapshot) => {
-      const blogs: IBlog[] = Object.values(value.val());
-
-      blogs.forEach((blog) => {
-        this.digimonBackendService
-          .updateBlog(blog)
-          .pipe(
-            first(),
-            tap(() => console.log('Update Blog' + blog.uid))
-          )
-          .subscribe((message) => console.log(message));
-      });
-    });
-  }
-
-  transferBlogsWithText() {
-    this.databaseService.loadBlogText().subscribe((value: DataSnapshot) => {
-      const blogTexts: IBlogWithText[] = Object.values(value.val());
-
-      blogTexts.forEach((blog) => {
-        this.digimonBackendService
-          .updateBlogWithText(blog)
-          .pipe(
-            first(),
-            tap(() => console.log('Update BlogWithText' + blog.uid))
-          )
-          .subscribe((message) => console.log(message));
-      });
-    });
-  }
-
-  transferFromSQLDecks() {
-    this.digimonBackendService
-      .getDecks('https://backend.digimoncard.app/api/')
-      .pipe(filter((value) => value.length > 0))
-      .subscribe((decks) => {
-        decks.forEach((deck) => {
-          this.digimonBackendService
-            .updateDeckWithoutUser(deck)
-            .pipe(
-              first(),
-              tap(() => console.log('Update Deck' + deck.id))
-            )
-            .subscribe((message) => console.log(message));
-        });
-      });
-  }
-
-  transferFromSQLUsers() {
-    this.digimonBackendService
-      .getSaves('https://backend.digimoncard.app/api/')
-      .pipe(filter((value) => value.length > 0))
-      .subscribe((saves) => {
-        saves.forEach((save) => {
-          this.digimonBackendService
-            .updateSave(save)
-            .pipe(
-              first(),
-              tap(() => console.log('Update Save' + save.uid))
-            )
-            .subscribe((message) => console.log(message));
-        });
-      });
-  }
-
-  transferFromSQLBlogs() {
-    this.digimonBackendService
-      .getBlogEntries('https://backend.digimoncard.app/api/')
-      .pipe(filter((value) => value.length > 0))
-      .subscribe((blogs) => {
-        blogs.forEach((blog) => {
-          this.digimonBackendService
-            .updateBlog(blog)
-            .pipe(
-              first(),
-              tap(() => console.log('Update Blog' + blog.uid))
-            )
-            .subscribe((message) => console.log(message));
-        });
-      });
-  }
-
-  transferFromSQLBlogsWithText() {
-    this.digimonBackendService
-      .getBlogEntriesWithText('https://backend.digimoncard.app/api/')
-      .pipe(filter((value) => value.length > 0))
-      .subscribe((blogs) => {
-        blogs.forEach((blog) => {
-          this.digimonBackendService
-            .updateBlogWithText(blog)
-            .pipe(
-              first(),
-              tap(() => console.log('Update Blog' + blog.uid))
-            )
-            .subscribe((message) => console.log(message));
-        });
-      });
-  }
-
-  updateAllDecks() {
+  updateAllSaves() {
     this.digimonBackendService
       .getSaves()
       .pipe(first())
@@ -335,10 +194,136 @@ export class TestPageComponent implements OnInit, OnDestroy {
               return this.cardMarketService.updateProductId(id, entry);
             })
           )
-          .subscribe((value) => console.log(value));
+          .subscribe();
       });
 
       //concat(...observable).subscribe((value) => console.log(value));
     });
+  }
+
+  updatePriceGuideIdsAAs() {
+    //Get Price Guide
+    //Get all _P and Cards without correct ID
+    //If one ID got only one match it is the only one so set it to _P1
+    //If there are more open the link in a window and let the user enter a number
+    //Change _PX the X to the entered number
+    this.productsWithoutCorrectID = [];
+
+    this.cardMarketService
+      .getPrizeGuide()
+      .pipe(first())
+      .subscribe((products) => {
+        const wrongIDs = products
+          .filter((product) => product.cardId.endsWith('_P'))
+          .sort((a, b) =>
+            b.cardId
+              .toLocaleLowerCase()
+              .localeCompare(a.cardId.toLocaleLowerCase())
+          );
+
+        const ArrayObject: any = {};
+        wrongIDs.forEach((product) => {
+          if (ArrayObject[product.cardId]) {
+            ArrayObject[product.cardId] = [
+              ...ArrayObject[product.cardId],
+              product,
+            ];
+          } else {
+            ArrayObject[product.cardId] = [product];
+          }
+        });
+
+        const ofArray$: Observable<any>[] = [];
+        Object.entries(ArrayObject).forEach((entry) => {
+          const [key, value] = entry;
+
+          if ((value as any[]).length === 0) {
+            delete ArrayObject[key];
+          } else if ((value as any[]).length === 1) {
+            ofArray$.push(
+              this.cardMarketService
+                .updateProductId(
+                  ArrayObject[key][0].cardId + `1`,
+                  ArrayObject[key][0]
+                )
+                .pipe(first())
+            );
+            delete ArrayObject[key];
+          }
+        });
+
+        concat(...ofArray$).subscribe();
+
+        Object.entries(ArrayObject).forEach((entry) => {
+          const [key, value] = entry;
+          this.productsWithoutCorrectID = [
+            ...this.productsWithoutCorrectID,
+            value,
+          ];
+        });
+
+        this.productsWithoutCorrectID = this.productsWithoutCorrectID.flat();
+        this.updateIDDialog = true;
+      });
+  }
+
+  updateFirstObject() {
+    const id = this.productsWithoutCorrectID[0].cardId + this.currentID;
+    const product = this.productsWithoutCorrectID[0];
+    this.cardMarketService
+      .updateProductId(id, product)
+      .pipe(first())
+      .subscribe();
+    this.productsWithoutCorrectID = this.productsWithoutCorrectID.slice(1);
+  }
+
+  updateAllDecks() {
+    const obsArray$: Observable<any>[] = [];
+
+    this.digimonBackendService
+      .getDecks()
+      .pipe(
+        tap((decks) => {
+          decks.forEach((deck) => {
+            const of = this.updateDeckImage(deck);
+            if (of) {
+              obsArray$.push(of);
+            }
+          });
+        }),
+        switchMap(() => this.digimonBackendService.getTournamentDecks()),
+        tap((tournamentDecks) => {
+          tournamentDecks.forEach((deck) => {
+            const of = this.updateTournamentDeckImage(deck);
+            if (of) {
+              obsArray$.push(of);
+            }
+          });
+        })
+      )
+      .subscribe((decks) => {
+        concat(...obsArray$).subscribe();
+      });
+  }
+  private updateDeckImage(deck: IDeck): Observable<any> | null {
+    if (!deck.imageCardId || deck.imageCardId === 'BT1-001') {
+      const newDecks: IDeck = { ...deck, imageCardId: setDeckImage(deck).id };
+      return this.digimonBackendService.updateDeck(newDecks).pipe(first());
+    }
+    return null;
+  }
+  private updateTournamentDeckImage(
+    deck: ITournamentDeck
+  ): Observable<any> | null {
+    if (!deck.imageCardId || deck.imageCardId === 'BT1-001') {
+      const newDecks: ITournamentDeck = {
+        ...deck,
+        imageCardId: setDeckImage(deck).id,
+      };
+      return this.digimonBackendService
+        .updateTournamentDeck(newDecks)
+        .pipe(first());
+    }
+    return null;
   }
 }
