@@ -137,12 +137,19 @@ export class DigimonBackendService {
         const collection: ICountCard[] = JSON.parse(save.collection);
         const decks: IDeck[] = JSON.parse(save.decks);
         const settings: ISettings = JSON.parse(save.settings);
-        return {
+        const newSave = {
           ...save,
           collection,
           decks,
           settings,
         } as ISave;
+
+        newSave.settings.aaCollectionMinimum =
+          newSave.settings.aaCollectionMinimum !== undefined
+            ? newSave.settings.aaCollectionMinimum
+            : 1;
+
+        return newSave;
       })
     );
   }

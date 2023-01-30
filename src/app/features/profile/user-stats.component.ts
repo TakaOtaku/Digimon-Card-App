@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { ISave } from '../../../models';
+import { ProfileViewModel } from '../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-user-stats',
@@ -47,22 +49,39 @@ import { ISave } from '../../../models';
         <div class="flex flex-col">
           <digimon-collection-circle
             [collection]="save?.collection ?? []"
-            [type]="'P'"
+            [type]="'P-'"
             class="mx-2"
           ></digimon-collection-circle>
           <label class="text-center">P</label>
         </div>
       </div>
 
-      <!--button
+      <button
+        (click)="priceCheckDialog = true"
         class="surface-ground hover:primary-background text-shadow border border-black px-1 font-bold text-[#e2e4e6]"
       >
-        Collection
-      </button-->
+        Collection Price
+      </button>
     </div>
+
+    <p-dialog
+      header="Price Check"
+      [(visible)]="priceCheckDialog"
+      styleClass="w-[100%] min-w-[250px] sm:min-w-[500px] sm:w-[900px] lg:w-[1024px] 2xl:w-[1536px] min-h-[500px]"
+      [baseZIndex]="10000"
+      [modal]="true"
+      [dismissableMask]="true"
+      [resizable]="false"
+    >
+      <digimon-collection-price-check-dialog
+        [save]="save"
+      ></digimon-collection-price-check-dialog>
+    </p-dialog>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserStatsComponent {
-  @Input() save: ISave | null;
+  @Input() save: ISave;
+
+  priceCheckDialog = false;
 }

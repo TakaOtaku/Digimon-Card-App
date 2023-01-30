@@ -3,6 +3,7 @@ import { ICountCard, IDeck, ISave, ISettings } from '../../../models';
 import { CARDSET } from '../../../models/enums/card-set.enum';
 import {
   addToCollection,
+  changeAACollectionMinimum,
   changeCardCount,
   changeCardSets,
   changeCollectionMinimum,
@@ -23,6 +24,7 @@ export const emptySettings: ISettings = {
   cardSet: CARDSET.Both,
   collectionMode: false,
   collectionMinimum: 1,
+  aaCollectionMinimum: 1,
 
   showPreRelease: true,
   showStampedCards: true,
@@ -91,6 +93,10 @@ export const saveReducer = createReducer(
   on(changeCollectionMinimum, (state, { minimum }) => ({
     ...state,
     settings: { ...state.settings, collectionMinimum: minimum },
+  })),
+  on(changeAACollectionMinimum, (state, { minimum }) => ({
+    ...state,
+    settings: { ...state.settings, aaCollectionMinimum: minimum },
   })),
   on(changeShowVersion, (state, { showPre, showAA, showStamp }) => ({
     ...state,

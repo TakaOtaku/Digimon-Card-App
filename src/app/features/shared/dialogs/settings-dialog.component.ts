@@ -99,6 +99,15 @@ import { emptySettings } from '../../../store/reducers/save.reducer';
           </div>
 
           <div class="flex flex-col">
+            <h5 class="mt-5 text-center font-bold">AA Collection Goal:</h5>
+            <p-inputNumber
+              [(ngModel)]="aaCollectionCount"
+              styleClass="mx-auto"
+              mode="decimal"
+            ></p-inputNumber>
+          </div>
+
+          <div class="flex flex-col">
             <h5 class="mt-5 text-center font-bold">Deck-Sort</h5>
             <div class="flex justify-center">
               <p-selectButton
@@ -454,6 +463,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
   collection: ICountCard[] = [];
 
   collectionCount = 1;
+  aaCollectionCount = 1;
 
   preRelease = true;
   aa = true;
@@ -509,6 +519,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
         this.stamped = settings.showStampedCards;
         this.reprint = settings.showReprintCards;
         this.collectionCount = settings.collectionMinimum;
+        this.aaCollectionCount = settings.aaCollectionMinimum;
         this.deckDisplayTable = settings.deckDisplayTable;
       });
   }
@@ -523,6 +534,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
       settings: {
         ...this.iSave.settings,
         collectionMinimum: this.collectionCount,
+        aaCollectionMinimum: this.aaCollectionCount,
         showPreRelease: this.preRelease,
         showAACards: this.aa,
         showStampedCards: this.stamped,

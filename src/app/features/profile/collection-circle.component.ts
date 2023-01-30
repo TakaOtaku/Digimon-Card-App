@@ -8,12 +8,10 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { combineLatest, first, Subject } from 'rxjs';
+import { first, Subject } from 'rxjs';
 import { ICard, ICountCard } from '../../../models';
-import {
-  selectAllCards,
-  selectCollectionMinimum,
-} from '../../store/digimon.selectors';
+import { setupDigimonCards } from '../../functions/digimon-card.functions';
+import { selectSettings } from '../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-collection-circle',
@@ -29,7 +27,7 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CollectionCircleComponent implements OnInit, OnChanges, OnDestroy {
-  @Input() type: 'BT' | 'EX' | 'ST' | 'P';
+  @Input() type: 'BT' | 'EX' | 'ST' | 'P-';
   @Input() collection: ICountCard[];
 
   data: any;
@@ -64,32 +62,34 @@ export class CollectionCircleComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   updateCircle() {
-    const cards$ = this.store.select(selectAllCards);
-    const settings$ = this.store.select(selectCollectionMinimum);
-
-    combineLatest([cards$, settings$])
+    this.store
+      .select(selectSettings)
       .pipe(first())
-      .subscribe((values) => {
-        const collectionMinimum: number = values[1];
-        const normalCards = values[0].filter(
-          (card) => card.version === 'Normal'
-        );
-        const collection = this.collection.filter(
-          (card) => !card.id.includes('_P')
+      .subscribe((settings) => {
+        const normalCards = setupDigimonCards(settings.cardSet);
+        const collection = this.collection;
+
+        let setCards = normalCards.filter(
+          (card) => card.id.includes('-') && card.id.includes(this.type)
         );
 
-        const setCards = normalCards.filter((card) =>
-          card.id.includes(this.type)
-        );
+        if (settings.aaCollectionMinimum === 0) {
+          setCards = setCards.filter((card) => card.version === 'Normal');
+        }
 
         const setCardsCollected = setCards.filter((card) =>
-          collection.find(
-            (colCard) =>
-              colCard.id === card.id && colCard.count >= collectionMinimum
-          )
-        );
+          collection.find((colCard) => {
+            if (colCard.id !== card.id) {
+              return;
+            }
 
-        //const SetCardsColors = this.getColorCardArray(setCards);
+            if (card.version !== 'Normal') {
+              return colCard.count >= settings.aaCollectionMinimum;
+            }
+
+            return colCard.count >= settings.collectionMinimum;
+          })
+        );
 
         const collectionColors = this.getColorCardArray(setCardsCollected);
 

@@ -14,6 +14,7 @@ import { addCardToDeck, changeCardCount } from '../../store/digimon.actions';
 import {
   selectCollectionMinimum,
   selectDeck,
+  selectSettings,
 } from '../../store/digimon.selectors';
 
 @Component({
@@ -47,7 +48,7 @@ import {
 
         <img
           [lazyLoad]="card.cardImage"
-          [ngClass]="{ grayscale: count < collectionMinimum && collectionMode }"
+          [ngClass]="{ grayscale: setGrayScale() }"
           [ngStyle]="{ border: cardBorder, 'border-radius': cardRadius }"
           alt="{{ card.cardNumber + ' ' + card.name }}"
           class="m-auto"
@@ -161,6 +162,7 @@ export class FullCardComponent implements OnInit, OnDestroy {
   ]);
 
   collectionMinimum = 0;
+  aaCollectionMinimum = 0;
 
   countInDeck = 0;
 
@@ -170,9 +172,12 @@ export class FullCardComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.store
-      .select(selectCollectionMinimum)
+      .select(selectSettings)
       .pipe(takeUntil(this.onDestroy$))
-      .subscribe((minimum) => (this.collectionMinimum = minimum));
+      .subscribe((settings) => {
+        this.collectionMinimum = settings.collectionMinimum;
+        this.aaCollectionMinimum = settings.aaCollectionMinimum;
+      });
     this.store
       .select(selectDeck)
       .pipe(takeUntil(this.onDestroy$))
@@ -241,4 +246,11 @@ export class FullCardComponent implements OnInit, OnDestroy {
     //(((OldValue - OldMin) * NewRange) / OldRange) + NewMin
     return ((input - 5) * (30 - 20)) / (100 - 5) + 20;
   };
+
+  setGrayScale(): boolean | undefined {
+    if (this.card.version !== 'Normal') {
+      return this.count < this.aaCollectionMinimum && this.collectionMode;
+    }
+    return this.count < this.collectionMinimum && this.collectionMode;
+  }
 }

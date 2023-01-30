@@ -9,6 +9,7 @@ import { DialogModule } from 'primeng/dialog';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { RippleModule } from 'primeng/ripple';
+import { SelectButtonModule } from 'primeng/selectbutton';
 import { TableModule } from 'primeng/table';
 import { TooltipModule } from 'primeng/tooltip';
 import { DigimonStoreModule } from '../../digimon-store.module';
@@ -51,6 +52,7 @@ import { DeckViewComponent } from './components/deck-view.component';
     RippleModule,
     ButtonModule,
     TableModule,
+    SelectButtonModule,
   ],
   providers: [AuthService, DigimonBackendService],
 })

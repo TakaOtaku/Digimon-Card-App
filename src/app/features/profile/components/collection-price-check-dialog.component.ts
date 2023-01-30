@@ -1,32 +1,69 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { BehaviorSubject, filter, Subject, takeUntil } from 'rxjs';
-import { ICountCard } from '../../../../models';
+import { Component, Input, OnDestroy } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Subject, tap } from 'rxjs';
+import { GroupedSets, ICountCard, ISave } from '../../../../models';
 import {
   ProductCM,
   ProductCMWithCount,
 } from '../../../service/card-market.service';
-import { DeckBuilderViewModel } from '../../../store/digimon.selectors';
+import { selectPriceGuideCM } from '../../../store/digimon.selectors';
 
 @Component({
-  selector: 'digimon-price-check-dialog',
+  selector: 'digimon-collection-price-check-dialog',
   template: `
-    <div class="flex flex-col">
+    <p-blockUI [blocked]="spinner"></p-blockUI>
+    <p-progressSpinner
+      *ngIf="spinner"
+      class="absolute top-1/2 left-1/2 z-[5000] -translate-x-1/2 -translate-y-1/2 transform"
+    ></p-progressSpinner>
+
+    <div *ngIf="prizeGuide$ | async" class="mb-2 flex flex-col">
       <span>All Price-Information is from <b>CardMarket</b>.</span>
+      <span class="text-xs"
+        >Calculating the Card-Prices may take a while if you have a big
+        collection.</span
+      >
     </div>
 
-    <div>Switch between Missing Cards and complete deck.</div>
-    <div class="flex flex-col">
-      <p-selectButton
+    <div class="flex flex-row">
+      <!--p-selectButton
         [(ngModel)]="onlyMissing"
         (ngModelChange)="showOnlyMissing()"
         [options]="[
           { label: 'Missing Cards', value: true },
           { label: 'All Cards', value: false }
         ]"
-        class="mx-auto"
+        class="mr-2 h-8"
+        styleClass="h-8"
         optionLabel="label"
         optionValue="value"
-      ></p-selectButton>
+      ></p-selectButton-->
+      <p-multiSelect
+        [filter]="false"
+        [(ngModel)]="setFilter"
+        [group]="true"
+        [options]="groupedSets"
+        [showHeader]="false"
+        [showToggleAll]="false"
+        defaultLabel="Select a Set"
+        display="chip"
+        scrollHeight="250px"
+        class="mr-2 mb-2 w-full max-w-[250px]"
+        styleClass="w-full max-w-[250px] h-8 text-sm"
+      >
+        <ng-template let-group pTemplate="group">
+          <div class="align-items-center flex">
+            <span>{{ group.label }}</span>
+          </div>
+        </ng-template>
+      </p-multiSelect>
+      <button
+        [disabled]="filteredProducts.length > 0"
+        (click)="updatePrice()"
+        class="surface-ground hover:primary-background text-shadow h-8 border border-black px-1 font-bold text-[#e2e4e6]"
+      >
+        Check Price
+      </button>
     </div>
 
     <div *ngIf="notFound.length > 0" class="flex flex-row flex-wrap">
@@ -88,7 +125,7 @@ import { DeckBuilderViewModel } from '../../../store/digimon.selectors';
           <td></td>
         </tr>
         <ng-template #noEntry>
-          <td colspan="9" class="py-1 text-center">No missing cards found!</td>
+          <td colspan="9" class="py-1 text-center">No cards found!</td>
         </ng-template>
       </ng-template>
     </p-table>
@@ -118,11 +155,16 @@ import { DeckBuilderViewModel } from '../../../store/digimon.selectors';
     `,
   ],
 })
-export class PriceCheckDialogComponent implements OnInit, OnDestroy {
-  @Input() deckBuilderViewModel: DeckBuilderViewModel;
-  @Input() checkPrice: BehaviorSubject<boolean>;
+export class CollectionPriceCheckDialogComponent implements OnDestroy {
+  @Input() save: ISave;
+
+  prizeGuide$ = this.store
+    .select(selectPriceGuideCM)
+    .pipe(tap((products) => (this.prizeGuide = products)));
+  prizeGuide: ProductCM[] = [];
 
   onlyMissing = false;
+  spinner = false;
 
   products: ProductCMWithCount[] = [];
   filteredProducts: ProductCMWithCount[] = [];
@@ -130,16 +172,12 @@ export class PriceCheckDialogComponent implements OnInit, OnDestroy {
 
   totalProducts: ProductCMWithCount;
 
+  setFilter: string[] = [];
+  groupedSets = GroupedSets;
+
   onDestroy$ = new Subject();
 
-  ngOnInit() {
-    this.checkPrice
-      .pipe(
-        filter((value) => value),
-        takeUntil(this.onDestroy$)
-      )
-      .subscribe(() => this.updatePrice());
-  }
+  constructor(private store: Store) {}
 
   ngOnDestroy() {
     this.onDestroy$.next(true);
@@ -147,12 +185,13 @@ export class PriceCheckDialogComponent implements OnInit, OnDestroy {
   }
 
   updatePrice() {
-    const all: ProductCMWithCount[] = this.deckBuilderViewModel.deck.cards
+    this.spinner = true;
+    const filteredCollection = this.filterCollection();
+    const all: ProductCMWithCount[] = filteredCollection
       .map((card) => {
         const foundProduct: ProductCM =
-          this.deckBuilderViewModel.priceGuideCM.find(
-            (product) => card.id === product.cardId
-          ) ?? this.emptyProduct(card);
+          this.prizeGuide.find((product) => card.id === product.cardId) ??
+          this.emptyProduct(card);
 
         return { ...foundProduct, count: card.count } as ProductCMWithCount;
       })
@@ -206,6 +245,7 @@ export class PriceCheckDialogComponent implements OnInit, OnDestroy {
       this.totalProducts.avg7 += product.avg7;
       this.totalProducts.avg30 += product.avg30;
     });
+    this.spinner = false;
   }
 
   showOnlyMissing() {
@@ -217,7 +257,7 @@ export class PriceCheckDialogComponent implements OnInit, OnDestroy {
   getMissingCards = (): ProductCMWithCount[] => {
     return this.products
       .map((product) => {
-        const foundCard = this.deckBuilderViewModel.collection.find(
+        const foundCard = this.save.collection.find(
           (collectionCard) => collectionCard.id === product.cardId
         );
         if (foundCard) {
@@ -251,5 +291,20 @@ export class PriceCheckDialogComponent implements OnInit, OnDestroy {
       foil30: 0,
       link: '',
     };
+  }
+
+  private filterCollection(): ICountCard[] {
+    if (this.setFilter.length === 0) {
+      return this.save.collection;
+    }
+
+    return this.save.collection.filter((card) => {
+      for (let set of this.setFilter) {
+        if (card.id.includes(set)) {
+          return true;
+        }
+      }
+      return false;
+    });
   }
 }

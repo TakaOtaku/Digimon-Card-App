@@ -52,15 +52,11 @@ import { emptyDeck } from '../../store/reducers/digimon.reducers';
               class="ml-3 mr-1 h-7 w-7 rounded-full"
             ></div>
             <span class="ml-2 font-bold">{{ deck.color.name }} Decks</span>
-          </td>
-        </tr>
-      </ng-template>
 
-      <ng-template pTemplate="groupfooter" let-deck>
-        <tr>
-          <td colspan="5" class="pr-6 text-right font-bold">
-            Total {{ deck.color.name }} Decks:
-            {{ decksWithColor(deck.color.name) }}
+            <div class="ml-auto mr-2 font-bold">
+              Total {{ deck.color.name }} Decks:
+              {{ decksWithColor(deck.color.name) }}
+            </div>
           </td>
         </tr>
       </ng-template>

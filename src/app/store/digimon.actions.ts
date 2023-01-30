@@ -45,6 +45,11 @@ export const changeCollectionMinimum = createAction(
   props<{ minimum: number }>()
 );
 
+export const changeAACollectionMinimum = createAction(
+  '[Settings] Change AA Collection Minimum',
+  props<{ minimum: number }>()
+);
+
 export const changeShowVersion = createAction(
   '[Settings] Change Show Version',
   props<{ showPre: boolean; showAA: boolean; showStamp: boolean }>()

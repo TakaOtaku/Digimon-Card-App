@@ -27,6 +27,10 @@ export interface ProductCM {
   link: string;
 }
 
+export interface ProductCMWithCount extends ProductCM {
+  count: number;
+}
+
 @Injectable({
   providedIn: 'root',
 })

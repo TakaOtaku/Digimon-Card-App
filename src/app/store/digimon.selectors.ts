@@ -104,6 +104,10 @@ export const selectCollectionMinimum = createSelector(
   selectSettings,
   (state: ISettings) => state.collectionMinimum
 );
+export const selectAACollectionMinimum = createSelector(
+  selectSettings,
+  (state: ISettings) => state.aaCollectionMinimum
+);
 export const selectShowPreRelease = createSelector(
   selectSettings,
   (state: ISettings) => state.showPreRelease
@@ -169,13 +173,36 @@ export interface DeckBuilderViewModel {
   deck: IDeck;
   cards: ICard[];
   priceGuideCM: ProductCM[];
+  collection: ICountCard[];
 }
 export const selectDeckBuilderViewModel = createSelector(
   selectDeck,
   selectAllCards,
   selectPriceGuideCM,
-  (deck: IDeck | null, cards: ICard[], priceGuideCM: ProductCM[]) => {
+  selectCollection,
+  (
+    deck: IDeck | null,
+    cards: ICard[],
+    priceGuideCM: ProductCM[],
+    collection: ICountCard[]
+  ) => {
     const noEmptyDeck = deck ?? emptyDeck;
-    return { deck: noEmptyDeck, cards, priceGuideCM } as DeckBuilderViewModel;
+    return {
+      deck: noEmptyDeck,
+      cards,
+      priceGuideCM,
+      collection,
+    } as DeckBuilderViewModel;
   }
+);
+
+export interface ProfileViewModel {
+  save: ISave;
+  priceGuideCM: ProductCM[];
+}
+export const selectProfileViewModel = createSelector(
+  selectSave,
+  selectPriceGuideCM,
+  (save: ISave, priceGuideCM: ProductCM[]) =>
+    ({ save, priceGuideCM } as ProfileViewModel)
 );
