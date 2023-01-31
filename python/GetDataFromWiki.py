@@ -10,10 +10,10 @@ import copy
 
 wikiLink = 'https://digimoncardgame.fandom.com'
 wikiPageLinks = [
-    #'https://digimoncardgame.fandom.com/wiki/BT-12:_Booster_Across_Time'
+    'https://digimoncardgame.fandom.com/wiki/BT-12:_Booster_Across_Time',
     #'https://digimoncardgame.fandom.com/wiki/ST-14:_Advanced_Deck_Beelzemon'
-    #'https://digimoncardgame.fandom.com/wiki/EX-04:_Theme_Booster_Alternative_Being'
-    'https://digimoncardgame.fandom.com/wiki/RB-01:_Reboot_Booster_Rising_Wind'
+    #'https://digimoncardgame.fandom.com/wiki/EX-04:_Theme_Booster_Alternative_Being',
+    #'https://digimoncardgame.fandom.com/wiki/RB-01:_Reboot_Booster_Rising_Wind'
 ]
 setName = "REBOOT BOOSTER RISING WIND [RB-01]"
 cardLinks = []
@@ -92,9 +92,9 @@ def getDigivolveInfo(html, digimoncard):
         digimoncard["digivolveColor" +
                     str(evoNumber)] = cells[1].text.replace("\n", "").strip()
         digimoncard["digivolveCost" +
-                    str(evoNumber)] = cells[3].text.replace("\n", "").strip() + 'from Lv.' + cells[5].text.replace("\n", "").strip()
+                    str(evoNumber)] = cells[5].text.replace("\n", "").strip() + ' from Lv.' + cells[3].text.replace("\n", "").strip()
         digimoncard["digivolveLevel" +
-                    str(evoNumber)] = cells[5].text.replace("\n", "").strip()
+                    str(evoNumber)] = cells[3].text.replace("\n", "").strip()
         evoNumber += 1
 
     for specialEvoCon in specialEvoCons:
@@ -215,8 +215,8 @@ def getCardDataFromWiki():
         if(image is not None):
             imageSrc = image['src']
             # Change URL depending on if you want Japanese Cards or English Cards
-            urllib.request.urlretrieve(
-               imageSrc, digimoncard['cardNumber']+".png")
+            #urllib.request.urlretrieve(
+            #   imageSrc, digimoncard['cardNumber']+".png")
         print(digimoncard['name'])
         cards.append(digimoncard)
 
