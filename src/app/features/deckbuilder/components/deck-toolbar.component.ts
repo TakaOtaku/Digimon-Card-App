@@ -69,8 +69,6 @@ import { emptyDeck } from '../../../store/reducers/digimon.reducers';
         icon="pi pi-save"
         iconPos="left"
         pButton
-        pTooltip="Click to save the current Deck!"
-        tooltipPosition="top"
       ></button>
 
       <button
@@ -123,14 +121,18 @@ import { emptyDeck } from '../../../store/reducers/digimon.reducers';
         tooltipPosition="top"
       ></button>
 
+      <!--button
+        class="p-button-outlined h-[30px] w-full cursor-pointer"
+        (click)="checkPrice()"
+      >
+        $
+      </button-->
       <button
         (click)="checkPrice()"
-        class="p-button-outlined h-[30px] w-full"
+        class="p-button-outlined h-[30px] w-full cursor-pointer"
         icon="pi pi-dollar"
         iconPos="left"
         pButton
-        pTooltip="Click to check the price of this Deck!"
-        tooltipPosition="top"
       ></button>
     </div>
 
