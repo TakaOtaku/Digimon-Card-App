@@ -1,23 +1,9 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  EventEmitter,
-  Input,
-  OnChanges,
-  OnInit,
-  Output,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { first } from 'rxjs';
-import { ICard, ICountCard, IDeck, IUser } from '../../../models';
+import { ICard, IDeck } from '../../../models';
 import { setDeckImage } from '../../functions/digimon-card.functions';
 import { saveDeck } from '../../store/digimon.actions';
-import {
-  selectAllCards,
-  selectDeckDisplayTable,
-} from '../../store/digimon.selectors';
-import { emptyDeck } from '../../store/reducers/digimon.reducers';
+import { selectAllCards } from '../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-decks-table',
@@ -27,6 +13,7 @@ import { emptyDeck } from '../../store/reducers/digimon.reducers';
       [value]="decks"
       [scrollable]="true"
       [tableStyle]="{ 'min-width': '60rem' }"
+      [breakpoint]="'0px'"
       sortField="name"
       sortMode="single"
       scrollHeight="650px"
