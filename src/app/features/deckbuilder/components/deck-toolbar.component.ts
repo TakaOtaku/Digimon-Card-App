@@ -124,7 +124,7 @@ import { emptyDeck } from '../../../store/reducers/digimon.reducers';
       ></button>
 
       <button
-        (click)="priceCheckDialog = true; checkPrice$.next(true)"
+        (click)="checkPrice()"
         class="p-button-outlined h-[30px] w-full"
         icon="pi pi-dollar"
         iconPos="left"
@@ -137,11 +137,11 @@ import { emptyDeck } from '../../../store/reducers/digimon.reducers';
     <p-dialog
       header="Price Check"
       [(visible)]="priceCheckDialog"
-      styleClass="w-[100%] min-w-[250px] sm:min-w-[500px] sm:w-[900px] min-h-[500px]"
-      [baseZIndex]="10000"
       [modal]="true"
       [dismissableMask]="true"
       [resizable]="false"
+      styleClass="w-[100%] min-w-[250px] sm:min-w-[500px] sm:w-[700px] min-h-[500px]"
+      [baseZIndex]="10000"
     >
       <digimon-price-check-dialog
         [deckBuilderViewModel]="deckBuilderViewModel"
@@ -347,4 +347,9 @@ export class DeckToolbarComponent implements OnDestroy {
     return array;
   }
   //endregion
+
+  checkPrice() {
+    this.priceCheckDialog = true;
+    this.checkPrice$.next(true);
+  }
 }

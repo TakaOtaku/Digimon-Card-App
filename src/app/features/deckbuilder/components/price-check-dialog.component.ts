@@ -38,6 +38,7 @@ import { DeckBuilderViewModel } from '../../../store/digimon.selectors';
 
     <p-table
       [value]="filteredProducts"
+      [breakpoint]="'0px'"
       styleClass="p-datatable-sm p-datatable-striped"
     >
       <ng-template pTemplate="header">
