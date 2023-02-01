@@ -20,7 +20,7 @@
     "effect": "-",
     "digivolveEffect": "[When Attacking] [Once Per Turn] If this Digimon has [Guilmon], [Growlmon], or [Gallantmon] in its name, ＜Draw 1＞. (Draw 1 card from your deck.)",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Red",
     "version": "Normal",
     "block": [
@@ -50,7 +50,7 @@
     "effect": "-",
     "digivolveEffect": "[All Turns] While this Digimon is level 4, it gets +1000 DP.",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Blue",
     "version": "Normal",
     "block": [
@@ -80,7 +80,7 @@
     "effect": "-",
     "digivolveEffect": "[Your Turn] [Once Per Turn] When you use an Option card with a cost of 2 or more, ＜Draw 1＞. (Draw 1 card from your deck.)",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Yellow",
     "version": "Normal",
     "block": [
@@ -110,7 +110,7 @@
     "effect": "-",
     "digivolveEffect": "[Your Turn] [Once Per Turn] When an opponent's Digimon becomes suspended, ＜Draw 1＞. (Draw 1 card from your deck.)",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Green",
     "version": "Normal",
     "block": [
@@ -140,7 +140,7 @@
     "effect": "-",
     "digivolveEffect": "[Your Turn] While you have a black Tamer in play, this Digimon gets +1000 DP.",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Black",
     "version": "Normal",
     "block": [
@@ -170,7 +170,7 @@
     "effect": "-",
     "digivolveEffect": "[Your Turn] While there are 10 or more cards in your trash, this Digimon gets +2000 DP.",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Purple",
     "version": "Normal",
     "block": [
@@ -200,7 +200,7 @@
     "effect": "[All Turns] This Digimon can't attack and isn't affected by your opponent's effects.\n[Main] [Once Per Turn] If you don't have another [Mother D-Reaper] in play, place 1 of your [ADR-02 Searcher]s from in play or from your hand under this Digimon as its bottom digivolution card.\n[Your Turn] [Once Per Turn] When you would play a card with [D-Reaper] in its traits from your hand, reduce its play cost by 1 for each of this Digimon's digivolution cards.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "White",
     "version": "Normal",
     "block": [
@@ -230,7 +230,7 @@
     "effect": "[On Play] Reveal the top 4 cards of your deck. Add 1 card with [Growlmon] or [Gallantmon] in its name and 1 [Takato Matsuki] among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
     "digivolveEffect": "[When Attacking] [Once Per Turn] If this Digimon has [Growlmon] or [Gallantmon] in its name, delete 1 of your opponent's Digimon with 3000 DP or less.",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Red",
     "version": "Normal",
     "block": [
@@ -260,7 +260,7 @@
     "effect": "[When Attacking] Delete 1 of your opponent's Digimon with 2000 DP or less. If you have a red Tamer in play, delete 1 of your opponent's Digimon with 4000 DP or less instead.",
     "digivolveEffect": "[When Attacking] [Once Per Turn] If this Digimon has [Growlmon] or [Gallantmon] in its name, delete 1 of your opponent's Digimon with 3000 DP or less.",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Red",
     "version": "Normal",
     "block": [
@@ -290,7 +290,7 @@
     "effect": "[When Attacking] Delete 1 of your opponent's Digimon with 4000 DP or less. If you have a red Tamer in play, delete 1 of your opponent's Digimon with 6000 DP or less instead.",
     "digivolveEffect": "[Your Turn] Add 1000 to the maximum DP you can choose with DP-based deletion effects.",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Red",
     "version": "Normal",
     "block": [
@@ -320,7 +320,7 @@
     "effect": "[Your Turn] This Digimon gets +2000 DP.\n[Your Turn] While you have a red Tamer in play, add 2000 to the maximum DP you can choose with DP-based deletion effects.\n[When Attacking] Choose any number of your opponent's Digimon whose total DP adds up to 6000 or less and delete them.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Red",
     "version": "Normal",
     "block": [
@@ -350,7 +350,7 @@
     "effect": "The name of this card/Digimon is also treated as [ChaosGallantmon].\n[When Digivolving] Delete 1 of your opponent's Digimon with 10000 DP or less. If no Digimon was deleted by this effect, trash the top 5 cards of both players' decks.\n[On Deletion] You may play 1 [Guilmon] and 1 [Takato Matsuki] from your hand and/or trash without paying their memory costs.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Red/Purple",
     "version": "Normal",
     "block": [
@@ -380,7 +380,7 @@
     "effect": "-",
     "digivolveEffect": "[When Attacking] [Once Per Turn] If this Digimon has ＜Jamming＞, gain 1 memory.",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Blue",
     "version": "Normal",
     "block": [
@@ -410,7 +410,7 @@
     "effect": "[When Attacking] Return 1 of your opponent's level 4 or lower Digimon with no digivolution cards to its owner's hand.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Blue",
     "version": "Normal",
     "block": [
@@ -440,7 +440,7 @@
     "effect": "＜Jamming＞ (This Digimon can't be deleted in battles against Security Digimon.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Blue",
     "version": "Normal",
     "block": [
@@ -470,7 +470,7 @@
     "effect": "[On Play] You may play 1 level 3 Digimon card from 1 of your blue Digimon's digivolution cards without paying its memory cost.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Blue",
     "version": "Normal",
     "block": [
@@ -500,7 +500,7 @@
     "effect": "[Opponent's Turn] While you have a Tamer in play, this Digimon gains ＜Blocker＞. (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)\n[On Deletion] Gain 2 memory and ＜Draw 1＞. (Draw 1 card from your deck.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Blue",
     "version": "Normal",
     "block": [
@@ -530,7 +530,7 @@
     "effect": "[On Play] For each of your opponent's Digimon with no digivolution cards, ＜Recovery +1 (Deck)＞. (Place the top card of your deck on top of your security stack.) This effect can't increase the number of cards in your security stack to 6 or more.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Blue/Yellow",
     "version": "Normal",
     "block": [
@@ -560,7 +560,7 @@
     "effect": "[On Play] Reveal the top 4 cards of your deck. Add 1 card with [Kyubimon], [Taomon], or [Sakuyamon] in its name and 1 [Rika Nonaka] among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
     "digivolveEffect": "[Your Turn] [Once Per Turn] When you use an Option card with a cost of 2 or more, gain 1 memory.",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Yellow",
     "version": "Normal",
     "block": [
@@ -590,7 +590,7 @@
     "effect": "[On Play] If you have 3 or fewer security cards and [Suzie Wong] in play, ＜Recovery +1 (Deck)＞. (Place the top card of your deck on top of your security stack.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Yellow",
     "version": "Normal",
     "block": [
@@ -620,7 +620,7 @@
     "effect": "[When Digivolving] Reveal the top 3 cards of your deck. Add 1 Option card with [Plug-In] in its name among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
     "digivolveEffect": "[Your Turn] [Once Per Turn] When you use an Option card with a cost of 2 or more, 1 of your opponent's Digimon gets -2000 DP for the turn.",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Yellow",
     "version": "Normal",
     "block": [
@@ -650,7 +650,7 @@
     "effect": "If you have [Suzie Wong] in play, your [Lopmon] can digivolve into this card in your hand for a digivolution cost of 3, ignoring its digivolution requirements.\n[When Attacking] [Once Per Turn] You may trash the top card of your security stack to unsuspend this Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Yellow",
     "version": "Normal",
     "block": [
@@ -680,7 +680,7 @@
     "effect": "[When Digivolving] You may play 1 [Rika Nonaka] from your hand without paying its memory cost.",
     "digivolveEffect": "[Your Turn] [Once Per Turn] When you use an Option card with a cost of 2 or more, 1 of your opponent's Digimon gets -2000 DP for the turn.",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Yellow",
     "version": "Normal",
     "block": [
@@ -710,7 +710,7 @@
     "effect": "[When Digivolving] Unsuspend 1 of your Digimon, and for each Tamer you have in play, return 1 Option card with [Plug-In] in its name from your trash to your hand.\n[Your Turn] When you use an Option card with a cost of 2 or more, 1 of your opponent's Digimon gets -3000 DP for the turn.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Yellow",
     "version": "Normal",
     "block": [
@@ -740,7 +740,7 @@
     "effect": "[Your Turn] [Once Per Turn] When you play a green Tamer, gain 1 memory.",
     "digivolveEffect": "[Your Turn] [Once Per Turn] When an opponent's Digimon becomes suspended, this Digimon gets +2000 DP for the turn.",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Green",
     "version": "Normal",
     "block": [
@@ -770,7 +770,7 @@
     "effect": "[Your Turn] When this Digimon would digivolve, if you have a green Tamer in play, reduce the digivolution cost by 1.",
     "digivolveEffect": "[Your Turn] [Once Per Turn] When an opponent's Digimon becomes suspended, this Digimon gets +2000 DP for the turn.",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Green",
     "version": "Normal",
     "block": [
@@ -800,7 +800,7 @@
     "effect": "[When Digivolving] If you have a green Tamer in play, suspend 1 of your opponent's Digimon.",
     "digivolveEffect": "[Your Turn] [Once Per Turn] When an opponent's Digimon becomes suspended, this Digimon gains ＜Security Attack +1＞ for the turn. (This Digimon checks 1 additional security card.)",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Green",
     "version": "Normal",
     "block": [
@@ -830,7 +830,7 @@
     "effect": "[End of Attack] You may place this Digimon under 1 of your Digimon as its bottom digivolution card.",
     "digivolveEffect": "＜Security Attack +1＞ (This Digimon checks 1 additional security card.)\n[Your Turn] This Digimon gets +2000 DP.",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Green",
     "version": "Normal",
     "block": [
@@ -860,7 +860,7 @@
     "effect": "[When Digivolving] For each green Tamer you have in play, suspend 1 of your opponent's Digimon. They don't unsuspend during your opponent's next unsuspend phase.\n[When Attacking] [Once Per Turn] Return 1 of your opponent's suspended Digimon with DP less than or equal to this Digimon's DP to its owner's hand.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Green",
     "version": "Normal",
     "block": [
@@ -890,7 +890,7 @@
     "effect": "[On Play] Reveal the top 4 cards of your deck. Add all black Tamer cards among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Black",
     "version": "Normal",
     "block": [
@@ -920,7 +920,7 @@
     "effect": "＜Blocker＞ (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)\n[On Play] 1 of your Digimon gets +3000 DP until the end of your opponent's turn.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Black",
     "version": "Normal",
     "block": [
@@ -950,7 +950,7 @@
     "effect": "[When Digivolving] Reveal the top 4 cards of your deck. Add 1 black Tamer card among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
     "digivolveEffect": "[When Attacking] [Once Per Turn] If you have 2 or more black Tamers in play, gain 1 memory.",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Black",
     "version": "Normal",
     "block": [
@@ -980,7 +980,7 @@
     "effect": "[Your Turn] When this Digimon would digivolve into a [GroundLocomon] in your hand, reduce the digivolution cost by 1.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Black",
     "version": "Normal",
     "block": [
@@ -1010,7 +1010,7 @@
     "effect": "＜Blocker＞ (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)\n[Opponent's Turn] All of your Digimon with ＜Blocker＞ get +2000 DP.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Black",
     "version": "Normal",
     "block": [
@@ -1040,7 +1040,7 @@
     "effect": "[When Digivolving] You may play 1 [Ryo Akiyama] from your hand without paying its memory cost.\n[Your Turn] While you have no Tamers in play, this Digimon can't attack players.",
     "digivolveEffect": "[When Attacking] [Once Per Turn] If you have 2 or more black Tamers in play, ＜De-Digivolve 1＞ 1 of your opponent's Digimon. (Trash 1 card from the top of one of your opponent's Digimon. If it has no digivolution cards, or becomes a level 3 Digimon, you can't trash any more cards.)",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Black",
     "version": "Normal",
     "block": [
@@ -1070,7 +1070,7 @@
     "effect": "[Your Turn] This Digimon can't attack your opponent's Digimon.\n[All Turns] For each card in your trash with [Cyborg] or [Machine] in its traits, this Digimon gets +1000 DP.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Black",
     "version": "Normal",
     "block": [
@@ -1100,7 +1100,7 @@
     "effect": "＜Reboot＞ (Unsuspend this Digimon during your opponent's unsuspend phase.)\n[Opponent's Turn] [Once Per Turn] When an opponent's Digimon becomes unsuspended, ＜De-Digivolve 1＞ that Digimon. (Trash 1 card from the top of your opponent's Digimon. If it has no digivolution cards, or becomes a level 3 Digimon, you can't trash any more cards.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Black",
     "version": "Normal",
     "block": [
@@ -1130,7 +1130,7 @@
     "effect": "[When Digivolving] Activate 1 of the effects below. \n・This Digimon gets +2000 DP for the turn. \n・Unsuspend this Digimon. \n・Delete 1 of your opponent's Digimon with a play cost of 5 or less.\n[When Attacking] [Once Per Turn] For each Tamer you have in play, activate this Digimon's [When Digivolving] effect.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Black",
     "version": "Normal",
     "block": [
@@ -1160,7 +1160,7 @@
     "effect": "When this card is trashed from your deck, if it wasn't trashed by [EX2-039 Impmon]'s effect, you may trash the top 3 cards of your deck.\n[On Play] Reveal the top 4 cards of your deck. Add 1 Digimon card with [Beelzemon] in its name and 1 [Ai & Mako] among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
     "digivolveEffect": "[Your Turn] While this Digimon has [Beelzemon] in its name, it gets +3000 DP.",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Purple",
     "version": "Normal",
     "block": [
@@ -1190,7 +1190,7 @@
     "effect": "＜Retaliation＞ (When this Digimon is deleted after losing a battle, delete the Digimon it was battling.)",
     "digivolveEffect": "[When Attacking] You may trash the top 2 cards of your deck.",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Purple",
     "version": "Normal",
     "block": [
@@ -1220,7 +1220,7 @@
     "effect": "When you would play this card from your hand, reduce its play cost by 2 if you have [Alice McCoy] in play.\n[On Deletion] Trash the top 3 cards of your deck. Then, return 1 purple Digimon card or 1 purple Tamer card from your trash to your hand.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Purple",
     "version": "Normal",
     "block": [
@@ -1250,7 +1250,7 @@
     "effect": "[On Play] ＜Draw 2＞. (Draw 2 cards from your deck.) Then, trash 2 cards in your hand.",
     "digivolveEffect": "[When Attacking] [Once Per Turn] You may trash 1 card in your hand to gain 1 memory.",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Purple",
     "version": "Normal",
     "block": [
@@ -1280,7 +1280,7 @@
     "effect": "[When Digivolving] All players trash cards in their hand until they have 5 cards left.\n[Your Turn] [Once Per Turn] When one of your effects trashes a card in your hand, you may unsuspend 1 of your Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Purple",
     "version": "Normal",
     "block": [
@@ -1310,7 +1310,7 @@
     "effect": "When this card is trashed from your deck, you may play 1 [Impmon] from your trash without paying its memory cost.\n[When Digivolving] [When Attacking] You may trash the top 2 cards of your deck. Then, delete 1 of your opponent's level 3 or lower Digimon. For every 10 cards in your trash, add 1 to the maximum level of the Digimon you can choose with this effect.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Purple",
     "version": "Normal",
     "block": [
@@ -1340,7 +1340,7 @@
     "effect": "When you would play this card from your hand, reduce its play cost by 2 if you have [Guilmon], [Terriermon], [Renamon], or [Impmon] in play.\n[Your Turn] This Digimon can't attack.\n[Your Turn] When one of your Digimon digivolves, you may suspend this Digimon to gain 1 memory, ＜Draw 1＞ (Draw 1 card from your deck), and have 1 of your Digimon get +3000 DP for the turn.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "White",
     "version": "Normal",
     "block": [
@@ -1370,7 +1370,7 @@
     "effect": "You can include up to 50 copies of cards with this card's card number in your deck.When you would play this card from your hand, reduce its play cost by 2 if you don't have another [ADR-02 Searcher] in play.\n[Your Turn] This Digimon can't attack players.\n[On Play]＜Draw 1＞ (Draw 1 card from your deck.)",
     "digivolveEffect": "[Your Turn] All of your Digimon with [D-Reaper] in their traits get +1000 DP.",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "White",
     "version": "Normal",
     "block": [
@@ -1400,7 +1400,7 @@
     "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 card with [D-Reaper] in its traits and 1 [ADR-02 Searcher] among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "White",
     "version": "Normal",
     "block": [
@@ -1430,7 +1430,7 @@
     "effect": "[Security] Place 1 of your [ADR-02 Searcher]s from in play or from your hand under 1 of your [Mother D-Reaper]s as its bottom digivolution card.\n[On Play] Place 1 of your [ADR-02 Searcher]s from in play or from your hand under 1 of your [Mother D-Reaper]s as its bottom digivolution card.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "White",
     "version": "Normal",
     "block": [
@@ -1460,7 +1460,7 @@
     "effect": "[Main] You may suspend this Digimon to reveal the top 5 cards of your deck. Place 1 [ADR-02 Searcher] among them under 1 of your [Mother D-Reaper]s as its bottom digivolution card. Place the remaining cards at the bottom of your deck in any order.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "White",
     "version": "Normal",
     "block": [
@@ -1490,7 +1490,7 @@
     "effect": "[Opponent's Turn] While you have a [Mother D-Reaper] in play, this Digimon gains ＜Blocker＞. (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "White",
     "version": "Normal",
     "block": [
@@ -1520,7 +1520,7 @@
     "effect": "[Main] If you have a [Mother D-Reaper] in play, you may suspend this Digimon to delete 1 of your opponent's Digimon with DP less than or equal to this Digimon's DP.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "White",
     "version": "Normal",
     "block": [
@@ -1550,7 +1550,7 @@
     "effect": "[Your Turn] While you have a [Mother D-Reaper] in play, this Digimon gains ＜Rush＞. (This Digimon can attack the turn it comes into play.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "White",
     "version": "Normal",
     "block": [
@@ -1580,7 +1580,7 @@
     "effect": "[On Play] [When Attacking] [Once Per Turn] If one of your [Mother D-Reaper]s has 5 or more digivolution cards, reveal the top 3 cards of your deck. You may play 1 card with [D-Reaper] in its traits and a play cost of 10 or less among them without paying its memory cost. Place the remaining cards at the top of your deck in any order.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02] Errata Card",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02] Errata Card",
     "color": "White",
     "version": "Normal",
     "block": [
@@ -1610,7 +1610,7 @@
     "effect": "[Security] Play this card without battling and without paying its memory cost.\n[On Play] If you have a [Mother D-Reaper] in play, ＜Recovery +1 (Deck)＞. (Place the top card of your deck on top of your security stack.)\n[Opponent's Turn] While you have a [Mother D-Reaper] with 6 or more digivolution cards in play, all of your opponent's Digimon gain ＜Security Attack -1＞. (This Digimon checks 1 fewer security cards.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "White",
     "version": "Normal",
     "block": [
@@ -1640,7 +1640,7 @@
     "effect": "When you would play this Digimon, you may trash 7 or more digivolution cards from the bottom of 1 of your [Mother D-Reaper]s to set this Digimon's play cost to 0.\n＜Rush＞ (This Digimon can attack the turn it comes into play.)\n[When Attacking] You may place 2 [ADR-02 Searcher]s from your trash under this Digimon in any order as its digivolution cards to unsuspend this Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02] Errata Card",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02] Errata Card",
     "color": "White",
     "version": "Normal",
     "block": [
@@ -1670,7 +1670,7 @@
     "effect": "[Your Turn] When an opponent's Digimon is deleted, you may suspend this Tamer to gain 1 memory.\n[Your Turn] When one of your Digimon would digivolve into a Digimon with [Gallantmon] or [Growlmon] in its name, that Digimon gains \"[When Digivolving] ＜Blitz＞ (This Digimon can attack when your opponent has 1 or more memory.)\" for the turn.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Red",
     "version": "Normal",
     "block": [
@@ -1700,7 +1700,7 @@
     "effect": "[Your Turn] When you would play a [MarineAngemon] from your hand, reduce its play cost by 1.\n[Your Turn] When you play a blue Digimon, you may suspend this Tamer to trash the bottom digivolution card of 1 of your opponent's Digimon. Then, if the Digimon played is [MarineAngemon], trash the bottom digivolution card of all of your opponent's Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Blue",
     "version": "Normal",
     "block": [
@@ -1730,7 +1730,7 @@
     "effect": "[On Play] You may play 1 [Leomon] from your hand without paying its memory cost.\n[Opponent's Turn] When an opponent's Digimon attacks, you may suspend this Tamer to ＜Draw 1＞. (Draw 1 card from your deck.)",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Blue",
     "version": "Normal",
     "block": [
@@ -1760,7 +1760,7 @@
     "effect": "[On Play] You may play 1 [Lopmon] from your hand without paying its memory cost.\n[Start of Your Turn] If you have 3 or fewer security cards, ＜Draw 1＞. (Draw 1 card from your deck.)",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Yellow",
     "version": "Normal",
     "block": [
@@ -1790,7 +1790,7 @@
     "effect": "[Start of Your Turn] If you have 2 memory or less, set your memory to 3.\n[Your Turn] When you attack with a Digimon with [Renamon], [Kyubimon], [Taomon], or [Sakuyamon] in its name, you may suspend this Tamer to use 1 Option card with [Plug-In] in its name from your hand without paying its memory cost.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Yellow",
     "version": "Normal",
     "block": [
@@ -1820,7 +1820,7 @@
     "effect": "[Start of Your Turn] If you have 2 memory or less, set your memory to 3.\n[Your Turn] When you attack with a Digimon with [Gargomon] or [Rapidmon] in its name, you may suspend this Tamer to suspend 1 of your opponent's Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Green",
     "version": "Normal",
     "block": [
@@ -1850,7 +1850,7 @@
     "effect": "[On Play] Reveal the top 4 cards of your deck. Add 1 card with [Dramon] or [Justimon] in its name among them to your hand. Place the remaining cards at the bottom of your deck in any order.\n[Your Turn] When you attack with a black Digimon, you may suspend this Tamer to have that Digimon get +1000 DP until the end of your opponent's turn.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Black",
     "version": "Normal",
     "block": [
@@ -1880,7 +1880,7 @@
     "effect": "[Start of Your Main Phase] If you have a Digimon with [Cyborg] or [Machine] in its traits in play, gain 1 memory.\n[All Turns] When one of your Digimon with [Cyborg] or [Machine] in its traits becomes suspended, you may suspend this Tamer to ＜Draw 1＞. (Draw 1 card from your deck.) Then, trash 1 card in your hand.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Black",
     "version": "Normal",
     "block": [
@@ -1910,7 +1910,7 @@
     "effect": "[Your Turn] [Once Per Turn] When one of your Digimon would digivolve from level 5 to level 6, you may delete 1 of your Digimon to reduce the digivolution cost by 3.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Purple",
     "version": "Normal",
     "block": [
@@ -1940,7 +1940,7 @@
     "effect": "[Start of Your Turn] If you have 2 memory or less, set your memory to 3.\n[Your Turn] When you attack with a Digimon, you may suspend this Tamer to trash the top card of your deck. Then, if the attacking Digimon is [Beelzemon], you may digivolve it into a [Beelzemon Blast Mode] in your trash for a digivolution cost of 3.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Purple",
     "version": "Normal",
     "block": [
@@ -1970,7 +1970,7 @@
     "effect": "While you have a Tamer in play, you may use this card without meeting its color requirements.\n[Main] 1 of your Digimon gains ＜Security Attack +1＞ for the turn. (This Digimon checks 1 additional security card.)",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Reveal the top 3 cards of your deck. Add 1 Tamer card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, add this card to your hand.",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Red",
     "version": "Normal",
     "block": [
@@ -2000,7 +2000,7 @@
     "effect": "[Main] Delete 1 of your opponent's Digimon with 3000 DP or less. If an opponent's Digimon wasn't deleted by this effect, ＜Draw 2＞. (Draw 2 cards from your deck.)",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Red",
     "version": "Normal",
     "block": [
@@ -2030,7 +2030,7 @@
     "effect": "While you have a Tamer in play, you may use this card without meeting its color requirements.\n[Main] For the turn turn, 1 of your Digimon gains ＜Jamming＞ (This Digimon can't be deleted in battles against Security Digimon) and can't be blocked by your opponent's Digimon.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] ＜Draw 1＞. (Draw 1 card from your deck.) Then, add this card to your hand.",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Blue",
     "version": "Normal",
     "block": [
@@ -2060,7 +2060,7 @@
     "effect": "While you have a Digimon with [Beelzemon] in its name in play, you may use this card without meeting its color requirements.\n[Main] Unsuspend 1 of your Digimon with [Leomon] or [Beelzemon] in its name.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Blue",
     "version": "Normal",
     "block": [
@@ -2090,7 +2090,7 @@
     "effect": "While you have a Tamer in play, you may use this card without meeting its color requirements.\n[Main] ＜Draw 1＞. (Draw 1 card from your deck.) Then, you may digivolve 1 of your Digimon into a Digimon card in your hand that can digivolve for a digivolution cost of 3 or less without paying its digivolution cost.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Reveal the top 3 cards of your deck. Add 1 Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, add this card to your hand.",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Green",
     "version": "Normal",
     "block": [
@@ -2120,7 +2120,7 @@
     "effect": "When this card is trashed from your deck, gain 1 memory.\n[Main] Delete 1 of your opponent's level 4 or lower Digimon. For every 10 cards in your trash, add 1 to the maximum level of the Digimon you can choose with this effect.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Purple",
     "version": "Normal",
     "block": [
@@ -2150,7 +2150,7 @@
     "effect": "While you have a Tamer in play, you may use this card without meeting its color requirements.\n[Main] Reveal the top 5 cards of your deck. You may digivolve 1 of your Digimon into 1 non-white Digimon card among them without paying its memory cost. If you don't, add 1 Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] You may play 1 Tamer card from your hand without paying its memory cost.",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "White",
     "version": "Normal",
     "block": [
@@ -2180,7 +2180,7 @@
     "effect": "[When Digivolving] Delete all of your opponent's Digimon with the highest DP.\n[When Attacking] Trash the top card of your opponent's security stack. Add 1 to the number of cards trashed by this effect for every 10 cards in your opponent's trash.",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Red",
     "version": "Normal",
     "block": [
@@ -2210,7 +2210,7 @@
     "effect": "When this card is trashed from your deck, delete 1 of your opponent's level 4 or lower Digimon.\n[When Digivolving] Delete all of your opponent's Digimon with the highest level.\n[Your Turn] For every 10 cards in your trash, this Digimon gains ＜Security Attack +1＞. (This Digimon checks 1 additional security card.)",
     "digivolveEffect": "-",
     "securityEffect": "-",
-    "notes": "▹theme booster DIGITAL HAZARD [EX-02]",
+    "notes": "▹THEME BOOSTER DIGITAL HAZARD [EX-02]",
     "color": "Purple",
     "version": "Normal",
     "block": [
