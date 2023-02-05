@@ -1041,7 +1041,7 @@
     "digiXros": "-",
     "specialDigivolve": "Digivolve: 4  from Lv.5 w/[Gammamon] in its name",
     "dnaDigivolve": "-",
-    "effect": "[When Digivolving] You may place 1 Digimon Card with [Gammamon] in its text  from your trash under this Digimon as its bottom digivolution card. Then, delete 1  of your opponent's Digimon whose level is less than or equal to the number of  cards in this Digimon's digivolution cards.\n[On Deletion] Return 1 Digimon Card with [Gammamon] in its text  from your trash to your hand. If a [Siriusmon] was returned by this effect, you may  play 1 [Proximamon]  from your hand without paying its cost.",
+    "effect": "[When Digivolving] You may place 1 Digimon Card with [Gammamon] in its text  from your trash under this Digimon as its bottom digivolution card. Then, delete 1  of your opponent's Digimon whose level is less than or equal to the number of  cards in this Digimon's digivolution cards.\n[On Deletion] You may return 1 Digimon Card from your trash to your hand. Then, by trashing 1 [Siriusmon] from your hand, you may play 1 [Proximamon] from your hand without paying its cost.",
     "digivolveEffect": "[Your Turn] [Once Per Turn] When an opponent's Digimon is deleted, if this Digimon has [Gammamon] in its text, trash the top card of your opponent’s security stack.",
     "securityEffect": "-",
     "notes": "REBOOT BOOSTER RISING WIND [RB-01]",
