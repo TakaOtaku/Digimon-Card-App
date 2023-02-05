@@ -1,7 +1,5 @@
 import { ICard } from '../../../models';
 
-import Reprints from './Reprints.json';
-
 import AA from './AAs.json';
 
 import BT1 from './BT/BT1.json';
@@ -22,9 +20,9 @@ import EX2 from './EX/EX2.json';
 import EX3 from './EX/EX3.json';
 import EX4 from './EX/EX4.json';
 
-import RB01 from './RB01.json';
-
 import P from './P.json';
+
+import RB01 from './RB01.json';
 
 import ST1 from './ST/ST1.json';
 import ST10 from './ST/ST10.json';
@@ -41,7 +39,6 @@ import ST8 from './ST/ST8.json';
 import ST9 from './ST/ST9.json';
 
 export const japaneseCards: ICard[] = [
-  ...Reprints,
   ...AA,
   ...P,
 
