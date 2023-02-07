@@ -15,7 +15,8 @@ import {
   faUser,
   faUsers,
 } from '@fortawesome/free-solid-svg-icons';
-import { Subject, takeUntil } from 'rxjs';
+import { ConfirmationService } from 'primeng/api';
+import { first, Subject, takeUntil } from 'rxjs';
 import { IUser } from '../../../models';
 import { AuthService } from '../../service/auth.service';
 
@@ -25,9 +26,10 @@ import { AuthService } from '../../service/auth.service';
     <nav
       class="navbar navbar-expand-lg relative flex w-full flex-col items-center justify-between border-b border-slate-100 shadow-2xl"
     >
+      <a #link class="hidden" href="https://digimoncard.app"></a>
       <a
         class="absolute top-0 left-4 z-[5000] flex flex-row"
-        href="https://digimoncard.app"
+        (click)="refresh(link)"
       >
         <img
           alt="Logo"
@@ -401,7 +403,11 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   private onDestroy$ = new Subject();
 
-  constructor(public router: Router, public authService: AuthService) {}
+  constructor(
+    public router: Router,
+    public authService: AuthService,
+    private confirmationService: ConfirmationService
+  ) {}
 
   ngOnInit() {
     this.user = this.authService.userData;
@@ -442,5 +448,14 @@ export class NavbarComponent implements OnInit, OnDestroy {
     this.showChangelog = true;
     this.megamenu = false;
     this.loadChangelog.emit(true);
+  }
+
+  refresh(link: HTMLAnchorElement) {
+    this.confirmationService.confirm({
+      message: 'You are about to refresh to the home page. Are you sure?',
+      accept: () => {
+        link.click();
+      },
+    });
   }
 }
