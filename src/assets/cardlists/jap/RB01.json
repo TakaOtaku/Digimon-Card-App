@@ -872,7 +872,7 @@
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "-",
-    "digivolveEffect": "[All Turns] While a Tamer is in play, this Digimon can't be deleted by your opponent's effects.",
+    "digivolveEffect": "[Opponent's Turns] While a Tamer is in play, this Digimon can't be deleted by your opponent's effects.",
     "securityEffect": "-",
     "notes": "REBOOT BOOSTER RISING WIND [RB-01]",
     "color": "Black",

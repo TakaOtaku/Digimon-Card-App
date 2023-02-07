@@ -3979,7 +3979,7 @@
     "notes": "▹BOOSTER ACROSS TIME [BT-12]",
     "color": "Red",
     "version": "AA",
-    "illustrator": "Nakano Haito",
+    "illustrator": "tyuga",
     "block": [
       "02"
     ],
@@ -4013,7 +4013,7 @@
     "notes": "▹BOOSTER ACROSS TIME [BT-12]",
     "color": "Red",
     "version": "AA",
-    "illustrator": "Takase",
+    "illustrator": "toriyufu",
     "block": [
       "02"
     ],
@@ -4047,7 +4047,7 @@
     "notes": "▹BOOSTER ACROSS TIME [BT-12]",
     "color": "Blue",
     "version": "AA",
-    "illustrator": "sasasi",
+    "illustrator": "As'Maria",
     "block": [
       "02"
     ],
@@ -4081,7 +4081,7 @@
     "notes": "▹BOOSTER ACROSS TIME [BT-12]",
     "color": "Blue/Green",
     "version": "AA",
-    "illustrator": "toriyufu",
+    "illustrator": "tyuga",
     "block": [
       "02"
     ],
@@ -4149,7 +4149,7 @@
     "notes": "▹BOOSTER ACROSS TIME [BT-12]",
     "color": "Yellow/Red",
     "version": "AA",
-    "illustrator": "Takase",
+    "illustrator": "Tonamikanji",
     "block": [
       "02"
     ],
@@ -4217,7 +4217,7 @@
     "notes": "▹BOOSTER ACROSS TIME [BT-12]",
     "color": "Green",
     "version": "AA",
-    "illustrator": "sasasi",
+    "illustrator": "Naochika Morishita",
     "block": [
       "02"
     ],
@@ -4288,7 +4288,7 @@
     "notes": "▹BOOSTER ACROSS TIME [BT-12]",
     "color": "Black/Red",
     "version": "AA",
-    "illustrator": "toriyufu",
+    "illustrator": "Tonamikanji",
     "block": [
       "02"
     ],
@@ -4390,7 +4390,7 @@
     "notes": "▹BOOSTER ACROSS TIME [BT-12]",
     "color": "Purple",
     "version": "AA",
-    "illustrator": "Tonamikanji",
+    "illustrator": "sasasi",
     "block": [
       "02"
     ],
@@ -4424,7 +4424,7 @@
     "notes": "▹BOOSTER ACROSS TIME [BT-12]",
     "color": "Purple",
     "version": "AA",
-    "illustrator": "sasasi",
+    "illustrator": "Tonamikanji",
     "block": [
       "02"
     ],
@@ -4696,7 +4696,41 @@
     "notes": "▹BOOSTER ACROSS TIME [BT-12]",
     "color": "Purple/Black",
     "version": "AA",
-    "illustrator": "Hisashi Fujiwara",
+    "illustrator": "Naochika Morishita",
+    "block": [
+      "02"
+    ],
+    "restriction": "-"
+  },
+  {
+    "id": "BT12-111_P2",
+    "name": "DarknessBagramon",
+    "cardImage": "assets/images/cards/jap/BT12-111_P2.webp",
+    "cardType": "Digimon",
+    "dp": "15000",
+    "playCost": "16",
+    "digivolveCost1": "6 from Lv.6",
+    "digivolveColor1": "Purple",
+    "digivolveLevel1": "6",
+    "digivolveCost2": "9 from Lv.5",
+    "digivolveColor2": "Black",
+    "digivolveLevel2": "5",
+    "cardLv": "Lv.7",
+    "form": "Mega",
+    "attribute": "Virus",
+    "type": "Composite/Bagra Army",
+    "rarity": "SEC",
+    "cardNumber": "BT12-111",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Play] [When Digivolving] Delete 1 of your opponent's Digimon. Then, you may place up to 5 Digimon cards with the [Bagra Army] trait from your trash as digivolution cards of this Digimon.\n[Opponent's Turn] When an opponent's Digimon digivolves or attacks, by trashing 5 cards in this Digimon's digivolution cards, return all Tamers to their owners' hands.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "▹BOOSTER ACROSS TIME [BT-12]",
+    "color": "Purple/Black",
+    "version": "AA",
+    "illustrator": "Naochika Morishita",
     "block": [
       "02"
     ],
@@ -4730,7 +4764,41 @@
     "notes": "▹BOOSTER ACROSS TIME [BT-12]",
     "color": "White/Red",
     "version": "AA",
-    "illustrator": "Tonamikanji",
+    "illustrator": "Naochika Morishita",
+    "block": [
+      "02"
+    ],
+    "restriction": "-"
+  },
+  {
+    "id": "BT12-112_P2",
+    "name": "Shoutmon X7: Superior Mode",
+    "cardImage": "assets/images/cards/jap/BT12-112_P2.webp",
+    "cardType": "Digimon",
+    "dp": "17000",
+    "playCost": "15",
+    "digivolveCost1": "-",
+    "digivolveColor1": "-",
+    "digivolveLevel1": "-",
+    "digivolveCost2": "-",
+    "digivolveColor2": "-",
+    "digivolveLevel2": "-",
+    "cardLv": "Lv.7",
+    "form": "Mega",
+    "attribute": "Data",
+    "type": "Composite",
+    "rarity": "SEC",
+    "cardNumber": "BT12-112",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "When you would play this card from your hand, by placing 1 [Shoutmon] as a digivolution card under this Digimon, reduce the cost by 1 and you may place cards in your trash as digivolution cards for a DigiXros.\n[On Play] Return all of the digivolution cards of 1 of your opponent's Digimon to the bottom of its owner's deck, and return that Digimon to the bottom of its owner's deck.\n[Your Turn] All of your opponent's [Security] effects on Option cards don't activate.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "▹BOOSTER ACROSS TIME [BT-12]",
+    "color": "White/Red",
+    "version": "AA",
+    "illustrator": "Naochika Morishita",
     "block": [
       "02"
     ],
