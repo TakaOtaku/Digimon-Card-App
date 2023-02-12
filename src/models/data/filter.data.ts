@@ -428,4 +428,8 @@ export const VersionButtons: MultiButtons[] = [
     name: 'Reprint',
     value: 'Reprint',
   },
+  {
+    name: 'Foil',
+    value: 'Foil',
+  },
 ];

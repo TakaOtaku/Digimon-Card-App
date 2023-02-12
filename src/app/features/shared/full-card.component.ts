@@ -27,7 +27,7 @@ import {
         <div class="absolute top-1 z-10 grid w-full grid-cols-5 gap-0">
           <div></div>
           <img
-            *ngIf="card.version === 'AA'"
+            *ngIf="card.version === 'AA' || card.version === 'Foil'"
             [src]="
               aa.get(this.card.color) ??
               'assets/images/banner/ico_card_detail_multi.png'
