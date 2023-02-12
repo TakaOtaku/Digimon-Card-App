@@ -6,7 +6,7 @@ import re
 import pandas as pd
 
 
-names = ['BT10']
+names = ['BT11']
 for name in names:
     cards = list()
     engCards = []
@@ -14,14 +14,13 @@ for name in names:
         engCards = json.load(fh)
 
     for card in engCards:
-        if card['version'] == 'Normal':
-            if card['rarity'] == 'R' or card['rarity'] == 'U':
-                card['id'] = card['id'] + '_P0'
+        if card['version'] == 'Stamp':
+            if card['rarity'] == 'C' or card['rarity'] == 'U':
+                card['id'] = card['id'] + '_P1'
                 card['cardImage'] = re.sub(
-                    r'eng', 'pre-release', card['cardImage'])
-                card['cardImage'] = re.sub(
-                    r'.webp', '_P0.webp', card['cardImage'])
-                card['version'] = 'Pre-Release'
+                    r'.webp', '.webp', card['cardImage'])
+                card['version'] = 'Foil'
+                card['note'] = '▹BOOSTER DIMENSIONAL PHASE [BT-11]'
                 cards.append(card)
 
     with open(name+'.json', 'w') as f:
