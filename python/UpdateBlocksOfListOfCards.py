@@ -5,93 +5,110 @@ from bs4 import BeautifulSoup
 import re
 import pandas as pd
 
-listsOfCardIds = [
-  'BT1-003',
-  'BT1-006',
-  'BT1-007',
-  'BT2-006',
-  'BT3-002',
-  'BT3-003',
-  'BT3-006',
-  'BT4-006',
-  'BT5-001',
-  'BT1-010',
-  'BT1-048',
-  'BT1-060',
-  'BT1-067',
-  'BT1-114',
-  'BT2-032',
-  'BT2-034',
-  'BT2-038',
-  'BT2-041',
-  'BT2-055',
-  'BT2-069',
-  'BT2-070',
-  'BT2-074',
-  'BT2-112',
-  'BT3-021',
-  'BT3-039',
-  'BT3-046',
-  'BT3-047',
-  'BT3-054',
-  'BT3-061',
-  'BT3-075',
-  'BT3-088',
-  'BT3-091',
-  'BT4-011',
-  'BT4-017',
-  'BT4-025',
-  'BT4-062',
-  'BT4-079',
-  'BT4-115',
-  'BT5-021',
-  'BT5-050',
-  'BT5-062',
-  'BT5-065',
-  'BT5-086',
-  'BT5-087',
-  'BT5-111',
-  'BT5-112',
-  'ST1-07',
-  'ST3-04',
-  'ST5-11',
-  'P-007',
-  'P-008',
-  'P-011',
-  'P-013',
-  'P-016',
-  'P-017',
-  'P-028',
-  'P-032',
-  'P-047',
-  'P-048',
-  'P-066',
-  'P-067',
-  'P-068',
-  'P-069',
-  'P-070',
-  'P-071',
-  'BT1-085',
-  'BT1-087',
-  'BT1-089',
-  'BT2-090',
-  'BT4-096',
-  'BT4-097',
-  'BT5-088',
-  'BT5-092',
-  'P-012',
-  'BT3-097',
-  'BT3-103',
-  'BT4-104',
-  'BT4-111',
-  'BT5-105',
-  'ST2-16',
-  'P-035',
-  'P-036',
-  'P-037',
-  'P-038',
-  'P-039',
-  'P-040'
+allChanges = [
+ 'BT1-085_P1',
+ 'BT1-086_P1',
+ 'BT1-087_P1',
+ 'BT1-088_P1',
+ 'BT1-089_P1',
+ 'BT2-084_P1',
+ 'BT2-085_P1',
+ 'BT2-087_P1',
+ 'BT2-089_P1',
+ 'BT2-090_P1',
+ 'BT3-011_P1',
+ 'BT3-024_P1',
+ 'BT3-036_P1',
+ 'BT3-049_P1',
+ 'BT3-065_P1',
+ 'BT3-082_P1',
+ 'BT4-092_P1',
+ 'BT4-093_P1',
+ 'BT4-094_P1',
+ 'BT4-095_P1',
+ 'BT4-096_P1',
+ 'BT4-097_P1',
+ 'BT5-088_P1',
+ 'BT5-089_P1',
+ 'BT5-090_P1',
+ 'BT5-091_P1',
+ 'BT5-092_P1',
+ 'BT5-093_P1',
+ 'BT6-001_P1',
+ 'BT6-002_P1',
+ 'BT6-003_P1',
+ 'BT6-004_P1',
+ 'BT6-005_P1',
+ 'BT6-006_P1',
+ 'BT7-085_P1',
+ 'BT7-086_P1',
+ 'BT7-087_P1',
+ 'BT7-088_P1',
+ 'BT7-089_P1',
+ 'BT7-091_P1',
+ 'BT8-085_P1',
+ 'BT8-087_P1',
+ 'BT8-088_P1',
+ 'BT8-089_P1',
+ 'BT8-090_P1',
+ 'BT8-091_P1',
+ 'BT9-001_P1',
+ 'BT9-002_P1',
+ 'BT9-003_P1',
+ 'BT9-004_P1',
+ 'BT9-005_P1',
+ 'BT9-006_P1',
+ 'BT10-087_P1',
+ 'BT10-088_P1',
+ 'BT10-089_P1',
+ 'BT10-090_P1',
+ 'BT10-092_P1',
+ 'BT10-093_P1',
+ 'EX3-010_P1',
+ 'EX3-020_P1',
+ 'EX3-031_P1',
+ 'EX3-041_P1',
+ 'EX3-049_P1',
+ 'EX3-061_P1',
+ 'BT3-111_P2'
+]
+
+japChanges = [
+  'BT11-008_P1',
+  'BT11-023_P1',
+  'BT11-034_P1',
+  'BT11-046_P1',
+  'BT11-06_P1',
+  'BT11-076_P1',
+  'BT1-115_P2',
+  'BT12-051_P1',
+  'BT12-077_P1',
+  'BT12-014_P1',
+  'BT12-041_P1',
+  'BT12-064_P1',
+  'BT12-081_P1',
+  'BT5-086_P5'
+]
+
+engChanges = [
+  'BT1-003_P1',
+  'BT3-021_P1',
+  'BT3-046_P1',
+  'BT2-074_P1',
+  'BT4-016_P1',
+  'BT3-039_P1',
+  'BT3-057_P1',
+  'BT2-083_P1',
+  'BT4-091_P1',
+  'ST1-10_P1',
+  'BT8-008_P3',
+  'ST1-03_P6',
+  'P-005_P1',
+  'EX2-025_P2',
+  'BT2-056_P1',
+  'ST6-08_P6',
+  'EX1-039_P2',
+  'ST5-12_P1'
 ]
 
 cardLists = [
@@ -157,21 +174,19 @@ cardLists = [
   'jap/P',
 ]
 
-blocks = ['01', '02']
-
 for cardList in cardLists:
     cards = []
-    cardsWithBlocks = []
+    cahngedCards = []
     with open('jsons/' + cardList + '.json', encoding='utf-8') as fh:
       cards = json.load(fh)
 
     index = 0
     for card in cards:
-      if card['cardNumber'] in listsOfCardIds:
-          card['block'] = blocks
-          cardsWithBlocks.append(card)
+      if card['cardNumber'] in allChanges:
+          card['version'] = 'Boxtopper'
+          cahngedCards.append(card)
       else:
-        cardsWithBlocks.append(card)
+        cahngedCards.append(card)
 
     with open('jsons/' + cardList + '.json', 'w') as f:
-        f.write("%s\n" % json.dumps(cardsWithBlocks))
+        f.write("%s\n" % json.dumps(cahngedCards))
