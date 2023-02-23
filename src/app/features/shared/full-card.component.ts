@@ -60,6 +60,7 @@ import {
           [ngClass]="{ grayscale: setGrayScale() }"
           [ngStyle]="{ border: cardBorder, 'border-radius': cardRadius }"
           alt="{{ card.cardNumber + ' ' + card.name }}"
+          onerror="this.onerror=null; this.src='assets/images/card_placeholder.png'"
           class="m-auto"
           defaultImage="assets/images/digimon-card-back.webp"
         />

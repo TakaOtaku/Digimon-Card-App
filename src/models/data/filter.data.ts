@@ -432,4 +432,8 @@ export const VersionButtons: MultiButtons[] = [
     name: 'Foil',
     value: 'Foil',
   },
+  {
+    name: 'Box-Topper',
+    value: 'Box-Topper',
+  },
 ];

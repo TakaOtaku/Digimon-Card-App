@@ -10,12 +10,13 @@ import copy
 
 wikiLink = 'https://digimoncardgame.fandom.com'
 wikiPageLinks = [
-    'https://digimoncardgame.fandom.com/wiki/BT-12:_Booster_Across_Time',
+    #'https://digimoncardgame.fandom.com/wiki/BT-12:_Booster_Across_Time',
+    'https://digimoncardgame.fandom.com/wiki/BT-13:_Booster_Versus_Royal_Knights'
     #'https://digimoncardgame.fandom.com/wiki/ST-14:_Advanced_Deck_Beelzemon'
     #'https://digimoncardgame.fandom.com/wiki/EX-04:_Theme_Booster_Alternative_Being',
     #'https://digimoncardgame.fandom.com/wiki/RB-01:_Reboot_Booster_Rising_Wind'
 ]
-setName = "REBOOT BOOSTER RISING WIND [RB-01]"
+setName = "BT-13: Booster Versus Royal Knights"
 cardLinks = []
 NormalCards = []
 AACards = []
@@ -215,8 +216,8 @@ def getCardDataFromWiki():
         if(image is not None):
             imageSrc = image['src']
             # Change URL depending on if you want Japanese Cards or English Cards
-            #urllib.request.urlretrieve(
-            #   imageSrc, digimoncard['cardNumber']+".png")
+            urllib.request.urlretrieve(
+               imageSrc, digimoncard['cardNumber']+".png")
         print(digimoncard['name'])
         cards.append(digimoncard)
 
@@ -239,7 +240,7 @@ def makeAACardDatas():
 
 def saveCardsToJSON():
     print('Saving now!')
-    with open('RB01.json', 'w') as fp:
+    with open('BT13.json', 'w') as fp:
         json.dump(cards, fp)
 
 
