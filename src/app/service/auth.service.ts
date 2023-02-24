@@ -91,73 +91,81 @@ export class AuthService {
     });
   }
 
+  createUserData(user: User | null, save: any) {
+    let userData: IUser;
+    if (!save) {
+      userData = {
+        uid: user.uid,
+        displayName: user.displayName ?? '',
+        photoURL: user.photoURL ?? '',
+        save: {
+          uid: user.uid,
+          photoURL: user.photoURL ?? '',
+          displayName: user.displayName ?? '',
+          version: 1,
+          collection: [],
+          decks: [],
+          settings: emptySettings,
+        },
+      };
+    } else {
+      userData = {
+        uid: user.uid,
+        displayName: user.displayName ?? '',
+        photoURL: user.photoURL ?? '',
+        save,
+      };
+    }
+
+    if (!userData.save.uid) {
+      userData.save.uid = user.uid;
+    }
+    if (!userData.save.displayName) {
+      userData.save.displayName = user.displayName ?? '';
+    }
+    if (!userData.save.photoURL) {
+      userData.save.photoURL = user.photoURL ?? '';
+    }
+    
+    localStorage.setItem('user', JSON.stringify(userData));
+    this.store.dispatch(
+      setSave({
+        save: save ?? {
+          uid: user.uid,
+          photoURL: user.photoURL ?? '',
+          displayName: user.displayName ?? '',
+          version: 1,
+          collection: [],
+          decks: [],
+          settings: emptySettings,
+        },
+      })
+    );
+
+    this.userData = userData;
+
+    this.digimonBackendService
+      .updateSave(this.userData.save)
+      .pipe(first())
+      .subscribe();
+
+    this.authChange.next(true);
+  }
+
   SetUserData(user: User | null) {
     if (!user) return;
 
     console.log('User-ID: ', user.uid);
-
-    this.digimonBackendService
+    try{
+      this.digimonBackendService
       .getSave(user.uid)
       .pipe(first())
-      .subscribe((save) => {
-        let userData: IUser;
-        if (!save) {
-          userData = {
-            uid: user.uid,
-            displayName: user.displayName ?? '',
-            photoURL: user.photoURL ?? '',
-            save: {
-              uid: user.uid,
-              photoURL: user.photoURL ?? '',
-              displayName: user.displayName ?? '',
-              version: 1,
-              collection: [],
-              decks: [],
-              settings: emptySettings,
-            },
-          };
-        } else {
-          userData = {
-            uid: user.uid,
-            displayName: user.displayName ?? '',
-            photoURL: user.photoURL ?? '',
-            save,
-          };
-        }
-
-        if (!userData.save.uid) {
-          userData.save.uid = user.uid;
-        }
-        if (!userData.save.displayName) {
-          userData.save.displayName = user.displayName ?? '';
-        }
-        if (!userData.save.photoURL) {
-          userData.save.photoURL = user.photoURL ?? '';
-        }
-
-        localStorage.setItem('user', JSON.stringify(userData));
-        this.store.dispatch(
-          setSave({
-            save: save ?? {
-              uid: user.uid,
-              photoURL: user.photoURL ?? '',
-              displayName: user.displayName ?? '',
-              version: 1,
-              collection: [],
-              decks: [],
-              settings: emptySettings,
-            },
-          })
-        );
-
-        this.userData = userData;
-
-        this.digimonBackendService
-          .updateSave(this.userData.save)
-          .pipe(first())
-          .subscribe();
-
-        this.authChange.next(true);
-      });
+      .subscribe((save: any) => {
+        this.createUserData(user, save)
+      })
+    }catch(e){
+      console.log(e)
+      this.createUserData(user, null)
+    }        
   }
 }
