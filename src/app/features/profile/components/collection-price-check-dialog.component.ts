@@ -1,12 +1,15 @@
 import { Component, Input, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subject, tap } from 'rxjs';
-import { GroupedSets, ICountCard, ISave } from '../../../../models';
+import { GroupedSets, ICard, ICountCard, ISave } from '../../../../models';
 import {
   ProductCM,
   ProductCMWithCount,
 } from '../../../service/card-market.service';
 import { selectPriceGuideCM } from '../../../store/digimon.selectors';
+import { englishCards } from '../../../../assets/cardlists/eng/english';
+import preReleaseJSON from '../../../../assets/cardlists/eng/PreRelease.json';
+import { japaneseCards } from '../../../../assets/cardlists/jap/japanese';
 
 @Component({
   selector: 'digimon-collection-price-check-dialog',
@@ -58,7 +61,6 @@ import { selectPriceGuideCM } from '../../../store/digimon.selectors';
         </ng-template>
       </p-multiSelect>
       <button
-        [disabled]="filteredProducts.length > 0"
         (click)="updatePrice()"
         class="surface-ground hover:primary-background text-shadow h-8 border border-black px-1 font-bold text-[#e2e4e6]"
       >
@@ -68,9 +70,18 @@ import { selectPriceGuideCM } from '../../../store/digimon.selectors';
 
     <div *ngIf="notFound.length > 0" class="flex flex-row flex-wrap">
       Couldn't find a price for:
-      <span *ngFor="let card of notFound" class="mx-1 font-bold">{{
-        card.cardId
-      }}</span>
+      <div *ngFor="let card of notFound">
+        <img
+              [lazyLoad]="getImage(card.cardId)"
+              [ngStyle]="{ border: cardBorder, 'border-radius': cardRadius, width: '120px', margin: '6px' }"
+              alt="{{ card.cardId + ' ' + card.name }}"
+              onerror="this.onerror=null; this.src='assets/images/card_placeholder.png'"
+              defaultImage="assets/images/digimon-card-back.webp"
+        />
+        <span class="mx-1 font-bold">{{
+          card.cardId
+        }}</span>
+      </div>
     </div>
 
     <p-table
@@ -80,6 +91,7 @@ import { selectPriceGuideCM } from '../../../store/digimon.selectors';
     >
       <ng-template pTemplate="header">
         <tr>
+          <th>Img</th>
           <th>Count</th>
           <th>ID</th>
           <th>Name</th>
@@ -94,6 +106,43 @@ import { selectPriceGuideCM } from '../../../store/digimon.selectors';
       </ng-template>
       <ng-template pTemplate="body" let-product>
         <tr>
+          <th>
+            <img
+            *ngIf="product.version === 'AA' || product.version === 'Foil'"
+            [src]="
+              aa.get(product.color) ??
+              'assets/images/banner/ico_card_detail_multi.png'
+            "
+            alt="AA-Banner"
+            class="col-span-3 w-full"
+          />
+          <img
+            *ngIf="product.version === 'Reprint'"
+            [src]="
+              reprint.get(product.color) ??
+              'assets/images/banner/reprint_multi.png'
+            "
+            alt="Reprint-Banner"
+            class="col-span-3 w-full"
+          />
+          <img
+            *ngIf="product.version === 'Stamp' || product.version === 'Pre-Release'"
+            [src]="
+              stamped.get(product.color) ??
+              'assets/images/banner/stamped_multi.png'
+            "
+            alt="Stamped-Banner"
+            class="col-span-3 w-full"
+          />
+
+          <img
+            [lazyLoad]="getImage(product.cardId)"
+            [ngStyle]="{ border: cardBorder, 'border-radius': cardRadius, width: '120px', margin: '6px' }"
+            alt="{{ product.cardNumber + ' ' + product.name }}"
+            onerror="this.onerror=null; this.src='assets/images/card_placeholder.png'"
+            defaultImage="assets/images/digimon-card-back.webp"
+          />
+          </th>
           <th>{{ product.count }}</th>
           <td>{{ product.cardId }}</td>
           <td>{{ product.name }}</td>
@@ -159,6 +208,45 @@ import { selectPriceGuideCM } from '../../../store/digimon.selectors';
 export class CollectionPriceCheckDialogComponent implements OnDestroy {
   @Input() save: ISave;
 
+  cardWidth = '70px';
+  cardBorder = '2px solid black';
+  cardRadius = '5px';
+
+  aa = new Map<string, string>([
+    ['Red', 'assets/images/banner/ico_card_detail_red.png'],
+    ['Blue', 'assets/images/banner/ico_card_detail_blue.png'],
+    ['Yellow', 'assets/images/banner/ico_card_detail_yellow.png'],
+    ['Green', 'assets/images/banner/ico_card_detail_green.png'],
+    ['Black', 'assets/images/banner/ico_card_detail_black.png'],
+    ['Purple', 'assets/images/banner/ico_card_detail_purple.png'],
+    ['White', 'assets/images/banner/ico_card_detail_white.png'],
+    ['Multi', 'assets/images/banner/ico_card_detail_multi.png'],
+  ]);
+
+  reprint = new Map<string, string>([
+    ['Red', 'assets/images/banner/reprint_red.png'],
+    ['Blue', 'assets/images/banner/reprint_blue.png'],
+    ['Yellow', 'assets/images/banner/reprint_yellow.png'],
+    ['Green', 'assets/images/banner/reprint_green.png'],
+    ['Black', 'assets/images/banner/reprint_black.png'],
+    ['Purple', 'assets/images/banner/reprint_purple.png'],
+    ['White', 'assets/images/banner/reprint_white.png'],
+    ['Multi', 'assets/images/banner/reprint_multi.png'],
+  ]);
+
+  stamped = new Map<string, string>([
+    ['Red', 'assets/images/banner/stamped_red.png'],
+    ['Blue', 'assets/images/banner/stamped_blue.png'],
+    ['Yellow', 'assets/images/banner/stamped_yellow.png'],
+    ['Green', 'assets/images/banner/stamped_green.png'],
+    ['Black', 'assets/images/banner/stamped_black.png'],
+    ['Purple', 'assets/images/banner/stamped_purple.png'],
+    ['White', 'assets/images/banner/stamped_white.png'],
+    ['Multi', 'assets/images/banner/stamped_multi.png'],
+  ]);
+
+  viewCardDialog = false;
+
   prizeGuide$ = this.store
     .select(selectPriceGuideCM)
     .pipe(tap((products) => (this.prizeGuide = products)));
@@ -210,7 +298,6 @@ export class CollectionPriceCheckDialogComponent implements OnDestroy {
     this.products = all.filter((value) => value.idProduct !== 0);
     this.filteredProducts = this.products;
     this.notFound = all.filter((value) => value.idProduct === 0);
-
     this.calculateTotal();
   }
 
@@ -293,6 +380,16 @@ export class CollectionPriceCheckDialogComponent implements OnDestroy {
       link: '',
     };
   }
+
+  getImage = (cardId: string): string => {
+    let card: ICard;
+
+    card = englishCards.filter((engCards) => engCards.id === cardId)[0];
+    if (!card)
+      card = preReleaseJSON.filter((preCard) => preCard.id === cardId)[0];
+    if (!card) card = japaneseCards.filter((jpCard) => jpCard.id === cardId)[0];
+    return card.cardImage;
+  };
 
   private filterCollection(): ICountCard[] {
     if (this.setFilter.length === 0) {
