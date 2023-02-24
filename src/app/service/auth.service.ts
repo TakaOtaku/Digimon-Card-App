@@ -154,18 +154,21 @@ export class AuthService {
 
   SetUserData(user: User | null) {
     if (!user) return;
-
+    // eslint-disable-next-line no-console
     console.log('User-ID: ', user.uid);
+    this.createUserData(user, null);
     try {
       this.digimonBackendService
         .getSave(user.uid)
         .pipe(first())
         .subscribe((save: any) => {
+          // eslint-disable-next-line no-console
+          console.log(`SUBSCRIBE`);
           this.createUserData(user, save);
         });
     } catch (e) {
-      console.log(e);
-      this.createUserData(user, null);
+      // eslint-disable-next-line no-console
+      console.log(`ERRROR:`, JSON.stringify(e));
     }
   }
 }
