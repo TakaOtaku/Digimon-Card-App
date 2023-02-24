@@ -91,7 +91,7 @@ export class AuthService {
     });
   }
 
-  createUserData(user: User | null, save: any) {
+  createUserData(user: User, save: any) {
     let userData: IUser;
     if (!save) {
       userData = {
@@ -126,7 +126,7 @@ export class AuthService {
     if (!userData.save.photoURL) {
       userData.save.photoURL = user.photoURL ?? '';
     }
-    
+
     localStorage.setItem('user', JSON.stringify(userData));
     this.store.dispatch(
       setSave({
@@ -156,16 +156,16 @@ export class AuthService {
     if (!user) return;
 
     console.log('User-ID: ', user.uid);
-    try{
+    try {
       this.digimonBackendService
-      .getSave(user.uid)
-      .pipe(first())
-      .subscribe((save: any) => {
-        this.createUserData(user, save)
-      })
-    }catch(e){
-      console.log(e)
-      this.createUserData(user, null)
-    }        
+        .getSave(user.uid)
+        .pipe(first())
+        .subscribe((save: any) => {
+          this.createUserData(user, save);
+        });
+    } catch (e) {
+      console.log(e);
+      this.createUserData(user, null);
+    }
   }
 }
