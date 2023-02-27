@@ -24,6 +24,7 @@ import { SelectButtonModule } from 'primeng/selectbutton';
 import { StyleClassModule } from 'primeng/styleclass';
 import { DigimonStoreModule } from '../../digimon-store.module';
 import { AuthService } from '../../service/auth.service';
+import { CardImageComponent } from './card-image.component';
 import { DeckCardComponent } from './deck-card.component';
 import { DeckContainerComponent } from './deck-container.component';
 import { ChangeAccessorieDialogComponent } from './dialogs/change-accessorie-dialog.component';
@@ -80,6 +81,7 @@ import { LevelSpreadComponent } from './statistics/level-spread.component';
     DdtoSpreadComponent,
     LevelSpreadComponent,
     DeckSubmissionComponent,
+    CardImageComponent,
   ],
   exports: [
     DeckContainerComponent,
@@ -104,6 +106,7 @@ import { LevelSpreadComponent } from './statistics/level-spread.component';
     DdtoSpreadComponent,
     LevelSpreadComponent,
     DeckSubmissionComponent,
+    CardImageComponent,
   ],
   imports: [
     CommonModule,

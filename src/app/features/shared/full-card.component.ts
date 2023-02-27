@@ -24,7 +24,13 @@ import {
       class="relative inline-flex w-full transition-transform hover:scale-105"
     >
       <div (click)="addCardToDeck()" (contextmenu)="showCardDetails()">
-        <digimon-card-image [card]="card"></digimon-card-image>
+        <digimon-card-image
+          [card]="card"
+          [count]="count"
+          [collectionMode]="collectionMode"
+          [collectionMinimum]="collectionMinimum"
+          [aaCollectionMinimum]="aaCollectionMinimum"
+        ></digimon-card-image>
       </div>
 
       <span
@@ -95,7 +101,7 @@ export class FullCardComponent implements OnInit, OnDestroy {
 
   @Input() width?: string;
   @Input() compact?: boolean = false;
-  @Input() collectionMode?: boolean = false;
+  @Input() collectionMode: boolean = false;
   @Input() deckBuilder?: boolean = false;
   @Input() biggerCards?: boolean = false;
 
@@ -105,43 +111,8 @@ export class FullCardComponent implements OnInit, OnDestroy {
   @Output() viewCard = new EventEmitter<ICard>();
 
   cardWidth = 7 + 'vmin';
-  cardBorder = '2px solid black';
-  cardRadius = '5px';
 
   viewCardDialog = false;
-
-  aa = new Map<string, string>([
-    ['Red', 'assets/images/banner/ico_card_detail_red.png'],
-    ['Blue', 'assets/images/banner/ico_card_detail_blue.png'],
-    ['Yellow', 'assets/images/banner/ico_card_detail_yellow.png'],
-    ['Green', 'assets/images/banner/ico_card_detail_green.png'],
-    ['Black', 'assets/images/banner/ico_card_detail_black.png'],
-    ['Purple', 'assets/images/banner/ico_card_detail_purple.png'],
-    ['White', 'assets/images/banner/ico_card_detail_white.png'],
-    ['Multi', 'assets/images/banner/ico_card_detail_multi.png'],
-  ]);
-
-  reprint = new Map<string, string>([
-    ['Red', 'assets/images/banner/reprint_red.png'],
-    ['Blue', 'assets/images/banner/reprint_blue.png'],
-    ['Yellow', 'assets/images/banner/reprint_yellow.png'],
-    ['Green', 'assets/images/banner/reprint_green.png'],
-    ['Black', 'assets/images/banner/reprint_black.png'],
-    ['Purple', 'assets/images/banner/reprint_purple.png'],
-    ['White', 'assets/images/banner/reprint_white.png'],
-    ['Multi', 'assets/images/banner/reprint_multi.png'],
-  ]);
-
-  stamped = new Map<string, string>([
-    ['Red', 'assets/images/banner/stamped_red.png'],
-    ['Blue', 'assets/images/banner/stamped_blue.png'],
-    ['Yellow', 'assets/images/banner/stamped_yellow.png'],
-    ['Green', 'assets/images/banner/stamped_green.png'],
-    ['Black', 'assets/images/banner/stamped_black.png'],
-    ['Purple', 'assets/images/banner/stamped_purple.png'],
-    ['White', 'assets/images/banner/stamped_white.png'],
-    ['Multi', 'assets/images/banner/stamped_multi.png'],
-  ]);
 
   collectionMinimum = 0;
   aaCollectionMinimum = 0;
@@ -228,11 +199,4 @@ export class FullCardComponent implements OnInit, OnDestroy {
     //(((OldValue - OldMin) * NewRange) / OldRange) + NewMin
     return ((input - 5) * (30 - 20)) / (100 - 5) + 20;
   };
-
-  setGrayScale(): boolean | undefined {
-    if (this.card.version !== 'Normal') {
-      return this.count < this.aaCollectionMinimum && this.collectionMode;
-    }
-    return this.count < this.collectionMinimum && this.collectionMode;
-  }
 }
