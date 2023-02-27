@@ -5,8 +5,8 @@ import { Store } from '@ngrx/store';
 import { GoogleAuthProvider } from 'firebase/auth';
 import firebase from 'firebase/compat';
 import { MessageService } from 'primeng/api';
-import { first, Subject } from 'rxjs';
-import { IUser } from '../../models';
+import { catchError, first, of, Subject } from 'rxjs';
+import { ISave, IUser } from '../../models';
 import { loadSave, setSave } from '../store/digimon.actions';
 import { emptySettings } from '../store/reducers/save.reducer';
 import { DigimonBackendService } from './digimon-backend.service';
@@ -156,19 +156,22 @@ export class AuthService {
     if (!user) return;
     // eslint-disable-next-line no-console
     console.log('User-ID: ', user.uid);
-    this.createUserData(user, null);
-    try {
-      this.digimonBackendService
-        .getSave(user.uid)
-        .pipe(first())
-        .subscribe((save: any) => {
+    this.digimonBackendService
+      .getSave(user.uid)
+      .pipe(
+        first(),
+        catchError((e) => {
           // eslint-disable-next-line no-console
-          console.log(`SUBSCRIBE`);
-          this.createUserData(user, save);
-        });
-    } catch (e) {
-      // eslint-disable-next-line no-console
-      console.log(`ERRROR:`, JSON.stringify(e));
-    }
+          console.log('No save found creating a new one!');
+          this.createUserData(user, null);
+          return of(null);
+        })
+      )
+      .subscribe((save: ISave | null) => {
+        if (!save) {
+          return;
+        }
+        this.createUserData(user, save);
+      });
   }
 }
