@@ -24,46 +24,7 @@ import {
       class="relative inline-flex w-full transition-transform hover:scale-105"
     >
       <div (click)="addCardToDeck()" (contextmenu)="showCardDetails()">
-        <div class="absolute top-1 z-10 grid w-full grid-cols-5 gap-0">
-          <div></div>
-          <img
-            *ngIf="card.version === 'AA' || card.version === 'Foil'"
-            [src]="
-              aa.get(this.card.color) ??
-              'assets/images/banner/ico_card_detail_multi.png'
-            "
-            alt="AA-Banner"
-            class="col-span-3 w-full"
-          />
-          <img
-            *ngIf="card.version === 'Reprint'"
-            [src]="
-              reprint.get(this.card.color) ??
-              'assets/images/banner/reprint_multi.png'
-            "
-            alt="Reprint-Banner"
-            class="col-span-3 w-full"
-          />
-          <img
-            *ngIf="card.version === 'Stamp' || card.version === 'Pre-Release'"
-            [src]="
-              stamped.get(this.card.color) ??
-              'assets/images/banner/stamped_multi.png'
-            "
-            alt="Stamped-Banner"
-            class="col-span-3 w-full"
-          />
-        </div>
-
-        <img
-          [lazyLoad]="card.cardImage"
-          [ngClass]="{ grayscale: setGrayScale() }"
-          [ngStyle]="{ border: cardBorder, 'border-radius': cardRadius }"
-          alt="{{ card.cardNumber + ' ' + card.name }}"
-          onerror="this.onerror=null; this.src='assets/images/card_placeholder.png'"
-          class="m-auto"
-          defaultImage="assets/images/digimon-card-back.webp"
-        />
+        <digimon-card-image [card]="card"></digimon-card-image>
       </div>
 
       <span

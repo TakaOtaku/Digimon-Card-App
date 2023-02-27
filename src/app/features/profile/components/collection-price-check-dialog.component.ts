@@ -212,39 +212,6 @@ export class CollectionPriceCheckDialogComponent implements OnDestroy {
   cardBorder = '2px solid black';
   cardRadius = '5px';
 
-  aa = new Map<string, string>([
-    ['Red', 'assets/images/banner/ico_card_detail_red.png'],
-    ['Blue', 'assets/images/banner/ico_card_detail_blue.png'],
-    ['Yellow', 'assets/images/banner/ico_card_detail_yellow.png'],
-    ['Green', 'assets/images/banner/ico_card_detail_green.png'],
-    ['Black', 'assets/images/banner/ico_card_detail_black.png'],
-    ['Purple', 'assets/images/banner/ico_card_detail_purple.png'],
-    ['White', 'assets/images/banner/ico_card_detail_white.png'],
-    ['Multi', 'assets/images/banner/ico_card_detail_multi.png'],
-  ]);
-
-  reprint = new Map<string, string>([
-    ['Red', 'assets/images/banner/reprint_red.png'],
-    ['Blue', 'assets/images/banner/reprint_blue.png'],
-    ['Yellow', 'assets/images/banner/reprint_yellow.png'],
-    ['Green', 'assets/images/banner/reprint_green.png'],
-    ['Black', 'assets/images/banner/reprint_black.png'],
-    ['Purple', 'assets/images/banner/reprint_purple.png'],
-    ['White', 'assets/images/banner/reprint_white.png'],
-    ['Multi', 'assets/images/banner/reprint_multi.png'],
-  ]);
-
-  stamped = new Map<string, string>([
-    ['Red', 'assets/images/banner/stamped_red.png'],
-    ['Blue', 'assets/images/banner/stamped_blue.png'],
-    ['Yellow', 'assets/images/banner/stamped_yellow.png'],
-    ['Green', 'assets/images/banner/stamped_green.png'],
-    ['Black', 'assets/images/banner/stamped_black.png'],
-    ['Purple', 'assets/images/banner/stamped_purple.png'],
-    ['White', 'assets/images/banner/stamped_white.png'],
-    ['Multi', 'assets/images/banner/stamped_multi.png'],
-  ]);
-
   viewCardDialog = false;
 
   prizeGuide$ = this.store
