@@ -71,29 +71,25 @@ listsOfCardIds = [
     'EX3-049_P1',
     'EX3-061_P1',
     'BT3-111_P2',
-    'BT1-003_P1',
-    'BT3-021_P1',
-    'BT3-046_P1',
-    'BT2-074_P1',
-    'BT4-016_P1',
-    'BT3-039_P1',
-    'BT3-057_P1',
-    'BT2-083_P1',
-    'BT4-091_P1',
-    'ST1-10_P1',
-    'BT8-008_P3',
-    'ST1-03_P6',
-    'P-005_P1',
-    'EX2-025_P2',
-    'BT2-056_P1',
-    'ST6-08_P6',
-    'EX1-039_P2',
-    'ST5-12_P1',
+    'BT11-008_P1',
+    'BT11-023_P1',
+    'BT11-034_P1',
+    'BT11-046_P1',
+    'BT11-06_P1',
+    'BT11-076_P1',
+    'BT1-115_P2',
+    'BT12-051_P1',
+    'BT12-077_P1',
+    'BT12-014_P1',
+    'BT12-041_P1',
+    'BT12-064_P1',
+    'BT12-081_P1',
+    'BT5-086_P5',
 ]
 
 cards = []
 changedCards = []
-with open('jsons/AAs.json', encoding='utf-8') as fh:
+with open('AAs.json', encoding='utf-8') as fh:
     cards = json.load(fh)
 
 for card in cards:
@@ -101,5 +97,5 @@ for card in cards:
         card['version'] = 'Box-Topper'
     changedCards.append(card)
 
-with open('jsons/AAs.json', 'w') as f:
+with open('AAs.json', 'w') as f:
     f.write("%s\n" % json.dumps(changedCards))
