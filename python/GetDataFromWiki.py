@@ -6,23 +6,26 @@ from bs4 import BeautifulSoup
 import re
 import pandas as pd
 import copy
-#'https://digimoncardgame.fandom.com/wiki/ST-14:_Advanced_Deck_Beelzemon/Gallery#Japanese'
+# 'https://digimoncardgame.fandom.com/wiki/ST-14:_Advanced_Deck_Beelzemon/Gallery#Japanese'
 
 wikiLink = 'https://digimoncardgame.fandom.com'
 wikiPageLinks = [
-    #'https://digimoncardgame.fandom.com/wiki/BT-12:_Booster_Across_Time',
-    'https://digimoncardgame.fandom.com/wiki/BT-13:_Booster_Versus_Royal_Knights'
-    #'https://digimoncardgame.fandom.com/wiki/ST-14:_Advanced_Deck_Beelzemon'
-    #'https://digimoncardgame.fandom.com/wiki/EX-04:_Theme_Booster_Alternative_Being',
-    #'https://digimoncardgame.fandom.com/wiki/RB-01:_Reboot_Booster_Rising_Wind'
+    'https://digimoncardgame.fandom.com/wiki/Digimon_Illustration_Competition_Promotion_Pack'
+    # 'https://digimoncardgame.fandom.com/wiki/BT-12:_Booster_Across_Time',
+    # 'https://digimoncardgame.fandom.com/wiki/BT-13:_Booster_Versus_Royal_Knights'
+    # 'https://digimoncardgame.fandom.com/wiki/ST-14:_Advanced_Deck_Beelzemon'
+    # 'https://digimoncardgame.fandom.com/wiki/EX-04:_Theme_Booster_Alternative_Being',
+    # 'https://digimoncardgame.fandom.com/wiki/RB-01:_Reboot_Booster_Rising_Wind'
 ]
-setName = "BT-13: Booster Versus Royal Knights"
+setName = "Digimon Illustration Competition Promotion Pack"
 cardLinks = []
 NormalCards = []
 AACards = []
 cards = []
 
 # Get all Tables and add the Links to the cards to an Array
+
+
 def getLinksFromWiki():
     for wikiPage in wikiPageLinks:
         page = requests.get(wikiPage)
@@ -38,6 +41,8 @@ def getLinksFromWiki():
                     cardLinks.append(cardLink["href"])
 
 # Iterate through the card links and put them in normal array and if already there in the aa array
+
+
 def splitCardsForNormalAndAA():
     for cardLink in cardLinks:
         if cardLink not in NormalCards:
@@ -46,6 +51,8 @@ def splitCardsForNormalAndAA():
             AACards.append(cardLink)
 
 # Get the Data from the main table and return it as an digimon card
+
+
 def getMainInfo(html, digimoncard):
     if html == None:
         return digimoncard
@@ -81,6 +88,8 @@ def getMainInfo(html, digimoncard):
     return digimoncard
 
 # Get digivolve requirements and return the digimon card
+
+
 def getDigivolveInfo(html, digimoncard):
     if html == None:
         return digimoncard
@@ -102,12 +111,13 @@ def getDigivolveInfo(html, digimoncard):
         cells = specialEvoCon.find_all("b")
         if len(cells) > 0:
             specialEvo = cells[0].text.replace("\n", "")
-            if(specialEvo.find("DNA Digivolution") != -1):
+            if (specialEvo.find("DNA Digivolution") != -1):
                 digimoncard['dnaDigivolve'] = specialEvo
-            if(specialEvo.find("Digivolve") != -1):
+            if (specialEvo.find("Digivolve") != -1):
                 digimoncard['specialDigivolve'] = specialEvo
 
     return digimoncard
+
 
 def getExtraInfo(html, digimoncard):
     if html == None:
@@ -128,6 +138,7 @@ def getExtraInfo(html, digimoncard):
 
     return digimoncard
 
+
 def getIllustratorsInfo(html, digimoncard):
     if html == None:
         return digimoncard
@@ -139,6 +150,7 @@ def getIllustratorsInfo(html, digimoncard):
             digimoncard['illustrator'] = td[0].text.replace("\n", "").strip()
 
     return digimoncard
+
 
 def getCardDataFromWiki():
     for url in NormalCards:
@@ -213,13 +225,14 @@ def getCardDataFromWiki():
         imagediv = soup.find("div", class_="image")
         if imagediv:
             image = imagediv.find("img")
-        if(image is not None):
+        if (image is not None):
             imageSrc = image['src']
             # Change URL depending on if you want Japanese Cards or English Cards
             urllib.request.urlretrieve(
-               imageSrc, digimoncard['cardNumber']+".png")
+                imageSrc, digimoncard['cardNumber']+".png")
         print(digimoncard['name'])
         cards.append(digimoncard)
+
 
 def makeAACardDatas():
     for aaCard in AACards:
@@ -229,7 +242,7 @@ def makeAACardDatas():
         newCard = {}
 
         for card in cards:
-            if(card['cardNumber'] == cardID):
+            if (card['cardNumber'] == cardID):
                 newCard = copy.deepcopy(card)
                 newCard['version'] = "AA"
                 newCard['id'] = cardID + "_P1"
@@ -238,9 +251,10 @@ def makeAACardDatas():
                 cards.append(newCard)
                 break
 
+
 def saveCardsToJSON():
     print('Saving now!')
-    with open('BT13.json', 'w') as fp:
+    with open('AAs.json', 'w') as fp:
         json.dump(cards, fp)
 
 

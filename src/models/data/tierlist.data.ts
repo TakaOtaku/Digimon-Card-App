@@ -7,10 +7,23 @@ export const TIERLIST = [
       image: 'assets/images/cards/jap/BT11-074.webp',
     },
     {
+      name: 'Xros Heart',
+      card: 'BT10-013',
+      image: 'assets/images/cards/eng/BT10-013.webp',
+    },
+    {
       name: 'GrandisKuwagamon',
       card: 'BT9-055',
       image: 'assets/images/cards/eng/BT9-055.webp',
     },
+    {
+      name: 'Blue Flare',
+      card: 'BT10-026',
+      image: 'assets/images/cards/eng/BT10-026.webp',
+    },
+  ],
+  //A
+  [
     {
       name: 'BloomHydra',
       card: 'EX3-045',
@@ -21,18 +34,10 @@ export const TIERLIST = [
       card: 'BT9-031',
       image: 'assets/images/cards/eng/BT9-031.webp',
     },
-  ],
-  //A
-  [
     {
       name: 'Jesmon GX',
       card: 'BT10-112',
       image: 'assets/images/cards/eng/BT10-112.webp',
-    },
-    {
-      name: 'Blue Flare',
-      card: 'BT10-026',
-      image: 'assets/images/cards/eng/BT10-026.webp',
     },
     {
       name: 'Ulforce',
@@ -131,11 +136,6 @@ export const TIERLIST = [
       name: 'Magnamon X',
       card: 'BT9-044',
       image: 'assets/images/cards/eng/BT9-044.webp',
-    },
-    {
-      name: 'Xros Heart',
-      card: 'BT10-013',
-      image: 'assets/images/cards/eng/BT10-013.webp',
     },
     {
       name: 'Hina',

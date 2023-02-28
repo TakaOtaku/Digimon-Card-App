@@ -220,6 +220,16 @@ export class ProductsComponent {
       image: '../../assets/images/products/BT-12.webp',
       link: 'https://digimoncardgame.fandom.com/wiki/BT-12:_Booster_Across_Time',
     },
+    {
+      name: 'EX-04: Theme Booster Alternative Being',
+      image: '../../assets/images/products/EX-4.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/EX-04:_Theme_Booster_Alternative_Being',
+    },
+    {
+      name: 'RB-01: Reboot Booster Rising Wind',
+      image: '../../assets/images/products/RB-1.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/RB-01:_Reboot_Booster_Rising_Wind',
+    },
   ];
   promo = [
     {

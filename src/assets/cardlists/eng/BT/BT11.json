@@ -557,7 +557,7 @@
     "digiXros": "＜DigiXros -2: [OmniShoutmon] × [ZeigGreymon] × [Ballistamon] × [Dorulumon] × [Starmons] × [Sparrowmon]＞ When you would play this card, you may place specified cards from your hand/battle area under it. Each placed card reduces the play cost.",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "＜Rush＞ (This Digimon may attack the turn it was played.)＜Material Save 4＞ (When this Digimon would be deleted, you may place 4 cards in this Digimon's DigiXros conditions from this Digimon's digivolution cards under 1 of your Tamers.)\n[On Play] Delete 1 of your opponent's Digimon with DP less than or equal to this Digimon's DP.\n[All Turns] For every 2 cards in this Digimon's digivolution cards, it gets +1000 DP.",
+    "effect": "＜Rush＞ (This Digimon may attack the turn it was played.)\n＜Material Save 4＞ (When this Digimon would be deleted, you may place 4 cards in this Digimon's DigiXros conditions from this Digimon's digivolution cards under 1 of your Tamers.)\n[On Play] Delete 1 of your opponent's Digimon with DP less than or equal to this Digimon's DP.\n[All Turns] For every 2 cards in this Digimon's digivolution cards, it gets +1000 DP.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
