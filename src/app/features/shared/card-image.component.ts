@@ -41,11 +41,11 @@ import { ICard } from '../../../models';
 
     <img
       [lazyLoad]="card.cardImage"
-      [ngClass]="{ grayscale: setGrayScale() }"
+      [ngClass]="{ grayscale: setGrayScale(), 'max-h-32': !ribbons }"
       [ngStyle]="{ border: cardBorder, 'border-radius': cardRadius }"
       alt="{{ card.cardNumber + ' ' + card.name }}"
       onerror="this.onerror=null; this.src='assets/images/card_placeholder.png'"
-      class="m-auto aspect-auto h-full"
+      class="m-auto aspect-auto"
       defaultImage="assets/images/digimon-card-back.webp"
     />
   `,

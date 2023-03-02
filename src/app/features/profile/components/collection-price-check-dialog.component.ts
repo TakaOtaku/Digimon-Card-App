@@ -72,7 +72,7 @@ import {
 
       <div *ngIf="notFound.length > 0" class="flex flex-row flex-wrap">
         <span class="w-full">Couldn't find a price for: </span>
-        <div *ngFor="let card of notFound" class="h-16">
+        <div *ngFor="let card of notFound">
           <digimon-card-image
             [card]="getCard(card.cardId, allCards)"
             [ribbons]="false"
