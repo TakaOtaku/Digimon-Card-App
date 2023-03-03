@@ -2151,9 +2151,9 @@
     "illustrator": "sasasi"
   },
   {
-    "id": "BT10-003",
+    "id": "BT10-003_P1",
     "name": "Pickmons",
-    "cardImage": "assets/images/cards/jap/BT10-003.webp",
+    "cardImage": "assets/images/cards/jap/BT10-003_P1.webp",
     "cardType": "Digi-Egg",
     "dp": "-",
     "playCost": "-",
@@ -2177,7 +2177,7 @@
     "securityEffect": "-",
     "notes": "Official Tournament Pack Vol. 8",
     "color": "Yellow",
-    "version": "Normal",
+    "version": "AA",
     "illustrator": "GOSSAN",
     "block": [
       "02"
@@ -7251,9 +7251,9 @@
     "illustrator": "GOSSAN"
   },
   {
-    "id": "BT2-070",
+    "id": "BT2-070_P1",
     "name": "Tapirmon",
-    "cardImage": "assets/images/cards/jap/BT2-070.webp",
+    "cardImage": "assets/images/cards/jap/BT2-070_P1.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -7277,7 +7277,7 @@
     "securityEffect": "-",
     "notes": "Official Tournament Pack Vol. 8",
     "color": "Purple",
-    "version": "Normal",
+    "version": "AA",
     "illustrator": "Takase",
     "block": [
       "02"
@@ -8420,9 +8420,9 @@
     "illustrator": "Kenji Watanabe"
   },
   {
-    "id": "BT3-021",
+    "id": "BT3-021_P3",
     "name": "Veemon",
-    "cardImage": "assets/images/cards/jap/BT3-021.webp",
+    "cardImage": "assets/images/cards/jap/BT3-021_P3.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -8446,7 +8446,7 @@
     "securityEffect": "-",
     "notes": "Official Tournament Pack Vol. 8",
     "color": "Blue",
-    "version": "Normal",
+    "version": "AA",
     "illustrator": "Tonamikanji",
     "block": [
       "02"
@@ -17782,9 +17782,9 @@
     "illustrator": "Takase"
   },
   {
-    "id": "BT9-004",
+    "id": "BT9-004_P2",
     "name": "Motimon",
-    "cardImage": "assets/images/cards/jap/BT9-004.webp",
+    "cardImage": "assets/images/cards/jap/BT9-004_P2.webp",
     "cardType": "Digi-Egg",
     "dp": "-",
     "playCost": "-",
@@ -17808,7 +17808,7 @@
     "securityEffect": "-",
     "notes": "Official Tournament Pack Vol. 8",
     "color": "Green",
-    "version": "Normal",
+    "version": "AA",
     "illustrator": "yuuki.",
     "block": [
       "02"
@@ -19076,9 +19076,9 @@
     "illustrator": ""
   },
   {
-    "id": "EX1-024",
+    "id": "EX1-024_P2",
     "name": "Patamon",
-    "cardImage": "assets/images/cards/jap/EX1-024.webp",
+    "cardImage": "assets/images/cards/jap/EX1-024_P2.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -19102,7 +19102,7 @@
     "securityEffect": "-",
     "notes": "Official Tournament Pack Vol. 8",
     "color": "Yellow",
-    "version": "Normal",
+    "version": "AA",
     "illustrator": "No Illustrator",
     "block": [
       "02"
@@ -22996,9 +22996,9 @@
     "illustrator": "p!k@ru"
   },
   {
-    "id": "P-091",
+    "id": "P-091_P1",
     "name": "Saberdramon",
-    "cardImage": "assets/images/cards/jap/P-091.webp",
+    "cardImage": "assets/images/cards/jap/P-091_P1.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "-",
@@ -23022,7 +23022,7 @@
     "securityEffect": "-",
     "notes": "3rd Anniversary Update Pack",
     "color": "Red/Purple",
-    "version": "Normal",
+    "version": "AA",
     "illustrator": "banira",
     "block": [
       "02"
@@ -23030,9 +23030,9 @@
     "restriction": "-"
   },
   {
-    "id": "P-092",
+    "id": "P-092_P1",
     "name": "Dracomon",
-    "cardImage": "assets/images/cards/jap/P-092.webp",
+    "cardImage": "assets/images/cards/jap/P-092_P1.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -23056,7 +23056,7 @@
     "securityEffect": "-",
     "notes": "3rd Anniversary Update Pack",
     "color": "Blue/Green",
-    "version": "Normal",
+    "version": "AA",
     "illustrator": "banira",
     "block": [
       "02"
@@ -23064,9 +23064,9 @@
     "restriction": "-"
   },
   {
-    "id": "P-093",
+    "id": "P-093_P1",
     "name": "Bastemon",
-    "cardImage": "assets/images/cards/jap/P-093.webp",
+    "cardImage": "assets/images/cards/jap/P-093_P1.webp",
     "cardType": "Digimon",
     "dp": "7000",
     "playCost": "-",
@@ -23090,7 +23090,7 @@
     "securityEffect": "-",
     "notes": "3rd Anniversary Update Pack",
     "color": "Green",
-    "version": "Normal",
+    "version": "AA",
     "illustrator": "poroze",
     "block": [
       "02"
@@ -23098,9 +23098,9 @@
     "restriction": "-"
   },
   {
-    "id": "P-094",
+    "id": "P-094_P1",
     "name": "Destromon",
-    "cardImage": "assets/images/cards/jap/P-094.webp",
+    "cardImage": "assets/images/cards/jap/P-094_P1.webp",
     "cardType": "Digimon",
     "dp": "10000",
     "playCost": "10",
@@ -23124,7 +23124,7 @@
     "securityEffect": "-",
     "notes": "3rd Anniversary Update Pack",
     "color": "Black",
-    "version": "Normal",
+    "version": "AA",
     "illustrator": "Kazumasa Yasukuni",
     "block": [
       "02"
@@ -23132,9 +23132,9 @@
     "restriction": "-"
   },
   {
-    "id": "P-095",
+    "id": "P-095_P1",
     "name": "Invalidation Plug-In P",
-    "cardImage": "assets/images/cards/jap/P-095.webp",
+    "cardImage": "assets/images/cards/jap/P-095_P1.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "-",
@@ -23158,7 +23158,7 @@
     "securityEffect": "-",
     "notes": "3rd Anniversary Update Pack",
     "color": "Yellow",
-    "version": "Normal",
+    "version": "AA",
     "illustrator": "No Illustrator",
     "block": [
       "02"
@@ -23166,9 +23166,9 @@
     "restriction": "-"
   },
   {
-    "id": "P-096",
+    "id": "P-096_P1",
     "name": "Prism Garrett",
-    "cardImage": "assets/images/cards/jap/P-096.webp",
+    "cardImage": "assets/images/cards/jap/P-096_P1.webp",
     "cardType": "Option",
     "dp": "-",
     "playCost": "-",
@@ -23192,7 +23192,7 @@
     "securityEffect": "-",
     "notes": "3rd Anniversary Update Pack",
     "color": "Purple",
-    "version": "Normal",
+    "version": "AA",
     "illustrator": "No Illustrator",
     "block": [
       "02"
@@ -25785,40 +25785,6 @@
     "illustrator": "Atarime"
   },
   {
-    "id": "ST6-08",
-    "name": "Devimon",
-    "cardImage": "assets/images/cards/jap/ST6-08.webp",
-    "cardType": "Digimon",
-    "dp": "5000",
-    "playCost": "6",
-    "digivolveCost1": "1 from Lv.3",
-    "digivolveColor1": "Purple",
-    "digivolveLevel1": "3",
-    "digivolveCost2": "-",
-    "digivolveColor2": "-",
-    "digivolveLevel2": "-",
-    "cardLv": "Lv.4",
-    "form": "Champion",
-    "attribute": "Virus",
-    "type": "Fallen Angel",
-    "rarity": "U",
-    "cardNumber": "ST6-08",
-    "digiXros": "-",
-    "specialDigivolve": "-",
-    "dnaDigivolve": "-",
-    "effect": "＜Blocker＞ (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead). [When Attacking] Lose 2 memory.",
-    "digivolveEffect": "-",
-    "securityEffect": "-",
-    "notes": "Digimon Illustration Competition Promotion Pack",
-    "color": "Purple",
-    "version": "Normal",
-    "illustrator": "Kenji Watanabe",
-    "block": [
-      "02"
-    ],
-    "restriction": "-"
-  },
-  {
     "id": "ST6-08_P1",
     "name": "Devimon",
     "cardImage": "assets/images/cards/eng/ST6-08_P1.webp",
@@ -26005,38 +25971,6 @@
     ]
   },
   {
-    "id": "ST6-08_P6",
-    "name": "Devimon",
-    "cardImage": "assets/images/cards/eng/ST6-08_P6.webp",
-    "cardType": "Digimon",
-    "dp": "5000",
-    "playCost": "6",
-    "digivolveCost1": "1 from Lv.3",
-    "digivolveCost2": "-",
-    "cardLv": "Lv.4",
-    "form": "Champion",
-    "attribute": "Virus",
-    "type": "Fallen Angel",
-    "rarity": "U",
-    "cardNumber": "ST6-08",
-    "digiXros": "-",
-    "specialDigivolve": "-",
-    "dnaDigivolve": "-",
-    "effect": "＜Blocker＞ (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)\n[When Attacking] Lose 2 memory.",
-    "digivolveEffect": "-",
-    "securityEffect": "-",
-    "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11] Digimon illustration Competition Pack Box Topper",
-    "color": "Purple",
-    "version": "Box-Topper",
-    "restriction": "-",
-    "illustrator": "Spareribs",
-    "block": [
-      "00",
-      "01",
-      "02"
-    ]
-  },
-  {
     "id": "ST6-14_P1",
     "name": "Matt Ishida",
     "cardImage": "assets/images/cards/eng/ST6-14_P1.webp",
@@ -26068,9 +26002,9 @@
     "illustrator": ""
   },
   {
-    "id": "ST7-02",
+    "id": "ST7-02_P1",
     "name": "Agumon",
-    "cardImage": "assets/images/cards/jap/ST7-02.webp",
+    "cardImage": "assets/images/cards/jap/ST7-02_P1.webp",
     "cardType": "Digimon",
     "dp": "2000",
     "playCost": "3",
@@ -26094,7 +26028,7 @@
     "securityEffect": "-",
     "notes": "Official Tournament Pack Vol. 8",
     "color": "Red",
-    "version": "Normal",
+    "version": "AA",
     "illustrator": "TANIMESO",
     "block": [
       "02"
