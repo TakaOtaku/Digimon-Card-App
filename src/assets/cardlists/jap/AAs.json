@@ -3530,9 +3530,9 @@
         ]
     },
     {
-        "id": "BT11-06_P1",
+        "id": "BT11-006_P1",
         "name": "Vemmon",
-        "cardImage": "assets/images/cards/jap/BT11-061_P1.webp",
+        "cardImage": "assets/images/cards/jap/BT11-006_P1.webp",
         "cardType": "Digimon",
         "dp": "1000",
         "playCost": "3",
