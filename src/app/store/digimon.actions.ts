@@ -73,6 +73,15 @@ export const setBlogs = createAction(
   '[Digimon Blog Entries] Save Blog Entries',
   props<{ blogs: IBlog[] }>()
 );
+export const setDraggedCard = createAction(
+  '[Drag] Set DraggedCard',
+  props<{ card: ICard }>()
+);
+
+export const removeCardFromDeck = createAction(
+  '[Digimon Card] Remove one card from Deck',
+  props<{ cardId: string }>()
+);
 //endregion
 
 //region Save Actions

@@ -7,20 +7,22 @@ import {
   Output,
 } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Subject, takeUntil } from 'rxjs';
+import { map, Subject, takeUntil } from 'rxjs';
 import { englishCards } from '../../../assets/cardlists/eng/english';
 import { ICard } from '../../../models';
-import { addCardToDeck, changeCardCount } from '../../store/digimon.actions';
 import {
-  selectCollectionMinimum,
-  selectDeck,
-  selectSettings,
-} from '../../store/digimon.selectors';
+  addCardToDeck,
+  changeCardCount,
+  setDraggedCard,
+} from '../../store/digimon.actions';
+import { selectDeck, selectSettings } from '../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-full-card',
   template: `
     <div
+      pDraggable="toDeck"
+      (onDragStart)="setDraggedCard(card)"
       class="relative inline-flex w-full transition-transform hover:scale-105"
     >
       <div (click)="addCardToDeck()" (contextmenu)="showCardDetails()">
@@ -33,23 +35,25 @@ import {
         ></digimon-card-image>
       </div>
 
-      <span
-        *ngIf="!collectionOnly && deckBuilder && countInDeck !== 0"
-        class="text-shadow-white absolute right-1 z-[100] px-1 text-3xl font-black text-orange-500"
-        [ngClass]="{
-          'bottom-1': !collectionMode,
-          ' bottom-10': collectionMode
-        }"
-      >
-        {{ countInDeck }}<span class="pr-1 text-sky-700">/</span
-        >{{
-          card.cardNumber === 'BT6-085' ||
-          card.cardNumber === 'EX2-046' ||
-          card.cardNumber === 'BT11-061'
-            ? 50
-            : 4
-        }}
-      </span>
+      <ng-container *ngIf="{ count: countInDeck$ | async } as deckCard">
+        <span
+          *ngIf="!collectionOnly && deckBuilder && deckCard.count"
+          class="text-shadow-white absolute right-1 z-[100] px-1 text-3xl font-black text-orange-500"
+          [ngClass]="{
+            'bottom-1': !collectionMode,
+            ' bottom-10': collectionMode
+          }"
+        >
+          {{ deckCard.count }}<span class="pr-1 text-sky-700">/</span
+          >{{
+            card.cardNumber === 'BT6-085' ||
+            card.cardNumber === 'EX2-046' ||
+            card.cardNumber === 'BT11-061'
+              ? 50
+              : 4
+          }}
+        </span>
+      </ng-container>
 
       <div
         *ngIf="collectionMode"
@@ -117,7 +121,14 @@ export class FullCardComponent implements OnInit, OnDestroy {
   collectionMinimum = 0;
   aaCollectionMinimum = 0;
 
-  countInDeck = 0;
+  countInDeck$ = this.store
+    .select(selectDeck)
+    .pipe(
+      map(
+        (deck) =>
+          deck.cards.find((value) => value.id === this.card.id)?.count ?? 0
+      )
+    );
 
   private onDestroy$ = new Subject();
 
@@ -131,14 +142,6 @@ export class FullCardComponent implements OnInit, OnDestroy {
         this.collectionMinimum = settings.collectionMinimum;
         this.aaCollectionMinimum = settings.aaCollectionMinimum;
       });
-    this.store
-      .select(selectDeck)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe(
-        (deck) =>
-          (this.countInDeck =
-            deck.cards.find((value) => value.id === this.card.id)?.count ?? 0)
-      );
   }
 
   ngOnDestroy() {
@@ -199,4 +202,8 @@ export class FullCardComponent implements OnInit, OnDestroy {
     //(((OldValue - OldMin) * NewRange) / OldRange) + NewMin
     return ((input - 5) * (30 - 20)) / (100 - 5) + 20;
   };
+
+  setDraggedCard(card: ICard) {
+    this.store.dispatch(setDraggedCard({ card }));
+  }
 }

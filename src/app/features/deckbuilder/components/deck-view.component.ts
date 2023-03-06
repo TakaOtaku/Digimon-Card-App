@@ -28,22 +28,21 @@ import {
 } from '../../../functions/digimon-card.functions';
 import { sortID } from '../../../functions/filter.functions';
 import { AuthService } from '../../../service/auth.service';
-import { ProductCM } from '../../../service/card-market.service';
 import { DigimonBackendService } from '../../../service/digimon-backend.service';
 import {
   addCardToDeck,
   importDeck,
   setDeck,
+  setDraggedCard,
 } from '../../../store/digimon.actions';
 import {
   DeckBuilderViewModel,
-  selectAddCardToDeck,
   selectCollection,
   selectCommunityDecks,
   selectDeckBuilderViewModel,
+  selectDraggedCard,
   selectSave,
 } from '../../../store/digimon.selectors';
-import { emptyDeck } from '../../../store/reducers/digimon.reducers';
 
 @Component({
   selector: 'digimon-deck-view',
@@ -68,10 +67,17 @@ import { emptyDeck } from '../../../store/reducers/digimon.reducers';
       ></digimon-deck-toolbar>
     </div>
 
-    <div class="mx-auto h-full max-w-[1080px]">
+    <div
+      *ngIf="draggedCard$ | async as draggedCard"
+      pDroppable="toDeck"
+      (onDrop)="drop(draggedCard)"
+      class="mx-auto h-full max-w-[1080px]"
+    >
       <div class="grid w-full grid-cols-4 pb-32 md:grid-cols-6 lg:grid-cols-8">
         <div *ngFor="let card of mainDeck">
           <digimon-deck-card
+            pDraggable="fromDeck"
+            (onDragStart)="setDraggedCard(card)"
             (onChange)="mapToDeck()"
             (removeCard)="removeCard(card)"
             [cardHave]="getCardHave(card)"
@@ -98,6 +104,8 @@ export class DeckViewComponent implements OnInit, OnDestroy {
 
   mainDeck: IDeckCard[] = [];
   sideDeck: IDeckCard[] = [];
+
+  draggedCard$ = this.store.select(selectDraggedCard);
 
   deck: IDeck = {
     id: uuid.v4(),
@@ -162,17 +170,6 @@ export class DeckViewComponent implements OnInit, OnDestroy {
           this.selectedColor = deck.color;
           this.mapDeck(deck);
         }
-      });
-
-    this.store
-      .select(selectAddCardToDeck)
-      .pipe(
-        takeUntil(this.onDestroy$),
-        filter((value) => !!value)
-      )
-      .subscribe((cardToAdd) => {
-        this.onCardClick(cardToAdd);
-        this.store.dispatch(addCardToDeck({ addCardToDeck: '' }));
       });
   }
 
@@ -490,5 +487,17 @@ export class DeckViewComponent implements OnInit, OnDestroy {
           }
         });
       });
+  }
+
+  drop(card: any) {
+    this.store.dispatch(addCardToDeck({ addCardToDeck: card.id }));
+  }
+
+  setDraggedCard(card: IDeckCard) {
+    this.store.dispatch(
+      setDraggedCard({
+        card: this.allCards.find((value) => card.id === value.id)!,
+      })
+    );
   }
 }

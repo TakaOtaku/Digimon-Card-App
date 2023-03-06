@@ -9,9 +9,11 @@ import { Store } from '@ngrx/store';
 import { Subject, takeUntil } from 'rxjs';
 import { englishCards } from '../../../../assets/cardlists/eng/english';
 import { ICard, ICountCard } from '../../../../models';
+import { removeCardFromDeck } from '../../../store/digimon.actions';
 import {
   selectCollection,
   selectCollectionMode,
+  selectDraggedCard,
 } from '../../../store/digimon.selectors';
 
 @Component({
@@ -24,7 +26,12 @@ import {
 
     <digimon-search></digimon-search>
 
-    <div class="mx-1 flex w-full flex-row flex-wrap overflow-hidden">
+    <div
+      class="mx-1 flex w-full flex-row flex-wrap overflow-hidden"
+      *ngIf="draggedCard$ | async as draggedCard"
+      pDroppable="fromDeck"
+      (onDrop)="drop(draggedCard)"
+    >
       <h1
         *ngIf="cards.length === 0"
         class="primary-color text-bold my-10 text-center text-5xl"
@@ -82,6 +89,8 @@ export class PaginationCardListComponent implements OnInit, OnDestroy {
 
   filterBox = false;
 
+  draggedCard$ = this.store.select(selectDraggedCard);
+
   collectionMode$ = this.store.select(selectCollectionMode);
 
   viewCardDialog = false;
@@ -116,5 +125,9 @@ export class PaginationCardListComponent implements OnInit, OnDestroy {
   viewCard(card: ICard) {
     this.viewCardDialog = true;
     this.card = card;
+  }
+
+  drop(card: any) {
+    this.store.dispatch(removeCardFromDeck({ cardId: card.id }));
   }
 }

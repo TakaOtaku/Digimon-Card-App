@@ -1,14 +1,17 @@
 import { createReducer, on } from '@ngrx/store';
 import * as uuid from 'uuid';
-import { IDeck, IDigimonState } from '../../../models';
+import { englishCards } from '../../../assets/cardlists/eng/english';
+import { ICountCard, IDeck, IDigimonState } from '../../../models';
 import {
   addCardToDeck,
   changeFilter,
   changeSort,
+  removeCardFromDeck,
   setBlogs,
   setCommunityDecks,
   setCommunityDeckSearch,
   setDeck,
+  setDraggedCard,
   setMobileCollectionView,
   setPriceGuideCM,
 } from '../digimon.actions';
@@ -66,7 +69,19 @@ export const initialState: IDigimonState = {
   communityDecks: [],
   blogs: [],
   priceGuideCM: [],
+  draggedCard: englishCards[0],
 };
+
+function checkSpecialCardCounts(card: ICountCard): number {
+  if (
+    card!.id.includes('BT6-085') ||
+    card!.id.includes('EX2-046') ||
+    card!.id.includes('BT11-061')
+  ) {
+    return card.count > 50 ? 50 : card.count;
+  }
+  return card.count > 4 ? 4 : card.count;
+}
 
 export const digimonReducer = createReducer(
   initialState,
@@ -77,10 +92,40 @@ export const digimonReducer = createReducer(
     ...state,
     mobileCollectionView,
   })),
-  on(addCardToDeck, (state, { addCardToDeck }) => ({
-    ...state,
-    addCardToDeck,
-  })),
+  on(addCardToDeck, (state, { addCardToDeck }) => {
+    const cards = state.deck.cards.map((card) => {
+      if (card.id === addCardToDeck) {
+        card.count += 1;
+      }
+
+      card.count = checkSpecialCardCounts(card);
+      return card;
+    });
+
+    if (!cards.find((card) => card.id === addCardToDeck)) {
+      cards.push({ id: addCardToDeck, count: 1 });
+    }
+
+    return {
+      ...state,
+      deck: { ...state.deck, cards },
+    };
+  }),
+  on(removeCardFromDeck, (state, { cardId }) => {
+    const cards = state.deck.cards
+      .map((card) => {
+        if (card.id === cardId) {
+          card.count -= 1;
+        }
+        return card;
+      })
+      .filter((card) => card.count > 0);
+
+    return {
+      ...state,
+      deck: { ...state.deck, cards },
+    };
+  }),
   on(setCommunityDeckSearch, (state, { communityDeckSearch }) => ({
     ...state,
     communityDeckSearch,
@@ -96,5 +141,9 @@ export const digimonReducer = createReducer(
   on(setPriceGuideCM, (state, { products }) => ({
     ...state,
     priceGuideCM: products,
+  })),
+  on(setDraggedCard, (state, { card }) => ({
+    ...state,
+    draggedCard: card,
   }))
 );

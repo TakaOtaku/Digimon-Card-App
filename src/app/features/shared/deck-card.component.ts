@@ -7,9 +7,11 @@ import {
   Output,
   SimpleChanges,
 } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { englishCards } from '../../../assets/cardlists/eng/english';
 import { ICard, IDeckCard } from '../../../models';
 import { ColorMap } from '../../../models/maps/color.map';
+import { addCardToDeck, removeCardFromDeck } from '../../store/digimon.actions';
 
 @Component({
   selector: 'digimon-deck-card',
@@ -132,6 +134,8 @@ export class DeckCardComponent implements OnChanges, OnInit {
   viewCard: ICard = englishCards[0];
   viewCardDialog = false;
 
+  constructor(private store: Store) {}
+
   ngOnInit() {
     this.mapCard();
   }
@@ -151,13 +155,7 @@ export class DeckCardComponent implements OnChanges, OnInit {
       event.preventDefault();
       event.stopPropagation();
     }
-    if (this.card.cardNumber === 'BT6-085') {
-      this.card.count = this.card.count >= 50 ? 50 : this.card.count + 1;
-      this.onChange.emit(true);
-      return;
-    }
-    this.card.count = this.card.count >= 4 ? 4 : this.card.count + 1;
-    this.onChange.emit(true);
+    this.store.dispatch(addCardToDeck({ addCardToDeck: this.card.id }));
   }
 
   reduceCardCount(event?: any): void {
@@ -165,13 +163,7 @@ export class DeckCardComponent implements OnChanges, OnInit {
       event.preventDefault();
       event.stopPropagation();
     }
-    this.card.count -= 1;
-    this.onChange.emit(true);
-    if (this.card.count <= 0) {
-      this.card.count = 0;
-      this.removeCard.emit(true);
-      return;
-    }
+    this.store.dispatch(removeCardFromDeck({ cardId: this.card.id }));
   }
 
   transformDCost(dCost: string): string {

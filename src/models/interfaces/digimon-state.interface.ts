@@ -1,5 +1,6 @@
 import { ProductCM } from '../../app/service/card-market.service';
 import { IBlog } from './blog-entry.interface';
+import { ICard } from './card.interface';
 import { IDeck } from './deck.interface';
 import { IFilter } from './filter.interface';
 import { ISort } from './sort.interface';
@@ -14,4 +15,5 @@ export interface IDigimonState {
   communityDecks: IDeck[];
   blogs: IBlog[];
   priceGuideCM: ProductCM[];
+  draggedCard: ICard;
 }
