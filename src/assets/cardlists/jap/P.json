@@ -2785,7 +2785,7 @@
     "type": "Unknown",
     "rarity": "P",
     "cardNumber": "P-094",
-    "digiXros": "＜DigiXros -1: [Snatchmon] x 4 [Vemmon]＞\nWhen you would play this card, you may place specified cards from your hand/battle area under it. Each placed card reduces the play cost.",
+    "digiXros": "[DigiXros -1] [Snatchmon] x 4 [Vemmon]\nWhen you would play this card, you may place specified cards from your hand/battle area under it. Each placed card reduces the play cost.",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "[On Play] [When Digivolving] Delete your opponent's Digimon and Tamers with a total play cost of 3. For every [Vemmon] in this Digimon's digivolution cards, increase the maximum play cost you can choose by this effect by 1.",
