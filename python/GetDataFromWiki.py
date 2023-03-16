@@ -10,14 +10,15 @@ import copy
 
 wikiLink = 'https://digimoncardgame.fandom.com'
 wikiPageLinks = [
-    'https://digimoncardgame.fandom.com/wiki/Digimon_Illustration_Competition_Promotion_Pack'
+    #'https://digimoncardgame.fandom.com/wiki/Digimon_Illustration_Competition_Promotion_Pack'
+    'https://digimoncardgame.fandom.com/wiki/Limited_Card_Set_ONLINE_2023'
     # 'https://digimoncardgame.fandom.com/wiki/BT-12:_Booster_Across_Time',
     # 'https://digimoncardgame.fandom.com/wiki/BT-13:_Booster_Versus_Royal_Knights'
     # 'https://digimoncardgame.fandom.com/wiki/ST-14:_Advanced_Deck_Beelzemon'
     # 'https://digimoncardgame.fandom.com/wiki/EX-04:_Theme_Booster_Alternative_Being',
     # 'https://digimoncardgame.fandom.com/wiki/RB-01:_Reboot_Booster_Rising_Wind'
 ]
-setName = "Digimon Illustration Competition Promotion Pack"
+setName = "Limited Card Set ONLINE 2023"
 cardLinks = []
 NormalCards = []
 AACards = []

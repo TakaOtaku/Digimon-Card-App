@@ -14,7 +14,10 @@ import { Meta, Title } from '@angular/platform-browser';
 
       <div class="md:hidden">
         <digimon-filter-and-search></digimon-filter-and-search>
-        <digimon-card-list [showCount]="32"></digimon-card-list>
+        <digimon-card-list
+          [collectionOnly]="true"
+          [showCount]="32"
+        ></digimon-card-list>
       </div>
     </div>
   `,

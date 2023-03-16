@@ -8,7 +8,7 @@ import {
   Output,
   SimpleChanges,
 } from '@angular/core';
-import { FormControl, FormGroup, Validator, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
@@ -19,14 +19,12 @@ import {
   Subject,
   takeUntil,
 } from 'rxjs';
+import * as uuid from 'uuid';
 import {
   Countries,
   ICard,
-  IColor,
-  ICountCard,
   IDeck,
   IDeckCard,
-  ITag,
   ITournamentDeck,
   TAGS,
 } from '../../../../models';
@@ -39,9 +37,7 @@ import { stringToDeck } from '../../../functions/parse-deck';
 import { AuthService } from '../../../service/auth.service';
 import { DigimonBackendService } from '../../../service/digimon-backend.service';
 import { selectAllCards } from '../../../store/digimon.selectors';
-import { emptyDeck } from '../../../store/reducers/digimon.reducers';
 import { ICardImage } from './deck-dialog.component';
-import * as uuid from 'uuid';
 
 interface IDropDownItem {
   name: string;
@@ -350,6 +346,7 @@ export class DeckSubmissionComponent implements OnInit, OnChanges, OnDestroy {
     const tournamentDeck: ITournamentDeck = {
       id: uuid.v4(),
       cards: this.deck!.cards,
+      sideDeck: this.deck!.sideDeck,
       color: this.deck!.color,
       title: formValues.title,
       description: formValues.description,

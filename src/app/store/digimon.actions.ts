@@ -1,13 +1,10 @@
 import { createAction, props } from '@ngrx/store';
-import { ICard, ICountCard, IDeck, IFilter, ISave, ISort } from '../../models';
+import { ICard, ICountCard, IDeck, IDraggedCard, IFilter, ISave, ISort } from '../../models';
 import { IBlog } from '../../models/interfaces/blog-entry.interface';
 import { ProductCM } from '../service/card-market.service';
 
 //region Digimon Card Actions
-export const setDigimonCards = createAction(
-  '[Digimon Cards] Set Digimon Cards',
-  props<{ digimonCards: ICard[] }>()
-);
+export const setDigimonCards = createAction('[Digimon Cards] Set Digimon Cards', props<{ digimonCards: ICard[] }>());
 export const setFilteredDigimonCards = createAction(
   '[Digimon Cards] Set Filtered Digimon Cards',
   props<{ filteredCards: ICard[] }>()
@@ -20,20 +17,11 @@ export const setPriceGuideCM = createAction(
   props<{ products: ProductCM[] }>()
 );
 
-export const setDeck = createAction(
-  '[Set Deck] Set current Deck',
-  props<{ deck: IDeck }>()
-);
+export const setDeck = createAction('[Set Deck] Set current Deck', props<{ deck: IDeck }>());
 
-export const changeFilter = createAction(
-  '[Settings] Change Filter',
-  props<{ filter: IFilter }>()
-);
+export const changeFilter = createAction('[Settings] Change Filter', props<{ filter: IFilter }>());
 
-export const changeSort = createAction(
-  '[Settings] Change Sort',
-  props<{ sort: ISort }>()
-);
+export const changeSort = createAction('[Settings] Change Sort', props<{ sort: ISort }>());
 
 export const setMobileCollectionView = createAction(
   '[Settings] Change Mobile CollectionView',
@@ -55,11 +43,6 @@ export const changeShowVersion = createAction(
   props<{ showPre: boolean; showAA: boolean; showStamp: boolean }>()
 );
 
-export const addCardToDeck = createAction(
-  '[Deck] Add Card to Deck',
-  props<{ addCardToDeck: string }>()
-);
-
 export const setCommunityDeckSearch = createAction(
   '[Search] Set Community Deck Search Term',
   props<{ communityDeckSearch: string }>()
@@ -69,37 +52,34 @@ export const setCommunityDecks = createAction(
   '[Digimon Decks] Save Community Decks',
   props<{ communityDecks: IDeck[] }>()
 );
-export const setBlogs = createAction(
-  '[Digimon Blog Entries] Save Blog Entries',
-  props<{ blogs: IBlog[] }>()
+export const setBlogs = createAction('[Digimon Blog Entries] Save Blog Entries', props<{ blogs: IBlog[] }>());
+export const setDraggedCard = createAction('[Drag] Set DraggedCard', props<{ dragCard: IDraggedCard }>());
+
+export const addCardToDeck = createAction('[Deck] Add Card to Deck', props<{ addCardToDeck: string }>());
+
+export const removeCardFromDeck = createAction('[Digimon Card] Remove one card from Deck', props<{ cardId: string }>());
+
+export const addCardToSideDeck = createAction('[Deck] Add Card to Side Deck', props<{ cardId: string }>());
+
+export const removeCardFromSideDeck = createAction(
+  '[Digimon Card] Remove one card from Side Deck',
+  props<{ cardId: string }>()
 );
 //endregion
 
 //region Save Actions
-export const loadSave = createAction(
-  '[Digimon Card Save] Load Digimon Card Save',
-  props<{ save: ISave }>()
-);
-export const setSave = createAction(
-  '[Digimon Card Save] Set Digimon Card Save',
-  props<{ save: ISave }>()
-);
+export const loadSave = createAction('[Digimon Card Save] Load Digimon Card Save', props<{ save: ISave }>());
+export const setSave = createAction('[Digimon Card Save] Set Digimon Card Save', props<{ save: ISave }>());
 export const setCollection = createAction(
   '[Digimon Card Save] Set Digimon Card Collection',
   props<{ collection: ICountCard[] }>()
 );
-export const changeCardSize = createAction(
-  '[Settings] Change Card Size',
-  props<{ cardSize: number }>()
-);
+export const changeCardSize = createAction('[Settings] Change Card Size', props<{ cardSize: number }>());
 export const changeCollectionMode = createAction(
   '[Settings] Change Collection Mode',
   props<{ collectionMode: boolean }>()
 );
-export const changeCardSets = createAction(
-  '[Settings] Change Card Sets',
-  props<{ cardSet: string }>()
-);
+export const changeCardSets = createAction('[Settings] Change Card Sets', props<{ cardSet: string }>());
 export const changeShowUserStats = createAction(
   '[Settings] Change Show User Stats',
   props<{ showUserStats: boolean }>()
@@ -127,18 +107,9 @@ export const changeCardCount = createAction(
 //endregion
 
 //region Deck Actions
-export const importDeck = createAction(
-  '[Digimon Deck] Import Digimon Deck',
-  props<{ deck: IDeck }>()
-);
+export const importDeck = createAction('[Digimon Deck] Import Digimon Deck', props<{ deck: IDeck }>());
 
-export const deleteDeck = createAction(
-  '[Digimon Deck] Delete Digimon Deck',
-  props<{ deck: IDeck }>()
-);
+export const deleteDeck = createAction('[Digimon Deck] Delete Digimon Deck', props<{ deck: IDeck }>());
 
-export const saveDeck = createAction(
-  '[Digimon Deck] Save Digimon Deck',
-  props<{ deck: IDeck }>()
-);
+export const saveDeck = createAction('[Digimon Deck] Save Digimon Deck', props<{ deck: IDeck }>());
 //endregion

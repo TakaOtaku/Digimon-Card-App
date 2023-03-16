@@ -62,6 +62,10 @@ export const selectPriceGuideCM = createSelector(
   (state: IDigimonState) => state.priceGuideCM
 );
 
+export const selectDraggedCard = createSelector(
+  selectDigimonState,
+  (state: IDigimonState) => state.draggedCard
+);
 //endregion
 
 //region Digimon Card Selectors

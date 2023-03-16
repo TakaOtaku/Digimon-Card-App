@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
+import { DragDropModule } from 'primeng/dragdrop';
 import { InputTextModule } from 'primeng/inputtext';
 import { PaginatorModule } from 'primeng/paginator';
 import { DigimonStoreModule } from '../../digimon-store.module';
@@ -40,6 +41,7 @@ import { SearchComponent } from './components/search.component';
     DialogModule,
     InputTextModule,
     ButtonModule,
+    DragDropModule,
   ],
   exports: [CollectionViewComponent, CardListComponent],
   providers: [AuthService, DigimonBackendService],

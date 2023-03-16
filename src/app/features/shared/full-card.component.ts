@@ -1,64 +1,47 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnDestroy,
-  OnInit,
-  Output,
-} from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Subject, takeUntil } from 'rxjs';
+import { map, Subject, takeUntil } from 'rxjs';
 import { englishCards } from '../../../assets/cardlists/eng/english';
 import { ICard } from '../../../models';
-import { addCardToDeck, changeCardCount } from '../../store/digimon.actions';
-import {
-  selectCollectionMinimum,
-  selectDeck,
-  selectSettings,
-} from '../../store/digimon.selectors';
+import { DRAG } from '../../../models/enums/drag.enum';
+import { addCardToDeck, changeCardCount, setDraggedCard } from '../../store/digimon.actions';
+import { selectDeck, selectSettings } from '../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-full-card',
   template: `
     <div
-      class="relative inline-flex w-full transition-transform hover:scale-105"
-    >
-      <div (click)="addCardToDeck()" (contextmenu)="showCardDetails()">
+      [pDraggable]="'toDeck'"
+      (onDragStart)="setDraggedCard(card)"
+      class="relative inline-flex w-full transition-transform hover:scale-105">
+      <div (click)="click()" (contextmenu)="rightclick()">
         <digimon-card-image
           [card]="card"
           [count]="count"
           [collectionMode]="collectionMode"
           [collectionMinimum]="collectionMinimum"
-          [aaCollectionMinimum]="aaCollectionMinimum"
-        ></digimon-card-image>
+          [aaCollectionMinimum]="aaCollectionMinimum"></digimon-card-image>
       </div>
 
-      <span
-        *ngIf="!collectionOnly && deckBuilder && countInDeck !== 0"
-        class="text-shadow-white absolute right-1 z-[100] px-1 text-3xl font-black text-orange-500"
-        [ngClass]="{
-          'bottom-1': !collectionMode,
-          ' bottom-10': collectionMode
-        }"
-      >
-        {{ countInDeck }}<span class="pr-1 text-sky-700">/</span
-        >{{
-          card.cardNumber === 'BT6-085' ||
-          card.cardNumber === 'EX2-046' ||
-          card.cardNumber === 'BT11-061'
-            ? 50
-            : 4
-        }}
-      </span>
+      <ng-container *ngIf="{ count: countInDeck$ | async } as deckCard">
+        <span
+          *ngIf="!collectionOnly && deckBuilder && deckCard.count"
+          class="text-shadow-white absolute right-1 z-[100] px-1 text-3xl font-black text-orange-500"
+          [ngClass]="{
+            'bottom-1': !collectionMode,
+            ' bottom-10': collectionMode
+          }">
+          {{ deckCard.count }}<span class="pr-1 text-sky-700">/</span
+          >{{
+            card.cardNumber === 'BT6-085' || card.cardNumber === 'EX2-046' || card.cardNumber === 'BT11-061' ? 50 : 4
+          }}
+        </span>
+      </ng-container>
 
-      <div
-        *ngIf="collectionMode"
-        class="counter mx-5 flex h-8 w-full flex-row rounded-lg bg-transparent"
-      >
+      <div *ngIf="collectionMode" class="counter mx-5 flex h-8 w-full flex-row rounded-lg bg-transparent">
         <button
           (click)="decreaseCardCount(card.id)"
-          class="primary-background h-full w-1/3 cursor-pointer rounded-l text-[#e2e4e6] outline-none"
-        >
+          class="primary-background h-full w-1/3 cursor-pointer rounded-l text-[#e2e4e6] outline-none">
           <span class="m-auto text-2xl font-thin">−</span>
         </button>
         <input
@@ -66,12 +49,10 @@ import {
           min="0"
           class="primary-background text-md flex w-1/3 cursor-default appearance-none items-center text-center font-semibold text-[#e2e4e6] outline-none focus:outline-none md:text-base"
           [(ngModel)]="count"
-          (change)="changeCardCount($event, card.id)"
-        />
+          (change)="changeCardCount($event, card.id)" />
         <button
           (click)="increaseCardCount(card.id)"
-          class="primary-background h-full w-1/3 cursor-pointer rounded-r text-[#e2e4e6] outline-none"
-        >
+          class="primary-background h-full w-1/3 cursor-pointer rounded-r text-[#e2e4e6] outline-none">
           <span class="m-auto text-2xl font-thin">+</span>
         </button>
       </div>
@@ -85,12 +66,8 @@ import {
       [modal]="true"
       [dismissableMask]="true"
       [resizable]="false"
-      styleClass="overflow-x-hidden"
-    >
-      <digimon-view-card-dialog
-        (onClose)="viewCardDialog = false"
-        [card]="card"
-      ></digimon-view-card-dialog>
+      styleClass="overflow-x-hidden">
+      <digimon-view-card-dialog (onClose)="viewCardDialog = false" [card]="card"></digimon-view-card-dialog>
     </p-dialog>
   `,
   styleUrls: ['./full-card.component.scss'],
@@ -117,7 +94,9 @@ export class FullCardComponent implements OnInit, OnDestroy {
   collectionMinimum = 0;
   aaCollectionMinimum = 0;
 
-  countInDeck = 0;
+  countInDeck$ = this.store
+    .select(selectDeck)
+    .pipe(map((deck) => deck.cards.find((value) => value.id === this.card.id)?.count ?? 0));
 
   private onDestroy$ = new Subject();
 
@@ -131,14 +110,6 @@ export class FullCardComponent implements OnInit, OnDestroy {
         this.collectionMinimum = settings.collectionMinimum;
         this.aaCollectionMinimum = settings.aaCollectionMinimum;
       });
-    this.store
-      .select(selectDeck)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe(
-        (deck) =>
-          (this.countInDeck =
-            deck.cards.find((value) => value.id === this.card.id)?.count ?? 0)
-      );
   }
 
   ngOnDestroy() {
@@ -199,4 +170,20 @@ export class FullCardComponent implements OnInit, OnDestroy {
     //(((OldValue - OldMin) * NewRange) / OldRange) + NewMin
     return ((input - 5) * (30 - 20)) / (100 - 5) + 20;
   };
+
+  setDraggedCard(card: ICard) {
+    this.store.dispatch(setDraggedCard({ dragCard: { card: card, drag: DRAG.Collection } }));
+  }
+
+  click() {
+    if (this.collectionOnly) {
+      this.showCardDetails();
+      return;
+    }
+    this.addCardToDeck();
+  }
+
+  rightclick() {
+    this.showCardDetails();
+  }
 }

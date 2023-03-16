@@ -11,7 +11,6 @@ import {
   tagsList,
 } from '../../models';
 import { ColorOrderMap, DeckColorMap } from '../../models/maps/color.map';
-import { ICardImage } from '../features/shared/dialogs/deck-dialog.component';
 
 export function setTags(deck: IDeck, allCards: ICard[]) {
   let tags = [];

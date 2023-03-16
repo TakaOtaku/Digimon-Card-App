@@ -298,6 +298,16 @@ function applyFilter(cards: ICard[], filter: any[], key: string): ICard[] {
           ]),
         ];
       }
+      if (filter.find((value) => value === 'Burst Digivolve')) {
+        returnArray = [
+          ...new Set([
+            ...returnArray,
+            ...cards.filter((cards) =>
+              cards['specialDigivolve'].includes('Burst Digivolve')
+            ),
+          ]),
+        ];
+      }
       if (filter.find((value) => value === 'DNA Digivolution')) {
         returnArray = [
           ...new Set([

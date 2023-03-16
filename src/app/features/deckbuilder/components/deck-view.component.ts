@@ -1,46 +1,29 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnDestroy,
-  OnInit,
-  Output,
-} from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { filter, first, Subject, takeUntil } from 'rxjs';
-import * as uuid from 'uuid';
-import {
-  ICard,
-  ICountCard,
-  IDeck,
-  IDeckCard,
-  ISave,
-  ITag,
-} from '../../../../models';
+import { ICard, ICountCard, IDeck, IDeckCard, IDraggedCard, ISave, ITag } from '../../../../models';
+import { DRAG } from '../../../../models/enums/drag.enum';
 import { DeckColorMap } from '../../../../models/maps/color.map';
-import {
-  compareIDs,
-  deckIsValid,
-  setColors,
-  setTags,
-  sortColors,
-} from '../../../functions/digimon-card.functions';
+import { compareIDs, deckIsValid, setColors, setTags, sortColors } from '../../../functions/digimon-card.functions';
 import { sortID } from '../../../functions/filter.functions';
 import { AuthService } from '../../../service/auth.service';
-import { ProductCM } from '../../../service/card-market.service';
 import { DigimonBackendService } from '../../../service/digimon-backend.service';
 import {
   addCardToDeck,
+  addCardToSideDeck,
   importDeck,
+  removeCardFromDeck,
+  removeCardFromSideDeck,
   setDeck,
+  setDraggedCard,
 } from '../../../store/digimon.actions';
 import {
   DeckBuilderViewModel,
-  selectAddCardToDeck,
   selectCollection,
   selectCommunityDecks,
   selectDeckBuilderViewModel,
+  selectDraggedCard,
   selectSave,
 } from '../../../store/digimon.selectors';
 import { emptyDeck } from '../../../store/reducers/digimon.reducers';
@@ -48,13 +31,12 @@ import { emptyDeck } from '../../../store/reducers/digimon.reducers';
 @Component({
   selector: 'digimon-deck-view',
   template: `
-    <div class="mx-auto max-w-[760px]">
+    <div class="mx-auto mb-2 max-w-[760px]">
       <digimon-deck-metadata
         [(title)]="title"
         [(tags)]="tags"
         [(description)]="description"
-        [(selectedColor)]="selectedColor"
-      ></digimon-deck-metadata>
+        [(selectedColor)]="selectedColor"></digimon-deck-metadata>
 
       <digimon-deck-toolbar
         [deck]="deck"
@@ -64,25 +46,73 @@ import { emptyDeck } from '../../../store/reducers/digimon.reducers';
         (missingCardsChange)="missingCards = $event"
         (share)="share()"
         (save)="saveDeck($event)"
-        (hideStats)="hideStats.emit(true)"
-      ></digimon-deck-toolbar>
+        (hideStats)="hideStats.emit(true)"></digimon-deck-toolbar>
     </div>
 
-    <div class="mx-auto h-full max-w-[1080px]">
-      <div class="grid w-full grid-cols-4 pb-32 md:grid-cols-6 lg:grid-cols-8">
-        <div *ngFor="let card of mainDeck">
+    <ng-template #fullscreen>
+      <div class="mx-auto h-full max-w-[1080px]">
+        <div class="grid w-full grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
           <digimon-deck-card
+            *ngFor="let card of mainDeck"
+            pDraggable="fromDeck"
+            (onDragStart)="setDraggedCard(card, DRAG.Main)"
             (onChange)="mapToDeck()"
             (removeCard)="removeCard(card)"
             [cardHave]="getCardHave(card)"
             [card]="card"
             [cards]="allCards"
-            [missingCards]="missingCards"
-          ></digimon-deck-card>
+            [missingCards]="missingCards"></digimon-deck-card>
         </div>
       </div>
-    </div>
+    </ng-template>
+
+    <ng-container *ngIf="draggedCard$ | async as draggedCard">
+      <p-accordion *ngIf="collectionView; else fullscreen" class="mx-auto h-full max-w-[1080px]">
+        <p-accordionTab
+          [pDroppable]="['toDeck', 'fromSide']"
+          (onDrop)="drop(draggedCard, 'Main')"
+          [(selected)]="mainExpanded">
+          <ng-template pTemplate="header">
+            <div>
+              {{ 'Main-Deck (' + getCardCount(mainDeck, 'Egg') + '/5 - ' + getCardCount(mainDeck, 'Deck') + '/50)' }}
+            </div></ng-template
+          >
+          <div class="grid w-full grid-cols-4 md:grid-cols-6">
+            <digimon-deck-card
+              *ngFor="let card of mainDeck"
+              pDraggable="fromDeck"
+              (onDragStart)="setDraggedCard(card, DRAG.Main)"
+              (onChange)="mapToDeck()"
+              (removeCard)="removeCard(card)"
+              [cardHave]="getCardHave(card)"
+              [card]="card"
+              [cards]="allCards"
+              [missingCards]="missingCards"></digimon-deck-card>
+          </div>
+        </p-accordionTab>
+        <p-accordionTab
+          [pDroppable]="['toDeck', 'fromDeck']"
+          [(selected)]="sideExpanded"
+          (onDrop)="drop(draggedCard, 'Side')"
+          [header]="'Side-Deck (' + getCardCount(sideDeck, 'Both') + ')'">
+          <div class="grid w-full grid-cols-4 md:grid-cols-6">
+            <digimon-deck-card
+              *ngFor="let card of sideDeck"
+              pDraggable="fromSide"
+              (onDragStart)="setDraggedCard(card, DRAG.Side)"
+              (onChange)="mapToDeck()"
+              (removeCard)="removeSideCard(card)"
+              [cardHave]="getCardHave(card)"
+              [sideDeck]="true"
+              [card]="card"
+              [cards]="allCards"
+              [missingCards]="missingCards"></digimon-deck-card>
+          </div>
+        </p-accordionTab>
+      </p-accordion>
+    </ng-container>
   `,
+  styleUrls: ['./deck-view.component.scss'],
 })
 export class DeckViewComponent implements OnInit, OnDestroy {
   @Input() collectionView: boolean;
@@ -97,21 +127,13 @@ export class DeckViewComponent implements OnInit, OnDestroy {
   selectedColor: any;
 
   mainDeck: IDeckCard[] = [];
+  mainExpanded = true;
   sideDeck: IDeckCard[] = [];
+  sideExpanded = false;
 
-  deck: IDeck = {
-    id: uuid.v4(),
-    title: '',
-    description: '',
-    date: new Date().toString(),
-    color: { name: 'White', img: 'assets/decks/white.svg' },
-    cards: [],
-    tags: [],
-    user: '',
-    userId: '',
-    imageCardId: 'BT1-001',
-    likes: [],
-  };
+  draggedCard$ = this.store.select(selectDraggedCard);
+
+  deck: IDeck = { ...emptyDeck };
 
   allCards: ICard[] = [];
   collection: ICountCard[];
@@ -120,6 +142,8 @@ export class DeckViewComponent implements OnInit, OnDestroy {
   fullCards = true;
   stack = false;
   missingCards = false;
+
+  DRAG = DRAG;
 
   private onDestroy$ = new Subject();
 
@@ -163,17 +187,6 @@ export class DeckViewComponent implements OnInit, OnDestroy {
           this.mapDeck(deck);
         }
       });
-
-    this.store
-      .select(selectAddCardToDeck)
-      .pipe(
-        takeUntil(this.onDestroy$),
-        filter((value) => !!value)
-      )
-      .subscribe((cardToAdd) => {
-        this.onCardClick(cardToAdd);
-        this.store.dispatch(addCardToDeck({ addCardToDeck: '' }));
-      });
   }
 
   ngOnDestroy() {
@@ -187,19 +200,23 @@ export class DeckViewComponent implements OnInit, OnDestroy {
     this.mainDeck = [];
     this.sideDeck = [];
     const iDeckCards: IDeckCard[] = [];
+    const iSideDeckCards: IDeckCard[] = [];
 
     deck.cards.forEach((card) => {
-      const foundCard = this.allCards.find((item) =>
-        compareIDs(item.id, card.id)
-      );
+      const foundCard = this.allCards.find((item) => compareIDs(item.id, card.id));
       if (foundCard) {
         iDeckCards.push({ ...foundCard, count: card.count });
       }
     });
+    (deck.sideDeck ?? []).forEach((card) => {
+      const foundCard = this.allCards.find((item) => compareIDs(item.id, card.id));
+      if (foundCard) {
+        iSideDeckCards.push({ ...foundCard, count: card.count });
+      }
+    });
 
-    iDeckCards.forEach((card) =>
-      this.mainDeck.push({ ...card, count: card.count })
-    );
+    iDeckCards.forEach((card) => this.mainDeck.push({ ...card, count: card.count }));
+    iSideDeckCards.forEach((card) => this.sideDeck.push({ ...card, count: card.count }));
     this.deckSort();
   }
 
@@ -246,8 +263,7 @@ export class DeckViewComponent implements OnInit, OnDestroy {
   saveDeck(event: any) {
     this.confirmationService.confirm({
       target: event.target,
-      message:
-        'You are about to save all changes and overwrite everything changed. Are you sure?',
+      message: 'You are about to save all changes and overwrite everything changed. Are you sure?',
       accept: () => {
         this.mapToDeck();
         this.store.dispatch(importDeck({ deck: this.deck }));
@@ -268,6 +284,10 @@ export class DeckViewComponent implements OnInit, OnDestroy {
       id: card.id,
       count: card.count,
     }));
+    const sideDeck = this.sideDeck.map((card) => ({
+      id: card.id,
+      count: card.count,
+    }));
     this.deck = {
       ...this.deck,
       title: this.title,
@@ -275,6 +295,7 @@ export class DeckViewComponent implements OnInit, OnDestroy {
       tags: this.tags,
       color: DeckColorMap.get(this.selectedColor.name),
       cards,
+      sideDeck,
     };
     this.store.dispatch(setDeck({ deck: this.deck }));
     this.deckSort();
@@ -287,23 +308,15 @@ export class DeckViewComponent implements OnInit, OnDestroy {
    * Increase the Card Count but check for Eosmon
    */
   onCardClick(id: string) {
-    const alreadyInDeck = this.mainDeck.find((value) =>
-      compareIDs(value.id, id)
-    );
+    const alreadyInDeck = this.mainDeck.find((value) => compareIDs(value.id, id));
     const card = this.allCards.find((card) => compareIDs(card.id, id));
     if (alreadyInDeck) {
-      if (
-        card!.cardNumber === 'BT6-085' ||
-        card!.cardNumber === 'EX2-046' ||
-        card!.cardNumber === 'BT11-061'
-      ) {
-        alreadyInDeck.count =
-          alreadyInDeck.count >= 50 ? 50 : alreadyInDeck.count + 1;
+      if (card!.cardNumber === 'BT6-085' || card!.cardNumber === 'EX2-046' || card!.cardNumber === 'BT11-061') {
+        alreadyInDeck.count = alreadyInDeck.count >= 50 ? 50 : alreadyInDeck.count + 1;
         this.mapToDeck();
         return;
       }
-      alreadyInDeck.count =
-        alreadyInDeck.count === 4 ? 4 : alreadyInDeck.count + 1;
+      alreadyInDeck.count = alreadyInDeck.count === 4 ? 4 : alreadyInDeck.count + 1;
       this.mapToDeck();
       return;
     }
@@ -316,9 +329,7 @@ export class DeckViewComponent implements OnInit, OnDestroy {
    * Compare with the collection if you have all necessary Cards
    */
   getCardHave(card: IDeckCard) {
-    const foundCards = this.collection.filter(
-      (colCard) => this.removeP(colCard.id) === card.cardNumber
-    );
+    const foundCards = this.collection.filter((colCard) => this.removeP(colCard.id) === card.cardNumber);
     let count = 0;
     foundCards?.forEach((found) => {
       count += found.count;
@@ -332,9 +343,11 @@ export class DeckViewComponent implements OnInit, OnDestroy {
   deckSort() {
     const colorSort = this.save.settings.sortDeckOrder === 'Color';
     if (colorSort) {
-      this.colorSort();
+      this.mainDeck = this.colorSort(this.mainDeck);
+      this.sideDeck = this.colorSort(this.sideDeck);
     } else {
-      this.levelSort();
+      this.mainDeck = this.levelSort(this.mainDeck);
+      this.sideDeck = this.levelSort(this.sideDeck);
     }
   }
 
@@ -345,118 +358,107 @@ export class DeckViewComponent implements OnInit, OnDestroy {
     return id.split('_P')[0];
   }
 
-  private colorSort() {
-    const eggs = this.mainDeck
+  /**
+   * Get Count of how many Cards are in the Main-Deck or Egg Deck
+   */
+  getCardCount(deck: IDeckCard[], which: string): number {
+    let count = 0;
+    if (which === 'Egg') {
+      deck.forEach((card) => {
+        if (card.cardType === 'Digi-Egg') {
+          count += card.count;
+        }
+      });
+    } else if (which === 'All') {
+      deck.forEach((card) => {
+        count += card.count;
+      });
+    } else {
+      deck.forEach((card) => {
+        if (card.cardType !== 'Digi-Egg') {
+          count += card.count;
+        }
+      });
+    }
+
+    return count;
+  }
+
+  private colorSort(deck: IDeckCard[]) {
+    const eggs = deck
       .filter((card) => card.cardType === 'Digi-Egg')
       .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
-    const red = this.mainDeck
-      .filter(
-        (card) => card.color.startsWith('Red') && card.cardType === 'Digimon'
-      )
+    const red = deck
+      .filter((card) => card.color.startsWith('Red') && card.cardType === 'Digimon')
       .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
-    const blue = this.mainDeck
-      .filter(
-        (card) => card.color.startsWith('Blue') && card.cardType === 'Digimon'
-      )
+    const blue = deck
+      .filter((card) => card.color.startsWith('Blue') && card.cardType === 'Digimon')
       .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
-    const yellow = this.mainDeck
-      .filter(
-        (card) => card.color.startsWith('Yellow') && card.cardType === 'Digimon'
-      )
+    const yellow = deck
+      .filter((card) => card.color.startsWith('Yellow') && card.cardType === 'Digimon')
       .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
-    const green = this.mainDeck
-      .filter(
-        (card) => card.color.startsWith('Green') && card.cardType === 'Digimon'
-      )
+    const green = deck
+      .filter((card) => card.color.startsWith('Green') && card.cardType === 'Digimon')
       .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
-    const black = this.mainDeck
-      .filter(
-        (card) => card.color.startsWith('Black') && card.cardType === 'Digimon'
-      )
+    const black = deck
+      .filter((card) => card.color.startsWith('Black') && card.cardType === 'Digimon')
       .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
-    const purple = this.mainDeck
-      .filter(
-        (card) => card.color.startsWith('Purple') && card.cardType === 'Digimon'
-      )
+    const purple = deck
+      .filter((card) => card.color.startsWith('Purple') && card.cardType === 'Digimon')
       .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
 
-    const white = this.mainDeck
-      .filter(
-        (card) => card.color.startsWith('White') && card.cardType === 'Digimon'
-      )
+    const white = deck
+      .filter((card) => card.color.startsWith('White') && card.cardType === 'Digimon')
       .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
 
-    const tamer = this.mainDeck
+    const tamer = deck
       .filter((card) => card.cardType === 'Tamer')
       .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
-    const options = this.mainDeck
+    const options = deck
       .filter((card) => card.cardType === 'Option')
       .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
-    this.mainDeck = [
-      ...new Set([
-        ...eggs,
-        ...red,
-        ...blue,
-        ...yellow,
-        ...green,
-        ...black,
-        ...purple,
-        ...white,
-        ...tamer,
-        ...options,
-      ]),
+    return [
+      ...new Set([...eggs, ...red, ...blue, ...yellow, ...green, ...black, ...purple, ...white, ...tamer, ...options]),
     ];
   }
 
-  private levelSort() {
-    const eggs = this.mainDeck
+  private levelSort(deck: IDeckCard[]) {
+    const eggs = deck
       .filter((card) => card.cardType === 'Digi-Egg')
       .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
-    const lv0 = this.mainDeck
+    const lv0 = deck
       .filter((card) => card.cardLv === '' && card.cardType === 'Digimon')
       .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
-    const lv3 = this.mainDeck
+    const lv3 = deck
       .filter((card) => card.cardLv === 'Lv.3')
       .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
-    const lv4 = this.mainDeck
+    const lv4 = deck
       .filter((card) => card.cardLv === 'Lv.4')
       .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
-    const lv5 = this.mainDeck
+    const lv5 = deck
       .filter((card) => card.cardLv === 'Lv.5')
       .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
-    const lv6 = this.mainDeck
+    const lv6 = deck
       .filter((card) => card.cardLv === 'Lv.6')
       .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
-    const lv7 = this.mainDeck
+    const lv7 = deck
       .filter((card) => card.cardLv === 'Lv.7')
       .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
-    const tamer = this.mainDeck
+    const tamer = deck
       .filter((card) => card.cardType === 'Tamer')
       .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
-    const options = this.mainDeck
+    const options = deck
       .filter((card) => card.cardType === 'Option')
       .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
-    this.mainDeck = [
-      ...new Set([
-        ...eggs,
-        ...lv0,
-        ...lv3,
-        ...lv4,
-        ...lv5,
-        ...lv6,
-        ...lv7,
-        ...tamer,
-        ...options,
-      ]),
-    ];
+    return [...new Set([...eggs, ...lv0, ...lv3, ...lv4, ...lv5, ...lv6, ...lv7, ...tamer, ...options])];
   }
 
   /**
@@ -464,6 +466,10 @@ export class DeckViewComponent implements OnInit, OnDestroy {
    */
   removeCard(card: IDeckCard) {
     this.mainDeck = this.mainDeck.filter((value) => value !== card);
+    this.mapToDeck();
+  }
+  removeSideCard(card: IDeckCard) {
+    this.sideDeck = this.sideDeck.filter((value) => value !== card);
     this.mapToDeck();
   }
 
@@ -478,17 +484,35 @@ export class DeckViewComponent implements OnInit, OnDestroy {
           if (deckIsValid(deck, this.allCards) === '') {
             newDeck.tags = setTags(deck, this.allCards);
             newDeck.color = setColors(deck, this.allCards);
-            this.digimonBackendService
-              .updateDeck(newDeck)
-              .pipe(first())
-              .subscribe();
+            this.digimonBackendService.updateDeck(newDeck).pipe(first()).subscribe();
           } else {
-            this.digimonBackendService
-              .deleteDeck(deck.id)
-              .pipe(first())
-              .subscribe();
+            this.digimonBackendService.deleteDeck(deck.id).pipe(first()).subscribe();
           }
         });
       });
+  }
+
+  drop(card: IDraggedCard, area: string) {
+    if (area === 'Side') {
+      if (card.drag === DRAG.Main) {
+        this.store.dispatch(removeCardFromDeck({ cardId: card.card.id }));
+      }
+      this.store.dispatch(addCardToSideDeck({ cardId: card.card.id }));
+      return;
+    }
+
+    if (card.drag === DRAG.Side) {
+      this.store.dispatch(removeCardFromSideDeck({ cardId: card.card.id }));
+    }
+    this.store.dispatch(addCardToDeck({ addCardToDeck: card.card.id }));
+  }
+
+  setDraggedCard(card: IDeckCard, drag: DRAG) {
+    const dragCard = { card: this.allCards.find((value) => card.id === value.id)!, drag };
+    this.store.dispatch(
+      setDraggedCard({
+        dragCard,
+      })
+    );
   }
 }

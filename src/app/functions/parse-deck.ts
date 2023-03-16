@@ -1,5 +1,5 @@
-import * as uuid from 'uuid';
 import { ICard, ICountCard, IDeck, IDeckCard } from '../../models';
+import { emptyDeck } from '../store/reducers/digimon.reducers';
 import { compareIDs, setColors, setTags } from './digimon-card.functions';
 
 export function stringToDeck(
@@ -26,19 +26,7 @@ export function stringToDeck(
 }
 
 function parseTTSDeck(deckList: string, allCards: ICard[]): IDeck {
-  const deck: IDeck = {
-    title: 'Imported Deck',
-    id: uuid.v4(),
-    description: '',
-    date: new Date().toString(),
-    color: { name: 'White', img: 'assets/decks/white.svg' },
-    cards: [],
-    tags: [],
-    user: '',
-    userId: '',
-    imageCardId: 'BT1-001',
-    likes: [],
-  };
+  const deck: IDeck = { ...emptyDeck };
 
   let deckJson: string[] = [];
   try {
@@ -64,19 +52,7 @@ function parseTTSDeck(deckList: string, allCards: ICard[]): IDeck {
 }
 
 function parseDeck(textArray: string[], allCards: ICard[]): IDeck {
-  const deck: IDeck = {
-    title: 'Imported Deck',
-    id: uuid.v4(),
-    description: '',
-    date: new Date().toString(),
-    color: { name: 'White', img: 'assets/decks/white.svg' },
-    cards: [],
-    tags: [],
-    user: '',
-    userId: '',
-    imageCardId: 'BT1-001',
-    likes: [],
-  };
+  const deck: IDeck = { ...emptyDeck };
 
   textArray.forEach((line) => {
     const cardOrNull = parseLine(line, allCards);
