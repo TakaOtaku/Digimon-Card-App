@@ -1,15 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { first, map, Observable } from 'rxjs';
-import {
-  IColor,
-  ICountCard,
-  IDeck,
-  ISave,
-  ISettings,
-  ITournamentDeck,
-  IUser,
-} from 'src/models';
+import { IColor, ICountCard, IDeck, ISave, ISettings, ITournamentDeck, IUser } from 'src/models';
 import { CARDSET, IBlog, IBlogWithText, ITag } from '../../models';
 import { IEvent } from '../features/home/components/event-calendar.component';
 import { setDeckImage } from '../functions/digimon-card.functions';
@@ -30,6 +22,7 @@ export class DigimonBackendService {
       map((decks) => {
         return decks.map((deck) => {
           const cards: ICountCard = JSON.parse(deck.cards);
+          const sideDeck: ICountCard = JSON.parse(deck.sideDeck !== '' ? deck.sideDeck : '[]');
           const color: IColor = JSON.parse(deck.color);
           const tags: ITag[] = JSON.parse(deck.tags);
           const likes: string[] = deck.likes ? JSON.parse(deck.likes) : [];
@@ -37,6 +30,7 @@ export class DigimonBackendService {
             ...deck,
             likes,
             cards,
+            sideDeck,
             color,
             tags,
           } as IDeck;
@@ -50,6 +44,7 @@ export class DigimonBackendService {
       map((decks) => {
         return decks.map((deck) => {
           const cards: ICountCard = JSON.parse(deck.cards);
+          const sideDeck: ICountCard = JSON.parse(deck.sideDeck !== '' ? deck.sideDeck : '[]');
           const color: IColor = JSON.parse(deck.color);
           const tags: ITag[] = JSON.parse(deck.tags);
           const likes: string[] = deck.likes ? JSON.parse(deck.likes) : [];
@@ -57,6 +52,7 @@ export class DigimonBackendService {
             ...deck,
             likes,
             cards,
+            sideDeck,
             color,
             tags,
           } as ITournamentDeck;
@@ -99,6 +95,7 @@ export class DigimonBackendService {
     return this.http.get<any>(`${baseUrl}decks/${id}`).pipe(
       map((deck) => {
         const cards: ICountCard = JSON.parse(deck.cards);
+        const sideDeck: ICountCard = JSON.parse(deck.sideDeck !== '' ? deck.sideDeck : '[]');
         const color: IColor = JSON.parse(deck.color);
         const tags: ITag[] = JSON.parse(deck.tags);
         const likes: string[] = deck.likes ? JSON.parse(deck.likes) : [];
@@ -106,6 +103,7 @@ export class DigimonBackendService {
           ...deck,
           likes,
           cards,
+          sideDeck,
           color,
           tags,
         } as IDeck;
@@ -117,6 +115,7 @@ export class DigimonBackendService {
     return this.http.get<any>(`${baseUrl}tournament-decks/${id}`).pipe(
       map((deck) => {
         const cards: ICountCard = JSON.parse(deck.cards);
+        const sideDeck: ICountCard = JSON.parse(deck.sideDeck !== '' ? deck.sideDeck : '[]');
         const color: IColor = JSON.parse(deck.color);
         const tags: ITag[] = JSON.parse(deck.tags);
         const likes: string[] = deck.likes ? JSON.parse(deck.likes) : [];
@@ -124,6 +123,7 @@ export class DigimonBackendService {
           ...deck,
           likes,
           cards,
+          sideDeck,
           color,
           tags,
         } as ITournamentDeck;
@@ -145,9 +145,7 @@ export class DigimonBackendService {
         } as ISave;
 
         newSave.settings.aaCollectionMinimum =
-          newSave.settings.aaCollectionMinimum !== undefined
-            ? newSave.settings.aaCollectionMinimum
-            : 1;
+          newSave.settings.aaCollectionMinimum !== undefined ? newSave.settings.aaCollectionMinimum : 1;
 
         return newSave;
       })
@@ -308,11 +306,7 @@ export class DigimonBackendService {
       }
     }
 
-    if (
-      save.settings.cardSet === undefined ||
-      save.settings.cardSet === 'Overwrite' ||
-      +save.settings.cardSet >>> 0
-    ) {
+    if (save.settings.cardSet === undefined || save.settings.cardSet === 'Overwrite' || +save.settings.cardSet >>> 0) {
       save = { ...save, settings: { ...save.settings, cardSet: CARDSET.Both } };
       changedSave = true;
     }

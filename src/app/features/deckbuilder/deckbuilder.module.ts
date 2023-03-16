@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AccordionModule } from 'primeng/accordion';
 import { ButtonModule } from 'primeng/button';
 import { ChipModule } from 'primeng/chip';
 import { DialogModule } from 'primeng/dialog';
@@ -54,6 +55,7 @@ import { DeckbuilderPageComponent } from './deckbuilder-page.component';
     TableModule,
     SelectButtonModule,
     DragDropModule,
+    AccordionModule,
   ],
   providers: [AuthService, DigimonBackendService],
 })

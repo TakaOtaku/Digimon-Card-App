@@ -5,6 +5,7 @@ import { ITag } from './tag.interface';
 export interface IDeck {
   id: string;
   cards: ICountCard[];
+  sideDeck: ICountCard[];
   color: IColor;
   title: string;
   description: string;

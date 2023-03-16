@@ -55,6 +55,14 @@
             "prefix": "digimon",
             "style": "kebab-case"
           }
+        ],
+        "max-len": ["error", { "code": 160 }],
+        "prettier/prettier": [
+          "error",
+          {
+            "printWidth": 120,
+            "bracketSameLine": true
+          }
         ]
       }
     },
@@ -64,7 +72,10 @@
       ],
       "extends": [
         "plugin:@angular-eslint/template/recommended"
-      ]
+      ],
+      "rules": {
+        "max-len": ["error", { "code": 160 }]
+      }
     }
   ]
 }

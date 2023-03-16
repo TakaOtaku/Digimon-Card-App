@@ -1,12 +1,6 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  OnDestroy,
-  OnInit,
-} from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { map, Subject, takeUntil, tap } from 'rxjs';
+import { Subject, takeUntil, tap } from 'rxjs';
 import { englishCards } from '../../../../assets/cardlists/eng/english';
 import { ICard, ICountCard } from '../../../../models';
 import {
@@ -38,6 +32,7 @@ import {
           [count]="getCount(card.id)"
           [deckView]="true"
           [deckBuilder]="true"
+          [collectionOnly]="collectionOnly"
           class="flex-[1 1 25%] max-w-[25%] scale-95 transition"
         >
         </digimon-full-card>
@@ -71,6 +66,7 @@ import {
 })
 export class CardListComponent implements OnInit, OnDestroy {
   @Input() public showCount: number;
+  @Input() public collectionOnly: boolean = false;
 
   cards$ = this.store.select(selectFilteredCards).pipe(
     tap((cards) => (this.cards = cards)),

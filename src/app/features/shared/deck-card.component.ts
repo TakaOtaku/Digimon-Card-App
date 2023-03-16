@@ -1,17 +1,14 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnChanges,
-  OnInit,
-  Output,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { englishCards } from '../../../assets/cardlists/eng/english';
 import { ICard, IDeckCard } from '../../../models';
 import { ColorMap } from '../../../models/maps/color.map';
-import { addCardToDeck, removeCardFromDeck } from '../../store/digimon.actions';
+import {
+  addCardToDeck,
+  addCardToSideDeck,
+  removeCardFromDeck,
+  removeCardFromSideDeck,
+} from '../../store/digimon.actions';
 
 @Component({
   selector: 'digimon-deck-card',
@@ -20,37 +17,24 @@ import { addCardToDeck, removeCardFromDeck } from '../../store/digimon.actions';
       <div
         class="group absolute z-[101] flex h-full w-full flex-col rounded xl:opacity-0 xl:hover:opacity-100"
         (click)="showCardDetails()"
-        (contextmenu)="showCardDetails()"
-      >
-        <div
-          *ngIf="edit"
-          class="hidden h-1/2 w-full rounded bg-sky-700 bg-opacity-30 xl:block"
-        >
+        (contextmenu)="showCardDetails()">
+        <div *ngIf="edit" class="hidden h-1/2 w-full rounded bg-sky-700 bg-opacity-30 xl:block">
           <div class="absolute top-2">
             <button
               (click)="addCardCount($event)"
               type="button"
-              class="z-[101] mx-auto flex hidden h-8 w-8 translate-x-full rounded border border-black bg-sky-700 group-hover:block"
-            >
-              <span class="text-shadow text-2xl font-black text-[#e2e4e6]">
-                +
-              </span>
+              class="z-[101] mx-auto flex hidden h-8 w-8 translate-x-full rounded border border-black bg-sky-700 group-hover:block">
+              <span class="text-shadow text-2xl font-black text-[#e2e4e6]"> + </span>
             </button>
           </div>
         </div>
-        <div
-          *ngIf="edit"
-          class="hidden h-1/2 w-full rounded bg-red-500 bg-opacity-30 xl:block"
-        >
+        <div *ngIf="edit" class="hidden h-1/2 w-full rounded bg-red-500 bg-opacity-30 xl:block">
           <div class="absolute bottom-2">
             <button
               (click)="reduceCardCount($event)"
               type="button"
-              class="z-[101] mx-auto flex hidden h-8 w-8 translate-x-full rounded border border-black bg-sky-700 group-hover:block"
-            >
-              <span class="text-shadow text-2xl font-black text-[#e2e4e6]">
-                -
-              </span>
+              class="z-[101] mx-auto flex hidden h-8 w-8 translate-x-full rounded border border-black bg-sky-700 group-hover:block">
+              <span class="text-shadow text-2xl font-black text-[#e2e4e6]"> - </span>
             </button>
           </div>
         </div>
@@ -60,44 +44,33 @@ import { addCardToDeck, removeCardFromDeck } from '../../store/digimon.actions';
         [src]="card.cardImage"
         loading="lazy"
         alt="Digimon Card"
-        class="group z-50 m-auto rounded border-2 border-black"
-      />
+        class="group z-50 m-auto rounded border-2 border-black" />
 
       <div *ngIf="edit" class="flex h-1/2 w-full flex-row rounded xl:hidden">
         <button
           (click)="addCardCount($event)"
           type="button"
-          class="z-[101] flex h-8 w-1/2 rounded-l border border-black bg-sky-700"
-        >
-          <span class="text-shadow mx-auto text-2xl font-black text-[#e2e4e6]">
-            +
-          </span>
+          class="z-[101] flex h-8 w-1/2 rounded-l border border-black bg-sky-700">
+          <span class="text-shadow mx-auto text-2xl font-black text-[#e2e4e6]"> + </span>
         </button>
 
         <button
           (click)="reduceCardCount($event)"
           type="button"
-          class="z-[101] flex h-8 w-1/2 rounded-r border border-black bg-sky-700"
-        >
-          <span class="text-shadow mx-auto text-2xl font-black text-[#e2e4e6]">
-            -
-          </span>
+          class="z-[101] flex h-8 w-1/2 rounded-r border border-black bg-sky-700">
+          <span class="text-shadow mx-auto text-2xl font-black text-[#e2e4e6]"> - </span>
         </button>
       </div>
 
       <span
-        class="text-shadow-white absolute bottom-8 right-1 z-[100] text-2xl font-black text-orange-500 sm:text-3xl lg:text-2xl xl:bottom-1"
-      >
+        class="text-shadow-white absolute bottom-8 right-1 z-[100] text-2xl font-black text-orange-500 sm:text-3xl lg:text-2xl xl:bottom-1">
         <span class="text-sky-700">x</span>{{ card.count }}
       </span>
 
       <p
         *ngIf="missingCards"
-        class="text-red text-black-outline absolute left-0 right-0 top-[40px] z-[100] mx-auto text-center text-6xl font-bold"
-      >
-        {{
-          (cardHave ?? 0) - card.count > 0 ? 0 : (cardHave ?? 0) - card.count
-        }}
+        class="text-red text-black-outline absolute left-0 right-0 top-[40px] z-[100] mx-auto text-center text-6xl font-bold">
+        {{ (cardHave ?? 0) - card.count > 0 ? 0 : (cardHave ?? 0) - card.count }}
       </p>
     </div>
 
@@ -108,12 +81,8 @@ import { addCardToDeck, removeCardFromDeck } from '../../store/digimon.actions';
       [dismissableMask]="true"
       [resizable]="false"
       styleClass="overflow-x-hidden"
-      (close)="viewCardDialog = false"
-    >
-      <digimon-view-card-dialog
-        (onClose)="viewCardDialog = false"
-        [card]="viewCard"
-      ></digimon-view-card-dialog>
+      (close)="viewCardDialog = false">
+      <digimon-view-card-dialog (onClose)="viewCardDialog = false" [card]="viewCard"></digimon-view-card-dialog>
     </p-dialog>
   `,
 })
@@ -123,6 +92,7 @@ export class DeckCardComponent implements OnChanges, OnInit {
   @Input() public missingCards?: boolean = false;
   @Input() public cardHave?: number = 0;
   @Input() public edit? = true;
+  @Input() public sideDeck? = false;
 
   @Output() public removeCard = new EventEmitter<boolean>();
   @Output() public onChange = new EventEmitter<boolean>();
@@ -145,9 +115,7 @@ export class DeckCardComponent implements OnChanges, OnInit {
   }
 
   mapCard(): void {
-    this.completeCard =
-      this.cards.find((card) => this.card.id === card.id) ??
-      (englishCards[0] as ICard);
+    this.completeCard = this.cards.find((card) => this.card.id === card.id) ?? (englishCards[0] as ICard);
   }
 
   addCardCount(event?: any): void {
@@ -155,6 +123,12 @@ export class DeckCardComponent implements OnChanges, OnInit {
       event.preventDefault();
       event.stopPropagation();
     }
+
+    if (this.sideDeck) {
+      this.store.dispatch(addCardToSideDeck({ cardId: this.card.id }));
+      return;
+    }
+
     this.store.dispatch(addCardToDeck({ addCardToDeck: this.card.id }));
   }
 
@@ -163,6 +137,12 @@ export class DeckCardComponent implements OnChanges, OnInit {
       event.preventDefault();
       event.stopPropagation();
     }
+
+    if (this.sideDeck) {
+      this.store.dispatch(removeCardFromSideDeck({ cardId: this.card.id }));
+      return;
+    }
+
     this.store.dispatch(removeCardFromDeck({ cardId: this.card.id }));
   }
 
