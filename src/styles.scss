@@ -10,6 +10,11 @@ body {
   height: 100%;
 }
 
+// IOS Long Click
+body {
+  -webkit-touch-callout: default !important;
+}
+
 * {
   font-family: Montserrat, -apple-system ,sans-serif;
 }
