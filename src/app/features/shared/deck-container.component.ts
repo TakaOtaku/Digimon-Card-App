@@ -1,10 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  ContentChild,
-  Input,
-  OnInit,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, ContentChild, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { first } from 'rxjs';
 import { ICard, IDeck, ITournamentDeck } from '../../../models';
@@ -24,46 +18,30 @@ import { selectAllCards } from '../../store/digimon.selectors';
         'background-repeat': 'no-repeat',
         'background-position': 'center',
         'background-position-y': '25%'
-      }"
-    >
+      }">
       <div
         [ngStyle]="{ background: colorMap.get(deck.color.name) }"
-        class="text-shadow-white-xs relative top-[10px] left-[-5px] w-24 border border-black bg-opacity-80 text-center text-xs font-bold uppercase"
-      >
-        <span *ngIf="mode !== 'Tournament'" class="mr-1">{{
-          deck.tags ? deck!.tags[0]?.name : null
-        }}</span>
-        <span *ngIf="mode === 'Tournament'" class="mr-1">{{
-          getTournamentDeck(deck).format
-        }}</span>
+        class="text-shadow-white-xs relative top-[10px] left-[-5px] w-24 border border-black bg-opacity-80 text-center text-xs font-bold uppercase">
+        <span *ngIf="mode !== 'Tournament'" class="mr-1">{{ deck.tags ? deck!.tags[0]?.name : null }}</span>
+        <span *ngIf="mode === 'Tournament'" class="mr-1">{{ getTournamentDeck(deck).format }}</span>
       </div>
 
       <div *ngIf="isIllegal()" class="absolute top-[5px] right-[35px]">
         <span class="text-shadow text-4xl text-[#ef4444]">!</span>
       </div>
 
-      <div
-        *ngIf="mode !== 'Basic'"
-        class="absolute top-[5px] right-[5px]"
-        (click)="changeLike($event)"
-      >
+      <div *ngIf="mode !== 'Basic'" class="absolute top-[5px] right-[5px]" (click)="changeLike($event)">
         <div class="relative">
-          <i
-            [ngStyle]="isLiked() ? { color: '#ef4444' } : { color: '#64748b' }"
-            class="fa-solid fa-heart h-8 w-8"
-          ></i>
+          <i [ngStyle]="isLiked() ? { color: '#ef4444' } : { color: '#64748b' }" class="fa-solid fa-heart h-8 w-8"></i>
           <div
             style="transform: translate(-50%,-50%);"
-            class="absolute left-[50%] top-[40%]  text-xs font-bold text-white"
-          >
+            class="absolute left-[50%] top-[40%]  text-xs font-bold text-white">
             {{ getDeckLikes() }}
           </div>
         </div>
       </div>
 
-      <div
-        class="absolute bottom-0 h-16 w-full justify-center bg-black bg-opacity-80"
-      >
+      <div class="absolute bottom-0 h-16 w-full justify-center bg-black bg-opacity-80">
         <div class="my-auto flex w-full flex-col p-1">
           <div class="text-shadow truncate font-bold text-[#e2e4e6]">
             {{ deck.title }}
@@ -74,19 +52,16 @@ import { selectAllCards } from '../../store/digimon.selectors';
 
           <div
             *ngIf="mode !== 'Tournament'; else tournament"
-            class="text-shadow flex w-full flex-row text-xs text-[#e2e4e6]"
-          >
+            class="text-shadow flex w-full flex-row text-xs text-[#e2e4e6]">
             <div *ngIf="mode === 'Community'" class="ml-1 font-bold">
               {{ deck.user }}
             </div>
             <div class="ml-auto font-bold">
-              {{ deck.date | date: 'dd.MM.YY' }}
+              {{ deck.date | date : 'dd.MM.YY' }}
             </div>
           </div>
           <ng-template #tournament>
-            <div
-              class="text-shadow grid w-full grid-cols-5 text-xs text-[#e2e4e6]"
-            >
+            <div class="text-shadow grid w-full grid-cols-5 text-xs text-[#e2e4e6]">
               <div class="ml-1 font-bold">
                 {{ placementString(getTournamentDeck(deck).placement) }}
               </div>
@@ -97,7 +72,7 @@ import { selectAllCards } from '../../store/digimon.selectors';
                 {{ getTournamentDeck(deck).size }}
               </div>
               <div class="ml-auto font-bold">
-                {{ getTournamentDeck(deck).date | date: 'dd.MM.YY' }}
+                {{ getTournamentDeck(deck).date | date : 'dd.MM.YY' }}
               </div>
             </div>
           </ng-template>
@@ -115,11 +90,7 @@ export class DeckContainerComponent implements OnInit {
 
   private allCards: ICard[];
 
-  constructor(
-    private store: Store,
-    private authService: AuthService,
-    private backendService: DigimonBackendService
-  ) {}
+  constructor(private store: Store, private authService: AuthService, private backendService: DigimonBackendService) {}
 
   ngOnInit() {
     this.store
@@ -134,8 +105,8 @@ export class DeckContainerComponent implements OnInit {
     // If there is a ImageCardId set it
     if (this.deck.imageCardId) {
       return (
-        this.allCards.find((card) => card.id === this.deck.imageCardId)
-          ?.cardImage ?? '../../../assets/images/cards/eng/BT1-001.webp'
+        this.allCards.find((card) => card.id === this.deck.imageCardId)?.cardImage ??
+        '../../../assets/images/cards/eng/BT1-001.webp'
       );
     }
 
@@ -146,8 +117,8 @@ export class DeckContainerComponent implements OnInit {
 
     //If there are cards in the deck set it to the first card
     return (
-      this.allCards.find((card) => card.id === this.deck.cards[0].id)
-        ?.cardImage ?? '../../../assets/images/cards/eng/BT1-001.webp'
+      this.allCards.find((card) => card.id === this.deck.cards[0].id)?.cardImage ??
+      '../../../assets/images/cards/eng/BT1-001.webp'
     );
   }
 
@@ -172,9 +143,7 @@ export class DeckContainerComponent implements OnInit {
     if (!this.deck.likes || this.deck.likes.length === 0) {
       return false;
     }
-    const foundLike = this.deck.likes.find(
-      (likeId) => this.authService.userData?.uid === likeId
-    );
+    const foundLike = this.deck.likes.find((likeId) => this.authService.userData?.uid === likeId);
     return !!foundLike;
   }
 
@@ -190,9 +159,7 @@ export class DeckContainerComponent implements OnInit {
   }
 
   isIllegal(): boolean {
-    return this.deck.tags
-      ? !!this.deck.tags.find((tag) => tag.name === 'Illegal')
-      : false;
+    return this.deck.tags ? !!this.deck.tags.find((tag) => tag.name === 'Illegal') : false;
   }
 
   placementString(placement: number): string {

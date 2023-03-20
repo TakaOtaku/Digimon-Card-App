@@ -3186,7 +3186,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[Start of Your Main Phase] By placing 1 Digimon card with ＜Save＞ in its text from your hand under this Tamer, 1 of your Digimon gets +2000 DP for the turn.\n[Your Turn] When one of your Digimon would digivolve into a Digimon card with ＜Save＞ in its text, by suspending this Tamer and placing 1 card from under one of your Tamers as the bottom digivolution card of that Digimon, reduce the digivolution cost by 1.",
+    "effect": "[Start of Your Main Phase] By placing 1 Digimon card with ＜Save＞ in its text from your hand under this Tamer, gain 1 memory.\n[Your Turn] When one of your Digimon would digivolve into a Digimon card with ＜Save＞ in its text, by suspending this Tamer and placing 1 card from under one of your Tamers as the bottom digivolution card of that Digimon, reduce the digivolution cost by 1.",
     "digivolveEffect": "[Security] Play this card without paying its memory cost.",
     "securityEffect": "-",
     "notes": "▹BOOSTER ACROSS TIME [BT-12]",

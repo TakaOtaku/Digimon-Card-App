@@ -1,11 +1,4 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnChanges,
-  OnInit,
-  Output,
-} from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ICard, ICountCard } from '../../../../models';
 
@@ -37,11 +30,7 @@ import { ICard, ICountCard } from '../../../../models';
   </div>
 </div-->
 
-    <p-chart
-      [data]="collectionData"
-      [options]="chartOptions"
-      type="bar"
-    ></p-chart> `,
+    <p-chart [data]="collectionData" [options]="chartOptions" type="bar"></p-chart> `,
 })
 export class CollectionStatsDialogComponent implements OnInit, OnChanges {
   @Input() show: boolean = false;
@@ -114,9 +103,7 @@ export class CollectionStatsDialogComponent implements OnInit, OnChanges {
 
   private getBoosterCards(type: string): number[] {
     //const allCards = this.filterLanguageAllCards();
-    const set = this.digimonCards.filter((card) =>
-      card.cardNumber.includes(type)
-    );
+    const set = this.digimonCards.filter((card) => card.cardNumber.includes(type));
 
     //const collection = this.filterLanguageCollection();
     const have = this.collection.filter((card) => card.id.includes(type));

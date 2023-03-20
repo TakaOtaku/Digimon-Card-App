@@ -7,17 +7,8 @@ import { first, Subject, takeUntil } from 'rxjs';
 import { ICard, ICountCard, ISave } from '../../../../models';
 import { GroupedSets } from '../../../../models/data/filter.data';
 import { DigimonBackendService } from '../../../service/digimon-backend.service';
-import {
-  addToCollection,
-  loadSave,
-  setSave,
-} from '../../../store/digimon.actions';
-import {
-  selectAllCards,
-  selectCollection,
-  selectSave,
-  selectSettings,
-} from '../../../store/digimon.selectors';
+import { addToCollection, loadSave, setSave } from '../../../store/digimon.actions';
+import { selectAllCards, selectCollection, selectSave, selectSettings } from '../../../store/digimon.selectors';
 import { emptySettings } from '../../../store/reducers/save.reducer';
 
 @Component({
@@ -26,8 +17,7 @@ import { emptySettings } from '../../../store/reducers/save.reducer';
     <ul
       class="nav nav-tabs mb-4 flex w-full list-none flex-col flex-wrap justify-center pl-0 md:flex-row"
       id="tabs-tab"
-      role="tablist"
-    >
+      role="tablist">
       <li class="nav-item" role="presentation">
         <a
           href="#tabs-home"
@@ -82,39 +72,22 @@ import { emptySettings } from '../../../store/reducers/save.reducer';
       </li>
     </ul>
     <div class="tab-content" id="tabs-tabContent">
-      <div
-        class="tab-pane show active fade"
-        id="tabs-home"
-        role="tabpanel"
-        aria-labelledby="tabs-home-tab"
-      >
+      <div class="tab-pane show active fade" id="tabs-home" role="tabpanel" aria-labelledby="tabs-home-tab">
         <div class="mx-auto grid w-full grid-cols-2  justify-end">
           <div class="flex flex-col">
             <h5 class="mt-5 text-center font-bold">Collection Goal:</h5>
-            <p-inputNumber
-              [(ngModel)]="collectionCount"
-              styleClass="mx-auto"
-              mode="decimal"
-            ></p-inputNumber>
+            <p-inputNumber [(ngModel)]="collectionCount" styleClass="mx-auto" mode="decimal"></p-inputNumber>
           </div>
 
           <div class="flex flex-col">
             <h5 class="mt-5 text-center font-bold">AA Collection Goal:</h5>
-            <p-inputNumber
-              [(ngModel)]="aaCollectionCount"
-              styleClass="mx-auto"
-              mode="decimal"
-            ></p-inputNumber>
+            <p-inputNumber [(ngModel)]="aaCollectionCount" styleClass="mx-auto" mode="decimal"></p-inputNumber>
           </div>
 
           <div class="flex flex-col">
             <h5 class="mt-5 text-center font-bold">Deck-Sort</h5>
             <div class="flex justify-center">
-              <p-selectButton
-                [formControl]="sortOrderFilter"
-                [multiple]="false"
-                [options]="sortOrder"
-              >
+              <p-selectButton [formControl]="sortOrderFilter" [multiple]="false" [options]="sortOrder">
               </p-selectButton>
             </div>
           </div>
@@ -126,8 +99,7 @@ import { emptySettings } from '../../../store/reducers/save.reducer';
               [options]="showHideOptions"
               class="mx-auto"
               optionLabel="label"
-              optionValue="value"
-            ></p-selectButton>
+              optionValue="value"></p-selectButton>
           </div>
 
           <div class="flex flex-col">
@@ -137,8 +109,7 @@ import { emptySettings } from '../../../store/reducers/save.reducer';
               [options]="showHideOptions"
               class="mx-auto"
               optionLabel="label"
-              optionValue="value"
-            ></p-selectButton>
+              optionValue="value"></p-selectButton>
           </div>
 
           <div class="flex flex-col">
@@ -148,8 +119,7 @@ import { emptySettings } from '../../../store/reducers/save.reducer';
               [options]="showHideOptions"
               class="mx-auto"
               optionLabel="label"
-              optionValue="value"
-            ></p-selectButton>
+              optionValue="value"></p-selectButton>
           </div>
 
           <div class="flex flex-col">
@@ -159,8 +129,7 @@ import { emptySettings } from '../../../store/reducers/save.reducer';
               [options]="showHideOptions"
               class="mx-auto"
               optionLabel="label"
-              optionValue="value"
-            ></p-selectButton>
+              optionValue="value"></p-selectButton>
           </div>
 
           <div class="flex flex-col">
@@ -170,21 +139,17 @@ import { emptySettings } from '../../../store/reducers/save.reducer';
               [options]="showHideOptions"
               class="mx-auto"
               optionLabel="label"
-              optionValue="value"
-            ></p-selectButton>
+              optionValue="value"></p-selectButton>
           </div>
 
           <div class="flex flex-col">
-            <h5 class="mt-5 text-center font-bold">
-              Display Decks in a Table:
-            </h5>
+            <h5 class="mt-5 text-center font-bold">Display Decks in a Table:</h5>
             <p-selectButton
               [(ngModel)]="deckDisplayTable"
               [options]="yesNoOptions"
               class="mx-auto"
               optionLabel="label"
-              optionValue="value"
-            ></p-selectButton>
+              optionValue="value"></p-selectButton>
           </div>
         </div>
 
@@ -195,16 +160,10 @@ import { emptySettings } from '../../../store/reducers/save.reducer';
             icon="pi pi-save"
             label="Save Settings"
             pButton
-            type="button"
-          ></button>
+            type="button"></button>
         </div>
       </div>
-      <div
-        class="tab-pane fade"
-        id="tabs-profile"
-        role="tabpanel"
-        aria-labelledby="tabs-profile-tab"
-      >
+      <div class="tab-pane fade" id="tabs-profile" role="tabpanel" aria-labelledby="tabs-profile-tab">
         <div class="mx-auto flex flex-col justify-center">
           <p class="text-center font-bold">What cards you want to export?</p>
           <p class="text-center text-xs">(Select nothing for all cards)</p>
@@ -220,8 +179,7 @@ import { emptySettings } from '../../../store/reducers/save.reducer';
               display="chip"
               scrollHeight="250px"
               class="mt-2"
-              styleClass="w-full max-w-[300px] h-8 text-sm"
-            >
+              styleClass="w-full max-w-[300px] h-8 text-sm">
               <ng-template let-group pTemplate="group">
                 <div class="align-items-center flex">
                   <span>{{ group.label }}</span>
@@ -230,91 +188,75 @@ import { emptySettings } from '../../../store/reducers/save.reducer';
             </p-multiSelect>
           </div>
 
-          <h1 class="mt-3 text-center text-xs font-bold text-[#e2e4e6]">
-            Rarity:
-          </h1>
+          <h1 class="mt-3 text-center text-xs font-bold text-[#e2e4e6]">Rarity:</h1>
           <div class="flex inline-flex w-full justify-center">
             <button
               (click)="changeRarity('C')"
               [ngClass]="{ 'primary-border': rarities.includes('C') }"
-              class="min-w-auto primary-background mt-2 h-8 w-10 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]"
-            >
+              class="min-w-auto primary-background mt-2 h-8 w-10 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
               C
             </button>
             <button
               (click)="changeRarity('UC')"
               [ngClass]="{ 'primary-border': rarities.includes('UC') }"
-              class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]"
-            >
+              class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
               UC
             </button>
             <button
               (click)="changeRarity('R')"
               [ngClass]="{ 'primary-border': rarities.includes('R') }"
-              class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]"
-            >
+              class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
               R
             </button>
             <button
               (click)="changeRarity('SR')"
               [ngClass]="{ 'primary-border': rarities.includes('SR') }"
-              class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]"
-            >
+              class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
               SR
             </button>
             <button
               (click)="changeRarity('SEC')"
               [ngClass]="{ 'primary-border': rarities.includes('SEC') }"
-              class="min-w-auto primary-background mt-2 h-8 w-10 rounded-r border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]"
-            >
+              class="min-w-auto primary-background mt-2 h-8 w-10 rounded-r border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
               SEC
             </button>
           </div>
 
-          <h1 class="mt-3 text-center text-xs font-bold text-[#e2e4e6]">
-            Version:
-          </h1>
+          <h1 class="mt-3 text-center text-xs font-bold text-[#e2e4e6]">Version:</h1>
           <div class="flex inline-flex w-full justify-center">
             <button
               (click)="changeVersion('Normal')"
               [ngClass]="{ 'primary-border': versions.includes('Normal') }"
-              class="min-w-auto primary-background mt-2 h-8 w-10 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]"
-            >
+              class="min-w-auto primary-background mt-2 h-8 w-10 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
               Normal
             </button>
             <button
               (click)="changeVersion('AA')"
               [ngClass]="{ 'primary-border': versions.includes('AA') }"
-              class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]"
-            >
+              class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
               AA
             </button>
             <button
               (click)="changeVersion('Pre-Release')"
               [ngClass]="{ 'primary-border': versions.includes('Pre-Release') }"
-              class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]"
-            >
+              class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
               Pre-Release
             </button>
             <button
               (click)="changeVersion('Stamp')"
               [ngClass]="{ 'primary-border': versions.includes('Stamp') }"
-              class="min-w-auto primary-background mt-2 h-8 w-10 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]"
-            >
+              class="min-w-auto primary-background mt-2 h-8 w-10 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
               Stamp
             </button>
             <button
               (click)="changeVersion('Reprint')"
               [ngClass]="{ 'primary-border': versions.includes('Reprint') }"
-              class="min-w-auto primary-background mt-2 h-8 w-10 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]"
-            >
+              class="min-w-auto primary-background mt-2 h-8 w-10 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
               Reprint
             </button>
           </div>
 
-          <p class="mt-3 text-center font-bold">
-            Missing Cards or Collected Cards?
-          </p>
+          <p class="mt-3 text-center font-bold">Missing Cards or Collected Cards?</p>
           <div class="mx-auto flex flex-row">
             <span class="mr-2">Missing</span>
             <p-inputSwitch [(ngModel)]="collectedCards"></p-inputSwitch>
@@ -322,65 +264,47 @@ import { emptySettings } from '../../../store/reducers/save.reducer';
           </div>
 
           <div *ngIf="!collectedCards" class="my-3">
-            <h1 class="text-center text-xs font-bold text-[#e2e4e6]">
-              Collection Goal:
-            </h1>
+            <h1 class="text-center text-xs font-bold text-[#e2e4e6]">Collection Goal:</h1>
             <div class="flex inline-flex w-full justify-center">
               <button
                 (click)="goal = 1"
                 [ngClass]="{ 'primary-border': goal === 1 }"
-                class="min-w-auto primary-background mt-2 h-8 w-20 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]"
-              >
+                class="min-w-auto primary-background mt-2 h-8 w-20 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
                 1
               </button>
               <button
                 (click)="goal = 2"
                 [ngClass]="{ 'primary-border': goal === 2 }"
-                class="min-w-auto primary-background mt-2 h-8 w-20 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]"
-              >
+                class="min-w-auto primary-background mt-2 h-8 w-20 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
                 2
               </button>
               <button
                 (click)="goal = 3"
                 [ngClass]="{ 'primary-border': goal === 3 }"
-                class="min-w-auto primary-background mt-2 h-8 w-20 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]"
-              >
+                class="min-w-auto primary-background mt-2 h-8 w-20 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
                 3
               </button>
               <button
                 (click)="goal = 4"
                 [ngClass]="{ 'primary-border': goal === 4 }"
-                class="min-w-auto primary-background mt-2 h-8 w-20 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]"
-              >
+                class="min-w-auto primary-background mt-2 h-8 w-20 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
                 4
               </button>
               <button
                 (click)="goal = 5"
                 [ngClass]="{ 'primary-border': goal === 5 }"
-                class="min-w-auto primary-background mt-2 h-8 w-20 rounded-l border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]"
-              >
+                class="min-w-auto primary-background mt-2 h-8 w-20 rounded-l border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
                 5
               </button>
             </div>
           </div>
 
           <div class="mt-3 flex w-full justify-end">
-            <button
-              (click)="exportCollection()"
-              icon="pi pi-download"
-              label="Export"
-              pButton
-              type="button"
-            ></button>
+            <button (click)="exportCollection()" icon="pi pi-download" label="Export" pButton type="button"></button>
           </div>
         </div>
       </div>
-      <div
-        class="tab-pane fade"
-        id="tabs-messages"
-        role="tabpanel"
-        aria-labelledby="tabs-profile-tab"
-      >
+      <div class="tab-pane fade" id="tabs-messages" role="tabpanel" aria-labelledby="tabs-profile-tab">
         <div>
           <p>Copy your collection in the text area and press import.</p>
           <textarea
@@ -388,57 +312,41 @@ import { emptySettings } from '../../../store/reducers/save.reducer';
             [placeholder]="importPlaceholder"
             class="border-black-500 min-h-[150px] w-full border-2"
             id="text-import"
-            pInputTextarea
-          ></textarea>
+            pInputTextarea></textarea>
         </div>
         <div class="flex w-full justify-end">
-          <button
-            (click)="importCollection()"
-            icon="pi pi-upload"
-            label="Import"
-            pButton
-            type="button"
-          ></button>
+          <button (click)="importCollection()" icon="pi pi-upload" label="Import" pButton type="button"></button>
         </div>
       </div>
-      <div
-        class="tab-pane fade"
-        id="tabs-contact"
-        role="tabpanel"
-        aria-labelledby="tabs-contact-tab"
-      >
+      <div class="tab-pane fade" id="tabs-contact" role="tabpanel" aria-labelledby="tabs-contact-tab">
         <div class="flex flex-col justify-between lg:flex-row">
           <input
             #fileUpload
             (change)="handleFileInput($event.target)"
             [ngStyle]="{ display: 'none' }"
             accept=".json"
-            type="file"
-          />
+            type="file" />
           <button
             (click)="fileUpload.click()"
             class="m-auto mb-2 min-w-[200px] max-w-[200px]"
             icon="pi pi-upload"
             label="Import Save"
             pButton
-            type="button"
-          ></button>
+            type="button"></button>
           <button
             (click)="exportSave()"
             class="m-auto mb-2 min-w-[200px] max-w-[200px]"
             icon="pi pi-download"
             label="Export Save"
             pButton
-            type="button"
-          ></button>
+            type="button"></button>
           <button
             (click)="deleteSave($event)"
             class="m-auto mb-2 min-w-[200px] max-w-[200px]"
             icon="pi pi-times"
             label="Delete Save"
             pButton
-            type="button"
-          ></button>
+            type="button"></button>
         </div>
       </div>
     </div>
@@ -455,8 +363,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
   rarities: string[] = [];
   versions: string[] = [];
 
-  importPlaceholder =
-    '' + 'Paste Collection here\n' + '\n' + ' Format:\n' + '   Qty Id\n';
+  importPlaceholder = '' + 'Paste Collection here\n' + '\n' + ' Format:\n' + '   Qty Id\n';
   collectionText = '';
 
   digimonCards: ICard[] = [];
@@ -678,9 +585,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
       collection.forEach((collectionCard) => returnCards.push(collectionCard));
     } else {
       allCards.forEach((card) => {
-        const foundCard = collection.find(
-          (collectionCard) => collectionCard.id === card.id
-        );
+        const foundCard = collection.find((collectionCard) => collectionCard.id === card.id);
         if (foundCard) {
           if (this.goal - foundCard.count > 0) {
             returnCards.push({
@@ -701,12 +606,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
     let setFiltered: ICard[] = this.sets.length === 0 ? this.digimonCards : [];
     this.sets.forEach((filter) => {
       setFiltered = [
-        ...new Set([
-          ...setFiltered,
-          ...this.digimonCards.filter(
-            (cards) => cards['id'].split('-')[0] === filter
-          ),
-        ]),
+        ...new Set([...setFiltered, ...this.digimonCards.filter((cards) => cards['id'].split('-')[0] === filter)]),
       ];
     });
 
@@ -716,10 +616,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
     }
     this.rarities.forEach((filter) => {
       raritiesFiltered = [
-        ...new Set([
-          ...raritiesFiltered,
-          ...setFiltered.filter((cards) => cards['rarity'] === filter),
-        ]),
+        ...new Set([...raritiesFiltered, ...setFiltered.filter((cards) => cards['rarity'] === filter)]),
       ];
     });
 
@@ -729,10 +626,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
     }
     this.versions.forEach((filter) => {
       versionsFiltered = [
-        ...new Set([
-          ...versionsFiltered,
-          ...raritiesFiltered.filter((cards) => cards['version'] === filter),
-        ]),
+        ...new Set([...versionsFiltered, ...raritiesFiltered.filter((cards) => cards['version'] === filter)]),
       ];
     });
 
@@ -740,16 +634,10 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
   }
 
   private setupCollection(): ICountCard[] {
-    let setFiltered: ICountCard[] =
-      this.sets.length === 0 ? this.collection : [];
+    let setFiltered: ICountCard[] = this.sets.length === 0 ? this.collection : [];
     this.sets.forEach((filter) => {
       setFiltered = [
-        ...new Set([
-          ...setFiltered,
-          ...this.collection.filter(
-            (cards) => cards['id'].split('-')[0] === filter
-          ),
-        ]),
+        ...new Set([...setFiltered, ...this.collection.filter((cards) => cards['id'].split('-')[0] === filter)]),
       ];
     });
 
@@ -759,9 +647,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
 
     let collectionCardsForRarity: ICountCard[] = [];
     setFiltered.forEach((collectionCard) => {
-      const foundCard = this.digimonCards.find(
-        (card) => card.id === collectionCard.id
-      );
+      const foundCard = this.digimonCards.find((card) => card.id === collectionCard.id);
 
       if (this.rarities.includes(foundCard!.rarity)) {
         collectionCardsForRarity.push(collectionCard);
@@ -774,9 +660,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
 
     let collectionCardsForVersion: ICountCard[] = [];
     collectionCardsForRarity.forEach((collectionCard) => {
-      const foundCard = this.digimonCards.find(
-        (card) => card.id === collectionCard.id
-      );
+      const foundCard = this.digimonCards.find((card) => card.id === collectionCard.id);
 
       if (this.versions.includes(foundCard!.version)) {
         collectionCardsForVersion.push(collectionCard);

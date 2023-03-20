@@ -19,8 +19,7 @@ import { selectAllCards } from '../../store/digimon.selectors';
       scrollHeight="650px"
       rowGroupMode="subheader"
       groupRowsBy="color.name"
-      tableStyleClass="w-full"
-    >
+      tableStyleClass="w-full">
       <ng-template pTemplate="header">
         <tr>
           <th></th>
@@ -34,10 +33,7 @@ import { selectAllCards } from '../../store/digimon.selectors';
       <ng-template pTemplate="groupheader" let-deck>
         <tr pRowGroupHeader>
           <td class="py-3" colspan="5">
-            <div
-              [ngClass]="deck.color.name"
-              class="ml-3 mr-1 h-7 w-7 rounded-full"
-            ></div>
+            <div [ngClass]="deck.color.name" class="ml-3 mr-1 h-7 w-7 rounded-full"></div>
             <span class="ml-2 font-bold">{{ deck.color.name }} Decks</span>
 
             <div class="ml-auto mr-2 font-bold">
@@ -59,8 +55,7 @@ import { selectAllCards } from '../../store/digimon.selectors';
                 'background-repeat': 'no-repeat',
                 'background-position': 'center',
                 'background-position-y': '25%'
-              }"
-            ></div>
+              }"></div>
           </td>
           <td class="text-xs font-bold">
             {{ deck.title }}
@@ -72,7 +67,7 @@ import { selectAllCards } from '../../store/digimon.selectors';
             <div *ngFor="let tag of deck.tags" class="mr-2">{{ tag.name }}</div>
           </td>
           <td class="text-center text-xs">
-            {{ deck.date | date: 'dd.MM.YY' }}
+            {{ deck.date | date : 'dd.MM.YY' }}
           </td>
         </tr>
       </ng-template>
@@ -109,9 +104,7 @@ export class DecksTableComponent {
       );
     } else {
       const deckImage = setDeckImage(deck);
-      this.store.dispatch(
-        saveDeck({ deck: { ...deck, imageCardId: deckImage.id } })
-      );
+      this.store.dispatch(saveDeck({ deck: { ...deck, imageCardId: deckImage.id } }));
       return deckImage.cardImage;
     }
   }

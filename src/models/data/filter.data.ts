@@ -105,26 +105,9 @@ export const Keywords: string[] = [
   '\uff1cSecurity Attack -3\uff1e',
 ];
 
-export const Colors: string[] = [
-  'Red',
-  'Blue',
-  'Yellow',
-  'Green',
-  'Black',
-  'Purple',
-  'White',
-  'Multi',
-];
+export const Colors: string[] = ['Red', 'Blue', 'Yellow', 'Green', 'Black', 'Purple', 'White', 'Multi'];
 
-export const ColorsWithoutMulti: string[] = [
-  'Red',
-  'Blue',
-  'Yellow',
-  'Green',
-  'Black',
-  'Purple',
-  'White',
-];
+export const ColorsWithoutMulti: string[] = ['Red', 'Blue', 'Yellow', 'Green', 'Black', 'Purple', 'White'];
 
 export const Forms: string[] = [
   'In-Training',
@@ -137,14 +120,7 @@ export const Forms: string[] = [
   'D-Reaper',
 ];
 
-export const Attributes: string[] = [
-  'Data',
-  'Vaccine',
-  'Virus',
-  'Free',
-  'Variable',
-  'Unknown',
-];
+export const Attributes: string[] = ['Data', 'Vaccine', 'Virus', 'Free', 'Variable', 'Unknown'];
 
 export const Types: string[] = [
   'Abnormal',
@@ -337,12 +313,7 @@ export const Illustrators: string[] = [
   'yuuki.',
 ].sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 
-export const SpecialRequirements: string[] = [
-  'Digivolve',
-  'DNA Digivolution',
-  'DigiXros',
-  'Burst Digivolve',
-];
+export const SpecialRequirements: string[] = ['Digivolve', 'DNA Digivolution', 'DigiXros', 'Burst Digivolve'];
 
 export const Restrictions: string[] = ['Banned', 'Restricted to 1'];
 

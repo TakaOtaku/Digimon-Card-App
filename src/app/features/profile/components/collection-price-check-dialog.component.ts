@@ -3,14 +3,8 @@ import { Store } from '@ngrx/store';
 import { Subject, tap } from 'rxjs';
 import { englishCards } from '../../../../assets/cardlists/eng/english';
 import { GroupedSets, ICard, ICountCard, ISave } from '../../../../models';
-import {
-  ProductCM,
-  ProductCMWithCount,
-} from '../../../service/card-market.service';
-import {
-  selectAllCards,
-  selectPriceGuideCM,
-} from '../../../store/digimon.selectors';
+import { ProductCM, ProductCMWithCount } from '../../../service/card-market.service';
+import { selectAllCards, selectPriceGuideCM } from '../../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-collection-price-check-dialog',
@@ -19,15 +13,11 @@ import {
       <p-blockUI [blocked]="spinner"></p-blockUI>
       <p-progressSpinner
         *ngIf="spinner"
-        class="absolute top-1/2 left-1/2 z-[5000] -translate-x-1/2 -translate-y-1/2 transform"
-      ></p-progressSpinner>
+        class="absolute top-1/2 left-1/2 z-[5000] -translate-x-1/2 -translate-y-1/2 transform"></p-progressSpinner>
 
       <div *ngIf="prizeGuide$ | async" class="mb-2 flex flex-col">
         <span>All Price-Information is from <b>CardMarket</b>.</span>
-        <span class="text-xs"
-          >Calculating the Card-Prices may take a while if you have a big
-          collection.</span
-        >
+        <span class="text-xs">Calculating the Card-Prices may take a while if you have a big collection.</span>
       </div>
 
       <div class="flex flex-row">
@@ -54,8 +44,7 @@ import {
           display="chip"
           scrollHeight="250px"
           class="mr-2 mb-2 w-full max-w-[250px]"
-          styleClass="w-full max-w-[250px] h-8 text-sm"
-        >
+          styleClass="w-full max-w-[250px] h-8 text-sm">
           <ng-template let-group pTemplate="group">
             <div class="align-items-center flex">
               <span>{{ group.label }}</span>
@@ -64,8 +53,7 @@ import {
         </p-multiSelect>
         <button
           (click)="updatePrice()"
-          class="surface-ground hover:primary-background text-shadow h-8 border border-black px-1 font-bold text-[#e2e4e6]"
-        >
+          class="surface-ground hover:primary-background text-shadow h-8 border border-black px-1 font-bold text-[#e2e4e6]">
           Check Price
         </button>
       </div>
@@ -73,18 +61,11 @@ import {
       <div *ngIf="notFound.length > 0" class="flex flex-row flex-wrap">
         <span class="w-full">Couldn't find a price for: </span>
         <div *ngFor="let card of notFound">
-          <digimon-card-image
-            [card]="getCard(card.cardId, allCards)"
-            [ribbons]="false"
-          ></digimon-card-image>
+          <digimon-card-image [card]="getCard(card.cardId, allCards)" [ribbons]="false"></digimon-card-image>
         </div>
       </div>
 
-      <p-table
-        [value]="filteredProducts"
-        [breakpoint]="'0px'"
-        styleClass="p-datatable-sm p-datatable-striped"
-      >
+      <p-table [value]="filteredProducts" [breakpoint]="'0px'" styleClass="p-datatable-sm p-datatable-striped">
         <ng-template pTemplate="header">
           <tr>
             <th>Img</th>
@@ -106,25 +87,20 @@ import {
               <digimon-card-image
                 [card]="getCard(product.cardId, allCards)"
                 [ribbons]="false"
-                [height]="'1.25rem'"
-              ></digimon-card-image>
+                [height]="'1.25rem'"></digimon-card-image>
             </th>
             <th>{{ product.count }}</th>
             <td>{{ product.cardId }}</td>
             <td>{{ product.name }}</td>
-            <td>{{ product.lowPrice | currency: 'EUR' }}</td>
-            <td>{{ product.avgSellPrice | currency: 'EUR' }}</td>
-            <td>{{ product.trendPrice | currency: 'EUR' }}</td>
-            <td>{{ product.avg1 | currency: 'EUR' }}</td>
-            <td>{{ product.avg7 | currency: 'EUR' }}</td>
-            <td>{{ product.avg30 | currency: 'EUR' }}</td>
+            <td>{{ product.lowPrice | currency : 'EUR' }}</td>
+            <td>{{ product.avgSellPrice | currency : 'EUR' }}</td>
+            <td>{{ product.trendPrice | currency : 'EUR' }}</td>
+            <td>{{ product.avg1 | currency : 'EUR' }}</td>
+            <td>{{ product.avg7 | currency : 'EUR' }}</td>
+            <td>{{ product.avg30 | currency : 'EUR' }}</td>
             <td class="bg-white">
               <a [href]="product.link" target="_blank">
-                <img
-                  class="max-h-[2rem]"
-                  src="assets/icons/CardmarketLogo.png"
-                  alt="Link to CardMarket"
-                />
+                <img class="max-h-[2rem]" src="assets/icons/CardmarketLogo.png" alt="Link to CardMarket" />
               </a>
             </td>
           </tr>
@@ -132,12 +108,12 @@ import {
         <ng-template pTemplate="footer">
           <tr *ngIf="filteredProducts.length > 0; else noEntry">
             <td colspan="3">Totals</td>
-            <td>{{ totalProducts?.lowPrice | currency: 'EUR' }}</td>
-            <td>{{ totalProducts?.avgSellPrice | currency: 'EUR' }}</td>
-            <td>{{ totalProducts?.trendPrice | currency: 'EUR' }}</td>
-            <td>{{ totalProducts?.avg1 | currency: 'EUR' }}</td>
-            <td>{{ totalProducts?.avg7 | currency: 'EUR' }}</td>
-            <td>{{ totalProducts?.avg30 | currency: 'EUR' }}</td>
+            <td>{{ totalProducts?.lowPrice | currency : 'EUR' }}</td>
+            <td>{{ totalProducts?.avgSellPrice | currency : 'EUR' }}</td>
+            <td>{{ totalProducts?.trendPrice | currency : 'EUR' }}</td>
+            <td>{{ totalProducts?.avg1 | currency : 'EUR' }}</td>
+            <td>{{ totalProducts?.avg7 | currency : 'EUR' }}</td>
+            <td>{{ totalProducts?.avg30 | currency : 'EUR' }}</td>
             <td></td>
           </tr>
           <ng-template #noEntry>
@@ -148,9 +124,7 @@ import {
 
       <div class="flex flex-col text-xs">
         <span><b>Disclaimer:</b></span>
-        <span>
-          Not all cards may have a price or they could be linked wrong.</span
-        >
+        <span> Not all cards may have a price or they could be linked wrong.</span>
         <span> The Prices are updated once a day.</span>
         <span> TCGPlayer doesn't give out access to their API anymore.</span>
       </div>
@@ -181,9 +155,7 @@ export class CollectionPriceCheckDialogComponent implements OnDestroy {
 
   viewCardDialog = false;
 
-  prizeGuide$ = this.store
-    .select(selectPriceGuideCM)
-    .pipe(tap((products) => (this.prizeGuide = products)));
+  prizeGuide$ = this.store.select(selectPriceGuideCM).pipe(tap((products) => (this.prizeGuide = products)));
   prizeGuide: ProductCM[] = [];
 
   onlyMissing = false;
@@ -215,8 +187,7 @@ export class CollectionPriceCheckDialogComponent implements OnDestroy {
     const all: ProductCMWithCount[] = filteredCollection
       .map((card) => {
         const foundProduct: ProductCM =
-          this.prizeGuide.find((product) => card.id === product.cardId) ??
-          this.emptyProduct(card);
+          this.prizeGuide.find((product) => card.id === product.cardId) ?? this.emptyProduct(card);
 
         return { ...foundProduct, count: card.count } as ProductCMWithCount;
       })
@@ -273,17 +244,13 @@ export class CollectionPriceCheckDialogComponent implements OnDestroy {
   }
 
   showOnlyMissing() {
-    this.filteredProducts = this.onlyMissing
-      ? this.getMissingCards()
-      : this.products;
+    this.filteredProducts = this.onlyMissing ? this.getMissingCards() : this.products;
   }
 
   getMissingCards = (): ProductCMWithCount[] => {
     return this.products
       .map((product) => {
-        const foundCard = this.filterCollection().find(
-          (collectionCard) => collectionCard.id === product.cardId
-        );
+        const foundCard = this.filterCollection().find((collectionCard) => collectionCard.id === product.cardId);
         if (foundCard) {
           return { ...product, count: product.count - foundCard.count };
         } else {

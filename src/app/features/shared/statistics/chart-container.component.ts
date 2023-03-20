@@ -14,8 +14,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
           class="w-full"
           [ngStyle]="{
             height: 'calc(' + fill[7 - i] + ' * ' + fillPercent + '%)'
-          }"
-        ></div>
+          }"></div>
       </div>
       <p class="text-center text-xs text-[#e2e4e6]">{{ label }}</p>
     </div>
@@ -27,16 +26,7 @@ export class ChartContainerComponent {
   @Input() public fill: number[];
   @Input() public fillPercent?: string = '3.333';
 
-  colors = [
-    'Multi',
-    'White',
-    'Purple',
-    'Black',
-    'Green',
-    'Yellow',
-    'Blue',
-    'Red',
-  ];
+  colors = ['Multi', 'White', 'Purple', 'Black', 'Green', 'Yellow', 'Blue', 'Red'];
 
   getFillCount(): number {
     let num = 0;

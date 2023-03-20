@@ -1,12 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  EventEmitter,
-  Input,
-  OnDestroy,
-  OnInit,
-  Output,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
@@ -24,11 +16,8 @@ import { AuthService } from '../../../service/auth.service';
           pButton
           pRipple
           type="button"
-          (click)="router.navigateByUrl('/community')"
-        ></button>
-        <h1
-          class="mb-2 w-full text-center text-3xl font-extrabold text-[#e2e4e6]"
-        >
+          (click)="router.navigateByUrl('/community')"></button>
+        <h1 class="mb-2 w-full text-center text-3xl font-extrabold text-[#e2e4e6]">
           {{ form.get('title')!.value }}
         </h1>
         <button
@@ -38,8 +27,7 @@ import { AuthService } from '../../../service/auth.service';
           pButton
           pRipple
           type="button"
-          (click)="editChanged.emit(true)"
-        ></button>
+          (click)="editChanged.emit(true)"></button>
       </div>
       <ng-template #editView class="relative">
         <button
@@ -48,16 +36,9 @@ import { AuthService } from '../../../service/auth.service';
           pButton
           pRipple
           type="button"
-          (click)="router.navigateByUrl('/community')"
-        ></button>
+          (click)="router.navigateByUrl('/community')"></button>
         <span class="w-full">
-          <input
-            formControlName="title"
-            placeholder="Title:"
-            class="mb-3 h-8 w-full text-sm"
-            pInputText
-            type="text"
-          />
+          <input formControlName="title" placeholder="Title:" class="mb-3 h-8 w-full text-sm" pInputText type="text" />
         </span>
         <button
           *ngIf="showEdit()"
@@ -66,8 +47,7 @@ import { AuthService } from '../../../service/auth.service';
           pButton
           pRipple
           type="button"
-          (click)="editChanged.emit(false)"
-        ></button>
+          (click)="editChanged.emit(false)"></button>
       </ng-template>
 
       <div *ngIf="edit" class="mb-3">
@@ -75,21 +55,17 @@ import { AuthService } from '../../../service/auth.service';
           <button
             (click)="form.get('category')!.setValue('Tournament Report')"
             [ngClass]="{
-              'primary-background':
-                form.get('category')!.value === 'Tournament Report'
+              'primary-background': form.get('category')!.value === 'Tournament Report'
             }"
-            class="min-w-auto mt-2 h-8 w-36 rounded-l-sm border border-slate-100 p-2 text-xs font-semibold text-[#e2e4e6]"
-          >
+            class="min-w-auto mt-2 h-8 w-36 rounded-l-sm border border-slate-100 p-2 text-xs font-semibold text-[#e2e4e6]">
             Tournament Report
           </button>
           <button
             (click)="form.get('category')!.setValue('Deck-Review')"
             [ngClass]="{
-              'primary-background':
-                form.get('category')!.value === 'Deck-Review'
+              'primary-background': form.get('category')!.value === 'Deck-Review'
             }"
-            class="min-w-auto mt-2 h-8 w-36 border border-slate-100 p-2 text-xs font-semibold text-[#e2e4e6]"
-          >
+            class="min-w-auto mt-2 h-8 w-36 border border-slate-100 p-2 text-xs font-semibold text-[#e2e4e6]">
             Deck-Review
           </button>
         </div>
@@ -97,8 +73,7 @@ import { AuthService } from '../../../service/auth.service';
 
       <div class="flex flex-row">
         <span class="mb-2 w-full text-center font-bold text-[#e2e4e6]"
-          >{{ form.get('author')!.value }} /
-          {{ form.get('date')!.value | date: 'dd.MM.yyyy' }}</span
+          >{{ form.get('author')!.value }} / {{ form.get('date')!.value | date : 'dd.MM.yyyy' }}</span
         >
       </div>
     </div>

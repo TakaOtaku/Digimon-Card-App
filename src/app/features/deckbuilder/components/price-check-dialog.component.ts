@@ -1,10 +1,7 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { BehaviorSubject, filter, Subject, takeUntil } from 'rxjs';
 import { ICountCard } from '../../../../models';
-import {
-  ProductCM,
-  ProductCMWithCount,
-} from '../../../service/card-market.service';
+import { ProductCM, ProductCMWithCount } from '../../../service/card-market.service';
 import { DeckBuilderViewModel } from '../../../store/digimon.selectors';
 
 @Component({
@@ -25,22 +22,15 @@ import { DeckBuilderViewModel } from '../../../store/digimon.selectors';
         ]"
         class="mx-auto"
         optionLabel="label"
-        optionValue="value"
-      ></p-selectButton>
+        optionValue="value"></p-selectButton>
     </div>
 
     <div *ngIf="notFound.length > 0" class="flex flex-row flex-wrap">
       Couldn't find a price for:
-      <span *ngFor="let card of notFound" class="mx-1 font-bold">{{
-        card.cardId
-      }}</span>
+      <span *ngFor="let card of notFound" class="mx-1 font-bold">{{ card.cardId }}</span>
     </div>
 
-    <p-table
-      [value]="filteredProducts"
-      [breakpoint]="'0px'"
-      styleClass="p-datatable-sm p-datatable-striped"
-    >
+    <p-table [value]="filteredProducts" [breakpoint]="'0px'" styleClass="p-datatable-sm p-datatable-striped">
       <ng-template pTemplate="header">
         <tr>
           <th>Count</th>
@@ -60,19 +50,15 @@ import { DeckBuilderViewModel } from '../../../store/digimon.selectors';
           <th>{{ product.count }}</th>
           <td>{{ product.cardId }}</td>
           <td>{{ product.name }}</td>
-          <td>{{ product.lowPrice | currency: 'EUR' }}</td>
-          <td>{{ product.avgSellPrice | currency: 'EUR' }}</td>
-          <td>{{ product.trendPrice | currency: 'EUR' }}</td>
-          <td>{{ product.avg1 | currency: 'EUR' }}</td>
-          <td>{{ product.avg7 | currency: 'EUR' }}</td>
-          <td>{{ product.avg30 | currency: 'EUR' }}</td>
+          <td>{{ product.lowPrice | currency : 'EUR' }}</td>
+          <td>{{ product.avgSellPrice | currency : 'EUR' }}</td>
+          <td>{{ product.trendPrice | currency : 'EUR' }}</td>
+          <td>{{ product.avg1 | currency : 'EUR' }}</td>
+          <td>{{ product.avg7 | currency : 'EUR' }}</td>
+          <td>{{ product.avg30 | currency : 'EUR' }}</td>
           <td class="bg-white">
             <a [href]="product.link" target="_blank">
-              <img
-                class="max-h-[2rem]"
-                src="assets/icons/CardmarketLogo.png"
-                alt="Link to CardMarket"
-              />
+              <img class="max-h-[2rem]" src="assets/icons/CardmarketLogo.png" alt="Link to CardMarket" />
             </a>
           </td>
         </tr>
@@ -80,12 +66,12 @@ import { DeckBuilderViewModel } from '../../../store/digimon.selectors';
       <ng-template pTemplate="footer">
         <tr *ngIf="filteredProducts.length > 0; else noEntry">
           <td colspan="3">Totals</td>
-          <td>{{ totalProducts?.lowPrice | currency: 'EUR' }}</td>
-          <td>{{ totalProducts?.avgSellPrice | currency: 'EUR' }}</td>
-          <td>{{ totalProducts?.trendPrice | currency: 'EUR' }}</td>
-          <td>{{ totalProducts?.avg1 | currency: 'EUR' }}</td>
-          <td>{{ totalProducts?.avg7 | currency: 'EUR' }}</td>
-          <td>{{ totalProducts?.avg30 | currency: 'EUR' }}</td>
+          <td>{{ totalProducts?.lowPrice | currency : 'EUR' }}</td>
+          <td>{{ totalProducts?.avgSellPrice | currency : 'EUR' }}</td>
+          <td>{{ totalProducts?.trendPrice | currency : 'EUR' }}</td>
+          <td>{{ totalProducts?.avg1 | currency : 'EUR' }}</td>
+          <td>{{ totalProducts?.avg7 | currency : 'EUR' }}</td>
+          <td>{{ totalProducts?.avg30 | currency : 'EUR' }}</td>
           <td></td>
         </tr>
         <ng-template #noEntry>
@@ -96,9 +82,7 @@ import { DeckBuilderViewModel } from '../../../store/digimon.selectors';
 
     <div class="flex flex-col text-xs">
       <span><b>Disclaimer:</b></span>
-      <span>
-        Not all cards may have a price or they could be linked wrong.</span
-      >
+      <span> Not all cards may have a price or they could be linked wrong.</span>
       <span> The Prices are updated once a day.</span>
       <span> TCGPlayer doesn't give out access to their API anymore.</span>
     </div>
@@ -151,9 +135,8 @@ export class PriceCheckDialogComponent implements OnInit, OnDestroy {
     const all: ProductCMWithCount[] = this.deckBuilderViewModel.deck.cards
       .map((card) => {
         const foundProduct: ProductCM =
-          this.deckBuilderViewModel.priceGuideCM.find(
-            (product) => card.id === product.cardId
-          ) ?? this.emptyProduct(card);
+          this.deckBuilderViewModel.priceGuideCM.find((product) => card.id === product.cardId) ??
+          this.emptyProduct(card);
 
         return { ...foundProduct, count: card.count } as ProductCMWithCount;
       })
@@ -210,9 +193,7 @@ export class PriceCheckDialogComponent implements OnInit, OnDestroy {
   }
 
   showOnlyMissing() {
-    this.filteredProducts = this.onlyMissing
-      ? this.getMissingCards()
-      : this.products;
+    this.filteredProducts = this.onlyMissing ? this.getMissingCards() : this.products;
   }
 
   getMissingCards = (): ProductCMWithCount[] => {

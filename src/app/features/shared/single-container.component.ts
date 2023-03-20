@@ -13,8 +13,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
           [ngStyle]="{
             height: 'calc(' + value + ' * ' + percent + '%)',
             backgroundColor: color
-          }"
-        ></div>
+          }"></div>
       </div>
       <p class="text-center text-xs text-[#e2e4e6]">{{ label }}</p>
     </div>

@@ -1,37 +1,12 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnChanges,
-  OnDestroy,
-  OnInit,
-  Output,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import {
-  debounceTime,
-  distinctUntilChanged,
-  first,
-  Subject,
-  takeUntil,
-} from 'rxjs';
+import { debounceTime, distinctUntilChanged, first, Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
-import {
-  Countries,
-  ICard,
-  IDeck,
-  IDeckCard,
-  ITournamentDeck,
-  TAGS,
-} from '../../../../models';
-import {
-  compareIDs,
-  sortColors,
-} from '../../../functions/digimon-card.functions';
+import { Countries, ICard, IDeck, IDeckCard, ITournamentDeck, TAGS } from '../../../../models';
+import { compareIDs, sortColors } from '../../../functions/digimon-card.functions';
 import { sortID } from '../../../functions/filter.functions';
 import { stringToDeck } from '../../../functions/parse-deck';
 import { AuthService } from '../../../service/auth.service';
@@ -50,54 +25,35 @@ interface IDropDownItem {
     <div [formGroup]="form" class="flex w-full flex-col">
       <div class="my-3 grid h-[300px] grid-cols-2">
         <span class="p-float-label">
-          <textarea
-            id="deckList-input"
-            formControlName="deckList"
-            class="h-full w-full"
-            pInputTextarea
-          ></textarea>
+          <textarea id="deckList-input" formControlName="deckList" class="h-full w-full" pInputTextarea></textarea>
           <label for="deckList-input">Deck-List*</label>
         </span>
         <div
-          class="grid h-full w-full grid-cols-4 overflow-y-scroll border-2 border-slate-200 md:grid-cols-6 lg:grid-cols-8"
-        >
+          class="grid h-full w-full grid-cols-4 overflow-y-scroll border-2 border-slate-200 md:grid-cols-6 lg:grid-cols-8">
           <digimon-deck-card
             *ngFor="let card of mainDeck"
             [edit]="false"
             [card]="card"
-            [cards]="allCards"
-          ></digimon-deck-card>
+            [cards]="allCards"></digimon-deck-card>
         </div>
       </div>
 
       <div class="my-3 grid grid-cols-3">
         <label class="col-span-2">Title:</label>
         <label>Card Image:</label>
-        <input
-          id="title-input"
-          type="text"
-          class="col-span-2 w-full"
-          pInputText
-          formControlName="title"
-        />
+        <input id="title-input" type="text" class="col-span-2 w-full" pInputText formControlName="title" />
 
         <p-dropdown
           styleClass="ml-1 truncate w-full"
           [options]="cardImageOptions"
           formControlName="cardImageId"
           optionLabel="name"
-          appendTo="body"
-        >
+          appendTo="body">
         </p-dropdown>
       </div>
 
       <label>Description:</label>
-      <textarea
-        id="description-input"
-        class="w-full"
-        formControlName="description"
-        pInputTextarea
-      ></textarea>
+      <textarea id="description-input" class="w-full" formControlName="description" pInputTextarea></textarea>
 
       <div class="my-3 grid grid-cols-2 lg:grid-cols-4">
         <div class="flex flex-col">
@@ -106,32 +62,18 @@ interface IDropDownItem {
             styleClass="truncate w-full mr-1"
             [options]="formatOptions"
             formControlName="format"
-            appendTo="body"
-          >
+            appendTo="body">
           </p-dropdown>
         </div>
 
         <div class="flex flex-col">
           <label for="player-input">Player:</label>
-          <input
-            id="player-input"
-            type="text"
-            class="w-full"
-            formControlName="player"
-            pInputText
-          />
+          <input id="player-input" type="text" class="w-full" formControlName="player" pInputText />
         </div>
 
         <div class="flex flex-col">
           <label for="placement-input">Placement:</label>
-          <input
-            id="placement-input"
-            type="number"
-            class="w-full"
-            formControlName="placement"
-            min="1"
-            pInputText
-          />
+          <input id="placement-input" type="number" class="w-full" formControlName="placement" min="1" pInputText />
         </div>
 
         <div class="flex flex-col">
@@ -141,21 +83,14 @@ interface IDropDownItem {
             [options]="sizeOptions"
             formControlName="size"
             appendTo="body"
-            optionLabel="name"
-          >
+            optionLabel="name">
           </p-dropdown>
         </div>
       </div>
 
       <div class="my-3 flex flex-col lg:grid lg:grid-cols-3">
         <span class="p-float-label mr-1 w-full">
-          <input
-            id="host-input"
-            type="text"
-            class="w-full"
-            formControlName="host"
-            pInputText
-          />
+          <input id="host-input" type="text" class="w-full" formControlName="host" pInputText />
           <label for="host-input">Host*</label>
         </span>
 
@@ -164,16 +99,10 @@ interface IDropDownItem {
           [options]="countryOptions"
           formControlName="country"
           optionLabel="name"
-          appendTo="body"
-        >
+          appendTo="body">
         </p-dropdown>
 
-        <p-calendar
-          class="w-full"
-          styleClass="w-full"
-          formControlName="date"
-          dateFormat="dd.MM.yy"
-        ></p-calendar>
+        <p-calendar class="w-full" styleClass="w-full" formControlName="date" dateFormat="dd.MM.yy"></p-calendar>
       </div>
 
       <button
@@ -181,8 +110,7 @@ interface IDropDownItem {
         class="p-button-outlined"
         label="Submit the Deck"
         [disabled]="!form.valid"
-        (click)="submit()"
-      ></button>
+        (click)="submit()"></button>
     </div>
   `,
 })
@@ -207,9 +135,7 @@ export class DeckSubmissionComponent implements OnInit, OnChanges, OnDestroy {
   deck: IDeck | null;
   mainDeck: IDeckCard[] = [];
 
-  cardImageOptions: IDropDownItem[] = [
-    { name: 'No Deck-Cards found!', value: '' },
-  ];
+  cardImageOptions: IDropDownItem[] = [{ name: 'No Deck-Cards found!', value: '' }];
   formatOptions = TAGS;
   countryOptions = Countries;
   sizeOptions: IDropDownItem[] = [
@@ -240,11 +166,7 @@ export class DeckSubmissionComponent implements OnInit, OnChanges, OnDestroy {
 
     this.form
       .get('deckList')
-      ?.valueChanges.pipe(
-        debounceTime(1000),
-        distinctUntilChanged(),
-        takeUntil(this.onDestroy$)
-      )
+      ?.valueChanges.pipe(debounceTime(1000), distinctUntilChanged(), takeUntil(this.onDestroy$))
       .subscribe((deckList: string) => {
         this.deck = stringToDeck(deckList, this.allCards);
         this.deck ? this.mapDeck(this.deck, this.allCards) : null;
@@ -278,9 +200,7 @@ export class DeckSubmissionComponent implements OnInit, OnChanges, OnDestroy {
       }
     });
 
-    iDeckCards.forEach((card) =>
-      this.mainDeck.push({ ...card, count: card.count })
-    );
+    iDeckCards.forEach((card) => this.mainDeck.push({ ...card, count: card.count }));
     this.levelSort();
   }
 
@@ -317,19 +237,7 @@ export class DeckSubmissionComponent implements OnInit, OnChanges, OnDestroy {
       .filter((card) => card.cardType === 'Option')
       .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
-    this.mainDeck = [
-      ...new Set([
-        ...eggs,
-        ...lv0,
-        ...lv3,
-        ...lv4,
-        ...lv5,
-        ...lv6,
-        ...lv7,
-        ...tamer,
-        ...options,
-      ]),
-    ];
+    this.mainDeck = [...new Set([...eggs, ...lv0, ...lv3, ...lv4, ...lv5, ...lv6, ...lv7, ...tamer, ...options])];
   }
 
   createImageOptions(): ICardImage[] {
@@ -364,10 +272,7 @@ export class DeckSubmissionComponent implements OnInit, OnChanges, OnDestroy {
       size: formValues.size.value,
     };
 
-    this.digimonBackendService
-      .createTournamentDeck(tournamentDeck)
-      .pipe(first())
-      .subscribe();
+    this.digimonBackendService.createTournamentDeck(tournamentDeck).pipe(first()).subscribe();
 
     this.onClose.emit(true);
   }

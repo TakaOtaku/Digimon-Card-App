@@ -9,8 +9,7 @@ import { selectMobileCollectionView } from '../../../store/digimon.selectors';
   template: `
     <button
       (click)="setMobileCollectionView()"
-      class="min-w-auto primary-background ml-2 mt-2 h-8 w-32 rounded p-2 text-xs font-semibold text-[#e2e4e6]"
-    >
+      class="min-w-auto primary-background ml-2 mt-2 h-8 w-32 rounded p-2 text-xs font-semibold text-[#e2e4e6]">
       Card-List
     </button>
   `,
@@ -26,10 +25,7 @@ export class FilterButtonComponent implements OnInit, OnDestroy {
     this.store
       .select(selectMobileCollectionView)
       .pipe(takeUntil(this.onDestroy$))
-      .subscribe(
-        (mobileCollectionView) =>
-          (this.mobileCollectionView = mobileCollectionView)
-      );
+      .subscribe((mobileCollectionView) => (this.mobileCollectionView = mobileCollectionView));
   }
 
   ngOnDestroy(): void {

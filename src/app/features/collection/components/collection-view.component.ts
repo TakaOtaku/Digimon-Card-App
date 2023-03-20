@@ -7,8 +7,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
       <div class="2xl:w-8/10 hidden w-full md:block">
         <digimon-pagination-card-list
           [collectionOnly]="collectionOnly"
-          [deckView]="deckView"
-        ></digimon-pagination-card-list>
+          [deckView]="deckView"></digimon-pagination-card-list>
       </div>
       <div class="2xl:w-2/10 hidden 2xl:flex">
         <digimon-filter-side-box></digimon-filter-side-box>

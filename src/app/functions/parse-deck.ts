@@ -2,10 +2,7 @@ import { ICard, ICountCard, IDeck, IDeckCard } from '../../models';
 import { emptyDeck } from '../store/reducers/digimon.reducers';
 import { compareIDs, setColors, setTags } from './digimon-card.functions';
 
-export function stringToDeck(
-  deckList: string,
-  allCards: ICard[]
-): IDeck | null {
+export function stringToDeck(deckList: string, allCards: ICard[]): IDeck | null {
   let result: string[] = deckList.split('\n');
 
   let deck: IDeck = parseDeck(result, allCards);
@@ -38,9 +35,7 @@ function parseTTSDeck(deckList: string, allCards: ICard[]): IDeck {
   deckJson.forEach((entry) => {
     const foundCard = allCards.find((card) => card.id === entry);
     if (foundCard) {
-      const cardInDeck = deck.cards.find(
-        (card: ICountCard) => card.id === foundCard.id
-      );
+      const cardInDeck = deck.cards.find((card: ICountCard) => card.id === foundCard.id);
       if (cardInDeck) {
         cardInDeck.count++;
       } else {

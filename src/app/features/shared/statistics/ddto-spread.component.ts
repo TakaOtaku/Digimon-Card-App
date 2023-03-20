@@ -1,15 +1,6 @@
-import {
-  Component,
-  Input,
-  OnChanges,
-  OnInit,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ICard, IDeck } from '../../../../models';
-import {
-  getCountFromDeckCards,
-  mapToDeckCards,
-} from '../../../functions/digimon-card.functions';
+import { getCountFromDeckCards, mapToDeckCards } from '../../../functions/digimon-card.functions';
 
 @Component({
   selector: 'digimon-ddto-spread',
@@ -19,32 +10,28 @@ import {
         class="h-full w-full text-center"
         [ngStyle]="{
           background: linearGradientEgg()
-        }"
-      >
+        }">
         <span class="text-black-outline-xs">{{ ddto[0] }}</span>
       </div>
       <div
         class="h-full w-full text-center"
         [ngStyle]="{
           background: linearGradient(ddto[1])
-        }"
-      >
+        }">
         <span class="text-black-outline-xs">{{ ddto[1] }}</span>
       </div>
       <div
         class="h-full w-full text-center"
         [ngStyle]="{
           background: linearGradient(ddto[2])
-        }"
-      >
+        }">
         <span class="text-black-outline-xs">{{ ddto[2] }}</span>
       </div>
       <div
         class="h-full w-full text-center"
         [ngStyle]="{
           background: linearGradient(ddto[3])
-        }"
-      >
+        }">
         <span class="text-black-outline-xs">{{ ddto[3] }}</span>
       </div>
 
@@ -55,27 +42,10 @@ import {
     </div>
 
     <div *ngIf="container" class="flex w-full flex-row">
-      <digimon-single-container
-        label="Egg"
-        [value]="ddto[0]"
-        percent="20"
-        class="w-12"
-      ></digimon-single-container>
-      <digimon-single-container
-        label="Digimon"
-        [value]="ddto[1]"
-        class="w-14"
-      ></digimon-single-container>
-      <digimon-single-container
-        label="Tamer"
-        [value]="ddto[2]"
-        class="w-12"
-      ></digimon-single-container>
-      <digimon-single-container
-        label="Option"
-        [value]="ddto[3]"
-        class="w-12"
-      ></digimon-single-container>
+      <digimon-single-container label="Egg" [value]="ddto[0]" percent="20" class="w-12"></digimon-single-container>
+      <digimon-single-container label="Digimon" [value]="ddto[1]" class="w-14"></digimon-single-container>
+      <digimon-single-container label="Tamer" [value]="ddto[2]" class="w-12"></digimon-single-container>
+      <digimon-single-container label="Option" [value]="ddto[3]" class="w-12"></digimon-single-container>
     </div>
   `,
 })

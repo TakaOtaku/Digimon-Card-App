@@ -61,8 +61,7 @@ export class CardTraderService {
   }
 
   getMarketPlaceItems(expansion: number): Observable<any> {
-    const url =
-      HOST_URL + '/api/v2/marketplace/products?expansion_id=' + expansion;
+    const url = HOST_URL + '/api/v2/marketplace/products?expansion_id=' + expansion;
 
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -76,16 +75,9 @@ export class CardTraderService {
     const subject = new Subject();
     let array = [];
     this.getExpansions()
-      .pipe(
-        map(
-          (expansions) =>
-            expansions.filter((expansion) => expansion.game_id === 8) ?? []
-        )
-      )
+      .pipe(map((expansions) => expansions.filter((expansion) => expansion.game_id === 8) ?? []))
       .subscribe((expansions) => {
-        const observables = expansions.map((expansion) =>
-          this.getMarketPlaceItems(expansion.id)
-        );
+        const observables = expansions.map((expansion) => this.getMarketPlaceItems(expansion.id));
         const fork = forkJoin(observables)
           .pipe(map((items) => items.flat()))
           .subscribe((marketPlaceItems) => {
@@ -106,9 +98,7 @@ export class CardTraderService {
               const cardId =
                 items[0].properties_hash.collector_number.includes('P') &&
                 !items[0].properties_hash.collector_number.startsWith('P')
-                  ? this.correctParallelArt(
-                      items[0].properties_hash.collector_number
-                    ).trim()
+                  ? this.correctParallelArt(items[0].properties_hash.collector_number).trim()
                   : items[0].properties_hash.collector_number.trim();
 
               subject.next({

@@ -1,11 +1,4 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnDestroy,
-  OnInit,
-  Output,
-} from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Subject, takeUntil } from 'rxjs';
 
@@ -13,11 +6,7 @@ import { Subject, takeUntil } from 'rxjs';
   selector: 'digimon-range-slider',
   template: `
     <div class="custom-slider flex flex-row px-3">
-      <ngx-slider
-        [formControl]="filterFormControl"
-        class="w-full"
-        [options]="options"
-      ></ngx-slider>
+      <ngx-slider [formControl]="filterFormControl" class="w-full" [options]="options"></ngx-slider>
     </div>
 
     <h1 class="mb-1 mt-[-8px] text-center text-xs font-bold text-[#e2e4e6]">

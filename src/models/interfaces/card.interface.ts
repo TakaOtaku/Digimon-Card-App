@@ -21,6 +21,7 @@ export interface ICard {
   digivolveLevel2?: string;
   digiXros: string;
   specialDigivolve: string;
+  burstDigivolve?: string;
   dnaDigivolve: string;
   effect: string;
   digivolveEffect: string;

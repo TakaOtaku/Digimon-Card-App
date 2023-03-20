@@ -144,10 +144,7 @@ export class AuthService {
 
     this.userData = userData;
 
-    this.digimonBackendService
-      .updateSave(this.userData.save)
-      .pipe(first())
-      .subscribe();
+    this.digimonBackendService.updateSave(this.userData.save).pipe(first()).subscribe();
 
     this.authChange.next(true);
   }

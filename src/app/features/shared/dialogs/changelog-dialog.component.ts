@@ -18,16 +18,14 @@ import DataSnapshot = firebase.database.DataSnapshot;
       [editor]="Editor"
       class="text-[#e2e4e6]"
       [disabled]="true"
-      [(ngModel)]="content"
-    ></ckeditor>
+      [(ngModel)]="content"></ckeditor>
 
     <ckeditor
       *ngIf="authService.userData?.uid === 'S3rWXPtCYRN8vSrxY3qE6aeewy43'"
       [editor]="Editor"
       class="text-[#e2e4e6]"
       [(ngModel)]="content"
-      (ready)="onReady($event)"
-    ></ckeditor>
+      (ready)="onReady($event)"></ckeditor>
 
     <button
       *ngIf="authService.userData?.uid === 'S3rWXPtCYRN8vSrxY3qE6aeewy43'"
@@ -37,8 +35,7 @@ import DataSnapshot = firebase.database.DataSnapshot;
       pRipple
       type="button"
       label="Save"
-      (click)="save()"
-    ></button>
+      (click)="save()"></button>
   `,
 })
 export class ChangelogDialogComponent implements OnInit {
@@ -82,14 +79,9 @@ export class ChangelogDialogComponent implements OnInit {
   public onReady(editor: any) {
     editor.ui
       .getEditableElement()
-      .parentElement.insertBefore(
-        editor.ui.view.toolbar.element,
-        editor.ui.getEditableElement()
-      );
+      .parentElement.insertBefore(editor.ui.view.toolbar.element, editor.ui.getEditableElement());
 
-    editor.plugins.get('FileRepository').createUploadAdapter = (
-      loader: any
-    ) => {
+    editor.plugins.get('FileRepository').createUploadAdapter = (loader: any) => {
       return new Base64Adapter(loader);
     };
   }

@@ -22,11 +22,6 @@ import { CommunityPageComponent } from './community-page.component';
     ButtonModule,
     RippleModule,
   ],
-  providers: [
-    AuthService,
-    ConfirmationService,
-    MessageService,
-    DigimonBackendService,
-  ],
+  providers: [AuthService, ConfirmationService, MessageService, DigimonBackendService],
 })
 export class CommunityModule {}

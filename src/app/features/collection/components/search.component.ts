@@ -10,8 +10,7 @@ import { selectFilter } from '../../../store/digimon.selectors';
     <span
       *ngIf="filter$ | async as filter"
       [ngStyle]="{ display: 'inline-flex' }"
-      class=" p-input-icon-left my-2 w-full px-2"
-    >
+      class=" p-input-icon-left my-2 w-full px-2">
       <i class="pi pi-search ml-1 h-3"></i>
       <input
         (ngModelChange)="searchFilterChange($event, filter)"
@@ -19,8 +18,7 @@ import { selectFilter } from '../../../store/digimon.selectors';
         class="h-6 w-full text-xs"
         pInputText
         placeholder="Search"
-        type="text"
-      />
+        type="text" />
     </span>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

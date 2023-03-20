@@ -5,25 +5,20 @@ import { TAGS } from '../../../../models';
 @Component({
   selector: 'digimon-decks-filter',
   template: `
-    <div
-      [formGroup]="form"
-      class="my-1  grid max-w-6xl grid-cols-4 lg:flex lg:flex-row"
-    >
+    <div [formGroup]="form" class="my-1  grid max-w-6xl grid-cols-4 lg:flex lg:flex-row">
       <span
         [ngClass]="{
           'col-span-2': mode !== 'Tournament',
           'col-span-3': mode === 'Tournament'
         }"
-        class="p-input-icon-left my-1 w-full"
-      >
+        class="p-input-icon-left my-1 w-full">
         <i class="pi pi-search h-3"></i>
         <input
           formControlName="searchFilter"
           class="w-full text-xs"
           pInputText
           placeholder="Search (Title, Description, User, Card-Ids, Color)"
-          type="text"
-        />
+          type="text" />
       </span>
       <span *ngIf="mode === 'Tournament'" class="my-1 w-full max-w-[90px]">
         <input
@@ -33,8 +28,7 @@ import { TAGS } from '../../../../models';
           pInputText
           placeholder="Placement"
           type="number"
-          min="1"
-        />
+          min="1" />
       </span>
       <p-multiSelect
         *ngIf="mode === 'Tournament'"
@@ -46,8 +40,7 @@ import { TAGS } from '../../../../models';
         display="chip"
         scrollHeight="250px"
         class="col-span-2 my-1 mx-auto w-full max-w-[250px]"
-        styleClass="w-full h-[34px] text-sm max-w-[250px]"
-      >
+        styleClass="w-full h-[34px] text-sm max-w-[250px]">
       </p-multiSelect>
       <p-multiSelect
         *ngIf="mode === 'Tournament'"
@@ -58,8 +51,7 @@ import { TAGS } from '../../../../models';
         display="chip"
         scrollHeight="250px"
         class="col-span-2 my-1 mx-auto w-full max-w-[250px]"
-        styleClass="w-full h-[34px] text-sm max-w-[250px]"
-      >
+        styleClass="w-full h-[34px] text-sm max-w-[250px]">
       </p-multiSelect>
       <p-multiSelect
         *ngIf="mode === 'Community'"
@@ -70,8 +62,7 @@ import { TAGS } from '../../../../models';
         display="chip"
         scrollHeight="250px"
         class="col-span-2 my-1 mx-auto w-full max-w-[250px]"
-        styleClass="w-full h-[34px] text-sm max-w-[250px]"
-      >
+        styleClass="w-full h-[34px] text-sm max-w-[250px]">
       </p-multiSelect>
     </div>
   `,

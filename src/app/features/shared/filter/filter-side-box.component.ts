@@ -1,10 +1,4 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnDestroy,
-  OnInit,
-} from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { MessageService } from 'primeng/api';
@@ -28,11 +22,7 @@ import {
 import { CARDSET } from '../../../../models/enums/card-set.enum';
 import { ISelectItem } from '../../../../models/interfaces/select-item.interface';
 import { changeCardSets, changeFilter } from '../../../store/digimon.actions';
-import {
-  selectCardSet,
-  selectCollectionMode,
-  selectFilter,
-} from '../../../store/digimon.selectors';
+import { selectCardSet, selectCollectionMode, selectFilter } from '../../../store/digimon.selectors';
 import { emptyFilter } from '../../../store/reducers/digimon.reducers';
 
 @Component({
@@ -44,11 +34,7 @@ import { emptyFilter } from '../../../store/reducers/digimon.reducers';
 
         <digimon-sort-buttons class="col-span-2 mx-auto"></digimon-sort-buttons>
 
-        <button
-          (click)="reset()"
-          class="ml-auto mr-5 text-[#e2e4e6]"
-          type="button"
-        >
+        <button (click)="reset()" class="ml-auto mr-5 text-[#e2e4e6]" type="button">
           <i class="pi pi-refresh"></i>
         </button>
       </div>
@@ -63,19 +49,16 @@ import { emptyFilter } from '../../../store/reducers/digimon.reducers';
               'bg-[#e2e4e6] text-black': selectedCardSet === cardSet.English,
               'surface-card text-[#e2e4e6]': selectedCardSet !== cardSet.English
             }"
-            class="min-w-auto mt-2 h-8 w-20 rounded-l-sm border border-slate-100 p-2 text-xs font-semibold text-[#e2e4e6]"
-          >
+            class="min-w-auto mt-2 h-8 w-20 rounded-l-sm border border-slate-100 p-2 text-xs font-semibold text-[#e2e4e6]">
             English
           </button>
           <button
             (click)="setCardSet(cardSet.Japanese)"
             [ngClass]="{
               'bg-[#e2e4e6] text-black': selectedCardSet === cardSet.Japanese,
-              'surface-card text-[#e2e4e6]':
-                selectedCardSet !== cardSet.Japanese
+              'surface-card text-[#e2e4e6]': selectedCardSet !== cardSet.Japanese
             }"
-            class="min-w-auto mt-2 h-8 w-20 border border-slate-100 p-2 text-xs font-semibold text-[#e2e4e6]"
-          >
+            class="min-w-auto mt-2 h-8 w-20 border border-slate-100 p-2 text-xs font-semibold text-[#e2e4e6]">
             日本語
           </button>
           <button
@@ -84,8 +67,7 @@ import { emptyFilter } from '../../../store/reducers/digimon.reducers';
               'bg-[#e2e4e6] text-black': selectedCardSet === cardSet.Both,
               'surface-card text-[#e2e4e6]': selectedCardSet !== cardSet.Both
             }"
-            class="min-w-auto mt-2 h-8 w-20 rounded-r-sm border border-slate-100 p-2 text-xs font-semibold text-[#e2e4e6]"
-          >
+            class="min-w-auto mt-2 h-8 w-20 rounded-r-sm border border-slate-100 p-2 text-xs font-semibold text-[#e2e4e6]">
             Both
           </button>
         </div>
@@ -93,9 +75,7 @@ import { emptyFilter } from '../../../store/reducers/digimon.reducers';
 
       <!-- Colors Select -->
       <div class="mb-3">
-        <h1 class="mb-2 text-center text-xs font-bold text-[#e2e4e6]">
-          Color:
-        </h1>
+        <h1 class="mb-2 text-center text-xs font-bold text-[#e2e4e6]">Color:</h1>
         <div class="flex inline-flex w-full justify-center">
           <button
             (click)="changeColor('Red')"
@@ -103,64 +83,56 @@ import { emptyFilter } from '../../../store/reducers/digimon.reducers';
               'border-selected': colorFilter.value.includes('Red'),
               'border-unselected': !colorFilter.value.includes('Red')
             }"
-            class="Red mr-1 h-7 w-7 rounded-full"
-          ></button>
+            class="Red mr-1 h-7 w-7 rounded-full"></button>
           <button
             (click)="changeColor('Blue')"
             [ngClass]="{
               'border-selected': colorFilter.value.includes('Blue'),
               'border-unselected': !colorFilter.value.includes('Blue')
             }"
-            class="Blue mr-1 h-7 w-7 rounded-full"
-          ></button>
+            class="Blue mr-1 h-7 w-7 rounded-full"></button>
           <button
             (click)="changeColor('Yellow')"
             [ngClass]="{
               'border-selected': colorFilter.value.includes('Yellow'),
               'border-unselected': !colorFilter.value.includes('Yellow')
             }"
-            class="Yellow mr-1 h-7 w-7 rounded-full"
-          ></button>
+            class="Yellow mr-1 h-7 w-7 rounded-full"></button>
           <button
             (click)="changeColor('Green')"
             [ngClass]="{
               'border-selected': colorFilter.value.includes('Green'),
               'border-unselected': !colorFilter.value.includes('Green')
             }"
-            class="Green mr-1 h-7 w-7 rounded-full"
-          ></button>
+            class="Green mr-1 h-7 w-7 rounded-full"></button>
           <button
             (click)="changeColor('Black')"
             [ngClass]="{
               'border-selected': colorFilter.value.includes('Black'),
               'border-unselected': !colorFilter.value.includes('Black')
             }"
-            class="Black mr-1 h-7 w-7 rounded-full"
-          ></button>
+            class="Black mr-1 h-7 w-7 rounded-full"></button>
           <button
             (click)="changeColor('Purple')"
             [ngClass]="{
               'border-selected': colorFilter.value.includes('Purple'),
               'border-unselected': !colorFilter.value.includes('Purple')
             }"
-            class="Purple mr-1 h-7 w-7 rounded-full"
-          ></button>
+            class="Purple mr-1 h-7 w-7 rounded-full"></button>
           <button
             (click)="changeColor('White')"
             [ngClass]="{
               'border-selected': colorFilter.value.includes('White'),
               'border-unselected': !colorFilter.value.includes('White')
             }"
-            class="White mr-1 h-7 w-7 rounded-full"
-          ></button>
+            class="White mr-1 h-7 w-7 rounded-full"></button>
           <button
             (click)="changeColor('Multi')"
             [ngClass]="{
               'border-selected': colorFilter.value.includes('Multi'),
               'border-unselected': !colorFilter.value.includes('Multi')
             }"
-            class="Multi h-7 w-7 rounded-full"
-          ></button>
+            class="Multi h-7 w-7 rounded-full"></button>
         </div>
       </div>
 
@@ -169,8 +141,7 @@ import { emptyFilter } from '../../../store/reducers/digimon.reducers';
         [buttonArray]="cardTypeButtons"
         [filterFormControl]="cardTypeFilter"
         [perRow]="4"
-        title="Card-Types"
-      ></digimon-multi-buttons>
+        title="Card-Types"></digimon-multi-buttons>
 
       <p-multiSelect
         [filter]="false"
@@ -183,8 +154,7 @@ import { emptyFilter } from '../../../store/reducers/digimon.reducers';
         display="chip"
         scrollHeight="250px"
         class="mx-auto mb-2 w-full max-w-[250px]"
-        styleClass="w-full max-w-[250px] h-8 text-sm"
-      >
+        styleClass="w-full max-w-[250px] h-8 text-sm">
         <ng-template let-group pTemplate="group">
           <div class="align-items-center flex">
             <span>{{ group.label }}</span>
@@ -198,13 +168,8 @@ import { emptyFilter } from '../../../store/reducers/digimon.reducers';
           [minMax]="[2, 7]"
           [filterFormControl]="levelFilter"
           title="Level:"
-          class="w-full"
-        ></digimon-range-slider>
-        <button
-          (click)="levelFilter.setValue([2, 7], { emitEvent: false })"
-          class="w-12 text-[#e2e4e6]"
-          type="button"
-        >
+          class="w-full"></digimon-range-slider>
+        <button (click)="levelFilter.setValue([2, 7], { emitEvent: false })" class="w-12 text-[#e2e4e6]" type="button">
           <i class="pi pi-refresh"></i>
         </button>
       </div>
@@ -215,13 +180,11 @@ import { emptyFilter } from '../../../store/reducers/digimon.reducers';
           [minMax]="[0, 20]"
           [filterFormControl]="playCostFilter"
           title="Play Cost:"
-          class="w-full"
-        ></digimon-range-slider>
+          class="w-full"></digimon-range-slider>
         <button
           (click)="playCostFilter.setValue([0, 20], { emitEvent: false })"
           class="w-12 text-[#e2e4e6]"
-          type="button"
-        >
+          type="button">
           <i class="pi pi-refresh"></i>
         </button>
       </div>
@@ -232,13 +195,11 @@ import { emptyFilter } from '../../../store/reducers/digimon.reducers';
           [minMax]="[0, 7]"
           [filterFormControl]="digivolutionFilter"
           title="Digivolution Cost:"
-          class="w-full"
-        ></digimon-range-slider>
+          class="w-full"></digimon-range-slider>
         <button
           (click)="digivolutionFilter.setValue([0, 7], { emitEvent: false })"
           class="w-12 text-[#e2e4e6]"
-          type="button"
-        >
+          type="button">
           <i class="pi pi-refresh"></i>
         </button>
       </div>
@@ -250,13 +211,8 @@ import { emptyFilter } from '../../../store/reducers/digimon.reducers';
           [filterFormControl]="dpFilter"
           suffix="000"
           title="DP:"
-          class="w-full"
-        ></digimon-range-slider>
-        <button
-          (click)="dpFilter.setValue([1, 17], { emitEvent: false })"
-          class="w-12 text-[#e2e4e6]"
-          type="button"
-        >
+          class="w-full"></digimon-range-slider>
+        <button (click)="dpFilter.setValue([1, 17], { emitEvent: false })" class="w-12 text-[#e2e4e6]" type="button">
           <i class="pi pi-refresh"></i>
         </button>
       </div>
@@ -267,13 +223,11 @@ import { emptyFilter } from '../../../store/reducers/digimon.reducers';
           [minMax]="[0, 5]"
           [filterFormControl]="cardCountFilter"
           title="Number in Collection:"
-          class="w-full"
-        ></digimon-range-slider>
+          class="w-full"></digimon-range-slider>
         <button
           (click)="cardCountFilter.setValue([0, 5], { emitEvent: false })"
           class="w-12 text-[#e2e4e6]"
-          type="button"
-        >
+          type="button">
           <i class="pi pi-refresh"></i>
         </button>
       </div>
@@ -283,23 +237,20 @@ import { emptyFilter } from '../../../store/reducers/digimon.reducers';
         [buttonArray]="rarityButtons"
         [filterFormControl]="rarityFilter"
         [perRow]="6"
-        title="Rarity"
-      ></digimon-multi-buttons>
+        title="Rarity"></digimon-multi-buttons>
 
       <digimon-multi-buttons
         (clickEvent)="changeVersion($event)"
         [buttonArray]="versionButtons"
         [filterFormControl]="versionFilter"
         [perRow]="3"
-        title="Version"
-      ></digimon-multi-buttons>
+        title="Version"></digimon-multi-buttons>
 
       <digimon-multi-buttons
         (clickEvent)="changeBlock($event)"
         [buttonArray]="blockButtons"
         [filterFormControl]="blockFilter"
-        title="Block"
-      ></digimon-multi-buttons>
+        title="Block"></digimon-multi-buttons>
 
       <p-multiSelect
         [formControl]="keywordFilter"
@@ -309,8 +260,7 @@ import { emptyFilter } from '../../../store/reducers/digimon.reducers';
         display="chip"
         scrollHeight="250px"
         class="mx-auto my-1 w-full max-w-[250px]"
-        styleClass="w-full mt-1 h-8 text-sm max-w-[250px]"
-      >
+        styleClass="w-full mt-1 h-8 text-sm max-w-[250px]">
       </p-multiSelect>
 
       <p-multiSelect
@@ -321,8 +271,7 @@ import { emptyFilter } from '../../../store/reducers/digimon.reducers';
         display="chip"
         scrollHeight="250px"
         class="mx-auto mb-1 w-full max-w-[250px]"
-        styleClass="w-full mt-1 h-8 text-sm max-w-[250px]"
-      >
+        styleClass="w-full mt-1 h-8 text-sm max-w-[250px]">
       </p-multiSelect>
 
       <p-multiSelect
@@ -333,8 +282,7 @@ import { emptyFilter } from '../../../store/reducers/digimon.reducers';
         display="chip"
         scrollHeight="250px"
         class="mx-auto mb-1 w-full max-w-[250px]"
-        styleClass="w-full mt-1 h-8 text-sm max-w-[250px]"
-      >
+        styleClass="w-full mt-1 h-8 text-sm max-w-[250px]">
       </p-multiSelect>
 
       <p-multiSelect
@@ -345,8 +293,7 @@ import { emptyFilter } from '../../../store/reducers/digimon.reducers';
         display="chip"
         scrollHeight="250px"
         class="mx-auto mb-1 w-full max-w-[250px]"
-        styleClass="w-full mt-1 h-8 text-sm max-w-[250px]"
-      >
+        styleClass="w-full mt-1 h-8 text-sm max-w-[250px]">
       </p-multiSelect>
 
       <p-multiSelect
@@ -357,8 +304,7 @@ import { emptyFilter } from '../../../store/reducers/digimon.reducers';
         display="chip"
         scrollHeight="250px"
         class="mx-auto mb-1 w-full max-w-[250px]"
-        styleClass="w-full mt-1 h-8 text-sm max-w-[250px]"
-      >
+        styleClass="w-full mt-1 h-8 text-sm max-w-[250px]">
       </p-multiSelect>
 
       <p-multiSelect
@@ -369,8 +315,7 @@ import { emptyFilter } from '../../../store/reducers/digimon.reducers';
         display="chip"
         scrollHeight="250px"
         class="mx-auto mb-1 w-full max-w-[250px]"
-        styleClass="w-full mt-1 h-8 text-sm max-w-[250px]"
-      >
+        styleClass="w-full mt-1 h-8 text-sm max-w-[250px]">
       </p-multiSelect>
 
       <p-multiSelect
@@ -381,8 +326,7 @@ import { emptyFilter } from '../../../store/reducers/digimon.reducers';
         display="chip"
         scrollHeight="250px"
         class="mx-auto mb-1 w-full max-w-[250px]"
-        styleClass="w-full mt-1 h-8 text-sm max-w-[250px]"
-      >
+        styleClass="w-full mt-1 h-8 text-sm max-w-[250px]">
       </p-multiSelect>
     </div>
   `,
@@ -494,10 +438,7 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
         this.illustratorFilter.setValue(filter.illustratorFilter, {
           emitEvent: false,
         });
-        this.specialRequirementsFilter.setValue(
-          filter.specialRequirementsFilter,
-          { emitEvent: false }
-        );
+        this.specialRequirementsFilter.setValue(filter.specialRequirementsFilter, { emitEvent: false });
         this.blockFilter.setValue(filter.blockFilter, { emitEvent: false });
         this.restrictionsFilter.setValue(filter.restrictionsFilter, {
           emitEvent: false,
@@ -507,12 +448,10 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
         });
       });
 
-    this.filterFormGroup.valueChanges
-      .pipe(debounceTime(500), takeUntil(this.onDestroy$))
-      .subscribe((filterValue) => {
-        const filter: IFilter = { ...this.filter, ...filterValue };
-        this.store.dispatch(changeFilter({ filter }));
-      });
+    this.filterFormGroup.valueChanges.pipe(debounceTime(500), takeUntil(this.onDestroy$)).subscribe((filterValue) => {
+      const filter: IFilter = { ...this.filter, ...filterValue };
+      this.store.dispatch(changeFilter({ filter }));
+    });
 
     this.store
       .select(selectCollectionMode)

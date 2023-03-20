@@ -11,17 +11,13 @@ import { DigimonBackendService } from '../../service/digimon-backend.service';
 @Component({
   selector: 'digimon-blog-page',
   template: `
-    <div
-      *ngIf="blog$ | async as blog"
-      class="w-full bg-gradient-to-b from-[#17212f] to-[#08528d] pt-5"
-    >
+    <div *ngIf="blog$ | async as blog" class="w-full bg-gradient-to-b from-[#17212f] to-[#08528d] pt-5">
       <div class="mx-auto max-w-7xl">
         <digimon-header
           [edit]="edit"
           [form]="form"
           (editChanged)="edit = $event"
-          [authorid]="blog.authorid"
-        ></digimon-header>
+          [authorid]="blog.authorid"></digimon-header>
 
         <digimon-ckeditor [edit]="edit" [content]="form"></digimon-ckeditor>
 
@@ -33,8 +29,7 @@ import { DigimonBackendService } from '../../service/digimon-backend.service';
           pRipple
           type="button"
           label="Save"
-          (click)="save(blog)"
-        ></button>
+          (click)="save(blog)"></button>
       </div>
     </div>
   `,
@@ -66,9 +61,7 @@ export class BlogPageComponent implements OnInit {
   }
 
   private makeGoogleFriendly() {
-    this.metaTitle.setTitle(
-      'Digimon Card Game - ' + this.form.get('title')?.value
-    );
+    this.metaTitle.setTitle('Digimon Card Game - ' + this.form.get('title')?.value);
 
     this.meta.addTags([
       {
@@ -85,9 +78,7 @@ export class BlogPageComponent implements OnInit {
 
   checkURL() {
     this.blog$ = this.active.params.pipe(
-      switchMap((params) =>
-        this.digimonBackendService.getBlogEntryWithText(params['id'])
-      ),
+      switchMap((params) => this.digimonBackendService.getBlogEntryWithText(params['id'])),
       tap((blog) => {
         this.form.setValue({
           title: blog.title,
@@ -122,11 +113,7 @@ export class BlogPageComponent implements OnInit {
 
     this.digimonBackendService
       .updateBlogWithText(newBlog)
-      .pipe(
-        withLatestFrom(
-          this.digimonBackendService.updateBlog(newBlogWithoutText)
-        )
-      )
+      .pipe(withLatestFrom(this.digimonBackendService.updateBlog(newBlogWithoutText)))
       .subscribe(() => {
         this.messageService.add({
           severity: 'success',

@@ -10,23 +10,16 @@ import { ICard, IDeck, ITournamentDeck, TAGS } from '../../../models';
 import { AuthService } from '../../service/auth.service';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
 import { importDeck } from '../../store/digimon.actions';
-import {
-  selectAllCards,
-  selectCommunityDecks,
-  selectCommunityDeckSearch,
-} from '../../store/digimon.selectors';
+import { selectAllCards, selectCommunityDecks, selectCommunityDeckSearch } from '../../store/digimon.selectors';
 import { emptyDeck } from '../../store/reducers/digimon.reducers';
 
 @Component({
   selector: 'digimon-decks-page',
   template: `
     <div
-      class="flex h-[calc(100vh-50px)] w-full flex-col overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d]"
-    >
+      class="flex h-[calc(100vh-50px)] w-full flex-col overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d]">
       <div class="mx-auto w-full max-w-6xl">
-        <h1
-          class="text-shadow mt-6 pb-1 text-4xl font-black text-[#e2e4e6] xl:mt-2"
-        >
+        <h1 class="text-shadow mt-6 pb-1 text-4xl font-black text-[#e2e4e6] xl:mt-2">
           {{ this.mode + ' Decks' }}
         </h1>
 
@@ -37,8 +30,7 @@ import { emptyDeck } from '../../store/reducers/digimon.reducers';
             icon="pi pi-arrow-right-arrow-left"
             type="button"
             [label]="getSwitchLabel()"
-            (click)="switchMode()"
-          ></button>
+            (click)="switchMode()"></button>
 
           <button
             pButton
@@ -46,8 +38,7 @@ import { emptyDeck } from '../../store/reducers/digimon.reducers';
             icon="pi pi-chart-line"
             type="button"
             label="Deck Statistics"
-            (click)="deckStatsDialog = true; updateStatistics.next(true)"
-          ></button>
+            (click)="deckStatsDialog = true; updateStatistics.next(true)"></button>
 
           <button
             pButton
@@ -55,14 +46,10 @@ import { emptyDeck } from '../../store/reducers/digimon.reducers';
             icon="pi pi-cloud-upload"
             type="button"
             label="Submit a Tournament Deck"
-            (click)="deckSubmissionDialog = true"
-          ></button>
+            (click)="deckSubmissionDialog = true"></button>
         </div>
 
-        <digimon-decks-filter
-          [form]="form"
-          [mode]="this.mode"
-        ></digimon-decks-filter>
+        <digimon-decks-filter [form]="form" [mode]="this.mode"></digimon-decks-filter>
 
         <div class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           <digimon-deck-container
@@ -71,8 +58,7 @@ import { emptyDeck } from '../../store/reducers/digimon.reducers';
             (click)="showDeckDetails(deck)"
             (contextmenu)="showDeckDetails(deck)"
             [deck]="deck"
-            [mode]="this.mode"
-          ></digimon-deck-container>
+            [mode]="this.mode"></digimon-deck-container>
         </div>
 
         <p-paginator
@@ -82,8 +68,7 @@ import { emptyDeck } from '../../store/reducers/digimon.reducers';
           [showJumpToPageDropdown]="true"
           [showPageLinks]="false"
           [totalRecords]="filteredDecks.length"
-          styleClass="border-0 bg-transparent mx-auto"
-        ></p-paginator>
+          styleClass="border-0 bg-transparent mx-auto"></p-paginator>
       </div>
     </div>
 
@@ -94,14 +79,12 @@ import { emptyDeck } from '../../store/reducers/digimon.reducers';
       [dismissableMask]="true"
       [resizable]="false"
       styleClass="w-full h-full max-w-6xl min-h-[500px]"
-      [baseZIndex]="10000"
-    >
+      [baseZIndex]="10000">
       <digimon-deck-dialog
         [deck]="selectedDeck"
         [mode]="mode"
         [editable]="false"
-        (closeDialog)="deckDialog = false"
-      ></digimon-deck-dialog>
+        (closeDialog)="deckDialog = false"></digimon-deck-dialog>
     </p-dialog>
 
     <p-dialog
@@ -111,11 +94,8 @@ import { emptyDeck } from '../../store/reducers/digimon.reducers';
       [dismissableMask]="true"
       [resizable]="false"
       styleClass="w-full h-full max-w-6xl min-h-[500px]"
-      [baseZIndex]="10000"
-    >
-      <digimon-deck-submission
-        (onClose)="deckSubmissionDialog = false"
-      ></digimon-deck-submission>
+      [baseZIndex]="10000">
+      <digimon-deck-submission (onClose)="deckSubmissionDialog = false"></digimon-deck-submission>
     </p-dialog>
 
     <p-dialog
@@ -125,13 +105,11 @@ import { emptyDeck } from '../../store/reducers/digimon.reducers';
       [dismissableMask]="true"
       [resizable]="false"
       styleClass="w-full h-full max-w-6xl min-h-[500px]"
-      [baseZIndex]="10000"
-    >
+      [baseZIndex]="10000">
       <digimon-deck-statistics
         [decks]="filteredDecks"
         [allCards]="allCards"
-        [updateCards]="updateStatistics"
-      ></digimon-deck-statistics>
+        [updateCards]="updateStatistics"></digimon-deck-statistics>
     </p-dialog>
   `,
 })
@@ -208,9 +186,7 @@ export class DecksPageComponent implements OnInit, OnDestroy {
         this.filterChanges();
       });
 
-    this.form.valueChanges
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe(() => this.filterChanges());
+    this.form.valueChanges.pipe(takeUntil(this.onDestroy$)).subscribe(() => this.filterChanges());
   }
 
   ngOnDestroy() {
@@ -244,10 +220,7 @@ export class DecksPageComponent implements OnInit, OnDestroy {
   onPageChange(event: any, slice?: number) {
     this.first = event.first;
     this.page = event.page;
-    this.decksToShow = this.filteredDecks.slice(
-      event.first,
-      (slice ?? 20) * (event.page + 1)
-    );
+    this.decksToShow = this.filteredDecks.slice(event.first, (slice ?? 20) * (event.page + 1));
   }
 
   private makeGoogleFriendly() {
@@ -256,8 +229,7 @@ export class DecksPageComponent implements OnInit, OnDestroy {
     this.meta.addTags([
       {
         name: 'description',
-        content:
-          'Meta decks, fun decks, tournament decks and many more, find new decks for every set.',
+        content: 'Meta decks, fun decks, tournament decks and many more, find new decks for every set.',
       },
       { name: 'author', content: 'TakaOtaku' },
       {
@@ -293,26 +265,13 @@ export class DecksPageComponent implements OnInit, OnDestroy {
     return this.decks.filter((deck) => {
       const search = formValues.searchFilter.toLocaleLowerCase();
 
-      const titleInText =
-        deck.title?.toLocaleLowerCase().includes(search) ?? false;
-      const descriptionInText =
-        deck.description?.toLocaleLowerCase().includes(search) ?? false;
-      const userInText =
-        deck.user?.toLocaleLowerCase().includes(search) ?? false;
-      const cardsInText =
-        deck.cards.filter((card) =>
-          card.id.toLocaleLowerCase().includes(search)
-        ).length > 0;
-      const colorInText =
-        deck.color?.name.toLocaleLowerCase().includes(search) ?? false;
+      const titleInText = deck.title?.toLocaleLowerCase().includes(search) ?? false;
+      const descriptionInText = deck.description?.toLocaleLowerCase().includes(search) ?? false;
+      const userInText = deck.user?.toLocaleLowerCase().includes(search) ?? false;
+      const cardsInText = deck.cards.filter((card) => card.id.toLocaleLowerCase().includes(search)).length > 0;
+      const colorInText = deck.color?.name.toLocaleLowerCase().includes(search) ?? false;
 
-      return (
-        titleInText ||
-        descriptionInText ||
-        userInText ||
-        cardsInText ||
-        colorInText
-      );
+      return titleInText || descriptionInText || userInText || cardsInText || colorInText;
     });
   }
 
@@ -337,12 +296,9 @@ export class DecksPageComponent implements OnInit, OnDestroy {
       return this.filteredDecks;
     }
 
-    const tournamentDecks: ITournamentDeck[] = this
-      .filteredDecks as unknown as ITournamentDeck[];
+    const tournamentDecks: ITournamentDeck[] = this.filteredDecks as unknown as ITournamentDeck[];
 
-    return tournamentDecks.filter(
-      (deck) => deck.placement === formValues.placementFilter
-    );
+    return tournamentDecks.filter((deck) => deck.placement === formValues.placementFilter);
   }
 
   private applySizeFilter(formValues: any): IDeck[] | ITournamentDeck[] {
@@ -353,13 +309,10 @@ export class DecksPageComponent implements OnInit, OnDestroy {
       return this.filteredDecks;
     }
 
-    const tournamentDecks: ITournamentDeck[] = this
-      .filteredDecks as unknown as ITournamentDeck[];
+    const tournamentDecks: ITournamentDeck[] = this.filteredDecks as unknown as ITournamentDeck[];
 
     return tournamentDecks.filter((deck) => {
-      return !!formValues.sizeFilter.find(
-        (size: any) => size.value === deck.size
-      );
+      return !!formValues.sizeFilter.find((size: any) => size.value === deck.size);
     });
   }
 
@@ -371,8 +324,7 @@ export class DecksPageComponent implements OnInit, OnDestroy {
       return this.filteredDecks;
     }
 
-    const tournamentDecks: ITournamentDeck[] = this
-      .filteredDecks as unknown as ITournamentDeck[];
+    const tournamentDecks: ITournamentDeck[] = this.filteredDecks as unknown as ITournamentDeck[];
 
     return tournamentDecks.filter((deck) => {
       return formValues.formatFilter.includes(deck.format);
@@ -380,9 +332,7 @@ export class DecksPageComponent implements OnInit, OnDestroy {
   }
 
   getSwitchLabel(): string {
-    return this.mode === 'Community'
-      ? `Switch to Tournament Decks`
-      : `Switch to Community Decks`;
+    return this.mode === 'Community' ? `Switch to Tournament Decks` : `Switch to Community Decks`;
   }
 
   switchMode() {

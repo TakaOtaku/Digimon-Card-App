@@ -1,13 +1,4 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnChanges,
-  OnDestroy,
-  OnInit,
-  Output,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { first, Subject, takeUntil } from 'rxjs';
@@ -24,28 +15,15 @@ import { emptyDeck } from '../../../store/reducers/digimon.reducers';
 @Component({
   selector: 'digimon-change-accessorie-dialog',
   template: `
-    <p-selectButton
-      class="mt-10 text-center"
-      [options]="colorList"
-      [(ngModel)]="color"
-      optionLabel="name"
-    >
+    <p-selectButton class="mt-10 text-center" [options]="colorList" [(ngModel)]="color" optionLabel="name">
       <ng-template let-item>
-        <span [ngStyle]="{ color: colorMap.get(item.name) }">{{
-          item.name
-        }}</span>
+        <span [ngStyle]="{ color: colorMap.get(item.name) }">{{ item.name }}</span>
       </ng-template>
     </p-selectButton>
 
     <div class="inline-flex w-full">
       <span class="p-float-label mt-5 w-1/2">
-        <input
-          class="w-full"
-          id="float-input"
-          type="text"
-          pInputText
-          [(ngModel)]="title"
-        />
+        <input class="w-full" id="float-input" type="text" pInputText [(ngModel)]="title" />
         <label for="float-input">Deck Name</label>
       </span>
 
@@ -57,21 +35,14 @@ import { emptyDeck } from '../../../store/reducers/digimon.reducers';
           [suggestions]="filteredTags"
           (completeMethod)="filterTags($event)"
           field="name"
-          [multiple]="true"
-        >
+          [multiple]="true">
         </p-autoComplete>
         <label for="float-input3">Tags</label>
       </span>
     </div>
 
     <span class="p-float-label mt-6 w-full">
-      <input
-        class="w-full"
-        id="float-input2"
-        type="text"
-        pInputText
-        [(ngModel)]="description"
-      />
+      <input class="w-full" id="float-input2" type="text" pInputText [(ngModel)]="description" />
       <label for="float-input2">Description</label>
     </span>
 
@@ -86,9 +57,7 @@ import { emptyDeck } from '../../../store/reducers/digimon.reducers';
     </div>
   `,
 })
-export class ChangeAccessorieDialogComponent
-  implements OnInit, OnChanges, OnDestroy
-{
+export class ChangeAccessorieDialogComponent implements OnInit, OnChanges, OnDestroy {
   @Input() show: boolean = false;
   @Input() deck: IDeck = emptyDeck;
 
@@ -177,10 +146,7 @@ export class ChangeAccessorieDialogComponent
     this.confirmationService.confirm({
       message: 'You are about to share the deck. Are you sure?',
       accept: () => {
-        this.digimonCardService
-          .updateDeck(deck, this.auth.userData)
-          .pipe(first())
-          .subscribe();
+        this.digimonCardService.updateDeck(deck, this.auth.userData).pipe(first()).subscribe();
         this.messageService.add({
           severity: 'success',
           summary: 'Deck shared!',

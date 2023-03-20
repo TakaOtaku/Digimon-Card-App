@@ -27,11 +27,7 @@ import { DecksFilterComponent } from './components/decks-filter.component';
 import { DecksPageComponent } from './decks-page.component';
 
 @NgModule({
-  declarations: [
-    DecksPageComponent,
-    DeckStatisticsComponent,
-    DecksFilterComponent,
-  ],
+  declarations: [DecksPageComponent, DeckStatisticsComponent, DecksFilterComponent],
   imports: [
     CommonModule,
     DigimonStoreModule,

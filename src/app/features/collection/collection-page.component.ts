@@ -6,18 +6,12 @@ import { Meta, Title } from '@angular/platform-browser';
   template: `
     <div class="bg-gradient-to-b from-[#17212f] to-[#08528d] ">
       <div class="hidden md:block">
-        <digimon-collection-view
-          [collectionOnly]="true"
-          [deckView]="false"
-        ></digimon-collection-view>
+        <digimon-collection-view [collectionOnly]="true" [deckView]="false"></digimon-collection-view>
       </div>
 
       <div class="md:hidden">
         <digimon-filter-and-search></digimon-filter-and-search>
-        <digimon-card-list
-          [collectionOnly]="true"
-          [showCount]="32"
-        ></digimon-card-list>
+        <digimon-card-list [collectionOnly]="true" [showCount]="32"></digimon-card-list>
       </div>
     </div>
   `,

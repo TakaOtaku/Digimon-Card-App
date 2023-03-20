@@ -1,11 +1,4 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnDestroy,
-  OnInit,
-  Output,
-} from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subject, takeUntil } from 'rxjs';
 import { ICard, IDeck } from '../../../../models';
@@ -16,19 +9,11 @@ import { selectAllCards } from '../../../store/digimon.selectors';
   selector: 'digimon-proxy-print-dialog',
   template: `
     <div>
-      <canvas
-        #HDCanvas
-        id="HDCanvas"
-        width="2480"
-        height="3508"
-        class="hidden"
-      ></canvas>
+      <canvas #HDCanvas id="HDCanvas" width="2480" height="3508" class="hidden"></canvas>
     </div>
 
     <div class="mt-5 flex w-full justify-end">
-      <button pButton class="ml-5" (click)="downloadImage()">
-        Download Image
-      </button>
+      <button pButton class="ml-5" (click)="downloadImage()">Download Image</button>
     </div>
   `,
 })
@@ -46,13 +31,9 @@ export class ProxyPrintDialogComponent implements OnInit, OnDestroy {
   constructor(private store: Store) {}
 
   ngOnInit(): void {
-    this.digimonCards$
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((cards) => (this.digimonCards = cards));
+    this.digimonCards$.pipe(takeUntil(this.onDestroy$)).subscribe((cards) => (this.digimonCards = cards));
 
-    this.generateCanvas(
-      document.getElementById('HDCanvas')! as HTMLCanvasElement
-    );
+    this.generateCanvas(document.getElementById('HDCanvas')! as HTMLCanvasElement);
   }
 
   ngOnDestroy(): void {
@@ -82,13 +63,7 @@ export class ProxyPrintDialogComponent implements OnInit, OnDestroy {
       const ctx = getContext();
       const myOptions = Object.assign({}, options);
       return loadImage(myOptions.uri).then((img: any) => {
-        ctx.drawImage(
-          img,
-          myOptions.x * scale,
-          myOptions.y * scale,
-          myOptions.sw * scale,
-          myOptions.sh * scale
-        );
+        ctx.drawImage(img, myOptions.x * scale, myOptions.y * scale, myOptions.sw * scale, myOptions.sh * scale);
 
         imgs = this.getImages();
 
@@ -100,13 +75,7 @@ export class ProxyPrintDialogComponent implements OnInit, OnDestroy {
       const ctx = getContext();
       const myOptions = Object.assign({}, options);
       return loadImage(myOptions.uri).then((img: any) => {
-        ctx.drawImage(
-          img,
-          myOptions.x * scale,
-          myOptions.y * scale,
-          myOptions.sw * scale,
-          myOptions.sh * scale
-        );
+        ctx.drawImage(img, myOptions.x * scale, myOptions.y * scale, myOptions.sw * scale, myOptions.sh * scale);
         loadedCount += 1;
       });
     };
@@ -136,9 +105,7 @@ export class ProxyPrintDialogComponent implements OnInit, OnDestroy {
     let cardsInCurrentRow = 1;
     const cardsPerRow = 9;
     this.deck.cards.forEach((card) => {
-      const fullCard = this.digimonCards.find((search: ICard) =>
-        compareIDs(card.id, search.id)
-      );
+      const fullCard = this.digimonCards.find((search: ICard) => compareIDs(card.id, search.id));
       imgs.push({
         uri: fullCard!.cardImage,
         x: x,
@@ -160,9 +127,7 @@ export class ProxyPrintDialogComponent implements OnInit, OnDestroy {
 
   downloadImage() {
     const canvas = document.getElementById('HDCanvas')! as HTMLCanvasElement;
-    const img = canvas
-      .toDataURL('image/png', 1.0)
-      .replace('image/png', 'image/octet-stream');
+    const img = canvas.toDataURL('image/png', 1.0).replace('image/png', 'image/octet-stream');
     const link = document.createElement('a');
     link.download = 'proxy-sheet.png';
     link.href = img;

@@ -1,56 +1,32 @@
 import { Location } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  OnDestroy,
-  OnInit,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
-import {
-  filter,
-  first,
-  merge,
-  Observable,
-  Subject,
-  switchMap,
-  takeUntil,
-  tap,
-} from 'rxjs';
+import { filter, first, merge, Observable, Subject, switchMap, takeUntil, tap } from 'rxjs';
 import { IDeck, ISave } from '../../../models';
 import { AuthService } from '../../service/auth.service';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
-import {
-  selectDecks,
-  selectSave,
-  selectShowUserStats,
-} from '../../store/digimon.selectors';
+import { selectDecks, selectSave, selectShowUserStats } from '../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-profile-page',
   template: `
     <div
       *ngIf="save$ | async as save"
-      class="flex h-[calc(100vh-50px)] w-full flex-col overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d]"
-    >
+      class="flex h-[calc(100vh-50px)] w-full flex-col overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d]">
       <digimon-user-stats
         *ngIf="showUserStats$ | async"
         class="mx-auto my-2 h-[150px] w-full max-w-6xl"
-        [save]="save"
-      ></digimon-user-stats>
+        [save]="save"></digimon-user-stats>
 
-      <digimon-deck-filter
-        [searchFilter]="searchFilter"
-        [tagFilter]="tagFilter"
-      ></digimon-deck-filter>
+      <digimon-deck-filter [searchFilter]="searchFilter" [tagFilter]="tagFilter"></digimon-deck-filter>
 
       <digimon-decks
         class="mx-auto mt-2 w-full max-w-6xl"
         [editable]="editable"
-        [decks]="filteredDecks"
-      ></digimon-decks>
+        [decks]="filteredDecks"></digimon-decks>
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -87,9 +63,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
         tap(() => this.changeURL()),
         switchMap(() => {
           this.editable = true;
-          return this.digimonBackendService.getSave(
-            this.authService.userData!.uid
-          );
+          return this.digimonBackendService.getSave(this.authService.userData!.uid);
         })
       ),
       this.route.params.pipe(
@@ -99,9 +73,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
           }
           return !!params['id'];
         }),
-        switchMap((params) =>
-          this.digimonBackendService.getSave(params['id']).pipe(first())
-        ),
+        switchMap((params) => this.digimonBackendService.getSave(params['id']).pipe(first())),
         tap((save) => {
           this.editable = save.uid === this.authService.userData?.uid;
           this.decks = save?.decks ?? [];
@@ -113,12 +85,8 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
 
     this.storeSubscriptions();
 
-    this.searchFilter.valueChanges
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe(() => this.filterChanges());
-    this.tagFilter.valueChanges
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe(() => this.filterChanges());
+    this.searchFilter.valueChanges.pipe(takeUntil(this.onDestroy$)).subscribe(() => this.filterChanges());
+    this.tagFilter.valueChanges.pipe(takeUntil(this.onDestroy$)).subscribe(() => this.filterChanges());
   }
 
   ngOnDestroy() {
@@ -150,13 +118,8 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
   }
 
   filterChanges() {
-    this.filteredDecks = this.searchFilter.value
-      ? this.applySearchFilter()
-      : this.decks;
-    this.filteredDecks =
-      this.tagFilter.value.length > 0
-        ? this.applyTagFilter()
-        : this.filteredDecks;
+    this.filteredDecks = this.searchFilter.value ? this.applySearchFilter() : this.decks;
+    this.filteredDecks = this.tagFilter.value.length > 0 ? this.applyTagFilter() : this.filteredDecks;
     this.filteredDecks = this.filteredDecks.sort((a, b) => {
       const aTitle = a.title ?? '';
       const bTitle = b.title ?? '';
@@ -185,16 +148,10 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
     return this.decks.filter((deck) => {
       const search = this.searchFilter.value.toLocaleLowerCase();
 
-      const titleInText =
-        deck.title?.toLocaleLowerCase().includes(search) ?? false;
-      const descriptionInText =
-        deck.description?.toLocaleLowerCase().includes(search) ?? false;
-      const cardsInText =
-        deck.cards.filter((card) =>
-          card.id.toLocaleLowerCase().includes(search)
-        ).length > 0;
-      const colorInText =
-        deck.color?.name.toLocaleLowerCase().includes(search) ?? false;
+      const titleInText = deck.title?.toLocaleLowerCase().includes(search) ?? false;
+      const descriptionInText = deck.description?.toLocaleLowerCase().includes(search) ?? false;
+      const cardsInText = deck.cards.filter((card) => card.id.toLocaleLowerCase().includes(search)).length > 0;
+      const colorInText = deck.color?.name.toLocaleLowerCase().includes(search) ?? false;
 
       return titleInText || descriptionInText || cardsInText || colorInText;
     });

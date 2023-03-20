@@ -1,39 +1,12 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  OnDestroy,
-  OnInit,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { DataSnapshot } from '@angular/fire/compat/database/interfaces';
 
 // @ts-ignore
 import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 import { Store } from '@ngrx/store';
-import {
-  concat,
-  filter,
-  first,
-  map,
-  Observable,
-  of,
-  Subject,
-  switchMap,
-  tap,
-} from 'rxjs';
-import {
-  ADMINS,
-  IBlog,
-  IBlogWithText,
-  ICard,
-  IDeck,
-  ISave,
-  ITournamentDeck,
-} from '../../../models';
-import {
-  setColors,
-  setDeckImage,
-  setTags,
-} from '../../functions/digimon-card.functions';
+import { concat, filter, first, map, Observable, of, Subject, switchMap, tap } from 'rxjs';
+import { ADMINS, IBlog, IBlogWithText, ICard, IDeck, ISave, ITournamentDeck } from '../../../models';
+import { setColors, setDeckImage, setTags } from '../../functions/digimon-card.functions';
 import { AuthService } from '../../service/auth.service';
 import { CardMarketService } from '../../service/card-market.service';
 import { CardTraderService } from '../../service/card-trader.service';
@@ -45,63 +18,32 @@ import { emptySettings } from '../../store/reducers/save.reducer';
 @Component({
   selector: 'digimon-test-page',
   template: `
-    <button
-      *ngIf="isAdmin()"
-      class="border-2 border-amber-200 bg-amber-400"
-      (click)="updateAllSaves()"
-    >
+    <button *ngIf="isAdmin()" class="border-2 border-amber-200 bg-amber-400" (click)="updateAllSaves()">
       Update all Saves
     </button>
-    <button
-      *ngIf="isAdmin()"
-      class="border-2 border-amber-200 bg-amber-400"
-      (click)="updatePriceGuideIds()"
-    >
+    <button *ngIf="isAdmin()" class="border-2 border-amber-200 bg-amber-400" (click)="updatePriceGuideIds()">
       Update PriceGuide Ids
     </button>
-    <button
-      *ngIf="isAdmin()"
-      class="border-2 border-amber-200 bg-amber-400"
-      (click)="updatePriceGuideIdsAAs()"
-    >
+    <button *ngIf="isAdmin()" class="border-2 border-amber-200 bg-amber-400" (click)="updatePriceGuideIdsAAs()">
       Update PriceGuide Ids AAs
     </button>
 
-    <button
-      *ngIf="isAdmin()"
-      class="border-2 border-amber-200 bg-amber-400"
-      (click)="updateAllDecks()"
-    >
+    <button *ngIf="isAdmin()" class="border-2 border-amber-200 bg-amber-400" (click)="updateAllDecks()">
       Update all Decks
     </button>
 
-    <p-dialog
-      [(visible)]="updateIDDialog"
-      [baseZIndex]="100000"
-      [dismissableMask]="true"
-      [resizable]="false"
-    >
+    <p-dialog [(visible)]="updateIDDialog" [baseZIndex]="100000" [dismissableMask]="true" [resizable]="false">
       <h1>
-        There are still <b>{{ productsWithoutCorrectID.length }}</b> without
-        correct ID.
+        There are still <b>{{ productsWithoutCorrectID.length }}</b> without correct ID.
       </h1>
 
-      <a
-        class="my-3"
-        [href]="productsWithoutCorrectID[0]?.link"
-        target="_blank"
-        >{{ productsWithoutCorrectID[0]?.link }}</a
-      >
+      <a class="my-3" [href]="productsWithoutCorrectID[0]?.link" target="_blank">{{
+        productsWithoutCorrectID[0]?.link
+      }}</a>
 
       <div class="my-3 flex flex-row">
         <div>Enter a ID:</div>
-        <input
-          [(ngModel)]="currentID"
-          type="number"
-          min="1"
-          max="10"
-          class="text-center font-bold text-black"
-        />
+        <input [(ngModel)]="currentID" type="number" min="1" max="10" class="text-center font-bold text-black" />
       </div>
 
       <button (click)="updateFirstObject()">Save and Next</button>
@@ -215,19 +157,12 @@ export class TestPageComponent implements OnInit, OnDestroy {
       .subscribe((products) => {
         const wrongIDs = products
           .filter((product) => product.cardId.endsWith('_P'))
-          .sort((a, b) =>
-            b.cardId
-              .toLocaleLowerCase()
-              .localeCompare(a.cardId.toLocaleLowerCase())
-          );
+          .sort((a, b) => b.cardId.toLocaleLowerCase().localeCompare(a.cardId.toLocaleLowerCase()));
 
         const ArrayObject: any = {};
         wrongIDs.forEach((product) => {
           if (ArrayObject[product.cardId]) {
-            ArrayObject[product.cardId] = [
-              ...ArrayObject[product.cardId],
-              product,
-            ];
+            ArrayObject[product.cardId] = [...ArrayObject[product.cardId], product];
           } else {
             ArrayObject[product.cardId] = [product];
           }
@@ -242,10 +177,7 @@ export class TestPageComponent implements OnInit, OnDestroy {
           } else if ((value as any[]).length === 1) {
             ofArray$.push(
               this.cardMarketService
-                .updateProductId(
-                  ArrayObject[key][0].cardId + `1`,
-                  ArrayObject[key][0]
-                )
+                .updateProductId(ArrayObject[key][0].cardId + `1`, ArrayObject[key][0])
                 .pipe(first())
             );
             delete ArrayObject[key];
@@ -256,10 +188,7 @@ export class TestPageComponent implements OnInit, OnDestroy {
 
         Object.entries(ArrayObject).forEach((entry) => {
           const [key, value] = entry;
-          this.productsWithoutCorrectID = [
-            ...this.productsWithoutCorrectID,
-            value,
-          ];
+          this.productsWithoutCorrectID = [...this.productsWithoutCorrectID, value];
         });
 
         this.productsWithoutCorrectID = this.productsWithoutCorrectID.flat();
@@ -270,10 +199,7 @@ export class TestPageComponent implements OnInit, OnDestroy {
   updateFirstObject() {
     const id = this.productsWithoutCorrectID[0].cardId + this.currentID;
     const product = this.productsWithoutCorrectID[0];
-    this.cardMarketService
-      .updateProductId(id, product)
-      .pipe(first())
-      .subscribe();
+    this.cardMarketService.updateProductId(id, product).pipe(first()).subscribe();
     this.productsWithoutCorrectID = this.productsWithoutCorrectID.slice(1);
   }
 
@@ -312,17 +238,13 @@ export class TestPageComponent implements OnInit, OnDestroy {
     }
     return null;
   }
-  private updateTournamentDeckImage(
-    deck: ITournamentDeck
-  ): Observable<any> | null {
+  private updateTournamentDeckImage(deck: ITournamentDeck): Observable<any> | null {
     if (!deck.imageCardId || deck.imageCardId === 'BT1-001') {
       const newDecks: ITournamentDeck = {
         ...deck,
         imageCardId: setDeckImage(deck).id,
       };
-      return this.digimonBackendService
-        .updateTournamentDeck(newDecks)
-        .pipe(first());
+      return this.digimonBackendService.updateTournamentDeck(newDecks).pipe(first());
     }
     return null;
   }

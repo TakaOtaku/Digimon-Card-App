@@ -5,8 +5,7 @@ import { Meta, Title } from '@angular/platform-browser';
   selector: 'digimon-home-page',
   template: `
     <div
-      class="flex h-[calc(100vh-50px)] w-full flex-row overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d] px-1"
-    >
+      class="flex h-[calc(100vh-50px)] w-full flex-row overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d] px-1">
       <div class="mx-auto flex w-full max-w-6xl flex-col">
         <digimon-home-intro></digimon-home-intro>
 
@@ -49,8 +48,7 @@ export class HomePageComponent {
       { name: 'author', content: 'TakaOtaku' },
       {
         name: 'keywords',
-        content:
-          'Digimon, decks, deck builder, collection,  tournament, TCG, community, friends, share',
+        content: 'Digimon, decks, deck builder, collection,  tournament, TCG, community, friends, share',
       },
     ]);
   }

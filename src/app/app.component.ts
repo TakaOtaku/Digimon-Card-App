@@ -6,13 +6,7 @@ import { ISave } from '../models';
 import { AuthService } from './service/auth.service';
 import { CardMarketService } from './service/card-market.service';
 import { DigimonBackendService } from './service/digimon-backend.service';
-import {
-  loadSave,
-  setBlogs,
-  setCommunityDecks,
-  setPriceGuideCM,
-  setSave,
-} from './store/digimon.actions';
+import { loadSave, setBlogs, setCommunityDecks, setPriceGuideCM, setSave } from './store/digimon.actions';
 import { emptySave } from './store/reducers/save.reducer';
 
 @Component({
@@ -27,8 +21,7 @@ import { emptySave } from './store/reducers/save.reducer';
       <p-blockUI [blocked]="spinner"></p-blockUI>
       <p-progressSpinner
         *ngIf="spinner"
-        class="absolute top-1/2 left-1/2 z-[5000] -translate-x-1/2 -translate-y-1/2 transform"
-      ></p-progressSpinner>
+        class="absolute top-1/2 left-1/2 z-[5000] -translate-x-1/2 -translate-y-1/2 transform"></p-progressSpinner>
 
       <p-toast></p-toast>
 
@@ -36,15 +29,13 @@ import { emptySave } from './store/reducers/save.reducer';
         header="Delete Confirmation"
         icon="pi pi-exclamation-triangle"
         key="Delete"
-        rejectButtonStyleClass="p-button-outlined"
-      ></p-confirmDialog>
+        rejectButtonStyleClass="p-button-outlined"></p-confirmDialog>
 
       <p-confirmDialog
         header="New Deck Confirmation"
         icon="pi pi-file"
         key="NewDeck"
-        rejectButtonStyleClass="p-button-outlined"
-      ></p-confirmDialog>
+        rejectButtonStyleClass="p-button-outlined"></p-confirmDialog>
     </div>
 
     <p-dialog
@@ -54,11 +45,8 @@ import { emptySave } from './store/reducers/save.reducer';
       [dismissableMask]="true"
       [resizable]="false"
       styleClass="w-full h-full max-w-6xl min-h-[500px]"
-      header="Changelog"
-    >
-      <digimon-changelog-dialog
-        [loadChangelog]="loadChangelog"
-      ></digimon-changelog-dialog>
+      header="Changelog">
+      <digimon-changelog-dialog [loadChangelog]="loadChangelog"></digimon-changelog-dialog>
     </p-dialog>
   `,
 })
@@ -136,9 +124,7 @@ export class AppComponent {
         }
         this.spinner = false;
         this.hide = false;
-        this.store.dispatch(
-          setSave({ save: { ...save, version: emptySave.version } })
-        );
+        this.store.dispatch(setSave({ save: { ...save, version: emptySave.version } }));
       });
   }
 

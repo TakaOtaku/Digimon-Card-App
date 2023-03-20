@@ -1,10 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  HostListener,
-  OnDestroy,
-  OnInit,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
@@ -14,10 +8,7 @@ import { IDeck, ISave } from '../../../models';
 import { AuthService } from '../../service/auth.service';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
 import { setDeck } from '../../store/digimon.actions';
-import {
-  selectDeckBuilderViewModel,
-  selectMobileCollectionView,
-} from '../../store/digimon.selectors';
+import { selectDeckBuilderViewModel, selectMobileCollectionView } from '../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-deckbuilder-page',
@@ -25,13 +16,11 @@ import {
     <div
       *ngIf="deckBuilderViewModel$ | async as deckBuilderViewModel"
       [ngClass]="{ hidden: mobileCollectionView$ | async }"
-      class="relative inline-flex h-full w-full flex-row overflow-hidden lg:bg-gradient-to-b lg:from-[#17212f] lg:to-[#08528d]"
-    >
+      class="relative inline-flex h-full w-full flex-row overflow-hidden lg:bg-gradient-to-b lg:from-[#17212f] lg:to-[#08528d]">
       <button
         *ngIf="showAccordionButtons"
         class="surface-card h-full w-6 border-r border-slate-200"
-        (click)="changeView('Deck')"
-      >
+        (click)="changeView('Deck')">
         <span
           class="h-full w-full rotate-180 text-center font-bold text-[#e2e4e6]"
           [ngStyle]="{ writingMode: 'vertical-rl' }"
@@ -43,20 +32,17 @@ import {
         [ngClass]="{ 'w-5/12': collectionView, 'w-full': !collectionView }"
         [collectionView]="collectionView"
         [deckBuilderViewModel]="deckBuilderViewModel"
-        (hideStats)="hideStats = !hideStats"
-      ></digimon-deck-view>
+        (hideStats)="hideStats = !hideStats"></digimon-deck-view>
 
       <digimon-collection-view
         *ngIf="collectionView"
         [ngClass]="{ 'w-7/12': deckView, 'w-full': !deckView }"
         class="border-l border-slate-200"
-        [deckView]="deckView"
-      ></digimon-collection-view>
+        [deckView]="deckView"></digimon-collection-view>
       <button
         *ngIf="showAccordionButtons"
         class="surface-card h-full w-6 border-l border-slate-200"
-        (click)="changeView('Collection')"
-      >
+        (click)="changeView('Collection')">
         <span
           class="h-full w-full rotate-180 text-center font-bold text-[#e2e4e6]"
           [ngStyle]="{ writingMode: 'vertical-rl' }"
@@ -69,14 +55,10 @@ import {
         [ngClass]="{ hidden: hideStats }"
         [collectionView]="collectionView"
         [showStats]="showStats"
-        [deckBuilderViewModel]="deckBuilderViewModel"
-      ></digimon-deck-stats>
+        [deckBuilderViewModel]="deckBuilderViewModel"></digimon-deck-stats>
     </div>
 
-    <div
-      class="h-full w-full"
-      [ngClass]="{ hidden: (mobileCollectionView$ | async) === false }"
-    >
+    <div class="h-full w-full" [ngClass]="{ hidden: (mobileCollectionView$ | async) === false }">
       <digimon-filter-and-search></digimon-filter-and-search>
       <digimon-card-list [showCount]="32"></digimon-card-list>
     </div>
@@ -168,8 +150,7 @@ export class DeckbuilderPageComponent implements OnInit, OnDestroy {
       { name: 'author', content: 'TakaOtaku' },
       {
         name: 'keywords',
-        content:
-          'Digimon, decks, deck builder, tournament, TCG, community, friends, share',
+        content: 'Digimon, decks, deck builder, tournament, TCG, community, friends, share',
       },
     ]);
   }
@@ -184,19 +165,15 @@ export class DeckbuilderPageComponent implements OnInit, OnDestroy {
         switchMap((params) => {
           if (params['userId'] && params['deckId']) {
             this.deckId = params['deckId'];
-            return this.digimonBackendService
-              .getSave(params['userId'])
-              .pipe(first());
+            return this.digimonBackendService.getSave(params['userId']).pipe(first());
           } else {
-            this.digimonBackendService
-              .getDeck(params['id'])
-              .subscribe((deck) => {
-                this.store.dispatch(
-                  setDeck({
-                    deck: { ...deck, id: uuid.v4() },
-                  })
-                );
-              });
+            this.digimonBackendService.getDeck(params['id']).subscribe((deck) => {
+              this.store.dispatch(
+                setDeck({
+                  deck: { ...deck, id: uuid.v4() },
+                })
+              );
+            });
             return of(false);
           }
         })

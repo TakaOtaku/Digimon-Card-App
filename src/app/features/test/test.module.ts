@@ -14,19 +14,7 @@ import { TestPageComponent } from './test-page.component';
 
 @NgModule({
   declarations: [TestPageComponent, SafePipe],
-  imports: [
-    CommonModule,
-    FormsModule,
-    BrowserModule,
-    BrowserAnimationsModule,
-    DialogModule,
-  ],
-  providers: [
-    AuthService,
-    DatabaseService,
-    DigimonBackendService,
-    CardMarketService,
-    CardTraderService,
-  ],
+  imports: [CommonModule, FormsModule, BrowserModule, BrowserAnimationsModule, DialogModule],
+  providers: [AuthService, DatabaseService, DigimonBackendService, CardMarketService, CardTraderService],
 })
 export class TestModule {}

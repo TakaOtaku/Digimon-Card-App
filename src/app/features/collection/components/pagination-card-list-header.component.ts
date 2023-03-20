@@ -1,19 +1,9 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  EventEmitter,
-  OnDestroy,
-  OnInit,
-  Output,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subject, takeUntil } from 'rxjs';
 import { ICard } from '../../../../models';
 import { changeCollectionMode } from '../../../store/digimon.actions';
-import {
-  selectCollectionMode,
-  selectFilteredCards,
-} from '../../../store/digimon.selectors';
+import { selectCollectionMode, selectFilteredCards } from '../../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-pagination-card-list-header',
@@ -27,25 +17,20 @@ import {
         [showPageLinks]="false"
         [totalRecords]="cards.length"
         class="ml-auto"
-        styleClass="border-0 h-10 bg-transparent ml-auto"
-      ></p-paginator>
+        styleClass="border-0 h-10 bg-transparent ml-auto"></p-paginator>
 
       <div class="mx-2 mt-2 flex flex-row justify-center">
-        <span class="text-xs font-bold leading-9 text-[#e2e4e6]"
-          >Collection Mode:</span
-        >
+        <span class="text-xs font-bold leading-9 text-[#e2e4e6]">Collection Mode:</span>
         <input
           type="checkbox"
           class="my-auto ml-1 h-5 w-5"
           [ngModel]="collectionMode$ | async"
-          (ngModelChange)="changeCollectionMode($event)"
-        />
+          (ngModelChange)="changeCollectionMode($event)" />
       </div>
 
       <button
         (click)="filterBox.emit(true)"
-        class="min-w-auto primary-background m-auto h-8 w-32 rounded p-2 text-xs font-semibold text-[#e2e4e6] 2xl:hidden"
-      >
+        class="min-w-auto primary-background m-auto h-8 w-32 rounded p-2 text-xs font-semibold text-[#e2e4e6] 2xl:hidden">
         <i class="pi pi-filter-fill mr-3"></i>Filter
       </button>
     </div>
@@ -85,9 +70,7 @@ export class PaginationCardListHeaderComponent implements OnInit, OnDestroy {
   onPageChange(event: any, slice?: number) {
     this.first = event.first;
     this.page = event.page;
-    this.cardsToShow.next(
-      this.cards.slice(event.first, (slice ?? 48) * (event.page + 1))
-    );
+    this.cardsToShow.next(this.cards.slice(event.first, (slice ?? 48) * (event.page + 1)));
   }
 
   changeCollectionMode(collectionMode: boolean) {

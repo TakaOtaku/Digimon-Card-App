@@ -1,15 +1,7 @@
 import { englishCards } from '../../assets/cardlists/eng/english';
 import preReleaseJSON from '../../assets/cardlists/eng/PreRelease.json';
 import { japaneseCards } from '../../assets/cardlists/jap/japanese';
-import {
-  CARDSET,
-  ICard,
-  ICountCard,
-  IDeck,
-  IDeckCard,
-  ITag,
-  tagsList,
-} from '../../models';
+import { CARDSET, ICard, ICountCard, IDeck, IDeckCard, ITag, tagsList } from '../../models';
 import { ColorOrderMap, DeckColorMap } from '../../models/maps/color.map';
 
 export function setTags(deck: IDeck, allCards: ICard[]) {
@@ -73,15 +65,10 @@ export function setNewestSet(cards: ICountCard[]): ITag {
       set = value;
     }
   });
-  return (
-    tagsList.find((tag) => tag.name === set) ?? { name: '', color: 'Primary' }
-  );
+  return tagsList.find((tag) => tag.name === set) ?? { name: '', color: 'Primary' };
 }
 
-export function bannedCardsIncluded(
-  cards: ICountCard[],
-  allCards: ICard[]
-): boolean {
+export function bannedCardsIncluded(cards: ICountCard[], allCards: ICard[]): boolean {
   let banned = false;
   if (!cards) {
     return false;
@@ -99,10 +86,7 @@ export function bannedCardsIncluded(
   return banned;
 }
 
-export function tooManyRestrictedCardsIncluded(
-  cards: ICountCard[],
-  allCards: ICard[]
-): boolean {
+export function tooManyRestrictedCardsIncluded(cards: ICountCard[], allCards: ICard[]): boolean {
   let restricted = false;
   if (!cards) {
     return false;
@@ -143,9 +127,7 @@ export function setColors(deck: IDeck, allCards: ICard[]) {
     });
   });
 
-  const highest = colorArray.reduce((prev, current) =>
-    prev.count > current.count ? prev : current
-  );
+  const highest = colorArray.reduce((prev, current) => (prev.count > current.count ? prev : current));
   return DeckColorMap.get(highest.name);
 }
 
@@ -174,17 +156,11 @@ export function getPNG(cardSRC: string): string {
   let preReleaseRegExp = new RegExp('\\bpre-release\\b');
 
   if (engRegExp.test(cardSRC)) {
-    return cardSRC
-      .replace(engRegExp, 'eng/png')
-      .replace(new RegExp('\\b.webp\\b'), '.png');
+    return cardSRC.replace(engRegExp, 'eng/png').replace(new RegExp('\\b.webp\\b'), '.png');
   } else if (japRegExp.test(cardSRC)) {
-    return cardSRC
-      .replace(japRegExp, 'jap/png')
-      .replace(new RegExp('\\b.webp\\b'), '.png');
+    return cardSRC.replace(japRegExp, 'jap/png').replace(new RegExp('\\b.webp\\b'), '.png');
   } else {
-    return cardSRC
-      .replace(preReleaseRegExp, 'pre-release/png')
-      .replace(new RegExp('\\b.webp\\b'), '.png');
+    return cardSRC.replace(preReleaseRegExp, 'pre-release/png').replace(new RegExp('\\b.webp\\b'), '.png');
   }
 }
 
@@ -268,10 +244,7 @@ export function sortColors(colorA: string, colorB: string): number {
   return a - b;
 }
 
-export function mapToDeckCards(
-  cards: ICountCard[],
-  allCards: ICard[]
-): IDeckCard[] {
+export function mapToDeckCards(cards: ICountCard[], allCards: ICard[]): IDeckCard[] {
   const deckCards: IDeckCard[] = [];
 
   if (!cards) {
@@ -280,8 +253,7 @@ export function mapToDeckCards(
 
   cards.forEach((card) => {
     let cardSplit = card.id.split('-');
-    const numberNot10But0 =
-      cardSplit[0].includes('0') && cardSplit[0] !== 'ST10';
+    const numberNot10But0 = cardSplit[0].includes('0') && cardSplit[0] !== 'ST10';
     if (cardSplit[0].includes('ST') && numberNot10But0) {
       let searchId = cardSplit[0].replace('0', '') + '-' + cardSplit[1];
       let found = allCards.find((allCard) => searchId === allCard.id);
@@ -296,9 +268,7 @@ export function mapToDeckCards(
   return deckCards;
 }
 
-export function getCountFromDeckCards(
-  deckCards: IDeckCard[] | ICountCard[]
-): number {
+export function getCountFromDeckCards(deckCards: IDeckCard[] | ICountCard[]): number {
   let number = 0;
   deckCards.forEach((card) => {
     number += card.count;
@@ -309,10 +279,7 @@ export function getCountFromDeckCards(
 export function setDeckImage(deck: IDeck): ICard {
   let deckCards = mapToDeckCards(deck.cards, setupDigimonCards(CARDSET.Both));
 
-  deckCards = deckCards.sort(
-    (a, b) =>
-      Number(b.cardLv.replace('Lv.', '')) - Number(a.cardLv.replace('Lv.', ''))
-  );
+  deckCards = deckCards.sort((a, b) => Number(b.cardLv.replace('Lv.', '')) - Number(a.cardLv.replace('Lv.', '')));
 
   return deckCards.length > 0 ? deckCards[0] : englishCards[0];
 }

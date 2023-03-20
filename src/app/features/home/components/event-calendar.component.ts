@@ -1,10 +1,5 @@
 import { DatePipe } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  OnDestroy,
-  OnInit,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
 import { ADMINS, IUser } from '../../../../models';
@@ -21,14 +16,9 @@ export interface IEvent {
 @Component({
   selector: 'digimon-event-calendar',
   template: `
-    <div
-      *ngIf="events$ | async as events"
-      class="surface-card border-2 border-slate-500 p-2"
-    >
+    <div *ngIf="events$ | async as events" class="surface-card border-2 border-slate-500 p-2">
       <div class="flex flex-row">
-        <h1
-          class="text-shadow my-2 text-lg font-black text-[#e2e4e6] lg:text-2xl"
-        >
+        <h1 class="text-shadow my-2 text-lg font-black text-[#e2e4e6] lg:text-2xl">
           {{ MONTHS[month] + ' ' + year }}
         </h1>
         <div class="ml-auto mr-2 mt-4">
@@ -44,56 +34,36 @@ export interface IEvent {
         </div>
       </div>
 
-      <div
-        class="lg:hidden"
-        *ngIf="eventsInMonth(events) as eventsInMonth; else noEvents"
-      >
+      <div class="lg:hidden" *ngIf="eventsInMonth(events) as eventsInMonth; else noEvents">
         <div
           *ngFor="let event of eventsInMonth"
           [ngStyle]="{ background: getThemeColor(event) }"
-          class="my-1 flex w-full flex-row border px-3 px-1"
-        >
-          <div
-            class="text-shadow w-full truncate text-sm font-black text-[#e2e4e6]"
-          >
+          class="my-1 flex w-full flex-row border px-3 px-1">
+          <div class="text-shadow w-full truncate text-sm font-black text-[#e2e4e6]">
             {{ event.title }}
           </div>
-          <div
-            class="text-shadow ml-auto w-full truncate text-right text-sm font-black text-[#e2e4e6]"
-          >
+          <div class="text-shadow ml-auto w-full truncate text-right text-sm font-black text-[#e2e4e6]">
             {{ event.date }}
           </div>
         </div>
       </div>
       <ng-template #noEvents>
-        <h1
-          class="text-shadow my-2 text-lg font-black text-[#e2e4e6] lg:text-2xl"
-        >
-          No events this month.
-        </h1>
+        <h1 class="text-shadow my-2 text-lg font-black text-[#e2e4e6] lg:text-2xl">No events this month.</h1>
       </ng-template>
 
       <div class="no-gap hidden grid-cols-3 lg:grid lg:grid-cols-7">
         <div
           *ngFor="let day of DAYS"
-          class="text-shadow my-2 hidden text-center font-black text-[#e2e4e6] lg:block lg:text-xl"
-        >
+          class="text-shadow my-2 hidden text-center font-black text-[#e2e4e6] lg:block lg:text-xl">
           {{ day }}
         </div>
 
-        <div
-          *ngFor="let blankDay of blankDays"
-          class="min-h-[62px] w-full border border-black"
-        ></div>
+        <div *ngFor="let blankDay of blankDays" class="min-h-[62px] w-full border border-black"></div>
 
-        <div
-          *ngFor="let date of noOfDays"
-          class="min-h-[62px] w-full border  border-black"
-        >
+        <div *ngFor="let date of noOfDays" class="min-h-[62px] w-full border  border-black">
           <span
             [ngClass]="{
-              'rounded-full border border-slate-500 bg-slate-500 px-1':
-                isToday(date)
+              'rounded-full border border-slate-500 bg-slate-500 px-1': isToday(date)
             }"
             class="text-shadow ml-2 font-black text-[#e2e4e6] lg:text-xl"
             >{{ date }}</span
@@ -102,13 +72,11 @@ export interface IEvent {
             *ngFor="let event of getEvents(date, events)"
             [ngStyle]="{ background: getThemeColor(event) }"
             (click)="openEventModal(event)"
-            class="m-1 rounded-full border border-black text-center"
-          >
+            class="m-1 rounded-full border border-black text-center">
             <div
               [pTooltip]="event.title"
               tooltipPosition="top"
-              class="text-shadow w-full truncate px-2 text-xs font-black text-[#e2e4e6]"
-            >
+              class="text-shadow w-full truncate px-2 text-xs font-black text-[#e2e4e6]">
               {{ event.title }}
             </div>
           </div>
@@ -123,18 +91,11 @@ export interface IEvent {
       [dismissableMask]="true"
       [resizable]="false"
       [header]="edit ? 'Edit Event' : 'Create Event'"
-      styleClass="w-[400px]"
-    >
+      styleClass="w-[400px]">
       <div class="mx-auto flex flex-col">
         <div class="w-full">
           <span class="p-float-label">
-            <input
-              id="title-input"
-              type="text"
-              pInputText
-              pStyleClass="w-full"
-              [(ngModel)]="title"
-            />
+            <input id="title-input" type="text" pInputText pStyleClass="w-full" [(ngModel)]="title" />
             <label for="title-input">Title</label>
           </span>
         </div>
@@ -146,24 +107,12 @@ export interface IEvent {
             inputId="icon"
             styleClass="w-full"
             dateFormat="dd.MM.yy"
-            appendTo="body"
-          ></p-calendar>
+            appendTo="body"></p-calendar>
         </div>
 
         <div class="w-full">
-          <p-radioButton
-            name="theme"
-            value="Release"
-            label="Release"
-            class="mr-4"
-            [(ngModel)]="theme"
-          ></p-radioButton>
-          <p-radioButton
-            name="theme"
-            value="Tournament"
-            label="Tournament"
-            [(ngModel)]="theme"
-          ></p-radioButton>
+          <p-radioButton name="theme" value="Release" label="Release" class="mr-4" [(ngModel)]="theme"></p-radioButton>
+          <p-radioButton name="theme" value="Tournament" label="Tournament" [(ngModel)]="theme"></p-radioButton>
         </div>
 
         <div class="flex flex-row">
@@ -175,8 +124,7 @@ export interface IEvent {
             pRipple
             type="button"
             label="Delete"
-            (click)="removeEvent()"
-          ></button>
+            (click)="removeEvent()"></button>
           <button
             class="p-button mt-3"
             icon="pi pi-save"
@@ -184,8 +132,7 @@ export interface IEvent {
             pRipple
             type="button"
             [label]="edit ? 'Save' : 'Create'"
-            (click)="saveEvent()"
-          ></button>
+            (click)="saveEvent()"></button>
         </div>
       </div>
     </p-dialog>
@@ -295,9 +242,7 @@ export class EventCalendarComponent implements OnInit, OnDestroy {
 
   getEvents(day: number, events: IEvent[]): IEvent[] {
     return events.filter((event) => {
-      const date = `${day}.${this.addLeadingZeros(this.month + 1, 2)}.${
-        this.year
-      }`;
+      const date = `${day}.${this.addLeadingZeros(this.month + 1, 2)}.${this.year}`;
       return event.date === date;
     });
   }

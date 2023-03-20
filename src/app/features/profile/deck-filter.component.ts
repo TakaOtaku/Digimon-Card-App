@@ -14,8 +14,7 @@ import { TAGS } from '../../../models';
             class="w-full text-xs"
             pInputText
             placeholder="Search (Title, Description, Card-Ids, Color)"
-            type="text"
-          />
+            type="text" />
         </span>
       </div>
       <p-multiSelect
@@ -26,8 +25,7 @@ import { TAGS } from '../../../models';
         display="chip"
         scrollHeight="250px"
         class="my-1 mx-auto w-full max-w-[250px]"
-        styleClass="w-full h-[34px] text-sm max-w-[250px]"
-      >
+        styleClass="w-full h-[34px] text-sm max-w-[250px]">
       </p-multiSelect>
     </div>
   `,

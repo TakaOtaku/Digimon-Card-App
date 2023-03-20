@@ -6,72 +6,44 @@ import { Router } from '@angular/router';
   selector: 'digimon-products',
   template: `
     <div
-      class="flex h-[calc(100vh-50px)] w-full flex-col overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d]"
-    >
+      class="flex h-[calc(100vh-50px)] w-full flex-col overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d]">
       <div class="mx-auto max-w-6xl">
-        <h1
-          class="text-shadow mt-6 text-4xl font-black text-[#e2e4e6] underline xl:mt-2"
-        >
-          Starter Decks
-        </h1>
+        <h1 class="text-shadow mt-6 text-4xl font-black text-[#e2e4e6] underline xl:mt-2">Starter Decks</h1>
         <div class="flex flex-row flex-wrap">
-          <a
-            *ngFor="let product of starter"
-            [href]="product.link"
-            target="_blank"
-          >
+          <a *ngFor="let product of starter" [href]="product.link" target="_blank">
             <img
               [pTooltip]="product.name"
               tooltipPosition="top"
               [lazyLoad]="product.image"
               [alt]="product.name"
               class="m-auto m-5 h-52 cursor-pointer"
-              defaultImage="assets/images/digimon-card-back.webp"
-            />
+              defaultImage="assets/images/digimon-card-back.webp" />
           </a>
         </div>
 
-        <h1
-          class="text-shadow mt-6 text-4xl font-black text-[#e2e4e6] underline xl:mt-2"
-        >
-          Booster Sets
-        </h1>
+        <h1 class="text-shadow mt-6 text-4xl font-black text-[#e2e4e6] underline xl:mt-2">Booster Sets</h1>
         <div class="flex flex-row flex-wrap">
-          <a
-            *ngFor="let product of booster"
-            [href]="product.link"
-            target="_blank"
-          >
+          <a *ngFor="let product of booster" [href]="product.link" target="_blank">
             <img
               [pTooltip]="product.name"
               tooltipPosition="top"
               [lazyLoad]="product.image"
               [alt]="product.name"
               class="m-auto m-5 h-52 cursor-pointer"
-              defaultImage="assets/images/digimon-card-back.webp"
-            />
+              defaultImage="assets/images/digimon-card-back.webp" />
           </a>
         </div>
 
-        <h1
-          class="text-shadow mt-6 text-4xl font-black text-[#e2e4e6] underline xl:mt-2"
-        >
-          Promo Products
-        </h1>
+        <h1 class="text-shadow mt-6 text-4xl font-black text-[#e2e4e6] underline xl:mt-2">Promo Products</h1>
         <div class="flex flex-row flex-wrap">
-          <a
-            *ngFor="let product of promo"
-            [href]="product.link"
-            target="_blank"
-          >
+          <a *ngFor="let product of promo" [href]="product.link" target="_blank">
             <img
               [pTooltip]="product.name"
               tooltipPosition="top"
               [lazyLoad]="product.image"
               [alt]="product.name"
               class="m-auto m-5 h-52 cursor-pointer"
-              defaultImage="assets/images/digimon-card-back.webp"
-            />
+              defaultImage="assets/images/digimon-card-back.webp" />
           </a>
         </div>
       </div>
@@ -150,14 +122,12 @@ export class ProductsComponent {
   booster = [
     {
       name: 'BT01-03: Release Special Booster Ver.1.0',
-      image:
-        '../../assets/images/products/Special_Release_Booster_Pack_1.0.webp',
+      image: '../../assets/images/products/Special_Release_Booster_Pack_1.0.webp',
       link: 'https://digimoncardgame.fandom.com/wiki/BT01-03:_Release_Special_Booster_Ver.1.0',
     },
     {
       name: 'BT01-03: Release Special Booster Ver.1.5',
-      image:
-        '../../assets/images/products/Special_Release_Booster_Pack_1.5.webp',
+      image: '../../assets/images/products/Special_Release_Booster_Pack_1.5.webp',
       link: 'https://digimoncardgame.fandom.com/wiki/BT01-03:_Release_Special_Booster_Ver.1.5',
     },
     {
@@ -284,8 +254,7 @@ export class ProductsComponent {
     },
     {
       name: 'Great Legend Pre-Release Promotion',
-      image:
-        '../../assets/images/products/Great_Legend_Pre-Release_Promotion_Pack.webp',
+      image: '../../assets/images/products/Great_Legend_Pre-Release_Promotion_Pack.webp',
       link: 'https://digimoncardgame.fandom.com/wiki/Great_Legend_Pre-Release_Promotion',
     },
     {
@@ -315,8 +284,7 @@ export class ProductsComponent {
     },
     {
       name: 'Battle of Omni Pre-Release Promotion',
-      image:
-        '../../assets/images/products/Battle_of_Omni_Pre-Release_Promotion_Pack.webp',
+      image: '../../assets/images/products/Battle_of_Omni_Pre-Release_Promotion_Pack.webp',
       link: 'https://digimoncardgame.fandom.com/wiki/Battle_of_Omni_Pre-Release_Promotion',
     },
     {
@@ -336,8 +304,7 @@ export class ProductsComponent {
     },
     {
       name: 'Double Diamond Pre-Release Promotion',
-      image:
-        '../../assets/images/products/Double_Diamond_Pre-Release_Promotion_Pack.webp',
+      image: '../../assets/images/products/Double_Diamond_Pre-Release_Promotion_Pack.webp',
       link: 'https://digimoncardgame.fandom.com/wiki/Double_Diamond_Pre-Release_Promotion',
     },
     {
@@ -367,8 +334,7 @@ export class ProductsComponent {
     },
     {
       name: 'Box Promotion Pack -Next Adventure-',
-      image:
-        '../../assets/images/products/Box_Promotion_Pack_-Next_Adventure-.webp',
+      image: '../../assets/images/products/Box_Promotion_Pack_-Next_Adventure-.webp',
       link: 'https://digimoncardgame.fandom.com/wiki/Box_Promotion_Pack_-Next_Adventure-',
     },
     {
@@ -453,14 +419,12 @@ export class ProductsComponent {
     this.meta.addTags([
       {
         name: 'description',
-        content:
-          'See all Digimon TCG Products in one Place with a Link to the Wiki',
+        content: 'See all Digimon TCG Products in one Place with a Link to the Wiki',
       },
       { name: 'author', content: 'TakaOtaku' },
       {
         name: 'keywords',
-        content:
-          'Digimon, decks, deck builder, collection,  tournament, TCG, community, friends, share',
+        content: 'Digimon, decks, deck builder, collection,  tournament, TCG, community, friends, share',
       },
     ]);
   }
