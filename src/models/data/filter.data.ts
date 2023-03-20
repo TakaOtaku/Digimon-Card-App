@@ -330,6 +330,10 @@ export const BlockButtons: MultiButtons[] = [
     name: '02',
     value: '02',
   },
+  {
+    name: '03',
+    value: '03',
+  },
 ];
 
 export const CardTypeButtons: MultiButtons[] = [
