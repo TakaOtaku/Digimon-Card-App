@@ -89,7 +89,23 @@ export const digimonReducer = createReducer(
   on(changeFilter, (state, { filter }) => ({ ...state, filter })),
   on(changeSort, (state, { sort }) => ({ ...state, sort })),
   on(setDeck, (state, { deck }) => ({ ...state, deck })),
-  on(createNewDeck, (state, { reset }) => ({ ...state, deck: emptyDeck })),
+  on(createNewDeck, (state, { reset }) => {
+    const deck = {
+      id: uuid.v4(),
+      title: '',
+      description: '',
+      date: new Date().toString(),
+      color: { name: 'White', img: 'assets/decks/white.svg' },
+      cards: [],
+      sideDeck: [],
+      tags: [],
+      user: '',
+      userId: '',
+      imageCardId: 'BT1-001',
+      likes: [],
+    };
+    return { ...state, deck };
+  }),
   on(setMobileCollectionView, (state, { mobileCollectionView }) => ({
     ...state,
     mobileCollectionView,
