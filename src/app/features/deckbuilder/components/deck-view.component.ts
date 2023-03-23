@@ -56,7 +56,6 @@ import { emptyDeck } from '../../../store/reducers/digimon.reducers';
             *ngFor="let card of mainDeck"
             pDraggable="fromDeck"
             (onDragStart)="setDraggedCard(card, DRAG.Main)"
-            (onChange)="mapToDeck()"
             (removeCard)="removeCard(card)"
             [cardHave]="getCardHave(card)"
             [card]="card"
@@ -82,7 +81,6 @@ import { emptyDeck } from '../../../store/reducers/digimon.reducers';
               *ngFor="let card of mainDeck"
               pDraggable="fromDeck"
               (onDragStart)="setDraggedCard(card, DRAG.Main)"
-              (onChange)="mapToDeck()"
               (removeCard)="removeCard(card)"
               [cardHave]="getCardHave(card)"
               [card]="card"
@@ -100,7 +98,6 @@ import { emptyDeck } from '../../../store/reducers/digimon.reducers';
               *ngFor="let card of sideDeck"
               pDraggable="fromSide"
               (onDragStart)="setDraggedCard(card, DRAG.Side)"
-              (onChange)="mapToDeck()"
               (removeCard)="removeSideCard(card)"
               [cardHave]="getCardHave(card)"
               [sideDeck]="true"
@@ -179,11 +176,6 @@ export class DeckViewComponent implements OnInit, OnDestroy {
       .subscribe(({ deck, cards }) => {
         this.allCards = cards;
         if (deck && deck !== this.deck) {
-          this.deck = deck;
-          this.title = deck.title ?? '';
-          this.description = deck.description ?? '';
-          this.tags = deck.tags ?? [];
-          this.selectedColor = deck.color;
           this.mapDeck(deck);
         }
       });
@@ -197,6 +189,15 @@ export class DeckViewComponent implements OnInit, OnDestroy {
    * Map given Deck to Deck from IDeckCards
    */
   mapDeck(deck: IDeck) {
+    this.deck = deck;
+    this.title = deck.title ?? '';
+    this.description = deck.description ?? '';
+
+    this.tags = setTags(this.deck, this.allCards);
+    deck.tags = this.tags;
+    this.selectedColor = setColors(this.deck, this.allCards);
+    deck.color = DeckColorMap.get(this.selectedColor.name);
+
     this.mainDeck = [];
     this.sideDeck = [];
     const iDeckCards: IDeckCard[] = [];
@@ -218,6 +219,7 @@ export class DeckViewComponent implements OnInit, OnDestroy {
     iDeckCards.forEach((card) => this.mainDeck.push({ ...card, count: card.count }));
     iSideDeckCards.forEach((card) => this.sideDeck.push({ ...card, count: card.count }));
     this.deckSort();
+    this.onMainDeck.emit(this.mainDeck);
   }
 
   /**
@@ -265,13 +267,15 @@ export class DeckViewComponent implements OnInit, OnDestroy {
       target: event.target,
       message: 'You are about to save all changes and overwrite everything changed. Are you sure?',
       accept: () => {
-        this.mapToDeck();
-        this.store.dispatch(importDeck({ deck: this.deck }));
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Deck saved!',
-          detail: 'Deck was saved successfully!',
+        this.onMainDeck.pipe(first()).subscribe(() => {
+          this.store.dispatch(importDeck({ deck: this.deck }));
+          this.messageService.add({
+            severity: 'success',
+            summary: 'Deck saved!',
+            detail: 'Deck was saved successfully!',
+          });
         });
+        this.mapToDeck();
       },
     });
   }
@@ -288,6 +292,10 @@ export class DeckViewComponent implements OnInit, OnDestroy {
       id: card.id,
       count: card.count,
     }));
+
+    this.tags = setTags(this.deck, this.allCards);
+    this.selectedColor = setColors(this.deck, this.allCards);
+
     this.deck = {
       ...this.deck,
       title: this.title,
@@ -297,32 +305,11 @@ export class DeckViewComponent implements OnInit, OnDestroy {
       cards,
       sideDeck,
     };
-    this.store.dispatch(setDeck({ deck: this.deck }));
+
     this.deckSort();
-    this.tags = setTags(this.deck, this.allCards);
-    this.selectedColor = setColors(this.deck, this.allCards);
+
+    this.store.dispatch(setDeck({ deck: this.deck }));
     this.onMainDeck.emit(this.mainDeck);
-  }
-
-  /**
-   * Increase the Card Count but check for Eosmon
-   */
-  onCardClick(id: string) {
-    const alreadyInDeck = this.mainDeck.find((value) => compareIDs(value.id, id));
-    const card = this.allCards.find((card) => compareIDs(card.id, id));
-    if (alreadyInDeck) {
-      if (card!.cardNumber === 'BT6-085' || card!.cardNumber === 'EX2-046' || card!.cardNumber === 'BT11-061') {
-        alreadyInDeck.count = alreadyInDeck.count >= 50 ? 50 : alreadyInDeck.count + 1;
-        this.mapToDeck();
-        return;
-      }
-      alreadyInDeck.count = alreadyInDeck.count === 4 ? 4 : alreadyInDeck.count + 1;
-      this.mapToDeck();
-      return;
-    }
-
-    this.mainDeck.push({ ...card!, count: 1 });
-    this.mapToDeck();
   }
 
   /**

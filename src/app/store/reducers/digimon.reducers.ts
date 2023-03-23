@@ -8,6 +8,7 @@ import {
   addCardToSideDeck,
   changeFilter,
   changeSort,
+  createNewDeck,
   removeCardFromDeck,
   removeCardFromSideDeck,
   setBlogs,
@@ -88,6 +89,7 @@ export const digimonReducer = createReducer(
   on(changeFilter, (state, { filter }) => ({ ...state, filter })),
   on(changeSort, (state, { sort }) => ({ ...state, sort })),
   on(setDeck, (state, { deck }) => ({ ...state, deck })),
+  on(createNewDeck, (state, { reset }) => ({ ...state, deck: emptyDeck })),
   on(setMobileCollectionView, (state, { mobileCollectionView }) => ({
     ...state,
     mobileCollectionView,

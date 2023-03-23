@@ -3,12 +3,21 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { catchError, EMPTY, first, map, switchMap, tap } from 'rxjs';
 import { CARDSET } from '../../models/enums/card-set.enum';
-import { setupDigimonCards } from '../functions/digimon-card.functions';
+import { DeckColorMap } from '../../models/maps/color.map';
+import { setColors, setTags, setupDigimonCards } from '../functions/digimon-card.functions';
 import { filterCards } from '../functions/filter.functions';
 import { AuthService } from '../service/auth.service';
 import { DigimonBackendService } from '../service/digimon-backend.service';
+import { setDeck } from './digimon.actions';
 import * as DigimonActions from './digimon.actions';
-import { selectCardSet, selectChangeAdvancedSettings, selectChangeFilterEffect, selectSave } from './digimon.selectors';
+import {
+  selectCardSet,
+  selectChangeAdvancedSettings,
+  selectChangeFilterEffect,
+  selectDeck,
+  selectDeckChanges,
+  selectSave,
+} from './digimon.selectors';
 
 @Injectable()
 export class DigimonEffects {
@@ -154,6 +163,27 @@ export class DigimonEffects {
       ),
     { dispatch: false }
   );
+
+  //updateCurrentDeck$ = createEffect(
+  //  () =>
+  //    this.actions$.pipe(
+  //      ofType(DigimonActions.addCardToDeck, DigimonActions.removeCardFromDeck),
+  //      switchMap(() =>
+  //        this.store.select(selectDeckChanges).pipe(
+  //          tap(({ deck, allCards }) => {
+  //            const newDeck = {
+  //              ...deck,
+  //              tags: setTags(deck, allCards),
+  //              color: setColors(deck, allCards),
+  //            };
+  //            this.store.dispatch(setDeck({ deck: newDeck }));
+  //          }),
+  //          catchError(() => EMPTY)
+  //        )
+  //      )
+  //    ),
+  //  { dispatch: false }
+  //);
 
   constructor(
     private store: Store,

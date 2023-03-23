@@ -4,7 +4,7 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 import { BehaviorSubject, Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
 import { ICard, IDeck, IDeckCard } from '../../../../models';
-import { setDeck } from '../../../store/digimon.actions';
+import { createNewDeck, setDeck } from '../../../store/digimon.actions';
 import { DeckBuilderViewModel, selectAllCards } from '../../../store/digimon.selectors';
 import { emptyDeck } from '../../../store/reducers/digimon.reducers';
 
@@ -247,8 +247,7 @@ export class DeckToolbarComponent implements OnDestroy {
       key: 'NewDeck',
       message: 'You are about to clear all cards in the deck and make a new one. Are you sure?',
       accept: () => {
-        const deck: IDeck = { ...emptyDeck, id: uuid.v4() };
-        this.store.dispatch(setDeck({ deck }));
+        this.store.dispatch(createNewDeck({ reset: true }));
         this.messageService.add({
           severity: 'success',
           summary: 'Deck cleared!',

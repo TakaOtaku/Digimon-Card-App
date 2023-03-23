@@ -95,7 +95,6 @@ export class DeckCardComponent implements OnChanges, OnInit {
   @Input() public sideDeck? = false;
 
   @Output() public removeCard = new EventEmitter<boolean>();
-  @Output() public onChange = new EventEmitter<boolean>();
 
   completeCard: ICard = englishCards[0];
 

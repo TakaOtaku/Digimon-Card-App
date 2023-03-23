@@ -19,6 +19,8 @@ export const setPriceGuideCM = createAction(
 
 export const setDeck = createAction('[Set Deck] Set current Deck', props<{ deck: IDeck }>());
 
+export const createNewDeck = createAction('[Create Deck] Create a new Deck', props<{ reset: boolean }>());
+
 export const changeFilter = createAction('[Settings] Change Filter', props<{ filter: IFilter }>());
 
 export const changeSort = createAction('[Settings] Change Sort', props<{ sort: ISort }>());
