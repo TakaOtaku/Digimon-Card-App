@@ -24,6 +24,7 @@ import ST1 from './ST/ST1.json';
 import ST10 from './ST/ST10.json';
 import ST12 from './ST/ST12.json';
 import ST13 from './ST/ST13.json';
+import ST14 from './ST/ST14.json';
 import ST2 from './ST/ST2.json';
 import ST3 from './ST/ST3.json';
 import ST4 from './ST/ST4.json';
@@ -65,4 +66,5 @@ export const englishCards: ICard[] = [
   ...ST10,
   ...ST12,
   ...ST13,
+  ...ST14,
 ];
