@@ -56,7 +56,7 @@
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "-",
-    "digivolveEffect": "[Your Turn] [Once Per Turn] By trashing 1 blue card in your hand, trash the bottom digivolution card of 1 of your opponent's Digimon.",
+    "digivolveEffect": "[When Attacking] [Once Per Turn] By trashing 1 blue card in your hand, trash the bottom digivolution card of 1 of your opponent's Digimon.",
     "securityEffect": "-",
     "notes": "REBOOT BOOSTER RISING WIND [RB-01]",
     "color": "Blue",
