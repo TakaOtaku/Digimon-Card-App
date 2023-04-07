@@ -20,8 +20,7 @@ img {
 }
 
 .text-shadow {
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-  1px 1px 0 #000;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 p-inputNumber {
@@ -48,6 +47,6 @@ input::-webkit-inner-spin-button {
   margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 
-input[type='number'] {
+input[type="number"] {
   -moz-appearance: textfield; /* Firefox */
 }

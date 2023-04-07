@@ -16,7 +16,7 @@ body {
 }
 
 * {
-  font-family: Montserrat, -apple-system ,sans-serif;
+  font-family: Montserrat, -apple-system, sans-serif;
 }
 
 body {
@@ -88,18 +88,15 @@ body {
 }
 
 .text-shadow {
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .text-shadow-white {
-  text-shadow: -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white,
-    2px 2px 0 white;
+  text-shadow: -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white, 2px 2px 0 white;
 }
 
 .text-shadow-white-xs {
-  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
-  1px 1px 0 white;
+  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
 }
 
 .Red {
@@ -132,25 +129,25 @@ body {
 
 .raise:hover,
 .raise:focus {
-  box-shadow: .2em .5em .5em 0 gray;
+  box-shadow: 0.2em 0.5em 0.5em 0 gray;
   transform: translateY(-0.25em);
 }
 
 .raise-xs:hover,
 .raise-xs:focus {
-  box-shadow: .1em .25em .25em 0 gray;
+  box-shadow: 0.1em 0.25em 0.25em 0 gray;
   transform: translateY(-0.12em);
 }
 
 .Multi {
   background: linear-gradient(
-      90deg,
-      #ef1919 14%,
-      #19a0e3 28%,
-      #ffd619 42%,
-      #19b383 56%,
-      #191919 70%,
-      #8d6fdb 84%,
+    90deg,
+    #ef1919 14%,
+    #19a0e3 28%,
+    #ffd619 42%,
+    #19b383 56%,
+    #191919 70%,
+    #8d6fdb 84%,
     #ffffff 100%
   );
 }
@@ -197,15 +194,19 @@ digimon-multi-select {
 
 /* ===== ===== */
 
-.animate-scroll{
+.animate-scroll {
   display: inline-block;
-  color: #FFF;
+  color: #fff;
   padding-left: 100%;
   animation: move 25s linear infinite;
 }
 @keyframes move {
-  0%   { transform: translate(0, 0); }
-  100% { transform: translate(-100%, 0); }
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
 }
 
 /* ===== ===== */
