@@ -228,7 +228,7 @@
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
     "effect": "＜Jamming＞ (This Digimon can't be deleted in battles against Security Digimon.)",
-    "digivolveEffect": "[Your Turn] While you have 8 or more cards in your hand, this Digimon gains . (This Digimon checks 1 additional security card.)",
+    "digivolveEffect": "[Your Turn] While you have 8 or more cards in your hand, this Digimon gains ＜Security Attack +1＞. (This Digimon checks 1 additional security card.)",
     "securityEffect": "-",
     "notes": "▹Starter Deck, ULFORCEVEEDRAMON [ST-8]",
     "color": "Blue",
