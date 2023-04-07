@@ -1,6 +1,6 @@
 import { Location } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
@@ -37,8 +37,8 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
   filteredDecks: IDeck[];
   showUserStats$ = this.store.select(selectShowUserStats);
 
-  searchFilter = new FormControl('');
-  tagFilter = new FormControl([]);
+  searchFilter = new UntypedFormControl('');
+  tagFilter = new UntypedFormControl([]);
 
   editable = true;
 

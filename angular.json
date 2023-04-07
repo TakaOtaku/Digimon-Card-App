@@ -139,7 +139,6 @@
       }
     }
   },
-  "defaultProject": "digimon-card-game-collector",
   "cli": {
     "schematicCollections": ["@angular-eslint/schematics"]
   }

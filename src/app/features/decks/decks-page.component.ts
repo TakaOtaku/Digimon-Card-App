@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
@@ -119,12 +119,12 @@ export class DecksPageComponent implements OnInit, OnDestroy {
   decksToShow: IDeck[] | ITournamentDeck[] = [];
   selectedDeck: IDeck | ITournamentDeck = emptyDeck;
 
-  form = new FormGroup({
-    searchFilter: new FormControl(''),
-    tagFilter: new FormControl([]),
-    placementFilter: new FormControl(''),
-    formatFilter: new FormControl([]),
-    sizeFilter: new FormControl([]),
+  form = new UntypedFormGroup({
+    searchFilter: new UntypedFormControl(''),
+    tagFilter: new UntypedFormControl([]),
+    placementFilter: new UntypedFormControl(''),
+    formatFilter: new UntypedFormControl([]),
+    sizeFilter: new UntypedFormControl([]),
   });
 
   tags = TAGS;

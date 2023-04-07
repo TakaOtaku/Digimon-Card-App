@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 
@@ -39,12 +39,12 @@ export class BlogPageComponent implements OnInit {
   blog$: Observable<IBlogWithText>;
   edit = false;
 
-  form = new FormGroup({
-    title: new FormControl(''),
-    content: new FormControl(),
-    author: new FormControl(''),
-    date: new FormControl(new Date()),
-    category: new FormControl(''),
+  form = new UntypedFormGroup({
+    title: new UntypedFormControl(''),
+    content: new UntypedFormControl(),
+    author: new UntypedFormControl(''),
+    date: new UntypedFormControl(new Date()),
+    category: new UntypedFormControl(''),
   });
 
   constructor(

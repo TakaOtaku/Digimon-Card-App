@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 
 export interface MultiButtons {
   name: string;
@@ -31,7 +31,7 @@ export interface MultiButtons {
 export class MultiButtonsComponent implements OnInit {
   @Input() title = '';
   @Input() buttonArray: MultiButtons[];
-  @Input() filterFormControl: FormControl;
+  @Input() filterFormControl: UntypedFormControl;
   @Input() perRow: 2 | 3 | 4 | 5 | 6 | 7 | 8 | 10 = 3;
   @Output() clickEvent = new EventEmitter<any>();
 

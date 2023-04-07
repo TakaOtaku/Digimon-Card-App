@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, UntypedFormGroup } from '@angular/forms';
 import { TAGS } from '../../../../models';
 
 @Component({
@@ -68,7 +68,7 @@ import { TAGS } from '../../../../models';
   `,
 })
 export class DecksFilterComponent {
-  @Input() form: FormGroup;
+  @Input() form: UntypedFormGroup;
   @Input() mode = 'Community';
 
   tags = TAGS;

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { ICard, ICountCard } from '../../../../models';
 
 @Component({
@@ -56,15 +56,15 @@ export class CollectionStatsDialogComponent implements OnInit, OnChanges {
     },
   };
 
-  versionForm = new FormGroup({
-    normal: new FormControl(true),
-    aa: new FormControl(false),
-    stamped: new FormControl(false),
+  versionForm = new UntypedFormGroup({
+    normal: new UntypedFormControl(true),
+    aa: new UntypedFormControl(false),
+    stamped: new UntypedFormControl(false),
   });
 
-  languageForm = new FormGroup({
-    english: new FormControl(true),
-    japanese: new FormControl(false),
+  languageForm = new UntypedFormGroup({
+    english: new UntypedFormControl(true),
+    japanese: new UntypedFormControl(false),
   });
 
   constructor() {}

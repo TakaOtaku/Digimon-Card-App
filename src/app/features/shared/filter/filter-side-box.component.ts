@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { MessageService } from 'primeng/api';
 import { debounceTime, Subject, takeUntil } from 'rxjs';
@@ -335,27 +335,27 @@ import { emptyFilter } from '../../../store/reducers/digimon.reducers';
 export class FilterSideBoxComponent implements OnInit, OnDestroy {
   @Input() public showColors: boolean;
 
-  setFilter = new FormControl([]);
-  rarityFilter = new FormControl([]);
-  versionFilter = new FormControl([]);
-  keywordFilter = new FormControl([]);
-  formFilter = new FormControl([]);
-  attributeFilter = new FormControl([]);
-  typeFilter = new FormControl([]);
-  colorFilter = new FormControl([]);
-  cardTypeFilter = new FormControl([]);
-  illustratorFilter = new FormControl([]);
-  specialRequirementsFilter = new FormControl([]);
-  blockFilter = new FormControl([]);
-  restrictionsFilter = new FormControl([]);
-  sourceFilter = new FormControl([]);
-  levelFilter = new FormControl([]);
-  playCostFilter = new FormControl([]);
-  digivolutionFilter = new FormControl([]);
-  dpFilter = new FormControl([]);
-  cardCountFilter = new FormControl([]);
+  setFilter = new UntypedFormControl([]);
+  rarityFilter = new UntypedFormControl([]);
+  versionFilter = new UntypedFormControl([]);
+  keywordFilter = new UntypedFormControl([]);
+  formFilter = new UntypedFormControl([]);
+  attributeFilter = new UntypedFormControl([]);
+  typeFilter = new UntypedFormControl([]);
+  colorFilter = new UntypedFormControl([]);
+  cardTypeFilter = new UntypedFormControl([]);
+  illustratorFilter = new UntypedFormControl([]);
+  specialRequirementsFilter = new UntypedFormControl([]);
+  blockFilter = new UntypedFormControl([]);
+  restrictionsFilter = new UntypedFormControl([]);
+  sourceFilter = new UntypedFormControl([]);
+  levelFilter = new UntypedFormControl([]);
+  playCostFilter = new UntypedFormControl([]);
+  digivolutionFilter = new UntypedFormControl([]);
+  dpFilter = new UntypedFormControl([]);
+  cardCountFilter = new UntypedFormControl([]);
 
-  filterFormGroup: FormGroup = new FormGroup({
+  filterFormGroup: UntypedFormGroup = new UntypedFormGroup({
     setFilter: this.setFilter,
     rarityFilter: this.rarityFilter,
     versionFilter: this.versionFilter,

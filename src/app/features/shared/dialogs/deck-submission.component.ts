@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
@@ -118,18 +118,18 @@ export class DeckSubmissionComponent implements OnInit, OnChanges, OnDestroy {
   @Input() inputDeck: IDeck | null = null;
   @Output() onClose = new EventEmitter();
 
-  form = new FormGroup({
-    title: new FormControl('', [Validators.required]),
-    description: new FormControl(''),
-    deckList: new FormControl('', [Validators.required]),
-    cardImageId: new FormControl(''),
-    format: new FormControl(''),
-    placement: new FormControl(1, [Validators.required, Validators.min(1)]),
-    size: new FormControl(''),
-    country: new FormControl(''),
-    player: new FormControl('', [Validators.required]),
-    host: new FormControl('', [Validators.required]),
-    date: new FormControl(new Date()),
+  form = new UntypedFormGroup({
+    title: new UntypedFormControl('', [Validators.required]),
+    description: new UntypedFormControl(''),
+    deckList: new UntypedFormControl('', [Validators.required]),
+    cardImageId: new UntypedFormControl(''),
+    format: new UntypedFormControl(''),
+    placement: new UntypedFormControl(1, [Validators.required, Validators.min(1)]),
+    size: new UntypedFormControl(''),
+    country: new UntypedFormControl(''),
+    player: new UntypedFormControl('', [Validators.required]),
+    host: new UntypedFormControl('', [Validators.required]),
+    date: new UntypedFormControl(new Date()),
   });
 
   deck: IDeck | null;

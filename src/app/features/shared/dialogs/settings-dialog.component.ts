@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { saveAs } from 'file-saver';
 import { ConfirmationService, MessageService } from 'primeng/api';
@@ -388,7 +388,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
   deckDisplayTable = true;
 
   sortOrder = ['Color', 'Level'];
-  sortOrderFilter = new FormControl();
+  sortOrderFilter = new UntypedFormControl();
 
   private onDestroy$ = new Subject();
   constructor(

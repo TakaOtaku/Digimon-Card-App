@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { Subject, takeUntil } from 'rxjs';
 
 @Component({
@@ -20,7 +20,7 @@ export class RangeSliderComponent implements OnInit, OnDestroy {
   @Input() title: string = '';
   @Input() suffix?: string = '';
   @Input() reset: EventEmitter<void>;
-  @Input() filterFormControl: FormControl;
+  @Input() filterFormControl: UntypedFormControl;
 
   options = {};
 

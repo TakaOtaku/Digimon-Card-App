@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Subject, takeUntil } from 'rxjs';
 import { IFilter } from '../../../../models';
@@ -40,8 +40,8 @@ import { selectCollectionMode, selectFilter } from '../../../store/digimon.selec
 export class FilterAndSearchComponent implements OnInit, OnDestroy {
   display = false;
 
-  searchFilter = new FormControl('');
-  collectionMode = new FormControl(false);
+  searchFilter = new UntypedFormControl('');
+  collectionMode = new UntypedFormControl(false);
 
   private filter: IFilter;
   private onDestroy$ = new Subject();

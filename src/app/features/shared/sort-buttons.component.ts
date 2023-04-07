@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { filter, startWith } from 'rxjs';
 import { ISort, ISortElement } from '../../../models';
@@ -33,7 +33,7 @@ import { selectSort } from '../../store/digimon.selectors';
   `,
 })
 export class SortButtonsComponent {
-  sortForm = new FormControl({ name: 'ID', element: 'id' });
+  sortForm = new UntypedFormControl({ name: 'ID', element: 'id' });
   sort$ = this.store.select(selectSort).pipe(
     startWith({ name: 'ID', element: 'id' }),
     filter((newSort) => {

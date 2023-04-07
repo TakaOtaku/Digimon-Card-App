@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { TAGS } from '../../../models';
 
 @Component({
@@ -32,8 +32,8 @@ import { TAGS } from '../../../models';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DeckFilterComponent {
-  @Input() searchFilter: FormControl;
-  @Input() tagFilter: FormControl;
+  @Input() searchFilter: UntypedFormControl;
+  @Input() tagFilter: UntypedFormControl;
 
   tags = TAGS;
 }

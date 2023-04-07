@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
@@ -251,10 +251,10 @@ export class DeckDialogComponent implements OnInit, OnChanges {
 
   deckSubmissionDialog = false;
 
-  deckFormGroup = new FormGroup({
-    title: new FormControl(''),
-    description: new FormControl(''),
-    cardImage: new FormControl({ name: 'BT1-001 - Yokomon', value: 'BT1-001' }),
+  deckFormGroup = new UntypedFormGroup({
+    title: new UntypedFormControl(''),
+    description: new UntypedFormControl(''),
+    cardImage: new UntypedFormControl({ name: 'BT1-001 - Yokomon', value: 'BT1-001' }),
   });
 
   saveDisabled = true;
@@ -292,10 +292,10 @@ export class DeckDialogComponent implements OnInit, OnChanges {
 
     this.mainDeck = mapToDeckCards(this.deck.cards, this.allCards);
 
-    this.deckFormGroup = new FormGroup({
-      title: new FormControl(this.deck.title),
-      description: new FormControl(this.deck.description),
-      cardImage: new FormControl(this.getCardImage(this.deck.imageCardId)),
+    this.deckFormGroup = new UntypedFormGroup({
+      title: new UntypedFormControl(this.deck.title),
+      description: new UntypedFormControl(this.deck.description),
+      cardImage: new UntypedFormControl(this.getCardImage(this.deck.imageCardId)),
     });
 
     this.cardImageOptions = this.createImageOptions();

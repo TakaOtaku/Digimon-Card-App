@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { ADMINS, IUser } from '../../../../models';
@@ -82,7 +82,7 @@ import { AuthService } from '../../../service/auth.service';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   @Input() edit: boolean;
-  @Input() form: FormGroup;
+  @Input() form: UntypedFormGroup;
   @Input() authorid: string;
 
   @Output() editChanged = new EventEmitter<boolean>();
