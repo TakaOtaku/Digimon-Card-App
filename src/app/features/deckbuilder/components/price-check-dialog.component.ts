@@ -66,12 +66,12 @@ import { DeckBuilderViewModel } from '../../../store/digimon.selectors';
       <ng-template pTemplate="footer">
         <tr *ngIf="filteredProducts.length > 0; else noEntry">
           <td colspan="3">Totals</td>
-          <td>{{ totalProducts?.lowPrice | currency : 'EUR' }}</td>
-          <td>{{ totalProducts?.avgSellPrice | currency : 'EUR' }}</td>
-          <td>{{ totalProducts?.trendPrice | currency : 'EUR' }}</td>
-          <td>{{ totalProducts?.avg1 | currency : 'EUR' }}</td>
-          <td>{{ totalProducts?.avg7 | currency : 'EUR' }}</td>
-          <td>{{ totalProducts?.avg30 | currency : 'EUR' }}</td>
+          <td>{{ totalProducts.lowPrice | currency : 'EUR' }}</td>
+          <td>{{ totalProducts.avgSellPrice | currency : 'EUR' }}</td>
+          <td>{{ totalProducts.trendPrice | currency : 'EUR' }}</td>
+          <td>{{ totalProducts.avg1 | currency : 'EUR' }}</td>
+          <td>{{ totalProducts.avg7 | currency : 'EUR' }}</td>
+          <td>{{ totalProducts.avg30 | currency : 'EUR' }}</td>
           <td></td>
         </tr>
         <ng-template #noEntry>
