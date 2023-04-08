@@ -14559,6 +14559,36 @@
         "illustrator": ""
     },
     {
+        "id": "BT7-085_P2",
+        "name": "Takuya Kanbara",
+        "cardImage": "assets/images/cards/jap/BT7-085_P2.webp",
+        "cardType": "Tamer",
+        "dp": "-",
+        "playCost": "3",
+        "digivolveCost1": "-",
+        "digivolveCost2": "-",
+        "cardLv": "",
+        "form": "-",
+        "attribute": "-",
+        "type": "-",
+        "rarity": "R",
+        "cardNumber": "BT7-085",
+        "digiXros": "-",
+        "specialDigivolve": "-",
+        "dnaDigivolve": "-",
+        "effect": "[Security] Play this card without paying its memory cost.\n[Main] [Once Per Turn] You may place 5 cards with [Hybrid] in their traits from your trash under this Tamer in any order to digivolve it into an [EmperorGreymon] in your hand for its digivolution cost as if this Tamer is a level 5 red Digimon.",
+        "digivolveEffect": "[Your Turn] This Digimon gets +2000 DP. While this Digimon has 10000 DP or more, it gains ＜Security Attack +1＞. (This Digimon checks 1 additional security card.)",
+        "securityEffect": "-",
+        "notes": "D-Scanner Ver.Ultimate Red",
+        "color": "Red",
+        "version": "AA",
+        "block": [
+            "01"
+        ],
+        "restriction": "-",
+        "illustrator": ""
+    },
+    {
         "id": "BT7-086_P1",
         "name": "Tommy Himi",
         "cardImage": "assets/images/cards/jap/BT7-086_P1.webp",
@@ -14612,6 +14642,36 @@
         "notes": "▹booster NEXT ADVENTURE [BT-07]",
         "color": "Blue",
         "version": "Box-Topper",
+        "block": [
+            "01"
+        ],
+        "restriction": "-",
+        "illustrator": ""
+    },
+    {
+        "id": "BT7-087_P2",
+        "name": "Koji Minamoto",
+        "cardImage": "assets/images/cards/jap/BT7-087_P2.webp",
+        "cardType": "Tamer",
+        "dp": "-",
+        "playCost": "3",
+        "digivolveCost1": "-",
+        "digivolveCost2": "-",
+        "cardLv": "",
+        "form": "-",
+        "attribute": "-",
+        "type": "-",
+        "rarity": "R",
+        "cardNumber": "BT7-087",
+        "digiXros": "-",
+        "specialDigivolve": "-",
+        "dnaDigivolve": "-",
+        "effect": "[Security] Play this card without paying its memory cost.\n[Main] [Once Per Turn] You may place 5 cards with [Hybrid] in their traits from your hand under this Tamer in any order to digivolve it into a [MagnaGarurumon] in your hand for its digivolution cost as if this Tamer is a level 5 blue Digimon.",
+        "digivolveEffect": "[Your Turn] [Once Per Turn] When an effect adds a card to your hand, gain 1 memory. Then, this Digimon can't be blocked for the turn.",
+        "securityEffect": "-",
+        "notes": "D-Scanner Ver.Ultimate Blue",
+        "color": "Blue",
+        "version": "AA",
         "block": [
             "01"
         ],
