@@ -201,8 +201,8 @@ export class DigimonBackendService {
       newDeck = deck;
     }
 
-    if (!newDeck.cardImage || newDeck.cardImage === 'BT1-001') {
-      newDeck.cardImage = setDeckImage(newDeck).id;
+    if (!newDeck.imageCardId || newDeck.imageCardId === 'BT1-001') {
+      newDeck.imageCardId = setDeckImage(newDeck).id;
     }
 
     return this.http.put(`${baseUrl}decks/${deck.id}`, newDeck);

@@ -279,6 +279,7 @@ export function getCountFromDeckCards(deckCards: IDeckCard[] | ICountCard[]): nu
 export function setDeckImage(deck: IDeck): ICard {
   let deckCards = mapToDeckCards(deck.cards, setupDigimonCards(CARDSET.Both));
 
+  deckCards = deckCards.filter((card) => card.cardLv !== 'Lv.7');
   deckCards = deckCards.sort((a, b) => Number(b.cardLv.replace('Lv.', '')) - Number(a.cardLv.replace('Lv.', '')));
 
   return deckCards.length > 0 ? deckCards[0] : englishCards[0];
