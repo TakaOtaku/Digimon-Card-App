@@ -38,9 +38,16 @@ import { ImportDeckDialogComponent } from './dialogs/import-deck-dialog.componen
 import { ProxyPrintDialogComponent } from './dialogs/proxy-print-dialog.component';
 import { SettingsDialogComponent } from './dialogs/settings-dialog.component';
 import { ViewCardDialogComponent } from './dialogs/view-card-dialog.component';
+import { BlockFilterComponent } from './filter/block-filter.component';
+import { CardTypeFilterComponent } from './filter/card-type-filter.component';
+import { ColorFilterComponent } from './filter/color-filter.component';
 import { FilterAndSearchComponent } from './filter/filter-and-search.component';
 import { FilterButtonComponent } from './filter/filter-button.component';
 import { FilterSideBoxComponent } from './filter/filter-side-box.component';
+import { LanguageFilterComponent } from './filter/language-filter.component';
+import { RarityFilterComponent } from './filter/rarity-filter.component';
+import { SetFilterComponent } from './filter/set-filter.component';
+import { VersionFilterComponent } from './filter/version-filter.component';
 import { FullCardComponent } from './full-card.component';
 import { MultiButtonsComponent } from './multi-buttons.component';
 import { NavbarComponent } from './navbar.component';
@@ -83,6 +90,14 @@ import { LevelSpreadComponent } from './statistics/level-spread.component';
     LevelSpreadComponent,
     DeckSubmissionComponent,
     CardImageComponent,
+    LanguageFilterComponent,
+    ColorFilterComponent,
+    CardTypeFilterComponent,
+    CardTypeFilterComponent,
+    BlockFilterComponent,
+    VersionFilterComponent,
+    RarityFilterComponent,
+    SetFilterComponent,
   ],
   exports: [
     DeckContainerComponent,

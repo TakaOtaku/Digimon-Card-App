@@ -1,4 +1,4 @@
-const changelog = `Version 2.0 | 07.12.2022
+const oldChangelog = `Version 2.0 | 07.12.2022
 
 Hey everyone!
 

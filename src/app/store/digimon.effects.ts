@@ -1,23 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
-import { catchError, EMPTY, first, map, switchMap, tap } from 'rxjs';
+import { catchError, debounceTime, distinctUntilChanged, EMPTY, first, map, switchMap, tap } from 'rxjs';
 import { CARDSET } from '../../models/enums/card-set.enum';
-import { DeckColorMap } from '../../models/maps/color.map';
-import { setColors, setTags, setupDigimonCards } from '../functions/digimon-card.functions';
+import { setupDigimonCards } from '../functions/digimon-card.functions';
 import { filterCards } from '../functions/filter.functions';
 import { AuthService } from '../service/auth.service';
 import { DigimonBackendService } from '../service/digimon-backend.service';
-import { setDeck } from './digimon.actions';
 import * as DigimonActions from './digimon.actions';
-import {
-  selectCardSet,
-  selectChangeAdvancedSettings,
-  selectChangeFilterEffect,
-  selectDeck,
-  selectDeckChanges,
-  selectSave,
-} from './digimon.selectors';
+import { selectCardSet, selectChangeAdvancedSettings, selectChangeFilterEffect, selectSave } from './digimon.selectors';
 
 @Injectable()
 export class DigimonEffects {
@@ -62,11 +53,22 @@ export class DigimonEffects {
   changeFilteredCards$ = createEffect(
     () =>
       this.actions$.pipe(
-        ofType(DigimonActions.setDigimonCards, DigimonActions.changeFilter, DigimonActions.changeSort),
+        ofType(
+          DigimonActions.setDigimonCards,
+          DigimonActions.changeFilter,
+          DigimonActions.changeSearchFilter,
+          DigimonActions.changeColorFilter,
+          DigimonActions.changeCardTypeFilter,
+          DigimonActions.changeBlockFilter,
+          DigimonActions.changeRarityFilter,
+          DigimonActions.changeVersionFilter,
+          DigimonActions.changeSetFilter,
+          DigimonActions.changeSort
+        ),
         switchMap(() =>
           this.store
             .select(selectChangeFilterEffect)
-            .pipe(first())
+            .pipe(first(), debounceTime(300), distinctUntilChanged())
             .pipe(
               tap(({ cards, collection, filter, sort }) => {
                 if (!cards) return;

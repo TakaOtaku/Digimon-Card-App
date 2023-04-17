@@ -43,7 +43,7 @@ import { SearchComponent } from './components/search.component';
     ButtonModule,
     DragDropModule,
   ],
-  exports: [CollectionViewComponent, CardListComponent],
+  exports: [CollectionViewComponent, CardListComponent, SearchComponent],
   providers: [AuthService, DigimonBackendService],
 })
 export class CollectionModule {}

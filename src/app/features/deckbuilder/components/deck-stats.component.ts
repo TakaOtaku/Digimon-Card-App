@@ -1,9 +1,9 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { ICard, IDeck, IDeckCard } from '../../../../models';
+import { combineLatest, map, Observable } from 'rxjs';
+import { IDeckCard } from '../../../../models';
 import { mapToDeckCards } from '../../../functions/digimon-card.functions';
-import { ProductCM } from '../../../service/card-market.service';
-import { DeckBuilderViewModel } from '../../../store/digimon.selectors';
+import { selectAllCards, selectDeck } from '../../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-deck-stats',
@@ -18,13 +18,13 @@ import { DeckBuilderViewModel } from '../../../store/digimon.selectors';
         class="surface-card flex flex-row border-t-2 border-r-2 border-white bg-opacity-25 lg:mx-auto">
         <digimon-ddto-spread
           *ngIf="!collectionView"
-          [deck]="this.deckBuilderViewModel.deck"
-          [allCards]="deckBuilderViewModel.cards"
+          [deck]="this.deck$ | async"
+          [allCards]="(this.allCards$ | async) ?? []"
           [container]="true"
           class="ml-auto hidden border-r border-slate-200 px-5 lg:block"></digimon-ddto-spread>
 
         <digimon-chart-containers
-          [deck]="mainDeck"
+          [deck]="(mainDeck$ | async)!"
           class="max-w-[40rem]"
           [ngClass]="{
             'lg:ml-3 lg:mr-auto': collectionView
@@ -32,26 +32,25 @@ import { DeckBuilderViewModel } from '../../../store/digimon.selectors';
 
         <digimon-color-spread
           *ngIf="!collectionView"
-          [deck]="this.deckBuilderViewModel.deck"
-          [allCards]="deckBuilderViewModel.cards"
+          [deck]="this.deck$ | async"
+          [allCards]="(this.allCards$ | async) ?? []"
           [container]="true"
           class="mr-auto hidden border-l border-slate-200 px-5 lg:block"></digimon-color-spread>
       </div>
     </div>
   `,
 })
-export class DeckStatsComponent implements OnChanges {
+export class DeckStatsComponent {
   @Input() showStats = false;
   @Input() collectionView = false;
-  @Input() deckBuilderViewModel: DeckBuilderViewModel;
 
-  mainDeck: IDeckCard[];
+  deck$ = this.store.select(selectDeck);
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes['deckBuilderViewModel']) {
-      if (this.deckBuilderViewModel.deck) {
-        this.mainDeck = mapToDeckCards(this.deckBuilderViewModel.deck.cards, this.deckBuilderViewModel.cards);
-      }
-    }
-  }
+  allCards$ = this.store.select(selectAllCards);
+
+  mainDeck$: Observable<IDeckCard[]> = combineLatest(this.deck$, this.allCards$).pipe(
+    map((value) => mapToDeckCards(value[0].cards, value[1]))
+  );
+
+  constructor(private store: Store) {}
 }

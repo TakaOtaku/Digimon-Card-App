@@ -10,7 +10,6 @@ import { mapToDeckCards, setDeckImage, setupDigimonCards } from '../../../functi
 import { AuthService } from '../../../service/auth.service';
 import { DigimonBackendService } from '../../../service/digimon-backend.service';
 import { deleteDeck, importDeck, saveDeck, setDeck } from '../../../store/digimon.actions';
-import { selectAllCards } from '../../../store/digimon.selectors';
 
 export interface ICardImage {
   name: string;
@@ -49,24 +48,24 @@ export interface ICardImage {
       <div *ngIf="!editable; else edit" class="my-1 mx-auto grid grid-cols-3 gap-y-1">
         <label>Title</label>
         <div
-          [pTooltip]="deck?.title ?? ''"
+          [pTooltip]="deck.title"
           tooltipPosition="top"
           class="text-shadow col-span-2 mr-3 truncate text-3xl font-black text-[#e2e4e6]">
-          {{ deck?.title }}
+          {{ deck.title }}
         </div>
 
         <label>Description</label>
-        <div class="col-span-2">{{ deck?.description }}</div>
+        <div class="col-span-2">{{ deck.description }}</div>
 
         <label *ngIf="mode === 'Community'">User</label>
         <div *ngIf="mode === 'Community'" class="col-span-2">
-          {{ deck?.user }}
+          {{ deck.user }}
         </div>
 
         <label>Tags</label>
         <div class="col-span-2 flex flex-row align-middle">
           <div
-            *ngFor="let tag of deck?.tags"
+            *ngFor="let tag of deck.tags"
             class="surface-ground mr-0.5 h-8 border border-black px-1.5 text-xs font-bold leading-[35px]">
             {{ tag.name }}
           </div>
@@ -129,7 +128,7 @@ export interface ICardImage {
           <label>Tags</label>
           <div class="col-span-2 flex flex-row align-middle">
             <div
-              *ngFor="let tag of deck?.tags"
+              *ngFor="let tag of deck.tags"
               class="surface-ground mr-0.5 h-8 border border-black px-1.5 text-xs font-bold leading-[35px]">
               {{ tag.name }}
             </div>

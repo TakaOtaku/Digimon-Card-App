@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { UntypedFormControl } from '@angular/forms';
 
 export interface MultiButtons {
   name: string;
@@ -16,8 +15,8 @@ export interface MultiButtons {
           (click)="clickEvent.emit(button.value)"
           *ngFor="let button of buttonArray; let i = index"
           [ngClass]="{
-            'bg-[#e2e4e6] text-black': filterFormControl.value.includes(button.value),
-            'surface-card text-[#e2e4e6]': !filterFormControl.value.includes(button.value),
+            'bg-[#e2e4e6] text-black': value.includes(button.value),
+            'surface-card text-[#e2e4e6]': !value.includes(button.value),
             'rounded-l-sm': i === 0,
             'rounded-r-sm': i === buttonArray.length - 1
           }"
@@ -31,7 +30,7 @@ export interface MultiButtons {
 export class MultiButtonsComponent implements OnInit {
   @Input() title = '';
   @Input() buttonArray: MultiButtons[];
-  @Input() filterFormControl: UntypedFormControl;
+  @Input() value: any;
   @Input() perRow: 2 | 3 | 4 | 5 | 6 | 7 | 8 | 10 = 3;
   @Output() clickEvent = new EventEmitter<any>();
 

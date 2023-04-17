@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, ContentChild, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { first } from 'rxjs';
 import { ICard, IDeck, ITournamentDeck } from '../../../models';
@@ -22,7 +22,7 @@ import { selectAllCards } from '../../store/digimon.selectors';
       <div
         [ngStyle]="{ background: colorMap.get(deck.color.name) }"
         class="text-shadow-white-xs relative top-[10px] left-[-5px] w-24 border border-black bg-opacity-80 text-center text-xs font-bold uppercase">
-        <span *ngIf="mode !== 'Tournament'" class="mr-1">{{ deck.tags ? deck!.tags[0]?.name : null }}</span>
+        <span *ngIf="mode !== 'Tournament'" class="mr-1">{{ deck.tags ? deck!.tags[0].name : null }}</span>
         <span *ngIf="mode === 'Tournament'" class="mr-1">{{ getTournamentDeck(deck).format }}</span>
       </div>
 

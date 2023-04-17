@@ -22,6 +22,19 @@ export const setDeck = createAction('[Set Deck] Set current Deck', props<{ deck:
 export const createNewDeck = createAction('[Create Deck] Create a new Deck', props<{ reset: boolean }>());
 
 export const changeFilter = createAction('[Settings] Change Filter', props<{ filter: IFilter }>());
+export const changeSearchFilter = createAction('[Settings] Change Search Filter', props<{ search: string }>());
+export const changeColorFilter = createAction('[Settings] Change Color Filter', props<{ colorFilter: string[] }>());
+export const changeCardTypeFilter = createAction(
+  '[Settings] Change Card Type Filter',
+  props<{ cardTypeFilter: string[] }>()
+);
+export const changeBlockFilter = createAction('[Settings] Change Block Filter', props<{ blockFilter: string[] }>());
+export const changeRarityFilter = createAction('[Settings] Change Rarity Filter', props<{ rarityFilter: string[] }>());
+export const changeVersionFilter = createAction(
+  '[Settings] Change Version Filter',
+  props<{ versionFilter: string[] }>()
+);
+export const changeSetFilter = createAction('[Settings] Change Set Filter', props<{ setFilter: string[] }>());
 
 export const changeSort = createAction('[Settings] Change Sort', props<{ sort: ISort }>());
 

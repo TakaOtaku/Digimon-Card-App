@@ -1,20 +1,17 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { IFilter } from '../../../../models';
-import { changeFilter } from '../../../store/digimon.actions';
-import { selectFilter } from '../../../store/digimon.selectors';
+import { debounceTime, distinctUntilChanged, filter, Subject, tap } from 'rxjs';
+import { changeSearchFilter } from '../../../store/digimon.actions';
+import { selectSearchFilter } from '../../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-search',
   template: `
-    <span
-      *ngIf="filter$ | async as filter"
-      [ngStyle]="{ display: 'inline-flex' }"
-      class=" p-input-icon-left my-2 w-full px-2">
+    <span [ngStyle]="{ display: 'inline-flex' }" class=" p-input-icon-left my-2 w-full px-2">
       <i class="pi pi-search ml-1 h-3"></i>
       <input
-        (ngModelChange)="searchFilterChange($event, filter)"
-        [ngModel]="filter.searchFilter"
+        (ngModelChange)="search$.next($event)"
+        [ngModel]="filter$ | async"
         class="h-6 w-full text-xs"
         pInputText
         placeholder="Search"
@@ -24,12 +21,17 @@ import { selectFilter } from '../../../store/digimon.selectors';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchComponent {
-  filter$ = this.store.select(selectFilter);
+  search = '';
+  search$ = new Subject<string>();
+  filter$ = this.store.select(selectSearchFilter).pipe(filter((search) => search !== this.search));
 
-  constructor(private store: Store) {}
-
-  searchFilterChange(searchValue: string, currentFilter: IFilter) {
-    const filter: IFilter = { ...currentFilter, searchFilter: searchValue };
-    this.store.dispatch(changeFilter({ filter }));
+  constructor(private store: Store) {
+    this.search$
+      .pipe(
+        debounceTime(500),
+        distinctUntilChanged(),
+        tap((search) => (this.search = search))
+      )
+      .subscribe((search) => this.store.dispatch(changeSearchFilter({ search })));
   }
 }

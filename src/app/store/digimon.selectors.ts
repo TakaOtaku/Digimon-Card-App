@@ -9,6 +9,26 @@ export const selectDigimonState = createFeatureSelector<IDigimonState>('digimon'
 
 //region Digimon Selectors
 export const selectFilter = createSelector(selectDigimonState, (state: IDigimonState) => state.filter);
+export const selectSearchFilter = createSelector(
+  selectDigimonState,
+  (state: IDigimonState) => state.filter.searchFilter
+);
+export const selectColorFilter = createSelector(selectDigimonState, (state: IDigimonState) => state.filter.colorFilter);
+export const selectCardTypeFilter = createSelector(
+  selectDigimonState,
+  (state: IDigimonState) => state.filter.cardTypeFilter
+);
+export const selectBlockFilter = createSelector(selectDigimonState, (state: IDigimonState) => state.filter.blockFilter);
+export const selectRarityFilter = createSelector(
+  selectDigimonState,
+  (state: IDigimonState) => state.filter.rarityFilter
+);
+export const selectVersionFilter = createSelector(
+  selectDigimonState,
+  (state: IDigimonState) => state.filter.versionFilter
+);
+export const selectSetFilter = createSelector(selectDigimonState, (state: IDigimonState) => state.filter.setFilter);
+
 export const selectSort = createSelector(selectDigimonState, (state: IDigimonState) => state.sort);
 export const selectDeck = createSelector(selectDigimonState, (state: IDigimonState) => state.deck);
 export const selectMobileCollectionView = createSelector(

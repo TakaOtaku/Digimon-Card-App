@@ -1,7 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
 import { ISave } from '../../../models';
-import { ProfileViewModel } from '../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-user-stats',
@@ -14,35 +12,35 @@ import { ProfileViewModel } from '../../store/digimon.selectors';
           alt="{{ save.displayName ?? 'Username not Found' }}"
           src="{{ save.photoURL }}" />
         <div class="vertical-align my-auto text-center text-2xl font-bold">
-          {{ save?.displayName ?? 'User' }}
+          {{ save.displayName ?? 'User' }}
         </div>
       </div>
 
       <div class="hidden w-full flex-row justify-center md:flex">
         <div class="flex flex-col">
           <digimon-collection-circle
-            [collection]="save?.collection ?? []"
+            [collection]="save.collection"
             [type]="'BT'"
             class="mx-2"></digimon-collection-circle>
           <label class="text-center">BT</label>
         </div>
         <div class="flex flex-col">
           <digimon-collection-circle
-            [collection]="save?.collection ?? []"
+            [collection]="save.collection"
             [type]="'EX'"
             class="mx-2"></digimon-collection-circle>
           <label class="text-center">EX</label>
         </div>
         <div class="flex flex-col">
           <digimon-collection-circle
-            [collection]="save?.collection ?? []"
+            [collection]="save.collection"
             [type]="'ST'"
             class="mx-2"></digimon-collection-circle>
           <label class="text-center">ST</label>
         </div>
         <div class="flex flex-col">
           <digimon-collection-circle
-            [collection]="save?.collection ?? []"
+            [collection]="save.collection"
             [type]="'P-'"
             class="mx-2"></digimon-collection-circle>
           <label class="text-center">P</label>

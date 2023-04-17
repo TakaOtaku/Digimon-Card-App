@@ -1,7 +1,7 @@
 import { englishCards } from '../../assets/cardlists/eng/english';
 import preReleaseJSON from '../../assets/cardlists/eng/PreRelease.json';
 import { japaneseCards } from '../../assets/cardlists/jap/japanese';
-import { CARDSET, ICard, ICountCard, IDeck, IDeckCard, ITag, tagsList } from '../../models';
+import { CARDSET, ICard, ICountCard, IDeck, IDeckCard, ISelectItem, ITag, tagsList } from '../../models';
 import { ColorOrderMap, DeckColorMap } from '../../models/maps/color.map';
 
 export function setTags(deck: IDeck, allCards: ICard[]) {
@@ -282,4 +282,8 @@ export function setDeckImage(deck: IDeck): ICard {
   deckCards = deckCards.sort((a, b) => Number(b.cardLv.replace('Lv.', '')) - Number(a.cardLv.replace('Lv.', '')));
 
   return deckCards.length > 0 ? deckCards[0] : englishCards[0];
+}
+
+export function itemsAsSelectItem(array: string[]): ISelectItem[] {
+  return array.map((item) => ({ label: item, value: item } as ISelectItem));
 }

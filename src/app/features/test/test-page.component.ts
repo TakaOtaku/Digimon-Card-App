@@ -1,19 +1,16 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
-import { DataSnapshot } from '@angular/fire/compat/database/interfaces';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 // @ts-ignore
 import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 import { Store } from '@ngrx/store';
-import { concat, filter, first, map, Observable, of, Subject, switchMap, tap } from 'rxjs';
-import { ADMINS, IBlog, IBlogWithText, ICard, IDeck, ISave, ITournamentDeck } from '../../../models';
+import { concat, first, Observable, Subject, switchMap, tap } from 'rxjs';
+import { ADMINS, ICard, IDeck, ISave, ITournamentDeck } from '../../../models';
 import { setColors, setDeckImage, setTags } from '../../functions/digimon-card.functions';
 import { AuthService } from '../../service/auth.service';
 import { CardMarketService } from '../../service/card-market.service';
-import { CardTraderService } from '../../service/card-trader.service';
 import { DatabaseService } from '../../service/database.service';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
 import { selectAllCards } from '../../store/digimon.selectors';
-import { emptySettings } from '../../store/reducers/save.reducer';
 
 @Component({
   selector: 'digimon-test-page',
@@ -63,7 +60,6 @@ export class TestPageComponent implements OnInit, OnDestroy {
     public authService: AuthService,
     private databaseService: DatabaseService,
     private digimonBackendService: DigimonBackendService,
-    private cardTraderService: CardTraderService,
     private cardMarketService: CardMarketService
   ) {
     //cardTraderService.getCardPrices().subscribe((value) => {

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, HostListener, OnDestroy, OnInit } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
@@ -14,7 +14,6 @@ import { selectDeckBuilderViewModel, selectMobileCollectionView } from '../../st
   selector: 'digimon-deckbuilder-page',
   template: `
     <div
-      *ngIf="deckBuilderViewModel$ | async as deckBuilderViewModel"
       [ngClass]="{ hidden: mobileCollectionView$ | async }"
       class="relative inline-flex h-full w-full flex-row overflow-hidden lg:bg-gradient-to-b lg:from-[#17212f] lg:to-[#08528d]">
       <button
@@ -31,7 +30,6 @@ import { selectDeckBuilderViewModel, selectMobileCollectionView } from '../../st
         *ngIf="deckView"
         [ngClass]="{ 'w-5/12': collectionView, 'w-full': !collectionView }"
         [collectionView]="collectionView"
-        [deckBuilderViewModel]="deckBuilderViewModel"
         (hideStats)="hideStats = !hideStats"></digimon-deck-view>
 
       <digimon-collection-view
@@ -54,8 +52,7 @@ import { selectDeckBuilderViewModel, selectMobileCollectionView } from '../../st
         class="fixed z-[300]"
         [ngClass]="{ hidden: hideStats }"
         [collectionView]="collectionView"
-        [showStats]="showStats"
-        [deckBuilderViewModel]="deckBuilderViewModel"></digimon-deck-stats>
+        [showStats]="showStats"></digimon-deck-stats>
     </div>
 
     <div class="h-full w-full" [ngClass]="{ hidden: (mobileCollectionView$ | async) === false }">
@@ -138,6 +135,32 @@ export class DeckbuilderPageComponent implements OnInit, OnDestroy {
     this.showStats = !(this.collectionView && !this.deckView);
   }
 
+  @HostListener('window:resize', ['$event'])
+  private onResize() {
+    this.screenWidth = window.innerWidth;
+    if (this.screenWidth < 768) {
+      this.deckView = true;
+      this.collectionView = false;
+
+      this.showStats = true;
+
+      this.showAccordionButtons = false;
+    } else if (this.screenWidth >= 768 && this.screenWidth < 1024) {
+      this.deckView = false;
+      this.collectionView = true;
+
+      this.showStats = false;
+
+      this.showAccordionButtons = true;
+    } else {
+      this.deckView = true;
+      this.collectionView = true;
+
+      this.showStats = true;
+
+      this.showAccordionButtons = true;
+    }
+  }
   private makeGoogleFriendly() {
     this.title.setTitle('Digimon Card Game - Deck Builder');
 
@@ -201,32 +224,5 @@ export class DeckbuilderPageComponent implements OnInit, OnDestroy {
           })
         );
       });
-  }
-
-  @HostListener('window:resize', ['$event'])
-  private onResize() {
-    this.screenWidth = window.innerWidth;
-    if (this.screenWidth < 768) {
-      this.deckView = true;
-      this.collectionView = false;
-
-      this.showStats = true;
-
-      this.showAccordionButtons = false;
-    } else if (this.screenWidth >= 768 && this.screenWidth < 1024) {
-      this.deckView = false;
-      this.collectionView = true;
-
-      this.showStats = false;
-
-      this.showAccordionButtons = true;
-    } else {
-      this.deckView = true;
-      this.collectionView = true;
-
-      this.showStats = true;
-
-      this.showAccordionButtons = true;
-    }
   }
 }

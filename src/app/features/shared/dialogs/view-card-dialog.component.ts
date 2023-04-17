@@ -48,7 +48,7 @@ import {
             id="Digimon-Lv">
             <p
               class="font-bold leading-[5px] text-[#e2e4e6]"
-              [ngClass]="{ 'text-black': this.card?.color === 'Yellow' }">
+              [ngClass]="{ 'text-black': this.card.color === 'Yellow' }">
               {{ card.cardLv }}
             </p>
           </div>

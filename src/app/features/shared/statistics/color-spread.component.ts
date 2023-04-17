@@ -104,7 +104,7 @@ import { getCountFromDeckCards, mapToDeckCards } from '../../../functions/digimo
   `,
 })
 export class ColorSpreadComponent implements OnInit, OnChanges {
-  @Input() deck: IDeck;
+  @Input() deck: IDeck | null;
   @Input() allCards: ICard[];
   @Input() container = false;
 
@@ -121,6 +121,10 @@ export class ColorSpreadComponent implements OnInit, OnChanges {
   }
 
   getColorSpread() {
+    if (!this.deck) {
+      return;
+    }
+
     const cards = mapToDeckCards(this.deck.cards, this.allCards);
     const red = cards.filter((card) => card.color.split('/')[0] === 'Red');
     const blue = cards.filter((card) => card.color.split('/')[0] === 'Blue');

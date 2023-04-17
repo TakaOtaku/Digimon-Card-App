@@ -50,7 +50,7 @@ import { getCountFromDeckCards, mapToDeckCards } from '../../../functions/digimo
   `,
 })
 export class DdtoSpreadComponent implements OnInit, OnChanges {
-  @Input() deck: IDeck;
+  @Input() deck: IDeck | null;
   @Input() allCards: ICard[];
   @Input() container = false;
 
@@ -65,6 +65,9 @@ export class DdtoSpreadComponent implements OnInit, OnChanges {
   }
 
   getDDTO() {
+    if (!this.deck) {
+      return;
+    }
     const cards = mapToDeckCards(this.deck.cards, this.allCards);
     const digieggs = cards.filter((card) => card.cardType === 'Digi-Egg');
     const digimon = cards.filter((card) => card.cardType === 'Digimon');
