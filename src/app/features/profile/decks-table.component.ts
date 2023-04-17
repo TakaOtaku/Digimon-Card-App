@@ -48,7 +48,7 @@ import { selectAllCards } from '../../store/digimon.selectors';
         <tr class="cursor-pointer" (click)="onDeckClick.emit(deck)">
           <td>
             <div
-              class="surface-card relative h-16 w-56 w-full border border-black"
+              class="surface-card relative h-16 w-56 border border-black"
               defaultImage="assets/images/digimon-card-back.webp"
               [lazyLoad]="getCardImage(deck, allCards)"
               [ngStyle]="{
