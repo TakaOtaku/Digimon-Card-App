@@ -1,6 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { TooltipModule } from 'primeng/tooltip';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'digimon-products',
@@ -16,7 +19,7 @@ import { Router } from '@angular/router';
               tooltipPosition="top"
               [lazyLoad]="product.image"
               [alt]="product.name"
-              class="m-auto m-5 h-52 cursor-pointer"
+              class="m-5 m-auto h-52 cursor-pointer"
               defaultImage="assets/images/digimon-card-back.webp" />
           </a>
         </div>
@@ -29,7 +32,7 @@ import { Router } from '@angular/router';
               tooltipPosition="top"
               [lazyLoad]="product.image"
               [alt]="product.name"
-              class="m-auto m-5 h-52 cursor-pointer"
+              class="m-5 m-auto h-52 cursor-pointer"
               defaultImage="assets/images/digimon-card-back.webp" />
           </a>
         </div>
@@ -42,7 +45,7 @@ import { Router } from '@angular/router';
               tooltipPosition="top"
               [lazyLoad]="product.image"
               [alt]="product.name"
-              class="m-auto m-5 h-52 cursor-pointer"
+              class="m-5 m-auto h-52 cursor-pointer"
               defaultImage="assets/images/digimon-card-back.webp" />
           </a>
         </div>
@@ -50,6 +53,8 @@ import { Router } from '@angular/router';
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NgFor, TooltipModule, LazyLoadImageModule],
 })
 export class ProductsComponent {
   starter = [

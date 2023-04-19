@@ -12,6 +12,15 @@ import { DigimonBackendService } from '../../service/digimon-backend.service';
 import { importDeck } from '../../store/digimon.actions';
 import { selectAllCards, selectCommunityDecks, selectCommunityDeckSearch } from '../../store/digimon.selectors';
 import { emptyDeck } from '../../store/reducers/digimon.reducers';
+import { DeckStatisticsComponent } from './components/deck-statistics.component';
+import { DeckSubmissionComponent } from '../shared/dialogs/deck-submission.component';
+import { DeckDialogComponent } from '../shared/dialogs/deck-dialog.component';
+import { DialogModule } from 'primeng/dialog';
+import { PaginatorModule } from 'primeng/paginator';
+import { DeckContainerComponent } from '../shared/deck-container.component';
+import { NgFor } from '@angular/common';
+import { DecksFilterComponent } from './components/decks-filter.component';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'digimon-decks-page',
@@ -26,7 +35,7 @@ import { emptyDeck } from '../../store/reducers/digimon.reducers';
         <div class="lg:px-auto flex flex-col px-1 lg:flex-row">
           <button
             pButton
-            class="p-button-outlined mt-1 lg:mt-3 lg:mr-2"
+            class="p-button-outlined mt-1 lg:mr-2 lg:mt-3"
             icon="pi pi-arrow-right-arrow-left"
             type="button"
             [label]="getSwitchLabel()"
@@ -34,7 +43,7 @@ import { emptyDeck } from '../../store/reducers/digimon.reducers';
 
           <button
             pButton
-            class="p-button-outlined mt-1 lg:mt-3 lg:mr-2"
+            class="p-button-outlined mt-1 lg:mr-2 lg:mt-3"
             icon="pi pi-chart-line"
             type="button"
             label="Deck Statistics"
@@ -112,6 +121,19 @@ import { emptyDeck } from '../../store/reducers/digimon.reducers';
         [updateCards]="updateStatistics"></digimon-deck-statistics>
     </p-dialog>
   `,
+  standalone: true,
+  imports: [
+    ButtonModule,
+    DecksFilterComponent,
+    NgFor,
+    DeckContainerComponent,
+    PaginatorModule,
+    DialogModule,
+    DeckDialogComponent,
+    DeckSubmissionComponent,
+    DeckStatisticsComponent,
+  ],
+  providers: [MessageService],
 })
 export class DecksPageComponent implements OnInit, OnDestroy {
   mode: 'Community' | 'Tournament' = 'Community';

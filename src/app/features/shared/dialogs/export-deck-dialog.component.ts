@@ -6,6 +6,11 @@ import { ICard, IDeck } from '../../../../models';
 import { ColorsWithoutMulti } from '../../../../models/data/filter.data';
 import { compareIDs, formatId, mapToDeckCards } from '../../../functions/digimon-card.functions';
 import { selectAllCards } from '../../../store/digimon.selectors';
+import { ButtonModule } from 'primeng/button';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { NgIf, NgClass } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { SelectButtonModule } from 'primeng/selectbutton';
 
 @Component({
   selector: 'digimon-export-deck-dialog',
@@ -54,6 +59,8 @@ import { selectAllCards } from '../../../store/digimon.selectors';
     </div>
   `,
   styleUrls: ['./export-deck-dialog.component.scss'],
+  standalone: true,
+  imports: [SelectButtonModule, FormsModule, NgIf, InputTextareaModule, NgClass, ButtonModule],
 })
 export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
   @Input() show: boolean = false;

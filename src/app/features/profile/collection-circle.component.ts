@@ -4,11 +4,14 @@ import { first, Subject } from 'rxjs';
 import { ICard, ICountCard } from '../../../models';
 import { setupDigimonCards } from '../../functions/digimon-card.functions';
 import { selectSettings } from '../../store/digimon.selectors';
+import { ChartModule } from 'primeng/chart';
 
 @Component({
   selector: 'digimon-collection-circle',
   template: ` <p-chart type="doughnut" height="100" width="100" [data]="data" [options]="chartOptions"></p-chart> `,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [ChartModule],
 })
 export class CollectionCircleComponent implements OnInit, OnChanges, OnDestroy {
   @Input() type: 'BT' | 'EX' | 'ST' | 'P-';

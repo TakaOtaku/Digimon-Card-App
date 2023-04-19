@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { UntypedFormControl } from '@angular/forms';
+import { UntypedFormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { filter, startWith } from 'rxjs';
 import { ISort, ISortElement } from '../../../models';
 import { changeSort } from '../../store/digimon.actions';
 import { selectSort } from '../../store/digimon.selectors';
+import { DropdownModule } from 'primeng/dropdown';
+import { NgClass, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'digimon-sort-buttons',
@@ -13,7 +15,7 @@ import { selectSort } from '../../store/digimon.selectors';
       <button
         type="button"
         (click)="changeOrder()"
-        class="rounded-l-lg border border-gray-200 py-0.5 px-2 hover:backdrop-brightness-150 focus:z-10 focus:ring-2 focus:ring-blue-700">
+        class="rounded-l-lg border border-gray-200 px-2 py-0.5 hover:backdrop-brightness-150 focus:z-10 focus:ring-2 focus:ring-blue-700">
         <i
           [ngClass]="{
             'pi-sort-amount-down': order,
@@ -31,6 +33,8 @@ import { selectSort } from '../../store/digimon.selectors';
       </p-dropdown>
     </div>
   `,
+  standalone: true,
+  imports: [NgClass, DropdownModule, FormsModule, ReactiveFormsModule, AsyncPipe],
 })
 export class SortButtonsComponent {
   sortForm = new UntypedFormControl({ name: 'ID', element: 'id' });

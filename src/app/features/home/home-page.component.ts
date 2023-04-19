@@ -1,5 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
+import { TierlistComponent } from './components/tierlist.component';
+import { FAQComponent } from './components/faq.component';
+import { EventCalendarComponent } from './components/event-calendar.component';
+import { SiteLinksComponent } from './components/site-links.component';
+import { HomeIntroComponent } from './components/home-intro.component';
 
 @Component({
   selector: 'digimon-home-page',
@@ -30,6 +35,8 @@ import { Meta, Title } from '@angular/platform-browser';
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [HomeIntroComponent, SiteLinksComponent, EventCalendarComponent, FAQComponent, TierlistComponent],
 })
 export class HomePageComponent {
   constructor(private meta: Meta, private title: Title) {

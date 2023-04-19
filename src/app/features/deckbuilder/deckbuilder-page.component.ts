@@ -9,6 +9,12 @@ import { AuthService } from '../../service/auth.service';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
 import { setDeck } from '../../store/digimon.actions';
 import { selectDeckBuilderViewModel, selectMobileCollectionView } from '../../store/digimon.selectors';
+import { CardListComponent } from '../collection/components/card-list.component';
+import { FilterAndSearchComponent } from '../shared/filter/filter-and-search.component';
+import { DeckStatsComponent } from './components/deck-stats.component';
+import { CollectionViewComponent } from '../collection/components/collection-view.component';
+import { DeckViewComponent } from './components/deck-view.component';
+import { NgClass, NgIf, NgStyle, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'digimon-deckbuilder-page',
@@ -60,6 +66,18 @@ import { selectDeckBuilderViewModel, selectMobileCollectionView } from '../../st
       <digimon-card-list [showCount]="32"></digimon-card-list>
     </div>
   `,
+  standalone: true,
+  imports: [
+    NgClass,
+    NgIf,
+    NgStyle,
+    DeckViewComponent,
+    CollectionViewComponent,
+    DeckStatsComponent,
+    FilterAndSearchComponent,
+    CardListComponent,
+    AsyncPipe,
+  ],
 })
 export class DeckbuilderPageComponent implements OnInit, OnDestroy {
   //region Accordions

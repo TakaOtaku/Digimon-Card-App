@@ -23,5 +23,6 @@ import { Router } from '@angular/router';
     </a>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
 })
 export class HomeIntroComponent {}

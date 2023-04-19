@@ -11,6 +11,12 @@ import { DigimonBackendService } from '../../../service/digimon-backend.service'
 import { saveDeck } from '../../../store/digimon.actions';
 import { selectAllCards } from '../../../store/digimon.selectors';
 import { emptyDeck } from '../../../store/reducers/digimon.reducers';
+import { ButtonModule } from 'primeng/button';
+import { AutoCompleteModule } from 'primeng/autocomplete';
+import { InputTextModule } from 'primeng/inputtext';
+import { NgStyle } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { SelectButtonModule } from 'primeng/selectbutton';
 
 @Component({
   selector: 'digimon-change-accessorie-dialog',
@@ -56,6 +62,9 @@ import { emptyDeck } from '../../../store/reducers/digimon.reducers';
       </div>
     </div>
   `,
+  standalone: true,
+  imports: [SelectButtonModule, FormsModule, NgStyle, InputTextModule, AutoCompleteModule, ButtonModule],
+  providers: [MessageService],
 })
 export class ChangeAccessorieDialogComponent implements OnInit, OnChanges, OnDestroy {
   @Input() show: boolean = false;

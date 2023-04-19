@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { ICard, ICountCard } from '../../../../models';
+import { ChartModule } from 'primeng/chart';
 
 @Component({
   selector: 'digimon-collection-stats-dialog',
@@ -31,6 +32,8 @@ import { ICard, ICountCard } from '../../../../models';
 </div-->
 
     <p-chart [data]="collectionData" [options]="chartOptions" type="bar"></p-chart> `,
+  standalone: true,
+  imports: [ChartModule],
 })
 export class CollectionStatsDialogComponent implements OnInit, OnChanges {
   @Input() show: boolean = false;

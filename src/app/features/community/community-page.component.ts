@@ -10,6 +10,9 @@ import { AuthService } from '../../service/auth.service';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
 import { setBlogs } from '../../store/digimon.actions';
 import { selectBlogs } from '../../store/digimon.selectors';
+import { RippleModule } from 'primeng/ripple';
+import { ButtonModule } from 'primeng/button';
+import { NgIf, NgFor, AsyncPipe, DatePipe } from '@angular/common';
 
 interface IBlogs {
   allBlogs: IBlog[];
@@ -28,7 +31,7 @@ interface IBlogs {
           </h1>
           <button
             *ngIf="showWrite()"
-            class="p-button-outlined p-button-rounded mt-2 ml-auto mr-2"
+            class="p-button-outlined p-button-rounded ml-auto mr-2 mt-2"
             icon="pi pi-plus"
             pButton
             pRipple
@@ -142,6 +145,9 @@ interface IBlogs {
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NgIf, ButtonModule, RippleModule, NgFor, AsyncPipe, DatePipe],
+  providers: [MessageService],
 })
 export class CommunityPageComponent implements OnInit, OnDestroy {
   blogs$: Observable<IBlogs> = this.store.select(selectBlogs).pipe(

@@ -3,6 +3,8 @@ import { Store } from '@ngrx/store';
 import { VersionButtons } from '../../../../models';
 import { changeVersionFilter } from '../../../store/digimon.actions';
 import { selectVersionFilter } from '../../../store/digimon.selectors';
+import { MultiButtonsComponent } from '../multi-buttons.component';
+import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'digimon-version-filter',
@@ -15,6 +17,8 @@ import { selectVersionFilter } from '../../../store/digimon.selectors';
       [perRow]="3"
       title="Version"></digimon-multi-buttons>
   `,
+  standalone: true,
+  imports: [NgIf, MultiButtonsComponent, AsyncPipe],
 })
 export class VersionFilterComponent {
   versionFilter$ = this.store.select(selectVersionFilter);

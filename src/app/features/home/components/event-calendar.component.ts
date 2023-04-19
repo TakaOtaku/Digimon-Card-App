@@ -1,10 +1,19 @@
-import { DatePipe } from '@angular/common';
+import { DatePipe, NgIf, NgFor, NgStyle, NgClass, AsyncPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
 import { ADMINS, IUser } from '../../../../models';
 import { AuthService } from '../../../service/auth.service';
 import { DigimonBackendService } from '../../../service/digimon-backend.service';
+import { RippleModule } from 'primeng/ripple';
+import { ButtonModule } from 'primeng/button';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { CalendarModule } from 'primeng/calendar';
+import { StyleClassModule } from 'primeng/styleclass';
+import { InputTextModule } from 'primeng/inputtext';
+import { FormsModule } from '@angular/forms';
+import { DialogModule } from 'primeng/dialog';
+import { TooltipModule } from 'primeng/tooltip';
 
 export interface IEvent {
   uid: string;
@@ -38,7 +47,7 @@ export interface IEvent {
         <div
           *ngFor="let event of eventsInMonth"
           [ngStyle]="{ background: getThemeColor(event) }"
-          class="my-1 flex w-full flex-row border px-3 px-1">
+          class="my-1 flex w-full flex-row border px-1 px-3">
           <div class="text-shadow w-full truncate text-sm font-black text-[#e2e4e6]">
             {{ event.title }}
           </div>
@@ -118,7 +127,7 @@ export interface IEvent {
         <div class="flex flex-row">
           <button
             *ngIf="edit"
-            class="p-button mt-3 mr-4"
+            class="p-button mr-4 mt-3"
             icon="pi pi-trash"
             pButton
             pRipple
@@ -138,6 +147,23 @@ export interface IEvent {
     </p-dialog>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    NgIf,
+    NgFor,
+    NgStyle,
+    NgClass,
+    TooltipModule,
+    DialogModule,
+    FormsModule,
+    InputTextModule,
+    StyleClassModule,
+    CalendarModule,
+    RadioButtonModule,
+    ButtonModule,
+    RippleModule,
+    AsyncPipe,
+  ],
 })
 export class EventCalendarComponent implements OnInit, OnDestroy {
   MONTHS = [

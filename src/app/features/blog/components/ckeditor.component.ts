@@ -3,6 +3,9 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 // @ts-ignore
 import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 import { Base64Adapter } from 'src/app/functions/base64-adapter';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { NgIf } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'digimon-ckeditor',
@@ -24,6 +27,8 @@ import { Base64Adapter } from 'src/app/functions/base64-adapter';
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [FormsModule, ReactiveFormsModule, NgIf, CKEditorModule],
 })
 export class CKEditorComponent {
   @Input() edit = false;

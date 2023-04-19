@@ -9,6 +9,9 @@ import {
   removeCardFromDeck,
   removeCardFromSideDeck,
 } from '../../store/digimon.actions';
+import { ViewCardDialogComponent } from './dialogs/view-card-dialog.component';
+import { DialogModule } from 'primeng/dialog';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'digimon-deck-card',
@@ -85,6 +88,8 @@ import {
       <digimon-view-card-dialog (onClose)="viewCardDialog = false" [card]="viewCard"></digimon-view-card-dialog>
     </p-dialog>
   `,
+  standalone: true,
+  imports: [NgIf, DialogModule, ViewCardDialogComponent],
 })
 export class DeckCardComponent implements OnChanges, OnInit {
   @Input() public card: IDeckCard;

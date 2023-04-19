@@ -1,6 +1,8 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ICard, IDeck } from '../../../../models';
 import { getCountFromDeckCards, mapToDeckCards } from '../../../functions/digimon-card.functions';
+import { SingleContainerComponent } from '../single-container.component';
+import { NgIf, NgStyle } from '@angular/common';
 
 @Component({
   selector: 'digimon-ddto-spread',
@@ -48,6 +50,8 @@ import { getCountFromDeckCards, mapToDeckCards } from '../../../functions/digimo
       <digimon-single-container label="Option" [value]="ddto[3]" class="w-12"></digimon-single-container>
     </div>
   `,
+  standalone: true,
+  imports: [NgIf, NgStyle, SingleContainerComponent],
 })
 export class DdtoSpreadComponent implements OnInit, OnChanges {
   @Input() deck: IDeck | null;

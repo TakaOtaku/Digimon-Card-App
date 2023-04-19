@@ -4,6 +4,7 @@ import { map } from 'rxjs';
 import { CARDSET } from '../../../../models';
 import { changeCardSets } from '../../../store/digimon.actions';
 import { selectCardSet } from '../../../store/digimon.selectors';
+import { NgIf, NgClass, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'digimon-language-filter',
@@ -41,6 +42,8 @@ import { selectCardSet } from '../../../store/digimon.selectors';
       </div>
     </div>
   `,
+  standalone: true,
+  imports: [NgIf, NgClass, AsyncPipe],
 })
 export class LanguageFilterComponent {
   cardSet$ = this.store.select(selectCardSet).pipe(map((set) => (+set >>> 0 ? CARDSET.Both : set)));

@@ -6,6 +6,8 @@ import { ColorMap } from '../../../models/maps/color.map';
 import { AuthService } from '../../service/auth.service';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
 import { selectAllCards } from '../../store/digimon.selectors';
+import { NgStyle, NgIf, DatePipe } from '@angular/common';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 @Component({
   selector: 'digimon-deck-container',
@@ -21,16 +23,16 @@ import { selectAllCards } from '../../store/digimon.selectors';
       }">
       <div
         [ngStyle]="{ background: colorMap.get(deck.color.name) }"
-        class="text-shadow-white-xs relative top-[10px] left-[-5px] w-24 border border-black bg-opacity-80 text-center text-xs font-bold uppercase">
+        class="text-shadow-white-xs relative left-[-5px] top-[10px] w-24 border border-black bg-opacity-80 text-center text-xs font-bold uppercase">
         <span *ngIf="mode !== 'Tournament'" class="mr-1">{{ deck.tags ? deck!.tags[0].name : null }}</span>
         <span *ngIf="mode === 'Tournament'" class="mr-1">{{ getTournamentDeck(deck).format }}</span>
       </div>
 
-      <div *ngIf="isIllegal()" class="absolute top-[5px] right-[35px]">
+      <div *ngIf="isIllegal()" class="absolute right-[35px] top-[5px]">
         <span class="text-shadow text-4xl text-[#ef4444]">!</span>
       </div>
 
-      <div *ngIf="mode !== 'Basic'" class="absolute top-[5px] right-[5px]" (click)="changeLike($event)">
+      <div *ngIf="mode !== 'Basic'" class="absolute right-[5px] top-[5px]" (click)="changeLike($event)">
         <div class="relative">
           <i [ngStyle]="isLiked() ? { color: '#ef4444' } : { color: '#64748b' }" class="fa-solid fa-heart h-8 w-8"></i>
           <div
@@ -81,6 +83,8 @@ import { selectAllCards } from '../../store/digimon.selectors';
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [LazyLoadImageModule, NgStyle, NgIf, DatePipe],
 })
 export class DeckContainerComponent implements OnInit {
   @Input() deck: IDeck | ITournamentDeck;

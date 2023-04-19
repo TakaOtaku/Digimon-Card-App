@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { NgFor } from '@angular/common';
+import { AccordionModule } from 'primeng/accordion';
 
 @Component({
   selector: 'digimon-faq',
@@ -13,6 +15,8 @@ import { Router } from '@angular/router';
     </p-accordion>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [AccordionModule, NgFor],
 })
 export class FAQComponent {
   faqs = [

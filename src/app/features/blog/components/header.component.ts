@@ -1,9 +1,13 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { UntypedFormGroup } from '@angular/forms';
+import { UntypedFormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { ADMINS, IUser } from '../../../../models';
 import { AuthService } from '../../../service/auth.service';
+import { InputTextModule } from 'primeng/inputtext';
+import { RippleModule } from 'primeng/ripple';
+import { ButtonModule } from 'primeng/button';
+import { NgIf, NgClass, DatePipe } from '@angular/common';
 
 @Component({
   selector: 'digimon-header',
@@ -79,6 +83,8 @@ import { AuthService } from '../../../service/auth.service';
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [FormsModule, ReactiveFormsModule, NgIf, ButtonModule, RippleModule, InputTextModule, NgClass, DatePipe],
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   @Input() edit: boolean;

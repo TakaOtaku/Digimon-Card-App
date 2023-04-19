@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { NgClass, NgFor } from '@angular/common';
 
 export interface MultiButtons {
   name: string;
@@ -26,6 +27,8 @@ export interface MultiButtons {
       </div>
     </div>
   `,
+  standalone: true,
+  imports: [NgClass, NgFor],
 })
 export class MultiButtonsComponent implements OnInit {
   @Input() title = '';

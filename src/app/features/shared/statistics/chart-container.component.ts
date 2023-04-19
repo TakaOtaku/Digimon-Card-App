@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { NgFor, NgClass, NgStyle } from '@angular/common';
 
 @Component({
   selector: 'digimon-chart-container',
@@ -20,6 +21,8 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NgFor, NgClass, NgStyle],
 })
 export class ChartContainerComponent {
   @Input() public label: string;

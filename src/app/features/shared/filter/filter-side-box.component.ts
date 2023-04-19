@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit } from '@angular/core';
-import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { MessageService } from 'primeng/api';
 import { debounceTime, Subject, takeUntil } from 'rxjs';
@@ -18,6 +18,16 @@ import {
 import { changeFilter } from '../../../store/digimon.actions';
 import { selectFilter } from '../../../store/digimon.selectors';
 import { emptyFilter } from '../../../store/reducers/digimon.reducers';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { BlockFilterComponent } from './block-filter.component';
+import { VersionFilterComponent } from './version-filter.component';
+import { RarityFilterComponent } from './rarity-filter.component';
+import { RangeSliderComponent } from '../range-slider.component';
+import { SetFilterComponent } from './set-filter.component';
+import { CardTypeFilterComponent } from './card-type-filter.component';
+import { ColorFilterComponent } from './color-filter.component';
+import { LanguageFilterComponent } from './language-filter.component';
+import { SortButtonsComponent } from '../sort-buttons.component';
 
 @Component({
   selector: 'digimon-filter-side-box',
@@ -191,6 +201,22 @@ import { emptyFilter } from '../../../store/reducers/digimon.reducers';
     </div>
   `,
   styleUrls: ['filter-side-box.component.scss'],
+  standalone: true,
+  imports: [
+    SortButtonsComponent,
+    LanguageFilterComponent,
+    ColorFilterComponent,
+    CardTypeFilterComponent,
+    SetFilterComponent,
+    RangeSliderComponent,
+    RarityFilterComponent,
+    VersionFilterComponent,
+    BlockFilterComponent,
+    MultiSelectModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
+  providers: [MessageService],
 })
 export class FilterSideBoxComponent implements OnInit, OnDestroy {
   @Input() public showColors: boolean;

@@ -1,4 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { FilterSideBoxComponent } from '../../shared/filter/filter-side-box.component';
+import { PaginationCardListComponent } from './pagination-card-list.component';
 
 @Component({
   selector: 'digimon-collection-view',
@@ -15,6 +17,8 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [PaginationCardListComponent, FilterSideBoxComponent],
 })
 export class CollectionViewComponent {
   @Input() deckView: boolean;

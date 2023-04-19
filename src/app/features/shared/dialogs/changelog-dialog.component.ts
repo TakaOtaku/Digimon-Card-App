@@ -8,6 +8,11 @@ import { first } from 'rxjs';
 import { Base64Adapter } from '../../../functions/base64-adapter';
 import { AuthService } from '../../../service/auth.service';
 import { DatabaseService } from '../../../service/database.service';
+import { RippleModule } from 'primeng/ripple';
+import { ButtonModule } from 'primeng/button';
+import { FormsModule } from '@angular/forms';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { NgIf } from '@angular/common';
 import DataSnapshot = firebase.database.DataSnapshot;
 
 @Component({
@@ -37,6 +42,9 @@ import DataSnapshot = firebase.database.DataSnapshot;
       label="Save"
       (click)="save()"></button>
   `,
+  standalone: true,
+  imports: [NgIf, CKEditorModule, FormsModule, ButtonModule, RippleModule],
+  providers: [MessageService],
 })
 export class ChangelogDialogComponent implements OnInit {
   @Input() loadChangelog: EventEmitter<boolean>;

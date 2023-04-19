@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { UntypedFormControl } from '@angular/forms';
+import { UntypedFormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { saveAs } from 'file-saver';
-import { ConfirmationService, MessageService } from 'primeng/api';
+import { ConfirmationService, MessageService, SharedModule } from 'primeng/api';
 import { first, Subject, takeUntil } from 'rxjs';
 import { ICard, ICountCard, ISave } from '../../../../models';
 import { GroupedSets } from '../../../../models/data/filter.data';
@@ -10,6 +10,13 @@ import { DigimonBackendService } from '../../../service/digimon-backend.service'
 import { addToCollection, loadSave, setSave } from '../../../store/digimon.actions';
 import { selectAllCards, selectCollection, selectSave, selectSettings } from '../../../store/digimon.selectors';
 import { emptySettings } from '../../../store/reducers/save.reducer';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { InputSwitchModule } from 'primeng/inputswitch';
+import { NgClass, NgIf, NgStyle } from '@angular/common';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { ButtonModule } from 'primeng/button';
+import { SelectButtonModule } from 'primeng/selectbutton';
+import { InputNumberModule } from 'primeng/inputnumber';
 
 @Component({
   selector: 'digimon-settings-dialog',
@@ -21,7 +28,7 @@ import { emptySettings } from '../../../store/reducers/save.reducer';
       <li class="nav-item" role="presentation">
         <a
           href="#tabs-home"
-          class="active nav-link my-2 block border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 text-xs font-medium uppercase leading-tight hover:border-transparent hover:bg-gray-100 focus:border-transparent"
+          class="active nav-link my-2 block border-x-0 border-b-2 border-t-0 border-transparent px-6 py-3 text-xs font-medium uppercase leading-tight hover:border-transparent hover:bg-gray-100 focus:border-transparent"
           id="tabs-home-tab"
           data-bs-toggle="pill"
           data-bs-target="#tabs-home"
@@ -34,7 +41,7 @@ import { emptySettings } from '../../../store/reducers/save.reducer';
       <li class="nav-item" role="presentation">
         <a
           href="#tabs-profile"
-          class="nav-link my-2 block border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 text-xs font-medium uppercase leading-tight hover:border-transparent hover:bg-gray-100 focus:border-transparent"
+          class="nav-link my-2 block border-x-0 border-b-2 border-t-0 border-transparent px-6 py-3 text-xs font-medium uppercase leading-tight hover:border-transparent hover:bg-gray-100 focus:border-transparent"
           id="tabs-profile-tab"
           data-bs-toggle="pill"
           data-bs-target="#tabs-profile"
@@ -47,7 +54,7 @@ import { emptySettings } from '../../../store/reducers/save.reducer';
       <li class="nav-item" role="presentation">
         <a
           href="#tabs-messages"
-          class="nav-link my-2 block border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 text-xs font-medium uppercase leading-tight hover:border-transparent hover:bg-gray-100 focus:border-transparent"
+          class="nav-link my-2 block border-x-0 border-b-2 border-t-0 border-transparent px-6 py-3 text-xs font-medium uppercase leading-tight hover:border-transparent hover:bg-gray-100 focus:border-transparent"
           id="tabs-messages-tab"
           data-bs-toggle="pill"
           data-bs-target="#tabs-messages"
@@ -60,7 +67,7 @@ import { emptySettings } from '../../../store/reducers/save.reducer';
       <li class="nav-item" role="presentation">
         <a
           href="#tabs-contact"
-          class="nav-link my-2 block border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 text-xs font-medium uppercase leading-tight hover:border-transparent hover:bg-gray-100 focus:border-transparent"
+          class="nav-link my-2 block border-x-0 border-b-2 border-t-0 border-transparent px-6 py-3 text-xs font-medium uppercase leading-tight hover:border-transparent hover:bg-gray-100 focus:border-transparent"
           id="tabs-contact-tab"
           data-bs-toggle="pill"
           data-bs-target="#tabs-contact"
@@ -72,7 +79,7 @@ import { emptySettings } from '../../../store/reducers/save.reducer';
       </li>
     </ul>
     <div class="tab-content" id="tabs-tabContent">
-      <div class="tab-pane show active fade" id="tabs-home" role="tabpanel" aria-labelledby="tabs-home-tab">
+      <div class="tab-pane active show fade" id="tabs-home" role="tabpanel" aria-labelledby="tabs-home-tab">
         <div class="mx-auto grid w-full grid-cols-2  justify-end">
           <div class="flex flex-col">
             <h5 class="mt-5 text-center font-bold">Collection Goal:</h5>
@@ -351,6 +358,22 @@ import { emptySettings } from '../../../store/reducers/save.reducer';
       </div>
     </div>
   `,
+  standalone: true,
+  imports: [
+    InputNumberModule,
+    FormsModule,
+    SelectButtonModule,
+    ReactiveFormsModule,
+    ButtonModule,
+    MultiSelectModule,
+    SharedModule,
+    NgClass,
+    InputSwitchModule,
+    NgIf,
+    InputTextareaModule,
+    NgStyle,
+  ],
+  providers: [MessageService],
 })
 export class SettingsDialogComponent implements OnInit, OnDestroy {
   save = '';

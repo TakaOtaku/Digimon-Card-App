@@ -1,6 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { FormControl, UntypedFormGroup } from '@angular/forms';
+import { FormControl, UntypedFormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TAGS } from '../../../../models';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { StyleClassModule } from 'primeng/styleclass';
+import { InputTextModule } from 'primeng/inputtext';
+import { NgClass, NgIf } from '@angular/common';
 
 @Component({
   selector: 'digimon-decks-filter',
@@ -39,7 +43,7 @@ import { TAGS } from '../../../../models';
         defaultLabel="Tournament Size"
         display="chip"
         scrollHeight="250px"
-        class="col-span-2 my-1 mx-auto w-full max-w-[250px]"
+        class="col-span-2 mx-auto my-1 w-full max-w-[250px]"
         styleClass="w-full h-[34px] text-sm max-w-[250px]">
       </p-multiSelect>
       <p-multiSelect
@@ -50,7 +54,7 @@ import { TAGS } from '../../../../models';
         defaultLabel="Tournament Format"
         display="chip"
         scrollHeight="250px"
-        class="col-span-2 my-1 mx-auto w-full max-w-[250px]"
+        class="col-span-2 mx-auto my-1 w-full max-w-[250px]"
         styleClass="w-full h-[34px] text-sm max-w-[250px]">
       </p-multiSelect>
       <p-multiSelect
@@ -61,11 +65,13 @@ import { TAGS } from '../../../../models';
         defaultLabel="Select a Tag"
         display="chip"
         scrollHeight="250px"
-        class="col-span-2 my-1 mx-auto w-full max-w-[250px]"
+        class="col-span-2 mx-auto my-1 w-full max-w-[250px]"
         styleClass="w-full h-[34px] text-sm max-w-[250px]">
       </p-multiSelect>
     </div>
   `,
+  standalone: true,
+  imports: [FormsModule, ReactiveFormsModule, NgClass, InputTextModule, NgIf, StyleClassModule, MultiSelectModule],
 })
 export class DecksFilterComponent {
   @Input() form: UntypedFormGroup;

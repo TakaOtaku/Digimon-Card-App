@@ -1,6 +1,8 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ICard, IDeck } from '../../../../models';
 import { getCountFromDeckCards, mapToDeckCards } from '../../../functions/digimon-card.functions';
+import { SingleContainerComponent } from '../single-container.component';
+import { NgIf, NgStyle } from '@angular/common';
 
 @Component({
   selector: 'digimon-color-spread',
@@ -102,6 +104,8 @@ import { getCountFromDeckCards, mapToDeckCards } from '../../../functions/digimo
         [value]="colorSpread[6]"></digimon-single-container>
     </div>
   `,
+  standalone: true,
+  imports: [NgIf, NgStyle, SingleContainerComponent],
 })
 export class ColorSpreadComponent implements OnInit, OnChanges {
   @Input() deck: IDeck | null;

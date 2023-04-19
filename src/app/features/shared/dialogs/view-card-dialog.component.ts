@@ -21,6 +21,10 @@ import {
   selectDeck,
   selectFilteredCards,
 } from '../../../store/digimon.selectors';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { RippleModule } from 'primeng/ripple';
+import { ButtonModule } from 'primeng/button';
+import { NgStyle, NgIf, NgClass, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'digimon-view-card-dialog',
@@ -93,7 +97,7 @@ import {
             [lazyLoad]="this.png"
             alt="{{ imageAlt }}"
             defaultImage="assets/images/digimon-card-back.webp"
-            class="my-5 mx-auto max-w-[15rem] md:my-0 md:max-w-full" />
+            class="mx-auto my-5 max-w-[15rem] md:my-0 md:max-w-full" />
         </div>
         <div class="md:max-w-1/2 w-full self-center md:w-1/2 md:pl-2">
           <div
@@ -256,6 +260,8 @@ import {
       </div>
     </div>
   `,
+  standalone: true,
+  imports: [NgStyle, NgIf, NgClass, ButtonModule, RippleModule, LazyLoadImageModule, AsyncPipe],
 })
 export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
   @Input() show: boolean = false;

@@ -1,4 +1,4 @@
-import { Location } from '@angular/common';
+import { Location, NgIf, AsyncPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { UntypedFormControl } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
@@ -9,6 +9,9 @@ import { IDeck, ISave } from '../../../models';
 import { AuthService } from '../../service/auth.service';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
 import { selectDecks, selectSave, selectShowUserStats } from '../../store/digimon.selectors';
+import { DecksComponent } from './decks.component';
+import { DeckFilterComponent } from './deck-filter.component';
+import { UserStatsComponent } from './user-stats.component';
 
 @Component({
   selector: 'digimon-profile-page',
@@ -30,6 +33,8 @@ import { selectDecks, selectSave, selectShowUserStats } from '../../store/digimo
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NgIf, UserStatsComponent, DeckFilterComponent, DecksComponent, AsyncPipe],
 })
 export class ProfilePageComponent implements OnInit, OnDestroy {
   save$: Observable<ISave | null>;

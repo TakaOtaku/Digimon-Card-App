@@ -6,6 +6,12 @@ import { ICard } from '../../../models';
 import { DRAG } from '../../../models/enums/drag.enum';
 import { addCardToDeck, changeCardCount, setDraggedCard } from '../../store/digimon.actions';
 import { selectDeck, selectSettings } from '../../store/digimon.selectors';
+import { ViewCardDialogComponent } from './dialogs/view-card-dialog.component';
+import { DialogModule } from 'primeng/dialog';
+import { FormsModule } from '@angular/forms';
+import { NgIf, NgClass, AsyncPipe } from '@angular/common';
+import { CardImageComponent } from './card-image.component';
+import { DragDropModule } from 'primeng/dragdrop';
 
 @Component({
   selector: 'digimon-full-card',
@@ -71,6 +77,17 @@ import { selectDeck, selectSettings } from '../../store/digimon.selectors';
     </p-dialog>
   `,
   styleUrls: ['./full-card.component.scss'],
+  standalone: true,
+  imports: [
+    DragDropModule,
+    CardImageComponent,
+    NgIf,
+    NgClass,
+    FormsModule,
+    DialogModule,
+    ViewCardDialogComponent,
+    AsyncPipe,
+  ],
 })
 export class FullCardComponent implements OnInit, OnDestroy {
   @Input() card: ICard = englishCards[0];

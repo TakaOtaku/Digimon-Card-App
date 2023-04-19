@@ -3,6 +3,11 @@ import { BehaviorSubject, filter, Subject, takeUntil } from 'rxjs';
 import { ICountCard } from '../../../../models';
 import { ProductCM, ProductCMWithCount } from '../../../service/card-market.service';
 import { DeckBuilderViewModel } from '../../../store/digimon.selectors';
+import { SharedModule } from 'primeng/api';
+import { TableModule } from 'primeng/table';
+import { NgIf, NgFor, CurrencyPipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { SelectButtonModule } from 'primeng/selectbutton';
 
 @Component({
   selector: 'digimon-price-check-dialog',
@@ -102,6 +107,8 @@ import { DeckBuilderViewModel } from '../../../store/digimon.selectors';
       }
     `,
   ],
+  standalone: true,
+  imports: [SelectButtonModule, FormsModule, NgIf, NgFor, TableModule, SharedModule, CurrencyPipe],
 })
 export class PriceCheckDialogComponent implements OnInit, OnDestroy {
   @Input() deckBuilderViewModel: DeckBuilderViewModel;

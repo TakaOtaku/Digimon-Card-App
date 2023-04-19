@@ -7,6 +7,10 @@ import { setColors, setTags } from '../../../functions/digimon-card.functions';
 import { stringToDeck } from '../../../functions/parse-deck';
 import { selectAllCards } from '../../../store/digimon.selectors';
 import { importDeck, setDeck } from '../../../store/digimon.actions';
+import { ButtonModule } from 'primeng/button';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'digimon-import-deck-dialog',
@@ -33,6 +37,9 @@ import { importDeck, setDeck } from '../../../store/digimon.actions';
       <button pButton (click)="importDeck(allCards)" style="margin-left: 5px">Import</button>
     </div>
   `,
+  standalone: true,
+  imports: [FormsModule, InputTextareaModule, NgIf, ButtonModule, AsyncPipe],
+  providers: [MessageService],
 })
 export class ImportDeckDialogComponent implements OnDestroy {
   @Input() show: boolean = false;

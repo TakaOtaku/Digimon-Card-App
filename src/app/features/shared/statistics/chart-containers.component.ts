@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { IDeckCard } from '../../../../models';
+import { ChartContainerComponent } from './chart-container.component';
 
 @Component({
   selector: 'digimon-chart-containers',
@@ -15,6 +16,8 @@ import { IDeckCard } from '../../../../models';
       <digimon-chart-container label="OP" [fill]="options"></digimon-chart-container>
     </div>
   `,
+  standalone: true,
+  imports: [ChartContainerComponent],
 })
 export class ChartContainersComponent implements OnInit, OnChanges {
   @Input() public deck: IDeckCard[];

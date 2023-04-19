@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { changeColorFilter } from '../../../store/digimon.actions';
 import { selectColorFilter } from '../../../store/digimon.selectors';
+import { NgIf, NgClass, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'digimon-color-filter',
@@ -68,6 +69,8 @@ import { selectColorFilter } from '../../../store/digimon.selectors';
       </div>
     </div>
   `,
+  standalone: true,
+  imports: [NgIf, NgClass, AsyncPipe],
 })
 export class ColorFilterComponent {
   colorFilter$ = this.store.select(selectColorFilter);

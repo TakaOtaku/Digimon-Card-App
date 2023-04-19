@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ICard, IDeck } from '../../../../models';
 import { getCountFromDeckCards, mapToDeckCards } from '../../../functions/digimon-card.functions';
+import { NgStyle } from '@angular/common';
 
 @Component({
   selector: 'digimon-level-spread',
@@ -57,6 +58,8 @@ import { getCountFromDeckCards, mapToDeckCards } from '../../../functions/digimo
       <h3 class="h-1/2 text-center text-xs">Lv.7</h3>
     </div>
   `,
+  standalone: true,
+  imports: [NgStyle],
 })
 export class LevelSpreadComponent implements OnInit {
   @Input() deck: IDeck;

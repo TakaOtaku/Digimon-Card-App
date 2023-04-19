@@ -1,5 +1,9 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { ISave } from '../../../models';
+import { CollectionPriceCheckDialogComponent } from './components/collection-price-check-dialog.component';
+import { DialogModule } from 'primeng/dialog';
+import { CollectionCircleComponent } from './collection-circle.component';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'digimon-user-stats',
@@ -66,6 +70,8 @@ import { ISave } from '../../../models';
     </p-dialog>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NgIf, CollectionCircleComponent, DialogModule, CollectionPriceCheckDialogComponent],
 })
 export class UserStatsComponent {
   @Input() save: ISave;

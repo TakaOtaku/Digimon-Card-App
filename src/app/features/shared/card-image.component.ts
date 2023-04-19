@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { englishCards } from '../../../assets/cardlists/eng/english';
 import { ICard } from '../../../models';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { NgIf, NgClass, NgStyle } from '@angular/common';
 
 @Component({
   selector: 'digimon-card-image',
@@ -34,6 +36,8 @@ import { ICard } from '../../../models';
       defaultImage="assets/images/digimon-card-back.webp" />
   `,
   styleUrls: ['./card-image.component.scss'],
+  standalone: true,
+  imports: [NgIf, LazyLoadImageModule, NgClass, NgStyle],
 })
 export class CardImageComponent {
   @Input() card: ICard = englishCards[0];

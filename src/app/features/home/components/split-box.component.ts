@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { NgStyle } from '@angular/common';
 
 @Component({
   selector: 'digimon-split-box',
@@ -28,6 +29,8 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NgStyle],
 })
 export class SplitBoxComponent {
   @Input() public image: string;

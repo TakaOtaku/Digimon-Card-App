@@ -4,6 +4,11 @@ import { Subject, takeUntil, tap } from 'rxjs';
 import { englishCards } from '../../../../assets/cardlists/eng/english';
 import { ICard, ICountCard } from '../../../../models';
 import { selectCollection, selectCollectionMode, selectFilteredCards } from '../../../store/digimon.selectors';
+import { ViewCardDialogComponent } from '../../shared/dialogs/view-card-dialog.component';
+import { DialogModule } from 'primeng/dialog';
+import { ButtonModule } from 'primeng/button';
+import { FullCardComponent } from '../../shared/full-card.component';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'digimon-card-list',
@@ -30,7 +35,7 @@ import { selectCollection, selectCollectionMode, selectFilteredCards } from '../
         pButton
         label="Show more..."
         (click)="showMore()"
-        class="p-button-outlined surface-ground min-w-auto mt-2 mb-6 h-8 w-full p-2 text-xs font-semibold text-[#e2e4e6]"></button>
+        class="p-button-outlined surface-ground min-w-auto mb-6 mt-2 h-8 w-full p-2 text-xs font-semibold text-[#e2e4e6]"></button>
     </div>
 
     <p-dialog
@@ -45,6 +50,8 @@ import { selectCollection, selectCollectionMode, selectFilteredCards } from '../
       <digimon-view-card-dialog (onClose)="viewCardDialog = false" [card]="card"></digimon-view-card-dialog>
     </p-dialog>
   `,
+  standalone: true,
+  imports: [NgIf, NgFor, FullCardComponent, ButtonModule, DialogModule, ViewCardDialogComponent, AsyncPipe],
 })
 export class CardListComponent implements OnInit, OnDestroy {
   @Input() public showCount: number;

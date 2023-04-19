@@ -3,6 +3,8 @@ import { Store } from '@ngrx/store';
 import { RarityButtons } from '../../../../models';
 import { changeRarityFilter } from '../../../store/digimon.actions';
 import { selectRarityFilter } from '../../../store/digimon.selectors';
+import { MultiButtonsComponent } from '../multi-buttons.component';
+import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'digimon-rarity-filter',
@@ -15,6 +17,8 @@ import { selectRarityFilter } from '../../../store/digimon.selectors';
       [perRow]="6"
       title="Rarity"></digimon-multi-buttons>
   `,
+  standalone: true,
+  imports: [NgIf, MultiButtonsComponent, AsyncPipe],
 })
 export class RarityFilterComponent {
   rarityFilter$ = this.store.select(selectRarityFilter);

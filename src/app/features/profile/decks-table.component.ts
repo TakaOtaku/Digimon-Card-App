@@ -4,6 +4,10 @@ import { ICard, IDeck } from '../../../models';
 import { setDeckImage } from '../../functions/digimon-card.functions';
 import { saveDeck } from '../../store/digimon.actions';
 import { selectAllCards } from '../../store/digimon.selectors';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { SharedModule } from 'primeng/api';
+import { TableModule } from 'primeng/table';
+import { NgIf, NgClass, NgStyle, NgFor, AsyncPipe, DatePipe } from '@angular/common';
 
 @Component({
   selector: 'digimon-decks-table',
@@ -81,6 +85,8 @@ import { selectAllCards } from '../../store/digimon.selectors';
       }
     `,
   ],
+  standalone: true,
+  imports: [NgIf, TableModule, SharedModule, NgClass, LazyLoadImageModule, NgStyle, NgFor, AsyncPipe, DatePipe],
 })
 export class DecksTableComponent {
   @Input() decks: IDeck[];

@@ -3,6 +3,8 @@ import { Store } from '@ngrx/store';
 import { CardTypeButtons } from '../../../../models';
 import { changeCardTypeFilter } from '../../../store/digimon.actions';
 import { selectCardTypeFilter } from '../../../store/digimon.selectors';
+import { MultiButtonsComponent } from '../multi-buttons.component';
+import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'digimon-card-type-filter',
@@ -15,6 +17,8 @@ import { selectCardTypeFilter } from '../../../store/digimon.selectors';
       [perRow]="4"
       title="Card-Types"></digimon-multi-buttons>
   `,
+  standalone: true,
+  imports: [NgIf, MultiButtonsComponent, AsyncPipe],
 })
 export class CardTypeFilterComponent {
   cardTypeFilter$ = this.store.select(selectCardTypeFilter);

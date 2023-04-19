@@ -11,6 +11,9 @@ import { CardMarketService } from '../../service/card-market.service';
 import { DatabaseService } from '../../service/database.service';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
 import { selectAllCards } from '../../store/digimon.selectors';
+import { FormsModule } from '@angular/forms';
+import { DialogModule } from 'primeng/dialog';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'digimon-test-page',
@@ -46,6 +49,8 @@ import { selectAllCards } from '../../store/digimon.selectors';
       <button (click)="updateFirstObject()">Save and Next</button>
     </p-dialog>
   `,
+  standalone: true,
+  imports: [NgIf, DialogModule, FormsModule],
 })
 export class TestPageComponent implements OnInit, OnDestroy {
   updateIDDialog = false;

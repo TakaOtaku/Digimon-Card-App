@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, Input, OnDestroy, OnInit } from '@a
 import { Subject, takeUntil } from 'rxjs';
 import { ICard, IDeck, IDeckCard } from '../../../../models';
 import { getCountFromDeckCards, mapToDeckCards } from '../../../functions/digimon-card.functions';
+import { NgFor, SlicePipe } from '@angular/common';
 
 @Component({
   selector: 'digimon-deck-statistics',
@@ -196,6 +197,8 @@ import { getCountFromDeckCards, mapToDeckCards } from '../../../functions/digimo
       </div>
     </div>
   `,
+  standalone: true,
+  imports: [NgFor, SlicePipe],
 })
 export class DeckStatisticsComponent implements OnInit, OnDestroy {
   @Input() allCards: ICard[];

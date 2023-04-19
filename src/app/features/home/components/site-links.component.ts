@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { SplitBoxComponent } from './split-box.component';
 
 @Component({
   selector: 'digimon-site-links',
@@ -39,6 +40,8 @@ import { Router } from '@angular/router';
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [SplitBoxComponent],
 })
 export class SiteLinksComponent {
   constructor(public router: Router) {}

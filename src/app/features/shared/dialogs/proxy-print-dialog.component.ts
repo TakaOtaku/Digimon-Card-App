@@ -4,6 +4,7 @@ import { Subject, takeUntil } from 'rxjs';
 import { ICard, IDeck } from '../../../../models';
 import { compareIDs } from '../../../functions/digimon-card.functions';
 import { selectAllCards } from '../../../store/digimon.selectors';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'digimon-proxy-print-dialog',
@@ -16,6 +17,8 @@ import { selectAllCards } from '../../../store/digimon.selectors';
       <button pButton class="ml-5" (click)="downloadImage()">Download Image</button>
     </div>
   `,
+  standalone: true,
+  imports: [ButtonModule],
 })
 export class ProxyPrintDialogComponent implements OnInit, OnDestroy {
   @Input() show: boolean = false;

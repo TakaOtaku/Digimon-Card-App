@@ -3,6 +3,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'obscenity',
+  standalone: true,
 })
 export class ObscenityPipe implements PipeTransform {
   public readonly obscenities = require('badwords-list');

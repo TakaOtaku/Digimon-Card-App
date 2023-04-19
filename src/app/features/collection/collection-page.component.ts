@@ -1,5 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
+import { CardListComponent } from './components/card-list.component';
+import { FilterAndSearchComponent } from '../shared/filter/filter-and-search.component';
+import { CollectionViewComponent } from './components/collection-view.component';
 
 @Component({
   selector: 'digimon-collection-page',
@@ -16,6 +19,8 @@ import { Meta, Title } from '@angular/platform-browser';
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [CollectionViewComponent, FilterAndSearchComponent, CardListComponent],
 })
 export class CollectionPageComponent implements OnInit {
   constructor(private meta: Meta, private title: Title) {}

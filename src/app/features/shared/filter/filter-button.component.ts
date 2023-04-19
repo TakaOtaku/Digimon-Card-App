@@ -13,6 +13,7 @@ import { selectMobileCollectionView } from '../../../store/digimon.selectors';
       Card-List
     </button>
   `,
+  standalone: true,
 })
 export class FilterButtonComponent implements OnInit, OnDestroy {
   mobileCollectionView = false;

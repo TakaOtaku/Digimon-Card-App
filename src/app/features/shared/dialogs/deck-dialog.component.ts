@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
-import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
@@ -10,6 +10,19 @@ import { mapToDeckCards, setDeckImage, setupDigimonCards } from '../../../functi
 import { AuthService } from '../../../service/auth.service';
 import { DigimonBackendService } from '../../../service/digimon-backend.service';
 import { deleteDeck, importDeck, saveDeck, setDeck } from '../../../store/digimon.actions';
+import { DeckSubmissionComponent } from './deck-submission.component';
+import { ExportDeckDialogComponent } from './export-deck-dialog.component';
+import { DialogModule } from 'primeng/dialog';
+import { ButtonModule } from 'primeng/button';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { DropdownModule } from 'primeng/dropdown';
+import { InputTextModule } from 'primeng/inputtext';
+import { TooltipModule } from 'primeng/tooltip';
+import { ColorSpreadComponent } from '../statistics/color-spread.component';
+import { ChartContainersComponent } from '../statistics/chart-containers.component';
+import { DdtoSpreadComponent } from '../statistics/ddto-spread.component';
+import { DeckCardComponent } from '../deck-card.component';
+import { NgFor, NgIf } from '@angular/common';
 
 export interface ICardImage {
   name: string;
@@ -29,7 +42,7 @@ export interface ICardImage {
           [cards]="allCards"></digimon-deck-card>
       </div>
 
-      <div class="surface-card my-1 mx-auto flex max-h-[200px] w-full flex-row border border-white">
+      <div class="surface-card mx-auto my-1 flex max-h-[200px] w-full flex-row border border-white">
         <digimon-ddto-spread
           [deck]="deck"
           [allCards]="allCards"
@@ -45,7 +58,7 @@ export interface ICardImage {
           class="mr-auto hidden border-l border-slate-200 px-5 lg:block"></digimon-color-spread>
       </div>
 
-      <div *ngIf="!editable; else edit" class="my-1 mx-auto grid grid-cols-3 gap-y-1">
+      <div *ngIf="!editable; else edit" class="mx-auto my-1 grid grid-cols-3 gap-y-1">
         <label>Title</label>
         <div
           [pTooltip]="deck.title"
@@ -102,7 +115,7 @@ export interface ICardImage {
         </div>
       </div>
       <ng-template #edit [formGroup]="deckFormGroup">
-        <div class="my-1 mx-auto grid grid-cols-3 gap-y-1">
+        <div class="mx-auto my-1 grid grid-cols-3 gap-y-1">
           <label>Titel</label>
           <input
             formControlName="title"
@@ -240,6 +253,26 @@ export interface ICardImage {
       <digimon-deck-submission [inputDeck]="deck" (onClose)="deckSubmissionDialog = false"></digimon-deck-submission>
     </p-dialog>
   `,
+  standalone: true,
+  imports: [
+    NgFor,
+    DeckCardComponent,
+    DdtoSpreadComponent,
+    ChartContainersComponent,
+    ColorSpreadComponent,
+    NgIf,
+    TooltipModule,
+    FormsModule,
+    ReactiveFormsModule,
+    InputTextModule,
+    DropdownModule,
+    InputTextareaModule,
+    ButtonModule,
+    DialogModule,
+    ExportDeckDialogComponent,
+    DeckSubmissionComponent,
+  ],
+  providers: [MessageService],
 })
 export class DeckDialogComponent implements OnInit, OnChanges {
   @Input() deck: IDeck | ITournamentDeck;

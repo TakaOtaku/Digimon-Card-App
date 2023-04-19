@@ -7,6 +7,13 @@ import { ICard, IDeck, IDeckCard } from '../../../../models';
 import { createNewDeck, setDeck } from '../../../store/digimon.actions';
 import { DeckBuilderViewModel, selectAllCards } from '../../../store/digimon.selectors';
 import { emptyDeck } from '../../../store/reducers/digimon.reducers';
+import { ImportDeckDialogComponent } from '../../shared/dialogs/import-deck-dialog.component';
+import { ExportDeckDialogComponent } from '../../shared/dialogs/export-deck-dialog.component';
+import { PriceCheckDialogComponent } from './price-check-dialog.component';
+import { DialogModule } from 'primeng/dialog';
+import { NgClass, NgFor } from '@angular/common';
+import { TooltipModule } from 'primeng/tooltip';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'digimon-deck-toolbar',
@@ -178,6 +185,18 @@ import { emptyDeck } from '../../../store/reducers/digimon.reducers';
     ></p-dialog>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    ButtonModule,
+    TooltipModule,
+    NgClass,
+    DialogModule,
+    PriceCheckDialogComponent,
+    NgFor,
+    ExportDeckDialogComponent,
+    ImportDeckDialogComponent,
+  ],
+  providers: [MessageService],
 })
 export class DeckToolbarComponent implements OnDestroy {
   @Input() deck: IDeck;

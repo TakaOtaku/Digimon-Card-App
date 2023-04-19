@@ -4,6 +4,10 @@ import { tap } from 'rxjs';
 import { GroupedSets } from '../../../../models';
 import { changeSetFilter } from '../../../store/digimon.actions';
 import { selectSetFilter } from '../../../store/digimon.selectors';
+import { SharedModule } from 'primeng/api';
+import { FormsModule } from '@angular/forms';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'digimon-set-filter',
@@ -29,6 +33,8 @@ import { selectSetFilter } from '../../../store/digimon.selectors';
       </ng-template>
     </p-multiSelect>
   `,
+  standalone: true,
+  imports: [NgIf, MultiSelectModule, FormsModule, SharedModule, AsyncPipe],
 })
 export class SetFilterComponent {
   setFilter: string[] = [];

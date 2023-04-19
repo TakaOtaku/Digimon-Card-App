@@ -3,6 +3,8 @@ import { Store } from '@ngrx/store';
 import { BlockButtons } from '../../../../models';
 import { changeBlockFilter } from '../../../store/digimon.actions';
 import { selectBlockFilter } from '../../../store/digimon.selectors';
+import { MultiButtonsComponent } from '../multi-buttons.component';
+import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'digimon-block-filter',
@@ -14,6 +16,8 @@ import { selectBlockFilter } from '../../../store/digimon.selectors';
       [value]="blockFilter.value"
       title="Block"></digimon-multi-buttons>
   `,
+  standalone: true,
+  imports: [NgIf, MultiButtonsComponent, AsyncPipe],
 })
 export class BlockFilterComponent {
   blockFilter$ = this.store.select(selectBlockFilter);

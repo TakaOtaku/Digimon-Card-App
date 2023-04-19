@@ -3,6 +3,12 @@ import { Store } from '@ngrx/store';
 import { ICard, ICountCard, IDeck, IUser } from '../../../models';
 import { selectDeckDisplayTable } from '../../store/digimon.selectors';
 import { emptyDeck } from '../../store/reducers/digimon.reducers';
+import { DeckDialogComponent } from '../shared/dialogs/deck-dialog.component';
+import { DialogModule } from 'primeng/dialog';
+import { DecksTableComponent } from './decks-table.component';
+import { PaginatorModule } from 'primeng/paginator';
+import { DeckContainerComponent } from '../shared/deck-container.component';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'digimon-decks',
@@ -44,6 +50,17 @@ import { emptyDeck } from '../../store/reducers/digimon.reducers';
     </p-dialog>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    NgIf,
+    NgFor,
+    DeckContainerComponent,
+    PaginatorModule,
+    DecksTableComponent,
+    DialogModule,
+    DeckDialogComponent,
+    AsyncPipe,
+  ],
 })
 export class DecksComponent implements OnInit, OnChanges {
   @Input() decks: IDeck[];

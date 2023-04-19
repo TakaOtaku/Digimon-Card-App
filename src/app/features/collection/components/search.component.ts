@@ -3,6 +3,9 @@ import { Store } from '@ngrx/store';
 import { debounceTime, distinctUntilChanged, filter, Subject, tap } from 'rxjs';
 import { changeSearchFilter } from '../../../store/digimon.actions';
 import { selectSearchFilter } from '../../../store/digimon.selectors';
+import { InputTextModule } from 'primeng/inputtext';
+import { FormsModule } from '@angular/forms';
+import { NgStyle, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'digimon-search',
@@ -19,6 +22,8 @@ import { selectSearchFilter } from '../../../store/digimon.selectors';
     </span>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NgStyle, FormsModule, InputTextModule, AsyncPipe],
 })
 export class SearchComponent {
   search = '';

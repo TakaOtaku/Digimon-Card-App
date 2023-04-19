@@ -5,6 +5,14 @@ import { englishCards } from '../../../../assets/cardlists/eng/english';
 import { GroupedSets, ICard, ICountCard, ISave } from '../../../../models';
 import { ProductCM, ProductCMWithCount } from '../../../service/card-market.service';
 import { selectAllCards, selectPriceGuideCM } from '../../../store/digimon.selectors';
+import { TableModule } from 'primeng/table';
+import { CardImageComponent } from '../../shared/card-image.component';
+import { SharedModule } from 'primeng/api';
+import { FormsModule } from '@angular/forms';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { BlockUIModule } from 'primeng/blockui';
+import { NgIf, NgFor, AsyncPipe, CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'digimon-collection-price-check-dialog',
@@ -13,7 +21,7 @@ import { selectAllCards, selectPriceGuideCM } from '../../../store/digimon.selec
       <p-blockUI [blocked]="spinner"></p-blockUI>
       <p-progressSpinner
         *ngIf="spinner"
-        class="absolute top-1/2 left-1/2 z-[5000] -translate-x-1/2 -translate-y-1/2 transform"></p-progressSpinner>
+        class="absolute left-1/2 top-1/2 z-[5000] -translate-x-1/2 -translate-y-1/2 transform"></p-progressSpinner>
 
       <div *ngIf="prizeGuide$ | async" class="mb-2 flex flex-col">
         <span>All Price-Information is from <b>CardMarket</b>.</span>
@@ -43,7 +51,7 @@ import { selectAllCards, selectPriceGuideCM } from '../../../store/digimon.selec
           defaultLabel="Select a Set"
           display="chip"
           scrollHeight="250px"
-          class="mr-2 mb-2 w-full max-w-[250px]"
+          class="mb-2 mr-2 w-full max-w-[250px]"
           styleClass="w-full max-w-[250px] h-8 text-sm">
           <ng-template let-group pTemplate="group">
             <div class="align-items-center flex">
@@ -144,6 +152,20 @@ import { selectAllCards, selectPriceGuideCM } from '../../../store/digimon.selec
         bottom: 1rem;
       }
     `,
+  ],
+  standalone: true,
+  imports: [
+    NgIf,
+    BlockUIModule,
+    ProgressSpinnerModule,
+    MultiSelectModule,
+    FormsModule,
+    SharedModule,
+    NgFor,
+    CardImageComponent,
+    TableModule,
+    AsyncPipe,
+    CurrencyPipe,
   ],
 })
 export class CollectionPriceCheckDialogComponent implements OnDestroy {

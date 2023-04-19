@@ -3,6 +3,11 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { JAPTIERLIST, TIERLIST } from '../../../../models';
 import { setCommunityDeckSearch } from '../../../store/digimon.actions';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { TooltipModule } from 'primeng/tooltip';
+import { NgFor, NgClass, NgStyle } from '@angular/common';
+import { RippleModule } from 'primeng/ripple';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'digimon-tierlist',
@@ -11,7 +16,7 @@ import { setCommunityDeckSearch } from '../../../store/digimon.actions';
       <h1 class="main-font mb-2 w-full text-center text-3xl font-extrabold uppercase text-[#e2e4e6]">
         Digimon Deck Tierlist
         <span
-          class="surface-card ml-auto inline-block whitespace-nowrap rounded border border-black py-1.5 px-2.5 text-center align-baseline font-bold leading-none text-[#e2e4e6]"
+          class="surface-card ml-auto inline-block whitespace-nowrap rounded border border-black px-2.5 py-1.5 text-center align-baseline font-bold leading-none text-[#e2e4e6]"
           >{{ currentRegion }}</span
         >
         <button
@@ -45,6 +50,8 @@ import { setCommunityDeckSearch } from '../../../store/digimon.actions';
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [ButtonModule, RippleModule, NgFor, NgClass, TooltipModule, LazyLoadImageModule, NgStyle],
 })
 export class TierlistComponent {
   currentRegion = 'GLOBAL';

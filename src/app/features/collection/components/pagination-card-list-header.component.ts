@@ -4,6 +4,9 @@ import { Subject, takeUntil } from 'rxjs';
 import { ICard } from '../../../../models';
 import { changeCollectionMode } from '../../../store/digimon.actions';
 import { selectCollectionMode, selectFilteredCards } from '../../../store/digimon.selectors';
+import { AsyncPipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { PaginatorModule } from 'primeng/paginator';
 
 @Component({
   selector: 'digimon-pagination-card-list-header',
@@ -36,6 +39,8 @@ import { selectCollectionMode, selectFilteredCards } from '../../../store/digimo
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [PaginatorModule, FormsModule, AsyncPipe],
 })
 export class PaginationCardListHeaderComponent implements OnInit, OnDestroy {
   @Output() filterBox = new EventEmitter<boolean>();

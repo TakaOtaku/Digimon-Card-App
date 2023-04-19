@@ -9,6 +9,11 @@ import {
 } from '@angular/core';
 import { ColorList, IColor, ITag, tagsList } from '../../../../models';
 import { ObscenityPipe } from '../../../pipes/obscenity.pipe';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { InputTextModule } from 'primeng/inputtext';
+import { FormsModule } from '@angular/forms';
+import { ChipModule } from 'primeng/chip';
+import { NgFor, NgClass } from '@angular/common';
 
 @Component({
   selector: 'digimon-deck-metadata',
@@ -52,6 +57,8 @@ import { ObscenityPipe } from '../../../pipes/obscenity.pipe';
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NgFor, ChipModule, FormsModule, InputTextModule, InputTextareaModule, NgClass],
 })
 export class DeckMetadataComponent implements OnChanges {
   @Input() title = '';

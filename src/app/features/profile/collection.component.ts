@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ICard, ICountCard } from '../../../models';
+import { NgIf, NgFor } from '@angular/common';
 
 interface MappedCollection {
   id: string;
@@ -192,6 +193,8 @@ interface MappedCollection {
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NgIf, NgFor],
 })
 export class CollectionComponent implements OnInit, OnChanges {
   @Input() collection: ICountCard[];

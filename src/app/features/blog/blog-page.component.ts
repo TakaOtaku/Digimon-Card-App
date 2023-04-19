@@ -7,6 +7,11 @@ import { MessageService } from 'primeng/api';
 import { Observable, switchMap, tap, withLatestFrom } from 'rxjs';
 import { IBlog, IBlogWithText } from '../../../models';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
+import { RippleModule } from 'primeng/ripple';
+import { ButtonModule } from 'primeng/button';
+import { CKEditorComponent } from './components/ckeditor.component';
+import { HeaderComponent } from './components/header.component';
+import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'digimon-blog-page',
@@ -34,6 +39,9 @@ import { DigimonBackendService } from '../../service/digimon-backend.service';
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NgIf, HeaderComponent, CKEditorComponent, ButtonModule, RippleModule, AsyncPipe],
+  providers: [MessageService],
 })
 export class BlogPageComponent implements OnInit {
   blog$: Observable<IBlogWithText>;

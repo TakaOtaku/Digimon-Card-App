@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
-import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
@@ -13,6 +13,13 @@ import { AuthService } from '../../../service/auth.service';
 import { DigimonBackendService } from '../../../service/digimon-backend.service';
 import { selectAllCards } from '../../../store/digimon.selectors';
 import { ICardImage } from './deck-dialog.component';
+import { ButtonModule } from 'primeng/button';
+import { CalendarModule } from 'primeng/calendar';
+import { DropdownModule } from 'primeng/dropdown';
+import { InputTextModule } from 'primeng/inputtext';
+import { DeckCardComponent } from '../deck-card.component';
+import { NgFor } from '@angular/common';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 interface IDropDownItem {
   name: string;
@@ -113,6 +120,19 @@ interface IDropDownItem {
         (click)="submit()"></button>
     </div>
   `,
+  standalone: true,
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    InputTextareaModule,
+    NgFor,
+    DeckCardComponent,
+    InputTextModule,
+    DropdownModule,
+    CalendarModule,
+    ButtonModule,
+  ],
+  providers: [MessageService],
 })
 export class DeckSubmissionComponent implements OnInit, OnChanges, OnDestroy {
   @Input() inputDeck: IDeck | null = null;

@@ -5,6 +5,13 @@ import { ConfirmationService } from 'primeng/api';
 import { first, Subject, takeUntil } from 'rxjs';
 import { IUser } from '../../../models';
 import { AuthService } from '../../service/auth.service';
+import { ChangelogDialogComponent } from './dialogs/changelog-dialog.component';
+import { SettingsDialogComponent } from './dialogs/settings-dialog.component';
+import { DialogModule } from 'primeng/dialog';
+import { ConfirmPopupModule } from 'primeng/confirmpopup';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FilterButtonComponent } from './filter/filter-button.component';
+import { NgClass, NgIf } from '@angular/common';
 
 @Component({
   selector: 'digimon-navbar',
@@ -12,7 +19,7 @@ import { AuthService } from '../../service/auth.service';
     <nav
       class="navbar navbar-expand-lg relative flex w-full flex-col items-center justify-between border-b border-slate-100 shadow-2xl">
       <a #link class="hidden" href="https://digimoncard.app"></a>
-      <a class="absolute top-0 left-4 z-[5000] flex flex-row" (click)="refresh(link)">
+      <a class="absolute left-4 top-0 z-[5000] flex flex-row" (click)="refresh(link)">
         <img
           alt="Logo"
           class="mt-[0.25rem] max-h-[3.25rem] cursor-pointer md:mt-[-0.5rem] md:max-h-[5.5rem]"
@@ -23,7 +30,7 @@ import { AuthService } from '../../service/auth.service';
         <button
           (click)="router.navigateByUrl('')"
           [ngClass]="{ 'text-[#64B5F6]': route === '/' }"
-          class="min-w-auto mt-1 ml-auto hidden h-8 p-2 font-bold text-[#e2e4e6] hover:text-[#64B5F6] lg:block">
+          class="min-w-auto ml-auto mt-1 hidden h-8 p-2 font-bold text-[#e2e4e6] hover:text-[#64B5F6] lg:block">
           HOME
         </button>
         <button
@@ -31,13 +38,13 @@ import { AuthService } from '../../service/auth.service';
           [ngClass]="{
             'text-[#64B5F6]': route.includes('deckbuilder')
           }"
-          class="min-w-auto mt-1 ml-2 hidden h-8 p-2 font-bold text-[#e2e4e6] hover:text-[#64B5F6] lg:block">
+          class="min-w-auto ml-2 mt-1 hidden h-8 p-2 font-bold text-[#e2e4e6] hover:text-[#64B5F6] lg:block">
           DECKBUILDER
         </button>
         <button
           (click)="router.navigateByUrl('/collection')"
           [ngClass]="{ 'text-[#64B5F6]': route.includes('collection') }"
-          class="min-w-auto mt-1 ml-2 hidden h-8 p-2 font-bold text-[#e2e4e6] hover:text-[#64B5F6] lg:block">
+          class="min-w-auto ml-2 mt-1 hidden h-8 p-2 font-bold text-[#e2e4e6] hover:text-[#64B5F6] lg:block">
           COLLECTION
         </button>
         <button
@@ -45,32 +52,32 @@ import { AuthService } from '../../service/auth.service';
           [ngClass]="{
             'text-[#64B5F6]': route.includes('user') && !route.includes('deckbuilder')
           }"
-          class="min-w-auto mt-1 ml-2 hidden h-8 p-2 font-bold text-[#e2e4e6] hover:text-[#64B5F6] lg:block">
+          class="min-w-auto ml-2 mt-1 hidden h-8 p-2 font-bold text-[#e2e4e6] hover:text-[#64B5F6] lg:block">
           PROFILE
         </button>
         <button
           (click)="router.navigateByUrl('/decks')"
           [ngClass]="{ 'text-[#64B5F6]': route.includes('decks') }"
-          class="min-w-auto mt-1 ml-2 hidden h-8 p-2 font-bold text-[#e2e4e6] hover:text-[#64B5F6] lg:block">
+          class="min-w-auto ml-2 mt-1 hidden h-8 p-2 font-bold text-[#e2e4e6] hover:text-[#64B5F6] lg:block">
           DECKS
         </button>
         <button
           (click)="router.navigateByUrl('/community')"
           [ngClass]="{ 'text-[#64B5F6]': route.includes('community') }"
-          class="min-w-auto mt-1 ml-2 hidden h-8 p-2 font-bold text-[#e2e4e6] hover:text-[#64B5F6] lg:block">
+          class="min-w-auto ml-2 mt-1 hidden h-8 p-2 font-bold text-[#e2e4e6] hover:text-[#64B5F6] lg:block">
           COMMUNITY
         </button>
         <button
           (click)="router.navigateByUrl('/products')"
           [ngClass]="{ 'text-[#64B5F6]': route.includes('products') }"
-          class="min-w-auto mt-1 ml-2 hidden h-8 p-2 font-bold text-[#e2e4e6] hover:text-[#64B5F6] lg:block">
+          class="min-w-auto ml-2 mt-1 hidden h-8 p-2 font-bold text-[#e2e4e6] hover:text-[#64B5F6] lg:block">
           PRODUCTS
         </button>
 
         <digimon-filter-button *ngIf="showCardList" class="ml-auto mr-4 md:hidden"></digimon-filter-button>
         <div *ngIf="!showCardList" class="m-auto md:hidden"></div>
 
-        <div [ngClass]="{ 'ml-auto': !showCardList, 'ml-2': showCardList }" class="my-1 mx-2 flex flex-row lg:ml-4">
+        <div [ngClass]="{ 'ml-auto': !showCardList, 'ml-2': showCardList }" class="mx-2 my-1 flex flex-row lg:ml-4">
           <button
             (click)="changeMenu()"
             class="min-w-auto primary-background mx-2 h-9 w-9 overflow-hidden rounded-full text-xs font-semibold text-[#e2e4e6] hover:bg-[#64B5F6]">
@@ -279,6 +286,17 @@ import { AuthService } from '../../service/auth.service';
       </div>
     </p-dialog>
   `,
+  standalone: true,
+  imports: [
+    NgClass,
+    NgIf,
+    FilterButtonComponent,
+    FontAwesomeModule,
+    ConfirmPopupModule,
+    DialogModule,
+    SettingsDialogComponent,
+    ChangelogDialogComponent,
+  ],
 })
 export class NavbarComponent implements OnInit, OnDestroy {
   faUser = faUser;

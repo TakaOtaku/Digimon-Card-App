@@ -8,6 +8,15 @@ import { CardMarketService } from './service/card-market.service';
 import { DigimonBackendService } from './service/digimon-backend.service';
 import { loadSave, setBlogs, setCommunityDecks, setPriceGuideCM, setSave } from './store/digimon.actions';
 import { emptySave } from './store/reducers/save.reducer';
+import { ChangelogDialogComponent } from './features/shared/dialogs/changelog-dialog.component';
+import { DialogModule } from 'primeng/dialog';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ToastModule } from 'primeng/toast';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { BlockUIModule } from 'primeng/blockui';
+import { RouterOutlet } from '@angular/router';
+import { NgIf } from '@angular/common';
+import { NavbarComponent } from './features/shared/navbar.component';
 
 @Component({
   selector: 'digimon-root',
@@ -21,7 +30,7 @@ import { emptySave } from './store/reducers/save.reducer';
       <p-blockUI [blocked]="spinner"></p-blockUI>
       <p-progressSpinner
         *ngIf="spinner"
-        class="absolute top-1/2 left-1/2 z-[5000] -translate-x-1/2 -translate-y-1/2 transform"></p-progressSpinner>
+        class="absolute left-1/2 top-1/2 z-[5000] -translate-x-1/2 -translate-y-1/2 transform"></p-progressSpinner>
 
       <p-toast></p-toast>
 
@@ -49,6 +58,19 @@ import { emptySave } from './store/reducers/save.reducer';
       <digimon-changelog-dialog [loadChangelog]="loadChangelog"></digimon-changelog-dialog>
     </p-dialog>
   `,
+  standalone: true,
+  imports: [
+    NavbarComponent,
+    NgIf,
+    RouterOutlet,
+    BlockUIModule,
+    ProgressSpinnerModule,
+    ToastModule,
+    ConfirmDialogModule,
+    DialogModule,
+    ChangelogDialogComponent,
+  ],
+  providers: [MessageService],
 })
 export class AppComponent {
   localStorageSave: ISave;

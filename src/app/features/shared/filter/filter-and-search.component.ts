@@ -1,10 +1,15 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
-import { UntypedFormControl } from '@angular/forms';
+import { UntypedFormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Subject, takeUntil } from 'rxjs';
 import { IFilter } from '../../../../models';
 import { changeCollectionMode, changeFilter } from '../../../store/digimon.actions';
 import { selectCollectionMode, selectFilter } from '../../../store/digimon.selectors';
+import { FilterSideBoxComponent } from './filter-side-box.component';
+import { DialogModule } from 'primeng/dialog';
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
+import { NgStyle } from '@angular/common';
 
 @Component({
   selector: 'digimon-filter-and-search',
@@ -36,6 +41,16 @@ import { selectCollectionMode, selectFilter } from '../../../store/digimon.selec
     </p-dialog>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    NgStyle,
+    FormsModule,
+    InputTextModule,
+    ReactiveFormsModule,
+    ButtonModule,
+    DialogModule,
+    FilterSideBoxComponent,
+  ],
 })
 export class FilterAndSearchComponent implements OnInit, OnDestroy {
   display = false;
