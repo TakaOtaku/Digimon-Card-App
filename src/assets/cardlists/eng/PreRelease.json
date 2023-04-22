@@ -2231,7 +2231,7 @@
       "cardLv": "Lv.4",
       "form": "Champion",
       "attribute": "Virus",
-      "type": "Abnormal",
+      "type": "AbPre-Release",
       "rarity": "U",
       "cardNumber": "BT11-040",
       "digiXros": "-",
@@ -2507,7 +2507,7 @@
       "digiXros": "-",
       "specialDigivolve": "-",
       "dnaDigivolve": "-",
-      "effect": "＜Piercing＞ (When this Digimon attacks and deletes an opponent's Digimon, it performs any security checks it normally would.)\n[When Digivolving] You may trash up to 3 cards in your hand. If you do, for each card trashed, suspend 1 of your opponent's Digimon. Then, for each suspended Digimon your opponent has in play, gain 1 memory.",
+      "effect": "＜Piercing＞ (When this Digimon attacks and deletes an opponent's Digimon, it performs any security checks it Pre-Releasely would.)\n[When Digivolving] You may trash up to 3 cards in your hand. If you do, for each card trashed, suspend 1 of your opponent's Digimon. Then, for each suspended Digimon your opponent has in play, gain 1 memory.",
       "digivolveEffect": "-",
       "securityEffect": "-",
       "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",
@@ -4130,7 +4130,7 @@
       "digiXros": "-",
       "specialDigivolve": "-",
       "dnaDigivolve": "-",
-      "effect": "[When Digivolving] 1 of your Digimon gains ＜Piercing＞ for the turn. (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.)",
+      "effect": "[When Digivolving] 1 of your Digimon gains ＜Piercing＞ for the turn. (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it Pre-Releasely would.)",
       "digivolveEffect": "-",
       "securityEffect": "-",
       "notes": "▹BOOSTER -GREAT LEGEND- [BT04]",
@@ -4580,7 +4580,7 @@
       "digiXros": "-",
       "specialDigivolve": "-",
       "dnaDigivolve": "-",
-      "effect": "＜Piercing＞ (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.) [When Digivolving] Unsuspend this Digimon. Then, it can attack your opponent's Digimon. This effect allows you to attack unsuspended Digimon as well.",
+      "effect": "＜Piercing＞ (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it Pre-Releasely would.) [When Digivolving] Unsuspend this Digimon. Then, it can attack your opponent's Digimon. This effect allows you to attack unsuspended Digimon as well.",
       "digivolveEffect": "-",
       "securityEffect": "-",
       "notes": "▹BOOSTER -GREAT LEGEND- [BT04]",
@@ -6995,7 +6995,7 @@
       "specialDigivolve": "-",
       "dnaDigivolve": "-",
       "effect": "-",
-      "digivolveEffect": "[Your Turn] While this Digimon has [Hybrid] or [Ten Warriors] in its form or type, it gains ＜Piercing＞. (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.)",
+      "digivolveEffect": "[Your Turn] While this Digimon has [Hybrid] or [Ten Warriors] in its form or type, it gains ＜Piercing＞. (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it Pre-Releasely would.)",
       "securityEffect": "-",
       "notes": "▹BOOSTER DOUBLE DIAMOND [BT-06]",
       "color": "Red",
@@ -9726,7 +9726,7 @@
       "specialDigivolve": "-",
       "dnaDigivolve": "-",
       "effect": "[Security] Play this card without paying its memory cost. [Your Turn] When this Tamer digivolves into a green Digimon, reduce the memory cost of the digivolution by 1.",
-      "digivolveEffect": "＜Piercing＞ (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.)",
+      "digivolveEffect": "＜Piercing＞ (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it Pre-Releasely would.)",
       "securityEffect": "-",
       "notes": "▹BOOSTER -NEXT ADVENTURE- [BT-07]",
       "color": "Green",
@@ -13484,7 +13484,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Red",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "Minato Sashima",
       "block": [
          "02"
@@ -13518,7 +13518,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Blue",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "Ryodan",
       "block": [
          "02"
@@ -13552,7 +13552,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Yellow",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "Takase",
       "block": [
          "02"
@@ -13586,7 +13586,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Green",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "yuuki.",
       "block": [
          "02"
@@ -13620,7 +13620,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Black",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "Ryodan",
       "block": [
          "02"
@@ -13654,7 +13654,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Purple",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "koki",
       "block": [
          "02"
@@ -13688,7 +13688,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Red",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "Nakano Haito",
       "block": [
          "02"
@@ -13722,7 +13722,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Red",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "Nakano Haito",
       "block": [
          "02"
@@ -13756,7 +13756,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Red",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "Nakano Haito",
       "block": [
          "02"
@@ -13790,7 +13790,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Red",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "Nakano Haito",
       "block": [
          "02"
@@ -13824,7 +13824,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Red",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "Takase",
       "block": [
          "02"
@@ -13858,7 +13858,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Blue",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "Spareribs",
       "block": [
          "02"
@@ -13892,7 +13892,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Blue",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "Teppei Tadokoro",
       "block": [
          "02"
@@ -13926,7 +13926,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Blue",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "GOSSAN",
       "block": [
          "02"
@@ -13960,7 +13960,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Blue/Green",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "Nakano Haito",
       "block": [
          "02"
@@ -13994,7 +13994,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Blue/Green",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "toriyufu",
       "block": [
          "02"
@@ -14028,7 +14028,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Blue",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "Teppei Tadokoro",
       "block": [
          "02"
@@ -14062,7 +14062,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Yellow",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "tessy",
       "block": [
          "02"
@@ -14096,7 +14096,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Yellow",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "Tonamikanji",
       "block": [
          "02"
@@ -14130,7 +14130,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Yellow/Red",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "Takase",
       "block": [
          "02"
@@ -14164,7 +14164,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Yellow",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "koki",
       "block": [
          "02"
@@ -14198,7 +14198,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Green",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "koki",
       "block": [
          "02"
@@ -14228,11 +14228,11 @@
       "specialDigivolve": "-",
       "dnaDigivolve": "-",
       "effect": "[Your Turn] When this Digimon DNA digivolves into a blue Digimon card, gain 1 memory.",
-      "digivolveEffect": "[Your Turn] While this Digimon has [Imperialdramon] in its name or [Free] trait, it gains ＜Piercing＞ (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would).",
+      "digivolveEffect": "[Your Turn] While this Digimon has [Imperialdramon] in its name or [Free] trait, it gains ＜Piercing＞ (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it Pre-Releasely would).",
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Green",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "Spareribs",
       "block": [
          "02"
@@ -14266,7 +14266,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Green/Blue",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "Nakano Haito",
       "block": [
          "02"
@@ -14300,7 +14300,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Green",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "Kazumasa Yasukuni",
       "block": [
          "02"
@@ -14334,7 +14334,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Black",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "TANIMESO",
       "block": [
          "02"
@@ -14368,7 +14368,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Black",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "kaz",
       "block": [
          "02"
@@ -14398,11 +14398,11 @@
       "specialDigivolve": "Digivolve: 3 from Lv.4 w/[Greymon] in its name",
       "dnaDigivolve": "-",
       "effect": "＜Raid＞ (When this Digimon attacks, you may switch the target of attack to 1 of your opponent's unsuspended Digimon with the highest DP)\n.\n[All Turns] [Once Per Turn] When an attack target is switched, you may play 1 black or red Tamer card with a play cost of 4 or less from your hand without paying its cost.",
-      "digivolveEffect": "[Your Turn] While this Digimon has [Greymon] or [Omnimon] in its name, it gains ＜Piercing＞ (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would).",
+      "digivolveEffect": "[Your Turn] While this Digimon has [Greymon] or [Omnimon] in its name, it gains ＜Piercing＞ (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it Pre-Releasely would).",
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Black/Red",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "toriyufu",
       "block": [
          "02"
@@ -14436,7 +14436,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Black",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "kaz",
       "block": [
          "02"
@@ -14470,7 +14470,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Purple",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "sasasi",
       "block": [
          "02"
@@ -14504,7 +14504,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Purple",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "Kazumasa Yasukuni",
       "block": [
          "02"
@@ -14538,7 +14538,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Purple",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "sasasi",
       "block": [
          "02"
@@ -14572,7 +14572,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Purple",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "Kazumasa Yasukuni",
       "block": [
          "02"
@@ -14606,7 +14606,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Purple",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "Hisashi Fujiwara",
       "block": [
          "02"
@@ -14640,7 +14640,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Purple/Black",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "Tonamikanji",
       "block": [
          "02"
@@ -14674,7 +14674,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "White",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "Tomotake Kinoshita",
       "block": [
          "02"
@@ -14708,7 +14708,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Red",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "",
       "block": [
          "02"
@@ -14742,7 +14742,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Red",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "",
       "block": [
          "02"
@@ -14776,7 +14776,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Red",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "",
       "block": [
          "02"
@@ -14810,7 +14810,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Blue",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "",
       "block": [
          "02"
@@ -14844,7 +14844,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Yellow",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "",
       "block": [
          "02"
@@ -14878,7 +14878,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Yellow/Red",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "",
       "block": [
          "02"
@@ -14912,7 +14912,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Green",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "",
       "block": [
          "02"
@@ -14946,7 +14946,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12] Errata Card",
       "color": "Black",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "",
       "block": [
          "02"
@@ -14980,7 +14980,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Black",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "",
       "block": [
          "02"
@@ -15014,7 +15014,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Purple",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "",
       "block": [
          "02"
@@ -15048,7 +15048,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Purple",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "",
       "block": [
          "02"
@@ -15082,7 +15082,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "White",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "",
       "block": [
          "02"
@@ -15116,7 +15116,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Red",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "Shin Sasaki",
       "block": [
          "02"
@@ -15150,7 +15150,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Blue",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "p!k@ru",
       "block": [
          "02"
@@ -15184,7 +15184,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Yellow/Red",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "SENNSU",
       "block": [
          "02"
@@ -15218,7 +15218,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Green",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "Tomotake Kinoshita",
       "block": [
          "02"
@@ -15252,7 +15252,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Black/Red",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "Shin Sasaki",
       "block": [
          "02"
@@ -15286,7 +15286,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Purple",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "Shin Sasaki",
       "block": [
          "02"
@@ -15320,7 +15320,7 @@
       "securityEffect": "-",
       "notes": "▹BOOSTER ACROSS TIME [BT-12]",
       "color": "Purple",
-      "version": "Normal",
+      "version": "Pre-Release",
       "illustrator": "Shin Sasaki",
       "block": [
          "02"
