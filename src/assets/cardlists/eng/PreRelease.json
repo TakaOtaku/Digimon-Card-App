@@ -13460,7 +13460,7 @@
    {
       "id": "BT12-001_P0",
       "name": "Gigimon",
-      "cardImage": "assets/images/cards/eng/BT12-001_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-001_P0.webp",
       "cardType": "Digi-Egg",
       "dp": "-",
       "playCost": "-",
@@ -13494,7 +13494,7 @@
    {
       "id": "BT12-002_P0",
       "name": "DemiVeemon",
-      "cardImage": "assets/images/cards/eng/BT12-002_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-002_P0.webp",
       "cardType": "Digi-Egg",
       "dp": "-",
       "playCost": "-",
@@ -13528,7 +13528,7 @@
    {
       "id": "BT12-003_P0",
       "name": "Koromon",
-      "cardImage": "assets/images/cards/eng/BT12-003_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-003_P0.webp",
       "cardType": "Digi-Egg",
       "dp": "-",
       "playCost": "-",
@@ -13562,7 +13562,7 @@
    {
       "id": "BT12-004_P0",
       "name": "TorikaraBallmon",
-      "cardImage": "assets/images/cards/eng/BT12-004_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-004_P0.webp",
       "cardType": "Digi-Egg",
       "dp": "-",
       "playCost": "-",
@@ -13596,7 +13596,7 @@
    {
       "id": "BT12-005_P0",
       "name": "Kozenimon",
-      "cardImage": "assets/images/cards/eng/BT12-005_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-005_P0.webp",
       "cardType": "Digi-Egg",
       "dp": "-",
       "playCost": "-",
@@ -13630,7 +13630,7 @@
    {
       "id": "BT12-006_P0",
       "name": "Monimon",
-      "cardImage": "assets/images/cards/eng/BT12-006_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-006_P0.webp",
       "cardType": "Digi-Egg",
       "dp": "-",
       "playCost": "-",
@@ -13664,7 +13664,7 @@
    {
       "id": "BT12-011_P0",
       "name": "Shoutmon (King Version)",
-      "cardImage": "assets/images/cards/eng/BT12-011_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-011_P0.webp",
       "cardType": "Digimon",
       "dp": "4000",
       "playCost": "5",
@@ -13698,7 +13698,7 @@
    {
       "id": "BT12-012_P0",
       "name": "Agunimon",
-      "cardImage": "assets/images/cards/eng/BT12-012_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-012_P0.webp",
       "cardType": "Digimon",
       "dp": "5000",
       "playCost": "6",
@@ -13732,7 +13732,7 @@
    {
       "id": "BT12-013_P0",
       "name": "BurningGreymon",
-      "cardImage": "assets/images/cards/eng/BT12-013_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-013_P0.webp",
       "cardType": "Digimon",
       "dp": "6000",
       "playCost": "6",
@@ -13766,7 +13766,7 @@
    {
       "id": "BT12-015_P0",
       "name": "Aldamon",
-      "cardImage": "assets/images/cards/eng/BT12-015_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-015_P0.webp",
       "cardType": "Digimon",
       "dp": "8000",
       "playCost": "8",
@@ -13800,7 +13800,7 @@
    {
       "id": "BT12-016_P0",
       "name": "WarGrowlmon",
-      "cardImage": "assets/images/cards/eng/BT12-016_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-016_P0.webp",
       "cardType": "Digimon",
       "dp": "8000",
       "playCost": "8",
@@ -13834,7 +13834,7 @@
    {
       "id": "BT12-022_P0",
       "name": "ExVeemon",
-      "cardImage": "assets/images/cards/eng/BT12-022_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-022_P0.webp",
       "cardType": "Digimon",
       "dp": "4000",
       "playCost": "4",
@@ -13868,7 +13868,7 @@
    {
       "id": "BT12-024_P0",
       "name": "Ranamon",
-      "cardImage": "assets/images/cards/eng/BT12-024_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-024_P0.webp",
       "cardType": "Digimon",
       "dp": "4000",
       "playCost": "5",
@@ -13902,7 +13902,7 @@
    {
       "id": "BT12-026_P0",
       "name": "ShogunGekomon",
-      "cardImage": "assets/images/cards/eng/BT12-026_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-026_P0.webp",
       "cardType": "Digimon",
       "dp": "7000",
       "playCost": "7",
@@ -13936,7 +13936,7 @@
    {
       "id": "BT12-028_P0",
       "name": "Paildramon",
-      "cardImage": "assets/images/cards/eng/BT12-028_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-028_P0.webp",
       "cardType": "Digimon",
       "dp": "8000",
       "playCost": "8",
@@ -13970,7 +13970,7 @@
    {
       "id": "BT12-030_P0",
       "name": "Imperialdramon: Dragon Mode",
-      "cardImage": "assets/images/cards/eng/BT12-030_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-030_P0.webp",
       "cardType": "Digimon",
       "dp": "12000",
       "playCost": "12",
@@ -14004,7 +14004,7 @@
    {
       "id": "BT12-032_P0",
       "name": "AncientMermaimon",
-      "cardImage": "assets/images/cards/eng/BT12-032_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-032_P0.webp",
       "cardType": "Digimon",
       "dp": "13000",
       "playCost": "13",
@@ -14038,7 +14038,7 @@
    {
       "id": "BT12-035_P0",
       "name": "Ekakimon",
-      "cardImage": "assets/images/cards/eng/BT12-035_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-035_P0.webp",
       "cardType": "Digimon",
       "dp": "1000",
       "playCost": "3",
@@ -14072,7 +14072,7 @@
    {
       "id": "BT12-037_P0",
       "name": "Opossummon",
-      "cardImage": "assets/images/cards/eng/BT12-037_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-037_P0.webp",
       "cardType": "Digimon",
       "dp": "4000",
       "playCost": "5",
@@ -14106,7 +14106,7 @@
    {
       "id": "BT12-042_P0",
       "name": "RizeGreymon",
-      "cardImage": "assets/images/cards/eng/BT12-042_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-042_P0.webp",
       "cardType": "Digimon",
       "dp": "7000",
       "playCost": "7",
@@ -14140,7 +14140,7 @@
    {
       "id": "BT12-044_P0",
       "name": "Lampmon",
-      "cardImage": "assets/images/cards/eng/BT12-044_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-044_P0.webp",
       "cardType": "Digimon",
       "dp": "1100",
       "playCost": "12",
@@ -14174,7 +14174,7 @@
    {
       "id": "BT12-048_P0",
       "name": "Dracmon",
-      "cardImage": "assets/images/cards/eng/BT12-048_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-048_P0.webp",
       "cardType": "Digimon",
       "dp": "1000",
       "playCost": "4",
@@ -14208,7 +14208,7 @@
    {
       "id": "BT12-050_P0",
       "name": "Stingmon",
-      "cardImage": "assets/images/cards/eng/BT12-050_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-050_P0.webp",
       "cardType": "Digimon",
       "dp": "4000",
       "playCost": "4",
@@ -14242,7 +14242,7 @@
    {
       "id": "BT12-055_P0",
       "name": "Dinobeemon",
-      "cardImage": "assets/images/cards/eng/BT12-055_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-055_P0.webp",
       "cardType": "Digimon",
       "dp": "8000",
       "playCost": "8",
@@ -14276,7 +14276,7 @@
    {
       "id": "BT12-056_P0",
       "name": "GranKuwagamon",
-      "cardImage": "assets/images/cards/eng/BT12-056_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-056_P0.webp",
       "cardType": "Digimon",
       "dp": "12000",
       "playCost": "12",
@@ -14310,7 +14310,7 @@
    {
       "id": "BT12-063_P0",
       "name": "Damemon",
-      "cardImage": "assets/images/cards/eng/BT12-063_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-063_P0.webp",
       "cardType": "Digimon",
       "dp": "4000",
       "playCost": "3",
@@ -14344,7 +14344,7 @@
    {
       "id": "BT12-065_P0",
       "name": "Sephirothmon",
-      "cardImage": "assets/images/cards/eng/BT12-065_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-065_P0.webp",
       "cardType": "Digimon",
       "dp": "6000",
       "playCost": "6",
@@ -14378,7 +14378,7 @@
    {
       "id": "BT12-068_P0",
       "name": "MetalGreymon",
-      "cardImage": "assets/images/cards/eng/BT12-068_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-068_P0.webp",
       "cardType": "Digimon",
       "dp": "7000",
       "playCost": "7",
@@ -14412,7 +14412,7 @@
    {
       "id": "BT12-071_P0",
       "name": "AncientWisemon",
-      "cardImage": "assets/images/cards/eng/BT12-071_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-071_P0.webp",
       "cardType": "Digimon",
       "dp": "13000",
       "playCost": "13",
@@ -14446,7 +14446,7 @@
    {
       "id": "BT12-074_P0",
       "name": "Gumdramon",
-      "cardImage": "assets/images/cards/eng/BT12-074_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-074_P0.webp",
       "cardType": "Digimon",
       "dp": "2000",
       "playCost": "4",
@@ -14480,7 +14480,7 @@
    {
       "id": "BT12-075_P0",
       "name": "Psychemon",
-      "cardImage": "assets/images/cards/eng/BT12-075_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-075_P0.webp",
       "cardType": "Digimon",
       "dp": "2000",
       "playCost": "4",
@@ -14514,7 +14514,7 @@
    {
       "id": "BT12-077_P0",
       "name": "Arresterdramon",
-      "cardImage": "assets/images/cards/eng/BT12-077_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-077_P0.webp",
       "cardType": "Digimon",
       "dp": "5000",
       "playCost": "6",
@@ -14548,7 +14548,7 @@
    {
       "id": "BT12-081_P0",
       "name": "Astamon",
-      "cardImage": "assets/images/cards/eng/BT12-081_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-081_P0.webp",
       "cardType": "Digimon",
       "dp": "7000",
       "playCost": "7",
@@ -14582,7 +14582,7 @@
    {
       "id": "BT12-082_P0",
       "name": "Baalmon (X Antibody)",
-      "cardImage": "assets/images/cards/eng/BT12-082_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-082_P0.webp",
       "cardType": "Digimon",
       "dp": "8000",
       "playCost": "8",
@@ -14616,7 +14616,7 @@
    {
       "id": "BT12-084_P0",
       "name": "JetMervamon",
-      "cardImage": "assets/images/cards/eng/BT12-084_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-084_P0.webp",
       "cardType": "Digimon",
       "dp": "13000",
       "playCost": "13",
@@ -14650,7 +14650,7 @@
    {
       "id": "BT12-086_P0",
       "name": "Clockmon",
-      "cardImage": "assets/images/cards/eng/BT12-086_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-086_P0.webp",
       "cardType": "Digimon",
       "dp": "4000",
       "playCost": "4",
@@ -14684,7 +14684,7 @@
    {
       "id": "BT12-087_P0",
       "name": "Taiki Kudo",
-      "cardImage": "assets/images/cards/eng/BT12-087_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-087_P0.webp",
       "cardType": "Tamer",
       "dp": "-",
       "playCost": "3",
@@ -14718,7 +14718,7 @@
    {
       "id": "BT12-088_P0",
       "name": "Takuya Kanbara",
-      "cardImage": "assets/images/cards/eng/BT12-088_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-088_P0.webp",
       "cardType": "Tamer",
       "dp": "-",
       "playCost": "4",
@@ -14752,7 +14752,7 @@
    {
       "id": "BT12-089_P0",
       "name": "Takato Matsuki",
-      "cardImage": "assets/images/cards/eng/BT12-089_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-089_P0.webp",
       "cardType": "Tamer",
       "dp": "-",
       "playCost": "4",
@@ -14786,7 +14786,7 @@
    {
       "id": "BT12-090_P0",
       "name": "Davis Motomiya",
-      "cardImage": "assets/images/cards/eng/BT12-090_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-090_P0.webp",
       "cardType": "Tamer",
       "dp": "-",
       "playCost": "3",
@@ -14820,7 +14820,7 @@
    {
       "id": "BT12-091_P0",
       "name": "Airu Suzaki",
-      "cardImage": "assets/images/cards/eng/BT12-091_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-091_P0.webp",
       "cardType": "Tamer",
       "dp": "-",
       "playCost": "3",
@@ -14854,7 +14854,7 @@
    {
       "id": "BT12-092_P0",
       "name": "Marcus Damon",
-      "cardImage": "assets/images/cards/eng/BT12-092_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-092_P0.webp",
       "cardType": "Tamer",
       "dp": "-",
       "playCost": "4",
@@ -14888,7 +14888,7 @@
    {
       "id": "BT12-093_P0",
       "name": "Ren Tobari",
-      "cardImage": "assets/images/cards/eng/BT12-093_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-093_P0.webp",
       "cardType": "Tamer",
       "dp": "-",
       "playCost": "3",
@@ -14922,7 +14922,7 @@
    {
       "id": "BT12-094_P0",
       "name": "Yuu Amano",
-      "cardImage": "assets/images/cards/eng/BT12-094_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-094_P0.webp",
       "cardType": "Tamer",
       "dp": "-",
       "playCost": "3",
@@ -14956,7 +14956,7 @@
    {
       "id": "BT12-095_P0",
       "name": "Tai Kamiya",
-      "cardImage": "assets/images/cards/eng/BT12-095_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-095_P0.webp",
       "cardType": "Tamer",
       "dp": "-",
       "playCost": "3",
@@ -14990,7 +14990,7 @@
    {
       "id": "BT12-096_P0",
       "name": "Tagiru Akashi",
-      "cardImage": "assets/images/cards/eng/BT12-096_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-096_P0.webp",
       "cardType": "Tamer",
       "dp": "-",
       "playCost": "4",
@@ -15024,7 +15024,7 @@
    {
       "id": "BT12-097_P0",
       "name": "Ryoma Mogami",
-      "cardImage": "assets/images/cards/eng/BT12-097_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-097_P0.webp",
       "cardType": "Tamer",
       "dp": "-",
       "playCost": "3",
@@ -15058,7 +15058,7 @@
    {
       "id": "BT12-098_P0",
       "name": "Watchmaker",
-      "cardImage": "assets/images/cards/eng/BT12-098_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-098_P0.webp",
       "cardType": "Tamer",
       "dp": "-",
       "playCost": "3",
@@ -15092,7 +15092,7 @@
    {
       "id": "BT12-100_P0",
       "name": "Final Xros Blade",
-      "cardImage": "assets/images/cards/eng/BT12-100_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-100_P0.webp",
       "cardType": "Option",
       "dp": "-",
       "playCost": "-",
@@ -15126,7 +15126,7 @@
    {
       "id": "BT12-101_P0",
       "name": "Vee Laser",
-      "cardImage": "assets/images/cards/eng/BT12-101_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-101_P0.webp",
       "cardType": "Option",
       "dp": "-",
       "playCost": "-",
@@ -15160,7 +15160,7 @@
    {
       "id": "BT12-104_P0",
       "name": "Shining Blast",
-      "cardImage": "assets/images/cards/eng/BT12-104_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-104_P0.webp",
       "cardType": "Option",
       "dp": "-",
       "playCost": "-",
@@ -15194,7 +15194,7 @@
    {
       "id": "BT12-106_P0",
       "name": "Gypt Particle Cannon",
-      "cardImage": "assets/images/cards/eng/BT12-106_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-106_P0.webp",
       "cardType": "Option",
       "dp": "-",
       "playCost": "-",
@@ -15228,7 +15228,7 @@
    {
       "id": "BT12-108_P0",
       "name": "Super Eradication Attack",
-      "cardImage": "assets/images/cards/eng/BT12-108_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-108_P0.webp",
       "cardType": "Option",
       "dp": "-",
       "playCost": "-",
@@ -15262,7 +15262,7 @@
    {
       "id": "BT12-109_P0",
       "name": "Overflowing Power",
-      "cardImage": "assets/images/cards/eng/BT12-109_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-109_P0.webp",
       "cardType": "Option",
       "dp": "-",
       "playCost": "-",
@@ -15296,7 +15296,7 @@
    {
       "id": "BT12-110_P0",
       "name": "Seventh Full Cluster",
-      "cardImage": "assets/images/cards/eng/BT12-110_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT12-110_P0.webp",
       "cardType": "Option",
       "dp": "-",
       "playCost": "-",
