@@ -5,6 +5,7 @@ import AA from './AAs.json';
 import BT1 from './BT/BT1.json';
 import BT10 from './BT/BT10.json';
 import BT11 from './BT/BT11.json';
+import BT12 from './BT/BT12.json';
 import BT2 from './BT/BT2.json';
 import BT3 from './BT/BT3.json';
 import BT4 from './BT/BT4.json';
@@ -49,6 +50,7 @@ export const englishCards: ICard[] = [
   ...BT9,
   ...BT10,
   ...BT11,
+  ...BT12,
 
   ...EX1,
   ...EX2,

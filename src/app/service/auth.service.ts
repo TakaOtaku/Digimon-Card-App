@@ -92,30 +92,27 @@ export class AuthService {
   }
 
   createUserData(user: User, save: any) {
-    let userData: IUser;
-    if (!save) {
-      userData = {
-        uid: user.uid,
-        displayName: user.displayName ?? '',
-        photoURL: user.photoURL ?? '',
-        save: {
+    let userData: IUser = !save
+      ? {
           uid: user.uid,
-          photoURL: user.photoURL ?? '',
           displayName: user.displayName ?? '',
-          version: 1,
-          collection: [],
-          decks: [],
-          settings: emptySettings,
-        },
-      };
-    } else {
-      userData = {
-        uid: user.uid,
-        displayName: user.displayName ?? '',
-        photoURL: user.photoURL ?? '',
-        save,
-      };
-    }
+          photoURL: user.photoURL ?? '',
+          save: {
+            uid: user.uid,
+            photoURL: user.photoURL ?? '',
+            displayName: user.displayName ?? '',
+            version: 1,
+            collection: [],
+            decks: [],
+            settings: emptySettings,
+          },
+        }
+      : {
+          uid: user.uid,
+          displayName: user.displayName ?? '',
+          photoURL: user.photoURL ?? '',
+          save,
+        };
 
     if (!userData.save.uid) {
       userData.save.uid = user.uid;

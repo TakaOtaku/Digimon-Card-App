@@ -10,15 +10,15 @@ import copy
 
 wikiLink = 'https://digimoncardgame.fandom.com'
 wikiPageLinks = [
-    #'https://digimoncardgame.fandom.com/wiki/Digimon_Illustration_Competition_Promotion_Pack'
-    'https://digimoncardgame.fandom.com/wiki/Limited_Card_Set_ONLINE_2023'
+    # 'https://digimoncardgame.fandom.com/wiki/Digimon_Illustration_Competition_Promotion_Pack'
+    'https://digimoncardgame.fandom.com/wiki/PB-12E:_Digimon_Card_Game_2nd_Anniversary_Set#Card_List'
     # 'https://digimoncardgame.fandom.com/wiki/BT-12:_Booster_Across_Time',
     # 'https://digimoncardgame.fandom.com/wiki/BT-13:_Booster_Versus_Royal_Knights'
     # 'https://digimoncardgame.fandom.com/wiki/ST-14:_Advanced_Deck_Beelzemon'
     # 'https://digimoncardgame.fandom.com/wiki/EX-04:_Theme_Booster_Alternative_Being',
     # 'https://digimoncardgame.fandom.com/wiki/RB-01:_Reboot_Booster_Rising_Wind'
 ]
-setName = "Limited Card Set ONLINE 2023"
+setName = "PB-12E: Digimon Card Game 2nd Anniversary Set"
 cardLinks = []
 NormalCards = []
 AACards = []
@@ -57,35 +57,39 @@ def splitCardsForNormalAndAA():
 def getMainInfo(html, digimoncard):
     if html == None:
         return digimoncard
-    rows = html.find_all("tr")
 
-    for row in rows:
-        rowData = []
-        cells = row.find_all("td")
-        for cell in cells:
-            rowData.append(cell.text.replace("\n", "").strip())
+    cellData = []
+    cells = html.find_all("td")
+    for cell in cells:
+        cellData.append(cell.text.replace("\n", "").strip())
 
-        match(rowData[0]):
+    infoArray = []
+
+    for i in range(0, len(cellData), 2):
+        infoArray.append([cellData[i], cellData[i+1]])
+
+    for data in infoArray:
+        match(data[0]):
             case 'Name':
-                digimoncard['name'] = rowData[1]
+                digimoncard['name'] = data[1]
             case 'Colour':
-                digimoncard['color'] = rowData[1].replace(" / ", "/")
+                digimoncard['color'] = data[1].replace(" / ", "/")
             case 'Card Type':
-                digimoncard['cardType'] = rowData[1]
+                digimoncard['cardType'] = data[1]
             case 'Play Cost':
-                digimoncard['playCost'] = rowData[1]
+                digimoncard['playCost'] = data[1]
             case 'DP':
-                digimoncard['dp'] = rowData[1].replace(" DP", "")
+                digimoncard['dp'] = data[1].replace(" DP", "")
             case 'Level':
-                digimoncard['cardLv'] = "Lv." + rowData[1]
+                digimoncard['cardLv'] = "Lv." + data[1]
             case 'Form':
-                digimoncard['form'] = rowData[1]
+                digimoncard['form'] = data[1]
             case 'Attribute':
-                digimoncard['attribute'] = rowData[1]
+                digimoncard['attribute'] = data[1]
             case 'Type':
-                digimoncard['type'] = rowData[1]
+                digimoncard['type'] = data[1]
             case 'Rarity':
-                digimoncard['rarity'] = rowData[1]
+                digimoncard['rarity'] = data[1]
     return digimoncard
 
 # Get digivolve requirements and return the digimon card
@@ -155,6 +159,7 @@ def getIllustratorsInfo(html, digimoncard):
 
 def getCardDataFromWiki():
     for url in NormalCards:
+        print("Getting Data for:" + url)
         page = requests.get(wikiLink + url)
         soup = BeautifulSoup(page.content, "html.parser")
 
@@ -229,8 +234,8 @@ def getCardDataFromWiki():
         if (image is not None):
             imageSrc = image['src']
             # Change URL depending on if you want Japanese Cards or English Cards
-            urllib.request.urlretrieve(
-                imageSrc, digimoncard['cardNumber']+".png")
+            # urllib.request.urlretrieve(
+            #    imageSrc, digimoncard['cardNumber']+".png")
         print(digimoncard['name'])
         cards.append(digimoncard)
 
