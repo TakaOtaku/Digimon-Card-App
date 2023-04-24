@@ -3,6 +3,7 @@ import { UntypedFormControl, FormsModule, ReactiveFormsModule } from '@angular/f
 import { Store } from '@ngrx/store';
 import { saveAs } from 'file-saver';
 import { ConfirmationService, MessageService, SharedModule } from 'primeng/api';
+import { TabViewModule } from 'primeng/tabview';
 import { first, Subject, takeUntil } from 'rxjs';
 import { ICard, ICountCard, ISave } from '../../../../models';
 import { GroupedSets } from '../../../../models/data/filter.data';
@@ -21,65 +22,8 @@ import { InputNumberModule } from 'primeng/inputnumber';
 @Component({
   selector: 'digimon-settings-dialog',
   template: `
-    <ul
-      class="nav nav-tabs mb-4 flex w-full list-none flex-col flex-wrap justify-center pl-0 md:flex-row"
-      id="tabs-tab"
-      role="tablist">
-      <li class="nav-item" role="presentation">
-        <a
-          href="#tabs-home"
-          class="active nav-link my-2 block border-x-0 border-b-2 border-t-0 border-transparent px-6 py-3 text-xs font-medium uppercase leading-tight hover:border-transparent hover:bg-gray-100 focus:border-transparent"
-          id="tabs-home-tab"
-          data-bs-toggle="pill"
-          data-bs-target="#tabs-home"
-          role="tab"
-          aria-controls="tabs-home"
-          aria-selected="true"
-          >General</a
-        >
-      </li>
-      <li class="nav-item" role="presentation">
-        <a
-          href="#tabs-profile"
-          class="nav-link my-2 block border-x-0 border-b-2 border-t-0 border-transparent px-6 py-3 text-xs font-medium uppercase leading-tight hover:border-transparent hover:bg-gray-100 focus:border-transparent"
-          id="tabs-profile-tab"
-          data-bs-toggle="pill"
-          data-bs-target="#tabs-profile"
-          role="tab"
-          aria-controls="tabs-profile"
-          aria-selected="false"
-          >Collection Export</a
-        >
-      </li>
-      <li class="nav-item" role="presentation">
-        <a
-          href="#tabs-messages"
-          class="nav-link my-2 block border-x-0 border-b-2 border-t-0 border-transparent px-6 py-3 text-xs font-medium uppercase leading-tight hover:border-transparent hover:bg-gray-100 focus:border-transparent"
-          id="tabs-messages-tab"
-          data-bs-toggle="pill"
-          data-bs-target="#tabs-messages"
-          role="tab"
-          aria-controls="tabs-messages"
-          aria-selected="false"
-          >Collection Import</a
-        >
-      </li>
-      <li class="nav-item" role="presentation">
-        <a
-          href="#tabs-contact"
-          class="nav-link my-2 block border-x-0 border-b-2 border-t-0 border-transparent px-6 py-3 text-xs font-medium uppercase leading-tight hover:border-transparent hover:bg-gray-100 focus:border-transparent"
-          id="tabs-contact-tab"
-          data-bs-toggle="pill"
-          data-bs-target="#tabs-contact"
-          role="tab"
-          aria-controls="tabs-contact"
-          aria-selected="false"
-          >Links</a
-        >
-      </li>
-    </ul>
-    <div class="tab-content" id="tabs-tabContent">
-      <div class="tab-pane active show fade" id="tabs-home" role="tabpanel" aria-labelledby="tabs-home-tab">
+    <p-tabView class="centered-tabs">
+      <p-tabPanel class="ml-auto" header="General">
         <div class="mx-auto grid w-full grid-cols-2  justify-end">
           <div class="flex flex-col">
             <h5 class="mt-5 text-center font-bold">Collection Goal:</h5>
@@ -169,8 +113,8 @@ import { InputNumberModule } from 'primeng/inputnumber';
             pButton
             type="button"></button>
         </div>
-      </div>
-      <div class="tab-pane fade" id="tabs-profile" role="tabpanel" aria-labelledby="tabs-profile-tab">
+      </p-tabPanel>
+      <p-tabPanel header="Collection Export">
         <div class="mx-auto flex flex-col justify-center">
           <p class="text-center font-bold">What cards you want to export?</p>
           <p class="text-center text-xs">(Select nothing for all cards)</p>
@@ -310,8 +254,8 @@ import { InputNumberModule } from 'primeng/inputnumber';
             <button (click)="exportCollection()" icon="pi pi-download" label="Export" pButton type="button"></button>
           </div>
         </div>
-      </div>
-      <div class="tab-pane fade" id="tabs-messages" role="tabpanel" aria-labelledby="tabs-profile-tab">
+      </p-tabPanel>
+      <p-tabPanel header="Collection Import">
         <div>
           <p>Copy your collection in the text area and press import.</p>
           <textarea
@@ -324,8 +268,8 @@ import { InputNumberModule } from 'primeng/inputnumber';
         <div class="flex w-full justify-end">
           <button (click)="importCollection()" icon="pi pi-upload" label="Import" pButton type="button"></button>
         </div>
-      </div>
-      <div class="tab-pane fade" id="tabs-contact" role="tabpanel" aria-labelledby="tabs-contact-tab">
+      </p-tabPanel>
+      <p-tabPanel class="mr-auto" header="Links">
         <div class="flex flex-col justify-between lg:flex-row">
           <input
             #fileUpload
@@ -355,9 +299,17 @@ import { InputNumberModule } from 'primeng/inputnumber';
             pButton
             type="button"></button>
         </div>
-      </div>
-    </div>
+      </p-tabPanel>
+    </p-tabView>
   `,
+  styles: [
+    `
+      .centered-tabs .p-tabview-nav {
+        display: flex;
+        justify-content: center;
+      }
+    `,
+  ],
   standalone: true,
   imports: [
     InputNumberModule,
@@ -372,6 +324,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
     NgIf,
     InputTextareaModule,
     NgStyle,
+    TabViewModule,
   ],
   providers: [MessageService],
 })
