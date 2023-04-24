@@ -2856,7 +2856,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "While you have a Tamer with the [Hunter] trait in play, you may use this card without meeting its color requirements.\n[Main] By placing up to 2 Digimon cards with ＜Save＞ (You may place this card under one of your Tamers) from under your Tamers or your trash under 1 of your Digimon with ＜Save＞ in its text as its bottom digivolution cards, that Digimon gains +1000 DP for each card placed by this effect.",
+    "effect": "While you have a Tamer with the [Hunter] trait in play, you may use this card without meeting its color requirements.\n[Main] By placing up to 2 Digimon cards with ＜Save＞ in their texts from under your Tamers or your trash under 1 of your Digimon with ＜Save＞ in its text as its bottom digivolution cards, that Digimon gains +1000 DP for each card placed by this effect.",
     "digivolveEffect": "[Security] Add this card to its owner's hand.",
     "securityEffect": "-",
     "notes": "3rd Anniversary Update Pack",
