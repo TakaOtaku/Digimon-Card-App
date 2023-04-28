@@ -19,6 +19,9 @@ export interface ICard {
   digivolveCost2: string;
   digivolveColor2?: string;
   digivolveLevel2?: string;
+  digivolveCost3?: string;
+  digivolveColor3?: string;
+  digivolveLevel3?: string;
   digiXros: string;
   specialDigivolve: string;
   burstDigivolve?: string;
