@@ -7,6 +7,7 @@ import BT10 from './BT/BT10.json';
 import BT11 from './BT/BT11.json';
 import BT12 from './BT/BT12.json';
 import BT13 from './BT/BT13.json';
+import BT14 from './BT/BT14.json';
 import BT2 from './BT/BT2.json';
 import BT3 from './BT/BT3.json';
 import BT4 from './BT/BT4.json';
@@ -30,6 +31,8 @@ import ST10 from './ST/ST10.json';
 import ST12 from './ST/ST12.json';
 import ST13 from './ST/ST13.json';
 import ST14 from './ST/ST14.json';
+import ST15 from './ST/ST15.json';
+import ST16 from './ST/ST16.json';
 import ST2 from './ST/ST2.json';
 import ST3 from './ST/ST3.json';
 import ST4 from './ST/ST4.json';
@@ -56,6 +59,7 @@ export const japaneseCards: ICard[] = [
   ...BT11,
   ...BT12,
   ...BT13,
+  ...BT14,
 
   ...EX1,
   ...EX2,
@@ -77,4 +81,6 @@ export const japaneseCards: ICard[] = [
   ...ST12,
   ...ST13,
   ...ST14,
+  ...ST15,
+  ...ST16,
 ];
