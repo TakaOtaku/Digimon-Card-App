@@ -1,0 +1,37 @@
+[
+    {
+    "id": "ST16-12",
+    "name": "MetalGarurumon ACE",
+    "cardImage": "assets/images/cards/jap/ST16-12.webp",
+    "cardType": "Digimon",
+    "dp": "11000",
+    "playCost": "6",
+    "digivolveCost1": "3",
+    "digivolveLevel1": "3 from Lv.5",
+    "digivolveColor1": "-",
+    "digivolveCost2": "-",
+    "digivolveColor2": "-",
+    "digivolveLevel2": "-",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Data",
+    "type": "Cyborg",
+    "rarity": "SR",
+    "cardNumber": "ST16-12",
+    "digiXros": "-",
+    "specialDigivolve": "[Digivolve] From Lv.5 w/[Garurumon] in its name: Cost 3",
+    "dnaDigivolve": "-",
+    "effect": "[Hand] [Counter] ＜Blast Digivolve＞ (Your Digimon may digivolve into this card without paying the cost).\n[When Digivolving] By trashing up to 3 cards in your hand, gain 1 Memory for each card trashed.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "aceEffect": "Overflow ＜-4＞ (When this card is sent from battle area or under your card to another area, lose 4 memory).",
+    "notes": "▹START DECK STEEL WOLF OF FRIENDSHIP[ST-16]",
+    "color": "Purple",
+    "version": "Normal",
+    "illustrator": "Tonamikanji",
+    "block": [
+      "03"
+    ],
+    "restriction": "-" 
+  }
+]
