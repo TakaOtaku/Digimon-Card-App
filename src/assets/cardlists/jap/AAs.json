@@ -9309,36 +9309,6 @@
     "restriction": "-"
   },
   {
-    "id": "BT3-092",
-    "name": "MaloMyotismon",
-    "cardImage": "assets/images/cards/jap/BT3-092_P1.webp",
-    "cardType": "Digimon",
-    "dp": "12000",
-    "playCost": "13",
-    "digivolveCost1": "5 from Lv.5",
-    "digivolveCost2": "-",
-    "cardLv": "Lv.6",
-    "form": "Mega",
-    "attribute": "Virus",
-    "type": "Demon Lord",
-    "rarity": "R",
-    "cardNumber": "BT3-092",
-    "digiXros": "-",
-    "specialDigivolve": "-",
-    "dnaDigivolve": "-",
-    "effect": "＜Piercing＞ (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.)\n[All Turns] When another Digimon is deleted, gain 1 memory for each Digimon deleted.",
-    "digivolveEffect": "-",
-    "securityEffect": "-",
-    "notes": "Memorial Collection Digimon Adventure 02",
-    "color": "Purple",
-    "version": "AA",
-    "block": [
-      "00"
-    ],
-    "restriction": "-",
-    "illustrator": "tyuga"
-  },
-  {
     "id": "BT3-092_P1",
     "name": "MaloMyotismon",
     "cardImage": "assets/images/cards/jap/BT3-092_P1.webp",
@@ -11897,36 +11867,6 @@
     ],
     "restriction": "-",
     "illustrator": "p!k@ru"
-  },
-  {
-    "id": "BT5-069",
-    "name": "BlackWarGreymon",
-    "cardImage": "assets/images/cards/jap/BT5-069_P1.webp",
-    "cardType": "Digimon",
-    "dp": "12000",
-    "playCost": "11",
-    "digivolveCost1": "4 from Lv.5",
-    "digivolveCost2": "-",
-    "cardLv": "Lv.6",
-    "form": "Mega",
-    "attribute": "Virus",
-    "type": "Dragonkin",
-    "rarity": "R",
-    "cardNumber": "BT5-069",
-    "digiXros": "-",
-    "specialDigivolve": "-",
-    "dnaDigivolve": "-",
-    "effect": "＜Security Attack +1＞ (This Digimon checks 1 additional security card.)\n＜Reboot＞ (Unsuspend this Digimon during your opponent's unsuspend phase.)",
-    "digivolveEffect": "-",
-    "securityEffect": "-",
-    "notes": "Memorial Collection Digimon Adventure 02",
-    "color": "Black",
-    "version": "AA",
-    "block": [
-      "00"
-    ],
-    "restriction": "-",
-    "illustrator": "tyuga"
   },
   {
     "id": "BT5-069_P1",
