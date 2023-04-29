@@ -18,6 +18,7 @@ export const GroupedSets = [
       { label: 'BT11', value: 'BT11' },
       { label: 'BT12', value: 'BT12' },
       { label: 'BT13', value: 'BT13' },
+      { label: 'BT14', value: 'BT14' },
     ],
   },
   {
@@ -47,6 +48,8 @@ export const GroupedSets = [
       { label: 'ST12', value: 'ST12' },
       { label: 'ST13', value: 'ST13' },
       { label: 'ST14', value: 'ST14' },
+      { label: 'ST15', value: 'ST15' },
+      { label: 'ST16', value: 'ST16' },
     ],
   },
   {
@@ -61,6 +64,7 @@ export const Keywords: string[] = [
   '\uff1cAlliance\uff1e',
   '\uff1cArmor Purge\uff1e',
   '\uff1cBarrier\uff1e',
+  '\uff1cBlast Digivolve\uff1e',
   '\uff1cBlitz\uff1e',
   '\uff1cBlocker\uff1e',
   '\uff1cDecoy (Black)\uff1e',
@@ -91,6 +95,8 @@ export const Keywords: string[] = [
   '\uff1cMaterial Save 3\uff1e',
   '\uff1cMaterial Save 4\uff1e',
   '\uff1cPiercing\uff1e',
+  'Overflow \uff1c-3\uff1e',
+  'Overflow \uff1c-4\uff1e',
   '\uff1cRaid\uff1e',
   '\uff1cReboot\uff1e',
   '\uff1cRecovery +1 (Deck)\uff1e',
@@ -313,7 +319,7 @@ export const Illustrators: string[] = [
   'yuuki.',
 ].sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 
-export const SpecialRequirements: string[] = ['Digivolve', 'DNA Digivolution', 'DigiXros', 'Burst Digivolve'];
+export const SpecialRequirements: string[] = ['Digivolve', 'DNA Digivolution', 'DigiXros', 'Burst Digivolve', 'Ace'];
 
 export const Restrictions: string[] = ['Banned', 'Restricted to 1'];
 
