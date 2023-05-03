@@ -34,9 +34,9 @@
         "restriction": "-"
     },
     {
-        "id": "ST16-03",
+        "id": "ST16-02",
         "name": "Elecmon",
-        "cardImage": "assets/images/cards/jap/ST16-03.webp",
+        "cardImage": "assets/images/cards/jap/ST16-02.webp",
         "cardType": "Digimon",
         "dp": "2000",
         "playCost": "3",
@@ -51,7 +51,7 @@
         "attribute": "Virus",
         "type": "Mammal",
         "rarity": "C",
-        "cardNumber": "ST16-03",
+        "cardNumber": "ST16-02",
         "digiXros": "-",
         "specialDigivolve": "-",
         "dnaDigivolve": "-",
