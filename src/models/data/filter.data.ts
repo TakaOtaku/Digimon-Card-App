@@ -104,7 +104,6 @@ export const Keywords: string[] = [
   '\uff1cRetaliation\uff1e',
   '\uff1cRush\uff1e',
   '\uff1cSave\uff1e',
-  '\uff1cS Attack +1\uff1e',
   '\uff1cSecurity Attack +1\uff1e',
   '\uff1cSecurity Attack +2\uff1e',
   '\uff1cSecurity Attack -1\uff1e',
