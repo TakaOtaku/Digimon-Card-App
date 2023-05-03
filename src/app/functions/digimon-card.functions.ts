@@ -23,6 +23,10 @@ export function setTags(deck: IDeck, allCards: ICard[]) {
 
 export function setNewestSet(cards: ICountCard[]): ITag {
   const releaseOrder = [
+    'ST16',
+    'ST15',
+    'RB1',
+    'BT13',
     'EX4',
     'BT12',
     'ST14',
@@ -183,16 +187,20 @@ export function deckIsValid(deck: IDeck, allCards: ICard[]): string {
   let cardCount = 0;
   let eggCount = 0;
 
-  if (!deck.cards) {
+  if (!deck.cards || deck.cards.length === 0) {
     return 'Deck has no cards.';
   }
 
   deck.cards.forEach((card) => {
     const fullCard = allCards.find((a) => a.id === formatId(card.id))!;
-    if (fullCard.cardType !== 'Digi-Egg') {
-      cardCount += card.count;
-    } else {
-      eggCount += card.count;
+    try {
+      if (fullCard.cardType !== 'Digi-Egg') {
+        cardCount += card.count;
+      } else {
+        eggCount += card.count;
+      }
+    } catch (e) {
+      console.log(fullCard);
     }
   });
 
@@ -204,9 +212,10 @@ export function deckIsValid(deck: IDeck, allCards: ICard[]): string {
     return 'Deck was can not be shared! You have more than 5 Eggs.';
   }
 
-  if (!deck.title) {
+  if (!deck.title || deck.title === '' || deck.title == 'Imported Deck') {
     return 'Deck was can not be shared! You need a title.';
   }
+
   return '';
 }
 
@@ -277,10 +286,21 @@ export function getCountFromDeckCards(deckCards: IDeckCard[] | ICountCard[]): nu
 }
 
 export function setDeckImage(deck: IDeck): ICard {
+  if (deck.cards && deck.cards.length === 0) {
+    return englishCards[0];
+  }
   let deckCards = mapToDeckCards(deck.cards, setupDigimonCards(CARDSET.Both));
 
-  deckCards = deckCards.filter((card) => card.cardLv !== 'Lv.7');
-  deckCards = deckCards.sort((a, b) => Number(b.cardLv.replace('Lv.', '')) - Number(a.cardLv.replace('Lv.', '')));
+  deckCards = deckCards.filter((card) => card.cardType === 'Digimon').filter((card) => card.cardLv !== 'Lv.7');
+
+  if (deckCards.length === 0) {
+    return englishCards[0];
+  }
+  try {
+    deckCards = deckCards.sort((a, b) => Number(b.cardLv.replace('Lv.', '')) - Number(a.cardLv.replace('Lv.', '')));
+  } catch (e) {
+    console.log(deckCards);
+  }
 
   return deckCards.length > 0 ? deckCards[0] : englishCards[0];
 }
