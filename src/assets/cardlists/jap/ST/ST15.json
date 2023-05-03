@@ -372,7 +372,7 @@
         "specialDigivolve": "[Digivolve] From Lv.4 w/[Greymon] in name: Cost 3",
         "dnaDigivolve": "-",
         "effect": "＜Blocker＞ (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead).",
-        "digivolveEffect": "＜S Attack +1＞ (This Digimon checks 1 additional security card).",
+        "digivolveEffect": "＜Security Attack +1＞ (This Digimon checks 1 additional security card).",
         "securityEffect": "-",
         "aceEffect": "-",
         "notes": "▹START DECK WAR DRAGON OF COURAGE [ST-15]",
