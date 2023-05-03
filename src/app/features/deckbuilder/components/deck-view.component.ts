@@ -23,6 +23,7 @@ import {
   selectCollection,
   selectCommunityDecks,
   selectDeckBuilderViewModel,
+  selectDisplaySideDeck,
   selectDraggedCard,
   selectSave,
 } from '../../../store/digimon.selectors';
@@ -50,7 +51,6 @@ import { DeckMetadataComponent } from './deck-metadata.component';
         [missingCards]="missingCards"
         [deckBuilderViewModel]="deckBuilderViewModel"
         (missingCardsChange)="missingCards = $event"
-        (share)="share()"
         (save)="saveDeck($event)"
         (hideStats)="hideStats.emit(true)"></digimon-deck-toolbar>
     </div>
@@ -95,6 +95,7 @@ import { DeckMetadataComponent } from './deck-metadata.component';
           </div>
         </p-accordionTab>
         <p-accordionTab
+          *ngIf="displaySideDeck$ | async"
           [pDroppable]="['toDeck', 'fromDeck']"
           [(selected)]="sideExpanded"
           (onDrop)="drop(draggedCard, 'Side')"
@@ -136,6 +137,8 @@ export class DeckViewComponent implements OnInit, OnDestroy {
 
   @Output() onMainDeck = new EventEmitter<IDeckCard[]>();
   @Output() hideStats = new EventEmitter<boolean>();
+
+  displaySideDeck$ = this.store.select(selectDisplaySideDeck);
 
   title = '';
   description = '';

@@ -103,9 +103,9 @@ export const digimonReducer = createReducer(
   on(changeSetFilter, (state, { setFilter }) => ({ ...state, filter: { ...state.filter, setFilter } })),
   on(changeSort, (state, { sort }) => ({ ...state, sort })),
   on(setDeck, (state, { deck }) => ({ ...state, deck })),
-  on(createNewDeck, (state, { reset }) => {
+  on(createNewDeck, (state, { uuid }) => {
     const deck = {
-      id: uuid.v4(),
+      id: uuid,
       title: '',
       description: '',
       date: new Date().toString(),

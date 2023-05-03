@@ -87,8 +87,6 @@ export class DeckbuilderPageComponent implements OnInit, OnDestroy {
   showStats = true;
   //endregion
 
-  deckBuilderViewModel$ = this.store.select(selectDeckBuilderViewModel);
-
   mobileCollectionView$ = this.store.select(selectMobileCollectionView);
   hideStats = false;
 

@@ -6,7 +6,8 @@ import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { first, Subject, takeUntil, tap } from 'rxjs';
 import * as uuid from 'uuid';
-import { ICard, IDeck, ITournamentDeck, TAGS } from '../../../models';
+import { ICard, ICountCard, IDeck, ITournamentDeck, TAGS } from '../../../models';
+import { deckIsValid } from '../../functions/digimon-card.functions';
 import { AuthService } from '../../service/auth.service';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
 import { importDeck } from '../../store/digimon.actions';
@@ -143,7 +144,7 @@ export class DecksPageComponent implements OnInit, OnDestroy {
 
   form = new UntypedFormGroup({
     searchFilter: new UntypedFormControl(''),
-    tagFilter: new UntypedFormControl([]),
+    tagFilter: new UntypedFormControl(['BT12']),
     placementFilter: new UntypedFormControl(''),
     formatFilter: new UntypedFormControl([]),
     sizeFilter: new UntypedFormControl([]),
@@ -182,20 +183,6 @@ export class DecksPageComponent implements OnInit, OnDestroy {
     this.makeGoogleFriendly();
 
     this.store
-      .select(selectCommunityDecks)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((decks) => {
-        this.allDecks = [...decks].sort((a, b) => {
-          const aTime = new Date(a.date!).getTime();
-          const bTime = new Date(b.date!).getTime();
-          return bTime - aTime;
-        });
-        this.decks = this.allDecks;
-        this.filteredDecks = this.decks;
-        this.decksToShow = this.filteredDecks.slice(0, 20);
-        this.filterChanges();
-      });
-    this.store
       .select(selectAllCards)
       .pipe(takeUntil(this.onDestroy$))
       .subscribe((allCards) => (this.allCards = allCards));
@@ -209,29 +196,59 @@ export class DecksPageComponent implements OnInit, OnDestroy {
       });
 
     this.form.valueChanges.pipe(takeUntil(this.onDestroy$)).subscribe(() => this.filterChanges());
+
+    this.digimonBackendService.getUserDecks().subscribe((usersAndDecks) => {
+      let decks: IDeck[] = [];
+      usersAndDecks.forEach((userAndDecks) => {
+        userAndDecks.decks.forEach((deck) => {
+          const formattedDeck = deck;
+          formattedDeck.user = userAndDecks.user.name ?? 'Unknown';
+          formattedDeck.userId = userAndDecks.user.uid;
+          decks = [...decks, formattedDeck];
+        });
+      });
+      this.allDecks = decks;
+
+      decks = decks
+        .slice(0, 100)
+        .filter((deck) => deckIsValid(deck, this.allCards) === '')
+        .filter((elem, index, self) => {
+          return self.slice(index + 1).every((otherElem) => {
+            return !this.arraysEqual(elem.cards, otherElem.cards);
+          });
+        });
+
+      this.filteredDecks = decks.filter((deck) => deck.tags.some((tag) => tag.name === 'BT12'));
+      this.decksToShow = this.filteredDecks.slice(0, 20);
+
+      const worker = new Worker('./deck-worker.ts', { type: 'module' });
+
+      worker.postMessage({ decks: this.allDecks, allCards: this.allCards });
+
+      worker.addEventListener('message', ({ data }) => {
+        debugger;
+        this.allDecks = data
+          .filter((deck: IDeck) => deckIsValid(deck, this.allCards) === '')
+          .filter((elem: IDeck, index: number, self: IDeck[]) => {
+            return self.slice(index + 1).every((otherElem) => {
+              return !this.arraysEqual(elem.cards, otherElem.cards);
+            });
+          });
+        this.decks = this.allDecks;
+
+        this.filteredDecks = this.allDecks.filter((deck) => deck.tags.some((tag) => tag.name === 'BT12'));
+        this.decksToShow = this.filteredDecks.slice(0, 20);
+      });
+    });
+  }
+
+  arraysEqual(a: ICountCard[], b: ICountCard[]): boolean {
+    return a.length === b.length && a.every((val) => b.includes(val));
   }
 
   ngOnDestroy() {
     this.onDestroy$.next(true);
     this.onDestroy$.unsubscribe();
-  }
-
-  copyDeck(deck: IDeck) {
-    this.confirmationService.confirm({
-      message: 'You are about to copy this deck. Are you sure?',
-      accept: () => {
-        this.store.dispatch(
-          importDeck({
-            deck: { ...deck, id: uuid.v4() },
-          })
-        );
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Deck copied!',
-          detail: 'Deck was copied successfully!',
-        });
-      },
-    });
   }
 
   showDeckDetails(deck: IDeck) {

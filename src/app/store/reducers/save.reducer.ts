@@ -36,6 +36,7 @@ export const emptySettings: ISettings = {
   showUserStats: true,
 
   deckDisplayTable: false,
+  displaySideDeck: true,
 };
 
 export const emptySave: ISave = {

@@ -78,6 +78,10 @@ export const selectShowStampedCards = createSelector(selectSettings, (state: ISe
 export const selectShowAACards = createSelector(selectSettings, (state: ISettings) => state.showAACards);
 export const selectShowUserStats = createSelector(selectSettings, (state: ISettings) => state.showUserStats);
 export const selectDeckDisplayTable = createSelector(selectSettings, (state: ISettings) => state.deckDisplayTable);
+export const selectDisplaySideDeck = createSelector(
+  selectSettings,
+  (state: ISettings) => state.displaySideDeck ?? true
+);
 export const selectShowReprintCards = createSelector(selectSettings, (state: ISettings) => state.showReprintCards);
 //endregion
 

@@ -14,6 +14,7 @@ import { selectAllCards } from '../../store/digimon.selectors';
 import { FormsModule } from '@angular/forms';
 import { DialogModule } from 'primeng/dialog';
 import { NgIf } from '@angular/common';
+import { emptyDeck } from '../../store/reducers/digimon.reducers';
 
 @Component({
   selector: 'digimon-test-page',
@@ -30,6 +31,10 @@ import { NgIf } from '@angular/common';
 
     <button *ngIf="isAdmin()" class="border-2 border-amber-200 bg-amber-400" (click)="updateAllDecks()">
       Update all Decks
+    </button>
+
+    <button *ngIf="isAdmin()" class="border-2 border-amber-200 bg-amber-400" (click)="updateAllSaves()">
+      Update all Save Decks
     </button>
 
     <p-dialog [(visible)]="updateIDDialog" [baseZIndex]="100000" [dismissableMask]="true" [resizable]="false">
@@ -118,6 +123,8 @@ export class TestPageComponent implements OnInit, OnDestroy {
         ...deck,
         tags,
         color,
+        imageCardId: !deck.imageCardId || deck.imageCardId === 'BT1-001' ? setDeckImage(deck).id : deck.imageCardId,
+        date: !deck.date ? new Date().toString() : deck.date,
       };
     });
     const newSave: ISave = { ...save, decks: newDecks };
@@ -212,7 +219,7 @@ export class TestPageComponent implements OnInit, OnDestroy {
       .pipe(
         tap((decks) => {
           decks.forEach((deck) => {
-            const of = this.updateDeckImage(deck);
+            const of = this.updateDeck(deck);
             if (of) {
               obsArray$.push(of);
             }
@@ -221,7 +228,7 @@ export class TestPageComponent implements OnInit, OnDestroy {
         switchMap(() => this.digimonBackendService.getTournamentDecks()),
         tap((tournamentDecks) => {
           tournamentDecks.forEach((deck) => {
-            const of = this.updateTournamentDeckImage(deck);
+            const of = this.updateTournamentDeck(deck);
             if (of) {
               obsArray$.push(of);
             }
@@ -232,21 +239,35 @@ export class TestPageComponent implements OnInit, OnDestroy {
         concat(...obsArray$).subscribe();
       });
   }
-  private updateDeckImage(deck: IDeck): Observable<any> | null {
+  private updateDeck(deck: IDeck): Observable<any> | null {
+    let error = false;
+    let newDecks: IDeck = deck;
     if (!deck.imageCardId || deck.imageCardId === 'BT1-001') {
-      const newDecks: IDeck = { ...deck, imageCardId: setDeckImage(deck).id };
-      return this.digimonBackendService.updateDeck(newDecks).pipe(first());
+      error = true;
+      newDecks = { ...deck, imageCardId: setDeckImage(deck).id };
     }
-    return null;
+    if (!deck.date) {
+      error = true;
+      newDecks = { ...deck, date: new Date().toString() };
+    }
+
+    return error ? this.digimonBackendService.updateDeck(newDecks).pipe(first()) : null;
   }
-  private updateTournamentDeckImage(deck: ITournamentDeck): Observable<any> | null {
+  private updateTournamentDeck(deck: ITournamentDeck): Observable<any> | null {
+    let error = false;
+    let newDecks: ITournamentDeck = deck;
     if (!deck.imageCardId || deck.imageCardId === 'BT1-001') {
-      const newDecks: ITournamentDeck = {
+      error = true;
+      newDecks = {
         ...deck,
         imageCardId: setDeckImage(deck).id,
       };
-      return this.digimonBackendService.updateTournamentDeck(newDecks).pipe(first());
     }
-    return null;
+    if (!deck.date) {
+      error = true;
+      newDecks = { ...deck, date: new Date().toString() };
+    }
+
+    return error ? this.digimonBackendService.updateTournamentDeck(newDecks).pipe(first()) : null;
   }
 }

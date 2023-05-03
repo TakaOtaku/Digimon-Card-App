@@ -123,6 +123,16 @@ export class ProductsComponent {
       image: '../../assets/images/products/ST-14.webp',
       link: 'https://digimoncardgame.fandom.com/wiki/ST-14:_Advanced_Deck_Beelzemon',
     },
+    {
+      name: 'ST-15: Starter Deck Dragon of Courage',
+      image: '../../assets/images/products/ST-15.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/ST-14:_Advanced_Deck_Beelzemon',
+    },
+    {
+      name: 'ST-16: Starter Deck Wolf of Friendship',
+      image: '../../assets/images/products/ST-16.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/ST-14:_Advanced_Deck_Beelzemon',
+    },
   ];
   booster = [
     {

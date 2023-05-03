@@ -1,9 +1,11 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, Output } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { BehaviorSubject, Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
 import { ICard, IDeck, IDeckCard } from '../../../../models';
+import { AuthService } from '../../../service/auth.service';
 import { createNewDeck, setDeck } from '../../../store/digimon.actions';
 import { DeckBuilderViewModel, selectAllCards } from '../../../store/digimon.selectors';
 import { emptyDeck } from '../../../store/reducers/digimon.reducers';
@@ -19,22 +21,7 @@ import { ButtonModule } from 'primeng/button';
   selector: 'digimon-deck-toolbar',
   template: `
     <div
-      class="toolbar ml-3 mr-3 grid w-[100%-3rem] grid-cols-6 justify-evenly border-b-2 border-slate-600 md:grid-cols-12">
-      <div class="primary-color flex h-[30px] flex-row justify-center border-2 border-slate-500 pt-1 text-center">
-        <b>{{ getCardCount('Egg') }}</b>
-        /
-        <p class="bottom-font pr-1">5</p>
-        <p class="text-xs">Eggs</p>
-      </div>
-
-      <div
-        class="primary-color col-span-2 flex h-[30px] flex-row justify-center border-2 border-slate-500 pt-1 text-center">
-        <b>{{ getCardCount('Main') }}</b>
-        /
-        <p class="bottom-font pr-1">50</p>
-        <p class="text-xs">Cards</p>
-      </div>
-
+      class="toolbar ml-3 mr-3 flex w-[100%-3rem] flex-row justify-evenly border-b-2 border-slate-600 md:grid-cols-12">
       <button
         (click)="missingCardsChange.emit(!missingCards)"
         [ngClass]="{ 'primary-background': missingCards }"
@@ -86,15 +73,6 @@ import { ButtonModule } from 'primeng/button';
         iconPos="left"
         pButton
         pTooltip="Click to hide/show deck statistics!"
-        tooltipPosition="top"></button>
-
-      <button
-        (click)="share.emit(true)"
-        class="p-button-outlined h-[30px] w-full"
-        icon="pi pi-share-alt"
-        iconPos="left"
-        pButton
-        pTooltip="Click to share this deck with the community!"
         tooltipPosition="top"></button>
 
       <button
@@ -205,7 +183,6 @@ export class DeckToolbarComponent implements OnDestroy {
   @Input() deckBuilderViewModel: DeckBuilderViewModel;
 
   @Output() missingCardsChange = new EventEmitter<boolean>();
-  @Output() share = new EventEmitter<boolean>();
   @Output() save = new EventEmitter<any>();
   @Output() hideStats = new EventEmitter<boolean>();
 
@@ -227,7 +204,9 @@ export class DeckToolbarComponent implements OnDestroy {
   constructor(
     private confirmationService: ConfirmationService,
     private messageService: MessageService,
-    private store: Store
+    private store: Store,
+    private route: Router,
+    private authService: AuthService
   ) {
     this.store
       .select(selectAllCards)
@@ -266,7 +245,10 @@ export class DeckToolbarComponent implements OnDestroy {
       key: 'NewDeck',
       message: 'You are about to clear all cards in the deck and make a new one. Are you sure?',
       accept: () => {
-        this.store.dispatch(createNewDeck({ reset: true }));
+        this.store.dispatch(createNewDeck({ uuid: uuid.v4() }));
+        if (this.authService.userData?.uid) {
+          this.route.navigateByUrl(`deckbuilder/user/${this.authService.userData?.uid}/deck/${this.deck.id}`);
+        }
         this.messageService.add({
           severity: 'success',
           summary: 'Deck cleared!',
