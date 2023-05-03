@@ -11,14 +11,16 @@ import copy
 wikiLink = 'https://digimoncardgame.fandom.com'
 wikiPageLinks = [
     # 'https://digimoncardgame.fandom.com/wiki/Digimon_Illustration_Competition_Promotion_Pack'
-    'https://digimoncardgame.fandom.com/wiki/PB-12E:_Digimon_Card_Game_2nd_Anniversary_Set#Card_List'
+    # 'https://digimoncardgame.fandom.com/wiki/PB-12E:_Digimon_Card_Game_2nd_Anniversary_Set#Card_List'
     # 'https://digimoncardgame.fandom.com/wiki/BT-12:_Booster_Across_Time',
     # 'https://digimoncardgame.fandom.com/wiki/BT-13:_Booster_Versus_Royal_Knights'
     # 'https://digimoncardgame.fandom.com/wiki/ST-14:_Advanced_Deck_Beelzemon'
     # 'https://digimoncardgame.fandom.com/wiki/EX-04:_Theme_Booster_Alternative_Being',
     # 'https://digimoncardgame.fandom.com/wiki/RB-01:_Reboot_Booster_Rising_Wind'
+    #'https://digimoncardgame.fandom.com/wiki/ST-15:_Starter_Deck_Dragon_of_Courage',
+    'https://digimoncardgame.fandom.com/wiki/ST-16:_Starter_Deck_Wolf_of_Friendship'
 ]
-setName = "PB-12E: Digimon Card Game 2nd Anniversary Set"
+setName = "ST-16: Starter Deck Wolf of Friendship"
 cardLinks = []
 NormalCards = []
 AACards = []
@@ -166,7 +168,6 @@ def getCardDataFromWiki():
         infoMain = soup.find("div", class_="info-main")
         infoDigivolve = soup.find("div", class_="info-digivolve")
         infoExtra = soup.find("div", class_="info-extra")
-        infoRestricted = soup.find("div", class_="info-restricted")
         infoSets = soup.find("table", class_="settable")
 
         digimoncard = {
@@ -194,6 +195,7 @@ def getCardDataFromWiki():
             "effect": "-",
             "digivolveEffect": "-",
             "securityEffect": "-",
+            "aceEffect": '-',
             "notes": setName,
             "color": "-",
             "version": "Normal",
@@ -234,8 +236,8 @@ def getCardDataFromWiki():
         if (image is not None):
             imageSrc = image['src']
             # Change URL depending on if you want Japanese Cards or English Cards
-            # urllib.request.urlretrieve(
-            #    imageSrc, digimoncard['cardNumber']+".png")
+            urllib.request.urlretrieve(
+                imageSrc, digimoncard['cardNumber']+".webp")
         print(digimoncard['name'])
         cards.append(digimoncard)
 
@@ -260,7 +262,7 @@ def makeAACardDatas():
 
 def saveCardsToJSON():
     print('Saving now!')
-    with open('AAs.json', 'w') as fp:
+    with open('ST15.json', 'w') as fp:
         json.dump(cards, fp)
 
 

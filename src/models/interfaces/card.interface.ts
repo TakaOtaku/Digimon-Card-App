@@ -29,6 +29,7 @@ export interface ICard {
   effect: string;
   digivolveEffect: string;
   securityEffect: string;
+  aceEffect?: string;
   notes: string;
   illustrator: string;
   restriction?: string;

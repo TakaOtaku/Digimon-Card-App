@@ -2,9 +2,52 @@ export const JAPTIERLIST = [
   //S
   [
     {
-      name: 'Xros Heart',
-      card: 'BT11-019',
-      image: 'assets/images/cards/jap/BT11-019.webp',
+      name: 'BlackWarGreymon (X Antibody)',
+      card: 'BT11-074',
+      image: 'assets/images/cards/jap/BT11-074.webp',
+    },
+    {
+      name: 'WarGreymon',
+      card: 'BT12-070',
+      image: 'assets/images/cards/jap/BT12-070.webp',
+    },
+    {
+      name: 'Beelzemon (X Antibody',
+      card: 'BT12-085',
+      image: 'assets/images/cards/jap/BT12-085.webp',
+    },
+    {
+      name: 'BloomQuartz',
+      card: 'BT10-057',
+      image: 'assets/images/cards/jap/BT10-057.webp',
+    },
+    {
+      name: 'Shinegreymon',
+      card: 'BT12-043',
+      image: 'assets/images/cards/jap/BT12-043.webp',
+    },
+    {
+      name: 'Yggdrasil',
+      card: 'BT13-007',
+      image: 'assets/images/cards/jap/BT13-007.webp',
+    },
+    {
+      name: 'MirageGaoGamon BM',
+      card: 'BT13-033',
+      image: 'assets/images/cards/jap/BT13-033.webp',
+    },
+    {
+      name: 'Belphemon',
+      card: 'BT13-088',
+      image: 'assets/images/cards/jap/BT13-088.webp',
+    },
+  ],
+  //A
+  [
+    {
+      name: 'UlforceVeedramon (X Antibody)',
+      card: 'BT12-029',
+      image: 'assets/images/cards/jap/BT12-029.webp',
     },
     {
       name: 'Xros Hunter',
@@ -12,57 +55,9 @@ export const JAPTIERLIST = [
       image: 'assets/images/cards/jap/BT12-083.webp',
     },
     {
-      name: 'BlackWarGreymon (X Antibody)',
-      card: 'BT11-074',
-      image: 'assets/images/cards/jap/BT11-074.webp',
-    },
-    {
-      name: 'WarGreymon X',
-      card: 'BT9-016',
-      image: 'assets/images/cards/jap/BT9-016.webp',
-    },
-    {
-      name: 'Red Hybrid',
-      card: 'BT12-017',
-      image: 'assets/images/cards/jap/BT12-017.webp',
-    },
-    {
-      name: 'BloomQuartz',
-      card: 'BT10-057',
-      image: 'assets/images/cards/jap/BT10-057.webp',
-    },
-  ],
-  //A
-  [
-    {
-      name: 'Ulforce',
-      card: 'BT11-112',
-      image: 'assets/images/cards/jap/BT11-112.webp',
-    },
-    {
-      name: 'Mastemon',
-      card: 'ST10-06',
-      image: 'assets/images/cards/jap/ST10-06.webp',
-    },
-    {
       name: 'Chaosdramon (X Antibody)',
       card: 'BT12-072',
       image: 'assets/images/cards/jap/BT12-072.webp',
-    },
-    {
-      name: 'Blue Flare',
-      card: 'BT10-026',
-      image: 'assets/images/cards/jap/BT10-026.webp',
-    },
-    {
-      name: 'Imperialdramon',
-      card: 'BT8-032',
-      image: 'assets/images/cards/jap/BT8-032.webp',
-    },
-    {
-      name: 'Gallantmon X',
-      card: 'BT9-017',
-      image: 'assets/images/cards/jap/BT9-017.webp',
     },
     {
       name: 'GrandisKuwagamon',
@@ -70,9 +65,24 @@ export const JAPTIERLIST = [
       image: 'assets/images/cards/jap/BT9-055.webp',
     },
     {
-      name: 'Beelzemon',
-      card: 'EX2-074',
-      image: 'assets/images/cards/jap/EX2-074.webp',
+      name: 'Alphamon',
+      card: 'BT13-075',
+      image: 'assets/images/cards/jap/BT13-075.webp',
+    },
+    {
+      name: 'Gallantmon X',
+      card: 'BT9-017',
+      image: 'assets/images/cards/jap/BT9-017.webp',
+    },
+    {
+      name: 'Blue Flare',
+      card: 'BT10-026',
+      image: 'assets/images/cards/jap/BT10-026.webp',
+    },
+    {
+      name: 'Omegamon Alt-S',
+      card: 'EX4-060',
+      image: 'assets/images/cards/jap/EX4-060.webp',
     },
     {
       name: 'Jesmon',
@@ -85,17 +95,37 @@ export const JAPTIERLIST = [
       image: 'assets/images/cards/jap/BT9-031.webp',
     },
     {
+      name: 'Xros Heart',
+      card: 'BT11-019',
+      image: 'assets/images/cards/jap/BT11-019.webp',
+    },
+    {
+      name: 'Rosemon BM',
+      card: 'BT13-060',
+      image: 'assets/images/cards/jap/BT13-060.webp',
+    },
+    {
       name: 'Examon',
       card: 'EX3-074',
       image: 'assets/images/cards/jap/EX3-074.webp',
+    },
+    {
+      name: 'Red Hybrid',
+      card: 'BT12-017',
+      image: 'assets/images/cards/jap/BT12-017.webp',
+    },
+    {
+      name: 'Mastemon',
+      card: 'ST10-06',
+      image: 'assets/images/cards/jap/ST10-06.webp',
     },
   ],
   //B
   [
     {
-      name: 'DarkKnightmon (X Antibody)',
-      card: 'BT10-069',
-      image: 'assets/images/cards/jap/BT10-069.webp',
+      name: 'Black MegaGargomon',
+      card: 'EX4-037',
+      image: 'assets/images/cards/jap/EX4-037.webp',
     },
     {
       name: 'Bagramon',
@@ -108,14 +138,29 @@ export const JAPTIERLIST = [
       image: 'assets/images/cards/jap/BT11-111.webp',
     },
     {
+      name: 'Imperialdramon',
+      card: 'BT8-032',
+      image: 'assets/images/cards/jap/BT8-032.webp',
+    },
+    {
+      name: 'Ravemon',
+      card: 'BT13-089',
+      image: 'assets/images/cards/jap/BT13-089.webp',
+    },
+    {
+      name: 'Sakuyamon Maid Mode',
+      card: 'BT10-041',
+      image: 'assets/images/cards/jap/BT10-041.webp',
+    },
+    {
       name: 'Mervamon',
       card: 'BT11-086',
       image: 'assets/images/cards/jap/BT11-086.webp',
     },
     {
-      name: 'Shinegreymon',
-      card: 'BT12-043',
-      image: 'assets/images/cards/jap/BT12-043.webp',
+      name: 'DarkKnightmon (X Antibody)',
+      card: 'BT10-069',
+      image: 'assets/images/cards/jap/BT10-069.webp',
     },
     {
       name: 'Marsmon',
@@ -135,20 +180,11 @@ export const JAPTIERLIST = [
       card: 'BT11-043',
       image: 'assets/images/cards/jap/BT11-043.webp',
     },
-    {
-      name: 'Sakuyamon Maid Mode',
-      card: 'BT10-041',
-      image: 'assets/images/cards/jap/BT10-041.webp',
-    },
+
     {
       name: 'Venusmon',
       card: 'BT10-042',
       image: 'assets/images/cards/jap/BT10-042.webp',
-    },
-    {
-      name: 'Alphamon',
-      card: 'BT9-111',
-      image: 'assets/images/cards/jap/BT9-111.webp',
     },
   ],
   //D
@@ -236,7 +272,7 @@ export const JAPTIERLIST = [
     {
       name: 'Aegisdramon',
       card: 'EX3-026',
-      image: 'assets/images/cards/eng/EX3-026.webp',
+      image: 'assets/images/cards/jap/EX3-026.webp',
     },
   ],
 ];

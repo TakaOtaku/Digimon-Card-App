@@ -32,6 +32,8 @@ export const TAGS = [
   'ST12',
   'ST13',
   'ST14',
+  'ST15',
+  'ST16',
 ];
 
 export const tagsList: ITag[] = [
@@ -70,6 +72,8 @@ export const tagsList: ITag[] = [
   { name: 'ST12', color: 'Primary' },
   { name: 'ST13', color: 'Primary' },
   { name: 'ST14', color: 'Primary' },
+  { name: 'ST15', color: 'Primary' },
+  { name: 'ST16', color: 'Primary' },
 
   { name: 'Tournament', color: 'Primary' },
   { name: 'Casual', color: 'Primary' },

@@ -30,6 +30,8 @@ import ST10 from './ST/ST10.json';
 import ST12 from './ST/ST12.json';
 import ST13 from './ST/ST13.json';
 import ST14 from './ST/ST14.json';
+import ST15 from './ST/ST15.json';
+import ST16 from './ST/ST16.json';
 import ST2 from './ST/ST2.json';
 import ST3 from './ST/ST3.json';
 import ST4 from './ST/ST4.json';
@@ -77,4 +79,6 @@ export const japaneseCards: ICard[] = [
   ...ST12,
   ...ST13,
   ...ST14,
+  ...ST15,
+  ...ST16,
 ];
