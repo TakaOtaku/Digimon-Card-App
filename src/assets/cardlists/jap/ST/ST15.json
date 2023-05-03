@@ -35,9 +35,9 @@
         "restriction": "-"
     },
     {
-        "id": "ST15-03",
+        "id": "ST15-02",
         "name": "Agumon",
-        "cardImage": "assets/images/cards/jap/ST15-03.webp",
+        "cardImage": "assets/images/cards/jap/ST15-02.webp",
         "cardType": "Digimon",
         "dp": "1000",
         "playCost": "3",
@@ -52,7 +52,7 @@
         "attribute": "Vaccine",
         "type": "Reptile",
         "rarity": "R",
-        "cardNumber": "ST15-03",
+        "cardNumber": "ST15-02",
         "digiXros": "-",
         "specialDigivolve": "[Digivolve] From [Koromon]: Cost 0",
         "dnaDigivolve": "-",
@@ -63,7 +63,7 @@
         "notes": "▹START DECK WAR DRAGON OF COURAGE [ST-15]",
         "color": "Black",
         "version": "Normal",
-        "illustrator": "sasasid",
+        "illustrator": "sasasi",
         "block": [
             "03"
         ],
