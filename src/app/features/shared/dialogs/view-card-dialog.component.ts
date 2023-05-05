@@ -205,6 +205,12 @@ import { NgStyle, NgIf, NgClass, AsyncPipe } from '@angular/common';
               {{ card.digiXros }}
             </p>
           </div>
+          <div *ngIf="card.aceEffect !== '-'" class="my-0.5 flex w-full flex-col rounded-full" id="Digimon-ACE">
+            <p [ngStyle]="{color}" class="text-black-outline-xs text-lg font-extrabold">ACE</p>
+            <p class="font-white whitespace-pre-wrap font-bold leading-[1.7em]">
+              {{ card.aceEffect }}
+            </p>
+          </div>
         </div>
       </div>
 
