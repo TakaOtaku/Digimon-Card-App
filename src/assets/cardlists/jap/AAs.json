@@ -25736,5 +25736,39 @@
     ],
     "restriction": "-",
     "illustrator": "Nakano Haito"
+  },
+  {
+    "id": "ST14-08_P1",
+    "name": "Beelzemon",
+    "cardImage": "assets/images/cards/jap/ST14-08_P1.webp",
+    "cardType": "Digimon",
+    "dp": "12000",
+    "playCost": "12",
+    "digivolveCost1": "4",
+    "digivolveColor1": "Purple",
+    "digivolveLevel1": "4 from Lv.5",
+    "digivolveCost2": "-",
+    "digivolveColor2": "-",
+    "digivolveLevel2": "-",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Virus",
+    "type": "Demon Lord/Seven Great Demon Lords",
+    "rarity": "SR",
+    "cardNumber": "ST14-08",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[When Digivolving] Trash the top 4 cards of your deck.\n[All Turns] [Once Per Turn]  When a card is trashed from your deck, gain 1 memory for every 10 cards in your trash.\n[Your Turn] [Once Per Turn] When a card is trashed from your deck, this Digimon gains ＜Security Attack +1＞ (This Digimon checks 1 additional security card) for the turn.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "▹ADVANCED DECK SET BEELZEMON[ST-14]",
+    "color": "Purple",
+    "version": "AA",
+    "illustrator": "sasasi",
+    "block": [
+      "02"
+    ],
+    "restriction": "-"
   }
 ]
