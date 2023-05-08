@@ -15833,7 +15833,7 @@
    {
       "id": "ST14-01_P0",
       "name": "Yaamon",
-      "cardImage": "assets/images/cards/eng/ST14-01_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/ST14-01_P0.webp",
       "cardType": "Digi-Egg",
       "dp": "-",
       "playCost": "-",
@@ -15868,7 +15868,7 @@
    {
       "id": "ST14-02_P0",
       "name": "Impmon",
-      "cardImage": "assets/images/cards/eng/ST14-02_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/ST14-02_P0.webp",
       "cardType": "Digimon",
       "dp": "1000",
       "playCost": "3",
@@ -15903,7 +15903,7 @@
    {
       "id": "ST14-03_P0",
       "name": "Candlemon",
-      "cardImage": "assets/images/cards/eng/ST14-03_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/ST14-03_P0.webp",
       "cardType": "Digimon",
       "dp": "1000",
       "playCost": "3",
@@ -15938,7 +15938,7 @@
    {
       "id": "ST14-04_P0",
       "name": "Phascomon",
-      "cardImage": "assets/images/cards/eng/ST14-04_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/ST14-04_P0.webp",
       "cardType": "Digimon",
       "dp": "2000",
       "playCost": "3",
@@ -15973,7 +15973,7 @@
    {
       "id": "ST14-05_P0",
       "name": "Porcupamon",
-      "cardImage": "assets/images/cards/eng/ST14-05_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/ST14-05_P0.webp",
       "cardType": "Digimon",
       "dp": "4000",
       "playCost": "4",
@@ -16008,7 +16008,7 @@
    {
       "id": "ST14-06_P0",
       "name": "Witchmon",
-      "cardImage": "assets/images/cards/eng/ST14-06_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/ST14-06_P0.webp",
       "cardType": "Digimon",
       "dp": "5000",
       "playCost": "5",
@@ -16043,7 +16043,7 @@
    {
       "id": "ST14-07_P0",
       "name": "Baalmon",
-      "cardImage": "assets/images/cards/eng/ST14-07_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/ST14-07_P0.webp",
       "cardType": "Digimon",
       "dp": "7000",
       "playCost": "7",
@@ -16078,7 +16078,7 @@
    {
       "id": "ST14-11",
       "name": "Ai & Mako",
-      "cardImage": "assets/images/cards/eng/ST14-11_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/ST14-11_P0.webp",
       "cardType": "Tamer",
       "dp": "-",
       "playCost": "3",
@@ -16113,7 +16113,7 @@
    {
       "id": "ST14-12",
       "name": "Rivals' Barrage",
-      "cardImage": "assets/images/cards/eng/ST14-12_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/ST14-12_P0.webp",
       "cardType": "Option",
       "dp": "-",
       "playCost": "-",
@@ -16148,7 +16148,7 @@
    {
       "id": "ST14-01",
       "name": "Yaamon",
-      "cardImage": "assets/images/cards/eng/ST14-01_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/ST14-01_P0.webp",
       "cardType": "Digi-Egg",
       "dp": "-",
       "playCost": "-",
@@ -16183,7 +16183,7 @@
    {
       "id": "ST14-02",
       "name": "Impmon",
-      "cardImage": "assets/images/cards/eng/ST14-02_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/ST14-02_P0.webp",
       "cardType": "Digimon",
       "dp": "1000",
       "playCost": "3",
@@ -16218,7 +16218,7 @@
    {
       "id": "ST14-03",
       "name": "Candlemon",
-      "cardImage": "assets/images/cards/eng/ST14-03_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/ST14-03_P0.webp",
       "cardType": "Digimon",
       "dp": "1000",
       "playCost": "3",
@@ -16253,7 +16253,7 @@
    {
       "id": "ST14-04",
       "name": "Phascomon",
-      "cardImage": "assets/images/cards/eng/ST14-04_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/ST14-04_P0.webp",
       "cardType": "Digimon",
       "dp": "2000",
       "playCost": "3",
@@ -16288,7 +16288,7 @@
    {
       "id": "ST14-05",
       "name": "Porcupamon",
-      "cardImage": "assets/images/cards/eng/ST14-05_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/ST14-05_P0.webp",
       "cardType": "Digimon",
       "dp": "4000",
       "playCost": "4",
@@ -16323,7 +16323,7 @@
    {
       "id": "ST14-06",
       "name": "Witchmon",
-      "cardImage": "assets/images/cards/eng/ST14-06_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/ST14-06_P0.webp",
       "cardType": "Digimon",
       "dp": "5000",
       "playCost": "5",
@@ -16358,7 +16358,7 @@
    {
       "id": "ST14-07",
       "name": "Baalmon",
-      "cardImage": "assets/images/cards/eng/ST14-07_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/ST14-07_P0.webp",
       "cardType": "Digimon",
       "dp": "7000",
       "playCost": "7",
@@ -16393,7 +16393,7 @@
    {
       "id": "ST14-11",
       "name": "Ai & Mako",
-      "cardImage": "assets/images/cards/eng/ST14-11_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/ST14-11_P0.webp",
       "cardType": "Tamer",
       "dp": "-",
       "playCost": "3",
@@ -16428,7 +16428,7 @@
    {
       "id": "ST14-12",
       "name": "Rivals' Barrage",
-      "cardImage": "assets/images/cards/eng/ST14-12_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/ST14-12_P0.webp",
       "cardType": "Option",
       "dp": "-",
       "playCost": "7",
@@ -16463,7 +16463,7 @@
    {
       "id": "BT2-068_P4",
       "name": "Impmon",
-      "cardImage": "assets/images/cards/eng/BT2-068_P4_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT2-068_P4_P0.webp",
       "cardType": "Digimon",
       "dp": "1000",
       "playCost": "3",
@@ -16496,7 +16496,7 @@
    {
       "id": "P-077_P0",
       "name": "Wizardmon",
-      "cardImage": "assets/images/cards/eng/P-077_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/P-077_P0.webp",
       "cardType": "Digimon",
       "dp": "5000",
       "playCost": "5",
@@ -16528,7 +16528,7 @@
    {
       "id": "BT8-079_P0",
       "name": "SkullSatamon",
-      "cardImage": "assets/images/cards/eng/BT8-079_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/BT8-079_P0.webp",
       "cardType": "Digimon",
       "dp": "7000",
       "playCost": "7",
@@ -16560,7 +16560,7 @@
    {
       "id": "EX2-071_P0",
       "name": "Death Slinger",
-      "cardImage": "assets/images/cards/eng/EX2-071_P0.webp",
+      "cardImage": "assets/images/cards/pre-release/EX2-071_P0.webp",
       "cardType": "Option",
       "dp": "-",
       "playCost": "4",
