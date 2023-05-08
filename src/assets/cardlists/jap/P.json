@@ -935,7 +935,8 @@
     "color": "Yellow",
     "version": "Normal",
     "block": [
-      "00"
+      "00",
+      "03"
     ],
     "restriction": "-",
     "illustrator": "Qacoro"
@@ -1272,7 +1273,8 @@
     "color": "Blue",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "03"
     ],
     "restriction": "-",
     "illustrator": "Takase"
@@ -2208,7 +2210,8 @@
     "color": "Green",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "03"
     ],
     "restriction": "-",
     "illustrator": "itohiro"
