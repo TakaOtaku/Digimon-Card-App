@@ -20,7 +20,8 @@
       "effect": "[On Play] Delete 1 of your opponent's Digimon with 3000 DP or less.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "Promotion Pack Ver 0.0",
+      "aceEffect": "-",
+    "notes": "Promotion Pack Ver 0.0",
       "color": "Red",
       "version": "Normal",
       "block": [
@@ -50,7 +51,8 @@
       "effect": "-",
       "digivolveEffect": "[Your Turn] When this Digimon deletes one of your opponent's Digimon in battle and survives， trigger ＜Draw 1＞. (Draw 1 card from your deck.)",
       "securityEffect": "-",
-      "notes": "Promotion Pack Ver 0.0",
+      "aceEffect": "-",
+    "notes": "Promotion Pack Ver 0.0",
       "color": "Red",
       "version": "Normal",
       "block": [
@@ -80,7 +82,8 @@
       "effect": "[On Play] Trash the bottom digivolution card of 1 of your opponent's Digimon.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "Promotion Pack Ver 0.0",
+      "aceEffect": "-",
+    "notes": "Promotion Pack Ver 0.0",
       "color": "Blue",
       "version": "Normal",
       "block": [
@@ -110,7 +113,8 @@
       "effect": "-",
       "digivolveEffect": "[Your Turn] [Once Per Turn] When you trash a digivolution card of 1 of your opponent's Digimon， gain 1 memory.",
       "securityEffect": "-",
-      "notes": "Promotion Pack Ver 0.0",
+      "aceEffect": "-",
+    "notes": "Promotion Pack Ver 0.0",
       "color": "Blue",
       "version": "Normal",
       "block": [
@@ -141,7 +145,8 @@
       "effect": "[On Play] If you have 1 or fewer security cards， trigger ＜Recovery +1 (Deck)＞. (Place the top card of your deck on top of your security stack.)",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "Promotion Pack Ver 0.0",
+      "aceEffect": "-",
+    "notes": "Promotion Pack Ver 0.0",
       "color": "Yellow",
       "version": "Normal",
       "block": [
@@ -171,7 +176,8 @@
       "effect": "-",
       "digivolveEffect": "[Your Turn] While you have 3 or more security cards， this Digimon gets +1000 DP.",
       "securityEffect": "-",
-      "notes": "Promotion Pack Ver 0.0",
+      "aceEffect": "-",
+    "notes": "Promotion Pack Ver 0.0",
       "color": "Yellow",
       "version": "Normal",
       "block": [
@@ -201,7 +207,8 @@
       "effect": "-",
       "digivolveEffect": "[When Attacking] If this Digimon has [Garurumon] in its name， trigger ＜Draw 1＞. (Draw 1 card from your deck.)",
       "securityEffect": "-",
-      "notes": "Special Box Promotion Pack",
+      "aceEffect": "-",
+    "notes": "Special Box Promotion Pack",
       "color": "Blue",
       "version": "Normal",
       "block": [
@@ -232,7 +239,8 @@
       "effect": "[When Attacking] [Once Per Turn] If this Digimon has a [Garurumon] digivolution card， unsuspend this Digimon.",
       "digivolveEffect": "[Your Turn] While you have 8 or more cards in your hand， this Digimon gains ＜Security Attack +1＞. (This Digimon checks 1 additional security card.)",
       "securityEffect": "-",
-      "notes": "Special Box Promotion Pack",
+      "aceEffect": "-",
+    "notes": "Special Box Promotion Pack",
       "color": "Blue",
       "version": "Normal",
       "block": [
@@ -263,7 +271,8 @@
       "effect": "-",
       "digivolveEffect": "[Your Turn] While this Digimon has [Greymon] in its name， it gets +2000 DP.",
       "securityEffect": "-",
-      "notes": "Special Box Promotion Pack",
+      "aceEffect": "-",
+    "notes": "Special Box Promotion Pack",
       "color": "Red",
       "version": "Normal",
       "block": [
@@ -293,7 +302,8 @@
       "effect": "[Your Turn] While this Digimon has an [Agumon] digivolution card， it gains ＜Security Attack +1＞. (This Digimon checks 1 additional security card.)",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "Special Box Promotion Pack",
+      "aceEffect": "-",
+    "notes": "Special Box Promotion Pack",
       "color": "Red",
       "version": "Normal",
       "block": [
@@ -323,7 +333,8 @@
       "effect": "[When Attacking] If you have a blue Tamer， you may trash the top 3 cards of your deck to give this Digimon +2000 DP for the turn.",
       "digivolveEffect": "[When Attacking] You may place 3 non-Digi-Egg cards from your trash at the bottom of your deck in any order to trigger ＜Draw 1＞. (Draw 1 card from your deck.)",
       "securityEffect": "-",
-      "notes": "Special Box Promotion Pack",
+      "aceEffect": "-",
+    "notes": "Special Box Promotion Pack",
       "color": "Blue",
       "version": "Normal",
       "block": [
@@ -354,7 +365,8 @@
       "effect": "[Main] If you have a Digimon with [Veedramon] in its name, you may suspend this Tamer to activate one of the following effects:\n・Trigger ＜Draw 1＞. (Draw 1 card from your deck.)\n・1 of your Digimon gets +1000 DP for the turn.",
       "digivolveEffect": "-",
       "securityEffect": "[Security] Play this card without paying its memory cost.",
-      "notes": "Special Box Promotion Pack Errata Card",
+      "aceEffect": "-",
+    "notes": "Special Box Promotion Pack Errata Card",
       "color": "Blue",
       "version": "Normal",
       "block": [
@@ -385,7 +397,8 @@
       "effect": "-",
       "digivolveEffect": "[Opponent's Turn] This Digimon gets +1000 DP.",
       "securityEffect": "-",
-      "notes": "Official Tournament Pack VOL.1",
+      "aceEffect": "-",
+    "notes": "Official Tournament Pack VOL.1",
       "color": "Black",
       "version": "Normal",
       "block": [
@@ -416,7 +429,8 @@
       "effect": "＜Blocker＞ (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)\n[When Attacking] Lose 2 memory.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "Official Tournament Pack VOL.1",
+      "aceEffect": "-",
+    "notes": "Official Tournament Pack VOL.1",
       "color": "Black",
       "version": "Normal",
       "block": [
@@ -446,7 +460,8 @@
       "effect": "[On Play] Trigger ＜De-DigivoLv.e 1＞ on 1 of your opponent's Digimon. (Trash a card from the top of one of your opponent's Digimon. If it has no digivolution cards, or becomes a level 3 Digimon, you can't trash any more cards.)",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "Official Tournament Pack VOL.1",
+      "aceEffect": "-",
+    "notes": "Official Tournament Pack VOL.1",
       "color": "Black",
       "version": "Normal",
       "block": [
@@ -476,7 +491,8 @@
       "effect": "[Your Turn] For each [Diaboromon] you have in play, this Digimon gets ＜Security Attack +1＞. (This Digimon checks 1 additional security card.)",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "Official Tournament Pack VOL.1",
+      "aceEffect": "-",
+    "notes": "Official Tournament Pack VOL.1",
       "color": "Black",
       "version": "Normal",
       "block": [
@@ -507,7 +523,8 @@
       "effect": "[On Play] Trash the top 2 cards of your deck.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "Official Tournament Pack VOL.1",
+      "aceEffect": "-",
+    "notes": "Official Tournament Pack VOL.1",
       "color": "Purple",
       "version": "Normal",
       "block": [
@@ -538,7 +555,8 @@
       "effect": "[On Play] Delete 1 of your opponent's level 3 Digimon.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "Official Tournament Pack VOL.1",
+      "aceEffect": "-",
+    "notes": "Official Tournament Pack VOL.1",
       "color": "Purple",
       "version": "Normal",
       "block": [
@@ -568,7 +586,8 @@
       "effect": "-",
       "digivolveEffect": "＜Retaliation＞ (When this Digimon is deleted after losing a battle, delete the Digimon it was battling.)",
       "securityEffect": "-",
-      "notes": "Official Tournament Pack VOL.1",
+      "aceEffect": "-",
+    "notes": "Official Tournament Pack VOL.1",
       "color": "Purple",
       "version": "Normal",
       "block": [
@@ -598,7 +617,8 @@
       "effect": "[On Deletion] You may play a purple Digimon Card with a level of 4 or less from your trash without paying its memory cost. Any [On Play] effects on Digimon played with this effect don't activate.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "Official Tournament Pack VOL.1",
+      "aceEffect": "-",
+    "notes": "Official Tournament Pack VOL.1",
       "color": "Purple",
       "version": "Normal",
       "block": [
@@ -628,7 +648,8 @@
       "effect": "[Main] If you have [Mimi Tachikawa] in play, you may play a [Palmon] from your hand without paying its memory cost to return 1 of your [Mimi Tachikawa] cards to its owner's hand.",
       "digivolveEffect": "-",
       "securityEffect": "[Security] Add this card to your hand.",
-      "notes": "Special Release Memorial Pack",
+      "aceEffect": "-",
+    "notes": "Special Release Memorial Pack",
       "color": "Green",
       "version": "Normal",
       "block": [
@@ -658,7 +679,8 @@
       "effect": "[Main] If you have [Davis Motomiya] and [Ken Ichijoji] in play, you may place 1 [ExVeemon] and 1 [Stingmon] from your hand at the bottom of your deck in any order to play 1 [Paildramon] from your hand without paying its memory cost.",
       "digivolveEffect": "-",
       "securityEffect": "[Security] Add this card to your hand.",
-      "notes": "Special Release Memorial Pack",
+      "aceEffect": "-",
+    "notes": "Special Release Memorial Pack",
       "color": "Blue",
       "version": "Normal",
       "block": [
@@ -688,7 +710,8 @@
       "effect": "[Main] If you have [T.K. Takaishi] in play, place 1 of your [Patamon] at the bottom of your security stack face down. Trash that Digimon's digivolution cards.",
       "digivolveEffect": "-",
       "securityEffect": "[Security] Add this card to your hand.",
-      "notes": "Special Release Memorial Pack",
+      "aceEffect": "-",
+    "notes": "Special Release Memorial Pack",
       "color": "Yellow",
       "version": "Normal",
       "block": [
@@ -718,7 +741,8 @@
       "effect": "[Main] If you have [Tai Kamiya] in play, you may place 1 of your [Agumon] cards at the bottom of its owner's deck to trigger ＜Draw 3＞. (Draw 3 cards from your deck.) Trash that Digimon's digivolution cards.",
       "digivolveEffect": "-",
       "securityEffect": "[Security] Add this card to your hand.",
-      "notes": "Special Release Memorial Pack",
+      "aceEffect": "-",
+    "notes": "Special Release Memorial Pack",
       "color": "Red",
       "version": "Normal",
       "block": [
@@ -748,7 +772,8 @@
       "effect": "[Main] ＜Digi-Burst 2＞ (Trash 2 of this Digimon's digivolution cards to activate the effect below.)\n・1 of your Digimon gains ＜Security Attack +1＞ (This Digimon checks 1 additional security card) for the turn.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "Great Dash Pack",
+      "aceEffect": "-",
+    "notes": "Great Dash Pack",
       "color": "Green",
       "version": "Normal",
       "block": [
@@ -778,7 +803,8 @@
       "effect": "[Main] ＜Digi-Burst 2＞ (Trash 2 of this Digimon's digivolution cards to activate the effect below.)\n・Unsuspend this Digimon.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "Great Dash Pack",
+      "aceEffect": "-",
+    "notes": "Great Dash Pack",
       "color": "Black",
       "version": "Normal",
       "block": [
@@ -808,7 +834,8 @@
       "effect": "[Main] ＜Digi-Burst 2＞ (Trash 2 of this Digimon's digivolution cards to activate the effect below.)\n・Use a purple Option card with a memory cost of 7 or less in your hand without paying its memory cost.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "Great Dash Pack",
+      "aceEffect": "-",
+    "notes": "Great Dash Pack",
       "color": "Purple",
       "version": "Normal",
       "block": [
@@ -838,7 +865,8 @@
       "effect": "[On Play] If you have 3 or more security cards, trigger ＜Draw 1＞. (Draw 1 card from your deck.) If you have 3 or fewer security cards, gain 1 memory.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "GREAT LEGEND (BT-04) Pre-Release Tournaments",
+      "aceEffect": "-",
+    "notes": "GREAT LEGEND (BT-04) Pre-Release Tournaments",
       "color": "Yellow",
       "version": "Normal",
       "block": [
@@ -869,7 +897,8 @@
       "effect": "[When Attacking] This Digimon can digivolve into an [AncientGreymon] in your hand for a memory cost of 2, ignoring its digivolution requirements. If it does, delete this Digimon at the end of the turn.",
       "digivolveEffect": "[Your Turn] When digivolving this Digimon into an [AncientGreymon] in your hand, reduce its digivolution cost by 2.",
       "securityEffect": "-",
-      "notes": "Great Legend Power Up Pack Errata Card",
+      "aceEffect": "-",
+    "notes": "Great Legend Power Up Pack Errata Card",
       "color": "Red",
       "version": "Normal",
       "block": [
@@ -899,7 +928,8 @@
       "effect": "[When Digivolving] This Digimon can digivolve into an [AncientGarurumon] in your hand for a memory cost of 1, ignoring its digivolution requirements. If it does, delete this Digimon at the end of the turn.",
       "digivolveEffect": "[Your Turn] When digivolving this Digimon into an [AncientGarurumon] in your hand, reduce its digivolution cost by 2.",
       "securityEffect": "-",
-      "notes": "Great Legend Power Up Pack Errata Card",
+      "aceEffect": "-",
+    "notes": "Great Legend Power Up Pack Errata Card",
       "color": "Blue",
       "version": "Normal",
       "block": [
@@ -929,7 +959,8 @@
       "effect": "[Opponent's Turn] While you have a purple Digimon in play, this Digimon gains ＜Blocker＞. (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead.)\n[On Play] If you have 3 or fewer security cards, trigger ＜Recovery +1 (Deck)＞. (Place the top card of your deck on top of your security stack.)",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "Great Legend Power Up Pack",
+      "aceEffect": "-",
+    "notes": "Great Legend Power Up Pack",
       "color": "Yellow",
       "version": "Normal",
       "block": [
@@ -959,7 +990,8 @@
       "effect": "-",
       "digivolveEffect": "[Your Turn] When this card is trashed due to activating this Digimon's ＜Digi-Burst＞, 1 of your Digimon gains  ＜Jamming＞ (This Digimon can't be deleted in battles against Security Digimon) for the turn.",
       "securityEffect": "-",
-      "notes": "Great Legend Power Up Pack",
+      "aceEffect": "-",
+    "notes": "Great Legend Power Up Pack",
       "color": "Green",
       "version": "Normal",
       "block": [
@@ -990,7 +1022,8 @@
       "effect": "[Your Turn] All of your black Digimon with 13000 DP or more gain ＜Piercing＞. (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.)",
       "digivolveEffect": "[Your Turn] While this Digimon is black and has 13000 DP or more, this Digimon gains ＜Security Attack +1＞. (This Digimon checks 1 additional security card.)",
       "securityEffect": "-",
-      "notes": "Great Legend Power Up Pack",
+      "aceEffect": "-",
+    "notes": "Great Legend Power Up Pack",
       "color": "Black",
       "version": "Normal",
       "block": [
@@ -1020,7 +1053,8 @@
       "effect": "-",
       "digivolveEffect": "[On Deletion] If you have 7 or more Digimon cards with [Devimon] in their names in your trash, you may play 1 [DanDevimon] from your trash without paying its memory cost.",
       "securityEffect": "-",
-      "notes": "Great Legend Power Up Pack",
+      "aceEffect": "-",
+    "notes": "Great Legend Power Up Pack",
       "color": "Purple",
       "version": "Normal",
       "block": [
@@ -1050,7 +1084,8 @@
       "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 red Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] ＜Delay＞ (Trash this card in your battle area to activate the effect below. You can't activate this effect the turn this card enters play.)  \n・Gain 2 memory.",
       "digivolveEffect": "-",
       "securityEffect": "[Security] Place this card in its owner's battle area.",
-      "notes": "DIGIMON CARD GAME GALLANTMON [ST-7],DIGIMON CARD GAME ULFORCEVEEDRAMON [ST-8]",
+      "aceEffect": "-",
+    "notes": "DIGIMON CARD GAME GALLANTMON [ST-7],DIGIMON CARD GAME ULFORCEVEEDRAMON [ST-8]",
       "color": "Red",
       "version": "Normal",
       "block": [
@@ -1081,7 +1116,8 @@
       "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 blue Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] ＜Delay＞ (Trash this card in your battle area to activate the effect below. You can't activate this effect the turn this card enters play.)  \n・Gain 2 memory.",
       "digivolveEffect": "-",
       "securityEffect": "[Security] Place this card in its owner's battle area.",
-      "notes": "DIGIMON CARD GAME GALLANTMON [ST-7],DIGIMON CARD GAME ULFORCEVEEDRAMON [ST-8]",
+      "aceEffect": "-",
+    "notes": "DIGIMON CARD GAME GALLANTMON [ST-7],DIGIMON CARD GAME ULFORCEVEEDRAMON [ST-8]",
       "color": "Blue",
       "version": "Normal",
       "block": [
@@ -1112,7 +1148,8 @@
       "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 yellow Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] ＜Delay＞ (Trash this card in your battle area to activate the effect below. You can't activate this effect the turn this card enters play.)  \n・Gain 2 memory.",
       "digivolveEffect": "-",
       "securityEffect": "[Security] Place this card in its owner's battle area.",
-      "notes": "DIGIMON CARD GAME GALLANTMON [ST-7],DIGIMON CARD GAME ULFORCEVEEDRAMON [ST-8]",
+      "aceEffect": "-",
+    "notes": "DIGIMON CARD GAME GALLANTMON [ST-7],DIGIMON CARD GAME ULFORCEVEEDRAMON [ST-8]",
       "color": "Yellow",
       "version": "Normal",
       "block": [
@@ -1143,7 +1180,8 @@
       "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 green Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] ＜Delay＞ (Trash this card in your battle area to activate the effect below. You can't activate this effect the turn this card enters play.)  \n・Gain 2 memory.",
       "digivolveEffect": "-",
       "securityEffect": "[Security] Place this card in its owner's battle area.",
-      "notes": "DIGIMON CARD GAME GALLANTMON [ST-7],DIGIMON CARD GAME ULFORCEVEEDRAMON [ST-8]",
+      "aceEffect": "-",
+    "notes": "DIGIMON CARD GAME GALLANTMON [ST-7],DIGIMON CARD GAME ULFORCEVEEDRAMON [ST-8]",
       "color": "Green",
       "version": "Normal",
       "block": [
@@ -1174,7 +1212,8 @@
       "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 black Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] ＜Delay＞ (Trash this card in your battle area to activate the effect below. You can't activate this effect the turn this card enters play.)  \n・Gain 2 memory.",
       "digivolveEffect": "-",
       "securityEffect": "[Security] Place this card in its owner's battle area.",
-      "notes": "DIGIMON CARD GAME GALLANTMON [ST-7],DIGIMON CARD GAME ULFORCEVEEDRAMON [ST-8]",
+      "aceEffect": "-",
+    "notes": "DIGIMON CARD GAME GALLANTMON [ST-7],DIGIMON CARD GAME ULFORCEVEEDRAMON [ST-8]",
       "color": "Black",
       "version": "Normal",
       "block": [
@@ -1205,7 +1244,8 @@
       "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 purple Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] ＜Delay＞ (Trash this card in your battle area to activate the effect below. You can't activate this effect the turn this card enters play.)  \n・Gain 2 memory.",
       "digivolveEffect": "-",
       "securityEffect": "[Security] Place this card in its owner's battle area.",
-      "notes": "DIGIMON CARD GAME GALLANTMON [ST-7],DIGIMON CARD GAME ULFORCEVEEDRAMON [ST-8]",
+      "aceEffect": "-",
+    "notes": "DIGIMON CARD GAME GALLANTMON [ST-7],DIGIMON CARD GAME ULFORCEVEEDRAMON [ST-8]",
       "color": "Purple",
       "version": "Normal",
       "block": [
@@ -1236,7 +1276,8 @@
       "effect": "[When Attacking] Trigger ＜Draw 1＞. (Draw 1 card from your deck.)",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "DOUBLE DIAMOND DASH PACK",
+      "aceEffect": "-",
+    "notes": "DOUBLE DIAMOND DASH PACK",
       "color": "Red",
       "version": "Normal",
       "block": [
@@ -1266,7 +1307,8 @@
       "effect": "[On Play] Reveal the top 5 cards of your deck. Add 1 Tamer card among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "DOUBLE DIAMOND DASH PACK",
+      "aceEffect": "-",
+    "notes": "DOUBLE DIAMOND DASH PACK",
       "color": "Blue",
       "version": "Normal",
       "block": [
@@ -1296,7 +1338,8 @@
       "effect": "[On Play] You may return 1 [Kentaurosmon] from your trash to the bottom of your deck to trigger ＜Recovery +1 (Deck)＞. (Place the top card of your deck on top of your security stack.)",
       "digivolveEffect": "[On Deletion] 1 of your opponent's Digimon gets -1000 DP for the turn.",
       "securityEffect": "-",
-      "notes": "DOUBLE DIAMOND DASH PACK",
+      "aceEffect": "-",
+    "notes": "DOUBLE DIAMOND DASH PACK",
       "color": "Yellow",
       "version": "Normal",
       "block": [
@@ -1326,7 +1369,8 @@
       "effect": "[When Digivolving] Suspend 1 of your opponent's Digimon, or 2 of your opponent's Digimon with 5000 DP or less.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "DOUBLE DIAMOND DASH PACK",
+      "aceEffect": "-",
+    "notes": "DOUBLE DIAMOND DASH PACK",
       "color": "Green",
       "version": "Normal",
       "block": [
@@ -1356,7 +1400,8 @@
       "effect": "-",
       "digivolveEffect": "[All Turns] All of your other Digimon with the same name as this Digimon gain ＜Decoy (Black/White)＞. (When one of your other black or white Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent that deletion.)",
       "securityEffect": "-",
-      "notes": "DOUBLE DIAMOND DASH PACKErrata Card",
+      "aceEffect": "-",
+    "notes": "DOUBLE DIAMOND DASH PACKErrata Card",
       "color": "Black",
       "version": "Normal",
       "block": [
@@ -1386,7 +1431,8 @@
       "effect": "-",
       "digivolveEffect": "[Your Turn] [Once Per Turn] When you use an Option card, gain 1 memory.",
       "securityEffect": "-",
-      "notes": "DOUBLE DIAMOND DASH PACK",
+      "aceEffect": "-",
+    "notes": "DOUBLE DIAMOND DASH PACK",
       "color": "Purple",
       "version": "Normal",
       "block": [
@@ -1416,7 +1462,8 @@
       "effect": "[When Digivolving] Trash the top 3 cards of your deck. Then, if you have a Tamer in play, this Digimon gets +3000 DP for the turn.",
       "digivolveEffect": "[When Attacking] You may place 3 non-Digi-Egg cards from your trash at the bottom of your deck in any order to have this Digimon get +2000 DP for the turn.",
       "securityEffect": "-",
-      "notes": "NEXT ADVENTURE（BT-07）Pre-Release Tournament, BOOSTER -NEW AWAKENING- [BT08] Box Promotion",
+      "aceEffect": "-",
+    "notes": "NEXT ADVENTURE（BT-07）Pre-Release Tournament, BOOSTER -NEW AWAKENING- [BT08] Box Promotion",
       "color": "Blue",
       "version": "Normal",
       "block": [
@@ -1447,7 +1494,8 @@
       "effect": "[When Digivolving] You may place 3 non-Digi-Egg cards from your trash at the bottom of your deck in any order to unsuspend this Digimon and 1 of your Tamers.\n[Your Turn] [Once Per Turn] When a card is returned from your trash to your deck, gain 1 memory.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "NEXT ADVENTURE（BT-07）Pre-Release Tournament, BOOSTER -NEW AWAKENING- [BT08] Box Promotion",
+      "aceEffect": "-",
+    "notes": "NEXT ADVENTURE（BT-07）Pre-Release Tournament, BOOSTER -NEW AWAKENING- [BT08] Box Promotion",
       "color": "Blue",
       "version": "Normal",
       "block": [
@@ -1478,7 +1526,8 @@
       "effect": "[When Digivolving] If you have a Tamer in play, this Digimon gains ＜Security Attack +1＞ for the turn. (This Digimon checks 1 additional security card.)\n[Your Turn] [Once Per Turn] When this Digimon is blocked, trash the top card of your opponent's security stack.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "▹BOOSTER -NEXT ADVENTURE- [BT-07]",
+      "aceEffect": "-",
+    "notes": "▹BOOSTER -NEXT ADVENTURE- [BT-07]",
       "color": "Red",
       "version": "Normal",
       "block": [
@@ -1508,7 +1557,8 @@
       "effect": "[When Digivolving] If you have a Tamer in play, delete 1 of your opponent's Digimon with 13000 DP or more.\n[When Attacking] Delete 1 of your opponent's Digimon with 4000 DP or less.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "▹BOOSTER -NEXT ADVENTURE- [BT-07]",
+      "aceEffect": "-",
+    "notes": "▹BOOSTER -NEXT ADVENTURE- [BT-07]",
       "color": "Red",
       "version": "Normal",
       "block": [
@@ -1538,7 +1588,8 @@
       "effect": "[When Digivolving] If you have a Tamer in play, ＜Draw 2＞. (Draw 2 cards from your deck.)  [Opponent's Turn] This Digimon can't be attacked.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "▹BOOSTER -NEXT ADVENTURE- [BT-07]",
+      "aceEffect": "-",
+    "notes": "▹BOOSTER -NEXT ADVENTURE- [BT-07]",
       "color": "Blue",
       "version": "Normal",
       "block": [
@@ -1568,7 +1619,8 @@
       "effect": "[When Digivolving] If you have a Tamer in play, up to 3 of your opponent's Digimon with no digivolution cards can't attack until the end of your opponent's next turn.\n[When Attacking] [Once Per Turn] Return 1 of your opponent's Digimon with no digivolution cards to its owner's hand.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "▹BOOSTER -NEXT ADVENTURE- [BT-07]",
+      "aceEffect": "-",
+    "notes": "▹BOOSTER -NEXT ADVENTURE- [BT-07]",
       "color": "Blue",
       "version": "Normal",
       "block": [
@@ -1598,7 +1650,8 @@
       "effect": "[When Digivolving] If you have a Tamer in play, 1 of your opponent's Digimon gets -5000 DP for the turn.\n[When Attacking] 1 of your opponent's Digimon and all of your opponent's Security Digimon get -2000 DP for the turn.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "▹BOOSTER -NEXT ADVENTURE- [BT-07]",
+      "aceEffect": "-",
+    "notes": "▹BOOSTER -NEXT ADVENTURE- [BT-07]",
       "color": "Yellow",
       "version": "Normal",
       "block": [
@@ -1628,7 +1681,8 @@
       "effect": "[When Digivolving] If you have a Tamer in play, ＜Recovery +1 (Deck)＞. (Place the top card of your deck on top of your security stack.)\n[On Deletion] ＜Recovery +1 (Deck)＞. (Place the top card of your deck on top of your security stack.)",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "▹BOOSTER -NEXT ADVENTURE- [BT-07]",
+      "aceEffect": "-",
+    "notes": "▹BOOSTER -NEXT ADVENTURE- [BT-07]",
       "color": "Yellow",
       "version": "Normal",
       "block": [
@@ -1658,7 +1712,8 @@
       "effect": "[When Digivolving] If you have a Tamer in play, suspend 1 of your opponent's Digimon.\n[Your Turn] When this Digimon deletes an opponent's Digimon in battle and survives, gain 1 memory.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "▹BOOSTER -NEXT ADVENTURE- [BT-07]",
+      "aceEffect": "-",
+    "notes": "▹BOOSTER -NEXT ADVENTURE- [BT-07]",
       "color": "Green",
       "version": "Normal",
       "block": [
@@ -1688,7 +1743,8 @@
       "effect": "＜Digisorption -2＞ (When one of your Digimon digivolves into this card from your hand, you may suspend 1 of your Digimon to reduce the memory cost of the digivolution by 2.)\n[When Digivolving] If you have a Tamer in play, 1 of your opponent's Digimon can't attack or block until the end of their next turn.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "▹BOOSTER -NEXT ADVENTURE- [BT-07]",
+      "aceEffect": "-",
+    "notes": "▹BOOSTER -NEXT ADVENTURE- [BT-07]",
       "color": "Green",
       "version": "Normal",
       "block": [
@@ -1718,7 +1774,8 @@
       "effect": "[Your Turn] This Digimon gets +3000 DP.",
       "digivolveEffect": "[Your Turn] While this Digimon is level 6 or higher, it gets +2000 DP.",
       "securityEffect": "-",
-      "notes": "Official Tournament Pack Vol.4",
+      "aceEffect": "-",
+    "notes": "Official Tournament Pack Vol.4",
       "color": "Green",
       "version": "Normal",
       "block": [
@@ -1748,7 +1805,8 @@
       "effect": "[Your Turn] While you have a red Tamer in play, this Digimon can also attack your opponent's unsuspended Digimon.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "NEW AWAKENING（BT-08）Pre-Release Tournaments",
+      "aceEffect": "-",
+    "notes": "NEW AWAKENING（BT-08）Pre-Release Tournaments",
       "color": "Red",
       "version": "Normal",
       "block": [
@@ -1778,7 +1836,8 @@
       "effect": "-",
       "digivolveEffect": "[Your Turn] While you have a [Hiro Amanokawa] in play, this Digimon gets +2000 DP.",
       "securityEffect": "-",
-      "notes": "Official Tournament Pack Vol.5",
+      "aceEffect": "-",
+    "notes": "Official Tournament Pack Vol.5",
       "color": "Red",
       "version": "Normal",
       "block": [
@@ -1808,7 +1867,8 @@
       "effect": "-",
       "digivolveEffect": "[When Attacking] [Once Per Turn] If you have a [Ruli Tsukiyono] in play, gain 1 memory.",
       "securityEffect": "-",
-      "notes": "Official Tournament Pack Vol.5 Errata Card",
+      "aceEffect": "-",
+    "notes": "Official Tournament Pack Vol.5 Errata Card",
       "color": "Green",
       "version": "Normal",
       "block": [
@@ -1838,7 +1898,8 @@
       "effect": "-",
       "digivolveEffect": "[When Attacking] [Once Per Turn] If you have a [Kiyoshiro Higashimitarai] in play, ＜Draw 1＞. (Draw 1 card from your deck.)",
       "securityEffect": "-",
-      "notes": "Official Tournament Pack Vol.5",
+      "aceEffect": "-",
+    "notes": "Official Tournament Pack Vol.5",
       "color": "Blue",
       "version": "Normal",
       "block": [
@@ -1868,7 +1929,8 @@
       "effect": "[Your Turn] When you attack with a Digimon that has [Gammamon] in its digivolution cards, you may suspend this Tamer to have that Digimon gain ＜Security Attack +1＞ for the turn. (This Digimon checks 1 additional security card.)",
       "digivolveEffect": "[Security] Play this card without paying its memory cost.",
       "securityEffect": "-",
-      "notes": "Official Tournament Pack Vol.5",
+      "aceEffect": "-",
+    "notes": "Official Tournament Pack Vol.5",
       "color": "Red",
       "version": "Normal",
       "block": [
@@ -1898,7 +1960,8 @@
       "effect": "[Your Turn] When you attack with a Digimon that has [Angoramon] in its digivolution cards, you may suspend this Tamer to have that Digimon get +3000 DP for the turn.",
       "digivolveEffect": "[Security] Play this card without paying its memory cost.",
       "securityEffect": "-",
-      "notes": "Official Tournament Pack Vol.5 Errata Card",
+      "aceEffect": "-",
+    "notes": "Official Tournament Pack Vol.5 Errata Card",
       "color": "Green",
       "version": "Normal",
       "block": [
@@ -1928,7 +1991,8 @@
       "effect": "[Your Turn] When you attack with a Digimon that has [Jellymon] in its digivolution cards, you may suspend this Tamer to have that Digimon gain ＜Jamming＞ for the turn. (This Digimon can't be deleted in battles against Security Digimon.)",
       "digivolveEffect": "[Security] Play this card without paying its memory cost.",
       "securityEffect": "-",
-      "notes": "Official Tournament Pack Vol.5",
+      "aceEffect": "-",
+    "notes": "Official Tournament Pack Vol.5",
       "color": "Blue",
       "version": "Normal",
       "block": [
@@ -1958,7 +2022,8 @@
       "effect": "[On Play] Delete 1 of your opponent's Digimon with 2000 DP or less.",
       "digivolveEffect": "[When Attacking] Delete 1 of your opponent's Digimon with 2000 DP or less.",
       "securityEffect": "-",
-      "notes": "ST-11 SPECIAL ENTRY PACK",
+      "aceEffect": "-",
+    "notes": "ST-11 SPECIAL ENTRY PACK",
       "color": "Red",
       "version": "Normal",
       "block": [
@@ -1988,7 +2053,8 @@
       "effect": "[On Play] Delete 1 of your opponent's Digimon with 2000 DP or less.",
       "digivolveEffect": "[When Attacking] Delete 1 of your opponent's Digimon with 2000 DP or less.",
       "securityEffect": "-",
-      "notes": "ST-11 SPECIAL ENTRY PACK",
+      "aceEffect": "-",
+    "notes": "ST-11 SPECIAL ENTRY PACK",
       "color": "Red",
       "version": "Normal",
       "block": [
@@ -2018,7 +2084,8 @@
       "effect": "The name of this card/Digimon is also treated as [MetalGreymon].\n[When Digivolving] If you have a Tamer in play, delete 1 of your opponent's Digimon with 5000 DP or less.",
       "digivolveEffect": "[All Turns] When this Digimon has [Greymon] or [Omnimon] in its name and an effect would delete it or return it to your hand or deck, you may trash 2 cards of the same level in this Digimon's digivolution cards to prevent it from leaving play.",
       "securityEffect": "-",
-      "notes": "Update Pack",
+      "aceEffect": "-",
+    "notes": "Update Pack",
       "color": "Red",
       "version": "Normal",
       "block": [
@@ -2048,7 +2115,8 @@
       "effect": "The name of this card/Digimon is also treated as [WereGarurumon].\n[When Digivolving] If you have a Tamer in play, return 2 of your opponent’s level 3 Digimon to their owners’ hands.",
       "digivolveEffect": "[All Turns] When this Digimon has [Garurumon] or [Omnimon] in its name and would be deleted in battle, you may trash 2 cards of the same level in this Digimon's digivolution cards to prevent that deletion.",
       "securityEffect": "-",
-      "notes": "Update Pack",
+      "aceEffect": "-",
+    "notes": "Update Pack",
       "color": "Blue",
       "version": "Normal",
       "block": [
@@ -2078,7 +2146,8 @@
       "effect": "[Your Turn] When this Digimon would digivolve into a card with [Shaman] or [Wizard] in its traits, you may trash up to 3 cards from the top of your security stack. For each security card trashed by this effect, reduce the digivolution cost by 1.",
       "digivolveEffect": "[When Attacking] [Once Per Turn] If you have 3 security cards, unsuspend this Digimon.",
       "securityEffect": "-",
-      "notes": "Update Pack",
+      "aceEffect": "-",
+    "notes": "Update Pack",
       "color": "Yellow",
       "version": "Normal",
       "block": [
@@ -2108,7 +2177,8 @@
       "effect": "[Your Turn] When this Digimon would digivolve into a card with [Insectoid] in its traits, all of your opponent's Digimon gain \"[All Turns] When this Digimon becomes suspended, lose 1 memory.\" until the end of your opponent's turn.",
       "digivolveEffect": "[Your Turn] While this Digimon has [Insectoid] in its traits, it gains ＜Piercing＞. (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.)",
       "securityEffect": "-",
-      "notes": "Update Pack",
+      "aceEffect": "-",
+    "notes": "Update Pack",
       "color": "Green",
       "version": "Normal",
       "block": [
@@ -2138,7 +2208,8 @@
       "effect": "[Your Turn] When this Digimon would digivolve into a card with 2 colors or [Composite] in its traits, reduce the digivolution cost by 2.",
       "digivolveEffect": "[When Attacking] For each of this Digimon’s colors, delete 1 of your opponent's Digimon with 3000 DP or less.",
       "securityEffect": "-",
-      "notes": "Update Pack",
+      "aceEffect": "-",
+    "notes": "Update Pack",
       "color": "Black/Red",
       "version": "Normal",
       "block": [
@@ -2168,7 +2239,8 @@
       "effect": "When this card is trashed from your deck, gain 1 memory.",
       "digivolveEffect": "[When Attacking] You may reveal 1 purple card from your hand and place it on top of your deck.",
       "securityEffect": "-",
-      "notes": "Update Pack",
+      "aceEffect": "-",
+    "notes": "Update Pack",
       "color": "Purple",
       "version": "Normal",
       "block": [
@@ -2198,7 +2270,8 @@
       "effect": "[On Play] If you have a red Tamer in play, delete 1 of your opponent's Digimon with 3000 DP or less.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "Digimon Survive Promotion Pack",
+      "aceEffect": "-",
+    "notes": "Digimon Survive Promotion Pack",
       "color": "Red",
       "version": "Normal",
       "block": [
@@ -2228,7 +2301,8 @@
       "effect": "[On Play] If you have a purple Tamer in play, delete 1 of your opponent's level 3 Digimon.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "Digimon Survive Promotion Pack",
+      "aceEffect": "-",
+    "notes": "Digimon Survive Promotion Pack",
       "color": "Purple",
       "version": "Normal",
       "block": [
@@ -2258,9 +2332,10 @@
       "effect": "[Security] At the end of the battle, delete 1 of your opponent's Digimon with 4000 DP or less. If you don't delete an opponent's Digimon with this effect, ＜Draw 1＞. (Draw 1 card from your deck.) Then, add this card to its owner's hand.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "▹BOOSTER ACROSS TIME [BT-12] Limited Card Pack Box Topper",
+      "aceEffect": "-",
+    "notes": "▹BOOSTER ACROSS TIME [BT-12] Limited Card Pack Box Topper",
       "color": "Red",
-      "version": "Normal",
+      "version": "Box-Topper",
       "block": [
          "01",
          "02"
@@ -2289,9 +2364,10 @@
       "effect": "[Security] At the end of the battle, ＜Draw 2＞. (Draw 2 cards from your deck.) Then, add this card to its owner's hand.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "▹BOOSTER ACROSS TIME [BT-12] Limited Card Pack Box Topper",
+      "aceEffect": "-",
+    "notes": "▹BOOSTER ACROSS TIME [BT-12] Limited Card Pack Box Topper",
       "color": "Blue",
-      "version": "Normal",
+      "version": "Box-Topper",
       "block": [
          "01",
          "02"
@@ -2320,9 +2396,10 @@
       "effect": "[Security] At the end of the battle, 1 of your opponent's Digimon gains ＜Security Attack -1＞ for the turn. (This Digimon checks 1 fewer security cards.) Then, add this card to its owner's hand.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "▹BOOSTER ACROSS TIME [BT-12] Limited Card Pack Box Topper",
+      "aceEffect": "-",
+    "notes": "▹BOOSTER ACROSS TIME [BT-12] Limited Card Pack Box Topper",
       "color": "Yellow",
-      "version": "Normal",
+      "version": "Box-Topper",
       "block": [
          "01",
          "02"
@@ -2351,9 +2428,10 @@
       "effect": "[Security] At the end of the battle, suspend 1 of your opponent's Digimon. Then, add this card to its owner's hand.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "▹BOOSTER ACROSS TIME [BT-12] Limited Card Pack Box Topper",
+      "aceEffect": "-",
+    "notes": "▹BOOSTER ACROSS TIME [BT-12] Limited Card Pack Box Topper",
       "color": "Green",
-      "version": "Normal",
+      "version": "Box-Topper",
       "block": [
          "01",
          "02"
@@ -2382,9 +2460,10 @@
       "effect": "[Security] At the end of the battle, reveal the top card of your deck. If it's a black Digimon card with a play cost of 4 or less, you may play it without paying its memory cost. Add any remaining cards to your hand. Then, add this card to its owner's hand.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "▹BOOSTER ACROSS TIME [BT-12] Limited Card Pack Box Topper",
+      "aceEffect": "-",
+    "notes": "▹BOOSTER ACROSS TIME [BT-12] Limited Card Pack Box Topper",
       "color": "Black",
-      "version": "Normal",
+      "version": "Box-Topper",
       "block": [
          "01",
          "02"
@@ -2413,9 +2492,10 @@
       "effect": "[Security] At the end of the battle, you may play 1 purple level 3 Digimon card from your trash without paying its memory cost. Then, add this card to its owner's hand.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "▹BOOSTER ACROSS TIME [BT-12] Limited Card Pack Box Topper Errata Card",
+      "aceEffect": "-",
+    "notes": "▹BOOSTER ACROSS TIME [BT-12] Limited Card Pack Box Topper Errata Card",
       "color": "Purple",
-      "version": "Normal",
+      "version": "Box-Topper",
       "block": [
          "01",
          "02"
@@ -2448,9 +2528,10 @@
       "effect": "[Main] Reveal the top 2 cards of your deck. Add 1 red card among them to your hand. Place the rest at the bottom of your deck in any order. Then, place this card into your battle area.\n[Main]＜Delay＞ (After this card is placed, by trashing it the next turn or later, activate the effect below.)\n・1 of your Digimon may digivolve  into a red Digimon card in your hand by paying the digivolution cost. When digivolving with this effect, reduce that digivolution cost by 2.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "▹BOOSTER BLAST ACE [BT-14] Box Topper",
+      "aceEffect": "-",
+    "notes": "▹BOOSTER BLAST ACE [BT-14] Box Topper",
       "color": "Red",
-      "version": "Normal",
+      "version": "Box-Topper",
       "illustrator": "Takase",
       "block": [
          "02"
@@ -2482,9 +2563,10 @@
       "effect": "[Main] Reveal the top 2 cards of your deck. Add 1 blue card among them to your hand. Place the rest at the bottom of your deck in any order. Then, place this card into your battle area.\n[Main]＜Delay＞ (After this card is placed, by trashing it the next turn or later, activate the effect below.)\n・1 of your Digimon may digivolve into a blue Digimon card in your hand by paying the digivolution cost. When digivolving with this effect, reduce that digivolution cost by 2.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "▹BOOSTER BLAST ACE [BT-14] Box Topper",
+      "aceEffect": "-",
+    "notes": "▹BOOSTER BLAST ACE [BT-14] Box Topper",
       "color": "Blue",
-      "version": "Normal",
+      "version": "Box-Topper",
       "illustrator": "Takase",
       "block": [
          "02"
@@ -2516,9 +2598,10 @@
       "effect": "[Main] Reveal the top 2 cards of your deck. Add 1 yellow card among them to your hand. Place the rest at the bottom of your deck in any order. Then, place this card into your battle area.\n[Main]＜Delay＞ (After this card is placed, by trashing it the next turn or later, activate the effect below.)\n・1 of your Digimon may digivolve into a yellow Digimon card in your hand by paying the digivolution cost. When digivolving with this effect, reduce that digivolution cost by 2.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "▹BOOSTER BLAST ACE [BT-14] Box Topper",
+      "aceEffect": "-",
+    "notes": "▹BOOSTER BLAST ACE [BT-14] Box Topper",
       "color": "Yellow",
-      "version": "Normal",
+      "version": "Box-Topper",
       "illustrator": "Takase",
       "block": [
          "02"
@@ -2550,9 +2633,10 @@
       "effect": "[Main] Reveal the top 2 cards of your deck. Add 1 green card among them to your hand. Place the rest at the bottom of your deck in any order. Then, place this card into your battle area.\n[Main]＜Delay＞ (After this card is placed, by trashing it the next turn or later, activate the effect below.)\n・1 of your Digimon may digivolve into a green Digimon card in your hand by paying the digivolution cost. When digivolving with this effect, reduce that digivolution cost by 2.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "▹BOOSTER BLAST ACE [BT-14] Box Topper",
+      "aceEffect": "-",
+    "notes": "▹BOOSTER BLAST ACE [BT-14] Box Topper",
       "color": "Green",
-      "version": "Normal",
+      "version": "Box-Topper",
       "illustrator": "Takase",
       "block": [
          "02"
@@ -2584,9 +2668,10 @@
       "effect": "[Main] Reveal the top 2 cards of your deck. Add 1 black card among them to your hand. Place the rest at the bottom of your deck in any order. Then, place this card into your battle area.\n[Main]＜Delay＞ (After this card is placed, by trashing it the next turn or later, activate the effect below.)\n・1 of your Digimon may digivolve into a black Digimon card in your hand by paying the digivolution cost. When digivolving with this effect, reduce that digivolution cost by 2.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "▹BOOSTER BLAST ACE [BT-14] Box Topper",
+      "aceEffect": "-",
+    "notes": "▹BOOSTER BLAST ACE [BT-14] Box Topper",
       "color": "Black",
-      "version": "Normal",
+      "version": "Box-Topper",
       "illustrator": "Takase",
       "block": [
          "02"
@@ -2618,9 +2703,10 @@
       "effect": "[Main] Reveal the top 2 cards of your deck. Add 1 purple card among them to your hand. Place the rest at the bottom of your deck in any order. Then, place this card into your battle area.\n[Main]＜Delay＞ (After this card is placed, by trashing it the next turn or later, activate the effect below.)\n・1 of your Digimon may digivolve into a purple Digimon card in your hand by paying the digivolution cost. When digivolving with this effect, reduce that digivolution cost by 2.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "▹BOOSTER BLAST ACE [BT-14] Box Topper",
+      "aceEffect": "-",
+    "notes": "▹BOOSTER BLAST ACE [BT-14] Box Topper",
       "color": "Purple",
-      "version": "Normal",
+      "version": "Box-Topper",
       "illustrator": "Takase",
       "block": [
          "02"
