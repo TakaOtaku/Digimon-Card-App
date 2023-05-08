@@ -8477,7 +8477,7 @@
       "effect": "＜Blocker＞ (When an opponent's Digimon attacks， you may suspend this Digimon to force the opponent to attack it instead.)",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "DOUBLE DIAMOND (BT-06) Pre-Release Tournaments",
+      "notes": "DOUBLE DIAMOND (BT-06) Pre-Release Tournament",
       "color": "Black",
       "version": "AA",
       "block": [
@@ -9095,7 +9095,7 @@
       "effect": "[On Play] You may delete one of your other Digimon to delete 1 of your opponent's level 5 or lower Digimon.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "BATTLE OF OMNI (BT-05) Pre-Release Tournaments",
+      "notes": "BATTLE OF OMNI (BT-05) Pre-Release Tournament",
       "color": "Purple",
       "version": "AA",
       "block": [
@@ -18390,7 +18390,7 @@
       "effect": "[On Play] Reveal the top 4 cards of your deck. Add 1 2-color blue card among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "Dimensional Phase Pre-Release Promotion",
+      "notes": "DIMENSIONAL PHASE (BT-11) Pre-Release Tournament Winner Card",
       "color": "Blue",
       "version": "AA",
       "block": [
@@ -18840,7 +18840,7 @@
       "effect": "[On Play] Reveal the top 4 cards of your deck. Add 1 card with [Greymon] in its name and 1 card with [Dragonkin] in its traits among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "XROS ENCOUNTER (BT-10) Pre-Release Tournaments",
+      "notes": "XROS ENCOUNTER (BT-10) Pre-Release Tournament",
       "color": "Black",
       "version": "AA",
       "block": [
@@ -20951,7 +20951,7 @@
       "effect": "[Security] At the end of the battle, if you have 3 or fewer security cards, ＜Recovery +1 (Deck)＞. (Place the top card of your deck on top of your security stack.)",
       "digivolveEffect": "-",
       "securityEffect": "-",
-      "notes": "X RECORD (BT-09) Pre-Release Tournaments",
+      "notes": "X RECORD (BT-09) Pre-Release Tournament",
       "color": "Yellow",
       "version": "AA",
       "block": [
@@ -25137,7 +25137,7 @@
       "effect": "-",
       "digivolveEffect": "＜Security Attack +1＞ (This Digimon checks 1 additional security card.)",
       "securityEffect": "-",
-      "notes": "Dimensional Phase Pre-Release Promotion",
+      "notes": "DIMENSIONAL PHASE (BT-11) Pre-Release Tournament",
       "color": "Red",
       "version": "AA",
       "block": [
@@ -29247,6 +29247,66 @@
         "02"
       ],
       "restriction": "-"
+  },
+  {
+    "id": "BT3-058_P1",
+    "name": "BanchoStingmon",
+    "cardImage": "assets/images/cards/eng/BT3-058_P1.webp",
+    "cardType": "Digimon",
+    "dp": "9000",
+    "playCost": "12",
+    "digivolveCost1": "3 from Lv.5",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Free",
+    "type": "Insectoid/Boss",
+    "rarity": "U",
+    "cardNumber": "BT3-058",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "＜Piercing＞ (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.)\n[When Attacking] If you attack an opponent's Digimon that has 12000 DP or more, this Digimon gets +7000 DP and ＜Security Attack +2＞ (This Digimon checks 2 additional security cards) for the turn.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "ACROSS TIME (BT-12) Pre-Release Tournament",
+    "color": "Green",
+    "version": "AA",
+    "block": [
+      "00"
+    ],
+    "restriction": "-",
+    "illustrator": "Tonamikanji"
+  },
+  {
+    "id": "BT2-039_P1",
+    "name": "Magnadramon",
+    "cardImage": "assets/images/cards/eng/BT2-039_P1.webp",
+    "cardType": "Digimon",
+    "dp": "10000",
+    "playCost": "11",
+    "digivolveCost1": "3 from Lv.5",
+    "digivolveCost2": "-",
+    "cardLv": "Lv.6",
+    "form": "Mega",
+    "attribute": "Vaccine",
+    "type": "Holy Dragon/Four Great Dragons",
+    "rarity": "U",
+    "cardNumber": "BT2-039",
+    "digiXros": "-",
+    "specialDigivolve": "-",
+    "dnaDigivolve": "-",
+    "effect": "[On Play] If you have 3 or fewer security cards， trigger ＜Recovery +2 (Deck)＞. (Place the top 2 cards of your deck on top of your security stack.)\n[When Attacking] You may play 1 yellow level 3 Digimon card from your hand without paying its memory cost.",
+    "digivolveEffect": "-",
+    "securityEffect": "-",
+    "notes": "ACROSS TIME (BT-12) Pre-Release Tournament Winner Card",
+    "color": "Yellow",
+    "version": "AA",
+    "block": [
+      "00"
+    ],
+    "restriction": "-",
+    "illustrator": "Ishibashi Yosuke"
   },
   {
     "id": "ST14-08_P1",
