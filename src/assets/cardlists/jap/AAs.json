@@ -27078,9 +27078,9 @@
     "illustrator": "banira"
   },
   {
-    "id": "BT6-082_P1",
+    "id": "BT6-082_P2",
     "name": "Sistermon Blanc",
-    "cardImage": "assets/images/cards/jap/BT6-082_P1.webp",
+    "cardImage": "assets/images/cards/jap/BT6-082_P2.webp",
     "cardType": "Digimon",
     "dp": "3000",
     "playCost": "3",
@@ -27109,9 +27109,9 @@
     "illustrator": "Tonamikanji"
   },
   {
-    "id": "BT6-084_P1",
+    "id": "BT6-084_P2",
     "name": "Sistermon Noir",
-    "cardImage": "assets/images/cards/jap/BT6-084_P1.webp",
+    "cardImage": "assets/images/cards/jap/BT6-084_P2.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "4",
@@ -27140,9 +27140,9 @@
     "illustrator": "Tonamikanji"
   },
   {
-    "id": "BT10-085_P1",
+    "id": "BT10-085_P2",
     "name": "Sistermon Ciel",
-    "cardImage": "assets/images/cards/jap/BT10-085_P1.webp",
+    "cardImage": "assets/images/cards/jap/BT10-085_P2.webp",
     "cardType": "Digimon",
     "dp": "5000",
     "playCost": "4",
