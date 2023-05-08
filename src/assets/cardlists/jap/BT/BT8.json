@@ -2125,7 +2125,8 @@
     "color": "Purple",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "restriction": "-",
     "illustrator": "koki"
