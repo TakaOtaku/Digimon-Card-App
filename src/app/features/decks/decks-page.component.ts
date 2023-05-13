@@ -6,11 +6,11 @@ import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { first, Subject, takeUntil, tap } from 'rxjs';
 import * as uuid from 'uuid';
-import { ICard, IDeck, ITournamentDeck, TAGS } from '../../../models';
+import { ICard, ICountCard, IDeck, ITournamentDeck, TAGS } from '../../../models';
 import { AuthService } from '../../service/auth.service';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
 import { importDeck } from '../../store/digimon.actions';
-import { selectAllCards, selectCommunityDecks, selectCommunityDeckSearch } from '../../store/digimon.selectors';
+import { selectAllCards, selectCollection, selectCommunityDecks, selectCommunityDeckSearch } from '../../store/digimon.selectors';
 import { emptyDeck } from '../../store/reducers/digimon.reducers';
 import { DeckStatisticsComponent } from './components/deck-statistics.component';
 import { DeckSubmissionComponent } from '../shared/dialogs/deck-submission.component';
@@ -40,6 +40,14 @@ import { ButtonModule } from 'primeng/button';
             type="button"
             [label]="getSwitchLabel()"
             (click)="switchMode()"></button>
+
+          <button
+            pButton
+            class="p-button-outlined mt-1 lg:mr-2 lg:mt-3"
+            icon="pi pi-search"
+            type="button"
+            label="Find possible decks within your collection"
+            (click)="applyCollectionFilter()"></button>
 
           <button
             pButton
@@ -164,6 +172,7 @@ export class DecksPageComponent implements OnInit, OnDestroy {
   public allCards: ICard[] = [];
   private decks: IDeck[] | ITournamentDeck[] = [];
   private allDecks: IDeck[] = [];
+  private collection: ICountCard[] = [];
 
   private onDestroy$ = new Subject<boolean>();
 
@@ -277,6 +286,25 @@ export class DecksPageComponent implements OnInit, OnDestroy {
 
     this.first = 0;
     this.page = 0;
+    this.decksToShow = this.filteredDecks.slice(0, 20);
+  }
+
+  applyCollectionFilter(){
+    this.store
+    .select(selectCollection)
+    .pipe(takeUntil(this.onDestroy$))
+    .subscribe((collection) => {
+      this.collection = collection;
+    });
+
+    var decksThatCanBeCreatedWithCollection = this.decks.filter(deck => {
+      return deck.cards.every(cardNeededForDeck => {
+        const foundCard = this.collection.find(card => card.id=== cardNeededForDeck.id);
+        return foundCard && foundCard.count >= cardNeededForDeck.count;
+      })
+    });
+
+    this.filteredDecks = decksThatCanBeCreatedWithCollection;
     this.decksToShow = this.filteredDecks.slice(0, 20);
   }
 
