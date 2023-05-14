@@ -214,6 +214,11 @@ function applyFilter(cards: ICard[], filter: any[], key: string): ICard[] {
       if (filter.find((value) => value === 'DNA Digivolution')) {
         returnArray = [...new Set([...returnArray, ...cards.filter((cards) => cards['dnaDigivolve'] !== '-')])];
       }
+      if (filter.find((value) => value === 'ACE')) {
+        returnArray = [
+          ...new Set([...returnArray, ...cards.filter((cards) => cards['aceEffect'] && cards['aceEffect'] !== '-')]),
+        ];
+      }
       if (filter.find((value) => value === 'DigiXros')) {
         returnArray = [...new Set([...returnArray, ...cards.filter((cards) => cards['digiXros'] !== '-')])];
       }

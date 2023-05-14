@@ -1835,7 +1835,8 @@
     "color": "Black",
     "version": "Normal",
     "block": [
-      "00"
+      "00",
+      "03"
     ],
     "restriction": "-",
     "illustrator": "Kazumasa Yasukuni"

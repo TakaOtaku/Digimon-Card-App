@@ -319,7 +319,7 @@ export const Illustrators: string[] = [
   'yuuki.',
 ].sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 
-export const SpecialRequirements: string[] = ['Digivolve', 'DNA Digivolution', 'DigiXros', 'Burst Digivolve'];
+export const SpecialRequirements: string[] = ['Digivolve', 'DNA Digivolution', 'DigiXros', 'Burst Digivolve', 'ACE'];
 
 export const Restrictions: string[] = ['Banned', 'Restricted to 1'];
 
