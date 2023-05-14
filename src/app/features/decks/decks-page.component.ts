@@ -216,6 +216,13 @@ export class DecksPageComponent implements OnInit, OnDestroy {
         this.form.get('searchFilter')!.setValue(search);
         this.filterChanges();
       });
+    
+    this.store
+      .select(selectCollection)
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((collection) => {
+        this.collection = collection;
+      });
 
     this.form.valueChanges.pipe(takeUntil(this.onDestroy$)).subscribe(() => this.filterChanges());
   }
@@ -290,13 +297,6 @@ export class DecksPageComponent implements OnInit, OnDestroy {
   }
 
   applyCollectionFilter(){
-    this.store
-    .select(selectCollection)
-    .pipe(takeUntil(this.onDestroy$))
-    .subscribe((collection) => {
-      this.collection = collection;
-    });
-
     var decksThatCanBeCreatedWithCollection = this.decks.filter(deck => {
       return deck.cards.every(cardNeededForDeck => {
         const matchingCards = this.collection.filter(card => card.id.split("_", 1)[0] === cardNeededForDeck.id.split("_", 1)[0]);
