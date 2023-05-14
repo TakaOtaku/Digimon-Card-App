@@ -299,8 +299,9 @@ export class DecksPageComponent implements OnInit, OnDestroy {
 
     var decksThatCanBeCreatedWithCollection = this.decks.filter(deck => {
       return deck.cards.every(cardNeededForDeck => {
-        const foundCard = this.collection.find(card => card.id=== cardNeededForDeck.id);
-        return foundCard && foundCard.count >= cardNeededForDeck.count;
+        const matchingCards = this.collection.filter(card => card.id.split("_", 1)[0] === cardNeededForDeck.id.split("_", 1)[0]);
+        const totalCount = matchingCards.reduce((total, card) => total + card.count, 0);
+        return totalCount >= cardNeededForDeck.count;
       })
     });
 
