@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { FormControl, UntypedFormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, UntypedFormGroup, FormsModule, ReactiveFormsModule, UntypedFormControl } from '@angular/forms';
 import { TAGS } from '../../../../models';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { StyleClassModule } from 'primeng/styleclass';
@@ -59,7 +59,7 @@ import { NgClass, NgIf } from '@angular/common';
       </p-multiSelect>
       <p-multiSelect
         *ngIf="mode === 'Community'"
-        formControlName="tagFilter"
+        [formControl]="tagFilter"
         [options]="tags"
         [showToggleAll]="false"
         defaultLabel="Select a Tag"
@@ -75,6 +75,7 @@ import { NgClass, NgIf } from '@angular/common';
 })
 export class DecksFilterComponent {
   @Input() form: UntypedFormGroup;
+  @Input() tagFilter: UntypedFormControl;
   @Input() mode = 'Community';
 
   tags = TAGS;

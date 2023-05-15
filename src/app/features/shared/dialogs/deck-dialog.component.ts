@@ -348,10 +348,10 @@ export class DeckDialogComponent implements OnInit, OnChanges {
         accept: () => {
           this.store.dispatch(
             setDeck({
-              deck: { ...this.deck, id: uuid.v4() },
+              deck: this.deck,
             })
           );
-          this.router.navigateByUrl('/deckbuilder/' + this.deck.id);
+          this.router.navigateByUrl('/deckbuilder/user/' + this.deck.userId + '/deck/' + this.deck.id);
         },
       });
     }

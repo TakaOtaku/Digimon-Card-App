@@ -4,9 +4,24 @@ import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { first, Subject, takeUntil, tap } from 'rxjs';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import {
+  BehaviorSubject,
+  combineLatest,
+  first,
+  forkJoin,
+  map,
+  Observable,
+  of,
+  startWith,
+  Subject,
+  switchMap,
+  takeUntil,
+  tap,
+} from 'rxjs';
 import * as uuid from 'uuid';
 import { ICard, ICountCard, IDeck, ITournamentDeck, TAGS } from '../../../models';
+import { IUserAndDecks } from '../../../models/interfaces/userAndDecks.interface';
 import { deckIsValid } from '../../functions/digimon-card.functions';
 import { AuthService } from '../../service/auth.service';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
@@ -19,7 +34,7 @@ import { DeckDialogComponent } from '../shared/dialogs/deck-dialog.component';
 import { DialogModule } from 'primeng/dialog';
 import { PaginatorModule } from 'primeng/paginator';
 import { DeckContainerComponent } from '../shared/deck-container.component';
-import { NgFor } from '@angular/common';
+import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { DecksFilterComponent } from './components/decks-filter.component';
 import { ButtonModule } from 'primeng/button';
 
@@ -59,9 +74,9 @@ import { ButtonModule } from 'primeng/button';
             (click)="deckSubmissionDialog = true"></button>
         </div>
 
-        <digimon-decks-filter [form]="form" [mode]="this.mode"></digimon-decks-filter>
+        <digimon-decks-filter [form]="form" [tagFilter]="tagFilter" [mode]="this.mode"></digimon-decks-filter>
 
-        <div class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div *ngIf="allDecksLoaded; else loading" class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           <digimon-deck-container
             class="mx-auto min-w-[280px] max-w-[285px]"
             *ngFor="let deck of decksToShow"
@@ -70,6 +85,10 @@ import { ButtonModule } from 'primeng/button';
             [deck]="deck"
             [mode]="this.mode"></digimon-deck-container>
         </div>
+
+        <ng-template #loading>
+          <div class="flex w-full"><p-progressSpinner class="mx-auto"></p-progressSpinner></div>
+        </ng-template>
 
         <p-paginator
           (onPageChange)="onPageChange($event)"
@@ -118,7 +137,7 @@ import { ButtonModule } from 'primeng/button';
       [baseZIndex]="10000">
       <digimon-deck-statistics
         [decks]="filteredDecks"
-        [allCards]="allCards"
+        [allCards]="(allCards$ | async) ?? []"
         [updateCards]="updateStatistics"></digimon-deck-statistics>
     </p-dialog>
   `,
@@ -133,6 +152,9 @@ import { ButtonModule } from 'primeng/button';
     DeckDialogComponent,
     DeckSubmissionComponent,
     DeckStatisticsComponent,
+    NgIf,
+    AsyncPipe,
+    ProgressSpinnerModule,
   ],
   providers: [MessageService],
 })
@@ -144,17 +166,16 @@ export class DecksPageComponent implements OnInit, OnDestroy {
 
   form = new UntypedFormGroup({
     searchFilter: new UntypedFormControl(''),
-    tagFilter: new UntypedFormControl(['BT12']),
     placementFilter: new UntypedFormControl(''),
     formatFilter: new UntypedFormControl([]),
     sizeFilter: new UntypedFormControl([]),
   });
 
+  tagFilter = new UntypedFormControl(['BT12']);
+
   tags = TAGS;
 
   deckDialog = false;
-  emptyDeck = emptyDeck;
-
   deckSubmissionDialog = false;
   deckStatsDialog = false;
   updateStatistics = new Subject<boolean>();
@@ -162,7 +183,10 @@ export class DecksPageComponent implements OnInit, OnDestroy {
   first = 0;
   page = 0;
 
-  public allCards: ICard[] = [];
+  users$: Observable<IUserAndDecks[]> = this.digimonBackendService.getUserDecks();
+  allCards$: Observable<ICard[]> = this.store.select(selectAllCards);
+  allDecksLoaded = false;
+
   private decks: IDeck[] | ITournamentDeck[] = [];
   private allDecks: IDeck[] = [];
 
@@ -183,11 +207,6 @@ export class DecksPageComponent implements OnInit, OnDestroy {
     this.makeGoogleFriendly();
 
     this.store
-      .select(selectAllCards)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((allCards) => (this.allCards = allCards));
-
-    this.store
       .select(selectCommunityDeckSearch)
       .pipe(takeUntil(this.onDestroy$))
       .subscribe((search) => {
@@ -197,53 +216,78 @@ export class DecksPageComponent implements OnInit, OnDestroy {
 
     this.form.valueChanges.pipe(takeUntil(this.onDestroy$)).subscribe(() => this.filterChanges());
 
-    this.digimonBackendService.getUserDecks().subscribe((usersAndDecks) => {
-      let decks: IDeck[] = [];
-      usersAndDecks.forEach((userAndDecks) => {
-        userAndDecks.decks.forEach((deck) => {
-          const formattedDeck = deck;
-          formattedDeck.user = userAndDecks.user.name ?? 'Unknown';
-          formattedDeck.userId = userAndDecks.user.uid;
-          decks = [...decks, formattedDeck];
-        });
-      });
-      this.allDecks = decks;
+    this.tagFilter.valueChanges
+      .pipe(
+        takeUntil(this.onDestroy$),
+        tap(() => (this.allDecksLoaded = false)),
+        switchMap((tag) => this.updateTag(tag)),
+        tap(() => (this.allDecksLoaded = true))
+      )
+      .subscribe();
 
-      decks = decks
-        .slice(0, 100)
-        .filter((deck) => deckIsValid(deck, this.allCards) === '')
-        .filter((elem, index, self) => {
-          return self.slice(index + 1).every((otherElem) => {
-            return !this.arraysEqual(elem.cards, otherElem.cards);
-          });
-        });
-
-      this.filteredDecks = decks.filter((deck) => deck.tags.some((tag) => tag.name === 'BT12'));
-      this.decksToShow = this.filteredDecks.slice(0, 20);
-
-      const worker = new Worker('./deck-worker.ts', { type: 'module' });
-
-      worker.postMessage({ decks: this.allDecks, allCards: this.allCards });
-
-      worker.addEventListener('message', ({ data }) => {
-        debugger;
-        this.allDecks = data
-          .filter((deck: IDeck) => deckIsValid(deck, this.allCards) === '')
-          .filter((elem: IDeck, index: number, self: IDeck[]) => {
-            return self.slice(index + 1).every((otherElem) => {
-              return !this.arraysEqual(elem.cards, otherElem.cards);
+    combineLatest([this.users$, this.allCards$])
+      .pipe(
+        first(),
+        tap(() => (this.allDecksLoaded = false)),
+        tap(([users, allCards]) => {
+          let decks: IDeck[] = [];
+          users.forEach((user) => {
+            user.decks.forEach((deck) => {
+              const formattedDeck = deck;
+              formattedDeck.user = user.user.user ?? 'Unknown';
+              formattedDeck.userId = user.user.uid;
+              decks = [...decks, formattedDeck];
             });
           });
-        this.decks = this.allDecks;
 
-        this.filteredDecks = this.allDecks.filter((deck) => deck.tags.some((tag) => tag.name === 'BT12'));
-        this.decksToShow = this.filteredDecks.slice(0, 20);
-      });
-    });
+          this.allDecks = decks;
+
+          decks = decks
+            .filter((deck) => deck.tags.some((tag) => tag.name === 'BT12'))
+            .filter((deck) => deckIsValid(deck, allCards) === '')
+            .filter((elem, index, self) => {
+              return self.slice(index + 1).every((otherElem) => {
+                return !this.arraysEqual(elem.cards, otherElem.cards);
+              });
+            })
+            .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+          this.filteredDecks = decks;
+          this.decksToShow = this.filteredDecks.slice(0, 20);
+          this.decks = decks;
+        }),
+        tap(() => (this.allDecksLoaded = true))
+      )
+      .subscribe();
   }
 
   arraysEqual(a: ICountCard[], b: ICountCard[]): boolean {
     return a.length === b.length && a.every((val) => b.includes(val));
+  }
+
+  updateTag(tagFilter: string[]) {
+    return this.allCards$.pipe(
+      tap((allCards) => {
+        let decks: IDeck[] = this.allDecks;
+
+        if (tagFilter.length > 0) {
+          decks = decks.filter((deck) => tagFilter.some((tag) => tag === deck.tags[0].name));
+        }
+
+        decks = decks
+          .filter((deck) => deckIsValid(deck, allCards) === '')
+          .filter((elem, index, self) => {
+            return self.slice(index + 1).every((otherElem) => {
+              return !this.arraysEqual(elem.cards, otherElem.cards);
+            });
+          })
+          .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+        this.filteredDecks = decks;
+        this.decksToShow = this.filteredDecks.slice(0, 20);
+        this.decks = decks;
+      })
+    );
   }
 
   ngOnDestroy() {
@@ -281,7 +325,6 @@ export class DecksPageComponent implements OnInit, OnDestroy {
   filterChanges() {
     const formValues = this.form.value;
     this.filteredDecks = this.applySearchFilter(formValues);
-    this.filteredDecks = this.applyTagFilter(formValues);
     this.filteredDecks = this.applyPlacementFilter(formValues);
     this.filteredDecks = this.applySizeFilter(formValues);
     this.filteredDecks = this.applyFormatFilter(formValues);

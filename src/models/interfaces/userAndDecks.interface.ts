@@ -7,5 +7,5 @@ export interface IUserAndDecks {
 
 export interface IUserWithName {
   uid: string;
-  name: string;
+  user: string;
 }

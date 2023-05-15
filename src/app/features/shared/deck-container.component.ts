@@ -32,7 +32,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
         <span class="text-shadow text-4xl text-[#ef4444]">!</span>
       </div>
 
-      <div *ngIf="mode !== 'Basic'" class="absolute right-[5px] top-[5px]" (click)="changeLike($event)">
+      <!--div *ngIf="mode !== 'Basic'" class="absolute right-[5px] top-[5px]" (click)="changeLike($event)">
         <div class="relative">
           <i [ngStyle]="isLiked() ? { color: '#ef4444' } : { color: '#64748b' }" class="fa-solid fa-heart h-8 w-8"></i>
           <div
@@ -41,7 +41,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
             {{ getDeckLikes() }}
           </div>
         </div>
-      </div>
+      </div-->
 
       <div class="absolute bottom-0 h-16 w-full justify-center bg-black bg-opacity-80">
         <div class="my-auto flex w-full flex-col p-1">

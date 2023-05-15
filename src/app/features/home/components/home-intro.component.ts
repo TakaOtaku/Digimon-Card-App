@@ -18,7 +18,7 @@ import { Router } from '@angular/router';
     </h2>
     <h2 class="mt-1 text-center text-[#e2e4e6]">
       If you do like the site and want to support it, consider donating and helping me keep the website ad-free, every
-      amount counts.
+      amount counts. With this I can also increase the performance of the website with better servers.
     </h2>
     <div class="grid grid-cols-3 text-center">
       <div></div>
