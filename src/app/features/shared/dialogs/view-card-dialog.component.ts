@@ -208,7 +208,7 @@ import { NgStyle, NgIf, NgClass, AsyncPipe } from '@angular/common';
               [innerHTML]="replaceWithImageTags(card.digiXros)"></p>
           </div>
           <div
-            *ngIf="card.aceEffect !== '-' && card.aceEffect"
+            *ngIf="card.aceEffect && card.aceEffect !== '-'"
             class="my-0.5 flex w-full flex-col rounded-full"
             id="Digimon-ACE">
             <p [ngStyle]="{color}" class="text-black-outline-xs text-lg font-extrabold">ACE</p>
