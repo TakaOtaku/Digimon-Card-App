@@ -2435,7 +2435,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "This card is also treated as having [Plug-In] in its name.While you have a Tamer in play, you may use this card without meeting its color requirements.\n[Main] Choose 1 of your level 6 Digimon. It may digivolve into a level 6 Digimon card in your hand with a different name that includes the name of the chosen Digimon, ignoring digivolution requirements and without paying the cost.",
+    "effect": "This card is also treated as having [Plug-In] in its name.\nWhile you have a Tamer in play, you may use this card without meeting its color requirements.\n[Main] Choose 1 of your level 6 Digimon. It may digivolve into a level 6 Digimon card in your hand with a different name that includes the name of the chosen Digimon, ignoring digivolution requirements and without paying the cost.",
     "digivolveEffect": "[Security] Return 1 Digimon card from your trash to your hand, and add this card to your hand.",
     "securityEffect": "-",
     "notes": "▹THEME BOOSTER ALTERNATIVE BEING [EX-04]",
