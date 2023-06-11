@@ -1,7 +1,17 @@
 import { englishCards } from '../../assets/cardlists/eng/english';
 import preReleaseJSON from '../../assets/cardlists/eng/PreRelease.json';
 import { japaneseCards } from '../../assets/cardlists/jap/japanese';
-import { CARDSET, ICard, ICountCard, IDeck, IDeckCard, ISelectItem, ITag, tagsList } from '../../models';
+import {
+  CARDSET,
+  ICard,
+  ICountCard,
+  IDeck,
+  IDeckCard,
+  ISelectItem,
+  ITag,
+  ITournamentDeck,
+  tagsList,
+} from '../../models';
 import { ColorOrderMap, DeckColorMap } from '../../models/maps/color.map';
 
 export function setTags(deck: IDeck, allCards: ICard[]) {
@@ -285,7 +295,7 @@ export function getCountFromDeckCards(deckCards: IDeckCard[] | ICountCard[]): nu
   return number;
 }
 
-export function setDeckImage(deck: IDeck): ICard {
+export function setDeckImage(deck: IDeck | ITournamentDeck): ICard {
   if (deck.cards && deck.cards.length === 0) {
     return englishCards[0];
   }

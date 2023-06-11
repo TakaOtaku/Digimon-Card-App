@@ -1,42 +1,27 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AsyncPipe, NgFor, NgIf } from '@angular/common';
+import { Component, EventEmitter, OnDestroy, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { ProgressSpinnerModule } from 'primeng/progressspinner';
-import {
-  BehaviorSubject,
-  combineLatest,
-  first,
-  forkJoin,
-  map,
-  Observable,
-  of,
-  startWith,
-  Subject,
-  switchMap,
-  takeUntil,
-  tap,
-} from 'rxjs';
-import * as uuid from 'uuid';
-import { ICard, ICountCard, IDeck, ITournamentDeck, TAGS } from '../../../models';
-import { IUserAndDecks } from '../../../models/interfaces/userAndDecks.interface';
-import { deckIsValid } from '../../functions/digimon-card.functions';
-import { AuthService } from '../../service/auth.service';
-import { DigimonBackendService } from '../../service/digimon-backend.service';
-import { importDeck } from '../../store/digimon.actions';
-import { selectAllCards, selectCommunityDecks, selectCommunityDeckSearch } from '../../store/digimon.selectors';
-import { emptyDeck } from '../../store/reducers/digimon.reducers';
-import { DeckStatisticsComponent } from './components/deck-statistics.component';
-import { DeckSubmissionComponent } from '../shared/dialogs/deck-submission.component';
-import { DeckDialogComponent } from '../shared/dialogs/deck-dialog.component';
+import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { PaginatorModule } from 'primeng/paginator';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { BehaviorSubject, combineLatest, filter, first, Observable, Subject, takeUntil, tap } from 'rxjs';
+import { ICard, ICountCard, IDeck, ITournamentDeck, TAGS } from '../../../models';
+import { IUserAndDecks } from '../../../models/interfaces/userAndDecks.interface';
+import { deckIsValid, setDeckImage } from '../../functions/digimon-card.functions';
+import { AuthService } from '../../service/auth.service';
+import { DigimonBackendService } from '../../service/digimon-backend.service';
+import { selectAllCards, selectCommunityDeckSearch } from '../../store/digimon.selectors';
+import { emptyDeck } from '../../store/reducers/digimon.reducers';
 import { DeckContainerComponent } from '../shared/deck-container.component';
-import { AsyncPipe, NgFor, NgIf } from '@angular/common';
+import { DeckDialogComponent } from '../shared/dialogs/deck-dialog.component';
+import { DeckSubmissionComponent } from '../shared/dialogs/deck-submission.component';
+import { DeckStatisticsComponent } from './components/deck-statistics.component';
 import { DecksFilterComponent } from './components/decks-filter.component';
-import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'digimon-decks-page',
@@ -74,9 +59,11 @@ import { ButtonModule } from 'primeng/button';
             (click)="deckSubmissionDialog = true"></button>
         </div>
 
-        <digimon-decks-filter [form]="form" [tagFilter]="tagFilter" [mode]="this.mode"></digimon-decks-filter>
+        <digimon-decks-filter [form]="form" [mode]="this.mode" (filterEmit)="filterChanges()"></digimon-decks-filter>
 
-        <div *ngIf="allDecksLoaded; else loading" class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div
+          *ngIf="allDecksLoaded$ | async; else loading"
+          class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           <digimon-deck-container
             class="mx-auto min-w-[280px] max-w-[285px]"
             *ngFor="let deck of decksToShow"
@@ -164,14 +151,16 @@ export class DecksPageComponent implements OnInit, OnDestroy {
   decksToShow: IDeck[] | ITournamentDeck[] = [];
   selectedDeck: IDeck | ITournamentDeck = emptyDeck;
 
+  private decks: IDeck[] | ITournamentDeck[] = [];
+  private allDecks: IDeck[] = []; // All decks only loaded once
+
   form = new UntypedFormGroup({
     searchFilter: new UntypedFormControl(''),
     placementFilter: new UntypedFormControl(''),
     formatFilter: new UntypedFormControl([]),
     sizeFilter: new UntypedFormControl([]),
+    tagFilter: new UntypedFormControl(['BT12']),
   });
-
-  tagFilter = new UntypedFormControl(['BT12']);
 
   tags = TAGS;
 
@@ -185,10 +174,8 @@ export class DecksPageComponent implements OnInit, OnDestroy {
 
   users$: Observable<IUserAndDecks[]> = this.digimonBackendService.getUserDecks();
   allCards$: Observable<ICard[]> = this.store.select(selectAllCards);
-  allDecksLoaded = false;
-
-  private decks: IDeck[] | ITournamentDeck[] = [];
-  private allDecks: IDeck[] = [];
+  deckSearch$: Observable<string> = this.store.select(selectCommunityDeckSearch);
+  allDecksLoaded$ = new BehaviorSubject(false);
 
   private onDestroy$ = new Subject<boolean>();
 
@@ -206,75 +193,28 @@ export class DecksPageComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.makeGoogleFriendly();
 
-    this.store
-      .select(selectCommunityDeckSearch)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((search) => {
-        this.form.get('searchFilter')!.setValue(search);
-        this.filterChanges();
-      });
-
-    this.form.valueChanges.pipe(takeUntil(this.onDestroy$)).subscribe(() => this.filterChanges());
-
-    this.tagFilter.valueChanges
-      .pipe(
-        takeUntil(this.onDestroy$),
-        tap(() => (this.allDecksLoaded = false)),
-        switchMap((tag) => this.updateTag(tag)),
-        tap(() => (this.allDecksLoaded = true))
-      )
-      .subscribe();
-
-    combineLatest([this.users$, this.allCards$])
+    combineLatest([this.users$, this.allCards$, this.deckSearch$])
       .pipe(
         first(),
-        tap(() => (this.allDecksLoaded = false)),
-        tap(([users, allCards]) => {
-          let decks: IDeck[] = [];
-          users.forEach((user) => {
-            user.decks.forEach((deck) => {
-              const formattedDeck = deck;
-              formattedDeck.user = user.user.user ?? 'Unknown';
-              formattedDeck.userId = user.user.uid;
-              decks = [...decks, formattedDeck];
-            });
-          });
-
-          this.allDecks = decks;
-
-          decks = decks
-            .filter((deck) => deck.tags.some((tag) => tag.name === 'BT12'))
-            .filter((deck) => deckIsValid(deck, allCards) === '')
-            .filter((elem, index, self) => {
-              return self.slice(index + 1).every((otherElem) => {
-                return !this.arraysEqual(elem.cards, otherElem.cards);
-              });
-            })
-            .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-
-          this.filteredDecks = decks;
-          this.decksToShow = this.filteredDecks.slice(0, 20);
-          this.decks = decks;
-        }),
-        tap(() => (this.allDecksLoaded = true))
+        tap(() => this.allDecksLoaded$.next(false))
       )
-      .subscribe();
-  }
+      .subscribe(([users, allCards, search]) => {
+        this.form.get('searchFilter')!.setValue(search);
 
-  arraysEqual(a: ICountCard[], b: ICountCard[]): boolean {
-    return a.length === b.length && a.every((val) => b.includes(val));
-  }
+        let decks: IDeck[] = [];
+        users.forEach((user) => {
+          user.decks.forEach((deck) => {
+            const formattedDeck = deck;
+            formattedDeck.user = user.user.user ?? 'Unknown';
+            formattedDeck.userId = user.user.uid;
+            decks = [...decks, formattedDeck];
+          });
+        });
 
-  updateTag(tagFilter: string[]) {
-    return this.allCards$.pipe(
-      tap((allCards) => {
-        let decks: IDeck[] = this.allDecks;
-
-        if (tagFilter.length > 0) {
-          decks = decks.filter((deck) => tagFilter.some((tag) => tag === deck.tags[0].name));
-        }
+        this.allDecks = decks;
 
         decks = decks
+          .filter((deck) => deck.tags.some((tag) => tag.name === 'BT12'))
           .filter((deck) => deckIsValid(deck, allCards) === '')
           .filter((elem, index, self) => {
             return self.slice(index + 1).every((otherElem) => {
@@ -284,10 +224,15 @@ export class DecksPageComponent implements OnInit, OnDestroy {
           .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
         this.filteredDecks = decks;
-        this.decksToShow = this.filteredDecks.slice(0, 20);
-        this.decks = decks;
-      })
-    );
+
+        this.setDecksToShow(0, 20);
+
+        this.allDecksLoaded$.next(true);
+      });
+  }
+
+  arraysEqual(a: ICountCard[], b: ICountCard[]): boolean {
+    return a.length === b.length && a.every((val) => b.includes(val));
   }
 
   ngOnDestroy() {
@@ -303,7 +248,14 @@ export class DecksPageComponent implements OnInit, OnDestroy {
   onPageChange(event: any, slice?: number) {
     this.first = event.first;
     this.page = event.page;
-    this.decksToShow = this.filteredDecks.slice(event.first, (slice ?? 20) * (event.page + 1));
+    this.setDecksToShow(event.first, (slice ?? 20) * (event.page + 1));
+  }
+
+  private setDecksToShow(from: number, to: number) {
+    this.decksToShow = this.filteredDecks.slice(from, to).map((deck: IDeck | ITournamentDeck) => ({
+      ...deck,
+      imageCardId: deck.imageCardId === 'BT1-001' ? setDeckImage(deck).id : deck.imageCardId,
+    }));
   }
 
   private makeGoogleFriendly() {
@@ -323,28 +275,56 @@ export class DecksPageComponent implements OnInit, OnDestroy {
   }
 
   filterChanges() {
-    const formValues = this.form.value;
-    this.filteredDecks = this.applySearchFilter(formValues);
-    this.filteredDecks = this.applyPlacementFilter(formValues);
-    this.filteredDecks = this.applySizeFilter(formValues);
-    this.filteredDecks = this.applyFormatFilter(formValues);
+    this.allDecksLoaded$.next(false);
+    this.updateTag(this.form.get('tagFilter')!.value)
+      .pipe(first())
+      .subscribe(() => this.allDecksLoaded$.next(true));
+  }
 
-    this.filteredDecks = this.filteredDecks.sort((a, b) => {
-      const aTime = new Date(a.date!).getTime();
-      const bTime = new Date(b.date!).getTime();
-      return bTime - aTime;
-    });
+  updateTag(tagFilter: string[]) {
+    return this.allCards$.pipe(
+      tap((allCards) => {
+        let decks: IDeck[] = this.allDecks;
 
-    this.first = 0;
-    this.page = 0;
-    this.decksToShow = this.filteredDecks.slice(0, 20);
+        if (tagFilter.length > 0) {
+          decks = decks.filter((deck) => tagFilter.includes(deck.tags[0].name));
+        }
+
+        decks = decks
+          .filter((deck) => deckIsValid(deck, allCards) === '')
+          .filter((elem, index, self) => {
+            return self.slice(index + 1).every((otherElem) => {
+              return !this.arraysEqual(elem.cards, otherElem.cards);
+            });
+          });
+
+        this.filteredDecks = decks;
+
+        const formValues = this.form.value;
+        this.filteredDecks = this.applySearchFilter(formValues);
+        this.filteredDecks = this.applyPlacementFilter(formValues);
+        this.filteredDecks = this.applySizeFilter(formValues);
+        this.filteredDecks = this.applyFormatFilter(formValues);
+
+        this.filteredDecks = this.filteredDecks.sort((a, b) => {
+          const aTime = new Date(a.date!).getTime();
+          const bTime = new Date(b.date!).getTime();
+          return bTime - aTime;
+        });
+
+        this.first = 0;
+        this.page = 0;
+
+        this.decksToShow = this.filteredDecks.slice(0, 20);
+      })
+    );
   }
 
   private applySearchFilter(formValues: any): IDeck[] | ITournamentDeck[] {
     if (!formValues.searchFilter) {
-      return this.decks;
+      return this.filteredDecks;
     }
-    return this.decks.filter((deck) => {
+    return this.filteredDecks.filter((deck) => {
       const search = formValues.searchFilter.toLocaleLowerCase();
 
       const titleInText = deck.title?.toLocaleLowerCase().includes(search) ?? false;
@@ -354,19 +334,6 @@ export class DecksPageComponent implements OnInit, OnDestroy {
       const colorInText = deck.color?.name.toLocaleLowerCase().includes(search) ?? false;
 
       return titleInText || descriptionInText || userInText || cardsInText || colorInText;
-    });
-  }
-
-  private applyTagFilter(formValues: any): IDeck[] | ITournamentDeck[] {
-    if (formValues.tagFilter.length === 0) {
-      return this.filteredDecks;
-    }
-    return this.filteredDecks.filter((deck) => {
-      let isTrue = false;
-      deck.tags?.forEach((tag) => {
-        isTrue = formValues.tagFilter.includes(tag.name);
-      });
-      return isTrue;
     });
   }
 

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, UntypedFormGroup, FormsModule, ReactiveFormsModule, UntypedFormControl } from '@angular/forms';
 import { TAGS } from '../../../../models';
 import { MultiSelectModule } from 'primeng/multiselect';
@@ -9,7 +9,7 @@ import { NgClass, NgIf } from '@angular/common';
 @Component({
   selector: 'digimon-decks-filter',
   template: `
-    <div [formGroup]="form" class="my-1  grid max-w-6xl grid-cols-4 lg:flex lg:flex-row">
+    <div [formGroup]="form" class="my-1  grid max-w-6xl grid-cols-5 lg:flex lg:flex-row">
       <span
         [ngClass]="{
           'col-span-2': mode !== 'Tournament',
@@ -59,7 +59,7 @@ import { NgClass, NgIf } from '@angular/common';
       </p-multiSelect>
       <p-multiSelect
         *ngIf="mode === 'Community'"
-        [formControl]="tagFilter"
+        formControlName="tagFilter"
         [options]="tags"
         [showToggleAll]="false"
         defaultLabel="Select a Tag"
@@ -68,6 +68,11 @@ import { NgClass, NgIf } from '@angular/common';
         class="col-span-2 mx-auto my-1 w-full max-w-[250px]"
         styleClass="w-full h-[34px] text-sm max-w-[250px]">
       </p-multiSelect>
+      <button
+        (click)="filterEmit.emit(true)"
+        class="min-w-auto primary-background my-auto ml-2 h-8 w-32 rounded p-2 text-xs font-semibold text-[#e2e4e6]">
+        Filter
+      </button>
     </div>
   `,
   standalone: true,
@@ -75,8 +80,9 @@ import { NgClass, NgIf } from '@angular/common';
 })
 export class DecksFilterComponent {
   @Input() form: UntypedFormGroup;
-  @Input() tagFilter: UntypedFormControl;
   @Input() mode = 'Community';
+
+  @Output() filterEmit = new EventEmitter<boolean>();
 
   tags = TAGS;
   tournamentSizes = [

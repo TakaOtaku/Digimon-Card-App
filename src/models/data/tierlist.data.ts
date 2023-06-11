@@ -14,17 +14,17 @@ export const TIERLIST = [
     {
       name: 'Xros Hunter',
       card: 'BT12-083',
-      image: 'assets/images/cards/jap/BT12-083.webp',
+      image: 'assets/images/cards/eng/BT12-083.webp',
     },
     {
       name: 'Mervamon',
       card: 'BT11-086',
-      image: 'assets/images/cards/jap/BT11-086.webp',
+      image: 'assets/images/cards/eng/BT11-086.webp',
     },
     {
       name: 'BlackWarGreymon (X Antibody)',
       card: 'BT11-074',
-      image: 'assets/images/cards/jap/BT11-074.webp',
+      image: 'assets/images/cards/eng/BT11-074.webp',
     },
   ],
   //A
@@ -32,7 +32,7 @@ export const TIERLIST = [
     {
       name: 'Red Hybrid',
       card: 'BT12-017',
-      image: 'assets/images/cards/jap/BT12-017.webp',
+      image: 'assets/images/cards/eng/BT12-017.webp',
     },
     {
       name: 'Xros Heart',
@@ -82,7 +82,7 @@ export const TIERLIST = [
     {
       name: 'UlforceVeedramon (X Antibody',
       card: 'BT12-029',
-      image: 'assets/images/cards/jap/BT12-029.webp',
+      image: 'assets/images/cards/eng/BT12-029.webp',
     },
     {
       name: 'Examon',
@@ -102,7 +102,7 @@ export const TIERLIST = [
     {
       name: 'Galacticmon',
       card: 'BT11-111',
-      image: 'assets/images/cards/jap/BT11-111.webp',
+      image: 'assets/images/cards/eng/BT11-111.webp',
     },
   ],
   //B
@@ -110,17 +110,17 @@ export const TIERLIST = [
     {
       name: 'Marsmon',
       card: 'BT11-017',
-      image: 'assets/images/cards/jap/BT11-017.webp',
+      image: 'assets/images/cards/eng/BT11-017.webp',
     },
     {
       name: 'KingSukamon',
       card: 'BT11-043',
-      image: 'assets/images/cards/jap/BT11-043.webp',
+      image: 'assets/images/cards/eng/BT11-043.webp',
     },
     {
       name: 'Bagramon',
       card: 'BT11-088',
-      image: 'assets/images/cards/jap/BT11-088.webp',
+      image: 'assets/images/cards/eng/BT11-088.webp',
     },
     {
       name: 'DarkKnightmon (X Antibody)',

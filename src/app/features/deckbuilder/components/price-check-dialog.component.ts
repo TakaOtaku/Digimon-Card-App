@@ -1,13 +1,15 @@
+import { AsyncPipe, CurrencyPipe, NgFor, NgIf } from '@angular/common';
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { BehaviorSubject, filter, Subject, takeUntil } from 'rxjs';
-import { ICountCard } from '../../../../models';
-import { ProductCM, ProductCMWithCount } from '../../../service/card-market.service';
-import { DeckBuilderViewModel } from '../../../store/digimon.selectors';
-import { SharedModule } from 'primeng/api';
-import { TableModule } from 'primeng/table';
-import { NgIf, NgFor, CurrencyPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { SharedModule } from 'primeng/api';
 import { SelectButtonModule } from 'primeng/selectbutton';
+import { TableModule } from 'primeng/table';
+import { async, BehaviorSubject, filter, Subject, switchMap, takeUntil } from 'rxjs';
+import { ICountCard } from '../../../../models';
+import { CardMarketService, ProductCM, ProductCMWithCount } from '../../../service/card-market.service';
+import { setPriceGuideCM } from '../../../store/digimon.actions';
+import { DeckBuilderViewModel, selectDeckBuilderViewModel } from '../../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-price-check-dialog',
@@ -108,11 +110,14 @@ import { SelectButtonModule } from 'primeng/selectbutton';
     `,
   ],
   standalone: true,
-  imports: [SelectButtonModule, FormsModule, NgIf, NgFor, TableModule, SharedModule, CurrencyPipe],
+  imports: [SelectButtonModule, FormsModule, NgIf, NgFor, TableModule, SharedModule, CurrencyPipe, AsyncPipe],
 })
 export class PriceCheckDialogComponent implements OnInit, OnDestroy {
-  @Input() deckBuilderViewModel: DeckBuilderViewModel;
   @Input() checkPrice: BehaviorSubject<boolean>;
+
+  deckBuilderViewModel$ = this.store.select(selectDeckBuilderViewModel);
+  deckBuilderViewModel: DeckBuilderViewModel;
+  getPriceGuide$ = this.cardMarketService.getPrizeGuide();
 
   onlyMissing = false;
 
@@ -123,8 +128,23 @@ export class PriceCheckDialogComponent implements OnInit, OnDestroy {
   totalProducts: ProductCMWithCount;
 
   onDestroy$ = new Subject();
+  protected readonly async = async;
+
+  constructor(private cardMarketService: CardMarketService, private store: Store) {}
 
   ngOnInit() {
+    this.getPriceGuide$
+      .pipe(
+        switchMap((priceGuide) => {
+          this.store.dispatch(setPriceGuideCM({ products: priceGuide }));
+          return this.deckBuilderViewModel$;
+        })
+      )
+      .subscribe((deckBuilderViewModel) => {
+        this.deckBuilderViewModel = deckBuilderViewModel;
+        this.updatePrice();
+      });
+
     this.checkPrice
       .pipe(
         filter((value) => value),

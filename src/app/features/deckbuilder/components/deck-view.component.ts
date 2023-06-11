@@ -1,6 +1,9 @@
+import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { AccordionModule } from 'primeng/accordion';
 import { ConfirmationService, MessageService, SharedModule } from 'primeng/api';
+import { DragDropModule } from 'primeng/dragdrop';
 import { filter, first, Subject, takeUntil } from 'rxjs';
 import { ICard, ICountCard, IDeck, IDeckCard, IDraggedCard, ISave, ITag } from '../../../../models';
 import { DRAG } from '../../../../models/enums/drag.enum';
@@ -19,7 +22,6 @@ import {
   setDraggedCard,
 } from '../../../store/digimon.actions';
 import {
-  DeckBuilderViewModel,
   selectCollection,
   selectCommunityDecks,
   selectDeckBuilderViewModel,
@@ -28,12 +30,9 @@ import {
   selectSave,
 } from '../../../store/digimon.selectors';
 import { emptyDeck } from '../../../store/reducers/digimon.reducers';
-import { AccordionModule } from 'primeng/accordion';
-import { DragDropModule } from 'primeng/dragdrop';
 import { DeckCardComponent } from '../../shared/deck-card.component';
-import { NgFor, NgIf, AsyncPipe } from '@angular/common';
-import { DeckToolbarComponent } from './deck-toolbar.component';
 import { DeckMetadataComponent } from './deck-metadata.component';
+import { DeckToolbarComponent } from './deck-toolbar.component';
 
 @Component({
   selector: 'digimon-deck-view',
@@ -49,7 +48,6 @@ import { DeckMetadataComponent } from './deck-metadata.component';
         [deck]="deck"
         [mainDeck]="mainDeck"
         [missingCards]="missingCards"
-        [deckBuilderViewModel]="deckBuilderViewModel"
         (missingCardsChange)="missingCards = $event"
         (save)="saveDeck($event)"
         (hideStats)="hideStats.emit(true)"></digimon-deck-toolbar>
@@ -80,8 +78,8 @@ import { DeckMetadataComponent } from './deck-metadata.component';
           <ng-template pTemplate="header">
             <div>
               {{ 'Main-Deck (' + getCardCount(mainDeck, 'Egg') + '/5 - ' + getCardCount(mainDeck, 'Deck') + '/50)' }}
-            </div></ng-template
-          >
+            </div>
+          </ng-template>
           <div class="grid w-full grid-cols-4 md:grid-cols-6">
             <digimon-deck-card
               *ngFor="let card of mainDeck"
@@ -133,7 +131,6 @@ import { DeckMetadataComponent } from './deck-metadata.component';
 })
 export class DeckViewComponent implements OnInit, OnDestroy {
   @Input() collectionView: boolean;
-  @Input() deckBuilderViewModel: DeckBuilderViewModel;
 
   @Output() onMainDeck = new EventEmitter<IDeckCard[]>();
   @Output() hideStats = new EventEmitter<boolean>();
@@ -393,6 +390,62 @@ export class DeckViewComponent implements OnInit, OnDestroy {
     return count;
   }
 
+  /**
+   * Remove the card from the deck
+   */
+  removeCard(card: IDeckCard) {
+    this.mainDeck = this.mainDeck.filter((value) => value !== card);
+    this.mapToDeck();
+  }
+
+  removeSideCard(card: IDeckCard) {
+    this.sideDeck = this.sideDeck.filter((value) => value !== card);
+    this.mapToDeck();
+  }
+
+  deckThingy() {
+    this.store
+      .select(selectCommunityDecks)
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((decks) => {
+        decks.forEach((deck) => {
+          const newDeck = deck;
+
+          if (deckIsValid(deck, this.allCards) === '') {
+            newDeck.tags = setTags(deck, this.allCards);
+            newDeck.color = setColors(deck, this.allCards);
+            this.digimonBackendService.updateDeck(newDeck).pipe(first()).subscribe();
+          } else {
+            this.digimonBackendService.deleteDeck(deck.id).pipe(first()).subscribe();
+          }
+        });
+      });
+  }
+
+  drop(card: IDraggedCard, area: string) {
+    if (area === 'Side') {
+      if (card.drag === DRAG.Main) {
+        this.store.dispatch(removeCardFromDeck({ cardId: card.card.id }));
+      }
+      this.store.dispatch(addCardToSideDeck({ cardId: card.card.id }));
+      return;
+    }
+
+    if (card.drag === DRAG.Side) {
+      this.store.dispatch(removeCardFromSideDeck({ cardId: card.card.id }));
+    }
+    this.store.dispatch(addCardToDeck({ addCardToDeck: card.card.id }));
+  }
+
+  setDraggedCard(card: IDeckCard, drag: DRAG) {
+    const dragCard = { card: this.allCards.find((value) => card.id === value.id)!, drag };
+    this.store.dispatch(
+      setDraggedCard({
+        dragCard,
+      })
+    );
+  }
+
   private colorSort(deck: IDeckCard[]) {
     const eggs = deck
       .filter((card) => card.cardType === 'Digi-Egg')
@@ -468,60 +521,5 @@ export class DeckViewComponent implements OnInit, OnDestroy {
       .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
     return [...new Set([...eggs, ...lv0, ...lv3, ...lv4, ...lv5, ...lv6, ...lv7, ...tamer, ...options])];
-  }
-
-  /**
-   * Remove the card from the deck
-   */
-  removeCard(card: IDeckCard) {
-    this.mainDeck = this.mainDeck.filter((value) => value !== card);
-    this.mapToDeck();
-  }
-  removeSideCard(card: IDeckCard) {
-    this.sideDeck = this.sideDeck.filter((value) => value !== card);
-    this.mapToDeck();
-  }
-
-  deckThingy() {
-    this.store
-      .select(selectCommunityDecks)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((decks) => {
-        decks.forEach((deck) => {
-          const newDeck = deck;
-
-          if (deckIsValid(deck, this.allCards) === '') {
-            newDeck.tags = setTags(deck, this.allCards);
-            newDeck.color = setColors(deck, this.allCards);
-            this.digimonBackendService.updateDeck(newDeck).pipe(first()).subscribe();
-          } else {
-            this.digimonBackendService.deleteDeck(deck.id).pipe(first()).subscribe();
-          }
-        });
-      });
-  }
-
-  drop(card: IDraggedCard, area: string) {
-    if (area === 'Side') {
-      if (card.drag === DRAG.Main) {
-        this.store.dispatch(removeCardFromDeck({ cardId: card.card.id }));
-      }
-      this.store.dispatch(addCardToSideDeck({ cardId: card.card.id }));
-      return;
-    }
-
-    if (card.drag === DRAG.Side) {
-      this.store.dispatch(removeCardFromSideDeck({ cardId: card.card.id }));
-    }
-    this.store.dispatch(addCardToDeck({ addCardToDeck: card.card.id }));
-  }
-
-  setDraggedCard(card: IDeckCard, drag: DRAG) {
-    const dragCard = { card: this.allCards.find((value) => card.id === value.id)!, drag };
-    this.store.dispatch(
-      setDraggedCard({
-        dragCard,
-      })
-    );
   }
 }

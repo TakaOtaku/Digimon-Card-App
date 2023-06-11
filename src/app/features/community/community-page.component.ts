@@ -1,8 +1,11 @@
+import { AsyncPipe, DatePipe, NgFor, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
+import { ButtonModule } from 'primeng/button';
+import { RippleModule } from 'primeng/ripple';
 import { first, map, Observable, Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
 import { ADMINS, IBlog, IBlogWithText, IUser } from '../../../models';
@@ -10,9 +13,6 @@ import { AuthService } from '../../service/auth.service';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
 import { setBlogs } from '../../store/digimon.actions';
 import { selectBlogs } from '../../store/digimon.selectors';
-import { RippleModule } from 'primeng/ripple';
-import { ButtonModule } from 'primeng/button';
-import { NgIf, NgFor, AsyncPipe, DatePipe } from '@angular/common';
 
 interface IBlogs {
   allBlogs: IBlog[];
@@ -186,28 +186,18 @@ export class CommunityPageComponent implements OnInit, OnDestroy {
     this.authService.authChange
       .pipe(takeUntil(this.onDestroy$))
       .subscribe(() => (this.user = this.authService.userData));
+
+    this.digimonBackendService
+      .getBlogEntries()
+      .pipe(first())
+      .subscribe((blogs) => {
+        this.store.dispatch(setBlogs({ blogs }));
+      });
   }
 
   ngOnDestroy() {
     this.onDestroy$.next(true);
     this.onDestroy$.unsubscribe();
-  }
-
-  private makeGoogleFriendly() {
-    this.title.setTitle('Digimon Card Game - Community');
-
-    this.meta.addTags([
-      {
-        name: 'description',
-        content:
-          'Tournament Reports, Deck Builder, Collection Tracker, Tier list, Card Statistics and many more things at the Digimon TCG site.',
-      },
-      { name: 'author', content: 'TakaOtaku' },
-      {
-        name: 'keywords',
-        content: 'Tournament, Reports, Deck Builder, Collection Tracker, Tier list, Card, Statistics, Digimon, TCG',
-      },
-    ]);
   }
 
   newEntry(currentBlogs: IBlogs) {
@@ -343,5 +333,22 @@ export class CommunityPageComponent implements OnInit, OnDestroy {
     return category === 'Tournament Report'
       ? 'assets/icons/trophy-svgrepo-com.svg'
       : 'assets/icons/exam-svgrepo-com.svg';
+  }
+
+  private makeGoogleFriendly() {
+    this.title.setTitle('Digimon Card Game - Community');
+
+    this.meta.addTags([
+      {
+        name: 'description',
+        content:
+          'Tournament Reports, Deck Builder, Collection Tracker, Tier list, Card Statistics and many more things at the Digimon TCG site.',
+      },
+      { name: 'author', content: 'TakaOtaku' },
+      {
+        name: 'keywords',
+        content: 'Tournament, Reports, Deck Builder, Collection Tracker, Tier list, Card, Statistics, Digimon, TCG',
+      },
+    ]);
   }
 }

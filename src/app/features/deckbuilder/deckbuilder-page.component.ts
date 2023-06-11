@@ -1,3 +1,4 @@
+import { AsyncPipe, NgClass, NgIf, NgStyle } from '@angular/common';
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
@@ -8,13 +9,12 @@ import { IDeck, ISave } from '../../../models';
 import { AuthService } from '../../service/auth.service';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
 import { setDeck } from '../../store/digimon.actions';
-import { selectDeckBuilderViewModel, selectMobileCollectionView } from '../../store/digimon.selectors';
+import { selectMobileCollectionView } from '../../store/digimon.selectors';
 import { CardListComponent } from '../collection/components/card-list.component';
+import { CollectionViewComponent } from '../collection/components/collection-view.component';
 import { FilterAndSearchComponent } from '../shared/filter/filter-and-search.component';
 import { DeckStatsComponent } from './components/deck-stats.component';
-import { CollectionViewComponent } from '../collection/components/collection-view.component';
 import { DeckViewComponent } from './components/deck-view.component';
-import { NgClass, NgIf, NgStyle, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'digimon-deckbuilder-page',
@@ -177,6 +177,7 @@ export class DeckbuilderPageComponent implements OnInit, OnDestroy {
       this.showAccordionButtons = true;
     }
   }
+
   private makeGoogleFriendly() {
     this.title.setTitle('Digimon Card Game - Deck Builder');
 

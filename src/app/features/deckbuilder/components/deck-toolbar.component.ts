@@ -1,21 +1,20 @@
+import { NgClass, NgFor } from '@angular/common';
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, Output } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
+import { ButtonModule } from 'primeng/button';
+import { DialogModule } from 'primeng/dialog';
+import { TooltipModule } from 'primeng/tooltip';
 import { BehaviorSubject, Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
 import { ICard, IDeck, IDeckCard } from '../../../../models';
 import { AuthService } from '../../../service/auth.service';
-import { createNewDeck, setDeck } from '../../../store/digimon.actions';
-import { DeckBuilderViewModel, selectAllCards } from '../../../store/digimon.selectors';
-import { emptyDeck } from '../../../store/reducers/digimon.reducers';
-import { ImportDeckDialogComponent } from '../../shared/dialogs/import-deck-dialog.component';
+import { createNewDeck } from '../../../store/digimon.actions';
+import { selectAllCards } from '../../../store/digimon.selectors';
 import { ExportDeckDialogComponent } from '../../shared/dialogs/export-deck-dialog.component';
+import { ImportDeckDialogComponent } from '../../shared/dialogs/import-deck-dialog.component';
 import { PriceCheckDialogComponent } from './price-check-dialog.component';
-import { DialogModule } from 'primeng/dialog';
-import { NgClass, NgFor } from '@angular/common';
-import { TooltipModule } from 'primeng/tooltip';
-import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'digimon-deck-toolbar',
@@ -106,9 +105,7 @@ import { ButtonModule } from 'primeng/button';
       [resizable]="false"
       styleClass="w-[100%] min-w-[250px] sm:min-w-[500px] sm:w-[700px] min-h-[500px]"
       [baseZIndex]="10000">
-      <digimon-price-check-dialog
-        [deckBuilderViewModel]="deckBuilderViewModel"
-        [checkPrice]="checkPrice$"></digimon-price-check-dialog>
+      <digimon-price-check-dialog [checkPrice]="checkPrice$"></digimon-price-check-dialog>
     </p-dialog>
 
     <p-dialog
@@ -147,9 +144,9 @@ import { ButtonModule } from 'primeng/button';
       [baseZIndex]="10000"
       [modal]="true"
       [dismissableMask]="true"
-      [resizable]="false"
-      ><digimon-export-deck-dialog [deck]="deck"></digimon-export-deck-dialog
-    ></p-dialog>
+      [resizable]="false">
+      <digimon-export-deck-dialog [deck]="deck"></digimon-export-deck-dialog>
+    </p-dialog>
 
     <p-dialog
       header="Import Deck"
@@ -158,9 +155,9 @@ import { ButtonModule } from 'primeng/button';
       [baseZIndex]="10000"
       [modal]="true"
       [dismissableMask]="true"
-      [resizable]="false"
-      ><digimon-import-deck-dialog></digimon-import-deck-dialog
-    ></p-dialog>
+      [resizable]="false">
+      <digimon-import-deck-dialog></digimon-import-deck-dialog>
+    </p-dialog>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
@@ -180,7 +177,6 @@ export class DeckToolbarComponent implements OnDestroy {
   @Input() deck: IDeck;
   @Input() mainDeck: IDeckCard[];
   @Input() missingCards: boolean;
-  @Input() deckBuilderViewModel: DeckBuilderViewModel;
 
   @Output() missingCardsChange = new EventEmitter<boolean>();
   @Output() save = new EventEmitter<any>();
@@ -212,6 +208,23 @@ export class DeckToolbarComponent implements OnDestroy {
       .select(selectAllCards)
       .pipe(takeUntil(this.destroy$))
       .subscribe((allCards) => (this.allCards = allCards));
+  }
+
+  private static shuffle(array: any[]) {
+    let currentIndex = array.length,
+      randomIndex;
+
+    // While there remain elements to shuffle.
+    while (currentIndex != 0) {
+      // Pick a remaining element.
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+    }
+
+    return array;
   }
 
   ngOnDestroy(): void {
@@ -291,22 +304,6 @@ export class DeckToolbarComponent implements OnDestroy {
     this.drawHand = this.allDeckCards.slice(5, 10);
   }
 
-  private static shuffle(array: any[]) {
-    let currentIndex = array.length,
-      randomIndex;
-
-    // While there remain elements to shuffle.
-    while (currentIndex != 0) {
-      // Pick a remaining element.
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-
-      // And swap it with the current element.
-      [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
-    }
-
-    return array;
-  }
   //endregion
 
   checkPrice() {

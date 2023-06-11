@@ -1,22 +1,22 @@
+import { NgIf } from '@angular/common';
 import { Component, EventEmitter } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { Store } from '@ngrx/store';
+import { ToastrService } from 'ngx-toastr';
 import { MessageService } from 'primeng/api';
+import { BlockUIModule } from 'primeng/blockui';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { DialogModule } from 'primeng/dialog';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { ToastModule } from 'primeng/toast';
 import { first } from 'rxjs';
 import { ISave } from '../models';
-import { AuthService } from './service/auth.service';
-import { CardMarketService } from './service/card-market.service';
-import { DigimonBackendService } from './service/digimon-backend.service';
-import { loadSave, setBlogs, setCommunityDecks, setPriceGuideCM, setSave } from './store/digimon.actions';
-import { emptySave } from './store/reducers/save.reducer';
 import { ChangelogDialogComponent } from './features/shared/dialogs/changelog-dialog.component';
-import { DialogModule } from 'primeng/dialog';
-import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import { ToastModule } from 'primeng/toast';
-import { ProgressSpinnerModule } from 'primeng/progressspinner';
-import { BlockUIModule } from 'primeng/blockui';
-import { RouterOutlet } from '@angular/router';
-import { NgIf } from '@angular/common';
 import { NavbarComponent } from './features/shared/navbar.component';
+import { AuthService } from './service/auth.service';
+import { DigimonBackendService } from './service/digimon-backend.service';
+import { setSave } from './store/digimon.actions';
+import { emptySave } from './store/reducers/save.reducer';
 
 @Component({
   selector: 'digimon-root',
@@ -79,7 +79,6 @@ export class AppComponent {
   retryCounter = 0;
 
   showChangelog = false;
-
   loadChangelog = new EventEmitter<boolean>();
 
   constructor(
@@ -87,14 +86,9 @@ export class AppComponent {
     private authService: AuthService,
     private messageService: MessageService,
     private digimonBackendService: DigimonBackendService,
-    private cardMarketService: CardMarketService
+    private toastrService: ToastrService
   ) {
-    this.getDecks();
-    this.getBlogs();
-
     this.loadSave();
-
-    this.loadPriceGuide();
 
     document.addEventListener(
       'contextmenu',
@@ -111,104 +105,63 @@ export class AppComponent {
    * b) If the User is not logged in, load the data from the local storage
    */
   private loadSave(): void {
-    this.checkForSave();
-
-    if (!this.authService.isLoggedIn) {
-      this.loadBackupSave();
+    if (!this.authService.userInLocalStorage() && !this.authService.isLoggedIn) {
+      this.loadLocalStorageSave();
       return;
     }
 
     this.digimonBackendService
       .getSave(this.authService.userData!.uid)
       .pipe(first())
-      .subscribe((saveOrNull: ISave | null) => {
-        /*if (this.retryCounter < 3) {
-          this.messageService.add({
-            severity: 'error',
-            summary: 'Could not load your Save!',
-            detail:
-              'There was an error with loading your save. A new local save will be created.',
-          });
-          this.hide = false;
-          this.spinner = false;
-          this.store.dispatch(setSave({ save: emptySave }));
-          return;
-        }*/
-        if (!saveOrNull) {
+      .subscribe((save: ISave | null) => {
+        if (!save) {
           this.retry();
           this.retryCounter += 1;
           return;
         }
 
-        let save = saveOrNull as ISave;
         if (save.version !== emptySave.version) {
           this.showChangelogModal();
         }
+
+        this.store.dispatch(setSave({ save: { ...save, version: emptySave.version } }));
+        this.toastrService.info('Your save was loaded successfully!', 'Welcome back!');
+
         this.spinner = false;
         this.hide = false;
-        this.store.dispatch(setSave({ save: { ...save, version: emptySave.version } }));
       });
   }
 
-  retry() {
+  private retry() {
     this.spinner = true;
     this.loadSave();
   }
 
-  private checkForSave() {
-    this.authService.checkLocalStorage();
-
-    const found = localStorage.getItem('Digimon-Card-Collector');
-    this.localStorageSave = found ? JSON.parse(found) : null;
-  }
-
   // Check local storage for a backup save, if there is none create a new save
-  private loadBackupSave() {
+  private loadLocalStorageSave() {
+    const localStorageSave = localStorage.getItem('Digimon-Card-Collector');
+    this.localStorageSave = localStorageSave ? JSON.parse(localStorageSave) : null;
+
     if (this.localStorageSave) {
       this.localStorageSave = this.digimonBackendService.checkSaveValidity(
         this.localStorageSave,
         this.authService.userData
       );
-      this.store.dispatch(loadSave({ save: this.localStorageSave }));
+      this.store.dispatch(setSave({ save: { ...this.localStorageSave, version: emptySave.version } }));
       this.spinner = false;
       this.hide = false;
+      this.toastrService.info('Save from browser loaded successfully!', 'Welcome back!');
       return;
     }
 
     this.hide = false;
     this.spinner = false;
     this.store.dispatch(setSave({ save: emptySave }));
+    this.toastrService.info('Welcome to digimoncard.app a new save was created for you!', 'Welcome new User');
   }
 
-  showChangelogModal() {
+  private showChangelogModal() {
     this.showChangelog = true;
     this.loadChangelog.emit(true);
-  }
-
-  getDecks() {
-    this.digimonBackendService
-      .getDecks()
-      .pipe(first())
-      .subscribe((communityDecks) => {
-        this.store.dispatch(setCommunityDecks({ communityDecks }));
-      });
-  }
-
-  getBlogs() {
-    this.digimonBackendService
-      .getBlogEntries()
-      .pipe(first())
-      .subscribe((blogs) => {
-        this.store.dispatch(setBlogs({ blogs }));
-      });
-  }
-
-  loadPriceGuide() {
-    this.cardMarketService
-      .getPrizeGuide()
-      .pipe(first())
-      .subscribe((products) => {
-        this.store.dispatch(setPriceGuideCM({ products }));
-      });
   }
 }

@@ -1,6 +1,4 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'digimon-home-intro',
@@ -13,12 +11,14 @@ import { Router } from '@angular/router';
       collection, help you build great decks and keep you posted about the result of any major events.
     </h2>
     <h2 class="mt-1 text-center text-[#e2e4e6]">
-      You can also
-      <span class="font-bold">submit your winning decks</span> from your locals!
+      If you do like the site and want to support it, consider donating and helping me keep the website ad-free, every
+      amount counts.
     </h2>
     <h2 class="mt-1 text-center text-[#e2e4e6]">
-      If you do like the site and want to support it, consider donating and helping me keep the website ad-free, every
-      amount counts. With this I can also increase the performance of the website with better servers.
+      With this I can also increase the performance of the website with better servers.
+    </h2>
+    <h2 class="mt-1 text-center text-[#e2e4e6]">
+      If you are interested in writing blog post or help me develop this website, please contact me.
     </h2>
     <div class="grid grid-cols-3 text-center">
       <div></div>
