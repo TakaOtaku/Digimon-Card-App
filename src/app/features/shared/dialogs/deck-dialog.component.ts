@@ -1,28 +1,56 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
-import { UntypedFormControl, UntypedFormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgFor, NgIf } from '@angular/common';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
+import {
+  FormsModule,
+  ReactiveFormsModule,
+  UntypedFormControl,
+  UntypedFormGroup,
+} from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { first } from 'rxjs';
-import * as uuid from 'uuid';
-import { CARDSET, ICard, IDeck, IDeckCard, ITournamentDeck } from '../../../../models';
-import { mapToDeckCards, setDeckImage, setupDigimonCards } from '../../../functions/digimon-card.functions';
-import { AuthService } from '../../../service/auth.service';
-import { DigimonBackendService } from '../../../service/digimon-backend.service';
-import { deleteDeck, importDeck, saveDeck, setDeck } from '../../../store/digimon.actions';
-import { DeckSubmissionComponent } from './deck-submission.component';
-import { ExportDeckDialogComponent } from './export-deck-dialog.component';
-import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
-import { InputTextareaModule } from 'primeng/inputtextarea';
+import { DialogModule } from 'primeng/dialog';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 import { TooltipModule } from 'primeng/tooltip';
-import { ColorSpreadComponent } from '../statistics/color-spread.component';
-import { ChartContainersComponent } from '../statistics/chart-containers.component';
-import { DdtoSpreadComponent } from '../statistics/ddto-spread.component';
+import { first } from 'rxjs';
+import * as uuid from 'uuid';
+import {
+  CARDSET,
+  ICard,
+  IDeck,
+  IDeckCard,
+  ITournamentDeck,
+} from '../../../../models';
+import {
+  mapToDeckCards,
+  setDeckImage,
+  setupDigimonCards,
+} from '../../../functions/digimon-card.functions';
+import { AuthService } from '../../../service/auth.service';
+import { DigimonBackendService } from '../../../service/digimon-backend.service';
+import {
+  deleteDeck,
+  importDeck,
+  saveDeck,
+  setDeck,
+} from '../../../store/digimon.actions';
 import { DeckCardComponent } from '../deck-card.component';
-import { NgFor, NgIf } from '@angular/common';
+import { ChartContainersComponent } from '../statistics/chart-containers.component';
+import { ColorSpreadComponent } from '../statistics/color-spread.component';
+import { DdtoSpreadComponent } from '../statistics/ddto-spread.component';
+import { DeckSubmissionComponent } from './deck-submission.component';
+import { ExportDeckDialogComponent } from './export-deck-dialog.component';
 
 export interface ICardImage {
   name: string;
@@ -34,36 +62,49 @@ export interface ICardImage {
   template: `
     <div class="flex h-full w-full flex-col">
       <div
-        class="grid max-h-[375px] min-h-[200px] w-full grid-cols-4 overflow-y-scroll border-2 border-slate-200 md:grid-cols-6 lg:grid-cols-8">
+        class="grid max-h-[375px] min-h-[200px] w-full grid-cols-4 overflow-y-scroll border-2 border-slate-200 md:grid-cols-6 lg:grid-cols-8"
+      >
         <digimon-deck-card
           *ngFor="let card of mainDeck"
           [edit]="false"
           [card]="card"
-          [cards]="allCards"></digimon-deck-card>
+          [cards]="allCards"
+        ></digimon-deck-card>
       </div>
 
-      <div class="surface-card mx-auto my-1 flex max-h-[200px] w-full flex-row border border-white">
+      <div
+        class="surface-card mx-auto my-1 flex max-h-[200px] w-full flex-row border border-white"
+      >
         <digimon-ddto-spread
           [deck]="deck"
           [allCards]="allCards"
           [container]="true"
-          class="ml-auto hidden border-r border-slate-200 px-5 lg:block"></digimon-ddto-spread>
+          class="ml-auto hidden border-r border-slate-200 px-5 lg:block"
+        ></digimon-ddto-spread>
 
-        <digimon-chart-containers [deck]="mainDeck" class="mx-auto max-w-[40rem]"></digimon-chart-containers>
+        <digimon-chart-containers
+          [deck]="mainDeck"
+          class="mx-auto max-w-[40rem]"
+        ></digimon-chart-containers>
 
         <digimon-color-spread
           [deck]="deck"
           [allCards]="allCards"
           [container]="true"
-          class="mr-auto hidden border-l border-slate-200 px-5 lg:block"></digimon-color-spread>
+          class="mr-auto hidden border-l border-slate-200 px-5 lg:block"
+        ></digimon-color-spread>
       </div>
 
-      <div *ngIf="!editable; else edit" class="mx-auto my-1 grid grid-cols-3 gap-y-1">
+      <div
+        *ngIf="!editable; else edit"
+        class="mx-auto my-1 grid grid-cols-3 gap-y-1"
+      >
         <label>Title</label>
         <div
           [pTooltip]="deck.title"
           tooltipPosition="top"
-          class="text-shadow col-span-2 mr-3 truncate text-3xl font-black text-[#e2e4e6]">
+          class="text-shadow col-span-2 mr-3 truncate text-3xl font-black text-[#e2e4e6]"
+        >
           {{ deck.title }}
         </div>
 
@@ -79,7 +120,8 @@ export interface ICardImage {
         <div class="col-span-2 flex flex-row align-middle">
           <div
             *ngFor="let tag of deck.tags"
-            class="surface-ground mr-0.5 h-8 border border-black px-1.5 text-xs font-bold leading-[35px]">
+            class="surface-ground mr-0.5 h-8 border border-black px-1.5 text-xs font-bold leading-[35px]"
+          >
             {{ tag.name }}
           </div>
         </div>
@@ -122,7 +164,8 @@ export interface ICardImage {
             placeholder="Deck Name:"
             class="col-span-2 mr-2 w-full text-sm"
             pInputText
-            type="text" />
+            type="text"
+          />
           <label>Image</label>
           <p-dropdown
             styleClass="truncate w-full lg:w-[250px]"
@@ -130,69 +173,81 @@ export interface ICardImage {
             [options]="cardImageOptions"
             formControlName="cardImage"
             optionLabel="name"
-            appendTo="body">
+            appendTo="body"
+          >
           </p-dropdown>
           <label>Description</label>
           <textarea
             formControlName="description"
             placeholder="Description:"
             class="col-span-2 h-[66px] w-full overflow-hidden"
-            pInputTextarea></textarea>
+            pInputTextarea
+          ></textarea>
           <label>Tags</label>
           <div class="col-span-2 flex flex-row align-middle">
             <div
               *ngFor="let tag of deck.tags"
-              class="surface-ground mr-0.5 h-8 border border-black px-1.5 text-xs font-bold leading-[35px]">
+              class="surface-ground mr-0.5 h-8 border border-black px-1.5 text-xs font-bold leading-[35px]"
+            >
               {{ tag.name }}
             </div>
           </div>
         </div>
       </ng-template>
 
-      <div *ngIf="editable; else editButtons" class="mx-auto mt-1 grid grid-cols-4">
+      <div
+        *ngIf="editable; else editButtons"
+        class="mx-auto mt-1 grid grid-cols-3"
+      >
         <button
           (click)="saveDeck()"
           [disabled]="!deckFormGroup.dirty"
           pButton
           class="p-button-sm lg:p-button p-button-outlined"
           type="button"
-          label="Save"></button>
+          label="Save"
+        ></button>
         <button
           (click)="openDeck($event)"
           pButton
           class="p-button-sm lg:p-button p-button-outlined"
           type="button"
-          label="Open"></button>
+          label="Open"
+        ></button>
         <button
           (click)="copyDeck($event)"
           pButton
           class="p-button-sm lg:p-button p-button-outlined"
           type="button"
-          label="Copy"></button>
+          label="Copy"
+        ></button>
         <button
           (click)="showExportDeckDialog()"
           pButton
           class="p-button-sm lg:p-button p-button-outlined"
           type="button"
-          label="Export"></button>
+          label="Export"
+        ></button>
         <button
           (click)="getLink()"
           pButton
           class="p-button-sm lg:p-button p-button-outlined"
           type="button"
-          label="Get Link"></button>
+          label="Get Link"
+        ></button>
         <button
           (click)="deleteDeck($event)"
           pButton
           class="p-button-sm lg:p-button p-button-outlined"
           type="button"
-          label="Delete"></button>
-        <button
+          label="Delete"
+        ></button>
+        <!--button
           (click)="deckSubmissionDialog = true"
           pButton
           class="p-button-sm lg:p-button p-button-outlined col-span-2"
           type="button"
-          label="Submit Tournament"></button>
+          label="Submit Tournament"></button-->
       </div>
       <ng-template #editButtons>
         <div class="mx-auto mt-1 grid grid-cols-3 lg:grid-cols-5">
@@ -201,32 +256,37 @@ export interface ICardImage {
             pButton
             class="p-button-sm lg:p-button p-button-outlined"
             type="button"
-            label="Open"></button>
+            label="Open"
+          ></button>
           <button
             (click)="copyDeck($event)"
             pButton
             class="p-button-sm lg:p-button p-button-outlined"
             type="button"
-            label="Copy"></button>
+            label="Copy"
+          ></button>
           <button
             (click)="showExportDeckDialog()"
             pButton
             class="p-button-sm lg:p-button p-button-outlined"
             type="button"
-            label="Export"></button>
+            label="Export"
+          ></button>
           <button
             (click)="getLink()"
             pButton
             class="p-button-sm lg:p-button p-button-outlined"
             type="button"
-            label="Get Link"></button>
+            label="Get Link"
+          ></button>
           <button
             *ngIf="isAdmin"
             (click)="deleteDeck($event)"
             pButton
             class="p-button-sm lg:p-button p-button-outlined"
             type="button"
-            label="Delete"></button>
+            label="Delete"
+          ></button>
         </div>
       </ng-template>
     </div>
@@ -238,7 +298,8 @@ export interface ICardImage {
       [dismissableMask]="true"
       [resizable]="false"
       styleClass="w-full h-full max-w-6xl min-h-[500px]"
-      [baseZIndex]="10000">
+      [baseZIndex]="10000"
+    >
       <digimon-export-deck-dialog [deck]="deck"></digimon-export-deck-dialog>
     </p-dialog>
 
@@ -249,8 +310,12 @@ export interface ICardImage {
       [dismissableMask]="true"
       [resizable]="false"
       styleClass="w-full h-full max-w-6xl min-h-[500px]"
-      [baseZIndex]="10000">
-      <digimon-deck-submission [inputDeck]="deck" (onClose)="deckSubmissionDialog = false"></digimon-deck-submission>
+      [baseZIndex]="10000"
+    >
+      <digimon-deck-submission
+        [inputDeck]="deck"
+        (onClose)="deckSubmissionDialog = false"
+      ></digimon-deck-submission>
     </p-dialog>
   `,
   standalone: true,
@@ -286,7 +351,10 @@ export class DeckDialogComponent implements OnInit, OnChanges {
   deckFormGroup = new UntypedFormGroup({
     title: new UntypedFormControl(''),
     description: new UntypedFormControl(''),
-    cardImage: new UntypedFormControl({ name: 'BT1-001 - Yokomon', value: 'BT1-001' }),
+    cardImage: new UntypedFormControl({
+      name: 'BT1-001 - Yokomon',
+      value: 'BT1-001',
+    }),
   });
 
   saveDisabled = true;
@@ -327,7 +395,9 @@ export class DeckDialogComponent implements OnInit, OnChanges {
     this.deckFormGroup = new UntypedFormGroup({
       title: new UntypedFormControl(this.deck.title),
       description: new UntypedFormControl(this.deck.description),
-      cardImage: new UntypedFormControl(this.getCardImage(this.deck.imageCardId)),
+      cardImage: new UntypedFormControl(
+        this.getCardImage(this.deck.imageCardId)
+      ),
     });
 
     this.cardImageOptions = this.createImageOptions();
@@ -336,7 +406,9 @@ export class DeckDialogComponent implements OnInit, OnChanges {
   openDeck(event: Event) {
     if (this.editable) {
       if (this.authService.isLoggedIn) {
-        this.router.navigateByUrl(`deckbuilder/user/${this.authService.userData?.uid}/deck/${this.deck.id}`);
+        this.router.navigateByUrl(
+          `deckbuilder/user/${this.authService.userData?.uid}/deck/${this.deck.id}`
+        );
       } else {
         this.store.dispatch(setDeck({ deck: this.deck }));
         this.router.navigateByUrl('deckbuilder');
@@ -351,7 +423,9 @@ export class DeckDialogComponent implements OnInit, OnChanges {
               deck: this.deck,
             })
           );
-          this.router.navigateByUrl('/deckbuilder/user/' + this.deck.userId + '/deck/' + this.deck.id);
+          this.router.navigateByUrl(
+            '/deckbuilder/user/' + this.deck.userId + '/deck/' + this.deck.id
+          );
         },
       });
     }
@@ -379,7 +453,10 @@ export class DeckDialogComponent implements OnInit, OnChanges {
         key: 'Delete',
         message: 'You are about to permanently delete this deck. Are you sure?',
         accept: () => {
-          this.digimonBackendService.deleteDeck(this.deck.id).pipe(first()).subscribe();
+          this.digimonBackendService
+            .deleteDeck(this.deck.id)
+            .pipe(first())
+            .subscribe();
           this.messageService.add({
             severity: 'success',
             summary: 'Deck deleted!',
@@ -478,6 +555,16 @@ export class DeckDialogComponent implements OnInit, OnChanges {
     return placement + 'th';
   }
 
+  mapTournamentSize(size: string) {
+    const map = new Map<string, string>([
+      ['Small', 'Small (4-8 Player)'],
+      ['Medium', 'Medium (8-16 Player)'],
+      ['Large', 'Large (16-32 Player)'],
+      ['Major', 'Major (32+ Player)'],
+    ]);
+    return map.get(size);
+  }
+
   private getCardImage(imageCardId: string): ICardImage {
     if (!this.deck.cards || this.deck.cards.length === 0) {
       return { name: 'BT1-001 - Yokomon', value: 'BT1-001' };
@@ -496,15 +583,5 @@ export class DeckDialogComponent implements OnInit, OnChanges {
         value: imageCard!.id,
       };
     }
-  }
-
-  mapTournamentSize(size: string) {
-    const map = new Map<string, string>([
-      ['Small', 'Small (4-8 Player)'],
-      ['Medium', 'Medium (8-16 Player)'],
-      ['Large', 'Large (16-32 Player)'],
-      ['Major', 'Major (32+ Player)'],
-    ]);
-    return map.get(size);
   }
 }

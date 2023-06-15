@@ -15,13 +15,20 @@ import {
   filter,
   first,
   Observable,
+  of,
   Subject,
   switchMap,
   takeUntil,
   tap,
 } from 'rxjs';
 import { setCommunityDecks } from 'src/app/store/digimon.actions';
-import { ICard, IDeck, ITournamentDeck, TAGS } from '../../../models';
+import {
+  ICard,
+  ICountCard,
+  IDeck,
+  ITournamentDeck,
+  TAGS,
+} from '../../../models';
 import { IUserAndDecks } from '../../../models/interfaces/userAndDecks.interface';
 import {
   deckIsValid,
@@ -31,6 +38,7 @@ import { AuthService } from '../../service/auth.service';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
 import {
   selectAllCards,
+  selectCollection,
   selectCommunityDecks,
   selectCommunityDeckSearch,
 } from '../../store/digimon.selectors';
@@ -58,20 +66,30 @@ import { DecksFilterComponent } from './components/decks-filter.component';
           <button
             pButton
             class="p-button-outlined mt-1 lg:mr-2 lg:mt-3"
+            icon="pi pi-search"
+            type="button"
+            label="Find possible decks within your collection"
+            (click)="applyCollectionFilter()"
+          ></button>
+
+          <button
+            pButton
+            class="p-button-outlined ml-auto mt-1 lg:mr-2 lg:mt-3"
+            icon="pi pi-chart-line"
+            type="button"
+            label="Deck Statistics"
+            (click)="deckStatsDialog = true; updateStatistics.next(true)"
+          ></button>
+          <!--button
+            pButton
+            class="p-button-outlined mt-1 lg:mr-2 lg:mt-3"
             icon="pi pi-arrow-right-arrow-left"
             type="button"
             [label]="getSwitchLabel()"
             (click)="switchMode()"
           ></button>
 
-          <button
-            pButton
-            class="p-button-outlined mt-1 lg:mr-2 lg:mt-3"
-            icon="pi pi-chart-line"
-            type="button"
-            label="Deck Statistics"
-            (click)="deckStatsDialog = true; updateStatistics.next(true)"
-          ></button>
+
 
           <button
             pButton
@@ -80,7 +98,7 @@ import { DecksFilterComponent } from './components/decks-filter.component';
             type="button"
             label="Submit a Tournament Deck"
             (click)="deckSubmissionDialog = true"
-          ></button>
+          ></button-->
         </div>
 
         <digimon-decks-filter
@@ -213,6 +231,7 @@ export class DecksPageComponent implements OnInit, OnDestroy {
   );
   allDecksLoaded$ = new BehaviorSubject(false);
 
+  private collection: ICountCard[] = [];
   private worker: Worker;
   private decks: IDeck[] | ITournamentDeck[] = [];
   private allDecks: IDeck[] = []; // All decks only loaded once
@@ -246,24 +265,44 @@ export class DecksPageComponent implements OnInit, OnDestroy {
       console.log('[Digimoncard.App] Web Worker is not working');
     }
 
-    combineLatest([this.users$, this.allCards$, this.deckSearch$])
+    this.communityDecks$
       .pipe(
         first(),
-        tap(() => this.allDecksLoaded$.next(false))
+        tap(() => this.allDecksLoaded$.next(false)),
+        switchMap((decks) => {
+          if (decks.length > 0) {
+            return combineLatest([
+              of([]),
+              this.allCards$,
+              this.deckSearch$,
+              of(decks),
+            ]);
+          }
+          return combineLatest([
+            this.users$,
+            this.allCards$,
+            this.deckSearch$,
+            of([]),
+          ]);
+        })
       )
-      .subscribe(([users, allCards, search]) => {
+      .subscribe(([users, allCards, search, loadedDecks]) => {
         this.form.get('searchFilter')!.setValue(search);
 
         let decks: IDeck[] = [];
 
-        users.forEach((user) => {
-          user.decks.forEach((deck) => {
-            const formattedDeck = deck;
-            formattedDeck.user = user.user.user ?? 'Unknown';
-            formattedDeck.userId = user.user.uid;
-            decks = [...decks, formattedDeck];
+        if (decks.length > 0) {
+          decks = loadedDecks;
+        } else {
+          users.forEach((user) => {
+            user.decks.forEach((deck) => {
+              const formattedDeck = deck;
+              formattedDeck.user = user.user.user ?? 'Unknown';
+              formattedDeck.userId = user.user.uid;
+              decks = [...decks, formattedDeck];
+            });
           });
-        });
+        }
 
         this.allDecks = decks;
         this.worker.postMessage({ decks, allCards });
@@ -284,10 +323,16 @@ export class DecksPageComponent implements OnInit, OnDestroy {
       .pipe(
         filter((decks) => decks.length > 0),
         tap((decks) => (this.allDecks = decks)),
-        switchMap(() => this.updateFilters()),
         takeUntil(this.onDestroy$)
       )
-      .subscribe();
+      .subscribe(() => this.filterChanges());
+
+    this.store
+      .select(selectCollection)
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((collection) => {
+        this.collection = collection;
+      });
   }
 
   ngOnDestroy() {
@@ -322,7 +367,10 @@ export class DecksPageComponent implements OnInit, OnDestroy {
     } else {
       this.digimonBackendService
         .getTournamentDecks()
-        .pipe(first())
+        .pipe(
+          first(),
+          tap(() => this.allDecksLoaded$.next(false))
+        )
         .subscribe((decks) => {
           this.decks = decks;
           this.filteredDecks = this.decks;
@@ -369,9 +417,30 @@ export class DecksPageComponent implements OnInit, OnDestroy {
         this.first = 0;
         this.page = 0;
 
-        this.decksToShow = this.filteredDecks.slice(0, 20);
+        this.setDecksToShow(0, 20);
       })
     );
+  }
+
+  applyCollectionFilter() {
+    const decksThatCanBeCreatedWithCollection = this.filteredDecks.filter(
+      (deck) => {
+        return deck.cards.every((cardNeededForDeck) => {
+          const matchingCards = this.collection.filter(
+            (card) =>
+              card.id.split('_', 1)[0] === cardNeededForDeck.id.split('_', 1)[0]
+          );
+          const totalCount = matchingCards.reduce(
+            (total, card) => total + card.count,
+            0
+          );
+          return totalCount >= cardNeededForDeck.count;
+        });
+      }
+    );
+
+    this.filteredDecks = decksThatCanBeCreatedWithCollection;
+    this.setDecksToShow(0, 20);
   }
 
   private setDecksToShow(from: number, to: number) {
