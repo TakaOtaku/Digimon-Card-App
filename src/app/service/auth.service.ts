@@ -36,11 +36,12 @@ export class AuthService {
   /**
    * Login automatically when you were logged in before
    */
-  checkLocalStorage() {
+  userInLocalStorage(): boolean {
     const userRAW = localStorage.getItem('user');
-    if (!userRAW) return;
+    if (!userRAW) return false;
 
     this.userData = JSON.parse(userRAW);
+    return true;
   }
 
   GoogleAuth() {

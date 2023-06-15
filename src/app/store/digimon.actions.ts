@@ -19,7 +19,7 @@ export const setPriceGuideCM = createAction(
 
 export const setDeck = createAction('[Set Deck] Set current Deck', props<{ deck: IDeck }>());
 
-export const createNewDeck = createAction('[Create Deck] Create a new Deck', props<{ reset: boolean }>());
+export const createNewDeck = createAction('[Create Deck] Create a new Deck', props<{ uuid: string }>());
 
 export const changeFilter = createAction('[Settings] Change Filter', props<{ filter: IFilter }>());
 export const changeSearchFilter = createAction('[Settings] Change Search Filter', props<{ search: string }>());

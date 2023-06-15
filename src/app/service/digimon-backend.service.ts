@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { first, map, Observable } from 'rxjs';
+import { filter, first, map, Observable } from 'rxjs';
 import { IColor, ICountCard, IDeck, ISave, ISettings, ITournamentDeck, IUser } from 'src/models';
 import { CARDSET, IBlog, IBlogWithText, ITag } from '../../models';
+import { IUserAndDecks } from '../../models/interfaces/userAndDecks.interface';
 import { IEvent } from '../features/home/components/event-calendar.component';
 import { setDeckImage } from '../functions/digimon-card.functions';
 import { emptySettings } from '../store/reducers/save.reducer';
@@ -21,8 +22,14 @@ export class DigimonBackendService {
     return this.http.get<any[]>(url + 'decks').pipe(
       map((decks) => {
         return decks.map((deck) => {
-          const cards: ICountCard = JSON.parse(deck.cards);
-          const sideDeck: ICountCard = JSON.parse(deck.sideDeck !== '' ? deck.sideDeck : '[]');
+          const cards: ICountCard[] = JSON.parse(deck.cards);
+          let sideDeck: ICountCard[];
+          if (deck.sideDeck) {
+            sideDeck = JSON.parse(deck.sideDeck !== '' ? deck.sideDeck : '[]');
+          } else {
+            sideDeck = [];
+          }
+
           const color: IColor = JSON.parse(deck.color);
           const tags: ITag[] = JSON.parse(deck.tags);
           const likes: string[] = deck.likes ? JSON.parse(deck.likes) : [];
@@ -35,6 +42,23 @@ export class DigimonBackendService {
             tags,
           } as IDeck;
         });
+      })
+    );
+  }
+
+  getUserDecks(url: string = baseUrl): Observable<IUserAndDecks[]> {
+    return this.http.get<any[]>(url + 'users/decks').pipe(
+      map((array: any[]) => {
+        return array.filter((user) => user[1] !== '[]');
+      }),
+      map((array: any[]) => {
+        const userAndDecks: IUserAndDecks[] = [];
+        array.forEach((user) => {
+          let parsedDecks: any[] = JSON.parse(user[1]);
+          userAndDecks.push({ user: user[0], decks: parsedDecks });
+        });
+
+        return userAndDecks;
       })
     );
   }

@@ -1,7 +1,17 @@
 import { englishCards } from '../../assets/cardlists/eng/english';
 import preReleaseJSON from '../../assets/cardlists/eng/PreRelease.json';
 import { japaneseCards } from '../../assets/cardlists/jap/japanese';
-import { CARDSET, ICard, ICountCard, IDeck, IDeckCard, ISelectItem, ITag, tagsList } from '../../models';
+import {
+  CARDSET,
+  ICard,
+  ICountCard,
+  IDeck,
+  IDeckCard,
+  ISelectItem,
+  ITag,
+  ITournamentDeck,
+  tagsList,
+} from '../../models';
 import { ColorOrderMap, DeckColorMap } from '../../models/maps/color.map';
 
 export function setTags(deck: IDeck, allCards: ICard[]) {
@@ -184,6 +194,12 @@ export function setupAllDigimonCards(): ICard[] {
 }
 
 export function deckIsValid(deck: IDeck, allCards: ICard[]): string {
+  const cardMap = new Map<string, ICard>();
+
+  allCards.forEach((card) => {
+    cardMap.set(formatId(card.id), card);
+  });
+
   let cardCount = 0;
   let eggCount = 0;
 
@@ -192,28 +208,31 @@ export function deckIsValid(deck: IDeck, allCards: ICard[]): string {
   }
 
   deck.cards.forEach((card) => {
-    const fullCard = allCards.find((a) => a.id === formatId(card.id))!;
-    try {
-      if (fullCard.cardType !== 'Digi-Egg') {
-        cardCount += card.count;
-      } else {
-        eggCount += card.count;
+    const fullCard = cardMap.get(formatId(card.id));
+
+    if (fullCard) {
+      try {
+        if (fullCard.cardType !== 'Digi-Egg') {
+          cardCount += card.count;
+        } else {
+          eggCount += card.count;
+        }
+      } catch (e) {
+        console.log(fullCard);
       }
-    } catch (e) {
-      console.log(fullCard);
     }
   });
 
-  if (cardCount != 50) {
-    return "Deck was can not be shared! You don't have 50 cards.";
+  if (cardCount !== 50) {
+    return "Deck cannot be shared! You don't have 50 cards.";
   }
 
   if (eggCount > 5) {
-    return 'Deck was can not be shared! You have more than 5 Eggs.';
+    return 'Deck cannot be shared! You have more than 5 Eggs.';
   }
 
-  if (!deck.title || deck.title === '' || deck.title == 'Imported Deck') {
-    return 'Deck was can not be shared! You need a title.';
+  if (!deck.title || deck.title === '' || deck.title === 'Imported Deck') {
+    return 'Deck cannot be shared! You need a title.';
   }
 
   return '';
@@ -285,7 +304,7 @@ export function getCountFromDeckCards(deckCards: IDeckCard[] | ICountCard[]): nu
   return number;
 }
 
-export function setDeckImage(deck: IDeck): ICard {
+export function setDeckImage(deck: IDeck | ITournamentDeck): ICard {
   if (deck.cards && deck.cards.length === 0) {
     return englishCards[0];
   }

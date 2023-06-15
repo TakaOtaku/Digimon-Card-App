@@ -3,7 +3,6 @@
   "parserOptions": {
     "ecmaVersion": "latest"
   },
-
   "env": {
     "es6": true
   },
@@ -12,7 +11,6 @@
   ],
   "rules": {
     "no-console": "error",
-
     "prettier/prettier": [
       "error",
       {
@@ -20,7 +18,9 @@
       }
     ]
   },
-  "plugins": ["prettier"],
+  "plugins": [
+    "prettier"
+  ],
   "overrides": [
     {
       "files": [
@@ -56,13 +56,14 @@
             "style": "kebab-case"
           }
         ],
-        "max-len": ["error", { "code": 200 }],
-        "prettier/prettier": [
+        "max-len": [
           "error",
           {
-            "printWidth": 120,
-            "bracketSameLine": true
+            "code": 200
           }
+        ],
+        "prettier/prettier": [
+          "error"
         ]
       }
     },
@@ -71,10 +72,16 @@
         "*.html"
       ],
       "extends": [
-        "plugin:@angular-eslint/template/recommended"
+        "plugin:@angular-eslint/template/recommended",
+        "plugin:prettier/recommended"
       ],
       "rules": {
-        "max-len": ["error", { "code": 160 }]
+        "max-len": [
+          "error",
+          {
+            "code": 160
+          }
+        ]
       }
     }
   ]

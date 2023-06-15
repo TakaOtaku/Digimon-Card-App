@@ -1,17 +1,19 @@
+import { AsyncPipe, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
+import { Store } from '@ngrx/store';
 
 import { MessageService } from 'primeng/api';
-import { Observable, switchMap, tap, withLatestFrom } from 'rxjs';
+import { ButtonModule } from 'primeng/button';
+import { RippleModule } from 'primeng/ripple';
+import { first, Observable, switchMap, tap, withLatestFrom } from 'rxjs';
 import { IBlog, IBlogWithText } from '../../../models';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
-import { RippleModule } from 'primeng/ripple';
-import { ButtonModule } from 'primeng/button';
+import { setBlogs } from '../../store/digimon.actions';
 import { CKEditorComponent } from './components/ckeditor.component';
 import { HeaderComponent } from './components/header.component';
-import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'digimon-blog-page',
@@ -59,6 +61,7 @@ export class BlogPageComponent implements OnInit {
     private active: ActivatedRoute,
     private digimonBackendService: DigimonBackendService,
     private messageService: MessageService,
+    private store: Store,
     private meta: Meta,
     private metaTitle: Title
   ) {}
@@ -66,22 +69,13 @@ export class BlogPageComponent implements OnInit {
   ngOnInit(): void {
     this.makeGoogleFriendly();
     this.checkURL();
-  }
 
-  private makeGoogleFriendly() {
-    this.metaTitle.setTitle('Digimon Card Game - ' + this.form.get('title')?.value);
-
-    this.meta.addTags([
-      {
-        name: 'description',
-        content: this.form.get('title')?.value,
-      },
-      { name: 'author', content: 'TakaOtaku' },
-      {
-        name: 'keywords',
-        content: 'Forum, decks, tournament',
-      },
-    ]);
+    this.digimonBackendService
+      .getBlogEntries()
+      .pipe(first())
+      .subscribe((blogs) => {
+        this.store.dispatch(setBlogs({ blogs }));
+      });
   }
 
   checkURL() {
@@ -129,5 +123,21 @@ export class BlogPageComponent implements OnInit {
           detail: 'The Blog-Entry was saved successfully!',
         });
       });
+  }
+
+  private makeGoogleFriendly() {
+    this.metaTitle.setTitle('Digimon Card Game - ' + this.form.get('title')?.value);
+
+    this.meta.addTags([
+      {
+        name: 'description',
+        content: this.form.get('title')?.value,
+      },
+      { name: 'author', content: 'TakaOtaku' },
+      {
+        name: 'keywords',
+        content: 'Forum, decks, tournament',
+      },
+    ]);
   }
 }

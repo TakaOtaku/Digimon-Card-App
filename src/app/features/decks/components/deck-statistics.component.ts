@@ -201,7 +201,7 @@ import { NgFor, SlicePipe } from '@angular/common';
   imports: [NgFor, SlicePipe],
 })
 export class DeckStatisticsComponent implements OnInit, OnDestroy {
-  @Input() allCards: ICard[];
+  @Input() allCards: ICard[] = [];
   @Input() decks: IDeck[];
   @Input() updateCards: Subject<boolean>;
 

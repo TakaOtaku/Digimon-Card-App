@@ -36,13 +36,14 @@ export const emptySettings: ISettings = {
   showUserStats: true,
 
   deckDisplayTable: false,
+  displaySideDeck: true,
 };
 
 export const emptySave: ISave = {
   uid: '',
   photoURL: '',
   displayName: '',
-  version: 2.2,
+  version: 3.0,
   collection: [],
   decks: [],
   settings: emptySettings,
@@ -122,7 +123,9 @@ export const saveReducer = createReducer(
     }
     const foundDeck = state.decks?.find((value) => value.id === deck.id);
     if (foundDeck) {
-      const allButFoundDeck: IDeck[] = state.decks.filter((value) => value.id !== deck.id);
+      const allButFoundDeck: IDeck[] = state.decks.filter(
+        (value) => value.id !== deck.id
+      );
       const decks: IDeck[] = [...new Set([...allButFoundDeck, deck])];
       return { ...state, decks };
     }
@@ -138,7 +141,9 @@ export const saveReducer = createReducer(
     return { ...state, decks: [...new Set(decks)] };
   }),
   on(deleteDeck, (state, { deck }) => {
-    const decks = [...new Set(state.decks.filter((item) => item.id !== deck.id))];
+    const decks = [
+      ...new Set(state.decks.filter((item) => item.id !== deck.id)),
+    ];
     return {
       ...state,
       decks,

@@ -102,6 +102,15 @@ import { InputNumberModule } from 'primeng/inputnumber';
               optionLabel="label"
               optionValue="value"></p-selectButton>
           </div>
+          <div class="flex flex-col">
+            <h5 class="mt-5 text-center font-bold">Display SideDecks:</h5>
+            <p-selectButton
+              [(ngModel)]="sideDeck"
+              [options]="yesNoOptions"
+              class="mx-auto"
+              optionLabel="label"
+              optionValue="value"></p-selectButton>
+          </div>
         </div>
 
         <div class="flex flex-row justify-end">
@@ -362,6 +371,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
   ];
   userStats = true;
   deckDisplayTable = true;
+  sideDeck = true;
 
   sortOrder = ['Color', 'Level'];
   sortOrderFilter = new UntypedFormControl();
@@ -425,6 +435,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
         sortDeckOrder: this.sortOrderFilter.value,
         showUserStats: this.userStats,
         deckDisplayTable: this.deckDisplayTable,
+        displaySideDeck: this.sideDeck,
       },
     };
 
