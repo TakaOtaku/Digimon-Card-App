@@ -499,10 +499,6 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
       '<img class="inline h-4" src="assets/images/keywords/delay.webp"/>'
     );
     replacedText = replacedText.replace(
-      '＜Delay＞',
-      '<img class="inline h-4" src="assets/images/keywords/delay.webp"/>'
-    );
-    replacedText = replacedText.replace(
       '＜Digi-Burst＞',
       '<img class="inline h-4" src="assets/images/keywords/digi-burst_1.webp"/>'
     );
@@ -685,11 +681,11 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
       '<img class="inline h-4" src="assets/images/keywords/security_attack_-_3.webp"/>'
     );
     replacedText = replacedText.replace(
-      '[Start of your Main Phase]',
+      '[Start of Your Main Phase]',
       '<img class="inline h-4" src="assets/images/keywords/start_of_your_main_phase.webp"/>'
     );
     replacedText = replacedText.replace(
-      '[Start of your Turn]',
+      '[Start of Your Turn]',
       '<img class="inline h-4" src="assets/images/keywords/start_of_your_turn.webp"/>'
     );
     replacedText = replacedText.replace(
@@ -699,7 +695,6 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
       '[Twice Per Turn]',
       '<img class="inline h-4" src="assets/images/keywords/twice_per_turn.webp"/>'
     );
-    replacedText = replacedText.replace('[Unite]', '<img class="inline h-4" src="assets/images/keywords/unite.webp"/>');
     replacedText = replacedText.replace(
       '[When Digivolving]',
       '<img class="inline h-4" src="assets/images/keywords/when_digivolving.webp"/>'
