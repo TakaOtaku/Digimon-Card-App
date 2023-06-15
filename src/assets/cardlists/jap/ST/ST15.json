@@ -406,7 +406,7 @@
         "digiXros": "-",
         "specialDigivolve": "[Digivolve] Lv.5 w/[Greymon] in name: Cost 3",
         "dnaDigivolve": "-",
-        "effect": "[Hand] [Counter] ＜Blast Digivolve＞ (Your Digimon may digivolve into this card without paying the cost).\n[All Turns] [Once Per Turn] When either players' security is reduced, you may unsuspend this Digimon.",
+        "effect": "[Hand] [Counter] ＜Blast Digivolve＞ (Your Digimon may digivolve into this card without paying the cost).\n＜Blocker＞ (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead).\n[All Turns] [Once Per Turn] When either players' security is reduced, you may unsuspend this Digimon.",
         "digivolveEffect": "-",
         "securityEffect": "-",
         "aceEffect": "Overflow ＜-4＞ (When this card is sent from battle area or under your card to another area, lose 4 memory).",
