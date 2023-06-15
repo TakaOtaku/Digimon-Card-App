@@ -1309,7 +1309,7 @@
     "digiXros": "-",
     "specialDigivolve": "Digivolve: 4 from [Magnamon]",
     "dnaDigivolve": "-",
-    "effect": "[Opponent’s Turn] When an opponent’s Digimon attacks, if a card with [Armor Form] in its traits or [X Antibody] is in this Digimon’s digivolution cards, you may switch the target of attack to this Digimon.\n[All Turns] When this Digimon would be deleted, you may place the top card of this Digimon on top of your security stack face down to prevent that deletion.",
+    "effect": "[Opponent's Turn] When an opponent’s Digimon attacks, if a card with [Armor Form] in its traits or [X Antibody] is in this Digimon’s digivolution cards, you may switch the target of attack to this Digimon.\n[All Turns] When this Digimon would be deleted, you may place the top card of this Digimon on top of your security stack face down to prevent that deletion.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "notes": "▹BOOSTER X RECORD [BT-09]",
