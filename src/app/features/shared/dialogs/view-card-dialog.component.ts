@@ -554,7 +554,7 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
     replacedText = replacedText.replace('[Main]', '<img class="inline h-4" src="assets/images/keywords/main.webp"/>');
     replacedText = replacedText.replace(
       '＜Jamming＞',
-      '<img class="inline h-4" src="assets/images/keywords/delay.webp"/>'
+      '<img class="inline h-4" src="assets/images/keywords/jamming.webp"/>'
     );
     replacedText = replacedText.replace(
       '＜Material Save 1＞',
