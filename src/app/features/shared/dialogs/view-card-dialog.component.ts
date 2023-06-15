@@ -435,12 +435,28 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
       '<img class="inline h-4" src="assets/images/keywords/armor_purge.webp"/>'
     );
     replacedText = replacedText.replace(
+      '[At End of Opponent's Turn]',
+      '<img class="inline h-4" src="assets/images/keywords/at_end_of_opponents_turn.webp"/>'
+    );
+    replacedText = replacedText.replace(
+      '＜Blast Digivolve＞',
+      '<img class="inline h-4" src="assets/images/keywords/blast_digivolve.webp"/>'
+    );
+    replacedText = replacedText.replace(
       '＜Blitz＞',
       '<img class="inline h-4" src="assets/images/keywords/blitz.webp"/>'
     );
     replacedText = replacedText.replace(
       '＜Blocker＞',
       '<img class="inline h-4" src="assets/images/keywords/blocker.webp"/>'
+    );
+    replacedText = replacedText.replace(
+      '[Breeding]＞',
+      '<img class="inline h-4" src="assets/images/keywords/breeding.webp"/>'
+    );
+    replacedText = replacedText.replace(
+      '[Counter]',
+      '<img class="inline h-4" src="assets/images/keywords/counter.webp"/>'
     );
     replacedText = replacedText.replace(
       '＜Decoy [Bagra Army] traits＞',
@@ -456,26 +472,26 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
     );
     replacedText = replacedText.replace(
       '＜Decoy [D-Brigade] traits＞',
-      '<img class="inline h-4" src="assets/images/keywords/decoy_d-brigate.webp"/>'
+      '<img class="inline h-4" src="assets/images/keywords/decoy_d-brigade.webp"/>'
     );
     replacedText = replacedText.replace(
       '＜Decoy (Red/Black)＞',
       '<img class="inline h-4" src="assets/images/keywords/decoy_red_black.webp"/>'
     );
     replacedText = replacedText.replace(
-      '＜De-Digivolve  1＞',
+      '＜De-Digivolve 1＞',
       '<img class="inline h-4" src="assets/images/keywords/de-digivolve_1.webp"/>'
     );
     replacedText = replacedText.replace(
-      '＜De-Digivolve  2＞',
+      '＜De-Digivolve 2＞',
       '<img class="inline h-4" src="assets/images/keywords/de-digivolve_2.webp"/>'
     );
     replacedText = replacedText.replace(
-      '＜De-Digivolve  3＞',
+      '＜De-Digivolve 3＞',
       '<img class="inline h-4" src="assets/images/keywords/de-digivolve_3.webp"/>'
     );
     replacedText = replacedText.replace(
-      '＜De-Digivolve  4＞',
+      '＜De-Digivolve 4＞',
       '<img class="inline h-4" src="assets/images/keywords/de-digivolve_4.webp"/>'
     );
     replacedText = replacedText.replace(
@@ -523,6 +539,22 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
       '<img class="inline h-4" src="assets/images/keywords/digisorption_-3.webp"/>'
     );
     replacedText = replacedText.replace(
+      '[Digivolve]',
+      '<img class="inline h-4" src="assets/images/keywords/digivolve.webp"/>'
+    );
+    replacedText = replacedText.replace(
+      '[DigiXros -1]',
+      '<img class="inline h-4" src="assets/images/keywords/digixros_-1.webp"/>'
+    );
+    replacedText = replacedText.replace(
+      '[DigiXros -2]',
+      '<img class="inline h-4" src="assets/images/keywords/digixros_-2.webp"/>'
+    );
+    replacedText = replacedText.replace(
+      '[DigiXros -3]',
+      '<img class="inline h-4" src="assets/images/keywords/digixros_-3.webp"/>'
+    );
+    replacedText = replacedText.replace(
       '＜Draw 1＞',
       '<img class="inline h-4" src="assets/images/keywords/draw_1.webp"/>'
     );
@@ -539,7 +571,7 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
       '<img class="inline h-4" src="assets/images/keywords/end_of_attack.webp"/>'
     );
     replacedText = replacedText.replace(
-      "[End of Opponent's Turn]",
+      '[End of Opponent's Turn]',
       '<img class="inline h-4" src="assets/images/keywords/end_of_opponents_turn.webp"/>'
     );
     replacedText = replacedText.replace(
@@ -550,8 +582,12 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
       '＜Evade＞',
       '<img class="inline h-4" src="assets/images/keywords/delay.webp"/>'
     );
-    replacedText = replacedText.replace('[Hand]', '<img class="inline h-4" src="assets/images/keywords/hand.webp"/>');
-    replacedText = replacedText.replace('[Main]', '<img class="inline h-4" src="assets/images/keywords/main.webp"/>');
+    replacedText = replacedText.replace(
+      '[Hand]', '<img class="inline h-4" src="assets/images/keywords/hand.webp"/>'
+    );
+    replacedText = replacedText.replace(
+      '[Main]', '<img class="inline h-4" src="assets/images/keywords/main.webp"/>'
+    );
     replacedText = replacedText.replace(
       '＜Jamming＞',
       '<img class="inline h-4" src="assets/images/keywords/jamming.webp"/>'
@@ -585,14 +621,17 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
       '<img class="inline h-4" src="assets/images/keywords/once_per_turn.webp"/>'
     );
     replacedText = replacedText.replace(
-      "[Opponent's Turn]",
+      '[Opponent's Turn]',
       '<img class="inline h-4" src="assets/images/keywords/opponents_turn.webp"/>'
     );
     replacedText = replacedText.replace(
       '＜Piercing＞',
       '<img class="inline h-4" src="assets/images/keywords/piercing.webp"/>'
     );
-    replacedText = replacedText.replace('＜Raid＞', '<img class="inline h-4" src="assets/images/keywords/raid.webp"/>');
+    replacedText = replacedText.replace(
+       '＜Raid＞', 
+      '<img class="inline h-4" src="assets/images/keywords/raid.webp"/>'
+    );
     replacedText = replacedText.replace(
       '＜Reboot＞',
       '<img class="inline h-4" src="assets/images/keywords/reboot.webp"/>'
@@ -609,11 +648,21 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
       '＜Retaliation＞',
       '<img class="inline h-4" src="assets/images/keywords/retaliation.webp"/>'
     );
-    replacedText = replacedText.replace('＜Rush＞', '<img class="inline h-4" src="assets/images/keywords/rush.webp"/>');
-    replacedText = replacedText.replace('＜Save＞', '<img class="inline h-4" src="assets/images/keywords/save.webp"/>');
+    replacedText = replacedText.replace('
+    ＜Rush＞', 
+    '<img class="inline h-4" src="assets/images/keywords/rush.webp"/>'
+    );
+    replacedText = replacedText.replace('
+    ＜Save＞', 
+    '<img class="inline h-4" src="assets/images/keywords/save.webp"/>'
+    );
     replacedText = replacedText.replace(
       '[Security]',
       '<img class="inline h-4" src="assets/images/keywords/security.webp"/>'
+    );
+    replacedText = replacedText.replace(
+      '＜Security Attack＞',
+      '<img class="inline h-4" src="assets/images/keywords/security_attack.webp"/>'
     );
     replacedText = replacedText.replace(
       '＜Security Attack -1＞',
@@ -643,9 +692,11 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
       '[Start of your Turn]',
       '<img class="inline h-4" src="assets/images/keywords/start_of_your_turn.webp"/>'
     );
-    replacedText = replacedText.replace('[Trash]', '<img class="inline h-4" src="assets/images/keywords/trash.webp"/>');
     replacedText = replacedText.replace(
-      '[Twice per Turn]',
+      '[Trash]', '<img class="inline h-4" src="assets/images/keywords/trash.webp"/>'
+    );
+    replacedText = replacedText.replace(
+      '[Twice Per Turn]',
       '<img class="inline h-4" src="assets/images/keywords/twice_per_turn.webp"/>'
     );
     replacedText = replacedText.replace('[Unite]', '<img class="inline h-4" src="assets/images/keywords/unite.webp"/>');
