@@ -372,6 +372,8 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
     replacedText = replacedText.replace('[On Play]', '<img class="inline h-4" src="assets/images/keywords/on_play.webp"/>');
     replacedText = replacedText.replace('[Once Per Turn]', '<img class="inline h-4" src="assets/images/keywords/once_per_turn.webp"/>');
     replacedText = replacedText.replace("[Opponent's Turn]", '<img class="inline h-4" src="assets/images/keywords/opponents_turn.webp"/>');
+    replacedText = replacedText.replace("Overflow ＜-3＞]", '<img class="inline h-4" src="assets/images/keywords/overflow_-3.webp"/>');
+    replacedText = replacedText.replace("Overflow ＜-4＞]", '<img class="inline h-4" src="assets/images/keywords/overflow_-4.webp"/>');
     replacedText = replacedText.replace('＜Piercing＞', '<img class="inline h-4" src="assets/images/keywords/piercing.webp"/>');
     replacedText = replacedText.replace('＜Raid＞', '<img class="inline h-4" src="assets/images/keywords/raid.webp"/>');
     replacedText = replacedText.replace('＜Reboot＞', '<img class="inline h-4" src="assets/images/keywords/reboot.webp"/>');
