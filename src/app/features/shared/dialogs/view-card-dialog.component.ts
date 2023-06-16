@@ -363,6 +363,7 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
     replacedText = replacedText.replace('＜Evade＞', '<img class="inline h-4" src="assets/images/keywords/evade.webp"/>');
     replacedText = replacedText.replace('[Hand]', '<img class="inline h-4" src="assets/images/keywords/hand.webp"/>');
     replacedText = replacedText.replace('[Main]', '<img class="inline h-4" src="assets/images/keywords/main.webp"/>');
+    replacedText = replacedText.replace('＜Mind Link＞', '<img class="inline h-4" src="assets/images/keywords/mind_link.webp"/>');
     replacedText = replacedText.replace('＜Jamming＞', '<img class="inline h-4" src="assets/images/keywords/jamming.webp"/>');
     replacedText = replacedText.replace('＜Material Save 1＞', '<img class="inline h-4" src="assets/images/keywords/material_save_1.webp"/>');
     replacedText = replacedText.replace('＜Material Save 2＞', '<img class="inline h-4" src="assets/images/keywords/material_save_2.webp"/>');
@@ -381,6 +382,7 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
     replacedText = replacedText.replace('＜Recovery +2 (Deck)＞', '<img class="inline h-4" src="assets/images/keywords/recovery_+2deck.webp"/>');
     replacedText = replacedText.replace('＜Retaliation＞', '<img class="inline h-4" src="assets/images/keywords/retaliation.webp"/>');
     replacedText = replacedText.replace('＜Rush＞', '<img class="inline h-4" src="assets/images/keywords/rush.webp"/>');
+    replacedText = replacedText.replace('[Rule]＞', '<img class="inline h-4" src="assets/images/keywords/rule.webp"/>');
     replacedText = replacedText.replace('＜Save＞', '<img class="inline h-4" src="assets/images/keywords/save.webp"/>');
     replacedText = replacedText.replace('[Security]', '<img class="inline h-4" src="assets/images/keywords/security.webp"/>');
     replacedText = replacedText.replace('＜Security Attack＞', '<img class="inline h-4" src="assets/images/keywords/security_attack.webp"/>');
