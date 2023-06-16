@@ -2440,7 +2440,7 @@
         "cardNumber": "BT13-059",
         "digiXros": "-",
         "specialDigivolve": "-",
-        "dnaDigivolve": "-",
+        "dnaDigivolve": "DNA Digivolution: 0 from green Lv.6 + blue Lv.6\nDigivolve unsuspended with the 2 specified Digimon stacked on top of each other.",
         "effect": "[On Play] [When Digivolving] Suspend 1 of your opponent's Digimon. That Digimon doesn't unsuspend during your opponent's next unsuspend phase.\n[All Turns] [Once Per Turn] When an opponent's Digimon becomes suspended, you may activate 1 of the effects below.\n・ Suspend 1 of your opponent's Digimon.\n・ Unsuspend 1 of your Digimon.",
         "digivolveEffect": "-",
         "securityEffect": "-",
