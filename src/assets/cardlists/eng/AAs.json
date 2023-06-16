@@ -566,7 +566,7 @@
       "digiXros": "-",
       "specialDigivolve": "Digivolve: 3 from Lv.5 w/[MetalGreymon] in its name",
       "dnaDigivolve": "-",
-      "effect": "＜Raid＞ (When this Digimon attacks, you may switch the target of attack to 1 of your opponent's unsuspended Digimon with the highest DP)\n.\n[When Digivolving] This Digimon gets +3000 DP and ＜Reboot＞ (Unsuspend this Digimon during your opponent's unsuspend phase) until the end of your opponent's turn.\n[All Turns] [Once Per Turn] When the attack target is switched, unsuspend this Digimon.",
+      "effect": "＜Raid＞ (When this Digimon attacks, you may switch the target of attack to 1 of your opponent's unsuspended Digimon with the highest DP).\n[When Digivolving] This Digimon gets +3000 DP and ＜Reboot＞ (Unsuspend this Digimon during your opponent's unsuspend phase) until the end of your opponent's turn.\n[All Turns] [Once Per Turn] When the attack target is switched, unsuspend this Digimon.",
       "digivolveEffect": "-",
       "securityEffect": "-",
       "aceEffect": "-",
