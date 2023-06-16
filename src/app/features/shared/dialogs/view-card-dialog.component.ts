@@ -360,6 +360,7 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
     replacedText = replacedText.replace('[End of Attack]', '<img class="inline h-4" src="assets/images/keywords/end_of_attack.webp"/>');
     replacedText = replacedText.replace("[End of Opponent's Turn]", '<img class="inline h-4" src="assets/images/keywords/end_of_opponents_turn.webp"/>');
     replacedText = replacedText.replace('[End of Your Turn]', '<img class="inline h-4" src="assets/images/keywords/end_of_your_turn.webp"/>');
+    replacedText = replacedText.replace('＜Evade＞', '<img class="inline h-4" src="assets/images/keywords/evade.webp"/>');
     replacedText = replacedText.replace('[Hand]', '<img class="inline h-4" src="assets/images/keywords/hand.webp"/>');
     replacedText = replacedText.replace('[Main]', '<img class="inline h-4" src="assets/images/keywords/main.webp"/>');
     replacedText = replacedText.replace('＜Jamming＞', '<img class="inline h-4" src="assets/images/keywords/jamming.webp"/>');
