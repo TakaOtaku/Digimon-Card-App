@@ -2446,7 +2446,7 @@
     "cardNumber": "BT9-082",
     "digiXros": "-",
     "specialDigivolve": "-",
-    "dnaDigivolve": "＜DNA Digivolution: 0 from purple Lv.6 + yellow Lv.6＞ Digivolve unsuspended with the 2 specified Digimon stacked on top of each other.",
+    "dnaDigivolve": "DNA Digivolution: 0 from purple Lv.6 + yellow Lv.6/nDigivolve unsuspended with the 2 specified Digimon stacked on top of each other.",
     "effect": "[When Digivolving] When DNA digivolving, delete 1 of your opponent's level 6 or higher Digimon and all of their level 5 or lower Digimon. For each Digimon deleted by this effect, ＜Recovery +1 (Deck)＞. (Place the top card of your deck on top of your security stack.)\n[On Deletion] You may trash the top card of your security stack to play this card without paying its memory cost.",
     "digivolveEffect": "-",
     "securityEffect": "-",

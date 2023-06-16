@@ -2716,7 +2716,7 @@
         "digiXros": "-",
         "specialDigivolve": "-",
         "dnaDigivolve": "-",
-        "effect": "[On Deletion] ＜De-Digivolve  1＞ on 1 of your opponent's Digimon (Trash up to 1 card from the top of one of your opponent's Digimon. If it has no digivolution cards, or becomes a level 3 Digimon, you can't trash any more cards).",
+        "effect": "[On Deletion] ＜De-Digivolve 1＞ on 1 of your opponent's Digimon (Trash up to 1 card from the top of one of your opponent's Digimon. If it has no digivolution cards, or becomes a level 3 Digimon, you can't trash any more cards).",
         "digivolveEffect": "[All Turns] When this Digimon would be deleted, by deleting 1 other Digimon with [Sukamon] in its name, prevent it from being deleted.",
         "securityEffect": "-",
         "notes": "▹BOOSTER VS ROYAL KNIGHTS [BT-13]",

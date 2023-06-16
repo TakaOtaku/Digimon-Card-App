@@ -166,7 +166,7 @@
     "cardNumber": "ST10-06",
     "digiXros": "-",
     "specialDigivolve": "-",
-    "dnaDigivolve": "＜DNA Digivolution: 0 from yellow Lv.5 + purple Lv.5＞ Digivolve unsuspended with the 2 specified Digimon stacked on top of each other.",
+    "dnaDigivolve": "DNA Digivolution: 0 from yellow Lv.5 + purple Lv.5/nDigivolve unsuspended with the 2 specified Digimon stacked on top of each other.",
     "effect": "[When Digivolving] Place 1 yellow or purple Digimon card from your trash on top of your security stack face down. When DNA digivolving, you may search your security stack for 1 level 5 or lower Digimon card and play it without paying its memory cost. Then, shuffle your security stack.\n[All Turns] When you play another Digimon using an effect, delete 1 of your opponent's Digimon whose level is less than or equal to the played Digimon's level.",
     "digivolveEffect": "-",
     "securityEffect": "-",
