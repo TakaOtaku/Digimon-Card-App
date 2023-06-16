@@ -326,7 +326,7 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
     replacedText = replacedText.replace('＜Blast Digivolve＞', '<img class="inline h-4" src="assets/images/keywords/blast_digivolve.webp"/>');
     replacedText = replacedText.replace('＜Blitz＞', '<img class="inline h-4" src="assets/images/keywords/blitz.webp"/>');
     replacedText = replacedText.replace('＜Blocker＞', '<img class="inline h-4" src="assets/images/keywords/blocker.webp"/>');
-    replacedText = replacedText.replace('[Breeding]＞', '<img class="inline h-4" src="assets/images/keywords/breeding.webp"/>');
+    replacedText = replacedText.replace('[Breeding]', '<img class="inline h-4" src="assets/images/keywords/breeding.webp"/>');
     replacedText = replacedText.replace('[Counter]', '<img class="inline h-4" src="assets/images/keywords/counter.webp"/>');
     replacedText = replacedText.replace('＜Decoy [Bagra Army] traits＞', '<img class="inline h-4" src="assets/images/keywords/decoy_bagra_army.webp"/>');
     replacedText = replacedText.replace('＜Decoy (Black)＞', '<img class="inline h-4" src="assets/images/keywords/decoy_black.webp"/>');
