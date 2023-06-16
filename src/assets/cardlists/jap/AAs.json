@@ -9882,7 +9882,7 @@
       "cardNumber": "BT3-112",
       "digiXros": "-",
       "specialDigivolve": "-",
-      "dnaDigivolve": "-",
+      "dnaDigivolve": "DNA Digivolution: 0 from blue Lv.6 + red Lv.6\nDigivolve unsuspended with the 2 specified Digimon stacked on top of each other.",
       "effect": "[When Digivolving] Trigger ＜De-Digivolve 1＞ on all of your opponent's Digimon. (Trash a card from the top of one of your opponent's Digimon. If it has no digivolution cards, or becomes a level 3 Digimon, you can't trash any more cards.) Then, delete all of your opponent's Digimon with 5000 DP or less.\n[When Attacking] You may make this Digimon unblockable by your opponent for the turn by returning one of its level 6 digivolution cards to your hand.",
       "digivolveEffect": "-",
       "securityEffect": "-",
