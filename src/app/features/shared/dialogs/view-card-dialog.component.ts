@@ -327,6 +327,7 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
     replacedText = replacedText.replace('＜Blitz＞', '<img class="inline h-4" src="assets/images/keywords/blitz.webp"/>');
     replacedText = replacedText.replace('＜Blocker＞', '<img class="inline h-4" src="assets/images/keywords/blocker.webp"/>');
     replacedText = replacedText.replace('[Breeding]', '<img class="inline h-4" src="assets/images/keywords/breeding.webp"/>');
+    replacedText = replacedText.replace('Burst Digivolve:', '<img class="inline h-4" src="assets/images/keywords/burst_digivolve.webp"/>');
     replacedText = replacedText.replace('[Counter]', '<img class="inline h-4" src="assets/images/keywords/counter.webp"/>');
     replacedText = replacedText.replace('＜Decoy [Bagra Army] traits＞', '<img class="inline h-4" src="assets/images/keywords/decoy_bagra_army.webp"/>');
     replacedText = replacedText.replace('＜Decoy (Black)＞', '<img class="inline h-4" src="assets/images/keywords/decoy_black.webp"/>');
@@ -347,16 +348,18 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
     replacedText = replacedText.replace('＜Digisorption -1＞', '<img class="inline h-4" src="assets/images/keywords/digisorption_-1.webp"/>');
     replacedText = replacedText.replace('＜Digisorption -2＞', '<img class="inline h-4" src="assets/images/keywords/digisorption_-2.webp"/>');
     replacedText = replacedText.replace('＜Digisorption -3＞', '<img class="inline h-4" src="assets/images/keywords/digisorption_-3.webp"/>');
+    replacedText = replacedText.replace('Digivolve:', '<img class="inline h-4" src="assets/images/keywords/digivolve.webp"/>');
     replacedText = replacedText.replace('[Digivolve]', '<img class="inline h-4" src="assets/images/keywords/digivolve.webp"/>');
     replacedText = replacedText.replace('[DigiXros -1]', '<img class="inline h-4" src="assets/images/keywords/digixros_-1.webp"/>');
     replacedText = replacedText.replace('[DigiXros -2]', '<img class="inline h-4" src="assets/images/keywords/digixros_-2.webp"/>');
     replacedText = replacedText.replace('[DigiXros -3]', '<img class="inline h-4" src="assets/images/keywords/digixros_-3.webp"/>');
+    replacedText = replacedText.replace('DNA Digivolution:', '<img class="inline h-4" src="assets/images/keywords/dna_digivolve.webp"/>');
     replacedText = replacedText.replace('＜Draw 1＞', '<img class="inline h-4" src="assets/images/keywords/draw_1.webp"/>');
     replacedText = replacedText.replace('＜Draw 2＞', '<img class="inline h-4" src="assets/images/keywords/draw_2.webp"/>');
     replacedText = replacedText.replace('＜Draw 3＞', '<img class="inline h-4" src="assets/images/keywords/draw_3.webp"/>');
     replacedText = replacedText.replace('[End of Attack]', '<img class="inline h-4" src="assets/images/keywords/end_of_attack.webp"/>');
     replacedText = replacedText.replace("[End of Opponent's Turn]", '<img class="inline h-4" src="assets/images/keywords/end_of_opponents_turn.webp"/>');
-    replacedText = replacedText.replace('[End of your Turn]', '<img class="inline h-4" src="assets/images/keywords/end_of_your_turn.webp"/>');
+    replacedText = replacedText.replace('[End of Your Turn]', '<img class="inline h-4" src="assets/images/keywords/end_of_your_turn.webp"/>');
     replacedText = replacedText.replace('＜Evade＞', '<img class="inline h-4" src="assets/images/keywords/delay.webp"/>');
     replacedText = replacedText.replace('[Hand]', '<img class="inline h-4" src="assets/images/keywords/hand.webp"/>');
     replacedText = replacedText.replace('[Main]', '<img class="inline h-4" src="assets/images/keywords/main.webp"/>');
