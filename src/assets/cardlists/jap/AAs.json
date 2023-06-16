@@ -23792,7 +23792,7 @@
       "digiXros": "-",
       "specialDigivolve": "-",
       "dnaDigivolve": "-",
-      "effect": "＜Blocker＞ (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead) [When Digivolving] [When Attacking] Suspend 1 of your opponent’s Digimon. Then, if your opponent has no unsuspended Digimon in play, gain 1 memory.\n[End of Your Turn] One of your Digimon with [Angoramon] in its text may attack an opponent's Digimon.",
+      "effect": "＜Blocker＞ (When an opponent's Digimon attacks, you may suspend this Digimon to force the opponent to attack it instead).\n[When Digivolving] [When Attacking] Suspend 1 of your opponent’s Digimon. Then, if your opponent has no unsuspended Digimon in play, gain 1 memory.\n[End of Your Turn] One of your Digimon with [Angoramon] in its text may attack an opponent's Digimon.",
       "digivolveEffect": "-",
       "securityEffect": "-",
       "aceEffect": "-",
