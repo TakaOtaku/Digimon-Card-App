@@ -2026,7 +2026,7 @@
     "cardNumber": "EX4-060",
     "digiXros": "-",
     "specialDigivolve": "-",
-    "dnaDigivolve": "-",
+    "dnaDigivolve": "DNA Digivolution: 0 from blue Lv.6 + red Lv.6\nDigivolve unsuspended with the 2 specified Digimon stacked on top of each other.",
     "effect": "[When Digivolving] Delete 1 of your opponent's Digimon with 8000 DP or less, then return 1 of your opponent's level 6 or lower Digimon to the bottom of its owner's deck.\n[All Turns] When this Digimon would leave the battle area for a reason other than one of your effects, play 1 [BlitzGreymon] and 1 [CresGarurumon] from this Digimon's digivolution cards without paying their cost. Then, place this Digimon on bottom of your security stack face down.",
     "digivolveEffect": "-",
     "securityEffect": "-",
