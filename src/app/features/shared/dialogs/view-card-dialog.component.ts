@@ -319,7 +319,8 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   replaceWithImageTags(effect: string): string {
-    let replacedText = effect.replace('[All Turns]', '<img class="inline h-4" src="assets/images/keywords/all_turns.webp"/>');
+    let replacedText = effect.replace(' ACE', '<img class="inline h-4" src="assets/images/keywords/ace.webp"/>');
+    replacedText = replacedText.replace('[All Turns]', '<img class="inline h-4" src="assets/images/keywords/all_turns.webp"/>');
     replacedText = replacedText.replace('＜Alliance＞', '<img class="inline h-4" src="assets/images/keywords/alliance.webp"/>');
     replacedText = replacedText.replace('＜Armor Purge＞', '<img class="inline h-4" src="assets/images/keywords/armor_purge.webp"/>');
     replacedText = replacedText.replace("[At End of Opponent's Turn]", '<img class="inline h-4" src="assets/images/keywords/at_end_of_opponents_turn.webp"/>');
