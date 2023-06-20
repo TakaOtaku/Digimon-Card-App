@@ -319,86 +319,85 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   replaceWithImageTags(effect: string): string {
-    let replacedText = effect.replace(' ACE', '<img class="inline h-4" src="assets/images/keywords/ace.webp"/>');
-    replacedText = replacedText.replace('[All Turns]', '<img class="inline h-4" src="assets/images/keywords/all_turns.webp"/>');
-    replacedText = replacedText.replace('＜Alliance＞', '<img class="inline h-4" src="assets/images/keywords/alliance.webp"/>');
-    replacedText = replacedText.replace('＜Armor Purge＞', '<img class="inline h-4" src="assets/images/keywords/armor_purge.webp"/>');
-    replacedText = replacedText.replace("[At End of Opponent's Turn]", '<img class="inline h-4" src="assets/images/keywords/at_end_of_opponents_turn.webp"/>');
-    replacedText = replacedText.replace('＜Blast Digivolve＞', '<img class="inline h-4" src="assets/images/keywords/blast_digivolve.webp"/>');
-    replacedText = replacedText.replace('＜Blitz＞', '<img class="inline h-4" src="assets/images/keywords/blitz.webp"/>');
-    replacedText = replacedText.replace('＜Blocker＞', '<img class="inline h-4" src="assets/images/keywords/blocker.webp"/>');
-    replacedText = replacedText.replace('[Breeding]', '<img class="inline h-4" src="assets/images/keywords/breeding.webp"/>');
-    replacedText = replacedText.replace('Burst Digivolve:', '<img class="inline h-4" src="assets/images/keywords/burst_digivolve.webp"/>');
-    replacedText = replacedText.replace('[Counter]', '<img class="inline h-4" src="assets/images/keywords/counter.webp"/>');
-    replacedText = replacedText.replace('＜Decoy [Bagra Army] traits＞', '<img class="inline h-4" src="assets/images/keywords/decoy_bagra_army.webp"/>');
-    replacedText = replacedText.replace('＜Decoy (Black)＞', '<img class="inline h-4" src="assets/images/keywords/decoy_black.webp"/>');
-    replacedText = replacedText.replace('＜Decoy (Black/White)＞', '<img class="inline h-4" src="assets/images/keywords/decoy_black_white.webp"/>');
-    replacedText = replacedText.replace('＜Decoy [D-Brigade] traits＞', '<img class="inline h-4" src="assets/images/keywords/decoy_d-brigade.webp"/>');
-    replacedText = replacedText.replace('＜Decoy (Red/Black)＞', '<img class="inline h-4" src="assets/images/keywords/decoy_red_black.webp"/>');
-    replacedText = replacedText.replace('＜De-Digivolve 1＞', '<img class="inline h-4" src="assets/images/keywords/de-digivolve_1.webp"/>');
-    replacedText = replacedText.replace('＜De-Digivolve 2＞', '<img class="inline h-4" src="assets/images/keywords/de-digivolve_2.webp"/>');
-    replacedText = replacedText.replace('＜De-Digivolve 3＞', '<img class="inline h-4" src="assets/images/keywords/de-digivolve_3.webp"/>');
-    replacedText = replacedText.replace('＜De-Digivolve 4＞', '<img class="inline h-4" src="assets/images/keywords/de-digivolve_4.webp"/>');
-    replacedText = replacedText.replace('＜Delay＞', '<img class="inline h-4" src="assets/images/keywords/delay.webp"/>');
-    replacedText = replacedText.replace('＜Digi-Burst＞', '<img class="inline h-4" src="assets/images/keywords/digi-burst_1.webp"/>');
-    replacedText = replacedText.replace('＜Digi-Burst 1＞', '<img class="inline h-4" src="assets/images/keywords/digi-burst_1.webp"/>');
-    replacedText = replacedText.replace('＜Digi-Burst 2＞', '<img class="inline h-4" src="assets/images/keywords/digi-burst_2.webp"/>');
-    replacedText = replacedText.replace('＜Digi-Burst 3＞', '<img class="inline h-4" src="assets/images/keywords/digi-burst_3.webp"/>');
-    replacedText = replacedText.replace('＜Digi-Burst 4＞', '<img class="inline h-4" src="assets/images/keywords/digi-burst_4.webp"/>');
-    replacedText = replacedText.replace('＜Digi-Burst up to 4＞', '<img class="inline h-4" src="assets/images/keywords/digi-burst_up_to_4.webp"/>');
-    replacedText = replacedText.replace('＜Digisorption -1＞', '<img class="inline h-4" src="assets/images/keywords/digisorption_-1.webp"/>');
-    replacedText = replacedText.replace('＜Digisorption -2＞', '<img class="inline h-4" src="assets/images/keywords/digisorption_-2.webp"/>');
-    replacedText = replacedText.replace('＜Digisorption -3＞', '<img class="inline h-4" src="assets/images/keywords/digisorption_-3.webp"/>');
-    replacedText = replacedText.replace('Digivolve:', '<img class="inline h-4" src="assets/images/keywords/digivolve.webp"/>');
-    replacedText = replacedText.replace('[Digivolve]', '<img class="inline h-4" src="assets/images/keywords/digivolve.webp"/>');
-    replacedText = replacedText.replace('[DigiXros -1]', '<img class="inline h-4" src="assets/images/keywords/digixros_-1.webp"/>');
-    replacedText = replacedText.replace('[DigiXros -2]', '<img class="inline h-4" src="assets/images/keywords/digixros_-2.webp"/>');
-    replacedText = replacedText.replace('[DigiXros -3]', '<img class="inline h-4" src="assets/images/keywords/digixros_-3.webp"/>');
-    replacedText = replacedText.replace('DNA Digivolution:', '<img class="inline h-4" src="assets/images/keywords/dna_digivolve.webp"/>');
-    replacedText = replacedText.replace('＜Draw 1＞', '<img class="inline h-4" src="assets/images/keywords/draw_1.webp"/>');
-    replacedText = replacedText.replace('＜Draw 2＞', '<img class="inline h-4" src="assets/images/keywords/draw_2.webp"/>');
-    replacedText = replacedText.replace('＜Draw 3＞', '<img class="inline h-4" src="assets/images/keywords/draw_3.webp"/>');
-    replacedText = replacedText.replace('[End of Attack]', '<img class="inline h-4" src="assets/images/keywords/end_of_attack.webp"/>');
-    replacedText = replacedText.replace("[End of Opponent's Turn]", '<img class="inline h-4" src="assets/images/keywords/end_of_opponents_turn.webp"/>');
-    replacedText = replacedText.replace('[End of Your Turn]', '<img class="inline h-4" src="assets/images/keywords/end_of_your_turn.webp"/>');
-    replacedText = replacedText.replace('＜Evade＞', '<img class="inline h-4" src="assets/images/keywords/evade.webp"/>');
-    replacedText = replacedText.replace('[Hand]', '<img class="inline h-4" src="assets/images/keywords/hand.webp"/>');
-    replacedText = replacedText.replace('[Main]', '<img class="inline h-4" src="assets/images/keywords/main.webp"/>');
-    replacedText = replacedText.replace('＜Mind Link＞', '<img class="inline h-4" src="assets/images/keywords/mind_link.webp"/>');
-    replacedText = replacedText.replace('＜Jamming＞', '<img class="inline h-4" src="assets/images/keywords/jamming.webp"/>');
-    replacedText = replacedText.replace('＜Material Save 1＞', '<img class="inline h-4" src="assets/images/keywords/material_save_1.webp"/>');
-    replacedText = replacedText.replace('＜Material Save 2＞', '<img class="inline h-4" src="assets/images/keywords/material_save_2.webp"/>');
-    replacedText = replacedText.replace('＜Material Save 3＞', '<img class="inline h-4" src="assets/images/keywords/material_save_3.webp"/>');
-    replacedText = replacedText.replace('＜Material Save 4＞', '<img class="inline h-4" src="assets/images/keywords/material_save_4.webp"/>');
-    replacedText = replacedText.replace('[On Deletion]', '<img class="inline h-4" src="assets/images/keywords/on_deletion.webp"/>');
-    replacedText = replacedText.replace('[On Play]', '<img class="inline h-4" src="assets/images/keywords/on_play.webp"/>');
-    replacedText = replacedText.replace('[Once Per Turn]', '<img class="inline h-4" src="assets/images/keywords/once_per_turn.webp"/>');
-    replacedText = replacedText.replace("[Opponent's Turn]", '<img class="inline h-4" src="assets/images/keywords/opponents_turn.webp"/>');
-    replacedText = replacedText.replace('Overflow ＜-3＞', '<img class="inline h-4" src="assets/images/keywords/overflow_-3.webp"/>');
-    replacedText = replacedText.replace('Overflow ＜-4＞', '<img class="inline h-4" src="assets/images/keywords/overflow_-4.webp"/>');
-    replacedText = replacedText.replace('＜Piercing＞', '<img class="inline h-4" src="assets/images/keywords/piercing.webp"/>');
-    replacedText = replacedText.replace('＜Raid＞', '<img class="inline h-4" src="assets/images/keywords/raid.webp"/>');
-    replacedText = replacedText.replace('＜Reboot＞', '<img class="inline h-4" src="assets/images/keywords/reboot.webp"/>');
-    replacedText = replacedText.replace('＜Recovery +1 (Deck)＞', '<img class="inline h-4" src="assets/images/keywords/recovery_+1deck.webp"/>');
-    replacedText = replacedText.replace('＜Recovery +2 (Deck)＞', '<img class="inline h-4" src="assets/images/keywords/recovery_+2deck.webp"/>');
-    replacedText = replacedText.replace('＜Retaliation＞', '<img class="inline h-4" src="assets/images/keywords/retaliation.webp"/>');
-    replacedText = replacedText.replace('＜Rush＞', '<img class="inline h-4" src="assets/images/keywords/rush.webp"/>');
-    replacedText = replacedText.replace('[Rule]＞', '<img class="inline h-4" src="assets/images/keywords/rule.webp"/>');
-    replacedText = replacedText.replace('＜Save＞', '<img class="inline h-4" src="assets/images/keywords/save.webp"/>');
-    replacedText = replacedText.replace('[Security]', '<img class="inline h-4" src="assets/images/keywords/security.webp"/>');
-    replacedText = replacedText.replace('＜Security Attack＞', '<img class="inline h-4" src="assets/images/keywords/security_attack.webp"/>');
-    replacedText = replacedText.replace('＜Security Attack -1＞', '<img class="inline h-4" src="assets/images/keywords/security_attack_-1.webp"/>');
-    replacedText = replacedText.replace('＜Security Attack +1＞', '<img class="inline h-4" src="assets/images/keywords/security_attack_+1.webp"/>');
-    replacedText = replacedText.replace('＜Security Attack +2＞', '<img class="inline h-4" src="assets/images/keywords/security_attack_+2.webp"/>');
-    replacedText = replacedText.replace('＜Security Attack -2＞', '<img class="inline h-4" src="assets/images/keywords/security_attack_-2.webp"/>');
-    replacedText = replacedText.replace('＜Security Attack -3＞', '<img class="inline h-4" src="assets/images/keywords/security_attack_-_3.webp"/>');
-    replacedText = replacedText.replace('[Start of Your Main Phase]', '<img class="inline h-4" src="assets/images/keywords/start_of_your_main_phase.webp"/>');
-    replacedText = replacedText.replace('[Start of Your Turn]', '<img class="inline h-4" src="assets/images/keywords/start_of_your_turn.webp"/>');
-    replacedText = replacedText.replace('[Trash]', '<img class="inline h-4" src="assets/images/keywords/trash.webp"/>');
-    replacedText = replacedText.replace('[Twice Per Turn]', '<img class="inline h-4" src="assets/images/keywords/twice_per_turn.webp"/>');
-    replacedText = replacedText.replace('[When Digivolving]', '<img class="inline h-4" src="assets/images/keywords/when_digivolving.webp"/>');
-    replacedText = replacedText.replace('[When Attacking]', '<img class="inline h-4" src="assets/images/keywords/when_attacking.webp"/>');
-    replacedText = replacedText.replace('[Your Turn]', '<img class="inline h-4" src="assets/images/keywords/your_turn.webp"/>');
+    const replacements = [
+      [/\[All Turns]/g, 'all_turns'],
+      [/＜Alliance＞/g, 'alliance'],
+      [/＜Armor Purge＞/g, 'armor_purge'],
+      [/＜Decoy \[Bagra Army] traits＞/g, 'decoy_bagra_army'],
+      [/＜Decoy (Black)＞/g, 'decoy_black'],
+      [/＜Decoy \(Black\/White\)＞/g, 'decoy_black_white'],
+      [/＜Decoy \[D-Brigade] traits＞/g, 'decoy_d-brigade'],
+      [/＜Decoy (Red\/Black)＞/g, 'decoy_red_black'],
+      [/＜De-Digivolve 1＞/g, 'de-digivolve_1'],
+      [/＜De-Digivolve 2＞/g, 'de-digivolve_2'],
+      [/＜De-Digivolve 3＞/g, 'de-digivolve_3'],
+      [/＜De-Digivolve 4＞/g, 'de-digivolve_4'],
+      [/＜Delay＞/g, 'delay'],
+      [/＜Digi-Burst ＞/g, 'digi-burst_1'],
+      [/＜Digi-Burst 1＞/g, 'digi-burst_1'],
+      [/＜Digi-Burst 2＞/g, 'digi-burst_2'],
+      [/＜Digi-Burst 3＞/g, 'digi-burst_3'],
+      [/＜Digi-Burst 4＞/g, 'digi-burst_4'],
+      [/＜Digi-Burst up to 4＞/g, 'digi-burst_up_to_4'],
+      [/＜Digisorption -1＞/g, 'digisorption_-1'],
+      [/＜Digisorption -2＞/g, 'digisorption_-2'],
+      [/＜Digisorption -3＞/g, 'digisorption_-3'],
+      [/Digivolve:/g, 'digivolve'],
+      [/\[Digivolve]/g, 'digivolve'],
+      [/\[DigiXros -1]/g, 'digixros_-1'],
+      [/\[DigiXros -2]/g, 'digixros_-2'],
+      [/\[DigiXros -3]/g, 'digixros_-3'],
+      [/DNA Digivolution:/g, 'dna_digivolve'],
+      [/＜Draw 1＞/g, 'draw_1'],
+      [/＜Draw 2＞/g, 'draw_2'],
+      [/＜Draw 3＞/g, 'draw_3'],
+      [/\[End of Attack]/g, 'end_of_attack'],
+      [/\[End of Opponent's Turn]/g, 'end_of_opponents_turn'],
+      [/\[End of Your Turn]/g, 'end_of_your_turn'],
+      [/＜Evade＞/g, 'evade'],
+      [/\[Hand]/g, 'hand'],
+      [/\[Main]/g, 'main'],
+      [/＜Mind Link＞/g, 'mind_link'],
+      [/＜Jamming＞/g, 'jamming'],
+      [/＜Material Save 1＞/g, 'material_save_1'],
+      [/＜Material Save 2＞/g, 'material_save_2'],
+      [/＜Material Save 3＞/g, 'material_save_3'],
+      [/＜Material Save 4＞/g, 'material_save_4'],
+      [/\[On Deletion]/g, 'on_deletion'],
+      [/\[On Play]/g, 'on_play'],
+      [/\[Once Per Turn]/g, 'once_per_turn'],
+      ["[Opponent's Turn]", 'opponents_turn'],
+      [/Overflow ＜-3＞/g, 'overflow_-3'],
+      [/Overflow ＜-4＞/g, 'overflow_-4'],
+      [/＜Piercing＞/g, 'piercing'],
+      [/＜Raid＞/g, 'raid'],
+      [/＜Reboot＞/g, 'reboot'],
+      [/＜Recovery +1 (Deck)＞/g, 'recovery_+1deck'],
+      [/＜Recovery +2 (Deck)＞/g, 'recovery_+2deck'],
+      [/＜Retaliation＞/g, 'retaliation'],
+      [/＜Rush＞/g, 'rush'],
+      [/\[Rule]＞/g, 'rule'],
+      [/＜Save＞/g, 'save'],
+      [/\[Security]/g, 'security'],
+      [/＜Security Attack＞/g, 'security_attack'],
+      [/＜Security Attack -1＞/g, 'security_attack_-1'],
+      [/＜Security Attack +1＞/g, 'security_attack_+1'],
+      [/＜Security Attack +2＞/g, 'security_attack_+2'],
+      [/＜Security Attack -2＞/g, 'security_attack_-2'],
+      [/＜Security Attack -3＞/g, 'security_attack_-_3'],
+      [/\[Start of Your Main Phase]/g, 'start_of_your_main_phase'],
+      [/\[Start of Your Turn]/g, 'start_of_your_turn'],
+      [/\[Trash]/g, 'trash'],
+      [/\[Twice Per Turn]/g, 'twice_per_turn'],
+      [/\[When Digivolving]/g, 'when_digivolving'],
+      [/\[When Attacking]/g, 'when_attacking'],
+      [/\[Your Turn]/g, 'your_turn'],
+    ];
+
+    let replacedText = effect;
+    for (const [pattern, imageTag] of replacements) {
+      replacedText = replacedText.replace(pattern, `<img class="inline h-4" src="assets/images/keywords/${imageTag}.webp"/>`);
+    }
     return replacedText;
   }
 }
