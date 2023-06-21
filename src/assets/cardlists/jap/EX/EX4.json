@@ -1209,7 +1209,7 @@
     "rarity": "R",
     "cardNumber": "EX4-036",
     "digiXros": "-",
-    "specialDigivolve": "Digivolve: 3 from Lv.4 w/[Gargomon] in its name/3 from Lv.4 2-color green card",
+    "specialDigivolve": "Digivolve: 3 from Lv.4 w/[Gargomon] in its name\nDigivolve: 3 from Lv.4 2-color green card",
     "dnaDigivolve": "-",
     "effect": "＜Alliance＞ (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains ＜Security Attack +1＞ for the attack).\n[End of Attack] ＜De-Digivolve 1＞ on 1 of your opponent's Digimon (Trash up to 1 card from the top of one of your opponent's Digimon. If it has no digivolution cards, or becomes a level 3 Digimon, you can't trash any more cards).",
     "digivolveEffect": "[Your Turn] [Once Per Turn]  When an effect suspends another Digimon, this Digimon gains ＜Piercing＞ (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would) for the turn.",
