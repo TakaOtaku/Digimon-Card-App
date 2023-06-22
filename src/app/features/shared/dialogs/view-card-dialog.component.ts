@@ -124,6 +124,10 @@ import { selectCollection, selectCollectionMode, selectDeck, selectFilteredCards
             <p [ngStyle]="{color}" class="text-black-outline-xs text-lg font-extrabold">DigiXros</p>
             <p class="font-white whitespace-pre-wrap font-bold leading-[1.7em]" [innerHTML]="replaceWithImageTags(card.digiXros)"></p>
           </div>
+          <div *ngIf="card.burstDigivolve && card.burstDigivolve !== '-'" class="my-0.5 flex w-full flex-col rounded-full" id="Digimon-BurstDigivolve">
+            <p [ngStyle]="{color}" class="text-black-outline-xs text-lg font-extrabold">Burst Digivolve</p>
+            <p class="font-white whitespace-pre-wrap font-bold leading-[1.7em]" [innerHTML]="replaceWithImageTags(card.burstDigivolve)"></p>
+          </div>
           <div *ngIf="card.aceEffect && card.aceEffect !== '-'" class="my-0.5 flex w-full flex-col rounded-full" id="Digimon-ACE">
             <p [ngStyle]="{color}" class="text-black-outline-xs text-lg font-extrabold">ACE</p>
             <span class="font-white whitespace-pre-wrap font-bold leading-[1.7em]" [innerHTML]="replaceWithImageTags(card.aceEffect)"> </span>
