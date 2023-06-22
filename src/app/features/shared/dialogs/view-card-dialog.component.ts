@@ -363,6 +363,7 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
       [/＜Draw 1＞/g, 'draw_1'],
       [/＜Draw 2＞/g, 'draw_2'],
       [/＜Draw 3＞/g, 'draw_3'],
+      [/\[End of All Turns]/g, 'end_of_all_turns'],
       [/\[End of Attack]/g, 'end_of_attack'],
       [/\[End of Opponent's Turn]/g, 'end_of_opponents_turn'],
       [/\[End of Your Turn]/g, 'end_of_your_turn'],
