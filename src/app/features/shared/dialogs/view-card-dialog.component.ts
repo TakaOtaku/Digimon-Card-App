@@ -334,7 +334,7 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
       [/＜Blocker＞/g, 'blocker'],
       [/Burst Digivolve:/g, 'burst_digivolve'],
       [/[Breeding]:/g, 'breeding'],
-      [/[Counter]:/g, 'counter'],
+      [/[Counter]/g, 'counter'],
       [/＜Decoy \[Bagra Army] traits＞/g, 'decoy_bagra_army'],
       [/＜Decoy (Black)＞/g, 'decoy_black'],
       [/＜Decoy \(Black\/White\)＞/g, 'decoy_black_white'],
