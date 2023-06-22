@@ -2742,7 +2742,7 @@
     "rarity": "U",
     "cardNumber": "BT12-081",
     "digiXros": "-",
-    "specialDigivolve": "Digivolve: 5 from [Psychemon]/3 from yellow, green, or purple Lv.4 w/＜Save＞ in text",
+    "specialDigivolve": "Digivolve: 5 from [Psychemon]\nDigivolve: 3 from yellow, green, or purple Lv.4 w/＜Save＞ in text",
     "dnaDigivolve": "-",
     "effect": "[When Digivolving] You may play 1 level 4 or lower Digimon card with ＜Save＞ in its text from under one of your Tamers without paying the cost. If this Digimon has 4 or more digivolution cards, it may digivolve into [Quartzmon] in your hand or from under one of your Tamers and reduce the digivolution cost by 3 instead.",
     "digivolveEffect": "[When Attacking] [Once Per Turn] If this Digimon has ＜Save＞ in its text, ＜Draw 1＞ (Draw 1 card from your deck).",
