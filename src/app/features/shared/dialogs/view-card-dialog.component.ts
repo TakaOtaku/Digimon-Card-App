@@ -324,9 +324,15 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
 
   replaceWithImageTags(effect: string): string {
     const replacements = [
+      [/\ ACE/g, 'ace'],
       [/\[All Turns]/g, 'all_turns'],
       [/＜Alliance＞/g, 'alliance'],
       [/＜Armor Purge＞/g, 'armor_purge'],
+      [/\[At End of Opponent's Turn]/g, 'at_end_of_opponents_turn'],
+      [/[Blast Digivolve]/g, 'blast_digivolve'],
+      [/Burst Digivolve:/g, 'burst_digivolve'],
+      [/[Breeding]:/g, 'breeding'],
+      [/[Counter]:/g, 'counter'],
       [/＜Decoy \[Bagra Army] traits＞/g, 'decoy_bagra_army'],
       [/＜Decoy (Black)＞/g, 'decoy_black'],
       [/＜Decoy \(Black\/White\)＞/g, 'decoy_black_white'],
