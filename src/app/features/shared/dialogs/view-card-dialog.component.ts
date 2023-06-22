@@ -330,6 +330,8 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
       [/＜Armor Purge＞/g, 'armor_purge'],
       [/\[At End of Opponent's Turn]/g, 'at_end_of_opponents_turn'],
       [/[Blast Digivolve]/g, 'blast_digivolve'],
+      [/＜Blitz＞/g, 'blitz'],
+      [/＜Blocker＞/g, 'blocker'],
       [/Burst Digivolve:/g, 'burst_digivolve'],
       [/[Breeding]:/g, 'breeding'],
       [/[Counter]:/g, 'counter'],
