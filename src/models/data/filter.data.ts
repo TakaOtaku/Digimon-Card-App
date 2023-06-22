@@ -94,6 +94,7 @@ export const Keywords: string[] = [
   '\uff1cMaterial Save 2\uff1e',
   '\uff1cMaterial Save 3\uff1e',
   '\uff1cMaterial Save 4\uff1e',
+  '\uff1cMind Link\uff1e',
   '\uff1cPiercing\uff1e',
   'Overflow \uff1c-3\uff1e',
   'Overflow \uff1c-4\uff1e',
