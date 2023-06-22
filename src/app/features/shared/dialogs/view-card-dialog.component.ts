@@ -333,7 +333,7 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
       [/＜Blitz＞/g, 'blitz'],
       [/＜Blocker＞/g, 'blocker'],
       [/Burst Digivolve:/g, 'burst_digivolve'],
-      [/[Breeding]:/g, 'breeding'],
+      [/[Breeding]/g, 'breeding'],
       [/[Counter]/g, 'counter'],
       [/＜Decoy \[Bagra Army] traits＞/g, 'decoy_bagra_army'],
       [/＜Decoy (Black)＞/g, 'decoy_black'],
