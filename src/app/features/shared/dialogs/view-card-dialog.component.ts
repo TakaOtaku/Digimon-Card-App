@@ -388,7 +388,7 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
       [/＜Recovery +2 (Deck)＞/g, 'recovery_+2deck'],
       [/＜Retaliation＞/g, 'retaliation'],
       [/＜Rush＞/g, 'rush'],
-      [/\[Rule]＞/g, 'rule'],
+      [/\[Rule]/g, 'rule'],
       [/＜Save＞/g, 'save'],
       [/\[Security]/g, 'security'],
       [/＜Security Attack＞/g, 'security_attack'],
