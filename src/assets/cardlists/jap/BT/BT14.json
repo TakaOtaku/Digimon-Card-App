@@ -4235,9 +4235,9 @@
     "restriction": "-"
   },
   {
-    "id": "BT14-103_P1",
+    "id": "BT14-102_P1",
     "name": "Angemon",
-    "cardImage": "assets/images/cards/jap/BT14-103_P1.webp",
+    "cardImage": "assets/images/cards/jap/BT14-102_P1.webp",
     "cardType": "Digimon",
     "dp": "6000",
     "playCost": "6",
@@ -4263,7 +4263,7 @@
     "notes": "▹BOOSTER BLAST ACE [BT-14]",
     "color": "Yellow",
     "version": "AA",
-    "illustrator": "To be completed",
+    "illustrator": "Naochika Morishita",
     "block": [
       "03"
     ],
