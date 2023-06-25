@@ -235,9 +235,9 @@
     "digivolveEffect": "[Your Turn] While this Digimon has [Greymon]/[Omnimon] in its name,it gets +2000 DP.",
     "securityEffect": "-",
     "aceEffect": "-",
-    "notes": "▹BOOSTER BLAST ACE [BT-14]",
+    "notes": "▹BOOSTER BLAST ACE [BT-14] Box Topper",
     "color": "Red",
-    "version": "Normal",
+    "version": "Box-Topper",
     "illustrator": "Kenji Watanabe",
     "block": [
       "03"
@@ -270,9 +270,9 @@
     "digivolveEffect": "[Your Turn] [Once Per Turn] When a card is removed from your opponent's security stack, ＜Draw 1＞ (Draw 1 card from your deck).",
     "securityEffect": "-",
     "aceEffect": "-",
-    "notes": "▹BOOSTER BLAST ACE [BT-14]",
+    "notes": "▹BOOSTER BLAST ACE [BT-14] Box Topper",
     "color": "Red",
-    "version": "Box",
+    "version": "Box-Topper",
     "illustrator": "Kenji Watanabe",
     "block": [
       "03"
@@ -305,9 +305,9 @@
     "digivolveEffect": "[Your Turn] While your opponent has no Digimon with equal or more digivolution cards than this Digimon, this Digimon gains ＜Jamming＞ (This Digimon can't be deleted in battles against Security Digimon).",
     "securityEffect": "-",
     "aceEffect": "-",
-    "notes": "▹BOOSTER BLAST ACE [BT-14]",
+    "notes": "▹BOOSTER BLAST ACE [BT-14] Box Topper",
     "color": "Blue",
-    "version": "Box",
+    "version": "Box-Topper",
     "illustrator": "Nakano Haito",
     "block": [
       "03"
@@ -340,9 +340,9 @@
     "digivolveEffect": "[Your Turn] [Once Per Turn] When a card is added to your security stack, ＜Draw 1＞ (Draw 1 card from your deck).",
     "securityEffect": "-",
     "aceEffect": "-",
-    "notes": "▹BOOSTER BLAST ACE [BT-14]",
+    "notes": "▹BOOSTER BLAST ACE [BT-14] Box Topper",
     "color": "Yellow",
-    "version": "Box",
+    "version": "Box-Topper",
     "illustrator": "Spareribs",
     "block": [
       "03"
@@ -375,9 +375,9 @@
     "digivolveEffect": "[Your Turn] [Once Per Turn] When one of your effects suspends a Tamer, this Digimon gets +2000 DP for the turn.",
     "securityEffect": "-",
     "aceEffect": "-",
-    "notes": "▹BOOSTER BLAST ACE [BT-14]",
+    "notes": "▹BOOSTER BLAST ACE [BT-14] Box Topper",
     "color": "Green",
-    "version": "Box",
+    "version": "Box-Topper",
     "illustrator": "Takase",
     "block": [
       "03"
@@ -410,9 +410,9 @@
     "digivolveEffect": "[When Attacking] [Once Per Turn] By returning 3 cards with the [D-Brigade]/[DigiPolice] trait from your trash to the top of the deck, this Digimon gets +2000 DP for the turn.",
     "securityEffect": "-",
     "aceEffect": "-",
-    "notes": "▹BOOSTER BLAST ACE [BT-14]",
+    "notes": "▹BOOSTER BLAST ACE [BT-14] Box Topper",
     "color": "Black",
-    "version": "Box",
+    "version": "Box-Topper",
     "illustrator": "Itohiro",
     "block": [
       "03"
@@ -445,9 +445,9 @@
     "digivolveEffect": "[Your Turn] When a Digimon with the [Dark Animal]/[SoC] trait is trashed from your hand, this Digimon may digivolve into that card from your trash.",
     "securityEffect": "-",
     "aceEffect": "-",
-    "notes": "▹BOOSTER BLAST ACE [BT-14]",
+    "notes": "▹BOOSTER BLAST ACE [BT-14] Box Topper",
     "color": "Purple",
-    "version": "Box",
+    "version": "Box-Topper",
     "illustrator": "sasasi",
     "block": [
       "03"
