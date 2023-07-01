@@ -4256,7 +4256,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[Main] ＜De-Digivolve  1＞ on 1 of your opponent's Digimon (Trash up to 1 card from the top of one of your opponent's Digimon. If it has no digivolution cards, or becomes a level 3 Digimon, you can't trash any more cards). Then, by returning 3 cards with the [D-Brigade]/[DigiPolice] trait from your trash to the top of the deck, delete any of your opponent's Digimon with total play cost of 6 or less",
+    "effect": "[Main] ＜De-Digivolve 1＞ on 1 of your opponent's Digimon (Trash up to 1 card from the top of one of your opponent's Digimon. If it has no digivolution cards, or becomes a level 3 Digimon, you can't trash any more cards). Then, by returning 3 cards with the [D-Brigade]/[DigiPolice] trait from your trash to the top of the deck, delete any of your opponent's Digimon with total play cost of 6 or less",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Activate this card's [Main] effect.",
     "aceEffect": "-",
