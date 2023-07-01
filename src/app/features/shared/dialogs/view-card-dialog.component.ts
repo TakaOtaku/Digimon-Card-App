@@ -341,6 +341,7 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
       [/＜Decoy \(Black\/White\)＞/g, 'decoy_black_white'],
       [/＜Decoy \[D-Brigade] traits＞/g, 'decoy_d-brigade'],
       [/＜Decoy (Red\/Black)＞/g, 'decoy_red_black'],
+      [/＜De-Digivolve＞/g, 'de-digivolve'],
       [/＜De-Digivolve 1＞/g, 'de-digivolve_1'],
       [/＜De-Digivolve 2＞/g, 'de-digivolve_2'],
       [/＜De-Digivolve 3＞/g, 'de-digivolve_3'],
