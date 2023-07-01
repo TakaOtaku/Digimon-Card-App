@@ -1496,7 +1496,8 @@
     "color": "Green/Blue",
     "version": "Normal",
     "block": [
-      "01"
+      "01",
+      "03"
     ],
     "restriction": "-",
     "illustrator": "koki"
