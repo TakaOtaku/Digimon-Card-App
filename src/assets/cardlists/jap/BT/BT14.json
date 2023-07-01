@@ -701,7 +701,7 @@
   },
   {
     "id": "BT14-014",
-    "name": "MetalGreymon",
+    "name": "MetalGreymon ACE",
     "cardImage": "assets/images/cards/jap/BT14-014.webp",
     "cardType": "Digimon",
     "dp": "8000",
@@ -736,7 +736,7 @@
   },
   {
     "id": "BT14-014_P1",
-    "name": "MetalGreymon",
+    "name": "MetalGreymon ACE",
     "cardImage": "assets/images/cards/jap/BT14-014_P1.webp",
     "cardType": "Digimon",
     "dp": "8000",
@@ -1191,7 +1191,7 @@
   },
   {
     "id": "BT14-026",
-    "name": "Zudomon",
+    "name": "Zudomon ACE",
     "cardImage": "assets/images/cards/jap/BT14-026.webp",
     "cardType": "Digimon",
     "dp": "8000",
@@ -1226,7 +1226,7 @@
   },
   {
     "id": "BT14-026_P1",
-    "name": "Zudomon",
+    "name": "Zudomon ACE",
     "cardImage": "assets/images/cards/jap/BT14-026_P1.webp",
     "cardType": "Digimon",
     "dp": "8000",
@@ -1646,7 +1646,7 @@
   },
   {
     "id": "BT14-037",
-    "name": "MagnaAngemon",
+    "name": "MagnaAngemon ACE",
     "cardImage": "assets/images/cards/jap/BT14-037.webp",
     "cardType": "Digimon",
     "dp": "8000",
@@ -1681,7 +1681,7 @@
   },
   {
     "id": "BT14-037_P1",
-    "name": "MagnaAngemon",
+    "name": "MagnaAngemon ACE",
     "cardImage": "assets/images/cards/jap/BT14-037_P1.webp",
     "cardType": "Digimon",
     "dp": "8000",
@@ -2136,7 +2136,7 @@
   },
   {
     "id": "BT14-049",
-    "name": "Lillymon",
+    "name": "Lillymon ACE",
     "cardImage": "assets/images/cards/jap/BT14-049.webp",
     "cardType": "Digimon",
     "dp": "8000",
@@ -2171,7 +2171,7 @@
   },
   {
     "id": "BT14-049_P1",
-    "name": "Lillymon",
+    "name": "Lillymon ACE",
     "cardImage": "assets/images/cards/jap/BT14-049_P1.webp",
     "cardType": "Digimon",
     "dp": "8000",
