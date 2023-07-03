@@ -27456,11 +27456,11 @@
   },
   {
         "id": "BT13-110_P1",
-        "name": "Royal Knights' Purge",
+        "name": "Royal Knights of the Purge",
         "cardImage": "assets/images/cards/jap/BT13-110_P1.webp",
         "cardType": "Option",
         "dp": "-",
-        "playCost": "-",
+        "playCost": "6",
         "digivolveCost1": "-",
         "digivolveColor1": "-",
         "digivolveLevel1": "-",
