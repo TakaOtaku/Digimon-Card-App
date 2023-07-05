@@ -3846,16 +3846,16 @@
         "notes": "▹BOOSTER VS ROYAL KNIGHTS [BT-13]",
         "color": "Purple",
         "version": "AA",
-        "illustrator": "Spareribs",
+        "illustrator": "Tonamikanji",
         "block": [
             "02"
         ],
         "restriction": "-"
     },
     {
-        "id": "BT13-092_P1",
+        "id": "BT13-092_P2",
         "name": "Ravemon: Burst Mode",
-        "cardImage": "assets/images/cards/jap/BT13-092_P1.webp",
+        "cardImage": "assets/images/cards/jap/BT13-092_P2.webp",
         "cardType": "Digimon",
         "dp": "15000",
         "playCost": "15",
@@ -3881,7 +3881,7 @@
         "notes": "▹BOOSTER VS ROYAL KNIGHTS [BT-13]",
         "color": "Purple",
         "version": "AA",
-        "illustrator": "Spareribs",
+        "illustrator": "Tonamikanji",
         "block": [
             "02"
         ],
