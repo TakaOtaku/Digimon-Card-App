@@ -1,8 +1,15 @@
+import { NgClass, NgIf, NgStyle } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { UntypedFormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, UntypedFormControl } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { saveAs } from 'file-saver';
 import { ConfirmationService, MessageService, SharedModule } from 'primeng/api';
+import { ButtonModule } from 'primeng/button';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { InputSwitchModule } from 'primeng/inputswitch';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { SelectButtonModule } from 'primeng/selectbutton';
 import { TabViewModule } from 'primeng/tabview';
 import { first, Subject, takeUntil } from 'rxjs';
 import { ICard, ICountCard, ISave } from '../../../../models';
@@ -11,13 +18,6 @@ import { DigimonBackendService } from '../../../service/digimon-backend.service'
 import { addToCollection, loadSave, setSave } from '../../../store/digimon.actions';
 import { selectAllCards, selectCollection, selectSave, selectSettings } from '../../../store/digimon.selectors';
 import { emptySettings } from '../../../store/reducers/save.reducer';
-import { InputTextareaModule } from 'primeng/inputtextarea';
-import { InputSwitchModule } from 'primeng/inputswitch';
-import { NgClass, NgIf, NgStyle } from '@angular/common';
-import { MultiSelectModule } from 'primeng/multiselect';
-import { ButtonModule } from 'primeng/button';
-import { SelectButtonModule } from 'primeng/selectbutton';
-import { InputNumberModule } from 'primeng/inputnumber';
 
 @Component({
   selector: 'digimon-settings-dialog',
@@ -38,89 +38,47 @@ import { InputNumberModule } from 'primeng/inputnumber';
           <div class="flex flex-col">
             <h5 class="mt-5 text-center font-bold">Deck-Sort</h5>
             <div class="flex justify-center">
-              <p-selectButton [formControl]="sortOrderFilter" [multiple]="false" [options]="sortOrder">
-              </p-selectButton>
+              <p-selectButton [formControl]="sortOrderFilter" [multiple]="false" [options]="sortOrder"> </p-selectButton>
             </div>
           </div>
 
           <div class="flex flex-col">
             <h5 class="mt-5 text-center font-bold">Pre-Release Cards</h5>
-            <p-selectButton
-              [(ngModel)]="preRelease"
-              [options]="showHideOptions"
-              class="mx-auto"
-              optionLabel="label"
-              optionValue="value"></p-selectButton>
+            <p-selectButton [(ngModel)]="preRelease" [options]="showHideOptions" class="mx-auto" optionLabel="label" optionValue="value"></p-selectButton>
           </div>
 
           <div class="flex flex-col">
             <h5 class="mt-5 text-center font-bold">Alt. Art Cards</h5>
-            <p-selectButton
-              [(ngModel)]="aa"
-              [options]="showHideOptions"
-              class="mx-auto"
-              optionLabel="label"
-              optionValue="value"></p-selectButton>
+            <p-selectButton [(ngModel)]="aa" [options]="showHideOptions" class="mx-auto" optionLabel="label" optionValue="value"></p-selectButton>
           </div>
 
           <div class="flex flex-col">
             <h5 class="mt-5 text-center font-bold">Stamped Cards</h5>
-            <p-selectButton
-              [(ngModel)]="stamped"
-              [options]="showHideOptions"
-              class="mx-auto"
-              optionLabel="label"
-              optionValue="value"></p-selectButton>
+            <p-selectButton [(ngModel)]="stamped" [options]="showHideOptions" class="mx-auto" optionLabel="label" optionValue="value"></p-selectButton>
           </div>
 
           <div class="flex flex-col">
             <h5 class="mt-5 text-center font-bold">Reprint Cards</h5>
-            <p-selectButton
-              [(ngModel)]="reprint"
-              [options]="showHideOptions"
-              class="mx-auto"
-              optionLabel="label"
-              optionValue="value"></p-selectButton>
+            <p-selectButton [(ngModel)]="reprint" [options]="showHideOptions" class="mx-auto" optionLabel="label" optionValue="value"></p-selectButton>
           </div>
 
           <div class="flex flex-col">
             <h5 class="mt-5 text-center font-bold">Show User-Stats</h5>
-            <p-selectButton
-              [(ngModel)]="userStats"
-              [options]="showHideOptions"
-              class="mx-auto"
-              optionLabel="label"
-              optionValue="value"></p-selectButton>
+            <p-selectButton [(ngModel)]="userStats" [options]="showHideOptions" class="mx-auto" optionLabel="label" optionValue="value"></p-selectButton>
           </div>
 
           <div class="flex flex-col">
             <h5 class="mt-5 text-center font-bold">Display Decks in a Table:</h5>
-            <p-selectButton
-              [(ngModel)]="deckDisplayTable"
-              [options]="yesNoOptions"
-              class="mx-auto"
-              optionLabel="label"
-              optionValue="value"></p-selectButton>
+            <p-selectButton [(ngModel)]="deckDisplayTable" [options]="yesNoOptions" class="mx-auto" optionLabel="label" optionValue="value"></p-selectButton>
           </div>
           <div class="flex flex-col">
             <h5 class="mt-5 text-center font-bold">Display SideDecks:</h5>
-            <p-selectButton
-              [(ngModel)]="sideDeck"
-              [options]="yesNoOptions"
-              class="mx-auto"
-              optionLabel="label"
-              optionValue="value"></p-selectButton>
+            <p-selectButton [(ngModel)]="sideDeck" [options]="yesNoOptions" class="mx-auto" optionLabel="label" optionValue="value"></p-selectButton>
           </div>
         </div>
 
         <div class="flex flex-row justify-end">
-          <button
-            (click)="saveSettings()"
-            class="mt-10"
-            icon="pi pi-save"
-            label="Save Settings"
-            pButton
-            type="button"></button>
+          <button (click)="saveSettings()" class="mt-10" icon="pi pi-save" label="Save Settings" pButton type="button"></button>
         </div>
       </p-tabPanel>
       <p-tabPanel header="Collection Export">
@@ -267,12 +225,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
       <p-tabPanel header="Collection Import">
         <div>
           <p>Copy your collection in the text area and press import.</p>
-          <textarea
-            [(ngModel)]="collectionText"
-            [placeholder]="importPlaceholder"
-            class="border-black-500 min-h-[150px] w-full border-2"
-            id="text-import"
-            pInputTextarea></textarea>
+          <textarea [(ngModel)]="collectionText" [placeholder]="importPlaceholder" class="border-black-500 min-h-[150px] w-full border-2" id="text-import" pInputTextarea></textarea>
         </div>
         <div class="flex w-full justify-end">
           <button (click)="importCollection()" icon="pi pi-upload" label="Import" pButton type="button"></button>
@@ -280,33 +233,10 @@ import { InputNumberModule } from 'primeng/inputnumber';
       </p-tabPanel>
       <p-tabPanel class="mr-auto" header="Links">
         <div class="flex flex-col justify-between lg:flex-row">
-          <input
-            #fileUpload
-            (change)="handleFileInput($event.target)"
-            [ngStyle]="{ display: 'none' }"
-            accept=".json"
-            type="file" />
-          <button
-            (click)="fileUpload.click()"
-            class="m-auto mb-2 min-w-[200px] max-w-[200px]"
-            icon="pi pi-upload"
-            label="Import Save"
-            pButton
-            type="button"></button>
-          <button
-            (click)="exportSave()"
-            class="m-auto mb-2 min-w-[200px] max-w-[200px]"
-            icon="pi pi-download"
-            label="Export Save"
-            pButton
-            type="button"></button>
-          <button
-            (click)="deleteSave($event)"
-            class="m-auto mb-2 min-w-[200px] max-w-[200px]"
-            icon="pi pi-times"
-            label="Delete Save"
-            pButton
-            type="button"></button>
+          <input #fileUpload (change)="handleFileInput($event.target)" [ngStyle]="{ display: 'none' }" accept=".json" type="file" />
+          <button (click)="fileUpload.click()" class="m-auto mb-2 min-w-[200px] max-w-[200px]" icon="pi pi-upload" label="Import Save" pButton type="button"></button>
+          <button (click)="exportSave()" class="m-auto mb-2 min-w-[200px] max-w-[200px]" icon="pi pi-download" label="Export Save" pButton type="button"></button>
+          <button (click)="deleteSave($event)" class="m-auto mb-2 min-w-[200px] max-w-[200px]" icon="pi pi-times" label="Delete Save" pButton type="button"></button>
         </div>
       </p-tabPanel>
     </p-tabView>
@@ -377,12 +307,8 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
   sortOrderFilter = new UntypedFormControl();
 
   private onDestroy$ = new Subject();
-  constructor(
-    private store: Store,
-    private digimonBackendService: DigimonBackendService,
-    private messageService: MessageService,
-    private confirmationService: ConfirmationService
-  ) {}
+
+  constructor(private store: Store, private digimonBackendService: DigimonBackendService, private messageService: MessageService, private confirmationService: ConfirmationService) {}
 
   ngOnInit(): void {
     this.store
@@ -500,13 +426,15 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
       message: 'You are about to permanently delete your save. Are you sure?',
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
+        const resetedSave = {
+          ...this.iSave,
+          collection: [],
+          decks: [],
+          settings: emptySettings,
+        };
         this.store.dispatch(
           setSave({
-            save: {
-              collection: [],
-              decks: [],
-              settings: emptySettings,
-            },
+            save: resetedSave,
           })
         );
         this.messageService.add({
@@ -592,9 +520,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
   private setupAllCards(): ICard[] {
     let setFiltered: ICard[] = this.sets.length === 0 ? this.digimonCards : [];
     this.sets.forEach((filter) => {
-      setFiltered = [
-        ...new Set([...setFiltered, ...this.digimonCards.filter((cards) => cards['id'].split('-')[0] === filter)]),
-      ];
+      setFiltered = [...new Set([...setFiltered, ...this.digimonCards.filter((cards) => cards['id'].split('-')[0] === filter)])];
     });
 
     let raritiesFiltered: ICard[] = [];
@@ -602,9 +528,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
       raritiesFiltered = setFiltered;
     }
     this.rarities.forEach((filter) => {
-      raritiesFiltered = [
-        ...new Set([...raritiesFiltered, ...setFiltered.filter((cards) => cards['rarity'] === filter)]),
-      ];
+      raritiesFiltered = [...new Set([...raritiesFiltered, ...setFiltered.filter((cards) => cards['rarity'] === filter)])];
     });
 
     let versionsFiltered: ICard[] = [];
@@ -612,9 +536,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
       versionsFiltered = raritiesFiltered;
     }
     this.versions.forEach((filter) => {
-      versionsFiltered = [
-        ...new Set([...versionsFiltered, ...raritiesFiltered.filter((cards) => cards['version'] === filter)]),
-      ];
+      versionsFiltered = [...new Set([...versionsFiltered, ...raritiesFiltered.filter((cards) => cards['version'] === filter)])];
     });
 
     return versionsFiltered;
@@ -623,9 +545,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
   private setupCollection(): ICountCard[] {
     let setFiltered: ICountCard[] = this.sets.length === 0 ? this.collection : [];
     this.sets.forEach((filter) => {
-      setFiltered = [
-        ...new Set([...setFiltered, ...this.collection.filter((cards) => cards['id'].split('-')[0] === filter)]),
-      ];
+      setFiltered = [...new Set([...setFiltered, ...this.collection.filter((cards) => cards['id'].split('-')[0] === filter)])];
     });
 
     if (this.rarities.length === 0) {
