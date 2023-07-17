@@ -176,7 +176,7 @@ cardLists = [
 
 for cardList in cardLists:
     cards = []
-    cahngedCards = []
+    changedCards = []
     with open('jsons/' + cardList + '.json', encoding='utf-8') as fh:
       cards = json.load(fh)
 
@@ -184,9 +184,9 @@ for cardList in cardLists:
     for card in cards:
       if card['cardNumber'] in allChanges:
           card['version'] = 'Boxtopper'
-          cahngedCards.append(card)
+          changedCards.append(card)
       else:
-        cahngedCards.append(card)
+        changedCards.append(card)
 
     with open('jsons/' + cardList + '.json', 'w') as f:
-        f.write("%s\n" % json.dumps(cahngedCards))
+        f.write("%s\n" % json.dumps(changedCards))

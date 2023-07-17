@@ -2777,7 +2777,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[Start of Your Turn] If you have 2 memory or less, set your memory to 3.\n[Your Turn] When one of your Digimon digivolves into a Digimon with [Greymon] in its name, by suspending this Tamer, that Digimon gets +2000 DP until the end of your opponent's turn. If it digivolved into a Digimon with the same level, that Digimon isn't affected by your opponent's Option cards until the end of your opponet's turn.",
+    "effect": "[Start of Your Turn] If you have 2 memory or less, set your memory to 3.\n[Your Turn] When one of your Digimon digivolves into a Digimon with [Greymon] in its name, by suspending this Tamer, that Digimon gets +2000 DP until the end of your opponent's turn. If it digivolved into a Digimon with the same level, that Digimon isn't affected by your opponent's Option cards until the end of your opponent's turn.",
     "digivolveEffect": "-",
     "securityEffect": "[Security] Play this card without paying its memory cost.",
     "notes": "▹BOOSTER DIMENSIONAL PHASE [BT-11]",

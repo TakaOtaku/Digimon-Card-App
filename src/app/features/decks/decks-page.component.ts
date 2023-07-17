@@ -256,7 +256,7 @@ export class DecksPageComponent implements OnInit, OnDestroy {
         new URL('../../load-decks.worker', import.meta.url)
       );
       this.worker.onmessage = ({ data }) => {
-        console.log('[Digimoncard.App] All Decks formated and loaded');
+        console.log('[Digimoncard.App] All Decks formatted and loaded');
         this.store.dispatch(setCommunityDecks({ communityDecks: data }));
       };
     } else {

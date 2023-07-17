@@ -158,7 +158,7 @@ export interface ICardImage {
       </div>
       <ng-template #edit [formGroup]="deckFormGroup">
         <div class="mx-auto my-1 grid grid-cols-3 gap-y-1">
-          <label>Titel</label>
+          <label>Title</label>
           <input
             formControlName="title"
             placeholder="Deck Name:"

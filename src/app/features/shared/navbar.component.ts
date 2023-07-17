@@ -251,7 +251,7 @@ import { NgClass, NgIf } from '@angular/common';
       styleClass="w-screen lg:max-h-[600px] lg:max-w-3xl">
       <div class="flex w-full flex-col">
         <span class="mt-5 w-full text-center font-bold text-[#e2e4e6]"
-          >A huge thanks goes to tari101190 who helps me with all the new card releases and tests the website completly
+          >A huge thanks goes to tari101190 who helps me with all the new card releases and tests the website completely
           so I don't have to worry to much!</span
         >
 
