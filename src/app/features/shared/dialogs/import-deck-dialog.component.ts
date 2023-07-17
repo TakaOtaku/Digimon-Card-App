@@ -55,7 +55,7 @@ export class ImportDeckDialogComponent implements OnDestroy {
     '   Qty Name Id\n' +
     '   TTS Format\n' +
     "   The order of the values doesn't matter\n" +
-    '   Name is optional. Qty(quantity) must be positiv\n' +
+    '   Name is optional. Qty(quantity) must be positive\n' +
     '   Each card can only be declared once\n' +
     '   Import will always pick the regular art card"';
 

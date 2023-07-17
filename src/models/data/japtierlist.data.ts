@@ -260,7 +260,7 @@ export const JAPTIERLIST = [
       image: 'assets/images/cards/jap/BT6-030.webp',
     },
     {
-      name: 'Bond of Barvery',
+      name: 'Bond of Bravery',
       card: 'BT6-018',
       image: 'assets/images/cards/jap/BT6-018.webp',
     },
