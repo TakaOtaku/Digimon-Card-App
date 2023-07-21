@@ -27740,7 +27740,7 @@
   {
     "id": "ST9-05_P2",
     "name": "Paildramon",
-    "cardImage": "assets/images/cards/jap/ST9-05_P1.webp",
+    "cardImage": "assets/images/cards/jap/ST9-05_P2.webp",
     "cardType": "Digimon",
     "dp": "8000",
     "playCost": "8",
@@ -27800,9 +27800,9 @@
     "illustrator": "Naochika Morishita"
   },
   {
-    "id": "BT8-112_P1",
+    "id": "BT8-112_P2",
     "name": "Imperialdramon Paladin Mode",
-    "cardImage": "assets/images/cards/jap/BT8-112_P1.webp",
+    "cardImage": "assets/images/cards/jap/BT8-112_P2.webp",
     "cardType": "Digimon",
     "dp": "16000",
     "playCost": "15",
