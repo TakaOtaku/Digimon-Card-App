@@ -1,0 +1,802 @@
+{
+  "BT1-095": [
+    {
+      "answer": "A: Yes, you can.\n",
+      "question": "Q: Can I use this card's effect to give one of my unsuspended Digimon \uff1cBlocker\uff1e?"
+    }
+  ],
+  "BT1-100": [
+    {
+      "answer": "A: Yes, it can.\n",
+      "question": "Q: I use this card's effect when my opponent's Digimon has no digivolution cards. If that Digimon later gains digivolution cards, can it attack?"
+    }
+  ],
+  "BT1-107": [
+    {
+      "answer": "A: Yes, they continue by checking the card that was added to your security stack.\n",
+      "question": "Q: I have 1 card in my security stack. My opponent attacks me with a Digimon with \uff1cSecurity Attack +1\uff1e, and flips over this card during the security check. Its \uff1cRecovery +1 (Deck)\uff1e activates, adding a card to my empty security stack. Does my opponent continue the security check?"
+    }
+  ],
+  "BT2-002": [
+    {
+      "answer": "A: No. If an effect unsuspends a card that's already unsuspended, it doesn't count as unsuspending it.\n",
+      "question": "Q: I have a Digimon with this card in its digivolution cards. If that Digimon is already unsuspended, does an effect that reads \"unsuspend 1 of your Digimon\" activate this card's inherited effect?"
+    },
+    {
+      "answer": "A: No. This card's Japanese name (\u30c1\u30d3\u30e2\u30f3) does not have \"Vee\" (\u30d6\u30a4) in its name.\n",
+      "question": "Q: Does this card have [Vee]\u00a0in its name?"
+    }
+  ],
+  "BT2-004": [
+    {
+      "answer": "A: No. If an effect unsuspends a card that's already unsuspended, it doesn't count as unsuspending it.\n",
+      "question": "Q: I have a Digimon with this card in its digivolution cards. If that Digimon is already unsuspended, does this card's inherited effect activate during my unsuspend phase?"
+    }
+  ],
+  "BT2-012": [
+    {
+      "answer": "A: Yes. The effect was activated before your opponent blocked it. (See more in Attack Resolution)\n",
+      "question": "Q: I attack my opponent with this Digimon. If they block it with one of their Digimon, does this Digimon's effect activate?"
+    }
+  ],
+  "BT2-015": [
+    {
+      "answer": "A: Yes. The effect was activated before your opponent blocked it. (See more in Attack Resolution)\n",
+      "question": "Q: I attack my opponent with this Digimon. If they block it with one of their Digimon, does this Digimon's effect activate?"
+    }
+  ],
+  "BT2-019": [
+    {
+      "answer": "A: Yes. The effect was activated before your opponent blocked it. (See more in Attack Resolution)\n",
+      "question": "Q: I attack my opponent with this Digimon. If they block it with one of their Digimon, does this Digimon's effect activate?"
+    }
+  ],
+  "BT2-021": [
+    {
+      "answer": "A: No. If an effect unsuspends a card that's already unsuspended, it doesn't count as unsuspending it.\n",
+      "question": "Q: I have a Digimon with this card in its digivolution cards. If that Digimon is already unsuspended, does an effect that reads \"unsuspend 1 of your Digimon\" activate this card's inherited effect?"
+    }
+  ],
+  "BT2-023": [
+    {
+      "answer": "A: No, play costs can't be reduced to less than zero. You can play the card for free, but you can't gain memory with effects that reduce play costs.\n",
+      "question": "Q: My opponent has 5 or more Digimon with no digivolution cards in play, meaning this card's effect reduces its cost by 5, to -1. Can I play it by gaining a memory?"
+    }
+  ],
+  "BT2-028": [
+    {
+      "answer": "A: Yes, you can.\n",
+      "question": "Q: Can I use this card's [When Digivolving] effect to unsuspend this card if it digivolves while suspended?"
+    },
+    {
+      "answer": "A: No. If an effect unsuspends a card that's already unsuspended, it doesn't count as unsuspending it.\n",
+      "question": "Q: I have a Digimon with this card in its digivolution cards. If that Digimon is already unsuspended, does an effect that reads \"unsuspend 1 of your Digimon\" activate this card's inherited effect?"
+    }
+  ],
+  "BT2-029": [
+    {
+      "answer": "A: If this Digimon attacks, Digimon with \uff1cBlocker\uff1e and no digivolution cards cannot redirect the attack.\n[1]",
+      "question": "Q: How does \"This Digimon can't be blocked by your opponent's Digimon with no digivolution cards\" work?"
+    },
+    {
+      "answer": "A: Yes, you can.\n[2]",
+      "question": "Q: When my opponent's Digimon with this card's inherited effect attacks, even if I cannot block, can I still declare to activate my Digimon's \uff1cBlocker\uff1e to suspend it?"
+    }
+  ],
+  "BT2-032": [
+    {
+      "answer": "A: No, you can't use this Digimon's effect to suspend your blue Tamers. The effect only allows you to unsuspend this Digimon when another effect suspends one of your blue Tamers.\n",
+      "question": "Q: Can I use this Digimon's effect to suspend one of my blue Tamers?"
+    },
+    {
+      "answer": "A: No. If an effect unsuspends a card that's already unsuspended, it doesn't count as unsuspending it.\n",
+      "question": "Q: If this Digimon is unsuspended during my main phase, does an effect that reads \"unsuspend 1 of your Digimon\" activate this card's \"gain 1 memory\" effect?"
+    }
+  ],
+  "BT2-034": [
+    {
+      "answer": "A: No. Even if both Digimon are deleted simultaneously, the effects trigger one at a time. When the first Salamon's effect resolves, you add 1 cards to your security stack, bringing the total up to 4. This means the \"3 cards or less\" condition for the second Salamon's effect no longer applies. The second Salamon's effect doesn't activate, and your security stack remains at 4 cards.\n",
+      "question": "Q: I have 3 cards in my security stack when 2 copies of this Digimon are deleted at the same time. Do the [On Deletion] effects on both cards activate, bringing my security stack up to 5 cards?"
+    }
+  ],
+  "BT2-035": [
+    {
+      "answer": "A: No battle occurs. After resolving all other When Attacking effects, the attack ends.\n[1]",
+      "question": "Q: I use this Digimon to attack an opponent's Digimon, then use this Digimon's inherited effect to reduce the opponent's Digimon to 0 DP and delete it. What happens to the attack?"
+    }
+  ],
+  "BT2-040": [
+    {
+      "answer": "A: Yes, it does. During checks, it will fight your opponent's attacking Digimon as a Security Digimon.\n",
+      "question": "Q: When I place this card face down on top of my security stack because of its effect, does it become a security card?"
+    },
+    {
+      "answer": "A: The player chooses which effect to use first between [BT3-109 Back for Revenge!] and [BT2-040 Ophanimon]. If Ophanimon is used first Back for Revenge cannot be used. If Back for Revenge is used for then Ophanimon can no longer be used.\n",
+      "question": "Q: I use [BT3-109 Back for Revenge!] on [BT2-040 Ophanimon] and it gets deleted with [BT2-109 Heat Viper]. What happens?"
+    }
+  ],
+  "BT2-041": [
+    {
+      "answer": "A: Yes, the [When Digivolving] effect activates separately for each yellow Tamer you suspend, and you get to choose the target for each effect.\n",
+      "question": "Q: I use this card's [When Digivolving] effect to suspend 2 or more yellow Tamers. Can I choose 2 or more of my opponent's Digimon and give all of them -4000 DP?"
+    },
+    {
+      "answer": "A: No, they're treated as activating at the same timing. Previously, multiple activations of ShineGreymon's [When Digivolving] effect were treated as occurring at separate timings, but this was changed as of December 18, 2020.\n",
+      "question": "Q: I use this card's [When Digivolving] effect two or more times. Are they treated as activating at separate timings?"
+    },
+    {
+      "answer": "A: You resolve all of ShineGreymon's effects first and activate any new pending effects after these effects have resolved. In this case, [BT2-083 Millenniummon] will only be deleted after all 8 of ShineGreymon's effects have finished resolving.\n",
+      "question": "Q: This card suspends 8 Tamers. During the first 4 instances, this effect kills [BT2-083 Millenniummon]. Would I be able to use the remaining 4 effects to destroy the revived [BT2-083 Millenniummon]? Or would [BT2-083 Millenniummon] revive after ShineGreymon's effects finish resolving?"
+    },
+    {
+      "answer": "A: Yes, even though the Digimon has less than 4000 DP, you can continue to give it -4000 DP even though its DP is already 0. All Digimon that have 0 DP or less at the end of a ShineGreymon's effect will be moved to the trash at the same time.\n",
+      "question": "Q: I have 2 Yellow Tamers and my opponent has 2 [ST1-03 Agumon]. Can I use both -4000 DP effects on the same Digimon?"
+    },
+    {
+      "answer": "A: Use the effects consecutively one after the time to reduce DP. There is no period for effects to trigger between multiple effects having been activated.\n",
+      "question": "Q: What does \"activate the following effect\" mean?"
+    }
+  ],
+  "BT2-047": [
+    {
+      "answer": "A: Yes, it does.\n",
+      "question": "Q: If I use this card's inherited effect to play a Digimon card with an [On Play] effect, does that [On Play] effect activate when the Digimon enters play?"
+    }
+  ],
+  "BT2-094": [
+    {
+      "answer": "A: Yes, as trashing 1 of your opponent's digivolution cards is not a requirement, you get +2000 DP when using this card even when your opponent has no digivoltion cards. From Card Rulings:BT1-090\n",
+      "question": "Q: Can I use this card when my opponent has no digivolution cards to still get the +2000 DP?"
+    }
+  ],
+  "BT2-096": [
+    {
+      "answer": "A: The digivolution cards get trashed at the same time the Digimon is returned to the hand. So it gets returned to hand before unsuspending a Digimon.\n",
+      "question": "Q: When do the digivolution cards get trashed in the effect of [BT2-096 The Ray of Victory]? Does it get trashed before or after unsuspending a Digimon?"
+    }
+  ],
+  "BT2-098": [
+    {
+      "answer": "A: No, this card's effect can only be activated against 1 of your opponent's Digimon. You can't use a single copy of this card to reduce the DP of multiple Digimon.\n",
+      "question": "Q: If I have 2 or more cards in hand when I use this effect, can I give 2 or more different Digimon -1000 DP?"
+    }
+  ],
+  "BT2-099": [
+    {
+      "answer": "A: Yes, you can. Hoewver, it cannot be taken from your trash by BeeleStarmon's [On Play] effect even if you have 2 Tamers.\n",
+      "question": "Q: If this card is in my hand, and I have exactly 2 Yellow Tamers. Can I play this card with [BT6-112 BeelStarmon]'s [On Play] effect?"
+    },
+    {
+      "answer": "A: No, in that case, since the usage cost of [BT2-099 Glorious Burst] has been changed to 1, it is not considered that an option card with a usage cost of 2 or more was used, so it will not be demonstrated.\n",
+      "question": "Q: If I use this card while I have 8 or more of my own yellow tamers and a [EX2-003 Viximon] in my Digimon's digivolution cards, will that card's inherited effect be triggered?"
+    }
+  ],
+  "BT2-112": [
+    {
+      "answer": "A: It refers strictly to your opponent's Digimon with the highest DP they control. The effect doesn't check the DP of your Digimon.\n",
+      "question": "Q: This card's [When Attacking] effect refers to \"your opponent's Digimon with the highest DP.\" Does this strictly refer to my opponent's Digimon with the highest DP, or does it refer to when I attack an opponent's Digimon with the highest DP out of all Digimon in play, including my own?"
+    },
+    {
+      "answer": "A: Yes. If your opponent has multiple Digimon tied for highest DP, attacking any of them allows you to unsuspend this Digimon.\n",
+      "question": "Q: My opponent has multiple Digimon tied for highest DP. If I attack any one of them, does this card's [When Attacking] effect let me unsuspend this Digimon?"
+    },
+    {
+      "answer": "A: No, this Digimon's [When Attacking] effect only lets you unsuspend this Digimon when attacking your opponent's Digimon with the highest DP, regardless of whether it's suspended or not.\n",
+      "question": "Q: My opponent's Digimon with the highest DP is unsuspended. If I attack their suspended Digimon with the highest DP, can I unsuspend this Digimon?"
+    },
+    {
+      "answer": "A: The Digimon was already unsuspended before the opponent could use \uff1cBlocker\uff1e. (See more in Attack Resolution)\n",
+      "question": "Q: If this card's [When Attacking] effect attacks the Digimon with the highest DP, but my opponent uses \uff1cBlocker\uff1e, does this Digimon still unsuspend?"
+    },
+    {
+      "answer": "A: No. Unless the target of the attack is the opponent's Digimon with the highest DP at the time the attack is declared, this Digimon's [When Attacking] effect does not trigger at all, so it won't be pending activation. This card's condition is treated as \"when you attack your opponent's Digimon with the highest DP\".\n",
+      "question": "Q: I attack my opponent's Digimon that does not have the highest DP. While this Digimon's [When Attacking] effect is pending activation, another effect causes the target of the attack to become the opponent's Digimon with the highest DP. Does the [When Attacking] effect activate?"
+    },
+    {
+      "answer": "A: Yes, its play cost has been reduced so you can play this card.\n",
+      "question": "Q: I am at 0 memory but my opponent has a Digimon with 10,000 DP or more, can I play this card?"
+    }
+  ],
+  "BT3-002": [
+    {
+      "answer": "A: No. This card's Japanese name (\u30c1\u30d3\u30e2\u30f3) does not have \"Vee\" (\u30d6\u30a4) in its name.\n",
+      "question": "Q: Does this card have [Vee]\u00a0in its name?"
+    }
+  ],
+  "BT3-004": [
+    {
+      "answer": "A: No. The effect activates as soon as you target a Digimon and declare an attack\n",
+      "question": "Q: Does this card's inherited effect activate in battles against Security Digimon?"
+    },
+    {
+      "answer": "A: If you attacked an opponent's Digimon, it will activate even if the attack is blocked. However, if you attacked the opposing player, it won't activate if blocked and a battle with the opposing player's Digimon occurs.\n",
+      "question": "Q: Does this card's inherited effect activate in battles when it is blocked by \uff1cBlocker\uff1e?"
+    },
+    {
+      "answer": "A: No, this card's effect did not fulfill its trigger condition. See more in Effect Resolution\n",
+      "question": "Q: If this card attacks a player and then one of my effects redirects it to an opponent's Digimon. Does this card's effect activate?"
+    }
+  ],
+  "BT3-008": [
+    {
+      "answer": "A: Yes, if you only reveal one or the other, you only get to add one card to your hand.\n",
+      "question": "Q: If the cards I reveal from my deck include only either [RagnaLoardmon] or cards with [Legend-Arms] in their types, can I only add 1 card to my hand?"
+    },
+    {
+      "answer": "A: Yes, you may add them both to your hand.\n",
+      "question": "Q: If the cards I reveal from my deck include 2 [RagnaLoardmon] cards with [Legend-Arms] in their types, can I add both of those cards to my hand?"
+    },
+    {
+      "answer": "A: No, this effect allows you to add both cards.\n",
+      "question": "Q: If the cards I reveal from my deck include both a [RagnaLoardmon] card and a card with the [Legend-Arms]\u00a0trait, do I only get to add 1 to my hand and have to return the rest to the bottom of my deck?"
+    },
+    {
+      "answer": "A: If [RagnaLoardmon] has the [Legend-Arms]\u00a0trait, you can choose to add it for the [Legend Arms] so that there are no [RagnaLoardmon] cards you can add to hand. However, otherwise you must add as much as you can.\n",
+      "question": "Q: If the cards I reveal from my deck include both a [RagnaLoardmon] card and a card with the [Legend-Arms]\u00a0trait, can I choose to add 1 of them to my hand?"
+    }
+  ],
+  "BT3-011": [
+    {
+      "answer": "A: No, it's treated as a normal Digimon once it comes into play.\n",
+      "question": "Q: If I use this card's effect to play a Digimon, is it treated as a Security Digimon even in my battle area?"
+    },
+    {
+      "answer": "A: Yes, regardless of the battle's outcome, you get to play this Digimon at the end of the battle.\n",
+      "question": "Q: Can I play this Digimon with its [Security] effect even if it loses the battle against the attacking Digimon?"
+    },
+    {
+      "answer": "A: This Digimon is played after the battle with the attacking Digimon, and before the next check is performed.\n",
+      "question": "Q: This card is flipped over during a security check, but the attacking Digimon still has security checks remaining. Is this card played off its [Security] effect first, or do I have to wait until my opponent finishes the rest of their security checks?"
+    }
+  ],
+  "BT3-014": [
+    {
+      "answer": "A: Yes, since this Digimon is treated as both red and yellow during your turn, it can digivolve into a Digimon with a digivolution requirement of \"Yellow, Level 5.\"\n",
+      "question": "Q: Can this Digimon Digivolve into a Digimon which has a Digivolution requirement of \"Yellow, Level 5?\""
+    },
+    {
+      "answer": "A: No, you can't. [Your Turn] effects are not activate in the breeding area, so the card isn't treated as a yellow card. You can't digivolve it into a Digimon that requires a yellow Digimon.\n",
+      "question": "Q: This card is in my breeding area. Can I digivolve it into a Digimon that requires a yellow Digimon?"
+    },
+    {
+      "answer": "A: The DP value printed on a card is its original DP. This card's [When Digivolving] effect causes a target Digimon's DP, regardless of what's written on the card, to be temporarily treated as having 1000 DP.\n",
+      "question": "Q: What does \"Original DP\" mean?"
+    },
+    {
+      "answer": "A: Your opponent's Digimon's DP will be overwritten as 1000, and if a -1000 DP effect is being applied to it, its DP becomes 0, causing the Digimon to be deleted.\n",
+      "question": "Q: If this card's [When Digivolving] effect is used on an opponent's Digimon whose DP has been reduced by 1000 by an effect, what happens to that Digimon?"
+    },
+    {
+      "answer": "A: The effect that was used last takes precedence.\n",
+      "question": "Q: If I set a Digimon's original DP with this card, and then use another card to set its original DP again. What happens?"
+    },
+    {
+      "answer": "A: Yes, the effect prevents the reduction of DP. But it does not prevent its original DP from being set to another number.\n",
+      "question": "Q: Can this card be used to set the DP of a Digimon with \"DP cannot be reduced\"?"
+    },
+    {
+      "answer": "A: No, the Level 2 Digimon has no DP and so its DP can't be changed and it will still be trashed.\n",
+      "question": "Q: If after using this card's effect to set my opponent's Digimon's DP to 3000 and it gets \uff1cDe-Digivolve\uff1e and becomes a Level 2 Digimon with no DP. Does this card's effect set the Level 2 Digimon's DP to 3000 and stop it from being trashed?"
+    }
+  ],
+  "BT3-019": [
+    {
+      "answer": "A: No, you can choose whether or not to activate this card's [When Digivolving] effect.\n",
+      "question": "Q: Do I have to activate this card's [When Digivolving] effect if I have either [Durandamon]/[BryweLudramon] in my hand?"
+    },
+    {
+      "answer": "A: The relevant card is placed directly under this card, or at the very top of this card's digivolution cards.\n",
+      "question": "Q: For this card's [When Digivolving] effect, how are either the [Durandamon]/[BryweLudramon] cards in your hand placed?"
+    },
+    {
+      "answer": "A: No, even if the memory counter moves to 1 or greater on your opponent's side temporarily, if by resolving that effect, the memory counter moves back to 0 or greater on your side, your turn may continue.\n",
+      "question": "Q: Paying this Digimon's digivolution cost resulted in the memory counter being placed at 1 or above on my opponent's side. However, the [When Digivolving] effect allowed me to gain 3 memory, putting the memory counter at 0 or above on my side. When this happens, does the turn end?"
+    }
+  ],
+  "BT3-024": [
+    {
+      "answer": "A: No, it's treated as a normal Digimon once it comes into play.\n",
+      "question": "Q: If I use this card's effect to play a Digimon, is it treated as a Security Digimon even in my battle area?"
+    },
+    {
+      "answer": "A: Yes, regardless of the battle's outcome, you get to play this Digimon at the end of the battle.\n",
+      "question": "Q: Can I play this Digimon with its [Security] effect even if it loses the battle against the attacking Digimon?"
+    },
+    {
+      "answer": "A: This Digimon is played after the battle with the attacking Digimon, and before the next check is performed.\n",
+      "question": "Q: This card is flipped over during a security check, but the attacking Digimon still has security checks remaining. Is this card played off its [Security] effect first, or do I have to wait until my opponent finishes the rest of their security checks?"
+    }
+  ],
+  "BT3-027": [
+    {
+      "answer": "A: No, this card's inherited effect is compulsory like [BT3-111 Imperialdramon: Dragon Mode]. So, it was already used when the attack was declared and cannot put [BT3-111 Imperialdramon: Dragon Mode] to active as the effect was already used on the 1st attack. [BT3-111 Imperialdramon: Dragon Mode]'s effect is also compulsory, so both [BT3-027 Paildramon] and [BT3-111 Imperialdrmaon: Dragon Mode]'s effects cannot be used on the second attack.\n",
+      "question": "Q: I digivolve this card into [BT3-111 Imperialdramon: Dragon Mode] and attack with it deleting an opponent's in battle and surviving. I unsuspend it with its own effect. When I attack again, can I use this card's effect to unsuspend it?"
+    }
+  ],
+  "BT3-031": [
+    {
+      "answer": "A: No. You can't activate this effect when digivolving a card in your breeding area.\n",
+      "question": "Q: When digivolving this card onto a [Paildramon]/[Dinobeemon] in my breeding area, can I reduce the digivolution cost by 2?"
+    }
+  ],
+  "BT3-034": [
+    {
+      "answer": "A: It's placed at the top of the security stack, face down.\n",
+      "question": "Q: After checking the top security card using this card's effect, if that card cannot be added to my hand, what happens to that card?"
+    },
+    {
+      "answer": "A: No, you don't.\n",
+      "question": "Q: If I check my top security card using this card's effect and add it to my hand, do I have to reveal it to my opponent?"
+    },
+    {
+      "answer": "A: No, you can only \uff1cDraw 1\uff1e if you add a security card to your hand.\n",
+      "question": "Q: When I have 0 cards left in my security stack, can I still \uff1cDraw 1\uff1e as a result of this card's effect?"
+    },
+    {
+      "answer": "A: Yes, the latter half of the effect, \"Look at the top card of your security stack. You may add that card to your hand to trigger-\" can still be activated even if you have 0 cards in your deck and \uff1cDraw 1\uff1e cannot be resolved.\n",
+      "question": "Q: When I have 0 cards left in my deck, can I still look at one of my security cards and add it to my hand?"
+    }
+  ],
+  "BT3-036": [
+    {
+      "answer": "A: No, it's treated as a normal Digimon once it comes into play.\n",
+      "question": "Q: If I use this card's effect to play a Digimon, is it treated as a Security Digimon even in my battle area?"
+    },
+    {
+      "answer": "A: Yes, regardless of the battle's outcome, you get to play this Digimon at the end of the battle.\n",
+      "question": "Q: Can I play this Digimon with its [Security] effect even if it loses the battle against the attacking Digimon?"
+    },
+    {
+      "answer": "A: This Digimon is played after the battle with the attacking Digimon, and before the next check is performed.\n",
+      "question": "Q: This card is flipped over during a security check, but the attacking Digimon still has security checks remaining. Is this card played off its [Security] effect first, or do I have to wait until my opponent finishes the rest of their security checks?"
+    }
+  ],
+  "BT3-040": [
+    {
+      "answer": "A: Yes, since this Digimon is treated as both yellow and blue during your turn, it can digivolve into a Digimon with a requirement of \"Blue, Level 5.\"\n",
+      "question": "Q: Can this Digimon digivolve into a Digimon with a digivolution condition of \"Blue, Level 5\"?"
+    },
+    {
+      "answer": "A: No, you can't. [Your Turn] effects don't activate from breeding areas, so the card isn't treated as a yellow card. You can't digivolve it into a Digimon that requires a blue Digimon.\n",
+      "question": "Q: This card is in my breeding area. Can I digivolve it into a Digimon that requires a blue Digimon?"
+    },
+    {
+      "answer": "A: Yes, the moment your Digimon gains a digivolution card, it no longer counts as a \"Digimon with no digivolution cards,\" and loses \uff1cSecurity Attack -1\uff1e.\n",
+      "question": "Q: My opponent has this Digimon in play. If I digivolve one of my Digimon that currently has no digivolution cards, does its \uff1cSecurity Attack -1\uff1e immediately disappear?"
+    },
+    {
+      "answer": "A: Yes, [BT3-040 Shakkoumon]'s effect allows it to be played as a Blue Digimon.\n",
+      "question": "Q: I play [BT3-040 Shakkoumon] while I have [BT1-086 Matt Ishida] does its effect activate?"
+    }
+  ],
+  "BT3-041": [
+    {
+      "answer": "A: Yes, when moving a card from your trash to your security stack, you must show the card to your opponent so they can confirm it's a yellow Digimon card.\n",
+      "question": "Q: When using this card's effect to place a yellow Digimon card from your trash on your security stack, do I need to show that card to my opponent?"
+    }
+  ],
+  "BT3-042": [
+    {
+      "answer": "A: No, even if you end up with 4 or more security cards, the Digimon will have -6000 DP for the duration of the turn in which the effect was activated.\n",
+      "question": "Q: I use this card's effect to give my opponent's Digimon 6000 DP. Later in the turn, I end up with 4 cards in my security stack. Does the -6000 DP effect go away?"
+    }
+  ],
+  "BT3-046": [
+    {
+      "answer": "A: No, you don't gain any memory from it.\n",
+      "question": "Q: My opponent has this card in play. Do I gain memory from [ST2-13 Hammer Spark]'s [Security] effect?"
+    },
+    {
+      "answer": "A: Yes, your opponent can still lose memory. The stated effects above are also mandatory.\n",
+      "question": "Q: My opponent has this card in play when I activate the effect on a card like [BT1-090 Gravity Crush], [BT1-021 MetalGreymon], [BT1-040 WereGarurumon], [BT1-058 Chirinmon], or [BT1-075 Digitamamon]. What happens?"
+    },
+    {
+      "answer": "A: Yes, you can still lose memory from effects.\n",
+      "question": "Q: I have this card in play and use the effect of a card like [BT1-090 Gravity Crush], [BT1-021 MetalGreymon], [BT1-040 WereGarurumon], [BT1-058 Chirinmon], or [BT1-075 Digitamamon]. Does my opponent still gain memory from my card effect?"
+    },
+    {
+      "answer": "A: Yes, Terriermon's effect is no longer active when MaloMyotismon's effect resolves.\n",
+      "question": "Q: I have [BT3-046 Terriermon] in play and my opponent has [BT3-092 MaloMyotismon]. My opponent plays [BT2-077 Kimeramon] and deletes 1 of their Digimon and Terriermon. Does my opponent gain memory with [BT3-092 MaloMyotismon]'s effect?"
+    },
+    {
+      "answer": "A: No, that Tamer's inherited effect is treated as a Digimon's effect.\n",
+      "question": "Q: If my opponent has a Digimon with [BT7-087 Koji Minamoto] in its digivolution cards. Does my opponent gain memory from that Tamer's effect when I have this card in play?"
+    }
+  ],
+  "BT3-049": [
+    {
+      "answer": "A: No, it's treated as a normal Digimon once it comes into play.\n",
+      "question": "Q: If I use this card's effect to play a Digimon, is it treated as a Security Digimon even in my battle area?"
+    },
+    {
+      "answer": "A: Yes, regardless of the battle's outcome, you get to play this Digimon at the end of the battle.\n",
+      "question": "Q: Can I play this Digimon with its [Security] effect even if it loses the battle against the attacking Digimon?"
+    },
+    {
+      "answer": "A: This Digimon is played after the battle with the attacking Digimon, and before the next check is performed.\n",
+      "question": "Q: This card is flipped over during a security check, but the attacking Digimon still has security checks remaining. Is this card played off its [Security] effect first, or do I have to wait until my opponent finishes the rest of their security checks?"
+    }
+  ],
+  "BT3-051": [
+    {
+      "answer": "A: Yes, even if you only reveal one of the applicable cards, you can still add it to your hand.\n",
+      "question": "Q: The cards I reveal with this effect include only a level 5 or level 6 Digimon, not both. Can I add that card to my hand?"
+    }
+  ],
+  "BT3-056": [
+    {
+      "answer": "A: No, you cannot. Its [Your Turn] effect is only active when this card is in play in the battle area.\n",
+      "question": "Q: Can I use this card's [Your Turn] effect to suspend an opponent's Digimon for its own \uff1cDigisorption -3\uff1e?"
+    },
+    {
+      "answer": "A: No, you cannot.\n",
+      "question": "Q: If I have 2 of this Digimon, can I suspend 2 of my opponent's Digimon when I digivolve into 1 Digimon with \uff1cDigisorption\uff1e?"
+    },
+    {
+      "answer": "A: Yes, you can.\n",
+      "question": "Q: If I do not have any unsuspended Digimon, can I still suspend 1 of my opponent's Digimon for \uff1cDigisorption\uff1e?"
+    }
+  ],
+  "BT3-057": [
+    {
+      "answer": "A: Yes, you can.\n",
+      "question": "Q: Using this card's [When Digivolving] effect, can I prevent my opponent's Digimon from becoming unsuspended during my opponent's next unsuspend phase by applying this effect to it while it's suspended?"
+    }
+  ],
+  "BT3-058": [
+    {
+      "answer": "A: Yes, you still get BanchoStingmon's effect. \uff1cBlocker\uff1e happens after all [When Attacking] effects and BanchoStingmon's effect keeps the changes for the turn. (See more in Attack Resolution)\n",
+      "question": "Q: My opponent blocks [BT3-058 BanchoStingmon]. Do I still get its effect off?"
+    },
+    {
+      "answer": "A: Yes, it does. This effect behaves the same way as an effect that reads \"When this Digimon attacks one of your opponent's Digimon with 12000 DP or more\". As such, the requirement for 12000 DP or more is checked at the time the attack is declared and determines whether or not the effect triggers. After the effect has triggered, this requirement does not impact the effect's activation.\n",
+      "question": "Q: I attack my opponent's Digimon with 12000 DP or more with this Digimon, then one of my effects reduces that Digimon's DP to be under 12000. Does this Digimon's [When Attacking] effect activate?"
+    },
+    {
+      "answer": "A: Yes, you can still use BanchoStingmon's effect if the attack target's DP decreases before BanchoStingmon's effect activates as long as it was 12000 DP when it was targeted for the attack.\n",
+      "question": "Q: I have activated [BT1-104 Golden Ripper] and attack with [BT3-058 BanchoStingmon]. If I attack with this card and use [BT1-104 Golden Ripper]'s effect to decrease the attack of the attack target from 12000 DP to 10000 DP before I use its effect, can I use this card's effect to give it 7000 DP?"
+    },
+    {
+      "answer": "A: No, this card's effect did not fulfill its trigger condition.\n",
+      "question": "Q: If this card attacks a Digimon with less than 12000 DP and then one of my effects increases it to 12000 DP or more afterwards. Can I use this effect?"
+    }
+  ],
+  "BT3-062": [
+    {
+      "answer": "A: Yes, if you only reveal one or the other, you only get to add one card to your hand.\n",
+      "question": "Q: If the cards I reveal from my deck include only either [RagnaLoardmon] or cards with [Legend-Arms] in their types, can I only add 1 card to my hand?"
+    },
+    {
+      "answer": "A: Yes, you may add them both to your hand.\n",
+      "question": "Q: If the cards I reveal from my deck include 2 [RagnaLoardmon] cards with [Legend-Arms] in their types, can I add both of those cards to my hand?"
+    },
+    {
+      "answer": "A: No, this effect allows you to add both cards.\n",
+      "question": "Q: If the cards I reveal from my deck include both a [RagnaLoardmon] card and a card with the [Legend-Arms]\u00a0trait, do I only get to add 1 to my hand and have to return the rest to the bottom of my deck?"
+    },
+    {
+      "answer": "A: If [RagnaLoardmon] has the [Legend-Arms]\u00a0trait, you can choose to add it for the [Legend Arms] so that there are no [RagnaLoardmon] cards you can add to hand. However, otherwise you must add as much as you can.\n",
+      "question": "Q: If the cards I reveal from my deck include both a [RagnaLoardmon] card and a card with the [Legend-Arms]\u00a0trait, can I choose to add 1 of them to my hand?"
+    }
+  ],
+  "BT3-065": [
+    {
+      "answer": "A: No, it's treated as a normal Digimon once it comes into play.\n",
+      "question": "Q: If I use this card's effect to play a Digimon, is it treated as a Security Digimon even in my battle area?"
+    },
+    {
+      "answer": "A: Yes, regardless of the battle's outcome, you get to play this Digimon at the end of the battle.\n",
+      "question": "Q: Can I play this Digimon with its [Security] effect even if it loses the battle against the attacking Digimon?"
+    },
+    {
+      "answer": "A: This Digimon is played after the battle with the attacking Digimon, and before the next check is performed.\n",
+      "question": "Q: This card is flipped over during a security check, but the attacking Digimon still has security checks remaining. Is this card played off its [Security] effect first, or do I have to wait until my opponent finishes the rest of their security checks?"
+    }
+  ],
+  "BT3-075": [
+    {
+      "answer": "A: Card text that specifically specify \"delete,\" such as \"Delete 1 of your opponent's Digimon,\" can't be used to delete your cards with \uff1cBlocker\uff1e. They can still be deleted by losing a battle or being reduced to 0 DP.\n",
+      "question": "Q: What does \"can't be deleted by your opponent's effects\" on this card's [All Turns] effect refer to, exactly?"
+    }
+  ],
+  "BT3-077": [
+    {
+      "answer": "A: No, you don't gain any memory from it.\n",
+      "question": "Q: My opponent has this card in play. Do I gain memory from [ST2-13 Hammer Spark]'s [Security] effect?"
+    },
+    {
+      "answer": "A: Yes, your opponent can still lose memory. The stated effects above are also mandatory.\n",
+      "question": "Q: My opponent has this card in play when I activate the effect on a card like [BT1-090 Gravity Crush], [BT1-021 MetalGreymon], [BT1-040 WereGarurumon], [BT1-058 Chirinmon], or [BT1-075 Digitamamon]. What happens?"
+    },
+    {
+      "answer": "A: Yes, you can still lose memory from effects.\n",
+      "question": "Q: I have this card in play and use the effect of a card like [BT1-090 Gravity Crush], [BT1-021 MetalGreymon], [BT1-040 WereGarurumon], [BT1-058 Chirinmon], or [BT1-075 Digitamamon]. Does my opponent still gain memory from my card effect?"
+    },
+    {
+      "answer": "A: Yes, Gazimon's effect is no longer active when MaloMyotismon's effect resolves.\n",
+      "question": "Q: I have [BT3-077 Gazimon] in play and my opponent has [BT3-092 MaloMyotismon]. My opponent plays [BT2-077 Kimeramon] and deletes 1 of their Digimon and Gazimon. Does my opponent gain memory with [BT3-092 MaloMyotismon]'s effect?"
+    },
+    {
+      "answer": "A: No, that Tamer's inherited effect is treated as a Digimon's effect.\n",
+      "question": "Q: If my opponent has a Digimon with [BT7-087 Koji Minamoto] in its digivolution cards. Does my opponent gain memory from that Tamer's effect when I have this card in play?"
+    }
+  ],
+  "BT3-082": [
+    {
+      "answer": "A: No, it's treated as a normal Digimon once it comes into play.\n",
+      "question": "Q: If I use this card's effect to play a Digimon, is it treated as a Security Digimon even in my battle area?"
+    },
+    {
+      "answer": "A: Yes, regardless of the battle's outcome, you get to play this Digimon at the end of the battle.\n",
+      "question": "Q: Can I play this Digimon with its [Security] effect even if it loses the battle against the attacking Digimon?"
+    },
+    {
+      "answer": "A: This Digimon is played after the battle with the attacking Digimon, and before the next check is performed.\n",
+      "question": "Q: This card is flipped over during a security check, but the attacking Digimon still has security checks remaining. Is this card played off its [Security] effect first, or do I have to wait until my opponent finishes the rest of their security checks?"
+    }
+  ],
+  "BT3-086": [
+    {
+      "answer": "A: No, you can choose not to use it. This Digimon is not deleted if you do not pay 3 memory.\n[1]",
+      "question": "Q: Do I have to use this card's [When Attacking] effect?"
+    },
+    {
+      "answer": "A: The attacking Digimon was deleted, so the attack ends. However, your opponent's \"when your opponent's Digimon attacks\" effects and effects that activate at the [Counter] timing will activate before the attack ends.\n[1]",
+      "question": "Q: I attack with this card, and use its [When Attacking] effect to play [MaloMyotismon]. When this Digimon is deleted after this, what happens to the attack?"
+    },
+    {
+      "answer": "A: No. After this Digimon is deleted, its other [When Attacking] effects can't be activated. You can, however, activate other [When Attacking] effects prior to activating this card's [When Attacking] effect.\n[1]",
+      "question": "Q: I attack with this card, and use its [When Attacking] effect to play [MaloMyotismon]. This Digimon is then deleted, but can I still activate any [When Attacking] inherited effects on this card?"
+    },
+    {
+      "answer": "A: Yes, [BT3-092 MaloMyotismon] is in play when this card is deleted, so you gain 1 memory.\n[1]",
+      "question": "Q: I attack with this card, and use its [When Attacking] effect to play [BT3-092 MaloMyotismon]. This Digimon is then deleted, but do I gain a memory from [BT3-092 MaloMyotismon] 's \"[All Turns] When another Digimon is deleted, gain 1 memory\" effect?"
+    },
+    {
+      "answer": "A: No, you do not have to delete this card. (See more in Optional and Mandatory Effects\n[2]",
+      "question": "Q: I attack with this card, if I don't play a [MaloMyotismon] do I still have to delete it because it is separated by a \"Then,\" clause?"
+    }
+  ],
+  "BT3-087": [
+    {
+      "answer": "A: No, you can choose not to use it. This Digimon is not deleted if you do not pay 3 memory.\n[1]",
+      "question": "Q: Do I have to use this card's [When Attacking] effect?"
+    },
+    {
+      "answer": "A: The attacking Digimon was deleted, so the attack ends. However, your opponent's \"when your opponent's Digimon attacks\" effects and effects that activate at the [Counter] timing will activate before the attack ends.\n[1]",
+      "question": "Q: I attack with this card, and use its [When Attacking] effect to play [MaloMyotismon]. When this Digimon is deleted after this, what happens to the attack?"
+    },
+    {
+      "answer": "A: No. After this Digimon is deleted, its other [When Attacking] effects can't be activated. You can, however, activate other [When Attacking] effects prior to activating this card's [When Attacking] effect.\n[1]",
+      "question": "Q: I attack with this card, and use its [When Attacking] effect to play [MaloMyotismon]. This Digimon is then deleted, but can I still activate any [When Attacking] inherited effects on this card?"
+    },
+    {
+      "answer": "A: Yes, [BT3-092 MaloMyotismon] is in play when this card is deleted, so you gain 1 memory.\n[1]",
+      "question": "Q: I attack with this card, and use its [When Attacking] effect to play [BT3-092 MaloMyotismon]. This Digimon is then deleted, but do I gain a memory from [BT3-092 MaloMyotismon] 's \"[All Turns] When another Digimon is deleted, gain 1 memory\" effect?"
+    },
+    {
+      "answer": "A: No, you do not have to delete this card. (See more in Optional and Mandatory Effects\n[2]",
+      "question": "Q: I attack with this card, if I don't play a [MaloMyotismon] do I still have to delete it because it is separated by a \"Then,\" clause?"
+    }
+  ],
+  "BT3-088": [
+    {
+      "answer": "A: It happens after resolving the Option card's effect.\n",
+      "question": "Q: I use this card's inherited effect to delete an opponent's level 3 Digimon. Does this happen before or after resolving the Option card?"
+    },
+    {
+      "answer": "A: Yes, as long as the opponent's Digimon is level 3 at the time the LadyDevimon's efffect resolves, you can delete it with this card's inherited effect.\n",
+      "question": "Q: I use an Option card with \uff1cDe-Digivolve\uff1e, like [BT2-105 Spider Shooter], to reduce an opponent's level 4 or greater Digimon to level 3. Can I then use this card's inherited effect to delete that Digimon?"
+    }
+  ],
+  "BT3-090": [
+    {
+      "answer": "A: Yes, they do.\n",
+      "question": "Q: If I don't have a level 4 or lower purple or yellow Digimon card in my trash, do both players still trash the top card of their security stack from this card's [When Digivolving] effect?"
+    },
+    {
+      "answer": "A: No, they don't.\n",
+      "question": "Q: Do the [Security] effects on cards trashed by this card's [When Digivolving] effect activate?"
+    },
+    {
+      "answer": "A: No, just because there are no security cards to trash doesn't mean you win the game.\n",
+      "question": "Q: If I activate this card's [When Digivolving] effect when my opponent has an empty security stack, do I win the game?"
+    },
+    {
+      "answer": "A: Yes, you can. If one of the players have cards in their Security stack, that player would still trash a card from that Security stack.\n",
+      "question": "Q: If one or both players have empty security stacks, can I use this card's [When Digivolving] effect to play a level 4 or lower purple or yellow Digimon card from my trash?"
+    },
+    {
+      "answer": "A: Yes, you can. The card's Japanese text specifes \"you may\" (\u3067\u304d\u308b). This effect is similar to other effects that allow you to choose whether or not to play a Digimon, such as those written as \"you may pay <...> without paying its energy cost.\"\n",
+      "question": "Q: When using this card's [When Digivolving] effect to trash cards from both players' security stacks, can I choose not to play a purple or yellow Digimon card with a level of 4 or less from my trash?"
+    }
+  ],
+  "BT3-092": [
+    {
+      "answer": "A: Yes, both you and your opponent's Digimon were deleted, so you gain two memory.\n",
+      "question": "Q: I have this Digimon in play when one of my other Digimon attacks, deletes an opponent's Digimon, and is deleted in return. Do I gain two memory?"
+    },
+    {
+      "answer": "A: No, Security Digimon aren't considered to be Digimon, so you don't gain any memory.\n",
+      "question": "Q: Do I gain 1 memory from this Digimon's effect when a Security Digimon is deleted?"
+    },
+    {
+      "answer": "A: Yes, the +1 memory effect activates twice, earning you two memory.\n",
+      "question": "Q: I have 2 of this Digimon in play when one of my other Digimon is deleted. Do I gain two memory?"
+    },
+    {
+      "answer": "A: The effects activate simultaneously, so the turn player gains a memory first, followed by the non-turn player gaining a memory, returning the memory gauge to its original position.\n",
+      "question": "Q: My opponent and I both have this Digimon in play. If another Digimon is deleted, what happens?"
+    },
+    {
+      "answer": "A: No, Digimon need to be in the Battle Area to activate their effects.\n",
+      "question": "Q: If this Digimon attacks an opponent's Digimon and both Digimon end up being deleted, can I gain a memory off this card's effect?"
+    },
+    {
+      "answer": "A: If your opponent deletes a Digimon with [BT2-013 Growlmon] first and then \uff1cDe-Digivolve  1\uff1e on the level 7 Digimon. MaloMyotismon's effect does not trigger because it did not see the effect. If your opponent uses [BT3-064 TiaLudomon] first then MaloMyotismon's effect triggers and activates. (See more in Effect Resolution)\n",
+      "question": "Q: My opponent attacks with a level 7 Digimon with [BT3-064 TiaLudomon] and [BT2-013 Growlmon] against my level 7 Digimon that has [BT3-092 MaloMyotismon] underneath it. What happens?"
+    }
+  ],
+  "BT3-093": [
+    {
+      "answer": "A: Yes, if you only reveal one or the other, you only get to add one card to your hand.\n[1]",
+      "question": "Q: If the cards I reveal from my deck include only either a blue or green Digimon card, can I only add 1 card to my hand?"
+    },
+    {
+      "answer": "A: Yes, you may add them both to your hand.\n[1]",
+      "question": "Q: If the cards I reveal from my deck include 2 multi-coloured Blue-Green Digimon cards, can I add both of those cards to my hand?"
+    },
+    {
+      "answer": "A: Yes, you can choose to add the Blue-Green Digimon as a Blue Digimon so that there are no other Green Digimon to add.\n[1]",
+      "question": "Q: If the cards I reveal from my deck include both a Blue-Green Digimon card and a single-coloured Blue Digimon card, can I choose to add just 1 of them to my hand?"
+    },
+    {
+      "answer": "A: Yes, you can choose to add the Blue-Green Digimon as a Green Digimon so that there are no other Blue Digimon to add.\n[1]",
+      "question": "Q: If the cards I reveal from my deck include both a Blue-Green Digimon card and a single-coloured Green Digimon card, can I choose to add just 1 of them to my hand?"
+    }
+  ],
+  "BT3-094": [
+    {
+      "answer": "A: No, Security Digimon aren't considered to be Digimon, so this Tamer's effect doesn't activate.\n",
+      "question": "Q: My green or blue Digimon deletes an opponent's Security Digimon in battle and survives. Can I suspend this Tamer to gain a memory?"
+    }
+  ],
+  "BT3-095": [
+    {
+      "answer": "A: No. No matter how many Digimon with \uff1cBlocker\uff1e you have, you only gain 1 memory from this Tamer's effect.\n",
+      "question": "Q: If I have multiple Digimon with \uff1cBlocker\uff1e in play, do I gain memory for each one?"
+    }
+  ],
+  "BT3-096": [
+    {
+      "answer": "A: After you resolve the Option card's effect.\n",
+      "question": "Q: When do I gain a memory from this card's effect? Before I resolve an Option card, or after?"
+    },
+    {
+      "answer": "A: No, activating a [Security] effect is not the same as using an Option card.\n",
+      "question": "Q: Does this card's effect trigger when I activate a [Security] effect of an Option?"
+    }
+  ],
+  "BT3-097": [
+    {
+      "answer": "A: No, this card only prevents the [Security] effects on Option cards from being activated. [Security] effects on Digimon and Tamer cards activate as normal.\n",
+      "question": "Q: Does this card's effect prevent the [Security] effects on checked Digimon and Tamer security cards from activating?"
+    }
+  ],
+  "BT3-099": [
+    {
+      "answer": "A: Yes, it does.\n",
+      "question": "Q: Does this card's effect prevent my Digimon from being deleted when it loses a battle against my opponent's Security Digimon?"
+    },
+    {
+      "answer": "A: No, it only prevents Digimon from being deleted as a result of battle. [When Attacking] effects, other card effects, and being reduced to 0 DP will still delete Digimon as normal.\n",
+      "question": "Q: Does this card's effect prevent me from deleting an opponent's Digimon using a [When Attacking] effect?"
+    }
+  ],
+  "BT3-100": [
+    {
+      "answer": "A: No, if you don't have a green Digimon in play when you resolve the card's effect, you can't resolve the part of the effect that requires you to have a green Digimon in play.\n",
+      "question": "Q: After using this card, I play a green Digimon. Can I suspend 1 of my opponent's Digimon with no digivolution cards?"
+    },
+    {
+      "answer": "A: No, while you can play this card from your hand if you have a Blue Digimon in your Breeding Area. The effect of the card does not check the Breeding Area.\n",
+      "question": "Q: I have a Green Digimon in my Breeding Area. Can I use this card's effect to suspend 1 of my opponent's Digimon with no digivolution cards?"
+    }
+  ],
+  "BT3-102": [
+    {
+      "answer": "A: Yes, your opponent chooses. If they decide not to trash any security cards, the player who used this card receives the benefits of the \uff1cRecovery +1 (Deck)\uff1e effect.\n",
+      "question": "Q: When using this card, does my opponent get to decide whether or not they trash one of their security cards?"
+    },
+    {
+      "answer": "A: Yes, you can. Your opponent doesn't have a security card to trash, which means you get the \uff1cRecovery +1 (Deck)\uff1e effect automatically.\n",
+      "question": "Q: Can I use this card if my opponent's security stack is empty?"
+    },
+    {
+      "answer": "A: No. They weren't flipped over in a security check, so they don't activate.\n",
+      "question": "Q: I use this card's to trash my opponent's Security Cards. Do the [Security] effects on those cards activate?"
+    }
+  ],
+  "BT3-103": [
+    {
+      "answer": "A: Yes, you can.\n[1]",
+      "question": "Q: Can I digivolve from a Digimon that was suspended by this card's effect?"
+    },
+    {
+      "answer": "A: No, this card's effect only applies when digivolving a Digimon that's already green.\n[1]",
+      "question": "Q: During the same turn I used this card, I digivolve a nongreen Digimon into a green Digimon. Can I use this card's effect to reduce the digivolution cost?"
+    },
+    {
+      "answer": "A: Yes, you can. As long as you're digivolving from a green Digimon, the effect applies.\n[1]",
+      "question": "Q: During the same turn I used this card, I digivolve a green Digimon into a non-green Digimon. Can I use this card's effect to reduce the digivolution cost?"
+    },
+    {
+      "answer": "A: Yes, you can.\n[2]",
+      "question": "Q: During the turn I used this card, I activate an effect that involves digivolving for a cost. Can I use this card's effect to suspend a Digimon and reduce the digivolution cost?"
+    },
+    {
+      "answer": "A: No, it doesn't. Since the card doesn't specify breeding areas, the effect doesn't apply to Digimon there.\n[3]",
+      "question": "Q: Does activating this card's effect also reduce the digivolution cost of cards in my breeding area?"
+    },
+    {
+      "answer": "A: Yes, you can.\n[4]",
+      "question": "Q: If I digivolve on top of a tamer using the effect of [BT6-049 Arbormon], can I use this card's effect to reduce the memory cost?"
+    },
+    {
+      "answer": "A: No, you cannot. You must suspend another Digimon in the Battle Area.\n[4]",
+      "question": "Q: Can I suspend the tamer for the effect of [BT6-049 Arbormon] to reduce the memory cost?"
+    }
+  ],
+  "BT3-104": [
+    {
+      "answer": "A: No, if you don't have a blue Digimon in play when you resolve the card's effect, you can't resolve the part of the effect that returns your opponent's suspended Digimon to their hand.\n",
+      "question": "Q: If I activate this card, then play a blue Digimon later in the turn, can I return an opponent's suspended Digimon to its owner's hand?"
+    },
+    {
+      "answer": "A: No, while you can play this card from your hand if you have a Green Digimon in your Breeding Area. The effect of the card does not check the Breeding Area.\n",
+      "question": "Q: I have a Blue Digimon in my Breeding Area. Can I use this card's effect to return 1 of my opponent's suspended Digimon to the hand?"
+    }
+  ],
+  "BT3-105": [
+    {
+      "answer": "A: No, you can't.\n",
+      "question": "Q: My opponent activates this card's security effect. Can I attack my opponent's security stack?"
+    },
+    {
+      "answer": "A: No, this card's security effect affects all of your opponent's Digimon, including Digimon that enter the Battle Area after the effect is activated. (See more in Effect Resolution#Global Effects)\n",
+      "question": "Q: After my opponent activates this card's security effect, they use [BT1-089 Mimi Tachikawa] to move a Digimon from their breeding area to their battle area. Can that Digimon attack me immediately?"
+    },
+    {
+      "answer": "A: No, it does not return to the bottom of the deck because [BT3-105 Breath of the Gods] prevent it from happening.\n",
+      "question": "Q: I activate [BT5-109 Mega Digimon Fusion!] and [BT3-105 Breath of the Gods] on a Digimon with \uff1cReboot\uff1e then digivolve the Digimon with \uff1cReboot\uff1e into a level 7 Digimon, does the level 7 Digimon return to the bottom of the deck at the end of the turn?"
+    },
+    {
+      "answer": "A: Yes, this card's effect prevents the reduction of DP. But it does not prevent its original DP from being set to another number.\n",
+      "question": "Q: Can [BT1-105 Blast Fire] to set the DP of the Digimon targeted with this card?"
+    }
+  ],
+  "BT3-106": [
+    {
+      "answer": "A: No. Even if the Digimon has both \uff1cBlocker\uff1e and \uff1cReboot\uff1e, the card's effect can only be used once to grant \uff1cSecurity Attack +1\uff1e.\n",
+      "question": "Q: Can this card give \uff1cSecurity Attack +2\uff1e to a Digimon with both \uff1cBlocker\uff1e and \uff1cReboot\uff1e?"
+    },
+    {
+      "answer": "A: A Digimon that loses \uff1cBlocker\uff1e or \uff1cReboot\uff1e also loses \uff1cSecurity Attack +1\uff1e, as it is no longer affected by this card's effect.\n",
+      "question": "Q: I use this card's effect to give \uff1cSecurity Attack +1\uff1e to one of my Digimon, but if it digivolves into a Digimon without \uff1cBlocker\uff1e or \uff1cReboot\uff1e, what happens to the \uff1cSecurity Attack +1\uff1e?"
+    },
+    {
+      "answer": "A: Yes, it gives \uff1cSecurity Attack +1\uff1e to new Digimon that get \uff1cBlocker\uff1e or \uff1cReboot\uff1e during the turn.\n",
+      "question": "Q: I have a Digimon without either \uff1cBlocker\uff1e or \uff1cReboot\uff1e. If I digivolve into a Digimon with \uff1cBlocker\uff1e or \uff1cReboot\uff1e, does it gain \uff1cSecurity Attack +1\uff1e?"
+    }
+  ],
+  "BT3-111": [
+    {
+      "answer": "A: No. You can't activate this effect when digivolving a card in your breeding area.\n",
+      "question": "Q: When digivolving this card onto a [Paildramon]/[Dinobeemon] in my breeding area, can I reduce the digivolution cost by 2?"
+    },
+    {
+      "answer": "A: No, this card's effect is compulsory like [BT3-027 Paildramon]. So, [BT3-027 Paildramon]'s effect unsuspends it at the beginning of the attack. This card's effect then cannot be used to unsuspend itself. However, the effect was still activated as it was compulsory. So both [BT3-027 Paildramon] and [BT3-111 Imperialdrmaon: Dragon Mode]'s effects cannot be used on the second attack.\n",
+      "question": "Q: I digivolve this card onto [BT3-027 Paildramon] and attack with it deleting an opponent's in battle and surviving. I unsuspend it with its own effect. When I attack again, can I use this card's effect to unsuspend it?"
+    }
+  ]
+}
