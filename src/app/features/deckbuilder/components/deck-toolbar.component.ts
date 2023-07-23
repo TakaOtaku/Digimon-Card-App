@@ -19,8 +19,7 @@ import { PriceCheckDialogComponent } from './price-check-dialog.component';
 @Component({
   selector: 'digimon-deck-toolbar',
   template: `
-    <div
-      class="toolbar ml-3 mr-3 flex w-[100%-3rem] flex-row justify-evenly border-b-2 border-slate-600 md:grid-cols-12">
+    <div class="toolbar ml-3 mr-3 flex w-[100%-3rem] flex-row justify-evenly border-b-2 border-slate-600 md:grid-cols-12">
       <button
         (click)="missingCardsChange.emit(!missingCards)"
         [ngClass]="{ 'primary-background': missingCards }"
@@ -31,26 +30,14 @@ import { PriceCheckDialogComponent } from './price-check-dialog.component';
         pTooltip="Click to show what cards are missing from your Collection!"
         tooltipPosition="top"></button>
 
-      <button
-        (click)="newDeck()"
-        class="p-button-outlined h-[30px] w-full"
-        icon="pi pi-file"
-        iconPos="left"
-        pButton
-        pTooltip="Click to create a new Deck!"
-        tooltipPosition="top"></button>
+      <button (click)="newDeck()" class="p-button-outlined h-[30px] w-full" icon="pi pi-file" iconPos="left" pButton pTooltip="Click to create a new Deck!" tooltipPosition="top"></button>
 
-      <button
-        (click)="save.emit($event)"
-        class="p-button-outlined h-[30px] w-full"
-        icon="pi pi-save"
-        iconPos="left"
-        pButton></button>
+      <button (click)="save.emit($event)" class="p-button-outlined h-[30px] w-full" icon="pi pi-save" iconPos="left" pButton></button>
 
       <button
         (click)="importDeckDialog = true"
         class="p-button-outlined h-[30px] w-full"
-        icon="pi pi-upload"
+        icon="pi pi-download"
         iconPos="left"
         pButton
         pTooltip="Click to import a deck!"
@@ -59,7 +46,7 @@ import { PriceCheckDialogComponent } from './price-check-dialog.component';
       <button
         (click)="exportDeckDialog = true"
         class="p-button-outlined h-[30px] w-full"
-        icon="pi pi-download"
+        icon="pi pi-upload"
         iconPos="left"
         pButton
         pTooltip="Click to export this deck!"
@@ -89,12 +76,7 @@ import { PriceCheckDialogComponent } from './price-check-dialog.component';
       >
         $
       </button-->
-      <button
-        (click)="checkPrice()"
-        class="p-button-outlined h-[30px] w-full cursor-pointer"
-        icon="pi pi-dollar"
-        iconPos="left"
-        pButton></button>
+      <button (click)="checkPrice()" class="p-button-outlined h-[30px] w-full cursor-pointer" icon="pi pi-dollar" iconPos="left" pButton></button>
     </div>
 
     <p-dialog
@@ -161,16 +143,7 @@ import { PriceCheckDialogComponent } from './price-check-dialog.component';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    ButtonModule,
-    TooltipModule,
-    NgClass,
-    DialogModule,
-    PriceCheckDialogComponent,
-    NgFor,
-    ExportDeckDialogComponent,
-    ImportDeckDialogComponent,
-  ],
+  imports: [ButtonModule, TooltipModule, NgClass, DialogModule, PriceCheckDialogComponent, NgFor, ExportDeckDialogComponent, ImportDeckDialogComponent],
   providers: [MessageService],
 })
 export class DeckToolbarComponent implements OnDestroy {
@@ -197,13 +170,7 @@ export class DeckToolbarComponent implements OnDestroy {
   private allCards: ICard[];
   private destroy$ = new Subject<boolean>();
 
-  constructor(
-    private confirmationService: ConfirmationService,
-    private messageService: MessageService,
-    private store: Store,
-    private route: Router,
-    private authService: AuthService
-  ) {
+  constructor(private confirmationService: ConfirmationService, private messageService: MessageService, private store: Store, private route: Router, private authService: AuthService) {
     this.store
       .select(selectAllCards)
       .pipe(takeUntil(this.destroy$))
@@ -295,9 +262,7 @@ export class DeckToolbarComponent implements OnDestroy {
   resetSimulation() {
     this.didMulligan = false;
 
-    this.allDeckCards = DeckToolbarComponent.shuffle(
-      this.deck.cards.map((card) => this.allCards.find((a) => a.id === card.id))
-    );
+    this.allDeckCards = DeckToolbarComponent.shuffle(this.deck.cards.map((card) => this.allCards.find((a) => a.id === card.id)));
     this.allDeckCards = this.allDeckCards.filter((card) => card.cardType !== 'Digi-Egg');
 
     this.securityStack = this.allDeckCards.slice(0, 5);

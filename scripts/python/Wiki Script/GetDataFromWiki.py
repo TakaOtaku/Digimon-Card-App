@@ -326,8 +326,6 @@ def getExtraInfo(html, digimoncard):
 
 # TODO Add Illustrator AAs of Japanese Cards seperatly
 # Get Illustrator Info, for now take the first one
-
-
 def getIllustratorsInfo(html, digimoncard):
     if html == None or len(html) == 0:
         return digimoncard

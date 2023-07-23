@@ -1,11 +1,28 @@
 import { DatePipe } from '@angular/common';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { enableProdMode, importProvidersFrom } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAnalyticsModule } from '@angular/fire/compat/analytics';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { bootstrapApplication, BrowserModule, HammerModule } from '@angular/platform-browser';
+import { provideAnimations } from '@angular/platform-browser/animations';
 import { PreloadAllModules, provideRouter, Routes, withPreloading } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { provideEffects } from '@ngrx/effects';
 import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
+import 'hammerjs';
+import { ToastrModule } from 'ngx-toastr';
 import { ConfirmationService, MessageService } from 'primeng/api';
+import { BlockUIModule } from 'primeng/blockui';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { DialogModule } from 'primeng/dialog';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { ToastModule } from 'primeng/toast';
+import { TooltipModule } from 'primeng/tooltip';
+import { AppComponent } from './app/app.component';
 import { BlogPageComponent } from './app/features/blog/blog-page.component';
 import { CollectionPageComponent } from './app/features/collection/collection-page.component';
 import { CommunityPageComponent } from './app/features/community/community-page.component';
@@ -15,32 +32,14 @@ import { HomePageComponent } from './app/features/home/home-page.component';
 import { ProductsComponent } from './app/features/products/products.component.ts';
 import { ProfilePageComponent } from './app/features/profile/profile-page.component';
 import { TestPageComponent } from './app/features/test/test-page.component';
+import { AuthService } from './app/service/auth.service';
+import { DigimonBackendService } from './app/service/digimon-backend.service';
 import { DigimonEffects } from './app/store/digimon.effects';
 import * as DigimonCards from './app/store/reducers/digimon-card.reducers';
 import * as Digimon from './app/store/reducers/digimon.reducers';
 import * as Save from './app/store/reducers/save.reducer';
 
 import { environment } from './environments/environment';
-import { AppComponent } from './app/app.component';
-import { ProgressSpinnerModule } from 'primeng/progressspinner';
-import { BlockUIModule } from 'primeng/blockui';
-import { ToastModule } from 'primeng/toast';
-import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import { DialogModule } from 'primeng/dialog';
-import { ToastrModule } from 'ngx-toastr';
-import { AngularFireAnalyticsModule } from '@angular/fire/compat/analytics';
-import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { AngularFireModule } from '@angular/fire/compat';
-import { HammerModule } from '@angular/platform-browser';
-import { provideAnimations } from '@angular/platform-browser/animations';
-import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
-import { withInterceptorsFromDi, provideHttpClient } from '@angular/common/http';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { DigimonBackendService } from './app/service/digimon-backend.service';
-import { AuthService } from './app/service/auth.service';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import 'hammerjs';
 
 const routes: Routes = [
   {
@@ -111,7 +110,8 @@ bootstrapApplication(AppComponent, {
       ConfirmDialogModule,
       ToastModule,
       BlockUIModule,
-      ProgressSpinnerModule
+      ProgressSpinnerModule,
+      TooltipModule
     ),
 
     provideRouter(routes, withPreloading(PreloadAllModules)),

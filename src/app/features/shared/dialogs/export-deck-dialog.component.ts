@@ -1,43 +1,30 @@
+import { NgClass, NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { saveAs } from 'file-saver';
+import { ButtonModule } from 'primeng/button';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { SelectButtonModule } from 'primeng/selectbutton';
 import { first, Subject } from 'rxjs';
 import { ICard, IDeck } from '../../../../models';
 import { ColorsWithoutMulti } from '../../../../models/data/filter.data';
 import { compareIDs, formatId, mapToDeckCards } from '../../../functions/digimon-card.functions';
 import { selectAllCards } from '../../../store/digimon.selectors';
-import { ButtonModule } from 'primeng/button';
-import { InputTextareaModule } from 'primeng/inputtextarea';
-import { NgIf, NgClass } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { SelectButtonModule } from 'primeng/selectbutton';
 
 @Component({
   selector: 'digimon-export-deck-dialog',
   template: `
-    <p-selectButton
-      [options]="exportList"
-      [(ngModel)]="exportType"
-      (onOptionClick)="changeExportType($event)"></p-selectButton>
+    <p-selectButton [options]="exportList" [(ngModel)]="exportType" (onOptionClick)="changeExportType($event)"></p-selectButton>
     <div *ngIf="exportType !== 'IMAGE'">
-      <p>Copy your deck in the text area and press import or press the "Import Text-File"-Button to import a file.</p>
-      <textarea
-        pInputTextarea
-        id="text-imports"
-        class="border-black-500 min-h-[200px] min-w-full border-2"
-        [(ngModel)]="deckText"></textarea>
+      <textarea #textAreaElement pInputTextarea id="text-imports" class="border-black-500 min-h-[200px] min-w-full border-2" [(ngModel)]="deckText"></textarea>
     </div>
 
     <div [ngClass]="{ hidden: exportType !== 'IMAGE' }">
       <canvas #Canvas id="Canvas" width="640" height="360" (contextmenu)="downloadImage()"></canvas>
       <canvas #HDCanvas id="HDCanvas" width="1920" height="1080" class="hidden"></canvas>
       <canvas #TTSCanvas id="TTS" width="7440" height="6240" class="hidden"></canvas>
-      <p-selectButton
-        class="Colors mt-3"
-        [options]="colors"
-        [(ngModel)]="selectedColor"
-        (onChange)="setExportTypeIMAGE()"
-        [multiple]="false">
+      <p-selectButton class="Colors mt-3" [options]="colors" [(ngModel)]="selectedColor" (onChange)="setExportTypeIMAGE()" [multiple]="false">
         <ng-template let-color>
           <i
             class="pi"
@@ -50,12 +37,11 @@ import { SelectButtonModule } from 'primeng/selectbutton';
     </div>
 
     <div class="mt-5 flex w-full justify-end">
-      <button *ngIf="exportType !== 'IMAGE'" pButton (click)="exportDeckToFile()" class="ml-5">Export to File</button>
-      <button *ngIf="exportType === 'IMAGE'" pButton (click)="setExportTypeIMAGE()" class="ml-5">Generate Image</button>
-      <button *ngIf="exportType === 'IMAGE'" pButton class="ml-5" (click)="downloadImageTTS()">
-        Download Deck (TTS)
-      </button>
-      <button *ngIf="exportType === 'IMAGE'" pButton class="ml-5" (click)="downloadImage()">Download Image</button>
+      <p-button *ngIf="exportType !== 'IMAGE'" label="Copy to Clipboard" icon="pi pi-copy" (click)="copyToClipboard()" styleClass="p-button-sm"></p-button>
+      <p-button *ngIf="exportType !== 'IMAGE'" (click)="exportDeckToFile()" class="ml-5" styleClass="p-button-sm">Export to File </p-button>
+      <p-button *ngIf="exportType === 'IMAGE'" (click)="setExportTypeIMAGE()" class="ml-5" styleClass="p-button-sm"> Generate Image </p-button>
+      <p-button *ngIf="exportType === 'IMAGE'" (click)="downloadImageTTS()" class="ml-5" styleClass="p-button-sm"> Download Deck (TTS) </p-button>
+      <p-button *ngIf="exportType === 'IMAGE'" (click)="downloadImage()" class="ml-5" styleClass="p-button-sm">Download Image </p-button>
     </div>
   `,
   styleUrls: ['./export-deck-dialog.component.scss'],
@@ -66,9 +52,9 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
   @Input() show: boolean = false;
   @Input() deck: IDeck;
 
-  digimonCards: ICard[] = [];
-
   @Output() onClose = new EventEmitter<boolean>();
+
+  digimonCards: ICard[] = [];
 
   exportList = ['TEXT', 'TTS', 'UNTAP', 'IMAGE'];
   exportType = 'TEXT';
@@ -80,6 +66,20 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
   private onDestroy$ = new Subject();
 
   constructor(private store: Store) {}
+
+  private static writeText(ctx: any, text: string, x: number, y: number, scale: number, fontSize?: number, fillStyle?: string) {
+    ctx.font = fontSize ? fontSize * scale + 'px Roboto' : '15px Roboto';
+    ctx.shadowColor = 'black';
+    ctx.shadowBlur = 2 * scale;
+    ctx.lineWidth = 5 * scale;
+    ctx.strokeStyle = '#ffffff';
+    ctx.textAlign = 'center';
+    ctx.strokeText(text, x * scale, y * scale);
+    ctx.shadowBlur = 0;
+    ctx.fillStyle = fillStyle ? fillStyle : '#f97316';
+    ctx.textAlign = 'center';
+    ctx.fillText(text, x * scale, y * scale);
+  }
 
   ngOnInit() {
     this.store
@@ -121,6 +121,49 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
     }
   }
 
+  exportDeckToFile(): void {
+    let blob = new Blob([this.deckText], { type: 'text/txt' });
+    saveAs(blob, this.deck.title + '.txt');
+  }
+
+  setExportTypeIMAGE(): void {
+    this.generateCanvas();
+    this.generateCanvas(document.getElementById('HDCanvas')! as HTMLCanvasElement);
+    this.generateTTS(document.getElementById('TTS')! as HTMLCanvasElement);
+  }
+
+  downloadImageTTS() {
+    const canvas = document.getElementById('TTS')! as HTMLCanvasElement;
+    const img = canvas.toDataURL('image/jpg', 0.7).replace('image/jpg', 'image/octet-stream');
+    const link = document.createElement('a');
+    link.download = 'deck.png';
+    link.href = img;
+    link.click();
+  }
+
+  downloadImage() {
+    const canvas = document.getElementById('HDCanvas')! as HTMLCanvasElement;
+    const img = canvas.toDataURL('image/png', 1.0).replace('image/png', 'image/octet-stream');
+    const link = document.createElement('a');
+    link.download = 'deck.png';
+    link.href = img;
+    link.click();
+  }
+
+  copyToClipboard() {
+    const selBox = document.createElement('textarea');
+    selBox.style.position = 'fixed';
+    selBox.style.left = '0';
+    selBox.style.top = '0';
+    selBox.style.opacity = '0';
+    selBox.value = this.deckText;
+    document.body.appendChild(selBox);
+    selBox.focus();
+    selBox.select();
+    document.execCommand('copy');
+    document.body.removeChild(selBox);
+  }
+
   private setExportTypeText(): void {
     this.deckText = '// Digimon DeckList\n\n';
     this.deck.cards.forEach((card) => {
@@ -147,17 +190,6 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
       const dc = this.digimonCards.find((dc) => compareIDs(dc.id, card.id));
       this.deckText += `${card.count} ${dc?.name} [DCG] (${card.id.replace('ST0', 'ST')})\n`;
     });
-  }
-
-  exportDeckToFile(): void {
-    let blob = new Blob([this.deckText], { type: 'text/txt' });
-    saveAs(blob, this.deck.title + '.txt');
-  }
-
-  setExportTypeIMAGE(): void {
-    this.generateCanvas();
-    this.generateCanvas(document.getElementById('HDCanvas')! as HTMLCanvasElement);
-    this.generateTTS(document.getElementById('TTS')! as HTMLCanvasElement);
   }
 
   private generateCanvas(canvas?: HTMLCanvasElement): void {
@@ -344,28 +376,6 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
     return imgs;
   }
 
-  private static writeText(
-    ctx: any,
-    text: string,
-    x: number,
-    y: number,
-    scale: number,
-    fontSize?: number,
-    fillStyle?: string
-  ) {
-    ctx.font = fontSize ? fontSize * scale + 'px Roboto' : '15px Roboto';
-    ctx.shadowColor = 'black';
-    ctx.shadowBlur = 2 * scale;
-    ctx.lineWidth = 5 * scale;
-    ctx.strokeStyle = '#ffffff';
-    ctx.textAlign = 'center';
-    ctx.strokeText(text, x * scale, y * scale);
-    ctx.shadowBlur = 0;
-    ctx.fillStyle = fillStyle ? fillStyle : '#f97316';
-    ctx.textAlign = 'center';
-    ctx.fillText(text, x * scale, y * scale);
-  }
-
   private drawCount(ctx: any, scale: number) {
     let y = 50 + 82;
     let x = 10 + 50;
@@ -392,23 +402,5 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
         cardsInCurrentRow += 1;
       }
     });
-  }
-
-  downloadImageTTS() {
-    const canvas = document.getElementById('TTS')! as HTMLCanvasElement;
-    const img = canvas.toDataURL('image/jpg', 0.7).replace('image/jpg', 'image/octet-stream');
-    const link = document.createElement('a');
-    link.download = 'deck.png';
-    link.href = img;
-    link.click();
-  }
-
-  downloadImage() {
-    const canvas = document.getElementById('HDCanvas')! as HTMLCanvasElement;
-    const img = canvas.toDataURL('image/png', 1.0).replace('image/png', 'image/octet-stream');
-    const link = document.createElement('a');
-    link.download = 'deck.png';
-    link.href = img;
-    link.click();
   }
 }
