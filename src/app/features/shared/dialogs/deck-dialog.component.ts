@@ -1,3 +1,4 @@
+import { DeckActions, WebsiteActions } from './../../../store/digimon.actions';
 import { NgFor, NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
@@ -16,7 +17,6 @@ import { CARDSET, ICard, IDeck, IDeckCard, ITournamentDeck } from '../../../../m
 import { mapToDeckCards, setDeckImage, setupDigimonCards } from '../../../functions/digimon-card.functions';
 import { AuthService } from '../../../service/auth.service';
 import { DigimonBackendService } from '../../../service/digimon-backend.service';
-import { deleteDeck, importDeck, saveDeck, setDeck } from '../../../store/digimon.actions';
 import { DeckCardComponent } from '../deck-card.component';
 import { ChartContainersComponent } from '../statistics/chart-containers.component';
 import { ColorSpreadComponent } from '../statistics/color-spread.component';
@@ -239,7 +239,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
       if (this.authService.isLoggedIn) {
         this.router.navigateByUrl(`deckbuilder/user/${this.authService.userData?.uid}/deck/${this.deck.id}`);
       } else {
-        this.store.dispatch(setDeck({ deck: this.deck }));
+        this.store.dispatch(WebsiteActions.setdeck({ deck: this.deck }));
         this.router.navigateByUrl('deckbuilder');
       }
     } else {
@@ -248,7 +248,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
         message: 'You are about to open this deck. Are you sure?',
         accept: () => {
           this.store.dispatch(
-            setDeck({
+            WebsiteActions.setdeck({
               deck: this.deck,
             })
           );
@@ -265,7 +265,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
         key: 'Delete',
         message: 'You are about to permanently delete this deck. Are you sure?',
         accept: () => {
-          this.store.dispatch(deleteDeck({ deck: this.deck }));
+          this.store.dispatch(DeckActions.delete({ deck: this.deck }));
           this.messageService.add({
             severity: 'success',
             summary: 'Deck deleted!',
@@ -298,7 +298,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
       message: 'You are about to copy this deck. Are you sure?',
       accept: () => {
         this.store.dispatch(
-          importDeck({
+          DeckActions.import({
             deck: { ...this.deck, id: uuid.v4() },
           })
         );
@@ -353,7 +353,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
       imageCardId: this.deckFormGroup.get('cardImage')?.value.value,
     };
 
-    this.store.dispatch(saveDeck({ deck }));
+    this.store.dispatch(DeckActions.save({ deck }));
     this.messageService.add({
       severity: 'success',
       summary: 'Deck saved!',

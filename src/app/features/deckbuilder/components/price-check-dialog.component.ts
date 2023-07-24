@@ -1,3 +1,4 @@
+import { WebsiteActions } from './../../../store/digimon.actions';
 import { AsyncPipe, CurrencyPipe, NgFor, NgIf } from '@angular/common';
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -8,7 +9,6 @@ import { TableModule } from 'primeng/table';
 import { async, BehaviorSubject, filter, Subject, switchMap, takeUntil } from 'rxjs';
 import { ICountCard } from '../../../../models';
 import { CardMarketService, ProductCM, ProductCMWithCount } from '../../../service/card-market.service';
-import { setPriceGuideCM } from '../../../store/digimon.actions';
 import { DeckBuilderViewModel, selectDeckBuilderViewModel } from '../../../store/digimon.selectors';
 
 @Component({
@@ -136,7 +136,7 @@ export class PriceCheckDialogComponent implements OnInit, OnDestroy {
     this.getPriceGuide$
       .pipe(
         switchMap((priceGuide) => {
-          this.store.dispatch(setPriceGuideCM({ products: priceGuide }));
+          this.store.dispatch(WebsiteActions.setpriceguidecm({ products: priceGuide }));
           return this.deckBuilderViewModel$;
         })
       )

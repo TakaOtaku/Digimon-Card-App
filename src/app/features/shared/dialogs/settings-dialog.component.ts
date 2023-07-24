@@ -1,3 +1,4 @@
+import { CollectionActions, SaveActions } from './../../../store/digimon.actions';
 import { NgClass, NgIf, NgStyle } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, UntypedFormControl } from '@angular/forms';
@@ -15,7 +16,6 @@ import { first, Subject, takeUntil } from 'rxjs';
 import { ICard, ICountCard, ISave } from '../../../../models';
 import { GroupedSets } from '../../../../models/data/filter.data';
 import { DigimonBackendService } from '../../../service/digimon-backend.service';
-import { addToCollection, loadSave, setSave } from '../../../store/digimon.actions';
 import { selectAllCards, selectCollection, selectSave, selectSettings } from '../../../store/digimon.selectors';
 import { emptySettings } from '../../../store/reducers/save.reducer';
 
@@ -365,7 +365,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
       },
     };
 
-    this.store.dispatch(setSave({ save }));
+    this.store.dispatch(SaveActions.setsave({ save }));
     this.messageService.add({
       severity: 'success',
       summary: 'Settings saved!',
@@ -384,7 +384,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
       }
     });
 
-    this.store.dispatch(addToCollection({ collectionCards }));
+    this.store.dispatch(CollectionActions.addcard({ collectionCards }));
     this.messageService.add({
       severity: 'success',
       summary: 'Collection Imported!',
@@ -403,7 +403,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
       try {
         let save: any = JSON.parse(fileReader.result as string);
         save = this.digimonBackendService.checkSaveValidity(save, null);
-        this.store.dispatch(loadSave({ save }));
+        this.store.dispatch(SaveActions.setsave({ save }));
         this.messageService.add({
           severity: 'success',
           summary: 'Save loaded!',
@@ -433,7 +433,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
           settings: emptySettings,
         };
         this.store.dispatch(
-          setSave({
+          SaveActions.setsave({
             save: resetedSave,
           })
         );

@@ -1,13 +1,13 @@
+import { AsyncPipe, DatePipe, NgClass, NgFor, NgIf, NgStyle } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { ICard, IDeck } from '../../../models';
-import { setDeckImage } from '../../functions/digimon-card.functions';
-import { saveDeck } from '../../store/digimon.actions';
-import { selectAllCards } from '../../store/digimon.selectors';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { SharedModule } from 'primeng/api';
 import { TableModule } from 'primeng/table';
-import { NgIf, NgClass, NgStyle, NgFor, AsyncPipe, DatePipe } from '@angular/common';
+import { ICard, IDeck } from '../../../models';
+import { setDeckImage } from '../../functions/digimon-card.functions';
+import { selectAllCards } from '../../store/digimon.selectors';
+import { DeckActions } from './../../store/digimon.actions';
 
 @Component({
   selector: 'digimon-decks-table',
@@ -107,7 +107,7 @@ export class DecksTableComponent {
       return allCards.find((card) => card.id === deck.imageCardId)?.cardImage ?? '../../../assets/images/cards/eng/BT1-001.webp';
     } else {
       const deckImage = setDeckImage(deck);
-      this.store.dispatch(saveDeck({ deck: { ...deck, imageCardId: deckImage.id } }));
+      this.store.dispatch(DeckActions.save({ deck: { ...deck, imageCardId: deckImage.id } }));
       return deckImage.cardImage;
     }
   }

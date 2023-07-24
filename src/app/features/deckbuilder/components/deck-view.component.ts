@@ -1,3 +1,4 @@
+import { WebsiteActions, DeckActions } from './../../../store/digimon.actions';
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { Store } from '@ngrx/store';
@@ -12,7 +13,6 @@ import { compareIDs, deckIsValid, setColors, setTags, sortColors } from '../../.
 import { sortID } from '../../../functions/filter.functions';
 import { AuthService } from '../../../service/auth.service';
 import { DigimonBackendService } from '../../../service/digimon-backend.service';
-import { addCardToDeck, addCardToSideDeck, importDeck, removeCardFromDeck, removeCardFromSideDeck, setDeck, setDraggedCard } from '../../../store/digimon.actions';
 import { selectCollection, selectDeckBuilderViewModel, selectDisplaySideDeck, selectDraggedCard, selectSave } from '../../../store/digimon.selectors';
 import { emptyDeck } from '../../../store/reducers/digimon.reducers';
 import { DeckCardComponent } from '../../shared/deck-card.component';
@@ -255,7 +255,7 @@ export class DeckViewComponent implements OnInit, OnDestroy {
       message: 'You are about to save all changes and overwrite everything changed. Are you sure?',
       accept: () => {
         this.onMainDeck.pipe(first()).subscribe(() => {
-          this.store.dispatch(importDeck({ deck: this.deck }));
+          this.store.dispatch(DeckActions.import({ deck: this.deck }));
           this.messageService.add({
             severity: 'success',
             summary: 'Deck saved!',
@@ -295,7 +295,7 @@ export class DeckViewComponent implements OnInit, OnDestroy {
 
     this.deckSort();
 
-    this.store.dispatch(setDeck({ deck: this.deck }));
+    this.store.dispatch(WebsiteActions.setdeck({ deck: this.deck }));
     this.onMainDeck.emit(this.mainDeck);
   }
 
@@ -374,16 +374,16 @@ export class DeckViewComponent implements OnInit, OnDestroy {
   drop(card: IDraggedCard, area: string) {
     if (area === 'Side') {
       if (card.drag === DRAG.Main) {
-        this.store.dispatch(removeCardFromDeck({ cardId: card.card.id }));
+        this.store.dispatch(WebsiteActions.removecardfromdeck({ cardId: card.card.id }));
       }
-      this.store.dispatch(addCardToSideDeck({ cardId: card.card.id }));
+      this.store.dispatch(WebsiteActions.addcardtosidedeck({ cardId: card.card.id }));
       return;
     }
 
     if (card.drag === DRAG.Side) {
-      this.store.dispatch(removeCardFromSideDeck({ cardId: card.card.id }));
+      this.store.dispatch(WebsiteActions.removecardfromsidedeck({ cardId: card.card.id }));
     }
-    this.store.dispatch(addCardToDeck({ addCardToDeck: card.card.id }));
+    this.store.dispatch(WebsiteActions.addcardtodeck({ addCardToDeck: card.card.id }));
   }
 
   setDraggedCard(card: IDeckCard, drag: DRAG) {
@@ -392,7 +392,7 @@ export class DeckViewComponent implements OnInit, OnDestroy {
       drag,
     };
     this.store.dispatch(
-      setDraggedCard({
+      WebsiteActions.setdraggedcard({
         dragCard,
       })
     );

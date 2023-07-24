@@ -1,11 +1,11 @@
+import { AsyncPipe, NgStyle } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { debounceTime, distinctUntilChanged, filter, Subject, tap } from 'rxjs';
-import { changeSearchFilter } from '../../../store/digimon.actions';
-import { selectSearchFilter } from '../../../store/digimon.selectors';
-import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
-import { NgStyle, AsyncPipe } from '@angular/common';
+import { Store } from '@ngrx/store';
+import { InputTextModule } from 'primeng/inputtext';
+import { Subject, debounceTime, distinctUntilChanged, filter, tap } from 'rxjs';
+import { selectSearchFilter } from '../../../store/digimon.selectors';
+import { WebsiteActions } from './../../../store/digimon.actions';
 
 @Component({
   selector: 'digimon-search',
@@ -31,6 +31,6 @@ export class SearchComponent {
         distinctUntilChanged(),
         tap((search) => (this.search = search))
       )
-      .subscribe((search) => this.store.dispatch(changeSearchFilter({ search })));
+      .subscribe((search) => this.store.dispatch(WebsiteActions.setsearchfilter({ search })));
   }
 }

@@ -14,9 +14,9 @@ import { ColorMap } from '../../../../models/maps/color.map';
 import { deckIsValid } from '../../../functions/digimon-card.functions';
 import { AuthService } from '../../../service/auth.service';
 import { DigimonBackendService } from '../../../service/digimon-backend.service';
-import { saveDeck } from '../../../store/digimon.actions';
 import { selectAllCards } from '../../../store/digimon.selectors';
 import { emptyDeck } from '../../../store/reducers/digimon.reducers';
+import { DeckActions } from './../../../store/digimon.actions';
 
 @Component({
   selector: 'digimon-change-accessorie-dialog',
@@ -114,7 +114,7 @@ export class ChangeAccessorieDialogComponent implements OnInit, OnChanges, OnDes
 
   saveDeck(): void {
     this.store.dispatch(
-      saveDeck({
+      DeckActions.save({
         deck: {
           ...this.deck,
           title: this.title,

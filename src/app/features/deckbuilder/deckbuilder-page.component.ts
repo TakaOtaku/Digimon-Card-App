@@ -1,3 +1,4 @@
+import { WebsiteActions } from './../../store/digimon.actions';
 import { AsyncPipe, NgClass, NgIf, NgStyle } from '@angular/common';
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
@@ -8,7 +9,6 @@ import * as uuid from 'uuid';
 import { IDeck, ISave } from '../../../models';
 import { AuthService } from '../../service/auth.service';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
-import { setDeck } from '../../store/digimon.actions';
 import { selectMobileCollectionView } from '../../store/digimon.selectors';
 import { CardListComponent } from '../collection/components/card-list.component';
 import { CollectionViewComponent } from '../collection/components/collection-view.component';
@@ -167,7 +167,7 @@ export class DeckbuilderPageComponent implements OnInit, OnDestroy {
           } else {
             this.digimonBackendService.getDeck(params['id']).subscribe((deck) => {
               this.store.dispatch(
-                setDeck({
+                WebsiteActions.setdeck({
                   deck: { ...deck, id: uuid.v4() },
                 })
               );
@@ -191,7 +191,7 @@ export class DeckbuilderPageComponent implements OnInit, OnDestroy {
         const sameUser = iSave.uid === this.authService.userData?.uid;
 
         this.store.dispatch(
-          setDeck({
+          WebsiteActions.setdeck({
             deck: {
               ...iDeck,
               id: sameUser ? iDeck.id : uuid.v4(),

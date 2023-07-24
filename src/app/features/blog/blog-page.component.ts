@@ -11,9 +11,9 @@ import { RippleModule } from 'primeng/ripple';
 import { first, Observable, switchMap, tap, withLatestFrom } from 'rxjs';
 import { IBlog, IBlogWithText } from '../../../models';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
-import { setBlogs } from '../../store/digimon.actions';
 import { CKEditorComponent } from './components/ckeditor.component';
 import { HeaderComponent } from './components/header.component';
+import { WebsiteActions } from 'src/app/store/digimon.actions';
 
 @Component({
   selector: 'digimon-blog-page',
@@ -62,7 +62,7 @@ export class BlogPageComponent implements OnInit {
       .getBlogEntries()
       .pipe(first())
       .subscribe((blogs) => {
-        this.store.dispatch(setBlogs({ blogs }));
+        this.store.dispatch(WebsiteActions.setblogs({ blogs }));
       });
   }
 

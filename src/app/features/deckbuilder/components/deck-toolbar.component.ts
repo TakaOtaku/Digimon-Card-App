@@ -1,3 +1,4 @@
+import { WebsiteActions } from './../../../store/digimon.actions';
 import { NgClass, NgFor } from '@angular/common';
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, Output } from '@angular/core';
 import { Router } from '@angular/router';
@@ -10,7 +11,6 @@ import { BehaviorSubject, Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
 import { ICard, IDeck, IDeckCard } from '../../../../models';
 import { AuthService } from '../../../service/auth.service';
-import { createNewDeck } from '../../../store/digimon.actions';
 import { selectAllCards } from '../../../store/digimon.selectors';
 import { ExportDeckDialogComponent } from '../../shared/dialogs/export-deck-dialog.component';
 import { ImportDeckDialogComponent } from '../../shared/dialogs/import-deck-dialog.component';
@@ -225,7 +225,7 @@ export class DeckToolbarComponent implements OnDestroy {
       key: 'NewDeck',
       message: 'You are about to clear all cards in the deck and make a new one. Are you sure?',
       accept: () => {
-        this.store.dispatch(createNewDeck({ uuid: uuid.v4() }));
+        this.store.dispatch(WebsiteActions.createnewdeck({ uuid: uuid.v4() }));
         if (this.authService.userData?.uid) {
           this.route.navigateByUrl(`deckbuilder/user/${this.authService.userData?.uid}/deck/${this.deck.id}`);
         }

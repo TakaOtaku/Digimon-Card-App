@@ -1,8 +1,8 @@
+import { AsyncPipe, NgClass, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { changeColorFilter } from '../../../store/digimon.actions';
 import { selectColorFilter } from '../../../store/digimon.selectors';
-import { NgIf, NgClass, AsyncPipe } from '@angular/common';
+import { WebsiteActions } from 'src/app/store/digimon.actions';
 
 @Component({
   selector: 'digimon-color-filter',
@@ -85,6 +85,6 @@ export class ColorFilterComponent {
       colors = [...new Set(colorFilter), color];
     }
 
-    this.store.dispatch(changeColorFilter({ colorFilter: colors }));
+    this.store.dispatch(WebsiteActions.setcolorfilter({ colorFilter: colors }));
   }
 }

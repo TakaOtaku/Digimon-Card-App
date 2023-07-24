@@ -15,7 +15,7 @@ import { ChangelogDialogComponent } from './features/shared/dialogs/changelog-di
 import { NavbarComponent } from './features/shared/navbar.component';
 import { AuthService } from './service/auth.service';
 import { DigimonBackendService } from './service/digimon-backend.service';
-import { setSave } from './store/digimon.actions';
+import { SaveActions } from './store/digimon.actions';
 import { emptySave } from './store/reducers/save.reducer';
 
 @Component({
@@ -97,7 +97,7 @@ export class AppComponent {
           this.showChangelogModal();
         }
 
-        this.store.dispatch(setSave({ save: { ...save, version: emptySave.version } }));
+        this.store.dispatch(SaveActions.setsave({ save: { ...save, version: emptySave.version } }));
         this.toastrService.info('Your save was loaded successfully!', 'Welcome back!');
 
         this.spinner = false;
@@ -117,7 +117,7 @@ export class AppComponent {
 
     if (this.localStorageSave) {
       this.localStorageSave = this.digimonBackendService.checkSaveValidity(this.localStorageSave, this.authService.userData);
-      this.store.dispatch(setSave({ save: { ...this.localStorageSave, version: emptySave.version } }));
+      this.store.dispatch(SaveActions.setsave({ save: { ...this.localStorageSave, version: emptySave.version } }));
       this.spinner = false;
       this.hide = false;
       this.toastrService.info('Save from browser loaded successfully!', 'Welcome back!');
@@ -126,7 +126,7 @@ export class AppComponent {
 
     this.hide = false;
     this.spinner = false;
-    this.store.dispatch(setSave({ save: emptySave }));
+    this.store.dispatch(SaveActions.setsave({ save: emptySave }));
     this.toastrService.info('Welcome to digimoncard.app a new save was created for you!', 'Welcome new User');
   }
 

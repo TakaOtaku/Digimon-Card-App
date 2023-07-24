@@ -1,3 +1,4 @@
+import { WebsiteActions } from './../../../store/digimon.actions';
 import { Component, EventEmitter, Input, OnDestroy, Output } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { MessageService } from 'primeng/api';
@@ -6,7 +7,6 @@ import { ICard, IDeck } from '../../../../models';
 import { setColors, setTags } from '../../../functions/digimon-card.functions';
 import { stringToDeck } from '../../../functions/parse-deck';
 import { selectAllCards } from '../../../store/digimon.selectors';
-import { importDeck, setDeck } from '../../../store/digimon.actions';
 import { ButtonModule } from 'primeng/button';
 import { NgIf, AsyncPipe } from '@angular/common';
 import { InputTextareaModule } from 'primeng/inputtextarea';
@@ -69,7 +69,8 @@ export class ImportDeckDialogComponent implements OnDestroy {
     fileReader.readAsText(input.files[0]);
   }
 
-  //["Exported from https://digimoncard.dev","BT5-001","BT5-001","BT5-001","BT9-001","BT9-001","BT8-058","BT8-058","BT8-058","BT8-058","BT9-059","BT9-059","BT9-059","BT9-059","BT8-009","BT8-009","BT8-009","BT8-009","BT9-008","BT9-008","BT8-064","BT8-064","BT8-064","BT8-064","P-076","P-076","P-076","P-076","BT8-011","BT8-011","BT8-011","BT8-067","BT8-067","BT8-067","BT9-065","BT9-065","EX1-008","EX1-008","BT8-084","BT8-084","BT2-112","BT8-070","BT8-070","BT8-070","BT9-068","BT9-068","BT9-112","BT5-086","BT9-090","BT9-090","BT8-086","BT8-086","BT5-092","BT5-092","BT6-106","BT6-106"]
+  // eslint-disable-next-line max-len
+  // ["Exported from https://digimoncard.dev","BT5-001","BT5-001","BT5-001","BT9-001","BT9-001","BT8-058","BT8-058","BT8-058","BT8-058","BT9-059","BT9-059","BT9-059","BT9-059","BT8-009","BT8-009","BT8-009","BT8-009","BT9-008","BT9-008","BT8-064","BT8-064","BT8-064","BT8-064","P-076","P-076","P-076","P-076","BT8-011","BT8-011","BT8-011","BT8-067","BT8-067","BT8-067","BT9-065","BT9-065","EX1-008","EX1-008","BT8-084","BT8-084","BT2-112","BT8-070","BT8-070","BT8-070","BT9-068","BT9-068","BT9-112","BT5-086","BT9-090","BT9-090","BT8-086","BT8-086","BT5-092","BT5-092","BT6-106","BT6-106"]
   importDeck(allCards: ICard[]) {
     if (this.deckText === '') return;
     const deck: IDeck | null = stringToDeck(this.deckText, allCards);
@@ -85,7 +86,7 @@ export class ImportDeckDialogComponent implements OnDestroy {
 
     deck.tags = setTags(deck, allCards);
     deck.color = setColors(deck, allCards);
-    this.store.dispatch(setDeck({ deck }));
+    this.store.dispatch(WebsiteActions.setdeck({ deck }));
     this.show = false;
     this.messageService.add({
       severity: 'success',

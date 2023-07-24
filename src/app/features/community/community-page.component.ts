@@ -1,3 +1,4 @@
+import { WebsiteActions } from './../../store/digimon.actions';
 import { AsyncPipe, DatePipe, NgFor, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
@@ -11,7 +12,6 @@ import * as uuid from 'uuid';
 import { ADMINS, IBlog, IBlogWithText, IUser } from '../../../models';
 import { AuthService } from '../../service/auth.service';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
-import { setBlogs } from '../../store/digimon.actions';
 import { selectBlogs } from '../../store/digimon.selectors';
 
 interface IBlogs {
@@ -142,7 +142,7 @@ export class CommunityPageComponent implements OnInit, OnDestroy {
       .getBlogEntries()
       .pipe(first())
       .subscribe((blogs) => {
-        this.store.dispatch(setBlogs({ blogs }));
+        this.store.dispatch(WebsiteActions.setblogs({ blogs }));
       });
   }
 
@@ -166,7 +166,7 @@ export class CommunityPageComponent implements OnInit, OnDestroy {
       text: '<p>Hello World!</p>',
     };
 
-    this.store.dispatch(setBlogs({ blogs: [...currentBlogs.allBlogs, newBlog] }));
+    this.store.dispatch(WebsiteActions.setblogs({ blogs: [...currentBlogs.allBlogs, newBlog] }));
     this.digimonBackendService.createBlog(newBlog).pipe(first()).subscribe();
     this.digimonBackendService.createBlogWithText(newBlogWithText).pipe(first()).subscribe();
     this.messageService.add({
@@ -185,7 +185,7 @@ export class CommunityPageComponent implements OnInit, OnDestroy {
       }
       return entry;
     });
-    this.store.dispatch(setBlogs({ blogs: newBlogs }));
+    this.store.dispatch(WebsiteActions.setblogs({ blogs: newBlogs }));
     this.digimonBackendService.updateBlog(blog).pipe(first()).subscribe();
   }
 
@@ -202,7 +202,7 @@ export class CommunityPageComponent implements OnInit, OnDestroy {
       }
       return entry;
     });
-    this.store.dispatch(setBlogs({ blogs: newBlogs }));
+    this.store.dispatch(WebsiteActions.setblogs({ blogs: newBlogs }));
     this.digimonBackendService.updateBlog(blog).pipe(first()).subscribe();
   }
 
@@ -213,7 +213,7 @@ export class CommunityPageComponent implements OnInit, OnDestroy {
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
         const newBlogs = blogs.allBlogs.filter((entry) => entry.uid !== blog.uid);
-        this.store.dispatch(setBlogs({ blogs: newBlogs }));
+        this.store.dispatch(WebsiteActions.setblogs({ blogs: newBlogs }));
         this.digimonBackendService.deleteBlogEntry(blog.uid).pipe(first()).subscribe();
         this.digimonBackendService.deleteBlogEntryWithText(blog.uid).pipe(first()).subscribe();
 

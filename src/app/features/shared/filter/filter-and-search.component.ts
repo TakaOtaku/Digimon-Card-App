@@ -1,15 +1,15 @@
+import { NgStyle } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
-import { UntypedFormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, UntypedFormControl } from '@angular/forms';
 import { Store } from '@ngrx/store';
+import { ButtonModule } from 'primeng/button';
+import { DialogModule } from 'primeng/dialog';
+import { InputTextModule } from 'primeng/inputtext';
 import { Subject, takeUntil } from 'rxjs';
+import { SaveActions, WebsiteActions } from 'src/app/store/digimon.actions';
 import { IFilter } from '../../../../models';
-import { changeCollectionMode, changeFilter } from '../../../store/digimon.actions';
 import { selectCollectionMode, selectFilter } from '../../../store/digimon.selectors';
 import { FilterSideBoxComponent } from './filter-side-box.component';
-import { DialogModule } from 'primeng/dialog';
-import { ButtonModule } from 'primeng/button';
-import { InputTextModule } from 'primeng/inputtext';
-import { NgStyle } from '@angular/common';
 
 @Component({
   selector: 'digimon-filter-and-search',
@@ -58,13 +58,13 @@ export class FilterAndSearchComponent implements OnInit, OnDestroy {
       });
 
     this.searchFilter.valueChanges.pipe(takeUntil(this.onDestroy$)).subscribe((searchFilter) => {
-      this.store.dispatch(changeFilter({ filter: { ...this.filter, searchFilter } }));
+      this.store.dispatch(WebsiteActions.setfilter({ filter: { ...this.filter, searchFilter } }));
     });
     this.store
       .select(selectCollectionMode)
       .pipe(takeUntil(this.onDestroy$))
       .subscribe((collectionMode) => this.collectionMode.setValue(collectionMode, { emitEvent: false }));
-    this.collectionMode.valueChanges.pipe(takeUntil(this.onDestroy$)).subscribe((collectionMode) => this.store.dispatch(changeCollectionMode({ collectionMode })));
+    this.collectionMode.valueChanges.pipe(takeUntil(this.onDestroy$)).subscribe((collectionMode) => this.store.dispatch(SaveActions.setcollectionmode({ collectionMode })));
   }
 
   ngOnDestroy() {

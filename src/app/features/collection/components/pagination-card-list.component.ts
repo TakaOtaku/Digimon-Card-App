@@ -4,7 +4,6 @@ import { Subject, takeUntil } from 'rxjs';
 import { englishCards } from '../../../../assets/cardlists/eng/english';
 import { ICard, ICountCard, IDraggedCard } from '../../../../models';
 import { DRAG } from '../../../../models/enums/drag.enum';
-import { removeCardFromDeck, removeCardFromSideDeck } from '../../../store/digimon.actions';
 import { selectCollection, selectCollectionMode, selectDraggedCard } from '../../../store/digimon.selectors';
 import { ViewCardDialogComponent } from '../../shared/dialogs/view-card-dialog.component';
 import { FilterSideBoxComponent } from '../../shared/filter/filter-side-box.component';
@@ -14,6 +13,7 @@ import { DragDropModule } from 'primeng/dragdrop';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 import { SearchComponent } from './search.component';
 import { PaginationCardListHeaderComponent } from './pagination-card-list-header.component';
+import { WebsiteActions } from 'src/app/store/digimon.actions';
 
 @Component({
   selector: 'digimon-pagination-card-list',
@@ -111,9 +111,9 @@ export class PaginationCardListComponent implements OnInit, OnDestroy {
 
   drop(card: IDraggedCard, dragCard: IDraggedCard) {
     if (dragCard.drag === DRAG.Side) {
-      this.store.dispatch(removeCardFromSideDeck({ cardId: card.card.id }));
+      this.store.dispatch(WebsiteActions.removecardfromsidedeck({ cardId: card.card.id }));
       return;
     }
-    this.store.dispatch(removeCardFromDeck({ cardId: card.card.id }));
+    this.store.dispatch(WebsiteActions.removecardfromdeck({ cardId: card.card.id }));
   }
 }

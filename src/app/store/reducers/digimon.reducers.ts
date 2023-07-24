@@ -3,29 +3,7 @@ import { DRAG } from 'src/models/enums/drag.enum';
 import * as uuid from 'uuid';
 import { englishCards } from '../../../assets/cardlists/eng/english';
 import { ICountCard, IDeck, IDigimonState } from '../../../models';
-import {
-  addCardToDeck,
-  addCardToSideDeck,
-  changeBlockFilter,
-  changeCardTypeFilter,
-  changeColorFilter,
-  changeFilter,
-  changeRarityFilter,
-  changeSearchFilter,
-  changeSetFilter,
-  changeSort,
-  changeVersionFilter,
-  createNewDeck,
-  removeCardFromDeck,
-  removeCardFromSideDeck,
-  setBlogs,
-  setCommunityDeckSearch,
-  setCommunityDecks,
-  setDeck,
-  setDraggedCard,
-  setMobileCollectionView,
-  setPriceGuideCM,
-} from '../digimon.actions';
+import { WebsiteActions } from '../digimon.actions';
 
 export const emptyDeck: IDeck = {
   id: uuid.v4(),
@@ -93,17 +71,17 @@ function checkSpecialCardCounts(card: ICountCard): number {
 
 export const digimonReducer = createReducer(
   initialState,
-  on(changeFilter, (state, { filter }) => ({ ...state, filter })),
-  on(changeSearchFilter, (state, { search }) => ({ ...state, filter: { ...state.filter, searchFilter: search } })),
-  on(changeColorFilter, (state, { colorFilter }) => ({ ...state, filter: { ...state.filter, colorFilter } })),
-  on(changeCardTypeFilter, (state, { cardTypeFilter }) => ({ ...state, filter: { ...state.filter, cardTypeFilter } })),
-  on(changeBlockFilter, (state, { blockFilter }) => ({ ...state, filter: { ...state.filter, blockFilter } })),
-  on(changeRarityFilter, (state, { rarityFilter }) => ({ ...state, filter: { ...state.filter, rarityFilter } })),
-  on(changeVersionFilter, (state, { versionFilter }) => ({ ...state, filter: { ...state.filter, versionFilter } })),
-  on(changeSetFilter, (state, { setFilter }) => ({ ...state, filter: { ...state.filter, setFilter } })),
-  on(changeSort, (state, { sort }) => ({ ...state, sort })),
-  on(setDeck, (state, { deck }) => ({ ...state, deck })),
-  on(createNewDeck, (state, { uuid }) => {
+  on(WebsiteActions.setfilter, (state, { filter }) => ({ ...state, filter })),
+  on(WebsiteActions.setsearchfilter, (state, { search }) => ({ ...state, filter: { ...state.filter, searchFilter: search } })),
+  on(WebsiteActions.setcolorfilter, (state, { colorFilter }) => ({ ...state, filter: { ...state.filter, colorFilter } })),
+  on(WebsiteActions.setcardtypefilter, (state, { cardTypeFilter }) => ({ ...state, filter: { ...state.filter, cardTypeFilter } })),
+  on(WebsiteActions.setblockfilter, (state, { blockFilter }) => ({ ...state, filter: { ...state.filter, blockFilter } })),
+  on(WebsiteActions.setrarityfilter, (state, { rarityFilter }) => ({ ...state, filter: { ...state.filter, rarityFilter } })),
+  on(WebsiteActions.setversionfilter, (state, { versionFilter }) => ({ ...state, filter: { ...state.filter, versionFilter } })),
+  on(WebsiteActions.setsetfilter, (state, { setFilter }) => ({ ...state, filter: { ...state.filter, setFilter } })),
+  on(WebsiteActions.setsort, (state, { sort }) => ({ ...state, sort })),
+  on(WebsiteActions.setdeck, (state, { deck }) => ({ ...state, deck })),
+  on(WebsiteActions.createnewdeck, (state, { uuid }) => {
     const deck = {
       id: uuid,
       title: '',
@@ -120,11 +98,11 @@ export const digimonReducer = createReducer(
     };
     return { ...state, deck };
   }),
-  on(setMobileCollectionView, (state, { mobileCollectionView }) => ({
+  on(WebsiteActions.setmobilecollectionview, (state, { mobileCollectionView }) => ({
     ...state,
     mobileCollectionView,
   })),
-  on(addCardToDeck, (state, { addCardToDeck }) => {
+  on(WebsiteActions.addcardtodeck, (state, { addCardToDeck }) => {
     const cards = state.deck.cards.map((card) => {
       if (card.id === addCardToDeck) {
         card.count += 1;
@@ -143,7 +121,7 @@ export const digimonReducer = createReducer(
       deck: { ...state.deck, cards },
     };
   }),
-  on(removeCardFromDeck, (state, { cardId }) => {
+  on(WebsiteActions.removecardfromdeck, (state, { cardId }) => {
     const cards = state.deck.cards
       .map((card) => {
         if (card.id === cardId) {
@@ -158,7 +136,7 @@ export const digimonReducer = createReducer(
       deck: { ...state.deck, cards },
     };
   }),
-  on(addCardToSideDeck, (state, { cardId }) => {
+  on(WebsiteActions.addcardtosidedeck, (state, { cardId }) => {
     const sideDeck = (state.deck.sideDeck ?? []).map((card) => {
       if (card.id === cardId) {
         card.count += 1;
@@ -177,7 +155,7 @@ export const digimonReducer = createReducer(
       deck: { ...state.deck, sideDeck },
     };
   }),
-  on(removeCardFromSideDeck, (state, { cardId }) => {
+  on(WebsiteActions.removecardfromsidedeck, (state, { cardId }) => {
     const sideDeck = (state.deck.sideDeck ?? [])
       .map((card) => {
         if (card.id === cardId) {
@@ -192,23 +170,23 @@ export const digimonReducer = createReducer(
       deck: { ...state.deck, sideDeck },
     };
   }),
-  on(setCommunityDeckSearch, (state, { communityDeckSearch }) => ({
+  on(WebsiteActions.setcommunitydecksearch, (state, { communityDeckSearch }) => ({
     ...state,
     communityDeckSearch,
   })),
-  on(setCommunityDecks, (state, { communityDecks }) => ({
+  on(WebsiteActions.setcommunitydecks, (state, { communityDecks }) => ({
     ...state,
     communityDecks,
   })),
-  on(setBlogs, (state, { blogs }) => ({
+  on(WebsiteActions.setblogs, (state, { blogs }) => ({
     ...state,
     blogs,
   })),
-  on(setPriceGuideCM, (state, { products }) => ({
+  on(WebsiteActions.setpriceguidecm, (state, { products }) => ({
     ...state,
     priceGuideCM: products,
   })),
-  on(setDraggedCard, (state, { dragCard }) => ({
+  on(WebsiteActions.setdraggedcard, (state, { dragCard }) => ({
     ...state,
     draggedCard: dragCard,
   }))

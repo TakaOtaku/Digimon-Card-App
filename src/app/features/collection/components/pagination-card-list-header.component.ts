@@ -1,12 +1,12 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { Subject, takeUntil } from 'rxjs';
-import { ICard } from '../../../../models';
-import { changeCollectionMode } from '../../../store/digimon.actions';
-import { selectCollectionMode, selectFilteredCards } from '../../../store/digimon.selectors';
 import { AsyncPipe } from '@angular/common';
+import { ChangeDetectionStrategy, Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Store } from '@ngrx/store';
 import { PaginatorModule } from 'primeng/paginator';
+import { Subject, takeUntil } from 'rxjs';
+import { SaveActions } from 'src/app/store/digimon.actions';
+import { ICard } from '../../../../models';
+import { selectCollectionMode, selectFilteredCards } from '../../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-pagination-card-list-header',
@@ -73,6 +73,6 @@ export class PaginationCardListHeaderComponent implements OnInit, OnDestroy {
   }
 
   changeCollectionMode(collectionMode: boolean) {
-    this.store.dispatch(changeCollectionMode({ collectionMode }));
+    this.store.dispatch(SaveActions.setcollectionmode({ collectionMode }));
   }
 }

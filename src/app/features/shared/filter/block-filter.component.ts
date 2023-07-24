@@ -1,10 +1,10 @@
+import { AsyncPipe, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { BlockButtons } from '../../../../models';
-import { changeBlockFilter } from '../../../store/digimon.actions';
 import { selectBlockFilter } from '../../../store/digimon.selectors';
 import { MultiButtonsComponent } from '../multi-buttons.component';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { WebsiteActions } from 'src/app/store/digimon.actions';
 
 @Component({
   selector: 'digimon-block-filter',
@@ -34,6 +34,6 @@ export class BlockFilterComponent {
       blocks = [...new Set(blockFilter), block];
     }
 
-    this.store.dispatch(changeBlockFilter({ blockFilter: blocks }));
+    this.store.dispatch(WebsiteActions.setblockfilter({ blockFilter: blocks }));
   }
 }

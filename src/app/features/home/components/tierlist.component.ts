@@ -1,8 +1,8 @@
+import { WebsiteActions } from './../../../store/digimon.actions';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { JAPTIERLIST, TIERLIST } from '../../../../models';
-import { setCommunityDeckSearch } from '../../../store/digimon.actions';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { TooltipModule } from 'primeng/tooltip';
 import { NgFor, NgClass, NgStyle } from '@angular/common';
@@ -58,7 +58,7 @@ export class TierlistComponent {
   constructor(private store: Store, private router: Router) {}
 
   openCommunityWithSearch(card: string) {
-    this.store.dispatch(setCommunityDeckSearch({ communityDeckSearch: card }));
+    this.store.dispatch(WebsiteActions.setcommunitydecksearch({ communityDeckSearch: card }));
     this.router.navigateByUrl('/decks');
   }
 

@@ -1,12 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { SplitBoxComponent } from './split-box.component';
 
 @Component({
   selector: 'digimon-site-links',
   template: `
-    <div class="grid gap-5 sm:grid-cols-2">
+    <div class="mt-2 grid gap-5 sm:grid-cols-2">
       <digimon-split-box
         image="assets/images/splitbuttons/Deckbuilder.webp"
         header="Deckbuilder"

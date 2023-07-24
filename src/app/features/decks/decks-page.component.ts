@@ -1,3 +1,4 @@
+import { WebsiteActions } from './../../store/digimon.actions';
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
@@ -10,7 +11,6 @@ import { DialogModule } from 'primeng/dialog';
 import { PaginatorModule } from 'primeng/paginator';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { BehaviorSubject, combineLatest, filter, first, Observable, of, Subject, switchMap, takeUntil, tap } from 'rxjs';
-import { setCommunityDecks } from 'src/app/store/digimon.actions';
 import { ICard, ICountCard, IDeck, ITournamentDeck, TAGS } from '../../../models';
 import { IUserAndDecks } from '../../../models/interfaces/userAndDecks.interface';
 import { deckIsValid, setDeckImage } from '../../functions/digimon-card.functions';
@@ -191,7 +191,7 @@ export class DecksPageComponent implements OnInit, OnDestroy {
       this.worker = new Worker(new URL('../../load-decks.worker', import.meta.url));
       this.worker.onmessage = ({ data }) => {
         console.log('[Digimoncard.App] All Decks formatted and loaded');
-        this.store.dispatch(setCommunityDecks({ communityDecks: data }));
+        this.store.dispatch(WebsiteActions.setcommunitydecks({ communityDecks: data }));
       };
     } else {
       // Web Workers are not supported in this environment.

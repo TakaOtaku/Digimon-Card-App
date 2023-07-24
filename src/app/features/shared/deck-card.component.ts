@@ -1,9 +1,9 @@
+import { WebsiteActions } from './../../store/digimon.actions';
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { englishCards } from '../../../assets/cardlists/eng/english';
 import { ICard, IDeckCard } from '../../../models';
 import { ColorMap } from '../../../models/maps/color.map';
-import { addCardToDeck, addCardToSideDeck, removeCardFromDeck, removeCardFromSideDeck } from '../../store/digimon.actions';
 import { ViewCardDialogComponent } from './dialogs/view-card-dialog.component';
 import { DialogModule } from 'primeng/dialog';
 import { NgIf } from '@angular/common';
@@ -95,11 +95,11 @@ export class DeckCardComponent implements OnChanges, OnInit {
     }
 
     if (this.sideDeck) {
-      this.store.dispatch(addCardToSideDeck({ cardId: this.card.id }));
+      this.store.dispatch(WebsiteActions.addcardtosidedeck({ cardId: this.card.id }));
       return;
     }
 
-    this.store.dispatch(addCardToDeck({ addCardToDeck: this.card.id }));
+    this.store.dispatch(WebsiteActions.addcardtodeck({ addCardToDeck: this.card.id }));
   }
 
   reduceCardCount(event?: any): void {
@@ -109,11 +109,11 @@ export class DeckCardComponent implements OnChanges, OnInit {
     }
 
     if (this.sideDeck) {
-      this.store.dispatch(removeCardFromSideDeck({ cardId: this.card.id }));
+      this.store.dispatch(WebsiteActions.removecardfromsidedeck({ cardId: this.card.id }));
       return;
     }
 
-    this.store.dispatch(removeCardFromDeck({ cardId: this.card.id }));
+    this.store.dispatch(WebsiteActions.removecardfromdeck({ cardId: this.card.id }));
   }
 
   transformDCost(dCost: string): string {

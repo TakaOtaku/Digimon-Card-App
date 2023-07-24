@@ -1,10 +1,10 @@
+import { AsyncPipe, NgClass, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { map } from 'rxjs';
+import { SaveActions } from 'src/app/store/digimon.actions';
 import { CARDSET } from '../../../../models';
-import { changeCardSets } from '../../../store/digimon.actions';
 import { selectCardSet } from '../../../store/digimon.selectors';
-import { NgIf, NgClass, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'digimon-language-filter',
@@ -53,6 +53,6 @@ export class LanguageFilterComponent {
   constructor(private store: Store) {}
 
   setCardSet(cardSet: string) {
-    this.store.dispatch(changeCardSets({ cardSet }));
+    this.store.dispatch(SaveActions.setcardsets({ cardSet }));
   }
 }
