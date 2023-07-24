@@ -83,7 +83,7 @@ export const selectDeckBuilderViewModel = createSelector(
   selectPriceGuideCM,
   selectCollection,
   (deck: IDeck | null, cards: ICard[], priceGuideCM: ProductCM[], collection: ICountCard[]) => {
-    const noEmptyDeck = deck ?? emptyDeck;
+    const noEmptyDeck = deck ?? JSON.parse(JSON.stringify(emptyDeck));
     return {
       deck: noEmptyDeck,
       cards,
@@ -100,7 +100,7 @@ export interface ProfileViewModel {
 export const selectProfileViewModel = createSelector(selectSave, selectPriceGuideCM, (save: ISave, priceGuideCM: ProductCM[]) => ({ save, priceGuideCM } as ProfileViewModel));
 
 export const selectDeckChanges = createSelector(selectDeck, selectAllCards, (deck: IDeck | null, allCards: ICard[]) => {
-  const noEmptyDeck = deck ?? emptyDeck;
+  const noEmptyDeck = deck ?? JSON.parse(JSON.stringify(emptyDeck));
   return {
     deck: noEmptyDeck,
     allCards,

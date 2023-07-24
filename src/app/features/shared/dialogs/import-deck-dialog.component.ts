@@ -1,16 +1,16 @@
-import { WebsiteActions } from './../../../store/digimon.actions';
+import { AsyncPipe, NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, OnDestroy, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { MessageService } from 'primeng/api';
+import { ButtonModule } from 'primeng/button';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 import { Observable, Subject } from 'rxjs';
 import { ICard, IDeck } from '../../../../models';
 import { setColors, setTags } from '../../../functions/digimon-card.functions';
 import { stringToDeck } from '../../../functions/parse-deck';
 import { selectAllCards } from '../../../store/digimon.selectors';
-import { ButtonModule } from 'primeng/button';
-import { NgIf, AsyncPipe } from '@angular/common';
-import { InputTextareaModule } from 'primeng/inputtextarea';
-import { FormsModule } from '@angular/forms';
+import { WebsiteActions } from './../../../store/digimon.actions';
 
 @Component({
   selector: 'digimon-import-deck-dialog',

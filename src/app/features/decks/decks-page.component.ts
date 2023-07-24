@@ -146,7 +146,7 @@ export class DecksPageComponent implements OnInit, OnDestroy {
   mode: 'Community' | 'Tournament' = 'Community';
   filteredDecks: IDeck[] | ITournamentDeck[] = [];
   decksToShow: IDeck[] | ITournamentDeck[] = [];
-  selectedDeck: IDeck | ITournamentDeck = emptyDeck;
+  selectedDeck: IDeck | ITournamentDeck = JSON.parse(JSON.stringify(emptyDeck));
   form = new UntypedFormGroup({
     searchFilter: new UntypedFormControl(''),
     placementFilter: new UntypedFormControl(''),

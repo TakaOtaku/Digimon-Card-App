@@ -14,7 +14,6 @@ import { selectAllCards } from '../../store/digimon.selectors';
 import { FormsModule } from '@angular/forms';
 import { DialogModule } from 'primeng/dialog';
 import { NgIf } from '@angular/common';
-import { emptyDeck } from '../../store/reducers/digimon.reducers';
 
 @Component({
   selector: 'digimon-test-page',

@@ -21,7 +21,7 @@ export function stringToDeck(deckList: string, allCards: ICard[]): IDeck | null 
 }
 
 function parseTTSDeck(deckList: string, allCards: ICard[]): IDeck {
-  const deck: IDeck = { ...emptyDeck };
+  const deck: IDeck = { ...JSON.parse(JSON.stringify(emptyDeck)) };
 
   let deckJson: string[] = [];
   try {
@@ -40,7 +40,7 @@ function parseTTSDeck(deckList: string, allCards: ICard[]): IDeck {
 }
 
 function parseDeck(textArray: string[], allCards: ICard[]): IDeck {
-  const deck: IDeck = { ...emptyDeck };
+  const deck: IDeck = { ...JSON.parse(JSON.stringify(emptyDeck)) };
 
   textArray.forEach((line) => {
     const cardOrNull = parseLine(line, allCards);

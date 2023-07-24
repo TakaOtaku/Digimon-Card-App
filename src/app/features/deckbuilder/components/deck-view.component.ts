@@ -1,11 +1,10 @@
-import { WebsiteActions, DeckActions } from './../../../store/digimon.actions';
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AccordionModule } from 'primeng/accordion';
 import { ConfirmationService, MessageService, SharedModule } from 'primeng/api';
 import { DragDropModule } from 'primeng/dragdrop';
-import { filter, first, Subject, takeUntil } from 'rxjs';
+import { Subject, filter, first, takeUntil } from 'rxjs';
 import { ICard, ICountCard, IDeck, IDeckCard, IDraggedCard, ISave, ITag } from '../../../../models';
 import { DRAG } from '../../../../models/enums/drag.enum';
 import { DeckColorMap } from '../../../../models/maps/color.map';
@@ -16,6 +15,7 @@ import { DigimonBackendService } from '../../../service/digimon-backend.service'
 import { selectCollection, selectDeckBuilderViewModel, selectDisplaySideDeck, selectDraggedCard, selectSave } from '../../../store/digimon.selectors';
 import { emptyDeck } from '../../../store/reducers/digimon.reducers';
 import { DeckCardComponent } from '../../shared/deck-card.component';
+import { DeckActions, WebsiteActions } from './../../../store/digimon.actions';
 import { DeckMetadataComponent } from './deck-metadata.component';
 import { DeckToolbarComponent } from './deck-toolbar.component';
 
@@ -117,7 +117,7 @@ export class DeckViewComponent implements OnInit, OnDestroy {
 
   draggedCard$ = this.store.select(selectDraggedCard);
 
-  deck: IDeck = { ...emptyDeck };
+  deck: IDeck = { ...JSON.parse(JSON.stringify(emptyDeck)) };
 
   allCards: ICard[] = [];
   collection: ICountCard[];

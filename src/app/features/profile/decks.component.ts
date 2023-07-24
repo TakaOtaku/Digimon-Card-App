@@ -45,7 +45,7 @@ export class DecksComponent implements OnInit, OnChanges {
 
   decksToShow: IDeck[] = [];
 
-  emptyDeck = emptyDeck;
+  emptyDeck = JSON.parse(JSON.stringify(emptyDeck));
 
   allCards: ICard[] = [];
 
@@ -58,7 +58,7 @@ export class DecksComponent implements OnInit, OnChanges {
   first = 0;
   page = 0;
 
-  deck: IDeck = emptyDeck;
+  deck: IDeck = JSON.parse(JSON.stringify(emptyDeck));
   deckDialog = false;
 
   displayTables$ = this.store.select(selectDeckDisplayTable);

@@ -61,7 +61,7 @@ import { DeckActions } from './../../../store/digimon.actions';
 })
 export class ChangeAccessorieDialogComponent implements OnInit, OnChanges, OnDestroy {
   @Input() show: boolean = false;
-  @Input() deck: IDeck = emptyDeck;
+  @Input() deck: IDeck = JSON.parse(JSON.stringify(emptyDeck));
 
   @Output() onClose = new EventEmitter<boolean>();
 

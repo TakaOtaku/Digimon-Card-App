@@ -44,7 +44,7 @@ export const emptyFilter = {
 };
 
 export const initialState: IDigimonState = {
-  deck: emptyDeck,
+  deck: JSON.parse(JSON.stringify(emptyDeck)),
   filter: emptyFilter,
   mobileCollectionView: false,
   addCardToDeck: '',
@@ -80,7 +80,10 @@ export const digimonReducer = createReducer(
   on(WebsiteActions.setversionfilter, (state, { versionFilter }) => ({ ...state, filter: { ...state.filter, versionFilter } })),
   on(WebsiteActions.setsetfilter, (state, { setFilter }) => ({ ...state, filter: { ...state.filter, setFilter } })),
   on(WebsiteActions.setsort, (state, { sort }) => ({ ...state, sort })),
-  on(WebsiteActions.setdeck, (state, { deck }) => ({ ...state, deck })),
+  on(WebsiteActions.setdeck, (state, { deck }) => {
+    debugger;
+    return { ...state, deck };
+  }),
   on(WebsiteActions.createnewdeck, (state, { uuid }) => {
     const deck = {
       id: uuid,
