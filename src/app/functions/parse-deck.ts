@@ -51,40 +51,57 @@ function parseDeck(textArray: string[], allCards: ICard[]): IDeck {
   return deck;
 }
 
+function isValidNumber(str: string): boolean {
+  return !isNaN(Number(str));
+}
+
+function isValidNumberPNumber(str: string): boolean {
+  const parts = str.split('_P');
+  if (parts.length === 2) {
+    const isValidNum1 = isValidNumber(parts[0]);
+    const isValidNum2 = isValidNumber(parts[1]);
+    return isValidNum1 && isValidNum2;
+  }
+  return false;
+}
+
 function parseLine(line: string, allCards: ICard[]): IDeckCard | null {
   let lineSplit: string[] = line.replace(/  +/g, ' ').split(' '); // Split the line by spaces and remove extra spaces
   const cardLine: boolean = /\d/.test(line); // Check if the line contains a number
 
-  if (cardLine) {
-    let matches = lineSplit.filter((string) => string.includes('-')); // Filter out the strings containing '-' -> Card ID
-    matches = matches.filter((string) => {
-      const split = string.split('-'); // Split the string by '-'
-      return +split[split.length - 1] >>> 0; // Check if the last part of the split is a valid positive number
-    });
-    matches = matches.map((string) => {
-      // Modify the matches
-      if (string.includes('\r')) {
-        // If the string contains '\r'
-        return string.replace('\r', ''); // Remove the '\r'
-      }
-      return string;
-    });
-
-    if (matches.length === 0) {
-      // If there are no valid matches
-      return null;
+  if (!cardLine) {
+    return null;
+  }
+  let matches = lineSplit.filter((string) => string.includes('-')); // Filter out the strings containing '-' -> Card ID
+  matches = matches.filter((str) => {
+    const parts = str.split('-');
+    if (parts.length === 2) {
+      return isValidNumber(parts[1]) || isValidNumberPNumber(parts[1]);
     }
+    return false;
+  });
 
-    let cardId = findCardId(matches[matches.length - 1]); // Get the ID of the last match
-    if (!findCardById(cardId, allCards)) {
-      // If the card ID is not found in the allCards array
-      return null;
+  matches = matches.map((string) => {
+    // Modify the matches
+    if (string.includes('\r')) {
+      // If the string contains '\r'
+      return string.replace('\r', ''); // Remove the '\r'
     }
+    return string;
+  });
 
-    return { count: findNumber(lineSplit), id: cardId } as IDeckCard; // Return an object with the count and card ID as IDeckCard
+  if (matches.length === 0) {
+    // If there are no valid matches
+    return null;
   }
 
-  return null;
+  let cardId = findCardId(matches[matches.length - 1]); // Get the ID of the last match
+  if (!findCardById(cardId, allCards)) {
+    // If the card ID is not found in the allCards array
+    return null;
+  }
+
+  return { count: findNumber(lineSplit), id: cardId } as IDeckCard; // Return an object with the count and card ID as IDeckCard
 }
 
 function findCardId(id: string): string {

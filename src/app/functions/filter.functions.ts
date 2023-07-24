@@ -293,8 +293,6 @@ function applyRangeFilter(cards: ICard[], filter: number[], key: string): ICard[
         ]),
       ];
   }
-
-  return returnArray;
 }
 
 function applySortOrder(cards: ICard[], sort: ISort, collection: ICountCard[]): ICard[] {
@@ -302,7 +300,17 @@ function applySortOrder(cards: ICard[], sort: ISort, collection: ICountCard[]): 
   if (sort.sortBy.element === 'playCost' || sort.sortBy.element === 'dp') {
     return sort.ascOrder ? returnArray.sort(dynamicSortNumber(sort.sortBy.element)) : returnArray.sort(dynamicSortNumber(`-${sort.sortBy.element}`));
   } else if (sort.sortBy.element === 'count') {
-    return returnArray.sort((a, b) => (collection.find((card) => card.id === a.id)?.count ?? 0) - (collection.find((card) => card.id === b.id)?.count ?? 0));
+    return sort.ascOrder
+      ? returnArray.sort((a, b) => {
+          const countA = collection.find((card) => card.id === a.id)?.count ?? 0;
+          const countB = collection.find((card) => card.id === b.id)?.count ?? 0;
+          return countA - countB;
+        })
+      : returnArray.sort((a, b) => {
+          const countA = collection.find((card) => card.id === a.id)?.count ?? 0;
+          const countB = collection.find((card) => card.id === b.id)?.count ?? 0;
+          return countB - countA;
+        });
   }
   return sort.ascOrder ? returnArray.sort(dynamicSort(sort.sortBy.element)) : returnArray.sort(dynamicSort(`-${sort.sortBy.element}`));
 }

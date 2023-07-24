@@ -1,3 +1,4 @@
+import { HomeIntroComponent } from './components/home-intro.component';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { EventCalendarComponent } from './components/event-calendar.component';
@@ -10,6 +11,10 @@ import { TierlistComponent } from './components/tierlist.component';
   template: `
     <div class="flex h-[calc(100vh-50px)] w-full flex-row overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d] px-1">
       <div class="mx-auto flex w-full max-w-6xl flex-col">
+        <digimon-home-intro></digimon-home-intro>
+
+        <div class="my-4 w-full border-b border-slate-100"></div>
+
         <digimon-site-links></digimon-site-links>
 
         <div class="my-4 w-full border-b border-slate-100"></div>
@@ -18,11 +23,11 @@ import { TierlistComponent } from './components/tierlist.component';
 
         <div class="my-4 w-full border-b border-slate-100"></div>
 
-        <digimon-faq></digimon-faq>
+        <digimon-tierlist></digimon-tierlist>
 
         <div class="my-4 w-full border-b border-slate-100"></div>
 
-        <digimon-tierlist></digimon-tierlist>
+        <digimon-faq></digimon-faq>
 
         <div class="h-10 min-h-[2rem]"></div>
       </div>
@@ -30,7 +35,7 @@ import { TierlistComponent } from './components/tierlist.component';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [SiteLinksComponent, EventCalendarComponent, FAQComponent, TierlistComponent],
+  imports: [HomeIntroComponent, SiteLinksComponent, EventCalendarComponent, FAQComponent, TierlistComponent],
 })
 export class HomePageComponent {
   constructor(private meta: Meta, private title: Title) {
