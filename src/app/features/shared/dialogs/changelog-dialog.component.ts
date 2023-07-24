@@ -18,29 +18,11 @@ import DataSnapshot = firebase.database.DataSnapshot;
 @Component({
   selector: 'digimon-changelog-dialog',
   template: `
-    <ckeditor
-      *ngIf="authService.userData?.uid !== 'S3rWXPtCYRN8vSrxY3qE6aeewy43'"
-      [editor]="Editor"
-      class="text-[#e2e4e6]"
-      [disabled]="true"
-      [(ngModel)]="content"></ckeditor>
+    <ckeditor *ngIf="authService.userData?.uid !== 'S3rWXPtCYRN8vSrxY3qE6aeewy43'" [editor]="Editor" class="text-[#e2e4e6]" [disabled]="true" [(ngModel)]="content"></ckeditor>
 
-    <ckeditor
-      *ngIf="authService.userData?.uid === 'S3rWXPtCYRN8vSrxY3qE6aeewy43'"
-      [editor]="Editor"
-      class="text-[#e2e4e6]"
-      [(ngModel)]="content"
-      (ready)="onReady($event)"></ckeditor>
+    <ckeditor *ngIf="authService.userData?.uid === 'S3rWXPtCYRN8vSrxY3qE6aeewy43'" [editor]="Editor" class="text-[#e2e4e6]" [(ngModel)]="content" (ready)="onReady($event)"></ckeditor>
 
-    <button
-      *ngIf="authService.userData?.uid === 'S3rWXPtCYRN8vSrxY3qE6aeewy43'"
-      class="p-button mt-3"
-      icon="pi pi-save"
-      pButton
-      pRipple
-      type="button"
-      label="Save"
-      (click)="save()"></button>
+    <button *ngIf="authService.userData?.uid === 'S3rWXPtCYRN8vSrxY3qE6aeewy43'" class="p-button mt-3" icon="pi pi-save" pButton pRipple type="button" label="Save" (click)="save()"></button>
   `,
   standalone: true,
   imports: [NgIf, CKEditorModule, FormsModule, ButtonModule, RippleModule],
@@ -52,11 +34,7 @@ export class ChangelogDialogComponent implements OnInit {
 
   content: any;
 
-  constructor(
-    public authService: AuthService,
-    private dbService: DatabaseService,
-    private messageService: MessageService
-  ) {}
+  constructor(public authService: AuthService, private dbService: DatabaseService, private messageService: MessageService) {}
 
   ngOnInit() {
     this.loadChangelog.pipe(first()).subscribe(() => {
@@ -85,9 +63,7 @@ export class ChangelogDialogComponent implements OnInit {
   }
 
   public onReady(editor: any) {
-    editor.ui
-      .getEditableElement()
-      .parentElement.insertBefore(editor.ui.view.toolbar.element, editor.ui.getEditableElement());
+    editor.ui.getEditableElement().parentElement.insertBefore(editor.ui.view.toolbar.element, editor.ui.getEditableElement());
 
     editor.plugins.get('FileRepository').createUploadAdapter = (loader: any) => {
       return new Base64Adapter(loader);

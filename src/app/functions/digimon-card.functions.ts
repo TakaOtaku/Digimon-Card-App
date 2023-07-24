@@ -1,17 +1,7 @@
 import { englishCards } from '../../assets/cardlists/eng/english';
 import preReleaseJSON from '../../assets/cardlists/eng/PreRelease.json';
 import { japaneseCards } from '../../assets/cardlists/jap/japanese';
-import {
-  CARDSET,
-  ICard,
-  ICountCard,
-  IDeck,
-  IDeckCard,
-  ISelectItem,
-  ITag,
-  ITournamentDeck,
-  tagsList,
-} from '../../models';
+import { CARDSET, ICard, ICountCard, IDeck, IDeckCard, ISelectItem, ITag, ITournamentDeck, tagsList } from '../../models';
 import { ColorOrderMap, DeckColorMap } from '../../models/maps/color.map';
 
 export function setTags(deck: IDeck, allCards: ICard[]) {
@@ -131,7 +121,7 @@ export function setColors(deck: IDeck, allCards: ICard[]) {
     { name: 'White', count: 0 },
   ];
   if (!cards) {
-    return ['White', { name: 'White', img: 'assets/decks/white.svg' }];
+    return ['White', { name: 'White', img: 'assets/images/decks/white.svg' }];
   }
   cards.forEach((card) => {
     colorArray.forEach((color, index) => {

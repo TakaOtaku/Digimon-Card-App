@@ -20,23 +20,11 @@ import { HeaderComponent } from './components/header.component';
   template: `
     <div *ngIf="blog$ | async as blog" class="w-full bg-gradient-to-b from-[#17212f] to-[#08528d] pt-5">
       <div class="mx-auto max-w-7xl">
-        <digimon-header
-          [edit]="edit"
-          [form]="form"
-          (editChanged)="edit = $event"
-          [authorid]="blog.authorid"></digimon-header>
+        <digimon-header [edit]="edit" [form]="form" (editChanged)="edit = $event" [authorid]="blog.authorid"></digimon-header>
 
         <digimon-ckeditor [edit]="edit" [content]="form"></digimon-ckeditor>
 
-        <button
-          *ngIf="edit"
-          class="p-button mt-3"
-          icon="pi pi-save"
-          pButton
-          pRipple
-          type="button"
-          label="Save"
-          (click)="save(blog)"></button>
+        <button *ngIf="edit" class="p-button mt-3" icon="pi pi-save" pButton pRipple type="button" label="Save" (click)="save(blog)"></button>
       </div>
     </div>
   `,

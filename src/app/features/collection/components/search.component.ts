@@ -12,13 +12,7 @@ import { NgStyle, AsyncPipe } from '@angular/common';
   template: `
     <span [ngStyle]="{ display: 'inline-flex' }" class=" p-input-icon-left my-2 w-full px-2">
       <i class="pi pi-search ml-1 h-3"></i>
-      <input
-        (ngModelChange)="search$.next($event)"
-        [ngModel]="filter$ | async"
-        class="h-6 w-full text-xs"
-        pInputText
-        placeholder="Search"
-        type="text" />
+      <input (ngModelChange)="search$.next($event)" [ngModel]="filter$ | async" class="h-6 w-full text-xs" pInputText placeholder="Search" type="text" />
     </span>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -114,16 +114,7 @@ export const Colors: string[] = ['Red', 'Blue', 'Yellow', 'Green', 'Black', 'Pur
 
 export const ColorsWithoutMulti: string[] = ['Red', 'Blue', 'Yellow', 'Green', 'Black', 'Purple', 'White'];
 
-export const Forms: string[] = [
-  'In-Training',
-  'Rookie',
-  'Champion',
-  'Ultimate',
-  'Mega',
-  'Hybrid',
-  'Armor Form',
-  'D-Reaper',
-];
+export const Forms: string[] = ['In-Training', 'Rookie', 'Champion', 'Ultimate', 'Mega', 'Hybrid', 'Armor Form', 'D-Reaper'];
 
 export const Attributes: string[] = ['Data', 'Vaccine', 'Virus', 'Free', 'Variable', 'Unknown'];
 

@@ -93,16 +93,7 @@ export class CollectionCircleComponent implements OnInit, OnChanges, OnDestroy {
                 setCards.length - setCardsCollected.length,
               ],
               backgroundColor: ['#ef1919', '#19a0e3', '#ffd619', '#19b383', '#191919', '#8d6fdb', '#ffffff', 'grey'],
-              hoverBackgroundColor: [
-                '#ef1919',
-                '#19a0e3',
-                '#ffd619',
-                '#19b383',
-                '#191919',
-                '#8d6fdb',
-                '#ffffff',
-                'grey',
-              ],
+              hoverBackgroundColor: ['#ef1919', '#19a0e3', '#ffd619', '#19b383', '#191919', '#8d6fdb', '#ffffff', 'grey'],
             },
           ],
         };

@@ -161,9 +161,7 @@ export class PriceCheckDialogComponent implements OnInit, OnDestroy {
   updatePrice() {
     const all: ProductCMWithCount[] = this.deckBuilderViewModel.deck.cards
       .map((card) => {
-        const foundProduct: ProductCM =
-          this.deckBuilderViewModel.priceGuideCM.find((product) => card.id === product.cardId) ??
-          this.emptyProduct(card);
+        const foundProduct: ProductCM = this.deckBuilderViewModel.priceGuideCM.find((product) => card.id === product.cardId) ?? this.emptyProduct(card);
 
         return { ...foundProduct, count: card.count } as ProductCMWithCount;
       })
@@ -226,9 +224,7 @@ export class PriceCheckDialogComponent implements OnInit, OnDestroy {
   getMissingCards = (): ProductCMWithCount[] => {
     return this.products
       .map((product) => {
-        const foundCard = this.deckBuilderViewModel.collection.find(
-          (collectionCard) => collectionCard.id === product.cardId
-        );
+        const foundCard = this.deckBuilderViewModel.collection.find((collectionCard) => collectionCard.id === product.cardId);
         if (foundCard) {
           return { ...product, count: product.count - foundCard.count };
         } else {

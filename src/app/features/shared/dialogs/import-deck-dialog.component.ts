@@ -17,22 +17,11 @@ import { FormsModule } from '@angular/forms';
   template: `
     <div>
       <p>Copy your deck in the text area and press import or press the "Import Text-File"-Button to import a file.</p>
-      <textarea
-        pInputTextarea
-        [placeholder]="importPlaceholder"
-        id="text-import"
-        class="border-black-500 min-h-[200px] min-w-full border-2"
-        [(ngModel)]="deckText"></textarea>
+      <textarea pInputTextarea [placeholder]="importPlaceholder" id="text-import" class="border-black-500 min-h-[200px] min-w-full border-2" [(ngModel)]="deckText"></textarea>
     </div>
 
     <div *ngIf="digimonCards$ | async as allCards" class="mt-5 flex w-full">
-      <input
-        style="display: none"
-        type="file"
-        accept=".txt"
-        id="file-input"
-        (change)="handleFileInput($event.target, allCards)"
-        #fileUpload />
+      <input style="display: none" type="file" accept=".txt" id="file-input" (change)="handleFileInput($event.target, allCards)" #fileUpload />
       <button pButton (click)="fileUpload.click()">Import Text-File</button>
       <button pButton (click)="importDeck(allCards)" style="margin-left: 5px">Import</button>
     </div>

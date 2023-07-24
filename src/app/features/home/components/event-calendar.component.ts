@@ -44,10 +44,7 @@ export interface IEvent {
       </div>
 
       <div class="lg:hidden" *ngIf="eventsInMonth(events) as eventsInMonth; else noEvents">
-        <div
-          *ngFor="let event of eventsInMonth"
-          [ngStyle]="{ background: getThemeColor(event) }"
-          class="my-1 flex w-full flex-row border px-1 px-3">
+        <div *ngFor="let event of eventsInMonth" [ngStyle]="{ background: getThemeColor(event) }" class="my-1 flex w-full flex-row border px-1 px-3">
           <div class="text-shadow w-full truncate text-sm font-black text-[#e2e4e6]">
             {{ event.title }}
           </div>
@@ -61,9 +58,7 @@ export interface IEvent {
       </ng-template>
 
       <div class="no-gap hidden grid-cols-3 lg:grid lg:grid-cols-7">
-        <div
-          *ngFor="let day of DAYS"
-          class="text-shadow my-2 hidden text-center font-black text-[#e2e4e6] lg:block lg:text-xl">
+        <div *ngFor="let day of DAYS" class="text-shadow my-2 hidden text-center font-black text-[#e2e4e6] lg:block lg:text-xl">
           {{ day }}
         </div>
 
@@ -77,15 +72,8 @@ export interface IEvent {
             class="text-shadow ml-2 font-black text-[#e2e4e6] lg:text-xl"
             >{{ date }}</span
           >
-          <div
-            *ngFor="let event of getEvents(date, events)"
-            [ngStyle]="{ background: getThemeColor(event) }"
-            (click)="openEventModal(event)"
-            class="m-1 rounded-full border border-black text-center">
-            <div
-              [pTooltip]="event.title"
-              tooltipPosition="top"
-              class="text-shadow w-full truncate px-2 text-xs font-black text-[#e2e4e6]">
+          <div *ngFor="let event of getEvents(date, events)" [ngStyle]="{ background: getThemeColor(event) }" (click)="openEventModal(event)" class="m-1 rounded-full border border-black text-center">
+            <div [pTooltip]="event.title" tooltipPosition="top" class="text-shadow w-full truncate px-2 text-xs font-black text-[#e2e4e6]">
               {{ event.title }}
             </div>
           </div>
@@ -93,14 +81,7 @@ export interface IEvent {
       </div>
     </div>
 
-    <p-dialog
-      [(visible)]="eventModal"
-      [baseZIndex]="10000"
-      [modal]="true"
-      [dismissableMask]="true"
-      [resizable]="false"
-      [header]="edit ? 'Edit Event' : 'Create Event'"
-      styleClass="w-[400px]">
+    <p-dialog [(visible)]="eventModal" [baseZIndex]="10000" [modal]="true" [dismissableMask]="true" [resizable]="false" [header]="edit ? 'Edit Event' : 'Create Event'" styleClass="w-[400px]">
       <div class="mx-auto flex flex-col">
         <div class="w-full">
           <span class="p-float-label">
@@ -110,13 +91,7 @@ export interface IEvent {
         </div>
 
         <div>
-          <p-calendar
-            [(ngModel)]="date"
-            [showIcon]="true"
-            inputId="icon"
-            styleClass="w-full"
-            dateFormat="dd.MM.yy"
-            appendTo="body"></p-calendar>
+          <p-calendar [(ngModel)]="date" [showIcon]="true" inputId="icon" styleClass="w-full" dateFormat="dd.MM.yy" appendTo="body"></p-calendar>
         </div>
 
         <div class="w-full">
@@ -125,61 +100,18 @@ export interface IEvent {
         </div>
 
         <div class="flex flex-row">
-          <button
-            *ngIf="edit"
-            class="p-button mr-4 mt-3"
-            icon="pi pi-trash"
-            pButton
-            pRipple
-            type="button"
-            label="Delete"
-            (click)="removeEvent()"></button>
-          <button
-            class="p-button mt-3"
-            icon="pi pi-save"
-            pButton
-            pRipple
-            type="button"
-            [label]="edit ? 'Save' : 'Create'"
-            (click)="saveEvent()"></button>
+          <button *ngIf="edit" class="p-button mr-4 mt-3" icon="pi pi-trash" pButton pRipple type="button" label="Delete" (click)="removeEvent()"></button>
+          <button class="p-button mt-3" icon="pi pi-save" pButton pRipple type="button" [label]="edit ? 'Save' : 'Create'" (click)="saveEvent()"></button>
         </div>
       </div>
     </p-dialog>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    NgIf,
-    NgFor,
-    NgStyle,
-    NgClass,
-    TooltipModule,
-    DialogModule,
-    FormsModule,
-    InputTextModule,
-    StyleClassModule,
-    CalendarModule,
-    RadioButtonModule,
-    ButtonModule,
-    RippleModule,
-    AsyncPipe,
-  ],
+  imports: [NgIf, NgFor, NgStyle, NgClass, TooltipModule, DialogModule, FormsModule, InputTextModule, StyleClassModule, CalendarModule, RadioButtonModule, ButtonModule, RippleModule, AsyncPipe],
 })
 export class EventCalendarComponent implements OnInit, OnDestroy {
-  MONTHS = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ];
+  MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
   currentDate: Date;
@@ -200,11 +132,7 @@ export class EventCalendarComponent implements OnInit, OnDestroy {
   user: IUser | null;
   private onDestroy$ = new Subject();
 
-  constructor(
-    private authService: AuthService,
-    private datepipe: DatePipe,
-    private digimonBackend: DigimonBackendService
-  ) {
+  constructor(private authService: AuthService, private datepipe: DatePipe, private digimonBackend: DigimonBackendService) {
     this.currentDate = new Date();
     this.year = this.currentDate.getFullYear();
     this.month = this.currentDate.getMonth();
@@ -213,9 +141,7 @@ export class EventCalendarComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.user = this.authService.userData;
-    this.authService.authChange
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe(() => (this.user = this.authService.userData));
+    this.authService.authChange.pipe(takeUntil(this.onDestroy$)).subscribe(() => (this.user = this.authService.userData));
   }
 
   ngOnDestroy() {

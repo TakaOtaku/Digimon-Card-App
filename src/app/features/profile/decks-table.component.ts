@@ -104,10 +104,7 @@ export class DecksTableComponent {
 
     // If there is a ImageCardId set it
     if (deck.imageCardId) {
-      return (
-        allCards.find((card) => card.id === deck.imageCardId)?.cardImage ??
-        '../../../assets/images/cards/eng/BT1-001.webp'
-      );
+      return allCards.find((card) => card.id === deck.imageCardId)?.cardImage ?? '../../../assets/images/cards/eng/BT1-001.webp';
     } else {
       const deckImage = setDeckImage(deck);
       this.store.dispatch(saveDeck({ deck: { ...deck, imageCardId: deckImage.id } }));

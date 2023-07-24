@@ -93,12 +93,7 @@ export class DigimonEffects {
             .pipe(first())
             .pipe(
               tap(({ showPreRelease, showAA, showStamped, showReprint, filter }) => {
-                if (
-                  showPreRelease === undefined ||
-                  showAA === undefined ||
-                  showStamped === undefined ||
-                  showReprint === undefined
-                ) {
+                if (showPreRelease === undefined || showAA === undefined || showStamped === undefined || showReprint === undefined) {
                   return;
                 }
 
@@ -187,10 +182,5 @@ export class DigimonEffects {
   //  { dispatch: false }
   //);
 
-  constructor(
-    private store: Store,
-    private authService: AuthService,
-    private digimonBackendService: DigimonBackendService,
-    private actions$: Actions
-  ) {}
+  constructor(private store: Store, private authService: AuthService, private digimonBackendService: DigimonBackendService, private actions$: Actions) {}
 }

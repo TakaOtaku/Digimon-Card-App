@@ -52,9 +52,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
             {{ deck.description }}
           </div>
 
-          <div
-            *ngIf="mode !== 'Tournament'; else tournament"
-            class="text-shadow flex w-full flex-row text-xs text-[#e2e4e6]">
+          <div *ngIf="mode !== 'Tournament'; else tournament" class="text-shadow flex w-full flex-row text-xs text-[#e2e4e6]">
             <div *ngIf="mode === 'Community'" class="ml-1 font-bold">
               {{ deck.user }}
             </div>
@@ -108,10 +106,7 @@ export class DeckContainerComponent implements OnInit {
   getCardImage(): string {
     // If there is a ImageCardId set it
     if (this.deck.imageCardId) {
-      return (
-        this.allCards.find((card) => card.id === this.deck.imageCardId)?.cardImage ??
-        '../../../assets/images/cards/eng/BT1-001.webp'
-      );
+      return this.allCards.find((card) => card.id === this.deck.imageCardId)?.cardImage ?? '../../../assets/images/cards/eng/BT1-001.webp';
     }
 
     //If there are no cards in the deck set it to the Yokomon
@@ -120,10 +115,7 @@ export class DeckContainerComponent implements OnInit {
     }
 
     //If there are cards in the deck set it to the first card
-    return (
-      this.allCards.find((card) => card.id === this.deck.cards[0].id)?.cardImage ??
-      '../../../assets/images/cards/eng/BT1-001.webp'
-    );
+    return this.allCards.find((card) => card.id === this.deck.cards[0].id)?.cardImage ?? '../../../assets/images/cards/eng/BT1-001.webp';
   }
 
   changeLike(event: any) {

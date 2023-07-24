@@ -16,20 +16,12 @@ import { UserStatsComponent } from './user-stats.component';
 @Component({
   selector: 'digimon-profile-page',
   template: `
-    <div
-      *ngIf="save$ | async as save"
-      class="flex h-[calc(100vh-50px)] w-full flex-col overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d]">
-      <digimon-user-stats
-        *ngIf="showUserStats$ | async"
-        class="mx-auto my-2 h-[150px] w-full max-w-6xl"
-        [save]="save"></digimon-user-stats>
+    <div *ngIf="save$ | async as save" class="flex h-[calc(100vh-50px)] w-full flex-col overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d]">
+      <digimon-user-stats *ngIf="showUserStats$ | async" class="mx-auto my-2 h-[150px] w-full max-w-6xl" [save]="save"></digimon-user-stats>
 
       <digimon-deck-filter [searchFilter]="searchFilter" [tagFilter]="tagFilter"></digimon-deck-filter>
 
-      <digimon-decks
-        class="mx-auto mt-2 w-full max-w-6xl"
-        [editable]="editable"
-        [decks]="filteredDecks"></digimon-decks>
+      <digimon-decks class="mx-auto mt-2 w-full max-w-6xl" [editable]="editable" [decks]="filteredDecks"></digimon-decks>
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -138,8 +130,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
     this.meta.addTags([
       {
         name: 'description',
-        content:
-          'See your Collection and Decks in one view. Share them with your friends, for easy insights in your decks and trading.',
+        content: 'See your Collection and Decks in one view. Share them with your friends, for easy insights in your decks and trading.',
       },
       { name: 'author', content: 'TakaOtaku' },
       {

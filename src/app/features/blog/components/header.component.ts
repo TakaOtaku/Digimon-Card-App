@@ -14,13 +14,7 @@ import { NgIf, NgClass, DatePipe } from '@angular/common';
   template: `
     <div [formGroup]="form">
       <div *ngIf="!edit; else editView" class="relative flex flex-row">
-        <button
-          class="p-button-outlined p-button-rounded mr-2"
-          icon="pi pi-arrow-left"
-          pButton
-          pRipple
-          type="button"
-          (click)="router.navigateByUrl('/community')"></button>
+        <button class="p-button-outlined p-button-rounded mr-2" icon="pi pi-arrow-left" pButton pRipple type="button" (click)="router.navigateByUrl('/community')"></button>
         <h1 class="mb-2 w-full text-center text-3xl font-extrabold text-[#e2e4e6]">
           {{ form.get('title')!.value }}
         </h1>
@@ -34,24 +28,11 @@ import { NgIf, NgClass, DatePipe } from '@angular/common';
           (click)="editChanged.emit(true)"></button>
       </div>
       <ng-template #editView class="relative">
-        <button
-          class="p-button-outlined p-button-rounded mr-2"
-          icon="pi pi-arrow-left"
-          pButton
-          pRipple
-          type="button"
-          (click)="router.navigateByUrl('/community')"></button>
+        <button class="p-button-outlined p-button-rounded mr-2" icon="pi pi-arrow-left" pButton pRipple type="button" (click)="router.navigateByUrl('/community')"></button>
         <span class="w-full">
           <input formControlName="title" placeholder="Title:" class="mb-3 h-8 w-full text-sm" pInputText type="text" />
         </span>
-        <button
-          *ngIf="showEdit()"
-          class="p-button-outlined p-button-rounded ml-2"
-          icon="pi pi-pencil"
-          pButton
-          pRipple
-          type="button"
-          (click)="editChanged.emit(false)"></button>
+        <button *ngIf="showEdit()" class="p-button-outlined p-button-rounded ml-2" icon="pi pi-pencil" pButton pRipple type="button" (click)="editChanged.emit(false)"></button>
       </ng-template>
 
       <div *ngIf="edit" class="mb-3">
@@ -76,9 +57,7 @@ import { NgIf, NgClass, DatePipe } from '@angular/common';
       </div>
 
       <div class="flex flex-row">
-        <span class="mb-2 w-full text-center font-bold text-[#e2e4e6]"
-          >{{ form.get('author')!.value }} / {{ form.get('date')!.value | date : 'dd.MM.yyyy' }}</span
-        >
+        <span class="mb-2 w-full text-center font-bold text-[#e2e4e6]">{{ form.get('author')!.value }} / {{ form.get('date')!.value | date : 'dd.MM.yyyy' }}</span>
       </div>
     </div>
   `,
@@ -100,9 +79,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.user = this.authService.userData;
-    this.authService.authChange
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe(() => (this.user = this.authService.userData));
+    this.authService.authChange.pipe(takeUntil(this.onDestroy$)).subscribe(() => (this.user = this.authService.userData));
   }
 
   ngOnDestroy() {

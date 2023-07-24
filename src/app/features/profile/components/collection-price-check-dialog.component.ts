@@ -19,9 +19,7 @@ import { NgIf, NgFor, AsyncPipe, CurrencyPipe } from '@angular/common';
   template: `
     <ng-container *ngIf="allCards$ | async as allCards">
       <p-blockUI [blocked]="spinner"></p-blockUI>
-      <p-progressSpinner
-        *ngIf="spinner"
-        class="absolute left-1/2 top-1/2 z-[5000] -translate-x-1/2 -translate-y-1/2 transform"></p-progressSpinner>
+      <p-progressSpinner *ngIf="spinner" class="absolute left-1/2 top-1/2 z-[5000] -translate-x-1/2 -translate-y-1/2 transform"></p-progressSpinner>
 
       <div *ngIf="prizeGuide$ | async" class="mb-2 flex flex-col">
         <span>All Price-Information is from <b>CardMarket</b>.</span>
@@ -59,11 +57,7 @@ import { NgIf, NgFor, AsyncPipe, CurrencyPipe } from '@angular/common';
             </div>
           </ng-template>
         </p-multiSelect>
-        <button
-          (click)="updatePrice()"
-          class="surface-ground hover:primary-background text-shadow h-8 border border-black px-1 font-bold text-[#e2e4e6]">
-          Check Price
-        </button>
+        <button (click)="updatePrice()" class="surface-ground hover:primary-background text-shadow h-8 border border-black px-1 font-bold text-[#e2e4e6]">Check Price</button>
       </div>
 
       <div *ngIf="notFound.length > 0" class="flex flex-row flex-wrap">
@@ -92,10 +86,7 @@ import { NgIf, NgFor, AsyncPipe, CurrencyPipe } from '@angular/common';
         <ng-template pTemplate="body" let-product>
           <tr>
             <th>
-              <digimon-card-image
-                [card]="getCard(product.cardId, allCards)"
-                [ribbons]="false"
-                [height]="'1.25rem'"></digimon-card-image>
+              <digimon-card-image [card]="getCard(product.cardId, allCards)" [ribbons]="false" [height]="'1.25rem'"></digimon-card-image>
             </th>
             <th>{{ product.count }}</th>
             <td>{{ product.cardId }}</td>
@@ -154,19 +145,7 @@ import { NgIf, NgFor, AsyncPipe, CurrencyPipe } from '@angular/common';
     `,
   ],
   standalone: true,
-  imports: [
-    NgIf,
-    BlockUIModule,
-    ProgressSpinnerModule,
-    MultiSelectModule,
-    FormsModule,
-    SharedModule,
-    NgFor,
-    CardImageComponent,
-    TableModule,
-    AsyncPipe,
-    CurrencyPipe,
-  ],
+  imports: [NgIf, BlockUIModule, ProgressSpinnerModule, MultiSelectModule, FormsModule, SharedModule, NgFor, CardImageComponent, TableModule, AsyncPipe, CurrencyPipe],
 })
 export class CollectionPriceCheckDialogComponent implements OnDestroy {
   @Input() save: ISave;
@@ -208,8 +187,7 @@ export class CollectionPriceCheckDialogComponent implements OnDestroy {
     const filteredCollection = this.filterCollection();
     const all: ProductCMWithCount[] = filteredCollection
       .map((card) => {
-        const foundProduct: ProductCM =
-          this.prizeGuide.find((product) => card.id === product.cardId) ?? this.emptyProduct(card);
+        const foundProduct: ProductCM = this.prizeGuide.find((product) => card.id === product.cardId) ?? this.emptyProduct(card);
 
         return { ...foundProduct, count: card.count } as ProductCMWithCount;
       })

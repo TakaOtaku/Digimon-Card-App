@@ -35,13 +35,8 @@ interface IDropDownItem {
           <textarea id="deckList-input" formControlName="deckList" class="h-full w-full" pInputTextarea></textarea>
           <label for="deckList-input">Deck-List*</label>
         </span>
-        <div
-          class="grid h-full w-full grid-cols-4 overflow-y-scroll border-2 border-slate-200 md:grid-cols-6 lg:grid-cols-8">
-          <digimon-deck-card
-            *ngFor="let card of mainDeck"
-            [edit]="false"
-            [card]="card"
-            [cards]="allCards"></digimon-deck-card>
+        <div class="grid h-full w-full grid-cols-4 overflow-y-scroll border-2 border-slate-200 md:grid-cols-6 lg:grid-cols-8">
+          <digimon-deck-card *ngFor="let card of mainDeck" [edit]="false" [card]="card" [cards]="allCards"></digimon-deck-card>
         </div>
       </div>
 
@@ -50,13 +45,7 @@ interface IDropDownItem {
         <label>Card Image:</label>
         <input id="title-input" type="text" class="col-span-2 w-full" pInputText formControlName="title" />
 
-        <p-dropdown
-          styleClass="ml-1 truncate w-full"
-          [options]="cardImageOptions"
-          formControlName="cardImageId"
-          optionLabel="name"
-          appendTo="body">
-        </p-dropdown>
+        <p-dropdown styleClass="ml-1 truncate w-full" [options]="cardImageOptions" formControlName="cardImageId" optionLabel="name" appendTo="body"> </p-dropdown>
       </div>
 
       <label>Description:</label>
@@ -65,12 +54,7 @@ interface IDropDownItem {
       <div class="my-3 grid grid-cols-2 lg:grid-cols-4">
         <div class="flex flex-col">
           <label>Format:</label>
-          <p-dropdown
-            styleClass="truncate w-full mr-1"
-            [options]="formatOptions"
-            formControlName="format"
-            appendTo="body">
-          </p-dropdown>
+          <p-dropdown styleClass="truncate w-full mr-1" [options]="formatOptions" formControlName="format" appendTo="body"> </p-dropdown>
         </div>
 
         <div class="flex flex-col">
@@ -85,13 +69,7 @@ interface IDropDownItem {
 
         <div class="flex flex-col">
           <label>Tournament Size:</label>
-          <p-dropdown
-            styleClass="truncate w-full mr-1"
-            [options]="sizeOptions"
-            formControlName="size"
-            appendTo="body"
-            optionLabel="name">
-          </p-dropdown>
+          <p-dropdown styleClass="truncate w-full mr-1" [options]="sizeOptions" formControlName="size" appendTo="body" optionLabel="name"> </p-dropdown>
         </div>
       </div>
 
@@ -101,37 +79,16 @@ interface IDropDownItem {
           <label for="host-input">Host*</label>
         </span>
 
-        <p-dropdown
-          styleClass="truncate w-full mr-1"
-          [options]="countryOptions"
-          formControlName="country"
-          optionLabel="name"
-          appendTo="body">
-        </p-dropdown>
+        <p-dropdown styleClass="truncate w-full mr-1" [options]="countryOptions" formControlName="country" optionLabel="name" appendTo="body"> </p-dropdown>
 
         <p-calendar class="w-full" styleClass="w-full" formControlName="date" dateFormat="dd.MM.yy"></p-calendar>
       </div>
 
-      <button
-        pButton
-        class="p-button-outlined"
-        label="Submit the Deck"
-        [disabled]="!form.valid"
-        (click)="submit()"></button>
+      <button pButton class="p-button-outlined" label="Submit the Deck" [disabled]="!form.valid" (click)="submit()"></button>
     </div>
   `,
   standalone: true,
-  imports: [
-    FormsModule,
-    ReactiveFormsModule,
-    InputTextareaModule,
-    NgFor,
-    DeckCardComponent,
-    InputTextModule,
-    DropdownModule,
-    CalendarModule,
-    ButtonModule,
-  ],
+  imports: [FormsModule, ReactiveFormsModule, InputTextareaModule, NgFor, DeckCardComponent, InputTextModule, DropdownModule, CalendarModule, ButtonModule],
   providers: [MessageService],
 })
 export class DeckSubmissionComponent implements OnInit, OnChanges, OnDestroy {
@@ -225,37 +182,19 @@ export class DeckSubmissionComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   private levelSort() {
-    const eggs = this.mainDeck
-      .filter((card) => card.cardType === 'Digi-Egg')
-      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
+    const eggs = this.mainDeck.filter((card) => card.cardType === 'Digi-Egg').sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
-    const lv0 = this.mainDeck
-      .filter((card) => card.cardLv === '' && card.cardType === 'Digimon')
-      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
+    const lv0 = this.mainDeck.filter((card) => card.cardLv === '' && card.cardType === 'Digimon').sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
-    const lv3 = this.mainDeck
-      .filter((card) => card.cardLv === 'Lv.3')
-      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
-    const lv4 = this.mainDeck
-      .filter((card) => card.cardLv === 'Lv.4')
-      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
-    const lv5 = this.mainDeck
-      .filter((card) => card.cardLv === 'Lv.5')
-      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
-    const lv6 = this.mainDeck
-      .filter((card) => card.cardLv === 'Lv.6')
-      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
-    const lv7 = this.mainDeck
-      .filter((card) => card.cardLv === 'Lv.7')
-      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
+    const lv3 = this.mainDeck.filter((card) => card.cardLv === 'Lv.3').sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
+    const lv4 = this.mainDeck.filter((card) => card.cardLv === 'Lv.4').sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
+    const lv5 = this.mainDeck.filter((card) => card.cardLv === 'Lv.5').sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
+    const lv6 = this.mainDeck.filter((card) => card.cardLv === 'Lv.6').sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
+    const lv7 = this.mainDeck.filter((card) => card.cardLv === 'Lv.7').sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
-    const tamer = this.mainDeck
-      .filter((card) => card.cardType === 'Tamer')
-      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
+    const tamer = this.mainDeck.filter((card) => card.cardType === 'Tamer').sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
-    const options = this.mainDeck
-      .filter((card) => card.cardType === 'Option')
-      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
+    const options = this.mainDeck.filter((card) => card.cardType === 'Option').sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
     this.mainDeck = [...new Set([...eggs, ...lv0, ...lv3, ...lv4, ...lv5, ...lv6, ...lv7, ...tamer, ...options])];
   }

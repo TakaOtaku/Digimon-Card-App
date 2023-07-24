@@ -18,17 +18,11 @@ import { PaginationCardListHeaderComponent } from './pagination-card-list-header
 @Component({
   selector: 'digimon-pagination-card-list',
   template: `
-    <digimon-pagination-card-list-header
-      (filterBox)="filterBox = $event"
-      (cardsToShow)="cards = $event"></digimon-pagination-card-list-header>
+    <digimon-pagination-card-list-header (filterBox)="filterBox = $event" (cardsToShow)="cards = $event"></digimon-pagination-card-list-header>
 
     <digimon-search></digimon-search>
 
-    <div
-      class="mx-1 flex w-full flex-row flex-wrap overflow-hidden"
-      *ngIf="draggedCard$ | async as draggedCard"
-      [pDroppable]="['fromDeck', 'fromSide']"
-      (onDrop)="drop(draggedCard, draggedCard)">
+    <div class="mx-1 flex w-full flex-row flex-wrap overflow-hidden" *ngIf="draggedCard$ | async as draggedCard" [pDroppable]="['fromDeck', 'fromSide']" (onDrop)="drop(draggedCard, draggedCard)">
       <h1 *ngIf="cards.length === 0" class="primary-color text-bold my-10 text-center text-5xl">No cards found!</h1>
 
       <digimon-full-card
@@ -69,18 +63,7 @@ import { PaginationCardListHeaderComponent } from './pagination-card-list-header
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    PaginationCardListHeaderComponent,
-    SearchComponent,
-    NgIf,
-    DragDropModule,
-    NgFor,
-    FullCardComponent,
-    DialogModule,
-    FilterSideBoxComponent,
-    ViewCardDialogComponent,
-    AsyncPipe,
-  ],
+  imports: [PaginationCardListHeaderComponent, SearchComponent, NgIf, DragDropModule, NgFor, FullCardComponent, DialogModule, FilterSideBoxComponent, ViewCardDialogComponent, AsyncPipe],
 })
 export class PaginationCardListComponent implements OnInit, OnDestroy {
   @Input() deckView: boolean;

@@ -29,28 +29,13 @@ import { NgStyle } from '@angular/common';
       </div>
     </div>
 
-    <p-dialog
-      header="Filter and Sort"
-      [(visible)]="display"
-      [modal]="true"
-      [dismissableMask]="true"
-      [resizable]="false"
-      styleClass="w-full h-full max-w-6xl min-h-[500px]"
-      [baseZIndex]="10000">
+    <p-dialog header="Filter and Sort" [(visible)]="display" [modal]="true" [dismissableMask]="true" [resizable]="false" styleClass="w-full h-full max-w-6xl min-h-[500px]" [baseZIndex]="10000">
       <digimon-filter-side-box [showColors]="true"></digimon-filter-side-box>
     </p-dialog>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    NgStyle,
-    FormsModule,
-    InputTextModule,
-    ReactiveFormsModule,
-    ButtonModule,
-    DialogModule,
-    FilterSideBoxComponent,
-  ],
+  imports: [NgStyle, FormsModule, InputTextModule, ReactiveFormsModule, ButtonModule, DialogModule, FilterSideBoxComponent],
 })
 export class FilterAndSearchComponent implements OnInit, OnDestroy {
   display = false;
@@ -79,9 +64,7 @@ export class FilterAndSearchComponent implements OnInit, OnDestroy {
       .select(selectCollectionMode)
       .pipe(takeUntil(this.onDestroy$))
       .subscribe((collectionMode) => this.collectionMode.setValue(collectionMode, { emitEvent: false }));
-    this.collectionMode.valueChanges
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((collectionMode) => this.store.dispatch(changeCollectionMode({ collectionMode })));
+    this.collectionMode.valueChanges.pipe(takeUntil(this.onDestroy$)).subscribe((collectionMode) => this.store.dispatch(changeCollectionMode({ collectionMode })));
   }
 
   ngOnDestroy() {

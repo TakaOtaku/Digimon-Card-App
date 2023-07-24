@@ -28,48 +28,21 @@ import { emptySave } from './store/reducers/save.reducer';
 
       <div *ngIf="hide" class="h-[calc(100vh-58px)] w-screen"></div>
       <p-blockUI [blocked]="spinner"></p-blockUI>
-      <p-progressSpinner
-        *ngIf="spinner"
-        class="absolute left-1/2 top-1/2 z-[5000] -translate-x-1/2 -translate-y-1/2 transform"></p-progressSpinner>
+      <p-progressSpinner *ngIf="spinner" class="absolute left-1/2 top-1/2 z-[5000] -translate-x-1/2 -translate-y-1/2 transform"></p-progressSpinner>
 
       <p-toast></p-toast>
 
-      <p-confirmDialog
-        header="Delete Confirmation"
-        icon="pi pi-exclamation-triangle"
-        key="Delete"
-        rejectButtonStyleClass="p-button-outlined"></p-confirmDialog>
+      <p-confirmDialog header="Delete Confirmation" icon="pi pi-exclamation-triangle" key="Delete" rejectButtonStyleClass="p-button-outlined"></p-confirmDialog>
 
-      <p-confirmDialog
-        header="New Deck Confirmation"
-        icon="pi pi-file"
-        key="NewDeck"
-        rejectButtonStyleClass="p-button-outlined"></p-confirmDialog>
+      <p-confirmDialog header="New Deck Confirmation" icon="pi pi-file" key="NewDeck" rejectButtonStyleClass="p-button-outlined"></p-confirmDialog>
     </div>
 
-    <p-dialog
-      [(visible)]="showChangelog"
-      [closeOnEscape]="true"
-      [modal]="true"
-      [dismissableMask]="true"
-      [resizable]="false"
-      styleClass="w-full h-full max-w-6xl min-h-[500px]"
-      header="Changelog">
+    <p-dialog [(visible)]="showChangelog" [closeOnEscape]="true" [modal]="true" [dismissableMask]="true" [resizable]="false" styleClass="w-full h-full max-w-6xl min-h-[500px]" header="Changelog">
       <digimon-changelog-dialog [loadChangelog]="loadChangelog"></digimon-changelog-dialog>
     </p-dialog>
   `,
   standalone: true,
-  imports: [
-    NavbarComponent,
-    NgIf,
-    RouterOutlet,
-    BlockUIModule,
-    ProgressSpinnerModule,
-    ToastModule,
-    ConfirmDialogModule,
-    DialogModule,
-    ChangelogDialogComponent,
-  ],
+  imports: [NavbarComponent, NgIf, RouterOutlet, BlockUIModule, ProgressSpinnerModule, ToastModule, ConfirmDialogModule, DialogModule, ChangelogDialogComponent],
   providers: [MessageService],
 })
 export class AppComponent {
@@ -143,10 +116,7 @@ export class AppComponent {
     this.localStorageSave = localStorageSave ? JSON.parse(localStorageSave) : null;
 
     if (this.localStorageSave) {
-      this.localStorageSave = this.digimonBackendService.checkSaveValidity(
-        this.localStorageSave,
-        this.authService.userData
-      );
+      this.localStorageSave = this.digimonBackendService.checkSaveValidity(this.localStorageSave, this.authService.userData);
       this.store.dispatch(setSave({ save: { ...this.localStorageSave, version: emptySave.version } }));
       this.spinner = false;
       this.hide = false;

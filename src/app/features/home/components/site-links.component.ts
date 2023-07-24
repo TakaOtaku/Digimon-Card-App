@@ -12,21 +12,13 @@ import { SplitBoxComponent } from './split-box.component';
         header="Deckbuilder"
         subheader="Build and Share Decks"
         (click)="this.router.navigateByUrl('/deckbuilder')"></digimon-split-box>
-      <digimon-split-box
-        image="assets/images/splitbuttons/Collection.webp"
-        header="Collection"
-        subheader="Track your Cards"
-        (click)="this.router.navigateByUrl('/collection')"></digimon-split-box>
+      <digimon-split-box image="assets/images/splitbuttons/Collection.webp" header="Collection" subheader="Track your Cards" (click)="this.router.navigateByUrl('/collection')"></digimon-split-box>
       <digimon-split-box
         image="assets/images/splitbuttons/Profile.webp"
         header="Profile"
         subheader="Overview of your Decks and Collection"
         (click)="this.router.navigateByUrl('/user')"></digimon-split-box>
-      <digimon-split-box
-        image="assets/images/splitbuttons/Decks.webp"
-        header="Decks"
-        subheader="Community created Decks"
-        (click)="this.router.navigateByUrl('/decks')"></digimon-split-box>
+      <digimon-split-box image="assets/images/splitbuttons/Decks.webp" header="Decks" subheader="Community created Decks" (click)="this.router.navigateByUrl('/decks')"></digimon-split-box>
       <digimon-split-box
         image="assets/images/splitbuttons/Community.webp"
         header="Community"
