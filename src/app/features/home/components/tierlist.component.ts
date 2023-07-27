@@ -1,8 +1,8 @@
+import { WebsiteActions } from './../../../store/digimon.actions';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { JAPTIERLIST, TIERLIST } from '../../../../models';
-import { setCommunityDeckSearch } from '../../../store/digimon.actions';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { TooltipModule } from 'primeng/tooltip';
 import { NgFor, NgClass, NgStyle } from '@angular/common';
@@ -14,23 +14,14 @@ import { ButtonModule } from 'primeng/button';
   template: `
     <div class="mb-5 w-full p-1">
       <h1 class="main-font mb-2 w-full text-center text-3xl font-extrabold uppercase text-[#e2e4e6]">
-        Digimon Deck Tierlist
-        <span
-          class="surface-card ml-auto inline-block whitespace-nowrap rounded border border-black px-2.5 py-1.5 text-center align-baseline font-bold leading-none text-[#e2e4e6]"
-          >{{ currentRegion }}</span
-        >
-        <button
-          class="p-button-outlined p-button-rounded p-button-sm mx-2"
-          icon="pi pi-map-marker"
-          pButton
-          pRipple
-          type="button"
-          (click)="switchRegion()"></button>
+        Digimon Archtype Ranking
+        <span class="surface-card ml-auto inline-block whitespace-nowrap rounded border border-black px-2.5 py-1.5 text-center align-baseline font-bold leading-none text-[#e2e4e6]">{{
+          currentRegion
+        }}</span>
+        <button class="p-button-outlined p-button-rounded p-button-sm mx-2" icon="pi pi-map-marker" pButton pRipple type="button" (click)="switchRegion()"></button>
       </h1>
       <div *ngFor="let key of tiers; let i = index" class="flex w-full flex-row border border-black">
-        <div
-          [ngClass]="key.color"
-          class="text-black-outline w-24 text-center text-7xl font-black leading-[5.5rem] text-[#e2e4e6]">
+        <div [ngClass]="key.color" class="text-black-outline w-24 text-center text-7xl font-black leading-[5.5rem] text-[#e2e4e6]">
           {{ key.tier }}
         </div>
         <div class="flex h-full w-full flex-row flex-wrap bg-slate-800">
@@ -67,7 +58,7 @@ export class TierlistComponent {
   constructor(private store: Store, private router: Router) {}
 
   openCommunityWithSearch(card: string) {
-    this.store.dispatch(setCommunityDeckSearch({ communityDeckSearch: card }));
+    this.store.dispatch(WebsiteActions.setcommunitydecksearch({ communityDeckSearch: card }));
     this.router.navigateByUrl('/decks');
   }
 

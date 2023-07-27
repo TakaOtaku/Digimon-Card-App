@@ -73,16 +73,7 @@ export class ChartContainersComponent implements OnInit, OnChanges {
     const white = array.filter((card) => card.color === 'White');
     const multi = array.filter((card) => card.color.includes('/') || card.color === 'Multi');
 
-    return [
-      this.getCount(red),
-      this.getCount(blue),
-      this.getCount(yellow),
-      this.getCount(green),
-      this.getCount(black),
-      this.getCount(purple),
-      this.getCount(white),
-      this.getCount(multi),
-    ];
+    return [this.getCount(red), this.getCount(blue), this.getCount(yellow), this.getCount(green), this.getCount(black), this.getCount(purple), this.getCount(white), this.getCount(multi)];
   }
 
   private getCount(array: IDeckCard[]): number {

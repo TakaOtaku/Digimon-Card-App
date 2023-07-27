@@ -14,37 +14,24 @@ import { selectAllCards } from '../../store/digimon.selectors';
 import { FormsModule } from '@angular/forms';
 import { DialogModule } from 'primeng/dialog';
 import { NgIf } from '@angular/common';
-import { emptyDeck } from '../../store/reducers/digimon.reducers';
 
 @Component({
   selector: 'digimon-test-page',
   template: `
-    <button *ngIf="isAdmin()" class="border-2 border-amber-200 bg-amber-400" (click)="updateAllSaves()">
-      Update all Saves
-    </button>
-    <button *ngIf="isAdmin()" class="border-2 border-amber-200 bg-amber-400" (click)="updatePriceGuideIds()">
-      Update PriceGuide Ids
-    </button>
-    <button *ngIf="isAdmin()" class="border-2 border-amber-200 bg-amber-400" (click)="updatePriceGuideIdsAAs()">
-      Update PriceGuide Ids AAs
-    </button>
+    <button *ngIf="isAdmin()" class="border-2 border-amber-200 bg-amber-400" (click)="updateAllSaves()">Update all Saves</button>
+    <button *ngIf="isAdmin()" class="border-2 border-amber-200 bg-amber-400" (click)="updatePriceGuideIds()">Update PriceGuide Ids</button>
+    <button *ngIf="isAdmin()" class="border-2 border-amber-200 bg-amber-400" (click)="updatePriceGuideIdsAAs()">Update PriceGuide Ids AAs</button>
 
-    <button *ngIf="isAdmin()" class="border-2 border-amber-200 bg-amber-400" (click)="updateAllDecks()">
-      Update all Decks
-    </button>
+    <button *ngIf="isAdmin()" class="border-2 border-amber-200 bg-amber-400" (click)="updateAllDecks()">Update all Decks</button>
 
-    <button *ngIf="isAdmin()" class="border-2 border-amber-200 bg-amber-400" (click)="updateAllSaves()">
-      Update all Save Decks
-    </button>
+    <button *ngIf="isAdmin()" class="border-2 border-amber-200 bg-amber-400" (click)="updateAllSaves()">Update all Save Decks</button>
 
     <p-dialog [(visible)]="updateIDDialog" [baseZIndex]="100000" [dismissableMask]="true" [resizable]="false">
       <h1>
         There are still <b>{{ productsWithoutCorrectID.length }}</b> without correct ID.
       </h1>
 
-      <a class="my-3" [href]="productsWithoutCorrectID[0]?.link" target="_blank">{{
-        productsWithoutCorrectID[0]?.link
-      }}</a>
+      <a class="my-3" [href]="productsWithoutCorrectID[0]?.link" target="_blank">{{ productsWithoutCorrectID[0]?.link }}</a>
 
       <div class="my-3 flex flex-row">
         <div>Enter a ID:</div>
@@ -163,9 +150,7 @@ export class TestPageComponent implements OnInit, OnDestroy {
       .getPrizeGuide()
       .pipe(first())
       .subscribe((products) => {
-        const wrongIDs = products
-          .filter((product) => product.cardId.endsWith('_P'))
-          .sort((a, b) => b.cardId.toLocaleLowerCase().localeCompare(a.cardId.toLocaleLowerCase()));
+        const wrongIDs = products.filter((product) => product.cardId.endsWith('_P')).sort((a, b) => b.cardId.toLocaleLowerCase().localeCompare(a.cardId.toLocaleLowerCase()));
 
         const ArrayObject: any = {};
         wrongIDs.forEach((product) => {
@@ -183,11 +168,7 @@ export class TestPageComponent implements OnInit, OnDestroy {
           if ((value as any[]).length === 0) {
             delete ArrayObject[key];
           } else if ((value as any[]).length === 1) {
-            ofArray$.push(
-              this.cardMarketService
-                .updateProductId(ArrayObject[key][0].cardId + `1`, ArrayObject[key][0])
-                .pipe(first())
-            );
+            ofArray$.push(this.cardMarketService.updateProductId(ArrayObject[key][0].cardId + `1`, ArrayObject[key][0]).pipe(first()));
             delete ArrayObject[key];
           }
         });

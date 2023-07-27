@@ -35,8 +35,7 @@ export class CollectionPageComponent implements OnInit {
     this.meta.addTags([
       {
         name: 'description',
-        content:
-          'Keep track of your Collection of the new Digimon Card Game. Find missing cards, rulings, erratas and many more information easily.',
+        content: 'Keep track of your Collection of the new Digimon Card Game. Find missing cards, rulings, erratas and many more information easily.',
       },
       { name: 'author', content: 'TakaOtaku' },
       {

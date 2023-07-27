@@ -1,10 +1,10 @@
+import { AsyncPipe, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { CardTypeButtons } from '../../../../models';
-import { changeCardTypeFilter } from '../../../store/digimon.actions';
 import { selectCardTypeFilter } from '../../../store/digimon.selectors';
 import { MultiButtonsComponent } from '../multi-buttons.component';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { WebsiteActions } from 'src/app/store/digimon.actions';
 
 @Component({
   selector: 'digimon-card-type-filter',
@@ -34,6 +34,6 @@ export class CardTypeFilterComponent {
       types = [...new Set(cardTypeFilter), type];
     }
 
-    this.store.dispatch(changeCardTypeFilter({ cardTypeFilter: types }));
+    this.store.dispatch(WebsiteActions.setcardtypefilter({ cardTypeFilter: types }));
   }
 }

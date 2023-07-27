@@ -16,14 +16,10 @@ import { NgClass, NgIf } from '@angular/common';
 @Component({
   selector: 'digimon-navbar',
   template: `
-    <nav
-      class="navbar navbar-expand-lg relative flex w-full flex-col items-center justify-between border-b border-slate-100 shadow-2xl">
+    <nav class="navbar navbar-expand-lg relative flex w-full flex-col items-center justify-between border-b border-slate-100 shadow-2xl">
       <a #link class="hidden" href="https://digimoncard.app"></a>
       <a class="absolute left-4 top-0 z-[5000] flex flex-row" (click)="refresh(link)">
-        <img
-          alt="Logo"
-          class="mt-[0.25rem] max-h-[3.25rem] cursor-pointer md:mt-[-0.5rem] md:max-h-[5.5rem]"
-          src="../../../assets/images/logo.png" />
+        <img alt="Logo" class="mt-[0.25rem] max-h-[3.25rem] cursor-pointer md:mt-[-0.5rem] md:max-h-[5.5rem]" src="../../../assets/images/logo.png" />
       </a>
 
       <div class="surface-ground flex max-h-12 w-full flex-row p-0">
@@ -78,32 +74,22 @@ import { NgClass, NgIf } from '@angular/common';
         <div *ngIf="!showCardList" class="m-auto md:hidden"></div>
 
         <div [ngClass]="{ 'ml-auto': !showCardList, 'ml-2': showCardList }" class="mx-2 my-1 flex flex-row lg:ml-4">
-          <button
-            (click)="changeMenu()"
-            class="min-w-auto primary-background mx-2 h-9 w-9 overflow-hidden rounded-full text-xs font-semibold text-[#e2e4e6] hover:bg-[#64B5F6]">
+          <button (click)="changeMenu()" class="min-w-auto primary-background mx-2 h-9 w-9 overflow-hidden rounded-full text-xs font-semibold text-[#e2e4e6] hover:bg-[#64B5F6]">
             <fa-icon *ngIf="!user" [icon]="faUser"></fa-icon>
             <img *ngIf="user" alt="{{ this.user.displayName }}" src="{{ this.user.photoURL }}" />
           </button>
         </div>
       </div>
 
-      <div
-        [ngClass]="{ show: megamenu, collapse: !megamenu }"
-        class="navbar-collapse grow items-center"
-        id="navbarSupportedContentX">
+      <div [ngClass]="{ show: megamenu, collapse: !megamenu }" class="navbar-collapse grow items-center" id="navbarSupportedContentX">
         <ul class="navbar-nav mr-auto flex flex-row">
           <li class="dropdown nav-item static">
-            <div
-              [ngClass]="{ hidden: !megamenu }"
-              class="surface-ground dropdown-menu absolute left-0 top-full mt-0 w-full shadow-lg"
-              aria-labelledby="dropdownMenuButtonX">
+            <div [ngClass]="{ hidden: !megamenu }" class="surface-ground dropdown-menu absolute left-0 top-full mt-0 w-full shadow-lg" aria-labelledby="dropdownMenuButtonX">
               <div class="px-6 py-5 lg:px-8">
                 <div class="grid gap-6 md:grid-cols-3 lg:grid-cols-5">
                   <div class="hidden lg:block"></div>
                   <div class="surface-ground text-[#e2e4e6]">
-                    <p class="block w-full border-b border-gray-200 px-6 py-2 font-bold uppercase text-[#e2e4e6]">
-                      Sites
-                    </p>
+                    <p class="block w-full border-b border-gray-200 px-6 py-2 font-bold uppercase text-[#e2e4e6]">Sites</p>
                     <a
                       (click)="router.navigateByUrl(''); this.megamenu = false"
                       aria-current="true"
@@ -155,9 +141,7 @@ import { NgClass, NgIf } from '@angular/common';
                     >
                   </div>
                   <div class="surface-ground text-[#e2e4e6]">
-                    <p class="block w-full border-b border-gray-200 px-6 py-2 font-bold uppercase text-[#e2e4e6]">
-                      Miscellaneous
-                    </p>
+                    <p class="block w-full border-b border-gray-200 px-6 py-2 font-bold uppercase text-[#e2e4e6]">Miscellaneous</p>
                     <a
                       (click)="showChangelogModal()"
                       aria-current="true"
@@ -173,9 +157,7 @@ import { NgClass, NgIf } from '@angular/common';
                       Settings</a
                     >
                     <a
-                      (click)="
-                        this.authService.isLoggedIn ? this.authService.LogOut() : this.login(); this.megamenu = false
-                      "
+                      (click)="this.authService.isLoggedIn ? this.authService.LogOut() : this.login(); this.megamenu = false"
                       aria-current="true"
                       class="block w-full cursor-pointer border-b border-gray-200 px-6 py-2 transition duration-150 ease-in-out hover:text-[#64B5F6] hover:backdrop-brightness-150">
                       <i class="fa-solid fa-right-from-bracket"></i>
@@ -190,9 +172,7 @@ import { NgClass, NgIf } from '@angular/common';
                     >
                   </div>
                   <div class="surface-ground text-[#e2e4e6]">
-                    <p class="block w-full border-b border-gray-200 px-6 py-2 font-bold uppercase text-[#e2e4e6]">
-                      External
-                    </p>
+                    <p class="block w-full border-b border-gray-200 px-6 py-2 font-bold uppercase text-[#e2e4e6]">External</p>
                     <a
                       href="https://github.com/TakaOtaku/Digimon-Card-App/issues"
                       target="_blank"
@@ -219,84 +199,46 @@ import { NgClass, NgIf } from '@angular/common';
 
     <p-confirmPopup></p-confirmPopup>
 
-    <p-dialog
-      [(visible)]="settingsDialog"
-      [baseZIndex]="10000"
-      [modal]="true"
-      [dismissableMask]="true"
-      [resizable]="false"
-      header="Settings"
-      styleClass="w-full h-full max-w-6xl min-h-[500px]">
+    <p-dialog [(visible)]="settingsDialog" [baseZIndex]="10000" [modal]="true" [dismissableMask]="true" [resizable]="false" header="Settings" styleClass="w-full h-full max-w-6xl min-h-[500px]">
       <digimon-settings-dialog></digimon-settings-dialog>
     </p-dialog>
 
-    <p-dialog
-      [(visible)]="showChangelog"
-      [closeOnEscape]="true"
-      [modal]="true"
-      [dismissableMask]="true"
-      [resizable]="false"
-      styleClass="w-full h-full max-w-6xl min-h-[500px]"
-      header="Changelog">
+    <p-dialog [(visible)]="showChangelog" [closeOnEscape]="true" [modal]="true" [dismissableMask]="true" [resizable]="false" styleClass="w-full h-full max-w-6xl min-h-[500px]" header="Changelog">
       <digimon-changelog-dialog [loadChangelog]="loadChangelog"></digimon-changelog-dialog>
     </p-dialog>
 
-    <p-dialog
-      [(visible)]="creditsDisplay"
-      [baseZIndex]="10000"
-      [modal]="true"
-      [dismissableMask]="true"
-      [resizable]="false"
-      header="Credits"
-      styleClass="w-screen lg:max-h-[600px] lg:max-w-3xl">
+    <p-dialog [(visible)]="creditsDisplay" [baseZIndex]="10000" [modal]="true" [dismissableMask]="true" [resizable]="false" header="Credits" styleClass="w-screen lg:max-h-[600px] lg:max-w-3xl">
       <div class="flex w-full flex-col">
         <span class="mt-5 w-full text-center font-bold text-[#e2e4e6]"
-          >A huge thanks goes to tari101190 who helps me with all the new card releases and tests the website completely
-          so I don't have to worry to much!</span
+          >A huge thanks goes to tari101190 who helps me with all the new card releases and tests the website completely so I don't have to worry to much!</span
         >
 
         <span class="mt-5 w-full text-center font-bold text-[#e2e4e6]"
           >Another big thank you goes to
           <a class="primary-color" href="https://www.instagram.com/oscstudios/" target="_blank">TheOSC</a>
-          he send me a cool new design which I took much inspiration from and helped with other design questions! Go
-          Check him out he makes great art!</span
+          he send me a cool new design which I took much inspiration from and helped with other design questions! Go Check him out he makes great art!</span
         >
 
         <span class="mt-5 w-full text-center font-bold text-[#e2e4e6]">
-          Another big thank you goes to Yondaime, he posted the Adventure Series Post, helps promote the site and gives
-          general good feedback!</span
+          Another big thank you goes to Yondaime, he posted the Adventure Series Post, helps promote the site and gives general good feedback!</span
         >
 
         <span class="mt-5 w-full text-center font-bold text-[#e2e4e6]"
           >Credits for the Pre-Release Cards go to
-          <a class="primary-color" href="https://digimoncardgame.fandom.com/" target="_blank"
-            >https://digimoncardgame.fandom.com/</a
-          >
+          <a class="primary-color" href="https://digimoncardgame.fandom.com/" target="_blank">https://digimoncardgame.fandom.com/</a>
           and all the wonderful people who maintain it!</span
         >
 
-        <span class="mt-5 w-full text-center font-bold text-[#e2e4e6]">
-          Another Thank you to mr_pyro for creating the tierlist and helping me with it!</span
-        >
+        <span class="mt-5 w-full text-center font-bold text-[#e2e4e6]"> Another Thank you to mr_pyro for creating the tierlist and helping me with it!</span>
 
         <span class="mt-5 w-full text-center font-bold text-[#e2e4e6]"
-          >Please support the official releases! Akiyoshi Hongo, Bandai, and Toei Animation respectively own Digimon
-          images, copyrights and trademarks.</span
+          >Please support the official releases! Akiyoshi Hongo, Bandai, and Toei Animation respectively own Digimon images, copyrights and trademarks.</span
         >
       </div>
     </p-dialog>
   `,
   standalone: true,
-  imports: [
-    NgClass,
-    NgIf,
-    FilterButtonComponent,
-    FontAwesomeModule,
-    ConfirmPopupModule,
-    DialogModule,
-    SettingsDialogComponent,
-    ChangelogDialogComponent,
-  ],
+  imports: [NgClass, NgIf, FilterButtonComponent, FontAwesomeModule, ConfirmPopupModule, DialogModule, SettingsDialogComponent, ChangelogDialogComponent],
 })
 export class NavbarComponent implements OnInit, OnDestroy {
   faUser = faUser;
@@ -323,11 +265,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   private onDestroy$ = new Subject();
 
-  constructor(
-    public router: Router,
-    public authService: AuthService,
-    private confirmationService: ConfirmationService
-  ) {}
+  constructor(public router: Router, public authService: AuthService, private confirmationService: ConfirmationService) {}
 
   ngOnInit() {
     this.user = this.authService.userData;

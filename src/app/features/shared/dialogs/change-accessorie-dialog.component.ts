@@ -1,22 +1,22 @@
+import { NgStyle } from '@angular/common';
 import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { first, Subject, takeUntil } from 'rxjs';
+import { AutoCompleteModule } from 'primeng/autocomplete';
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
+import { SelectButtonModule } from 'primeng/selectbutton';
+import { Subject, first, takeUntil } from 'rxjs';
 import { ColorList, ICard, IColor, IDeck, tagsList } from '../../../../models';
 import { ITag } from '../../../../models/interfaces/tag.interface';
 import { ColorMap } from '../../../../models/maps/color.map';
 import { deckIsValid } from '../../../functions/digimon-card.functions';
 import { AuthService } from '../../../service/auth.service';
 import { DigimonBackendService } from '../../../service/digimon-backend.service';
-import { saveDeck } from '../../../store/digimon.actions';
 import { selectAllCards } from '../../../store/digimon.selectors';
 import { emptyDeck } from '../../../store/reducers/digimon.reducers';
-import { ButtonModule } from 'primeng/button';
-import { AutoCompleteModule } from 'primeng/autocomplete';
-import { InputTextModule } from 'primeng/inputtext';
-import { NgStyle } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { SelectButtonModule } from 'primeng/selectbutton';
+import { DeckActions } from './../../../store/digimon.actions';
 
 @Component({
   selector: 'digimon-change-accessorie-dialog',
@@ -34,14 +34,7 @@ import { SelectButtonModule } from 'primeng/selectbutton';
       </span>
 
       <span class="p-float-label ml-5 mt-5 w-1/2">
-        <p-autoComplete
-          panelStyleClass="w-full"
-          id="float-input3"
-          [(ngModel)]="tags"
-          [suggestions]="filteredTags"
-          (completeMethod)="filterTags($event)"
-          field="name"
-          [multiple]="true">
+        <p-autoComplete panelStyleClass="w-full" id="float-input3" [(ngModel)]="tags" [suggestions]="filteredTags" (completeMethod)="filterTags($event)" field="name" [multiple]="true">
         </p-autoComplete>
         <label for="float-input3">Tags</label>
       </span>
@@ -68,7 +61,7 @@ import { SelectButtonModule } from 'primeng/selectbutton';
 })
 export class ChangeAccessorieDialogComponent implements OnInit, OnChanges, OnDestroy {
   @Input() show: boolean = false;
-  @Input() deck: IDeck = emptyDeck;
+  @Input() deck: IDeck = JSON.parse(JSON.stringify(emptyDeck));
 
   @Output() onClose = new EventEmitter<boolean>();
 
@@ -81,7 +74,7 @@ export class ChangeAccessorieDialogComponent implements OnInit, OnChanges, OnDes
   title = '';
   description = '';
   tags: ITag[] = [];
-  color = { name: 'White', img: 'assets/decks/white.svg' };
+  color = { name: 'White', img: 'assets/images/decks/white.svg' };
 
   private allCards: ICard[] = [];
   private onDestroy$ = new Subject<boolean>();
@@ -121,7 +114,7 @@ export class ChangeAccessorieDialogComponent implements OnInit, OnChanges, OnDes
 
   saveDeck(): void {
     this.store.dispatch(
-      saveDeck({
+      DeckActions.save({
         deck: {
           ...this.deck,
           title: this.title,

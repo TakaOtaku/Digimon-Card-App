@@ -1,32 +1,24 @@
+import { CollectionActions, WebsiteActions } from './../../store/digimon.actions';
+import { AsyncPipe, NgClass, NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { map, Subject, takeUntil } from 'rxjs';
+import { DialogModule } from 'primeng/dialog';
+import { DragDropModule } from 'primeng/dragdrop';
+import { Subject, map, takeUntil } from 'rxjs';
 import { englishCards } from '../../../assets/cardlists/eng/english';
 import { ICard } from '../../../models';
 import { DRAG } from '../../../models/enums/drag.enum';
-import { addCardToDeck, changeCardCount, setDraggedCard } from '../../store/digimon.actions';
 import { selectDeck, selectSettings } from '../../store/digimon.selectors';
-import { ViewCardDialogComponent } from './dialogs/view-card-dialog.component';
-import { DialogModule } from 'primeng/dialog';
-import { FormsModule } from '@angular/forms';
-import { NgIf, NgClass, AsyncPipe } from '@angular/common';
 import { CardImageComponent } from './card-image.component';
-import { DragDropModule } from 'primeng/dragdrop';
+import { ViewCardDialogComponent } from './dialogs/view-card-dialog.component';
 
 @Component({
   selector: 'digimon-full-card',
   template: `
-    <div
-      [pDraggable]="'toDeck'"
-      (onDragStart)="setDraggedCard(card)"
-      class="relative inline-flex w-full transition-transform hover:scale-105">
+    <div [pDraggable]="'toDeck'" (onDragStart)="setDraggedCard(card)" class="relative inline-flex w-full transition-transform hover:scale-105">
       <div (click)="click()" (contextmenu)="rightclick()">
-        <digimon-card-image
-          [card]="card"
-          [count]="count"
-          [collectionMode]="collectionMode"
-          [collectionMinimum]="collectionMinimum"
-          [aaCollectionMinimum]="aaCollectionMinimum"></digimon-card-image>
+        <digimon-card-image [card]="card" [count]="count" [collectionMode]="collectionMode" [collectionMinimum]="collectionMinimum" [aaCollectionMinimum]="aaCollectionMinimum"></digimon-card-image>
       </div>
 
       <ng-container *ngIf="{ count: countInDeck$ | async } as deckCard">
@@ -37,17 +29,12 @@ import { DragDropModule } from 'primeng/dragdrop';
             'bottom-1': !collectionMode,
             ' bottom-10': collectionMode
           }">
-          {{ deckCard.count }}<span class="pr-1 text-sky-700">/</span
-          >{{
-            card.cardNumber === 'BT6-085' || card.cardNumber === 'EX2-046' || card.cardNumber === 'BT11-061' ? 50 : 4
-          }}
+          {{ deckCard.count }}<span class="pr-1 text-sky-700">/</span>{{ card.cardNumber === 'BT6-085' || card.cardNumber === 'EX2-046' || card.cardNumber === 'BT11-061' ? 50 : 4 }}
         </span>
       </ng-container>
 
       <div *ngIf="collectionMode" class="counter mx-5 flex h-8 w-full flex-row rounded-lg bg-transparent">
-        <button
-          (click)="decreaseCardCount(card.id)"
-          class="primary-background h-full w-1/3 cursor-pointer rounded-l text-[#e2e4e6] outline-none">
+        <button (click)="decreaseCardCount(card.id)" class="primary-background h-full w-1/3 cursor-pointer rounded-l text-[#e2e4e6] outline-none">
           <span class="m-auto text-2xl font-thin">−</span>
         </button>
         <input
@@ -56,9 +43,7 @@ import { DragDropModule } from 'primeng/dragdrop';
           class="primary-background text-md flex w-1/3 cursor-default appearance-none items-center text-center font-semibold text-[#e2e4e6] outline-none focus:outline-none md:text-base"
           [(ngModel)]="count"
           (change)="changeCardCount($event, card.id)" />
-        <button
-          (click)="increaseCardCount(card.id)"
-          class="primary-background h-full w-1/3 cursor-pointer rounded-r text-[#e2e4e6] outline-none">
+        <button (click)="increaseCardCount(card.id)" class="primary-background h-full w-1/3 cursor-pointer rounded-r text-[#e2e4e6] outline-none">
           <span class="m-auto text-2xl font-thin">+</span>
         </button>
       </div>
@@ -78,16 +63,7 @@ import { DragDropModule } from 'primeng/dragdrop';
   `,
   styleUrls: ['./full-card.component.scss'],
   standalone: true,
-  imports: [
-    DragDropModule,
-    CardImageComponent,
-    NgIf,
-    NgClass,
-    FormsModule,
-    DialogModule,
-    ViewCardDialogComponent,
-    AsyncPipe,
-  ],
+  imports: [DragDropModule, CardImageComponent, NgIf, NgClass, FormsModule, DialogModule, ViewCardDialogComponent, AsyncPipe],
 })
 export class FullCardComponent implements OnInit, OnDestroy {
   @Input() card: ICard = englishCards[0];
@@ -111,9 +87,7 @@ export class FullCardComponent implements OnInit, OnDestroy {
   collectionMinimum = 0;
   aaCollectionMinimum = 0;
 
-  countInDeck$ = this.store
-    .select(selectDeck)
-    .pipe(map((deck) => deck.cards.find((value) => value.id === this.card.id)?.count ?? 0));
+  countInDeck$ = this.store.select(selectDeck).pipe(map((deck) => deck.cards.find((value) => value.id === this.card.id)?.count ?? 0));
 
   private onDestroy$ = new Subject();
 
@@ -138,7 +112,7 @@ export class FullCardComponent implements OnInit, OnDestroy {
       this.viewCard.emit(this.card);
       return;
     }
-    this.store.dispatch(addCardToDeck({ addCardToDeck: this.card.id }));
+    this.store.dispatch(WebsiteActions.addcardtodeck({ addCardToDeck: this.card.id }));
   }
 
   showCardDetails() {
@@ -151,12 +125,12 @@ export class FullCardComponent implements OnInit, OnDestroy {
       return;
     }
     const count = event.target.value;
-    this.store.dispatch(changeCardCount({ id, count }));
+    this.store.dispatch(CollectionActions.setcardcount({ id, count }));
   }
 
   increaseCardCount(id: string) {
     const count = ++this.count;
-    this.store.dispatch(changeCardCount({ id, count }));
+    this.store.dispatch(CollectionActions.setcardcount({ id, count }));
   }
 
   decreaseCardCount(id: string) {
@@ -164,7 +138,7 @@ export class FullCardComponent implements OnInit, OnDestroy {
       return;
     }
     const count = --this.count;
-    this.store.dispatch(changeCardCount({ id, count }));
+    this.store.dispatch(CollectionActions.setcardcount({ id, count }));
   }
 
   setCardSize(size: number) {
@@ -189,7 +163,7 @@ export class FullCardComponent implements OnInit, OnDestroy {
   };
 
   setDraggedCard(card: ICard) {
-    this.store.dispatch(setDraggedCard({ dragCard: { card: card, drag: DRAG.Collection } }));
+    this.store.dispatch(WebsiteActions.setdraggedcard({ dragCard: { card: card, drag: DRAG.Collection } }));
   }
 
   click() {

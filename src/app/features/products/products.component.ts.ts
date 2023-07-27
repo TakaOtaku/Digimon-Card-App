@@ -8,8 +8,7 @@ import { NgFor } from '@angular/common';
 @Component({
   selector: 'digimon-products',
   template: `
-    <div
-      class="flex h-[calc(100vh-50px)] w-full flex-col overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d]">
+    <div class="flex h-[calc(100vh-50px)] w-full flex-col overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d]">
       <div class="mx-auto max-w-6xl">
         <h1 class="text-shadow mt-6 text-4xl font-black text-[#e2e4e6] underline xl:mt-2">Starter Decks</h1>
         <div class="flex flex-row flex-wrap">

@@ -1,33 +1,24 @@
+import { WebsiteActions } from './../../../store/digimon.actions';
 import { Component, EventEmitter, Input, OnDestroy, OnInit } from '@angular/core';
-import { UntypedFormControl, UntypedFormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { MessageService } from 'primeng/api';
-import { debounceTime, Subject, takeUntil } from 'rxjs';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { Subject, debounceTime, takeUntil } from 'rxjs';
 import { itemsAsSelectItem } from 'src/app/functions/digimon-card.functions';
 import { IFilter } from '../../../../models';
-import {
-  Attributes,
-  Colors,
-  Forms,
-  Illustrators,
-  Keywords,
-  Restrictions,
-  SpecialRequirements,
-  Types,
-} from '../../../../models/data/filter.data';
-import { changeFilter } from '../../../store/digimon.actions';
+import { Attributes, Colors, Forms, Illustrators, Keywords, Restrictions, SpecialRequirements, Types } from '../../../../models/data/filter.data';
 import { selectFilter } from '../../../store/digimon.selectors';
 import { emptyFilter } from '../../../store/reducers/digimon.reducers';
-import { MultiSelectModule } from 'primeng/multiselect';
-import { BlockFilterComponent } from './block-filter.component';
-import { VersionFilterComponent } from './version-filter.component';
-import { RarityFilterComponent } from './rarity-filter.component';
 import { RangeSliderComponent } from '../range-slider.component';
-import { SetFilterComponent } from './set-filter.component';
+import { SortButtonsComponent } from '../sort-buttons.component';
+import { BlockFilterComponent } from './block-filter.component';
 import { CardTypeFilterComponent } from './card-type-filter.component';
 import { ColorFilterComponent } from './color-filter.component';
 import { LanguageFilterComponent } from './language-filter.component';
-import { SortButtonsComponent } from '../sort-buttons.component';
+import { RarityFilterComponent } from './rarity-filter.component';
+import { SetFilterComponent } from './set-filter.component';
+import { VersionFilterComponent } from './version-filter.component';
 
 @Component({
   selector: 'digimon-filter-side-box',
@@ -49,71 +40,36 @@ import { SortButtonsComponent } from '../sort-buttons.component';
       <digimon-set-filter></digimon-set-filter>
 
       <div class="flex flex-row">
-        <digimon-range-slider
-          [reset]="resetEmitter"
-          [minMax]="[2, 7]"
-          [filterFormControl]="levelFilter"
-          title="Level:"
-          class="w-full"></digimon-range-slider>
+        <digimon-range-slider [reset]="resetEmitter" [minMax]="[2, 7]" [filterFormControl]="levelFilter" title="Level:" class="w-full"></digimon-range-slider>
         <button (click)="levelFilter.setValue([2, 7], { emitEvent: false })" class="w-12 text-[#e2e4e6]" type="button">
           <i class="pi pi-refresh"></i>
         </button>
       </div>
 
       <div class="flex flex-row">
-        <digimon-range-slider
-          [reset]="resetEmitter"
-          [minMax]="[0, 20]"
-          [filterFormControl]="playCostFilter"
-          title="Play Cost:"
-          class="w-full"></digimon-range-slider>
-        <button
-          (click)="playCostFilter.setValue([0, 20], { emitEvent: false })"
-          class="w-12 text-[#e2e4e6]"
-          type="button">
+        <digimon-range-slider [reset]="resetEmitter" [minMax]="[0, 20]" [filterFormControl]="playCostFilter" title="Play Cost:" class="w-full"></digimon-range-slider>
+        <button (click)="playCostFilter.setValue([0, 20], { emitEvent: false })" class="w-12 text-[#e2e4e6]" type="button">
           <i class="pi pi-refresh"></i>
         </button>
       </div>
 
       <div class="flex flex-row">
-        <digimon-range-slider
-          [reset]="resetEmitter"
-          [minMax]="[0, 7]"
-          [filterFormControl]="digivolutionFilter"
-          title="Digivolution Cost:"
-          class="w-full"></digimon-range-slider>
-        <button
-          (click)="digivolutionFilter.setValue([0, 7], { emitEvent: false })"
-          class="w-12 text-[#e2e4e6]"
-          type="button">
+        <digimon-range-slider [reset]="resetEmitter" [minMax]="[0, 7]" [filterFormControl]="digivolutionFilter" title="Digivolution Cost:" class="w-full"></digimon-range-slider>
+        <button (click)="digivolutionFilter.setValue([0, 7], { emitEvent: false })" class="w-12 text-[#e2e4e6]" type="button">
           <i class="pi pi-refresh"></i>
         </button>
       </div>
 
       <div class="flex flex-row">
-        <digimon-range-slider
-          [reset]="resetEmitter"
-          [minMax]="[1, 17]"
-          [filterFormControl]="dpFilter"
-          suffix="000"
-          title="DP:"
-          class="w-full"></digimon-range-slider>
+        <digimon-range-slider [reset]="resetEmitter" [minMax]="[1, 17]" [filterFormControl]="dpFilter" suffix="000" title="DP:" class="w-full"></digimon-range-slider>
         <button (click)="dpFilter.setValue([1, 17], { emitEvent: false })" class="w-12 text-[#e2e4e6]" type="button">
           <i class="pi pi-refresh"></i>
         </button>
       </div>
 
       <div class="flex flex-row">
-        <digimon-range-slider
-          [reset]="resetEmitter"
-          [minMax]="[0, 5]"
-          [filterFormControl]="cardCountFilter"
-          title="Number in Collection:"
-          class="w-full"></digimon-range-slider>
-        <button
-          (click)="cardCountFilter.setValue([0, 5], { emitEvent: false })"
-          class="w-12 text-[#e2e4e6]"
-          type="button">
+        <digimon-range-slider [reset]="resetEmitter" [minMax]="[0, 5]" [filterFormControl]="cardCountFilter" title="Number in Collection:" class="w-full"></digimon-range-slider>
+        <button (click)="cardCountFilter.setValue([0, 5], { emitEvent: false })" class="w-12 text-[#e2e4e6]" type="button">
           <i class="pi pi-refresh"></i>
         </button>
       </div>
@@ -306,7 +262,7 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
 
     this.filterFormGroup.valueChanges.pipe(debounceTime(500), takeUntil(this.onDestroy$)).subscribe((filterValue) => {
       const filter: IFilter = { ...this.filter, ...filterValue };
-      this.store.dispatch(changeFilter({ filter }));
+      this.store.dispatch(WebsiteActions.setfilter({ filter }));
     });
   }
 
@@ -317,7 +273,7 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
 
   reset() {
     this.resetEmitter.emit();
-    this.store.dispatch(changeFilter({ filter: emptyFilter }));
+    this.store.dispatch(WebsiteActions.setfilter({ filter: emptyFilter }));
     this.messageService.add({
       severity: 'info',
       detail: 'All filter were reset.',

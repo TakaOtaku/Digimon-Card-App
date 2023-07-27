@@ -1,10 +1,10 @@
+import { WebsiteActions } from './../../../store/digimon.actions';
+import { AsyncPipe, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { RarityButtons } from '../../../../models';
-import { changeRarityFilter } from '../../../store/digimon.actions';
 import { selectRarityFilter } from '../../../store/digimon.selectors';
 import { MultiButtonsComponent } from '../multi-buttons.component';
-import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'digimon-rarity-filter',
@@ -35,6 +35,6 @@ export class RarityFilterComponent {
       rarities = [...new Set(rarityFilter), rarity];
     }
 
-    this.store.dispatch(changeRarityFilter({ rarityFilter: rarities }));
+    this.store.dispatch(WebsiteActions.setrarityfilter({ rarityFilter: rarities }));
   }
 }

@@ -4,7 +4,6 @@ import { Subject, takeUntil } from 'rxjs';
 import { englishCards } from '../../../../assets/cardlists/eng/english';
 import { ICard, ICountCard, IDraggedCard } from '../../../../models';
 import { DRAG } from '../../../../models/enums/drag.enum';
-import { removeCardFromDeck, removeCardFromSideDeck } from '../../../store/digimon.actions';
 import { selectCollection, selectCollectionMode, selectDraggedCard } from '../../../store/digimon.selectors';
 import { ViewCardDialogComponent } from '../../shared/dialogs/view-card-dialog.component';
 import { FilterSideBoxComponent } from '../../shared/filter/filter-side-box.component';
@@ -14,21 +13,16 @@ import { DragDropModule } from 'primeng/dragdrop';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 import { SearchComponent } from './search.component';
 import { PaginationCardListHeaderComponent } from './pagination-card-list-header.component';
+import { WebsiteActions } from 'src/app/store/digimon.actions';
 
 @Component({
   selector: 'digimon-pagination-card-list',
   template: `
-    <digimon-pagination-card-list-header
-      (filterBox)="filterBox = $event"
-      (cardsToShow)="cards = $event"></digimon-pagination-card-list-header>
+    <digimon-pagination-card-list-header (filterBox)="filterBox = $event" (cardsToShow)="cards = $event"></digimon-pagination-card-list-header>
 
     <digimon-search></digimon-search>
 
-    <div
-      class="mx-1 flex w-full flex-row flex-wrap overflow-hidden"
-      *ngIf="draggedCard$ | async as draggedCard"
-      [pDroppable]="['fromDeck', 'fromSide']"
-      (onDrop)="drop(draggedCard, draggedCard)">
+    <div class="mx-1 flex w-full flex-row flex-wrap overflow-hidden" *ngIf="draggedCard$ | async as draggedCard" [pDroppable]="['fromDeck', 'fromSide']" (onDrop)="drop(draggedCard, draggedCard)">
       <h1 *ngIf="cards.length === 0" class="primary-color text-bold my-10 text-center text-5xl">No cards found!</h1>
 
       <digimon-full-card
@@ -69,18 +63,7 @@ import { PaginationCardListHeaderComponent } from './pagination-card-list-header
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    PaginationCardListHeaderComponent,
-    SearchComponent,
-    NgIf,
-    DragDropModule,
-    NgFor,
-    FullCardComponent,
-    DialogModule,
-    FilterSideBoxComponent,
-    ViewCardDialogComponent,
-    AsyncPipe,
-  ],
+  imports: [PaginationCardListHeaderComponent, SearchComponent, NgIf, DragDropModule, NgFor, FullCardComponent, DialogModule, FilterSideBoxComponent, ViewCardDialogComponent, AsyncPipe],
 })
 export class PaginationCardListComponent implements OnInit, OnDestroy {
   @Input() deckView: boolean;
@@ -128,9 +111,9 @@ export class PaginationCardListComponent implements OnInit, OnDestroy {
 
   drop(card: IDraggedCard, dragCard: IDraggedCard) {
     if (dragCard.drag === DRAG.Side) {
-      this.store.dispatch(removeCardFromSideDeck({ cardId: card.card.id }));
+      this.store.dispatch(WebsiteActions.removecardfromsidedeck({ cardId: card.card.id }));
       return;
     }
-    this.store.dispatch(removeCardFromDeck({ cardId: card.card.id }));
+    this.store.dispatch(WebsiteActions.removecardfromdeck({ cardId: card.card.id }));
   }
 }

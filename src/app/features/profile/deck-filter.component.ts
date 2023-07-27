@@ -11,12 +11,7 @@ import { InputTextModule } from 'primeng/inputtext';
       <div class="my-1 flex w-full flex-col px-2">
         <span class="p-input-icon-left w-full">
           <i class="pi pi-search h-3"></i>
-          <input
-            [formControl]="searchFilter"
-            class="w-full text-xs"
-            pInputText
-            placeholder="Search (Title, Description, Card-Ids, Color)"
-            type="text" />
+          <input [formControl]="searchFilter" class="w-full text-xs" pInputText placeholder="Search (Title, Description, Card-Ids, Color)" type="text" />
         </span>
       </div>
       <p-multiSelect

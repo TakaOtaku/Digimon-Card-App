@@ -17,9 +17,7 @@ import { NgFor, SlicePipe } from '@angular/common';
                 <thead class="surface-card border-b">
                   <tr>
                     <th scope="col" class="max-w-[50px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">#</th>
-                    <th scope="col" class="maw-w-[150px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">
-                      Card
-                    </th>
+                    <th scope="col" class="maw-w-[150px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">Card</th>
                     <th scope="col" class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">ID</th>
                     <th scope="col" class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"># Played</th>
                     <th scope="col" class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">% of Decks</th>
@@ -27,26 +25,17 @@ import { NgFor, SlicePipe } from '@angular/common';
                   </tr>
                 </thead>
                 <tbody>
-                  <tr
-                    *ngFor="let card of mostUsedCards | slice : 0 : 50; let i = index"
-                    class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150">
-                    <td class="max-w-[50px] whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">
-                      {{ i + 1 }}.
-                    </td>
-                    <td
-                      class="max-w-[150px] overflow-hidden whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">
+                  <tr *ngFor="let card of mostUsedCards | slice : 0 : 50; let i = index" class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150">
+                    <td class="max-w-[50px] whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">{{ i + 1 }}.</td>
+                    <td class="max-w-[150px] overflow-hidden whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">
                       {{ card.name }}
                     </td>
                     <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">
                       {{ card.cardNumber }}
                     </td>
                     <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">{{ card.count }}x</td>
-                    <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">
-                      {{ percentInDecks(card) }}%
-                    </td>
-                    <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">
-                      {{ averagePlayed(card) }}x
-                    </td>
+                    <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">{{ percentInDecks(card) }}%</td>
+                    <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">{{ averagePlayed(card) }}x</td>
                   </tr>
                 </tbody>
               </table>
@@ -64,9 +53,7 @@ import { NgFor, SlicePipe } from '@angular/common';
                 <thead class="surface-card border-b">
                   <tr>
                     <th scope="col" class="max-w-[50px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">#</th>
-                    <th scope="col" class="maw-w-[150px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">
-                      Card
-                    </th>
+                    <th scope="col" class="maw-w-[150px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">Card</th>
                     <th scope="col" class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">ID</th>
                     <th scope="col" class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"># Played</th>
                     <th scope="col" class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">% of Decks</th>
@@ -74,26 +61,17 @@ import { NgFor, SlicePipe } from '@angular/common';
                   </tr>
                 </thead>
                 <tbody>
-                  <tr
-                    *ngFor="let card of filter(mostUsedCards, 'Digimon') | slice : 0 : 50; let i = index"
-                    class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150">
-                    <td class="max-w-[50px] whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">
-                      {{ i + 1 }}.
-                    </td>
-                    <td
-                      class="max-w-[150px] overflow-hidden whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">
+                  <tr *ngFor="let card of filter(mostUsedCards, 'Digimon') | slice : 0 : 50; let i = index" class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150">
+                    <td class="max-w-[50px] whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">{{ i + 1 }}.</td>
+                    <td class="max-w-[150px] overflow-hidden whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">
                       {{ card.name }}
                     </td>
                     <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">
                       {{ card.cardNumber }}
                     </td>
                     <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">{{ card.count }}x</td>
-                    <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">
-                      {{ percentInDecks(card) }}%
-                    </td>
-                    <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">
-                      {{ averagePlayed(card) }}x
-                    </td>
+                    <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">{{ percentInDecks(card) }}%</td>
+                    <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">{{ averagePlayed(card) }}x</td>
                   </tr>
                 </tbody>
               </table>
@@ -111,9 +89,7 @@ import { NgFor, SlicePipe } from '@angular/common';
                 <thead class="surface-card border-b">
                   <tr>
                     <th scope="col" class="max-w-[50px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">#</th>
-                    <th scope="col" class="maw-w-[150px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">
-                      Card
-                    </th>
+                    <th scope="col" class="maw-w-[150px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">Card</th>
                     <th scope="col" class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">ID</th>
                     <th scope="col" class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"># Played</th>
                     <th scope="col" class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">% of Decks</th>
@@ -121,26 +97,17 @@ import { NgFor, SlicePipe } from '@angular/common';
                   </tr>
                 </thead>
                 <tbody>
-                  <tr
-                    *ngFor="let card of filter(mostUsedCards, 'Tamer') | slice : 0 : 50; let i = index"
-                    class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150">
-                    <td class="max-w-[50px] whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">
-                      {{ i + 1 }}.
-                    </td>
-                    <td
-                      class="max-w-[150px] overflow-hidden whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">
+                  <tr *ngFor="let card of filter(mostUsedCards, 'Tamer') | slice : 0 : 50; let i = index" class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150">
+                    <td class="max-w-[50px] whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">{{ i + 1 }}.</td>
+                    <td class="max-w-[150px] overflow-hidden whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">
                       {{ card.name }}
                     </td>
                     <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">
                       {{ card.cardNumber }}
                     </td>
                     <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">{{ card.count }}x</td>
-                    <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">
-                      {{ percentInDecks(card) }}%
-                    </td>
-                    <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">
-                      {{ averagePlayed(card) }}x
-                    </td>
+                    <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">{{ percentInDecks(card) }}%</td>
+                    <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">{{ averagePlayed(card) }}x</td>
                   </tr>
                 </tbody>
               </table>
@@ -158,9 +125,7 @@ import { NgFor, SlicePipe } from '@angular/common';
                 <thead class="surface-card border-b">
                   <tr>
                     <th scope="col" class="max-w-[50px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">#</th>
-                    <th scope="col" class="maw-w-[150px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">
-                      Card
-                    </th>
+                    <th scope="col" class="maw-w-[150px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">Card</th>
                     <th scope="col" class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">ID</th>
                     <th scope="col" class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"># Played</th>
                     <th scope="col" class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">% of Decks</th>
@@ -168,26 +133,17 @@ import { NgFor, SlicePipe } from '@angular/common';
                   </tr>
                 </thead>
                 <tbody>
-                  <tr
-                    *ngFor="let card of filter(mostUsedCards, 'Option') | slice : 0 : 50; let i = index"
-                    class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150">
-                    <td class="max-w-[50px] whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">
-                      {{ i + 1 }}.
-                    </td>
-                    <td
-                      class="max-w-[150px] overflow-hidden whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">
+                  <tr *ngFor="let card of filter(mostUsedCards, 'Option') | slice : 0 : 50; let i = index" class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150">
+                    <td class="max-w-[50px] whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">{{ i + 1 }}.</td>
+                    <td class="max-w-[150px] overflow-hidden whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">
                       {{ card.name }}
                     </td>
                     <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">
                       {{ card.cardNumber }}
                     </td>
                     <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">{{ card.count }}x</td>
-                    <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">
-                      {{ percentInDecks(card) }}%
-                    </td>
-                    <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">
-                      {{ averagePlayed(card) }}x
-                    </td>
+                    <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">{{ percentInDecks(card) }}%</td>
+                    <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">{{ averagePlayed(card) }}x</td>
                   </tr>
                 </tbody>
               </table>

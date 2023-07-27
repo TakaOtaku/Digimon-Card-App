@@ -1,19 +1,7 @@
+import { DeckActions, WebsiteActions } from './../../../store/digimon.actions';
 import { NgFor, NgIf } from '@angular/common';
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnChanges,
-  OnInit,
-  Output,
-  SimpleChanges,
-} from '@angular/core';
-import {
-  FormsModule,
-  ReactiveFormsModule,
-  UntypedFormControl,
-  UntypedFormGroup,
-} from '@angular/forms';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { FormsModule, ReactiveFormsModule, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
@@ -25,26 +13,10 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { TooltipModule } from 'primeng/tooltip';
 import { first } from 'rxjs';
 import * as uuid from 'uuid';
-import {
-  CARDSET,
-  ICard,
-  IDeck,
-  IDeckCard,
-  ITournamentDeck,
-} from '../../../../models';
-import {
-  mapToDeckCards,
-  setDeckImage,
-  setupDigimonCards,
-} from '../../../functions/digimon-card.functions';
+import { CARDSET, ICard, IDeck, IDeckCard, ITournamentDeck } from '../../../../models';
+import { mapToDeckCards, setDeckImage, setupDigimonCards } from '../../../functions/digimon-card.functions';
 import { AuthService } from '../../../service/auth.service';
 import { DigimonBackendService } from '../../../service/digimon-backend.service';
-import {
-  deleteDeck,
-  importDeck,
-  saveDeck,
-  setDeck,
-} from '../../../store/digimon.actions';
 import { DeckCardComponent } from '../deck-card.component';
 import { ChartContainersComponent } from '../statistics/chart-containers.component';
 import { ColorSpreadComponent } from '../statistics/color-spread.component';
@@ -61,50 +33,21 @@ export interface ICardImage {
   selector: 'digimon-deck-dialog',
   template: `
     <div class="flex h-full w-full flex-col">
-      <div
-        class="grid max-h-[375px] min-h-[200px] w-full grid-cols-4 overflow-y-scroll border-2 border-slate-200 md:grid-cols-6 lg:grid-cols-8"
-      >
-        <digimon-deck-card
-          *ngFor="let card of mainDeck"
-          [edit]="false"
-          [card]="card"
-          [cards]="allCards"
-        ></digimon-deck-card>
+      <div class="grid max-h-[375px] min-h-[200px] w-full grid-cols-4 overflow-y-scroll border-2 border-slate-200 md:grid-cols-6 lg:grid-cols-8">
+        <digimon-deck-card *ngFor="let card of mainDeck" [edit]="false" [card]="card" [cards]="allCards"></digimon-deck-card>
       </div>
 
-      <div
-        class="surface-card mx-auto my-1 flex max-h-[200px] w-full flex-row border border-white"
-      >
-        <digimon-ddto-spread
-          [deck]="deck"
-          [allCards]="allCards"
-          [container]="true"
-          class="ml-auto hidden border-r border-slate-200 px-5 lg:block"
-        ></digimon-ddto-spread>
+      <div class="surface-card mx-auto my-1 flex max-h-[200px] w-full flex-row border border-white">
+        <digimon-ddto-spread [deck]="deck" [allCards]="allCards" [container]="true" class="ml-auto hidden border-r border-slate-200 px-5 lg:block"></digimon-ddto-spread>
 
-        <digimon-chart-containers
-          [deck]="mainDeck"
-          class="mx-auto max-w-[40rem]"
-        ></digimon-chart-containers>
+        <digimon-chart-containers [deck]="mainDeck" class="mx-auto max-w-[40rem]"></digimon-chart-containers>
 
-        <digimon-color-spread
-          [deck]="deck"
-          [allCards]="allCards"
-          [container]="true"
-          class="mr-auto hidden border-l border-slate-200 px-5 lg:block"
-        ></digimon-color-spread>
+        <digimon-color-spread [deck]="deck" [allCards]="allCards" [container]="true" class="mr-auto hidden border-l border-slate-200 px-5 lg:block"></digimon-color-spread>
       </div>
 
-      <div
-        *ngIf="!editable; else edit"
-        class="mx-auto my-1 grid grid-cols-3 gap-y-1"
-      >
+      <div *ngIf="!editable; else edit" class="mx-auto my-1 grid grid-cols-3 gap-y-1">
         <label>Title</label>
-        <div
-          [pTooltip]="deck.title"
-          tooltipPosition="top"
-          class="text-shadow col-span-2 mr-3 truncate text-3xl font-black text-[#e2e4e6]"
-        >
+        <div [pTooltip]="deck.title" tooltipPosition="top" class="text-shadow col-span-2 mr-3 truncate text-3xl font-black text-[#e2e4e6]">
           {{ deck.title }}
         </div>
 
@@ -118,10 +61,7 @@ export interface ICardImage {
 
         <label>Tags</label>
         <div class="col-span-2 flex flex-row align-middle">
-          <div
-            *ngFor="let tag of deck.tags"
-            class="surface-ground mr-0.5 h-8 border border-black px-1.5 text-xs font-bold leading-[35px]"
-          >
+          <div *ngFor="let tag of deck.tags" class="surface-ground mr-0.5 h-8 border border-black px-1.5 text-xs font-bold leading-[35px]">
             {{ tag.name }}
           </div>
         </div>
@@ -159,89 +99,27 @@ export interface ICardImage {
       <ng-template #edit [formGroup]="deckFormGroup">
         <div class="mx-auto my-1 grid grid-cols-3 gap-y-1">
           <label>Title</label>
-          <input
-            formControlName="title"
-            placeholder="Deck Name:"
-            class="col-span-2 mr-2 w-full text-sm"
-            pInputText
-            type="text"
-          />
+          <input formControlName="title" placeholder="Deck Name:" class="col-span-2 mr-2 w-full text-sm" pInputText type="text" />
           <label>Image</label>
-          <p-dropdown
-            styleClass="truncate w-full lg:w-[250px]"
-            class=" col-span-2"
-            [options]="cardImageOptions"
-            formControlName="cardImage"
-            optionLabel="name"
-            appendTo="body"
-          >
-          </p-dropdown>
+          <p-dropdown styleClass="truncate w-full lg:w-[250px]" class=" col-span-2" [options]="cardImageOptions" formControlName="cardImage" optionLabel="name" appendTo="body"> </p-dropdown>
           <label>Description</label>
-          <textarea
-            formControlName="description"
-            placeholder="Description:"
-            class="col-span-2 h-[66px] w-full overflow-hidden"
-            pInputTextarea
-          ></textarea>
+          <textarea formControlName="description" placeholder="Description:" class="col-span-2 h-[66px] w-full overflow-hidden" pInputTextarea></textarea>
           <label>Tags</label>
           <div class="col-span-2 flex flex-row align-middle">
-            <div
-              *ngFor="let tag of deck.tags"
-              class="surface-ground mr-0.5 h-8 border border-black px-1.5 text-xs font-bold leading-[35px]"
-            >
+            <div *ngFor="let tag of deck.tags" class="surface-ground mr-0.5 h-8 border border-black px-1.5 text-xs font-bold leading-[35px]">
               {{ tag.name }}
             </div>
           </div>
         </div>
       </ng-template>
 
-      <div
-        *ngIf="editable; else editButtons"
-        class="mx-auto mt-1 grid grid-cols-3"
-      >
-        <button
-          (click)="saveDeck()"
-          [disabled]="!deckFormGroup.dirty"
-          pButton
-          class="p-button-sm lg:p-button p-button-outlined"
-          type="button"
-          label="Save"
-        ></button>
-        <button
-          (click)="openDeck($event)"
-          pButton
-          class="p-button-sm lg:p-button p-button-outlined"
-          type="button"
-          label="Open"
-        ></button>
-        <button
-          (click)="copyDeck($event)"
-          pButton
-          class="p-button-sm lg:p-button p-button-outlined"
-          type="button"
-          label="Copy"
-        ></button>
-        <button
-          (click)="showExportDeckDialog()"
-          pButton
-          class="p-button-sm lg:p-button p-button-outlined"
-          type="button"
-          label="Export"
-        ></button>
-        <button
-          (click)="getLink()"
-          pButton
-          class="p-button-sm lg:p-button p-button-outlined"
-          type="button"
-          label="Get Link"
-        ></button>
-        <button
-          (click)="deleteDeck($event)"
-          pButton
-          class="p-button-sm lg:p-button p-button-outlined"
-          type="button"
-          label="Delete"
-        ></button>
+      <div *ngIf="editable; else editButtons" class="mx-auto mt-1 grid grid-cols-3">
+        <button (click)="saveDeck()" [disabled]="!deckFormGroup.dirty" pButton class="p-button-sm lg:p-button p-button-outlined" type="button" label="Save"></button>
+        <button (click)="openDeck($event)" pButton class="p-button-sm lg:p-button p-button-outlined" type="button" label="Open"></button>
+        <button (click)="copyDeck($event)" pButton class="p-button-sm lg:p-button p-button-outlined" type="button" label="Copy"></button>
+        <button (click)="showExportDeckDialog()" pButton class="p-button-sm lg:p-button p-button-outlined" type="button" label="Export"></button>
+        <button (click)="getLink()" pButton class="p-button-sm lg:p-button p-button-outlined" type="button" label="Get Link"></button>
+        <button (click)="deleteDeck($event)" pButton class="p-button-sm lg:p-button p-button-outlined" type="button" label="Delete"></button>
         <!--button
           (click)="deckSubmissionDialog = true"
           pButton
@@ -251,55 +129,16 @@ export interface ICardImage {
       </div>
       <ng-template #editButtons>
         <div class="mx-auto mt-1 grid grid-cols-3 lg:grid-cols-5">
-          <button
-            (click)="openDeck($event)"
-            pButton
-            class="p-button-sm lg:p-button p-button-outlined"
-            type="button"
-            label="Open"
-          ></button>
-          <button
-            (click)="copyDeck($event)"
-            pButton
-            class="p-button-sm lg:p-button p-button-outlined"
-            type="button"
-            label="Copy"
-          ></button>
-          <button
-            (click)="showExportDeckDialog()"
-            pButton
-            class="p-button-sm lg:p-button p-button-outlined"
-            type="button"
-            label="Export"
-          ></button>
-          <button
-            (click)="getLink()"
-            pButton
-            class="p-button-sm lg:p-button p-button-outlined"
-            type="button"
-            label="Get Link"
-          ></button>
-          <button
-            *ngIf="isAdmin"
-            (click)="deleteDeck($event)"
-            pButton
-            class="p-button-sm lg:p-button p-button-outlined"
-            type="button"
-            label="Delete"
-          ></button>
+          <button (click)="openDeck($event)" pButton class="p-button-sm lg:p-button p-button-outlined" type="button" label="Open"></button>
+          <button (click)="copyDeck($event)" pButton class="p-button-sm lg:p-button p-button-outlined" type="button" label="Copy"></button>
+          <button (click)="showExportDeckDialog()" pButton class="p-button-sm lg:p-button p-button-outlined" type="button" label="Export"></button>
+          <button (click)="getLink()" pButton class="p-button-sm lg:p-button p-button-outlined" type="button" label="Get Link"></button>
+          <button *ngIf="isAdmin" (click)="deleteDeck($event)" pButton class="p-button-sm lg:p-button p-button-outlined" type="button" label="Delete"></button>
         </div>
       </ng-template>
     </div>
 
-    <p-dialog
-      header="Export Deck"
-      [(visible)]="exportDeckDialog"
-      [modal]="true"
-      [dismissableMask]="true"
-      [resizable]="false"
-      styleClass="w-full h-full max-w-6xl min-h-[500px]"
-      [baseZIndex]="10000"
-    >
+    <p-dialog header="Export Deck" [(visible)]="exportDeckDialog" [modal]="true" [dismissableMask]="true" [resizable]="false" styleClass="w-full h-full max-w-6xl min-h-[500px]" [baseZIndex]="10000">
       <digimon-export-deck-dialog [deck]="deck"></digimon-export-deck-dialog>
     </p-dialog>
 
@@ -310,12 +149,8 @@ export interface ICardImage {
       [dismissableMask]="true"
       [resizable]="false"
       styleClass="w-full h-full max-w-6xl min-h-[500px]"
-      [baseZIndex]="10000"
-    >
-      <digimon-deck-submission
-        [inputDeck]="deck"
-        (onClose)="deckSubmissionDialog = false"
-      ></digimon-deck-submission>
+      [baseZIndex]="10000">
+      <digimon-deck-submission [inputDeck]="deck" (onClose)="deckSubmissionDialog = false"></digimon-deck-submission>
     </p-dialog>
   `,
   standalone: true,
@@ -376,9 +211,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
     private messageService: MessageService
   ) {
     this.allCards = this.allCards = setupDigimonCards(CARDSET.Both);
-    this.isAdmin =
-      this.authService.userData?.uid === 'S3rWXPtCYRN8vSrxY3qE6aeewy43' ||
-      this.authService.userData?.uid === 'loBLZPOIL0ZlDzt6A1rgDiTomTw2';
+    this.isAdmin = this.authService.userData?.uid === 'S3rWXPtCYRN8vSrxY3qE6aeewy43' || this.authService.userData?.uid === 'loBLZPOIL0ZlDzt6A1rgDiTomTw2';
   }
 
   ngOnInit() {
@@ -395,9 +228,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
     this.deckFormGroup = new UntypedFormGroup({
       title: new UntypedFormControl(this.deck.title),
       description: new UntypedFormControl(this.deck.description),
-      cardImage: new UntypedFormControl(
-        this.getCardImage(this.deck.imageCardId)
-      ),
+      cardImage: new UntypedFormControl(this.getCardImage(this.deck.imageCardId)),
     });
 
     this.cardImageOptions = this.createImageOptions();
@@ -406,11 +237,9 @@ export class DeckDialogComponent implements OnInit, OnChanges {
   openDeck(event: Event) {
     if (this.editable) {
       if (this.authService.isLoggedIn) {
-        this.router.navigateByUrl(
-          `deckbuilder/user/${this.authService.userData?.uid}/deck/${this.deck.id}`
-        );
+        this.router.navigateByUrl(`deckbuilder/user/${this.authService.userData?.uid}/deck/${this.deck.id}`);
       } else {
-        this.store.dispatch(setDeck({ deck: this.deck }));
+        this.store.dispatch(WebsiteActions.setdeck({ deck: this.deck }));
         this.router.navigateByUrl('deckbuilder');
       }
     } else {
@@ -419,13 +248,11 @@ export class DeckDialogComponent implements OnInit, OnChanges {
         message: 'You are about to open this deck. Are you sure?',
         accept: () => {
           this.store.dispatch(
-            setDeck({
+            WebsiteActions.setdeck({
               deck: this.deck,
             })
           );
-          this.router.navigateByUrl(
-            '/deckbuilder/user/' + this.deck.userId + '/deck/' + this.deck.id
-          );
+          this.router.navigateByUrl('/deckbuilder/user/' + this.deck.userId + '/deck/' + this.deck.id);
         },
       });
     }
@@ -438,7 +265,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
         key: 'Delete',
         message: 'You are about to permanently delete this deck. Are you sure?',
         accept: () => {
-          this.store.dispatch(deleteDeck({ deck: this.deck }));
+          this.store.dispatch(DeckActions.delete({ deck: this.deck }));
           this.messageService.add({
             severity: 'success',
             summary: 'Deck deleted!',
@@ -453,10 +280,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
         key: 'Delete',
         message: 'You are about to permanently delete this deck. Are you sure?',
         accept: () => {
-          this.digimonBackendService
-            .deleteDeck(this.deck.id)
-            .pipe(first())
-            .subscribe();
+          this.digimonBackendService.deleteDeck(this.deck.id).pipe(first()).subscribe();
           this.messageService.add({
             severity: 'success',
             summary: 'Deck deleted!',
@@ -474,7 +298,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
       message: 'You are about to copy this deck. Are you sure?',
       accept: () => {
         this.store.dispatch(
-          importDeck({
+          DeckActions.import({
             deck: { ...this.deck, id: uuid.v4() },
           })
         );
@@ -507,9 +331,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
     selBox.style.left = '0';
     selBox.style.top = '0';
     selBox.style.opacity = '0';
-    selBox.value = this.editable
-      ? `https://digimoncard.app/deckbuilder/user/${this.authService.userData?.uid}/deck/${this.deck.id}`
-      : `https://digimoncard.app/deckbuilder/${this.deck.id}`;
+    selBox.value = this.editable ? `https://digimoncard.app/deckbuilder/user/${this.authService.userData?.uid}/deck/${this.deck.id}` : `https://digimoncard.app/deckbuilder/${this.deck.id}`;
     document.body.appendChild(selBox);
     selBox.focus();
     selBox.select();
@@ -531,7 +353,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
       imageCardId: this.deckFormGroup.get('cardImage')?.value.value,
     };
 
-    this.store.dispatch(saveDeck({ deck }));
+    this.store.dispatch(DeckActions.save({ deck }));
     this.messageService.add({
       severity: 'success',
       summary: 'Deck saved!',

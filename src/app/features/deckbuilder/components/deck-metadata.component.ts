@@ -1,12 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  EventEmitter,
-  Input,
-  OnChanges,
-  Output,
-  SimpleChanges,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { ColorList, IColor, ITag, tagsList } from '../../../../models';
 import { ObscenityPipe } from '../../../pipes/obscenity.pipe';
 import { InputTextareaModule } from 'primeng/inputtextarea';
@@ -24,13 +16,7 @@ import { NgFor, NgClass } from '@angular/common';
       </div>
 
       <div class="mt-2 w-1/2 pl-1">
-        <input
-          [(ngModel)]="titleInput"
-          (ngModelChange)="this.titleChange.emit($event)"
-          placeholder="Deck Name:"
-          class="h-8 w-full text-sm"
-          pInputText
-          type="text" />
+        <input [(ngModel)]="titleInput" (ngModelChange)="this.titleChange.emit($event)" placeholder="Deck Name:" class="h-8 w-full text-sm" pInputText type="text" />
       </div>
     </div>
 

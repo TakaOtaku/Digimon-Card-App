@@ -11,9 +11,7 @@ import { NgStyle } from '@angular/common';
         -webkit-mask-size: 100%;
         "
         class="w-1/2 bg-white bg-contain bg-center bg-no-repeat py-1">
-        <div
-          class="m-auto h-full w-full bg-contain bg-center bg-no-repeat"
-          [ngStyle]="{ background: 'url(' + image + ')' }"></div>
+        <div class="m-auto h-full w-full bg-contain bg-center bg-no-repeat" [ngStyle]="{ background: 'url(' + image + ')' }"></div>
       </div>
       <div
         style="

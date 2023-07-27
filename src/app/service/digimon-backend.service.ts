@@ -168,8 +168,7 @@ export class DigimonBackendService {
           settings,
         } as ISave;
 
-        newSave.settings.aaCollectionMinimum =
-          newSave.settings.aaCollectionMinimum !== undefined ? newSave.settings.aaCollectionMinimum : 1;
+        newSave.settings.aaCollectionMinimum = newSave.settings.aaCollectionMinimum !== undefined ? newSave.settings.aaCollectionMinimum : 1;
 
         return newSave;
       })

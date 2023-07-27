@@ -1,9 +1,9 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-@import "scrollbar";
-@import "slider";
+@import 'scrollbar';
+@import 'slider';
 
 html,
 body {
@@ -140,16 +140,7 @@ body {
 }
 
 .Multi {
-  background: linear-gradient(
-    90deg,
-    #ef1919 14%,
-    #19a0e3 28%,
-    #ffd619 42%,
-    #19b383 56%,
-    #191919 70%,
-    #8d6fdb 84%,
-    #ffffff 100%
-  );
+  background: linear-gradient(90deg, #ef1919 14%, #19a0e3 28%, #ffd619 42%, #19b383 56%, #191919 70%, #8d6fdb 84%, #ffffff 100%);
 }
 
 digimon-multi-select {

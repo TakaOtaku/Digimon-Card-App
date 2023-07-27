@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
-import { catchError, debounceTime, distinctUntilChanged, EMPTY, first, map, switchMap, tap } from 'rxjs';
+import { EMPTY, catchError, debounceTime, distinctUntilChanged, first, map, switchMap, tap } from 'rxjs';
 import { CARDSET } from '../../models/enums/card-set.enum';
 import { setupDigimonCards } from '../functions/digimon-card.functions';
 import { filterCards } from '../functions/filter.functions';
 import { AuthService } from '../service/auth.service';
 import { DigimonBackendService } from '../service/digimon-backend.service';
-import * as DigimonActions from './digimon.actions';
+import { CollectionActions, DeckActions, DigimonActions, SaveActions, WebsiteActions } from './digimon.actions';
 import { selectCardSet, selectChangeAdvancedSettings, selectChangeFilterEffect, selectSave } from './digimon.selectors';
 
 @Injectable()
@@ -16,17 +16,17 @@ export class DigimonEffects {
     () =>
       this.actions$.pipe(
         ofType(
-          DigimonActions.changeCardCount,
-          DigimonActions.changeCardSets,
-          DigimonActions.setSave,
-          DigimonActions.importDeck,
-          DigimonActions.saveDeck,
-          DigimonActions.deleteDeck,
-          DigimonActions.changeCardSize,
-          DigimonActions.changeCollectionMode,
-          DigimonActions.addToCollection,
-          DigimonActions.changeCollectionMinimum,
-          DigimonActions.changeShowVersion
+          CollectionActions.setcardcount,
+          SaveActions.setcardsets,
+          SaveActions.setsave,
+          DeckActions.import,
+          DeckActions.save,
+          DeckActions.delete,
+          SaveActions.setcardsize,
+          SaveActions.setcollectionmode,
+          CollectionActions.addcard,
+          WebsiteActions.setcollectionminimum,
+          WebsiteActions.setshowversion
         ),
         switchMap(() =>
           this.store
@@ -54,16 +54,16 @@ export class DigimonEffects {
     () =>
       this.actions$.pipe(
         ofType(
-          DigimonActions.setDigimonCards,
-          DigimonActions.changeFilter,
-          DigimonActions.changeSearchFilter,
-          DigimonActions.changeColorFilter,
-          DigimonActions.changeCardTypeFilter,
-          DigimonActions.changeBlockFilter,
-          DigimonActions.changeRarityFilter,
-          DigimonActions.changeVersionFilter,
-          DigimonActions.changeSetFilter,
-          DigimonActions.changeSort
+          DigimonActions.setdigimoncards,
+          WebsiteActions.setfilter,
+          WebsiteActions.setsearchfilter,
+          WebsiteActions.setcolorfilter,
+          WebsiteActions.setcardtypefilter,
+          WebsiteActions.setblockfilter,
+          WebsiteActions.setrarityfilter,
+          WebsiteActions.setversionfilter,
+          WebsiteActions.setsetfilter,
+          WebsiteActions.setsort
         ),
         switchMap(() =>
           this.store
@@ -74,7 +74,7 @@ export class DigimonEffects {
                 if (!cards) return;
 
                 const filteredCards = filterCards(cards, collection, filter, sort);
-                this.store.dispatch(DigimonActions.setFilteredDigimonCards({ filteredCards }));
+                this.store.dispatch(DigimonActions.setfiltereddigimoncards({ filteredCards }));
               }),
               catchError(() => EMPTY)
             )
@@ -86,19 +86,14 @@ export class DigimonEffects {
   changeAdvancedSettings$ = createEffect(
     () =>
       this.actions$.pipe(
-        ofType(DigimonActions.loadSave, DigimonActions.setSave, DigimonActions.changeShowVersion),
+        ofType(SaveActions.getsave, SaveActions.setsave, WebsiteActions.setshowversion),
         switchMap(() =>
           this.store
             .select(selectChangeAdvancedSettings)
             .pipe(first())
             .pipe(
               tap(({ showPreRelease, showAA, showStamped, showReprint, filter }) => {
-                if (
-                  showPreRelease === undefined ||
-                  showAA === undefined ||
-                  showStamped === undefined ||
-                  showReprint === undefined
-                ) {
+                if (showPreRelease === undefined || showAA === undefined || showStamped === undefined || showReprint === undefined) {
                   return;
                 }
 
@@ -131,7 +126,7 @@ export class DigimonEffects {
                   }
                   filter = { ...filter, versionFilter };
                 }
-                this.store.dispatch(DigimonActions.changeFilter({ filter }));
+                this.store.dispatch(WebsiteActions.setfilter({ filter }));
               }),
               catchError(() => EMPTY)
             )
@@ -143,7 +138,7 @@ export class DigimonEffects {
   setDigimonCardSet$ = createEffect(
     () =>
       this.actions$.pipe(
-        ofType(DigimonActions.loadSave, DigimonActions.setSave, DigimonActions.changeCardSets),
+        ofType(SaveActions.setsave, SaveActions.getsave, SaveActions.setcardsets),
         switchMap(() =>
           this.store.select(selectCardSet).pipe(
             tap((cardSet) => {
@@ -157,7 +152,7 @@ export class DigimonEffects {
               } else {
                 digimonCards = setupDigimonCards(cardSet);
               }
-              this.store.dispatch(DigimonActions.setDigimonCards({ digimonCards }));
+              this.store.dispatch(DigimonActions.setdigimoncards({ digimonCards }));
             }),
             catchError(() => EMPTY)
           )
@@ -166,31 +161,5 @@ export class DigimonEffects {
     { dispatch: false }
   );
 
-  //updateCurrentDeck$ = createEffect(
-  //  () =>
-  //    this.actions$.pipe(
-  //      ofType(DigimonActions.addCardToDeck, DigimonActions.removeCardFromDeck),
-  //      switchMap(() =>
-  //        this.store.select(selectDeckChanges).pipe(
-  //          tap(({ deck, allCards }) => {
-  //            const newDeck = {
-  //              ...deck,
-  //              tags: setTags(deck, allCards),
-  //              color: setColors(deck, allCards),
-  //            };
-  //            this.store.dispatch(setDeck({ deck: newDeck }));
-  //          }),
-  //          catchError(() => EMPTY)
-  //        )
-  //      )
-  //    ),
-  //  { dispatch: false }
-  //);
-
-  constructor(
-    private store: Store,
-    private authService: AuthService,
-    private digimonBackendService: DigimonBackendService,
-    private actions$: Actions
-  ) {}
+  constructor(private store: Store, private authService: AuthService, private digimonBackendService: DigimonBackendService, private actions$: Actions) {}
 }

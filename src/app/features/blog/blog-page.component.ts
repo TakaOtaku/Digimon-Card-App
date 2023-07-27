@@ -11,32 +11,20 @@ import { RippleModule } from 'primeng/ripple';
 import { first, Observable, switchMap, tap, withLatestFrom } from 'rxjs';
 import { IBlog, IBlogWithText } from '../../../models';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
-import { setBlogs } from '../../store/digimon.actions';
 import { CKEditorComponent } from './components/ckeditor.component';
 import { HeaderComponent } from './components/header.component';
+import { WebsiteActions } from 'src/app/store/digimon.actions';
 
 @Component({
   selector: 'digimon-blog-page',
   template: `
     <div *ngIf="blog$ | async as blog" class="w-full bg-gradient-to-b from-[#17212f] to-[#08528d] pt-5">
       <div class="mx-auto max-w-7xl">
-        <digimon-header
-          [edit]="edit"
-          [form]="form"
-          (editChanged)="edit = $event"
-          [authorid]="blog.authorid"></digimon-header>
+        <digimon-header [edit]="edit" [form]="form" (editChanged)="edit = $event" [authorid]="blog.authorid"></digimon-header>
 
         <digimon-ckeditor [edit]="edit" [content]="form"></digimon-ckeditor>
 
-        <button
-          *ngIf="edit"
-          class="p-button mt-3"
-          icon="pi pi-save"
-          pButton
-          pRipple
-          type="button"
-          label="Save"
-          (click)="save(blog)"></button>
+        <button *ngIf="edit" class="p-button mt-3" icon="pi pi-save" pButton pRipple type="button" label="Save" (click)="save(blog)"></button>
       </div>
     </div>
   `,
@@ -74,7 +62,7 @@ export class BlogPageComponent implements OnInit {
       .getBlogEntries()
       .pipe(first())
       .subscribe((blogs) => {
-        this.store.dispatch(setBlogs({ blogs }));
+        this.store.dispatch(WebsiteActions.setblogs({ blogs }));
       });
   }
 

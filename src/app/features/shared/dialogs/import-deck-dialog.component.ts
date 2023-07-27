@@ -1,38 +1,27 @@
+import { AsyncPipe, NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, OnDestroy, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { MessageService } from 'primeng/api';
+import { ButtonModule } from 'primeng/button';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 import { Observable, Subject } from 'rxjs';
 import { ICard, IDeck } from '../../../../models';
 import { setColors, setTags } from '../../../functions/digimon-card.functions';
 import { stringToDeck } from '../../../functions/parse-deck';
 import { selectAllCards } from '../../../store/digimon.selectors';
-import { importDeck, setDeck } from '../../../store/digimon.actions';
-import { ButtonModule } from 'primeng/button';
-import { NgIf, AsyncPipe } from '@angular/common';
-import { InputTextareaModule } from 'primeng/inputtextarea';
-import { FormsModule } from '@angular/forms';
+import { WebsiteActions } from './../../../store/digimon.actions';
 
 @Component({
   selector: 'digimon-import-deck-dialog',
   template: `
     <div>
       <p>Copy your deck in the text area and press import or press the "Import Text-File"-Button to import a file.</p>
-      <textarea
-        pInputTextarea
-        [placeholder]="importPlaceholder"
-        id="text-import"
-        class="border-black-500 min-h-[200px] min-w-full border-2"
-        [(ngModel)]="deckText"></textarea>
+      <textarea pInputTextarea [placeholder]="importPlaceholder" id="text-import" class="border-black-500 min-h-[200px] min-w-full border-2" [(ngModel)]="deckText"></textarea>
     </div>
 
     <div *ngIf="digimonCards$ | async as allCards" class="mt-5 flex w-full">
-      <input
-        style="display: none"
-        type="file"
-        accept=".txt"
-        id="file-input"
-        (change)="handleFileInput($event.target, allCards)"
-        #fileUpload />
+      <input style="display: none" type="file" accept=".txt" id="file-input" (change)="handleFileInput($event.target, allCards)" #fileUpload />
       <button pButton (click)="fileUpload.click()">Import Text-File</button>
       <button pButton (click)="importDeck(allCards)" style="margin-left: 5px">Import</button>
     </div>
@@ -80,7 +69,8 @@ export class ImportDeckDialogComponent implements OnDestroy {
     fileReader.readAsText(input.files[0]);
   }
 
-  //["Exported from https://digimoncard.dev","BT5-001","BT5-001","BT5-001","BT9-001","BT9-001","BT8-058","BT8-058","BT8-058","BT8-058","BT9-059","BT9-059","BT9-059","BT9-059","BT8-009","BT8-009","BT8-009","BT8-009","BT9-008","BT9-008","BT8-064","BT8-064","BT8-064","BT8-064","P-076","P-076","P-076","P-076","BT8-011","BT8-011","BT8-011","BT8-067","BT8-067","BT8-067","BT9-065","BT9-065","EX1-008","EX1-008","BT8-084","BT8-084","BT2-112","BT8-070","BT8-070","BT8-070","BT9-068","BT9-068","BT9-112","BT5-086","BT9-090","BT9-090","BT8-086","BT8-086","BT5-092","BT5-092","BT6-106","BT6-106"]
+  // eslint-disable-next-line max-len
+  // ["Exported from https://digimoncard.dev","BT5-001","BT5-001","BT5-001","BT9-001","BT9-001","BT8-058","BT8-058","BT8-058","BT8-058","BT9-059","BT9-059","BT9-059","BT9-059","BT8-009","BT8-009","BT8-009","BT8-009","BT9-008","BT9-008","BT8-064","BT8-064","BT8-064","BT8-064","P-076","P-076","P-076","P-076","BT8-011","BT8-011","BT8-011","BT8-067","BT8-067","BT8-067","BT9-065","BT9-065","EX1-008","EX1-008","BT8-084","BT8-084","BT2-112","BT8-070","BT8-070","BT8-070","BT9-068","BT9-068","BT9-112","BT5-086","BT9-090","BT9-090","BT8-086","BT8-086","BT5-092","BT5-092","BT6-106","BT6-106"]
   importDeck(allCards: ICard[]) {
     if (this.deckText === '') return;
     const deck: IDeck | null = stringToDeck(this.deckText, allCards);
@@ -96,7 +86,7 @@ export class ImportDeckDialogComponent implements OnDestroy {
 
     deck.tags = setTags(deck, allCards);
     deck.color = setColors(deck, allCards);
-    this.store.dispatch(setDeck({ deck }));
+    this.store.dispatch(WebsiteActions.setdeck({ deck }));
     this.show = false;
     this.messageService.add({
       severity: 'success',

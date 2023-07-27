@@ -1,3 +1,4 @@
+import { WebsiteActions } from './../../../store/digimon.actions';
 import { AsyncPipe, CurrencyPipe, NgFor, NgIf } from '@angular/common';
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -8,7 +9,6 @@ import { TableModule } from 'primeng/table';
 import { async, BehaviorSubject, filter, Subject, switchMap, takeUntil } from 'rxjs';
 import { ICountCard } from '../../../../models';
 import { CardMarketService, ProductCM, ProductCMWithCount } from '../../../service/card-market.service';
-import { setPriceGuideCM } from '../../../store/digimon.actions';
 import { DeckBuilderViewModel, selectDeckBuilderViewModel } from '../../../store/digimon.selectors';
 
 @Component({
@@ -136,7 +136,7 @@ export class PriceCheckDialogComponent implements OnInit, OnDestroy {
     this.getPriceGuide$
       .pipe(
         switchMap((priceGuide) => {
-          this.store.dispatch(setPriceGuideCM({ products: priceGuide }));
+          this.store.dispatch(WebsiteActions.setpriceguidecm({ products: priceGuide }));
           return this.deckBuilderViewModel$;
         })
       )
@@ -161,9 +161,7 @@ export class PriceCheckDialogComponent implements OnInit, OnDestroy {
   updatePrice() {
     const all: ProductCMWithCount[] = this.deckBuilderViewModel.deck.cards
       .map((card) => {
-        const foundProduct: ProductCM =
-          this.deckBuilderViewModel.priceGuideCM.find((product) => card.id === product.cardId) ??
-          this.emptyProduct(card);
+        const foundProduct: ProductCM = this.deckBuilderViewModel.priceGuideCM.find((product) => card.id === product.cardId) ?? this.emptyProduct(card);
 
         return { ...foundProduct, count: card.count } as ProductCMWithCount;
       })
@@ -226,9 +224,7 @@ export class PriceCheckDialogComponent implements OnInit, OnDestroy {
   getMissingCards = (): ProductCMWithCount[] => {
     return this.products
       .map((product) => {
-        const foundCard = this.deckBuilderViewModel.collection.find(
-          (collectionCard) => collectionCard.id === product.cardId
-        );
+        const foundCard = this.deckBuilderViewModel.collection.find((collectionCard) => collectionCard.id === product.cardId);
         if (foundCard) {
           return { ...product, count: product.count - foundCard.count };
         } else {

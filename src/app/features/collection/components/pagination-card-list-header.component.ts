@@ -1,12 +1,12 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { Subject, takeUntil } from 'rxjs';
-import { ICard } from '../../../../models';
-import { changeCollectionMode } from '../../../store/digimon.actions';
-import { selectCollectionMode, selectFilteredCards } from '../../../store/digimon.selectors';
 import { AsyncPipe } from '@angular/common';
+import { ChangeDetectionStrategy, Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Store } from '@ngrx/store';
 import { PaginatorModule } from 'primeng/paginator';
+import { Subject, takeUntil } from 'rxjs';
+import { SaveActions } from 'src/app/store/digimon.actions';
+import { ICard } from '../../../../models';
+import { selectCollectionMode, selectFilteredCards } from '../../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-pagination-card-list-header',
@@ -24,16 +24,10 @@ import { PaginatorModule } from 'primeng/paginator';
 
       <div class="mx-2 mt-2 flex flex-row justify-center">
         <span class="text-xs font-bold leading-9 text-[#e2e4e6]">Collection Mode:</span>
-        <input
-          type="checkbox"
-          class="my-auto ml-1 h-5 w-5"
-          [ngModel]="collectionMode$ | async"
-          (ngModelChange)="changeCollectionMode($event)" />
+        <input type="checkbox" class="my-auto ml-1 h-5 w-5" [ngModel]="collectionMode$ | async" (ngModelChange)="changeCollectionMode($event)" />
       </div>
 
-      <button
-        (click)="filterBox.emit(true)"
-        class="min-w-auto primary-background m-auto h-8 w-32 rounded p-2 text-xs font-semibold text-[#e2e4e6] 2xl:hidden">
+      <button (click)="filterBox.emit(true)" class="min-w-auto primary-background m-auto h-8 w-32 rounded p-2 text-xs font-semibold text-[#e2e4e6] 2xl:hidden">
         <i class="pi pi-filter-fill mr-3"></i>Filter
       </button>
     </div>
@@ -79,6 +73,6 @@ export class PaginationCardListHeaderComponent implements OnInit, OnDestroy {
   }
 
   changeCollectionMode(collectionMode: boolean) {
-    this.store.dispatch(changeCollectionMode({ collectionMode }));
+    this.store.dispatch(SaveActions.setcollectionmode({ collectionMode }));
   }
 }
