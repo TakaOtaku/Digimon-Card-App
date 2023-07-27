@@ -26,6 +26,8 @@ import P from './P.json';
 
 import RB01 from './RB01.json';
 
+import LM from './LM.json';
+
 import ST1 from './ST/ST1.json';
 import ST10 from './ST/ST10.json';
 import ST12 from './ST/ST12.json';
@@ -67,6 +69,7 @@ export const japaneseCards: ICard[] = [
   ...EX4,
 
   ...RB01,
+  ...LM,
 
   ...ST1,
   ...ST2,

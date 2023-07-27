@@ -17,9 +17,9 @@ wikiPageLinks = [
     # 'https://digimoncardgame.fandom.com/wiki/RB-01:_Reboot_Booster_Rising_Wind'
     # 'https://digimoncardgame.fandom.com/wiki/ST-15:_Starter_Deck_Dragon_of_Courage',
     # 'https://digimoncardgame.fandom.com/wiki/ST-16:_Starter_Deck_Wolf_of_Friendship'
-    'https://digimoncardgame.fandom.com/wiki/BT-14:_Booster_Blast_Ace'
+    'https://digimoncardgame.fandom.com/wiki/LM-01:_Limited_Pack_Digimon_Ghost_Game'
 ]
-setName = "▹BOOSTER BLAST ACE [BT-14]"
+setName = "▹LIMITED PACK DIGIMON GHOST GAME [LM-01]"
 cardLinks = []
 NormalCards = []
 AACards = []
@@ -27,8 +27,6 @@ cards = []
 
 
 # Get all Tables and add the Links to the cards to an Array
-
-
 def getLinksFromWiki():
     for wikiPage in wikiPageLinks:
         page = requests.get(wikiPage)
@@ -45,8 +43,6 @@ def getLinksFromWiki():
 
 
 # Iterate through the card links and put them in normal array and if already there in the aa array
-
-
 def splitCardsForNormalAndAA():
     for cardLink in cardLinks:
         if cardLink not in NormalCards:
@@ -56,8 +52,6 @@ def splitCardsForNormalAndAA():
 
 
 # Get the Data from the main table and return it as an digimon card
-
-
 def getMainInfo(html, digimoncard):
     if html == None:
         return digimoncard
@@ -100,8 +94,6 @@ def getMainInfo(html, digimoncard):
 
 
 # Get digivolve requirements and return the digimon card
-
-
 def getDigivolveInfo(html, digimoncard):
     if html == None:
         return digimoncard
@@ -242,8 +234,8 @@ def getCardDataFromWiki():
         if (image is not None):
             imageSrc = image['src']
             # Change URL depending on if you want Japanese Cards or English Cards
-            # urllib.request.urlretrieve(
-            #  imageSrc, digimoncard['cardNumber'] + ".webp")
+            urllib.request.urlretrieve(
+                imageSrc, digimoncard['cardNumber'] + ".webp")
         print(digimoncard['name'])
         cards.append(digimoncard)
 
@@ -268,7 +260,7 @@ def makeAACardDatas():
 
 def saveCardsToJSON():
     print('Saving now!')
-    with open('BT14.json', 'w') as fp:
+    with open('LM01.json', 'w') as fp:
         json.dump(cards, fp)
 
 
@@ -295,14 +287,14 @@ def replace_string_in_json(file_path, search_string, replaceString):
         json.dump(updated_data, file, indent=4)
 
 
-#getLinksFromWiki()
-#splitCardsForNormalAndAA()
-#getCardDataFromWiki()
-#makeAACardDatas()
-#saveCardsToJSON()
+getLinksFromWiki()
+splitCardsForNormalAndAA()
+getCardDataFromWiki()
+makeAACardDatas()
+saveCardsToJSON()
 
-replace_string_in_json('BT14.json', ')[', ')\n[')
-replace_string_in_json('BT14.json', ').[', ')\n[')
-replace_string_in_json('BT14.json', '.[', '.[\n')
-replace_string_in_json('BT14.json', '＞＜', '＞\n＜')
-replace_string_in_json('BT14.json', ')＜', ')\n＜')
+replace_string_in_json('LM01.json', ')[', ')\n[')
+replace_string_in_json('LM01.json', ').[', ')\n[')
+replace_string_in_json('LM01.json', '.[', '.[\n')
+replace_string_in_json('LM01.json', '＞＜', '＞\n＜')
+replace_string_in_json('LM01.json', ')＜', ')\n＜')

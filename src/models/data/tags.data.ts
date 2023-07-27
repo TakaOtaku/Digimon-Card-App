@@ -15,6 +15,7 @@ export const TAGS = [
   'BT12',
   'BT13',
   'RB1',
+  'LM1',
   'EX1',
   'EX2',
   'EX3',

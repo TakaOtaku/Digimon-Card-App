@@ -54,7 +54,8 @@ export const GroupedSets = [
   },
   {
     items: [
-      { label: 'RB', value: 'RB1' },
+      { label: 'RB01', value: 'RB1' },
+      { label: 'LM', value: 'LM' },
       { label: 'P', value: 'P' },
     ],
   },
