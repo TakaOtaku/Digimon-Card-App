@@ -7,7 +7,7 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { first, Subject } from 'rxjs';
-import { ICard, IDeck } from '../../../../models';
+import { DigimonCard, IDeck } from '../../../../models';
 import { ColorsWithoutMulti } from '../../../../models/data/filter.data';
 import { compareIDs, formatId, mapToDeckCards } from '../../../functions/digimon-card.functions';
 import { selectAllCards } from '../../../store/digimon.selectors';
@@ -54,7 +54,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
 
   @Output() onClose = new EventEmitter<boolean>();
 
-  digimonCards: ICard[] = [];
+  digimonCards: DigimonCard[] = [];
 
   exportList = ['TEXT', 'TTS', 'UNTAP', 'IMAGE'];
   exportType = 'TEXT';
@@ -272,7 +272,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
     let cardsInCurrentRow = 1;
     const cardsPerRow = 9;
     this.deck.cards.forEach((card) => {
-      const fullCard = this.digimonCards.find((search: ICard) => compareIDs(card.id, search.id));
+      const fullCard = this.digimonCards.find((search: DigimonCard) => compareIDs(card.id, search.id));
       imgs.push({
         uri: fullCard!.cardImage,
         x: x,
@@ -354,7 +354,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
     let cardsInCurrentRow = 1;
     const cardsPerRow = 10;
     this.deck.cards.forEach((card) => {
-      const fullCard = this.digimonCards.find((search: ICard) => compareIDs(card.id, search.id));
+      const fullCard = this.digimonCards.find((search: DigimonCard) => compareIDs(card.id, search.id));
       for (let i = 1; i <= card.count; i++) {
         imgs.push({
           uri: fullCard!.cardImage,

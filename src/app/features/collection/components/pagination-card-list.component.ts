@@ -1,8 +1,8 @@
+import { dummyCard } from './../../../store/reducers/digimon.reducers';
 import { ChangeDetectionStrategy, Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subject, takeUntil } from 'rxjs';
-import { englishCards } from '../../../../assets/cardlists/eng/english';
-import { ICard, ICountCard, IDraggedCard } from '../../../../models';
+import { DigimonCard, ICountCard, IDraggedCard } from '../../../../models';
 import { DRAG } from '../../../../models/enums/drag.enum';
 import { selectCollection, selectCollectionMode, selectDraggedCard } from '../../../store/digimon.selectors';
 import { ViewCardDialogComponent } from '../../shared/dialogs/view-card-dialog.component';
@@ -76,9 +76,9 @@ export class PaginationCardListComponent implements OnInit, OnDestroy {
   collectionMode$ = this.store.select(selectCollectionMode);
 
   viewCardDialog = false;
-  card = englishCards[0];
+  card = JSON.parse(JSON.stringify(dummyCard));
 
-  cards: ICard[] = [];
+  cards: DigimonCard[] = [];
 
   private collection: ICountCard[] = [];
   private onDestroy$ = new Subject();
@@ -104,7 +104,7 @@ export class PaginationCardListComponent implements OnInit, OnDestroy {
     return this.collection.find((value) => value.id === cardId)?.count ?? 0;
   }
 
-  viewCard(card: ICard) {
+  viewCard(card: DigimonCard) {
     this.viewCardDialog = true;
     this.card = card;
   }

@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
-import { ICard, IDeck, IDeckCard } from '../../../../models';
+import { DigimonCard, IDeck, IDeckCard } from '../../../../models';
 import { getCountFromDeckCards, mapToDeckCards } from '../../../functions/digimon-card.functions';
 import { NgFor, SlicePipe } from '@angular/common';
 
@@ -157,7 +157,7 @@ import { NgFor, SlicePipe } from '@angular/common';
   imports: [NgFor, SlicePipe],
 })
 export class DeckStatisticsComponent implements OnInit, OnDestroy {
-  @Input() allCards: ICard[] = [];
+  @Input() allCards: DigimonCard[] = [];
   @Input() decks: IDeck[];
   @Input() updateCards: Subject<boolean>;
 

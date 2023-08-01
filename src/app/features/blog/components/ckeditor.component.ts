@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-
-// @ts-ignore
-import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 import { Base64Adapter } from 'src/app/functions/base64-adapter';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { NgIf } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+// @ts-ignore
+import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 
 @Component({
   selector: 'digimon-ckeditor',

@@ -1,5 +1,4 @@
 export * from './blog-entry.interface';
-export * from './card.interface';
 export * from './color.interface';
 export * from './count-card.interface';
 export * from './deck.interface';
@@ -14,3 +13,4 @@ export * from './sort.interface';
 export * from './tag.interface';
 export * from './user.interface';
 export * from './tournament-deck.interface';
+export * from './digimon-card.interface';

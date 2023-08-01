@@ -3,7 +3,6 @@ import { Component, EventEmitter } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ToastrService } from 'ngx-toastr';
-import { MessageService } from 'primeng/api';
 import { BlockUIModule } from 'primeng/blockui';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DialogModule } from 'primeng/dialog';
@@ -43,7 +42,6 @@ import { emptySave } from './store/reducers/save.reducer';
   `,
   standalone: true,
   imports: [NavbarComponent, NgIf, RouterOutlet, BlockUIModule, ProgressSpinnerModule, ToastModule, ConfirmDialogModule, DialogModule, ChangelogDialogComponent],
-  providers: [MessageService],
 })
 export class AppComponent {
   localStorageSave: ISave;
@@ -54,13 +52,7 @@ export class AppComponent {
   showChangelog = false;
   loadChangelog = new EventEmitter<boolean>();
 
-  constructor(
-    private store: Store,
-    private authService: AuthService,
-    private messageService: MessageService,
-    private digimonBackendService: DigimonBackendService,
-    private toastrService: ToastrService
-  ) {
+  constructor(private store: Store, private authService: AuthService, private digimonBackendService: DigimonBackendService, private toastrService: ToastrService) {
     this.loadSave();
 
     document.addEventListener(

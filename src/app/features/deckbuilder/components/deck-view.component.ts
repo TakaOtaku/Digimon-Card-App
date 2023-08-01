@@ -5,7 +5,7 @@ import { AccordionModule } from 'primeng/accordion';
 import { ConfirmationService, MessageService, SharedModule } from 'primeng/api';
 import { DragDropModule } from 'primeng/dragdrop';
 import { Subject, filter, first, takeUntil } from 'rxjs';
-import { ICard, ICountCard, IDeck, IDeckCard, IDraggedCard, ISave, ITag } from '../../../../models';
+import { DigimonCard, ICountCard, IDeck, IDeckCard, IDraggedCard, ISave, ITag } from '../../../../models';
 import { DRAG } from '../../../../models/enums/drag.enum';
 import { DeckColorMap } from '../../../../models/maps/color.map';
 import { compareIDs, deckIsValid, setColors, setTags, sortColors } from '../../../functions/digimon-card.functions';
@@ -119,7 +119,7 @@ export class DeckViewComponent implements OnInit, OnDestroy {
 
   deck: IDeck = { ...JSON.parse(JSON.stringify(emptyDeck)) };
 
-  allCards: ICard[] = [];
+  allCards: DigimonCard[] = [];
   collection: ICountCard[];
   save: ISave;
 

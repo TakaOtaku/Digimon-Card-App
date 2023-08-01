@@ -4,7 +4,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 import { Store } from '@ngrx/store';
 import { concat, first, Observable, Subject, switchMap, tap } from 'rxjs';
-import { ADMINS, ICard, IDeck, ISave, ITournamentDeck } from '../../../models';
+import { ADMINS, DigimonCard, IDeck, ISave, ITournamentDeck } from '../../../models';
 import { setColors, setDeckImage, setTags } from '../../functions/digimon-card.functions';
 import { AuthService } from '../../service/auth.service';
 import { CardMarketService } from '../../service/card-market.service';
@@ -49,7 +49,7 @@ export class TestPageComponent implements OnInit, OnDestroy {
   productsWithoutCorrectID: any[] = [];
   currentID = 1;
 
-  private allCards: ICard[] = [];
+  private allCards: DigimonCard[] = [];
   private onDestroy$ = new Subject();
 
   constructor(

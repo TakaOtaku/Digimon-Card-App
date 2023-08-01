@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { ICard, IDeck } from '../../../../models';
+import { DigimonCard, IDeck } from '../../../../models';
 import { getCountFromDeckCards, mapToDeckCards } from '../../../functions/digimon-card.functions';
 import { SingleContainerComponent } from '../single-container.component';
 import { NgIf, NgStyle } from '@angular/common';
@@ -81,7 +81,7 @@ import { NgIf, NgStyle } from '@angular/common';
 })
 export class ColorSpreadComponent implements OnInit, OnChanges {
   @Input() deck: IDeck | null;
-  @Input() allCards: ICard[];
+  @Input() allCards: DigimonCard[];
   @Input() container = false;
 
   colorSpread = [0, 0, 0, 0, 0, 0, 0];

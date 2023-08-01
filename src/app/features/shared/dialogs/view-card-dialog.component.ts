@@ -1,13 +1,25 @@
 import { AsyncPipe, NgClass, NgIf, NgStyle } from '@angular/common';
-import { Component, EventEmitter, HostListener, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  HostListener,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import { Store } from '@ngrx/store';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 import { map, Subject, takeUntil } from 'rxjs';
+import { ImgFallbackDirective } from 'src/app/directives/ImgFallback.directive';
+import { dummyCard } from 'src/app/store/reducers/digimon.reducers';
 import { replacements } from 'src/models/data/keyword-replacement.data';
-import { englishCards } from '../../../../assets/cardlists/eng/english';
-import { ICard, IDeck } from '../../../../models';
+
+import { DigimonCard, IDeck } from '../../../../models';
 import { ColorMap } from '../../../../models/maps/color.map';
 import { formatId } from '../../../functions/digimon-card.functions';
 import { selectCollection, selectCollectionMode, selectDeck, selectFilteredCards } from '../../../store/digimon.selectors';
@@ -50,7 +62,7 @@ import { selectCollection, selectCollectionMode, selectDeck, selectFilteredCards
           <i class="fa-solid fa-circle-arrow-left text-[#e2e4e6]"></i>
         </button>
         <h1 [ngStyle]="{color}" class="text-black-outline-xs my-1 text-3xl font-black" id="Card-Name">
-          {{ card.name }}
+          {{ card.name.english }}
         </h1>
         <button (click)="openWiki()" class="p-button-text" icon="pi pi-question-circle" pButton pRipple type="button"></button>
         <button class="ml-1" (click)="nextCard()">
@@ -60,7 +72,7 @@ import { selectCollection, selectCollectionMode, selectDeck, selectFilteredCards
 
       <div class="w-full flex-row md:flex" id="Image-Attributes">
         <div class="w-full md:w-1/2">
-          <img [lazyLoad]="this.png" alt="{{ imageAlt }}" defaultImage="assets/images/digimon-card-back.webp" class="mx-auto my-5 max-w-[15rem] md:my-0 md:max-w-full" />
+          <img [digimonImgFallback]="png" alt="{{ imageAlt }}" defaultImage="assets/images/digimon-card-back.webp" class="mx-auto my-5 max-w-[15rem] md:my-0 md:max-w-full" />
         </div>
         <div class="md:max-w-1/2 w-full self-center md:w-1/2 md:pl-2">
           <div *ngIf="inDeck()" class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150" id="Digimon-Deck-Count">
@@ -101,6 +113,7 @@ import { selectCollection, selectCollectionMode, selectDeck, selectFilteredCards
               {{ card.playCost }}
             </p>
           </div>
+          <!-- TODO
           <div *ngIf="card.digivolveCost1 !== '-'" class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150" id="Digimon-Digivolve-Cost-1">
             <p [ngStyle]="{color}" class="text-black-outline-xs ml-1.5 text-lg font-extrabold">Digivolve Cost 1</p>
             <p class="font-white ml-auto mr-1.5 font-bold leading-[1.7em]">
@@ -112,7 +125,7 @@ import { selectCollection, selectCollectionMode, selectDeck, selectFilteredCards
             <p class="font-white ml-auto mr-1.5 font-bold leading-[1.7em]">
               {{ card.digivolveCost2 }}
             </p>
-          </div>
+          </div> -->
           <div *ngIf="card.specialDigivolve !== '-'" class="my-0.5 flex w-full flex-col rounded-full" id="Digimon-Special-Digivolve">
             <p [ngStyle]="{color}" class="text-black-outline-xs text-lg font-extrabold">Special Digivolve</p>
             <span class="font-white whitespace-pre-wrap font-bold leading-[1.7em]" [innerHTML]="replaceWithImageTags(card.specialDigivolve)"> </span>
@@ -153,12 +166,13 @@ import { selectCollection, selectCollectionMode, selectDeck, selectFilteredCards
         </div>
       </div>
 
+      <!-- TODO
       <div *ngIf="card.restriction !== '-'" class="my-4 max-w-full" id="Restriction">
         <div class="flex flex-col" id="Card-Restriction">
           <p [ngStyle]="{color}" class="text-black-outline-xs text-lg font-extrabold">Restriction</p>
           <p class="font-white font-bold">{{ card.restriction }}</p>
         </div>
-      </div>
+      </div> -->
 
       <div class="my-4 max-w-full" id="Notes">
         <div class="flex flex-col" id="Card-Notes">
@@ -179,17 +193,17 @@ import { selectCollection, selectCollectionMode, selectDeck, selectFilteredCards
     </div>
   `,
   standalone: true,
-  imports: [NgStyle, NgIf, NgClass, ButtonModule, RippleModule, LazyLoadImageModule, AsyncPipe],
+  imports: [NgStyle, NgIf, NgClass, ButtonModule, RippleModule, LazyLoadImageModule, AsyncPipe, ImgFallbackDirective],
 })
 export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
   @Input() show: boolean = false;
-  @Input() card: ICard = englishCards[0];
+  @Input() card: DigimonCard = JSON.parse(JSON.stringify(dummyCard));
 
   @Input() width?: string = '50vw';
 
   @Output() onClose = new EventEmitter<boolean>();
 
-  allCards: ICard[] = [];
+  allCards: DigimonCard[] = [];
 
   png: string;
   imageAlt: string;
@@ -238,14 +252,14 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes && changes['card']) {
-      const card: ICard = changes['card'].currentValue;
+      const card: DigimonCard = changes['card'].currentValue;
       this.setupView(card);
 
       this.collectionCard$ = this.store.select(selectCollection).pipe(map((cards) => cards.find((colCard) => colCard.id === this.card.id)));
     }
   }
 
-  setupView(card: ICard) {
+  setupView(card: DigimonCard) {
     this.color = this.colorMap.get(card.color)!;
     this.backgroundColor = this.color;
     this.version = this.versionMap.get(card.version)!;

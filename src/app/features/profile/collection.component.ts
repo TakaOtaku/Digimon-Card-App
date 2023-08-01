@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { ICard, ICountCard } from '../../../models';
+import { DigimonCard, ICountCard } from '../../../models';
 import { NgIf, NgFor } from '@angular/common';
 
 interface MappedCollection {
@@ -73,7 +73,7 @@ interface MappedCollection {
 })
 export class CollectionComponent implements OnInit, OnChanges {
   @Input() collection: ICountCard[];
-  @Input() allCards: ICard[];
+  @Input() allCards: DigimonCard[];
 
   selectedSet = '';
   showCollection = false;

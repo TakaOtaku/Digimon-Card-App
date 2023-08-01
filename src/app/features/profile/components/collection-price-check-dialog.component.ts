@@ -1,8 +1,7 @@
 import { Component, Input, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subject, tap } from 'rxjs';
-import { englishCards } from '../../../../assets/cardlists/eng/english';
-import { GroupedSets, ICard, ICountCard, ISave } from '../../../../models';
+import { GroupedSets, DigimonCard, ICountCard, ISave } from '../../../../models';
 import { ProductCM, ProductCMWithCount } from '../../../service/card-market.service';
 import { selectAllCards, selectPriceGuideCM } from '../../../store/digimon.selectors';
 import { TableModule } from 'primeng/table';
@@ -13,6 +12,7 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { BlockUIModule } from 'primeng/blockui';
 import { NgIf, NgFor, AsyncPipe, CurrencyPipe } from '@angular/common';
+import { dummyCard } from 'src/app/store/reducers/digimon.reducers';
 
 @Component({
   selector: 'digimon-collection-price-check-dialog',
@@ -284,9 +284,9 @@ export class CollectionPriceCheckDialogComponent implements OnDestroy {
     };
   }
 
-  getCard = (cardId: string, allCards: ICard[]): ICard => {
+  getCard = (cardId: string, allCards: DigimonCard[]): DigimonCard => {
     const card = allCards.find((card) => card.id === cardId);
-    return card ? card : englishCards[0];
+    return card ? card : JSON.parse(JSON.stringify(dummyCard));
   };
 
   private filterCollection(): ICountCard[] {

@@ -59,7 +59,7 @@
         "max-len": [
           "error",
           {
-            "code": 200
+            "code": 150
           }
         ],
         "prettier/prettier": [

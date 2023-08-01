@@ -1,10 +1,20 @@
-import { englishCards } from '../../assets/cardlists/eng/english';
-import preReleaseJSON from '../../assets/cardlists/eng/PreRelease.json';
-import { japaneseCards } from '../../assets/cardlists/jap/japanese';
-import { CARDSET, ICard, ICountCard, IDeck, IDeckCard, ISelectItem, ITag, ITournamentDeck, tagsList } from '../../models';
-import { ColorOrderMap, DeckColorMap } from '../../models/maps/color.map';
+import { setupDigimonCards } from 'src/assets/cardlists/DigimonCards';
 
-export function setTags(deck: IDeck, allCards: ICard[]) {
+import {
+  CARDSET,
+  DigimonCard,
+  ICountCard,
+  IDeck,
+  IDeckCard,
+  ISelectItem,
+  ITag,
+  ITournamentDeck,
+  tagsList,
+} from '../../models';
+import { ColorOrderMap, DeckColorMap } from '../../models/maps/color.map';
+import { dummyCard } from '../store/reducers/digimon.reducers';
+
+export function setTags(deck: IDeck, allCards: DigimonCard[]) {
   let tags = [];
 
   tags.push(setNewestSet(deck.cards));
@@ -72,7 +82,7 @@ export function setNewestSet(cards: ICountCard[]): ITag {
   return tagsList.find((tag) => tag.name === set) ?? { name: '', color: 'Primary' };
 }
 
-export function bannedCardsIncluded(cards: ICountCard[], allCards: ICard[]): boolean {
+export function bannedCardsIncluded(cards: ICountCard[], allCards: DigimonCard[]): boolean {
   let banned = false;
   if (!cards) {
     return false;
@@ -83,14 +93,15 @@ export function bannedCardsIncluded(cards: ICountCard[], allCards: ICard[]): boo
     }
 
     const foundCard = allCards.find((allCard) => allCard.id === card.id);
+    /* TODO Implement
     if (foundCard) {
       banned = foundCard.restriction === 'Banned';
-    }
+    }*/
   });
   return banned;
 }
 
-export function tooManyRestrictedCardsIncluded(cards: ICountCard[], allCards: ICard[]): boolean {
+export function tooManyRestrictedCardsIncluded(cards: ICountCard[], allCards: DigimonCard[]): boolean {
   let restricted = false;
   if (!cards) {
     return false;
@@ -101,15 +112,16 @@ export function tooManyRestrictedCardsIncluded(cards: ICountCard[], allCards: IC
     }
 
     const foundCard = allCards.find((allCard) => allCard.id === card.id);
+    /* TODO Implement
     if (foundCard) {
       const res = foundCard.restriction === 'Restricted to 1';
       restricted = res ? card.count > 1 : false;
-    }
+    }*/
   });
   return restricted;
 }
 
-export function setColors(deck: IDeck, allCards: ICard[]) {
+export function setColors(deck: IDeck, allCards: DigimonCard[]) {
   const cards: IDeckCard[] = mapToDeckCards(deck.cards, allCards);
   const colorArray = [
     { name: 'Red', count: 0 },
@@ -154,37 +166,8 @@ export function formatId(id: string): string {
   return id.replace('ST0', 'ST').split('_P')[0];
 }
 
-export function getPNG(cardSRC: string): string {
-  let engRegExp = new RegExp('\\beng\\b');
-  let japRegExp = new RegExp('\\bjap\\b');
-  let preReleaseRegExp = new RegExp('\\bpre-release\\b');
-
-  if (engRegExp.test(cardSRC)) {
-    return cardSRC.replace(engRegExp, 'eng/png').replace(new RegExp('\\b.webp\\b'), '.png');
-  } else if (japRegExp.test(cardSRC)) {
-    return cardSRC.replace(japRegExp, 'jap/png').replace(new RegExp('\\b.webp\\b'), '.png');
-  } else {
-    return cardSRC.replace(preReleaseRegExp, 'pre-release/png').replace(new RegExp('\\b.webp\\b'), '.png');
-  }
-}
-
-export function setupAllDigimonCards(): ICard[] {
-  const allCards: ICard[] = setupDigimonCards(CARDSET.Both);
-
-  allCards.sort(function (a, b) {
-    if (a.cardNumber < b.cardNumber) {
-      return -1;
-    }
-    if (a.cardNumber > b.cardNumber) {
-      return 1;
-    }
-    return 0;
-  });
-  return allCards;
-}
-
-export function deckIsValid(deck: IDeck, allCards: ICard[]): string {
-  const cardMap = new Map<string, ICard>();
+export function deckIsValid(deck: IDeck, allCards: DigimonCard[]): string {
+  const cardMap = new Map<string, DigimonCard>();
 
   allCards.forEach((card) => {
     cardMap.set(formatId(card.id), card);
@@ -207,9 +190,7 @@ export function deckIsValid(deck: IDeck, allCards: ICard[]): string {
         } else {
           eggCount += card.count;
         }
-      } catch (e) {
-        console.log(fullCard);
-      }
+      } catch (e) {}
     }
   });
 
@@ -228,41 +209,13 @@ export function deckIsValid(deck: IDeck, allCards: ICard[]): string {
   return '';
 }
 
-export function setupDigimonCards(digimonSet: string): ICard[] {
-  let allCards: ICard[] = [];
-  if (digimonSet === CARDSET.English) {
-    allCards = englishCards.concat(preReleaseJSON);
-  }
-  if (digimonSet === CARDSET.Japanese) {
-    allCards = [...new Set(japaneseCards)];
-  }
-  if (digimonSet === CARDSET.Both) {
-    allCards = englishCards.concat(preReleaseJSON);
-    japaneseCards.forEach((japCard) => {
-      if (allCards.find((card) => card.id === japCard.id)) {
-        return;
-      }
-      allCards.push(japCard);
-    });
-  }
-
-  allCards.sort(function (a, b) {
-    const aSet = a.cardNumber.split('-');
-    const bSet = b.cardNumber.split('-');
-    const aNumber: number = +aSet[1] >>> 0;
-    const bNumber: number = +bSet[1] >>> 0;
-    return aSet[0].localeCompare(bSet[0]) || aNumber - bNumber;
-  });
-  return allCards;
-}
-
 export function sortColors(colorA: string, colorB: string): number {
   const a: number = ColorOrderMap.get(colorA) ?? 0;
   const b: number = ColorOrderMap.get(colorB) ?? 0;
   return a - b;
 }
 
-export function mapToDeckCards(cards: ICountCard[], allCards: ICard[]): IDeckCard[] {
+export function mapToDeckCards(cards: ICountCard[], allCards: DigimonCard[]): IDeckCard[] {
   const deckCards: IDeckCard[] = [];
 
   if (!cards) {
@@ -294,24 +247,22 @@ export function getCountFromDeckCards(deckCards: IDeckCard[] | ICountCard[]): nu
   return number;
 }
 
-export function setDeckImage(deck: IDeck | ITournamentDeck): ICard {
+export function setDeckImage(deck: IDeck | ITournamentDeck): DigimonCard {
   if (deck.cards && deck.cards.length === 0) {
-    return englishCards[0];
+    return JSON.parse(JSON.stringify(dummyCard));
   }
-  let deckCards = mapToDeckCards(deck.cards, setupDigimonCards(CARDSET.Both));
+  let deckCards = mapToDeckCards(deck.cards, setupDigimonCards(CARDSET.English));
 
   deckCards = deckCards.filter((card) => card.cardType === 'Digimon').filter((card) => card.cardLv !== 'Lv.7');
 
   if (deckCards.length === 0) {
-    return englishCards[0];
+    return JSON.parse(JSON.stringify(dummyCard));
   }
   try {
     deckCards = deckCards.sort((a, b) => Number(b.cardLv.replace('Lv.', '')) - Number(a.cardLv.replace('Lv.', '')));
-  } catch (e) {
-    console.log(deckCards);
-  }
+  } catch (e) {}
 
-  return deckCards.length > 0 ? deckCards[0] : englishCards[0];
+  return deckCards.length > 0 ? deckCards[0] : JSON.parse(JSON.stringify(dummyCard));
 }
 
 export function itemsAsSelectItem(array: string[]): ISelectItem[] {

@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { ICard, ICountCard, IDeck, IUser } from '../../../models';
+import { DigimonCard, ICountCard, IDeck, IUser } from '../../../models';
 import { selectDeckDisplayTable } from '../../store/digimon.selectors';
 import { emptyDeck } from '../../store/reducers/digimon.reducers';
 import { DeckDialogComponent } from '../shared/dialogs/deck-dialog.component';
@@ -47,7 +47,7 @@ export class DecksComponent implements OnInit, OnChanges {
 
   emptyDeck = JSON.parse(JSON.stringify(emptyDeck));
 
-  allCards: ICard[] = [];
+  allCards: DigimonCard[] = [];
 
   collection: ICountCard[];
   user: IUser;

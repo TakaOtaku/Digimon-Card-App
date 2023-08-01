@@ -1,26 +1,30 @@
-import { WebsiteActions } from './../../store/digimon.actions';
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
-import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { ConfirmationService, MessageService } from 'primeng/api';
+import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { PaginatorModule } from 'primeng/paginator';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { BehaviorSubject, combineLatest, filter, first, Observable, of, Subject, switchMap, takeUntil, tap } from 'rxjs';
-import { ICard, ICountCard, IDeck, ITournamentDeck, TAGS } from '../../../models';
+
+import { DigimonCard, ICountCard, IDeck, ITournamentDeck, TAGS } from '../../../models';
 import { IUserAndDecks } from '../../../models/interfaces/userAndDecks.interface';
 import { deckIsValid, setDeckImage } from '../../functions/digimon-card.functions';
-import { AuthService } from '../../service/auth.service';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
-import { selectAllCards, selectCollection, selectCommunityDecks, selectCommunityDeckSearch } from '../../store/digimon.selectors';
+import {
+  selectAllCards,
+  selectCollection,
+  selectCommunityDecks,
+  selectCommunityDeckSearch,
+} from '../../store/digimon.selectors';
 import { emptyDeck } from '../../store/reducers/digimon.reducers';
 import { DeckContainerComponent } from '../shared/deck-container.component';
 import { DeckDialogComponent } from '../shared/dialogs/deck-dialog.component';
 import { DeckSubmissionComponent } from '../shared/dialogs/deck-submission.component';
+import { WebsiteActions } from './../../store/digimon.actions';
 import { DeckStatisticsComponent } from './components/deck-statistics.component';
 import { DecksFilterComponent } from './components/decks-filter.component';
 
@@ -49,25 +53,6 @@ import { DecksFilterComponent } from './components/decks-filter.component';
             type="button"
             label="Deck Statistics"
             (click)="deckStatsDialog = true; updateStatistics.next(true)"></button>
-          <!--button
-            pButton
-            class="p-button-outlined mt-1 lg:mr-2 lg:mt-3"
-            icon="pi pi-arrow-right-arrow-left"
-            type="button"
-            [label]="getSwitchLabel()"
-            (click)="switchMode()"
-          ></button>
-
-
-
-          <button
-            pButton
-            class="p-button-outlined mt-1 lg:mt-3"
-            icon="pi pi-cloud-upload"
-            type="button"
-            label="Submit a Tournament Deck"
-            (click)="deckSubmissionDialog = true"
-          ></button-->
         </div>
 
         <digimon-decks-filter [form]="form" [mode]="this.mode" (filterEmit)="filterChanges()"></digimon-decks-filter>
@@ -162,7 +147,7 @@ export class DecksPageComponent implements OnInit, OnDestroy {
   first = 0;
   page = 0;
   users$: Observable<IUserAndDecks[]> = this.digimonBackendService.getUserDecks();
-  allCards$: Observable<ICard[]> = this.store.select(selectAllCards);
+  allCards$: Observable<DigimonCard[]> = this.store.select(selectAllCards);
   communityDecks$ = this.store.select(selectCommunityDecks);
   deckSearch$: Observable<string> = this.store.select(selectCommunityDeckSearch);
   allDecksLoaded$ = new BehaviorSubject(false);
@@ -173,16 +158,7 @@ export class DecksPageComponent implements OnInit, OnDestroy {
   private allDecks: IDeck[] = []; // All decks only loaded once
   private onDestroy$ = new Subject<boolean>();
 
-  constructor(
-    private store: Store,
-    private router: Router,
-    private digimonBackendService: DigimonBackendService,
-    private authService: AuthService,
-    private messageService: MessageService,
-    private confirmationService: ConfirmationService,
-    private meta: Meta,
-    private title: Title
-  ) {}
+  constructor(private store: Store, private digimonBackendService: DigimonBackendService, private meta: Meta, private title: Title) {}
 
   ngOnInit(): void {
     this.makeGoogleFriendly();
@@ -190,7 +166,6 @@ export class DecksPageComponent implements OnInit, OnDestroy {
       // Create a new
       this.worker = new Worker(new URL('../../load-decks.worker', import.meta.url));
       this.worker.onmessage = ({ data }) => {
-        console.log('[Digimoncard.App] All Decks formatted and loaded');
         this.store.dispatch(WebsiteActions.setcommunitydecks({ communityDecks: data }));
       };
     } else {

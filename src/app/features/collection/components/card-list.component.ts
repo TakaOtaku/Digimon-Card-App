@@ -1,8 +1,8 @@
+import { dummyCard } from './../../../store/reducers/digimon.reducers';
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subject, takeUntil, tap } from 'rxjs';
-import { englishCards } from '../../../../assets/cardlists/eng/english';
-import { ICard, ICountCard } from '../../../../models';
+import { DigimonCard, ICountCard } from '../../../../models';
 import { selectCollection, selectCollectionMode, selectFilteredCards } from '../../../store/digimon.selectors';
 import { ViewCardDialogComponent } from '../../shared/dialogs/view-card-dialog.component';
 import { DialogModule } from 'primeng/dialog';
@@ -63,10 +63,10 @@ export class CardListComponent implements OnInit, OnDestroy {
   );
 
   viewCardDialog = false;
-  card = englishCards[0];
+  card = JSON.parse(JSON.stringify(dummyCard));
 
-  cards: ICard[] = [];
-  cardsToShow: ICard[] = [];
+  cards: DigimonCard[];
+  cardsToShow: DigimonCard[];
 
   collectionMode$ = this.store.select(selectCollectionMode);
 
@@ -77,21 +77,17 @@ export class CardListComponent implements OnInit, OnDestroy {
   constructor(private store: Store) {}
 
   ngOnInit() {
-    this.storeSubscriptions();
-  }
-
-  ngOnDestroy() {
-    this.onDestroy$.next(true);
-    this.onDestroy$.unsubscribe();
-  }
-
-  storeSubscriptions() {
     this.store
       .select(selectCollection)
       .pipe(takeUntil(this.onDestroy$))
       .subscribe((collection) => {
         this.collection = collection;
       });
+  }
+
+  ngOnDestroy() {
+    this.onDestroy$.next(true);
+    this.onDestroy$.unsubscribe();
   }
 
   /**
@@ -119,7 +115,7 @@ export class CardListComponent implements OnInit, OnDestroy {
     return this.cards.length > this.cardsToShow.length && this.cardsToShow.length > 0;
   }
 
-  viewCard(card: ICard) {
+  viewCard(card: DigimonCard) {
     this.viewCardDialog = true;
     this.card = card;
   }

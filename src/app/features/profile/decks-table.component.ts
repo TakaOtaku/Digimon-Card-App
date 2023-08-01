@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { SharedModule } from 'primeng/api';
 import { TableModule } from 'primeng/table';
-import { ICard, IDeck } from '../../../models';
+import { DigimonCard, IDeck } from '../../../models';
 import { setDeckImage } from '../../functions/digimon-card.functions';
 import { selectAllCards } from '../../store/digimon.selectors';
 import { DeckActions } from './../../store/digimon.actions';
@@ -96,7 +96,7 @@ export class DecksTableComponent {
 
   constructor(private store: Store) {}
 
-  getCardImage(deck: IDeck, allCards: ICard[]): string {
+  getCardImage(deck: IDeck, allCards: DigimonCard[]): string {
     //If there are no cards in the deck set it to the Yokomon
     if (!deck.cards || deck.cards.length === 0 || allCards.length === 0) {
       return '../../../assets/images/cards/eng/BT1-001.webp';

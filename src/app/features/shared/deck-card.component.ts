@@ -1,12 +1,15 @@
-import { WebsiteActions } from './../../store/digimon.actions';
+import { AsyncPipe, NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { englishCards } from '../../../assets/cardlists/eng/english';
-import { ICard, IDeckCard } from '../../../models';
-import { ColorMap } from '../../../models/maps/color.map';
-import { ViewCardDialogComponent } from './dialogs/view-card-dialog.component';
 import { DialogModule } from 'primeng/dialog';
-import { NgIf } from '@angular/common';
+import { dummyCard } from 'src/app/store/reducers/digimon.reducers';
+
+import { addJBeforeWebp } from '../../../assets/cardlists/DigimonCards';
+import { DigimonCard, IDeckCard } from '../../../models';
+import { ImgFallbackDirective } from '../../directives/ImgFallback.directive';
+import { ImageService } from '../../service/image.service';
+import { WebsiteActions } from './../../store/digimon.actions';
+import { ViewCardDialogComponent } from './dialogs/view-card-dialog.component';
 
 @Component({
   selector: 'digimon-deck-card',
@@ -29,7 +32,7 @@ import { NgIf } from '@angular/common';
         </div>
       </div>
 
-      <img [src]="card.cardImage" loading="lazy" alt="Digimon Card" class="group z-50 m-auto rounded border-2 border-black" />
+      <img [digimonImgFallback]="card.cardImage" loading="lazy" alt="Digimon Card" class="group z-50 m-auto rounded border-2 border-black" />
 
       <div *ngIf="edit" class="flex h-1/2 w-full flex-row rounded xl:hidden">
         <button (click)="addCardCount($event)" type="button" class="z-[101] flex h-8 w-1/2 rounded-l border border-black bg-sky-700">
@@ -55,11 +58,12 @@ import { NgIf } from '@angular/common';
     </p-dialog>
   `,
   standalone: true,
-  imports: [NgIf, DialogModule, ViewCardDialogComponent],
+  imports: [NgIf, DialogModule, ViewCardDialogComponent, AsyncPipe, ImgFallbackDirective],
+  providers: [ImageService],
 })
 export class DeckCardComponent implements OnChanges, OnInit {
   @Input() public card: IDeckCard;
-  @Input() public cards: ICard[];
+  @Input() public cards: DigimonCard[];
   @Input() public missingCards?: boolean = false;
   @Input() public cardHave?: number = 0;
   @Input() public edit? = true;
@@ -67,14 +71,13 @@ export class DeckCardComponent implements OnChanges, OnInit {
 
   @Output() public removeCard = new EventEmitter<boolean>();
 
-  completeCard: ICard = englishCards[0];
+  completeCard: DigimonCard = JSON.parse(JSON.stringify(dummyCard));
 
-  colorMap = ColorMap;
-
-  viewCard: ICard = englishCards[0];
+  viewCard: DigimonCard = JSON.parse(JSON.stringify(dummyCard));
   viewCardDialog = false;
+  protected readonly addJBeforeWebp = addJBeforeWebp;
 
-  constructor(private store: Store) {}
+  constructor(private store: Store, private imageService: ImageService) {}
 
   ngOnInit() {
     this.mapCard();
@@ -85,7 +88,7 @@ export class DeckCardComponent implements OnChanges, OnInit {
   }
 
   mapCard(): void {
-    this.completeCard = this.cards.find((card) => this.card.id === card.id) ?? (englishCards[0] as ICard);
+    this.completeCard = this.cards.find((card) => this.card.id === card.id) ?? (JSON.parse(JSON.stringify(dummyCard)) as DigimonCard);
   }
 
   addCardCount(event?: any): void {
@@ -114,10 +117,6 @@ export class DeckCardComponent implements OnChanges, OnInit {
     }
 
     this.store.dispatch(WebsiteActions.removecardfromdeck({ cardId: this.card.id }));
-  }
-
-  transformDCost(dCost: string): string {
-    return dCost.split(' ')[0];
   }
 
   showCardDetails() {

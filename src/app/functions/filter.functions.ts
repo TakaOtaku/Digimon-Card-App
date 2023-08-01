@@ -1,6 +1,10 @@
-import { ICard, ICountCard, IFilter, ISort } from '../../models';
+/* eslint-disable prettier/prettier */
+import { ChipModule } from 'primeng/chip';
+import { DigimonCard, ICountCard, IFilter, ISort } from '../../models';
 
-export function filterCards(cards: ICard[], collection: ICountCard[], filter: IFilter, sort: ISort): ICard[] {
+let digimonCardMap = new Map<string, DigimonCard>();
+export function filterCards(cards: DigimonCard[], collection: ICountCard[], filter: IFilter, sort: ISort, cardMap: Map<string, DigimonCard>): DigimonCard[] {
+  digimonCardMap = cardMap;
   let filteredCards = applySearchFilter(cards, filter.searchFilter);
 
   filteredCards = applyCardCountFilter(filteredCards, collection, filter.cardCountFilter);
@@ -30,43 +34,23 @@ export function filterCards(cards: ICard[], collection: ICountCard[], filter: IF
 }
 
 //region Filter Functions
-function applySearchFilter(cards: ICard[], searchFilter: string): ICard[] {
+function applySearchFilter(cards: DigimonCard[], searchFilter: string): DigimonCard[] {
   if (searchFilter === '') {
     return cards;
   }
 
-  const idFiltered: ICard[] = cards.filter((cards) => cards.id.toLowerCase().includes(searchFilter.toLowerCase()));
-  const nameFiltered: ICard[] = cards.filter((cards) => cards.name.toLowerCase().includes(searchFilter.toLowerCase()));
-  const effectFiltered: ICard[] = cards.filter((cards) => cards.effect.toLowerCase().includes(searchFilter.toLowerCase()));
-  const inheritedFiltered: ICard[] = cards.filter((cards) => cards.digivolveEffect.toLowerCase().includes(searchFilter.toLowerCase()));
-  const securityFiltered: ICard[] = cards.filter((cards) => cards.securityEffect.toLowerCase().includes(searchFilter.toLowerCase()));
-  const illustratorFiltered: ICard[] = cards.filter((cards) => cards.illustrator.toLowerCase().includes(searchFilter.toLowerCase()));
-  const dnaFiltered: ICard[] = cards.filter((cards) => cards.dnaDigivolve.toLowerCase().includes(searchFilter.toLowerCase()));
-  const specialFiltered: ICard[] = cards.filter((cards) => cards.specialDigivolve.toLowerCase().includes(searchFilter.toLowerCase()));
-  const noteFiltered: ICard[] = cards.filter((cards) => cards.notes.toLowerCase().includes(searchFilter.toLowerCase()));
-  const typeFiltered: ICard[] = cards.filter((cards) => cards.type.toLowerCase().includes(searchFilter.toLowerCase()));
-  const digiXrosFiltered: ICard[] = cards.filter((cards) => cards.digiXros.toLowerCase().includes(searchFilter.toLowerCase()));
-  const specialDigivolveFiltered: ICard[] = cards.filter((cards) => cards.specialDigivolve.toLowerCase().includes(searchFilter.toLowerCase()));
+  const filteredCards = cards.filter((card) => {
+    // Convert the card object's property values to an array
+    const cardValuesArray = Object.values(card);
 
-  return [
-    ...new Set([
-      ...idFiltered,
-      ...nameFiltered,
-      ...effectFiltered,
-      ...inheritedFiltered,
-      ...securityFiltered,
-      ...illustratorFiltered,
-      ...dnaFiltered,
-      ...specialFiltered,
-      ...noteFiltered,
-      ...typeFiltered,
-      ...digiXrosFiltered,
-      ...specialDigivolveFiltered,
-    ]),
-  ];
+    // Check if the search string is present in any of the property values
+    return cardValuesArray.some((value) => typeof value === 'string' && value.toLowerCase().includes(searchFilter.toLowerCase()));
+  });
+
+  return filteredCards;
 }
 
-function applyCardCountFilter(cards: ICard[], collection: ICountCard[], cardCountFilter: number[]): ICard[] {
+function applyCardCountFilter(cards: DigimonCard[], collection: ICountCard[], cardCountFilter: number[]): DigimonCard[] {
   const tempCollection: ICountCard[] = [];
   cards.forEach((card) => {
     const count = collection.find((cc) => cc.id === card.id)?.count ?? 0;
@@ -80,7 +64,7 @@ function applyCardCountFilter(cards: ICard[], collection: ICountCard[], cardCoun
     return cardCountFilter[0] <= card.count && card.count <= cardCountFilter[1];
   });
 
-  let filteredCards: ICard[] = [];
+  let filteredCards: DigimonCard[] = [];
   filteredCollection.forEach((card) => {
     filteredCards.push(cards.find((value) => value.id === card.id)!);
   });
@@ -88,12 +72,12 @@ function applyCardCountFilter(cards: ICard[], collection: ICountCard[], cardCoun
   return [...new Set([...filteredCards])];
 }
 
-function applyFilter(cards: ICard[], filter: any[], key: string): ICard[] {
+function applyFilter(cards: DigimonCard[], filter: any[], key: string): DigimonCard[] {
   if (filter.length === 0) {
     return cards;
   }
 
-  let returnArray = [] as ICard[];
+  let returnArray = [] as DigimonCard[];
   switch (key) {
     default:
     case 'id':
@@ -175,7 +159,7 @@ function applyFilter(cards: ICard[], filter: any[], key: string): ICard[] {
       filter.forEach((filter) => (returnArray = [...new Set([...returnArray, ...cards.filter((cards) => cards['block'].includes(filter))])]));
       break;
     case 'restriction':
-      filter.forEach((filter) => (returnArray = [...new Set([...returnArray, ...cards.filter((cards) => cards['restriction'] === filter)])]));
+      // TODO - Implement
       break;
     case 'source':
       filter.forEach((filter) => (returnArray = [...new Set([...returnArray, ...cards.filter((cards) => cards['notes'] === filter)])]));
@@ -185,8 +169,8 @@ function applyFilter(cards: ICard[], filter: any[], key: string): ICard[] {
   return returnArray;
 }
 
-function applyRangeFilter(cards: ICard[], filter: number[], key: string): ICard[] {
-  let returnArray = [] as ICard[];
+function applyRangeFilter(cards: DigimonCard[], filter: number[], key: string): DigimonCard[] {
+  let returnArray = [] as DigimonCard[];
   switch (key) {
     default:
     case 'level':
@@ -241,7 +225,8 @@ function applyRangeFilter(cards: ICard[], filter: number[], key: string): ICard[
       if (filter[0] === 0 && filter[1] === 7) {
         return cards;
       }
-
+      return cards;
+      /* TODO - Implement
       return [
         ...new Set([
           ...cards.filter((cards) => {
@@ -266,7 +251,7 @@ function applyRangeFilter(cards: ICard[], filter: number[], key: string): ICard[
             return (filter[0] <= digivolution1 && filter[1] >= digivolution1) || (filter[0] <= digivolution2 && filter[1] >= digivolution2);
           }),
         ]),
-      ];
+      ]; */
     case 'dp':
       if (filter[0] === 1 && filter[1] === 17) {
         return cards;
@@ -295,7 +280,7 @@ function applyRangeFilter(cards: ICard[], filter: number[], key: string): ICard[
   }
 }
 
-function applySortOrder(cards: ICard[], sort: ISort, collection: ICountCard[]): ICard[] {
+function applySortOrder(cards: DigimonCard[], sort: ISort, collection: ICountCard[]): DigimonCard[] {
   const returnArray = [...new Set([...cards])];
   if (sort.sortBy.element === 'playCost' || sort.sortBy.element === 'dp') {
     return sort.ascOrder ? returnArray.sort(dynamicSortNumber(sort.sortBy.element)) : returnArray.sort(dynamicSortNumber(`-${sort.sortBy.element}`));

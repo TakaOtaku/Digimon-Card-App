@@ -1,8 +1,10 @@
+import { NgClass, NgIf, NgStyle } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { englishCards } from '../../../assets/cardlists/eng/english';
-import { ICard } from '../../../models';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
-import { NgIf, NgClass, NgStyle } from '@angular/common';
+import { ImgFallbackDirective } from 'src/app/directives/ImgFallback.directive';
+
+import { DigimonCard } from '../../../models';
+import { dummyCard } from './../../store/reducers/digimon.reducers';
 
 @Component({
   selector: 'digimon-card-image',
@@ -19,20 +21,18 @@ import { NgIf, NgClass, NgStyle } from '@angular/common';
     </div>
 
     <img
-      [lazyLoad]="card.cardImage"
+      [digimonImgFallback]="card.cardImage"
       [ngClass]="{ grayscale: setGrayScale(), 'max-h-32': !ribbons }"
       [ngStyle]="{ border: cardBorder, 'border-radius': cardRadius }"
       alt="{{ card.cardNumber + ' ' + card.name }}"
-      onerror="this.onerror=null; this.src='assets/images/card_placeholder.png'"
-      class="m-auto aspect-auto"
-      defaultImage="assets/images/digimon-card-back.webp" />
+      class="m-auto aspect-auto" />
   `,
   styleUrls: ['./card-image.component.scss'],
   standalone: true,
-  imports: [NgIf, LazyLoadImageModule, NgClass, NgStyle],
+  imports: [NgIf, LazyLoadImageModule, NgClass, NgStyle, ImgFallbackDirective],
 })
 export class CardImageComponent {
-  @Input() card: ICard = englishCards[0];
+  @Input() card: DigimonCard = JSON.parse(JSON.stringify(dummyCard));
   @Input() count = 0;
   @Input() collectionMode = false;
   @Input() ribbons = true;

@@ -9,7 +9,7 @@ import { DialogModule } from 'primeng/dialog';
 import { TooltipModule } from 'primeng/tooltip';
 import { BehaviorSubject, Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
-import { ICard, IDeck, IDeckCard } from '../../../../models';
+import { DigimonCard, IDeck, IDeckCard } from '../../../../models';
 import { AuthService } from '../../../service/auth.service';
 import { selectAllCards } from '../../../store/digimon.selectors';
 import { ExportDeckDialogComponent } from '../../shared/dialogs/export-deck-dialog.component';
@@ -161,13 +161,13 @@ export class DeckToolbarComponent implements OnDestroy {
   priceCheckDialog = false;
   checkPrice$ = new BehaviorSubject(false);
 
-  securityStack: ICard[];
-  drawHand: ICard[];
-  allDeckCards: ICard[];
+  securityStack: DigimonCard[];
+  drawHand: DigimonCard[];
+  allDeckCards: DigimonCard[];
   didMulligan = false;
   simulateDialog = false;
 
-  private allCards: ICard[];
+  private allCards: DigimonCard[];
   private destroy$ = new Subject<boolean>();
 
   constructor(private confirmationService: ConfirmationService, private messageService: MessageService, private store: Store, private route: Router, private authService: AuthService) {

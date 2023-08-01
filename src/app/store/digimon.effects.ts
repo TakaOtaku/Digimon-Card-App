@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
-import { EMPTY, catchError, debounceTime, distinctUntilChanged, first, map, switchMap, tap } from 'rxjs';
+import { catchError, debounceTime, distinctUntilChanged, EMPTY, first, map, switchMap, tap } from 'rxjs';
+import { setupDigimonCards } from '../../assets/cardlists/DigimonCards';
 import { CARDSET } from '../../models/enums/card-set.enum';
-import { setupDigimonCards } from '../functions/digimon-card.functions';
 import { filterCards } from '../functions/filter.functions';
 import { AuthService } from '../service/auth.service';
 import { DigimonBackendService } from '../service/digimon-backend.service';
@@ -70,10 +70,10 @@ export class DigimonEffects {
             .select(selectChangeFilterEffect)
             .pipe(first(), debounceTime(300), distinctUntilChanged())
             .pipe(
-              tap(({ cards, collection, filter, sort }) => {
+              tap(({ cards, collection, filter, sort, digimonCardMap }) => {
                 if (!cards) return;
 
-                const filteredCards = filterCards(cards, collection, filter, sort);
+                const filteredCards = filterCards(cards, collection, filter, sort, digimonCardMap);
                 this.store.dispatch(DigimonActions.setfiltereddigimoncards({ filteredCards }));
               }),
               catchError(() => EMPTY)
@@ -148,9 +148,9 @@ export class DigimonEffects {
 
               let digimonCards;
               if (+cardSet >>> 0) {
-                digimonCards = setupDigimonCards(CARDSET.Both);
+                digimonCards = setupDigimonCards(CARDSET.English);
               } else {
-                digimonCards = setupDigimonCards(cardSet);
+                digimonCards = setupDigimonCards(cardSet as CARDSET);
               }
               this.store.dispatch(DigimonActions.setdigimoncards({ digimonCards }));
             }),

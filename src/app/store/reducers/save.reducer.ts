@@ -4,7 +4,7 @@ import { CARDSET } from '../../../models/enums/card-set.enum';
 import { CollectionActions, DeckActions, SaveActions, WebsiteActions } from '../digimon.actions';
 
 export const emptySettings: ISettings = {
-  cardSet: CARDSET.Both,
+  cardSet: CARDSET.English,
   collectionMode: false,
   collectionMinimum: 1,
   aaCollectionMinimum: 1,

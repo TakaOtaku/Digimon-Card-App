@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ICard, IDeck } from '../../../../models';
+import { DigimonCard, IDeck } from '../../../../models';
 import { getCountFromDeckCards, mapToDeckCards } from '../../../functions/digimon-card.functions';
 import { NgStyle } from '@angular/common';
 
@@ -63,7 +63,7 @@ import { NgStyle } from '@angular/common';
 })
 export class LevelSpreadComponent implements OnInit {
   @Input() deck: IDeck;
-  @Input() allCards: ICard[];
+  @Input() allCards: DigimonCard[];
 
   levelSpread = [0, 0, 0, 0, 0, 0];
 

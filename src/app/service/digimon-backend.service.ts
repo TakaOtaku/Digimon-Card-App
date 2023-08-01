@@ -330,7 +330,7 @@ export class DigimonBackendService {
     }
 
     if (save.settings.cardSet === undefined || save.settings.cardSet === 'Overwrite' || +save.settings.cardSet >>> 0) {
-      save = { ...save, settings: { ...save.settings, cardSet: CARDSET.Both } };
+      save = { ...save, settings: { ...save.settings, cardSet: CARDSET.English } };
       changedSave = true;
     }
     if (save.settings.collectionMinimum === undefined) {

@@ -1,13 +1,13 @@
+import { AsyncPipe, DatePipe, NgIf, NgStyle } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { first } from 'rxjs';
-import { ICard, IDeck, ITournamentDeck } from '../../../models';
-import { ColorMap } from '../../../models/maps/color.map';
-import { AuthService } from '../../service/auth.service';
-import { DigimonBackendService } from '../../service/digimon-backend.service';
-import { selectAllCards } from '../../store/digimon.selectors';
-import { NgStyle, NgIf, DatePipe } from '@angular/common';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { BehaviorSubject, first } from 'rxjs';
+import { DigimonCard, IDeck, ITournamentDeck } from '../../../models';
+import { ColorMap } from '../../../models/maps/color.map';
+import { setDeckImage } from '../../functions/digimon-card.functions';
+import { ImageService } from '../../service/image.service';
+import { selectDigimonCardMap } from '../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-deck-container',
@@ -15,7 +15,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
     <div
       class="surface-card relative h-32 w-full cursor-pointer border border-black"
       defaultImage="assets/images/digimon-card-back.webp"
-      [lazyLoad]="getCardImage()"
+      [lazyLoad]="(cardImageSubject$ | async) ?? '../../../assets/images/digimon-card-back.webp'"
       [ngStyle]="{
         'background-repeat': 'no-repeat',
         'background-position': 'center',
@@ -31,17 +31,6 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
       <div *ngIf="isIllegal()" class="absolute right-[35px] top-[5px]">
         <span class="text-shadow text-4xl text-[#ef4444]">!</span>
       </div>
-
-      <!--div *ngIf="mode !== 'Basic'" class="absolute right-[5px] top-[5px]" (click)="changeLike($event)">
-        <div class="relative">
-          <i [ngStyle]="isLiked() ? { color: '#ef4444' } : { color: '#64748b' }" class="fa-solid fa-heart h-8 w-8"></i>
-          <div
-            style="transform: translate(-50%,-50%);"
-            class="absolute left-[50%] top-[40%]  text-xs font-bold text-white">
-            {{ getDeckLikes() }}
-          </div>
-        </div>
-      </div-->
 
       <div class="absolute bottom-0 h-16 w-full justify-center bg-black bg-opacity-80">
         <div class="my-auto flex w-full flex-col p-1">
@@ -82,72 +71,40 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [LazyLoadImageModule, NgStyle, NgIf, DatePipe],
+  imports: [LazyLoadImageModule, NgStyle, NgIf, DatePipe, AsyncPipe],
+  providers: [ImageService],
 })
 export class DeckContainerComponent implements OnInit {
   @Input() deck: IDeck | ITournamentDeck;
   @Input() mode = 'Basic';
+  cardImageSubject$ = new BehaviorSubject<string>('../../../assets/images/digimon-card-back.webp');
+
+  digimonCardMap$ = this.store.select(selectDigimonCardMap);
 
   colorMap = ColorMap;
 
-  private allCards: ICard[];
-
-  constructor(private store: Store, private authService: AuthService, private backendService: DigimonBackendService) {}
+  constructor(private store: Store, private imageService: ImageService) {}
 
   ngOnInit() {
-    this.store
-      .select(selectAllCards)
-      .pipe(first())
-      .subscribe((allCards) => {
-        this.allCards = allCards;
-      });
+    this.digimonCardMap$.pipe(first()).subscribe((digimonCardMap) => this.setCardImage(digimonCardMap));
   }
 
-  getCardImage(): string {
-    // If there is a ImageCardId set it
+  setCardImage(digimonCardMap: Map<string, DigimonCard>) {
+    let imagePath = '';
+    // If there is an ImageCardId set it
     if (this.deck.imageCardId) {
-      return this.allCards.find((card) => card.id === this.deck.imageCardId)?.cardImage ?? '../../../assets/images/cards/eng/BT1-001.webp';
+      const imageCard = digimonCardMap.get(this.deck.imageCardId);
+      imagePath = imageCard?.cardImage ?? '../../../assets/images/digimon-card-back.webp';
+    } else if (this.deck.cards && this.deck.cards.length < 0) {
+      // If there are cards in the deck, set it to the first card
+      const imageCard = setDeckImage(this.deck); // Replace setDeckImage with the appropriate function
+      imagePath = imageCard?.cardImage ?? '';
     }
 
-    //If there are no cards in the deck set it to the Yokomon
-    if (!this.deck.cards || this.deck.cards.length === 0) {
-      return '../../../assets/images/cards/eng/BT1-001.webp';
-    }
-
-    //If there are cards in the deck set it to the first card
-    return this.allCards.find((card) => card.id === this.deck.cards[0].id)?.cardImage ?? '../../../assets/images/cards/eng/BT1-001.webp';
-  }
-
-  changeLike(event: any) {
-    event.stopPropagation();
-
-    const userId = this.authService.userData?.uid;
-    if (!userId) {
-      return;
-    }
-
-    if (this.isLiked()) {
-      this.deck.likes = this.deck.likes.filter((like) => userId !== like);
-      this.backendService.updateDeck(this.deck).pipe(first()).subscribe();
-    } else {
-      this.deck.likes.push(userId);
-      this.backendService.updateDeck(this.deck).pipe(first()).subscribe();
-    }
-  }
-
-  isLiked(): boolean {
-    if (!this.deck.likes || this.deck.likes.length === 0) {
-      return false;
-    }
-    const foundLike = this.deck.likes.find((likeId) => this.authService.userData?.uid === likeId);
-    return !!foundLike;
-  }
-
-  getDeckLikes(): number {
-    if (!this.deck.likes) {
-      return 0;
-    }
-    return this.deck.likes.length;
+    this.imageService
+      .checkImagePath(imagePath)
+      .pipe(first())
+      .subscribe((imagePath: string) => this.cardImageSubject$.next(imagePath));
   }
 
   getTournamentDeck(deck: IDeck | ITournamentDeck): ITournamentDeck {

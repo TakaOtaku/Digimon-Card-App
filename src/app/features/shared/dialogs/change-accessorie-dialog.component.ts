@@ -8,7 +8,7 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { Subject, first, takeUntil } from 'rxjs';
-import { ColorList, ICard, IColor, IDeck, tagsList } from '../../../../models';
+import { ColorList, DigimonCard, IColor, IDeck, tagsList } from '../../../../models';
 import { ITag } from '../../../../models/interfaces/tag.interface';
 import { ColorMap } from '../../../../models/maps/color.map';
 import { deckIsValid } from '../../../functions/digimon-card.functions';
@@ -76,7 +76,7 @@ export class ChangeAccessorieDialogComponent implements OnInit, OnChanges, OnDes
   tags: ITag[] = [];
   color = { name: 'White', img: 'assets/images/decks/white.svg' };
 
-  private allCards: ICard[] = [];
+  private allCards: DigimonCard[] = [];
   private onDestroy$ = new Subject<boolean>();
 
   constructor(

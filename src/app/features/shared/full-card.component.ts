@@ -1,3 +1,4 @@
+import { dummyCard } from './../../store/reducers/digimon.reducers';
 import { CollectionActions, WebsiteActions } from './../../store/digimon.actions';
 import { AsyncPipe, NgClass, NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
@@ -6,8 +7,7 @@ import { Store } from '@ngrx/store';
 import { DialogModule } from 'primeng/dialog';
 import { DragDropModule } from 'primeng/dragdrop';
 import { Subject, map, takeUntil } from 'rxjs';
-import { englishCards } from '../../../assets/cardlists/eng/english';
-import { ICard } from '../../../models';
+import { DigimonCard } from '../../../models';
 import { DRAG } from '../../../models/enums/drag.enum';
 import { selectDeck, selectSettings } from '../../store/digimon.selectors';
 import { CardImageComponent } from './card-image.component';
@@ -66,7 +66,7 @@ import { ViewCardDialogComponent } from './dialogs/view-card-dialog.component';
   imports: [DragDropModule, CardImageComponent, NgIf, NgClass, FormsModule, DialogModule, ViewCardDialogComponent, AsyncPipe],
 })
 export class FullCardComponent implements OnInit, OnDestroy {
-  @Input() card: ICard = englishCards[0];
+  @Input() card: DigimonCard = JSON.parse(JSON.stringify(dummyCard));
   @Input() count: number;
 
   @Input() width?: string;
@@ -78,7 +78,7 @@ export class FullCardComponent implements OnInit, OnDestroy {
   @Input() deckView: boolean;
   @Input() collectionOnly: boolean = false;
 
-  @Output() viewCard = new EventEmitter<ICard>();
+  @Output() viewCard = new EventEmitter<DigimonCard>();
 
   cardWidth = 7 + 'vmin';
 
@@ -162,7 +162,7 @@ export class FullCardComponent implements OnInit, OnDestroy {
     return ((input - 5) * (30 - 20)) / (100 - 5) + 20;
   };
 
-  setDraggedCard(card: ICard) {
+  setDraggedCard(card: DigimonCard) {
     this.store.dispatch(WebsiteActions.setdraggedcard({ dragCard: { card: card, drag: DRAG.Collection } }));
   }
 

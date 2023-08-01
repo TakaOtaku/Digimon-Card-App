@@ -1,6 +1,6 @@
 /// <reference lib="webworker" />
 
-import { ICountCard, IDeck } from '../models';
+import { IDeck } from '../models';
 import { deckIsValid } from './functions/digimon-card.functions';
 
 addEventListener('message', ({ data }) => {
@@ -10,7 +10,3 @@ addEventListener('message', ({ data }) => {
 
   postMessage(filteredDecks);
 });
-
-function arraysEqual(a: ICountCard[], b: ICountCard[]): boolean {
-  return a.length === b.length && a.every((val) => b.includes(val));
-}

@@ -1,5 +1,6 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { ICard, ICountCard, IDeck, IDigimonCards, IDigimonState, IFilter, ISave, ISettings, ISort } from '../../models';
+import { ICountCard, IDeck, IDigimonCards, IDigimonState, IFilter, ISave, ISettings, ISort } from '../../models';
+import { DigimonCard } from '../../models/interfaces/digimon-card.interface';
 import { ProductCM } from '../service/card-market.service';
 import { emptyDeck } from './reducers/digimon.reducers';
 
@@ -29,6 +30,7 @@ export const selectDraggedCard = createSelector(selectDigimonState, (state: IDig
 
 //region Digimon Card Selectors
 export const selectAllCards = createSelector(selectIDigimonCards, (state: IDigimonCards) => state.allCards);
+export const selectDigimonCardMap = createSelector(selectIDigimonCards, (state: IDigimonCards) => state.digimonCardMap);
 export const selectFilteredCards = createSelector(selectIDigimonCards, (state: IDigimonCards) => state.filteredCards);
 //endregion
 
@@ -64,25 +66,34 @@ export const selectChangeAdvancedSettings = createSelector(
   })
 );
 
-export const selectChangeFilterEffect = createSelector(selectAllCards, selectCollection, selectFilter, selectSort, (cards: ICard[], collection: ICountCard[], filter: IFilter, sort: ISort) => ({
-  cards,
-  collection,
-  filter,
-  sort,
-}));
+export const selectChangeFilterEffect = createSelector(
+  selectAllCards,
+  selectCollection,
+  selectFilter,
+  selectSort,
+  selectDigimonCardMap,
+  (cards: DigimonCard[], collection: ICountCard[], filter: IFilter, sort: ISort, digimonCardMap: Map<string, DigimonCard>) => ({
+    cards,
+    collection,
+    filter,
+    sort,
+    digimonCardMap,
+  })
+);
 
 export interface DeckBuilderViewModel {
   deck: IDeck;
-  cards: ICard[];
+  cards: DigimonCard[];
   priceGuideCM: ProductCM[];
   collection: ICountCard[];
 }
+
 export const selectDeckBuilderViewModel = createSelector(
   selectDeck,
   selectAllCards,
   selectPriceGuideCM,
   selectCollection,
-  (deck: IDeck | null, cards: ICard[], priceGuideCM: ProductCM[], collection: ICountCard[]) => {
+  (deck: IDeck | null, cards: DigimonCard[], priceGuideCM: ProductCM[], collection: ICountCard[]) => {
     const noEmptyDeck = deck ?? JSON.parse(JSON.stringify(emptyDeck));
     return {
       deck: noEmptyDeck,
@@ -97,9 +108,18 @@ export interface ProfileViewModel {
   save: ISave;
   priceGuideCM: ProductCM[];
 }
-export const selectProfileViewModel = createSelector(selectSave, selectPriceGuideCM, (save: ISave, priceGuideCM: ProductCM[]) => ({ save, priceGuideCM } as ProfileViewModel));
 
-export const selectDeckChanges = createSelector(selectDeck, selectAllCards, (deck: IDeck | null, allCards: ICard[]) => {
+export const selectProfileViewModel = createSelector(
+  selectSave,
+  selectPriceGuideCM,
+  (save: ISave, priceGuideCM: ProductCM[]) =>
+    ({
+      save,
+      priceGuideCM,
+    } as ProfileViewModel)
+);
+
+export const selectDeckChanges = createSelector(selectDeck, selectAllCards, (deck: IDeck | null, allCards: DigimonCard[]) => {
   const noEmptyDeck = deck ?? JSON.parse(JSON.stringify(emptyDeck));
   return {
     deck: noEmptyDeck,

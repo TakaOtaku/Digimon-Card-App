@@ -1,4 +1,3 @@
-import { DeckActions, WebsiteActions } from './../../../store/digimon.actions';
 import { NgFor, NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
@@ -12,19 +11,22 @@ import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { TooltipModule } from 'primeng/tooltip';
 import { first } from 'rxjs';
+import { setupDigimonCards } from 'src/assets/cardlists/DigimonCards';
 import * as uuid from 'uuid';
-import { CARDSET, ICard, IDeck, IDeckCard, ITournamentDeck } from '../../../../models';
-import { mapToDeckCards, setDeckImage, setupDigimonCards } from '../../../functions/digimon-card.functions';
+
+import { CARDSET, DigimonCard, IDeck, IDeckCard, ITournamentDeck } from '../../../../models';
+import { mapToDeckCards, setDeckImage } from '../../../functions/digimon-card.functions';
 import { AuthService } from '../../../service/auth.service';
 import { DigimonBackendService } from '../../../service/digimon-backend.service';
 import { DeckCardComponent } from '../deck-card.component';
 import { ChartContainersComponent } from '../statistics/chart-containers.component';
 import { ColorSpreadComponent } from '../statistics/color-spread.component';
 import { DdtoSpreadComponent } from '../statistics/ddto-spread.component';
+import { DeckActions, WebsiteActions } from './../../../store/digimon.actions';
 import { DeckSubmissionComponent } from './deck-submission.component';
 import { ExportDeckDialogComponent } from './export-deck-dialog.component';
 
-export interface ICardImage {
+export interface DigimonCardImage {
   name: string;
   value: string;
 }
@@ -101,7 +103,7 @@ export interface ICardImage {
           <label>Title</label>
           <input formControlName="title" placeholder="Deck Name:" class="col-span-2 mr-2 w-full text-sm" pInputText type="text" />
           <label>Image</label>
-          <p-dropdown styleClass="truncate w-full lg:w-[250px]" class=" col-span-2" [options]="cardImageOptions" formControlName="cardImage" optionLabel="name" appendTo="body"> </p-dropdown>
+          <p-dropdown styleClass="truncate w-full lg:w-[250px]" class=" col-span-2" [options]="cardImageOptions" formControlName="cardImage" optionLabel="name" appendTo="body"></p-dropdown>
           <label>Description</label>
           <textarea formControlName="description" placeholder="Description:" class="col-span-2 h-[66px] w-full overflow-hidden" pInputTextarea></textarea>
           <label>Tags</label>
@@ -120,12 +122,6 @@ export interface ICardImage {
         <button (click)="showExportDeckDialog()" pButton class="p-button-sm lg:p-button p-button-outlined" type="button" label="Export"></button>
         <button (click)="getLink()" pButton class="p-button-sm lg:p-button p-button-outlined" type="button" label="Get Link"></button>
         <button (click)="deleteDeck($event)" pButton class="p-button-sm lg:p-button p-button-outlined" type="button" label="Delete"></button>
-        <!--button
-          (click)="deckSubmissionDialog = true"
-          pButton
-          class="p-button-sm lg:p-button p-button-outlined col-span-2"
-          type="button"
-          label="Submit Tournament"></button-->
       </div>
       <ng-template #editButtons>
         <div class="mx-auto mt-1 grid grid-cols-3 lg:grid-cols-5">
@@ -194,10 +190,10 @@ export class DeckDialogComponent implements OnInit, OnChanges {
 
   saveDisabled = true;
 
-  cardImageOptions: ICardImage[] = [];
+  cardImageOptions: DigimonCardImage[] = [];
 
   exportDeckDialog = false;
-  allCards: ICard[] = [];
+  allCards: DigimonCard[] = [];
   mainDeck: IDeckCard[] = [];
 
   isAdmin = false;
@@ -210,7 +206,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
     private confirmationService: ConfirmationService,
     private messageService: MessageService
   ) {
-    this.allCards = this.allCards = setupDigimonCards(CARDSET.Both);
+    this.allCards = this.allCards = setupDigimonCards(CARDSET.English);
     this.isAdmin = this.authService.userData?.uid === 'S3rWXPtCYRN8vSrxY3qE6aeewy43' || this.authService.userData?.uid === 'loBLZPOIL0ZlDzt6A1rgDiTomTw2';
   }
 
@@ -316,7 +312,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
     this.exportDeckDialog = true;
   }
 
-  createImageOptions(): ICardImage[] {
+  createImageOptions(): DigimonCardImage[] {
     return (
       this.mainDeck.map((card) => ({
         name: `${card.id} - ${card.name}`,
@@ -387,7 +383,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
     return map.get(size);
   }
 
-  private getCardImage(imageCardId: string): ICardImage {
+  private getCardImage(imageCardId: string): DigimonCardImage {
     if (!this.deck.cards || this.deck.cards.length === 0) {
       return { name: 'BT1-001 - Yokomon', value: 'BT1-001' };
     }

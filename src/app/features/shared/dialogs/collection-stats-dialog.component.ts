@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
-import { ICard, ICountCard } from '../../../../models';
+import { DigimonCard, ICountCard } from '../../../../models';
 import { ChartModule } from 'primeng/chart';
 
 @Component({
@@ -37,7 +37,7 @@ import { ChartModule } from 'primeng/chart';
 })
 export class CollectionStatsDialogComponent implements OnInit, OnChanges {
   @Input() show: boolean = false;
-  @Input() digimonCards: ICard[];
+  @Input() digimonCards: DigimonCard[];
   @Input() collection: ICountCard[];
 
   @Output() onClose = new EventEmitter<boolean>();
@@ -114,7 +114,7 @@ export class CollectionStatsDialogComponent implements OnInit, OnChanges {
     return [have.length, set.length - have.length];
   }
 
-  /*  private filterLanguageAllCards(): ICard[] {
+  /*  private filterLanguageAllCards(): DigimonCard[] {
       let array = [];
       if(this.languageForm.get('english')?.value) {
         array = [...new Set(this.digimonCards.filter((card) => card.))];

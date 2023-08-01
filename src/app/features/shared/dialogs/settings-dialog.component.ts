@@ -13,7 +13,7 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { TabViewModule } from 'primeng/tabview';
 import { first, Subject, takeUntil } from 'rxjs';
-import { ICard, ICountCard, ISave } from '../../../../models';
+import { DigimonCard, ICountCard, ISave } from '../../../../models';
 import { GroupedSets } from '../../../../models/data/filter.data';
 import { DigimonBackendService } from '../../../service/digimon-backend.service';
 import { selectAllCards, selectCollection, selectSave, selectSettings } from '../../../store/digimon.selectors';
@@ -281,7 +281,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
   importPlaceholder = '' + 'Paste Collection here\n' + '\n' + ' Format:\n' + '   Qty Id\n';
   collectionText = '';
 
-  digimonCards: ICard[] = [];
+  digimonCards: DigimonCard[] = [];
   collection: ICountCard[] = [];
 
   collectionCount = 1;
@@ -493,7 +493,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
   private getSetCards(): ICountCard[] {
     // If no filter is selected filter all cards
     let returnCards: ICountCard[] = [];
-    let allCards: ICard[] = this.setupAllCards();
+    let allCards: DigimonCard[] = this.setupAllCards();
     let collection: ICountCard[] = this.setupCollection();
 
     if (this.collectedCards) {
@@ -517,13 +517,13 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
     return returnCards;
   }
 
-  private setupAllCards(): ICard[] {
-    let setFiltered: ICard[] = this.sets.length === 0 ? this.digimonCards : [];
+  private setupAllCards(): DigimonCard[] {
+    let setFiltered: DigimonCard[] = this.sets.length === 0 ? this.digimonCards : [];
     this.sets.forEach((filter) => {
       setFiltered = [...new Set([...setFiltered, ...this.digimonCards.filter((cards) => cards['id'].split('-')[0] === filter)])];
     });
 
-    let raritiesFiltered: ICard[] = [];
+    let raritiesFiltered: DigimonCard[] = [];
     if (this.rarities.length === 0) {
       raritiesFiltered = setFiltered;
     }
@@ -531,7 +531,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
       raritiesFiltered = [...new Set([...raritiesFiltered, ...setFiltered.filter((cards) => cards['rarity'] === filter)])];
     });
 
-    let versionsFiltered: ICard[] = [];
+    let versionsFiltered: DigimonCard[] = [];
     if (this.versions.length === 0) {
       versionsFiltered = raritiesFiltered;
     }

@@ -23,6 +23,7 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { ToastModule } from 'primeng/toast';
 import { TooltipModule } from 'primeng/tooltip';
 import { AppComponent } from './app/app.component';
+import { ImgFallbackDirective } from './app/directives/ImgFallback.directive';
 import { BlogPageComponent } from './app/features/blog/blog-page.component';
 import { CollectionPageComponent } from './app/features/collection/collection-page.component';
 import { CommunityPageComponent } from './app/features/community/community-page.component';

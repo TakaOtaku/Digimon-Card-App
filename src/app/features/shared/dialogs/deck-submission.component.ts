@@ -5,14 +5,14 @@ import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { debounceTime, distinctUntilChanged, first, Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
-import { Countries, ICard, IDeck, IDeckCard, ITournamentDeck, TAGS } from '../../../../models';
+import { Countries, DigimonCard, IDeck, IDeckCard, ITournamentDeck, TAGS } from '../../../../models';
 import { compareIDs, sortColors } from '../../../functions/digimon-card.functions';
 import { sortID } from '../../../functions/filter.functions';
 import { stringToDeck } from '../../../functions/parse-deck';
 import { AuthService } from '../../../service/auth.service';
 import { DigimonBackendService } from '../../../service/digimon-backend.service';
 import { selectAllCards } from '../../../store/digimon.selectors';
-import { ICardImage } from './deck-dialog.component';
+import { DigimonCardImage } from './deck-dialog.component';
 import { ButtonModule } from 'primeng/button';
 import { CalendarModule } from 'primeng/calendar';
 import { DropdownModule } from 'primeng/dropdown';
@@ -122,7 +122,7 @@ export class DeckSubmissionComponent implements OnInit, OnChanges, OnDestroy {
     { name: 'Major Event (32+ Player)', value: 'Major' },
   ];
 
-  allCards: ICard[] = [];
+  allCards: DigimonCard[] = [];
 
   private onDestroy$ = new Subject();
 
@@ -166,7 +166,7 @@ export class DeckSubmissionComponent implements OnInit, OnChanges, OnDestroy {
     this.onDestroy$.unsubscribe();
   }
 
-  mapDeck(deck: IDeck, allCards: ICard[]) {
+  mapDeck(deck: IDeck, allCards: DigimonCard[]) {
     this.mainDeck = [];
     const iDeckCards: IDeckCard[] = [];
 
@@ -199,7 +199,7 @@ export class DeckSubmissionComponent implements OnInit, OnChanges, OnDestroy {
     this.mainDeck = [...new Set([...eggs, ...lv0, ...lv3, ...lv4, ...lv5, ...lv6, ...lv7, ...tamer, ...options])];
   }
 
-  createImageOptions(): ICardImage[] {
+  createImageOptions(): DigimonCardImage[] {
     return (
       this.mainDeck.map((card) => ({
         name: `${card.id} - ${card.name}`,

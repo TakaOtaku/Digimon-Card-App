@@ -1,17 +1,14 @@
-import copy
 import json
+import time
+
+import re
+
 import requests
-import urllib
 from bs4 import BeautifulSoup
+import urllib.request
 
 from DigimonCard import DigimonCard
 from DigivolveCondition import DigivolveCondition
-
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 
 wikiLink = 'https://digimoncardgame.fandom.com'
 promo = '/wiki/P-'
@@ -19,7 +16,7 @@ gallery = '/Gallery'
 ruling = '/Rulings'
 wikiPageLinks = [
     {'name': '▹RELEASE SPECIAL BOOSTER 1.0 [BT1-BT3]',
-        'url': 'https://digimoncardgame.fandom.com/wiki/BT01-03:_Release_Special_Booster_Ver.1.0'},
+     'url': 'https://digimoncardgame.fandom.com/wiki/BT01-03:_Release_Special_Booster_Ver.1.0'},
     {'name': '▹RELEASE SPECIAL BOOSTER 1.5 [BT1-BT3]',
         'url': 'https://digimoncardgame.fandom.com/wiki/BT01-03:_Release_Special_Booster_Ver.1.5'},
     {'name': '▹BOOSTER GREAT LEGEND [BT4]',
@@ -139,13 +136,10 @@ NoteDictionary = {
     'LM-01: Limited Pack Digimon Ghost Game': 'LIMITED PACK DIGIMON GHOST GAME [LM01]',
 }
 
-
 cardLinks = []
 normalCards = []
 cards = []
 rulings = {}
-
-# Open Wiki and get all Links to all Cards
 
 
 def getLinks(wikiPageLink):
@@ -192,8 +186,6 @@ def splitCellsInPair(cells):
     for i in range(0, len(cells), 2):
         array.append([cells[i], cells[i + 1]])
     return array
-
-# Get the Data from the main table and return it as an digimon card
 
 
 def getMainInfo(html, digimoncard):
@@ -254,8 +246,6 @@ def addCorrectSpecialDigivolve(digimoncard, specialDigivolve):
         return
     digimoncard.specialDigivolve = td.text
 
-# Get digivolve requirements and return the digimon card
-
 
 def getDigivolveInfo(html, digimoncard):
     if html == None:
@@ -292,8 +282,6 @@ def getDigivolveInfo(html, digimoncard):
 
     return digimoncard
 
-# Get all Card Effects (Normal, Digivolve, Security)
-
 
 def getExtraInfo(html, digimoncard):
     if html == None:
@@ -324,18 +312,8 @@ def getExtraInfo(html, digimoncard):
 
     return digimoncard
 
-# TODO Add Illustrator AAs of Japanese Cards seperatly
-# Get Illustrator Info, for now take the first one
-def getIllustratorsInfo(html, digimoncard):
-    if html == None or len(html) == 0:
-        return digimoncard
 
-    # The first Table is for English Sets
-    rows = html[0].find_all("tr")
-
-    if rows is None:
-        return digimoncard
-
+def getEnglishIllustrator(rows, digimoncard):
     illustratorCount = 0
     for row in rows:
         cells = row.find_all("td")
@@ -354,12 +332,49 @@ def getIllustratorsInfo(html, digimoncard):
                     {'id': '_P0', 'illustrator': cells[0].text, 'note': cells[1].text, 'preRelease': cells[2].text})
             else:
                 digimoncard.AAs.append(
-                    {'id': '_P' + str(illustratorCount-1), 'illustrator': cells[0].text, 'note': cells[1].text})
+                    {'id': '_P' + str(illustratorCount - 1), 'illustrator': cells[0].text, 'note': cells[1].text})
         illustratorCount += 1
 
-    return digimoncard
 
-# Get Restricted Info and Block
+def getJapaneseIllustrator(rows, digimoncard):
+    illustratorCount = 0
+    for row in rows:
+        cells = row.find_all("td")
+
+        if cells is None or illustratorCount == 0:
+            illustratorCount += 1
+            continue
+
+        if illustratorCount != 1:
+            if 'Pre Release' in cells[2].text:
+                illustratorCount -= 1
+                digimoncard.JAAs.append(
+                    {'id': '_P0', 'illustrator': cells[0].text, 'note': cells[1].text, 'preRelease': cells[2].text})
+            else:
+                digimoncard.JAAs.append(
+                    {'id': '_P' + str(illustratorCount - 1), 'illustrator': cells[0].text, 'note': cells[1].text})
+        illustratorCount += 1
+
+
+def getIllustratorsInfo(html, digimoncard):
+    if html == None or len(html) == 0:
+        return digimoncard
+
+    # If len is 1 there is only a japanese Release
+    if len(html) == 1:
+        rowsJ = html[0].find_all("tr")
+        rows = None
+        getJapaneseIllustrator(rowsJ, digimoncard)
+    else:
+        # The first Table is for English Sets
+        rows = html[0].find_all("tr")
+        # The second Table is for Japanese Sets
+        rowsJ = html[1].find_all("tr")
+
+        getEnglishIllustrator(rows, digimoncard)
+        getJapaneseIllustrator(rowsJ, digimoncard)
+
+    return digimoncard
 
 
 def getRestrictedInfo(html, digimoncard):
@@ -385,8 +400,6 @@ def getRestrictedInfo(html, digimoncard):
 
     return digimoncard
 
-# Set Rarity to the format used on digimoncard.app
-
 
 def setRarity(digimoncard):
     rarityDict = {
@@ -404,23 +417,14 @@ def setRarity(digimoncard):
     digimoncard.rarity = rarityDict[digimoncard.rarity]
     return digimoncard
 
-# Set ID and Download Base Image
-
 
 def setImageAndDownload(digimoncard, url):
     splitUrl = url.split("/")
     digimoncard.id = splitUrl[2]
     digimoncard.cardNumber = splitUrl[2]
-    digimoncard.cardImage = 'assets/images/cards/eng/' + \
-        digimoncard.cardImage + digimoncard.id + ".webp"
+    digimoncard.cardImage = 'assets/images/cards/' + \
+                            digimoncard.cardImage + digimoncard.id + ".webp"
 
-    imagediv = soup.find("div", class_="image")
-    if imagediv:
-        image = imagediv.find("img")
-    if (image is not None):
-        imageSrc = image['src']
-        # Change URL depending on if you want Japanese Cards or English Cards
-        # urllib.request.urlretrieve(imageSrc, 'digimon-images/' + digimoncard.cardNumber + ".webp")
     return digimoncard
 
 
@@ -437,7 +441,7 @@ def class_to_dict(obj):
 
 def formatJsonToSetDictionary():
     # Open the JSON file and load its contents
-    with open('DigimonCards.json', 'r') as file:
+    with open('jsons/DigimonCards.json', 'r') as file:
         data = json.load(file)
 
     def group_cards_by_prefix(cards):
@@ -454,13 +458,13 @@ def formatJsonToSetDictionary():
     sorted_cards_dict = group_cards_by_prefix(data)
 
     # Save the updated JSON back to the file
-    with open('DigimonCardsSetDictionary.json', 'w') as file:
+    with open('jsons/DigimonCardsSetDictionary.json', 'w') as file:
         json.dump(sorted_cards_dict, file, indent=2, sort_keys=sort_key)
 
 
 def replace_string_in_json(search_string, replaceString):
     # Open the JSON file and load its contents
-    with open('DigimonCards.json', 'r') as file:
+    with open('jsons/DigimonCards.json', 'r') as file:
         data = json.load(file)
 
     # Replace the search_string with replace_string recursively in the JSON data
@@ -477,7 +481,7 @@ def replace_string_in_json(search_string, replaceString):
     updated_data = replace_string(data)
 
     # Save the updated JSON back to the file
-    with open('DigimonCards.json', 'w') as file:
+    with open('jsons/DigimonCards.json', 'w') as file:
         json.dump(updated_data, file, indent=2, sort_keys=sort_key)
 
 
@@ -496,7 +500,92 @@ def remove_underscores(json_obj):
 def sort_key(card):
     return card["_id"]
 
-# Open each Link for the Card Rulings to get all Rulings and add the corresponding ID
+
+def download_image_with_retry(url, save_directory, id, max_retries=5, retry_delay=5):
+    retries = 0
+
+    while retries < max_retries:
+        try:
+            urllib.request.urlretrieve(url, save_directory)
+            print(f"Downloaded image ${id} successfully.")
+            return
+        except urllib.error.HTTPError as e:
+            if e.code == 503:
+                print(
+                    f"HTTP Error 503: Service Unavailable. Retrying in {retry_delay} seconds...")
+                retries += 1
+                time.sleep(retry_delay)
+            else:
+                print(f"HTTP Error {e.code}: {e.reason}")
+                break
+
+    print("Failed to download the image after multiple attempts.")
+
+
+def remove_suffix_and_extension(input_string):
+    # Remove the ".webp" extension
+    without_extension = re.sub(r'\.png$', '', input_string)
+
+    # Remove the "_Px" suffix (where x can be any number)
+    without_suffix = re.sub(r'_P\d+', '', without_extension)
+
+    return without_suffix
+
+
+def remove_item_at_index(arr, index):
+    if index < 0 or index >= len(arr):
+        raise IndexError("Index out of range")
+
+    arr.pop(index)
+    return arr
+
+# Open each Link for the Cards and get the Data
+
+
+def getCardData():
+    count = 0
+    for link in cardLinks:
+        count += 1
+
+        page = requests.get(wikiLink + link)
+        soup = BeautifulSoup(page.content, "html.parser")
+
+        currentDigimon = DigimonCard()
+
+        cardTable = soup.find('div', class_='ctable')
+
+        if cardTable is None:
+            print("No Card Table found for: " + link)
+            continue
+
+        infoMain = cardTable.find("div", class_="info-main")
+        infoDigivolve = cardTable.find("div", class_="info-digivolve")
+        infoExtra = cardTable.find("div", class_="info-extra")
+        infoRestricted = cardTable.find("div", class_="info-restricted")
+
+        infoIllustrator = soup.find_all("table", class_="settable")
+
+        currentDigimon = getMainInfo(infoMain, currentDigimon)
+        currentDigimon = getDigivolveInfo(infoDigivolve, currentDigimon)
+        currentDigimon = getExtraInfo(infoExtra, currentDigimon)
+        currentDigimon = getRestrictedInfo(infoRestricted, currentDigimon)
+
+        currentDigimon = getIllustratorsInfo(infoIllustrator, currentDigimon)
+
+        currentDigimon = setRarity(currentDigimon)
+        currentDigimon = setImageAndDownload(currentDigimon, link)
+
+        print('[' + str(count) + '/' + str(cardCount) + ']' +
+              currentDigimon.id + ' - ' + currentDigimon.name.english)
+        cards.append(currentDigimon)
+
+# Add correct note to each Card
+
+
+def setNotes():
+    for card in cards:
+        if card.notes in NoteDictionary:
+            card.notes = NoteDictionary[card.notes]
 
 
 def getRulings():
@@ -529,6 +618,21 @@ def getRulings():
         print('Rulings for: ' + id + ' - Found ' +
               str(len(questions)) + ' Rulings')
 
+    print('Saving Rulings JSON!')
+    with open('jsons/Rulings.json', 'w') as fp:
+        json.dump(rulings, fp, indent=2, sort_keys=sort_key)
+
+
+def formatCards():
+    formatedCards = []
+    for card in cards:
+        formatedCards.append(class_to_dict(card))
+
+    formatedCards = remove_underscores(formatedCards)
+    print('Saving DigimonCard JSON!')
+    with open('jsons/DigimonCards.json', 'w') as fp:
+        json.dump(formatedCards, fp, indent=2, sort_keys=sort_key)
+
 
 # Get all Links to all Cards
 for wikiPageLink in wikiPageLinks:
@@ -537,128 +641,204 @@ for wikiPageLink in wikiPageLinks:
 print('Getting Promo Links')
 getPromoLinks()
 cardLinks = sorted(list(set(cardLinks)))
-
-# Open each Link for the Cards and get the Data
 cardCount = len(cardLinks)
-count = 0
-for link in cardLinks:
-    count += 1
 
-    page = requests.get(wikiLink + link)
+getCardData()
+
+# getRulings()
+
+backupAAs = []
+backupJAAs = []
+for link in cardLinks:
+    print('Checking' + link)
+    backupAAs = []
+    page = requests.get(wikiLink + link + gallery)
     soup = BeautifulSoup(page.content, "html.parser")
 
-    currentDigimon = DigimonCard()
+    id = link.split("/")[2]
+    idWithoutP = remove_suffix_and_extension(id)
 
-    cardTable = soup.find('div', class_='ctable')
-
-    if cardTable is None:
-        print("No Card Table found for: " + link)
+    card = None
+    for obj in cards:
+        if obj.id == idWithoutP:
+            card = obj
+    if card is None:
         continue
 
-    infoMain = cardTable.find("div", class_="info-main")
-    infoDigivolve = cardTable.find("div", class_="info-digivolve")
-    infoExtra = cardTable.find("div", class_="info-extra")
-    infoRestricted = cardTable.find("div", class_="info-restricted")
+    backupAAs = card.AAs
+    backupJAAs = card.JAAs
 
-    infoIllustrator = soup.find_all("table", class_="settable")
+    # Remove the AAs or the JAAs from the Card
+    card.AAs = []
+    card.JAAs = []
 
-    currentDigimon = getMainInfo(infoMain, currentDigimon)
-    currentDigimon = getDigivolveInfo(infoDigivolve, currentDigimon)
-    currentDigimon = getExtraInfo(infoExtra, currentDigimon)
-    currentDigimon = getRestrictedInfo(infoRestricted, currentDigimon)
+    # English Gallery
+    div = soup.find("div", id="gallery-0")
+    if div is not None:
+        galleryItems = div.find_all("div", class_="wikia-gallery-item")
 
-    currentDigimon = getIllustratorsInfo(infoIllustrator, currentDigimon)
+        for item in galleryItems:
+            img = item.find("img")
+            if img is None:
+                continue
 
-    currentDigimon = setRarity(currentDigimon)
-    currentDigimon = setImageAndDownload(currentDigimon, link)
+            idWithP = re.sub(r'\.png$', '', img['data-image-key'])
+            src = img['src'].split("/latest")[0]
 
-    print('[' + str(count) + '/' + str(cardCount) + ']' +
-          currentDigimon.id + ' - ' + currentDigimon.name.english)
-    cards.append(currentDigimon)
+            # download_image_with_retry(
+            #    src + '/latest', 'digimon-images/english/' + img['data-image-key'], img['data-image-key'])
 
-# Add correct note to each Card
-for card in cards:
-    if card.notes in NoteDictionary:
-        card.notes = NoteDictionary[card.notes]
+            captions = item.find("div", class_="lightbox-caption")
+            notes = captions.find_all("a")
 
-getRulings()
+            if notes is None or len(notes) == 0:
+                continue
 
-# Open each Link for the Card Gallery to get all AAs and set the Notes and add the corresponding Illustrator
-# driver = webdriver.Chrome(executable_path='chromedriver.exe')
-# for link in cardLinks:
-#    page = requests.get(wikiLink + link + gallery)
-#    soup = BeautifulSoup(page.content, "html.parser")
-#
-#    id = link.split("/")[2]
-#    aa = ''
-#
-#    div = soup.find("div", id="gallery-0")
-#    galleryItems = div.find_all("div", class_="wikia-gallery-item")
-#
-#    maxCount = len(galleryItems)  # Because 1 is the Normal Artwork
-#    for item in galleryItems:
-#        caption = item.find(
-#            "div", class_="lightbox-caption").text.replace(' (EN)', '')
-#
-#    for count in range(0, maxCount):
-#        newLink = ''
-#        aa = ''
-#        if count == 0:
-#            aa = ''
-#            newLink = wikiLink + link + '?file=' + id + '.png'
-#        else:
-#            aa = '_P' + str(count)
-#            newLink = wikiLink + link + '?file=' + \
-#                id + aa + '.png'
-#
-#        driver.get(newLink)
-#
-#        wait = WebDriverWait(driver, 10)
-#        lightbox = wait.until(EC.presence_of_element_located(
-#            (By.CLASS_NAME, 'WikiaLightbox')))
-#
-#        image = driver.find_element(
-#            By.CLASS_NAME, "WikiaLightbox").find_element(By.TAG_NAME, 'img')
-#        if image is not None:
-#            imageSrc = image.get_attribute('src')
-#            filePath = id + aa + ".webp"
-#            urllib.request.urlretrieve(imageSrc, filePath)
-# driver.close()
+            noteArray = []
+            for note in notes:
+                noteArray.append(note.text)
+            combined_notes = " / ".join(noteArray)
 
+            # The NA
+            if card.notes == noteArray[0]:
+                card.notes = combined_notes
+            # The AAs
+            for aa in backupAAs:
+                if aa['note'] == noteArray[0]:
+                    if '_P' in idWithP:
+                        newAA = {
+                            'id': idWithP, 'illustrator': aa['illustrator'], 'note': combined_notes}
+                        card.AAs.append(newAA)
+                    else:
+                        card.notes = combined_notes
+    # Japanese Gallery
+    divJ = soup.find("div", id="gallery-1")
+    if divJ is not None:
+        galleryItemsJ = divJ.find_all("div", class_="wikia-gallery-item")
 
-formatedCards = []
-for card in cards:
-    formatedCards.append(class_to_dict(card))
+        for item in galleryItemsJ:
+            img = item.find("img")
+            if img is None:
+                continue
 
-formatedCards = remove_underscores(formatedCards)
+            idWithP = re.sub(r'\.png$', '', img['data-image-key'])
+            src = img['src'].split("/latest")[0]
 
-print('Saving DigimonCard JSON!')
-with open('DigimonCards.json', 'w') as fp:
-    json.dump(formatedCards, fp, indent=2, sort_keys=sort_key)
+            # download_image_with_retry(
+            #    src + '/latest', 'digimon-images/japanese/' + img['data-image-key'], img['data-image-key'])
 
-print('Saving Rulings JSON!')
-with open('Rulings.json', 'w') as fp:
-    json.dump(rulings, fp, indent=2, sort_keys=sort_key)
+            captions = item.find("div", class_="lightbox-caption")
+            notes = captions.find_all("a")
 
+            if notes is None or len(notes) == 0:
+                continue
+
+            noteArray = []
+            for note in notes:
+                noteArray.append(note.text)
+            combined_notes = " / ".join(noteArray)
+
+            # NA
+            if card.notes == noteArray[0]:
+                card.notes = combined_notes
+            # AAs
+            for aa in backupJAAs:
+                if aa['note'] == noteArray[0]:
+                    if '_P' in idWithP:
+                        newAA = {
+                            'id': idWithP, 'illustrator': aa['illustrator'], 'note': combined_notes}
+                        card.JAAs.append(newAA)
+                    else:
+                        card.notes = combined_notes
+    index = 0
+    for obj in cards:
+        if obj.id == card.id:
+            cards[index] = card
+        index += 1
+
+setNotes()
+
+formatCards()
 
 print('Formatting DigimonCard JSON!')
 replace_string_in_json('\n', '')
 replace_string_in_json(')[', ')\n[')
+replace_string_in_json(') [', ')\n[')
 replace_string_in_json(').[', ')\n[')
+replace_string_in_json(') .[', ')\n[')
 replace_string_in_json('.[', '.\n[')
+replace_string_in_json('. [', '.\n[')
 replace_string_in_json('＞＜', '＞\n＜')
 replace_string_in_json(')＜', ')\n＜')
+replace_string_in_json(') ＜', ')\n＜')
 replace_string_in_json(')＜', '\n・')
+replace_string_in_json(') ＜', '\n・')
 
-# TODO Remove Keyword Text
 print('Removing Keyword Explanations!')
-replace_string_in_json('(Draw 1 card from your deck)', '')
-replace_string_in_json(
-    '(This Digimon can attack the turn it comes into play)', '')
-replace_string_in_json(
-    '(At blocker timing, by suspending this Digimon, it becomes the attack target)', '')
-replace_string_in_json(
-    '(Trash this card in your battle area to activate the effect below. You can\'t activate this effect the turn this card enters play.)', '')
 
-print('Saving Set Dictionary!')
-formatJsonToSetDictionary()
+replacements = [
+    '(This Digimon can attack the turn it comes into play)',
+    '(At blocker timing, by suspending this Digimon, it becomes the attack target)',
+    '(Trash this card in your battle area to activate the effect below. You can\'t activate this effect the turn this card enters play.)',
+    '(When this Digimon attacks and deletes an opponent\'s Digimon and survives the battle, it performs any security checks it normally would)',
+    '(Place the top card of your deck on top of your security stack)',
+    '(This Digimon can\'t be deleted in battles against Security Digimon)',
+    '(Trash all of the digivolution cards on that Digimon.)',
+    '(This Digimon checks 1 additional security card.)',
+    '(This Digimon checks 1 fewer security cards)',
+    '(This Digimon checks 1 additional security card)',
+    '(This Digimon checks 2 fewer security cards)',
+    '(This Digimon checks 3 fewer security cards)',
+    '(This Digimon checks 2 additional security cards)',
+    '(Trash up to 2 cards from the top of one of your opponent\'s Digimon. If it has no digivolution cards, or becomes a level 3 Digimon, you can\'t trash any more cards)',
+    '(Unsuspend this Digimon during your opponent\'s unsuspend phase)',
+    '(Trash up to 4 cards from the top of one of your opponent\'s Digimon. If it has no digivolution cards, or becomes a level 3 Digimon, you can\'t trash any more cards)',
+    '(Draw 1 card from your deck.)',
+    '(Draw 1 card from your deck)',
+    '(Draw 2 cards from your deck)',
+    '(Draw 3 cards from your deck)',
+    '(When one of your Digimon digivolves into this card from your hand, you may suspend 1 of your Digimon to reduce the memory cost of the digivolution by 2)',
+    '(When one of your Digimon digivolves into this card from your hand, you may suspend 1 of your Digimon to reduce the memory cost of the digivolution by 3)',
+    '(Trash up to 1 card from the top of one of your opponent\'s Digimon. If it has no digivolution cards, or becomes a level 3 Digimon, you can\'t trash any more cards)',
+    '(When this Digimon is deleted after losing a battle, delete the Digimon it was battling)',
+    '(This Digimon checks 1 fewer security card)',
+    '(Trash all of its digivolution cards.)',
+    '(This Digimon can attack the turn it comes into play)',
+    '(When this Digimon would be deleted, you may trash the top card of this Digimon to prevent that deletion)',
+    '(You may place this card under one of your Tamers)',
+    '(If your opponent has 1 or more memory, this Digimon may attack)',
+    '(When this Digimon would be deleted, you may place 1 card in this Digimon\'s DigiXros requirements from this Digimon\'s digivolution cards under 1 of your Tamers)',
+    '(When this Digimon would be deleted, you may place 2 cards in this Digimon\'s DigiXros requirements from this Digimon\'s digivolution cards under 1 of your Tamers)',
+    '(When this Digimon would be deleted, you may place 3 cards in this Digimon\'s DigiXros requirements from this Digimon\'s digivolution cards under 1 of your Tamers)',
+    '(When this Digimon would be deleted, you may place 4 cards in this Digimon\'s DigiXros requirements from this Digimon\'s digivolution cards under 1 of your Tamers)',
+    '(When one of your other Digimon with [Bagra Army]\u00a0trait would be deleted by an opponent\'s effect, you may delete this Digimon to prevent that deletion)',
+    '(When this Digimon attacks, you may switch the target of attack to 1 of your opponent\'s unsuspended Digimon with the highest DP)',
+    '(When this Digimon would be deleted, you may suspend it to prevent that deletion)',
+    '(When this Digimon would be deleted in battle, by trashing the top card of your security stack, prevent that deletion)',
+    '(Your Digimon may digivolve into this card without paying the cost)',
+    '(When this card is sent from battle area or under your card to another area, lose 3 memory',
+    '(Place this Tamer under 1 of your Digimon without a Tamer in its digivolution cards)',
+    '(Place the top 2 cards of your deck on top of your security stack)',
+    '(You may trash 1 of this Digimon\'s digivolution cards to activate the effect below)',
+    '(You may trash 2 of this Digimon\'s digivolution cards to activate the effect below)',
+    '(You may trash 4 of this Digimon\'s digivolution cards to activate the effect below)',
+    '(When this Digimon is deleted after losing a battle, delete the Digimon it was battling.)',
+    '(When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon\'s DP to this Digimon and it gains \uff1cSecurity Attack +1\uff1e for the attack)',
+    '(Trash up to 3 cards from the top of one of your opponent\'s Digimon. If it has no digivolution cards, or becomes a level 3 Digimon, you can\'t trash any more cards)',
+    '(When one of your Digimon digivolves into this card from your hand, you may suspend 1 of your Digimon to reduce the memory cost of the digivolution by 3)',
+    '(You may trash 3 of this Digimon\'s digivolution cards to activate the effect below)',
+    '(When your other black Digimon would be deleted by an opponent\'s effect, you may delete this Digimon to prevent you may delete this Digimon to prevent 1 of those Digimon\'s deletion)',
+    '(You may trash up to 4 of this Digimon\'s digivolution cards to activate the effect below)',
+    '(When one of your other Digimon with [D-Brigade]\u00a0trait would be deleted by an opponent\'s effect, you may delete this Digimon to prevent that deletion)',
+    '(When this card is sent from battle area or under your card to another area, lose 4 memory)',
+    '(When this Digimon is deleted while it has digivolution cards, play it without paying its cost)'
+]
+
+for replacement in replacements:
+    replace_string_in_json(replacement, '')
+
+replace_string_in_json('  ', '')
+replace_string_in_json('  ', '')
+replace_string_in_json('  ', '')
+replace_string_in_json('  ', '')
+replace_string_in_json(' .', '.')

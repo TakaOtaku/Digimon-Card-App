@@ -1,7 +1,7 @@
 import { ProductCM } from '../../app/service/card-market.service';
 import { DRAG } from '../enums/drag.enum';
 import { IBlog } from './blog-entry.interface';
-import { ICard } from './card.interface';
+import { DigimonCard } from './digimon-card.interface';
 import { IDeck } from './deck.interface';
 import { IFilter } from './filter.interface';
 import { ISort } from './sort.interface';
@@ -19,6 +19,6 @@ export interface IDigimonState {
   draggedCard: IDraggedCard;
 }
 export interface IDraggedCard {
-  card: ICard;
+  card: DigimonCard;
   drag: DRAG;
 }

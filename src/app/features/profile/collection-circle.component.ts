@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { first, Subject } from 'rxjs';
-import { ICard, ICountCard } from '../../../models';
-import { setupDigimonCards } from '../../functions/digimon-card.functions';
+import { CARDSET, DigimonCard, ICountCard } from '../../../models';
 import { selectSettings } from '../../store/digimon.selectors';
 import { ChartModule } from 'primeng/chart';
+import { setupDigimonCards } from 'src/assets/cardlists/DigimonCards';
 
 @Component({
   selector: 'digimon-collection-circle',
@@ -53,16 +53,16 @@ export class CollectionCircleComponent implements OnInit, OnChanges, OnDestroy {
       .select(selectSettings)
       .pipe(first())
       .subscribe((settings) => {
-        const normalCards = setupDigimonCards(settings.cardSet);
+        const normalCards = setupDigimonCards(settings.cardSet as CARDSET);
         const collection = this.collection;
 
-        let setCards = normalCards.filter((card) => card.id.includes('-') && card.id.includes(this.type));
+        let setCards = normalCards.filter((card: DigimonCard) => card.id.includes('-') && card.id.includes(this.type));
 
         if (settings.aaCollectionMinimum === 0) {
-          setCards = setCards.filter((card) => card.version === 'Normal');
+          setCards = setCards.filter((card: DigimonCard) => card.version === 'Normal');
         }
 
-        const setCardsCollected = setCards.filter((card) =>
+        const setCardsCollected = setCards.filter((card: DigimonCard) =>
           collection.find((colCard) => {
             if (colCard.id !== card.id) {
               return;
@@ -100,7 +100,7 @@ export class CollectionCircleComponent implements OnInit, OnChanges, OnDestroy {
       });
   }
 
-  getColorCardArray(cards: ICard[]): number[] {
+  getColorCardArray(cards: DigimonCard[]): number[] {
     const red = cards.filter((card) => card.color.startsWith('Red')).length;
     const blue = cards.filter((card) => card.color.startsWith('Blue')).length;
     const yellow = cards.filter((card) => card.color.startsWith('Yellow')).length;

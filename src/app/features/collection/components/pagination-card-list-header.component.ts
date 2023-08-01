@@ -5,7 +5,7 @@ import { Store } from '@ngrx/store';
 import { PaginatorModule } from 'primeng/paginator';
 import { Subject, takeUntil } from 'rxjs';
 import { SaveActions } from 'src/app/store/digimon.actions';
-import { ICard } from '../../../../models';
+import { DigimonCard } from '../../../../models';
 import { selectCollectionMode, selectFilteredCards } from '../../../store/digimon.selectors';
 
 @Component({
@@ -38,9 +38,9 @@ import { selectCollectionMode, selectFilteredCards } from '../../../store/digimo
 })
 export class PaginationCardListHeaderComponent implements OnInit, OnDestroy {
   @Output() filterBox = new EventEmitter<boolean>();
-  @Output() cardsToShow = new EventEmitter<ICard[]>();
+  @Output() cardsToShow = new EventEmitter<DigimonCard[]>();
 
-  cards: ICard[] = [];
+  cards: DigimonCard[] = [];
 
   first = 0;
   page = 0;
