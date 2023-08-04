@@ -21,14 +21,14 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e (Your Digimon may digivolve into this card without paying the cost)\n[On Play] [When Digivolving] You may place 1 Digimon card with [Gammamon]\u00a0in its text from your hand at the bottom of this Digimon\u2019s digivolution cards. Then, delete 1 of your opponent\u2019s Digimon with 8000 DP or less. For each color in this Digimon\u2019s digivolution cards, add 1000 to the maximum this DP-based deletion effect can delete.[\nAll Turns] [Once Per Turn] When a Digimon is deleted, gain 1 memory.",
+    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e (Your Digimon may digivolve into this card without paying the cost).[\n[On Play] [When Digivolving] You may place 1 Digimon card with [Gammamon]\u00a0in its text from your hand at the bottom of this Digimon\u2019s digivolution cards. Then, delete 1 of your opponent\u2019s Digimon with 8000 DP or less. For each color in this Digimon\u2019s digivolution cards, add 1000 to the maximum this DP-based deletion effect can delete.\n[All Turns] [Once Per Turn] When a Digimon is deleted, gain 1 memory.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "aceEffect": "-",
     "notes": "\u25b9LIMITED PACK DIGIMON GHOST GAME [LM-01]",
     "color": "Red",
     "version": "Normal",
-    "illustrator": "No Illustrator",
+    "illustrator": "-",
     "block": [
       "03"
     ],
@@ -63,7 +63,7 @@
     "notes": "\u25b9LIMITED PACK DIGIMON GHOST GAME [LM-01]",
     "color": "Blue",
     "version": "Normal",
-    "illustrator": "No Illustrator",
+    "illustrator": "-",
     "block": [
       "03"
     ],
@@ -98,7 +98,7 @@
     "notes": "\u25b9LIMITED PACK DIGIMON GHOST GAME [LM-01]",
     "color": "Blue",
     "version": "Normal",
-    "illustrator": "No Illustrator",
+    "illustrator": "-",
     "block": [
       "03"
     ],
@@ -133,7 +133,7 @@
     "notes": "\u25b9LIMITED PACK DIGIMON GHOST GAME [LM-01]",
     "color": "Blue",
     "version": "Normal",
-    "illustrator": "No Illustrator",
+    "illustrator": "-",
     "block": [
       "03"
     ],
@@ -161,14 +161,14 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e (Your Digimon may digivolve into this card without paying the cost)\n[On Play] [When Digivolving] You may trash up to 4 blue cards in your hand. For each card trashed by this effect, trash 1 card from the bottom of 1 of your opponent's Digimon or Tamers. Then, return 1 of your opponent's Digimon or Tamers with no cards under it to its owner's hand.[\nWhen Attacking] By returning 3 cards with [Jellymon]\u00a0in their text from your trash to the bottom of your deck, this Digimon gains \uff1cSecurity Attack +1\uff1e (This Digimon checks 1 additional security card) for the turn.",
+    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e (Your Digimon may digivolve into this card without paying the cost)\n[On Play] [When Digivolving] You may trash up to 4 blue cards in your hand. For each card trashed by this effect, trash 1 card from the bottom of 1 of your opponent's Digimon or Tamers. Then, return 1 of your opponent's Digimon or Tamers with no cards under it to its owner's hand.\n[When Attacking] By returning 3 cards with [Jellymon]\u00a0in their text from your trash to the bottom of your deck, this Digimon gains \uff1cSecurity Attack +1\uff1e (This Digimon checks 1 additional security card) for the turn.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "aceEffect": "-",
     "notes": "\u25b9LIMITED PACK DIGIMON GHOST GAME [LM-01]",
     "color": "Blue",
     "version": "Normal",
-    "illustrator": "No Illustrator",
+    "illustrator": "-",
     "block": [
       "03"
     ],
@@ -196,14 +196,14 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[Trash] [Main] By returning 1 of your Tamers to bottom of your deck, play this card, reducing its cost by the returned card's play cost.[\nOn Play] [When Digivolving] Trash the bottom 3 digivolution from 1 of your opponent's Digimon. Then, until the end of your opponent's turn, all of your opponent's Digimon with no digivolution cards can't attack.",
+    "effect": "[Trash] [Main] By returning 1 of your Tamers to bottom of your deck, play this card, reducing its cost by the returned card's play cost.\n[On Play] [When Digivolving] Trash the bottom 3 digivolution from 1 of your opponent's Digimon. Then, until the end of your opponent's turn, all of your opponent's Digimon with no digivolution cards can't attack.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "aceEffect": "-",
     "notes": "\u25b9LIMITED PACK DIGIMON GHOST GAME [LM-01]",
     "color": "Blue/Purple",
     "version": "Normal",
-    "illustrator": "No Illustrator",
+    "illustrator": "-",
     "block": [
       "03"
     ],
@@ -231,14 +231,14 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[Security] At the end of the battle, play this card without paying the cost.[\nEnd of Attack] Place this card on top of your security stack.",
+    "effect": "[Security] At the end of the battle, play this card without paying the cost.\n[End of Attack] Place this card on top of your security stack.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "aceEffect": "-",
     "notes": "\u25b9LIMITED PACK DIGIMON GHOST GAME [LM-01]",
     "color": "Yellow",
     "version": "Normal",
-    "illustrator": "No Illustrator",
+    "illustrator": "-",
     "block": [
       "03"
     ],
@@ -273,7 +273,7 @@
     "notes": "\u25b9LIMITED PACK DIGIMON GHOST GAME [LM-01]",
     "color": "Green",
     "version": "Normal",
-    "illustrator": "No Illustrator",
+    "illustrator": "-",
     "block": [
       "03"
     ],
@@ -301,14 +301,14 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[Your Turn] When a card with [Angoramon]\u00a0in its text would be played or when your Digimon would digivolve into a Digimon card with [Angoramon]\u00a0in its text, by suspending this Digimon, reduce the cost by 2.[\nYour Turn] When this Digimon becomes suspended, 1 of your Digimon with [Angoramon]\u00a0in its text gains \uff1cRush\uff1e (This Digimon can attack the turn it comes into play) for the turn.",
+    "effect": "[Your Turn] When a card with [Angoramon]\u00a0in its text would be played or when your Digimon would digivolve into a Digimon card with [Angoramon]\u00a0in its text, by suspending this Digimon, reduce the cost by 2.\n[Your Turn] When this Digimon becomes suspended, 1 of your Digimon with [Angoramon]\u00a0in its text gains \uff1cRush\uff1e (This Digimon can attack the turn it comes into play) for the turn.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "aceEffect": "-",
     "notes": "\u25b9LIMITED PACK DIGIMON GHOST GAME [LM-01]",
     "color": "Green",
     "version": "Normal",
-    "illustrator": "No Illustrator",
+    "illustrator": "-",
     "block": [
       "03"
     ],
@@ -336,14 +336,14 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[On Play] Suspend 1 Tamer. Until the end of your opponent's turn, your opponent's Tamers can't unsuspend.[\nAll Turns] This Digimon gets +1000 DP for each suspended Tamer in play.",
+    "effect": "[On Play] Suspend 1 Tamer. Until the end of your opponent's turn, your opponent's Tamers can't unsuspend.\n[All Turns] This Digimon gets +1000 DP for each suspended Tamer in play.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "aceEffect": "-",
     "notes": "\u25b9LIMITED PACK DIGIMON GHOST GAME [LM-01]",
     "color": "Green",
     "version": "Normal",
-    "illustrator": "No Illustrator",
+    "illustrator": "-",
     "block": [
       "03"
     ],
@@ -378,7 +378,7 @@
     "notes": "\u25b9LIMITED PACK DIGIMON GHOST GAME [LM-01]",
     "color": "Green",
     "version": "Normal",
-    "illustrator": "No Illustrator",
+    "illustrator": "-",
     "block": [
       "03"
     ],
@@ -413,7 +413,7 @@
     "notes": "\u25b9LIMITED PACK DIGIMON GHOST GAME [LM-01]",
     "color": "Green",
     "version": "Normal",
-    "illustrator": "No Illustrator",
+    "illustrator": "-",
     "block": [
       "03"
     ],
@@ -441,14 +441,14 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e (Your Digimon may digivolve into this card without paying the cost)\n[On Play] [When Digivolving] Suspend 1 of your opponent's Digimon. Then, if your opponent has no unsuspended Digimon, gain 2 memory.[\nWhen Attacking] You may play 1 Digimon card with [Angoramon]\u00a0in its text from your hand without paying the cost. Return the Digimon played by this effect to your hand at the end of the turn.",
+    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e (Your Digimon may digivolve into this card without paying the cost)\n[On Play] [When Digivolving] Suspend 1 of your opponent's Digimon. Then, if your opponent has no unsuspended Digimon, gain 2 memory.\n[When Attacking] You may play 1 Digimon card with [Angoramon]\u00a0in its text from your hand without paying the cost. Return the Digimon played by this effect to your hand at the end of the turn.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "aceEffect": "-",
     "notes": "\u25b9LIMITED PACK DIGIMON GHOST GAME [LM-01]",
     "color": "Green",
     "version": "Normal",
-    "illustrator": "No Illustrator",
+    "illustrator": "-",
     "block": [
       "03"
     ],
@@ -483,7 +483,7 @@
     "notes": "\u25b9LIMITED PACK DIGIMON GHOST GAME [LM-01]",
     "color": "Black",
     "version": "Normal",
-    "illustrator": "No Illustrator",
+    "illustrator": "-",
     "block": [
       "03"
     ],
@@ -518,7 +518,7 @@
     "notes": "\u25b9LIMITED PACK DIGIMON GHOST GAME [LM-01]",
     "color": "Black",
     "version": "Normal",
-    "illustrator": "No Illustrator",
+    "illustrator": "-",
     "block": [
       "03"
     ],
@@ -553,7 +553,7 @@
     "notes": "\u25b9LIMITED PACK DIGIMON GHOST GAME [LM-01]",
     "color": "Purple",
     "version": "Normal",
-    "illustrator": "No Illustrator",
+    "illustrator": "-",
     "block": [
       "03"
     ],
@@ -581,14 +581,14 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e (Your Digimon may digivolve into this card without paying the cost)\n[On Play] [When Digivolving] Trash 1 card in your hand. Then, you may place 1 Digimon card with [Gammamon]\u00a0in its text from your trash as this Digimon's bottom digivolution card.[\nAll Turns] [Once Per Turn] When one of your effects places a digivolution card under this Digimon, by deleting 1 level 4 or lower Digimon, you may play 1 level 4 or lower Digimon card from your trash without paying the cost.",
+    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e (Your Digimon may digivolve into this card without paying the cost)\n[On Play] [When Digivolving] Trash 1 card in your hand. Then, you may place 1 Digimon card with [Gammamon]\u00a0in its text from your trash as this Digimon's bottom digivolution card.\n[All Turns] [Once Per Turn] When one of your effects places a digivolution card under this Digimon, by deleting 1 level 4 or lower Digimon, you may play 1 level 4 or lower Digimon card from your trash without paying the cost.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "aceEffect": "-",
     "notes": "\u25b9LIMITED PACK DIGIMON GHOST GAME [LM-01]",
     "color": "Purple",
     "version": "Normal",
-    "illustrator": "No Illustrator",
+    "illustrator": "-",
     "block": [
       "03"
     ],
@@ -616,14 +616,14 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[On Play] Delete 1 level 4 or lower Digimon. If you do, you may play 1 [Gyuukimon] Token without paying its memory cost (Digimon \u30fb Purple \u30fb Cost 7 \u30fb Level 5 \u30fb 3000 DP \u30fb Ultimate \u30fb Virus \u30fb Dark Animal).",
+    "effect": "[On Play] Delete 1 level 4 or lower Digimon. If you do, you may play 1 [Gyuukimon] Token without paying its memory cost\n(Digimon \u30fb Purple \u30fb Cost 7 \u30fb Level 5 \u30fb 3000 DP \u30fb Ultimate \u30fb Virus \u30fb Dark Animal).",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "aceEffect": "-",
     "notes": "\u25b9LIMITED PACK DIGIMON GHOST GAME [LM-01]",
     "color": "Purple",
     "version": "Normal",
-    "illustrator": "No Illustrator",
+    "illustrator": "-",
     "block": [
       "03"
     ],
@@ -651,14 +651,14 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[On Play] Reveal the top 4 cards of your deck. Add 1 card with [Gammamon]\u00a0in its text among them to your hand. Place the rest at the bottom of your deck.[\nAll Turns] When your Digimon with [Gammamon]\u00a0in its text other than [Bokomon] would leave the battle area other than by one of your effects, you may delete this Digimon to prevent it from leaving play.",
+    "effect": "[On Play] Reveal the top 4 cards of your deck. Add 1 card with [Gammamon]\u00a0in its text among them to your hand. Place the rest at the bottom of your deck.\n[All Turns] When your Digimon with [Gammamon]\u00a0in its text other than [Bokomon] would leave the battle area other than by one of your effects, you may delete this Digimon to prevent it from leaving play.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "aceEffect": "-",
     "notes": "\u25b9LIMITED PACK DIGIMON GHOST GAME [LM-01]",
     "color": "White",
     "version": "Normal",
-    "illustrator": "No Illustrator",
+    "illustrator": "-",
     "block": [
       "03"
     ],
@@ -686,14 +686,14 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[When Digivolving] By placing 1 Digimon at the top of its owner's security stack, reveal all cards in your opponent's security stack, and place 1 card among them at the top of their deck. Then, shuffle the rest and return it to the security stack.[\nStart of Opponent's Turn] Declare 1 card category. Then, reveal the top card of your opponent's deck. If the card is of the declared category, this Digimon can't be affected by effects of cards of the declared card category for the turn. Return the revealed card to the top or bottom of your opponent's deck.",
+    "effect": "[When Digivolving] By placing 1 Digimon at the top of its owner's security stack, reveal all cards in your opponent's security stack, and place 1 card among them at the top of their deck. Then, shuffle the rest and return it to the security stack.\n[Start of Opponent's Turn] Declare 1 card category. Then, reveal the top card of your opponent's deck. If the card is of the declared category, this Digimon can't be affected by effects of cards of the declared card category for the turn. Return the revealed card to the top or bottom of your opponent's deck.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "aceEffect": "-",
     "notes": "\u25b9LIMITED PACK DIGIMON GHOST GAME [LM-01]",
     "color": "Yellow/Green",
     "version": "Normal",
-    "illustrator": "No Illustrator",
+    "illustrator": "-",
     "block": [
       "03"
     ],
