@@ -77,6 +77,7 @@ export const replacements: Array<[RegExp, string]> = [
   [/＜Security Attack -3＞/g, 'security_attack_-_3'],
   [/\[Start of Your Main Phase]/g, 'start_of_your_main_phase'],
   [/\[Start of Your Turn]/g, 'start_of_your_turn'],
+  [/\[Start of Opponent's Turn]/g, 'start_of_opponents_turn'],
   [/\[Trash]/g, 'trash'],
   [/\[Twice Per Turn]/g, 'twice_per_turn'],
   [/\[When Digivolving]/g, 'when_digivolving'],
