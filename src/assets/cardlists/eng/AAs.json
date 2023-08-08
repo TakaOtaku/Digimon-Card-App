@@ -26379,7 +26379,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[Security] At the end of the battle, play this card without paying its memory cost. Return this Digimon to your hand at the end of the turn.\n[On Play] [When Attacking] Delete 1 of your opponent's Digimon with 6000 DP or less. If no Digimon was deleted by this effect, suspend 1 of your opponent's Digimon, and that Digimon doesn't unsuspend during their next unsuspend phase.",
+    "effect": "[Security] Play this card without battling and without paying its memory cost. Return this Digimon to your hand at the end of the turn.\n[On Play] [When Attacking] Delete 1 of your opponent's Digimon with 6000 DP or less. If no Digimon was deleted by this effect, suspend 1 of your opponent's Digimon, and that Digimon doesn't unsuspend during their next unsuspend phase.",
     "digivolveEffect": "-",
     "securityEffect": "-",
     "aceEffect": "-",
