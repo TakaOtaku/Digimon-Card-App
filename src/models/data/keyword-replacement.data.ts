@@ -62,7 +62,7 @@ export const replacements: Array<[RegExp, string]> = [
   [/＜Piercing＞/g, 'piercing'],
   [/＜Raid＞/g, 'raid'],
   [/＜Reboot＞/g, 'reboot'],
-  [/＜Recovery +1 \(Deck\)＞/g, 'recovery_+1deck'],
+  [/＜Recovery \+1 \(Deck\)＞/g, 'recovery_+1deck'],
   [/＜Recovery \+2 \(Deck\)＞/g, 'recovery_+2deck'],
   [/＜Retaliation＞/g, 'retaliation'],
   [/＜Rush＞/g, 'rush'],
