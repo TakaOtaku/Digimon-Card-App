@@ -1561,7 +1561,7 @@
     "digiXros": "-",
     "specialDigivolve": "-",
     "dnaDigivolve": "-",
-    "effect": "[Security] Play this card without paying its memory cost.",
+    "effect": "[Security] At the end of the battle, play this card without paying its memory cost.",
     "digivolveEffect": "[On Deletion] 1 of your opponent's Digimon gets -3000 DP for the turn.",
     "securityEffect": "-",
     "aceEffect": "-",
