@@ -33,7 +33,8 @@ export class ImgFallbackDirective implements OnInit, OnChanges {
 
     if (this.digimonImgFallback) {
       const modifiedSrc = addJBeforeWebp(this.digimonImgFallback);
-      if (modifiedSrc !== this.digimonImgFallback) {
+      const currentSrc = 'assets' + element.src.split('assets')[1];
+      if (modifiedSrc !== currentSrc) {
         element.src = modifiedSrc;
         return;
       }
