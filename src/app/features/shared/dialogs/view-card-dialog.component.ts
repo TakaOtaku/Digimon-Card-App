@@ -21,50 +21,93 @@ import { replacements } from 'src/models/data/keyword-replacement.data';
 
 import { DigimonCard, IDeck } from '../../../../models';
 import { ColorMap } from '../../../../models/maps/color.map';
-import { formatId } from '../../../functions/digimon-card.functions';
-import { selectCollection, selectCollectionMode, selectDeck, selectFilteredCards } from '../../../store/digimon.selectors';
+import { formatId, withoutJ } from '../../../functions/digimon-card.functions';
+import {
+  selectCollection,
+  selectCollectionMode,
+  selectDeck,
+  selectFilteredCards,
+} from '../../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-view-card-dialog',
   template: `
-    <div class="h-full w-full min-w-full max-w-full overflow-x-hidden md:w-[700px] md:min-w-[700px] md:max-w-[700px]">
-      <div class="align-center min-h-10 mt-1 inline-flex w-full justify-between border-b border-slate-200" id="Header">
-        <div class="align-center my-3 inline-flex h-full flex-grow flex-wrap justify-between gap-[.5rem] md:my-2 md:flex-nowrap">
+    <div
+      class="h-full w-full min-w-full max-w-full overflow-x-hidden md:w-[700px] md:min-w-[700px] md:max-w-[700px]">
+      <div
+        class="align-center min-h-10 mt-1 inline-flex w-full justify-between border-b border-slate-200"
+        id="Header">
+        <div
+          class="align-center my-3 inline-flex h-full flex-grow flex-wrap justify-between gap-[.5rem] md:my-2 md:flex-nowrap">
           <p class="self-center font-bold text-gray-500" id="Card-Number">
             {{ card.cardNumber }}
           </p>
-          <p class="self-center font-bold uppercase text-[#e2e4e6]" id="Card-Rarity">
+          <p
+            class="self-center font-bold uppercase text-[#e2e4e6]"
+            id="Card-Rarity">
             {{ card.rarity }}
           </p>
-          <p class="self-center font-bold uppercase text-[#e2e4e6]" id="Card-Block">
+          <p
+            class="self-center font-bold uppercase text-[#e2e4e6]"
+            id="Card-Block">
             {{ card.block }}
           </p>
-          <p [ngStyle]="{color}" class="text-black-outline-xs self-center font-bold" id="Card-Type">
+          <p
+            [ngStyle]="{color}"
+            class="text-black-outline-xs self-center font-bold"
+            id="Card-Type">
             {{ card.cardType }}
           </p>
-          <div *ngIf="card.cardType === 'Digimon' || card.cardType === 'Digi-Egg'" [ngStyle]="{backgroundColor}" class="inline-block rounded-full px-6 py-2.5 leading-tight shadow-md" id="Digimon-Lv">
-            <p class="font-bold leading-[5px] text-[#e2e4e6]" [ngClass]="{ 'text-black': this.card.color === 'Yellow' }">
+          <div
+            *ngIf="card.cardType === 'Digimon' || card.cardType === 'Digi-Egg'"
+            [ngStyle]="{backgroundColor}"
+            class="inline-block rounded-full px-6 py-2.5 leading-tight shadow-md"
+            id="Digimon-Lv">
+            <p
+              class="font-bold leading-[5px] text-[#e2e4e6]"
+              [ngClass]="{ 'text-black': this.card.color === 'Yellow' }">
               {{ card.cardLv }}
             </p>
           </div>
-          <p [ngStyle]="{color}" class="text-black-outline-xs hidden self-center font-bold lg:flex" id="Card-Version">
+          <p
+            [ngStyle]="{color}"
+            class="text-black-outline-xs hidden self-center font-bold lg:flex"
+            id="Card-Version">
             {{ version }}
           </p>
-          <p [ngStyle]="{color}" class="text-black-outline-xs self-center font-bold lg:hidden" id="Card-Version">
+          <p
+            [ngStyle]="{color}"
+            class="text-black-outline-xs self-center font-bold lg:hidden"
+            id="Card-Version">
             {{ card.version }}
           </p>
         </div>
-        <button (click)="this.onClose.next(false)" class="p-button-text ml-4 flex-shrink-0 md:ml-6" icon="pi pi-times" pButton pRipple type="button"></button>
+        <button
+          (click)="this.onClose.next(false)"
+          class="p-button-text ml-4 flex-shrink-0 md:ml-6"
+          icon="pi pi-times"
+          pButton
+          pRipple
+          type="button"></button>
       </div>
 
       <div class="flex flex-row">
         <button class="mr-1" (click)="previousCard()">
           <i class="fa-solid fa-circle-arrow-left text-[#e2e4e6]"></i>
         </button>
-        <h1 [ngStyle]="{color}" class="text-black-outline-xs my-1 text-3xl font-black" id="Card-Name">
+        <h1
+          [ngStyle]="{color}"
+          class="text-black-outline-xs my-1 text-3xl font-black"
+          id="Card-Name">
           {{ card.name.english }}
         </h1>
-        <button (click)="openWiki()" class="p-button-text" icon="pi pi-question-circle" pButton pRipple type="button"></button>
+        <button
+          (click)="openWiki()"
+          class="p-button-text"
+          icon="pi pi-question-circle"
+          pButton
+          pRipple
+          type="button"></button>
         <button class="ml-1" (click)="nextCard()">
           <i class="fa-solid fa-circle-arrow-right text-[#e2e4e6]"></i>
         </button>
@@ -72,43 +115,102 @@ import { selectCollection, selectCollectionMode, selectDeck, selectFilteredCards
 
       <div class="w-full flex-row md:flex" id="Image-Attributes">
         <div class="w-full md:w-1/2">
-          <img [digimonImgFallback]="png" alt="{{ imageAlt }}" defaultImage="assets/images/digimon-card-back.webp" class="mx-auto my-5 max-w-[15rem] md:my-0 md:max-w-full" />
+          <img
+            [digimonImgFallback]="png"
+            alt="{{ imageAlt }}"
+            defaultImage="assets/images/digimon-card-back.webp"
+            class="mx-auto my-5 max-w-[15rem] md:my-0 md:max-w-full" />
         </div>
         <div class="md:max-w-1/2 w-full self-center md:w-1/2 md:pl-2">
-          <div *ngIf="inDeck()" class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150" id="Digimon-Deck-Count">
-            <p [ngStyle]="{color}" class="text-black-outline-xs ml-1.5 text-lg font-extrabold">In Deck</p>
-            <p class="font-white ml-auto mr-1.5 font-bold leading-[1.7em]">{{ deckCount() }}x</p>
+          <div
+            *ngIf="inDeck()"
+            class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150"
+            id="Digimon-Deck-Count">
+            <p
+              [ngStyle]="{color}"
+              class="text-black-outline-xs ml-1.5 text-lg font-extrabold">
+              In Deck
+            </p>
+            <p class="font-white ml-auto mr-1.5 font-bold leading-[1.7em]">
+              {{ deckCount() }}x
+            </p>
           </div>
-          <div *ngIf="collectionMode$ | async" class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150" id="Digimon-Deck-Count">
-            <p [ngStyle]="{color}" class="text-black-outline-xs ml-1.5 text-lg font-extrabold">In Collection</p>
-            <p *ngIf="collectionCard$ | async as collectionCard" class="font-white ml-auto mr-1.5 font-bold leading-[1.7em]">{{ collectionCard.count }}x</p>
+          <div
+            *ngIf="collectionMode$ | async"
+            class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150"
+            id="Digimon-Deck-Count">
+            <p
+              [ngStyle]="{color}"
+              class="text-black-outline-xs ml-1.5 text-lg font-extrabold">
+              In Collection
+            </p>
+            <p
+              *ngIf="collectionCard$ | async as collectionCard"
+              class="font-white ml-auto mr-1.5 font-bold leading-[1.7em]">
+              {{ collectionCard.count }}x
+            </p>
           </div>
-          <div *ngIf="card.form !== '-'" class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150" id="Digimon-Form">
-            <p [ngStyle]="{color}" class="text-black-outline-xs ml-1.5 text-lg font-extrabold">Form</p>
+          <div
+            *ngIf="card.form !== '-'"
+            class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150"
+            id="Digimon-Form">
+            <p
+              [ngStyle]="{color}"
+              class="text-black-outline-xs ml-1.5 text-lg font-extrabold">
+              Form
+            </p>
             <p class="font-white ml-auto mr-1.5 font-bold leading-[1.7em]">
               {{ card.form }}
             </p>
           </div>
-          <div *ngIf="card.attribute !== '-'" class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150" id="Digimon-Attribute">
-            <p [ngStyle]="{color}" class="text-black-outline-xs ml-1.5 text-lg font-extrabold">Attribute</p>
+          <div
+            *ngIf="card.attribute !== '-'"
+            class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150"
+            id="Digimon-Attribute">
+            <p
+              [ngStyle]="{color}"
+              class="text-black-outline-xs ml-1.5 text-lg font-extrabold">
+              Attribute
+            </p>
             <p class="font-white ml-auto mr-1.5 font-bold leading-[1.7em]">
               {{ card.attribute }}
             </p>
           </div>
-          <div *ngIf="card.type !== '-'" class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150" id="Digimon-Type">
-            <p [ngStyle]="{color}" class="text-black-outline-xs ml-1.5 text-lg font-extrabold">Type</p>
+          <div
+            *ngIf="card.type !== '-'"
+            class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150"
+            id="Digimon-Type">
+            <p
+              [ngStyle]="{color}"
+              class="text-black-outline-xs ml-1.5 text-lg font-extrabold">
+              Type
+            </p>
             <p class="font-white ml-auto mr-1.5 font-bold leading-[1.7em]">
               {{ card.type }}
             </p>
           </div>
-          <div *ngIf="card.dp !== '-'" class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150" id="Digimon-DP">
-            <p [ngStyle]="{color}" class="text-black-outline-xs ml-1.5 text-lg font-extrabold">DP</p>
+          <div
+            *ngIf="card.dp !== '-'"
+            class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150"
+            id="Digimon-DP">
+            <p
+              [ngStyle]="{color}"
+              class="text-black-outline-xs ml-1.5 text-lg font-extrabold">
+              DP
+            </p>
             <p class="font-white ml-auto mr-1.5 font-bold leading-[1.7em]">
               {{ card.dp }}
             </p>
           </div>
-          <div *ngIf="card.playCost !== '-'" class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150" id="Digimon-Play-Cost">
-            <p [ngStyle]="{color}" class="text-black-outline-xs ml-1.5 text-lg font-extrabold">Play Cost</p>
+          <div
+            *ngIf="card.playCost !== '-'"
+            class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150"
+            id="Digimon-Play-Cost">
+            <p
+              [ngStyle]="{color}"
+              class="text-black-outline-xs ml-1.5 text-lg font-extrabold">
+              Play Cost
+            </p>
             <p class="font-white ml-auto mr-1.5 font-bold leading-[1.7em]">
               {{ card.playCost }}
             </p>
@@ -126,43 +228,118 @@ import { selectCollection, selectCollectionMode, selectDeck, selectFilteredCards
               {{ card.digivolveCost2 }}
             </p>
           </div> -->
-          <div *ngIf="card.specialDigivolve !== '-'" class="my-0.5 flex w-full flex-col rounded-full" id="Digimon-Special-Digivolve">
-            <p [ngStyle]="{color}" class="text-black-outline-xs text-lg font-extrabold">Special Digivolve</p>
-            <span class="font-white whitespace-pre-wrap font-bold leading-[1.7em]" [innerHTML]="replaceWithImageTags(card.specialDigivolve)"> </span>
+          <div
+            *ngIf="card.specialDigivolve !== '-'"
+            class="my-0.5 flex w-full flex-col rounded-full"
+            id="Digimon-Special-Digivolve">
+            <p
+              [ngStyle]="{color}"
+              class="text-black-outline-xs text-lg font-extrabold">
+              Special Digivolve
+            </p>
+            <span
+              class="font-white whitespace-pre-wrap font-bold leading-[1.7em]"
+              [innerHTML]="replaceWithImageTags(card.specialDigivolve)">
+            </span>
           </div>
-          <div *ngIf="card.dnaDigivolve !== '-'" class="my-0.5 flex w-full flex-col rounded-full" id="Digimon-DNA-Digivolve">
-            <p [ngStyle]="{color}" class="text-black-outline-xs text-lg font-extrabold">DNA Digivolve</p>
-            <span class="font-white whitespace-pre-wrap font-bold leading-[1.7em]" [innerHTML]="replaceWithImageTags(card.dnaDigivolve)"> </span>
+          <div
+            *ngIf="card.dnaDigivolve !== '-'"
+            class="my-0.5 flex w-full flex-col rounded-full"
+            id="Digimon-DNA-Digivolve">
+            <p
+              [ngStyle]="{color}"
+              class="text-black-outline-xs text-lg font-extrabold">
+              DNA Digivolve
+            </p>
+            <span
+              class="font-white whitespace-pre-wrap font-bold leading-[1.7em]"
+              [innerHTML]="replaceWithImageTags(card.dnaDigivolve)">
+            </span>
           </div>
-          <div *ngIf="card.digiXros !== '-'" class="my-0.5 flex w-full flex-col rounded-full" id="Digimon-DigiXros">
-            <p [ngStyle]="{color}" class="text-black-outline-xs text-lg font-extrabold">DigiXros</p>
-            <p class="font-white whitespace-pre-wrap font-bold leading-[1.7em]" [innerHTML]="replaceWithImageTags(card.digiXros)"></p>
+          <div
+            *ngIf="card.digiXros !== '-'"
+            class="my-0.5 flex w-full flex-col rounded-full"
+            id="Digimon-DigiXros">
+            <p
+              [ngStyle]="{color}"
+              class="text-black-outline-xs text-lg font-extrabold">
+              DigiXros
+            </p>
+            <p
+              class="font-white whitespace-pre-wrap font-bold leading-[1.7em]"
+              [innerHTML]="replaceWithImageTags(card.digiXros)"></p>
           </div>
-          <div *ngIf="card.burstDigivolve && card.burstDigivolve !== '-'" class="my-0.5 flex w-full flex-col rounded-full" id="Digimon-BurstDigivolve">
-            <p [ngStyle]="{color}" class="text-black-outline-xs text-lg font-extrabold">Burst Digivolve</p>
-            <p class="font-white whitespace-pre-wrap font-bold leading-[1.7em]" [innerHTML]="replaceWithImageTags(card.burstDigivolve)"></p>
+          <div
+            *ngIf="card.burstDigivolve && card.burstDigivolve !== '-'"
+            class="my-0.5 flex w-full flex-col rounded-full"
+            id="Digimon-BurstDigivolve">
+            <p
+              [ngStyle]="{color}"
+              class="text-black-outline-xs text-lg font-extrabold">
+              Burst Digivolve
+            </p>
+            <p
+              class="font-white whitespace-pre-wrap font-bold leading-[1.7em]"
+              [innerHTML]="replaceWithImageTags(card.burstDigivolve)"></p>
           </div>
-          <div *ngIf="card.aceEffect && card.aceEffect !== '-'" class="my-0.5 flex w-full flex-col rounded-full" id="Digimon-ACE">
-            <p [ngStyle]="{color}" class="text-black-outline-xs text-lg font-extrabold">ACE</p>
-            <span class="font-white whitespace-pre-wrap font-bold leading-[1.7em]" [innerHTML]="replaceWithImageTags(card.aceEffect)"> </span>
+          <div
+            *ngIf="card.aceEffect && card.aceEffect !== '-'"
+            class="my-0.5 flex w-full flex-col rounded-full"
+            id="Digimon-ACE">
+            <p
+              [ngStyle]="{color}"
+              class="text-black-outline-xs text-lg font-extrabold">
+              ACE
+            </p>
+            <span
+              class="font-white whitespace-pre-wrap font-bold leading-[1.7em]"
+              [innerHTML]="replaceWithImageTags(card.aceEffect)">
+            </span>
           </div>
         </div>
       </div>
 
       <div class="my-4 max-w-full" id="Effects">
-        <div *ngIf="card.effect !== '-'" class="flex flex-col" id="Digimon-Effect">
-          <p [ngStyle]="{color}" class="text-black-outline-xs text-lg font-extrabold">Effect</p>
-          <span class="font-white whitespace-pre-wrap font-bold" [innerHTML]="replaceWithImageTags(card.effect)"></span>
+        <div
+          *ngIf="card.effect !== '-'"
+          class="flex flex-col"
+          id="Digimon-Effect">
+          <p
+            [ngStyle]="{color}"
+            class="text-black-outline-xs text-lg font-extrabold">
+            Effect
+          </p>
+          <span
+            class="font-white whitespace-pre-wrap font-bold"
+            [innerHTML]="replaceWithImageTags(card.effect)"></span>
         </div>
 
-        <div *ngIf="card.digivolveEffect !== '-'" class="flex flex-col" id="Digimon-Digivolve-Effect">
-          <p [ngStyle]="{color}" class="text-black-outline-xs text-lg font-extrabold">Inherited effect</p>
-          <span class="font-white whitespace-pre-wrap font-bold" [innerHTML]="replaceWithImageTags(card.digivolveEffect)"></span>
+        <div
+          *ngIf="card.digivolveEffect !== '-'"
+          class="flex flex-col"
+          id="Digimon-Digivolve-Effect">
+          <p
+            [ngStyle]="{color}"
+            class="text-black-outline-xs text-lg font-extrabold">
+            Inherited effect
+          </p>
+          <span
+            class="font-white whitespace-pre-wrap font-bold"
+            [innerHTML]="replaceWithImageTags(card.digivolveEffect)"></span>
         </div>
 
-        <div *ngIf="card.securityEffect !== '-'" class="flex flex-col" id="Security-Effect">
-          <p [ngStyle]="{color}" class="text-black-outline-xs text-lg font-extrabold">Security effect</p>
-          <div class="font-white flex flex-row whitespace-pre-wrap font-bold" [innerHTML]="replaceWithImageTags(card.securityEffect)"></div>
+        <div
+          *ngIf="card.securityEffect !== '-'"
+          class="flex flex-col"
+          id="Security-Effect">
+          <p
+            [ngStyle]="{color}"
+            class="text-black-outline-xs text-lg font-extrabold">
+            Security effect
+          </p>
+          <div
+            class="font-white flex flex-row whitespace-pre-wrap font-bold"
+            [innerHTML]="replaceWithImageTags(card.securityEffect)"></div>
         </div>
       </div>
 
@@ -176,24 +353,50 @@ import { selectCollection, selectCollectionMode, selectDeck, selectFilteredCards
 
       <div class="my-4 max-w-full" id="Notes">
         <div class="flex flex-col" id="Card-Notes">
-          <p [ngStyle]="{color}" class="text-black-outline-xs text-lg font-extrabold">Notes</p>
+          <p
+            [ngStyle]="{color}"
+            class="text-black-outline-xs text-lg font-extrabold">
+            Notes
+          </p>
           <p class="font-white font-bold">{{ card.notes }}</p>
         </div>
       </div>
 
-      <div *ngIf="card.illustrator !== ''" class="my-4 max-w-full" id="Illustrator">
+      <div
+        *ngIf="card.illustrator !== ''"
+        class="my-4 max-w-full"
+        id="Illustrator">
         <div class="flex flex-col" id="Card-Illustrator">
-          <p [ngStyle]="{color}" class="text-black-outline-xs text-lg font-extrabold">Illustrator</p>
+          <p
+            [ngStyle]="{color}"
+            class="text-black-outline-xs text-lg font-extrabold">
+            Illustrator
+          </p>
           <div class="flex flex-row">
             <p class="font-white font-bold">{{ card.illustrator }}</p>
-            <button (click)="openWikiIllustrator()" class="p-button-text -mt-2" icon="pi pi-question-circle" pButton pRipple type="button"></button>
+            <button
+              (click)="openWikiIllustrator()"
+              class="p-button-text -mt-2"
+              icon="pi pi-question-circle"
+              pButton
+              pRipple
+              type="button"></button>
           </div>
         </div>
       </div>
     </div>
   `,
   standalone: true,
-  imports: [NgStyle, NgIf, NgClass, ButtonModule, RippleModule, LazyLoadImageModule, AsyncPipe, ImgFallbackDirective],
+  imports: [
+    NgStyle,
+    NgIf,
+    NgClass,
+    ButtonModule,
+    RippleModule,
+    LazyLoadImageModule,
+    AsyncPipe,
+    ImgFallbackDirective,
+  ],
 })
 export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
   @Input() show: boolean = false;
@@ -224,7 +427,13 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
   deck: IDeck;
 
   collectionMode$ = this.store.select(selectCollectionMode);
-  collectionCard$ = this.store.select(selectCollection).pipe(map((cards) => cards.find((colCard) => colCard.id === this.card.id)));
+  collectionCard$ = this.store
+    .select(selectCollection)
+    .pipe(
+      map((cards) =>
+        cards.find((colCard) => colCard.id === withoutJ(this.card.id))
+      )
+    );
 
   private onDestroy$ = new Subject();
 
@@ -255,7 +464,11 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
       const card: DigimonCard = changes['card'].currentValue;
       this.setupView(card);
 
-      this.collectionCard$ = this.store.select(selectCollection).pipe(map((cards) => cards.find((colCard) => colCard.id === this.card.id)));
+      this.collectionCard$ = this.store
+        .select(selectCollection)
+        .pipe(
+          map((cards) => cards.find((colCard) => colCard.id === this.card.id))
+        );
     }
   }
 
@@ -274,21 +487,29 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
     let preReleaseRegExp = new RegExp('\\bpre-release\\b');
 
     if (engRegExp.test(cardSRC)) {
-      return cardSRC.replace(engRegExp, 'eng/png').replace(new RegExp('\\b.webp\\b'), '.png');
+      return cardSRC
+        .replace(engRegExp, 'eng/png')
+        .replace(new RegExp('\\b.webp\\b'), '.png');
     } else if (japRegExp.test(cardSRC)) {
-      return cardSRC.replace(japRegExp, 'jap/png').replace(new RegExp('\\b.webp\\b'), '.png');
+      return cardSRC
+        .replace(japRegExp, 'jap/png')
+        .replace(new RegExp('\\b.webp\\b'), '.png');
     } else {
-      return cardSRC.replace(preReleaseRegExp, 'pre-release/png').replace(new RegExp('\\b.webp\\b'), '.png');
+      return cardSRC
+        .replace(preReleaseRegExp, 'pre-release/png')
+        .replace(new RegExp('\\b.webp\\b'), '.png');
     }
   }
 
   openWiki() {
-    const wikiLink = 'https://digimoncardgame.fandom.com/wiki/' + formatId(this.card.id);
+    const wikiLink =
+      'https://digimoncardgame.fandom.com/wiki/' + formatId(this.card.id);
     window.open(wikiLink, '_blank');
   }
 
   openWikiIllustrator() {
-    const wikiLink = 'https://digimoncardgame.fandom.com/wiki/' + this.card.illustrator;
+    const wikiLink =
+      'https://digimoncardgame.fandom.com/wiki/' + this.card.illustrator;
     window.open(wikiLink, '_blank');
   }
 
@@ -340,7 +561,10 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
   replaceWithImageTags(effect: string): string {
     let replacedText = effect;
     for (const [pattern, imageTag] of replacements) {
-      replacedText = replacedText.replace(pattern, `<img class="inline h-4" src="assets/images/keywords/${imageTag}.webp"/>`);
+      replacedText = replacedText.replace(
+        pattern,
+        `<img class="inline h-4" src="assets/images/keywords/${imageTag}.webp"/>`
+      );
     }
     return replacedText;
   }

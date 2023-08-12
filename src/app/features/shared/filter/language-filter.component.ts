@@ -37,7 +37,9 @@ import { selectCardSet } from '../../../store/digimon.selectors';
   imports: [NgIf, NgClass, AsyncPipe],
 })
 export class LanguageFilterComponent {
-  cardSet$ = this.store.select(selectCardSet).pipe(map((set) => (+set >>> 0 ? CARDSET.English : set)));
+  cardSet$ = this.store
+    .select(selectCardSet)
+    .pipe(map((set) => (+set >>> 0 ? CARDSET.English : set)));
 
   cardSet = CARDSET;
 

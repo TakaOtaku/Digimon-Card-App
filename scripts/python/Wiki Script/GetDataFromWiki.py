@@ -685,8 +685,10 @@ for link in cardLinks:
             idWithP = re.sub(r'\.png$', '', img['data-image-key'])
             src = img['src'].split("/latest")[0]
 
-            # download_image_with_retry(
-            #    src + '/latest', 'digimon-images/english/' + img['data-image-key'], img['data-image-key'])
+            saveLocation = src + '/latest', 'digimon-images/english/' + \
+                img['data-image-key'], img['data-image-key']
+            saveLocation = saveLocation.replace('-j', '-J')
+            # download_image_with_retry(saveLocation)
 
             captions = item.find("div", class_="lightbox-caption")
             notes = captions.find_all("a")
@@ -724,8 +726,10 @@ for link in cardLinks:
             idWithP = re.sub(r'\.png$', '', img['data-image-key'])
             src = img['src'].split("/latest")[0]
 
-            # download_image_with_retry(
-            #    src + '/latest', 'digimon-images/japanese/' + img['data-image-key'], img['data-image-key'])
+            saveLocation = src + '/latest', 'digimon-images/japanese/' + \
+                img['data-image-key'], img['data-image-key']
+            saveLocation = saveLocation.replace('-j', '-J')
+            # download_image_with_retry(saveLocation)
 
             captions = item.find("div", class_="lightbox-caption")
             notes = captions.find_all("a")
@@ -773,6 +777,7 @@ replace_string_in_json(')＜', ')\n＜')
 replace_string_in_json(') ＜', ')\n＜')
 replace_string_in_json(')＜', '\n・')
 replace_string_in_json(') ＜', '\n・')
+replace_string_in_json('.＜', '.\n＜')
 
 print('Removing Keyword Explanations!')
 

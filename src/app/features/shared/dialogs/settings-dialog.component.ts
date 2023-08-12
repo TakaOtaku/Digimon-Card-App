@@ -1,7 +1,14 @@
-import { CollectionActions, SaveActions } from './../../../store/digimon.actions';
+import {
+  CollectionActions,
+  SaveActions,
+} from './../../../store/digimon.actions';
 import { NgClass, NgIf, NgStyle } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormsModule, ReactiveFormsModule, UntypedFormControl } from '@angular/forms';
+import {
+  FormsModule,
+  ReactiveFormsModule,
+  UntypedFormControl,
+} from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { saveAs } from 'file-saver';
 import { ConfirmationService, MessageService, SharedModule } from 'primeng/api';
@@ -16,7 +23,12 @@ import { first, Subject, takeUntil } from 'rxjs';
 import { DigimonCard, ICountCard, ISave } from '../../../../models';
 import { GroupedSets } from '../../../../models/data/filter.data';
 import { DigimonBackendService } from '../../../service/digimon-backend.service';
-import { selectAllCards, selectCollection, selectSave, selectSettings } from '../../../store/digimon.selectors';
+import {
+  selectAllCards,
+  selectCollection,
+  selectSave,
+  selectSettings,
+} from '../../../store/digimon.selectors';
 import { emptySettings } from '../../../store/reducers/save.reducer';
 
 @Component({
@@ -27,58 +39,111 @@ import { emptySettings } from '../../../store/reducers/save.reducer';
         <div class="mx-auto grid w-full grid-cols-2  justify-end">
           <div class="flex flex-col">
             <h5 class="mt-5 text-center font-bold">Collection Goal:</h5>
-            <p-inputNumber [(ngModel)]="collectionCount" styleClass="mx-auto" mode="decimal"></p-inputNumber>
+            <p-inputNumber
+              [(ngModel)]="collectionCount"
+              styleClass="mx-auto"
+              mode="decimal"></p-inputNumber>
           </div>
 
           <div class="flex flex-col">
             <h5 class="mt-5 text-center font-bold">AA Collection Goal:</h5>
-            <p-inputNumber [(ngModel)]="aaCollectionCount" styleClass="mx-auto" mode="decimal"></p-inputNumber>
+            <p-inputNumber
+              [(ngModel)]="aaCollectionCount"
+              styleClass="mx-auto"
+              mode="decimal"></p-inputNumber>
           </div>
 
           <div class="flex flex-col">
             <h5 class="mt-5 text-center font-bold">Deck-Sort</h5>
             <div class="flex justify-center">
-              <p-selectButton [formControl]="sortOrderFilter" [multiple]="false" [options]="sortOrder"> </p-selectButton>
+              <p-selectButton
+                [formControl]="sortOrderFilter"
+                [multiple]="false"
+                [options]="sortOrder">
+              </p-selectButton>
             </div>
           </div>
 
           <div class="flex flex-col">
             <h5 class="mt-5 text-center font-bold">Pre-Release Cards</h5>
-            <p-selectButton [(ngModel)]="preRelease" [options]="showHideOptions" class="mx-auto" optionLabel="label" optionValue="value"></p-selectButton>
+            <p-selectButton
+              [(ngModel)]="preRelease"
+              [options]="showHideOptions"
+              class="mx-auto"
+              optionLabel="label"
+              optionValue="value"></p-selectButton>
           </div>
 
           <div class="flex flex-col">
             <h5 class="mt-5 text-center font-bold">Alt. Art Cards</h5>
-            <p-selectButton [(ngModel)]="aa" [options]="showHideOptions" class="mx-auto" optionLabel="label" optionValue="value"></p-selectButton>
+            <p-selectButton
+              [(ngModel)]="aa"
+              [options]="showHideOptions"
+              class="mx-auto"
+              optionLabel="label"
+              optionValue="value"></p-selectButton>
           </div>
 
           <div class="flex flex-col">
             <h5 class="mt-5 text-center font-bold">Stamped Cards</h5>
-            <p-selectButton [(ngModel)]="stamped" [options]="showHideOptions" class="mx-auto" optionLabel="label" optionValue="value"></p-selectButton>
+            <p-selectButton
+              [(ngModel)]="stamped"
+              [options]="showHideOptions"
+              class="mx-auto"
+              optionLabel="label"
+              optionValue="value"></p-selectButton>
           </div>
 
           <div class="flex flex-col">
             <h5 class="mt-5 text-center font-bold">Reprint Cards</h5>
-            <p-selectButton [(ngModel)]="reprint" [options]="showHideOptions" class="mx-auto" optionLabel="label" optionValue="value"></p-selectButton>
+            <p-selectButton
+              [(ngModel)]="reprint"
+              [options]="showHideOptions"
+              class="mx-auto"
+              optionLabel="label"
+              optionValue="value"></p-selectButton>
           </div>
 
           <div class="flex flex-col">
             <h5 class="mt-5 text-center font-bold">Show User-Stats</h5>
-            <p-selectButton [(ngModel)]="userStats" [options]="showHideOptions" class="mx-auto" optionLabel="label" optionValue="value"></p-selectButton>
+            <p-selectButton
+              [(ngModel)]="userStats"
+              [options]="showHideOptions"
+              class="mx-auto"
+              optionLabel="label"
+              optionValue="value"></p-selectButton>
           </div>
 
           <div class="flex flex-col">
-            <h5 class="mt-5 text-center font-bold">Display Decks in a Table:</h5>
-            <p-selectButton [(ngModel)]="deckDisplayTable" [options]="yesNoOptions" class="mx-auto" optionLabel="label" optionValue="value"></p-selectButton>
+            <h5 class="mt-5 text-center font-bold">
+              Display Decks in a Table:
+            </h5>
+            <p-selectButton
+              [(ngModel)]="deckDisplayTable"
+              [options]="yesNoOptions"
+              class="mx-auto"
+              optionLabel="label"
+              optionValue="value"></p-selectButton>
           </div>
           <div class="flex flex-col">
             <h5 class="mt-5 text-center font-bold">Display SideDecks:</h5>
-            <p-selectButton [(ngModel)]="sideDeck" [options]="yesNoOptions" class="mx-auto" optionLabel="label" optionValue="value"></p-selectButton>
+            <p-selectButton
+              [(ngModel)]="sideDeck"
+              [options]="yesNoOptions"
+              class="mx-auto"
+              optionLabel="label"
+              optionValue="value"></p-selectButton>
           </div>
         </div>
 
         <div class="flex flex-row justify-end">
-          <button (click)="saveSettings()" class="mt-10" icon="pi pi-save" label="Save Settings" pButton type="button"></button>
+          <button
+            (click)="saveSettings()"
+            class="mt-10"
+            icon="pi pi-save"
+            label="Save Settings"
+            pButton
+            type="button"></button>
         </div>
       </p-tabPanel>
       <p-tabPanel header="Collection Export">
@@ -106,7 +171,9 @@ import { emptySettings } from '../../../store/reducers/save.reducer';
             </p-multiSelect>
           </div>
 
-          <h1 class="mt-3 text-center text-xs font-bold text-[#e2e4e6]">Rarity:</h1>
+          <h1 class="mt-3 text-center text-xs font-bold text-[#e2e4e6]">
+            Rarity:
+          </h1>
           <div class="flex inline-flex w-full justify-center">
             <button
               (click)="changeRarity('C')"
@@ -140,7 +207,9 @@ import { emptySettings } from '../../../store/reducers/save.reducer';
             </button>
           </div>
 
-          <h1 class="mt-3 text-center text-xs font-bold text-[#e2e4e6]">Version:</h1>
+          <h1 class="mt-3 text-center text-xs font-bold text-[#e2e4e6]">
+            Version:
+          </h1>
           <div class="flex inline-flex w-full justify-center">
             <button
               (click)="changeVersion('Normal')"
@@ -174,7 +243,9 @@ import { emptySettings } from '../../../store/reducers/save.reducer';
             </button>
           </div>
 
-          <p class="mt-3 text-center font-bold">Missing Cards or Collected Cards?</p>
+          <p class="mt-3 text-center font-bold">
+            Missing Cards or Collected Cards?
+          </p>
           <div class="mx-auto flex flex-row">
             <span class="mr-2">Missing</span>
             <p-inputSwitch [(ngModel)]="collectedCards"></p-inputSwitch>
@@ -182,7 +253,9 @@ import { emptySettings } from '../../../store/reducers/save.reducer';
           </div>
 
           <div *ngIf="!collectedCards" class="my-3">
-            <h1 class="text-center text-xs font-bold text-[#e2e4e6]">Collection Goal:</h1>
+            <h1 class="text-center text-xs font-bold text-[#e2e4e6]">
+              Collection Goal:
+            </h1>
             <div class="flex inline-flex w-full justify-center">
               <button
                 (click)="goal = 1"
@@ -218,25 +291,63 @@ import { emptySettings } from '../../../store/reducers/save.reducer';
           </div>
 
           <div class="mt-3 flex w-full justify-end">
-            <button (click)="exportCollection()" icon="pi pi-download" label="Export" pButton type="button"></button>
+            <button
+              (click)="exportCollection()"
+              icon="pi pi-download"
+              label="Export"
+              pButton
+              type="button"></button>
           </div>
         </div>
       </p-tabPanel>
       <p-tabPanel header="Collection Import">
         <div>
           <p>Copy your collection in the text area and press import.</p>
-          <textarea [(ngModel)]="collectionText" [placeholder]="importPlaceholder" class="border-black-500 min-h-[150px] w-full border-2" id="text-import" pInputTextarea></textarea>
+          <textarea
+            [(ngModel)]="collectionText"
+            [placeholder]="importPlaceholder"
+            class="border-black-500 min-h-[150px] w-full border-2"
+            id="text-import"
+            pInputTextarea></textarea>
         </div>
         <div class="flex w-full justify-end">
-          <button (click)="importCollection()" icon="pi pi-upload" label="Import" pButton type="button"></button>
+          <button
+            (click)="importCollection()"
+            icon="pi pi-upload"
+            label="Import"
+            pButton
+            type="button"></button>
         </div>
       </p-tabPanel>
       <p-tabPanel class="mr-auto" header="Links">
         <div class="flex flex-col justify-between lg:flex-row">
-          <input #fileUpload (change)="handleFileInput($event.target)" [ngStyle]="{ display: 'none' }" accept=".json" type="file" />
-          <button (click)="fileUpload.click()" class="m-auto mb-2 min-w-[200px] max-w-[200px]" icon="pi pi-upload" label="Import Save" pButton type="button"></button>
-          <button (click)="exportSave()" class="m-auto mb-2 min-w-[200px] max-w-[200px]" icon="pi pi-download" label="Export Save" pButton type="button"></button>
-          <button (click)="deleteSave($event)" class="m-auto mb-2 min-w-[200px] max-w-[200px]" icon="pi pi-times" label="Delete Save" pButton type="button"></button>
+          <input
+            #fileUpload
+            (change)="handleFileInput($event.target)"
+            [ngStyle]="{ display: 'none' }"
+            accept=".json"
+            type="file" />
+          <button
+            (click)="fileUpload.click()"
+            class="m-auto mb-2 min-w-[200px] max-w-[200px]"
+            icon="pi pi-upload"
+            label="Import Save"
+            pButton
+            type="button"></button>
+          <button
+            (click)="exportSave()"
+            class="m-auto mb-2 min-w-[200px] max-w-[200px]"
+            icon="pi pi-download"
+            label="Export Save"
+            pButton
+            type="button"></button>
+          <button
+            (click)="deleteSave($event)"
+            class="m-auto mb-2 min-w-[200px] max-w-[200px]"
+            icon="pi pi-times"
+            label="Delete Save"
+            pButton
+            type="button"></button>
         </div>
       </p-tabPanel>
     </p-tabView>
@@ -278,7 +389,8 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
   rarities: string[] = [];
   versions: string[] = [];
 
-  importPlaceholder = '' + 'Paste Collection here\n' + '\n' + ' Format:\n' + '   Qty Id\n';
+  importPlaceholder =
+    '' + 'Paste Collection here\n' + '\n' + ' Format:\n' + '   Qty Id\n';
   collectionText = '';
 
   digimonCards: DigimonCard[] = [];
@@ -308,7 +420,12 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
 
   private onDestroy$ = new Subject();
 
-  constructor(private store: Store, private digimonBackendService: DigimonBackendService, private messageService: MessageService, private confirmationService: ConfirmationService) {}
+  constructor(
+    private store: Store,
+    private digimonBackendService: DigimonBackendService,
+    private messageService: MessageService,
+    private confirmationService: ConfirmationService
+  ) {}
 
   ngOnInit(): void {
     this.store
@@ -500,7 +617,9 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
       collection.forEach((collectionCard) => returnCards.push(collectionCard));
     } else {
       allCards.forEach((card) => {
-        const foundCard = collection.find((collectionCard) => collectionCard.id === card.id);
+        const foundCard = collection.find(
+          (collectionCard) => collectionCard.id === card.id
+        );
         if (foundCard) {
           if (this.goal - foundCard.count > 0) {
             returnCards.push({
@@ -518,9 +637,17 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
   }
 
   private setupAllCards(): DigimonCard[] {
-    let setFiltered: DigimonCard[] = this.sets.length === 0 ? this.digimonCards : [];
+    let setFiltered: DigimonCard[] =
+      this.sets.length === 0 ? this.digimonCards : [];
     this.sets.forEach((filter) => {
-      setFiltered = [...new Set([...setFiltered, ...this.digimonCards.filter((cards) => cards['id'].split('-')[0] === filter)])];
+      setFiltered = [
+        ...new Set([
+          ...setFiltered,
+          ...this.digimonCards.filter(
+            (cards) => cards['id'].split('-')[0] === filter
+          ),
+        ]),
+      ];
     });
 
     let raritiesFiltered: DigimonCard[] = [];
@@ -528,7 +655,12 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
       raritiesFiltered = setFiltered;
     }
     this.rarities.forEach((filter) => {
-      raritiesFiltered = [...new Set([...raritiesFiltered, ...setFiltered.filter((cards) => cards['rarity'] === filter)])];
+      raritiesFiltered = [
+        ...new Set([
+          ...raritiesFiltered,
+          ...setFiltered.filter((cards) => cards['rarity'] === filter),
+        ]),
+      ];
     });
 
     let versionsFiltered: DigimonCard[] = [];
@@ -536,16 +668,29 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
       versionsFiltered = raritiesFiltered;
     }
     this.versions.forEach((filter) => {
-      versionsFiltered = [...new Set([...versionsFiltered, ...raritiesFiltered.filter((cards) => cards['version'] === filter)])];
+      versionsFiltered = [
+        ...new Set([
+          ...versionsFiltered,
+          ...raritiesFiltered.filter((cards) => cards['version'] === filter),
+        ]),
+      ];
     });
 
     return versionsFiltered;
   }
 
   private setupCollection(): ICountCard[] {
-    let setFiltered: ICountCard[] = this.sets.length === 0 ? this.collection : [];
+    let setFiltered: ICountCard[] =
+      this.sets.length === 0 ? this.collection : [];
     this.sets.forEach((filter) => {
-      setFiltered = [...new Set([...setFiltered, ...this.collection.filter((cards) => cards['id'].split('-')[0] === filter)])];
+      setFiltered = [
+        ...new Set([
+          ...setFiltered,
+          ...this.collection.filter(
+            (cards) => cards['id'].split('-')[0] === filter
+          ),
+        ]),
+      ];
     });
 
     if (this.rarities.length === 0) {
@@ -554,7 +699,9 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
 
     let collectionCardsForRarity: ICountCard[] = [];
     setFiltered.forEach((collectionCard) => {
-      const foundCard = this.digimonCards.find((card) => card.id === collectionCard.id);
+      const foundCard = this.digimonCards.find(
+        (card) => card.id === collectionCard.id
+      );
 
       if (this.rarities.includes(foundCard!.rarity)) {
         collectionCardsForRarity.push(collectionCard);
@@ -567,7 +714,9 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
 
     let collectionCardsForVersion: ICountCard[] = [];
     collectionCardsForRarity.forEach((collectionCard) => {
-      const foundCard = this.digimonCards.find((card) => card.id === collectionCard.id);
+      const foundCard = this.digimonCards.find(
+        (card) => card.id === collectionCard.id
+      );
 
       if (this.versions.includes(foundCard!.version)) {
         collectionCardsForVersion.push(collectionCard);

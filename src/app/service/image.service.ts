@@ -12,7 +12,9 @@ export class ImageService {
         return of('../../../assets/images/digimon-card-back.webp');
       }),
       switchMap((doesImagePathExist) => {
-        if (doesImagePathExist === '../../../assets/images/digimon-card-back.webp') {
+        if (
+          doesImagePathExist === '../../../assets/images/digimon-card-back.webp'
+        ) {
           const newPath = addJBeforeWebp(imagePath);
           return defer(() => this.checkImagePathExists(newPath));
         } else {

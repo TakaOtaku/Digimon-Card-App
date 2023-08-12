@@ -26,14 +26,19 @@ function setupJsonENG(): DigimonCard[] {
 function setupJsonJAP(): DigimonCard[] {
   const japCards: DigimonCard[] = [];
   [...DigimonCardsJson].forEach((digimonCard: DigimonCard) => {
-    japCards.push({ ...digimonCard, cardImage: addJBeforeWebp(digimonCard.cardImage) });
+    japCards.push({
+      ...digimonCard,
+      cardImage: addJBeforeWebp(digimonCard.cardImage),
+    });
     digimonCard.JAAs.forEach((aa: AA) => {
       japCards.push({
         ...digimonCard,
         id: aa.id,
         illustrator: aa.illustrator,
         notes: aa.note,
-        cardImage: addJBeforeWebp(addAABeforeWebp(digimonCard.cardImage, aa.id)),
+        cardImage: addJBeforeWebp(
+          addAABeforeWebp(digimonCard.cardImage, aa.id)
+        ),
         version: 'AA',
       });
     });
@@ -41,8 +46,12 @@ function setupJsonJAP(): DigimonCard[] {
   return japCards;
 }
 
-export function setupDigimonCardMap(cardset: CARDSET): Map<string, DigimonCard> {
-  return cardset === CARDSET.English ? mapJsonToEngCardList() : mapJsonToJapCardList();
+export function setupDigimonCardMap(
+  cardset: CARDSET
+): Map<string, DigimonCard> {
+  return cardset === CARDSET.English
+    ? mapJsonToEngCardList()
+    : mapJsonToJapCardList();
 }
 
 function mapJsonToEngCardList(): Map<string, DigimonCard> {
@@ -52,7 +61,12 @@ function mapJsonToEngCardList(): Map<string, DigimonCard> {
   digimonCards.forEach((digimonCard: DigimonCard) => {
     cards.set(digimonCard.id, digimonCard);
     digimonCard.AAs.forEach((aa: AA) => {
-      cards.set(aa.id, { ...digimonCard, illustrator: aa.illustrator, notes: aa.note, version: 'AA' });
+      cards.set(aa.id, {
+        ...digimonCard,
+        illustrator: aa.illustrator,
+        notes: aa.note,
+        version: 'AA',
+      });
     });
   });
 
@@ -72,7 +86,8 @@ export function addJBeforeWebp(imagePath: string): string {
 function addAABeforeWebp(imagePath: string, AA: string): string {
   if (imagePath.endsWith('.webp')) {
     const index = imagePath.lastIndexOf('.webp');
-    const newPath = imagePath.slice(0, index) + getP(AA) + imagePath.slice(index);
+    const newPath =
+      imagePath.slice(0, index) + getP(AA) + imagePath.slice(index);
     return newPath;
   } else {
     // If the imagePath does not end with ".webp", return it as is.
@@ -89,9 +104,17 @@ function mapJsonToJapCardList(): Map<string, DigimonCard> {
 
   const digimonCards: DigimonCard[] = [...DigimonCardsJson];
   digimonCards.forEach((digimonCard: DigimonCard) => {
-    cards.set(digimonCard.id, { ...digimonCard, cardImage: addJBeforeWebp(digimonCard.cardImage) });
+    cards.set(digimonCard.id, {
+      ...digimonCard,
+      cardImage: addJBeforeWebp(digimonCard.cardImage),
+    });
     digimonCard.JAAs.forEach((aa: AA) => {
-      cards.set(aa.id, { ...digimonCard, illustrator: aa.illustrator, notes: aa.note, version: 'AA' });
+      cards.set(aa.id, {
+        ...digimonCard,
+        illustrator: aa.illustrator,
+        notes: aa.note,
+        version: 'AA',
+      });
     });
   });
 

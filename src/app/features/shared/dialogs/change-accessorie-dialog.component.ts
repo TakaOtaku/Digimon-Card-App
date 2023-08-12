@@ -1,5 +1,14 @@
 import { NgStyle } from '@angular/common';
-import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
@@ -8,7 +17,13 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { Subject, first, takeUntil } from 'rxjs';
-import { ColorList, DigimonCard, IColor, IDeck, tagsList } from '../../../../models';
+import {
+  ColorList,
+  DigimonCard,
+  IColor,
+  IDeck,
+  tagsList,
+} from '../../../../models';
 import { ITag } from '../../../../models/interfaces/tag.interface';
 import { ColorMap } from '../../../../models/maps/color.map';
 import { deckIsValid } from '../../../functions/digimon-card.functions';
@@ -21,27 +36,50 @@ import { DeckActions } from './../../../store/digimon.actions';
 @Component({
   selector: 'digimon-change-accessorie-dialog',
   template: `
-    <p-selectButton class="mt-10 text-center" [options]="colorList" [(ngModel)]="color" optionLabel="name">
+    <p-selectButton
+      class="mt-10 text-center"
+      [options]="colorList"
+      [(ngModel)]="color"
+      optionLabel="name">
       <ng-template let-item>
-        <span [ngStyle]="{ color: colorMap.get(item.name) }">{{ item.name }}</span>
+        <span [ngStyle]="{ color: colorMap.get(item.name) }">{{
+          item.name
+        }}</span>
       </ng-template>
     </p-selectButton>
 
     <div class="inline-flex w-full">
       <span class="p-float-label mt-5 w-1/2">
-        <input class="w-full" id="float-input" type="text" pInputText [(ngModel)]="title" />
+        <input
+          class="w-full"
+          id="float-input"
+          type="text"
+          pInputText
+          [(ngModel)]="title" />
         <label for="float-input">Deck Name</label>
       </span>
 
       <span class="p-float-label ml-5 mt-5 w-1/2">
-        <p-autoComplete panelStyleClass="w-full" id="float-input3" [(ngModel)]="tags" [suggestions]="filteredTags" (completeMethod)="filterTags($event)" field="name" [multiple]="true">
+        <p-autoComplete
+          panelStyleClass="w-full"
+          id="float-input3"
+          [(ngModel)]="tags"
+          [suggestions]="filteredTags"
+          (completeMethod)="filterTags($event)"
+          field="name"
+          [multiple]="true">
         </p-autoComplete>
         <label for="float-input3">Tags</label>
       </span>
     </div>
 
     <span class="p-float-label mt-6 w-full">
-      <input class="w-full" id="float-input2" type="text" pInputText [(ngModel)]="description" />
+      <input
+        class="w-full"
+        id="float-input2"
+        type="text"
+        pInputText
+        [(ngModel)]="description" />
       <label for="float-input2">Description</label>
     </span>
 
@@ -56,10 +94,19 @@ import { DeckActions } from './../../../store/digimon.actions';
     </div>
   `,
   standalone: true,
-  imports: [SelectButtonModule, FormsModule, NgStyle, InputTextModule, AutoCompleteModule, ButtonModule],
+  imports: [
+    SelectButtonModule,
+    FormsModule,
+    NgStyle,
+    InputTextModule,
+    AutoCompleteModule,
+    ButtonModule,
+  ],
   providers: [MessageService],
 })
-export class ChangeAccessorieDialogComponent implements OnInit, OnChanges, OnDestroy {
+export class ChangeAccessorieDialogComponent
+  implements OnInit, OnChanges, OnDestroy
+{
   @Input() show: boolean = false;
   @Input() deck: IDeck = JSON.parse(JSON.stringify(emptyDeck));
 
@@ -148,7 +195,10 @@ export class ChangeAccessorieDialogComponent implements OnInit, OnChanges, OnDes
     this.confirmationService.confirm({
       message: 'You are about to share the deck. Are you sure?',
       accept: () => {
-        this.digimonCardService.updateDeck(deck, this.auth.userData).pipe(first()).subscribe();
+        this.digimonCardService
+          .updateDeck(deck, this.auth.userData)
+          .pipe(first())
+          .subscribe();
         this.messageService.add({
           severity: 'success',
           summary: 'Deck shared!',

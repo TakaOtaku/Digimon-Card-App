@@ -35,6 +35,8 @@ export class RarityFilterComponent {
       rarities = [...new Set(rarityFilter), rarity];
     }
 
-    this.store.dispatch(WebsiteActions.setrarityfilter({ rarityFilter: rarities }));
+    this.store.dispatch(
+      WebsiteActions.setrarityfilter({ rarityFilter: rarities })
+    );
   }
 }

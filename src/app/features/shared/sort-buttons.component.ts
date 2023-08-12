@@ -11,8 +11,14 @@ import { selectSort } from '../../store/digimon.selectors';
 @Component({
   selector: 'digimon-sort-buttons',
   template: `
-    <div *ngIf="sort$ | async as sort" class="mb-1 inline-flex rounded-md shadow-sm" role="group">
-      <button type="button" (click)="changeOrder(sort)" class="rounded-l-lg border border-gray-200 px-2 py-0.5 hover:backdrop-brightness-150 focus:z-10 focus:ring-2 focus:ring-blue-700">
+    <div
+      *ngIf="sort$ | async as sort"
+      class="mb-1 inline-flex rounded-md shadow-sm"
+      role="group">
+      <button
+        type="button"
+        (click)="changeOrder(sort)"
+        class="rounded-l-lg border border-gray-200 px-2 py-0.5 hover:backdrop-brightness-150 focus:z-10 focus:ring-2 focus:ring-blue-700">
         <i
           [ngClass]="{
             'pi-sort-amount-down': sort.ascOrder,
@@ -32,11 +38,20 @@ import { selectSort } from '../../store/digimon.selectors';
   `,
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgIf, NgClass, DropdownModule, FormsModule, ReactiveFormsModule, AsyncPipe],
+  imports: [
+    NgIf,
+    NgClass,
+    DropdownModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AsyncPipe,
+  ],
 })
 export class SortButtonsComponent {
   sortElement = { name: 'ID', element: 'id' };
-  sort$: Observable<ISort> = this.store.select(selectSort).pipe(distinctUntilChanged());
+  sort$: Observable<ISort> = this.store
+    .select(selectSort)
+    .pipe(distinctUntilChanged());
 
   sortOptions: ISortElement[] = [
     { name: 'ID', element: 'id' },

@@ -1,5 +1,8 @@
 import { createReducer, on } from '@ngrx/store';
-import { setupDigimonCardMap, setupDigimonCards } from '../../../assets/cardlists/DigimonCards';
+import {
+  setupDigimonCardMap,
+  setupDigimonCards,
+} from '../../../assets/cardlists/DigimonCards';
 import { CARDSET, IDigimonCards } from '../../../models';
 import { DigimonActions } from '../digimon.actions';
 

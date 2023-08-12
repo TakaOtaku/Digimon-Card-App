@@ -79,10 +79,15 @@ export function setNewestSet(cards: ICountCard[]): ITag {
       set = value;
     }
   });
-  return tagsList.find((tag) => tag.name === set) ?? { name: '', color: 'Primary' };
+  return (
+    tagsList.find((tag) => tag.name === set) ?? { name: '', color: 'Primary' }
+  );
 }
 
-export function bannedCardsIncluded(cards: ICountCard[], allCards: DigimonCard[]): boolean {
+export function bannedCardsIncluded(
+  cards: ICountCard[],
+  allCards: DigimonCard[]
+): boolean {
   let banned = false;
   if (!cards) {
     return false;
@@ -101,7 +106,10 @@ export function bannedCardsIncluded(cards: ICountCard[], allCards: DigimonCard[]
   return banned;
 }
 
-export function tooManyRestrictedCardsIncluded(cards: ICountCard[], allCards: DigimonCard[]): boolean {
+export function tooManyRestrictedCardsIncluded(
+  cards: ICountCard[],
+  allCards: DigimonCard[]
+): boolean {
   let restricted = false;
   if (!cards) {
     return false;
@@ -143,7 +151,9 @@ export function setColors(deck: IDeck, allCards: DigimonCard[]) {
     });
   });
 
-  const highest = colorArray.reduce((prev, current) => (prev.count > current.count ? prev : current));
+  const highest = colorArray.reduce((prev, current) =>
+    prev.count > current.count ? prev : current
+  );
   return DeckColorMap.get(highest.name);
 }
 
@@ -215,7 +225,10 @@ export function sortColors(colorA: string, colorB: string): number {
   return a - b;
 }
 
-export function mapToDeckCards(cards: ICountCard[], allCards: DigimonCard[]): IDeckCard[] {
+export function mapToDeckCards(
+  cards: ICountCard[],
+  allCards: DigimonCard[]
+): IDeckCard[] {
   const deckCards: IDeckCard[] = [];
 
   if (!cards) {
@@ -224,7 +237,8 @@ export function mapToDeckCards(cards: ICountCard[], allCards: DigimonCard[]): ID
 
   cards.forEach((card) => {
     let cardSplit = card.id.split('-');
-    const numberNot10But0 = cardSplit[0].includes('0') && cardSplit[0] !== 'ST10';
+    const numberNot10But0 =
+      cardSplit[0].includes('0') && cardSplit[0] !== 'ST10';
     if (cardSplit[0].includes('ST') && numberNot10But0) {
       let searchId = cardSplit[0].replace('0', '') + '-' + cardSplit[1];
       let found = allCards.find((allCard) => searchId === allCard.id);
@@ -239,7 +253,9 @@ export function mapToDeckCards(cards: ICountCard[], allCards: DigimonCard[]): ID
   return deckCards;
 }
 
-export function getCountFromDeckCards(deckCards: IDeckCard[] | ICountCard[]): number {
+export function getCountFromDeckCards(
+  deckCards: IDeckCard[] | ICountCard[]
+): number {
   let number = 0;
   deckCards.forEach((card) => {
     number += card.count;
@@ -251,20 +267,35 @@ export function setDeckImage(deck: IDeck | ITournamentDeck): DigimonCard {
   if (deck.cards && deck.cards.length === 0) {
     return JSON.parse(JSON.stringify(dummyCard));
   }
-  let deckCards = mapToDeckCards(deck.cards, setupDigimonCards(CARDSET.English));
+  let deckCards = mapToDeckCards(
+    deck.cards,
+    setupDigimonCards(CARDSET.English)
+  );
 
-  deckCards = deckCards.filter((card) => card.cardType === 'Digimon').filter((card) => card.cardLv !== 'Lv.7');
+  deckCards = deckCards
+    .filter((card) => card.cardType === 'Digimon')
+    .filter((card) => card.cardLv !== 'Lv.7');
 
   if (deckCards.length === 0) {
     return JSON.parse(JSON.stringify(dummyCard));
   }
   try {
-    deckCards = deckCards.sort((a, b) => Number(b.cardLv.replace('Lv.', '')) - Number(a.cardLv.replace('Lv.', '')));
+    deckCards = deckCards.sort(
+      (a, b) =>
+        Number(b.cardLv.replace('Lv.', '')) -
+        Number(a.cardLv.replace('Lv.', ''))
+    );
   } catch (e) {}
 
-  return deckCards.length > 0 ? deckCards[0] : JSON.parse(JSON.stringify(dummyCard));
+  return deckCards.length > 0
+    ? deckCards[0]
+    : JSON.parse(JSON.stringify(dummyCard));
 }
 
 export function itemsAsSelectItem(array: string[]): ISelectItem[] {
   return array.map((item) => ({ label: item, value: item } as ISelectItem));
+}
+
+export function withoutJ(id: string): string {
+  return id.replace('-J', '');
 }

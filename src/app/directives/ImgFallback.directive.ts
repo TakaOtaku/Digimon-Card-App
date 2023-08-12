@@ -1,4 +1,11 @@
-import { Directive, ElementRef, HostListener, Input, OnChanges, OnInit } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  HostListener,
+  Input,
+  OnChanges,
+  OnInit,
+} from '@angular/core';
 import { addJBeforeWebp } from 'src/assets/cardlists/DigimonCards';
 
 @Directive({
@@ -23,6 +30,14 @@ export class ImgFallbackDirective implements OnInit, OnChanges {
   @HostListener('error')
   loadFallbackOnError(error: any) {
     const element: HTMLImageElement = <HTMLImageElement>this.el.nativeElement;
-    element.src = this.digimonImgFallback ? addJBeforeWebp(this.digimonImgFallback) : '../../../assets/images/digimon-card-back.webp';
+
+    if (this.digimonImgFallback) {
+      const modifiedSrc = addJBeforeWebp(this.digimonImgFallback);
+      if (modifiedSrc !== this.digimonImgFallback) {
+        element.src = modifiedSrc;
+        return;
+      }
+    }
+    element.src = '../../../assets/images/digimon-card-back.webp';
   }
 }

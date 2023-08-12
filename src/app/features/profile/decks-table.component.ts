@@ -1,4 +1,11 @@
-import { AsyncPipe, DatePipe, NgClass, NgFor, NgIf, NgStyle } from '@angular/common';
+import {
+  AsyncPipe,
+  DatePipe,
+  NgClass,
+  NgFor,
+  NgIf,
+  NgStyle,
+} from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
@@ -37,7 +44,9 @@ import { DeckActions } from './../../store/digimon.actions';
       <ng-template pTemplate="groupheader" let-deck>
         <tr pRowGroupHeader>
           <td class="py-3" colspan="5">
-            <div [ngClass]="deck.color.name" class="ml-3 mr-1 h-7 w-7 rounded-full"></div>
+            <div
+              [ngClass]="deck.color.name"
+              class="ml-3 mr-1 h-7 w-7 rounded-full"></div>
             <span class="ml-2 font-bold">{{ deck.color.name }} Decks</span>
 
             <div class="ml-auto mr-2 font-bold">
@@ -86,7 +95,17 @@ import { DeckActions } from './../../store/digimon.actions';
     `,
   ],
   standalone: true,
-  imports: [NgIf, TableModule, SharedModule, NgClass, LazyLoadImageModule, NgStyle, NgFor, AsyncPipe, DatePipe],
+  imports: [
+    NgIf,
+    TableModule,
+    SharedModule,
+    NgClass,
+    LazyLoadImageModule,
+    NgStyle,
+    NgFor,
+    AsyncPipe,
+    DatePipe,
+  ],
 })
 export class DecksTableComponent {
   @Input() decks: IDeck[];
@@ -104,10 +123,15 @@ export class DecksTableComponent {
 
     // If there is a ImageCardId set it
     if (deck.imageCardId) {
-      return allCards.find((card) => card.id === deck.imageCardId)?.cardImage ?? '../../../assets/images/cards/eng/BT1-001.webp';
+      return (
+        allCards.find((card) => card.id === deck.imageCardId)?.cardImage ??
+        '../../../assets/images/cards/eng/BT1-001.webp'
+      );
     } else {
       const deckImage = setDeckImage(deck);
-      this.store.dispatch(DeckActions.save({ deck: { ...deck, imageCardId: deckImage.id } }));
+      this.store.dispatch(
+        DeckActions.save({ deck: { ...deck, imageCardId: deckImage.id } })
+      );
       return deckImage.cardImage;
     }
   }

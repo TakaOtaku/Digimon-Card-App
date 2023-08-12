@@ -9,7 +9,8 @@ import { TierlistComponent } from './components/tierlist.component';
 @Component({
   selector: 'digimon-home-page',
   template: `
-    <div class="flex h-[calc(100vh-50px)] w-full flex-row overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d] px-1">
+    <div
+      class="flex h-[calc(100vh-50px)] w-full flex-row overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d] px-1">
       <div class="mx-auto flex w-full max-w-6xl flex-col">
         <digimon-home-intro></digimon-home-intro>
 
@@ -35,7 +36,13 @@ import { TierlistComponent } from './components/tierlist.component';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [HomeIntroComponent, SiteLinksComponent, EventCalendarComponent, FAQComponent, TierlistComponent],
+  imports: [
+    HomeIntroComponent,
+    SiteLinksComponent,
+    EventCalendarComponent,
+    FAQComponent,
+    TierlistComponent,
+  ],
 })
 export class HomePageComponent {
   constructor(private meta: Meta, private title: Title) {
@@ -48,12 +55,14 @@ export class HomePageComponent {
     this.meta.addTags([
       {
         name: 'description',
-        content: 'Digimoncard.App is a website to to keep track of your Digimon card collection, build great decks and keep you posted about the result of any major events.',
+        content:
+          'Digimoncard.App is a website to to keep track of your Digimon card collection, build great decks and keep you posted about the result of any major events.',
       },
       { name: 'author', content: 'TakaOtaku' },
       {
         name: 'keywords',
-        content: 'Digimon, decks, deck builder, collection,  tournament, TCG, community, friends, share',
+        content:
+          'Digimon, decks, deck builder, collection,  tournament, TCG, community, friends, share',
       },
     ]);
   }

@@ -1,10 +1,21 @@
+import { withoutJ } from '../../../functions/digimon-card.functions';
 import { dummyCard } from './../../../store/reducers/digimon.reducers';
-import { ChangeDetectionStrategy, Component, Input, OnDestroy, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subject, takeUntil } from 'rxjs';
 import { DigimonCard, ICountCard, IDraggedCard } from '../../../../models';
 import { DRAG } from '../../../../models/enums/drag.enum';
-import { selectCollection, selectCollectionMode, selectDraggedCard } from '../../../store/digimon.selectors';
+import {
+  selectCollection,
+  selectCollectionMode,
+  selectDraggedCard,
+} from '../../../store/digimon.selectors';
 import { ViewCardDialogComponent } from '../../shared/dialogs/view-card-dialog.component';
 import { FilterSideBoxComponent } from '../../shared/filter/filter-side-box.component';
 import { DialogModule } from 'primeng/dialog';
@@ -18,12 +29,22 @@ import { WebsiteActions } from 'src/app/store/digimon.actions';
 @Component({
   selector: 'digimon-pagination-card-list',
   template: `
-    <digimon-pagination-card-list-header (filterBox)="filterBox = $event" (cardsToShow)="cards = $event"></digimon-pagination-card-list-header>
+    <digimon-pagination-card-list-header
+      (filterBox)="filterBox = $event"
+      (cardsToShow)="cards = $event"></digimon-pagination-card-list-header>
 
     <digimon-search></digimon-search>
 
-    <div class="mx-1 flex w-full flex-row flex-wrap overflow-hidden" *ngIf="draggedCard$ | async as draggedCard" [pDroppable]="['fromDeck', 'fromSide']" (onDrop)="drop(draggedCard, draggedCard)">
-      <h1 *ngIf="cards.length === 0" class="primary-color text-bold my-10 text-center text-5xl">No cards found!</h1>
+    <div
+      class="mx-1 flex w-full flex-row flex-wrap overflow-hidden"
+      *ngIf="draggedCard$ | async as draggedCard"
+      [pDroppable]="['fromDeck', 'fromSide']"
+      (onDrop)="drop(draggedCard, draggedCard)">
+      <h1
+        *ngIf="cards.length === 0"
+        class="primary-color text-bold my-10 text-center text-5xl">
+        No cards found!
+      </h1>
 
       <digimon-full-card
         *ngFor="let card of cards"
@@ -58,12 +79,25 @@ import { WebsiteActions } from 'src/app/store/digimon.actions';
       [dismissableMask]="true"
       [resizable]="false"
       styleClass="overflow-x-hidden">
-      <digimon-view-card-dialog (onClose)="viewCardDialog = false" [card]="card"></digimon-view-card-dialog>
+      <digimon-view-card-dialog
+        (onClose)="viewCardDialog = false"
+        [card]="card"></digimon-view-card-dialog>
     </p-dialog>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [PaginationCardListHeaderComponent, SearchComponent, NgIf, DragDropModule, NgFor, FullCardComponent, DialogModule, FilterSideBoxComponent, ViewCardDialogComponent, AsyncPipe],
+  imports: [
+    PaginationCardListHeaderComponent,
+    SearchComponent,
+    NgIf,
+    DragDropModule,
+    NgFor,
+    FullCardComponent,
+    DialogModule,
+    FilterSideBoxComponent,
+    ViewCardDialogComponent,
+    AsyncPipe,
+  ],
 })
 export class PaginationCardListComponent implements OnInit, OnDestroy {
   @Input() deckView: boolean;
@@ -101,7 +135,9 @@ export class PaginationCardListComponent implements OnInit, OnDestroy {
     if (this.collection === null) {
       return 0;
     }
-    return this.collection.find((value) => value.id === cardId)?.count ?? 0;
+    return (
+      this.collection.find((value) => value.id === withoutJ(cardId))?.count ?? 0
+    );
   }
 
   viewCard(card: DigimonCard) {
@@ -111,9 +147,13 @@ export class PaginationCardListComponent implements OnInit, OnDestroy {
 
   drop(card: IDraggedCard, dragCard: IDraggedCard) {
     if (dragCard.drag === DRAG.Side) {
-      this.store.dispatch(WebsiteActions.removecardfromsidedeck({ cardId: card.card.id }));
+      this.store.dispatch(
+        WebsiteActions.removecardfromsidedeck({ cardId: card.card.id })
+      );
       return;
     }
-    this.store.dispatch(WebsiteActions.removecardfromdeck({ cardId: card.card.id }));
+    this.store.dispatch(
+      WebsiteActions.removecardfromdeck({ cardId: card.card.id })
+    );
   }
 }

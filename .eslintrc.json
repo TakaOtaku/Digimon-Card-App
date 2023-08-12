@@ -56,12 +56,6 @@
             "style": "kebab-case"
           }
         ],
-        "max-len": [
-          "error",
-          {
-            "code": 150
-          }
-        ],
         "prettier/prettier": [
           "error"
         ]

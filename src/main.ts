@@ -1,14 +1,26 @@
 import { DatePipe } from '@angular/common';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import { enableProdMode, importProvidersFrom } from '@angular/core';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAnalyticsModule } from '@angular/fire/compat/analytics';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { bootstrapApplication, BrowserModule, HammerModule } from '@angular/platform-browser';
+import {
+  bootstrapApplication,
+  BrowserModule,
+  HammerModule,
+} from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
-import { PreloadAllModules, provideRouter, Routes, withPreloading } from '@angular/router';
+import {
+  PreloadAllModules,
+  provideRouter,
+  Routes,
+  withPreloading,
+} from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { provideEffects } from '@ngrx/effects';
 import { provideStore } from '@ngrx/store';

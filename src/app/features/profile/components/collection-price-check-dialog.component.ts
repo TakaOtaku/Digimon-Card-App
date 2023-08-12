@@ -1,9 +1,20 @@
 import { Component, Input, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subject, tap } from 'rxjs';
-import { GroupedSets, DigimonCard, ICountCard, ISave } from '../../../../models';
-import { ProductCM, ProductCMWithCount } from '../../../service/card-market.service';
-import { selectAllCards, selectPriceGuideCM } from '../../../store/digimon.selectors';
+import {
+  GroupedSets,
+  DigimonCard,
+  ICountCard,
+  ISave,
+} from '../../../../models';
+import {
+  ProductCM,
+  ProductCMWithCount,
+} from '../../../service/card-market.service';
+import {
+  selectAllCards,
+  selectPriceGuideCM,
+} from '../../../store/digimon.selectors';
 import { TableModule } from 'primeng/table';
 import { CardImageComponent } from '../../shared/card-image.component';
 import { SharedModule } from 'primeng/api';
@@ -19,11 +30,16 @@ import { dummyCard } from 'src/app/store/reducers/digimon.reducers';
   template: `
     <ng-container *ngIf="allCards$ | async as allCards">
       <p-blockUI [blocked]="spinner"></p-blockUI>
-      <p-progressSpinner *ngIf="spinner" class="absolute left-1/2 top-1/2 z-[5000] -translate-x-1/2 -translate-y-1/2 transform"></p-progressSpinner>
+      <p-progressSpinner
+        *ngIf="spinner"
+        class="absolute left-1/2 top-1/2 z-[5000] -translate-x-1/2 -translate-y-1/2 transform"></p-progressSpinner>
 
       <div *ngIf="prizeGuide$ | async" class="mb-2 flex flex-col">
         <span>All Price-Information is from <b>CardMarket</b>.</span>
-        <span class="text-xs">Calculating the Card-Prices may take a while if you have a big collection.</span>
+        <span class="text-xs"
+          >Calculating the Card-Prices may take a while if you have a big
+          collection.</span
+        >
       </div>
 
       <div class="flex flex-row">
@@ -57,17 +73,26 @@ import { dummyCard } from 'src/app/store/reducers/digimon.reducers';
             </div>
           </ng-template>
         </p-multiSelect>
-        <button (click)="updatePrice()" class="surface-ground hover:primary-background text-shadow h-8 border border-black px-1 font-bold text-[#e2e4e6]">Check Price</button>
+        <button
+          (click)="updatePrice()"
+          class="surface-ground hover:primary-background text-shadow h-8 border border-black px-1 font-bold text-[#e2e4e6]">
+          Check Price
+        </button>
       </div>
 
       <div *ngIf="notFound.length > 0" class="flex flex-row flex-wrap">
         <span class="w-full">Couldn't find a price for: </span>
         <div *ngFor="let card of notFound">
-          <digimon-card-image [card]="getCard(card.cardId, allCards)" [ribbons]="false"></digimon-card-image>
+          <digimon-card-image
+            [card]="getCard(card.cardId, allCards)"
+            [ribbons]="false"></digimon-card-image>
         </div>
       </div>
 
-      <p-table [value]="filteredProducts" [breakpoint]="'0px'" styleClass="p-datatable-sm p-datatable-striped">
+      <p-table
+        [value]="filteredProducts"
+        [breakpoint]="'0px'"
+        styleClass="p-datatable-sm p-datatable-striped">
         <ng-template pTemplate="header">
           <tr>
             <th>Img</th>
@@ -86,7 +111,10 @@ import { dummyCard } from 'src/app/store/reducers/digimon.reducers';
         <ng-template pTemplate="body" let-product>
           <tr>
             <th>
-              <digimon-card-image [card]="getCard(product.cardId, allCards)" [ribbons]="false" [height]="'1.25rem'"></digimon-card-image>
+              <digimon-card-image
+                [card]="getCard(product.cardId, allCards)"
+                [ribbons]="false"
+                [height]="'1.25rem'"></digimon-card-image>
             </th>
             <th>{{ product.count }}</th>
             <td>{{ product.cardId }}</td>
@@ -99,7 +127,10 @@ import { dummyCard } from 'src/app/store/reducers/digimon.reducers';
             <td>{{ product.avg30 | currency : 'EUR' }}</td>
             <td class="bg-white">
               <a [href]="product.link" target="_blank">
-                <img class="max-h-[2rem]" src="assets/icons/CardmarketLogo.png" alt="Link to CardMarket" />
+                <img
+                  class="max-h-[2rem]"
+                  src="assets/icons/CardmarketLogo.png"
+                  alt="Link to CardMarket" />
               </a>
             </td>
           </tr>
@@ -123,7 +154,9 @@ import { dummyCard } from 'src/app/store/reducers/digimon.reducers';
 
       <div class="flex flex-col text-xs">
         <span><b>Disclaimer:</b></span>
-        <span> Not all cards may have a price or they could be linked wrong.</span>
+        <span>
+          Not all cards may have a price or they could be linked wrong.</span
+        >
         <span> The Prices are updated once a day.</span>
         <span> TCGPlayer doesn't give out access to their API anymore.</span>
       </div>
@@ -145,7 +178,19 @@ import { dummyCard } from 'src/app/store/reducers/digimon.reducers';
     `,
   ],
   standalone: true,
-  imports: [NgIf, BlockUIModule, ProgressSpinnerModule, MultiSelectModule, FormsModule, SharedModule, NgFor, CardImageComponent, TableModule, AsyncPipe, CurrencyPipe],
+  imports: [
+    NgIf,
+    BlockUIModule,
+    ProgressSpinnerModule,
+    MultiSelectModule,
+    FormsModule,
+    SharedModule,
+    NgFor,
+    CardImageComponent,
+    TableModule,
+    AsyncPipe,
+    CurrencyPipe,
+  ],
 })
 export class CollectionPriceCheckDialogComponent implements OnDestroy {
   @Input() save: ISave;
@@ -156,7 +201,9 @@ export class CollectionPriceCheckDialogComponent implements OnDestroy {
 
   viewCardDialog = false;
 
-  prizeGuide$ = this.store.select(selectPriceGuideCM).pipe(tap((products) => (this.prizeGuide = products)));
+  prizeGuide$ = this.store
+    .select(selectPriceGuideCM)
+    .pipe(tap((products) => (this.prizeGuide = products)));
   prizeGuide: ProductCM[] = [];
 
   onlyMissing = false;
@@ -187,7 +234,9 @@ export class CollectionPriceCheckDialogComponent implements OnDestroy {
     const filteredCollection = this.filterCollection();
     const all: ProductCMWithCount[] = filteredCollection
       .map((card) => {
-        const foundProduct: ProductCM = this.prizeGuide.find((product) => card.id === product.cardId) ?? this.emptyProduct(card);
+        const foundProduct: ProductCM =
+          this.prizeGuide.find((product) => card.id === product.cardId) ??
+          this.emptyProduct(card);
 
         return { ...foundProduct, count: card.count } as ProductCMWithCount;
       })
@@ -244,13 +293,17 @@ export class CollectionPriceCheckDialogComponent implements OnDestroy {
   }
 
   showOnlyMissing() {
-    this.filteredProducts = this.onlyMissing ? this.getMissingCards() : this.products;
+    this.filteredProducts = this.onlyMissing
+      ? this.getMissingCards()
+      : this.products;
   }
 
   getMissingCards = (): ProductCMWithCount[] => {
     return this.products
       .map((product) => {
-        const foundCard = this.filterCollection().find((collectionCard) => collectionCard.id === product.cardId);
+        const foundCard = this.filterCollection().find(
+          (collectionCard) => collectionCard.id === product.cardId
+        );
         if (foundCard) {
           return { ...product, count: product.count - foundCard.count };
         } else {

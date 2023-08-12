@@ -9,13 +9,32 @@ import { dummyCard } from './../../store/reducers/digimon.reducers';
 @Component({
   selector: 'digimon-card-image',
   template: `
-    <div *ngIf="ribbons" class="absolute top-1 z-10 grid w-full grid-cols-5 gap-0">
+    <div
+      *ngIf="ribbons"
+      class="absolute top-1 z-10 grid w-full grid-cols-5 gap-0">
       <div></div>
-      <img *ngIf="card.version === 'AA' || card.version === 'Foil'" [src]="aa.get(this.card.color) ?? 'assets/images/banner/ico_card_detail_multi.png'" alt="AA-Banner" class="col-span-3 w-full" />
-      <img *ngIf="card.version === 'Reprint'" [src]="reprint.get(this.card.color) ?? 'assets/images/banner/reprint_multi.png'" alt="Reprint-Banner" class="col-span-3 w-full" />
+      <img
+        *ngIf="card.version === 'AA' || card.version === 'Foil'"
+        [src]="
+          aa.get(this.card.color) ??
+          'assets/images/banner/ico_card_detail_multi.png'
+        "
+        alt="AA-Banner"
+        class="col-span-3 w-full" />
+      <img
+        *ngIf="card.version === 'Reprint'"
+        [src]="
+          reprint.get(this.card.color) ??
+          'assets/images/banner/reprint_multi.png'
+        "
+        alt="Reprint-Banner"
+        class="col-span-3 w-full" />
       <img
         *ngIf="card.version === 'Stamp' || card.version === 'Pre-Release'"
-        [src]="stamped.get(this.card.color) ?? 'assets/images/banner/stamped_multi.png'"
+        [src]="
+          stamped.get(this.card.color) ??
+          'assets/images/banner/stamped_multi.png'
+        "
         alt="Stamped-Banner"
         class="col-span-3 w-full" />
     </div>

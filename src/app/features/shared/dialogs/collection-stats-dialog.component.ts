@@ -1,4 +1,11 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { DigimonCard, ICountCard } from '../../../../models';
 import { ChartModule } from 'primeng/chart';
@@ -31,7 +38,10 @@ import { ChartModule } from 'primeng/chart';
   </div>
 </div-->
 
-    <p-chart [data]="collectionData" [options]="chartOptions" type="bar"></p-chart> `,
+    <p-chart
+      [data]="collectionData"
+      [options]="chartOptions"
+      type="bar"></p-chart> `,
   standalone: true,
   imports: [ChartModule],
 })
@@ -106,7 +116,9 @@ export class CollectionStatsDialogComponent implements OnInit, OnChanges {
 
   private getBoosterCards(type: string): number[] {
     //const allCards = this.filterLanguageAllCards();
-    const set = this.digimonCards.filter((card) => card.cardNumber.includes(type));
+    const set = this.digimonCards.filter((card) =>
+      card.cardNumber.includes(type)
+    );
 
     //const collection = this.filterLanguageCollection();
     const have = this.collection.filter((card) => card.id.includes(type));
