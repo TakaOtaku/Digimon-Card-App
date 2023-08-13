@@ -685,10 +685,11 @@ for link in cardLinks:
             idWithP = re.sub(r'\.png$', '', img['data-image-key'])
             src = img['src'].split("/latest")[0]
 
-            saveLocation = src + '/latest', 'digimon-images/english/' + \
-                img['data-image-key'], img['data-image-key']
+            saveLocation = src + '/latest'
             saveLocation = saveLocation.replace('-j', '-J')
-            # download_image_with_retry(saveLocation)
+
+            if 'Sample' not in idWithoutP:
+                download_image_with_retry(saveLocation, 'digimon-images/english/' + img['data-image-key'], img['data-image-key'])
 
             captions = item.find("div", class_="lightbox-caption")
             notes = captions.find_all("a")
@@ -726,10 +727,11 @@ for link in cardLinks:
             idWithP = re.sub(r'\.png$', '', img['data-image-key'])
             src = img['src'].split("/latest")[0]
 
-            saveLocation = src + '/latest', 'digimon-images/japanese/' + \
-                img['data-image-key'], img['data-image-key']
+            saveLocation = src + '/latest'
             saveLocation = saveLocation.replace('-j', '-J')
-            # download_image_with_retry(saveLocation)
+
+            if 'Sample' not in idWithoutP:
+                download_image_with_retry(saveLocation, 'digimon-images/japanese/' + img['data-image-key'], img['data-image-key'])
 
             captions = item.find("div", class_="lightbox-caption")
             notes = captions.find_all("a")
@@ -775,9 +777,11 @@ replace_string_in_json('. [', '.\n[')
 replace_string_in_json('＞＜', '＞\n＜')
 replace_string_in_json(')＜', ')\n＜')
 replace_string_in_json(') ＜', ')\n＜')
+replace_string_in_json('・', '\n・')
 replace_string_in_json(')＜', '\n・')
 replace_string_in_json(') ＜', '\n・')
 replace_string_in_json('.＜', '.\n＜')
+replace_string_in_json('＞.', '＞\n')
 
 print('Removing Keyword Explanations!')
 
@@ -847,3 +851,19 @@ replace_string_in_json('  ', '')
 replace_string_in_json('  ', '')
 replace_string_in_json('  ', '')
 replace_string_in_json(' .', '.')
+
+# Remove all AAs and JAAs from every Card that include Sample in the id
+with open('jsons/DigimonCards.json', 'r') as file:
+    data = json.load(file)
+
+    for card in data:
+        for aa in card['AAs']:
+            if 'Sample' in aa['id']:
+                card['AAs'].remove(aa)
+        for jaa in card['JAAs']:
+            if 'Sample' in jaa['id']:
+                card['JAAs'].remove(jaa)
+
+    # Save the updated JSON back to the file
+    with open('jsons/DigimonCards.json', 'w') as file:
+        json.dump(data, file, indent=2, sort_keys=sort_key)

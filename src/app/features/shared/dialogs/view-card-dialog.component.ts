@@ -1,4 +1,4 @@
-import { AsyncPipe, NgClass, NgIf, NgStyle } from '@angular/common';
+import { AsyncPipe, NgClass, NgForOf, NgIf, NgStyle } from '@angular/common';
 import {
   Component,
   EventEmitter,
@@ -215,19 +215,29 @@ import {
               {{ card.playCost }}
             </p>
           </div>
-          <!-- TODO
-          <div *ngIf="card.digivolveCost1 !== '-'" class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150" id="Digimon-Digivolve-Cost-1">
-            <p [ngStyle]="{color}" class="text-black-outline-xs ml-1.5 text-lg font-extrabold">Digivolve Cost 1</p>
-            <p class="font-white ml-auto mr-1.5 font-bold leading-[1.7em]">
-              {{ card.digivolveCost1 }}
+
+          <div
+            *ngIf="card.digivolveCondition.length > 0"
+            class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150">
+            <p
+              [ngStyle]="{color}"
+              class="text-black-outline-xs ml-1.5 text-lg font-extrabold">
+              Digivolve
             </p>
+            <div
+              *ngFor="let digivolveCondition of card.digivolveCondition"
+              class="relative mx-1.5 h-9 w-9 rounded-full border border-slate-200"
+              [ngStyle]="{
+                backgroundColor: this.colorMap.get(digivolveCondition.color)
+              }">
+              <span class="absolute left-[5px] top-[2px] text-2xs"
+                >Lv. {{ digivolveCondition.level }}</span
+              >
+              <span class="absolute bottom-[0] left-[13px] text-sm font-bold">{{
+                digivolveCondition.cost
+              }}</span>
+            </div>
           </div>
-          <div *ngIf="card.digivolveCost2 !== '-'" class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150" id="Digimon-Digivolve-Cost-2">
-            <p [ngStyle]="{color}" class="text-black-outline-xs ml-1.5 text-lg font-extrabold">Digivolve Cost 2</p>
-            <p class="font-white ml-auto mr-1.5 font-bold leading-[1.7em]">
-              {{ card.digivolveCost2 }}
-            </p>
-          </div> -->
           <div
             *ngIf="card.specialDigivolve !== '-'"
             class="my-0.5 flex w-full flex-col rounded-full"
@@ -396,6 +406,7 @@ import {
     LazyLoadImageModule,
     AsyncPipe,
     ImgFallbackDirective,
+    NgForOf,
   ],
 })
 export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
