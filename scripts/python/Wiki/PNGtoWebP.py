@@ -2,8 +2,8 @@ import os
 from PIL import Image
 
 # Input and output folders
-input_folder = './digimon-images'
-output_folder = './digimon-images/converted'
+input_folder = './scripts/python/Wiki/digimon-images'
+output_folder = './scripts/python/Wiki/digimon-images/converted'
 
 # Ensure the output folder exists
 os.makedirs(output_folder, exist_ok=True)

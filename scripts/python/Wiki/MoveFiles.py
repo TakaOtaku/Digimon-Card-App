@@ -3,10 +3,10 @@ import shutil
 
 # Source and destination folders
 source_folder_data = './jsons'
-destination_folder_data = './../../../src/assets/cardlists'
+destination_folder_data = './src/assets/cardlists'
 
 source_folder_images = './digimonimages'
-destination_folder_images = './../../../src/assets/images/cards'
+destination_folder_images = './src/assets/images/cards'
 
 # Get a list of files in the source folder
 file_list_data = os.listdir(source_folder_data)
