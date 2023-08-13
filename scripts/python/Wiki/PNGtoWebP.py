@@ -17,4 +17,4 @@ for filename in os.listdir(input_folder):
     # Open and convert the image
     img = Image.open(input_path)
     img.save(output_path, 'webp', quality=80)  # You can adjust the quality value if needed
-    print(f"Converted {filename} to {os.path.basename(output_path)}")
+    print(f"Converted  {filename} to {os.path.basename(output_path)}")
