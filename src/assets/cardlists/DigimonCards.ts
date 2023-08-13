@@ -83,6 +83,16 @@ export function addJBeforeWebp(imagePath: string): string {
   }
 }
 
+export function addSampleBeforeWebp(imagePath: string): string {
+  if (imagePath.endsWith('.webp') && !imagePath.endsWith('-Sample-J.webp')) {
+    const index = imagePath.lastIndexOf('.webp');
+    return imagePath.slice(0, index) + '-Sample-J' + imagePath.slice(index);
+  } else {
+    // If the imagePath does not end with ".webp", return it as is.
+    return imagePath;
+  }
+}
+
 function addAABeforeWebp(imagePath: string, AA: string): string {
   if (imagePath.endsWith('.webp')) {
     const index = imagePath.lastIndexOf('.webp');

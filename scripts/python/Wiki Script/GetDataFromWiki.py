@@ -688,7 +688,7 @@ for link in cardLinks:
             saveLocation = src + '/latest'
             saveLocation = saveLocation.replace('-j', '-J')
 
-            if 'Sample' not in idWithoutP:
+            if 'Sample' not in img['data-image-key']:
                 download_image_with_retry(saveLocation, 'digimon-images/english/' + img['data-image-key'], img['data-image-key'])
 
             captions = item.find("div", class_="lightbox-caption")
@@ -730,7 +730,7 @@ for link in cardLinks:
             saveLocation = src + '/latest'
             saveLocation = saveLocation.replace('-j', '-J')
 
-            if 'Sample' not in idWithoutP:
+            if 'Sample' not in img['data-image-key']:
                 download_image_with_retry(saveLocation, 'digimon-images/japanese/' + img['data-image-key'], img['data-image-key'])
 
             captions = item.find("div", class_="lightbox-caption")

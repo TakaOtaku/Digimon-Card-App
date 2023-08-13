@@ -6,7 +6,7 @@ import {
   OnChanges,
   OnInit,
 } from '@angular/core';
-import { addJBeforeWebp } from 'src/assets/cardlists/DigimonCards';
+import { addJBeforeWebp, addSampleBeforeWebp } from 'src/assets/cardlists/DigimonCards';
 
 @Directive({
   selector: 'img[digimonImgFallback]',
@@ -33,9 +33,13 @@ export class ImgFallbackDirective implements OnInit, OnChanges {
 
     if (this.digimonImgFallback) {
       const modifiedSrc = addJBeforeWebp(this.digimonImgFallback);
+      const sampleSrc = addSampleBeforeWebp(this.digimonImgFallback);
       const currentSrc = 'assets' + element.src.split('assets')[1];
-      if (modifiedSrc !== currentSrc) {
+      if (modifiedSrc !== currentSrc && sampleSrc !== currentSrc) {
         element.src = modifiedSrc;
+        return;
+      } else if (!currentSrc.includes('Sample')) {
+        element.src = sampleSrc;
         return;
       }
     }
