@@ -24,7 +24,7 @@ for filename in file_list_data:
     print(f"Moved {filename} to {destination_folder_data}")
 
 for filename in file_list_images:
-  if filename.endswith(".json"):
+  if filename.endswith(".webp"):
     source_path = os.path.join(source_folder_images, filename)
     destination_path = os.path.join(destination_folder_images, filename)
 

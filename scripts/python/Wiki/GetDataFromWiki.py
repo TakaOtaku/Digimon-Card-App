@@ -441,7 +441,7 @@ def class_to_dict(obj):
 
 def formatJsonToSetDictionary():
     # Open the JSON file and load its contents
-    with open('jsons/DigimonCards.json', 'r') as file:
+    with open('./scripts/python/Wiki/jsons/DigimonCards.json', 'r') as file:
         data = json.load(file)
 
     def group_cards_by_prefix(cards):
@@ -458,13 +458,13 @@ def formatJsonToSetDictionary():
     sorted_cards_dict = group_cards_by_prefix(data)
 
     # Save the updated JSON back to the file
-    with open('jsons/DigimonCardsSetDictionary.json', 'w') as file:
+    with open('./scripts/python/Wiki/jsons/DigimonCardsSetDictionary.json', 'w') as file:
         json.dump(sorted_cards_dict, file, indent=2, sort_keys=sort_key)
 
 
 def replace_string_in_json(search_string, replaceString):
     # Open the JSON file and load its contents
-    with open('jsons/DigimonCards.json', 'r') as file:
+    with open('./scripts/python/Wiki/jsons/DigimonCards.json', 'r') as file:
         data = json.load(file)
 
     # Replace the search_string with replace_string recursively in the JSON data
@@ -481,7 +481,7 @@ def replace_string_in_json(search_string, replaceString):
     updated_data = replace_string(data)
 
     # Save the updated JSON back to the file
-    with open('jsons/DigimonCards.json', 'w') as file:
+    with open('./scripts/python/Wiki/jsons/DigimonCards.json', 'w') as file:
         json.dump(updated_data, file, indent=2, sort_keys=sort_key)
 
 
@@ -619,7 +619,7 @@ def getRulings():
               str(len(questions)) + ' Rulings')
 
     print('Saving Rulings JSON!')
-    with open('jsons/Rulings.json', 'w') as fp:
+    with open('./scripts/python/Wiki/jsons/Rulings.json', 'w') as fp:
         json.dump(rulings, fp, indent=2, sort_keys=sort_key)
 
 
@@ -630,7 +630,7 @@ def formatCards():
 
     formatedCards = remove_underscores(formatedCards)
     print('Saving DigimonCard JSON!')
-    with open('jsons/DigimonCards.json', 'w') as fp:
+    with open('./scripts/python/Wiki/jsons/DigimonCards.json', 'w') as fp:
         json.dump(formatedCards, fp, indent=2, sort_keys=sort_key)
 
 
@@ -688,7 +688,7 @@ for link in cardLinks:
             saveLocation = src + '/latest'
             saveLocation = saveLocation.replace('-j', '-J')
 
-            download_image_with_retry(saveLocation, 'digimon-images/' + img['data-image-key'], img['data-image-key'])
+            download_image_with_retry(saveLocation, './scripts/python/Wiki/digimon-images/' + img['data-image-key'], img['data-image-key'])
 
             captions = item.find("div", class_="lightbox-caption")
             notes = captions.find_all("a")
@@ -729,7 +729,7 @@ for link in cardLinks:
             saveLocation = src + '/latest'
             saveLocation = saveLocation.replace('-j', '-J')
 
-            download_image_with_retry(saveLocation, 'digimon-images/' + img['data-image-key'], img['data-image-key'])
+            download_image_with_retry(saveLocation, './scripts/python/Wiki/digimon-images/' + img['data-image-key'], img['data-image-key'])
 
             captions = item.find("div", class_="lightbox-caption")
             notes = captions.find_all("a")
@@ -863,5 +863,5 @@ with open('jsons/DigimonCards.json', 'r') as file:
                 card['JAAs'].remove(jaa)
 
     # Save the updated JSON back to the file
-    with open('jsons/DigimonCards.json', 'w') as file:
+    with open('./scripts/python/Wiki/jsons/DigimonCards.json', 'w') as file:
         json.dump(data, file, indent=2, sort_keys=sort_key)
