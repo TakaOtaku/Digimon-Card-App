@@ -5,7 +5,7 @@ import shutil
 source_folder_data = './scripts/python/Wiki/jsons'
 destination_folder_data = './src/assets/cardlists'
 
-source_folder_images = './scripts/python/Wiki/digimonimages/converted'
+source_folder_images = './scripts/python/Wiki/digimon-images/converted'
 destination_folder_images = './src/assets/images/cards'
 
 # Get a list of files in the source folder
