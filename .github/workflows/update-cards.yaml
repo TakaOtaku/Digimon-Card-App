@@ -35,10 +35,10 @@ jobs:
       - name: Move Data & Images to correct folder
         run: python scripts/python/Wiki/MoveFiles.py
 
-      #- name: Commit everything
-      #  run: |
-      #    git config --local user.email "digimoncard.app@gmail.com"
-      #    git config --local user.name "Github Actions"
-      #    git add .
-      #    git commit -m "Update Cards"
-      #    git push
+      - name: Commit everything
+        run: |
+          git config --local user.email "digimoncard.app@gmail.com"
+          git config --local user.name "Github Actions"
+          git add .
+          git commit -m "Update Cards"
+          git push
