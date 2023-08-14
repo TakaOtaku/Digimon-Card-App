@@ -2,10 +2,10 @@ import os
 import shutil
 
 # Source and destination folders
-source_folder_data = './jsons'
+source_folder_data = './scripts/python/Wiki/jsons'
 destination_folder_data = './src/assets/cardlists'
 
-source_folder_images = './digimonimages'
+source_folder_images = './scripts/python/Wiki/digimonimages'
 destination_folder_images = './src/assets/images/cards'
 
 # Get a list of files in the source folder
