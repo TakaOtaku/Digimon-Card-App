@@ -1,12 +1,13 @@
 name: Update Cards
 
 on:
+  schedule:
+    - cron: "0 */72 * * *"
   push:
     branches:
-      - develop
+      - main
   workflow_dispatch:
-  #schedule:
-  #  - cron: "0 */72 * * *"
+
 
 jobs:
   run_script:
