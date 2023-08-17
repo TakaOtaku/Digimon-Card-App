@@ -1,6 +1,7 @@
-import { ICard } from './card.interface';
+import { DigimonCard } from './digimon-card.interface';
 
 export interface IDigimonCards {
-  allCards: ICard[];
-  filteredCards: ICard[];
+  allCards: DigimonCard[];
+  digimonCardMap: Map<string, DigimonCard>;
+  filteredCards: DigimonCard[];
 }

@@ -10,9 +10,17 @@ import { WebsiteActions } from './../../../store/digimon.actions';
 @Component({
   selector: 'digimon-search',
   template: `
-    <span [ngStyle]="{ display: 'inline-flex' }" class=" p-input-icon-left my-2 w-full px-2">
+    <span
+      [ngStyle]="{ display: 'inline-flex' }"
+      class=" p-input-icon-left my-2 w-full px-2">
       <i class="pi pi-search ml-1 h-3"></i>
-      <input (ngModelChange)="search$.next($event)" [ngModel]="filter$ | async" class="h-6 w-full text-xs" pInputText placeholder="Search" type="text" />
+      <input
+        (ngModelChange)="search$.next($event)"
+        [ngModel]="filter$ | async"
+        class="h-6 w-full text-xs"
+        pInputText
+        placeholder="Search"
+        type="text" />
     </span>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -22,7 +30,9 @@ import { WebsiteActions } from './../../../store/digimon.actions';
 export class SearchComponent {
   search = '';
   search$ = new Subject<string>();
-  filter$ = this.store.select(selectSearchFilter).pipe(filter((search) => search !== this.search));
+  filter$ = this.store
+    .select(selectSearchFilter)
+    .pipe(filter((search) => search !== this.search));
 
   constructor(private store: Store) {
     this.search$
@@ -31,6 +41,8 @@ export class SearchComponent {
         distinctUntilChanged(),
         tap((search) => (this.search = search))
       )
-      .subscribe((search) => this.store.dispatch(WebsiteActions.setsearchfilter({ search })));
+      .subscribe((search) =>
+        this.store.dispatch(WebsiteActions.setsearchfilter({ search }))
+      );
   }
 }

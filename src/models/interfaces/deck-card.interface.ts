@@ -1,5 +1,5 @@
-import { ICard } from './card.interface';
+import { DigimonCard } from './digimon-card.interface';
 
-export interface IDeckCard extends ICard {
+export interface IDeckCard extends DigimonCard {
   count: number;
 }

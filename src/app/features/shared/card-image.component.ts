@@ -1,38 +1,57 @@
+import { NgClass, NgIf, NgStyle } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { englishCards } from '../../../assets/cardlists/eng/english';
-import { ICard } from '../../../models';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
-import { NgIf, NgClass, NgStyle } from '@angular/common';
+import { ImgFallbackDirective } from 'src/app/directives/ImgFallback.directive';
+
+import { DigimonCard } from '../../../models';
+import { dummyCard } from './../../store/reducers/digimon.reducers';
 
 @Component({
   selector: 'digimon-card-image',
   template: `
-    <div *ngIf="ribbons" class="absolute top-1 z-10 grid w-full grid-cols-5 gap-0">
+    <div
+      *ngIf="ribbons"
+      class="absolute top-1 z-10 grid w-full grid-cols-5 gap-0">
       <div></div>
-      <img *ngIf="card.version === 'AA' || card.version === 'Foil'" [src]="aa.get(this.card.color) ?? 'assets/images/banner/ico_card_detail_multi.png'" alt="AA-Banner" class="col-span-3 w-full" />
-      <img *ngIf="card.version === 'Reprint'" [src]="reprint.get(this.card.color) ?? 'assets/images/banner/reprint_multi.png'" alt="Reprint-Banner" class="col-span-3 w-full" />
+      <img
+        *ngIf="card.version === 'AA' || card.version === 'Foil'"
+        [src]="
+          aa.get(this.card.color) ??
+          'assets/images/banner/ico_card_detail_multi.png'
+        "
+        alt="AA-Banner"
+        class="col-span-3 w-full" />
+      <img
+        *ngIf="card.version === 'Reprint'"
+        [src]="
+          reprint.get(this.card.color) ??
+          'assets/images/banner/reprint_multi.png'
+        "
+        alt="Reprint-Banner"
+        class="col-span-3 w-full" />
       <img
         *ngIf="card.version === 'Stamp' || card.version === 'Pre-Release'"
-        [src]="stamped.get(this.card.color) ?? 'assets/images/banner/stamped_multi.png'"
+        [src]="
+          stamped.get(this.card.color) ??
+          'assets/images/banner/stamped_multi.png'
+        "
         alt="Stamped-Banner"
         class="col-span-3 w-full" />
     </div>
 
     <img
-      [lazyLoad]="card.cardImage"
+      [digimonImgFallback]="card.cardImage"
       [ngClass]="{ grayscale: setGrayScale(), 'max-h-32': !ribbons }"
       [ngStyle]="{ border: cardBorder, 'border-radius': cardRadius }"
       alt="{{ card.cardNumber + ' ' + card.name }}"
-      onerror="this.onerror=null; this.src='assets/images/card_placeholder.png'"
-      class="m-auto aspect-auto"
-      defaultImage="assets/images/digimon-card-back.webp" />
+      class="m-auto aspect-auto" />
   `,
   styleUrls: ['./card-image.component.scss'],
   standalone: true,
-  imports: [NgIf, LazyLoadImageModule, NgClass, NgStyle],
+  imports: [NgIf, LazyLoadImageModule, NgClass, NgStyle, ImgFallbackDirective],
 })
 export class CardImageComponent {
-  @Input() card: ICard = englishCards[0];
+  @Input() card: DigimonCard = JSON.parse(JSON.stringify(dummyCard));
   @Input() count = 0;
   @Input() collectionMode = false;
   @Input() ribbons = true;

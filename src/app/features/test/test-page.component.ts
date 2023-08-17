@@ -4,8 +4,18 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 import { Store } from '@ngrx/store';
 import { concat, first, Observable, Subject, switchMap, tap } from 'rxjs';
-import { ADMINS, ICard, IDeck, ISave, ITournamentDeck } from '../../../models';
-import { setColors, setDeckImage, setTags } from '../../functions/digimon-card.functions';
+import {
+  ADMINS,
+  DigimonCard,
+  IDeck,
+  ISave,
+  ITournamentDeck,
+} from '../../../models';
+import {
+  setColors,
+  setDeckImage,
+  setTags,
+} from '../../functions/digimon-card.functions';
 import { AuthService } from '../../service/auth.service';
 import { CardMarketService } from '../../service/card-market.service';
 import { DatabaseService } from '../../service/database.service';
@@ -18,24 +28,64 @@ import { NgIf } from '@angular/common';
 @Component({
   selector: 'digimon-test-page',
   template: `
-    <button *ngIf="isAdmin()" class="border-2 border-amber-200 bg-amber-400" (click)="updateAllSaves()">Update all Saves</button>
-    <button *ngIf="isAdmin()" class="border-2 border-amber-200 bg-amber-400" (click)="updatePriceGuideIds()">Update PriceGuide Ids</button>
-    <button *ngIf="isAdmin()" class="border-2 border-amber-200 bg-amber-400" (click)="updatePriceGuideIdsAAs()">Update PriceGuide Ids AAs</button>
+    <button
+      *ngIf="isAdmin()"
+      class="border-2 border-amber-200 bg-amber-400"
+      (click)="updateAllSaves()">
+      Update all Saves
+    </button>
+    <button
+      *ngIf="isAdmin()"
+      class="border-2 border-amber-200 bg-amber-400"
+      (click)="updatePriceGuideIds()">
+      Update PriceGuide Ids
+    </button>
+    <button
+      *ngIf="isAdmin()"
+      class="border-2 border-amber-200 bg-amber-400"
+      (click)="updatePriceGuideIdsAAs()">
+      Update PriceGuide Ids AAs
+    </button>
 
-    <button *ngIf="isAdmin()" class="border-2 border-amber-200 bg-amber-400" (click)="updateAllDecks()">Update all Decks</button>
+    <button
+      *ngIf="isAdmin()"
+      class="border-2 border-amber-200 bg-amber-400"
+      (click)="updateAllDecks()">
+      Update all Decks
+    </button>
 
-    <button *ngIf="isAdmin()" class="border-2 border-amber-200 bg-amber-400" (click)="updateAllSaves()">Update all Save Decks</button>
+    <button
+      *ngIf="isAdmin()"
+      class="border-2 border-amber-200 bg-amber-400"
+      (click)="updateAllSaves()">
+      Update all Save Decks
+    </button>
 
-    <p-dialog [(visible)]="updateIDDialog" [baseZIndex]="100000" [dismissableMask]="true" [resizable]="false">
+    <p-dialog
+      [(visible)]="updateIDDialog"
+      [baseZIndex]="100000"
+      [dismissableMask]="true"
+      [resizable]="false">
       <h1>
-        There are still <b>{{ productsWithoutCorrectID.length }}</b> without correct ID.
+        There are still <b>{{ productsWithoutCorrectID.length }}</b> without
+        correct ID.
       </h1>
 
-      <a class="my-3" [href]="productsWithoutCorrectID[0]?.link" target="_blank">{{ productsWithoutCorrectID[0]?.link }}</a>
+      <a
+        class="my-3"
+        [href]="productsWithoutCorrectID[0]?.link"
+        target="_blank"
+        >{{ productsWithoutCorrectID[0]?.link }}</a
+      >
 
       <div class="my-3 flex flex-row">
         <div>Enter a ID:</div>
-        <input [(ngModel)]="currentID" type="number" min="1" max="10" class="text-center font-bold text-black" />
+        <input
+          [(ngModel)]="currentID"
+          type="number"
+          min="1"
+          max="10"
+          class="text-center font-bold text-black" />
       </div>
 
       <button (click)="updateFirstObject()">Save and Next</button>
@@ -49,7 +99,7 @@ export class TestPageComponent implements OnInit, OnDestroy {
   productsWithoutCorrectID: any[] = [];
   currentID = 1;
 
-  private allCards: ICard[] = [];
+  private allCards: DigimonCard[] = [];
   private onDestroy$ = new Subject();
 
   constructor(
@@ -110,7 +160,10 @@ export class TestPageComponent implements OnInit, OnDestroy {
         ...deck,
         tags,
         color,
-        imageCardId: !deck.imageCardId || deck.imageCardId === 'BT1-001' ? setDeckImage(deck).id : deck.imageCardId,
+        imageCardId:
+          !deck.imageCardId || deck.imageCardId === 'BT1-001'
+            ? setDeckImage(deck).id
+            : deck.imageCardId,
         date: !deck.date ? new Date().toString() : deck.date,
       };
     });
@@ -150,12 +203,21 @@ export class TestPageComponent implements OnInit, OnDestroy {
       .getPrizeGuide()
       .pipe(first())
       .subscribe((products) => {
-        const wrongIDs = products.filter((product) => product.cardId.endsWith('_P')).sort((a, b) => b.cardId.toLocaleLowerCase().localeCompare(a.cardId.toLocaleLowerCase()));
+        const wrongIDs = products
+          .filter((product) => product.cardId.endsWith('_P'))
+          .sort((a, b) =>
+            b.cardId
+              .toLocaleLowerCase()
+              .localeCompare(a.cardId.toLocaleLowerCase())
+          );
 
         const ArrayObject: any = {};
         wrongIDs.forEach((product) => {
           if (ArrayObject[product.cardId]) {
-            ArrayObject[product.cardId] = [...ArrayObject[product.cardId], product];
+            ArrayObject[product.cardId] = [
+              ...ArrayObject[product.cardId],
+              product,
+            ];
           } else {
             ArrayObject[product.cardId] = [product];
           }
@@ -168,7 +230,14 @@ export class TestPageComponent implements OnInit, OnDestroy {
           if ((value as any[]).length === 0) {
             delete ArrayObject[key];
           } else if ((value as any[]).length === 1) {
-            ofArray$.push(this.cardMarketService.updateProductId(ArrayObject[key][0].cardId + `1`, ArrayObject[key][0]).pipe(first()));
+            ofArray$.push(
+              this.cardMarketService
+                .updateProductId(
+                  ArrayObject[key][0].cardId + `1`,
+                  ArrayObject[key][0]
+                )
+                .pipe(first())
+            );
             delete ArrayObject[key];
           }
         });
@@ -177,7 +246,10 @@ export class TestPageComponent implements OnInit, OnDestroy {
 
         Object.entries(ArrayObject).forEach((entry) => {
           const [key, value] = entry;
-          this.productsWithoutCorrectID = [...this.productsWithoutCorrectID, value];
+          this.productsWithoutCorrectID = [
+            ...this.productsWithoutCorrectID,
+            value,
+          ];
         });
 
         this.productsWithoutCorrectID = this.productsWithoutCorrectID.flat();
@@ -188,7 +260,10 @@ export class TestPageComponent implements OnInit, OnDestroy {
   updateFirstObject() {
     const id = this.productsWithoutCorrectID[0].cardId + this.currentID;
     const product = this.productsWithoutCorrectID[0];
-    this.cardMarketService.updateProductId(id, product).pipe(first()).subscribe();
+    this.cardMarketService
+      .updateProductId(id, product)
+      .pipe(first())
+      .subscribe();
     this.productsWithoutCorrectID = this.productsWithoutCorrectID.slice(1);
   }
 
@@ -232,7 +307,9 @@ export class TestPageComponent implements OnInit, OnDestroy {
       newDecks = { ...deck, date: new Date().toString() };
     }
 
-    return error ? this.digimonBackendService.updateDeck(newDecks).pipe(first()) : null;
+    return error
+      ? this.digimonBackendService.updateDeck(newDecks).pipe(first())
+      : null;
   }
   private updateTournamentDeck(deck: ITournamentDeck): Observable<any> | null {
     let error = false;
@@ -249,6 +326,8 @@ export class TestPageComponent implements OnInit, OnDestroy {
       newDecks = { ...deck, date: new Date().toString() };
     }
 
-    return error ? this.digimonBackendService.updateTournamentDeck(newDecks).pipe(first()) : null;
+    return error
+      ? this.digimonBackendService.updateTournamentDeck(newDecks).pipe(first())
+      : null;
   }
 }

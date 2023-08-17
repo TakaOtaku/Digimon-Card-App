@@ -29,7 +29,16 @@ export class ChartContainerComponent {
   @Input() public fill: number[];
   @Input() public fillPercent?: string = '3.333';
 
-  colors = ['Multi', 'White', 'Purple', 'Black', 'Green', 'Yellow', 'Blue', 'Red'];
+  colors = [
+    'Multi',
+    'White',
+    'Purple',
+    'Black',
+    'Green',
+    'Yellow',
+    'Blue',
+    'Red',
+  ];
 
   getFillCount(): number {
     let num = 0;

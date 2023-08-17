@@ -19,6 +19,7 @@ export const GroupedSets = [
       { label: 'BT12', value: 'BT12' },
       { label: 'BT13', value: 'BT13' },
       { label: 'BT14', value: 'BT14' },
+      { label: 'BT15', value: 'BT15' },
     ],
   },
   {
@@ -29,6 +30,7 @@ export const GroupedSets = [
       { label: 'EX2', value: 'EX2' },
       { label: 'EX3', value: 'EX3' },
       { label: 'EX4', value: 'EX4' },
+      { label: 'EX5', value: 'EX5' },
     ],
   },
   {
@@ -111,13 +113,46 @@ export const Keywords: string[] = [
   '\uff1cSecurity Attack -3\uff1e',
 ];
 
-export const Colors: string[] = ['Red', 'Blue', 'Yellow', 'Green', 'Black', 'Purple', 'White', 'Multi'];
+export const Colors: string[] = [
+  'Red',
+  'Blue',
+  'Yellow',
+  'Green',
+  'Black',
+  'Purple',
+  'White',
+  'Multi',
+];
 
-export const ColorsWithoutMulti: string[] = ['Red', 'Blue', 'Yellow', 'Green', 'Black', 'Purple', 'White'];
+export const ColorsWithoutMulti: string[] = [
+  'Red',
+  'Blue',
+  'Yellow',
+  'Green',
+  'Black',
+  'Purple',
+  'White',
+];
 
-export const Forms: string[] = ['In-Training', 'Rookie', 'Champion', 'Ultimate', 'Mega', 'Hybrid', 'Armor Form', 'D-Reaper'];
+export const Forms: string[] = [
+  'In-Training',
+  'Rookie',
+  'Champion',
+  'Ultimate',
+  'Mega',
+  'Hybrid',
+  'Armor Form',
+  'D-Reaper',
+];
 
-export const Attributes: string[] = ['Data', 'Vaccine', 'Virus', 'Free', 'Variable', 'Unknown'];
+export const Attributes: string[] = [
+  'Data',
+  'Vaccine',
+  'Virus',
+  'Free',
+  'Variable',
+  'Unknown',
+];
 
 export const Types: string[] = [
   'Abnormal',
@@ -310,7 +345,13 @@ export const Illustrators: string[] = [
   'yuuki.',
 ].sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 
-export const SpecialRequirements: string[] = ['Digivolve', 'DNA Digivolution', 'DigiXros', 'Burst Digivolve', 'ACE'];
+export const SpecialRequirements: string[] = [
+  'Digivolve',
+  'DNA Digivolution',
+  'DigiXros',
+  'Burst Digivolve',
+  'ACE',
+];
 
 export const Restrictions: string[] = ['Banned', 'Restricted to 1'];
 

@@ -7,7 +7,9 @@ import { AccordionModule } from 'primeng/accordion';
 @Component({
   selector: 'digimon-faq',
   template: `
-    <h1 class="text-shadow my-2 text-2xl font-black text-[#e2e4e6]">What can I do on this Website?</h1>
+    <h1 class="text-shadow my-2 text-2xl font-black text-[#e2e4e6]">
+      What can I do on this Website?
+    </h1>
     <p-accordion>
       <p-accordionTab *ngFor="let faq of faqs" [header]="faq.header">
         <div [innerHTML]="faq.text"></div>

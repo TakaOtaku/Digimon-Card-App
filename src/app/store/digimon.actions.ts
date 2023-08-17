@@ -1,13 +1,22 @@
 import { createActionGroup, props } from '@ngrx/store';
-import { ICard, ICountCard, IDeck, IDraggedCard, IFilter, ISave, ISort } from '../../models';
+import {
+  ICountCard,
+  IDeck,
+  IDraggedCard,
+  IFilter,
+  ISave,
+  ISort,
+} from '../../models';
 import { IBlog } from '../../models/interfaces/blog-entry.interface';
+import { DigimonCard } from '../../models/interfaces/digimon-card.interface';
 import { ProductCM } from '../service/card-market.service';
 
 export const DigimonActions = createActionGroup({
   source: 'Digimon Cards',
   events: {
-    setDigimonCards: props<{ digimonCards: ICard[] }>(),
-    setFilteredDigimonCards: props<{ filteredCards: ICard[] }>(),
+    setDigimonCards: props<{ digimonCards: DigimonCard[] }>(),
+    setDigimonCardMap: props<{ digimonCardMap: Map<string, DigimonCard> }>(),
+    setFilteredDigimonCards: props<{ filteredCards: DigimonCard[] }>(),
   },
 });
 
@@ -29,7 +38,11 @@ export const WebsiteActions = createActionGroup({
     setMobileCollectionView: props<{ mobileCollectionView: boolean }>(),
     setCollectionMinimum: props<{ minimum: number }>(),
     setAACollectionMinimum: props<{ minimum: number }>(),
-    setShowVersion: props<{ showPre: boolean; showAA: boolean; showStamp: boolean }>(),
+    setShowVersion: props<{
+      showPre: boolean;
+      showAA: boolean;
+      showStamp: boolean;
+    }>(),
     setCommunityDeckSearch: props<{ communityDeckSearch: string }>(),
     setCommunityDecks: props<{ communityDecks: IDeck[] }>(),
     setBlogs: props<{ blogs: IBlog[] }>(),

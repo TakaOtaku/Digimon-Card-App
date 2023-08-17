@@ -1,11 +1,15 @@
-import { DigimonActions } from './../digimon.actions';
 import { createReducer, on } from '@ngrx/store';
-import { IDigimonCards } from '../../../models';
-import { setupAllDigimonCards } from '../../functions/digimon-card.functions';
+import {
+  setupDigimonCardMap,
+  setupDigimonCards,
+} from '../../../assets/cardlists/DigimonCards';
+import { CARDSET, IDigimonCards } from '../../../models';
+import { DigimonActions } from '../digimon.actions';
 
 export const initialState: IDigimonCards = {
-  allCards: setupAllDigimonCards(),
-  filteredCards: setupAllDigimonCards(),
+  allCards: setupDigimonCards(CARDSET.English),
+  digimonCardMap: setupDigimonCardMap(CARDSET.English),
+  filteredCards: setupDigimonCards(CARDSET.English),
 };
 
 export const digimonCardReducer = createReducer(
@@ -13,6 +17,10 @@ export const digimonCardReducer = createReducer(
   on(DigimonActions.setdigimoncards, (state, { digimonCards }) => ({
     ...state,
     allCards: digimonCards,
+  })),
+  on(DigimonActions.setdigimoncardmap, (state, { digimonCardMap }) => ({
+    ...state,
+    digimonCardMap: digimonCardMap,
   })),
   on(DigimonActions.setfiltereddigimoncards, (state, { filteredCards }) => ({
     ...state,

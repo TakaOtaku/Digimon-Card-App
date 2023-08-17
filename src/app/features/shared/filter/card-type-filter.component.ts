@@ -34,6 +34,8 @@ export class CardTypeFilterComponent {
       types = [...new Set(cardTypeFilter), type];
     }
 
-    this.store.dispatch(WebsiteActions.setcardtypefilter({ cardTypeFilter: types }));
+    this.store.dispatch(
+      WebsiteActions.setcardtypefilter({ cardTypeFilter: types })
+    );
   }
 }

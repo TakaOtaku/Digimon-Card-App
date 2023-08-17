@@ -1,14 +1,22 @@
 module.exports = {
-  mode: "jit",
+  mode: 'jit',
   important: true,
   content: [
-    "./src/**/*.{html,ts}",
-    "./node_modules/tw-elements/dist/js/**/*.js",
+    './src/**/*.{html,ts}',
+    './node_modules/tw-elements/dist/js/**/*.js',
   ],
-  variants: {
+  theme: {
     extend: {
-      display: ["group-hover"],
+      fontSize: {
+        '2xs': '0.625rem',
+        '3xs': '0.5rem',
+      },
     },
   },
-  plugins: [require("tw-elements/dist/plugin")],
+  variants: {
+    extend: {
+      display: ['group-hover'],
+    },
+  },
+  plugins: [require('tw-elements/dist/plugin')],
 };

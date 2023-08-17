@@ -30,15 +30,6 @@ import { selectCardSet } from '../../../store/digimon.selectors';
           class="min-w-auto mt-2 h-8 w-20 border border-slate-100 p-2 text-xs font-semibold text-[#e2e4e6]">
           日本語
         </button>
-        <button
-          (click)="setCardSet(cardSet.Both)"
-          [ngClass]="{
-            'bg-[#e2e4e6] text-black': selectedCardSet === cardSet.Both,
-            'surface-card text-[#e2e4e6]': selectedCardSet !== cardSet.Both
-          }"
-          class="min-w-auto mt-2 h-8 w-20 rounded-r-sm border border-slate-100 p-2 text-xs font-semibold text-[#e2e4e6]">
-          Both
-        </button>
       </div>
     </div>
   `,
@@ -46,7 +37,9 @@ import { selectCardSet } from '../../../store/digimon.selectors';
   imports: [NgIf, NgClass, AsyncPipe],
 })
 export class LanguageFilterComponent {
-  cardSet$ = this.store.select(selectCardSet).pipe(map((set) => (+set >>> 0 ? CARDSET.Both : set)));
+  cardSet$ = this.store
+    .select(selectCardSet)
+    .pipe(map((set) => (+set >>> 0 ? CARDSET.English : set)));
 
   cardSet = CARDSET;
 

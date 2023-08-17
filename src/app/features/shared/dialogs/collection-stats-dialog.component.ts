@@ -1,6 +1,13 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
-import { ICard, ICountCard } from '../../../../models';
+import { DigimonCard, ICountCard } from '../../../../models';
 import { ChartModule } from 'primeng/chart';
 
 @Component({
@@ -31,13 +38,16 @@ import { ChartModule } from 'primeng/chart';
   </div>
 </div-->
 
-    <p-chart [data]="collectionData" [options]="chartOptions" type="bar"></p-chart> `,
+    <p-chart
+      [data]="collectionData"
+      [options]="chartOptions"
+      type="bar"></p-chart> `,
   standalone: true,
   imports: [ChartModule],
 })
 export class CollectionStatsDialogComponent implements OnInit, OnChanges {
   @Input() show: boolean = false;
-  @Input() digimonCards: ICard[];
+  @Input() digimonCards: DigimonCard[];
   @Input() collection: ICountCard[];
 
   @Output() onClose = new EventEmitter<boolean>();
@@ -106,7 +116,9 @@ export class CollectionStatsDialogComponent implements OnInit, OnChanges {
 
   private getBoosterCards(type: string): number[] {
     //const allCards = this.filterLanguageAllCards();
-    const set = this.digimonCards.filter((card) => card.cardNumber.includes(type));
+    const set = this.digimonCards.filter((card) =>
+      card.cardNumber.includes(type)
+    );
 
     //const collection = this.filterLanguageCollection();
     const have = this.collection.filter((card) => card.id.includes(type));
@@ -114,7 +126,7 @@ export class CollectionStatsDialogComponent implements OnInit, OnChanges {
     return [have.length, set.length - have.length];
   }
 
-  /*  private filterLanguageAllCards(): ICard[] {
+  /*  private filterLanguageAllCards(): DigimonCard[] {
       let array = [];
       if(this.languageForm.get('english')?.value) {
         array = [...new Set(this.digimonCards.filter((card) => card.))];

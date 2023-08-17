@@ -1,6 +1,15 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { ICard, IDeck } from '../../../../models';
-import { getCountFromDeckCards, mapToDeckCards } from '../../../functions/digimon-card.functions';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
+import { DigimonCard, IDeck } from '../../../../models';
+import {
+  getCountFromDeckCards,
+  mapToDeckCards,
+} from '../../../functions/digimon-card.functions';
 import { SingleContainerComponent } from '../single-container.component';
 import { NgIf, NgStyle } from '@angular/common';
 
@@ -44,10 +53,23 @@ import { NgIf, NgStyle } from '@angular/common';
     </div>
 
     <div *ngIf="container" class="flex w-full flex-row">
-      <digimon-single-container label="Egg" [value]="ddto[0]" percent="20" class="w-12"></digimon-single-container>
-      <digimon-single-container label="Digimon" [value]="ddto[1]" class="w-14"></digimon-single-container>
-      <digimon-single-container label="Tamer" [value]="ddto[2]" class="w-12"></digimon-single-container>
-      <digimon-single-container label="Option" [value]="ddto[3]" class="w-12"></digimon-single-container>
+      <digimon-single-container
+        label="Egg"
+        [value]="ddto[0]"
+        percent="20"
+        class="w-12"></digimon-single-container>
+      <digimon-single-container
+        label="Digimon"
+        [value]="ddto[1]"
+        class="w-14"></digimon-single-container>
+      <digimon-single-container
+        label="Tamer"
+        [value]="ddto[2]"
+        class="w-12"></digimon-single-container>
+      <digimon-single-container
+        label="Option"
+        [value]="ddto[3]"
+        class="w-12"></digimon-single-container>
     </div>
   `,
   standalone: true,
@@ -55,7 +77,7 @@ import { NgIf, NgStyle } from '@angular/common';
 })
 export class DdtoSpreadComponent implements OnInit, OnChanges {
   @Input() deck: IDeck | null;
-  @Input() allCards: ICard[];
+  @Input() allCards: DigimonCard[];
   @Input() container = false;
 
   ddto = [0, 0, 0, 0];
