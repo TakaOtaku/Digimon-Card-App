@@ -960,12 +960,25 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "BT1-019_P1",
+        "illustrator": "tessy",
+        "note": "ST-7: Starter Deck Gallantmon"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "BT1-019_P1-J",
+        "illustrator": "tessy",
+        "note": "ST-7: Starter Deck Gallantmon"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "Virus",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT1-019.webp",
@@ -987,7 +1000,7 @@
     "effect": "-",
     "form": "Champion",
     "id": "BT1-019",
-    "illustrator": "tessy",
+    "illustrator": "shosuke",
     "name": {
       "english": "DarkTyrannomon",
       "japanese": "\u30c0\u30fc\u30af\u30c6\u30a3\u30e9\u30ce\u30e2\u30f3",
@@ -995,7 +1008,7 @@
       "simplifiedChinese": "\u9ed1\u6697\u5de8\u9f99\u517d",
       "traditionalChinese": "\u9ed1\u6697\u5de8\u9f8d\u7378"
     },
-    "notes": "BT-01: Booster New Evolution",
+    "notes": "\u25b9RELEASE SPECIAL BOOSTER 1.0 [BT01-B0T3]",
     "playCost": "6",
     "rarity": "C",
     "restrictions": {
@@ -1010,12 +1023,25 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "BT1-020_P1",
+        "illustrator": "koki",
+        "note": "ST-7: Starter Deck Gallantmon"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "BT1-020_P1-J",
+        "illustrator": "koki",
+        "note": "ST-7: Starter Deck Gallantmon"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "Virus",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT1-020.webp",
@@ -1037,7 +1063,7 @@
     "effect": "-",
     "form": "Ultimate",
     "id": "BT1-020",
-    "illustrator": "koki",
+    "illustrator": "Kazumasa Yasukuni",
     "name": {
       "english": "Groundramon",
       "japanese": "\u30b0\u30e9\u30a6\u30f3\u30c9\u30e9\u30e2\u30f3",
@@ -1045,7 +1071,7 @@
       "simplifiedChinese": "\u5730\u9f99\u517d",
       "traditionalChinese": "\u5730\u9f8d\u7378"
     },
-    "notes": "BT-01: Booster New Evolution",
+    "notes": "\u25b9RELEASE SPECIAL BOOSTER 1.0 [BT01-B0T3]",
     "playCost": "5",
     "rarity": "U",
     "restrictions": {
@@ -1193,7 +1219,8 @@
     "aceEffect": "-",
     "attribute": "Virus",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT1-023.webp",
@@ -1315,7 +1342,8 @@
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT1-025.webp",
@@ -1460,12 +1488,25 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "BT1-028_P1",
+        "illustrator": "Takase",
+        "note": "ST-8: Starter Deck UlforceVeedramon"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "BT1-028_P1-J",
+        "illustrator": "Takase",
+        "note": "ST-8: Starter Deck UlforceVeedramon"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "Data",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT1-028.webp",
@@ -1487,7 +1528,7 @@
     "effect": "-",
     "form": "Rookie",
     "id": "BT1-028",
-    "illustrator": "Takase",
+    "illustrator": "Ryuda",
     "name": {
       "english": "Elecmon",
       "japanese": "\u30a8\u30ec\u30ad\u30e2\u30f3",
@@ -1495,7 +1536,7 @@
       "simplifiedChinese": "\u827e\u529b\u517d",
       "traditionalChinese": "\u827e\u529b\u7378"
     },
-    "notes": "BT-01: Booster New Evolution",
+    "notes": "\u25b9RELEASE SPECIAL BOOSTER 1.0 [BT01-B0T3]",
     "playCost": "2",
     "rarity": "C",
     "restrictions": {
@@ -1557,7 +1598,8 @@
     "aceEffect": "-",
     "attribute": "Data",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT1-029.webp",
@@ -1874,7 +1916,8 @@
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT1-035.webp",
@@ -1969,12 +2012,25 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "BT1-037_P1",
+        "illustrator": "koki",
+        "note": "ST-8: Starter Deck UlforceVeedramon"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "BT1-037_P1-J",
+        "illustrator": "koki",
+        "note": "ST-8: Starter Deck UlforceVeedramon"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "Data",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT1-037.webp",
@@ -1996,7 +2052,7 @@
     "effect": "-",
     "form": "Champion",
     "id": "BT1-037",
-    "illustrator": "koki",
+    "illustrator": "KISUKE",
     "name": {
       "english": "Gorillamon",
       "japanese": "\u30b4\u30ea\u30e2\u30f3",
@@ -2004,7 +2060,7 @@
       "simplifiedChinese": "\u91d1\u521a\u517d",
       "traditionalChinese": "\u91d1\u525b\u7378"
     },
-    "notes": "BT-01: Booster New Evolution",
+    "notes": "\u25b9RELEASE SPECIAL BOOSTER 1.0 [BT01-B0T3]",
     "playCost": "6",
     "rarity": "C",
     "restrictions": {
@@ -2026,6 +2082,11 @@
         "note": "Official Tournament Pack Vol. 2"
       },
       {
+        "id": "BT1-038_P2",
+        "illustrator": "banira",
+        "note": "ST-8: Starter Deck UlforceVeedramon"
+      },
+      {
         "id": "BT1-038_P3",
         "illustrator": "Kagemaru Himeno",
         "note": "25th Special Memorial Pack"
@@ -2038,6 +2099,11 @@
         "note": "Tamer Battle Pack 3"
       },
       {
+        "id": "BT1-038_P2-J",
+        "illustrator": "banira",
+        "note": "ST-8: Starter Deck UlforceVeedramon"
+      },
+      {
         "id": "BT1-038_P3-J",
         "illustrator": "Kagemaru Himeno",
         "note": "Memorial Collection 25th Anniversary"
@@ -2046,7 +2112,8 @@
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT1-038.webp",
@@ -2068,7 +2135,7 @@
     "effect": "-",
     "form": "Ultimate",
     "id": "BT1-038",
-    "illustrator": "banira",
+    "illustrator": "Tomotake Kinoshita",
     "name": {
       "english": "Monzaemon",
       "japanese": "\u3082\u3093\u3056\u3048\u30e2\u30f3",
@@ -2076,7 +2143,7 @@
       "simplifiedChinese": "\u718a\u4ed4\u517d",
       "traditionalChinese": "\u718a\u4ed4\u7378"
     },
-    "notes": "BT-01: Booster New Evolution",
+    "notes": "\u25b9RELEASE SPECIAL BOOSTER 1.0 [BT01-B0T3]",
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
@@ -2414,7 +2481,8 @@
     "aceEffect": "-",
     "attribute": "Virus",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT1-045.webp",
@@ -2527,7 +2595,7 @@
       {
         "color": "Yellow",
         "cost": "0",
-        "level": "2"
+        "level": "3"
       }
     ],
     "digivolveEffect": "-",
@@ -2581,7 +2649,9 @@
     "aceEffect": "-",
     "attribute": "Data",
     "block": [
-      "00-02"
+      "00",
+      "01",
+      "02"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT1-048.webp",
@@ -3033,7 +3103,13 @@
         "note": "Winner Pack Double Diamond"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT1-057_P1-J",
+        "illustrator": "sasasi",
+        "note": "Tamer Battle Pack 4"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "Data",
     "block": [
@@ -3337,7 +3413,8 @@
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT1-062.webp",
@@ -3385,14 +3462,14 @@
     "AAs": [
       {
         "id": "BT1-063_P1",
-        "illustrator": "As'Maria",
+        "illustrator": "Kenji Watanabe",
         "note": "BT-11: Booster Dimensional Phase"
       }
     ],
     "JAAs": [
       {
         "id": "BT1-063_P1-J",
-        "illustrator": "As'Maria",
+        "illustrator": "Kenji Watanabe",
         "note": "Tamer's Selection Box Evolution Cup 2022 Ver.2"
       }
     ],
@@ -3466,7 +3543,8 @@
     "aceEffect": "-",
     "attribute": "Virus",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT1-064.webp",
@@ -3583,7 +3661,8 @@
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT1-066.webp",
@@ -3650,7 +3729,9 @@
     "aceEffect": "-",
     "attribute": "Data",
     "block": [
-      "00-02"
+      "00",
+      "01",
+      "02"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT1-067.webp",
@@ -3980,7 +4061,8 @@
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT1-073.webp",
@@ -4042,7 +4124,8 @@
     "aceEffect": "-",
     "attribute": "Data",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT1-074.webp",
@@ -4169,7 +4252,8 @@
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT1-076.webp",
@@ -4300,7 +4384,7 @@
     "attribute": "Vaccine",
     "block": [
       "00",
-      " 02"
+      "02"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT1-078.webp",
@@ -105567,7 +105651,13 @@
   },
   {
     "AAs": [],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX5-016_P1-Sample-J",
+        "illustrator": "Takase",
+        "note": "EX-05: Theme Booster Animal Colosseum"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
@@ -106084,7 +106174,18 @@
   },
   {
     "AAs": [],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX5-026_P1-Sample-J",
+        "illustrator": "As'Maria",
+        "note": "EX-05: Theme Booster Animal Colosseum"
+      },
+      {
+        "id": "EX5-026_P2-Sample-J",
+        "illustrator": "As'Maria",
+        "note": "EX-05: Theme Booster Animal Colosseum"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "Data",
     "block": [
@@ -107743,7 +107844,7 @@
         "level": "3"
       }
     ],
-    "digivolveEffect": "[All Turns] [Once Per Turn] When your Digimon is played by an effect, gain 1 memory.",
+    "digivolveEffect": "[All Turns] [Once Per Turn] When an opponent's Digimon is played by an effect, gain 1 memory.",
     "dnaDigivolve": "-",
     "dp": "5000",
     "effect": "[On Play] [When Digivolving] If there are 4 or more Digimon in play, play 1 [Fujitsumon] Token (Digimon\n\u30fbPurple\n\u30fb3000 DP\n\u30fb[All Turns] This Digimon doen't unsuspend.\n\u30fb[On Deletion] Trash 1 card in your hand.) suspended in your battle area. If there are 3 or less Digimon in play, play it suspended in your opponent's battle area.",
