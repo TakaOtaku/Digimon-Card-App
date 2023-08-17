@@ -333,6 +333,14 @@ function applyFilter(
       break;
     case 'restriction':
       // TODO - Implement
+      filter.forEach((filter) => {
+          returnArray = [
+            ...new Set([
+              ...returnArray,
+              ...cards.filter((cards) => cards.restrictions.english === filter),
+            ]),
+          ];
+      })
       break;
     case 'source':
       filter.forEach(

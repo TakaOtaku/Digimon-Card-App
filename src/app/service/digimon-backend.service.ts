@@ -187,6 +187,11 @@ export class DigimonBackendService {
             ? newSave.settings.aaCollectionMinimum
             : 1;
 
+        newSave.settings.cardSet =
+          newSave.settings.cardSet === 'Both'
+            ? 'English'
+            : newSave.settings.cardSet;
+
         return newSave;
       })
     );
