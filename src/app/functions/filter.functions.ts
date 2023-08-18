@@ -1,5 +1,4 @@
 /* eslint-disable prettier/prettier */
-import { ChipModule } from 'primeng/chip';
 import { DigimonCard, ICountCard, IFilter, ISort } from '../../models';
 
 let digimonCardMap = new Map<string, DigimonCard>();
@@ -76,19 +75,23 @@ function applySearchFilter(
     return cards;
   }
 
-  const filteredCards = cards.filter((card) => {
-    // Convert the card object's property values to an array
-    const cardValuesArray = Object.values(card);
+  function deepSearch(obj: any): boolean {
+    if (typeof obj === 'string') {
+      return obj.toLowerCase().includes(searchFilter.toLowerCase());
+    }
 
-    // Check if the search string is present in any of the property values
-    return cardValuesArray.some(
-      (value) =>
-        typeof value === 'string' &&
-        value.toLowerCase().includes(searchFilter.toLowerCase())
-    );
-  });
+    if (Array.isArray(obj)) {
+      return obj.some((item) => deepSearch(item));
+    }
 
-  return filteredCards;
+    if (typeof obj === 'object') {
+      return Object.values(obj).some((value) => deepSearch(value));
+    }
+
+    return false;
+  }
+
+  return cards.filter((card) => deepSearch(card));
 }
 
 function applyCardCountFilter(
@@ -332,7 +335,6 @@ function applyFilter(
       );
       break;
     case 'restriction':
-      // TODO - Implement
       filter.forEach((filter) => {
           returnArray = [
             ...new Set([

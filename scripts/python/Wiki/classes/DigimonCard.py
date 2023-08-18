@@ -1,5 +1,5 @@
-from Restriction import Restriction
-from Name import Name
+from classes.Restriction import Restriction
+from classes.Name import Name
 
 
 class DigimonCard:

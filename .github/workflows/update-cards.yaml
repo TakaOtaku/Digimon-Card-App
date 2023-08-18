@@ -3,9 +3,6 @@ name: Update Cards
 on:
   schedule:
     - cron: "0 */72 * * *"
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 

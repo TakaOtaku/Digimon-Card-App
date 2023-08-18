@@ -30,16 +30,25 @@ export class ImgFallbackDirective implements OnInit, OnChanges {
   @HostListener('error')
   loadFallbackOnError(error: any) {
     const element: HTMLImageElement = <HTMLImageElement>this.el.nativeElement;
+    const hasJ = this.digimonImgFallback.includes('-J');
+    const currentSrc = 'assets' + element.src.split('assets')[1];
 
-    if (this.digimonImgFallback) {
+    if (this.digimonImgFallback && !hasJ) {
       const modifiedSrc = addJBeforeWebp(this.digimonImgFallback);
       const sampleSrc = addSampleBeforeWebp(this.digimonImgFallback);
-      const currentSrc = 'assets' + element.src.split('assets')[1];
       if (modifiedSrc !== currentSrc && sampleSrc !== currentSrc) {
         element.src = modifiedSrc;
         return;
       } else if (!currentSrc.includes('Sample')) {
         element.src = sampleSrc;
+        return;
+      }
+    } else {
+      const indexOfJ = this.digimonImgFallback.lastIndexOf('-J.webp');
+      const sampleJ =
+        this.digimonImgFallback.slice(0, indexOfJ) + '-Sample-J.webp';
+      if (sampleJ !== currentSrc) {
+        element.src = sampleJ;
         return;
       }
     }
