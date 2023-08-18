@@ -147,7 +147,8 @@ def getDigivolveInfo(html, digimoncard):
         if th is not None:
             specialEvo = th.text.replace("\n", "")
             if (specialEvo.find("DigiXros Requirements") != -1):
-                digimoncard.digiXros = specialEvoCon.find("td").text
+                xrosHeart = specialEvoCon.find("td")
+                digimoncard.digiXros = xrosHeart.text
             if (specialEvo.find("Alt. Digivolution Requirements") != -1):
                 addCorrectSpecialDigivolve(digimoncard, specialEvoCon)
 

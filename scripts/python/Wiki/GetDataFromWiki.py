@@ -13,7 +13,7 @@ WV.cardCount = len(WV.cardLinks)
 
 WF.getCardData()
 
-#WF.getRulings()
+# WF.getRulings()
 
 WF.setNotes()
 
@@ -37,7 +37,7 @@ WF.replace_string_in_json('.＜', '.\n＜')
 WF.replace_string_in_json('＞.', '＞\n')
 WF.replace_string_in_json('＞ ).', '')
 
-WF.getCardImages()
+# WF.getCardImages()
 
 print('Removing Keyword Explanations!')
 for replacement in WV.replacements:
@@ -51,3 +51,5 @@ WF.replace_string_in_json(' .', '.')
 
 print('Removing Samples!')
 WF.removeSamples()
+
+print('Done!')

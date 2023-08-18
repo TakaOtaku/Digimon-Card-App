@@ -127,7 +127,6 @@ NoteDictionary = {
 
     'LM-01: Limited Pack Digimon Ghost Game': 'LIMITED PACK DIGIMON GHOST GAME [LM01]',
 }
-cardLinks = []
 cardCount = 0
 replacements = [
     '(This Digimon can attack the turn it comes into play)',
@@ -184,5 +183,6 @@ replacements = [
     '(You may trash up to 4 of this Digimon\'s digivolution cards to activate the effect below)',
     '(When one of your other Digimon with [D-Brigade]\u00a0trait would be deleted by an opponent\'s effect, you may delete this Digimon to prevent that deletion)',
     '(When this card is sent from battle area or under your card to another area, lose 4 memory)',
-    '(When this Digimon is deleted while it has digivolution cards, play it without paying its cost)'
+    '(When this Digimon is deleted while it has digivolution cards, play it without paying its cost)',
+    'When you would play this card, you may place specified cards from your hand/battle area under it. Each placed card reduces the play cost.',
 ]
