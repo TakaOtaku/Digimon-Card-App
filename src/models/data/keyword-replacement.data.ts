@@ -15,7 +15,7 @@ export const replacements: Array<[RegExp, string]> = [
   [/＜Decoy \(Black\)＞/g, 'decoy_black'],
   [/＜Decoy \(Black\/White\)＞/g, 'decoy_black_white'],
   [/＜Decoy \(D-Brigade\)＞/g, 'decoy_d-brigade'],
-  [/＜Decoy \(Decoy \(Bagra Army\)\)＞/g, 'decoy_bagra_army'],
+  [/＜Decoy \(Bagra Army\)＞/g, 'decoy_bagra_army'],
   [
     /＜Decoy \(Decoy \(Deva\/Four Sovereigns\)\)＞/g,
     'decoy_deva_four_sovereigns',

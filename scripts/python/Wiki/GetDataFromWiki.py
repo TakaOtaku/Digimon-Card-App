@@ -37,10 +37,9 @@ WF.replace_string_in_json('.＜', '.\n＜')
 WF.replace_string_in_json('＞.', '＞\n')
 WF.replace_string_in_json('＞ ).', '')
 
-print('Removing Keyword Explanations!')
-
 WF.getCardImages()
 
+print('Removing Keyword Explanations!')
 for replacement in WV.replacements:
     WF.replace_string_in_json(replacement, '')
 
@@ -50,4 +49,5 @@ WF.replace_string_in_json('  ', '')
 WF.replace_string_in_json('  ', '')
 WF.replace_string_in_json(' .', '.')
 
+print('Removing Samples!')
 WF.removeSamples()

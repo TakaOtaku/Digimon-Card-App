@@ -633,4 +633,4 @@ def removeSamples():
 
         # Save the updated JSON back to the file
         with open('./scripts/python/Wiki/jsons/DigimonCards.json', 'w') as file:
-            json.dump(data, file, indent=2, sort_keys=WF.sort_key)
+            json.dump(data, file, indent=2, sort_keys=sort_key)
