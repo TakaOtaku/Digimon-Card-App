@@ -40,7 +40,7 @@ export const replacements: Array<[RegExp, string]> = [
   [/\[DigiXros -1]/g, 'digixros_-1'],
   [/\[DigiXros -2]/g, 'digixros_-2'],
   [/\[DigiXros -3]/g, 'digixros_-3'],
-  [/[DNA Digivolve]/g, 'dna_digivolve'],
+  [/\[DNA Digivolve]/g, 'dna_digivolve'],
   [/＜Draw 1＞/g, 'draw_1'],
   [/＜Draw 2＞/g, 'draw_2'],
   [/＜Draw 3＞/g, 'draw_3'],
