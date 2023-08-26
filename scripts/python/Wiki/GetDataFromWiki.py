@@ -36,6 +36,7 @@ WF.replace_string_in_json(') ＜', '\n・')
 WF.replace_string_in_json('.＜', '.\n＜')
 WF.replace_string_in_json('＞.', '＞\n')
 WF.replace_string_in_json('＞ ).', '')
+WF.replace_string_in_json(' ).', '')
 
 # WF.getCardImages()
 

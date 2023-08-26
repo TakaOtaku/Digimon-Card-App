@@ -32832,7 +32832,7 @@
         "note": "BT-14: Booster Blast Ace"
       }
     ],
-    "aceEffect": "Overflow \uff1c-3\uff1e ).",
+    "aceEffect": "Overflow \uff1c-3\uff1e",
     "attribute": "Vaccine",
     "block": [
       "03"
@@ -33461,7 +33461,7 @@
         "note": "BT-14: Booster Blast Ace"
       }
     ],
-    "aceEffect": "Overflow \uff1c-3\uff1e ).",
+    "aceEffect": "Overflow \uff1c-3\uff1e",
     "attribute": "Vaccine",
     "block": [
       "03"
@@ -34050,7 +34050,7 @@
         "note": "BT-14: Booster Blast Ace"
       }
     ],
-    "aceEffect": "Overflow \uff1c-3\uff1e ).",
+    "aceEffect": "Overflow \uff1c-3\uff1e",
     "attribute": "Vaccine",
     "block": [
       "03"
@@ -34674,7 +34674,7 @@
         "note": "BT-14: Booster Blast Ace"
       }
     ],
-    "aceEffect": "Overflow \uff1c-3\uff1e ).",
+    "aceEffect": "Overflow \uff1c-3\uff1e",
     "attribute": "Data",
     "block": [
       "03"
@@ -111170,7 +111170,7 @@
   {
     "AAs": [],
     "JAAs": [],
-    "aceEffect": "Overflow \uff1c-3\uff1e ).",
+    "aceEffect": "Overflow \uff1c-3\uff1e",
     "attribute": "Virus",
     "block": [
       "03"
