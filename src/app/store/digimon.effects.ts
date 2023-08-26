@@ -1,14 +1,34 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
-import { EMPTY, catchError, debounceTime, distinctUntilChanged, first, map, switchMap, tap } from 'rxjs';
+import {
+  catchError,
+  debounceTime,
+  distinctUntilChanged,
+  EMPTY,
+  first,
+  map,
+  switchMap,
+  tap,
+} from 'rxjs';
+import { setupDigimonCards } from '../../assets/cardlists/DigimonCards';
 import { CARDSET } from '../../models/enums/card-set.enum';
-import { setupDigimonCards } from '../functions/digimon-card.functions';
 import { filterCards } from '../functions/filter.functions';
 import { AuthService } from '../service/auth.service';
 import { DigimonBackendService } from '../service/digimon-backend.service';
-import { CollectionActions, DeckActions, DigimonActions, SaveActions, WebsiteActions } from './digimon.actions';
-import { selectCardSet, selectChangeAdvancedSettings, selectChangeFilterEffect, selectSave } from './digimon.selectors';
+import {
+  CollectionActions,
+  DeckActions,
+  DigimonActions,
+  SaveActions,
+  WebsiteActions,
+} from './digimon.actions';
+import {
+  selectCardSet,
+  selectChangeAdvancedSettings,
+  selectChangeFilterEffect,
+  selectSave,
+} from './digimon.selectors';
 
 @Injectable()
 export class DigimonEffects {
@@ -40,7 +60,10 @@ export class DigimonEffects {
                     .pipe(first())
                     .subscribe(() => {});
                 } else {
-                  localStorage.setItem('Digimon-Card-Collector', JSON.stringify(save));
+                  localStorage.setItem(
+                    'Digimon-Card-Collector',
+                    JSON.stringify(save)
+                  );
                 }
               }),
               catchError(() => EMPTY)
@@ -70,11 +93,19 @@ export class DigimonEffects {
             .select(selectChangeFilterEffect)
             .pipe(first(), debounceTime(300), distinctUntilChanged())
             .pipe(
-              tap(({ cards, collection, filter, sort }) => {
+              tap(({ cards, collection, filter, sort, digimonCardMap }) => {
                 if (!cards) return;
 
-                const filteredCards = filterCards(cards, collection, filter, sort);
-                this.store.dispatch(DigimonActions.setfiltereddigimoncards({ filteredCards }));
+                const filteredCards = filterCards(
+                  cards,
+                  collection,
+                  filter,
+                  sort,
+                  digimonCardMap
+                );
+                this.store.dispatch(
+                  DigimonActions.setfiltereddigimoncards({ filteredCards })
+                );
               }),
               catchError(() => EMPTY)
             )
@@ -86,48 +117,83 @@ export class DigimonEffects {
   changeAdvancedSettings$ = createEffect(
     () =>
       this.actions$.pipe(
-        ofType(SaveActions.getsave, SaveActions.setsave, WebsiteActions.setshowversion),
+        ofType(
+          SaveActions.getsave,
+          SaveActions.setsave,
+          WebsiteActions.setshowversion
+        ),
         switchMap(() =>
           this.store
             .select(selectChangeAdvancedSettings)
             .pipe(first())
             .pipe(
-              tap(({ showPreRelease, showAA, showStamped, showReprint, filter }) => {
-                if (showPreRelease === undefined || showAA === undefined || showStamped === undefined || showReprint === undefined) {
-                  return;
-                }
+              tap(
+                ({
+                  showPreRelease,
+                  showAA,
+                  showStamped,
+                  showReprint,
+                  filter,
+                }) => {
+                  if (
+                    showPreRelease === undefined ||
+                    showAA === undefined ||
+                    showStamped === undefined ||
+                    showReprint === undefined
+                  ) {
+                    return;
+                  }
 
-                filter = { ...filter, versionFilter: [] };
-                if (!showPreRelease) {
-                  let versionFilter = filter.versionFilter.filter((filter) => filter !== 'Pre-Release');
-                  if (versionFilter.length === 0) {
-                    versionFilter = ['Normal', 'AA', 'Stamp', 'Reprint'];
+                  filter = { ...filter, versionFilter: [] };
+                  if (!showPreRelease) {
+                    let versionFilter = filter.versionFilter.filter(
+                      (filter) => filter !== 'Pre-Release'
+                    );
+                    if (versionFilter.length === 0) {
+                      versionFilter = ['Normal', 'AA', 'Stamp', 'Reprint'];
+                    }
+                    filter = { ...filter, versionFilter };
                   }
-                  filter = { ...filter, versionFilter };
-                }
-                if (!showAA) {
-                  let versionFilter = filter.versionFilter.filter((filter) => filter !== 'AA');
-                  if (versionFilter.length === 0) {
-                    versionFilter = ['Normal', 'Stamp', 'Pre-Release', 'Reprint'];
+                  if (!showAA) {
+                    let versionFilter = filter.versionFilter.filter(
+                      (filter) => filter !== 'AA'
+                    );
+                    if (versionFilter.length === 0) {
+                      versionFilter = [
+                        'Normal',
+                        'Stamp',
+                        'Pre-Release',
+                        'Reprint',
+                      ];
+                    }
+                    filter = { ...filter, versionFilter };
                   }
-                  filter = { ...filter, versionFilter };
-                }
-                if (!showStamped) {
-                  let versionFilter = filter.versionFilter.filter((filter) => filter !== 'Stamp');
-                  if (versionFilter.length === 0) {
-                    versionFilter = ['Normal', 'AA', 'Pre-Release', 'Reprint'];
+                  if (!showStamped) {
+                    let versionFilter = filter.versionFilter.filter(
+                      (filter) => filter !== 'Stamp'
+                    );
+                    if (versionFilter.length === 0) {
+                      versionFilter = [
+                        'Normal',
+                        'AA',
+                        'Pre-Release',
+                        'Reprint',
+                      ];
+                    }
+                    filter = { ...filter, versionFilter };
                   }
-                  filter = { ...filter, versionFilter };
-                }
-                if (!showReprint) {
-                  let versionFilter = filter.versionFilter.filter((filter) => filter !== 'Reprint');
-                  if (versionFilter.length === 0) {
-                    versionFilter = ['Normal', 'AA', 'Pre-Release', 'Stamp'];
+                  if (!showReprint) {
+                    let versionFilter = filter.versionFilter.filter(
+                      (filter) => filter !== 'Reprint'
+                    );
+                    if (versionFilter.length === 0) {
+                      versionFilter = ['Normal', 'AA', 'Pre-Release', 'Stamp'];
+                    }
+                    filter = { ...filter, versionFilter };
                   }
-                  filter = { ...filter, versionFilter };
+                  this.store.dispatch(WebsiteActions.setfilter({ filter }));
                 }
-                this.store.dispatch(WebsiteActions.setfilter({ filter }));
-              }),
+              ),
               catchError(() => EMPTY)
             )
         )
@@ -138,7 +204,11 @@ export class DigimonEffects {
   setDigimonCardSet$ = createEffect(
     () =>
       this.actions$.pipe(
-        ofType(SaveActions.setsave, SaveActions.getsave, SaveActions.setcardsets),
+        ofType(
+          SaveActions.setsave,
+          SaveActions.getsave,
+          SaveActions.setcardsets
+        ),
         switchMap(() =>
           this.store.select(selectCardSet).pipe(
             tap((cardSet) => {
@@ -148,11 +218,13 @@ export class DigimonEffects {
 
               let digimonCards;
               if (+cardSet >>> 0) {
-                digimonCards = setupDigimonCards(CARDSET.Both);
+                digimonCards = setupDigimonCards(CARDSET.English);
               } else {
-                digimonCards = setupDigimonCards(cardSet);
+                digimonCards = setupDigimonCards(cardSet as CARDSET);
               }
-              this.store.dispatch(DigimonActions.setdigimoncards({ digimonCards }));
+              this.store.dispatch(
+                DigimonActions.setdigimoncards({ digimonCards })
+              );
             }),
             catchError(() => EMPTY)
           )
@@ -161,5 +233,10 @@ export class DigimonEffects {
     { dispatch: false }
   );
 
-  constructor(private store: Store, private authService: AuthService, private digimonBackendService: DigimonBackendService, private actions$: Actions) {}
+  constructor(
+    private store: Store,
+    private authService: AuthService,
+    private digimonBackendService: DigimonBackendService,
+    private actions$: Actions
+  ) {}
 }

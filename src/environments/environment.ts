@@ -3,7 +3,8 @@ export const environment = {
   firebaseConfig: {
     apiKey: 'AIzaSyAdV8igtmcuSjmNQr2QU2NscmTAn4nWwUg',
     authDomain: 'digimon-card-collector.firebaseapp.com',
-    databaseURL: 'https://digimon-card-collector-default-rtdb.europe-west1.firebasedatabase.app',
+    databaseURL:
+      'https://digimon-card-collector-default-rtdb.europe-west1.firebasedatabase.app',
     projectId: 'digimon-card-collector',
     storageBucket: 'digimon-card-collector.appspot.com',
     messagingSenderId: '236092549',

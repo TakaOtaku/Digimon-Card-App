@@ -9,18 +9,26 @@ import { CollectionViewComponent } from './components/collection-view.component'
   template: `
     <div class="bg-gradient-to-b from-[#17212f] to-[#08528d] ">
       <div class="hidden md:block">
-        <digimon-collection-view [collectionOnly]="true" [deckView]="false"></digimon-collection-view>
+        <digimon-collection-view
+          [collectionOnly]="true"
+          [deckView]="false"></digimon-collection-view>
       </div>
 
       <div class="md:hidden">
         <digimon-filter-and-search></digimon-filter-and-search>
-        <digimon-card-list [collectionOnly]="true" [showCount]="32"></digimon-card-list>
+        <digimon-card-list
+          [collectionOnly]="true"
+          [showCount]="32"></digimon-card-list>
       </div>
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [CollectionViewComponent, FilterAndSearchComponent, CardListComponent],
+  imports: [
+    CollectionViewComponent,
+    FilterAndSearchComponent,
+    CardListComponent,
+  ],
 })
 export class CollectionPageComponent implements OnInit {
   constructor(private meta: Meta, private title: Title) {}
@@ -35,7 +43,8 @@ export class CollectionPageComponent implements OnInit {
     this.meta.addTags([
       {
         name: 'description',
-        content: 'Keep track of your Collection of the new Digimon Card Game. Find missing cards, rulings, erratas and many more information easily.',
+        content:
+          'Keep track of your Collection of the new Digimon Card Game. Find missing cards, rulings, erratas and many more information easily.',
       },
       { name: 'author', content: 'TakaOtaku' },
       {

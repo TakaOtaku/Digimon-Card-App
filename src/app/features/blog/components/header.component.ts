@@ -1,5 +1,17 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { UntypedFormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
+import {
+  UntypedFormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { ADMINS, IUser } from '../../../../models';
@@ -14,8 +26,15 @@ import { NgIf, NgClass, DatePipe } from '@angular/common';
   template: `
     <div [formGroup]="form">
       <div *ngIf="!edit; else editView" class="relative flex flex-row">
-        <button class="p-button-outlined p-button-rounded mr-2" icon="pi pi-arrow-left" pButton pRipple type="button" (click)="router.navigateByUrl('/community')"></button>
-        <h1 class="mb-2 w-full text-center text-3xl font-extrabold text-[#e2e4e6]">
+        <button
+          class="p-button-outlined p-button-rounded mr-2"
+          icon="pi pi-arrow-left"
+          pButton
+          pRipple
+          type="button"
+          (click)="router.navigateByUrl('/community')"></button>
+        <h1
+          class="mb-2 w-full text-center text-3xl font-extrabold text-[#e2e4e6]">
           {{ form.get('title')!.value }}
         </h1>
         <button
@@ -28,11 +47,29 @@ import { NgIf, NgClass, DatePipe } from '@angular/common';
           (click)="editChanged.emit(true)"></button>
       </div>
       <ng-template #editView class="relative">
-        <button class="p-button-outlined p-button-rounded mr-2" icon="pi pi-arrow-left" pButton pRipple type="button" (click)="router.navigateByUrl('/community')"></button>
+        <button
+          class="p-button-outlined p-button-rounded mr-2"
+          icon="pi pi-arrow-left"
+          pButton
+          pRipple
+          type="button"
+          (click)="router.navigateByUrl('/community')"></button>
         <span class="w-full">
-          <input formControlName="title" placeholder="Title:" class="mb-3 h-8 w-full text-sm" pInputText type="text" />
+          <input
+            formControlName="title"
+            placeholder="Title:"
+            class="mb-3 h-8 w-full text-sm"
+            pInputText
+            type="text" />
         </span>
-        <button *ngIf="showEdit()" class="p-button-outlined p-button-rounded ml-2" icon="pi pi-pencil" pButton pRipple type="button" (click)="editChanged.emit(false)"></button>
+        <button
+          *ngIf="showEdit()"
+          class="p-button-outlined p-button-rounded ml-2"
+          icon="pi pi-pencil"
+          pButton
+          pRipple
+          type="button"
+          (click)="editChanged.emit(false)"></button>
       </ng-template>
 
       <div *ngIf="edit" class="mb-3">
@@ -40,7 +77,8 @@ import { NgIf, NgClass, DatePipe } from '@angular/common';
           <button
             (click)="form.get('category')!.setValue('Tournament Report')"
             [ngClass]="{
-              'primary-background': form.get('category')!.value === 'Tournament Report'
+              'primary-background':
+                form.get('category')!.value === 'Tournament Report'
             }"
             class="min-w-auto mt-2 h-8 w-36 rounded-l-sm border border-slate-100 p-2 text-xs font-semibold text-[#e2e4e6]">
             Tournament Report
@@ -48,7 +86,8 @@ import { NgIf, NgClass, DatePipe } from '@angular/common';
           <button
             (click)="form.get('category')!.setValue('Deck-Review')"
             [ngClass]="{
-              'primary-background': form.get('category')!.value === 'Deck-Review'
+              'primary-background':
+                form.get('category')!.value === 'Deck-Review'
             }"
             class="min-w-auto mt-2 h-8 w-36 border border-slate-100 p-2 text-xs font-semibold text-[#e2e4e6]">
             Deck-Review
@@ -57,13 +96,25 @@ import { NgIf, NgClass, DatePipe } from '@angular/common';
       </div>
 
       <div class="flex flex-row">
-        <span class="mb-2 w-full text-center font-bold text-[#e2e4e6]">{{ form.get('author')!.value }} / {{ form.get('date')!.value | date : 'dd.MM.yyyy' }}</span>
+        <span class="mb-2 w-full text-center font-bold text-[#e2e4e6]"
+          >{{ form.get('author')!.value }} /
+          {{ form.get('date')!.value | date : 'dd.MM.yyyy' }}</span
+        >
       </div>
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, NgIf, ButtonModule, RippleModule, InputTextModule, NgClass, DatePipe],
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    NgIf,
+    ButtonModule,
+    RippleModule,
+    InputTextModule,
+    NgClass,
+    DatePipe,
+  ],
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   @Input() edit: boolean;
@@ -79,7 +130,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.user = this.authService.userData;
-    this.authService.authChange.pipe(takeUntil(this.onDestroy$)).subscribe(() => (this.user = this.authService.userData));
+    this.authService.authChange
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe(() => (this.user = this.authService.userData));
   }
 
   ngOnDestroy() {

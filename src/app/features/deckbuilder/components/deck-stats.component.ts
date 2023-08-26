@@ -13,8 +13,13 @@ import { NgIf, NgClass, AsyncPipe } from '@angular/common';
   selector: 'digimon-deck-stats',
   template: `
     <!-- Deck Stats -->
-    <div *ngIf="showStats" class="fixed bottom-0 z-[102] flex h-28 w-full flex-row" [ngClass]="{ 'lg:w-[350px]': collectionView }">
-      <div [ngClass]="{ 'w-full': collectionView, 'border-l-2': !collectionView }" class="surface-card flex flex-row border-r-2 border-t-2 border-white bg-opacity-25 lg:mx-auto">
+    <div
+      *ngIf="showStats"
+      class="fixed bottom-0 z-[102] flex h-28 w-full flex-row"
+      [ngClass]="{ 'lg:w-[350px]': collectionView }">
+      <div
+        [ngClass]="{ 'w-full': collectionView, 'border-l-2': !collectionView }"
+        class="surface-card flex flex-row border-r-2 border-t-2 border-white bg-opacity-25 lg:mx-auto">
         <digimon-ddto-spread
           *ngIf="!collectionView"
           [deck]="this.deck$ | async"
@@ -39,7 +44,14 @@ import { NgIf, NgClass, AsyncPipe } from '@angular/common';
     </div>
   `,
   standalone: true,
-  imports: [NgIf, NgClass, DdtoSpreadComponent, ChartContainersComponent, ColorSpreadComponent, AsyncPipe],
+  imports: [
+    NgIf,
+    NgClass,
+    DdtoSpreadComponent,
+    ChartContainersComponent,
+    ColorSpreadComponent,
+    AsyncPipe,
+  ],
 })
 export class DeckStatsComponent {
   @Input() showStats = false;
@@ -49,7 +61,10 @@ export class DeckStatsComponent {
 
   allCards$ = this.store.select(selectAllCards);
 
-  mainDeck$: Observable<IDeckCard[]> = combineLatest(this.deck$, this.allCards$).pipe(map((value) => mapToDeckCards(value[0].cards, value[1])));
+  mainDeck$: Observable<IDeckCard[]> = combineLatest(
+    this.deck$,
+    this.allCards$
+  ).pipe(map((value) => mapToDeckCards(value[0].cards, value[1])));
 
   constructor(private store: Store) {}
 }

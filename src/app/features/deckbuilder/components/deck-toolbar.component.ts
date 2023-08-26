@@ -1,6 +1,13 @@
 import { WebsiteActions } from './../../../store/digimon.actions';
 import { NgClass, NgFor } from '@angular/common';
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  Output,
+} from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
@@ -9,7 +16,7 @@ import { DialogModule } from 'primeng/dialog';
 import { TooltipModule } from 'primeng/tooltip';
 import { BehaviorSubject, Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
-import { ICard, IDeck, IDeckCard } from '../../../../models';
+import { DigimonCard, IDeck, IDeckCard } from '../../../../models';
 import { AuthService } from '../../../service/auth.service';
 import { selectAllCards } from '../../../store/digimon.selectors';
 import { ExportDeckDialogComponent } from '../../shared/dialogs/export-deck-dialog.component';
@@ -19,7 +26,8 @@ import { PriceCheckDialogComponent } from './price-check-dialog.component';
 @Component({
   selector: 'digimon-deck-toolbar',
   template: `
-    <div class="toolbar ml-3 mr-3 flex w-[100%-3rem] flex-row justify-evenly border-b-2 border-slate-600 md:grid-cols-12">
+    <div
+      class="toolbar ml-3 mr-3 flex w-[100%-3rem] flex-row justify-evenly border-b-2 border-slate-600 md:grid-cols-12">
       <button
         (click)="missingCardsChange.emit(!missingCards)"
         [ngClass]="{ 'primary-background': missingCards }"
@@ -30,9 +38,21 @@ import { PriceCheckDialogComponent } from './price-check-dialog.component';
         pTooltip="Click to show what cards are missing from your Collection!"
         tooltipPosition="top"></button>
 
-      <button (click)="newDeck()" class="p-button-outlined h-[30px] w-full" icon="pi pi-file" iconPos="left" pButton pTooltip="Click to create a new Deck!" tooltipPosition="top"></button>
+      <button
+        (click)="newDeck()"
+        class="p-button-outlined h-[30px] w-full"
+        icon="pi pi-file"
+        iconPos="left"
+        pButton
+        pTooltip="Click to create a new Deck!"
+        tooltipPosition="top"></button>
 
-      <button (click)="save.emit($event)" class="p-button-outlined h-[30px] w-full" icon="pi pi-save" iconPos="left" pButton></button>
+      <button
+        (click)="save.emit($event)"
+        class="p-button-outlined h-[30px] w-full"
+        icon="pi pi-save"
+        iconPos="left"
+        pButton></button>
 
       <button
         (click)="importDeckDialog = true"
@@ -76,7 +96,12 @@ import { PriceCheckDialogComponent } from './price-check-dialog.component';
       >
         $
       </button-->
-      <button (click)="checkPrice()" class="p-button-outlined h-[30px] w-full cursor-pointer" icon="pi pi-dollar" iconPos="left" pButton></button>
+      <button
+        (click)="checkPrice()"
+        class="p-button-outlined h-[30px] w-full cursor-pointer"
+        icon="pi pi-dollar"
+        iconPos="left"
+        pButton></button>
     </div>
 
     <p-dialog
@@ -87,7 +112,8 @@ import { PriceCheckDialogComponent } from './price-check-dialog.component';
       [resizable]="false"
       styleClass="w-[100%] min-w-[250px] sm:min-w-[500px] sm:w-[700px] min-h-[500px]"
       [baseZIndex]="10000">
-      <digimon-price-check-dialog [checkPrice]="checkPrice$"></digimon-price-check-dialog>
+      <digimon-price-check-dialog
+        [checkPrice]="checkPrice$"></digimon-price-check-dialog>
     </p-dialog>
 
     <p-dialog
@@ -101,15 +127,21 @@ import { PriceCheckDialogComponent } from './price-check-dialog.component';
       <!-- Security Stack -->
       <h1 class="text-center text-2xl font-bold">Security Stack</h1>
       <div class="mt-5 flex flex-row">
-        <div *ngFor="let secCard of securityStack" class="cards-in-a-row-5 mr-1">
-          <img [src]="secCard.cardImage" [alt]="secCard.id + ' - ' + secCard.name" />
+        <div
+          *ngFor="let secCard of securityStack"
+          class="cards-in-a-row-5 mr-1">
+          <img
+            [src]="secCard.cardImage"
+            [alt]="secCard.id + ' - ' + secCard.name" />
         </div>
       </div>
 
       <h1 class="text-center text-2xl font-bold">Draw Hand</h1>
       <div class="mt-5 flex flex-row">
         <div *ngFor="let drawCard of drawHand" class="cards-in-a-row-5 mr-1">
-          <img [src]="drawCard.cardImage" [alt]="drawCard.id + ' - ' + drawCard.name" />
+          <img
+            [src]="drawCard.cardImage"
+            [alt]="drawCard.id + ' - ' + drawCard.name" />
         </div>
       </div>
 
@@ -143,7 +175,16 @@ import { PriceCheckDialogComponent } from './price-check-dialog.component';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [ButtonModule, TooltipModule, NgClass, DialogModule, PriceCheckDialogComponent, NgFor, ExportDeckDialogComponent, ImportDeckDialogComponent],
+  imports: [
+    ButtonModule,
+    TooltipModule,
+    NgClass,
+    DialogModule,
+    PriceCheckDialogComponent,
+    NgFor,
+    ExportDeckDialogComponent,
+    ImportDeckDialogComponent,
+  ],
   providers: [MessageService],
 })
 export class DeckToolbarComponent implements OnDestroy {
@@ -161,16 +202,22 @@ export class DeckToolbarComponent implements OnDestroy {
   priceCheckDialog = false;
   checkPrice$ = new BehaviorSubject(false);
 
-  securityStack: ICard[];
-  drawHand: ICard[];
-  allDeckCards: ICard[];
+  securityStack: DigimonCard[];
+  drawHand: DigimonCard[];
+  allDeckCards: DigimonCard[];
   didMulligan = false;
   simulateDialog = false;
 
-  private allCards: ICard[];
+  private allCards: DigimonCard[];
   private destroy$ = new Subject<boolean>();
 
-  constructor(private confirmationService: ConfirmationService, private messageService: MessageService, private store: Store, private route: Router, private authService: AuthService) {
+  constructor(
+    private confirmationService: ConfirmationService,
+    private messageService: MessageService,
+    private store: Store,
+    private route: Router,
+    private authService: AuthService
+  ) {
     this.store
       .select(selectAllCards)
       .pipe(takeUntil(this.destroy$))
@@ -188,7 +235,10 @@ export class DeckToolbarComponent implements OnDestroy {
       currentIndex--;
 
       // And swap it with the current element.
-      [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex],
+        array[currentIndex],
+      ];
     }
 
     return array;
@@ -223,11 +273,14 @@ export class DeckToolbarComponent implements OnDestroy {
   newDeck() {
     this.confirmationService.confirm({
       key: 'NewDeck',
-      message: 'You are about to clear all cards in the deck and make a new one. Are you sure?',
+      message:
+        'You are about to clear all cards in the deck and make a new one. Are you sure?',
       accept: () => {
         this.store.dispatch(WebsiteActions.createnewdeck({ uuid: uuid.v4() }));
         if (this.authService.userData?.uid) {
-          this.route.navigateByUrl(`deckbuilder/user/${this.authService.userData?.uid}/deck/${this.deck.id}`);
+          this.route.navigateByUrl(
+            `deckbuilder/user/${this.authService.userData?.uid}/deck/${this.deck.id}`
+          );
         }
         this.messageService.add({
           severity: 'success',
@@ -262,8 +315,12 @@ export class DeckToolbarComponent implements OnDestroy {
   resetSimulation() {
     this.didMulligan = false;
 
-    this.allDeckCards = DeckToolbarComponent.shuffle(this.deck.cards.map((card) => this.allCards.find((a) => a.id === card.id)));
-    this.allDeckCards = this.allDeckCards.filter((card) => card.cardType !== 'Digi-Egg');
+    this.allDeckCards = DeckToolbarComponent.shuffle(
+      this.deck.cards.map((card) => this.allCards.find((a) => a.id === card.id))
+    );
+    this.allDeckCards = this.allDeckCards.filter(
+      (card) => card.cardType !== 'Digi-Egg'
+    );
 
     this.securityStack = this.allDeckCards.slice(0, 5);
     this.drawHand = this.allDeckCards.slice(5, 10);

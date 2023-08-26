@@ -1,10 +1,15 @@
 import { createReducer, on } from '@ngrx/store';
 import { ICountCard, IDeck, ISave, ISettings } from '../../../models';
 import { CARDSET } from '../../../models/enums/card-set.enum';
-import { CollectionActions, DeckActions, SaveActions, WebsiteActions } from '../digimon.actions';
+import {
+  CollectionActions,
+  DeckActions,
+  SaveActions,
+  WebsiteActions,
+} from '../digimon.actions';
 
 export const emptySettings: ISettings = {
-  cardSet: CARDSET.Both,
+  cardSet: CARDSET.English,
   collectionMode: false,
   collectionMinimum: 1,
   aaCollectionMinimum: 1,
@@ -26,7 +31,7 @@ export const emptySave: ISave = {
   uid: '',
   photoURL: '',
   displayName: '',
-  version: 3.0,
+  version: 4.0,
   collection: [],
   decks: [],
   settings: emptySettings,
@@ -38,7 +43,10 @@ export const saveReducer = createReducer(
   on(SaveActions.setsave, (state, { save }) => save),
   on(SaveActions.getsave, (state, { save }) => save),
 
-  on(SaveActions.setcollection, (state, { collection }) => ({ ...state, collection })),
+  on(SaveActions.setcollection, (state, { collection }) => ({
+    ...state,
+    collection,
+  })),
   on(CollectionActions.addcard, (state, { collectionCards }) => ({
     ...state,
     collection: [...new Set([...state.collection, ...collectionCards])],
@@ -82,15 +90,18 @@ export const saveReducer = createReducer(
     ...state,
     settings: { ...state.settings, aaCollectionMinimum: minimum },
   })),
-  on(WebsiteActions.setshowversion, (state, { showPre, showAA, showStamp }) => ({
-    ...state,
-    settings: {
-      ...state.settings,
-      showPreRelease: showPre,
-      showAACards: showAA,
-      showStampedCards: showStamp,
-    },
-  })),
+  on(
+    WebsiteActions.setshowversion,
+    (state, { showPre, showAA, showStamp }) => ({
+      ...state,
+      settings: {
+        ...state.settings,
+        showPreRelease: showPre,
+        showAACards: showAA,
+        showStampedCards: showStamp,
+      },
+    })
+  ),
   on(SaveActions.setdeckdisplaytable, (state, { deckDisplayTable }) => ({
     ...state,
     settings: { ...state.settings, deckDisplayTable },
@@ -106,7 +117,9 @@ export const saveReducer = createReducer(
     }
     const foundDeck = state.decks?.find((value) => value.id === deck.id);
     if (foundDeck) {
-      const allButFoundDeck: IDeck[] = state.decks.filter((value) => value.id !== deck.id);
+      const allButFoundDeck: IDeck[] = state.decks.filter(
+        (value) => value.id !== deck.id
+      );
       const decks: IDeck[] = [...new Set([...allButFoundDeck, deck])];
       return { ...state, decks };
     }
@@ -122,7 +135,9 @@ export const saveReducer = createReducer(
     return { ...state, decks: [...new Set(decks)] };
   }),
   on(DeckActions.delete, (state, { deck }) => {
-    const decks = [...new Set(state.decks.filter((item) => item.id !== deck.id))];
+    const decks = [
+      ...new Set(state.decks.filter((item) => item.id !== deck.id)),
+    ];
     return {
       ...state,
       decks,

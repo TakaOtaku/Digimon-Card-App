@@ -1,9 +1,14 @@
+import { withoutJ } from '../../../functions/digimon-card.functions';
+import { dummyCard } from './../../../store/reducers/digimon.reducers';
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subject, takeUntil, tap } from 'rxjs';
-import { englishCards } from '../../../../assets/cardlists/eng/english';
-import { ICard, ICountCard } from '../../../../models';
-import { selectCollection, selectCollectionMode, selectFilteredCards } from '../../../store/digimon.selectors';
+import { DigimonCard, ICountCard } from '../../../../models';
+import {
+  selectCollection,
+  selectCollectionMode,
+  selectFilteredCards,
+} from '../../../store/digimon.selectors';
 import { ViewCardDialogComponent } from '../../shared/dialogs/view-card-dialog.component';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
@@ -13,8 +18,14 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 @Component({
   selector: 'digimon-card-list',
   template: `
-    <div class="flex flex-wrap justify-center overflow-hidden" *ngIf="cards$ | async">
-      <h1 *ngIf="cardsToShow.length === 0" class="primary-color text-bold my-10 text-5xl">No cards found!</h1>
+    <div
+      class="flex flex-wrap justify-center overflow-hidden"
+      *ngIf="cards$ | async">
+      <h1
+        *ngIf="cardsToShow.length === 0"
+        class="primary-color text-bold my-10 text-5xl">
+        No cards found!
+      </h1>
 
       <div class="flex w-full flex-row flex-wrap">
         <digimon-full-card
@@ -47,11 +58,21 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
       [dismissableMask]="true"
       [resizable]="false"
       styleClass="overflow-x-hidden">
-      <digimon-view-card-dialog (onClose)="viewCardDialog = false" [card]="card"></digimon-view-card-dialog>
+      <digimon-view-card-dialog
+        (onClose)="viewCardDialog = false"
+        [card]="card"></digimon-view-card-dialog>
     </p-dialog>
   `,
   standalone: true,
-  imports: [NgIf, NgFor, FullCardComponent, ButtonModule, DialogModule, ViewCardDialogComponent, AsyncPipe],
+  imports: [
+    NgIf,
+    NgFor,
+    FullCardComponent,
+    ButtonModule,
+    DialogModule,
+    ViewCardDialogComponent,
+    AsyncPipe,
+  ],
 })
 export class CardListComponent implements OnInit, OnDestroy {
   @Input() public showCount: number;
@@ -63,10 +84,10 @@ export class CardListComponent implements OnInit, OnDestroy {
   );
 
   viewCardDialog = false;
-  card = englishCards[0];
+  card = JSON.parse(JSON.stringify(dummyCard));
 
-  cards: ICard[] = [];
-  cardsToShow: ICard[] = [];
+  cards: DigimonCard[];
+  cardsToShow: DigimonCard[];
 
   collectionMode$ = this.store.select(selectCollectionMode);
 
@@ -77,21 +98,17 @@ export class CardListComponent implements OnInit, OnDestroy {
   constructor(private store: Store) {}
 
   ngOnInit() {
-    this.storeSubscriptions();
-  }
-
-  ngOnDestroy() {
-    this.onDestroy$.next(true);
-    this.onDestroy$.unsubscribe();
-  }
-
-  storeSubscriptions() {
     this.store
       .select(selectCollection)
       .pipe(takeUntil(this.onDestroy$))
       .subscribe((collection) => {
         this.collection = collection;
       });
+  }
+
+  ngOnDestroy() {
+    this.onDestroy$.next(true);
+    this.onDestroy$.unsubscribe();
   }
 
   /**
@@ -101,7 +118,9 @@ export class CardListComponent implements OnInit, OnDestroy {
     if (this.collection === null) {
       return 0;
     }
-    return this.collection.find((value) => value.id === cardId)?.count ?? 0;
+    return (
+      this.collection.find((value) => value.id === withoutJ(cardId))?.count ?? 0
+    );
   }
 
   /**
@@ -116,10 +135,12 @@ export class CardListComponent implements OnInit, OnDestroy {
    * Check if there are more Cards to show, which aren't shown right now
    */
   moreCardsThere(): boolean {
-    return this.cards.length > this.cardsToShow.length && this.cardsToShow.length > 0;
+    return (
+      this.cards.length > this.cardsToShow.length && this.cardsToShow.length > 0
+    );
   }
 
-  viewCard(card: ICard) {
+  viewCard(card: DigimonCard) {
     this.viewCardDialog = true;
     this.card = card;
   }

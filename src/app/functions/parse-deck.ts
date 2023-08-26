@@ -1,8 +1,11 @@
-import { ICard, ICountCard, IDeck, IDeckCard } from '../../models';
+import { DigimonCard, ICountCard, IDeck, IDeckCard } from '../../models';
 import { emptyDeck } from '../store/reducers/digimon.reducers';
 import { compareIDs, setColors, setTags } from './digimon-card.functions';
 
-export function stringToDeck(deckList: string, allCards: ICard[]): IDeck | null {
+export function stringToDeck(
+  deckList: string,
+  allCards: DigimonCard[]
+): IDeck | null {
   let result: string[] = deckList.split('\n');
 
   let deck: IDeck = parseDeck(result, allCards);
@@ -20,7 +23,7 @@ export function stringToDeck(deckList: string, allCards: ICard[]): IDeck | null 
   return null;
 }
 
-function parseTTSDeck(deckList: string, allCards: ICard[]): IDeck {
+function parseTTSDeck(deckList: string, allCards: DigimonCard[]): IDeck {
   const deck: IDeck = { ...JSON.parse(JSON.stringify(emptyDeck)) };
 
   let deckJson: string[] = [];
@@ -39,7 +42,7 @@ function parseTTSDeck(deckList: string, allCards: ICard[]): IDeck {
   return deck;
 }
 
-function parseDeck(textArray: string[], allCards: ICard[]): IDeck {
+function parseDeck(textArray: string[], allCards: DigimonCard[]): IDeck {
   const deck: IDeck = { ...JSON.parse(JSON.stringify(emptyDeck)) };
 
   textArray.forEach((line) => {
@@ -65,7 +68,7 @@ function isValidNumberPNumber(str: string): boolean {
   return false;
 }
 
-function parseLine(line: string, allCards: ICard[]): IDeckCard | null {
+function parseLine(line: string, allCards: DigimonCard[]): IDeckCard | null {
   let lineSplit: string[] = line.replace(/  +/g, ' ').split(' '); // Split the line by spaces and remove extra spaces
   const cardLine: boolean = /\d/.test(line); // Check if the line contains a number
 
@@ -105,7 +108,6 @@ function parseLine(line: string, allCards: ICard[]): IDeckCard | null {
 }
 
 function findCardId(id: string): string {
-  console.log(id);
   if (id.includes('ST')) {
     const splitA = id.split('-');
     const numberA: number = +splitA[0].substring(2) >>> 0;
@@ -125,12 +127,15 @@ function findNumber(array: string[]): number {
   return count;
 }
 
-function setDeckProperties(deck: IDeck, allCards: ICard[]) {
+function setDeckProperties(deck: IDeck, allCards: DigimonCard[]) {
   deck.tags = setTags(deck, allCards);
   deck.color = setColors(deck, allCards);
 }
 
-function findCardById(cardId: string, allCards: ICard[]): ICard | undefined {
+function findCardById(
+  cardId: string,
+  allCards: DigimonCard[]
+): DigimonCard | undefined {
   return allCards.find((card) => compareIDs(card.id, cardId));
 }
 

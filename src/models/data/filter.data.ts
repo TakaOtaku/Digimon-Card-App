@@ -19,6 +19,7 @@ export const GroupedSets = [
       { label: 'BT12', value: 'BT12' },
       { label: 'BT13', value: 'BT13' },
       { label: 'BT14', value: 'BT14' },
+      { label: 'BT15', value: 'BT15' },
     ],
   },
   {
@@ -29,6 +30,7 @@ export const GroupedSets = [
       { label: 'EX2', value: 'EX2' },
       { label: 'EX3', value: 'EX3' },
       { label: 'EX4', value: 'EX4' },
+      { label: 'EX5', value: 'EX5' },
     ],
   },
   {
@@ -71,8 +73,9 @@ export const Keywords: string[] = [
   '\uff1cDecoy (Black)\uff1e',
   '\uff1cDecoy (Black/White)\uff1e',
   '\uff1cDecoy (Red/Black)\uff1e',
-  '\uff1cDecoy [D-Brigade] traits\uff1e',
-  '\uff1cDecoy [Bagra Army] traits\uff1e',
+  '\uff1cDecoy (D-Brigade)\uff1e',
+  '\uff1cDecoy (Bagra Army)\uff1e',
+  '\uff1cDecoy (Deva/Four Sovereigns)\uff1e',
   '\uff1cDe-Digivolve 1\uff1e',
   '\uff1cDe-Digivolve 2\uff1e',
   '\uff1cDe-Digivolve 3\uff1e',
@@ -112,13 +115,46 @@ export const Keywords: string[] = [
   '\uff1cSecurity Attack -3\uff1e',
 ];
 
-export const Colors: string[] = ['Red', 'Blue', 'Yellow', 'Green', 'Black', 'Purple', 'White', 'Multi'];
+export const Colors: string[] = [
+  'Red',
+  'Blue',
+  'Yellow',
+  'Green',
+  'Black',
+  'Purple',
+  'White',
+  'Multi',
+];
 
-export const ColorsWithoutMulti: string[] = ['Red', 'Blue', 'Yellow', 'Green', 'Black', 'Purple', 'White'];
+export const ColorsWithoutMulti: string[] = [
+  'Red',
+  'Blue',
+  'Yellow',
+  'Green',
+  'Black',
+  'Purple',
+  'White',
+];
 
-export const Forms: string[] = ['In-Training', 'Rookie', 'Champion', 'Ultimate', 'Mega', 'Hybrid', 'Armor Form', 'D-Reaper'];
+export const Forms: string[] = [
+  'In-Training',
+  'Rookie',
+  'Champion',
+  'Ultimate',
+  'Mega',
+  'Hybrid',
+  'Armor Form',
+  'D-Reaper',
+];
 
-export const Attributes: string[] = ['Data', 'Vaccine', 'Virus', 'Free', 'Variable', 'Unknown'];
+export const Attributes: string[] = [
+  'Data',
+  'Vaccine',
+  'Virus',
+  'Free',
+  'Variable',
+  'Unknown',
+];
 
 export const Types: string[] = [
   'Abnormal',
@@ -313,7 +349,13 @@ export const Illustrators: string[] = [
   'yuuki.',
 ].sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 
-export const SpecialRequirements: string[] = ['Digivolve', 'DNA Digivolution', 'DigiXros', 'Burst Digivolve', 'ACE'];
+export const SpecialRequirements: string[] = [
+  'Digivolve',
+  'DNA Digivolution',
+  'DigiXros',
+  'Burst Digivolve',
+  'ACE',
+];
 
 export const Restrictions: string[] = ['Banned', 'Restricted to 1'];
 

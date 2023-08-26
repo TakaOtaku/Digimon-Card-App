@@ -38,7 +38,9 @@ import { selectSetFilter } from '../../../store/digimon.selectors';
 })
 export class SetFilterComponent {
   setFilter: string[] = [];
-  setFilter$ = this.store.select(selectSetFilter).pipe(tap((setFilter) => (this.setFilter = setFilter)));
+  setFilter$ = this.store
+    .select(selectSetFilter)
+    .pipe(tap((setFilter) => (this.setFilter = setFilter)));
 
   groupedSets = GroupedSets;
 

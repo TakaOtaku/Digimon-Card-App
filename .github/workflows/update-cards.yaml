@@ -1,0 +1,45 @@
+name: Update Cards
+
+on:
+  schedule:
+    - cron: "0 */72 * * *"
+  workflow_dispatch:
+
+
+jobs:
+  run_script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install beautifulsoup4 requests pillow
+
+      - name: Run Python script
+        run: python scripts/python/Wiki/GetDataFromWiki.py
+
+      - name: Convert PNG to WebP
+        run: python scripts/python/Wiki/PNGtoWebP.py
+
+      - name: Move Data & Images to correct folder
+        run: python scripts/python/Wiki/MoveFiles.py
+
+      - name: Delete PNGs
+        run: python scripts/python/Wiki/DeletePNGs.py
+
+      - name: Commit everything
+        run: |
+          git config --local user.email "christian_bayer@yahoo.de"
+          git config --local user.name "TakaOtaku"
+          git add -A
+          git commit -am "[Automatic] Update Cards"
+          git push

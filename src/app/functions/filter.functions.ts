@@ -1,28 +1,65 @@
-import { ICard, ICountCard, IFilter, ISort } from '../../models';
+/* eslint-disable prettier/prettier */
+import { DigimonCard, ICountCard, IFilter, ISort } from '../../models';
 
-export function filterCards(cards: ICard[], collection: ICountCard[], filter: IFilter, sort: ISort): ICard[] {
+let digimonCardMap = new Map<string, DigimonCard>();
+export function filterCards(
+  cards: DigimonCard[],
+  collection: ICountCard[],
+  filter: IFilter,
+  sort: ISort,
+  cardMap: Map<string, DigimonCard>
+): DigimonCard[] {
+  digimonCardMap = cardMap;
   let filteredCards = applySearchFilter(cards, filter.searchFilter);
 
-  filteredCards = applyCardCountFilter(filteredCards, collection, filter.cardCountFilter);
+  filteredCards = applyCardCountFilter(
+    filteredCards,
+    collection,
+    filter.cardCountFilter
+  );
 
   filteredCards = applyFilter(filteredCards, filter.setFilter, 'id');
   filteredCards = applyFilter(filteredCards, filter.colorFilter, 'color');
   filteredCards = applyFilter(filteredCards, filter.cardTypeFilter, 'cardType');
   filteredCards = applyFilter(filteredCards, filter.formFilter, 'form');
-  filteredCards = applyFilter(filteredCards, filter.attributeFilter, 'attribute');
+  filteredCards = applyFilter(
+    filteredCards,
+    filter.attributeFilter,
+    'attribute'
+  );
   filteredCards = applyFilter(filteredCards, filter.typeFilter, 'type');
   filteredCards = applyFilter(filteredCards, filter.rarityFilter, 'rarity');
   filteredCards = applyFilter(filteredCards, filter.versionFilter, 'version');
   filteredCards = applyFilter(filteredCards, filter.keywordFilter, 'keyword');
-  filteredCards = applyFilter(filteredCards, filter.specialRequirementsFilter, 'specialRequirements');
-  filteredCards = applyFilter(filteredCards, filter.illustratorFilter, 'illustrator');
+  filteredCards = applyFilter(
+    filteredCards,
+    filter.specialRequirementsFilter,
+    'specialRequirements'
+  );
+  filteredCards = applyFilter(
+    filteredCards,
+    filter.illustratorFilter,
+    'illustrator'
+  );
   filteredCards = applyFilter(filteredCards, filter.blockFilter, 'block');
-  filteredCards = applyFilter(filteredCards, filter.restrictionsFilter, 'restriction');
+  filteredCards = applyFilter(
+    filteredCards,
+    filter.restrictionsFilter,
+    'restriction'
+  );
   filteredCards = applyFilter(filteredCards, filter.sourceFilter, 'source');
 
   filteredCards = applyRangeFilter(filteredCards, filter.levelFilter, 'level');
-  filteredCards = applyRangeFilter(filteredCards, filter.playCostFilter, 'playCost');
-  filteredCards = applyRangeFilter(filteredCards, filter.digivolutionFilter, 'digivolution');
+  filteredCards = applyRangeFilter(
+    filteredCards,
+    filter.playCostFilter,
+    'playCost'
+  );
+  filteredCards = applyRangeFilter(
+    filteredCards,
+    filter.digivolutionFilter,
+    'digivolution'
+  );
   filteredCards = applyRangeFilter(filteredCards, filter.dpFilter, 'dp');
 
   filteredCards = applySortOrder(filteredCards, sort, collection);
@@ -30,43 +67,38 @@ export function filterCards(cards: ICard[], collection: ICountCard[], filter: IF
 }
 
 //region Filter Functions
-function applySearchFilter(cards: ICard[], searchFilter: string): ICard[] {
+function applySearchFilter(
+  cards: DigimonCard[],
+  searchFilter: string
+): DigimonCard[] {
   if (searchFilter === '') {
     return cards;
   }
 
-  const idFiltered: ICard[] = cards.filter((cards) => cards.id.toLowerCase().includes(searchFilter.toLowerCase()));
-  const nameFiltered: ICard[] = cards.filter((cards) => cards.name.toLowerCase().includes(searchFilter.toLowerCase()));
-  const effectFiltered: ICard[] = cards.filter((cards) => cards.effect.toLowerCase().includes(searchFilter.toLowerCase()));
-  const inheritedFiltered: ICard[] = cards.filter((cards) => cards.digivolveEffect.toLowerCase().includes(searchFilter.toLowerCase()));
-  const securityFiltered: ICard[] = cards.filter((cards) => cards.securityEffect.toLowerCase().includes(searchFilter.toLowerCase()));
-  const illustratorFiltered: ICard[] = cards.filter((cards) => cards.illustrator.toLowerCase().includes(searchFilter.toLowerCase()));
-  const dnaFiltered: ICard[] = cards.filter((cards) => cards.dnaDigivolve.toLowerCase().includes(searchFilter.toLowerCase()));
-  const specialFiltered: ICard[] = cards.filter((cards) => cards.specialDigivolve.toLowerCase().includes(searchFilter.toLowerCase()));
-  const noteFiltered: ICard[] = cards.filter((cards) => cards.notes.toLowerCase().includes(searchFilter.toLowerCase()));
-  const typeFiltered: ICard[] = cards.filter((cards) => cards.type.toLowerCase().includes(searchFilter.toLowerCase()));
-  const digiXrosFiltered: ICard[] = cards.filter((cards) => cards.digiXros.toLowerCase().includes(searchFilter.toLowerCase()));
-  const specialDigivolveFiltered: ICard[] = cards.filter((cards) => cards.specialDigivolve.toLowerCase().includes(searchFilter.toLowerCase()));
+  function deepSearch(obj: any): boolean {
+    if (typeof obj === 'string') {
+      return obj.toLowerCase().includes(searchFilter.toLowerCase());
+    }
 
-  return [
-    ...new Set([
-      ...idFiltered,
-      ...nameFiltered,
-      ...effectFiltered,
-      ...inheritedFiltered,
-      ...securityFiltered,
-      ...illustratorFiltered,
-      ...dnaFiltered,
-      ...specialFiltered,
-      ...noteFiltered,
-      ...typeFiltered,
-      ...digiXrosFiltered,
-      ...specialDigivolveFiltered,
-    ]),
-  ];
+    if (Array.isArray(obj)) {
+      return obj.some((item) => deepSearch(item));
+    }
+
+    if (typeof obj === 'object') {
+      return Object.values(obj).some((value) => deepSearch(value));
+    }
+
+    return false;
+  }
+
+  return cards.filter((card) => deepSearch(card));
 }
 
-function applyCardCountFilter(cards: ICard[], collection: ICountCard[], cardCountFilter: number[]): ICard[] {
+function applyCardCountFilter(
+  cards: DigimonCard[],
+  collection: ICountCard[],
+  cardCountFilter: number[]
+): DigimonCard[] {
   const tempCollection: ICountCard[] = [];
   cards.forEach((card) => {
     const count = collection.find((cc) => cc.id === card.id)?.count ?? 0;
@@ -80,7 +112,7 @@ function applyCardCountFilter(cards: ICard[], collection: ICountCard[], cardCoun
     return cardCountFilter[0] <= card.count && card.count <= cardCountFilter[1];
   });
 
-  let filteredCards: ICard[] = [];
+  let filteredCards: DigimonCard[] = [];
   filteredCollection.forEach((card) => {
     filteredCards.push(cards.find((value) => value.id === card.id)!);
   });
@@ -88,34 +120,80 @@ function applyCardCountFilter(cards: ICard[], collection: ICountCard[], cardCoun
   return [...new Set([...filteredCards])];
 }
 
-function applyFilter(cards: ICard[], filter: any[], key: string): ICard[] {
+function applyFilter(
+  cards: DigimonCard[],
+  filter: any[],
+  key: string
+): DigimonCard[] {
   if (filter.length === 0) {
     return cards;
   }
 
-  let returnArray = [] as ICard[];
+  let returnArray = [] as DigimonCard[];
   switch (key) {
     default:
     case 'id':
-      filter.forEach((filter) => (returnArray = [...new Set([...returnArray, ...cards.filter((cards) => cards['id'].split('-')[0] === filter)])]));
+      filter.forEach(
+        (filter) =>
+          (returnArray = [
+            ...new Set([
+              ...returnArray,
+              ...cards.filter((cards) => cards['id'].split('-')[0] === filter),
+            ]),
+          ])
+      );
       break;
     case 'color':
       filter.forEach((filter) => {
         if (filter === 'Multi') {
-          returnArray = [...new Set([...returnArray, ...cards.filter((cards) => cards['color'].includes('/'))])];
+          returnArray = [
+            ...new Set([
+              ...returnArray,
+              ...cards.filter((cards) => cards['color'].includes('/')),
+            ]),
+          ];
         } else {
-          returnArray = [...new Set([...returnArray, ...cards.filter((cards) => cards['color'].includes(filter))])];
+          returnArray = [
+            ...new Set([
+              ...returnArray,
+              ...cards.filter((cards) => cards['color'].includes(filter)),
+            ]),
+          ];
         }
       });
       break;
     case 'cardType':
-      filter.forEach((filter) => (returnArray = [...new Set([...returnArray, ...cards.filter((cards) => cards['cardType'].includes(filter))])]));
+      filter.forEach(
+        (filter) =>
+          (returnArray = [
+            ...new Set([
+              ...returnArray,
+              ...cards.filter((cards) => cards['cardType'].includes(filter)),
+            ]),
+          ])
+      );
       break;
     case 'form':
-      filter.forEach((filter) => (returnArray = [...new Set([...returnArray, ...cards.filter((cards) => cards['form'].includes(filter))])]));
+      filter.forEach(
+        (filter) =>
+          (returnArray = [
+            ...new Set([
+              ...returnArray,
+              ...cards.filter((cards) => cards['form'].includes(filter)),
+            ]),
+          ])
+      );
       break;
     case 'attribute':
-      filter.forEach((filter) => (returnArray = [...new Set([...returnArray, ...cards.filter((cards) => cards['attribute'].includes(filter))])]));
+      filter.forEach(
+        (filter) =>
+          (returnArray = [
+            ...new Set([
+              ...returnArray,
+              ...cards.filter((cards) => cards['attribute'].includes(filter)),
+            ]),
+          ])
+      );
       break;
     case 'type':
       filter.forEach(
@@ -139,54 +217,155 @@ function applyFilter(cards: ICard[], filter: any[], key: string): ICard[] {
       );
       break;
     case 'cardLv':
-      filter.forEach((filter) => (returnArray = [...new Set([...returnArray, ...cards.filter((cards) => cards['cardLv'] === filter)])]));
+      filter.forEach(
+        (filter) =>
+          (returnArray = [
+            ...new Set([
+              ...returnArray,
+              ...cards.filter((cards) => cards['cardLv'] === filter),
+            ]),
+          ])
+      );
       break;
     case 'rarity':
-      filter.forEach((filter) => (returnArray = [...new Set([...returnArray, ...cards.filter((cards) => cards['rarity'] === filter)])]));
+      filter.forEach(
+        (filter) =>
+          (returnArray = [
+            ...new Set([
+              ...returnArray,
+              ...cards.filter((cards) => cards['rarity'] === filter),
+            ]),
+          ])
+      );
       break;
     case 'version':
-      filter.forEach((filter) => (returnArray = [...new Set([...returnArray, ...cards.filter((cards) => cards['version'] === filter)])]));
+      filter.forEach(
+        (filter) =>
+          (returnArray = [
+            ...new Set([
+              ...returnArray,
+              ...cards.filter((cards) => cards['version'] === filter),
+            ]),
+          ])
+      );
       break;
     case 'keyword':
-      filter.forEach((filter) => (returnArray = [...new Set([...returnArray, ...cards.filter((cards) => cards['effect'].includes(filter) || cards['digivolveEffect'].includes(filter))])]));
+      filter.forEach(
+        (filter) =>
+          (returnArray = [
+            ...new Set([
+              ...returnArray,
+              ...cards.filter(
+                (cards) =>
+                  cards['effect'].includes(filter) ||
+                  cards['digivolveEffect'].includes(filter)
+              ),
+            ]),
+          ])
+      );
       break;
     case 'specialRequirements':
       if (filter.find((value) => value === 'Digivolve')) {
-        returnArray = [...new Set([...returnArray, ...cards.filter((cards) => cards['specialDigivolve'] !== '-')])];
+        returnArray = [
+          ...new Set([
+            ...returnArray,
+            ...cards.filter((cards) => cards['specialDigivolve'] !== '-'),
+          ]),
+        ];
       }
       if (filter.find((value) => value === 'Burst Digivolve')) {
-        returnArray = [...new Set([...returnArray, ...cards.filter((cards) => cards['burstDigivolve'] && cards['burstDigivolve'] !== '-')])];
+        returnArray = [
+          ...new Set([
+            ...returnArray,
+            ...cards.filter(
+              (cards) =>
+                cards['burstDigivolve'] && cards['burstDigivolve'] !== '-'
+            ),
+          ]),
+        ];
       }
       if (filter.find((value) => value === 'DNA Digivolution')) {
-        returnArray = [...new Set([...returnArray, ...cards.filter((cards) => cards['dnaDigivolve'] !== '-')])];
+        returnArray = [
+          ...new Set([
+            ...returnArray,
+            ...cards.filter((cards) => cards['dnaDigivolve'] !== '-'),
+          ]),
+        ];
       }
       if (filter.find((value) => value === 'ACE')) {
-        returnArray = [...new Set([...returnArray, ...cards.filter((cards) => cards['aceEffect'] && cards['aceEffect'] !== '-')])];
+        returnArray = [
+          ...new Set([
+            ...returnArray,
+            ...cards.filter(
+              (cards) => cards['aceEffect'] && cards['aceEffect'] !== '-'
+            ),
+          ]),
+        ];
       }
       if (filter.find((value) => value === 'DigiXros')) {
-        returnArray = [...new Set([...returnArray, ...cards.filter((cards) => cards['digiXros'] !== '-')])];
+        returnArray = [
+          ...new Set([
+            ...returnArray,
+            ...cards.filter((cards) => cards['digiXros'] !== '-'),
+          ]),
+        ];
       }
 
       break;
     case 'illustrator':
-      filter.forEach((filter) => (returnArray = [...new Set([...returnArray, ...cards.filter((cards) => cards['illustrator'].includes(filter))])]));
+      filter.forEach(
+        (filter) =>
+          (returnArray = [
+            ...new Set([
+              ...returnArray,
+              ...cards.filter((cards) => cards['illustrator'].includes(filter)),
+            ]),
+          ])
+      );
       break;
     case 'block':
-      filter.forEach((filter) => (returnArray = [...new Set([...returnArray, ...cards.filter((cards) => cards['block'].includes(filter))])]));
+      filter.forEach(
+        (filter) =>
+          (returnArray = [
+            ...new Set([
+              ...returnArray,
+              ...cards.filter((cards) => cards['block'].includes(filter)),
+            ]),
+          ])
+      );
       break;
     case 'restriction':
-      filter.forEach((filter) => (returnArray = [...new Set([...returnArray, ...cards.filter((cards) => cards['restriction'] === filter)])]));
+      filter.forEach((filter) => {
+          returnArray = [
+            ...new Set([
+              ...returnArray,
+              ...cards.filter((cards) => cards.restrictions.english === filter),
+            ]),
+          ];
+      })
       break;
     case 'source':
-      filter.forEach((filter) => (returnArray = [...new Set([...returnArray, ...cards.filter((cards) => cards['notes'] === filter)])]));
+      filter.forEach(
+        (filter) =>
+          (returnArray = [
+            ...new Set([
+              ...returnArray,
+              ...cards.filter((cards) => cards['notes'] === filter),
+            ]),
+          ])
+      );
       break;
   }
 
   return returnArray;
 }
 
-function applyRangeFilter(cards: ICard[], filter: number[], key: string): ICard[] {
-  let returnArray = [] as ICard[];
+function applyRangeFilter(
+  cards: DigimonCard[],
+  filter: number[],
+  key: string
+): DigimonCard[] {
+  let returnArray = [] as DigimonCard[];
   switch (key) {
     default:
     case 'level':
@@ -241,7 +420,8 @@ function applyRangeFilter(cards: ICard[], filter: number[], key: string): ICard[
       if (filter[0] === 0 && filter[1] === 7) {
         return cards;
       }
-
+      return cards;
+    /* TODO - Implement
       return [
         ...new Set([
           ...cards.filter((cards) => {
@@ -266,7 +446,7 @@ function applyRangeFilter(cards: ICard[], filter: number[], key: string): ICard[
             return (filter[0] <= digivolution1 && filter[1] >= digivolution1) || (filter[0] <= digivolution2 && filter[1] >= digivolution2);
           }),
         ]),
-      ];
+      ]; */
     case 'dp':
       if (filter[0] === 1 && filter[1] === 17) {
         return cards;
@@ -295,24 +475,36 @@ function applyRangeFilter(cards: ICard[], filter: number[], key: string): ICard[
   }
 }
 
-function applySortOrder(cards: ICard[], sort: ISort, collection: ICountCard[]): ICard[] {
+function applySortOrder(
+  cards: DigimonCard[],
+  sort: ISort,
+  collection: ICountCard[]
+): DigimonCard[] {
   const returnArray = [...new Set([...cards])];
   if (sort.sortBy.element === 'playCost' || sort.sortBy.element === 'dp') {
-    return sort.ascOrder ? returnArray.sort(dynamicSortNumber(sort.sortBy.element)) : returnArray.sort(dynamicSortNumber(`-${sort.sortBy.element}`));
+    return sort.ascOrder
+      ? returnArray.sort(dynamicSortNumber(sort.sortBy.element))
+      : returnArray.sort(dynamicSortNumber(`-${sort.sortBy.element}`));
   } else if (sort.sortBy.element === 'count') {
     return sort.ascOrder
       ? returnArray.sort((a, b) => {
-          const countA = collection.find((card) => card.id === a.id)?.count ?? 0;
-          const countB = collection.find((card) => card.id === b.id)?.count ?? 0;
+          const countA =
+            collection.find((card) => card.id === a.id)?.count ?? 0;
+          const countB =
+            collection.find((card) => card.id === b.id)?.count ?? 0;
           return countA - countB;
         })
       : returnArray.sort((a, b) => {
-          const countA = collection.find((card) => card.id === a.id)?.count ?? 0;
-          const countB = collection.find((card) => card.id === b.id)?.count ?? 0;
+          const countA =
+            collection.find((card) => card.id === a.id)?.count ?? 0;
+          const countB =
+            collection.find((card) => card.id === b.id)?.count ?? 0;
           return countB - countA;
         });
   }
-  return sort.ascOrder ? returnArray.sort(dynamicSort(sort.sortBy.element)) : returnArray.sort(dynamicSort(`-${sort.sortBy.element}`));
+  return sort.ascOrder
+    ? returnArray.sort(dynamicSort(sort.sortBy.element))
+    : returnArray.sort(dynamicSort(`-${sort.sortBy.element}`));
 }
 
 //endregion
@@ -324,10 +516,12 @@ export function dynamicSort(property: string): any {
     property = property.substr(1);
   }
   return function (a: any, b: any) {
-    let result = a[property].toLowerCase().localeCompare(b[property].toLowerCase(), undefined, {
-      numeric: true,
-      sensitivity: 'base',
-    });
+    let result = a[property]
+      .toLowerCase()
+      .localeCompare(b[property].toLowerCase(), undefined, {
+        numeric: true,
+        sensitivity: 'base',
+      });
     return result * sortOrder;
   };
 }
@@ -353,8 +547,12 @@ export function sortID(a: string, b: string) {
   const aSetName = hasNumber(aSplit[0]) ? aSplit[0].slice(0, 2) : 'P';
   const bSetName = hasNumber(bSplit[0]) ? bSplit[0].slice(0, 2) : 'P';
 
-  const aSetNumber = hasNumber(aSplit[0]) ? (aSplit[0].substring(2) as any) >>> 0 : 99;
-  const bSetNumber = hasNumber(bSplit[0]) ? (bSplit[0].substring(2) as any) >>> 0 : 99;
+  const aSetNumber = hasNumber(aSplit[0])
+    ? (aSplit[0].substring(2) as any) >>> 0
+    : 99;
+  const bSetNumber = hasNumber(bSplit[0])
+    ? (bSplit[0].substring(2) as any) >>> 0
+    : 99;
 
   const aSetID = aSplit[1];
   const bSetID = bSplit[1];
@@ -364,7 +562,8 @@ export function sortID(a: string, b: string) {
     sensitivity: 'base',
   });
 
-  const SetNumberResult = aSetNumber < bSetNumber ? -1 : aSetNumber > bSetNumber ? 1 : 0;
+  const SetNumberResult =
+    aSetNumber < bSetNumber ? -1 : aSetNumber > bSetNumber ? 1 : 0;
 
   const IDResult = aSetID < bSetID ? -1 : aSetID > bSetID ? 1 : 0;
 

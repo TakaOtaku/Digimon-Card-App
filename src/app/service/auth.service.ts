@@ -21,7 +21,13 @@ export class AuthService {
 
   public authChange = new Subject<boolean>();
 
-  constructor(public afs: AngularFirestore, public afAuth: AngularFireAuth, private digimonBackendService: DigimonBackendService, private messageService: MessageService, private store: Store) {}
+  constructor(
+    public afs: AngularFirestore,
+    public afAuth: AngularFireAuth,
+    private digimonBackendService: DigimonBackendService,
+    private messageService: MessageService,
+    private store: Store
+  ) {}
 
   get isLoggedIn(): boolean {
     return !!this.userData;
@@ -136,7 +142,10 @@ export class AuthService {
 
     this.userData = userData;
 
-    this.digimonBackendService.updateSave(this.userData.save).pipe(first()).subscribe();
+    this.digimonBackendService
+      .updateSave(this.userData.save)
+      .pipe(first())
+      .subscribe();
 
     this.authChange.next(true);
   }
