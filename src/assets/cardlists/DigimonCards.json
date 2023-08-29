@@ -4781,13 +4781,13 @@
       },
       {
         "id": "_P2",
-        "illustrator": "sasasi",
-        "note": "BT-06: Booster Double Diamond"
+        "illustrator": "Tonamikanji",
+        "note": "Evolution Cup 2021"
       },
       {
         "id": "_P3",
-        "illustrator": "Tonamikanji",
-        "note": "Evolution Cup 2021"
+        "illustrator": "sasasi",
+        "note": "BT-06: Booster Double Diamond"
       },
       {
         "id": "_P4",
@@ -4912,7 +4912,8 @@
     "aceEffect": "-",
     "attribute": "-",
     "block": [
-      "00-02"
+      "00",
+      "02"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT1-085.webp",
@@ -5044,7 +5045,9 @@
     "aceEffect": "-",
     "attribute": "-",
     "block": [
-      "00-02"
+      "00",
+      "01",
+      "02"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT1-087.webp",
@@ -5110,7 +5113,8 @@
     "aceEffect": "-",
     "attribute": "-",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT1-088.webp",
@@ -5186,7 +5190,9 @@
     "aceEffect": "-",
     "attribute": "-",
     "block": [
-      "00-02"
+      "00",
+      "01",
+      "02"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT1-089.webp",
@@ -6067,8 +6073,8 @@
     "AAs": [
       {
         "id": "_P1",
-        "illustrator": "koki",
-        "note": "BT01-03: Release Special Booster Ver.1.0"
+        "illustrator": "As'Maria",
+        "note": "PB-01: Tamer's Evolution Box"
       },
       {
         "id": "_P2",
@@ -6079,8 +6085,8 @@
     "JAAs": [
       {
         "id": "_P1",
-        "illustrator": "koki",
-        "note": "BT-01: Booster New Evolution"
+        "illustrator": "As'Maria",
+        "note": "PB-01: Tamer's Evolution Box"
       }
     ],
     "aceEffect": "-",
@@ -6102,7 +6108,7 @@
     "effect": "[Main] 1 of your Digimon gets +3000 DP for the turn.",
     "form": "-",
     "id": "BT1-108",
-    "illustrator": "As'Maria ",
+    "illustrator": "koki",
     "name": {
       "english": "Horn Buster",
       "japanese": "\u30db\u30fc\u30f3\u30d0\u30b9\u30bf\u30fc",
@@ -6110,7 +6116,7 @@
       "simplifiedChinese": "\u5de8\u89d2\u7834\u574f\u70ae",
       "traditionalChinese": "\u8d85\u5927\u89d2\u70ae"
     },
-    "notes": "PB-01: Tamer's Evolution Box",
+    "notes": "\u25b9RELEASE SPECIAL BOOSTER 1.0 [BT01-B0T3]",
     "playCost": "1",
     "rarity": "C",
     "restrictions": {
@@ -6182,13 +6188,13 @@
       },
       {
         "id": "_P3",
-        "illustrator": "Hokyyuu",
-        "note": "ST-9: Starter Deck Ultimate Ancient Dragon"
+        "illustrator": "Teppei Tadokoro",
+        "note": "Final Championships 2021 Tamer's Evolution Pack"
       },
       {
         "id": "_P4",
-        "illustrator": "Teppei Tadokoro",
-        "note": "Final Championships 2021 Tamer's Evolution Pack"
+        "illustrator": "Hokyyuu",
+        "note": "ST-9: Starter Deck Ultimate Ancient Dragon"
       }
     ],
     "JAAs": [
@@ -6211,7 +6217,8 @@
     "aceEffect": "-",
     "attribute": "-",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT1-110.webp",
@@ -6460,6 +6467,11 @@
         "id": "_P1",
         "illustrator": "sasasi",
         "note": "BT01-03: Release Special Booster Ver.1.0"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "No Illustrator",
+        "note": "RB-01: Resurgence Booster"
       }
     ],
     "JAAs": [
@@ -6477,7 +6489,8 @@
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
-      "00"
+      "00",
+      "02"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT1-115.webp",
@@ -9437,7 +9450,7 @@
     "AAs": [],
     "JAAs": [],
     "aceEffect": "-",
-    "attribute": "-",
+    "attribute": "Virus",
     "block": [
       "02"
     ],
@@ -17857,7 +17870,7 @@
     "digivolveEffect": "[Opponent's Turn] When an effect trashes this card from digivolution cards, gain 1 memory.",
     "dnaDigivolve": "-",
     "dp": "6000",
-    "effect": "\uff1cDecoy (Bagra Army)\uff1e(When your other bagra army Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent you may delete this Digimon to prevent 1 of those Digimon's deletion)\n[All Turns] All of your [Yuu Amano] can't be deleted.\n[On Deletion] You may play 1 [Damemon] from your trash suspended without paying the cost.",
+    "effect": "\uff1cDecoy (Bagra Army)\uff1e\n[All Turns] All of your [Yuu Amano] can't be deleted.\n[On Deletion] You may play 1 [Damemon] from your trash suspended without paying the cost.",
     "form": "Champion",
     "id": "BT11-082",
     "illustrator": "GOSSAN",
@@ -20715,7 +20728,13 @@
         "note": "Bandai Card Games Official Guide"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Kazumasa Yasukuni",
+        "note": "Tamer Battle EX"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "Free",
     "block": [
@@ -32484,7 +32503,7 @@
         "level": "2"
       }
     ],
-    "digivolveEffect": "[Your Turn] While this Digimon has [Greymon]/[Omnimon]\u00a0in its name,it gets +2000 DP.",
+    "digivolveEffect": "[Your Turn] While this Digimon has [Greymon]/[Omnimon]\u00a0in its name, it gets +2000 DP.",
     "dnaDigivolve": "-",
     "dp": "1000",
     "effect": "[Start of Your Main Phase] If you have a Tamer with [Tai Kamiya]\u00a0in its name, this Digimon may digivolve into [Greymon] in your hand without paying the cost.",
@@ -32832,7 +32851,7 @@
         "note": "BT-14: Booster Blast Ace"
       }
     ],
-    "aceEffect": "Overflow \uff1c-3\uff1e",
+    "aceEffect": "Overflow \uff1c-3\uff1e.",
     "attribute": "Vaccine",
     "block": [
       "03"
@@ -33461,7 +33480,7 @@
         "note": "BT-14: Booster Blast Ace"
       }
     ],
-    "aceEffect": "Overflow \uff1c-3\uff1e",
+    "aceEffect": "Overflow \uff1c-3\uff1e.",
     "attribute": "Vaccine",
     "block": [
       "03"
@@ -34050,7 +34069,7 @@
         "note": "BT-14: Booster Blast Ace"
       }
     ],
-    "aceEffect": "Overflow \uff1c-3\uff1e",
+    "aceEffect": "Overflow \uff1c-3\uff1e.",
     "attribute": "Vaccine",
     "block": [
       "03"
@@ -34674,7 +34693,7 @@
         "note": "BT-14: Booster Blast Ace"
       }
     ],
-    "aceEffect": "Overflow \uff1c-3\uff1e",
+    "aceEffect": "Overflow \uff1c-3\uff1e.",
     "attribute": "Data",
     "block": [
       "03"
@@ -35274,7 +35293,7 @@
     "digivolveEffect": "[All Turns] [Once Per Turn] When this Digimon would leave the battle area other than by your own effect, by deleting 1 of your other Digimon with the [D-Brigade]\u00a0trait, prevent it from leaving play.",
     "dnaDigivolve": "-",
     "dp": "4000",
-    "effect": "[When Attacking] Reveal the top 3 cards of your deck. You may play 1 Digimon card among them with the [D-Brigade]/[DigiPolice]\u00a0trait and a play cost of 3 or less without paying its cost. Return the rest the the bottom of the deck.\n[Rule] Name: This card's name is also treated as [Commandramon]..",
+    "effect": "[When Attacking] Reveal the top 3 cards of your deck. You may play 1 card with the [D-Brigade]/[DigiPolice]\u00a0trait with a play cost of 3 or less among them without paying the cost. Return the rest the the bottom of the deck.\n[Rule] Name: This card's name is also treated as [Commandramon]..",
     "form": "Champion",
     "id": "BT14-060",
     "illustrator": "Kaz",
@@ -35474,7 +35493,7 @@
     "digivolveEffect": "[All Turns] [Once Per Turn] When one of your other Digimon are deleted, reveal the top 3 cards of your deck. You may play 1 [Commandramon] without paying its cost. Trash the rest.",
     "dnaDigivolve": "-",
     "dp": "7000",
-    "effect": "[On Play] [When Digivolving] Reveal the top 3 cards of your deck. You may play 1 Digimon card among them with [D-Brigade]/[DigiPolice]\u00a0trait with a play cost of 4 or less without paying its cost. Trash the rest.",
+    "effect": "[On Play] [When Digivolving] Reveal the top 3 cards of your deck. You may play 1 card with the [D-Brigade]/[DigiPolice]\u00a0trait with a play cost of 4 or less among them without paying the cost. Trash the rest.",
     "form": "Ultimate",
     "id": "BT14-064",
     "illustrator": "kaz",
@@ -35691,7 +35710,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "12000",
-    "effect": "[When Digivolving] Delete any of your opponent's Digimon whose play costs add up to 7 or less.\n[Opponent's Turn] All of your Digimon with the [D-Brigade]\u00a0trait gain \uff1cBlocker\uff1e \n[End of Your Turn] [Once Per Turn] Reveal the top 3 cards of your deck. You may play any Digimon among them with the [D-Brigade]/[DigiPolice]\u00a0trait whose play costs add up to 7 or less, without paying their costs. Trash the rest.",
+    "effect": "[When Digivolving] Delete any of your opponent's Digimon whose play costs add up to 7 or less.\n[Opponent's Turn] All of your Digimon with the [D-Brigade]\u00a0trait gain \uff1cBlocker\uff1e \n[End of Your Turn] [Once Per Turn] Reveal the top 3 cards of your deck. You may play any number of cards with the [D-Brigade]/[DigiPolice]\u00a0trait up to a total play cost of 7 among them without paying the cost. Trash the rest.",
     "form": "Mega",
     "id": "BT14-068",
     "illustrator": "kaz",
@@ -37446,7 +37465,8 @@
     "aceEffect": "-",
     "attribute": "-",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT2-001.webp",
@@ -37577,30 +37597,31 @@
       {
         "id": "_P1",
         "illustrator": "Kenji Watanabe",
-        "note": "BT01-03: Release Special Booster Ver.1.5"
+        "note": "Event Pack 2"
       },
       {
         "id": "_P2",
         "illustrator": "Kenji Watanabe",
-        "note": "Event Pack 2"
+        "note": "Digimon Card Game Fest - Digi-Egg Set"
       },
       {
         "id": "_P3",
-        "illustrator": "Kenji Watanabe",
-        "note": "Digimon Card Game Fest - Digi-Egg Set"
+        "illustrator": "koki",
+        "note": "ST-14: Advanced Deck Set Beelzemon"
       }
     ],
     "JAAs": [
       {
         "id": "_P1",
-        "illustrator": "Kenji Watanabe",
-        "note": "BT-02: Booster Ultimate Power"
+        "illustrator": "koki",
+        "note": "ST-14: Advanced Deck Set Beelzemon"
       }
     ],
     "aceEffect": "-",
     "attribute": "-",
     "block": [
-      "00"
+      "00",
+      "02"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT2-004.webp",
@@ -37616,7 +37637,7 @@
     "effect": "-",
     "form": "In-Training",
     "id": "BT2-004",
-    "illustrator": "koki",
+    "illustrator": "Kenji Watanabe",
     "name": {
       "english": "Argomon",
       "japanese": "\u30a2\u30eb\u30b4\u30e2\u30f3",
@@ -37624,7 +37645,7 @@
       "simplifiedChinese": "\u963f\u8033\u6208\u517d",
       "traditionalChinese": "\u963f\u723e\u6208\u7378"
     },
-    "notes": "ADVANCE DECK BEELZEMON [ST14]",
+    "notes": "\u25b9RELEASE SPECIAL BOOSTER 1.5 [BT01-B0T3]",
     "playCost": "-",
     "rarity": "U",
     "restrictions": {
@@ -68971,7 +68992,7 @@
     "digivolveEffect": "[Security] Play this card without paying its memory cost.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Your Turn] When one of your Digimon with [Gabumon]/[Garurumon]\u00a0in its name (other than [KendoGarurumon]/[notsupport]) moves from the breeding area to the battle area, gain 1 memory and \uff1cDraw 1\uff1e \n[Main] [Once Per Turn] You can digivolve your [Gabumon] into 1 [Gabumon - Bond of Friendship] in your hand for its digivolution cost, ignoring its level. If you do, trash the top 2 cards of your security stack. Then, if you have 1 or more security cards, delete that Digimon at the end of the turn.",
+    "effect": "[Your Turn] When one of your Digimon with [Gabumon]/[Garurumon]\u00a0in its name (other than [KendoGarurumon]) moves from the breeding area to the battle area, gain 1 memory and \uff1cDraw 1\uff1e \n[Main] [Once Per Turn] You can digivolve your [Gabumon] into 1 [Gabumon - Bond of Friendship] in your hand for its digivolution cost, ignoring its level. If you do, trash the top 2 cards of your security stack. Then, if you have 1 or more security cards, delete that Digimon at the end of the turn.",
     "form": "-",
     "id": "BT6-088",
     "illustrator": "No Illustrator",
@@ -100762,7 +100783,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "2000",
-    "effect": "\uff1cDecoy (D-Brigade)\uff1e(When your other d-brigade Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent you may delete this Digimon to prevent 1 of those Digimon's deletion).",
+    "effect": "\uff1cDecoy (D-Brigade)\uff1e.",
     "form": "Rookie",
     "id": "EX3-046",
     "illustrator": "toriyufu",
@@ -106436,8 +106457,20 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Takase",
+        "note": "Box Promotion Pack: Animal Colosseum"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Takase",
+        "note": "Box Promotion Pack: Animal Colosseum"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "-",
     "block": [
@@ -106480,8 +106513,20 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Takase",
+        "note": "Box Promotion Pack: Animal Colosseum"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Takase",
+        "note": "Box Promotion Pack: Animal Colosseum"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "-",
     "block": [
@@ -106524,8 +106569,20 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "YAMURETSU",
+        "note": "Box Promotion Pack: Animal Colosseum"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "YAMURETSU",
+        "note": "Box Promotion Pack: Animal Colosseum"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "-",
     "block": [
@@ -106568,8 +106625,20 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "yuuki.",
+        "note": "Box Promotion Pack: Animal Colosseum"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "yuuki.",
+        "note": "Box Promotion Pack: Animal Colosseum"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "-",
     "block": [
@@ -106612,8 +106681,20 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Minato Sashima",
+        "note": "Box Promotion Pack: Animal Colosseum"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Minato Sashima",
+        "note": "Box Promotion Pack: Animal Colosseum"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "-",
     "block": [
@@ -106656,8 +106737,20 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Takase",
+        "note": "Box Promotion Pack: Animal Colosseum"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Takase",
+        "note": "Box Promotion Pack: Animal Colosseum"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "-",
     "block": [
@@ -108117,7 +108210,7 @@
     "digivolveEffect": "[Opponent's Turn] While this Digimon has [Leomon]\u00a0in its name, it gains \uff1cBlocker\uff1e.",
     "dnaDigivolve": "-",
     "dp": "7000",
-    "effect": "\uff1cIndomitable\uff1e \n[On Play] [When Digivolving] 1 of your opponent's Digimon gets -3000 DP until the end of your opponent's turn.",
+    "effect": "\uff1cFortitude\uff1e (When this Digimon with digivolution cards is deleted, play this card without paying the cost)\n[On Play] [When Digivolving] 1 of your opponent's Digimon gets -3000 DP until the end of your opponent's turn.",
     "form": "Ultimate",
     "id": "EX5-032",
     "illustrator": "Spareribs",
@@ -108296,7 +108389,7 @@
     "digivolveEffect": "[All Turns] While this Digimon is suspended, it gains +1000 DP.",
     "dnaDigivolve": "-",
     "dp": "2000",
-    "effect": "[On Play] Reveal the top 3 cards of your deck. Add all Digimon cards with \uff1cIndomitable\uff1e from among them to your hand. Return the rest to the bottom of the deck.",
+    "effect": "[On Play] Reveal the top 3 cards of your deck. Add all Digimon cards with \uff1cFortitude\uff1e from among them to your hand. Return the rest to the bottom of the deck.",
     "form": "Rookie",
     "id": "EX5-035",
     "illustrator": "YAMURETSU",
@@ -108346,7 +108439,7 @@
     "digivolveEffect": "[All Turns] While this Digimon is suspended, it gains +1000 DP.",
     "dnaDigivolve": "-",
     "dp": "4000",
-    "effect": "\uff1cIndomitable\uff1e.",
+    "effect": "\uff1cFortitude\uff1e (When this Digimon with digivolution cards is deleted, play this card without paying the cost).",
     "form": "Champion",
     "id": "EX5-036",
     "illustrator": "YAMURETSU",
@@ -108484,7 +108577,7 @@
     "digivolveEffect": "[All Turns] While this Digimon is suspended, it gains +1000 DP.",
     "dnaDigivolve": "-",
     "dp": "7000",
-    "effect": "\uff1cIndomitable\uff1e \n[On Play] [When Digivolving] Suspend 1 of your opponent's Digimon with DP less than or equal to this Digimon.",
+    "effect": "\uff1cFortitude\uff1e (When this Digimon with digivolution cards is deleted, play this card without paying the cost)\n[On Play] [When Digivolving] Suspend 1 of your opponent's Digimon with DP less than or equal to this Digimon.",
     "form": "Ultimate",
     "id": "EX5-039",
     "illustrator": "banira",
@@ -108657,7 +108750,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "12000",
-    "effect": "\uff1cIndomitable\uff1e \n[On Play] [When Digivolving] Reveal the top card of your deck. If that card is a level 5 or lower Digimon card with \uff1cIndomitable\uff1e, you may play it without paying the memory cost. Add the rest to your hand.\n[Your Turn] All of your Digimon with \uff1cIndomitable\uff1e and no digivolution cards gain \uff1cRush\uff1e.",
+    "effect": "\uff1cFortitude\uff1e (When this Digimon with digivolution cards is deleted, play this card without paying the cost)\n[On Play] [When Digivolving] Reveal the top card of your deck. If that card is a level 5 or lower Digimon card with \uff1cFortitude\uff1e, you may play it without paying the memory cost. Add the rest to your hand.\n[Your Turn] All of your Digimon with \uff1cFortitude\uff1e and no digivolution cards gain \uff1cRush\uff1e.",
     "form": "Mega",
     "id": "EX5-042",
     "illustrator": "sasasi",
@@ -109049,7 +109142,7 @@
     "digivolveEffect": "[Your Turn] While this Digimon has [Leomon]\u00a0in its name, it gains \uff1cPiercing\uff1e.",
     "dnaDigivolve": "-",
     "dp": "7000",
-    "effect": "\uff1cIndomitable\uff1e \n[On Play] [When Digivolving] Return 1 of your opponent's Digimon with 4000 DP or less to the bottom of the deck.",
+    "effect": "\uff1cFortitude\uff1e (When this Digimon with digivolution cards is deleted, play this card without paying the cost)\n[On Play] [When Digivolving] Return 1 of your opponent's Digimon with 4000 DP or less to the bottom of the deck.",
     "form": "Ultimate",
     "id": "EX5-049",
     "illustrator": "Kazumasa Yasukuni",
@@ -109382,7 +109475,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "13000",
-    "effect": "\uff1cIndomitable\uff1e \n[When Digivolving] [On Deletion] \uff1cDe-Digivolve1\uff1e on 1 of your opponent's Digimon. Then, return 1 of your opponent's Digimon with 6000 DP or less Digimon to the bottom of the deck.\n[End of Attack] [Once Per Turn] Return 1 of your opponent's Digimon with 4000 DP or less Digimon to the bottom of the deck. If you don't, unsuspend this Digimon.",
+    "effect": "\uff1cFortitude\uff1e (When this Digimon with digivolution cards is deleted, play this card without paying the cost)\n[When Digivolving] [On Deletion] \uff1cDe-Digivolve1\uff1e on 1 of your opponent's Digimon. Then, return 1 of your opponent's Digimon with 6000 DP or less Digimon to the bottom of the deck.\n[End of Attack] [Once Per Turn] Return 1 of your opponent's Digimon with 4000 DP or less Digimon to the bottom of the deck. If you don't, unsuspend this Digimon.",
     "form": "Mega",
     "id": "EX5-055",
     "illustrator": "Nakano Haito",
@@ -110075,7 +110168,7 @@
     "id": "EX5-069",
     "illustrator": "Hisashi Fujiwara",
     "name": {
-      "english": "Rostrum",
+      "english": "Biting Crush",
       "japanese": "\u30ed\u30b9\u30c8\u30eb\u30e0",
       "korean": "-",
       "simplifiedChinese": "-",
@@ -110131,7 +110224,7 @@
     "id": "EX5-070",
     "illustrator": "Nakano Haito",
     "name": {
-      "english": "X Antibody Protoform",
+      "english": "X Antibody Proto Form",
       "japanese": "X\u6297\u4f53PF",
       "korean": "-",
       "simplifiedChinese": "-",
@@ -111170,7 +111263,7 @@
   {
     "AAs": [],
     "JAAs": [],
-    "aceEffect": "Overflow \uff1c-3\uff1e",
+    "aceEffect": "Overflow \uff1c-3\uff1e.",
     "attribute": "Virus",
     "block": [
       "03"
@@ -112149,6 +112242,11 @@
         "id": "_P1",
         "illustrator": "Takase",
         "note": "Event Pack 3"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "Takase",
+        "note": "RB-01: Resurgence Booster"
       }
     ],
     "JAAs": [
@@ -112199,7 +112297,7 @@
       "chinese": "Not released",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -112255,7 +112353,7 @@
       "chinese": "Not released",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -112305,7 +112403,7 @@
       "chinese": "Not released",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -112338,6 +112436,11 @@
         "id": "_P5",
         "illustrator": "toriyufu",
         "note": "Event Pack 3 Alt-Art Gold Stamp Set"
+      },
+      {
+        "id": "_P6",
+        "illustrator": "As'Maria",
+        "note": "RB-01: Resurgence Booster"
       }
     ],
     "JAAs": [
@@ -112388,7 +112491,7 @@
       "chinese": "Not released",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -112396,7 +112499,13 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Takase",
+        "note": "RB-01: Resurgence Booster"
+      }
+    ],
     "JAAs": [
       {
         "id": "_P1",
@@ -112445,7 +112554,7 @@
       "chinese": "Not released",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -112507,7 +112616,7 @@
       "chinese": "Not released",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -112557,7 +112666,7 @@
       "chinese": "Not released",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -112619,7 +112728,7 @@
       "chinese": "Not released",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -112940,10 +113049,10 @@
     "playCost": "11",
     "rarity": "P",
     "restrictions": {
-      "chinese": "Not released",
+      "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -113002,10 +113111,10 @@
     "playCost": "11",
     "rarity": "P",
     "restrictions": {
-      "chinese": "Not released",
+      "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -115303,12 +115412,19 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "No Illustrator",
+        "note": "RB-01: Resurgence Booster"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "-",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/P-062.webp",
@@ -115352,13 +115468,19 @@
         "id": "_P1",
         "illustrator": "No Illustrator",
         "note": "Revision Pack 2023"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "No Illustrator",
+        "note": "RB-01: Resurgence Booster"
       }
     ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "-",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/P-063.webp",
@@ -115397,12 +115519,19 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "No Illustrator",
+        "note": "RB-01: Resurgence Booster"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "-",
     "block": [
-      "01"
+      "01",
+      "02"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/P-064.webp",
@@ -115423,8 +115552,8 @@
       "english": "Kiyoshiro Higashimitarai",
       "japanese": "\u6771\u5fa1\u624b\u6d17\u6e05\u53f8\u90ce",
       "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "simplifiedChinese": "\u4e1c\u5fa1\u624b\u6d17\u6e05\u53f8\u90ce",
+      "traditionalChinese": "\u6771\u5fa1\u624b\u6d17\u6e05\u53f8\u90ce"
     },
     "notes": "Official Tournament Pack Vol. 5",
     "playCost": "3",
@@ -116866,15 +116995,15 @@
     "effect": "[When Digivolving] By placing a card with [Gammamon]\u00a0in its name under this Digimon as its bottom digivolution card, this Digimon gets +2000 DP, for the turn.\n[When Attacking] Delete 1 of your opponent's Digimon with 6000 DP or less. If this Digimon has 12000 DP or more, Delete 2 of your opponent's Digimon with 6000 DP or less instead.",
     "form": "Mega",
     "id": "P-088",
-    "illustrator": "-",
+    "illustrator": "No Illustrator",
     "name": {
       "english": "Siriusmon",
       "japanese": "\u30b7\u30ea\u30a6\u30b9\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "\u5929\u72fc\u661f\u7378"
     },
-    "notes": "-",
+    "notes": "BOOSTER RESURGENCE BOOSTER [RB01]",
     "playCost": "11",
     "rarity": "P",
     "restrictions": {
@@ -116916,15 +117045,15 @@
     "effect": "[When Digivolving] You may trash up to 3 blue cards from your hand. For each card trashed by this effect, you may trash 1 card under 1 of your opponent's Digimon or Tamers. Then, 1 of your opponent's Digimon or Tamers without cards under it can't suspend until the end of your opponent's turn.\n[Opponent's Turn] [Once Per Turn] When an opponent's Digimon attacks, end that attack by returning 3 cards with [Jellymon]\u00a0in their text from your trash to the bottom of your deck.",
     "form": "Mega",
     "id": "P-089",
-    "illustrator": "-",
+    "illustrator": "No Illustrator",
     "name": {
       "english": "Amphimon",
       "japanese": "\u30a2\u30f3\u30d5\u30a3\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "\u5b89\u83f2\u7378"
     },
-    "notes": "-",
+    "notes": "BOOSTER RESURGENCE BOOSTER [RB01]",
     "playCost": "11",
     "rarity": "P",
     "restrictions": {
@@ -116966,15 +117095,15 @@
     "effect": "[When Digivolving] Suspend 2 of your opponent's Digimon.\n[All Turns] [Once Per Turn] When one of your Digimon deletes an opponent's Digimon in battle and survives, if [Angoramon] is in this Digimon's digivolution cards, unsuspend 1 of your Digimon.",
     "form": "Mega",
     "id": "P-090",
-    "illustrator": "-",
+    "illustrator": "No Illustrator",
     "name": {
       "english": "Diarbbitmon",
       "japanese": "\u30c7\u30a3\u30eb\u30d3\u30c3\u30c8\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "\u8fea\u723e\u5154\u5fb7\u7378"
     },
-    "notes": "-",
+    "notes": "BOOSTER RESURGENCE BOOSTER [RB01]",
     "playCost": "11",
     "rarity": "P",
     "restrictions": {
@@ -117887,6 +118016,432 @@
       "traditionalChinese": "-"
     },
     "notes": "\u25b9BOOSTER BLAST ACE [BT14]",
+    "playCost": "2",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Option",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "Overflow \uff1c-4\uff1e.",
+    "attribute": "Free",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/P-109.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "P-109",
+    "cardType": "Digimon",
+    "color": "Blue/Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "4",
+        "level": "5"
+      },
+      {
+        "color": "Green",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e \n[On Play] [When Digivolving]Suspend 1 Digimon, then unsuspend 1 Digimon.\n[All Turns] [Once Per Turn] When this Digimon becomes suspended, you may play a Tamer card or a Digimon card with 4000 DP or less from your hand without paying the cost.",
+    "form": "Mega",
+    "id": "P-109",
+    "illustrator": "No Illustrator",
+    "name": {
+      "english": "Imperialdramon: Dragon Mode",
+      "japanese": "\u30a4\u30f3\u30da\u30ea\u30a2\u30eb\u30c9\u30e9\u30e2\u30f3\uff1a\u30c9\u30e9\u30b4\u30f3\u30e2\u30fc\u30c9",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "Tamer Battle",
+    "playCost": "7",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve][Paildramon]/[Dinobeemon]: Cost 3 ",
+    "type": "Ancient Dragon",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Free",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/P-110.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "P-110",
+    "cardType": "Digimon",
+    "color": "Purple/Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "3",
+        "level": "3"
+      },
+      {
+        "color": "Red",
+        "cost": "3",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[On Deletion] You may play 1 [Veemon]/[Wormmon] from your hand suspended without paying the cost.",
+    "dnaDigivolve": "-",
+    "dp": "5000",
+    "effect": "[When Digivolving] You may play 1 [Veemon]/[Wormmon] from your trash suspended without paying the cost.",
+    "form": "Armor Form",
+    "id": "P-110",
+    "illustrator": "Itohiro",
+    "name": {
+      "english": "Shadramon",
+      "japanese": "\u30b7\u30a7\u30a4\u30c9\u30e9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "3rd Anniversary Survey Pack",
+    "playCost": "5",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Unrestricted",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve][Wormmon]: Cost 2 ",
+    "type": "Insectoid",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Data",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/P-111.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "P-111",
+    "cardType": "Digimon",
+    "color": "Yellow/Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "4",
+        "level": "4"
+      },
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "[All Turns] [Once Per Turn] When another Digimon attacks, you may play 1 black or yellow level 3 Digimon from your hand without paying the cost.",
+    "dnaDigivolve": "-",
+    "dp": "7000",
+    "effect": "\uff1cBlocker\uff1e \n[On Play] [When Digivolving] 1 of your opponent's Digimon gets -3000 DP for each of your Digimon for the turn.",
+    "form": "Ultimate",
+    "id": "P-111",
+    "illustrator": "KISUKE",
+    "name": {
+      "english": "Knightmon",
+      "japanese": "\u30ca\u30a4\u30c8\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "3rd Anniversary Survey Pack",
+    "playCost": "7",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Unrestricted",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Warrior",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/P-112.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "P-112",
+    "cardType": "Digimon",
+    "color": "Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When another [Eosmon] is played, this Digimon may digivolve into an[Eosmon] from your hand, reducing the digivolution cost by 3.",
+    "dnaDigivolve": "-",
+    "dp": "1000",
+    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 [Eosmon] and 1 [Menoa Bellucci] among them to your hand. Place the rest at the bottom of your deck. Then, by placing this card under 1 of your [Eosmon], you may play 1 [Menoa Bellucci] from your hand without paying the cost.",
+    "form": "Rookie",
+    "id": "P-112",
+    "illustrator": "Itohiro",
+    "name": {
+      "english": "Morphomon",
+      "japanese": "\u30e2\u30eb\u30d5\u30a9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "3rd Anniversary Survey Pack",
+    "playCost": "3",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Unrestricted",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Insectoid",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "Overflow \uff1c-4\uff1e.",
+    "attribute": "Virus",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/P-113.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "P-113",
+    "cardType": "Digimon",
+    "color": "Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e \n[When Digivolving] Suspend all of your opponent's Digimon with DP less or equal than this Digimon.\n[All Turns] [Once Per Turn] When an opponent's Digimon is deleted in battle, trash the top card of your opponent's security stack.",
+    "form": "Mega",
+    "id": "P-113",
+    "illustrator": "Shin Sasaki",
+    "name": {
+      "english": "RustTyrannomon",
+      "japanese": "\u30e9\u30b9\u30c8\u30c6\u30a3\u30e9\u30ce\u30e2\u30f3",
+      "korean": "\ub7ec\uc2a4\ud2b8\ud2f0\ub77c\ub178\ubaac",
+      "simplifiedChinese": "\u7ec8\u6781\u5de8\u9f99\u517d",
+      "traditionalChinese": "\u7d42\u6975\u5de8\u9f8d\u7378"
+    },
+    "notes": "3rd Anniversary Survey Pack",
+    "playCost": "7",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Unrestricted",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve]Lv.5 w/[Tyrannomon]\u00a0in its name: Cost 3 ",
+    "type": "Cyborg",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Spareribs",
+        "note": "PB-16: Tamer Goods Set Diaboromon"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Spareribs",
+        "note": "PB-16: Tamer Goods Set Diaboromon"
+      }
+    ],
+    "aceEffect": "Overflow \uff1c-4\uff1e.",
+    "attribute": "Unknown",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/P-114.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "P-114",
+    "cardType": "Digimon",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "11000",
+    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e \n[When Digivolving] [When Attacking] You may play 1 [Diaboromon] Token without paying its memory cost (Diaboromon Tokens are level 6 white Digimon with a memory cost of 14, 3000 DP, and are Mega form, Unidentified type, and Unknown attribute)\n[All Turns] [Once Per Turn] When another Digimon is played by an effect, you may delete 1 of your opponent's Digimon with a play cost of 3 or less. For each [Diaboromon] you have in play, increase the maximum cost of the Digimon card you can delete with this effect by 2.",
+    "form": "Mega",
+    "id": "P-114",
+    "illustrator": "SENNSU",
+    "name": {
+      "english": "Diaboromon",
+      "japanese": "\u30c7\u30a3\u30a2\u30dc\u30ed\u30e2\u30f3",
+      "korean": "\ub514\uc544\ube14\ub85c\ubaac",
+      "simplifiedChinese": "\u8d85\u6076\u9b54\u517d",
+      "traditionalChinese": "\u8d85\u60e1\u9b54\u7378"
+    },
+    "notes": "3rd Anniversary Survey Pack",
+    "playCost": "6",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Unrestricted",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Unidentified",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Virus",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/P-115.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "P-115",
+    "cardType": "Digimon",
+    "color": "Purple/Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "3",
+        "level": "3"
+      },
+      {
+        "color": "Black",
+        "cost": "3",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[Your Turn] While this Digimon is level 5 or higher and has the [Bagra Army]/[Twilight]\u00a0trait, this Digimon gets \uff1cSecurity Attack +1\uff1e.",
+    "dnaDigivolve": "-",
+    "dp": "4000",
+    "effect": "[On Deletion] You may play 1 tamer card with [Nene Amano]/[Yuu Amano]\u00a0in its name from your hand or trash without paying the cost. Then, \uff1cSave\uff1e.",
+    "form": "Champion",
+    "id": "P-115",
+    "illustrator": "KISUKE",
+    "name": {
+      "english": "SkullKnightmon",
+      "japanese": "\u30b9\u30ab\u30eb\u30ca\u30a4\u30c8\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "3rd Anniversary Survey Pack",
+    "playCost": "4",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Unrestricted",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Undead/Bagra Army/Twilight",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "-",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/P-116.webp",
+    "cardLv": "-",
+    "cardNumber": "P-116",
+    "cardType": "Option",
+    "color": "White",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[Security] Activate this card's [Main] effect.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "effect": "If you have [Agumon]/[Pulsemon]/[Gammamon] in play, this card's use cost becomes 0.\n[Main] Reveal the top 2 cards of your deck. Add all Tamer cards with a play cost of 3 or less among them to your hand. Return the rest to the top of the deck.",
+    "form": "-",
+    "id": "P-116",
+    "illustrator": "-",
+    "name": {
+      "english": "DIGIMON CON 2023",
+      "japanese": "DIGIMON CON 2023",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "-",
     "playCost": "2",
     "rarity": "P",
     "restrictions": {
@@ -119935,7 +120490,8 @@
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/ST1-02.webp",
@@ -120052,7 +120608,9 @@
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
-      "00-02"
+      "00",
+      "01",
+      "02"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/ST1-03.webp",
@@ -120315,7 +120873,9 @@
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
-      "00-02"
+      "00",
+      "01",
+      "02"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/ST1-07.webp",
@@ -120531,7 +121091,8 @@
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/ST1-10.webp",
@@ -120633,7 +121194,8 @@
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/ST1-11.webp",
@@ -120748,7 +121310,7 @@
     "AAs": [
       {
         "id": "_P1",
-        "illustrator": "shosuke ",
+        "illustrator": "shosuke",
         "note": "PB-01: Tamer's Evolution Box"
       },
       {
@@ -120760,7 +121322,7 @@
     "JAAs": [
       {
         "id": "_P1",
-        "illustrator": "shosuke ",
+        "illustrator": "shosuke",
         "note": "PB-01: Tamer's Evolution Box"
       }
     ],
@@ -120936,7 +121498,8 @@
     "aceEffect": "-",
     "attribute": "-",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/ST1-16.webp",
@@ -124143,7 +124706,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -124199,7 +124762,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -124246,7 +124809,7 @@
       "english": "ClearAgumon",
       "japanese": "\u30af\u30ea\u30a2\u30a2\u30b0\u30e2\u30f3",
       "korean": "-",
-      "simplifiedChinese": "-",
+      "simplifiedChinese": "\u900f\u660e\u4e9a\u53e4\u517d",
       "traditionalChinese": "\u900f\u660e\u4e9e\u53e4\u7378"
     },
     "notes": "STARTER DECK DRAGON OF COURAGE [ST15]",
@@ -124255,7 +124818,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -124302,8 +124865,8 @@
       "english": "Solarmon",
       "japanese": "\u30bd\u30fc\u30e9\u30fc\u30e2\u30f3",
       "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "simplifiedChinese": "\u65e5\u8f6e\u517d",
+      "traditionalChinese": "\u592a\u967d\u7378"
     },
     "notes": "STARTER DECK DRAGON OF COURAGE [ST15]",
     "playCost": "3",
@@ -124311,7 +124874,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -124457,9 +125020,9 @@
     "name": {
       "english": "Tankmon",
       "japanese": "\u30bf\u30f3\u30af\u30e2\u30f3",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "korean": "\ud0f1\ud06c\ubaac",
+      "simplifiedChinese": "\u5766\u514b\u517d",
+      "traditionalChinese": "\u5766\u514b\u7378"
     },
     "notes": "STARTER DECK DRAGON OF COURAGE [ST15]",
     "playCost": "5",
@@ -124467,7 +125030,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -124496,7 +125059,13 @@
     "cardType": "Digimon",
     "color": "Black",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
     "digivolveEffect": "[All Turns] [Once Per Turn] When an attack target is switched, gain 1 memory.",
     "dnaDigivolve": "-",
     "dp": "5000",
@@ -124517,7 +125086,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -124673,7 +125242,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -124744,8 +125313,8 @@
     "rarity": "SR",
     "restrictions": {
       "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -124845,7 +125414,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -124884,10 +125453,10 @@
     "illustrator": "No Illustrator",
     "name": {
       "english": "Advance of Courage",
-      "japanese": "",
+      "japanese": "\u52c7\u6c17\u306e\u524d\u9032",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "\u52c7\u6c23\u7684\u524d\u9032"
     },
     "notes": "STARTER DECK DRAGON OF COURAGE [ST15]",
     "playCost": "4",
@@ -124895,7 +125464,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -124937,7 +125506,7 @@
       "japanese": "\u30c8\u30e9\u30a4\u30c7\u30f3\u30c8\u30a2\u30fc\u30e0",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "\u4e09\u53c9\u621f\u8155\u64ca"
     },
     "notes": "STARTER DECK DRAGON OF COURAGE [ST15]",
     "playCost": "6",
@@ -124945,7 +125514,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -124995,7 +125564,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -125051,7 +125620,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -125107,7 +125676,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -125213,7 +125782,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -125259,9 +125828,9 @@
     "name": {
       "english": "Bakemon",
       "japanese": "\u30d0\u30b1\u30e2\u30f3",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "korean": "\uace0\uc2a4\ubaac",
+      "simplifiedChinese": "\u9b3c\u602a\u517d",
+      "traditionalChinese": "\u731b\u9b3c\u7378"
     },
     "notes": "STARTER DECK WOLF OF FRIENDSHIP [ST16]",
     "playCost": "4",
@@ -125269,7 +125838,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -125375,7 +125944,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -125531,7 +126100,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -125602,8 +126171,8 @@
     "rarity": "SR",
     "restrictions": {
       "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -125703,7 +126272,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -125745,7 +126314,7 @@
       "japanese": "\u53cb\u60c5\u306e\u615f\u54ed",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "\u53cb\u60c5\u7684\u615f\u54ed"
     },
     "notes": "STARTER DECK WOLF OF FRIENDSHIP [ST16]",
     "playCost": "3",
@@ -125753,7 +126322,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -125795,7 +126364,7 @@
       "japanese": "\u30dc\u30fc\u30eb\u30c7\u30a3\u30d6\u30ed\u30fc",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "\u9b91\u723e\u8fea\u5439\u606f"
     },
     "notes": "STARTER DECK WOLF OF FRIENDSHIP [ST16]",
     "playCost": "4",
@@ -125803,7 +126372,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -125884,7 +126453,8 @@
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/ST2-02.webp",
@@ -126163,7 +126733,8 @@
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/ST2-07.webp",
@@ -126444,7 +127015,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "11000",
-    "effect": "[When Attacking] [Once Per Turn] Unsuspend this Digimon",
+    "effect": "[When Attacking] [Once Per Turn] Unsuspend this Digimon.",
     "form": "Mega",
     "id": "ST2-11",
     "illustrator": "As'Maria",
@@ -126517,7 +127088,7 @@
     "AAs": [
       {
         "id": "_P1",
-        "illustrator": "Naochika Morishita ",
+        "illustrator": "Naochika Morishita",
         "note": "PB-01: Tamer's Evolution Box"
       },
       {
@@ -126534,7 +127105,7 @@
     "JAAs": [
       {
         "id": "_P1",
-        "illustrator": "Naochika Morishita ",
+        "illustrator": "Naochika Morishita",
         "note": "PB-01: Tamer's Evolution Box"
       },
       {
@@ -126546,7 +127117,8 @@
     "aceEffect": "-",
     "attribute": "-",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/ST2-13.webp",
@@ -126629,12 +127201,19 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Shigeo Niwa",
+        "note": "RB-01: Resurgence Booster"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "-",
     "block": [
-      "00"
+      "00",
+      "02"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/ST2-15.webp",
@@ -126683,6 +127262,11 @@
         "id": "_P2",
         "illustrator": "Ishibashi Yosuke",
         "note": "Final Championships 2021 Tamer's Evolution Pack"
+      },
+      {
+        "id": "_P3",
+        "illustrator": "p!k@ru",
+        "note": "RB-01: Resurgence Booster"
       }
     ],
     "JAAs": [
@@ -126869,7 +127453,7 @@
     ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "2000",
+    "dp": "4000",
     "effect": "-",
     "form": "Rookie",
     "id": "ST3-03",
@@ -126948,7 +127532,9 @@
     "aceEffect": "-",
     "attribute": "Data",
     "block": [
-      "00-02"
+      "00",
+      "01",
+      "02"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/ST3-04.webp",
@@ -127020,7 +127606,8 @@
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/ST3-05.webp",
@@ -127137,7 +127724,8 @@
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
-      "00"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/ST3-07.webp",
@@ -127209,7 +127797,8 @@
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/ST3-08.webp",
@@ -127610,12 +128199,19 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Takase",
+        "note": "RB-01: Resurgence Booster"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "-",
     "block": [
-      "00"
+      "00",
+      "02"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/ST3-15.webp",
@@ -127729,7 +128325,7 @@
     "name": {
       "english": "Motimon",
       "japanese": "\u30e2\u30c1\u30e2\u30f3",
-      "korean": "\ud134\u3011 \uc774 \ub514\uc9c0\ubaac\uc774 Lv.6 \uc774\uc0c1\uc77c \ub3d9\uc548 \uc774 \ub514\uc9c0\ubaac\uc758 DP\ub97c +1000 \ud55c\ub2e4.,Green,\uc720\ub144\uae30,\u30fc,\ub81b\uc11c\ud615,,,,,,,,",
+      "korean": "\ubaa8\ud2f0\ubaac",
       "simplifiedChinese": "\u5e74\u7cd5\u517d",
       "traditionalChinese": "\u5e74\u7cd5\u7378"
     },
@@ -127779,7 +128375,7 @@
     "name": {
       "english": "Floramon",
       "japanese": "\u30d5\u30ed\u30fc\u30e9\u30e2\u30f3",
-      "korean": "-",
+      "korean": "\ud50c\ub85c\ub77c\ubaac",
       "simplifiedChinese": "\u4f5b\u6d1b\u62c9\u517d",
       "traditionalChinese": "\u82b1\u62c9\u7378"
     },
@@ -127825,7 +128421,8 @@
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/ST4-03.webp",
@@ -127862,7 +128459,7 @@
       "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -127887,7 +128484,8 @@
     "aceEffect": "-",
     "attribute": "Data",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/ST4-04.webp",
@@ -127924,7 +128522,7 @@
       "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -127963,7 +128561,7 @@
     "name": {
       "english": "Kunemon",
       "japanese": "\u30af\u30cd\u30e2\u30f3",
-      "korean": "-",
+      "korean": "\ucfe0\ub124\ubaac",
       "simplifiedChinese": "\u53e4\u5c3c\u517d",
       "traditionalChinese": "\u53e4\u5c3c\u7378"
     },
@@ -128173,7 +128771,7 @@
       "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -128248,7 +128846,8 @@
     "aceEffect": "-",
     "attribute": "Data",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/ST4-10.webp",
@@ -128285,7 +128884,7 @@
       "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -128518,7 +129117,7 @@
     "name": {
       "english": "Needle Spray",
       "japanese": "\u30c1\u30af\u30c1\u30af\u30d0\u30f3\u30d0\u30f3",
-      "korean": "\ubfdc\uae30,C,\uc635\uc158,\u30fc,\u3010\uba54\uc778\u3011 \uc0c1\ub300\uc758 \ub514\uc9c0\ubaac 1\ub9c8\ub9ac\ub97c \ub808\uc2a4\ud2b8\uc2dc\ud0a8\ub2e4.,,Green,,,,\u3010\uc2dc\ud050\ub9ac\ud2f0\u3011 \uc774 \uce74\ub4dc\uc758 \u3010\uba54\uc778\u3011 \ud6a8\uacfc\ub97c \ubc1c\ud718\ud55c\ub2e4. \uadf8 \ud6c4 \uc774 \uce74\ub4dc\ub97c \ud328\uc5d0 \ucd94\uac00\ud55c\ub2e4.,,,,2,,,",
+      "korean": "\ubc14\ub298 \ubfdc\uae30",
       "simplifiedChinese": "\u5c16\u5c16\u78b0\u78b0\u62f3",
       "traditionalChinese": "\u5c16\u5c16\u78b0\u78b0\u62f3"
     },
@@ -128562,7 +129161,7 @@
     "name": {
       "english": "Electro Shocker",
       "japanese": "\u30e1\u30ac\u30d6\u30e9\u30b9\u30bf\u30fc",
-      "korean": "\ucda9\uaca9,U,\uc635\uc158,\u30fc,\u3010\uba54\uc778\u3011 \ub808\uc2a4\ud2b8 \uc0c1\ud0dc\uc758 \uc0c1\ub300 \ub514\uc9c0\ubaac 1\ub9c8\ub9ac\ub97c \ud328\ub85c \ub418\ub3cc\ub9b0\ub2e4. \uadf8 \ub514\uc9c0\ubaac\uc774 \uac00\uc9c4 \uc9c4\ud654\uc6d0\uc740 \ud30c\uae30\ud55c\ub2e4.,,Green,,,,\u3010\uc2dc\ud050\ub9ac\ud2f0\u3011 \uc774 \uce74\ub4dc\uc758 \u3010\uba54\uc778\u3011 \ud6a8\uacfc\ub97c \ubc1c\ud718\ud55c\ub2e4.,,,,5,,,",
+      "korean": "\uc804\uae30 \ucda9\uaca9",
       "simplifiedChinese": "\u767e\u4e07\u51b2\u51fb\u6ce2",
       "traditionalChinese": "\u767e\u842c\u7206\u7834"
     },
@@ -128698,7 +129297,8 @@
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/ST5-03.webp",
@@ -128735,7 +129335,7 @@
       "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -128965,7 +129565,8 @@
     "aceEffect": "-",
     "attribute": "Virus",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/ST5-08.webp",
@@ -129002,7 +129603,7 @@
       "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -129110,7 +129711,13 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "tyuga",
+        "note": "RB-01: Resurgence Booster"
+      }
+    ],
     "JAAs": [
       {
         "id": "_P1",
@@ -129159,7 +129766,7 @@
       "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -129222,7 +129829,7 @@
       "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -129415,13 +130022,13 @@
     "AAs": [
       {
         "id": "_P1",
-        "illustrator": "koki",
-        "note": "ST-14: Advanced Deck Set Beelzemon"
+        "illustrator": "Tonamikanji",
+        "note": "Judge Pack 2"
       },
       {
         "id": "_P2",
-        "illustrator": "Tonamikanji",
-        "note": "Judge Pack 2"
+        "illustrator": "koki",
+        "note": "ST-14: Advanced Deck Set Beelzemon"
       }
     ],
     "JAAs": [
@@ -129435,7 +130042,7 @@
     "attribute": "-",
     "block": [
       "00",
-      " 02"
+      "02"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/ST6-01.webp",
@@ -129466,7 +130073,7 @@
       "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -129875,7 +130482,7 @@
       "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -130192,7 +130799,7 @@
       "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
