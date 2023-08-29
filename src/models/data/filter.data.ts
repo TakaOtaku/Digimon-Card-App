@@ -433,24 +433,4 @@ export const VersionButtons: MultiButtons[] = [
     name: 'Alt. Art',
     value: 'AA',
   },
-  {
-    name: 'Pre-Rel',
-    value: 'Pre-Release',
-  },
-  {
-    name: 'Stamp',
-    value: 'Stamp',
-  },
-  {
-    name: 'Reprint',
-    value: 'Reprint',
-  },
-  {
-    name: 'Foil',
-    value: 'Foil',
-  },
-  {
-    name: 'Box-Topper',
-    value: 'Box-Topper',
-  },
 ];

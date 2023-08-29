@@ -65,39 +65,9 @@ import { emptySettings } from '../../../store/reducers/save.reducer';
           </div>
 
           <div class="flex flex-col">
-            <h5 class="mt-5 text-center font-bold">Pre-Release Cards</h5>
-            <p-selectButton
-              [(ngModel)]="preRelease"
-              [options]="showHideOptions"
-              class="mx-auto"
-              optionLabel="label"
-              optionValue="value"></p-selectButton>
-          </div>
-
-          <div class="flex flex-col">
             <h5 class="mt-5 text-center font-bold">Alt. Art Cards</h5>
             <p-selectButton
               [(ngModel)]="aa"
-              [options]="showHideOptions"
-              class="mx-auto"
-              optionLabel="label"
-              optionValue="value"></p-selectButton>
-          </div>
-
-          <div class="flex flex-col">
-            <h5 class="mt-5 text-center font-bold">Stamped Cards</h5>
-            <p-selectButton
-              [(ngModel)]="stamped"
-              [options]="showHideOptions"
-              class="mx-auto"
-              optionLabel="label"
-              optionValue="value"></p-selectButton>
-          </div>
-
-          <div class="flex flex-col">
-            <h5 class="mt-5 text-center font-bold">Reprint Cards</h5>
-            <p-selectButton
-              [(ngModel)]="reprint"
               [options]="showHideOptions"
               class="mx-auto"
               optionLabel="label"
