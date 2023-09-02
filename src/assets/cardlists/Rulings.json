@@ -1373,8 +1373,16 @@
   ],
   "BT10-110": [
     {
-      "answer": "A: No, you cannot use this card's effect to activate the [When Digivolving] effect of a Digimon with \uff1cSecurity Attack\uff1e while [BT10-042 Venusmon] is in the battle area.\n",
-      "question": "Q: If I use this card and target my with the [Royal Knight]\u00a0trait and \uff1cSecurity Attack\uff1e while my opponent has [BT10-042 Venusmon] in the battle area. Can I use this card's effect to activate its [When Digivolving] effect?"
+      "answer": "A: No. Because [Jesmon GX]'s [When Digivolving] and [When Attacking] effects cannot be activated due to your opponent's [BT10-042 Venusmon], even this card can't activate those effects in these circumstances.\n[1]",
+      "question": "Q: I have a [Jesmon GX] that has \uff1cSecurity Attack\uff1e in play, while my opponent has a [BT10-042 Venusmon] in play. If I use this card and target my [Jesmon GX], can this card's effect activate [Jesmon GX]'s [When Digivolving] effects?"
+    },
+    {
+      "answer": "A: No, using this option does not \"place\" a card in the Battle Area, so [BT13-007 King Drasil_7D6] does not gain any memory when this card is used.\n[2]",
+      "question": "Q: Does using this option trigger [BT13-007 King Drasil_7D6]'s inherited effect?"
+    },
+    {
+      "answer": "A: No, when this card is used, it is only sent to trash after the effect is finished activating, so it is sent to trash after [BT13-090 LordKnightmon]'s effect activates\n[2]",
+      "question": "Q: I use [BT10-110 Seiken Meppa], targeting [BT10-112 Jesmon GX] to activate its [When Digivolving] effect. I place [BT13-090 LordKnightmon] with the effect of [BT10-112 Jesmon GX] and activate [BT13-090 LordKnightmon]\u2019s [When Digivolving] effect. Am I able to add the same [BT10-110 Seiken Meppa] card that I used back to hand?"
     }
   ],
   "BT10-111": [
@@ -2606,7 +2614,11 @@
     },
     {
       "answer": "A: No, you will not be able to reduce the play cost. Since the effect of [BT8-071 Psychemon] is not an effect that targets Digimon, it cannot be blocked even if this card is in the breeding area.\n[1]",
-      "question": "Q: When the opponent has [BT8-071 Psychemon], does this card's [Your Turn] effect still reduce the appearance cost of Digimon with the [Royal Knight]\u00a0trait?"
+      "question": "Q: When the opponent has [BT8-071 Psychemon], does this card's [Your Turn] effect still reduce the play cost of Digimon with the [Royal Knight]\u00a0trait?"
+    },
+    {
+      "answer": "A: No, using and activating [BT10-110 Seiken Meppa]'s [Main] effect does not cause a card to be \"placed\" in the Battle Area, so this card's inherited effect does not trigger.\n[2]",
+      "question": "Q: Does using [BT10-110 Seiken Meppa] trigger this card's inherited effect to gain memory?"
     }
   ],
   "BT13-008": [
@@ -2685,11 +2697,11 @@
       "question": "Q: Can I return an opponent's Tamer to its owner's hand for this card's Burst Digivolve?"
     },
     {
-      "answer": "A: No, the [Marcus Damon] played by this card's [When Digivolving] effect is only treated as a Digimon after it's played, so Crimson Blaze wouldn't prevent it.\n[2]",
+      "answer": "A: No, the [Marcus Damon] played by this card's [When Digivolving] effect is only treated as a Digimon after it has entered the Battle Area, so Crimson Blaze wouldn't prevent it.\n[2]",
       "question": "Q: Would [BT8-097 Crimson Blaze]'s \"can't play Digimon by effects\" effect prevent playing a [Marcus Damon] when activating this card's [When Digivolving] effect?"
     },
     {
-      "answer": "A: Yes, [Marcus Damon] is also treated as a Digimon by the time Keenan's trigger condition is checked.\n[3]",
+      "answer": "A: No, the [Marcus Damon] played by this card's [When Digivolving] effect is only treated as a Digimon after it has entered the Battle Area, so [BT13-102 Keenan Crier]'s effect is not triggered.\n[2]",
       "question": "Q: Would [BT13-102 Keenan Crier]'s \"When a Digimon is played by an effect\" effect trigger when activating this card's [When Digivolving] effect to play a [Marcus Damon]?"
     }
   ],
@@ -2723,8 +2735,8 @@
       "question": "Q: Which player chooses the cards in my opponent's hand to return to the deck with this card's [When Attacking] effect?"
     },
     {
-      "answer": "A: Yes, you do.\n[2]",
-      "question": "Q: When I activate this card's [When Attacking] effect, do I get to see the cards removed from my opponent's hand before deciding what order to put them at the bottom of their deck?"
+      "answer": "A: Without revealing any cards, the owner of this card chooses cards to remove from their opponent's hand. Then, without revealing any cards, the owner of this card chooses how to order the removed cards and they are placed at the bottom of the deck. Throughout the resolution of this effect, the owner of [BT13-033 MirageGaogamon: Burst Mode] is never allowed to look at any of the removed cards, but the owner of the removed cards is allowed to look at the removed cards at any point before they are returned to the bottom of the deck.\n[2]",
+      "question": "Q: When I activate this card's [When Attacking] effect, what happens to the cards removed from my opponent's hand? Are they revealed to me before going back into the deck? To my opponent? Who decides what order they go into the deck?"
     }
   ],
   "BT13-034": [
@@ -2870,7 +2882,7 @@
   "BT13-073": [
     {
       "answer": "A: No, you cannot. This card's [All Turns] effect is triggered when your Digimon with [Chessmon]\u00a0in its name is deleted, so if its deletion was prevented, it will not triggered.\n[1]",
-      "question": "Q: When this suspended Digimon would be deleted, can I activate this Digimon with this card's [All Turns] effect if the deletion was prevented such as by \uff1cDecoy\uff1e?"
+      "question": "Q: When this suspended Digimon would be deleted, can I activate this Digimon with this card's [All Turns] effect if the deletion was prevented such as by \uff1cDecoy\uff1e  (When your other nocategory Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent you may delete this Digimon to prevent 1 of those Digimon's deletion)?"
     }
   ],
   "BT13-075": [
@@ -7169,7 +7181,7 @@
       "question": "Q: If I have both [SkullKnightmon] and [DeadlyAxemon] in this Digimon\u2019s digivolution cards, does this card's [All Turns] effect require me to play both?"
     },
     {
-      "answer": "A: This card's [All Turns] effect triggers at the same time as \uff1cDecoy\uff1e. So it activates before the Digimon has been deleted. Its effect does not prevent its own deletion but you can use \uff1cDecoy\uff1e and this card's effect to protect it from deletion.\n",
+      "answer": "A: This card's [All Turns] effect triggers at the same time as \uff1cDecoy\uff1e  (When your other nocategory Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent you may delete this Digimon to prevent 1 of those Digimon's deletion). So it activates before the Digimon has been deleted. Its effect does not prevent its own deletion but you can use \uff1cDecoy\uff1e  (When your other nocategory Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent you may delete this Digimon to prevent 1 of those Digimon's deletion) and this card's effect to protect it from deletion.\n",
       "question": "Q: When does this card's [All Turns] effect activate?"
     },
     {
@@ -7656,7 +7668,7 @@
     },
     {
       "answer": "A: Yes, they can.\n",
-      "question": "Q: When Digimon would be deleted by this effect, can my opponent activate \uff1cDecoy\uff1e or \uff1cArmor Purge\uff1e etc, to stop their Digimon that was not chosen, from being deleted?"
+      "question": "Q: When Digimon would be deleted by this effect, can my opponent activate \uff1cDecoy\uff1e  (When your other nocategory Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent you may delete this Digimon to prevent 1 of those Digimon's deletion) or \uff1cArmor Purge\uff1e etc, to stop their Digimon that was not chosen, from being deleted?"
     }
   ],
   "BT8-020": [
@@ -9545,8 +9557,8 @@
       "question": "Q: Can this card be added to my hand as a card with [Gallantmon]\u00a0in its name when it is opened from the deck with the [On Play] effect of [EX2-008 Guilmon]?"
     },
     {
-      "answer": "A: Yes, the \uff1cDecoy\uff1e that activated prevents the deletion \"from this effect\" and the condition of \"If this effect does not delete a Digimon\", so the effect of \"trashing 5 cards from the top of each player's deck\" is performed.\n",
-      "question": "Q: When an opponent's Digimon is deleted by the [When Digivolving] effect of this card, but the opponent activates \uff1cDecoy\uff1e and the selected Digimon isn't deleted, but the Digimon that activated \uff1cDecoy\uff1e is deleted. Is the condition of \"If this effect does not delete a Digimon\" fulfilled?"
+      "answer": "A: Yes, the \uff1cDecoy\uff1e  (When your other nocategory Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent you may delete this Digimon to prevent 1 of those Digimon's deletion) that activated prevents the deletion \"from this effect\" and the condition of \"If this effect does not delete a Digimon\", so the effect of \"trashing 5 cards from the top of each player's deck\" is performed.\n",
+      "question": "Q: When an opponent's Digimon is deleted by the [When Digivolving] effect of this card, but the opponent activates \uff1cDecoy\uff1e  (When your other nocategory Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent you may delete this Digimon to prevent 1 of those Digimon's deletion) and the selected Digimon isn't deleted, but the Digimon that activated \uff1cDecoy\uff1e  (When your other nocategory Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent you may delete this Digimon to prevent 1 of those Digimon's deletion) is deleted. Is the condition of \"If this effect does not delete a Digimon\" fulfilled?"
     },
     {
       "answer": "A: Yes.\n",
@@ -10538,7 +10550,7 @@
     },
     {
       "answer": "A: Yes, you should do both.\n",
-      "question": "Q: If a Digimon with both [Blue Flare]\u00a0trait and [Twilight]\u00a0trait is played, can I do both \"gain 1 memory\" and \uff1cDraw 1\uff1e?"
+      "question": "Q: If a Digimon with both [Blue Flare]\u00a0trait and [Twilight]\u00a0trait is played, can I both \uff1cDraw 1\uff1e and return 1 card from my trash?"
     }
   ],
   "EX4-016": [
@@ -10681,6 +10693,10 @@
     {
       "answer": "A: No, if you have a target for this effect, add it to your hand as much as possible.\n[1]",
       "question": "Q: FOr this card's [On Play] effect. If I have both 1 [Shu-Chong Wong]\u00a0in its name and 1 2-color green card among the cards revealed by the effect. Can I choose to add only 1 of them to my hand and put the other one on the bottom of deck?"
+    },
+    {
+      "answer": "A: Yes, as many times as you trigger \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity Attack +1\uff1e for the attack)\n",
+      "question": "Q: Am i able to activate the inherited effect multiple times per turn?"
     }
   ],
   "EX4-036": [
@@ -10803,8 +10819,8 @@
       "question": "Q: If I have multiple copies of this card, can I suspend multiple of them to place more than 1 card from my trash or tamers as a digivolution card for [DigiXros]?"
     },
     {
-      "answer": "A: Yes, you can.\n[3]",
-      "question": "Q: When I place cards for a DigiXros with this card's [All Turns] effect, can I place just 1 card from under my Tamers or just 1 card from my trash?"
+      "answer": "A: You can choose to place 0, 1, or both.\n[3]",
+      "question": "Q: When I place cards for a DigiXros with this card's [All Turns] effect, if there's 1 valid card under my Tamers and 1 valid card in my trash, can I choose to place just 1 of those cards, or am I required to place both?"
     }
   ],
   "EX4-064": [
@@ -11498,7 +11514,7 @@
     },
     {
       "answer": "A: Since both conditions were met, both effects will be performed.\n[1]",
-      "question": "Q: What happens if I suspend this Tamer when my opponent has both a level 3 Digimon and a level 4 or higher Digimon at the same time?"
+      "question": "Q: What happens if I suspend this Tamer when my opponent plays both a level 3 Digimon and a level 4 or higher Digimon at the same time?"
     },
     {
       "answer": "A: No, it cannot. Even if multiple level 3 Digimon were played at the same time, you will only \uff1cDraw 1\uff1e. If multiple level 4 or higher Digimon were played, only 1 memory is gained.\n[1]",
@@ -11799,16 +11815,16 @@
   ],
   "ST13-04": [
     {
-      "answer": "A: At the end of your turn, the Digimon that has this card as a digivolution card and another Digimon, can be used to \uff1cDNA Digivolution\uff1e  into a Digimon card that has \uff1cDNA Digivolution\uff1e  in your hand before it becomes the opponent's turn.\n",
+      "answer": "A: At the end of your turn, the Digimon that has this card as a digivolution card and another Digimon, can be used to [DNA Digivolve] \u00a0: Cost   into a Digimon card that has [DNA Digivolve] \u00a0: Cost   in your hand before it becomes the opponent's turn.\n",
       "question": "Q: How does this card's [End of Your Turn] effect work?"
     },
     {
-      "answer": "A: No, you can't ignore digivolution conditions, so you can't DNA Digivolve into a Digimon card that doesn't have \uff1cDNA Digivolution\uff1e .\n",
-      "question": "Q: Can this card's inherited effect digivolve into a Digimon card that doesn't have \uff1cDNA Digivolution\uff1e  in your hand?"
+      "answer": "A: No, you can't ignore digivolution conditions, so you can't DNA Digivolve into a Digimon card that doesn't have [DNA Digivolve] \u00a0: Cost  .\n",
+      "question": "Q: Can this card's inherited effect digivolve into a Digimon card that doesn't have [DNA Digivolve] \u00a0: Cost   in your hand?"
     },
     {
-      "answer": "A: No, you can't ignore digivolution conditions, so it is not possible to evolve DNA DIgivolve with a Digimon of a colour or level not specified in the \uff1cDNA Digivolution\uff1e  conditions.\n",
-      "question": "Q: Is it possible to evolve DNA Digivolve with a Digimon of a colour or level that is not specified in the \uff1cDNA Digivolution\uff1e  conditions of the card in hand?"
+      "answer": "A: No, you can't ignore digivolution conditions, so it is not possible to evolve DNA DIgivolve with a Digimon of a colour or level not specified in the [DNA Digivolve] \u00a0: Cost   conditions.\n",
+      "question": "Q: Is it possible to evolve DNA Digivolve with a Digimon of a colour or level that is not specified in the [DNA Digivolve] \u00a0: Cost   conditions of the card in hand?"
     }
   ],
   "ST13-05": [
@@ -11817,7 +11833,7 @@
       "question": "Q: Is it possible to not play a revealed Digimon card with a play cost of 7 or less and [Legend-Arms]\u00a0trait from the deck with the [When Attacking] effect of this card?"
     },
     {
-      "answer": "A: Since it cannot be played due to the effect of [BT9-047 Pomumon]'s [All Turns] effect, the card is add it to your hand in the same way as other revealed cards.\n",
+      "answer": "A: Since it cannot be played due to the effect of [BT9-047 Pomumon]'s [All Turns] effect, the card is returned to the bottom of the deck in the same way as other revealed cards.\n",
       "question": "Q: If my opponent has has [BT9-047 Pomumon] in play, what happens to a Digimon card with a play cost of 7 or less and [Legend-Arms]\u00a0trait that was revealed from the deck due to this card's [When Attacking] effect?"
     }
   ],
@@ -11875,16 +11891,16 @@
   ],
   "ST13-13": [
     {
-      "answer": "A: At the end of your turn, the Digimon that has this card as a digivolution card and another Digimon, can be used to \uff1cDNA Digivolution\uff1e  into a Digimon card that has \uff1cDNA Digivolution\uff1e  in your hand before it becomes the opponent's turn.\n",
+      "answer": "A: At the end of your turn, the Digimon that has this card as a digivolution card and another Digimon, can be used to [DNA Digivolve] \u00a0: Cost   into a Digimon card that has [DNA Digivolve] \u00a0: Cost   in your hand before it becomes the opponent's turn.\n",
       "question": "Q: How does this card's [End of Your Turn] effect work?"
     },
     {
-      "answer": "A: No, you can't ignore digivolution conditions, so you can't DNA Digivolve into a Digimon card that doesn't have \uff1cDNA Digivolution\uff1e .\n",
-      "question": "Q: Can this card's inherited effect digivolve into a Digimon card that doesn't have \uff1cDNA Digivolution\uff1e  in your hand?"
+      "answer": "A: No, you can't ignore digivolution conditions, so you can't DNA Digivolve into a Digimon card that doesn't have [DNA Digivolve] \u00a0: Cost  .\n",
+      "question": "Q: Can this card's inherited effect digivolve into a Digimon card that doesn't have [DNA Digivolve] \u00a0: Cost   in your hand?"
     },
     {
-      "answer": "A: No, you can't ignore digivolution conditions, so it is not possible to evolve DNA DIgivolve with a Digimon of a colour or level not specified in the \uff1cDNA Digivolution\uff1e  conditions.\n",
-      "question": "Q: Is it possible to evolve DNA Digivolve with a Digimon of a colour or level that is not specified in the \uff1cDNA Digivolution\uff1e  conditions of the card in hand?"
+      "answer": "A: No, you can't ignore digivolution conditions, so it is not possible to evolve DNA DIgivolve with a Digimon of a colour or level not specified in the [DNA Digivolve] \u00a0: Cost   conditions.\n",
+      "question": "Q: Is it possible to evolve DNA Digivolve with a Digimon of a colour or level that is not specified in the [DNA Digivolve] \u00a0: Cost   conditions of the card in hand?"
     },
     {
       "answer": "A: Card text that specifically specify \"delete,\" such as \"Delete 1 of your opponent's Digimon,\" can't be used to delete this Digimon. They can still be deleted by losing a battle or being reduced to 0 DP.\n",
