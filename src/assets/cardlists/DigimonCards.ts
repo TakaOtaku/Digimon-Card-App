@@ -59,9 +59,9 @@ function mapJsonToEngCardList(): Map<string, DigimonCard> {
 
   const digimonCards: DigimonCard[] = [...DigimonCardsJson];
   digimonCards.forEach((digimonCard: DigimonCard) => {
-    cards.set(digimonCard.id + digimonCard.id, digimonCard);
+    cards.set(digimonCard.id, digimonCard);
     digimonCard.AAs.forEach((aa: AA) => {
-      cards.set(aa.id, {
+      cards.set(digimonCard.id + aa.id, {
         ...digimonCard,
         illustrator: aa.illustrator,
         notes: aa.note,
