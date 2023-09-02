@@ -569,7 +569,13 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Ryuda",
+        "note": "Judge Pack 4"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "Vaccine",
@@ -21305,6 +21311,21 @@
         "id": "_P1",
         "illustrator": "tyuga",
         "note": "BT-12: Booster Across Time"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "???",
+        "note": "Regionals 2023 Participation Set 3"
+      },
+      {
+        "id": "_P3",
+        "illustrator": "???",
+        "note": "Regionals 2023 Finalist Set 3"
+      },
+      {
+        "id": "_P4",
+        "illustrator": "???",
+        "note": "Regionals 2023 Champion Set 3"
       }
     ],
     "JAAs": [
@@ -21349,8 +21370,8 @@
       "english": "Imperialdramon: Fighter Mode",
       "japanese": "\u30a4\u30f3\u30da\u30ea\u30a2\u30eb\u30c9\u30e9\u30e2\u30f3\uff1a\u30d5\u30a1\u30a4\u30bf\u30fc\u30e2\u30fc\u30c9",
       "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "simplifiedChinese": "\u5e1d\u7687\u9f99\u7532\u517d\uff1a\u6218\u58eb\u5f62\u6001",
+      "traditionalChinese": "\u5e1d\u7687\u9f8d\u7532\u7378\uff1a\u6230\u9b25\u578b\u614b"
     },
     "notes": "\u25b9BOOSTER ACROSS TIME [BT12]",
     "playCost": "13",
@@ -23501,6 +23522,21 @@
         "id": "_P1",
         "illustrator": "Tonamikanji",
         "note": "BT-12: Booster Across Time"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "???",
+        "note": "Regionals 2023 Participation Set 3"
+      },
+      {
+        "id": "_P3",
+        "illustrator": "???",
+        "note": "Regionals 2023 Finalist Set 3"
+      },
+      {
+        "id": "_P4",
+        "illustrator": "???",
+        "note": "Regionals 2023 Champion Set 3"
       }
     ],
     "JAAs": [
@@ -46730,11 +46766,6 @@
         "id": "_P1",
         "illustrator": "Shin Sasaki",
         "note": "PB-06: Tamer's Evolution Box 2"
-      },
-      {
-        "id": "_P2",
-        "illustrator": "Tonamikanji",
-        "note": "RB-01: Resurgence Booster"
       }
     ],
     "JAAs": [
@@ -46779,9 +46810,9 @@
     "name": {
       "english": "Wormmon",
       "japanese": "\u30ef\u30fc\u30e0\u30e2\u30f3",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "korean": "\ucd94\ucd94\ubaac",
+      "simplifiedChinese": "\u866b\u866b\u517d",
+      "traditionalChinese": "\u87f2\u87f2\u7378"
     },
     "notes": "\u25b9RELEASE SPECIAL BOOSTER 1.5 [BT01-B0T3]",
     "playCost": "3",
@@ -56489,11 +56520,6 @@
         "illustrator": "p!k@ru",
         "note": "Great Legend Pre-Release Pack",
         "preRelease": "Gold Outline - Pre Release Stamp -\u00a0Rare"
-      },
-      {
-        "id": "_P1",
-        "illustrator": "p!k@ru",
-        "note": "RB-01: Resurgence Booster"
       }
     ],
     "JAAs": [
@@ -56659,13 +56685,19 @@
         "illustrator": "p!k@ru",
         "note": "Great Legend Pre-Release Pack",
         "preRelease": "Gold Outline - Pre Release Stamp -\u00a0Rare"
+      },
+      {
+        "id": "_P1",
+        "illustrator": "p!k@ru",
+        "note": "RB-01: Resurgence Booster"
       }
     ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "-",
     "block": [
-      "00"
+      "00",
+      "02"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT4-107.webp",
@@ -59925,6 +59957,11 @@
         "illustrator": "Takase",
         "note": "Battle of Omni Pre-Release Pack",
         "preRelease": "Gold Outline - Pre Release Stamp -\u00a0Rare"
+      },
+      {
+        "id": "_P1",
+        "illustrator": "Takase",
+        "note": "Judge Pack 4"
       }
     ],
     "JAAs": [],
@@ -59957,9 +59994,9 @@
     "name": {
       "english": "Terriermon Assistant",
       "japanese": "\u30c6\u30ea\u30a2\u30e2\u30f3\u52a9\u624b",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "korean": "\ud14c\ub9ac\uc5b4\ubaac \uc870\uc218",
+      "simplifiedChinese": "\u6897\u72ac\u517d\u52a9\u624b",
+      "traditionalChinese": "\u5927\u8033\u7378\u52a9\u624b"
     },
     "notes": "\u25b9BOOSTER BATTLE OF OMNI [BT05]",
     "playCost": "3",
@@ -60830,9 +60867,9 @@
     "name": {
       "english": "Mekanorimon",
       "japanese": "\u30e1\u30ab\u30ce\u30ea\u30e2\u30f3",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "korean": "\uba54\uce74\ub178\ubaac",
+      "simplifiedChinese": "\u673a\u68b0\u8f7d\u7269\u517d",
+      "traditionalChinese": "\u6a5f\u68b0\u88dd\u7532\u7378"
     },
     "notes": "\u25b9BOOSTER BATTLE OF OMNI [BT05]",
     "playCost": "4",
@@ -60841,7 +60878,7 @@
       "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -61402,6 +61439,11 @@
         "illustrator": "Ryuda",
         "note": "Battle of Omni Pre-Release Pack",
         "preRelease": "No Foil - Pre Release Stamp -\u00a0Uncommon"
+      },
+      {
+        "id": "_P1",
+        "illustrator": "Ryuda",
+        "note": "Judge Pack 4"
       }
     ],
     "JAAs": [],
@@ -61434,9 +61476,9 @@
     "name": {
       "english": "Fake Agumon Expert",
       "japanese": "\u30cb\u30bb\u30a2\u30b0\u30e2\u30f3\u535a\u58eb",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "korean": "\uac00\uc9dc \uc544\uad6c\ubaac \ubc15\uc0ac",
+      "simplifiedChinese": "\u4f2a\u4e9a\u53e4\u517d\u535a\u58eb",
+      "traditionalChinese": "\u507d\u4e9e\u53e4\u7378\u535a\u58eb"
     },
     "notes": "\u25b9BOOSTER BATTLE OF OMNI [BT05]",
     "playCost": "3",
@@ -75137,6 +75179,11 @@
         "id": "_P6",
         "illustrator": "koki",
         "note": "PB-12E: Digimon Card Game 2nd Anniversary Set"
+      },
+      {
+        "id": "_P7",
+        "illustrator": "Teppei Tadokoro",
+        "note": "Judge Pack 4"
       }
     ],
     "JAAs": [
@@ -75170,8 +75217,8 @@
       "english": "Bokomon",
       "japanese": "\u30dc\u30b3\u30e2\u30f3",
       "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "simplifiedChinese": "\u6ce2\u9ad8\u517d",
+      "traditionalChinese": "\u6ce2\u9ad8\u7378"
     },
     "notes": "\u25b9BOOSTER NEXT ADVENTURE [BT07]",
     "playCost": "3",
@@ -103586,7 +103633,13 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Takase",
+        "note": "Judge Pack 4"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "Vaccine",
@@ -104150,6 +104203,16 @@
         "id": "_P1",
         "illustrator": "Takase",
         "note": "EX-04: Theme Booster Alternative Being"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "Minato Sashima",
+        "note": "Judge Pack 4"
+      },
+      {
+        "id": "_P3",
+        "illustrator": "Takase",
+        "note": "Judge Pack 4"
       }
     ],
     "JAAs": [
@@ -104188,9 +104251,9 @@
     "name": {
       "english": "Terriermon Assistant",
       "japanese": "\u30c6\u30ea\u30a2\u30e2\u30f3\u52a9\u624b",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "korean": "\ud14c\ub9ac\uc5b4\ubaac \uc870\uc218",
+      "simplifiedChinese": "\u6897\u72ac\u517d\u52a9\u624b",
+      "traditionalChinese": "\u5927\u8033\u7378\u52a9\u624b"
     },
     "notes": "\u25b9THEME BOOSTER ALTERNATIVE BEING [EX04]",
     "playCost": "3",
@@ -105222,7 +105285,13 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Takase",
+        "note": "Judge Pack 4"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "Virus",
@@ -105253,9 +105322,9 @@
     "name": {
       "english": "Fake Agumon Expert",
       "japanese": "\u30cb\u30bb\u30a2\u30b0\u30e2\u30f3\u535a\u58eb",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "korean": "\uac00\uc9dc \uc544\uad6c\ubaac \ubc15\uc0ac",
+      "simplifiedChinese": "\u4f2a\u4e9a\u53e4\u517d\u535a\u58eb",
+      "traditionalChinese": "\u507d\u4e9e\u53e4\u7378\u535a\u58eb"
     },
     "notes": "\u25b9THEME BOOSTER ALTERNATIVE BEING [EX04]",
     "playCost": "3",
@@ -116376,6 +116445,11 @@
         "id": "_P3",
         "illustrator": "p!k@ru",
         "note": "Beelzemon Cup Participation Pack"
+      },
+      {
+        "id": "_P4",
+        "illustrator": "p!k@ru",
+        "note": "Judge Pack 4"
       }
     ],
     "JAAs": [
@@ -116393,7 +116467,8 @@
     "aceEffect": "-",
     "attribute": "Data",
     "block": [
-      "01-02"
+      "01",
+      "02"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/P-077.webp",
@@ -116427,7 +116502,7 @@
     "playCost": "5",
     "rarity": "P",
     "restrictions": {
-      "chinese": "Not released",
+      "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Not released"
@@ -118453,6 +118528,694 @@
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Option",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Free",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/P-117.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "P-117",
+    "cardType": "Digimon",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "0",
+        "level": "2"
+      },
+      {
+        "color": "Green",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[When Attacking] If this Digimon has 2 or more colors, \uff1cDraw 1\uff1e.",
+    "dnaDigivolve": "-",
+    "dp": "1000",
+    "effect": "[Your Turn] [Once Per Turn] When this Digimon would digivolve into a card with the [Free]\u00a0trait trait, if you have a Tamer, reduce the digivolution cost by 1.",
+    "form": "Rookie",
+    "id": "P-117",
+    "illustrator": "No Illustrator",
+    "name": {
+      "english": "Veemon",
+      "japanese": "\u30d6\u30a4\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "Digimon Adventure 02: The Beginning Promotion Pack",
+    "playCost": "3",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Mini Dragon",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Free",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/P-118.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "P-118",
+    "cardType": "Digimon",
+    "color": "Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "0",
+        "level": "2"
+      },
+      {
+        "color": "Blue",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[End of Your Turn] You may DNA digivolve this Digimon and one of your other Digimon in play into a Digimon card in your hand by paying its DNA digivolve cost.",
+    "dnaDigivolve": "-",
+    "dp": "1000",
+    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 green/blue card with 2 or more colors and 1 Tamer card with [Ken Ichijoji] among them to the hand. Return the rest to the bottom of the deck.",
+    "form": "Rookie",
+    "id": "P-118",
+    "illustrator": "No Illustrator",
+    "name": {
+      "english": "Wormmon",
+      "japanese": "\u30ef\u30fc\u30e0\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "Digimon Adventure 02: The Beginning Promotion Pack",
+    "playCost": "3",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Larva",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Free",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/P-119.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "P-119",
+    "cardType": "Digimon",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "0",
+        "level": "2"
+      },
+      {
+        "color": "Yellow",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[End of Your Turn] You may DNA digivolve this Digimon and one of your other Digimon in play into a Digimon card in your hand by paying its DNA digivolve cost.",
+    "dnaDigivolve": "-",
+    "dp": "1000",
+    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 red/yellow card with 2 or more colors and 1 Tamer card with [Yolei Inoue] among them to the hand. Return the rest to the bottom of the deck.",
+    "form": "Rookie",
+    "id": "P-119",
+    "illustrator": "No Illustrator",
+    "name": {
+      "english": "Hawkmon",
+      "japanese": "\u30db\u30fc\u30af\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "Digimon Adventure 02: The Beginning Promotion Pack",
+    "playCost": "3",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Avian",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/P-120.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "P-120",
+    "cardType": "Digimon",
+    "color": "Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "2",
+        "level": "3"
+      },
+      {
+        "color": "Red",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[Your Turn] All of your opponent's security Digimon get -2000 DP.",
+    "dnaDigivolve": "-",
+    "dp": "4000",
+    "effect": "\uff1cBarrier\uff1e.",
+    "form": "Champion",
+    "id": "P-120",
+    "illustrator": "No Illustrator",
+    "name": {
+      "english": "Gatomon",
+      "japanese": "\u30c6\u30a4\u30eb\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "Digimon Adventure 02: The Beginning Promotion Pack",
+    "playCost": "4",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Holy Beast",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Free",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/P-121.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "P-121",
+    "cardType": "Digimon",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "0",
+        "level": "2"
+      },
+      {
+        "color": "Yellow",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[End of Your Turn] You may DNA digivolve this Digimon and one of your other Digimon in play into a Digimon card in your hand by paying its DNA digivolve cost.",
+    "dnaDigivolve": "-",
+    "dp": "1000",
+    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 black/yellow card with 2 or more colors and 1 Tamer card with [Cody Hida] among them to the hand. Return the rest to the bottom of the deck.",
+    "form": "Rookie",
+    "id": "P-121",
+    "illustrator": "No Illustrator",
+    "name": {
+      "english": "Armadillomon",
+      "japanese": "\u30a2\u30eb\u30de\u30b8\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "Digimon Adventure 02: The Beginning Promotion Pack",
+    "playCost": "3",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Mammal",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Free",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/P-122.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "P-122",
+    "cardType": "Digimon",
+    "color": "Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "0",
+        "level": "2"
+      },
+      {
+        "color": "Black",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[Your Turn] All of your opponent's security Digimon get -2000 DP.",
+    "dnaDigivolve": "-",
+    "dp": "1000",
+    "effect": "[On Play] Search your security stack. You may add 1 yellow/black card with 2 or more colors among them to the hand. If you did, \uff1cRecovery +1 (Deck)\uff1e. Then, shuffle your security stack.",
+    "form": "Rookie",
+    "id": "P-122",
+    "illustrator": "No Illustrator",
+    "name": {
+      "english": "Patamon",
+      "japanese": "\u30d1\u30bf\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "Digimon Adventure 02: The Beginning Promotion Pack",
+    "playCost": "3",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Mammal",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Free",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/P-123.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "P-123",
+    "cardType": "Digimon",
+    "color": "White",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "All",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "2000",
+    "effect": "[Your Turn] [Once Per Turn] When one of your Digimon moves from the breeding area to the battle area, you may hatch in your breeding area. Then, gain 1 memory.",
+    "form": "Rookie",
+    "id": "P-123",
+    "illustrator": "No Illustrator",
+    "name": {
+      "english": "Ukkomon",
+      "japanese": "\u30a6\u30c3\u30b3\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "Digimon Adventure 02: The Beginning Promotion Pack",
+    "playCost": "3",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Ancient Fairy",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "-",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/P-124.webp",
+    "cardLv": "-",
+    "cardNumber": "P-124",
+    "cardType": "Tamer",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[Security] Play this card without paying its memory cost.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "effect": "[Start of Your Main Phase] If you have a Digimon with the [Free]\u00a0trait, gain 1 memory.\n[On Play] Activate 1 of the effects below:\n\u30fbYou may play 1 [Veemon] from your hand without paying the cost.\n\u30fb1 of your Digimon may digivolve into [ExVeemon] in the hand without paying the cost.",
+    "form": "-",
+    "id": "P-124",
+    "illustrator": "No Illustrator",
+    "name": {
+      "english": "Davis Motomiya",
+      "japanese": "\u672c\u5bae\u5927\u8f14",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "Digimon Adventure 02: The Beginning Promotion Pack",
+    "playCost": "3",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Tamer",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "-",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/P-125.webp",
+    "cardLv": "-",
+    "cardNumber": "P-125",
+    "cardType": "Tamer",
+    "color": "Green",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[Security] Play this card without paying its memory cost.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "effect": "[Start of Your Main Phase] If you have a Digimon with the [Free]\u00a0trait, gain 1 memory.\n[On Play] Activate 1 of the effects below:\n\u30fbYou may play 1 [Wormmon] from your hand without paying the cost.\n\u30fb1 of your Digimon may digivolve into [Stingmon] in the hand without paying the cost.",
+    "form": "-",
+    "id": "P-125",
+    "illustrator": "No Illustrator",
+    "name": {
+      "english": "Ken Ichijoji",
+      "japanese": "\u4e00\u4e57\u5bfa\u8ce2",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "Digimon Adventure 02: The Beginning Promotion Pack",
+    "playCost": "3",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Tamer",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "-",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/P-126.webp",
+    "cardLv": "-",
+    "cardNumber": "P-126",
+    "cardType": "Tamer",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[Security] Play this card without paying its memory cost.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "effect": "[Start of Your Main Phase] If you have a Digimon with the [Free]\u00a0trait, gain 1 memory.\n[On Play] Activate 1 of the effects below:\n\u30fbYou may play 1 [Hawkmon] from your hand without paying the cost.\n\u30fb1 of your Digimon may digivolve into [Aquilamon] in the hand without paying the cost.",
+    "form": "-",
+    "id": "P-126",
+    "illustrator": "No Illustrator",
+    "name": {
+      "english": "Yolei Inoue",
+      "japanese": "\u4e95\u30ce\u4e0a\u4eac",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "Digimon Adventure 02: The Beginning Promotion Pack",
+    "playCost": "3",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Tamer",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "-",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/P-127.webp",
+    "cardLv": "-",
+    "cardNumber": "P-127",
+    "cardType": "Tamer",
+    "color": "Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[Security] Play this card without paying its memory cost.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "effect": "[Start of Your Main Phase] If you have fewer security cards than your opponent, gain 1 memory.\n[On Play] Activate 1 of the effects below:\n\u30fbYou may play 1 [Salamon] from your hand without paying the cost.\n\u30fb1 of your Digimon may digivolve into [Gatomon] in the hand without paying the cost.",
+    "form": "-",
+    "id": "P-127",
+    "illustrator": "No Illustrator",
+    "name": {
+      "english": "Kari Kamiya",
+      "japanese": "\u516b\u795e\u30d2\u30ab\u30ea",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "Digimon Adventure 02: The Beginning Promotion Pack",
+    "playCost": "3",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Tamer",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "-",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/P-128.webp",
+    "cardLv": "-",
+    "cardNumber": "P-128",
+    "cardType": "Tamer",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[Security] Play this card without paying its memory cost.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "effect": "[Start of Your Main Phase] If you have a Digimon with the [Free]\u00a0trait, gain 1 memory.\n[On Play] Activate 1 of the effects below:\n\u30fbYou may play 1 [Armadillomon] from your hand without paying the cost.\n\u30fb1 of your Digimon may digivolve into [Ankylomon] in the hand without paying the cost.",
+    "form": "-",
+    "id": "P-128",
+    "illustrator": "No Illustrator",
+    "name": {
+      "english": "Cody Hida",
+      "japanese": "\u706b\u7530\u4f0a\u7e54",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "Digimon Adventure 02: The Beginning Promotion Pack",
+    "playCost": "3",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Tamer",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "-",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/P-129.webp",
+    "cardLv": "-",
+    "cardNumber": "P-129",
+    "cardType": "Tamer",
+    "color": "Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[Security] Play this card without paying its memory cost.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "effect": "[Start of Your Main Phase] If you have more security cards than your opponent, gain 1 memory.\n[On Play] Activate 1 of the effects below:\n\u30fbYou may play 1 [Patamon] from your hand without paying the cost.\n\u30fb1 of your Digimon may digivolve into [Angemon] in the hand without paying the cost.",
+    "form": "-",
+    "id": "P-129",
+    "illustrator": "No Illustrator",
+    "name": {
+      "english": "T.K. Takaishi",
+      "japanese": "\u9ad8\u77f3\u30bf\u30b1\u30eb",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "Digimon Adventure 02: The Beginning Promotion Pack",
+    "playCost": "3",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Tamer",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "-",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/P-130.webp",
+    "cardLv": "-",
+    "cardNumber": "P-130",
+    "cardType": "Tamer",
+    "color": "White",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[Security] Play this card without paying its memory cost.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "effect": "[On Play] You may move 1 of your level 3 or higher Digimon from the breeding area to the battle area.\n[Your Turn] When one of your Digimon moves from the breeding area to the battle area, by suspending this Tamer, gain 1 memory.",
+    "form": "-",
+    "id": "P-130",
+    "illustrator": "No Illustrator",
+    "name": {
+      "english": "Lui Ohwada",
+      "japanese": "\u5927\u548c\u7530 \u30eb\u30a4",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "Digimon Adventure 02: The Beginning Promotion Pack",
+    "playCost": "3",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Tamer",
     "version": "Normal"
   },
   {
@@ -124358,6 +125121,11 @@
         "id": "_P1",
         "illustrator": "sasasi",
         "note": "Beelzemon Cup Participation Pack"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "sasasi",
+        "note": "Judge Pack 4"
       }
     ],
     "JAAs": [],
@@ -124398,7 +125166,7 @@
     "playCost": "7",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
+      "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Not released"
