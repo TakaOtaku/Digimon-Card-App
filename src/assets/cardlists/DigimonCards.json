@@ -13955,6 +13955,21 @@
         "id": "_P1",
         "illustrator": "Naochika Morishita",
         "note": "BT-11: Booster Dimensional Phase"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "???",
+        "note": "Regionals 2023 Participation Set 3"
+      },
+      {
+        "id": "_P3",
+        "illustrator": "???",
+        "note": "Regionals 2023 Finalist Set 3"
+      },
+      {
+        "id": "_P4",
+        "illustrator": "???",
+        "note": "Regionals 2023 Champion Set 3"
       }
     ],
     "JAAs": [
@@ -13999,7 +14014,7 @@
       "english": "Shoutmon X7",
       "japanese": "\u30b7\u30e3\u30a6\u30c8\u30e2\u30f3X7",
       "korean": "-",
-      "simplifiedChinese": "-",
+      "simplifiedChinese": "\u9ad8\u543c\u517dX7",
       "traditionalChinese": "\u5486\u54ee\u7378X7"
     },
     "notes": "\u25b9BOOSTER DIMENSIONAL PHASE [BT11]",
@@ -20503,6 +20518,21 @@
         "id": "_P1",
         "illustrator": "Tyuga",
         "note": "BT-12: Booster Across Time"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "???",
+        "note": "Regionals 2023 Participation Set 3"
+      },
+      {
+        "id": "_P3",
+        "illustrator": "???",
+        "note": "Regionals 2023 Finalist Set 3"
+      },
+      {
+        "id": "_P4",
+        "illustrator": "???",
+        "note": "Regionals 2023 Champion Set 3"
       }
     ],
     "JAAs": [
@@ -20542,8 +20572,8 @@
       "english": "EmperorGreymon",
       "japanese": "\u30ab\u30a4\u30bc\u30eb\u30b0\u30ec\u30a4\u30e2\u30f3",
       "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "simplifiedChinese": "\u607a\u6492\u66b4\u9f99\u517d",
+      "traditionalChinese": "\u51f1\u6492\u66b4\u9f8d\u7378"
     },
     "notes": "\u25b9BOOSTER ACROSS TIME [BT12]",
     "playCost": "11",
@@ -20570,6 +20600,21 @@
         "id": "_P2",
         "illustrator": "Kenji Watanabe",
         "note": "Ultimate Cup 2023"
+      },
+      {
+        "id": "_P3",
+        "illustrator": "???",
+        "note": "Regionals 2023 Participation Set 3"
+      },
+      {
+        "id": "_P4",
+        "illustrator": "???",
+        "note": "Regionals 2023 Finalist Set 3"
+      },
+      {
+        "id": "_P5",
+        "illustrator": "???",
+        "note": "Regionals 2023 Champion Set 3"
       }
     ],
     "JAAs": [
@@ -22008,6 +22053,21 @@
         "id": "_P1",
         "illustrator": "Tonamikanji",
         "note": "BT-12: Booster Across Time"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "???",
+        "note": "Regionals 2023 Participation Set 3"
+      },
+      {
+        "id": "_P3",
+        "illustrator": "???",
+        "note": "Regionals 2023 Finalist Set 3"
+      },
+      {
+        "id": "_P4",
+        "illustrator": "???",
+        "note": "Regionals 2023 Champion Set 3"
       }
     ],
     "JAAs": [
@@ -23525,17 +23585,17 @@
       },
       {
         "id": "_P2",
-        "illustrator": "???",
+        "illustrator": "Kazumasa Yasukuni",
         "note": "Regionals 2023 Participation Set 3"
       },
       {
         "id": "_P3",
-        "illustrator": "???",
+        "illustrator": "Kazumasa Yasukuni",
         "note": "Regionals 2023 Finalist Set 3"
       },
       {
         "id": "_P4",
-        "illustrator": "???",
+        "illustrator": "Kazumasa Yasukuni",
         "note": "Regionals 2023 Champion Set 3"
       }
     ],
@@ -117043,7 +117103,23 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "???",
+        "note": "Regionals 2023 Participation Set 3"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "???",
+        "note": "Regionals 2023 Finalist Set 3"
+      },
+      {
+        "id": "_P3",
+        "illustrator": "???",
+        "note": "Regionals 2023 Champion Set 3"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "Vaccine",
@@ -117067,7 +117143,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "11000",
-    "effect": "[When Digivolving] By placing a card with [Gammamon]\u00a0in its name under this Digimon as its bottom digivolution card, this Digimon gets +2000 DP, for the turn.\n[When Attacking] Delete 1 of your opponent's Digimon with 6000 DP or less. If this Digimon has 12000 DP or more, Delete 2 of your opponent's Digimon with 6000 DP or less instead.",
+    "effect": "[When Digivolving] By placing 1 card with [Gammamon]\u00a0in its name from your hand as this Digimon's bottom digivolution card, this Digimon gets +2000 DP for the turn.\n[When Attacking] Delete 1 of your opponent's Digimon with 6000 DP or less. If this Digimon has 12000 DP or more, Delete 2 such Digimon instead.",
     "form": "Mega",
     "id": "P-088",
     "illustrator": "No Illustrator",
