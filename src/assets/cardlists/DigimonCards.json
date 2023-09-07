@@ -22056,17 +22056,17 @@
       },
       {
         "id": "_P2",
-        "illustrator": "???",
+        "illustrator": "Hokyyuu",
         "note": "Regionals 2023 Participation Set 3"
       },
       {
         "id": "_P3",
-        "illustrator": "???",
+        "illustrator": "Hokyyuu",
         "note": "Regionals 2023 Finalist Set 3"
       },
       {
         "id": "_P4",
-        "illustrator": "???",
+        "illustrator": "Hokyyuu",
         "note": "Regionals 2023 Champion Set 3"
       }
     ],
@@ -56580,6 +56580,11 @@
         "illustrator": "p!k@ru",
         "note": "Great Legend Pre-Release Pack",
         "preRelease": "Gold Outline - Pre Release Stamp -\u00a0Rare"
+      },
+      {
+        "id": "_P1",
+        "illustrator": "p!k@ru",
+        "note": "RB-01: Resurgence Booster"
       }
     ],
     "JAAs": [
@@ -108962,7 +108967,7 @@
       "korean": "Not released"
     },
     "securityEffect": "-",
-    "specialDigivolve": "[Digivolve]Lv.6 w/[Leopardmon]\u00a0in its name + wo/[X Antibody]\u00a0in its name: Cost 1 ",
+    "specialDigivolve": "[Digivolve]Lv.6 w/[Leopardmon]\u00a0in its name + w/o [X Antibody]\u00a0in its name: Cost 1 ",
     "type": "Holy Warrior/Royal Knight/X Antibody",
     "version": "Normal"
   },
@@ -109925,7 +109930,7 @@
       "korean": "Not released"
     },
     "securityEffect": "-",
-    "specialDigivolve": "[Digivolve]Lv.5 w/[Cerberusmon]\u00a0in its name + wo/[X Antibody]\u00a0in its name: Cost 0 ",
+    "specialDigivolve": "[Digivolve]Lv.5 w/[Cerberusmon]\u00a0in its name + w/o [X Antibody]\u00a0in its name: Cost 0 ",
     "type": "Dark Animal/X Antibody",
     "version": "Normal"
   },
