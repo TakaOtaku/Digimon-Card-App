@@ -13958,17 +13958,17 @@
       },
       {
         "id": "_P2",
-        "illustrator": "???",
+        "illustrator": "TANIMESO",
         "note": "Regionals 2023 Participation Set 3"
       },
       {
         "id": "_P3",
-        "illustrator": "???",
+        "illustrator": "TANIMESO",
         "note": "Regionals 2023 Finalist Set 3"
       },
       {
         "id": "_P4",
-        "illustrator": "???",
+        "illustrator": "TANIMESO",
         "note": "Regionals 2023 Champion Set 3"
       }
     ],
@@ -56750,19 +56750,13 @@
         "illustrator": "p!k@ru",
         "note": "Great Legend Pre-Release Pack",
         "preRelease": "Gold Outline - Pre Release Stamp -\u00a0Rare"
-      },
-      {
-        "id": "_P1",
-        "illustrator": "p!k@ru",
-        "note": "RB-01: Resurgence Booster"
       }
     ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "-",
     "block": [
-      "00",
-      "02"
+      "00"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT4-107.webp",
@@ -62441,6 +62435,16 @@
         "id": "_P2",
         "illustrator": "As'Maria",
         "note": "BT-05: Booster Battle Of Omni"
+      },
+      {
+        "id": "_P3",
+        "illustrator": "Naochika Morishita",
+        "note": "RB-01: Resurgence Booster"
+      },
+      {
+        "id": "_P4",
+        "illustrator": "Naochika Morishita",
+        "note": "ST15 & ST16 Pre-Release Promotion"
       }
     ],
     "JAAs": [
@@ -62495,9 +62499,9 @@
     "name": {
       "english": "Omnimon Zwart",
       "japanese": "\u30aa\u30e1\u30ac\u30e2 \u30f3\u30ba\u30ef\u30eb\u30c8",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "korean": "\uc624\uba54\uac00\ubaac \uc988\uc648\ud2b8",
+      "simplifiedChinese": "\u5965\u7c73\u52a0\u517d \u5179\u74e6\u7279",
+      "traditionalChinese": "\u5967\u7c73\u52a0\u7378 \u8332\u74e6\u7279"
     },
     "notes": "\u25b9BOOSTER BATTLE OF OMNI [BT05]",
     "playCost": "15",
@@ -62506,7 +62510,7 @@
       "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -84794,6 +84798,11 @@
         "illustrator": "Takase",
         "note": "X Record Pre-Release Pack",
         "preRelease": "Foil - Pre Release Stamp -\u00a0Uncommon"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "Takase",
+        "note": "ST15 & ST16 Pre-Release Promotion"
       }
     ],
     "JAAs": [
@@ -84833,8 +84842,8 @@
       "english": "Gabumon (X Antibody)",
       "japanese": "\u30ac\u30d6\u30e2\u30f3X \u6297\u4f53",
       "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "simplifiedChinese": "\u52a0\u5e03\u517dX\u6297\u4f53",
+      "traditionalChinese": "\u52a0\u5e03\u7378X\u6297\u9ad4"
     },
     "notes": "\u25b9BOOSTER X RECORD [BT09]",
     "playCost": "3",
@@ -117111,17 +117120,17 @@
     "AAs": [
       {
         "id": "_P1",
-        "illustrator": "???",
+        "illustrator": "toriyufu",
         "note": "Regionals 2023 Participation Set 3"
       },
       {
         "id": "_P2",
-        "illustrator": "???",
+        "illustrator": "toriyufu",
         "note": "Regionals 2023 Finalist Set 3"
       },
       {
         "id": "_P3",
-        "illustrator": "???",
+        "illustrator": "toriyufu",
         "note": "Regionals 2023 Champion Set 3"
       }
     ],
@@ -125516,9 +125525,10 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "_P0",
         "illustrator": "sasasi",
-        "note": "Demo Deck: ST-15"
+        "note": "Dragon of Courage Pre-Release Pack",
+        "preRelease": "Foil - Pre Release Stamp -\u00a0Uncommon"
       }
     ],
     "JAAs": [],
@@ -125566,9 +125576,10 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "_P0",
         "illustrator": "sasasi",
-        "note": "Demo Deck: ST-15"
+        "note": "Dragon of Courage Pre-Release Pack",
+        "preRelease": "Foil - Pre Release Stamp -\u00a0Rare"
       }
     ],
     "JAAs": [],
@@ -125622,9 +125633,10 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "_P0",
         "illustrator": "poroze",
-        "note": "Demo Deck: ST-15"
+        "note": "Dragon of Courage Pre-Release Pack",
+        "preRelease": "Foil - Pre Release Stamp -\u00a0Uncommon"
       }
     ],
     "JAAs": [],
@@ -125678,9 +125690,10 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "_P0",
         "illustrator": "poroze",
-        "note": "Demo Deck: ST-15"
+        "note": "Dragon of Courage Pre-Release Pack",
+        "preRelease": "Foil - Pre Release Stamp -\u00a0Common"
       }
     ],
     "JAAs": [],
@@ -125732,7 +125745,14 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "GOSSAN",
+        "note": "Dragon of Courage Pre-Release Pack",
+        "preRelease": "Foil - Pre Release Stamp -\u00a0Common"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "Vaccine",
@@ -125773,7 +125793,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -125782,7 +125802,14 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "koki",
+        "note": "Dragon of Courage Pre-Release Pack",
+        "preRelease": "Foil - Pre Release Stamp -\u00a0Common"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "Virus",
@@ -125813,9 +125840,9 @@
     "name": {
       "english": "Mekanorimon",
       "japanese": "\u30e1\u30ab\u30ce\u30ea\u30e2\u30f3",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "korean": "\uba54\uce74\ub178\ubaac",
+      "simplifiedChinese": "\u673a\u68b0\u8f7d\u7269\u517d",
+      "traditionalChinese": "\u6a5f\u68b0\u88dd\u7532\u7378"
     },
     "notes": "STARTER DECK DRAGON OF COURAGE [ST15]",
     "playCost": "4",
@@ -125823,7 +125850,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -125834,9 +125861,10 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "_P0",
         "illustrator": "poroze",
-        "note": "Demo Deck: ST-15"
+        "note": "Dragon of Courage Pre-Release Pack",
+        "preRelease": "Foil - Pre Release Stamp -\u00a0Common"
       }
     ],
     "JAAs": [],
@@ -125888,13 +125916,7 @@
     "version": "Normal"
   },
   {
-    "AAs": [
-      {
-        "id": "_P1",
-        "illustrator": "sasasi",
-        "note": "Demo Deck: ST-15"
-      }
-    ],
+    "AAs": [],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "Vaccine",
@@ -125918,7 +125940,7 @@
     "digivolveEffect": "[All Turns] [Once Per Turn] When an attack target is switched, gain 1 memory.",
     "dnaDigivolve": "-",
     "dp": "5000",
-    "effect": "[Security] You may play 1 [Agumon] or Tamer card with [Tai Kamiya]\u00a0in its name from your hand or trash without paying the cost.\n\uff1cBlocker\uff1e.",
+    "effect": "[Security] You may play 1 [Agumon] or 1 Tamer card with [Tai Kamiya]\u00a0in its name from your hand or trash without paying the cost.\n\uff1cBlocker\uff1e.",
     "form": "Champion",
     "id": "ST15-08",
     "illustrator": "sasasi",
@@ -125944,7 +125966,14 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "Spareribs",
+        "note": "Dragon of Courage Pre-Release Pack",
+        "preRelease": "Foil - Pre Release Stamp -\u00a0Common"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "Data",
@@ -125975,9 +126004,9 @@
     "name": {
       "english": "Knightmon",
       "japanese": "\u30ca\u30a4\u30c8\u30e2\u30f3",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "korean": "\ub098\uc774\ud2b8\ubaac",
+      "simplifiedChinese": "\u9a91\u58eb\u517d",
+      "traditionalChinese": "\u9a0e\u58eb\u7378"
     },
     "notes": "STARTER DECK DRAGON OF COURAGE [ST15]",
     "playCost": "6",
@@ -125985,7 +126014,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -125994,7 +126023,14 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "GOSSAN",
+        "note": "Dragon of Courage Pre-Release Pack",
+        "preRelease": "Foil - Pre Release Stamp -\u00a0Uncommon"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "Vaccine",
@@ -126035,7 +126071,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -126046,9 +126082,10 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "_P0",
         "illustrator": "sasasi",
-        "note": "Demo Deck: ST-15"
+        "note": "Dragon of Courage Pre-Release Pack",
+        "preRelease": "Foil - Pre Release Stamp -\u00a0Rare"
       }
     ],
     "JAAs": [],
@@ -126108,11 +126145,6 @@
       },
       {
         "id": "_P2",
-        "illustrator": "sasasi",
-        "note": "Demo Deck: ST-15"
-      },
-      {
-        "id": "_P3",
         "illustrator": "tyuga",
         "note": "BT-14: Booster Blast Ace"
       }
@@ -126172,7 +126204,14 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "Kazumasa Yasukuni",
+        "note": "ST-15: Starter Deck Dragon of Courage",
+        "preRelease": "Foil - Pre Release Stamp -\u00a0Uncommon"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "Vaccine",
@@ -126213,7 +126252,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -126224,9 +126263,10 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "_P0",
         "illustrator": "No Illustrator",
-        "note": "Demo Deck: ST-15"
+        "note": "Dragon of Courage Pre-Release Pack",
+        "preRelease": "Foil - Pre Release Stamp -\u00a0Rare"
       }
     ],
     "JAAs": [],
@@ -126274,9 +126314,10 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "_P0",
         "illustrator": "No Illustrator",
-        "note": "Demo Deck: ST-15"
+        "note": "Dragon of Courage Pre-Release Pack",
+        "preRelease": "Foil - Pre Release Stamp -\u00a0Uncommon"
       }
     ],
     "JAAs": [],
@@ -126301,7 +126342,7 @@
     "id": "ST15-15",
     "illustrator": "No Illustrator",
     "name": {
-      "english": "Advance of Courage",
+      "english": "Breakthrough of Courage",
       "japanese": "\u52c7\u6c17\u306e\u524d\u9032",
       "korean": "-",
       "simplifiedChinese": "-",
@@ -126324,9 +126365,10 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "_P0",
         "illustrator": "Nakano Haito",
-        "note": "Demo Deck: ST-15"
+        "note": "Dragon of Courage Pre-Release Pack",
+        "preRelease": "Foil - Pre Release Stamp -\u00a0Common"
       }
     ],
     "JAAs": [],
@@ -126346,7 +126388,7 @@
     "digivolveEffect": "[Security] \uff1cDe-Digivolve3\uff1e on 1 of your opponent's Digimon.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] \uff1cDe-Digivolve3\uff1e on 1 of your opponent's Digimon.Then, 1 of your opponent's Digimon gains \"[Start of Your Main Phase] Attack with this Digimon\", until the end of your opponent's turn.",
+    "effect": "[Main] \uff1cDe-Digivolve3\uff1e on 1 of your opponent's Digimon. Then, until the end of your opponent's turn, 1 of your opponent's Digimon gains \"[Start of Your Main Phase] Attack with this Digimon\".",
     "form": "-",
     "id": "ST15-16",
     "illustrator": "Nakano Haito",
