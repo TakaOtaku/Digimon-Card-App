@@ -126416,9 +126416,10 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "_P0",
         "illustrator": "Tonamikanji",
-        "note": "Demo Deck: ST-16"
+        "note": "Wolf of Friendship Pre-Release Pack",
+        "preRelease": "Foil - Pre Release Stamp -\u00a0Uncommon"
       }
     ],
     "JAAs": [],
@@ -126466,9 +126467,10 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "_P0",
         "illustrator": "koki",
-        "note": "Demo Deck: ST-16"
+        "note": "Wolf of Friendship Pre-Release Pack",
+        "preRelease": "Foil - Pre Release Stamp -\u00a0Common"
       }
     ],
     "JAAs": [],
@@ -126522,9 +126524,10 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "_P0",
         "illustrator": "Tonamikanji",
-        "note": "Demo Deck: ST-16"
+        "note": "Wolf of Friendship Pre-Release Pack",
+        "preRelease": "Foil - Pre Release Stamp -\u00a0Rare"
       }
     ],
     "JAAs": [],
@@ -126576,7 +126579,14 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "koki",
+        "note": "Wolf of Friendship Pre-Release Pack",
+        "preRelease": "Foil - Pre Release Stamp -\u00a0Uncommon"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "Vaccine",
@@ -126617,7 +126627,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -126628,9 +126638,10 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "_P0",
         "illustrator": "Takase",
-        "note": "Demo Deck: ST-16"
+        "note": "Wolf of Friendship Pre-Release Pack",
+        "preRelease": "Foil - Pre Release Stamp -\u00a0Common"
       }
     ],
     "JAAs": [],
@@ -126684,9 +126695,10 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "_P0",
         "illustrator": "koki",
-        "note": "Demo Deck: ST-16"
+        "note": "Wolf of Friendship Pre-Release Pack",
+        "preRelease": "Foil - Pre Release Stamp -\u00a0Common"
       }
     ],
     "JAAs": [],
@@ -126738,7 +126750,14 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "Spareribs",
+        "note": "Wolf of Friendship Pre-Release Pack",
+        "preRelease": "Foil - Pre Release Stamp -\u00a0Common"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "Data",
@@ -126769,9 +126788,9 @@
     "name": {
       "english": "Meramon",
       "japanese": "\u30e1\u30e9\u30e2\u30f3",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "korean": "\uba54\ub77c\ubaac",
+      "simplifiedChinese": "\u71c3\u70e7\u517d",
+      "traditionalChinese": "\u706b\u7130\u7378"
     },
     "notes": "STARTER DECK WOLF OF FRIENDSHIP [ST16]",
     "playCost": "5",
@@ -126779,7 +126798,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -126788,13 +126807,7 @@
     "version": "Normal"
   },
   {
-    "AAs": [
-      {
-        "id": "_P1",
-        "illustrator": "Tonamikanji",
-        "note": "Demo Deck: ST-16"
-      }
-    ],
+    "AAs": [],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "Vaccine",
@@ -126818,7 +126831,7 @@
     "digivolveEffect": "[When Attacking] [Once Per Turn] \uff1cDraw 1\uff1e. Then, trash 1 card from your hand.",
     "dnaDigivolve": "-",
     "dp": "5000",
-    "effect": "[Security] You may play 1 [Gabumon] or Tamer card with [Matt Ishida]\u00a0in its name from your hand or trash without paying the cost.\n[When Digivolving] \uff1cDraw 1\uff1e. Then, trash 1 card from your hand.",
+    "effect": "[Security] You may play 1 [Gabumon] or 1 Tamer card with [Matt Ishida]\u00a0in its name from your hand or trash without paying the cost.\n[When Digivolving] \uff1cDraw 1\uff1e. Then, trash 1 card from your hand.",
     "form": "Champion",
     "id": "ST16-08",
     "illustrator": "Tonamikanji",
@@ -126844,7 +126857,14 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "Takase",
+        "note": "Wolf of Friendship Pre-Release Pack",
+        "preRelease": "Foil - Pre Release Stamp -\u00a0Common"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "Data",
@@ -126885,7 +126905,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -126894,7 +126914,14 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "Spareribs",
+        "note": "Wolf of Friendship Pre-Release Pack",
+        "preRelease": "Foil - Pre Release Stamp -\u00a0Uncommon"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "Vaccine",
@@ -126926,8 +126953,8 @@
       "english": "Mammothmon",
       "japanese": "\u30de\u30f3\u30e2\u30f3",
       "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "simplifiedChinese": "\u731b\u72b8\u517d",
+      "traditionalChinese": "\u9577\u6bdb\u8c61\u7378"
     },
     "notes": "STARTER DECK WOLF OF FRIENDSHIP [ST16]",
     "playCost": "7",
@@ -126935,7 +126962,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -126946,9 +126973,10 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "_P0",
         "illustrator": "Tonamikanji",
-        "note": "Demo Deck: ST-16"
+        "note": "Wolf of Friendship Pre-Release Pack",
+        "preRelease": "Foil - Pre Release Stamp -\u00a0Rare"
       }
     ],
     "JAAs": [],
@@ -127008,11 +127036,6 @@
       },
       {
         "id": "_P2",
-        "illustrator": "Tonamikanji",
-        "note": "Demo Deck: ST-16"
-      },
-      {
-        "id": "_P3",
         "illustrator": "tyuga",
         "note": "BT-14: Booster Blast Ace"
       }
@@ -127072,7 +127095,14 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "Spareribs",
+        "note": "Wolf of Friendship Pre-Release Pack",
+        "preRelease": "Foil - Pre Release Stamp -\u00a0Uncommon"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "Vaccine",
@@ -127104,8 +127134,8 @@
       "english": "SkullMammothmon",
       "japanese": "\u30b9\u30ab\u30eb\u30de\u30f3\u30e2\u30f3",
       "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "simplifiedChinese": "\u9ab7\u9ac5\u731b\u72b8\u517d",
+      "traditionalChinese": "\u55aa\u5c4d\u9577\u6bdb\u8c61\u7378"
     },
     "notes": "STARTER DECK WOLF OF FRIENDSHIP [ST16]",
     "playCost": "11",
@@ -127113,7 +127143,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -127124,9 +127154,10 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "_P0",
         "illustrator": "No Illustrator",
-        "note": "Demo Deck: ST-16"
+        "note": "Wolf of Friendship Pre-Release Pack",
+        "preRelease": "Foil - Pre Release Stamp -\u00a0Rare"
       }
     ],
     "JAAs": [],
@@ -127174,9 +127205,10 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "_P0",
         "illustrator": "No Illustrator",
-        "note": "Demo Deck: ST-16"
+        "note": "Wolf of Friendship Pre-Release Pack",
+        "preRelease": "Foil - Pre Release Stamp -\u00a0Uncommon"
       }
     ],
     "JAAs": [],
@@ -127224,9 +127256,10 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "_P0",
         "illustrator": "Nakano Haito",
-        "note": "Demo Deck: ST-16"
+        "note": "Wolf of Friendship Pre-Release Pack",
+        "preRelease": "Foil - Pre Release Stamp -\u00a0Common"
       }
     ],
     "JAAs": [],
