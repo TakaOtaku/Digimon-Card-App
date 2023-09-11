@@ -21053,7 +21053,7 @@
       "korean": "Not released"
     },
     "securityEffect": "-",
-    "specialDigivolve": "[Digivolve][Ranamon]: Cost 1 ",
+    "specialDigivolve": "[Digivolve][Lanamon]: Cost 1 ",
     "type": "Aquatic",
     "version": "Normal"
   },
@@ -23227,7 +23227,7 @@
       "traditionalChinese": "\u4e0d\u884c\u7378"
     },
     "notes": "\u25b9BOOSTER ACROSS TIME [BT12]",
-    "playCost": "3",
+    "playCost": "5",
     "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
@@ -117330,7 +117330,7 @@
       "traditionalChinese": "-"
     },
     "notes": "3rd Anniversary Update Pack",
-    "playCost": "-",
+    "playCost": "3",
     "rarity": "P",
     "restrictions": {
       "chinese": "Not released",
