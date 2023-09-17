@@ -503,49 +503,59 @@ def formatCards():
 
 
 def getCardImages():
-    backupAAs = []
-    backupJAAs = []
+    # Backup the AAs and JAAs for each card
+    backup_aas = []
+    backup_jaas = []
+
+    # Loop through each card link
     for link in WV.cardLinks:
-        print('Checking' + link)
-        backupAAs = []
+        print('Checking ' + link)
+
+        # Get the HTML content for the page
         page = requests.get(WV.wikiLink + link + WV.gallery)
         soup = BeautifulSoup(page.content, "html.parser")
 
+        # Get the ID of the card
         id = link.split("/")[2]
-        idWithoutP = remove_suffix_and_extension(id)
+        id_without_p = remove_suffix_and_extension(id)
 
+        # Find the card object with the matching ID
         card = None
         for obj in WV.cards:
-            if obj.id == idWithoutP:
+            if obj.id == id_without_p:
                 card = obj
         if card is None:
             continue
 
-        backupAAs = card.AAs
-        backupJAAs = card.JAAs
+        # Backup the AAs and JAAs for the card
+        backup_aas = card.AAs
+        backup_jaas = card.JAAs
 
-        # Remove the AAs or the JAAs from the Card
+        # Remove the AAs and JAAs from the card
         card.AAs = []
         card.JAAs = []
 
-        # English Gallery
+        # Download images and update notes for the English gallery
         div = soup.find("div", id="gallery-0")
         if div is not None:
-            galleryItems = div.find_all("div", class_="wikia-gallery-item")
+            gallery_items = div.find_all("div", class_="wikia-gallery-item")
 
-            for item in galleryItems:
+            for item in gallery_items:
                 img = item.find("img")
                 if img is None:
                     continue
 
-                idWithP = re.sub(r'\.png$', '', img['data-image-key'])
+                id_with_p = re.sub(r'\.png$', '', img['data-image-key'])
                 src = img['src'].split("/latest")[0]
 
-                saveLocation = src + '/latest'
-                saveLocation = saveLocation.replace('-j', '-J')
+                save_location = src + '/latest'
+                save_location = save_location.replace('-j', '-J')
 
                 download_image_with_retry(
-                    saveLocation, './scripts/python/Wiki/digimon-images/' + img['data-image-key'], img['data-image-key'])
+                    save_location,
+                    './scripts/python/Wiki/digimon-images/' + img['data-image-key'],
+                    img['data-image-key']
+                )
 
                 captions = item.find("div", class_="lightbox-caption")
                 notes = captions.find_all("a")
@@ -553,41 +563,49 @@ def getCardImages():
                 if notes is None or len(notes) == 0:
                     continue
 
-                noteArray = []
+                note_array = []
                 for note in notes:
-                    noteArray.append(note.text)
-                combined_notes = " / ".join(noteArray)
+                    note_array.append(note.text)
+                combined_notes = " / ".join(note_array)
 
-                # The NA
-                if card.notes == noteArray[0]:
+                # Update the notes for the card
+                if card.notes == note_array[0]:
                     card.notes = combined_notes
-                # The AAs
-                for aa in backupAAs:
-                    if aa['note'] == noteArray[0]:
-                        if '_P' in idWithP:
-                            newAA = {
-                                'id': idWithP, 'illustrator': aa['illustrator'], 'note': combined_notes}
-                            card.AAs.append(newAA)
+
+                # Update the AAs for the card
+                for aa in backup_aas:
+                    if aa['note'] == note_array[0]:
+                        if '_P' in id_with_p:
+                            new_aa = {
+                                'id': id_with_p,
+                                'illustrator': aa['illustrator'],
+                                'note': combined_notes
+                            }
+                            card.AAs.append(new_aa)
                         else:
                             card.notes = combined_notes
-        # Japanese Gallery
-        divJ = soup.find("div", id="gallery-1")
-        if divJ is not None:
-            galleryItemsJ = divJ.find_all("div", class_="wikia-gallery-item")
 
-            for item in galleryItemsJ:
+        # Download images and update notes for the Japanese gallery
+        div_j = soup.find("div", id="gallery-1")
+        if div_j is not None:
+            gallery_items_j = div_j.find_all("div", class_="wikia-gallery-item")
+
+            for item in gallery_items_j:
                 img = item.find("img")
                 if img is None:
                     continue
 
-                idWithP = re.sub(r'\.png$', '', img['data-image-key'])
+                id_with_p = re.sub(r'\.png$', '', img['data-image-key'])
                 src = img['src'].split("/latest")[0]
 
-                saveLocation = src + '/latest'
-                saveLocation = saveLocation.replace('-j', '-J')
+                save_location = src + '/latest'
+                save_location = save_location.replace('-j', '-J')
 
                 download_image_with_retry(
-                    saveLocation, './scripts/python/Wiki/digimon-images/' + img['data-image-key'], img['data-image-key'])
+                    save_location,
+                    './scripts/python/Wiki/digimon-images/' + img['data-image-key'],
+                    img['data-image-key']
+                )
 
                 captions = item.find("div", class_="lightbox-caption")
                 notes = captions.find_all("a")
@@ -595,23 +613,29 @@ def getCardImages():
                 if notes is None or len(notes) == 0:
                     continue
 
-                noteArray = []
+                note_array = []
                 for note in notes:
-                    noteArray.append(note.text)
-                combined_notes = " / ".join(noteArray)
+                    note_array.append(note.text)
+                combined_notes = " / ".join(note_array)
 
-                # NA
-                if card.notes == noteArray[0]:
+                # Update the notes for the card
+                if card.notes == note_array[0]:
                     card.notes = combined_notes
-                # AAs
-                for aa in backupJAAs:
-                    if aa['note'] == noteArray[0]:
-                        if '_P' in idWithP:
-                            newAA = {
-                                'id': idWithP, 'illustrator': aa['illustrator'], 'note': combined_notes}
-                            card.JAAs.append(newAA)
+
+                # Update the JAAs for the card
+                for aa in backup_jaas:
+                    if aa['note'] == note_array[0]:
+                        if '_P' in id_with_p:
+                            new_aa = {
+                                'id': id_with_p,
+                                'illustrator': aa['illustrator'],
+                                'note': combined_notes
+                            }
+                            card.JAAs.append(new_aa)
                         else:
                             card.notes = combined_notes
+
+        # Update the card object in the WV.cards list
         index = 0
         for obj in WV.cards:
             if obj.id == card.id:

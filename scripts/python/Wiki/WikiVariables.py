@@ -33,6 +33,8 @@ wikiPageLinks = [
         'url': 'https://digimoncardgame.fandom.com/wiki/BT-13:_Booster_Versus_Royal_Knights'},
     {'name': '▹BOOSTER BLAST ACE [BT14]',
         'url': 'https://digimoncardgame.fandom.com/wiki/BT-14:_Booster_Blast_Ace'},
+    {'name': '▹BOOSTER EXCEED APOCALYPSE [BT15]',
+        'url': 'https://digimoncardgame.fandom.com/wiki/BT-15:_Booster_Exceed_Apocalypse'},
 
     {'name': '▹THEME BOOSTER CLASSIC COLLECTION [EX1]',
         'url': 'https://digimoncardgame.fandom.com/wiki/EX-01:_Theme_Booster_Classic_Collection'},
