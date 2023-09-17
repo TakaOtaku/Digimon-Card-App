@@ -112026,7 +112026,7 @@
     "playCost": "4",
     "rarity": "P",
     "restrictions": {
-      "chinese": "Not released",
+      "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
@@ -112098,7 +112098,7 @@
       {
         "color": "Blue",
         "cost": "3",
-        "level": "4"
+        "level": "5"
       }
     ],
     "digivolveEffect": "[Your Turn] While you have 8 or more cards in your hand, this Digimon gains \uff1cSecurity Attack +1\uff1e.",
@@ -112119,7 +112119,7 @@
     "playCost": "7",
     "rarity": "P",
     "restrictions": {
-      "chinese": "Not released",
+      "chinese": "Unrestricted",
       "english": "Restricted to 1",
       "japanese": "Restricted to 1",
       "korean": "Unrestricted"
@@ -112180,7 +112180,7 @@
     "playCost": "3",
     "rarity": "P",
     "restrictions": {
-      "chinese": "Not released",
+      "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
@@ -112246,7 +112246,7 @@
     "playCost": "5",
     "rarity": "P",
     "restrictions": {
-      "chinese": "Not released",
+      "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
@@ -112309,7 +112309,7 @@
     "playCost": "6",
     "rarity": "P",
     "restrictions": {
-      "chinese": "Not released",
+      "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
@@ -112371,10 +112371,10 @@
     "playCost": "2",
     "rarity": "P",
     "restrictions": {
-      "chinese": "Not released",
+      "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -133114,7 +133114,7 @@
       "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -133164,7 +133164,7 @@
       "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -133226,7 +133226,7 @@
       "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -133237,33 +133237,33 @@
     "AAs": [
       {
         "id": "_P1",
-        "illustrator": "Nakano Haito",
-        "note": "ST-14: Advanced Deck Set Beelzemon"
-      },
-      {
-        "id": "_P2",
         "illustrator": "Kenji Watanabe",
         "note": "Regionals 2022 May-July Participation Set 1"
       },
       {
-        "id": "_P3",
+        "id": "_P2",
         "illustrator": "Kenji Watanabe",
         "note": "Regionals 2022 May-July Finalist Set 1"
       },
       {
-        "id": "_P4",
+        "id": "_P3",
         "illustrator": "Kenji Watanabe",
         "note": "Regionals 2022 May-July Champion Set 1"
       },
       {
-        "id": "_P5",
+        "id": "_P4",
         "illustrator": "Kenji Watanabe",
         "note": "Regionals 2022 Finalist Set 1"
       },
       {
-        "id": "_P6",
+        "id": "_P5",
         "illustrator": "Kenji Watanabe",
         "note": "Regionals 2022 Champion Set 1"
+      },
+      {
+        "id": "_P6",
+        "illustrator": "Nakano Haito",
+        "note": "ST-14: Advanced Deck Set Beelzemon"
       }
     ],
     "JAAs": [
@@ -133314,7 +133314,7 @@
       "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -133364,7 +133364,7 @@
       "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -133436,7 +133436,7 @@
       "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -133475,9 +133475,9 @@
     "name": {
       "english": "Wingdramon",
       "japanese": "\u30a6\u30a4\u30f3\u30b0\u30c9\u30e9\u30e2\u30f3",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "korean": "\uc719\ub4dc\ub77c\ubaac",
+      "simplifiedChinese": "\u7ffc\u9f99\u517d",
+      "traditionalChinese": "\u7ffc\u9f8d\u7378"
     },
     "notes": "STARTER DECK ULLFORCEVEEDRAMON [ST08]",
     "playCost": "7",
@@ -133486,7 +133486,7 @@
       "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -133536,7 +133536,7 @@
       "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -133575,9 +133575,9 @@
     "name": {
       "english": "Slayerdramon",
       "japanese": "\u30b9\u30ec\u30a4\u30e4\u30fc\u30c9\u30e9\u30e2\u30f3",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "korean": "\uc2ac\ub808\uc774\uc5b4\ub4dc\ub77c\ubaac",
+      "simplifiedChinese": "\u65a9\u9f99\u517d",
+      "traditionalChinese": "\u65ac\u9f8d\u7378"
     },
     "notes": "STARTER DECK ULLFORCEVEEDRAMON [ST08]",
     "playCost": "11",
@@ -133586,7 +133586,7 @@
       "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -133636,7 +133636,7 @@
       "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -133669,9 +133669,9 @@
     "name": {
       "english": "Victory Sword",
       "japanese": "\u30a2\u30eb\u30d5\u30a9\u30fc\u30b9\u30bb\u30a4\u30d0\u30fc",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "korean": "\uc54c\ud3ec\uc2a4\uc138\uc774\ubc84",
+      "simplifiedChinese": "\u7a76\u6781V\u9f99\u517d",
+      "traditionalChinese": "\u7a76\u6975\u8056\u528d"
     },
     "notes": "STARTER DECK ULLFORCEVEEDRAMON [ST08]",
     "playCost": "3",
@@ -133680,7 +133680,7 @@
       "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -133713,9 +133713,9 @@
     "name": {
       "english": "V-Wing Blade",
       "japanese": "\uff36\u30a6\u30a4\u30f3\u30b0\u30d6\u30ec\u30fc\u30c9",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "korean": "V\uc719 \ube14\ub808\uc774\ub4dc",
+      "simplifiedChinese": "V\u7ffc\u65a9",
+      "traditionalChinese": "V\u7ffc\u5203"
     },
     "notes": "STARTER DECK ULLFORCEVEEDRAMON [ST08]",
     "playCost": "6",
@@ -133724,7 +133724,7 @@
       "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
