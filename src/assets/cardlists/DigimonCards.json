@@ -37548,6 +37548,5317 @@
     "AAs": [
       {
         "id": "_P1",
+        "illustrator": "Spareribs",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Spareribs",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "aceEffect": "-",
+    "attribute": "-",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-001.webp",
+    "cardLv": "Lv.2",
+    "cardNumber": "BT15-001",
+    "cardType": "Digi-Egg",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[On Deletion] Return 1 Digimon card with [Avian]/[Bird]/[Beast]/[Animal]/[Sovereign]\u00a0in one of its traits (other than [Sea Animal]) from your trash to the hand.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "effect": "-",
+    "form": "In-Training",
+    "id": "BT15-001",
+    "illustrator": "Spareribs",
+    "name": {
+      "english": "Tokomon",
+      "japanese": "\u30d4\u30e7\u30b3\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "-",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Bulb",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Kenji Watanabe",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Kenji Watanabe",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "aceEffect": "-",
+    "attribute": "-",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-002.webp",
+    "cardLv": "Lv.2",
+    "cardNumber": "BT15-002",
+    "cardType": "Digi-Egg",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When one of your Digimon's effects adds cards to your hand, this Digimon gets +1000 DP until the end of your opponent's turn.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "effect": "-",
+    "form": "In-Training",
+    "id": "BT15-002",
+    "illustrator": "Kenji Watanabe",
+    "name": {
+      "english": "Tsunomon",
+      "japanese": "\u30c4\u30ce\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "-",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Lesser",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "tyuga",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "tyuga",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "aceEffect": "-",
+    "attribute": "-",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-003.webp",
+    "cardLv": "Lv.2",
+    "cardNumber": "BT15-003",
+    "cardType": "Digi-Egg",
+    "color": "Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[When Attacking] [Once Per Turn] By trashing the top or bottom card of your security stack, gain 1 memory.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "effect": "-",
+    "form": "In-Training",
+    "id": "BT15-003",
+    "illustrator": "tyuga",
+    "name": {
+      "english": "Nyaromon",
+      "japanese": "\u30cb\u30e3\u30ed\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "-",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Lesser",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "TANIMESO",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "TANIMESO",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "aceEffect": "-",
+    "attribute": "-",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-004.webp",
+    "cardLv": "Lv.2",
+    "cardNumber": "BT15-004",
+    "cardType": "Digi-Egg",
+    "color": "Green",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[End of Your Turn] If this Digimon has the [Insectoid]\u00a0trait, it may attack an opponent's Digimon.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "effect": "-",
+    "form": "In-Training",
+    "id": "BT15-004",
+    "illustrator": "TANIMESO",
+    "name": {
+      "english": "Motimon",
+      "japanese": "\u30e2\u30c1\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "-",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Lesser",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "toriyufu",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "toriyufu",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "aceEffect": "-",
+    "attribute": "-",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-005.webp",
+    "cardLv": "Lv.2",
+    "cardNumber": "BT15-005",
+    "cardType": "Digi-Egg",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[Opponent's Turn] [Once Per Turn] When a Digimon becomes unsuspended, \uff1cDraw 1\uff1e.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "effect": "-",
+    "form": "In-Training",
+    "id": "BT15-005",
+    "illustrator": "toriyufu",
+    "name": {
+      "english": "Kyokyomon",
+      "japanese": "\u30ad\u30e7\u30ad\u30e7\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "-",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Lesser/X Antibody",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "YAMURETSU",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "YAMURETSU",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "aceEffect": "-",
+    "attribute": "-",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-006.webp",
+    "cardLv": "Lv.2",
+    "cardNumber": "BT15-006",
+    "cardType": "Digi-Egg",
+    "color": "Purple",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[On Deletion] By trashing 1 level 5 or higher Digimon card in your hand, \uff1cDraw 2\uff1e.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "effect": "-",
+    "form": "In-Training",
+    "id": "BT15-006",
+    "illustrator": "YAMURETSU",
+    "name": {
+      "english": "DemiMeramon",
+      "japanese": "\u30d7\u30c1\u30e1\u30e9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "-",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Flame",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Tonamikanji",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Tonamikanji",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "aceEffect": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-007.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "BT15-007",
+    "cardType": "Digimon",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When a card is removed from your opponent's security stack, gain 1 memory.",
+    "dnaDigivolve": "-",
+    "dp": "1000",
+    "effect": "[Start of Your Main Phase] By trashing 1 Digimon card with [Avian]/[Bird]/[Beast]/[Animal]/[Sovereign]\u00a0in one of its traits (other than [Sea Animal]) in your hand, reveal the top 4 cards of your deck. Add 1 red card among them to the hand. Return the rest at the bottom of the deck.",
+    "form": "Rookie",
+    "id": "BT15-007",
+    "illustrator": "Spareribs",
+    "name": {
+      "english": "Biyomon",
+      "japanese": "\u30d4\u30e8\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "3",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Bird",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Data",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-008.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "BT15-008",
+    "cardType": "Digimon",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "2000",
+    "effect": "[Your Turn] [Once Per Turn] When one of your red Digimon attacks a player, \uff1cDraw 1\uff1e.",
+    "form": "Rookie",
+    "id": "BT15-008",
+    "illustrator": "YAMURETSU",
+    "name": {
+      "english": "Muchomon",
+      "japanese": "\u30e0\u30fc\u30c1\u30e7\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "3",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Avian",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Data",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-009.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "BT15-009",
+    "cardType": "Digimon",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "4000",
+    "effect": "[Main] [Once Per Turn] By paying 2 memory, delete 1 of your opponent's Digimon with DP less than or equal to this Digimon.",
+    "form": "Champion",
+    "id": "BT15-009",
+    "illustrator": "Kazumasa Yasukuni",
+    "name": {
+      "english": "Meramon",
+      "japanese": "\u30e1\u30e9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "3",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Flame",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Data",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-010.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "BT15-010",
+    "cardType": "Digimon",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "5000",
+    "effect": "[Your Turn] [Once Per Turn] When one of your Digimon attacks a player, delete 1 of your opponent's Digimon with 3000 DP or less.",
+    "form": "Champion",
+    "id": "BT15-010",
+    "illustrator": "Hisashi Fujiwara",
+    "name": {
+      "english": "Akatorimon",
+      "japanese": "\u30a2\u30ab\u30c8\u30ea\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "4",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Giant Bird",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Data",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-011.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "BT15-011",
+    "cardType": "Digimon",
+    "color": "Red/Purple",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "3",
+        "level": "3"
+      },
+      {
+        "color": "Purple",
+        "cost": "3",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "4000",
+    "effect": "\uff1cBlocker\uff1e \n[On Play] Reveal the top 4 cards of your deck. Add 1 Digimon card with the [SoC]\u00a0trait trait and 1 Tamer card with the [SoC]\u00a0trait among them to the hand. Return the rest to the bottom of the deck. If you added cards to the hand, trash 1 card in your hand.",
+    "form": "Champion",
+    "id": "BT15-011",
+    "illustrator": "Tonamikanji",
+    "name": {
+      "english": "Tyrannomon",
+      "japanese": "\u30c6\u30a3\u30e9\u30ce\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "4",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve]Lv.3 w/[SoC]\u00a0trait: Cost 2 ",
+    "type": "Dinosaur/SoC",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Data",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-012.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "BT15-012",
+    "cardType": "Digimon",
+    "color": "Red/Green",
+    "digiXros": "[DigiXros\u00a0-2] [Shoutmon] x [Ballistamon] ",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "3",
+        "level": "3"
+      },
+      {
+        "color": "Green",
+        "cost": "3",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "5000",
+    "effect": "\uff1cMaterial Save 2\uff1e \n[Start of Your Turn] By deleting this Digimon, gain 1 memory.\n[On Play] Suspend 1 of your opponent's Digimon. If DigiXrosing with 2 cards, that Digimon can't unsuspend during your opponent's next unsuspend phase.\n[Rule] Name: This card's name is also treated as [Shoutmon]/[Ballistamon]..",
+    "form": "Champion",
+    "id": "BT15-012",
+    "illustrator": "poroze",
+    "name": {
+      "english": "Shoutmon X2",
+      "japanese": "\u30b7\u30e3\u30a6\u30c8\u30e2\u30f3X2",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "5",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Enhancement",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-013.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "BT15-013",
+    "cardType": "Digimon",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When a card is removed from your opponent's security stack, gain 1 memory.",
+    "dnaDigivolve": "-",
+    "dp": "5000",
+    "effect": "[When Digivolving] Return 1 red Digimon card with [Avian]/[Bird]/[Beast]/[Animal]/[Sovereign]\u00a0in one of its traits (other than [Sea Animal]) from your trash to the hand.",
+    "form": "Champion",
+    "id": "BT15-013",
+    "illustrator": "Spareribs",
+    "name": {
+      "english": "Birdramon",
+      "japanese": "\u30d0\u30fc\u30c9\u30e9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "5",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Giant Bird",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Naochika Morishita",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Naochika Morishita",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "aceEffect": "Overflow \uff1c-3\uff1e.",
+    "attribute": "Vaccine",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-014.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "BT15-014",
+    "cardType": "Digimon",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "3",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "7000",
+    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e \n[On Play] [When Digivolving] You may play 1 red Tamer card with a play cost of 4 or less from your hand without paying the cost.\n[All Turns] [Once Per Turn] When your Tamer card is played, delete 1 of your opponent\u2019s Digimon with \uff1cBlocker\uff1e\n",
+    "form": "Ultimate",
+    "id": "BT15-014",
+    "illustrator": "Spareribs",
+    "name": {
+      "english": "Garudamon",
+      "japanese": "\u30ac\u30eb\u30c0\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "4",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Birdkin",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Data",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-015.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "BT15-015",
+    "cardType": "Digimon",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "3",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "7000",
+    "effect": "[Main] [Once Per Turn] By paying 2 memory, this Digimon gains \uff1cSecurity Attack +1\uff1efor the turn. Then, this Digimon mat attack.",
+    "form": "Ultimate",
+    "id": "BT15-015",
+    "illustrator": "Kazumasa Yasukuni",
+    "name": {
+      "english": "SkullMeramon",
+      "japanese": "\u30c7\u30b9\u30e1\u30e9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "7",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Flame",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Data",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-016.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "BT15-016",
+    "cardType": "Digimon",
+    "color": "Red/Blue",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "4",
+        "level": "4"
+      },
+      {
+        "color": "Blue",
+        "cost": "4",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "[On Deletion] Return 1 of your opponent's Digimon with 7000 DP or less to the hand.",
+    "dnaDigivolve": "-",
+    "dp": "7000",
+    "effect": "[On Play] [When Digivolving] If your opponent has 4 or less memory, 1 of your opponent's Digimon with 8000 DP or more can't attack until the end of your opponent's turn. If your opponent have 4 or more memory, delete 1 of your opponent's Digimon with 6000 DP or less.",
+    "form": "Ultimate",
+    "id": "BT15-016",
+    "illustrator": "GOSSAN",
+    "name": {
+      "english": "Brachiomon",
+      "japanese": "\u30d6\u30e9\u30ad\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "7",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Plesiosaur",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-017.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT15-017",
+    "cardType": "Digimon",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "1200",
+    "effect": "[On Play] [On Deletion] If your opponent has 3 or fewer security cards, delete 1 of your opponent's Digimon with the lowest DP. If your opponent has 4 or more security cards, trash the top card of your opponent's security stack.\n[When Digivolving] You may play 1 red Digimon card with 5000 DP or less or 1 red Tamer card from your hand without paying the cost.",
+    "form": "Mega",
+    "id": "BT15-017",
+    "illustrator": "Spareribs",
+    "name": {
+      "english": "Phoenixmon",
+      "japanese": "\u30db\u30a6\u30aa\u30a6\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "11",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Holy Bird",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Data",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-018.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT15-018",
+    "cardType": "Digimon",
+    "color": "Red/Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "4",
+        "level": "5"
+      },
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "effect": "[End of Your Turn] [Once Per Turn] If your opponent has 4 or more memory, delete 1 of your opponent's Digimon with the lowest DP.\n[End of Opponent's Turn] [Once Per Turn] If you have 4 or less memory, delete 1 of your opponent's Digimon with the highest play cost.",
+    "form": "Mega",
+    "id": "BT15-018",
+    "illustrator": "GOSSAN",
+    "name": {
+      "english": "Cannondramon",
+      "japanese": "\u30ad\u30e3\u30ce\u30f3\u30c9\u30e9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "12",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Cyborg",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Data",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-019.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "BT15-019",
+    "cardType": "Digimon",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "2000",
+    "effect": "[On Play] Trash the bottom digivolution card of 1 of your opponent's Digimon. Then, if your opponent has no Digimon with digivolution cards, \uff1cDraw 1\uff1e.",
+    "form": "Rookie",
+    "id": "BT15-019",
+    "illustrator": "YAMURETSU",
+    "name": {
+      "english": "Crabmon",
+      "japanese": "\u30ac\u30cb\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "3",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Crustacean",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Tonamikanji",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Tonamikanji",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "aceEffect": "-",
+    "attribute": "Data",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-020.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "BT15-020",
+    "cardType": "Digimon",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[When Attacking] \uff1cDraw 1\uff1e.",
+    "dnaDigivolve": "-",
+    "dp": "1000",
+    "effect": "[Start of Your Main Phase] 1 of your Digimon gains \uff1cBlocker\uff1euntil the end of your opponent's turn. Then, if you have a Tamer with [Matt Ishida]\u00a0in its name, \uff1cDraw 1\uff1e.",
+    "form": "Rookie",
+    "id": "BT15-020",
+    "illustrator": "Kenji Watanabe",
+    "name": {
+      "english": "Gabumon",
+      "japanese": "\u30ac\u30d6\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "3",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve]Tsunomon: Cost 0 ",
+    "type": "Reptile",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-021.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "BT15-021",
+    "cardType": "Digimon",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[When Attacking] [Once Per Turn] Until the end of your opponent's turn, 1 of your opponent's Digimon with as many or fewer digivolution cards as this Digimon can't attack.",
+    "dnaDigivolve": "-",
+    "dp": "1000",
+    "effect": "[On Play] [When Digivolving] Reveal the top 3 cards of your deck. Add 1 card with the [Sea Beast]/[Plesiosaur]/[Beastkin]/[X Antibody]\u00a0trait among them to the hand. Return the rest to the bottom of the deck.",
+    "form": "Rookie",
+    "id": "BT15-021",
+    "illustrator": "koki",
+    "name": {
+      "english": "Gomamon (X Antibody)",
+      "japanese": "\u30b4\u30de\u30e2\u30f3X\u6297\u4f53",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "3",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve][Gomamon]: Cost 0 ",
+    "type": "Sea Beast/X Antibody",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Virus",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-022.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "BT15-022",
+    "cardType": "Digimon",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "\uff1cJamming\uff1e.",
+    "dnaDigivolve": "-",
+    "dp": "1000",
+    "effect": "[On Play] If played by an effect, 1 of your opponent's Digimon can't attack until the end of your opponent's turn.",
+    "form": "Rookie",
+    "id": "BT15-022",
+    "illustrator": "Ryodan",
+    "name": {
+      "english": "Betamon",
+      "japanese": "\u30d9\u30bf\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "3",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Amphibian",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Data",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-023.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "BT15-023",
+    "cardType": "Digimon",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "5000",
+    "effect": "[On Play] Trash the bottom 2 digivolution cards of 1 of your opponent's Digimon. Then, if your opponent has no Digimon with digivolution cards, gain 1 memory.",
+    "form": "Champion",
+    "id": "BT15-023",
+    "illustrator": "KISUKE",
+    "name": {
+      "english": "Coelamon",
+      "japanese": "\u30b7\u30fc\u30e9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "4",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Ancient Fish",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-024.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "BT15-024",
+    "cardType": "Digimon",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[When Attacking] \uff1cDraw 1\uff1e.",
+    "dnaDigivolve": "-",
+    "dp": "5000",
+    "effect": "[When Digivolving] If you have a Tamer with [Matt Ishida]\u00a0in its name, \uff1cDraw 1\uff1e. If you don't have a Tamer with [Matt Ishida]\u00a0in its name, you may play 1 Tamer card with [Matt Ishida]\u00a0in its name from your hand with the cost reduced by 3.",
+    "form": "Champion",
+    "id": "BT15-024",
+    "illustrator": "Kenji Watanabe",
+    "name": {
+      "english": "Garurumon",
+      "japanese": "\u30ac\u30eb\u30eb\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "5",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve]Lv.3 w/[Gabumon]\u00a0in its name: Cost 2 ",
+    "type": "Beast",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Data",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-025.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "BT15-025",
+    "cardType": "Digimon",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "\uff1cJamming\uff1e.",
+    "dnaDigivolve": "-",
+    "dp": "5000",
+    "effect": "\uff1cRush\uff1e.",
+    "form": "Champion",
+    "id": "BT15-025",
+    "illustrator": "Ishibashi Yosuke",
+    "name": {
+      "english": "Seadramon",
+      "japanese": "\u30b7\u30fc\u30c9\u30e9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "5",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Aquatic",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Naochika Morishita",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Naochika Morishita",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "aceEffect": "Overflow \uff1c-3\uff1e.",
+    "attribute": "Vaccine",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-026.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "BT15-026",
+    "cardType": "Digimon",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "3",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "7000",
+    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e \n[On Play] [When Digivolving] \uff1cDraw 1\uff1e. Then, if you have 5 or more cards in your hand, trash 1 card in your hand.\n[All Turns] [Once Per Turn] When your Digimon's effect adds a card to your hand, 1 of your opponent's Digimon or Tamers can't suspend until the end of your opponent's turn.",
+    "form": "Ultimate",
+    "id": "BT15-026",
+    "illustrator": "Kenji Watanabe",
+    "name": {
+      "english": "WereGarurumon",
+      "japanese": "\u30ef\u30fc\u30ac\u30eb\u30eb\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "4",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve]Lv.4 w/[Garurumon]\u00a0in its name: Cost 3 ",
+    "type": "Beastkin",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Data",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-027.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "BT15-027",
+    "cardType": "Digimon",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "3",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "\uff1cBlocker\uff1e.",
+    "dnaDigivolve": "-",
+    "dp": "6000",
+    "effect": "[On Play] Reveal the top 4 cards of your deck. Add 2 level 6 or higher Digimon cards among them to the hand. Place the rest at the bottom of the deck.\n[End of Your Turn] By deleting 1 of your Digimon, you may play 1 Digimon card with the [Dark Masters]\u00a0trait from your hand to an empty space in your breeding area without paying the cost.",
+    "form": "Ultimate",
+    "id": "BT15-027",
+    "illustrator": "Hisashi Fujiwara",
+    "name": {
+      "english": "Scorpiomon",
+      "japanese": "\u30a2\u30ce\u30de\u30ed\u30ab\u30ea\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "6",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Ancient Crustacean",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Data",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-028.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "BT15-028",
+    "cardType": "Digimon",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "3",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "7000",
+    "effect": "[On Play] Trash the bottom 3 digivolution cards of 1 of your opponent's Digimon. Then, if your opponent has no Digimon with digivolution cards, you may play 1 blue Tamer card from your hand without paying the cost.",
+    "form": "Ultimate",
+    "id": "BT15-028",
+    "illustrator": "yuuki.",
+    "name": {
+      "english": "Divermon",
+      "japanese": "\u30cf\u30f3\u30ae\u30e7\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "6",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Aquabeast",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Data",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-029.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "BT15-029",
+    "cardType": "Digimon",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "3",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "[When Attacking] [Once Per Turn] By placing 1 of your other blue Digimon as this Digimon's bottom digivolution card, unsuspend this Digimon.",
+    "dnaDigivolve": "-",
+    "dp": "7000",
+    "effect": "[On Play] [When Digivolving] By placing 1 of your other blue Digimon as this Digimon's bottom digivolution card, return 1 of your opponent's Digimon with a level less than or equal to the placed Digimon's level to the bottom of the deck.",
+    "form": "Ultimate",
+    "id": "BT15-029",
+    "illustrator": "GOSSAN",
+    "name": {
+      "english": "MegaSeadramon",
+      "japanese": "\u30e1\u30ac\u30b7\u30fc\u30c9\u30e9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "7",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Aquatic",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Virus",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-030.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT15-030",
+    "cardType": "Digimon",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "10000",
+    "effect": "\uff1cBlocker\uff1e \n[On Play] [On Deletion] Trash the top 2 digivolution cards of all of your opponent's Digimon. Then, return 1 of your opponent's Digimon with no digivolution cards to the bottom of the deck.",
+    "form": "Mega",
+    "id": "BT15-030",
+    "illustrator": "Ishibashi Yosuke",
+    "name": {
+      "english": "Pukumon",
+      "japanese": "\u30d7\u30af\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "10",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Mutant",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Data",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-031.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT15-031",
+    "cardType": "Digimon",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "\uff1cBlocker\uff1e.",
+    "dnaDigivolve": "-",
+    "dp": "11000",
+    "effect": "[On Play] [When Attacking] Return 1 of your opponent's level 5 or lower Digimon to the hand.\n[Your Turn] This Digimon can only digivolve into a white Digimon.\n[End of Opponent's Turn] Delete this Digimon. Then, you may play 1 Digimon card with the [Dark Masters]\u00a0trait, other than [MetalSeadramon] from your hand without paying the cost.",
+    "form": "Mega",
+    "id": "BT15-031",
+    "illustrator": "Nakano Haito",
+    "name": {
+      "english": "MetalSeadramon",
+      "japanese": "\u30e1\u30bf\u30eb\u30b7\u30fc\u30c9\u30e9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "11",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Cyborg/Dark Masters",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Data",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-032.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT15-032",
+    "cardType": "Digimon",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "5",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "13000",
+    "effect": "[When Digivolving] [When Attacking] [Once Per Turn] Return 1 of your opponent's Digimon with as many or fewer digivolution cards as this Digimon to the hand.\n[Opponent's Turn] When one of your opponent's Digimon with as many or fewer digivolution cards as this Digimon attacks, if this Digimon has [Plesiomon]/[X Antibody] in its digivolution cards, gain 2 memory.",
+    "form": "Mega",
+    "id": "BT15-032",
+    "illustrator": "koki",
+    "name": {
+      "english": "Plesiomon (X Antibody)",
+      "japanese": "\u30d7\u30ec\u30b7\u30aa\u30e2\u30f3X\u6297\u4f53",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "13",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve][Plesiomon]: Cost 2 ",
+    "type": "Plesiosaur/X Antibody",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-033.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "BT15-033",
+    "cardType": "Digimon",
+    "color": "Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "2000",
+    "effect": "\uff1cBarrier\uff1e.",
+    "form": "Rookie",
+    "id": "BT15-033",
+    "illustrator": "yuuki.",
+    "name": {
+      "english": "Tapirmon",
+      "japanese": "\u30d0\u30af\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "3",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Holy Beast",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-034.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "BT15-034",
+    "cardType": "Digimon",
+    "color": "Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[All Turns] [Once Per Turn] When a card is removed from your security stack, 1 of your opponent's Digimon gets -2000 DP for the turn.",
+    "dnaDigivolve": "-",
+    "dp": "1000",
+    "effect": "[Start of Your Main Phase] If you have 3 or more security cards, you may add the top card of your security stack to the hand. If you have 2 or fewer security cards, you may place 1 yellow Digimon card with the [Vaccine]\u00a0trait from your hand at the top or bottom of your security stack.",
+    "form": "Rookie",
+    "id": "BT15-034",
+    "illustrator": "tyuga",
+    "name": {
+      "english": "Salamon",
+      "japanese": "\u30d7\u30ed\u30c3\u30c8\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "-",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Mammal",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Virus",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-035.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "BT15-035",
+    "cardType": "Digimon",
+    "color": "Yellow/Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "2",
+        "level": "3"
+      },
+      {
+        "color": "Black",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[When Attacking] 1 of your opponent's Digimon gains \uff1cSecurity Attack -1\uff1euntil the end of your opponent's turn.",
+    "dnaDigivolve": "-",
+    "dp": "1000",
+    "effect": "[On Play] [On Deletion] By trashing 1 card with [Numemon]/[Sukamon]\u00a0in its name in your hand, 1 of your opponent's Digimon gains \uff1cSecurity Attack -1\uff1euntil the end of your opponent's turn.\n[Rule] Name: This card's name is also treated as [Numemon]..",
+    "form": "Champion",
+    "id": "BT15-035",
+    "illustrator": "Ryodan",
+    "name": {
+      "english": "Geremon",
+      "japanese": "\u30b2\u30ec\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "3",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Mollusk",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Data",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-036.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "BT15-036",
+    "cardType": "Digimon",
+    "color": "Yellow/Purple",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "3",
+        "level": "3"
+      },
+      {
+        "color": "Purple",
+        "cost": "3",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "5000",
+    "effect": "\uff1cBlocker\uff1e \n[On Play] [On Deletion] By trashing the top or bottom card of your security stack, 1 of your opponent's Digimon gets -6000 DP until the end of your opponent's turn.",
+    "form": "Champion",
+    "id": "BT15-036",
+    "illustrator": "Kazumasa Yasukuni",
+    "name": {
+      "english": "Wizardmon",
+      "japanese": "\u30a6\u30a3\u30b6\u30fc\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "5",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Wizard",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Tonamikanji",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Tonamikanji",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "aceEffect": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-037.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "BT15-037",
+    "cardType": "Digimon",
+    "color": "Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "\uff1cBarrier\uff1e.",
+    "dnaDigivolve": "-",
+    "dp": "4000",
+    "effect": "When an effect trashes this card from the security stack, you may play it without paying the cost.\n\uff1cBarrier\uff1e \n[All Turns] [Once Per Turn] When a card is removed from your security stack, gain 1 memory.",
+    "form": "Champion",
+    "id": "BT15-037",
+    "illustrator": "tyuga",
+    "name": {
+      "english": "Gatomon",
+      "japanese": "\u30c6\u30a4\u30eb\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "5",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Holy Beast",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "To be completed",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "To be completed",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "aceEffect": "Overflow \uff1c-3\uff1e.",
+    "attribute": "Vaccine",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-038.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "BT15-038",
+    "cardType": "Digimon",
+    "color": "Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "3",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "7000",
+    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e \n[On Play] [When Digivolving] By trashing the top or bottom card of your security stack, 1 of your opponent's Digimon gets -6000 DP until the end of their turn.\n[All Turns] [Once Per Turn] When a card is removed from your security stack, if you have 3 or fewer security cards, \uff1cRecovery +1 (Deck)\uff1e.",
+    "form": "Ultimate",
+    "id": "BT15-038",
+    "illustrator": "tyuga",
+    "name": {
+      "english": "Angewomon",
+      "japanese": "\u30a8\u30f3\u30b8\u30a7\u30a6\u30fc\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "4",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Archangel",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Virus",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-039.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "BT15-039",
+    "cardType": "Digimon",
+    "color": "Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "3",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "[All Turns] This Digimon gains all effects of cards with [Gammamon]\u00a0in their names in this Digimon's digivolution cards.",
+    "dnaDigivolve": "-",
+    "dp": "7000",
+    "effect": "[On Play] [When Digivolving] 1 of your opponent's Digimon gets -3000 DP and gains \"[On Deletion] Lose 1 memory\", until the end of your opponent's turn..\n[All Turns] This Digimon gains all effects of cards with [Gammamon]\u00a0in their names in this Digimon's digivolution cards.",
+    "form": "Ultimate",
+    "id": "BT15-039",
+    "illustrator": "koki",
+    "name": {
+      "english": "Bombermon",
+      "japanese": "\u30dc\u30de\u30fc\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "7",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve]Lv.4 w/[Gammamon]\u00a0in its name: Cost 3 ",
+    "type": "Mutant",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-040.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "BT15-040",
+    "cardType": "Digimon",
+    "color": "Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "3",
+        "level": "4"
+      },
+      {
+        "color": "Black",
+        "cost": "3",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "8000",
+    "effect": "[When Digivolving] If a card with [Numemon]/[X Antibody] is in this Digimon's digivolution cards, you may play 1 [Numemon] or level 3 Digimon card from your hand without paying the cost.\n[All Turns] [Once Per Turn] When your other Digimon is played, 1 of your opponent's Digimon gets -2000 DP for each of your Digimon until the end of your opponent's turn.",
+    "form": "Ultimate",
+    "id": "BT15-040",
+    "illustrator": "koki",
+    "name": {
+      "english": "Monzaemon (X Antibody)",
+      "japanese": "\u3082\u3093\u3056\u3048\u30e2\u30f3X\u6297\u4f53",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "8",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve]Lv.5 w/[Monzaemon]\u00a0in its name + w/o [X Antibody]\u00a0in its name: Cost 0 ",
+    "type": "Puppet/X Antibody",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-041.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT15-041",
+    "cardType": "Digimon",
+    "color": "Yellow/Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "3",
+        "level": "5"
+      },
+      {
+        "color": "Green",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "10000",
+    "effect": "[On Play] [On Deletion] 1 of your opponent's Digimon gets -6000 DP until the end of your opponent's turn.\n[End of Opponent's Turn] By deleting this Digimon, you may play 1 [Rosemon]/[Jijimon] from your hand without paying the cost. Then, activate the [When Digivolving] effects of the Digimon played by this effect.",
+    "form": "Mega",
+    "id": "BT15-041",
+    "illustrator": "koki",
+    "name": {
+      "english": "Babamon",
+      "japanese": "\u30d0\u30d0\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "10",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Ancient",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-042.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT15-042",
+    "cardType": "Digimon",
+    "color": "Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "11000",
+    "effect": "[On Play] [When Digivolving] By trashing the top or bottom card of your security stack, 1 of your opponent's Digimon gets -9000 DP until the end of your opponent's turn.\n[All Turns] [Once Per Turn] When a card is removed from your security stack, if you have 3 or fewer security cards, you may place 1 yellow card from your hand at the top or bottom of your security stack.",
+    "form": "Mega",
+    "id": "BT15-042",
+    "illustrator": "tyuga",
+    "name": {
+      "english": "Magnadramon",
+      "japanese": "\u30db\u30fc\u30ea\u30fc\u30c9\u30e9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "11",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Holy Dragon/Four Great Dragons",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Tonamikanji",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Tonamikanji",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "aceEffect": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-043.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "BT15-043",
+    "cardType": "Digimon",
+    "color": "Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[All Turns] [Once Per Turn] When this Digimon deletes an opponent's Digimon in battle, gain 1 memory.",
+    "dnaDigivolve": "-",
+    "dp": "1000",
+    "effect": "[Start of Your Main Phase] By suspending 1 Digimon, 1 of your Digimon with the [Insectoid]\u00a0trait gains +3000 DP until the end of your opponent's turn.",
+    "form": "Rookie",
+    "id": "BT15-043",
+    "illustrator": "TANIMESO",
+    "name": {
+      "english": "Tentomon",
+      "japanese": "\u30c6\u30f3\u30c8\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "3",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Insectoid",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Virus",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-044.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "BT15-044",
+    "cardType": "Digimon",
+    "color": "Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "1000",
+    "effect": "[On Deletion] 1 of your opponent's Digimon can't unsuspend until the end of their turn.",
+    "form": "Rookie",
+    "id": "BT15-044",
+    "illustrator": "YAMURETSU",
+    "name": {
+      "english": "Mushroomon",
+      "japanese": "\u30de\u30c3\u30b7\u30e5\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "3",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Vegetation",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-045.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "BT15-045",
+    "cardType": "Digimon",
+    "color": "Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When one of your green Tamers is played, gain 1 memory.",
+    "dnaDigivolve": "-",
+    "dp": "3000",
+    "effect": "[On Play] [When Digivolving] Suspend 1 of your opponent's Digimon.",
+    "form": "Rookie",
+    "id": "BT15-045",
+    "illustrator": "poroze",
+    "name": {
+      "english": "Palmon (X Antibody)",
+      "japanese": "\u30d1\u30eb\u30e2\u30f3X\u6297\u4f53",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "4",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve][Palmon]: Cost 0 ",
+    "type": "Vegetation/X Antibody",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Virus",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-046.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "BT15-046",
+    "cardType": "Digimon",
+    "color": "Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "3000",
+    "effect": "[Your Turn] [Once Per Turn] When one of your Digimon becomes suspended, \uff1cDraw 1\uff1e.",
+    "form": "Champion",
+    "id": "BT15-046",
+    "illustrator": "Hisashi Fujiwara",
+    "name": {
+      "english": "Woodmon",
+      "japanese": "\u30a6\u30c3\u30c9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "3",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Vegetation",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-047.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "BT15-047",
+    "cardType": "Digimon",
+    "color": "Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[All Turns] [Once Per Turn] If this Digimon deletes an opponent's Digimon in battle, gain 1 memory.",
+    "dnaDigivolve": "-",
+    "dp": "5000",
+    "effect": "[All Turns] While this Digimon is suspended, it isn't affected by the effects of your opponent's Digimon.",
+    "form": "Champion",
+    "id": "BT15-047",
+    "illustrator": "TANIMESO",
+    "name": {
+      "english": "Kabuterimon",
+      "japanese": "\u30ab\u30d6\u30c6\u30ea\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "5",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Insectoid",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Data",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-048.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "BT15-048",
+    "cardType": "Digimon",
+    "color": "Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "5000",
+    "effect": "[When Digivolving] 1 of your opponent's Digimon can't unsuspend until the end of your opponent's turn. If this Digimon has [Togemon]/[X Antibody] in its digivolution cards, suspend 1 of your opponent's Digimon.",
+    "form": "Champion",
+    "id": "BT15-048",
+    "illustrator": "poroze",
+    "name": {
+      "english": "Togemon (X Antibody)",
+      "japanese": "\u30c8\u30b2\u30e2\u30f3X\u6297\u4f53",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "5",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve][Togemon]: Cost 0 ",
+    "type": "Vegetation/X Antibody",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Spareribs",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Spareribs",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "aceEffect": "Overflow \uff1c-3\uff1e.",
+    "attribute": "Vaccine",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-049.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "BT15-049",
+    "cardType": "Digimon",
+    "color": "Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "3",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "7000",
+    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e \n[On Play] [When Digivolving] 1 of your Digimon gets +3000 DP until the end of your opponent's turn. Then, if one of your opponent's Digimon is attacking, you may switch the target of attack to this Digimon.\n[All Turns] While this Digimon is suspended, it isn't affected by the effects of your opponent's Digimon.",
+    "form": "Ultimate",
+    "id": "BT15-049",
+    "illustrator": "TANIMESO",
+    "name": {
+      "english": "MegaKabuterimon",
+      "japanese": "\u30a2\u30c8\u30e9\u30fc\u30ab\u30d6\u30c6\u30ea\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "4",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Insectoid",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Virus",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-050.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "BT15-050",
+    "cardType": "Digimon",
+    "color": "Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "3",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "\uff1cPiercing\uff1e.",
+    "dnaDigivolve": "-",
+    "dp": "6000",
+    "effect": "[On Play] Reveal the top 4 cards of your deck. Add 2 level 6 or higher Digimon cards among them to the hand. Place the rest at the bottom of the deck.\n[End of Your Turn] By deleting 1 of your Digimon, you may play 1 Digimon card with the [Dark Masters]\u00a0trait from your hand to an empty space in your breeding area without paying the cost.",
+    "form": "Ultimate",
+    "id": "BT15-050",
+    "illustrator": "Hisashi Fujiwara",
+    "name": {
+      "english": "Cherrymon",
+      "japanese": "\u30b8\u30e5\u30ec\u30a4\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "6",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Vegetation",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Data",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-051.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "BT15-051",
+    "cardType": "Digimon",
+    "color": "Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "3",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "[Your Turn] For each of your opponent's suspended Digimon, this Digimon gets +1000 DP.",
+    "dnaDigivolve": "-",
+    "dp": "7000",
+    "effect": "[When Digivolving] If there is a suspended Digimon, gain 1 memory. If this Digimon has [Lillymon]/[X Antibody] in its digivolution cards, for each of your opponent's suspended Digimon, \uff1cDraw 1\uff1e.",
+    "form": "Ultimate",
+    "id": "BT15-051",
+    "illustrator": "poroze",
+    "name": {
+      "english": "Lillymon (X Antibody)",
+      "japanese": "\u30ea\u30ea\u30e2\u30f3X\u6297\u4f53",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "7",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve][Lillymon]: Cost 0 ",
+    "type": "Fairy/X Antibody",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Virus",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-052.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT15-052",
+    "cardType": "Digimon",
+    "color": "Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "\uff1cPiercing\uff1e.",
+    "dnaDigivolve": "-",
+    "dp": "11000",
+    "effect": "[On Play] [When Attacking] Return 1 of your opponent's suspended Digimon to the bottom of their deck.\n[Your Turn] This Digimon can only digivolve into a white Digimon.\n[End of Opponent's Turn] Delete this Digimon. Then, you may play 1 Digimon card with the [Dark Masters]\u00a0trait, other than [Puppetmon] from your hand without paying the cost.",
+    "form": "Mega",
+    "id": "BT15-052",
+    "illustrator": "Nakano Haito",
+    "name": {
+      "english": "Puppetmon",
+      "japanese": "\u30d4\u30ce\u30c3\u30ad\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "11",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Puppet/Dark Masters",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-053.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT15-053",
+    "cardType": "Digimon",
+    "color": "Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "effect": "[Start of Your Main Phase] [When Digivolving] Suspend 1 of your opponent's Digimon. 1 your Digimon gains \uff1cPiercing\uff1efor the turn.\n[All Turns] While this Digimon is suspended, it isn't affected by your opponent's Digimon effects.",
+    "form": "Mega",
+    "id": "BT15-053",
+    "illustrator": "TANIMESO",
+    "name": {
+      "english": "HerculesKabuterimon",
+      "japanese": "\u30d8\u30e9\u30af\u30eb\u30ab\u30d6\u30c6\u30ea\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "12",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Insectoid",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Data",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-054.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT15-054",
+    "cardType": "Digimon",
+    "color": "Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "effect": "[When Digivolving] Suspend 1 of your opponent\u2019s Digimon and 1 of your opponent\u2019s Tamers. That Digimon and Tamer can't unsuspend until the end of your opponent\u2019s turn.\n[Opponent's Turn] [Once Per Turn] When an opponent\u2019s Digimon is played, you may suspend 1 of your opponent\u2019s Digimon.\n[Opponent's Turn] [Once Per Turn] When an opponent's Digimon moves from breeding area to the battle area, if this Digimon has [Rosemon]/[X Antibody] in its digivolution cards, you may suspend 1 of your opponent's Digimon.",
+    "form": "Mega",
+    "id": "BT15-054",
+    "illustrator": "poroze",
+    "name": {
+      "english": "Rosemon (X Antibody)",
+      "japanese": "\u30ed\u30bc\u30e2\u30f3X\u6297\u4f53",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "13",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve][Rosemon]: Cost 1 ",
+    "type": "Fairy/X Antibody",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Virus",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-055.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "BT15-055",
+    "cardType": "Digimon",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "\uff1cReboot\uff1e.",
+    "dnaDigivolve": "-",
+    "dp": "1000",
+    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 card with the [Machine]/[Cyborg]\u00a0trait and 1 black Tamer card among them to the hand. Place the rest at the bottom of the deck.",
+    "form": "Rookie",
+    "id": "BT15-055",
+    "illustrator": "YAMURETSU",
+    "name": {
+      "english": "Hagurumon",
+      "japanese": "\u30cf\u30b0\u30eb\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "3",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Machine",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-056.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "BT15-056",
+    "cardType": "Digimon",
+    "color": "Black/Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "1",
+        "level": "2"
+      },
+      {
+        "color": "Green",
+        "cost": "1",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[All Turns] [Once Per Turn] When this Digimon becomes suspended, suspend 1 of your opponent's Digimon or Tamers with a play cost less than or equal to this Digimon's play cost.",
+    "dnaDigivolve": "-",
+    "dp": "2000",
+    "effect": "[Start of Your Main Phase] [Shuu Yulin] from your hand as this Digimon's bottom digivolution card, this Digimon isn't affected by the effects of your opponent's Digimon until the end of their turn.",
+    "form": "Rookie",
+    "id": "BT15-056",
+    "illustrator": "toriyufu",
+    "name": {
+      "english": "Ryudamon",
+      "japanese": "\u30ea\u30e5\u30a6\u30c0\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "3",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve][Kyokyomon]: Cost 0 ",
+    "type": "Beast/X Antibody/DigiPolice",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Virus",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-057.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "BT15-057",
+    "cardType": "Digimon",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[On Deletion] You may play 1 Digimon card with [Numemon]\u00a0in its name from your trash without paying the cost.",
+    "dnaDigivolve": "-",
+    "dp": "2000",
+    "effect": "[All Turns] While [Numemon]/[X Antibody] is in this Digimon's digivolution cards, it gains \"[On Deletion] You may play 1 Digimon card with [Numemon]\u00a0in its name from your trash without paying the cost.\"",
+    "form": "Champion",
+    "id": "BT15-057",
+    "illustrator": "GOSSAN",
+    "name": {
+      "english": "Numemon (X Antibody)",
+      "japanese": "\u30cc\u30e1\u30e2\u30f3X\u6297\u4f53",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "3",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve]Lv.4 w/[Numemon]\u00a0in its name + w/o [X Antibody]\u00a0in its name: Cost 0 ",
+    "type": "Mollusk/X Antibody",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-058.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "BT15-058",
+    "cardType": "Digimon",
+    "color": "Black/Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "3",
+        "level": "3"
+      },
+      {
+        "color": "Green",
+        "cost": "3",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[All Turns] [Once Per Turn] When this Digimon becomes suspended, suspend 1 of your opponent's Digimon or Tamers with a play cost less than or equal to this Digimon.",
+    "dnaDigivolve": "-",
+    "dp": "4000",
+    "effect": "\uff1cBlocker\uff1e \n[On Play] [When Digivolving] Suspend 1 of your opponent's Digimon. If a Tamer card with the [DigiPolice]\u00a0trait is in this Digimon's digivolution cards, that Digimon can't unsuspend until the end of their turn.",
+    "form": "Champion",
+    "id": "BT15-058",
+    "illustrator": "toriyufu",
+    "name": {
+      "english": "Ginryumon",
+      "japanese": "\u30ae\u30f3\u30ea\u30e5\u30a6\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "4",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve]Lv.3 w/[DigiPolice]\u00a0trait: Cost 2 ",
+    "type": "Beast Dragon/X Antibody/DigiPolice",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-059.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "BT15-059",
+    "cardType": "Digimon",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "\uff1cReboot\uff1e.",
+    "dnaDigivolve": "-",
+    "dp": "4000",
+    "effect": "[On Play] [When Digivolving] By placing 1 [Marvin Jackson] from your hand as this Digimon's bottom digivolution card, \uff1cDe-Digivolve1\uff1e on 1 of your opponent's Digimon.",
+    "form": "Champion",
+    "id": "BT15-059",
+    "illustrator": "Tonamikanji",
+    "name": {
+      "english": "Airdramon",
+      "japanese": "\u30a8\u30a2\u30c9\u30e9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "5",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve]Lv.3 w/[SoC]\u00a0trait: Cost 2 ",
+    "type": "Mythical Beast/SoC",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Data",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-060.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "BT15-060",
+    "cardType": "Digimon",
+    "color": "Black",
+    "digiXros": "[DigiXros -1] [Agumon]/[Greymon] x [Gabumon]/[Garurumon]",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "3",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[When Attacking] [Once Per Turn] \uff1cDe-Digivolve1\uff1e on 1 of your opponent's Digimon.",
+    "dnaDigivolve": "-",
+    "dp": "5000",
+    "effect": "While this card is revealed from the top of the deck, its name is also treated as [Omnimon]\u00a0in its name.\n\uff1cBlocker\uff1e \n[On Play] If it's your turn, 1 of your other Digimon may digivolve into a black Digimon card with [Greymon]/[Garurumon]\u00a0in its name in your hand with the digivolution cost reduced by 2.",
+    "form": "Champion",
+    "id": "BT15-060",
+    "illustrator": "YAMURETSU",
+    "name": {
+      "english": "Omekamon",
+      "japanese": "\u30aa\u30e1\u30ab\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "5",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Puppet/X Antibody",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Virus",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-061.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "BT15-061",
+    "cardType": "Digimon",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "\uff1cReboot\uff1e.",
+    "dnaDigivolve": "-",
+    "dp": "5000",
+    "effect": "\uff1cBlocker\uff1e \n[On Play] [When Digivolving] By trashing 1 card with the [Machine]/[Cyborg]\u00a0trait in your hand, 1 of your Digimon can't be deleted by your opponent's effects until the end of your opponent's turn.\n[Your Turn] While your opponent has no Digimon, this Digimon can't attack.",
+    "form": "Champion",
+    "id": "BT15-061",
+    "illustrator": "sasasi",
+    "name": {
+      "english": "Guardromon",
+      "japanese": "\u30ac\u30fc\u30c9\u30ed\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "5",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Machine",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Virus",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-062.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "BT15-062",
+    "cardType": "Digimon",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "3",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "\uff1cReboot\uff1e.",
+    "dnaDigivolve": "-",
+    "dp": "6000",
+    "effect": "[On Play] Reveal the top 4 cards of your deck. Add 2 level 6 or higher Digimon cards among them to the hand. Place the rest at the bottom of the deck.\n[End of Your Turn] By deleting 1 of your Digimon, you may play 1 Digimon card with the [Dark Masters]\u00a0trait from your hand to an empty space in your breeding area without paying the cost.",
+    "form": "Ultimate",
+    "id": "BT15-062",
+    "illustrator": "sasasi",
+    "name": {
+      "english": "Gigadramon",
+      "japanese": "\u30ae\u30ac\u30c9\u30e9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "6",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Cyborg",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-063.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "BT15-063",
+    "cardType": "Digimon",
+    "color": "Black/Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "4"
+      },
+      {
+        "color": "Green",
+        "cost": "4",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "[All Turns] [Once Per Turn] When an effect suspends another Digimon or Tamer, unsuspend 1 of your Digimon with the [Beast Dragon]/[DigiPolice]\u00a0trait.",
+    "dnaDigivolve": "-",
+    "dp": "7000",
+    "effect": "\uff1cBlocker\uff1e \n[All Turns] When an effect suspends another Digimon or Tamer, if this Digimon has a Tamer card with the [DigiPolice]\u00a0trait in its digivolution cards, you may digivolve this Digimon into a Digimon card with the [Beast Dragon]/[DigiPolice]\u00a0trait from your hand without paying the cost.",
+    "form": "Ultimate",
+    "id": "BT15-063",
+    "illustrator": "toriyufu",
+    "name": {
+      "english": "Hisyaryumon",
+      "japanese": "\u30d2\u30b7\u30e3\u30ea\u30e5\u30a6\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "7",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve]Lv.4 w/[DigiPolice]\u00a0trait: Cost 3 ",
+    "type": "Beast Dragon/X Antibody/DigiPolice",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "To be Completed",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "To be Completed",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "aceEffect": "-",
+    "attribute": "Virus",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-064.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "BT15-064",
+    "cardType": "Digimon",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "3",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "[When Attacking] [Once Per Turn] \uff1cDe-Digivolve1\uff1e on 1 of your opponent's Digimon.",
+    "dnaDigivolve": "-",
+    "dp": "7000",
+    "effect": "[On Play] [When Digivolving] Reveal the top 3 cards of your deck. Place 1 card with the [Machine]/[Cyborg]/[SoC]\u00a0trait among them as this Digimon's bottom digivolution card and add 1 card with thethe [Machine]/[Cyborg]/[SoC]\u00a0trait to the hand. Trash the rest.\n[When Attacking] If this Digimon has a Tamer card with the [SoC]\u00a0trait in its digivolution cards, delete 1 of your opponent's Digimon or Tamer with a play cost of 3 or less.",
+    "form": "Ultimate",
+    "id": "BT15-064",
+    "illustrator": "Tonamikanji",
+    "name": {
+      "english": "Megadramon",
+      "japanese": "\u30e1\u30ac\u30c9\u30e9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "7",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve]Lv.4 w/[SoC]\u00a0trait: Cost 3 ",
+    "type": "Cyborg/SoC",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Virus",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-065.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "BT15-065",
+    "cardType": "Digimon",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "[Your Turn] While this Digimon has [Monzaemon]/[Numemon]\u00a0in its name, it gains \uff1cSecurity Attack +1\uff1e.",
+    "dnaDigivolve": "-",
+    "dp": "7000",
+    "effect": "[On Play] [When Digivolving] By trashing 1 card with [Numemon]\u00a0in its name in your hand or from this Digimon's digivolution cards, \uff1cDe-Digivolve1\uff1e on 1 of your opponent's Digimonof your opponent's Digimon.\n[On Play] By placing 1 card with [Numemon]\u00a0in its name from your trash at the bottom of this Digimon's digivolution card, until the end of your opponent's turn, none of their Digimon with play costs of 5 or less can attack players.",
+    "form": "Ultimate",
+    "id": "BT15-065",
+    "illustrator": "GOSSAN",
+    "name": {
+      "english": "WaruMonzaemon",
+      "japanese": "\u30ef\u30eb\u3082\u3093\u3056\u3048\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "7",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve]Lv.4 w/[Numemon]\u00a0in its name: Cost 3 ",
+    "type": "Puppet",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Virus",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-066.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT15-066",
+    "cardType": "Digimon",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "\uff1cReboot\uff1e.",
+    "dnaDigivolve": "-",
+    "dp": "11000",
+    "effect": "[On Play] [When Attacking] \uff1cDe-Digivolve2\uff1e on 1 of your opponent's Digimon \n[Your Turn] This Digimon can only digivolve into a white Digimon.\n[End of Opponent's Turn] Delete this Digimon. Then, you may play 1 Digimon card with the [Dark Masters]\u00a0trait, other than [Machinedramon] from your hand without paying the cost.",
+    "form": "Mega",
+    "id": "BT15-066",
+    "illustrator": "Nakano Haito",
+    "name": {
+      "english": "Machinedramon",
+      "japanese": "\u30e0\u30b2\u30f3\u30c9\u30e9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "11",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Machine/Dark Masters",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-067.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT15-067",
+    "cardType": "Digimon",
+    "color": "Black/Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "5"
+      },
+      {
+        "color": "Green",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "effect": "\uff1cBlocker\uff1e \n[When Digivolving] If a Tamer card with the [DigiPolice]\u00a0trait is in this Digimon's digivolution cards, return 1 of your opponent's suspended Digimon or Tamers to the bottom of the deck.\n[All Turns] [Once Per Turn] When this Digimon becomes suspended, you may play 1 Digimon card with the [Beast Dragon]/[DigiPolice]\u00a0trait and 5000 DP or less from your hand without paying the cost.",
+    "form": "Mega",
+    "id": "BT15-067",
+    "illustrator": "toriyufu",
+    "name": {
+      "english": "Ouryumon",
+      "japanese": "\u30aa\u30a6\u30ea\u30e5\u30a6\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "12",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve]Lv.5 w/[DigiPolice]\u00a0trait: Cost 4 ",
+    "type": "Beast Dragon/X Antibody/DigiPolice",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Virus",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-068.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "BT15-068",
+    "cardType": "Digimon",
+    "color": "Purple",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[All Turns] [Once Per Turn] When an effect plays an opponent's Digimon, gain 1 memory.",
+    "dnaDigivolve": "-",
+    "dp": "1000",
+    "effect": "[On Play] Until the end of your opponent's turn, 1 of their Digimon gains \"[On Deletion] Lose 1 memory.\"",
+    "form": "Rookie",
+    "id": "BT15-068",
+    "illustrator": "yuuki.",
+    "name": {
+      "english": "Gizamon",
+      "japanese": "\u30ae\u30b6\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "3",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Sea Animal",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Data",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-069.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "BT15-069",
+    "cardType": "Digimon",
+    "color": "Purple",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "2000",
+    "effect": "[On Deletion] If your opponent has 1 or less memory, \uff1cDraw 1\uff1e. If your opponent has 1 or more memory, gain 1 memory.",
+    "form": "Rookie",
+    "id": "BT15-069",
+    "illustrator": "Ryodan",
+    "name": {
+      "english": "Candlemon",
+      "japanese": "\u30ad\u30e3\u30f3\u30c9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "3",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Flame",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Virus",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-070.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "BT15-070",
+    "cardType": "Digimon",
+    "color": "Purple",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "\uff1cRetaliation\uff1e.",
+    "dnaDigivolve": "-",
+    "dp": "1000",
+    "effect": "[On Play] Reveal the top 4 cards of your deck. Add 1 card with [Myotismon]\u00a0in its text among them to the hand. Return the rest to the bottom of your deck. If you added, trash 1 card in your hand.",
+    "form": "Rookie",
+    "id": "BT15-070",
+    "illustrator": "YAMURETSU",
+    "name": {
+      "english": "DemiDevimon",
+      "japanese": "\u30d4\u30b3\u30c7\u30d3\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "3",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Digimon",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Virus",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-071.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "BT15-071",
+    "cardType": "Digimon",
+    "color": "Purple/Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "1",
+        "level": "2"
+      },
+      {
+        "color": "Red",
+        "cost": "1",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[End of Attack] [Once Per Turn] If your opponent has 1 or more memory, gain 1 memory.",
+    "dnaDigivolve": "-",
+    "dp": "2000",
+    "effect": "[When Attacking] By trashing 1 card in your hand, delete 1 of your opponent's Digimon with 3000 DP or less. If a Tamer card with the [SoC]\u00a0trait trait is in this Digimon's digivolution cards, \uff1cDraw 1\uff1e.",
+    "form": "Rookie",
+    "id": "BT15-071",
+    "illustrator": "SENNSU",
+    "name": {
+      "english": "Loogamon",
+      "japanese": "\u30eb\u30ac\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "3",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve]Lv.2 w/[SoC]\u00a0in its name: Cost 0 ",
+    "type": "Dark Animal/X Antibody/SoC",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Virus",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-072.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "BT15-072",
+    "cardType": "Digimon",
+    "color": "Purple",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "4000",
+    "effect": "\uff1cBlocker\uff1e \n[All Turns] When one of your [Apocalymon] or Digimon with the [Dark Masters]\u00a0trait would leave the battle area other than by one of your effects, by deleting this Digimon, prevent 1 of those Digimon from leaving play.",
+    "form": "Champion",
+    "id": "BT15-072",
+    "illustrator": "GOSSAN",
+    "name": {
+      "english": "Vilemon",
+      "japanese": "\u30a4\u30d3\u30eb\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "4",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Evil",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Virus",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-073.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "BT15-073",
+    "cardType": "Digimon",
+    "color": "Purple",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "\uff1cRetaliation\uff1e.",
+    "dnaDigivolve": "-",
+    "dp": "3000",
+    "effect": "[When Digivolving] [On Deletion] \uff1cDraw 1\uff1e. Then, trash 1 card in your hand.",
+    "form": "Champion",
+    "id": "BT15-073",
+    "illustrator": "Ryodan",
+    "name": {
+      "english": "Bakemon",
+      "japanese": "\u30d0\u30b1\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "4",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Ghost",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Virus",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-074.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "BT15-074",
+    "cardType": "Digimon",
+    "color": "Purple",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[All Turns] [Once Per Turn] When an effect plays an opponent's Digimon, gain 1 memory.",
+    "dnaDigivolve": "-",
+    "dp": "5000",
+    "effect": "\uff1cBlocker\uff1e \n[On Play] [When Digivolving] Your opponent may trash 1 Digimon card in their hand. If they don't, gain 1 memory.\n[Your Turn] While your opponent has no Digimon, this Digimon can't attack.",
+    "form": "Champion",
+    "id": "BT15-074",
+    "illustrator": "KISUKE",
+    "name": {
+      "english": "Gesomon",
+      "japanese": "\u30b2\u30bd\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "5",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Mollusk",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Virus",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-075.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "BT15-075",
+    "cardType": "Digimon",
+    "color": "Purple/Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "3",
+        "level": "3"
+      },
+      {
+        "color": "Red",
+        "cost": "3",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[End of Attack] [Once Per Turn] If your opponent has 1 or more memory, gain 1 memory.",
+    "dnaDigivolve": "-",
+    "dp": "5000",
+    "effect": "[When Digivolving] [When Attacking] By trashing 1 card in your hand, this Digimon gets +2000 DP for the turn. If a Tamer card with the [SoC]\u00a0trait trait is in this Digimon's digivolution cards, \uff1cDraw 1\uff1e.",
+    "form": "Champion",
+    "id": "BT15-075",
+    "illustrator": "SENNSU",
+    "name": {
+      "english": "Loogarmon",
+      "japanese": "\u30eb\u30ac\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "5",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve]Lv.3 w/[SoC]\u00a0in its name: Cost 2 ",
+    "type": "Dark Animal/X Antibody/SoC",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "To be completed",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "To be completed",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "aceEffect": "Overflow \uff1c-3\uff1e.",
+    "attribute": "Virus",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-076.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "BT15-076",
+    "cardType": "Digimon",
+    "color": "Purple",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "3",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "8000",
+    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e.\n\uff1cBlocker\uff1e \n[On Play] [When Digivolving] You may play 1 purple level 3 Digimon card or 1 purple Tamer card from your trash without paying the cost.",
+    "form": "Ultimate",
+    "id": "BT15-076",
+    "illustrator": "toriyufu",
+    "name": {
+      "english": "Myotismon",
+      "japanese": "\u30f4\u30a1\u30f3\u30c7\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "5",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Undead",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Virus",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-077.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "BT15-077",
+    "cardType": "Digimon",
+    "color": "Purple",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "3",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "\uff1cRetaliation\uff1e.",
+    "dnaDigivolve": "-",
+    "dp": "6000",
+    "effect": "[On Play] Reveal the top 4 cards of your deck. Add 2 level 6 or higher Digimon cards among them to the hand. Place the rest at the bottom of the deck.\n[End of Your Turn] By deleting 1 of your Digimon, you may play 1 Digimon card with the [Dark Masters]\u00a0trait from your hand to an empty space in your breeding area without paying the cost.",
+    "form": "Ultimate",
+    "id": "BT15-077",
+    "illustrator": "Ishibashi Yosuke",
+    "name": {
+      "english": "LadyDevimon",
+      "japanese": "\u30ec\u30c7\u30a3\u30fc\u30c7\u30d3\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "6",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Fallen Angel",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Virus",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-078.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "BT15-078",
+    "cardType": "Digimon",
+    "color": "Purple",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "3",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "\uff1cPiercing\uff1e.",
+    "dnaDigivolve": "-",
+    "dp": "8000",
+    "effect": "[All Turns] [Once Per Turn] When an opponent's Digimon is played by an effect, until the end of your opponent's turn, all of your opponent's Digimon gain \"[On Deletion] Lose 1 memory.\"[When Attacking] Your opponent plays 1 level 4 or lower Digimon card from their trash suspended without paying the cost. Any [On Play] effects on Digimon played by this effect don't activate. Then, you may switch the attack target to that Digimon.",
+    "form": "Ultimate",
+    "id": "BT15-078",
+    "illustrator": "Ishibashi Yosuke",
+    "name": {
+      "english": "WaruSeadramon",
+      "japanese": "\u30ef\u30eb\u30b7\u30fc\u30c9\u30e9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "8",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Aquatic",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Virus",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-079.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT15-079",
+    "cardType": "Digimon",
+    "color": "Purple",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "\uff1cRetaliation\uff1e.",
+    "dnaDigivolve": "-",
+    "dp": "11000",
+    "effect": "[On Play] [When Attacking] Delete 1 of your opponent\u2019s unsuspended Digimon.\n[Your Turn] This Digimon can only digivolve into a white Digimon.\n[End of Opponent's Turn] Delete this Digimon. Then, you may play 1 Digimon card with the [Dark Masters]\u00a0trait, other than [Piedmon] from your hand without paying the cost.",
+    "form": "Mega",
+    "id": "BT15-079",
+    "illustrator": "Nakano Haito",
+    "name": {
+      "english": "Piedmon",
+      "japanese": "\u30d4\u30a8\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "11",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Wizard/Dark Masters",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "Virus",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-080.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT15-080",
+    "cardType": "Digimon",
+    "color": "Purple",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "effect": "\uff1cBlocker\uff1e \n[On Play] [When Digivolving] [On Deletion] Delete 1 of your opponent's level 5 or lower Digimon.",
+    "form": "Mega",
+    "id": "BT15-080",
+    "illustrator": "toriyufu",
+    "name": {
+      "english": "VenomMyotismon",
+      "japanese": "\u30f4\u30a7\u30ce\u30e0\u30f4\u30a1\u30f3\u30c7\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "12",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Dark Animal",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "As'Maria",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "As'Maria",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "aceEffect": "-",
+    "attribute": "Virus",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-081.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT15-081",
+    "cardType": "Digimon",
+    "color": "Purple",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "6",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "14000",
+    "effect": "[Trash] [All Turns] When an opponent's Digimon or Tamer is played by an effect, 1 of your [Leviamon] or 1 of your Digimon with [X Antibody] in its digivolution cards may digivolve into this card from your trash without paying the cost.\n\uff1cSecurity Attack +2\uff1e \n[When Digivolving] If your opponent has as many or more Digimon and Tamers as you, delete 1 of your opponent's Tamers. Then, delete 1 of your opponent's level 3, level 5 and level 7 Digimon.",
+    "form": "Mega",
+    "id": "BT15-081",
+    "illustrator": "Tonamikanji",
+    "name": {
+      "english": "Leviamon (X Antibody)",
+      "japanese": "\u30ea\u30f4\u30a1\u30a4\u30a2\u30e2\u30f3X\u6297\u4f53",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "14",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve][Leviamon]: Cost 0 ",
+    "type": "Demon Lord/Seven Great Demon Lords/X Antibody",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "No Illustrator",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "No Illustrator",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "aceEffect": "-",
+    "attribute": "-",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-082.webp",
+    "cardLv": "-",
+    "cardNumber": "BT15-082",
+    "cardType": "Tamer",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[Security] Play this card without paying its memory cost.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "effect": "[Start of Your Turn] If you have 2 memory or less, set your memory to 3[All Turns] When a red Digimon card is returned from your trash to your hand, by returning this Tamer to the hand, you may play 1 red Digimon with [Avian]/[Bird]/[Beast]/[Animal]/[Sovereign]\u00a0in one of its traits (other than [Sea Animal]) and 13000 DP or less from your hand without paying the cost. For each card in your opponent's security stack, subtract 2000 DP from this effect.",
+    "form": "-",
+    "id": "BT15-082",
+    "illustrator": "No Illustrator",
+    "name": {
+      "english": "Sora Takenouchi",
+      "japanese": "\u6b66\u4e4b\u5185\u7a7a",
+      "korean": "\ud55c\uc18c\ub77c",
+      "simplifiedChinese": "\u6b66\u4e4b\u5185\u7a7a",
+      "traditionalChinese": "\u6b66\u4e4b\u5167\u7a7a"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "3",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Tamer",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "No Illustrator",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "No Illustrator",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "aceEffect": "-",
+    "attribute": "-",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-083.webp",
+    "cardLv": "-",
+    "cardNumber": "BT15-083",
+    "cardType": "Tamer",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[Security] Play this card without paying its memory cost.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 card with [Gabumon]/[Garurumon]\u00a0in its name among them to the hand. Return the rest to the bottom of the deck.\n[Your Turn] When one of your Digimon's effects adds cards to your hand, by suspending this Tamer, gain 1 memory.",
+    "form": "-",
+    "id": "BT15-083",
+    "illustrator": "No Illustrator",
+    "name": {
+      "english": "Matt Ishida",
+      "japanese": "\u77f3\u7530\u30e4\u30de\u30c8",
+      "korean": "\ub9e4\ud29c",
+      "simplifiedChinese": "\u77f3\u7530\u5927\u548c",
+      "traditionalChinese": "\u77f3\u7530\u5927\u548c"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "3",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Tamer",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "No Illustrator",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "No Illustrator",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "aceEffect": "-",
+    "attribute": "-",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-084.webp",
+    "cardLv": "-",
+    "cardNumber": "BT15-084",
+    "cardType": "Digimon",
+    "color": "Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[Security] Play this card without paying its memory cost.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "effect": "When an effect trashes this card from the security stack, 1 of your opponent's Digimon gains \uff1cSecurity Attack -1\uff1euntil the end of your opponent's turn.\n[Start of Your Turn] If you have 2 memory or less, set your memory to 3[All Turns] When an effect removes cards from your security stack, by suspending this Tamer, 1 of your opponent's Digimon gains \uff1cSecurity Attack -1\uff1euntil the end of your opponent's turn.",
+    "form": "-",
+    "id": "BT15-084",
+    "illustrator": "No Illustrator",
+    "name": {
+      "english": "Kari Kamiya",
+      "japanese": "\u516b\u795e\u30d2\u30ab\u30ea",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "4",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Digimon",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "No Illustrator",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "No Illustrator",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "aceEffect": "-",
+    "attribute": "-",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-085.webp",
+    "cardLv": "-",
+    "cardNumber": "BT15-085",
+    "cardType": "Tamer",
+    "color": "Green",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[Security] Play this card without paying its memory cost.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "effect": "[Start of Your Turn] If you have 2 memory or less, set your memory to 3[Opponent's Turn]] When an opponent's Digimon attacks, by suspending this Tamer, switch the target of attack to 1 of your suspended Digimon with the [Insectoid]\u00a0trait.",
+    "form": "-",
+    "id": "BT15-085",
+    "illustrator": "No Illustrator",
+    "name": {
+      "english": "Izzy Izumi",
+      "japanese": "\u6cc9\u5149\u5b50\u90ce",
+      "korean": "\uc7a5\ud55c\uc194",
+      "simplifiedChinese": "\u6cc9\u5149\u5b50\u90ce",
+      "traditionalChinese": "\u6cc9\u5149\u5b50\u90ce"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "3",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Tamer",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "-",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-086.webp",
+    "cardLv": "-",
+    "cardNumber": "BT15-086",
+    "cardType": "Tamer",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[All Turns] While this Digimon has the [Machine]/[Cyborg]/[SoC]\u00a0trait, this Digimon gains \uff1cJamming\uff1eand \uff1cBlocker\uff1e \n[End of All Turns] You may play 1 [Marvin Jackson] from this Digimon's digivolution cards without paying the cost.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "effect": "[Security] Play this card without paying its memory cost.\n[Start of Your Main Phase] By trashing 1 card with the [Machine]/[Cyborg]/[SoC]\u00a0trait, gain 1 memory.\n[Main] \uff1cMind Link\uff1eto 1 of your Digimon with the [Machine]/[Cyborg]/[SoC]\u00a0trait.",
+    "form": "-",
+    "id": "BT15-086",
+    "illustrator": "No Illustrator",
+    "name": {
+      "english": "Marvin Jackson",
+      "japanese": "\u30de\u30fc\u30f4\u30a3\u30f3\n\u30fb\u30b8\u30e3\u30af\u30bd\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "3",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Tamer",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "-",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-087.webp",
+    "cardLv": "-",
+    "cardNumber": "BT15-087",
+    "cardType": "Tamer",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[All Turns] While this Digimon has the [X Antibody]/[DigiPolice]\u00a0trait, this Digimon gains \uff1cAlliance\uff1eand \uff1cReboot\uff1e \n[End of All Turns] You may play 1 [Shuu Yulin] from this Digimon's digivolution cards without paying the cost.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "effect": "[Security] Play this card without paying its memory cost.\n[Start of Your Turn] If you have 2 memory or less, set your memory to 3.\n[Main] \uff1cMind Link\uff1eto 1 of your Digimon with the [X Antibody]/[DigiPolice]\u00a0trait.",
+    "form": "-",
+    "id": "BT15-087",
+    "illustrator": "No Illustrator",
+    "name": {
+      "english": "Shuu Yulin",
+      "japanese": "\u5f90\u6708\u9234",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "3",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "DigiPolice",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "-",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-088.webp",
+    "cardLv": "-",
+    "cardNumber": "BT15-088",
+    "cardType": "Option",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[Security] Activate this card's [Main] effect. You may play 1 [Biyomon] from your hand or trash without paying the cost. Then, add this card to your hand.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "effect": "[Main] You may play 1 red Tamer card with a play cost of 4 or less from your hand without paying the cost. Then, if you have a Tamer with [Sora Takenouchi]\u00a0in its name, you may return 1 red Digimon card from your trash to your hand.",
+    "form": "-",
+    "id": "BT15-088",
+    "illustrator": "No Illustrator",
+    "name": {
+      "english": "Wings of Love",
+      "japanese": "\u611b\u60c5\u306e\u53cc\u7ffc",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "2",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Option",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "-",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-089.webp",
+    "cardLv": "-",
+    "cardNumber": "BT15-089",
+    "cardType": "Option",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[Security] Activate this card's [Main] effect.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "effect": "[Main] Delete 1 of your opponent's Digimon with 15000 DP or less. For each of your opponent's security cards, subtract 2000 DP from this effect.",
+    "form": "-",
+    "id": "BT15-089",
+    "illustrator": "Kazumasa Yasukuni",
+    "name": {
+      "english": "Meteor Wing",
+      "japanese": "\u30e1\u30c6\u30aa\u30a6\u30a3\u30f3\u30b0",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "4",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Option",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "-",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-090.webp",
+    "cardLv": "-",
+    "cardNumber": "BT15-090",
+    "cardType": "Option",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[Security] Activate this card's [Main] effect.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "effect": "[Main] Return 1 of your opponent's level 4 or lower Digimon to the hand. If you have a Digimon with [Gabumon]/[Garurumon]\u00a0in its name, return 1 of your opponent's Digimon with the lowest level to the hand instead.",
+    "form": "-",
+    "id": "BT15-090",
+    "illustrator": "tessy",
+    "name": {
+      "english": "Fox Fire",
+      "japanese": "\u30d5\u30a9\u30c3\u30af\u30b9\u30d5\u30a1\u30a4\u30e4\u30fc",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "4",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Option",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "-",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-091.webp",
+    "cardLv": "-",
+    "cardNumber": "BT15-091",
+    "cardType": "Option",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[Security] Activate this card's [Main] effect. You may play 1 [Gabumon] from your hand or trash without paying the cost. Then, add this card to your hand.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "effect": "While you have Tamer with [Matt Ishida]\u00a0in its name, you may use this card ignoring its color requiremnts.\n[Main] By placing 1 [Garurumon] and 1 [WereGarurumon] from your trash as the bottom digivolution cards of 1 of your [Gabumon], it may digivolve in to a [MetalGarurumon] from hand ignoring its digivolution requirements and without paying its cost.",
+    "form": "-",
+    "id": "BT15-091",
+    "illustrator": "No Illustrator",
+    "name": {
+      "english": "Wolf of Friendship",
+      "japanese": "\u53cb\u60c5\u306e\u92fc\u72fc",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "4",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Option",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "-",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-092.webp",
+    "cardLv": "-",
+    "cardNumber": "BT15-092",
+    "cardType": "Option",
+    "color": "Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[Security] All of your opponent's Digimon and security Digimon get -5000 DP until the end of your turn.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "effect": "When an effect trashes this card from the security stack, activate this card's [Security] effect.\n[Main] Search your security stack. You may play 1 yellow level 4 or lower Digimon card among them without paying the cost. Then, shuffle your security stack. If you have a Tamer with [Kari Kamiya]\u00a0in its name, place this card on top of your security stack.",
+    "form": "-",
+    "id": "BT15-092",
+    "illustrator": "No Illustrator",
+    "name": {
+      "english": "Revelation of Light",
+      "japanese": "\u5149\u306e\u5929\u5553",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "4",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Option",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "-",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-093.webp",
+    "cardLv": "-",
+    "cardNumber": "BT15-093",
+    "cardType": "Option",
+    "color": "Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[Security].",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "effect": "[Main] 1 of your opponent's Digimon gets -6000 DP for the turn. Then, by trashing the top or bottom card of your security stack, 1 of your opponent's Digimon gets -6000 DP for the turn.",
+    "form": "-",
+    "id": "BT15-093",
+    "illustrator": "Minato Sashima",
+    "name": {
+      "english": "Holy Arrow",
+      "japanese": "\u30db\u30fc\u30ea\u30fc\u30a2\u30ed\u30fc",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "5",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Option",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "-",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-094.webp",
+    "cardLv": "-",
+    "cardNumber": "BT15-094",
+    "cardType": "Digimon",
+    "color": "Green",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[Security] Activate this card's [Main] effect. Then, add this card to the hand.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "effect": "[Main] Suspend 1 level 6 or lower Digimon. 1 of your Digimon with the [Insectoid]\u00a0trait trait gets +3000 DP until the end of your opponent's turn.",
+    "form": "-",
+    "id": "BT15-094",
+    "illustrator": "Sanosuke Sakuma",
+    "name": {
+      "english": "Super Shocker",
+      "japanese": "\u30d7\u30c1\u30b5\u30f3\u30c0\u30fc",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "2",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Digimon",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "-",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-095.webp",
+    "cardLv": "-",
+    "cardNumber": "BT15-095",
+    "cardType": "Option",
+    "color": "Green",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[Security]. Suspend 1 of your opponent's Digimon. Then, add this card to the hand.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "effect": "[Main]Suspend 1 of your opponent's Digimon. Then, if you have a Tamer with [Izzy Izumi]\u00a0in its name, 1 of your opponent's Digimon gains \"[On Deletion] Trash the top card of your security stack.\" until the end of your opponent's turn.",
+    "form": "-",
+    "id": "BT15-095",
+    "illustrator": "No Illustrator",
+    "name": {
+      "english": "Clash of Knowledge",
+      "japanese": "\u77e5\u8b58\u306e\u6fc0\u7a81",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "3",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Option",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "-",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-096.webp",
+    "cardLv": "-",
+    "cardNumber": "BT15-096",
+    "cardType": "Option",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[Security] Reveal the top 5 cards of your deck. Add 1 card with the [Machine]/[Cyborg]\u00a0trait trait to your hand, and trash 1 card with the [Machine]/[Cyborg]\u00a0trait trait. Return the rest to the top of the deck. Then, place this card in the battle area.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "effect": "[Main] Reveal the top 5 cards of your deck. Add 1 card with the [Machine]/[Cyborg]\u00a0trait trait among them to your hand, and trash 1 card with the [Machine]/[Cyborg]\u00a0trait trait among them. Return the rest to the top of the deck. Then, place this card in the battle area.\n[Main] \uff1cDelay\uff1e \u2022 You may play 1 level 5 or higher Digimon card with the [Machine]/[Cyborg]\u00a0trait trait from your hand with the cost reduced by 3.",
+    "form": "-",
+    "id": "BT15-096",
+    "illustrator": "Shin Sasaki",
+    "name": {
+      "english": "Supreme Connection!",
+      "japanese": "\u81f3\u9ad8\u306e\u30b3\u30cd\u30af\u30b7\u30e7\u30f3!!",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "3",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Option",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "-",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-097.webp",
+    "cardLv": "-",
+    "cardNumber": "BT15-097",
+    "cardType": "Option",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[Security] Activate this card's [Main] effect.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "effect": "[Main] By trashing 1 Digimon card with the [Machine]/[Cyborg]/[SoC]\u00a0trait in your hand, delete 1 of your opponent's Digimon or Tamers with the lowest play cost.",
+    "form": "-",
+    "id": "BT15-097",
+    "illustrator": "tessy",
+    "name": {
+      "english": "Ultimate Slicer",
+      "japanese": "\u30a2\u30eb\u30c6\u30a3\u30e1\u30c3\u30c8\u30b9\u30e9\u30a4\u30b5\u30fc",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "5",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Option",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "-",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-098.webp",
+    "cardLv": "-",
+    "cardNumber": "BT15-098",
+    "cardType": "Option",
+    "color": "Purple",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[Security] Place this card in its owner's battle area.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "effect": "[Main] By deleting 1 of your Digimon, you may play 1 [Myotismon] from your trash without paying the cost. Then, place this card into your battle area.\n[All Turns] When your [Myotismon] is deleted, \uff1cDelay\uff1e.\u2022 You may play 1 [VenomMyotismon] from your trash without paying the cost.",
+    "form": "-",
+    "id": "BT15-098",
+    "illustrator": "No Illustrator",
+    "name": {
+      "english": "Mist Barrier",
+      "japanese": "\u9727\u306e\u7d50\u754c",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "4",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Option",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "-",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-099.webp",
+    "cardLv": "-",
+    "cardNumber": "BT15-099",
+    "cardType": "Option",
+    "color": "Purple",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[Security] Activate this card's [Main] effect.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "effect": "[Main] By trashing 1 Digimon card in your hand, delete 1 of your opponent's Digimon with a level less than or equal to the trashed card's level. When a card with [Myotismon]\u00a0in its text in its text is trashed by this effect, \uff1cDraw 2\uff1e.",
+    "form": "-",
+    "id": "BT15-099",
+    "illustrator": "toriyufu",
+    "name": {
+      "english": "Venom Infusion",
+      "japanese": "\u30f4\u30a7\u30ce\u30e0\u30a4\u30f3\u30d5\u30e5\u30fc\u30ba",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "6",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Option",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "attribute": "-",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-100.webp",
+    "cardLv": "-",
+    "cardNumber": "BT15-100",
+    "cardType": "Digimon",
+    "color": "Purple",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[Security] Activate this card's [Main] effect.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "effect": "[Trash] [All Turns] When one of your Digimon digivolves into [Leviamon (X Antibody)], by returning this card to the bottom of your deck, delete 1 of your opponent's level 4 and level 6 Digimon.\n[Main] By trashing 1 card in your hand, delete 1 of your opponent's level 4 and level 6 Digimon.",
+    "form": "-",
+    "id": "BT15-100",
+    "illustrator": "Shin Sasaki",
+    "name": {
+      "english": "Seventh Lightning",
+      "japanese": "\u30bb\u30d6\u30f3\u30b9\n\u30fb\u30e9\u30a4\u30c8\u30cb\u30f3\u30b0",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "7",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Seven Great Demon Lords",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Naochika Morishita",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Naochika Morishita",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "aceEffect": "-",
+    "attribute": "Data",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-101.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT15-101",
+    "cardType": "Digimon",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "effect": "While you have a Tamer with [Matt Ishida]\u00a0in its name and your opponent has a Digimon with 10000 or more DP in play, your[Gabumon] may digivolve into this card from your hand for 4 cost, ignoring digivolution requirements.\n\uff1cEvade\uff1e \n[When Digivolving] Until the end of your opponent's turn end, 3 of your opponent's Digimon or Tamers can't suspend.\n[All Turns] [Once Per Turn] When this Digimon suspends, you may unsuspend this Digimon.",
+    "form": "Mega",
+    "id": "BT15-101",
+    "illustrator": "Kenji Watanabe",
+    "name": {
+      "english": "MetalGarurumon",
+      "japanese": "\u30e1\u30bf\u30eb\u30ac\u30eb\u30eb\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "-",
+    "rarity": "SEC",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve]Lv.5 w/[Garurumon]\u00a0in its name: Cost 4 ",
+    "type": "Cyborg",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "To be completed",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "To be completed",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "aceEffect": "-",
+    "attribute": "Unknown",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-102.webp",
+    "cardLv": "Lv.7",
+    "cardNumber": "BT15-102",
+    "cardType": "Digimon",
+    "color": "White",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "6",
+        "level": "6"
+      },
+      {
+        "color": "Green",
+        "cost": "6",
+        "level": "6"
+      },
+      {
+        "color": "Black",
+        "cost": "6",
+        "level": "6"
+      },
+      {
+        "color": "Purple",
+        "cost": "6",
+        "level": "6"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "15000",
+    "effect": "When this card would be played, by placing up to 3 cards with the [Dark Masters]\u00a0trait and different names from your battle area or trash under this card, reduce the play cost by 4 for each card placed.\n[End of Your Turn] [Once Per Turn] By placing 1 level 6 or lower card from your trash as this Digimon's bottom digivolution card, activate 1 of the [On Play] effects of the card placed by this Digimon's effect. Then, for each level 6 card in this Digimon's digivolution cards, trash the top 2 cards of the opponent's deck.",
+    "form": "Mega",
+    "id": "BT15-102",
+    "illustrator": "Tonamikanji",
+    "name": {
+      "english": "Apocalymon",
+      "japanese": "\u30a2\u30dd\u30ab\u30ea\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
+    "playCost": "15",
+    "rarity": "SEC",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Unidentified",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "_P1",
         "illustrator": "tessy",
         "note": "ST-11 Special Entry Pack"
       }
@@ -118707,7 +124018,7 @@
     "digivolveEffect": "[End of Your Turn] You may DNA digivolve this Digimon and one of your other Digimon in play into a Digimon card in your hand by paying its DNA digivolve cost.",
     "dnaDigivolve": "-",
     "dp": "1000",
-    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 green/blue card with 2 or more colors and 1 Tamer card with [Ken Ichijoji] among them to the hand. Return the rest to the bottom of the deck.",
+    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 green/blue card with 2 or more colors and 1 Tamer card with [Ken Ichijoji]\u00a0in its name among them to the hand. Return the rest to the bottom of the deck.",
     "form": "Rookie",
     "id": "P-118",
     "illustrator": "No Illustrator",
@@ -118762,7 +124073,7 @@
     "digivolveEffect": "[End of Your Turn] You may DNA digivolve this Digimon and one of your other Digimon in play into a Digimon card in your hand by paying its DNA digivolve cost.",
     "dnaDigivolve": "-",
     "dp": "1000",
-    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 red/yellow card with 2 or more colors and 1 Tamer card with [Yolei Inoue] among them to the hand. Return the rest to the bottom of the deck.",
+    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 red/yellow card with 2 or more colors and 1 Tamer card with [Yolei Inoue]\u00a0in its name among them to the hand. Return the rest to the bottom of the deck.",
     "form": "Rookie",
     "id": "P-119",
     "illustrator": "No Illustrator",
@@ -118872,7 +124183,7 @@
     "digivolveEffect": "[End of Your Turn] You may DNA digivolve this Digimon and one of your other Digimon in play into a Digimon card in your hand by paying its DNA digivolve cost.",
     "dnaDigivolve": "-",
     "dp": "1000",
-    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 black/yellow card with 2 or more colors and 1 Tamer card with [Cody Hida] among them to the hand. Return the rest to the bottom of the deck.",
+    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 black/yellow card with 2 or more colors and 1 Tamer card with [Cody Hida]\u00a0in its name among them to the hand. Return the rest to the bottom of the deck.",
     "form": "Rookie",
     "id": "P-121",
     "illustrator": "No Illustrator",
