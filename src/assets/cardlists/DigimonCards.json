@@ -35251,7 +35251,7 @@
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "Mutant/Bagra Army/Twilight",
+    "type": "Beast/Bagra Army/Twilight",
     "version": "Normal"
   },
   {
@@ -40467,8 +40467,20 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Tonamikanji",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Tonamikanji",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
@@ -42101,8 +42113,20 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Tonamikanji",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Tonamikanji",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "-",
     "block": [
