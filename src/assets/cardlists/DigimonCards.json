@@ -20395,7 +20395,7 @@
       {
         "id": "_P1",
         "illustrator": "Nakano Haito",
-        "note": "Tamer Party Pack 1"
+        "note": "Tamer Party Pack"
       }
     ],
     "JAAs": [],
@@ -20462,7 +20462,7 @@
       {
         "id": "_P2",
         "illustrator": "Takase",
-        "note": "Tamer Party Pack 1"
+        "note": "Tamer Party Pack"
       }
     ],
     "JAAs": [],
@@ -21992,7 +21992,7 @@
       {
         "id": "_P1",
         "illustrator": "Takase",
-        "note": "Tamer Party Pack 1"
+        "note": "Tamer Party Pack"
       }
     ],
     "JAAs": [],
@@ -23476,7 +23476,7 @@
       {
         "id": "_P1",
         "illustrator": "toriyufu",
-        "note": "Tamer Party Pack 1"
+        "note": "Tamer Party Pack"
       }
     ],
     "JAAs": [],
@@ -32076,7 +32076,7 @@
     "digivolveEffect": "[Security] Place this card in its owner's battle area.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] \uff1cDraw 1\uff1e. Place 1 Digimon card from your hand under 1 of your [King Drasil_7D6] in the breeding area as its bottom digivolution card. Then, place this card in the battle area.\n[Main] \uff1cDelay\uff1e.\n\u30fb Play 1 card with the [Royal Knight]\u00a0trait from the digivolution cards of 1 of your Digimon in the breeding area without paying its cost. Any [On Play] effects on Digimon played with this effect don't activate, and they gain \uff1cRush\uff1efor the turn.",
+    "effect": "[Main] \uff1cDraw 1\uff1e. You may place 1 Digimon card from your hand under 1 of your [King Drasil_7D6] in the breeding area as its bottom digivolution card. Then, place this card in the battle area.\n[Main] \uff1cDelay\uff1e.\n\u30fb Play 1 card with the [Royal Knight]\u00a0trait from the digivolution cards of 1 of your Digimon in the breeding area without paying its cost. Any [On Play] effects on Digimon played with this effect don't activate, and they gain \uff1cRush\uff1efor the turn.",
     "form": "-",
     "id": "BT13-110",
     "illustrator": "Nakano Haito",
@@ -39524,14 +39524,14 @@
     "AAs": [
       {
         "id": "_P1",
-        "illustrator": "To be completed",
+        "illustrator": "Teppei Tadokoro",
         "note": "BT-15: Booster Exceed Apocalypse"
       }
     ],
     "JAAs": [
       {
         "id": "_P1",
-        "illustrator": "To be completed",
+        "illustrator": "Teppei Tadokoro",
         "note": "BT-15: Booster Exceed Apocalypse"
       }
     ],
@@ -40897,14 +40897,14 @@
     "AAs": [
       {
         "id": "_P1",
-        "illustrator": "To be Completed",
+        "illustrator": "sasasi",
         "note": "BT-15: Booster Exceed Apocalypse"
       }
     ],
     "JAAs": [
       {
         "id": "_P1",
-        "illustrator": "To be Completed",
+        "illustrator": "sasasi",
         "note": "BT-15: Booster Exceed Apocalypse"
       }
     ],
@@ -41524,14 +41524,14 @@
     "AAs": [
       {
         "id": "_P1",
-        "illustrator": "To be completed",
+        "illustrator": "Tonamikanji",
         "note": "BT-15: Booster Exceed Apocalypse"
       }
     ],
     "JAAs": [
       {
         "id": "_P1",
-        "illustrator": "To be completed",
+        "illustrator": "Tonamikanji",
         "note": "BT-15: Booster Exceed Apocalypse"
       }
     ],
@@ -42043,7 +42043,7 @@
     "digivolveEffect": "[Security] Play this card without paying its memory cost.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Start of Your Turn] If you have 2 memory or less, set your memory to 3[Opponent's Turn]] When an opponent's Digimon attacks, by suspending this Tamer, switch the target of attack to 1 of your suspended Digimon with the [Insectoid]\u00a0trait.",
+    "effect": "[Start of Your Turn] If you have 2 memory or less, set your memory to 3.\n[Opponent's Turn] When an opponent's Digimon attacks, by suspending this Tamer, switch the target of attack to 1 of your suspended Digimon with the [Insectoid]\u00a0trait.",
     "form": "-",
     "id": "BT15-085",
     "illustrator": "No Illustrator",
@@ -42069,8 +42069,20 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Tonamikanji",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Tonamikanji",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "-",
     "block": [
@@ -42746,12 +42758,22 @@
         "id": "_P1",
         "illustrator": "Naochika Morishita",
         "note": "BT-15: Booster Exceed Apocalypse"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "To be completed",
+        "note": "BT-15: Booster Exceed Apocalypse"
       }
     ],
     "JAAs": [
       {
         "id": "_P1",
         "illustrator": "Naochika Morishita",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "To be completed",
         "note": "BT-15: Booster Exceed Apocalypse"
       }
     ],
@@ -42806,6 +42828,11 @@
     "AAs": [
       {
         "id": "_P1",
+        "illustrator": "Naochika Morishita",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      },
+      {
+        "id": "_P2",
         "illustrator": "To be completed",
         "note": "BT-15: Booster Exceed Apocalypse"
       }
@@ -42813,6 +42840,11 @@
     "JAAs": [
       {
         "id": "_P1",
+        "illustrator": "Naochika Morishita",
+        "note": "BT-15: Booster Exceed Apocalypse"
+      },
+      {
+        "id": "_P2",
         "illustrator": "To be completed",
         "note": "BT-15: Booster Exceed Apocalypse"
       }
@@ -54776,6 +54808,11 @@
         "id": "_P1",
         "illustrator": "TANIMESO",
         "note": "Revision Pack 2021"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "tyuga",
+        "note": "Tamer Party Pack: The Beginning"
       }
     ],
     "JAAs": [
@@ -54814,9 +54851,9 @@
     "name": {
       "english": "MaloMyotismon",
       "japanese": "\u30d9\u30ea\u30a2\u30eb\u30f4\u30a1\u30f3\u30c7\u30e2\u30f3",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "korean": "\ubca0\ub9ac\uc5bc\ubb18\ud2f0\uc2a4\ubaac",
+      "simplifiedChinese": "\u8d1d\u5229\u4e9a\u5438\u8840\u9b54\u517d",
+      "traditionalChinese": "\u8c9d\u5229\u4e9e\u5438\u8840\u9b54\u7378"
     },
     "notes": "\u25b9RELEASE SPECIAL BOOSTER 1.5 [BT01-B0T3]",
     "playCost": "13",
@@ -66649,6 +66686,11 @@
         "id": "_P1",
         "illustrator": "Ishibashi Yosuke",
         "note": "Demo Deck: Black"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "tyuga",
+        "note": "Tamer Party Pack: The Beginning"
       }
     ],
     "JAAs": [
@@ -83219,6 +83261,11 @@
         "illustrator": "Ishibashi Yosuke",
         "note": "New Awakening Pre-Release Pack",
         "preRelease": "Foil - Pre Release Stamp -\u00a0Rare"
+      },
+      {
+        "id": "_P1",
+        "illustrator": "Takase",
+        "note": "Tamer Party Pack: The Beginning"
       }
     ],
     "JAAs": [
@@ -84572,7 +84619,7 @@
       {
         "id": "_P2",
         "illustrator": "No Illustrator",
-        "note": "Tamer Party Pack 1"
+        "note": "Tamer Party Pack"
       }
     ],
     "JAAs": [
@@ -84838,6 +84885,11 @@
         "id": "_P3",
         "illustrator": "Tomotake Kinoshita",
         "note": "Regionals 2022 Champion Set 2"
+      },
+      {
+        "id": "_P4",
+        "illustrator": "Takase",
+        "note": "Tamer Party Pack: The Beginning"
       }
     ],
     "JAAs": [
@@ -84881,9 +84933,9 @@
     "name": {
       "english": "Shakkoumon",
       "japanese": "\u30b7\u30e3\u30c3\u30b3\u30a6\u30e2\u30f3",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "korean": "\ud1a0\uc6b0\ubaac",
+      "simplifiedChinese": "\u571f\u5076\u517d",
+      "traditionalChinese": "\u53e4\u795e\u7378"
     },
     "notes": "\u25b9BOOSTER NEW AWAKENING [BT08]",
     "playCost": "8",
@@ -87419,6 +87471,11 @@
         "illustrator": "No Illustrator",
         "note": "New Awakening Pre-Release Pack",
         "preRelease": "Foil - Pre Release Stamp -\u00a0Rare"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "No Illustrator",
+        "note": "Tamer Party Pack: The Beginning"
       }
     ],
     "JAAs": [
@@ -87457,8 +87514,8 @@
       "english": "Yolei Inoue",
       "japanese": "\u4e95\u30ce\u4e0a\u4eac",
       "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "simplifiedChinese": "\u4e95\u4e0a\u4eac",
+      "traditionalChinese": "\u4e95\u4e0a\u4eac"
     },
     "notes": "\u25b9BOOSTER NEW AWAKENING [BT08]",
     "playCost": "3",
@@ -87547,6 +87604,11 @@
         "id": "_P2",
         "illustrator": "No Illustrator",
         "note": "New Awakening Pre-Release Pack"
+      },
+      {
+        "id": "_P3",
+        "illustrator": "No Illustrator",
+        "note": "Tamer Party Pack: The Beginning"
       }
     ],
     "JAAs": [
@@ -87614,6 +87676,11 @@
         "illustrator": "No Illustrator",
         "note": "New Awakening Pre-Release Pack",
         "preRelease": "Foil - Pre Release Stamp -\u00a0Pre-Release"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "No Illustrator",
+        "note": "Tamer Party Pack: The Beginning"
       }
     ],
     "JAAs": [
@@ -87657,8 +87724,8 @@
       "english": "Davis Motomiya & Ken Ichijoji",
       "japanese": "\u672c\u5bae\u5927\u8f14\uff06\u4e00\u4e57\u5bfa\u8ce2",
       "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "simplifiedChinese": "\u672c\u5bab\u5927\u8f85&\u4e00\u4e58\u5bfa\u8d24",
+      "traditionalChinese": "\u672c\u5bae\u5927\u8f14&\u4e00\u4e58\u5bfa\u8ce2"
     },
     "notes": "\u25b9BOOSTER NEW AWAKENING [BT08]",
     "playCost": "4",
@@ -87686,6 +87753,11 @@
         "illustrator": "No Illustrator",
         "note": "New Awakening Pre-Release Pack",
         "preRelease": "Foil - Pre Release Stamp -\u00a0Rare"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "No Illustrator",
+        "note": "Tamer Party Pack: The Beginning"
       }
     ],
     "JAAs": [
@@ -87753,6 +87825,11 @@
         "illustrator": "No Illustrator",
         "note": "New Awakening Pre-Release Pack",
         "preRelease": "Foil - Pre Release Stamp -\u00a0Uncommon"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "No Illustrator",
+        "note": "Tamer Party Pack: The Beginning"
       }
     ],
     "JAAs": [
@@ -87933,6 +88010,11 @@
         "illustrator": "No Illustrator",
         "note": "New Awakening Pre-Release Pack",
         "preRelease": "Foil - Pre Release Stamp -\u00a0Rare"
+      },
+      {
+        "id": "_P1",
+        "illustrator": "No Illustrator",
+        "note": "Tamer Party Pack: The Beginning"
       }
     ],
     "JAAs": [
@@ -87966,8 +88048,8 @@
       "english": "Yukio Oikawa",
       "japanese": "\u53ca\u5ddd\u60a0\u7d00\u592b",
       "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "simplifiedChinese": "\u53ca\u5ddd\u60a0\u7eaa\u592b",
+      "traditionalChinese": "\u53ca\u5ddd\u60a0\u7d00\u592b"
     },
     "notes": "\u25b9BOOSTER NEW AWAKENING [BT08]",
     "playCost": "3",
@@ -87990,6 +88072,11 @@
         "illustrator": "No Illustrator",
         "note": "New Awakening Pre-Release Pack",
         "preRelease": "Foil - Pre Release Stamp -\u00a0Rare"
+      },
+      {
+        "id": "_P1",
+        "illustrator": "No Illustrator",
+        "note": "Tamer Party Pack: The Beginning"
       }
     ],
     "JAAs": [
@@ -88023,8 +88110,8 @@
       "english": "Digimon Emperor",
       "japanese": "\u30c7\u30b8\u30e2\u30f3\u30ab\u30a4\u30b6\u30fc",
       "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "simplifiedChinese": "\u66b4\u9f99\u6539\u9020\u8005",
+      "traditionalChinese": "\u66b4\u9f8d\u7d71\u6cbb\u8005"
     },
     "notes": "\u25b9BOOSTER NEW AWAKENING [BT08]",
     "playCost": "3",
@@ -111687,7 +111774,7 @@
     "digivolveEffect": "[Security] Place this card in its owner's battle area.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "While you have a green Digimon or Tamer in play, you may use this card without meeting its color requirements.\n[Main] Delete 1 of your opponent's level 3 Digimon. Then place this card in your battle area.\n\uff1cDelay\uff1e \n\u30fb[Main] Your opponent may trash 1 Option card in their hand. If they do not trash a card, gain 2 memory.",
+    "effect": "While you have a green Digimon or Tamer in play, you may use this card without meeting its color requirements.\n[Main] Delete 1 of your opponent's level 3 Digimon. Then place this card in your battle area.\n[Main] \uff1cDelay\uff1e \n\u30fb[Main] Your opponent may trash 1 Option card in their hand. If they do not trash a card, gain 2 memory.",
     "form": "-",
     "id": "EX4-070",
     "illustrator": "Kazumasa Yasukuni",
@@ -115643,7 +115730,7 @@
     "digivolveEffect": "[Security] Activate this card's [Main] effect.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] By trashing 1 card in your hand, delete 1 of your opponent's level 6 or lower Digimon. If you trashed a Digimon with the [Seven Great Demon Lords]\u00a0trait with this effect, place this card in your battle area.\n[All Turns] When an opponent's Digimon is played by an effect, \uff1cDelay\uff1e :\n\u30fb You may play 1 [Leviamon] from your trash without paying its cost.",
+    "effect": "[Main] By trashing 1 card in your hand, delete 1 of your opponent's level 6 or lower Digimon. If you trashed a Digimon with the [Seven Great Demon Lords]\u00a0trait with this effect, place this card in your battle area.\n[All Turns] When an opponent's Digimon is played by an effect, \uff1cDelay\uff1e \n\u30fb You may play 1 [Leviamon] from your trash without paying its cost.",
     "form": "-",
     "id": "EX5-069",
     "illustrator": "Hisashi Fujiwara",
@@ -115854,7 +115941,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "[DNA Digivolve] [Apollomon] + [Dianamon]\u00a0: Cost 0",
     "dp": "15000",
-    "effect": "\uff1cSecurity Attack +1\uff1e \uff1cBlocker\uff1e[When Digivolving] [When Attacking] If DNA digivolving, trash any 8 digivolution cards from your opponent's Digimon. Then, delete 1 of your opponent's Digimon with equal or fewer digivolution cards than this Digimon.\n[All Turns] If this Digimon would leave the battle area by your opponent's effect, by trashing 2 cards of the same level in this digimon's digivolution cards, prevent it from leaving play.",
+    "effect": "\uff1cSecurity Attack +1\uff1e \n\uff1cBlocker\uff1e \n[When Digivolving] [When Attacking] If DNA digivolving, trash any 8 digivolution cards from your opponent's Digimon. Then, delete 1 of your opponent's Digimon with equal or fewer digivolution cards than this Digimon.\n[All Turns] If this Digimon would leave the battle area by your opponent's effect, by trashing 2 cards of the same level in this digimon's digivolution cards, prevent it from leaving play.",
     "form": "Mega",
     "id": "EX5-073",
     "illustrator": "Nakano Haito",
@@ -139330,6 +139417,11 @@
         "id": "_P4",
         "illustrator": "Tomotake Kinoshita",
         "note": "Regionals 2022 Champion Set 2"
+      },
+      {
+        "id": "_P5",
+        "illustrator": "Takase",
+        "note": "Tamer Party Pack: The Beginning"
       }
     ],
     "JAAs": [
