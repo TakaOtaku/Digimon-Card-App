@@ -8610,19 +8610,19 @@
   "BT9-069": [
     {
       "answer": "A: Yes, you can.\n",
-      "question": "Q: Can I unsuspend my opponent's suspended Tamer by using this Digimon's [When Digivolving] effect?"
+      "question": "Q: Can I use this card's [When Digivolving] effect to unsuspend an opponent\u2019s suspended Digimon or Tamer?"
     },
     {
       "answer": "A: Yes, you can.\n",
-      "question": "Q: Can I use the [When Digivolving] effect to unsuspend 1 of my Tamers and 1 of my opponent\u2019s Tamers?"
+      "question": "Q: Can I use this card\u2019s [When Digivolving] effect to unsuspend both 1 of my Digimon or Tamers and 1 of my opponent\u2019s Digimon or Tamers?"
     },
     {
-      "answer": "A: It will be only be 2 in total. It can be done by unsuspending 2 Tamers or 2 Digimon.\n",
+      "answer": "A: The effect lets you unsuspend up to 2 in any combination. You can unsuspend 1 of each, or 2 Digimon, or 2 Tamers.\n",
       "question": "Q: Does the [When Digivolving] effect allow me to unsuspend 2 Tamers and 2 Digimon at the same time?"
     },
     {
-      "answer": "A: No. Divide the total of unsuspended Digimon and Tamer by 2. For example, if there are 3 unsuspended Digimon and 1 unsuspended Tamer, 2 security will be trashed.\n",
-      "question": "Q: Does the [End of Your Turn] effect of trashing my opponent\u2019s security cards only apply for each pair of 1 Tamer and 1 Digimon?"
+      "answer": "A: No. Add up the total number of unsuspended Digimon and Tamer cards your opponent has in play, then divide by two to determine how many security cards to trash. For example, if your opponent has 3 unsuspended Digimon and 1 unsuspended Tamer, this adds up to 4 cards total, which means you get to trash 2 of your opponent\u2019s security cards.\n",
+      "question": "Q: When determining the number of cards to trash from my opponent\u2019s security stack with this card's [End of Your Turn] effect, do I only trash a card for each pair of unsuspended Digimon and Tamer cards my opponent has in play?"
     }
   ],
   "BT9-071": [

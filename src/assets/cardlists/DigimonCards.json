@@ -124045,8 +124045,20 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Iori Sunakura",
+        "note": "Digimon Adventure 02: The Beginning Tutorial Deck"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Iori Sunakura",
+        "note": "Digimon Adventure 02: The Beginning Tutorial Deck"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "Free",
     "block": [
@@ -124323,7 +124335,7 @@
     "AAs": [],
     "JAAs": [],
     "aceEffect": "-",
-    "attribute": "Free",
+    "attribute": "Data",
     "block": [
       "03"
     ],
@@ -124375,8 +124387,20 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Iori Sunakura",
+        "note": "Digimon Adventure 02: The Beginning Tutorial Deck"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Iori Sunakura",
+        "note": "Digimon Adventure 02: The Beginning Tutorial Deck"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "Free",
     "block": [
