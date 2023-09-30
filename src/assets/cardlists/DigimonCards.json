@@ -41980,7 +41980,7 @@
     "cardImage": "assets/images/cards/BT15-084.webp",
     "cardLv": "-",
     "cardNumber": "BT15-084",
-    "cardType": "Digimon",
+    "cardType": "Tamer",
     "color": "Yellow",
     "digiXros": "-",
     "digivolveCondition": [],
@@ -42009,7 +42009,7 @@
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "Digimon",
+    "type": "Tamer",
     "version": "Normal"
   },
   {
@@ -42456,7 +42456,7 @@
     "cardImage": "assets/images/cards/BT15-094.webp",
     "cardLv": "-",
     "cardNumber": "BT15-094",
-    "cardType": "Digimon",
+    "cardType": "Option",
     "color": "Green",
     "digiXros": "-",
     "digivolveCondition": [],
@@ -42485,7 +42485,7 @@
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "Digimon",
+    "type": "Option",
     "version": "Normal"
   },
   {
@@ -42720,7 +42720,7 @@
     "cardImage": "assets/images/cards/BT15-100.webp",
     "cardLv": "-",
     "cardNumber": "BT15-100",
-    "cardType": "Digimon",
+    "cardType": "Option",
     "color": "Purple",
     "digiXros": "-",
     "digivolveCondition": [],
@@ -42758,22 +42758,12 @@
         "id": "_P1",
         "illustrator": "Naochika Morishita",
         "note": "BT-15: Booster Exceed Apocalypse"
-      },
-      {
-        "id": "_P2",
-        "illustrator": "To be completed",
-        "note": "BT-15: Booster Exceed Apocalypse"
       }
     ],
     "JAAs": [
       {
         "id": "_P1",
         "illustrator": "Naochika Morishita",
-        "note": "BT-15: Booster Exceed Apocalypse"
-      },
-      {
-        "id": "_P2",
-        "illustrator": "To be completed",
         "note": "BT-15: Booster Exceed Apocalypse"
       }
     ],
@@ -109915,7 +109905,7 @@
     },
     "notes": "\u25b9THEME BOOSTER ALTERNATIVE BEING [EX04]",
     "playCost": "8",
-    "rarity": "R",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Unrestricted",
@@ -119344,6 +119334,11 @@
         "id": "_P4",
         "illustrator": "p!k@ru",
         "note": "AB-02: Digimon Card Game Adventure Box 2"
+      },
+      {
+        "id": "_P5",
+        "illustrator": "No Illustrator",
+        "note": "Digimon Adventure 02: The Beginning Tutorial Deck"
       }
     ],
     "JAAs": [
@@ -119366,6 +119361,11 @@
         "id": "_P4",
         "illustrator": "p!k@ru",
         "note": "RB-01: Resurgence Booster"
+      },
+      {
+        "id": "_P5",
+        "illustrator": "No Illustrator",
+        "note": "Digimon Adventure 02: The Beginning Tutorial Deck"
       }
     ],
     "aceEffect": "-",
@@ -123619,8 +123619,30 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "To be completed",
+        "note": "Digimon Adventure 02: The Beginning Tutorial Deck"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "Kazumasa Yasukuni",
+        "note": "BANDAI CARD GAMES Fest23-24 World Tour"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "To be completed",
+        "note": "Digimon Adventure 02: The Beginning Tutorial Deck"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "Kazumasa Yasukuni",
+        "note": "BANDAI CARD GAMES Fest23-24 World Tour"
+      }
+    ],
     "aceEffect": "Overflow \uff1c-4\uff1e.",
     "attribute": "Free",
     "block": [
@@ -124048,15 +124070,25 @@
     "AAs": [
       {
         "id": "_P1",
-        "illustrator": "Iori Sunakura",
+        "illustrator": "No Illustrator",
         "note": "Digimon Adventure 02: The Beginning Tutorial Deck"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "Iori Sunakura",
+        "note": "Digimon Adventure 02: The Beginning Tutorial Deck (Promo Card)"
       }
     ],
     "JAAs": [
       {
         "id": "_P1",
-        "illustrator": "Iori Sunakura",
+        "illustrator": "No Illustrator",
         "note": "Digimon Adventure 02: The Beginning Tutorial Deck"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "Iori Sunakura",
+        "note": "Digimon Adventure 02: The Beginning Tutorial Deck (Promo Card)"
       }
     ],
     "aceEffect": "-",
@@ -124390,15 +124422,25 @@
     "AAs": [
       {
         "id": "_P1",
-        "illustrator": "Iori Sunakura",
+        "illustrator": "No Illustrator",
         "note": "Digimon Adventure 02: The Beginning Tutorial Deck"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "Iori Sunakura",
+        "note": "Digimon Adventure 02: The Beginning Tutorial Deck (Promo Card)"
       }
     ],
     "JAAs": [
       {
         "id": "_P1",
-        "illustrator": "Iori Sunakura",
+        "illustrator": "No Illustrator",
         "note": "Digimon Adventure 02: The Beginning Tutorial Deck"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "Iori Sunakura",
+        "note": "Digimon Adventure 02: The Beginning Tutorial Deck (Promo Card)"
       }
     ],
     "aceEffect": "-",
@@ -124449,8 +124491,20 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "No Illustrator",
+        "note": "Digimon Adventure 02: The Beginning Tutorial Deck"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "No Illustrator",
+        "note": "Digimon Adventure 02: The Beginning Tutorial Deck"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "-",
     "block": [
@@ -124713,8 +124767,20 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "No Illustrator",
+        "note": "Digimon Adventure 02: The Beginning Tutorial Deck"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "No Illustrator",
+        "note": "Digimon Adventure 02: The Beginning Tutorial Deck"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "-",
     "block": [
