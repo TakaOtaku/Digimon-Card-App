@@ -192,6 +192,7 @@ export class DecksPageComponent implements OnInit, OnDestroy {
   page = 0;
   users$: Observable<IUserAndDecks[]> =
     this.digimonBackendService.getUserDecks();
+  allCards: DigimonCard[] = [];
   allCards$: Observable<DigimonCard[]> = this.store.select(selectAllCards);
   communityDecks$ = this.store.select(selectCommunityDecks);
   deckSearch$: Observable<string> = this.store.select(
@@ -213,6 +214,12 @@ export class DecksPageComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    this.store
+      .select(selectAllCards)
+      .pipe(first())
+      .subscribe((cards) => {
+        this.allCards = cards;
+      });
     this.makeGoogleFriendly();
     if (typeof Worker !== 'undefined') {
       // Create a new
@@ -415,7 +422,7 @@ export class DecksPageComponent implements OnInit, OnDestroy {
         ...deck,
         imageCardId:
           deck.imageCardId === 'BT1-001'
-            ? setDeckImage(deck).id
+            ? setDeckImage(deck, this.allCards).id
             : deck.imageCardId,
       }));
   }

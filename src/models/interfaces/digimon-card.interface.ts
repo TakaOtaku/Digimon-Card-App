@@ -2,6 +2,7 @@ export interface AA {
   id: string;
   illustrator: string;
   note: string;
+  type: string;
 }
 
 export interface DigivolveCondition {

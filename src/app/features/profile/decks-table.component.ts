@@ -11,6 +11,7 @@ import { Store } from '@ngrx/store';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { SharedModule } from 'primeng/api';
 import { TableModule } from 'primeng/table';
+import { first } from 'rxjs';
 import { DigimonCard, IDeck } from '../../../models';
 import { setDeckImage } from '../../functions/digimon-card.functions';
 import { selectAllCards } from '../../store/digimon.selectors';
@@ -111,9 +112,17 @@ export class DecksTableComponent {
   @Input() decks: IDeck[];
   @Output() onDeckClick = new EventEmitter<IDeck>();
 
+  allCards: DigimonCard[] = [];
   allCards$ = this.store.select(selectAllCards);
 
-  constructor(private store: Store) {}
+  constructor(private store: Store) {
+    this.store
+      .select(selectAllCards)
+      .pipe(first())
+      .subscribe((cards) => {
+        this.allCards = cards;
+      });
+  }
 
   getCardImage(deck: IDeck, allCards: DigimonCard[]): string {
     //If there are no cards in the deck set it to the Yokomon
@@ -128,7 +137,7 @@ export class DecksTableComponent {
         '../../../assets/images/cards/eng/BT1-001.webp'
       );
     } else {
-      const deckImage = setDeckImage(deck);
+      const deckImage = setDeckImage(deck, this.allCards);
       this.store.dispatch(
         DeckActions.save({ deck: { ...deck, imageCardId: deckImage.id } })
       );

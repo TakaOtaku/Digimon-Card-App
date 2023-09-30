@@ -16,7 +16,7 @@ function setupJsonENG(): DigimonCard[] {
         id: digimonCard.id + aa.id,
         illustrator: aa.illustrator,
         notes: aa.note,
-        version: 'AA',
+        version: aa.type,
       });
     });
   });
@@ -39,7 +39,7 @@ function setupJsonJAP(): DigimonCard[] {
         cardImage: addJBeforeWebp(
           addAABeforeWebp(digimonCard.cardImage, aa.id)
         ),
-        version: 'AA',
+        version: aa.type,
       });
     });
   });
@@ -65,7 +65,7 @@ function mapJsonToEngCardList(): Map<string, DigimonCard> {
         ...digimonCard,
         illustrator: aa.illustrator,
         notes: aa.note,
-        version: 'AA',
+        version: aa.type,
       });
     });
   });
@@ -87,7 +87,7 @@ function mapJsonToJapCardList(): Map<string, DigimonCard> {
         ...digimonCard,
         illustrator: aa.illustrator,
         notes: aa.note,
-        version: 'AA',
+        version: aa.type,
       });
     });
   });
@@ -95,6 +95,9 @@ function mapJsonToJapCardList(): Map<string, DigimonCard> {
   return cards;
 }
 
+/* =========================
+       Support Functions
+   ========================= */
 export function addJBeforeWebp(imagePath: string): string {
   if (imagePath.endsWith('.webp') && !imagePath.endsWith('-J.webp')) {
     const index = imagePath.lastIndexOf('.webp');
@@ -130,4 +133,3 @@ function addAABeforeWebp(imagePath: string, AA: string): string {
 function getP(code: string): string {
   return '_P' + code.split('_P')[1];
 }
-

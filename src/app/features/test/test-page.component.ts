@@ -162,7 +162,7 @@ export class TestPageComponent implements OnInit, OnDestroy {
         color,
         imageCardId:
           !deck.imageCardId || deck.imageCardId === 'BT1-001'
-            ? setDeckImage(deck).id
+            ? setDeckImage(deck, this.allCards).id
             : deck.imageCardId,
         date: !deck.date ? new Date().toString() : deck.date,
       };
@@ -300,7 +300,7 @@ export class TestPageComponent implements OnInit, OnDestroy {
     let newDecks: IDeck = deck;
     if (!deck.imageCardId || deck.imageCardId === 'BT1-001') {
       error = true;
-      newDecks = { ...deck, imageCardId: setDeckImage(deck).id };
+      newDecks = { ...deck, imageCardId: setDeckImage(deck, this.allCards).id };
     }
     if (!deck.date) {
       error = true;
@@ -308,7 +308,9 @@ export class TestPageComponent implements OnInit, OnDestroy {
     }
 
     return error
-      ? this.digimonBackendService.updateDeck(newDecks).pipe(first())
+      ? this.digimonBackendService
+          .updateDeck(newDecks, null, this.allCards)
+          .pipe(first())
       : null;
   }
   private updateTournamentDeck(deck: ITournamentDeck): Observable<any> | null {
@@ -318,7 +320,7 @@ export class TestPageComponent implements OnInit, OnDestroy {
       error = true;
       newDecks = {
         ...deck,
-        imageCardId: setDeckImage(deck).id,
+        imageCardId: setDeckImage(deck, this.allCards).id,
       };
     }
     if (!deck.date) {

@@ -240,11 +240,11 @@ function applyFilter(
       break;
     case 'version':
       filter.forEach(
-        (filter) =>
+        (current) =>
           (returnArray = [
             ...new Set([
               ...returnArray,
-              ...cards.filter((cards) => cards['version'] === filter),
+              ...cards.filter((cards) => cards['version'].includes(current)),
             ]),
           ])
       );

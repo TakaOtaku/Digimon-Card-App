@@ -1,6 +1,7 @@
 import json
 import time
 
+import os
 import re
 
 import requests
@@ -12,6 +13,8 @@ from classes.DigivolveCondition import DigivolveCondition
 
 import WikiVariables as WV
 
+def check_if_image_exists(image_path):
+  return os.path.exists(image_path)
 
 def getLinks(wikiPageLink):
     page = requests.get(wikiPageLink['url'])
@@ -198,13 +201,13 @@ def getEnglishIllustrator(rows, digimoncard):
             digimoncard.illustrator = cells[0].text
             digimoncard.notes = cells[1].text
         else:
-            if 'Pre Release' in cells[2].text:
+            if 'Pre Release' in cells[2].text or 'Pre Release' in cells[1].text:
                 illustratorCount -= 1
                 digimoncard.AAs.append(
-                    {'id': '_P0', 'illustrator': cells[0].text, 'note': cells[1].text, 'preRelease': cells[2].text})
+                    {'id': '_P0', 'illustrator': cells[0].text, 'note': cells[1].text, 'type': cells[2].text})
             else:
                 digimoncard.AAs.append(
-                    {'id': '_P' + str(illustratorCount - 1), 'illustrator': cells[0].text, 'note': cells[1].text})
+                    {'id': '_P' + str(illustratorCount - 1), 'illustrator': cells[0].text, 'note': cells[1].text, 'type': cells[2].text})
         illustratorCount += 1
 
 
@@ -218,13 +221,8 @@ def getJapaneseIllustrator(rows, digimoncard):
             continue
 
         if illustratorCount != 1:
-            if 'Pre Release' in cells[2].text:
-                illustratorCount -= 1
-                digimoncard.JAAs.append(
-                    {'id': '_P0', 'illustrator': cells[0].text, 'note': cells[1].text, 'preRelease': cells[2].text})
-            else:
-                digimoncard.JAAs.append(
-                    {'id': '_P' + str(illustratorCount - 1), 'illustrator': cells[0].text, 'note': cells[1].text})
+            digimoncard.JAAs.append(
+                {'id': '_P' + str(illustratorCount - 1), 'illustrator': cells[0].text, 'note': cells[1].text, 'type': cells[2].text})
         illustratorCount += 1
 
 
@@ -553,7 +551,8 @@ def getCardImages():
 
                 download_image_with_retry(
                     save_location,
-                    './scripts/python/Wiki/digimon-images/' + img['data-image-key'],
+                    './scripts/python/Wiki/digimon-images/' +
+                    img['data-image-key'],
                     img['data-image-key']
                 )
 
@@ -579,7 +578,8 @@ def getCardImages():
                             new_aa = {
                                 'id': id_with_p,
                                 'illustrator': aa['illustrator'],
-                                'note': combined_notes
+                                'note': combined_notes,
+                                'type': aa['type']
                             }
                             card.AAs.append(new_aa)
                         else:
@@ -588,7 +588,8 @@ def getCardImages():
         # Download images and update notes for the Japanese gallery
         div_j = soup.find("div", id="gallery-1")
         if div_j is not None:
-            gallery_items_j = div_j.find_all("div", class_="wikia-gallery-item")
+            gallery_items_j = div_j.find_all(
+                "div", class_="wikia-gallery-item")
 
             for item in gallery_items_j:
                 img = item.find("img")
@@ -603,7 +604,8 @@ def getCardImages():
 
                 download_image_with_retry(
                     save_location,
-                    './scripts/python/Wiki/digimon-images/' + img['data-image-key'],
+                    './scripts/python/Wiki/digimon-images/' +
+                    img['data-image-key'],
                     img['data-image-key']
                 )
 
@@ -629,7 +631,8 @@ def getCardImages():
                             new_aa = {
                                 'id': id_with_p,
                                 'illustrator': aa['illustrator'],
-                                'note': combined_notes
+                                'note': combined_notes,
+                                'type': aa['type']
                             }
                             card.JAAs.append(new_aa)
                         else:

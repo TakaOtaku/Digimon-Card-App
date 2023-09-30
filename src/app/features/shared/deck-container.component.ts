@@ -12,7 +12,7 @@ import { DigimonCard, IDeck, ITournamentDeck } from '../../../models';
 import { ColorMap } from '../../../models/maps/color.map';
 import { setDeckImage } from '../../functions/digimon-card.functions';
 import { ImageService } from '../../service/image.service';
-import { selectDigimonCardMap } from '../../store/digimon.selectors';
+import { selectAllCards, selectDigimonCardMap } from '../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-deck-container',
@@ -101,9 +101,17 @@ export class DeckContainerComponent implements OnInit {
 
   colorMap = ColorMap;
 
+  allCards: DigimonCard[] = [];
+
   constructor(private store: Store, private imageService: ImageService) {}
 
   ngOnInit() {
+    this.store
+      .select(selectAllCards)
+      .pipe(first())
+      .subscribe((cards) => {
+        this.allCards = cards;
+      });
     this.digimonCardMap$
       .pipe(first())
       .subscribe((digimonCardMap) => this.setCardImage(digimonCardMap));
@@ -118,7 +126,7 @@ export class DeckContainerComponent implements OnInit {
         imageCard?.cardImage ?? '../../../assets/images/digimon-card-back.webp';
     } else if (this.deck.cards && this.deck.cards.length < 0) {
       // If there are cards in the deck, set it to the first card
-      const imageCard = setDeckImage(this.deck); // Replace setDeckImage with the appropriate function
+      const imageCard = setDeckImage(this.deck, this.allCards); // Replace setDeckImage with the appropriate function
       imagePath = imageCard?.cardImage ?? '';
     }
 

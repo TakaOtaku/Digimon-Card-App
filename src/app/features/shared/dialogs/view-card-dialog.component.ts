@@ -369,6 +369,7 @@ import {
             Notes
           </p>
           <p class="font-white font-bold">{{ card.notes }}</p>
+          <p class="font-white font-bold">{{ card.version }}</p>
         </div>
       </div>
 

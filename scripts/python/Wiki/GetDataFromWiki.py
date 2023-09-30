@@ -13,7 +13,7 @@ WV.cardCount = len(WV.cardLinks)
 
 WF.getCardData()
 
-WF.getRulings()
+#WF.getRulings()
 
 WF.setNotes()
 

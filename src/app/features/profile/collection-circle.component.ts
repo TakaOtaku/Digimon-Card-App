@@ -1,18 +1,9 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  OnChanges,
-  OnDestroy,
-  OnInit,
-  SimpleChanges,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { first, Subject } from 'rxjs';
-import { CARDSET, DigimonCard, ICountCard } from '../../../models';
-import { selectSettings } from '../../store/digimon.selectors';
 import { ChartModule } from 'primeng/chart';
-import { setupDigimonCards } from 'src/assets/cardlists/DigimonCards';
+import { combineLatestWith, first, Subject } from 'rxjs';
+import { DigimonCard, ICountCard } from '../../../models';
+import { selectAllCards, selectSettings } from '../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-collection-circle',
@@ -65,10 +56,10 @@ export class CollectionCircleComponent implements OnInit, OnChanges, OnDestroy {
 
   updateCircle() {
     this.store
-      .select(selectSettings)
-      .pipe(first())
-      .subscribe((settings) => {
-        const normalCards = setupDigimonCards(settings.cardSet as CARDSET);
+      .select(selectAllCards)
+      .pipe(combineLatestWith(this.store.select(selectSettings)), first())
+      .subscribe(([allCards, settings]) => {
+        const normalCards = allCards;
         const collection = this.collection;
 
         let setCards = normalCards.filter(

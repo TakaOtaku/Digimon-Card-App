@@ -20,11 +20,11 @@ import { TierlistComponent } from './components/tierlist.component';
 
         <div class="my-4 w-full border-b border-slate-100"></div>
 
-        <digimon-event-calendar></digimon-event-calendar>
+        <digimon-tierlist></digimon-tierlist>
 
         <div class="my-4 w-full border-b border-slate-100"></div>
 
-        <digimon-tierlist></digimon-tierlist>
+        <digimon-event-calendar></digimon-event-calendar>
 
         <div class="my-4 w-full border-b border-slate-100"></div>
 

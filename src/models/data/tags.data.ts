@@ -55,6 +55,7 @@ export const tagsList: ITag[] = [
   { name: 'BT12', color: 'Primary' },
   { name: 'BT13', color: 'Primary' },
   { name: 'BT14', color: 'Primary' },
+  { name: 'BT15', color: 'Primary' },
 
   { name: 'EX1', color: 'Primary' },
   { name: 'EX2', color: 'Primary' },
@@ -82,13 +83,6 @@ export const tagsList: ITag[] = [
   { name: 'ST14', color: 'Primary' },
   { name: 'ST15', color: 'Primary' },
   { name: 'ST16', color: 'Primary' },
-
-  { name: 'Tournament', color: 'Primary' },
-  { name: 'Casual', color: 'Primary' },
-
-  { name: '1th Place', color: 'Primary' },
-  { name: '2nd Place', color: 'Primary' },
-  { name: '3rd Place', color: 'Primary' },
 
   { name: 'Illegal', color: 'Primary' },
 ];

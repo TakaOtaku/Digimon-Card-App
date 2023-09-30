@@ -24,7 +24,6 @@ import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { TooltipModule } from 'primeng/tooltip';
 import { first } from 'rxjs';
-import { setupDigimonCards } from 'src/assets/cardlists/DigimonCards';
 import * as uuid from 'uuid';
 
 import {
@@ -40,6 +39,7 @@ import {
 } from '../../../functions/digimon-card.functions';
 import { AuthService } from '../../../service/auth.service';
 import { DigimonBackendService } from '../../../service/digimon-backend.service';
+import { selectAllCards } from '../../../store/digimon.selectors';
 import { DeckCardComponent } from '../deck-card.component';
 import { ChartContainersComponent } from '../statistics/chart-containers.component';
 import { ColorSpreadComponent } from '../statistics/color-spread.component';
@@ -336,7 +336,12 @@ export class DeckDialogComponent implements OnInit, OnChanges {
     private confirmationService: ConfirmationService,
     private messageService: MessageService
   ) {
-    this.allCards = this.allCards = setupDigimonCards(CARDSET.English);
+    this.store
+      .select(selectAllCards)
+      .pipe(first())
+      .subscribe((cards) => {
+        this.allCards = cards;
+      });
     this.isAdmin =
       this.authService.userData?.uid === 'S3rWXPtCYRN8vSrxY3qE6aeewy43' ||
       this.authService.userData?.uid === 'loBLZPOIL0ZlDzt6A1rgDiTomTw2';
@@ -538,7 +543,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
         value: foundCard!.id,
       };
     } else {
-      const imageCard = setDeckImage(this.deck);
+      const imageCard = setDeckImage(this.deck, this.allCards);
       return {
         name: `${imageCard!.id} - ${imageCard!.name}`,
         value: imageCard!.id,

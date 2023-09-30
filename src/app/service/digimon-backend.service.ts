@@ -2,13 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { filter, first, map, Observable } from 'rxjs';
 import {
+  DigimonCard,
   IColor,
   ICountCard,
   IDeck,
   ISave,
   ISettings,
   ITournamentDeck,
-  IUser,
+  IUser
 } from 'src/models';
 import { CARDSET, IBlog, IBlogWithText, ITag } from '../../models';
 import { IUserAndDecks } from '../../models/interfaces/userAndDecks.interface';
@@ -233,7 +234,11 @@ export class DigimonBackendService {
     return this.http.post(baseUrl + 'events', data);
   }
 
-  updateDeck(deck: IDeck, user: IUser | null = null): Observable<any> {
+  updateDeck(
+    deck: IDeck,
+    user: IUser | null = null,
+    allCards: DigimonCard[]
+  ): Observable<any> {
     let newDeck: any;
     if (user) {
       newDeck = {
@@ -247,7 +252,7 @@ export class DigimonBackendService {
     }
 
     if (!newDeck.imageCardId || newDeck.imageCardId === 'BT1-001') {
-      newDeck.imageCardId = setDeckImage(newDeck).id;
+      newDeck.imageCardId = setDeckImage(newDeck, allCards).id;
     }
 
     return this.http.put(`${baseUrl}decks/${deck.id}`, newDeck);

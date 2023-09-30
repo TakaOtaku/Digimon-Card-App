@@ -280,7 +280,7 @@ export class DeckViewComponent implements OnInit, OnDestroy {
         message: 'You are about to share the deck. Are you sure?',
         accept: () => {
           this.digimonBackendService
-            .updateDeck(this.deck, this.authService.userData)
+            .updateDeck(this.deck, this.authService.userData, this.allCards)
             .pipe(first())
             .subscribe(() => {});
           this.messageService.add({
@@ -541,7 +541,7 @@ export class DeckViewComponent implements OnInit, OnDestroy {
       .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
     const lv0 = deck
-      .filter((card) => card.cardLv === '' && card.cardType === 'Digimon')
+      .filter((card) => card.cardLv === '-' && card.cardType === 'Digimon')
       .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
     const lv3 = deck

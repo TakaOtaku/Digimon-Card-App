@@ -1,0 +1,14 @@
+p-listbox ::ng-deep {
+  width: 100%;
+  .p-listbox-list {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    width: 100%;
+    flex-wrap: wrap;
+
+    .p-listbox-item {
+      padding: 0;
+    }
+  }
+}

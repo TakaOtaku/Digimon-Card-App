@@ -1,3 +1,6 @@
+import { FormsModule } from '@angular/forms';
+import { DragDropModule } from 'primeng/dragdrop';
+import { ListboxModule } from 'primeng/listbox';
 import { WebsiteActions } from './../../../store/digimon.actions';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
@@ -27,7 +30,15 @@ import { ButtonModule } from 'primeng/button';
           pRipple
           type="button"
           (click)="switchRegion()"></button>
+        <button
+          class="p-button-outlined p-button-rounded p-button-sm mx-2"
+          icon="pi pi-copy"
+          pButton
+          pRipple
+          type="button"
+          (click)="copyTierlist()"></button>
       </h1>
+
       <div
         *ngFor="let key of tiers; let i = index"
         class="flex w-full flex-row border border-black">
@@ -36,22 +47,34 @@ import { ButtonModule } from 'primeng/button';
           class="text-black-outline w-24 text-center text-7xl font-black leading-[5.5rem] text-[#e2e4e6]">
           {{ key.tier }}
         </div>
-        <div class="flex h-full w-full flex-row flex-wrap bg-slate-800">
-          <div *ngFor="let deck of tierlist[i]">
-            <img
-              (click)="openCommunityWithSearch(deck.card)"
-              pTooltip="{{ deck.name }}"
-              tooltipPosition="top"
-              [lazyLoad]="deck.image"
-              [ngStyle]="{ border: '2px solid black', 'border-radius': '5px' }"
-              [alt]="deck.name"
-              class="m-auto h-24 cursor-pointer"
-              defaultImage="assets/images/digimon-card-back.webp" />
-          </div>
-        </div>
+        <p-listbox [options]="tierlist[i]" [(ngModel)]="selectedDeck">
+          <ng-template let-deck let-index="index" pTemplate="item">
+            <div
+              class="ui-helper-clearfix"
+              pDraggable="gens"
+              pDroppable="gens"
+              dragHandle=".barsHandle"
+              (onDragStart)="onDragStart(index, i)"
+              (onDrop)="onDrop(index, i)">
+              <img
+                (click)="openCommunityWithSearch(deck.card)"
+                pTooltip="{{ deck.name }}"
+                tooltipPosition="top"
+                [lazyLoad]="deck.image"
+                [ngStyle]="{
+                  border: '2px solid black',
+                  'border-radius': '5px'
+                }"
+                [alt]="deck.name"
+                class="barsHandle m-auto h-24 cursor-pointer"
+                defaultImage="assets/images/digimon-card-back.webp" />
+            </div>
+          </ng-template>
+        </p-listbox>
       </div>
     </div>
   `,
+  styleUrls: ['./tierlist.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [
@@ -62,6 +85,9 @@ import { ButtonModule } from 'primeng/button';
     TooltipModule,
     LazyLoadImageModule,
     NgStyle,
+    DragDropModule,
+    ListboxModule,
+    FormsModule,
   ],
 })
 export class TierlistComponent {
@@ -74,6 +100,10 @@ export class TierlistComponent {
     { tier: 'C', color: 'bg-green-500' },
     { tier: 'D', color: 'bg-blue-500' },
   ];
+
+  startIndex: number = 0;
+  startTier: number = 0;
+  selectedDeck: any;
 
   constructor(private store: Store, private router: Router) {}
 
@@ -92,5 +122,27 @@ export class TierlistComponent {
       this.currentRegion = 'GLOBAL';
       this.tierlist = TIERLIST;
     }
+  }
+
+  onDragStart(index: number, tier: number) {
+    this.startIndex = index;
+    this.startTier = tier;
+    this.selectedDeck = this.tierlist[tier][index];
+  }
+
+  onDrop(endIndex: number, endTier: number) {
+    // Remove the dragged element from the old tier
+    this.tierlist[this.startTier].splice(this.startIndex, 1);
+
+    // Add the dragged element to the new tier
+    this.tierlist[endTier].splice(endIndex, 0, this.selectedDeck);
+
+    // Update the tierlist
+    this.tierlist = [...this.tierlist];
+  }
+
+  copyTierlist() {
+    const tierlistJson = JSON.stringify(this.tierlist);
+    navigator.clipboard.writeText(tierlistJson);
   }
 }

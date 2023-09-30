@@ -196,7 +196,7 @@ export class ChangeAccessorieDialogComponent
       message: 'You are about to share the deck. Are you sure?',
       accept: () => {
         this.digimonCardService
-          .updateDeck(deck, this.auth.userData)
+          .updateDeck(deck, this.auth.userData, this.allCards)
           .pipe(first())
           .subscribe();
         this.messageService.add({

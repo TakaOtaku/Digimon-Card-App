@@ -1,7 +1,4 @@
-import { setupDigimonCards } from 'src/assets/cardlists/DigimonCards';
-
 import {
-  CARDSET,
   DigimonCard,
   ICountCard,
   IDeck,
@@ -263,14 +260,14 @@ export function getCountFromDeckCards(
   return number;
 }
 
-export function setDeckImage(deck: IDeck | ITournamentDeck): DigimonCard {
+export function setDeckImage(
+  deck: IDeck | ITournamentDeck,
+  allCards: DigimonCard[]
+): DigimonCard {
   if (deck.cards && deck.cards.length === 0) {
     return JSON.parse(JSON.stringify(dummyCard));
   }
-  let deckCards = mapToDeckCards(
-    deck.cards,
-    setupDigimonCards(CARDSET.English)
-  );
+  let deckCards = mapToDeckCards(deck.cards, allCards);
 
   deckCards = deckCards
     .filter((card) => card.cardType === 'Digimon')
