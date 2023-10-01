@@ -43400,24 +43400,12 @@
         "illustrator": "Naochika Morishita",
         "note": "BT-15: Booster Exceed Apocalypse",
         "type": "Alternative Art"
-      },
-      {
-        "id": "_P2",
-        "illustrator": "To be completed",
-        "note": "BT-15: Booster Exceed Apocalypse",
-        "type": "Alternative Art"
       }
     ],
     "JAAs": [
       {
         "id": "_P1",
         "illustrator": "Naochika Morishita",
-        "note": "BT-15: Booster Exceed Apocalypse",
-        "type": "Alternative Art"
-      },
-      {
-        "id": "_P2",
-        "illustrator": "To be completed",
         "note": "BT-15: Booster Exceed Apocalypse",
         "type": "Alternative Art"
       }
@@ -77407,7 +77395,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "_P1",
         "illustrator": "sasasi",
         "note": "Next Adventure Pre-Release Pack",
         "type": "Foil - Stamped -\u00a0Uncommon"
@@ -111969,7 +111957,7 @@
     },
     "notes": "\u25b9THEME BOOSTER ALTERNATIVE BEING [EX04]",
     "playCost": "8",
-    "rarity": "R",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Unrestricted",
@@ -121497,7 +121485,7 @@
       {
         "id": "_P4",
         "illustrator": "p!k@ru",
-        "note": "AB-02: Digimon Card Game Adventure Box 2",
+        "note": "AB-02: Adventure Box 2",
         "type": "Textured -\u00a0Alternative Art"
       }
     ],
@@ -121592,8 +121580,14 @@
       {
         "id": "_P4",
         "illustrator": "p!k@ru",
-        "note": "AB-02: Digimon Card Game Adventure Box 2",
+        "note": "AB-02: Adventure Box 2",
         "type": "Textured -\u00a0Alternative Art"
+      },
+      {
+        "id": "_P5",
+        "illustrator": "No Illustrator",
+        "note": "Digimon Adventure 02: The Beginning Tutorial Deck",
+        "type": "Alternative Art"
       }
     ],
     "JAAs": [
@@ -121620,6 +121614,12 @@
         "illustrator": "p!k@ru",
         "note": "RB-01: Resurgence Booster",
         "type": "Textured -\u00a0Alternative Art"
+      },
+      {
+        "id": "_P5",
+        "illustrator": "No Illustrator",
+        "note": "Digimon Adventure 02: The Beginning Tutorial Deck",
+        "type": "Alternative Art"
       }
     ],
     "aceEffect": "-",
@@ -121687,7 +121687,7 @@
       {
         "id": "_P4",
         "illustrator": "p!k@ru",
-        "note": "AB-02: Digimon Card Game Adventure Box 2",
+        "note": "AB-02: Adventure Box 2",
         "type": "Textured -\u00a0Alternative Art"
       }
     ],
@@ -121782,7 +121782,7 @@
       {
         "id": "_P4",
         "illustrator": "p!k@ru",
-        "note": "AB-02: Digimon Card Game Adventure Box 2",
+        "note": "AB-02: Adventure Box 2",
         "type": "Textured -\u00a0Alternative Art"
       }
     ],
@@ -121877,7 +121877,7 @@
       {
         "id": "_P4",
         "illustrator": "p!k@ru",
-        "note": "AB-02: Digimon Card Game Adventure Box 2",
+        "note": "AB-02: Adventure Box 2",
         "type": "Textured -\u00a0Alternative Art"
       }
     ],
@@ -121972,7 +121972,7 @@
       {
         "id": "_P4",
         "illustrator": "p!k@ru",
-        "note": "AB-02: Digimon Card Game Adventure Box 2",
+        "note": "AB-02: Adventure Box 2",
         "type": "Textured -\u00a0Alternative Art"
       }
     ],
@@ -125993,28 +125993,28 @@
     "AAs": [
       {
         "id": "_P1",
-        "illustrator": "Kazumasa Yasukuni",
-        "note": "BANDAI CARD GAMES Fest23-24 World Tour",
+        "illustrator": "To be completed",
+        "note": "Digimon Adventure 02: The Beginning Tutorial Deck",
         "type": "Alternative Art"
       },
       {
         "id": "_P2",
-        "illustrator": "To be completed",
-        "note": "Digimon Adventure 02: The Beginning Tutorial Deck",
+        "illustrator": "Kazumasa Yasukuni",
+        "note": "BANDAI CARD GAMES Fest23-24 World Tour",
         "type": "Alternative Art"
       }
     ],
     "JAAs": [
       {
         "id": "_P1",
-        "illustrator": "Kazumasa Yasukuni",
-        "note": "BANDAI CARD GAMES Fest23-24 World Tour",
+        "illustrator": "To be completed",
+        "note": "Digimon Adventure 02: The Beginning Tutorial Deck",
         "type": "Alternative Art"
       },
       {
         "id": "_P2",
-        "illustrator": "To be completed",
-        "note": "Digimon Adventure 02: The Beginning Tutorial Deck",
+        "illustrator": "Kazumasa Yasukuni",
+        "note": "BANDAI CARD GAMES Fest23-24 World Tour",
         "type": "Alternative Art"
       }
     ],
@@ -126447,16 +126447,28 @@
     "AAs": [
       {
         "id": "_P1",
-        "illustrator": "Iori Sunakura",
+        "illustrator": "No Illustrator",
         "note": "Digimon Adventure 02: The Beginning Tutorial Deck",
+        "type": "Alternative Art"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "Iori Sunakura",
+        "note": "Digimon Adventure 02: The Beginning Tutorial Deck (Promo Card)",
         "type": "Alternative Art"
       }
     ],
     "JAAs": [
       {
         "id": "_P1",
-        "illustrator": "Iori Sunakura",
+        "illustrator": "No Illustrator",
         "note": "Digimon Adventure 02: The Beginning Tutorial Deck",
+        "type": "Alternative Art"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "Iori Sunakura",
+        "note": "Digimon Adventure 02: The Beginning Tutorial Deck (Promo Card)",
         "type": "Alternative Art"
       }
     ],
@@ -126791,16 +126803,28 @@
     "AAs": [
       {
         "id": "_P1",
-        "illustrator": "Iori Sunakura",
+        "illustrator": "No Illustrator",
         "note": "Digimon Adventure 02: The Beginning Tutorial Deck",
+        "type": "Alternative Art"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "Iori Sunakura",
+        "note": "Digimon Adventure 02: The Beginning Tutorial Deck (Promo Card)",
         "type": "Alternative Art"
       }
     ],
     "JAAs": [
       {
         "id": "_P1",
-        "illustrator": "Iori Sunakura",
+        "illustrator": "No Illustrator",
         "note": "Digimon Adventure 02: The Beginning Tutorial Deck",
+        "type": "Alternative Art"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "Iori Sunakura",
+        "note": "Digimon Adventure 02: The Beginning Tutorial Deck (Promo Card)",
         "type": "Alternative Art"
       }
     ],
@@ -126852,8 +126876,22 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "No Illustrator",
+        "note": "Digimon Adventure 02: The Beginning Tutorial Deck",
+        "type": "Alternative Art"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "No Illustrator",
+        "note": "Digimon Adventure 02: The Beginning Tutorial Deck",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "-",
     "block": [
@@ -127116,8 +127154,22 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "No Illustrator",
+        "note": "Digimon Adventure 02: The Beginning Tutorial Deck",
+        "type": "Alternative Art"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "No Illustrator",
+        "note": "Digimon Adventure 02: The Beginning Tutorial Deck",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "-",
     "block": [
@@ -127292,56 +127344,6 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
-    "aceEffect": "-",
-    "attribute": "Vaccine",
-    "block": [
-      "02"
-    ],
-    "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/RB1-004.webp",
-    "cardLv": "Lv.3",
-    "cardNumber": "RB1-004",
-    "cardType": "Digimon",
-    "color": "Red",
-    "digiXros": "-",
-    "digivolveCondition": [
-      {
-        "color": "Red",
-        "cost": "0",
-        "level": "2"
-      }
-    ],
-    "digivolveEffect": "[Your Turn] While this Digimon has [Greymon]\u00a0in its name, it gets +2000 DP.",
-    "dnaDigivolve": "-",
-    "dp": "2000",
-    "effect": "-",
-    "form": "Rookie",
-    "id": "RB1-004",
-    "illustrator": "Spareribs",
-    "name": {
-      "english": "Agumon",
-      "japanese": "\u30a2\u30b0\u30e2\u30f3",
-      "korean": "\uc544\uad6c\ubaac",
-      "simplifiedChinese": "\u4e9a\u53e4\u517d",
-      "traditionalChinese": "\u4e9e\u53e4\u7378"
-    },
-    "notes": "BOOSTER RESURGENCE BOOSTER [RB01]",
-    "playCost": "3",
-    "rarity": "R",
-    "restrictions": {
-      "chinese": "Unrestricted",
-      "english": "Not released",
-      "japanese": "Unrestricted",
-      "korean": "Not released"
-    },
-    "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "Reptile",
-    "version": "Normal"
-  },
-  {
     "AAs": [
       {
         "id": "_P1",
@@ -127403,106 +127405,6 @@
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Ceratopsian",
-    "version": "Normal"
-  },
-  {
-    "AAs": [],
-    "JAAs": [],
-    "aceEffect": "-",
-    "attribute": "Virus",
-    "block": [
-      "02"
-    ],
-    "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/RB1-006.webp",
-    "cardLv": "Lv.3",
-    "cardNumber": "RB1-006",
-    "cardType": "Digimon",
-    "color": "Red",
-    "digiXros": "-",
-    "digivolveCondition": [
-      {
-        "color": "Red",
-        "cost": "1",
-        "level": "2"
-      }
-    ],
-    "digivolveEffect": "-",
-    "dnaDigivolve": "-",
-    "dp": "4000",
-    "effect": "[Your Turn] While you have a red Tamer in play, this Digimon may also attack your opponent's unsuspended Digimon.",
-    "form": "Rookie",
-    "id": "RB1-006",
-    "illustrator": "poroze",
-    "name": {
-      "english": "Gammamon",
-      "japanese": "\u30ac\u30f3\u30de\u30e2\u30f3",
-      "korean": "-",
-      "simplifiedChinese": "\u4f3d\u9a6c\u517d",
-      "traditionalChinese": "\u4f3d\u99ac\u7378"
-    },
-    "notes": "BOOSTER RESURGENCE BOOSTER [RB01]",
-    "playCost": "4",
-    "rarity": "R",
-    "restrictions": {
-      "chinese": "Unrestricted",
-      "english": "Not released",
-      "japanese": "Unrestricted",
-      "korean": "Not released"
-    },
-    "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "Ceratopsian",
-    "version": "Normal"
-  },
-  {
-    "AAs": [],
-    "JAAs": [],
-    "aceEffect": "-",
-    "attribute": "Vaccine",
-    "block": [
-      "02"
-    ],
-    "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/RB1-007.webp",
-    "cardLv": "Lv.4",
-    "cardNumber": "RB1-007",
-    "cardType": "Digimon",
-    "color": "Red",
-    "digiXros": "-",
-    "digivolveCondition": [
-      {
-        "color": "Red",
-        "cost": "2",
-        "level": "3"
-      }
-    ],
-    "digivolveEffect": "-",
-    "dnaDigivolve": "-",
-    "dp": "5000",
-    "effect": "[Your Turn] While this Digimon has an [Agumon] digivolution card, it gains \uff1cSecurity Attack +1\uff1e.",
-    "form": "Champion",
-    "id": "RB1-007",
-    "illustrator": "Spareribs",
-    "name": {
-      "english": "Greymon",
-      "japanese": "\u30b0\u30ec\u30a4\u30e2\u30f3",
-      "korean": "\uadf8\ub808\uc774\ubaac",
-      "simplifiedChinese": "\u66b4\u9f99\u517d",
-      "traditionalChinese": "\u66b4\u9f8d\u7378"
-    },
-    "notes": "BOOSTER RESURGENCE BOOSTER [RB01]",
-    "playCost": "5",
-    "rarity": "R",
-    "restrictions": {
-      "chinese": "Unrestricted",
-      "english": "Not released",
-      "japanese": "Unrestricted",
-      "korean": "Not released"
-    },
-    "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "Dinosaur",
     "version": "Normal"
   },
   {
@@ -130649,7 +130551,7 @@
       {
         "id": "_P2",
         "illustrator": "Nakano Haito",
-        "note": "AB-01: Digimon Card Game Adventure Box",
+        "note": "AB-01: Adventure Box",
         "type": "Foil -\u00a0Alternative Art"
       },
       {
@@ -133044,7 +132946,7 @@
     "dnaDigivolve": "-",
     "dp": "2000",
     "effect": "\uff1cBlocker\uff1e \n[Your Turn] This Digimon can't attack players.",
-    "form": "-",
+    "form": "Rookie",
     "id": "ST14-04",
     "illustrator": "koki",
     "name": {
@@ -142224,7 +142126,7 @@
       {
         "id": "_P2",
         "illustrator": "Nakano Haito",
-        "note": "AB-01: Digimon Card Game Adventure Box",
+        "note": "AB-01: Adventure Box",
         "type": "Foil -\u00a0Alternative Art"
       }
     ],
