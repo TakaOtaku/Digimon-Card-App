@@ -44182,7 +44182,8 @@
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT2-012.webp",
@@ -44366,7 +44367,8 @@
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT2-015.webp",
@@ -44982,7 +44984,8 @@
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT2-025.webp",
@@ -45099,11 +45102,19 @@
         "type": "No Foil -\u00a0Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "koki",
+        "note": "1st Anniversary Adventure Pack",
+        "type": "No Foil -\u00a0Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT2-027.webp",
@@ -45584,7 +45595,9 @@
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
-      "00-02"
+      "00",
+      "01",
+      "02"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT2-034.webp",
@@ -45597,7 +45610,7 @@
       {
         "color": "Yellow",
         "cost": "0",
-        "level": "2"
+        "level": "3"
       }
     ],
     "digivolveEffect": "-",
@@ -45781,7 +45794,8 @@
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT2-037.webp",
@@ -47070,7 +47084,8 @@
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT2-057.webp",
@@ -47134,7 +47149,8 @@
     "aceEffect": "-",
     "attribute": "Virus",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT2-058.webp",
@@ -47412,7 +47428,8 @@
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT2-063.webp",
@@ -47853,6 +47870,12 @@
         "illustrator": "GOSSAN",
         "note": "Official Tournament Pack Vol. 3",
         "type": "No Foil -\u00a0Alternative Art"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "Nakano Haito",
+        "note": "RB-01: Resurgence Booster",
+        "type": "Foil -\u00a0Common"
       }
     ],
     "JAAs": [
@@ -47872,7 +47895,9 @@
     "aceEffect": "-",
     "attribute": "Data",
     "block": [
-      "00-02"
+      "00",
+      "01",
+      "02"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT2-069.webp",
@@ -48133,7 +48158,8 @@
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT2-073.webp",
@@ -48449,7 +48475,8 @@
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT2-078.webp",
@@ -48836,7 +48863,8 @@
     "aceEffect": "-",
     "attribute": "-",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT2-084.webp",
@@ -48906,7 +48934,8 @@
     "aceEffect": "-",
     "attribute": "-",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT2-085.webp",
@@ -49027,7 +49056,8 @@
     "aceEffect": "-",
     "attribute": "-",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT2-087.webp",
@@ -49148,7 +49178,8 @@
     "aceEffect": "-",
     "attribute": "-",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT2-089.webp",
@@ -49230,7 +49261,9 @@
     "aceEffect": "-",
     "attribute": "-",
     "block": [
-      "00-02"
+      "00",
+      "01",
+      "02"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT2-090.webp",
@@ -52392,7 +52425,8 @@
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT3-035.webp",
@@ -53333,14 +53367,14 @@
       {
         "id": "_P2",
         "illustrator": "Nakano Haito",
-        "note": "Tamer Battle Pack 5",
+        "note": "Tamer Battle (April & May 2021)",
         "type": "Foil - Silver Background -\u00a01st Place Prize"
       },
       {
         "id": "_P3",
         "illustrator": "Nakano Haito",
         "note": "Level Up Matching Battle ONLINE May 2021",
-        "type": "Foil - Silver Background -\u00a0Alternative Art"
+        "type": "Foil - Silver Background -\u00a06 Wins"
       }
     ],
     "aceEffect": "-",
@@ -53373,9 +53407,9 @@
     "name": {
       "english": "Stingmon",
       "japanese": "\u30b9\u30c6\u30a3\u30f3\u30b0\u30e2\u30f3",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "korean": "\uc2a4\ud305\ubaac",
+      "simplifiedChinese": "\u98de\u866b\u517d",
+      "traditionalChinese": "\u98db\u87f2\u7378"
     },
     "notes": "\u25b9RELEASE SPECIAL BOOSTER 1.5 [BT01-B0T3]",
     "playCost": "6",
@@ -55518,7 +55552,9 @@
     "aceEffect": "-",
     "attribute": "Virus",
     "block": [
-      "00-02"
+      "00",
+      "01",
+      "02"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT3-088.webp",
@@ -55544,8 +55580,8 @@
     "name": {
       "english": "LadyDevimon",
       "japanese": "\u30ec\u30c7\u30a3\u30fc\u30c7\u30d3\u30e2\u30f3",
-      "korean": "-",
-      "simplifiedChinese": "-",
+      "korean": "\ub808\uc774\ub514\ub370\ube14\ubaac",
+      "simplifiedChinese": "\u5973\u6076\u9b54\u517d",
       "traditionalChinese": "\u5973\u60e1\u9b54\u7378"
     },
     "notes": "\u25b9RELEASE SPECIAL BOOSTER 1.5 [BT01-B0T3]",
@@ -64112,13 +64148,13 @@
       {
         "id": "_P2",
         "illustrator": "Takase",
-        "note": "Tamer Battle Pack 7",
+        "note": "Tamer Battle (August & September 2021)",
         "type": "Foil - Silver Background -\u00a01st Place Prize"
       },
       {
         "id": "_P3",
         "illustrator": "Takase",
-        "note": "Tamer Grand Exchange 2021",
+        "note": "Tamer Meeting Online 2021",
         "type": "Foil - Silver Background -\u00a0Lottery"
       },
       {
@@ -64175,7 +64211,7 @@
       "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
