@@ -3539,7 +3539,7 @@
       {
         "id": "_P3",
         "illustrator": "Kazumasa Yasukuni",
-        "note": "Tamer Grand Exchange 2021 Winter",
+        "note": "Tamer Meeting Online Winter 2021",
         "type": "Foil - Silver Background -\u00a0Lottery"
       },
       {
@@ -44241,19 +44241,20 @@
         "id": "_P1",
         "illustrator": "sasasi",
         "note": "Level Up Matching Battle ONLINE August 2021",
-        "type": "No Foil - Variant Art -\u00a0Alternative Art"
+        "type": "No Foil - Variant Art -\u00a02 Wins"
       },
       {
         "id": "_P2",
         "illustrator": "sasasi",
         "note": "Level Up Matching Battle ONLINE November 2021",
-        "type": "No Foil - Variant Art -\u00a0Alternative Art"
+        "type": "No Foil - Variant Art -\u00a02 Wins"
       }
     ],
     "aceEffect": "-",
     "attribute": "Virus",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT2-013.webp",
@@ -45870,7 +45871,7 @@
       {
         "id": "_P2",
         "illustrator": "Nakano Haito ",
-        "note": "Tamer Battle Pack 3",
+        "note": "Tamer Battle (December 2020 & January 2021)",
         "type": "Foil - Silver Background -\u00a01st Place Prize"
       },
       {
@@ -46457,7 +46458,7 @@
     "playCost": "8",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Unrestricted",
+      "chinese": "Restricted to 1",
       "english": "Restricted to 1",
       "japanese": "Restricted to 1",
       "korean": "Restricted to 1"
@@ -46797,14 +46798,14 @@
       {
         "id": "_P2",
         "illustrator": "koki",
-        "note": "Tamer Battle Pack 6",
+        "note": "Tamer Battle (June & July 2021)",
         "type": "Foil - Silver Background -\u00a01st Place Prize"
       },
       {
         "id": "_P3",
         "illustrator": "koki",
         "note": "Level Up Matching Battle ONLINE August 2021",
-        "type": "Foil - Silver Background -\u00a0Alternative Art"
+        "type": "Foil - Silver Background -\u00a06 Wins"
       },
       {
         "id": "_P4",
@@ -46816,7 +46817,8 @@
     "aceEffect": "-",
     "attribute": "Unknown",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT2-053.webp",
@@ -46857,7 +46859,7 @@
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "Unidentified",
+    "type": "Digimon",
     "version": "Normal"
   },
   {
@@ -48094,7 +48096,8 @@
     "aceEffect": "-",
     "attribute": "Virus",
     "block": [
-      "00"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT2-072.webp",
@@ -52604,7 +52607,8 @@
     "aceEffect": "-",
     "attribute": "Virus",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT3-038.webp",
@@ -52630,9 +52634,9 @@
     "name": {
       "english": "Antylamon",
       "japanese": "\u30a2\u30f3\u30c6\u30a3\u30e9\u30e2\u30f3",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "korean": "\uc548\ud2f0\ub77c\ubaac",
+      "simplifiedChinese": "\u7389\u5154\u517d",
+      "traditionalChinese": "\u7389\u5154\u7378"
     },
     "notes": "\u25b9RELEASE SPECIAL BOOSTER 1.5 [BT01-B0T3]",
     "playCost": "7",
@@ -53222,19 +53226,20 @@
         "id": "_P1",
         "illustrator": "Tonamikanji",
         "note": "Level Up Matching Battle ONLINE August 2021",
-        "type": "No Foil - Variant Art -\u00a0Alternative Art"
+        "type": "No Foil - Variant Art -\u00a02 Wins"
       },
       {
         "id": "_P2",
         "illustrator": "Tonamikanji",
         "note": "Level Up Matching Battle ONLINE November 2021",
-        "type": "No Foil - Variant Art -\u00a0Alternative Art"
+        "type": "No Foil - Variant Art -\u00a02 Wins"
       }
     ],
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT3-048.webp",
@@ -53260,9 +53265,9 @@
     "name": {
       "english": "Gargomon",
       "japanese": "\u30ac\u30eb\u30b4\u30e2\u30f3",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "korean": "\uac00\ub974\uace0\ubaac",
+      "simplifiedChinese": "\u52a0\u9c81\u54e5\u517d",
+      "traditionalChinese": "\u52a0\u9b6f\u54e5\u7378"
     },
     "notes": "\u25b9RELEASE SPECIAL BOOSTER 1.5 [BT01-B0T3]",
     "playCost": "5",
@@ -54379,7 +54384,8 @@
     "aceEffect": "-",
     "attribute": "Data",
     "block": [
-      "00"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT3-067.webp",
@@ -54405,9 +54411,9 @@
     "name": {
       "english": "Tankmon",
       "japanese": "\u30bf\u30f3\u30af\u30e2\u30f3",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "korean": "\ud0f1\ud06c\ubaac",
+      "simplifiedChinese": "\u5766\u514b\u517d",
+      "traditionalChinese": "\u5766\u514b\u7378"
     },
     "notes": "\u25b9RELEASE SPECIAL BOOSTER 1.5 [BT01-B0T3]",
     "playCost": "6",
@@ -64129,7 +64135,7 @@
         "id": "_P3",
         "illustrator": "Takase",
         "note": "New Awakening Pre-Release Promotion",
-        "type": "Foil - Silver Background -\u00a0Alternative Art"
+        "type": "Foil - Silver Background -\u00a01st Place Prize"
       },
       {
         "id": "_P4",
@@ -64161,7 +64167,7 @@
         "id": "_P4",
         "illustrator": "Takase",
         "note": "Level Up Matching Battle ONLINE August 2021",
-        "type": "Foil - Silver Background -\u00a0Alternative Art"
+        "type": "Foil - Silver Background -\u00a06 Wins"
       },
       {
         "id": "_P5",
@@ -65011,14 +65017,14 @@
       {
         "id": "_P2",
         "illustrator": "Takase",
-        "note": "Tamer Battle Pack 8",
+        "note": "Tamer Battle (October & November 2021)",
         "type": "Foil - Silver Background -\u00a01st Place Prize"
       },
       {
         "id": "_P3",
         "illustrator": "Takase",
         "note": "Level Up Matching Battle ONLINE November 2021",
-        "type": "Foil - Silver Background -\u00a0Alternative Art"
+        "type": "Foil - Silver Background -\u00a06 Wins"
       },
       {
         "id": "_P4",
@@ -65068,7 +65074,7 @@
       "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -66090,19 +66096,20 @@
         "id": "_P1",
         "illustrator": "Tonamikanji",
         "note": "Level Up Matching Battle ONLINE August 2021",
-        "type": "No Foil - Variant Art -\u00a0Alternative Art"
+        "type": "No Foil - Variant Art -\u00a02 Wins"
       },
       {
         "id": "_P2",
         "illustrator": "Tonamikanji",
         "note": "Level Up Matching Battle ONLINE November 2021",
-        "type": "No Foil - Variant Art -\u00a0Alternative Art"
+        "type": "No Foil - Variant Art -\u00a02 Wins"
       }
     ],
     "aceEffect": "-",
     "attribute": "Data",
     "block": [
-      "00-01"
+      "00",
+      "01"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT5-038.webp",
@@ -66128,7 +66135,7 @@
     "name": {
       "english": "Kyubimon",
       "japanese": "\u30ad\u30e5\u30a6\u30d3\u30e2\u30f3",
-      "korean": "-",
+      "korean": "\uad6c\ubbf8\ud638\ubaac",
       "simplifiedChinese": "\u4e5d\u5c3e\u517d",
       "traditionalChinese": "\u4e5d\u5c3e\u72d0\u7378"
     },
@@ -66139,7 +66146,7 @@
       "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -123068,7 +123075,7 @@
     "playCost": "5",
     "rarity": "P",
     "restrictions": {
-      "chinese": "Not released",
+      "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Not released"
@@ -134132,7 +134139,7 @@
       {
         "id": "_P0",
         "illustrator": "Kazumasa Yasukuni",
-        "note": "ST-15: Starter Deck Dragon of Courage",
+        "note": "Dragon of Courage Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
       }
     ],
