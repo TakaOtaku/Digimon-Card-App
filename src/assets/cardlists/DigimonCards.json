@@ -3533,7 +3533,7 @@
       {
         "id": "_P2",
         "illustrator": "Kazumasa Yasukuni",
-        "note": "Tamer Battle Pack 9",
+        "note": "Tamer Battle (December 2021 & January 2022)",
         "type": "Foil - Silver Background -\u00a01st Place Prize"
       },
       {
@@ -15784,7 +15784,8 @@
     "aceEffect": "-",
     "attribute": "Virus",
     "block": [
-      "02-03"
+      "02",
+      "03"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT11-043.webp",
@@ -69758,7 +69759,7 @@
     "aceEffect": "-",
     "attribute": "-",
     "block": [
-      "00-01"
+      "00"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT5-097.webp",
@@ -69778,9 +69779,9 @@
     "name": {
       "english": "Absolute Blast",
       "japanese": "\u30a2\u30d6\u30bd\u30ea\u30e5\u30fc\u30c8\u30d6\u30e9\u30b9\u30c8",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "korean": "\uc571\uc194\ub8e8\ud2b8 \ube14\ub798\uc2a4\ud2b8",
+      "simplifiedChinese": "\u7edd\u5bf9\u51b2\u51fb\u6ce2",
+      "traditionalChinese": "\u7d55\u5c0d\u6c96\u64ca\u6ce2"
     },
     "notes": "\u25b9BOOSTER BATTLE OF OMNI [BT05]",
     "playCost": "6",
@@ -69789,7 +69790,7 @@
       "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -76179,8 +76180,8 @@
       "english": "Judgement of the Blade",
       "japanese": "\u8f4d\u5263\u6210\u6557",
       "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "simplifiedChinese": "\u8f99\u5251\u5ba1\u5224",
+      "traditionalChinese": "\u8f4d\u528d\u5be9\u5224"
     },
     "notes": "\u25b9BOOSTER DOUBLE DIAMOND [BT06]",
     "playCost": "1",
@@ -76993,8 +76994,8 @@
       "english": "Fly Bullet",
       "japanese": "\u30d5\u30e9\u30a4\u30d0\u30ec\u30c3\u30c8",
       "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "simplifiedChinese": "\u82cd\u8747\u5f39\u4e38",
+      "traditionalChinese": "\u84bc\u8805\u5f48\u4e38"
     },
     "notes": "\u25b9BOOSTER DOUBLE DIAMOND [BT06]",
     "playCost": "7",
@@ -83308,8 +83309,8 @@
       "english": "Qualialise Blast",
       "japanese": "\u30af\u30aa\u30ea\u30a2\u30e9\u30a4\u30ba \u30d6\u30e9\u30b9\u30c8",
       "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "simplifiedChinese": "\u611f\u53d7\u5316\u7206\u98ce",
+      "traditionalChinese": "\u611f\u8cea\u5316\u7206\u98a8"
     },
     "notes": "\u25b9BOOSTER NEXT ADVENTURE [BT07]",
     "playCost": "5",
@@ -83639,8 +83640,8 @@
       "english": "Brave Metal",
       "japanese": "\u30d6\u30ec\u30a4\u30d6\u30e1\u30bf\u30eb",
       "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "simplifiedChinese": "\u8c6a\u52c7\u91d1\u5c5e\u51fb",
+      "traditionalChinese": "\u8c6a\u52c7\u91d1\u5c6c\u64ca"
     },
     "notes": "\u25b9BOOSTER NEXT ADVENTURE [BT07]",
     "playCost": "5",
@@ -90237,8 +90238,8 @@
       "english": "Sam\u0101dhi \u015a\u0101nti",
       "japanese": "\u30b5\u30de\u30c7\u30a3\n\u30fb\u30b7\u30e3\u30f3\u30c6\u30a3",
       "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "simplifiedChinese": "\u4e09\u6627\u7fbc\u63d0",
+      "traditionalChinese": "\u4e09\u6627\n\u30fb\u7fbc\u63d0"
     },
     "notes": "\u25b9BOOSTER NEW AWAKENING [BT08]",
     "playCost": "1",
@@ -123609,15 +123610,15 @@
     "name": {
       "english": "Huckmon",
       "japanese": "\u30cf\u30c3\u30af\u30e2\u30f3",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "korean": "\ud5c9\ubaac",
+      "simplifiedChinese": "\u54c8\u514b\u517d",
+      "traditionalChinese": "\u54c8\u514b\u7378"
     },
     "notes": "Limited Card Pack",
     "playCost": "3",
     "rarity": "P",
     "restrictions": {
-      "chinese": "Not released",
+      "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Not released"
@@ -123651,7 +123652,7 @@
       }
     ],
     "aceEffect": "-",
-    "attribute": "Data",
+    "attribute": "-",
     "block": [
       "01",
       "02"
@@ -123667,7 +123668,7 @@
       {
         "color": "Blue",
         "cost": "0",
-        "level": "2"
+        "level": "3"
       }
     ],
     "digivolveEffect": "-",
@@ -123680,7 +123681,7 @@
     "name": {
       "english": "Bulucomon",
       "japanese": "\u30d6\u30eb\u30b3\u30e2\u30f3",
-      "korean": "-",
+      "korean": "\ube14\ub8e8\ucf54\ubaac",
       "simplifiedChinese": "\u78a7\u9f99\u517d",
       "traditionalChinese": "\u78a7\u9f8d\u7378"
     },
@@ -123688,7 +123689,7 @@
     "playCost": "3",
     "rarity": "P",
     "restrictions": {
-      "chinese": "Not released",
+      "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Not released"
@@ -123752,14 +123753,14 @@
       "english": "Herissmon",
       "japanese": "\u30a8\u30ea\u30b9\u30e2\u30f3",
       "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "simplifiedChinese": "\u523a\u732c\u517d",
+      "traditionalChinese": "\u523a\u875f\u7378"
     },
     "notes": "Limited Card Pack",
     "playCost": "3",
     "rarity": "P",
     "restrictions": {
-      "chinese": "Not released",
+      "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Not released"
@@ -123830,7 +123831,7 @@
     "playCost": "3",
     "rarity": "P",
     "restrictions": {
-      "chinese": "Not released",
+      "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Not released"
@@ -123894,14 +123895,14 @@
       "english": "Dorumon",
       "japanese": "\u30c9\u30eb\u30e2\u30f3",
       "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "simplifiedChinese": "\u591a\u8def\u517d",
+      "traditionalChinese": "\u591a\u8def\u7378"
     },
     "notes": "Limited Card Pack",
     "playCost": "3",
     "rarity": "P",
     "restrictions": {
-      "chinese": "Not released",
+      "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Not released"
@@ -123972,7 +123973,7 @@
     "playCost": "3",
     "rarity": "P",
     "restrictions": {
-      "chinese": "Not released",
+      "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Not released"
@@ -139925,14 +139926,14 @@
       },
       {
         "id": "_P2",
-        "illustrator": "GOSSAN",
-        "note": "Special Promotion Pack 2022 Ver.3.0",
+        "illustrator": "Spareribs",
+        "note": "Digimon Illustration Competition Pack 2022",
         "type": "No Foil -\u00a0Alternative Art"
       },
       {
         "id": "_P3",
-        "illustrator": "Spareribs",
-        "note": "Digimon Illustration Competition Pack 2022",
+        "illustrator": "GOSSAN",
+        "note": "Special Promotion Pack 2022 Ver.3.0",
         "type": "No Foil -\u00a0Alternative Art"
       }
     ],
