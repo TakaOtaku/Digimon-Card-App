@@ -15771,6 +15771,12 @@
         "illustrator": "GOSSAN",
         "note": "Dimensional Phase Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Rare"
+      },
+      {
+        "id": "_P1",
+        "illustrator": "koki",
+        "note": "Winner Pack: Blast Ace",
+        "type": "Foil -\u00a0Alternative Art"
       }
     ],
     "JAAs": [
@@ -15817,14 +15823,14 @@
       "english": "KingSukamon",
       "japanese": "\u30b9\u30ab\u30e2\u30f3\u5927\u738b",
       "korean": "-",
-      "simplifiedChinese": "-",
+      "simplifiedChinese": "\u5927\u4fbf\u517d\u5927\u738b",
       "traditionalChinese": "\u5927\u4fbf\u7378\u5927\u738b"
     },
     "notes": "\u25b9BOOSTER DIMENSIONAL PHASE [BT11]",
     "playCost": "7",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
+      "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Not released"
@@ -21193,7 +21199,7 @@
         "id": "_P1",
         "illustrator": "Kazumasa Yasukuni",
         "note": "Bandai Card Games Official Guide",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
       }
     ],
     "JAAs": [
@@ -23408,13 +23414,20 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Nakano Haito",
+        "note": "Official Tournament Pack Vol. 11",
+        "type": "Foil -\u00a0Alternative Art"
+      }
+    ],
     "JAAs": [
       {
         "id": "_P1",
         "illustrator": "Nakano Haito",
         "note": "Digimon Con Promotion Pack",
-        "type": "Alternative Art"
+        "type": "No Foil -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "-",
@@ -23455,7 +23468,7 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
+      "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Not released"
@@ -23566,13 +23579,20 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Nakano Haito",
+        "note": "Official Tournament Pack Vol. 11",
+        "type": "Foil -\u00a0Alternative Art"
+      }
+    ],
     "JAAs": [
       {
         "id": "_P1",
         "illustrator": "Nakano Haito",
         "note": "Digimon Con Promotion Pack",
-        "type": "Alternative Art"
+        "type": "No Foil -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "-",
@@ -23613,7 +23633,7 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
+      "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Not released"
@@ -67439,6 +67459,12 @@
         "illustrator": "Kazumasa Yasukuni",
         "note": "Demo Deck: Black",
         "type": "No Foil -\u00a0Common"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "Tomotake Kinoshita",
+        "note": "Winner Pack: Blast Ace",
+        "type": "Foil -\u00a0Alternative Art"
       }
     ],
     "JAAs": [
@@ -67490,7 +67516,7 @@
       "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
-      "korean": "Not released"
+      "korean": "Unrestricted"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
@@ -79101,13 +79127,20 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Nakano Haito",
+        "note": "Official Tournament Pack Vol. 11",
+        "type": "Foil -\u00a0Alternative Art"
+      }
+    ],
     "JAAs": [
       {
         "id": "_P1",
         "illustrator": "Nakano Haito",
         "note": "Digimon Con Promotion Pack",
-        "type": "Alternative Art"
+        "type": "No Foil -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "-",
@@ -79159,13 +79192,20 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Nakano Haito",
+        "note": "Official Tournament Pack Vol. 11",
+        "type": "Foil -\u00a0Alternative Art"
+      }
+    ],
     "JAAs": [
       {
         "id": "_P1",
         "illustrator": "Nakano Haito",
         "note": "Digimon Con Promotion Pack",
-        "type": "Alternative Art"
+        "type": "No Foil -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "-",
@@ -79199,8 +79239,8 @@
       "english": "Bulkmon",
       "japanese": "\u30d0\u30eb\u30af\u30e2\u30f3",
       "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "simplifiedChinese": "\u589e\u808c\u517d",
+      "traditionalChinese": "\u589e\u808c\u7378"
     },
     "notes": "\u25b9BOOSTER NEXT ADVENTURE [BT07]",
     "playCost": "4",
@@ -84763,6 +84803,12 @@
         "illustrator": "Kenji Watanabe",
         "note": "Regionals 2023 Champion Set 1",
         "type": "Foil - Champion Stamp -\u00a0Top 2 Prize"
+      },
+      {
+        "id": "_P4",
+        "illustrator": "Nakano Haito",
+        "note": "Official Tournament Pack Vol. 11",
+        "type": "Foil -\u00a0Alternative Art"
       }
     ],
     "JAAs": [
@@ -84770,13 +84816,13 @@
         "id": "_P1",
         "illustrator": "Nakano Haito",
         "note": "Digimon Con Promotion Pack",
-        "type": "Alternative Art"
+        "type": "No Foil -\u00a0Alternative Art"
       },
       {
         "id": "_P2",
         "illustrator": "No Illustrator",
         "note": "LM-01: Limited Pack Digimon Ghost Game",
-        "type": "Alternative Art"
+        "type": "Foil -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "-",
@@ -84810,8 +84856,8 @@
       "english": "BetelGammamon",
       "japanese": "\u30d9\u30c6\u30eb\u30ac\u30f3\u30de\u30e2\u30f3",
       "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "simplifiedChinese": "\u8d1d\u7279\u5c14\u4f3d\u9a6c\u517d",
+      "traditionalChinese": "\u53c3\u5bbf\u56db\u4f3d\u99ac\u7378"
     },
     "notes": "\u25b9BOOSTER NEW AWAKENING [BT08]",
     "playCost": "5",
@@ -122195,6 +122241,12 @@
         "illustrator": "Takase",
         "note": "Event Pack 4",
         "type": "Foil - Coloured Background -\u00a0Alternative Art"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "Ryodan",
+        "note": "Winner Pack: Blast Ace",
+        "type": "Foil -\u00a0Alternative Art"
       }
     ],
     "JAAs": [
@@ -123518,13 +123570,20 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Nakano Haito",
+        "note": "Official Tournament Pack Vol. 11",
+        "type": "Foil -\u00a0Alternative Art"
+      }
+    ],
     "JAAs": [
       {
         "id": "_P1",
         "illustrator": "Nakano Haito",
         "note": "Digimon Con Promotion Pack",
-        "type": "Alternative Art"
+        "type": "No Foil -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "-",
@@ -124200,6 +124259,12 @@
         "illustrator": "itohiro",
         "note": "Update Pack",
         "type": "Foil -\u00a0Promo"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "KISUKE",
+        "note": "Winner Pack: Blast Ace",
+        "type": "Foil -\u00a0Alternative Art"
       }
     ],
     "JAAs": [
@@ -126480,24 +126545,24 @@
     "digivolveEffect": "[Security] Activate this card's [Main] effect.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "If you have [Agumon]/[Pulsemon]/[Gammamon] in play, this card's use cost becomes 0.\n[Main] Reveal the top 2 cards of your deck. Add all Tamer cards with a play cost of 3 or less among them to your hand. Return the rest to the top of the deck.",
+    "effect": "While you have [Agumon]/[Pulsemon]/[Gammamon], this card costs 0.\n[Main] Reveal the top 2 cards of your deck. Add all Tamer cards with a play cost of 3 or less among them to your hand. Return the rest to the top of the deck.",
     "form": "-",
     "id": "P-116",
-    "illustrator": "-",
+    "illustrator": "Nakano Haito",
     "name": {
       "english": "DIGIMON CON 2023",
       "japanese": "DIGIMON CON 2023",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "korean": "DIGIMON CON 2023",
+      "simplifiedChinese": "DIGIMON CON 2023",
+      "traditionalChinese": "DIGIMON CON 2023"
     },
-    "notes": "-",
+    "notes": "Official Tournament Pack Vol. 11",
     "playCost": "2",
     "rarity": "P",
     "restrictions": {
       "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
