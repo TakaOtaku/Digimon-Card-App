@@ -10198,7 +10198,7 @@
     },
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve]Lv.2 w/[Xros Heart]\u00a0trait: Cost 0 ",
-    "type": "Bird/Twilight/Xros Heart",
+    "type": "Avian/Twilight/Xros Heart",
     "version": "Normal"
   },
   {
@@ -23307,7 +23307,7 @@
       }
     ],
     "aceEffect": "-",
-    "attribute": "Unidentified",
+    "attribute": "Unknown",
     "block": [
       "02"
     ],
@@ -23360,7 +23360,7 @@
     },
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve]Lv.5 w/\uff1cSave\uff1e\u00a0in its text: Cost 9 ",
-    "type": "Unknown",
+    "type": "Unidentified",
     "version": "Normal"
   },
   {
@@ -38196,7 +38196,7 @@
     "id": "BT15-001",
     "illustrator": "Spareribs",
     "name": {
-      "english": "Tokomon",
+      "english": "Yokomon",
       "japanese": "\u30d4\u30e7\u30b3\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
@@ -115934,7 +115934,7 @@
     "digivolveEffect": "[When Attacking] [Once Per Turn] If there are 6 total cards or less in both players' security stacks, you may place 1 yellow card from your hand on top of your security stack.",
     "dnaDigivolve": "-",
     "dp": "7000",
-    "effect": "[When Attacking] By trashing the top card of your security stack, unsuspend this Digimon.",
+    "effect": "[When Digivolving] By trashing the top card of your security stack, unsuspend this Digimon.",
     "form": "Ultimate",
     "id": "EX5-031",
     "illustrator": "yuuki.",
