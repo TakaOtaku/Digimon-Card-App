@@ -20075,9 +20075,22 @@
         "illustrator": "Ryodan",
         "note": "Across Time Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
+      },
+      {
+        "id": "_P1",
+        "illustrator": "Ryodan",
+        "note": "Demo Deck: Imperialdramon",
+        "type": "No Foil -\u00a0Uncommon"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Ryodan",
+        "note": "Demo Deck: Imperialdramon",
+        "type": "No Foil -\u00a0Uncommon"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "-",
     "block": [
@@ -20109,7 +20122,7 @@
     "playCost": "-",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
+      "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Not released"
@@ -21200,6 +21213,12 @@
         "illustrator": "Kazumasa Yasukuni",
         "note": "Bandai Card Games Official Guide",
         "type": "Textured -\u00a0Alternative Art"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "Ryodan",
+        "note": "Demo Deck: Imperialdramon",
+        "type": "No Foil -\u00a0Common"
       }
     ],
     "JAAs": [
@@ -21208,6 +21227,12 @@
         "illustrator": "Kazumasa Yasukuni",
         "note": "Tamer Battle EX",
         "type": "Foil -\u00a0Alternative Art"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "Ryodan",
+        "note": "Demo Deck: Imperialdramon",
+        "type": "No Foil -\u00a0Common"
       }
     ],
     "aceEffect": "-",
@@ -21252,7 +21277,7 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
+      "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Not released"
