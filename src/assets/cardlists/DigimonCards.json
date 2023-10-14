@@ -21294,9 +21294,22 @@
         "illustrator": "Spareribs",
         "note": "Across Time Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
+      },
+      {
+        "id": "_P1",
+        "illustrator": "Spareribs",
+        "note": "Demo Deck: Imperialdramon",
+        "type": "No Foil -\u00a0Uncommon"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Spareribs",
+        "note": "Demo Deck: Imperialdramon",
+        "type": "No Foil -\u00a0Uncommon"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "-",
     "block": [
@@ -21339,7 +21352,7 @@
     "playCost": "4",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
+      "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Not released"
@@ -21620,9 +21633,22 @@
         "illustrator": "Nakano Haito",
         "note": "Across Time Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Rare"
+      },
+      {
+        "id": "_P1",
+        "illustrator": "Nakano Haito",
+        "note": "Demo Deck: Imperialdramon",
+        "type": "No Foil -\u00a0Rare"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Nakano Haito",
+        "note": "Demo Deck: Imperialdramon",
+        "type": "No Foil -\u00a0Rare"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "Free",
     "block": [
@@ -21665,7 +21691,7 @@
     "playCost": "8",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
+      "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Not released"
@@ -22921,9 +22947,22 @@
         "illustrator": "Spareribs",
         "note": "Across Time Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
+      },
+      {
+        "id": "_P1",
+        "illustrator": "Spareribs",
+        "note": "Demo Deck: Imperialdramon",
+        "type": "No Foil -\u00a0Uncommon"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Spareribs",
+        "note": "Demo Deck: Imperialdramon",
+        "type": "No Foil -\u00a0Uncommon"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "-",
     "block": [
@@ -22958,15 +22997,15 @@
     "name": {
       "english": "Stingmon",
       "japanese": "\u30b9\u30c6\u30a3\u30f3\u30b0\u30e2\u30f3",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "korean": "\uc2a4\ud305\ubaac",
+      "simplifiedChinese": "\u98de\u866b\u517d",
+      "traditionalChinese": "\u98db\u87f2\u7378"
     },
     "notes": "\u25b9BOOSTER ACROSS TIME [BT12]",
     "playCost": "4",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
+      "chinese": "Unrestricted",
       "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Not released"
@@ -52003,9 +52042,22 @@
         "illustrator": "Tonamikanji",
         "note": "Regionals 2023 Champion Set 2",
         "type": "Foil - Champion Stamp -\u00a0Top 2 Prize"
+      },
+      {
+        "id": "_P4",
+        "illustrator": "Tonamikanji",
+        "note": "Demo Deck: Imperialdramon",
+        "type": "No Foil -\u00a0Rare"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Tonamikanji",
+        "note": "Demo Deck: Imperialdramon",
+        "type": "No Foil -\u00a0Rare"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "Free",
     "block": [
@@ -121719,8 +121771,8 @@
       {
         "id": "_P5",
         "illustrator": "No Illustrator",
-        "note": "Digimon Adventure 02: The Beginning Tutorial Deck",
-        "type": "Alternative Art"
+        "note": "Demo Deck: Imperialdramon",
+        "type": "No Foil -\u00a0Alternative Art"
       }
     ],
     "JAAs": [
@@ -121751,8 +121803,8 @@
       {
         "id": "_P5",
         "illustrator": "No Illustrator",
-        "note": "Digimon Adventure 02: The Beginning Tutorial Deck",
-        "type": "Alternative Art"
+        "note": "Demo Deck: Imperialdramon",
+        "type": "No Foil -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "-",
@@ -126145,29 +126197,23 @@
     "AAs": [
       {
         "id": "_P1",
-        "illustrator": "To be completed",
-        "note": "Digimon Adventure 02: The Beginning Tutorial Deck",
-        "type": "Alternative Art"
-      },
-      {
-        "id": "_P2",
         "illustrator": "Kazumasa Yasukuni",
         "note": "BANDAI CARD GAMES Fest23-24 World Tour",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
       }
     ],
     "JAAs": [
       {
         "id": "_P1",
-        "illustrator": "To be completed",
-        "note": "Digimon Adventure 02: The Beginning Tutorial Deck",
-        "type": "Alternative Art"
+        "illustrator": "KISUKE",
+        "note": "Demo Deck: Imperialdramon",
+        "type": "No Foil -\u00a0Alternative Art"
       },
       {
         "id": "_P2",
         "illustrator": "Kazumasa Yasukuni",
         "note": "BANDAI CARD GAMES Fest23-24 World Tour",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "Overflow \uff1c-4\uff1e.",
@@ -126200,21 +126246,21 @@
     "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e \n[On Play] [When Digivolving]Suspend 1 Digimon, then unsuspend 1 Digimon.\n[All Turns] [Once Per Turn] When this Digimon becomes suspended, you may play a Tamer card or a Digimon card with 4000 DP or less from your hand without paying the cost.",
     "form": "Mega",
     "id": "P-109",
-    "illustrator": "No Illustrator",
+    "illustrator": "KISUKE",
     "name": {
       "english": "Imperialdramon: Dragon Mode",
       "japanese": "\u30a4\u30f3\u30da\u30ea\u30a2\u30eb\u30c9\u30e9\u30e2\u30f3\uff1a\u30c9\u30e9\u30b4\u30f3\u30e2\u30fc\u30c9",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "korean": "\ud669\uc81c\ub4dc\ub77c\ubaac: \ub4dc\ub798\uace4 \ubaa8\ub4dc",
+      "simplifiedChinese": "\u5e1d\u7687\u9f99\u7532\u517d\uff1a\u9f99\u5f62\u6001",
+      "traditionalChinese": "\u5e1d\u7687\u9f8d\u7532\u7378\uff1a\u9f8d\u578b\u614b"
     },
-    "notes": "Tamer Battle",
+    "notes": "Demo Deck: Imperialdramon",
     "playCost": "7",
     "rarity": "P",
     "restrictions": {
       "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -126596,32 +126642,19 @@
     "version": "Normal"
   },
   {
-    "AAs": [
-      {
-        "id": "_P1",
-        "illustrator": "No Illustrator",
-        "note": "Digimon Adventure 02: The Beginning Tutorial Deck",
-        "type": "Alternative Art"
-      },
-      {
-        "id": "_P2",
-        "illustrator": "Iori Sunakura",
-        "note": "Digimon Adventure 02: The Beginning Tutorial Deck (Promo Card)",
-        "type": "Alternative Art"
-      }
-    ],
+    "AAs": [],
     "JAAs": [
       {
         "id": "_P1",
         "illustrator": "No Illustrator",
-        "note": "Digimon Adventure 02: The Beginning Tutorial Deck",
-        "type": "Alternative Art"
+        "note": "Demo Deck: Imperialdramon",
+        "type": "No Foil -\u00a0Alternative Art"
       },
       {
         "id": "_P2",
         "illustrator": "Iori Sunakura",
-        "note": "Digimon Adventure 02: The Beginning Tutorial Deck (Promo Card)",
-        "type": "Alternative Art"
+        "note": "Digimon Adventure 02 THE BEGINNING Viewings",
+        "type": "Foil -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "-",
@@ -126651,24 +126684,24 @@
     "digivolveEffect": "[When Attacking] If this Digimon has 2 or more colors, \uff1cDraw 1\uff1e.",
     "dnaDigivolve": "-",
     "dp": "1000",
-    "effect": "[Your Turn] [Once Per Turn] When this Digimon would digivolve into a card with the [Free]\u00a0trait trait, if you have a Tamer, reduce the digivolution cost by 1.",
+    "effect": "[Your Turn] [Once Per Turn] When this Digimon would digivolve into a card with the [Free]\u00a0trait, if you have a Tamer, reduce the digivolution cost by 1.",
     "form": "Rookie",
     "id": "P-117",
     "illustrator": "No Illustrator",
     "name": {
       "english": "Veemon",
       "japanese": "\u30d6\u30a4\u30e2\u30f3",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "korean": "\ube0c\uc774\ubaac",
+      "simplifiedChinese": "V\u4ed4\u517d",
+      "traditionalChinese": "V\u4ed4\u7378"
     },
-    "notes": "Digimon Adventure 02: The Beginning Promotion Pack",
+    "notes": "Demo Deck: Imperialdramon",
     "playCost": "3",
     "rarity": "P",
     "restrictions": {
       "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -126952,32 +126985,19 @@
     "version": "Normal"
   },
   {
-    "AAs": [
-      {
-        "id": "_P1",
-        "illustrator": "No Illustrator",
-        "note": "Digimon Adventure 02: The Beginning Tutorial Deck",
-        "type": "Alternative Art"
-      },
-      {
-        "id": "_P2",
-        "illustrator": "Iori Sunakura",
-        "note": "Digimon Adventure 02: The Beginning Tutorial Deck (Promo Card)",
-        "type": "Alternative Art"
-      }
-    ],
+    "AAs": [],
     "JAAs": [
       {
         "id": "_P1",
         "illustrator": "No Illustrator",
-        "note": "Digimon Adventure 02: The Beginning Tutorial Deck",
-        "type": "Alternative Art"
+        "note": "Demo Deck: Imperialdramon",
+        "type": "No Foil -\u00a0Alternative Art"
       },
       {
         "id": "_P2",
         "illustrator": "Iori Sunakura",
-        "note": "Digimon Adventure 02: The Beginning Tutorial Deck (Promo Card)",
-        "type": "Alternative Art"
+        "note": "Digimon Adventure 02 THE BEGINNING Viewings",
+        "type": "Foil -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "-",
@@ -127002,7 +127022,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "2000",
-    "effect": "[Your Turn] [Once Per Turn] When one of your Digimon moves from the breeding area to the battle area, you may hatch in your breeding area. Then, gain 1 memory.",
+    "effect": "[Your Turn] [Once Per Turn] When one of your Digimon moves from the breeding area to the battle area. You may hatch in your breeding area.Then, gain 1 memory.",
     "form": "Rookie",
     "id": "P-123",
     "illustrator": "No Illustrator",
@@ -127013,13 +127033,13 @@
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
     },
-    "notes": "Digimon Adventure 02: The Beginning Promotion Pack",
+    "notes": "Demo Deck: Imperialdramon",
     "playCost": "3",
     "rarity": "P",
     "restrictions": {
       "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -127028,20 +127048,13 @@
     "version": "Normal"
   },
   {
-    "AAs": [
-      {
-        "id": "_P1",
-        "illustrator": "No Illustrator",
-        "note": "Digimon Adventure 02: The Beginning Tutorial Deck",
-        "type": "Alternative Art"
-      }
-    ],
+    "AAs": [],
     "JAAs": [
       {
         "id": "_P1",
         "illustrator": "No Illustrator",
-        "note": "Digimon Adventure 02: The Beginning Tutorial Deck",
-        "type": "Alternative Art"
+        "note": "Demo Deck: Imperialdramon",
+        "type": "No Foil -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "-",
@@ -127060,24 +127073,24 @@
     "digivolveEffect": "[Security] Play this card without paying its memory cost.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Start of Your Main Phase] If you have a Digimon with the [Free]\u00a0trait, gain 1 memory.\n[On Play] Activate 1 of the effects below:\n\u30fbYou may play 1 [Veemon] from your hand without paying the cost.\n\u30fb1 of your Digimon may digivolve into [ExVeemon] in the hand without paying the cost.",
+    "effect": "[Start of Your Main Phase] If you have a Digimon with the [Free]\u00a0trait, gain 1 memory.\n[On Play] Activate 1 of the following effects:\n\u30fbYou may play 1 [Veemon] from your hand without paying the cost.\n\u30fb1 of your Digimon may digivolve into [ExVeemon] in the hand without paying the cost.",
     "form": "-",
     "id": "P-124",
     "illustrator": "No Illustrator",
     "name": {
       "english": "Davis Motomiya",
       "japanese": "\u672c\u5bae\u5927\u8f14",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "korean": "\ucd5c\uc0b0\ud574",
+      "simplifiedChinese": "\u672c\u5bab\u5927\u8f85",
+      "traditionalChinese": "\u672c\u5bae\u5927\u8f14"
     },
-    "notes": "Digimon Adventure 02: The Beginning Promotion Pack",
+    "notes": "Demo Deck: Imperialdramon",
     "playCost": "3",
     "rarity": "P",
     "restrictions": {
       "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -127306,20 +127319,13 @@
     "version": "Normal"
   },
   {
-    "AAs": [
-      {
-        "id": "_P1",
-        "illustrator": "No Illustrator",
-        "note": "Digimon Adventure 02: The Beginning Tutorial Deck",
-        "type": "Alternative Art"
-      }
-    ],
+    "AAs": [],
     "JAAs": [
       {
         "id": "_P1",
         "illustrator": "No Illustrator",
-        "note": "Digimon Adventure 02: The Beginning Tutorial Deck",
-        "type": "Alternative Art"
+        "note": "Demo Deck: Imperialdramon",
+        "type": "No Foil -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "-",
@@ -127349,13 +127355,13 @@
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
     },
-    "notes": "Digimon Adventure 02: The Beginning Promotion Pack",
+    "notes": "Demo Deck: Imperialdramon",
     "playCost": "3",
     "rarity": "P",
     "restrictions": {
       "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -141983,6 +141989,12 @@
         "illustrator": "Nakano Haito",
         "note": "PB-13: Digimon Card Game Royal Knights Binder Set",
         "type": "Foil -\u00a0Alternative Art"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "sasasi",
+        "note": "Demo Deck: Imperialdramon",
+        "type": "No Foil -\u00a0Common"
       }
     ],
     "JAAs": [
@@ -141991,6 +142003,12 @@
         "illustrator": "Nakano Haito",
         "note": "PB-13: Digimon Card Game Royal Knights Binder Set",
         "type": "Foil -\u00a0Alternative Art"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "sasasi",
+        "note": "Demo Deck: Imperialdramon",
+        "type": "No Foil -\u00a0Common"
       }
     ],
     "aceEffect": "-",
@@ -142023,7 +142041,7 @@
     "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 card with the [Free]\u00a0trait among them to your hand. Place the remaining cards at the bottom of your deck in any order.",
     "form": "Rookie",
     "id": "ST9-02",
-    "illustrator": "Itohiro",
+    "illustrator": "sasasi",
     "name": {
       "english": "Veemon",
       "japanese": "\u30d6\u30a4\u30e2\u30f3",
@@ -142119,9 +142137,22 @@
         "illustrator": "sasasi",
         "note": "Regionals 2023 Champion Set 1",
         "type": "Foil - Champion Stamp -\u00a0Top 2 Prize"
+      },
+      {
+        "id": "_P4",
+        "illustrator": "sasasi",
+        "note": "Demo Deck: Imperialdramon",
+        "type": "No Foil -\u00a0Uncommon"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "sasasi",
+        "note": "Demo Deck: Imperialdramon",
+        "type": "No Foil -\u00a0Uncommon"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "Free",
     "block": [
@@ -142171,7 +142202,7 @@
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "Mythical Beast",
+    "type": "Mythical Dragon",
     "version": "Normal"
   },
   {
@@ -142393,8 +142424,22 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "sasasi",
+        "note": "Demo Deck: Imperialdramon",
+        "type": "No Foil -\u00a0Common"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "sasasi",
+        "note": "Demo Deck: Imperialdramon",
+        "type": "No Foil -\u00a0Common"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "Free",
     "block": [
@@ -142429,9 +142474,9 @@
     "name": {
       "english": "Wormmon",
       "japanese": "\u30ef\u30fc\u30e0\u30e2\u30f3",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "korean": "\ucd94\ucd94\ubaac",
+      "simplifiedChinese": "\u866b\u866b\u517d",
+      "traditionalChinese": "\u87f2\u87f2\u7378"
     },
     "notes": "STARTER DECK ULTIMATE ANCIENT DRAGON [ST09]",
     "playCost": "3",
@@ -142448,8 +142493,22 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "sasasi",
+        "note": "Demo Deck: Imperialdramon",
+        "type": "No Foil -\u00a0Uncommon"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "sasasi",
+        "note": "Demo Deck: Imperialdramon",
+        "type": "No Foil -\u00a0Uncommon"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "Free",
     "block": [
@@ -142484,9 +142543,9 @@
     "name": {
       "english": "Stingmon",
       "japanese": "\u30b9\u30c6\u30a3\u30f3\u30b0\u30e2\u30f3",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "korean": "\uc2a4\ud305\ubaac",
+      "simplifiedChinese": "\u98de\u866b\u517d",
+      "traditionalChinese": "\u98db\u87f2\u7378"
     },
     "notes": "STARTER DECK ULTIMATE ANCIENT DRAGON [ST09]",
     "playCost": "4",
