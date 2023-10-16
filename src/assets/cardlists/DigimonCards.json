@@ -33577,7 +33577,13 @@
         "id": "_P1",
         "illustrator": "Naochika Morishita",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "Dan Mora",
+        "note": "BT-14: Booster Blast Ace",
+        "type": "Textured -\u00a0Alternative Art"
       }
     ],
     "JAAs": [
@@ -33585,7 +33591,7 @@
         "id": "_P1",
         "illustrator": "Naochika Morishita",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "Overflow \uff1c-3\uff1e.",
@@ -33627,7 +33633,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -42554,7 +42560,7 @@
       "korean": "Not released"
     },
     "securityEffect": "-",
-    "specialDigivolve": "[Digivolve][Leviamon]: Cost 0 ",
+    "specialDigivolve": "[Digivolve][Leviamon]: Cost 2 ",
     "type": "Demon Lord/Seven Great Demon Lords/X Antibody",
     "version": "Normal"
   },
@@ -43516,7 +43522,7 @@
     ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "12000",
     "effect": "While you have a Tamer with [Matt Ishida]\u00a0in its name and your opponent has a Digimon with 10000 or more DP in play, your[Gabumon] may digivolve into this card from your hand for 4 cost, ignoring digivolution requirements.\n\uff1cEvade\uff1e \n[When Digivolving] Until the end of your opponent's turn end, 3 of your opponent's Digimon or Tamers can't suspend.\n[All Turns] [Once Per Turn] When this Digimon suspends, you may unsuspend this Digimon.",
     "form": "Mega",
     "id": "BT15-101",
@@ -43529,7 +43535,7 @@
       "traditionalChinese": "-"
     },
     "notes": "\u25b9BOOSTER EXCEED APOCALYPSE [BT15]",
-    "playCost": "-",
+    "playCost": "12",
     "rarity": "SEC",
     "restrictions": {
       "chinese": "Not released",
@@ -134184,14 +134190,14 @@
       {
         "id": "_P1",
         "illustrator": "sasasi",
-        "note": "BT-13: Booster Versus Royal Knights",
-        "type": "Textured -\u00a0Box Topper"
+        "note": "ST-15: Starter Deck Dragon of Courage",
+        "type": "Textured -\u00a0Super Rare"
       },
       {
         "id": "_P2",
         "illustrator": "tyuga",
         "note": "ST-15: Starter Deck Dragon of Courage",
-        "type": "Textured -\u00a0Alternative Art"
+        "type": "Textured -\u00a0Rare Pull"
       }
     ],
     "JAAs": [
@@ -134235,7 +134241,7 @@
       "simplifiedChinese": "\u6218\u6597\u66b4\u9f99\u517d",
       "traditionalChinese": "\u6230\u9b25\u66b4\u9f8d\u7378"
     },
-    "notes": "STARTER DECK DRAGON OF COURAGE [ST15]",
+    "notes": "\u25b9BOOSTER VERSUS ROYAL KNIGHT [BT13]",
     "playCost": "6",
     "rarity": "SR",
     "restrictions": {
@@ -135078,14 +135084,14 @@
       {
         "id": "_P1",
         "illustrator": "Tonamikanji",
-        "note": "BT-13: Booster Versus Royal Knights",
-        "type": "Textured -\u00a0Box Topper"
+        "note": "ST-16: Starter Deck Wolf of Friendship",
+        "type": "Textured -\u00a0Super Rare"
       },
       {
         "id": "_P2",
         "illustrator": "tyuga",
         "note": "ST-16: Starter Deck Wolf of Friendship",
-        "type": "Textured -\u00a0Alternative Art"
+        "type": "Textured -\u00a0Rare Pull"
       }
     ],
     "JAAs": [
@@ -135129,7 +135135,7 @@
       "simplifiedChinese": "\u94a2\u94c1\u52a0\u9c81\u9c81\u517d",
       "traditionalChinese": "\u92fc\u9435\u52a0\u9b6f\u9b6f\u7378"
     },
-    "notes": "STARTER DECK WOLF OF FRIENDSHIP [ST16]",
+    "notes": "\u25b9BOOSTER VERSUS ROYAL KNIGHT [BT13]",
     "playCost": "6",
     "rarity": "SR",
     "restrictions": {
