@@ -34216,7 +34216,13 @@
         "id": "_P1",
         "illustrator": "GOSSAN",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "Emiliano Santalucia",
+        "note": "BT-14: Booster Blast Ace",
+        "type": "Textured -\u00a0Alternative Art"
       }
     ],
     "JAAs": [
@@ -34224,7 +34230,7 @@
         "id": "_P1",
         "illustrator": "GOSSAN",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "Overflow \uff1c-3\uff1e.",
@@ -34249,7 +34255,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "8000",
-    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e \n[On Play] [When Digivolving] Trash 2 digivolution cards from under your opponent's Digimon. Then, return 1 of your opponent's Digimon with no digivolution cards to the hand.",
+    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e \n[On Play] [When Digivolving] Trash any 2 digivolution cards from under your opponent's Digimon. Then, return 1 of your opponent's Digimon with no digivolution cards to the hand.",
     "form": "Ultimate",
     "id": "BT14-026",
     "illustrator": "Nakano Haito",
@@ -34266,7 +34272,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -34809,7 +34815,13 @@
         "id": "_P1",
         "illustrator": "Teppei Tadokoro",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "CHAMBA",
+        "note": "BT-14: Booster Blast Ace",
+        "type": "Textured -\u00a0Alternative Art"
       }
     ],
     "JAAs": [
@@ -34817,7 +34829,7 @@
         "id": "_P1",
         "illustrator": "Teppei Tadokoro",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "Overflow \uff1c-3\uff1e.",
@@ -34842,7 +34854,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "8000",
-    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e \n[On Play] [When Digivolving] If you have 5 or fewer Security cards, \uff1cRecovery +1 (Deck)\uff1e. Then, 1 of your opponent's Digimon gets -1000 DP for each card in your security stack, for the turn.",
+    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e \n[On Play] [When Digivolving] If you have 5 or fewer Security cards, \uff1cRecovery +1 (Deck)\uff1e. Then, for the turn, 1 of your opponent's Digimon gets -1000 DP for each card in your security stack.",
     "form": "Ultimate",
     "id": "BT14-037",
     "illustrator": "Spareribs",
@@ -34859,7 +34871,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -35437,7 +35449,13 @@
         "id": "_P1",
         "illustrator": "tyuga",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "Gosha",
+        "note": "BT-14: Booster Blast Ace",
+        "type": "Textured -\u00a0Alternative Art"
       }
     ],
     "JAAs": [
@@ -35445,7 +35463,7 @@
         "id": "_P1",
         "illustrator": "tyuga",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "Overflow \uff1c-3\uff1e.",
@@ -35470,7 +35488,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "8000",
-    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e \n[On Play] [When Digivolving] Suspend 1 of your opponent's Digimon. Then, you may return 1 of your opponent's suspended Digimon with 5000 DP or less to the bottom of their deck.",
+    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e \n[On Play] [When Digivolving] Suspend 1 of your opponent's Digimon. Then, you may return 1 of your opponent's suspended Digimon with 5000 DP or less to the bottom of the deck.",
     "form": "Ultimate",
     "id": "BT14-049",
     "illustrator": "Takase",
@@ -35487,7 +35505,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -41646,7 +41664,7 @@
     "digivolveEffect": "[When Attacking] [Once Per Turn] \uff1cDe-Digivolve1\uff1e on 1 of your opponent's Digimon.",
     "dnaDigivolve": "-",
     "dp": "7000",
-    "effect": "[On Play] [When Digivolving] Reveal the top 3 cards of your deck. Place 1 card with the [Machine]/[Cyborg]/[SoC]\u00a0trait among them as this Digimon's bottom digivolution card and add 1 card with thethe [Machine]/[Cyborg]/[SoC]\u00a0trait to the hand. Trash the rest.\n[When Attacking] If this Digimon has a Tamer card with the [SoC]\u00a0trait in its digivolution cards, delete 1 of your opponent's Digimon or Tamer with a play cost of 3 or less.",
+    "effect": "[On Play] [When Digivolving] Reveal the top 3 cards of your deck. Place 1 card with the [Machine]/[Cyborg]/[SoC]\u00a0trait among them as this Digimon's bottom digivolution card and add 1 card with the [Machine]/[Cyborg]/[SoC]\u00a0trait to the hand. Trash the rest.\n[When Attacking] If this Digimon has a Tamer card with the [SoC]\u00a0trait in its digivolution cards, delete 1 of your opponent's Digimon or Tamer with a play cost of 3 or less.",
     "form": "Ultimate",
     "id": "BT15-064",
     "illustrator": "Tonamikanji",
@@ -127402,15 +127420,15 @@
       "english": "Gurimon",
       "japanese": "\u30b0\u30ea\u30e2\u30f3",
       "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "simplifiedChinese": "\u58a9\u58a9\u517d",
+      "traditionalChinese": "\u58a9\u58a9\u7378"
     },
     "notes": "BOOSTER RESURGENCE BOOSTER [RB01]",
     "playCost": "-",
     "rarity": "C",
     "restrictions": {
       "chinese": "Unrestricted",
-      "english": "Not released",
+      "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Not released"
     },
@@ -127446,15 +127464,15 @@
       "english": "Puyoyomon",
       "japanese": "\u30d7\u30e8\u30e8 \u30e2\u30f3",
       "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "simplifiedChinese": "\u5657\u5466\u5466\u517d",
+      "traditionalChinese": "\u5657\u5466\u5466\u7378"
     },
     "notes": "BOOSTER RESURGENCE BOOSTER [RB01]",
     "playCost": "-",
     "rarity": "C",
     "restrictions": {
       "chinese": "Unrestricted",
-      "english": "Not released",
+      "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Not released"
     },
@@ -127498,7 +127516,7 @@
     "rarity": "C",
     "restrictions": {
       "chinese": "Unrestricted",
-      "english": "Not released",
+      "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Not released"
     },
@@ -127562,7 +127580,7 @@
     "rarity": "U",
     "restrictions": {
       "chinese": "Unrestricted",
-      "english": "Not released",
+      "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Not released"
     },
