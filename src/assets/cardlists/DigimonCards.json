@@ -37782,7 +37782,7 @@
     "color": "Yellow",
     "digiXros": "-",
     "digivolveCondition": [],
-    "digivolveEffect": "[Security] Activate this card's [Main] effect. You may play 1 [Patamon] from your hand or trash without paying the cost. Then, add this card to your hand.",
+    "digivolveEffect": "[Security] You may play 1 [Patamon] from your hand or trash without paying the cost. Then, add this card to your hand.",
     "dnaDigivolve": "-",
     "dp": "-",
     "effect": "[Main] Search your security stack. 1 of your Digimon may digivolve in to a level 6 or lower yellow Digimon with the [Vaccine]\u00a0trait among them without paying its cost. Then, shuffle your security security. If your Digimon digivolves with this effect and you have Tamer with [T.K. Takaishi]\u00a0in its name, \uff1cRecovery +1 (Deck)\uff1e.",
@@ -37790,7 +37790,7 @@
     "id": "BT14-093",
     "illustrator": "No Illustrator",
     "name": {
-      "english": "Messenger of Hope",
+      "english": "Emissary of Hope",
       "japanese": "\u5e0c\u671b\u306e\u4f7f\u8005",
       "korean": "-",
       "simplifiedChinese": "-",
@@ -37922,7 +37922,7 @@
     "id": "BT14-096",
     "illustrator": "No Illustrator",
     "name": {
-      "english": "Blossoming of Sincerity",
+      "english": "Blooming of Sincerity",
       "japanese": "\u7d14\u771f\u306e\u958b\u82b1",
       "korean": "-",
       "simplifiedChinese": "-",
@@ -115395,7 +115395,7 @@
     "cardImage": "assets/images/cards/EX5-020.webp",
     "cardLv": "Lv.5",
     "cardNumber": "EX5-020",
-    "cardType": "Digi-Egg",
+    "cardType": "Digimon",
     "color": "Blue",
     "digiXros": "-",
     "digivolveCondition": [
@@ -128146,7 +128146,7 @@
     "rarity": "C",
     "restrictions": {
       "chinese": "Unrestricted",
-      "english": "Not released",
+      "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Not released"
     },
@@ -128180,7 +128180,7 @@
     "digivolveEffect": "[Opponent's Turn] While this Digimon has [Monzaemon]/[Numemon]\u00a0in its name, it gains \uff1cSecurity Attack +1\uff1e.",
     "dnaDigivolve": "-",
     "dp": "7000",
-    "effect": "[On Play] By placing 1 Digimon card with [Numemon]\u00a0in its name from your trash as this Digimon's bottom digivolution card, gain 2 memory.\n[On Play] [When Digivolving] 1 of your opponent\u2019s Digimon gets -3000 DP and \uff1cSecurity Attack -1\uff1euntil the end of the opponent's turn.",
+    "effect": "[On Play] By placing 1 Digimon card with [Numemon]\u00a0in its name from your trash as this Digimon's bottom digivolution card, gain 2 memory.\n[On Play] [When Digivolving] 1 of your opponent\u2019s Digimon gets -3000 DP and \uff1cSecurity Attack -1\uff1euntil the end of their turn.",
     "form": "Ultimate",
     "id": "RB1-018",
     "illustrator": "GOSSAN",
@@ -128196,7 +128196,7 @@
     "rarity": "R",
     "restrictions": {
       "chinese": "Unrestricted",
-      "english": "Not released",
+      "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Not released"
     },
@@ -128252,15 +128252,15 @@
       "english": "ShinMonzaemon",
       "japanese": "\u3057\u3093\u3082\u3093\u3056\u3048\u30e2\u30f3",
       "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "simplifiedChinese": "\u771f\u718a\u4ed4\u517d",
+      "traditionalChinese": "\u60e1\u5922\u718a\u4ed4\u7378"
     },
     "notes": "BOOSTER RESURGENCE BOOSTER [RB01]",
     "playCost": "13",
     "rarity": "SR",
     "restrictions": {
       "chinese": "Unrestricted",
-      "english": "Not released",
+      "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Not released"
     },
@@ -128324,7 +128324,7 @@
     "rarity": "U",
     "restrictions": {
       "chinese": "Unrestricted",
-      "english": "Not released",
+      "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Not released"
     },
