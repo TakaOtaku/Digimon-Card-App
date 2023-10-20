@@ -1,4 +1,8 @@
-cardLinks = []
+cardLinks = [
+  'https://digimoncardgame.fandom.com/wiki/RB1-007',
+  'https://digimoncardgame.fandom.com/wiki/RB1-004',
+  'https://digimoncardgame.fandom.com/wiki/RB1-006',
+]
 normalCards = []
 cards = []
 rulings = {}

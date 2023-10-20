@@ -461,7 +461,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
   createImageOptions(): DigimonCardImage[] {
     return (
       this.mainDeck.map((card) => ({
-        name: `${card.id} - ${card.name}`,
+        name: `${card.id} - ${card.name.english}`,
         value: card.id,
       })) ?? []
     );

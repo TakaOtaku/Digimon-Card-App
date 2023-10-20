@@ -16,8 +16,7 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { first, Subject } from 'rxjs';
-import { DigimonCard, IDeck } from '../../../../models';
-import { ColorsWithoutMulti } from '../../../../models/data/filter.data';
+import { DigimonCard, IDeck, ColorsWithoutMulti } from '../../../../models';
 import {
   compareIDs,
   formatId,
