@@ -12325,7 +12325,7 @@
     "digivolveEffect": "[Security] Place this card in its owner's battle area.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] Reveal the top 6 cards of your deck. You may add 2 cards with the [Blue Flare]\u00a0trait among them to your hand, and play 1 [Kiriha Aonuma] among them without paying its memory cost. Place the rest at the bottom of your deck in any order. Then, place this card in your Battle Area.\n[Main] \uff1cDelay\uff1e \n\u30fbGain 2 memory.",
+    "effect": "[Main] Reveal the top 6 cards of your deck. You may add 2 cards with the [Blue Flare]\u00a0trait among them to your hand, and play 1 [Kiriha Aonuma] among them without paying its memory cost. Place the rest at the bottom of your deck in any order. Then, place this card in your Battle Area.\n[Main] \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below.)\n\u30fbGain 2 memory.",
     "form": "-",
     "id": "BT10-097",
     "illustrator": "Shin Sasaki",
@@ -12464,7 +12464,7 @@
     "digivolveEffect": "[Security] Place this card in its owner's battle area.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] You may play 1 [Pulsemon] from your hand without paying its memory cost. Then, place this card in your Battle Area.\n[Main] \uff1cDelay\uff1e \n\u30fbGain 2 memory.",
+    "effect": "[Main] You may play 1 [Pulsemon] from your hand without paying its memory cost. Then, place this card in your Battle Area.\n[Main] \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below.)\n\u30fbGain 2 memory.",
     "form": "-",
     "id": "BT10-100",
     "illustrator": "p!k@ru",
@@ -32696,7 +32696,7 @@
     "digivolveEffect": "[Security] Place this card in its owner's battle area.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] \uff1cDraw 1\uff1e. You may place 1 Digimon card from your hand under 1 of your [King Drasil_7D6] in the breeding area as its bottom digivolution card. Then, place this card in the battle area.\n[Main] \uff1cDelay\uff1e.\n\u30fb Play 1 card with the [Royal Knight]\u00a0trait from the digivolution cards of 1 of your Digimon in the breeding area without paying its cost. Any [On Play] effects on Digimon played with this effect don't activate, and they gain \uff1cRush\uff1efor the turn.",
+    "effect": "[Main] \uff1cDraw 1\uff1e. You may place 1 Digimon card from your hand under 1 of your [King Drasil_7D6] in the breeding area as its bottom digivolution card. Then, place this card in the battle area.\n[Main] \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below.).\n\u30fb Play 1 card with the [Royal Knight]\u00a0trait from the digivolution cards of 1 of your Digimon in the breeding area without paying its cost. Any [On Play] effects on Digimon played with this effect don't activate, and they gain \uff1cRush\uff1efor the turn.",
     "form": "-",
     "id": "BT13-110",
     "illustrator": "Nakano Haito",
@@ -33594,7 +33594,7 @@
         "type": "Textured -\u00a0Alternative Art"
       }
     ],
-    "aceEffect": "Overflow \uff1c-3\uff1e.",
+    "aceEffect": "Overflow \uff1c-3\uff1e (As this card moves from the battle area or under a card to another area, lose 3 memory).",
     "attribute": "Vaccine",
     "block": [
       "03"
@@ -34233,7 +34233,7 @@
         "type": "Textured -\u00a0Alternative Art"
       }
     ],
-    "aceEffect": "Overflow \uff1c-3\uff1e.",
+    "aceEffect": "Overflow \uff1c-3\uff1e (As this card moves from the battle area or under a card to another area, lose 3 memory).",
     "attribute": "Vaccine",
     "block": [
       "03"
@@ -34832,7 +34832,7 @@
         "type": "Textured -\u00a0Alternative Art"
       }
     ],
-    "aceEffect": "Overflow \uff1c-3\uff1e.",
+    "aceEffect": "Overflow \uff1c-3\uff1e (As this card moves from the battle area or under a card to another area, lose 3 memory).",
     "attribute": "Vaccine",
     "block": [
       "03"
@@ -35466,7 +35466,7 @@
         "type": "Textured -\u00a0Alternative Art"
       }
     ],
-    "aceEffect": "Overflow \uff1c-3\uff1e.",
+    "aceEffect": "Overflow \uff1c-3\uff1e (As this card moves from the battle area or under a card to another area, lose 3 memory).",
     "attribute": "Data",
     "block": [
       "03"
@@ -38985,7 +38985,7 @@
         "type": "Alternative Art"
       }
     ],
-    "aceEffect": "Overflow \uff1c-3\uff1e.",
+    "aceEffect": "Overflow \uff1c-3\uff1e (As this card moves from the battle area or under a card to another area, lose 3 memory).",
     "attribute": "Vaccine",
     "block": [
       "03"
@@ -39623,7 +39623,7 @@
         "type": "Alternative Art"
       }
     ],
-    "aceEffect": "Overflow \uff1c-3\uff1e.",
+    "aceEffect": "Overflow \uff1c-3\uff1e (As this card moves from the battle area or under a card to another area, lose 3 memory).",
     "attribute": "Vaccine",
     "block": [
       "03"
@@ -40261,7 +40261,7 @@
         "type": "Alternative Art"
       }
     ],
-    "aceEffect": "Overflow \uff1c-3\uff1e.",
+    "aceEffect": "Overflow \uff1c-3\uff1e (As this card moves from the battle area or under a card to another area, lose 3 memory).",
     "attribute": "Vaccine",
     "block": [
       "03"
@@ -40849,7 +40849,7 @@
         "type": "Alternative Art"
       }
     ],
-    "aceEffect": "Overflow \uff1c-3\uff1e.",
+    "aceEffect": "Overflow \uff1c-3\uff1e (As this card moves from the battle area or under a card to another area, lose 3 memory).",
     "attribute": "Vaccine",
     "block": [
       "03"
@@ -41240,7 +41240,7 @@
     "digivolveEffect": "[All Turns] [Once Per Turn] When this Digimon becomes suspended, suspend 1 of your opponent's Digimon or Tamers with a play cost less than or equal to this Digimon's play cost.",
     "dnaDigivolve": "-",
     "dp": "2000",
-    "effect": "[Start of Your Main Phase] [Shuu Yulin] from your hand as this Digimon's bottom digivolution card, this Digimon isn't affected by the effects of your opponent's Digimon until the end of their turn.",
+    "effect": "[Start of Your Main Phase] By placing 1 [Shuu Yulin] from your hand as this Digimon's bottom digivolution card, this Digimon isn't affected by the effects of your opponent's Digimon until the end of their turn.",
     "form": "Rookie",
     "id": "BT15-056",
     "illustrator": "toriyufu",
@@ -42271,7 +42271,7 @@
         "type": "Alternative Art"
       }
     ],
-    "aceEffect": "Overflow \uff1c-3\uff1e.",
+    "aceEffect": "Overflow \uff1c-3\uff1e (As this card moves from the battle area or under a card to another area, lose 3 memory).",
     "attribute": "Virus",
     "block": [
       "03"
@@ -43301,7 +43301,7 @@
     "digivolveEffect": "[Security] Reveal the top 5 cards of your deck. Add 1 card with the [Machine]/[Cyborg]\u00a0trait trait to your hand, and trash 1 card with the [Machine]/[Cyborg]\u00a0trait trait. Return the rest to the top of the deck. Then, place this card in the battle area.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] Reveal the top 5 cards of your deck. Add 1 card with the [Machine]/[Cyborg]\u00a0trait trait among them to your hand, and trash 1 card with the [Machine]/[Cyborg]\u00a0trait trait among them. Return the rest to the top of the deck. Then, place this card in the battle area.\n[Main] \uff1cDelay\uff1e \u2022 You may play 1 level 5 or higher Digimon card with the [Machine]/[Cyborg]\u00a0trait trait from your hand with the cost reduced by 3.",
+    "effect": "[Main] Reveal the top 5 cards of your deck. Add 1 card with the [Machine]/[Cyborg]\u00a0trait trait among them to your hand, and trash 1 card with the [Machine]/[Cyborg]\u00a0trait trait among them. Return the rest to the top of the deck. Then, place this card in the battle area.\n[Main] \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below.)\u2022 You may play 1 level 5 or higher Digimon card with the [Machine]/[Cyborg]\u00a0trait trait from your hand with the cost reduced by 3.",
     "form": "-",
     "id": "BT15-096",
     "illustrator": "Shin Sasaki",
@@ -43389,7 +43389,7 @@
     "digivolveEffect": "[Security] Place this card in its owner's battle area.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] By deleting 1 of your Digimon, you may play 1 [Myotismon] from your trash without paying the cost. Then, place this card into your battle area.\n[All Turns] When your [Myotismon] is deleted, \uff1cDelay\uff1e.\u2022 You may play 1 [VenomMyotismon] from your trash without paying the cost.",
+    "effect": "[Main] By deleting 1 of your Digimon, you may play 1 [Myotismon] from your trash without paying the cost. Then, place this card into your battle area.\n[All Turns] When your [Myotismon] is deleted, \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below.).\u2022 You may play 1 [VenomMyotismon] from your trash without paying the cost.",
     "form": "-",
     "id": "BT15-098",
     "illustrator": "No Illustrator",
@@ -76520,7 +76520,7 @@
     "digivolveEffect": "[Security] Place this card in its owner's battle area.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] Trash 2 digivolution cards from the bottom of 1 of your opponent's Digimon. Then, 1 of your opponent's Digimon with no digivolution cards can't attack or block until the end of your opponent's next turn. Then, place this card in your battle area.\n[Main] \uff1cDelay\uff1e \n\u30fbGain 2 memory.",
+    "effect": "[Main] Trash 2 digivolution cards from the bottom of 1 of your opponent's Digimon. Then, 1 of your opponent's Digimon with no digivolution cards can't attack or block until the end of your opponent's next turn. Then, place this card in your battle area.\n[Main] \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below.)\n\u30fbGain 2 memory.",
     "form": "-",
     "id": "BT6-097",
     "illustrator": "Sanosuke Sakuma",
@@ -76673,7 +76673,7 @@
     "digivolveEffect": "[Security] Place this card in its owner's battle area.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] Reveal the top 2 cards of your deck. Place 1 of them on top of your security stack face down. Add the remaining card to your hand. Then, place this card in your battle area.\n[Main] \uff1cDelay\uff1e \n\u30fbGain 3 memory.",
+    "effect": "[Main] Reveal the top 2 cards of your deck. Place 1 of them on top of your security stack face down. Add the remaining card to your hand. Then, place this card in your battle area.\n[Main] \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below.)\n\u30fbGain 3 memory.",
     "form": "-",
     "id": "BT6-100",
     "illustrator": "Kazumasa Yasukuni",
@@ -77016,7 +77016,7 @@
     "digivolveEffect": "[Security] Place this card in its owner's battle area.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] Return 1 purple Digimon card from your trash to your hand. Then, place this card in your battle area.\n[Main] \uff1cDelay\uff1e \n\u30fbGain 2 memory.",
+    "effect": "[Main] Return 1 purple Digimon card from your trash to your hand. Then, place this card in your battle area.\n[Main] \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below.)\n\u30fbGain 2 memory.",
     "form": "-",
     "id": "BT6-107",
     "illustrator": "yuuki.",
@@ -83067,7 +83067,7 @@
     "digivolveEffect": "[Security] Place this card in its owner's battle area.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] 1 of your Digimon gains \uff1cSecurity Attack +1\uff1efor the turn. Then, place this card in your battle area.\n[Main] \uff1cDelay\uff1e \n\u30fbGain 2 memory.",
+    "effect": "[Main] 1 of your Digimon gains \uff1cSecurity Attack +1\uff1efor the turn. Then, place this card in your battle area.\n[Main] \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below.)\n\u30fbGain 2 memory.",
     "form": "-",
     "id": "BT7-092",
     "illustrator": "Sanosuke Sakuma",
@@ -83555,7 +83555,7 @@
     "digivolveEffect": "[Security] Place this card in its owner's battle area.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] Suspend 1 of your opponent's Digimon. Then, place this card in your battle area.\n[Main] \uff1cDelay\uff1e \n\u30fbGain 2 memory.",
+    "effect": "[Main] Suspend 1 of your opponent's Digimon. Then, place this card in your battle area.\n[Main] \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below.)\n\u30fbGain 2 memory.",
     "form": "-",
     "id": "BT7-102",
     "illustrator": "banira",
@@ -83733,7 +83733,7 @@
     "digivolveEffect": "[Security] Place this card in its owner's battle area.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] Reveal the top 3 cards of your deck. You may play 1 black Digimon card with a play cost of 4 or less among them without paying its memory cost. Trash the remaining cards. Then, place this card in your battle area.\n[Main] \uff1cDelay\uff1e \n\u30fbGain 2 memory.",
+    "effect": "[Main] Reveal the top 3 cards of your deck. You may play 1 black Digimon card with a play cost of 4 or less among them without paying its memory cost. Trash the remaining cards. Then, place this card in your battle area.\n[Main] \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below.)\n\u30fbGain 2 memory.",
     "form": "-",
     "id": "BT7-105",
     "illustrator": "KISUKE",
@@ -90687,7 +90687,7 @@
     "digivolveEffect": "[Security] Place this card in its owner's battle area.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] Trash the top 2 cards of your deck and \uff1cDraw 1\uff1e. Then, place this card in your Battle Area.\n[Main] \uff1cDelay\uff1e \n\u30fbGain 2 memory.",
+    "effect": "[Main] Trash the top 2 cards of your deck and \uff1cDraw 1\uff1e. Then, place this card in your Battle Area.\n[Main] \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below.)\n\u30fbGain 2 memory.",
     "form": "-",
     "id": "BT8-108",
     "illustrator": "tessy",
@@ -109877,7 +109877,7 @@
     "digivolveEffect": "[Security] Place this card in its owner's battle area.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] \uff1cDraw 1\uff1e. Then, place this card in your battle area.\n[Main] \uff1cDelay\uff1e \n\u30fbPlay 1 Digimon card with the [Four Great Dragons]\u00a0trait from your hand without paying the cost. The Digimon played by this effect can't digivolve to level 7, and at the end of your opponent's turn, delete that Digimon.",
+    "effect": "[Main] \uff1cDraw 1\uff1e. Then, place this card in your battle area.\n[Main] \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below.)\n\u30fbPlay 1 Digimon card with the [Four Great Dragons]\u00a0trait from your hand without paying the cost. The Digimon played by this effect can't digivolve to level 7, and at the end of your opponent's turn, delete that Digimon.",
     "form": "-",
     "id": "EX3-069",
     "illustrator": "Itohiro",
@@ -114053,7 +114053,7 @@
     "digivolveEffect": "[Security] Place this card in its owner's battle area.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "While you have a green Digimon or Tamer in play, you may use this card without meeting its color requirements.\n[Main] Delete 1 of your opponent's level 3 Digimon. Then place this card in your battle area.\n[Main] \uff1cDelay\uff1e \n\u30fb[Main] Your opponent may trash 1 Option card in their hand. If they do not trash a card, gain 2 memory.",
+    "effect": "While you have a green Digimon or Tamer in play, you may use this card without meeting its color requirements.\n[Main] Delete 1 of your opponent's level 3 Digimon. Then place this card in your battle area.\n[Main] \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below.)\n\u30fb[Main] Your opponent may trash 1 Option card in their hand. If they do not trash a card, gain 2 memory.",
     "form": "-",
     "id": "EX4-070",
     "illustrator": "Kazumasa Yasukuni",
@@ -114155,7 +114155,7 @@
     "digivolveEffect": "[Security] Return 1 Digimon card from your trash to your hand, and add this card to your hand.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "This card is also treated as having [Plug-In]\u00a0in its name.While you have a Tamer in play, you may use this card without meeting its color requirements.\n[Main] Choose 1 of your level 6 Digimon. It may digivolve into a level 6 Digimon card in your hand with a different name that includes the name of the chosen Digimon, ignoring digivolution requirements and without paying the cost.",
+    "effect": "This card is also treated as having [Plug-In]\u00a0in its name. While you have a Tamer in play, you may use this card without meeting its color requirements.\n[Main] Choose 1 of your level 6 Digimon. It may digivolve into a level 6 Digimon card in your hand with a different name that includes the name of the chosen Digimon, ignoring digivolution requirements and without paying the cost.",
     "form": "-",
     "id": "EX4-072",
     "illustrator": "Shin Sasaki",
@@ -114984,7 +114984,7 @@
         "type": "Alternative Art"
       }
     ],
-    "aceEffect": "Overflow \uff1c-4\uff1e.",
+    "aceEffect": "Overflow \uff1c-4\uff1e (As this card moves from the battle area or under a card to another area, lose 4 memory).",
     "attribute": "Virus",
     "block": [
       "03"
@@ -115598,7 +115598,7 @@
         "type": "Alternative Art"
       }
     ],
-    "aceEffect": "Overflow \uff1c-4\uff1e.",
+    "aceEffect": "Overflow \uff1c-4\uff1e (As this card moves from the battle area or under a card to another area, lose 4 memory).",
     "attribute": "Data",
     "block": [
       "03"
@@ -116547,7 +116547,7 @@
         "type": "Alternative Art"
       }
     ],
-    "aceEffect": "Overflow \uff1c-4\uff1e.",
+    "aceEffect": "Overflow \uff1c-4\uff1e (As this card moves from the battle area or under a card to another area, lose 4 memory).",
     "attribute": "Vaccine",
     "block": [
       "03"
@@ -117206,7 +117206,7 @@
         "type": "Alternative Art"
       }
     ],
-    "aceEffect": "Overflow \uff1c-4\uff1e.",
+    "aceEffect": "Overflow \uff1c-4\uff1e (As this card moves from the battle area or under a card to another area, lose 4 memory).",
     "attribute": "Data",
     "block": [
       "03"
@@ -118063,7 +118063,7 @@
     "digivolveEffect": "[Security] Activate this card's [Main] effect.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] By trashing 1 card in your hand, delete 1 of your opponent's level 6 or lower Digimon. If you trashed a Digimon with the [Seven Great Demon Lords]\u00a0trait with this effect, place this card in your battle area.\n[All Turns] When an opponent's Digimon is played by an effect, \uff1cDelay\uff1e \n\u30fb You may play 1 [Leviamon] from your trash without paying its cost.",
+    "effect": "[Main] By trashing 1 card in your hand, delete 1 of your opponent's level 6 or lower Digimon. If you trashed a Digimon with the [Seven Great Demon Lords]\u00a0trait with this effect, place this card in your battle area.\n[All Turns] When an opponent's Digimon is played by an effect, \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below.)\n\u30fb You may play 1 [Leviamon] from your trash without paying its cost.",
     "form": "-",
     "id": "EX5-069",
     "illustrator": "Hisashi Fujiwara",
@@ -118370,7 +118370,7 @@
   {
     "AAs": [],
     "JAAs": [],
-    "aceEffect": "Overflow \uff1c-4\uff1e.",
+    "aceEffect": "Overflow \uff1c-4\uff1e (As this card moves from the battle area or under a card to another area, lose 4 memory).",
     "attribute": "Vaccine",
     "block": [
       "03"
@@ -118570,7 +118570,7 @@
   {
     "AAs": [],
     "JAAs": [],
-    "aceEffect": "Overflow \uff1c-4\uff1e.",
+    "aceEffect": "Overflow \uff1c-4\uff1e (As this card moves from the battle area or under a card to another area, lose 4 memory).",
     "attribute": "Data",
     "block": [
       "03"
@@ -118975,7 +118975,7 @@
   {
     "AAs": [],
     "JAAs": [],
-    "aceEffect": "Overflow \uff1c-4\uff1e.",
+    "aceEffect": "Overflow \uff1c-4\uff1e (As this card moves from the battle area or under a card to another area, lose 4 memory).",
     "attribute": "Vaccine",
     "block": [
       "03"
@@ -119169,7 +119169,7 @@
   {
     "AAs": [],
     "JAAs": [],
-    "aceEffect": "Overflow \uff1c-3\uff1e.",
+    "aceEffect": "Overflow \uff1c-3\uff1e (As this card moves from the battle area or under a card to another area, lose 3 memory).",
     "attribute": "Virus",
     "block": [
       "03"
@@ -121741,7 +121741,7 @@
     "digivolveEffect": "[Security] Place this card in its owner's battle area.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 red Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] \uff1cDelay\uff1e \n\u30fbGain 2 memory.",
+    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 red Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below.)\n\u30fbGain 2 memory.",
     "form": "-",
     "id": "P-035",
     "illustrator": "Shin Sasaki",
@@ -121848,7 +121848,7 @@
     "digivolveEffect": "[Security] Place this card in its owner's battle area.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 blue Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] \uff1cDelay\uff1e \n\u30fbGain 2 memory.",
+    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 blue Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below.)\n\u30fbGain 2 memory.",
     "form": "-",
     "id": "P-036",
     "illustrator": "Shin Sasaki",
@@ -121943,7 +121943,7 @@
     "digivolveEffect": "[Security] Place this card in its owner's battle area.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 yellow Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] \uff1cDelay\uff1e \n\u30fbGain 2 memory.",
+    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 yellow Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below.)\n\u30fbGain 2 memory.",
     "form": "-",
     "id": "P-037",
     "illustrator": "Shin Sasaki",
@@ -122038,7 +122038,7 @@
     "digivolveEffect": "[Security] Place this card in its owner's battle area.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 green Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] \uff1cDelay\uff1e \n\u30fbGain 2 memory.",
+    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 green Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below.)\n\u30fbGain 2 memory.",
     "form": "-",
     "id": "P-038",
     "illustrator": "Shin Sasaki",
@@ -122133,7 +122133,7 @@
     "digivolveEffect": "[Security] Place this card in its owner's battle area.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 black Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] \uff1cDelay\uff1e \n\u30fbGain 2 memory.",
+    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 black Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below.)\n\u30fbGain 2 memory.",
     "form": "-",
     "id": "P-039",
     "illustrator": "Shin Sasaki",
@@ -122228,7 +122228,7 @@
     "digivolveEffect": "[Security] Place this card in its owner's battle area.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 purple Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] \uff1cDelay\uff1e \n\u30fbGain 2 memory.",
+    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 purple Digimon card among them to your hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below.)\n\u30fbGain 2 memory.",
     "form": "-",
     "id": "P-040",
     "illustrator": "Shin Sasaki",
@@ -125972,7 +125972,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] Reveal the top 2 cards of your deck. Add 1 red card among them to your hand. Place the rest at the bottom of your deck in any order. Then, place this card into your battle area.\n[Main] \uff1cDelay\uff1e \n\u30fb1 of your Digimon may digivolve into a red Digimon card in your hand for its digivolution cost. When it would digivolve by this effect, reduce the cost by 2.",
+    "effect": "[Main] Reveal the top 2 cards of your deck. Add 1 red card among them to your hand. Place the rest at the bottom of your deck in any order. Then, place this card into your battle area.\n[Main] \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below.)\n\u30fb1 of your Digimon may digivolve into a red Digimon card in your hand for its digivolution cost. When it would digivolve by this effect, reduce the cost by 2.",
     "form": "-",
     "id": "P-103",
     "illustrator": "Takase",
@@ -126016,7 +126016,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] Reveal the top 2 cards of your deck. Add 1 blue card among them to your hand. Place the rest at the bottom of your deck in any order. Then, place this card into your battle area.\n[Main] \uff1cDelay\uff1e \n\u30fb1 of your Digimon may digivolve into a blue Digimon card in your hand for its digivolution cost. When it would digivolve by this effect, reduce the cost by 2.",
+    "effect": "[Main] Reveal the top 2 cards of your deck. Add 1 blue card among them to your hand. Place the rest at the bottom of your deck in any order. Then, place this card into your battle area.\n[Main] \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below.)\n\u30fb1 of your Digimon may digivolve into a blue Digimon card in your hand for its digivolution cost. When it would digivolve by this effect, reduce the cost by 2.",
     "form": "-",
     "id": "P-104",
     "illustrator": "Takase",
@@ -126060,7 +126060,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] Reveal the top 2 cards of your deck. Add 1 yellow card among them to your hand. Place the rest at the bottom of your deck in any order. Then, place this card into your battle area.\n[Main] \uff1cDelay\uff1e \n\u30fb1 of your Digimon may digivolve into a yellow Digimon card in your hand for its digivolution cost. When it would digivolve by this effect, reduce the cost by 2.",
+    "effect": "[Main] Reveal the top 2 cards of your deck. Add 1 yellow card among them to your hand. Place the rest at the bottom of your deck in any order. Then, place this card into your battle area.\n[Main] \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below.)\n\u30fb1 of your Digimon may digivolve into a yellow Digimon card in your hand for its digivolution cost. When it would digivolve by this effect, reduce the cost by 2.",
     "form": "-",
     "id": "P-105",
     "illustrator": "Takase",
@@ -126104,7 +126104,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] Reveal the top 2 cards of your deck. Add 1 green card among them to your hand. Place the rest at the bottom of your deck in any order. Then, place this card into your battle area.\n[Main] \uff1cDelay\uff1e \n\u30fb1 of your Digimon may digivolve into a green Digimon card in your hand for its digivolution cost. When it would digivolve by this effect, reduce the cost by 2.",
+    "effect": "[Main] Reveal the top 2 cards of your deck. Add 1 green card among them to your hand. Place the rest at the bottom of your deck in any order. Then, place this card into your battle area.\n[Main] \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below.)\n\u30fb1 of your Digimon may digivolve into a green Digimon card in your hand for its digivolution cost. When it would digivolve by this effect, reduce the cost by 2.",
     "form": "-",
     "id": "P-106",
     "illustrator": "Takase",
@@ -126148,7 +126148,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] Reveal the top 2 cards of your deck. Add 1 black card among them to your hand. Place the rest at the bottom of your deck in any order. Then, place this card into your battle area.\n[Main] \uff1cDelay\uff1e \n\u30fb1 of your Digimon may digivolve into a black Digimon card in your hand for its digivolution cost. When it would digivolve by this effect, reduce the cost by 2.",
+    "effect": "[Main] Reveal the top 2 cards of your deck. Add 1 black card among them to your hand. Place the rest at the bottom of your deck in any order. Then, place this card into your battle area.\n[Main] \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below.)\n\u30fb1 of your Digimon may digivolve into a black Digimon card in your hand for its digivolution cost. When it would digivolve by this effect, reduce the cost by 2.",
     "form": "-",
     "id": "P-107",
     "illustrator": "Takase",
@@ -126192,7 +126192,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] Reveal the top 2 cards of your deck. Add 1 purple card among them to your hand. Place the rest at the bottom of your deck in any order. Then, place this card into your battle area.\n[Main] \uff1cDelay\uff1e \n\u30fb1 of your Digimon may digivolve into a purple Digimon card in your hand for its digivolution cost. When it would digivolve by this effect, reduce the cost by 2.",
+    "effect": "[Main] Reveal the top 2 cards of your deck. Add 1 purple card among them to your hand. Place the rest at the bottom of your deck in any order. Then, place this card into your battle area.\n[Main] \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below.)\n\u30fb1 of your Digimon may digivolve into a purple Digimon card in your hand for its digivolution cost. When it would digivolve by this effect, reduce the cost by 2.",
     "form": "-",
     "id": "P-108",
     "illustrator": "Takase",
@@ -126240,7 +126240,7 @@
         "type": "Textured -\u00a0Alternative Art"
       }
     ],
-    "aceEffect": "Overflow \uff1c-4\uff1e.",
+    "aceEffect": "Overflow \uff1c-4\uff1e (As this card moves from the battle area or under a card to another area, lose 4 memory).",
     "attribute": "Free",
     "block": [
       "03"
@@ -126455,7 +126455,7 @@
   {
     "AAs": [],
     "JAAs": [],
-    "aceEffect": "Overflow \uff1c-4\uff1e.",
+    "aceEffect": "Overflow \uff1c-4\uff1e (As this card moves from the battle area or under a card to another area, lose 4 memory).",
     "attribute": "Virus",
     "block": [
       "03"
@@ -126519,7 +126519,7 @@
         "type": "Textured -\u00a0Alternative Art"
       }
     ],
-    "aceEffect": "Overflow \uff1c-4\uff1e.",
+    "aceEffect": "Overflow \uff1c-4\uff1e (As this card moves from the battle area or under a card to another area, lose 4 memory).",
     "attribute": "Unknown",
     "block": [
       "03"
@@ -132022,7 +132022,7 @@
     "digivolveEffect": "[Security] Reveal the top 3 cards of your deck. Add 1 card with [Huckmon]/[Sistermon]\u00a0in its name or [Royal Knight]\u00a0trait among them to your hand. Trash the rest. Then, place this card in your battle area.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] Reveal the top 3 cards of your deck. Add 1 card with [Huckmon]/[Sistermon]\u00a0in its name or [Royal Knight]\u00a0trait among them to your hand. Trash the rest. Then, place this card in your Battle Area.\n[Main] \uff1cDelay\uff1e \n\u30fbThe next time one of your Digimon would digivolve this turn, reduce the digivolution cost by 1.",
+    "effect": "[Main] Reveal the top 3 cards of your deck. Add 1 card with [Huckmon]/[Sistermon]\u00a0in its name or [Royal Knight]\u00a0trait among them to your hand. Trash the rest. Then, place this card in your Battle Area.\n[Main] \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below.)\n\u30fbThe next time one of your Digimon would digivolve this turn, reduce the digivolution cost by 1.",
     "form": "-",
     "id": "ST12-15",
     "illustrator": "Takase",
@@ -132918,7 +132918,7 @@
     "digivolveEffect": "[Security] You may play 1 Digimon card with the [Legend-Arms]\u00a0trait and a play cost of 7 or less in your hand without paying its memory cost. Then, place this card in your battle area.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] You may play 1 Digimon card with the [Legend-Arms]\u00a0trait and a play cost of 7 or less in your hand without paying its memory cost. Then, place this card in your Battle Area.\n[Main] \uff1cDelay\uff1e \n\u30fbReveal the top 4 cards of your deck. Place those cards on the top or bottom of your deck in any order.",
+    "effect": "[Main] You may play 1 Digimon card with the [Legend-Arms]\u00a0trait and a play cost of 7 or less in your hand without paying its memory cost. Then, place this card in your Battle Area.\n[Main] \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below.)\n\u30fbReveal the top 4 cards of your deck. Place those cards on the top or bottom of your deck in any order.",
     "form": "-",
     "id": "ST13-16",
     "illustrator": "Takase",
@@ -133564,7 +133564,7 @@
     "digivolveEffect": "[Security] Delete 1 of your opponent's Digimon with the highest level.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "When this card is trashed from your deck, you may place it in the battle area.\n[Main] Delete 1 of your opponent's Digimon with the highest level.\n[Main] \uff1cDelay\uff1e.\n\u30fbReturn 1 purple Digimon card or Tamer card from your trash to your hand.",
+    "effect": "When this card is trashed from your deck, you may place it in the battle area.\n[Main] Delete 1 of your opponent's Digimon with the highest level.\n[Main] \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below.).\n\u30fbReturn 1 purple Digimon card or Tamer card from your trash to your hand.",
     "form": "-",
     "id": "ST14-12",
     "illustrator": "Kenji Watanabe",
@@ -134226,7 +134226,7 @@
         "type": "Textured -\u00a0Alternative Art"
       }
     ],
-    "aceEffect": "Overflow \uff1c-4\uff1e.",
+    "aceEffect": "Overflow \uff1c-4\uff1e (As this card moves from the battle area or under a card to another area, lose 4 memory).",
     "attribute": "Vaccine",
     "block": [
       "03"
@@ -135120,7 +135120,7 @@
         "type": "Textured -\u00a0Alternative Art"
       }
     ],
-    "aceEffect": "Overflow \uff1c-4\uff1e.",
+    "aceEffect": "Overflow \uff1c-4\uff1e (As this card moves from the battle area or under a card to another area, lose 4 memory).",
     "attribute": "Data",
     "block": [
       "03"
@@ -135389,8 +135389,8 @@
     "cardImage": "assets/images/cards/ST17-01.webp",
     "cardLv": "-",
     "cardNumber": "ST17-01",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digi-Egg",
+    "color": "Green",
     "digiXros": "-",
     "digivolveCondition": [],
     "digivolveEffect": "-",
@@ -135401,15 +135401,15 @@
     "id": "ST17-01",
     "illustrator": "To be completed",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Gummymon",
+      "japanese": "\u30b0\u30df\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
     },
     "notes": "STARTER DECK DOUBLE TYPHOON [ST17]",
     "playCost": "-",
-    "rarity": "-",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -135418,41 +135418,47 @@
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "",
+    "type": "Lesser",
     "version": "Normal"
   },
   {
     "AAs": [],
     "JAAs": [],
     "aceEffect": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "03"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/ST17-02.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.3",
     "cardNumber": "ST17-02",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Green",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "1000",
     "effect": "-",
-    "form": "-",
+    "form": "Rookie",
     "id": "ST17-02",
     "illustrator": "To be completed",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Terriermon",
+      "japanese": "\u30c6\u30ea\u30a2\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
     },
     "notes": "STARTER DECK DOUBLE TYPHOON [ST17]",
-    "playCost": "-",
+    "playCost": "3",
     "rarity": "-",
     "restrictions": {
       "chinese": "Not released",
@@ -135462,41 +135468,47 @@
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "",
+    "type": "Beast",
     "version": "Normal"
   },
   {
     "AAs": [],
     "JAAs": [],
     "aceEffect": "-",
-    "attribute": "-",
+    "attribute": "Data",
     "block": [
       "03"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/ST17-03.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.3",
     "cardNumber": "ST17-03",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Green",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "1000",
     "effect": "-",
-    "form": "-",
+    "form": "Rookie",
     "id": "ST17-03",
     "illustrator": "To be completed",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Lopmon",
+      "japanese": "\u30ed\u30c3\u30d7\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
     },
     "notes": "STARTER DECK DOUBLE TYPHOON [ST17]",
-    "playCost": "-",
+    "playCost": "3",
     "rarity": "-",
     "restrictions": {
       "chinese": "Not released",
@@ -135506,35 +135518,46 @@
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "",
+    "type": "Beast",
     "version": "Normal"
   },
   {
     "AAs": [],
     "JAAs": [],
     "aceEffect": "-",
-    "attribute": "-",
+    "attribute": "Virus",
     "block": [
       "03"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/ST17-04.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.4",
     "cardNumber": "ST17-04",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Green/Purple",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "3",
+        "level": "3"
+      },
+      {
+        "color": "Purple",
+        "cost": "3",
+        "level": "3"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "-",
     "effect": "-",
-    "form": "-",
+    "form": "Champion",
     "id": "ST17-04",
     "illustrator": "To be completed",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Wendigomon",
+      "japanese": "\u30a6\u30a7\u30f3\u30c7\u30a3\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -135549,36 +135572,47 @@
       "korean": "Not released"
     },
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "",
+    "specialDigivolve": "[Digivolve]Lv.3 w/[Lopmon]/[Terriermon]\u00a0in its name: Cost 2 ",
+    "type": "Beastkin",
     "version": "Normal"
   },
   {
     "AAs": [],
     "JAAs": [],
     "aceEffect": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "03"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/ST17-05.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.4",
     "cardNumber": "ST17-05",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Green/Black",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "3",
+        "level": "3"
+      },
+      {
+        "color": "Black",
+        "cost": "3",
+        "level": "3"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "-",
     "effect": "-",
-    "form": "-",
+    "form": "Champion",
     "id": "ST17-05",
     "illustrator": "To be completed",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Gargomon",
+      "japanese": "\u30ac\u30eb\u30b4\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -135593,36 +135627,47 @@
       "korean": "Not released"
     },
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "",
+    "specialDigivolve": "[Digivolve]Lv.3 w/[Terriermon]/[Lopmon]\u00a0in its name: Cost 2 ",
+    "type": "Beastkin",
     "version": "Normal"
   },
   {
     "AAs": [],
     "JAAs": [],
     "aceEffect": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "03"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/ST17-06.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.4",
     "cardNumber": "ST17-06",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Green/Yellow",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "4",
+        "level": "3"
+      },
+      {
+        "color": "Yellow",
+        "cost": "4",
+        "level": "3"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "-",
     "effect": "-",
-    "form": "-",
+    "form": "Armor Form",
     "id": "ST17-06",
     "illustrator": "To be completed",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Rapidmon",
+      "japanese": "\u30e9\u30d4\u30c3\u30c9\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -135637,36 +135682,47 @@
       "korean": "Not released"
     },
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "",
+    "specialDigivolve": "[Digivolve][Terriermon]: Cost 3 ",
+    "type": "Holy Warrior",
     "version": "Normal"
   },
   {
     "AAs": [],
     "JAAs": [],
     "aceEffect": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "03"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/ST17-07.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.5",
     "cardNumber": "ST17-07",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Green/Black",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "4",
+        "level": "4"
+      },
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "4"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "-",
     "effect": "-",
-    "form": "-",
+    "form": "Ultimate",
     "id": "ST17-07",
     "illustrator": "To be completed",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Rapidmon",
+      "japanese": "\u30e9\u30d4\u30c3\u30c9\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -135681,43 +135737,54 @@
       "korean": "Not released"
     },
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "",
+    "specialDigivolve": "[Digivolve]Lv.4 w/[Gargomon]\u00a0in its name: Cost 3 [Digivolve]Lv. 4 2-color green card: Cost 3 ",
+    "type": "Cyborg",
     "version": "Normal"
   },
   {
     "AAs": [],
     "JAAs": [],
-    "aceEffect": "-",
-    "attribute": "-",
+    "aceEffect": "Overflow \uff1c-4\uff1e (As this card moves from the battle area or under a card to another area, lose 4 memory).",
+    "attribute": "Vaccine",
     "block": [
       "03"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/ST17-08.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.6",
     "cardNumber": "ST17-08",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Green/Black",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "4",
+        "level": "5"
+      },
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
-    "effect": "-",
-    "form": "-",
+    "dp": "12000",
+    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e.\n\uff1cBlocker\uff1e \n\uff1cReboot\uff1e \n[When Digivolving] Suspend 2 of your opponent's Digimon or Tamers. Then, 2 of their Digimon or Tamers can't unsuspend or digivolve until the end of their turn.\n[When Digivolving] [End of Attack] [Once Per Turn] You may unsuspend this Digimon.",
+    "form": "Mega",
     "id": "ST17-08",
-    "illustrator": "To be completed",
+    "illustrator": "Tonamikanji",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "MegaGargomon",
+      "japanese": "\u30bb\u30f3\u30c8\u30ac\u30eb\u30b4\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
     },
     "notes": "STARTER DECK DOUBLE TYPHOON [ST17]",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "7",
+    "rarity": "SR",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -135725,36 +135792,47 @@
       "korean": "Not released"
     },
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "",
+    "specialDigivolve": "[Digivolve]w/[Rapidmon]\u00a0in its name: Cost 5 ",
+    "type": "Machine",
     "version": "Normal"
   },
   {
     "AAs": [],
     "JAAs": [],
     "aceEffect": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "03"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/ST17-09.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.6",
     "cardNumber": "ST17-09",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Green/Purple",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "4",
+        "level": "5"
+      },
+      {
+        "color": "Purple",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "-",
     "effect": "-",
-    "form": "-",
+    "form": "Mega",
     "id": "ST17-09",
     "illustrator": "To be completed",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Cherubimon",
+      "japanese": "\u30b1\u30eb\u30d3\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -135769,8 +135847,8 @@
       "korean": "Not released"
     },
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "",
+    "specialDigivolve": "[Digivolve]Lv. 5 2-color green card: Cost 3 ",
+    "type": "Cherub",
     "version": "Normal"
   },
   {
@@ -135785,11 +135863,11 @@
     "cardImage": "assets/images/cards/ST17-10.webp",
     "cardLv": "-",
     "cardNumber": "ST17-10",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Tamer",
+    "color": "Green",
     "digiXros": "-",
     "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveEffect": "[Security] Play this card without paying its memory cost.",
     "dnaDigivolve": "-",
     "dp": "-",
     "effect": "-",
@@ -135797,8 +135875,8 @@
     "id": "ST17-10",
     "illustrator": "To be completed",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Henry Wong",
+      "japanese": "\u674e\u5065\u826f",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -135814,7 +135892,7 @@
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "",
+    "type": "Tamer",
     "version": "Normal"
   },
   {
@@ -135829,27 +135907,27 @@
     "cardImage": "assets/images/cards/ST17-11.webp",
     "cardLv": "-",
     "cardNumber": "ST17-11",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Option",
+    "color": "Green",
     "digiXros": "-",
     "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveEffect": "[Security] Suspend 2 of your opponent's Digimon. Then, place this card in the battle area.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "-",
+    "effect": "[Main] Reveal the top 3 cards of your deck. Add 1 green Digimon card and 1 Green Tamer card among them to the hand. Return the rest to the bottom of the deck. Then, place this card in the battle area.\n[Main] \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below.)\n\u30fbYou may play 1 [Terriermon]/[Lopmon] from your hand without paying the cost.",
     "form": "-",
     "id": "ST17-11",
     "illustrator": "To be completed",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Double Typhoon",
+      "japanese": "\u30c0\u30d6\u30eb\u30bf\u30a4\u30d5\u30fc\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
     },
     "notes": "STARTER DECK DOUBLE TYPHOON [ST17]",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "3",
+    "rarity": "R",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -135858,7 +135936,7 @@
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "",
+    "type": "Option",
     "version": "Normal"
   },
   {
@@ -135873,11 +135951,11 @@
     "cardImage": "assets/images/cards/ST17-12.webp",
     "cardLv": "-",
     "cardNumber": "ST17-12",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Option",
+    "color": "Green",
     "digiXros": "-",
     "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveEffect": "[Security] Activate this card's [Main] effect.",
     "dnaDigivolve": "-",
     "dp": "-",
     "effect": "-",
@@ -135885,8 +135963,8 @@
     "id": "ST17-12",
     "illustrator": "To be completed",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Giant Missile",
+      "japanese": "\u30b8\u30e3\u30a4\u30a2\u30f3\u30c8\u30df\u30b5\u30a4\u30eb",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -135902,7 +135980,7 @@
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "",
+    "type": "Option",
     "version": "Normal"
   },
   {
