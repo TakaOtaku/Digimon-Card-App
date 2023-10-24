@@ -13,8 +13,10 @@ from classes.DigivolveCondition import DigivolveCondition
 
 import WikiVariables as WV
 
+
 def check_if_image_exists(image_path):
-  return os.path.exists(image_path)
+    return os.path.exists(image_path)
+
 
 def getLinks(wikiPageLink):
     page = requests.get(wikiPageLink['url'])
@@ -52,7 +54,7 @@ def getPromoLinks():
             WV.cardLinks.append(f"/wiki/P-{i:03}")
         else:
             print(f"Link doesn't exist: {url}")
-            break  # Stop the loop when you encounte
+            break  # Stop the loop when you encounter nothing
 
 
 def splitCellsInPair(cells):
@@ -413,39 +415,43 @@ def remove_item_at_index(arr, index):
 def getCardData():
     count = 0
     for link in WV.cardLinks:
-        count += 1
+        try:
+          count += 1
 
-        page = requests.get(WV.wikiLink + link)
-        soup = BeautifulSoup(page.content, "html.parser")
+          page = requests.get(WV.wikiLink + link)
+          soup = BeautifulSoup(page.content, "html.parser")
 
-        currentDigimon = DigimonCard()
+          currentDigimon = DigimonCard()
 
-        cardTable = soup.find('div', class_='ctable')
+          cardTable = soup.find('div', class_='ctable')
 
-        if cardTable is None:
-            print("No Card Table found for: " + link)
-            continue
+          if cardTable is None:
+              print("No Card Table found for: " + link)
+              continue
 
-        infoMain = cardTable.find("div", class_="info-main")
-        infoDigivolve = cardTable.find("div", class_="info-digivolve")
-        infoExtra = cardTable.find("div", class_="info-extra")
-        infoRestricted = cardTable.find("div", class_="info-restricted")
+          infoMain = cardTable.find("div", class_="info-main")
+          infoDigivolve = cardTable.find("div", class_="info-digivolve")
+          infoExtra = cardTable.find("div", class_="info-extra")
+          infoRestricted = cardTable.find("div", class_="info-restricted")
 
-        infoIllustrator = soup.find_all("table", class_="settable")
+          infoIllustrator = soup.find_all("table", class_="settable")
 
-        currentDigimon = getMainInfo(infoMain, currentDigimon)
-        currentDigimon = getDigivolveInfo(infoDigivolve, currentDigimon)
-        currentDigimon = getExtraInfo(infoExtra, currentDigimon)
-        currentDigimon = getRestrictedInfo(infoRestricted, currentDigimon)
+          currentDigimon = getMainInfo(infoMain, currentDigimon)
+          currentDigimon = getDigivolveInfo(infoDigivolve, currentDigimon)
+          currentDigimon = getExtraInfo(infoExtra, currentDigimon)
+          currentDigimon = getRestrictedInfo(infoRestricted, currentDigimon)
 
-        currentDigimon = getIllustratorsInfo(infoIllustrator, currentDigimon)
+          currentDigimon = getIllustratorsInfo(infoIllustrator, currentDigimon)
 
-        currentDigimon = setRarity(currentDigimon)
-        currentDigimon = setImageAndDownload(currentDigimon, link)
+          currentDigimon = setRarity(currentDigimon)
+          currentDigimon = setImageAndDownload(currentDigimon, link)
 
-        print('[' + str(count) + '/' + str(WV.cardCount) + ']' +
-              currentDigimon.id + ' - ' + currentDigimon.name.english)
-        WV.cards.append(currentDigimon)
+          print('[' + str(count) + '/' + str(WV.cardCount) + ']' +
+                currentDigimon.id + ' - ' + currentDigimon.name.english)
+          WV.cards.append(currentDigimon)
+        except:
+            print("Error for: " + link)
+
 
 
 def setNotes():
