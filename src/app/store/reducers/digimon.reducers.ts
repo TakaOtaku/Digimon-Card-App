@@ -5,8 +5,6 @@ import { DigimonCard, ICountCard, IDeck, IDigimonState } from '../../../models';
 import { WebsiteActions } from '../digimon.actions';
 
 export const dummyCard: DigimonCard = {
-  AAs: [],
-  JAAs: [],
   aceEffect: '-',
   attribute: '-',
   block: ['00'],

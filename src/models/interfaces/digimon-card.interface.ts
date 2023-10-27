@@ -12,8 +12,6 @@ export interface DigivolveCondition {
 }
 
 export interface DigimonCard {
-  AAs: AA[];
-  JAAs: AA[];
   aceEffect: string;
   attribute: string;
   block: string[];

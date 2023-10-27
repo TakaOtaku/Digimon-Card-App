@@ -1,48 +1,19 @@
 import { CARDSET } from '../../models';
-import { AA, DigimonCard } from '../../models';
-import DigimonCardsJson from './DigimonCards.json';
+import { DigimonCard } from '../../models';
+import DigimonCardsJsonENG from './PreparedDigimonCardsENG.json';
+import DigimonCardsJsonJAP from './PreparedDigimonCardsJAP.json';
 
 export function setupDigimonCards(cardset: CARDSET): DigimonCard[] {
   return cardset === CARDSET.English ? setupJsonENG() : setupJsonJAP();
 }
 
 function setupJsonENG(): DigimonCard[] {
-  const digimonCards: DigimonCard[] = [...DigimonCardsJson];
-  digimonCards.forEach((digimonCard: DigimonCard) => {
-    digimonCard.AAs.forEach((aa: AA) => {
-      digimonCards.push({
-        ...digimonCard,
-        cardImage: addAABeforeWebp(digimonCard.cardImage, aa.id),
-        id: digimonCard.id + aa.id,
-        illustrator: aa.illustrator,
-        notes: aa.note,
-        version: aa.type,
-      });
-    });
-  });
+  const digimonCards: DigimonCard[] = [...DigimonCardsJsonENG];
   return digimonCards;
 }
 
 function setupJsonJAP(): DigimonCard[] {
-  const japCards: DigimonCard[] = [];
-  [...DigimonCardsJson].forEach((digimonCard: DigimonCard) => {
-    japCards.push({
-      ...digimonCard,
-      cardImage: addJBeforeWebp(digimonCard.cardImage),
-    });
-    digimonCard.JAAs.forEach((aa: AA) => {
-      japCards.push({
-        ...digimonCard,
-        id: digimonCard.id + aa.id,
-        illustrator: aa.illustrator,
-        notes: aa.note,
-        cardImage: addJBeforeWebp(
-          addAABeforeWebp(digimonCard.cardImage, aa.id)
-        ),
-        version: aa.type,
-      });
-    });
-  });
+  const japCards: DigimonCard[] = [...DigimonCardsJsonJAP];
   return japCards;
 }
 
@@ -57,17 +28,9 @@ export function setupDigimonCardMap(
 function mapJsonToEngCardList(): Map<string, DigimonCard> {
   const cards: Map<string, DigimonCard> = new Map<string, DigimonCard>();
 
-  const digimonCards: DigimonCard[] = [...DigimonCardsJson];
+  const digimonCards: DigimonCard[] = [...DigimonCardsJsonENG];
   digimonCards.forEach((digimonCard: DigimonCard) => {
     cards.set(digimonCard.id, digimonCard);
-    digimonCard.AAs.forEach((aa: AA) => {
-      cards.set(digimonCard.id + aa.id, {
-        ...digimonCard,
-        illustrator: aa.illustrator,
-        notes: aa.note,
-        version: aa.type,
-      });
-    });
   });
 
   return cards;
@@ -76,19 +39,11 @@ function mapJsonToEngCardList(): Map<string, DigimonCard> {
 function mapJsonToJapCardList(): Map<string, DigimonCard> {
   const cards: Map<string, DigimonCard> = new Map<string, DigimonCard>();
 
-  const digimonCards: DigimonCard[] = [...DigimonCardsJson];
+  const digimonCards: DigimonCard[] = [...DigimonCardsJsonJAP];
   digimonCards.forEach((digimonCard: DigimonCard) => {
     cards.set(digimonCard.id, {
       ...digimonCard,
       cardImage: addJBeforeWebp(digimonCard.cardImage),
-    });
-    digimonCard.JAAs.forEach((aa: AA) => {
-      cards.set(digimonCard.id + aa.id, {
-        ...digimonCard,
-        illustrator: aa.illustrator,
-        notes: aa.note,
-        version: aa.type,
-      });
     });
   });
 
@@ -116,20 +71,4 @@ export function addSampleBeforeWebp(imagePath: string): string {
     // If the imagePath does not end with ".webp", return it as is.
     return imagePath;
   }
-}
-
-function addAABeforeWebp(imagePath: string, AA: string): string {
-  if (imagePath.endsWith('.webp')) {
-    const index = imagePath.lastIndexOf('.webp');
-    const newPath =
-      imagePath.slice(0, index) + getP(AA) + imagePath.slice(index);
-    return newPath;
-  } else {
-    // If the imagePath does not end with ".webp", return it as is.
-    return imagePath;
-  }
-}
-
-function getP(code: string): string {
-  return '_P' + code.split('_P')[1];
 }
