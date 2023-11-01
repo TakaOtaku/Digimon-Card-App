@@ -27,15 +27,6 @@ jobs:
       - name: Run Python script
         run: python scripts/python/Wiki/GetDataFromWiki.py
 
-      - name: Convert PNG to WebP
-        run: python scripts/python/Wiki/PNGtoWebP.py
-
-      - name: Move Data & Images to correct folder
-        run: python scripts/python/Wiki/MoveFiles.py
-
-      - name: Delete PNGs
-        run: python scripts/python/Wiki/DeletePNGs.py
-
       - name: Commit everything
         run: |
           git config --local user.email "christian_bayer@yahoo.de"

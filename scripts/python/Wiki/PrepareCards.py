@@ -57,69 +57,69 @@ def check_image_exists(file_path):
 
     return os.path.isfile("src/" + file_path)
 
+def prepareCards():
+    with open('./scripts/python/Wiki/jsons/DigimonCards.json', 'r') as file:
+        data = json.load(file)
 
-with open('./scripts/python/Wiki/jsons/DigimonCards.json', 'r') as file:
-    data = json.load(file)
+        for card in data:
+            preparedCardsENG.append(card)
 
-    for card in data:
-        preparedCardsENG.append(card)
+            a = deepcopy(card)
+            a["cardImage"] = addJBeforeWebp(card["cardImage"])
+            preparedCardsJAP.append(a)
 
-        a = deepcopy(card)
-        a["cardImage"] = addJBeforeWebp(card["cardImage"])
-        preparedCardsJAP.append(a)
+            # Add Card AAs and JAAs as single Cards
+            for aa in card['AAs']:
+                eng = deepcopy(card)
+                eng["cardImage"] = addAABeforeWebp(eng["cardImage"], aa["id"])
+                eng["id"] = eng["id"] + aa["id"]
+                eng["illustrator"] = aa["illustrator"]
+                eng["notes"] = aa["note"]
+                eng["version"] = aa["type"]
+                preparedCardsENG.append(eng)
 
-        # Add Card AAs and JAAs as single Cards
-        for aa in card['AAs']:
-            eng = deepcopy(card)
-            eng["cardImage"] = addAABeforeWebp(eng["cardImage"], aa["id"])
-            eng["id"] = eng["id"] + aa["id"]
-            eng["illustrator"] = aa["illustrator"]
-            eng["notes"] = aa["note"]
-            eng["version"] = aa["type"]
-            preparedCardsENG.append(eng)
+            for jaa in card['JAAs']:
+                jap = deepcopy(card)
+                jap["cardImage"] = addJBeforeWebp(
+                    addAABeforeWebp(jap["cardImage"], aa["id"]))
+                jap["id"] = jap["id"] + jaa["id"]
+                jap["illustrator"] = jaa["illustrator"]
+                jap["notes"] = jaa["note"]
+                jap["version"] = jaa["type"]
+                preparedCardsJAP.append(jap)
 
-        for jaa in card['JAAs']:
-            jap = deepcopy(card)
-            jap["cardImage"] = addJBeforeWebp(
-                addAABeforeWebp(jap["cardImage"], aa["id"]))
-            jap["id"] = jap["id"] + aa["id"]
-            jap["illustrator"] = aa["illustrator"]
-            jap["notes"] = aa["note"]
-            jap["version"] = aa["type"]
-            preparedCardsJAP.append(jap)
+        # Remove AAs and JAAs from the prepared cards
+        for card in preparedCardsENG:
+            card.pop("AAs", None)
+            card.pop("JAAs", None)
+        for card in preparedCardsJAP:
+            card.pop("AAs", None)
+            card.pop("JAAs", None)
 
-    # Remove AAs and JAAs from the prepared cards
-    for card in preparedCardsENG:
-        card.pop("AAs", None)
-        card.pop("JAAs", None)
-    for card in preparedCardsJAP:
-        card.pop("AAs", None)
-        card.pop("JAAs", None)
-
-    # Check each card form the prepared cards if the card image exists in the path
-    path = "src/"
-    for card in preparedCardsENG:
-        exists = check_image_exists(card["cardImage"])
-        if exists != True:
-            jExists = check_image_exists(addJBeforeWebp(card["cardImage"]))
-            if jExists:
-                card["cardImage"] = addJBeforeWebp(card["cardImage"])
-            else:
+        # Check each card form the prepared cards if the card image exists in the path
+        path = "src/"
+        for card in preparedCardsENG:
+            exists = check_image_exists(card["cardImage"])
+            if exists != True:
+                jExists = check_image_exists(addJBeforeWebp(card["cardImage"]))
+                if jExists:
+                    card["cardImage"] = addJBeforeWebp(card["cardImage"])
+                else:
+                    sampleExists = check_image_exists(
+                        addSampleBeforeWebp(card["cardImage"]))
+                    if sampleExists:
+                        card["cardImage"] = addSampleBeforeWebp(card["cardImage"])
+        for card in preparedCardsJAP:
+            exists = check_image_exists(card["cardImage"])
+            if exists != True:
                 sampleExists = check_image_exists(
                     addSampleBeforeWebp(card["cardImage"]))
                 if sampleExists:
                     card["cardImage"] = addSampleBeforeWebp(card["cardImage"])
-    for card in preparedCardsJAP:
-        exists = check_image_exists(card["cardImage"])
-        if exists != True:
-            sampleExists = check_image_exists(
-                addSampleBeforeWebp(card["cardImage"]))
-            if sampleExists:
-                card["cardImage"] = addSampleBeforeWebp(card["cardImage"])
 
-    # Save the updated JSON back to the file
-    with open('./scripts/python/Wiki/jsons/PreparedDigimonCardsENG.json', 'w') as file:
-        json.dump(preparedCardsENG, file, indent=2, sort_keys=sort_key)
+        # Save the updated JSON back to the file
+        with open('./scripts/python/Wiki/jsons/PreparedDigimonCardsENG.json', 'w') as file:
+            json.dump(preparedCardsENG, file, indent=2, sort_keys=sort_key)
 
-    with open('./scripts/python/Wiki/jsons/PreparedDigimonCardsJAP.json', 'w') as file:
-        json.dump(preparedCardsJAP, file, indent=2, sort_keys=sort_key)
+        with open('./scripts/python/Wiki/jsons/PreparedDigimonCardsJAP.json', 'w') as file:
+            json.dump(preparedCardsJAP, file, indent=2, sort_keys=sort_key)
