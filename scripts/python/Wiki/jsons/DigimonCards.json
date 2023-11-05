@@ -63593,6 +63593,12 @@
         "illustrator": "p!k@ru",
         "note": "RB-01: Resurgence Booster",
         "type": "Foil -\u00a0Rare"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "koki",
+        "note": "ST-17: Advanced Deck Set Double Typhoon",
+        "type": "New Block -\u00a0Alternative Art"
       }
     ],
     "JAAs": [
@@ -63601,13 +63607,20 @@
         "illustrator": "p!k@ru",
         "note": "RB-01: Resurgence Booster",
         "type": "Foil -\u00a0Rare"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "koki",
+        "note": "ST-17: Advanced Deck Set Double Typhoon",
+        "type": "New Block -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "-",
     "attribute": "-",
     "block": [
       "00",
-      "02"
+      "02",
+      "03"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT4-104.webp",
@@ -136761,7 +136774,7 @@
     "digivolveEffect": "[All Turns] While this Digimon is suspended, it gets +1000 DP.",
     "dnaDigivolve": "-",
     "dp": "7000",
-    "effect": "[All Turns] [Once Per Turn] When this Digimon becomes suspended, 1 of your opponent's Digimon and all of your opponent's Security Digimon get -4000 DP until the end of your opponent's turn.",
+    "effect": "\uff1cBlocker\uff1e \n\uff1cArmor Purge\uff1e\n[All Turns] [Once Per Turn] When this Digimon becomes suspended, 1 of your opponent's Digimon and all of your opponent's Security Digimon get -4000 DP until the end of your opponent's turn.",
     "form": "Armor Form",
     "id": "ST17-06",
     "illustrator": "Tonamikanji",
