@@ -36597,7 +36597,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "7000",
-    "effect": "[On Play] [When Digivolving] Reveal the top 3 cards of your opponent's deck. Delete 1 of your opponent's for each Digimon card among them. Return the cards to either the top or bottom of their deck.",
+    "effect": "[On Play] [When Digivolving] Reveal the top 3 cards of your opponent's deck. \uff1cDe-Digivolve1\uff1e on 1 of your opponent's Digimonfor each Digimon card among them. Return the cards to either the top or bottom of their deck.",
     "form": "Ultimate",
     "id": "BT14-065",
     "illustrator": "GOSSAN",
@@ -110770,12 +110770,27 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "YAMURETSU",
+        "note": "ST-17: Advanced Deck Set Double Typhoon",
+        "type": "New Block -\u00a0Alternative Art"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "YAMURETSU",
+        "note": "ST-17: Advanced Deck Set Double Typhoon",
+        "type": "New Block -\u00a0Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "-",
     "block": [
-      "02"
+      "02",
+      "03"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX4-002.webp",
@@ -112600,12 +112615,27 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "YAMURETSU",
+        "note": "ST-17: Advanced Deck Set Double Typhoon",
+        "type": "New Block -\u00a0Alternative Art"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "YAMURETSU",
+        "note": "ST-17: Advanced Deck Set Double Typhoon",
+        "type": "New Block -\u00a0Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "Data",
     "block": [
-      "02"
+      "02",
+      "03"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX4-034.webp",
@@ -127990,7 +128020,7 @@
     "digivolveEffect": "[Security] Play this card without paying its memory cost.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Start of Your Main Phase] If you have a Digimon with the [Free]\u00a0trait, gain 1 memory.\n[On Play] Activate 1 of the effects below:\n\u30fbYou may play 1 [Hawkmon] from your hand without paying the cost.\n\u30fb1 of your Digimon may digivolve into [Aquilamon] in the hand without paying the cost.",
+    "effect": "[Start of Your Main Phase] If you have a Digimon with the [Free]\u00a0trait, gain 1 memory.\n[On Play] Activate 1 of the following effects:\n\u30fbYou may play 1 [Hawkmon] from your hand without paying the cost.\n\u30fb1 of your Digimon may digivolve into [Aquilamon] in the hand without paying the cost.",
     "form": "-",
     "id": "P-126",
     "illustrator": "No Illustrator",
