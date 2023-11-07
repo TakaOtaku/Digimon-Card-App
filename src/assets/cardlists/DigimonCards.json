@@ -35201,7 +35201,14 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "poroze",
+        "note": "Blast Ace Pre-Release Pack",
+        "type": "Foil - Pre Release Stamp -\u00a0Rare"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "Vaccine",
@@ -35242,7 +35249,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -35251,7 +35258,14 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "GOSSAN",
+        "note": "Blast Ace Pre-Release Pack",
+        "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "Vaccine",
@@ -35282,8 +35296,8 @@
     "name": {
       "english": "Jijimon",
       "japanese": "\u30b8\u30b8\u30e2\u30f3",
-      "korean": "-",
-      "simplifiedChinese": "-",
+      "korean": "\ud560\ubc30\ubaac",
+      "simplifiedChinese": "\u516c\u516c\u517d",
       "traditionalChinese": "\u516c\u516c\u7378"
     },
     "notes": "\u25b9BOOSTER BLAST ACE [BT14]",
@@ -35292,7 +35306,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -35301,7 +35315,14 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "Spareribs",
+        "note": "Blast Ace Pre-Release Pack",
+        "type": "Foil - Pre Release Stamp -\u00a0Rare"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "Vaccine",
@@ -35342,7 +35363,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -35382,7 +35403,7 @@
     "name": {
       "english": "Kunemon",
       "japanese": "\u30af\u30cd\u30e2\u30f3",
-      "korean": "-",
+      "korean": "\ucfe0\ub124\ubaac",
       "simplifiedChinese": "\u53e4\u5c3c\u517d",
       "traditionalChinese": "\u53e4\u5c3c\u7378"
     },
@@ -35392,7 +35413,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -35434,7 +35455,7 @@
       "japanese": "\u30b3\u30c9\u30af\u30b0\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "\u5c0f\u8718\u86db\u7378"
     },
     "notes": "\u25b9BOOSTER BLAST ACE [BT14]",
     "playCost": "3",
@@ -35442,7 +35463,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -35456,7 +35477,7 @@
         "id": "_P1",
         "illustrator": "Tonamikanji",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
       }
     ],
     "JAAs": [
@@ -35464,7 +35485,7 @@
         "id": "_P1",
         "illustrator": "Tonamikanji",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "-",
@@ -35489,7 +35510,7 @@
     "digivolveEffect": "[Your Turn] [Once Per Turn] When this Digimon would digivolve, if you have a green Tamer, reduce the cost by 1.",
     "dnaDigivolve": "-",
     "dp": "1000",
-    "effect": "[Start of Your Main Phase] 1 of your opponent's Digimon gains \"[All Turns] When this Digimon becomes suspended, lose 2 memory.\" until the end of your opponent's turn.",
+    "effect": "[Start of Your Main Phase] 1 of your opponent's Digimon gains \"[All Turns] When this Digimon becomes suspended, lose 2 memory.\" until the end of their turn.",
     "form": "Rookie",
     "id": "BT14-044",
     "illustrator": "Takase",
@@ -35506,7 +35527,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -35556,7 +35577,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -35565,7 +35586,14 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "Takase",
+        "note": "Blast Ace Pre-Release Pack",
+        "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "Data",
@@ -35606,7 +35634,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -35639,16 +35667,16 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "5000",
-    "effect": "[On Play] [When Digivolving] Suspend 1 of your opponent's Digimon. All of your opponent's Digimon with 5000 DP or less can't unsuspend during your opponent's next unsuspend phase.",
+    "effect": "[On Play] [When Digivolving] Suspend 1 of your opponent's Digimon. During your opponent's next unsuspend phase, all of your opponent's Digimon with 5000 DP or less don't unsuspend.",
     "form": "Champion",
     "id": "BT14-047",
     "illustrator": "banira",
     "name": {
       "english": "Dokugumon",
       "japanese": "\u30c9\u30af\u30b0\u30e2\u30f3",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "korean": "\uc2a4\ud30c\uc774\ub354\ubaac",
+      "simplifiedChinese": "\u6bd2\u8718\u86db\u517d",
+      "traditionalChinese": "\u8718\u86db\u7378"
     },
     "notes": "\u25b9BOOSTER BLAST ACE [BT14]",
     "playCost": "5",
@@ -35656,7 +35684,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -35665,7 +35693,14 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "Tomotake Kinoshita",
+        "note": "Blast Ace Pre-Release Pack",
+        "type": "Foil - Pre Release Stamp -\u00a0Rare"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "Vaccine",
@@ -35706,7 +35741,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -35809,7 +35844,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "7000",
-    "effect": "[On Play] [When Digivolving] Until the end of your opponent's turn, 1 of your opponent's Digimon can't unsuspend.",
+    "effect": "[On Play] [When Digivolving] 1 of your opponent's Digimon doesn't unsuspend until the end of their turn.",
     "form": "Ultimate",
     "id": "BT14-050",
     "illustrator": "koki",
@@ -35826,7 +35861,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -35876,7 +35911,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -35916,8 +35951,8 @@
     "name": {
       "english": "Panjyamon",
       "japanese": "\u30d1\u30f3\u30b8\u30e3\u30e2\u30f3",
-      "korean": "-",
-      "simplifiedChinese": "-",
+      "korean": "\ud654\uc774\ud2b8\ub808\uc624\ubaac",
+      "simplifiedChinese": "\u767d\u72ee\u517d",
       "traditionalChinese": "\u90a6\u52a0\u7378"
     },
     "notes": "\u25b9BOOSTER BLAST ACE [BT14]",
@@ -35926,7 +35961,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -35935,7 +35970,14 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "Takase",
+        "note": "Blast Ace Pre-Release Pack",
+        "type": "Foil - Pre Release Stamp -\u00a0Rare"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "Data",
@@ -35976,7 +36018,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -35985,7 +36027,14 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "Tomotake Kinoshita",
+        "note": "Blast Ace Pre-Release Pack",
+        "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "Vaccine",
@@ -36026,7 +36075,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -36056,7 +36105,7 @@
         "level": "2"
       }
     ],
-    "digivolveEffect": "\uff1cReboot\uff1e.",
+    "digivolveEffect": "\uff1cBlocker\uff1e.",
     "dnaDigivolve": "-",
     "dp": "2000",
     "effect": "-",
@@ -36076,7 +36125,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -36090,7 +36139,7 @@
         "id": "_P1",
         "illustrator": "Tonamikanji",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
       }
     ],
     "JAAs": [
@@ -36098,7 +36147,7 @@
         "id": "_P1",
         "illustrator": "Tonamikanji",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "-",
@@ -36140,7 +36189,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -36195,7 +36244,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -36204,7 +36253,14 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "Poroze",
+        "note": "Blast Ace Pre-Release Pack",
+        "type": "Foil - Pre Release Stamp -\u00a0Rare"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "Virus",
@@ -36228,7 +36284,7 @@
     "digivolveEffect": "\uff1cBlocker\uff1e.",
     "dnaDigivolve": "-",
     "dp": "2000",
-    "effect": "[On Play] [When Digivolving] By placing 1 [Satsuki Tamahime] from your hand at the bottom of this Digimon's digivolution cards, 1 of your Digimon gains \uff1cRush\uff1efor the turn.",
+    "effect": "[On Play] [When Digivolving] By placing 1 [Satsuki Tamahime] from your hand as this Digimon's bottom digivolution card, 1 of your Digimon gains \uff1cRush\uff1efor the turn.",
     "form": "Champion",
     "id": "BT14-058",
     "illustrator": "Poroze",
@@ -36300,7 +36356,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -36310,6 +36366,12 @@
   },
   {
     "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "Kaz",
+        "note": "Blast Ace Pre-Release Pack",
+        "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
+      },
       {
         "id": "_P1",
         "illustrator": "Tomotake Kinoshita",
@@ -36414,7 +36476,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -36456,7 +36518,7 @@
       "japanese": "\u30ca\u30ce\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "\u5206\u5b50\u7378"
     },
     "notes": "\u25b9BOOSTER BLAST ACE [BT14]",
     "playCost": "6",
@@ -36464,7 +36526,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -36473,7 +36535,14 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "Poroze",
+        "note": "Blast Ace Pre-Release Pack",
+        "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "Virus",
@@ -36506,7 +36575,7 @@
       "japanese": "\u30d6\u30e9\u30c3\u30af\u30ad\u30f3\u30b0\u30cc\u30e1\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "\u9ed1\u5e1d\u9f3b\u6d95\u7378"
     },
     "notes": "\u25b9BOOSTER BLAST ACE [BT14]",
     "playCost": "6",
@@ -36523,7 +36592,14 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "kaz",
+        "note": "Blast Ace Pre-Release Pack",
+        "type": "Foil - Pre Release Stamp -\u00a0Rare"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "Virus",
@@ -36556,7 +36632,7 @@
       "japanese": "\u30ab\u30fc\u30b4\u30c9\u30e9\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "\u904b\u8f38\u9f8d\u7378"
     },
     "notes": "\u25b9BOOSTER BLAST ACE [BT14]",
     "playCost": "7",
@@ -36564,7 +36640,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -36591,13 +36667,13 @@
       {
         "color": "Black",
         "cost": "3",
-        "level": "4"
+        "level": "5"
       }
     ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "7000",
-    "effect": "[On Play] [When Digivolving] Reveal the top 3 cards of your opponent's deck. \uff1cDe-Digivolve1\uff1e on 1 of your opponent's Digimonfor each Digimon card among them. Return the cards to either the top or bottom of their deck.",
+    "effect": "[On Play] [When Digivolving] Your opponent reveals the top 3 cards of their deck. \uff1cDe-Digivolve1\uff1e on 1 of your opponent's Digimonfor each Digimon card among them. Return the cards to either the top or bottom of the deck.",
     "form": "Ultimate",
     "id": "BT14-065",
     "illustrator": "GOSSAN",
@@ -36606,7 +36682,7 @@
       "japanese": "\u30d9\u30fc\u30c0\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "\u5165\u4fb5\u8005\u7378"
     },
     "notes": "\u25b9BOOSTER BLAST ACE [BT14]",
     "playCost": "7",
@@ -36614,7 +36690,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -36623,7 +36699,14 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "Poroze",
+        "note": "Blast Ace Pre-Release Pack",
+        "type": "Foil - Pre Release Stamp -\u00a0Rare"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "Virus",
@@ -36639,12 +36722,12 @@
     "digiXros": "-",
     "digivolveCondition": [
       {
-        "color": "Yellow",
+        "color": "Black",
         "cost": "3",
         "level": "5"
       },
       {
-        "color": "Black",
+        "color": "Yellow",
         "cost": "3",
         "level": "5"
       }
@@ -36661,7 +36744,7 @@
       "japanese": "\u30d7\u30e9\u30c1\u30ca\u30cc\u30e1\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "\u767d\u91d1\u9f3b\u6d95\u7378"
     },
     "notes": "\u25b9BOOSTER BLAST ACE [BT14]",
     "playCost": "10",
@@ -36678,7 +36761,14 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "GOSSAN",
+        "note": "Blast Ace Pre-Release Pack",
+        "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "Virus",
@@ -36702,7 +36792,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "11000",
-    "effect": "[On Play] [When Digivolving] Reveal the top 3 cards of your opponent's deck. Choose 1 Digimon card among them and delete any number of your opponent's Digimon with a total play cost up to that card's play cost. Return the cards to either the top or bottom of their deck.",
+    "effect": "[On Play] [When Digivolving] Your opponent reveals the top 3 cards of their deck. Choose 1 Digimon card among them, and delete up to its play cost's total worth of your opponent's Digimon. Return the revealed cards to either the top or bottom of the deck.",
     "form": "Mega",
     "id": "BT14-067",
     "illustrator": "GOSSAN",
@@ -36711,7 +36801,7 @@
       "japanese": "\u30a4\u30fc\u30d0\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "\u5916\u661f\u7378"
     },
     "notes": "\u25b9BOOSTER BLAST ACE [BT14]",
     "playCost": "11",
@@ -36719,7 +36809,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -36733,7 +36823,7 @@
         "id": "_P1",
         "illustrator": "Naochika Morishita",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
       }
     ],
     "JAAs": [
@@ -36741,7 +36831,7 @@
         "id": "_P1",
         "illustrator": "Naochika Morishita",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "-",
@@ -36766,7 +36856,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "12000",
-    "effect": "[When Digivolving] Delete any of your opponent's Digimon whose play costs add up to 7 or less.\n[Opponent's Turn] All of your Digimon with the [D-Brigade]\u00a0trait gain \uff1cBlocker\uff1e \n[End of Your Turn] [Once Per Turn] Reveal the top 3 cards of your deck. You may play any number of cards with the [D-Brigade]/[DigiPolice]\u00a0trait up to a total play cost of 7 among them without paying the cost. Trash the rest.",
+    "effect": "[When Digivolving] Delete up to 7 play cost's total worth of your opponent's Digimon.\n[Opponent's Turn] All of your Digimon with the [D-Brigade]\u00a0trait gain \uff1cBlocker\uff1e \n[End of Your Turn] [Once Per Turn] Reveal the top 3 cards of your deck. You may play up to 7 play cost's total worth of cards with the [D-Brigade]/[DigiPolice]\u00a0trait among them without paying the costs. Trash the rest.",
     "form": "Mega",
     "id": "BT14-068",
     "illustrator": "kaz",
@@ -36775,7 +36865,7 @@
       "japanese": "\u30d6\u30ea\u30ac\u30fc\u30c9\u30e9\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "\u65c5\u5718\u9f8d\u7378"
     },
     "notes": "\u25b9BOOSTER BLAST ACE [BT14]",
     "playCost": "12",
@@ -36783,7 +36873,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -36813,7 +36903,7 @@
         "level": "2"
       }
     ],
-    "digivolveEffect": "-",
+    "digivolveEffect": "[On Deletion] Gain 1 memory.",
     "dnaDigivolve": "-",
     "dp": "2000",
     "effect": "-",
@@ -36823,7 +36913,7 @@
     "name": {
       "english": "Gazimon",
       "japanese": "\u30ac\u30b8\u30e2\u30f3",
-      "korean": "-",
+      "korean": "\uac00\uc9c0\ubaac",
       "simplifiedChinese": "\u52a0\u652f\u517d",
       "traditionalChinese": "\u52a0\u652f\u7378"
     },
@@ -36833,7 +36923,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -36863,7 +36953,7 @@
         "level": "2"
       }
     ],
-    "digivolveEffect": "[Your Turn] [Once Per Turn] When a card in your hand is trashed by your own effect, gain 1 memory.",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When one of your effects trashes a card in your hand, gain 1 memory.",
     "dnaDigivolve": "-",
     "dp": "2000",
     "effect": "-",
@@ -36883,7 +36973,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -36897,7 +36987,7 @@
         "id": "_P1",
         "illustrator": "Tonamikanji",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
       }
     ],
     "JAAs": [
@@ -36905,7 +36995,7 @@
         "id": "_P1",
         "illustrator": "Tonamikanji",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "-",
@@ -36927,10 +37017,10 @@
         "level": "2"
       }
     ],
-    "digivolveEffect": "[Your Turn] [Once Per Turn] When your card with the [Dark Animal]/[SoC]\u00a0trait is played, gain 1 memory.",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When you play a card with the [Dark Animal]/[SoC]\u00a0trait, gain 1 memory.",
     "dnaDigivolve": "-",
     "dp": "1000",
-    "effect": "[Start of Your Main Phase] By placing 1 [Eiji Nagasumi] from your hand or trash under this Digimon as its bottom digivolution card, gain 1 memory.",
+    "effect": "[Start of Your Main Phase] By placing 1 [Eiji Nagasumi] from your hand or trash as this Digimon's bottom digivolution card, gain 1 memory.",
     "form": "Rookie",
     "id": "BT14-071",
     "illustrator": "sasasi",
@@ -36939,7 +37029,7 @@
       "japanese": "\u30eb\u30ac\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "\u9b54\u72fc\u7378"
     },
     "notes": "\u25b9BOOSTER BLAST ACE [BT14]",
     "playCost": "3",
@@ -36947,7 +37037,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -36980,7 +37070,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "4000",
-    "effect": "[On Play] [When Attacking] Return 1 purple Digimon card with the [Dark Animal]\u00a0trait trait from your trash to the hand. Then, trash 1 card in your hand.",
+    "effect": "[On Play] [When Attacking] Return 1 purple Digimon card with the [Dark Animal]\u00a0trait from your trash to the hand. Then, trash 1 card in your hand.",
     "form": "Champion",
     "id": "BT14-072",
     "illustrator": "GOSSAN",
@@ -36988,8 +37078,8 @@
       "english": "Fangmon",
       "japanese": "\u30bd\u30a6\u30eb\u30e2\u30f3",
       "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "simplifiedChinese": "\u7360\u7259\u517d",
+      "traditionalChinese": "\u72fc\u7259\u7378"
     },
     "notes": "\u25b9BOOSTER BLAST ACE [BT14]",
     "playCost": "4",
@@ -36997,7 +37087,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -37027,10 +37117,10 @@
         "level": "3"
       }
     ],
-    "digivolveEffect": "[Your Turn] [Once Per Turn] When a card in your hand is trashed by your own effect, gain 1 memory.",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When one of your effects trashes a card in your hand, gain 1 memory.",
     "dnaDigivolve": "-",
     "dp": "5000",
-    "effect": "[Your Turn] [Once Per Turn] When a card in your hand is trashed by your own effect, gain 1 memory.",
+    "effect": "[Your Turn] [Once Per Turn] When one of your effects trashes a card in your hand, gain 1 memory.",
     "form": "Champion",
     "id": "BT14-073",
     "illustrator": "SENNSU",
@@ -37047,7 +37137,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -37120,7 +37210,14 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "hokuyuu",
+        "note": "Blast Ace Pre-Release Pack",
+        "type": "Foil - Pre Release Stamp -\u00a0Rare"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "Virus",
@@ -37144,7 +37241,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "6000",
-    "effect": "[On Play] [When Attacking] Trash the top 3 cards of your deck.\n[Your Turn] This Digimon gets +1000 DP for every 3 cards in your trash.\n[On Deletion] Trash 1 random card in your opponent\u2019s hand.",
+    "effect": "[On Play] [When Attacking] Trash the top 3 cards of your deck.\n[Your Turn] This Digimon gets +1000 DP for every 3 cards in your trash.\n[On Deletion] Trash 1 card in your opponent\u2019s hand without looking.",
     "form": "Champion",
     "id": "BT14-075",
     "illustrator": "hokuyuu",
@@ -37161,7 +37258,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -37170,7 +37267,14 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "Hisashi Fujiwara",
+        "note": "Blast Ace Pre-Release Pack",
+        "type": "Foil - Pre Release Stamp -\u00a0Rare"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "Virus",
@@ -37211,7 +37315,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -37244,7 +37348,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "7000",
-    "effect": "[On Play] [When Digivolving] Trash the top 2 cards of both players' decks.\n[Your Turn] [Once Per Turn] When a card is trashed from your opponent's deck, gain 1 memory.",
+    "effect": "[On Play] [When Digivolving] Trash the top 2 cards of both players' decks.\n[Your Turn] [Once Per Turn] When a card in your opponent's deck is trashed, gain 1 memory.",
     "form": "Ultimate",
     "id": "BT14-077",
     "illustrator": "toriyufu",
@@ -37261,7 +37365,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -37270,7 +37374,14 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "sasasi",
+        "note": "Blast Ace Pre-Release Pack",
+        "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "Virus",
@@ -37303,7 +37414,7 @@
       "japanese": "\u30d8\u30eb\u30ac\u30eb\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "\u51a5\u754c\u9b54\u4eba\u72fc\u7378"
     },
     "notes": "\u25b9BOOSTER BLAST ACE [BT14]",
     "playCost": "7",
@@ -37311,7 +37422,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -37320,7 +37431,14 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "sasasi",
+        "note": "Blast Ace Pre-Release Pack",
+        "type": "Foil - Pre Release Stamp -\u00a0Rare"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "Virus",
@@ -37353,7 +37471,7 @@
       "japanese": "\u30bd\u30eb\u30ac\u30eb\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "\u592a\u967d\u9b54\u4eba\u72fc\u7378"
     },
     "notes": "\u25b9BOOSTER BLAST ACE [BT14]",
     "playCost": "8",
@@ -37361,7 +37479,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -37370,7 +37488,14 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "toriyufu",
+        "note": "Blast Ace Pre-Release Pack",
+        "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "Data",
@@ -37403,7 +37528,7 @@
       "japanese": "\u30c7\u30b9\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "\u6b7b\u4ea1\u7378"
     },
     "notes": "\u25b9BOOSTER BLAST ACE [BT14]",
     "playCost": "11",
@@ -37411,7 +37536,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -37425,7 +37550,7 @@
         "id": "_P1",
         "illustrator": "Tonamikanji",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
       }
     ],
     "JAAs": [
@@ -37433,7 +37558,7 @@
         "id": "_P1",
         "illustrator": "Tonamikanji",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "-",
@@ -37458,7 +37583,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "12000",
-    "effect": "[When Digivolving] You may play 1 level 4 or lower card with the [Dark Animal]/[SoC]\u00a0trait from your trash without paying its cost. If [Eiji Nagasumi] is in this Digimon's digivolution cards, increase the number of Digimon you can play with this effect by 2.\n[When Attacking] [Once Per Turn] By deleting 1 of your opponent's level 3 or lower Digimon, unsuspend this Digimon. For each Digimon you have in play, increase the level by 1.\n[Your Turn] Your turns ends only when your opponent has 3 or more memory.",
+    "effect": "[When Digivolving] You may play 1 level 4 or lower card with the [Dark Animal]/[SoC]\u00a0trait from your trash without paying its cost. If [Eiji Nagasumi] is in this Digimon's digivolution cards, increase the number of Digimon you can play with this effect by 2.\n[When Attacking] [Once Per Turn] By deleting 1 of your opponent's level 3 or lower Digimon, unsuspend this Digimon. For each of your Digimon, add 1 to the level this effect may choose.\n[Your Turn] Your turn end condition is the opponent having 3 or more memory.",
     "form": "Mega",
     "id": "BT14-081",
     "illustrator": "sasasi",
@@ -37467,7 +37592,7 @@
       "japanese": "\u30d5\u30a7\u30f3\u30ea\u30eb\u30ac\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "\u82ac\u91cc\u723e\u9b54\u72fc\u7378"
     },
     "notes": "\u25b9BOOSTER BLAST ACE [BT14]",
     "playCost": "12",
@@ -37475,7 +37600,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -37489,7 +37614,13 @@
         "id": "_P1",
         "illustrator": "No Illustrator",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
+      },
+      {
+        "id": "_P0",
+        "illustrator": "No Illustrator",
+        "note": "Blast Ace Pre-Release Pack",
+        "type": "Foil - Pre Release Stamp -\u00a0Rare"
       }
     ],
     "JAAs": [
@@ -37497,7 +37628,7 @@
         "id": "_P1",
         "illustrator": "No Illustrator",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "-",
@@ -37533,7 +37664,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -37547,7 +37678,13 @@
         "id": "_P1",
         "illustrator": "No Illustrator",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
+      },
+      {
+        "id": "_P0",
+        "illustrator": "No Illustrator",
+        "note": "Blast Ace Pre-Release Pack",
+        "type": "Foil - Pre Release Stamp -\u00a0Rare"
       }
     ],
     "JAAs": [
@@ -37555,7 +37692,7 @@
         "id": "_P1",
         "illustrator": "No Illustrator",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "-",
@@ -37591,7 +37728,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -37605,7 +37742,13 @@
         "id": "_P1",
         "illustrator": "No Illustrator",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
+      },
+      {
+        "id": "_P0",
+        "illustrator": "No Illustrator",
+        "note": "Blast Ace Pre-Release Pack",
+        "type": "Foil - Pre Release Stamp -\u00a0Rare"
       }
     ],
     "JAAs": [
@@ -37613,7 +37756,7 @@
         "id": "_P1",
         "illustrator": "No Illustrator",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "-",
@@ -37649,7 +37792,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -37663,7 +37806,13 @@
         "id": "_P1",
         "illustrator": "No Illustrator",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
+      },
+      {
+        "id": "_P0",
+        "illustrator": "No Illustrator",
+        "note": "Blast Ace Pre-Release Pack",
+        "type": "Foil - Pre Release Stamp -\u00a0Rare"
       }
     ],
     "JAAs": [
@@ -37671,7 +37820,7 @@
         "id": "_P1",
         "illustrator": "No Illustrator",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "-",
@@ -37707,7 +37856,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -37721,7 +37870,13 @@
         "id": "_P1",
         "illustrator": "Tonamikanji",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
+      },
+      {
+        "id": "_P0",
+        "illustrator": "No Illustrator",
+        "note": "Blast Ace Pre-Release Pack",
+        "type": "Foil - Pre Release Stamp -\u00a0Rare"
       }
     ],
     "JAAs": [
@@ -37729,7 +37884,7 @@
         "id": "_P1",
         "illustrator": "Tonamikanji",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "-",
@@ -37757,7 +37912,7 @@
       "japanese": "\u7389\u59eb\u7d17\u6708",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "\u7389\u59ec\u7d17\u6708"
     },
     "notes": "\u25b9BOOSTER BLAST ACE [BT14]",
     "playCost": "3",
@@ -37765,7 +37920,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -37779,7 +37934,13 @@
         "id": "_P1",
         "illustrator": "Tonamikanji",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
+      },
+      {
+        "id": "_P0",
+        "illustrator": "No Illustrator",
+        "note": "Blast Ace Pre-Release Pack",
+        "type": "Foil - Pre Release Stamp -\u00a0Rare"
       }
     ],
     "JAAs": [
@@ -37787,7 +37948,7 @@
         "id": "_P1",
         "illustrator": "Tonamikanji",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "-",
@@ -37815,7 +37976,7 @@
       "japanese": "\u6c38\u4f4f\u745b\u58eb",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "\u6c38\u4f4f\u745b\u58eb"
     },
     "notes": "\u25b9BOOSTER BLAST ACE [BT14]",
     "playCost": "3",
@@ -37823,16 +37984,23 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "Tamer",
+    "type": "SoC",
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "No Illustrator",
+        "note": "Blast Ace Pre-Release Pack",
+        "type": "Foil - Pre Release Stamp -\u00a0Rare"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "-",
@@ -37859,7 +38027,7 @@
       "japanese": "\u30b2\u30f3\u30ca\u30a4",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "\u7384\u5167"
     },
     "notes": "\u25b9BOOSTER BLAST ACE [BT14]",
     "playCost": "3",
@@ -37867,7 +38035,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -37891,7 +38059,7 @@
     "color": "Red",
     "digiXros": "-",
     "digivolveCondition": [],
-    "digivolveEffect": "[Security] Activate this card's [Main] effect.",
+    "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "-",
     "effect": "[Main] Delete 1 of your opponent's Digimon with 6000 DP or less. If you have a Digimon with [Greymon]\u00a0in its name, delete 1 opposing Digimon with the lowest DP instead.",
@@ -37903,7 +38071,7 @@
       "japanese": "\u30e1\u30ac\u30d5\u30ec\u30a4\u30e0",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "\u8d85\u7d1a\u706b\u7130"
     },
     "notes": "\u25b9BOOSTER BLAST ACE [BT14]",
     "playCost": "4",
@@ -37911,7 +38079,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -37920,7 +38088,14 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "No Illustrator",
+        "note": "Blast Ace Pre-Release Pack",
+        "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "-",
@@ -37935,7 +38110,7 @@
     "color": "Red",
     "digiXros": "-",
     "digivolveCondition": [],
-    "digivolveEffect": "[Security] Activate this card's [Main] effect. You may play 1 [Agumon] from your hand or trash without paying the cost. Then, add this card to your hand.",
+    "digivolveEffect": "[Security] You may play 1 [Agumon] from your hand or trash without paying the cost. Then, add this card to your hand.",
     "dnaDigivolve": "-",
     "dp": "-",
     "effect": "While you have Tamer with [Tai Kamiya]\u00a0in its name, you may use this card ignoring its color requiremnts.\n[Main] By placing 1 [Greymon] and 1 [MetalGreymon] from your trash as the bottom digivolution cards of 1 of your [Agumon], it may digivolve in to a [WarGreymon] from hand ignoring its digivolution requirements and without paying its cost.",
@@ -37947,7 +38122,7 @@
       "japanese": "\u52c7\u6c17\u306e\u6226\u7adc",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "\u52c7\u6c23\u7684\u6230\u9f8d"
     },
     "notes": "\u25b9BOOSTER BLAST ACE [BT14]",
     "playCost": "4",
@@ -37955,7 +38130,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -37964,7 +38139,14 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "No Illustrator",
+        "note": "Blast Ace Pre-Release Pack",
+        "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "-",
@@ -37982,16 +38164,16 @@
     "digivolveEffect": "[Security] Activate this card's [Main] effect. Then, add this card to your hand.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] Trash 2 digivolution cards from 1 your opponent's Digimon. Then, if you have a Tamer with [Joe Kido]\u00a0in its name, choose 1 of your Digimon. If your opponent doesn't have a Digimon with digivolution cards equal to or more than that Digimon's digivolution cards, unsuspend that Digimon.",
+    "effect": "[Main] Trash 2 digivolution cards from 1 your opponent's Digimon. Then, if you have a Tamer with [Joe Kido]\u00a0in its name, choose 1 of your Digimon. If your opponent has no Digimon with digivolution cards equal to or more than that Digimon's digivolution cards, unsuspend that Digimon.",
     "form": "-",
     "id": "BT14-091",
     "illustrator": "No Illustrator",
     "name": {
-      "english": "Waves of Reliability",
+      "english": "Wave of Reliability",
       "japanese": "\u8aa0\u5b9f\u306e\u6ce2\u6fe4",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "\u8aa0\u5be6\u7684\u6ce2\u6fe4"
     },
     "notes": "\u25b9BOOSTER BLAST ACE [BT14]",
     "playCost": "2",
@@ -37999,7 +38181,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -38023,10 +38205,10 @@
     "color": "Blue",
     "digiXros": "-",
     "digivolveCondition": [],
-    "digivolveEffect": "[Security] 1 of your opponent's Digimon can't attack or block until the end of your opponent's turn. Then, add this card to your hand.",
+    "digivolveEffect": "[Security] 1 of your opponent's Digimon can't attack for the turn. Then, add this card to your hand.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] Choose 1 of your Digimon. 3 of your opponent's Digimon with equal or less evolution cards than your Digimon can't attack or block until the end of your opponent's turn.",
+    "effect": "[Main] Choose 1 of your Digimon. Until the end of your opponent's turn, 3 of your opponent's Digimon with as many or fewer digivolution cards at that Digimon can't attack or block.",
     "form": "-",
     "id": "BT14-092",
     "illustrator": "Sanosuke Sakuma",
@@ -38035,7 +38217,7 @@
       "japanese": "\u30de\u30fc\u30c1\u30f3\u30b0\u30d5\u30a3\u30c3\u30b7\u30fc\u30ba",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "\u9b5a\u7fa4\u9032\u884c\u66f2"
     },
     "notes": "\u25b9BOOSTER BLAST ACE [BT14]",
     "playCost": "3",
@@ -38052,7 +38234,14 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "No Illustrator",
+        "note": "Blast Ace Pre-Release Pack",
+        "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "-",
@@ -38070,7 +38259,7 @@
     "digivolveEffect": "[Security] You may play 1 [Patamon] from your hand or trash without paying the cost. Then, add this card to your hand.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] Search your security stack. 1 of your Digimon may digivolve in to a level 6 or lower yellow Digimon with the [Vaccine]\u00a0trait among them without paying its cost. Then, shuffle your security security. If your Digimon digivolves with this effect and you have Tamer with [T.K. Takaishi]\u00a0in its name, \uff1cRecovery +1 (Deck)\uff1e.",
+    "effect": "[Main] Search your security stack. 1 of your Digimon may digivolve in to a level 6 or lower yellow Digimon with the [Vaccine]\u00a0trait among them without paying its cost. Then, shuffle your security security. If digivolved by this effect and you have Tamer with [T.K. Takaishi]\u00a0in its name, \uff1cRecovery +1 (Deck)\uff1e.",
     "form": "-",
     "id": "BT14-093",
     "illustrator": "No Illustrator",
@@ -38079,7 +38268,7 @@
       "japanese": "\u5e0c\u671b\u306e\u4f7f\u8005",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "\u5e0c\u671b\u7684\u4f7f\u8005"
     },
     "notes": "\u25b9BOOSTER BLAST ACE [BT14]",
     "playCost": "1",
@@ -38087,7 +38276,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -38114,7 +38303,7 @@
     "digivolveEffect": "[Security] Activate this card's [Main] effect.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] Activate 1 of the following effects:\n\u30fb1 opponent's Digimon gets -6000 DP for the turn.\n\u30fbBy deleting 1 of your [Angemon], place 1 of your opponent's Digimon at the bottom of your opponent's security stack.",
+    "effect": "[Main] Activate 1 of the effects below:\n\u30fb1 opponent's Digimon gets -6000 DP for the turn.\n\u30fbBy deleting 1 of your [Angemon], place 1 of your opponent's Digimon at the bottom of their security stack.",
     "form": "-",
     "id": "BT14-094",
     "illustrator": "hokuyuu",
@@ -38123,7 +38312,7 @@
       "japanese": "\u30d8\u30d6\u30f3\u30ba\u30ca\u30c3\u30af\u30eb",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "\u5929\u5802\u4e4b\u62f3"
     },
     "notes": "\u25b9BOOSTER BLAST ACE [BT14]",
     "playCost": "4",
@@ -38131,7 +38320,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -38167,7 +38356,7 @@
       "japanese": "\u30dd\u30a4\u30ba\u30f3\u30a2\u30a4\u30d3\u30fc",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "\u6bd2\u85e4\u8513"
     },
     "notes": "\u25b9BOOSTER BLAST ACE [BT14]",
     "playCost": "1",
@@ -38184,7 +38373,14 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "No Illustrator",
+        "note": "Blast Ace Pre-Release Pack",
+        "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "-",
@@ -38202,7 +38398,7 @@
     "digivolveEffect": "[Security] Activate this card's [Main] effect. Then, add this card to your hand.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] Suspend 1 of your opponent's Digimon. Then, if you have a Tamer with [Mimi Tachikawa]\u00a0in its name, 1 of your opponent's Digimon can't unsuspend until the end of your opponent's turn.",
+    "effect": "[Main] Suspend 1 of your opponent's Digimon. Then, if you have a Tamer with [Mimi Tachikawa]\u00a0in its name, 1 of your opponent's Digimon doesn't unsuspend until the end of their turn.",
     "form": "-",
     "id": "BT14-096",
     "illustrator": "No Illustrator",
@@ -38211,7 +38407,7 @@
       "japanese": "\u7d14\u771f\u306e\u958b\u82b1",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "\u7d14\u771f\u7684\u958b\u82b1"
     },
     "notes": "\u25b9BOOSTER BLAST ACE [BT14]",
     "playCost": "3",
@@ -38228,7 +38424,14 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "No Illustrator",
+        "note": "Blast Ace Pre-Release Pack",
+        "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "-",
@@ -38243,10 +38446,10 @@
     "color": "Black/Yellow",
     "digiXros": "-",
     "digivolveCondition": [],
-    "digivolveEffect": "[Security] Change 1 of your opponent's Digimon into a white Digimon with 3000 DP and an original name of [Sukamon] until the end of your turn.",
+    "digivolveEffect": "[Security] Until the end of your turn, change 1 of your opponent's Digimon into being white and having 3000 DP and an original name of [Sukamon]",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] You may digivolve 1 of your non-white Digimon into a Digimon card with [Sukamon]\u00a0in its name in your hand, ignoring its digivolution requirements and without paying its cost.\n[Rule] Name: This card is also treated as having [Sukamon]\u00a0in its name.",
+    "effect": "[Main] 1 of your non-white Digimon may digivolve into a Digimon card with [Sukamon]\u00a0in its name in your hand without paying the cost, ignoring its digivolution requirements.\n[Rule] Name: This card is also treated as having [Sukamon]\u00a0in its name.",
     "form": "-",
     "id": "BT14-097",
     "illustrator": "No Illustrator",
@@ -38255,7 +38458,7 @@
       "japanese": "\u30b9\u30ab\u306e\u546a\u3044",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "\u5927\u4fbf\u7684\u8a5b\u5492"
     },
     "notes": "\u25b9BOOSTER BLAST ACE [BT14]",
     "playCost": "3",
@@ -38263,7 +38466,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -38290,7 +38493,7 @@
     "digivolveEffect": "[Security] Activate this card's [Main] effect.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] \uff1cDe-Digivolve1\uff1e on 1 of your opponent's Digimon. Then, by returning 3 cards with the [D-Brigade]/[DigiPolice]\u00a0trait from your trash to the top of the deck, delete any of your opponent's Digimon with total play cost of 6 or less",
+    "effect": "[Main] \uff1cDe-Digivolve1\uff1e on 1 of your opponent's Digimon. Then, by returning 3 cards with the [D-Brigade]/[DigiPolice]\u00a0trait from your trash to the top of the deck, delete up to 6 play cost's total worth of your opponent's Digimon.",
     "form": "-",
     "id": "BT14-098",
     "illustrator": "Itohiro",
@@ -38299,7 +38502,7 @@
       "japanese": "DCD\u30dc\u30e0",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "DCD\u70b8\u5f48"
     },
     "notes": "\u25b9BOOSTER BLAST ACE [BT14]",
     "playCost": "4",
@@ -38307,7 +38510,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -38316,7 +38519,14 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "_P0",
+        "illustrator": "No Illustrator",
+        "note": "Blast Ace Pre-Release Pack",
+        "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
     "attribute": "-",
@@ -38343,7 +38553,7 @@
       "japanese": "\u95c7\u7ffc\u306e\u5984\u57f7",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "\u95c7\u7ffc\u7684\u5984\u57f7"
     },
     "notes": "\u25b9BOOSTER BLAST ACE [BT14]",
     "playCost": "1",
@@ -38351,7 +38561,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -38378,7 +38588,7 @@
     "digivolveEffect": "[Security] Activate this card's [Main] effect.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "When this card in your hand is trashed by your own effect, \uff1cDraw 1\uff1e \n[Main] Delete 1 of your opponent's level 4 or lower Digimon.",
+    "effect": "When one of your effects trashes this card in your hand, \uff1cDraw 1\uff1e \n[Main] Delete 1 of your opponent's level 4 or lower Digimon.",
     "form": "-",
     "id": "BT14-100",
     "illustrator": "KISUKE",
@@ -38387,7 +38597,7 @@
       "japanese": "\u8987\u738b\u62f3",
       "korean": "-",
       "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "traditionalChinese": "\u9738\u738b\u62f3"
     },
     "notes": "\u25b9BOOSTER BLAST ACE [BT14]",
     "playCost": "3",
@@ -38395,7 +38605,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -38409,7 +38619,7 @@
         "id": "_P1",
         "illustrator": "Naochika Morishita",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
       }
     ],
     "JAAs": [
@@ -38417,7 +38627,7 @@
         "id": "_P1",
         "illustrator": "Naochika Morishita",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "-",
@@ -38459,7 +38669,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -38473,7 +38683,7 @@
         "id": "_P1",
         "illustrator": "Naochika Morishita",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
       }
     ],
     "JAAs": [
@@ -38481,7 +38691,7 @@
         "id": "_P1",
         "illustrator": "Naochika Morishita",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "-",
@@ -38506,7 +38716,7 @@
     "digivolveEffect": "[On Deletion] Place 1 yellow Digimon with the [Vaccine]\u00a0trait from your hand at the bottom of your security stack.",
     "dnaDigivolve": "-",
     "dp": "6000",
-    "effect": "[When Attacking] By deleting this Digimon, activate 1 of the following effects:\n\u30fbPlace 1 of your opponent's Digimon with the [Virus]\u00a0trait Digimon at the bottom of your opponent's security stack.\n\u30fb1 opponent's Digimon gets -5000 DP for the turn.\n[On Deletion] Place this card at the bottom of your security stack. Then, if you have a Tamer in play, you may hatch a Digi-Egg in your breeding area.",
+    "effect": "[When Attacking] By deleting this Digimon, activate 1 of the effects below:\n\u30fbPlace 1 of your opponent's Digimon with the [Virus]\u00a0trait at the bottom of their security stack.\n\u30fb1 opponent's Digimon gets -5000 DP for the turn.\n[On Deletion] Place this card at the bottom of your security stack. Then, if you have a Tamer in play, you may hatch a Digi-Egg in your breeding area.",
     "form": "Champion",
     "id": "BT14-102",
     "illustrator": "Spareribs",
@@ -38523,7 +38733,7 @@
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
-      "japanese": "Not released",
+      "japanese": "Unrestricted",
       "korean": "Not released"
     },
     "securityEffect": "-",
@@ -105966,12 +106176,27 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "_P1",
+        "illustrator": "GOSSAN",
+        "note": "ST-17: Advanced Deck Set Double Typhoon",
+        "type": "New Block -\u00a0Alternative Art"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "GOSSAN",
+        "note": "ST-17: Advanced Deck Set Double Typhoon",
+        "type": "New Block -\u00a0Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "-",
     "block": [
-      "01"
+      "01",
+      "03"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX2-067.webp",
