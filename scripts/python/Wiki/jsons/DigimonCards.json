@@ -84323,13 +84323,27 @@
         "illustrator": "KISUKE",
         "note": "Judge Pack 3",
         "type": "Foil - Judge Stamp -\u00a0Uncommon"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "Takase",
+        "note": "ST-17: Advanced Deck Set Double Typhoon",
+        "type": "New Block -\u00a0Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Takase",
+        "note": "ST-17: Advanced Deck Set Double Typhoon",
+        "type": "New Block -\u00a0Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "-",
     "block": [
-      "01"
+      "01",
+      "03"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT7-105.webp",
@@ -91341,13 +91355,27 @@
         "illustrator": "tessy",
         "note": "Judge Pack 3",
         "type": "Foil - Judge Stamp -\u00a0Common"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "Takase",
+        "note": "ST-17: Advanced Deck Set Double Typhoon",
+        "type": "New Block -\u00a0Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Takase",
+        "note": "ST-17: Advanced Deck Set Double Typhoon",
+        "type": "New Block -\u00a0Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "-",
     "block": [
-      "01"
+      "01",
+      "03"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT8-108.webp",
@@ -127210,16 +127238,16 @@
     "cardLv": "Lv.4",
     "cardNumber": "P-110",
     "cardType": "Digimon",
-    "color": "Purple/Red",
+    "color": "Red/Purple",
     "digiXros": "-",
     "digivolveCondition": [
       {
-        "color": "Purple",
+        "color": "Red",
         "cost": "3",
         "level": "3"
       },
       {
-        "color": "Red",
+        "color": "Purple",
         "cost": "3",
         "level": "3"
       }
@@ -127235,15 +127263,15 @@
       "english": "Shadramon",
       "japanese": "\u30b7\u30a7\u30a4\u30c9\u30e9\u30e2\u30f3",
       "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "simplifiedChinese": "\u9634\u5f71\u9f99\u517d",
+      "traditionalChinese": "\u9670\u5f71\u9f8d\u7378"
     },
     "notes": "3rd Anniversary Survey Pack",
     "playCost": "5",
     "rarity": "P",
     "restrictions": {
       "chinese": "Not released",
-      "english": "Not released",
+      "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Not released"
     },
@@ -127282,23 +127310,23 @@
     "digivolveEffect": "[All Turns] [Once Per Turn] When another Digimon attacks, you may play 1 black or yellow level 3 Digimon from your hand without paying the cost.",
     "dnaDigivolve": "-",
     "dp": "7000",
-    "effect": "\uff1cBlocker\uff1e \n[On Play] [When Digivolving] 1 of your opponent's Digimon gets -3000 DP for each of your Digimon for the turn.",
+    "effect": "\uff1cBlocker\uff1e \n[On Play] [When Digivolving] 1 of your opponent's Digimon gets -3000 DP for the turn for each of your Digimon.",
     "form": "Ultimate",
     "id": "P-111",
     "illustrator": "KISUKE",
     "name": {
       "english": "Knightmon",
       "japanese": "\u30ca\u30a4\u30c8\u30e2\u30f3",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "korean": "\ub098\uc774\ud2b8\ubaac",
+      "simplifiedChinese": "\u9a91\u58eb\u517d",
+      "traditionalChinese": "\u9a0e\u58eb\u7378"
     },
     "notes": "3rd Anniversary Survey Pack",
     "playCost": "7",
     "rarity": "P",
     "restrictions": {
       "chinese": "Not released",
-      "english": "Not released",
+      "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Not released"
     },
@@ -127329,26 +127357,26 @@
         "level": "2"
       }
     ],
-    "digivolveEffect": "[Your Turn] [Once Per Turn] When another [Eosmon] is played, this Digimon may digivolve into an[Eosmon] from your hand, reducing the digivolution cost by 3.",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When another [Eosmon] is played, this Digimon may digivolve into an [Eosmon] in your hand, reducing the digivolution cost reduced by 3.",
     "dnaDigivolve": "-",
     "dp": "1000",
-    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 [Eosmon] and 1 [Menoa Bellucci] among them to your hand. Place the rest at the bottom of your deck. Then, by placing this card under 1 of your [Eosmon], you may play 1 [Menoa Bellucci] from your hand without paying the cost.",
+    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 [Eosmon] and 1 [Menoa Bellucci] among them to the hand. Return the rest to the bottom of the deck. Then, by placing this Digimon as 1 of your [Eosmon]'s bottom digivolution card, you may play 1 [Menoa Bellucci] from your hand without paying the cost.",
     "form": "Rookie",
     "id": "P-112",
     "illustrator": "Itohiro",
     "name": {
       "english": "Morphomon",
       "japanese": "\u30e2\u30eb\u30d5\u30a9\u30e2\u30f3",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "korean": "\ubaa8\ub974\ud3ec\ubaac",
+      "simplifiedChinese": "\u95ea\u8776\u517d",
+      "traditionalChinese": "\u9583\u8776\u7378"
     },
     "notes": "3rd Anniversary Survey Pack",
     "playCost": "3",
     "rarity": "P",
     "restrictions": {
       "chinese": "Not released",
-      "english": "Not released",
+      "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Not released"
     },
