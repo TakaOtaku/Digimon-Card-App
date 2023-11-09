@@ -13,6 +13,8 @@ export function filterCards(
   digimonCardMap = cardMap;
   let filteredCards = applySearchFilter(cards, filter.searchFilter);
 
+  filteredCards = applyPresetFilter(filteredCards, filter.presetFilter);
+
   filteredCards = applyCardCountFilter(
     filteredCards,
     collection,
@@ -62,8 +64,6 @@ export function filterCards(
     'digivolution'
   );
   filteredCards = applyRangeFilter(filteredCards, filter.dpFilter, 'dp');
-
-  filteredCards = applyPresetFilter(filteredCards, filter.presetFilter);
 
   filteredCards = applySortOrder(filteredCards, sort, collection);
   return filteredCards;

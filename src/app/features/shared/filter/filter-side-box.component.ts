@@ -339,6 +339,9 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
         this.sourceFilter.setValue(filter.sourceFilter, {
           emitEvent: false,
         });
+        this.presetFilter.setValue(filter.presetFilter, {
+          emitEvent: false,
+        });
       });
 
     this.filterFormGroup.valueChanges
