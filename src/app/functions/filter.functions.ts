@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { DigimonCard, ICountCard, IFilter, ISort } from '../../models';
+import { UltimateCup2023, UltimateCup2024 } from '../../models/data/presets.data';
 
 let digimonCardMap = new Map<string, DigimonCard>();
 export function filterCards(
@@ -61,6 +62,8 @@ export function filterCards(
     'digivolution'
   );
   filteredCards = applyRangeFilter(filteredCards, filter.dpFilter, 'dp');
+
+  filteredCards = applyPresetFilter(filteredCards, filter.presetFilter);
 
   filteredCards = applySortOrder(filteredCards, sort, collection);
   return filteredCards;
@@ -474,6 +477,30 @@ function applyRangeFilter(
       ];
   }
 }
+
+function applyPresetFilter(
+  cards: DigimonCard[],
+  filter: string[]
+): DigimonCard[] {
+  for (const preset of filter) {
+    if(preset === 'Ultimate Cup 2023') {
+      cards = [
+        ...new Set([
+          ...cards.filter((card: DigimonCard) => UltimateCup2023.includes(card.id)),
+        ]),
+      ];
+    }
+    if(preset === 'Ultimate Cup 2024') {
+      cards = [
+        ...new Set([
+          ...cards.filter((card: DigimonCard) => UltimateCup2024.includes(card.id)),
+        ]),
+      ];
+    }
+  }
+  return cards;
+}
+
 
 function applySortOrder(
   cards: DigimonCard[],

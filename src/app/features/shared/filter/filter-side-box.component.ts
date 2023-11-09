@@ -17,7 +17,7 @@ import { MessageService } from 'primeng/api';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { Subject, debounceTime, takeUntil } from 'rxjs';
 import { itemsAsSelectItem } from 'src/app/functions/digimon-card.functions';
-import { IFilter } from '../../../../models';
+import { IFilter, Presets } from '../../../../models';
 import {
   Attributes,
   Colors,
@@ -218,6 +218,17 @@ import { VersionFilterComponent } from './version-filter.component';
         class="mx-auto mb-1 w-full max-w-[250px]"
         styleClass="w-full mt-1 h-8 text-sm max-w-[250px]">
       </p-multiSelect>
+
+      <p-multiSelect
+        [formControl]="presetFilter"
+        [options]="presets"
+        [showToggleAll]="false"
+        defaultLabel="Select a Preset"
+        display="chip"
+        scrollHeight="250px"
+        class="mx-auto mb-1 w-full max-w-[250px]"
+        styleClass="w-full mt-1 h-8 text-sm max-w-[250px]">
+      </p-multiSelect>
     </div>
   `,
   styleUrls: ['filter-side-box.component.scss'],
@@ -254,6 +265,7 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
   digivolutionFilter = new UntypedFormControl([]);
   dpFilter = new UntypedFormControl([]);
   cardCountFilter = new UntypedFormControl([]);
+  presetFilter = new UntypedFormControl([]);
 
   filterFormGroup: UntypedFormGroup = new UntypedFormGroup({
     keywordFilter: this.keywordFilter,
@@ -269,6 +281,7 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
     digivolutionFilter: this.digivolutionFilter,
     dpFilter: this.dpFilter,
     cardCountFilter: this.cardCountFilter,
+    presetFilter: this.presetFilter,
   });
 
   keywords = itemsAsSelectItem(Keywords);
@@ -279,6 +292,7 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
   illustrators = itemsAsSelectItem(Illustrators);
   specialRequirements = itemsAsSelectItem(SpecialRequirements);
   restrictions = itemsAsSelectItem(Restrictions);
+  presets = itemsAsSelectItem(Presets);
 
   resetEmitter = new EventEmitter<void>();
 

@@ -361,6 +361,8 @@ export const SpecialRequirements: string[] = [
 
 export const Restrictions: string[] = ['Banned', 'Restricted to 1'];
 
+export const Presets: string[] = ['Ultimate Cup 2023', 'Ultimate Cup 2024'];
+
 export const BlockButtons: MultiButtons[] = [
   {
     name: '00',

@@ -82,6 +82,7 @@ export const emptyFilter = {
   blockFilter: [],
   restrictionsFilter: [],
   sourceFilter: [],
+  presetFilter: [],
 };
 
 export const initialState: IDigimonState = {
