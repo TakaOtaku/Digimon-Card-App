@@ -24336,7 +24336,14 @@
   },
   {
     "AAs": [],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "tyuga",
+        "note": "LM-02: Limited Pack DeathXmon",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "Virus",
     "block": [
@@ -33779,7 +33786,7 @@
         "id": "_P2",
         "illustrator": "Dan Mora",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Textured -\u00a0Alternative Art"
+        "type": "Textured -\u00a0Rare Pull"
       },
       {
         "id": "_P3",
@@ -34451,7 +34458,7 @@
         "id": "_P2",
         "illustrator": "Emiliano Santalucia",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Textured -\u00a0Alternative Art"
+        "type": "Textured -\u00a0Rare Pull"
       }
     ],
     "JAAs": [
@@ -35085,7 +35092,7 @@
         "id": "_P2",
         "illustrator": "CHAMBA",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Textured -\u00a0Alternative Art"
+        "type": "Textured -\u00a0Rare Pull"
       }
     ],
     "JAAs": [
@@ -35761,7 +35768,7 @@
         "id": "_P2",
         "illustrator": "Gosha",
         "note": "BT-14: Booster Blast Ace",
-        "type": "Textured -\u00a0Alternative Art"
+        "type": "Textured -\u00a0Rare Pull"
       }
     ],
     "JAAs": [
@@ -98084,6 +98091,12 @@
         "illustrator": "sasasi",
         "note": "BT-09: Booster X Record",
         "type": "Textured -\u00a0Alternative Art"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "Spareribs",
+        "note": "LM-02: Limited Pack DeathXmon",
+        "type": "Alternative Art"
       }
     ],
     "aceEffect": "-",
@@ -127410,7 +127423,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "12000",
-    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e \n[When Digivolving] Suspend all of your opponent's Digimon with DP less or equal than this Digimon.\n[All Turns] [Once Per Turn] When an opponent's Digimon is deleted in battle, trash the top card of your opponent's security stack.",
+    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e \n[When Digivolving] Suspend all of your opponent's Digimon with DP less than or equal to this Digimon's DP.\n[All Turns] [Once Per Turn] When an opponent's Digimon is deleted in battle, trash the top card of your opponent's security stack.",
     "form": "Mega",
     "id": "P-113",
     "illustrator": "Shin Sasaki",
@@ -127426,7 +127439,7 @@
     "rarity": "P",
     "restrictions": {
       "chinese": "Not released",
-      "english": "Not released",
+      "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Not released"
     },
@@ -127474,7 +127487,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "11000",
-    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e \n[When Digivolving] [When Attacking] You may play 1 [Diaboromon] Token without paying its memory cost (Digimon/Cost 14/Lv.6/White/Mega/Unknown/Unidentified/3000 DP)\n[All Turns] [Once Per Turn] When another Digimon is played by an effect, you may delete 1 of your opponent's Digimon with a play cost of 3 or less. For each [Diaboromon] you have in play, increase the maximum cost of the Digimon card you can delete with this effect by 2.",
+    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e \n[When Digivolving] [When Attacking] You may play 1 [Diaboromon] Token without paying its memory cost (Digimon/Cost 14/Lv.6/White/Mega/Unknown/Unidentified/3000 DP)\n[All Turns] [Once Per Turn] When an effects plays another Digimon, you may delete 1 of your opponent's play cost of 3 or lower Digimon. For each of your [Diaboromon], add 2 to the maximum cost play cost for this effect.",
     "form": "Mega",
     "id": "P-114",
     "illustrator": "SENNSU",
@@ -127490,7 +127503,7 @@
     "rarity": "P",
     "restrictions": {
       "chinese": "Not released",
-      "english": "Not released",
+      "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Not released"
     },
@@ -130418,7 +130431,7 @@
     "aceEffect": "-",
     "attribute": "-",
     "block": [
-      "00"
+      "02"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/RB1-035.webp",
@@ -133165,7 +133178,14 @@
   },
   {
     "AAs": [],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "tyuga",
+        "note": "LM-02: Limited Pack DeathXmon",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
@@ -133209,7 +133229,14 @@
   },
   {
     "AAs": [],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "tyuga",
+        "note": "LM-02: Limited Pack DeathXmon",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "Data",
     "block": [
