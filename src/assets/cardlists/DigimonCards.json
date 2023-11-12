@@ -2702,7 +2702,7 @@
       {
         "color": "Yellow",
         "cost": "0",
-        "level": "3"
+        "level": "2"
       }
     ],
     "digivolveEffect": "-",
@@ -34318,10 +34318,10 @@
         "level": "3"
       }
     ],
-    "digivolveEffect": "[When Attacking] [Once Per Turn] Until the end of your opponent's turn, 1 of your opponent's Digimon with digivolution cards less than or equal to this Digimon can't attack.",
+    "digivolveEffect": "[When Attacking] [Once Per Turn] Until the end of your opponent's turn, 1 of your opponent's Digimon with as many or fewer digivolution cards as this Digimon can't attack.",
     "dnaDigivolve": "-",
     "dp": "5000",
-    "effect": "[When Digivolving] Trash any 2 digivolution cards from under your opponent's Digimon.\n[When Attacking] [Once Per Turn] Until the end of your opponent's turn, 1 of your opponent's Digimon with digivolution cards less than or equal to this Digimon can't attack.",
+    "effect": "[When Digivolving] Trash any 2 digivolution cards from under your opponent's Digimon.\n[When Attacking] [Once Per Turn] Until the end of your opponent's turn, 1 of your opponent's Digimon with as many or fewer digivolution cards as this Digimon can't attack.",
     "form": "Champion",
     "id": "BT14-023",
     "illustrator": "Nakano Haito",
@@ -34655,7 +34655,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "11000",
-    "effect": "[When Digivolving] Trash any 3 digivolution cards from under your opponent's Digimon.\n[When Attacking] [Once Per Turn] If your opponent has no Digimon with more digivolution cards than this Digimon, unsuspend this Digimon.",
+    "effect": "[When Digivolving] Trash any 3 digivolution cards from under your opponent's Digimon.\n[When Attacking] [Once Per Turn] If your opponent has no Digimon with as many or more digivolution cards as this Digimon, unsuspend this Digimon.",
     "form": "Mega",
     "id": "BT14-029",
     "illustrator": "Nakano Haito",
@@ -38171,7 +38171,7 @@
     "digivolveEffect": "[Security] Activate this card's [Main] effect. Then, add this card to your hand.",
     "dnaDigivolve": "-",
     "dp": "-",
-    "effect": "[Main] Trash 2 digivolution cards from 1 your opponent's Digimon. Then, if you have a Tamer with [Joe Kido]\u00a0in its name, choose 1 of your Digimon. If your opponent has no Digimon with digivolution cards equal to or more than that Digimon's digivolution cards, unsuspend that Digimon.",
+    "effect": "[Main] Trash 2 digivolution cards from 1 your opponent's Digimon. Then, if you have a Tamer with [Joe Kido]\u00a0in its name, choose 1 of your Digimon. If your opponent has no Digimon with as many or more digivolution cards as that Digimon, unsuspend that Digimon.",
     "form": "-",
     "id": "BT14-091",
     "illustrator": "No Illustrator",
