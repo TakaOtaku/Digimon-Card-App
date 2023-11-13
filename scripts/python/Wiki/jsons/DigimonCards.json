@@ -127539,7 +127539,7 @@
         "level": "3"
       }
     ],
-    "digivolveEffect": "[Your Turn] While this Digimon is level 5 or higher and has the [Bagra Army]/[Twilight]\u00a0trait, this Digimon gets \uff1cSecurity Attack +1\uff1e.",
+    "digivolveEffect": "[Your Turn] While this Digimon has the [Bagra Army]/[Twilight]\u00a0trait and is level 5 or higher, this Digimon gets \uff1cSecurity Attack +1\uff1e.",
     "dnaDigivolve": "-",
     "dp": "4000",
     "effect": "[On Deletion] You may play 1 tamer card with [Nene Amano]/[Yuu Amano]\u00a0in its name from your hand or trash without paying the cost. Then, \uff1cSave\uff1e.",
@@ -127550,15 +127550,15 @@
       "english": "SkullKnightmon",
       "japanese": "\u30b9\u30ab\u30eb\u30ca\u30a4\u30c8\u30e2\u30f3",
       "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
+      "simplifiedChinese": "\u9ab7\u9ac5\u9a91\u58eb\u517d",
+      "traditionalChinese": "\u9ab7\u9acf\u9a0e\u58eb\u7378"
     },
     "notes": "3rd Anniversary Survey Pack",
     "playCost": "4",
     "rarity": "P",
     "restrictions": {
       "chinese": "Not released",
-      "english": "Not released",
+      "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Not released"
     },
