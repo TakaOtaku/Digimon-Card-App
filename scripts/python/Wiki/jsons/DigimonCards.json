@@ -3397,7 +3397,7 @@
       },
       {
         "id": "_P4",
-        "illustrator": "???",
+        "illustrator": "toriyufu",
         "note": "DP-01: Double Pack Set 1",
         "type": "Foil -\u00a0Alternative Art"
       }
@@ -9636,7 +9636,14 @@
   },
   {
     "AAs": [],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Motoi Takeuchi",
+        "note": "Digimon Illustration Competition Promotion Pack 2023",
+        "type": "No Foil -\u00a0Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
@@ -27269,7 +27276,7 @@
     "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
-      "english": "Unrestricted",
+      "english": "Restricted to 1",
       "japanese": "Restricted to 1",
       "korean": "Not released"
     },
@@ -34459,6 +34466,12 @@
         "illustrator": "Emiliano Santalucia",
         "note": "BT-14: Booster Blast Ace",
         "type": "Textured -\u00a0Rare Pull"
+      },
+      {
+        "id": "_P3",
+        "illustrator": "Nakano Haito",
+        "note": "BT-15: Booster Exceed Apocalypse",
+        "type": "Gold Foil -\u00a0Special Rare"
       }
     ],
     "JAAs": [
@@ -34467,6 +34480,12 @@
         "illustrator": "GOSSAN",
         "note": "BT-14: Booster Blast Ace",
         "type": "Textured -\u00a0Alternative Art"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "Nakano Haito",
+        "note": "BT-15: Booster Exceed Apocalypse",
+        "type": "Gold Foil -\u00a0Special Rare"
       }
     ],
     "aceEffect": "Overflow \uff1c-3\uff1e (As this card moves from the battle area or under a card to another area, lose 3 memory).",
@@ -35093,6 +35112,12 @@
         "illustrator": "CHAMBA",
         "note": "BT-14: Booster Blast Ace",
         "type": "Textured -\u00a0Rare Pull"
+      },
+      {
+        "id": "_P3",
+        "illustrator": "Spareribs",
+        "note": "BT-15: Booster Exceed Apocalypse",
+        "type": "Gold Foil -\u00a0Special Rare"
       }
     ],
     "JAAs": [
@@ -35101,6 +35126,12 @@
         "illustrator": "Teppei Tadokoro",
         "note": "BT-14: Booster Blast Ace",
         "type": "Textured -\u00a0Alternative Art"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "Spareribs",
+        "note": "BT-15: Booster Exceed Apocalypse",
+        "type": "Gold Foil -\u00a0Special Rare"
       }
     ],
     "aceEffect": "Overflow \uff1c-3\uff1e (As this card moves from the battle area or under a card to another area, lose 3 memory).",
@@ -35769,6 +35800,12 @@
         "illustrator": "Gosha",
         "note": "BT-14: Booster Blast Ace",
         "type": "Textured -\u00a0Rare Pull"
+      },
+      {
+        "id": "_P3",
+        "illustrator": "Takase",
+        "note": "BT-15: Booster Exceed Apocalypse",
+        "type": "Gold Foil -\u00a0Special Rare"
       }
     ],
     "JAAs": [
@@ -35777,6 +35814,12 @@
         "illustrator": "tyuga",
         "note": "BT-14: Booster Blast Ace",
         "type": "Textured -\u00a0Alternative Art"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "Takase",
+        "note": "BT-15: Booster Exceed Apocalypse",
+        "type": "Gold Foil -\u00a0Special Rare"
       }
     ],
     "aceEffect": "Overflow \uff1c-3\uff1e (As this card moves from the battle area or under a card to another area, lose 3 memory).",
@@ -39476,7 +39519,13 @@
         "id": "_P1",
         "illustrator": "Naochika Morishita",
         "note": "BT-15: Booster Exceed Apocalypse",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "Spareribs",
+        "note": "BT-15: Booster Exceed Apocalypse",
+        "type": "Gold Foil -\u00a0Special Rare"
       }
     ],
     "JAAs": [
@@ -39484,7 +39533,13 @@
         "id": "_P1",
         "illustrator": "Naochika Morishita",
         "note": "BT-15: Booster Exceed Apocalypse",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "Spareribs",
+        "note": "BT-15: Booster Exceed Apocalypse",
+        "type": "Gold Foil -\u00a0Special Rare"
       }
     ],
     "aceEffect": "Overflow \uff1c-3\uff1e (As this card moves from the battle area or under a card to another area, lose 3 memory).",
@@ -40114,7 +40169,13 @@
         "id": "_P1",
         "illustrator": "Naochika Morishita",
         "note": "BT-15: Booster Exceed Apocalypse",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "Kenji Watanabe",
+        "note": "BT-15: Booster Exceed Apocalypse",
+        "type": "Gold Foil -\u00a0Special Rare"
       }
     ],
     "JAAs": [
@@ -40122,7 +40183,13 @@
         "id": "_P1",
         "illustrator": "Naochika Morishita",
         "note": "BT-15: Booster Exceed Apocalypse",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "Kenji Watanabe",
+        "note": "BT-15: Booster Exceed Apocalypse",
+        "type": "Gold Foil -\u00a0Special Rare"
       }
     ],
     "aceEffect": "Overflow \uff1c-3\uff1e (As this card moves from the battle area or under a card to another area, lose 3 memory).",
@@ -40752,7 +40819,13 @@
         "id": "_P1",
         "illustrator": "Teppei Tadokoro",
         "note": "BT-15: Booster Exceed Apocalypse",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "tyuga",
+        "note": "BT-15: Booster Exceed Apocalypse",
+        "type": "Gold Foil -\u00a0Special Rare"
       }
     ],
     "JAAs": [
@@ -40760,7 +40833,13 @@
         "id": "_P1",
         "illustrator": "Teppei Tadokoro",
         "note": "BT-15: Booster Exceed Apocalypse",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "tyuga",
+        "note": "BT-15: Booster Exceed Apocalypse",
+        "type": "Gold Foil -\u00a0Special Rare"
       }
     ],
     "aceEffect": "Overflow \uff1c-3\uff1e (As this card moves from the battle area or under a card to another area, lose 3 memory).",
@@ -41340,7 +41419,13 @@
         "id": "_P1",
         "illustrator": "Spareribs",
         "note": "BT-15: Booster Exceed Apocalypse",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "TANIMESO",
+        "note": "BT-15: Booster Exceed Apocalypse",
+        "type": "Gold Foil -\u00a0Special Rare"
       }
     ],
     "JAAs": [
@@ -41348,7 +41433,13 @@
         "id": "_P1",
         "illustrator": "Spareribs",
         "note": "BT-15: Booster Exceed Apocalypse",
-        "type": "Alternative Art"
+        "type": "Textured -\u00a0Alternative Art"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "TANIMESO",
+        "note": "BT-15: Booster Exceed Apocalypse",
+        "type": "Gold Foil -\u00a0Special Rare"
       }
     ],
     "aceEffect": "Overflow \uff1c-3\uff1e (As this card moves from the battle area or under a card to another area, lose 3 memory).",
@@ -45352,17 +45443,23 @@
     "AAs": [
       {
         "id": "_P1",
-        "illustrator": "Kirita",
-        "note": "BT01-03: Release Special Booster Ver.1.5",
-        "type": "No Foil -\u00a0Common"
+        "illustrator": "Ishibashi Yosuke",
+        "note": "DC-1 2021",
+        "type": "Foil - Stamped -\u00a0Participation"
       }
     ],
     "JAAs": [
       {
         "id": "_P1",
-        "illustrator": "Kirita",
-        "note": "BT-02: Booster Ultimate Power",
-        "type": "No Foil -\u00a0Common"
+        "illustrator": "Ishibashi Yosuke",
+        "note": "DC-1 2021",
+        "type": "Foil - Stamped -\u00a0Participation"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "naru",
+        "note": "Digimon Illustration Competition Promotion Pack 2023",
+        "type": "No Foil -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "-",
@@ -45390,7 +45487,7 @@
     "effect": "-",
     "form": "Rookie",
     "id": "BT2-021",
-    "illustrator": "Ishibashi Yosuke",
+    "illustrator": "Kirita",
     "name": {
       "english": "Veemon",
       "japanese": "\u30d6\u30a4\u30e2\u30f3",
@@ -45398,7 +45495,7 @@
       "simplifiedChinese": "V\u4ed4\u517d",
       "traditionalChinese": "V\u4ed4\u7378"
     },
-    "notes": "DC-1 2021",
+    "notes": "\u25b9RELEASE SPECIAL BOOSTER 1.5 [BT01-B0T3]",
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
@@ -48551,7 +48648,7 @@
     "rarity": "C",
     "restrictions": {
       "chinese": "Unrestricted",
-      "english": "Unrestricted",
+      "english": "Restricted to 1",
       "japanese": "Restricted to 1",
       "korean": "Unrestricted"
     },
@@ -54832,7 +54929,14 @@
   },
   {
     "AAs": [],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Irasa",
+        "note": "Digimon Illustration Competition Promotion Pack 2023",
+        "type": "No Foil -\u00a0Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "Virus",
     "block": [
@@ -72303,7 +72407,7 @@
     "rarity": "U",
     "restrictions": {
       "chinese": "Restricted to 1",
-      "english": "Restricted to 1",
+      "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Not released"
     },
@@ -82251,7 +82355,7 @@
     "rarity": "C",
     "restrictions": {
       "chinese": "Unrestricted",
-      "english": "Unrestricted",
+      "english": "Restricted to 1",
       "japanese": "Restricted to 1",
       "korean": "Not released"
     },
@@ -83316,7 +83420,7 @@
     "rarity": "R",
     "restrictions": {
       "chinese": "Restricted to 1",
-      "english": "Restricted to 1",
+      "english": "Unrestricted",
       "japanese": "Unrestricted",
       "korean": "Not released"
     },
@@ -93159,7 +93263,14 @@
   },
   {
     "AAs": [],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Aurola",
+        "note": "Digimon Illustration Competition Promotion Pack 2023",
+        "type": "No Foil -\u00a0Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "Data",
     "block": [
@@ -98166,6 +98277,12 @@
         "illustrator": "No Illustrator",
         "note": "EX-01: Theme Booster Classic Collection",
         "type": "Textured - Classic Art -\u00a0Alternative Art"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "Iori Sunakura",
+        "note": "Digimon Illustration Competition Promotion Pack 2023",
+        "type": "No Foil -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "-",
@@ -101710,7 +101827,14 @@
   },
   {
     "AAs": [],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "Kariki Hakime",
+        "note": "Digimon Illustration Competition Promotion Pack 2023",
+        "type": "No Foil -\u00a0Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "Virus",
     "block": [
@@ -112009,7 +112133,7 @@
     "rarity": "R",
     "restrictions": {
       "chinese": "Not released",
-      "english": "Unrestricted",
+      "english": "Restricted to 1",
       "japanese": "Restricted to 1",
       "korean": "Not released"
     },
@@ -123744,7 +123868,14 @@
   },
   {
     "AAs": [],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "_P1",
+        "illustrator": "E_Volution_",
+        "note": "Digimon Illustration Competition Promotion Pack 2023",
+        "type": "No Foil -\u00a0Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "attribute": "Vaccine",
     "block": [
@@ -141316,7 +141447,7 @@
     "rarity": "C",
     "restrictions": {
       "chinese": "Unrestricted",
-      "english": "Unrestricted",
+      "english": "Restricted to 1",
       "japanese": "Restricted to 1",
       "korean": "Unrestricted"
     },
@@ -143870,6 +144001,12 @@
         "illustrator": "Nakano Haito",
         "note": "Starter Deck Complete Set 2021",
         "type": "Foil -\u00a0Alternative Art"
+      },
+      {
+        "id": "_P2",
+        "illustrator": "Capitan Artiglio",
+        "note": "Digimon Illustration Competition Promotion Pack 2023",
+        "type": "No Foil -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "-",
