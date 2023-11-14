@@ -30,6 +30,12 @@ export function setTags(deck: IDeck, allCards: DigimonCard[]) {
 
 export function setNewestSet(cards: ICountCard[]): ITag {
   const releaseOrder = [
+    'EX06',
+    'BT16',
+    'ST17',
+    'BT15',
+    'EX05',
+    'BT14',
     'ST16',
     'ST15',
     'RB1',

@@ -39,6 +39,8 @@ wikiPageLinks = [
 #        'url': 'https://digimoncardgame.fandom.com/wiki/BT-14:_Booster_Blast_Ace'},
 #    {'name': '▹BOOSTER EXCEED APOCALYPSE [BT15]',
 #        'url': 'https://digimoncardgame.fandom.com/wiki/BT-15:_Booster_Exceed_Apocalypse'},
+  {'name': '▹BOOSTER BEGINNING OBSERVER [BT16]',
+   'url': 'https://digimoncardgame.fandom.com/wiki/BT-16:_Booster_Beginning_Observer'},
 #
 #    {'name': '▹THEME BOOSTER CLASSIC COLLECTION [EX1]',
 #        'url': 'https://digimoncardgame.fandom.com/wiki/EX-01:_Theme_Booster_Classic_Collection'},
@@ -50,6 +52,8 @@ wikiPageLinks = [
 #        'url': 'https://digimoncardgame.fandom.com/wiki/EX-04:_Theme_Booster_Alternative_Being'},
 #    {'name': '▹THEME BOOSTER ANIMAL COLOSSEUM [EX5]',
 #        'url': 'https://digimoncardgame.fandom.com/wiki/EX-05:_Theme_Booster_Animal_Colosseum'},
+    {'name': '▹THEME BOOSTER INFERNAL ASCENSION [EX6]',
+        'url': 'https://digimoncardgame.fandom.com/wiki/EX-06:_Theme_Booster_Infernal_Ascension'},
 #
 #    {'name': 'BOOSTER RESURGENCE BOOSTER [RB1]',
 #        'url': 'https://digimoncardgame.fandom.com/wiki/RB-01:_Resurgence_Booster'},
@@ -88,7 +92,9 @@ wikiPageLinks = [
 #        'url': 'https://digimoncardgame.fandom.com/wiki/ST-17:_Advanced_Deck_Set_Double_Typhoon'},
 #
 #    {'name': 'LIMITED PACK DIGIMON GHOST GAME',
-#        'url': 'https://digimoncardgame.fandom.com/wiki/LM-01:_Limited_Pack_Digimon_Ghost_Game'}
+#        'url': 'https://digimoncardgame.fandom.com/wiki/LM-01:_Limited_Pack_Digimon_Ghost_Game'}1
+    {'name': 'LIMITED PACK DIGIMON DEATHXMON',
+        'url': 'https://digimoncardgame.fandom.com/wiki/LM-02:_Limited_Pack_DeathXmon'}
 ]
 NoteDictionary = {
     'BT01-03: Release Special Booster Ver.1.0': '▹RELEASE SPECIAL BOOSTER 1.0 [BT01-B0T3]',
@@ -105,12 +111,14 @@ NoteDictionary = {
     'BT-13: Booster Versus Royal Knights': '▹BOOSTER VERSUS ROYAL KNIGHT [BT13]',
     'BT-14: Booster Blast Ace': '▹BOOSTER BLAST ACE [BT14]',
     'BT-15: Booster Exceed Apocalypse': '▹BOOSTER EXCEED APOCALYPSE [BT15]',
+    'BT-16: Booster Beginning Observer': '▹BOOSTER BEGINNING OBSERVER [BT16]',
 
     'EX-01: Theme Booster Classic Collection': '▹THEME BOOSTER CLASSIC COLLECTION [EX01]',
     'EX-02: Theme Booster Digital Hazard': '▹THEME BOOSTER DIGITAL HAZARD [EX02]',
     'EX-03: Theme Booster Draconic Roar': '▹THEME BOOSTER DRAGONIC ROAR [EX03]',
     'EX-04: Theme Booster Alternative Being': '▹THEME BOOSTER ALTERNATIVE BEING [EX04]',
     'EX-05: Theme Booster Animal Colosseum': '▹THEME BOOSTER ANIMAL COLOSSEUM [EX05]',
+    'EX-06: Theme Booster Infernal Ascension': '▹THEME BOOSTER INFERNAL ASCENSION [EX06]',
 
     'RB-01: Resurgence Booster': 'BOOSTER RESURGENCE BOOSTER [RB01]',
 
@@ -132,6 +140,7 @@ NoteDictionary = {
     'ST-17: Advanced Deck Set Double Typhoon': 'STARTER DECK DOUBLE TYPHOON [ST17]',
 
     'LM-01: Limited Pack Digimon Ghost Game': 'LIMITED PACK DIGIMON GHOST GAME [LM01]',
+    'LM-02: Limited Pack Digimon DeathXmon': 'LIMITED PACK DIGIMON DEATHXMON [LM02]',
 }
 cardCount = 0
 replacements = [

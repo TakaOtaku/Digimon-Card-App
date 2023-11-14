@@ -31,7 +31,7 @@ import {
 import { IUserAndDecks } from '../../../models/interfaces/userAndDecks.interface';
 import {
   deckIsValid,
-  setDeckImage,
+  setDeckImage, setTags
 } from '../../functions/digimon-card.functions';
 import { DigimonBackendService } from '../../service/digimon-backend.service';
 import {
@@ -323,35 +323,6 @@ export class DecksPageComponent implements OnInit, OnDestroy {
     this.setDecksToShow(event.first, (slice ?? 20) * (event.page + 1));
   }
 
-  getSwitchLabel(): string {
-    return this.mode === 'Community'
-      ? `Switch to Tournament Decks`
-      : `Switch to Community Decks`;
-  }
-
-  switchMode() {
-    this.mode = this.mode === 'Community' ? 'Tournament' : 'Community';
-    if (this.mode === 'Community') {
-      this.decks = this.allDecks;
-      this.filteredDecks = this.decks;
-      this.decksToShow = this.filteredDecks.slice(0, 20);
-      this.filterChanges();
-    } else {
-      this.digimonBackendService
-        .getTournamentDecks()
-        .pipe(
-          first(),
-          tap(() => this.allDecksLoaded$.next(false))
-        )
-        .subscribe((decks) => {
-          this.decks = decks;
-          this.filteredDecks = this.decks;
-          this.decksToShow = this.filteredDecks.slice(0, 20);
-          this.filterChanges();
-        });
-    }
-  }
-
   filterChanges() {
     this.allDecksLoaded$.next(false);
     this.updateFilters()
@@ -420,6 +391,7 @@ export class DecksPageComponent implements OnInit, OnDestroy {
       .slice(from, to)
       .map((deck: IDeck | ITournamentDeck) => ({
         ...deck,
+        tags: setTags(deck, this.allCards),
         imageCardId:
           deck.imageCardId === 'BT1-001'
             ? setDeckImage(deck, this.allCards).id

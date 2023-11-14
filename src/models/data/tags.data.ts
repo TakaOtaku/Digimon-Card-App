@@ -16,12 +16,15 @@ export const TAGS = [
   'BT13',
   'BT14',
   'BT15',
+  'BT16',
   'RB1',
   'LM',
   'EX1',
   'EX2',
   'EX3',
   'EX4',
+  'EX5',
+  'EX6',
   'ST1',
   'ST2',
   'ST3',
@@ -56,12 +59,14 @@ export const tagsList: ITag[] = [
   { name: 'BT13', color: 'Primary' },
   { name: 'BT14', color: 'Primary' },
   { name: 'BT15', color: 'Primary' },
+  { name: 'BT16', color: 'Primary' },
 
   { name: 'EX1', color: 'Primary' },
   { name: 'EX2', color: 'Primary' },
   { name: 'EX3', color: 'Primary' },
   { name: 'EX4', color: 'Primary' },
   { name: 'EX5', color: 'Primary' },
+  { name: 'EX6', color: 'Primary' },
 
   { name: 'RB1', color: 'Primary' },
 
@@ -83,6 +88,7 @@ export const tagsList: ITag[] = [
   { name: 'ST14', color: 'Primary' },
   { name: 'ST15', color: 'Primary' },
   { name: 'ST16', color: 'Primary' },
+  { name: 'ST17', color: 'Primary' },
 
   { name: 'Illegal', color: 'Primary' },
 ];
