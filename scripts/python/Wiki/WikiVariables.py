@@ -144,6 +144,10 @@ NoteDictionary = {
 }
 cardCount = 0
 replacements = [
+    '(After this card is placed, by trashing it the next turn or later, activate the effect below.)',
+    '(When your other red or black Digimon would be deleted by an opponent\'s effect, you may delete this Digimon to prevent 1 of those Digimon\'s deletion).',
+    '(When your other black or white Digimon would be deleted by an opponent\'s effect, you may delete this Digimon to prevent 1 of those Digimon\'s deletion).',
+    '(When your other black Digimon would be deleted by an opponent\'s effect, you may delete this Digimon to prevent 1 of those Digimon\'s deletion).',
     '(This Digimon can attack the turn it comes into play)',
     '(At blocker timing, by suspending this Digimon, it becomes the attack target)',
     '(Trash this card in your battle area to activate the effect below. You can\'t activate this effect the turn this card enters play.)',
@@ -204,4 +208,6 @@ replacements = [
     '(When your other black or white Digimon would be deleted by an opponent\'s effect, you may delete this Digimon to prevent 1 of those Digimon\'s deletion)',
     '(When your other bagra army Digimon would be deleted by an opponent\'s effect, you may delete this Digimon to prevent you may delete this Digimon to prevent 1 of those Digimon\'s deletion)',
     '(When your other d-brigade Digimon would be deleted by an opponent\'s effect, you may delete this Digimon to prevent you may delete this Digimon to prevent 1 of those Digimon\'s deletion)',
+    '(When this Digimon that has 1 of each specified cards in its digivolution cards would leave the battle area other than by your own effects or by battle, you may play 1 of each card without paying their costs)',
+    '(When this Digimon that has 1 of each specified cards in its digivolution cards would leave the battle area other than by your own effects or by battle, you may play 1 of each card without paying their costs)',
 ]

@@ -90,6 +90,14 @@ export const replacements: Array<[RegExp, string]> = [
   [/\[When Digivolving]/g, 'when_digivolving'],
   [/\[When Attacking]/g, 'when_attacking'],
   [/\[Your Turn]/g, 'your_turn'],
+  [
+    /＜Partition \(blue Lv.4 \+ green Lv.4\)＞/g,
+    'partition_blue_lv.4_green_lv.4',
+  ],
+  [
+    /＜Partition \(red Lv.4 \+ yellow Lv.4\)＞/g,
+    'partition_red_lv.4_yellow_lv.4',
+  ],
 ];
 
 export const keywordTooltip: Map<string, string> = new Map<string, string>([
