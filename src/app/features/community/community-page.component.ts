@@ -1,4 +1,3 @@
-import { WebsiteActions } from './../../store/digimon.actions';
 import { AsyncPipe, DatePipe, NgFor, NgIf } from '@angular/common';
 import {
   ChangeDetectionStrategy,
@@ -15,9 +14,10 @@ import { RippleModule } from 'primeng/ripple';
 import { first, map, Observable, Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
 import { ADMINS, IBlog, IBlogWithText, IUser } from '../../../models';
-import { AuthService } from '../../service/auth.service';
-import { DigimonBackendService } from '../../service/digimon-backend.service';
+import { AuthService } from '../../services/auth.service';
+import { DigimonBackendService } from '../../services/digimon-backend.service';
 import { selectBlogs } from '../../store/digimon.selectors';
+import { WebsiteActions } from './../../store/digimon.actions';
 
 interface IBlogs {
   allBlogs: IBlog[];

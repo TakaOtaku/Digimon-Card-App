@@ -27,7 +27,6 @@ import { first } from 'rxjs';
 import * as uuid from 'uuid';
 
 import {
-  CARDSET,
   DigimonCard,
   IDeck,
   IDeckCard,
@@ -37,8 +36,8 @@ import {
   mapToDeckCards,
   setDeckImage,
 } from '../../../functions/digimon-card.functions';
-import { AuthService } from '../../../service/auth.service';
-import { DigimonBackendService } from '../../../service/digimon-backend.service';
+import { AuthService } from '../../../services/auth.service';
+import { DigimonBackendService } from '../../../services/digimon-backend.service';
 import { selectAllCards } from '../../../store/digimon.selectors';
 import { DeckCardComponent } from '../deck-card.component';
 import { ChartContainersComponent } from '../statistics/chart-containers.component';

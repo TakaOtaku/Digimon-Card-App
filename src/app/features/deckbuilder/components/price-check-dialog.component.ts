@@ -1,4 +1,3 @@
-import { WebsiteActions } from './../../../store/digimon.actions';
 import { AsyncPipe, CurrencyPipe, NgFor, NgIf } from '@angular/common';
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -19,11 +18,12 @@ import {
   CardMarketService,
   ProductCM,
   ProductCMWithCount,
-} from '../../../service/card-market.service';
+} from '../../../services/card-market.service';
 import {
   DeckBuilderViewModel,
   selectDeckBuilderViewModel,
 } from '../../../store/digimon.selectors';
+import { WebsiteActions } from './../../../store/digimon.actions';
 
 @Component({
   selector: 'digimon-price-check-dialog',

@@ -1,8 +1,11 @@
+import { NgIf } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 // @ts-ignore
 import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 import { Store } from '@ngrx/store';
+import { DialogModule } from 'primeng/dialog';
 import { concat, first, Observable, Subject, switchMap, tap } from 'rxjs';
 import {
   ADMINS,
@@ -16,14 +19,11 @@ import {
   setDeckImage,
   setTags,
 } from '../../functions/digimon-card.functions';
-import { AuthService } from '../../service/auth.service';
-import { CardMarketService } from '../../service/card-market.service';
-import { DatabaseService } from '../../service/database.service';
-import { DigimonBackendService } from '../../service/digimon-backend.service';
+import { AuthService } from '../../services/auth.service';
+import { CardMarketService } from '../../services/card-market.service';
+import { DatabaseService } from '../../services/database.service';
+import { DigimonBackendService } from '../../services/digimon-backend.service';
 import { selectAllCards } from '../../store/digimon.selectors';
-import { FormsModule } from '@angular/forms';
-import { DialogModule } from 'primeng/dialog';
-import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'digimon-test-page',
@@ -151,28 +151,6 @@ export class TestPageComponent implements OnInit, OnDestroy {
       });
   }
 
-  private updateDecks(save: ISave) {
-    const newDecks: IDeck[] = save.decks.map((deck) => {
-      const tags = setTags(deck, this.allCards);
-      const color = setColors(deck, this.allCards);
-
-      return {
-        ...deck,
-        tags,
-        color,
-        imageCardId:
-          !deck.imageCardId || deck.imageCardId === 'BT1-001'
-            ? setDeckImage(deck, this.allCards).id
-            : deck.imageCardId,
-        date: !deck.date ? new Date().toString() : deck.date,
-      };
-    });
-    const newSave: ISave = { ...save, decks: newDecks };
-    if (save != newSave) {
-      this.digimonBackendService.updateSave(newSave).pipe(first()).subscribe();
-    }
-  }
-
   updatePriceGuideIds() {
     this.cardMarketService.getPrizeGuide().subscribe((priceGuide: any[]) => {
       const observable: Observable<any>[] = [];
@@ -295,6 +273,29 @@ export class TestPageComponent implements OnInit, OnDestroy {
         concat(...obsArray$).subscribe();
       });
   }
+
+  private updateDecks(save: ISave) {
+    const newDecks: IDeck[] = save.decks.map((deck) => {
+      const tags = setTags(deck, this.allCards);
+      const color = setColors(deck, this.allCards);
+
+      return {
+        ...deck,
+        tags,
+        color,
+        imageCardId:
+          !deck.imageCardId || deck.imageCardId === 'BT1-001'
+            ? setDeckImage(deck, this.allCards).id
+            : deck.imageCardId,
+        date: !deck.date ? new Date().toString() : deck.date,
+      };
+    });
+    const newSave: ISave = { ...save, decks: newDecks };
+    if (save != newSave) {
+      this.digimonBackendService.updateSave(newSave).pipe(first()).subscribe();
+    }
+  }
+
   private updateDeck(deck: IDeck): Observable<any> | null {
     let error = false;
     let newDecks: IDeck = deck;
@@ -313,6 +314,7 @@ export class TestPageComponent implements OnInit, OnDestroy {
           .pipe(first())
       : null;
   }
+
   private updateTournamentDeck(deck: ITournamentDeck): Observable<any> | null {
     let error = false;
     let newDecks: ITournamentDeck = deck;

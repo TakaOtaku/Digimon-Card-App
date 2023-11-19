@@ -12,8 +12,8 @@ import { first } from 'rxjs';
 import { ISave } from '../models';
 import { ChangelogDialogComponent } from './features/shared/dialogs/changelog-dialog.component';
 import { NavbarComponent } from './features/shared/navbar.component';
-import { AuthService } from './service/auth.service';
-import { DigimonBackendService } from './service/digimon-backend.service';
+import { AuthService } from './services/auth.service';
+import { DigimonBackendService } from './services/digimon-backend.service';
 import { SaveActions } from './store/digimon.actions';
 import { emptySave } from './store/reducers/save.reducer';
 

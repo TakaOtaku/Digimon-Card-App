@@ -1,7 +1,7 @@
 /// <reference lib="webworker" />
 
-import { IDeck } from '../models';
-import { deckIsValid, setTags } from './functions/digimon-card.functions';
+import { IDeck } from '../../models';
+import { deckIsValid, setTags } from '../functions/digimon-card.functions';
 
 addEventListener('message', ({ data }) => {
   const { decks, allCards } = data;

@@ -1,10 +1,10 @@
 import {
-  DatePipe,
-  NgIf,
-  NgFor,
-  NgStyle,
-  NgClass,
   AsyncPipe,
+  DatePipe,
+  NgClass,
+  NgFor,
+  NgIf,
+  NgStyle,
 } from '@angular/common';
 import {
   ChangeDetectionStrategy,
@@ -12,20 +12,20 @@ import {
   OnDestroy,
   OnInit,
 } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { ButtonModule } from 'primeng/button';
+import { CalendarModule } from 'primeng/calendar';
+import { DialogModule } from 'primeng/dialog';
+import { InputTextModule } from 'primeng/inputtext';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { RippleModule } from 'primeng/ripple';
+import { StyleClassModule } from 'primeng/styleclass';
+import { TooltipModule } from 'primeng/tooltip';
 import { Observable, Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
 import { ADMINS, IUser } from '../../../../models';
-import { AuthService } from '../../../service/auth.service';
-import { DigimonBackendService } from '../../../service/digimon-backend.service';
-import { RippleModule } from 'primeng/ripple';
-import { ButtonModule } from 'primeng/button';
-import { RadioButtonModule } from 'primeng/radiobutton';
-import { CalendarModule } from 'primeng/calendar';
-import { StyleClassModule } from 'primeng/styleclass';
-import { InputTextModule } from 'primeng/inputtext';
-import { FormsModule } from '@angular/forms';
-import { DialogModule } from 'primeng/dialog';
-import { TooltipModule } from 'primeng/tooltip';
+import { AuthService } from '../../../services/auth.service';
+import { DigimonBackendService } from '../../../services/digimon-backend.service';
 
 export interface IEvent {
   uid: string;

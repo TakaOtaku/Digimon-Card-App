@@ -1,3 +1,4 @@
+import { DatePipe, NgClass, NgIf } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -8,18 +9,17 @@ import {
   Output,
 } from '@angular/core';
 import {
-  UntypedFormGroup,
   FormsModule,
   ReactiveFormsModule,
+  UntypedFormGroup,
 } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Subject, takeUntil } from 'rxjs';
-import { ADMINS, IUser } from '../../../../models';
-import { AuthService } from '../../../service/auth.service';
+import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { RippleModule } from 'primeng/ripple';
-import { ButtonModule } from 'primeng/button';
-import { NgIf, NgClass, DatePipe } from '@angular/common';
+import { Subject, takeUntil } from 'rxjs';
+import { ADMINS, IUser } from '../../../../models';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'digimon-header',
@@ -126,6 +126,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   user: IUser | null;
 
   private onDestroy$ = new Subject();
+
   constructor(public router: Router, private authService: AuthService) {}
 
   ngOnInit(): void {

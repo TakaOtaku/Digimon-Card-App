@@ -1,4 +1,4 @@
-import { Location, NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe, Location, NgIf } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -20,15 +20,15 @@ import {
   tap,
 } from 'rxjs';
 import { IDeck, ISave } from '../../../models';
-import { AuthService } from '../../service/auth.service';
-import { DigimonBackendService } from '../../service/digimon-backend.service';
+import { AuthService } from '../../services/auth.service';
+import { DigimonBackendService } from '../../services/digimon-backend.service';
 import {
   selectDecks,
   selectSave,
   selectShowUserStats,
 } from '../../store/digimon.selectors';
-import { DecksComponent } from './decks.component';
 import { DeckFilterComponent } from './deck-filter.component';
+import { DecksComponent } from './decks.component';
 import { UserStatsComponent } from './user-stats.component';
 
 @Component({

@@ -9,11 +9,11 @@ import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 import { first, Observable, switchMap, tap, withLatestFrom } from 'rxjs';
+import { WebsiteActions } from 'src/app/store/digimon.actions';
 import { IBlog, IBlogWithText } from '../../../models';
-import { DigimonBackendService } from '../../service/digimon-backend.service';
+import { DigimonBackendService } from '../../services/digimon-backend.service';
 import { CKEditorComponent } from './components/ckeditor.component';
 import { HeaderComponent } from './components/header.component';
-import { WebsiteActions } from 'src/app/store/digimon.actions';
 
 @Component({
   selector: 'digimon-blog-page',

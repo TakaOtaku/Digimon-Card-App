@@ -9,7 +9,7 @@ import {
 } from '../../models';
 import { IBlog } from '../../models/interfaces/blog-entry.interface';
 import { DigimonCard } from '../../models/interfaces/digimon-card.interface';
-import { ProductCM } from '../service/card-market.service';
+import { ProductCM } from '../services/card-market.service';
 
 export const DigimonActions = createActionGroup({
   source: 'Digimon Cards',

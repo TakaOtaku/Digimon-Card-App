@@ -11,7 +11,7 @@ import { Store } from '@ngrx/store';
 import { AccordionModule } from 'primeng/accordion';
 import { ConfirmationService, MessageService, SharedModule } from 'primeng/api';
 import { DragDropModule } from 'primeng/dragdrop';
-import { Subject, filter, first, takeUntil } from 'rxjs';
+import { filter, first, Subject, takeUntil } from 'rxjs';
 import {
   DigimonCard,
   ICountCard,
@@ -31,8 +31,8 @@ import {
   sortColors,
 } from '../../../functions/digimon-card.functions';
 import { sortID } from '../../../functions/filter.functions';
-import { AuthService } from '../../../service/auth.service';
-import { DigimonBackendService } from '../../../service/digimon-backend.service';
+import { AuthService } from '../../../services/auth.service';
+import { DigimonBackendService } from '../../../services/digimon-backend.service';
 import {
   selectCollection,
   selectDeckBuilderViewModel,

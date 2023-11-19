@@ -14,8 +14,8 @@ import {
 import { setupDigimonCards } from '../../assets/cardlists/DigimonCards';
 import { CARDSET } from '../../models/enums/card-set.enum';
 import { filterCards } from '../functions/filter.functions';
-import { AuthService } from '../service/auth.service';
-import { DigimonBackendService } from '../service/digimon-backend.service';
+import { AuthService } from '../services/auth.service';
+import { DigimonBackendService } from '../services/digimon-backend.service';
 import {
   CollectionActions,
   DeckActions,

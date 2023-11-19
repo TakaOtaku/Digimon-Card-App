@@ -11,8 +11,11 @@ import { BehaviorSubject, first } from 'rxjs';
 import { DigimonCard, IDeck, ITournamentDeck } from '../../../models';
 import { ColorMap } from '../../../models/maps/color.map';
 import { setDeckImage } from '../../functions/digimon-card.functions';
-import { ImageService } from '../../service/image.service';
-import { selectAllCards, selectDigimonCardMap } from '../../store/digimon.selectors';
+import { ImageService } from '../../services/image.service';
+import {
+  selectAllCards,
+  selectDigimonCardMap,
+} from '../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-deck-container',

@@ -1,29 +1,29 @@
+import { AsyncPipe, CurrencyPipe, NgFor, NgIf } from '@angular/common';
 import { Component, Input, OnDestroy } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
+import { SharedModule } from 'primeng/api';
+import { BlockUIModule } from 'primeng/blockui';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { TableModule } from 'primeng/table';
 import { Subject, tap } from 'rxjs';
+import { dummyCard } from 'src/app/store/reducers/digimon.reducers';
 import {
-  GroupedSets,
   DigimonCard,
+  GroupedSets,
   ICountCard,
   ISave,
 } from '../../../../models';
 import {
   ProductCM,
   ProductCMWithCount,
-} from '../../../service/card-market.service';
+} from '../../../services/card-market.service';
 import {
   selectAllCards,
   selectPriceGuideCM,
 } from '../../../store/digimon.selectors';
-import { TableModule } from 'primeng/table';
 import { CardImageComponent } from '../../shared/card-image.component';
-import { SharedModule } from 'primeng/api';
-import { FormsModule } from '@angular/forms';
-import { MultiSelectModule } from 'primeng/multiselect';
-import { ProgressSpinnerModule } from 'primeng/progressspinner';
-import { BlockUIModule } from 'primeng/blockui';
-import { NgIf, NgFor, AsyncPipe, CurrencyPipe } from '@angular/common';
-import { dummyCard } from 'src/app/store/reducers/digimon.reducers';
 
 @Component({
   selector: 'digimon-collection-price-check-dialog',
@@ -200,12 +200,10 @@ export class CollectionPriceCheckDialogComponent implements OnDestroy {
   cardRadius = '5px';
 
   viewCardDialog = false;
-
+  prizeGuide: ProductCM[] = [];
   prizeGuide$ = this.store
     .select(selectPriceGuideCM)
     .pipe(tap((products) => (this.prizeGuide = products)));
-  prizeGuide: ProductCM[] = [];
-
   onlyMissing = false;
   spinner = false;
 

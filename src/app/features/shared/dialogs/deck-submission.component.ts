@@ -1,3 +1,4 @@
+import { NgFor } from '@angular/common';
 import {
   Component,
   EventEmitter,
@@ -9,15 +10,20 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import {
+  FormsModule,
+  ReactiveFormsModule,
   UntypedFormControl,
   UntypedFormGroup,
   Validators,
-  FormsModule,
-  ReactiveFormsModule,
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
+import { ButtonModule } from 'primeng/button';
+import { CalendarModule } from 'primeng/calendar';
+import { DropdownModule } from 'primeng/dropdown';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 import {
   debounceTime,
   distinctUntilChanged,
@@ -40,17 +46,11 @@ import {
 } from '../../../functions/digimon-card.functions';
 import { sortID } from '../../../functions/filter.functions';
 import { stringToDeck } from '../../../functions/parse-deck';
-import { AuthService } from '../../../service/auth.service';
-import { DigimonBackendService } from '../../../service/digimon-backend.service';
+import { AuthService } from '../../../services/auth.service';
+import { DigimonBackendService } from '../../../services/digimon-backend.service';
 import { selectAllCards } from '../../../store/digimon.selectors';
-import { DigimonCardImage } from './deck-dialog.component';
-import { ButtonModule } from 'primeng/button';
-import { CalendarModule } from 'primeng/calendar';
-import { DropdownModule } from 'primeng/dropdown';
-import { InputTextModule } from 'primeng/inputtext';
 import { DeckCardComponent } from '../deck-card.component';
-import { NgFor } from '@angular/common';
-import { InputTextareaModule } from 'primeng/inputtextarea';
+import { DigimonCardImage } from './deck-dialog.component';
 
 interface IDropDownItem {
   name: string;
@@ -299,6 +299,46 @@ export class DeckSubmissionComponent implements OnInit, OnChanges, OnDestroy {
     this.levelSort();
   }
 
+  createImageOptions(): DigimonCardImage[] {
+    return (
+      this.mainDeck.map((card) => ({
+        name: `${card.id} - ${card.name}`,
+        value: card.id,
+      })) ?? []
+    );
+  }
+
+  submit() {
+    const formValues = this.form.value;
+    const tournamentDeck: ITournamentDeck = {
+      id: uuid.v4(),
+      cards: this.deck!.cards,
+      sideDeck: this.deck!.sideDeck,
+      color: this.deck!.color,
+      title: formValues.title,
+      description: formValues.description,
+      tags: this.deck!.tags,
+      date: formValues.date,
+      user: formValues.player,
+      userId: '',
+      imageCardId: formValues.cardImageId.value,
+      likes: [],
+      placement: formValues.placement,
+      country: formValues.country.name,
+      player: formValues.player,
+      host: formValues.host,
+      format: formValues.format,
+      size: formValues.size.value,
+    };
+
+    this.digimonBackendService
+      .createTournamentDeck(tournamentDeck)
+      .pipe(first())
+      .subscribe();
+
+    this.onClose.emit(true);
+  }
+
   private levelSort() {
     const eggs = this.mainDeck
       .filter((card) => card.cardType === 'Digi-Egg')
@@ -345,46 +385,6 @@ export class DeckSubmissionComponent implements OnInit, OnChanges, OnDestroy {
         ...options,
       ]),
     ];
-  }
-
-  createImageOptions(): DigimonCardImage[] {
-    return (
-      this.mainDeck.map((card) => ({
-        name: `${card.id} - ${card.name}`,
-        value: card.id,
-      })) ?? []
-    );
-  }
-
-  submit() {
-    const formValues = this.form.value;
-    const tournamentDeck: ITournamentDeck = {
-      id: uuid.v4(),
-      cards: this.deck!.cards,
-      sideDeck: this.deck!.sideDeck,
-      color: this.deck!.color,
-      title: formValues.title,
-      description: formValues.description,
-      tags: this.deck!.tags,
-      date: formValues.date,
-      user: formValues.player,
-      userId: '',
-      imageCardId: formValues.cardImageId.value,
-      likes: [],
-      placement: formValues.placement,
-      country: formValues.country.name,
-      player: formValues.player,
-      host: formValues.host,
-      format: formValues.format,
-      size: formValues.size.value,
-    };
-
-    this.digimonBackendService
-      .createTournamentDeck(tournamentDeck)
-      .pipe(first())
-      .subscribe();
-
-    this.onClose.emit(true);
   }
 
   private updateValues(inputDeck: IDeck) {

@@ -1,7 +1,3 @@
-import {
-  CollectionActions,
-  SaveActions,
-} from './../../../store/digimon.actions';
 import { NgClass, NgIf, NgStyle } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import {
@@ -22,7 +18,7 @@ import { TabViewModule } from 'primeng/tabview';
 import { first, Subject, takeUntil } from 'rxjs';
 import { DigimonCard, ICountCard, ISave } from '../../../../models';
 import { GroupedSets } from '../../../../models/data/filter.data';
-import { DigimonBackendService } from '../../../service/digimon-backend.service';
+import { DigimonBackendService } from '../../../services/digimon-backend.service';
 import {
   selectAllCards,
   selectCollection,
@@ -30,6 +26,10 @@ import {
   selectSettings,
 } from '../../../store/digimon.selectors';
 import { emptySettings } from '../../../store/reducers/save.reducer';
+import {
+  CollectionActions,
+  SaveActions,
+} from './../../../store/digimon.actions';
 
 @Component({
   selector: 'digimon-settings-dialog',

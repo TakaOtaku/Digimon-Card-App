@@ -1,3 +1,4 @@
+import { NgClass, NgIf } from '@angular/common';
 import {
   Component,
   EventEmitter,
@@ -6,6 +7,7 @@ import {
   OnInit,
 } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {
   faCog,
   faFolder,
@@ -16,16 +18,14 @@ import {
   faUsers,
 } from '@fortawesome/free-solid-svg-icons';
 import { ConfirmationService } from 'primeng/api';
-import { first, Subject, takeUntil } from 'rxjs';
+import { ConfirmPopupModule } from 'primeng/confirmpopup';
+import { DialogModule } from 'primeng/dialog';
+import { Subject, takeUntil } from 'rxjs';
 import { IUser } from '../../../models';
-import { AuthService } from '../../service/auth.service';
+import { AuthService } from '../../services/auth.service';
 import { ChangelogDialogComponent } from './dialogs/changelog-dialog.component';
 import { SettingsDialogComponent } from './dialogs/settings-dialog.component';
-import { DialogModule } from 'primeng/dialog';
-import { ConfirmPopupModule } from 'primeng/confirmpopup';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FilterButtonComponent } from './filter/filter-button.component';
-import { NgClass, NgIf } from '@angular/common';
 
 @Component({
   selector: 'digimon-navbar',

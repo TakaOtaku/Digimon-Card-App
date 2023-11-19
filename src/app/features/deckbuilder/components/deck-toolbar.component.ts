@@ -1,4 +1,3 @@
-import { WebsiteActions } from './../../../store/digimon.actions';
 import { NgClass, NgFor } from '@angular/common';
 import {
   ChangeDetectionStrategy,
@@ -17,10 +16,11 @@ import { TooltipModule } from 'primeng/tooltip';
 import { BehaviorSubject, Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
 import { DigimonCard, IDeck, IDeckCard } from '../../../../models';
-import { AuthService } from '../../../service/auth.service';
+import { AuthService } from '../../../services/auth.service';
 import { selectAllCards } from '../../../store/digimon.selectors';
 import { ExportDeckDialogComponent } from '../../shared/dialogs/export-deck-dialog.component';
 import { ImportDeckDialogComponent } from '../../shared/dialogs/import-deck-dialog.component';
+import { WebsiteActions } from './../../../store/digimon.actions';
 import { PriceCheckDialogComponent } from './price-check-dialog.component';
 
 @Component({

@@ -1,18 +1,18 @@
+import { NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 // @ts-ignore
 import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 import firebase from 'firebase/compat';
 import { MessageService } from 'primeng/api';
+import { ButtonModule } from 'primeng/button';
+import { RippleModule } from 'primeng/ripple';
 import { first } from 'rxjs';
 import { Base64Adapter } from '../../../functions/base64-adapter';
-import { AuthService } from '../../../service/auth.service';
-import { DatabaseService } from '../../../service/database.service';
-import { RippleModule } from 'primeng/ripple';
-import { ButtonModule } from 'primeng/button';
-import { FormsModule } from '@angular/forms';
-import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
-import { NgIf } from '@angular/common';
+import { AuthService } from '../../../services/auth.service';
+import { DatabaseService } from '../../../services/database.service';
 import DataSnapshot = firebase.database.DataSnapshot;
 
 @Component({

@@ -31,9 +31,10 @@ import {
 import { IUserAndDecks } from '../../../models/interfaces/userAndDecks.interface';
 import {
   deckIsValid,
-  setDeckImage, setTags
+  setDeckImage,
+  setTags,
 } from '../../functions/digimon-card.functions';
-import { DigimonBackendService } from '../../service/digimon-backend.service';
+import { DigimonBackendService } from '../../services/digimon-backend.service';
 import {
   selectAllCards,
   selectCollection,

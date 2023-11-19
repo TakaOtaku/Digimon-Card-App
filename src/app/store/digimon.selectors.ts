@@ -10,7 +10,7 @@ import {
   ISort,
 } from '../../models';
 import { DigimonCard } from '../../models/interfaces/digimon-card.interface';
-import { ProductCM } from '../service/card-market.service';
+import { ProductCM } from '../services/card-market.service';
 import { emptyDeck } from './reducers/digimon.reducers';
 
 export const selectIDigimonCards =

@@ -15,7 +15,7 @@ import { dummyCard } from 'src/app/store/reducers/digimon.reducers';
 import { addJBeforeWebp } from '../../../assets/cardlists/DigimonCards';
 import { DigimonCard, IDeckCard } from '../../../models';
 import { ImgFallbackDirective } from '../../directives/ImgFallback.directive';
-import { ImageService } from '../../service/image.service';
+import { ImageService } from '../../services/image.service';
 import { WebsiteActions } from './../../store/digimon.actions';
 import { ViewCardDialogComponent } from './dialogs/view-card-dialog.component';
 
