@@ -173,7 +173,7 @@ export class PriceCheckDialogComponent implements OnInit, OnDestroy {
       .pipe(
         switchMap((priceGuide) => {
           this.store.dispatch(
-            WebsiteActions.setpriceguidecm({ products: priceGuide })
+            WebsiteActions.setPriceGuideCM({ products: priceGuide })
           );
           return this.deckBuilderViewModel$;
         })

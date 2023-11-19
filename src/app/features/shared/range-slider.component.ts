@@ -1,21 +1,10 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnDestroy,
-  OnInit,
-  Output,
-} from '@angular/core';
-import {
-  UntypedFormControl,
-  FormsModule,
-  ReactiveFormsModule,
-} from '@angular/forms';
-import { Subject, takeUntil } from 'rxjs';
-import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import { Component, EventEmitter, Input, OnDestroy, OnInit } from "@angular/core";
+import { FormsModule, ReactiveFormsModule, UntypedFormControl } from "@angular/forms";
+import { NgxSliderModule } from "ngx-slider-v2";
+import { Subject, takeUntil } from "rxjs";
 
 @Component({
-  selector: 'digimon-range-slider',
+  selector: "digimon-range-slider",
   template: `
     <div class="custom-slider flex flex-row px-3">
       <ngx-slider
@@ -28,14 +17,14 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
       {{ title }}
     </h1>
   `,
-  styleUrls: ['./range-slider.component.scss'],
+  styleUrls: ["./range-slider.component.scss"],
   standalone: true,
-  imports: [NgxSliderModule, FormsModule, ReactiveFormsModule],
+  imports: [NgxSliderModule, FormsModule, ReactiveFormsModule]
 })
 export class RangeSliderComponent implements OnInit, OnDestroy {
   @Input() minMax: number[] = [];
-  @Input() title: string = '';
-  @Input() suffix?: string = '';
+  @Input() title: string = "";
+  @Input() suffix?: string = "";
   @Input() reset: EventEmitter<void>;
   @Input() filterFormControl: UntypedFormControl;
 
@@ -50,8 +39,8 @@ export class RangeSliderComponent implements OnInit, OnDestroy {
       floor: this.minMax[0],
       ceil: this.minMax[1],
       translate: (value: number): string => {
-        return this.suffix ? value + this.suffix : value + '';
-      },
+        return this.suffix ? value + this.suffix : value + "";
+      }
     };
 
     this.reset.pipe(takeUntil(this.onDestroy$)).subscribe(() => {

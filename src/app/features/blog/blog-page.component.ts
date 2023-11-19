@@ -83,7 +83,7 @@ export class BlogPageComponent implements OnInit {
       .getBlogEntries()
       .pipe(first())
       .subscribe((blogs) => {
-        this.store.dispatch(WebsiteActions.setblogs({ blogs }));
+        this.store.dispatch(WebsiteActions.setBlogs({ blogs }));
       });
   }
 

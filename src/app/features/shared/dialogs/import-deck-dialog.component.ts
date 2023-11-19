@@ -108,7 +108,7 @@ export class ImportDeckDialogComponent implements OnDestroy {
 
     deck.tags = setTags(deck, allCards);
     deck.color = setColors(deck, allCards);
-    this.store.dispatch(WebsiteActions.setdeck({ deck }));
+    this.store.dispatch(WebsiteActions.setDeck({ deck }));
     this.show = false;
     this.messageService.add({
       severity: 'success',

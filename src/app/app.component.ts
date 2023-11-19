@@ -126,7 +126,7 @@ export class AppComponent {
         }
 
         this.store.dispatch(
-          SaveActions.setsave({ save: { ...save, version: emptySave.version } })
+          SaveActions.setSave({ save: { ...save, version: emptySave.version } })
         );
         this.toastrService.info(
           'Your save was loaded successfully!',
@@ -156,7 +156,7 @@ export class AppComponent {
         this.authService.userData
       );
       this.store.dispatch(
-        SaveActions.setsave({
+        SaveActions.setSave({
           save: { ...this.localStorageSave, version: emptySave.version },
         })
       );
@@ -171,7 +171,7 @@ export class AppComponent {
 
     this.hide = false;
     this.spinner = false;
-    this.store.dispatch(SaveActions.setsave({ save: emptySave }));
+    this.store.dispatch(SaveActions.setSave({ save: emptySave }));
     this.toastrService.info(
       'Welcome to digimoncard.app a new save was created for you!',
       'Welcome new User'

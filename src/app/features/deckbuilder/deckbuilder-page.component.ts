@@ -216,7 +216,7 @@ export class DeckbuilderPageComponent implements OnInit, OnDestroy {
               .getDeck(params['id'])
               .subscribe((deck) => {
                 this.store.dispatch(
-                  WebsiteActions.setdeck({
+                  WebsiteActions.setDeck({
                     deck: { ...deck, id: uuid.v4() },
                   })
                 );
@@ -240,7 +240,7 @@ export class DeckbuilderPageComponent implements OnInit, OnDestroy {
         const sameUser = iSave.uid === this.authService.userData?.uid;
 
         this.store.dispatch(
-          WebsiteActions.setdeck({
+          WebsiteActions.setDeck({
             deck: {
               ...iDeck,
               id: sameUser ? iDeck.id : uuid.v4(),

@@ -276,7 +276,7 @@ export class DeckToolbarComponent implements OnDestroy {
       message:
         'You are about to clear all cards in the deck and make a new one. Are you sure?',
       accept: () => {
-        this.store.dispatch(WebsiteActions.createnewdeck({ uuid: uuid.v4() }));
+        this.store.dispatch(WebsiteActions.createNewDeck({ uuid: uuid.v4() }));
         if (this.authService.userData?.uid) {
           this.route.navigateByUrl(
             `deckbuilder/user/${this.authService.userData?.uid}/deck/${this.deck.id}`

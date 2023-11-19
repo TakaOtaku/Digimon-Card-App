@@ -356,7 +356,7 @@ export class DeckViewComponent implements OnInit, OnDestroy {
 
     this.deckSort();
 
-    this.store.dispatch(WebsiteActions.setdeck({ deck: this.deck }));
+    this.store.dispatch(WebsiteActions.setDeck({ deck: this.deck }));
     this.onMainDeck.emit(this.mainDeck);
   }
 
@@ -438,22 +438,22 @@ export class DeckViewComponent implements OnInit, OnDestroy {
     if (area === 'Side') {
       if (card.drag === DRAG.Main) {
         this.store.dispatch(
-          WebsiteActions.removecardfromdeck({ cardId: card.card.id })
+          WebsiteActions.removeCardFromDeck({ cardId: card.card.id })
         );
       }
       this.store.dispatch(
-        WebsiteActions.addcardtosidedeck({ cardId: card.card.id })
+        WebsiteActions.addCardToSideDeck({ cardId: card.card.id })
       );
       return;
     }
 
     if (card.drag === DRAG.Side) {
       this.store.dispatch(
-        WebsiteActions.removecardfromsidedeck({ cardId: card.card.id })
+        WebsiteActions.removeCardFromSideDeck({ cardId: card.card.id })
       );
     }
     this.store.dispatch(
-      WebsiteActions.addcardtodeck({ addCardToDeck: card.card.id })
+      WebsiteActions.addCardToDeck({ addCardToDeck: card.card.id })
     );
   }
 
@@ -463,7 +463,7 @@ export class DeckViewComponent implements OnInit, OnDestroy {
       drag,
     };
     this.store.dispatch(
-      WebsiteActions.setdraggedcard({
+      WebsiteActions.setDraggedCard({
         dragCard,
       })
     );

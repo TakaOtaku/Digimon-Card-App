@@ -46,6 +46,6 @@ export class LanguageFilterComponent {
   constructor(private store: Store) {}
 
   setCardSet(cardSet: string) {
-    this.store.dispatch(SaveActions.setcardsets({ cardSet }));
+    this.store.dispatch(SaveActions.setCardSets({ cardSet }));
   }
 }

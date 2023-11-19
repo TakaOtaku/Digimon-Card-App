@@ -160,13 +160,13 @@ export class DeckCardComponent implements OnChanges, OnInit {
 
     if (this.sideDeck) {
       this.store.dispatch(
-        WebsiteActions.addcardtosidedeck({ cardId: this.card.id })
+        WebsiteActions.addCardToSideDeck({ cardId: this.card.id })
       );
       return;
     }
 
     this.store.dispatch(
-      WebsiteActions.addcardtodeck({ addCardToDeck: this.card.id })
+      WebsiteActions.addCardToDeck({ addCardToDeck: this.card.id })
     );
   }
 
@@ -178,13 +178,13 @@ export class DeckCardComponent implements OnChanges, OnInit {
 
     if (this.sideDeck) {
       this.store.dispatch(
-        WebsiteActions.removecardfromsidedeck({ cardId: this.card.id })
+        WebsiteActions.removeCardFromSideDeck({ cardId: this.card.id })
       );
       return;
     }
 
     this.store.dispatch(
-      WebsiteActions.removecardfromdeck({ cardId: this.card.id })
+      WebsiteActions.removeCardFromDeck({ cardId: this.card.id })
     );
   }
 

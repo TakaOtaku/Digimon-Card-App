@@ -1,16 +1,16 @@
-import { FormsModule } from '@angular/forms';
-import { DragDropModule } from 'primeng/dragdrop';
-import { ListboxModule } from 'primeng/listbox';
-import { WebsiteActions } from './../../../store/digimon.actions';
+import { NgClass, NgFor, NgStyle } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { JAPTIERLIST, TIERLIST } from '../../../../models';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
-import { TooltipModule } from 'primeng/tooltip';
-import { NgFor, NgClass, NgStyle } from '@angular/common';
-import { RippleModule } from 'primeng/ripple';
 import { ButtonModule } from 'primeng/button';
+import { DragDropModule } from 'primeng/dragdrop';
+import { ListboxModule } from 'primeng/listbox';
+import { RippleModule } from 'primeng/ripple';
+import { TooltipModule } from 'primeng/tooltip';
+import { JAPTIERLIST, TIERLIST } from '../../../../models';
+import { WebsiteActions } from './../../../store/digimon.actions';
 
 @Component({
   selector: 'digimon-tierlist',
@@ -109,7 +109,7 @@ export class TierlistComponent {
 
   openCommunityWithSearch(card: string) {
     this.store.dispatch(
-      WebsiteActions.setcommunitydecksearch({ communityDeckSearch: card })
+      WebsiteActions.setCommunityDeckSearch({ communityDeckSearch: card })
     );
     this.router.navigateByUrl('/decks');
   }

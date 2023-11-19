@@ -1,13 +1,13 @@
-import { AsyncPipe, NgFor, NgIf } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
-import { Meta, Title } from '@angular/platform-browser';
-import { Store } from '@ngrx/store';
-import { MessageService } from 'primeng/api';
-import { ButtonModule } from 'primeng/button';
-import { DialogModule } from 'primeng/dialog';
-import { PaginatorModule } from 'primeng/paginator';
-import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { AsyncPipe, NgFor, NgIf } from "@angular/common";
+import { Component, OnDestroy, OnInit } from "@angular/core";
+import { UntypedFormControl, UntypedFormGroup } from "@angular/forms";
+import { Meta, Title } from "@angular/platform-browser";
+import { Store } from "@ngrx/store";
+import { MessageService } from "primeng/api";
+import { ButtonModule } from "primeng/button";
+import { DialogModule } from "primeng/dialog";
+import { PaginatorModule } from "primeng/paginator";
+import { ProgressSpinnerModule } from "primeng/progressspinner";
 import {
   BehaviorSubject,
   combineLatest,
@@ -18,39 +18,29 @@ import {
   Subject,
   switchMap,
   takeUntil,
-  tap,
-} from 'rxjs';
+  tap
+} from "rxjs";
 
-import {
-  DigimonCard,
-  ICountCard,
-  IDeck,
-  ITournamentDeck,
-  TAGS,
-} from '../../../models';
-import { IUserAndDecks } from '../../../models/interfaces/userAndDecks.interface';
-import {
-  deckIsValid,
-  setDeckImage,
-  setTags,
-} from '../../functions/digimon-card.functions';
-import { DigimonBackendService } from '../../services/digimon-backend.service';
+import { DigimonCard, ICountCard, IDeck, ITournamentDeck, TAGS } from "../../../models";
+import { IUserAndDecks } from "../../../models/interfaces/userAndDecks.interface";
+import { deckIsValid, setDeckImage, setTags } from "../../functions/digimon-card.functions";
+import { DigimonBackendService } from "../../services/digimon-backend.service";
 import {
   selectAllCards,
   selectCollection,
   selectCommunityDecks,
-  selectCommunityDeckSearch,
-} from '../../store/digimon.selectors';
-import { emptyDeck } from '../../store/reducers/digimon.reducers';
-import { DeckContainerComponent } from '../shared/deck-container.component';
-import { DeckDialogComponent } from '../shared/dialogs/deck-dialog.component';
-import { DeckSubmissionComponent } from '../shared/dialogs/deck-submission.component';
-import { WebsiteActions } from './../../store/digimon.actions';
-import { DeckStatisticsComponent } from './components/deck-statistics.component';
-import { DecksFilterComponent } from './components/decks-filter.component';
+  selectCommunityDeckSearch
+} from "../../store/digimon.selectors";
+import { emptyDeck } from "../../store/reducers/digimon.reducers";
+import { DeckContainerComponent } from "../shared/deck-container.component";
+import { DeckDialogComponent } from "../shared/dialogs/deck-dialog.component";
+import { DeckSubmissionComponent } from "../shared/dialogs/deck-submission.component";
+import { WebsiteActions } from "./../../store/digimon.actions";
+import { DeckStatisticsComponent } from "./components/deck-statistics.component";
+import { DecksFilterComponent } from "./components/decks-filter.component";
 
 @Component({
-  selector: 'digimon-decks-page',
+  selector: "digimon-decks-page",
   template: `
     <div
       class="flex h-[calc(100vh-50px)] w-full flex-col overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d]">
@@ -168,21 +158,21 @@ import { DecksFilterComponent } from './components/decks-filter.component';
     DeckStatisticsComponent,
     NgIf,
     AsyncPipe,
-    ProgressSpinnerModule,
+    ProgressSpinnerModule
   ],
-  providers: [MessageService],
+  providers: [MessageService]
 })
 export class DecksPageComponent implements OnInit, OnDestroy {
-  mode: 'Community' | 'Tournament' = 'Community';
+  mode: "Community" | "Tournament" = "Community";
   filteredDecks: IDeck[] | ITournamentDeck[] = [];
   decksToShow: IDeck[] | ITournamentDeck[] = [];
   selectedDeck: IDeck | ITournamentDeck = JSON.parse(JSON.stringify(emptyDeck));
   form = new UntypedFormGroup({
-    searchFilter: new UntypedFormControl(''),
-    placementFilter: new UntypedFormControl(''),
+    searchFilter: new UntypedFormControl(""),
+    placementFilter: new UntypedFormControl(""),
     formatFilter: new UntypedFormControl([]),
     sizeFilter: new UntypedFormControl([]),
-    tagFilter: new UntypedFormControl([]),
+    tagFilter: new UntypedFormControl([])
   });
   tags = TAGS;
   deckDialog = false;
@@ -212,7 +202,8 @@ export class DecksPageComponent implements OnInit, OnDestroy {
     private digimonBackendService: DigimonBackendService,
     private meta: Meta,
     private title: Title
-  ) {}
+  ) {
+  }
 
   ngOnInit(): void {
     this.store
@@ -222,20 +213,20 @@ export class DecksPageComponent implements OnInit, OnDestroy {
         this.allCards = cards;
       });
     this.makeGoogleFriendly();
-    if (typeof Worker !== 'undefined') {
+    if (typeof Worker !== "undefined") {
       // Create a new
       this.worker = new Worker(
-        new URL('../../load-decks.worker', import.meta.url)
+        new URL("../../workers/load-decks.worker", import.meta.url)
       );
       this.worker.onmessage = ({ data }) => {
         this.store.dispatch(
-          WebsiteActions.setcommunitydecks({ communityDecks: data })
+          WebsiteActions.setCommunityDecks({ communityDecks: data })
         );
       };
     } else {
       // Web Workers are not supported in this environment.
       // You should add a fallback so that your program still executes correctly.
-      console.log('[Digimoncard.App] Web Worker is not working');
+      console.log("[Digimoncard.App] Web Worker is not working");
     }
 
     this.communityDecks$
@@ -248,19 +239,19 @@ export class DecksPageComponent implements OnInit, OnDestroy {
               of([]),
               this.allCards$,
               this.deckSearch$,
-              of(decks),
+              of(decks)
             ]);
           }
           return combineLatest([
             this.users$,
             this.allCards$,
             this.deckSearch$,
-            of([]),
+            of([])
           ]);
         })
       )
       .subscribe(([users, allCards, search, loadedDecks]) => {
-        this.form.get('searchFilter')!.setValue(search);
+        this.form.get("searchFilter")!.setValue(search);
 
         let decks: IDeck[] = [];
 
@@ -270,7 +261,7 @@ export class DecksPageComponent implements OnInit, OnDestroy {
           users.forEach((user) => {
             user.decks.forEach((deck) => {
               const formattedDeck = deck;
-              formattedDeck.user = user.user.user ?? 'Unknown';
+              formattedDeck.user = user.user.user ?? "Unknown";
               formattedDeck.userId = user.user.uid;
               decks = [...decks, formattedDeck];
             });
@@ -282,7 +273,7 @@ export class DecksPageComponent implements OnInit, OnDestroy {
 
         this.filteredDecks = decks
           .slice(0, 500)
-          .filter((deck) => deckIsValid(deck, allCards) === '')
+          .filter((deck) => deckIsValid(deck, allCards) === "")
           .sort(
             (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
           );
@@ -343,7 +334,7 @@ export class DecksPageComponent implements OnInit, OnDestroy {
           );
         }
 
-        decks = decks.filter((deck) => deckIsValid(deck, allCards) === '');
+        decks = decks.filter((deck) => deckIsValid(deck, allCards) === "");
 
         this.filteredDecks = decks;
 
@@ -372,7 +363,7 @@ export class DecksPageComponent implements OnInit, OnDestroy {
         return deck.cards.every((cardNeededForDeck) => {
           const matchingCards = this.collection.filter(
             (card) =>
-              card.id.split('_', 1)[0] === cardNeededForDeck.id.split('_', 1)[0]
+              card.id.split("_", 1)[0] === cardNeededForDeck.id.split("_", 1)[0]
           );
           const totalCount = matchingCards.reduce(
             (total, card) => total + card.count,
@@ -394,26 +385,26 @@ export class DecksPageComponent implements OnInit, OnDestroy {
         ...deck,
         tags: setTags(deck, this.allCards),
         imageCardId:
-          deck.imageCardId === 'BT1-001'
+          deck.imageCardId === "BT1-001"
             ? setDeckImage(deck, this.allCards).id
-            : deck.imageCardId,
+            : deck.imageCardId
       }));
   }
 
   private makeGoogleFriendly() {
-    this.title.setTitle('Digimon Card Game - Community');
+    this.title.setTitle("Digimon Card Game - Community");
 
     this.meta.addTags([
       {
-        name: 'description',
+        name: "description",
         content:
-          'Meta decks, fun decks, tournament decks and many more, find new decks for every set.',
+          "Meta decks, fun decks, tournament decks and many more, find new decks for every set."
       },
-      { name: 'author', content: 'TakaOtaku' },
+      { name: "author", content: "TakaOtaku" },
       {
-        name: 'keywords',
-        content: 'Meta, decks, tournament, fun',
-      },
+        name: "keywords",
+        content: "Meta, decks, tournament, fun"
+      }
     ]);
   }
 

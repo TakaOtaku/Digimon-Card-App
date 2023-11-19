@@ -36,17 +36,17 @@ export class DigimonEffects {
     () =>
       this.actions$.pipe(
         ofType(
-          CollectionActions.setcardcount,
-          SaveActions.setcardsets,
-          SaveActions.setsave,
+          CollectionActions.setCardCount,
+          SaveActions.setCardSets,
+          SaveActions.setSave,
           DeckActions.import,
           DeckActions.save,
           DeckActions.delete,
-          SaveActions.setcardsize,
-          SaveActions.setcollectionmode,
-          CollectionActions.addcard,
-          WebsiteActions.setcollectionminimum,
-          WebsiteActions.setshowversion
+          SaveActions.setCardSize,
+          SaveActions.setCollectionMode,
+          CollectionActions.addCard,
+          WebsiteActions.setCollectionMinimum,
+          WebsiteActions.setShowVersion
         ),
         switchMap(() =>
           this.store
@@ -77,16 +77,16 @@ export class DigimonEffects {
     () =>
       this.actions$.pipe(
         ofType(
-          DigimonActions.setdigimoncards,
-          WebsiteActions.setfilter,
-          WebsiteActions.setsearchfilter,
-          WebsiteActions.setcolorfilter,
-          WebsiteActions.setcardtypefilter,
-          WebsiteActions.setblockfilter,
-          WebsiteActions.setrarityfilter,
-          WebsiteActions.setversionfilter,
-          WebsiteActions.setsetfilter,
-          WebsiteActions.setsort
+          DigimonActions.setDigimonCards,
+          WebsiteActions.setFilter,
+          WebsiteActions.setSearchFilter,
+          WebsiteActions.setColorFilter,
+          WebsiteActions.setCardTypeFilter,
+          WebsiteActions.setBlockFilter,
+          WebsiteActions.setRarityFilter,
+          WebsiteActions.setVersionFilter,
+          WebsiteActions.setSetFilter,
+          WebsiteActions.setSort
         ),
         switchMap(() =>
           this.store
@@ -104,7 +104,7 @@ export class DigimonEffects {
                   digimonCardMap
                 );
                 this.store.dispatch(
-                  DigimonActions.setfiltereddigimoncards({ filteredCards })
+                  DigimonActions.setFilteredDigimonCards({ filteredCards })
                 );
               }),
               catchError(() => EMPTY)
@@ -118,9 +118,9 @@ export class DigimonEffects {
     () =>
       this.actions$.pipe(
         ofType(
-          SaveActions.getsave,
-          SaveActions.setsave,
-          WebsiteActions.setshowversion
+          SaveActions.getSave,
+          SaveActions.setSave,
+          WebsiteActions.setShowVersion
         ),
         switchMap(() =>
           this.store
@@ -191,7 +191,7 @@ export class DigimonEffects {
                     }
                     filter = { ...filter, versionFilter };
                   }
-                  this.store.dispatch(WebsiteActions.setfilter({ filter }));
+                  this.store.dispatch(WebsiteActions.setFilter({ filter }));
                 }
               ),
               catchError(() => EMPTY)
@@ -205,9 +205,9 @@ export class DigimonEffects {
     () =>
       this.actions$.pipe(
         ofType(
-          SaveActions.setsave,
-          SaveActions.getsave,
-          SaveActions.setcardsets
+          SaveActions.setSave,
+          SaveActions.getSave,
+          SaveActions.setCardSets
         ),
         switchMap(() =>
           this.store.select(selectCardSet).pipe(
@@ -223,7 +223,7 @@ export class DigimonEffects {
                 digimonCards = setupDigimonCards(cardSet as CARDSET);
               }
               this.store.dispatch(
-                DigimonActions.setdigimoncards({ digimonCards })
+                DigimonActions.setDigimonCards({ digimonCards })
               );
             }),
             catchError(() => EMPTY)

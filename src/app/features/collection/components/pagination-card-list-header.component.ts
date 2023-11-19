@@ -93,6 +93,6 @@ export class PaginationCardListHeaderComponent implements OnInit, OnDestroy {
   }
 
   changeCollectionMode(collectionMode: boolean) {
-    this.store.dispatch(SaveActions.setcollectionmode({ collectionMode }));
+    this.store.dispatch(SaveActions.setCollectionMode({ collectionMode }));
   }
 }

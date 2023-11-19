@@ -1,5 +1,4 @@
-import { withoutJ } from '../../../functions/digimon-card.functions';
-import { dummyCard } from './../../../store/reducers/digimon.reducers';
+import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -8,9 +7,13 @@ import {
   OnInit,
 } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { DialogModule } from 'primeng/dialog';
+import { DragDropModule } from 'primeng/dragdrop';
 import { Subject, takeUntil } from 'rxjs';
+import { WebsiteActions } from 'src/app/store/digimon.actions';
 import { DigimonCard, ICountCard, IDraggedCard } from '../../../../models';
 import { DRAG } from '../../../../models/enums/drag.enum';
+import { withoutJ } from '../../../functions/digimon-card.functions';
 import {
   selectCollection,
   selectCollectionMode,
@@ -18,13 +21,10 @@ import {
 } from '../../../store/digimon.selectors';
 import { ViewCardDialogComponent } from '../../shared/dialogs/view-card-dialog.component';
 import { FilterSideBoxComponent } from '../../shared/filter/filter-side-box.component';
-import { DialogModule } from 'primeng/dialog';
 import { FullCardComponent } from '../../shared/full-card.component';
-import { DragDropModule } from 'primeng/dragdrop';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
-import { SearchComponent } from './search.component';
+import { dummyCard } from './../../../store/reducers/digimon.reducers';
 import { PaginationCardListHeaderComponent } from './pagination-card-list-header.component';
-import { WebsiteActions } from 'src/app/store/digimon.actions';
+import { SearchComponent } from './search.component';
 
 @Component({
   selector: 'digimon-pagination-card-list',
@@ -148,12 +148,12 @@ export class PaginationCardListComponent implements OnInit, OnDestroy {
   drop(card: IDraggedCard, dragCard: IDraggedCard) {
     if (dragCard.drag === DRAG.Side) {
       this.store.dispatch(
-        WebsiteActions.removecardfromsidedeck({ cardId: card.card.id })
+        WebsiteActions.removeCardFromSideDeck({ cardId: card.card.id })
       );
       return;
     }
     this.store.dispatch(
-      WebsiteActions.removecardfromdeck({ cardId: card.card.id })
+      WebsiteActions.removeCardFromDeck({ cardId: card.card.id })
     );
   }
 }

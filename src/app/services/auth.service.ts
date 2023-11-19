@@ -1,4 +1,3 @@
-import { SaveActions } from './../store/digimon.actions';
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
@@ -9,6 +8,7 @@ import { MessageService } from 'primeng/api';
 import { catchError, first, of, Subject } from 'rxjs';
 import { ISave, IUser } from '../../models';
 import { emptySettings } from '../store/reducers/save.reducer';
+import { SaveActions } from './../store/digimon.actions';
 import { DigimonBackendService } from './digimon-backend.service';
 import UserCredential = firebase.auth.UserCredential;
 import User = firebase.User;
@@ -88,7 +88,7 @@ export class AuthService {
             '  showAACards: true,' +
             '  sortDeckOrder: "Level"}}'
       );
-      this.store.dispatch(SaveActions.setsave({ save }));
+      this.store.dispatch(SaveActions.setSave({ save }));
     });
   }
 
@@ -127,7 +127,7 @@ export class AuthService {
 
     localStorage.setItem('user', JSON.stringify(userData));
     this.store.dispatch(
-      SaveActions.setsave({
+      SaveActions.setSave({
         save: save ?? {
           uid: user.uid,
           photoURL: user.photoURL ?? '',

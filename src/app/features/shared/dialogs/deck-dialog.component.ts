@@ -375,7 +375,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
           `deckbuilder/user/${this.authService.userData?.uid}/deck/${this.deck.id}`
         );
       } else {
-        this.store.dispatch(WebsiteActions.setdeck({ deck: this.deck }));
+        this.store.dispatch(WebsiteActions.setDeck({ deck: this.deck }));
         this.router.navigateByUrl('deckbuilder');
       }
     } else {
@@ -384,7 +384,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
         message: 'You are about to open this deck. Are you sure?',
         accept: () => {
           this.store.dispatch(
-            WebsiteActions.setdeck({
+            WebsiteActions.setDeck({
               deck: this.deck,
             })
           );

@@ -1,12 +1,12 @@
-import { WebsiteActions } from './../../store/digimon.actions';
 import { AsyncPipe, NgClass, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { DropdownModule } from 'primeng/dropdown';
-import { Observable, distinctUntilChanged } from 'rxjs';
+import { distinctUntilChanged, Observable } from 'rxjs';
 import { ISort, ISortElement } from '../../../models';
 import { selectSort } from '../../store/digimon.selectors';
+import { WebsiteActions } from './../../store/digimon.actions';
 
 @Component({
   selector: 'digimon-sort-buttons',
@@ -66,7 +66,7 @@ export class SortButtonsComponent {
 
   updateStore(ascOrder: boolean) {
     this.store.dispatch(
-      WebsiteActions.setsort({
+      WebsiteActions.setSort({
         sort: { sortBy: this.sortElement, ascOrder },
       })
     );
@@ -75,7 +75,7 @@ export class SortButtonsComponent {
   changeOrder(sort: ISort) {
     const ascOrder = !sort.ascOrder;
     this.store.dispatch(
-      WebsiteActions.setsort({
+      WebsiteActions.setSort({
         sort: { ...sort, ascOrder },
       })
     );

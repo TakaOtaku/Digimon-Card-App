@@ -245,7 +245,7 @@ export class CommunityPageComponent implements OnInit, OnDestroy {
       .getBlogEntries()
       .pipe(first())
       .subscribe((blogs) => {
-        this.store.dispatch(WebsiteActions.setblogs({ blogs }));
+        this.store.dispatch(WebsiteActions.setBlogs({ blogs }));
       });
   }
 
@@ -270,7 +270,7 @@ export class CommunityPageComponent implements OnInit, OnDestroy {
     };
 
     this.store.dispatch(
-      WebsiteActions.setblogs({ blogs: [...currentBlogs.allBlogs, newBlog] })
+      WebsiteActions.setBlogs({ blogs: [...currentBlogs.allBlogs, newBlog] })
     );
     this.digimonBackendService.createBlog(newBlog).pipe(first()).subscribe();
     this.digimonBackendService
@@ -293,7 +293,7 @@ export class CommunityPageComponent implements OnInit, OnDestroy {
       }
       return entry;
     });
-    this.store.dispatch(WebsiteActions.setblogs({ blogs: newBlogs }));
+    this.store.dispatch(WebsiteActions.setBlogs({ blogs: newBlogs }));
     this.digimonBackendService.updateBlog(blog).pipe(first()).subscribe();
   }
 
@@ -310,7 +310,7 @@ export class CommunityPageComponent implements OnInit, OnDestroy {
       }
       return entry;
     });
-    this.store.dispatch(WebsiteActions.setblogs({ blogs: newBlogs }));
+    this.store.dispatch(WebsiteActions.setBlogs({ blogs: newBlogs }));
     this.digimonBackendService.updateBlog(blog).pipe(first()).subscribe();
   }
 
@@ -324,7 +324,7 @@ export class CommunityPageComponent implements OnInit, OnDestroy {
         const newBlogs = blogs.allBlogs.filter(
           (entry) => entry.uid !== blog.uid
         );
-        this.store.dispatch(WebsiteActions.setblogs({ blogs: newBlogs }));
+        this.store.dispatch(WebsiteActions.setBlogs({ blogs: newBlogs }));
         this.digimonBackendService
           .deleteBlogEntry(blog.uid)
           .pipe(first())

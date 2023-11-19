@@ -1,9 +1,3 @@
-import { withoutJ } from '../../functions/digimon-card.functions';
-import { dummyCard } from './../../store/reducers/digimon.reducers';
-import {
-  CollectionActions,
-  WebsiteActions,
-} from './../../store/digimon.actions';
 import { AsyncPipe, NgClass, NgIf } from '@angular/common';
 import {
   Component,
@@ -17,10 +11,16 @@ import { FormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { DialogModule } from 'primeng/dialog';
 import { DragDropModule } from 'primeng/dragdrop';
-import { Subject, map, takeUntil } from 'rxjs';
+import { map, Subject, takeUntil } from 'rxjs';
 import { DigimonCard } from '../../../models';
 import { DRAG } from '../../../models/enums/drag.enum';
+import { withoutJ } from '../../functions/digimon-card.functions';
 import { selectDeck, selectSettings } from '../../store/digimon.selectors';
+import {
+  CollectionActions,
+  WebsiteActions,
+} from './../../store/digimon.actions';
+import { dummyCard } from './../../store/reducers/digimon.reducers';
 import { CardImageComponent } from './card-image.component';
 import { ViewCardDialogComponent } from './dialogs/view-card-dialog.component';
 
@@ -164,7 +164,7 @@ export class FullCardComponent implements OnInit, OnDestroy {
       return;
     }
     this.store.dispatch(
-      WebsiteActions.addcardtodeck({ addCardToDeck: this.card.id })
+      WebsiteActions.addCardToDeck({ addCardToDeck: this.card.id })
     );
   }
 
@@ -179,13 +179,13 @@ export class FullCardComponent implements OnInit, OnDestroy {
     }
     const count = event.target.value;
     const newId = withoutJ(id);
-    this.store.dispatch(CollectionActions.setcardcount({ id: newId, count }));
+    this.store.dispatch(CollectionActions.setCardCount({ id: newId, count }));
   }
 
   increaseCardCount(id: string) {
     const count = ++this.count;
     const newId = withoutJ(id);
-    this.store.dispatch(CollectionActions.setcardcount({ id: newId, count }));
+    this.store.dispatch(CollectionActions.setCardCount({ id: newId, count }));
   }
 
   decreaseCardCount(id: string) {
@@ -194,7 +194,7 @@ export class FullCardComponent implements OnInit, OnDestroy {
     }
     const count = --this.count;
     const newId = withoutJ(id);
-    this.store.dispatch(CollectionActions.setcardcount({ id: newId, count }));
+    this.store.dispatch(CollectionActions.setCardCount({ id: newId, count }));
   }
 
   setCardSize(size: number) {
@@ -220,7 +220,7 @@ export class FullCardComponent implements OnInit, OnDestroy {
 
   setDraggedCard(card: DigimonCard) {
     this.store.dispatch(
-      WebsiteActions.setdraggedcard({
+      WebsiteActions.setDraggedCard({
         dragCard: { card: card, drag: DRAG.Collection },
       })
     );

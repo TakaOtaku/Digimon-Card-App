@@ -452,7 +452,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
       },
     };
 
-    this.store.dispatch(SaveActions.setsave({ save }));
+    this.store.dispatch(SaveActions.setSave({ save }));
     this.messageService.add({
       severity: 'success',
       summary: 'Settings saved!',
@@ -471,7 +471,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
       }
     });
 
-    this.store.dispatch(CollectionActions.addcard({ collectionCards }));
+    this.store.dispatch(CollectionActions.addCard({ collectionCards }));
     this.messageService.add({
       severity: 'success',
       summary: 'Collection Imported!',
@@ -490,7 +490,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
       try {
         let save: any = JSON.parse(fileReader.result as string);
         save = this.digimonBackendService.checkSaveValidity(save, null);
-        this.store.dispatch(SaveActions.setsave({ save }));
+        this.store.dispatch(SaveActions.setSave({ save }));
         this.messageService.add({
           severity: 'success',
           summary: 'Save loaded!',
@@ -520,7 +520,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
           settings: emptySettings,
         };
         this.store.dispatch(
-          SaveActions.setsave({
+          SaveActions.setSave({
             save: resetedSave,
           })
         );

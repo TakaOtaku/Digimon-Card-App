@@ -1,10 +1,10 @@
-import { WebsiteActions } from './../../../store/digimon.actions';
+import { AsyncPipe, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { VersionButtons } from '../../../../models';
 import { selectVersionFilter } from '../../../store/digimon.selectors';
 import { MultiButtonsComponent } from '../multi-buttons.component';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { WebsiteActions } from './../../../store/digimon.actions';
 
 @Component({
   selector: 'digimon-version-filter',
@@ -36,7 +36,7 @@ export class VersionFilterComponent {
     }
 
     this.store.dispatch(
-      WebsiteActions.setversionfilter({ versionFilter: versions })
+      WebsiteActions.setVersionFilter({ versionFilter: versions })
     );
   }
 }
