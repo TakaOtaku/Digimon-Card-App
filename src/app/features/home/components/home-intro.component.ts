@@ -1,43 +1,114 @@
+import { AsyncPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { DividerModule } from 'primeng/divider';
 
 @Component({
   selector: 'digimon-home-intro',
   template: `
-    <h1
-      class="text-shadow mt-6 text-center text-4xl font-black text-[#e2e4e6] underline xl:mt-2">
-      Welcome to Digimoncard.app!
-    </h1>
-    <h2 class="mt-1 text-center text-[#e2e4e6]">
-      <span class="font-bold">Digimoncard.App</span> is a website to help you
-      keep track of your Digimon card collection, help you build great decks and
-      keep you posted about the result of any major events.
+    <div class='flex flex-row justify-center'>
+      <img alt="Logo" class="cursor-pointer max-h-[6rem]" src="../../../assets/images/logo.png" />
+      <h1 class='text-shadow ml-3 mt-6 text-center text-6xl font-black text-[#64B5F6]'>
+        Digimoncard.app
+      </h1>
+    </div>
+
+    <p-divider class='my-5'></p-divider>
+
+    <h2 class='mt-1 text-center text-[#e2e4e6]'>
+      I build <span class='font-bold'>Digimoncard.App</span> as a website to help you
+      keep track of your Digimon Card collection, give you access to a deckbuilder with everything needed to build a great deck
+      and to help you share those decks with friends and the community.
     </h2>
-    <h2 class="mt-1 text-center text-[#e2e4e6]">
-      If you do like the site and want to support it, consider donating and
-      helping me keep the website ad-free, every amount counts.
+
+    <p-divider class='my-5'></p-divider>
+
+    <h2 class='mt-1 text-center text-[#e2e4e6]'>
+      I would like to add more content in the way of forum posts, like tournament reports, deck archtypes and more,
+      but I need help for that. If you want to help me with that or know someone that might, please contact me on Discord.
     </h2>
-    <h2 class="mt-1 text-center text-[#e2e4e6]">
-      With this I can also increase the performance of the website with better
-      servers.
+
+    <p-divider class='my-5'></p-divider>
+
+    <h2 class='mt-1 text-center text-[#e2e4e6]'>
+      If you do like the site and want to support it, consider donating
+      <a href='https://www.paypal.com/donate/?hosted_button_id=WLM58Q785D4H4' target='_blank'>
+        <i class="pi pi-paypal px-1 text-[#e2e4e6] hover:text-[#64B5F6]"></i>
+      </a>
+      and
+      helping me keep the website ad-free.
+      I will use everything that gets donated to get better servers to improve the performance of the website.
     </h2>
-    <h2 class="mt-1 text-center text-[#e2e4e6]">
-      If you are interested in writing blog post or help me develop this
-      website, please contact me.
+
+    <p-divider class='my-5'></p-divider>
+
+    <h2 class='text-shadow text-lg font-black underline text-center text-white text-[#e2e4e6]"'>
+      Partners
     </h2>
-    <div class="grid grid-cols-3 text-center">
-      <div></div>
+    <div class="mx-auto">
       <a
-        class="mx-auto"
-        href="https://www.paypal.com/donate/?hosted_button_id=WLM58Q785D4H4"
+        class="mx-auto flex flex-col"
+        href="https://discord.gg/digimon-tcg-dach-759562127513223168"
         target="_blank">
         <img
-          alt="PayPal Donate Button"
-          class="h-[24px] lg:h-[40px]"
-          src="../../../../assets/images/blue.png" />
+          class="mx-auto max-h-16"
+          src="assets/images/partners/dach.png"
+          alt="Digimon DACH Discord" />
+        <div
+          class="text-shadow text-center text-xs font-black text-[#e2e4e6]">
+          Digimon TCG DACH
+        </div>
       </a>
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
+  imports: [
+    DividerModule,
+    AsyncPipe
+  ]
 })
-export class HomeIntroComponent {}
+export class HomeIntroComponent {
+  faq = [];
+  images = [
+    {
+      src: 'assets/images/1.webp',
+    }
+  ];
+
+  position: string = 'bottom';
+
+  positionOptions = [
+    {
+      label: 'Bottom',
+      value: 'bottom'
+    },
+    {
+      label: 'Top',
+      value: 'top'
+    },
+    {
+      label: 'Left',
+      value: 'left'
+    },
+    {
+      label: 'Right',
+      value: 'right'
+    }
+  ];
+
+  responsiveOptions: any[] = [
+    {
+      breakpoint: '1024px',
+      numVisible: 5
+    },
+    {
+      breakpoint: '768px',
+      numVisible: 3
+    },
+    {
+      breakpoint: '560px',
+      numVisible: 1
+    }
+  ];
+
+}

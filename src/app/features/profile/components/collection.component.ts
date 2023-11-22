@@ -6,7 +6,7 @@ import {
   OnInit,
   SimpleChanges,
 } from '@angular/core';
-import { DigimonCard, ICountCard } from '../../../models';
+import { DigimonCard, ICountCard } from '../../../../models';
 import { NgIf, NgFor } from '@angular/common';
 
 interface MappedCollection {

@@ -2,8 +2,8 @@ import { ChangeDetectionStrategy, Component, Input, OnChanges, OnDestroy, OnInit
 import { Store } from '@ngrx/store';
 import { ChartModule } from 'primeng/chart';
 import { combineLatestWith, first, Subject } from 'rxjs';
-import { DigimonCard, ICountCard } from '../../../models';
-import { selectAllCards, selectSettings } from '../../store/digimon.selectors';
+import { DigimonCard, ICountCard } from '../../../../models';
+import { selectAllCards, selectSettings } from '../../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-collection-circle',

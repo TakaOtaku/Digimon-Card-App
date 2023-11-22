@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { ISave } from '../../../models';
-import { CollectionPriceCheckDialogComponent } from './components/collection-price-check-dialog.component';
+import { ISave } from '../../../../models';
+import { CollectionPriceCheckDialogComponent } from './collection-price-check-dialog.component';
 import { DialogModule } from 'primeng/dialog';
 import { CollectionCircleComponent } from './collection-circle.component';
 import { NgIf } from '@angular/common';
@@ -9,7 +9,7 @@ import { NgIf } from '@angular/common';
   selector: 'digimon-user-stats',
   template: `
     <div
-      class="surface-card flex w-full flex-col border border-slate-200 p-4 text-[#e2e4e6] md:flex-row">
+      class="flex w-full flex-col p-4 text-[#e2e4e6] md:flex-row">
       <div class="flex flex-row">
         <img
           class="my-auto mr-2 h-full w-auto rounded-full text-xs font-semibold text-[#e2e4e6]"

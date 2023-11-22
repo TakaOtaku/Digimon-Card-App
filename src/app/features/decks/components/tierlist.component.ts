@@ -10,7 +10,7 @@ import { ListboxModule } from 'primeng/listbox';
 import { RippleModule } from 'primeng/ripple';
 import { TooltipModule } from 'primeng/tooltip';
 import { JAPTIERLIST, TIERLIST } from '../../../../models';
-import { WebsiteActions } from './../../../store/digimon.actions';
+import { WebsiteActions } from '../../../store/digimon.actions';
 
 @Component({
   selector: 'digimon-tierlist',

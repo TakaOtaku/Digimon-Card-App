@@ -8,11 +8,10 @@ import * as uuid from 'uuid';
 import { IDeck, ISave } from '../../../models';
 import { AuthService } from '../../services/auth.service';
 import { DigimonBackendService } from '../../services/digimon-backend.service';
-import { selectMobileCollectionView } from '../../store/digimon.selectors';
 import { CardListComponent } from '../collection/components/card-list.component';
 import { CollectionViewComponent } from '../collection/components/collection-view.component';
 import { FilterAndSearchComponent } from '../shared/filter/filter-and-search.component';
-import { WebsiteActions } from './../../store/digimon.actions';
+import { WebsiteActions } from '../../store/digimon.actions';
 import { DeckStatsComponent } from './components/deck-stats.component';
 import { DeckViewComponent } from './components/deck-view.component';
 
@@ -20,8 +19,7 @@ import { DeckViewComponent } from './components/deck-view.component';
   selector: 'digimon-deckbuilder-page',
   template: `
     <div
-      [ngClass]="{ hidden: mobileCollectionView$ | async }"
-      class="relative inline-flex h-full w-full flex-row overflow-hidden lg:bg-gradient-to-b lg:from-[#17212f] lg:to-[#08528d]">
+      class="relative flex flex-row h-[100vh] w-[calc(100vw-6.5rem)] overflow-y-scroll overflow-x-hidden bg-gradient-to-b from-[#17212f] to-[#08528d]">
       <button
         *ngIf="showAccordionButtons"
         class="surface-card h-full w-6 border-r border-slate-200"
@@ -60,13 +58,6 @@ import { DeckViewComponent } from './components/deck-view.component';
         [collectionView]="collectionView"
         [showStats]="showStats"></digimon-deck-stats>
     </div>
-
-    <div
-      class="h-full w-full"
-      [ngClass]="{ hidden: (mobileCollectionView$ | async) === false }">
-      <digimon-filter-and-search></digimon-filter-and-search>
-      <digimon-card-list [showCount]="32"></digimon-card-list>
-    </div>
   `,
   standalone: true,
   imports: [
@@ -89,7 +80,6 @@ export class DeckbuilderPageComponent implements OnInit, OnDestroy {
   showStats = true;
   //endregion
 
-  mobileCollectionView$ = this.store.select(selectMobileCollectionView);
   hideStats = false;
 
   private deckId = '';

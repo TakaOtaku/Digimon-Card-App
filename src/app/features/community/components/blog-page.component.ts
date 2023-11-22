@@ -10,10 +10,10 @@ import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 import { first, Observable, switchMap, tap, withLatestFrom } from 'rxjs';
 import { WebsiteActions } from 'src/app/store/digimon.actions';
-import { IBlog, IBlogWithText } from '../../../models';
-import { DigimonBackendService } from '../../services/digimon-backend.service';
-import { CKEditorComponent } from './components/ckeditor.component';
-import { HeaderComponent } from './components/header.component';
+import { IBlog, IBlogWithText } from '../../../../models';
+import { DigimonBackendService } from '../../../services/digimon-backend.service';
+import { CKEditorComponent } from './ckeditor.component';
+import { HeaderComponent } from './header.component';
 
 @Component({
   selector: 'digimon-blog-page',

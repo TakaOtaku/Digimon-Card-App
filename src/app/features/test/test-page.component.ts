@@ -1,10 +1,12 @@
 import { NgIf } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { FormsModule } from '@angular/forms';
 
 // @ts-ignore
 import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 import { Store } from '@ngrx/store';
+import { Account, Client, Databases, ID, Models } from 'appwrite';
 import { DialogModule } from 'primeng/dialog';
 import { concat, first, Observable, Subject, switchMap, tap } from 'rxjs';
 import {
@@ -107,7 +109,8 @@ export class TestPageComponent implements OnInit, OnDestroy {
     public authService: AuthService,
     private databaseService: DatabaseService,
     private digimonBackendService: DigimonBackendService,
-    private cardMarketService: CardMarketService
+    private cardMarketService: CardMarketService,
+    private fireAuth: AngularFirestore
   ) {
     //cardTraderService.getCardPrices().subscribe((value) => {
     //  //fs.writeFileSync('./price-data-cardtrader.json', value, {

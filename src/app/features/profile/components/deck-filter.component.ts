@@ -4,14 +4,14 @@ import {
   FormsModule,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { TAGS } from '../../../models';
+import { TAGS } from '../../../../models';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { InputTextModule } from 'primeng/inputtext';
 
 @Component({
   selector: 'digimon-deck-filter',
   template: `
-    <div class="mx-auto my-1 flex max-w-6xl flex-row border border-slate-200">
+    <div class="mx-auto my-1 flex max-w-6xl flex-row">
       <div class="my-1 flex w-full flex-col px-2">
         <span class="p-input-icon-left w-full">
           <i class="pi pi-search h-3"></i>

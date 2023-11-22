@@ -18,6 +18,7 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DialogModule } from 'primeng/dialog';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
@@ -277,6 +278,12 @@ export interface DigimonCardImage {
         [inputDeck]="deck"
         (onClose)="deckSubmissionDialog = false"></digimon-deck-submission>
     </p-dialog>
+
+    <p-confirmDialog
+      header="Delete Confirmation"
+      icon="pi pi-exclamation-triangle"
+      key="Delete"
+      rejectButtonStyleClass="p-button-outlined"></p-confirmDialog>
   `,
   standalone: true,
   imports: [
@@ -296,6 +303,7 @@ export interface DigimonCardImage {
     DialogModule,
     ExportDeckDialogComponent,
     DeckSubmissionComponent,
+    ConfirmDialogModule
   ],
   providers: [MessageService],
 })

@@ -27,16 +27,16 @@ import {
   selectSave,
   selectShowUserStats,
 } from '../../store/digimon.selectors';
-import { DeckFilterComponent } from './deck-filter.component';
-import { DecksComponent } from './decks.component';
-import { UserStatsComponent } from './user-stats.component';
+import { DeckFilterComponent } from './components/deck-filter.component';
+import { DecksComponent } from './components/decks.component';
+import { UserStatsComponent } from './components/user-stats.component';
 
 @Component({
   selector: 'digimon-profile-page',
   template: `
     <div
       *ngIf="save$ | async as save"
-      class="flex h-[calc(100vh-50px)] w-full flex-col overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d]">
+      class="flex h-[100vh] w-[calc(100vw-6.5rem)] flex-col overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d]">
       <digimon-user-stats
         *ngIf="showUserStats$ | async"
         class="mx-auto my-2 h-[150px] w-full max-w-6xl"
@@ -47,7 +47,7 @@ import { UserStatsComponent } from './user-stats.component';
         [tagFilter]="tagFilter"></digimon-deck-filter>
 
       <digimon-decks
-        class="mx-auto mt-2 w-full max-w-6xl"
+        class="mx-auto mt-2 h-full w-full relative"
         [editable]="editable"
         [decks]="filteredDecks"></digimon-decks>
     </div>
@@ -56,11 +56,11 @@ import { UserStatsComponent } from './user-stats.component';
   standalone: true,
   imports: [
     NgIf,
-    UserStatsComponent,
+    AsyncPipe,
     DeckFilterComponent,
     DecksComponent,
-    AsyncPipe,
-  ],
+    UserStatsComponent
+  ]
 })
 export class ProfilePageComponent implements OnInit, OnDestroy {
   save$: Observable<ISave | null>;

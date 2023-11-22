@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DialogModule } from 'primeng/dialog';
 import { TooltipModule } from 'primeng/tooltip';
 import { BehaviorSubject, Subject, takeUntil } from 'rxjs';
@@ -172,6 +173,12 @@ import { PriceCheckDialogComponent } from './price-check-dialog.component';
       [resizable]="false">
       <digimon-import-deck-dialog></digimon-import-deck-dialog>
     </p-dialog>
+
+    <p-confirmDialog
+      header="New Deck Confirmation"
+      icon="pi pi-file"
+      key="NewDeck"
+      rejectButtonStyleClass="p-button-outlined"></p-confirmDialog>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
@@ -184,6 +191,7 @@ import { PriceCheckDialogComponent } from './price-check-dialog.component';
     NgFor,
     ExportDeckDialogComponent,
     ImportDeckDialogComponent,
+    ConfirmDialogModule
   ],
   providers: [MessageService],
 })

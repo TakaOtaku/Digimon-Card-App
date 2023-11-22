@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
+import { ToastrService } from 'ngx-toastr';
 import {
   catchError,
   debounceTime,
   distinctUntilChanged,
-  EMPTY,
+  EMPTY, exhaustMap,
   first,
-  map,
+  map, mergeMap, of,
   switchMap,
-  tap,
+  tap
 } from 'rxjs';
 import { setupDigimonCards } from '../../assets/cardlists/DigimonCards';
+import { IBlog, ISave } from '../../models';
 import { CARDSET } from '../../models/enums/card-set.enum';
 import { filterCards } from '../functions/filter.functions';
 import { AuthService } from '../services/auth.service';
@@ -29,6 +31,7 @@ import {
   selectChangeFilterEffect,
   selectSave,
 } from './digimon.selectors';
+import { emptySave } from './reducers/save.reducer';
 
 @Injectable()
 export class DigimonEffects {
@@ -233,10 +236,57 @@ export class DigimonEffects {
     { dispatch: false }
   );
 
+  loadSave$ = createEffect(() => this.actions$.pipe(
+    ofType(SaveActions.loadSave),
+    exhaustMap(() => this.authService.loadSave()
+      .pipe(
+        map((save: ISave) => {
+          this.store.dispatch(
+            SaveActions.setSave({ save: { ...save, version: emptySave.version } })
+          );
+
+          this.toastrService.info(
+            'Your save was loaded successfully!',
+            'Welcome back!'
+          );
+
+          return ({ type: '[Save] Load Save Success' });
+        }),
+        catchError(() => {
+          this.toastrService.info(
+            'There was an error while loading your save, please refresh the site!',
+            'Save Loading Error!'
+          );
+
+          return of({ type: '[Save] Load Save Failure' });
+        })
+      )
+    )
+  ));
+
+  loadBlogs$ = createEffect(() => this.actions$.pipe(
+    ofType(WebsiteActions.loadBlogs),
+    exhaustMap(() => this.digimonBackendService.getBlogEntries()
+      .pipe(
+        map((blogs: IBlog[]) => {
+          this.store.dispatch(
+            WebsiteActions.setBlogs({ blogs })
+          );
+
+          return ({ type: '[Website] Load Blogs Success' });
+        }),
+        catchError(() => {
+          return of({ type: '[Website] Load Blogs Failure' });
+        })
+      )
+    )
+  ));
+
   constructor(
     private store: Store,
     private authService: AuthService,
     private digimonBackendService: DigimonBackendService,
-    private actions$: Actions
+    private actions$: Actions,
+    private toastrService: ToastrService
   ) {}
 }

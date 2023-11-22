@@ -21,7 +21,13 @@ import {
 @Component({
   selector: 'digimon-pagination-card-list-header',
   template: `
-    <div class="flex h-10 w-full flex-row">
+    <div class="relative flex justify-center h-10 w-full flex-row">
+      <button
+        (click)="filterBox.emit(true)"
+        class="absolute left-2 top-2 min-w-auto primary-background h-8 w-32 rounded p-2 text-xs font-semibold text-[#e2e4e6] 2xl:hidden">
+        <i class="pi pi-filter-fill mr-3"></i>Filter
+      </button>
+
       <p-paginator
         (onPageChange)="onPageChange($event)"
         [first]="first"
@@ -29,10 +35,9 @@ import {
         [showJumpToPageDropdown]="true"
         [showPageLinks]="false"
         [totalRecords]="cards.length"
-        class="ml-auto"
-        styleClass="border-0 h-10 bg-transparent ml-auto"></p-paginator>
+        styleClass="border-0 h-10 bg-transparent"></p-paginator>
 
-      <div class="mx-2 mt-2 flex flex-row justify-center">
+      <div class="mx-2 mt-2 flex flex-row justify-center absolute right-2">
         <span class="text-xs font-bold leading-9 text-[#e2e4e6]"
           >Collection Mode:</span
         >
@@ -42,12 +47,6 @@ import {
           [ngModel]="collectionMode$ | async"
           (ngModelChange)="changeCollectionMode($event)" />
       </div>
-
-      <button
-        (click)="filterBox.emit(true)"
-        class="min-w-auto primary-background m-auto h-8 w-32 rounded p-2 text-xs font-semibold text-[#e2e4e6] 2xl:hidden">
-        <i class="pi pi-filter-fill mr-3"></i>Filter
-      </button>
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

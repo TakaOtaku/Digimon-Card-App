@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { CardListComponent } from './components/card-list.component';
 import { FilterAndSearchComponent } from '../shared/filter/filter-and-search.component';
@@ -7,19 +7,10 @@ import { CollectionViewComponent } from './components/collection-view.component'
 @Component({
   selector: 'digimon-collection-page',
   template: `
-    <div class="bg-gradient-to-b from-[#17212f] to-[#08528d] ">
-      <div class="hidden md:block">
-        <digimon-collection-view
-          [collectionOnly]="true"
-          [deckView]="false"></digimon-collection-view>
-      </div>
-
-      <div class="md:hidden">
-        <digimon-filter-and-search></digimon-filter-and-search>
-        <digimon-card-list
-          [collectionOnly]="true"
-          [showCount]="32"></digimon-card-list>
-      </div>
+    <div class="flex h-[100vh] w-[calc(100vw-6.5rem)] flex-col overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d]">
+      <digimon-collection-view
+        [collectionOnly]="true"
+        [deckView]="false"></digimon-collection-view>
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -31,7 +22,8 @@ import { CollectionViewComponent } from './components/collection-view.component'
   ],
 })
 export class CollectionPageComponent implements OnInit {
-  constructor(private meta: Meta, private title: Title) {}
+  meta = inject(Meta);
+  title = inject(Title);
 
   ngOnInit(): void {
     this.makeGoogleFriendly();

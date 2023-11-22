@@ -35,7 +35,7 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { ToastModule } from 'primeng/toast';
 import { TooltipModule } from 'primeng/tooltip';
 import { AppComponent } from './app/app.component';
-import { BlogPageComponent } from './app/features/blog/blog-page.component';
+import { BlogPageComponent } from './app/features/community/components/blog-page.component';
 import { CollectionPageComponent } from './app/features/collection/collection-page.component';
 import { CommunityPageComponent } from './app/features/community/community-page.component';
 import { DeckbuilderPageComponent } from './app/features/deckbuilder/deckbuilder-page.component';
@@ -95,7 +95,11 @@ const routes: Routes = [
     component: CollectionPageComponent,
   },
   {
-    path: 'blog/:id',
+    path: 'community/:id',
+    component: BlogPageComponent,
+  },
+  {
+    path: 'community/new',
     component: BlogPageComponent,
   },
   { path: '**', component: HomePageComponent },

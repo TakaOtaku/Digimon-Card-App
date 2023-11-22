@@ -12,10 +12,10 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { SharedModule } from 'primeng/api';
 import { TableModule } from 'primeng/table';
 import { first } from 'rxjs';
-import { DigimonCard, IDeck } from '../../../models';
-import { setDeckImage } from '../../functions/digimon-card.functions';
-import { selectAllCards } from '../../store/digimon.selectors';
-import { DeckActions } from './../../store/digimon.actions';
+import { DigimonCard, IDeck } from '../../../../models';
+import { setDeckImage } from '../../../functions/digimon-card.functions';
+import { selectAllCards } from '../../../store/digimon.selectors';
+import { DeckActions } from '../../../store/digimon.actions';
 
 @Component({
   selector: 'digimon-decks-table',

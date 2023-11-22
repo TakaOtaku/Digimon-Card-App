@@ -1,4 +1,4 @@
-import { createActionGroup, props } from '@ngrx/store';
+import { createActionGroup, emptyProps, props } from '@ngrx/store';
 import {
   ICountCard,
   IDeck,
@@ -45,6 +45,7 @@ export const WebsiteActions = createActionGroup({
     }>(),
     setCommunityDeckSearch: props<{ communityDeckSearch: string }>(),
     setCommunityDecks: props<{ communityDecks: IDeck[] }>(),
+    loadBlogs: emptyProps(),
     setBlogs: props<{ blogs: IBlog[] }>(),
     setDraggedCard: props<{ dragCard: IDraggedCard }>(),
     addCardToDeck: props<{ addCardToDeck: string }>(),
@@ -57,6 +58,7 @@ export const WebsiteActions = createActionGroup({
 export const SaveActions = createActionGroup({
   source: 'Save',
   events: {
+    loadSave: emptyProps(),
     getSave: props<{ save: ISave }>(),
     setSave: props<{ save: ISave }>(),
     setCollection: props<{ collection: ICountCard[] }>(),
