@@ -1,17 +1,11 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  OnDestroy,
-  OnInit,
-} from '@angular/core';
+import { NgFor, SlicePipe } from '@angular/common';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
 import { DigimonCard, IDeck, IDeckCard } from '../../../../models';
 import {
   getCountFromDeckCards,
   mapToDeckCards,
 } from '../../../functions/digimon-card.functions';
-import { NgFor, SlicePipe } from '@angular/common';
 
 @Component({
   selector: 'digimon-deck-statistics',
@@ -62,7 +56,7 @@ import { NgFor, SlicePipe } from '@angular/common';
                 <tbody>
                   <tr
                     *ngFor="
-                      let card of mostUsedCards | slice : 0 : 50;
+                      let card of mostUsedCards | slice: 0 : 50;
                       let i = index
                     "
                     class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150">
@@ -144,7 +138,7 @@ import { NgFor, SlicePipe } from '@angular/common';
                   <tr
                     *ngFor="
                       let card of filter(mostUsedCards, 'Digimon')
-                        | slice : 0 : 50;
+                        | slice: 0 : 50;
                       let i = index
                     "
                     class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150">
@@ -226,7 +220,7 @@ import { NgFor, SlicePipe } from '@angular/common';
                   <tr
                     *ngFor="
                       let card of filter(mostUsedCards, 'Tamer')
-                        | slice : 0 : 50;
+                        | slice: 0 : 50;
                       let i = index
                     "
                     class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150">
@@ -308,7 +302,7 @@ import { NgFor, SlicePipe } from '@angular/common';
                   <tr
                     *ngFor="
                       let card of filter(mostUsedCards, 'Option')
-                        | slice : 0 : 50;
+                        | slice: 0 : 50;
                       let i = index
                     "
                     class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150">
@@ -371,7 +365,7 @@ export class DeckStatisticsComponent implements OnInit, OnDestroy {
   findMostUsedCards() {
     const cards = mapToDeckCards(
       this.decks.map((deck) => deck.cards).flat(1),
-      this.allCards
+      this.allCards,
     );
 
     let checked: string[] = [];
@@ -381,7 +375,7 @@ export class DeckStatisticsComponent implements OnInit, OnDestroy {
           return;
         }
         const count = getCountFromDeckCards(
-          cards.filter((value) => value.cardNumber === card.cardNumber)
+          cards.filter((value) => value.cardNumber === card.cardNumber),
         );
 
         checked.push(card.cardNumber);
@@ -403,13 +397,13 @@ export class DeckStatisticsComponent implements OnInit, OnDestroy {
 
   averagePlayed(search: IDeckCard) {
     const inWhichDecks = this.decks.filter((deck) =>
-      deck.cards.find((card) => card.id.includes(search.cardNumber))
+      deck.cards.find((card) => card.id.includes(search.cardNumber)),
     );
 
     let howOftenInTheDecks = 0;
     inWhichDecks.forEach((deck) => {
       howOftenInTheDecks += getCountFromDeckCards(
-        deck.cards.filter((card) => card.id.includes(search.cardNumber))
+        deck.cards.filter((card) => card.id.includes(search.cardNumber)),
       );
     });
 

@@ -38,7 +38,6 @@
             "scripts": [
               "node_modules/@fortawesome/fontawesome-free/js/all.js"
             ],
-            "webWorkerTsConfig": "tsconfig.worker.json"
           },
           "configurations": {
             "production": {
@@ -115,7 +114,6 @@
               "src/styles.scss"
             ],
             "scripts": [],
-            "webWorkerTsConfig": "tsconfig.worker.json"
           }
         },
         "deploy": {

@@ -1,37 +1,28 @@
-import { Injectable } from '@angular/core';
-import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { Store } from '@ngrx/store';
-import { ToastrService } from 'ngx-toastr';
+import { Injectable } from "@angular/core";
+import { Actions, createEffect, ofType } from "@ngrx/effects";
+import { Store } from "@ngrx/store";
+import { ToastrService } from "ngx-toastr";
 import {
   catchError,
   debounceTime,
   distinctUntilChanged,
-  EMPTY, exhaustMap,
+  EMPTY,
+  exhaustMap,
   first,
-  map, mergeMap, of,
+  map,
+  of,
   switchMap,
   tap
-} from 'rxjs';
-import { setupDigimonCards } from '../../assets/cardlists/DigimonCards';
-import { IBlog, ISave } from '../../models';
-import { CARDSET } from '../../models/enums/card-set.enum';
-import { filterCards } from '../functions/filter.functions';
-import { AuthService } from '../services/auth.service';
-import { DigimonBackendService } from '../services/digimon-backend.service';
-import {
-  CollectionActions,
-  DeckActions,
-  DigimonActions,
-  SaveActions,
-  WebsiteActions,
-} from './digimon.actions';
-import {
-  selectCardSet,
-  selectChangeAdvancedSettings,
-  selectChangeFilterEffect,
-  selectSave,
-} from './digimon.selectors';
-import { emptySave } from './reducers/save.reducer';
+} from "rxjs";
+import { setupDigimonCards } from "../../assets/cardlists/DigimonCards";
+import { IBlog, IDeck, ISave } from "../../models";
+import { CARDSET } from "../../models/enums/card-set.enum";
+import { filterCards } from "../functions/filter.functions";
+import { AuthService } from "../services/auth.service";
+import { DigimonBackendService } from "../services/digimon-backend.service";
+import { CollectionActions, DeckActions, DigimonActions, SaveActions, WebsiteActions } from "./digimon.actions";
+import { selectCardSet, selectChangeAdvancedSettings, selectChangeFilterEffect, selectSave } from "./digimon.selectors";
+import { emptySave } from "./reducers/save.reducer";
 
 @Injectable()
 export class DigimonEffects {
@@ -61,10 +52,11 @@ export class DigimonEffects {
                   this.digimonBackendService
                     .updateSave(save)
                     .pipe(first())
-                    .subscribe(() => {});
+                    .subscribe(() => {
+                    });
                 } else {
                   localStorage.setItem(
-                    'Digimon-Card-Collector',
+                    "Digimon-Card-Collector",
                     JSON.stringify(save)
                   );
                 }
@@ -132,12 +124,12 @@ export class DigimonEffects {
             .pipe(
               tap(
                 ({
-                  showPreRelease,
-                  showAA,
-                  showStamped,
-                  showReprint,
-                  filter,
-                }) => {
+                   showPreRelease,
+                   showAA,
+                   showStamped,
+                   showReprint,
+                   filter
+                 }) => {
                   if (
                     showPreRelease === undefined ||
                     showAA === undefined ||
@@ -150,47 +142,47 @@ export class DigimonEffects {
                   filter = { ...filter, versionFilter: [] };
                   if (!showPreRelease) {
                     let versionFilter = filter.versionFilter.filter(
-                      (filter) => filter !== 'Pre-Release'
+                      (filter) => filter !== "Pre-Release"
                     );
                     if (versionFilter.length === 0) {
-                      versionFilter = ['Normal', 'AA', 'Stamp', 'Reprint'];
+                      versionFilter = ["Normal", "AA", "Stamp", "Reprint"];
                     }
                     filter = { ...filter, versionFilter };
                   }
                   if (!showAA) {
                     let versionFilter = filter.versionFilter.filter(
-                      (filter) => filter !== 'AA'
+                      (filter) => filter !== "AA"
                     );
                     if (versionFilter.length === 0) {
                       versionFilter = [
-                        'Normal',
-                        'Stamp',
-                        'Pre-Release',
-                        'Reprint',
+                        "Normal",
+                        "Stamp",
+                        "Pre-Release",
+                        "Reprint"
                       ];
                     }
                     filter = { ...filter, versionFilter };
                   }
                   if (!showStamped) {
                     let versionFilter = filter.versionFilter.filter(
-                      (filter) => filter !== 'Stamp'
+                      (filter) => filter !== "Stamp"
                     );
                     if (versionFilter.length === 0) {
                       versionFilter = [
-                        'Normal',
-                        'AA',
-                        'Pre-Release',
-                        'Reprint',
+                        "Normal",
+                        "AA",
+                        "Pre-Release",
+                        "Reprint"
                       ];
                     }
                     filter = { ...filter, versionFilter };
                   }
                   if (!showReprint) {
                     let versionFilter = filter.versionFilter.filter(
-                      (filter) => filter !== 'Reprint'
+                      (filter) => filter !== "Reprint"
                     );
                     if (versionFilter.length === 0) {
-                      versionFilter = ['Normal', 'AA', 'Pre-Release', 'Stamp'];
+                      versionFilter = ["Normal", "AA", "Pre-Release", "Stamp"];
                     }
                     filter = { ...filter, versionFilter };
                   }
@@ -246,19 +238,19 @@ export class DigimonEffects {
           );
 
           this.toastrService.info(
-            'Your save was loaded successfully!',
-            'Welcome back!'
+            "Your save was loaded successfully!",
+            "Welcome back!"
           );
 
-          return ({ type: '[Save] Load Save Success' });
+          return ({ type: "[Save] Load Save Success" });
         }),
         catchError(() => {
           this.toastrService.info(
-            'There was an error while loading your save, please refresh the site!',
-            'Save Loading Error!'
+            "There was an error while loading your save, please refresh the site!",
+            "Save Loading Error!"
           );
 
-          return of({ type: '[Save] Load Save Failure' });
+          return of({ type: "[Save] Load Save Failure" });
         })
       )
     )
@@ -273,10 +265,28 @@ export class DigimonEffects {
             WebsiteActions.setBlogs({ blogs })
           );
 
-          return ({ type: '[Website] Load Blogs Success' });
+          return ({ type: "[Website] Load Blogs Success" });
         }),
         catchError(() => {
-          return of({ type: '[Website] Load Blogs Failure' });
+          return of({ type: "[Website] Load Blogs Failure" });
+        })
+      )
+    )
+  ));
+
+  loadCommunityDecks$ = createEffect(() => this.actions$.pipe(
+    ofType(WebsiteActions.loadCommunityDecks),
+    exhaustMap(() => this.digimonBackendService.getDecks()
+      .pipe(
+        map((decks: IDeck[]) => {
+          this.store.dispatch(
+            WebsiteActions.setCommunityDecks({ communityDecks: decks })
+          );
+
+          return ({ type: "[Website] Load Community Decks Success" });
+        }),
+        catchError(() => {
+          return of({ type: "[Website] Load Community Decks Failure" });
         })
       )
     )
@@ -288,5 +298,6 @@ export class DigimonEffects {
     private digimonBackendService: DigimonBackendService,
     private actions$: Actions,
     private toastrService: ToastrService
-  ) {}
+  ) {
+  }
 }

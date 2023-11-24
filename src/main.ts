@@ -35,9 +35,9 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { ToastModule } from 'primeng/toast';
 import { TooltipModule } from 'primeng/tooltip';
 import { AppComponent } from './app/app.component';
-import { BlogPageComponent } from './app/features/community/components/blog-page.component';
 import { CollectionPageComponent } from './app/features/collection/collection-page.component';
 import { CommunityPageComponent } from './app/features/community/community-page.component';
+import { BlogPageComponent } from './app/features/community/components/blog-page.component';
 import { DeckbuilderPageComponent } from './app/features/deckbuilder/deckbuilder-page.component';
 import { DecksPageComponent } from './app/features/decks/decks-page.component';
 import { HomePageComponent } from './app/features/home/home-page.component';
@@ -127,7 +127,7 @@ bootstrapApplication(AppComponent, {
       ToastModule,
       BlockUIModule,
       ProgressSpinnerModule,
-      TooltipModule
+      TooltipModule,
     ),
 
     provideRouter(routes, withPreloading(PreloadAllModules)),
@@ -144,7 +144,7 @@ bootstrapApplication(AppComponent, {
           digimonCards: DigimonCards.initialState,
           save: Save.emptySave,
         },
-      }
+      },
     ),
     provideEffects([DigimonEffects]),
     provideStoreDevtools({
