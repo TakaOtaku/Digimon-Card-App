@@ -20,18 +20,19 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 @Component({
   selector: 'digimon-card-list',
   template: `
-    <div
-      class="flex flex-wrap justify-center"
-      *ngIf="cards$ | async as cards">
+    <div class="flex flex-wrap justify-center" *ngIf="cards$ | async as cards">
       <h1
         *ngIf="cards.length === 0"
         class="primary-color text-bold my-10 text-5xl">
         No cards found!
       </h1>
 
-
-      <div *ngIf='collection$ | async as collection' class="flex w-full flex-row flex-wrap">
-        <p-scrollPanel class="flex w-full flex-row flex-wrap" [style]="{ width: '100%', height: '100vh' }">
+      <div
+        *ngIf="collection$ | async as collection"
+        class="flex w-full flex-row flex-wrap">
+        <p-scrollPanel
+          class="flex w-full flex-row flex-wrap"
+          [style]="{ width: '100%', height: '100vh' }">
           <div pDefer>
             <ng-template>
               <digimon-full-card
@@ -75,8 +76,8 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     ViewCardDialogComponent,
     AsyncPipe,
     DeferModule,
-    ScrollPanelModule
-  ]
+    ScrollPanelModule,
+  ],
 })
 export class CardListComponent {
   @Input() public showCount: number = 32;

@@ -155,7 +155,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
     y: number,
     scale: number,
     fontSize?: number,
-    fillStyle?: string
+    fillStyle?: string,
   ) {
     ctx.font = fontSize ? fontSize * scale + 'px Roboto' : '15px Roboto';
     ctx.shadowColor = 'black';
@@ -224,7 +224,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
   setExportTypeIMAGE(): void {
     this.generateCanvas();
     this.generateCanvas(
-      document.getElementById('HDCanvas')! as HTMLCanvasElement
+      document.getElementById('HDCanvas')! as HTMLCanvasElement,
     );
     this.generateTTS(document.getElementById('TTS')! as HTMLCanvasElement);
   }
@@ -270,9 +270,8 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
     this.deck.cards.forEach((card) => {
       const digimonCard = this.digimonCardMap.get(card.id);
       if (digimonCard) {
-        this.deckText += `${card.id.replace('ST0', 'ST')} ${
-          digimonCard?.name.english
-        } ${card.count}\n`;
+        this.deckText += `${card.id.replace('ST0', 'ST')} ${digimonCard?.name
+          .english} ${card.count}\n`;
       }
     });
   }
@@ -293,9 +292,8 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
     this.deckText = '// Digimon DeckList\n\n';
     this.deck.cards.forEach((card) => {
       const dc = this.digimonCards.find((dc) => compareIDs(dc.id, card.id));
-      this.deckText += `${card.count} ${
-        dc?.name.english
-      } [DCG] (${card.id.replace('ST0', 'ST')})\n`;
+      this.deckText += `${card.count} ${dc?.name
+        .english} [DCG] (${card.id.replace('ST0', 'ST')})\n`;
     });
   }
 
@@ -331,7 +329,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
           myOptions.x * scale,
           myOptions.y * scale,
           myOptions.sw * scale,
-          myOptions.sh * scale
+          myOptions.sh * scale,
         );
 
         imgs = this.getImages();
@@ -349,7 +347,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
           myOptions.x * scale,
           myOptions.y * scale,
           myOptions.sw * scale,
-          myOptions.sh * scale
+          myOptions.sh * scale,
         );
         loadedCount += 1;
         if (loadedCount === imgs.length) {
@@ -394,7 +392,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
     const cardsPerRow = 9;
     this.deck.cards.forEach((card) => {
       const fullCard = this.digimonCards.find((search: DigimonCard) =>
-        compareIDs(card.id, search.id)
+        compareIDs(card.id, search.id),
       );
       imgs.push({
         uri: fullCard!.cardImage,
@@ -446,7 +444,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
           myOptions.x,
           myOptions.y,
           myOptions.sw,
-          myOptions.sh
+          myOptions.sh,
         );
 
         imgs = this.getImagesAll();
@@ -464,7 +462,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
           myOptions.x,
           myOptions.y,
           myOptions.sw,
-          myOptions.sh
+          myOptions.sh,
         );
         loadedCount += 1;
         if (loadedCount === imgs.length) {
@@ -492,7 +490,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
     const cardsPerRow = 10;
     this.deck.cards.forEach((card) => {
       const fullCard = this.digimonCards.find((search: DigimonCard) =>
-        compareIDs(card.id, search.id)
+        compareIDs(card.id, search.id),
       );
       for (let i = 1; i <= card.count; i++) {
         imgs.push({
@@ -536,7 +534,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
         y,
         scale,
         30,
-        '#0369a1'
+        '#0369a1',
       );
       ExportDeckDialogComponent.writeText(
         ctx,
@@ -544,7 +542,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
         x,
         y,
         scale,
-        30
+        30,
       );
 
       if (cardsInCurrentRow >= cardsPerRow) {

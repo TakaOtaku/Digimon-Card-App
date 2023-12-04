@@ -104,19 +104,21 @@ export class FilterAndSearchComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.onDestroy$))
       .subscribe((searchFilter) => {
         this.store.dispatch(
-          WebsiteActions.setFilter({ filter: { ...this.filter, searchFilter } })
+          WebsiteActions.setFilter({
+            filter: { ...this.filter, searchFilter },
+          }),
         );
       });
     this.store
       .select(selectCollectionMode)
       .pipe(takeUntil(this.onDestroy$))
       .subscribe((collectionMode) =>
-        this.collectionMode.setValue(collectionMode, { emitEvent: false })
+        this.collectionMode.setValue(collectionMode, { emitEvent: false }),
       );
     this.collectionMode.valueChanges
       .pipe(takeUntil(this.onDestroy$))
       .subscribe((collectionMode) =>
-        this.store.dispatch(SaveActions.setCollectionMode({ collectionMode }))
+        this.store.dispatch(SaveActions.setCollectionMode({ collectionMode })),
       );
   }
 

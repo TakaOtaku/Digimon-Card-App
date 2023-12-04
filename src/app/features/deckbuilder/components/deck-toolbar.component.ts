@@ -191,7 +191,7 @@ import { PriceCheckDialogComponent } from './price-check-dialog.component';
     NgFor,
     ExportDeckDialogComponent,
     ImportDeckDialogComponent,
-    ConfirmDialogModule
+    ConfirmDialogModule,
   ],
   providers: [MessageService],
 })
@@ -224,7 +224,7 @@ export class DeckToolbarComponent implements OnDestroy {
     private messageService: MessageService,
     private store: Store,
     private route: Router,
-    private authService: AuthService
+    private authService: AuthService,
   ) {
     this.store
       .select(selectAllCards)
@@ -287,7 +287,7 @@ export class DeckToolbarComponent implements OnDestroy {
         this.store.dispatch(WebsiteActions.createNewDeck({ uuid: uuid.v4() }));
         if (this.authService.userData?.uid) {
           this.route.navigateByUrl(
-            `deckbuilder/user/${this.authService.userData?.uid}/deck/${this.deck.id}`
+            `deckbuilder/user/${this.authService.userData?.uid}/deck/${this.deck.id}`,
           );
         }
         this.messageService.add({
@@ -324,10 +324,12 @@ export class DeckToolbarComponent implements OnDestroy {
     this.didMulligan = false;
 
     this.allDeckCards = DeckToolbarComponent.shuffle(
-      this.deck.cards.map((card) => this.allCards.find((a) => a.id === card.id))
+      this.deck.cards.map((card) =>
+        this.allCards.find((a) => a.id === card.id),
+      ),
     );
     this.allDeckCards = this.allDeckCards.filter(
-      (card) => card.cardType !== 'Digi-Egg'
+      (card) => card.cardType !== 'Digi-Egg',
     );
 
     this.securityStack = this.allDeckCards.slice(0, 5);

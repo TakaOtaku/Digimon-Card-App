@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  HostListener,
+  inject,
+} from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
@@ -13,38 +18,60 @@ import { NgFor } from '@angular/common';
   selector: 'digimon-products',
   template: `
     <div
-      class="flex h-[100vh] w-[calc(100vw-6.5rem)] flex-col overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d]">
-      <div class="flex flex-col justify-center mx-auto max-w-6xl">
-
-        <div *ngFor='let product of products; let last = last'>
+      class="flex h-[calc(100vh-3.5rem)] md:h-[calc(100vh-5rem)] lg:h-[100vh] w-[100vw] lg:w-[calc(100vw-6.5rem)] flex-col overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d]">
+      <div
+        class="flex flex-col justify-center mx-auto max-w-sm md:max-w-xl lg:max-w-2xl xl:max-w-4xl">
+        <div *ngFor="let product of products; let last = last">
           <h1
             class="text-shadow text-center mt-6 text-4xl font-black text-[#e2e4e6] underline xl:mt-2">
-            {{product.name}}
+            {{ product.name }}
           </h1>
-          <p-carousel [value]="product.items" [numVisible]="3" [numScroll]="3" [circular]="true" [autoplayInterval]="5000">
+          <p-carousel
+            [value]="product.items"
+            [numVisible]="displayCount"
+            [numScroll]="displayCount"
+            [circular]="true"
+            [autoplayInterval]="5000">
             <ng-template let-item pTemplate="item">
-              <div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
-                <img src="{{ item.image }}" [alt]="item.name" class="shadow-2 mx-auto h-60" />
+              <div
+                class="border-1 surface-border border-round m-2 text-center py-5 px-3">
+                <img
+                  src="{{ item.image }}"
+                  [alt]="item.name"
+                  class="shadow-2 mx-auto h-60" />
                 <div>
-                  <h4 class="mb-1 text-black-outline text-white">{{ item.name }}</h4>
+                  <h4 class="mb-1 text-black-outline text-white">
+                    {{ item.name }}
+                  </h4>
                   <div class="car-buttons mt-2">
                     <!--p-button type="button" styleClass="p-button p-button-rounded mr-2" icon="pi pi-info-circle"></p-button-->
-                    <p-button (click)="openLink(item.link)" type="button" styleClass="p-button-success p-button-rounded mr-2" icon="pi pi-external-link"></p-button>
+                    <p-button
+                      (click)="openLink(item.link)"
+                      type="button"
+                      styleClass="p-button-success p-button-rounded mr-2"
+                      icon="pi pi-external-link"></p-button>
                   </div>
                 </div>
               </div>
             </ng-template>
           </p-carousel>
 
-          <p-divider *ngIf='!last'></p-divider>
+          <p-divider *ngIf="!last"></p-divider>
         </div>
-
       </div>
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgFor, TooltipModule, LazyLoadImageModule, ButtonModule, CarouselModule, GalleriaModule, DividerModule]
+  imports: [
+    NgFor,
+    TooltipModule,
+    LazyLoadImageModule,
+    ButtonModule,
+    CarouselModule,
+    GalleriaModule,
+    DividerModule,
+  ],
 })
 export class ProductsComponent {
   starter = [
@@ -434,8 +461,20 @@ export class ProductsComponent {
       items: this.promo,
     },
   ];
-  constructor(public router: Router, private meta: Meta, private title: Title) {
+
+  displayCount = 3;
+
+  public router = inject(Router);
+  private meta = inject(Meta);
+  private title = inject(Title);
+  constructor() {
     this.makeGoogleFriendly();
+    this.checkScreenWidth(window.innerWidth);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    this.checkScreenWidth((event.target as Window).innerWidth);
   }
 
   private makeGoogleFriendly() {
@@ -457,6 +496,21 @@ export class ProductsComponent {
   }
 
   openLink(link: string) {
-    window.open(link, '_blank')
+    window.open(link, '_blank');
+  }
+
+  private checkScreenWidth(innerWidth: number) {
+    const xl = innerWidth >= 1280;
+    const lg = innerWidth >= 1024;
+    const md = innerWidth >= 768;
+    if (xl) {
+      this.displayCount = 4;
+    } else if (lg) {
+      this.displayCount = 3;
+    } else if (md) {
+      this.displayCount = 2;
+    } else {
+      this.displayCount = 1;
+    }
   }
 }

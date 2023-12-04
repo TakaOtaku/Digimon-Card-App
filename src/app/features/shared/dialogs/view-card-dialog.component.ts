@@ -53,14 +53,14 @@ import {
             {{ card.block }}
           </p>
           <p
-            [ngStyle]="{color}"
+            [ngStyle]="{ color }"
             class="text-black-outline-xs self-center font-bold"
             id="Card-Type">
             {{ card.cardType }}
           </p>
           <div
             *ngIf="card.cardType === 'Digimon' || card.cardType === 'Digi-Egg'"
-            [ngStyle]="{backgroundColor}"
+            [ngStyle]="{ backgroundColor }"
             class="inline-block rounded-full px-6 py-2.5 leading-tight shadow-md"
             id="Digimon-Lv">
             <p
@@ -70,13 +70,13 @@ import {
             </p>
           </div>
           <p
-            [ngStyle]="{color}"
+            [ngStyle]="{ color }"
             class="text-black-outline-xs hidden self-center font-bold lg:flex"
             id="Card-Version">
             {{ version }}
           </p>
           <p
-            [ngStyle]="{color}"
+            [ngStyle]="{ color }"
             class="text-black-outline-xs self-center font-bold lg:hidden"
             id="Card-Version">
             {{ card.version }}
@@ -96,7 +96,7 @@ import {
           <i class="fa-solid fa-circle-arrow-left text-[#e2e4e6]"></i>
         </button>
         <h1
-          [ngStyle]="{color}"
+          [ngStyle]="{ color }"
           class="text-black-outline-xs my-1 text-3xl font-black"
           id="Card-Name">
           {{ card.name.english }}
@@ -127,7 +127,7 @@ import {
             class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150"
             id="Digimon-Deck-Count">
             <p
-              [ngStyle]="{color}"
+              [ngStyle]="{ color }"
               class="text-black-outline-xs ml-1.5 text-lg font-extrabold">
               In Deck
             </p>
@@ -140,7 +140,7 @@ import {
             class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150"
             id="Digimon-Deck-Count">
             <p
-              [ngStyle]="{color}"
+              [ngStyle]="{ color }"
               class="text-black-outline-xs ml-1.5 text-lg font-extrabold">
               In Collection
             </p>
@@ -155,7 +155,7 @@ import {
             class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150"
             id="Digimon-Form">
             <p
-              [ngStyle]="{color}"
+              [ngStyle]="{ color }"
               class="text-black-outline-xs ml-1.5 text-lg font-extrabold">
               Form
             </p>
@@ -168,7 +168,7 @@ import {
             class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150"
             id="Digimon-Attribute">
             <p
-              [ngStyle]="{color}"
+              [ngStyle]="{ color }"
               class="text-black-outline-xs ml-1.5 text-lg font-extrabold">
               Attribute
             </p>
@@ -181,7 +181,7 @@ import {
             class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150"
             id="Digimon-Type">
             <p
-              [ngStyle]="{color}"
+              [ngStyle]="{ color }"
               class="text-black-outline-xs ml-1.5 text-lg font-extrabold">
               Type
             </p>
@@ -194,7 +194,7 @@ import {
             class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150"
             id="Digimon-DP">
             <p
-              [ngStyle]="{color}"
+              [ngStyle]="{ color }"
               class="text-black-outline-xs ml-1.5 text-lg font-extrabold">
               DP
             </p>
@@ -207,7 +207,7 @@ import {
             class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150"
             id="Digimon-Play-Cost">
             <p
-              [ngStyle]="{color}"
+              [ngStyle]="{ color }"
               class="text-black-outline-xs ml-1.5 text-lg font-extrabold">
               Play Cost
             </p>
@@ -220,7 +220,7 @@ import {
             *ngIf="card.digivolveCondition.length > 0"
             class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150">
             <p
-              [ngStyle]="{color}"
+              [ngStyle]="{ color }"
               class="text-black-outline-xs ml-1.5 text-lg font-extrabold">
               Digivolve
             </p>
@@ -243,7 +243,7 @@ import {
             class="my-0.5 flex w-full flex-col rounded-full"
             id="Digimon-Special-Digivolve">
             <p
-              [ngStyle]="{color}"
+              [ngStyle]="{ color }"
               class="text-black-outline-xs text-lg font-extrabold">
               Special Digivolve
             </p>
@@ -257,7 +257,7 @@ import {
             class="my-0.5 flex w-full flex-col rounded-full"
             id="Digimon-DNA-Digivolve">
             <p
-              [ngStyle]="{color}"
+              [ngStyle]="{ color }"
               class="text-black-outline-xs text-lg font-extrabold">
               DNA Digivolve
             </p>
@@ -271,7 +271,7 @@ import {
             class="my-0.5 flex w-full flex-col rounded-full"
             id="Digimon-DigiXros">
             <p
-              [ngStyle]="{color}"
+              [ngStyle]="{ color }"
               class="text-black-outline-xs text-lg font-extrabold">
               DigiXros
             </p>
@@ -284,7 +284,7 @@ import {
             class="my-0.5 flex w-full flex-col rounded-full"
             id="Digimon-BurstDigivolve">
             <p
-              [ngStyle]="{color}"
+              [ngStyle]="{ color }"
               class="text-black-outline-xs text-lg font-extrabold">
               Burst Digivolve
             </p>
@@ -297,7 +297,7 @@ import {
             class="my-0.5 flex w-full flex-col rounded-full"
             id="Digimon-ACE">
             <p
-              [ngStyle]="{color}"
+              [ngStyle]="{ color }"
               class="text-black-outline-xs text-lg font-extrabold">
               ACE
             </p>
@@ -315,7 +315,7 @@ import {
           class="flex flex-col"
           id="Digimon-Effect">
           <p
-            [ngStyle]="{color}"
+            [ngStyle]="{ color }"
             class="text-black-outline-xs text-lg font-extrabold">
             Effect
           </p>
@@ -329,7 +329,7 @@ import {
           class="flex flex-col"
           id="Digimon-Digivolve-Effect">
           <p
-            [ngStyle]="{color}"
+            [ngStyle]="{ color }"
             class="text-black-outline-xs text-lg font-extrabold">
             Inherited effect
           </p>
@@ -343,7 +343,7 @@ import {
           class="flex flex-col"
           id="Security-Effect">
           <p
-            [ngStyle]="{color}"
+            [ngStyle]="{ color }"
             class="text-black-outline-xs text-lg font-extrabold">
             Security effect
           </p>
@@ -364,7 +364,7 @@ import {
       <div class="my-4 max-w-full" id="Notes">
         <div class="flex flex-col" id="Card-Notes">
           <p
-            [ngStyle]="{color}"
+            [ngStyle]="{ color }"
             class="text-black-outline-xs text-lg font-extrabold">
             Notes
           </p>
@@ -379,7 +379,7 @@ import {
         id="Illustrator">
         <div class="flex flex-col" id="Card-Illustrator">
           <p
-            [ngStyle]="{color}"
+            [ngStyle]="{ color }"
             class="text-black-outline-xs text-lg font-extrabold">
             Illustrator
           </p>
@@ -443,8 +443,8 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
     .select(selectCollection)
     .pipe(
       map((cards) =>
-        cards.find((colCard) => colCard.id === withoutJ(this.card.id))
-      )
+        cards.find((colCard) => colCard.id === withoutJ(this.card.id)),
+      ),
     );
 
   private onDestroy$ = new Subject();
@@ -479,7 +479,7 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
       this.collectionCard$ = this.store
         .select(selectCollection)
         .pipe(
-          map((cards) => cards.find((colCard) => colCard.id === this.card.id))
+          map((cards) => cards.find((colCard) => colCard.id === this.card.id)),
         );
     }
   }
@@ -575,7 +575,7 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
     for (const [pattern, imageTag] of replacements) {
       replacedText = replacedText.replace(
         pattern,
-        `<img class="inline h-4" src="assets/images/keywords/${imageTag}.webp"/>`
+        `<img class="inline h-4" src="assets/images/keywords/${imageTag}.webp"/>`,
       );
     }
     return replacedText;

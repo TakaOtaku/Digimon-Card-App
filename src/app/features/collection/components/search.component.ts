@@ -39,10 +39,10 @@ export class SearchComponent {
       .pipe(
         debounceTime(500),
         distinctUntilChanged(),
-        tap((search) => (this.search = search))
+        tap((search) => (this.search = search)),
       )
       .subscribe((search) =>
-        this.store.dispatch(WebsiteActions.setSearchFilter({ search }))
+        this.store.dispatch(WebsiteActions.setSearchFilter({ search })),
       );
   }
 }

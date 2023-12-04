@@ -72,7 +72,7 @@ export class BlogPageComponent implements OnInit {
     private messageService: MessageService,
     private store: Store,
     private meta: Meta,
-    private metaTitle: Title
+    private metaTitle: Title,
   ) {}
 
   ngOnInit(): void {
@@ -90,7 +90,7 @@ export class BlogPageComponent implements OnInit {
   checkURL() {
     this.blog$ = this.active.params.pipe(
       switchMap((params) =>
-        this.digimonBackendService.getBlogEntryWithText(params['id'])
+        this.digimonBackendService.getBlogEntryWithText(params['id']),
       ),
       tap((blog) => {
         this.form.setValue({
@@ -100,7 +100,7 @@ export class BlogPageComponent implements OnInit {
           date: blog.date,
           category: blog.category,
         });
-      })
+      }),
     );
   }
 
@@ -128,8 +128,8 @@ export class BlogPageComponent implements OnInit {
       .updateBlogWithText(newBlog)
       .pipe(
         withLatestFrom(
-          this.digimonBackendService.updateBlog(newBlogWithoutText)
-        )
+          this.digimonBackendService.updateBlog(newBlogWithoutText),
+        ),
       )
       .subscribe(() => {
         this.messageService.add({
@@ -142,7 +142,7 @@ export class BlogPageComponent implements OnInit {
 
   private makeGoogleFriendly() {
     this.metaTitle.setTitle(
-      'Digimon Card Game - ' + this.form.get('title')?.value
+      'Digimon Card Game - ' + this.form.get('title')?.value,
     );
 
     this.meta.addTags([

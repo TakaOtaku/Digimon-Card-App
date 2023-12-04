@@ -10,7 +10,7 @@ import {
   ISave,
   ISettings,
   ITournamentDeck,
-  IUser
+  IUser,
 } from 'src/models';
 import { CARDSET, IBlog, IBlogWithText, ITag } from '../../models';
 import { IUserAndDecks } from '../../models/interfaces/userAndDecks.interface';
@@ -60,7 +60,7 @@ export class DigimonBackendService {
             tags,
           } as IDeck;
         });
-      })
+      }),
     );
   }
 
@@ -77,7 +77,7 @@ export class DigimonBackendService {
         });
 
         return userAndDecks;
-      })
+      }),
     );
   }
 
@@ -87,7 +87,7 @@ export class DigimonBackendService {
         return decks.map((deck) => {
           const cards: ICountCard = JSON.parse(deck.cards);
           const sideDeck: ICountCard = JSON.parse(
-            deck.sideDeck !== '' ? deck.sideDeck : '[]'
+            deck.sideDeck !== '' ? deck.sideDeck : '[]',
           );
           const color: IColor = JSON.parse(deck.color);
           const tags: ITag[] = JSON.parse(deck.tags);
@@ -101,7 +101,7 @@ export class DigimonBackendService {
             tags,
           } as ITournamentDeck;
         });
-      })
+      }),
     );
   }
 
@@ -123,7 +123,7 @@ export class DigimonBackendService {
             settings,
           } as ISave;
         });
-      })
+      }),
     );
   }
 
@@ -136,7 +136,7 @@ export class DigimonBackendService {
       map((deck) => {
         const cards: ICountCard = JSON.parse(deck.cards);
         const sideDeck: ICountCard = JSON.parse(
-          deck.sideDeck !== '' ? deck.sideDeck : '[]'
+          deck.sideDeck !== '' ? deck.sideDeck : '[]',
         );
         const color: IColor = JSON.parse(deck.color);
         const tags: ITag[] = JSON.parse(deck.tags);
@@ -149,7 +149,7 @@ export class DigimonBackendService {
           color,
           tags,
         } as IDeck;
-      })
+      }),
     );
   }
 
@@ -177,7 +177,7 @@ export class DigimonBackendService {
             : newSave.settings.cardSet;
 
         return newSave;
-      })
+      }),
     );
   }
 
@@ -189,7 +189,7 @@ export class DigimonBackendService {
           ...blog,
           text,
         } as IBlogWithText;
-      })
+      }),
     );
   }
 
@@ -212,7 +212,7 @@ export class DigimonBackendService {
   updateDeck(
     deck: IDeck,
     user: IUser | null = null,
-    allCards: DigimonCard[]
+    allCards: DigimonCard[],
   ): Observable<any> {
     let newDeck: any;
     if (user) {
@@ -264,7 +264,6 @@ export class DigimonBackendService {
   deleteBlogEntryWithText(id: any): Observable<any> {
     return this.http.delete(`${baseUrl}blogs-with-text/${id}`);
   }
-
 
   checkSaveValidity(save: any, user?: any): ISave {
     let changedSave = false;

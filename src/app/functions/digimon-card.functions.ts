@@ -89,7 +89,7 @@ export function setNewestSet(cards: ICountCard[]): ITag {
 
 export function bannedCardsIncluded(
   cards: ICountCard[],
-  allCards: DigimonCard[]
+  allCards: DigimonCard[],
 ): boolean {
   let banned = false;
   if (!cards) {
@@ -111,7 +111,7 @@ export function bannedCardsIncluded(
 
 export function tooManyRestrictedCardsIncluded(
   cards: ICountCard[],
-  allCards: DigimonCard[]
+  allCards: DigimonCard[],
 ): boolean {
   let restricted = false;
   if (!cards) {
@@ -155,7 +155,7 @@ export function setColors(deck: IDeck, allCards: DigimonCard[]) {
   });
 
   const highest = colorArray.reduce((prev, current) =>
-    prev.count > current.count ? prev : current
+    prev.count > current.count ? prev : current,
   );
   return DeckColorMap.get(highest.name);
 }
@@ -230,7 +230,7 @@ export function sortColors(colorA: string, colorB: string): number {
 
 export function mapToDeckCards(
   cards: ICountCard[],
-  allCards: DigimonCard[]
+  allCards: DigimonCard[],
 ): IDeckCard[] {
   const deckCards: IDeckCard[] = [];
 
@@ -257,7 +257,7 @@ export function mapToDeckCards(
 }
 
 export function getCountFromDeckCards(
-  deckCards: IDeckCard[] | ICountCard[]
+  deckCards: IDeckCard[] | ICountCard[],
 ): number {
   let number = 0;
   deckCards.forEach((card) => {
@@ -268,7 +268,7 @@ export function getCountFromDeckCards(
 
 export function setDeckImage(
   deck: IDeck | ITournamentDeck,
-  allCards: DigimonCard[]
+  allCards: DigimonCard[],
 ): DigimonCard {
   if (deck.cards && deck.cards.length === 0) {
     return JSON.parse(JSON.stringify(dummyCard));
@@ -286,7 +286,7 @@ export function setDeckImage(
     deckCards = deckCards.sort(
       (a, b) =>
         Number(b.cardLv.replace('Lv.', '')) -
-        Number(a.cardLv.replace('Lv.', ''))
+        Number(a.cardLv.replace('Lv.', '')),
     );
   } catch (e) {}
 
@@ -296,7 +296,7 @@ export function setDeckImage(
 }
 
 export function itemsAsSelectItem(array: string[]): ISelectItem[] {
-  return array.map((item) => ({ label: item, value: item } as ISelectItem));
+  return array.map((item) => ({ label: item, value: item }) as ISelectItem);
 }
 
 export function withoutJ(id: string): string {

@@ -74,7 +74,10 @@ export class ImportDeckDialogComponent implements OnDestroy {
 
   private onDestroy$ = new Subject();
 
-  constructor(private store: Store, private messageService: MessageService) {}
+  constructor(
+    private store: Store,
+    private messageService: MessageService,
+  ) {}
 
   ngOnDestroy(): void {
     this.onDestroy$.next(true);

@@ -76,12 +76,12 @@ import { WebsiteActions } from './../../../store/digimon.actions';
           <th>{{ product.count }}</th>
           <td>{{ product.cardId }}</td>
           <td>{{ product.name }}</td>
-          <td>{{ product.lowPrice | currency : 'EUR' }}</td>
-          <td>{{ product.avgSellPrice | currency : 'EUR' }}</td>
-          <td>{{ product.trendPrice | currency : 'EUR' }}</td>
-          <td>{{ product.avg1 | currency : 'EUR' }}</td>
-          <td>{{ product.avg7 | currency : 'EUR' }}</td>
-          <td>{{ product.avg30 | currency : 'EUR' }}</td>
+          <td>{{ product.lowPrice | currency: 'EUR' }}</td>
+          <td>{{ product.avgSellPrice | currency: 'EUR' }}</td>
+          <td>{{ product.trendPrice | currency: 'EUR' }}</td>
+          <td>{{ product.avg1 | currency: 'EUR' }}</td>
+          <td>{{ product.avg7 | currency: 'EUR' }}</td>
+          <td>{{ product.avg30 | currency: 'EUR' }}</td>
           <td class="bg-white">
             <a [href]="product.link" target="_blank">
               <img
@@ -95,12 +95,12 @@ import { WebsiteActions } from './../../../store/digimon.actions';
       <ng-template pTemplate="footer">
         <tr *ngIf="filteredProducts.length > 0; else noEntry">
           <td colspan="3">Totals</td>
-          <td>{{ totalProducts.lowPrice | currency : 'EUR' }}</td>
-          <td>{{ totalProducts.avgSellPrice | currency : 'EUR' }}</td>
-          <td>{{ totalProducts.trendPrice | currency : 'EUR' }}</td>
-          <td>{{ totalProducts.avg1 | currency : 'EUR' }}</td>
-          <td>{{ totalProducts.avg7 | currency : 'EUR' }}</td>
-          <td>{{ totalProducts.avg30 | currency : 'EUR' }}</td>
+          <td>{{ totalProducts.lowPrice | currency: 'EUR' }}</td>
+          <td>{{ totalProducts.avgSellPrice | currency: 'EUR' }}</td>
+          <td>{{ totalProducts.trendPrice | currency: 'EUR' }}</td>
+          <td>{{ totalProducts.avg1 | currency: 'EUR' }}</td>
+          <td>{{ totalProducts.avg7 | currency: 'EUR' }}</td>
+          <td>{{ totalProducts.avg30 | currency: 'EUR' }}</td>
           <td></td>
         </tr>
         <ng-template #noEntry>
@@ -165,7 +165,7 @@ export class PriceCheckDialogComponent implements OnInit, OnDestroy {
 
   constructor(
     private cardMarketService: CardMarketService,
-    private store: Store
+    private store: Store,
   ) {}
 
   ngOnInit() {
@@ -173,10 +173,10 @@ export class PriceCheckDialogComponent implements OnInit, OnDestroy {
       .pipe(
         switchMap((priceGuide) => {
           this.store.dispatch(
-            WebsiteActions.setPriceGuideCM({ products: priceGuide })
+            WebsiteActions.setPriceGuideCM({ products: priceGuide }),
           );
           return this.deckBuilderViewModel$;
-        })
+        }),
       )
       .subscribe((deckBuilderViewModel) => {
         this.deckBuilderViewModel = deckBuilderViewModel;
@@ -186,7 +186,7 @@ export class PriceCheckDialogComponent implements OnInit, OnDestroy {
     this.checkPrice
       .pipe(
         filter((value) => value),
-        takeUntil(this.onDestroy$)
+        takeUntil(this.onDestroy$),
       )
       .subscribe(() => this.updatePrice());
   }
@@ -201,7 +201,7 @@ export class PriceCheckDialogComponent implements OnInit, OnDestroy {
       .map((card) => {
         const foundProduct: ProductCM =
           this.deckBuilderViewModel.priceGuideCM.find(
-            (product) => card.id === product.cardId
+            (product) => card.id === product.cardId,
           ) ?? this.emptyProduct(card);
 
         return { ...foundProduct, count: card.count } as ProductCMWithCount;
@@ -268,7 +268,7 @@ export class PriceCheckDialogComponent implements OnInit, OnDestroy {
     return this.products
       .map((product) => {
         const foundCard = this.deckBuilderViewModel.collection.find(
-          (collectionCard) => collectionCard.id === product.cardId
+          (collectionCard) => collectionCard.id === product.cardId,
         );
         if (foundCard) {
           return { ...product, count: product.count - foundCard.count };

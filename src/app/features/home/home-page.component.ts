@@ -5,20 +5,23 @@ import { Meta, Title } from '@angular/platform-browser';
 @Component({
   selector: 'digimon-home-page',
   template: `
-    <div class="relative flex h-[100vh] w-[calc(100vw-6.5rem)] flex-row overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d]">
-      <div class="mx-auto flex justify-center max-w-4xl flex-col">
-        <digimon-home-intro class='px-5'></digimon-home-intro>
+    <div
+      class="relative flex h-[calc(100vh-3.5rem)] md:h-[calc(100vh-5rem)] lg:h-[100vh] w-[100vw] lg:w-[calc(100vw-6.5rem)] flex-row overflow-y-auto bg-gradient-to-b from-[#17212f] to-[#08528d]">
+      <div
+        class="mx-auto flex justify-center max-w-sm sm:max-w-md md:max-w-4xl flex-col">
+        <digimon-home-intro class="px-5"></digimon-home-intro>
       </div>
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    HomeIntroComponent,
-  ]
+  imports: [HomeIntroComponent],
 })
 export class HomePageComponent {
-  constructor(private meta: Meta, private title: Title) {
+  constructor(
+    private meta: Meta,
+    private title: Title,
+  ) {
     this.makeGoogleFriendly();
   }
 

@@ -1,5 +1,5 @@
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, HostListener, inject, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
 import { Store } from '@ngrx/store';
@@ -18,7 +18,6 @@ import {
   ITournamentDeck,
 } from '../../../models';
 import { setDeckImage } from '../../functions/digimon-card.functions';
-import { WebsiteActions } from '../../store/digimon.actions';
 import {
   selectAllCards,
   selectCollection,
@@ -29,6 +28,7 @@ import { emptyDeck } from '../../store/reducers/digimon.reducers';
 import { DeckContainerComponent } from '../shared/deck-container.component';
 import { DeckDialogComponent } from '../shared/dialogs/deck-dialog.component';
 import { DeckSubmissionComponent } from '../shared/dialogs/deck-submission.component';
+import { WebsiteActions } from './../../store/digimon.actions';
 import { DeckStatisticsComponent } from './components/deck-statistics.component';
 import { DecksFilterComponent } from './components/decks-filter.component';
 import { TierlistComponent } from './components/tierlist.component';
@@ -37,31 +37,35 @@ import { TierlistComponent } from './components/tierlist.component';
   selector: 'digimon-decks-page',
   template: `
     <div
-      class="relative flex h-[100vh] w-[calc(100vw-6.5rem)] flex-row overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d]">
-      <div class="mx-auto w-full max-w-6xl">
-        <h1
-          class="text-shadow mt-6 pb-1 text-4xl font-black text-[#e2e4e6] xl:mt-2">
-          Community Decks
-        </h1>
+      class="flex flex-col min-h-[calc(100vh-3.5rem)] md:min-h-[calc(100vh-5rem)] lg:min-h-[100vh] w-[100vw] lg:w-[calc(100vw-6.5rem)]
+      overflow-y-auto bg-gradient-to-b from-[#17212f] to-[#08528d]">
+      <div class="mx-auto px-5 w-full max-w-7xl">
+        <div class="lg:px-auto flex px-1 flex-col md:flex-row items-baseline">
+          <h1
+            class="text-shadow mt-6 pb-1 text-2xl md:text-4xl font-black text-[#e2e4e6]">
+            Community Decks
+          </h1>
 
-        <div class="lg:px-auto flex flex-col px-1 lg:flex-row">
-          <button
-            pButton
-            class="p-button-outlined mt-1 lg:mr-2 lg:mt-3"
-            icon="pi pi-search"
-            type="button"
-            label="Find possible decks within your collection"
-            (click)="applyCollectionFilter()"></button>
+          <div class="md:ml-auto">
+            <p-button
+              size="small"
+              class="p-button-outlined mr-1"
+              icon="pi pi-search"
+              type="button"
+              pTooltip="Filter the Decks for Decks possible with your cards"
+              label="Possible Decks"
+              (click)="applyCollectionFilter()"></p-button>
 
-          <button
-            pButton
-            class="p-button-outlined ml-auto mt-1 lg:mr-2 lg:mt-3"
-            icon="pi pi-chart-line"
-            type="button"
-            label="Deck Statistics"
-            (click)="
-              deckStatsDialog = true; updateStatistics.next(true)
-            "></button>
+            <p-button
+              size="small"
+              class="p-button-outlined"
+              icon="pi pi-chart-line"
+              type="button"
+              label="Statistics"
+              (click)="
+                deckStatsDialog = true; updateStatistics.next(true)
+              "></p-button>
+          </div>
         </div>
 
         <digimon-decks-filter
@@ -86,13 +90,14 @@ import { TierlistComponent } from './components/tierlist.component';
         </ng-template>
 
         <p-paginator
+          class="w-full h-8 surface-ground"
           (onPageChange)="onPageChange($event)"
           [first]="first"
           [rows]="rows"
           [showJumpToPageDropdown]="true"
           [showPageLinks]="false"
           [totalRecords]="filteredDecks.length"
-          styleClass="border-0 bg-transparent mx-auto"></p-paginator>
+          styleClass="surface-ground p-0 mx-auto"></p-paginator>
 
         <p-divider></p-divider>
 
@@ -191,8 +196,28 @@ export class DecksPageComponent implements OnInit {
   private title = inject(Title);
 
   ngOnInit(): void {
+    this.checkScreenWidth(window.innerWidth);
+
     this.makeGoogleFriendly();
     this.store.dispatch(WebsiteActions.loadCommunityDecks());
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    this.checkScreenWidth((event.target as Window).innerWidth);
+  }
+
+  private checkScreenWidth(innerWidth: number) {
+    const lg = innerWidth >= 1024;
+    const md = innerWidth >= 768;
+    if (lg) {
+      this.rows = 20;
+    } else if (md) {
+      this.rows = 10;
+    } else {
+      this.rows = 5;
+    }
+    this.setDecksToShow(0, this.rows);
   }
 
   showDeckDetails(deck: IDeck) {

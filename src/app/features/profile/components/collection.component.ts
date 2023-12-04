@@ -230,7 +230,7 @@ export class CollectionComponent implements OnInit, OnChanges {
     if (changes && changes['collection']) {
       this.mappedCollection = this.collection.map((countCard) => {
         const foundCard = this.allCards.find(
-          (card) => card.id === countCard.id
+          (card) => card.id === countCard.id,
         );
         return {
           id: countCard.id,

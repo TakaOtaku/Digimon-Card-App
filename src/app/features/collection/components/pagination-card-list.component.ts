@@ -36,7 +36,7 @@ import { SearchComponent } from './search.component';
     <digimon-search></digimon-search>
 
     <div
-      class="mx-1 flex w-full flex-row flex-wrap overflow-hidden"
+      class="mx-1 w-full grid grid-cols-3 md:grid-cols-6 lg:grid-cols-8 overflow-hidden"
       *ngIf="draggedCard$ | async as draggedCard"
       [pDroppable]="['fromDeck', 'fromSide']"
       (onDrop)="drop(draggedCard, draggedCard)">
@@ -54,8 +54,7 @@ import { SearchComponent } from './search.component';
         [count]="getCount(card.id)"
         [deckBuilder]="true"
         [collectionOnly]="collectionOnly"
-        (viewCard)="viewCard($event)"
-        class="max-w-[12.5%] flex-[1_1_12.5%]"></digimon-full-card>
+        (viewCard)="viewCard($event)"></digimon-full-card>
     </div>
 
     <p-dialog
@@ -148,12 +147,12 @@ export class PaginationCardListComponent implements OnInit, OnDestroy {
   drop(card: IDraggedCard, dragCard: IDraggedCard) {
     if (dragCard.drag === DRAG.Side) {
       this.store.dispatch(
-        WebsiteActions.removeCardFromSideDeck({ cardId: card.card.id })
+        WebsiteActions.removeCardFromSideDeck({ cardId: card.card.id }),
       );
       return;
     }
     this.store.dispatch(
-      WebsiteActions.removeCardFromDeck({ cardId: card.card.id })
+      WebsiteActions.removeCardFromDeck({ cardId: card.card.id }),
     );
   }
 }

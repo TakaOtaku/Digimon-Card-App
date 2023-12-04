@@ -110,7 +110,7 @@ export class TestPageComponent implements OnInit, OnDestroy {
     private databaseService: DatabaseService,
     private digimonBackendService: DigimonBackendService,
     private cardMarketService: CardMarketService,
-    private fireAuth: AngularFirestore
+    private fireAuth: AngularFirestore,
   ) {
     //cardTraderService.getCardPrices().subscribe((value) => {
     //  //fs.writeFileSync('./price-data-cardtrader.json', value, {
@@ -163,7 +163,7 @@ export class TestPageComponent implements OnInit, OnDestroy {
           .pipe(
             switchMap((id) => {
               return this.cardMarketService.updateProductId(id, entry);
-            })
+            }),
           )
           .subscribe();
       });
@@ -189,7 +189,7 @@ export class TestPageComponent implements OnInit, OnDestroy {
           .sort((a, b) =>
             b.cardId
               .toLocaleLowerCase()
-              .localeCompare(a.cardId.toLocaleLowerCase())
+              .localeCompare(a.cardId.toLocaleLowerCase()),
           );
 
         const ArrayObject: any = {};
@@ -215,9 +215,9 @@ export class TestPageComponent implements OnInit, OnDestroy {
               this.cardMarketService
                 .updateProductId(
                   ArrayObject[key][0].cardId + `1`,
-                  ArrayObject[key][0]
+                  ArrayObject[key][0],
                 )
-                .pipe(first())
+                .pipe(first()),
             );
             delete ArrayObject[key];
           }
@@ -270,7 +270,7 @@ export class TestPageComponent implements OnInit, OnDestroy {
               obsArray$.push(of);
             }
           });
-        })
+        }),
       )
       .subscribe((decks) => {
         concat(...obsArray$).subscribe();

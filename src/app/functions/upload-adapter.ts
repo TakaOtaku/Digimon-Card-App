@@ -11,7 +11,7 @@ export class MyUploadAdapter {
           this._initRequest();
           this._initListeners(resolve, reject, file);
           this._sendRequest(file);
-        })
+        }),
     );
   }
   abort() {
@@ -35,7 +35,9 @@ export class MyUploadAdapter {
       const response = xhr.response;
       if (!response || response.error) {
         return reject(
-          response && response.error ? response.error.message : genericErrorText
+          response && response.error
+            ? response.error.message
+            : genericErrorText,
         );
       }
       resolve({

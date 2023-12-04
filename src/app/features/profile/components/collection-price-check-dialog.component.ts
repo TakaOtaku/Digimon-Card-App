@@ -119,12 +119,12 @@ import { CardImageComponent } from '../../shared/card-image.component';
             <th>{{ product.count }}</th>
             <td>{{ product.cardId }}</td>
             <td>{{ product.name }}</td>
-            <td>{{ product.lowPrice | currency : 'EUR' }}</td>
-            <td>{{ product.avgSellPrice | currency : 'EUR' }}</td>
-            <td>{{ product.trendPrice | currency : 'EUR' }}</td>
-            <td>{{ product.avg1 | currency : 'EUR' }}</td>
-            <td>{{ product.avg7 | currency : 'EUR' }}</td>
-            <td>{{ product.avg30 | currency : 'EUR' }}</td>
+            <td>{{ product.lowPrice | currency: 'EUR' }}</td>
+            <td>{{ product.avgSellPrice | currency: 'EUR' }}</td>
+            <td>{{ product.trendPrice | currency: 'EUR' }}</td>
+            <td>{{ product.avg1 | currency: 'EUR' }}</td>
+            <td>{{ product.avg7 | currency: 'EUR' }}</td>
+            <td>{{ product.avg30 | currency: 'EUR' }}</td>
             <td class="bg-white">
               <a [href]="product.link" target="_blank">
                 <img
@@ -138,12 +138,12 @@ import { CardImageComponent } from '../../shared/card-image.component';
         <ng-template pTemplate="footer">
           <tr *ngIf="filteredProducts.length > 0; else noEntry">
             <td colspan="3">Totals</td>
-            <td>{{ totalProducts.lowPrice | currency : 'EUR' }}</td>
-            <td>{{ totalProducts.avgSellPrice | currency : 'EUR' }}</td>
-            <td>{{ totalProducts.trendPrice | currency : 'EUR' }}</td>
-            <td>{{ totalProducts.avg1 | currency : 'EUR' }}</td>
-            <td>{{ totalProducts.avg7 | currency : 'EUR' }}</td>
-            <td>{{ totalProducts.avg30 | currency : 'EUR' }}</td>
+            <td>{{ totalProducts.lowPrice | currency: 'EUR' }}</td>
+            <td>{{ totalProducts.avgSellPrice | currency: 'EUR' }}</td>
+            <td>{{ totalProducts.trendPrice | currency: 'EUR' }}</td>
+            <td>{{ totalProducts.avg1 | currency: 'EUR' }}</td>
+            <td>{{ totalProducts.avg7 | currency: 'EUR' }}</td>
+            <td>{{ totalProducts.avg30 | currency: 'EUR' }}</td>
             <td></td>
           </tr>
           <ng-template #noEntry>
@@ -300,7 +300,7 @@ export class CollectionPriceCheckDialogComponent implements OnDestroy {
     return this.products
       .map((product) => {
         const foundCard = this.filterCollection().find(
-          (collectionCard) => collectionCard.id === product.cardId
+          (collectionCard) => collectionCard.id === product.cardId,
         );
         if (foundCard) {
           return { ...product, count: product.count - foundCard.count };

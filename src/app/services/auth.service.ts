@@ -85,7 +85,7 @@ export class AuthService {
             '  showPreRelease: true,' +
             '  showStampedCards: true,' +
             '  showAACards: true,' +
-            '  sortDeckOrder: "Level"}}'
+            '  sortDeckOrder: "Level"}}',
       );
       this.store.dispatch(SaveActions.setSave({ save }));
     });
@@ -136,7 +136,7 @@ export class AuthService {
           decks: [],
           settings: emptySettings,
         },
-      })
+      }),
     );
 
     this.userData = userData;
@@ -162,7 +162,7 @@ export class AuthService {
           console.log('No save found creating a new one!');
           this.createUserData(user, null);
           return of(null);
-        })
+        }),
       )
       .subscribe((save: ISave | null) => {
         if (!save) {
@@ -171,8 +171,6 @@ export class AuthService {
         this.createUserData(user, save);
       });
   }
-
-
 
   /**
    * Load the User-Save from the backend or local storage
@@ -192,10 +190,13 @@ export class AuthService {
   // Check local storage for a backup save, if there is none create a new save
   private loadLocalStorageSave(): Observable<ISave> {
     const localStorageItem = localStorage.getItem('Digimon-Card-Collector');
-    let localStorageSave: ISave | null = localStorageItem ? JSON.parse(localStorageItem) : null;
+    let localStorageSave: ISave | null = localStorageItem
+      ? JSON.parse(localStorageItem)
+      : null;
 
     if (localStorageSave) {
-      localStorageSave = this.digimonBackendService.checkSaveValidity(localStorageSave);
+      localStorageSave =
+        this.digimonBackendService.checkSaveValidity(localStorageSave);
       return of(localStorageSave);
     }
     return of(emptySave);

@@ -55,7 +55,7 @@ export class ChangelogDialogComponent implements OnInit {
   constructor(
     public authService: AuthService,
     private dbService: DatabaseService,
-    private messageService: MessageService
+    private messageService: MessageService,
   ) {}
 
   ngOnInit() {
@@ -89,11 +89,11 @@ export class ChangelogDialogComponent implements OnInit {
       .getEditableElement()
       .parentElement.insertBefore(
         editor.ui.view.toolbar.element,
-        editor.ui.getEditableElement()
+        editor.ui.getEditableElement(),
       );
 
     editor.plugins.get('FileRepository').createUploadAdapter = (
-      loader: any
+      loader: any,
     ) => {
       return new Base64Adapter(loader);
     };

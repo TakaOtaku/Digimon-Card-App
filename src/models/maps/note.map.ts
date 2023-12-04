@@ -1,3 +1,1 @@
-export const NoteMap = new Map<string, string>([
-
-]);
+export const NoteMap = new Map<string, string>([]);

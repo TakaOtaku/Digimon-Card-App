@@ -28,7 +28,7 @@ export class FilterButtonComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.onDestroy$))
       .subscribe(
         (mobileCollectionView) =>
-          (this.mobileCollectionView = mobileCollectionView)
+          (this.mobileCollectionView = mobileCollectionView),
       );
   }
 
@@ -40,7 +40,7 @@ export class FilterButtonComponent implements OnInit, OnDestroy {
     this.store.dispatch(
       WebsiteActions.setMobileCollectionView({
         mobileCollectionView: !this.mobileCollectionView,
-      })
+      }),
     );
   }
 }

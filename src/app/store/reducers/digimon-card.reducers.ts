@@ -25,5 +25,5 @@ export const digimonCardReducer = createReducer(
   on(DigimonActions.setFilteredDigimonCards, (state, { filteredCards }) => ({
     ...state,
     filteredCards,
-  }))
+  })),
 );

@@ -98,7 +98,7 @@ import { AuthService } from '../../../services/auth.service';
       <div class="flex flex-row">
         <span class="mb-2 w-full text-center font-bold text-[#e2e4e6]"
           >{{ form.get('author')!.value }} /
-          {{ form.get('date')!.value | date : 'dd.MM.yyyy' }}</span
+          {{ form.get('date')!.value | date: 'dd.MM.yyyy' }}</span
         >
       </div>
     </div>
@@ -127,7 +127,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   private onDestroy$ = new Subject();
 
-  constructor(public router: Router, private authService: AuthService) {}
+  constructor(
+    public router: Router,
+    private authService: AuthService,
+  ) {}
 
   ngOnInit(): void {
     this.user = this.authService.userData;

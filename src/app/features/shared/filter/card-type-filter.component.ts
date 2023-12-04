@@ -36,7 +36,7 @@ export class CardTypeFilterComponent {
     }
 
     this.store.dispatch(
-      WebsiteActions.setCardTypeFilter({ cardTypeFilter: types })
+      WebsiteActions.setCardTypeFilter({ cardTypeFilter: types }),
     );
   }
 }

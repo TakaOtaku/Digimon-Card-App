@@ -303,7 +303,7 @@ export interface DigimonCardImage {
     DialogModule,
     ExportDeckDialogComponent,
     DeckSubmissionComponent,
-    ConfirmDialogModule
+    ConfirmDialogModule,
   ],
   providers: [MessageService],
 })
@@ -341,7 +341,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
     private router: Router,
     private digimonBackendService: DigimonBackendService,
     private confirmationService: ConfirmationService,
-    private messageService: MessageService
+    private messageService: MessageService,
   ) {
     this.store
       .select(selectAllCards)
@@ -369,7 +369,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
       title: new UntypedFormControl(this.deck.title),
       description: new UntypedFormControl(this.deck.description),
       cardImage: new UntypedFormControl(
-        this.getCardImage(this.deck.imageCardId)
+        this.getCardImage(this.deck.imageCardId),
       ),
     });
 
@@ -380,7 +380,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
     if (this.editable) {
       if (this.authService.isLoggedIn) {
         this.router.navigateByUrl(
-          `deckbuilder/user/${this.authService.userData?.uid}/deck/${this.deck.id}`
+          `deckbuilder/user/${this.authService.userData?.uid}/deck/${this.deck.id}`,
         );
       } else {
         this.store.dispatch(WebsiteActions.setDeck({ deck: this.deck }));
@@ -394,10 +394,10 @@ export class DeckDialogComponent implements OnInit, OnChanges {
           this.store.dispatch(
             WebsiteActions.setDeck({
               deck: this.deck,
-            })
+            }),
           );
           this.router.navigateByUrl(
-            '/deckbuilder/user/' + this.deck.userId + '/deck/' + this.deck.id
+            '/deckbuilder/user/' + this.deck.userId + '/deck/' + this.deck.id,
           );
         },
       });
@@ -449,7 +449,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
         this.store.dispatch(
           DeckActions.import({
             deck: { ...this.deck, id: uuid.v4() },
-          })
+          }),
         );
         this.messageService.add({
           severity: 'success',

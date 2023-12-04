@@ -175,7 +175,7 @@ export const digimonReducer = createReducer(
     (state, { mobileCollectionView }) => ({
       ...state,
       mobileCollectionView,
-    })
+    }),
   ),
   on(WebsiteActions.addCardToDeck, (state, { addCardToDeck }) => {
     const cards = state.deck.cards.map((card) => {
@@ -250,7 +250,7 @@ export const digimonReducer = createReducer(
     (state, { communityDeckSearch }) => ({
       ...state,
       communityDeckSearch,
-    })
+    }),
   ),
   on(WebsiteActions.setCommunityDecks, (state, { communityDecks }) => ({
     ...state,
@@ -267,5 +267,5 @@ export const digimonReducer = createReducer(
   on(WebsiteActions.setDraggedCard, (state, { dragCard }) => ({
     ...state,
     draggedCard: dragCard,
-  }))
+  })),
 );

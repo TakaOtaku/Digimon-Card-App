@@ -8,8 +8,7 @@ import { NgIf } from '@angular/common';
 @Component({
   selector: 'digimon-user-stats',
   template: `
-    <div
-      class="flex w-full flex-col p-4 text-[#e2e4e6] md:flex-row">
+    <div class="flex w-full flex-col p-2 text-[#e2e4e6] md:flex-row">
       <div class="flex flex-row">
         <img
           class="my-auto mr-2 h-full w-auto rounded-full text-xs font-semibold text-[#e2e4e6]"
@@ -54,7 +53,7 @@ import { NgIf } from '@angular/common';
 
       <button
         (click)="priceCheckDialog = true"
-        class="surface-ground hover:primary-background text-shadow border border-black px-1 font-bold text-[#e2e4e6]">
+        class="surface-ground hover:primary-background text-shadow border border-black p-2 font-bold text-[#e2e4e6]">
         Collection Price
       </button>
     </div>

@@ -2,10 +2,10 @@ import { AsyncPipe } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
-  EventEmitter,
+  EventEmitter, HostListener,
   OnDestroy,
   OnInit,
-  Output,
+  Output
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
@@ -31,7 +31,7 @@ import {
       <p-paginator
         (onPageChange)="onPageChange($event)"
         [first]="first"
-        [rows]="48"
+        [rows]="rows"
         [showJumpToPageDropdown]="true"
         [showPageLinks]="false"
         [totalRecords]="cards.length"
@@ -61,6 +61,7 @@ export class PaginationCardListHeaderComponent implements OnInit, OnDestroy {
 
   first = 0;
   page = 0;
+  rows = 48;
 
   collectionMode$ = this.store.select(selectCollectionMode);
 
@@ -74,8 +75,10 @@ export class PaginationCardListHeaderComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.onDestroy$))
       .subscribe((cards) => {
         this.cards = cards;
-        this.cardsToShow.next(cards.slice(0, 48));
+        this.cardsToShow.next(cards.slice(0, this.rows));
       });
+
+    this.checkScreenWidth(window.innerWidth);
   }
 
   ngOnDestroy() {
@@ -83,11 +86,32 @@ export class PaginationCardListHeaderComponent implements OnInit, OnDestroy {
     this.onDestroy$.unsubscribe();
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    this.checkScreenWidth((event.target as Window).innerWidth);
+  }
+
+  private checkScreenWidth(innerWidth: number) {
+    const xl = innerWidth >= 1280;
+    const lg = innerWidth >= 1024;
+    const md = innerWidth >= 768;
+    if (xl) {
+      this.rows = 40;
+    } else if (lg) {
+      this.rows = 32;
+    } else if (md) {
+      this.rows = 24;
+    } else {
+      this.rows = 12;
+    }
+    this.cardsToShow.next(this.cards.slice(0, this.rows));
+  }
+
   onPageChange(event: any, slice?: number) {
     this.first = event.first;
     this.page = event.page;
     this.cardsToShow.next(
-      this.cards.slice(event.first, (slice ?? 48) * (event.page + 1))
+      this.cards.slice(event.first, (slice ?? this.rows) * (event.page + 1)),
     );
   }
 

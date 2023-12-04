@@ -8,7 +8,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "npx lint 'src/**/*.{js,jsx,ts,tsx,html,css,scss}' --fix",
+    "lint": "ng lint --fix",
     "format": "npx prettier src/**/*.{js,jsx,ts,tsx,html,css,scss} --write"
   },
   "private": true,

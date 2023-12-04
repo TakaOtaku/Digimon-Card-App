@@ -394,7 +394,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
     private store: Store,
     private digimonBackendService: DigimonBackendService,
     private messageService: MessageService,
-    private confirmationService: ConfirmationService
+    private confirmationService: ConfirmationService,
   ) {}
 
   ngOnInit(): void {
@@ -522,7 +522,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
         this.store.dispatch(
           SaveActions.setSave({
             save: resetedSave,
-          })
+          }),
         );
         this.messageService.add({
           severity: 'success',
@@ -568,7 +568,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
 
     let csv = exportCards.map((row) =>
       // @ts-ignore
-      header.map((fieldName) => JSON.stringify(row[fieldName])).join(',')
+      header.map((fieldName) => JSON.stringify(row[fieldName])).join(','),
     );
     csv.unshift(header.join(','));
     let csvArray = csv.join('\r\n');
@@ -588,7 +588,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
     } else {
       allCards.forEach((card) => {
         const foundCard = collection.find(
-          (collectionCard) => collectionCard.id === card.id
+          (collectionCard) => collectionCard.id === card.id,
         );
         if (foundCard) {
           if (this.goal - foundCard.count > 0) {
@@ -614,7 +614,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
         ...new Set([
           ...setFiltered,
           ...this.digimonCards.filter(
-            (cards) => cards['id'].split('-')[0] === filter
+            (cards) => cards['id'].split('-')[0] === filter,
           ),
         ]),
       ];
@@ -657,7 +657,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
         ...new Set([
           ...setFiltered,
           ...this.collection.filter(
-            (cards) => cards['id'].split('-')[0] === filter
+            (cards) => cards['id'].split('-')[0] === filter,
           ),
         ]),
       ];
@@ -670,7 +670,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
     let collectionCardsForRarity: ICountCard[] = [];
     setFiltered.forEach((collectionCard) => {
       const foundCard = this.digimonCards.find(
-        (card) => card.id === collectionCard.id
+        (card) => card.id === collectionCard.id,
       );
 
       if (this.rarities.includes(foundCard!.rarity)) {
@@ -685,7 +685,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
     let collectionCardsForVersion: ICountCard[] = [];
     collectionCardsForRarity.forEach((collectionCard) => {
       const foundCard = this.digimonCards.find(
-        (card) => card.id === collectionCard.id
+        (card) => card.id === collectionCard.id,
       );
 
       if (this.versions.includes(foundCard!.version)) {

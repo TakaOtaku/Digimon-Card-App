@@ -244,7 +244,7 @@ export class DeckSubmissionComponent implements OnInit, OnChanges, OnDestroy {
     private digimonBackendService: DigimonBackendService,
     private authService: AuthService,
     private messageService: MessageService,
-    private confirmationService: ConfirmationService
+    private confirmationService: ConfirmationService,
   ) {}
 
   ngOnInit(): void {
@@ -258,7 +258,7 @@ export class DeckSubmissionComponent implements OnInit, OnChanges, OnDestroy {
       ?.valueChanges.pipe(
         debounceTime(1000),
         distinctUntilChanged(),
-        takeUntil(this.onDestroy$)
+        takeUntil(this.onDestroy$),
       )
       .subscribe((deckList: string) => {
         this.deck = stringToDeck(deckList, this.allCards);
@@ -294,7 +294,7 @@ export class DeckSubmissionComponent implements OnInit, OnChanges, OnDestroy {
     });
 
     iDeckCards.forEach((card) =>
-      this.mainDeck.push({ ...card, count: card.count })
+      this.mainDeck.push({ ...card, count: card.count }),
     );
     this.levelSort();
   }

@@ -136,7 +136,10 @@ export class DeckCardComponent implements OnChanges, OnInit {
   viewCardDialog = false;
   protected readonly addJBeforeWebp = addJBeforeWebp;
 
-  constructor(private store: Store, private imageService: ImageService) {}
+  constructor(
+    private store: Store,
+    private imageService: ImageService,
+  ) {}
 
   ngOnInit() {
     this.mapCard();
@@ -160,13 +163,13 @@ export class DeckCardComponent implements OnChanges, OnInit {
 
     if (this.sideDeck) {
       this.store.dispatch(
-        WebsiteActions.addCardToSideDeck({ cardId: this.card.id })
+        WebsiteActions.addCardToSideDeck({ cardId: this.card.id }),
       );
       return;
     }
 
     this.store.dispatch(
-      WebsiteActions.addCardToDeck({ addCardToDeck: this.card.id })
+      WebsiteActions.addCardToDeck({ addCardToDeck: this.card.id }),
     );
   }
 
@@ -178,13 +181,13 @@ export class DeckCardComponent implements OnChanges, OnInit {
 
     if (this.sideDeck) {
       this.store.dispatch(
-        WebsiteActions.removeCardFromSideDeck({ cardId: this.card.id })
+        WebsiteActions.removeCardFromSideDeck({ cardId: this.card.id }),
       );
       return;
     }
 
     this.store.dispatch(
-      WebsiteActions.removeCardFromDeck({ cardId: this.card.id })
+      WebsiteActions.removeCardFromDeck({ cardId: this.card.id }),
     );
   }
 

@@ -19,7 +19,11 @@ import { PaginationCardListComponent } from './pagination-card-list.component';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [FilterSideBoxComponent, CardListComponent, PaginationCardListComponent]
+  imports: [
+    FilterSideBoxComponent,
+    CardListComponent,
+    PaginationCardListComponent,
+  ],
 })
 export class CollectionViewComponent {
   @Input() deckView: boolean;

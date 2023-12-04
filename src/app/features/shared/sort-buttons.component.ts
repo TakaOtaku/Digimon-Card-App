@@ -68,7 +68,7 @@ export class SortButtonsComponent {
     this.store.dispatch(
       WebsiteActions.setSort({
         sort: { sortBy: this.sortElement, ascOrder },
-      })
+      }),
     );
   }
 
@@ -77,7 +77,7 @@ export class SortButtonsComponent {
     this.store.dispatch(
       WebsiteActions.setSort({
         sort: { ...sort, ascOrder },
-      })
+      }),
     );
   }
 }

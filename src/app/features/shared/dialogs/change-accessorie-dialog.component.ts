@@ -131,7 +131,7 @@ export class ChangeAccessorieDialogComponent
     private confirmationService: ConfirmationService,
     private digimonCardService: DigimonBackendService,
     private auth: AuthService,
-    private messageService: MessageService
+    private messageService: MessageService,
   ) {}
 
   ngOnDestroy(): void {
@@ -169,7 +169,7 @@ export class ChangeAccessorieDialogComponent
           tags: this.tags,
           color: this.color,
         },
-      })
+      }),
     );
     this.onClose.emit(false);
     this.messageService.add({

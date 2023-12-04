@@ -100,7 +100,7 @@ export const saveReducer = createReducer(
         showAACards: showAA,
         showStampedCards: showStamp,
       },
-    })
+    }),
   ),
   on(SaveActions.setDeckDisplayTable, (state, { deckDisplayTable }) => ({
     ...state,
@@ -118,7 +118,7 @@ export const saveReducer = createReducer(
     const foundDeck = state.decks?.find((value) => value.id === deck.id);
     if (foundDeck) {
       const allButFoundDeck: IDeck[] = state.decks.filter(
-        (value) => value.id !== deck.id
+        (value) => value.id !== deck.id,
       );
       const decks: IDeck[] = [...new Set([...allButFoundDeck, deck])];
       return { ...state, decks };
@@ -142,5 +142,5 @@ export const saveReducer = createReducer(
       ...state,
       decks,
     };
-  })
+  }),
 );

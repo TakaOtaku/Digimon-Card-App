@@ -36,7 +36,7 @@ export class VersionFilterComponent {
     }
 
     this.store.dispatch(
-      WebsiteActions.setVersionFilter({ versionFilter: versions })
+      WebsiteActions.setVersionFilter({ versionFilter: versions }),
     );
   }
 }

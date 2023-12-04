@@ -1,5 +1,10 @@
 import { AsyncPipe, NgForOf, NgIf } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component, HostListener,
+  inject,
+  OnInit
+} from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -20,43 +25,59 @@ import { BlogItemComponent } from './components/blog-item.component';
 @Component({
   selector: 'digimon-blog-page',
   template: `
-    <div *ngIf='blog$ | async' class="relative flex flex-col justify-center h-[100vh] w-[calc(100vw-6.5rem)] bg-gradient-to-b from-[#17212f] to-[#08528d]">
-      <div class='mx-auto p-10 max-w-6xl grid grid-cols-4'>
-        <div class='col-span-4 grid grid-cols-4 justify-center relative mb-3'>
-          <h1 class='col-span-3 text-center text-white text-xl text-black-outline font-black'>Forum</h1>
-          <p-button class="mx-auto" (click)='submitAPost()'>Submit a Post</p-button>
+    <div
+      *ngIf="blog$ | async"
+      class="flex flex-col justify-center
+      min-h-[calc(100vh-3.5rem)] md:min-h-[calc(100vh-5rem)] lg:min-h-[100vh] w-[100vw] lg:w-[calc(100vw-6.5rem)]
+      bg-gradient-to-b from-[#17212f] to-[#08528d]">
+      <div class="mx-auto p-10 max-w-6xl grid grid-cols-4">
+        <div class="col-span-4 grid grid-cols-4 justify-center relative mb-3">
+          <h1
+            class="col-span-2 md:col-span-3 text-center text-white text-xl text-black-outline font-black">
+            Forum
+          </h1>
+          <p-button
+            class="col-span-2 md:col-span-1 mx-auto"
+            (click)="submitAPost()"
+            >Submit a Post</p-button
+          >
         </div>
 
-        <div class='grid col-span-3 grid-cols-2 gap-3'>
-          <digimon-blog-item *ngFor='let blog of showBlogs' [blog]="blog" (click)='openBlog(blog)'></digimon-blog-item>
+        <div class="grid col-span-3 lg:grid-cols-2 gap-3">
+          <digimon-blog-item
+            *ngFor="let blog of showBlogs"
+            [blog]="blog"
+            (click)="openBlog(blog)"></digimon-blog-item>
+
+          <p-paginator
+            class="lg:col-span-2 w-full h-8 surface-ground"
+            styleClass="surface-ground p-0"
+            (onPageChange)="onPageChange($event)"
+            [first]="first"
+            [rows]="rows"
+            [totalRecords]="blogs.length"></p-paginator>
         </div>
 
-        <div class='pl-2 flex flex-col'>
-          <h1 class='text-white text-black-outline font-black'>Categories</h1>
-          <div *ngFor='let category of categories; let last=last'>
+        <div class="hidden md:flex pl-2 flex-col">
+          <h1 class="text-white text-black-outline font-black">Categories</h1>
+          <div *ngFor="let category of categories; let last = last">
             <p-divider></p-divider>
-            <button class='text-white text-xs p-1'>
+            <button class="text-white text-xs p-1">
               {{ category.text }} • ({{ category.count }})
             </button>
           </div>
 
-
-          <h1 class='mt-3 text-white text-black-outline font-black'>Categories</h1>
-          <div *ngFor='let author of authors'>
+          <h1 class="mt-3 text-white text-black-outline font-black">
+            Categories
+          </h1>
+          <div *ngFor="let author of authors">
             <p-divider></p-divider>
-            <button class='text-white text-xs p-1'>
+            <button class="text-white text-xs p-1">
               {{ author.author }} • ({{ author.count }})
             </button>
           </div>
-
         </div>
       </div>
-      <p-paginator
-        class='absolute bottom-0 w-full surface-ground'
-        styleClass='surface-ground'
-        (onPageChange)="onPageChange($event)"
-        [first]="first" [rows]="rows"
-        [totalRecords]="blogs.length"></p-paginator>
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -69,7 +90,7 @@ import { BlogItemComponent } from './components/blog-item.component';
     BlogItemComponent,
     NgForOf,
     PaginatorModule,
-    DividerModule
+    DividerModule,
   ],
   providers: [MessageService],
 })
@@ -77,51 +98,54 @@ export class CommunityPageComponent implements OnInit {
   categories = [
     {
       text: 'Archtype Review',
-      count: 0
+      count: 0,
     },
     {
       text: 'Miscellaneous',
-      count: 0
+      count: 0,
     },
     {
       text: 'News',
-      count: 0
+      count: 0,
     },
     {
       text: 'Opinion',
-      count: 0
+      count: 0,
     },
     {
       text: 'Tournament Report',
-      count: 0
+      count: 0,
     },
     {
       text: 'Video',
-      count: 0
+      count: 0,
     },
     {
       text: 'Website Update',
-      count: 0
-    }
+      count: 0,
+    },
   ];
   authors = [
     {
       author: 'TakaOtaku',
-      count: 0
-    }
+      count: 0,
+    },
   ];
   blog$ = this.store.select(selectBlogs).pipe(
     tap((blogs) => {
       //fill Authors and Categories
     }),
-    tap((blogs) => this.showBlogs = blogs.slice(this.first, this.first + this.rows)),
-    tap((blogs) => this.blogs = blogs)
+    tap(
+      (blogs) =>
+        (this.showBlogs = blogs.slice(this.first, this.first + this.rows)),
+    ),
+    tap((blogs) => (this.blogs = blogs)),
   );
 
   first = 0;
   rows = 6;
   blogs: IBlog[] = [];
-  showBlogs: IBlog[] = []
+  showBlogs: IBlog[] = [];
 
   router = inject(Router);
 
@@ -131,24 +155,28 @@ export class CommunityPageComponent implements OnInit {
     private messageService: MessageService,
     private store: Store,
     private meta: Meta,
-    private metaTitle: Title
+    private metaTitle: Title,
   ) {}
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    this.checkScreenWidth((event.target as Window).innerWidth);
+  }
 
   ngOnInit(): void {
     this.makeGoogleFriendly();
-
+    this.checkScreenWidth(window.innerWidth);
     this.store.dispatch(WebsiteActions.loadBlogs());
   }
 
   private makeGoogleFriendly() {
-    this.metaTitle.setTitle(
-      'Digimon Card Game - Forum'
-    );
+    this.metaTitle.setTitle('Digimon Card Game - Forum');
 
     this.meta.addTags([
       {
         name: 'description',
-        content: 'Share your thoughts about the Digimon Card Game with the community, write Tournament Reports or Archtype Reviews.'
+        content:
+          'Share your thoughts about the Digimon Card Game with the community, write Tournament Reports or Archtype Reviews.',
       },
       { name: 'author', content: 'TakaOtaku' },
       {
@@ -156,6 +184,16 @@ export class CommunityPageComponent implements OnInit {
         content: 'forum, decks, tournament',
       },
     ]);
+  }
+
+  private checkScreenWidth(innerWidth: number) {
+    const md = innerWidth >= 768;
+    if (md) {
+      this.rows = 6;
+    } else {
+      this.rows = 3;
+    }
+    this.showBlogs = this.blogs.slice(this.first, this.first + this.rows);
   }
 
   onPageChange(event: any) {

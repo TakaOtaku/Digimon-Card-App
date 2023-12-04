@@ -93,7 +93,7 @@ export class DeckbuilderPageComponent implements OnInit, OnDestroy {
     private digimonBackendService: DigimonBackendService,
     private authService: AuthService,
     private meta: Meta,
-    private title: Title
+    private title: Title,
   ) {}
 
   ngOnInit() {
@@ -208,12 +208,12 @@ export class DeckbuilderPageComponent implements OnInit, OnDestroy {
                 this.store.dispatch(
                   WebsiteActions.setDeck({
                     deck: { ...deck, id: uuid.v4() },
-                  })
+                  }),
                 );
               });
             return of(false);
           }
-        })
+        }),
       )
       .subscribe((save) => {
         if (!save) {
@@ -235,7 +235,7 @@ export class DeckbuilderPageComponent implements OnInit, OnDestroy {
               ...iDeck,
               id: sameUser ? iDeck.id : uuid.v4(),
             },
-          })
+          }),
         );
       });
   }

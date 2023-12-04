@@ -15,7 +15,7 @@ import { TAGS } from '../../../../models';
   template: `
     <div
       [formGroup]="form"
-      class="my-1 grid max-w-6xl grid-cols-5 lg:flex lg:flex-row">
+      class="my-1 grid max-w-7xl grid-cols-5 lg:flex lg:flex-row">
       <span class="col-span-2 p-input-icon-left my-1 w-full">
         <i class="pi pi-search h-3"></i>
         <input

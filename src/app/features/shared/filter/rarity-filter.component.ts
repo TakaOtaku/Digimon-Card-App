@@ -36,7 +36,7 @@ export class RarityFilterComponent {
     }
 
     this.store.dispatch(
-      WebsiteActions.setRarityFilter({ rarityFilter: rarities })
+      WebsiteActions.setRarityFilter({ rarityFilter: rarities }),
     );
   }
 }

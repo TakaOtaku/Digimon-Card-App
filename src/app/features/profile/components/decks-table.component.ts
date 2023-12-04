@@ -81,7 +81,7 @@ import { DeckActions } from '../../../store/digimon.actions';
             <div *ngFor="let tag of deck.tags" class="mr-2">{{ tag.name }}</div>
           </td>
           <td class="text-center text-xs">
-            {{ deck.date | date : 'dd.MM.YY' }}
+            {{ deck.date | date: 'dd.MM.YY' }}
           </td>
         </tr>
       </ng-template>
@@ -139,7 +139,7 @@ export class DecksTableComponent {
     } else {
       const deckImage = setDeckImage(deck, this.allCards);
       this.store.dispatch(
-        DeckActions.save({ deck: { ...deck, imageCardId: deckImage.id } })
+        DeckActions.save({ deck: { ...deck, imageCardId: deckImage.id } }),
       );
       return deckImage.cardImage;
     }

@@ -299,7 +299,10 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
   private filter: IFilter;
   private onDestroy$ = new Subject();
 
-  constructor(private store: Store, private messageService: MessageService) {}
+  constructor(
+    private store: Store,
+    private messageService: MessageService,
+  ) {}
 
   ngOnInit(): void {
     this.store
@@ -331,7 +334,7 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
         });
         this.specialRequirementsFilter.setValue(
           filter.specialRequirementsFilter,
-          { emitEvent: false }
+          { emitEvent: false },
         );
         this.restrictionsFilter.setValue(filter.restrictionsFilter, {
           emitEvent: false,

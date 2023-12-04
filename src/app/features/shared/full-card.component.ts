@@ -61,7 +61,7 @@ import { ViewCardDialogComponent } from './dialogs/view-card-dialog.component';
 
       <div
         *ngIf="collectionMode"
-        class="counter mx-5 flex h-8 w-full flex-row rounded-lg bg-transparent">
+        class="flex absolute bottom-2 left-1/2 transform -translate-x-1/2 h-8 w-[calc(100%-1rem)] flex-row rounded-lg bg-transparent">
         <button
           (click)="decreaseCardCount(card.id)"
           class="primary-background h-full w-1/3 cursor-pointer rounded-l text-[#e2e4e6] outline-none">
@@ -136,8 +136,8 @@ export class FullCardComponent implements OnInit, OnDestroy {
       map(
         (deck) =>
           deck.cards.find((value) => value.id === withoutJ(this.card.id))
-            ?.count ?? 0
-      )
+            ?.count ?? 0,
+      ),
     );
 
   private onDestroy$ = new Subject();
@@ -164,7 +164,7 @@ export class FullCardComponent implements OnInit, OnDestroy {
       return;
     }
     this.store.dispatch(
-      WebsiteActions.addCardToDeck({ addCardToDeck: this.card.id })
+      WebsiteActions.addCardToDeck({ addCardToDeck: this.card.id }),
     );
   }
 
@@ -222,7 +222,7 @@ export class FullCardComponent implements OnInit, OnDestroy {
     this.store.dispatch(
       WebsiteActions.setDraggedCard({
         dragCard: { card: card, drag: DRAG.Collection },
-      })
+      }),
     );
   }
 
