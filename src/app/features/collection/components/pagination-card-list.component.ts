@@ -7,8 +7,10 @@ import {
   OnInit,
 } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { DataViewModule } from 'primeng/dataview';
 import { DialogModule } from 'primeng/dialog';
 import { DragDropModule } from 'primeng/dragdrop';
+import { SidebarModule } from 'primeng/sidebar';
 import { Subject, takeUntil } from 'rxjs';
 import { WebsiteActions } from 'src/app/store/digimon.actions';
 import { DigimonCard, ICountCard, IDraggedCard } from '../../../../models';
@@ -29,13 +31,27 @@ import { SearchComponent } from './search.component';
 @Component({
   selector: 'digimon-pagination-card-list',
   template: `
-    <digimon-pagination-card-list-header
-      (filterBox)="filterBox = $event"
-      (cardsToShow)="cards = $event"></digimon-pagination-card-list-header>
+    <div>
+      <digimon-pagination-card-list-header
+        (filterBox)="filterBox = $event"
+        (cardsToShow)="cards = $event"></digimon-pagination-card-list-header>
 
-    <digimon-search></digimon-search>
+      <digimon-search></digimon-search>
+    </div>
 
-    <div
+    <div class="max-h-[calc(100vh-90px)] flex flex-wrap overflow-y-scroll">
+      <digimon-full-card
+        class="w-24 m-1 flex items-center justify-center"
+        *ngFor="let card of cards"
+        [collectionMode]="(collectionMode$ | async) ?? false"
+        [card]="card"
+        [count]="getCount(card.id)"
+        [deckBuilder]="true"
+        [collectionOnly]="collectionOnly"
+        (viewCard)="viewCard($event)"></digimon-full-card>
+    </div>
+
+    <!--div
       class="mx-1 w-full grid grid-cols-3 md:grid-cols-6 lg:grid-cols-8 overflow-hidden"
       *ngIf="draggedCard$ | async as draggedCard"
       [pDroppable]="['fromDeck', 'fromSide']"
@@ -49,25 +65,19 @@ import { SearchComponent } from './search.component';
       <digimon-full-card
         *ngFor="let card of cards"
         [collectionMode]="(collectionMode$ | async) ?? false"
-        [deckView]="deckView"
         [card]="card"
         [count]="getCount(card.id)"
         [deckBuilder]="true"
         [collectionOnly]="collectionOnly"
         (viewCard)="viewCard($event)"></digimon-full-card>
-    </div>
+    </div-->
 
-    <p-dialog
-      header="Filter and Sort"
-      (close)="filterBox = false"
+    <p-sidebar
       [(visible)]="filterBox"
-      [modal]="true"
-      [dismissableMask]="true"
-      [resizable]="false"
-      styleClass="w-full h-full max-w-6xl min-h-[500px]"
-      [baseZIndex]="10000">
+      position="right"
+      styleClass="w-[24rem] overflow-x-hidden overflow-y-scroll p-0">
       <digimon-filter-side-box></digimon-filter-side-box>
-    </p-dialog>
+    </p-sidebar>
 
     <p-dialog
       (close)="viewCardDialog = false"
@@ -96,10 +106,11 @@ import { SearchComponent } from './search.component';
     FilterSideBoxComponent,
     ViewCardDialogComponent,
     AsyncPipe,
+    SidebarModule,
+    DataViewModule,
   ],
 })
 export class PaginationCardListComponent implements OnInit, OnDestroy {
-  @Input() deckView: boolean;
   @Input() collectionOnly: boolean = false;
 
   filterBox = false;

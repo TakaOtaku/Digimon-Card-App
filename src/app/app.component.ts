@@ -13,6 +13,7 @@ import { map } from 'rxjs';
 import { ISave } from '../models';
 import { ChangelogDialogComponent } from './features/shared/dialogs/changelog-dialog.component';
 import { SettingsDialogComponent } from './features/shared/dialogs/settings-dialog.component';
+import { FilterSideBoxComponent } from './features/shared/filter/filter-side-box.component';
 import { NavLinksComponent } from './features/shared/navbar/nav-links.component';
 import { NavbarComponent } from './features/shared/navbar/navbar.component';
 import { SaveActions } from './store/digimon.actions';
@@ -81,7 +82,8 @@ import { selectSave } from './store/digimon.selectors';
     NavLinksComponent,
     SidebarModule,
     SettingsDialogComponent,
-  ],
+    FilterSideBoxComponent
+  ]
 })
 export class AppComponent {
   noSaveLoaded$ = this.store

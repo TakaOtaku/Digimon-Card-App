@@ -41,7 +41,6 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
                 [card]="card"
                 [collectionMode]="(collectionMode$ | async) ?? false"
                 [count]="getCount(card.id, collection)"
-                [deckView]="true"
                 [deckBuilder]="true"
                 [collectionOnly]="collectionOnly"
                 class="flex-[1 1 12.5%] max-w-[12.5%] scale-95 transition">

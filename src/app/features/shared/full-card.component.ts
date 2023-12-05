@@ -118,7 +118,6 @@ export class FullCardComponent implements OnInit, OnDestroy {
   @Input() deckBuilder?: boolean = false;
   @Input() biggerCards?: boolean = false;
 
-  @Input() deckView: boolean;
   @Input() collectionOnly: boolean = false;
 
   @Output() viewCard = new EventEmitter<DigimonCard>();

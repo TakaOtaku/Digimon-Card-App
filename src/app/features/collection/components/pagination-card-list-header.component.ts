@@ -2,10 +2,11 @@ import { AsyncPipe } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
-  EventEmitter, HostListener,
+  EventEmitter,
+  HostListener,
   OnDestroy,
   OnInit,
-  Output
+  Output,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
@@ -22,30 +23,31 @@ import {
   selector: 'digimon-pagination-card-list-header',
   template: `
     <div class="relative flex justify-center h-10 w-full flex-row">
-      <button
-        (click)="filterBox.emit(true)"
-        class="absolute left-2 top-2 min-w-auto primary-background h-8 w-32 rounded p-2 text-xs font-semibold text-[#e2e4e6] 2xl:hidden">
-        <i class="pi pi-filter-fill mr-3"></i>Filter
-      </button>
+      <div
+        class="absolute left-2 top-4 flex flex-row justify-center items-center">
+        <span class="text-xs font-bold text-[#e2e4e6]">Collection Mode:</span>
+        <input
+          type="checkbox"
+          class="my-auto ml-1 h-5 w-5"
+          [ngModel]="collectionMode$ | async"
+          (ngModelChange)="changeCollectionMode($event)" />
+      </div>
 
-      <p-paginator
+      <!--p-paginator
         (onPageChange)="onPageChange($event)"
         [first]="first"
         [rows]="rows"
         [showJumpToPageDropdown]="true"
         [showPageLinks]="false"
         [totalRecords]="cards.length"
-        styleClass="border-0 h-10 bg-transparent"></p-paginator>
+        styleClass="border-0 h-10 bg-transparent"></p-paginator-->
 
       <div class="mx-2 mt-2 flex flex-row justify-center absolute right-2">
-        <span class="text-xs font-bold leading-9 text-[#e2e4e6]"
-          >Collection Mode:</span
-        >
-        <input
-          type="checkbox"
-          class="my-auto ml-1 h-5 w-5"
-          [ngModel]="collectionMode$ | async"
-          (ngModelChange)="changeCollectionMode($event)" />
+        <button
+          (click)="filterBox.emit(true)"
+          class="min-w-auto primary-background h-8 w-32 rounded p-2 text-xs font-semibold text-[#e2e4e6] 2xl:hidden">
+          <i class="pi pi-filter-fill mr-3"></i>Filter
+        </button>
       </div>
     </div>
   `,
@@ -75,10 +77,10 @@ export class PaginationCardListHeaderComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.onDestroy$))
       .subscribe((cards) => {
         this.cards = cards;
-        this.cardsToShow.next(cards.slice(0, this.rows));
+        this.cardsToShow.next(cards.slice(0, 300));
       });
 
-    this.checkScreenWidth(window.innerWidth);
+    //this.checkScreenWidth(window.innerWidth);
   }
 
   ngOnDestroy() {

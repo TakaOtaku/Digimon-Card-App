@@ -19,7 +19,9 @@ import { DeckViewComponent } from './components/deck-view.component';
   selector: 'digimon-deckbuilder-page',
   template: `
     <div
-      class="relative flex flex-row h-[100vh] w-[calc(100vw-6.5rem)] overflow-y-scroll overflow-x-hidden bg-gradient-to-b from-[#17212f] to-[#08528d]">
+      class="relative flex flex-row
+      min-h-[calc(100vh-3.5rem)] md:min-h-[calc(100vh-5rem)] lg:min-h-[100vh] max-h-[100vh] w-[100vw] lg:w-[calc(100vw-6.5rem)]
+      overflow-hidden bg-gradient-to-b from-[#17212f] to-[#08528d]">
       <button
         *ngIf="showAccordionButtons"
         class="surface-card h-full w-6 border-r border-slate-200"
@@ -39,8 +41,7 @@ import { DeckViewComponent } from './components/deck-view.component';
       <digimon-collection-view
         *ngIf="collectionView"
         [ngClass]="{ 'w-7/12': deckView, 'w-full': !deckView }"
-        class="border-l border-slate-200"
-        [deckView]="deckView"></digimon-collection-view>
+        class="border-l border-slate-200"></digimon-collection-view>
       <button
         *ngIf="showAccordionButtons"
         class="surface-card h-full w-6 border-l border-slate-200"

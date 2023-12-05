@@ -60,7 +60,9 @@ import { VersionFilterComponent } from './version-filter.component';
       <digimon-language-filter></digimon-language-filter>
       <digimon-color-filter></digimon-color-filter>
       <digimon-card-type-filter></digimon-card-type-filter>
-      <digimon-set-filter></digimon-set-filter>
+
+      <digimon-set-filter
+        class="mx-auto w-full max-w-[250px]"></digimon-set-filter>
 
       <div class="flex flex-row">
         <digimon-range-slider

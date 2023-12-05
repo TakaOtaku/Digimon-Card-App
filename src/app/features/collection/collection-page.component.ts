@@ -16,8 +16,7 @@ import { CollectionViewComponent } from './components/collection-view.component'
       class="flex flex-col min-h-[calc(100vh-3.5rem)] md:min-h-[calc(100vh-5rem)] lg:min-h-[100vh] w-[100vw] lg:w-[calc(100vw-6.5rem)]
       overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d]">
       <digimon-collection-view
-        [collectionOnly]="true"
-        [deckView]="false"></digimon-collection-view>
+        [collectionOnly]="true"></digimon-collection-view>
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
