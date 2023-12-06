@@ -14,7 +14,7 @@ import { dummyCard } from '../store/reducers/digimon.reducers';
 export function setTags(deck: IDeck, allCards: DigimonCard[]) {
   let tags = [];
 
-  tags.push(setNewestSet(deck.cards));
+  tags = setNewestSet(deck.cards);
 
   if (bannedCardsIncluded(deck.cards, allCards)) {
     tags.push({ name: 'Illegal', color: 'Primary' });
@@ -28,7 +28,7 @@ export function setTags(deck: IDeck, allCards: DigimonCard[]) {
   return tags;
 }
 
-export function setNewestSet(cards: ICountCard[]): ITag {
+export function setNewestSet(cards: ICountCard[]): ITag[] {
   const releaseOrder = [
     'EX06',
     'BT16',
@@ -82,9 +82,8 @@ export function setNewestSet(cards: ICountCard[]): ITag {
       set = value;
     }
   });
-  return (
-    tagsList.find((tag) => tag.name === set) ?? { name: '', color: 'Primary' }
-  );
+  const newestTag = tagsList.find((tag) => tag.name === set);
+  return newestTag ? [newestTag] : [];
 }
 
 export function bannedCardsIncluded(
@@ -133,7 +132,16 @@ export function tooManyRestrictedCardsIncluded(
 }
 
 export function setColors(deck: IDeck, allCards: DigimonCard[]) {
+  if (deck.cards.length === 0) {
+    return ['White', { name: 'White', img: 'assets/images/decks/white.svg' }];
+  }
+
   const cards: IDeckCard[] = mapToDeckCards(deck.cards, allCards);
+
+  if (!cards) {
+    return ['White', { name: 'White', img: 'assets/images/decks/white.svg' }];
+  }
+
   const colorArray = [
     { name: 'Red', count: 0 },
     { name: 'Blue', count: 0 },
@@ -143,9 +151,7 @@ export function setColors(deck: IDeck, allCards: DigimonCard[]) {
     { name: 'Purple', count: 0 },
     { name: 'White', count: 0 },
   ];
-  if (!cards) {
-    return ['White', { name: 'White', img: 'assets/images/decks/white.svg' }];
-  }
+
   cards.forEach((card) => {
     colorArray.forEach((color, index) => {
       if (card.color && card.color.includes(color.name)) {

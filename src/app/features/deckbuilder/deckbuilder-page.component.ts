@@ -3,11 +3,12 @@ import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { filter, first, of, Subject, switchMap } from 'rxjs';
+import { empty, filter, first, map, of, startWith, Subject, switchMap, tap } from 'rxjs';
 import * as uuid from 'uuid';
 import { IDeck, ISave } from '../../../models';
 import { AuthService } from '../../services/auth.service';
 import { DigimonBackendService } from '../../services/digimon-backend.service';
+import { emptySave } from '../../store/reducers/save.reducer';
 import { CardListComponent } from '../collection/components/card-list.component';
 import { PaginationCardListComponent } from '../collection/components/pagination-card-list.component';
 import { FilterAndSearchComponent } from '../shared/filter/filter-and-search.component';
@@ -18,39 +19,41 @@ import { DeckViewComponent } from './components/deck-view.component';
 @Component({
   selector: 'digimon-deckbuilder-page',
   template: `
-    <div
-      class="relative flex flex-row
+    @if ((checkUrl$ | async) !== false) {
+      <div
+        class="relative flex flex-row
       min-h-[calc(100vh-3.5rem)] md:min-h-[calc(100vh-5rem)] lg:min-h-[100vh] max-h-[100vh] w-[100vw] lg:w-[calc(100vw-6.5rem)]
       overflow-hidden bg-gradient-to-b from-[#17212f] to-[#08528d]">
-      <digimon-deck-view
-        *ngIf="deckView"
-        class="overflow-y-auto"
-        [ngClass]="{ 'w-6/12': collectionView, 'w-full': !collectionView }"
-        [collectionView]="collectionView"
-        (hideStats)="hideStats = !hideStats"></digimon-deck-view>
-
-      <digimon-pagination-card-list
-        *ngIf="collectionView"
-        [initialWidth]="3"
-        [ngClass]="{ 'w-6/12': deckView, 'w-full': !deckView }"
-        class="border-l border-slate-200"></digimon-pagination-card-list>
-      <button
-        class="surface-card h-full w-6 border-l border-slate-200"
-        (click)="changeView()">
-        <span
-          class="h-full w-full rotate-180 text-center font-bold text-[#e2e4e6]"
-          [ngStyle]="{ writingMode: 'vertical-rl' }"
-          >{{ collectionView ? 'Hide Card View' : 'Show Card View' }}</span
-        >
-      </button>
-
-      @if (hideStats) {
-        <digimon-deck-stats
-          class="fixed z-[300]"
+        <digimon-deck-view
+          *ngIf="deckView"
+          class="overflow-y-auto"
+          [ngClass]="{ 'w-6/12': collectionView, 'w-full': !collectionView }"
           [collectionView]="collectionView"
-          [showStats]="showStats"></digimon-deck-stats>
-      }
-    </div>
+          (hideStats)="hideStats = !hideStats"></digimon-deck-view>
+
+        <digimon-pagination-card-list
+          *ngIf="collectionView"
+          [initialWidth]="3"
+          [ngClass]="{ 'w-6/12': deckView, 'w-full': !deckView }"
+          class="border-l border-slate-200"></digimon-pagination-card-list>
+        <button
+          class="surface-card h-full w-6 border-l border-slate-200"
+          (click)="changeView()">
+          <span
+            class="h-full w-full rotate-180 text-center font-bold text-[#e2e4e6]"
+            [ngStyle]="{ writingMode: 'vertical-rl' }"
+            >{{ collectionView ? 'Hide Card View' : 'Show Card View' }}</span
+          >
+        </button>
+
+        @if (hideStats) {
+          <digimon-deck-stats
+            class="fixed z-[300]"
+            [collectionView]="collectionView"
+            [showStats]="showStats"></digimon-deck-stats>
+        }
+      </div>
+    }
   `,
   standalone: true,
   imports: [
@@ -65,7 +68,7 @@ import { DeckViewComponent } from './components/deck-view.component';
     PaginationCardListComponent,
   ],
 })
-export class DeckbuilderPageComponent implements OnInit, OnDestroy {
+export class DeckbuilderPageComponent implements OnInit {
   collectionView = true;
   deckView = true;
 
@@ -73,10 +76,47 @@ export class DeckbuilderPageComponent implements OnInit, OnDestroy {
 
   hideStats = false;
 
-  private deckId = '';
+  checkUrl$ = this.route.params.pipe(
+    filter(
+      (params) => !!params['id'] || (!!params['userId'] && !!params['deckId']),
+    ),
+    switchMap((params) => {
+      if (params['userId'] && params['deckId']) {
+        this.deckId = params['deckId'];
+        return this.digimonBackendService.getSave(params['userId']);
+      } else if (params['id']) {
+        this.deckId = params['id'];
+        return this.digimonBackendService.getDeck(params['id']).pipe(
+          map((deck) => {
+            return { ...emptySave, decks: [deck] };
+          }),
+        );
+      } else {
+        return of(emptySave);
+      }
+    }),
+    tap((save) => {
+      if (save.decks.length === 0) return;
 
-  private screenWidth: number;
-  private onDestroy$ = new Subject();
+      const foundDeck = save.decks.find((deck) => deck.id === this.deckId);
+      if (!foundDeck) return;
+
+      const sameUser = save.uid === this.authService.userData?.uid;
+
+      // Set a new UID if it is a new user, otherwise keep the old one
+      this.store.dispatch(
+        WebsiteActions.setDeck({
+          deck: {
+            ...foundDeck,
+            id: sameUser ? foundDeck.id : uuid.v4(),
+          },
+        }),
+      );
+    }),
+    switchMap(() => of(true)),
+  );
+
+  private deckId = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -91,18 +131,10 @@ export class DeckbuilderPageComponent implements OnInit, OnDestroy {
     this.onResize();
 
     this.makeGoogleFriendly();
-
-    this.checkURL();
-  }
-
-  ngOnDestroy(): void {
-    this.onDestroy$.next(true);
-    this.onDestroy$.unsubscribe();
   }
 
   changeView() {
-    this.screenWidth = window.innerWidth;
-    if (this.screenWidth < 1024) {
+    if (window.innerWidth < 1024) {
       this.collectionView = !this.collectionView;
       this.deckView = !this.collectionView;
     } else {
@@ -112,8 +144,7 @@ export class DeckbuilderPageComponent implements OnInit, OnDestroy {
 
   @HostListener('window:resize', ['$event'])
   private onResize() {
-    this.screenWidth = window.innerWidth;
-    if (this.screenWidth < 1024) {
+    if (window.innerWidth < 1024) {
       this.collectionView = false;
       this.deckView = true;
 
@@ -142,57 +173,5 @@ export class DeckbuilderPageComponent implements OnInit, OnDestroy {
           'Digimon, decks, deck builder, tournament, TCG, community, friends, share',
       },
     ]);
-  }
-
-  private checkURL() {
-    this.route.params
-      .pipe(
-        first(),
-        filter((params) => {
-          return !!params['id'] || (!!params['userId'] && !!params['deckId']);
-        }),
-        switchMap((params) => {
-          if (params['userId'] && params['deckId']) {
-            this.deckId = params['deckId'];
-            return this.digimonBackendService
-              .getSave(params['userId'])
-              .pipe(first());
-          } else {
-            this.digimonBackendService
-              .getDeck(params['id'])
-              .subscribe((deck) => {
-                this.store.dispatch(
-                  WebsiteActions.setDeck({
-                    deck: { ...deck, id: uuid.v4() },
-                  }),
-                );
-              });
-            return of(false);
-          }
-        }),
-      )
-      .subscribe((save) => {
-        if (!save) {
-          return;
-        }
-        const iSave = save as unknown as ISave;
-
-        const foundDeck = iSave.decks.find((deck) => deck.id === this.deckId);
-        if (!foundDeck) {
-          return;
-        }
-
-        const iDeck = foundDeck as unknown as IDeck;
-        const sameUser = iSave.uid === this.authService.userData?.uid;
-
-        this.store.dispatch(
-          WebsiteActions.setDeck({
-            deck: {
-              ...iDeck,
-              id: sameUser ? iDeck.id : uuid.v4(),
-            },
-          }),
-        );
-      });
   }
 }
