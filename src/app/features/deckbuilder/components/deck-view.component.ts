@@ -66,7 +66,7 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
     </div>
 
     <ng-container *ngIf="draggedCard$ | async as draggedCard">
-      <p-accordion class="mx-auto h-full max-w-[1080px]">
+      <p-accordion class="mx-auto">
         <p-accordionTab
           [pDroppable]="['toDeck', 'fromSide']"
           (onDrop)="drop(draggedCard, 'Main')"

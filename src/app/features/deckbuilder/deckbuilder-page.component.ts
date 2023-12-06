@@ -24,6 +24,7 @@ import { DeckViewComponent } from './components/deck-view.component';
       overflow-hidden bg-gradient-to-b from-[#17212f] to-[#08528d]">
       <digimon-deck-view
         *ngIf="deckView"
+        class="overflow-y-auto"
         [ngClass]="{ 'w-6/12': collectionView, 'w-full': !collectionView }"
         [collectionView]="collectionView"
         (hideStats)="hideStats = !hideStats"></digimon-deck-view>
