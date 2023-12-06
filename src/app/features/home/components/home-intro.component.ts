@@ -11,14 +11,14 @@ import { DividerModule } from 'primeng/divider';
         class="cursor-pointer max-h-[3rem] md:max-h-[6rem]"
         src="../../../assets/images/logo.png" />
       <h1
-        class="text-shadow ml-3 mt-3 md:mt-6 text-center text-3xl md:text-6xl font-black text-[#64B5F6]">
+        class="text-shadow ml-3 mt-3 md:mt-6 text-center text-xl sm:text-3xl md:text-6xl font-black text-[#64B5F6]">
         Digimoncard.app
       </h1>
     </div>
 
     <p-divider class="my-5"></p-divider>
 
-    <h2 class="mt-1 text-center text-[#e2e4e6]">
+    <h2 class="mt-1 text-center text-[#e2e4e6] text-sm sm:text-base">
       I build <span class="font-bold">Digimoncard.App</span> as a website to
       help you keep track of your Digimon Card collection, give you access to a
       deckbuilder with everything needed to build a great deck and to help you
@@ -27,7 +27,7 @@ import { DividerModule } from 'primeng/divider';
 
     <p-divider class="my-5"></p-divider>
 
-    <h2 class="mt-1 text-center text-[#e2e4e6]">
+    <h2 class="mt-1 text-center text-[#e2e4e6] text-sm sm:text-base">
       I would like to add more content in the way of forum posts, like
       tournament reports, deck archtypes and more, but I need help for that. If
       you want to help me with that or know someone that might, please contact
@@ -36,7 +36,7 @@ import { DividerModule } from 'primeng/divider';
 
     <p-divider class="my-5"></p-divider>
 
-    <h2 class="mt-1 text-center text-[#e2e4e6]">
+    <h2 class="mt-1 text-center text-[#e2e4e6] text-sm sm:text-base">
       If you do like the site and want to support it, consider donating
       <a
         href="https://www.paypal.com/donate/?hosted_button_id=WLM58Q785D4H4"
@@ -50,7 +50,7 @@ import { DividerModule } from 'primeng/divider';
     <p-divider class="my-5"></p-divider>
 
     <h2
-      class='text-shadow text-lg font-black underline text-center text-white text-[#e2e4e6]"'>
+      class='text-shadow text-base sm:text-lg font-black underline text-center text-white text-[#e2e4e6]"'>
       Partners
     </h2>
     <div class="mx-auto">

@@ -5,7 +5,8 @@ import {
   HostListener,
   Input,
   OnDestroy,
-  OnInit, Output
+  OnInit,
+  Output,
 } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -55,7 +56,7 @@ import { FilterButtonComponent } from '../filter/filter-button.component';
 
       <li
         class="flex flex-col items-center group cursor-pointer"
-        [ngClass]="getNavigationBorder('deckbuilder')"
+        [ngClass]="getNavigationBorder('/deckbuilder')"
         (click)="router.navigateByUrl('/deckbuilder')">
         <i
           class="pi pi-pencil group-hover:text-[#64B5F6]"
@@ -69,7 +70,7 @@ import { FilterButtonComponent } from '../filter/filter-button.component';
 
       <li
         class="flex flex-col items-center group cursor-pointer"
-        [ngClass]="getNavigationBorder('collection')"
+        [ngClass]="getNavigationBorder('/collection')"
         (click)="router.navigateByUrl('/collection')">
         <i
           class="pi pi-folder group-hover:text-[#64B5F6]"
@@ -83,7 +84,7 @@ import { FilterButtonComponent } from '../filter/filter-button.component';
 
       <li
         class="flex flex-col items-center group cursor-pointer"
-        [ngClass]="getNavigationBorder('user')"
+        [ngClass]="getNavigationBorder('/user')"
         (click)="router.navigateByUrl('/user')">
         <i
           class="pi pi-user group-hover:text-[#64B5F6]"
@@ -97,7 +98,7 @@ import { FilterButtonComponent } from '../filter/filter-button.component';
 
       <li
         class="flex flex-col items-center group cursor-pointer"
-        [ngClass]="getNavigationBorder('decks')"
+        [ngClass]="getNavigationBorder('/decks')"
         (click)="router.navigateByUrl('/decks')">
         <i
           class="pi pi-table group-hover:text-[#64B5F6]"
@@ -111,7 +112,7 @@ import { FilterButtonComponent } from '../filter/filter-button.component';
 
       <li
         class="flex flex-col items-center group cursor-pointer"
-        [ngClass]="getNavigationBorder('community')"
+        [ngClass]="getNavigationBorder('/community')"
         (click)="router.navigateByUrl('/community')">
         <i
           class="pi pi-users group-hover:text-[#64B5F6]"
@@ -125,7 +126,7 @@ import { FilterButtonComponent } from '../filter/filter-button.component';
 
       <li
         class="flex flex-col items-center group cursor-pointer"
-        [ngClass]="getNavigationBorder('products')"
+        [ngClass]="getNavigationBorder('/products')"
         (click)="router.navigateByUrl('/products')">
         <i
           class="pi pi-tags group-hover:text-[#64B5F6]"
@@ -240,7 +241,7 @@ export class NavLinksComponent implements OnInit, OnDestroy {
   user: IUser | null;
 
   mobile = false;
-  route = '';
+  route: string = '';
 
   private onDestroy$ = new Subject();
 
@@ -274,6 +275,18 @@ export class NavLinksComponent implements OnInit, OnDestroy {
   }
 
   getNavigationBorder(route: string): any {
+    if (route === '/deckbuilder') {
+      const deckOpenOrDeckbuilder =
+        this.route === '/deckbuilder' ||
+        (this.route.includes('/deck/') && this.route.includes('/user/'));
+      return {
+        'border-l-[3px] border-white': deckOpenOrDeckbuilder && this.sidebar,
+        'border-b-[3px] lg:border-b-0 lg:border-l-[3px] border-white':
+          deckOpenOrDeckbuilder && !this.sidebar,
+        'text-[#64B5F6]': deckOpenOrDeckbuilder,
+        'text-[#e2e4e6]': !deckOpenOrDeckbuilder,
+      };
+    }
     return {
       'border-l-[3px] border-white': this.route === route && this.sidebar,
       'border-b-[3px] lg:border-b-0 lg:border-l-[3px] border-white':

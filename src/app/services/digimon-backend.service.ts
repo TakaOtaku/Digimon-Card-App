@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Client, Databases } from 'appwrite';
 import { filter, first, map, Observable } from 'rxjs';
 import {
   DigimonCard,
@@ -25,16 +24,7 @@ const baseUrl_inactiv2 = 'https://179.61.219.98:8090/preview/digimoncard.app/';
   providedIn: 'root',
 })
 export class DigimonBackendService {
-  private client = new Client();
-  private databases: Databases;
-
-  constructor(private http: HttpClient) {
-    this.databases = new Databases(this.client);
-
-    this.client
-      .setEndpoint('https://179.61.219.98:4443/v1')
-      .setProject('655a8f2f44c6fd045e6c');
-  }
+  constructor(private http: HttpClient) {}
 
   getDecks(url: string = baseUrl): Observable<IDeck[]> {
     return this.http.get<any[]>(url + 'decks').pipe(

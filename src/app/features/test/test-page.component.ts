@@ -6,7 +6,6 @@ import { FormsModule } from '@angular/forms';
 // @ts-ignore
 import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 import { Store } from '@ngrx/store';
-import { Account, Client, Databases, ID, Models } from 'appwrite';
 import { DialogModule } from 'primeng/dialog';
 import { concat, first, Observable, Subject, switchMap, tap } from 'rxjs';
 import {

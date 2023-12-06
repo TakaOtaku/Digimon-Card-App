@@ -65,26 +65,8 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
         (hideStats)="hideStats.emit(true)"></digimon-deck-toolbar>
     </div>
 
-    <ng-template #fullscreen>
-      <div class="mx-auto h-full max-w-[1080px]">
-        <div class="grid w-full grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
-          <digimon-deck-card
-            *ngFor="let card of mainDeck"
-            pDraggable="fromDeck"
-            (onDragStart)="setDraggedCard(card, DRAG.Main)"
-            (removeCard)="removeCard(card)"
-            [cardHave]="getCardHave(card)"
-            [card]="card"
-            [cards]="allCards"
-            [missingCards]="missingCards"></digimon-deck-card>
-        </div>
-      </div>
-    </ng-template>
-
     <ng-container *ngIf="draggedCard$ | async as draggedCard">
-      <p-accordion
-        *ngIf="collectionView; else fullscreen"
-        class="mx-auto h-full max-w-[1080px]">
+      <p-accordion class="mx-auto h-full max-w-[1080px]">
         <p-accordionTab
           [pDroppable]="['toDeck', 'fromSide']"
           (onDrop)="drop(draggedCard, 'Main')"
@@ -100,7 +82,7 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
               }}
             </div>
           </ng-template>
-          <div class="grid w-full grid-cols-4 md:grid-cols-6">
+          <div class="mx-auto grid w-full grid-cols-4 md:grid-cols-6">
             <digimon-deck-card
               *ngFor="let card of mainDeck"
               pDraggable="fromDeck"

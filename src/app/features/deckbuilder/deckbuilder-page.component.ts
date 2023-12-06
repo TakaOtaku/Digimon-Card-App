@@ -9,7 +9,7 @@ import { IDeck, ISave } from '../../../models';
 import { AuthService } from '../../services/auth.service';
 import { DigimonBackendService } from '../../services/digimon-backend.service';
 import { CardListComponent } from '../collection/components/card-list.component';
-import { CollectionViewComponent } from '../collection/components/collection-view.component';
+import { PaginationCardListComponent } from '../collection/components/pagination-card-list.component';
 import { FilterAndSearchComponent } from '../shared/filter/filter-and-search.component';
 import { WebsiteActions } from '../../store/digimon.actions';
 import { DeckStatsComponent } from './components/deck-stats.component';
@@ -22,30 +22,20 @@ import { DeckViewComponent } from './components/deck-view.component';
       class="relative flex flex-row
       min-h-[calc(100vh-3.5rem)] md:min-h-[calc(100vh-5rem)] lg:min-h-[100vh] max-h-[100vh] w-[100vw] lg:w-[calc(100vw-6.5rem)]
       overflow-hidden bg-gradient-to-b from-[#17212f] to-[#08528d]">
-      <button
-        *ngIf="showAccordionButtons"
-        class="surface-card h-full w-6 border-r border-slate-200"
-        (click)="changeView('Deck')">
-        <span
-          class="h-full w-full rotate-180 text-center font-bold text-[#e2e4e6]"
-          [ngStyle]="{ writingMode: 'vertical-rl' }"
-          >{{ deckView ? 'Hide Deck View' : 'Show Deck View' }}</span
-        >
-      </button>
       <digimon-deck-view
         *ngIf="deckView"
-        [ngClass]="{ 'w-5/12': collectionView, 'w-full': !collectionView }"
+        [ngClass]="{ 'w-6/12': collectionView, 'w-full': !collectionView }"
         [collectionView]="collectionView"
         (hideStats)="hideStats = !hideStats"></digimon-deck-view>
 
-      <digimon-collection-view
+      <digimon-pagination-card-list
         *ngIf="collectionView"
-        [ngClass]="{ 'w-7/12': deckView, 'w-full': !deckView }"
-        class="border-l border-slate-200"></digimon-collection-view>
+        [initialWidth]="3"
+        [ngClass]="{ 'w-6/12': deckView, 'w-full': !deckView }"
+        class="border-l border-slate-200"></digimon-pagination-card-list>
       <button
-        *ngIf="showAccordionButtons"
         class="surface-card h-full w-6 border-l border-slate-200"
-        (click)="changeView('Collection')">
+        (click)="changeView()">
         <span
           class="h-full w-full rotate-180 text-center font-bold text-[#e2e4e6]"
           [ngStyle]="{ writingMode: 'vertical-rl' }"
@@ -53,11 +43,12 @@ import { DeckViewComponent } from './components/deck-view.component';
         >
       </button>
 
-      <digimon-deck-stats
-        class="fixed z-[300]"
-        [ngClass]="{ hidden: hideStats }"
-        [collectionView]="collectionView"
-        [showStats]="showStats"></digimon-deck-stats>
+      @if (hideStats) {
+        <digimon-deck-stats
+          class="fixed z-[300]"
+          [collectionView]="collectionView"
+          [showStats]="showStats"></digimon-deck-stats>
+      }
     </div>
   `,
   standalone: true,
@@ -66,20 +57,18 @@ import { DeckViewComponent } from './components/deck-view.component';
     NgIf,
     NgStyle,
     DeckViewComponent,
-    CollectionViewComponent,
     DeckStatsComponent,
     FilterAndSearchComponent,
     CardListComponent,
     AsyncPipe,
+    PaginationCardListComponent,
   ],
 })
 export class DeckbuilderPageComponent implements OnInit, OnDestroy {
-  //region Accordions
-  deckView = true;
   collectionView = true;
-  showAccordionButtons = true;
+  deckView = true;
+
   showStats = true;
-  //endregion
 
   hideStats = false;
 
@@ -110,64 +99,29 @@ export class DeckbuilderPageComponent implements OnInit, OnDestroy {
     this.onDestroy$.unsubscribe();
   }
 
-  changeView(view: string) {
-    if (view === 'Deck') {
-      this.deckView = !this.deckView;
-
-      if (this.screenWidth >= 768 && this.screenWidth < 1024) {
-        if (this.deckView && this.collectionView) {
-          this.collectionView = false;
-          this.showStats = true;
-          return;
-        }
-      }
-
-      if (!this.collectionView) {
-        this.collectionView = true;
-      }
-    } else if (view === 'Collection') {
+  changeView() {
+    this.screenWidth = window.innerWidth;
+    if (this.screenWidth < 1024) {
       this.collectionView = !this.collectionView;
-
-      if (this.screenWidth >= 768 && this.screenWidth < 1024) {
-        if (this.deckView && this.collectionView) {
-          this.deckView = false;
-          this.showStats = false;
-          return;
-        }
-      }
-
-      if (!this.deckView) {
-        this.deckView = true;
-      }
+      this.deckView = !this.collectionView;
+    } else {
+      this.collectionView = !this.collectionView;
     }
-
-    this.showStats = !(this.collectionView && !this.deckView);
   }
 
   @HostListener('window:resize', ['$event'])
   private onResize() {
     this.screenWidth = window.innerWidth;
-    if (this.screenWidth < 768) {
-      this.deckView = true;
+    if (this.screenWidth < 1024) {
       this.collectionView = false;
-
-      this.showStats = true;
-
-      this.showAccordionButtons = false;
-    } else if (this.screenWidth >= 768 && this.screenWidth < 1024) {
-      this.deckView = false;
-      this.collectionView = true;
-
-      this.showStats = false;
-
-      this.showAccordionButtons = true;
-    } else {
       this.deckView = true;
-      this.collectionView = true;
 
       this.showStats = true;
+    } else {
+      this.collectionView = true;
+      this.deckView = true;
 
-      this.showAccordionButtons = true;
+      this.showStats = true;
     }
   }
 

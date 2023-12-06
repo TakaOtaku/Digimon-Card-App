@@ -17,47 +17,43 @@ import { NgFor } from '@angular/common';
 @Component({
   selector: 'digimon-products',
   template: `
-    <div
-      class="flex h-[calc(100vh-3.5rem)] md:h-[calc(100vh-5rem)] lg:h-[100vh] w-[100vw] lg:w-[calc(100vw-6.5rem)] flex-col overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d]">
-      <div
-        class="flex flex-col justify-center mx-auto max-w-sm md:max-w-xl lg:max-w-2xl xl:max-w-4xl">
-        <div *ngFor="let product of products; let last = last">
-          <h1
-            class="text-shadow text-center mt-6 text-4xl font-black text-[#e2e4e6] underline xl:mt-2">
-            {{ product.name }}
-          </h1>
-          <p-carousel
-            [value]="product.items"
-            [numVisible]="displayCount"
-            [numScroll]="displayCount"
-            [circular]="true"
-            [autoplayInterval]="5000">
-            <ng-template let-item pTemplate="item">
-              <div
-                class="border-1 surface-border border-round m-2 text-center py-5 px-3">
-                <img
-                  src="{{ item.image }}"
-                  [alt]="item.name"
-                  class="shadow-2 mx-auto h-60" />
-                <div>
-                  <h4 class="mb-1 text-black-outline text-white">
-                    {{ item.name }}
-                  </h4>
-                  <div class="car-buttons mt-2">
-                    <!--p-button type="button" styleClass="p-button p-button-rounded mr-2" icon="pi pi-info-circle"></p-button-->
-                    <p-button
-                      (click)="openLink(item.link)"
-                      type="button"
-                      styleClass="p-button-success p-button-rounded mr-2"
-                      icon="pi pi-external-link"></p-button>
-                  </div>
+    <div class="flex flex-col justify-center max-w-md md:max-w-4xl">
+      <div *ngFor="let product of products; let last = last">
+        <h1
+          class="text-shadow text-center mt-6 text-4xl font-black text-[#e2e4e6] underline xl:mt-2">
+          {{ product.name }}
+        </h1>
+        <p-carousel
+          [value]="product.items"
+          [numVisible]="displayCount"
+          [numScroll]="displayCount"
+          [circular]="true"
+          [autoplayInterval]="5000">
+          <ng-template let-item pTemplate="item">
+            <div
+              class="border-1 surface-border border-round m-2 text-center py-5 px-3">
+              <img
+                src="{{ item.image }}"
+                [alt]="item.name"
+                class="shadow-2 mx-auto h-60" />
+              <div>
+                <h4 class="mb-1 text-black-outline text-white">
+                  {{ item.name }}
+                </h4>
+                <div class="car-buttons mt-2">
+                  <!--p-button type="button" styleClass="p-button p-button-rounded mr-2" icon="pi pi-info-circle"></p-button-->
+                  <p-button
+                    (click)="openLink(item.link)"
+                    type="button"
+                    styleClass="p-button-success p-button-rounded mr-2"
+                    icon="pi pi-external-link"></p-button>
                 </div>
               </div>
-            </ng-template>
-          </p-carousel>
+            </div>
+          </ng-template>
+        </p-carousel>
 
-          <p-divider *ngIf="!last"></p-divider>
-        </div>
+        <p-divider *ngIf="!last"></p-divider>
       </div>
     </div>
   `,

@@ -7,24 +7,21 @@ import {
 import { Meta, Title } from '@angular/platform-browser';
 import { CardListComponent } from './components/card-list.component';
 import { FilterAndSearchComponent } from '../shared/filter/filter-and-search.component';
-import { CollectionViewComponent } from './components/collection-view.component';
+import { PaginationCardListComponent } from './components/pagination-card-list.component';
 
 @Component({
   selector: 'digimon-collection-page',
   template: `
-    <div
-      class="flex flex-col min-h-[calc(100vh-3.5rem)] md:min-h-[calc(100vh-5rem)] lg:min-h-[100vh] w-[100vw] lg:w-[calc(100vw-6.5rem)]
-      overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d]">
-      <digimon-collection-view
-        [collectionOnly]="true"></digimon-collection-view>
-    </div>
+    <digimon-pagination-card-list
+      [collectionOnly]="true"
+      class="h-[calc(100vh-3.5rem)] md:h-[calc(100vh-5rem)] lg:h-[100vh]"></digimon-pagination-card-list>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [
-    CollectionViewComponent,
     FilterAndSearchComponent,
     CardListComponent,
+    PaginationCardListComponent,
   ],
 })
 export class CollectionPageComponent implements OnInit {

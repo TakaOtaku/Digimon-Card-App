@@ -1,5 +1,5 @@
 import { AsyncPipe, NgIf } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 import { Store } from '@ngrx/store';
@@ -22,14 +22,19 @@ import { selectSave } from './store/digimon.selectors';
 @Component({
   selector: 'digimon-root',
   template: `
-    <div class="max-w-full flex flex-col lg:flex-row min-w-full">
+    <div
+      class="flex flex-col lg:flex-row bg-gradient-to-b from-[#17212f] to-[#08528d]">
       <digimon-navbar
         (openSideNav)="sideNav = true"
         (settingsShow)="this.settingsDialog = true"></digimon-navbar>
 
-      <router-outlet
-        #router
-        *ngIf="(noSaveLoaded$ | async) === false"></router-outlet>
+      <div
+        class="min-h-[calc(100vh-3.5rem)] md:min-h-[calc(100vh-5rem)] lg:min-h-[100vh]
+        w-[100vw] lg:max-w-[calc(100vw-6.5rem)] lg:w-[calc(100vw-6.5rem)]
+        flex justify-center items-center">
+        <router-outlet
+          *ngIf="(noSaveLoaded$ | async) === false"></router-outlet>
+      </div>
 
       <ng-container *ngIf="noSaveLoaded$ | async as noSaveLoaded">
         <div *ngIf="noSaveLoaded" class="h-[calc(100vh-58px)] w-screen"></div>
@@ -82,8 +87,8 @@ import { selectSave } from './store/digimon.selectors';
     NavLinksComponent,
     SidebarModule,
     SettingsDialogComponent,
-    FilterSideBoxComponent
-  ]
+    FilterSideBoxComponent,
+  ],
 })
 export class AppComponent {
   noSaveLoaded$ = this.store

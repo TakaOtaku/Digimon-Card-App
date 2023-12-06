@@ -5,12 +5,9 @@ import { Meta, Title } from '@angular/platform-browser';
 @Component({
   selector: 'digimon-home-page',
   template: `
-    <div
-      class="relative flex h-[calc(100vh-3.5rem)] md:h-[calc(100vh-5rem)] lg:h-[100vh] w-[100vw] lg:w-[calc(100vw-6.5rem)] flex-row overflow-y-auto bg-gradient-to-b from-[#17212f] to-[#08528d]">
-      <div
-        class="mx-auto flex justify-center max-w-sm sm:max-w-md md:max-w-4xl flex-col">
-        <digimon-home-intro class="px-5"></digimon-home-intro>
-      </div>
+    <div class="justify-center items-center flex">
+      <digimon-home-intro
+        class="p-5 max-w-sm sm:max-w-md md:max-w-4xl"></digimon-home-intro>
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
