@@ -29,7 +29,7 @@ import { NavLinksComponent } from './nav-links.component';
         style="font-size: 1.25rem"></i>
 
       <digimon-nav-links
-        class="hidden md:flex flex-row lg:flex-col w-full justify-center"
+        class="hidden md:flex flex-row lg:flex-col w-full h-full justify-evenly"
         (settingsShow)="settingsShow.emit(true)"></digimon-nav-links>
     </nav>
   `,
