@@ -1,5 +1,6 @@
 import { NgFor, SlicePipe } from '@angular/common';
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { Subject, takeUntil } from 'rxjs';
 import { DigimonCard, IDeck, IDeckCard } from '../../../../models';
 import {
@@ -340,12 +341,14 @@ import {
     </div>
   `,
   standalone: true,
-  imports: [NgFor, SlicePipe],
+  imports: [NgFor, SlicePipe, FormsModule],
 })
 export class DeckStatisticsComponent implements OnInit, OnDestroy {
   @Input() allCards: DigimonCard[] = [];
   @Input() decks: IDeck[];
   @Input() updateCards: Subject<boolean>;
+  @Input() loading: boolean;
+  @Output() loadingChange = new EventEmitter<boolean>();
 
   mostUsedCards: IDeckCard[] = [];
 
@@ -363,6 +366,7 @@ export class DeckStatisticsComponent implements OnInit, OnDestroy {
   }
 
   findMostUsedCards() {
+    this.loadingChange.emit(true);
     const cards = mapToDeckCards(
       this.decks.map((deck) => deck.cards).flat(1),
       this.allCards,
@@ -385,6 +389,7 @@ export class DeckStatisticsComponent implements OnInit, OnDestroy {
       .sort((a, b) => b!.count - a!.count);
 
     this.mostUsedCards = cardsWithCount.slice(1) as IDeckCard[];
+    this.loadingChange.emit(false);
   }
 
   percentInDecks(search: IDeckCard) {

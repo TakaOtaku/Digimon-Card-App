@@ -286,6 +286,15 @@ export class NavLinksComponent implements OnInit, OnDestroy {
         'text-[#64B5F6]': deckOpenOrDeckbuilder,
         'text-[#e2e4e6]': !deckOpenOrDeckbuilder,
       };
+    } else if (route === '/user') {
+      return {
+        'border-l-[3px] border-white':
+          this.route.includes(route) && this.sidebar,
+        'border-b-[3px] lg:border-b-0 lg:border-l-[3px] border-white':
+          this.route.includes(route) && !this.sidebar,
+        'text-[#64B5F6]': this.route.includes(route),
+        'text-[#e2e4e6]': !this.route.includes(route),
+      };
     }
     return {
       'border-l-[3px] border-white': this.route === route && this.sidebar,

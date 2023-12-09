@@ -239,3 +239,8 @@ p-dialog::ng-deep {
   overflow: hidden;
   position: relative;
 }
+
+
+.background-darker {
+  background-color: color-mix(in srgb, var(--surface-ground) 50%, black);
+}

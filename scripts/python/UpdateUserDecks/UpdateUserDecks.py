@@ -14,10 +14,10 @@ def set_tags(deck: Dict) -> List[Dict]:
     tags = []
 
     tags.append(set_newest_set(deck['cards']))
-    
+
     if banned_cards_included(deck['cards']):
         tags.append({'name': 'Banned', 'color': 'Danger'})
-    
+
     if too_many_restricted_cards_included(deck['cards']):
         tags.append({'name': 'Restricted', 'color': 'Danger'})
 
@@ -25,7 +25,7 @@ def set_tags(deck: Dict) -> List[Dict]:
 
 def set_newest_set(cards: List[Dict]) -> Dict:
     release_order = [
-        'EX06', 'BT16', 'ST17', 'BT15','EX05', 'BT14', 'ST16', 'ST15', 'RB1', 'BT13', 'EX4', 'BT12',
+        'ST17', 'EX06', 'BT16', 'ST17', 'BT15','EX05', 'BT14', 'ST16', 'ST15', 'RB1', 'BT13', 'EX4', 'BT12',
         'ST14', 'BT11', 'EX3', 'BT10', 'ST13', 'ST12', 'BT9', 'EX2', 'BT8', 'ST10', 'ST9', 'BT7', 'EX1',
         'BT6', 'ST8', 'ST7', 'BT5', 'BT4', 'ST6', 'ST5', 'ST4', 'BT3', 'BT2', 'BT1', 'ST3', 'ST2', 'ST1'
     ]
@@ -61,13 +61,13 @@ def is_deck_valid(deck: Dict) -> bool:
     # Check if the Deck has the cards attribute and if cards is not None
     if 'cards' not in deck or deck['cards'] is None:
         return False
-    
+
     if 'title' not in deck or deck['title'] is None:
         return False
-    
+
     if 'date' not in deck or deck['date'] is None:
         return False
-    
+
     # Check if the added count of cards in the deck are more than 50 and less than 55 and each card id should have a count of 4 or less
     count = 0
     for card in deck['cards']:
@@ -81,7 +81,7 @@ def is_deck_valid(deck: Dict) -> bool:
 
 restricted_cards = [
     'ST6-03',
-    
+
     'BT2-047',
     'BT2-069',
     'BT3-054',
@@ -96,11 +96,11 @@ restricted_cards = [
     'BT10-009',
     'BT11-064',
     'BT13-012',
-    
+
     'EX1-068',
     'EX2-039',
     'EX4-019',
-    
+
     'P-008',
     'P-025'
 ]
@@ -128,7 +128,7 @@ decksInValid = []
 #Iterate through every user and his decks
 for user in users:
     print("Checking Usser: " + user['displayName'] + " with " + str(len(user['decks'])) + " decks")
-    
+
     userId = user['uid']
     userName = user['displayName']
     photoUrl = user['photoURL']

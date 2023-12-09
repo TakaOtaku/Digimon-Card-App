@@ -1,20 +1,27 @@
-import { createActionGroup, emptyProps, props } from "@ngrx/store";
-import { ICountCard, IDeck, IDraggedCard, IFilter, ISave, ISort } from "../../models";
-import { IBlog } from "../../models/interfaces/blog-entry.interface";
-import { DigimonCard } from "../../models/interfaces/digimon-card.interface";
-import { ProductCM } from "../services/card-market.service";
+import { createActionGroup, emptyProps, props } from '@ngrx/store';
+import {
+  ICountCard,
+  IDeck,
+  IDraggedCard,
+  IFilter,
+  ISave,
+  ISort,
+} from '../../models';
+import { IBlog } from '../../models/interfaces/blog-entry.interface';
+import { DigimonCard } from '../../models/interfaces/digimon-card.interface';
+import { ProductCM } from '../services/card-market.service';
 
 export const DigimonActions = createActionGroup({
-  source: "Digimon Cards",
+  source: 'Digimon Cards',
   events: {
     setDigimonCards: props<{ digimonCards: DigimonCard[] }>(),
     setDigimonCardMap: props<{ digimonCardMap: Map<string, DigimonCard> }>(),
-    setFilteredDigimonCards: props<{ filteredCards: DigimonCard[] }>()
-  }
+    setFilteredDigimonCards: props<{ filteredCards: DigimonCard[] }>(),
+  },
 });
 
 export const WebsiteActions = createActionGroup({
-  source: "Website",
+  source: 'Website',
   events: {
     setPriceGuideCM: props<{ products: ProductCM[] }>(),
     setDeck: props<{ deck: IDeck }>(),
@@ -45,12 +52,12 @@ export const WebsiteActions = createActionGroup({
     addCardToDeck: props<{ addCardToDeck: string }>(),
     removeCardFromDeck: props<{ cardId: string }>(),
     addCardToSideDeck: props<{ cardId: string }>(),
-    removeCardFromSideDeck: props<{ cardId: string }>()
-  }
+    removeCardFromSideDeck: props<{ cardId: string }>(),
+  },
 });
 
 export const SaveActions = createActionGroup({
-  source: "Save",
+  source: 'Save',
   events: {
     loadSave: emptyProps(),
     getSave: props<{ save: ISave }>(),
@@ -61,23 +68,23 @@ export const SaveActions = createActionGroup({
     setCardSets: props<{ cardSet: string }>(),
     setShowUserStats: props<{ showUserStats: boolean }>(),
     setDeckDisplayTable: props<{ deckDisplayTable: boolean }>(),
-    setShowReprintCards: props<{ showReprintCards: boolean }>()
-  }
+    setShowReprintCards: props<{ showReprintCards: boolean }>(),
+  },
 });
 
 export const CollectionActions = createActionGroup({
-  source: "Collection",
+  source: 'Collection',
   events: {
     addCard: props<{ collectionCards: ICountCard[] }>(),
-    setCardCount: props<{ id: string; count: number }>()
-  }
+    setCardCount: props<{ id: string; count: number }>(),
+  },
 });
 
 export const DeckActions = createActionGroup({
-  source: "Deck",
+  source: 'Deck',
   events: {
     import: props<{ deck: IDeck }>(),
     delete: props<{ deck: IDeck }>(),
-    save: props<{ deck: IDeck }>()
-  }
+    save: props<{ deck: IDeck }>(),
+  },
 });

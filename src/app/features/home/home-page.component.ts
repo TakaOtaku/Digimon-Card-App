@@ -1,3 +1,4 @@
+import { PageComponent } from '../shared/page.component';
 import { HomeIntroComponent } from './components/home-intro.component';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
@@ -5,14 +6,14 @@ import { Meta, Title } from '@angular/platform-browser';
 @Component({
   selector: 'digimon-home-page',
   template: `
-    <div class="justify-center items-center flex">
+    <digimon-page>
       <digimon-home-intro
         class="p-5 max-w-sm sm:max-w-md md:max-w-4xl"></digimon-home-intro>
-    </div>
+    </digimon-page>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [HomeIntroComponent],
+  imports: [HomeIntroComponent, PageComponent],
 })
 export class HomePageComponent {
   constructor(

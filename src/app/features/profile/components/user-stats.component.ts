@@ -8,54 +8,63 @@ import { NgIf } from '@angular/common';
 @Component({
   selector: 'digimon-user-stats',
   template: `
-    <div class="flex w-full flex-col p-2 text-[#e2e4e6] md:flex-row">
-      <div class="flex flex-row">
-        <img
-          class="my-auto mr-2 h-full w-auto rounded-full text-xs font-semibold text-[#e2e4e6]"
-          *ngIf="save"
-          alt="{{ save.displayName ?? 'Username not Found' }}"
-          src="{{ save.photoURL }}" />
-        <div class="vertical-align my-auto text-center text-2xl font-bold">
-          {{ save.displayName ?? 'User' }}
+    <div class="flex flex-col py-2 text-[#e2e4e6]">
+      <div class="flex flex-row justify-center">
+        <div class="flex flex-row mr-5">
+          <img
+            class="my-auto mr-2 h-16 w-auto rounded-full text-xs font-semibold text-[#e2e4e6]"
+            *ngIf="save"
+            alt="{{ save.displayName ?? 'Username not Found' }}"
+            src="{{ save.photoURL }}" />
+          <div class="vertical-align my-auto text-center text-2xl font-bold">
+            {{ save.displayName ?? 'User' }}
+          </div>
+        </div>
+
+        <div class="flex flex-row justify-center">
+          <div class="flex flex-col">
+            <digimon-collection-circle
+              [collection]="save.collection"
+              [type]="'BT'"
+              class="mx-2"></digimon-collection-circle>
+            <label class="text-center">BT</label>
+          </div>
+          <div class="flex flex-col">
+            <digimon-collection-circle
+              [collection]="save.collection"
+              [type]="'EX'"
+              class="mx-2"></digimon-collection-circle>
+            <label class="text-center">EX</label>
+          </div>
+          <div class="flex flex-col">
+            <digimon-collection-circle
+              [collection]="save.collection"
+              [type]="'ST'"
+              class="mx-2"></digimon-collection-circle>
+            <label class="text-center">ST</label>
+          </div>
+          <div class="flex flex-col">
+            <digimon-collection-circle
+              [collection]="save.collection"
+              [type]="'P-'"
+              class="mx-2"></digimon-collection-circle>
+            <label class="text-center">P</label>
+          </div>
         </div>
       </div>
 
-      <div class="hidden w-full flex-row justify-center md:flex">
-        <div class="flex flex-col">
-          <digimon-collection-circle
-            [collection]="save.collection"
-            [type]="'BT'"
-            class="mx-2"></digimon-collection-circle>
-          <label class="text-center">BT</label>
-        </div>
-        <div class="flex flex-col">
-          <digimon-collection-circle
-            [collection]="save.collection"
-            [type]="'EX'"
-            class="mx-2"></digimon-collection-circle>
-          <label class="text-center">EX</label>
-        </div>
-        <div class="flex flex-col">
-          <digimon-collection-circle
-            [collection]="save.collection"
-            [type]="'ST'"
-            class="mx-2"></digimon-collection-circle>
-          <label class="text-center">ST</label>
-        </div>
-        <div class="flex flex-col">
-          <digimon-collection-circle
-            [collection]="save.collection"
-            [type]="'P-'"
-            class="mx-2"></digimon-collection-circle>
-          <label class="text-center">P</label>
-        </div>
+      <div class="flex flex-row w-full">
+        <button
+          (click)="viewCollectionDialog = true"
+          class="surface-ground hover:primary-background text-shadow border flex-grow border-black p-2 font-bold text-[#e2e4e6]">
+          View Collection
+        </button>
+        <button
+          (click)="priceCheckDialog = true"
+          class="surface-ground hover:primary-background text-shadow border flex-grow border-black p-2 font-bold text-[#e2e4e6]">
+          Collection Worth
+        </button>
       </div>
-
-      <button
-        (click)="priceCheckDialog = true"
-        class="surface-ground hover:primary-background text-shadow border border-black p-2 font-bold text-[#e2e4e6]">
-        Collection Price
-      </button>
     </div>
 
     <p-dialog
@@ -83,4 +92,5 @@ export class UserStatsComponent {
   @Input() save: ISave;
 
   priceCheckDialog = false;
+  viewCollectionDialog = false;
 }

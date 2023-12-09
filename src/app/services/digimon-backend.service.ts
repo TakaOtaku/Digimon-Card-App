@@ -12,6 +12,7 @@ import {
   IUser,
 } from 'src/models';
 import { CARDSET, IBlog, IBlogWithText, ITag } from '../../models';
+import { sortByReleaseOrder } from '../../models/data/release-order.data';
 import { IUserAndDecks } from '../../models/interfaces/userAndDecks.interface';
 import { setDeckImage } from '../functions/digimon-card.functions';
 import { emptySettings } from '../store/reducers/save.reducer';
@@ -29,27 +30,31 @@ export class DigimonBackendService {
   getDecks(url: string = baseUrl): Observable<IDeck[]> {
     return this.http.get<any[]>(url + 'decks').pipe(
       map((decks) => {
-        return decks.map((deck) => {
-          const cards: ICountCard[] = JSON.parse(deck.cards);
-          let sideDeck: ICountCard[];
-          if (deck.sideDeck) {
-            sideDeck = JSON.parse(deck.sideDeck !== '' ? deck.sideDeck : '[]');
-          } else {
-            sideDeck = [];
-          }
+        return decks
+          .map((deck) => {
+            const cards: ICountCard[] = JSON.parse(deck.cards);
+            let sideDeck: ICountCard[];
+            if (deck.sideDeck) {
+              sideDeck = JSON.parse(
+                deck.sideDeck !== '' ? deck.sideDeck : '[]',
+              );
+            } else {
+              sideDeck = [];
+            }
 
-          const color: IColor = JSON.parse(deck.color);
-          const tags: ITag[] = JSON.parse(deck.tags);
-          const likes: string[] = deck.likes ? JSON.parse(deck.likes) : [];
-          return {
-            ...deck,
-            likes,
-            cards,
-            sideDeck,
-            color,
-            tags,
-          } as IDeck;
-        });
+            const color: IColor = JSON.parse(deck.color);
+            const tags: ITag[] = JSON.parse(deck.tags);
+            const likes: string[] = deck.likes ? JSON.parse(deck.likes) : [];
+            return {
+              ...deck,
+              likes,
+              cards,
+              sideDeck,
+              color,
+              tags,
+            } as IDeck;
+          })
+          .sort(sortByReleaseOrder);
       }),
     );
   }

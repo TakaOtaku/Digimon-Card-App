@@ -54,7 +54,7 @@ import { NgIf, NgClass, AsyncPipe } from '@angular/common';
   ],
 })
 export class DeckStatsComponent {
-  @Input() showStats = false;
+  @Input() showStats = true;
   @Input() collectionView = false;
 
   deck$ = this.store.select(selectDeck);

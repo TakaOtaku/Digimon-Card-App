@@ -5,6 +5,7 @@ import {
   OnInit,
 } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
+import { PageComponent } from '../shared/page.component';
 import { CardListComponent } from './components/card-list.component';
 import { FilterAndSearchComponent } from '../shared/filter/filter-and-search.component';
 import { PaginationCardListComponent } from './components/pagination-card-list.component';
@@ -12,9 +13,10 @@ import { PaginationCardListComponent } from './components/pagination-card-list.c
 @Component({
   selector: 'digimon-collection-page',
   template: `
-    <digimon-pagination-card-list
-      [collectionOnly]="true"
-      class="h-[calc(100vh-3.5rem)] md:h-[calc(100vh-5rem)] lg:h-[100vh]"></digimon-pagination-card-list>
+    <digimon-page>
+      <digimon-pagination-card-list
+        [collectionOnly]="true"></digimon-pagination-card-list>
+    </digimon-page>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
@@ -22,6 +24,7 @@ import { PaginationCardListComponent } from './components/pagination-card-list.c
     FilterAndSearchComponent,
     CardListComponent,
     PaginationCardListComponent,
+    PageComponent,
   ],
 })
 export class CollectionPageComponent implements OnInit {

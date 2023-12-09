@@ -13,49 +13,53 @@ import { DividerModule } from 'primeng/divider';
 import { GalleriaModule } from 'primeng/galleria';
 import { TooltipModule } from 'primeng/tooltip';
 import { NgFor } from '@angular/common';
+import { PageComponent } from '../shared/page.component';
 
 @Component({
   selector: 'digimon-products',
   template: `
-    <div class="flex flex-col justify-center max-w-md md:max-w-4xl">
-      <div *ngFor="let product of products; let last = last">
-        <h1
-          class="text-shadow text-center mt-6 text-4xl font-black text-[#e2e4e6] underline xl:mt-2">
-          {{ product.name }}
-        </h1>
-        <p-carousel
-          [value]="product.items"
-          [numVisible]="displayCount"
-          [numScroll]="displayCount"
-          [circular]="true"
-          [autoplayInterval]="5000">
-          <ng-template let-item pTemplate="item">
-            <div
-              class="border-1 surface-border border-round m-2 text-center py-5 px-3">
-              <img
-                src="{{ item.image }}"
-                [alt]="item.name"
-                class="shadow-2 mx-auto h-60" />
-              <div>
-                <h4 class="mb-1 text-black-outline text-white">
-                  {{ item.name }}
-                </h4>
-                <div class="car-buttons mt-2">
-                  <!--p-button type="button" styleClass="p-button p-button-rounded mr-2" icon="pi pi-info-circle"></p-button-->
-                  <p-button
-                    (click)="openLink(item.link)"
-                    type="button"
-                    styleClass="p-button-success p-button-rounded mr-2"
-                    icon="pi pi-external-link"></p-button>
+    <digimon-page>
+      <div
+        class="overflow-x-hidden flex self-baseline flex-col justify-center max-w-md md:max-w-4xl mx-auto">
+        <div *ngFor="let product of products; let last = last">
+          <h1
+            class="text-shadow text-center mt-6 text-4xl font-black text-[#e2e4e6] underline xl:mt-2">
+            {{ product.name }}
+          </h1>
+          <p-carousel
+            [value]="product.items"
+            [numVisible]="displayCount"
+            [numScroll]="displayCount"
+            [circular]="true"
+            [autoplayInterval]="5000">
+            <ng-template let-item pTemplate="item">
+              <div
+                class="border-1 surface-border border-round m-2 text-center py-5 px-3">
+                <img
+                  src="{{ item.image }}"
+                  [alt]="item.name"
+                  class="shadow-2 mx-auto h-60" />
+                <div>
+                  <h4 class="mb-1 text-black-outline text-white">
+                    {{ item.name }}
+                  </h4>
+                  <div class="car-buttons mt-2">
+                    <!--p-button type="button" styleClass="p-button p-button-rounded mr-2" icon="pi pi-info-circle"></p-button-->
+                    <p-button
+                      (click)="openLink(item.link)"
+                      type="button"
+                      styleClass="p-button-success p-button-rounded mr-2"
+                      icon="pi pi-external-link"></p-button>
+                  </div>
                 </div>
               </div>
-            </div>
-          </ng-template>
-        </p-carousel>
+            </ng-template>
+          </p-carousel>
 
-        <p-divider *ngIf="!last"></p-divider>
+          <p-divider *ngIf="!last"></p-divider>
+        </div>
       </div>
-    </div>
+    </digimon-page>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
@@ -67,6 +71,7 @@ import { NgFor } from '@angular/common';
     CarouselModule,
     GalleriaModule,
     DividerModule,
+    PageComponent,
   ],
 })
 export class ProductsComponent {

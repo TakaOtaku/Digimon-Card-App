@@ -1,9 +1,10 @@
 import { AsyncPipe, NgForOf, NgIf } from '@angular/common';
 import {
   ChangeDetectionStrategy,
-  Component, HostListener,
+  Component,
+  HostListener,
   inject,
-  OnInit
+  OnInit,
 } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { Meta, Title } from '@angular/platform-browser';
@@ -20,16 +21,13 @@ import { IBlog } from '../../../models';
 import { DigimonBackendService } from '../../services/digimon-backend.service';
 import { WebsiteActions } from '../../store/digimon.actions';
 import { selectBlogs } from '../../store/digimon.selectors';
+import { PageComponent } from '../shared/page.component';
 import { BlogItemComponent } from './components/blog-item.component';
 
 @Component({
   selector: 'digimon-blog-page',
   template: `
-    <div
-      *ngIf="blog$ | async"
-      class="flex flex-col justify-center
-      min-h-[calc(100vh-3.5rem)] md:min-h-[calc(100vh-5rem)] lg:min-h-[100vh] w-[100vw] lg:w-[calc(100vw-6.5rem)]
-      bg-gradient-to-b from-[#17212f] to-[#08528d]">
+    <digimon-page *ngIf="blog$ | async">
       <div class="mx-auto p-10 max-w-6xl grid grid-cols-4">
         <div class="col-span-4 grid grid-cols-4 justify-center relative mb-3">
           <h1
@@ -78,7 +76,7 @@ import { BlogItemComponent } from './components/blog-item.component';
           </div>
         </div>
       </div>
-    </div>
+    </digimon-page>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
@@ -91,6 +89,7 @@ import { BlogItemComponent } from './components/blog-item.component';
     NgForOf,
     PaginatorModule,
     DividerModule,
+    PageComponent,
   ],
   providers: [MessageService],
 })

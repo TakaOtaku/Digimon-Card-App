@@ -1,5 +1,11 @@
 import { NgClass, NgIf, NgStyle } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
 import {
   FormsModule,
   ReactiveFormsModule,
@@ -7,17 +13,21 @@ import {
 } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { saveAs } from 'file-saver';
+import { ToastrService } from 'ngx-toastr';
 import { ConfirmationService, MessageService, SharedModule } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
+import { DynamicDialogRef } from 'primeng/dynamicdialog';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputSwitchModule } from 'primeng/inputswitch';
+import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { TabViewModule } from 'primeng/tabview';
 import { first, Subject, takeUntil } from 'rxjs';
 import { DigimonCard, ICountCard, ISave } from '../../../../models';
-import { GroupedSets } from '../../../../models/data/filter.data';
+import { GroupedSets } from '../../../../models';
 import { DigimonBackendService } from '../../../services/digimon-backend.service';
 import {
   selectAllCards,
@@ -26,96 +36,132 @@ import {
   selectSettings,
 } from '../../../store/digimon.selectors';
 import { emptySettings } from '../../../store/reducers/save.reducer';
-import {
-  CollectionActions,
-  SaveActions,
-} from './../../../store/digimon.actions';
+import { CollectionActions, SaveActions } from '../../../store/digimon.actions';
+import { SettingsRowComponent } from '../settings-row.component';
 
 @Component({
   selector: 'digimon-settings-dialog',
   template: `
     <p-tabView class="centered-tabs">
       <p-tabPanel class="ml-auto" header="General">
-        <div class="mx-auto grid w-full grid-cols-2  justify-end">
-          <div class="flex flex-col">
-            <h5 class="mt-5 text-center font-bold">Collection Goal:</h5>
-            <p-inputNumber
-              [(ngModel)]="collectionCount"
-              styleClass="mx-auto"
-              mode="decimal"></p-inputNumber>
-          </div>
-
-          <div class="flex flex-col">
-            <h5 class="mt-5 text-center font-bold">AA Collection Goal:</h5>
-            <p-inputNumber
-              [(ngModel)]="aaCollectionCount"
-              styleClass="mx-auto"
-              mode="decimal"></p-inputNumber>
-          </div>
-
-          <div class="flex flex-col">
-            <h5 class="mt-5 text-center font-bold">Deck-Sort</h5>
-            <div class="flex justify-center">
-              <p-selectButton
-                [formControl]="sortOrderFilter"
-                [multiple]="false"
-                [options]="sortOrder">
-              </p-selectButton>
-            </div>
-          </div>
-
-          <div class="flex flex-col">
-            <h5 class="mt-5 text-center font-bold">Alt. Art Cards</h5>
+        <p-card
+          header="Deckbuilder"
+          subheader="Settings for the Deckbuilder"
+          styleClass="border-slate-300 border">
+          <digimon-settings-row title="Sort Cards by">
             <p-selectButton
-              [(ngModel)]="aa"
-              [options]="showHideOptions"
-              class="mx-auto"
-              optionLabel="label"
-              optionValue="value"></p-selectButton>
-          </div>
+              [formControl]="sortOrderFilter"
+              [multiple]="false"
+              [options]="sortOrder">
+            </p-selectButton>
+          </digimon-settings-row>
 
-          <div class="flex flex-col">
-            <h5 class="mt-5 text-center font-bold">Show User-Stats</h5>
-            <p-selectButton
-              [(ngModel)]="userStats"
-              [options]="showHideOptions"
-              class="mx-auto"
-              optionLabel="label"
-              optionValue="value"></p-selectButton>
-          </div>
-
-          <div class="flex flex-col">
-            <h5 class="mt-5 text-center font-bold">
-              Display Decks in a Table:
-            </h5>
-            <p-selectButton
-              [(ngModel)]="deckDisplayTable"
-              [options]="yesNoOptions"
-              class="mx-auto"
-              optionLabel="label"
-              optionValue="value"></p-selectButton>
-          </div>
-          <div class="flex flex-col">
-            <h5 class="mt-5 text-center font-bold">Display SideDecks:</h5>
+          <digimon-settings-row title="Display SideDecks">
             <p-selectButton
               [(ngModel)]="sideDeck"
               [options]="yesNoOptions"
-              class="mx-auto"
               optionLabel="label"
               optionValue="value"></p-selectButton>
-          </div>
-        </div>
+          </digimon-settings-row>
+        </p-card>
 
-        <div class="flex flex-row justify-end">
-          <button
-            (click)="saveSettings()"
-            class="mt-10"
-            icon="pi pi-save"
-            label="Save Settings"
-            pButton
-            type="button"></button>
-        </div>
+        <p-card
+          class="m-1"
+          header="Collection"
+          subheader="Settings for the Collection"
+          styleClass="border-slate-300 border">
+          <digimon-settings-row title="Collection Goal">
+            <p-inputNumber
+              [(ngModel)]="collectionCount"
+              mode="decimal"></p-inputNumber>
+          </digimon-settings-row>
+          <digimon-settings-row title="AA Collection Goal">
+            <p-inputNumber
+              [(ngModel)]="aaCollectionCount"
+              mode="decimal"></p-inputNumber>
+          </digimon-settings-row>
+          <digimon-settings-row title="Alt. Art Cards">
+            <p-selectButton
+              [(ngModel)]="aa"
+              [options]="showHideOptions"
+              optionLabel="label"
+              optionValue="value"></p-selectButton>
+          </digimon-settings-row>
+        </p-card>
+
+        <p-card
+          class="m-1"
+          header="Profile"
+          subheader="Settings for your Profile"
+          styleClass="border-slate-300 border">
+          <digimon-settings-row title="Username">
+            <input type="text" pInputText [(ngModel)]="username" />
+          </digimon-settings-row>
+          <digimon-settings-row title="Profile Image">
+            <input type="text" pInputText [(ngModel)]="displayImage" />
+          </digimon-settings-row>
+          <digimon-settings-row title="Collection-Stats">
+            <p-selectButton
+              [(ngModel)]="userStats"
+              [options]="showHideOptions"
+              optionLabel="label"
+              optionValue="value"></p-selectButton>
+          </digimon-settings-row>
+
+          <digimon-settings-row title="Display Decks in a Table">
+            <p-selectButton
+              [(ngModel)]="deckDisplayTable"
+              [options]="yesNoOptions"
+              optionLabel="label"
+              optionValue="value"></p-selectButton>
+          </digimon-settings-row>
+        </p-card>
+
+        <p-card
+          class="m-1"
+          header="Save"
+          subheader="Interactions with your Save"
+          styleClass="border-slate-300 border">
+          <div class="flex flex-col justify-between lg:flex-row">
+            <input
+              #fileUpload
+              (change)="handleFileInput($event.target)"
+              [ngStyle]="{ display: 'none' }"
+              accept=".json"
+              type="file" />
+            <button
+              (click)="fileUpload.click()"
+              class="m-auto mb-2 min-w-[200px] max-w-[200px]"
+              icon="pi pi-upload"
+              label="Import Save"
+              pButton
+              type="button"></button>
+            <button
+              (click)="exportSave()"
+              class="m-auto mb-2 min-w-[200px] max-w-[200px]"
+              icon="pi pi-download"
+              label="Export Save"
+              pButton
+              type="button"></button>
+            <button
+              (click)="deleteSave($event)"
+              class="m-auto mb-2 min-w-[200px] max-w-[200px]"
+              icon="pi pi-times"
+              label="Delete Save"
+              pButton
+              type="button"></button>
+          </div>
+        </p-card>
+
+        <button
+          (click)="saveSettings()"
+          class="mt-10"
+          icon="pi pi-save"
+          label="Save Settings"
+          pButton
+          type="button"></button>
       </p-tabPanel>
+
       <p-tabPanel header="Collection Export">
         <div class="mx-auto flex flex-col justify-center">
           <p class="text-center font-bold">What cards you want to export?</p>
@@ -144,7 +190,7 @@ import {
           <h1 class="mt-3 text-center text-xs font-bold text-[#e2e4e6]">
             Rarity:
           </h1>
-          <div class="flex inline-flex w-full justify-center">
+          <div class="inline-flex w-full justify-center">
             <button
               (click)="changeRarity('C')"
               [ngClass]="{ 'primary-border': rarities.includes('C') }"
@@ -180,7 +226,7 @@ import {
           <h1 class="mt-3 text-center text-xs font-bold text-[#e2e4e6]">
             Version:
           </h1>
-          <div class="flex inline-flex w-full justify-center">
+          <div class="inline-flex w-full justify-center">
             <button
               (click)="changeVersion('Normal')"
               [ngClass]="{ 'primary-border': versions.includes('Normal') }"
@@ -226,7 +272,7 @@ import {
             <h1 class="text-center text-xs font-bold text-[#e2e4e6]">
               Collection Goal:
             </h1>
-            <div class="flex inline-flex w-full justify-center">
+            <div class="inline-flex w-full justify-center">
               <button
                 (click)="goal = 1"
                 [ngClass]="{ 'primary-border': goal === 1 }"
@@ -270,6 +316,7 @@ import {
           </div>
         </div>
       </p-tabPanel>
+
       <p-tabPanel header="Collection Import">
         <div>
           <p>Copy your collection in the text area and press import.</p>
@@ -285,37 +332,6 @@ import {
             (click)="importCollection()"
             icon="pi pi-upload"
             label="Import"
-            pButton
-            type="button"></button>
-        </div>
-      </p-tabPanel>
-      <p-tabPanel class="mr-auto" header="Links">
-        <div class="flex flex-col justify-between lg:flex-row">
-          <input
-            #fileUpload
-            (change)="handleFileInput($event.target)"
-            [ngStyle]="{ display: 'none' }"
-            accept=".json"
-            type="file" />
-          <button
-            (click)="fileUpload.click()"
-            class="m-auto mb-2 min-w-[200px] max-w-[200px]"
-            icon="pi pi-upload"
-            label="Import Save"
-            pButton
-            type="button"></button>
-          <button
-            (click)="exportSave()"
-            class="m-auto mb-2 min-w-[200px] max-w-[200px]"
-            icon="pi pi-download"
-            label="Export Save"
-            pButton
-            type="button"></button>
-          <button
-            (click)="deleteSave($event)"
-            class="m-auto mb-2 min-w-[200px] max-w-[200px]"
-            icon="pi pi-times"
-            label="Delete Save"
             pButton
             type="button"></button>
         </div>
@@ -345,10 +361,15 @@ import {
     InputTextareaModule,
     NgStyle,
     TabViewModule,
+    CardModule,
+    SettingsRowComponent,
+    InputTextModule,
   ],
   providers: [MessageService],
 })
 export class SettingsDialogComponent implements OnInit, OnDestroy {
+  @Output() closeEmitter = new EventEmitter();
+
   save = '';
   iSave: ISave;
 
@@ -388,13 +409,16 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
   sortOrder = ['Color', 'Level'];
   sortOrderFilter = new UntypedFormControl();
 
+  displayImage = '';
+  username = '';
+
   private onDestroy$ = new Subject();
 
   constructor(
     private store: Store,
     private digimonBackendService: DigimonBackendService,
-    private messageService: MessageService,
     private confirmationService: ConfirmationService,
+    private toastrService: ToastrService,
   ) {}
 
   ngOnInit(): void {
@@ -406,6 +430,8 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
         this.sortOrderFilter.setValue(save.settings?.sortDeckOrder ?? 'Level', {
           emitEvent: false,
         });
+        this.username = save.displayName ?? '';
+        this.displayImage = save.photoURL ?? '';
         this.save = JSON.stringify(save, undefined, 4);
       });
     this.store
@@ -435,8 +461,10 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
   }
 
   saveSettings() {
-    const save = {
+    const save: ISave = {
       ...this.iSave,
+      displayName: this.username,
+      photoURL: this.displayImage,
       settings: {
         ...this.iSave.settings,
         collectionMinimum: this.collectionCount,
@@ -453,10 +481,11 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
     };
 
     this.store.dispatch(SaveActions.setSave({ save }));
-    this.messageService.add({
-      severity: 'success',
-      summary: 'Settings saved!',
-    });
+    this.toastrService.info(
+      'Settings were saved and updated.',
+      'Settings saved!',
+    );
+    this.closeEmitter.emit();
   }
 
   importCollection() {
@@ -472,11 +501,10 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
     });
 
     this.store.dispatch(CollectionActions.addCard({ collectionCards }));
-    this.messageService.add({
-      severity: 'success',
-      summary: 'Collection Imported!',
-      detail: 'The collection was imported successfully!',
-    });
+    this.toastrService.info(
+      'The collection was imported successfully!',
+      'Collection Imported!',
+    );
   }
 
   exportSave(): void {
@@ -491,17 +519,12 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
         let save: any = JSON.parse(fileReader.result as string);
         save = this.digimonBackendService.checkSaveValidity(save, null);
         this.store.dispatch(SaveActions.setSave({ save }));
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Save loaded!',
-          detail: 'The save was loaded successfully!',
-        });
+        this.toastrService.info(
+          'The save was loaded successfully!',
+          'Save loaded!',
+        );
       } catch (e) {
-        this.messageService.add({
-          severity: 'warn',
-          summary: 'Save Error!',
-          detail: 'The save was not loaded!',
-        });
+        this.toastrService.info('The save was not loaded!', 'Save Error!');
       }
     };
     fileReader.readAsText(input.files[0]);
@@ -524,11 +547,10 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
             save: resetedSave,
           }),
         );
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Save cleared!',
-          detail: 'The save was cleared successfully!',
-        });
+        this.toastrService.info(
+          'The save was cleared successfully!',
+          'Save cleared!',
+        );
       },
       reject: () => {},
     });
@@ -556,11 +578,10 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
       .sort((a, b) => a.id.localeCompare(b.id));
 
     if (exportCards.length === 0) {
-      this.messageService.add({
-        severity: 'warn',
-        summary: 'No cards found!',
-        detail: 'No cards, that match your filter were found!',
-      });
+      this.toastrService.info(
+        'No cards, that match your filter were found!',
+        'No cards found!',
+      );
       return;
     }
 

@@ -62,8 +62,9 @@ import { selectSave } from './store/digimon.selectors';
         [dismissableMask]="true"
         [resizable]="false"
         header="Settings"
-        styleClass="w-full h-full max-w-6xl min-h-[500px]">
-        <digimon-settings-dialog></digimon-settings-dialog>
+        styleClass="background-darker surface-ground w-full h-full max-w-6xl min-h-[500px]">
+        <digimon-settings-dialog
+          (closeEmitter)="settingsDialog = false"></digimon-settings-dialog>
       </p-dialog>
 
       <p-toast></p-toast>

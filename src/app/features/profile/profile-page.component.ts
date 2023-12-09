@@ -27,6 +27,7 @@ import {
   selectSave,
   selectShowUserStats,
 } from '../../store/digimon.selectors';
+import { PageComponent } from '../shared/page.component';
 import { DeckFilterComponent } from './components/deck-filter.component';
 import { DecksComponent } from './components/decks.component';
 import { UserStatsComponent } from './components/user-stats.component';
@@ -34,26 +35,25 @@ import { UserStatsComponent } from './components/user-stats.component';
 @Component({
   selector: 'digimon-profile-page',
   template: `
-    <div
-      *ngIf="save$ | async as save"
-      class="min-h-[calc(100vh-3.5rem)] md:min-h-[calc(100vh-5rem)] lg:min-h-[100vh] w-[100vw] lg:w-[calc(100vw-6.5rem)]
-      overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d]">
-      <div class="flex flex-col px-5 max-w-7xl mx-auto">
+    <digimon-page *ngIf="save$ | async as save">
+      <div
+        class="flex flex-col self-baseline px-5 max-w-3xl md:max-w-5xl lg:max-w-6xl xl:max-w-7xl mx-auto">
         <digimon-user-stats
           *ngIf="showUserStats$ | async"
-          class="mx-auto my-2 h-[150px] w-full max-w-6xl"
-          [save]="save"></digimon-user-stats>
+          [save]="save"
+          class="mx-auto my-1 w-full"></digimon-user-stats>
 
         <digimon-deck-filter
           [searchFilter]="searchFilter"
-          [tagFilter]="tagFilter"></digimon-deck-filter>
+          [tagFilter]="tagFilter"
+          class="mx-auto w-full"></digimon-deck-filter>
 
         <digimon-decks
-          class="mx-auto mt-2 h-full w-full relative"
+          class="mx-auto mt-1 w-full"
           [editable]="editable"
           [decks]="filteredDecks"></digimon-decks>
       </div>
-    </div>
+    </digimon-page>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
@@ -63,6 +63,7 @@ import { UserStatsComponent } from './components/user-stats.component';
     DeckFilterComponent,
     DecksComponent,
     UserStatsComponent,
+    PageComponent,
   ],
 })
 export class ProfilePageComponent implements OnInit, OnDestroy {

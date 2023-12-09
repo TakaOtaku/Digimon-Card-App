@@ -3,13 +3,16 @@ import { Component, HostListener, inject, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
 import { Store } from '@ngrx/store';
+import { ToastrService } from 'ngx-toastr';
 import { MessageService } from 'primeng/api';
+import { BlockUIModule } from 'primeng/blockui';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { DividerModule } from 'primeng/divider';
 import { PaginatorModule } from 'primeng/paginator';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
-import { combineLatest, filter, Subject, tap } from 'rxjs';
+import { TooltipModule } from 'primeng/tooltip';
+import { combineLatest, filter, map, of, Subject, tap } from 'rxjs';
 
 import {
   DigimonCard,
@@ -17,6 +20,7 @@ import {
   IDeck,
   ITournamentDeck,
 } from '../../../models';
+import { sortByReleaseOrder } from '../../../models/data/release-order.data';
 import { setDeckImage } from '../../functions/digimon-card.functions';
 import {
   selectAllCards,
@@ -28,6 +32,7 @@ import { emptyDeck } from '../../store/reducers/digimon.reducers';
 import { DeckContainerComponent } from '../shared/deck-container.component';
 import { DeckDialogComponent } from '../shared/dialogs/deck-dialog.component';
 import { DeckSubmissionComponent } from '../shared/dialogs/deck-submission.component';
+import { PageComponent } from '../shared/page.component';
 import { WebsiteActions } from './../../store/digimon.actions';
 import { DeckStatisticsComponent } from './components/deck-statistics.component';
 import { DecksFilterComponent } from './components/decks-filter.component';
@@ -36,10 +41,11 @@ import { TierlistComponent } from './components/tierlist.component';
 @Component({
   selector: 'digimon-decks-page',
   template: `
-    <div
-      class="flex flex-col min-h-[calc(100vh-3.5rem)] md:min-h-[calc(100vh-5rem)] lg:min-h-[100vh] w-[100vw] lg:w-[calc(100vw-6.5rem)]
-      overflow-y-auto bg-gradient-to-b from-[#17212f] to-[#08528d]">
-      <div class="mx-auto px-5 w-full max-w-7xl">
+    <digimon-page #page>
+      <p-blockUI [blocked]="loading2" [target]="page">
+        <p-progressSpinner class="mx-auto"></p-progressSpinner>
+      </p-blockUI>
+      <div class="mx-auto self-baseline px-5 w-full max-w-7xl">
         <div class="lg:px-auto flex px-1 flex-col md:flex-row items-baseline">
           <h1
             class="text-shadow mt-6 pb-1 text-2xl md:text-4xl font-black text-[#e2e4e6]">
@@ -103,7 +109,7 @@ import { TierlistComponent } from './components/tierlist.component';
 
         <digimon-tierlist></digimon-tierlist>
       </div>
-    </div>
+    </digimon-page>
 
     <p-dialog
       header="Deck Details"
@@ -130,7 +136,8 @@ import { TierlistComponent } from './components/tierlist.component';
       <digimon-deck-statistics
         [decks]="filteredDecks"
         [allCards]="allCards"
-        [updateCards]="updateStatistics"></digimon-deck-statistics>
+        [updateCards]="updateStatistics"
+        [(loading)]="loading2"></digimon-deck-statistics>
     </p-dialog>
   `,
   standalone: true,
@@ -149,10 +156,18 @@ import { TierlistComponent } from './components/tierlist.component';
     ProgressSpinnerModule,
     TierlistComponent,
     DividerModule,
+    PageComponent,
+    TooltipModule,
+    BlockUIModule,
   ],
-  providers: [MessageService],
+  providers: [],
 })
 export class DecksPageComponent implements OnInit {
+  private meta = inject(Meta);
+  private title = inject(Title);
+  private store = inject(Store);
+  private toastrService = inject(ToastrService);
+
   selectedDeck: IDeck = emptyDeck;
 
   form = new UntypedFormGroup({
@@ -161,7 +176,6 @@ export class DecksPageComponent implements OnInit {
   });
 
   deckDialog = false;
-  deckSubmissionDialog = false;
   deckStatsDialog = false;
   updateStatistics = new Subject<boolean>();
 
@@ -173,7 +187,6 @@ export class DecksPageComponent implements OnInit {
   filteredDecks: IDeck[] = [];
   allCards: DigimonCard[];
   collection: ICountCard[];
-  private store = inject(Store);
   decks$ = combineLatest([
     this.store.select(selectCommunityDecks),
     this.store.select(selectCommunityDeckSearch),
@@ -183,6 +196,7 @@ export class DecksPageComponent implements OnInit {
     filter(([decks, search, allCards, collection]) => decks.length > 0),
     tap(([decks, search, allCards, collection]) => {
       this.decks = decks;
+
       this.filteredDecks = decks;
       this.allCards = allCards;
       this.collection = collection;
@@ -192,8 +206,8 @@ export class DecksPageComponent implements OnInit {
       this.setDecksToShow(0, this.rows);
     }),
   );
-  private meta = inject(Meta);
-  private title = inject(Title);
+
+  loading2 = false;
 
   ngOnInit(): void {
     this.checkScreenWidth(window.innerWidth);
@@ -232,25 +246,31 @@ export class DecksPageComponent implements OnInit {
   }
 
   applyCollectionFilter() {
-    const decksThatCanBeCreatedWithCollection = this.filteredDecks.filter(
-      (deck) => {
-        return deck.cards.every((cardNeededForDeck) => {
-          const matchingCards = this.collection.filter(
-            (card) =>
-              card.id.split('_', 1)[0] ===
-              cardNeededForDeck.id.split('_', 1)[0],
-          );
-          const totalCount = matchingCards.reduce(
-            (total, card) => total + card.count,
-            0,
-          );
-          return totalCount >= cardNeededForDeck.count;
-        });
-      },
+    this.loading2 = true;
+
+    const collectionCounts: { [cardId: string]: number } = {};
+
+    // Populate the collectionCounts map
+    this.collection.forEach((card) => {
+      const cardId = card.id.split('_', 1)[0];
+      collectionCounts[cardId] = (collectionCounts[cardId] || 0) + card.count;
+    });
+
+    this.filteredDecks = this.filteredDecks.filter((deck) => {
+      return deck.cards.every((cardNeededForDeck) => {
+        const totalCount =
+          collectionCounts[cardNeededForDeck.id.split('_', 1)[0]] || 0;
+        return totalCount >= cardNeededForDeck.count;
+      });
+    });
+    this.setDecksToShow(0, this.rows);
+
+    this.toastrService.success(
+      'Filtered for Decks possible with your cards',
+      'Success',
     );
 
-    this.filteredDecks = decksThatCanBeCreatedWithCollection;
-    this.setDecksToShow(0, this.rows);
+    this.loading2 = false;
   }
 
   filterChanges() {

@@ -1,10 +1,11 @@
 import {
   ChangeDetectionStrategy,
-  Component, HostListener,
+  Component,
+  HostListener,
   Input,
   OnChanges,
   OnInit,
-  SimpleChanges
+  SimpleChanges,
 } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { DigimonCard, ICountCard, IDeck, IUser } from '../../../../models';
@@ -20,28 +21,28 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 @Component({
   selector: 'digimon-decks',
   template: `
-    <div
-      *ngIf="(displayTables$ | async) === false; else deckTable"
-      class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 py-2">
-      <digimon-deck-container
-        class="mx-auto min-w-[280px] max-w-[285px]"
-        (click)="showDeckDialog(deck)"
-        (contextmenu)="showDeckDialog(deck)"
-        *ngFor="let deck of decksToShow"
-        [deck]="deck">
-      </digimon-deck-container>
-    </div>
+    <div *ngIf="(displayTables$ | async) === false; else deckTable">
+      <div class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 py-2">
+        <digimon-deck-container
+          class="mx-auto min-w-[280px] max-w-[285px]"
+          (click)="showDeckDialog(deck)"
+          (contextmenu)="showDeckDialog(deck)"
+          *ngFor="let deck of decksToShow"
+          [deck]="deck">
+        </digimon-deck-container>
+      </div>
 
-    <div class="flex justify-center w-full">
-      <p-paginator
-        (onPageChange)="onPageChange($event)"
-        [first]="first"
-        [rows]="row"
-        [showJumpToPageDropdown]="true"
-        [showPageLinks]="false"
-        [totalRecords]="decks.length"
-        class="surface-card mx-auto h-8"
-        styleClass="surface-card p-0"></p-paginator>
+      <div class="flex justify-center w-full">
+        <p-paginator
+          (onPageChange)="onPageChange($event)"
+          [first]="first"
+          [rows]="row"
+          [showJumpToPageDropdown]="true"
+          [showPageLinks]="false"
+          [totalRecords]="decks.length"
+          class="surface-card mx-auto h-8"
+          styleClass="surface-card p-0"></p-paginator>
+      </div>
     </div>
 
     <ng-template #deckTable>

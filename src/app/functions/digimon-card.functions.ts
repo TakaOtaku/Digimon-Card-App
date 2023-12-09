@@ -8,6 +8,7 @@ import {
   ITournamentDeck,
   tagsList,
 } from '../../models';
+import { ReleaseOrder } from '../../models/data/release-order.data';
 import { ColorOrderMap, DeckColorMap } from '../../models/maps/color.map';
 import { dummyCard } from '../store/reducers/digimon.reducers';
 
@@ -29,47 +30,7 @@ export function setTags(deck: IDeck, allCards: DigimonCard[]) {
 }
 
 export function setNewestSet(cards: ICountCard[]): ITag[] {
-  const releaseOrder = [
-    'EX06',
-    'BT16',
-    'ST17',
-    'BT15',
-    'EX05',
-    'BT14',
-    'ST16',
-    'ST15',
-    'RB1',
-    'BT13',
-    'EX4',
-    'BT12',
-    'ST14',
-    'BT11',
-    'EX3',
-    'BT10',
-    'ST13',
-    'ST12',
-    'BT9',
-    'EX2',
-    'BT8',
-    'ST10',
-    'ST9',
-    'BT7',
-    'EX1',
-    'BT6',
-    'ST8',
-    'ST7',
-    'BT5',
-    'BT4',
-    'ST6',
-    'ST5',
-    'ST4',
-    'BT3',
-    'BT2',
-    'BT1',
-    'ST3',
-    'ST2',
-    'ST1',
-  ];
+  const releaseOrder = ReleaseOrder;
   let set = '';
   releaseOrder.forEach((value) => {
     if (set) {

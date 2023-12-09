@@ -3,7 +3,17 @@ import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { empty, filter, first, map, of, startWith, Subject, switchMap, tap } from 'rxjs';
+import {
+  empty,
+  filter,
+  first,
+  map,
+  of,
+  startWith,
+  Subject,
+  switchMap,
+  tap,
+} from 'rxjs';
 import * as uuid from 'uuid';
 import { IDeck, ISave } from '../../../models';
 import { AuthService } from '../../services/auth.service';
@@ -13,6 +23,7 @@ import { CardListComponent } from '../collection/components/card-list.component'
 import { PaginationCardListComponent } from '../collection/components/pagination-card-list.component';
 import { FilterAndSearchComponent } from '../shared/filter/filter-and-search.component';
 import { WebsiteActions } from '../../store/digimon.actions';
+import { PageComponent } from '../shared/page.component';
 import { DeckStatsComponent } from './components/deck-stats.component';
 import { DeckViewComponent } from './components/deck-view.component';
 
@@ -20,39 +31,39 @@ import { DeckViewComponent } from './components/deck-view.component';
   selector: 'digimon-deckbuilder-page',
   template: `
     @if ((checkUrl$ | async) !== false) {
-      <div
-        class="relative flex flex-row
-      min-h-[calc(100vh-3.5rem)] md:min-h-[calc(100vh-5rem)] lg:min-h-[100vh] max-h-[100vh] w-[100vw] lg:w-[calc(100vw-6.5rem)]
-      overflow-hidden bg-gradient-to-b from-[#17212f] to-[#08528d]">
+      <digimon-page>
         <digimon-deck-view
           *ngIf="deckView"
-          class="overflow-y-auto"
-          [ngClass]="{ 'w-6/12': collectionView, 'w-full': !collectionView }"
+          class="overflow-y-auto h-full max-h-full overflow-x-hidden self-baseline"
+          [ngClass]="{
+            'w-1/2 max-w-[50%]': collectionView,
+            'w-full': !collectionView
+          }"
           [collectionView]="collectionView"
-          (hideStats)="hideStats = !hideStats"></digimon-deck-view>
+          (hideStats)="statsDisplay = !statsDisplay"></digimon-deck-view>
 
         <digimon-pagination-card-list
           *ngIf="collectionView"
           [initialWidth]="3"
-          [ngClass]="{ 'w-6/12': deckView, 'w-full': !deckView }"
-          class="border-l border-slate-200"></digimon-pagination-card-list>
+          [ngClass]="{ 'w-1/2 max-w-[50%]': deckView, 'w-full': !deckView }"
+          class="border-l h-full max-h-full border-slate-200"></digimon-pagination-card-list>
+
         <button
-          class="surface-card h-full w-6 border-l border-slate-200"
+          class="surface-card w-6 border-l border-slate-200"
           (click)="changeView()">
           <span
-            class="h-full w-full rotate-180 text-center font-bold text-[#e2e4e6]"
+            class="w-full h-[calc(100%-4rem)] md:h-[calc(100%-5.5rem)] lg:h-[calc(100%-0.5rem)] rotate-180 text-center font-bold text-[#e2e4e6]"
             [ngStyle]="{ writingMode: 'vertical-rl' }"
             >{{ collectionView ? 'Hide Card View' : 'Show Card View' }}</span
           >
         </button>
 
-        @if (hideStats) {
+        @if (statsDisplay && deckView) {
           <digimon-deck-stats
-            class="fixed z-[300]"
-            [collectionView]="collectionView"
-            [showStats]="showStats"></digimon-deck-stats>
+            class="fixed left-0 lg:left-[6.5rem] z-[300]"
+            [collectionView]="collectionView"></digimon-deck-stats>
         }
-      </div>
+      </digimon-page>
     }
   `,
   standalone: true,
@@ -66,15 +77,14 @@ import { DeckViewComponent } from './components/deck-view.component';
     CardListComponent,
     AsyncPipe,
     PaginationCardListComponent,
+    PageComponent,
   ],
 })
 export class DeckbuilderPageComponent implements OnInit {
   collectionView = true;
   deckView = true;
 
-  showStats = true;
-
-  hideStats = false;
+  statsDisplay = true;
 
   checkUrl$ = this.route.params.pipe(
     filter(
@@ -147,13 +157,9 @@ export class DeckbuilderPageComponent implements OnInit {
     if (window.innerWidth < 1024) {
       this.collectionView = false;
       this.deckView = true;
-
-      this.showStats = true;
     } else {
       this.collectionView = true;
       this.deckView = true;
-
-      this.showStats = true;
     }
   }
 
