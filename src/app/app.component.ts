@@ -94,7 +94,9 @@ import { selectSave } from './store/digimon.selectors';
 export class AppComponent {
   noSaveLoaded$ = this.store
     .select(selectSave)
-    .pipe(map((save: ISave) => save.uid === ''));
+    .pipe(
+      map((save: ISave) => true),
+    );
 
   sideNav = false;
   settingsDialog = false;
