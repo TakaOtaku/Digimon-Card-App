@@ -44,7 +44,11 @@ export class AuthService {
   }
 
   GoogleAuth() {
-    return this.AuthLogin(new GoogleAuthProvider());
+    const provider = new GoogleAuthProvider();
+    provider.setCustomParameters({
+       'prompt': 'select_account'
+       });
+    return this.AuthLogin(provider);
   }
 
   AuthLogin(provider: any) {
