@@ -95,7 +95,7 @@ export class AppComponent {
   noSaveLoaded$ = this.store
     .select(selectSave)
     .pipe(
-      map((save: ISave) => true),
+      map((save: ISave) => false),
     );
 
   sideNav = false;
