@@ -86,7 +86,7 @@ export class AppComponent {
     private digimonBackendService: DigimonBackendService,
     private toastrService: ToastrService
   ) {
-    this.loadSave();
+    //this.loadSave();
 
     document.addEventListener(
       'contextmenu',
