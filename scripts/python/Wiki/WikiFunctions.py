@@ -179,7 +179,7 @@ def getExtraInfo(html, digimoncard):
 
     if th.text.find("Security Effect") != -1:
       td = table.find("td")
-      digimoncard.digivolveEffect = td.text
+      digimoncard.securityEffect = td.text
 
     if th.text.find("Ace") != -1:
       td = table.find("td")
