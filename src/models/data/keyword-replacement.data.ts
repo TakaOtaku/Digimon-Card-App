@@ -98,6 +98,18 @@ export const replacements: Array<[RegExp, string]> = [
     /＜Partition \(red Lv.4 \+ yellow Lv.4\)＞/g,
     'partition_red_lv.4_yellow_lv.4',
   ],
+  [
+    /＜Partition \(black Lv.4 \+ yellow Lv.4\)＞/g,
+    'partition_black_lv.4_yellow_lv.4',
+  ],
+  [
+    /＜Partition \(purple Lv.4 \+ red Lv.4\)＞/g,
+    'partition_purple_lv.4_red_lv.4',
+  ],
+  [
+    /＜Partition \(yellow Lv.4 \+ black Lv.4\)＞/g,
+    'partition_yellow_lv.4_black_lv.4',
+  ],
 ];
 
 export const keywordTooltip: Map<string, string> = new Map<string, string>([
