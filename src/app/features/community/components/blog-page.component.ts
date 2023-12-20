@@ -12,16 +12,15 @@ import { first, Observable, switchMap, tap, withLatestFrom } from 'rxjs';
 import { WebsiteActions } from 'src/app/store/digimon.actions';
 import { IBlog, IBlogWithText } from '../../../../models';
 import { DigimonBackendService } from '../../../services/digimon-backend.service';
+import { PageComponent } from '../../shared/page.component';
 import { CKEditorComponent } from './ckeditor.component';
 import { HeaderComponent } from './header.component';
 
 @Component({
   selector: 'digimon-blog-page',
   template: `
-    <div
-      *ngIf="blog$ | async as blog"
-      class="w-full bg-gradient-to-b from-[#17212f] to-[#08528d] pt-5">
-      <div class="mx-auto max-w-7xl">
+    <digimon-page *ngIf="blog$ | async as blog">
+      <div class="h-full py-10 mx-auto max-w-7xl">
         <digimon-header
           [edit]="edit"
           [form]="form"
@@ -40,7 +39,7 @@ import { HeaderComponent } from './header.component';
           label="Save"
           (click)="save(blog)"></button>
       </div>
-    </div>
+    </digimon-page>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
@@ -51,6 +50,7 @@ import { HeaderComponent } from './header.component';
     ButtonModule,
     RippleModule,
     AsyncPipe,
+    PageComponent,
   ],
   providers: [MessageService],
 })

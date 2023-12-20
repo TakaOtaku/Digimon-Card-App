@@ -24,7 +24,7 @@ import { DeckActions } from '../../../store/digimon.actions';
       *ngIf="allCards$ | async as allCards"
       [value]="decks"
       [scrollable]="true"
-      [tableStyle]="{ 'min-width': '60rem' }"
+      [tableStyle]="{ 'min-width': '30rem' }"
       [breakpoint]="'0px'"
       sortField="name"
       sortMode="single"
@@ -36,9 +36,9 @@ import { DeckActions } from '../../../store/digimon.actions';
         <tr>
           <th></th>
           <th>Name</th>
-          <th>Description</th>
-          <th>Set</th>
-          <th>Date</th>
+          <th class="hidden md:table-cell">Description</th>
+          <th class="hidden md:table-cell">Set</th>
+          <th class="hidden md:table-cell">Date</th>
         </tr>
       </ng-template>
 
@@ -76,13 +76,13 @@ import { DeckActions } from '../../../store/digimon.actions';
           <td class="text-xs font-bold">
             {{ deck.title }}
           </td>
-          <td class="text-xs">
+          <td class="text-xs hidden md:table-cell">
             {{ deck.description }}
           </td>
-          <td class="text-xs">
+          <td class="text-xs mx-auto hidden md:table-cell">
             <div *ngFor="let tag of deck.tags" class="mr-2">{{ tag.name }}</div>
           </td>
-          <td class="text-center text-xs">
+          <td class="text-center text-xs hidden md:table-cell">
             {{ deck.date | date: 'dd.MM.YY' }}
           </td>
         </tr>

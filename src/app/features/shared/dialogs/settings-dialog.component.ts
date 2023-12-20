@@ -1,4 +1,4 @@
-import { NgClass, NgIf, NgStyle } from '@angular/common';
+import { AsyncPipe, NgClass, NgIf, NgStyle } from '@angular/common';
 import {
   Component,
   EventEmitter,
@@ -26,8 +26,12 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { TabViewModule } from 'primeng/tabview';
 import { first, Subject, takeUntil } from 'rxjs';
-import { DigimonCard, ICountCard, ISave } from '../../../../models';
-import { GroupedSets } from '../../../../models';
+import {
+  DigimonCard,
+  GroupedSets,
+  ICountCard,
+  ISave,
+} from '../../../../models';
 import { DigimonBackendService } from '../../../services/digimon-backend.service';
 import {
   selectAllCards,
@@ -37,6 +41,7 @@ import {
 } from '../../../store/digimon.selectors';
 import { emptySettings } from '../../../store/reducers/save.reducer';
 import { CollectionActions, SaveActions } from '../../../store/digimon.actions';
+import { SetFilterComponent } from '../filter/set-filter.component';
 import { SettingsRowComponent } from '../settings-row.component';
 
 @Component({
@@ -70,6 +75,26 @@ import { SettingsRowComponent } from '../settings-row.component';
           header="Collection"
           subheader="Settings for the Collection"
           styleClass="border-slate-300 border">
+          <digimon-settings-row title="Sets you want to complete">
+            <p-multiSelect
+              [filter]="false"
+              [(ngModel)]="setGoal"
+              [group]="true"
+              [options]="groupedSets"
+              [showHeader]="false"
+              [showToggleAll]="false"
+              defaultLabel="Select sets to collect"
+              display="chip"
+              scrollHeight="250px"
+              class="mx-auto mb-2 w-full max-w-[250px]"
+              styleClass="w-full max-w-[250px] h-8 text-sm">
+              <ng-template let-group pTemplate="group">
+                <div class="align-items-center flex">
+                  <span>{{ group.label }}</span>
+                </div>
+              </ng-template>
+            </p-multiSelect>
+          </digimon-settings-row>
           <digimon-settings-row title="Collection Goal">
             <p-inputNumber
               [(ngModel)]="collectionCount"
@@ -364,6 +389,8 @@ import { SettingsRowComponent } from '../settings-row.component';
     CardModule,
     SettingsRowComponent,
     InputTextModule,
+    SetFilterComponent,
+    AsyncPipe,
   ],
   providers: [MessageService],
 })
@@ -387,6 +414,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
   digimonCards: DigimonCard[] = [];
   collection: ICountCard[] = [];
 
+  setGoal: string[] = [];
   collectionCount = 1;
   aaCollectionCount = 1;
 
@@ -453,6 +481,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
         this.collectionCount = settings.collectionMinimum;
         this.aaCollectionCount = settings.aaCollectionMinimum;
         this.deckDisplayTable = settings.deckDisplayTable;
+        this.setGoal = settings.collectionSets;
       });
   }
 
@@ -477,6 +506,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
         showUserStats: this.userStats,
         deckDisplayTable: this.deckDisplayTable,
         displaySideDeck: this.sideDeck,
+        collectionSets: this.setGoal,
       },
     };
 

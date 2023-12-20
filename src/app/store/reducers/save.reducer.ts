@@ -11,6 +11,7 @@ import {
 export const emptySettings: ISettings = {
   cardSet: CARDSET.English,
   collectionMode: false,
+  collectionSets: [],
   collectionMinimum: 1,
   aaCollectionMinimum: 1,
 
