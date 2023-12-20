@@ -9,7 +9,7 @@ import { NgIf } from '@angular/common';
   selector: 'digimon-user-stats',
   template: `
     <div class="flex flex-col py-2 text-[#e2e4e6]">
-      <div class="flex flex-row justify-center">
+      <div class="flex flex-col sm:flex-row justify-center">
         <div class="flex flex-row mr-5">
           <img
             class="my-auto mr-2 h-16 w-auto rounded-full text-xs font-semibold text-[#e2e4e6]"

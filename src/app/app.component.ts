@@ -1,5 +1,10 @@
 import { AsyncPipe, NgIf } from '@angular/common';
-import { ChangeDetectionStrategy, Component, ElementRef, ViewChild } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  ViewChild,
+} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 import { Store } from '@ngrx/store';
@@ -9,7 +14,7 @@ import { DialogModule } from 'primeng/dialog';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { SidebarModule } from 'primeng/sidebar';
 import { ToastModule } from 'primeng/toast';
-import { map } from 'rxjs';
+import { catchError, map, of, timeout } from 'rxjs';
 import { ISave } from '../models';
 import { ChangelogDialogComponent } from './features/shared/dialogs/changelog-dialog.component';
 import { SettingsDialogComponent } from './features/shared/dialogs/settings-dialog.component';
@@ -92,11 +97,11 @@ import { selectSave } from './store/digimon.selectors';
   ],
 })
 export class AppComponent {
-  noSaveLoaded$ = this.store
-    .select(selectSave)
-    .pipe(
-      map((save: ISave) => false),
-    );
+  noSaveLoaded$ = this.store.select(selectSave).pipe(
+    map((save: ISave) => save.uid === ''),
+    timeout(3000),
+    catchError(() => of(false)),
+  );
 
   sideNav = false;
   settingsDialog = false;

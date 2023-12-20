@@ -31,24 +31,26 @@ import { BlogItemComponent } from './components/blog-item.component';
       <div class="mx-auto p-10 max-w-6xl grid grid-cols-4">
         <div class="col-span-4 grid grid-cols-4 justify-center relative mb-3">
           <h1
-            class="col-span-2 md:col-span-3 text-center text-white text-xl text-black-outline font-black">
+            class="col-span-4 text-center text-white text-xl text-black-outline font-black">
             Forum
           </h1>
-          <p-button
-            class="col-span-2 md:col-span-1 mx-auto"
-            (click)="submitAPost()"
-            >Submit a Post</p-button
-          >
+          @if (display) {
+            <p-button
+              class="hidden sm:block col-span-2 md:col-span-1 mx-auto"
+              (click)="submitAPost()"
+              >Submit a Post</p-button
+            >
+          }
         </div>
 
-        <div class="grid col-span-3 lg:grid-cols-2 gap-3">
+        <div class="grid col-span-4 md:grid-cols-2 gap-3">
           <digimon-blog-item
             *ngFor="let blog of showBlogs"
             [blog]="blog"
             (click)="openBlog(blog)"></digimon-blog-item>
 
           <p-paginator
-            class="lg:col-span-2 w-full h-8 surface-ground"
+            class="md:col-span-2 mx-auto w-full h-8 surface-ground"
             styleClass="surface-ground p-0"
             (onPageChange)="onPageChange($event)"
             [first]="first"
@@ -56,25 +58,27 @@ import { BlogItemComponent } from './components/blog-item.component';
             [totalRecords]="blogs.length"></p-paginator>
         </div>
 
-        <div class="hidden md:flex pl-2 flex-col">
-          <h1 class="text-white text-black-outline font-black">Categories</h1>
-          <div *ngFor="let category of categories; let last = last">
-            <p-divider></p-divider>
-            <button class="text-white text-xs p-1">
-              {{ category.text }} • ({{ category.count }})
-            </button>
-          </div>
+        @if (display) {
+          <div class="hidden md:flex pl-2 flex-col">
+            <h1 class="text-white text-black-outline font-black">Categories</h1>
+            <div *ngFor="let category of categories; let last = last">
+              <p-divider></p-divider>
+              <button class="text-white text-xs p-1">
+                {{ category.text }} • ({{ category.count }})
+              </button>
+            </div>
 
-          <h1 class="mt-3 text-white text-black-outline font-black">
-            Categories
-          </h1>
-          <div *ngFor="let author of authors">
-            <p-divider></p-divider>
-            <button class="text-white text-xs p-1">
-              {{ author.author }} • ({{ author.count }})
-            </button>
+            <h1 class="mt-3 text-white text-black-outline font-black">
+              Categories
+            </h1>
+            <div *ngFor="let author of authors">
+              <p-divider></p-divider>
+              <button class="text-white text-xs p-1">
+                {{ author.author }} • ({{ author.count }})
+              </button>
+            </div>
           </div>
-        </div>
+        }
       </div>
     </digimon-page>
   `,
@@ -147,6 +151,8 @@ export class CommunityPageComponent implements OnInit {
   showBlogs: IBlog[] = [];
 
   router = inject(Router);
+
+  display = false;
 
   constructor(
     private active: ActivatedRoute,

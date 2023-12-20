@@ -37,7 +37,7 @@ import { UserStatsComponent } from './components/user-stats.component';
   template: `
     <digimon-page *ngIf="save$ | async as save">
       <div
-        class="flex flex-col self-baseline px-5 max-w-3xl md:max-w-5xl lg:max-w-6xl xl:max-w-7xl mx-auto">
+        class="flex flex-col self-baseline px-5 max-w-xl sm:max-w-3xl md:max-w-5xl lg:max-w-6xl xl:max-w-7xl mx-auto">
         <digimon-user-stats
           *ngIf="showUserStats$ | async"
           [save]="save"
