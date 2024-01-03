@@ -60,9 +60,10 @@ import { ViewCardDialogComponent } from './dialogs/view-card-dialog.component';
       </ng-container>
 
       <div
-        *ngIf="collectionMode"
+        *ngIf="collectionMode || onlyView"
         class="flex absolute bottom-2 left-1/2 transform -translate-x-1/2 h-8 w-[calc(100%-1rem)] flex-row rounded-lg bg-transparent">
         <button
+          *ngIf="!onlyView"
           (click)="decreaseCardCount(card.id)"
           class="primary-background h-full w-1/3 cursor-pointer rounded-l text-[#e2e4e6] outline-none">
           <span class="m-auto text-2xl font-thin">−</span>
@@ -70,10 +71,13 @@ import { ViewCardDialogComponent } from './dialogs/view-card-dialog.component';
         <input
           type="number"
           min="0"
+          [ngClass]="{ 'mx-auto': onlyView }"
           class="primary-background text-md flex w-1/3 cursor-default appearance-none items-center text-center font-semibold text-[#e2e4e6] outline-none focus:outline-none md:text-base"
           [(ngModel)]="count"
+          [disabled]="onlyView"
           (change)="changeCardCount($event, card.id)" />
         <button
+          *ngIf="!onlyView"
           (click)="increaseCardCount(card.id)"
           class="primary-background h-full w-1/3 cursor-pointer rounded-r text-[#e2e4e6] outline-none">
           <span class="m-auto text-2xl font-thin">+</span>
@@ -119,6 +123,8 @@ export class FullCardComponent implements OnInit, OnDestroy {
   @Input() biggerCards?: boolean = false;
 
   @Input() collectionOnly: boolean = false;
+
+  @Input() onlyView!: boolean;
 
   @Output() viewCard = new EventEmitter<DigimonCard>();
 

@@ -280,6 +280,10 @@ export interface DigimonCardImage {
     </p-dialog>
 
     <p-confirmDialog
+      header="Open Deck"
+      rejectButtonStyleClass="p-button-outlined"></p-confirmDialog>
+
+    <p-confirmDialog
       header="Delete Confirmation"
       icon="pi pi-exclamation-triangle"
       key="Delete"

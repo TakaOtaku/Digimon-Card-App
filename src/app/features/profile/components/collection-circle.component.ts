@@ -78,10 +78,19 @@ export class CollectionCircleComponent implements OnInit, OnChanges, OnDestroy {
             card.id.includes('-') && card.id.includes(this.type),
         );
 
+        // Remove AA cards from being counted for the circle
         if (settings.aaCollectionMinimum === 0) {
           setCards = setCards.filter(
             (card: DigimonCard) => card.version === 'Normal',
           );
+        }
+
+        // Filter our cards that are collected from the settings
+        if (settings.collectionSets.length > 0) {
+          setCards = setCards.filter((card: DigimonCard) => {
+            const cardSet = card.id.split('-')[0];
+            return settings.collectionSets.includes(cardSet);
+          });
         }
 
         const setCardsCollected = setCards.filter((card: DigimonCard) =>

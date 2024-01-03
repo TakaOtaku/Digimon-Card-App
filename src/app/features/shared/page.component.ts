@@ -9,7 +9,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
       class="overflow-y-auto overflow-x-hidden
       flex items-center justify-center relative
       h-[calc(100vh-3.5rem)] md:h-[calc(100vh-5rem)] lg:h-screen
-      w-screen lg:w-[calc(100vw-6.5rem)] ">
+      w-screen lg:w-[calc(100vw-6.5rem)]">
       <ng-content></ng-content>
     </div>
   `,

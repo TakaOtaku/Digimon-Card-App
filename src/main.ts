@@ -95,6 +95,10 @@ const routes: Routes = [
     component: CollectionPageComponent,
   },
   {
+    path: 'collection/:userId',
+    component: CollectionPageComponent,
+  },
+  {
     path: 'community/:id',
     component: BlogPageComponent,
   },

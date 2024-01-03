@@ -32,6 +32,7 @@ import {
   template: `
     <div class="relative flex justify-center items-center h-10 w-full flex-row">
       <div
+        *ngIf="!viewOnly"
         class="absolute left-2 top-4 flex flex-row justify-center items-center">
         <span class="text-xs hidden sm:block font-bold text-[#e2e4e6]"
           >Collection Mode:</span
@@ -75,6 +76,7 @@ import {
 export class PaginationCardListHeaderComponent {
   @Input() widthForm: FormControl;
   @Output() filterBox = new EventEmitter<boolean>();
+  @Input() viewOnly: boolean;
 
   private store = inject(Store);
 

@@ -1,5 +1,12 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  Input,
+} from '@angular/core';
+import { Router } from '@angular/router';
 import { ISave } from '../../../../models';
+import { PaginationCardListComponent } from '../../collection/components/pagination-card-list.component';
 import { CollectionPriceCheckDialogComponent } from './collection-price-check-dialog.component';
 import { DialogModule } from 'primeng/dialog';
 import { CollectionCircleComponent } from './collection-circle.component';
@@ -55,7 +62,7 @@ import { NgIf } from '@angular/common';
 
       <div class="flex flex-row w-full">
         <button
-          (click)="viewCollectionDialog = true"
+          (click)="openCollection()"
           class="surface-ground hover:primary-background text-shadow border flex-grow border-black p-2 font-bold text-[#e2e4e6]">
           View Collection
         </button>
@@ -86,11 +93,16 @@ import { NgIf } from '@angular/common';
     CollectionCircleComponent,
     DialogModule,
     CollectionPriceCheckDialogComponent,
+    PaginationCardListComponent,
   ],
 })
 export class UserStatsComponent {
   @Input() save: ISave;
 
+  private router = inject(Router);
   priceCheckDialog = false;
-  viewCollectionDialog = false;
+
+  openCollection() {
+    this.router.navigateByUrl('/collection/' + this.save.uid);
+  }
 }

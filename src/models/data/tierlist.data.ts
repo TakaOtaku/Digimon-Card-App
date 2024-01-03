@@ -6,9 +6,14 @@ export const TIERLIST = [
       image: 'assets/images/cards/BT13-020.webp',
     },
     {
-      name: 'Belphemon',
-      card: 'BT13-088',
-      image: 'assets/images/cards/BT13-088.webp',
+      name: 'Brigadramon',
+      card: 'BT14-068',
+      image: 'assets/images/cards/BT14-068.webp',
+    },
+    {
+      name: 'Fenriloogamon',
+      card: 'BT14-081',
+      image: 'assets/images/cards/BT14-081.webp',
     },
   ],
   [
@@ -26,11 +31,6 @@ export const TIERLIST = [
       name: 'Red Hybrid',
       card: 'BT12-017',
       image: 'assets/images/cards/BT12-017.webp',
-    },
-    {
-      name: 'Xros Heart',
-      card: 'BT10-013',
-      image: 'assets/images/cards/BT10-013.webp',
     },
     {
       name: 'Beelzemon (X Antibody)',
@@ -83,12 +83,22 @@ export const TIERLIST = [
       image: 'assets/images/cards/BT12-083.webp',
     },
     {
+      name: 'Belphemon',
+      card: 'BT13-088',
+      image: 'assets/images/cards/BT13-088.webp',
+    },
+    {
       name: 'Mervamon',
       card: 'BT11-086',
       image: 'assets/images/cards/BT11-086.webp',
     },
   ],
   [
+    {
+      name: 'Xros Heart',
+      card: 'BT10-013',
+      image: 'assets/images/cards/BT10-013.webp',
+    },
     {
       name: 'Ravemon',
       card: 'BT13-092',
@@ -105,11 +115,6 @@ export const TIERLIST = [
       image: 'assets/images/cards/BT11-088.webp',
     },
     {
-      name: 'GrandisKuwagamon',
-      card: 'BT9-055',
-      image: 'assets/images/cards/BT9-055.webp',
-    },
-    {
       name: 'Gallantmon',
       card: 'BT12-018',
       image: 'assets/images/cards/BT12-018.webp',
@@ -120,39 +125,19 @@ export const TIERLIST = [
       image: 'assets/images/cards/BT10-069.webp',
     },
     {
+      name: 'GrandisKuwagamon',
+      card: 'BT9-055',
+      image: 'assets/images/cards/BT9-055.webp',
+    },
+    {
       name: 'Venusmon',
       card: 'BT10-042',
       image: 'assets/images/cards/BT10-042.webp',
     },
     {
-      name: 'Darkdramon',
-      card: 'EX3-054',
-      image: 'assets/images/cards/EX3-054.webp',
-    },
-    {
-      name: 'Imperialdramon',
-      card: 'EX3-073',
-      image: 'assets/images/cards/EX3-073.webp',
-    },
-    {
-      name: 'Minervamon',
-      card: 'BT10-083',
-      image: 'assets/images/cards/BT10-083.webp',
-    },
-    {
       name: 'Magnamon X',
       card: 'BT9-044',
       image: 'assets/images/cards/BT9-044.webp',
-    },
-    {
-      name: 'Hina',
-      card: 'EX3-065',
-      image: 'assets/images/cards/EX3-065.webp',
-    },
-    {
-      name: 'D-Reaper',
-      card: 'EX2-007',
-      image: 'assets/images/cards/EX2-007.webp',
     },
     {
       name: 'Bond of Friendship',
@@ -165,19 +150,36 @@ export const TIERLIST = [
       image: 'assets/images/cards/BT13-075.webp',
     },
     {
+      name: 'Ancient Greymon',
+      card: 'BT4-113',
+      image: 'assets/images/cards/BT4-113.webp',
+    },
+  ],
+  [
+    {
+      name: 'Imperialdramon',
+      card: 'EX3-073',
+      image: 'assets/images/cards/EX3-073.webp',
+    },
+    {
+      name: 'Minervamon',
+      card: 'BT10-083',
+      image: 'assets/images/cards/BT10-083.webp',
+    },
+    {
+      name: 'D-Reaper',
+      card: 'EX2-007',
+      image: 'assets/images/cards/EX2-007.webp',
+    },
+    {
+      name: 'Hina',
+      card: 'EX3-065',
+      image: 'assets/images/cards/EX3-065.webp',
+    },
+    {
       name: 'Leopardmon',
       card: 'BT13-056',
       image: 'assets/images/cards/BT13-056.webp',
-    },
-    {
-      name: 'Mastemon',
-      card: 'ST10-06',
-      image: 'assets/images/cards/ST10-06.webp',
-    },
-    {
-      name: 'Galacticmon',
-      card: 'BT11-111',
-      image: 'assets/images/cards/BT11-111.webp',
     },
     {
       name: 'Examon',
@@ -185,12 +187,15 @@ export const TIERLIST = [
       image: 'assets/images/cards/EX3-074.webp',
     },
     {
-      name: 'Ancient Greymon',
-      card: 'BT4-113',
-      image: 'assets/images/cards/BT4-113.webp',
+      name: 'Galacticmon',
+      card: 'BT11-111',
+      image: 'assets/images/cards/BT11-111.webp',
     },
-  ],
-  [
+    {
+      name: 'Mastemon',
+      card: 'ST10-06',
+      image: 'assets/images/cards/ST10-06.webp',
+    },
     {
       name: 'Diaboromon',
       card: 'P-016',
@@ -245,6 +250,11 @@ export const TIERLIST = [
       name: 'Beelstarmon',
       card: 'BT6-112',
       image: 'assets/images/cards/BT6-112.webp',
+    },
+    {
+      name: 'Monzaemon',
+      card: 'BT14-039',
+      image: 'assets/images/cards/BT14-039.webp',
     },
   ],
   [
