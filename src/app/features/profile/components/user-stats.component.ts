@@ -64,14 +64,12 @@ import { NgIf } from '@angular/common';
           class="sm:hidden"
           [value]="collectionCircles"
           [numVisible]="1"
-          [numScroll]="1"
           [circular]="true"
           [autoplayInterval]="10000">
           <ng-template let-circle pTemplate="item">
             <digimon-collection-circle
               [collection]="save.collection"
-              [type]="circle.label"
-              class="mx-2"></digimon-collection-circle>
+              [type]="circle.label"></digimon-collection-circle>
             <div class="text-center w-full mx-auto font-bold">
               {{ circle.label }}
             </div>
