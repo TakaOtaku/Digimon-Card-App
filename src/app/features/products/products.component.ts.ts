@@ -1,78 +1,78 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  HostListener,
+  inject,
+} from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { ButtonModule } from 'primeng/button';
+import { CarouselModule } from 'primeng/carousel';
+import { DividerModule } from 'primeng/divider';
+import { GalleriaModule } from 'primeng/galleria';
 import { TooltipModule } from 'primeng/tooltip';
 import { NgFor } from '@angular/common';
+import { PageComponent } from '../shared/page.component';
 
 @Component({
   selector: 'digimon-products',
   template: `
-    <div
-      class="flex h-[calc(100vh-50px)] w-full flex-col overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d]">
-      <div class="mx-auto max-w-6xl">
-        <h1
-          class="text-shadow mt-6 text-4xl font-black text-[#e2e4e6] underline xl:mt-2">
-          Starter Decks
-        </h1>
-        <div class="flex flex-row flex-wrap">
-          <a
-            *ngFor="let product of starter"
-            [href]="product.link"
-            target="_blank">
-            <img
-              [pTooltip]="product.name"
-              tooltipPosition="top"
-              [lazyLoad]="product.image"
-              [alt]="product.name"
-              class="m-5 h-52 cursor-pointer"
-              defaultImage="assets/images/digimon-card-back.webp" />
-          </a>
-        </div>
+    <digimon-page>
+      <div
+        class="overflow-x-hidden flex self-baseline flex-col justify-center max-w-md md:max-w-4xl mx-auto">
+        <div *ngFor="let product of products; let last = last">
+          <h1
+            class="text-shadow text-center mt-6 text-4xl font-black text-[#e2e4e6] underline xl:mt-2">
+            {{ product.name }}
+          </h1>
+          <p-carousel
+            [value]="product.items"
+            [numVisible]="displayCount"
+            [numScroll]="displayCount"
+            [circular]="true"
+            [autoplayInterval]="5000">
+            <ng-template let-item pTemplate="item">
+              <div
+                class="border-1 surface-border border-round m-2 text-center py-5 px-3">
+                <img
+                  src="{{ item.image }}"
+                  [alt]="item.name"
+                  class="shadow-2 mx-auto h-60" />
+                <div>
+                  <h4 class="mb-1 text-black-outline text-white">
+                    {{ item.name }}
+                  </h4>
+                  <div class="car-buttons mt-2">
+                    <!--p-button type="button" styleClass="p-button p-button-rounded mr-2" icon="pi pi-info-circle"></p-button-->
+                    <p-button
+                      (click)="openLink(item.link)"
+                      type="button"
+                      styleClass="p-button-success p-button-rounded mr-2"
+                      icon="pi pi-external-link"></p-button>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </p-carousel>
 
-        <h1
-          class="text-shadow mt-6 text-4xl font-black text-[#e2e4e6] underline xl:mt-2">
-          Booster Sets
-        </h1>
-        <div class="flex flex-row flex-wrap">
-          <a
-            *ngFor="let product of booster"
-            [href]="product.link"
-            target="_blank">
-            <img
-              [pTooltip]="product.name"
-              tooltipPosition="top"
-              [lazyLoad]="product.image"
-              [alt]="product.name"
-              class="m-5 h-52 cursor-pointer"
-              defaultImage="assets/images/digimon-card-back.webp" />
-          </a>
-        </div>
-
-        <h1
-          class="text-shadow mt-6 text-4xl font-black text-[#e2e4e6] underline xl:mt-2">
-          Promo Products
-        </h1>
-        <div class="flex flex-row flex-wrap">
-          <a
-            *ngFor="let product of promo"
-            [href]="product.link"
-            target="_blank">
-            <img
-              [pTooltip]="product.name"
-              tooltipPosition="top"
-              [lazyLoad]="product.image"
-              [alt]="product.name"
-              class="m-5 h-52 cursor-pointer"
-              defaultImage="assets/images/digimon-card-back.webp" />
-          </a>
+          <p-divider *ngIf="!last"></p-divider>
         </div>
       </div>
-    </div>
+    </digimon-page>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgFor, TooltipModule, LazyLoadImageModule],
+  imports: [
+    NgFor,
+    TooltipModule,
+    LazyLoadImageModule,
+    ButtonModule,
+    CarouselModule,
+    GalleriaModule,
+    DividerModule,
+    PageComponent,
+  ],
 })
 export class ProductsComponent {
   starter = [
@@ -448,8 +448,34 @@ export class ProductsComponent {
     },
   ];
 
-  constructor(public router: Router, private meta: Meta, private title: Title) {
+  products = [
+    {
+      name: 'Starter Decks',
+      items: this.starter,
+    },
+    {
+      name: 'Booster Sets',
+      items: this.booster,
+    },
+    {
+      name: 'Promo Products',
+      items: this.promo,
+    },
+  ];
+
+  displayCount = 3;
+
+  public router = inject(Router);
+  private meta = inject(Meta);
+  private title = inject(Title);
+  constructor() {
     this.makeGoogleFriendly();
+    this.checkScreenWidth(window.innerWidth);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    this.checkScreenWidth((event.target as Window).innerWidth);
   }
 
   private makeGoogleFriendly() {
@@ -468,5 +494,24 @@ export class ProductsComponent {
           'Digimon, decks, deck builder, collection,  tournament, TCG, community, friends, share',
       },
     ]);
+  }
+
+  openLink(link: string) {
+    window.open(link, '_blank');
+  }
+
+  private checkScreenWidth(innerWidth: number) {
+    const xl = innerWidth >= 1280;
+    const lg = innerWidth >= 1024;
+    const md = innerWidth >= 768;
+    if (xl) {
+      this.displayCount = 4;
+    } else if (lg) {
+      this.displayCount = 3;
+    } else if (md) {
+      this.displayCount = 2;
+    } else {
+      this.displayCount = 1;
+    }
   }
 }

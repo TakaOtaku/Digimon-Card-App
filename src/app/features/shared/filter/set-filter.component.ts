@@ -1,4 +1,3 @@
-import { WebsiteActions } from './../../../store/digimon.actions';
 import { AsyncPipe, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -8,6 +7,7 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { tap } from 'rxjs';
 import { GroupedSets } from '../../../../models';
 import { selectSetFilter } from '../../../store/digimon.selectors';
+import { WebsiteActions } from './../../../store/digimon.actions';
 
 @Component({
   selector: 'digimon-set-filter',
@@ -47,6 +47,6 @@ export class SetFilterComponent {
   constructor(private store: Store) {}
 
   updateFilter(setFilter: string[]) {
-    this.store.dispatch(WebsiteActions.setsetfilter({ setFilter }));
+    this.store.dispatch(WebsiteActions.setSetFilter({ setFilter }));
   }
 }

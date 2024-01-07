@@ -10,7 +10,7 @@ import {
   ISort,
 } from '../../models';
 import { DigimonCard } from '../../models/interfaces/digimon-card.interface';
-import { ProductCM } from '../service/card-market.service';
+import { ProductCM } from '../services/card-market.service';
 import { emptyDeck } from './reducers/digimon.reducers';
 
 export const selectIDigimonCards =
@@ -22,145 +22,145 @@ export const selectDigimonState =
 //region Digimon Selectors
 export const selectFilter = createSelector(
   selectDigimonState,
-  (state: IDigimonState) => state.filter
+  (state: IDigimonState) => state.filter,
 );
 export const selectSearchFilter = createSelector(
   selectDigimonState,
-  (state: IDigimonState) => state.filter.searchFilter
+  (state: IDigimonState) => state.filter.searchFilter,
 );
 export const selectColorFilter = createSelector(
   selectDigimonState,
-  (state: IDigimonState) => state.filter.colorFilter
+  (state: IDigimonState) => state.filter.colorFilter,
 );
 export const selectCardTypeFilter = createSelector(
   selectDigimonState,
-  (state: IDigimonState) => state.filter.cardTypeFilter
+  (state: IDigimonState) => state.filter.cardTypeFilter,
 );
 export const selectBlockFilter = createSelector(
   selectDigimonState,
-  (state: IDigimonState) => state.filter.blockFilter
+  (state: IDigimonState) => state.filter.blockFilter,
 );
 export const selectRarityFilter = createSelector(
   selectDigimonState,
-  (state: IDigimonState) => state.filter.rarityFilter
+  (state: IDigimonState) => state.filter.rarityFilter,
 );
 export const selectVersionFilter = createSelector(
   selectDigimonState,
-  (state: IDigimonState) => state.filter.versionFilter
+  (state: IDigimonState) => state.filter.versionFilter,
 );
 export const selectSetFilter = createSelector(
   selectDigimonState,
-  (state: IDigimonState) => state.filter.setFilter
+  (state: IDigimonState) => state.filter.setFilter,
 );
 export const selectSort = createSelector(
   selectDigimonState,
-  (state: IDigimonState) => state.sort
+  (state: IDigimonState) => state.sort,
 );
 export const selectDeck = createSelector(
   selectDigimonState,
-  (state: IDigimonState) => state.deck
+  (state: IDigimonState) => state.deck,
 );
 export const selectMobileCollectionView = createSelector(
   selectDigimonState,
-  (state: IDigimonState) => state.mobileCollectionView
+  (state: IDigimonState) => state.mobileCollectionView,
 );
 export const selectAddCardToDeck = createSelector(
   selectDigimonState,
-  (state: IDigimonState) => state.addCardToDeck
+  (state: IDigimonState) => state.addCardToDeck,
 );
 export const selectCommunityDeckSearch = createSelector(
   selectDigimonState,
-  (state: IDigimonState) => state.communityDeckSearch
+  (state: IDigimonState) => state.communityDeckSearch,
 );
 export const selectCommunityDecks = createSelector(
   selectDigimonState,
-  (state: IDigimonState) => state.communityDecks
+  (state: IDigimonState) => state.communityDecks,
 );
 export const selectBlogs = createSelector(
   selectDigimonState,
-  (state: IDigimonState) => state.blogs
+  (state: IDigimonState) => state.blogs,
 );
 export const selectPriceGuideCM = createSelector(
   selectDigimonState,
-  (state: IDigimonState) => state.priceGuideCM
+  (state: IDigimonState) => state.priceGuideCM,
 );
 export const selectDraggedCard = createSelector(
   selectDigimonState,
-  (state: IDigimonState) => state.draggedCard
+  (state: IDigimonState) => state.draggedCard,
 );
 //endregion
 
 //region Digimon Card Selectors
 export const selectAllCards = createSelector(
   selectIDigimonCards,
-  (state: IDigimonCards) => state.allCards
+  (state: IDigimonCards) => state.allCards,
 );
 export const selectDigimonCardMap = createSelector(
   selectIDigimonCards,
-  (state: IDigimonCards) => state.digimonCardMap
+  (state: IDigimonCards) => state.digimonCardMap,
 );
 export const selectFilteredCards = createSelector(
   selectIDigimonCards,
-  (state: IDigimonCards) => state.filteredCards
+  (state: IDigimonCards) => state.filteredCards,
 );
 //endregion
 
 //region Save Selectors
 export const selectCollection = createSelector(
   selectSave,
-  (state: ISave) => state.collection
+  (state: ISave) => state.collection,
 );
 export const selectDecks = createSelector(
   selectSave,
-  (state: ISave) => state.decks
+  (state: ISave) => state.decks,
 );
 export const selectSettings = createSelector(
   selectSave,
-  (state: ISave) => state.settings
+  (state: ISave) => state.settings,
 );
 export const selectCollectionMode = createSelector(
   selectSettings,
-  (state: ISettings) => state.collectionMode
+  (state: ISettings) => state.collectionMode,
 );
 export const selectCardSet = createSelector(
   selectSettings,
-  (state: ISettings) => state.cardSet
+  (state: ISettings) => state.cardSet,
 );
 export const selectCollectionMinimum = createSelector(
   selectSettings,
-  (state: ISettings) => state.collectionMinimum
+  (state: ISettings) => state.collectionMinimum,
 );
 export const selectAACollectionMinimum = createSelector(
   selectSettings,
-  (state: ISettings) => state.aaCollectionMinimum
+  (state: ISettings) => state.aaCollectionMinimum,
 );
 export const selectShowPreRelease = createSelector(
   selectSettings,
-  (state: ISettings) => state.showPreRelease
+  (state: ISettings) => state.showPreRelease,
 );
 export const selectShowStampedCards = createSelector(
   selectSettings,
-  (state: ISettings) => state.showStampedCards
+  (state: ISettings) => state.showStampedCards,
 );
 export const selectShowAACards = createSelector(
   selectSettings,
-  (state: ISettings) => state.showAACards
+  (state: ISettings) => state.showAACards,
 );
 export const selectShowUserStats = createSelector(
   selectSettings,
-  (state: ISettings) => state.showUserStats
+  (state: ISettings) => state.showUserStats,
 );
 export const selectDeckDisplayTable = createSelector(
   selectSettings,
-  (state: ISettings) => state.deckDisplayTable
+  (state: ISettings) => state.deckDisplayTable,
 );
 export const selectDisplaySideDeck = createSelector(
   selectSettings,
-  (state: ISettings) => state.displaySideDeck ?? true
+  (state: ISettings) => state.displaySideDeck ?? true,
 );
 export const selectShowReprintCards = createSelector(
   selectSettings,
-  (state: ISettings) => state.showReprintCards
+  (state: ISettings) => state.showReprintCards,
 );
 //endregion
 
@@ -175,14 +175,14 @@ export const selectChangeAdvancedSettings = createSelector(
     showAA: boolean,
     showStamped: boolean,
     showReprint: boolean,
-    filter: IFilter
+    filter: IFilter,
   ) => ({
     showPreRelease,
     showAA,
     showStamped,
     showReprint,
     filter,
-  })
+  }),
 );
 
 export const selectChangeFilterEffect = createSelector(
@@ -196,14 +196,14 @@ export const selectChangeFilterEffect = createSelector(
     collection: ICountCard[],
     filter: IFilter,
     sort: ISort,
-    digimonCardMap: Map<string, DigimonCard>
+    digimonCardMap: Map<string, DigimonCard>,
   ) => ({
     cards,
     collection,
     filter,
     sort,
     digimonCardMap,
-  })
+  }),
 );
 
 export interface DeckBuilderViewModel {
@@ -222,7 +222,7 @@ export const selectDeckBuilderViewModel = createSelector(
     deck: IDeck | null,
     cards: DigimonCard[],
     priceGuideCM: ProductCM[],
-    collection: ICountCard[]
+    collection: ICountCard[],
   ) => {
     const noEmptyDeck = deck ?? JSON.parse(JSON.stringify(emptyDeck));
     return {
@@ -231,7 +231,7 @@ export const selectDeckBuilderViewModel = createSelector(
       priceGuideCM,
       collection,
     } as DeckBuilderViewModel;
-  }
+  },
 );
 
 export interface ProfileViewModel {
@@ -246,7 +246,7 @@ export const selectProfileViewModel = createSelector(
     ({
       save,
       priceGuideCM,
-    } as ProfileViewModel)
+    }) as ProfileViewModel,
 );
 
 export const selectDeckChanges = createSelector(
@@ -258,5 +258,5 @@ export const selectDeckChanges = createSelector(
       deck: noEmptyDeck,
       allCards,
     };
-  }
+  },
 );

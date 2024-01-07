@@ -2,6 +2,7 @@ cardLinks = [
   'https://digimoncardgame.fandom.com/wiki/RB1-007',
   'https://digimoncardgame.fandom.com/wiki/RB1-004',
   'https://digimoncardgame.fandom.com/wiki/RB1-006',
+  'https://digimoncardgame.fandom.com/wiki/ST17-13',
 ]
 normalCards = []
 cards = []

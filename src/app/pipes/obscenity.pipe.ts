@@ -23,14 +23,14 @@ export class ObscenityPipe implements PipeTransform {
     text: string,
     str1: string,
     str2: string,
-    ignore: boolean = false
+    ignore: boolean = false,
   ) {
     return text.replace(
       new RegExp(
         str1.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g, '\\$&'),
-        ignore ? 'gi' : 'g'
+        ignore ? 'gi' : 'g',
       ),
-      typeof str2 == 'string' ? str2.replace(/\$/g, '$$$$') : str2
+      typeof str2 == 'string' ? str2.replace(/\$/g, '$$$$') : str2,
     );
   }
 }

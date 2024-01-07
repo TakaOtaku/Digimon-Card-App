@@ -9,19 +9,18 @@ import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 import { first, Observable, switchMap, tap, withLatestFrom } from 'rxjs';
-import { IBlog, IBlogWithText } from '../../../models';
-import { DigimonBackendService } from '../../service/digimon-backend.service';
-import { CKEditorComponent } from './components/ckeditor.component';
-import { HeaderComponent } from './components/header.component';
 import { WebsiteActions } from 'src/app/store/digimon.actions';
+import { IBlog, IBlogWithText } from '../../../../models';
+import { DigimonBackendService } from '../../../services/digimon-backend.service';
+import { PageComponent } from '../../shared/page.component';
+import { CKEditorComponent } from './ckeditor.component';
+import { HeaderComponent } from './header.component';
 
 @Component({
   selector: 'digimon-blog-page',
   template: `
-    <div
-      *ngIf="blog$ | async as blog"
-      class="w-full bg-gradient-to-b from-[#17212f] to-[#08528d] pt-5">
-      <div class="mx-auto max-w-7xl">
+    <digimon-page *ngIf="blog$ | async as blog">
+      <div class="h-full py-10 mx-auto max-w-7xl">
         <digimon-header
           [edit]="edit"
           [form]="form"
@@ -40,7 +39,7 @@ import { WebsiteActions } from 'src/app/store/digimon.actions';
           label="Save"
           (click)="save(blog)"></button>
       </div>
-    </div>
+    </digimon-page>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
@@ -51,6 +50,7 @@ import { WebsiteActions } from 'src/app/store/digimon.actions';
     ButtonModule,
     RippleModule,
     AsyncPipe,
+    PageComponent,
   ],
   providers: [MessageService],
 })
@@ -72,7 +72,7 @@ export class BlogPageComponent implements OnInit {
     private messageService: MessageService,
     private store: Store,
     private meta: Meta,
-    private metaTitle: Title
+    private metaTitle: Title,
   ) {}
 
   ngOnInit(): void {
@@ -83,14 +83,14 @@ export class BlogPageComponent implements OnInit {
       .getBlogEntries()
       .pipe(first())
       .subscribe((blogs) => {
-        this.store.dispatch(WebsiteActions.setblogs({ blogs }));
+        this.store.dispatch(WebsiteActions.setBlogs({ blogs }));
       });
   }
 
   checkURL() {
     this.blog$ = this.active.params.pipe(
       switchMap((params) =>
-        this.digimonBackendService.getBlogEntryWithText(params['id'])
+        this.digimonBackendService.getBlogEntryWithText(params['id']),
       ),
       tap((blog) => {
         this.form.setValue({
@@ -100,7 +100,7 @@ export class BlogPageComponent implements OnInit {
           date: blog.date,
           category: blog.category,
         });
-      })
+      }),
     );
   }
 
@@ -128,8 +128,8 @@ export class BlogPageComponent implements OnInit {
       .updateBlogWithText(newBlog)
       .pipe(
         withLatestFrom(
-          this.digimonBackendService.updateBlog(newBlogWithoutText)
-        )
+          this.digimonBackendService.updateBlog(newBlogWithoutText),
+        ),
       )
       .subscribe(() => {
         this.messageService.add({
@@ -142,7 +142,7 @@ export class BlogPageComponent implements OnInit {
 
   private makeGoogleFriendly() {
     this.metaTitle.setTitle(
-      'Digimon Card Game - ' + this.form.get('title')?.value
+      'Digimon Card Game - ' + this.form.get('title')?.value,
     );
 
     this.meta.addTags([

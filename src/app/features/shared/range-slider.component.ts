@@ -4,15 +4,14 @@ import {
   Input,
   OnDestroy,
   OnInit,
-  Output,
 } from '@angular/core';
 import {
-  UntypedFormControl,
   FormsModule,
   ReactiveFormsModule,
+  UntypedFormControl,
 } from '@angular/forms';
+import { NgxSliderModule } from 'ngx-slider-v2';
 import { Subject, takeUntil } from 'rxjs';
-import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 @Component({
   selector: 'digimon-range-slider',

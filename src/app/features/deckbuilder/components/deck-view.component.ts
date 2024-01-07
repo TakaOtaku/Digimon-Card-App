@@ -11,7 +11,7 @@ import { Store } from '@ngrx/store';
 import { AccordionModule } from 'primeng/accordion';
 import { ConfirmationService, MessageService, SharedModule } from 'primeng/api';
 import { DragDropModule } from 'primeng/dragdrop';
-import { Subject, filter, first, takeUntil } from 'rxjs';
+import { filter, first, Subject, takeUntil } from 'rxjs';
 import {
   DigimonCard,
   ICountCard,
@@ -31,8 +31,8 @@ import {
   sortColors,
 } from '../../../functions/digimon-card.functions';
 import { sortID } from '../../../functions/filter.functions';
-import { AuthService } from '../../../service/auth.service';
-import { DigimonBackendService } from '../../../service/digimon-backend.service';
+import { AuthService } from '../../../services/auth.service';
+import { DigimonBackendService } from '../../../services/digimon-backend.service';
 import {
   selectCollection,
   selectDeckBuilderViewModel,
@@ -65,26 +65,8 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
         (hideStats)="hideStats.emit(true)"></digimon-deck-toolbar>
     </div>
 
-    <ng-template #fullscreen>
-      <div class="mx-auto h-full max-w-[1080px]">
-        <div class="grid w-full grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
-          <digimon-deck-card
-            *ngFor="let card of mainDeck"
-            pDraggable="fromDeck"
-            (onDragStart)="setDraggedCard(card, DRAG.Main)"
-            (removeCard)="removeCard(card)"
-            [cardHave]="getCardHave(card)"
-            [card]="card"
-            [cards]="allCards"
-            [missingCards]="missingCards"></digimon-deck-card>
-        </div>
-      </div>
-    </ng-template>
-
     <ng-container *ngIf="draggedCard$ | async as draggedCard">
-      <p-accordion
-        *ngIf="collectionView; else fullscreen"
-        class="mx-auto h-full max-w-[1080px]">
+      <p-accordion class="mx-auto">
         <p-accordionTab
           [pDroppable]="['toDeck', 'fromSide']"
           (onDrop)="drop(draggedCard, 'Main')"
@@ -100,7 +82,7 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
               }}
             </div>
           </ng-template>
-          <div class="grid w-full grid-cols-4 md:grid-cols-6">
+          <div class="mx-auto grid w-full grid-cols-4 md:grid-cols-6">
             <digimon-deck-card
               *ngFor="let card of mainDeck"
               pDraggable="fromDeck"
@@ -188,7 +170,7 @@ export class DeckViewComponent implements OnInit, OnDestroy {
     private digimonBackendService: DigimonBackendService,
     private authService: AuthService,
     private confirmationService: ConfirmationService,
-    private messageService: MessageService
+    private messageService: MessageService,
   ) {}
 
   ngOnInit() {
@@ -196,21 +178,21 @@ export class DeckViewComponent implements OnInit, OnDestroy {
       .select(selectSave)
       .pipe(
         takeUntil(this.onDestroy$),
-        filter((value) => !!value)
+        filter((value) => !!value),
       )
       .subscribe((save) => (this.save = save));
     this.store
       .select(selectCollection)
       .pipe(
         takeUntil(this.onDestroy$),
-        filter((value) => !!value)
+        filter((value) => !!value),
       )
       .subscribe((collection) => (this.collection = collection));
     this.store
       .select(selectDeckBuilderViewModel)
       .pipe(
         takeUntil(this.onDestroy$),
-        filter((value) => !!value)
+        filter((value) => !!value),
       )
       .subscribe(({ deck, cards }) => {
         this.allCards = cards;
@@ -244,7 +226,7 @@ export class DeckViewComponent implements OnInit, OnDestroy {
 
     deck.cards.forEach((card) => {
       const foundCard = this.allCards.find((item) =>
-        compareIDs(item.id, card.id)
+        compareIDs(item.id, card.id),
       );
       if (foundCard) {
         iDeckCards.push({ ...foundCard, count: card.count });
@@ -252,7 +234,7 @@ export class DeckViewComponent implements OnInit, OnDestroy {
     });
     (deck.sideDeck ?? []).forEach((card) => {
       const foundCard = this.allCards.find((item) =>
-        compareIDs(item.id, card.id)
+        compareIDs(item.id, card.id),
       );
       if (foundCard) {
         iSideDeckCards.push({ ...foundCard, count: card.count });
@@ -260,10 +242,10 @@ export class DeckViewComponent implements OnInit, OnDestroy {
     });
 
     iDeckCards.forEach((card) =>
-      this.mainDeck.push({ ...card, count: card.count })
+      this.mainDeck.push({ ...card, count: card.count }),
     );
     iSideDeckCards.forEach((card) =>
-      this.sideDeck.push({ ...card, count: card.count })
+      this.sideDeck.push({ ...card, count: card.count }),
     );
     this.deckSort();
     this.onMainDeck.emit(this.mainDeck);
@@ -356,7 +338,7 @@ export class DeckViewComponent implements OnInit, OnDestroy {
 
     this.deckSort();
 
-    this.store.dispatch(WebsiteActions.setdeck({ deck: this.deck }));
+    this.store.dispatch(WebsiteActions.setDeck({ deck: this.deck }));
     this.onMainDeck.emit(this.mainDeck);
   }
 
@@ -365,7 +347,7 @@ export class DeckViewComponent implements OnInit, OnDestroy {
    */
   getCardHave(card: IDeckCard) {
     const foundCards = this.collection.filter(
-      (colCard) => this.removeP(colCard.id) === card.cardNumber
+      (colCard) => this.removeP(colCard.id) === card.cardNumber,
     );
     let count = 0;
     foundCards?.forEach((found) => {
@@ -438,22 +420,22 @@ export class DeckViewComponent implements OnInit, OnDestroy {
     if (area === 'Side') {
       if (card.drag === DRAG.Main) {
         this.store.dispatch(
-          WebsiteActions.removecardfromdeck({ cardId: card.card.id })
+          WebsiteActions.removeCardFromDeck({ cardId: card.card.id }),
         );
       }
       this.store.dispatch(
-        WebsiteActions.addcardtosidedeck({ cardId: card.card.id })
+        WebsiteActions.addCardToSideDeck({ cardId: card.card.id }),
       );
       return;
     }
 
     if (card.drag === DRAG.Side) {
       this.store.dispatch(
-        WebsiteActions.removecardfromsidedeck({ cardId: card.card.id })
+        WebsiteActions.removeCardFromSideDeck({ cardId: card.card.id }),
       );
     }
     this.store.dispatch(
-      WebsiteActions.addcardtodeck({ addCardToDeck: card.card.id })
+      WebsiteActions.addCardToDeck({ addCardToDeck: card.card.id }),
     );
   }
 
@@ -463,9 +445,9 @@ export class DeckViewComponent implements OnInit, OnDestroy {
       drag,
     };
     this.store.dispatch(
-      WebsiteActions.setdraggedcard({
+      WebsiteActions.setDraggedCard({
         dragCard,
-      })
+      }),
     );
   }
 
@@ -476,38 +458,40 @@ export class DeckViewComponent implements OnInit, OnDestroy {
 
     const red = deck
       .filter(
-        (card) => card.color.startsWith('Red') && card.cardType === 'Digimon'
+        (card) => card.color.startsWith('Red') && card.cardType === 'Digimon',
       )
       .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
     const blue = deck
       .filter(
-        (card) => card.color.startsWith('Blue') && card.cardType === 'Digimon'
+        (card) => card.color.startsWith('Blue') && card.cardType === 'Digimon',
       )
       .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
     const yellow = deck
       .filter(
-        (card) => card.color.startsWith('Yellow') && card.cardType === 'Digimon'
+        (card) =>
+          card.color.startsWith('Yellow') && card.cardType === 'Digimon',
       )
       .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
     const green = deck
       .filter(
-        (card) => card.color.startsWith('Green') && card.cardType === 'Digimon'
+        (card) => card.color.startsWith('Green') && card.cardType === 'Digimon',
       )
       .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
     const black = deck
       .filter(
-        (card) => card.color.startsWith('Black') && card.cardType === 'Digimon'
+        (card) => card.color.startsWith('Black') && card.cardType === 'Digimon',
       )
       .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
     const purple = deck
       .filter(
-        (card) => card.color.startsWith('Purple') && card.cardType === 'Digimon'
+        (card) =>
+          card.color.startsWith('Purple') && card.cardType === 'Digimon',
       )
       .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
 
     const white = deck
       .filter(
-        (card) => card.color.startsWith('White') && card.cardType === 'Digimon'
+        (card) => card.color.startsWith('White') && card.cardType === 'Digimon',
       )
       .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
 

@@ -54,7 +54,7 @@ import { NgIf, NgClass, AsyncPipe } from '@angular/common';
   ],
 })
 export class DeckStatsComponent {
-  @Input() showStats = false;
+  @Input() showStats = true;
   @Input() collectionView = false;
 
   deck$ = this.store.select(selectDeck);
@@ -63,7 +63,7 @@ export class DeckStatsComponent {
 
   mainDeck$: Observable<IDeckCard[]> = combineLatest(
     this.deck$,
-    this.allCards$
+    this.allCards$,
   ).pipe(map((value) => mapToDeckCards(value[0].cards, value[1])));
 
   constructor(private store: Store) {}

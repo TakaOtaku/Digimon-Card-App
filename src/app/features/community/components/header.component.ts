@@ -1,3 +1,4 @@
+import { DatePipe, NgClass, NgIf } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -8,18 +9,17 @@ import {
   Output,
 } from '@angular/core';
 import {
-  UntypedFormGroup,
   FormsModule,
   ReactiveFormsModule,
+  UntypedFormGroup,
 } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Subject, takeUntil } from 'rxjs';
-import { ADMINS, IUser } from '../../../../models';
-import { AuthService } from '../../../service/auth.service';
+import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { RippleModule } from 'primeng/ripple';
-import { ButtonModule } from 'primeng/button';
-import { NgIf, NgClass, DatePipe } from '@angular/common';
+import { Subject, takeUntil } from 'rxjs';
+import { ADMINS, IUser } from '../../../../models';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'digimon-header',
@@ -98,7 +98,7 @@ import { NgIf, NgClass, DatePipe } from '@angular/common';
       <div class="flex flex-row">
         <span class="mb-2 w-full text-center font-bold text-[#e2e4e6]"
           >{{ form.get('author')!.value }} /
-          {{ form.get('date')!.value | date : 'dd.MM.yyyy' }}</span
+          {{ form.get('date')!.value | date: 'dd.MM.yyyy' }}</span
         >
       </div>
     </div>
@@ -126,7 +126,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
   user: IUser | null;
 
   private onDestroy$ = new Subject();
-  constructor(public router: Router, private authService: AuthService) {}
+
+  constructor(
+    public router: Router,
+    private authService: AuthService,
+  ) {}
 
   ngOnInit(): void {
     this.user = this.authService.userData;

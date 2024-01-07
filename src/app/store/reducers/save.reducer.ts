@@ -11,6 +11,7 @@ import {
 export const emptySettings: ISettings = {
   cardSet: CARDSET.English,
   collectionMode: false,
+  collectionSets: [],
   collectionMinimum: 1,
   aaCollectionMinimum: 1,
 
@@ -40,18 +41,18 @@ export const emptySave: ISave = {
 export const saveReducer = createReducer(
   emptySave,
 
-  on(SaveActions.setsave, (state, { save }) => save),
-  on(SaveActions.getsave, (state, { save }) => save),
+  on(SaveActions.setSave, (state, { save }) => save),
+  on(SaveActions.getSave, (state, { save }) => save),
 
-  on(SaveActions.setcollection, (state, { collection }) => ({
+  on(SaveActions.setCollection, (state, { collection }) => ({
     ...state,
     collection,
   })),
-  on(CollectionActions.addcard, (state, { collectionCards }) => ({
+  on(CollectionActions.addCard, (state, { collectionCards }) => ({
     ...state,
     collection: [...new Set([...state.collection, ...collectionCards])],
   })),
-  on(CollectionActions.setcardcount, (state, { id, count }) => {
+  on(CollectionActions.setCardCount, (state, { id, count }) => {
     const taken = state.collection.find((card) => card.id === id);
     if (taken) {
       // Increase the Cards Count
@@ -70,28 +71,28 @@ export const saveReducer = createReducer(
     }
   }),
 
-  on(SaveActions.setcardsets, (state, { cardSet }) => ({
+  on(SaveActions.setCardSets, (state, { cardSet }) => ({
     ...state,
     settings: { ...state.settings, cardSet },
   })),
-  on(SaveActions.setcollectionmode, (state, { collectionMode }) => ({
+  on(SaveActions.setCollectionMode, (state, { collectionMode }) => ({
     ...state,
     settings: { ...state.settings, collectionMode },
   })),
-  on(SaveActions.setshowuserstats, (state, { showUserStats }) => ({
+  on(SaveActions.setShowUserStats, (state, { showUserStats }) => ({
     ...state,
     settings: { ...state.settings, showUserStats },
   })),
-  on(WebsiteActions.setcollectionminimum, (state, { minimum }) => ({
+  on(WebsiteActions.setCollectionMinimum, (state, { minimum }) => ({
     ...state,
     settings: { ...state.settings, collectionMinimum: minimum },
   })),
-  on(WebsiteActions.setaacollectionminimum, (state, { minimum }) => ({
+  on(WebsiteActions.setAACollectionMinimum, (state, { minimum }) => ({
     ...state,
     settings: { ...state.settings, aaCollectionMinimum: minimum },
   })),
   on(
-    WebsiteActions.setshowversion,
+    WebsiteActions.setShowVersion,
     (state, { showPre, showAA, showStamp }) => ({
       ...state,
       settings: {
@@ -100,13 +101,13 @@ export const saveReducer = createReducer(
         showAACards: showAA,
         showStampedCards: showStamp,
       },
-    })
+    }),
   ),
-  on(SaveActions.setdeckdisplaytable, (state, { deckDisplayTable }) => ({
+  on(SaveActions.setDeckDisplayTable, (state, { deckDisplayTable }) => ({
     ...state,
     settings: { ...state.settings, deckDisplayTable },
   })),
-  on(SaveActions.setshowreprintcards, (state, { showReprintCards }) => ({
+  on(SaveActions.setShowReprintCards, (state, { showReprintCards }) => ({
     ...state,
     settings: { ...state.settings, showReprintCards },
   })),
@@ -118,7 +119,7 @@ export const saveReducer = createReducer(
     const foundDeck = state.decks?.find((value) => value.id === deck.id);
     if (foundDeck) {
       const allButFoundDeck: IDeck[] = state.decks.filter(
-        (value) => value.id !== deck.id
+        (value) => value.id !== deck.id,
       );
       const decks: IDeck[] = [...new Set([...allButFoundDeck, deck])];
       return { ...state, decks };
@@ -142,5 +143,5 @@ export const saveReducer = createReducer(
       ...state,
       decks,
     };
-  })
+  }),
 );

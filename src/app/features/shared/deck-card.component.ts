@@ -15,7 +15,7 @@ import { dummyCard } from 'src/app/store/reducers/digimon.reducers';
 import { addJBeforeWebp } from '../../../assets/cardlists/DigimonCards';
 import { DigimonCard, IDeckCard } from '../../../models';
 import { ImgFallbackDirective } from '../../directives/ImgFallback.directive';
-import { ImageService } from '../../service/image.service';
+import { ImageService } from '../../services/image.service';
 import { WebsiteActions } from './../../store/digimon.actions';
 import { ViewCardDialogComponent } from './dialogs/view-card-dialog.component';
 
@@ -136,7 +136,10 @@ export class DeckCardComponent implements OnChanges, OnInit {
   viewCardDialog = false;
   protected readonly addJBeforeWebp = addJBeforeWebp;
 
-  constructor(private store: Store, private imageService: ImageService) {}
+  constructor(
+    private store: Store,
+    private imageService: ImageService,
+  ) {}
 
   ngOnInit() {
     this.mapCard();
@@ -160,13 +163,13 @@ export class DeckCardComponent implements OnChanges, OnInit {
 
     if (this.sideDeck) {
       this.store.dispatch(
-        WebsiteActions.addcardtosidedeck({ cardId: this.card.id })
+        WebsiteActions.addCardToSideDeck({ cardId: this.card.id }),
       );
       return;
     }
 
     this.store.dispatch(
-      WebsiteActions.addcardtodeck({ addCardToDeck: this.card.id })
+      WebsiteActions.addCardToDeck({ addCardToDeck: this.card.id }),
     );
   }
 
@@ -178,13 +181,13 @@ export class DeckCardComponent implements OnChanges, OnInit {
 
     if (this.sideDeck) {
       this.store.dispatch(
-        WebsiteActions.removecardfromsidedeck({ cardId: this.card.id })
+        WebsiteActions.removeCardFromSideDeck({ cardId: this.card.id }),
       );
       return;
     }
 
     this.store.dispatch(
-      WebsiteActions.removecardfromdeck({ cardId: this.card.id })
+      WebsiteActions.removeCardFromDeck({ cardId: this.card.id }),
     );
   }
 

@@ -144,12 +144,12 @@ export class ColorSpreadComponent implements OnInit, OnChanges {
     const red = cards.filter((card) => card.color.split('/')[0] === 'Red');
     const blue = cards.filter((card) => card.color.split('/')[0] === 'Blue');
     const yellow = cards.filter(
-      (card) => card.color.split('/')[0] === 'Yellow'
+      (card) => card.color.split('/')[0] === 'Yellow',
     );
     const green = cards.filter((card) => card.color.split('/')[0] === 'Green');
     const black = cards.filter((card) => card.color.split('/')[0] === 'Black');
     const purple = cards.filter(
-      (card) => card.color.split('/')[0] === 'Purple'
+      (card) => card.color.split('/')[0] === 'Purple',
     );
     const white = cards.filter((card) => card.color.split('/')[0] === 'White');
 

@@ -1,6 +1,8 @@
+import { DeferModule } from 'primeng/defer';
+import { ScrollPanelModule } from 'primeng/scrollpanel';
 import { withoutJ } from '../../../functions/digimon-card.functions';
 import { dummyCard } from './../../../store/reducers/digimon.reducers';
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, inject, Input, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subject, takeUntil, tap } from 'rxjs';
 import { DigimonCard, ICountCard } from '../../../../models';
@@ -18,35 +20,35 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 @Component({
   selector: 'digimon-card-list',
   template: `
-    <div
-      class="flex flex-wrap justify-center overflow-hidden"
-      *ngIf="cards$ | async">
+    <div class="flex flex-wrap justify-center" *ngIf="cards$ | async as cards">
       <h1
-        *ngIf="cardsToShow.length === 0"
+        *ngIf="cards.length === 0"
         class="primary-color text-bold my-10 text-5xl">
         No cards found!
       </h1>
 
-      <div class="flex w-full flex-row flex-wrap">
-        <digimon-full-card
-          *ngFor="let card of cardsToShow"
-          (viewCard)="viewCard($event)"
-          [card]="card"
-          [collectionMode]="(collectionMode$ | async) ?? false"
-          [count]="getCount(card.id)"
-          [deckView]="true"
-          [deckBuilder]="true"
-          [collectionOnly]="collectionOnly"
-          class="flex-[1 1 25%] max-w-[25%] scale-95 transition">
-        </digimon-full-card>
+      <div
+        *ngIf="collection$ | async as collection"
+        class="flex w-full flex-row flex-wrap">
+        <p-scrollPanel
+          class="flex w-full flex-row flex-wrap"
+          [style]="{ width: '100%', height: '100vh' }">
+          <div pDefer>
+            <ng-template>
+              <digimon-full-card
+                *ngFor="let card of cards"
+                (viewCard)="viewCard($event)"
+                [card]="card"
+                [collectionMode]="(collectionMode$ | async) ?? false"
+                [count]="getCount(card.id, collection)"
+                [deckBuilder]="true"
+                [collectionOnly]="collectionOnly"
+                class="flex-[1 1 12.5%] max-w-[12.5%] scale-95 transition">
+              </digimon-full-card>
+            </ng-template>
+          </div>
+        </p-scrollPanel>
       </div>
-
-      <button
-        *ngIf="moreCardsThere()"
-        pButton
-        label="Show more..."
-        (click)="showMore()"
-        class="p-button-outlined surface-ground min-w-auto mb-6 mt-2 h-8 w-full p-2 text-xs font-semibold text-[#e2e4e6]"></button>
     </div>
 
     <p-dialog
@@ -72,71 +74,33 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     DialogModule,
     ViewCardDialogComponent,
     AsyncPipe,
+    DeferModule,
+    ScrollPanelModule,
   ],
 })
-export class CardListComponent implements OnInit, OnDestroy {
-  @Input() public showCount: number;
+export class CardListComponent {
+  @Input() public showCount: number = 32;
   @Input() public collectionOnly: boolean = false;
+  @Input() public deckView: boolean = false;
 
-  cards$ = this.store.select(selectFilteredCards).pipe(
-    tap((cards) => (this.cards = cards)),
-    tap((cards) => (this.cardsToShow = this.cards.slice(0, this.showCount)))
-  );
+  private store = inject(Store);
+
+  collectionMode$ = this.store.select(selectCollectionMode);
+  collection$ = this.store.select(selectCollection);
+  cards$ = this.store.select(selectFilteredCards);
 
   viewCardDialog = false;
   card = JSON.parse(JSON.stringify(dummyCard));
 
-  cards: DigimonCard[];
-  cardsToShow: DigimonCard[];
-
-  collectionMode$ = this.store.select(selectCollectionMode);
-
-  private collection: ICountCard[] = [];
-
-  private onDestroy$ = new Subject();
-
-  constructor(private store: Store) {}
-
-  ngOnInit() {
-    this.store
-      .select(selectCollection)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((collection) => {
-        this.collection = collection;
-      });
-  }
-
-  ngOnDestroy() {
-    this.onDestroy$.next(true);
-    this.onDestroy$.unsubscribe();
-  }
-
   /**
    * Search the user collection for the number and return the count
    */
-  getCount(cardId: string): number {
-    if (this.collection === null) {
+  getCount(cardId: string, collection: ICountCard[]): number {
+    if (collection === null) {
       return 0;
     }
     return (
-      this.collection.find((value) => value.id === withoutJ(cardId))?.count ?? 0
-    );
-  }
-
-  /**
-   * Show more cards based on the @Input showCount
-   */
-  showMore() {
-    const length = this.cardsToShow.length;
-    this.cardsToShow = this.cards.slice(0, length + this.showCount!);
-  }
-
-  /**
-   * Check if there are more Cards to show, which aren't shown right now
-   */
-  moreCardsThere(): boolean {
-    return (
-      this.cards.length > this.cardsToShow.length && this.cardsToShow.length > 0
+      collection.find((value) => value.id === withoutJ(cardId))?.count ?? 0
     );
   }
 

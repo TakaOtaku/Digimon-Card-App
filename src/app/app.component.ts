@@ -1,64 +1,83 @@
-import { NgIf } from '@angular/common';
-import { Component, EventEmitter } from '@angular/core';
+import { AsyncPipe, NgIf } from '@angular/common';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  ViewChild,
+} from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { ToastrService } from 'ngx-toastr';
 import { BlockUIModule } from 'primeng/blockui';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DialogModule } from 'primeng/dialog';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { SidebarModule } from 'primeng/sidebar';
 import { ToastModule } from 'primeng/toast';
-import { first } from 'rxjs';
+import { catchError, map, of, timeout } from 'rxjs';
 import { ISave } from '../models';
 import { ChangelogDialogComponent } from './features/shared/dialogs/changelog-dialog.component';
-import { NavbarComponent } from './features/shared/navbar.component';
-import { AuthService } from './service/auth.service';
-import { DigimonBackendService } from './service/digimon-backend.service';
+import { SettingsDialogComponent } from './features/shared/dialogs/settings-dialog.component';
+import { FilterSideBoxComponent } from './features/shared/filter/filter-side-box.component';
+import { NavLinksComponent } from './features/shared/navbar/nav-links.component';
+import { NavbarComponent } from './features/shared/navbar/navbar.component';
 import { SaveActions } from './store/digimon.actions';
-import { emptySave } from './store/reducers/save.reducer';
+import { selectSave } from './store/digimon.selectors';
 
 @Component({
   selector: 'digimon-root',
   template: `
-    <div class="relative">
-      <digimon-navbar></digimon-navbar>
+    <div
+      class="flex flex-col lg:flex-row bg-gradient-to-b from-[#17212f] to-[#08528d]">
+      <digimon-navbar
+        (openSideNav)="sideNav = true"
+        (settingsShow)="this.settingsDialog = true"></digimon-navbar>
 
-      <router-outlet #router *ngIf="!hide"></router-outlet>
+      <div
+        class="min-h-[calc(100vh-3.5rem)] md:min-h-[calc(100vh-5rem)] lg:min-h-[100vh]
+        w-[100vw] lg:max-w-[calc(100vw-6.5rem)] lg:w-[calc(100vw-6.5rem)]
+        flex justify-center items-center">
+        <router-outlet
+          *ngIf="(noSaveLoaded$ | async) === false"></router-outlet>
+      </div>
 
-      <div *ngIf="hide" class="h-[calc(100vh-58px)] w-screen"></div>
-      <p-blockUI [blocked]="spinner"></p-blockUI>
-      <p-progressSpinner
-        *ngIf="spinner"
-        class="absolute left-1/2 top-1/2 z-[5000] -translate-x-1/2 -translate-y-1/2 transform"></p-progressSpinner>
+      <ng-container *ngIf="noSaveLoaded$ | async as noSaveLoaded">
+        <div *ngIf="noSaveLoaded" class="h-[calc(100vh-58px)] w-screen"></div>
+        <p-blockUI [blocked]="noSaveLoaded"></p-blockUI>
+        <p-progressSpinner
+          *ngIf="noSaveLoaded"
+          class="absolute left-1/2 top-1/2 z-[5000] -translate-x-1/2 -translate-y-1/2 transform"></p-progressSpinner>
+      </ng-container>
+
+      <p-sidebar
+        [(visible)]="sideNav"
+        styleClass="w-[6.5rem] overflow-hidden p-0">
+        <ng-template pTemplate="content" class="p-0">
+          <digimon-nav-links
+            class="flex flex-col w-full justify-center"
+            (settingsShow)="this.settingsDialog = true"
+            [sidebar]="true"></digimon-nav-links>
+        </ng-template>
+      </p-sidebar>
+
+      <p-dialog
+        [(visible)]="settingsDialog"
+        [baseZIndex]="10000"
+        [modal]="true"
+        [dismissableMask]="true"
+        [resizable]="false"
+        header="Settings"
+        styleClass="background-darker surface-ground w-full h-full max-w-6xl min-h-[500px]">
+        <digimon-settings-dialog
+          (closeEmitter)="settingsDialog = false"></digimon-settings-dialog>
+      </p-dialog>
 
       <p-toast></p-toast>
-
-      <p-confirmDialog
-        header="Delete Confirmation"
-        icon="pi pi-exclamation-triangle"
-        key="Delete"
-        rejectButtonStyleClass="p-button-outlined"></p-confirmDialog>
-
-      <p-confirmDialog
-        header="New Deck Confirmation"
-        icon="pi pi-file"
-        key="NewDeck"
-        rejectButtonStyleClass="p-button-outlined"></p-confirmDialog>
     </div>
-
-    <p-dialog
-      [(visible)]="showChangelog"
-      [closeOnEscape]="true"
-      [modal]="true"
-      [dismissableMask]="true"
-      [resizable]="false"
-      styleClass="w-full h-full max-w-6xl min-h-[500px]"
-      header="Changelog">
-      <digimon-changelog-dialog
-        [loadChangelog]="loadChangelog"></digimon-changelog-dialog>
-    </p-dialog>
   `,
   standalone: true,
+  styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     NavbarComponent,
     NgIf,
@@ -69,117 +88,33 @@ import { emptySave } from './store/reducers/save.reducer';
     ConfirmDialogModule,
     DialogModule,
     ChangelogDialogComponent,
+    FormsModule,
+    AsyncPipe,
+    NavLinksComponent,
+    SidebarModule,
+    SettingsDialogComponent,
+    FilterSideBoxComponent,
   ],
 })
 export class AppComponent {
-  localStorageSave: ISave;
-  spinner = true;
-  hide = true;
-  retryCounter = 0;
+  noSaveLoaded$ = this.store.select(selectSave).pipe(
+    map((save: ISave) => save.uid === ''),
+    timeout(3000),
+    catchError(() => of(false)),
+  );
 
-  showChangelog = false;
-  loadChangelog = new EventEmitter<boolean>();
+  sideNav = false;
+  settingsDialog = false;
 
-  constructor(
-    private store: Store,
-    private authService: AuthService,
-    private digimonBackendService: DigimonBackendService,
-    private toastrService: ToastrService
-  ) {
-    this.loadSave();
+  constructor(private store: Store) {
+    this.store.dispatch(SaveActions.loadSave());
 
     document.addEventListener(
       'contextmenu',
       function (e) {
         e.preventDefault();
       },
-      false
+      false,
     );
-  }
-
-  /**
-   * Load the User-Save
-   * a) If the User is logged in, load the data from the database
-   * b) If the User is not logged in, load the data from the local storage
-   */
-  private loadSave(): void {
-    if (
-      !this.authService.userInLocalStorage() &&
-      !this.authService.isLoggedIn
-    ) {
-      this.loadLocalStorageSave();
-      return;
-    }
-
-    this.digimonBackendService
-      .getSave(this.authService.userData!.uid)
-      .pipe(first())
-      .subscribe((save: ISave | null) => {
-        if (!save) {
-          this.retry();
-          this.retryCounter += 1;
-          return;
-        }
-
-        if (save.version !== emptySave.version) {
-          this.showChangelogModal();
-        }
-
-        this.store.dispatch(
-          SaveActions.setsave({ save: { ...save, version: emptySave.version } })
-        );
-        this.toastrService.info(
-          'Your save was loaded successfully!',
-          'Welcome back!'
-        );
-
-        this.spinner = false;
-        this.hide = false;
-      });
-  }
-
-  private retry() {
-    this.spinner = true;
-    this.loadSave();
-  }
-
-  // Check local storage for a backup save, if there is none create a new save
-  private loadLocalStorageSave() {
-    const localStorageSave = localStorage.getItem('Digimon-Card-Collector');
-    this.localStorageSave = localStorageSave
-      ? JSON.parse(localStorageSave)
-      : null;
-
-    if (this.localStorageSave) {
-      this.localStorageSave = this.digimonBackendService.checkSaveValidity(
-        this.localStorageSave,
-        this.authService.userData
-      );
-      this.store.dispatch(
-        SaveActions.setsave({
-          save: { ...this.localStorageSave, version: emptySave.version },
-        })
-      );
-      this.spinner = false;
-      this.hide = false;
-      this.toastrService.info(
-        'Save from browser loaded successfully!',
-        'Welcome back!'
-      );
-      return;
-    }
-
-    this.hide = false;
-    this.spinner = false;
-    this.store.dispatch(SaveActions.setsave({ save: emptySave }));
-    this.toastrService.info(
-      'Welcome to digimoncard.app a new save was created for you!',
-      'Welcome new User'
-    );
-  }
-
-  private showChangelogModal() {
-    this.showChangelog = true;
-    this.loadChangelog.emit(true);
   }
 }

@@ -1,4 +1,4 @@
-import { Location, NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe, Location, NgIf } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -20,46 +20,50 @@ import {
   tap,
 } from 'rxjs';
 import { IDeck, ISave } from '../../../models';
-import { AuthService } from '../../service/auth.service';
-import { DigimonBackendService } from '../../service/digimon-backend.service';
+import { AuthService } from '../../services/auth.service';
+import { DigimonBackendService } from '../../services/digimon-backend.service';
 import {
   selectDecks,
   selectSave,
   selectShowUserStats,
 } from '../../store/digimon.selectors';
-import { DecksComponent } from './decks.component';
-import { DeckFilterComponent } from './deck-filter.component';
-import { UserStatsComponent } from './user-stats.component';
+import { PageComponent } from '../shared/page.component';
+import { DeckFilterComponent } from './components/deck-filter.component';
+import { DecksComponent } from './components/decks.component';
+import { UserStatsComponent } from './components/user-stats.component';
 
 @Component({
   selector: 'digimon-profile-page',
   template: `
-    <div
-      *ngIf="save$ | async as save"
-      class="flex h-[calc(100vh-50px)] w-full flex-col overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d]">
-      <digimon-user-stats
-        *ngIf="showUserStats$ | async"
-        class="mx-auto my-2 h-[150px] w-full max-w-6xl"
-        [save]="save"></digimon-user-stats>
+    <digimon-page *ngIf="save$ | async as save">
+      <div
+        class="flex flex-col self-baseline px-5 max-w-sm sm:max-w-3xl md:max-w-5xl lg:max-w-6xl xl:max-w-7xl mx-auto">
+        <digimon-user-stats
+          *ngIf="showUserStats$ | async"
+          [save]="save"
+          class="mx-auto my-1 w-[calc(100%-3rem)] sm:w-full"></digimon-user-stats>
 
-      <digimon-deck-filter
-        [searchFilter]="searchFilter"
-        [tagFilter]="tagFilter"></digimon-deck-filter>
+        <digimon-deck-filter
+          [searchFilter]="searchFilter"
+          [tagFilter]="tagFilter"
+          class="mx-auto w-[calc(100%-3rem)] sm:w-full"></digimon-deck-filter>
 
-      <digimon-decks
-        class="mx-auto mt-2 w-full max-w-6xl"
-        [editable]="editable"
-        [decks]="filteredDecks"></digimon-decks>
-    </div>
+        <digimon-decks
+          class="mx-auto mt-1 w-full"
+          [editable]="editable"
+          [decks]="filteredDecks"></digimon-decks>
+      </div>
+    </digimon-page>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [
     NgIf,
-    UserStatsComponent,
+    AsyncPipe,
     DeckFilterComponent,
     DecksComponent,
-    AsyncPipe,
+    UserStatsComponent,
+    PageComponent,
   ],
 })
 export class ProfilePageComponent implements OnInit, OnDestroy {
@@ -82,7 +86,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
     private digimonBackendService: DigimonBackendService,
     private store: Store,
     private meta: Meta,
-    private title: Title
+    private title: Title,
   ) {}
 
   ngOnInit() {
@@ -95,9 +99,9 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
         switchMap(() => {
           this.editable = true;
           return this.digimonBackendService.getSave(
-            this.authService.userData!.uid
+            this.authService.userData!.uid,
           );
-        })
+        }),
       ),
       this.route.params.pipe(
         filter((params) => {
@@ -107,15 +111,15 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
           return !!params['id'];
         }),
         switchMap((params) =>
-          this.digimonBackendService.getSave(params['id']).pipe(first())
+          this.digimonBackendService.getSave(params['id']).pipe(first()),
         ),
         tap((save) => {
           this.editable = save.uid === this.authService.userData?.uid;
           this.decks = save?.decks ?? [];
           this.filteredDecks = this.decks;
           this.filterChanges();
-        })
-      )
+        }),
+      ),
     );
 
     this.storeSubscriptions();
@@ -198,7 +202,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
         deck.description?.toLocaleLowerCase().includes(search) ?? false;
       const cardsInText =
         deck.cards.filter((card) =>
-          card.id.toLocaleLowerCase().includes(search)
+          card.id.toLocaleLowerCase().includes(search),
         ).length > 0;
       const colorInText =
         deck.color?.name.toLocaleLowerCase().includes(search) ?? false;

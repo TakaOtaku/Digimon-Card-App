@@ -1,6 +1,9 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base" layer(tailwindcss);
+@import "tailwindcss/components" layer(tailwindcss);
+@import "tailwindcss/utilities" layer(tailwindcss);
+
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
 
 @import 'scrollbar';
 @import 'slider';
@@ -41,6 +44,7 @@ body {
 
 .border-selected {
   border: 2px solid white;
+
   &.White {
     box-shadow: inset 0 0 0px 2px hsl(0deg 0% 0%), 0 0 0 2px hsl(0deg 0% 100%);
     border: none;
@@ -89,17 +93,17 @@ body {
 
 .text-shadow {
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
+  1px 1px 0 #000;
 }
 
 .text-shadow-white {
   text-shadow: -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white,
-    2px 2px 0 white;
+  2px 2px 0 white;
 }
 
 .text-shadow-white-xs {
   text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
-    1px 1px 0 white;
+  1px 1px 0 white;
 }
 
 .Red {
@@ -144,14 +148,14 @@ body {
 
 .Multi {
   background: linear-gradient(
-    90deg,
-    #ef1919 14%,
-    #19a0e3 28%,
-    #ffd619 42%,
-    #19b383 56%,
-    #191919 70%,
-    #8d6fdb 84%,
-    #ffffff 100%
+      90deg,
+      #ef1919 14%,
+      #19a0e3 28%,
+      #ffd619 42%,
+      #19b383 56%,
+      #191919 70%,
+      #8d6fdb 84%,
+      #ffffff 100%
   );
 }
 
@@ -203,6 +207,7 @@ digimon-multi-select {
   padding-left: 100%;
   animation: move 25s linear infinite;
 }
+
 @keyframes move {
   0% {
     transform: translate(0, 0);
@@ -233,4 +238,9 @@ p-dialog::ng-deep {
   justify-content: flex-end;
   overflow: hidden;
   position: relative;
+}
+
+
+.background-darker {
+  background-color: color-mix(in srgb, var(--surface-ground) 50%, black);
 }

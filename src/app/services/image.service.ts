@@ -20,7 +20,7 @@ export class ImageService {
         } else {
           return of(imagePath);
         }
-      })
+      }),
     );
   }
 

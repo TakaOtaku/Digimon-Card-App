@@ -1,44 +1,48 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  HostListener,
   Input,
   OnChanges,
   OnInit,
   SimpleChanges,
 } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { DigimonCard, ICountCard, IDeck, IUser } from '../../../models';
-import { selectDeckDisplayTable } from '../../store/digimon.selectors';
-import { emptyDeck } from '../../store/reducers/digimon.reducers';
-import { DeckDialogComponent } from '../shared/dialogs/deck-dialog.component';
+import { DigimonCard, ICountCard, IDeck, IUser } from '../../../../models';
+import { selectDeckDisplayTable } from '../../../store/digimon.selectors';
+import { emptyDeck } from '../../../store/reducers/digimon.reducers';
+import { DeckDialogComponent } from '../../shared/dialogs/deck-dialog.component';
 import { DialogModule } from 'primeng/dialog';
 import { DecksTableComponent } from './decks-table.component';
 import { PaginatorModule } from 'primeng/paginator';
-import { DeckContainerComponent } from '../shared/deck-container.component';
+import { DeckContainerComponent } from '../../shared/deck-container.component';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'digimon-decks',
   template: `
-    <div
-      *ngIf="(displayTables$ | async) === false; else deckTable"
-      class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-      <digimon-deck-container
-        class="mx-auto min-w-[280px] max-w-[285px]"
-        (click)="showDeckDialog(deck)"
-        (contextmenu)="showDeckDialog(deck)"
-        *ngFor="let deck of decksToShow"
-        [deck]="deck">
-      </digimon-deck-container>
+    <div *ngIf="(displayTables$ | async) === false; else deckTable">
+      <div class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 py-2">
+        <digimon-deck-container
+          class="mx-auto min-w-[280px] max-w-[285px]"
+          (click)="showDeckDialog(deck)"
+          (contextmenu)="showDeckDialog(deck)"
+          *ngFor="let deck of decksToShow"
+          [deck]="deck">
+        </digimon-deck-container>
+      </div>
 
-      <p-paginator
-        (onPageChange)="onPageChange($event)"
-        [first]="first"
-        [rows]="20"
-        [showJumpToPageDropdown]="true"
-        [showPageLinks]="false"
-        [totalRecords]="decks.length"
-        styleClass="border-0 bg-transparent mx-auto"></p-paginator>
+      <div class="flex justify-center w-full">
+        <p-paginator
+          (onPageChange)="onPageChange($event)"
+          [first]="first"
+          [rows]="row"
+          [showJumpToPageDropdown]="true"
+          [showPageLinks]="false"
+          [totalRecords]="decks.length"
+          class="surface-card mx-auto h-8"
+          styleClass="surface-card p-0"></p-paginator>
+      </div>
     </div>
 
     <ng-template #deckTable>
@@ -78,16 +82,15 @@ export class DecksComponent implements OnInit, OnChanges {
   @Input() decks: IDeck[];
   @Input() editable = true;
 
-  decksToShow: IDeck[] = [];
+  row = 24;
 
-  emptyDeck = JSON.parse(JSON.stringify(emptyDeck));
+  decksToShow: IDeck[] = [];
 
   allCards: DigimonCard[] = [];
 
   collection: ICountCard[];
   user: IUser;
 
-  correctUser = false;
   params = '';
 
   first = 0;
@@ -104,13 +107,35 @@ export class DecksComponent implements OnInit, OnChanges {
     if (!this.decks) {
       this.decks = [];
     }
-    this.decksToShow = this.decks.slice(0, 20);
+
+    this.checkScreenWidth(window.innerWidth);
   }
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['decks']?.currentValue) {
-      this.decksToShow = changes['decks'].currentValue.slice(0, 20);
+      this.decksToShow = changes['decks'].currentValue.slice(0, this.row);
     }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    this.checkScreenWidth((event.target as Window).innerWidth);
+  }
+
+  private checkScreenWidth(innerWidth: number) {
+    const xl = innerWidth >= 1280;
+    const lg = innerWidth >= 1024;
+    const md = innerWidth >= 768;
+    if (xl) {
+      this.row = 24;
+    } else if (lg) {
+      this.row = 18;
+    } else if (md) {
+      this.row = 12;
+    } else {
+      this.row = 6;
+    }
+    this.decksToShow = this.decks.slice(0, this.row);
   }
 
   showDeckDialog(deck: IDeck) {
@@ -123,7 +148,7 @@ export class DecksComponent implements OnInit, OnChanges {
     this.page = event.page;
     this.decksToShow = this.decks.slice(
       event.first,
-      (slice ?? 20) * (event.page + 1)
+      (slice ?? this.row) * (event.page + 1),
     );
   }
 }

@@ -4,7 +4,7 @@ import { compareIDs, setColors, setTags } from './digimon-card.functions';
 
 export function stringToDeck(
   deckList: string,
-  allCards: DigimonCard[]
+  allCards: DigimonCard[],
 ): IDeck | null {
   let result: string[] = deckList.split('\n');
 
@@ -134,7 +134,7 @@ function setDeckProperties(deck: IDeck, allCards: DigimonCard[]) {
 
 function findCardById(
   cardId: string,
-  allCards: DigimonCard[]
+  allCards: DigimonCard[],
 ): DigimonCard | undefined {
   return allCards.find((card) => compareIDs(card.id, cardId));
 }

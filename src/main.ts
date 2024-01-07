@@ -35,18 +35,17 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { ToastModule } from 'primeng/toast';
 import { TooltipModule } from 'primeng/tooltip';
 import { AppComponent } from './app/app.component';
-import { ImgFallbackDirective } from './app/directives/ImgFallback.directive';
-import { BlogPageComponent } from './app/features/blog/blog-page.component';
 import { CollectionPageComponent } from './app/features/collection/collection-page.component';
 import { CommunityPageComponent } from './app/features/community/community-page.component';
+import { BlogPageComponent } from './app/features/community/components/blog-page.component';
 import { DeckbuilderPageComponent } from './app/features/deckbuilder/deckbuilder-page.component';
 import { DecksPageComponent } from './app/features/decks/decks-page.component';
 import { HomePageComponent } from './app/features/home/home-page.component';
 import { ProductsComponent } from './app/features/products/products.component.ts';
 import { ProfilePageComponent } from './app/features/profile/profile-page.component';
 import { TestPageComponent } from './app/features/test/test-page.component';
-import { AuthService } from './app/service/auth.service';
-import { DigimonBackendService } from './app/service/digimon-backend.service';
+import { AuthService } from './app/services/auth.service';
+import { DigimonBackendService } from './app/services/digimon-backend.service';
 import { DigimonEffects } from './app/store/digimon.effects';
 import * as DigimonCards from './app/store/reducers/digimon-card.reducers';
 import * as Digimon from './app/store/reducers/digimon.reducers';
@@ -96,7 +95,15 @@ const routes: Routes = [
     component: CollectionPageComponent,
   },
   {
-    path: 'blog/:id',
+    path: 'collection/:userId',
+    component: CollectionPageComponent,
+  },
+  {
+    path: 'community/:id',
+    component: BlogPageComponent,
+  },
+  {
+    path: 'community/new',
     component: BlogPageComponent,
   },
   { path: '**', component: HomePageComponent },
@@ -124,7 +131,7 @@ bootstrapApplication(AppComponent, {
       ToastModule,
       BlockUIModule,
       ProgressSpinnerModule,
-      TooltipModule
+      TooltipModule,
     ),
 
     provideRouter(routes, withPreloading(PreloadAllModules)),
@@ -141,7 +148,7 @@ bootstrapApplication(AppComponent, {
           digimonCards: DigimonCards.initialState,
           save: Save.emptySave,
         },
-      }
+      },
     ),
     provideEffects([DigimonEffects]),
     provideStoreDevtools({

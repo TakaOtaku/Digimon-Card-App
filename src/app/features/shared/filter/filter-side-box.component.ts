@@ -1,4 +1,3 @@
-import { WebsiteActions } from './../../../store/digimon.actions';
 import {
   Component,
   EventEmitter,
@@ -15,7 +14,7 @@ import {
 import { Store } from '@ngrx/store';
 import { MessageService } from 'primeng/api';
 import { MultiSelectModule } from 'primeng/multiselect';
-import { Subject, debounceTime, takeUntil } from 'rxjs';
+import { debounceTime, Subject, takeUntil } from 'rxjs';
 import { itemsAsSelectItem } from 'src/app/functions/digimon-card.functions';
 import { IFilter, Presets } from '../../../../models';
 import {
@@ -32,6 +31,7 @@ import { selectFilter } from '../../../store/digimon.selectors';
 import { emptyFilter } from '../../../store/reducers/digimon.reducers';
 import { RangeSliderComponent } from '../range-slider.component';
 import { SortButtonsComponent } from '../sort-buttons.component';
+import { WebsiteActions } from './../../../store/digimon.actions';
 import { BlockFilterComponent } from './block-filter.component';
 import { CardTypeFilterComponent } from './card-type-filter.component';
 import { ColorFilterComponent } from './color-filter.component';
@@ -60,7 +60,9 @@ import { VersionFilterComponent } from './version-filter.component';
       <digimon-language-filter></digimon-language-filter>
       <digimon-color-filter></digimon-color-filter>
       <digimon-card-type-filter></digimon-card-type-filter>
-      <digimon-set-filter></digimon-set-filter>
+
+      <digimon-set-filter
+        class="mx-auto w-full max-w-[250px]"></digimon-set-filter>
 
       <div class="flex flex-row">
         <digimon-range-slider
@@ -299,7 +301,10 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
   private filter: IFilter;
   private onDestroy$ = new Subject();
 
-  constructor(private store: Store, private messageService: MessageService) {}
+  constructor(
+    private store: Store,
+    private messageService: MessageService,
+  ) {}
 
   ngOnInit(): void {
     this.store
@@ -331,7 +336,7 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
         });
         this.specialRequirementsFilter.setValue(
           filter.specialRequirementsFilter,
-          { emitEvent: false }
+          { emitEvent: false },
         );
         this.restrictionsFilter.setValue(filter.restrictionsFilter, {
           emitEvent: false,
@@ -348,7 +353,7 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
       .pipe(debounceTime(500), takeUntil(this.onDestroy$))
       .subscribe((filterValue) => {
         const filter: IFilter = { ...this.filter, ...filterValue };
-        this.store.dispatch(WebsiteActions.setfilter({ filter }));
+        this.store.dispatch(WebsiteActions.setFilter({ filter }));
       });
   }
 
@@ -359,7 +364,7 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
 
   reset() {
     this.resetEmitter.emit();
-    this.store.dispatch(WebsiteActions.setfilter({ filter: emptyFilter }));
+    this.store.dispatch(WebsiteActions.setFilter({ filter: emptyFilter }));
     this.messageService.add({
       severity: 'info',
       detail: 'All filter were reset.',

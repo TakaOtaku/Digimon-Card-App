@@ -1,9 +1,3 @@
-import { withoutJ } from '../../functions/digimon-card.functions';
-import { dummyCard } from './../../store/reducers/digimon.reducers';
-import {
-  CollectionActions,
-  WebsiteActions,
-} from './../../store/digimon.actions';
 import { AsyncPipe, NgClass, NgIf } from '@angular/common';
 import {
   Component,
@@ -17,10 +11,16 @@ import { FormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { DialogModule } from 'primeng/dialog';
 import { DragDropModule } from 'primeng/dragdrop';
-import { Subject, map, takeUntil } from 'rxjs';
+import { map, Subject, takeUntil } from 'rxjs';
 import { DigimonCard } from '../../../models';
 import { DRAG } from '../../../models/enums/drag.enum';
+import { withoutJ } from '../../functions/digimon-card.functions';
 import { selectDeck, selectSettings } from '../../store/digimon.selectors';
+import {
+  CollectionActions,
+  WebsiteActions,
+} from './../../store/digimon.actions';
+import { dummyCard } from './../../store/reducers/digimon.reducers';
 import { CardImageComponent } from './card-image.component';
 import { ViewCardDialogComponent } from './dialogs/view-card-dialog.component';
 
@@ -60,9 +60,10 @@ import { ViewCardDialogComponent } from './dialogs/view-card-dialog.component';
       </ng-container>
 
       <div
-        *ngIf="collectionMode"
-        class="counter mx-5 flex h-8 w-full flex-row rounded-lg bg-transparent">
+        *ngIf="collectionMode || onlyView"
+        class="flex absolute bottom-2 left-1/2 transform -translate-x-1/2 h-8 w-[calc(100%-1rem)] flex-row rounded-lg bg-transparent">
         <button
+          *ngIf="!onlyView"
           (click)="decreaseCardCount(card.id)"
           class="primary-background h-full w-1/3 cursor-pointer rounded-l text-[#e2e4e6] outline-none">
           <span class="m-auto text-2xl font-thin">−</span>
@@ -70,10 +71,13 @@ import { ViewCardDialogComponent } from './dialogs/view-card-dialog.component';
         <input
           type="number"
           min="0"
+          [ngClass]="{ 'mx-auto': onlyView }"
           class="primary-background text-md flex w-1/3 cursor-default appearance-none items-center text-center font-semibold text-[#e2e4e6] outline-none focus:outline-none md:text-base"
           [(ngModel)]="count"
+          [disabled]="onlyView"
           (change)="changeCardCount($event, card.id)" />
         <button
+          *ngIf="!onlyView"
           (click)="increaseCardCount(card.id)"
           class="primary-background h-full w-1/3 cursor-pointer rounded-r text-[#e2e4e6] outline-none">
           <span class="m-auto text-2xl font-thin">+</span>
@@ -118,8 +122,9 @@ export class FullCardComponent implements OnInit, OnDestroy {
   @Input() deckBuilder?: boolean = false;
   @Input() biggerCards?: boolean = false;
 
-  @Input() deckView: boolean;
   @Input() collectionOnly: boolean = false;
+
+  @Input() onlyView!: boolean;
 
   @Output() viewCard = new EventEmitter<DigimonCard>();
 
@@ -136,8 +141,8 @@ export class FullCardComponent implements OnInit, OnDestroy {
       map(
         (deck) =>
           deck.cards.find((value) => value.id === withoutJ(this.card.id))
-            ?.count ?? 0
-      )
+            ?.count ?? 0,
+      ),
     );
 
   private onDestroy$ = new Subject();
@@ -164,7 +169,7 @@ export class FullCardComponent implements OnInit, OnDestroy {
       return;
     }
     this.store.dispatch(
-      WebsiteActions.addcardtodeck({ addCardToDeck: this.card.id })
+      WebsiteActions.addCardToDeck({ addCardToDeck: this.card.id }),
     );
   }
 
@@ -179,13 +184,13 @@ export class FullCardComponent implements OnInit, OnDestroy {
     }
     const count = event.target.value;
     const newId = withoutJ(id);
-    this.store.dispatch(CollectionActions.setcardcount({ id: newId, count }));
+    this.store.dispatch(CollectionActions.setCardCount({ id: newId, count }));
   }
 
   increaseCardCount(id: string) {
     const count = ++this.count;
     const newId = withoutJ(id);
-    this.store.dispatch(CollectionActions.setcardcount({ id: newId, count }));
+    this.store.dispatch(CollectionActions.setCardCount({ id: newId, count }));
   }
 
   decreaseCardCount(id: string) {
@@ -194,7 +199,7 @@ export class FullCardComponent implements OnInit, OnDestroy {
     }
     const count = --this.count;
     const newId = withoutJ(id);
-    this.store.dispatch(CollectionActions.setcardcount({ id: newId, count }));
+    this.store.dispatch(CollectionActions.setCardCount({ id: newId, count }));
   }
 
   setCardSize(size: number) {
@@ -220,9 +225,9 @@ export class FullCardComponent implements OnInit, OnDestroy {
 
   setDraggedCard(card: DigimonCard) {
     this.store.dispatch(
-      WebsiteActions.setdraggedcard({
+      WebsiteActions.setDraggedCard({
         dragCard: { card: card, drag: DRAG.Collection },
-      })
+      }),
     );
   }
 

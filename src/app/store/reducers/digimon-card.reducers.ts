@@ -14,16 +14,16 @@ export const initialState: IDigimonCards = {
 
 export const digimonCardReducer = createReducer(
   initialState,
-  on(DigimonActions.setdigimoncards, (state, { digimonCards }) => ({
+  on(DigimonActions.setDigimonCards, (state, { digimonCards }) => ({
     ...state,
     allCards: digimonCards,
   })),
-  on(DigimonActions.setdigimoncardmap, (state, { digimonCardMap }) => ({
+  on(DigimonActions.setDigimonCardMap, (state, { digimonCardMap }) => ({
     ...state,
     digimonCardMap: digimonCardMap,
   })),
-  on(DigimonActions.setfiltereddigimoncards, (state, { filteredCards }) => ({
+  on(DigimonActions.setFilteredDigimonCards, (state, { filteredCards }) => ({
     ...state,
     filteredCards,
-  }))
+  })),
 );

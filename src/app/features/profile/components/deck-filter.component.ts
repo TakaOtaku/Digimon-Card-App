@@ -4,20 +4,20 @@ import {
   FormsModule,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { TAGS } from '../../../models';
+import { TAGS } from '../../../../models';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { InputTextModule } from 'primeng/inputtext';
 
 @Component({
   selector: 'digimon-deck-filter',
   template: `
-    <div class="mx-auto my-1 flex max-w-6xl flex-row border border-slate-200">
-      <div class="my-1 flex w-full flex-col px-2">
+    <div class="mx-auto flex flex-row">
+      <div class="flex w-full flex-col sm:pr-2">
         <span class="p-input-icon-left w-full">
           <i class="pi pi-search h-3"></i>
           <input
             [formControl]="searchFilter"
-            class="w-full text-xs"
+            class="text-xs w-full"
             pInputText
             placeholder="Search (Title, Description, Card-Ids, Color)"
             type="text" />
@@ -30,8 +30,8 @@ import { InputTextModule } from 'primeng/inputtext';
         defaultLabel="Select a Tag"
         display="chip"
         scrollHeight="250px"
-        class="mx-auto my-1 w-full max-w-[250px]"
-        styleClass="w-full h-[34px] text-sm max-w-[250px]">
+        class="mx-auto max-w-[250px]"
+        styleClass="h-[34px] text-sm max-w-[250px]">
       </p-multiSelect>
     </div>
   `,

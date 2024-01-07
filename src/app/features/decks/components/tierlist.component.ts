@@ -1,23 +1,30 @@
+import { NgClass, NgFor, NgStyle } from '@angular/common';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { DragDropModule } from 'primeng/dragdrop';
-import { ListboxModule } from 'primeng/listbox';
-import { WebsiteActions } from './../../../store/digimon.actions';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { JAPTIERLIST, TIERLIST } from '../../../../models';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
-import { TooltipModule } from 'primeng/tooltip';
-import { NgFor, NgClass, NgStyle } from '@angular/common';
-import { RippleModule } from 'primeng/ripple';
+import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
+import { DialogModule } from 'primeng/dialog';
+import { DragDropModule } from 'primeng/dragdrop';
+import { InputTextModule } from 'primeng/inputtext';
+import { ListboxModule } from 'primeng/listbox';
+import { RippleModule } from 'primeng/ripple';
+import { TooltipModule } from 'primeng/tooltip';
+import { first } from 'rxjs';
+import { JAPTIERLIST, TIERLIST } from '../../../../models';
+import { WebsiteActions } from '../../../store/digimon.actions';
+import { selectAllCards } from '../../../store/digimon.selectors';
+import { emptyDeck } from '../../../store/reducers/digimon.reducers';
+import { DeckDialogComponent } from '../../shared/dialogs/deck-dialog.component';
 
 @Component({
   selector: 'digimon-tierlist',
   template: `
     <div class="mb-5 w-full p-1">
       <h1
-        class="main-font mb-2 w-full text-center text-3xl font-extrabold uppercase text-[#e2e4e6]">
+        class="main-font mb-2 w-full text-3xl font-extrabold uppercase text-[#e2e4e6]">
         Digimon Archtype Ranking
         <span
           class="surface-card ml-auto inline-block whitespace-nowrap rounded border border-black px-2.5 py-1.5 text-center align-baseline font-bold leading-none text-[#e2e4e6]"
@@ -37,6 +44,13 @@ import { ButtonModule } from 'primeng/button';
           pRipple
           type="button"
           (click)="copyTierlist()"></button>
+        <button
+          class="p-button-outlined p-button-rounded p-button-sm mx-2"
+          icon="pi pi-plus"
+          pButton
+          pRipple
+          type="button"
+          (click)="archtypeDialog = true"></button>
       </h1>
 
       <div
@@ -73,6 +87,23 @@ import { ButtonModule } from 'primeng/button';
         </p-listbox>
       </div>
     </div>
+
+    <p-dialog
+      header="Add Archtype"
+      [(visible)]="archtypeDialog"
+      [modal]="true"
+      [dismissableMask]="true"
+      [resizable]="false"
+      styleClass="w-full h-full max-w-6xl"
+      [baseZIndex]="10000">
+      <span>Add the card id that represents the deck you want to add</span>
+      <input
+        type="text"
+        pInputText
+        [(ngModel)]="cardId"
+        placeholder="BT1-001" />
+      <p-button (click)="addDeck()">Add</p-button>
+    </p-dialog>
   `,
   styleUrls: ['./tierlist.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -88,6 +119,9 @@ import { ButtonModule } from 'primeng/button';
     DragDropModule,
     ListboxModule,
     FormsModule,
+    DialogModule,
+    DeckDialogComponent,
+    InputTextModule,
   ],
 })
 export class TierlistComponent {
@@ -105,11 +139,20 @@ export class TierlistComponent {
   startTier: number = 0;
   selectedDeck: any;
 
-  constructor(private store: Store, private router: Router) {}
+  archtypeDialog = false;
+  cardId: string;
+  protected readonly emptyDeck = emptyDeck;
+
+  private messageService = inject(MessageService);
+
+  constructor(
+    private store: Store,
+    private router: Router,
+  ) {}
 
   openCommunityWithSearch(card: string) {
     this.store.dispatch(
-      WebsiteActions.setcommunitydecksearch({ communityDeckSearch: card })
+      WebsiteActions.setCommunityDeckSearch({ communityDeckSearch: card }),
     );
     this.router.navigateByUrl('/decks');
   }
@@ -144,5 +187,27 @@ export class TierlistComponent {
   copyTierlist() {
     const tierlistJson = JSON.stringify(this.tierlist);
     navigator.clipboard.writeText(tierlistJson);
+  }
+
+  addDeck() {
+    this.store
+      .select(selectAllCards)
+      .pipe(first())
+      .subscribe((cards) => {
+        const card = cards.find((card) => card.id === this.cardId);
+        if (card) {
+          const deck = {
+            name: card.name.english,
+            card: card.id,
+            image: card.cardImage,
+          };
+          this.tierlist[0].push(deck);
+        } else {
+          this.messageService.add({
+            severity: 'error',
+            summary: 'Card ID not found.',
+          });
+        }
+      });
   }
 }

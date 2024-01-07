@@ -1,37 +1,58 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { AsyncPipe, NgIf } from '@angular/common';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
-import { CardListComponent } from './components/card-list.component';
+import { ActivatedRoute } from '@angular/router';
+import { map, of, switchMap } from 'rxjs';
+import { DigimonBackendService } from '../../services/digimon-backend.service';
+import { emptySave } from '../../store/reducers/save.reducer';
 import { FilterAndSearchComponent } from '../shared/filter/filter-and-search.component';
-import { CollectionViewComponent } from './components/collection-view.component';
+import { PageComponent } from '../shared/page.component';
+import { CardListComponent } from './components/card-list.component';
+import { PaginationCardListComponent } from './components/pagination-card-list.component';
 
 @Component({
   selector: 'digimon-collection-page',
   template: `
-    <div class="bg-gradient-to-b from-[#17212f] to-[#08528d] ">
-      <div class="hidden md:block">
-        <digimon-collection-view
-          [collectionOnly]="true"
-          [deckView]="false"></digimon-collection-view>
-      </div>
-
-      <div class="md:hidden">
-        <digimon-filter-and-search></digimon-filter-and-search>
-        <digimon-card-list
-          [collectionOnly]="true"
-          [showCount]="32"></digimon-card-list>
-      </div>
-    </div>
+    <digimon-page *ngIf="checkUrl$ | async as collection">
+      <digimon-pagination-card-list
+        [collectionOnly]="true"
+        [inputCollection]="collection"
+        class="w-screen lg:w-[calc(100vw-6.5rem)]"></digimon-pagination-card-list>
+    </digimon-page>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [
-    CollectionViewComponent,
     FilterAndSearchComponent,
     CardListComponent,
+    PaginationCardListComponent,
+    PageComponent,
+    AsyncPipe,
+    NgIf,
   ],
 })
 export class CollectionPageComponent implements OnInit {
-  constructor(private meta: Meta, private title: Title) {}
+  meta = inject(Meta);
+  title = inject(Title);
+
+  private digimonBackendService = inject(DigimonBackendService);
+  private route = inject(ActivatedRoute);
+
+  checkUrl$ = this.route.params.pipe(
+    switchMap((params) => {
+      if (params['userId']) {
+        return this.digimonBackendService.getSave(params['userId']);
+      } else {
+        return of(emptySave);
+      }
+    }),
+    map((save) => save.collection),
+  );
 
   ngOnInit(): void {
     this.makeGoogleFriendly();

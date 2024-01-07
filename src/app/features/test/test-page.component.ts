@@ -1,8 +1,12 @@
+import { NgIf } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { FormsModule } from '@angular/forms';
 
 // @ts-ignore
 import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 import { Store } from '@ngrx/store';
+import { DialogModule } from 'primeng/dialog';
 import { concat, first, Observable, Subject, switchMap, tap } from 'rxjs';
 import {
   ADMINS,
@@ -16,14 +20,11 @@ import {
   setDeckImage,
   setTags,
 } from '../../functions/digimon-card.functions';
-import { AuthService } from '../../service/auth.service';
-import { CardMarketService } from '../../service/card-market.service';
-import { DatabaseService } from '../../service/database.service';
-import { DigimonBackendService } from '../../service/digimon-backend.service';
+import { AuthService } from '../../services/auth.service';
+import { CardMarketService } from '../../services/card-market.service';
+import { DatabaseService } from '../../services/database.service';
+import { DigimonBackendService } from '../../services/digimon-backend.service';
 import { selectAllCards } from '../../store/digimon.selectors';
-import { FormsModule } from '@angular/forms';
-import { DialogModule } from 'primeng/dialog';
-import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'digimon-test-page',
@@ -107,7 +108,8 @@ export class TestPageComponent implements OnInit, OnDestroy {
     public authService: AuthService,
     private databaseService: DatabaseService,
     private digimonBackendService: DigimonBackendService,
-    private cardMarketService: CardMarketService
+    private cardMarketService: CardMarketService,
+    private fireAuth: AngularFirestore,
   ) {
     //cardTraderService.getCardPrices().subscribe((value) => {
     //  //fs.writeFileSync('./price-data-cardtrader.json', value, {
@@ -151,28 +153,6 @@ export class TestPageComponent implements OnInit, OnDestroy {
       });
   }
 
-  private updateDecks(save: ISave) {
-    const newDecks: IDeck[] = save.decks.map((deck) => {
-      const tags = setTags(deck, this.allCards);
-      const color = setColors(deck, this.allCards);
-
-      return {
-        ...deck,
-        tags,
-        color,
-        imageCardId:
-          !deck.imageCardId || deck.imageCardId === 'BT1-001'
-            ? setDeckImage(deck, this.allCards).id
-            : deck.imageCardId,
-        date: !deck.date ? new Date().toString() : deck.date,
-      };
-    });
-    const newSave: ISave = { ...save, decks: newDecks };
-    if (save != newSave) {
-      this.digimonBackendService.updateSave(newSave).pipe(first()).subscribe();
-    }
-  }
-
   updatePriceGuideIds() {
     this.cardMarketService.getPrizeGuide().subscribe((priceGuide: any[]) => {
       const observable: Observable<any>[] = [];
@@ -182,7 +162,7 @@ export class TestPageComponent implements OnInit, OnDestroy {
           .pipe(
             switchMap((id) => {
               return this.cardMarketService.updateProductId(id, entry);
-            })
+            }),
           )
           .subscribe();
       });
@@ -208,7 +188,7 @@ export class TestPageComponent implements OnInit, OnDestroy {
           .sort((a, b) =>
             b.cardId
               .toLocaleLowerCase()
-              .localeCompare(a.cardId.toLocaleLowerCase())
+              .localeCompare(a.cardId.toLocaleLowerCase()),
           );
 
         const ArrayObject: any = {};
@@ -234,9 +214,9 @@ export class TestPageComponent implements OnInit, OnDestroy {
               this.cardMarketService
                 .updateProductId(
                   ArrayObject[key][0].cardId + `1`,
-                  ArrayObject[key][0]
+                  ArrayObject[key][0],
                 )
-                .pipe(first())
+                .pipe(first()),
             );
             delete ArrayObject[key];
           }
@@ -289,12 +269,35 @@ export class TestPageComponent implements OnInit, OnDestroy {
               obsArray$.push(of);
             }
           });
-        })
+        }),
       )
       .subscribe((decks) => {
         concat(...obsArray$).subscribe();
       });
   }
+
+  private updateDecks(save: ISave) {
+    const newDecks: IDeck[] = save.decks.map((deck) => {
+      const tags = setTags(deck, this.allCards);
+      const color = setColors(deck, this.allCards);
+
+      return {
+        ...deck,
+        tags,
+        color,
+        imageCardId:
+          !deck.imageCardId || deck.imageCardId === 'BT1-001'
+            ? setDeckImage(deck, this.allCards).id
+            : deck.imageCardId,
+        date: !deck.date ? new Date().toString() : deck.date,
+      };
+    });
+    const newSave: ISave = { ...save, decks: newDecks };
+    if (save != newSave) {
+      this.digimonBackendService.updateSave(newSave).pipe(first()).subscribe();
+    }
+  }
+
   private updateDeck(deck: IDeck): Observable<any> | null {
     let error = false;
     let newDecks: IDeck = deck;
@@ -313,6 +316,7 @@ export class TestPageComponent implements OnInit, OnDestroy {
           .pipe(first())
       : null;
   }
+
   private updateTournamentDeck(deck: ITournamentDeck): Observable<any> | null {
     let error = false;
     let newDecks: ITournamentDeck = deck;

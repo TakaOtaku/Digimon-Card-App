@@ -18,6 +18,7 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DialogModule } from 'primeng/dialog';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
@@ -27,7 +28,6 @@ import { first } from 'rxjs';
 import * as uuid from 'uuid';
 
 import {
-  CARDSET,
   DigimonCard,
   IDeck,
   IDeckCard,
@@ -37,8 +37,8 @@ import {
   mapToDeckCards,
   setDeckImage,
 } from '../../../functions/digimon-card.functions';
-import { AuthService } from '../../../service/auth.service';
-import { DigimonBackendService } from '../../../service/digimon-backend.service';
+import { AuthService } from '../../../services/auth.service';
+import { DigimonBackendService } from '../../../services/digimon-backend.service';
 import { selectAllCards } from '../../../store/digimon.selectors';
 import { DeckCardComponent } from '../deck-card.component';
 import { ChartContainersComponent } from '../statistics/chart-containers.component';
@@ -278,6 +278,16 @@ export interface DigimonCardImage {
         [inputDeck]="deck"
         (onClose)="deckSubmissionDialog = false"></digimon-deck-submission>
     </p-dialog>
+
+    <p-confirmDialog
+      header="Open Deck"
+      rejectButtonStyleClass="p-button-outlined"></p-confirmDialog>
+
+    <p-confirmDialog
+      header="Delete Confirmation"
+      icon="pi pi-exclamation-triangle"
+      key="Delete"
+      rejectButtonStyleClass="p-button-outlined"></p-confirmDialog>
   `,
   standalone: true,
   imports: [
@@ -297,6 +307,7 @@ export interface DigimonCardImage {
     DialogModule,
     ExportDeckDialogComponent,
     DeckSubmissionComponent,
+    ConfirmDialogModule,
   ],
   providers: [MessageService],
 })
@@ -334,7 +345,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
     private router: Router,
     private digimonBackendService: DigimonBackendService,
     private confirmationService: ConfirmationService,
-    private messageService: MessageService
+    private messageService: MessageService,
   ) {
     this.store
       .select(selectAllCards)
@@ -362,7 +373,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
       title: new UntypedFormControl(this.deck.title),
       description: new UntypedFormControl(this.deck.description),
       cardImage: new UntypedFormControl(
-        this.getCardImage(this.deck.imageCardId)
+        this.getCardImage(this.deck.imageCardId),
       ),
     });
 
@@ -373,10 +384,10 @@ export class DeckDialogComponent implements OnInit, OnChanges {
     if (this.editable) {
       if (this.authService.isLoggedIn) {
         this.router.navigateByUrl(
-          `deckbuilder/user/${this.authService.userData?.uid}/deck/${this.deck.id}`
+          `deckbuilder/user/${this.authService.userData?.uid}/deck/${this.deck.id}`,
         );
       } else {
-        this.store.dispatch(WebsiteActions.setdeck({ deck: this.deck }));
+        this.store.dispatch(WebsiteActions.setDeck({ deck: this.deck }));
         this.router.navigateByUrl('deckbuilder');
       }
     } else {
@@ -385,12 +396,12 @@ export class DeckDialogComponent implements OnInit, OnChanges {
         message: 'You are about to open this deck. Are you sure?',
         accept: () => {
           this.store.dispatch(
-            WebsiteActions.setdeck({
+            WebsiteActions.setDeck({
               deck: this.deck,
-            })
+            }),
           );
           this.router.navigateByUrl(
-            '/deckbuilder/user/' + this.deck.userId + '/deck/' + this.deck.id
+            '/deckbuilder/user/' + this.deck.userId + '/deck/' + this.deck.id,
           );
         },
       });
@@ -442,7 +453,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
         this.store.dispatch(
           DeckActions.import({
             deck: { ...this.deck, id: uuid.v4() },
-          })
+          }),
         );
         this.messageService.add({
           severity: 'success',

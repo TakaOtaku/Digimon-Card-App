@@ -8,13 +8,14 @@ import {
   ITournamentDeck,
   tagsList,
 } from '../../models';
+import { ReleaseOrder } from '../../models/data/release-order.data';
 import { ColorOrderMap, DeckColorMap } from '../../models/maps/color.map';
 import { dummyCard } from '../store/reducers/digimon.reducers';
 
 export function setTags(deck: IDeck, allCards: DigimonCard[]) {
   let tags = [];
 
-  tags.push(setNewestSet(deck.cards));
+  tags = setNewestSet(deck.cards);
 
   if (bannedCardsIncluded(deck.cards, allCards)) {
     tags.push({ name: 'Illegal', color: 'Primary' });
@@ -28,48 +29,8 @@ export function setTags(deck: IDeck, allCards: DigimonCard[]) {
   return tags;
 }
 
-export function setNewestSet(cards: ICountCard[]): ITag {
-  const releaseOrder = [
-    'EX06',
-    'BT16',
-    'ST17',
-    'BT15',
-    'EX05',
-    'BT14',
-    'ST16',
-    'ST15',
-    'RB1',
-    'BT13',
-    'EX4',
-    'BT12',
-    'ST14',
-    'BT11',
-    'EX3',
-    'BT10',
-    'ST13',
-    'ST12',
-    'BT9',
-    'EX2',
-    'BT8',
-    'ST10',
-    'ST9',
-    'BT7',
-    'EX1',
-    'BT6',
-    'ST8',
-    'ST7',
-    'BT5',
-    'BT4',
-    'ST6',
-    'ST5',
-    'ST4',
-    'BT3',
-    'BT2',
-    'BT1',
-    'ST3',
-    'ST2',
-    'ST1',
-  ];
+export function setNewestSet(cards: ICountCard[]): ITag[] {
+  const releaseOrder = ReleaseOrder;
   let set = '';
   releaseOrder.forEach((value) => {
     if (set) {
@@ -82,14 +43,13 @@ export function setNewestSet(cards: ICountCard[]): ITag {
       set = value;
     }
   });
-  return (
-    tagsList.find((tag) => tag.name === set) ?? { name: '', color: 'Primary' }
-  );
+  const newestTag = tagsList.find((tag) => tag.name === set);
+  return newestTag ? [newestTag] : [];
 }
 
 export function bannedCardsIncluded(
   cards: ICountCard[],
-  allCards: DigimonCard[]
+  allCards: DigimonCard[],
 ): boolean {
   let banned = false;
   if (!cards) {
@@ -111,7 +71,7 @@ export function bannedCardsIncluded(
 
 export function tooManyRestrictedCardsIncluded(
   cards: ICountCard[],
-  allCards: DigimonCard[]
+  allCards: DigimonCard[],
 ): boolean {
   let restricted = false;
   if (!cards) {
@@ -133,7 +93,16 @@ export function tooManyRestrictedCardsIncluded(
 }
 
 export function setColors(deck: IDeck, allCards: DigimonCard[]) {
+  if (deck.cards.length === 0) {
+    return ['White', { name: 'White', img: 'assets/images/decks/white.svg' }];
+  }
+
   const cards: IDeckCard[] = mapToDeckCards(deck.cards, allCards);
+
+  if (!cards) {
+    return ['White', { name: 'White', img: 'assets/images/decks/white.svg' }];
+  }
+
   const colorArray = [
     { name: 'Red', count: 0 },
     { name: 'Blue', count: 0 },
@@ -143,9 +112,7 @@ export function setColors(deck: IDeck, allCards: DigimonCard[]) {
     { name: 'Purple', count: 0 },
     { name: 'White', count: 0 },
   ];
-  if (!cards) {
-    return ['White', { name: 'White', img: 'assets/images/decks/white.svg' }];
-  }
+
   cards.forEach((card) => {
     colorArray.forEach((color, index) => {
       if (card.color && card.color.includes(color.name)) {
@@ -155,7 +122,7 @@ export function setColors(deck: IDeck, allCards: DigimonCard[]) {
   });
 
   const highest = colorArray.reduce((prev, current) =>
-    prev.count > current.count ? prev : current
+    prev.count > current.count ? prev : current,
   );
   return DeckColorMap.get(highest.name);
 }
@@ -230,7 +197,7 @@ export function sortColors(colorA: string, colorB: string): number {
 
 export function mapToDeckCards(
   cards: ICountCard[],
-  allCards: DigimonCard[]
+  allCards: DigimonCard[],
 ): IDeckCard[] {
   const deckCards: IDeckCard[] = [];
 
@@ -257,7 +224,7 @@ export function mapToDeckCards(
 }
 
 export function getCountFromDeckCards(
-  deckCards: IDeckCard[] | ICountCard[]
+  deckCards: IDeckCard[] | ICountCard[],
 ): number {
   let number = 0;
   deckCards.forEach((card) => {
@@ -268,7 +235,7 @@ export function getCountFromDeckCards(
 
 export function setDeckImage(
   deck: IDeck | ITournamentDeck,
-  allCards: DigimonCard[]
+  allCards: DigimonCard[],
 ): DigimonCard {
   if (deck.cards && deck.cards.length === 0) {
     return JSON.parse(JSON.stringify(dummyCard));
@@ -286,7 +253,7 @@ export function setDeckImage(
     deckCards = deckCards.sort(
       (a, b) =>
         Number(b.cardLv.replace('Lv.', '')) -
-        Number(a.cardLv.replace('Lv.', ''))
+        Number(a.cardLv.replace('Lv.', '')),
     );
   } catch (e) {}
 
@@ -296,7 +263,7 @@ export function setDeckImage(
 }
 
 export function itemsAsSelectItem(array: string[]): ISelectItem[] {
-  return array.map((item) => ({ label: item, value: item } as ISelectItem));
+  return array.map((item) => ({ label: item, value: item }) as ISelectItem);
 }
 
 export function withoutJ(id: string): string {

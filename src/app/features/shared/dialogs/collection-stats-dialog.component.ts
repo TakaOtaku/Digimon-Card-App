@@ -117,7 +117,7 @@ export class CollectionStatsDialogComponent implements OnInit, OnChanges {
   private getBoosterCards(type: string): number[] {
     //const allCards = this.filterLanguageAllCards();
     const set = this.digimonCards.filter((card) =>
-      card.cardNumber.includes(type)
+      card.cardNumber.includes(type),
     );
 
     //const collection = this.filterLanguageCollection();

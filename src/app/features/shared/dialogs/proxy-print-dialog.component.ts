@@ -53,7 +53,7 @@ export class ProxyPrintDialogComponent implements OnInit, OnDestroy {
       .subscribe((cards) => (this.digimonCards = cards));
 
     this.generateCanvas(
-      document.getElementById('HDCanvas')! as HTMLCanvasElement
+      document.getElementById('HDCanvas')! as HTMLCanvasElement,
     );
   }
 
@@ -89,7 +89,7 @@ export class ProxyPrintDialogComponent implements OnInit, OnDestroy {
           myOptions.x * scale,
           myOptions.y * scale,
           myOptions.sw * scale,
-          myOptions.sh * scale
+          myOptions.sh * scale,
         );
 
         imgs = this.getImages();
@@ -107,7 +107,7 @@ export class ProxyPrintDialogComponent implements OnInit, OnDestroy {
           myOptions.x * scale,
           myOptions.y * scale,
           myOptions.sw * scale,
-          myOptions.sh * scale
+          myOptions.sh * scale,
         );
         loadedCount += 1;
       });
@@ -139,7 +139,7 @@ export class ProxyPrintDialogComponent implements OnInit, OnDestroy {
     const cardsPerRow = 9;
     this.deck.cards.forEach((card) => {
       const fullCard = this.digimonCards.find((search: DigimonCard) =>
-        compareIDs(card.id, search.id)
+        compareIDs(card.id, search.id),
       );
       imgs.push({
         uri: fullCard!.cardImage,

@@ -1,9 +1,20 @@
-import { ChangeDetectionStrategy, Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ChartModule } from 'primeng/chart';
 import { combineLatestWith, first, Subject } from 'rxjs';
-import { DigimonCard, ICountCard } from '../../../models';
-import { selectAllCards, selectSettings } from '../../store/digimon.selectors';
+import { DigimonCard, ICountCard } from '../../../../models';
+import {
+  selectAllCards,
+  selectSettings,
+} from '../../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-collection-circle',
@@ -64,13 +75,22 @@ export class CollectionCircleComponent implements OnInit, OnChanges, OnDestroy {
 
         let setCards = normalCards.filter(
           (card: DigimonCard) =>
-            card.id.includes('-') && card.id.includes(this.type)
+            card.id.includes('-') && card.id.includes(this.type),
         );
 
+        // Remove AA cards from being counted for the circle
         if (settings.aaCollectionMinimum === 0) {
           setCards = setCards.filter(
-            (card: DigimonCard) => card.version === 'Normal'
+            (card: DigimonCard) => card.version === 'Normal',
           );
+        }
+
+        // Filter our cards that are collected from the settings
+        if (settings.collectionSets.length > 0) {
+          setCards = setCards.filter((card: DigimonCard) => {
+            const cardSet = card.id.split('-')[0];
+            return settings.collectionSets.includes(cardSet);
+          });
         }
 
         const setCardsCollected = setCards.filter((card: DigimonCard) =>
@@ -84,7 +104,7 @@ export class CollectionCircleComponent implements OnInit, OnChanges, OnDestroy {
             }
 
             return colCard.count >= settings.collectionMinimum;
-          })
+          }),
         );
 
         const collectionColors = this.getColorCardArray(setCardsCollected);
@@ -142,12 +162,12 @@ export class CollectionCircleComponent implements OnInit, OnChanges, OnDestroy {
     const red = cards.filter((card) => card.color.startsWith('Red')).length;
     const blue = cards.filter((card) => card.color.startsWith('Blue')).length;
     const yellow = cards.filter((card) =>
-      card.color.startsWith('Yellow')
+      card.color.startsWith('Yellow'),
     ).length;
     const green = cards.filter((card) => card.color.startsWith('Green')).length;
     const black = cards.filter((card) => card.color.startsWith('Black')).length;
     const purple = cards.filter((card) =>
-      card.color.startsWith('Purple')
+      card.color.startsWith('Purple'),
     ).length;
     const white = cards.filter((card) => card.color.startsWith('White')).length;
 

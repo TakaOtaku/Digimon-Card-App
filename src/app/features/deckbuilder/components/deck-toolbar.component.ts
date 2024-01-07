@@ -1,4 +1,3 @@
-import { WebsiteActions } from './../../../store/digimon.actions';
 import { NgClass, NgFor } from '@angular/common';
 import {
   ChangeDetectionStrategy,
@@ -12,15 +11,17 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DialogModule } from 'primeng/dialog';
 import { TooltipModule } from 'primeng/tooltip';
 import { BehaviorSubject, Subject, takeUntil } from 'rxjs';
 import * as uuid from 'uuid';
 import { DigimonCard, IDeck, IDeckCard } from '../../../../models';
-import { AuthService } from '../../../service/auth.service';
+import { AuthService } from '../../../services/auth.service';
 import { selectAllCards } from '../../../store/digimon.selectors';
 import { ExportDeckDialogComponent } from '../../shared/dialogs/export-deck-dialog.component';
 import { ImportDeckDialogComponent } from '../../shared/dialogs/import-deck-dialog.component';
+import { WebsiteActions } from './../../../store/digimon.actions';
 import { PriceCheckDialogComponent } from './price-check-dialog.component';
 
 @Component({
@@ -172,6 +173,12 @@ import { PriceCheckDialogComponent } from './price-check-dialog.component';
       [resizable]="false">
       <digimon-import-deck-dialog></digimon-import-deck-dialog>
     </p-dialog>
+
+    <p-confirmDialog
+      header="New Deck Confirmation"
+      icon="pi pi-file"
+      key="NewDeck"
+      rejectButtonStyleClass="p-button-outlined"></p-confirmDialog>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
@@ -184,6 +191,7 @@ import { PriceCheckDialogComponent } from './price-check-dialog.component';
     NgFor,
     ExportDeckDialogComponent,
     ImportDeckDialogComponent,
+    ConfirmDialogModule,
   ],
   providers: [MessageService],
 })
@@ -216,7 +224,7 @@ export class DeckToolbarComponent implements OnDestroy {
     private messageService: MessageService,
     private store: Store,
     private route: Router,
-    private authService: AuthService
+    private authService: AuthService,
   ) {
     this.store
       .select(selectAllCards)
@@ -276,10 +284,10 @@ export class DeckToolbarComponent implements OnDestroy {
       message:
         'You are about to clear all cards in the deck and make a new one. Are you sure?',
       accept: () => {
-        this.store.dispatch(WebsiteActions.createnewdeck({ uuid: uuid.v4() }));
+        this.store.dispatch(WebsiteActions.createNewDeck({ uuid: uuid.v4() }));
         if (this.authService.userData?.uid) {
           this.route.navigateByUrl(
-            `deckbuilder/user/${this.authService.userData?.uid}/deck/${this.deck.id}`
+            `deckbuilder/user/${this.authService.userData?.uid}/deck/${this.deck.id}`,
           );
         }
         this.messageService.add({
@@ -316,10 +324,12 @@ export class DeckToolbarComponent implements OnDestroy {
     this.didMulligan = false;
 
     this.allDeckCards = DeckToolbarComponent.shuffle(
-      this.deck.cards.map((card) => this.allCards.find((a) => a.id === card.id))
+      this.deck.cards.map((card) =>
+        this.allCards.find((a) => a.id === card.id),
+      ),
     );
     this.allDeckCards = this.allDeckCards.filter(
-      (card) => card.cardType !== 'Digi-Egg'
+      (card) => card.cardType !== 'Digi-Egg',
     );
 
     this.securityStack = this.allDeckCards.slice(0, 5);

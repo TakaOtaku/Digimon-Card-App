@@ -1,4 +1,4 @@
-import { createActionGroup, props } from '@ngrx/store';
+import { createActionGroup, emptyProps, props } from '@ngrx/store';
 import {
   ICountCard,
   IDeck,
@@ -9,7 +9,7 @@ import {
 } from '../../models';
 import { IBlog } from '../../models/interfaces/blog-entry.interface';
 import { DigimonCard } from '../../models/interfaces/digimon-card.interface';
-import { ProductCM } from '../service/card-market.service';
+import { ProductCM } from '../services/card-market.service';
 
 export const DigimonActions = createActionGroup({
   source: 'Digimon Cards',
@@ -45,6 +45,8 @@ export const WebsiteActions = createActionGroup({
     }>(),
     setCommunityDeckSearch: props<{ communityDeckSearch: string }>(),
     setCommunityDecks: props<{ communityDecks: IDeck[] }>(),
+    loadCommunityDecks: emptyProps(),
+    loadBlogs: emptyProps(),
     setBlogs: props<{ blogs: IBlog[] }>(),
     setDraggedCard: props<{ dragCard: IDraggedCard }>(),
     addCardToDeck: props<{ addCardToDeck: string }>(),
@@ -57,6 +59,7 @@ export const WebsiteActions = createActionGroup({
 export const SaveActions = createActionGroup({
   source: 'Save',
   events: {
+    loadSave: emptyProps(),
     getSave: props<{ save: ISave }>(),
     setSave: props<{ save: ISave }>(),
     setCollection: props<{ collection: ICountCard[] }>(),

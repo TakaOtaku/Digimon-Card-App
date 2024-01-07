@@ -11,8 +11,11 @@ import { BehaviorSubject, first } from 'rxjs';
 import { DigimonCard, IDeck, ITournamentDeck } from '../../../models';
 import { ColorMap } from '../../../models/maps/color.map';
 import { setDeckImage } from '../../functions/digimon-card.functions';
-import { ImageService } from '../../service/image.service';
-import { selectAllCards, selectDigimonCardMap } from '../../store/digimon.selectors';
+import { ImageService } from '../../services/image.service';
+import {
+  selectAllCards,
+  selectDigimonCardMap,
+} from '../../store/digimon.selectors';
 
 @Component({
   selector: 'digimon-deck-container',
@@ -61,7 +64,7 @@ import { selectAllCards, selectDigimonCardMap } from '../../store/digimon.select
               {{ deck.user }}
             </div>
             <div class="ml-auto font-bold">
-              {{ deck.date | date : 'dd.MM.YY' }}
+              {{ deck.date | date: 'dd.MM.YY' }}
             </div>
           </div>
           <ng-template #tournament>
@@ -77,7 +80,7 @@ import { selectAllCards, selectDigimonCardMap } from '../../store/digimon.select
                 {{ getTournamentDeck(deck).size }}
               </div>
               <div class="ml-auto font-bold">
-                {{ getTournamentDeck(deck).date | date : 'dd.MM.YY' }}
+                {{ getTournamentDeck(deck).date | date: 'dd.MM.YY' }}
               </div>
             </div>
           </ng-template>
@@ -94,7 +97,7 @@ export class DeckContainerComponent implements OnInit {
   @Input() deck: IDeck | ITournamentDeck;
   @Input() mode = 'Basic';
   cardImageSubject$ = new BehaviorSubject<string>(
-    '../../../assets/images/digimon-card-back.webp'
+    '../../../assets/images/digimon-card-back.webp',
   );
 
   digimonCardMap$ = this.store.select(selectDigimonCardMap);
@@ -103,7 +106,10 @@ export class DeckContainerComponent implements OnInit {
 
   allCards: DigimonCard[] = [];
 
-  constructor(private store: Store, private imageService: ImageService) {}
+  constructor(
+    private store: Store,
+    private imageService: ImageService,
+  ) {}
 
   ngOnInit() {
     this.store

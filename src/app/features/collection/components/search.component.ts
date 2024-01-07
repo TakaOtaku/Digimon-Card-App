@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { InputTextModule } from 'primeng/inputtext';
-import { Subject, debounceTime, distinctUntilChanged, filter, tap } from 'rxjs';
+import { debounceTime, distinctUntilChanged, filter, Subject, tap } from 'rxjs';
 import { selectSearchFilter } from '../../../store/digimon.selectors';
 import { WebsiteActions } from './../../../store/digimon.actions';
 
@@ -39,10 +39,10 @@ export class SearchComponent {
       .pipe(
         debounceTime(500),
         distinctUntilChanged(),
-        tap((search) => (this.search = search))
+        tap((search) => (this.search = search)),
       )
       .subscribe((search) =>
-        this.store.dispatch(WebsiteActions.setsearchfilter({ search }))
+        this.store.dispatch(WebsiteActions.setSearchFilter({ search })),
       );
   }
 }

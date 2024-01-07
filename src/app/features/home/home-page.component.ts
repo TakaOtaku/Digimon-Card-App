@@ -1,51 +1,25 @@
+import { PageComponent } from '../shared/page.component';
 import { HomeIntroComponent } from './components/home-intro.component';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
-import { EventCalendarComponent } from './components/event-calendar.component';
-import { FAQComponent } from './components/faq.component';
-import { SiteLinksComponent } from './components/site-links.component';
-import { TierlistComponent } from './components/tierlist.component';
 
 @Component({
   selector: 'digimon-home-page',
   template: `
-    <div
-      class="flex h-[calc(100vh-50px)] w-full flex-row overflow-y-scroll bg-gradient-to-b from-[#17212f] to-[#08528d] px-1">
-      <div class="mx-auto flex w-full max-w-6xl flex-col">
-        <digimon-home-intro></digimon-home-intro>
-
-        <div class="my-4 w-full border-b border-slate-100"></div>
-
-        <digimon-site-links></digimon-site-links>
-
-        <div class="my-4 w-full border-b border-slate-100"></div>
-
-        <digimon-tierlist></digimon-tierlist>
-
-        <div class="my-4 w-full border-b border-slate-100"></div>
-
-        <digimon-event-calendar></digimon-event-calendar>
-
-        <div class="my-4 w-full border-b border-slate-100"></div>
-
-        <digimon-faq></digimon-faq>
-
-        <div class="h-10 min-h-[2rem]"></div>
-      </div>
-    </div>
+    <digimon-page>
+      <digimon-home-intro
+        class="p-5 max-w-sm sm:max-w-md md:max-w-4xl h-[calc(100vh-3.5rem)] md:h-[calc(100vh-5rem)] lg:h-screen"></digimon-home-intro>
+    </digimon-page>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    HomeIntroComponent,
-    SiteLinksComponent,
-    EventCalendarComponent,
-    FAQComponent,
-    TierlistComponent,
-  ],
+  imports: [HomeIntroComponent, PageComponent],
 })
 export class HomePageComponent {
-  constructor(private meta: Meta, private title: Title) {
+  constructor(
+    private meta: Meta,
+    private title: Title,
+  ) {
     this.makeGoogleFriendly();
   }
 

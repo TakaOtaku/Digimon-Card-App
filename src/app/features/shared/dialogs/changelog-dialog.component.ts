@@ -1,18 +1,18 @@
+import { NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 // @ts-ignore
 import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 import firebase from 'firebase/compat';
 import { MessageService } from 'primeng/api';
+import { ButtonModule } from 'primeng/button';
+import { RippleModule } from 'primeng/ripple';
 import { first } from 'rxjs';
 import { Base64Adapter } from '../../../functions/base64-adapter';
-import { AuthService } from '../../../service/auth.service';
-import { DatabaseService } from '../../../service/database.service';
-import { RippleModule } from 'primeng/ripple';
-import { ButtonModule } from 'primeng/button';
-import { FormsModule } from '@angular/forms';
-import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
-import { NgIf } from '@angular/common';
+import { AuthService } from '../../../services/auth.service';
+import { DatabaseService } from '../../../services/database.service';
 import DataSnapshot = firebase.database.DataSnapshot;
 
 @Component({
@@ -55,7 +55,7 @@ export class ChangelogDialogComponent implements OnInit {
   constructor(
     public authService: AuthService,
     private dbService: DatabaseService,
-    private messageService: MessageService
+    private messageService: MessageService,
   ) {}
 
   ngOnInit() {
@@ -89,11 +89,11 @@ export class ChangelogDialogComponent implements OnInit {
       .getEditableElement()
       .parentElement.insertBefore(
         editor.ui.view.toolbar.element,
-        editor.ui.getEditableElement()
+        editor.ui.getEditableElement(),
       );
 
     editor.plugins.get('FileRepository').createUploadAdapter = (
-      loader: any
+      loader: any,
     ) => {
       return new Base64Adapter(loader);
     };

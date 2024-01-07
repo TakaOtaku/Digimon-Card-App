@@ -40,11 +40,11 @@ export class CKEditorComponent {
       .getEditableElement()
       .parentElement.insertBefore(
         editor.ui.view.toolbar.element,
-        editor.ui.getEditableElement()
+        editor.ui.getEditableElement(),
       );
 
     editor.plugins.get('FileRepository').createUploadAdapter = (
-      loader: any
+      loader: any,
     ) => {
       return new Base64Adapter(loader);
     };

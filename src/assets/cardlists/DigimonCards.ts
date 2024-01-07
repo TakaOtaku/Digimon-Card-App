@@ -18,7 +18,7 @@ function setupJsonJAP(): DigimonCard[] {
 }
 
 export function setupDigimonCardMap(
-  cardset: CARDSET
+  cardset: CARDSET,
 ): Map<string, DigimonCard> {
   return cardset === CARDSET.English
     ? mapJsonToEngCardList()

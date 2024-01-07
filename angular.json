@@ -38,7 +38,6 @@
             "scripts": [
               "node_modules/@fortawesome/fontawesome-free/js/all.js"
             ],
-            "webWorkerTsConfig": "tsconfig.worker.json"
           },
           "configurations": {
             "production": {
@@ -85,10 +84,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "digimon-card-game-collector:build:production"
+              "buildTarget": "digimon-card-game-collector:build:production"
             },
             "development": {
-              "browserTarget": "digimon-card-game-collector:build:development"
+              "buildTarget": "digimon-card-game-collector:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -96,7 +95,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "digimon-card-game-collector:build"
+            "buildTarget": "digimon-card-game-collector:build"
           }
         },
         "test": {
@@ -115,7 +114,6 @@
               "src/styles.scss"
             ],
             "scripts": [],
-            "webWorkerTsConfig": "tsconfig.worker.json"
           }
         },
         "deploy": {

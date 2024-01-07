@@ -1,4 +1,3 @@
-import { SaveActions } from './../store/digimon.actions';
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
@@ -6,9 +5,10 @@ import { Store } from '@ngrx/store';
 import { GoogleAuthProvider } from 'firebase/auth';
 import firebase from 'firebase/compat';
 import { MessageService } from 'primeng/api';
-import { catchError, first, of, Subject } from 'rxjs';
+import { catchError, first, map, Observable, of, retry, Subject } from 'rxjs';
 import { ISave, IUser } from '../../models';
-import { emptySettings } from '../store/reducers/save.reducer';
+import { emptySave, emptySettings } from '../store/reducers/save.reducer';
+import { SaveActions } from './../store/digimon.actions';
 import { DigimonBackendService } from './digimon-backend.service';
 import UserCredential = firebase.auth.UserCredential;
 import User = firebase.User;
@@ -22,11 +22,10 @@ export class AuthService {
   public authChange = new Subject<boolean>();
 
   constructor(
-    public afs: AngularFirestore,
     public afAuth: AngularFireAuth,
     private digimonBackendService: DigimonBackendService,
     private messageService: MessageService,
-    private store: Store
+    private store: Store,
   ) {}
 
   get isLoggedIn(): boolean {
@@ -45,7 +44,11 @@ export class AuthService {
   }
 
   GoogleAuth() {
-    return this.AuthLogin(new GoogleAuthProvider());
+    const provider = new GoogleAuthProvider();
+    provider.setCustomParameters({
+       'prompt': 'select_account'
+       });
+    return this.AuthLogin(provider);
   }
 
   AuthLogin(provider: any) {
@@ -86,9 +89,9 @@ export class AuthService {
             '  showPreRelease: true,' +
             '  showStampedCards: true,' +
             '  showAACards: true,' +
-            '  sortDeckOrder: "Level"}}'
+            '  sortDeckOrder: "Level"}}',
       );
-      this.store.dispatch(SaveActions.setsave({ save }));
+      this.store.dispatch(SaveActions.setSave({ save }));
     });
   }
 
@@ -127,7 +130,7 @@ export class AuthService {
 
     localStorage.setItem('user', JSON.stringify(userData));
     this.store.dispatch(
-      SaveActions.setsave({
+      SaveActions.setSave({
         save: save ?? {
           uid: user.uid,
           photoURL: user.photoURL ?? '',
@@ -137,7 +140,7 @@ export class AuthService {
           decks: [],
           settings: emptySettings,
         },
-      })
+      }),
     );
 
     this.userData = userData;
@@ -163,7 +166,7 @@ export class AuthService {
           console.log('No save found creating a new one!');
           this.createUserData(user, null);
           return of(null);
-        })
+        }),
       )
       .subscribe((save: ISave | null) => {
         if (!save) {
@@ -171,5 +174,35 @@ export class AuthService {
         }
         this.createUserData(user, save);
       });
+  }
+
+  /**
+   * Load the User-Save from the backend or local storage
+   * Check if the user is in the cache, load the save from the backend.
+   * Otherwise, check the local storage for an offline save or create a new save.
+   */
+  loadSave(): Observable<ISave> {
+    if (!this.userInLocalStorage()) {
+      return this.loadLocalStorageSave();
+    }
+
+    return this.digimonBackendService
+      .getSave(this.userData!.uid)
+      .pipe(retry(5));
+  }
+
+  // Check local storage for a backup save, if there is none create a new save
+  private loadLocalStorageSave(): Observable<ISave> {
+    const localStorageItem = localStorage.getItem('Digimon-Card-Collector');
+    let localStorageSave: ISave | null = localStorageItem
+      ? JSON.parse(localStorageItem)
+      : null;
+
+    if (localStorageSave) {
+      localStorageSave =
+        this.digimonBackendService.checkSaveValidity(localStorageSave);
+      return of(localStorageSave);
+    }
+    return of(emptySave);
   }
 }

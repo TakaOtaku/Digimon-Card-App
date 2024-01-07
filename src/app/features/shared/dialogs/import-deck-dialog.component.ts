@@ -74,7 +74,10 @@ export class ImportDeckDialogComponent implements OnDestroy {
 
   private onDestroy$ = new Subject();
 
-  constructor(private store: Store, private messageService: MessageService) {}
+  constructor(
+    private store: Store,
+    private messageService: MessageService,
+  ) {}
 
   ngOnDestroy(): void {
     this.onDestroy$.next(true);
@@ -108,7 +111,7 @@ export class ImportDeckDialogComponent implements OnDestroy {
 
     deck.tags = setTags(deck, allCards);
     deck.color = setColors(deck, allCards);
-    this.store.dispatch(WebsiteActions.setdeck({ deck }));
+    this.store.dispatch(WebsiteActions.setDeck({ deck }));
     this.show = false;
     this.messageService.add({
       severity: 'success',

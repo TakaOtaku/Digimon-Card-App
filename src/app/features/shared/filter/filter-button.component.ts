@@ -1,8 +1,8 @@
-import { WebsiteActions } from './../../../store/digimon.actions';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subject, takeUntil } from 'rxjs';
 import { selectMobileCollectionView } from '../../../store/digimon.selectors';
+import { WebsiteActions } from './../../../store/digimon.actions';
 
 @Component({
   selector: 'digimon-filter-button',
@@ -28,7 +28,7 @@ export class FilterButtonComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.onDestroy$))
       .subscribe(
         (mobileCollectionView) =>
-          (this.mobileCollectionView = mobileCollectionView)
+          (this.mobileCollectionView = mobileCollectionView),
       );
   }
 
@@ -38,9 +38,9 @@ export class FilterButtonComponent implements OnInit, OnDestroy {
 
   setMobileCollectionView() {
     this.store.dispatch(
-      WebsiteActions.setmobilecollectionview({
+      WebsiteActions.setMobileCollectionView({
         mobileCollectionView: !this.mobileCollectionView,
-      })
+      }),
     );
   }
 }

@@ -95,7 +95,7 @@ export class ChartContainersComponent implements OnInit, OnChanges {
     const purple = array.filter((card) => card.color === 'Purple');
     const white = array.filter((card) => card.color === 'White');
     const multi = array.filter(
-      (card) => card.color.includes('/') || card.color === 'Multi'
+      (card) => card.color.includes('/') || card.color === 'Multi',
     );
 
     return [
