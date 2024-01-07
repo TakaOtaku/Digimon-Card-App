@@ -8,7 +8,7 @@ import { Meta, Title } from '@angular/platform-browser';
   template: `
     <digimon-page>
       <digimon-home-intro
-        class="p-5 max-w-sm sm:max-w-md md:max-w-4xl"></digimon-home-intro>
+        class="p-5 max-w-sm sm:max-w-md md:max-w-4xl h-[calc(100vh-3.5rem)] md:h-[calc(100vh-5rem)] lg:h-screen"></digimon-home-intro>
     </digimon-page>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -12,7 +12,7 @@ import { InputTextModule } from 'primeng/inputtext';
   selector: 'digimon-deck-filter',
   template: `
     <div class="mx-auto flex flex-row">
-      <div class="flex w-full flex-col pr-2">
+      <div class="flex w-full flex-col sm:pr-2">
         <span class="p-input-icon-left w-full">
           <i class="pi pi-search h-3"></i>
           <input

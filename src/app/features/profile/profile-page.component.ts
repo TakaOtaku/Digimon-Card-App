@@ -37,16 +37,16 @@ import { UserStatsComponent } from './components/user-stats.component';
   template: `
     <digimon-page *ngIf="save$ | async as save">
       <div
-        class="flex flex-col self-baseline px-5 max-w-xl sm:max-w-3xl md:max-w-5xl lg:max-w-6xl xl:max-w-7xl mx-auto">
+        class="flex flex-col self-baseline px-5 max-w-sm sm:max-w-3xl md:max-w-5xl lg:max-w-6xl xl:max-w-7xl mx-auto">
         <digimon-user-stats
           *ngIf="showUserStats$ | async"
           [save]="save"
-          class="mx-auto my-1 w-full"></digimon-user-stats>
+          class="mx-auto my-1 w-[calc(100%-3rem)] sm:w-full"></digimon-user-stats>
 
         <digimon-deck-filter
           [searchFilter]="searchFilter"
           [tagFilter]="tagFilter"
-          class="mx-auto w-full"></digimon-deck-filter>
+          class="mx-auto w-[calc(100%-3rem)] sm:w-full"></digimon-deck-filter>
 
         <digimon-decks
           class="mx-auto mt-1 w-full"

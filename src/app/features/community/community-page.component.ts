@@ -28,7 +28,8 @@ import { BlogItemComponent } from './components/blog-item.component';
   selector: 'digimon-blog-page',
   template: `
     <digimon-page *ngIf="blog$ | async">
-      <div class="mx-auto p-10 max-w-6xl grid grid-cols-4">
+      <div
+        class="self-start mx-auto p-3 w-[calc(100vw-0.75rem)] md:p-10 md:w-[calc(100vw-2.5rem)] max-w-xl md:max-w-6xl grid grid-cols-4">
         <div class="col-span-4 grid grid-cols-4 justify-center relative mb-3">
           <h1
             class="col-span-4 text-center text-white text-xl text-black-outline font-black">
@@ -45,6 +46,7 @@ import { BlogItemComponent } from './components/blog-item.component';
 
         <div class="grid col-span-4 md:grid-cols-2 gap-3">
           <digimon-blog-item
+            class="w-full"
             *ngFor="let blog of showBlogs"
             [blog]="blog"
             (click)="openBlog(blog)"></digimon-blog-item>

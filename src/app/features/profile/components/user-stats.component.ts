@@ -5,6 +5,7 @@ import {
   Input,
 } from '@angular/core';
 import { Router } from '@angular/router';
+import { CarouselModule } from 'primeng/carousel';
 import { ISave } from '../../../../models';
 import { PaginationCardListComponent } from '../../collection/components/pagination-card-list.component';
 import { CollectionPriceCheckDialogComponent } from './collection-price-check-dialog.component';
@@ -17,7 +18,7 @@ import { NgIf } from '@angular/common';
   template: `
     <div class="flex flex-col py-2 text-[#e2e4e6]">
       <div class="flex flex-col sm:flex-row justify-center">
-        <div class="flex flex-row mr-5">
+        <div class="flex flex-row mx-auto sm:mr-5">
           <img
             class="my-auto mr-2 h-16 w-auto rounded-full text-xs font-semibold text-[#e2e4e6]"
             *ngIf="save"
@@ -28,7 +29,7 @@ import { NgIf } from '@angular/common';
           </div>
         </div>
 
-        <div class="flex flex-row justify-center">
+        <div class="hidden sm:flex flex-row justify-center">
           <div class="flex flex-col">
             <digimon-collection-circle
               [collection]="save.collection"
@@ -58,9 +59,27 @@ import { NgIf } from '@angular/common';
             <label class="text-center">P</label>
           </div>
         </div>
+
+        <p-carousel
+          class="sm:hidden"
+          [value]="collectionCircles"
+          [numVisible]="1"
+          [numScroll]="1"
+          [circular]="true"
+          [autoplayInterval]="10000">
+          <ng-template let-circle pTemplate="item">
+            <digimon-collection-circle
+              [collection]="save.collection"
+              [type]="circle.label"
+              class="mx-2"></digimon-collection-circle>
+            <div class="text-center w-full mx-auto font-bold">
+              {{ circle.label }}
+            </div>
+          </ng-template>
+        </p-carousel>
       </div>
 
-      <div class="flex flex-row w-full">
+      <div class="flex flex-col sm:flex-row w-full">
         <button
           (click)="openCollection()"
           class="surface-ground hover:primary-background text-shadow border flex-grow border-black p-2 font-bold text-[#e2e4e6]">
@@ -94,10 +113,18 @@ import { NgIf } from '@angular/common';
     DialogModule,
     CollectionPriceCheckDialogComponent,
     PaginationCardListComponent,
+    CarouselModule,
   ],
 })
 export class UserStatsComponent {
   @Input() save: ISave;
+
+  collectionCircles = [
+    { label: 'BT' },
+    { label: 'EX' },
+    { label: 'ST' },
+    { label: 'P-' },
+  ];
 
   private router = inject(Router);
   priceCheckDialog = false;

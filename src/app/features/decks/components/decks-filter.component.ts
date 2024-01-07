@@ -16,7 +16,7 @@ import { TAGS } from '../../../../models';
     <div
       [formGroup]="form"
       class="my-1 grid max-w-7xl grid-cols-5 lg:flex lg:flex-row">
-      <span class="col-span-2 p-input-icon-left my-1 w-full">
+      <span class="col-span-5 sm:col-span-2 p-input-icon-left my-1 w-full">
         <i class="pi pi-search h-3"></i>
         <input
           formControlName="searchFilter"
@@ -32,12 +32,12 @@ import { TAGS } from '../../../../models';
         defaultLabel="Select a Tag"
         display="chip"
         scrollHeight="250px"
-        class="col-span-2 mx-auto my-1 w-full max-w-[250px]"
+        class="col-span-3 sm:col-span-2 sm:mx-auto sm:my-1 w-full max-w-[250px]"
         styleClass="w-full h-[34px] text-sm max-w-[250px]">
       </p-multiSelect>
       <button
         (click)="applyFilter.emit(true)"
-        class="min-w-auto primary-background my-auto ml-2 h-8 w-32 rounded p-2 text-xs font-semibold text-[#e2e4e6]">
+        class="col-span-2 sm:col-span-1 min-w-auto primary-background my-auto ml-2 h-8 sm:w-32 rounded p-2 text-xs font-semibold text-[#e2e4e6]">
         Filter
       </button>
     </div>
