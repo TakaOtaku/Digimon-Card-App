@@ -10,6 +10,8 @@ import {
 import { Store } from '@ngrx/store';
 import { AccordionModule } from 'primeng/accordion';
 import { ConfirmationService, MessageService, SharedModule } from 'primeng/api';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { DragDropModule } from 'primeng/dragdrop';
 import { filter, first, Subject, takeUntil } from 'rxjs';
 import {
@@ -64,6 +66,8 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
         (save)="saveDeck($event)"
         (hideStats)="hideStats.emit(true)"></digimon-deck-toolbar>
     </div>
+
+    <p-confirmPopup></p-confirmPopup>
 
     <ng-container *ngIf="draggedCard$ | async as draggedCard">
       <p-accordion class="mx-auto">
@@ -128,6 +132,8 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
     AccordionModule,
     SharedModule,
     AsyncPipe,
+    ConfirmDialogModule,
+    ConfirmPopupModule
   ],
   providers: [MessageService],
 })

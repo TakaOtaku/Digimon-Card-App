@@ -18,7 +18,7 @@ import { NgIf } from '@angular/common';
   template: `
     <div class="flex flex-col py-2 text-[#e2e4e6]">
       <div class="flex flex-col sm:flex-row justify-center">
-        <div class="flex flex-row mx-auto sm:mr-5">
+        <div class="flex flex-row mx-auto sm:ml-0 sm:mr-5">
           <img
             class="my-auto mr-2 h-16 w-auto rounded-full text-xs font-semibold text-[#e2e4e6]"
             *ngIf="save"
