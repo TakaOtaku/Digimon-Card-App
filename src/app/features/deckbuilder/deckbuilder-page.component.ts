@@ -34,7 +34,7 @@ import { DeckViewComponent } from './components/deck-view.component';
       <digimon-page>
         <digimon-deck-view
           *ngIf="deckView"
-          class="overflow-y-auto h-full max-h-full overflow-x-hidden self-baseline"
+          class="overflow-y-auto pb-[10rem] h-full max-h-full overflow-x-hidden self-baseline"
           [ngClass]="{
             'w-2/5 max-w-[40%]': collectionView,
             'w-full': !collectionView
