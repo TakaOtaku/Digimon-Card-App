@@ -43,7 +43,7 @@ import { VersionFilterComponent } from './version-filter.component';
 @Component({
   selector: 'digimon-filter-side-box',
   template: `
-    <div class="mx-1 flex h-full w-full flex-col pt-1">
+    <div class="mx-1 flex h-full w-full flex-col pt-1 overflow-y-auto">
       <div class="mt-1 grid w-full grid-cols-4">
         <div></div>
 

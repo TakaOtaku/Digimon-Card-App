@@ -1,4 +1,4 @@
-import { AsyncPipe, NgIf } from '@angular/common';
+import { AsyncPipe, NgClass, NgIf } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -52,7 +52,9 @@ import {
         [min]="3"
         [max]="14"></p-slider>
 
-      <div class="mx-2 mt-2 flex flex-row justify-center absolute right-2">
+      <div
+        [ngClass]="{ 'xl:hidden ': !filterButton }"
+        class="mx-2 mt-2 flex flex-row justify-center absolute right-2">
         <button
           (click)="filterBox.emit(true)"
           class="flex flex-row sm:justify-center min-w-auto primary-background h-8 w-8 sm:w-24 rounded p-2 text-xs font-semibold text-[#e2e4e6]">
@@ -71,12 +73,14 @@ import {
     NgIf,
     SliderModule,
     ReactiveFormsModule,
-  ],
+    NgClass
+  ]
 })
 export class PaginationCardListHeaderComponent {
   @Input() widthForm: FormControl;
   @Output() filterBox = new EventEmitter<boolean>();
   @Input() viewOnly: boolean;
+  @Input() filterButton: boolean | null = true;
 
   private store = inject(Store);
 

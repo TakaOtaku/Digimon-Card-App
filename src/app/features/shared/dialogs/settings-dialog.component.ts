@@ -68,6 +68,14 @@ import { SettingsRowComponent } from '../settings-row.component';
               optionLabel="label"
               optionValue="value"></p-selectButton>
           </digimon-settings-row>
+
+          <digimon-settings-row title="Display Filter on Fullscreen">
+              <p-selectButton
+                      [(ngModel)]="fullscreenFilter"
+                      [options]="yesNoOptions"
+                      optionLabel="label"
+                      optionValue="value"></p-selectButton>
+          </digimon-settings-row>
         </p-card>
 
         <p-card
@@ -437,6 +445,8 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
   sortOrder = ['Color', 'Level'];
   sortOrderFilter = new UntypedFormControl();
 
+  fullscreenFilter = true;
+
   displayImage = '';
   username = '';
 
@@ -482,6 +492,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
         this.aaCollectionCount = settings.aaCollectionMinimum;
         this.deckDisplayTable = settings.deckDisplayTable;
         this.setGoal = settings.collectionSets;
+        this.fullscreenFilter = settings.fullscreenFilter;
       });
   }
 
@@ -507,6 +518,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
         deckDisplayTable: this.deckDisplayTable,
         displaySideDeck: this.sideDeck,
         collectionSets: this.setGoal,
+        fullscreenFilter: this.fullscreenFilter,
       },
     };
 

@@ -1,5 +1,5 @@
 import { AsyncPipe, NgStyle } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { InputTextModule } from 'primeng/inputtext';

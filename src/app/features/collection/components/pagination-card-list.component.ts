@@ -21,7 +21,7 @@ import { DialogModule } from 'primeng/dialog';
 import { DragDropModule } from 'primeng/dragdrop';
 import { SidebarModule } from 'primeng/sidebar';
 import { SkeletonModule } from 'primeng/skeleton';
-import { map, Subject, takeUntil, tap } from 'rxjs';
+import { map, startWith, Subject, takeUntil, tap } from 'rxjs';
 import { WebsiteActions } from 'src/app/store/digimon.actions';
 import { DigimonCard, ICountCard, IDraggedCard } from '../../../../models';
 import { DRAG } from '../../../../models/enums/drag.enum';
@@ -33,6 +33,7 @@ import {
   selectCollectionMode,
   selectDraggedCard,
   selectFilteredCards,
+  selectSettings,
 } from '../../../store/digimon.selectors';
 import { ViewCardDialogComponent } from '../../shared/dialogs/view-card-dialog.component';
 import { FilterSideBoxComponent } from '../../shared/filter/filter-side-box.component';
@@ -44,8 +45,9 @@ import { SearchComponent } from './search.component';
 @Component({
   selector: 'digimon-pagination-card-list',
   template: `
-    <div *ngIf="cards$ | async">
+    <div *ngIf="cards$ | async" class="flex flex-col">
       <digimon-pagination-card-list-header
+        [filterButton]="(filterBoxEnabled$ | async) === false"
         (filterBox)="filterBox = $event"
         [widthForm]="widthForm"
         [viewOnly]="
@@ -53,43 +55,47 @@ import { SearchComponent } from './search.component';
         "></digimon-pagination-card-list-header>
 
       <digimon-search></digimon-search>
+
+      <div
+        *ngIf="draggedCard$ | async as draggedCard"
+        [pDroppable]="['fromDeck', 'fromSide']"
+        (onDrop)="drop(draggedCard, draggedCard)"
+        class="h-[calc(100vh-8.5rem)] md:h-[calc(100vh-10rem)] lg:h-[calc(100vh-5rem)] flex flex-wrap w-full content-start justify-start overflow-y-scroll">
+        @for (card of showCards; track $index) {
+          @defer (on viewport) {
+            <digimon-full-card
+              [style]="{ width: widthForm.value + 'rem' }"
+              class="m-0.5 md:m-1 flex items-center justify-center self-start"
+              [collectionMode]="(collectionMode$ | async) ?? false"
+              [card]="card"
+              [count]="getCount(card.id)"
+              [deckBuilder]="true"
+              [collectionOnly]="collectionOnly"
+              [onlyView]="inputCollection.length > 0"
+              (viewCard)="viewCard($event)"></digimon-full-card>
+            <div
+              *ngIf="$index + 1 === showCards.length"
+              (digimonIntersectionListener)="loadItems()"
+              class="sm:m-0.5 md:m-1"></div>
+          } @placeholder {
+            <p-skeleton
+              class="sm:m-0.5 md:m-1"
+              width="8rem"
+              height="13rem"></p-skeleton>
+          }
+        } @empty {
+          <h1
+            *ngIf="cards.length === 0"
+            class="primary-color text-bold my-10 text-center text-5xl">
+            No cards found!
+          </h1>
+        }
+      </div>
     </div>
 
-    <div
-      *ngIf="draggedCard$ | async as draggedCard"
-      [pDroppable]="['fromDeck', 'fromSide']"
-      (onDrop)="drop(draggedCard, draggedCard)"
-      class="h-[calc(100vh-8.5rem)] md:h-[calc(100vh-10rem)] lg:h-[calc(100vh-5rem)] flex flex-wrap w-full content-start justify-start overflow-y-scroll">
-      @for (card of showCards; track $index) {
-        @defer (on viewport) {
-          <digimon-full-card
-            [style]="{ width: widthForm.value + 'rem' }"
-            class="m-0.5 md:m-1 flex items-center justify-center self-start"
-            [collectionMode]="(collectionMode$ | async) ?? false"
-            [card]="card"
-            [count]="getCount(card.id)"
-            [deckBuilder]="true"
-            [collectionOnly]="collectionOnly"
-            [onlyView]="inputCollection.length > 0"
-            (viewCard)="viewCard($event)"></digimon-full-card>
-          <div
-            *ngIf="$index + 1 === showCards.length"
-            (digimonIntersectionListener)="loadItems()"
-            class="sm:m-0.5 md:m-1"></div>
-        } @placeholder {
-          <p-skeleton
-            class="sm:m-0.5 md:m-1"
-            width="8rem"
-            height="13rem"></p-skeleton>
-        }
-      } @empty {
-        <h1
-          *ngIf="cards.length === 0"
-          class="primary-color text-bold my-10 text-center text-5xl">
-          No cards found!
-        </h1>
-      }
-    </div>
+    <digimon-filter-side-box
+      *ngIf="filterBoxEnabled$ | async"
+      class="hidden xl:flex"></digimon-filter-side-box>
 
     <p-sidebar
       [(visible)]="filterBox"
@@ -148,6 +154,19 @@ export class PaginationCardListComponent implements OnInit, OnDestroy {
 
   draggedCard$ = this.store.select(selectDraggedCard);
   collectionMode$ = this.store.select(selectCollectionMode);
+
+  filterBoxEnabled$ = this.store.select(selectSettings).pipe(
+    map((settings) => {
+      console.log(settings.fullscreenFilter);
+      if (
+        settings.fullscreenFilter === null ||
+        settings.fullscreenFilter === undefined
+      ) {
+        return true;
+      }
+      return settings.fullscreenFilter;
+    }),
+  );
 
   viewCardDialog = false;
   card = JSON.parse(JSON.stringify(dummyCard));

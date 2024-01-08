@@ -26,6 +26,8 @@ export const emptySettings: ISettings = {
 
   deckDisplayTable: false,
   displaySideDeck: true,
+
+  fullscreenFilter: true,
 };
 
 export const emptySave: ISave = {

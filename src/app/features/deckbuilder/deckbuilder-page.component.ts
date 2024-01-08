@@ -36,7 +36,7 @@ import { DeckViewComponent } from './components/deck-view.component';
           *ngIf="deckView"
           class="overflow-y-auto h-full max-h-full overflow-x-hidden self-baseline"
           [ngClass]="{
-            'w-1/2 max-w-[50%]': collectionView,
+            'w-2/5 max-w-[40%]': collectionView,
             'w-full': !collectionView
           }"
           [collectionView]="collectionView"
@@ -45,8 +45,8 @@ import { DeckViewComponent } from './components/deck-view.component';
         <digimon-pagination-card-list
           *ngIf="collectionView"
           [initialWidth]="3"
-          [ngClass]="{ 'w-1/2 max-w-[50%]': deckView, 'w-full': !deckView }"
-          class="border-l h-full max-h-full border-slate-200"></digimon-pagination-card-list>
+          [ngClass]="{ 'w-3/5 max-w-[60%]': deckView, 'w-full': !deckView }"
+          class="border-l max-h-full border-slate-200 flex flex-row  h-[calc(100vh-3.5rem)] md:h-[calc(100vh-5rem)] lg:h-screen"></digimon-pagination-card-list>
 
         <button
           class="surface-card w-6 border-l border-slate-200"

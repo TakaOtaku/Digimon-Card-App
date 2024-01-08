@@ -22,7 +22,7 @@ import { PaginationCardListComponent } from './components/pagination-card-list.c
       <digimon-pagination-card-list
         [collectionOnly]="true"
         [inputCollection]="collection"
-        class="w-screen lg:w-[calc(100vw-6.5rem)]"></digimon-pagination-card-list>
+        class="w-screen lg:w-[calc(100vw-6.5rem)] flex flex-row h-[calc(100vh-3.5rem)] md:h-[calc(100vh-5rem)] lg:h-screen"></digimon-pagination-card-list>
     </digimon-page>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
