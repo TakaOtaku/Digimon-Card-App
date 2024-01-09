@@ -45,7 +45,7 @@ import { SearchComponent } from './search.component';
 @Component({
   selector: 'digimon-pagination-card-list',
   template: `
-    <div *ngIf="cards$ | async" class="flex flex-col">
+    <div *ngIf="cards$ | async" class="flex flex-col w-full">
       <digimon-pagination-card-list-header
         [filterButton]="(filterBoxEnabled$ | async) === false"
         (filterBox)="filterBox = $event"
