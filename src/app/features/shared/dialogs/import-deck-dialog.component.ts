@@ -15,37 +15,42 @@ import { Observable, Subject } from 'rxjs';
 import { DigimonCard, IDeck } from '../../../../models';
 import { setColors, setTags } from '../../../functions/digimon-card.functions';
 import { stringToDeck } from '../../../functions/parse-deck';
-import { selectAllCards } from '../../../store/digimon.selectors';
-import { WebsiteActions } from './../../../store/digimon.actions';
+import { selectAllCards, selectDeck } from '../../../store/digimon.selectors';
+import { WebsiteActions } from '../../../store/digimon.actions';
 
 @Component({
   selector: 'digimon-import-deck-dialog',
   template: `
-    <div>
-      <p>
-        Copy your deck in the text area and press import or press the "Import
-        Text-File"-Button to import a file.
-      </p>
-      <textarea
-        pInputTextarea
-        [placeholder]="importPlaceholder"
-        id="text-import"
-        class="border-black-500 min-h-[200px] min-w-full border-2"
-        [(ngModel)]="deckText"></textarea>
-    </div>
+    <div *ngIf="currentDeck$ | async as currentDeck">
+      <div>
+        <p>
+          Copy your deck in the text area and press import or press the "Import
+          Text-File"-Button to import a file.
+        </p>
+        <textarea
+          pInputTextarea
+          [placeholder]="importPlaceholder"
+          id="text-import"
+          class="border-black-500 min-h-[200px] min-w-full border-2"
+          [(ngModel)]="deckText"></textarea>
+      </div>
 
-    <div *ngIf="digimonCards$ | async as allCards" class="mt-5 flex w-full">
-      <input
-        style="display: none"
-        type="file"
-        accept=".txt"
-        id="file-input"
-        (change)="handleFileInput($event.target, allCards)"
-        #fileUpload />
-      <button pButton (click)="fileUpload.click()">Import Text-File</button>
-      <button pButton (click)="importDeck(allCards)" style="margin-left: 5px">
-        Import
-      </button>
+      <div *ngIf="digimonCards$ | async as allCards" class="mt-5 flex w-full">
+        <input
+          style="display: none"
+          type="file"
+          accept=".txt"
+          id="file-input"
+          (change)="handleFileInput($event.target, allCards, currentDeck)"
+          #fileUpload />
+        <button pButton (click)="fileUpload.click()">Import Text-File</button>
+        <button
+          pButton
+          (click)="importDeck(allCards, currentDeck)"
+          style="margin-left: 5px">
+          Import
+        </button>
+      </div>
     </div>
   `,
   standalone: true,
@@ -57,6 +62,8 @@ export class ImportDeckDialogComponent implements OnDestroy {
   digimonCards$: Observable<DigimonCard[]> = this.store.select(selectAllCards);
 
   @Output() onClose = new EventEmitter<boolean>();
+
+  currentDeck$ = this.store.select(selectDeck);
 
   importPlaceholder =
     '' +
@@ -83,12 +90,12 @@ export class ImportDeckDialogComponent implements OnDestroy {
     this.onDestroy$.next(true);
   }
 
-  handleFileInput(input: any, allCards: DigimonCard[]) {
+  handleFileInput(input: any, allCards: DigimonCard[], currentDeck: IDeck) {
     let fileReader = new FileReader();
     fileReader.onload = () => {
       try {
         this.deckText = fileReader.result as string;
-        this.importDeck(allCards);
+        this.importDeck(allCards, currentDeck);
       } catch (e) {}
     };
     fileReader.readAsText(input.files[0]);
@@ -96,11 +103,12 @@ export class ImportDeckDialogComponent implements OnDestroy {
 
   // eslint-disable-next-line max-len
   // ["Exported from https://digimoncard.dev","BT5-001","BT5-001","BT5-001","BT9-001","BT9-001","BT8-058","BT8-058","BT8-058","BT8-058","BT9-059","BT9-059","BT9-059","BT9-059","BT8-009","BT8-009","BT8-009","BT8-009","BT9-008","BT9-008","BT8-064","BT8-064","BT8-064","BT8-064","P-076","P-076","P-076","P-076","BT8-011","BT8-011","BT8-011","BT8-067","BT8-067","BT8-067","BT9-065","BT9-065","EX1-008","EX1-008","BT8-084","BT8-084","BT2-112","BT8-070","BT8-070","BT8-070","BT9-068","BT9-068","BT9-112","BT5-086","BT9-090","BT9-090","BT8-086","BT8-086","BT5-092","BT5-092","BT6-106","BT6-106"]
-  importDeck(allCards: DigimonCard[]) {
+  importDeck(allCards: DigimonCard[], currentDeck: IDeck) {
     if (this.deckText === '') return;
-    const deck: IDeck | null = stringToDeck(this.deckText, allCards);
+    let deck: IDeck | null = { ...currentDeck };
+    const newDeck = stringToDeck(this.deckText, allCards);
 
-    if (!deck || deck.cards?.length === 0) {
+    if (!newDeck || newDeck.cards?.length === 0) {
       this.messageService.add({
         severity: 'warn',
         summary: 'Deck error!',
@@ -109,10 +117,13 @@ export class ImportDeckDialogComponent implements OnDestroy {
       return;
     }
 
+    deck.cards = newDeck.cards;
+
     deck.tags = setTags(deck, allCards);
     deck.color = setColors(deck, allCards);
+
     this.store.dispatch(WebsiteActions.setDeck({ deck }));
-    this.show = false;
+    this.onClose.emit(true);
     this.messageService.add({
       severity: 'success',
       summary: 'Deck imported!',

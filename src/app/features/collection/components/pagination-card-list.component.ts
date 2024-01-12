@@ -80,8 +80,8 @@ import { SearchComponent } from './search.component';
           } @placeholder {
             <p-skeleton
               class="sm:m-0.5 md:m-1"
-              width="8rem"
-              height="13rem"></p-skeleton>
+              width="5.6rem"
+              height="10rem"></p-skeleton>
           }
         } @empty {
           <h1
@@ -142,7 +142,7 @@ import { SearchComponent } from './search.component';
 })
 export class PaginationCardListComponent implements OnInit, OnDestroy {
   @Input() collectionOnly: boolean = false;
-  @Input() initialWidth = 8;
+  @Input() initialWidth = 5.6;
   @Input() inputCollection: ICountCard[] = [];
 
   private store = inject(Store);

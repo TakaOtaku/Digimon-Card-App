@@ -164,7 +164,7 @@ export class AuthService {
         catchError((e) => {
           // eslint-disable-next-line no-console
           console.log('No save found creating a new one!');
-          this.createUserData(user, null);
+          this.createUserData(user, this.getLocalStorageSave());
           return of(null);
         }),
       )
@@ -204,5 +204,13 @@ export class AuthService {
       return of(localStorageSave);
     }
     return of(emptySave);
+  }
+
+  private getLocalStorageSave(): ISave {
+    const localStorageItem = localStorage.getItem('Digimon-Card-Collector');
+    let localStorageSave: ISave | null = localStorageItem
+      ? JSON.parse(localStorageItem)
+      : null;
+    return localStorageSave || emptySave;
   }
 }
