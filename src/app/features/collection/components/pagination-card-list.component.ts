@@ -146,7 +146,6 @@ export class PaginationCardListComponent implements OnInit, OnDestroy {
   @Input() inputCollection: ICountCard[] = [];
 
   private store = inject(Store);
-  private element = inject(ElementRef);
 
   widthForm = new FormControl(this.initialWidth);
 
@@ -157,7 +156,6 @@ export class PaginationCardListComponent implements OnInit, OnDestroy {
 
   filterBoxEnabled$ = this.store.select(selectSettings).pipe(
     map((settings) => {
-      console.log(settings.fullscreenFilter);
       if (
         settings.fullscreenFilter === null ||
         settings.fullscreenFilter === undefined
@@ -177,6 +175,7 @@ export class PaginationCardListComponent implements OnInit, OnDestroy {
   showCards: DigimonCard[] = [];
   cards$ = this.store.select(selectFilteredCards).pipe(
     tap((cards) => (this.cards = cards)),
+    tap(() => (this.page = 1)),
     tap((cards) => (this.showCards = cards.slice(0, this.perPage))),
   );
 
@@ -222,10 +221,9 @@ export class PaginationCardListComponent implements OnInit, OnDestroy {
   }
 
   loadItems() {
-    const newCards = this.cards.slice(
-      this.page * this.perPage,
-      (this.page + 1) * this.perPage,
-    );
+    const from = this.page * this.perPage;
+    const to = (this.page + 1) * this.perPage;
+    const newCards = this.cards.slice(from, to);
     this.showCards.push(...newCards);
     this.page = this.page + 1;
   }

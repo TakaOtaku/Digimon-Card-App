@@ -38,8 +38,8 @@ wikiPageLinks = [
 #        'url': 'https://digimoncardgame.fandom.com/wiki/BT-13:_Booster_Versus_Royal_Knights'},
 #    {'name': '▹BOOSTER BLAST ACE [BT14]',
 #        'url': 'https://digimoncardgame.fandom.com/wiki/BT-14:_Booster_Blast_Ace'},
-#    {'name': '▹BOOSTER EXCEED APOCALYPSE [BT15]',
-#        'url': 'https://digimoncardgame.fandom.com/wiki/BT-15:_Booster_Exceed_Apocalypse'},
+    {'name': '▹BOOSTER EXCEED APOCALYPSE [BT15]',
+        'url': 'https://digimoncardgame.fandom.com/wiki/BT-15:_Booster_Exceed_Apocalypse'},
   {'name': '▹BOOSTER BEGINNING OBSERVER [BT16]',
    'url': 'https://digimoncardgame.fandom.com/wiki/BT-16:_Booster_Beginning_Observer'},
 #
@@ -51,8 +51,8 @@ wikiPageLinks = [
 #        'url': 'https://digimoncardgame.fandom.com/wiki/EX-03:_Theme_Booster_Draconic_Roar'},
 #    {'name': '▹THEME BOOSTER ALTERNATIVE BEING [EX4]',
 #        'url': 'https://digimoncardgame.fandom.com/wiki/EX-04:_Theme_Booster_Alternative_Being'},
-#    {'name': '▹THEME BOOSTER ANIMAL COLOSSEUM [EX5]',
-#        'url': 'https://digimoncardgame.fandom.com/wiki/EX-05:_Theme_Booster_Animal_Colosseum'},
+    {'name': '▹THEME BOOSTER ANIMAL COLOSSEUM [EX5]',
+        'url': 'https://digimoncardgame.fandom.com/wiki/EX-05:_Theme_Booster_Animal_Colosseum'},
     {'name': '▹THEME BOOSTER INFERNAL ASCENSION [EX6]',
         'url': 'https://digimoncardgame.fandom.com/wiki/EX-06:_Theme_Booster_Infernal_Ascension'},
 #
@@ -94,8 +94,8 @@ wikiPageLinks = [
 #
 #    {'name': 'LIMITED PACK DIGIMON GHOST GAME',
 #        'url': 'https://digimoncardgame.fandom.com/wiki/LM-01:_Limited_Pack_Digimon_Ghost_Game'}1
-    {'name': 'LIMITED PACK DIGIMON DEATHXMON',
-        'url': 'https://digimoncardgame.fandom.com/wiki/LM-02:_Limited_Pack_DeathXmon'}
+#    {'name': 'LIMITED PACK DIGIMON DEATHXMON',
+#        'url': 'https://digimoncardgame.fandom.com/wiki/LM-02:_Limited_Pack_DeathXmon'}
 ]
 NoteDictionary = {
     'BT01-03: Release Special Booster Ver.1.0': '▹RELEASE SPECIAL BOOSTER 1.0 [BT01-B0T3]',
