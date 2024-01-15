@@ -152,7 +152,6 @@ export class DeckbuilderPageComponent implements OnInit {
     }
   }
 
-  @HostListener('window:resize', ['$event'])
   private onResize() {
     if (window.innerWidth < 1024) {
       this.collectionView = false;
