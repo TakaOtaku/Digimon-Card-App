@@ -36,7 +36,7 @@ import {
         [ngStyle]="{ background: colorMap.get(deck.color.name) }"
         class="text-shadow-white-xs relative left-[-5px] top-[10px] w-24 border border-black bg-opacity-80 text-center text-xs font-bold uppercase">
         <span *ngIf="mode !== 'Tournament'" class="mr-1">{{
-          deck.tags ? deck!.tags[0].name : null
+          getTags(deck)
         }}</span>
         <span *ngIf="mode === 'Tournament'" class="mr-1">{{
           getTournamentDeck(deck).format
@@ -161,5 +161,12 @@ export class DeckContainerComponent implements OnInit {
       return '3th';
     }
     return placement + 'th';
+  }
+
+  getTags(deck: IDeck | ITournamentDeck) {
+    if (deck.tags && deck.tags.length > 0) {
+      return deck!.tags[0] ? deck!.tags[0].name : '';
+    }
+    return '';
   }
 }
