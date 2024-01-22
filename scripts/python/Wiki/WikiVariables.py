@@ -42,6 +42,8 @@ wikiPageLinks = [
         'url': 'https://digimoncardgame.fandom.com/wiki/BT-15:_Booster_Exceed_Apocalypse'},
   {'name': '▹BOOSTER BEGINNING OBSERVER [BT16]',
    'url': 'https://digimoncardgame.fandom.com/wiki/BT-16:_Booster_Beginning_Observer'},
+   {'name': '▹BOOSTER SECRET CRISIS [BT17]',
+      'url': 'https://digimoncardgame.fandom.com/wiki/BT-17:_Booster_Secret_Crisis'},
 #
 #    {'name': '▹THEME BOOSTER CLASSIC COLLECTION [EX1]',
 #        'url': 'https://digimoncardgame.fandom.com/wiki/EX-01:_Theme_Booster_Classic_Collection'},
@@ -96,6 +98,8 @@ wikiPageLinks = [
 #        'url': 'https://digimoncardgame.fandom.com/wiki/LM-01:_Limited_Pack_Digimon_Ghost_Game'}1
 #    {'name': 'LIMITED PACK DIGIMON DEATHXMON',
 #        'url': 'https://digimoncardgame.fandom.com/wiki/LM-02:_Limited_Pack_DeathXmon'}
+{'name': 'LM-03: Limited Card Set 2024',
+        'url': 'https://digimoncardgame.fandom.com/wiki/LM-03:_Limited_Card_Set_2024'}
 ]
 NoteDictionary = {
     'BT01-03: Release Special Booster Ver.1.0': '▹RELEASE SPECIAL BOOSTER 1.0 [BT01-B0T3]',
