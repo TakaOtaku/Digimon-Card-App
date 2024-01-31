@@ -28,6 +28,14 @@ import { DividerModule } from 'primeng/divider';
     <p-divider class="my-5"></p-divider>
 
     <h2 class="mt-1 text-center text-[#e2e4e6] text-sm sm:text-base">
+      Everything related to the cards is loaded once a day from
+      <span class="font-bold">DigimonCardGame.Fandom</span>. Thanks to their
+      effort everything should on here should be up to date.
+    </h2>
+
+    <p-divider class="my-5"></p-divider>
+
+    <h2 class="mt-1 text-center text-[#e2e4e6] text-sm sm:text-base">
       I would like to add more content in the way of forum posts, like
       tournament reports, deck archtypes and more, but I need help for that. If
       you want to help me with that or know someone that might, please contact

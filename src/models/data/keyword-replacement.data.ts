@@ -110,6 +110,10 @@ export const replacements: Array<[RegExp, string]> = [
     /＜Partition \(yellow Lv.4 \+ black Lv.4\)＞/g,
     'partition_yellow_lv.4_black_lv.4',
   ],
+  [
+    /＜Blast Digivolve DNA Digivolve Durandamon \+ Bryweludramon＞/g,
+    'blast_dna_digivolve_durandamon__bryweludramon.webp',
+  ],
 ];
 
 export const keywordTooltip: Map<string, string> = new Map<string, string>([
