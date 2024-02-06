@@ -15,6 +15,8 @@ def moveFiles():
 
   # Loop through the files and copy them
   for filename in file_list_data:
+    if 'Links' in filename:
+      break
     if filename.endswith(".json"):
       source_path = os.path.join(source_folder_data, filename)
       destination_path = os.path.join(destination_folder_data, filename)

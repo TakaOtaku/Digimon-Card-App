@@ -1,16 +1,17 @@
+wikiLink = 'https://digimoncardgame.fandom.com'
+promo = '/wiki/P-'
+gallery = '/Gallery'
+ruling = '/Rulings'
+cardCount = 0
+normalCards = []
+cards = []
+rulings = {}
 cardLinks = [
   'https://digimoncardgame.fandom.com/wiki/RB1-007',
   'https://digimoncardgame.fandom.com/wiki/RB1-004',
   'https://digimoncardgame.fandom.com/wiki/RB1-006',
   'https://digimoncardgame.fandom.com/wiki/ST17-13',
 ]
-normalCards = []
-cards = []
-rulings = {}
-wikiLink = 'https://digimoncardgame.fandom.com'
-promo = '/wiki/P-'
-gallery = '/Gallery'
-ruling = '/Rulings'
 wikiPageLinks = [
 #    {'name': '▹RELEASE SPECIAL BOOSTER 1.0 [BT1-BT3]',
 #     'url': 'https://digimoncardgame.fandom.com/wiki/BT01-03:_Release_Special_Booster_Ver.1.0'},
@@ -38,8 +39,8 @@ wikiPageLinks = [
 #        'url': 'https://digimoncardgame.fandom.com/wiki/BT-13:_Booster_Versus_Royal_Knights'},
 #    {'name': '▹BOOSTER BLAST ACE [BT14]',
 #        'url': 'https://digimoncardgame.fandom.com/wiki/BT-14:_Booster_Blast_Ace'},
-    {'name': '▹BOOSTER EXCEED APOCALYPSE [BT15]',
-        'url': 'https://digimoncardgame.fandom.com/wiki/BT-15:_Booster_Exceed_Apocalypse'},
+#    {'name': '▹BOOSTER EXCEED APOCALYPSE [BT15]',
+#        'url': 'https://digimoncardgame.fandom.com/wiki/BT-15:_Booster_Exceed_Apocalypse'},
   {'name': '▹BOOSTER BEGINNING OBSERVER [BT16]',
    'url': 'https://digimoncardgame.fandom.com/wiki/BT-16:_Booster_Beginning_Observer'},
    {'name': '▹BOOSTER SECRET CRISIS [BT17]',
@@ -53,8 +54,8 @@ wikiPageLinks = [
 #        'url': 'https://digimoncardgame.fandom.com/wiki/EX-03:_Theme_Booster_Draconic_Roar'},
 #    {'name': '▹THEME BOOSTER ALTERNATIVE BEING [EX4]',
 #        'url': 'https://digimoncardgame.fandom.com/wiki/EX-04:_Theme_Booster_Alternative_Being'},
-    {'name': '▹THEME BOOSTER ANIMAL COLOSSEUM [EX5]',
-        'url': 'https://digimoncardgame.fandom.com/wiki/EX-05:_Theme_Booster_Animal_Colosseum'},
+#    {'name': '▹THEME BOOSTER ANIMAL COLOSSEUM [EX5]',
+#        'url': 'https://digimoncardgame.fandom.com/wiki/EX-05:_Theme_Booster_Animal_Colosseum'},
     {'name': '▹THEME BOOSTER INFERNAL ASCENSION [EX6]',
         'url': 'https://digimoncardgame.fandom.com/wiki/EX-06:_Theme_Booster_Infernal_Ascension'},
 #
@@ -147,7 +148,6 @@ NoteDictionary = {
     'LM-01: Limited Pack Digimon Ghost Game': 'LIMITED PACK DIGIMON GHOST GAME [LM01]',
     'LM-02: Limited Pack Digimon DeathXmon': 'LIMITED PACK DIGIMON DEATHXMON [LM02]',
 }
-cardCount = 0
 replacements = [
     '(After this card is placed, by trashing it the next turn or later, activate the effect below.)',
     '(When your other red or black Digimon would be deleted by an opponent\'s effect, you may delete this Digimon to prevent 1 of those Digimon\'s deletion).',

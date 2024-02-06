@@ -38,7 +38,11 @@ def addSampleBeforeWebp(imagePath):
 def addAABeforeWebp(imagePath, AA):
   """Adds a "_P{AA}" before the ".webp" extension in a file path."""
 
-  if imagePath.endswith(".webp"):
+  if "-Errata" in imagePath and imagePath.endswith(".webp"):
+    index = imagePath.rfind("-Errata")
+    newPath = imagePath[:index] + getP(AA) + imagePath[index:]
+    return newPath
+  elif imagePath.endswith(".webp"):
     index = imagePath.rfind(".webp")
     newPath = imagePath[:index] + getP(AA) + imagePath[index:]
     return newPath

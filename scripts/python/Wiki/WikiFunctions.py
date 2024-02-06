@@ -54,6 +54,24 @@ def getPromoLinks():
             print(f"Link doesn't exist: {url}")
             break  # Stop the loop when you encounter nothing
 
+# Read Links.json and append new Links to the Array then save it again
+def saveLinks():
+    # Open the JSON file and load its contents
+    with open('./scripts/python/Wiki/jsons/Links.json', 'r') as file:
+        data = json.load(file)
+
+        # Add all new Links to the Array
+        for link in WV.cardLinks:
+            if link not in data:
+                data.append(link)
+
+        # Save the Links to a JSON file
+        with open('./scripts/python/Wiki/jsons/Links.json', 'w') as file:
+            json.dump(data, file, indent=2, sort_keys=sort_key)
+
+        # Set current Links to the new Links
+        WV.cardLinks = data
+
 
 def splitCellsInPair(cells):
     array = []
@@ -548,6 +566,7 @@ def getCardImages():
 
                 for item in gallery_items:
                     img = item.find("img")
+                    
                     if img is None:
                         continue
 
@@ -673,25 +692,6 @@ def removeSamples():
         # Save the updated JSON back to the file
         with open('./scripts/python/Wiki/jsons/DigimonCards.json', 'w') as file:
             json.dump(data, file, indent=2, sort_keys=sort_key)
-
-
-# Read Links.json and append new Links to the Array then save it again
-def saveLinks():
-    # Open the JSON file and load its contents
-    with open('./scripts/python/Wiki/Links.json', 'r') as file:
-        data = json.load(file)
-
-        # Add all new Links to the Array
-        for link in WV.cardLinks:
-            if link not in data:
-                data.append(link)
-
-        # Save the Links to a JSON file
-        with open('./scripts/python/Wiki/Links.json', 'w') as file:
-            json.dump(data, file, indent=2, sort_keys=sort_key)
-
-        # Set current Links to the new Links
-        WV.cardLinks = data
 
 
 def replaceStrings():
