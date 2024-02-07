@@ -11,6 +11,26 @@ preparedCardsJAP = []
 def sort_key(card):
   return card["_id"]
 
+def removeJ(id):
+  if "-J" in id:
+    # Remove "-J" from id and continue
+    return id[:id.rfind("-J")]
+  else:
+    return id
+
+def addSampleBeforeWebp(imagePath):
+  """Adds a "Sample-J" before the ".webp" extension in a file path."""
+
+  if imagePath.endswith(".webp") and not imagePath.endswith("-Sample-J.webp"):
+    index = imagePath.rfind(".webp")
+    return imagePath[:index] + "-Sample-J" + imagePath[index:]
+  else:
+    # If the imagePath does not end with ".webp", return it as is.
+    return imagePath
+
+def getP(code):
+  """Returns the prefix for a given AA code."""
+  return "_P" + code.split("_P")[1]
 
 def addJBeforeWebp(imagePath):
   """Adds a "J" before the ".webp" extension in a file path."""
@@ -24,49 +44,10 @@ def addJBeforeWebp(imagePath):
     return imagePath
 
 
-def addSampleBeforeWebp(imagePath):
-  """Adds a "Sample-J" before the ".webp" extension in a file path."""
-
-  if imagePath.endswith(".webp") and not imagePath.endswith("-Sample-J.webp"):
-    index = imagePath.rfind(".webp")
-    return imagePath[:index] + "-Sample-J" + imagePath[index:]
-  else:
-    # If the imagePath does not end with ".webp", return it as is.
-    return imagePath
-
-
-def addAABeforeWebp(imagePath, AA):
-  """Adds a "_P{AA}" before the ".webp" extension in a file path."""
-
-  if "-Errata" in imagePath and imagePath.endswith(".webp"):
-    index = imagePath.rfind("-Errata")
-    newPath = imagePath[:index] + getP(AA) + imagePath[index:]
-    return newPath
-  elif imagePath.endswith(".webp"):
-    index = imagePath.rfind(".webp")
-    newPath = imagePath[:index] + getP(AA) + imagePath[index:]
-    return newPath
-  else:
-    # If the imagePath does not end with ".webp", return it as is.
-    return imagePath
-
-
-def getP(code):
-  """Returns the prefix for a given AA code."""
-  return "_P" + code.split("_P")[1]
-
-
 def check_image_exists(file_path):
   """Checks if the image file at the given file path exists."""
 
   return os.path.isfile("src/" + file_path)
-
-
-def checkErrata(card):
-    imageErrata = card["cardImage"].replace(".webp", "-Errata.webp")
-    if check_image_exists(imageErrata):
-      card["cardImage"] = imageErrata
-    return card
 
 def checkIfSampleShouldBeUsed(card):
     imageSample = card["cardImage"].replace(".webp", "-Sample.webp")
@@ -81,7 +62,7 @@ def prepareCards():
     data = json.load(file)
 
     for card in data:
-      preparedCardsENG.append(checkErrata(card))
+      preparedCardsENG.append(card)
 
       a = deepcopy(card)
       a["cardImage"] = addJBeforeWebp(card["cardImage"])
@@ -90,8 +71,8 @@ def prepareCards():
       # Add Card AAs and JAAs as single Cards
       for aa in card['AAs']:
         eng = deepcopy(card)
-        eng["cardImage"] = addAABeforeWebp(eng["cardImage"], aa["id"])
-        eng["id"] = eng["id"] + aa["id"]
+        eng["cardImage"] = "assets/images/cards/" + aa["id"] + ".webp"
+        eng["id"] = aa["id"]
         eng["illustrator"] = aa["illustrator"]
         eng["notes"] = aa["note"]
         eng["version"] = aa["type"]
@@ -99,9 +80,8 @@ def prepareCards():
 
       for jaa in card['JAAs']:
         jap = deepcopy(card)
-        jap["cardImage"] = addJBeforeWebp(
-          addAABeforeWebp(jap["cardImage"], aa["id"]))
-        jap["id"] = jap["id"] + jaa["id"]
+        jap["cardImage"] = "assets/images/cards/" + jaa["id"] + ".webp"
+        jap["id"] = removeJ(jaa["id"])
         jap["illustrator"] = jaa["illustrator"]
         jap["notes"] = jaa["note"]
         jap["version"] = jaa["type"]

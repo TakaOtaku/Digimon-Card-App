@@ -215,14 +215,20 @@ def getEnglishIllustrator(rows, digimoncard):
             illustratorCount += 1
             continue
 
+        # The first Illustrator is the Main Illustrator
         if illustratorCount == 1:
             digimoncard.illustrator = cells[0].text
             digimoncard.notes = cells[1].text
         else:
+            #Pre-Release and Revision Packs dont Count as AAs
             if 'Pre Release' in cells[2].text or 'Pre Release' in cells[1].text:
                 illustratorCount -= 1
                 digimoncard.AAs.append(
                     {'id': '_P0', 'illustrator': cells[0].text, 'note': cells[1].text, 'type': cells[2].text})
+            elif 'Errata' in cells[2].text or 'Errata' in cells[1].text:
+                illustratorCount -= 1
+                digimoncard.AAs.append(
+                    {'id': '-Errata', 'illustrator': cells[0].text, 'note': cells[1].text, 'type': cells[2].text})
             else:
                 digimoncard.AAs.append(
                     {'id': '_P' + str(illustratorCount - 1), 'illustrator': cells[0].text, 'note': cells[1].text,
@@ -599,9 +605,18 @@ def getCardImages():
                         card.notes = combined_notes
 
                     # Update the AAs for the card
+                    # If the Note is the Note for NA it is ignored
                     for aa in backup_aas:
                         if aa['note'] == note_array[0]:
                             if '_P' in id_with_p:
+                                new_aa = {
+                                    'id': id_with_p,
+                                    'illustrator': aa['illustrator'],
+                                    'note': combined_notes,
+                                    'type': aa['type']
+                                }
+                                card.AAs.append(new_aa)
+                            elif '-Errata' in id_with_p:
                                 new_aa = {
                                     'id': id_with_p,
                                     'illustrator': aa['illustrator'],
@@ -647,10 +662,6 @@ def getCardImages():
                         note_array.append(note.text)
                     combined_notes = " / ".join(note_array)
 
-                    # Update the notes for the card
-                    if card.notes == note_array[0]:
-                        card.notes = combined_notes
-
                     # Update the JAAs for the card
                     for aa in backup_jaas:
                         if aa['note'] == note_array[0]:
@@ -662,8 +673,6 @@ def getCardImages():
                                     'type': aa['type']
                                 }
                                 card.JAAs.append(new_aa)
-                            else:
-                                card.notes = combined_notes
 
             # Update the card object in the WV.cards list
             index = 0
