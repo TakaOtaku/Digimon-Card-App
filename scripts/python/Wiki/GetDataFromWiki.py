@@ -5,7 +5,7 @@ import MoveFiles as MF
 import DeletePNGs as DP
 import PrepareCards as PC
 
-# Get all Links to all Cards
+ Get all Links to all Cards
 for wikiPageLink in WV.wikiPageLinks:
     print('Getting Links for: ' + wikiPageLink['name'])
     WF.getLinks(wikiPageLink)
@@ -22,6 +22,12 @@ print('Getting Card Data!')
 WF.getCardData()
 
 # WF.getRulings()
+
+print('Saving Cards!')
+WF.saveCards()
+
+print('Fetching AAs and Images!')
+WF.getCardImages()
 
 print('Setting correct Notes!')
 WF.setNotes()
@@ -43,15 +49,11 @@ WF.replace_string_in_json('  ', '')
 WF.replace_string_in_json('  ', '')
 WF.replace_string_in_json(' .', '.')
 
-print('Fetching AAs and Images!')
-WF.getCardImages()
-
 print('Removing Samples!')
 WF.removeSamples()
 
 print('Convert PNG to WebP!')
 PW.pngToWebP()
-
 
 print('PrepareCards!')
 PC.prepareCards()
