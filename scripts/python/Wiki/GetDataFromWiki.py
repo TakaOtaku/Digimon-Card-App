@@ -5,7 +5,7 @@ import MoveFiles as MF
 import DeletePNGs as DP
 import PrepareCards as PC
 
- Get all Links to all Cards
+# Get all Links to all Cards
 for wikiPageLink in WV.wikiPageLinks:
     print('Getting Links for: ' + wikiPageLink['name'])
     WF.getLinks(wikiPageLink)
