@@ -84,8 +84,7 @@ import { CardImageComponent } from '../../shared/card-image.component';
         <span class="w-full">Couldn't find a price for: </span>
         <div *ngFor="let card of notFound">
           <digimon-card-image
-            [card]="getCard(card.cardId, allCards)"
-            [ribbons]="false"></digimon-card-image>
+            [card]="getCard(card.cardId, allCards)"></digimon-card-image>
         </div>
       </div>
 
@@ -112,9 +111,7 @@ import { CardImageComponent } from '../../shared/card-image.component';
           <tr>
             <th>
               <digimon-card-image
-                [card]="getCard(product.cardId, allCards)"
-                [ribbons]="false"
-                [height]="'1.25rem'"></digimon-card-image>
+                [card]="getCard(product.cardId, allCards)"></digimon-card-image>
             </th>
             <th>{{ product.count }}</th>
             <td>{{ product.cardId }}</td>

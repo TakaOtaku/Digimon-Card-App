@@ -6,12 +6,7 @@ cardCount = 0
 normalCards = []
 cards = []
 rulings = {}
-cardLinks = [
-  'https://digimoncardgame.fandom.com/wiki/RB1-007',
-  'https://digimoncardgame.fandom.com/wiki/RB1-004',
-  'https://digimoncardgame.fandom.com/wiki/RB1-006',
-  'https://digimoncardgame.fandom.com/wiki/ST17-13',
-]
+cardLinks = []
 wikiPageLinks = [
 #    {'name': '▹RELEASE SPECIAL BOOSTER 1.0 [BT1-BT3]',
 #     'url': 'https://digimoncardgame.fandom.com/wiki/BT01-03:_Release_Special_Booster_Ver.1.0'},
@@ -41,8 +36,8 @@ wikiPageLinks = [
 #        'url': 'https://digimoncardgame.fandom.com/wiki/BT-14:_Booster_Blast_Ace'},
 #    {'name': '▹BOOSTER EXCEED APOCALYPSE [BT15]',
 #        'url': 'https://digimoncardgame.fandom.com/wiki/BT-15:_Booster_Exceed_Apocalypse'},
-  {'name': '▹BOOSTER BEGINNING OBSERVER [BT16]',
-   'url': 'https://digimoncardgame.fandom.com/wiki/BT-16:_Booster_Beginning_Observer'},
+#  {'name': '▹BOOSTER BEGINNING OBSERVER [BT16]',
+#   'url': 'https://digimoncardgame.fandom.com/wiki/BT-16:_Booster_Beginning_Observer'},
    {'name': '▹BOOSTER SECRET CRISIS [BT17]',
       'url': 'https://digimoncardgame.fandom.com/wiki/BT-17:_Booster_Secret_Crisis'},
 #
@@ -147,6 +142,7 @@ NoteDictionary = {
 
     'LM-01: Limited Pack Digimon Ghost Game': 'LIMITED PACK DIGIMON GHOST GAME [LM01]',
     'LM-02: Limited Pack Digimon DeathXmon': 'LIMITED PACK DIGIMON DEATHXMON [LM02]',
+    'LM-03: Limited Pack': 'LIMITED PACK [LM03]',
 }
 replacements = [
     '(After this card is placed, by trashing it the next turn or later, activate the effect below.)',

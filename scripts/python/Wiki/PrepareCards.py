@@ -7,7 +7,6 @@ from copy import deepcopy
 preparedCardsENG = []
 preparedCardsJAP = []
 
-
 def sort_key(card):
   return card["_id"]
 
@@ -42,7 +41,6 @@ def addJBeforeWebp(imagePath):
   else:
     # If the imagePath does not end with ".webp", return it as is.
     return imagePath
-
 
 def check_image_exists(file_path):
   """Checks if the image file at the given file path exists."""

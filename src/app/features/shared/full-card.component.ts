@@ -84,20 +84,6 @@ import { ViewCardDialogComponent } from './dialogs/view-card-dialog.component';
         </button>
       </div>
     </div>
-
-    <p-dialog
-      (close)="viewCardDialog = false"
-      [(visible)]="viewCardDialog"
-      [baseZIndex]="100000"
-      [showHeader]="false"
-      [modal]="true"
-      [dismissableMask]="true"
-      [resizable]="false"
-      styleClass="overflow-x-hidden">
-      <digimon-view-card-dialog
-        (onClose)="viewCardDialog = false"
-        [card]="card"></digimon-view-card-dialog>
-    </p-dialog>
   `,
   styleUrls: ['./full-card.component.scss'],
   standalone: true,
@@ -108,7 +94,6 @@ import { ViewCardDialogComponent } from './dialogs/view-card-dialog.component';
     NgClass,
     FormsModule,
     DialogModule,
-    ViewCardDialogComponent,
     AsyncPipe,
   ],
 })
@@ -127,10 +112,6 @@ export class FullCardComponent implements OnInit, OnDestroy {
   @Input() onlyView!: boolean;
 
   @Output() viewCard = new EventEmitter<DigimonCard>();
-
-  cardWidth = 7 + 'vmin';
-
-  viewCardDialog = false;
 
   collectionMinimum = 0;
   aaCollectionMinimum = 0;
@@ -175,7 +156,6 @@ export class FullCardComponent implements OnInit, OnDestroy {
 
   showCardDetails() {
     this.viewCard.emit(this.card);
-    //this.viewCardDialog = true;
   }
 
   changeCardCount(event: any, id: string) {
@@ -201,27 +181,6 @@ export class FullCardComponent implements OnInit, OnDestroy {
     const newId = withoutJ(id);
     this.store.dispatch(CollectionActions.setCardCount({ id: newId, count }));
   }
-
-  setCardSize(size: number) {
-    if (this.biggerCards) {
-      this.cardWidth = '20vw';
-      return;
-    }
-    if (this.deckBuilder) {
-      this.cardWidth = '5vw';
-      return;
-    }
-    if (this.compact) {
-      this.cardWidth = this.rangeToRange(100) + 'vmin';
-      return;
-    }
-    this.cardWidth = this.rangeToRange(size) + 'vmin';
-  }
-
-  rangeToRange = (input: number) => {
-    //(((OldValue - OldMin) * NewRange) / OldRange) + NewMin
-    return ((input - 5) * (30 - 20)) / (100 - 5) + 20;
-  };
 
   setDraggedCard(card: DigimonCard) {
     this.store.dispatch(

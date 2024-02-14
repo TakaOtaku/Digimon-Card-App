@@ -4,44 +4,47 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { ImgFallbackDirective } from 'src/app/directives/ImgFallback.directive';
 
 import { DigimonCard } from '../../../models';
-import { dummyCard } from './../../store/reducers/digimon.reducers';
+import { dummyCard } from '../../store/reducers/digimon.reducers';
 
 @Component({
   selector: 'digimon-card-image',
   template: `
-    <div
-      *ngIf="ribbons"
-      class="absolute top-1 z-10 grid w-full grid-cols-5 gap-0">
+    <div class="absolute top-1 z-10 grid w-full grid-cols-5 gap-0">
       <div></div>
-      <img
-        *ngIf="card.version === 'AA' || card.version === 'Foil'"
-        [src]="
-          aa.get(this.card.color) ??
-          'assets/images/banner/ico_card_detail_multi.png'
-        "
-        alt="AA-Banner"
-        class="col-span-3 w-full" />
-      <img
-        *ngIf="card.version === 'Reprint'"
-        [src]="
-          reprint.get(this.card.color) ??
-          'assets/images/banner/reprint_multi.png'
-        "
-        alt="Reprint-Banner"
-        class="col-span-3 w-full" />
-      <img
-        *ngIf="card.version === 'Stamp' || card.version === 'Pre-Release'"
-        [src]="
-          stamped.get(this.card.color) ??
-          'assets/images/banner/stamped_multi.png'
-        "
-        alt="Stamped-Banner"
-        class="col-span-3 w-full" />
+      @if (
+        card.version.includes('Foil') || card.version.includes('Alternative') || card.version.includes('Textured')
+      ) {
+        <img
+          [src]="
+            aa.get(this.card.color) ??
+            'assets/images/banner/ico_card_detail_multi.png'
+          "
+          alt="AA-Banner"
+          class="col-span-3 w-full" />
+      } @else if (card.version.includes('Reprint')) {
+        <img
+          [src]="
+            reprint.get(this.card.color) ??
+            'assets/images/banner/reprint_multi.png'
+          "
+          alt="Reprint-Banner"
+          class="col-span-3 w-full" />
+      } @else if (
+        card.version.includes('Stamp') || card.version.includes('Pre-Release')
+      ) {
+        <img
+          [src]="
+            stamped.get(this.card.color) ??
+            'assets/images/banner/stamped_multi.png'
+          "
+          alt="Stamped-Banner"
+          class="col-span-3 w-full" />
+      }
     </div>
 
     <img
       [digimonImgFallback]="card.cardImage"
-      [ngClass]="{ grayscale: setGrayScale(), 'max-h-32': !ribbons }"
+      [ngClass]="{ grayscale: setGrayScale() }"
       [ngStyle]="{ border: cardBorder, 'border-radius': cardRadius }"
       alt="{{ card.cardNumber + ' ' + card.name }}"
       class="m-auto aspect-auto" />
@@ -54,8 +57,6 @@ export class CardImageComponent {
   @Input() card: DigimonCard = JSON.parse(JSON.stringify(dummyCard));
   @Input() count = 0;
   @Input() collectionMode = false;
-  @Input() ribbons = true;
-  @Input() height?: string;
 
   @Input() collectionMinimum = 0;
   @Input() aaCollectionMinimum = 0;

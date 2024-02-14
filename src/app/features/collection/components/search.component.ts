@@ -1,11 +1,10 @@
-import { AsyncPipe, NgStyle } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { AsyncPipe, NgIf, NgStyle } from '@angular/common';
+import { Component } from '@angular/core';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { InputTextModule } from 'primeng/inputtext';
-import { debounceTime, distinctUntilChanged, filter, Subject, tap } from 'rxjs';
-import { selectSearchFilter } from '../../../store/digimon.selectors';
-import { WebsiteActions } from './../../../store/digimon.actions';
+import { debounceTime, distinctUntilChanged } from 'rxjs';
+import { WebsiteActions } from '../../../store/digimon.actions';
 
 @Component({
   selector: 'digimon-search',
@@ -15,34 +14,32 @@ import { WebsiteActions } from './../../../store/digimon.actions';
       class=" p-input-icon-left my-2 w-full px-2">
       <i class="pi pi-search ml-1 h-3"></i>
       <input
-        (ngModelChange)="search$.next($event)"
-        [ngModel]="filter$ | async"
+        [formControl]="search$"
         class="h-6 w-full text-xs"
         pInputText
         placeholder="Search"
         type="text" />
     </span>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgStyle, FormsModule, InputTextModule, AsyncPipe],
+  imports: [
+    NgStyle,
+    FormsModule,
+    InputTextModule,
+    AsyncPipe,
+    NgIf,
+    ReactiveFormsModule,
+  ],
 })
 export class SearchComponent {
-  search = '';
-  search$ = new Subject<string>();
-  filter$ = this.store
-    .select(selectSearchFilter)
-    .pipe(filter((search) => search !== this.search));
+  search$ = new FormControl<string>('');
 
   constructor(private store: Store) {
-    this.search$
-      .pipe(
-        debounceTime(500),
-        distinctUntilChanged(),
-        tap((search) => (this.search = search)),
-      )
-      .subscribe((search) =>
-        this.store.dispatch(WebsiteActions.setSearchFilter({ search })),
-      );
+    this.search$.valueChanges
+      .pipe(debounceTime(1000), distinctUntilChanged())
+      .subscribe((search) => {
+        const value = search ? search : '';
+        this.store.dispatch(WebsiteActions.setSearchFilter({ search: value }));
+      });
   }
 }

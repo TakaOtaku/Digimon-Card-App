@@ -1,67 +1,88 @@
-import WikiVariables as WV
-import WikiFunctions as WF
-import PNGtoWebP as PW
-import MoveFiles as MF
-import DeletePNGs as DP
-import PrepareCards as PC
+import TransformPNG
+import MoveFiles
+import DeletePNGs
+import FormatCards
+import GetCardData
+import GetCardImages
+import GetLinks
+import PrepareCards
 
-# Get all Links to all Cards
-for wikiPageLink in WV.wikiPageLinks:
+import WikiVariables
+import WikiFunctions
+
+# GetLinks.py -----------------------------------------------------
+# Get all the Links to all Cards from the Main Sets and Promo Cards
+for wikiPageLink in WikiVariables.wikiPageLinks:
     print('Getting Links for: ' + wikiPageLink['name'])
-    WF.getLinks(wikiPageLink)
+    GetLinks.getLinks(wikiPageLink)
+
 print('Getting Promo Links')
-WF.getPromoLinks()
+GetLinks.getPromoLinks()
 
 print('Comparing to saved Links')
-WF.saveLinks()
+GetLinks.saveLinks()
 
-WV.cardLinks = sorted(list(set(WV.cardLinks)))
-WV.cardCount = len(WV.cardLinks)
+# Sort Links and set how many Cards are there
+WikiVariables.cardLinks = sorted(list(set(WikiVariables.cardLinks)))
+WikiVariables.cardCount = len(WikiVariables.cardLinks)
+# ----------------------------------------------------------------
 
+# GetCardData.py -------------------------------------------------
+# Get the relevant Card Data from the Wiki
 print('Getting Card Data!')
-WF.getCardData()
+GetCardData.getCardData()
 
 # WF.getRulings()
 
 print('Saving Cards!')
-WF.saveCards()
+WikiFunctions.saveCards()
+# ----------------------------------------------------------------
 
+# GetCardImages.py -----------------------------------------------
+# Fetching Card Images and setting correct IDs and Notes
 print('Fetching AAs and Images!')
-WF.getCardImages()
+GetCardImages.getCardImages()
 
 print('Setting correct Notes!')
-WF.setNotes()
+WikiFunctions.setNotes()
 
 print('Saving Cards!')
-WF.saveCards()
+WikiFunctions.saveCards()
+# ----------------------------------------------------------------
 
+# FormatCards.py && TransformPNG.py && PrepareCards.py -----------
+# Formatting the Cards and preparing them for DigimonCard.app
 print('Formatting DigimonCard JSON!')
-WF.replaceStrings()
+FormatCards.replaceStrings()
 
 print('Removing Keyword Explanations!')
-for replacement in WV.replacements:
-    WF.replace_string_in_json(replacement, '')
+for replacement in WikiVariables.replacements:
+  FormatCards.replace_string_in_json(replacement, '')
 
 print('Removing Spaces!')
-WF.replace_string_in_json('  ', '')
-WF.replace_string_in_json('  ', '')
-WF.replace_string_in_json('  ', '')
-WF.replace_string_in_json('  ', '')
-WF.replace_string_in_json(' .', '.')
+FormatCards.replace_string_in_json('  ', '')
+FormatCards.replace_string_in_json('  ', '')
+FormatCards.replace_string_in_json('  ', '')
+FormatCards.replace_string_in_json('  ', '')
+FormatCards.replace_string_in_json(' .', '.')
 
 print('Removing Samples!')
-WF.removeSamples()
+FormatCards.removeSamples()
 
 print('Convert PNG to WebP!')
-PW.pngToWebP()
+TransformPNG.pngToWebP()
 
 print('PrepareCards!')
-PC.prepareCards()
+PrepareCards.prepareCards()
+# ----------------------------------------------------------------
 
+# MoveFiles.py && DeletePNG.py -----------------------------------
+# Move the Files to the correct place and cleanup
 print('Images to correct folders!')
-MF.moveFiles()
+MoveFiles.moveFiles()
 
 print('Delete PNGs!')
-DP.deletePNGs()
+DeletePNGs.deletePNGs()
+# ----------------------------------------------------------------
 
 print('Done!')

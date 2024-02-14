@@ -14,7 +14,7 @@ import { Store } from '@ngrx/store';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { InputTextModule } from 'primeng/inputtext';
-import { Subject, takeUntil } from 'rxjs';
+import { debounceTime, Subject, takeUntil } from 'rxjs';
 import { SaveActions, WebsiteActions } from 'src/app/store/digimon.actions';
 import { IFilter } from '../../../../models';
 import {
@@ -101,7 +101,7 @@ export class FilterAndSearchComponent implements OnInit, OnDestroy {
       });
 
     this.searchFilter.valueChanges
-      .pipe(takeUntil(this.onDestroy$))
+      .pipe(debounceTime(1000), takeUntil(this.onDestroy$))
       .subscribe((searchFilter) => {
         this.store.dispatch(
           WebsiteActions.setFilter({
