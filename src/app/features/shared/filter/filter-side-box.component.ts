@@ -1,6 +1,8 @@
 import {
   Component,
+  effect,
   EventEmitter,
+  inject,
   Input,
   OnDestroy,
   OnInit,
@@ -11,27 +13,26 @@ import {
   UntypedFormControl,
   UntypedFormGroup,
 } from '@angular/forms';
-import { Store } from '@ngrx/store';
 import { MessageService } from 'primeng/api';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { debounceTime, Subject, takeUntil } from 'rxjs';
 import { itemsAsSelectItem } from 'src/app/functions/digimon-card.functions';
-import { IFilter, Presets } from '../../../../models';
 import {
   Attributes,
   Colors,
+  emptyFilter,
   Forms,
+  IFilter,
   Illustrators,
   Keywords,
+  Presets,
   Restrictions,
   SpecialRequirements,
   Types,
-} from '../../../../models/data/filter.data';
-import { selectFilter } from '../../../store/digimon.selectors';
-import { emptyFilter } from '../../../store/reducers/digimon.reducers';
+} from '../../../../models';
+import { FilterStore } from '../../../store/filter.store';
 import { RangeSliderComponent } from '../range-slider.component';
 import { SortButtonsComponent } from '../sort-buttons.component';
-import { WebsiteActions } from './../../../store/digimon.actions';
 import { BlockFilterComponent } from './block-filter.component';
 import { CardTypeFilterComponent } from './card-type-filter.component';
 import { ColorFilterComponent } from './color-filter.component';
@@ -253,6 +254,7 @@ import { VersionFilterComponent } from './version-filter.component';
 })
 export class FilterSideBoxComponent implements OnInit, OnDestroy {
   @Input() public showColors: boolean;
+  filterStore = inject(FilterStore);
 
   keywordFilter = new UntypedFormControl([]);
   formFilter = new UntypedFormControl([]);
@@ -301,59 +303,54 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
   private filter: IFilter;
   private onDestroy$ = new Subject();
 
-  constructor(
-    private store: Store,
-    private messageService: MessageService,
-  ) {}
+  constructor(private messageService: MessageService) {}
 
   ngOnInit(): void {
-    this.store
-      .select(selectFilter)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((filter) => {
-        this.filter = filter;
+    effect(() => {
+      const filter = this.filterStore.filter();
+      this.filter = filter;
 
-        this.levelFilter.setValue(filter.levelFilter, { emitEvent: false });
-        this.playCostFilter.setValue(filter.playCostFilter, {
-          emitEvent: false,
-        });
-        this.digivolutionFilter.setValue(filter.digivolutionFilter, {
-          emitEvent: false,
-        });
-        this.dpFilter.setValue(filter.dpFilter, { emitEvent: false });
-        this.cardCountFilter.setValue(filter.cardCountFilter, {
-          emitEvent: false,
-        });
-
-        this.keywordFilter.setValue(filter.keywordFilter, { emitEvent: false });
-        this.formFilter.setValue(filter.formFilter, { emitEvent: false });
-        this.attributeFilter.setValue(filter.attributeFilter, {
-          emitEvent: false,
-        });
-        this.typeFilter.setValue(filter.typeFilter, { emitEvent: false });
-        this.illustratorFilter.setValue(filter.illustratorFilter, {
-          emitEvent: false,
-        });
-        this.specialRequirementsFilter.setValue(
-          filter.specialRequirementsFilter,
-          { emitEvent: false },
-        );
-        this.restrictionsFilter.setValue(filter.restrictionsFilter, {
-          emitEvent: false,
-        });
-        this.sourceFilter.setValue(filter.sourceFilter, {
-          emitEvent: false,
-        });
-        this.presetFilter.setValue(filter.presetFilter, {
-          emitEvent: false,
-        });
+      this.levelFilter.setValue(filter.levelFilter, { emitEvent: false });
+      this.playCostFilter.setValue(filter.playCostFilter, {
+        emitEvent: false,
       });
+      this.digivolutionFilter.setValue(filter.digivolutionFilter, {
+        emitEvent: false,
+      });
+      this.dpFilter.setValue(filter.dpFilter, { emitEvent: false });
+      this.cardCountFilter.setValue(filter.cardCountFilter, {
+        emitEvent: false,
+      });
+
+      this.keywordFilter.setValue(filter.keywordFilter, { emitEvent: false });
+      this.formFilter.setValue(filter.formFilter, { emitEvent: false });
+      this.attributeFilter.setValue(filter.attributeFilter, {
+        emitEvent: false,
+      });
+      this.typeFilter.setValue(filter.typeFilter, { emitEvent: false });
+      this.illustratorFilter.setValue(filter.illustratorFilter, {
+        emitEvent: false,
+      });
+      this.specialRequirementsFilter.setValue(
+        filter.specialRequirementsFilter,
+        { emitEvent: false },
+      );
+      this.restrictionsFilter.setValue(filter.restrictionsFilter, {
+        emitEvent: false,
+      });
+      this.sourceFilter.setValue(filter.sourceFilter, {
+        emitEvent: false,
+      });
+      this.presetFilter.setValue(filter.presetFilter, {
+        emitEvent: false,
+      });
+    });
 
     this.filterFormGroup.valueChanges
       .pipe(debounceTime(500), takeUntil(this.onDestroy$))
       .subscribe((filterValue) => {
         const filter: IFilter = { ...this.filter, ...filterValue };
-        this.store.dispatch(WebsiteActions.setFilter({ filter }));
+        this.filterStore.updateFilter(filter);
       });
   }
 
@@ -364,7 +361,7 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
 
   reset() {
     this.resetEmitter.emit();
-    this.store.dispatch(WebsiteActions.setFilter({ filter: emptyFilter }));
+    this.filterStore.updateFilter(emptyFilter);
     this.messageService.add({
       severity: 'info',
       detail: 'All filter were reset.',

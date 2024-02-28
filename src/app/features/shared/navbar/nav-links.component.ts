@@ -3,6 +3,7 @@ import {
   Component,
   EventEmitter,
   HostListener,
+  inject,
   Input,
   OnDestroy,
   OnInit,
@@ -25,6 +26,7 @@ import { DialogModule } from 'primeng/dialog';
 import { Subject, takeUntil } from 'rxjs';
 import { IUser } from '../../../../models';
 import { AuthService } from '../../../services/auth.service';
+import { DialogStore } from '../../../store/dialog.store';
 import { ChangelogDialogComponent } from '../dialogs/changelog-dialog.component';
 import { SettingsDialogComponent } from '../dialogs/settings-dialog.component';
 import { FilterButtonComponent } from '../filter/filter-button.component';
@@ -180,7 +182,7 @@ import { FilterButtonComponent } from '../filter/filter-button.component';
         }"
         class="pi pi-ellipsis-h my-5 text-center text-[#e2e4e6] hover:text-[#64B5F6]"
         style="font-size: 1.5rem"
-        (click)="settingsShow.emit(true)"></i>
+        (click)="dialogStore.updateSettingsDialog(true)"></i>
 
       <div class="grid grid-cols-2 justify-center items-center">
         <a
@@ -236,7 +238,7 @@ import { FilterButtonComponent } from '../filter/filter-button.component';
 })
 export class NavLinksComponent implements OnInit, OnDestroy {
   @Input() sidebar = false;
-  @Output() settingsShow = new EventEmitter<boolean>();
+  dialogStore = inject(DialogStore);
 
   user: IUser | null;
 

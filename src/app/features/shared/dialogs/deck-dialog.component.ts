@@ -2,6 +2,7 @@ import { NgFor, NgIf } from '@angular/common';
 import {
   Component,
   EventEmitter,
+  inject,
   Input,
   OnChanges,
   OnInit,
@@ -15,7 +16,6 @@ import {
   UntypedFormGroup,
 } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
@@ -27,24 +27,20 @@ import { TooltipModule } from 'primeng/tooltip';
 import { first } from 'rxjs';
 import * as uuid from 'uuid';
 
-import {
-  DigimonCard,
-  IDeck,
-  IDeckCard,
-  ITournamentDeck,
-} from '../../../../models';
+import { IDeck, IDeckCard, ITournamentDeck } from '../../../../models';
 import {
   mapToDeckCards,
   setDeckImage,
 } from '../../../functions/digimon-card.functions';
 import { AuthService } from '../../../services/auth.service';
 import { DigimonBackendService } from '../../../services/digimon-backend.service';
-import { selectAllCards } from '../../../store/digimon.selectors';
+import { DigimonCardStore } from '../../../store/digimon-card.store';
+import { SaveStore } from '../../../store/save.store';
+import { WebsiteStore } from '../../../store/website.store';
 import { DeckCardComponent } from '../deck-card.component';
 import { ChartContainersComponent } from '../statistics/chart-containers.component';
 import { ColorSpreadComponent } from '../statistics/color-spread.component';
 import { DdtoSpreadComponent } from '../statistics/ddto-spread.component';
-import { DeckActions, WebsiteActions } from './../../../store/digimon.actions';
 import { DeckSubmissionComponent } from './deck-submission.component';
 import { ExportDeckDialogComponent } from './export-deck-dialog.component';
 
@@ -62,15 +58,13 @@ export interface DigimonCardImage {
         <digimon-deck-card
           *ngFor="let card of mainDeck"
           [edit]="false"
-          [card]="card"
-          [cards]="allCards"></digimon-deck-card>
+          [card]="card"></digimon-deck-card>
       </div>
 
       <div
         class="surface-card mx-auto my-1 flex max-h-[200px] w-full flex-row border border-white">
         <digimon-ddto-spread
           [deck]="deck"
-          [allCards]="allCards"
           [container]="true"
           class="ml-auto hidden border-r border-slate-200 px-5 lg:block"></digimon-ddto-spread>
 
@@ -80,7 +74,6 @@ export interface DigimonCardImage {
 
         <digimon-color-spread
           [deck]="deck"
-          [allCards]="allCards"
           [container]="true"
           class="mr-auto hidden border-l border-slate-200 px-5 lg:block"></digimon-color-spread>
       </div>
@@ -318,6 +311,9 @@ export class DeckDialogComponent implements OnInit, OnChanges {
 
   @Output() closeDialog = new EventEmitter<boolean>();
 
+  saveStore = inject(SaveStore);
+  websiteStore = inject(WebsiteStore);
+
   deckSubmissionDialog = false;
 
   deckFormGroup = new UntypedFormGroup({
@@ -329,37 +325,32 @@ export class DeckDialogComponent implements OnInit, OnChanges {
     }),
   });
 
-  saveDisabled = true;
-
   cardImageOptions: DigimonCardImage[] = [];
 
   exportDeckDialog = false;
-  allCards: DigimonCard[] = [];
   mainDeck: IDeckCard[] = [];
 
   isAdmin = false;
 
+  private digimonCardStore = inject(DigimonCardStore);
+
   constructor(
-    private store: Store,
     private authService: AuthService,
     private router: Router,
     private digimonBackendService: DigimonBackendService,
     private confirmationService: ConfirmationService,
     private messageService: MessageService,
   ) {
-    this.store
-      .select(selectAllCards)
-      .pipe(first())
-      .subscribe((cards) => {
-        this.allCards = cards;
-      });
     this.isAdmin =
       this.authService.userData?.uid === 'S3rWXPtCYRN8vSrxY3qE6aeewy43' ||
       this.authService.userData?.uid === 'loBLZPOIL0ZlDzt6A1rgDiTomTw2';
   }
 
   ngOnInit() {
-    this.mainDeck = mapToDeckCards(this.deck.cards, this.allCards);
+    this.mainDeck = mapToDeckCards(
+      this.deck.cards,
+      this.digimonCardStore.cards(),
+    );
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -367,7 +358,10 @@ export class DeckDialogComponent implements OnInit, OnChanges {
       return;
     }
 
-    this.mainDeck = mapToDeckCards(this.deck.cards, this.allCards);
+    this.mainDeck = mapToDeckCards(
+      this.deck.cards,
+      this.digimonCardStore.cards(),
+    );
 
     this.deckFormGroup = new UntypedFormGroup({
       title: new UntypedFormControl(this.deck.title),
@@ -387,7 +381,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
           `deckbuilder/user/${this.authService.userData?.uid}/deck/${this.deck.id}`,
         );
       } else {
-        this.store.dispatch(WebsiteActions.setDeck({ deck: this.deck }));
+        this.websiteStore.updateDeck(this.deck);
         this.router.navigateByUrl('deckbuilder');
       }
     } else {
@@ -395,11 +389,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
         target: event.target ?? undefined,
         message: 'You are about to open this deck. Are you sure?',
         accept: () => {
-          this.store.dispatch(
-            WebsiteActions.setDeck({
-              deck: this.deck,
-            }),
-          );
+          this.websiteStore.updateDeck(this.deck);
           this.router.navigateByUrl(
             '/deckbuilder/user/' + this.deck.userId + '/deck/' + this.deck.id,
           );
@@ -415,7 +405,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
         key: 'Delete',
         message: 'You are about to permanently delete this deck. Are you sure?',
         accept: () => {
-          this.store.dispatch(DeckActions.delete({ deck: this.deck }));
+          this.saveStore.deleteDeck(this.deck);
           this.messageService.add({
             severity: 'success',
             summary: 'Deck deleted!',
@@ -450,11 +440,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
       target: event.target ?? undefined,
       message: 'You are about to copy this deck. Are you sure?',
       accept: () => {
-        this.store.dispatch(
-          DeckActions.import({
-            deck: { ...this.deck, id: uuid.v4() },
-          }),
-        );
+        this.saveStore.importDeck({ ...this.deck, id: uuid.v4() });
         this.messageService.add({
           severity: 'success',
           summary: 'Deck copied!',
@@ -508,7 +494,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
       imageCardId: this.deckFormGroup.get('cardImage')?.value.value,
     };
 
-    this.store.dispatch(DeckActions.save({ deck }));
+    this.saveStore.saveDeck(deck);
     this.messageService.add({
       severity: 'success',
       summary: 'Deck saved!',
@@ -547,14 +533,14 @@ export class DeckDialogComponent implements OnInit, OnChanges {
       return { name: 'BT1-001 - Yokomon', value: 'BT1-001' };
     }
 
-    let foundCard = this.allCards.find((card) => card.id === imageCardId);
+    let foundCard = this.digimonCardStore.cardsMap().get(imageCardId);
     if (foundCard) {
       return {
         name: `${foundCard!.id} - ${foundCard!.name}`,
         value: foundCard!.id,
       };
     } else {
-      const imageCard = setDeckImage(this.deck, this.allCards);
+      const imageCard = setDeckImage(this.deck, this.digimonCardStore.cards());
       return {
         name: `${imageCard!.id} - ${imageCard!.name}`,
         value: imageCard!.id,

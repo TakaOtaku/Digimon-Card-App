@@ -2,32 +2,27 @@ import { AsyncPipe, NgForOf, NgIf } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
+  effect,
   HostListener,
   inject,
   OnInit,
 } from '@angular/core';
-import { PageEvent } from '@angular/material/paginator';
 import { Meta, Title } from '@angular/platform-browser';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Store } from '@ngrx/store';
-
+import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { DividerModule } from 'primeng/divider';
 import { PaginatorModule } from 'primeng/paginator';
 import { RippleModule } from 'primeng/ripple';
-import { map, tap } from 'rxjs';
 import { IBlog } from '../../../models';
-import { DigimonBackendService } from '../../services/digimon-backend.service';
-import { WebsiteActions } from '../../store/digimon.actions';
-import { selectBlogs } from '../../store/digimon.selectors';
+import { WebsiteStore } from '../../store/website.store';
 import { PageComponent } from '../shared/page.component';
 import { BlogItemComponent } from './components/blog-item.component';
 
 @Component({
   selector: 'digimon-blog-page',
   template: `
-    <digimon-page *ngIf="blog$ | async">
+    <digimon-page>
       <div
         class="self-start mx-auto p-3 w-[calc(100vw-0.75rem)] md:p-10 md:w-[calc(100vw-2.5rem)] max-w-xl md:max-w-6xl grid grid-cols-4">
         <div class="col-span-4 grid grid-cols-4 justify-center relative mb-3">
@@ -100,6 +95,8 @@ import { BlogItemComponent } from './components/blog-item.component';
   providers: [MessageService],
 })
 export class CommunityPageComponent implements OnInit {
+  websiteStore = inject(WebsiteStore);
+
   categories = [
     {
       text: 'Archtype Review',
@@ -136,16 +133,6 @@ export class CommunityPageComponent implements OnInit {
       count: 0,
     },
   ];
-  blog$ = this.store.select(selectBlogs).pipe(
-    tap((blogs) => {
-      //fill Authors and Categories
-    }),
-    tap(
-      (blogs) =>
-        (this.showBlogs = blogs.slice(this.first, this.first + this.rows)),
-    ),
-    tap((blogs) => (this.blogs = blogs)),
-  );
 
   first = 0;
   rows = 6;
@@ -157,13 +144,15 @@ export class CommunityPageComponent implements OnInit {
   display = false;
 
   constructor(
-    private active: ActivatedRoute,
-    private digimonBackendService: DigimonBackendService,
-    private messageService: MessageService,
-    private store: Store,
     private meta: Meta,
     private metaTitle: Title,
-  ) {}
+  ) {
+    effect(() => {
+      const blogs = this.websiteStore.blogs();
+      this.showBlogs = blogs.slice(this.first, this.first + this.rows);
+      this.blogs = blogs;
+    });
+  }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event): void {
@@ -173,7 +162,7 @@ export class CommunityPageComponent implements OnInit {
   ngOnInit(): void {
     this.makeGoogleFriendly();
     this.checkScreenWidth(window.innerWidth);
-    this.store.dispatch(WebsiteActions.loadBlogs());
+    this.websiteStore.loadBlogs();
   }
 
   private makeGoogleFriendly() {

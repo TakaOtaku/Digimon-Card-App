@@ -2,30 +2,26 @@ import { NgClass, NgIf } from '@angular/common';
 import {
   Component,
   EventEmitter,
+  inject,
   Input,
   OnChanges,
   OnDestroy,
-  OnInit,
   Output,
   SimpleChanges,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Store } from '@ngrx/store';
 import { saveAs } from 'file-saver';
 import { ButtonModule } from 'primeng/button';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { SelectButtonModule } from 'primeng/selectbutton';
-import { first, Subject } from 'rxjs';
-import { DigimonCard, IDeck, ColorsWithoutMulti } from '../../../../models';
+import { Subject } from 'rxjs';
+import { ColorsWithoutMulti, DigimonCard, IDeck } from '../../../../models';
 import {
   compareIDs,
   formatId,
   mapToDeckCards,
 } from '../../../functions/digimon-card.functions';
-import {
-  selectAllCards,
-  selectDigimonCardMap,
-} from '../../../store/digimon.selectors';
+import { DigimonCardStore } from '../../../store/digimon-card.store';
 
 @Component({
   selector: 'digimon-export-deck-dialog',
@@ -127,7 +123,7 @@ import {
     ButtonModule,
   ],
 })
-export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
+export class ExportDeckDialogComponent implements OnChanges {
   @Input() show: boolean = false;
   @Input() deck: IDeck;
 
@@ -142,11 +138,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
   colors = ColorsWithoutMulti;
   selectedColor = 'Red';
 
-  private digimonCardMap: Map<string, DigimonCard> = new Map();
-
-  private onDestroy$ = new Subject();
-
-  constructor(private store: Store) {}
+  private digimonCardStore = inject(DigimonCardStore);
 
   private static writeText(
     ctx: any,
@@ -170,28 +162,9 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
     ctx.fillText(text, x * scale, y * scale);
   }
 
-  ngOnInit() {
-    this.store
-      .select(selectAllCards)
-      .pipe(first())
-      .subscribe((cards) => {
-        this.digimonCards = cards;
-      });
-    this.store
-      .select(selectDigimonCardMap)
-      .pipe(first())
-      .subscribe((map) => {
-        this.digimonCardMap = map;
-      });
-  }
-
   ngOnChanges(changes: SimpleChanges): void {
     this.setExportTypeText();
     this.exportType = 'TEXT';
-  }
-
-  ngOnDestroy(): void {
-    this.onDestroy$.next(true);
   }
 
   colorChecked(color: string): boolean {
@@ -268,7 +241,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
   private setExportTypeText(): void {
     this.deckText = '// Digimon DeckList\n\n';
     this.deck.cards.forEach((card) => {
-      const digimonCard = this.digimonCardMap.get(card.id);
+      const digimonCard = this.digimonCardStore.cardsMap().get(card.id);
       if (digimonCard) {
         this.deckText += `${card.id.replace('ST0', 'ST')} ${digimonCard?.name
           .english} ${card.count}\n`;

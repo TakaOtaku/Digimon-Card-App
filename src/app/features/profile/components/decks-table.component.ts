@@ -6,22 +6,19 @@ import {
   NgIf,
   NgStyle,
 } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { SharedModule } from 'primeng/api';
 import { TableModule } from 'primeng/table';
-import { first } from 'rxjs';
-import { DigimonCard, IDeck } from '../../../../models';
+import { IDeck } from '../../../../models';
 import { setDeckImage } from '../../../functions/digimon-card.functions';
-import { selectAllCards } from '../../../store/digimon.selectors';
-import { DeckActions } from '../../../store/digimon.actions';
+import { DigimonCardStore } from '../../../store/digimon-card.store';
+import { SaveStore } from '../../../store/save.store';
 
 @Component({
   selector: 'digimon-decks-table',
   template: `
     <p-table
-      *ngIf="allCards$ | async as allCards"
       [value]="decks"
       [scrollable]="true"
       [tableStyle]="{ 'min-width': '30rem' }"
@@ -66,7 +63,7 @@ import { DeckActions } from '../../../store/digimon.actions';
             <div
               class="surface-card relative h-16 w-56 border border-black"
               defaultImage="assets/images/digimon-card-back.webp"
-              [lazyLoad]="getCardImage(deck, allCards)"
+              [lazyLoad]="getCardImage(deck)"
               [ngStyle]="{
                 'background-repeat': 'no-repeat',
                 'background-position': 'center',
@@ -114,35 +111,32 @@ export class DecksTableComponent {
   @Input() decks: IDeck[];
   @Output() onDeckClick = new EventEmitter<IDeck>();
 
-  allCards: DigimonCard[] = [];
-  allCards$ = this.store.select(selectAllCards);
+  saveStore = inject(SaveStore);
 
-  constructor(private store: Store) {
-    this.store
-      .select(selectAllCards)
-      .pipe(first())
-      .subscribe((cards) => {
-        this.allCards = cards;
-      });
-  }
+  private digimonCardStore = inject(DigimonCardStore);
 
-  getCardImage(deck: IDeck, allCards: DigimonCard[]): string {
+  constructor() {}
+
+  getCardImage(deck: IDeck): string {
     //If there are no cards in the deck set it to the Yokomon
-    if (!deck.cards || deck.cards.length === 0 || allCards.length === 0) {
+    if (
+      !deck.cards ||
+      deck.cards.length === 0 ||
+      this.digimonCardStore.cards().length === 0
+    ) {
       return '../../../assets/images/cards/eng/BT1-001.webp';
     }
 
     // If there is a ImageCardId set it
     if (deck.imageCardId) {
       return (
-        allCards.find((card) => card.id === deck.imageCardId)?.cardImage ??
+        this.digimonCardStore.cardsMap().get(deck.imageCardId)?.cardImage ??
         '../../../assets/images/cards/eng/BT1-001.webp'
       );
     } else {
-      const deckImage = setDeckImage(deck, this.allCards);
-      this.store.dispatch(
-        DeckActions.save({ deck: { ...deck, imageCardId: deckImage.id } }),
-      );
+      const deckImage = setDeckImage(deck, this.digimonCardStore.cards());
+      this.saveStore.saveDeck({ ...deck, imageCardId: deckImage.id });
+
       return deckImage.cardImage;
     }
   }

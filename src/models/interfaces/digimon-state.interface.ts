@@ -3,9 +3,11 @@ import { DRAG } from '../enums/drag.enum';
 import { IBlog } from './blog-entry.interface';
 import { IDeck } from './deck.interface';
 import { DigimonCard } from './digimon-card.interface';
+import { IDraggedCard } from './dragged-card.interface';
 import { IFilter } from './filter.interface';
 import { ISort } from './sort.interface';
 
+export * from './digimon-state.interface';
 export interface IDigimonState {
   deck: IDeck;
   filter: IFilter;
@@ -17,9 +19,4 @@ export interface IDigimonState {
   blogs: IBlog[];
   priceGuideCM: ProductCM[];
   draggedCard: IDraggedCard;
-}
-
-export interface IDraggedCard {
-  card: DigimonCard;
-  drag: DRAG;
 }

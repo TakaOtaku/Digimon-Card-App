@@ -1,5 +1,6 @@
 import {
   DigimonCard,
+  dummyCard,
   ICountCard,
   IDeck,
   IDeckCard,
@@ -10,7 +11,6 @@ import {
 } from '../../models';
 import { ReleaseOrder } from '../../models/data/release-order.data';
 import { ColorOrderMap, DeckColorMap } from '../../models/maps/color.map';
-import { dummyCard } from '../store/reducers/digimon.reducers';
 
 export function setTags(deck: IDeck, allCards: DigimonCard[]) {
   let tags = [];

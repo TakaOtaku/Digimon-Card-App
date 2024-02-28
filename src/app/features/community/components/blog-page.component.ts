@@ -1,17 +1,20 @@
 import { AsyncPipe, NgIf } from '@angular/common';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
-import { Store } from '@ngrx/store';
-
 import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 import { first, Observable, switchMap, tap, withLatestFrom } from 'rxjs';
-import { WebsiteActions } from 'src/app/store/digimon.actions';
 import { IBlog, IBlogWithText } from '../../../../models';
 import { DigimonBackendService } from '../../../services/digimon-backend.service';
+import { WebsiteStore } from '../../../store/website.store';
 import { PageComponent } from '../../shared/page.component';
 import { CKEditorComponent } from './ckeditor.component';
 import { HeaderComponent } from './header.component';
@@ -55,6 +58,7 @@ import { HeaderComponent } from './header.component';
   providers: [MessageService],
 })
 export class BlogPageComponent implements OnInit {
+  websiteStore = inject(WebsiteStore);
   blog$: Observable<IBlogWithText>;
   edit = false;
 
@@ -70,7 +74,6 @@ export class BlogPageComponent implements OnInit {
     private active: ActivatedRoute,
     private digimonBackendService: DigimonBackendService,
     private messageService: MessageService,
-    private store: Store,
     private meta: Meta,
     private metaTitle: Title,
   ) {}
@@ -83,7 +86,7 @@ export class BlogPageComponent implements OnInit {
       .getBlogEntries()
       .pipe(first())
       .subscribe((blogs) => {
-        this.store.dispatch(WebsiteActions.setBlogs({ blogs }));
+        this.websiteStore.updateBlogs(blogs);
       });
   }
 

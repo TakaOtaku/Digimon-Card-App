@@ -1,10 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
 import { DigimonCard, IDeck } from '../../../../models';
 import {
   getCountFromDeckCards,
   mapToDeckCards,
 } from '../../../functions/digimon-card.functions';
 import { NgStyle } from '@angular/common';
+import { DigimonCardStore } from '../../../store/digimon-card.store';
 
 @Component({
   selector: 'digimon-level-spread',
@@ -66,18 +67,20 @@ import { NgStyle } from '@angular/common';
 })
 export class LevelSpreadComponent implements OnInit {
   @Input() deck: IDeck;
-  @Input() allCards: DigimonCard[];
 
   levelSpread = [0, 0, 0, 0, 0, 0];
 
-  constructor() {}
+  private digimonCardStore = inject(DigimonCardStore);
 
   ngOnInit(): void {
     this.getLevelSpread();
   }
 
   getLevelSpread() {
-    const cards = mapToDeckCards(this.deck.cards, this.allCards);
+    const cards = mapToDeckCards(
+      this.deck.cards,
+      this.digimonCardStore.cards(),
+    );
     const digieggs = cards.filter((card) => card.cardType === 'Digi-Egg');
     const lv3 = cards.filter((card) => card.cardLv === 'Lv.3');
     const lv4 = cards.filter((card) => card.cardLv === 'Lv.4');

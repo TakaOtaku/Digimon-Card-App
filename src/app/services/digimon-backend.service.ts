@@ -13,9 +13,9 @@ import {
 } from 'src/models';
 import { CARDSET, IBlog, IBlogWithText, ITag } from '../../models';
 import { sortByReleaseOrder } from '../../models/data/release-order.data';
+import { emptySettings } from '../../models/data/save.data';
 import { IUserAndDecks } from '../../models/interfaces/userAndDecks.interface';
 import { setDeckImage } from '../functions/digimon-card.functions';
-import { emptySettings } from '../store/reducers/save.reducer';
 
 const baseUrl = 'https://backend.digimoncard.app/api/';
 const baseUrl_inactiv = 'http://localhost:8080/api/';

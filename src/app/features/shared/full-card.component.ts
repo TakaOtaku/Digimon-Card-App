@@ -1,28 +1,23 @@
 import { AsyncPipe, NgClass, NgIf } from '@angular/common';
 import {
   Component,
+  effect,
   EventEmitter,
+  inject,
   Input,
   OnDestroy,
   OnInit,
   Output,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Store } from '@ngrx/store';
 import { DialogModule } from 'primeng/dialog';
 import { DragDropModule } from 'primeng/dragdrop';
-import { map, Subject, takeUntil } from 'rxjs';
-import { DigimonCard } from '../../../models';
-import { DRAG } from '../../../models/enums/drag.enum';
-import { withoutJ } from '../../functions/digimon-card.functions';
-import { selectDeck, selectSettings } from '../../store/digimon.selectors';
-import {
-  CollectionActions,
-  WebsiteActions,
-} from './../../store/digimon.actions';
-import { dummyCard } from './../../store/reducers/digimon.reducers';
+import { Subject } from 'rxjs';
+import { DigimonCard, DRAG, dummyCard } from '../../../models';
+import { withoutJ } from '../../functions';
+import { SaveStore } from '../../store/save.store';
+import { WebsiteStore } from '../../store/website.store';
 import { CardImageComponent } from './card-image.component';
-import { ViewCardDialogComponent } from './dialogs/view-card-dialog.component';
 
 @Component({
   selector: 'digimon-full-card',
@@ -40,7 +35,7 @@ import { ViewCardDialogComponent } from './dialogs/view-card-dialog.component';
           [aaCollectionMinimum]="aaCollectionMinimum"></digimon-card-image>
       </div>
 
-      <ng-container *ngIf="{ count: countInDeck$ | async } as deckCard">
+      <ng-container *ngIf="{ count: countInDeck } as deckCard">
         <span
           *ngIf="!collectionOnly && deckBuilder && deckCard.count"
           class="text-shadow-white absolute right-1 z-[100] px-1 text-3xl font-black text-orange-500"
@@ -113,31 +108,31 @@ export class FullCardComponent implements OnInit, OnDestroy {
 
   @Output() viewCard = new EventEmitter<DigimonCard>();
 
+  websiteStore = inject(WebsiteStore);
+
+  saveStore = inject(SaveStore);
+
   collectionMinimum = 0;
   aaCollectionMinimum = 0;
 
-  countInDeck$ = this.store
-    .select(selectDeck)
-    .pipe(
-      map(
-        (deck) =>
-          deck.cards.find((value) => value.id === withoutJ(this.card.id))
-            ?.count ?? 0,
-      ),
-    );
+  countInDeck = 0;
 
   private onDestroy$ = new Subject();
 
-  constructor(private store: Store) {}
+  constructor() {
+    effect(() => {
+      this.countInDeck =
+        this.websiteStore
+          .deck()
+          .cards.find((value) => value.id === withoutJ(this.card.id))?.count ??
+        0;
+    });
+  }
 
   ngOnInit() {
-    this.store
-      .select(selectSettings)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((settings) => {
-        this.collectionMinimum = settings.collectionMinimum;
-        this.aaCollectionMinimum = settings.aaCollectionMinimum;
-      });
+    const settings = this.saveStore.settings();
+    this.collectionMinimum = settings.collectionMinimum;
+    this.aaCollectionMinimum = settings.aaCollectionMinimum;
   }
 
   ngOnDestroy() {
@@ -149,9 +144,7 @@ export class FullCardComponent implements OnInit, OnDestroy {
       this.viewCard.emit(this.card);
       return;
     }
-    this.store.dispatch(
-      WebsiteActions.addCardToDeck({ addCardToDeck: this.card.id }),
-    );
+    this.websiteStore.addCardToDeck(this.card.id);
   }
 
   showCardDetails() {
@@ -164,13 +157,14 @@ export class FullCardComponent implements OnInit, OnDestroy {
     }
     const count = event.target.value;
     const newId = withoutJ(id);
-    this.store.dispatch(CollectionActions.setCardCount({ id: newId, count }));
+
+    this.saveStore.updateCard(newId, count);
   }
 
   increaseCardCount(id: string) {
     const count = ++this.count;
     const newId = withoutJ(id);
-    this.store.dispatch(CollectionActions.setCardCount({ id: newId, count }));
+    this.saveStore.updateCard(newId, count);
   }
 
   decreaseCardCount(id: string) {
@@ -179,15 +173,12 @@ export class FullCardComponent implements OnInit, OnDestroy {
     }
     const count = --this.count;
     const newId = withoutJ(id);
-    this.store.dispatch(CollectionActions.setCardCount({ id: newId, count }));
+
+    this.saveStore.updateCard(newId, count);
   }
 
   setDraggedCard(card: DigimonCard) {
-    this.store.dispatch(
-      WebsiteActions.setDraggedCard({
-        dragCard: { card: card, drag: DRAG.Collection },
-      }),
-    );
+    this.websiteStore.updateDraggedCard({ card: card, drag: DRAG.Collection });
   }
 
   click() {

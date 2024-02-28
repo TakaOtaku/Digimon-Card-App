@@ -1,14 +1,12 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { Store } from '@ngrx/store';
 import { GoogleAuthProvider } from 'firebase/auth';
 import firebase from 'firebase/compat';
 import { MessageService } from 'primeng/api';
-import { catchError, first, map, Observable, of, retry, Subject } from 'rxjs';
+import { catchError, first, Observable, of, retry, Subject } from 'rxjs';
 import { ISave, IUser } from '../../models';
-import { emptySave, emptySettings } from '../store/reducers/save.reducer';
-import { SaveActions } from './../store/digimon.actions';
+import { emptySave, emptySettings } from '../../models/data/save.data';
+import { SaveStore } from '../store/save.store';
 import { DigimonBackendService } from './digimon-backend.service';
 import UserCredential = firebase.auth.UserCredential;
 import User = firebase.User;
@@ -25,7 +23,6 @@ export class AuthService {
     public afAuth: AngularFireAuth,
     private digimonBackendService: DigimonBackendService,
     private messageService: MessageService,
-    private store: Store,
   ) {}
 
   get isLoggedIn(): boolean {
@@ -46,8 +43,8 @@ export class AuthService {
   GoogleAuth() {
     const provider = new GoogleAuthProvider();
     provider.setCustomParameters({
-       'prompt': 'select_account'
-       });
+      prompt: 'select_account',
+    });
     return this.AuthLogin(provider);
   }
 
@@ -91,7 +88,8 @@ export class AuthService {
             '  showAACards: true,' +
             '  sortDeckOrder: "Level"}}',
       );
-      this.store.dispatch(SaveActions.setSave({ save }));
+      const saveStore = inject(SaveStore);
+      saveStore.updateSave(save);
     });
   }
 
@@ -129,18 +127,17 @@ export class AuthService {
     }
 
     localStorage.setItem('user', JSON.stringify(userData));
-    this.store.dispatch(
-      SaveActions.setSave({
-        save: save ?? {
-          uid: user.uid,
-          photoURL: user.photoURL ?? '',
-          displayName: user.displayName ?? '',
-          version: 1,
-          collection: [],
-          decks: [],
-          settings: emptySettings,
-        },
-      }),
+    const saveStore = inject(SaveStore);
+    saveStore.updateSave(
+      save ?? {
+        uid: user.uid,
+        photoURL: user.photoURL ?? '',
+        displayName: user.displayName ?? '',
+        version: 1,
+        collection: [],
+        decks: [],
+        settings: emptySettings,
+      },
     );
 
     this.userData = userData;

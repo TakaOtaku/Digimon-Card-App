@@ -1,10 +1,8 @@
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
-import { Component, HostListener, inject, OnInit } from '@angular/core';
+import { Component, effect, HostListener, inject, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
-import { Store } from '@ngrx/store';
 import { ToastrService } from 'ngx-toastr';
-import { MessageService } from 'primeng/api';
 import { BlockUIModule } from 'primeng/blockui';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
@@ -12,28 +10,16 @@ import { DividerModule } from 'primeng/divider';
 import { PaginatorModule } from 'primeng/paginator';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { TooltipModule } from 'primeng/tooltip';
-import { combineLatest, filter, map, of, Subject, tap } from 'rxjs';
-
-import {
-  DigimonCard,
-  ICountCard,
-  IDeck,
-  ITournamentDeck,
-} from '../../../models';
-import { sortByReleaseOrder } from '../../../models/data/release-order.data';
-import { setDeckImage } from '../../functions/digimon-card.functions';
-import {
-  selectAllCards,
-  selectCollection,
-  selectCommunityDecks,
-  selectCommunityDeckSearch,
-} from '../../store/digimon.selectors';
-import { emptyDeck } from '../../store/reducers/digimon.reducers';
+import { Subject } from 'rxjs';
+import { emptyDeck, ICountCard, IDeck, ITournamentDeck } from '../../../models';
+import { setDeckImage } from '../../functions';
+import { DigimonCardStore } from '../../store/digimon-card.store';
+import { SaveStore } from '../../store/save.store';
+import { WebsiteStore } from '../../store/website.store';
 import { DeckContainerComponent } from '../shared/deck-container.component';
 import { DeckDialogComponent } from '../shared/dialogs/deck-dialog.component';
 import { DeckSubmissionComponent } from '../shared/dialogs/deck-submission.component';
 import { PageComponent } from '../shared/page.component';
-import { WebsiteActions } from './../../store/digimon.actions';
 import { DeckStatisticsComponent } from './components/deck-statistics.component';
 import { DecksFilterComponent } from './components/decks-filter.component';
 import { TierlistComponent } from './components/tierlist.component';
@@ -79,7 +65,7 @@ import { TierlistComponent } from './components/tierlist.component';
           (applyFilter)="filterChanges()"></digimon-decks-filter>
 
         <div
-          *ngIf="decks$ | async; else loading"
+          *ngIf="decks; else loading"
           class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           <digimon-deck-container
             class="mx-auto min-w-[280px] max-w-[285px]"
@@ -135,7 +121,6 @@ import { TierlistComponent } from './components/tierlist.component';
       [baseZIndex]="10000">
       <digimon-deck-statistics
         [decks]="filteredDecks"
-        [allCards]="allCards"
         [updateCards]="updateStatistics"
         [(loading)]="loading2"></digimon-deck-statistics>
     </p-dialog>
@@ -165,8 +150,9 @@ import { TierlistComponent } from './components/tierlist.component';
 export class DecksPageComponent implements OnInit {
   private meta = inject(Meta);
   private title = inject(Title);
-  private store = inject(Store);
   private toastrService = inject(ToastrService);
+  private saveStore = inject(SaveStore);
+  websiteStore = inject(WebsiteStore);
 
   selectedDeck: IDeck = emptyDeck;
 
@@ -185,35 +171,33 @@ export class DecksPageComponent implements OnInit {
   rows = 20;
   decks: IDeck[] = [];
   filteredDecks: IDeck[] = [];
-  allCards: DigimonCard[];
   collection: ICountCard[];
-  decks$ = combineLatest([
-    this.store.select(selectCommunityDecks),
-    this.store.select(selectCommunityDeckSearch),
-    this.store.select(selectAllCards),
-    this.store.select(selectCollection),
-  ]).pipe(
-    filter(([decks, search, allCards, collection]) => decks.length > 0),
-    tap(([decks, search, allCards, collection]) => {
-      this.decks = decks;
-
-      this.filteredDecks = decks;
-      this.allCards = allCards;
-      this.collection = collection;
-
-      this.form.get('searchFilter')?.setValue(search);
-      this.filteredDecks = this.applySearchFilter(search);
-      this.setDecksToShow(0, this.rows);
-    }),
-  );
 
   loading2 = false;
+
+  private digimonCardStore = inject(DigimonCardStore);
 
   ngOnInit(): void {
     this.checkScreenWidth(window.innerWidth);
 
     this.makeGoogleFriendly();
-    this.store.dispatch(WebsiteActions.loadCommunityDecks());
+
+    this.websiteStore.loadCommunityDecks();
+
+    effect(() => {
+      const decks = this.websiteStore.communityDecks();
+      const search = this.websiteStore.communityDeckSearch();
+      if (decks.length === 0) return;
+
+      this.decks = decks;
+
+      this.filteredDecks = decks;
+      this.collection = this.saveStore.collection();
+
+      this.form.get('searchFilter')?.setValue(search);
+      this.filteredDecks = this.applySearchFilter(search);
+      this.setDecksToShow(0, this.rows);
+    });
   }
 
   @HostListener('window:resize', ['$event'])
@@ -289,7 +273,7 @@ export class DecksPageComponent implements OnInit {
         ...deck,
         imageCardId:
           deck.imageCardId === 'BT1-001'
-            ? setDeckImage(deck, this.allCards).id
+            ? setDeckImage(deck, this.digimonCardStore.cards()).id
             : deck.imageCardId,
       }));
   }

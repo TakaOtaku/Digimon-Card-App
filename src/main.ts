@@ -22,8 +22,6 @@ import {
   withPreloading,
 } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { provideEffects } from '@ngrx/effects';
-import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import 'hammerjs';
 import { ToastrModule } from 'ngx-toastr';
@@ -46,10 +44,6 @@ import { ProfilePageComponent } from './app/features/profile/profile-page.compon
 import { TestPageComponent } from './app/features/test/test-page.component';
 import { AuthService } from './app/services/auth.service';
 import { DigimonBackendService } from './app/services/digimon-backend.service';
-import { DigimonEffects } from './app/store/digimon.effects';
-import * as DigimonCards from './app/store/reducers/digimon-card.reducers';
-import * as Digimon from './app/store/reducers/digimon.reducers';
-import * as Save from './app/store/reducers/save.reducer';
 
 import { environment } from './environments/environment';
 
@@ -135,26 +129,6 @@ bootstrapApplication(AppComponent, {
     ),
 
     provideRouter(routes, withPreloading(PreloadAllModules)),
-
-    provideStore(
-      {
-        digimon: Digimon.digimonReducer,
-        digimonCards: DigimonCards.digimonCardReducer,
-        save: Save.saveReducer,
-      },
-      {
-        initialState: {
-          digimon: Digimon.initialState,
-          digimonCards: DigimonCards.initialState,
-          save: Save.emptySave,
-        },
-      },
-    ),
-    provideEffects([DigimonEffects]),
-    provideStoreDevtools({
-      name: 'Digimon Card Collector',
-      logOnly: environment.production,
-    }),
 
     ReactiveFormsModule,
     AuthService,

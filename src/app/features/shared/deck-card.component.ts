@@ -2,21 +2,19 @@ import { AsyncPipe, NgIf } from '@angular/common';
 import {
   Component,
   EventEmitter,
+  inject,
   Input,
   OnChanges,
   OnInit,
   Output,
   SimpleChanges,
 } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { DialogModule } from 'primeng/dialog';
-import { dummyCard } from 'src/app/store/reducers/digimon.reducers';
 
-import { addJBeforeWebp } from '../../../assets/cardlists/DigimonCards';
-import { DigimonCard, IDeckCard } from '../../../models';
+import { DialogModule } from 'primeng/dialog';
+import { DigimonCard, dummyCard, IDeckCard } from '../../../models';
 import { ImgFallbackDirective } from '../../directives/ImgFallback.directive';
 import { ImageService } from '../../services/image.service';
-import { WebsiteActions } from './../../store/digimon.actions';
+import { WebsiteStore } from '../../store/website.store';
 import { ViewCardDialogComponent } from './dialogs/view-card-dialog.component';
 
 @Component({
@@ -130,16 +128,12 @@ export class DeckCardComponent implements OnChanges, OnInit {
 
   @Output() public removeCard = new EventEmitter<boolean>();
 
+  websiteStore = inject(WebsiteStore);
+
   completeCard: DigimonCard = JSON.parse(JSON.stringify(dummyCard));
 
   viewCard: DigimonCard = JSON.parse(JSON.stringify(dummyCard));
   viewCardDialog = false;
-  protected readonly addJBeforeWebp = addJBeforeWebp;
-
-  constructor(
-    private store: Store,
-    private imageService: ImageService,
-  ) {}
 
   ngOnInit() {
     this.mapCard();
@@ -162,15 +156,11 @@ export class DeckCardComponent implements OnChanges, OnInit {
     }
 
     if (this.sideDeck) {
-      this.store.dispatch(
-        WebsiteActions.addCardToSideDeck({ cardId: this.card.id }),
-      );
+      this.websiteStore.addCardToSideDeck(this.card.id);
       return;
     }
 
-    this.store.dispatch(
-      WebsiteActions.addCardToDeck({ addCardToDeck: this.card.id }),
-    );
+    this.websiteStore.addCardToDeck(this.card.id);
   }
 
   reduceCardCount(event?: any): void {
@@ -180,15 +170,11 @@ export class DeckCardComponent implements OnChanges, OnInit {
     }
 
     if (this.sideDeck) {
-      this.store.dispatch(
-        WebsiteActions.removeCardFromSideDeck({ cardId: this.card.id }),
-      );
+      this.websiteStore.removeCardFromSideDeck(this.card.id);
       return;
     }
 
-    this.store.dispatch(
-      WebsiteActions.removeCardFromDeck({ cardId: this.card.id }),
-    );
+    this.websiteStore.removeCardFromDeck(this.card.id);
   }
 
   showCardDetails() {

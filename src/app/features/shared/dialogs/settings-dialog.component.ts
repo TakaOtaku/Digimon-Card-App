@@ -1,23 +1,15 @@
 import { AsyncPipe, NgClass, NgIf, NgStyle } from '@angular/common';
-import {
-  Component,
-  EventEmitter,
-  OnDestroy,
-  OnInit,
-  Output,
-} from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import {
   FormsModule,
   ReactiveFormsModule,
   UntypedFormControl,
 } from '@angular/forms';
-import { Store } from '@ngrx/store';
 import { saveAs } from 'file-saver';
 import { ToastrService } from 'ngx-toastr';
 import { ConfirmationService, MessageService, SharedModule } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
-import { DynamicDialogRef } from 'primeng/dynamicdialog';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { InputTextModule } from 'primeng/inputtext';
@@ -25,22 +17,18 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { TabViewModule } from 'primeng/tabview';
-import { first, Subject, takeUntil } from 'rxjs';
+import { Subject } from 'rxjs';
 import {
   DigimonCard,
+  emptySettings,
   GroupedSets,
   ICountCard,
   ISave,
 } from '../../../../models';
 import { DigimonBackendService } from '../../../services/digimon-backend.service';
-import {
-  selectAllCards,
-  selectCollection,
-  selectSave,
-  selectSettings,
-} from '../../../store/digimon.selectors';
-import { emptySettings } from '../../../store/reducers/save.reducer';
-import { CollectionActions, SaveActions } from '../../../store/digimon.actions';
+import { DialogStore } from '../../../store/dialog.store';
+import { DigimonCardStore } from '../../../store/digimon-card.store';
+import { SaveStore } from '../../../store/save.store';
 import { SetFilterComponent } from '../filter/set-filter.component';
 import { SettingsRowComponent } from '../settings-row.component';
 
@@ -70,11 +58,11 @@ import { SettingsRowComponent } from '../settings-row.component';
           </digimon-settings-row>
 
           <digimon-settings-row title="Display Filter on Fullscreen">
-              <p-selectButton
-                      [(ngModel)]="fullscreenFilter"
-                      [options]="yesNoOptions"
-                      optionLabel="label"
-                      optionValue="value"></p-selectButton>
+            <p-selectButton
+              [(ngModel)]="fullscreenFilter"
+              [options]="yesNoOptions"
+              optionLabel="label"
+              optionValue="value"></p-selectButton>
           </digimon-settings-row>
         </p-card>
 
@@ -403,7 +391,9 @@ import { SettingsRowComponent } from '../settings-row.component';
   providers: [MessageService],
 })
 export class SettingsDialogComponent implements OnInit, OnDestroy {
-  @Output() closeEmitter = new EventEmitter();
+  dialogStore = inject(DialogStore);
+
+  saveStore = inject(SaveStore);
 
   save = '';
   iSave: ISave;
@@ -419,7 +409,6 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
     '' + 'Paste Collection here\n' + '\n' + ' Format:\n' + '   Qty Id\n';
   collectionText = '';
 
-  digimonCards: DigimonCard[] = [];
   collection: ICountCard[] = [];
 
   setGoal: string[] = [];
@@ -450,50 +439,37 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
   displayImage = '';
   username = '';
 
+  private digimonCardStore = inject(DigimonCardStore);
   private onDestroy$ = new Subject();
 
   constructor(
-    private store: Store,
     private digimonBackendService: DigimonBackendService,
     private confirmationService: ConfirmationService,
     private toastrService: ToastrService,
   ) {}
 
   ngOnInit(): void {
-    this.store
-      .select(selectSave)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((save) => {
-        this.iSave = save;
-        this.sortOrderFilter.setValue(save.settings?.sortDeckOrder ?? 'Level', {
-          emitEvent: false,
-        });
-        this.username = save.displayName ?? '';
-        this.displayImage = save.photoURL ?? '';
-        this.save = JSON.stringify(save, undefined, 4);
-      });
-    this.store
-      .select(selectAllCards)
-      .pipe(first())
-      .subscribe((cards) => (this.digimonCards = cards));
-    this.store
-      .select(selectCollection)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((collection) => (this.collection = collection));
-    this.store
-      .select(selectSettings)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((settings) => {
-        this.preRelease = settings.showPreRelease;
-        this.aa = settings.showAACards;
-        this.stamped = settings.showStampedCards;
-        this.reprint = settings.showReprintCards;
-        this.collectionCount = settings.collectionMinimum;
-        this.aaCollectionCount = settings.aaCollectionMinimum;
-        this.deckDisplayTable = settings.deckDisplayTable;
-        this.setGoal = settings.collectionSets;
-        this.fullscreenFilter = settings.fullscreenFilter;
-      });
+    const save = this.saveStore.save();
+
+    this.iSave = save;
+    this.sortOrderFilter.setValue(save.settings?.sortDeckOrder ?? 'Level', {
+      emitEvent: false,
+    });
+    this.username = save.displayName ?? '';
+    this.displayImage = save.photoURL ?? '';
+    this.save = JSON.stringify(save, undefined, 4);
+
+    const settings = save.settings;
+
+    this.preRelease = settings.showPreRelease;
+    this.aa = settings.showAACards;
+    this.stamped = settings.showStampedCards;
+    this.reprint = settings.showReprintCards;
+    this.collectionCount = settings.collectionMinimum;
+    this.aaCollectionCount = settings.aaCollectionMinimum;
+    this.deckDisplayTable = settings.deckDisplayTable;
+    this.setGoal = settings.collectionSets;
+    this.fullscreenFilter = settings.fullscreenFilter;
   }
 
   ngOnDestroy() {
@@ -522,12 +498,13 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
       },
     };
 
-    this.store.dispatch(SaveActions.setSave({ save }));
+    this.saveStore.updateSave(save);
     this.toastrService.info(
       'Settings were saved and updated.',
       'Settings saved!',
     );
-    this.closeEmitter.emit();
+
+    this.dialogStore.updateSettingsDialog(false);
   }
 
   importCollection() {
@@ -542,7 +519,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
       }
     });
 
-    this.store.dispatch(CollectionActions.addCard({ collectionCards }));
+    this.saveStore.addCard(collectionCards);
     this.toastrService.info(
       'The collection was imported successfully!',
       'Collection Imported!',
@@ -560,7 +537,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
       try {
         let save: any = JSON.parse(fileReader.result as string);
         save = this.digimonBackendService.checkSaveValidity(save, null);
-        this.store.dispatch(SaveActions.setSave({ save }));
+        this.saveStore.updateSave(save);
         this.toastrService.info(
           'The save was loaded successfully!',
           'Save loaded!',
@@ -584,11 +561,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
           decks: [],
           settings: emptySettings,
         };
-        this.store.dispatch(
-          SaveActions.setSave({
-            save: resetedSave,
-          }),
-        );
+        this.saveStore.updateSave(resetedSave);
         this.toastrService.info(
           'The save was cleared successfully!',
           'Save cleared!',
@@ -671,14 +644,14 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
 
   private setupAllCards(): DigimonCard[] {
     let setFiltered: DigimonCard[] =
-      this.sets.length === 0 ? this.digimonCards : [];
+      this.sets.length === 0 ? this.digimonCardStore.cards() : [];
     this.sets.forEach((filter) => {
       setFiltered = [
         ...new Set([
           ...setFiltered,
-          ...this.digimonCards.filter(
-            (cards) => cards['id'].split('-')[0] === filter,
-          ),
+          ...this.digimonCardStore
+            .cards()
+            .filter((cards) => cards['id'].split('-')[0] === filter),
         ]),
       ];
     });
@@ -732,9 +705,9 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
 
     let collectionCardsForRarity: ICountCard[] = [];
     setFiltered.forEach((collectionCard) => {
-      const foundCard = this.digimonCards.find(
-        (card) => card.id === collectionCard.id,
-      );
+      const foundCard = this.digimonCardStore
+        .cards()
+        .find((card) => card.id === collectionCard.id);
 
       if (this.rarities.includes(foundCard!.rarity)) {
         collectionCardsForRarity.push(collectionCard);
@@ -747,9 +720,9 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
 
     let collectionCardsForVersion: ICountCard[] = [];
     collectionCardsForRarity.forEach((collectionCard) => {
-      const foundCard = this.digimonCards.find(
-        (card) => card.id === collectionCard.id,
-      );
+      const foundCard = this.digimonCardStore
+        .cards()
+        .find((card) => card.id === collectionCard.id);
 
       if (this.versions.includes(foundCard!.version)) {
         collectionCardsForVersion.push(collectionCard);
@@ -764,7 +737,9 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
     const lineSplit: string[] = line.replace(/  +/g, ' ').split(' ');
     const cardLine: number = +lineSplit[0] >>> 0;
     if (cardLine > 0) {
-      if (!this.digimonCards.find((card) => card.id === lineSplit[1])) {
+      if (
+        !this.digimonCardStore.cards().find((card) => card.id === lineSplit[1])
+      ) {
         return null;
       }
       return { count: cardLine, id: lineSplit[1] } as ICountCard;

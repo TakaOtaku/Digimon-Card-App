@@ -3,29 +3,14 @@ import {
   ChangeDetectionStrategy,
   Component,
   EventEmitter,
-  HostListener,
   inject,
   Input,
-  OnDestroy,
-  OnInit,
   Output,
 } from '@angular/core';
-import {
-  FormControl,
-  FormGroup,
-  FormsModule,
-  ReactiveFormsModule,
-} from '@angular/forms';
-import { Store } from '@ngrx/store';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PaginatorModule } from 'primeng/paginator';
 import { SliderModule } from 'primeng/slider';
-import { Subject, takeUntil, tap } from 'rxjs';
-import { SaveActions } from 'src/app/store/digimon.actions';
-import { DigimonCard } from '../../../../models';
-import {
-  selectCollectionMode,
-  selectFilteredCards,
-} from '../../../store/digimon.selectors';
+import { SaveStore } from '../../../store/save.store';
 
 @Component({
   selector: 'digimon-pagination-card-list-header',
@@ -41,7 +26,7 @@ import {
         <input
           type="checkbox"
           class="my-auto ml-1 h-5 w-5"
-          [ngModel]="collectionMode$ | async"
+          [ngModel]="collectionMode"
           (ngModelChange)="changeCollectionMode($event)" />
       </div>
 
@@ -73,8 +58,8 @@ import {
     NgIf,
     SliderModule,
     ReactiveFormsModule,
-    NgClass
-  ]
+    NgClass,
+  ],
 })
 export class PaginationCardListHeaderComponent {
   @Input() widthForm: FormControl;
@@ -82,11 +67,12 @@ export class PaginationCardListHeaderComponent {
   @Input() viewOnly: boolean;
   @Input() filterButton: boolean | null = true;
 
-  private store = inject(Store);
+  saveStore = inject(SaveStore);
 
-  collectionMode$ = this.store.select(selectCollectionMode);
+  collectionMode = this.saveStore.settings().collectionMode;
 
   changeCollectionMode(collectionMode: boolean) {
-    this.store.dispatch(SaveActions.setCollectionMode({ collectionMode }));
+    const settings = this.saveStore.settings();
+    this.saveStore.updateSettings({ ...settings, collectionMode });
   }
 }

@@ -3,25 +3,24 @@ import {
   ChangeDetectionStrategy,
   Component,
   EventEmitter,
+  inject,
   Input,
-  OnDestroy,
   Output,
 } from '@angular/core';
 import { Router } from '@angular/router';
-import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DialogModule } from 'primeng/dialog';
 import { TooltipModule } from 'primeng/tooltip';
-import { BehaviorSubject, Subject, takeUntil } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import * as uuid from 'uuid';
 import { DigimonCard, IDeck, IDeckCard } from '../../../../models';
 import { AuthService } from '../../../services/auth.service';
-import { selectAllCards } from '../../../store/digimon.selectors';
+import { DigimonCardStore } from '../../../store/digimon-card.store';
+import { WebsiteStore } from '../../../store/website.store';
 import { ExportDeckDialogComponent } from '../../shared/dialogs/export-deck-dialog.component';
 import { ImportDeckDialogComponent } from '../../shared/dialogs/import-deck-dialog.component';
-import { WebsiteActions } from './../../../store/digimon.actions';
 import { PriceCheckDialogComponent } from './price-check-dialog.component';
 
 @Component({
@@ -196,7 +195,7 @@ import { PriceCheckDialogComponent } from './price-check-dialog.component';
   ],
   providers: [MessageService],
 })
-export class DeckToolbarComponent implements OnDestroy {
+export class DeckToolbarComponent {
   @Input() deck: IDeck;
   @Input() mainDeck: IDeckCard[];
   @Input() missingCards: boolean;
@@ -204,6 +203,8 @@ export class DeckToolbarComponent implements OnDestroy {
   @Output() missingCardsChange = new EventEmitter<boolean>();
   @Output() save = new EventEmitter<any>();
   @Output() hideStats = new EventEmitter<boolean>();
+
+  websiteStore = inject(WebsiteStore);
 
   importDeckDialog = false;
   exportDeckDialog = false;
@@ -217,21 +218,14 @@ export class DeckToolbarComponent implements OnDestroy {
   didMulligan = false;
   simulateDialog = false;
 
-  private allCards: DigimonCard[];
-  private destroy$ = new Subject<boolean>();
+  private digimonCardStore = inject(DigimonCardStore);
 
   constructor(
     private confirmationService: ConfirmationService,
     private messageService: MessageService,
-    private store: Store,
     private route: Router,
     private authService: AuthService,
-  ) {
-    this.store
-      .select(selectAllCards)
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((allCards) => (this.allCards = allCards));
-  }
+  ) {}
 
   private static shuffle(array: any[]) {
     let currentIndex = array.length,
@@ -251,10 +245,6 @@ export class DeckToolbarComponent implements OnDestroy {
     }
 
     return array;
-  }
-
-  ngOnDestroy(): void {
-    this.destroy$.next(true);
   }
 
   /**
@@ -286,7 +276,7 @@ export class DeckToolbarComponent implements OnDestroy {
         'You are about to clear all cards in the deck and make a new one. Are you sure?',
       accept: () => {
         const newDeckID = uuid.v4();
-        this.store.dispatch(WebsiteActions.createNewDeck({ uuid: newDeckID }));
+        this.websiteStore.createNewDeck(newDeckID);
         if (this.authService.userData?.uid) {
           this.route.navigateByUrl(
             `deckbuilder/user/${this.authService.userData?.uid}/deck/${newDeckID}`,
@@ -329,7 +319,7 @@ export class DeckToolbarComponent implements OnDestroy {
 
     this.allDeckCards = DeckToolbarComponent.shuffle(
       this.deck.cards.map((card) =>
-        this.allCards.find((a) => a.id === card.id),
+        this.digimonCardStore.cards().find((a) => a.id === card.id),
       ),
     );
     this.allDeckCards = this.allDeckCards.filter(

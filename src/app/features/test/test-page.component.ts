@@ -1,30 +1,14 @@
 import { NgIf } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Component, inject, OnDestroy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
-// @ts-ignore
-import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
-import { Store } from '@ngrx/store';
 import { DialogModule } from 'primeng/dialog';
 import { concat, first, Observable, Subject, switchMap, tap } from 'rxjs';
-import {
-  ADMINS,
-  DigimonCard,
-  IDeck,
-  ISave,
-  ITournamentDeck,
-} from '../../../models';
-import {
-  setColors,
-  setDeckImage,
-  setTags,
-} from '../../functions/digimon-card.functions';
+import { ADMINS, IDeck, ISave, ITournamentDeck } from '../../../models';
+import { setColors, setDeckImage, setTags } from '../../functions';
 import { AuthService } from '../../services/auth.service';
 import { CardMarketService } from '../../services/card-market.service';
-import { DatabaseService } from '../../services/database.service';
 import { DigimonBackendService } from '../../services/digimon-backend.service';
-import { selectAllCards } from '../../store/digimon.selectors';
+import { DigimonCardStore } from '../../store/digimon-card.store';
 
 @Component({
   selector: 'digimon-test-page',
@@ -95,21 +79,18 @@ import { selectAllCards } from '../../store/digimon.selectors';
   standalone: true,
   imports: [NgIf, DialogModule, FormsModule],
 })
-export class TestPageComponent implements OnInit, OnDestroy {
+export class TestPageComponent implements OnDestroy {
   updateIDDialog = false;
   productsWithoutCorrectID: any[] = [];
   currentID = 1;
 
-  private allCards: DigimonCard[] = [];
+  private digimonCardStore = inject(DigimonCardStore);
   private onDestroy$ = new Subject();
 
   constructor(
-    private store: Store,
     public authService: AuthService,
-    private databaseService: DatabaseService,
     private digimonBackendService: DigimonBackendService,
     private cardMarketService: CardMarketService,
-    private fireAuth: AngularFirestore,
   ) {
     //cardTraderService.getCardPrices().subscribe((value) => {
     //  //fs.writeFileSync('./price-data-cardtrader.json', value, {
@@ -119,13 +100,6 @@ export class TestPageComponent implements OnInit, OnDestroy {
     //cardMarketService.getGames().subscribe((value) => {
     //  debugger;
     //});
-  }
-
-  ngOnInit() {
-    this.store
-      .select(selectAllCards)
-      .pipe(first())
-      .subscribe((allCards) => (this.allCards = allCards));
   }
 
   ngOnDestroy() {
@@ -278,8 +252,8 @@ export class TestPageComponent implements OnInit, OnDestroy {
 
   private updateDecks(save: ISave) {
     const newDecks: IDeck[] = save.decks.map((deck) => {
-      const tags = setTags(deck, this.allCards);
-      const color = setColors(deck, this.allCards);
+      const tags = setTags(deck, this.digimonCardStore.cards());
+      const color = setColors(deck, this.digimonCardStore.cards());
 
       return {
         ...deck,
@@ -287,7 +261,7 @@ export class TestPageComponent implements OnInit, OnDestroy {
         color,
         imageCardId:
           !deck.imageCardId || deck.imageCardId === 'BT1-001'
-            ? setDeckImage(deck, this.allCards).id
+            ? setDeckImage(deck, this.digimonCardStore.cards()).id
             : deck.imageCardId,
         date: !deck.date ? new Date().toString() : deck.date,
       };
@@ -303,7 +277,10 @@ export class TestPageComponent implements OnInit, OnDestroy {
     let newDecks: IDeck = deck;
     if (!deck.imageCardId || deck.imageCardId === 'BT1-001') {
       error = true;
-      newDecks = { ...deck, imageCardId: setDeckImage(deck, this.allCards).id };
+      newDecks = {
+        ...deck,
+        imageCardId: setDeckImage(deck, this.digimonCardStore.cards()).id,
+      };
     }
     if (!deck.date) {
       error = true;
@@ -312,7 +289,7 @@ export class TestPageComponent implements OnInit, OnDestroy {
 
     return error
       ? this.digimonBackendService
-          .updateDeck(newDecks, null, this.allCards)
+          .updateDeck(newDecks, null, this.digimonCardStore.cards())
           .pipe(first())
       : null;
   }
@@ -324,7 +301,7 @@ export class TestPageComponent implements OnInit, OnDestroy {
       error = true;
       newDecks = {
         ...deck,
-        imageCardId: setDeckImage(deck, this.allCards).id,
+        imageCardId: setDeckImage(deck, this.digimonCardStore.cards()).id,
       };
     }
     if (!deck.date) {

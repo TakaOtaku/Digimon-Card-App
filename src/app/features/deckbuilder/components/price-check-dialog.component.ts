@@ -1,29 +1,18 @@
 import { AsyncPipe, CurrencyPipe, NgFor, NgIf } from '@angular/common';
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, inject, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Store } from '@ngrx/store';
 import { SharedModule } from 'primeng/api';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { TableModule } from 'primeng/table';
-import {
-  async,
-  BehaviorSubject,
-  filter,
-  Subject,
-  switchMap,
-  takeUntil,
-} from 'rxjs';
+import { async, BehaviorSubject, filter, Subject, takeUntil } from 'rxjs';
 import { ICountCard } from '../../../../models';
 import {
   CardMarketService,
   ProductCM,
   ProductCMWithCount,
 } from '../../../services/card-market.service';
-import {
-  DeckBuilderViewModel,
-  selectDeckBuilderViewModel,
-} from '../../../store/digimon.selectors';
-import { WebsiteActions } from './../../../store/digimon.actions';
+import { SaveStore } from '../../../store/save.store';
+import { WebsiteStore } from '../../../store/website.store';
 
 @Component({
   selector: 'digimon-price-check-dialog',
@@ -147,9 +136,9 @@ import { WebsiteActions } from './../../../store/digimon.actions';
 })
 export class PriceCheckDialogComponent implements OnInit, OnDestroy {
   @Input() checkPrice: BehaviorSubject<boolean>;
+  websiteStore = inject(WebsiteStore);
+  saveStore = inject(SaveStore);
 
-  deckBuilderViewModel$ = this.store.select(selectDeckBuilderViewModel);
-  deckBuilderViewModel: DeckBuilderViewModel;
   getPriceGuide$ = this.cardMarketService.getPrizeGuide();
 
   onlyMissing = false;
@@ -163,23 +152,13 @@ export class PriceCheckDialogComponent implements OnInit, OnDestroy {
   onDestroy$ = new Subject();
   protected readonly async = async;
 
-  constructor(
-    private cardMarketService: CardMarketService,
-    private store: Store,
-  ) {}
+  constructor(private cardMarketService: CardMarketService) {}
 
   ngOnInit() {
     this.getPriceGuide$
-      .pipe(
-        switchMap((priceGuide) => {
-          this.store.dispatch(
-            WebsiteActions.setPriceGuideCM({ products: priceGuide }),
-          );
-          return this.deckBuilderViewModel$;
-        }),
-      )
-      .subscribe((deckBuilderViewModel) => {
-        this.deckBuilderViewModel = deckBuilderViewModel;
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((priceGuide) => {
+        this.websiteStore.updatePriceGuideCM(priceGuide);
         this.updatePrice();
       });
 
@@ -197,12 +176,14 @@ export class PriceCheckDialogComponent implements OnInit, OnDestroy {
   }
 
   updatePrice() {
-    const all: ProductCMWithCount[] = this.deckBuilderViewModel.deck.cards
-      .map((card) => {
+    const all: ProductCMWithCount[] = this.websiteStore
+      .deck()
+      .cards.map((card) => {
         const foundProduct: ProductCM =
-          this.deckBuilderViewModel.priceGuideCM.find(
-            (product) => card.id === product.cardId,
-          ) ?? this.emptyProduct(card);
+          this.websiteStore
+            .priceGuideCM()
+            .find((product) => card.id === product.cardId) ??
+          this.emptyProduct(card);
 
         return { ...foundProduct, count: card.count } as ProductCMWithCount;
       })
@@ -267,9 +248,9 @@ export class PriceCheckDialogComponent implements OnInit, OnDestroy {
   getMissingCards = (): ProductCMWithCount[] => {
     return this.products
       .map((product) => {
-        const foundCard = this.deckBuilderViewModel.collection.find(
-          (collectionCard) => collectionCard.id === product.cardId,
-        );
+        const foundCard = this.saveStore
+          .collection()
+          .find((collectionCard) => collectionCard.id === product.cardId);
         if (foundCard) {
           return { ...product, count: product.count - foundCard.count };
         } else {

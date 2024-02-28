@@ -2,20 +2,22 @@ import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import {
   Component,
   EventEmitter,
+  inject,
   Input,
   OnDestroy,
   OnInit,
   Output,
 } from '@angular/core';
-import { Store } from '@ngrx/store';
 import { AccordionModule } from 'primeng/accordion';
 import { ConfirmationService, MessageService, SharedModule } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { DragDropModule } from 'primeng/dragdrop';
-import { filter, first, Subject, takeUntil } from 'rxjs';
+import { first, Subject } from 'rxjs';
 import {
-  DigimonCard,
+  DeckColorMap,
+  DRAG,
+  emptyDeck,
   ICountCard,
   IDeck,
   IDeckCard,
@@ -23,28 +25,20 @@ import {
   ISave,
   ITag,
 } from '../../../../models';
-import { DRAG } from '../../../../models/enums/drag.enum';
-import { DeckColorMap } from '../../../../models/maps/color.map';
 import {
   compareIDs,
   deckIsValid,
   setColors,
   setTags,
   sortColors,
-} from '../../../functions/digimon-card.functions';
-import { sortID } from '../../../functions/filter.functions';
+  sortID,
+} from '../../../functions';
 import { AuthService } from '../../../services/auth.service';
 import { DigimonBackendService } from '../../../services/digimon-backend.service';
-import {
-  selectCollection,
-  selectDeckBuilderViewModel,
-  selectDisplaySideDeck,
-  selectDraggedCard,
-  selectSave,
-} from '../../../store/digimon.selectors';
-import { emptyDeck } from '../../../store/reducers/digimon.reducers';
+import { DigimonCardStore } from '../../../store/digimon-card.store';
+import { SaveStore } from '../../../store/save.store';
+import { WebsiteStore } from '../../../store/website.store';
 import { DeckCardComponent } from '../../shared/deck-card.component';
-import { DeckActions, WebsiteActions } from './../../../store/digimon.actions';
 import { DeckMetadataComponent } from './deck-metadata.component';
 import { DeckToolbarComponent } from './deck-toolbar.component';
 
@@ -69,7 +63,7 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
 
     <p-confirmPopup></p-confirmPopup>
 
-    <ng-container *ngIf="draggedCard$ | async as draggedCard">
+    <ng-container>
       <p-accordion class="mx-auto">
         <p-accordionTab
           [pDroppable]="['toDeck', 'fromSide']"
@@ -94,12 +88,11 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
               (removeCard)="removeCard(card)"
               [cardHave]="getCardHave(card)"
               [card]="card"
-              [cards]="allCards"
               [missingCards]="missingCards"></digimon-deck-card>
           </div>
         </p-accordionTab>
         <p-accordionTab
-          *ngIf="displaySideDeck$ | async"
+          *ngIf="displaySideDeck"
           [pDroppable]="['toDeck', 'fromDeck']"
           [(selected)]="sideExpanded"
           (onDrop)="drop(draggedCard, 'Side')"
@@ -113,7 +106,6 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
               [cardHave]="getCardHave(card)"
               [sideDeck]="true"
               [card]="card"
-              [cards]="allCards"
               [missingCards]="missingCards"></digimon-deck-card>
           </div>
         </p-accordionTab>
@@ -133,7 +125,7 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
     SharedModule,
     AsyncPipe,
     ConfirmDialogModule,
-    ConfirmPopupModule
+    ConfirmPopupModule,
   ],
   providers: [MessageService],
 })
@@ -143,7 +135,10 @@ export class DeckViewComponent implements OnInit, OnDestroy {
   @Output() onMainDeck = new EventEmitter<IDeckCard[]>();
   @Output() hideStats = new EventEmitter<boolean>();
 
-  displaySideDeck$ = this.store.select(selectDisplaySideDeck);
+  saveStore = inject(SaveStore);
+  websiteStore = inject(WebsiteStore);
+
+  displaySideDeck = this.saveStore.settings().displaySideDeck;
 
   title = '';
   description = '';
@@ -155,24 +150,22 @@ export class DeckViewComponent implements OnInit, OnDestroy {
   sideDeck: IDeckCard[] = [];
   sideExpanded = false;
 
-  draggedCard$ = this.store.select(selectDraggedCard);
+  draggedCard = this.websiteStore.draggedCard();
 
   deck: IDeck = { ...JSON.parse(JSON.stringify(emptyDeck)) };
 
-  allCards: DigimonCard[] = [];
   collection: ICountCard[];
   save: ISave;
 
-  fullCards = true;
   stack = false;
   missingCards = false;
 
   DRAG = DRAG;
 
+  private digimonCardStore = inject(DigimonCardStore);
   private onDestroy$ = new Subject();
 
   constructor(
-    private store: Store,
     private digimonBackendService: DigimonBackendService,
     private authService: AuthService,
     private confirmationService: ConfirmationService,
@@ -180,32 +173,11 @@ export class DeckViewComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.store
-      .select(selectSave)
-      .pipe(
-        takeUntil(this.onDestroy$),
-        filter((value) => !!value),
-      )
-      .subscribe((save) => (this.save = save));
-    this.store
-      .select(selectCollection)
-      .pipe(
-        takeUntil(this.onDestroy$),
-        filter((value) => !!value),
-      )
-      .subscribe((collection) => (this.collection = collection));
-    this.store
-      .select(selectDeckBuilderViewModel)
-      .pipe(
-        takeUntil(this.onDestroy$),
-        filter((value) => !!value),
-      )
-      .subscribe(({ deck, cards }) => {
-        this.allCards = cards;
-        if (deck && deck !== this.deck) {
-          this.mapDeck(deck);
-        }
-      });
+    this.save = this.saveStore.save();
+    const deck = this.websiteStore.deck();
+    if (deck && deck !== this.deck) {
+      this.mapDeck(deck);
+    }
   }
 
   ngOnDestroy() {
@@ -220,9 +192,9 @@ export class DeckViewComponent implements OnInit, OnDestroy {
     this.title = deck.title ?? '';
     this.description = deck.description ?? '';
 
-    this.tags = setTags(this.deck, this.allCards);
+    this.tags = setTags(this.deck, this.digimonCardStore.cards());
     deck.tags = this.tags;
-    this.selectedColor = setColors(this.deck, this.allCards);
+    this.selectedColor = setColors(this.deck, this.digimonCardStore.cards());
     deck.color = DeckColorMap.get(this.selectedColor.name);
 
     this.mainDeck = [];
@@ -231,17 +203,17 @@ export class DeckViewComponent implements OnInit, OnDestroy {
     const iSideDeckCards: IDeckCard[] = [];
 
     deck.cards.forEach((card) => {
-      const foundCard = this.allCards.find((item) =>
-        compareIDs(item.id, card.id),
-      );
+      const foundCard = this.digimonCardStore
+        .cards()
+        .find((item) => compareIDs(item.id, card.id));
       if (foundCard) {
         iDeckCards.push({ ...foundCard, count: card.count });
       }
     });
     (deck.sideDeck ?? []).forEach((card) => {
-      const foundCard = this.allCards.find((item) =>
-        compareIDs(item.id, card.id),
-      );
+      const foundCard = this.digimonCardStore
+        .cards()
+        .find((item) => compareIDs(item.id, card.id));
       if (foundCard) {
         iSideDeckCards.push({ ...foundCard, count: card.count });
       }
@@ -268,7 +240,11 @@ export class DeckViewComponent implements OnInit, OnDestroy {
         message: 'You are about to share the deck. Are you sure?',
         accept: () => {
           this.digimonBackendService
-            .updateDeck(this.deck, this.authService.userData, this.allCards)
+            .updateDeck(
+              this.deck,
+              this.authService.userData,
+              this.digimonCardStore.cards(),
+            )
             .pipe(first())
             .subscribe(() => {});
           this.messageService.add({
@@ -282,7 +258,7 @@ export class DeckViewComponent implements OnInit, OnDestroy {
   }
 
   deckIsValid(deck: IDeck): boolean {
-    const error = deckIsValid(deck, this.allCards);
+    const error = deckIsValid(deck, this.digimonCardStore.cards());
     if (error !== '') {
       this.messageService.add({
         severity: 'error',
@@ -304,7 +280,7 @@ export class DeckViewComponent implements OnInit, OnDestroy {
         'You are about to save all changes and overwrite everything changed. Are you sure?',
       accept: () => {
         this.onMainDeck.pipe(first()).subscribe(() => {
-          this.store.dispatch(DeckActions.import({ deck: this.deck }));
+          this.saveStore.importDeck(this.deck);
           this.messageService.add({
             severity: 'success',
             summary: 'Deck saved!',
@@ -329,8 +305,8 @@ export class DeckViewComponent implements OnInit, OnDestroy {
       count: card.count,
     }));
 
-    this.tags = setTags(this.deck, this.allCards);
-    this.selectedColor = setColors(this.deck, this.allCards);
+    this.tags = setTags(this.deck, this.digimonCardStore.cards());
+    this.selectedColor = setColors(this.deck, this.digimonCardStore.cards());
 
     this.deck = {
       ...this.deck,
@@ -344,7 +320,7 @@ export class DeckViewComponent implements OnInit, OnDestroy {
 
     this.deckSort();
 
-    this.store.dispatch(WebsiteActions.setDeck({ deck: this.deck }));
+    this.websiteStore.updateDeck(this.deck);
     this.onMainDeck.emit(this.mainDeck);
   }
 
@@ -425,36 +401,24 @@ export class DeckViewComponent implements OnInit, OnDestroy {
   drop(card: IDraggedCard, area: string) {
     if (area === 'Side') {
       if (card.drag === DRAG.Main) {
-        this.store.dispatch(
-          WebsiteActions.removeCardFromDeck({ cardId: card.card.id }),
-        );
+        this.websiteStore.removeCardFromDeck(card.card.id);
       }
-      this.store.dispatch(
-        WebsiteActions.addCardToSideDeck({ cardId: card.card.id }),
-      );
+      this.websiteStore.addCardToSideDeck(card.card.id);
       return;
     }
 
     if (card.drag === DRAG.Side) {
-      this.store.dispatch(
-        WebsiteActions.removeCardFromSideDeck({ cardId: card.card.id }),
-      );
+      this.websiteStore.removeCardFromSideDeck(card.card.id);
     }
-    this.store.dispatch(
-      WebsiteActions.addCardToDeck({ addCardToDeck: card.card.id }),
-    );
+    this.websiteStore.addCardToDeck(card.card.id);
   }
 
   setDraggedCard(card: IDeckCard, drag: DRAG) {
     const dragCard = {
-      card: this.allCards.find((value) => card.id === value.id)!,
+      card: this.digimonCardStore.cardsMap().get(card.id)!,
       drag,
     };
-    this.store.dispatch(
-      WebsiteActions.setDraggedCard({
-        dragCard,
-      }),
-    );
+    this.websiteStore.updateDraggedCard(dragCard);
   }
 
   private colorSort(deck: IDeckCard[]) {

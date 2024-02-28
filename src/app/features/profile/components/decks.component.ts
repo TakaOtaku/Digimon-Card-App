@@ -1,27 +1,26 @@
+import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
   HostListener,
+  inject,
   Input,
   OnChanges,
   OnInit,
   SimpleChanges,
 } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { DigimonCard, ICountCard, IDeck, IUser } from '../../../../models';
-import { selectDeckDisplayTable } from '../../../store/digimon.selectors';
-import { emptyDeck } from '../../../store/reducers/digimon.reducers';
-import { DeckDialogComponent } from '../../shared/dialogs/deck-dialog.component';
 import { DialogModule } from 'primeng/dialog';
-import { DecksTableComponent } from './decks-table.component';
 import { PaginatorModule } from 'primeng/paginator';
+import { emptyDeck, ICountCard, IDeck, IUser } from '../../../../models';
+import { SaveStore } from '../../../store/save.store';
 import { DeckContainerComponent } from '../../shared/deck-container.component';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { DeckDialogComponent } from '../../shared/dialogs/deck-dialog.component';
+import { DecksTableComponent } from './decks-table.component';
 
 @Component({
   selector: 'digimon-decks',
   template: `
-    <div *ngIf="(displayTables$ | async) === false; else deckTable">
+    <div *ngIf="!displayTables; else deckTable">
       <div class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 py-2">
         <digimon-deck-container
           class="mx-auto min-w-[280px] max-w-[285px]"
@@ -82,11 +81,11 @@ export class DecksComponent implements OnInit, OnChanges {
   @Input() decks: IDeck[];
   @Input() editable = true;
 
+  saveStore = inject(SaveStore);
+
   row = 24;
 
   decksToShow: IDeck[] = [];
-
-  allCards: DigimonCard[] = [];
 
   collection: ICountCard[];
   user: IUser;
@@ -99,9 +98,7 @@ export class DecksComponent implements OnInit, OnChanges {
   deck: IDeck = JSON.parse(JSON.stringify(emptyDeck));
   deckDialog = false;
 
-  displayTables$ = this.store.select(selectDeckDisplayTable);
-
-  constructor(private store: Store) {}
+  displayTables = this.saveStore.settings().deckDisplayTable;
 
   ngOnInit() {
     if (!this.decks) {

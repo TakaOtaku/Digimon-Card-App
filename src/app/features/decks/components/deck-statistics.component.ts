@@ -1,12 +1,21 @@
 import { NgFor, SlicePipe } from '@angular/common';
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  inject,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Subject, takeUntil } from 'rxjs';
-import { DigimonCard, IDeck, IDeckCard } from '../../../../models';
+import { IDeck, IDeckCard } from '../../../../models';
 import {
   getCountFromDeckCards,
   mapToDeckCards,
 } from '../../../functions/digimon-card.functions';
+import { DigimonCardStore } from '../../../store/digimon-card.store';
 
 @Component({
   selector: 'digimon-deck-statistics',
@@ -344,7 +353,6 @@ import {
   imports: [NgFor, SlicePipe, FormsModule],
 })
 export class DeckStatisticsComponent implements OnInit, OnDestroy {
-  @Input() allCards: DigimonCard[] = [];
   @Input() decks: IDeck[];
   @Input() updateCards: Subject<boolean>;
   @Input() loading: boolean;
@@ -352,6 +360,7 @@ export class DeckStatisticsComponent implements OnInit, OnDestroy {
 
   mostUsedCards: IDeckCard[] = [];
 
+  private digimonCardStore = inject(DigimonCardStore);
   private onDestroy$ = new Subject();
 
   ngOnInit() {
@@ -369,7 +378,7 @@ export class DeckStatisticsComponent implements OnInit, OnDestroy {
     this.loadingChange.emit(true);
     const cards = mapToDeckCards(
       this.decks.map((deck) => deck.cards).flat(1),
-      this.allCards,
+      this.digimonCardStore.cards(),
     );
 
     let checked: string[] = [];

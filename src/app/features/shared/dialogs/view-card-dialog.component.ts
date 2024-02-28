@@ -1,8 +1,10 @@
 import { AsyncPipe, NgClass, NgForOf, NgIf, NgStyle } from '@angular/common';
 import {
   Component,
+  effect,
   EventEmitter,
   HostListener,
+  inject,
   Input,
   OnChanges,
   OnDestroy,
@@ -10,24 +12,18 @@ import {
   Output,
   SimpleChanges,
 } from '@angular/core';
-import { Store } from '@ngrx/store';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
-import { map, Subject, takeUntil } from 'rxjs';
+import { Subject } from 'rxjs';
 import { ImgFallbackDirective } from 'src/app/directives/ImgFallback.directive';
-import { dummyCard } from 'src/app/store/reducers/digimon.reducers';
+import { DigimonCardStore } from 'src/app/store/digimon-card.store';
 import { replacements } from 'src/models/data/keyword-replacement.data';
 
-import { DigimonCard, IDeck } from '../../../../models';
-import { ColorMap } from '../../../../models/maps/color.map';
+import { DigimonCard, dummyCard, ICountCard, IDeck } from '../../../../models';
+import { ColorMap } from '../../../../models/maps';
 import { formatId, withoutJ } from '../../../functions/digimon-card.functions';
-import {
-  selectCollection,
-  selectCollectionMode,
-  selectDeck,
-  selectFilteredCards,
-} from '../../../store/digimon.selectors';
+import { SaveStore } from '../../../store/save.store';
 
 @Component({
   selector: 'digimon-view-card-dialog',
@@ -136,7 +132,7 @@ import {
             </p>
           </div>
           <div
-            *ngIf="collectionMode$ | async"
+            *ngIf="collectionMode"
             class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150"
             id="Digimon-Deck-Count">
             <p
@@ -145,7 +141,7 @@ import {
               In Collection
             </p>
             <p
-              *ngIf="collectionCard$ | async as collectionCard"
+              *ngIf="collectionCard"
               class="font-white ml-auto mr-1.5 font-bold leading-[1.7em]">
               {{ collectionCard.count }}x
             </p>
@@ -418,7 +414,7 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
 
   @Output() onClose = new EventEmitter<boolean>();
 
-  allCards: DigimonCard[] = [];
+  saveStore = inject(SaveStore);
 
   png: string;
   imageAlt: string;
@@ -438,32 +434,25 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
 
   deck: IDeck;
 
-  collectionMode$ = this.store.select(selectCollectionMode);
-  collectionCard$ = this.store
-    .select(selectCollection)
-    .pipe(
-      map((cards) =>
-        cards.find((colCard) => colCard.id === withoutJ(this.card.id)),
-      ),
-    );
+  collectionMode = this.saveStore.collectionMode();
+  collectionCard: ICountCard = { count: 0, id: 'BT1-001' };
 
+  private digimonCardStore = inject(DigimonCardStore);
   private onDestroy$ = new Subject();
 
-  constructor(private store: Store) {}
+  constructor() {
+    effect(() => {
+      const collection = this.saveStore.collection();
+      this.collectionCard = collection.find(
+        (colCard) => colCard.id === withoutJ(this.card.id),
+      )!;
+    });
+  }
 
   ngOnInit() {
     if (this.card) {
       this.setupView(this.card);
     }
-    this.store
-      .select(selectDeck)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((deck) => (this.deck = deck));
-
-    this.store
-      .select(selectFilteredCards)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((cards) => (this.allCards = cards));
   }
 
   ngOnDestroy() {
@@ -476,11 +465,10 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
       const card: DigimonCard = changes['card'].currentValue;
       this.setupView(card);
 
-      this.collectionCard$ = this.store
-        .select(selectCollection)
-        .pipe(
-          map((cards) => cards.find((colCard) => colCard.id === this.card.id)),
-        );
+      const collection = this.saveStore.collection();
+      this.collectionCard = collection.find(
+        (colCard) => colCard.id === withoutJ(this.card.id),
+      )!;
     }
   }
 
@@ -545,11 +533,13 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   previousCard() {
-    const id = this.allCards.findIndex((card) => this.card.id === card.id);
+    const id = this.digimonCardStore
+      .cards()
+      .findIndex((card) => this.card.id === card.id);
     if (id === -1 || id === 0) {
       return;
     }
-    const newCard = this.allCards[id - 1];
+    const newCard = this.digimonCardStore.cards()[id - 1];
     if (!newCard) {
       return;
     }
@@ -558,11 +548,13 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   nextCard() {
-    const id = this.allCards.findIndex((card) => this.card.id === card.id);
-    if (id === -1 || id === this.allCards.length + 1) {
+    const id = this.digimonCardStore
+      .cards()
+      .findIndex((card) => this.card.id === card.id);
+    if (id === -1 || id === this.digimonCardStore.cards().length + 1) {
       return;
     }
-    const newCard = this.allCards[id + 1];
+    const newCard = this.digimonCardStore.cards()[id + 1];
     if (!newCard) {
       return;
     }

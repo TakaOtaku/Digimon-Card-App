@@ -1,13 +1,12 @@
-import { Component, Input } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { combineLatest, map, Observable } from 'rxjs';
-import { IDeckCard } from '../../../../models';
-import { mapToDeckCards } from '../../../functions/digimon-card.functions';
-import { selectAllCards, selectDeck } from '../../../store/digimon.selectors';
-import { ColorSpreadComponent } from '../../shared/statistics/color-spread.component';
+import { AsyncPipe, NgClass, NgIf } from '@angular/common';
+import { Component, effect, inject, Input } from '@angular/core';
+import { IDeck, IDeckCard } from '../../../../models';
+import { mapToDeckCards } from '../../../functions';
+import { DigimonCardStore } from '../../../store/digimon-card.store';
+import { WebsiteStore } from '../../../store/website.store';
 import { ChartContainersComponent } from '../../shared/statistics/chart-containers.component';
+import { ColorSpreadComponent } from '../../shared/statistics/color-spread.component';
 import { DdtoSpreadComponent } from '../../shared/statistics/ddto-spread.component';
-import { NgIf, NgClass, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'digimon-deck-stats',
@@ -22,13 +21,12 @@ import { NgIf, NgClass, AsyncPipe } from '@angular/common';
         class="surface-card flex flex-row border-r-2 border-t-2 border-white bg-opacity-25 lg:mx-auto">
         <digimon-ddto-spread
           *ngIf="!collectionView"
-          [deck]="this.deck$ | async"
-          [allCards]="(this.allCards$ | async) ?? []"
+          [deck]="this.deck"
           [container]="true"
           class="ml-auto hidden border-r border-slate-200 px-5 lg:block"></digimon-ddto-spread>
 
         <digimon-chart-containers
-          [deck]="(mainDeck$ | async)!"
+          [deck]="mainDeck"
           class="max-w-[40rem]"
           [ngClass]="{
             'lg:ml-3 lg:mr-auto': collectionView
@@ -36,8 +34,7 @@ import { NgIf, NgClass, AsyncPipe } from '@angular/common';
 
         <digimon-color-spread
           *ngIf="!collectionView"
-          [deck]="this.deck$ | async"
-          [allCards]="(this.allCards$ | async) ?? []"
+          [deck]="this.deck"
           [container]="true"
           class="mr-auto hidden border-l border-slate-200 px-5 lg:block"></digimon-color-spread>
       </div>
@@ -57,14 +54,19 @@ export class DeckStatsComponent {
   @Input() showStats = true;
   @Input() collectionView = false;
 
-  deck$ = this.store.select(selectDeck);
+  websiteStore = inject(WebsiteStore);
+  digimonCardStore = inject(DigimonCardStore);
 
-  allCards$ = this.store.select(selectAllCards);
+  deck: IDeck;
+  mainDeck: IDeckCard[];
 
-  mainDeck$: Observable<IDeckCard[]> = combineLatest(
-    this.deck$,
-    this.allCards$,
-  ).pipe(map((value) => mapToDeckCards(value[0].cards, value[1])));
-
-  constructor(private store: Store) {}
+  constructor() {
+    effect(() => {
+      this.deck = this.websiteStore.deck();
+      this.mainDeck = mapToDeckCards(
+        this.deck.cards,
+        this.digimonCardStore.cards(),
+      );
+    });
+  }
 }

@@ -27,7 +27,8 @@ import { IBlog } from '../../../../models';
       <div class="flex flex-col h-1/2 p-1 surface-card">
         <div
           class="border-b border-slate-500 h-1/2 items-center justify-center">
-          <h1 class="text-white text-black-outline max-w-[100vw] truncate text-center">
+          <h1
+            class="text-white text-black-outline max-w-[100vw] truncate text-center">
             {{ blog.title }}
           </h1>
           <h3 *ngIf="blog.description !== ''" class="text-white truncate">

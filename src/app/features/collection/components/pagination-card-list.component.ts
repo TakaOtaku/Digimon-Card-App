@@ -8,46 +8,43 @@ import {
 import {
   ChangeDetectionStrategy,
   Component,
-  ElementRef,
+  effect,
   inject,
   Input,
   OnDestroy,
-  OnInit,
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Store } from '@ngrx/store';
 import { DataViewModule } from 'primeng/dataview';
 import { DialogModule } from 'primeng/dialog';
 import { DragDropModule } from 'primeng/dragdrop';
 import { SidebarModule } from 'primeng/sidebar';
 import { SkeletonModule } from 'primeng/skeleton';
-import { map, startWith, Subject, takeUntil, tap } from 'rxjs';
-import { WebsiteActions } from 'src/app/store/digimon.actions';
-import { DigimonCard, ICountCard, IDraggedCard } from '../../../../models';
-import { DRAG } from '../../../../models/enums/drag.enum';
+import { Subject } from 'rxjs';
+import {
+  DigimonCard,
+  DRAG,
+  dummyCard,
+  ICountCard,
+  IDraggedCard,
+} from '../../../../models';
 import { ImgFallbackDirective } from '../../../directives/ImgFallback.directive';
 import { IntersectionListenerDirective } from '../../../directives/intersection-listener.directive';
-import { withoutJ } from '../../../functions/digimon-card.functions';
-import {
-  selectCollection,
-  selectCollectionMode,
-  selectDraggedCard,
-  selectFilteredCards,
-  selectSettings,
-} from '../../../store/digimon.selectors';
+import { withoutJ } from '../../../functions';
+import { DigimonCardStore } from '../../../store/digimon-card.store';
+import { SaveStore } from '../../../store/save.store';
+import { WebsiteStore } from '../../../store/website.store';
 import { ViewCardDialogComponent } from '../../shared/dialogs/view-card-dialog.component';
 import { FilterSideBoxComponent } from '../../shared/filter/filter-side-box.component';
 import { FullCardComponent } from '../../shared/full-card.component';
-import { dummyCard } from './../../../store/reducers/digimon.reducers';
 import { PaginationCardListHeaderComponent } from './pagination-card-list-header.component';
 import { SearchComponent } from './search.component';
 
 @Component({
   selector: 'digimon-pagination-card-list',
   template: `
-    <div *ngIf="cards$ | async" class="flex flex-col w-full">
+    <div class="flex flex-col w-full">
       <digimon-pagination-card-list-header
-        [filterButton]="(filterBoxEnabled$ | async) === false"
+        [filterButton]="!filterBoxEnabled"
         (filterBox)="filterBox = $event"
         [widthForm]="widthForm"
         [viewOnly]="
@@ -57,7 +54,6 @@ import { SearchComponent } from './search.component';
       <digimon-search></digimon-search>
 
       <div
-        *ngIf="draggedCard$ | async as draggedCard"
         [pDroppable]="['fromDeck', 'fromSide']"
         (onDrop)="drop(draggedCard, draggedCard)"
         class="h-[calc(100vh-8.5rem)] md:h-[calc(100vh-10rem)] lg:h-[calc(100vh-5rem)] flex flex-wrap w-full content-start justify-start overflow-y-scroll">
@@ -66,7 +62,7 @@ import { SearchComponent } from './search.component';
             <digimon-full-card
               [style]="{ width: widthForm.value + 'rem' }"
               class="m-0.5 md:m-1 flex items-center justify-center self-start"
-              [collectionMode]="(collectionMode$ | async) ?? false"
+              [collectionMode]="collectionMode"
               [card]="card"
               [count]="getCount(card.id)"
               [deckBuilder]="true"
@@ -85,7 +81,7 @@ import { SearchComponent } from './search.component';
           }
         } @empty {
           <h1
-            *ngIf="cards.length === 0"
+            *ngIf="filteredCards().length === 0"
             class="primary-color text-bold my-10 text-center text-5xl">
             No cards found!
           </h1>
@@ -94,7 +90,7 @@ import { SearchComponent } from './search.component';
     </div>
 
     <digimon-filter-side-box
-      *ngIf="filterBoxEnabled$ | async"
+      *ngIf="filterBoxEnabled"
       class="hidden xl:flex"></digimon-filter-side-box>
 
     <p-sidebar
@@ -140,22 +136,38 @@ import { SearchComponent } from './search.component';
     IntersectionListenerDirective,
   ],
 })
-export class PaginationCardListComponent implements OnInit, OnDestroy {
+export class PaginationCardListComponent implements OnDestroy {
   @Input() collectionOnly: boolean = false;
   @Input() initialWidth = 5.6;
   @Input() inputCollection: ICountCard[] = [];
 
-  private store = inject(Store);
+  digimonCardStore = inject(DigimonCardStore);
+  websiteStore = inject(WebsiteStore);
+  saveStore = inject(SaveStore);
 
   widthForm = new FormControl(this.initialWidth);
 
   filterBox = false;
 
-  draggedCard$ = this.store.select(selectDraggedCard);
-  collectionMode$ = this.store.select(selectCollectionMode);
+  draggedCard = this.websiteStore.draggedCard();
+  collectionMode = this.saveStore.settings().collectionMode;
 
-  filterBoxEnabled$ = this.store.select(selectSettings).pipe(
-    map((settings) => {
+  filterBoxEnabled = true;
+
+  viewCardDialog = false;
+  card = JSON.parse(JSON.stringify(dummyCard));
+
+  perPage = 100;
+  page = 1;
+  filteredCards = this.digimonCardStore.filteredCards;
+  showCards: DigimonCard[] = [];
+
+  private collection: ICountCard[] = [];
+  private onDestroy$ = new Subject();
+
+  constructor() {
+    effect(() => {
+      const settings = this.saveStore.settings();
       if (
         settings.fullscreenFilter === null ||
         settings.fullscreenFilter === undefined
@@ -163,30 +175,14 @@ export class PaginationCardListComponent implements OnInit, OnDestroy {
         return true;
       }
       return settings.fullscreenFilter;
-    }),
-  );
+    });
 
-  viewCardDialog = false;
-  card = JSON.parse(JSON.stringify(dummyCard));
-
-  perPage = 100;
-  page = 1;
-  cards: DigimonCard[] = [];
-  showCards: DigimonCard[] = [];
-  cards$ = this.store.select(selectFilteredCards).pipe(
-    tap((cards) => (this.cards = cards)),
-    tap(() => (this.page = 1)),
-    tap((cards) => (this.showCards = cards.slice(0, this.perPage))),
-  );
-
-  private collection: ICountCard[] = [];
-  private onDestroy$ = new Subject();
-
-  ngOnInit() {
-    this.store
-      .select(selectCollection)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((collection) => (this.collection = collection));
+    effect(() => {
+      console.log('Filtered Cards changed');
+      const filteredCards = this.digimonCardStore.filteredCards();
+      this.showCards = filteredCards.slice(0, this.perPage);
+      this.page = 1;
+    });
   }
 
   ngOnDestroy() {
@@ -210,20 +206,16 @@ export class PaginationCardListComponent implements OnInit, OnDestroy {
 
   drop(card: IDraggedCard, dragCard: IDraggedCard) {
     if (dragCard.drag === DRAG.Side) {
-      this.store.dispatch(
-        WebsiteActions.removeCardFromSideDeck({ cardId: card.card.id }),
-      );
+      this.websiteStore.removeCardFromSideDeck(card.card.id);
       return;
     }
-    this.store.dispatch(
-      WebsiteActions.removeCardFromDeck({ cardId: card.card.id }),
-    );
+    this.websiteStore.removeCardFromDeck(card.card.id);
   }
 
   loadItems() {
     const from = this.page * this.perPage;
     const to = (this.page + 1) * this.perPage;
-    const newCards = this.cards.slice(from, to);
+    const newCards = this.filteredCards().slice(from, to);
     this.showCards.push(...newCards);
     this.page = this.page + 1;
   }
