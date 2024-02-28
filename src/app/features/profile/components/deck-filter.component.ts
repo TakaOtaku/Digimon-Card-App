@@ -27,7 +27,7 @@ import { InputTextModule } from 'primeng/inputtext';
         [formControl]="tagFilter"
         [options]="tags"
         [showToggleAll]="false"
-        defaultLabel="Select a Tag"
+        placeholder="Select a Tag"
         display="chip"
         scrollHeight="250px"
         class="mx-auto max-w-[250px]"

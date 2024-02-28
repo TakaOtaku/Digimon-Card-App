@@ -28,16 +28,12 @@ export const DigimonCardStore = signalStore(
   { providedIn: 'root' },
   withState(initialState),
 
-  withComputed(({ cards, filteredCards }) => ({
-    cardCount: computed(() => cards.length),
-  })),
-
   withMethods((store) => ({
     updateCards(cardset: CARDSET): void {
       const cards = setupDigimonCards(cardset);
       const filteredCards = cards;
       const cardsMap = setupDigimonCardMap(cards);
-      patchState(store, (state) => ({ cards, filteredCards, cardsMap }));
+      patchState(store, (state) => ({ ...state, cards, filteredCards, cardsMap }));
     },
     updateFilteredCards(filteredCards: DigimonCard[]): void {
       patchState(store, (state) => ({ filteredCards }));

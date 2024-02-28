@@ -29,7 +29,7 @@ import { TAGS } from '../../../../models';
         formControlName="tagFilter"
         [options]="tags"
         [showToggleAll]="false"
-        defaultLabel="Select a Tag"
+        placeholder="Select a Tag"
         display="chip"
         scrollHeight="250px"
         class="col-span-3 sm:col-span-2 sm:mx-auto sm:my-1 w-full max-w-[250px]"

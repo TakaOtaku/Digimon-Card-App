@@ -58,7 +58,7 @@ import { CardImageComponent } from '../../shared/card-image.component';
           [options]="groupedSets"
           [showHeader]="false"
           [showToggleAll]="false"
-          defaultLabel="Select a Set"
+          placeholder="Select a Set"
           display="chip"
           scrollHeight="250px"
           class="mb-2 mr-2 w-full max-w-[250px]"

@@ -1,22 +1,15 @@
 import { AsyncPipe, NgIf } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  effect,
-  inject, OnInit
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
-import { patchState } from '@ngrx/signals';
-import { ToastrService } from 'ngx-toastr';
 import { BlockUIModule } from 'primeng/blockui';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DialogModule } from 'primeng/dialog';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { SidebarModule } from 'primeng/sidebar';
 import { ToastModule } from 'primeng/toast';
-import { catchError, first, of } from 'rxjs';
-import { CARDSET, emptyFilter, emptySave, IFilter, ISave } from '../models';
+import { first } from 'rxjs';
+import { CARDSET, emptyFilter, IFilter } from '../models';
 import { ChangelogDialogComponent } from './features/shared/dialogs/changelog-dialog.component';
 import { SettingsDialogComponent } from './features/shared/dialogs/settings-dialog.component';
 import { FilterSideBoxComponent } from './features/shared/filter/filter-side-box.component';
@@ -42,7 +35,7 @@ import { WebsiteStore } from './store/website.store';
         class="min-h-[calc(100vh-3.5rem)] md:min-h-[calc(100vh-5rem)] lg:min-h-[100vh]
         w-[100vw] lg:max-w-[calc(100vw-6.5rem)] lg:w-[calc(100vw-6.5rem)]
         flex justify-center items-center">
-        <!--router-outlet *ngIf="saveLoaded"></router-outlet-->
+        <router-outlet *ngIf="saveLoaded"></router-outlet>
       </div>
 
       <ng-container *ngIf="!saveLoaded">
@@ -133,7 +126,7 @@ export class AppComponent {
 
       console.log('Set DigimonCard Set');
       this.setDigimonCardSet();
-    });
+    }, { allowSignalWrites: true });
 
     effect(() => {
       console.log('Filter changed: ', this.filterStore.filter());
@@ -149,10 +142,8 @@ export class AppComponent {
         this.digimonCardStore.cardsMap(),
       );
 
-      console.log(filteredCards);
-
       this.digimonCardStore.updateFilteredCards(filteredCards);
-    });
+    }, { allowSignalWrites: true });
 
     // Prevent Right Click, that is used for other actions
     document.addEventListener(
