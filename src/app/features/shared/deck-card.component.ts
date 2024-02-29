@@ -14,8 +14,8 @@ import { DialogModule } from 'primeng/dialog';
 import { DigimonCard, dummyCard, IDeckCard } from '../../../models';
 import { ImgFallbackDirective } from '../../directives/ImgFallback.directive';
 import { ImageService } from '../../services/image.service';
+import { DialogStore } from '../../store/dialog.store';
 import { WebsiteStore } from '../../store/website.store';
-import { ViewCardDialogComponent } from './dialogs/view-card-dialog.component';
 
 @Component({
   selector: 'digimon-deck-card',
@@ -94,28 +94,9 @@ import { ViewCardDialogComponent } from './dialogs/view-card-dialog.component';
         }}
       </p>
     </div>
-
-    <p-dialog
-      [(visible)]="viewCardDialog"
-      [showHeader]="false"
-      [modal]="true"
-      [dismissableMask]="true"
-      [resizable]="false"
-      styleClass="overflow-x-hidden"
-      (close)="viewCardDialog = false">
-      <digimon-view-card-dialog
-        (onClose)="viewCardDialog = false"
-        [card]="viewCard"></digimon-view-card-dialog>
-    </p-dialog>
   `,
   standalone: true,
-  imports: [
-    NgIf,
-    DialogModule,
-    ViewCardDialogComponent,
-    AsyncPipe,
-    ImgFallbackDirective,
-  ],
+  imports: [NgIf, DialogModule, AsyncPipe, ImgFallbackDirective],
   providers: [ImageService],
 })
 export class DeckCardComponent implements OnChanges, OnInit {
@@ -129,11 +110,11 @@ export class DeckCardComponent implements OnChanges, OnInit {
   @Output() public removeCard = new EventEmitter<boolean>();
 
   websiteStore = inject(WebsiteStore);
+  dialogStore = inject(DialogStore);
 
   completeCard: DigimonCard = JSON.parse(JSON.stringify(dummyCard));
 
   viewCard: DigimonCard = JSON.parse(JSON.stringify(dummyCard));
-  viewCardDialog = false;
 
   ngOnInit() {
     this.mapCard();
@@ -179,6 +160,10 @@ export class DeckCardComponent implements OnChanges, OnInit {
 
   showCardDetails() {
     this.viewCard = this.cards.find((card) => card.id === this.card.id)!;
-    this.viewCardDialog = true;
+    this.dialogStore.updateViewCardDialog({
+      show: true,
+      card: this.viewCard,
+      width: '50vw',
+    });
   }
 }

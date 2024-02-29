@@ -30,6 +30,7 @@ import {
 import { ImgFallbackDirective } from '../../../directives/ImgFallback.directive';
 import { IntersectionListenerDirective } from '../../../directives/intersection-listener.directive';
 import { withoutJ } from '../../../functions';
+import { DialogStore } from '../../../store/dialog.store';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
 import { SaveStore } from '../../../store/save.store';
 import { WebsiteStore } from '../../../store/website.store';
@@ -99,20 +100,6 @@ import { SearchComponent } from './search.component';
       styleClass="w-[20rem] md:w-[24rem] overflow-x-hidden overflow-y-auto p-0">
       <digimon-filter-side-box></digimon-filter-side-box>
     </p-sidebar>
-
-    <p-dialog
-      (close)="viewCardDialog = false"
-      [(visible)]="viewCardDialog"
-      [baseZIndex]="100000"
-      [showHeader]="false"
-      [modal]="true"
-      [dismissableMask]="true"
-      [resizable]="false"
-      styleClass="overflow-x-hidden">
-      <digimon-view-card-dialog
-        (onClose)="viewCardDialog = false"
-        [card]="card"></digimon-view-card-dialog>
-    </p-dialog>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
@@ -144,6 +131,7 @@ export class PaginationCardListComponent implements OnDestroy {
   digimonCardStore = inject(DigimonCardStore);
   websiteStore = inject(WebsiteStore);
   saveStore = inject(SaveStore);
+  dialogStore = inject(DialogStore);
 
   widthForm = new FormControl(this.initialWidth);
 
@@ -154,7 +142,6 @@ export class PaginationCardListComponent implements OnDestroy {
 
   filterBoxEnabled = true;
 
-  viewCardDialog = false;
   card = JSON.parse(JSON.stringify(dummyCard));
 
   perPage = 100;
@@ -200,8 +187,11 @@ export class PaginationCardListComponent implements OnDestroy {
   }
 
   viewCard(card: DigimonCard) {
-    this.viewCardDialog = true;
-    this.card = card;
+    this.dialogStore.updateViewCardDialog({
+      show: true,
+      card,
+      width: '50vw',
+    });
   }
 
   drop(card: IDraggedCard, dragCard: IDraggedCard) {

@@ -1,5 +1,10 @@
 import { AsyncPipe, NgIf } from '@angular/common';
-import { ChangeDetectionStrategy, Component, effect, inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  effect,
+  inject,
+} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 import { BlockUIModule } from 'primeng/blockui';
@@ -18,7 +23,6 @@ import { NavbarComponent } from './features/shared/navbar/navbar.component';
 import { filterCards } from './functions';
 import { AuthService } from './services/auth.service';
 import { DigimonBackendService } from './services/digimon-backend.service';
-import { DialogStore } from './store/dialog.store';
 import { DigimonCardStore } from './store/digimon-card.store';
 import { FilterStore } from './store/filter.store';
 import { SaveStore } from './store/save.store';
@@ -55,17 +59,6 @@ import { WebsiteStore } from './store/website.store';
         </ng-template>
       </p-sidebar>
 
-      <p-dialog
-        [(visible)]="settingsDialog"
-        [baseZIndex]="10000"
-        [modal]="true"
-        [dismissableMask]="true"
-        [resizable]="false"
-        header="Settings"
-        styleClass="background-darker surface-ground w-full h-full max-w-6xl min-h-[500px]">
-        <digimon-settings-dialog></digimon-settings-dialog>
-      </p-dialog>
-
       <p-toast></p-toast>
     </div>
   `,
@@ -94,7 +87,6 @@ export class AppComponent {
   digimonCardStore = inject(DigimonCardStore);
   saveStore = inject(SaveStore);
   filterStore = inject(FilterStore);
-  dialogStore = inject(DialogStore);
   websiteStore = inject(WebsiteStore);
 
   authService = inject(AuthService);
@@ -103,7 +95,6 @@ export class AppComponent {
   saveLoaded = true;
 
   sideNav = false;
-  settingsDialog = this.dialogStore.settings();
 
   constructor() {
     this.saveStore.loadSave();
@@ -112,38 +103,44 @@ export class AppComponent {
       console.log('Cards changed: ', this.digimonCardStore.cards());
     });
 
-    effect(() => {
-      console.log('Save changed: ', this.saveStore.save());
-      this.saveLoaded = this.saveStore.save().uid === '';
+    effect(
+      () => {
+        console.log('Save changed: ', this.saveStore.save());
+        this.saveLoaded = this.saveStore.save().uid === '';
 
-      if (!this.saveStore.loadedSave()) return;
+        if (!this.saveStore.loadedSave()) return;
 
-      console.log('Update Save in the Database');
-      this.updateDatabase();
+        console.log('Update Save in the Database');
+        this.updateDatabase();
 
-      console.log('Change Advanced Settings');
-      this.setAdvancedSettings();
+        console.log('Change Advanced Settings');
+        this.setAdvancedSettings();
 
-      console.log('Set DigimonCard Set');
-      this.setDigimonCardSet();
-    }, { allowSignalWrites: true });
+        console.log('Set DigimonCard Set');
+        this.setDigimonCardSet();
+      },
+      { allowSignalWrites: true },
+    );
 
-    effect(() => {
-      console.log('Filter changed: ', this.filterStore.filter());
-      const cards = this.digimonCardStore.cards();
+    effect(
+      () => {
+        console.log('Filter changed: ', this.filterStore.filter());
+        const cards = this.digimonCardStore.cards();
 
-      if (cards.length === 0) return;
+        if (cards.length === 0) return;
 
-      const filteredCards = filterCards(
-        this.digimonCardStore.cards(),
-        this.saveStore.collection(),
-        this.filterStore.filter(),
-        this.websiteStore.sort(),
-        this.digimonCardStore.cardsMap(),
-      );
+        const filteredCards = filterCards(
+          this.digimonCardStore.cards(),
+          this.saveStore.collection(),
+          this.filterStore.filter(),
+          this.websiteStore.sort(),
+          this.digimonCardStore.cardsMap(),
+        );
 
-      this.digimonCardStore.updateFilteredCards(filteredCards);
-    }, { allowSignalWrites: true });
+        this.digimonCardStore.updateFilteredCards(filteredCards);
+      },
+      { allowSignalWrites: true },
+    );
 
     // Prevent Right Click, that is used for other actions
     document.addEventListener(

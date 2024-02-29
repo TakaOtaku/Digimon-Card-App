@@ -1,12 +1,9 @@
 import { NgClass, NgIf } from '@angular/common';
 import {
   Component,
-  EventEmitter,
   inject,
   Input,
   OnChanges,
-  OnDestroy,
-  Output,
   SimpleChanges,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -14,13 +11,8 @@ import { saveAs } from 'file-saver';
 import { ButtonModule } from 'primeng/button';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { SelectButtonModule } from 'primeng/selectbutton';
-import { Subject } from 'rxjs';
 import { ColorsWithoutMulti, DigimonCard, IDeck } from '../../../../models';
-import {
-  compareIDs,
-  formatId,
-  mapToDeckCards,
-} from '../../../functions/digimon-card.functions';
+import { compareIDs, formatId, mapToDeckCards } from '../../../functions';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
 
 @Component({
@@ -126,8 +118,6 @@ import { DigimonCardStore } from '../../../store/digimon-card.store';
 export class ExportDeckDialogComponent implements OnChanges {
   @Input() show: boolean = false;
   @Input() deck: IDeck;
-
-  @Output() onClose = new EventEmitter<boolean>();
 
   digimonCards: DigimonCard[] = [];
 

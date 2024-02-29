@@ -2,14 +2,12 @@ import { AsyncPipe, NgClass, NgForOf, NgIf, NgStyle } from '@angular/common';
 import {
   Component,
   effect,
-  EventEmitter,
   HostListener,
   inject,
   Input,
   OnChanges,
   OnDestroy,
   OnInit,
-  Output,
   SimpleChanges,
 } from '@angular/core';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
@@ -20,9 +18,15 @@ import { ImgFallbackDirective } from 'src/app/directives/ImgFallback.directive';
 import { DigimonCardStore } from 'src/app/store/digimon-card.store';
 import { replacements } from 'src/models/data/keyword-replacement.data';
 
-import { DigimonCard, dummyCard, ICountCard, IDeck } from '../../../../models';
-import { ColorMap } from '../../../../models/maps';
-import { formatId, withoutJ } from '../../../functions/digimon-card.functions';
+import {
+  ColorMap,
+  DigimonCard,
+  dummyCard,
+  ICountCard,
+  IDeck,
+} from '../../../../models';
+import { formatId, withoutJ } from '../../../functions';
+import { DialogStore } from '../../../store/dialog.store';
 import { SaveStore } from '../../../store/save.store';
 
 @Component({
@@ -79,7 +83,7 @@ import { SaveStore } from '../../../store/save.store';
           </p>
         </div>
         <button
-          (click)="this.onClose.next(false)"
+          (click)="closeViewCard()"
           class="p-button-text ml-4 flex-shrink-0 md:ml-6"
           icon="pi pi-times"
           pButton
@@ -407,14 +411,11 @@ import { SaveStore } from '../../../store/save.store';
   ],
 })
 export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
-  @Input() show: boolean = false;
   @Input() card: DigimonCard = JSON.parse(JSON.stringify(dummyCard));
-
   @Input() width?: string = '50vw';
 
-  @Output() onClose = new EventEmitter<boolean>();
-
   saveStore = inject(SaveStore);
+  dialogStore = inject(DialogStore);
 
   png: string;
   imageAlt: string;
@@ -571,5 +572,9 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
       );
     }
     return replacedText;
+  }
+
+  closeViewCard() {
+    this.dialogStore.showViewCardDialog(false);
   }
 }

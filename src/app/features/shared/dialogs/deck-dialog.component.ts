@@ -19,7 +19,6 @@ import { Router } from '@angular/router';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import { DialogModule } from 'primeng/dialog';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
@@ -28,12 +27,10 @@ import { first } from 'rxjs';
 import * as uuid from 'uuid';
 
 import { IDeck, IDeckCard, ITournamentDeck } from '../../../../models';
-import {
-  mapToDeckCards,
-  setDeckImage,
-} from '../../../functions/digimon-card.functions';
+import { mapToDeckCards, setDeckImage } from '../../../functions';
 import { AuthService } from '../../../services/auth.service';
 import { DigimonBackendService } from '../../../services/digimon-backend.service';
+import { DialogStore } from '../../../store/dialog.store';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
 import { SaveStore } from '../../../store/save.store';
 import { WebsiteStore } from '../../../store/website.store';
@@ -41,8 +38,6 @@ import { DeckCardComponent } from '../deck-card.component';
 import { ChartContainersComponent } from '../statistics/chart-containers.component';
 import { ColorSpreadComponent } from '../statistics/color-spread.component';
 import { DdtoSpreadComponent } from '../statistics/ddto-spread.component';
-import { DeckSubmissionComponent } from './deck-submission.component';
-import { ExportDeckDialogComponent } from './export-deck-dialog.component';
 
 export interface DigimonCardImage {
   name: string;
@@ -248,30 +243,6 @@ export interface DigimonCardImage {
       </ng-template>
     </div>
 
-    <p-dialog
-      header="Export Deck"
-      [(visible)]="exportDeckDialog"
-      [modal]="true"
-      [dismissableMask]="true"
-      [resizable]="false"
-      styleClass="w-full h-full max-w-6xl min-h-[500px]"
-      [baseZIndex]="10000">
-      <digimon-export-deck-dialog [deck]="deck"></digimon-export-deck-dialog>
-    </p-dialog>
-
-    <p-dialog
-      header="Tournament Deck Submission"
-      [(visible)]="deckSubmissionDialog"
-      [modal]="true"
-      [dismissableMask]="true"
-      [resizable]="false"
-      styleClass="w-full h-full max-w-6xl min-h-[500px]"
-      [baseZIndex]="10000">
-      <digimon-deck-submission
-        [inputDeck]="deck"
-        (onClose)="deckSubmissionDialog = false"></digimon-deck-submission>
-    </p-dialog>
-
     <p-confirmDialog
       header="Open Deck"
       rejectButtonStyleClass="p-button-outlined"></p-confirmDialog>
@@ -297,9 +268,6 @@ export interface DigimonCardImage {
     DropdownModule,
     InputTextareaModule,
     ButtonModule,
-    DialogModule,
-    ExportDeckDialogComponent,
-    DeckSubmissionComponent,
     ConfirmDialogModule,
   ],
   providers: [MessageService],
@@ -313,8 +281,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
 
   saveStore = inject(SaveStore);
   websiteStore = inject(WebsiteStore);
-
-  deckSubmissionDialog = false;
+  dialogStore = inject(DialogStore);
 
   deckFormGroup = new UntypedFormGroup({
     title: new UntypedFormControl(''),
@@ -327,7 +294,6 @@ export class DeckDialogComponent implements OnInit, OnChanges {
 
   cardImageOptions: DigimonCardImage[] = [];
 
-  exportDeckDialog = false;
   mainDeck: IDeckCard[] = [];
 
   isAdmin = false;
@@ -452,7 +418,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
   }
 
   showExportDeckDialog() {
-    this.exportDeckDialog = true;
+    this.dialogStore.updateExportDeckDialog({ show: true, deck: this.deck });
   }
 
   createImageOptions(): DigimonCardImage[] {
