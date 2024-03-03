@@ -4,10 +4,12 @@ import {
   Component,
   inject,
   Input,
+  OnChanges,
   OnInit,
+  SimpleChanges,
 } from '@angular/core';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
-import { BehaviorSubject, first } from 'rxjs';
+import { BehaviorSubject, first, Observable } from 'rxjs';
 import { DigimonCard, IDeck, ITournamentDeck } from '../../../models';
 import { ColorMap } from '../../../models/maps/color.map';
 import { setDeckImage } from '../../functions/digimon-card.functions';
@@ -31,7 +33,7 @@ import { DigimonCardStore } from '../../store/digimon-card.store';
       }">
       <div
         [ngStyle]="{ background: colorMap.get(deck.color.name) }"
-        class="text-shadow-white-xs relative left-[-5px] top-[10px] w-24 border border-black bg-opacity-80 text-center text-xs font-bold uppercase">
+        class="text-shadow relative left-[-5px] top-[10px] w-24 border border-black bg-opacity-80 text-center text-xs font-bold uppercase">
         <span *ngIf="mode !== 'Tournament'" class="mr-1">{{
           getTags(deck)
         }}</span>
@@ -90,7 +92,7 @@ import { DigimonCardStore } from '../../store/digimon-card.store';
   imports: [LazyLoadImageModule, NgStyle, NgIf, DatePipe, AsyncPipe],
   providers: [ImageService],
 })
-export class DeckContainerComponent {
+export class DeckContainerComponent implements OnChanges {
   @Input() deck: IDeck | ITournamentDeck;
   @Input() mode = 'Basic';
   cardImageSubject$ = new BehaviorSubject<string>(
@@ -103,7 +105,12 @@ export class DeckContainerComponent {
 
   constructor(private imageService: ImageService) {}
 
-  setCardImage(digimonCardMap: Map<string, DigimonCard>) {
+  ngOnChanges(changes: SimpleChanges): void {
+    this.setCardImage();
+  }
+
+  setCardImage() {
+    const digimonCardMap = this.digimonCardStore.cardsMap();
     let imagePath = '';
     // If there is an ImageCardId set it
     if (this.deck.imageCardId) {

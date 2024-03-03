@@ -21,12 +21,14 @@ import {
   faUsers,
 } from '@fortawesome/free-solid-svg-icons';
 import { ConfirmationService } from 'primeng/api';
+import { ButtonModule } from 'primeng/button';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { DialogModule } from 'primeng/dialog';
 import { Subject, takeUntil } from 'rxjs';
 import { IUser } from '../../../../models';
 import { AuthService } from '../../../services/auth.service';
 import { DialogStore } from '../../../store/dialog.store';
+import { SaveStore } from '../../../store/save.store';
 import { ChangelogDialogComponent } from '../dialogs/changelog-dialog.component';
 import { SettingsDialogComponent } from '../dialogs/settings-dialog.component';
 import { FilterButtonComponent } from '../filter/filter-button.component';
@@ -182,7 +184,7 @@ import { FilterButtonComponent } from '../filter/filter-button.component';
         }"
         class="pi pi-ellipsis-h my-5 text-center text-[#e2e4e6] hover:text-[#64B5F6]"
         style="font-size: 1.5rem"
-        (click)="dialogStore.updateSettingsDialog(true)"></i>
+        (click)="openSettings()"></i>
 
       <div class="grid grid-cols-2 justify-center items-center">
         <a
@@ -220,6 +222,14 @@ import { FilterButtonComponent } from '../filter/filter-button.component';
             class="pi pi-paypal px-1 text-[#e2e4e6] hover:text-[#64B5F6]"
             style="font-size: 1rem"></i>
         </a>
+        <div class="col-span-2 flex align-center justify-center">
+          <p-button
+            class="mx-auto"
+            [link]="true"
+            size="small"
+            (onClick)="showChangelog()"
+            label="Ver. 4.1"></p-button>
+        </div>
       </div>
     </div>
   `,
@@ -234,11 +244,13 @@ import { FilterButtonComponent } from '../filter/filter-button.component';
     SettingsDialogComponent,
     ChangelogDialogComponent,
     NgOptimizedImage,
-  ],
+    ButtonModule
+  ]
 })
 export class NavLinksComponent implements OnInit, OnDestroy {
   @Input() sidebar = false;
   dialogStore = inject(DialogStore);
+  saveStore = inject(SaveStore);
 
   user: IUser | null;
 
@@ -272,8 +284,8 @@ export class NavLinksComponent implements OnInit, OnDestroy {
 
   loginLogout() {
     this.authService.isLoggedIn
-      ? this.authService.LogOut()
-      : this.authService.GoogleAuth();
+      ? this.authService.LogOut(this.saveStore)
+      : this.authService.GoogleAuth(this.saveStore);
   }
 
   getNavigationBorder(route: string): any {
@@ -305,5 +317,13 @@ export class NavLinksComponent implements OnInit, OnDestroy {
       'text-[#64B5F6]': this.route === route,
       'text-[#e2e4e6]': this.route !== route,
     };
+  }
+
+  openSettings() {
+    this.dialogStore.updateSettingsDialog(true);
+  }
+
+  showChangelog() {
+    this.dialogStore.updateChangelogDialog(true);
   }
 }

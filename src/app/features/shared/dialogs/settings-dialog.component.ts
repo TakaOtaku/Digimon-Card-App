@@ -1,5 +1,5 @@
 import { AsyncPipe, NgClass, NgIf, NgStyle } from '@angular/common';
-import { Component, inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, effect, inject, OnDestroy, OnInit } from '@angular/core';
 import {
   FormsModule,
   ReactiveFormsModule,
@@ -390,7 +390,7 @@ import { SettingsRowComponent } from '../settings-row.component';
   ],
   providers: [MessageService],
 })
-export class SettingsDialogComponent implements OnInit, OnDestroy {
+export class SettingsDialogComponent implements OnDestroy {
   dialogStore = inject(DialogStore);
 
   saveStore = inject(SaveStore);
@@ -446,30 +446,30 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
     private digimonBackendService: DigimonBackendService,
     private confirmationService: ConfirmationService,
     private toastrService: ToastrService,
-  ) {}
+  ) {
+    effect(() => {
+      const save = this.saveStore.save();
 
-  ngOnInit(): void {
-    const save = this.saveStore.save();
+      this.iSave = save;
+      this.sortOrderFilter.setValue(save.settings?.sortDeckOrder ?? 'Level', {
+        emitEvent: false,
+      });
+      this.username = save.displayName ?? '';
+      this.displayImage = save.photoURL ?? '';
+      this.save = JSON.stringify(save, undefined, 4);
 
-    this.iSave = save;
-    this.sortOrderFilter.setValue(save.settings?.sortDeckOrder ?? 'Level', {
-      emitEvent: false,
+      const settings = save.settings;
+
+      this.preRelease = settings.showPreRelease;
+      this.aa = settings.showAACards;
+      this.stamped = settings.showStampedCards;
+      this.reprint = settings.showReprintCards;
+      this.collectionCount = settings.collectionMinimum;
+      this.aaCollectionCount = settings.aaCollectionMinimum;
+      this.deckDisplayTable = settings.deckDisplayTable;
+      this.setGoal = settings.collectionSets;
+      this.fullscreenFilter = settings.fullscreenFilter;
     });
-    this.username = save.displayName ?? '';
-    this.displayImage = save.photoURL ?? '';
-    this.save = JSON.stringify(save, undefined, 4);
-
-    const settings = save.settings;
-
-    this.preRelease = settings.showPreRelease;
-    this.aa = settings.showAACards;
-    this.stamped = settings.showStampedCards;
-    this.reprint = settings.showReprintCards;
-    this.collectionCount = settings.collectionMinimum;
-    this.aaCollectionCount = settings.aaCollectionMinimum;
-    this.deckDisplayTable = settings.deckDisplayTable;
-    this.setGoal = settings.collectionSets;
-    this.fullscreenFilter = settings.fullscreenFilter;
   }
 
   ngOnDestroy() {

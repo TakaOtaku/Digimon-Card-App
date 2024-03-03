@@ -1,11 +1,12 @@
 import { AsyncPipe, NgForOf, NgIf } from '@angular/common';
 import {
-  ChangeDetectionStrategy,
+  ChangeDetectionStrategy, ChangeDetectorRef,
   Component,
+  computed,
   effect,
   HostListener,
   inject,
-  OnInit,
+  OnInit
 } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
@@ -40,11 +41,12 @@ import { BlogItemComponent } from './components/blog-item.component';
         </div>
 
         <div class="grid col-span-4 md:grid-cols-2 gap-3">
-          <digimon-blog-item
-            class="w-full"
-            *ngFor="let blog of showBlogs"
-            [blog]="blog"
-            (click)="openBlog(blog)"></digimon-blog-item>
+          @for (blog of showBlogs; track $index) {
+            <digimon-blog-item
+              class="w-full"
+              [blog]="blog"
+              (click)="openBlog(blog)"></digimon-blog-item>
+          }
 
           <p-paginator
             class="md:col-span-2 mx-auto w-full h-8 surface-ground"
@@ -145,12 +147,17 @@ export class CommunityPageComponent implements OnInit {
 
   constructor(
     private meta: Meta,
+    private changeDetection: ChangeDetectorRef,
     private metaTitle: Title,
   ) {
+    this.websiteStore.loadBlogs();
+
     effect(() => {
       const blogs = this.websiteStore.blogs();
-      this.showBlogs = blogs.slice(this.first, this.first + this.rows);
+      if (blogs && blogs.length === 0) return;
       this.blogs = blogs;
+      this.showBlogs = [...blogs.slice(this.first, this.first + this.rows)];
+      this.changeDetection.detectChanges();
     });
   }
 
@@ -162,7 +169,6 @@ export class CommunityPageComponent implements OnInit {
   ngOnInit(): void {
     this.makeGoogleFriendly();
     this.checkScreenWidth(window.innerWidth);
-    this.websiteStore.loadBlogs();
   }
 
   private makeGoogleFriendly() {

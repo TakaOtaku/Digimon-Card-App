@@ -1,8 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { DigimonCard, ICountCard, IFilter, ISort } from '../../models';
-import { UltimateCup2023, UltimateCup2024 } from '../../models/data/presets.data';
+import { UltimateCup2023, UltimateCup2024 } from '../../models';
 
-let digimonCardMap = new Map<string, DigimonCard>();
 export function filterCards(
   cards: DigimonCard[],
   collection: ICountCard[],
@@ -10,7 +9,7 @@ export function filterCards(
   sort: ISort,
   cardMap: Map<string, DigimonCard>
 ): DigimonCard[] {
-  digimonCardMap = cardMap;
+  const digimonCardMap = cardMap;
   let filteredCards = applySearchFilter(cards, filter.searchFilter);
 
   filteredCards = applyPresetFilter(filteredCards, filter.presetFilter);

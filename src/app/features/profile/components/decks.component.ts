@@ -12,6 +12,7 @@ import {
 import { DialogModule } from 'primeng/dialog';
 import { PaginatorModule } from 'primeng/paginator';
 import { emptyDeck, ICountCard, IDeck, IUser } from '../../../../models';
+import { DialogStore } from '../../../store/dialog.store';
 import { SaveStore } from '../../../store/save.store';
 import { DeckContainerComponent } from '../../shared/deck-container.component';
 import { DeckDialogComponent } from '../../shared/dialogs/deck-dialog.component';
@@ -49,20 +50,6 @@ import { DecksTableComponent } from './decks-table.component';
         [decks]="decks"
         (onDeckClick)="showDeckDialog($event)"></digimon-decks-table>
     </ng-template>
-
-    <p-dialog
-      header="Deck Details"
-      [(visible)]="deckDialog"
-      [modal]="true"
-      [dismissableMask]="true"
-      [resizable]="false"
-      styleClass="w-full h-full max-w-6xl min-h-[500px]"
-      [baseZIndex]="10000">
-      <digimon-deck-dialog
-        [deck]="deck"
-        [editable]="editable"
-        (closeDialog)="deckDialog = false"></digimon-deck-dialog>
-    </p-dialog>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
@@ -82,6 +69,7 @@ export class DecksComponent implements OnInit, OnChanges {
   @Input() editable = true;
 
   saveStore = inject(SaveStore);
+  dialogStore = inject(DialogStore);
 
   row = 24;
 
@@ -90,13 +78,10 @@ export class DecksComponent implements OnInit, OnChanges {
   collection: ICountCard[];
   user: IUser;
 
-  params = '';
-
   first = 0;
   page = 0;
 
   deck: IDeck = JSON.parse(JSON.stringify(emptyDeck));
-  deckDialog = false;
 
   displayTables = this.saveStore.settings().deckDisplayTable;
 
@@ -136,8 +121,11 @@ export class DecksComponent implements OnInit, OnChanges {
   }
 
   showDeckDialog(deck: IDeck) {
-    this.deck = deck;
-    this.deckDialog = true;
+    this.dialogStore.updateDeckDialog({
+      show: true,
+      editable: true,
+      deck,
+    });
   }
 
   onPageChange(event: any, slice?: number) {

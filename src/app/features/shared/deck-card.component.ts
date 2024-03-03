@@ -15,6 +15,7 @@ import { DigimonCard, dummyCard, IDeckCard } from '../../../models';
 import { ImgFallbackDirective } from '../../directives/ImgFallback.directive';
 import { ImageService } from '../../services/image.service';
 import { DialogStore } from '../../store/dialog.store';
+import { DigimonCardStore } from '../../store/digimon-card.store';
 import { WebsiteStore } from '../../store/website.store';
 
 @Component({
@@ -101,7 +102,6 @@ import { WebsiteStore } from '../../store/website.store';
 })
 export class DeckCardComponent implements OnChanges, OnInit {
   @Input() public card: IDeckCard;
-  @Input() public cards: DigimonCard[];
   @Input() public missingCards?: boolean = false;
   @Input() public cardHave?: number = 0;
   @Input() public edit? = true;
@@ -110,6 +110,7 @@ export class DeckCardComponent implements OnChanges, OnInit {
   @Output() public removeCard = new EventEmitter<boolean>();
 
   websiteStore = inject(WebsiteStore);
+  digimonCardStore = inject(DigimonCardStore);
   dialogStore = inject(DialogStore);
 
   completeCard: DigimonCard = JSON.parse(JSON.stringify(dummyCard));
@@ -126,7 +127,7 @@ export class DeckCardComponent implements OnChanges, OnInit {
 
   mapCard(): void {
     this.completeCard =
-      this.cards.find((card) => this.card.id === card.id) ??
+      this.digimonCardStore.cardsMap().get(this.card.id) ??
       (JSON.parse(JSON.stringify(dummyCard)) as DigimonCard);
   }
 
@@ -159,7 +160,7 @@ export class DeckCardComponent implements OnChanges, OnInit {
   }
 
   showCardDetails() {
-    this.viewCard = this.cards.find((card) => card.id === this.card.id)!;
+    this.viewCard = this.digimonCardStore.cardsMap().get(this.card.id)!;
     this.dialogStore.updateViewCardDialog({
       show: true,
       card: this.viewCard,

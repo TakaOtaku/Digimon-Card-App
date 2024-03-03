@@ -1,101 +1,50 @@
-import { NgIf } from '@angular/common';
-import { Component, EventEmitter, Input, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
-
-// @ts-ignore
-import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
-import firebase from 'firebase/compat';
-import { MessageService } from 'primeng/api';
-import { ButtonModule } from 'primeng/button';
-import { RippleModule } from 'primeng/ripple';
-import { first } from 'rxjs';
-import { Base64Adapter } from '../../../functions/base64-adapter';
-import { AuthService } from '../../../services/auth.service';
-import { DatabaseService } from '../../../services/database.service';
-import DataSnapshot = firebase.database.DataSnapshot;
+import { Component } from '@angular/core';
+import { CardModule } from 'primeng/card';
+import { DividerModule } from 'primeng/divider';
+import { PanelModule } from 'primeng/panel';
 
 @Component({
   selector: 'digimon-changelog-dialog',
   template: `
-    <ckeditor
-      *ngIf="authService.userData?.uid !== 'S3rWXPtCYRN8vSrxY3qE6aeewy43'"
-      [editor]="Editor"
-      class="text-[#e2e4e6]"
-      [disabled]="true"
-      [(ngModel)]="content"></ckeditor>
+    <div>
+      <p-panel header="Version 4.1" [toggleable]="true" [collapsed]="false">
+        <h1 class="font-bold text-lg underline">Features</h1>
+        <ul class="list-disc p-5">
+          <li>Added this Changelog Button and Dialog.</li>
+          <li>
+            When you select Stamp you won't get Pre-Release Cards anymore as
+            they have a separate Option.
+          </li>
+        </ul>
 
-    <ckeditor
-      *ngIf="authService.userData?.uid === 'S3rWXPtCYRN8vSrxY3qE6aeewy43'"
-      [editor]="Editor"
-      class="text-[#e2e4e6]"
-      [(ngModel)]="content"
-      (ready)="onReady($event)"></ckeditor>
+        <p-divider></p-divider>
 
-    <button
-      *ngIf="authService.userData?.uid === 'S3rWXPtCYRN8vSrxY3qE6aeewy43'"
-      class="p-button mt-3"
-      icon="pi pi-save"
-      pButton
-      pRipple
-      type="button"
-      label="Save"
-      (click)="save()"></button>
+        <h1 class="font-bold text-lg underline">Bugfixes</h1>
+        <ul class="list-disc p-5"></ul>
+
+        <p-divider></p-divider>
+
+        <h1 class="font-bold text-lg underline">Technical</h1>
+        <ul class="list-disc p-5">
+          <li>
+            Moved away from NGRX Store to a Signal Store, which should improve
+            loading and maintainability.
+          </li>
+          <li>
+            Improved the script which updates the community decks each day
+          </li>
+        </ul>
+
+        <ng-template pTemplate="footer">
+          <div
+            class="flex flex-wrap align-middle justify-content-between gap-3">
+            <span class="ml-auto p-text-secondary">Updated 03.03.2024</span>
+          </div>
+        </ng-template>
+      </p-panel>
+    </div>
   `,
   standalone: true,
-  imports: [NgIf, CKEditorModule, FormsModule, ButtonModule, RippleModule],
-  providers: [MessageService],
+  imports: [DividerModule, PanelModule],
 })
-export class ChangelogDialogComponent implements OnInit {
-  @Input() loadChangelog: EventEmitter<boolean>;
-  public Editor = DecoupledEditor;
-
-  content: any;
-
-  constructor(
-    public authService: AuthService,
-    private dbService: DatabaseService,
-    private messageService: MessageService,
-  ) {}
-
-  ngOnInit() {
-    this.loadChangelog.pipe(first()).subscribe(() => {
-      this.load();
-    });
-  }
-
-  load() {
-    this.dbService.loadChangelog().then((r) => {
-      const value: DataSnapshot = r;
-      if (!value) {
-        return;
-      }
-      this.content = value.val().text;
-    });
-  }
-
-  save() {
-    this.dbService.saveChangelog(this.content);
-
-    this.messageService.add({
-      severity: 'success',
-      summary: 'Changelog saved!',
-      detail: 'The Changelog was saved successfully!',
-    });
-  }
-
-  public onReady(editor: any) {
-    editor.ui
-      .getEditableElement()
-      .parentElement.insertBefore(
-        editor.ui.view.toolbar.element,
-        editor.ui.getEditableElement(),
-      );
-
-    editor.plugins.get('FileRepository').createUploadAdapter = (
-      loader: any,
-    ) => {
-      return new Base64Adapter(loader);
-    };
-  }
-}
+export class ChangelogDialogComponent {}

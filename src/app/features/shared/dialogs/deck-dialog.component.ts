@@ -1,13 +1,14 @@
 import { NgFor, NgIf } from '@angular/common';
 import {
-  Component,
+  ChangeDetectorRef,
+  Component, effect,
   EventEmitter,
   inject,
   Input,
   OnChanges,
   OnInit,
   Output,
-  SimpleChanges,
+  SimpleChanges
 } from '@angular/core';
 import {
   FormsModule,
@@ -26,7 +27,7 @@ import { TooltipModule } from 'primeng/tooltip';
 import { first } from 'rxjs';
 import * as uuid from 'uuid';
 
-import { IDeck, IDeckCard, ITournamentDeck } from '../../../../models';
+import { emptyDeck, IDeck, IDeckCard, ITournamentDeck } from '../../../../models';
 import { mapToDeckCards, setDeckImage } from '../../../functions';
 import { AuthService } from '../../../services/auth.service';
 import { DigimonBackendService } from '../../../services/digimon-backend.service';
@@ -87,8 +88,8 @@ export interface DigimonCardImage {
         <label>Description</label>
         <div class="col-span-2">{{ deck.description }}</div>
 
-        <label *ngIf="mode === 'Community'">User</label>
-        <div *ngIf="mode === 'Community'" class="col-span-2">
+        <label>User</label>
+        <div class="col-span-2">
           {{ deck.user }}
         </div>
 
@@ -99,36 +100,6 @@ export interface DigimonCardImage {
             class="surface-ground mr-0.5 h-8 border border-black px-1.5 text-xs font-bold leading-[35px]">
             {{ tag.name }}
           </div>
-        </div>
-
-        <label *ngIf="mode === 'Tournament'">Placement</label>
-        <div *ngIf="mode === 'Tournament'" class="col-span-2">
-          {{ placementString(getTournamentDeck(deck).placement) }}
-        </div>
-
-        <label *ngIf="mode === 'Tournament'">Country</label>
-        <div *ngIf="mode === 'Tournament'" class="col-span-2">
-          {{ getTournamentDeck(deck).country }}
-        </div>
-
-        <label *ngIf="mode === 'Tournament'">Player</label>
-        <div *ngIf="mode === 'Tournament'" class="col-span-2">
-          {{ getTournamentDeck(deck).user }}
-        </div>
-
-        <label *ngIf="mode === 'Tournament'">Host</label>
-        <div *ngIf="mode === 'Tournament'" class="col-span-2">
-          {{ getTournamentDeck(deck).host }}
-        </div>
-
-        <label *ngIf="mode === 'Tournament'">Format</label>
-        <div *ngIf="mode === 'Tournament'" class="col-span-2">
-          {{ getTournamentDeck(deck).format }}
-        </div>
-
-        <label *ngIf="mode === 'Tournament'">Size</label>
-        <div *ngIf="mode === 'Tournament'" class="col-span-2">
-          {{ mapTournamentSize(getTournamentDeck(deck).size) }}
         </div>
       </div>
       <ng-template #edit [formGroup]="deckFormGroup">
@@ -246,7 +217,6 @@ export interface DigimonCardImage {
     <p-confirmDialog
       header="Open Deck"
       rejectButtonStyleClass="p-button-outlined"></p-confirmDialog>
-
     <p-confirmDialog
       header="Delete Confirmation"
       icon="pi pi-exclamation-triangle"
@@ -272,16 +242,16 @@ export interface DigimonCardImage {
   ],
   providers: [MessageService],
 })
-export class DeckDialogComponent implements OnInit, OnChanges {
-  @Input() deck: IDeck | ITournamentDeck;
-  @Input() editable = true;
-  @Input() mode = 'Basic';
-
-  @Output() closeDialog = new EventEmitter<boolean>();
+export class DeckDialogComponent {
+  changeDetection = inject(ChangeDetectorRef);
 
   saveStore = inject(SaveStore);
   websiteStore = inject(WebsiteStore);
   dialogStore = inject(DialogStore);
+  digimonCardStore = inject(DigimonCardStore);
+
+  deck: IDeck | ITournamentDeck = emptyDeck;
+  editable = true;
 
   deckFormGroup = new UntypedFormGroup({
     title: new UntypedFormControl(''),
@@ -298,8 +268,6 @@ export class DeckDialogComponent implements OnInit, OnChanges {
 
   isAdmin = false;
 
-  private digimonCardStore = inject(DigimonCardStore);
-
   constructor(
     private authService: AuthService,
     private router: Router,
@@ -307,37 +275,31 @@ export class DeckDialogComponent implements OnInit, OnChanges {
     private confirmationService: ConfirmationService,
     private messageService: MessageService,
   ) {
+    effect(() => {
+      this.deck = this.dialogStore.deck().deck;
+      this.editable = this.dialogStore.deck().editable;
+
+      this.mainDeck = mapToDeckCards(
+        this.deck.cards,
+        this.digimonCardStore.cards(),
+      );
+
+      this.deckFormGroup = new UntypedFormGroup({
+        title: new UntypedFormControl(this.deck.title),
+        description: new UntypedFormControl(this.deck.description),
+        cardImage: new UntypedFormControl(
+          this.getCardImage(this.deck.imageCardId),
+        ),
+      });
+
+      this.cardImageOptions = this.createImageOptions();
+
+      this.changeDetection.detectChanges();
+    });
+
     this.isAdmin =
       this.authService.userData?.uid === 'S3rWXPtCYRN8vSrxY3qE6aeewy43' ||
       this.authService.userData?.uid === 'loBLZPOIL0ZlDzt6A1rgDiTomTw2';
-  }
-
-  ngOnInit() {
-    this.mainDeck = mapToDeckCards(
-      this.deck.cards,
-      this.digimonCardStore.cards(),
-    );
-  }
-
-  ngOnChanges(changes: SimpleChanges) {
-    if (!changes['deck']?.currentValue) {
-      return;
-    }
-
-    this.mainDeck = mapToDeckCards(
-      this.deck.cards,
-      this.digimonCardStore.cards(),
-    );
-
-    this.deckFormGroup = new UntypedFormGroup({
-      title: new UntypedFormControl(this.deck.title),
-      description: new UntypedFormControl(this.deck.description),
-      cardImage: new UntypedFormControl(
-        this.getCardImage(this.deck.imageCardId),
-      ),
-    });
-
-    this.cardImageOptions = this.createImageOptions();
   }
 
   openDeck(event: Event) {
@@ -377,7 +339,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
             summary: 'Deck deleted!',
             detail: 'Deck was deleted successfully!',
           });
-          this.closeDialog.emit(true);
+          this.dialogStore.showDeckDialog(false);
         },
       });
     } else {
@@ -395,7 +357,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
             summary: 'Deck deleted!',
             detail: 'Deck was deleted successfully!',
           });
-          this.closeDialog.emit(true);
+          this.dialogStore.showDeckDialog(false);
         },
       });
     }
@@ -412,7 +374,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
           summary: 'Deck copied!',
           detail: 'Deck was copied successfully!',
         });
-        this.closeDialog.emit(true);
+        this.dialogStore.showDeckDialog(false);
       },
     });
   }
@@ -466,32 +428,7 @@ export class DeckDialogComponent implements OnInit, OnChanges {
       summary: 'Deck saved!',
       detail: 'The deck was saved successfully!',
     });
-    this.closeDialog.emit(true);
-  }
-
-  getTournamentDeck(deck: IDeck | ITournamentDeck): ITournamentDeck {
-    return deck as ITournamentDeck;
-  }
-
-  placementString(placement: number): string {
-    if (placement === 1) {
-      return '1st';
-    } else if (placement === 2) {
-      return '2nd';
-    } else if (placement === 3) {
-      return '3th';
-    }
-    return placement + 'th';
-  }
-
-  mapTournamentSize(size: string) {
-    const map = new Map<string, string>([
-      ['Small', 'Small (4-8 Player)'],
-      ['Medium', 'Medium (8-16 Player)'],
-      ['Large', 'Large (16-32 Player)'],
-      ['Major', 'Major (32+ Player)'],
-    ]);
-    return map.get(size);
+    this.dialogStore.showDeckDialog(false);
   }
 
   private getCardImage(imageCardId: string): DigimonCardImage {

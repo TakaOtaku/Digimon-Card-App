@@ -28,6 +28,7 @@ import {
 import { formatId, withoutJ } from '../../../functions';
 import { DialogStore } from '../../../store/dialog.store';
 import { SaveStore } from '../../../store/save.store';
+import { WebsiteStore } from 'src/app/store/website.store';
 
 @Component({
   selector: 'digimon-view-card-dialog',
@@ -411,11 +412,12 @@ import { SaveStore } from '../../../store/save.store';
   ],
 })
 export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
-  @Input() card: DigimonCard = JSON.parse(JSON.stringify(dummyCard));
-  @Input() width?: string = '50vw';
-
   saveStore = inject(SaveStore);
   dialogStore = inject(DialogStore);
+  websiteStore = inject(WebsiteStore);
+
+  card: DigimonCard = this.dialogStore.viewCard().card;
+  width?: string = this.dialogStore.viewCard().width;
 
   png: string;
   imageAlt: string;
@@ -433,7 +435,7 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
 
   type: string;
 
-  deck: IDeck;
+  deck: IDeck = this.websiteStore.deck();
 
   collectionMode = this.saveStore.collectionMode();
   collectionCard: ICountCard = { count: 0, id: 'BT1-001' };

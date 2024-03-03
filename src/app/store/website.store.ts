@@ -1,4 +1,5 @@
 import { computed, inject } from '@angular/core';
+import { tapResponse } from '@ngrx/operators';
 import {
   patchState,
   signalStore,
@@ -6,8 +7,18 @@ import {
   withMethods,
   withState,
 } from '@ngrx/signals';
+import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { ToastrService } from 'ngx-toastr';
-import { catchError, first, map, of } from 'rxjs';
+import {
+  catchError,
+  distinctUntilChanged,
+  filter,
+  first,
+  map,
+  of,
+  pipe,
+  switchMap,
+} from 'rxjs';
 import {
   DRAG,
   dummyCard,
@@ -65,140 +76,141 @@ export const WebsiteStore = signalStore(
   { providedIn: 'root' },
   withState(initialState),
 
-  withMethods((store) => ({
-    loadCommunityDecks(): void {
-      const digimonBackendService = inject(DigimonBackendService);
-
-      digimonBackendService
-        .getDecks()
-        .pipe(
+  withMethods(
+    (store, digimonBackendService = inject(DigimonBackendService)) => ({
+      loadCommunityDecks: rxMethod<void>(
+        pipe(
           first(),
-          catchError(() => {
-            return of(null);
+          distinctUntilChanged(),
+          switchMap(() => {
+            return digimonBackendService.getDecks().pipe(
+              filter((decks) => decks !== null),
+              tapResponse({
+                next: (communityDecks) =>
+                  patchState(store, (state) => ({ communityDecks })),
+                error: () => {},
+                finalize: () => {},
+              }),
+            );
           }),
-        )
-        .subscribe((communityDecks) => {
-          if (!communityDecks) return;
+        ),
+      ),
 
-          patchState(store, (state) => ({ communityDecks }));
-        });
-    },
-
-    loadBlogs(): void {
-      const digimonBackendService = inject(DigimonBackendService);
-
-      digimonBackendService
-        .getBlogEntries()
-        .pipe(
+      loadBlogs: rxMethod<void>(
+        pipe(
           first(),
-          catchError(() => {
-            return of(null);
+          distinctUntilChanged(),
+          switchMap(() => {
+            return digimonBackendService.getBlogEntries().pipe(
+              filter((blogs) => blogs !== null),
+              tapResponse({
+                next: (blogs) => patchState(store, (state) => ({ blogs })),
+                error: () => {},
+                finalize: () => {},
+              }),
+            );
           }),
-        )
-        .subscribe((blogs) => {
-          if (!blogs) return;
+        ),
+      ),
 
-          patchState(store, (state) => ({ blogs }));
-        });
-    },
+      updateDeck(deck: IDeck): void {
+        patchState(store, (state) => ({ deck }));
+      },
 
-    updateDeck(deck: IDeck): void {
-      patchState(store, (state) => ({ deck }));
-    },
+      updateMobileCollectionView(mobileCollectionView: boolean): void {
+        patchState(store, (state) => ({ mobileCollectionView }));
+      },
+      updateAddCardToDeck(addCardToDeck: string): void {
+        patchState(store, (state) => ({ addCardToDeck }));
+      },
+      updateSort(sort: ISort): void {
+        patchState(store, (state) => ({ sort }));
+      },
+      updateCommunityDeckSearch(communityDeckSearch: string): void {
+        patchState(store, (state) => ({ communityDeckSearch }));
+      },
+      updateCommunityDecks(communityDecks: IDeck[]): void {
+        patchState(store, (state) => ({ communityDecks }));
+      },
+      updateBlogs(blogs: IBlog[]): void {
+        patchState(store, (state) => ({ blogs }));
+      },
+      updatePriceGuideCM(priceGuideCM: ProductCM[]): void {
+        patchState(store, (state) => ({ priceGuideCM }));
+      },
+      updateDraggedCard(draggedCard: IDraggedCard): void {
+        patchState(store, (state) => ({ draggedCard }));
+      },
 
-    updateMobileCollectionView(mobileCollectionView: boolean): void {
-      patchState(store, (state) => ({ mobileCollectionView }));
-    },
-    updateAddCardToDeck(addCardToDeck: string): void {
-      patchState(store, (state) => ({ addCardToDeck }));
-    },
-    updateSort(sort: ISort): void {
-      patchState(store, (state) => ({ sort }));
-    },
-    updateCommunityDeckSearch(communityDeckSearch: string): void {
-      patchState(store, (state) => ({ communityDeckSearch }));
-    },
-    updateCommunityDecks(communityDecks: IDeck[]): void {
-      patchState(store, (state) => ({ communityDecks }));
-    },
-    updateBlogs(blogs: IBlog[]): void {
-      patchState(store, (state) => ({ blogs }));
-    },
-    updatePriceGuideCM(priceGuideCM: ProductCM[]): void {
-      patchState(store, (state) => ({ priceGuideCM }));
-    },
-    updateDraggedCard(draggedCard: IDraggedCard): void {
-      patchState(store, (state) => ({ draggedCard }));
-    },
+      createNewDeck(id: string): void {
+        patchState(store, (state) => ({ deck: { ...state.deck, id } }));
+      },
 
-    createNewDeck(id: string): void {
-      patchState(store, (state) => ({ deck: { ...state.deck, id } }));
-    },
+      addCardToDeck(cardToAdd: string): void {
+        patchState(store, (state) => {
+          const cards = state.deck.cards.map((card) => {
+            if (card.id === cardToAdd) {
+              card.count += 1;
+            }
 
-    addCardToDeck(cardToAdd: string): void {
-      patchState(store, (state) => {
-        const cards = state.deck.cards.map((card) => {
-          if (card.id === cardToAdd) {
-            card.count += 1;
+            card.count = checkSpecialCardCounts(card);
+            return card;
+          });
+
+          if (!cards.find((card) => card.id === cardToAdd)) {
+            cards.push({ id: cardToAdd, count: 1 });
           }
 
-          card.count = checkSpecialCardCounts(card);
-          return card;
+          return { deck: { ...state.deck, cards } };
         });
+      },
+      removeCardFromDeck(cardToRemove: string): void {
+        patchState(store, (state) => {
+          const cards = state.deck.cards
+            .map((card) => {
+              if (card.id === cardToRemove) {
+                card.count -= 1;
+              }
+              return card;
+            })
+            .filter((card) => card.count > 0);
 
-        if (!cards.find((card) => card.id === cardToAdd)) {
-          cards.push({ id: cardToAdd, count: 1 });
-        }
+          return { deck: { ...state.deck, cards } };
+        });
+      },
 
-        return { deck: { ...state.deck, cards } };
-      });
-    },
-    removeCardFromDeck(cardToRemove: string): void {
-      patchState(store, (state) => {
-        const cards = state.deck.cards
-          .map((card) => {
-            if (card.id === cardToRemove) {
-              card.count -= 1;
+      addCardToSideDeck(cardToAdd: string): void {
+        patchState(store, (state) => {
+          const sideDeck = (state.deck.sideDeck ?? []).map((card) => {
+            if (card.id === cardToAdd) {
+              card.count += 1;
             }
+
+            card.count = checkSpecialCardCounts(card);
             return card;
-          })
-          .filter((card) => card.count > 0);
+          });
 
-        return { deck: { ...state.deck, cards } };
-      });
-    },
-
-    addCardToSideDeck(cardToAdd: string): void {
-      patchState(store, (state) => {
-        const sideDeck = (state.deck.sideDeck ?? []).map((card) => {
-          if (card.id === cardToAdd) {
-            card.count += 1;
+          if (!sideDeck.find((card) => card.id === cardToAdd)) {
+            sideDeck.push({ id: cardToAdd, count: 1 });
           }
 
-          card.count = checkSpecialCardCounts(card);
-          return card;
+          return { deck: { ...state.deck, sideDeck } };
         });
+      },
+      removeCardFromSideDeck(cardToRemove: string): void {
+        patchState(store, (state) => {
+          const sideDeck = (state.deck.sideDeck ?? [])
+            .map((card) => {
+              if (card.id === cardToRemove) {
+                card.count -= 1;
+              }
+              return card;
+            })
+            .filter((card) => card.count > 0);
 
-        if (!sideDeck.find((card) => card.id === cardToAdd)) {
-          sideDeck.push({ id: cardToAdd, count: 1 });
-        }
-
-        return { deck: { ...state.deck, sideDeck } };
-      });
-    },
-    removeCardFromSideDeck(cardToRemove: string): void {
-      patchState(store, (state) => {
-        const sideDeck = (state.deck.sideDeck ?? [])
-          .map((card) => {
-            if (card.id === cardToRemove) {
-              card.count -= 1;
-            }
-            return card;
-          })
-          .filter((card) => card.count > 0);
-
-        return { deck: { ...state.deck, sideDeck } };
-      });
-    },
-  })),
+          return { deck: { ...state.deck, sideDeck } };
+        });
+      },
+    }),
+  ),
 );

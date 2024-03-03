@@ -1,5 +1,5 @@
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
-import { Component, effect, HostListener, inject, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, effect, HostListener, inject, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
 import { ToastrService } from 'ngx-toastr';
@@ -13,6 +13,7 @@ import { TooltipModule } from 'primeng/tooltip';
 import { Subject } from 'rxjs';
 import { emptyDeck, ICountCard, IDeck, ITournamentDeck } from '../../../models';
 import { setDeckImage } from '../../functions';
+import { DialogStore } from '../../store/dialog.store';
 import { DigimonCardStore } from '../../store/digimon-card.store';
 import { SaveStore } from '../../store/save.store';
 import { WebsiteStore } from '../../store/website.store';
@@ -65,7 +66,7 @@ import { TierlistComponent } from './components/tierlist.component';
           (applyFilter)="filterChanges()"></digimon-decks-filter>
 
         <div
-          *ngIf="decks; else loading"
+          *ngIf="decksToShow.length > 0; else loading"
           class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           <digimon-deck-container
             class="mx-auto min-w-[280px] max-w-[285px]"
@@ -96,20 +97,6 @@ import { TierlistComponent } from './components/tierlist.component';
         <digimon-tierlist></digimon-tierlist>
       </div>
     </digimon-page>
-
-    <p-dialog
-      header="Deck Details"
-      [(visible)]="deckDialog"
-      [modal]="true"
-      [dismissableMask]="true"
-      [resizable]="false"
-      styleClass="w-full h-full max-w-6xl min-h-[500px]"
-      [baseZIndex]="10000">
-      <digimon-deck-dialog
-        [deck]="selectedDeck"
-        [editable]="false"
-        (closeDialog)="deckDialog = false"></digimon-deck-dialog>
-    </p-dialog>
 
     <p-dialog
       header="Deck Statistics for the filtered decks"
@@ -151,7 +138,9 @@ export class DecksPageComponent implements OnInit {
   private meta = inject(Meta);
   private title = inject(Title);
   private toastrService = inject(ToastrService);
-  private saveStore = inject(SaveStore);
+
+  saveStore = inject(SaveStore);
+  dialogStore = inject(DialogStore);
   websiteStore = inject(WebsiteStore);
 
   selectedDeck: IDeck = emptyDeck;
@@ -177,11 +166,7 @@ export class DecksPageComponent implements OnInit {
 
   private digimonCardStore = inject(DigimonCardStore);
 
-  ngOnInit(): void {
-    this.checkScreenWidth(window.innerWidth);
-
-    this.makeGoogleFriendly();
-
+  constructor(private changeDetection: ChangeDetectorRef) {
     this.websiteStore.loadCommunityDecks();
 
     effect(() => {
@@ -197,7 +182,14 @@ export class DecksPageComponent implements OnInit {
       this.form.get('searchFilter')?.setValue(search);
       this.filteredDecks = this.applySearchFilter(search);
       this.setDecksToShow(0, this.rows);
+      this.changeDetection.detectChanges();
     });
+  }
+
+  ngOnInit(): void {
+    this.checkScreenWidth(window.innerWidth);
+
+    this.makeGoogleFriendly();
   }
 
   @HostListener('window:resize', ['$event'])
@@ -219,6 +211,11 @@ export class DecksPageComponent implements OnInit {
   }
 
   showDeckDetails(deck: IDeck) {
+    this.dialogStore.updateDeckDialog({
+      show: true,
+      editable: false,
+      deck,
+    });
     this.selectedDeck = deck;
     this.deckDialog = true;
   }

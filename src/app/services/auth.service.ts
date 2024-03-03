@@ -5,7 +5,7 @@ import firebase from 'firebase/compat';
 import { MessageService } from 'primeng/api';
 import { catchError, first, Observable, of, retry, Subject } from 'rxjs';
 import { ISave, IUser } from '../../models';
-import { emptySave, emptySettings } from '../../models/data/save.data';
+import { emptySave, emptySettings } from '../../models';
 import { SaveStore } from '../store/save.store';
 import { DigimonBackendService } from './digimon-backend.service';
 import UserCredential = firebase.auth.UserCredential;
@@ -15,9 +15,8 @@ import User = firebase.User;
   providedIn: 'root',
 })
 export class AuthService {
-  public userData: IUser | null;
-
-  public authChange = new Subject<boolean>();
+  userData: IUser | null;
+  authChange = new Subject<boolean>();
 
   constructor(
     public afAuth: AngularFireAuth,
@@ -40,19 +39,19 @@ export class AuthService {
     return true;
   }
 
-  GoogleAuth() {
+  GoogleAuth(saveStore: any) {
     const provider = new GoogleAuthProvider();
     provider.setCustomParameters({
       prompt: 'select_account',
     });
-    return this.AuthLogin(provider);
+    return this.AuthLogin(provider, saveStore);
   }
 
-  AuthLogin(provider: any) {
+  AuthLogin(provider: any, saveStore: any) {
     return this.afAuth
       .signInWithPopup(provider)
       .then((result: UserCredential) => {
-        this.SetUserData(result.user);
+        this.SetUserData(result.user, saveStore);
         this.messageService.add({
           severity: 'success',
           summary: 'Login Successfully!',
@@ -68,7 +67,7 @@ export class AuthService {
       });
   }
 
-  LogOut() {
+  LogOut(saveStore: any) {
     return this.afAuth.signOut().then(() => {
       this.messageService.add({
         severity: 'success',
@@ -88,12 +87,11 @@ export class AuthService {
             '  showAACards: true,' +
             '  sortDeckOrder: "Level"}}',
       );
-      const saveStore = inject(SaveStore);
       saveStore.updateSave(save);
     });
   }
 
-  createUserData(user: User, save: any) {
+  createUserData(user: User, save: any, saveStore: any) {
     let userData: IUser = !save
       ? {
           uid: user.uid,
@@ -127,7 +125,6 @@ export class AuthService {
     }
 
     localStorage.setItem('user', JSON.stringify(userData));
-    const saveStore = inject(SaveStore);
     saveStore.updateSave(
       save ?? {
         uid: user.uid,
@@ -150,7 +147,7 @@ export class AuthService {
     this.authChange.next(true);
   }
 
-  SetUserData(user: User | null) {
+  SetUserData(user: User | null, saveStore: any) {
     if (!user) return;
     // eslint-disable-next-line no-console
     console.log('User-ID: ', user.uid);
@@ -161,7 +158,7 @@ export class AuthService {
         catchError((e) => {
           // eslint-disable-next-line no-console
           console.log('No save found creating a new one!');
-          this.createUserData(user, this.getLocalStorageSave());
+          this.createUserData(user, this.getLocalStorageSave(), saveStore);
           return of(null);
         }),
       )
@@ -169,7 +166,7 @@ export class AuthService {
         if (!save) {
           return;
         }
-        this.createUserData(user, save);
+        this.createUserData(user, save, saveStore);
       });
   }
 
