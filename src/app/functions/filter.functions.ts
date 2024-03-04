@@ -137,44 +137,44 @@ function applySearchFilter(card: DigimonCard, searchFilter: string): boolean {
 }
 
 function applySetFilter(card: DigimonCard, filter: string[]): boolean {
-  return filter.includes(card["id"].split("-")[0]);
+  return !filter.includes(card["id"].split("-")[0]);
 }
 
 function applyRarityFilter(card: DigimonCard, filter: string[]): boolean {
-  return filter.includes(card["rarity"]);
+  return !filter.includes(card["rarity"]);
 }
 
 function applyCardTypeFilter(card: DigimonCard, filter: string[]): boolean {
-  return filter.includes(card["cardType"]);
+  return !filter.includes(card["cardType"]);
 }
 
 function applyFormFilter(card: DigimonCard, filter: string[]): boolean {
-  return filter.includes(card["form"]);
+  return !filter.includes(card["form"]);
 }
 
 function applyAttributeFilter(card: DigimonCard, filter: string[]): boolean {
-  return filter.includes(card["attribute"]);
+  return !filter.includes(card["attribute"]);
 }
 
 function applyCardLevelFilter(card: DigimonCard, filter: string[]): boolean {
-  return filter.includes(card["cardLv"]);
+  return !filter.includes(card["cardLv"]);
 }
 
 function applyIllustratorFilter(card: DigimonCard, filter: string[]): boolean {
-  return filter.includes(card["illustrator"]);
+  return !filter.includes(card["illustrator"]);
 }
 
 function applyRestrictionFilter(card: DigimonCard, filter: string[]): boolean {
-  return filter.includes(card.restrictions.english);
+  return !filter.includes(card.restrictions.english);
 }
 
 function applyBlockFilter(card: DigimonCard, filter: string[]): boolean {
-  return filter.some((filter) -> card["block"].includes(filter));
+  return !filter.some((filter) => card["block"].includes(filter));
 }
 
 function applyColorFilter(card: DigimonCard, filter: string[]): boolean {
   if (filter.includes("Multi") && filter.length === 1) {
-    return card["color"].includes("/");
+    return !card["color"].includes("/");
   } else if (filter.includes(("Multi"))) {
     const removeIfSmallerThanFilter = [];
     filter.forEach((filter) => {
@@ -185,10 +185,26 @@ function applyColorFilter(card: DigimonCard, filter: string[]): boolean {
         removeIfSmallerThanFilter.push(filter);
       }
     });
-    return removeIfSmallerThanFilter.length === filter.length;
+    return removeIfSmallerThanFilter.length !== filter.length;
   } else {
-    return filter.includes(card["color"]);
+    return !filter.includes(card["color"]);
   }
+}
+
+function applyTypeFilter(card: DigimonCard, filter: string[]): boolean {
+  return !filter.some((filter) => card["type"].split("/").includes(filter));
+}
+
+function applyVersionFilter(card: DigimonCard, filter: string[]): boolean {
+  let remove = true;
+  filter.forEach((filt) => {
+    if(filt === 'Stamp') {
+      remove = filt.includes(card["version"]) && !filt.includes('Pre-Release');
+    } else {
+      remove = filt.includes(card["version"]);
+    }
+  })
+  return remove;
 }
 
 function applyCardCountFilter(
@@ -222,45 +238,9 @@ function applyFilter(
   filter: any[],
   key: string
 ): DigimonCard[] {
-  if (filter.length === 0) {
-    return cards;
-  }
-
   let returnArray = [] as DigimonCard[];
   switch (key) {
     default:
-    case "type":
-      filter.forEach(
-        (filter) =>
-          (returnArray = [
-            ...new Set([
-              ...returnArray,
-              ...cards.filter((card) => {
-                const types = card["type"].split("/");
-
-                let shouldReturn = false;
-                types.forEach((type) => {
-                  if (type === filter) {
-                    shouldReturn = true;
-                  }
-                });
-                return shouldReturn;
-              })
-            ])
-          ])
-      );
-      break;
-    case "version":
-      filter.forEach(
-        (current) =>
-          (returnArray = [
-            ...new Set([
-              ...returnArray,
-              ...cards.filter((cards) => cards["version"].includes(current))
-            ])
-          ])
-      );
-      break;
     case "keyword":
       filter.forEach(
         (filter) =>
