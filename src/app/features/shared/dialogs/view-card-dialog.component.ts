@@ -1,34 +1,23 @@
 import { AsyncPipe, NgClass, NgForOf, NgIf, NgStyle } from '@angular/common';
 import {
+  ChangeDetectorRef,
   Component,
   effect,
   HostListener,
   inject,
-  Input,
-  OnChanges,
-  OnDestroy,
-  OnInit,
-  SimpleChanges,
 } from '@angular/core';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
-import { Subject } from 'rxjs';
 import { ImgFallbackDirective } from 'src/app/directives/ImgFallback.directive';
 import { DigimonCardStore } from 'src/app/store/digimon-card.store';
+import { WebsiteStore } from 'src/app/store/website.store';
 import { replacements } from 'src/models/data/keyword-replacement.data';
 
-import {
-  ColorMap,
-  DigimonCard,
-  dummyCard,
-  ICountCard,
-  IDeck,
-} from '../../../../models';
+import { ColorMap, DigimonCard, ICountCard, IDeck } from '../../../../models';
 import { formatId, withoutJ } from '../../../functions';
 import { DialogStore } from '../../../store/dialog.store';
 import { SaveStore } from '../../../store/save.store';
-import { WebsiteStore } from 'src/app/store/website.store';
 
 @Component({
   selector: 'digimon-view-card-dialog',
@@ -411,10 +400,12 @@ import { WebsiteStore } from 'src/app/store/website.store';
     NgForOf,
   ],
 })
-export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
+export class ViewCardDialogComponent {
+  changeDetection = inject(ChangeDetectorRef);
   saveStore = inject(SaveStore);
   dialogStore = inject(DialogStore);
   websiteStore = inject(WebsiteStore);
+  digimonCardStore = inject(DigimonCardStore);
 
   card: DigimonCard = this.dialogStore.viewCard().card;
   width?: string = this.dialogStore.viewCard().width;
@@ -440,68 +431,23 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
   collectionMode = this.saveStore.collectionMode();
   collectionCard: ICountCard = { count: 0, id: 'BT1-001' };
 
-  private digimonCardStore = inject(DigimonCardStore);
-  private onDestroy$ = new Subject();
+  loadCard = effect(() => {
+    const collection = this.saveStore.collection();
+    this.collectionCard = collection.find(
+      (colCard) => colCard.id === withoutJ(this.card.id),
+    )!;
 
-  constructor() {
-    effect(() => {
-      const collection = this.saveStore.collection();
-      this.collectionCard = collection.find(
-        (colCard) => colCard.id === withoutJ(this.card.id),
-      )!;
-    });
-  }
+    this.card = this.dialogStore.viewCard().card;
+    this.setupView();
+  });
 
-  ngOnInit() {
-    if (this.card) {
-      this.setupView(this.card);
-    }
-  }
-
-  ngOnDestroy() {
-    this.onDestroy$.next(true);
-    this.onDestroy$.unsubscribe();
-  }
-
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes && changes['card']) {
-      const card: DigimonCard = changes['card'].currentValue;
-      this.setupView(card);
-
-      const collection = this.saveStore.collection();
-      this.collectionCard = collection.find(
-        (colCard) => colCard.id === withoutJ(this.card.id),
-      )!;
-    }
-  }
-
-  setupView(card: DigimonCard) {
-    this.color = this.colorMap.get(card.color)!;
+  setupView() {
+    this.color = this.colorMap.get(this.card.color)!;
     this.backgroundColor = this.color;
-    this.version = this.versionMap.get(card.version)!;
-    this.png = card.cardImage;
-    this.imageAlt = card.cardNumber + ' ' + card.name;
-    this.type = card?.cardType;
-  }
-
-  getPNG(cardSRC: string): string {
-    let engRegExp = new RegExp('\\beng\\b');
-    let japRegExp = new RegExp('\\bjap\\b');
-    let preReleaseRegExp = new RegExp('\\bpre-release\\b');
-
-    if (engRegExp.test(cardSRC)) {
-      return cardSRC
-        .replace(engRegExp, 'eng/png')
-        .replace(new RegExp('\\b.webp\\b'), '.png');
-    } else if (japRegExp.test(cardSRC)) {
-      return cardSRC
-        .replace(japRegExp, 'jap/png')
-        .replace(new RegExp('\\b.webp\\b'), '.png');
-    } else {
-      return cardSRC
-        .replace(preReleaseRegExp, 'pre-release/png')
-        .replace(new RegExp('\\b.webp\\b'), '.png');
-    }
+    this.version = this.versionMap.get(this.card.version)!;
+    this.png = this.card.cardImage;
+    this.imageAlt = this.card.cardNumber + ' ' + this.card.name.english;
+    this.type = this.card?.cardType;
   }
 
   openWiki() {
@@ -547,7 +493,7 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
       return;
     }
     this.card = newCard;
-    this.setupView(newCard);
+    this.setupView();
   }
 
   nextCard() {
@@ -562,7 +508,7 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
       return;
     }
     this.card = newCard;
-    this.setupView(newCard);
+    this.setupView();
   }
 
   replaceWithImageTags(effect: string): string {

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CardModule } from 'primeng/card';
 import { DividerModule } from 'primeng/divider';
 import { PanelModule } from 'primeng/panel';
 
@@ -14,6 +13,10 @@ import { PanelModule } from 'primeng/panel';
           <li>
             When you select Stamp you won't get Pre-Release Cards anymore as
             they have a separate Option.
+          </li>
+          <li>
+            If you select Multi-Color, and other colors you only get Multi-Cards
+            that match all colors.
           </li>
         </ul>
 
@@ -31,7 +34,10 @@ import { PanelModule } from 'primeng/panel';
             loading and maintainability.
           </li>
           <li>
-            Improved the script which updates the community decks each day
+            Improved the script which updates the community decks each day.
+          </li>
+          <li>
+            Improved the filter functions in preparation to the query search.
           </li>
         </ul>
 

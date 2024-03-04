@@ -17,6 +17,7 @@ import { BehaviorSubject } from 'rxjs';
 import * as uuid from 'uuid';
 import { DigimonCard, IDeck, IDeckCard } from '../../../../models';
 import { AuthService } from '../../../services/auth.service';
+import { DialogStore } from '../../../store/dialog.store';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
 import { WebsiteStore } from '../../../store/website.store';
 import { ExportDeckDialogComponent } from '../../shared/dialogs/export-deck-dialog.component';
@@ -64,7 +65,7 @@ import { PriceCheckDialogComponent } from './price-check-dialog.component';
         tooltipPosition="top"></button>
 
       <button
-        (click)="exportDeckDialog = true"
+        (click)="openExportDeckDialog()"
         class="p-button-outlined h-[30px] w-full"
         icon="pi pi-upload"
         iconPos="left"
@@ -152,17 +153,6 @@ import { PriceCheckDialogComponent } from './price-check-dialog.component';
     </p-dialog>
 
     <p-dialog
-      header="Export Deck"
-      [(visible)]="exportDeckDialog"
-      styleClass="w-[100%] min-w-[250px] sm:min-w-[500px] sm:w-[700px] min-h-[500px]"
-      [baseZIndex]="10000"
-      [modal]="true"
-      [dismissableMask]="true"
-      [resizable]="false">
-      <digimon-export-deck-dialog [deck]="deck"></digimon-export-deck-dialog>
-    </p-dialog>
-
-    <p-dialog
       header="Import Deck"
       [(visible)]="importDeckDialog"
       styleClass="w-[100%] min-w-[250px] sm:min-w-[500px] sm:w-[700px] min-h-[500px]"
@@ -205,9 +195,9 @@ export class DeckToolbarComponent {
   @Output() hideStats = new EventEmitter<boolean>();
 
   websiteStore = inject(WebsiteStore);
+  dialogStore = inject(DialogStore);
 
   importDeckDialog = false;
-  exportDeckDialog = false;
 
   priceCheckDialog = false;
   checkPrice$ = new BehaviorSubject(false);
@@ -335,5 +325,9 @@ export class DeckToolbarComponent {
   checkPrice() {
     this.priceCheckDialog = true;
     this.checkPrice$.next(true);
+  }
+
+  openExportDeckDialog() {
+    this.dialogStore.updateExportDeckDialog({ show: true, deck: this.deck });
   }
 }

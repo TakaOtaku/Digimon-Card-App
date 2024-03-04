@@ -1,11 +1,5 @@
 import { NgClass, NgIf } from '@angular/common';
-import {
-  Component,
-  inject,
-  Input,
-  OnChanges,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, effect, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { saveAs } from 'file-saver';
 import { ButtonModule } from 'primeng/button';
@@ -13,6 +7,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { ColorsWithoutMulti, DigimonCard, IDeck } from '../../../../models';
 import { compareIDs, formatId, mapToDeckCards } from '../../../functions';
+import { DialogStore } from '../../../store/dialog.store';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
 
 @Component({
@@ -115,10 +110,11 @@ import { DigimonCardStore } from '../../../store/digimon-card.store';
     ButtonModule,
   ],
 })
-export class ExportDeckDialogComponent implements OnChanges {
-  @Input() show: boolean = false;
-  @Input() deck: IDeck;
+export class ExportDeckDialogComponent {
+  digimonCardStore = inject(DigimonCardStore);
+  dialogStore = inject(DialogStore);
 
+  deck: IDeck = this.dialogStore.exportDeck().deck;
   digimonCards: DigimonCard[] = [];
 
   exportList = ['TEXT', 'TTS', 'UNTAP', 'IMAGE'];
@@ -128,7 +124,11 @@ export class ExportDeckDialogComponent implements OnChanges {
   colors = ColorsWithoutMulti;
   selectedColor = 'Red';
 
-  private digimonCardStore = inject(DigimonCardStore);
+  setExport = effect(() => {
+    this.deck = this.dialogStore.exportDeck().deck;
+    this.setExportTypeText();
+    this.exportType = 'TEXT';
+  });
 
   private static writeText(
     ctx: any,
@@ -150,11 +150,6 @@ export class ExportDeckDialogComponent implements OnChanges {
     ctx.fillStyle = fillStyle ? fillStyle : '#f97316';
     ctx.textAlign = 'center';
     ctx.fillText(text, x * scale, y * scale);
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    this.setExportTypeText();
-    this.exportType = 'TEXT';
   }
 
   colorChecked(color: string): boolean {
@@ -254,7 +249,7 @@ export class ExportDeckDialogComponent implements OnChanges {
   private setExportTypeUNTAP(): void {
     this.deckText = '// Digimon DeckList\n\n';
     this.deck.cards.forEach((card) => {
-      const dc = this.digimonCards.find((dc) => compareIDs(dc.id, card.id));
+      const dc = this.digimonCardStore.cardsMap().get(card.id);
       this.deckText += `${card.count} ${dc?.name
         .english} [DCG] (${card.id.replace('ST0', 'ST')})\n`;
     });

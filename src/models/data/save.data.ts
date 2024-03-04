@@ -21,6 +21,7 @@ export const emptySettings: ISettings = {
   displaySideDeck: true,
 
   fullscreenFilter: true,
+  countMax: 5,
 };
 
 export const emptySave: ISave = {

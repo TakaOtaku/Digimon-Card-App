@@ -5,14 +5,12 @@ import {
   inject,
   Input,
   OnChanges,
-  OnInit,
   SimpleChanges,
 } from '@angular/core';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
-import { BehaviorSubject, first, Observable } from 'rxjs';
-import { DigimonCard, IDeck, ITournamentDeck } from '../../../models';
-import { ColorMap } from '../../../models/maps/color.map';
-import { setDeckImage } from '../../functions/digimon-card.functions';
+import { BehaviorSubject, first } from 'rxjs';
+import { ColorMap, IDeck, ITournamentDeck } from '../../../models';
+import { setDeckImage } from '../../functions';
 import { ImageService } from '../../services/image.service';
 import { DigimonCardStore } from '../../store/digimon-card.store';
 
@@ -33,7 +31,7 @@ import { DigimonCardStore } from '../../store/digimon-card.store';
       }">
       <div
         [ngStyle]="{ background: colorMap.get(deck.color.name) }"
-        class="text-shadow relative left-[-5px] top-[10px] w-24 border border-black bg-opacity-80 text-center text-xs font-bold uppercase">
+        class="text-shadow-white-xs relative left-[-5px] top-[10px] w-24 border border-black bg-opacity-80 text-center text-xs font-bold uppercase">
         <span *ngIf="mode !== 'Tournament'" class="mr-1">{{
           getTags(deck)
         }}</span>

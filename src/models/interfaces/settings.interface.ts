@@ -14,4 +14,5 @@ export interface ISettings {
   deckDisplayTable: boolean; // Display Decks as Table instead of Big Blocks
   displaySideDeck: boolean; // Display SideDeck in the DeckView
   fullscreenFilter: boolean; // Display Filter with big screen
+  countMax: number; // How high do you want to set the count-filter
 }
