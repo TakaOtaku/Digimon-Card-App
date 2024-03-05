@@ -1,5 +1,5 @@
 import { AsyncPipe, NgIf } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, effect, inject } from '@angular/core';
 import { CardTypeButtons } from '../../../../models';
 import { FilterStore } from '../../../store/filter.store';
 import { MultiButtonsComponent } from '../multi-buttons.component';
@@ -22,6 +22,10 @@ export class CardTypeFilterComponent {
   cardTypeFilter: string[] = this.filterStore.cardTypeFilter();
 
   cardTypeButtons = CardTypeButtons;
+
+  filterChange = effect(() => {
+    this.cardTypeFilter = this.filterStore.cardTypeFilter();
+  });
 
   changeCardType(type: string, cardTypeFilter: string[]) {
     let types = [];

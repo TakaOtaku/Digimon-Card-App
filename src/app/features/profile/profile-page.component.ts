@@ -96,10 +96,6 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
       this.filteredDecks = this.decks;
       this.filterChanges();
     });
-  }
-
-  ngOnInit() {
-    this.makeGoogleFriendly();
 
     this.save$ = merge(
       toObservable(this.saveStore.save),
@@ -130,6 +126,10 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
         }),
       ),
     );
+  }
+
+  ngOnInit() {
+    this.makeGoogleFriendly();
 
     this.searchFilter.valueChanges
       .pipe(takeUntil(this.onDestroy$))

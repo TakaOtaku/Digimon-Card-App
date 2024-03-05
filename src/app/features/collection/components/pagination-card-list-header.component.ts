@@ -2,6 +2,7 @@ import { AsyncPipe, NgClass, NgIf } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
+  effect,
   EventEmitter,
   inject,
   Input,
@@ -70,6 +71,10 @@ export class PaginationCardListHeaderComponent {
   saveStore = inject(SaveStore);
 
   collectionMode = this.saveStore.settings().collectionMode;
+
+  updateCollectionMode = effect(() => {
+    this.collectionMode = this.saveStore.settings().collectionMode;
+  });
 
   changeCollectionMode(collectionMode: boolean) {
     const settings = this.saveStore.settings();

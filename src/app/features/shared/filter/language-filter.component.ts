@@ -1,5 +1,5 @@
 import { AsyncPipe, NgClass, NgIf } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, effect, inject } from '@angular/core';
 import { CARDSET } from '../../../../models';
 import { SaveStore } from '../../../store/save.store';
 
@@ -39,6 +39,10 @@ export class LanguageFilterComponent {
   selectedCardSet = this.saveStore.settings().cardSet;
 
   cardSet = CARDSET;
+
+  filterChange = effect(() => {
+    this.selectedCardSet = this.saveStore.settings().cardSet;
+  });
 
   setCardSet(cardSet: string) {
     const settings = this.saveStore.settings();

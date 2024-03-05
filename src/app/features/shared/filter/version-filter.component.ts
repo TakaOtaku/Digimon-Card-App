@@ -1,5 +1,5 @@
 import { AsyncPipe, NgIf } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, effect, inject } from '@angular/core';
 import { VersionButtons } from '../../../../models';
 import { FilterStore } from '../../../store/filter.store';
 import { MultiButtonsComponent } from '../multi-buttons.component';
@@ -22,6 +22,10 @@ export class VersionFilterComponent {
   versionFilter: string[] = this.filterStore.versionFilter();
 
   versionButtons = VersionButtons;
+
+  filterChange = effect(() => {
+    this.versionFilter = this.filterStore.versionFilter();
+  });
 
   changeVersion(version: string, versionFilter: string[]) {
     let versions = [];

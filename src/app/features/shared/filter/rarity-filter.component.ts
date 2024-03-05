@@ -1,5 +1,5 @@
 import { AsyncPipe, NgIf } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, effect, inject } from '@angular/core';
 import { RarityButtons } from '../../../../models';
 import { FilterStore } from '../../../store/filter.store';
 import { MultiButtonsComponent } from '../multi-buttons.component';
@@ -22,6 +22,10 @@ export class RarityFilterComponent {
   rarityFilter: string[] = this.filterStore.rarityFilter();
 
   rarityButtons = RarityButtons;
+
+  filterChange = effect(() => {
+    this.rarityFilter = this.filterStore.rarityFilter();
+  });
 
   changeRarity(rarity: string, rarityFilter: string[]) {
     let rarities = [];

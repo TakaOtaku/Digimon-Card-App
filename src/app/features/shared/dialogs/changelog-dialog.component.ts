@@ -15,8 +15,9 @@ import { PanelModule } from 'primeng/panel';
             they have a separate Option.
           </li>
           <li>
-            If you select Multi-Color, and other colors you only get Multi-Cards
-            that match all colors.
+            If you select Multi-Color, and two colors you only get Multi-Cards
+            that match all colors, e.g. Multi + Red + Purple will filter all
+            cards with 2 Colors that are Red and Purple.
           </li>
         </ul>
 

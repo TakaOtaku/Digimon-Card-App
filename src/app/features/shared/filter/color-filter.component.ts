@@ -1,5 +1,5 @@
 import { AsyncPipe, NgClass, NgIf } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, effect, inject } from '@angular/core';
 import { FilterStore } from '../../../store/filter.store';
 
 @Component({
@@ -73,6 +73,10 @@ import { FilterStore } from '../../../store/filter.store';
 export class ColorFilterComponent {
   filterStore = inject(FilterStore);
   colorFilter: string[] = this.filterStore.colorFilter();
+
+  filterChange = effect(() => {
+    this.colorFilter = this.filterStore.colorFilter();
+  });
 
   changeColor(color: string, colorFilter: string[]) {
     let colors = [];

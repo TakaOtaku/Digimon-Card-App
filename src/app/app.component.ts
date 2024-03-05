@@ -88,40 +88,44 @@ export class AppComponent {
 
   sideNav = false;
 
+  cardSet = '';
+  settings = this.saveStore.settings();
+
   constructor() {
     // Check if a save is in local storage from a previous login
     // If this is the case, set the save
     this.saveStore.loadSave();
 
-    effect(() => {
-      console.log('Cards changed: ', this.digimonCardStore.cards());
-    });
-
     effect(
       () => {
-        console.log('Save changed: ', this.saveStore.save());
+        console.log('Save changed', this.saveStore.save());
         this.saveLoaded.set(
           this.saveStore.save().uid !== '' || this.saveStore.loadedSave(),
         );
 
-        console.log('Save loaded: ', this.saveLoaded());
         if (!this.saveStore.loadedSave()) return;
 
         console.log('Update Save in the Database');
         this.updateDatabase();
 
-        console.log('Change Advanced Settings');
-        this.setAdvancedSettings();
+        if (this.settings !== this.saveStore.settings()) {
+          console.log('Change Advanced Settings');
+          this.settings = this.saveStore.settings();
+          this.setAdvancedSettings();
+        }
 
-        console.log('Set DigimonCard Set');
-        this.setDigimonCardSet();
+        if (this.cardSet !== this.saveStore.settings().cardSet) {
+          console.log('Set DigimonCard Set');
+          this.cardSet = this.saveStore.settings().cardSet;
+          this.setDigimonCardSet();
+        }
       },
       { allowSignalWrites: true },
     );
 
     effect(
       () => {
-        console.log('Filter changed: ', this.filterStore.filter());
+        console.log('Filter changed');
         const cards = this.digimonCardStore.cards();
 
         if (cards.length === 0) return;
@@ -175,39 +179,38 @@ export class AppComponent {
 
     let filter: IFilter = emptyFilter;
     filter = { ...filter, versionFilter: [] };
-    if (!settings.showPreRelease) {
-      let versionFilter = filter.versionFilter.filter(
-        (filter) => filter !== 'Pre-Release',
-      );
-      if (versionFilter.length === 0) {
-        versionFilter = ['Normal', 'AA', 'Stamp', 'Reprint'];
-      }
-      filter = { ...filter, versionFilter };
-    }
+
     if (!settings.showAACards) {
       let versionFilter = filter.versionFilter.filter(
-        (filter) => filter !== 'AA',
+        (filter) => filter !== 'Alternative Art',
       );
       if (versionFilter.length === 0) {
-        versionFilter = ['Normal', 'Stamp', 'Pre-Release', 'Reprint'];
+        versionFilter = [
+          'Normal',
+          'Foil',
+          'Textured',
+          'Release',
+          'Box Topper',
+          'Full Art',
+          'Stamp',
+        ];
       }
       filter = { ...filter, versionFilter };
     }
-    if (!settings.showStampedCards) {
+    if (!settings.showPreRelease) {
       let versionFilter = filter.versionFilter.filter(
-        (filter) => filter !== 'Stamp',
+        (filter) => filter !== 'Release',
       );
       if (versionFilter.length === 0) {
-        versionFilter = ['Normal', 'AA', 'Pre-Release', 'Reprint'];
-      }
-      filter = { ...filter, versionFilter };
-    }
-    if (!settings.showReprintCards) {
-      let versionFilter = filter.versionFilter.filter(
-        (filter) => filter !== 'Reprint',
-      );
-      if (versionFilter.length === 0) {
-        versionFilter = ['Normal', 'AA', 'Pre-Release', 'Stamp'];
+        versionFilter = [
+          'Normal',
+          'Alternative Art',
+          'Foil',
+          'Textured',
+          'Box Topper',
+          'Full Art',
+          'Stamp',
+        ];
       }
       filter = { ...filter, versionFilter };
     }

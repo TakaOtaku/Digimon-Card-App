@@ -149,6 +149,7 @@ import { VersionFilterComponent } from './version-filter.component';
         [formControl]="keywordFilter"
         [options]="keywords"
         [showToggleAll]="false"
+        appendTo="body"
         placeholder="Select a Keyword"
         display="chip"
         scrollHeight="250px"
@@ -254,6 +255,8 @@ import { VersionFilterComponent } from './version-filter.component';
 })
 export class FilterSideBoxComponent implements OnInit, OnDestroy {
   @Input() public showColors: boolean;
+  messageService = inject(MessageService);
+
   filterStore = inject(FilterStore);
 
   keywordFilter = new UntypedFormControl([]);
@@ -301,52 +304,49 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
   resetEmitter = new EventEmitter<void>();
 
   private filter: IFilter;
+  updateFilter = effect(
+    () => {
+      const filter = this.filterStore.filter();
+      this.filter = filter;
+
+      this.levelFilter.setValue(filter.levelFilter, { emitEvent: false });
+      this.playCostFilter.setValue(filter.playCostFilter, {
+        emitEvent: false,
+      });
+      this.digivolutionFilter.setValue(filter.digivolutionFilter, {
+        emitEvent: false,
+      });
+      this.dpFilter.setValue(filter.dpFilter, { emitEvent: false });
+      this.cardCountFilter.setValue(filter.cardCountFilter, {
+        emitEvent: false,
+      });
+
+      this.keywordFilter.setValue(filter.keywordFilter, { emitEvent: false });
+      this.formFilter.setValue(filter.formFilter, { emitEvent: false });
+      this.attributeFilter.setValue(filter.attributeFilter, {
+        emitEvent: false,
+      });
+      this.typeFilter.setValue(filter.typeFilter, { emitEvent: false });
+      this.illustratorFilter.setValue(filter.illustratorFilter, {
+        emitEvent: false,
+      });
+      this.specialRequirementsFilter.setValue(
+        filter.specialRequirementsFilter,
+        { emitEvent: false },
+      );
+      this.restrictionsFilter.setValue(filter.restrictionsFilter, {
+        emitEvent: false,
+      });
+      this.sourceFilter.setValue(filter.sourceFilter, {
+        emitEvent: false,
+      });
+      this.presetFilter.setValue(filter.presetFilter, {
+        emitEvent: false,
+      });
+    },
+    { allowSignalWrites: true },
+  );
   private onDestroy$ = new Subject();
-
-  constructor(private messageService: MessageService) {
-    effect(
-      () => {
-        const filter = this.filterStore.filter();
-        this.filter = filter;
-
-        this.levelFilter.setValue(filter.levelFilter, { emitEvent: false });
-        this.playCostFilter.setValue(filter.playCostFilter, {
-          emitEvent: false,
-        });
-        this.digivolutionFilter.setValue(filter.digivolutionFilter, {
-          emitEvent: false,
-        });
-        this.dpFilter.setValue(filter.dpFilter, { emitEvent: false });
-        this.cardCountFilter.setValue(filter.cardCountFilter, {
-          emitEvent: false,
-        });
-
-        this.keywordFilter.setValue(filter.keywordFilter, { emitEvent: false });
-        this.formFilter.setValue(filter.formFilter, { emitEvent: false });
-        this.attributeFilter.setValue(filter.attributeFilter, {
-          emitEvent: false,
-        });
-        this.typeFilter.setValue(filter.typeFilter, { emitEvent: false });
-        this.illustratorFilter.setValue(filter.illustratorFilter, {
-          emitEvent: false,
-        });
-        this.specialRequirementsFilter.setValue(
-          filter.specialRequirementsFilter,
-          { emitEvent: false },
-        );
-        this.restrictionsFilter.setValue(filter.restrictionsFilter, {
-          emitEvent: false,
-        });
-        this.sourceFilter.setValue(filter.sourceFilter, {
-          emitEvent: false,
-        });
-        this.presetFilter.setValue(filter.presetFilter, {
-          emitEvent: false,
-        });
-      },
-      { allowSignalWrites: true },
-    );
-  }
 
   ngOnInit(): void {
     this.filterFormGroup.valueChanges

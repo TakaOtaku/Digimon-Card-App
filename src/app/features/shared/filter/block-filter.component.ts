@@ -1,5 +1,5 @@
 import { AsyncPipe, NgIf } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, effect, inject } from '@angular/core';
 import { BlockButtons } from '../../../../models';
 import { FilterStore } from '../../../store/filter.store';
 import { MultiButtonsComponent } from '../multi-buttons.component';
@@ -21,6 +21,10 @@ export class BlockFilterComponent {
   blockFilter: string[] = this.filterStore.blockFilter();
 
   blockButtons = BlockButtons;
+
+  filterChange = effect(() => {
+    this.blockFilter = this.filterStore.blockFilter();
+  });
 
   changeBlock(block: string, blockFilter: string[]) {
     let blocks = [];

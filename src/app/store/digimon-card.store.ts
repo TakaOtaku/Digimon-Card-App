@@ -1,11 +1,4 @@
-import { computed } from '@angular/core';
-import {
-  patchState,
-  signalStore,
-  withComputed,
-  withMethods,
-  withState,
-} from '@ngrx/signals';
+import { patchState, signalStore, withMethods, withState } from '@ngrx/signals';
 import {
   setupDigimonCardMap,
   setupDigimonCards,
@@ -33,7 +26,12 @@ export const DigimonCardStore = signalStore(
       const cards = setupDigimonCards(cardset);
       const filteredCards = cards;
       const cardsMap = setupDigimonCardMap(cards);
-      patchState(store, (state) => ({ ...state, cards, filteredCards, cardsMap }));
+      patchState(store, (state) => ({
+        ...state,
+        cards,
+        filteredCards,
+        cardsMap,
+      }));
     },
     updateFilteredCards(filteredCards: DigimonCard[]): void {
       patchState(store, (state) => ({ filteredCards }));

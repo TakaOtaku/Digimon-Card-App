@@ -11,7 +11,6 @@ import {
   effect,
   inject,
   Input,
-  OnDestroy,
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { DataViewModule } from 'primeng/dataview';
@@ -19,7 +18,6 @@ import { DialogModule } from 'primeng/dialog';
 import { DragDropModule } from 'primeng/dragdrop';
 import { SidebarModule } from 'primeng/sidebar';
 import { SkeletonModule } from 'primeng/skeleton';
-import { Subject } from 'rxjs';
 import {
   DigimonCard,
   DRAG,
@@ -123,7 +121,7 @@ import { SearchComponent } from './search.component';
     IntersectionListenerDirective,
   ],
 })
-export class PaginationCardListComponent implements OnDestroy {
+export class PaginationCardListComponent {
   @Input() collectionOnly: boolean = false;
   @Input() initialWidth = 5.6;
   @Input() inputCollection: ICountCard[] = [];
@@ -138,7 +136,11 @@ export class PaginationCardListComponent implements OnDestroy {
   filterBox = false;
 
   draggedCard = this.websiteStore.draggedCard();
-  collectionMode = this.saveStore.settings().collectionMode;
+  collectionMode = this.saveStore.collectionMode();
+
+  updateCollectionMode = effect(
+    () => (this.collectionMode = this.saveStore.collectionMode()),
+  );
 
   filterBoxEnabled = true;
 
@@ -150,7 +152,6 @@ export class PaginationCardListComponent implements OnDestroy {
   showCards: DigimonCard[] = [];
 
   private collection: ICountCard[] = [];
-  private onDestroy$ = new Subject();
 
   constructor() {
     effect(() => {
@@ -170,11 +171,6 @@ export class PaginationCardListComponent implements OnDestroy {
       this.showCards = filteredCards.slice(0, this.perPage);
       this.page = 1;
     });
-  }
-
-  ngOnDestroy() {
-    this.onDestroy$.next(true);
-    this.onDestroy$.unsubscribe();
   }
 
   getCount(cardId: string): number {
