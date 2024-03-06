@@ -236,9 +236,8 @@ function applyVersionFilter(card: DigimonCard, filters: string[]): boolean {
   let remove = false;
   for (let filter of filters) {
     if (filter === 'Stamp') {
-      remove =
-        card['version'].includes('Stamp') &&
-        !card['version'].includes('Pre-Release');
+      const preRelease = card['version'].includes('Pre-Release Stamp') || card['version'].includes('Pre-Release') || card['version'].includes('Pre Release')
+      remove = card['version'].includes('Stamp') && !preRelease;
     } else if (filter === 'AA' || filter === 'Alternative Art') {
       remove = card['version'].includes('Alternative Art');
     } else if (filter === 'Normal') {
