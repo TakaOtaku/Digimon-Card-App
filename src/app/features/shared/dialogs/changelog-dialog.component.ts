@@ -56,7 +56,7 @@ import { PanelModule } from 'primeng/panel';
         <ng-template pTemplate="footer">
           <div
             class="flex flex-wrap align-middle justify-content-between gap-3">
-            <span class="ml-auto p-text-secondary">Updated 03.03.2024</span>
+            <span class="ml-auto p-text-secondary">Updated 06.03.2024</span>
           </div>
         </ng-template>
       </p-panel>
