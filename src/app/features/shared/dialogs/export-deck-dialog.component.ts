@@ -115,7 +115,7 @@ export class ExportDeckDialogComponent {
   dialogStore = inject(DialogStore);
 
   deck: IDeck = this.dialogStore.exportDeck().deck;
-  digimonCards: DigimonCard[] = [];
+  digimonCards: DigimonCard[] = this.digimonCardStore.cards();
 
   exportList = ['TEXT', 'TTS', 'UNTAP', 'IMAGE'];
   exportType = 'TEXT';
@@ -128,6 +128,10 @@ export class ExportDeckDialogComponent {
     this.deck = this.dialogStore.exportDeck().deck;
     this.setExportTypeText();
     this.exportType = 'TEXT';
+  });
+
+  updateDigimonCards = effect(() => {
+    this.digimonCards = this.digimonCardStore.cards();
   });
 
   private static writeText(

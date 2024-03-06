@@ -2,15 +2,15 @@
 import {
   DigimonCard,
   ICountCard,
-  IFilter,
+  IFilter, ISave,
   ISort,
   UltimateCup2023,
-  UltimateCup2024,
+  UltimateCup2024
 } from '../../models';
 
 export function filterCards(
   cards: DigimonCard[],
-  collection: ICountCard[],
+  save: ISave,
   filter: IFilter,
   sort: ISort,
   cardMap: Map<string, DigimonCard>,
@@ -121,7 +121,7 @@ export function filterCards(
       removeCards.push(card);
       return;
     }
-    if (applyCardCountFilter(card, collection, filter.cardCountFilter)) {
+    if (applyCardCountFilter(card, save, filter.cardCountFilter)) {
       removeCards.push(card);
       return;
     }
@@ -152,7 +152,7 @@ export function filterCards(
 
   filteredCards = filteredCards.filter((card) => !removeCards.includes(card));
 
-  filteredCards = applySortOrder(filteredCards, sort, collection);
+  filteredCards = applySortOrder(filteredCards, sort, save.collection);
   return filteredCards;
 }
 
@@ -308,13 +308,13 @@ function applySourceFilter(card: DigimonCard, filters: string[]): boolean {
 
 function applyCardCountFilter(
   card: DigimonCard,
-  collection: ICountCard[],
+  save: ISave,
   cardCountFilter: number[],
 ): boolean {
-  const count = collection.find((cc) => cc.id === card.id)?.count ?? 0;
+  const count = save.collection.find((cc) => cc.id === card.id)?.count ?? 0;
 
   // If the CardCount Filter is at the max, check if the card count is higher than the smaller slider
-  if (cardCountFilter[1] === 5) {
+  if (cardCountFilter[1] === save.settings.countMax) {
     return !(cardCountFilter[0] <= count);
   }
   return !(cardCountFilter[0] <= count && count <= cardCountFilter[1]);
@@ -332,13 +332,12 @@ function applyRangeFilter(
         return false;
       }
 
+      const level: number = +card['cardLv'].slice(-1) >>> 0;
       if (filter[1] === 7) {
-        const level: number = +card['cardLv'].substring(3) >>> 0;
-        return filter[0] <= level;
+        return filter[0] > level;
       }
 
-      const level: number = +card['cardLv'].substring(3) >>> 0;
-      return filter[0] <= level && filter[1] >= level;
+      return filter[0] > level || filter[1] < level;
     case 'playCost':
       if (filter[0] === 0 && filter[1] === 20) {
         return false;
@@ -346,16 +345,33 @@ function applyRangeFilter(
 
       if (filter[1] === 20) {
         const playCost: number = +card['playCost'] >>> 0;
-        return filter[0] <= playCost;
+        return filter[0] > playCost;
       }
 
       const playCost: number = +card['playCost'] >>> 0;
-      return filter[0] <= playCost && filter[1] >= playCost;
+      return filter[0] > playCost || filter[1] < playCost;
     case 'digivolution':
       if (filter[0] === 0 && filter[1] === 7) {
         return false;
       }
-      return false;
+
+      let highestDigivolveCost;
+      let lowestDigivolveCost;
+
+      for (let condition of card["digivolveCondition"]) {
+        if(!highestDigivolveCost || +condition.cost >>> 0 > highestDigivolveCost) highestDigivolveCost = +condition.cost >>> 0;
+        if(!lowestDigivolveCost || +condition.cost >>> 0 < lowestDigivolveCost) lowestDigivolveCost = +condition.cost >>> 0;
+      }
+
+      if(!highestDigivolveCost || !lowestDigivolveCost) {
+        return true;
+      }
+
+      if (filter[1] === 7) {
+        return filter[0] > lowestDigivolveCost;
+      }
+
+      return filter[0] > lowestDigivolveCost || filter[1] < highestDigivolveCost;
     case 'dp':
       if (filter[0] === 1 && filter[1] === 17) {
         return false;
@@ -363,18 +379,18 @@ function applyRangeFilter(
 
       const dp: number = +card['dp'] >>> 0;
 
-      if (card['dp'] === '-') {
-        return false;
+      if (card['dp'] === '-' || card['dp'] === '') {
+        return true;
       }
 
       const a: number = +(filter[0] + '000') >>> 0;
       const b: number = +(filter[1] + '000') >>> 0;
 
-      if (filter[1] === 16) {
-        return a <= dp;
+      if (filter[1] === 17) {
+        return a > dp;
       }
 
-      return a <= dp && b >= dp;
+      return a > dp || b < dp;
   }
 }
 

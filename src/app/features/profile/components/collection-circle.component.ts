@@ -1,15 +1,13 @@
 import {
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   effect,
   inject,
   Input,
-  OnDestroy,
-  OnInit,
 } from '@angular/core';
 import { ChartModule } from 'primeng/chart';
-import { Subject } from 'rxjs';
-import { DigimonCard, ICountCard } from '../../../../models';
+import { DigimonCard } from '../../../../models';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
 import { SaveStore } from '../../../store/save.store';
 
@@ -27,20 +25,30 @@ import { SaveStore } from '../../../store/save.store';
   standalone: true,
   imports: [ChartModule],
 })
-export class CollectionCircleComponent implements OnInit, OnDestroy {
+export class CollectionCircleComponent {
   @Input() type: 'BT' | 'EX' | 'ST' | 'P-';
-  @Input() collection: ICountCard[];
+  changeDetection = inject(ChangeDetectorRef);
 
   saveStore = inject(SaveStore);
   digimonCardStore = inject(DigimonCardStore);
 
   data: any;
-
-  chartOptions: any;
+  chartOptions = {
+    maintainAspectRatio: false,
+    responsive: false,
+    plugins: {
+      legend: {
+        display: false,
+        labels: {
+          color: '#ebedef',
+        },
+      },
+    },
+  };
 
   updateCircle = effect(() => {
     const settings = this.saveStore.settings();
-    const collection = this.collection;
+    const collection = this.saveStore.collection();
 
     let setCards = this.digimonCardStore
       .cards()
@@ -126,24 +134,8 @@ export class CollectionCircleComponent implements OnInit, OnDestroy {
         },
       ],
     };
+    this.changeDetection.detectChanges();
   });
-
-  private onDestroy$ = new Subject<boolean>();
-
-  ngOnInit(): void {
-    this.chartOptions = {
-      maintainAspectRatio: false,
-      responsive: false,
-      plugins: {
-        legend: {
-          display: false,
-          labels: {
-            color: '#ebedef',
-          },
-        },
-      },
-    };
-  }
 
   getColorCardArray(cards: DigimonCard[]): number[] {
     const red = cards.filter((card) => card.color.startsWith('Red')).length;
@@ -159,9 +151,5 @@ export class CollectionCircleComponent implements OnInit, OnDestroy {
     const white = cards.filter((card) => card.color.startsWith('White')).length;
 
     return [red, blue, yellow, green, black, purple, white];
-  }
-
-  ngOnDestroy() {
-    this.onDestroy$.next(true);
   }
 }

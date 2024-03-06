@@ -1,11 +1,11 @@
 import {
-  Component,
+  Component, computed,
   effect,
   EventEmitter,
   inject,
   Input,
   OnDestroy,
-  OnInit,
+  OnInit
 } from '@angular/core';
 import {
   FormsModule,
@@ -31,6 +31,7 @@ import {
   Types,
 } from '../../../../models';
 import { FilterStore } from '../../../store/filter.store';
+import { SaveStore } from '../../../store/save.store';
 import { RangeSliderComponent } from '../range-slider.component';
 import { SortButtonsComponent } from '../sort-buttons.component';
 import { BlockFilterComponent } from './block-filter.component';
@@ -129,12 +130,16 @@ import { VersionFilterComponent } from './version-filter.component';
       <div class="flex flex-row">
         <digimon-range-slider
           [reset]="resetEmitter"
-          [minMax]="[0, 5]"
+          [minMax]="[0, collectionCountMax()]"
           [filterFormControl]="cardCountFilter"
           title="Number in Collection:"
           class="w-full"></digimon-range-slider>
         <button
-          (click)="cardCountFilter.setValue([0, 5], { emitEvent: false })"
+          (click)="
+            cardCountFilter.setValue([0, collectionCountMax()], {
+              emitEvent: false
+            })
+          "
           class="w-12 text-[#e2e4e6]"
           type="button">
           <i class="pi pi-refresh"></i>
@@ -258,6 +263,7 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
   messageService = inject(MessageService);
 
   filterStore = inject(FilterStore);
+  saveStore = inject(SaveStore);
 
   keywordFilter = new UntypedFormControl([]);
   formFilter = new UntypedFormControl([]);
@@ -346,6 +352,8 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
     },
     { allowSignalWrites: true },
   );
+
+  collectionCountMax = computed(() => this.saveStore.settings().countMax);
   private onDestroy$ = new Subject();
 
   ngOnInit(): void {

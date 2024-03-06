@@ -1,12 +1,11 @@
 import { AsyncPipe, NgForOf, NgIf } from '@angular/common';
 import {
-  ChangeDetectionStrategy, ChangeDetectorRef,
+  ChangeDetectionStrategy,
   Component,
-  computed,
   effect,
   HostListener,
   inject,
-  OnInit
+  OnInit,
 } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
@@ -54,7 +53,7 @@ import { BlogItemComponent } from './components/blog-item.component';
             (onPageChange)="onPageChange($event)"
             [first]="first"
             [rows]="rows"
-            [totalRecords]="blogs.length"></p-paginator>
+            [totalRecords]="blogs().length"></p-paginator>
         </div>
 
         @if (display) {
@@ -97,6 +96,10 @@ import { BlogItemComponent } from './components/blog-item.component';
   providers: [MessageService],
 })
 export class CommunityPageComponent implements OnInit {
+  meta = inject(Meta);
+  metaTitle = inject(Title);
+  router = inject(Router);
+
   websiteStore = inject(WebsiteStore);
 
   categories = [
@@ -138,37 +141,29 @@ export class CommunityPageComponent implements OnInit {
 
   first = 0;
   rows = 6;
-  blogs: IBlog[] = [];
+  blogs = this.websiteStore.blogs;
   showBlogs: IBlog[] = [];
 
-  router = inject(Router);
+  changeShowBlogs = effect(() => {
+    this.showBlogs = [
+      ...this.websiteStore.blogs().slice(this.first, this.first + this.rows),
+    ];
+  });
 
   display = false;
 
-  constructor(
-    private meta: Meta,
-    private changeDetection: ChangeDetectorRef,
-    private metaTitle: Title,
-  ) {
+  constructor() {
     this.websiteStore.loadBlogs();
-
-    effect(() => {
-      const blogs = this.websiteStore.blogs();
-      if (blogs && blogs.length === 0) return;
-      this.blogs = blogs;
-      this.showBlogs = [...blogs.slice(this.first, this.first + this.rows)];
-      this.changeDetection.detectChanges();
-    });
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: Event): void {
-    this.checkScreenWidth((event.target as Window).innerWidth);
   }
 
   ngOnInit(): void {
     this.makeGoogleFriendly();
     this.checkScreenWidth(window.innerWidth);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    this.checkScreenWidth((event.target as Window).innerWidth);
   }
 
   private makeGoogleFriendly() {
@@ -195,13 +190,13 @@ export class CommunityPageComponent implements OnInit {
     } else {
       this.rows = 3;
     }
-    this.showBlogs = this.blogs.slice(this.first, this.first + this.rows);
+    this.showBlogs = this.blogs().slice(this.first, this.first + this.rows);
   }
 
   onPageChange(event: any) {
     this.first = event.first;
     this.rows = event.rows;
-    this.showBlogs = this.blogs.slice(this.first, this.first + this.rows);
+    this.showBlogs = this.blogs().slice(this.first, this.first + this.rows);
   }
 
   openBlog(blog: IBlog) {

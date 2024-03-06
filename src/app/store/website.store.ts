@@ -116,6 +116,14 @@ export const WebsiteStore = signalStore(
       updateDeck(deck: IDeck): void {
         patchState(store, (state) => ({ deck }));
       },
+      updateDeckTitle(title: string): void {
+        patchState(store, (state) => ({ deck: { ...state.deck, title } }));
+      },
+      updateDeckDescription(description: string): void {
+        patchState(store, (state) => ({
+          deck: { ...state.deck, description },
+        }));
+      },
 
       updateMobileCollectionView(mobileCollectionView: boolean): void {
         patchState(store, (state) => ({ mobileCollectionView }));

@@ -1,5 +1,5 @@
 import { AsyncPipe, NgClass, NgIf } from '@angular/common';
-import { Component, effect, inject, Input } from '@angular/core';
+import { Component, computed, effect, inject, Input, Signal } from '@angular/core';
 import { IDeck, IDeckCard } from '../../../../models';
 import { mapToDeckCards } from '../../../functions';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
@@ -21,12 +21,12 @@ import { DdtoSpreadComponent } from '../../shared/statistics/ddto-spread.compone
         class="surface-card flex flex-row border-r-2 border-t-2 border-white bg-opacity-25 lg:mx-auto">
         <digimon-ddto-spread
           *ngIf="!collectionView"
-          [deck]="this.deck"
+          [deck]="deck()"
           [container]="true"
           class="ml-auto hidden border-r border-slate-200 px-5 lg:block"></digimon-ddto-spread>
 
         <digimon-chart-containers
-          [deck]="mainDeck"
+          [deck]="mainDeck()"
           class="max-w-[40rem]"
           [ngClass]="{
             'lg:ml-3 lg:mr-auto': collectionView
@@ -34,7 +34,7 @@ import { DdtoSpreadComponent } from '../../shared/statistics/ddto-spread.compone
 
         <digimon-color-spread
           *ngIf="!collectionView"
-          [deck]="this.deck"
+          [deck]="deck()"
           [container]="true"
           class="mr-auto hidden border-l border-slate-200 px-5 lg:block"></digimon-color-spread>
       </div>
@@ -57,16 +57,11 @@ export class DeckStatsComponent {
   websiteStore = inject(WebsiteStore);
   digimonCardStore = inject(DigimonCardStore);
 
-  deck: IDeck;
-  mainDeck: IDeckCard[];
-
-  constructor() {
-    effect(() => {
-      this.deck = this.websiteStore.deck();
-      this.mainDeck = mapToDeckCards(
-        this.deck.cards,
-        this.digimonCardStore.cards(),
-      );
-    });
-  }
+  deck: Signal<IDeck> = this.websiteStore.deck;
+  mainDeck: Signal<IDeckCard[]> = computed(() =>
+    mapToDeckCards(
+      this.websiteStore.deck().cards,
+      this.digimonCardStore.cards(),
+    ),
+  );
 }

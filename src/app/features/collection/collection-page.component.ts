@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { map, of, switchMap } from 'rxjs';
-import { emptySave } from '../../../models/data/save.data';
+import { emptySave } from '../../../models';
 import { DigimonBackendService } from '../../services/digimon-backend.service';
 import { FilterAndSearchComponent } from '../shared/filter/filter-and-search.component';
 import { PageComponent } from '../shared/page.component';

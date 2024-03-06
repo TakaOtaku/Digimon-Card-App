@@ -43,6 +43,7 @@ import { SettingsRowComponent } from '../settings-row.component';
           styleClass="border-slate-300 border">
           <digimon-settings-row title="Sort Cards by">
             <p-selectButton
+              [allowEmpty]="false"
               [formControl]="sortOrderFilter"
               [multiple]="false"
               [options]="sortOrder">
@@ -51,6 +52,7 @@ import { SettingsRowComponent } from '../settings-row.component';
 
           <digimon-settings-row title="Display SideDecks">
             <p-selectButton
+              [allowEmpty]="false"
               [(ngModel)]="sideDeck"
               [options]="yesNoOptions"
               optionLabel="label"
@@ -59,6 +61,7 @@ import { SettingsRowComponent } from '../settings-row.component';
 
           <digimon-settings-row title="Display Filter on Fullscreen">
             <p-selectButton
+              [allowEmpty]="false"
               [(ngModel)]="fullscreenFilter"
               [options]="yesNoOptions"
               optionLabel="label"
@@ -101,9 +104,63 @@ import { SettingsRowComponent } from '../settings-row.component';
               [(ngModel)]="aaCollectionCount"
               mode="decimal"></p-inputNumber>
           </digimon-settings-row>
+          <digimon-settings-row title="Collection Filter Max">
+            <p-inputNumber
+              [(ngModel)]="collectionFilterMax"
+              mode="decimal"></p-inputNumber>
+          </digimon-settings-row>
           <digimon-settings-row title="Alt. Art Cards">
             <p-selectButton
+              [allowEmpty]="false"
               [(ngModel)]="aa"
+              [options]="showHideOptions"
+              optionLabel="label"
+              optionValue="value"></p-selectButton>
+          </digimon-settings-row>
+          <digimon-settings-row title="Foil Cards">
+            <p-selectButton
+              [allowEmpty]="false"
+              [(ngModel)]="foil"
+              [options]="showHideOptions"
+              optionLabel="label"
+              optionValue="value"></p-selectButton>
+          </digimon-settings-row>
+          <digimon-settings-row title="Textured Cards">
+            <p-selectButton
+              [allowEmpty]="false"
+              [(ngModel)]="textured"
+              [options]="showHideOptions"
+              optionLabel="label"
+              optionValue="value"></p-selectButton>
+          </digimon-settings-row>
+          <digimon-settings-row title="Pre-Release Cards">
+            <p-selectButton
+              [allowEmpty]="false"
+              [(ngModel)]="preRelease"
+              [options]="showHideOptions"
+              optionLabel="label"
+              optionValue="value"></p-selectButton>
+          </digimon-settings-row>
+          <digimon-settings-row title="Box Topper">
+            <p-selectButton
+              [allowEmpty]="false"
+              [(ngModel)]="boxTopper"
+              [options]="showHideOptions"
+              optionLabel="label"
+              optionValue="value"></p-selectButton>
+          </digimon-settings-row>
+          <digimon-settings-row title="Full Art Cards">
+            <p-selectButton
+              [allowEmpty]="false"
+              [(ngModel)]="fullArt"
+              [options]="showHideOptions"
+              optionLabel="label"
+              optionValue="value"></p-selectButton>
+          </digimon-settings-row>
+          <digimon-settings-row title="Stamp Cards">
+            <p-selectButton
+              [allowEmpty]="false"
+              [(ngModel)]="stamped"
               [options]="showHideOptions"
               optionLabel="label"
               optionValue="value"></p-selectButton>
@@ -123,6 +180,7 @@ import { SettingsRowComponent } from '../settings-row.component';
           </digimon-settings-row>
           <digimon-settings-row title="Collection-Stats">
             <p-selectButton
+              [allowEmpty]="false"
               [(ngModel)]="userStats"
               [options]="showHideOptions"
               optionLabel="label"
@@ -131,6 +189,7 @@ import { SettingsRowComponent } from '../settings-row.component';
 
           <digimon-settings-row title="Display Decks in a Table">
             <p-selectButton
+              [allowEmpty]="false"
               [(ngModel)]="deckDisplayTable"
               [options]="yesNoOptions"
               optionLabel="label"
@@ -414,8 +473,13 @@ export class SettingsDialogComponent implements OnDestroy {
   setGoal: string[] = [];
   collectionCount = 1;
   aaCollectionCount = 1;
+  collectionFilterMax = 5;
 
+  foil = true;
+  textured = true;
   preRelease = true;
+  boxTopper = true;
+  fullArt = true;
   aa = true;
   stamped = true;
   reprint = false;
@@ -485,16 +549,23 @@ export class SettingsDialogComponent implements OnDestroy {
         ...this.iSave.settings,
         collectionMinimum: this.collectionCount,
         aaCollectionMinimum: this.aaCollectionCount,
+
+        showFoilCards: this.foil,
+        showTexturedCards: this.textured,
         showPreRelease: this.preRelease,
+        showBoxTopper: this.boxTopper,
+        showFullArtCards: this.fullArt,
         showAACards: this.aa,
         showStampedCards: this.stamped,
         showReprintCards: this.reprint,
+
         sortDeckOrder: this.sortOrderFilter.value,
         showUserStats: this.userStats,
         deckDisplayTable: this.deckDisplayTable,
         displaySideDeck: this.sideDeck,
         collectionSets: this.setGoal,
         fullscreenFilter: this.fullscreenFilter,
+        countMax: this.collectionFilterMax,
       },
     };
 

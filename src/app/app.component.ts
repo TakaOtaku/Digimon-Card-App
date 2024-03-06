@@ -132,7 +132,7 @@ export class AppComponent {
 
         const filteredCards = filterCards(
           this.digimonCardStore.cards(),
-          this.saveStore.collection(),
+          this.saveStore.save(),
           this.filterStore.filter(),
           this.websiteStore.sort(),
           this.digimonCardStore.cardsMap(),
@@ -180,15 +180,32 @@ export class AppComponent {
     let filter: IFilter = emptyFilter;
     filter = { ...filter, versionFilter: [] };
 
-    if (!settings.showAACards) {
+    if (!settings.showFoilCards) {
       let versionFilter = filter.versionFilter.filter(
-        (filter) => filter !== 'Alternative Art',
+        (filter) => filter !== 'Foil',
       );
       if (versionFilter.length === 0) {
         versionFilter = [
           'Normal',
-          'Foil',
+          'Alternative Art',
           'Textured',
+          'Release',
+          'Box Topper',
+          'Full Art',
+          'Stamp',
+        ];
+      }
+      filter = { ...filter, versionFilter };
+    }
+    if (!settings.showTexturedCards) {
+      let versionFilter = filter.versionFilter.filter(
+        (filter) => filter !== 'Textured',
+      );
+      if (versionFilter.length === 0) {
+        versionFilter = [
+          'Normal',
+          'Alternative Art',
+          'Foil',
           'Release',
           'Box Topper',
           'Full Art',
@@ -207,6 +224,74 @@ export class AppComponent {
           'Alternative Art',
           'Foil',
           'Textured',
+          'Box Topper',
+          'Full Art',
+          'Stamp',
+        ];
+      }
+      filter = { ...filter, versionFilter };
+    }
+    if (!settings.showBoxTopper) {
+      let versionFilter = filter.versionFilter.filter(
+        (filter) => filter !== 'Box Topper',
+      );
+      if (versionFilter.length === 0) {
+        versionFilter = [
+          'Normal',
+          'Alternative Art',
+          'Foil',
+          'Textured',
+          'Release',
+          'Full Art',
+          'Stamp',
+        ];
+      }
+      filter = { ...filter, versionFilter };
+    }
+    if (!settings.showFullArtCards) {
+      let versionFilter = filter.versionFilter.filter(
+        (filter) => filter !== 'Full Art',
+      );
+      if (versionFilter.length === 0) {
+        versionFilter = [
+          'Normal',
+          'Alternative Art',
+          'Foil',
+          'Textured',
+          'Release',
+          'Box Topper',
+          'Stamp',
+        ];
+      }
+      filter = { ...filter, versionFilter };
+    }
+    if (!settings.showStampedCards) {
+      let versionFilter = filter.versionFilter.filter(
+        (filter) => filter !== 'Stamp',
+      );
+      if (versionFilter.length === 0) {
+        versionFilter = [
+          'Normal',
+          'Alternative Art',
+          'Foil',
+          'Textured',
+          'Release',
+          'Box Topper',
+          'Full Art',
+        ];
+      }
+      filter = { ...filter, versionFilter };
+    }
+    if (!settings.showAACards) {
+      let versionFilter = filter.versionFilter.filter(
+        (filter) => filter !== 'Alternative Art',
+      );
+      if (versionFilter.length === 0) {
+        versionFilter = [
+          'Normal',
+          'Foil',
+          'Textured',
+          'Release',
           'Box Topper',
           'Full Art',
           'Stamp',

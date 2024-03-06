@@ -418,12 +418,6 @@ export class ViewCardDialogComponent {
   colorMap = ColorMap;
 
   version: string;
-  versionMap = new Map<string, string>([
-    ['Normal', 'Normal'],
-    ['AA', 'Alternative Art'],
-    ['Stamp', 'Stamped'],
-  ]);
-
   type: string;
 
   deck: IDeck = this.websiteStore.deck();
@@ -444,7 +438,7 @@ export class ViewCardDialogComponent {
   setupView() {
     this.color = this.colorMap.get(this.card.color)!;
     this.backgroundColor = this.color;
-    this.version = this.versionMap.get(this.card.version)!;
+    this.version = this.getVersion(this.card.version)!;
     this.png = this.card.cardImage;
     this.imageAlt = this.card.cardNumber + ' ' + this.card.name.english;
     this.type = this.card?.cardType;
@@ -524,5 +518,22 @@ export class ViewCardDialogComponent {
 
   closeViewCard() {
     this.dialogStore.showViewCardDialog(false);
+  }
+
+  private getVersion(version: string) {
+    if (version.includes('Foil')) {
+      return 'Foil';
+    } else if (version.includes('Textured')) {
+      return 'Textured';
+    } else if (version.includes('Release')) {
+      return 'Pre Release';
+    } else if (version.includes('Box Topper')) {
+      return 'Box Topper';
+    } else if (version.includes('Full Art')) {
+      return 'Full Art';
+    } else if (version.includes('Stamp')) {
+      return 'Stamp';
+    }
+    return 'Normal';
   }
 }

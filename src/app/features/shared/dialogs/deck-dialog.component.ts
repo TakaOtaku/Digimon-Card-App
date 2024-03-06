@@ -312,6 +312,7 @@ export class DeckDialogComponent {
         this.websiteStore.updateDeck(this.deck);
         this.router.navigateByUrl('deckbuilder');
       }
+      this.dialogStore.showDeckDialog(false);
     } else {
       this.confirmationService.confirm({
         target: event.target ?? undefined,
@@ -321,6 +322,7 @@ export class DeckDialogComponent {
           this.router.navigateByUrl(
             '/deckbuilder/user/' + this.deck.userId + '/deck/' + this.deck.id,
           );
+          this.dialogStore.showDeckDialog(false);
         },
       });
     }

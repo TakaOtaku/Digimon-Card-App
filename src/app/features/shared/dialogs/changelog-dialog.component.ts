@@ -19,12 +19,23 @@ import { PanelModule } from 'primeng/panel';
             that match all colors, e.g. Multi + Red + Purple will filter all
             cards with 2 Colors that are Red and Purple.
           </li>
+          <li>
+            Added a way to set your default version filter, for all options.
+          </li>
+          <li>
+            Added a Setting to define set your max for the "Number in
+            Collection" filter
+          </li>
+          <li>Added a working Digivolution Cost Filter.</li>
         </ul>
 
         <p-divider></p-divider>
 
         <h1 class="font-bold text-lg underline">Bugfixes</h1>
-        <ul class="list-disc p-5"></ul>
+        <ul class="list-disc p-5">
+          <li>Saving an empty deck would crash the Profile Page.</li>
+          <li>Updated the Mulligan Dialog to the new Mulligan.</li>
+        </ul>
 
         <p-divider></p-divider>
 

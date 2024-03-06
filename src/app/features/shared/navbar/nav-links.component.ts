@@ -160,11 +160,11 @@ import { FilterButtonComponent } from '../filter/filter-button.component';
             class='min-w-auto mx-auto primary-background h-12 w-12 overflow-hidden rounded-full text-[#e2e4e6] group-hover:bg-[#64B5F6]"'>
             <img
               *ngIf="user"
-              alt="{{ this.user.displayName }}"
-              src="{{ this.user.photoURL }}" />
+              alt="{{ this.user?.displayName }}"
+              src="{{ this.user?.photoURL }}" />
           </div>
           <span class="text-[#e2e4e6] text-xs">{{
-            this.user.displayName
+            this.user?.displayName
           }}</span>
         </ng-container>
         <ng-template #userIcon>
@@ -244,8 +244,8 @@ import { FilterButtonComponent } from '../filter/filter-button.component';
     SettingsDialogComponent,
     ChangelogDialogComponent,
     NgOptimizedImage,
-    ButtonModule
-  ]
+    ButtonModule,
+  ],
 })
 export class NavLinksComponent implements OnInit, OnDestroy {
   @Input() sidebar = false;
@@ -303,10 +303,15 @@ export class NavLinksComponent implements OnInit, OnDestroy {
     } else if (route === '/user') {
       return {
         'border-l-[3px] border-white':
-          this.route.includes(route) && this.sidebar,
+          this.route.includes(route) &&
+          !this.route.includes('deckbuilder') &&
+          this.sidebar,
         'border-b-[3px] lg:border-b-0 lg:border-l-[3px] border-white':
-          this.route.includes(route) && !this.sidebar,
-        'text-[#64B5F6]': this.route.includes(route),
+          this.route.includes(route) &&
+          !this.route.includes('deckbuilder') &&
+          !this.sidebar,
+        'text-[#64B5F6]':
+          this.route.includes(route) && !this.route.includes('deckbuilder'),
         'text-[#e2e4e6]': !this.route.includes(route),
       };
     }

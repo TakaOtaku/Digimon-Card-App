@@ -2,10 +2,12 @@ import { NgClass, NgFor } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
+  computed,
   EventEmitter,
   inject,
   Input,
   Output,
+  Signal,
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConfirmationService, MessageService } from 'primeng/api';
@@ -16,6 +18,7 @@ import { TooltipModule } from 'primeng/tooltip';
 import { BehaviorSubject } from 'rxjs';
 import * as uuid from 'uuid';
 import { DigimonCard, IDeck, IDeckCard } from '../../../../models';
+import { mapToDeckCards } from '../../../functions';
 import { AuthService } from '../../../services/auth.service';
 import { DialogStore } from '../../../store/dialog.store';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
@@ -91,12 +94,6 @@ import { PriceCheckDialogComponent } from './price-check-dialog.component';
         pTooltip="Click to simulate your draw hand and the security stack!"
         tooltipPosition="top"></button>
 
-      <!--button
-        class="p-button-outlined h-[30px] w-full cursor-pointer"
-        (click)="checkPrice()"
-      >
-        $
-      </button-->
       <button
         (click)="checkPrice()"
         class="p-button-outlined h-[30px] w-full cursor-pointer"
@@ -148,7 +145,6 @@ import { PriceCheckDialogComponent } from './price-check-dialog.component';
 
       <div class="mt-5 flex w-full justify-end">
         <button pButton (click)="mulligan()">Mulligan</button>
-        <button pButton class="ml-5" (click)="resetSimulation()">Reset</button>
       </div>
     </p-dialog>
 
@@ -186,8 +182,6 @@ import { PriceCheckDialogComponent } from './price-check-dialog.component';
   providers: [MessageService],
 })
 export class DeckToolbarComponent {
-  @Input() deck: IDeck;
-  @Input() mainDeck: IDeckCard[];
   @Input() missingCards: boolean;
 
   @Output() missingCardsChange = new EventEmitter<boolean>();
@@ -196,19 +190,24 @@ export class DeckToolbarComponent {
 
   websiteStore = inject(WebsiteStore);
   dialogStore = inject(DialogStore);
+  digimonCardStore = inject(DigimonCardStore);
+
+  deck: Signal<IDeck> = this.websiteStore.deck;
+  mainDeck: Signal<IDeckCard[]> = computed(() =>
+    mapToDeckCards(
+      this.websiteStore.deck().cards,
+      this.digimonCardStore.cards(),
+    ),
+  );
 
   importDeckDialog = false;
-
   priceCheckDialog = false;
+  simulateDialog = false;
   checkPrice$ = new BehaviorSubject(false);
 
   securityStack: DigimonCard[];
   drawHand: DigimonCard[];
   allDeckCards: DigimonCard[];
-  didMulligan = false;
-  simulateDialog = false;
-
-  private digimonCardStore = inject(DigimonCardStore);
 
   constructor(
     private confirmationService: ConfirmationService,
@@ -235,28 +234,6 @@ export class DeckToolbarComponent {
     }
 
     return array;
-  }
-
-  /**
-   * Get Count of how many Cards are in the Main-Deck or Egg Deck
-   */
-  getCardCount(which: string): number {
-    let count = 0;
-    if (which === 'Egg') {
-      this.mainDeck.forEach((card) => {
-        if (card.cardType === 'Digi-Egg') {
-          count += card.count;
-        }
-      });
-    } else {
-      this.mainDeck.forEach((card) => {
-        if (card.cardType !== 'Digi-Egg') {
-          count += card.count;
-        }
-      });
-    }
-
-    return count;
   }
 
   newDeck() {
@@ -286,29 +263,12 @@ export class DeckToolbarComponent {
   //region Simulate Card Draw and Security Stack
   simulate() {
     this.simulateDialog = true;
-    this.resetSimulation();
+    this.mulligan();
   }
 
   mulligan() {
-    if (this.didMulligan) {
-      this.messageService.add({
-        severity: 'warn',
-        summary: 'You already did a Mulligan!',
-        detail: 'You can only mulligan once, before resetting.',
-      });
-      return;
-    }
-
-    this.drawHand = this.allDeckCards.slice(10, 15);
-
-    this.didMulligan = true;
-  }
-
-  resetSimulation() {
-    this.didMulligan = false;
-
     this.allDeckCards = DeckToolbarComponent.shuffle(
-      this.deck.cards.map((card) =>
+      this.deck().cards.map((card) =>
         this.digimonCardStore.cards().find((a) => a.id === card.id),
       ),
     );
@@ -319,7 +279,6 @@ export class DeckToolbarComponent {
     this.securityStack = this.allDeckCards.slice(0, 5);
     this.drawHand = this.allDeckCards.slice(5, 10);
   }
-
   //endregion
 
   checkPrice() {
@@ -328,6 +287,6 @@ export class DeckToolbarComponent {
   }
 
   openExportDeckDialog() {
-    this.dialogStore.updateExportDeckDialog({ show: true, deck: this.deck });
+    this.dialogStore.updateExportDeckDialog({ show: true, deck: this.deck() });
   }
 }

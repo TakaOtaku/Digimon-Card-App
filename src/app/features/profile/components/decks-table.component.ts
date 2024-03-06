@@ -44,13 +44,13 @@ import { SaveStore } from '../../../store/save.store';
           <td class="py-3" colspan="5">
             <div class="flex flex-row">
               <div
-                [ngClass]="deck.color.name"
+                [ngClass]="deck.color?.name"
                 class="ml-3 mr-1 h-7 w-7 rounded-full"></div>
-              <span class="ml-2 font-bold">{{ deck.color.name }} Decks</span>
+              <span class="ml-2 font-bold">{{ deck.color?.name }} Decks</span>
 
               <div class="ml-auto mr-2 font-bold">
-                Total {{ deck.color.name }} Decks:
-                {{ decksWithColor(deck.color.name) }}
+                Total {{ deck.color?.name }} Decks:
+                {{ decksWithColor(deck.color?.name) }}
               </div>
             </div>
           </td>
@@ -71,16 +71,18 @@ import { SaveStore } from '../../../store/save.store';
               }"></div>
           </td>
           <td class="text-xs font-bold">
-            {{ deck.title }}
+            {{ deck?.title }}
           </td>
           <td class="text-xs hidden md:table-cell">
-            {{ deck.description }}
+            {{ deck?.description }}
           </td>
           <td class="text-xs mx-auto hidden md:table-cell">
-            <div *ngFor="let tag of deck.tags" class="mr-2">{{ tag.name }}</div>
+            <div *ngFor="let tag of deck?.tags" class="mr-2">
+              {{ tag?.name }}
+            </div>
           </td>
           <td class="text-center text-xs hidden md:table-cell">
-            {{ deck.date | date: 'dd.MM.YY' }}
+            {{ deck?.date | date: 'dd.MM.YY' }}
           </td>
         </tr>
       </ng-template>
@@ -112,10 +114,7 @@ export class DecksTableComponent {
   @Output() onDeckClick = new EventEmitter<IDeck>();
 
   saveStore = inject(SaveStore);
-
-  private digimonCardStore = inject(DigimonCardStore);
-
-  constructor() {}
+  digimonCardStore = inject(DigimonCardStore);
 
   getCardImage(deck: IDeck): string {
     //If there are no cards in the deck set it to the Yokomon
@@ -142,6 +141,9 @@ export class DecksTableComponent {
   }
 
   decksWithColor(color: string) {
-    return this.decks.filter((deck) => deck.color.name === color).length;
+    return this.decks.filter((deck) => {
+      if (!deck || !deck.color || !deck.color.name) return false;
+      return deck.color.name === color;
+    }).length;
   }
 }

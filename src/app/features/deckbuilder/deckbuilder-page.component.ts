@@ -1,5 +1,5 @@
 import { AsyncPipe, NgClass, NgIf, NgStyle } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { filter, map, of, switchMap, tap } from 'rxjs';
@@ -55,6 +55,7 @@ import { DeckViewComponent } from './components/deck-view.component';
     }
   `,
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     NgClass,
     NgIf,
@@ -68,6 +69,12 @@ import { DeckViewComponent } from './components/deck-view.component';
   ],
 })
 export class DeckbuilderPageComponent implements OnInit {
+  route = inject(ActivatedRoute);
+  digimonBackendService = inject(DigimonBackendService);
+  authService = inject(AuthService);
+  meta = inject(Meta);
+  title = inject(Title);
+
   saveStore = inject(SaveStore);
   websiteStore = inject(WebsiteStore);
 
@@ -113,14 +120,6 @@ export class DeckbuilderPageComponent implements OnInit {
   );
 
   private deckId = '';
-
-  constructor(
-    private route: ActivatedRoute,
-    private digimonBackendService: DigimonBackendService,
-    private authService: AuthService,
-    private meta: Meta,
-    private title: Title,
-  ) {}
 
   ngOnInit() {
     this.onResize();

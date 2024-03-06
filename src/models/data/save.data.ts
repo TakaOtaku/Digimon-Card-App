@@ -8,7 +8,11 @@ export const emptySettings: ISettings = {
   collectionMinimum: 1,
   aaCollectionMinimum: 1,
 
+  showFoilCards: true,
+  showTexturedCards: true,
   showPreRelease: true,
+  showBoxTopper: true,
+  showFullArtCards: true,
   showStampedCards: true,
   showAACards: true,
   showReprintCards: false,

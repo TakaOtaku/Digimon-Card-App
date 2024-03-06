@@ -1,30 +1,12 @@
-import {
-  AsyncPipe,
-  NgClass,
-  NgFor,
-  NgIf,
-  NgOptimizedImage,
-} from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  effect,
-  inject,
-  Input,
-} from '@angular/core';
+import { AsyncPipe, NgClass, NgFor, NgIf, NgOptimizedImage } from '@angular/common';
+import { ChangeDetectionStrategy, Component, effect, inject, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { DataViewModule } from 'primeng/dataview';
 import { DialogModule } from 'primeng/dialog';
 import { DragDropModule } from 'primeng/dragdrop';
 import { SidebarModule } from 'primeng/sidebar';
 import { SkeletonModule } from 'primeng/skeleton';
-import {
-  DigimonCard,
-  DRAG,
-  dummyCard,
-  ICountCard,
-  IDraggedCard,
-} from '../../../../models';
+import { DigimonCard, DRAG, dummyCard, ICountCard, IDraggedCard } from '../../../../models';
 import { ImgFallbackDirective } from '../../../directives/ImgFallback.directive';
 import { IntersectionListenerDirective } from '../../../directives/intersection-listener.directive';
 import { withoutJ } from '../../../functions';
@@ -54,14 +36,13 @@ import { SearchComponent } from './search.component';
 
       <div
         [pDroppable]="['fromDeck', 'fromSide']"
-        (onDrop)="drop(draggedCard, draggedCard)"
+        (onDrop)="drop(draggedCard(), draggedCard())"
         class="h-[calc(100vh-8.5rem)] md:h-[calc(100vh-10rem)] lg:h-[calc(100vh-5rem)] flex flex-wrap w-full content-start justify-start overflow-y-scroll">
         @for (card of showCards; track $index) {
           @defer (on viewport) {
             <digimon-full-card
               [style]="{ width: widthForm.value + 'rem' }"
               class="m-0.5 md:m-1 flex items-center justify-center self-start"
-              [collectionMode]="collectionMode"
               [card]="card"
               [count]="getCount(card.id)"
               [deckBuilder]="true"
@@ -131,27 +112,19 @@ export class PaginationCardListComponent {
   saveStore = inject(SaveStore);
   dialogStore = inject(DialogStore);
 
+  draggedCard = this.websiteStore.draggedCard;
+  collection = this.saveStore.collection;
+
   widthForm = new FormControl(this.initialWidth);
 
   filterBox = false;
-
-  draggedCard = this.websiteStore.draggedCard();
-  collectionMode = this.saveStore.collectionMode();
-
-  updateCollectionMode = effect(
-    () => (this.collectionMode = this.saveStore.collectionMode()),
-  );
-
   filterBoxEnabled = true;
-
   card = JSON.parse(JSON.stringify(dummyCard));
 
   perPage = 100;
   page = 1;
   filteredCards = this.digimonCardStore.filteredCards;
   showCards: DigimonCard[] = [];
-
-  private collection: ICountCard[] = [];
 
   constructor() {
     effect(() => {
@@ -174,11 +147,11 @@ export class PaginationCardListComponent {
   }
 
   getCount(cardId: string): number {
-    if (this.collection === null) {
+    if (this.collection() === null) {
       return 0;
     }
     return (
-      this.collection.find((value) => value.id === withoutJ(cardId))?.count ?? 0
+      this.collection().find((value) => value.id === withoutJ(cardId))?.count ?? 0
     );
   }
 

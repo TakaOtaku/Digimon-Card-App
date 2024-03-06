@@ -27,7 +27,7 @@ import { SaveStore } from '../../../store/save.store';
         <input
           type="checkbox"
           class="my-auto ml-1 h-5 w-5"
-          [ngModel]="collectionMode"
+          [ngModel]="collectionMode()"
           (ngModelChange)="changeCollectionMode($event)" />
       </div>
 
@@ -64,17 +64,13 @@ import { SaveStore } from '../../../store/save.store';
 })
 export class PaginationCardListHeaderComponent {
   @Input() widthForm: FormControl;
-  @Output() filterBox = new EventEmitter<boolean>();
   @Input() viewOnly: boolean;
   @Input() filterButton: boolean | null = true;
+  @Output() filterBox = new EventEmitter<boolean>();
 
   saveStore = inject(SaveStore);
 
-  collectionMode = this.saveStore.settings().collectionMode;
-
-  updateCollectionMode = effect(() => {
-    this.collectionMode = this.saveStore.settings().collectionMode;
-  });
+  collectionMode = this.saveStore.collectionMode;
 
   changeCollectionMode(collectionMode: boolean) {
     const settings = this.saveStore.settings();

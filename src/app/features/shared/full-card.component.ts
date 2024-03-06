@@ -1,13 +1,14 @@
 import { AsyncPipe, NgClass, NgIf } from '@angular/common';
 import {
-  Component,
+  ChangeDetectorRef,
+  Component, computed,
   effect,
   EventEmitter,
   inject,
   Input,
   OnDestroy,
   OnInit,
-  Output,
+  Output
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DialogModule } from 'primeng/dialog';
@@ -29,21 +30,18 @@ import { CardImageComponent } from './card-image.component';
       <div (click)="click()" (contextmenu)="rightclick()">
         <digimon-card-image
           [card]="card"
-          [count]="count"
-          [collectionMode]="collectionMode"
-          [collectionMinimum]="collectionMinimum"
-          [aaCollectionMinimum]="aaCollectionMinimum"></digimon-card-image>
+          [count]="count"></digimon-card-image>
       </div>
 
-      <ng-container *ngIf="{ count: countInDeck } as deckCard">
+      <ng-container>
         <span
-          *ngIf="!collectionOnly && deckBuilder && deckCard.count"
+          *ngIf="!collectionOnly && deckBuilder && countInDeck()"
           class="text-shadow-white absolute right-1 z-[100] px-1 text-3xl font-black text-orange-500"
           [ngClass]="{
-            'bottom-1': !collectionMode,
-            ' bottom-10': collectionMode
+            'bottom-1': !collectionMode(),
+            ' bottom-10': collectionMode()
           }">
-          {{ deckCard.count }}<span class="pr-1 text-sky-700">/</span
+          {{ countInDeck() }}<span class="pr-1 text-sky-700">/</span
           >{{
             card.cardNumber === 'BT6-085' ||
             card.cardNumber === 'EX2-046' ||
@@ -55,7 +53,7 @@ import { CardImageComponent } from './card-image.component';
       </ng-container>
 
       <div
-        *ngIf="collectionMode || onlyView"
+        *ngIf="collectionMode() || onlyView"
         class="flex absolute bottom-2 left-1/2 transform -translate-x-1/2 h-8 w-[calc(100%-1rem)] flex-row rounded-lg bg-transparent">
         <button
           *ngIf="!onlyView"
@@ -92,13 +90,12 @@ import { CardImageComponent } from './card-image.component';
     AsyncPipe,
   ],
 })
-export class FullCardComponent implements OnInit, OnDestroy {
+export class FullCardComponent {
   @Input() card: DigimonCard = JSON.parse(JSON.stringify(dummyCard));
   @Input() count: number;
 
   @Input() width?: string;
   @Input() compact?: boolean = false;
-  @Input() collectionMode: boolean = false;
   @Input() deckBuilder?: boolean = false;
   @Input() biggerCards?: boolean = false;
 
@@ -109,35 +106,16 @@ export class FullCardComponent implements OnInit, OnDestroy {
   @Output() viewCard = new EventEmitter<DigimonCard>();
 
   websiteStore = inject(WebsiteStore);
-
   saveStore = inject(SaveStore);
 
-  collectionMinimum = 0;
-  aaCollectionMinimum = 0;
+  collectionMode = this.saveStore.collectionMode;
 
-  countInDeck = 0;
-
-  private onDestroy$ = new Subject();
-
-  constructor() {
-    effect(() => {
-      this.countInDeck =
-        this.websiteStore
-          .deck()
-          .cards.find((value) => value.id === withoutJ(this.card.id))?.count ??
-        0;
-    });
-  }
-
-  ngOnInit() {
-    const settings = this.saveStore.settings();
-    this.collectionMinimum = settings.collectionMinimum;
-    this.aaCollectionMinimum = settings.aaCollectionMinimum;
-  }
-
-  ngOnDestroy() {
-    this.onDestroy$.next(true);
-  }
+  countInDeck = computed(
+    () =>
+      this.websiteStore
+        .deck()
+        .cards.find((value) => value.id === withoutJ(this.card.id))?.count ?? 0,
+  );
 
   addCardToDeck() {
     if (this.collectionOnly) {
