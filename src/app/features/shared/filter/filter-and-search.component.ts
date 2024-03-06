@@ -94,7 +94,7 @@ export class FilterAndSearchComponent implements OnInit, OnDestroy {
     });
 
     this.searchFilter.valueChanges
-      .pipe(debounceTime(1000), takeUntil(this.onDestroy$))
+      .pipe(debounceTime(200), takeUntil(this.onDestroy$))
       .subscribe((searchFilter) => {
         this.filterStore.updateSearchFilter(searchFilter);
       });

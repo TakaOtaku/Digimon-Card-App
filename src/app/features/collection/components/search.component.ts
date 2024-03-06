@@ -36,7 +36,7 @@ export class SearchComponent {
 
   constructor() {
     this.search$.valueChanges
-      .pipe(debounceTime(1000), distinctUntilChanged())
+      .pipe(debounceTime(200), distinctUntilChanged())
       .subscribe((search) => {
         const value = search ? search : '';
         this.filterStore.updateSearchFilter(value);

@@ -1,11 +1,12 @@
 import {
-  Component, computed,
+  Component,
+  computed,
   effect,
   EventEmitter,
   inject,
   Input,
   OnDestroy,
-  OnInit
+  OnInit,
 } from '@angular/core';
 import {
   FormsModule,
@@ -358,7 +359,7 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.filterFormGroup.valueChanges
-      .pipe(debounceTime(500), takeUntil(this.onDestroy$))
+      .pipe(debounceTime(200), takeUntil(this.onDestroy$))
       .subscribe((filterValue) => {
         const filter: IFilter = { ...this.filter, ...filterValue };
         this.filterStore.updateFilter(filter);
