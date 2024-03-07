@@ -1,19 +1,16 @@
 import { AsyncPipe, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { Component, effect, inject } from '@angular/core';
 import { RarityButtons } from '../../../../models';
-import { selectRarityFilter } from '../../../store/digimon.selectors';
+import { FilterStore } from '../../../store/filter.store';
 import { MultiButtonsComponent } from '../multi-buttons.component';
-import { WebsiteActions } from './../../../store/digimon.actions';
 
 @Component({
   selector: 'digimon-rarity-filter',
   template: `
     <digimon-multi-buttons
-      *ngIf="{ value: rarityFilter$ | async } as rarityFilter"
-      (clickEvent)="changeRarity($event, rarityFilter.value ?? [])"
+      (clickEvent)="changeRarity($event, rarityFilter)"
       [buttonArray]="rarityButtons"
-      [value]="rarityFilter.value"
+      [value]="rarityFilter"
       [perRow]="6"
       title="Rarity"></digimon-multi-buttons>
   `,
@@ -21,11 +18,14 @@ import { WebsiteActions } from './../../../store/digimon.actions';
   imports: [NgIf, MultiButtonsComponent, AsyncPipe],
 })
 export class RarityFilterComponent {
-  rarityFilter$ = this.store.select(selectRarityFilter);
+  filterStore = inject(FilterStore);
+  rarityFilter: string[] = this.filterStore.rarityFilter();
 
   rarityButtons = RarityButtons;
 
-  constructor(private store: Store) {}
+  filterChange = effect(() => {
+    this.rarityFilter = this.filterStore.rarityFilter();
+  });
 
   changeRarity(rarity: string, rarityFilter: string[]) {
     let rarities = [];
@@ -35,8 +35,6 @@ export class RarityFilterComponent {
       rarities = [...new Set(rarityFilter), rarity];
     }
 
-    this.store.dispatch(
-      WebsiteActions.setRarityFilter({ rarityFilter: rarities }),
-    );
+    this.filterStore.updateRarityFilter(rarities);
   }
 }

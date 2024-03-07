@@ -1,20 +1,15 @@
 import {
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
+  effect,
+  inject,
   Input,
-  OnChanges,
-  OnDestroy,
-  OnInit,
-  SimpleChanges,
 } from '@angular/core';
-import { Store } from '@ngrx/store';
 import { ChartModule } from 'primeng/chart';
-import { combineLatestWith, first, Subject } from 'rxjs';
-import { DigimonCard, ICountCard } from '../../../../models';
-import {
-  selectAllCards,
-  selectSettings,
-} from '../../../store/digimon.selectors';
+import { DigimonCard } from '../../../../models';
+import { DigimonCardStore } from '../../../store/digimon-card.store';
+import { SaveStore } from '../../../store/save.store';
 
 @Component({
   selector: 'digimon-collection-circle',
@@ -30,133 +25,117 @@ import {
   standalone: true,
   imports: [ChartModule],
 })
-export class CollectionCircleComponent implements OnInit, OnChanges, OnDestroy {
+export class CollectionCircleComponent {
   @Input() type: 'BT' | 'EX' | 'ST' | 'P-';
-  @Input() collection: ICountCard[];
+  changeDetection = inject(ChangeDetectorRef);
+
+  saveStore = inject(SaveStore);
+  digimonCardStore = inject(DigimonCardStore);
 
   data: any;
-
-  chartOptions: any;
-
-  private onDestroy$ = new Subject<boolean>();
-
-  constructor(private store: Store) {}
-
-  ngOnInit(): void {
-    this.chartOptions = {
-      maintainAspectRatio: false,
-      responsive: false,
-      plugins: {
-        legend: {
-          display: false,
-          labels: {
-            color: '#ebedef',
-          },
+  chartOptions = {
+    maintainAspectRatio: false,
+    responsive: false,
+    plugins: {
+      legend: {
+        display: false,
+        labels: {
+          color: '#ebedef',
         },
       },
-    };
+    },
+  };
 
-    this.updateCircle();
-  }
+  updateCircle = effect(() => {
+    const settings = this.saveStore.settings();
+    const collection = this.saveStore.collection();
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes && changes['collection']) {
-      this.updateCircle();
+    let setCards = this.digimonCardStore
+      .cards()
+      .filter(
+        (card: DigimonCard) =>
+          card.id.includes('-') && card.id.includes(this.type),
+      );
+
+    // Remove AA cards from being counted for the circle
+    if (settings.aaCollectionMinimum === 0) {
+      setCards = setCards.filter(
+        (card: DigimonCard) => card.version === 'Normal',
+      );
     }
-  }
 
-  updateCircle() {
-    this.store
-      .select(selectAllCards)
-      .pipe(combineLatestWith(this.store.select(selectSettings)), first())
-      .subscribe(([allCards, settings]) => {
-        const normalCards = allCards;
-        const collection = this.collection;
-
-        let setCards = normalCards.filter(
-          (card: DigimonCard) =>
-            card.id.includes('-') && card.id.includes(this.type),
-        );
-
-        // Remove AA cards from being counted for the circle
-        if (settings.aaCollectionMinimum === 0) {
-          setCards = setCards.filter(
-            (card: DigimonCard) => card.version === 'Normal',
-          );
-        }
-
-        // Filter our cards that are collected from the settings
-        if (settings.collectionSets.length > 0) {
-          setCards = setCards.filter((card: DigimonCard) => {
-            const cardSet = card.id.split('-')[0];
-            return settings.collectionSets.includes(cardSet);
-          });
-        }
-
-        const setCardsCollected = setCards.filter((card: DigimonCard) =>
-          collection.find((colCard) => {
-            if (colCard.id !== card.id) {
-              return;
-            }
-
-            if (card.version !== 'Normal') {
-              return colCard.count >= settings.aaCollectionMinimum;
-            }
-
-            return colCard.count >= settings.collectionMinimum;
-          }),
-        );
-
-        const collectionColors = this.getColorCardArray(setCardsCollected);
-
-        this.data = {
-          labels: [
-            'Red',
-            'Blue',
-            'Yellow',
-            'Green',
-            'Black',
-            'Purple',
-            'White',
-            'Missing',
-          ],
-          datasets: [
-            {
-              data: [
-                collectionColors[0],
-                collectionColors[1],
-                collectionColors[2],
-                collectionColors[3],
-                collectionColors[4],
-                collectionColors[5],
-                collectionColors[6],
-                setCards.length - setCardsCollected.length,
-              ],
-              backgroundColor: [
-                '#ef1919',
-                '#19a0e3',
-                '#ffd619',
-                '#19b383',
-                '#191919',
-                '#8d6fdb',
-                '#ffffff',
-                'grey',
-              ],
-              hoverBackgroundColor: [
-                '#ef1919',
-                '#19a0e3',
-                '#ffd619',
-                '#19b383',
-                '#191919',
-                '#8d6fdb',
-                '#ffffff',
-                'grey',
-              ],
-            },
-          ],
-        };
+    // Filter our cards that are collected from the settings
+    if (settings.collectionSets.length > 0) {
+      setCards = setCards.filter((card: DigimonCard) => {
+        const cardSet = card.id.split('-')[0];
+        return settings.collectionSets.includes(cardSet);
       });
-  }
+    }
+
+    const setCardsCollected = setCards.filter((card: DigimonCard) =>
+      collection.find((colCard) => {
+        if (colCard.id !== card.id) {
+          return;
+        }
+
+        if (card.version !== 'Normal') {
+          return colCard.count >= settings.aaCollectionMinimum;
+        }
+
+        return colCard.count >= settings.collectionMinimum;
+      }),
+    );
+
+    const collectionColors = this.getColorCardArray(setCardsCollected);
+
+    this.data = {
+      labels: [
+        'Red',
+        'Blue',
+        'Yellow',
+        'Green',
+        'Black',
+        'Purple',
+        'White',
+        'Missing',
+      ],
+      datasets: [
+        {
+          data: [
+            collectionColors[0],
+            collectionColors[1],
+            collectionColors[2],
+            collectionColors[3],
+            collectionColors[4],
+            collectionColors[5],
+            collectionColors[6],
+            setCards.length - setCardsCollected.length,
+          ],
+          backgroundColor: [
+            '#ef1919',
+            '#19a0e3',
+            '#ffd619',
+            '#19b383',
+            '#191919',
+            '#8d6fdb',
+            '#ffffff',
+            'grey',
+          ],
+          hoverBackgroundColor: [
+            '#ef1919',
+            '#19a0e3',
+            '#ffd619',
+            '#19b383',
+            '#191919',
+            '#8d6fdb',
+            '#ffffff',
+            'grey',
+          ],
+        },
+      ],
+    };
+    this.changeDetection.detectChanges();
+  });
 
   getColorCardArray(cards: DigimonCard[]): number[] {
     const red = cards.filter((card) => card.color.startsWith('Red')).length;
@@ -172,9 +151,5 @@ export class CollectionCircleComponent implements OnInit, OnChanges, OnDestroy {
     const white = cards.filter((card) => card.color.startsWith('White')).length;
 
     return [red, blue, yellow, green, black, purple, white];
-  }
-
-  ngOnDestroy() {
-    this.onDestroy$.next(true);
   }
 }

@@ -2,7 +2,6 @@ import { NgClass, NgFor, NgStyle } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Store } from '@ngrx/store';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
@@ -12,11 +11,9 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ListboxModule } from 'primeng/listbox';
 import { RippleModule } from 'primeng/ripple';
 import { TooltipModule } from 'primeng/tooltip';
-import { first } from 'rxjs';
-import { JAPTIERLIST, TIERLIST } from '../../../../models';
-import { WebsiteActions } from '../../../store/digimon.actions';
-import { selectAllCards } from '../../../store/digimon.selectors';
-import { emptyDeck } from '../../../store/reducers/digimon.reducers';
+import { emptyDeck, JAPTIERLIST, TIERLIST } from '../../../../models';
+import { DigimonCardStore } from '../../../store/digimon-card.store';
+import { WebsiteStore } from '../../../store/website.store';
 import { DeckDialogComponent } from '../../shared/dialogs/deck-dialog.component';
 
 @Component({
@@ -125,6 +122,8 @@ import { DeckDialogComponent } from '../../shared/dialogs/deck-dialog.component'
   ],
 })
 export class TierlistComponent {
+  websiteStore = inject(WebsiteStore);
+
   currentRegion = 'GLOBAL';
   tierlist = TIERLIST;
   tiers = [
@@ -143,17 +142,13 @@ export class TierlistComponent {
   cardId: string;
   protected readonly emptyDeck = emptyDeck;
 
+  private digimonCardStore = inject(DigimonCardStore);
   private messageService = inject(MessageService);
 
-  constructor(
-    private store: Store,
-    private router: Router,
-  ) {}
+  constructor(private router: Router) {}
 
   openCommunityWithSearch(card: string) {
-    this.store.dispatch(
-      WebsiteActions.setCommunityDeckSearch({ communityDeckSearch: card }),
-    );
+    this.websiteStore.updateCommunityDeckSearch(card);
     this.router.navigateByUrl('/decks');
   }
 
@@ -190,24 +185,21 @@ export class TierlistComponent {
   }
 
   addDeck() {
-    this.store
-      .select(selectAllCards)
-      .pipe(first())
-      .subscribe((cards) => {
-        const card = cards.find((card) => card.id === this.cardId);
-        if (card) {
-          const deck = {
-            name: card.name.english,
-            card: card.id,
-            image: card.cardImage,
-          };
-          this.tierlist[0].push(deck);
-        } else {
-          this.messageService.add({
-            severity: 'error',
-            summary: 'Card ID not found.',
-          });
-        }
+    const card = this.digimonCardStore
+      .cards()
+      .find((card) => card.id === this.cardId);
+    if (card) {
+      const deck = {
+        name: card.name.english,
+        card: card.id,
+        image: card.cardImage,
+      };
+      this.tierlist[0].push(deck);
+    } else {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Card ID not found.',
       });
+    }
   }
 }

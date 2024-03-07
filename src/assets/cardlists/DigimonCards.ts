@@ -1,4 +1,5 @@
-import { CARDSET } from '../../models';
+import { find } from 'rxjs';
+import { CARDSET, IDigimonCards } from '../../models';
 import { DigimonCard } from '../../models';
 import DigimonCardsJsonENG from './PreparedDigimonCardsENG.json';
 import DigimonCardsJsonJAP from './PreparedDigimonCardsJAP.json';
@@ -18,11 +19,13 @@ function setupJsonJAP(): DigimonCard[] {
 }
 
 export function setupDigimonCardMap(
-  cardset: CARDSET,
+  cards: DigimonCard[],
 ): Map<string, DigimonCard> {
-  return cardset === CARDSET.English
-    ? mapJsonToEngCardList()
-    : mapJsonToJapCardList();
+  const digimonCardMap = new Map<string, DigimonCard>();
+  cards.forEach((digimonCard) => {
+    digimonCardMap.set(digimonCard.id, digimonCard);
+  });
+  return digimonCardMap;
 }
 
 function mapJsonToEngCardList(): Map<string, DigimonCard> {
@@ -31,20 +34,6 @@ function mapJsonToEngCardList(): Map<string, DigimonCard> {
   const digimonCards: DigimonCard[] = [...DigimonCardsJsonENG];
   digimonCards.forEach((digimonCard: DigimonCard) => {
     cards.set(digimonCard.id, digimonCard);
-  });
-
-  return cards;
-}
-
-function mapJsonToJapCardList(): Map<string, DigimonCard> {
-  const cards: Map<string, DigimonCard> = new Map<string, DigimonCard>();
-
-  const digimonCards: DigimonCard[] = [...DigimonCardsJsonJAP];
-  digimonCards.forEach((digimonCard: DigimonCard) => {
-    cards.set(digimonCard.id, {
-      ...digimonCard,
-      cardImage: addJBeforeWebp(digimonCard.cardImage),
-    });
   });
 
   return cards;

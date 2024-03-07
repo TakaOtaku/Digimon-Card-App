@@ -1,6 +1,6 @@
-import { IColor } from "./color.interface";
-import { ICountCard } from "./count-card.interface";
-import { ITag } from "./tag.interface";
+import { IColor } from './color.interface';
+import { ICountCard } from './count-card.interface';
+import { ITag } from './tag.interface';
 
 export interface IDeck {
   id: string;

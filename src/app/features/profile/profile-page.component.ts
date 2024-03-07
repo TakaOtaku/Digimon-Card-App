@@ -2,13 +2,15 @@ import { AsyncPipe, Location, NgIf } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
+  effect,
+  inject,
   OnDestroy,
   OnInit,
 } from '@angular/core';
+import { toObservable } from '@angular/core/rxjs-interop';
 import { UntypedFormControl } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
-import { Store } from '@ngrx/store';
 import {
   filter,
   first,
@@ -22,11 +24,7 @@ import {
 import { IDeck, ISave } from '../../../models';
 import { AuthService } from '../../services/auth.service';
 import { DigimonBackendService } from '../../services/digimon-backend.service';
-import {
-  selectDecks,
-  selectSave,
-  selectShowUserStats,
-} from '../../store/digimon.selectors';
+import { SaveStore } from '../../store/save.store';
 import { PageComponent } from '../shared/page.component';
 import { DeckFilterComponent } from './components/deck-filter.component';
 import { DecksComponent } from './components/decks.component';
@@ -39,7 +37,7 @@ import { UserStatsComponent } from './components/user-stats.component';
       <div
         class="flex flex-col self-baseline px-5 max-w-sm sm:max-w-3xl md:max-w-5xl lg:max-w-6xl xl:max-w-7xl mx-auto">
         <digimon-user-stats
-          *ngIf="showUserStats$ | async"
+          *ngIf="showUserStats"
           [save]="save"
           class="mx-auto my-1 w-[calc(100%-3rem)] sm:w-full"></digimon-user-stats>
 
@@ -67,10 +65,12 @@ import { UserStatsComponent } from './components/user-stats.component';
   ],
 })
 export class ProfilePageComponent implements OnInit, OnDestroy {
+  saveStore = inject(SaveStore);
+
   save$: Observable<ISave | null>;
   decks: IDeck[];
   filteredDecks: IDeck[];
-  showUserStats$ = this.store.select(selectShowUserStats);
+  showUserStats = this.saveStore.settings().showUserStats;
 
   searchFilter = new UntypedFormControl('');
   tagFilter = new UntypedFormControl([]);
@@ -84,16 +84,21 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     public authService: AuthService,
     private digimonBackendService: DigimonBackendService,
-    private store: Store,
     private meta: Meta,
     private title: Title,
-  ) {}
-
-  ngOnInit() {
-    this.makeGoogleFriendly();
+  ) {
+    effect(() => {
+      this.decks = this.saveStore.decks().sort((a, b) => {
+        const aTitle = a.title ?? '';
+        const bTitle = b.title ?? '';
+        return aTitle.localeCompare(bTitle);
+      });
+      this.filteredDecks = this.decks;
+      this.filterChanges();
+    });
 
     this.save$ = merge(
-      this.store.select(selectSave),
+      toObservable(this.saveStore.save),
       this.authService.authChange.pipe(
         tap(() => this.changeURL()),
         switchMap(() => {
@@ -121,8 +126,10 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
         }),
       ),
     );
+  }
 
-    this.storeSubscriptions();
+  ngOnInit() {
+    this.makeGoogleFriendly();
 
     this.searchFilter.valueChanges
       .pipe(takeUntil(this.onDestroy$))
@@ -135,21 +142,6 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.onDestroy$.next(true);
     this.onDestroy$.unsubscribe();
-  }
-
-  storeSubscriptions() {
-    this.store
-      .select(selectDecks)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((decks) => {
-        this.decks = decks.sort((a, b) => {
-          const aTitle = a.title ?? '';
-          const bTitle = b.title ?? '';
-          return aTitle.localeCompare(bTitle);
-        });
-        this.filteredDecks = this.decks;
-        this.filterChanges();
-      });
   }
 
   changeURL() {

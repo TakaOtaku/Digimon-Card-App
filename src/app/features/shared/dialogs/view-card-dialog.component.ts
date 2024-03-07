@@ -1,33 +1,23 @@
 import { AsyncPipe, NgClass, NgForOf, NgIf, NgStyle } from '@angular/common';
 import {
+  ChangeDetectorRef,
   Component,
-  EventEmitter,
+  effect,
   HostListener,
-  Input,
-  OnChanges,
-  OnDestroy,
-  OnInit,
-  Output,
-  SimpleChanges,
+  inject,
 } from '@angular/core';
-import { Store } from '@ngrx/store';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
-import { map, Subject, takeUntil } from 'rxjs';
 import { ImgFallbackDirective } from 'src/app/directives/ImgFallback.directive';
-import { dummyCard } from 'src/app/store/reducers/digimon.reducers';
+import { DigimonCardStore } from 'src/app/store/digimon-card.store';
+import { WebsiteStore } from 'src/app/store/website.store';
 import { replacements } from 'src/models/data/keyword-replacement.data';
 
-import { DigimonCard, IDeck } from '../../../../models';
-import { ColorMap } from '../../../../models/maps/color.map';
-import { formatId, withoutJ } from '../../../functions/digimon-card.functions';
-import {
-  selectCollection,
-  selectCollectionMode,
-  selectDeck,
-  selectFilteredCards,
-} from '../../../store/digimon.selectors';
+import { ColorMap, DigimonCard, ICountCard, IDeck } from '../../../../models';
+import { formatId, withoutJ } from '../../../functions';
+import { DialogStore } from '../../../store/dialog.store';
+import { SaveStore } from '../../../store/save.store';
 
 @Component({
   selector: 'digimon-view-card-dialog',
@@ -83,7 +73,7 @@ import {
           </p>
         </div>
         <button
-          (click)="this.onClose.next(false)"
+          (click)="closeViewCard()"
           class="p-button-text ml-4 flex-shrink-0 md:ml-6"
           icon="pi pi-times"
           pButton
@@ -136,7 +126,7 @@ import {
             </p>
           </div>
           <div
-            *ngIf="collectionMode$ | async"
+            *ngIf="collectionMode"
             class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150"
             id="Digimon-Deck-Count">
             <p
@@ -145,7 +135,7 @@ import {
               In Collection
             </p>
             <p
-              *ngIf="collectionCard$ | async as collectionCard"
+              *ngIf="collectionCard"
               class="font-white ml-auto mr-1.5 font-bold leading-[1.7em]">
               {{ collectionCard.count }}x
             </p>
@@ -410,15 +400,15 @@ import {
     NgForOf,
   ],
 })
-export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
-  @Input() show: boolean = false;
-  @Input() card: DigimonCard = JSON.parse(JSON.stringify(dummyCard));
+export class ViewCardDialogComponent {
+  changeDetection = inject(ChangeDetectorRef);
+  saveStore = inject(SaveStore);
+  dialogStore = inject(DialogStore);
+  websiteStore = inject(WebsiteStore);
+  digimonCardStore = inject(DigimonCardStore);
 
-  @Input() width?: string = '50vw';
-
-  @Output() onClose = new EventEmitter<boolean>();
-
-  allCards: DigimonCard[] = [];
+  card: DigimonCard = this.dialogStore.viewCard().card;
+  width?: string = this.dialogStore.viewCard().width;
 
   png: string;
   imageAlt: string;
@@ -428,89 +418,30 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
   colorMap = ColorMap;
 
   version: string;
-  versionMap = new Map<string, string>([
-    ['Normal', 'Normal'],
-    ['AA', 'Alternative Art'],
-    ['Stamp', 'Stamped'],
-  ]);
-
   type: string;
 
-  deck: IDeck;
+  deck: IDeck = this.websiteStore.deck();
 
-  collectionMode$ = this.store.select(selectCollectionMode);
-  collectionCard$ = this.store
-    .select(selectCollection)
-    .pipe(
-      map((cards) =>
-        cards.find((colCard) => colCard.id === withoutJ(this.card.id)),
-      ),
-    );
+  collectionMode = this.saveStore.collectionMode();
+  collectionCard: ICountCard = { count: 0, id: 'BT1-001' };
 
-  private onDestroy$ = new Subject();
+  loadCard = effect(() => {
+    const collection = this.saveStore.collection();
+    this.collectionCard = collection.find(
+      (colCard) => colCard.id === withoutJ(this.card.id),
+    )!;
 
-  constructor(private store: Store) {}
+    this.card = this.dialogStore.viewCard().card;
+    this.setupView();
+  });
 
-  ngOnInit() {
-    if (this.card) {
-      this.setupView(this.card);
-    }
-    this.store
-      .select(selectDeck)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((deck) => (this.deck = deck));
-
-    this.store
-      .select(selectFilteredCards)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((cards) => (this.allCards = cards));
-  }
-
-  ngOnDestroy() {
-    this.onDestroy$.next(true);
-    this.onDestroy$.unsubscribe();
-  }
-
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes && changes['card']) {
-      const card: DigimonCard = changes['card'].currentValue;
-      this.setupView(card);
-
-      this.collectionCard$ = this.store
-        .select(selectCollection)
-        .pipe(
-          map((cards) => cards.find((colCard) => colCard.id === this.card.id)),
-        );
-    }
-  }
-
-  setupView(card: DigimonCard) {
-    this.color = this.colorMap.get(card.color)!;
+  setupView() {
+    this.color = this.colorMap.get(this.card.color)!;
     this.backgroundColor = this.color;
-    this.version = this.versionMap.get(card.version)!;
-    this.png = card.cardImage;
-    this.imageAlt = card.cardNumber + ' ' + card.name;
-    this.type = card?.cardType;
-  }
-
-  getPNG(cardSRC: string): string {
-    let engRegExp = new RegExp('\\beng\\b');
-    let japRegExp = new RegExp('\\bjap\\b');
-    let preReleaseRegExp = new RegExp('\\bpre-release\\b');
-
-    if (engRegExp.test(cardSRC)) {
-      return cardSRC
-        .replace(engRegExp, 'eng/png')
-        .replace(new RegExp('\\b.webp\\b'), '.png');
-    } else if (japRegExp.test(cardSRC)) {
-      return cardSRC
-        .replace(japRegExp, 'jap/png')
-        .replace(new RegExp('\\b.webp\\b'), '.png');
-    } else {
-      return cardSRC
-        .replace(preReleaseRegExp, 'pre-release/png')
-        .replace(new RegExp('\\b.webp\\b'), '.png');
-    }
+    this.version = this.getVersion(this.card.version)!;
+    this.png = this.card.cardImage;
+    this.imageAlt = this.card.cardNumber + ' ' + this.card.name.english;
+    this.type = this.card?.cardType;
   }
 
   openWiki() {
@@ -545,29 +476,33 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   previousCard() {
-    const id = this.allCards.findIndex((card) => this.card.id === card.id);
+    const id = this.digimonCardStore
+      .cards()
+      .findIndex((card) => this.card.id === card.id);
     if (id === -1 || id === 0) {
       return;
     }
-    const newCard = this.allCards[id - 1];
+    const newCard = this.digimonCardStore.cards()[id - 1];
     if (!newCard) {
       return;
     }
     this.card = newCard;
-    this.setupView(newCard);
+    this.setupView();
   }
 
   nextCard() {
-    const id = this.allCards.findIndex((card) => this.card.id === card.id);
-    if (id === -1 || id === this.allCards.length + 1) {
+    const id = this.digimonCardStore
+      .cards()
+      .findIndex((card) => this.card.id === card.id);
+    if (id === -1 || id === this.digimonCardStore.cards().length + 1) {
       return;
     }
-    const newCard = this.allCards[id + 1];
+    const newCard = this.digimonCardStore.cards()[id + 1];
     if (!newCard) {
       return;
     }
     this.card = newCard;
-    this.setupView(newCard);
+    this.setupView();
   }
 
   replaceWithImageTags(effect: string): string {
@@ -579,5 +514,26 @@ export class ViewCardDialogComponent implements OnInit, OnChanges, OnDestroy {
       );
     }
     return replacedText;
+  }
+
+  closeViewCard() {
+    this.dialogStore.showViewCardDialog(false);
+  }
+
+  private getVersion(version: string) {
+    if (version.includes('Foil')) {
+      return 'Foil';
+    } else if (version.includes('Textured')) {
+      return 'Textured';
+    } else if (version.includes('Release')) {
+      return 'Pre Release';
+    } else if (version.includes('Box Topper')) {
+      return 'Box Topper';
+    } else if (version.includes('Full Art')) {
+      return 'Full Art';
+    } else if (version.includes('Stamp')) {
+      return 'Stamp';
+    }
+    return 'Normal';
   }
 }

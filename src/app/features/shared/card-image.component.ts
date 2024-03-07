@@ -1,10 +1,9 @@
 import { NgClass, NgIf, NgStyle } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { ImgFallbackDirective } from 'src/app/directives/ImgFallback.directive';
-
-import { DigimonCard } from '../../../models';
-import { dummyCard } from '../../store/reducers/digimon.reducers';
+import { DigimonCard, dummyCard } from '../../../models';
+import { SaveStore } from '../../store/save.store';
 
 @Component({
   selector: 'digimon-card-image',
@@ -12,7 +11,9 @@ import { dummyCard } from '../../store/reducers/digimon.reducers';
     <div class="absolute top-1 z-10 grid w-full grid-cols-5 gap-0">
       <div></div>
       @if (
-        card.version.includes('Foil') || card.version.includes('Alternative') || card.version.includes('Textured')
+        card.version.includes('Foil') ||
+        card.version.includes('Alternative') ||
+        card.version.includes('Textured')
       ) {
         <img
           [src]="
@@ -56,10 +57,12 @@ import { dummyCard } from '../../store/reducers/digimon.reducers';
 export class CardImageComponent {
   @Input() card: DigimonCard = JSON.parse(JSON.stringify(dummyCard));
   @Input() count = 0;
-  @Input() collectionMode = false;
 
-  @Input() collectionMinimum = 0;
-  @Input() aaCollectionMinimum = 0;
+  saveStore = inject(SaveStore);
+
+  collectionMinimum = this.saveStore.collectionMinimum;
+  aaCollectionMinimum = this.saveStore.aaCollectionMinimum;
+  collectionMode = this.saveStore.collectionMode;
 
   cardBorder = '2px solid black';
   cardRadius = '5px';
@@ -99,8 +102,8 @@ export class CardImageComponent {
 
   setGrayScale(): boolean | undefined {
     if (this.card.version !== 'Normal') {
-      return this.count < this.aaCollectionMinimum && this.collectionMode;
+      return this.count < this.aaCollectionMinimum() && this.collectionMode();
     }
-    return this.count < this.collectionMinimum && this.collectionMode;
+    return this.count < this.collectionMinimum() && this.collectionMode();
   }
 }

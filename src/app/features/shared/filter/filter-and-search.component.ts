@@ -2,6 +2,8 @@ import { NgStyle } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
+  effect,
+  inject,
   OnDestroy,
   OnInit,
 } from '@angular/core';
@@ -10,17 +12,12 @@ import {
   ReactiveFormsModule,
   UntypedFormControl,
 } from '@angular/forms';
-import { Store } from '@ngrx/store';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { InputTextModule } from 'primeng/inputtext';
 import { debounceTime, Subject, takeUntil } from 'rxjs';
-import { SaveActions, WebsiteActions } from 'src/app/store/digimon.actions';
-import { IFilter } from '../../../../models';
-import {
-  selectCollectionMode,
-  selectFilter,
-} from '../../../store/digimon.selectors';
+import { FilterStore } from '../../../store/filter.store';
+import { SaveStore } from '../../../store/save.store';
 import { FilterSideBoxComponent } from './filter-side-box.component';
 
 @Component({
@@ -81,45 +78,39 @@ import { FilterSideBoxComponent } from './filter-side-box.component';
   ],
 })
 export class FilterAndSearchComponent implements OnInit, OnDestroy {
+  saveStore = inject(SaveStore);
+  filterStore = inject(FilterStore);
+
   display = false;
 
   searchFilter = new UntypedFormControl('');
   collectionMode = new UntypedFormControl(false);
 
-  private filter: IFilter;
   private onDestroy$ = new Subject();
 
-  constructor(private store: Store) {}
-
   ngOnInit(): void {
-    this.store
-      .select(selectFilter)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((filter) => {
-        this.filter = filter;
-        this.searchFilter.setValue(filter.searchFilter, { emitEvent: false });
-      });
+    this.searchFilter.setValue(this.filterStore.searchFilter(), {
+      emitEvent: false,
+    });
 
     this.searchFilter.valueChanges
-      .pipe(debounceTime(1000), takeUntil(this.onDestroy$))
+      .pipe(debounceTime(200), takeUntil(this.onDestroy$))
       .subscribe((searchFilter) => {
-        this.store.dispatch(
-          WebsiteActions.setFilter({
-            filter: { ...this.filter, searchFilter },
-          }),
-        );
+        this.filterStore.updateSearchFilter(searchFilter);
       });
-    this.store
-      .select(selectCollectionMode)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((collectionMode) =>
-        this.collectionMode.setValue(collectionMode, { emitEvent: false }),
-      );
+
+    effect(() => {
+      this.collectionMode.setValue(this.saveStore.collectionMode(), {
+        emitEvent: false,
+      });
+    });
+
     this.collectionMode.valueChanges
       .pipe(takeUntil(this.onDestroy$))
-      .subscribe((collectionMode) =>
-        this.store.dispatch(SaveActions.setCollectionMode({ collectionMode })),
-      );
+      .subscribe((collectionMode) => {
+        const settings = this.saveStore.settings();
+        this.saveStore.updateSettings({ ...settings, collectionMode });
+      });
   }
 
   ngOnDestroy() {

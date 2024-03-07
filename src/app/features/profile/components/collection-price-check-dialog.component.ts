@@ -1,16 +1,14 @@
 import { AsyncPipe, CurrencyPipe, NgFor, NgIf } from '@angular/common';
-import { Component, Input, OnDestroy } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Store } from '@ngrx/store';
 import { SharedModule } from 'primeng/api';
 import { BlockUIModule } from 'primeng/blockui';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { TableModule } from 'primeng/table';
-import { Subject, tap } from 'rxjs';
-import { dummyCard } from 'src/app/store/reducers/digimon.reducers';
 import {
   DigimonCard,
+  dummyCard,
   GroupedSets,
   ICountCard,
   ISave,
@@ -19,22 +17,20 @@ import {
   ProductCM,
   ProductCMWithCount,
 } from '../../../services/card-market.service';
-import {
-  selectAllCards,
-  selectPriceGuideCM,
-} from '../../../store/digimon.selectors';
+import { DigimonCardStore } from '../../../store/digimon-card.store';
+import { WebsiteStore } from '../../../store/website.store';
 import { CardImageComponent } from '../../shared/card-image.component';
 
 @Component({
   selector: 'digimon-collection-price-check-dialog',
   template: `
-    <ng-container *ngIf="allCards$ | async as allCards">
+    <ng-container>
       <p-blockUI [blocked]="spinner"></p-blockUI>
       <p-progressSpinner
         *ngIf="spinner"
         class="absolute left-1/2 top-1/2 z-[5000] -translate-x-1/2 -translate-y-1/2 transform"></p-progressSpinner>
 
-      <div *ngIf="prizeGuide$ | async" class="mb-2 flex flex-col">
+      <div class="mb-2 flex flex-col">
         <span>All Price-Information is from <b>CardMarket</b>.</span>
         <span class="text-xs"
           >Calculating the Card-Prices may take a while if you have a big
@@ -62,7 +58,7 @@ import { CardImageComponent } from '../../shared/card-image.component';
           [options]="groupedSets"
           [showHeader]="false"
           [showToggleAll]="false"
-          defaultLabel="Select a Set"
+          placeholder="Select a Set"
           display="chip"
           scrollHeight="250px"
           class="mb-2 mr-2 w-full max-w-[250px]"
@@ -84,7 +80,7 @@ import { CardImageComponent } from '../../shared/card-image.component';
         <span class="w-full">Couldn't find a price for: </span>
         <div *ngFor="let card of notFound">
           <digimon-card-image
-            [card]="getCard(card.cardId, allCards)"></digimon-card-image>
+            [card]="getCard(card.cardId)"></digimon-card-image>
         </div>
       </div>
 
@@ -111,7 +107,7 @@ import { CardImageComponent } from '../../shared/card-image.component';
           <tr>
             <th>
               <digimon-card-image
-                [card]="getCard(product.cardId, allCards)"></digimon-card-image>
+                [card]="getCard(product.cardId)"></digimon-card-image>
             </th>
             <th>{{ product.count }}</th>
             <td>{{ product.cardId }}</td>
@@ -189,18 +185,12 @@ import { CardImageComponent } from '../../shared/card-image.component';
     CurrencyPipe,
   ],
 })
-export class CollectionPriceCheckDialogComponent implements OnDestroy {
+export class CollectionPriceCheckDialogComponent {
   @Input() save: ISave;
 
-  cardWidth = '70px';
-  cardBorder = '2px solid black';
-  cardRadius = '5px';
+  websiteStore = inject(WebsiteStore);
 
-  viewCardDialog = false;
-  prizeGuide: ProductCM[] = [];
-  prizeGuide$ = this.store
-    .select(selectPriceGuideCM)
-    .pipe(tap((products) => (this.prizeGuide = products)));
+  prizeGuide = this.websiteStore.priceGuideCM();
   onlyMissing = false;
   spinner = false;
 
@@ -213,16 +203,7 @@ export class CollectionPriceCheckDialogComponent implements OnDestroy {
   setFilter: string[] = [];
   groupedSets = GroupedSets;
 
-  allCards$ = this.store.select(selectAllCards);
-
-  onDestroy$ = new Subject();
-
-  constructor(private store: Store) {}
-
-  ngOnDestroy() {
-    this.onDestroy$.next(true);
-    this.onDestroy$.unsubscribe();
-  }
+  private digimonCardStore = inject(DigimonCardStore);
 
   updatePrice() {
     this.spinner = true;
@@ -287,12 +268,6 @@ export class CollectionPriceCheckDialogComponent implements OnDestroy {
     this.spinner = false;
   }
 
-  showOnlyMissing() {
-    this.filteredProducts = this.onlyMissing
-      ? this.getMissingCards()
-      : this.products;
-  }
-
   getMissingCards = (): ProductCMWithCount[] => {
     return this.products
       .map((product) => {
@@ -332,8 +307,8 @@ export class CollectionPriceCheckDialogComponent implements OnDestroy {
     };
   }
 
-  getCard = (cardId: string, allCards: DigimonCard[]): DigimonCard => {
-    const card = allCards.find((card) => card.id === cardId);
+  getCard = (cardId: string): DigimonCard => {
+    const card = this.digimonCardStore.cardsMap().get(cardId);
     return card ? card : JSON.parse(JSON.stringify(dummyCard));
   };
 

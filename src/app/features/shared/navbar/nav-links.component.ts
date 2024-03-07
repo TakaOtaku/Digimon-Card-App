@@ -3,6 +3,7 @@ import {
   Component,
   EventEmitter,
   HostListener,
+  inject,
   Input,
   OnDestroy,
   OnInit,
@@ -20,11 +21,14 @@ import {
   faUsers,
 } from '@fortawesome/free-solid-svg-icons';
 import { ConfirmationService } from 'primeng/api';
+import { ButtonModule } from 'primeng/button';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { DialogModule } from 'primeng/dialog';
 import { Subject, takeUntil } from 'rxjs';
 import { IUser } from '../../../../models';
 import { AuthService } from '../../../services/auth.service';
+import { DialogStore } from '../../../store/dialog.store';
+import { SaveStore } from '../../../store/save.store';
 import { ChangelogDialogComponent } from '../dialogs/changelog-dialog.component';
 import { SettingsDialogComponent } from '../dialogs/settings-dialog.component';
 import { FilterButtonComponent } from '../filter/filter-button.component';
@@ -156,11 +160,11 @@ import { FilterButtonComponent } from '../filter/filter-button.component';
             class='min-w-auto mx-auto primary-background h-12 w-12 overflow-hidden rounded-full text-[#e2e4e6] group-hover:bg-[#64B5F6]"'>
             <img
               *ngIf="user"
-              alt="{{ this.user.displayName }}"
-              src="{{ this.user.photoURL }}" />
+              alt="{{ this.user?.displayName }}"
+              src="{{ this.user?.photoURL }}" />
           </div>
           <span class="text-[#e2e4e6] text-xs">{{
-            this.user.displayName
+            this.user?.displayName
           }}</span>
         </ng-container>
         <ng-template #userIcon>
@@ -180,7 +184,7 @@ import { FilterButtonComponent } from '../filter/filter-button.component';
         }"
         class="pi pi-ellipsis-h my-5 text-center text-[#e2e4e6] hover:text-[#64B5F6]"
         style="font-size: 1.5rem"
-        (click)="settingsShow.emit(true)"></i>
+        (click)="openSettings()"></i>
 
       <div class="grid grid-cols-2 justify-center items-center">
         <a
@@ -218,6 +222,14 @@ import { FilterButtonComponent } from '../filter/filter-button.component';
             class="pi pi-paypal px-1 text-[#e2e4e6] hover:text-[#64B5F6]"
             style="font-size: 1rem"></i>
         </a>
+        <div class="col-span-2 flex align-center justify-center">
+          <p-button
+            class="mx-auto"
+            [link]="true"
+            size="small"
+            (onClick)="showChangelog()"
+            label="Ver. 4.1"></p-button>
+        </div>
       </div>
     </div>
   `,
@@ -232,11 +244,13 @@ import { FilterButtonComponent } from '../filter/filter-button.component';
     SettingsDialogComponent,
     ChangelogDialogComponent,
     NgOptimizedImage,
+    ButtonModule,
   ],
 })
 export class NavLinksComponent implements OnInit, OnDestroy {
   @Input() sidebar = false;
-  @Output() settingsShow = new EventEmitter<boolean>();
+  dialogStore = inject(DialogStore);
+  saveStore = inject(SaveStore);
 
   user: IUser | null;
 
@@ -270,8 +284,8 @@ export class NavLinksComponent implements OnInit, OnDestroy {
 
   loginLogout() {
     this.authService.isLoggedIn
-      ? this.authService.LogOut()
-      : this.authService.GoogleAuth();
+      ? this.authService.LogOut(this.saveStore)
+      : this.authService.GoogleAuth(this.saveStore);
   }
 
   getNavigationBorder(route: string): any {
@@ -289,10 +303,15 @@ export class NavLinksComponent implements OnInit, OnDestroy {
     } else if (route === '/user') {
       return {
         'border-l-[3px] border-white':
-          this.route.includes(route) && this.sidebar,
+          this.route.includes(route) &&
+          !this.route.includes('deckbuilder') &&
+          this.sidebar,
         'border-b-[3px] lg:border-b-0 lg:border-l-[3px] border-white':
-          this.route.includes(route) && !this.sidebar,
-        'text-[#64B5F6]': this.route.includes(route),
+          this.route.includes(route) &&
+          !this.route.includes('deckbuilder') &&
+          !this.sidebar,
+        'text-[#64B5F6]':
+          this.route.includes(route) && !this.route.includes('deckbuilder'),
         'text-[#e2e4e6]': !this.route.includes(route),
       };
     }
@@ -303,5 +322,13 @@ export class NavLinksComponent implements OnInit, OnDestroy {
       'text-[#64B5F6]': this.route === route,
       'text-[#e2e4e6]': this.route !== route,
     };
+  }
+
+  openSettings() {
+    this.dialogStore.updateSettingsDialog(true);
+  }
+
+  showChangelog() {
+    this.dialogStore.updateChangelogDialog(true);
   }
 }

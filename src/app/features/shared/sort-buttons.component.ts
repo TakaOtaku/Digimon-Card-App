@@ -1,20 +1,14 @@
 import { AsyncPipe, NgClass, NgIf } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Store } from '@ngrx/store';
 import { DropdownModule } from 'primeng/dropdown';
-import { distinctUntilChanged, Observable } from 'rxjs';
 import { ISort, ISortElement } from '../../../models';
-import { selectSort } from '../../store/digimon.selectors';
-import { WebsiteActions } from './../../store/digimon.actions';
+import { WebsiteStore } from '../../store/website.store';
 
 @Component({
   selector: 'digimon-sort-buttons',
   template: `
-    <div
-      *ngIf="sort$ | async as sort"
-      class="mb-1 inline-flex rounded-md shadow-sm"
-      role="group">
+    <div class="mb-1 inline-flex rounded-md shadow-sm" role="group">
       <button
         type="button"
         (click)="changeOrder(sort)"
@@ -48,10 +42,9 @@ import { WebsiteActions } from './../../store/digimon.actions';
   ],
 })
 export class SortButtonsComponent {
+  websiteStore = inject(WebsiteStore);
   sortElement = { name: 'ID', element: 'id' };
-  sort$: Observable<ISort> = this.store
-    .select(selectSort)
-    .pipe(distinctUntilChanged());
+  sort: ISort = this.websiteStore.sort();
 
   sortOptions: ISortElement[] = [
     { name: 'ID', element: 'id' },
@@ -62,22 +55,12 @@ export class SortButtonsComponent {
     { name: 'Count', element: 'count' },
   ];
 
-  constructor(public store: Store) {}
-
   updateStore(ascOrder: boolean) {
-    this.store.dispatch(
-      WebsiteActions.setSort({
-        sort: { sortBy: this.sortElement, ascOrder },
-      }),
-    );
+    this.websiteStore.updateSort({ sortBy: this.sortElement, ascOrder });
   }
 
   changeOrder(sort: ISort) {
     const ascOrder = !sort.ascOrder;
-    this.store.dispatch(
-      WebsiteActions.setSort({
-        sort: { ...sort, ascOrder },
-      }),
-    );
+    this.websiteStore.updateSort({ ...sort, ascOrder });
   }
 }

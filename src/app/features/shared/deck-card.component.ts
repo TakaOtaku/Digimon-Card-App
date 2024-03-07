@@ -2,22 +2,21 @@ import { AsyncPipe, NgIf } from '@angular/common';
 import {
   Component,
   EventEmitter,
+  inject,
   Input,
   OnChanges,
   OnInit,
   Output,
   SimpleChanges,
 } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { DialogModule } from 'primeng/dialog';
-import { dummyCard } from 'src/app/store/reducers/digimon.reducers';
 
-import { addJBeforeWebp } from '../../../assets/cardlists/DigimonCards';
-import { DigimonCard, IDeckCard } from '../../../models';
+import { DialogModule } from 'primeng/dialog';
+import { DigimonCard, dummyCard, IDeckCard } from '../../../models';
 import { ImgFallbackDirective } from '../../directives/ImgFallback.directive';
 import { ImageService } from '../../services/image.service';
-import { WebsiteActions } from './../../store/digimon.actions';
-import { ViewCardDialogComponent } from './dialogs/view-card-dialog.component';
+import { DialogStore } from '../../store/dialog.store';
+import { DigimonCardStore } from '../../store/digimon-card.store';
+import { WebsiteStore } from '../../store/website.store';
 
 @Component({
   selector: 'digimon-deck-card',
@@ -96,33 +95,13 @@ import { ViewCardDialogComponent } from './dialogs/view-card-dialog.component';
         }}
       </p>
     </div>
-
-    <p-dialog
-      [(visible)]="viewCardDialog"
-      [showHeader]="false"
-      [modal]="true"
-      [dismissableMask]="true"
-      [resizable]="false"
-      styleClass="overflow-x-hidden"
-      (close)="viewCardDialog = false">
-      <digimon-view-card-dialog
-        (onClose)="viewCardDialog = false"
-        [card]="viewCard"></digimon-view-card-dialog>
-    </p-dialog>
   `,
   standalone: true,
-  imports: [
-    NgIf,
-    DialogModule,
-    ViewCardDialogComponent,
-    AsyncPipe,
-    ImgFallbackDirective,
-  ],
+  imports: [NgIf, DialogModule, AsyncPipe, ImgFallbackDirective],
   providers: [ImageService],
 })
 export class DeckCardComponent implements OnChanges, OnInit {
   @Input() public card: IDeckCard;
-  @Input() public cards: DigimonCard[];
   @Input() public missingCards?: boolean = false;
   @Input() public cardHave?: number = 0;
   @Input() public edit? = true;
@@ -130,16 +109,13 @@ export class DeckCardComponent implements OnChanges, OnInit {
 
   @Output() public removeCard = new EventEmitter<boolean>();
 
+  websiteStore = inject(WebsiteStore);
+  digimonCardStore = inject(DigimonCardStore);
+  dialogStore = inject(DialogStore);
+
   completeCard: DigimonCard = JSON.parse(JSON.stringify(dummyCard));
 
   viewCard: DigimonCard = JSON.parse(JSON.stringify(dummyCard));
-  viewCardDialog = false;
-  protected readonly addJBeforeWebp = addJBeforeWebp;
-
-  constructor(
-    private store: Store,
-    private imageService: ImageService,
-  ) {}
 
   ngOnInit() {
     this.mapCard();
@@ -151,7 +127,7 @@ export class DeckCardComponent implements OnChanges, OnInit {
 
   mapCard(): void {
     this.completeCard =
-      this.cards.find((card) => this.card.id === card.id) ??
+      this.digimonCardStore.cardsMap().get(this.card.id) ??
       (JSON.parse(JSON.stringify(dummyCard)) as DigimonCard);
   }
 
@@ -162,15 +138,11 @@ export class DeckCardComponent implements OnChanges, OnInit {
     }
 
     if (this.sideDeck) {
-      this.store.dispatch(
-        WebsiteActions.addCardToSideDeck({ cardId: this.card.id }),
-      );
+      this.websiteStore.addCardToSideDeck(this.card.id);
       return;
     }
 
-    this.store.dispatch(
-      WebsiteActions.addCardToDeck({ addCardToDeck: this.card.id }),
-    );
+    this.websiteStore.addCardToDeck(this.card.id);
   }
 
   reduceCardCount(event?: any): void {
@@ -180,19 +152,19 @@ export class DeckCardComponent implements OnChanges, OnInit {
     }
 
     if (this.sideDeck) {
-      this.store.dispatch(
-        WebsiteActions.removeCardFromSideDeck({ cardId: this.card.id }),
-      );
+      this.websiteStore.removeCardFromSideDeck(this.card.id);
       return;
     }
 
-    this.store.dispatch(
-      WebsiteActions.removeCardFromDeck({ cardId: this.card.id }),
-    );
+    this.websiteStore.removeCardFromDeck(this.card.id);
   }
 
   showCardDetails() {
-    this.viewCard = this.cards.find((card) => card.id === this.card.id)!;
-    this.viewCardDialog = true;
+    this.viewCard = this.digimonCardStore.cardsMap().get(this.card.id)!;
+    this.dialogStore.updateViewCardDialog({
+      show: true,
+      card: this.viewCard,
+      width: '50vw',
+    });
   }
 }

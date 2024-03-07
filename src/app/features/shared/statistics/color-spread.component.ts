@@ -1,5 +1,6 @@
 import {
   Component,
+  inject,
   Input,
   OnChanges,
   OnInit,
@@ -10,6 +11,7 @@ import {
   getCountFromDeckCards,
   mapToDeckCards,
 } from '../../../functions/digimon-card.functions';
+import { DigimonCardStore } from '../../../store/digimon-card.store';
 import { SingleContainerComponent } from '../single-container.component';
 import { NgIf, NgStyle } from '@angular/common';
 
@@ -120,12 +122,11 @@ import { NgIf, NgStyle } from '@angular/common';
 })
 export class ColorSpreadComponent implements OnInit, OnChanges {
   @Input() deck: IDeck | null;
-  @Input() allCards: DigimonCard[];
   @Input() container = false;
 
   colorSpread = [0, 0, 0, 0, 0, 0, 0];
 
-  constructor() {}
+  private digimonCardStore = inject(DigimonCardStore);
 
   ngOnInit(): void {
     this.getColorSpread();
@@ -140,7 +141,10 @@ export class ColorSpreadComponent implements OnInit, OnChanges {
       return;
     }
 
-    const cards = mapToDeckCards(this.deck.cards, this.allCards);
+    const cards = mapToDeckCards(
+      this.deck.cards,
+      this.digimonCardStore.cards(),
+    );
     const red = cards.filter((card) => card.color.split('/')[0] === 'Red');
     const blue = cards.filter((card) => card.color.split('/')[0] === 'Blue');
     const yellow = cards.filter(

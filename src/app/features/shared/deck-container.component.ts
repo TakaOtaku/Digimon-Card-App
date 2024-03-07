@@ -2,20 +2,17 @@ import { AsyncPipe, DatePipe, NgIf, NgStyle } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
+  inject,
   Input,
-  OnInit,
+  OnChanges,
+  SimpleChanges,
 } from '@angular/core';
-import { Store } from '@ngrx/store';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { BehaviorSubject, first } from 'rxjs';
-import { DigimonCard, IDeck, ITournamentDeck } from '../../../models';
-import { ColorMap } from '../../../models/maps/color.map';
-import { setDeckImage } from '../../functions/digimon-card.functions';
+import { ColorMap, IDeck, ITournamentDeck } from '../../../models';
+import { setDeckImage } from '../../functions';
 import { ImageService } from '../../services/image.service';
-import {
-  selectAllCards,
-  selectDigimonCardMap,
-} from '../../store/digimon.selectors';
+import { DigimonCardStore } from '../../store/digimon-card.store';
 
 @Component({
   selector: 'digimon-deck-container',
@@ -33,14 +30,9 @@ import {
         'background-position-y': '25%'
       }">
       <div
-        [ngStyle]="{ background: colorMap.get(deck.color.name) }"
-        class="text-shadow-white-xs relative left-[-5px] top-[10px] w-24 border border-black bg-opacity-80 text-center text-xs font-bold uppercase">
-        <span *ngIf="mode !== 'Tournament'" class="mr-1">{{
-          getTags(deck)
-        }}</span>
-        <span *ngIf="mode === 'Tournament'" class="mr-1">{{
-          getTournamentDeck(deck).format
-        }}</span>
+        [ngStyle]="{ background: colorMap.get(deck?.color?.name ?? '') }"
+        class="text-shadow-white-xs relative left-[-5px] top-[10px] w-24 border text-black border-black bg-opacity-80 text-center text-xs font-bold uppercase">
+        <span class="mr-1">{{ getTags(deck) }}</span>
       </div>
 
       <div *ngIf="isIllegal()" class="absolute right-[35px] top-[5px]">
@@ -93,37 +85,25 @@ import {
   imports: [LazyLoadImageModule, NgStyle, NgIf, DatePipe, AsyncPipe],
   providers: [ImageService],
 })
-export class DeckContainerComponent implements OnInit {
+export class DeckContainerComponent implements OnChanges {
   @Input() deck: IDeck | ITournamentDeck;
   @Input() mode = 'Basic';
   cardImageSubject$ = new BehaviorSubject<string>(
     '../../../assets/images/digimon-card-back.webp',
   );
 
-  digimonCardMap$ = this.store.select(selectDigimonCardMap);
-
   colorMap = ColorMap;
 
-  allCards: DigimonCard[] = [];
+  private digimonCardStore = inject(DigimonCardStore);
 
-  constructor(
-    private store: Store,
-    private imageService: ImageService,
-  ) {}
+  constructor(private imageService: ImageService) {}
 
-  ngOnInit() {
-    this.store
-      .select(selectAllCards)
-      .pipe(first())
-      .subscribe((cards) => {
-        this.allCards = cards;
-      });
-    this.digimonCardMap$
-      .pipe(first())
-      .subscribe((digimonCardMap) => this.setCardImage(digimonCardMap));
+  ngOnChanges(changes: SimpleChanges): void {
+    this.setCardImage();
   }
 
-  setCardImage(digimonCardMap: Map<string, DigimonCard>) {
+  setCardImage() {
+    const digimonCardMap = this.digimonCardStore.cardsMap();
     let imagePath = '';
     // If there is an ImageCardId set it
     if (this.deck.imageCardId) {
@@ -132,7 +112,7 @@ export class DeckContainerComponent implements OnInit {
         imageCard?.cardImage ?? '../../../assets/images/digimon-card-back.webp';
     } else if (this.deck.cards && this.deck.cards.length < 0) {
       // If there are cards in the deck, set it to the first card
-      const imageCard = setDeckImage(this.deck, this.allCards); // Replace setDeckImage with the appropriate function
+      const imageCard = setDeckImage(this.deck, this.digimonCardStore.cards()); // Replace setDeckImage with the appropriate function
       imagePath = imageCard?.cardImage ?? '';
     }
 

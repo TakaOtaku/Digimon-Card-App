@@ -25,14 +25,14 @@ def set_tags(deck: Dict) -> List[Dict]:
 
 def set_newest_set(cards: List[Dict]) -> Dict:
     release_order = [
-        'ST17', 'EX06', 'BT16', 'ST17', 'BT15','EX05', 'BT14', 'ST16', 'ST15', 'RB1', 'BT13', 'EX4', 'BT12',
+        'BT17', 'EX06', 'BT16', 'ST17', 'BT15','EX05', 'BT14', 'ST16', 'ST15', 'RB1', 'BT13', 'EX4', 'BT12',
         'ST14', 'BT11', 'EX3', 'BT10', 'ST13', 'ST12', 'BT9', 'EX2', 'BT8', 'ST10', 'ST9', 'BT7', 'EX1',
         'BT6', 'ST8', 'ST7', 'BT5', 'BT4', 'ST6', 'ST5', 'ST4', 'BT3', 'BT2', 'BT1', 'ST3', 'ST2', 'ST1'
     ]
     # Check each card in the deck and see what the newest card id is based on the release order
     # Then add a tag with the newest set
-    for card in cards:
-        for release in release_order:
+    for release in release_order:
+        for card in cards:
             if card['id'].startswith(release):
                 return {'name': release, 'color': 'Success'}
     return {'name': 'Unknown', 'color': 'Warning'}
@@ -78,6 +78,19 @@ def is_deck_valid(deck: Dict) -> bool:
         return False
 
     return True
+
+def withoutAA(cards):
+  cardsWithoutAA = []
+  for card in cards:
+    cardID = card['id']
+    if ('_P' in card['id']):
+      cardID = card['id'].split('_P')[0]
+    newCard = card
+    newCard['id'] = cardID
+    cardsWithoutAA.append(newCard)
+  return cardsWithoutAA
+
+
 
 restricted_cards = [
     'ST6-03',
@@ -127,14 +140,17 @@ decksInValid = []
 
 #Iterate through every user and his decks
 for user in users:
-    print("Checking Usser: " + user['displayName'] + " with " + str(len(user['decks'])) + " decks")
+    deckString = user['decks']
+    decks = json.loads(deckString)
+    print("Checking User: " + user['displayName'] + "|" + user['uid'] + " with " + str(len(decks)) + " decks")
+
+    if (len(decks) > 100):
+        print("User " + user['displayName'] + " has more than 100 decks and will be skipped")
 
     userId = user['uid']
     userName = user['displayName']
     photoUrl = user['photoURL']
     # JSON Parse the decks
-    deckString = user['decks']
-    decks = json.loads(deckString)
     for deck in decks:
         if is_deck_valid(deck) == False:
             decksInValid.append(deck)
@@ -146,14 +162,18 @@ for user in users:
         decksToAdd.append(deck)
 
 # Check the decksToAdd for decks with the same cards and delete all but the oldest one
+index = 1
 for deck in decksToAdd:
     for deck2 in decksToAdd:
-        if deck['cards'] == deck2['cards'] and deck['date'] > deck2['date']:
-            print("Deck " + deck['title'] + " is a duplicate of " + deck2['title'] + " and will be deleted")
+        if withoutAA(deck['cards']) == withoutAA(deck2['cards']) and deck['date'] > deck2['date']:
+            print("Deck " + deck['title'] + " is a duplicate of " + deck2['title'] + " and will be removed from the Array.")
             decksToAdd.remove(deck2)
+    print(str(index) + " decks checked. " + str(len(decksToAdd) - index) + " decks left.")
+    index = index + 1
 
 # Post each deck to the database
 for deck in decksToAdd:
     print("Adding deck " + deck['title'] + " to the database")
-    response = requests.post(decksAPI, json=deck)
-    print(response)
+    url = decksAPI + "/" + deck['id']
+    response = requests.put(url, json=deck)
+    print(response.reason)

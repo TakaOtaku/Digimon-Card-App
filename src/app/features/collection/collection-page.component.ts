@@ -1,18 +1,12 @@
 import { AsyncPipe, NgIf } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  inject,
-  OnInit,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { map, of, switchMap } from 'rxjs';
+import { emptySave } from '../../../models';
 import { DigimonBackendService } from '../../services/digimon-backend.service';
-import { emptySave } from '../../store/reducers/save.reducer';
 import { FilterAndSearchComponent } from '../shared/filter/filter-and-search.component';
 import { PageComponent } from '../shared/page.component';
-import { CardListComponent } from './components/card-list.component';
 import { PaginationCardListComponent } from './components/pagination-card-list.component';
 
 @Component({
@@ -29,20 +23,20 @@ import { PaginationCardListComponent } from './components/pagination-card-list.c
   standalone: true,
   imports: [
     FilterAndSearchComponent,
-    CardListComponent,
     PaginationCardListComponent,
     PageComponent,
     AsyncPipe,
     NgIf,
   ],
 })
-export class CollectionPageComponent implements OnInit {
+export class CollectionPageComponent {
   meta = inject(Meta);
   title = inject(Title);
 
   private digimonBackendService = inject(DigimonBackendService);
   private route = inject(ActivatedRoute);
 
+  // Check the URL if another Save should be loaded
   checkUrl$ = this.route.params.pipe(
     switchMap((params) => {
       if (params['userId']) {
@@ -54,7 +48,7 @@ export class CollectionPageComponent implements OnInit {
     map((save) => save.collection),
   );
 
-  ngOnInit(): void {
+  constructor() {
     this.makeGoogleFriendly();
   }
 

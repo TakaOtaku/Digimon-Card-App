@@ -32,28 +32,24 @@ import { NgIf } from '@angular/common';
         <div class="hidden sm:flex flex-row justify-center">
           <div class="flex flex-col">
             <digimon-collection-circle
-              [collection]="save.collection"
               [type]="'BT'"
               class="mx-2"></digimon-collection-circle>
             <label class="text-center">BT</label>
           </div>
           <div class="flex flex-col">
             <digimon-collection-circle
-              [collection]="save.collection"
               [type]="'EX'"
               class="mx-2"></digimon-collection-circle>
             <label class="text-center">EX</label>
           </div>
           <div class="flex flex-col">
             <digimon-collection-circle
-              [collection]="save.collection"
               [type]="'ST'"
               class="mx-2"></digimon-collection-circle>
             <label class="text-center">ST</label>
           </div>
           <div class="flex flex-col">
             <digimon-collection-circle
-              [collection]="save.collection"
               [type]="'P-'"
               class="mx-2"></digimon-collection-circle>
             <label class="text-center">P</label>
@@ -68,7 +64,6 @@ import { NgIf } from '@angular/common';
           [autoplayInterval]="10000">
           <ng-template let-circle pTemplate="item">
             <digimon-collection-circle
-              [collection]="save.collection"
               [type]="circle.label"></digimon-collection-circle>
             <div class="text-center w-full mx-auto font-bold">
               {{ circle.label }}

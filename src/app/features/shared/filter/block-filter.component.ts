@@ -1,30 +1,30 @@
 import { AsyncPipe, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { WebsiteActions } from 'src/app/store/digimon.actions';
+import { Component, effect, inject } from '@angular/core';
 import { BlockButtons } from '../../../../models';
-import { selectBlockFilter } from '../../../store/digimon.selectors';
+import { FilterStore } from '../../../store/filter.store';
 import { MultiButtonsComponent } from '../multi-buttons.component';
 
 @Component({
   selector: 'digimon-block-filter',
   template: `
     <digimon-multi-buttons
-      *ngIf="{ value: blockFilter$ | async } as blockFilter"
-      (clickEvent)="changeBlock($event, blockFilter.value ?? [])"
+      (clickEvent)="changeBlock($event, blockFilter)"
       [buttonArray]="blockButtons"
-      [value]="blockFilter.value"
+      [value]="blockFilter"
       title="Block"></digimon-multi-buttons>
   `,
   standalone: true,
   imports: [NgIf, MultiButtonsComponent, AsyncPipe],
 })
 export class BlockFilterComponent {
-  blockFilter$ = this.store.select(selectBlockFilter);
+  filterStore = inject(FilterStore);
+  blockFilter: string[] = this.filterStore.blockFilter();
 
   blockButtons = BlockButtons;
 
-  constructor(private store: Store) {}
+  filterChange = effect(() => {
+    this.blockFilter = this.filterStore.blockFilter();
+  });
 
   changeBlock(block: string, blockFilter: string[]) {
     let blocks = [];
@@ -34,6 +34,6 @@ export class BlockFilterComponent {
       blocks = [...new Set(blockFilter), block];
     }
 
-    this.store.dispatch(WebsiteActions.setBlockFilter({ blockFilter: blocks }));
+    this.filterStore.updateBlockFilter(blocks);
   }
 }

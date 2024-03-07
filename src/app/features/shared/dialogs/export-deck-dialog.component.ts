@@ -1,31 +1,14 @@
 import { NgClass, NgIf } from '@angular/common';
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnChanges,
-  OnDestroy,
-  OnInit,
-  Output,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, effect, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Store } from '@ngrx/store';
 import { saveAs } from 'file-saver';
 import { ButtonModule } from 'primeng/button';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { SelectButtonModule } from 'primeng/selectbutton';
-import { first, Subject } from 'rxjs';
-import { DigimonCard, IDeck, ColorsWithoutMulti } from '../../../../models';
-import {
-  compareIDs,
-  formatId,
-  mapToDeckCards,
-} from '../../../functions/digimon-card.functions';
-import {
-  selectAllCards,
-  selectDigimonCardMap,
-} from '../../../store/digimon.selectors';
+import { ColorsWithoutMulti, DigimonCard, IDeck } from '../../../../models';
+import { compareIDs, formatId, mapToDeckCards } from '../../../functions';
+import { DialogStore } from '../../../store/dialog.store';
+import { DigimonCardStore } from '../../../store/digimon-card.store';
 
 @Component({
   selector: 'digimon-export-deck-dialog',
@@ -127,13 +110,12 @@ import {
     ButtonModule,
   ],
 })
-export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
-  @Input() show: boolean = false;
-  @Input() deck: IDeck;
+export class ExportDeckDialogComponent {
+  digimonCardStore = inject(DigimonCardStore);
+  dialogStore = inject(DialogStore);
 
-  @Output() onClose = new EventEmitter<boolean>();
-
-  digimonCards: DigimonCard[] = [];
+  deck: IDeck = this.dialogStore.exportDeck().deck;
+  digimonCards: DigimonCard[] = this.digimonCardStore.cards();
 
   exportList = ['TEXT', 'TTS', 'UNTAP', 'IMAGE'];
   exportType = 'TEXT';
@@ -142,11 +124,15 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
   colors = ColorsWithoutMulti;
   selectedColor = 'Red';
 
-  private digimonCardMap: Map<string, DigimonCard> = new Map();
+  setExport = effect(() => {
+    this.deck = this.dialogStore.exportDeck().deck;
+    this.setExportTypeText();
+    this.exportType = 'TEXT';
+  });
 
-  private onDestroy$ = new Subject();
-
-  constructor(private store: Store) {}
+  updateDigimonCards = effect(() => {
+    this.digimonCards = this.digimonCardStore.cards();
+  });
 
   private static writeText(
     ctx: any,
@@ -168,30 +154,6 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
     ctx.fillStyle = fillStyle ? fillStyle : '#f97316';
     ctx.textAlign = 'center';
     ctx.fillText(text, x * scale, y * scale);
-  }
-
-  ngOnInit() {
-    this.store
-      .select(selectAllCards)
-      .pipe(first())
-      .subscribe((cards) => {
-        this.digimonCards = cards;
-      });
-    this.store
-      .select(selectDigimonCardMap)
-      .pipe(first())
-      .subscribe((map) => {
-        this.digimonCardMap = map;
-      });
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    this.setExportTypeText();
-    this.exportType = 'TEXT';
-  }
-
-  ngOnDestroy(): void {
-    this.onDestroy$.next(true);
   }
 
   colorChecked(color: string): boolean {
@@ -268,7 +230,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
   private setExportTypeText(): void {
     this.deckText = '// Digimon DeckList\n\n';
     this.deck.cards.forEach((card) => {
-      const digimonCard = this.digimonCardMap.get(card.id);
+      const digimonCard = this.digimonCardStore.cardsMap().get(card.id);
       if (digimonCard) {
         this.deckText += `${card.id.replace('ST0', 'ST')} ${digimonCard?.name
           .english} ${card.count}\n`;
@@ -291,7 +253,7 @@ export class ExportDeckDialogComponent implements OnInit, OnChanges, OnDestroy {
   private setExportTypeUNTAP(): void {
     this.deckText = '// Digimon DeckList\n\n';
     this.deck.cards.forEach((card) => {
-      const dc = this.digimonCards.find((dc) => compareIDs(dc.id, card.id));
+      const dc = this.digimonCardStore.cardsMap().get(card.id);
       this.deckText += `${card.count} ${dc?.name
         .english} [DCG] (${card.id.replace('ST0', 'ST')})\n`;
     });

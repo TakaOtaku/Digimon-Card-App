@@ -1,19 +1,16 @@
 import { AsyncPipe, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { Component, effect, inject } from '@angular/core';
 import { VersionButtons } from '../../../../models';
-import { selectVersionFilter } from '../../../store/digimon.selectors';
+import { FilterStore } from '../../../store/filter.store';
 import { MultiButtonsComponent } from '../multi-buttons.component';
-import { WebsiteActions } from './../../../store/digimon.actions';
 
 @Component({
   selector: 'digimon-version-filter',
   template: `
     <digimon-multi-buttons
-      *ngIf="{ value: versionFilter$ | async } as versionFilter"
-      (clickEvent)="changeVersion($event, versionFilter.value ?? [])"
+      (clickEvent)="changeVersion($event, versionFilter)"
       [buttonArray]="versionButtons"
-      [value]="versionFilter.value"
+      [value]="versionFilter"
       [perRow]="3"
       title="Version"></digimon-multi-buttons>
   `,
@@ -21,11 +18,14 @@ import { WebsiteActions } from './../../../store/digimon.actions';
   imports: [NgIf, MultiButtonsComponent, AsyncPipe],
 })
 export class VersionFilterComponent {
-  versionFilter$ = this.store.select(selectVersionFilter);
+  filterStore = inject(FilterStore);
+  versionFilter: string[] = this.filterStore.versionFilter();
 
   versionButtons = VersionButtons;
 
-  constructor(private store: Store) {}
+  filterChange = effect(() => {
+    this.versionFilter = this.filterStore.versionFilter();
+  });
 
   changeVersion(version: string, versionFilter: string[]) {
     let versions = [];
@@ -35,8 +35,6 @@ export class VersionFilterComponent {
       versions = [...new Set(versionFilter), version];
     }
 
-    this.store.dispatch(
-      WebsiteActions.setVersionFilter({ versionFilter: versions }),
-    );
+    this.filterStore.updateVersionFilter(versions);
   }
 }

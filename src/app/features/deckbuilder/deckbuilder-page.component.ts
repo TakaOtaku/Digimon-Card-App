@@ -1,28 +1,16 @@
 import { AsyncPipe, NgClass, NgIf, NgStyle } from '@angular/common';
-import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
-import { Store } from '@ngrx/store';
-import {
-  empty,
-  filter,
-  first,
-  map,
-  of,
-  startWith,
-  Subject,
-  switchMap,
-  tap,
-} from 'rxjs';
+import { filter, map, of, switchMap, tap } from 'rxjs';
 import * as uuid from 'uuid';
-import { IDeck, ISave } from '../../../models';
+import { emptySave } from '../../../models';
 import { AuthService } from '../../services/auth.service';
 import { DigimonBackendService } from '../../services/digimon-backend.service';
-import { emptySave } from '../../store/reducers/save.reducer';
-import { CardListComponent } from '../collection/components/card-list.component';
+import { SaveStore } from '../../store/save.store';
+import { WebsiteStore } from '../../store/website.store';
 import { PaginationCardListComponent } from '../collection/components/pagination-card-list.component';
 import { FilterAndSearchComponent } from '../shared/filter/filter-and-search.component';
-import { WebsiteActions } from '../../store/digimon.actions';
 import { PageComponent } from '../shared/page.component';
 import { DeckStatsComponent } from './components/deck-stats.component';
 import { DeckViewComponent } from './components/deck-view.component';
@@ -67,6 +55,7 @@ import { DeckViewComponent } from './components/deck-view.component';
     }
   `,
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     NgClass,
     NgIf,
@@ -74,13 +63,21 @@ import { DeckViewComponent } from './components/deck-view.component';
     DeckViewComponent,
     DeckStatsComponent,
     FilterAndSearchComponent,
-    CardListComponent,
     AsyncPipe,
     PaginationCardListComponent,
     PageComponent,
   ],
 })
 export class DeckbuilderPageComponent implements OnInit {
+  route = inject(ActivatedRoute);
+  digimonBackendService = inject(DigimonBackendService);
+  authService = inject(AuthService);
+  meta = inject(Meta);
+  title = inject(Title);
+
+  saveStore = inject(SaveStore);
+  websiteStore = inject(WebsiteStore);
+
   collectionView = true;
   deckView = true;
 
@@ -114,28 +111,15 @@ export class DeckbuilderPageComponent implements OnInit {
       const sameUser = save.uid === this.authService.userData?.uid;
 
       // Set a new UID if it is a new user, otherwise keep the old one
-      this.store.dispatch(
-        WebsiteActions.setDeck({
-          deck: {
-            ...foundDeck,
-            id: sameUser ? foundDeck.id : uuid.v4(),
-          },
-        }),
-      );
+      this.websiteStore.updateDeck({
+        ...foundDeck,
+        id: sameUser ? foundDeck.id : uuid.v4(),
+      });
     }),
     switchMap(() => of(true)),
   );
 
   private deckId = '';
-
-  constructor(
-    private route: ActivatedRoute,
-    private store: Store,
-    private digimonBackendService: DigimonBackendService,
-    private authService: AuthService,
-    private meta: Meta,
-    private title: Title,
-  ) {}
 
   ngOnInit() {
     this.onResize();

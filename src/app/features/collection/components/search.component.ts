@@ -1,10 +1,9 @@
 import { AsyncPipe, NgIf, NgStyle } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Store } from '@ngrx/store';
 import { InputTextModule } from 'primeng/inputtext';
 import { debounceTime, distinctUntilChanged } from 'rxjs';
-import { WebsiteActions } from '../../../store/digimon.actions';
+import { FilterStore } from '../../../store/filter.store';
 
 @Component({
   selector: 'digimon-search',
@@ -32,14 +31,15 @@ import { WebsiteActions } from '../../../store/digimon.actions';
   ],
 })
 export class SearchComponent {
+  filterStore = inject(FilterStore);
   search$ = new FormControl<string>('');
 
-  constructor(private store: Store) {
+  constructor() {
     this.search$.valueChanges
-      .pipe(debounceTime(1000), distinctUntilChanged())
+      .pipe(debounceTime(200), distinctUntilChanged())
       .subscribe((search) => {
         const value = search ? search : '';
-        this.store.dispatch(WebsiteActions.setSearchFilter({ search: value }));
+        this.filterStore.updateSearchFilter(value);
       });
   }
 }

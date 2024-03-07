@@ -1,4 +1,11 @@
-import { AfterViewInit, Directive, ElementRef, EventEmitter, OnInit, Output } from '@angular/core';
+import {
+  AfterViewInit,
+  Directive,
+  ElementRef,
+  EventEmitter,
+  OnInit,
+  Output,
+} from '@angular/core';
 
 @Directive({
   selector: '[digimonIntersectionListener]',
@@ -26,7 +33,6 @@ export class IntersectionListenerDirective implements AfterViewInit, OnInit {
     };
     this.observer = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
-        console.log('scroll more');
         this.digimonIntersectionListener.emit(true);
       }
     }, options);

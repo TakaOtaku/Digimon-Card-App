@@ -6,22 +6,19 @@ import {
   NgIf,
   NgStyle,
 } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { SharedModule } from 'primeng/api';
 import { TableModule } from 'primeng/table';
-import { first } from 'rxjs';
-import { DigimonCard, IDeck } from '../../../../models';
+import { IDeck } from '../../../../models';
 import { setDeckImage } from '../../../functions/digimon-card.functions';
-import { selectAllCards } from '../../../store/digimon.selectors';
-import { DeckActions } from '../../../store/digimon.actions';
+import { DigimonCardStore } from '../../../store/digimon-card.store';
+import { SaveStore } from '../../../store/save.store';
 
 @Component({
   selector: 'digimon-decks-table',
   template: `
     <p-table
-      *ngIf="allCards$ | async as allCards"
       [value]="decks"
       [scrollable]="true"
       [tableStyle]="{ 'min-width': '30rem' }"
@@ -47,13 +44,13 @@ import { DeckActions } from '../../../store/digimon.actions';
           <td class="py-3" colspan="5">
             <div class="flex flex-row">
               <div
-                [ngClass]="deck.color.name"
+                [ngClass]="deck.color?.name"
                 class="ml-3 mr-1 h-7 w-7 rounded-full"></div>
-              <span class="ml-2 font-bold">{{ deck.color.name }} Decks</span>
+              <span class="ml-2 font-bold">{{ deck.color?.name }} Decks</span>
 
               <div class="ml-auto mr-2 font-bold">
-                Total {{ deck.color.name }} Decks:
-                {{ decksWithColor(deck.color.name) }}
+                Total {{ deck.color?.name }} Decks:
+                {{ decksWithColor(deck.color?.name) }}
               </div>
             </div>
           </td>
@@ -66,7 +63,7 @@ import { DeckActions } from '../../../store/digimon.actions';
             <div
               class="surface-card relative h-16 w-56 border border-black"
               defaultImage="assets/images/digimon-card-back.webp"
-              [lazyLoad]="getCardImage(deck, allCards)"
+              [lazyLoad]="getCardImage(deck)"
               [ngStyle]="{
                 'background-repeat': 'no-repeat',
                 'background-position': 'center',
@@ -74,16 +71,18 @@ import { DeckActions } from '../../../store/digimon.actions';
               }"></div>
           </td>
           <td class="text-xs font-bold">
-            {{ deck.title }}
+            {{ deck?.title }}
           </td>
           <td class="text-xs hidden md:table-cell">
-            {{ deck.description }}
+            {{ deck?.description }}
           </td>
           <td class="text-xs mx-auto hidden md:table-cell">
-            <div *ngFor="let tag of deck.tags" class="mr-2">{{ tag.name }}</div>
+            <div *ngFor="let tag of deck?.tags" class="mr-2">
+              {{ tag?.name }}
+            </div>
           </td>
           <td class="text-center text-xs hidden md:table-cell">
-            {{ deck.date | date: 'dd.MM.YY' }}
+            {{ deck?.date | date: 'dd.MM.YY' }}
           </td>
         </tr>
       </ng-template>
@@ -114,40 +113,37 @@ export class DecksTableComponent {
   @Input() decks: IDeck[];
   @Output() onDeckClick = new EventEmitter<IDeck>();
 
-  allCards: DigimonCard[] = [];
-  allCards$ = this.store.select(selectAllCards);
+  saveStore = inject(SaveStore);
+  digimonCardStore = inject(DigimonCardStore);
 
-  constructor(private store: Store) {
-    this.store
-      .select(selectAllCards)
-      .pipe(first())
-      .subscribe((cards) => {
-        this.allCards = cards;
-      });
-  }
-
-  getCardImage(deck: IDeck, allCards: DigimonCard[]): string {
+  getCardImage(deck: IDeck): string {
     //If there are no cards in the deck set it to the Yokomon
-    if (!deck.cards || deck.cards.length === 0 || allCards.length === 0) {
+    if (
+      !deck.cards ||
+      deck.cards.length === 0 ||
+      this.digimonCardStore.cards().length === 0
+    ) {
       return '../../../assets/images/cards/eng/BT1-001.webp';
     }
 
     // If there is a ImageCardId set it
     if (deck.imageCardId) {
       return (
-        allCards.find((card) => card.id === deck.imageCardId)?.cardImage ??
+        this.digimonCardStore.cardsMap().get(deck.imageCardId)?.cardImage ??
         '../../../assets/images/cards/eng/BT1-001.webp'
       );
     } else {
-      const deckImage = setDeckImage(deck, this.allCards);
-      this.store.dispatch(
-        DeckActions.save({ deck: { ...deck, imageCardId: deckImage.id } }),
-      );
+      const deckImage = setDeckImage(deck, this.digimonCardStore.cards());
+      this.saveStore.saveDeck({ ...deck, imageCardId: deckImage.id });
+
       return deckImage.cardImage;
     }
   }
 
   decksWithColor(color: string) {
-    return this.decks.filter((deck) => deck.color.name === color).length;
+    return this.decks.filter((deck) => {
+      if (!deck || !deck.color || !deck.color.name) return false;
+      return deck.color.name === color;
+    }).length;
   }
 }

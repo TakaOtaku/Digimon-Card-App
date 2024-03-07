@@ -2,6 +2,7 @@ import { NgFor } from '@angular/common';
 import {
   Component,
   EventEmitter,
+  inject,
   Input,
   OnChanges,
   OnDestroy,
@@ -16,9 +17,7 @@ import {
   UntypedFormGroup,
   Validators,
 } from '@angular/forms';
-import { Router } from '@angular/router';
-import { Store } from '@ngrx/store';
-import { ConfirmationService, MessageService } from 'primeng/api';
+import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { CalendarModule } from 'primeng/calendar';
 import { DropdownModule } from 'primeng/dropdown';
@@ -46,9 +45,8 @@ import {
 } from '../../../functions/digimon-card.functions';
 import { sortID } from '../../../functions/filter.functions';
 import { stringToDeck } from '../../../functions/parse-deck';
-import { AuthService } from '../../../services/auth.service';
 import { DigimonBackendService } from '../../../services/digimon-backend.service';
-import { selectAllCards } from '../../../store/digimon.selectors';
+import { DigimonCardStore } from '../../../store/digimon-card.store';
 import { DeckCardComponent } from '../deck-card.component';
 import { DigimonCardImage } from './deck-dialog.component';
 
@@ -75,8 +73,7 @@ interface IDropDownItem {
           <digimon-deck-card
             *ngFor="let card of mainDeck"
             [edit]="false"
-            [card]="card"
-            [cards]="allCards"></digimon-deck-card>
+            [card]="card"></digimon-deck-card>
         </div>
       </div>
 
@@ -234,25 +231,12 @@ export class DeckSubmissionComponent implements OnInit, OnChanges, OnDestroy {
     { name: 'Major Event (32+ Player)', value: 'Major' },
   ];
 
-  allCards: DigimonCard[] = [];
-
+  private digimonCardStore = inject(DigimonCardStore);
   private onDestroy$ = new Subject();
 
-  constructor(
-    private store: Store,
-    private router: Router,
-    private digimonBackendService: DigimonBackendService,
-    private authService: AuthService,
-    private messageService: MessageService,
-    private confirmationService: ConfirmationService,
-  ) {}
+  constructor(private digimonBackendService: DigimonBackendService) {}
 
   ngOnInit(): void {
-    this.store
-      .select(selectAllCards)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((allCards) => (this.allCards = allCards));
-
     this.form
       .get('deckList')
       ?.valueChanges.pipe(
@@ -261,8 +245,10 @@ export class DeckSubmissionComponent implements OnInit, OnChanges, OnDestroy {
         takeUntil(this.onDestroy$),
       )
       .subscribe((deckList: string) => {
-        this.deck = stringToDeck(deckList, this.allCards);
-        this.deck ? this.mapDeck(this.deck, this.allCards) : null;
+        this.deck = stringToDeck(deckList, this.digimonCardStore.cards());
+        this.deck
+          ? this.mapDeck(this.deck, this.digimonCardStore.cards())
+          : null;
         this.cardImageOptions = this.createImageOptions();
         this.form.get('cardImageId')?.setValue(this.cardImageOptions[0]);
       });
@@ -391,7 +377,9 @@ export class DeckSubmissionComponent implements OnInit, OnChanges, OnDestroy {
     const formValues = this.form.value;
     let decklist = '// Digimon DeckList\n\n';
     inputDeck.cards.forEach((card) => {
-      const dc = this.allCards.find((dc) => compareIDs(dc.id, card.id));
+      const dc = this.digimonCardStore
+        .cards()
+        .find((dc) => compareIDs(dc.id, card.id));
       decklist += `${card.id.replace('ST0', 'ST')} ${dc?.name} ${card.count}\n`;
     });
     this.form.setValue({

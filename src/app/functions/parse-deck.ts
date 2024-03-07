@@ -1,5 +1,10 @@
-import { DigimonCard, ICountCard, IDeck, IDeckCard } from '../../models';
-import { emptyDeck } from '../store/reducers/digimon.reducers';
+import {
+  DigimonCard,
+  emptyDeck,
+  ICountCard,
+  IDeck,
+  IDeckCard,
+} from '../../models';
 import { compareIDs, setColors, setTags } from './digimon-card.functions';
 
 export function stringToDeck(

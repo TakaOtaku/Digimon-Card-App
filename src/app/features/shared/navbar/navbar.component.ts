@@ -1,9 +1,10 @@
 import { NgClass, NgIf, NgOptimizedImage } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { DialogModule } from 'primeng/dialog';
 import { SidebarModule } from 'primeng/sidebar';
+import { DialogStore } from '../../../store/dialog.store';
 import { ChangelogDialogComponent } from '../dialogs/changelog-dialog.component';
 import { SettingsDialogComponent } from '../dialogs/settings-dialog.component';
 import { FilterButtonComponent } from '../filter/filter-button.component';
@@ -29,8 +30,7 @@ import { NavLinksComponent } from './nav-links.component';
         style="font-size: 1.25rem"></i>
 
       <digimon-nav-links
-        class="hidden md:flex flex-row lg:flex-col w-full h-full justify-evenly"
-        (settingsShow)="settingsShow.emit(true)"></digimon-nav-links>
+        class="hidden md:flex flex-row lg:flex-col w-full h-full justify-evenly"></digimon-nav-links>
     </nav>
   `,
   standalone: true,
@@ -49,6 +49,5 @@ import { NavLinksComponent } from './nav-links.component';
   ],
 })
 export class NavbarComponent {
-  @Output() settingsShow = new EventEmitter<boolean>();
   @Output() openSideNav = new EventEmitter<boolean>();
 }

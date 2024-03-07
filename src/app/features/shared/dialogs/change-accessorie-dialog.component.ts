@@ -2,35 +2,30 @@ import { NgStyle } from '@angular/common';
 import {
   Component,
   EventEmitter,
+  inject,
   Input,
   OnChanges,
-  OnDestroy,
   OnInit,
   Output,
   SimpleChanges,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Store } from '@ngrx/store';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { SelectButtonModule } from 'primeng/selectbutton';
-import { first, Subject, takeUntil } from 'rxjs';
-import {
-  ColorList,
-  DigimonCard,
-  IColor,
-  IDeck,
-  tagsList,
-} from '../../../../models';
+import { first } from 'rxjs';
+import { ColorList, IColor, IDeck, tagsList } from '../../../../models';
 import { ITag } from '../../../../models/interfaces/tag.interface';
 import { ColorMap } from '../../../../models/maps/color.map';
 import { deckIsValid } from '../../../functions/digimon-card.functions';
 import { AuthService } from '../../../services/auth.service';
 import { DigimonBackendService } from '../../../services/digimon-backend.service';
-import { selectAllCards } from '../../../store/digimon.selectors';
+import { DigimonCardStore } from '../../../store/digimon-card.store';
 import { emptyDeck } from '../../../store/reducers/digimon.reducers';
+import { SaveStore } from '../../../store/save.store';
+import { WebsiteStore } from '../../../store/website.store';
 import { DeckActions } from './../../../store/digimon.actions';
 
 @Component({
@@ -104,13 +99,14 @@ import { DeckActions } from './../../../store/digimon.actions';
   ],
   providers: [MessageService],
 })
-export class ChangeAccessorieDialogComponent
-  implements OnInit, OnChanges, OnDestroy
-{
+export class ChangeAccessorieDialogComponent implements OnInit, OnChanges {
   @Input() show: boolean = false;
   @Input() deck: IDeck = JSON.parse(JSON.stringify(emptyDeck));
 
   @Output() onClose = new EventEmitter<boolean>();
+
+  websiteStore = inject(WebsiteStore);
+  saveStore = inject(SaveStore);
 
   colorList: IColor[] = ColorList;
   colorMap = ColorMap;
@@ -123,26 +119,15 @@ export class ChangeAccessorieDialogComponent
   tags: ITag[] = [];
   color = { name: 'White', img: 'assets/images/decks/white.svg' };
 
-  private allCards: DigimonCard[] = [];
-  private onDestroy$ = new Subject<boolean>();
-
+  private digimonCardStore = inject(DigimonCardStore);
   constructor(
-    private store: Store,
     private confirmationService: ConfirmationService,
     private digimonCardService: DigimonBackendService,
     private auth: AuthService,
     private messageService: MessageService,
   ) {}
 
-  ngOnDestroy(): void {
-    this.onDestroy$.next(true);
-  }
-
   ngOnInit(): void {
-    this.store
-      .select(selectAllCards)
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((allCards) => (this.allCards = allCards));
     this.setData(this.deck);
   }
 
@@ -160,17 +145,13 @@ export class ChangeAccessorieDialogComponent
   }
 
   saveDeck(): void {
-    this.store.dispatch(
-      DeckActions.save({
-        deck: {
-          ...this.deck,
-          title: this.title,
-          description: this.description,
-          tags: this.tags,
-          color: this.color,
-        },
-      }),
-    );
+    this.saveStore.saveDeck({
+      ...this.deck,
+      title: this.title,
+      description: this.description,
+      tags: this.tags,
+      color: this.color,
+    });
     this.onClose.emit(false);
     this.messageService.add({
       severity: 'success',
@@ -196,7 +177,7 @@ export class ChangeAccessorieDialogComponent
       message: 'You are about to share the deck. Are you sure?',
       accept: () => {
         this.digimonCardService
-          .updateDeck(deck, this.auth.userData, this.allCards)
+          .updateDeck(deck, this.auth.userData, this.digimonCardStore.cards())
           .pipe(first())
           .subscribe();
         this.messageService.add({
@@ -209,7 +190,7 @@ export class ChangeAccessorieDialogComponent
   }
 
   deckIsValid(deck: IDeck): boolean {
-    const error = deckIsValid(deck, this.allCards);
+    const error = deckIsValid(deck, this.digimonCardStore.cards());
     if (error !== '') {
       this.messageService.add({
         severity: 'error',

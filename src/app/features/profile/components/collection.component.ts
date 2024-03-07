@@ -1,6 +1,7 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  inject,
   Input,
   OnChanges,
   OnInit,
@@ -8,6 +9,7 @@ import {
 } from '@angular/core';
 import { DigimonCard, ICountCard } from '../../../../models';
 import { NgIf, NgFor } from '@angular/common';
+import { DigimonCardStore } from '../../../store/digimon-card.store';
 
 interface MappedCollection {
   id: string;
@@ -207,19 +209,20 @@ interface MappedCollection {
 })
 export class CollectionComponent implements OnInit, OnChanges {
   @Input() collection: ICountCard[];
-  @Input() allCards: DigimonCard[];
 
   selectedSet = '';
   showCollection = false;
   collectionList: MappedCollection[] = [];
   mappedCollection: MappedCollection[];
 
+  private digimonCardStore = inject(DigimonCardStore);
+
   ngOnInit(): void {
     this.mappedCollection = this.collection.map((countCard) => {
-      const foundCard = this.allCards.find((card) => card.id === countCard.id);
+      const foundCard = this.digimonCardStore.cardsMap().get(countCard.id);
       return {
         id: countCard.id,
-        name: foundCard?.name ?? 'Not Found',
+        name: foundCard?.name.english ?? 'Not Found',
         count: countCard.count,
         rarity: foundCard?.rarity ?? '',
       };
@@ -229,12 +232,10 @@ export class CollectionComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges) {
     if (changes && changes['collection']) {
       this.mappedCollection = this.collection.map((countCard) => {
-        const foundCard = this.allCards.find(
-          (card) => card.id === countCard.id,
-        );
+        const foundCard = this.digimonCardStore.cardsMap().get(countCard.id);
         return {
           id: countCard.id,
-          name: foundCard?.name ?? 'Not Found',
+          name: foundCard?.name.english ?? 'Not Found',
           count: countCard.count,
           rarity: foundCard?.rarity ?? '',
         };

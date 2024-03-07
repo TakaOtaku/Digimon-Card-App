@@ -1,19 +1,16 @@
 import { AsyncPipe, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { WebsiteActions } from 'src/app/store/digimon.actions';
+import { Component, effect, inject } from '@angular/core';
 import { CardTypeButtons } from '../../../../models';
-import { selectCardTypeFilter } from '../../../store/digimon.selectors';
+import { FilterStore } from '../../../store/filter.store';
 import { MultiButtonsComponent } from '../multi-buttons.component';
 
 @Component({
   selector: 'digimon-card-type-filter',
   template: `
     <digimon-multi-buttons
-      *ngIf="{ value: cardTypeFilter$ | async } as cardTypeFilter"
-      (clickEvent)="changeCardType($event, cardTypeFilter.value ?? [])"
+      (clickEvent)="changeCardType($event, cardTypeFilter)"
       [buttonArray]="cardTypeButtons"
-      [value]="cardTypeFilter.value"
+      [value]="cardTypeFilter"
       [perRow]="4"
       title="Card-Types"></digimon-multi-buttons>
   `,
@@ -21,11 +18,14 @@ import { MultiButtonsComponent } from '../multi-buttons.component';
   imports: [NgIf, MultiButtonsComponent, AsyncPipe],
 })
 export class CardTypeFilterComponent {
-  cardTypeFilter$ = this.store.select(selectCardTypeFilter);
+  filterStore = inject(FilterStore);
+  cardTypeFilter: string[] = this.filterStore.cardTypeFilter();
 
   cardTypeButtons = CardTypeButtons;
 
-  constructor(private store: Store) {}
+  filterChange = effect(() => {
+    this.cardTypeFilter = this.filterStore.cardTypeFilter();
+  });
 
   changeCardType(type: string, cardTypeFilter: string[]) {
     let types = [];
@@ -35,8 +35,6 @@ export class CardTypeFilterComponent {
       types = [...new Set(cardTypeFilter), type];
     }
 
-    this.store.dispatch(
-      WebsiteActions.setCardTypeFilter({ cardTypeFilter: types }),
-    );
+    this.filterStore.updateCardTypeFilter(types);
   }
 }
