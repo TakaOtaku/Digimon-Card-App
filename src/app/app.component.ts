@@ -177,7 +177,8 @@ export class AppComponent {
       return;
     }
 
-    let filter: IFilter = emptyFilter;
+    let filter: IFilter = this.filterStore.filter();
+    if (filter !== emptyFilter) return;
     filter = { ...filter, versionFilter: [] };
 
     if (!settings.showFoilCards) {
