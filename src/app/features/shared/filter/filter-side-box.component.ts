@@ -131,13 +131,13 @@ import { VersionFilterComponent } from './version-filter.component';
       <div class="flex flex-row">
         <digimon-range-slider
           [reset]="resetEmitter"
-          [minMax]="[0, collectionCountMax()]"
+          [minMax]="[0, collectionCountMax() ?? 5]"
           [filterFormControl]="cardCountFilter"
           title="Number in Collection:"
           class="w-full"></digimon-range-slider>
         <button
           (click)="
-            cardCountFilter.setValue([0, collectionCountMax()], {
+            cardCountFilter.setValue([0, collectionCountMax() ?? 5], {
               emitEvent: false
             })
           "

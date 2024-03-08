@@ -313,7 +313,8 @@ function applyCardCountFilter(
   const count = save.collection.find((cc) => cc.id === card.id)?.count ?? 0;
 
   // If the CardCount Filter is at the max, check if the card count is higher than the smaller slider
-  if (cardCountFilter[1] === save.settings.countMax) {
+  const filterMax = save.settings.countMax ?? 5;
+  if (cardCountFilter[1] === filterMax) {
     return !(cardCountFilter[0] <= count);
   }
   return !(cardCountFilter[0] <= count && count <= cardCountFilter[1]);

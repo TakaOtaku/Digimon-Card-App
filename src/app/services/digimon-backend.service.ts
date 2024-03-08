@@ -166,6 +166,11 @@ export class DigimonBackendService {
             ? newSave.settings.aaCollectionMinimum
             : 1;
 
+        newSave.settings.countMax =
+          newSave.settings.countMax !== undefined
+            ? newSave.settings.countMax
+            : 5;
+
         newSave.settings.cardSet =
           newSave.settings.cardSet === 'Both'
             ? 'English'
