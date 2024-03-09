@@ -6,6 +6,20 @@ import { PanelModule } from 'primeng/panel';
   selector: 'digimon-changelog-dialog',
   template: `
     <div>
+      <p-panel header="Version 4.1.2" [toggleable]="true" [collapsed]="false">
+        <h1 class="font-bold text-lg underline">Bugfixes</h1>
+        <ul class="list-disc p-5">
+          <li>
+            Single Color Filter did not filter cards with more than one color.
+          </li>
+          <li>
+            Couldn't filter in the Multi-Selects e.g. Attribute, Form or Type.
+          </li>
+        </ul>
+        <div class="flex flex-wrap align-middle justify-content-between gap-3">
+          <span class="ml-auto p-text-secondary">Updated 09.03.2024</span>
+        </div>
+      </p-panel>
       <p-panel header="Version 4.1.1" [toggleable]="true" [collapsed]="false">
         <h1 class="font-bold text-lg underline">Bugfixes</h1>
         <ul class="list-disc p-5">

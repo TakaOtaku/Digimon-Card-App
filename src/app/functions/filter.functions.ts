@@ -209,12 +209,12 @@ function applyBlockFilter(card: DigimonCard, filter: string[]): boolean {
   return !filter.some((filter) => card['block'].includes(filter));
 }
 
-function applyColorFilter(card: DigimonCard, filter: string[]): boolean {
-  if (filter.includes('Multi') && filter.length === 1) {
+function applyColorFilter(card: DigimonCard, filters: string[]): boolean {
+  if (filters.includes('Multi') && filters.length === 1) {
     return !card['color'].includes('/');
-  } else if (filter.includes('Multi')) {
+  } else if (filters.includes('Multi')) {
     const removeIfSmallerThanFilter = [];
-    filter.forEach((filter) => {
+    filters.forEach((filter) => {
       if (filter === 'Multi') {
         removeIfSmallerThanFilter.push(filter);
       }
@@ -222,9 +222,9 @@ function applyColorFilter(card: DigimonCard, filter: string[]): boolean {
         removeIfSmallerThanFilter.push(filter);
       }
     });
-    return removeIfSmallerThanFilter.length !== filter.length;
+    return removeIfSmallerThanFilter.length !== filters.length;
   } else {
-    return !filter.includes(card['color']);
+    return !filters.some((filter) => card.color.includes(filter));
   }
 }
 
