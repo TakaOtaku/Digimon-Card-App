@@ -1,5 +1,48 @@
 import { MultiButtons } from '../../app/features/shared/multi-buttons.component';
 
+export const Sets = [
+  'BT1',
+  'BT2',
+  'BT3',
+  'BT4',
+  'BT5',
+  'BT6',
+  'BT7',
+  'BT8',
+  'BT9',
+  'BT10',
+  'BT11',
+  'BT12',
+  'BT13',
+  'BT14',
+  'BT15',
+  'BT16',
+  'BT17',
+  'RB1',
+  'LM',
+  'EX1',
+  'EX2',
+  'EX3',
+  'EX4',
+  'EX5',
+  'EX6',
+  'ST1',
+  'ST2',
+  'ST3',
+  'ST4',
+  'ST5',
+  'ST6',
+  'ST7',
+  'ST8',
+  'ST9',
+  'ST10',
+  'ST12',
+  'ST13',
+  'ST14',
+  'ST15',
+  'ST16',
+  'ST17',
+];
 export const GroupedSets = [
   {
     label: 'Standard',
@@ -369,6 +412,7 @@ export const Restrictions: string[] = ['Banned', 'Restricted to 1'];
 
 export const Presets: string[] = ['Ultimate Cup 2023', 'Ultimate Cup 2024'];
 
+export const Blocks = ['00', '01', '02', '03', '04'];
 export const BlockButtons: MultiButtons[] = [
   {
     name: '00',
@@ -392,6 +436,7 @@ export const BlockButtons: MultiButtons[] = [
   },
 ];
 
+export const CardTypes = ['Digi-Egg', 'Digimon', 'Tamer', 'Option'];
 export const CardTypeButtons: MultiButtons[] = [
   {
     name: 'Digi-Egg',
@@ -411,6 +456,7 @@ export const CardTypeButtons: MultiButtons[] = [
   },
 ];
 
+export const Rarity = ['C', 'U', 'R', 'SR', 'SEC', 'P'];
 export const RarityButtons: MultiButtons[] = [
   {
     name: 'C',
@@ -438,6 +484,16 @@ export const RarityButtons: MultiButtons[] = [
   },
 ];
 
+export const Versions = [
+  'Normal',
+  'Alternative Art',
+  'Foil',
+  'Textured',
+  'Pre Release',
+  'Box Topper',
+  'Full Art',
+  'Stamp',
+];
 export const VersionButtons: MultiButtons[] = [
   {
     name: 'Normal',
