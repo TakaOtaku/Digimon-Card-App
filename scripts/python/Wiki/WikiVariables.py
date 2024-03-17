@@ -36,8 +36,8 @@ wikiPageLinks = [
 #        'url': 'https://digimoncardgame.fandom.com/wiki/BT-14:_Booster_Blast_Ace'},
 #    {'name': '▹BOOSTER EXCEED APOCALYPSE [BT15]',
 #        'url': 'https://digimoncardgame.fandom.com/wiki/BT-15:_Booster_Exceed_Apocalypse'},
-#  {'name': '▹BOOSTER BEGINNING OBSERVER [BT16]',
-#   'url': 'https://digimoncardgame.fandom.com/wiki/BT-16:_Booster_Beginning_Observer'},
+  {'name': '▹BOOSTER BEGINNING OBSERVER [BT16]',
+   'url': 'https://digimoncardgame.fandom.com/wiki/BT-16:_Booster_Beginning_Observer'},
    {'name': '▹BOOSTER SECRET CRISIS [BT17]',
       'url': 'https://digimoncardgame.fandom.com/wiki/BT-17:_Booster_Secret_Crisis'},
 #

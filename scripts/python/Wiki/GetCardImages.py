@@ -78,21 +78,25 @@ def getCardImages():
         for item in gallery_items:
           img = item.find("img")
 
+          id_with_p = None
           if img is None:
-            continue
+            noImage = item.find("a", class_="image-no-lightbox")
+            # Remove .png from the text and replace spaces with underscores
+            id_with_p = re.sub(r'\.png$', '', noImage.text)
+            id_with_p = re.sub(r'\s', '_', id_with_p)
+          else:
+            id_with_p = re.sub(r'\.png$', '', img['data-image-key'])
+            src = img['src'].split("/latest")[0]
 
-          id_with_p = re.sub(r'\.png$', '', img['data-image-key'])
-          src = img['src'].split("/latest")[0]
+            save_location = src + '/latest'
+            save_location = save_location.replace('-j', '-J')
 
-          save_location = src + '/latest'
-          save_location = save_location.replace('-j', '-J')
-
-          download_image_with_retry(
-            save_location,
-            './scripts/python/Wiki/digimon-images/' +
-            img['data-image-key'],
-            img['data-image-key']
-          )
+            download_image_with_retry(
+              save_location,
+              './scripts/python/Wiki/digimon-images/' +
+              img['data-image-key'],
+              img['data-image-key']
+            )
 
           captions = item.find("div", class_="lightbox-caption")
           notes = captions.find_all("a")
