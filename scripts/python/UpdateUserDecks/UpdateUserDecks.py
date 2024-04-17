@@ -25,7 +25,7 @@ def set_tags(deck: Dict) -> List[Dict]:
 
 def set_newest_set(cards: List[Dict]) -> Dict:
     release_order = [
-        'BT17', 'EX06', 'BT16', 'ST17', 'BT15','EX05', 'BT14', 'ST16', 'ST15', 'RB1', 'BT13', 'EX4', 'BT12',
+        'BT18', 'EX07', 'ST19', 'ST18', 'BT17', 'EX06', 'BT16', 'ST17', 'BT15','EX05', 'BT14', 'ST16', 'ST15', 'RB1', 'BT13', 'EX4', 'BT12',
         'ST14', 'BT11', 'EX3', 'BT10', 'ST13', 'ST12', 'BT9', 'EX2', 'BT8', 'ST10', 'ST9', 'BT7', 'EX1',
         'BT6', 'ST8', 'ST7', 'BT5', 'BT4', 'ST6', 'ST5', 'ST4', 'BT3', 'BT2', 'BT1', 'ST3', 'ST2', 'ST1'
     ]

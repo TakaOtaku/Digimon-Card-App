@@ -93,11 +93,15 @@ wikiPageLinks = [
         'url': 'https://digimoncardgame.fandom.com/wiki/ST-16:_Starter_Deck_Wolf_of_Friendship'},
     {'name': 'STARTER DECK DOUBLE TYPHOON [ST17]',
         'url': 'https://digimoncardgame.fandom.com/wiki/ST-17:_Advanced_Deck_Set_Double_Typhoon'},
+    {'name': 'STARTER DECK GUARDIAN VORTEX [ST18]',
+        'url': 'https://digimoncardgame.fandom.com/wiki/ST-18:_Starter_Deck_Guardian_Vortex'},
+    {'name': 'STARTER DECK FABLE WALTZ [ST19]',
+        'url': 'https://digimoncardgame.fandom.com/wiki/ST-19:_Starter_Deck_Fable_Waltz'},
 
     {'name': 'LIMITED PACK DIGIMON GHOST GAME',
-        'url': 'https://digimoncardgame.fandom.com/wiki/LM-01:_Limited_Pack_Digimon_Ghost_Game'}1
+        'url': 'https://digimoncardgame.fandom.com/wiki/LM-01:_Limited_Pack_Digimon_Ghost_Game'},
     {'name': 'LIMITED PACK DIGIMON DEATHXMON',
-        'url': 'https://digimoncardgame.fandom.com/wiki/LM-02:_Limited_Pack_DeathXmon'}
+        'url': 'https://digimoncardgame.fandom.com/wiki/LM-02:_Limited_Pack_DeathXmon'},
     {'name': 'LM-03: Limited Card Set 2024',
         'url': 'https://digimoncardgame.fandom.com/wiki/LM-03:_Limited_Card_Set_2024'}
 ]

@@ -18,6 +18,7 @@ export const Sets = [
   'BT15',
   'BT16',
   'BT17',
+  'BT18',
   'RB1',
   'LM',
   'EX1',
@@ -26,6 +27,7 @@ export const Sets = [
   'EX4',
   'EX5',
   'EX6',
+  'EX7',
   'ST1',
   'ST2',
   'ST3',
@@ -42,6 +44,8 @@ export const Sets = [
   'ST15',
   'ST16',
   'ST17',
+  'ST18',
+  'ST19',
 ];
 export const GroupedSets = [
   {
@@ -65,6 +69,7 @@ export const GroupedSets = [
       { label: 'BT15', value: 'BT15' },
       { label: 'BT16', value: 'BT16' },
       { label: 'BT17', value: 'BT17' },
+      { label: 'BT18', value: 'BT18' },
     ],
   },
   {
@@ -77,6 +82,7 @@ export const GroupedSets = [
       { label: 'EX4', value: 'EX4' },
       { label: 'EX5', value: 'EX5' },
       { label: 'EX6', value: 'EX6' },
+      { label: 'EX7', value: 'EX7' },
     ],
   },
   {
@@ -99,6 +105,8 @@ export const GroupedSets = [
       { label: 'ST15', value: 'ST15' },
       { label: 'ST16', value: 'ST16' },
       { label: 'ST17', value: 'ST17' },
+      { label: 'ST18', value: 'ST18' },
+      { label: 'ST19', value: 'ST19' },
     ],
   },
   {
