@@ -1,6 +1,8 @@
 import { ICountCard, IDeck } from '../interfaces';
 
 export const ReleaseOrder = [
+  'BT20',
+  'BT19',
   'BT18',
   'EX07',
   'ST19',

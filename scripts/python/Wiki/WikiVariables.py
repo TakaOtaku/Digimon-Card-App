@@ -42,6 +42,10 @@ wikiPageLinks = [
         'url': 'https://digimoncardgame.fandom.com/wiki/BT-17:_Booster_Secret_Crisis'},
     {'name': '▹BOOSTER ELEMENTAL SUCCESSOR [BT18]',
         'url': 'https://digimoncardgame.fandom.com/wiki/BT-18:_Booster_Elemental_Successor'},
+    {'name': '▹BOOSTER RELEASE SPECIAL BOOSTER VER.2.0 [BT18-BT19]',
+        'url': 'https://digimoncardgame.fandom.com/wiki/BT18-19:_Release_Special_Booster_Ver.2.0'},
+    {'name': '▹BOOSTER RELEASE SPECIAL BOOSTER VER.2.5 [BT19-BT20]',
+        'url': 'https://digimoncardgame.fandom.com/wiki/BT19-20:_Release_Special_Booster_Ver.2.5'},
 
     {'name': '▹THEME BOOSTER CLASSIC COLLECTION [EX1]',
         'url': 'https://digimoncardgame.fandom.com/wiki/EX-01:_Theme_Booster_Classic_Collection'},
