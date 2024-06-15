@@ -151,7 +151,7 @@ export class ExportDeckDialogComponent implements OnInit {
     ctx.font = fontSize ? fontSize * scale + 'px Roboto' : '15px Roboto';
     ctx.shadowColor = 'black';
     ctx.shadowBlur = 2 * scale;
-    ctx.lineWidth = 5 * scale;
+    ctx.lineWidth = 3 * scale;
     ctx.strokeStyle = '#ffffff';
     ctx.textAlign = 'center';
     ctx.strokeText(text, x * scale, y * scale);
@@ -481,8 +481,10 @@ export class ExportDeckDialogComponent implements OnInit {
   }
 
   private drawCount(ctx: any, scale: number) {
-    let y = 50 + 82;
-    let x = 10 + 50;
+    const xOffset = 54;
+
+    let y = 50 + 84;
+    let x = 10 + xOffset;
 
     let cardCount = this.deck.cards.length;
     if (cardCount <= 9) {
@@ -497,10 +499,10 @@ export class ExportDeckDialogComponent implements OnInit {
       ExportDeckDialogComponent.writeText(
         ctx,
         'x',
-        x - 20,
+        x - 13,
         y,
         scale,
-        30,
+        20,
         '#0369a1',
       );
       ExportDeckDialogComponent.writeText(
@@ -509,12 +511,12 @@ export class ExportDeckDialogComponent implements OnInit {
         x,
         y,
         scale,
-        30,
+        20,
       );
 
       if (cardsInCurrentRow >= cardsPerRow) {
         y += 95;
-        x = 10 + 46;
+        x = 10 + xOffset;
         cardsInCurrentRow = 1;
       } else {
         x += 70;
