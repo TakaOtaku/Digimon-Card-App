@@ -1,12 +1,12 @@
 import { NgClass, NgIf } from '@angular/common';
-import { Component, effect, inject } from '@angular/core';
+import { Component, OnInit, effect, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { saveAs } from 'file-saver';
 import { ButtonModule } from 'primeng/button';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { SelectButtonModule } from 'primeng/selectbutton';
-import { ColorsWithoutMulti, DigimonCard, IDeck } from '../../../../models';
-import { compareIDs, formatId, mapToDeckCards } from '../../../functions';
+import { ColorsWithoutMulti, DigimonCard, ICountCard, IDeck, IDeckCard } from '../../../../models';
+import { compareIDs, formatId, levelSort, mapToDeckCards, sortColors, sortID } from '../../../functions';
 import { DialogStore } from '../../../store/dialog.store';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
 
@@ -110,7 +110,7 @@ import { DigimonCardStore } from '../../../store/digimon-card.store';
     ButtonModule,
   ],
 })
-export class ExportDeckDialogComponent {
+export class ExportDeckDialogComponent implements OnInit {
   digimonCardStore = inject(DigimonCardStore);
   dialogStore = inject(DialogStore);
 
@@ -126,6 +126,7 @@ export class ExportDeckDialogComponent {
 
   setExport = effect(() => {
     this.deck = this.dialogStore.exportDeck().deck;
+    this.deckSort();
     this.setExportTypeText();
     this.exportType = 'TEXT';
   });
@@ -133,6 +134,10 @@ export class ExportDeckDialogComponent {
   updateDigimonCards = effect(() => {
     this.digimonCards = this.digimonCardStore.cards();
   });
+
+  ngOnInit() {
+    this.deckSort();
+  }
 
   private static writeText(
     ctx: any,
@@ -516,5 +521,25 @@ export class ExportDeckDialogComponent {
         cardsInCurrentRow += 1;
       }
     });
+  }
+
+  /**
+   * Sort the Deck (Eggs, Digimon, Tamer, Options)
+   */
+  private deckSort() {
+    const allCards = this.digimonCardStore.cards();
+    const mainDeckCards = mapToDeckCards(this.deck.cards, allCards);
+    const sideDeckCards = mapToDeckCards(this.deck.sideDeck, allCards);
+
+    this.deck.cards = levelSort(mainDeckCards)
+      .map((card) => ({
+        id: card.id,
+        count: card.count,
+      }));
+    this.deck.sideDeck = levelSort(sideDeckCards)
+      .map((card) => ({
+        id: card.id,
+        count: card.count,
+      }));
   }
 }
