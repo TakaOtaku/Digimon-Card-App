@@ -124,7 +124,10 @@ NoteDictionary = {
     'BT-13: Booster Versus Royal Knights': '▹BOOSTER VERSUS ROYAL KNIGHT [BT13]',
     'BT-14: Booster Blast Ace': '▹BOOSTER BLAST ACE [BT14]',
     'BT-15: Booster Exceed Apocalypse': '▹BOOSTER EXCEED APOCALYPSE [BT15]',
-    'BT-16: Booster Beginning Observer': '▹BOOSTER BEGINNING OBSERVER [BT16]',
+    'BT-17: Booster Secret Crisis': '▹BOOSTER SECRET CRISIS [BT17]',
+    'BT-18: Booster Elemental Successor': '▹BOOSTER ELEMENTAL SUCCESSOR [BT18]',
+    'BT18-19: Release Special Booster Ver.2.0': '▹RELEASE SPECIAL BOOSTER VER.2.0 [BT18-19]',
+    'BT19-20: Release Special Booster Ver.2.5': '▹RELEASE SPECIAL BOOSTER VER.2.5 [BT19-20]',
 
     'EX-01: Theme Booster Classic Collection': '▹THEME BOOSTER CLASSIC COLLECTION [EX01]',
     'EX-02: Theme Booster Digital Hazard': '▹THEME BOOSTER DIGITAL HAZARD [EX02]',
@@ -132,6 +135,7 @@ NoteDictionary = {
     'EX-04: Theme Booster Alternative Being': '▹THEME BOOSTER ALTERNATIVE BEING [EX04]',
     'EX-05: Theme Booster Animal Colosseum': '▹THEME BOOSTER ANIMAL COLOSSEUM [EX05]',
     'EX-06: Theme Booster Infernal Ascension': '▹THEME BOOSTER INFERNAL ASCENSION [EX06]',
+    'EX-07: Theme Booster Digimon Liberator': '▹THEME BOOSTER DIGIMON LIBERATOR [EX07]',
 
     'RB-01: Resurgence Booster': 'BOOSTER RESURGENCE BOOSTER [RB01]',
 
@@ -150,7 +154,9 @@ NoteDictionary = {
     'ST-14: Advanced Deck Set Beelzemon': 'ADVANCE DECK BEELZEMON [ST14]',
     'ST-15: Starter Deck Dragon of Courage': 'STARTER DECK DRAGON OF COURAGE [ST15]',
     'ST-16: Starter Deck Wolf of Friendship': 'STARTER DECK WOLF OF FRIENDSHIP [ST16]',
-    'ST-17: Advanced Deck Set Double Typhoon': 'STARTER DECK DOUBLE TYPHOON [ST17]',
+    'ST-17: Advanced Deck Set Double Typhoon': 'ADVANCED DECK DOUBLE TYPHOON [ST17]',
+    'ST-18: Starter Deck Guardian Vortex': 'STARTER DECK GUARDIAN VORTEX [ST18]',
+    'ST-19: Starter Deck Fable Waltz': 'STARTER DECK FABLE WALTZ [ST19]',
 
     'LM-01: Limited Pack Digimon Ghost Game': 'LIMITED PACK DIGIMON GHOST GAME [LM01]',
     'LM-02: Limited Pack Digimon DeathXmon': 'LIMITED PACK DIGIMON DEATHXMON [LM02]',
@@ -223,4 +229,5 @@ replacements = [
     '(When your other d-brigade Digimon would be deleted by an opponent\'s effect, you may delete this Digimon to prevent you may delete this Digimon to prevent 1 of those Digimon\'s deletion)',
     '(When this Digimon that has 1 of each specified cards in its digivolution cards would leave the battle area other than by your own effects or by battle, you may play 1 of each card without paying their costs)',
     '(When this Digimon that has 1 of each specified cards in its digivolution cards would leave the battle area other than by your own effects or by battle, you may play 1 of each card without paying their costs)',
+    '(1 of your specified Digimon and 1 specified card in hand may DNA digivolve into this card.)'
 ]

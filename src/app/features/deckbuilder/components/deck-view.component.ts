@@ -1,4 +1,4 @@
-import { AsyncPipe, NgFor, NgIf } from '@angular/common';
+import { AsyncPipe, NgClass, NgFor, NgIf } from '@angular/common';
 import {
   Component,
   effect,
@@ -69,7 +69,12 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
               }}
             </div>
           </ng-template>
-          <div class="mx-auto grid w-full grid-cols-4 md:grid-cols-6">
+          <div
+            class="mx-auto grid w-full"
+            [ngClass]="{
+              'grid-cols-4 md:grid-cols-6 lg:grid-cols-8': !collectionView,
+              'grid-cols-4 md:grid-cols-6': collectionView
+            }">
             <digimon-deck-card
               *ngFor="let card of mainDeck"
               pDraggable="fromDeck"
@@ -115,6 +120,7 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
     AsyncPipe,
     ConfirmDialogModule,
     ConfirmPopupModule,
+    NgClass,
   ],
   providers: [MessageService],
 })
@@ -253,7 +259,7 @@ export class DeckViewComponent {
    */
   deckSort() {
     const useColorSort = this.saveStore.settings().sortDeckOrder === 'Color';
-  
+
     if (useColorSort) {
       this.mainDeck = colorSort(this.mainDeck);
       this.sideDeck = colorSort(this.sideDeck);

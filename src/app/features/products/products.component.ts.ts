@@ -151,6 +151,21 @@ export class ProductsComponent {
       image: '../../assets/images/products/ST-16.webp',
       link: 'https://digimoncardgame.fandom.com/wiki/ST-14:_Advanced_Deck_Beelzemon',
     },
+    {
+      name: 'ST-17: Advanced Deck Set Double Typhoon',
+      image: '../../assets/images/products/ST-17.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/ST-17:_Advanced_Deck_Set_Double_Typhoon',
+    },
+    {
+      name: 'ST-18: Starter Deck Guardian Vortex',
+      image: '../../assets/images/products/ST-18.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/ST-18:_Starter_Deck_Guardian_Vortex',
+    },
+    {
+      name: 'ST-19: Starter Deck Fable Waltz',
+      image: '../../assets/images/products/ST-19.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/ST-19:_Starter_Deck_Fable_Waltz',
+    },
   ];
   booster = [
     {
@@ -234,6 +249,41 @@ export class ProductsComponent {
       name: 'RB-01: Reboot Booster Rising Wind',
       image: '../../assets/images/products/RB-1.webp',
       link: 'https://digimoncardgame.fandom.com/wiki/RB-01:_Reboot_Booster_Rising_Wind',
+    },
+    {
+      name: 'BT-13: Booster Versus Royal Knights',
+      image: '../../assets/images/products/BT-13.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/BT-13:_Booster_Versus_Royal_Knights',
+    },
+    {
+      name: 'BT-14: Booster Blast Ace',
+      image: '../../assets/images/products/BT-14.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/BT-14:_Booster_Blast_Ace',
+    },
+    {
+      name: 'EX-05: Theme Booster Animal Colosseum',
+      image: '../../assets/images/products/EX-05.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/EX-05:_Theme_Booster_Animal_Colosseum',
+    },
+    {
+      name: 'BT-15: Booster Exceed Apocalypse',
+      image: '../../assets/images/products/BT-15.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/BT-15:_Booster_Exceed_Apocalypse',
+    },
+    {
+      name: 'BT-16: Booster Beginning Observer',
+      image: '../../assets/images/products/BT-16.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/BT-16:_Booster_Beginning_Observer',
+    },
+    {
+      name: 'EX-06: Theme Booster Infernal Ascension',
+      image: '../../assets/images/products/EX-6.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/EX-06:_Theme_Booster_Infernal_Ascension',
+    },
+    {
+      name: 'BT-17: Booster Secret Crisis',
+      image: '../../assets/images/products/BT-17.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/BT-17:_Booster_Secret_Crisis',
     },
   ];
   promo = [

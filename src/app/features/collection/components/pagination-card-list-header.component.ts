@@ -2,7 +2,7 @@ import { AsyncPipe, NgClass, NgIf } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
-  effect,
+  computed,
   EventEmitter,
   inject,
   Input,
@@ -12,6 +12,7 @@ import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PaginatorModule } from 'primeng/paginator';
 import { SliderModule } from 'primeng/slider';
 import { SaveStore } from '../../../store/save.store';
+import { DigimonCardStore } from '../../../store/digimon-card.store';
 
 @Component({
   selector: 'digimon-pagination-card-list-header',
@@ -29,6 +30,9 @@ import { SaveStore } from '../../../store/save.store';
           class="my-auto ml-1 h-5 w-5"
           [ngModel]="collectionMode()"
           (ngModelChange)="changeCollectionMode($event)" />
+        <span class="ml-6 text-xs font-bold text-[#e2e4e6]">
+          Cards: {{ cardCount() }}
+        </span>
       </div>
 
       <p-slider
@@ -69,8 +73,13 @@ export class PaginationCardListHeaderComponent {
   @Output() filterBox = new EventEmitter<boolean>();
 
   saveStore = inject(SaveStore);
+  digimonCardStore = inject(DigimonCardStore);
 
   collectionMode = this.saveStore.collectionMode;
+
+  cardCount = computed(() => {
+    return this.digimonCardStore.filteredCards().length;
+  });
 
   changeCollectionMode(collectionMode: boolean) {
     const settings = this.saveStore.settings();
