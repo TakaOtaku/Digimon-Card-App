@@ -13,7 +13,6 @@ import {
 import { FormsModule } from '@angular/forms';
 import { DialogModule } from 'primeng/dialog';
 import { DragDropModule } from 'primeng/dragdrop';
-import { Subject } from 'rxjs';
 import { DigimonCard, DRAG, dummyCard } from '../../../models';
 import { withoutJ } from '../../functions';
 import { SaveStore } from '../../store/save.store';
@@ -35,13 +34,13 @@ import { CardImageComponent } from './card-image.component';
 
       <ng-container>
         <span
-          *ngIf="!collectionOnly && deckBuilder && countInDeck()"
+          *ngIf="!collectionOnly && deckBuilder && getCountInDeck(this.card.id)"
           class="text-shadow-white absolute right-1 z-[100] px-1 text-3xl font-black text-orange-500"
           [ngClass]="{
             'bottom-1': !collectionMode(),
             ' bottom-10': collectionMode()
           }">
-          {{ countInDeck() }}<span class="pr-1 text-sky-700">/</span
+          {{ getCountInDeck(this.card.id) }}<span class="pr-1 text-sky-700">/</span
           >{{
             card.cardNumber === 'BT6-085' ||
             card.cardNumber === 'EX2-046' ||
@@ -110,12 +109,11 @@ export class FullCardComponent {
 
   collectionMode = this.saveStore.collectionMode;
 
-  countInDeck = computed(
-    () =>
-      this.websiteStore
+  getCountInDeck(cardId: string) {
+      return this.websiteStore
         .deck()
-        .cards.find((value) => value.id === withoutJ(this.card.id))?.count ?? 0,
-  );
+        .cards.find((value) => value.id === withoutJ(cardId))?.count ?? 0;
+  }
 
   addCardToDeck() {
     if (this.collectionOnly) {
