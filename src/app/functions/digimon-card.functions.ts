@@ -11,6 +11,7 @@ import {
 } from '../../models';
 import { ReleaseOrder } from '../../models/data/release-order.data';
 import { ColorOrderMap, DeckColorMap } from '../../models/maps/color.map';
+import { sortID } from './filter.functions';
 
 export function setTags(deck: IDeck, allCards: DigimonCard[]) {
   let tags = [];
@@ -231,6 +232,122 @@ export function getCountFromDeckCards(
     number += card.count;
   });
   return number;
+}
+
+export function colorSort(deck: IDeckCard[]) {
+  const eggs = deck
+    .filter((card) => card.cardType === 'Digi-Egg')
+    .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
+
+  const red = deck
+    .filter(
+      (card) => card.color.startsWith('Red') && card.cardType === 'Digimon',
+    )
+    .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
+  const blue = deck
+    .filter(
+      (card) => card.color.startsWith('Blue') && card.cardType === 'Digimon',
+    )
+    .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
+  const yellow = deck
+    .filter(
+      (card) =>
+        card.color.startsWith('Yellow') && card.cardType === 'Digimon',
+    )
+    .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
+  const green = deck
+    .filter(
+      (card) => card.color.startsWith('Green') && card.cardType === 'Digimon',
+    )
+    .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
+  const black = deck
+    .filter(
+      (card) => card.color.startsWith('Black') && card.cardType === 'Digimon',
+    )
+    .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
+  const purple = deck
+    .filter(
+      (card) =>
+        card.color.startsWith('Purple') && card.cardType === 'Digimon',
+    )
+    .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
+
+  const white = deck
+    .filter(
+      (card) => card.color.startsWith('White') && card.cardType === 'Digimon',
+    )
+    .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
+
+  const tamer = deck
+    .filter((card) => card.cardType === 'Tamer')
+    .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
+
+  const options = deck
+    .filter((card) => card.cardType === 'Option')
+    .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
+
+  return [
+    ...new Set([
+      ...eggs,
+      ...red,
+      ...blue,
+      ...yellow,
+      ...green,
+      ...black,
+      ...purple,
+      ...white,
+      ...tamer,
+      ...options,
+    ]),
+  ];
+}
+
+export function levelSort(deck: IDeckCard[]) {
+  const eggs = deck
+    .filter((card) => card.cardType === 'Digi-Egg')
+    .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
+
+  const lv0 = deck
+    .filter((card) => card.cardLv === '-' && card.cardType === 'Digimon')
+    .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
+
+  const lv3 = deck
+    .filter((card) => card.cardLv === 'Lv.3')
+    .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
+  const lv4 = deck
+    .filter((card) => card.cardLv === 'Lv.4')
+    .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
+  const lv5 = deck
+    .filter((card) => card.cardLv === 'Lv.5')
+    .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
+  const lv6 = deck
+    .filter((card) => card.cardLv === 'Lv.6')
+    .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
+  const lv7 = deck
+    .filter((card) => card.cardLv === 'Lv.7')
+    .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
+
+  const tamer = deck
+    .filter((card) => card.cardType === 'Tamer')
+    .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
+
+  const options = deck
+    .filter((card) => card.cardType === 'Option')
+    .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
+
+  return [
+    ...new Set([
+      ...eggs,
+      ...lv0,
+      ...lv3,
+      ...lv4,
+      ...lv5,
+      ...lv6,
+      ...lv7,
+      ...tamer,
+      ...options,
+    ]),
+  ];
 }
 
 export function setDeckImage(

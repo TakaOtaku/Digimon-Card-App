@@ -41,9 +41,8 @@ import {
 } from '../../../../models';
 import {
   compareIDs,
-  sortColors,
+  levelSort,
 } from '../../../functions/digimon-card.functions';
-import { sortID } from '../../../functions/filter.functions';
 import { stringToDeck } from '../../../functions/parse-deck';
 import { DigimonBackendService } from '../../../services/digimon-backend.service';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
@@ -282,7 +281,7 @@ export class DeckSubmissionComponent implements OnInit, OnChanges, OnDestroy {
     iDeckCards.forEach((card) =>
       this.mainDeck.push({ ...card, count: card.count }),
     );
-    this.levelSort();
+    this.mainDeck = levelSort(this.mainDeck);
   }
 
   createImageOptions(): DigimonCardImage[] {
@@ -323,54 +322,6 @@ export class DeckSubmissionComponent implements OnInit, OnChanges, OnDestroy {
       .subscribe();
 
     this.onClose.emit(true);
-  }
-
-  private levelSort() {
-    const eggs = this.mainDeck
-      .filter((card) => card.cardType === 'Digi-Egg')
-      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
-
-    const lv0 = this.mainDeck
-      .filter((card) => card.cardLv === '' && card.cardType === 'Digimon')
-      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
-
-    const lv3 = this.mainDeck
-      .filter((card) => card.cardLv === 'Lv.3')
-      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
-    const lv4 = this.mainDeck
-      .filter((card) => card.cardLv === 'Lv.4')
-      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
-    const lv5 = this.mainDeck
-      .filter((card) => card.cardLv === 'Lv.5')
-      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
-    const lv6 = this.mainDeck
-      .filter((card) => card.cardLv === 'Lv.6')
-      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
-    const lv7 = this.mainDeck
-      .filter((card) => card.cardLv === 'Lv.7')
-      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
-
-    const tamer = this.mainDeck
-      .filter((card) => card.cardType === 'Tamer')
-      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
-
-    const options = this.mainDeck
-      .filter((card) => card.cardType === 'Option')
-      .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
-
-    this.mainDeck = [
-      ...new Set([
-        ...eggs,
-        ...lv0,
-        ...lv3,
-        ...lv4,
-        ...lv5,
-        ...lv6,
-        ...lv7,
-        ...tamer,
-        ...options,
-      ]),
-    ];
   }
 
   private updateValues(inputDeck: IDeck) {
