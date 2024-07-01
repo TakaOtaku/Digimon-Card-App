@@ -6,6 +6,39 @@ import { PanelModule } from 'primeng/panel';
   selector: 'digimon-changelog-dialog',
   template: `
     <div>
+      <p-panel header="Version 4.1.4" [toggleable]="true" [collapsed]="false">
+        <h1 class="font-bold text-lg underline">Features</h1>
+        <ul class="list-disc p-5">
+          <li>
+            Better readabilty for image export, by reducing the count-text size. (Thanks to not-tomo for fixing it)
+          </li>
+          <li>Image Export is now sorted by level.  (Thanks to not-tomo for fixing it)</li>
+          <li>
+            When the card-view is collapesed, the cards arent as big and its better to view all of them.
+          </li>
+          <li>
+            Reduced the size of the Main-Deck Header and Side Deck Header.
+          </li>
+          <li>
+            Added the newest products
+          </li>
+          <li>
+            Added a string which displays the current amount of cards displayed. (Thanks to Joker for requesting the feature)
+          </li>
+        </ul>
+
+        <p-divider></p-divider>
+
+        <h1 class="font-bold text-lg underline">Bugfixes</h1>
+        <ul class="list-disc p-5">
+          <li>
+            Fixed Card Count not being updated on change. (Thanks to not-tomo for fixing it)
+          </li>
+        </ul>
+        <div class="flex flex-wrap align-middle justify-content-between gap-3">
+          <span class="ml-auto p-text-secondary">Updated 01.07.2024</span>
+        </div>
+      </p-panel>
       <p-panel header="Version 4.1.3" [toggleable]="true" [collapsed]="false">
         <h1 class="font-bold text-lg underline">Bugfixes</h1>
         <ul class="list-disc p-5">
