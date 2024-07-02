@@ -70,10 +70,9 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
             </div>
           </ng-template>
           <div
-            class="mx-auto grid w-full"
+            class="mx-auto grid w-full grid-cols-4 md:grid-cols-6"
             [ngClass]="{
-              'grid-cols-4 md:grid-cols-6 lg:grid-cols-8': !collectionView,
-              'grid-cols-4 md:grid-cols-6': collectionView
+              'lg:grid-cols-8': !collectionView
             }">
             <digimon-deck-card
               *ngFor="let card of mainDeck"
