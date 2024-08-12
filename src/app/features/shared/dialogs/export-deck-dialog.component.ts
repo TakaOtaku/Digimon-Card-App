@@ -124,6 +124,8 @@ export class ExportDeckDialogComponent implements OnInit {
   colors = ColorsWithoutMulti;
   selectedColor = 'Red';
 
+  normalOrder = false;
+
   setExport = effect(() => {
     this.deck = this.dialogStore.exportDeck().deck;
     this.deckSort();
@@ -237,8 +239,13 @@ export class ExportDeckDialogComponent implements OnInit {
     this.deck.cards.forEach((card) => {
       const digimonCard = this.digimonCardStore.cardsMap().get(card.id);
       if (digimonCard) {
-        this.deckText += `${card.id.replace('ST0', 'ST')} ${digimonCard?.name
-          .english} ${card.count}\n`;
+        if (this.normalOrder) {
+          this.deckText += `${card.id.replace('ST0', 'ST')} ${digimonCard?.name
+            .english} ${card.count}\n`;
+        } else {
+          this.deckText += `${card.count} ${digimonCard?.name
+            .english} ${card.id.replace('ST0', 'ST')}\n`;
+        }
       }
     });
   }

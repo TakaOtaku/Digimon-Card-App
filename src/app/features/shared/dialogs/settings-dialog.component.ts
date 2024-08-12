@@ -758,14 +758,14 @@ export class SettingsDialogComponent implements OnDestroy {
 
   private setupCollection(): ICountCard[] {
     let setFiltered: ICountCard[] =
-      this.sets.length === 0 ? this.collection : [];
+      this.sets.length === 0 ? this.saveStore.collection() : [];
     this.sets.forEach((filter) => {
       setFiltered = [
         ...new Set([
           ...setFiltered,
-          ...this.collection.filter(
-            (cards) => cards['id'].split('-')[0] === filter,
-          ),
+          ...this.saveStore
+            .collection()
+            .filter((cards) => cards['id'].split('-')[0] === filter),
         ]),
       ];
     });
@@ -780,7 +780,11 @@ export class SettingsDialogComponent implements OnDestroy {
         .cards()
         .find((card) => card.id === collectionCard.id);
 
-      if (this.rarities.includes(foundCard!.rarity)) {
+      if (
+        this.rarities.includes(
+          foundCard && foundCard.rarity ? foundCard.rarity : '',
+        )
+      ) {
         collectionCardsForRarity.push(collectionCard);
       }
     });
