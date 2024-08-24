@@ -246,8 +246,7 @@ replacements = [
     '(Trash up to 2 cards from the top. You can't trash past level 3 cards)',
     '(Trash up to 3 cards from the top. You can't trash past level 3 cards)',
     '(During this Digimon's attack, all of your opponent's Digimon gain <Blocker>, and must block if possible)',
-    '(As this card moves from the battle area or under a card to another area, lose 3 memory.)',
-    '(As this card moves from the battle area or under a card to another area, lose 4 memory.)',
-    '(As this card moves from the battle area or under a card to another area, lose 5 memory.)',
-    '(As this card moves from the battle area or under a card to another area, lose 5 memory.)',
+    '(As this card would move from the field or from under a card to another area, lose 3 memory.)',
+    '(As this card would move from the field or from under a card to another area, lose 4 memory.)',
+    '(As this card would move from the field or from under a card to another area, lose 5 memory.)'
 ]
