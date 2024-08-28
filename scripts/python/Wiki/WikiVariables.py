@@ -61,6 +61,8 @@ wikiPageLinks = [
         'url': 'https://digimoncardgame.fandom.com/wiki/EX-06:_Theme_Booster_Infernal_Ascension'},
     {'name': '▹EXTRA BOOSTER DIGIMON LIBERATOR [EX07]',
         'url': 'https://digimoncardgame.fandom.com/wiki/EX-07:_Extra_Booster_Digimon_Liberator'},
+      {'name': '▹EXTRA BOOSTER CHAINS OF LIBERATION [EX08]',
+        'url': 'https://digimoncardgame.fandom.com/wiki/EX-08:_Extra_Booster_Chains_of_Liberation'},
 
     {'name': 'BOOSTER RESURGENCE BOOSTER [RB1]',
         'url': 'https://digimoncardgame.fandom.com/wiki/RB-01:_Resurgence_Booster'},
@@ -108,6 +110,8 @@ wikiPageLinks = [
         'url': 'https://digimoncardgame.fandom.com/wiki/LM-02:_Limited_Pack_DeathXmon'},
     {'name': 'LM-03: Limited Card Set 2024',
         'url': 'https://digimoncardgame.fandom.com/wiki/LM-03:_Limited_Card_Set_2024'}
+    {'name': 'SPEICIAL LIMITED SET [LM03-04]',
+        'url': 'https://digimoncardgame.fandom.com/wiki/Digimon_Card_Game_Special_Limited_Set'}
 ]
 NoteDictionary = {
     'BT01-03: Release Special Booster Ver.1.0': '▹RELEASE SPECIAL BOOSTER 1.0 [BT01-B0T3]',
@@ -136,6 +140,7 @@ NoteDictionary = {
     'EX-05: Theme Booster Animal Colosseum': '▹THEME BOOSTER ANIMAL COLOSSEUM [EX05]',
     'EX-06: Theme Booster Infernal Ascension': '▹THEME BOOSTER INFERNAL ASCENSION [EX06]',
     'EX-07: Extra Booster Digimon Liberator': '▹EXTRA BOOSTER DIGIMON LIBERATOR [EX07]',
+    'EX-08: Extra Booster Chains of Liberation': '▹EXTRA BOOSTER CHAINS OF LIBERATION [EX08]',
 
     'RB-01: Resurgence Booster': 'BOOSTER RESURGENCE BOOSTER [RB01]',
 
@@ -161,6 +166,7 @@ NoteDictionary = {
     'LM-01: Limited Pack Digimon Ghost Game': 'LIMITED PACK DIGIMON GHOST GAME [LM01]',
     'LM-02: Limited Pack Digimon DeathXmon': 'LIMITED PACK DIGIMON DEATHXMON [LM02]',
     'LM-03: Limited Pack': 'LIMITED PACK [LM03]',
+    'Digimon Card Game Special Limited Set': 'SPEICIAL LIMITED SET [LM03-04]',
 }
 replacements = [
     '(After this card is placed, by trashing it the next turn or later, activate the effect below.)',
@@ -229,5 +235,13 @@ replacements = [
     '(When your other d-brigade Digimon would be deleted by an opponent\'s effect, you may delete this Digimon to prevent you may delete this Digimon to prevent 1 of those Digimon\'s deletion)',
     '(When this Digimon that has 1 of each specified cards in its digivolution cards would leave the battle area other than by your own effects or by battle, you may play 1 of each card without paying their costs)',
     '(When this Digimon that has 1 of each specified cards in its digivolution cards would leave the battle area other than by your own effects or by battle, you may play 1 of each card without paying their costs)',
-    '(1 of your specified Digimon and 1 specified card in hand may DNA digivolve into this card.)'
+    '(1 of your specified Digimon and 1 specified card in hand may DNA digivolve into this card.)'.
+    '(During this Digimon's attack, all of your opponent's Digimon gain ＜Blocker＞, and must block if possible)',
+    '(This Digimon compares its number of digivolution cards instead of DP in battles other than with security Digimon)',
+    '(At the end of your turn, this Digimon may attack an opponent's Digimon. With this effect, it can attack the turn it was played)',
+    '(At the end of your turn, by deleting 1 of your Tokens or other [Puppet] trait Digimon, this Digimon attacks a player without suspending)',
+    '(Trash the top card. You can't trash past level 3 cards)',
+    '(Trash up to 2 cards from the top. You can't trash past level 3 cards)',
+    '(Trash up to 3 cards from the top. You can't trash past level 3 cards)',
+    '(Trash up to 4 cards from the top. You can't trash past level 3 cards)'
 ]
