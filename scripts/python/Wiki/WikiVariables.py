@@ -109,9 +109,9 @@ wikiPageLinks = [
     {'name': 'LIMITED PACK DIGIMON DEATHXMON',
         'url': 'https://digimoncardgame.fandom.com/wiki/LM-02:_Limited_Pack_DeathXmon'},
     {'name': 'LM-03: Limited Card Set 2024',
-        'url': 'https://digimoncardgame.fandom.com/wiki/LM-03:_Limited_Card_Set_2024'}
+        'url': 'https://digimoncardgame.fandom.com/wiki/LM-03:_Limited_Card_Set_2024'},
     {'name': 'SPEICIAL LIMITED SET [LM03-04]',
-        'url': 'https://digimoncardgame.fandom.com/wiki/Digimon_Card_Game_Special_Limited_Set'}
+        'url': 'https://digimoncardgame.fandom.com/wiki/Digimon_Card_Game_Special_Limited_Set'},
 ]
 NoteDictionary = {
     'BT01-03: Release Special Booster Ver.1.0': '▹RELEASE SPECIAL BOOSTER 1.0 [BT01-B0T3]',
@@ -236,12 +236,12 @@ replacements = [
     '(When this Digimon that has 1 of each specified cards in its digivolution cards would leave the battle area other than by your own effects or by battle, you may play 1 of each card without paying their costs)',
     '(When this Digimon that has 1 of each specified cards in its digivolution cards would leave the battle area other than by your own effects or by battle, you may play 1 of each card without paying their costs)',
     '(1 of your specified Digimon and 1 specified card in hand may DNA digivolve into this card.)'.
-    '(During this Digimon's attack, all of your opponent's Digimon gain ＜Blocker＞, and must block if possible)',
+    '(During this Digimon\'s attack, all of your opponent\'s Digimon gain ＜Blocker＞, and must block if possible)',
     '(This Digimon compares its number of digivolution cards instead of DP in battles other than with security Digimon)',
-    '(At the end of your turn, this Digimon may attack an opponent's Digimon. With this effect, it can attack the turn it was played)',
+    '(At the end of your turn, this Digimon may attack an opponent\'s Digimon. With this effect, it can attack the turn it was played)',
     '(At the end of your turn, by deleting 1 of your Tokens or other [Puppet] trait Digimon, this Digimon attacks a player without suspending)',
-    '(Trash the top card. You can't trash past level 3 cards)',
-    '(Trash up to 2 cards from the top. You can't trash past level 3 cards)',
-    '(Trash up to 3 cards from the top. You can't trash past level 3 cards)',
-    '(Trash up to 4 cards from the top. You can't trash past level 3 cards)'
+    '(Trash the top card. You can\'t trash past level 3 cards)',
+    '(Trash up to 2 cards from the top. You can\'t trash past level 3 cards)',
+    '(Trash up to 3 cards from the top. You can\'t trash past level 3 cards)',
+    '(Trash up to 4 cards from the top. You can\'t trash past level 3 cards)',
 ]
