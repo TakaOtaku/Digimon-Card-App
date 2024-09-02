@@ -235,7 +235,7 @@ replacements = [
     '(When your other d-brigade Digimon would be deleted by an opponent\'s effect, you may delete this Digimon to prevent you may delete this Digimon to prevent 1 of those Digimon\'s deletion)',
     '(When this Digimon that has 1 of each specified cards in its digivolution cards would leave the battle area other than by your own effects or by battle, you may play 1 of each card without paying their costs)',
     '(When this Digimon that has 1 of each specified cards in its digivolution cards would leave the battle area other than by your own effects or by battle, you may play 1 of each card without paying their costs)',
-    '(1 of your specified Digimon and 1 specified card in hand may DNA digivolve into this card.)'.
+    '(1 of your specified Digimon and 1 specified card in hand may DNA digivolve into this card.)',
     '(During this Digimon\'s attack, all of your opponent\'s Digimon gain ＜Blocker＞, and must block if possible)',
     '(This Digimon compares its number of digivolution cards instead of DP in battles other than with security Digimon)',
     '(At the end of your turn, this Digimon may attack an opponent\'s Digimon. With this effect, it can attack the turn it was played)',
