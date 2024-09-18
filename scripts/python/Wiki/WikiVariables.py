@@ -237,6 +237,7 @@ replacements = [
     '(When your other [Bagra Army] trait Digimon would be deleted by an opponent\'s effect, you may delete this Digimon to prevent you may delete this Digimon to prevent 1 of those Digimon\'s deletion)',
     '(When your other [D-Brigade] trait Digimon would be deleted by an opponent\'s effect, you may delete this Digimon to prevent you may delete this Digimon to prevent 1 of those Digimon\'s deletion)',
     '(When your other [Puppet] trait Digimon would be deleted by an opponent\'s effect, you may delete this Digimon to prevent you may delete this Digimon to prevent 1 of those Digimon\'s deletion)',
+    '(When your other [Xros Heart] trait Digimon would be deleted by an opponent\'s effect, you may delete this Digimon to prevent you may delete this Digimon to prevent 1 of those Digimon\'s deletion)',
     '(When this Digimon with each of the specified digivolution cards would leave the battle area other than by your own effects or by battle, you may play 1 each of the specified cards without paying the costs)',
     '(When this Digimon with digivolution cards is deleted, play this card without paying the cost)',
     '(At the end of your turn, by deleting 1 of your Tokens or other [Puppet] trait Digimon, this Digimon attacks a player without suspending)',
@@ -248,5 +249,7 @@ replacements = [
     '(During this Digimon's attack, all of your opponent's Digimon gain <Blocker>, and must block if possible)',
     '(As this card would move from the field or from under a card to another area, lose 3 memory.)',
     '(As this card would move from the field or from under a card to another area, lose 4 memory.)',
-    '(As this card would move from the field or from under a card to another area, lose 5 memory.)'
+    '(As this card would move from the field or from under a card to another area, lose 5 memory.)',
+    '(When this Digimon would leave the battle area other than in battle, you may play 1 Blue Level 4 Digimon card from its digivolution cards without paying the cost)',
+    '(When this Digimon would leave the battle area other than in battle, you may play 1 Blue Level 5 Digimon card from its digivolution cards without paying the cost)'
 ]
