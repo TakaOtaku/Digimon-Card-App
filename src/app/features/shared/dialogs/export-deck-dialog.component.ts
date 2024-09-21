@@ -124,7 +124,7 @@ export class ExportDeckDialogComponent implements OnInit {
   colors = ColorsWithoutMulti;
   selectedColor = 'Red';
 
-  normalOrder = false;
+  normalOrder = true;
 
   setExport = effect(() => {
     this.deck = this.dialogStore.exportDeck().deck;
