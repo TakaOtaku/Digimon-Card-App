@@ -280,6 +280,7 @@ export const Types: string[] = [
   'Dark Dragon',
   'Dark Masters',
   'Dark Knight',
+  'Demon God',
   'Demon Lord',
   'Demon',
   'Deva',
