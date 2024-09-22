@@ -241,6 +241,7 @@ replacements = [
     '(When this Digimon with each of the specified digivolution cards would leave the battle area other than by your own effects or by battle, you may play 1 each of the specified cards without paying the costs)',
     '(When this Digimon with digivolution cards is deleted, play this card without paying the cost)',
     '(At the end of your turn, by deleting 1 of your Tokens or other [Puppet] trait Digimon, this Digimon attacks a player without suspending)',
+    '(At the end of your turn, by deleting 1 of your Tokens or other [Composite] trait Digimon, this Digimon attacks a player without suspending)',
     '(At the end of your turn, this Digimon may attack an opponent's Digimon. With this effect, it can attack the turn it was played)',
     '(This Digimon compares its number of digivolution cards instead of DP in battles other than with security Digimon)',
     '(Trash the top card. You can't trash past level 3 cards)',
