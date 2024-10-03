@@ -6,7 +6,20 @@ import { PanelModule } from 'primeng/panel';
   selector: 'digimon-changelog-dialog',
   template: `
     <div>
-      <p-panel header="Version 4.1.5" [toggleable]="true" [collapsed]="false">
+      <p-panel header="Version 4.1.6" [toggleable]="true" [collapsed]="false">
+        <h1 class="font-bold text-lg underline">Feature</h1>
+        <ul class="list-disc p-5">
+          <li>
+            Added Special Rare and Rare Pull Version. If you have a filter for
+            versions set in your settings you have to set them for those as
+            well.
+          </li>
+        </ul>
+        <div class="flex flex-wrap align-middle justify-content-between gap-3">
+          <span class="ml-auto p-text-secondary">Updated 03.10.2024</span>
+        </div>
+      </p-panel>
+      <p-panel header="Version 4.1.5" [toggleable]="true" [collapsed]="true">
         <h1 class="font-bold text-lg underline">Bugfixes</h1>
         <ul class="list-disc p-5">
           <li>Fixed Collection Export not working</li>
@@ -15,7 +28,7 @@ import { PanelModule } from 'primeng/panel';
           <span class="ml-auto p-text-secondary">Updated 13.08.2024</span>
         </div>
       </p-panel>
-      <p-panel header="Version 4.1.4" [toggleable]="true" [collapsed]="false">
+      <p-panel header="Version 4.1.4" [toggleable]="true" [collapsed]="true">
         <h1 class="font-bold text-lg underline">Features</h1>
         <ul class="list-disc p-5">
           <li>
@@ -53,7 +66,7 @@ import { PanelModule } from 'primeng/panel';
           <span class="ml-auto p-text-secondary">Updated 01.07.2024</span>
         </div>
       </p-panel>
-      <p-panel header="Version 4.1.3" [toggleable]="true" [collapsed]="false">
+      <p-panel header="Version 4.1.3" [toggleable]="true" [collapsed]="true">
         <h1 class="font-bold text-lg underline">Bugfixes</h1>
         <ul class="list-disc p-5">
           <li>

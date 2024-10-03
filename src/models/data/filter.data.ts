@@ -30,6 +30,7 @@ export const Sets = [
   'EX5',
   'EX6',
   'EX7',
+  'EX8',
   'ST1',
   'ST2',
   'ST3',
@@ -531,6 +532,8 @@ export const Versions = [
   'Box Topper',
   'Full Art',
   'Stamp',
+  'Special Rare',
+  'Rare Pull',
 ];
 export const VersionButtons: MultiButtons[] = [
   {
@@ -563,10 +566,14 @@ export const VersionButtons: MultiButtons[] = [
   },
   {
     name: 'Stamp',
-    value: 'Stamp',  
+    value: 'Stamp',
   },
   {
     name: 'SP',
-    value: 'SP',
+    value: 'Special Rare',
+  },
+  {
+    name: 'RP',
+    value: 'Rare Pull',
   },
 ];

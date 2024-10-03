@@ -533,6 +533,10 @@ export class ViewCardDialogComponent {
       return 'Full Art';
     } else if (version.includes('Stamp')) {
       return 'Stamp';
+    } else if (version.includes('Special Rare')) {
+      return 'Special Rare';
+    } else if (version.includes('Rare Pull')) {
+      return 'Rare Pull';
     }
     return 'Normal';
   }

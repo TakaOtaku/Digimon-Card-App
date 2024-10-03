@@ -165,6 +165,22 @@ import { SettingsRowComponent } from '../settings-row.component';
               optionLabel="label"
               optionValue="value"></p-selectButton>
           </digimon-settings-row>
+          <digimon-settings-row title="Special Rare">
+            <p-selectButton
+              [allowEmpty]="false"
+              [(ngModel)]="specialRare"
+              [options]="showHideOptions"
+              optionLabel="label"
+              optionValue="value"></p-selectButton>
+          </digimon-settings-row>
+          <digimon-settings-row title="Rare Pull">
+            <p-selectButton
+              [allowEmpty]="false"
+              [(ngModel)]="rarePull"
+              [options]="showHideOptions"
+              optionLabel="label"
+              optionValue="value"></p-selectButton>
+          </digimon-settings-row>
         </p-card>
 
         <p-card
@@ -337,6 +353,18 @@ import { SettingsRowComponent } from '../settings-row.component';
               class="min-w-auto primary-background mt-2 h-8 w-10 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
               Reprint
             </button>
+            <button
+              (click)="changeVersion('Special Rare')"
+              [ngClass]="{ 'primary-border': versions.includes('Reprint') }"
+              class="min-w-auto primary-background mt-2 h-8 w-10 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
+              Reprint
+            </button>
+            <button
+              (click)="changeVersion('Rare Pull')"
+              [ngClass]="{ 'primary-border': versions.includes('Reprint') }"
+              class="min-w-auto primary-background mt-2 h-8 w-10 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
+              Reprint
+            </button>
           </div>
 
           <p class="mt-3 text-center font-bold">
@@ -483,6 +511,8 @@ export class SettingsDialogComponent implements OnDestroy {
   aa = true;
   stamped = true;
   reprint = false;
+  specialRare = false;
+  rarePull = false;
   showHideOptions = [
     { label: 'Show', value: true },
     { label: 'Hide', value: false },
@@ -528,6 +558,8 @@ export class SettingsDialogComponent implements OnDestroy {
       this.aa = settings.showAACards;
       this.stamped = settings.showStampedCards;
       this.reprint = settings.showReprintCards;
+      this.specialRare = settings.showSpecialRareCards;
+      this.rarePull = settings.showRarePullCards;
       this.collectionCount = settings.collectionMinimum;
       this.aaCollectionCount = settings.aaCollectionMinimum;
       this.deckDisplayTable = settings.deckDisplayTable;
@@ -558,6 +590,8 @@ export class SettingsDialogComponent implements OnDestroy {
         showAACards: this.aa,
         showStampedCards: this.stamped,
         showReprintCards: this.reprint,
+        showSpecialRareCards: this.specialRare,
+        showRarePullCards: this.rarePull,
 
         sortDeckOrder: this.sortOrderFilter.value,
         showUserStats: this.userStats,

@@ -21,7 +21,7 @@ import { DeckDialogComponent } from '../../shared/dialogs/deck-dialog.component'
   template: `
     <div class="mb-5 w-full p-1">
       <h1
-        class="main-font mb-2 w-full text-3xl font-extrabold uppercase text-[#e2e4e6]">
+        class="main-font w-full text-3xl font-extrabold uppercase text-[#e2e4e6]">
         Digimon Archtype Ranking
         <span
           class="surface-card ml-auto inline-block whitespace-nowrap rounded border border-black px-2.5 py-1.5 text-center align-baseline font-bold leading-none text-[#e2e4e6]"
@@ -49,6 +49,9 @@ import { DeckDialogComponent } from '../../shared/dialogs/deck-dialog.component'
           type="button"
           (click)="archtypeDialog = true"></button>
       </h1>
+      <h3 class="mb-2 text-2xs">
+        Not kept up-to-date, if you want to help send me a message.
+      </h3>
 
       <div
         *ngFor="let key of tiers; let i = index"

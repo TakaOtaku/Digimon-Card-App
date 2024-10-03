@@ -252,6 +252,10 @@ function applyVersionFilter(card: DigimonCard, filters: string[]): boolean {
       remove = card['version'].includes('Box Topper');
     } else if (filter === 'Full Art') {
       remove = card['version'].includes('Full Art');
+    } else if (filter === 'Special Rare') {
+      remove = card['version'].includes('Special Rare');
+    } else if (filter === 'Rare Pull') {
+      remove = card['version'].includes('Rare Pull');
     } else {
       remove = filter.includes(card['version']);
     }

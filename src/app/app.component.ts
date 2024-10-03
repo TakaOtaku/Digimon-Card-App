@@ -172,7 +172,9 @@ export class AppComponent {
       settings.showPreRelease === undefined ||
       settings.showAACards === undefined ||
       settings.showStampedCards === undefined ||
-      settings.showReprintCards === undefined
+      settings.showReprintCards === undefined ||
+      settings.showSpecialRareCards === undefined ||
+      settings.showRarePullCards === undefined
     ) {
       return;
     }
@@ -194,6 +196,8 @@ export class AppComponent {
           'Box Topper',
           'Full Art',
           'Stamp',
+          'Special Rare',
+          'Rare Pull',
         ];
       }
       filter = { ...filter, versionFilter };
@@ -211,6 +215,8 @@ export class AppComponent {
           'Box Topper',
           'Full Art',
           'Stamp',
+          'Special Rare',
+          'Rare Pull',
         ];
       }
       filter = { ...filter, versionFilter };
@@ -228,6 +234,8 @@ export class AppComponent {
           'Box Topper',
           'Full Art',
           'Stamp',
+          'Special Rare',
+          'Rare Pull',
         ];
       }
       filter = { ...filter, versionFilter };
@@ -245,6 +253,8 @@ export class AppComponent {
           'Release',
           'Full Art',
           'Stamp',
+          'Special Rare',
+          'Rare Pull',
         ];
       }
       filter = { ...filter, versionFilter };
@@ -262,6 +272,8 @@ export class AppComponent {
           'Release',
           'Box Topper',
           'Stamp',
+          'Special Rare',
+          'Rare Pull',
         ];
       }
       filter = { ...filter, versionFilter };
@@ -279,6 +291,8 @@ export class AppComponent {
           'Release',
           'Box Topper',
           'Full Art',
+          'Special Rare',
+          'Rare Pull',
         ];
       }
       filter = { ...filter, versionFilter };
@@ -296,6 +310,8 @@ export class AppComponent {
           'Box Topper',
           'Full Art',
           'Stamp',
+          'Special Rare',
+          'Rare Pull',
         ];
       }
       filter = { ...filter, versionFilter };
