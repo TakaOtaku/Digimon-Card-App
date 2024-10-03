@@ -243,6 +243,7 @@ def setRarity(digimoncard):
     "Secret Rare": 'SEC',
     "Alternative Art": "AA",
     "Promo": "P"
+    "Special Rare": "SP"
   }
 
   digimoncard.rarity = rarityDict[digimoncard.rarity]
