@@ -603,6 +603,8 @@ export class SettingsDialogComponent implements OnDestroy {
       },
     };
 
+    console.log(save);
+
     this.saveStore.updateSave(save);
     this.toastrService.info(
       'Settings were saved and updated.',

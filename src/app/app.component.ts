@@ -316,6 +316,44 @@ export class AppComponent {
       }
       filter = { ...filter, versionFilter };
     }
+    if (!settings.showSpecialRareCards) {
+      let versionFilter = filter.versionFilter.filter(
+        (filter) => filter !== 'Special Rare',
+      );
+      if (versionFilter.length === 0) {
+        versionFilter = [
+          'Normal',
+          'Alternative Art',
+          'Foil',
+          'Textured',
+          'Release',
+          'Box Topper',
+          'Full Art',
+          'Stamp',
+          'Rare Pull',
+        ];
+      }
+      filter = { ...filter, versionFilter };
+    }
+    if (!settings.showRarePullCards) {
+      let versionFilter = filter.versionFilter.filter(
+        (filter) => filter !== 'Rare Pull',
+      );
+      if (versionFilter.length === 0) {
+        versionFilter = [
+          'Normal',
+          'Alternative Art',
+          'Foil',
+          'Textured',
+          'Release',
+          'Box Topper',
+          'Full Art',
+          'Stamp',
+          'Special Rare',
+        ];
+      }
+      filter = { ...filter, versionFilter };
+    }
 
     this.filterStore.updateFilter(filter);
   }

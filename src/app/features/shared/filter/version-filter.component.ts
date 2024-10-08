@@ -25,6 +25,7 @@ export class VersionFilterComponent {
 
   filterChange = effect(() => {
     this.versionFilter = this.filterStore.versionFilter();
+    console.log(this.versionFilter);
   });
 
   changeVersion(version: string, versionFilter: string[]) {
