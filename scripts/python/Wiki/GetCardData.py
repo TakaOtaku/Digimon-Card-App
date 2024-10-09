@@ -242,7 +242,7 @@ def setRarity(digimoncard):
     "Super Rare": 'SR',
     "Secret Rare": 'SEC',
     "Alternative Art": "AA",
-    "Promo": "P"
+    "Promo": "P",
     "Special Rare": "SP"
   }
 
