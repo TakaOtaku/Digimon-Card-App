@@ -1,9 +1,15 @@
 import { NgClass, NgFor, NgStyle } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  inject,
+  ViewChild,
+} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
-import { MessageService } from 'primeng/api';
+import { MenuItem, MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { DragDropModule } from 'primeng/dragdrop';
@@ -15,6 +21,8 @@ import { emptyDeck, JAPTIERLIST, TIERLIST } from '../../../../models';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
 import { WebsiteStore } from '../../../store/website.store';
 import { DeckDialogComponent } from '../../shared/dialogs/deck-dialog.component';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { ContextMenu, ContextMenuModule } from 'primeng/contextmenu';
 
 @Component({
   selector: 'digimon-tierlist',
@@ -58,12 +66,15 @@ import { DeckDialogComponent } from '../../shared/dialogs/deck-dialog.component'
         class="flex w-full flex-row border border-black">
         <div
           [ngClass]="key.color"
+          pDroppable="gens"
+          (onDrop)="onDropToTier(i)"
           class="text-black-outline w-24 text-center text-7xl font-black leading-[5.5rem] text-[#e2e4e6]">
           {{ key.tier }}
         </div>
         <p-listbox [options]="tierlist[i]" [(ngModel)]="selectedDeck">
           <ng-template let-deck let-index="index" pTemplate="item">
             <div
+              (contextmenu)="removeDeck(deck, index, i)"
               class="ui-helper-clearfix"
               pDraggable="gens"
               pDroppable="gens"
@@ -94,15 +105,18 @@ import { DeckDialogComponent } from '../../shared/dialogs/deck-dialog.component'
       [modal]="true"
       [dismissableMask]="true"
       [resizable]="false"
-      styleClass="w-full h-full max-w-6xl"
+      styleClass=""
       [baseZIndex]="10000">
-      <span>Add the card id that represents the deck you want to add</span>
-      <input
-        type="text"
-        pInputText
-        [(ngModel)]="cardId"
-        placeholder="BT1-001" />
-      <p-button (click)="addDeck()">Add</p-button>
+      <div class="flex flex-col">
+        <span>Add the card id that represents the deck you want to add</span>
+        <input
+          class="my-5"
+          type="text"
+          pInputText
+          [(ngModel)]="cardId"
+          placeholder="BT1-001" />
+        <p-button (click)="addDeck()">Add</p-button>
+      </div>
     </p-dialog>
   `,
   styleUrls: ['./tierlist.component.scss'],
@@ -122,6 +136,7 @@ import { DeckDialogComponent } from '../../shared/dialogs/deck-dialog.component'
     DialogModule,
     DeckDialogComponent,
     InputTextModule,
+    ContextMenuModule,
   ],
 })
 export class TierlistComponent {
@@ -148,7 +163,13 @@ export class TierlistComponent {
   private digimonCardStore = inject(DigimonCardStore);
   private messageService = inject(MessageService);
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private db: AngularFireDatabase,
+    private changeDetectorRef: ChangeDetectorRef,
+  ) {
+    this.db.list('tierlist').valueChanges().subscribe(console.log);
+  }
 
   openCommunityWithSearch(card: string) {
     this.websiteStore.updateCommunityDeckSearch(card);
@@ -179,7 +200,7 @@ export class TierlistComponent {
     this.tierlist[endTier].splice(endIndex, 0, this.selectedDeck);
 
     // Update the tierlist
-    this.tierlist = [...this.tierlist];
+    this.changeDetectorRef.detectChanges();
   }
 
   copyTierlist() {
@@ -198,11 +219,39 @@ export class TierlistComponent {
         image: card.cardImage,
       };
       this.tierlist[0].push(deck);
+      this.archtypeDialog = false;
+      this.changeDetectorRef.detectChanges();
+      this.messageService.add({
+        severity: 'success',
+        summary: 'Card ["' + card.name.english + '"] added to Tierlist.',
+      });
     } else {
       this.messageService.add({
         severity: 'error',
         summary: 'Card ID not found.',
       });
     }
+  }
+
+  onDropToTier(tier: number) {
+    console.log(
+      'Move Deck ' +
+        this.selectedDeck.name +
+        ' to Tier ' +
+        this.tiers[tier].tier,
+    );
+    // Remove the dragged element from the old tier
+    this.tierlist[this.startTier].splice(this.startIndex, 1);
+
+    // Add the dragged element to the new tier
+    this.tierlist[tier].push(this.selectedDeck);
+
+    // Update the tierlist
+    this.changeDetectorRef.detectChanges();
+  }
+
+  removeDeck(deck: any, index: number, tier: number) {
+    console.log('Remove Deck ', deck);
+    this.tierlist[tier].splice(index, 1);
   }
 }
