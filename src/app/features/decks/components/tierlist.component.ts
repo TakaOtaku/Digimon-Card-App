@@ -57,9 +57,7 @@ import { ContextMenu, ContextMenuModule } from 'primeng/contextmenu';
           type="button"
           (click)="archtypeDialog = true"></button>
       </h1>
-      <h3 class="mb-2 text-2xs">
-        Not kept up-to-date, if you want to help send me a message.
-      </h3>
+      <h3 class="mb-2 text-2xs">Maintained by Nath</h3>
 
       <div
         *ngFor="let key of tiers; let i = index"
