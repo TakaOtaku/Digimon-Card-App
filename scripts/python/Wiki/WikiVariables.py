@@ -246,5 +246,5 @@ replacements = [
     '(Trash up to 2 cards from the top. You can\'t trash past level 3 cards)',
     '(Trash up to 3 cards from the top. You can\'t trash past level 3 cards)',
     '(Trash up to 4 cards from the top. You can\'t trash past level 3 cards)',
-    '(When this Digimon would be deleted, by trashing any 3 of its digivolution cards, it isn't deleted)',
+    '(When this Digimon would be deleted, by trashing any 3 of its digivolution cards, it isn\'t deleted)',
 ]
