@@ -242,6 +242,8 @@ replacements = [
     '(At the end of your turn, this Digimon may attack an opponent\'s Digimon. With this effect, it can attack the turn it was played)',
     '(At the end of your turn, by deleting 1 of your Tokens or other [Puppet] trait Digimon, this Digimon attacks a player without suspending)',
     '(At the end of your turn, by deleting 1 of your Tokens or other [Composite] trait Digimon, this Digimon attacks a player without suspending)',
+    '(At the end of your turn, by deleting 1 of your Tokens or other [Puppet] trait Digimon, this Digimon attacks a player without suspending).',
+    '(At the end of your turn, by deleting 1 of your Tokens or other [Composite] trait Digimon, this Digimon attacks a player without suspending).',
     '(Trash the top card. You can\'t trash past level 3 cards)',
     '(Trash up to 2 cards from the top. You can\'t trash past level 3 cards)',
     '(Trash up to 3 cards from the top. You can\'t trash past level 3 cards)',
