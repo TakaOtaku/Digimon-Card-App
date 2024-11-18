@@ -128,6 +128,7 @@ NoteDictionary = {
     'BT-13: Booster Versus Royal Knights': '▹BOOSTER VERSUS ROYAL KNIGHT [BT13]',
     'BT-14: Booster Blast Ace': '▹BOOSTER BLAST ACE [BT14]',
     'BT-15: Booster Exceed Apocalypse': '▹BOOSTER EXCEED APOCALYPSE [BT15]',
+    'BT-16: Booster Beginning Observer': '▹BOOSTER BEGINNING OBSERVER [BT16]',
     'BT-17: Booster Secret Crisis': '▹BOOSTER SECRET CRISIS [BT17]',
     'BT-18: Booster Elemental Successor': '▹BOOSTER ELEMENTAL SUCCESSOR [BT18]',
     'BT18-19: Special Booster Ver.2.0': '▹SPECIAL BOOSTER VER.2.0 [BT18-19]',
@@ -240,8 +241,10 @@ replacements = [
     '(This Digimon compares its number of digivolution cards instead of DP in battles other than with security Digimon)',
     '(At the end of your turn, this Digimon may attack an opponent\'s Digimon. With this effect, it can attack the turn it was played)',
     '(At the end of your turn, by deleting 1 of your Tokens or other [Puppet] trait Digimon, this Digimon attacks a player without suspending)',
+    '(At the end of your turn, by deleting 1 of your Tokens or other [Composite] trait Digimon, this Digimon attacks a player without suspending)',
     '(Trash the top card. You can\'t trash past level 3 cards)',
     '(Trash up to 2 cards from the top. You can\'t trash past level 3 cards)',
     '(Trash up to 3 cards from the top. You can\'t trash past level 3 cards)',
     '(Trash up to 4 cards from the top. You can\'t trash past level 3 cards)',
+    '(When this Digimon would be deleted, by trashing any 3 of its digivolution cards, it isn\'t deleted)',
 ]
