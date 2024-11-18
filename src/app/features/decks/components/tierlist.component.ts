@@ -1,8 +1,9 @@
-import { NgClass, NgFor, NgStyle } from '@angular/common';
+import { NgClass, NgFor, NgIf, NgStyle } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
+  computed,
   inject,
   ViewChild,
 } from '@angular/core';
@@ -17,12 +18,13 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ListboxModule } from 'primeng/listbox';
 import { RippleModule } from 'primeng/ripple';
 import { TooltipModule } from 'primeng/tooltip';
-import { emptyDeck, JAPTIERLIST, TIERLIST } from '../../../../models';
+import { ADMINS, emptyDeck, JAPTIERLIST, TIERLIST } from '../../../../models';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
 import { WebsiteStore } from '../../../store/website.store';
 import { DeckDialogComponent } from '../../shared/dialogs/deck-dialog.component';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { ContextMenu, ContextMenuModule } from 'primeng/contextmenu';
+import { SaveStore } from '../../../store/save.store';
 
 @Component({
   selector: 'digimon-tierlist',
@@ -56,6 +58,22 @@ import { ContextMenu, ContextMenuModule } from 'primeng/contextmenu';
           pRipple
           type="button"
           (click)="archtypeDialog = true"></button>
+        <button
+          *ngIf="isAdmin()"
+          class="p-button-outlined p-button-rounded p-button-sm mx-2"
+          icon="pi pi-clipboard"
+          pButton
+          pRipple
+          type="button"
+          (click)="pasteTierlist()"></button>
+        <button
+          *ngIf="isAdmin()"
+          class="p-button-outlined p-button-rounded p-button-sm mx-2"
+          icon="pi pi-upload"
+          pButton
+          pRipple
+          type="button"
+          (click)="uploadTierlist()"></button>
       </h1>
       <h3 class="mb-2 text-2xs">Maintained by #Naethaen</h3>
 
@@ -135,6 +153,7 @@ import { ContextMenu, ContextMenuModule } from 'primeng/contextmenu';
     DeckDialogComponent,
     InputTextModule,
     ContextMenuModule,
+    NgIf,
   ],
 })
 export class TierlistComponent {
@@ -158,7 +177,17 @@ export class TierlistComponent {
   cardId: string;
   protected readonly emptyDeck = emptyDeck;
 
+  isAdmin = computed(() => {
+    return !!ADMINS.find((user) => {
+      if (this.saveStore.save().uid === user.id) {
+        return user.admin;
+      }
+      return false;
+    });
+  });
+
   private digimonCardStore = inject(DigimonCardStore);
+  private saveStore = inject(SaveStore);
   private messageService = inject(MessageService);
 
   constructor(
@@ -166,7 +195,15 @@ export class TierlistComponent {
     private db: AngularFireDatabase,
     private changeDetectorRef: ChangeDetectorRef,
   ) {
-    this.db.list('tierlist').valueChanges().subscribe(console.log);
+    this.db
+      .list('tierlist')
+      .valueChanges()
+      .subscribe((value) => {
+        const newTierlist = (value as any[])[0];
+        console.log(newTierlist);
+        debugger;
+        this.tierlist = newTierlist;
+      });
   }
 
   openCommunityWithSearch(card: string) {
@@ -251,5 +288,25 @@ export class TierlistComponent {
   removeDeck(deck: any, index: number, tier: number) {
     console.log('Remove Deck ', deck);
     this.tierlist[tier].splice(index, 1);
+  }
+
+  pasteTierlist() {
+    navigator.clipboard.readText().then((text) => {
+      try {
+        const tierlist = JSON.parse(text);
+        this.tierlist = tierlist;
+        this.changeDetectorRef.detectChanges();
+      } catch (e) {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Invalid Tierlist JSON.',
+        });
+      }
+    });
+  }
+
+  uploadTierlist() {
+    // Upload the current tierlist to the database
+    this.db.list('tierlist').set('tierlist', this.tierlist);
   }
 }

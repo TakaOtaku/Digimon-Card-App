@@ -50,7 +50,7 @@
     "ngx-toastr": "16.1.0",
     "oauth-1.0a": "^2.2.6",
     "prettier-eslint": "16.1.2",
-    "primeicons": "6.0.1",
+    "primeicons": "7.0.0",
     "primeng": "17.0.0-rc.1",
     "rxfire": "^6.0.5",
     "rxjs": "7.8.1",

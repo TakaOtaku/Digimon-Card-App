@@ -17,4 +17,10 @@ export const ADMINS = [
     writeBlog: true,
     editEvents: true,
   },
+  {
+    id: 'gEGhGgqosKezSfZDI8WrdUBRH6J3', //nath0pizza
+    admin: true,
+    writeBlog: false,
+    editEvents: false,
+  },
 ];
