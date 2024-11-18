@@ -147,11 +147,12 @@ export class PaginationCardListComponent {
   }
 
   getCount(cardId: string): number {
-    if (this.collection() === null) {
+    if (this.inputCollection === null) {
       return 0;
     }
     return (
-      this.collection().find((value) => value.id === withoutJ(cardId))?.count ?? 0
+      this.inputCollection.find((value) => value.id === withoutJ(cardId))
+        ?.count ?? 0
     );
   }
 
