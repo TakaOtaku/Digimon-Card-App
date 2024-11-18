@@ -1,15 +1,33 @@
-import { AsyncPipe, NgClass, NgFor, NgIf, NgOptimizedImage } from '@angular/common';
-import { ChangeDetectionStrategy, Component, effect, inject, Input } from '@angular/core';
+import {
+  AsyncPipe,
+  NgClass,
+  NgFor,
+  NgIf,
+  NgOptimizedImage,
+} from '@angular/common';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  effect,
+  inject,
+  Input,
+} from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { DataViewModule } from 'primeng/dataview';
 import { DialogModule } from 'primeng/dialog';
 import { DragDropModule } from 'primeng/dragdrop';
 import { SidebarModule } from 'primeng/sidebar';
 import { SkeletonModule } from 'primeng/skeleton';
-import { DigimonCard, DRAG, dummyCard, ICountCard, IDraggedCard } from '../../../../models';
+import {
+  DigimonCard,
+  DRAG,
+  dummyCard,
+  ICountCard,
+  IDraggedCard,
+} from '../../../../models';
 import { ImgFallbackDirective } from '../../../directives/ImgFallback.directive';
 import { IntersectionListenerDirective } from '../../../directives/intersection-listener.directive';
-import { withoutJ } from '../../../functions';
+import { filterCards, withoutJ } from '../../../functions';
 import { DialogStore } from '../../../store/dialog.store';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
 import { SaveStore } from '../../../store/save.store';
@@ -19,6 +37,7 @@ import { FilterSideBoxComponent } from '../../shared/filter/filter-side-box.comp
 import { FullCardComponent } from '../../shared/full-card.component';
 import { PaginationCardListHeaderComponent } from './pagination-card-list-header.component';
 import { SearchComponent } from './search.component';
+import { FilterStore } from '../../../store/filter.store';
 
 @Component({
   selector: 'digimon-pagination-card-list',
@@ -111,6 +130,7 @@ export class PaginationCardListComponent {
   websiteStore = inject(WebsiteStore);
   saveStore = inject(SaveStore);
   dialogStore = inject(DialogStore);
+  filterStore = inject(FilterStore);
 
   draggedCard = this.websiteStore.draggedCard;
   collection = this.saveStore.collection;
@@ -125,6 +145,27 @@ export class PaginationCardListComponent {
   page = 1;
   filteredCards = this.digimonCardStore.filteredCards;
   showCards: DigimonCard[] = [];
+
+  onFilterChange = effect(
+    () => {
+      if (this.inputCollection.length === 0) return;
+      console.log('Filter changed');
+      const cards = this.digimonCardStore.cards();
+
+      if (cards.length === 0) return;
+
+      const filteredCards = filterCards(
+        this.digimonCardStore.cards(),
+        { ...this.saveStore.save(), collection: this.inputCollection },
+        this.filterStore.filter(),
+        this.websiteStore.sort(),
+        this.digimonCardStore.cardsMap(),
+      );
+
+      this.digimonCardStore.updateFilteredCards(filteredCards);
+    },
+    { allowSignalWrites: true },
+  );
 
   constructor() {
     effect(() => {
@@ -147,8 +188,11 @@ export class PaginationCardListComponent {
   }
 
   getCount(cardId: string): number {
-    if (this.inputCollection === null) {
-      return 0;
+    if (this.inputCollection.length === 0) {
+      return (
+        this.collection().find((value) => value.id === withoutJ(cardId))
+          ?.count ?? 0
+      );
     }
     return (
       this.inputCollection.find((value) => value.id === withoutJ(cardId))
