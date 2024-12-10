@@ -44,10 +44,14 @@ wikiPageLinks = [
 #        'url': 'https://digimoncardgame.fandom.com/wiki/BT-18:_Booster_Elemental_Successor'},
 #   {'name': '▹BOOSTER XROS EVOLUTION [BT19]',
 #        'url': 'https://digimoncardgame.fandom.com/wiki/BT-18:_Booster_Xros Evolution'},
+#   {'name': '▹BOOSTER OVER THE X [BT20]',
+#        'url': 'https://digimoncardgame.fandom.com/wiki/BT-20:_Booster_Over_the_X'},
 #    {'name': '▹SPECIAL BOOSTER 2.0 [BT18-BT19]',
 #     'url': 'https://digimoncardgame.fandom.com/wiki/BT18-19:_Release_Special_Booster_Ver.2.0'},
 #    {'name': '▹SPECIAL BOOSTER 2.5 [BT19-BT20]',
 #        'url': 'https://digimoncardgame.fandom.com/wiki/BT19-20:_Release_Special_Booster_Ver.2.5'},
+#   {'name': '▹BOOSTER WORLD COMVERGENCE [BT21]',
+#        'url': 'https://digimoncardgame.fandom.com/wiki/BT-21:_Booster_World_Convergence'},
 #
 #    {'name': '▹THEME BOOSTER CLASSIC COLLECTION [EX1]',
 #        'url': 'https://digimoncardgame.fandom.com/wiki/EX-01:_Theme_Booster_Classic_Collection'},
@@ -105,11 +109,15 @@ wikiPageLinks = [
 #        'url': 'https://digimoncardgame.fandom.com/wiki/ST-18:_Starter_Deck_Guardian_Vortex'},
 #    {'name': 'STARTER DECK FABLE WALTZ [ST19]',
 #        'url': 'https://digimoncardgame.fandom.com/wiki/ST-19:_Starter_Deck_Fable_Waltz'},
+#    {'name': 'STARTER DECK PROTECTOR OF LIGHT [ST20]',
+#        'url': 'https://digimoncardgame.fandom.com/wiki/ST-20:_Starter_Deck_Protector_of_Light'},
+#    {'name': 'STARTER DECK HERO OF HOPE [ST21]',
+#        'url': 'https://digimoncardgame.fandom.com/wiki/ST-21:_Starter_Deck_Hero_of_Hope'},
 #
 #    {'name': 'LIMITED PACK DIGIMON GHOST GAME',
-#        'url': 'https://digimoncardgame.fandom.com/wiki/LM-01:_Limited_Pack_Digimon_Ghost_Game'}1
+#        'url': 'https://digimoncardgame.fandom.com/wiki/LM-01:_Limited_Pack_Digimon_Ghost_Game'},
 #    {'name': 'LIMITED PACK DIGIMON DEATHXMON',
-#        'url': 'https://digimoncardgame.fandom.com/wiki/LM-02:_Limited_Pack_DeathXmon'}
+#        'url': 'https://digimoncardgame.fandom.com/wiki/LM-02:_Limited_Pack_DeathXmon'},
 {'name': 'LM-03: Limited Card Set 2024',
         'url': 'https://digimoncardgame.fandom.com/wiki/LM-03:_Limited_Card_Set_2024'}
 ]
@@ -132,9 +140,11 @@ NoteDictionary = {
     'BT-17: Booster Secret Crisis': '▹BOOSTER SECRET CRISIS [BT17]',
     'BT-18: Booster Elemental Successor': '▹BOOSTER ELEMENTAL SUCCESSOR [BT18]',
     'BT-19: Booster Xros Evolution': '▹BOOSTER XROS EVOLUTION [BT19]',
+    'BT-20: Booster Over the X': '▹BOOSTER OVER THE X [BT20]',
     'BT18-19: Release Special Booster Ver.2.0': '▹RELEASE SPECIAL BOOSTER 2.0 [BT18-BT19]',
     'BT19-20: Release Special Booster Ver.2.5': '▹RELEASE SPECIAL BOOSTER 2.5 [BT19-BT20]',
-  
+    'BT-21: Booster World Convergence': '▹BOOSTER WORLD CONVERGENCE [BT21]',
+
     'EX-01: Theme Booster Classic Collection': '▹THEME BOOSTER CLASSIC COLLECTION [EX01]',
     'EX-02: Theme Booster Digital Hazard': '▹THEME BOOSTER DIGITAL HAZARD [EX02]',
     'EX-03: Theme Booster Draconic Roar': '▹THEME BOOSTER DRAGONIC ROAR [EX03]',
@@ -164,7 +174,8 @@ NoteDictionary = {
     'ST-17: Advanced Deck Set Double Typhoon': 'ADANCED DECK DOUBLE TYPHOON [ST17]',
     'ST-18: Starter Deck Guardian Vortex': 'STARTER DECK GUARDIAN VORTEX [ST18]',
     'ST-19: Starter Deck Fable Waltz': 'STARTER DECK FABLE WALTZ [ST18]',
-
+    'ST-20: Starter Deck Protector of Light': 'STARTER DECK PROTECTOR OF LIGHT [ST20]',
+    'ST-21: Starter Deck Hero Hope': 'STARTER DECK HERO OF HOPE [ST21]',
     'LM-01: Limited Pack Digimon Ghost Game': 'LIMITED PACK DIGIMON GHOST GAME [LM01]',
     'LM-02: Limited Pack Digimon DeathXmon': 'LIMITED PACK DIGIMON DEATHXMON [LM02]',
     'LM-03: Limited Pack': 'LIMITED PACK [LM03]',
