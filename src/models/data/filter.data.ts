@@ -21,6 +21,7 @@ export const Sets = [
   'BT18',
   'BT19',
   'BT20',
+  'BT21',
   'RB1',
   'LM',
   'EX1',
@@ -49,6 +50,8 @@ export const Sets = [
   'ST17',
   'ST18',
   'ST19',
+  'ST20',
+  'ST21',
 ];
 export const GroupedSets = [
   {
@@ -75,6 +78,7 @@ export const GroupedSets = [
       { label: 'BT18', value: 'BT18' },
       { label: 'BT19', value: 'BT19' },
       { label: 'BT20', value: 'BT20' },
+      { label: 'BT21', value: 'BT21' },
     ],
   },
   {
@@ -163,6 +167,7 @@ export const Keywords: string[] = [
   '\uff1cDraw 2\uff1e',
   '\uff1cDraw 3\uff1e',
   '\uff1cEvade\uff1e',
+  '\uff1cFragment (3)\uff1e',
   '\uff1cIce Clad\uff1e',
   '\uff1cFortitude\uff1e',
   '\uff1cJamming\uff1e',
@@ -472,6 +477,10 @@ export const BlockButtons: MultiButtons[] = [
   {
     name: '04',
     value: '04',
+  },
+  {
+    name: '05',
+    value: '05',
   },
 ];
 
