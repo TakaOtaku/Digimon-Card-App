@@ -61,6 +61,7 @@ def replaceStrings():
   replace_string_in_json('3 [Digivolve]', '3\n[Digivolve]')
   replace_string_in_json('4 [Digivolve]', '4\n[Digivolve]')
   replace_string_in_json('5 [Digivolve]', '5\n[Digivolve]')
+  replace_string_in_json('3 [DNA Digivolve]', '3\n[DNA Digivolve]')
 
 def removeSamples():
   # Remove all AAs and JAAs from every Card that include Sample in the id
