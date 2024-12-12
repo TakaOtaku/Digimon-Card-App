@@ -42,11 +42,13 @@ wikiPageLinks = [
         'url': 'https://digimoncardgame.fandom.com/wiki/BT-17:_Booster_Secret_Crisis'},
     {'name': '▹BOOSTER ELEMENTAL SUCCESSOR [BT18]',
         'url': 'https://digimoncardgame.fandom.com/wiki/BT-18:_Booster_Elemental_Successor'},
-    {'name': '▹BOOSTER SPECIAL BOOSTER VER.2.0 [BT18-BT19]',
+    {'name': '▹SPECIAL BOOSTER VER.2.0 [BT18-BT19]',
         'url': 'https://digimoncardgame.fandom.com/wiki/BT18-19:_Special_Booster_Ver.2.0'},
-    {'name': '▹BOOSTER SPECIAL BOOSTER VER.2.5 [BT19-BT20]',
+    {'name': '▹SPECIAL BOOSTER VER.2.5 [BT19-BT20]',
         'url': 'https://digimoncardgame.fandom.com/wiki/BT19-20:_Special_Booster_Ver.2.5'},
-
+    {'name': '▹BOOSTER WORLD COMVERGENCE [BT21]',
+        'url': 'https://digimoncardgame.fandom.com/wiki/BT-21:_Booster_World_Convergence'},
+  
     {'name': '▹THEME BOOSTER CLASSIC COLLECTION [EX01]',
         'url': 'https://digimoncardgame.fandom.com/wiki/EX-01:_Theme_Booster_Classic_Collection'},
     {'name': '▹THEME BOOSTER DIGITAL HAZARD [EX02]',
@@ -61,8 +63,8 @@ wikiPageLinks = [
         'url': 'https://digimoncardgame.fandom.com/wiki/EX-06:_Theme_Booster_Infernal_Ascension'},
     {'name': '▹EXTRA BOOSTER DIGIMON LIBERATOR [EX07]',
         'url': 'https://digimoncardgame.fandom.com/wiki/EX-07:_Extra_Booster_Digimon_Liberator'},
-      {'name': '▹EXTRA BOOSTER CHAINS OF LIBERATION [EX08]',
-        'url': 'https://digimoncardgame.fandom.com/wiki/EX-08:_Extra_Booster_Chains_of_Liberation'},
+      {'name': '▹EXTRA BOOSTER CHAIN OF LIBERATION [EX08]',
+        'url': 'https://digimoncardgame.fandom.com/wiki/EX-08:_Extra_Booster_Chain_of_Liberation'},
 
     {'name': 'BOOSTER RESURGENCE BOOSTER [RB1]',
         'url': 'https://digimoncardgame.fandom.com/wiki/RB-01:_Resurgence_Booster'},
@@ -103,7 +105,11 @@ wikiPageLinks = [
         'url': 'https://digimoncardgame.fandom.com/wiki/ST-18:_Starter_Deck_Guardian_Vortex'},
     {'name': 'STARTER DECK FABLE WALTZ [ST19]',
         'url': 'https://digimoncardgame.fandom.com/wiki/ST-19:_Starter_Deck_Fable_Waltz'},
-
+    {'name': 'STARTER DECK PROTECTOR OF LIGHT [ST20]',
+        'url': 'https://digimoncardgame.fandom.com/wiki/ST-20:_Starter_Deck_Protector_of_Light'},
+    {'name': 'STARTER DECK HERO OF HOPE [ST21]',
+       'url': 'https://digimoncardgame.fandom.com/wiki/ST-21:_Starter_Deck_Hero_of_Hope'},
+  
     {'name': 'LIMITED PACK DIGIMON GHOST GAME',
         'url': 'https://digimoncardgame.fandom.com/wiki/LM-01:_Limited_Pack_Digimon_Ghost_Game'},
     {'name': 'LIMITED PACK DIGIMON DEATHXMON',
@@ -133,6 +139,7 @@ NoteDictionary = {
     'BT-18: Booster Elemental Successor': '▹BOOSTER ELEMENTAL SUCCESSOR [BT18]',
     'BT18-19: Special Booster Ver.2.0': '▹SPECIAL BOOSTER VER.2.0 [BT18-19]',
     'BT19-20: Special Booster Ver.2.5': '▹SPECIAL BOOSTER VER.2.5 [BT19-20]',
+    'BT-21: Booster World Convergence': '▹BOOSTER WORLD CONVERGENCE [BT21]',
 
     'EX-01: Theme Booster Classic Collection': '▹THEME BOOSTER CLASSIC COLLECTION [EX01]',
     'EX-02: Theme Booster Digital Hazard': '▹THEME BOOSTER DIGITAL HAZARD [EX02]',
@@ -141,7 +148,7 @@ NoteDictionary = {
     'EX-05: Theme Booster Animal Colosseum': '▹THEME BOOSTER ANIMAL COLOSSEUM [EX05]',
     'EX-06: Theme Booster Infernal Ascension': '▹THEME BOOSTER INFERNAL ASCENSION [EX06]',
     'EX-07: Extra Booster Digimon Liberator': '▹EXTRA BOOSTER DIGIMON LIBERATOR [EX07]',
-    'EX-08: Extra Booster Chains of Liberation': '▹EXTRA BOOSTER CHAINS OF LIBERATION [EX08]',
+    'EX-08: Extra Booster Chain of Liberation': '▹EXTRA BOOSTER CHAIN OF LIBERATION [EX08]',
 
     'RB-01: Resurgence Booster': 'BOOSTER RESURGENCE BOOSTER [RB01]',
 
@@ -163,7 +170,9 @@ NoteDictionary = {
     'ST-17: Advanced Deck Set Double Typhoon': 'ADVANCED DECK DOUBLE TYPHOON [ST17]',
     'ST-18: Starter Deck Guardian Vortex': 'STARTER DECK GUARDIAN VORTEX [ST18]',
     'ST-19: Starter Deck Fable Waltz': 'STARTER DECK FABLE WALTZ [ST19]',
-
+    'ST-20: Starter Deck Protector of Light': 'STARTER DECK PROTECTOR OF LIGHT [ST20]',
+    'ST-21: Starter Deck Hero Hope': 'STARTER DECK HERO OF HOPE [ST21]',
+  
     'LM-01: Limited Pack Digimon Ghost Game': 'LIMITED PACK DIGIMON GHOST GAME [LM01]',
     'LM-02: Limited Pack Digimon DeathXmon': 'LIMITED PACK DIGIMON DEATHXMON [LM02]',
     'LM-03: Limited Pack': 'LIMITED PACK [LM03]',
@@ -247,4 +256,5 @@ replacements = [
     '(Trash up to 3 cards from the top. You can\'t trash past level 3 cards)',
     '(Trash up to 4 cards from the top. You can\'t trash past level 3 cards)',
     '(When this Digimon would be deleted, by trashing any 3 of its digivolution cards, it isn\'t deleted)',
+    'Digivolve unsuspended with the 2 specified Digimon stacked on top of each other.',
 ]
