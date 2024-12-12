@@ -56,6 +56,11 @@ def replaceStrings():
   replace_string_in_json('＞.', '＞\n')
   replace_string_in_json('＞ ).', '')
   replace_string_in_json(' ).', '')
+  replace_string_in_json('1 [Digivolve]', '1\n[Digivolve]')
+  replace_string_in_json('2 [Digivolve]', '2\n[Digivolve]')
+  replace_string_in_json('3 [Digivolve]', '3\n[Digivolve]')
+  replace_string_in_json('4 [Digivolve]', '4\n[Digivolve]')
+  replace_string_in_json('5 [Digivolve]', '5\n[Digivolve]')
 
 def removeSamples():
   # Remove all AAs and JAAs from every Card that include Sample in the id
