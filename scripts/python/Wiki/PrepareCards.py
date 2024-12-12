@@ -18,11 +18,11 @@ def removeJ(id):
     return id
 
 def addSampleBeforeWebp(imagePath):
-  """Adds a "Sample-J" before the ".webp" extension in a file path."""
+  """Adds a "Sample" before the ".webp" extension in a file path."""
 
-  if imagePath.endswith(".webp") and not imagePath.endswith("-Sample-J.webp"):
+  if imagePath.endswith(".webp") and not imagePath.endswith("-Sample.webp"):
     index = imagePath.rfind(".webp")
-    return imagePath[:index] + "-Sample-J" + imagePath[index:]
+    return imagePath[:index] + "-Sample" + imagePath[index:]
   else:
     # If the imagePath does not end with ".webp", return it as is.
     return imagePath
