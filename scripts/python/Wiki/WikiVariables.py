@@ -68,7 +68,7 @@ wikiPageLinks = [
 #    {'name': '▹EXTRA BOOSTER DIGIMON LIBERATOR [EX7]',
 #        'url': 'https://digimoncardgame.fandom.com/wiki/EX-07:_Extra_Booster_Digimon_Liberator'},
   #    {'name': '▹EXTRA BOOSTER DIGIMON LIBERATOR [EX8]',
-#        'url': 'https://digimoncardgame.fandom.com/wiki/EX-08:_Extra_Booster_Chains of Liberation'},
+#        'url': 'https://digimoncardgame.fandom.com/wiki/EX-08:_Extra_Booster_Chain of Liberation'},
 #
 #    {'name': 'BOOSTER RESURGENCE BOOSTER [RB1]',
 #        'url': 'https://digimoncardgame.fandom.com/wiki/RB-01:_Resurgence_Booster'},
