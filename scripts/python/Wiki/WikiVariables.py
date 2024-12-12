@@ -263,5 +263,6 @@ replacements = [
     '(As this card would move from the field or from under a card to another area, lose 4 memory.)',
     '(As this card would move from the field or from under a card to another area, lose 5 memory.)',
     '(When this Digimon would leave the battle area other than in battle, you may play 1 Blue Level 4 Digimon card from its digivolution cards without paying the cost)',
-    '(When this Digimon would leave the battle area other than in battle, you may play 1 Blue Level 5 Digimon card from its digivolution cards without paying the cost)'
+    '(When this Digimon would leave the battle area other than in battle, you may play 1 Blue Level 5 Digimon card from its digivolution cards without paying the cost)',
+    'Digivolve unsuspended with the 2 specified Digimon stacked on top of each other.'
 ]
