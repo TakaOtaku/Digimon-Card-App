@@ -233,6 +233,7 @@ replacements = [
     '(You may trash 4 of this Digimon\'s digivolution cards to activate the effect below)',
     '(When this Digimon is deleted after losing a battle, delete the Digimon it was battling.)',
     '(When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon\'s DP to this Digimon and it gains \uff1cSecurity Attack +1\uff1e for the attack)',
+    '(When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon\'s DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack)',
     '(Trash up to 3 cards from the top of one of your opponent\'s Digimon. If it has no digivolution cards, or becomes a level 3 Digimon, you can\'t trash any more cards)',
     '(When one of your Digimon digivolves into this card from your hand, you may suspend 1 of your Digimon to reduce the memory cost of the digivolution by 3)',
     '(You may trash 3 of this Digimon\'s digivolution cards to activate the effect below)',
@@ -263,4 +264,7 @@ replacements = [
     '(As this card moves from the field or under a card to an area other than those, lose 3 memory.)',
     '(As this card moves from the field or under a card to an area other than those, lose 4 memory.)',
     '(As this card moves from the field or under a card to an area other than those, lose 5 memory.)',
+    '(Place this Tamer as that Digimon's bottom digivolution card if there are no Tamer cards in its digivolution cards)',
+    'At the end of the burst digivolution turn, trash this Digimon's top card.',
+    'Digivolve unsuspended with the 2 specified Digimon stacked on top of each other.',
 ]
