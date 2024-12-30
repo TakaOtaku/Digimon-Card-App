@@ -266,5 +266,5 @@ replacements = [
     '(As this card moves from the field or under a card to an area other than those, lose 5 memory.)',
     '(Place this Tamer as that Digimon's bottom digivolution card if there are no Tamer cards in its digivolution cards)',
     'At the end of the burst digivolution turn, trash this Digimon's top card.',
-    'Digivolve unsuspended with the 2 specified Digimon stacked on top of each other.',
+    'Digivolve unsuspended with the 2 specified Digimon stacked on top of each other.'
 ]
