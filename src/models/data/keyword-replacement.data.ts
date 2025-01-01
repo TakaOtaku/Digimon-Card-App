@@ -74,6 +74,7 @@ export const replacements: Array<[RegExp, string]> = [
   [/＜Fragment \(3\)＞/g, 'fragment_3'],
   [/\[Hand]/g, 'hand'],
   [/＜Ice Clad＞/g, 'ice_clad'],
+  [/＜Iceclad＞/g, 'ice_clad'],
   [/\[Main]/g, 'main'],
   [/＜Mind Link＞/g, 'mind_link'],
   [/＜Jamming＞/g, 'jamming'],
@@ -91,27 +92,27 @@ export const replacements: Array<[RegExp, string]> = [
   [/Overflow ＜-4＞/g, 'overflow_-4'],
   [/Overflow ＜-5＞/g, 'overflow_-5'],
   [
-    /＜Partition \(black Lv.4 \+ yellow Lv.4\)＞/g,
+    /＜Partition \(Black Lv.4 \+ Yellow Lv.4\)＞/g,
     'partition_black_lv.4_yellow_lv.4',
   ],
   [
-    /＜Partition \(blue Lv.4 \+ green Lv.4\)＞/g,
+    /＜Partition \(Blue Lv.4 \+ Green Lv.4\)＞/g,
     'partition_blue_lv.4_green_lv.4',
   ],
   [
-    /＜Partition \(purple Lv.4 \+ red Lv.4\)＞/g,
+    /＜Partition \(Purple Lv.4 \+ Red Lv.4\)＞/g,
     'partition_purple_lv.4_red_lv.4',
   ],
   [
-    /＜Partition \(red Lv.4 \+ yellow Lv.4\)＞/g,
+    /＜Partition \(Red Lv.4 \+ Yellow Lv.4\)＞/g,
     'partition_red_lv.4_yellow_lv.4',
   ],
   [
-    /＜Partition \(yellow Lv.6 \+ black Lv.6\)＞/g,
+    /＜Partition \(Yellow Lv.6 \+ Black Lv.6\)＞/g,
     'partition_yellow_lv.6_black_lv.6',
   ],
   [
-    /＜Partition \(yellow\/black Lv.6 \+ green\/purple Lv.4\)＞/g,
+    /＜Partition \(Yellow\/Black Lv.6 \+ Green\/Purple Lv.4\)＞/g,
     'partition_yellow_black_lv.6_green_purple_lv.6',
   ],
   [/＜Piercing＞/g, 'piercing'],
