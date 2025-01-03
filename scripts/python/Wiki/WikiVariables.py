@@ -255,7 +255,7 @@ replacements = [
     '(When this Digimon that has 1 of each specified cards in its digivolution cards would leave the battle area other than by your own effects or by battle, you may play 1 of each card without paying their costs)',
     '(1 of your specified Digimon and 1 specified card in hand may DNA digivolve into this card.)',
     '(During this Digimon\'s attack, all of your opponent\'s Digimon gain ＜Blocker＞, and must block if possible)',
-    '(This Digimon compares its number of digivolution cards instead of DP in battles other than with security Digimon)',
+    '(Other than against Security Digimon, compare the number of digivolution cards instead of DP in this Digimon's battles)',
     '(At the end of your turn, this Digimon may attack an opponent\'s Digimon. With this effect, it can attack the turn it was played)',
     '(At the end of your turn, by deleting 1 of your Tokens or other [Puppet] trait Digimon, this Digimon attacks a player without suspending)',
     '(At the end of your turn, by deleting 1 of your Tokens or other [Composite] trait Digimon, this Digimon attacks a player without suspending)',
