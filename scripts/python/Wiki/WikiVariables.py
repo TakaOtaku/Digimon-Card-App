@@ -183,6 +183,7 @@ NoteDictionary = {
 }
 replacements = [
     '(After this card is placed, by trashing it the next turn or later, activate the effect below.)',
+    '(After this card is placed, by trashing it the next turn or later, activate the effect below)',
     '(When your other red or black Digimon would be deleted by an opponent\'s effect, you may delete this Digimon to prevent 1 of those Digimon\'s deletion).',
     '(When your other black or white Digimon would be deleted by an opponent\'s effect, you may delete this Digimon to prevent 1 of those Digimon\'s deletion).',
     '(When your other black Digimon would be deleted by an opponent\'s effect, you may delete this Digimon to prevent 1 of those Digimon\'s deletion).',
