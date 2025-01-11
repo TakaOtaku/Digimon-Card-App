@@ -171,6 +171,7 @@ export const Keywords: string[] = [
   '\uff1cIceclad\uff1e',
   '\uff1cFortitude\uff1e',
   '\uff1cJamming\uff1e',
+  '\uff1cLink\uff1e',
   '\uff1cMaterial Save 1\uff1e',
   '\uff1cMaterial Save 2\uff1e',
   '\uff1cMaterial Save 3\uff1e',
@@ -189,6 +190,7 @@ export const Keywords: string[] = [
   '\uff1cRecovery +1 (Deck)\uff1e',
   '\uff1cRecovery +2 (Deck)\uff1e',
   '\uff1cRetaliation\uff1e',
+  '\uff1cRule\uff1e',
   '\uff1cRush\uff1e',
   '\uff1cSave\uff1e',
   '\uff1cSecurity A. +1\uff1e',
@@ -229,6 +231,7 @@ export const Forms: string[] = [
   'Hybrid',
   'Armor Form',
   'D-Reaper',
+  'Appmon',
 ];
 
 export const Attributes: string[] = [
@@ -260,7 +263,8 @@ export const Types: string[] = [
   'Ancient',
   'Angel',
   'Ankylosaur',
-  'Aquabeast',
+  'Ankylosaur',
+  'Appmon',
   'Aquatic',
   'Archangel',
   'Armor',
@@ -454,6 +458,7 @@ export const SpecialRequirements: string[] = [
   'DigiXros',
   'Burst Digivolve',
   'ACE',
+  'Link',
 ];
 
 export const Restrictions: string[] = ['Banned', 'Restricted to 1'];
