@@ -21,6 +21,10 @@ export interface DigimonCard {
   cardNumber: string;
   cardType: string;
   color: string;
+  linkRequirement: string;
+  linkDP: string;
+  linkEffect: string;
+  rule: string;
   digiXros: string;
   digivolveCondition: DigivolveCondition[];
   digivolveEffect: string;

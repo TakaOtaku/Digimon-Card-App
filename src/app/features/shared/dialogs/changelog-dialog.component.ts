@@ -6,7 +6,21 @@ import { PanelModule } from 'primeng/panel';
   selector: 'digimon-changelog-dialog',
   template: `
     <div>
-      <p-panel header="Version 4.1.6" [toggleable]="true" [collapsed]="false">
+      <p-panel header="Version 4.1.7" [toggleable]="true" [collapsed]="false">
+        <h1 class="font-bold text-lg underline">Feature</h1>
+        <ul class="list-disc p-5">
+          <li>
+            Added support for the new Linked Cards.
+          </li>
+          <li>
+            The Wiki changed where rules are displayed, so they now have a seperate field (Thanks to danweber and SilverDew-sg for offering a Solution on Github)
+          </li>
+        </ul>
+        <div class="flex flex-wrap align-middle justify-content-between gap-3">
+          <span class="ml-auto p-text-secondary">Updated 12.01.2025</span>
+        </div>
+      </p-panel>
+      <p-panel header="Version 4.1.6" [toggleable]="true" [collapsed]="true">
         <h1 class="font-bold text-lg underline">Feature</h1>
         <ul class="list-disc p-5">
           <li>

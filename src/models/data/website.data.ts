@@ -11,6 +11,10 @@ export const dummyCard: DigimonCard = {
   cardNumber: 'BT1-001',
   cardType: 'Digi-Egg',
   color: 'Red',
+  linkDP: '-',
+  linkRequirement: '-',
+  linkEffect: '-',
+  rule: '-',
   digiXros: '-',
   digivolveCondition: [],
   digivolveEffect:

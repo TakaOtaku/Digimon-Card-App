@@ -126,6 +126,10 @@ def getExtraInfo(html, digimoncard):
       td = table.find("td")
       digimoncard.effect = td.text
 
+    if th.text.find("Rule") != -1:
+      td = table.find("td")
+      digimoncard.rule += td.text
+
     if th.text.find("Inherited Effect") != -1:
       td = table.find("td")
       digimoncard.digivolveEffect = td.text
@@ -137,6 +141,18 @@ def getExtraInfo(html, digimoncard):
     if th.text.find("Ace") != -1:
       td = table.find("td")
       digimoncard.aceEffect = td.text
+
+    if th.text.find("Link Requirements") != -1:
+      td = table.find("td")
+      digimoncard.linkRequirements = td.text
+
+    if th.text.find("Linked DP") != -1:
+      td = table.find("td")
+      digimoncard.linkDP = td.text
+
+    if th.text.find("Linked Effect") != -1:
+      td = table.find("td")
+      digimoncard.linkEffect = td.text
 
   return digimoncard
 
