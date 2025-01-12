@@ -140,10 +140,13 @@ def getExtraInfo(html, digimoncard):
         if th is not None and th.text.find("Security Effect") != -1:
             td = table.find("td")
             digimoncard['digivolveEffect'] = td.text.replace("\n", "").strip()
+        if th is not None and th.text.find("Rule") != -1:
+            td = table.find("td")
+            digimoncard['rule'] = td.text.replace("\n", "").strip()
+ 
+     return digimoncard
 
-    return digimoncard
-
-
+ 
 def getIllustratorsInfo(html, digimoncard):
     if html == None:
         return digimoncard
@@ -200,6 +203,7 @@ def getCardDataFromWiki():
             "illustrator": "-",
             "block": ["03"],
             "restriction": "-",
+            "rule", "-",
         }
 
         digimoncard = getMainInfo(infoMain, digimoncard)
