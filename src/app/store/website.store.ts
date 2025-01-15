@@ -151,7 +151,7 @@ export const WebsiteStore = signalStore(
       },
 
       createNewDeck(id: string): void {
-        patchState(store, (state) => ({ deck: { ...state.deck, id } }));
+        patchState(store, (state) => ({ deck: { ...emptyDeck, id } }));
       },
 
       addCardToDeck(cardToAdd: string): void {
