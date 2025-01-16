@@ -22,6 +22,9 @@ GetLinks.getPromoLinks()
 print('Comparing to saved Links')
 GetLinks.saveLinks()
 
+###GetLinks.addLinks()
+###WikiFunctions.loadCards()
+
 # Sort Links and set how many Cards are there
 WikiVariables.cardLinks = sorted(list(set(WikiVariables.cardLinks)))
 WikiVariables.cardCount = len(WikiVariables.cardLinks)

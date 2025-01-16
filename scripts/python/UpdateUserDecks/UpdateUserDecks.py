@@ -25,9 +25,9 @@ def set_tags(deck: Dict) -> List[Dict]:
 
 def set_newest_set(cards: List[Dict]) -> Dict:
     release_order = [
-        'BT20', 'BT19', 'BT18', 'EX07', 'ST19', 'ST18', 'BT17', 'EX06', 'BT16', 'ST17', 'BT15','EX05', 'BT14', 'ST16', 'ST15', 'RB1', 'BT13', 'EX4', 'BT12',
-        'ST14', 'BT11', 'EX3', 'BT10', 'ST13', 'ST12', 'BT9', 'EX2', 'BT8', 'ST10', 'ST9', 'BT7', 'EX1',
-        'BT6', 'ST8', 'ST7', 'BT5', 'BT4', 'ST6', 'ST5', 'ST4', 'BT3', 'BT2', 'BT1', 'ST3', 'ST2', 'ST1'
+        'BT21', 'BT20', 'BT19', 'EX8', 'BT18', 'EX7', 'ST19', 'ST18', 'BT17', 'EX6', 'BT16', 'ST17', 'BT15','EX5', 'BT14',
+        'ST16', 'ST15', 'RB1', 'BT13', 'EX4', 'BT12', 'ST14', 'BT11', 'EX3', 'BT10', 'ST13', 'ST12', 'BT9', 'EX2',
+        'BT8', 'ST10', 'ST9', 'BT7', 'EX1', 'BT6', 'ST8', 'ST7', 'BT5', 'BT4', 'ST6', 'ST5', 'ST4', 'BT3', 'BT2', 'BT1', 'ST3', 'ST2', 'ST1'
     ]
     # Check each card in the deck and see what the newest card id is based on the release order
     # Then add a tag with the newest set
@@ -93,7 +93,7 @@ def withoutAA(cards):
 
 
 restricted_cards = [
-    'ST6-03',
+    'ST2-13',
 
     'BT2-047',
     'BT2-069',
@@ -105,17 +105,27 @@ restricted_cards = [
     'BT7-069',
     'BT7-072',
     'BT7-107',
+    'BT9-098',
     'BT9-099',
     'BT10-009',
     'BT11-064',
     'BT13-012',
+    'BT14-002',
+    'BT14-084',
+    'BT15-057',
+    'BT15-102',
 
     'EX1-068',
     'EX2-039',
     'EX4-019',
+    'EX5-015',
+    'EX5-018',
+    'EX5-062',
 
     'P-008',
-    'P-025'
+    'P-025',
+    'P-123',
+    'P-130',
 ]
 banned_cards = [
     'BT5-109'

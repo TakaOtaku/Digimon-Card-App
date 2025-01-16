@@ -2,6 +2,7 @@ import json
 import os
 import requests
 from bs4 import BeautifulSoup
+from classes.DigimonCard import DigimonCard
 
 import WikiVariables as WV
 
@@ -112,6 +113,59 @@ def saveCards():
     print('Saving DigimonCard JSON!')
     with open('./scripts/python/Wiki/jsons/DigimonCards.json', 'w') as fp:
         json.dump(formatedCards, fp, indent=2, sort_keys=sort_key)
+
+def loadCards():
+  # Open the JSON file and load its contents
+  with open('./scripts/python/Wiki/jsons/DigimonCards.json', 'r') as file:
+    data = json.load(file)
+    # Data is an Array of DigimonCards and they should be added to WV.Cards with the correct Class
+    cards = []
+    for card in data:
+        currentDigimon = DigimonCard()
+        aas = []
+        for aa in card['AAs']:
+          aas.append({'id': aa['id'], 'illustrator': aa['illustrator'], 'note': aa['note'], 'type': aa['type']})
+        currentDigimon.AAs = aas
+        jaas = []
+        for aa in card['JAAs']:
+          jaas.append({'id': aa['id'], 'illustrator': aa['illustrator'], 'note': aa['note'], 'type': aa['type']})
+        currentDigimon.JAAs = jaas
+        currentDigimon.aceEffect = card['aceEffect']
+        currentDigimon.attribute = card['attribute']
+        currentDigimon.block = card['block']
+        currentDigimon.burstDigivolve = card['burstDigivolve']
+        currentDigimon.cardImage = card['cardImage']
+        currentDigimon.cardLv = card['cardLv']
+        currentDigimon.cardNumber = card['cardNumber']
+        currentDigimon.cardType = card['cardType']
+        currentDigimon.color = card['color']
+        currentDigimon.digiXros = card['digiXros']
+        currentDigimon.digivolveCondition = card['digivolveCondition']
+        currentDigimon.digivolveEffect = card['digivolveEffect']
+        currentDigimon.dnaDigivolve = card['dnaDigivolve']
+        currentDigimon.dp = card['dp']
+        currentDigimon.effect = card['effect']
+        currentDigimon.form = card['form']
+        currentDigimon.id = card['id']
+        currentDigimon.illustrator = card['illustrator']
+        currentDigimon.linkDP = card['linkDP']
+        currentDigimon.linkEffect = card['linkEffect']
+        currentDigimon.linkRequirement = card['linkRequirement']
+        currentDigimon.name = card['name']
+        currentDigimon.notes = card['notes']
+        currentDigimon.playCost = card['playCost']
+        currentDigimon.rarity = card['rarity']
+        currentDigimon.restrictions = card['restrictions']
+        currentDigimon.rule = card['rule']
+        currentDigimon.securityEffect = card['securityEffect']
+        currentDigimon.specialDigivolve = card['specialDigivolve']
+        currentDigimon.type = card['type']
+        currentDigimon.version = card['version']
+
+        cards.append(currentDigimon)
+
+    WV.cards = cards
+    print("Cards Loaded!")
 
 
 

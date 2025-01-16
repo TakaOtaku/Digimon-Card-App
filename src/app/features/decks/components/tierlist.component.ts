@@ -200,8 +200,6 @@ export class TierlistComponent {
       .valueChanges()
       .subscribe((value) => {
         const newTierlist = (value as any[])[0];
-        console.log(newTierlist);
-        debugger;
         this.tierlist = newTierlist;
       });
   }

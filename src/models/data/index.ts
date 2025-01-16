@@ -10,3 +10,4 @@ export * from './save.data';
 export * from './tags.data';
 export * from './tierlist.data';
 export * from './website.data';
+export * from './banned-restricted.data';
