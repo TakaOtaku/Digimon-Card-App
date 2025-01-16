@@ -70,6 +70,7 @@ export const replacements: Array<[RegExp, string]> = [
   [/\[End of Opponent's Turn]/g, 'end_of_opponents_turn'],
   [/\[End of Your Turn]/g, 'end_of_your_turn'],
   [/＜Evade＞/g, 'evade'],
+  [/＜Execute＞/g, 'execute'],
   [/＜Fortitude＞/g, 'fortitude'],
   [/＜Fragment \(3\)＞/g, 'fragment_3'],
   [/\[Hand]/g, 'hand'],
