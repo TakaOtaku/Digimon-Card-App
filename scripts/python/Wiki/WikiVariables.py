@@ -296,6 +296,7 @@ replacements = [
     '(1 of your specified Digimon and 1 specified card in hand may DNA digivolve into this card)',
     '(When this Digimon would be deleted other than by your effects, by deleting 1 of your other Digimon, prevent that deletion)',
     '(When this Digimon with digivolution cards is deleted, play this card without paying the cost)',
+    '(At the end of your turn, this Digimon may attack. At the end of that attack, delete this Digimon. Your opponent's unsuspended Digimon can also be attacked with this effect)',
     '(At the end of your turn, by deleting 1 of your Tokens or other [Puppet] trait Digimon, this Digimon attacks a player without suspending)',
     '(At the end of your turn, by deleting 1 of your Tokens or other [Composite] trait Digimon, this Digimon attacks a player without suspending)',
     '(At the end of your turn, by deleting 1 of your Tokens or other [Unidentified] trait Digimon, this Digimon attacks a player without suspending)',
