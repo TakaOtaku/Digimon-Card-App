@@ -63,10 +63,10 @@ for replacement in WikiVariables.replacements:
   FormatCards.replace_string_in_json(replacement, '')
 
 print('Removing Spaces!')
-FormatCards.replace_string_in_json('  ', '')
-FormatCards.replace_string_in_json('  ', '')
-FormatCards.replace_string_in_json('  ', '')
-FormatCards.replace_string_in_json('  ', '')
+FormatCards.replace_string_in_json('    ', ' ')
+FormatCards.replace_string_in_json('   ', ' ')
+FormatCards.replace_string_in_json('   ', ' ')
+FormatCards.replace_string_in_json('  ', ' ')
 FormatCards.replace_string_in_json(' .', '.')
 
 print('Removing Samples!')
