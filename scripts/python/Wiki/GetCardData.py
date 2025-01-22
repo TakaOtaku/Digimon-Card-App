@@ -105,6 +105,9 @@ def getDigivolveInfo(html, digimoncard):
       if (specialEvo.find("DigiXros Requirements") != -1):
         xrosHeart = specialEvoCon.find("td")
         digimoncard.digiXros = xrosHeart.text
+      if (specialEvo.find("Link Requirements") != -1):
+        linkRequirements = specialEvoCon.find("td")
+        digimoncard.linkRequirement = linkRequirements.text
       if (specialEvo.find("Alt. Digivolution Requirements") != -1):
         addCorrectSpecialDigivolve(digimoncard, specialEvoCon)
 
@@ -141,10 +144,6 @@ def getExtraInfo(html, digimoncard):
     if th.text.find("Ace") != -1:
       td = table.find("td")
       digimoncard.aceEffect = td.text
-
-    if th.text.find("Link Requirements") != -1:
-      td = table.find("td")
-      digimoncard.linkRequirements = td.text
 
     if th.text.find("Linked DP") != -1:
       td = table.find("td")
