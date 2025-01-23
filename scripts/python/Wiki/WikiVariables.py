@@ -300,4 +300,7 @@ replacements = [
     '(At the end of your turn, by deleting 1 of your Tokens or other [Puppet] trait Digimon, this Digimon attacks a player without suspending)',
     '(At the end of your turn, by deleting 1 of your Tokens or other [Composite] trait Digimon, this Digimon attacks a player without suspending)',
     '(At the end of your turn, by deleting 1 of your Tokens or other [Unidentified] trait Digimon, this Digimon attacks a player without suspending)',
+    '(When this Digimon would leave the battle area other than in battle, you may play 1 Blue Level 4 Digimon card from its digivolution cards without paying the cost)',
+    '(When this Digimon would leave the battle area other than in battle, you may play 1 Blue Level 5 Digimon card from its digivolution cards without paying the cost)',
+
 ]
