@@ -140,7 +140,7 @@ export const Keywords: string[] = [
   '\uff1cBlast DNA Digivolve ([Breakdramon] + [Slayerdramon])\uff1e',
   '\uff1cBlast DNA Digivolve ([DinoBeemon] + [Paildramon])\uff1e',
   '\uff1cBlast DNA Digivolve ([Durandamon] + [BryweLudramon])\uff1e',
-  '\uff1cBlast DNA Digivolve ([Fenriloogamon] + [Paildramon])\uff1e',
+  '\uff1cBlast DNA Digivolve ([Fenriloogamon] + [Kazuchimon])\uff1e',
   '\uff1cBlast DNA Digivolve ([WarGreymon] + [MetalGarurumon])\uff1e',
   '\uff1cBlitz\uff1e',
   '\uff1cBlocker\uff1e',
