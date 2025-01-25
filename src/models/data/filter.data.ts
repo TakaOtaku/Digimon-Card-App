@@ -195,7 +195,6 @@ export const Keywords: string[] = [
   '\uff1cRecovery +1 (Deck)\uff1e',
   '\uff1cRecovery +2 (Deck)\uff1e',
   '\uff1cRetaliation\uff1e',
-  '\uff1cRule\uff1e',
   '\uff1cRush\uff1e',
   '\uff1cSave\uff1e',
   '\uff1cSecurity A. +1\uff1e',
