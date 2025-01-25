@@ -15,7 +15,7 @@ export const replacements: Array<[RegExp, string]> = [
   [/＜Blast DNA Digivolve ([Alphamon] + [Ouryumon])＞/g, 'blast_dna_digivolve_alphamon_ouryumon',],
   [/＜Blitz＞/g, 'blitz'],
   [/＜Blocker＞/g, 'blocker'],
-  [/Burst Digivolve:/g, 'burst_digivolve'],
+  [/[Burst Digivolve]/g, 'burst_digivolve'],
   [/\[Breeding]/g, 'breeding'],
   [/\[Counter]/g, 'counter'],
   [/＜Collision＞/g, 'collision'],
