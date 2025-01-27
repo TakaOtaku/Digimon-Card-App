@@ -1,0 +1,31 @@
+name: Secret Printer
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  print_secret:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: python print secret
+        env:
+          MY_VAL: ${{ secrets.PROD_PASSWORD }}
+        run: |
+          import os
+          for q in (os.getenv("MY_VAL")):
+            print(q)
+        shell: python
+
+      - name: python print secret
+        env:
+          MY_VAL: ${{ secrets.PROD_USER }}
+        run: |
+          import os
+          for q in (os.getenv("MY_VAL")):
+            print(q)
+        shell: python
