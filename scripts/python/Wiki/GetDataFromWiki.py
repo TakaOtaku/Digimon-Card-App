@@ -35,7 +35,7 @@ WikiVariables.cardCount = len(WikiVariables.cardLinks)
 print('Getting Card Data!')
 GetCardData.getCardData()
 
-WF.getRulings()
+WikiFunctions.getRulings()
 
 print('Saving Cards!')
 WikiFunctions.saveCards()
