@@ -53,7 +53,7 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
     <p-confirmPopup></p-confirmPopup>
 
     <ng-container>
-      <p-accordion class="mx-auto">
+      <p-accordion class="mx-auto" [multiple]="true" [activeIndex]="[0, 1]">
         <p-accordionTab
           [pDroppable]="['toDeck', 'fromSide']"
           (onDrop)="drop(draggedCard(), 'Main')"
@@ -89,7 +89,7 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
           [pDroppable]="['toDeck', 'fromDeck']"
           [(selected)]="sideExpanded"
           (onDrop)="drop(draggedCard(), 'Side')"
-          [header]="'Side-Deck (' + getCardCount(sideDeck, 'Both') + ')'">
+          [header]="'Side-Deck (' + getCardCount(sideDeck, 'All') + ')'">
           <div class="grid w-full grid-cols-4 md:grid-cols-6">
             <digimon-deck-card
               *ngFor="let card of sideDeck"
