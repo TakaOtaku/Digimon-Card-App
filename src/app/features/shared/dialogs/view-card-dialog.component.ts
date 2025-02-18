@@ -300,6 +300,46 @@ import { SaveStore } from '../../../store/save.store';
       </div>
 
       <div class="my-4 max-w-full" id="Effects">
+        <div *ngIf="card.rule !== '-'" class="flex flex-col" id="Digimon-Rule">
+          <p
+            [ngStyle]="{ color }"
+            class="text-black-outline-xs text-lg font-extrabold">
+            Rule
+          </p>
+          <span
+            class="font-white whitespace-pre-wrap font-bold"
+            [innerHTML]="replaceWithImageTags(card.rule)"></span>
+        </div>
+
+        <div
+          *ngIf="card.linkEffect !== '-'"
+          class="flex flex-col"
+          id="Digimon-Rule">
+          <p
+            [ngStyle]="{ color }"
+            class="text-black-outline-xs text-lg font-extrabold">
+            Link
+          </p>
+          <div class="grid grid-cols-5">
+            <p class="font-bold">Requirement: </p>
+            <span
+              class="font-white whitespace-pre-wrap font-bold col-span-4"
+              [innerHTML]="replaceWithImageTags(card.linkRequirement)"></span>
+          </div>
+          <div class="grid grid-cols-5">
+            <p class="font-bold">Effect: </p>
+            <span
+              class="font-white whitespace-pre-wrap font-bold col-span-4"
+              [innerHTML]="replaceWithImageTags(card.linkEffect)"></span>
+          </div>
+          <div class="grid grid-cols-5">
+            <p class="font-bold">DP: </p>
+            <span
+              class="font-white whitespace-pre-wrap font-bold col-span-4"
+              [innerHTML]="replaceWithImageTags(card.linkDP)"></span>
+          </div>
+        </div>
+
         <div
           *ngIf="card.effect !== '-'"
           class="flex flex-col"
@@ -432,6 +472,7 @@ export class ViewCardDialogComponent {
     )!;
 
     this.card = this.dialogStore.viewCard().card;
+    console.log(this.card);
     this.setupView();
   });
 
@@ -502,6 +543,7 @@ export class ViewCardDialogComponent {
       return;
     }
     this.card = newCard;
+    console.log(this.card);
     this.setupView();
   }
 
