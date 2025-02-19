@@ -312,35 +312,6 @@ import { SaveStore } from '../../../store/save.store';
         </div>
 
         <div
-          *ngIf="card.linkEffect !== '-'"
-          class="flex flex-col"
-          id="Digimon-Rule">
-          <p
-            [ngStyle]="{ color }"
-            class="text-black-outline-xs text-lg font-extrabold">
-            Link
-          </p>
-          <div class="grid grid-cols-5">
-            <p class="font-bold">Requirement: </p>
-            <span
-              class="font-white whitespace-pre-wrap font-bold col-span-4"
-              [innerHTML]="replaceWithImageTags(card.linkRequirement)"></span>
-          </div>
-          <div class="grid grid-cols-5">
-            <p class="font-bold">Effect: </p>
-            <span
-              class="font-white whitespace-pre-wrap font-bold col-span-4"
-              [innerHTML]="replaceWithImageTags(card.linkEffect)"></span>
-          </div>
-          <div class="grid grid-cols-5">
-            <p class="font-bold">DP: </p>
-            <span
-              class="font-white whitespace-pre-wrap font-bold col-span-4"
-              [innerHTML]="replaceWithImageTags(card.linkDP)"></span>
-          </div>
-        </div>
-
-        <div
           *ngIf="card.effect !== '-'"
           class="flex flex-col"
           id="Digimon-Effect">
@@ -380,6 +351,35 @@ import { SaveStore } from '../../../store/save.store';
           <div
             class="font-white flex flex-row whitespace-pre-wrap font-bold"
             [innerHTML]="replaceWithImageTags(card.securityEffect)"></div>
+        </div>
+
+        <div
+          *ngIf="card.linkEffect !== '-'"
+          class="flex flex-col"
+          id="Digimon-Link">
+          <p
+            [ngStyle]="{ color }"
+            class="text-black-outline-xs text-lg font-extrabold">
+            Link
+          </p>
+          <div class="grid grid-cols-5">
+            <p class="font-bold">Requirement: </p>
+            <span
+              class="font-white whitespace-pre-wrap font-bold col-span-4"
+              [innerHTML]="replaceWithImageTags(card.linkRequirement)"></span>
+          </div>
+          <div class="grid grid-cols-5">
+            <p class="font-bold">Link-Effect: </p>
+            <span
+              class="font-white whitespace-pre-wrap font-bold col-span-4"
+              [innerHTML]="replaceWithImageTags(card.linkEffect)"></span>
+          </div>
+          <div class="grid grid-cols-5">
+            <p class="font-bold">Link-DP: </p>
+            <span
+              class="font-white whitespace-pre-wrap font-bold col-span-4"
+              [innerHTML]="replaceWithImageTags(card.linkDP)"></span>
+          </div>
         </div>
       </div>
 

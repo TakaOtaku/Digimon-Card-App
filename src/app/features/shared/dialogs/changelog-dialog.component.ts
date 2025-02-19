@@ -6,7 +6,22 @@ import { PanelModule } from 'primeng/panel';
   selector: 'digimon-changelog-dialog',
   template: `
     <div>
-      <p-panel header="Version 4.1.7" [toggleable]="true" [collapsed]="false">
+      <p-panel header="Version 4.1.9" [toggleable]="true" [collapsed]="false">
+        <h1 class="font-bold text-lg underline">Feature</h1>
+        <ul class="list-disc p-5">
+          <li>Display rule and link field of cards in view mode.</li>
+        </ul>
+        <h1 class="font-bold text-lg underline">Removed</h1>
+        <ul class="list-disc p-5">
+          <li>
+            Removed the Community Link, as it was not used. I may add a Rule Quiz or something similar in the future.
+          </li>
+        </ul>
+        <div class="flex flex-wrap align-middle justify-content-between gap-3">
+          <span class="ml-auto p-text-secondary">Updated 19.02.2025</span>
+        </div>
+      </p-panel>
+      <p-panel header="Version 4.1.8" [toggleable]="true" [collapsed]="true">
         <h1 class="font-bold text-lg underline">Feature</h1>
         <ul class="list-disc p-5">
           <li>

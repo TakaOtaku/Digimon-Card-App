@@ -116,20 +116,6 @@ import { FilterButtonComponent } from '../filter/filter-button.component';
 
       <li
         class="flex flex-col items-center group cursor-pointer"
-        [ngClass]="getNavigationBorder('/community')"
-        (click)="router.navigateByUrl('/community')">
-        <i
-          class="pi pi-users group-hover:text-[#64B5F6]"
-          style="font-size: 1.5rem"></i>
-        <button
-          style="font-size:smaller"
-          class="p-2 group-hover:text-[#64B5F6]">
-          Forum
-        </button>
-      </li>
-
-      <li
-        class="flex flex-col items-center group cursor-pointer"
         [ngClass]="getNavigationBorder('/products')"
         (click)="router.navigateByUrl('/products')">
         <i
@@ -228,7 +214,7 @@ import { FilterButtonComponent } from '../filter/filter-button.component';
             [link]="true"
             size="small"
             (onClick)="showChangelog()"
-            label="Ver. 4.1.7"></p-button>
+            label="Ver. 4.1.8"></p-button>
         </div>
       </div>
     </div>

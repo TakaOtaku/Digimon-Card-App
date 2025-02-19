@@ -61,7 +61,19 @@ import { DividerModule } from 'primeng/divider';
       class='text-shadow text-base sm:text-lg font-black underline text-center text-white text-[#e2e4e6]"'>
       Partners
     </h2>
-    <div class="mx-auto">
+    <div class="mx-auto flex flex-row">
+      <a
+        class="mx-auto flex flex-col"
+        href="https://www.youtube.com/@AVAULT"
+        target="_blank">
+        <img
+          class="mx-auto max-h-16 w-16 rounded-full object-cover"
+          src="assets/images/partners/avault.jpg"
+          alt="AVAULT" />
+        <div class="text-shadow text-center text-xs font-black text-[#e2e4e6]">
+          AVAULT
+        </div>
+      </a>
       <a
         class="mx-auto flex flex-col"
         href="https://discord.gg/digimon-tcg-dach-759562127513223168"
@@ -72,6 +84,18 @@ import { DividerModule } from 'primeng/divider';
           alt="Digimon DACH Discord" />
         <div class="text-shadow text-center text-xs font-black text-[#e2e4e6]">
           Digimon TCG DACH
+        </div>
+      </a>
+      <a
+        class="mx-auto flex flex-col"
+        href="https://www.youtube.com/East_ML"
+        target="_blank">
+        <img
+          class="mx-auto max-h-16 w-16 rounded-full object-cover"
+          src="assets/images/partners/east.jpg"
+          alt="East" />
+        <div class="text-shadow text-center text-xs font-black text-[#e2e4e6]">
+          East
         </div>
       </a>
     </div>
