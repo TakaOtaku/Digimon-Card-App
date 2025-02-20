@@ -578,7 +578,7 @@ export const Types: string[] = [
 
 export const Illustrators: string[] = [
   '61',
-  'As'Maria',
+  "As'Maria",
   'Aurola',
   'Banira',
   'BIRU YAMAGUCHI',
