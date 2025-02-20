@@ -126,10 +126,8 @@ wikiPageLinks = [
         'url': 'https://digimoncardgame.fandom.com/wiki/Digimon_Card_Game_Special_Limited_Set'},
     {'name': 'LIMITED CARD PACK TORRID WEISS [LM-04]',
         'url': 'https://digimoncardgame.fandom.com/wiki/LM-04:_Limited_Card_Pack_Torrid_Weiss'},
-    {'name': 'LIMITED CARD PACK FINAL ELYSION [LM-05]',
-        'url': 'https://digimoncardgame.fandom.com/wiki/LM-05:_Limited_Card_Pack_Final_Elysion'},
-      {'name': 'LIMITED CARD PACK SHIELD OF THE JUST [LM-05]',
-        'url': 'https://digimoncardgame.fandom.com/wiki/LM-05:_Limited_Card_Pack_Shield_of_the_Just'},
+    {'name': 'LIMITED CARD PACK [BT-21]',
+        'url': 'https://digimoncardgame.fandom.com/wiki/BT-21:_Limited_Card_Pack'},
     {'name': 'LIMITED CARD PACK BILLION BULLET [LM-06]',
         'url': 'https://digimoncardgame.fandom.com/wiki/LM-06:_Limited_Card_Pack_Billion_Bullet'},
 ]
@@ -196,6 +194,7 @@ NoteDictionary = {
     'LM-03: Limited Card Set 2024': 'LIMITED CARD SET 2024 [LM-03]',
     'Special Limited Set': 'SPEICIAL LIMITED SET [LM03-04]',
     'LM-04: Limited Card Pack Torrid Weiss': 'LIMITED CARD PACK TORRID WEISS [LM-04]',
+    'BT-21: Limited Card Pack': 'LIMITED CARD PACK [BT-21]',
     'LM-05: Limited Card Pack Final Elysion': 'LIMITED CARD PACK FINAL ELYSION [LM-05]',
     'LM-05: Limited Card Pack Shield of the Just': 'LIMITED PACK SHIELD OF THE JUST [LM-05]',
     'LM-06: Limited Card Pack Billion Bullet': 'LIMITED CARD PACK BILLION BULLET [LM-06]',
@@ -302,5 +301,7 @@ replacements = [
     '(At the end of your turn, by deleting 1 of your Tokens or other [Unidentified] trait Digimon, this Digimon attacks a player without suspending)',
     '(When this Digimon would leave the battle area other than in battle, you may play 1 Blue Level 4 Digimon card from its digivolution cards without paying the cost)',
     '(When this Digimon would leave the battle area other than in battle, you may play 1 Blue Level 5 Digimon card from its digivolution cards without paying the cost)',
+    '(Plug this card from the hand or battle area sideways into the specified Digimon in the battle area.)',
+    '<< ',
 
 ]
