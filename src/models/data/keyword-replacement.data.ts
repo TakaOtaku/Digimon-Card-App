@@ -71,7 +71,7 @@ export const replacements: Array<[RegExp, string]> = [
   [/\[Main]/g, 'main'],
   [/＜Mind Link＞/g, 'mind_link'],
   [/＜Jamming＞/g, 'jamming'],
-  [/[Link]/g, 'link'],
+  [/\[Link]/g, 'link'],
   [/＜Material Save 1＞/g, 'material_save_1'],
   [/＜Material Save 2＞/g, 'material_save_2'],
   [/＜Material Save 3＞/g, 'material_save_3'],
