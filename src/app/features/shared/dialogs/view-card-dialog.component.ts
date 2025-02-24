@@ -363,19 +363,19 @@ import { SaveStore } from '../../../store/save.store';
             Link
           </p>
           <div class="grid grid-cols-5">
-            <p class="font-bold">Requirement: </p>
+            <p class="font-bold">Link Requirements: </p>
             <span
               class="font-white whitespace-pre-wrap font-bold col-span-4"
               [innerHTML]="replaceWithImageTags(card.linkRequirement)"></span>
           </div>
           <div class="grid grid-cols-5">
-            <p class="font-bold">Link-Effect: </p>
+            <p class="font-bold">Link Effect: </p>
             <span
               class="font-white whitespace-pre-wrap font-bold col-span-4"
               [innerHTML]="replaceWithImageTags(card.linkEffect)"></span>
           </div>
           <div class="grid grid-cols-5">
-            <p class="font-bold">Link-DP: </p>
+            <p class="font-bold">Link DP: </p>
             <span
               class="font-white whitespace-pre-wrap font-bold col-span-4"
               [innerHTML]="replaceWithImageTags(card.linkDP)"></span>
