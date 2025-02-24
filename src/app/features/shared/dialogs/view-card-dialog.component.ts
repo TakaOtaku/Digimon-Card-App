@@ -363,7 +363,7 @@ import { SaveStore } from '../../../store/save.store';
             Link
           </p>
           <div class="grid grid-cols-5">
-            <p class="font-bold">Link Requirements: </p>
+            <p class="font-bold">Requirements: </p>
             <span
               class="font-white whitespace-pre-wrap font-bold col-span-4"
               [innerHTML]="replaceWithImageTags(card.linkRequirement)"></span>
