@@ -235,6 +235,10 @@ export const Forms: string[] = [
   'Armor Form',
   'D-Reaper',
   'Appmon',
+  'Stnd.',
+  'Sup.',
+  'Ult.',
+  'God',
 ];
 
 export const Attributes: string[] = [
