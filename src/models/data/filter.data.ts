@@ -244,9 +244,12 @@ export const Attributes: string[] = [
   'Free',
   'Variable',
   'Unknown',
+  'NO DATA',
+  'Entertainment',
   'Game',
   'God',
-  'NO DATA',
+  'Life',
+  'Navi',
   'Social',
   'System',
   'Tool',
@@ -324,6 +327,7 @@ export const Types: string[] = [
   'Ceratopsian',
   'Cherub',
   'Chronicle',
+  'Clock (App Name)',
   'Commander Agent',
   'Commentary (App Name)',
   'Communication (App Name)',
@@ -562,7 +566,6 @@ export const Types: string[] = [
   'Wallpaper (App Name)',
   'Warning (App Name)',
   'Warrior',
-  'Watch (App Name)',
   'Weapon',
   'Weather (App Name)',
   'WG',
@@ -664,7 +667,7 @@ export const SpecialRequirements: string[] = [
   'DigiXros',
   'Burst Digivolve',
   'ACE',
-  'Link',
+  'App Fusion',
 ];
 
 export const Restrictions: string[] = ['Banned', 'Restricted to 1'];
