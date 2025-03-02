@@ -14251,11 +14251,11 @@
       "question": "Q: If both a card with [Vegetation]/[Plant]/[Fairy]\u00a0in any of its traits are revealed with this effect, must I add both of them to hand?"
     },
     {
-      "answer": "A: Yes, \"[Vegetation]\u00a0in any of its traits\" includes the following traits:Category:Ancient PlantCategory:Carnivorous PlantCategory:Vegetation\n",
+      "answer": "A: Yes, \"[Vegetation]\u00a0in any of its traits\" includes the following traits:Category:VegetationCategory:Ancient PlantCategory:Carnivorous Plant\n",
       "question": "Q: When it says \"[Vegetation]\u00a0in any of its traits\" (\u690d\u7269\u578b), does it include traits other than [Vegetation] (\u690d\u7269\u578b)?"
     },
     {
-      "answer": "A: Yes, \"[Fairy]\u00a0in any of its traits\" includes the following traits:Category:Ancient FairyCategory:Fairy\n",
+      "answer": "A: Yes, \"[Fairy]\u00a0in any of its traits\" includes the following traits:Category:FairyCategory:Ancient Fairy\n",
       "question": "Q: When it says \"[Fairy]\u00a0in any of its traits\" (\u5996\u7cbe\u578b), does it include traits other than [Fairy] (\u5996\u7cbe\u578b)?"
     }
   ],
