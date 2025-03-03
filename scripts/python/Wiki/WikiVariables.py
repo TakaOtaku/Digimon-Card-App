@@ -302,6 +302,6 @@ replacements = [
     '(When this Digimon would leave the battle area other than in battle, you may play 1 Blue Level 4 Digimon card from its digivolution cards without paying the cost)',
     '(When this Digimon would leave the battle area other than in battle, you may play 1 Blue Level 5 Digimon card from its digivolution cards without paying the cost)',
     '(Plug this card from the hand or battle area sideways into the specified Digimon in the battle area.)',
-    '(If 2 such cards are linked together, stack the link card on top and digivolve.)',
+    'If 2 such cards are linked together, stack the link card on top and digivolve.',
     '<< ',
 ]
