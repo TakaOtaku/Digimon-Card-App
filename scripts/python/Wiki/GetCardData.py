@@ -145,11 +145,11 @@ def getExtraInfo(html, digimoncard):
       td = table.find("td")
       digimoncard.aceEffect = td.text
 
-    if th.text.find("Linked DP") != -1:
+    if th.text.find("Link DP") != -1:
       td = table.find("td")
       digimoncard.linkDP = td.text
 
-    if th.text.find("Linked Effect") != -1:
+    if th.text.find("Link Effect") != -1:
       td = table.find("td")
       digimoncard.linkEffect = td.text
 
