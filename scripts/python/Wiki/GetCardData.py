@@ -133,7 +133,7 @@ def getExtraInfo(html, digimoncard):
 
     if th.text.find("Rule") != -1:
       td = table.find("td")
-      digimoncard.rule += td.text
+      digimoncard.rule = td.text
 
     if th.text.find("Inherited Effect") != -1:
       td = table.find("td")
