@@ -93,6 +93,8 @@ def getDigivolveInfo(html, digimoncard):
           newDigivolveCondition.color = data[1]
         case 'Level':
           newDigivolveCondition.level = data[1]
+        case 'Form':
+          newDigivolveCondition.level = data[1]          
         case 'Digivolve Cost':
           newDigivolveCondition.cost = data[1]
     digimoncard.digivolveCondition.append(newDigivolveCondition)
