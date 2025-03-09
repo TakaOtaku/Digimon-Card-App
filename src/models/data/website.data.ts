@@ -6,7 +6,7 @@ export const dummyCard: DigimonCard = {
   attribute: '-',
   block: ['00'],
   burstDigivolve: '-',
-  cardImage: 'assets/images/cards/BT1-001.webp',
+  cardImage: 'BT1-001.webp',
   cardLv: 'Lv.2',
   cardNumber: 'BT1-001',
   cardType: 'Digi-Egg',

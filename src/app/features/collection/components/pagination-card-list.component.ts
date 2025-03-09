@@ -25,7 +25,6 @@ import {
   ICountCard,
   IDraggedCard,
 } from '../../../../models';
-import { ImgFallbackDirective } from '../../../directives/ImgFallback.directive';
 import { IntersectionListenerDirective } from '../../../directives/intersection-listener.directive';
 import { filterCards, withoutJ } from '../../../functions';
 import { DialogStore } from '../../../store/dialog.store';
@@ -115,7 +114,6 @@ import { FilterStore } from '../../../store/filter.store';
     AsyncPipe,
     SidebarModule,
     DataViewModule,
-    ImgFallbackDirective,
     NgOptimizedImage,
     SkeletonModule,
     IntersectionListenerDirective,

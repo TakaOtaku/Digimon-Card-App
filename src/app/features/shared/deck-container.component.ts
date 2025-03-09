@@ -20,10 +20,7 @@ import { DigimonCardStore } from '../../store/digimon-card.store';
     <div
       class="surface-card relative h-32 w-full cursor-pointer border border-black"
       defaultImage="assets/images/digimon-card-back.webp"
-      [lazyLoad]="
-        (cardImageSubject$ | async) ??
-        '../../../assets/images/digimon-card-back.webp'
-      "
+      [lazyLoad]="getCardImage()"
       [ngStyle]="{
         'background-repeat': 'no-repeat',
         'background-position': 'center',
@@ -85,42 +82,15 @@ import { DigimonCardStore } from '../../store/digimon-card.store';
   imports: [LazyLoadImageModule, NgStyle, NgIf, DatePipe, AsyncPipe],
   providers: [ImageService],
 })
-export class DeckContainerComponent implements OnChanges {
+export class DeckContainerComponent{
   @Input() deck: IDeck | ITournamentDeck;
   @Input() mode = 'Basic';
-  cardImageSubject$ = new BehaviorSubject<string>(
-    '../../../assets/images/digimon-card-back.webp',
-  );
 
   colorMap = ColorMap;
 
   private digimonCardStore = inject(DigimonCardStore);
 
   constructor(private imageService: ImageService) {}
-
-  ngOnChanges(changes: SimpleChanges): void {
-    this.setCardImage();
-  }
-
-  setCardImage() {
-    const digimonCardMap = this.digimonCardStore.cardsMap();
-    let imagePath = '';
-    // If there is an ImageCardId set it
-    if (this.deck.imageCardId) {
-      const imageCard = digimonCardMap.get(this.deck.imageCardId);
-      imagePath =
-        imageCard?.cardImage ?? '../../../assets/images/digimon-card-back.webp';
-    } else if (this.deck.cards && this.deck.cards.length < 0) {
-      // If there are cards in the deck, set it to the first card
-      const imageCard = setDeckImage(this.deck, this.digimonCardStore.cards()); // Replace setDeckImage with the appropriate function
-      imagePath = imageCard?.cardImage ?? '';
-    }
-
-    this.imageService
-      .checkImagePath(imagePath)
-      .pipe(first())
-      .subscribe((imagePath: string) => this.cardImageSubject$.next(imagePath));
-  }
 
   getTournamentDeck(deck: IDeck | ITournamentDeck): ITournamentDeck {
     return deck as ITournamentDeck;
@@ -148,5 +118,22 @@ export class DeckContainerComponent implements OnChanges {
       return deck!.tags[0] ? deck!.tags[0].name : '';
     }
     return '';
+  }
+
+  getCardImage() {
+    const digimonCardMap = this.digimonCardStore.cardsMap();
+    let imagePath = '';
+    // If there is an ImageCardId set it
+    if (this.deck.imageCardId) {
+      const imageCard = digimonCardMap.get(this.deck.imageCardId);
+      imagePath =
+        imageCard?.cardImage ?? '../../../assets/images/digimon-card-back.webp';
+    } else if (this.deck.cards && this.deck.cards.length < 0) {
+      // If there are cards in the deck, set it to the first card
+      const imageCard = setDeckImage(this.deck, this.digimonCardStore.cards()); // Replace setDeckImage with the appropriate function
+      imagePath = imageCard?.cardImage ?? '';
+    }
+
+    return 'https://digimon-card-app.b-cdn.net/' + imagePath + '.webp';
   }
 }

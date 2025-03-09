@@ -38,6 +38,7 @@ import { checkSpecialCardCounts } from '../functions';
 import { AuthService } from '../services/auth.service';
 import { ProductCM } from '../services/card-market.service';
 import { DigimonBackendService } from '../services/digimon-backend.service';
+import { DigimonFirebaseService } from '../services/digimon-firebase.service';
 
 type Website = {
   deck: IDeck;
@@ -77,7 +78,11 @@ export const WebsiteStore = signalStore(
   withState(initialState),
 
   withMethods(
-    (store, digimonBackendService = inject(DigimonBackendService)) => ({
+    (
+      store,
+      digimonBackendService = inject(DigimonBackendService),
+      firebase = inject(DigimonFirebaseService),
+    ) => ({
       loadCommunityDecks: rxMethod<void>(
         pipe(
           first(),
@@ -88,23 +93,6 @@ export const WebsiteStore = signalStore(
               tapResponse({
                 next: (communityDecks) =>
                   patchState(store, (state) => ({ communityDecks })),
-                error: () => {},
-                finalize: () => {},
-              }),
-            );
-          }),
-        ),
-      ),
-
-      loadBlogs: rxMethod<void>(
-        pipe(
-          first(),
-          distinctUntilChanged(),
-          switchMap(() => {
-            return digimonBackendService.getBlogEntries().pipe(
-              filter((blogs) => blogs !== null),
-              tapResponse({
-                next: (blogs) => patchState(store, (state) => ({ blogs })),
                 error: () => {},
                 finalize: () => {},
               }),

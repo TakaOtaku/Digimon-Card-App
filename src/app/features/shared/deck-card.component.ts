@@ -12,7 +12,6 @@ import {
 
 import { DialogModule } from 'primeng/dialog';
 import { DigimonCard, dummyCard, IDeckCard } from '../../../models';
-import { ImgFallbackDirective } from '../../directives/ImgFallback.directive';
 import { ImageService } from '../../services/image.service';
 import { DialogStore } from '../../store/dialog.store';
 import { DigimonCardStore } from '../../store/digimon-card.store';
@@ -57,7 +56,7 @@ import { WebsiteStore } from '../../store/website.store';
       </div>
 
       <img
-        [digimonImgFallback]="card.cardImage"
+        [src]="getCardImage(card.id)"
         loading="lazy"
         alt="Digimon Card"
         class="group z-50 m-auto rounded border-2 border-black" />
@@ -97,7 +96,7 @@ import { WebsiteStore } from '../../store/website.store';
     </div>
   `,
   standalone: true,
-  imports: [NgIf, DialogModule, AsyncPipe, ImgFallbackDirective],
+  imports: [NgIf, DialogModule, AsyncPipe],
   providers: [ImageService],
 })
 export class DeckCardComponent implements OnChanges, OnInit {
@@ -166,5 +165,9 @@ export class DeckCardComponent implements OnChanges, OnInit {
       card: this.viewCard,
       width: '50vw',
     });
+  }
+
+  getCardImage(id: string) {
+    return 'https://digimon-card-app.b-cdn.net/' + id + '.webp';
   }
 }

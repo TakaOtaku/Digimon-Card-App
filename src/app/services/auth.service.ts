@@ -1,12 +1,10 @@
-import { inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { GoogleAuthProvider } from 'firebase/auth';
 import firebase from 'firebase/compat';
 import { MessageService } from 'primeng/api';
 import { catchError, first, Observable, of, retry, Subject } from 'rxjs';
-import { ISave, IUser } from '../../models';
-import { emptySave, emptySettings } from '../../models';
-import { SaveStore } from '../store/save.store';
+import { ADMINS, emptySave, emptySettings, ISave, IUser } from '../../models';
 import { DigimonBackendService } from './digimon-backend.service';
 import UserCredential = firebase.auth.UserCredential;
 import User = firebase.User;
@@ -26,6 +24,15 @@ export class AuthService {
 
   get isLoggedIn(): boolean {
     return !!this.userData;
+  }
+
+  isAdmin(): boolean {
+    return !!ADMINS.find((user) => {
+      if (this.userData?.uid === user.id) {
+        return user.admin;
+      }
+      return false;
+    });
   }
 
   /**

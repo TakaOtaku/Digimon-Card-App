@@ -34,8 +34,6 @@ import { ToastModule } from 'primeng/toast';
 import { TooltipModule } from 'primeng/tooltip';
 import { AppComponent } from './app/app.component';
 import { CollectionPageComponent } from './app/features/collection/collection-page.component';
-import { CommunityPageComponent } from './app/features/community/community-page.component';
-import { BlogPageComponent } from './app/features/community/components/blog-page.component';
 import { DeckbuilderPageComponent } from './app/features/deckbuilder/deckbuilder-page.component';
 import { DecksPageComponent } from './app/features/decks/decks-page.component';
 import { HomePageComponent } from './app/features/home/home-page.component';
@@ -46,15 +44,12 @@ import { AuthService } from './app/services/auth.service';
 import { DigimonBackendService } from './app/services/digimon-backend.service';
 
 import { environment } from './environments/environment';
+import { RulesPageComponent } from './app/features/rules/rules-page.component';
 
 const routes: Routes = [
   {
     path: 'test',
     component: TestPageComponent,
-  },
-  {
-    path: 'community',
-    component: CommunityPageComponent,
   },
   {
     path: 'decks',
@@ -89,16 +84,12 @@ const routes: Routes = [
     component: CollectionPageComponent,
   },
   {
+    path: 'rules',
+    component: RulesPageComponent,
+  },
+  {
     path: 'collection/:userId',
     component: CollectionPageComponent,
-  },
-  {
-    path: 'community/:id',
-    component: BlogPageComponent,
-  },
-  {
-    path: 'community/new',
-    component: BlogPageComponent,
   },
   { path: '**', component: HomePageComponent },
 ];

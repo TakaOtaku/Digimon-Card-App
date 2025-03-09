@@ -21,6 +21,7 @@ export const TAGS = [
   'BT18',
   'BT19',
   'BT20',
+  'BT21',
   'RB1',
   'RB2',
   'LM',
@@ -51,6 +52,8 @@ export const TAGS = [
   'ST18',
   'ST19',
   'ST20',
+  'ST21',
+  'ST22',
 ];
 
 export const tagsList: ITag[] = [
@@ -74,6 +77,7 @@ export const tagsList: ITag[] = [
   { name: 'BT18', color: 'Primary' },
   { name: 'BT19', color: 'Primary' },
   { name: 'BT20', color: 'Primary' },
+  { name: 'BT21', color: 'Primary' },
 
   { name: 'EX1', color: 'Primary' },
   { name: 'EX2', color: 'Primary' },
@@ -111,6 +115,8 @@ export const tagsList: ITag[] = [
   { name: 'ST18', color: 'Primary' },
   { name: 'ST19', color: 'Primary' },
   { name: 'ST20', color: 'Primary' },
+  { name: 'ST21', color: 'Primary' },
+  { name: 'ST22', color: 'Primary' },
 
   { name: 'Illegal', color: 'Primary' },
 ];

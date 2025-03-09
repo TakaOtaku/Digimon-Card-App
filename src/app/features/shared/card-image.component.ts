@@ -1,7 +1,6 @@
-import { NgClass, NgIf, NgStyle } from '@angular/common';
+import { NgClass, NgIf, NgOptimizedImage, NgStyle } from '@angular/common';
 import { Component, inject, Input } from '@angular/core';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
-import { ImgFallbackDirective } from 'src/app/directives/ImgFallback.directive';
 import { DigimonCard, dummyCard } from '../../../models';
 import { SaveStore } from '../../store/save.store';
 
@@ -44,7 +43,7 @@ import { SaveStore } from '../../store/save.store';
     </div>
 
     <img
-      [digimonImgFallback]="card.cardImage"
+      [src]="getCardImageUrl(card.id)"
       [ngClass]="{ grayscale: setGrayScale() }"
       [ngStyle]="{ border: cardBorder, 'border-radius': cardRadius }"
       alt="{{ card.cardNumber + ' ' + card.name }}"
@@ -52,7 +51,13 @@ import { SaveStore } from '../../store/save.store';
   `,
   styleUrls: ['./card-image.component.scss'],
   standalone: true,
-  imports: [NgIf, LazyLoadImageModule, NgClass, NgStyle, ImgFallbackDirective],
+  imports: [
+    NgIf,
+    LazyLoadImageModule,
+    NgClass,
+    NgStyle,
+    NgOptimizedImage,
+  ],
 })
 export class CardImageComponent {
   @Input() card: DigimonCard = JSON.parse(JSON.stringify(dummyCard));
@@ -105,5 +110,10 @@ export class CardImageComponent {
       return this.count < this.aaCollectionMinimum() && this.collectionMode();
     }
     return this.count < this.collectionMinimum() && this.collectionMode();
+  }
+
+  getCardImageUrl(cardId: string): string {
+    if (!cardId) return '../../../assets/images/digimon-card-back.webp';
+    return `https://digimon-card-app.b-cdn.net/${cardId}.webp`;
   }
 }

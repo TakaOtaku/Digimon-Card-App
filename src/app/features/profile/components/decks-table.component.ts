@@ -123,14 +123,14 @@ export class DecksTableComponent {
       deck.cards.length === 0 ||
       this.digimonCardStore.cards().length === 0
     ) {
-      return '../../../assets/images/cards/eng/BT1-001.webp';
+      return 'https://digimon-card-app.b-cdn.net/BT1-001.webp';
     }
 
     // If there is a ImageCardId set it
     if (deck.imageCardId) {
       return (
         this.digimonCardStore.cardsMap().get(deck.imageCardId)?.cardImage ??
-        '../../../assets/images/cards/eng/BT1-001.webp'
+        'https://digimon-card-app.b-cdn.net/BT1-001.webp'
       );
     } else {
       const deckImage = setDeckImage(deck, this.digimonCardStore.cards());

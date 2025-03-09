@@ -1,6 +1,5 @@
 import TransformPNG
 import MoveFiles
-import DeletePNGs
 import FormatCards
 import GetCardData
 import GetCardImages
@@ -10,82 +9,86 @@ import PrepareCards
 import WikiVariables
 import WikiFunctions
 
-# GetLinks.py -----------------------------------------------------
-# Get all the Links to all Cards from the Main Sets and Promo Cards
-for wikiPageLink in WikiVariables.wikiPageLinks:
-    print('Getting Links for: ' + wikiPageLink['name'])
-    GetLinks.getLinks(wikiPageLink)
+import asyncio
+import aiohttp
 
-print('Getting Promo Links')
-GetLinks.getPromoLinks()
+async def main():
+    # Create a single session for all HTTP requests
+    connector = aiohttp.TCPConnector(limit=30, limit_per_host=10)
+    timeout = aiohttp.ClientTimeout(total=60)
 
-print('Comparing to saved Links')
-GetLinks.saveLinks()
+    async with aiohttp.ClientSession(connector=connector, timeout=timeout) as session:
+    # GetLinks.py ----------------------------------------------------
+        # Checking for new Main Set Links
+        print('Checking for Main Set Links')
+        await GetLinks.getMainSetLinks(session)
 
-###GetLinks.addLinks()
-###WikiFunctions.loadCards()
+        # Checking for new Promo Links
+        print('Checking for Promo Links')
+        await GetLinks.getPromoLinks(session)
 
-# Sort Links and set how many Cards are there
-WikiVariables.cardLinks = sorted(list(set(WikiVariables.cardLinks)))
-WikiVariables.cardCount = len(WikiVariables.cardLinks)
-# ----------------------------------------------------------------
+        # Loading already found Links
+        GetLinks.loadLinks()
 
-# GetCardData.py -------------------------------------------------
-# Get the relevant Card Data from the Wiki
-print('Getting Card Data!')
-GetCardData.getCardData()
+        # Sort Links and set how many Cards are there
+        WikiVariables.cardLinks = sorted(list(set(WikiVariables.cardLinks)))
+        WikiVariables.cardCount = len(WikiVariables.cardLinks)
 
-WikiFunctions.getRulings()
+        GetLinks.saveLinks()
+        print('Card Links Saved')
+    # ----------------------------------------------------------------
 
-print('Saving Cards!')
-WikiFunctions.saveCards()
-# ----------------------------------------------------------------
+    # GetCardData.py -------------------------------------------------
+        # Get the relevant Card Data from the Wiki
+        print('Getting Card Data!')
+        await GetCardData.getCardData(session)
+    # ----------------------------------------------------------------
 
-# GetCardImages.py -----------------------------------------------
-# Fetching Card Images and setting correct IDs and Notes
-print('Fetching AAs and Images!')
-GetCardImages.getCardImages()
+    # GetCardImages.py -----------------------------------------------
+        # Fetching Card Images and setting correct IDs and Notes
+        print('Fetching AAs and Images!')
+        await GetCardImages.getCardImages(session)
 
-print('Setting correct Notes!')
-WikiFunctions.setNotes()
+        print('Setting correct Notes!')
+        WikiFunctions.setNotes()
 
-print('Saving Cards!')
-WikiFunctions.saveCards()
-# ----------------------------------------------------------------
+        print('Saving Cards!')
+        WikiFunctions.saveCards()
+    # ----------------------------------------------------------------
 
 # FormatCards.py && TransformPNG.py && PrepareCards.py -----------
-# Formatting the Cards and preparing them for DigimonCard.app
-print('Formatting DigimonCard JSON!')
-FormatCards.replaceStrings()
+    # Formatting the Cards and preparing them for DigimonCard.app
+    print('Formatting DigimonCard JSON!')
+    FormatCards.replaceStrings()
 
-print('Removing Keyword Explanations!')
-for replacement in WikiVariables.replacements:
-  FormatCards.replace_string_in_json(replacement, '')
+    print('Removing Keyword Explanations!')
+    for replacement in WikiVariables.replacements:
+      FormatCards.replace_string_in_json(replacement, '')
 
-print('Removing Spaces!')
-FormatCards.replace_string_in_json('    ', ' ')
-FormatCards.replace_string_in_json('   ', ' ')
-FormatCards.replace_string_in_json('   ', ' ')
-FormatCards.replace_string_in_json('  ', ' ')
-FormatCards.replace_string_in_json(' .', '.')
+    print('Removing Spaces!')
+    FormatCards.replace_string_in_json('    ', ' ')
+    FormatCards.replace_string_in_json('   ', ' ')
+    FormatCards.replace_string_in_json('   ', ' ')
+    FormatCards.replace_string_in_json('  ', ' ')
+    FormatCards.replace_string_in_json(' .', '.')
 
-print('Removing Samples!')
-FormatCards.removeSamples()
+    print('Removing Samples!')
+    FormatCards.removeSamples()
 
-print('Convert PNG to WebP!')
-TransformPNG.pngToWebP()
+    print('Convert PNG to WebP!')
+    TransformPNG.pngToWebP()
 
-print('PrepareCards!')
-PrepareCards.prepareCards()
+    print('Prepare Cards for DigimonCardApp!')
+    PrepareCards.prepareCards()
 # ----------------------------------------------------------------
 
-# MoveFiles.py && DeletePNG.py -----------------------------------
-# Move the Files to the correct place and cleanup
-print('Images to correct folders!')
-MoveFiles.moveFiles()
-
-print('Delete PNGs!')
-DeletePNGs.deletePNGs()
+# MoveFiles.py ---------------------------------------------------
+    # Move the Files to the correct place and cleanup
+    print('Jsons to correct folders!')
+    MoveFiles.moveFiles()
 # ----------------------------------------------------------------
+    print('Done!')
 
-print('Done!')
+
+if __name__ == "__main__":
+    asyncio.run(main())

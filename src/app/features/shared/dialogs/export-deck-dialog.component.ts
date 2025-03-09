@@ -126,6 +126,9 @@ export class ExportDeckDialogComponent implements OnInit {
 
   normalOrder = true;
 
+  cdnBaseUrl = 'https://digimon-card-app.b-cdn.net';
+  proxyImageBaseUrl = 'https://digimoncard.app';
+
   setExport = effect(() => {
     this.deck = this.dialogStore.exportDeck().deck;
     this.deckSort();
@@ -288,6 +291,7 @@ export class ExportDeckDialogComponent implements OnInit {
     const loadImage = (url: string) => {
       return new Promise((resolve, reject) => {
         const img = new Image();
+        img.crossOrigin = 'anonymous';
         img.onload = () => resolve(img);
         img.onerror = () => reject(new Error(`load ${url} fail`));
         img.src = url;
@@ -369,7 +373,7 @@ export class ExportDeckDialogComponent implements OnInit {
         compareIDs(card.id, search.id),
       );
       imgs.push({
-        uri: fullCard!.cardImage,
+        uri: 'https://digimon-card-app.b-cdn.net/' + fullCard!.id + '.webp',
         x: x,
         y: y,
         sw: 64,
@@ -403,6 +407,7 @@ export class ExportDeckDialogComponent implements OnInit {
     const loadImage = (url: string) => {
       return new Promise((resolve, reject) => {
         const img = new Image();
+        img.crossOrigin = 'anonymous';
         img.onload = () => resolve(img);
         img.onerror = () => reject(new Error(`load ${url} fail`));
         img.src = url;
@@ -468,7 +473,7 @@ export class ExportDeckDialogComponent implements OnInit {
       );
       for (let i = 1; i <= card.count; i++) {
         imgs.push({
-          uri: fullCard!.cardImage,
+          uri: 'https://digimon-card-app.b-cdn.net/' + fullCard!.id + '.webp',
           x: x,
           y: y,
           sw: 744,

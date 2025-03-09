@@ -1,5 +1,12 @@
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
-import { ChangeDetectorRef, Component, effect, HostListener, inject, OnInit } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  effect,
+  HostListener,
+  inject,
+  OnInit,
+} from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
 import { ToastrService } from 'ngx-toastr';
@@ -10,7 +17,7 @@ import { DividerModule } from 'primeng/divider';
 import { PaginatorModule } from 'primeng/paginator';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { TooltipModule } from 'primeng/tooltip';
-import { Subject } from 'rxjs';
+import { Subject, first } from 'rxjs';
 import { emptyDeck, ICountCard, IDeck, ITournamentDeck } from '../../../models';
 import { setDeckImage } from '../../functions';
 import { DialogStore } from '../../store/dialog.store';
@@ -19,11 +26,11 @@ import { SaveStore } from '../../store/save.store';
 import { WebsiteStore } from '../../store/website.store';
 import { DeckContainerComponent } from '../shared/deck-container.component';
 import { DeckDialogComponent } from '../shared/dialogs/deck-dialog.component';
-import { DeckSubmissionComponent } from '../shared/dialogs/deck-submission.component';
 import { PageComponent } from '../shared/page.component';
 import { DeckStatisticsComponent } from './components/deck-statistics.component';
 import { DecksFilterComponent } from './components/decks-filter.component';
 import { TierlistComponent } from './components/tierlist.component';
+import { DigimonFirebaseService } from '../../services/digimon-firebase.service';
 
 @Component({
   selector: 'digimon-decks-page',
@@ -121,7 +128,6 @@ import { TierlistComponent } from './components/tierlist.component';
     PaginatorModule,
     DialogModule,
     DeckDialogComponent,
-    DeckSubmissionComponent,
     DeckStatisticsComponent,
     NgIf,
     AsyncPipe,
@@ -138,6 +144,7 @@ export class DecksPageComponent implements OnInit {
   private meta = inject(Meta);
   private title = inject(Title);
   private toastrService = inject(ToastrService);
+  private firebase = inject(DigimonFirebaseService);
 
   saveStore = inject(SaveStore);
   dialogStore = inject(DialogStore);
@@ -167,7 +174,13 @@ export class DecksPageComponent implements OnInit {
   private digimonCardStore = inject(DigimonCardStore);
 
   constructor(private changeDetection: ChangeDetectorRef) {
-    this.websiteStore.loadCommunityDecks();
+    this.firebase
+      .getDecksWithTags(['BT20'])
+      .pipe(first())
+      .subscribe((decks) => {
+        this.websiteStore.updateCommunityDecks(decks);
+      });
+    this.form.get('tagFilter')?.setValue(['BT20']);
 
     effect(() => {
       const decks = this.websiteStore.communityDecks();

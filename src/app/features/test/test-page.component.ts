@@ -2,49 +2,51 @@ import { NgIf } from '@angular/common';
 import { Component, inject, OnDestroy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DialogModule } from 'primeng/dialog';
-import { concat, first, Observable, Subject, switchMap, tap } from 'rxjs';
+import { concat, finalize, first, Observable, Subject, switchMap, tap } from 'rxjs';
 import { ADMINS, IDeck, ISave, ITournamentDeck } from '../../../models';
 import { setColors, setDeckImage, setTags } from '../../functions';
 import { AuthService } from '../../services/auth.service';
 import { CardMarketService } from '../../services/card-market.service';
 import { DigimonBackendService } from '../../services/digimon-backend.service';
 import { DigimonCardStore } from '../../store/digimon-card.store';
+import { DigimonFirebaseService } from '../../services/digimon-firebase.service';
+import { ButtonModule } from 'primeng/button';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 @Component({
   selector: 'digimon-test-page',
   template: `
-    <button
-      *ngIf="isAdmin()"
-      class="border-2 border-amber-200 bg-amber-400"
-      (click)="updateAllSaves()">
-      Update all Saves
-    </button>
-    <button
-      *ngIf="isAdmin()"
-      class="border-2 border-amber-200 bg-amber-400"
-      (click)="updatePriceGuideIds()">
-      Update PriceGuide Ids
-    </button>
-    <button
-      *ngIf="isAdmin()"
-      class="border-2 border-amber-200 bg-amber-400"
-      (click)="updatePriceGuideIdsAAs()">
-      Update PriceGuide Ids AAs
-    </button>
+    <div *ngIf="isAdmin()" class="flex flex-col items-center">
+      <button
+        class="border-2 border-amber-200 bg-amber-400"
+        (click)="updateAllSaves()">
+        Update all Saves
+      </button>
 
-    <button
-      *ngIf="isAdmin()"
-      class="border-2 border-amber-200 bg-amber-400"
-      (click)="updateAllDecks()">
-      Update all Decks
-    </button>
+      <div class="flex items-center gap-4">
+        <p-button
+          label="Migrate Data to Firebase"
+          icon="pi pi-cloud-upload"
+          [disabled]="isMigrating"
+          (onClick)="migrateData()">
+        </p-button>
 
-    <button
-      *ngIf="isAdmin()"
-      class="border-2 border-amber-200 bg-amber-400"
-      (click)="updateAllSaves()">
-      Update all Save Decks
-    </button>
+        <p-progressSpinner
+          *ngIf="isMigrating"
+          [style]="{ width: '30px', height: '30px' }"></p-progressSpinner>
+      </div>
+      <div *ngIf="isMigrating" class="mt-4">
+        <p>Migration in progress... Please don't close this page.</p>
+      </div>
+
+      <div
+        *ngIf="migrationComplete"
+        class="mt-4 p-3 bg-green-100 text-green-800 rounded">
+        <p>
+          Migration completed successfully! Your data is now stored in Firebase.
+        </p>
+      </div>
+    </div>
 
     <p-dialog
       [(visible)]="updateIDDialog"
@@ -77,9 +79,20 @@ import { DigimonCardStore } from '../../store/digimon-card.store';
     </p-dialog>
   `,
   standalone: true,
-  imports: [NgIf, DialogModule, FormsModule],
+  imports: [
+    NgIf,
+    DialogModule,
+    FormsModule,
+    ButtonModule,
+    ProgressSpinnerModule,
+  ],
 })
 export class TestPageComponent implements OnDestroy {
+  isMigrating = false;
+  migrationComplete = false;
+
+  firebaseService = inject(DigimonFirebaseService);
+
   updateIDDialog = false;
   productsWithoutCorrectID: any[] = [];
   currentID = 1;
@@ -91,16 +104,7 @@ export class TestPageComponent implements OnDestroy {
     public authService: AuthService,
     private digimonBackendService: DigimonBackendService,
     private cardMarketService: CardMarketService,
-  ) {
-    //cardTraderService.getCardPrices().subscribe((value) => {
-    //  //fs.writeFileSync('./price-data-cardtrader.json', value, {
-    //  //  flag: 'w',
-    //  //});
-    //});
-    //cardMarketService.getGames().subscribe((value) => {
-    //  debugger;
-    //});
-  }
+  ) {}
 
   ngOnDestroy() {
     this.onDestroy$.next(true);
@@ -127,90 +131,6 @@ export class TestPageComponent implements OnDestroy {
       });
   }
 
-  updatePriceGuideIds() {
-    this.cardMarketService.getPrizeGuide().subscribe((priceGuide: any[]) => {
-      const observable: Observable<any>[] = [];
-      priceGuide.forEach((entry) => {
-        this.cardMarketService
-          .getProductId(entry.idProduct)
-          .pipe(
-            switchMap((id) => {
-              return this.cardMarketService.updateProductId(id, entry);
-            }),
-          )
-          .subscribe();
-      });
-
-      //concat(...observable).subscribe((value) => console.log(value));
-    });
-  }
-
-  updatePriceGuideIdsAAs() {
-    //Get Price Guide
-    //Get all _P and Cards without correct ID
-    //If one ID got only one match it is the only one so set it to _P1
-    //If there are more open the link in a window and let the user enter a number
-    //Change _PX the X to the entered number
-    this.productsWithoutCorrectID = [];
-
-    this.cardMarketService
-      .getPrizeGuide()
-      .pipe(first())
-      .subscribe((products) => {
-        const wrongIDs = products
-          .filter((product) => product.cardId.endsWith('_P'))
-          .sort((a, b) =>
-            b.cardId
-              .toLocaleLowerCase()
-              .localeCompare(a.cardId.toLocaleLowerCase()),
-          );
-
-        const ArrayObject: any = {};
-        wrongIDs.forEach((product) => {
-          if (ArrayObject[product.cardId]) {
-            ArrayObject[product.cardId] = [
-              ...ArrayObject[product.cardId],
-              product,
-            ];
-          } else {
-            ArrayObject[product.cardId] = [product];
-          }
-        });
-
-        const ofArray$: Observable<any>[] = [];
-        Object.entries(ArrayObject).forEach((entry) => {
-          const [key, value] = entry;
-
-          if ((value as any[]).length === 0) {
-            delete ArrayObject[key];
-          } else if ((value as any[]).length === 1) {
-            ofArray$.push(
-              this.cardMarketService
-                .updateProductId(
-                  ArrayObject[key][0].cardId + `1`,
-                  ArrayObject[key][0],
-                )
-                .pipe(first()),
-            );
-            delete ArrayObject[key];
-          }
-        });
-
-        concat(...ofArray$).subscribe();
-
-        Object.entries(ArrayObject).forEach((entry) => {
-          const [key, value] = entry;
-          this.productsWithoutCorrectID = [
-            ...this.productsWithoutCorrectID,
-            value,
-          ];
-        });
-
-        this.productsWithoutCorrectID = this.productsWithoutCorrectID.flat();
-        this.updateIDDialog = true;
-      });
-  }
-
   updateFirstObject() {
     const id = this.productsWithoutCorrectID[0].cardId + this.currentID;
     const product = this.productsWithoutCorrectID[0];
@@ -219,35 +139,6 @@ export class TestPageComponent implements OnDestroy {
       .pipe(first())
       .subscribe();
     this.productsWithoutCorrectID = this.productsWithoutCorrectID.slice(1);
-  }
-
-  updateAllDecks() {
-    const obsArray$: Observable<any>[] = [];
-
-    this.digimonBackendService
-      .getDecks()
-      .pipe(
-        tap((decks) => {
-          decks.forEach((deck) => {
-            const of = this.updateDeck(deck);
-            if (of) {
-              obsArray$.push(of);
-            }
-          });
-        }),
-        switchMap(() => this.digimonBackendService.getTournamentDecks()),
-        tap((tournamentDecks) => {
-          tournamentDecks.forEach((deck) => {
-            const of = this.updateTournamentDeck(deck);
-            if (of) {
-              obsArray$.push(of);
-            }
-          });
-        }),
-      )
-      .subscribe((decks) => {
-        concat(...obsArray$).subscribe();
-      });
   }
 
   private updateDecks(save: ISave) {
@@ -294,23 +185,19 @@ export class TestPageComponent implements OnDestroy {
       : null;
   }
 
-  private updateTournamentDeck(deck: ITournamentDeck): Observable<any> | null {
-    let error = false;
-    let newDecks: ITournamentDeck = deck;
-    if (!deck.imageCardId || deck.imageCardId === 'BT1-001') {
-      error = true;
-      newDecks = {
-        ...deck,
-        imageCardId: setDeckImage(deck, this.digimonCardStore.cards()).id,
-      };
-    }
-    if (!deck.date) {
-      error = true;
-      newDecks = { ...deck, date: new Date().toString() };
-    }
+  migrateData(): void {
+    this.isMigrating = true;
+    this.migrationComplete = false;
 
-    return error
-      ? this.digimonBackendService.updateTournamentDeck(newDecks).pipe(first())
-      : null;
+    this.firebaseService
+      .migrateToFirebase()
+      .pipe(
+        finalize(() => {
+          this.isMigrating = false;
+        }),
+      )
+      .subscribe((success) => {
+        this.migrationComplete = success;
+      });
   }
 }

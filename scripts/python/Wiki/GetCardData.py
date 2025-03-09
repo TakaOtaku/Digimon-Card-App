@@ -1,10 +1,15 @@
 import requests
 from bs4 import BeautifulSoup
+import asyncio
+import aiohttp
+from typing import Optional, List, Dict
 
 from classes.DigimonCard import DigimonCard
 from classes.DigivolveCondition import DigivolveCondition
 
 import WikiVariables as WV
+
+from GetLinks import fetch_page
 
 
 def splitCellsInPair(cells):
@@ -13,7 +18,72 @@ def splitCellsInPair(cells):
     array.append([cells[i], cells[i + 1]])
   return array
 
+async def process_single_card(session: aiohttp.ClientSession, link: str, count: int, total: int) -> Optional[DigimonCard]:
+  """Process a single card asynchronously"""
+  try:
+    content = await fetch_page(session, WV.wikiLink + link)
+    if not content:
+      return None
 
+    soup = BeautifulSoup(content, "html.parser")
+    current_digimon = DigimonCard()
+
+    card_table = soup.find('div', class_='ctable')
+    if card_table is None:
+      print(f"No Card Table found for: {link}")
+      return None
+
+    # Extract all required sections
+    info_main = card_table.find("div", class_="info-main")
+    info_digivolve = card_table.find("div", class_="info-digivolve")
+    info_extra = card_table.find("div", class_="info-extra")
+    info_restricted = card_table.find("div", class_="info-restricted")
+    info_illustrator = soup.find_all("table", class_="settable")
+
+    # Process all sections
+    current_digimon = getMainInfo(info_main, current_digimon)
+    current_digimon = getDigivolveInfo(info_digivolve, current_digimon)
+    current_digimon = getExtraInfo(info_extra, current_digimon)
+    current_digimon = getRestrictedInfo(info_restricted, current_digimon)
+    current_digimon = getIllustratorsInfo(info_illustrator, current_digimon)
+    
+    current_digimon = setRarity(current_digimon)
+    current_digimon = setCardImage(current_digimon, link)
+
+    print(f'[{count}/{total}] {current_digimon.id} - {current_digimon.name.english}')
+    return current_digimon
+
+  except Exception as e:
+    print(f"Error processing {link}: {e}")
+    return None
+
+async def getCardData(session: aiohttp.ClientSession, batch_size: int = 30, sleep_time: float = 0.1):
+  """Get card data using concurrent requests"""
+  total_cards = len(WV.cardLinks)
+  processed_cards = []
+
+  # Process cards in batches to control concurrency
+  for i in range(0, total_cards, batch_size):
+    batch_links = WV.cardLinks[i:i + batch_size]
+    tasks = [
+      process_single_card(session, link, i + idx + 1, total_cards)
+      for idx, link in enumerate(batch_links)
+    ]
+    
+    # Process batch concurrently
+    batch_results = await asyncio.gather(*tasks)
+    
+    # Filter out None results and add successful ones
+    valid_cards = [card for card in batch_results if card is not None]
+    processed_cards.extend(valid_cards)
+    
+    # Optional: Add a small delay between batches to be nice to the server
+    if i + batch_size < total_cards:  # Don't sleep after the last batch
+      await asyncio.sleep(sleep_time)
+
+  # Update WikiVariables with processed cards
+  WV.cards = processed_cards
+  print(f"Successfully processed {len(processed_cards)} out of {total_cards} cards")
 
 def getMainInfo(html, digimoncard):
   if html == None:
@@ -62,7 +132,6 @@ def getMainInfo(html, digimoncard):
       digimoncard.rarity = data[1]
   return digimoncard
 
-
 def addCorrectSpecialDigivolve(digimoncard, specialDigivolve):
   td = specialDigivolve.find("td")
   if 'DNA' in td.text:
@@ -72,7 +141,6 @@ def addCorrectSpecialDigivolve(digimoncard, specialDigivolve):
     digimoncard.burstDigivolve = td.text
     return
   digimoncard.specialDigivolve = td.text
-
 
 def getDigivolveInfo(html, digimoncard):
   if html == None:
@@ -93,8 +161,6 @@ def getDigivolveInfo(html, digimoncard):
           newDigivolveCondition.color = data[1]
         case 'Level':
           newDigivolveCondition.level = data[1]
-        case 'Form':
-          newDigivolveCondition.level = data[1]          
         case 'Digivolve Cost':
           newDigivolveCondition.cost = data[1]
     digimoncard.digivolveCondition.append(newDigivolveCondition)
@@ -115,7 +181,6 @@ def getDigivolveInfo(html, digimoncard):
 
   return digimoncard
 
-
 def getExtraInfo(html, digimoncard):
   if html == None:
     return digimoncard
@@ -133,7 +198,7 @@ def getExtraInfo(html, digimoncard):
 
     if th.text.find("Rule") != -1:
       td = table.find("td")
-      digimoncard.rule = td.text
+      digimoncard.rule += td.text
 
     if th.text.find("Inherited Effect") != -1:
       td = table.find("td")
@@ -147,16 +212,15 @@ def getExtraInfo(html, digimoncard):
       td = table.find("td")
       digimoncard.aceEffect = td.text
 
-    if th.text.find("Link DP") != -1:
+    if th.text.find("Linked DP") != -1:
       td = table.find("td")
       digimoncard.linkDP = td.text
 
-    if th.text.find("Link Effect") != -1:
+    if th.text.find("Linked Effect") != -1:
       td = table.find("td")
       digimoncard.linkEffect = td.text
 
   return digimoncard
-
 
 def getEnglishIllustrator(rows, digimoncard):
   illustratorCount = 0
@@ -187,7 +251,6 @@ def getEnglishIllustrator(rows, digimoncard):
            'type': cells[2].text})
     illustratorCount += 1
 
-
 def getJapaneseIllustrator(rows, digimoncard):
   illustratorCount = 0
   for row in rows:
@@ -202,7 +265,6 @@ def getJapaneseIllustrator(rows, digimoncard):
         {'id': '_P' + str(illustratorCount - 1), 'illustrator': cells[0].text, 'note': cells[1].text,
          'type': cells[2].text})
     illustratorCount += 1
-
 
 def getIllustratorsInfo(html, digimoncard):
   if html == None or len(html) == 0:
@@ -223,7 +285,6 @@ def getIllustratorsInfo(html, digimoncard):
     getJapaneseIllustrator(rowsJ, digimoncard)
 
   return digimoncard
-
 
 def getRestrictedInfo(html, digimoncard):
   if html == None:
@@ -248,7 +309,6 @@ def getRestrictedInfo(html, digimoncard):
 
   return digimoncard
 
-
 def setRarity(digimoncard):
   rarityDict = {
     "-": "-",
@@ -266,53 +326,10 @@ def setRarity(digimoncard):
   digimoncard.rarity = rarityDict[digimoncard.rarity]
   return digimoncard
 
-
 def setCardImage(digimoncard, url):
   splitUrl = url.split("/")
   digimoncard.id = splitUrl[2]
   digimoncard.cardNumber = splitUrl[2]
-  digimoncard.cardImage = 'assets/images/cards/' + \
-                          digimoncard.cardImage + digimoncard.id + ".webp"
+  digimoncard.cardImage = digimoncard.id
 
   return digimoncard
-
-def getCardData():
-  count = 0
-  for link in WV.cardLinks:
-    try:
-      count += 1
-
-      page = requests.get(WV.wikiLink + link)
-      soup = BeautifulSoup(page.content, "html.parser")
-
-      currentDigimon = DigimonCard()
-
-      cardTable = soup.find('div', class_='ctable')
-
-      if cardTable is None:
-        print("No Card Table found for: " + link)
-        continue
-
-      infoMain = cardTable.find("div", class_="info-main")
-      infoDigivolve = cardTable.find("div", class_="info-digivolve")
-      infoExtra = cardTable.find("div", class_="info-extra")
-      infoRestricted = cardTable.find("div", class_="info-restricted")
-
-      infoIllustrator = soup.find_all("table", class_="settable")
-
-      currentDigimon = getMainInfo(infoMain, currentDigimon)
-      currentDigimon = getDigivolveInfo(infoDigivolve, currentDigimon)
-      currentDigimon = getExtraInfo(infoExtra, currentDigimon)
-      currentDigimon = getRestrictedInfo(infoRestricted, currentDigimon)
-
-      currentDigimon = getIllustratorsInfo(
-        infoIllustrator, currentDigimon)
-
-      currentDigimon = setRarity(currentDigimon)
-      currentDigimon = setCardImage(currentDigimon, link)
-
-      print('[' + str(count) + '/' + str(WV.cardCount) + ']' +
-            currentDigimon.id + ' - ' + currentDigimon.name.english)
-      WV.cards.append(currentDigimon)
-    except:
-      print("Error for: " + link)

@@ -9,7 +9,6 @@ import {
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
-import { ImgFallbackDirective } from 'src/app/directives/ImgFallback.directive';
 import { DigimonCardStore } from 'src/app/store/digimon-card.store';
 import { WebsiteStore } from 'src/app/store/website.store';
 import { replacements } from 'src/models/data/keyword-replacement.data';
@@ -106,7 +105,7 @@ import { SaveStore } from '../../../store/save.store';
       <div class="w-full flex-row md:flex" id="Image-Attributes">
         <div class="w-full md:w-1/2">
           <img
-            [digimonImgFallback]="png"
+            [src]="getCardImage(card.id)"
             alt="{{ imageAlt }}"
             defaultImage="assets/images/digimon-card-back.webp"
             class="mx-auto my-5 max-w-[15rem] md:my-0 md:max-w-full" />
@@ -363,19 +362,19 @@ import { SaveStore } from '../../../store/save.store';
             Link
           </p>
           <div class="grid grid-cols-5">
-            <p class="font-bold">Requirements: </p>
+            <p class="font-bold">Requirement:</p>
             <span
               class="font-white whitespace-pre-wrap font-bold col-span-4"
               [innerHTML]="replaceWithImageTags(card.linkRequirement)"></span>
           </div>
           <div class="grid grid-cols-5">
-            <p class="font-bold">Link Effect: </p>
+            <p class="font-bold">Link-Effect:</p>
             <span
               class="font-white whitespace-pre-wrap font-bold col-span-4"
               [innerHTML]="replaceWithImageTags(card.linkEffect)"></span>
           </div>
           <div class="grid grid-cols-5">
-            <p class="font-bold">Link DP: </p>
+            <p class="font-bold">Link-DP:</p>
             <span
               class="font-white whitespace-pre-wrap font-bold col-span-4"
               [innerHTML]="replaceWithImageTags(card.linkDP)"></span>
@@ -436,7 +435,6 @@ import { SaveStore } from '../../../store/save.store';
     RippleModule,
     LazyLoadImageModule,
     AsyncPipe,
-    ImgFallbackDirective,
     NgForOf,
   ],
 })
@@ -581,5 +579,9 @@ export class ViewCardDialogComponent {
       return 'Rare Pull';
     }
     return 'Normal';
+  }
+
+  getCardImage(id: string) {
+    return 'https://digimon-card-app.b-cdn.net/' + id + '.webp';
   }
 }
