@@ -93,6 +93,8 @@ def getDigivolveInfo(html, digimoncard):
           newDigivolveCondition.color = data[1]
         case 'Level':
           newDigivolveCondition.level = data[1]
+        case 'Form':
+          newDigivolveCondition.level = data[1]          
         case 'Digivolve Cost':
           newDigivolveCondition.cost = data[1]
     digimoncard.digivolveCondition.append(newDigivolveCondition)
@@ -131,7 +133,7 @@ def getExtraInfo(html, digimoncard):
 
     if th.text.find("Rule") != -1:
       td = table.find("td")
-      digimoncard.rule += td.text
+      digimoncard.rule = td.text
 
     if th.text.find("Inherited Effect") != -1:
       td = table.find("td")
@@ -145,11 +147,11 @@ def getExtraInfo(html, digimoncard):
       td = table.find("td")
       digimoncard.aceEffect = td.text
 
-    if th.text.find("Linked DP") != -1:
+    if th.text.find("Link DP") != -1:
       td = table.find("td")
       digimoncard.linkDP = td.text
 
-    if th.text.find("Linked Effect") != -1:
+    if th.text.find("Link Effect") != -1:
       td = table.find("td")
       digimoncard.linkEffect = td.text
 
