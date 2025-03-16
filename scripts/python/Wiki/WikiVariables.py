@@ -305,5 +305,5 @@ replacements = [
     'If 2 such cards are linked together, stack the link card on top and digivolve.',
     '<< ',
     '(Add 1 to this Digimon\'s maximum links)',
-    '(While attacking, your opponent\'s effects don't affect this Digimon)',
+    '(While attacking, your opponent\'s effects don\'t affect this Digimon)',
 ]
