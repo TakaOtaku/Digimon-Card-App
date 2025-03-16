@@ -304,6 +304,6 @@ replacements = [
     '(Plug this card from the hand or battle area sideways into the specified Digimon in the battle area.)',
     'If 2 such cards are linked together, stack the link card on top and digivolve.',
     '<< ',
-    '(Add 1 to this Digimon's maximum links)',
-    '(While attacking, your opponent's effects don't affect this Digimon)',
+    '(Add 1 to this Digimon\'s maximum links)',
+    '(While attacking, your opponent\'s effects don't affect this Digimon)',
 ]
