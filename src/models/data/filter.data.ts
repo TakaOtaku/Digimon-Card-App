@@ -93,6 +93,7 @@ export const GroupedSets = [
       { label: 'EX6', value: 'EX6' },
       { label: 'EX7', value: 'EX7' },
       { label: 'EX8', value: 'EX8' },
+      { label: 'EX9', value: 'EX9' },
     ],
   },
   {
@@ -176,6 +177,7 @@ export const Keywords: string[] = [
   '\uff1cIceclad\uff1e',
   '\uff1cFortitude\uff1e',
   '\uff1cJamming\uff1e',
+  '\uff1cLink +1\uff1e',
   '\uff1cMaterial Save 1\uff1e',
   '\uff1cMaterial Save 2\uff1e',
   '\uff1cMaterial Save 3\uff1e',
@@ -189,6 +191,7 @@ export const Keywords: string[] = [
   '\uff1cPartition (Yellow Lv.6 + Black Lv.6)\uff1e',
   '\uff1cPartition (Yellow/Black Lv.6 + Green/Purple Lv.6)\uff1e',
   '\uff1cPiercing\uff1e',
+  '\uff1cProgress\uff1e',
   '\uff1cRaid\uff1e',
   '\uff1cReboot\uff1e',
   '\uff1cRecovery +1 (Deck)\uff1e',
@@ -201,6 +204,7 @@ export const Keywords: string[] = [
   '\uff1cSecurity A. -1\uff1e',
   '\uff1cSecurity A. -2\uff1e',
   '\uff1cSecurity A. -3\uff1e',
+  '\uff1cTraining\uff1e',
   '\uff1cVortex\uff1e',
 ];
 
