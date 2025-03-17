@@ -609,6 +609,7 @@ export const Illustrators: string[] = [
   'Kagemaru Himeno',
   'Kariki Hakime',
   'Kayo Horaguchi',
+  'K.Dra',
   'Kaz',
   'Kazumasa Yasukuni',
   'Keita Amemiya',
