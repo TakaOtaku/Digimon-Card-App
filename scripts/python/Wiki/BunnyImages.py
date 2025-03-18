@@ -9,11 +9,9 @@ card_images_path = "./src/assets/images/cards/"
 username = "digimon-card-app"
 hostname = "digimon-card-app.b-cdn.net"
 storage_api_key = "ece19f0f-6948-45b6-b53c262ef756-ae4d-4cc1"
-account_api_key = "5b35403c-a21c-4f7a-ae65-7eb0a3618656890d41f0-4de7-4411-9aff-ad58b52fa1a8"
 storage_zone_name = "digimon-card-app"
 
 obj_storage = Storage(storage_api_key,storage_zone_name)
-obj_cdn = CDN(account_api_key)
 
 def extract_base_filenames(file_dict_list):
     base_filenames = []

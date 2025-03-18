@@ -45,6 +45,8 @@ async def main():
     # ----------------------------------------------------------------
 
     # GetCardImages.py -----------------------------------------------
+        #GetLinks.loadLinks()
+        #WikiFunctions.loadCards()
         # Fetching Card Images and setting correct IDs and Notes
         print('Fetching AAs and Images!')
         await GetCardImages.getCardImages(session)

@@ -39,6 +39,7 @@ import { DeckCardComponent } from '../deck-card.component';
 import { ChartContainersComponent } from '../statistics/chart-containers.component';
 import { ColorSpreadComponent } from '../statistics/color-spread.component';
 import { DdtoSpreadComponent } from '../statistics/ddto-spread.component';
+import { DigimonFirebaseService } from '../../../services/digimon-firebase.service';
 
 export interface DigimonCardImage {
   name: string;
@@ -243,6 +244,7 @@ export interface DigimonCardImage {
   providers: [MessageService],
 })
 export class DeckDialogComponent {
+  firebase = inject(DigimonFirebaseService);
   changeDetection = inject(ChangeDetectorRef);
 
   saveStore = inject(SaveStore);
@@ -271,7 +273,6 @@ export class DeckDialogComponent {
   constructor(
     private authService: AuthService,
     private router: Router,
-    private digimonBackendService: DigimonBackendService,
     private confirmationService: ConfirmationService,
     private messageService: MessageService,
   ) {
@@ -350,10 +351,7 @@ export class DeckDialogComponent {
         key: 'Delete',
         message: 'You are about to permanently delete this deck. Are you sure?',
         accept: () => {
-          this.digimonBackendService
-            .deleteDeck(this.deck.id)
-            .pipe(first())
-            .subscribe();
+          this.firebase.deleteDeck(this.deck.id).pipe(first()).subscribe();
           this.messageService.add({
             severity: 'success',
             summary: 'Deck deleted!',

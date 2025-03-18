@@ -1,24 +1,25 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { GoogleAuthProvider } from 'firebase/auth';
 import firebase from 'firebase/compat';
 import { MessageService } from 'primeng/api';
 import { catchError, first, Observable, of, retry, Subject } from 'rxjs';
 import { ADMINS, emptySave, emptySettings, ISave, IUser } from '../../models';
-import { DigimonBackendService } from './digimon-backend.service';
 import UserCredential = firebase.auth.UserCredential;
 import User = firebase.User;
+import { DigimonFirebaseService } from './digimon-firebase.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
+  firebase = inject(DigimonFirebaseService);
+
   userData: IUser | null;
   authChange = new Subject<boolean>();
 
   constructor(
     public afAuth: AngularFireAuth,
-    private digimonBackendService: DigimonBackendService,
     private messageService: MessageService,
   ) {}
 
@@ -146,10 +147,7 @@ export class AuthService {
 
     this.userData = userData;
 
-    this.digimonBackendService
-      .updateSave(this.userData.save)
-      .pipe(first())
-      .subscribe();
+    this.firebase.updateSave(this.userData.save).pipe(first()).subscribe();
 
     this.authChange.next(true);
   }
@@ -157,8 +155,7 @@ export class AuthService {
   SetUserData(user: User | null, saveStore: any) {
     if (!user) return;
     // eslint-disable-next-line no-console
-    console.log('User-ID: ', user.uid);
-    this.digimonBackendService
+    this.firebase
       .getSave(user.uid)
       .pipe(
         first(),
@@ -187,9 +184,7 @@ export class AuthService {
       return this.loadLocalStorageSave();
     }
 
-    return this.digimonBackendService
-      .getSave(this.userData!.uid)
-      .pipe(retry(5));
+    return this.firebase.getSave(this.userData!.uid).pipe(retry(5));
   }
 
   // Check local storage for a backup save, if there is none create a new save
@@ -200,8 +195,7 @@ export class AuthService {
       : null;
 
     if (localStorageSave) {
-      localStorageSave =
-        this.digimonBackendService.checkSaveValidity(localStorageSave);
+      localStorageSave = this.firebase.checkSaveValidity(localStorageSave);
       return of(localStorageSave);
     }
     return of(emptySave);

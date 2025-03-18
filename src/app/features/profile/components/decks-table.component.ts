@@ -128,15 +128,12 @@ export class DecksTableComponent {
 
     // If there is a ImageCardId set it
     if (deck.imageCardId) {
-      return (
-        this.digimonCardStore.cardsMap().get(deck.imageCardId)?.cardImage ??
-        'https://digimon-card-app.b-cdn.net/BT1-001.webp'
-      );
+      return 'https://digimon-card-app.b-cdn.net/' + deck.imageCardId + '.webp';
     } else {
       const deckImage = setDeckImage(deck, this.digimonCardStore.cards());
       this.saveStore.saveDeck({ ...deck, imageCardId: deckImage.id });
 
-      return deckImage.cardImage;
+      return 'https://digimon-card-app.b-cdn.net/' + deck.imageCardId + '.webp';
     }
   }
 

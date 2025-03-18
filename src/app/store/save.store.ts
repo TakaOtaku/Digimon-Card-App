@@ -49,6 +49,7 @@ export const SaveStore = signalStore(
           distinctUntilChanged(),
           switchMap(() => {
             return authService.loadSave().pipe(
+              first(),
               tapResponse({
                 next: (save) => {
                   toastrService.info(
@@ -62,6 +63,7 @@ export const SaveStore = signalStore(
                       version: emptySave.version,
                     },
                   });
+                  patchState(store, { loadedSave: true });
                 },
                 error: () => {
                   toastrService.info(
@@ -69,7 +71,9 @@ export const SaveStore = signalStore(
                     'Save Loading Error!',
                   );
                 },
-                finalize: () => patchState(store, { loadedSave: true }),
+                finalize: () => {
+                  patchState(store, { loadedSave: true });
+                },
               }),
             );
           }),

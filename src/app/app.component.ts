@@ -23,6 +23,7 @@ import { DigimonCardStore } from './store/digimon-card.store';
 import { FilterStore } from './store/filter.store';
 import { SaveStore } from './store/save.store';
 import { WebsiteStore } from './store/website.store';
+import { DigimonFirebaseService } from './services/digimon-firebase.service';
 
 @Component({
   selector: 'digimon-root',
@@ -82,7 +83,7 @@ export class AppComponent {
   websiteStore = inject(WebsiteStore);
 
   authService = inject(AuthService);
-  backendService = inject(DigimonBackendService);
+  firebase = inject(DigimonFirebaseService);
 
   saveLoaded = signal(false);
 
@@ -156,7 +157,7 @@ export class AppComponent {
   private updateDatabase(): void {
     const save = this.saveStore.save();
     if (this.authService.isLoggedIn) {
-      this.backendService
+      this.firebase
         .updateSave(save)
         .pipe(first())
         .subscribe(() => {});

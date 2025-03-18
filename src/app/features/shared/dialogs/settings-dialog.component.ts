@@ -31,6 +31,7 @@ import { DigimonCardStore } from '../../../store/digimon-card.store';
 import { SaveStore } from '../../../store/save.store';
 import { SetFilterComponent } from '../filter/set-filter.component';
 import { SettingsRowComponent } from '../settings-row.component';
+import { DigimonFirebaseService } from '../../../services/digimon-firebase.service';
 
 @Component({
   selector: 'digimon-settings-dialog',
@@ -478,8 +479,8 @@ import { SettingsRowComponent } from '../settings-row.component';
   providers: [MessageService],
 })
 export class SettingsDialogComponent implements OnDestroy {
+  firebase = inject(DigimonFirebaseService);
   dialogStore = inject(DialogStore);
-
   saveStore = inject(SaveStore);
 
   save = '';
@@ -603,8 +604,6 @@ export class SettingsDialogComponent implements OnDestroy {
       },
     };
 
-    console.log(save);
-
     this.saveStore.updateSave(save);
     this.toastrService.info(
       'Settings were saved and updated.',
@@ -643,7 +642,7 @@ export class SettingsDialogComponent implements OnDestroy {
     fileReader.onload = () => {
       try {
         let save: any = JSON.parse(fileReader.result as string);
-        save = this.digimonBackendService.checkSaveValidity(save, null);
+        save = this.firebase.checkSaveValidity(save, null);
         this.saveStore.updateSave(save);
         this.toastrService.info(
           'The save was loaded successfully!',

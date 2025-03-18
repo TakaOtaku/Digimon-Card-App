@@ -8,6 +8,7 @@ import { DigimonBackendService } from '../../services/digimon-backend.service';
 import { FilterAndSearchComponent } from '../shared/filter/filter-and-search.component';
 import { PageComponent } from '../shared/page.component';
 import { PaginationCardListComponent } from './components/pagination-card-list.component';
+import { DigimonFirebaseService } from '../../services/digimon-firebase.service';
 
 @Component({
   selector: 'digimon-collection-page',
@@ -33,19 +34,19 @@ export class CollectionPageComponent {
   meta = inject(Meta);
   title = inject(Title);
 
-  private digimonBackendService = inject(DigimonBackendService);
+  private firebase = inject(DigimonFirebaseService);
   private route = inject(ActivatedRoute);
 
   // Check the URL if another Save should be loaded
   checkUrl$ = this.route.params.pipe(
     switchMap((params) => {
       if (params['userId']) {
-        return this.digimonBackendService.getSave(params['userId']);
+        return this.firebase.getSave(params['userId']);
       } else {
         return of(emptySave);
       }
     }),
-    map((save) => save.collection),
+    map((save) => save?.collection),
   );
 
   constructor() {

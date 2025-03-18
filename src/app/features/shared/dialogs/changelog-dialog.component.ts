@@ -6,7 +6,35 @@ import { PanelModule } from 'primeng/panel';
   selector: 'digimon-changelog-dialog',
   template: `
     <div>
-      <p-panel header="Version 4.1.9" [toggleable]="true" [collapsed]="false">
+      <p-panel header="Version 4.2.0" [toggleable]="true" [collapsed]="false">
+        <h1 class="font-bold text-lg underline">Feature</h1>
+        <ul class="list-disc p-5">
+          <li>
+            Added a Image CND instead of hosting the images on the Server. This
+            should reduce the server cost.
+          </li>
+          <li>
+            Switched from a SQL Database back to Firebase, without the Images to
+            host it should be cheaper and the Server-Subscription is getting
+            near its end. If it isn't I will switch back to SQL.
+          </li>
+          <li>
+            Added a Rules Page, which is not yet live but will be soon. It can
+            be accessed via the Navigation (/rules).
+          </li>
+        </ul>
+        <h1 class="font-bold text-lg underline">Removed</h1>
+        <ul class="list-disc p-5">
+          <li>
+            Deck-Pricecheck, as Cardmarket has completly blocked the API for it,
+            so I can't get the current prices anymore.
+          </li>
+        </ul>
+        <div class="flex flex-wrap align-middle justify-content-between gap-3">
+          <span class="ml-auto p-text-secondary">Updated 11.03.2025</span>
+        </div>
+      </p-panel>
+      <p-panel header="Version 4.1.9" [toggleable]="true" [collapsed]="true">
         <h1 class="font-bold text-lg underline">Feature</h1>
         <ul class="list-disc p-5">
           <li>Display rule and link field of cards in view mode.</li>
@@ -14,7 +42,8 @@ import { PanelModule } from 'primeng/panel';
         <h1 class="font-bold text-lg underline">Removed</h1>
         <ul class="list-disc p-5">
           <li>
-            Removed the Community Link, as it was not used. I may add a Rule Quiz or something similar in the future.
+            Removed the Community Link, as it was not used. I may add a Rule
+            Quiz or something similar in the future.
           </li>
         </ul>
         <div class="flex flex-wrap align-middle justify-content-between gap-3">
@@ -24,11 +53,11 @@ import { PanelModule } from 'primeng/panel';
       <p-panel header="Version 4.1.8" [toggleable]="true" [collapsed]="true">
         <h1 class="font-bold text-lg underline">Feature</h1>
         <ul class="list-disc p-5">
+          <li>Added support for the new Linked Cards.</li>
           <li>
-            Added support for the new Linked Cards.
-          </li>
-          <li>
-            The Wiki changed where rules are displayed, so they now have a seperate field (Thanks to danweber and SilverDew-sg for offering a Solution on Github)
+            The Wiki changed where rules are displayed, so they now have a
+            seperate field (Thanks to danweber and SilverDew-sg for offering a
+            Solution on Github)
           </li>
         </ul>
         <div class="flex flex-wrap align-middle justify-content-between gap-3">

@@ -214,7 +214,7 @@ import { FilterButtonComponent } from '../filter/filter-button.component';
             [link]="true"
             size="small"
             (onClick)="showChangelog()"
-            label="Ver. 4.1.8"></p-button>
+            label="Ver. 4.2.0"></p-button>
         </div>
       </div>
     </div>

@@ -1,5 +1,10 @@
 import { AsyncPipe, NgClass, NgIf, NgStyle } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { filter, map, of, switchMap, tap } from 'rxjs';
@@ -14,6 +19,7 @@ import { FilterAndSearchComponent } from '../shared/filter/filter-and-search.com
 import { PageComponent } from '../shared/page.component';
 import { DeckStatsComponent } from './components/deck-stats.component';
 import { DeckViewComponent } from './components/deck-view.component';
+import { DigimonFirebaseService } from '../../services/digimon-firebase.service';
 
 @Component({
   selector: 'digimon-deckbuilder-page',
@@ -70,7 +76,7 @@ import { DeckViewComponent } from './components/deck-view.component';
 })
 export class DeckbuilderPageComponent implements OnInit {
   route = inject(ActivatedRoute);
-  digimonBackendService = inject(DigimonBackendService);
+  firebase = inject(DigimonFirebaseService);
   authService = inject(AuthService);
   meta = inject(Meta);
   title = inject(Title);
@@ -90,10 +96,10 @@ export class DeckbuilderPageComponent implements OnInit {
     switchMap((params) => {
       if (params['userId'] && params['deckId']) {
         this.deckId = params['deckId'];
-        return this.digimonBackendService.getSave(params['userId']);
+        return this.firebase.getSave(params['userId']);
       } else if (params['id']) {
         this.deckId = params['id'];
-        return this.digimonBackendService.getDeck(params['id']).pipe(
+        return this.firebase.getDeck(params['id']).pipe(
           map((deck) => {
             return { ...emptySave, decks: [deck] };
           }),
@@ -103,9 +109,9 @@ export class DeckbuilderPageComponent implements OnInit {
       }
     }),
     tap((save) => {
-      if (save.decks.length === 0) return;
+      if (!save || save.decks.length === 0) return;
 
-      const foundDeck = save.decks.find((deck) => deck.id === this.deckId);
+      const foundDeck = save.decks.find((deck) => deck?.id === this.deckId);
       if (!foundDeck) return;
 
       const sameUser = save.uid === this.authService.userData?.uid;

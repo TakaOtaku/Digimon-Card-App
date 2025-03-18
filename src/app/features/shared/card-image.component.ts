@@ -114,6 +114,7 @@ export class CardImageComponent {
 
   getCardImageUrl(cardId: string): string {
     if (!cardId) return '../../../assets/images/digimon-card-back.webp';
+    //needs to load errata if this fails
     return `https://digimon-card-app.b-cdn.net/${cardId}.webp`;
   }
 }

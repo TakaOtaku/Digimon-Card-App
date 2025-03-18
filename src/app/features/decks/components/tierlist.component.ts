@@ -5,6 +5,8 @@ import {
   Component,
   computed,
   inject,
+  OnInit,
+  TrackByFunction,
   ViewChild,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -25,6 +27,18 @@ import { DeckDialogComponent } from '../../shared/dialogs/deck-dialog.component'
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { ContextMenu, ContextMenuModule } from 'primeng/contextmenu';
 import { SaveStore } from '../../../store/save.store';
+import { BehaviorSubject, Observable, shareReplay } from 'rxjs';
+
+interface TierDeck {
+  name: string;
+  card: string;
+  image: string;
+}
+
+interface TierData {
+  tier: string;
+  color: string;
+}
 
 @Component({
   selector: 'digimon-tierlist',
@@ -37,13 +51,6 @@ import { SaveStore } from '../../../store/save.store';
           class="surface-card ml-auto inline-block whitespace-nowrap rounded border border-black px-2.5 py-1.5 text-center align-baseline font-bold leading-none text-[#e2e4e6]"
           >{{ currentRegion }}</span
         >
-        <button
-          class="p-button-outlined p-button-rounded p-button-sm mx-2"
-          icon="pi pi-map-marker"
-          pButton
-          pRipple
-          type="button"
-          (click)="switchRegion()"></button>
         <button
           class="p-button-outlined p-button-rounded p-button-sm mx-2"
           icon="pi pi-copy"
@@ -78,7 +85,7 @@ import { SaveStore } from '../../../store/save.store';
       <h3 class="mb-2 text-2xs">Maintained by #Naethaen</h3>
 
       <div
-        *ngFor="let key of tiers; let i = index"
+        *ngFor="let key of tiers; let i = index; trackBy: trackByTier"
         class="flex w-full flex-row border border-black">
         <div
           [ngClass]="key.color"
@@ -87,7 +94,9 @@ import { SaveStore } from '../../../store/save.store';
           class="text-black-outline w-24 text-center text-7xl font-black leading-[5.5rem] text-[#e2e4e6]">
           {{ key.tier }}
         </div>
-        <p-listbox [options]="tierlist[i]" [(ngModel)]="selectedDeck">
+        <p-listbox
+          [options]="tierlist[i]"
+          [(ngModel)]="selectedDeck">
           <ng-template let-deck let-index="index" pTemplate="item">
             <div
               (contextmenu)="removeDeck(deck, index, i)"
@@ -101,14 +110,14 @@ import { SaveStore } from '../../../store/save.store';
                 (click)="openCommunityWithSearch(deck.card)"
                 pTooltip="{{ deck.name }}"
                 tooltipPosition="top"
-                [lazyLoad]="deck.image"
+                [defaultImage]="'assets/images/digimon-card-back.webp'"
+                [lazyLoad]="getCardImageCached(deck.image)"
                 [ngStyle]="{
                   border: '2px solid black',
                   'border-radius': '5px'
                 }"
                 [alt]="deck.name"
-                class="barsHandle m-auto h-24 cursor-pointer"
-                defaultImage="assets/images/digimon-card-back.webp" />
+                class="barsHandle m-auto h-24 cursor-pointer" />
             </div>
           </ng-template>
         </p-listbox>
@@ -156,12 +165,21 @@ import { SaveStore } from '../../../store/save.store';
     NgIf,
   ],
 })
-export class TierlistComponent {
-  websiteStore = inject(WebsiteStore);
+export class TierlistComponent implements OnInit {
+  private websiteStore = inject(WebsiteStore);
+  private digimonCardStore = inject(DigimonCardStore);
+  private saveStore = inject(SaveStore);
+  private messageService = inject(MessageService);
+  private router = inject(Router);
+  private db = inject(AngularFireDatabase);
+  private changeDetectorRef = inject(ChangeDetectorRef);
+
+  // Image cache
+  private imageCache: Record<string, string> = {};
 
   currentRegion = 'GLOBAL';
-  tierlist = TIERLIST;
-  tiers = [
+  tierlist: TierDeck[][] = [];
+  tiers: TierData[] = [
     { tier: 'S', color: 'bg-red-500' },
     { tier: 'A', color: 'bg-orange-500' },
     { tier: 'B', color: 'bg-yellow-500' },
@@ -174,7 +192,7 @@ export class TierlistComponent {
   selectedDeck: any;
 
   archtypeDialog = false;
-  cardId: string;
+  cardId: string = '';
   protected readonly emptyDeck = emptyDeck;
 
   isAdmin = computed(() => {
@@ -186,37 +204,52 @@ export class TierlistComponent {
     });
   });
 
-  private digimonCardStore = inject(DigimonCardStore);
-  private saveStore = inject(SaveStore);
-  private messageService = inject(MessageService);
+  ngOnInit(): void {
+    // Initialize with a local copy first for faster initial render
+    this.tierlist = structuredClone(TIERLIST);
 
-  constructor(
-    private router: Router,
-    private db: AngularFireDatabase,
-    private changeDetectorRef: ChangeDetectorRef,
-  ) {
+    // Then load from database
     this.db
       .list('tierlist')
       .valueChanges()
-      .subscribe((value) => {
-        const newTierlist = (value as any[])[0];
-        this.tierlist = newTierlist;
+      .pipe(shareReplay(1))
+      .subscribe({
+        next: (value) => {
+          const newTierlist = (value as any[])[0];
+          if (newTierlist) {
+            this.tierlist = newTierlist;
+            this.preloadImages();
+            this.changeDetectorRef.markForCheck();
+          }
+        },
+        error: (err) => {
+          console.error('Error loading tierlist:', err);
+          this.messageService.add({
+            severity: 'error',
+            summary: 'Failed to load tierlist from database.',
+          });
+        },
       });
+  }
+
+  trackByTier(index: number, item: TierData): string {
+    return item.tier;
+  }
+
+  preloadImages(): void {
+    // Preload images for visible cards
+    for (const tier of this.tierlist) {
+      for (const deck of tier) {
+        if (deck.image) {
+          this.getCardImageCached(deck.image);
+        }
+      }
+    }
   }
 
   openCommunityWithSearch(card: string) {
     this.websiteStore.updateCommunityDeckSearch(card);
     this.router.navigateByUrl('/decks');
-  }
-
-  switchRegion() {
-    if (this.currentRegion === 'GLOBAL') {
-      this.currentRegion = 'JAPAN';
-      this.tierlist = JAPTIERLIST;
-    } else {
-      this.currentRegion = 'GLOBAL';
-      this.tierlist = TIERLIST;
-    }
   }
 
   onDragStart(index: number, tier: number) {
@@ -226,19 +259,28 @@ export class TierlistComponent {
   }
 
   onDrop(endIndex: number, endTier: number) {
+    // Create a copy of the tierlist to maintain immutability
+    const updatedTierlist = structuredClone(this.tierlist);
+
     // Remove the dragged element from the old tier
-    this.tierlist[this.startTier].splice(this.startIndex, 1);
+    updatedTierlist[this.startTier].splice(this.startIndex, 1);
 
     // Add the dragged element to the new tier
-    this.tierlist[endTier].splice(endIndex, 0, this.selectedDeck);
+    updatedTierlist[endTier].splice(endIndex, 0, this.selectedDeck);
 
     // Update the tierlist
-    this.changeDetectorRef.detectChanges();
+    this.tierlist = updatedTierlist;
+    this.changeDetectorRef.markForCheck();
   }
 
   copyTierlist() {
     const tierlistJson = JSON.stringify(this.tierlist);
-    navigator.clipboard.writeText(tierlistJson);
+    navigator.clipboard.writeText(tierlistJson).then(() => {
+      this.messageService.add({
+        severity: 'success',
+        summary: 'Tierlist copied to clipboard.',
+      });
+    });
   }
 
   addDeck() {
@@ -251,9 +293,16 @@ export class TierlistComponent {
         card: card.id,
         image: card.cardImage,
       };
-      this.tierlist[0].push(deck);
+
+      // Create a new array to trigger change detection
+      const updatedTierlist = structuredClone(this.tierlist);
+      updatedTierlist[0].push(deck);
+      this.tierlist = updatedTierlist;
+
       this.archtypeDialog = false;
-      this.changeDetectorRef.detectChanges();
+      this.cardId = '';
+      this.changeDetectorRef.markForCheck();
+
       this.messageService.add({
         severity: 'success',
         summary: 'Card ["' + card.name.english + '"] added to Tierlist.',
@@ -267,25 +316,26 @@ export class TierlistComponent {
   }
 
   onDropToTier(tier: number) {
-    console.log(
-      'Move Deck ' +
-        this.selectedDeck.name +
-        ' to Tier ' +
-        this.tiers[tier].tier,
-    );
+    // Create a copy of the tierlist
+    const updatedTierlist = structuredClone(this.tierlist);
+
     // Remove the dragged element from the old tier
-    this.tierlist[this.startTier].splice(this.startIndex, 1);
+    updatedTierlist[this.startTier].splice(this.startIndex, 1);
 
     // Add the dragged element to the new tier
-    this.tierlist[tier].push(this.selectedDeck);
+    updatedTierlist[tier].push(this.selectedDeck);
 
     // Update the tierlist
-    this.changeDetectorRef.detectChanges();
+    this.tierlist = updatedTierlist;
+    this.changeDetectorRef.markForCheck();
   }
 
   removeDeck(deck: any, index: number, tier: number) {
-    console.log('Remove Deck ', deck);
-    this.tierlist[tier].splice(index, 1);
+    // Create a copy of the tierlist
+    const updatedTierlist = structuredClone(this.tierlist);
+    updatedTierlist[tier].splice(index, 1);
+    this.tierlist = updatedTierlist;
+    this.changeDetectorRef.markForCheck();
   }
 
   pasteTierlist() {
@@ -293,7 +343,12 @@ export class TierlistComponent {
       try {
         const tierlist = JSON.parse(text);
         this.tierlist = tierlist;
-        this.changeDetectorRef.detectChanges();
+        this.preloadImages();
+        this.changeDetectorRef.markForCheck();
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Tierlist pasted successfully.',
+        });
       } catch (e) {
         this.messageService.add({
           severity: 'error',
@@ -305,6 +360,35 @@ export class TierlistComponent {
 
   uploadTierlist() {
     // Upload the current tierlist to the database
-    this.db.list('tierlist').set('tierlist', this.tierlist);
+    this.db
+      .list('tierlist')
+      .set('tierlist', this.tierlist)
+      .then(() => {
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Tierlist uploaded successfully.',
+        });
+      })
+      .catch((error) => {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Failed to upload tierlist.',
+          detail: error.message,
+        });
+      });
+  }
+
+  getCardImageCached(image: string): string {
+    if (this.imageCache[image]) {
+      return this.imageCache[image];
+    }
+
+    // remove assets/images/cards/ from string
+    const cleanedImage = image.replace('assets/images/cards/', '');
+    const cdnUrl = 'https://digimon-card-app.b-cdn.net/' + cleanedImage;
+
+    // Cache the result
+    this.imageCache[image] = cdnUrl;
+    return cdnUrl;
   }
 }

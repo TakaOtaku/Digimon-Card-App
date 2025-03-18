@@ -470,7 +470,6 @@ export class ViewCardDialogComponent {
     )!;
 
     this.card = this.dialogStore.viewCard().card;
-    console.log(this.card);
     this.setupView();
   });
 
@@ -541,7 +540,6 @@ export class ViewCardDialogComponent {
       return;
     }
     this.card = newCard;
-    console.log(this.card);
     this.setupView();
   }
 

@@ -69,7 +69,7 @@ def prepareCards():
       # Add Card AAs and JAAs as single Cards
       for aa in card['AAs']:
         eng = deepcopy(card)
-        eng["cardImage"] = "assets/images/cards/" + aa["id"] + ".webp"
+        eng["cardImage"] = aa["id"]
         eng["id"] = aa["id"]
         eng["illustrator"] = aa["illustrator"]
         eng["notes"] = aa["note"]
@@ -78,7 +78,7 @@ def prepareCards():
 
       for jaa in card['JAAs']:
         jap = deepcopy(card)
-        jap["cardImage"] = "assets/images/cards/" + jaa["id"] + ".webp"
+        jap["cardImage"] = jaa["id"]
         jap["id"] = removeJ(jaa["id"])
         jap["illustrator"] = jaa["illustrator"]
         jap["notes"] = jaa["note"]

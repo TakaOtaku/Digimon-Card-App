@@ -29,6 +29,7 @@ import { PageComponent } from '../shared/page.component';
 import { DeckFilterComponent } from './components/deck-filter.component';
 import { DecksComponent } from './components/decks.component';
 import { UserStatsComponent } from './components/user-stats.component';
+import { DigimonFirebaseService } from '../../services/digimon-firebase.service';
 
 @Component({
   selector: 'digimon-profile-page',
@@ -66,6 +67,7 @@ import { UserStatsComponent } from './components/user-stats.component';
 })
 export class ProfilePageComponent implements OnInit, OnDestroy {
   saveStore = inject(SaveStore);
+  private firebase = inject(DigimonFirebaseService);
 
   save$: Observable<ISave | null>;
   decks: IDeck[];
@@ -83,7 +85,6 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
     private location: Location,
     private route: ActivatedRoute,
     public authService: AuthService,
-    private digimonBackendService: DigimonBackendService,
     private meta: Meta,
     private title: Title,
   ) {
@@ -103,9 +104,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
         tap(() => this.changeURL()),
         switchMap(() => {
           this.editable = true;
-          return this.digimonBackendService.getSave(
-            this.authService.userData!.uid,
-          );
+          return this.firebase.getSave(this.authService.userData!.uid);
         }),
       ),
       this.route.params.pipe(
@@ -116,7 +115,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
           return !!params['id'];
         }),
         switchMap((params) =>
-          this.digimonBackendService.getSave(params['id']).pipe(first()),
+          this.firebase.getSave(params['id']).pipe(first()),
         ),
         tap((save) => {
           this.editable = save.uid === this.authService.userData?.uid;

@@ -70,7 +70,9 @@ import { DigimonFirebaseService } from '../../services/digimon-firebase.service'
 
         <digimon-decks-filter
           [form]="form"
-          (applyFilter)="filterChanges()"></digimon-decks-filter>
+          (applyFilter)="
+            filterChanges(form.get('searchFilter')!.value)
+          "></digimon-decks-filter>
 
         <div
           *ngIf="decksToShow.length > 0; else loading"
@@ -178,23 +180,19 @@ export class DecksPageComponent implements OnInit {
       .getDecksWithTags(['BT20'])
       .pipe(first())
       .subscribe((decks) => {
-        this.websiteStore.updateCommunityDecks(decks);
+        this.decks = decks;
+        this.filteredDecks = decks;
+        this.setDecksToShow(0, this.rows);
+        this.changeDetection.detectChanges();
       });
     this.form.get('tagFilter')?.setValue(['BT20']);
 
     effect(() => {
-      const decks = this.websiteStore.communityDecks();
       const search = this.websiteStore.communityDeckSearch();
-      if (decks.length === 0) return;
 
-      this.decks = decks;
-
-      this.filteredDecks = decks;
       this.collection = this.saveStore.collection();
 
-      this.form.get('searchFilter')?.setValue(search);
-      this.filteredDecks = this.applySearchFilter(search);
-      this.setDecksToShow(0, this.rows);
+      this.filterChanges(search);
       this.changeDetection.detectChanges();
     });
   }
@@ -267,44 +265,6 @@ export class DecksPageComponent implements OnInit {
     this.loading2 = false;
   }
 
-  filterChanges() {
-    this.filteredDecks = this.decks;
-    this.filteredDecks = this.applySearchFilter(
-      this.form.get('searchFilter')!.value,
-    );
-    this.filteredDecks = this.applyTagFilter(this.form.get('tagFilter')!.value);
-    this.setDecksToShow(0, this.rows);
-  }
-
-  private setDecksToShow(from: number, to: number) {
-    this.decksToShow = this.filteredDecks
-      .slice(from, to)
-      .map((deck: IDeck | ITournamentDeck) => ({
-        ...deck,
-        imageCardId:
-          deck.imageCardId === 'BT1-001'
-            ? setDeckImage(deck, this.digimonCardStore.cards()).id
-            : deck.imageCardId,
-      }));
-  }
-
-  private makeGoogleFriendly() {
-    this.title.setTitle('Digimon Card Game - Community');
-
-    this.meta.addTags([
-      {
-        name: 'description',
-        content:
-          'Meta decks, fun decks, tournament decks and many more, find new decks for every set.',
-      },
-      { name: 'author', content: 'TakaOtaku' },
-      {
-        name: 'keywords',
-        content: 'Meta, decks, tournament, fun',
-      },
-    ]);
-  }
-
   private applySearchFilter(searchValue: string): IDeck[] {
     if (!searchValue || searchValue === '') {
       return this.filteredDecks;
@@ -335,12 +295,46 @@ export class DecksPageComponent implements OnInit {
     });
   }
 
-  private applyTagFilter(tagValues: string[]): IDeck[] {
-    if (!tagValues || tagValues.length === 0) {
-      return this.filteredDecks;
-    }
-    return this.filteredDecks.filter((deck) =>
-      deck.tags.some((tag) => tagValues.includes(tag.name)),
-    );
+  filterChanges(search: string) {
+    this.firebase
+      .getDecksWithTags(this.form.get('tagFilter')!.value)
+      .pipe(first())
+      .subscribe((decks) => {
+        this.decks = [...decks];
+        this.filteredDecks = [...this.applySearchFilter(search)];
+        this.setDecksToShow(0, this.rows);
+        this.changeDetection.detectChanges();
+      });
+  }
+
+  private setDecksToShow(from: number, to: number) {
+    this.decksToShow = [
+      ...this.filteredDecks
+        .slice(from, to)
+        .map((deck: IDeck | ITournamentDeck) => ({
+          ...deck,
+          imageCardId:
+            deck.imageCardId === 'BT1-001'
+              ? setDeckImage(deck, this.digimonCardStore.cards()).id
+              : deck.imageCardId,
+        })),
+    ];
+  }
+
+  private makeGoogleFriendly() {
+    this.title.setTitle('Digimon Card Game - Community');
+
+    this.meta.addTags([
+      {
+        name: 'description',
+        content:
+          'Meta decks, fun decks, tournament decks and many more, find new decks for every set.',
+      },
+      { name: 'author', content: 'TakaOtaku' },
+      {
+        name: 'keywords',
+        content: 'Meta, decks, tournament, fun',
+      },
+    ]);
   }
 }

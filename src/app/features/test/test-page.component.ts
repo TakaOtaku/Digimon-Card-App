@@ -1,14 +1,10 @@
 import { NgIf } from '@angular/common';
-import { Component, inject, OnDestroy } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DialogModule } from 'primeng/dialog';
-import { concat, finalize, first, Observable, Subject, switchMap, tap } from 'rxjs';
-import { ADMINS, IDeck, ISave, ITournamentDeck } from '../../../models';
-import { setColors, setDeckImage, setTags } from '../../functions';
+import { finalize } from 'rxjs';
+import { ADMINS } from '../../../models';
 import { AuthService } from '../../services/auth.service';
-import { CardMarketService } from '../../services/card-market.service';
-import { DigimonBackendService } from '../../services/digimon-backend.service';
-import { DigimonCardStore } from '../../store/digimon-card.store';
 import { DigimonFirebaseService } from '../../services/digimon-firebase.service';
 import { ButtonModule } from 'primeng/button';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
@@ -17,12 +13,6 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
   selector: 'digimon-test-page',
   template: `
     <div *ngIf="isAdmin()" class="flex flex-col items-center">
-      <button
-        class="border-2 border-amber-200 bg-amber-400"
-        (click)="updateAllSaves()">
-        Update all Saves
-      </button>
-
       <div class="flex items-center gap-4">
         <p-button
           label="Migrate Data to Firebase"
@@ -74,8 +64,6 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
           max="10"
           class="text-center font-bold text-black" />
       </div>
-
-      <button (click)="updateFirstObject()">Save and Next</button>
     </p-dialog>
   `,
   standalone: true,
@@ -87,7 +75,7 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
     ProgressSpinnerModule,
   ],
 })
-export class TestPageComponent implements OnDestroy {
+export class TestPageComponent {
   isMigrating = false;
   migrationComplete = false;
 
@@ -97,19 +85,7 @@ export class TestPageComponent implements OnDestroy {
   productsWithoutCorrectID: any[] = [];
   currentID = 1;
 
-  private digimonCardStore = inject(DigimonCardStore);
-  private onDestroy$ = new Subject();
-
-  constructor(
-    public authService: AuthService,
-    private digimonBackendService: DigimonBackendService,
-    private cardMarketService: CardMarketService,
-  ) {}
-
-  ngOnDestroy() {
-    this.onDestroy$.next(true);
-    this.onDestroy$.unsubscribe();
-  }
+  constructor(public authService: AuthService) {}
 
   isAdmin(): boolean {
     return !!ADMINS.find((user) => {
@@ -118,71 +94,6 @@ export class TestPageComponent implements OnDestroy {
       }
       return false;
     });
-  }
-
-  updateAllSaves() {
-    this.digimonBackendService
-      .getSaves()
-      .pipe(first())
-      .subscribe((saves) => {
-        saves.forEach((save) => {
-          this.updateDecks(save);
-        });
-      });
-  }
-
-  updateFirstObject() {
-    const id = this.productsWithoutCorrectID[0].cardId + this.currentID;
-    const product = this.productsWithoutCorrectID[0];
-    this.cardMarketService
-      .updateProductId(id, product)
-      .pipe(first())
-      .subscribe();
-    this.productsWithoutCorrectID = this.productsWithoutCorrectID.slice(1);
-  }
-
-  private updateDecks(save: ISave) {
-    const newDecks: IDeck[] = save.decks.map((deck) => {
-      const tags = setTags(deck, this.digimonCardStore.cards());
-      const color = setColors(deck, this.digimonCardStore.cards());
-
-      return {
-        ...deck,
-        tags,
-        color,
-        imageCardId:
-          !deck.imageCardId || deck.imageCardId === 'BT1-001'
-            ? setDeckImage(deck, this.digimonCardStore.cards()).id
-            : deck.imageCardId,
-        date: !deck.date ? new Date().toString() : deck.date,
-      };
-    });
-    const newSave: ISave = { ...save, decks: newDecks };
-    if (save != newSave) {
-      this.digimonBackendService.updateSave(newSave).pipe(first()).subscribe();
-    }
-  }
-
-  private updateDeck(deck: IDeck): Observable<any> | null {
-    let error = false;
-    let newDecks: IDeck = deck;
-    if (!deck.imageCardId || deck.imageCardId === 'BT1-001') {
-      error = true;
-      newDecks = {
-        ...deck,
-        imageCardId: setDeckImage(deck, this.digimonCardStore.cards()).id,
-      };
-    }
-    if (!deck.date) {
-      error = true;
-      newDecks = { ...deck, date: new Date().toString() };
-    }
-
-    return error
-      ? this.digimonBackendService
-          .updateDeck(newDecks, null, this.digimonCardStore.cards())
-          .pipe(first())
-      : null;
   }
 
   migrateData(): void {

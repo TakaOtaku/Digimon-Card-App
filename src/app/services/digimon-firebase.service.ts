@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { MessageService } from 'primeng/api';
 import {
   catchError,
+  first,
   forkJoin,
   from,
   map,
@@ -11,9 +13,8 @@ import {
   switchMap,
   tap,
 } from 'rxjs';
-import { IDeck, ISave } from '../../models';
+import { CARDSET, emptySave, emptySettings, IDeck, ISave } from '../../models';
 import { DigimonBackendService } from './digimon-backend.service';
-import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root',
@@ -21,30 +22,21 @@ import { AuthService } from './auth.service';
 export class DigimonFirebaseService {
   constructor(
     private firestore: AngularFirestore,
+    private realtimeDb: AngularFireDatabase,
     private digimonBackendService: DigimonBackendService,
     private messageService: MessageService,
-    private authService: AuthService,
   ) {}
 
   /**
-   * Migrates user decks and saves from your current backend to Firebase Firestore
+   * Migrates user decks and saves from your current backend to Firebase
+   * Decks go to Firestore, Saves go to Realtime Database
    * @returns Observable that completes when migration is done
    */
   migrateToFirebase(): Observable<boolean> {
-    if (!this.authService.isLoggedIn || !this.authService.isAdmin()) {
-      this.messageService.add({
-        severity: 'error',
-        summary: 'Migration Failed',
-        detail:
-          'You must be logged in with admin privileges to migrate data to Firebase',
-      });
-      return of(false);
-    }
-
     this.messageService.add({
       severity: 'info',
       summary: 'Migration Started',
-      detail: 'Starting to migrate your data to Firebase Firestore...',
+      detail: 'Starting to migrate your data to Firebase...',
     });
 
     // Get decks and saves from current backend
@@ -63,80 +55,36 @@ export class DigimonFirebaseService {
       ),
     }).pipe(
       switchMap(({ decks, saves }) => {
-        // Prepare batch operations
+        // Prepare firestore batch for decks
         const batch = this.firestore.firestore.batch();
         let operationsCount = 0;
         const MAX_BATCH_SIZE = 500; // Firestore batch limit
         const batches = [batch];
 
-        // Process all decks
-        if (decks && decks.length > 0) {
-          decks.forEach((deck: IDeck) => {
-            // Extract tag names for efficient querying
-            const tagNames = deck.tags ? deck.tags.map((tag) => tag.name) : [];
+        // Process all decks in Firestore
+        const deckOperations = this.migrateDecksToFirestore(decks, batches);
 
-            // Prepare deck data with metadata
-            const deckWithMetadata = {
-              ...deck,
-              tagNames: tagNames,
-              updatedAt: new Date(),
-            };
+        // Process all saves in Realtime Database
+        const saveOperations =
+          saves && saves.length > 0
+            ? saves.map((save) => this.migrateSaveToRealtimeDb(save))
+            : [];
 
-            // Get reference to the deck document
-            const deckRef = this.firestore
-              .collection('decks')
-              .doc(deck.id).ref;
+        // Combine all operations
+        const allOperations = [...deckOperations, ...saveOperations];
 
-            // Get current batch or create a new one if needed
-            const currentBatch = batches[batches.length - 1];
-
-            // Add to current batch
-            currentBatch.set(deckRef, deckWithMetadata, { merge: true });
-            operationsCount++;
-
-            // If we reach the batch limit, create a new batch
-            if (operationsCount >= MAX_BATCH_SIZE) {
-              const newBatch = this.firestore.firestore.batch();
-              batches.push(newBatch);
-              operationsCount = 0;
-            }
+        // If no operations, return success
+        if (allOperations.length === 0) {
+          this.messageService.add({
+            severity: 'warn',
+            summary: 'No Data to Migrate',
+            detail: 'No valid decks or saves found to migrate.',
           });
+          return of(true);
         }
 
-        // Process all saves
-        if (saves && saves.length > 0) {
-          saves.forEach((save) => {
-            // Prepare save data with metadata
-            const saveWithMetadata = {
-              ...save,
-              updatedAt: new Date(),
-            };
-
-            // Get reference to the save document
-            const saveRef = this.firestore
-              .collection('saves')
-              .doc(save.uid).ref;
-
-            // Get current batch
-            const currentBatch = batches[batches.length - 1];
-
-            // Add to current batch
-            currentBatch.set(saveRef, saveWithMetadata, { merge: true });
-            operationsCount++;
-
-            // If we reach the batch limit, create a new batch
-            if (operationsCount >= MAX_BATCH_SIZE) {
-              const newBatch = this.firestore.firestore.batch();
-              batches.push(newBatch);
-              operationsCount = 0;
-            }
-          });
-        }
-
-        // Execute all batch operations
-        const batchCommits = batches.map((batch) => from(batch.commit()));
-
-        return forkJoin(batchCommits).pipe(
+        // Execute all operations
+        return forkJoin(allOperations).pipe(
           map(() => true),
           tap(() => {
             this.messageService.add({
@@ -144,7 +92,7 @@ export class DigimonFirebaseService {
               summary: 'Migration Complete',
               detail: `Successfully migrated ${decks?.length || 0} decks and ${
                 saves?.length || 0
-              } saves to Firebase Firestore`,
+              } saves to Firebase`,
             });
           }),
           catchError((err) => {
@@ -152,11 +100,84 @@ export class DigimonFirebaseService {
             this.messageService.add({
               severity: 'error',
               summary: 'Migration Failed',
-              detail: 'Error during migration to Firestore. Please try again.',
+              detail: 'Error during migration to Firebase. Please try again.',
             });
             return of(false);
           }),
         );
+      }),
+    );
+  }
+
+  /**
+   * Migrates decks to Firestore
+   */
+  private migrateDecksToFirestore(
+    decks: IDeck[],
+    batches: any[],
+  ): Observable<any>[] {
+    if (!decks || decks.length === 0) {
+      return [];
+    }
+
+    let operationsCount = 0;
+    const MAX_BATCH_SIZE = 500;
+
+    // Process all decks
+    decks.forEach((deck: IDeck) => {
+      // Extract tag names for efficient querying
+      const tagNames = deck.tags ? deck.tags.map((tag) => tag.name) : [];
+
+      // Prepare deck data with metadata
+      const deckWithMetadata = {
+        ...deck,
+        tagNames: tagNames,
+        updatedAt: new Date(),
+      };
+
+      // Get reference to the deck document
+      const deckRef = this.firestore.collection('decks').doc(deck.id).ref;
+
+      // Get current batch or create a new one if needed
+      const currentBatch = batches[batches.length - 1];
+
+      // Add to current batch
+      currentBatch.set(deckRef, deckWithMetadata, { merge: true });
+      operationsCount++;
+
+      // If we reach the batch limit, create a new batch
+      if (operationsCount >= MAX_BATCH_SIZE) {
+        const newBatch = this.firestore.firestore.batch();
+        batches.push(newBatch);
+        operationsCount = 0;
+      }
+    });
+
+    // Execute all batch operations
+    return batches.map((batch) => from(batch.commit()));
+  }
+
+  /**
+   * Migrates a single save to Realtime Database
+   */
+  private migrateSaveToRealtimeDb(save: ISave): Observable<any> {
+    if (!save || !save.uid) {
+      return of(null);
+    }
+
+    // Add metadata to the save
+    const saveWithMetadata = {
+      ...save,
+      updatedAt: new Date().toISOString(),
+    };
+
+    // Store in Realtime Database
+    return from(
+      this.realtimeDb.object(`saves/${save.uid}`).set(saveWithMetadata),
+    ).pipe(
+      catchError((err) => {
+        console.error(`Error migrating save for user ${save.uid}:`, err);
+        return of(null);
       }),
     );
   }
@@ -245,15 +266,25 @@ export class DigimonFirebaseService {
   }
 
   /**
-   * Gets a save by user ID from Firestore
+   * Gets a save by user ID from Realtime Database
    * @param userId The user ID
    */
-  getSave(userId: string): Observable<ISave | null> {
-    return this.firestore
-      .collection('saves')
-      .doc<ISave>(userId)
+  getSave(userId: string): Observable<ISave> {
+    if (!userId) {
+      return of(emptySave);
+    }
+
+    return this.realtimeDb
+      .object<ISave>(`saves/${userId}`)
       .valueChanges()
-      .pipe(map((save) => save || null));
+      .pipe(
+        map((save) => save || emptySave),
+        map((save) => this.checkSaveValidity(save)),
+        catchError((err) => {
+          console.error(`Error fetching save for user ${userId}:`, err);
+          return of(emptySave);
+        }),
+      );
   }
 
   /**
@@ -285,7 +316,7 @@ export class DigimonFirebaseService {
   }
 
   /**
-   * Updates a save in Firestore
+   * Updates a save in Realtime Database
    * @param save The save to update
    */
   updateSave(save: ISave): Observable<void> {
@@ -301,14 +332,22 @@ export class DigimonFirebaseService {
     // Add metadata
     const saveWithMetadata = {
       ...save,
-      updatedAt: new Date(),
+      updatedAt: new Date().toISOString(),
     };
 
+    // Save to Realtime Database
     return from(
-      this.firestore
-        .collection('saves')
-        .doc(save.uid)
-        .set(saveWithMetadata, { merge: true }),
+      this.realtimeDb.object(`saves/${save.uid}`).update(saveWithMetadata),
+    ).pipe(
+      catchError((err) => {
+        console.error(`Error updating save for user ${save.uid}:`, err);
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Update Failed',
+          detail: 'Error saving data. Please try again.',
+        });
+        return of(undefined);
+      }),
     );
   }
 
@@ -318,5 +357,100 @@ export class DigimonFirebaseService {
    */
   deleteDeck(deckId: string): Observable<void> {
     return from(this.firestore.collection('decks').doc(deckId).delete());
+  }
+
+  checkSaveValidity(save: any, user?: any): ISave {
+    let changedSave = false;
+    if (user) {
+      if (!save.collection) {
+        save = { ...save, collection: user.save.collection };
+        changedSave = true;
+      }
+      if (!save.decks) {
+        save = { ...save, decks: user.save.decks };
+        changedSave = true;
+      }
+      if (!save.settings) {
+        save = { ...save, settings: user.save.settings };
+        changedSave = true;
+      }
+      if (!save.uid) {
+        save = { ...save, uid: user.uid };
+        changedSave = true;
+      }
+      if (!save.displayName) {
+        save = { ...save, displayName: user.displayName };
+        changedSave = true;
+      }
+      if (!save.photoURL) {
+        save = { ...save, photoURL: user.photoURL };
+        changedSave = true;
+      }
+    } else {
+      if (!save.collection) {
+        save = { ...save, collection: [] };
+        changedSave = true;
+      }
+      if (!save.decks) {
+        save = { ...save, decks: [] };
+        changedSave = true;
+      }
+      if (!save.settings) {
+        save = { ...save, settings: emptySettings };
+        changedSave = true;
+      }
+      if (!save.uid) {
+        save = { ...save, uid: '' };
+        changedSave = true;
+      }
+      if (!save.displayName) {
+        save = { ...save, displayName: '' };
+        changedSave = true;
+      }
+      if (!save.photoURL) {
+        save = { ...save, photoURL: '' };
+        changedSave = true;
+      }
+    }
+
+    if (
+      save.settings.cardSet === undefined ||
+      save.settings.cardSet === 'Overwrite' ||
+      +save.settings.cardSet >>> 0
+    ) {
+      save = {
+        ...save,
+        settings: { ...save.settings, cardSet: CARDSET.English },
+      };
+      changedSave = true;
+    }
+    if (save.settings.collectionMinimum === undefined) {
+      save = { ...save, settings: { ...save.settings, collectionMinimum: 1 } };
+      changedSave = true;
+    }
+    if (save.settings.showPreRelease === undefined) {
+      save = { ...save, settings: { ...save.settings, showPreRelease: true } };
+      changedSave = true;
+    }
+    if (save.settings.showStampedCards === undefined) {
+      save = {
+        ...save,
+        settings: { ...save.settings, showStampedCards: true },
+      };
+      changedSave = true;
+    }
+    if (save.settings.showAACards === undefined) {
+      save = { ...save, settings: { ...save.settings, showAACards: true } };
+      changedSave = true;
+    }
+    if (save.settings.showUserStats === undefined) {
+      save = { ...save, settings: { ...save.settings, showUserStats: true } };
+      changedSave = true;
+    }
+
+    if (changedSave && user?.uid) {
+      this.updateSave(save).pipe(first()).subscribe();
+    }
+    return save;
   }
 }

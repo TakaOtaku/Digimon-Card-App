@@ -46,7 +46,6 @@ type Website = {
   addCardToDeck: string;
   sort: ISort;
   communityDeckSearch: string;
-  communityDecks: IDeck[];
   blogs: IBlog[];
   priceGuideCM: ProductCM[];
   draggedCard: IDraggedCard;
@@ -64,7 +63,6 @@ const initialState: Website = {
     ascOrder: true,
   },
   communityDeckSearch: '',
-  communityDecks: [],
   blogs: [],
   priceGuideCM: [],
   draggedCard: {
@@ -77,136 +75,109 @@ export const WebsiteStore = signalStore(
   { providedIn: 'root' },
   withState(initialState),
 
-  withMethods(
-    (
-      store,
-      digimonBackendService = inject(DigimonBackendService),
-      firebase = inject(DigimonFirebaseService),
-    ) => ({
-      loadCommunityDecks: rxMethod<void>(
-        pipe(
-          first(),
-          distinctUntilChanged(),
-          switchMap(() => {
-            return digimonBackendService.getDecks().pipe(
-              filter((decks) => decks !== null),
-              tapResponse({
-                next: (communityDecks) =>
-                  patchState(store, (state) => ({ communityDecks })),
-                error: () => {},
-                finalize: () => {},
-              }),
-            );
-          }),
-        ),
-      ),
+  withMethods((store) => ({
+    updateDeck(deck: IDeck): void {
+      patchState(store, (state) => ({ deck }));
+    },
+    updateDeckTitle(title: string): void {
+      patchState(store, (state) => ({ deck: { ...state.deck, title } }));
+    },
+    updateDeckDescription(description: string): void {
+      patchState(store, (state) => ({
+        deck: { ...state.deck, description },
+      }));
+    },
 
-      updateDeck(deck: IDeck): void {
-        patchState(store, (state) => ({ deck }));
-      },
-      updateDeckTitle(title: string): void {
-        patchState(store, (state) => ({ deck: { ...state.deck, title } }));
-      },
-      updateDeckDescription(description: string): void {
-        patchState(store, (state) => ({
-          deck: { ...state.deck, description },
-        }));
-      },
+    updateMobileCollectionView(mobileCollectionView: boolean): void {
+      patchState(store, (state) => ({ mobileCollectionView }));
+    },
+    updateAddCardToDeck(addCardToDeck: string): void {
+      patchState(store, (state) => ({ addCardToDeck }));
+    },
+    updateSort(sort: ISort): void {
+      patchState(store, (state) => ({ sort }));
+    },
+    updateCommunityDeckSearch(communityDeckSearch: string): void {
+      patchState(store, (state) => ({ communityDeckSearch }));
+    },
+    updateBlogs(blogs: IBlog[]): void {
+      patchState(store, (state) => ({ blogs }));
+    },
+    updatePriceGuideCM(priceGuideCM: ProductCM[]): void {
+      patchState(store, (state) => ({ priceGuideCM }));
+    },
+    updateDraggedCard(draggedCard: IDraggedCard): void {
+      patchState(store, (state) => ({ draggedCard }));
+    },
 
-      updateMobileCollectionView(mobileCollectionView: boolean): void {
-        patchState(store, (state) => ({ mobileCollectionView }));
-      },
-      updateAddCardToDeck(addCardToDeck: string): void {
-        patchState(store, (state) => ({ addCardToDeck }));
-      },
-      updateSort(sort: ISort): void {
-        patchState(store, (state) => ({ sort }));
-      },
-      updateCommunityDeckSearch(communityDeckSearch: string): void {
-        patchState(store, (state) => ({ communityDeckSearch }));
-      },
-      updateCommunityDecks(communityDecks: IDeck[]): void {
-        patchState(store, (state) => ({ communityDecks }));
-      },
-      updateBlogs(blogs: IBlog[]): void {
-        patchState(store, (state) => ({ blogs }));
-      },
-      updatePriceGuideCM(priceGuideCM: ProductCM[]): void {
-        patchState(store, (state) => ({ priceGuideCM }));
-      },
-      updateDraggedCard(draggedCard: IDraggedCard): void {
-        patchState(store, (state) => ({ draggedCard }));
-      },
+    createNewDeck(id: string): void {
+      patchState(store, (state) => ({ deck: { ...emptyDeck, id } }));
+    },
 
-      createNewDeck(id: string): void {
-        patchState(store, (state) => ({ deck: { ...emptyDeck, id } }));
-      },
-
-      addCardToDeck(cardToAdd: string): void {
-        patchState(store, (state) => {
-          const cards = state.deck.cards.map((card) => {
-            if (card.id === cardToAdd) {
-              card.count += 1;
-            }
-
-            card.count = checkSpecialCardCounts(card);
-            return card;
-          });
-
-          if (!cards.find((card) => card.id === cardToAdd)) {
-            cards.push({ id: cardToAdd, count: 1 });
+    addCardToDeck(cardToAdd: string): void {
+      patchState(store, (state) => {
+        const cards = state.deck.cards.map((card) => {
+          if (card.id === cardToAdd) {
+            card.count += 1;
           }
 
-          return { deck: { ...state.deck, cards } };
+          card.count = checkSpecialCardCounts(card);
+          return card;
         });
-      },
-      removeCardFromDeck(cardToRemove: string): void {
-        patchState(store, (state) => {
-          const cards = state.deck.cards
-            .map((card) => {
-              if (card.id === cardToRemove) {
-                card.count -= 1;
-              }
-              return card;
-            })
-            .filter((card) => card.count > 0);
 
-          return { deck: { ...state.deck, cards } };
-        });
-      },
+        if (!cards.find((card) => card.id === cardToAdd)) {
+          cards.push({ id: cardToAdd, count: 1 });
+        }
 
-      addCardToSideDeck(cardToAdd: string): void {
-        patchState(store, (state) => {
-          const sideDeck = (state.deck.sideDeck ?? []).map((card) => {
-            if (card.id === cardToAdd) {
-              card.count += 1;
+        return { deck: { ...state.deck, cards } };
+      });
+    },
+    removeCardFromDeck(cardToRemove: string): void {
+      patchState(store, (state) => {
+        const cards = state.deck.cards
+          .map((card) => {
+            if (card.id === cardToRemove) {
+              card.count -= 1;
             }
-
-            card.count = checkSpecialCardCounts(card);
             return card;
-          });
+          })
+          .filter((card) => card.count > 0);
 
-          if (!sideDeck.find((card) => card.id === cardToAdd)) {
-            sideDeck.push({ id: cardToAdd, count: 1 });
+        return { deck: { ...state.deck, cards } };
+      });
+    },
+
+    addCardToSideDeck(cardToAdd: string): void {
+      patchState(store, (state) => {
+        const sideDeck = (state.deck.sideDeck ?? []).map((card) => {
+          if (card.id === cardToAdd) {
+            card.count += 1;
           }
 
-          return { deck: { ...state.deck, sideDeck } };
+          card.count = checkSpecialCardCounts(card);
+          return card;
         });
-      },
-      removeCardFromSideDeck(cardToRemove: string): void {
-        patchState(store, (state) => {
-          const sideDeck = (state.deck.sideDeck ?? [])
-            .map((card) => {
-              if (card.id === cardToRemove) {
-                card.count -= 1;
-              }
-              return card;
-            })
-            .filter((card) => card.count > 0);
 
-          return { deck: { ...state.deck, sideDeck } };
-        });
-      },
-    }),
-  ),
+        if (!sideDeck.find((card) => card.id === cardToAdd)) {
+          sideDeck.push({ id: cardToAdd, count: 1 });
+        }
+
+        return { deck: { ...state.deck, sideDeck } };
+      });
+    },
+    removeCardFromSideDeck(cardToRemove: string): void {
+      patchState(store, (state) => {
+        const sideDeck = (state.deck.sideDeck ?? [])
+          .map((card) => {
+            if (card.id === cardToRemove) {
+              card.count -= 1;
+            }
+            return card;
+          })
+          .filter((card) => card.count > 0);
+
+        return { deck: { ...state.deck, sideDeck } };
+      });
+    },
+  })),
 );

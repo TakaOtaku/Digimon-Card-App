@@ -4,11 +4,8 @@ import {
   Component,
   inject,
   Input,
-  OnChanges,
-  SimpleChanges,
 } from '@angular/core';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
-import { BehaviorSubject, first } from 'rxjs';
 import { ColorMap, IDeck, ITournamentDeck } from '../../../models';
 import { setDeckImage } from '../../functions';
 import { ImageService } from '../../services/image.service';

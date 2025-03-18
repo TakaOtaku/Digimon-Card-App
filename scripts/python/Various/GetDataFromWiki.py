@@ -171,7 +171,7 @@ def getCardDataFromWiki():
         digimoncard = {
             "id": "-",
             "name": "-",
-            "cardImage": "assets/images/cards/jap/",
+            "cardImage": "",
             "cardType": "-",
             "dp": "-",
             "playCost": "-",
