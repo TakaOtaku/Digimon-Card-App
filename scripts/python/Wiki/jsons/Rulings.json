@@ -8151,6 +8151,12 @@
       "question": "Q: If the [Main] effect of this card returns 3 Lv.3 Digimon cards from the opponent's trash to the deck, can I play 3 Lv.3 Digimon cards from my trash?"
     }
   ],
+  "BT20-099": [
+    {
+      "answer": "A: Yes, it triggers.When deletion occurs by DP becoming 0, it's considered deletion by the rules, therefore \uff1cPartition\uff1e (When this Digimon with each of the specified digivolution cards would leave the battle area other than by your own effects or by battle, you may play 1 each of the specified cards without paying the costs)'s trigger conditions are met.[1]",
+      "question": "Q: If BT20-037 [Chaosmon: Valdur Arm] has this card, a yellow level 6 card, and a green level 6 card in its digivolution cards, then this card's inherited effect causes its DP to become 0 and it's deleted, does BT20-037 [Chaosmon: Valdur Arm]'s \uff1cPartition (Yellow Lv.6 + Green/Black Lv.6)\uff1e (When this Digimon with each of the specified digivolution cards would leave the battle area other than by your own effects or by battle, you may play 1 each of the specified cards without paying the costs) trigger?"
+    }
+  ],
   "BT20-101": [
     {
       "answer": "A: Yes, triggered.[1]",
@@ -8173,6 +8179,560 @@
     {
       "answer": "A: No, you cannot attack with the effect of the second card. While attacking, you cannot declare a new attack. In this situation, at the end of your Turn, the two [When End of Your Turn] effects of this card are triggered simultaneously, and you attack with the first [End of Your Turn] effect. Before the Counter timing, the second [When End of Your Turn] effect can be activated, but since you cannot declare an Attack during the Attack, the second card cannot attack even if you activate it.[1]",
       "question": "Q: I have two copies of this card in my Battle Area. At the End of Your Turn, I attacked with the first card's [End of Your Turn] effect. Can I attack with the second card's [End of Your Turn] effect after that?"
+    }
+  ],
+  "BT21-001": [
+    {
+      "answer": "A: The [Security] effect will activate first.Upon a security check, a [Security] effect will immediately activate without pending activation.[1]",
+      "question": "Q: What order do an effect that triggers when a card is removed from a security stack and a [Security] effect on a checked card activate when they trigger simultaneously upon a security check?"
+    },
+    {
+      "answer": "A: Yes, another security check is performed.[1]",
+      "question": "Q: A Digimon that has this card in its digivolution cards attacks, and a security check was performed on my opponent's security stack.If the attacking Digimon with this card in its digivolution cards digivolves into a Digimon with \uff1cSecurity A. +1\uff1e (This Digimon checks 1 additional security card) using this card's inherited effect, is another security check performed?"
+    },
+    {
+      "answer": "A: The top card of the security stack.Upon a security check, the checked card is already considered to be removed from the security stack, therefore that card won't be trashed.\n[1]",
+      "question": "Q: I use a Digimon that has this card in its digivolution cards to perform a security check on my opponent's security stack, then I use this Digimon's inherited effect to digivolve into BT21-024 [Cyberdramon]. What card is trashed by BT21-024 [Cyberdramon]'s [When Digivolving] effect at such times?"
+    }
+  ],
+  "BT21-002": [
+    {
+      "answer": "A: It refers to a card that contains the specified text or icon in its name, traits, effects, inherited effects, (Rule), digivolution requirements, DNA digivolution, DigiXros requirements, burst digivolve, App Fusion, or Link.For example, a card with [Knightmon] in its text would include cards with the name [DarkKnightmon] and cards with the text [Knightmon] in their effects.[1]",
+      "question": "Q: What does a card with \"X in its text\" refer to?"
+    }
+  ],
+  "BT21-008": [
+    {
+      "answer": "A: The [Security] effect will activate first.Upon a security check, a [Security] effect will immediately activate without pending activation.[1]",
+      "question": "Q: What order do an effect that triggers when a card is removed from a security stack and a [Security] effect on a checked card activate when they trigger simultaneously upon a security check?"
+    }
+  ],
+  "BT21-011": [
+    {
+      "answer": "A: No, it doesn\u2019t trigger.[1]",
+      "question": "Q: Does this card's [Your Turn] effect trigger when this card is in the breeding area and would digivolve into a card with the [Xros Heart] or [Hero] trait?"
+    }
+  ],
+  "BT21-013": [
+    {
+      "answer": "A: The card is placed on the bottom of the cards under the Tamer.[1]",
+      "question": "Q: If I use this card's [When Digivolving] effect to place a card under a Tamer with cards under it, in what order do I place the card?"
+    }
+  ],
+  "BT21-014": [
+    {
+      "answer": "A: The [Security] effect will activate first.Upon a security check, a [Security] effect will immediately activate without pending activation.[1]",
+      "question": "Q: What order do an effect that triggers when a card is removed from a security stack and a [Security] effect on a checked card activate when they trigger simultaneously upon a security check?"
+    },
+    {
+      "answer": "A: Yes, the play cost will be reduced by a total of 2.[1]",
+      "question": "Q: [Agunimon] is in this card's digivolution cards.If this card attacks and I use its [Your Turn] effect to digivolve into BT21-020 [Aldamon], is the digivolution cost reduced by a total of 2?"
+    },
+    {
+      "answer": "A: Yes, another security check is performed.[1]",
+      "question": "Q: This card attacks and I perform a security check on my opponent.If I then use this card's [Your Turn] effect to digivolve into a Digimon card with \uff1cSecurity A. +1\uff1e (This Digimon checks 1 additional security card), is another security check performed?"
+    }
+  ],
+  "BT21-017": [
+    {
+      "answer": "A: The [Security] effect will activate first.Upon a security check, a [Security] effect will immediately activate without pending activation.[1]",
+      "question": "Q: What order do an effect that triggers when a card is removed from a security stack and a [Security] effect on a checked card activate when they trigger simultaneously upon a security check?"
+    }
+  ],
+  "BT21-018": [
+    {
+      "answer": "A: App Fusion is possible with the following combinations.[Gatchmon] with [Navimon] link card[Gatchmon] with [Tweetmon] link card[Navimon] with [Gatchmon] link card[Navimon] with [Tweetmon] link card[Tweetmon] with [Gatchmon] link card[Tweetmon] with [Navimon] link card[1]",
+      "question": "Q: This card has 3 different cards in its App Fusion requirements. What combinations are possible for App Fusion?"
+    },
+    {
+      "answer": "A: No, you can't use the effect on the linked BT21-018 [DoGatchmon] to attack. A new attack declaration can't be made during an attack.In this case, this card's [Your Turn] effect and BT21-018 [DoGatchmon]'s [When Linking] effect trigger simultaneously, and this card's [Your Turn] effect is used to attack.BT21-018 [DoGatchmon]'s [When Linking] effect can be activated before the counter timing, but because you can't declare another attack during an attack, you won't be able to attack using the linked BT21-018 [DoGatchmon]'s [When Linking] effect, even if you activate it.[1]",
+      "question": "Q: I link BT21-018 [DoGatchmon] with this card and use its effect to attack. Can I then use the effect on the linked BT21-018 [DoGatchmon] to attack?"
+    }
+  ],
+  "BT21-021": [
+    {
+      "answer": "A: No, you can't.[1]",
+      "question": "Q: Can I use this card's [End of Attack] effect to delete this card without playing a card?"
+    },
+    {
+      "answer": "A: Yes, you can.[1]",
+      "question": "Q: If I use this card's [End of Attack] effect to play a Tamer card and then delete this card, can I use \uff1cSave\uff1e (You may place this card under one of your Tamers) to place this card under that Tamer?"
+    }
+  ],
+  "BT21-022": [
+    {
+      "answer": "A: It refers to a card that contains the specified text or icon in its name, traits, effects, inherited effects, (Rule), digivolution requirements, DNA digivolution, DigiXros requirements, burst digivolve, App Fusion, or Link.For example, a card with [Knightmon] in its text would include cards with the name [DarkKnightmon] and cards with the text [Knightmon] in their effects.[1]",
+      "question": "Q: What does a card with \"X in its text\" refer to?"
+    },
+    {
+      "answer": "A: No, you can't.A \"by doing X\" condition can't be met if only some of the required actions are performed.The conditions for this inherited effect require you to trash the specified number of digivolution cards.[1]",
+      "question": "Q: Can I trash just 2 digivolution cards for the conditions of this card's inherited effect?"
+    }
+  ],
+  "BT21-023": [
+    {
+      "answer": "A: No, you can't.[1]",
+      "question": "Q: Can I use this card's [On Play] [When Digivolving] effect to link a card that doesn't have [Link] [[[:category:|]]]\u00a0trait: Cost  (Plug this card from the hand or battle area sideways into the specified Digimon in the battle area.)?"
+    }
+  ],
+  "BT21-024": [
+    {
+      "answer": "A: Yes, it does.[1]",
+      "question": "Q: Does this card's [On Play] [When Digivolving] effect trash a card from my opponent's security stack even when they have 6 or more security cards?"
+    }
+  ],
+  "BT21-025": [
+    {
+      "answer": "A: The [Security] effect will activate first.Upon a security check, a [Security] effect will immediately activate without pending activation.[1]",
+      "question": "Q: What order do an effect that triggers when a card is removed from a security stack and a [Security] effect on a checked card activate when they trigger simultaneously upon a security check?"
+    }
+  ],
+  "BT21-028": [
+    {
+      "answer": "A: It refers to a card that contains the specified text or icon in its name, traits, effects, inherited effects, (Rule), digivolution requirements, DNA digivolution, DigiXros requirements, burst digivolve, App Fusion, or Link.For example, a card with [Knightmon] in its text would include cards with the name [DarkKnightmon] and cards with the text [Knightmon] in their effects.\n[1]",
+      "question": "Q: What does a card with \"X in its text\" refer to?"
+    }
+  ],
+  "BT21-029": [
+    {
+      "answer": "A: The [Security] effect will activate first.Upon a security check, a [Security] effect will immediately activate without pending activation.[1]",
+      "question": "Q: What order do an effect that triggers when a card is removed from a security stack and a [Security] effect on a checked card activate when they trigger simultaneously upon a security check?"
+    },
+    {
+      "answer": "A: The token of the player that activated this card's [All Turns] effect is played as an opponent's Digimon.At the end of the game, that token is returned to its owner.[1]",
+      "question": "Q: Which player's token does this card's [All Turns] effect play as an opponent's Digimon?"
+    },
+    {
+      "answer": "A: Yes, you can.This card's [All Turns] effect plays one of your cards.Cards can be played by your effects even after a \"your opponent can't play Digimon by effects\" effect has activated.[1]",
+      "question": "Q: Can I use this card's [All Turns] effect to play a [Petrification] Token (Digimon/White/3000 DP/[Your Turn] This Digimon can't suspend./[On Deletion] Trash your top security card.) during the turn I activated BT8-097 [Crimson Blaze]'s [Main] effect?"
+    }
+  ],
+  "BT21-030": [
+    {
+      "answer": "A: The top card is trashed until there are no more stacked cards.Once there is 1 card left, it isn't considered to have \"stacked cards,\" therefore no more are trashed.[1]",
+      "question": "Q: What happens if a Digimon with 10 or fewer cards stacked with it is chosen for this card's [On Play] [When Digivolving] effect?"
+    },
+    {
+      "answer": "A: It's trashed upon the rule check timing.This trashing isn't considered trashing from the battle area.[1]",
+      "question": "Q: What happens if this card's [On Play] [When Digivolving] effect trashes stacked cards and the Digimon becomes a Digimon without DP?"
+    },
+    {
+      "answer": "A: It's trashed upon the rule check timing.This trashing isn't considered trashing from the battle area.[1]",
+      "question": "Q: What happens if this card's [On Play] [When Digivolving] effect trashes stacked cards and the Digimon becomes an Option card?\n"
+    }
+  ],
+  "BT21-031": [
+    {
+      "answer": "A: No, it doesn\u2019t trigger.[1]",
+      "question": "Q: Does this card's [Your Turn] effect trigger when this card is in the breeding area and would digivolve into a card with the [Mollusk] or [Aquatic] trait?"
+    }
+  ],
+  "BT21-032": [
+    {
+      "answer": "A: No, it doesn\u2019t trigger.[1]",
+      "question": "Q: Does this card's [Your Turn] effect trigger when this card is in the breeding area and would digivolve into a card with the [Armor Form] or [Hero] trait?"
+    }
+  ],
+  "BT21-044": [
+    {
+      "answer": "A: It causes that card to also be treated as a Digimon with X000 DP.For example, if a Tamer is treated as a Digimon, it will gain inherited effects. In addition, it will be able to attack.[1]",
+      "question": "Q: What does an \"is also treated as a Digimon with X000 DP\" effect do, exactly?"
+    },
+    {
+      "answer": "A: No, it is treated as both a Digimon and a Tamer.[1]",
+      "question": "Q: If a Tamer is treated as a Digimon using an \"is also treated as a Digimon with X000 DP\" effect, is it no longer considered a Tamer?"
+    },
+    {
+      "answer": "A: When it activates an effect, it is considered both a Digimon effect and a Tamer effect.[1]",
+      "question": "Q: If a Tamer is treated as a Digimon using an \"is also treated as a Digimon with X000 DP\" effect and it activates an effect, is it treated as an effect of a Digimon or a Tamer?"
+    },
+    {
+      "answer": "A: Yes, you can.When an effect is activated on a card that's treated as both a Digimon and a Tamer, the effect is treated as both a Digimon effect and a Tamer effect, therefore you can gain memory.[1]",
+      "question": "Q: Can I gain memory using an effect on a Tamer that's treated as a Digimon with X000 DP due to an effect while my opponent has \"your opponent can't gain memory other than by Tamer effects\" activated?"
+    },
+    {
+      "answer": "A: Yes, it can attack.[1]",
+      "question": "Q: If this card's [On Play] [When Digivolving] effect is used to treat [Marcus Damon] as a Digimon, can I use the part of the effect after \"then\" to attack using that [Marcus Damon]?"
+    },
+    {
+      "answer": "A: Yes, you can.[1]",
+      "question": "Q: If this card's [On Play] [When Digivolving] effect is used to treat [Marcus Damon] as a Digimon, can I choose to not attack using the part of the effect after \"then\"?"
+    },
+    {
+      "answer": "A: Yes, it triggers.[1]",
+      "question": "Q: Does this card's [All Turns] effect also trigger when a [Marcus Damon] treated as a Digimon is deleted?"
+    }
+  ],
+  "BT21-048": [
+    {
+      "answer": "A: Yes, either can be suspended.[1]",
+      "question": "Q: Can I use this card's [On Play] effect to suspend either my Digimon or my opponent's Digimon?"
+    }
+  ],
+  "BT21-049": [
+    {
+      "answer": "A: Yes, you can.[1]",
+      "question": "Q: If it's my opponent's turn, my opponent plays P-163 [Dokugumon], and this card switches from unsuspended to suspended, can I activate this card's [All Turns] effect?"
+    },
+    {
+      "answer": "A: Yes, either can be suspended.[1]",
+      "question": "Q: Can I use this card's [On Play] [When Digivolving] effect to suspend either my Digimon or my opponent's Digimon?"
+    }
+  ],
+  "BT21-050": [
+    {
+      "answer": "A: Yes, you can.[1]",
+      "question": "Q: If my opponent's ST18-03 [Falcomon] attacks and this card switches from unsuspended to suspended, can I activate this card's [Opponent's Turn] effect?"
+    },
+    {
+      "answer": "A: Yes, either can be suspended.[1]",
+      "question": "Q: Can I use this card's [On Play] [When Digivolving] effect to suspend either my Digimon or my opponent's Digimon?"
+    }
+  ],
+  "BT21-054": [
+    {
+      "answer": "A: It refers to a card that contains the specified text or icon in its name, traits, effects, inherited effects, (Rule), digivolution requirements, DNA digivolution, DigiXros requirements, burst digivolve, App Fusion, or Link.For example, a card with [Knightmon] in its text would include cards with the name [DarkKnightmon] and cards with the text [Knightmon] in their effects.\n[1]",
+      "question": "Q: What does a card with \"X in its text\" refer to?"
+    },
+    {
+      "answer": "A: The BT21-054 [Shotmon] linked with this card is trashed upon the rule check timing.[1]",
+      "question": "Q: This card with BT21-054 [Shotmon] as a link card is in the battle area.What happens if this card digivolves into EX7-043 [Tankmon] and no longer meets BT21-054 [Shotmon]'s link requirements?"
+    }
+  ],
+  "BT21-055": [
+    {
+      "answer": "A: No, it doesn\u2019t trigger.[1]",
+      "question": "Q: Does this card's [Your Turn] effect trigger when this card is in the breeding area and would digivolve into a card with the [Mineral] or [Rock] trait?"
+    }
+  ],
+  "BT21-056": [
+    {
+      "answer": "A: It refers to a card that contains the specified text or icon in its name, traits, effects, inherited effects, (Rule), digivolution requirements, DNA digivolution, DigiXros requirements, burst digivolve, App Fusion, or Link.For example, a card with [Knightmon] in its text would include cards with the name [DarkKnightmon] and cards with the text [Knightmon] in their effects.[1]",
+      "question": "Q: What does a card with \"X in its text\" refer to?"
+    }
+  ],
+  "BT21-057": [
+    {
+      "answer": "A: You can give that effect to such Digimon, but Digimon that aren't affected by effects won't be affected by it, therefore the gained effect won't trigger.[1]",
+      "question": "Q: Can I use this card's [On Play] [When Digivolving] effect to give \"[Start of Your Main Phase] This Digimon attacks\"  to a Digimon that isn't affected by effects?"
+    }
+  ],
+  "BT21-058": [
+    {
+      "answer": "A: It refers to a card that contains the specified text or icon in its name, traits, effects, inherited effects, (Rule), digivolution requirements, DNA digivolution, DigiXros requirements, burst digivolve, App Fusion, or Link.For example, a card with [Knightmon] in its text would include cards with the name [DarkKnightmon] and cards with the text [Knightmon] in their effects.[1]",
+      "question": "Q: What does a card with \"X in its text\" refer to?"
+    }
+  ],
+  "BT21-060": [
+    {
+      "answer": "A: This effect prevents cards stacked on top from being trashed by \uff1cDe-Digivolve\uff1e (Trash up to  cards from the top. You can't trash past level 3 cards) or other effects, and cards stacked on the bottom can't be trashed by effects such as those that trash digivolution cards.[1]",
+      "question": "Q: What does a \"can't trash stacked cards\" effect do, exactly?"
+    },
+    {
+      "answer": "A: No, you can't.A \"by doing X\" condition can't be met if only some of the required actions are performed.The conditions for this inherited effect require you to return the specified number of cards to the bottom of the deck.[1]",
+      "question": "Q: Can I return just 1 [Vemmon] to the bottom of the deck for the conditions of this card's inherited effect?"
+    }
+  ],
+  "BT21-061": [
+    {
+      "answer": "A: No, you can't.If the effect triggers, it must activate.[1]",
+      "question": "Q: If this card's [Your Turn] effect triggers, can I choose to not activate it?"
+    },
+    {
+      "answer": "A: Yes, you can.[1]",
+      "question": "Q: Can I choose different Digimon for the Digimon that gains \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack) and the Digimon that attacks for this card's [Your Turn] effect?"
+    },
+    {
+      "answer": "A: Yes, you can.[1]",
+      "question": "Q: After my Digimon gains \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack) with this card's [Your Turn] effect, can I choose to not attack for the part of the effect after \"then\"?"
+    },
+    {
+      "answer": "A: No. You perform \uff1cDe-Digivolve  1\uff1e (Trash the top card. You can't trash past level 3 cards) twice, not \uff1cDe-Digivolve  2\uff1e (Trash up to 2 cards from the top. You can't trash past level 3 cards). \nWhen performing \uff1cDe-Digivolve  2\uff1e (Trash up to 2 cards from the top. You can't trash past level 3 cards), the top 2 cards are considered to be trashed at the same time, but when performing \uff1cDe-Digivolve  1\uff1e (Trash the top card. You can't trash past level 3 cards) twice, the top 2 cards are trashed 1 at a time. \n\nFor example, if using \uff1cDe-Digivolve  2\uff1e (Trash up to 2 cards from the top. You can't trash past level 3 cards) to simultaneously trash the top 2 cards of a suspended Digimon and the 2nd card trashed is BT15-047 [Kabuterimon], its effect won't activate. However, if performing \uff1cDe-Digivolve  1\uff1e (Trash the top card. You can't trash past level 3 cards) twice and the Digimon becomes BT15-047 [Kabuterimon] after the 1st instance of \uff1cDe-Digivolve  1\uff1e (Trash the top card. You can't trash past level 3 cards) trashes a card, it won't be affected by the 2nd instance of \uff1cDe-Digivolve  1\uff1e (Trash the top card. You can't trash past level 3 cards) and won't be trashed.[1]",
+      "question": "Q: My Tamer has 4 colors.If this card's [On Play] [When Digivolving] effect activates, do I perform \uff1cDe-Digivolve  2\uff1e (Trash up to 2 cards from the top. You can't trash past level 3 cards)?"
+    }
+  ],
+  "BT21-062": [
+    {
+      "answer": "A: It refers to a card that contains the specified text or icon in its name, traits, effects, inherited effects, (Rule), digivolution requirements, DNA digivolution, DigiXros requirements, burst digivolve, App Fusion, or Link.For example, a card with [Knightmon] in its text would include cards with the name [DarkKnightmon] and cards with the text [Knightmon] in their effects.[1]",
+      "question": "Q: What does a card with \"X in its text\" refer to?"
+    },
+    {
+      "answer": "A: No, you can't.A \"by doing X\" condition can't be met if only some of the required actions are performed.The conditions for this [When Digivolving] effect require you to place the specified number of cards as digivolution cards.[1]",
+      "question": "Q: Can I place just 3 cards with [Vemmon] in their texts as this Digimon's bottom digivolution cards for the conditions of this card's [When Digivolving] effect?"
+    },
+    {
+      "answer": "A: No, you can't.A \"by doing X\" condition can't be met if only some of the required actions are performed.You must return the specified number of digivolution cards to the bottom of the deck for the conditions of this card's [All Turns] effect.[1]",
+      "question": "Q: Can I return just 3 [Vemmon] from digivolution cards to the bottom of the deck for the conditions of this card's [All Turns] effect?"
+    }
+  ],
+  "BT21-063": [
+    {
+      "answer": "A: It refers to a card that contains the specified text or icon in its name, traits, effects, inherited effects, (Rule), digivolution requirements, DNA digivolution, DigiXros requirements, burst digivolve, App Fusion, or Link.For example, a card with [Knightmon] in its text would include cards with the name [DarkKnightmon] and cards with the text [Knightmon] in their effects.[1]",
+      "question": "Q: What does a card with \"X in its text\" refer to?"
+    }
+  ],
+  "BT21-065": [
+    {
+      "answer": "A: No, it doesn\u2019t trigger.[1]",
+      "question": "Q: Does this card's [Your Turn] effect trigger when this card is in the breeding area and would digivolve into a card with the [Ghost] trait?"
+    }
+  ],
+  "BT21-066": [
+    {
+      "answer": "A: It refers to a card that contains the specified text or icon in its name, traits, effects, inherited effects, (Rule), digivolution requirements, DNA digivolution, DigiXros requirements, burst digivolve, App Fusion, or Link.For example, a card with [Knightmon] in its text would include cards with the name [DarkKnightmon] and cards with the text [Knightmon] in their effects.[1]",
+      "question": "Q: What does a card with \"X in its text\" refer to?"
+    }
+  ],
+  "BT21-068": [
+    {
+      "answer": "A: No, you can't.If your opponent has a Digimon with 4000 DP or less, you must choose that card and delete it.[1]",
+      "question": "Q: My opponent has a Digimon with 4000 DP or less.Can I meet the \"if this effect didn't delete\" condition in this card's [On Play] [When Digivolving] effect by not choosing a card to delete?"
+    },
+    {
+      "answer": "A: Yes, you can.[1]",
+      "question": "Q: My opponent has a Digimon with 4000 DP or less.Can I meet the \"if this effect didn't delete\" condition in this card's [On Play] [When Digivolving] effect by choosing an opponent's Digimon with 4000 DP or less and an effect that prevents deletion?"
+    }
+  ],
+  "BT21-071": [
+    {
+      "answer": "A: It refers to a card that contains the specified text or icon in its name, traits, effects, inherited effects, (Rule), digivolution requirements, DNA digivolution, DigiXros requirements, burst digivolve, App Fusion, or Link.For example, a card with [Knightmon] in its text would include cards with the name [DarkKnightmon] and cards with the text [Knightmon] in their effects.[1]",
+      "question": "Q: What does a card with \"X in its text\" refer to?"
+    },
+    {
+      "answer": "A: The BT21-054 [Shotmon] linked with this card is trashed upon the rule check timing.[1]",
+      "question": "Q: This card with BT21-054 [Shotmon] as a link card is in the battle area.What happens if this card digivolves into EX7-044 [Gigadramon] and no longer meets BT21-054 [Shotmon]'s link requirements?"
+    }
+  ],
+  "BT21-072": [
+    {
+      "answer": "A: It refers to a card that contains the specified text or icon in its name, traits, effects, inherited effects, (Rule), digivolution requirements, DNA digivolution, DigiXros requirements, burst digivolve, App Fusion, or Link.For example, a card with [Knightmon] in its text would include cards with the name [DarkKnightmon] and cards with the text [Knightmon] in their effects.[1]",
+      "question": "Q: What does a card with \"X in its text\" refer to?"
+    },
+    {
+      "answer": "A: Yes, it can attack.[1]",
+      "question": "Q: Can I use this card's [When Digivolving] effect to attack even when this card is suspended?"
+    }
+  ],
+  "BT21-073": [
+    {
+      "answer": "A: No, you can't.[1]",
+      "question": "Q: Can I use this card's [On Play] [When Digivolving] effect to link a card that doesn't have [Link] [[[:category:|]]]\u00a0trait: Cost  (Plug this card from the hand or battle area sideways into the specified Digimon in the battle area.)?"
+    },
+    {
+      "answer": "A: You can give that effect to such Digimon, but Digimon that aren't affected by effects won't be affected by it, therefore the gained effect won't trigger.[1]",
+      "question": "Q: Can I use this card's [Your Turn] effect to give \"[Start of Your Main Phase] This Digimon attacks\" to a Digimon that isn't affected by effects?"
+    },
+    {
+      "answer": "A: Yes, you can choose 1 card from among that Digimon's link cards and trash it.[1]",
+      "question": "Q: If a Digimon's maximum links is increased using \uff1cLink +1\uff1e (Add 1 to this Digimon's maximum links) and has a total of 2 link cards including this card, then it would be removed from the battle area, can I choose from among those cards to trash for this card's [Link] [[[:category:|]]]\u00a0trait: Cost  (Plug this card from the hand or battle area sideways into the specified Digimon in the battle area.) effect?"
+    }
+  ],
+  "BT21-074": [
+    {
+      "answer": "A: It refers to a card that contains the specified text or icon in its name, traits, effects, inherited effects, (Rule), digivolution requirements, DNA digivolution, DigiXros requirements, burst digivolve, App Fusion, or Link.For example, a card with [Knightmon] in its text would include cards with the name [DarkKnightmon] and cards with the text [Knightmon] in their effects.[1]",
+      "question": "Q: What does a card with \"X in its text\" refer to?"
+    },
+    {
+      "answer": "A: The BT21-054 [Shotmon] linked with this card is trashed upon the rule check timing.[1]",
+      "question": "Q: This card with BT21-054 [Shotmon] as a link card is in the battle area.What happens if this card digivolves into EX7-048 [Gundramon] and no longer meets BT21-054 [Shotmon]'s link requirements?"
+    }
+  ],
+  "BT21-077": [
+    {
+      "answer": "A: It refers to a card that contains the specified text or icon in its name, traits, effects, inherited effects, (Rule), digivolution requirements, DNA digivolution, DigiXros requirements, burst digivolve, App Fusion, or Link.For example, a card with [Knightmon] in its text would include cards with the name [DarkKnightmon] and cards with the text [Knightmon] in their effects.[1]",
+      "question": "Q: What does a card with \"X in its text\" refer to?"
+    },
+    {
+      "answer": "A: You can give that effect to such Digimon, but Digimon that aren't affected by effects won't be affected by it, therefore the gained effect won't trigger.[1]",
+      "question": "Q: Can I use this card's [On Play] [When Digivolving] effect to give \"[Start of Your Main Phase] This Digimon attacks\" to a Digimon that isn't affected by effects?"
+    }
+  ],
+  "BT21-078": [
+    {
+      "answer": "A: No, you can't.If the effect triggers, it must activate.[1]",
+      "question": "Q: If this card's [Your Turn] effect triggers, can I choose to not activate it?"
+    },
+    {
+      "answer": "A: Yes, you can.[1]",
+      "question": "Q: Can I choose different Digimon for the Digimon that gains \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack) and the Digimon that attacks for this card's [Your Turn] effect?"
+    },
+    {
+      "answer": "A: Yes, you can.[1]",
+      "question": "Q: After my Digimon gains \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack) with this card's [Your Turn] effect, can I choose to not attack for the part of the effect after \"then\"?"
+    }
+  ],
+  "BT21-080": [
+    {
+      "answer": "A: It refers to a card that contains the specified text or icon in its name, traits, effects, inherited effects, (Rule), digivolution requirements, DNA digivolution, DigiXros requirements, burst digivolve, App Fusion, or Link.For example, a card with [Knightmon] in its text would include cards with the name [DarkKnightmon] and cards with the text [Knightmon] in their effects.\n[1]",
+      "question": "Q: What does a card with \"X in its text\" refer to?"
+    }
+  ],
+  "BT21-081": [
+    {
+      "answer": "A: No, you can't.The Digimon that was given \uff1cPiercing\uff1e (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would) by this effect must attack if possible.[1]",
+      "question": "Q: Can I use this card's [End of Your Turn] effect to give \uff1cPiercing\uff1e (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would) to 1 of my Digimon, but then choose to not attack with that Digimon?"
+    },
+    {
+      "answer": "A: No, an attack using the 2nd effect isn't possible. A new attack declaration can't be made during an attack.In this case, the [End of Your Turn] effects on both copies of this card trigger simultaneously at the end of your turn, and you use the [End of Your Turn] effect on the 1st copy of this card to attack.The 2nd [End of Your Turn] effect can be activated before the counter timing, but because you can't declare another attack during an attack, you won't be able to attack using the 2nd effect, even if you activate it.[1]",
+      "question": "Q: I have 2 copies of this card in the battle area.At the end of my turn, I used the [End of Your Turn] effect on the 1st copy of this card to attack. Can I then use the [End of Your Turn] effect on the 2nd copy of this card to attack?"
+    }
+  ],
+  "BT21-082": [
+    {
+      "answer": "A: Yes, the digivolution cost is reduced by 1.[1]",
+      "question": "Q: If only this card is in the battle area and I use its [Start of Your Main Phase] effect to digivolve, is the digivolution cost reduced by 1?"
+    },
+    {
+      "answer": "A: The [Security] effect will activate first.Upon a security check, a [Security] effect will immediately activate without pending activation.[1]",
+      "question": "Q: What order do an effect that triggers when a card is removed from a security stack and a [Security] effect on a checked card activate when they trigger simultaneously upon a security check?"
+    }
+  ],
+  "BT21-083": [
+    {
+      "answer": "A: The card is placed on the bottom of the cards under the Tamer.[1]",
+      "question": "Q: If I use this card's [Start of Your Main Phase] effect to place a card under a Tamer with cards under it, in what order do I place the card?"
+    },
+    {
+      "answer": "A: No, an attack using the 2nd effect isn't possible. A new attack declaration can't be made during an attack.In this case, the [Your Turn] effects on both copies trigger, and you use the [Your Turn] effect on the 1st copy of this card to attack.The 2nd [Your Turn] effect can be activated before the counter timing, but because you can't declare another attack during an attack, you won't be able to attack using the 2nd effect, even if you activate it.[1]",
+      "question": "Q: I have 2 copies of this card in the battle area.The [Your Turn] effects on both copies triggered, and I used the [Your Turn] effect on the 1st copy of this card to attack. Can I then use the [Your Turn] effect on the 2nd copy of this card to attack?"
+    }
+  ],
+  "BT21-084": [
+    {
+      "answer": "A: No, you can't activate it.When a card with an effect that's pending activation leaves its current area while activation is pending, the effect can no longer be activated.In this case, the [When Linking] effect on the linked card triggers upon the link, but it becomes a digivolution card before the effect can activate and is no longer considered a link card, therefore the effect can't activate.[1]",
+      "question": "Q: When linking with one of my Digimon that has a [When Linking] effect, this card's [Your Turn] effect activated before that card's [When Linking] effect, and I app fused that Digimon.Can I then activate the linked card's [When Linking] effect?"
+    }
+  ],
+  "BT21-085": [
+    {
+      "answer": "A: No, you can't activate it.Even if a stacked card is trashed, the [X Per Turn] limit has already been reached for the activated effect.[1]",
+      "question": "Q: I activated the [Your Turn] [Once Per Turn] on P-117 [Veemon] when digivolving it and reduced the digivolution cost by 1.If I then activate this card's [Main] effect and trash a card stacked with that Digimon, can I activate P-117 [Veemon]'s [Your Turn] [Once Per Turn] effect again?"
+    }
+  ],
+  "BT21-087": [
+    {
+      "answer": "A: It refers to a card that contains the specified text or icon in its name, traits, effects, inherited effects, (Rule), digivolution requirements, DNA digivolution, DigiXros requirements, burst digivolve, App Fusion, or Link.For example, a card with [Knightmon] in its text would include cards with the name [DarkKnightmon] and cards with the text [Knightmon] in their effects.[1]",
+      "question": "Q: What does a card with \"X in its text\" refer to?"
+    }
+  ],
+  "BT21-088": [
+    {
+      "answer": "A: It refers to a card that contains the specified text or icon in its name, traits, effects, inherited effects, (Rule), digivolution requirements, DNA digivolution, DigiXros requirements, burst digivolve, App Fusion, or Link.For example, a card with [Knightmon] in its text would include cards with the name [DarkKnightmon] and cards with the text [Knightmon] in their effects.[1]",
+      "question": "Q: What does a card with \"X in its text\" refer to?"
+    },
+    {
+      "answer": "A: The card is placed on the bottom of the cards under the Tamer.[1]",
+      "question": "Q: If I use this card's [Start of Your Main Phase] effect to place a card under a Tamer with cards under it, in what order do I place the card?"
+    }
+  ],
+  "BT21-090": [
+    {
+      "answer": "A: It refers to a card that contains the specified text or icon in its name, traits, effects, inherited effects, (Rule), digivolution requirements, DNA digivolution, DigiXros requirements, burst digivolve, App Fusion, or Link.For example, a card with [Knightmon] in its text would include cards with the name [DarkKnightmon] and cards with the text [Knightmon] in their effects.[1]",
+      "question": "Q: What does a card with \"X in its text\" refer to?"
+    }
+  ],
+  "BT21-092": [
+    {
+      "answer": "A: Yes, you can choose the order of the cards that are placed.[1]",
+      "question": "Q: If I use this card's [Main] effect to place a Digimon's digivolution cards under 1 of my Tamers, can I choose the order the cards are placed?"
+    },
+    {
+      "answer": "A: The card is placed on the bottom of the cards under the Tamer.[1]",
+      "question": "Q: If I use this card's [Main] effect to place a card under a Tamer with cards under it, in what order do I place the card?"
+    }
+  ],
+  "BT21-093": [
+    {
+      "answer": "A: The [Security] effect will activate first.Upon a security check, a [Security] effect will immediately activate without pending activation.[1]",
+      "question": "Q: What order do an effect that triggers when a card is removed from a security stack and a [Security] effect on a checked card activate when they trigger simultaneously upon a security check?"
+    }
+  ],
+  "BT21-095": [
+    {
+      "answer": "A: Yes, it is.[1]",
+      "question": "Q: Is the \"while you have no face-up security cards\" condition met when I have 0 cards in my security stack?"
+    },
+    {
+      "answer": "A: Yes, you can.In such cases, you can't add a card from your security stack to your hand, therefore you only place this card in your security stack.[1]",
+      "question": "Q: Can I also activate this card\u2019s [Main] effect when I have 0 cards in my security stack?"
+    },
+    {
+      "answer": "A: They become face-up security cards that remain revealed.Other than rules that specify face-up security cards, the rules apply in the same manner as standard security cards.[1]",
+      "question": "Q: What happens to cards placed face up in the security stack by effects?"
+    },
+    {
+      "answer": "A: The check is performed with the card left revealed.Other than rules for cards left revealed, the rules apply in the same manner as standard security checks.[1]",
+      "question": "Q: What happens upon a security check for a security card that is placed face-up?"
+    },
+    {
+      "answer": "A: Yes, it triggers.[1]",
+      "question": "Q: Does a card's [Security] effect trigger upon a security check with that card placed face-up?"
+    },
+    {
+      "answer": "A: Any face-up cards are placed face down, then you shuffle the cards.After shuffling, all cards are left face-down.[1]",
+      "question": "Q: What happens if I shuffle a security stack that includes security cards placed face-up?"
+    }
+  ],
+  "BT21-096": [
+    {
+      "answer": "A: It causes that card to also be treated as a Digimon with X000 DP.For example, if a Tamer is treated as a Digimon, it will gain inherited effects. In addition, it will be able to attack.[1]",
+      "question": "Q: What does an \"is also treated as a Digimon with X000 DP\" effect do, exactly?"
+    },
+    {
+      "answer": "A: No, it is treated as both a Digimon and a Tamer.[1]",
+      "question": "Q: If a Tamer is treated as a Digimon using an \"is also treated as a Digimon with X000 DP\" effect, is it no longer considered a Tamer?"
+    },
+    {
+      "answer": "A: When it activates an effect, it is considered both a Digimon effect and a Tamer effect.[1]",
+      "question": "Q: If a Tamer is treated as a Digimon using an \"is also treated as a Digimon with X000 DP\" effect and it activates an effect, is it treated as an effect of a Digimon or a Tamer?"
+    },
+    {
+      "answer": "A: Yes, you can.When an effect is activated on a card that's treated as both a Digimon and a Tamer, the effect is treated as both a Digimon effect and a Tamer effect, therefore you can gain memory.[1]",
+      "question": "Q: Can I gain memory using an effect on a Tamer that's treated as a Digimon with X000 DP due to an effect while my opponent has \"your opponent can't gain memory other than by Tamer effects\" activated?"
+    },
+    {
+      "answer": "A: Yes, it can attack.[1]",
+      "question": "Q: If this card's [Main] effect is used to treat [Marcus Damon] as a Digimon, can I use the part of the effect after \"then\" to attack using that [Marcus Damon]?"
+    },
+    {
+      "answer": "A: Yes, you can.[1]",
+      "question": "Q: If this card's [Main] effect is used to treat [Marcus Damon] as a Digimon, can I choose to not attack using the part of the effect after \"then\"?"
+    }
+  ],
+  "BT21-097": [
+    {
+      "answer": "A: No, you can't.[1]",
+      "question": "Q: Can I use this card's \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below) effect to link a card that doesn't have [Link] [[[:category:|]]]\u00a0trait: Cost  (Plug this card from the hand or battle area sideways into the specified Digimon in the battle area.)?"
+    }
+  ],
+  "BT21-098": [
+    {
+      "answer": "A: It refers to a card that contains the specified text or icon in its name, traits, effects, inherited effects, (Rule), digivolution requirements, DNA digivolution, DigiXros requirements, burst digivolve, App Fusion, or Link.For example, a card with [Knightmon] in its text would include cards with the name [DarkKnightmon] and cards with the text [Knightmon] in their effects.[1]",
+      "question": "Q: What does a card with \"X in its text\" refer to?"
+    },
+    {
+      "answer": "A: No, you can't.If your opponent has a Digimon, you must choose that card and delete it.[1]",
+      "question": "Q: My opponent has a Digimon.Can I meet the \"if this effect didn't delete\" condition in this card's <Delay> effect by not choosing a card to delete?"
+    },
+    {
+      "answer": "A: Yes, you can.[1]",
+      "question": "Q: My opponent has a Digimon.Can I meet the \"if this effect didn't delete\" condition in this card's <Delay> effect by choosing an opponent's Digimon with an effect that prevents deletion?"
+    }
+  ],
+  "BT21-099": [
+    {
+      "answer": "A: It refers to a card that contains the specified text or icon in its name, traits, effects, inherited effects, (Rule), digivolution requirements, DNA digivolution, DigiXros requirements, burst digivolve, App Fusion, or Link.For example, a card with [Knightmon] in its text would include cards with the name [DarkKnightmon] and cards with the text [Knightmon] in their effects.[1]",
+      "question": "Q: What does a card with \"X in its text\" refer to?"
+    },
+    {
+      "answer": "A: The card is placed on the bottom of the cards under the Tamer.[1]",
+      "question": "Q: If I use this card's [Main] effect to place a card under a Tamer with cards under it, in what order do I place the card?"
+    }
+  ],
+  "BT21-101": [
+    {
+      "answer": "A: No, you can't.[1]",
+      "question": "Q: Can I use this card's [When Digivolving] [When Attacking] effect to link a card that doesn't have [Link] [[[:category:{{{2}}}|{{{2}}}]]]\u00a0trait: Cost  (Plug this card from the hand or battle area sideways into the specified Digimon in the battle area.)?"
     }
   ],
   "BT3-002": [
@@ -18289,6 +18849,36 @@
       "question": "Q: This card's [On Play] and [On Deletion] effects have reduced the Digimon's DP to 0. In this case, will the Digimon be deleted before the rest of this effect is processed?"
     }
   ],
+  "P-183": [
+    {
+      "answer": "A: You can give that effect to such Digimon, but Digimon that aren't affected by effects won't be affected by it, therefore the gained effect won't trigger.[1]",
+      "question": "Q: Can I use this card's [When Digivolving] effect to give \"[Start of Your Main Phase] This Digimon attacks\" to a Digimon that isn't affected by effects?"
+    },
+    {
+      "answer": "A: Yes, you can.[1]",
+      "question": "Q: If I use this card's [When Digivolving] effect to give \"[Start of Your Main Phase] This Digimon attacks\" to a Digimon, can I choose to not attack for the part of the effect after \"then\"?"
+    }
+  ],
+  "P-186": [
+    {
+      "answer": "A: No, you can't.If your opponent has a Digimon with 13000 DP or less, you must choose that card and delete it.[1]",
+      "question": "Q: My opponent has a Digimon with 13000 DP or less.Can I meet the \"if this effect didn't delete\" condition in this card's [On Play] [When Digivolving] effect by not choosing a card to delete?"
+    },
+    {
+      "answer": "A: Yes, you can.[1]",
+      "question": "Q: My opponent has a Digimon with 13000 DP or less.Can I meet the \"if this effect didn't delete\" condition in this card's [On Play] [When Digivolving] effect by choosing an opponent's Digimon with 13000 DP or less and an effect that prevents deletion?"
+    }
+  ],
+  "P-187": [
+    {
+      "answer": "A: Yes, you can place it as the top or bottom security card.[1]",
+      "question": "Q: Can I place either my Digimon or Tamer or an opponent's Digimon or Tamer as the top or bottom security card for this card's [When Digivolving] effect?"
+    },
+    {
+      "answer": "A: Yes, you can activate \uff1cRecovery +1 (Deck)\uff1e (Place the top card of your deck on top of your security stack).[1]",
+      "question": "Q: Can I activate \uff1cRecovery +1 (Deck)\uff1e (Place the top card of your deck on top of your security stack) even when not DNA digivolving with this card's 1st [When Digivolving] effect?"
+    }
+  ],
   "RB1-003": [
     {
       "answer": "A: Yes, the battle proceeds with +1000 DP.[1]",
@@ -19379,6 +19969,232 @@
     {
       "answer": "A: No, since it would count as the turn they were played.[1]",
       "question": "Q: Can Digimon played by this card's effect attack the turn they were played?"
+    }
+  ],
+  "ST20-03": [
+    {
+      "answer": "A: It refers to when a card has as many or more total colors than the number specified.[1]",
+      "question": "Q: What does \"X or more total colors\" mean, exactly?"
+    }
+  ],
+  "ST20-04": [
+    {
+      "answer": "A: No, you can't.If the effect triggers, it must activate.[1]",
+      "question": "Q: If this card's [Your Turn] effect triggers, can I choose to not activate it?"
+    },
+    {
+      "answer": "A: Yes, you can.[1]",
+      "question": "Q: Can I choose different Digimon for the Digimon that gains \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack) and the Digimon that attacks for this card's [Your Turn] effect?"
+    },
+    {
+      "answer": "A: Yes, you can.[1]",
+      "question": "Q: After my Digimon gains \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack) with this card's [Your Turn] effect, can I choose to not attack for the part of the effect after \"then\"?"
+    }
+  ],
+  "ST20-06": [
+    {
+      "answer": "A: No, you can't.If the effect triggers, it must activate.[1]",
+      "question": "Q: If this card's [Your Turn] effect triggers, can I choose to not activate it?"
+    },
+    {
+      "answer": "A: Yes, you can.[1]",
+      "question": "Q: Can I choose different Digimon for the Digimon that gains \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack) and the Digimon that attacks for this card's [Your Turn] effect?"
+    },
+    {
+      "answer": "A: Yes, you can.[1]",
+      "question": "Q: After my Digimon gains \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack) with this card's [Your Turn] effect, can I choose to not attack for the part of the effect after \"then\"?"
+    }
+  ],
+  "ST20-07": [
+    {
+      "answer": "A: This effect prevents digivolution costs from being reduced when the costs are to be paid. This effect affects the opponent player.[1]",
+      "question": "Q: What does a \"your opponent can't reduce digivolution costs\" effect do, exactly?"
+    },
+    {
+      "answer": "A: Yes, it can be digivolved.\"Digivolve without paying the cost\" effects aren't effects that reduce the digivolution cost.[1]",
+      "question": "Q: Can my opponent digivolve a card using a \"digivolve without paying the cost\" effect while a \"your opponent can't reduce digivolution costs\" effect is activated?"
+    }
+  ],
+  "ST20-09": [
+    {
+      "answer": "A: No, you can't.If the effect triggers, it must activate.[1]",
+      "question": "Q: If this card's [Your Turn] effect triggers, can I choose to not activate it?"
+    },
+    {
+      "answer": "A: Yes, you can.[1]",
+      "question": "Q: Can I choose different Digimon for the Digimon that gains \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack) and the Digimon that attacks for this card's [Your Turn] effect?"
+    },
+    {
+      "answer": "A: Yes, you can.[1]",
+      "question": "Q: After my Digimon gains \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack) with this card's [Your Turn] effect, can I choose to not attack for the part of the effect after \"then\"?"
+    }
+  ],
+  "ST20-10": [
+    {
+      "answer": "A: It refers to when a card has as many or more total colors than the number specified.[1]",
+      "question": "Q: What does \"X or more total colors\" mean, exactly?"
+    }
+  ],
+  "ST20-11": [
+    {
+      "answer": "A: You choose 1 of your Digimon for every 2 colors your Tamers have. The target Digimon aren't affected by your opponent's Digimon's effects until their turn ends.[1]",
+      "question": "Q: What does this card's [On Play] [When Digivolving] effect do, exactly?"
+    },
+    {
+      "answer": "A: This effect prevents Digimon from being affected by effects.For example, your Digmon won't suspend if it's chosen for a \"suspend 1 of your opponent's Digimon\" effect, and its DP won't be reduced by 3000 if it's chosen for a \"1 of your opponent's Digimon gets -3000 DP.\"[1]",
+      "question": "Q: What does \"none of your [...] Digimon are affected by your opponent's Digimon's effects\" mean, exactly?"
+    },
+    {
+      "answer": "A: Yes, it can be chosen.For example, a Digmon that isn't affected by effects can be chosen for a \"suspend 1 of your opponent's Digimon\" effect.[1]",
+      "question": "Q: Can a card that has an \"isn't affected by [...] effects\" effect be chosen for an effect?"
+    },
+    {
+      "answer": "A: Yes, it can.It won't be affected by it, but it can be given an effect.However, if an effect such as \uff1cSecurity A.\uff1e is given to a Digimon that isn't affected by effects, the Digimon won't be considered to have that effect.[1]",
+      "question": "Q: Can a card that has an \"isn't affected by [...] effects\" effect be given an effect?"
+    },
+    {
+      "answer": "A: As soon as it gains the \"isn't affected by [...] effects\" effect, it will no longer be affected.[1]",
+      "question": "Q: If a card is affected by an effect, then it later gains an \"isn't affected by [...] effects\" effect, what happens to the effect that was affecting it?"
+    },
+    {
+      "answer": "A: It will be affected by the effect as soon as it can be affected by effects.[1]",
+      "question": "Q: If a card has an \"isn't affected by [...] effects\" effect, it gains an effect, then it later loses the \"isn't affected by [...] effects\" effect, what happens to the effect that it gained?"
+    }
+  ],
+  "ST20-12": [
+    {
+      "answer": "A: Yes, the play cost will be reduced by a total of 2.[1]",
+      "question": "Q: When I would play a Digimon card with the [ADVENTURE] trait from my hand, if I activate the [Your Turn] effects on both this card and ST20-13 [Tai Kamiya & Izzy Izumi], is the play cost reduced by a total of 2?"
+    }
+  ],
+  "ST20-13": [
+    {
+      "answer": "A: Yes, the play cost will be reduced by a total of 2.[1]",
+      "question": "Q: When I would play a Digimon card with the [ADVENTURE] trait from my hand, if I activate the [Your Turn] effects on both this card and ST20-12 [Sora Takenouchi & Kari Kamiya], is the play cost reduced by a total of 2?"
+    }
+  ],
+  "ST20-14": [
+    {
+      "answer": "A: It refers to when you have the specified card in the battle area or breeding area.[1]",
+      "question": "Q: What does \"while you have (the specified card) on the field\" mean, exactly?"
+    }
+  ],
+  "ST20-15": [
+    {
+      "answer": "A: They become face-up security cards that remain revealed.Other than rules that specify face-up security cards, the rules apply in the same manner as standard security cards.[1]",
+      "question": "Q: What happens to cards placed face up in the security stack by effects?"
+    },
+    {
+      "answer": "A: The check is performed with the card left revealed.Other than rules for cards left revealed, the rules apply in the same manner as standard security checks.[1]",
+      "question": "Q: What happens upon a security check for a security card that is placed face-up?"
+    },
+    {
+      "answer": "A: Yes, it triggers.[1]",
+      "question": "Q: Does a card's [Security] effect trigger upon a security check with that card placed face-up?"
+    },
+    {
+      "answer": "A: Any face-up cards are placed face down, then you shuffle the cards.After shuffling, all cards are left face-down.[1]",
+      "question": "Q: What happens if I shuffle a security stack that includes security cards placed face-up?"
+    }
+  ],
+  "ST21-02": [
+    {
+      "answer": "A: With this effect, your opponent's memory will no longer increase by any effects except Tamer effects. This effect affects the opponent player.[1]",
+      "question": "Q: What does the \"your opponent can't gain memory other than by Tamer effects\" effect do, exactly?"
+    },
+    {
+      "answer": "A: Yes, you can.When an effect is activated on a card that's treated as both a Digimon and a Tamer, the effect is treated as both a Digimon effect and a Tamer effect, therefore you can gain memory.[1]",
+      "question": "Q: Can I gain memory using an effect on a Tamer that's treated as a Digimon with X000 DP due to an effect while my opponent has \"your opponent can't gain memory other than by Tamer effects\" activated?"
+    }
+  ],
+  "ST21-04": [
+    {
+      "answer": "A: No, you can't.If the effect triggers, it must activate.[1]",
+      "question": "Q: If this card's [Your Turn] effect triggers, can I choose to not activate it?"
+    },
+    {
+      "answer": "A: Yes, you can.[1]",
+      "question": "Q: Can I choose different Digimon for the Digimon that gains \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack) and the Digimon that attacks for this card's [Your Turn] effect?"
+    },
+    {
+      "answer": "A: Yes, you can.[1]",
+      "question": "Q: After my Digimon gains \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack) with this card's [Your Turn] effect, can I choose to not attack for the part of the effect after \"then\"?"
+    }
+  ],
+  "ST21-06": [
+    {
+      "answer": "A: No, you can't.If the effect triggers, it must activate.[1]",
+      "question": "Q: If this card's [Your Turn] effect triggers, can I choose to not activate it?"
+    },
+    {
+      "answer": "A: Yes, you can.[1]",
+      "question": "Q: Can I choose different Digimon for the Digimon that gains \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack) and the Digimon that attacks for this card's [Your Turn] effect?"
+    },
+    {
+      "answer": "A: Yes, you can.[1]",
+      "question": "Q: After my Digimon gains \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack) with this card's [Your Turn] effect, can I choose to not attack for the part of the effect after \"then\"?"
+    }
+  ],
+  "ST21-08": [
+    {
+      "answer": "A: It refers to when a card has as many or more total colors than the number specified.[1]",
+      "question": "Q: What does \"X or more total colors\" mean, exactly?"
+    }
+  ],
+  "ST21-09": [
+    {
+      "answer": "A: No, you can't.If the effect triggers, it must activate.[1]",
+      "question": "Q: If this card's [Your Turn] effect triggers, can I choose to not activate it?"
+    },
+    {
+      "answer": "A: Yes, you can.[1]",
+      "question": "Q: Can I choose different Digimon for the Digimon that gains \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack) and the Digimon that attacks for this card's [Your Turn] effect?"
+    },
+    {
+      "answer": "A: Yes, you can.[1]",
+      "question": "Q: After my Digimon gains \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack) with this card's [Your Turn] effect, can I choose to not attack for the part of the effect after \"then\"?"
+    }
+  ],
+  "ST21-10": [
+    {
+      "answer": "A: It refers to when a card has as many or more total colors than the number specified.[1]",
+      "question": "Q: What does \"X or more total colors\" mean, exactly?"
+    }
+  ],
+  "ST21-12": [
+    {
+      "answer": "A: Yes, the play cost will be reduced by a total of 2.[1]",
+      "question": "Q: When I would play a Digimon card with the [ADVENTURE] trait from my hand, if I activate the [Your Turn] effects on both this card and ST21-13 [Matt Ishida & T.K. Takaishi], is the play cost reduced by a total of 2?"
+    }
+  ],
+  "ST21-13": [
+    {
+      "answer": "A: Yes, the play cost will be reduced by a total of 2.[1]",
+      "question": "Q: When I would play a Digimon card with the [ADVENTURE] trait from my hand, if I activate the [Your Turn] effects on both this card and ST21-12 [Joe Kido & Mimi Tachikawa], is the play cost reduced by a total of 2?"
+    }
+  ],
+  "ST21-14": [
+    {
+      "answer": "A: It refers to when you have the specified card in the battle area or breeding area.[1]",
+      "question": "Q: What does \"while you have (the specified card) on the field\" mean, exactly?"
+    }
+  ],
+  "ST21-15": [
+    {
+      "answer": "A: They become face-up security cards that remain revealed.Other than rules that specify face-up security cards, the rules apply in the same manner as standard security cards.[1]",
+      "question": "Q: What happens to cards placed face up in the security stack by effects?"
+    },
+    {
+      "answer": "A: The check is performed with the card left revealed.Other than rules for cards left revealed, the rules apply in the same manner as standard security checks.[1]",
+      "question": "Q: What happens upon a security check for a security card that is placed face-up?"
+    },
+    {
+      "answer": "A: Yes, it triggers.[1]",
+      "question": "Q: Does a card's [Security] effect trigger upon a security check with that card placed face-up?"
+    },
+    {
+      "answer": "A: Any face-up cards are placed face down, then you shuffle the cards.After shuffling, all cards are left face-down.[1]",
+      "question": "Q: What happens if I shuffle a security stack that includes security cards placed face-up?"
     }
   ],
   "ST3-01": [
