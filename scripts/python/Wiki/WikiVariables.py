@@ -307,4 +307,5 @@ replacements = [
     '(Add 1 to this Digimon\'s maximum links)',
     '(While attacking, your opponent\'s effects don\'t affect this Digimon)',
     '(In the main phase, by suspending this Digimon, place your deck\'s top card face down as this Digimon\'s bottom digivolution card. This effect can also activate in the breeding area)',
+    'When this would be played, by placing the specified cards from the trash under it, reduce the play cost.',
 ]
