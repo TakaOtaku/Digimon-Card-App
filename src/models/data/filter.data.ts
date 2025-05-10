@@ -243,6 +243,7 @@ export const Forms: string[] = [
   'Sup./Appmon',
   'Ult./Appmon',
   'God/Appmon',
+  'Eater',
 ];
 
 export const Attributes: string[] = [
@@ -348,6 +349,7 @@ export const Types: string[] = [
   'Creation (App Name)',
   'CRT',
   'Crustacean',
+  'CS',
   'Cyborg',
   'D-Brigade',
   'Dame Dame (App Name)',
@@ -367,6 +369,7 @@ export const Types: string[] = [
   'Dictionary (App Name)',
   'DigiPolice',
   'Dinosaur',
+  'DM',
   'Doctor (App Name)',
   'Dominion',
   'Dragon',
@@ -566,6 +569,11 @@ export const Types: string[] = [
   'Variation (App Name)',
   'VB',
   'Vegetation',
+  'Ver.1',
+  'Ver.2',
+  'Ver.3',
+  'Ver.4',
+  'Ver.5',
   'Video (App Name)',
   'Virtue',
   'Virus (App Name)',
@@ -677,6 +685,7 @@ export const SpecialRequirements: string[] = [
   'Burst Digivolve',
   'ACE',
   'App Fusion',
+  'Assembly',
 ];
 
 export const Restrictions: string[] = ['Banned', 'Restricted to 1'];
