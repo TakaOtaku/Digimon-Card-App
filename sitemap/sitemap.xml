@@ -17,23 +17,7 @@
         <changefreq>weekly</changefreq>
 	</url>
   <url>
-		<loc>https://digimoncard.app/community/</loc>
-        <changefreq>weekly</changefreq>
-	</url>
-  <url>
     <loc>https://digimoncard.app/products/</loc>
     <changefreq>weekly</changefreq>
   </url>
-  <url>
-		<loc>https://digimoncard.app/blog/c8080a68-705c-493a-b40f-1ba482d3e628</loc>
-	</url>
-    <url>
-		<loc>https://digimoncard.app/blog/78c64cf8-4479-4887-a3e9-db691fb9079e</loc>
-	</url>
-  <url>
-		<loc>https://digimoncard.app/blog/72ef12e4-c58e-467b-8531-e4e65f13147e</loc>
-	</url>
-  <url>
-		<loc>https://digimoncard.app/blog/306fe608-1f14-4461-a240-3e1a9cef0ac8</loc>
-	</url>
 </urlset>

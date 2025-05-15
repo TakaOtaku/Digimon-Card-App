@@ -1,4 +1,3 @@
-import { AsyncPipe, NgIf } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from 'primeng/api';
@@ -30,7 +29,7 @@ import { FilterStore } from '../../../store/filter.store';
     </p-multiSelect>
   `,
   standalone: true,
-  imports: [NgIf, MultiSelectModule, FormsModule, SharedModule, AsyncPipe],
+  imports: [MultiSelectModule, FormsModule, SharedModule],
 })
 export class SetFilterComponent {
   filterStore = inject(FilterStore);

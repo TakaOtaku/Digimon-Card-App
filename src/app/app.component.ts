@@ -1,4 +1,3 @@
-import { NgIf } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -65,7 +64,6 @@ import { WebsiteStore } from './store/website.store';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     NavbarComponent,
-    NgIf,
     RouterOutlet,
     BlockUIModule,
     ProgressSpinnerModule,
@@ -96,52 +94,46 @@ export class AppComponent {
     // If this is the case, set the save
     this.saveStore.loadSave();
 
-    effect(
-      () => {
-        console.log('Save changed', this.saveStore.save());
-        this.saveLoaded.set(
-          this.saveStore.save().uid !== '' || this.saveStore.loadedSave(),
-        );
+    effect(() => {
+      console.log('Save changed', this.saveStore.save());
+      this.saveLoaded.set(
+        this.saveStore.save().uid !== '' || this.saveStore.loadedSave(),
+      );
 
-        if (!this.saveStore.loadedSave()) return;
+      if (!this.saveStore.loadedSave()) return;
 
-        console.log('Update Save in the Database');
-        this.updateDatabase();
+      console.log('Update Save in the Database');
+      this.updateDatabase();
 
-        if (this.settings !== this.saveStore.settings()) {
-          console.log('Change Advanced Settings');
-          this.settings = this.saveStore.settings();
-          this.setAdvancedSettings();
-        }
+      if (this.settings !== this.saveStore.settings()) {
+        console.log('Change Advanced Settings');
+        this.settings = this.saveStore.settings();
+        this.setAdvancedSettings();
+      }
 
-        if (this.cardSet !== this.saveStore.settings().cardSet) {
-          console.log('Set DigimonCard Set');
-          this.cardSet = this.saveStore.settings().cardSet;
-          this.setDigimonCardSet();
-        }
-      },
-      { allowSignalWrites: true },
-    );
+      if (this.cardSet !== this.saveStore.settings().cardSet) {
+        console.log('Set DigimonCard Set');
+        this.cardSet = this.saveStore.settings().cardSet;
+        this.setDigimonCardSet();
+      }
+    });
 
-    effect(
-      () => {
-        console.log('Filter changed');
-        const cards = this.digimonCardStore.cards();
+    effect(() => {
+      console.log('Filter changed');
+      const cards = this.digimonCardStore.cards();
 
-        if (cards.length === 0) return;
+      if (cards.length === 0) return;
 
-        const filteredCards = filterCards(
-          this.digimonCardStore.cards(),
-          this.saveStore.save(),
-          this.filterStore.filter(),
-          this.websiteStore.sort(),
-          this.digimonCardStore.cardsMap(),
-        );
+      const filteredCards = filterCards(
+        this.digimonCardStore.cards(),
+        this.saveStore.save(),
+        this.filterStore.filter(),
+        this.websiteStore.sort(),
+        this.digimonCardStore.cardsMap(),
+      );
 
-        this.digimonCardStore.updateFilteredCards(filteredCards);
-      },
-      { allowSignalWrites: true },
-    );
+      this.digimonCardStore.updateFilteredCards(filteredCards);
+    });
 
     // Prevent Right Click, that is used for other actions
     document.addEventListener(

@@ -2,17 +2,12 @@ import {
   ChangeDetectionStrategy,
   Component,
   computed,
-  EventEmitter,
   inject,
-  Input,
-  OnChanges,
-  Output,
-  SimpleChanges,
 } from '@angular/core';
-import { ColorList, IColor, ITag } from '../../../../models';
+import { ColorList } from '../../../../models';
 import { setColors, setTags } from '../../../functions';
 import { ObscenityPipe } from '../../../pipes/obscenity.pipe';
-import { InputTextareaModule } from 'primeng/inputtextarea';
+import { TextareaModule } from 'primeng/textarea';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import { ChipModule } from 'primeng/chip';
@@ -58,7 +53,7 @@ import { WebsiteStore } from '../../../store/website.store';
           class="h-full w-full cursor-pointer"
           [ngClass]="{
             'primary-background': selectedColor().name === deckBox.name,
-            'surface-ground': selectedColor().name !== deckBox.name
+            'surface-ground': selectedColor().name !== deckBox.name,
           }">
           <img [src]="deckBox.img" alt="Deckbox" class="h-full" />
         </div>
@@ -72,9 +67,8 @@ import { WebsiteStore } from '../../../store/website.store';
     ChipModule,
     FormsModule,
     InputTextModule,
-    InputTextareaModule,
+    TextareaModule,
     NgClass,
-    NgOptimizedImage,
   ],
 })
 export class DeckMetadataComponent {

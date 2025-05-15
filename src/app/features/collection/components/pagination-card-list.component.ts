@@ -1,10 +1,4 @@
-import {
-  AsyncPipe,
-  NgClass,
-  NgFor,
-  NgIf,
-  NgOptimizedImage,
-} from '@angular/common';
+import { NgIf } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -25,14 +19,12 @@ import {
   ICountCard,
   IDraggedCard,
 } from '../../../../models';
-import { ImgFallbackDirective } from '../../../directives/ImgFallback.directive';
 import { IntersectionListenerDirective } from '../../../directives/intersection-listener.directive';
 import { filterCards, withoutJ } from '../../../functions';
 import { DialogStore } from '../../../store/dialog.store';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
 import { SaveStore } from '../../../store/save.store';
 import { WebsiteStore } from '../../../store/website.store';
-import { ViewCardDialogComponent } from '../../shared/dialogs/view-card-dialog.component';
 import { FilterSideBoxComponent } from '../../shared/filter/filter-side-box.component';
 import { FullCardComponent } from '../../shared/full-card.component';
 import { PaginationCardListHeaderComponent } from './pagination-card-list-header.component';
@@ -106,17 +98,11 @@ import { FilterStore } from '../../../store/filter.store';
     SearchComponent,
     NgIf,
     DragDropModule,
-    NgFor,
-    NgClass,
     FullCardComponent,
     DialogModule,
     FilterSideBoxComponent,
-    ViewCardDialogComponent,
-    AsyncPipe,
     SidebarModule,
     DataViewModule,
-    ImgFallbackDirective,
-    NgOptimizedImage,
     SkeletonModule,
     IntersectionListenerDirective,
   ],
@@ -146,26 +132,23 @@ export class PaginationCardListComponent {
   filteredCards = this.digimonCardStore.filteredCards;
   showCards: DigimonCard[] = [];
 
-  onFilterChange = effect(
-    () => {
-      if (this.inputCollection.length === 0) return;
-      console.log('Filter changed');
-      const cards = this.digimonCardStore.cards();
+  onFilterChange = effect(() => {
+    if (this.inputCollection.length === 0) return;
+    console.log('Filter changed');
+    const cards = this.digimonCardStore.cards();
 
-      if (cards.length === 0) return;
+    if (cards.length === 0) return;
 
-      const filteredCards = filterCards(
-        this.digimonCardStore.cards(),
-        { ...this.saveStore.save(), collection: this.inputCollection },
-        this.filterStore.filter(),
-        this.websiteStore.sort(),
-        this.digimonCardStore.cardsMap(),
-      );
+    const filteredCards = filterCards(
+      this.digimonCardStore.cards(),
+      { ...this.saveStore.save(), collection: this.inputCollection },
+      this.filterStore.filter(),
+      this.websiteStore.sort(),
+      this.digimonCardStore.cardsMap(),
+    );
 
-      this.digimonCardStore.updateFilteredCards(filteredCards);
-    },
-    { allowSignalWrites: true },
-  );
+    this.digimonCardStore.updateFilteredCards(filteredCards);
+  });
 
   constructor() {
     effect(() => {

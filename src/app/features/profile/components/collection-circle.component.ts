@@ -75,7 +75,7 @@ export class CollectionCircleComponent {
     const setCardsCollected = setCards.filter((card: DigimonCard) =>
       collection.find((colCard) => {
         if (colCard.id !== card.id) {
-          return;
+          return false;
         }
 
         if (card.version !== 'Normal') {

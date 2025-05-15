@@ -27,7 +27,7 @@ import { DigimonCardStore } from '../../store/digimon-card.store';
       [ngStyle]="{
         'background-repeat': 'no-repeat',
         'background-position': 'center',
-        'background-position-y': '25%'
+        'background-position-y': '25%',
       }">
       <div
         [ngStyle]="{ background: colorMap.get(deck?.color?.name ?? '') }"

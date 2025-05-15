@@ -1,4 +1,4 @@
-import { AsyncPipe, NgClass, NgIf } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { Component, effect, inject } from '@angular/core';
 import { CARDSET } from '../../../../models';
 import { SaveStore } from '../../../store/save.store';
@@ -13,7 +13,7 @@ import { SaveStore } from '../../../store/save.store';
           (click)="setCardSet(cardSet.English)"
           [ngClass]="{
             'bg-[#e2e4e6] text-black': selectedCardSet === cardSet.English,
-            'surface-card text-[#e2e4e6]': selectedCardSet !== cardSet.English
+            'surface-card text-[#e2e4e6]': selectedCardSet !== cardSet.English,
           }"
           class="min-w-auto mt-2 h-8 w-20 rounded-l-sm border border-slate-100 p-2 text-xs font-semibold text-[#e2e4e6]">
           English
@@ -22,7 +22,7 @@ import { SaveStore } from '../../../store/save.store';
           (click)="setCardSet(cardSet.Japanese)"
           [ngClass]="{
             'bg-[#e2e4e6] text-black': selectedCardSet === cardSet.Japanese,
-            'surface-card text-[#e2e4e6]': selectedCardSet !== cardSet.Japanese
+            'surface-card text-[#e2e4e6]': selectedCardSet !== cardSet.Japanese,
           }"
           class="min-w-auto mt-2 h-8 w-20 border border-slate-100 p-2 text-xs font-semibold text-[#e2e4e6]">
           日本語
@@ -31,7 +31,7 @@ import { SaveStore } from '../../../store/save.store';
     </div>
   `,
   standalone: true,
-  imports: [NgIf, NgClass, AsyncPipe],
+  imports: [NgClass],
 })
 export class LanguageFilterComponent {
   saveStore = inject(SaveStore);

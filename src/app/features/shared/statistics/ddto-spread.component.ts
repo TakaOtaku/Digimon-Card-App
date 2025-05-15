@@ -6,7 +6,7 @@ import {
   OnInit,
   SimpleChanges,
 } from '@angular/core';
-import { DigimonCard, IDeck } from '../../../../models';
+import { IDeck } from '../../../../models';
 import {
   getCountFromDeckCards,
   mapToDeckCards,
@@ -22,28 +22,28 @@ import { NgIf, NgStyle } from '@angular/common';
       <div
         class="h-full w-full text-center"
         [ngStyle]="{
-          background: linearGradientEgg()
+          background: linearGradientEgg(),
         }">
         <span class="text-black-outline-xs">{{ ddto[0] }}</span>
       </div>
       <div
         class="h-full w-full text-center"
         [ngStyle]="{
-          background: linearGradient(ddto[1])
+          background: linearGradient(ddto[1]),
         }">
         <span class="text-black-outline-xs">{{ ddto[1] }}</span>
       </div>
       <div
         class="h-full w-full text-center"
         [ngStyle]="{
-          background: linearGradient(ddto[2])
+          background: linearGradient(ddto[2]),
         }">
         <span class="text-black-outline-xs">{{ ddto[2] }}</span>
       </div>
       <div
         class="h-full w-full text-center"
         [ngStyle]="{
-          background: linearGradient(ddto[3])
+          background: linearGradient(ddto[3]),
         }">
         <span class="text-black-outline-xs">{{ ddto[3] }}</span>
       </div>
@@ -78,7 +78,7 @@ import { NgIf, NgStyle } from '@angular/common';
   imports: [NgIf, NgStyle, SingleContainerComponent],
 })
 export class DdtoSpreadComponent implements OnInit, OnChanges {
-  @Input() deck: IDeck | null;
+  @Input() deck!: IDeck | null;
   @Input() container = false;
 
   ddto = [0, 0, 0, 0];

@@ -67,7 +67,7 @@ import { SaveStore } from '../../../store/save.store';
               [ngStyle]="{
                 'background-repeat': 'no-repeat',
                 'background-position': 'center',
-                'background-position-y': '25%'
+                'background-position-y': '25%',
               }"></div>
           </td>
           <td class="text-xs font-bold">
@@ -98,14 +98,12 @@ import { SaveStore } from '../../../store/save.store';
   ],
   standalone: true,
   imports: [
-    NgIf,
     TableModule,
     SharedModule,
     NgClass,
     LazyLoadImageModule,
     NgStyle,
     NgFor,
-    AsyncPipe,
     DatePipe,
   ],
 })

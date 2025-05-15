@@ -1,5 +1,12 @@
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
-import { ChangeDetectorRef, Component, effect, HostListener, inject, OnInit } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  effect,
+  HostListener,
+  inject,
+  OnInit,
+} from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
 import { ToastrService } from 'ngx-toastr';
@@ -120,11 +127,8 @@ import { TierlistComponent } from './components/tierlist.component';
     DeckContainerComponent,
     PaginatorModule,
     DialogModule,
-    DeckDialogComponent,
-    DeckSubmissionComponent,
     DeckStatisticsComponent,
     NgIf,
-    AsyncPipe,
     ProgressSpinnerModule,
     TierlistComponent,
     DividerModule,

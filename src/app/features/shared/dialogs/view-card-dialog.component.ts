@@ -9,15 +9,10 @@ import {
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
-import { ImgFallbackDirective } from 'src/app/directives/ImgFallback.directive';
-import { DigimonCardStore } from 'src/app/store/digimon-card.store';
-import { WebsiteStore } from 'src/app/store/website.store';
-import { replacements } from 'src/models/data/keyword-replacement.data';
-
-import { ColorMap, DigimonCard, ICountCard, IDeck } from '../../../../models';
-import { formatId, withoutJ } from '../../../functions';
-import { DialogStore } from '../../../store/dialog.store';
-import { SaveStore } from '../../../store/save.store';
+import { ImgFallbackDirective } from '@directives';
+import { ColorMap, DigimonCard, ICountCard, IDeck, replacements } from '@models';
+import { formatId, withoutJ } from '@functions';
+import { DialogStore, SaveStore, WebsiteStore, DigimonCardStore } from '@store';
 
 @Component({
   selector: 'digimon-view-card-dialog',
@@ -218,7 +213,7 @@ import { SaveStore } from '../../../store/save.store';
               *ngFor="let digivolveCondition of card.digivolveCondition"
               class="relative mx-1.5 h-9 w-9 rounded-full border border-slate-200"
               [ngStyle]="{
-                backgroundColor: this.colorMap.get(digivolveCondition.color)
+                backgroundColor: this.colorMap.get(digivolveCondition.color),
               }">
               <span class="absolute left-[5px] top-[2px] text-2xs"
                 >Lv. {{ digivolveCondition.level }}</span
@@ -363,19 +358,19 @@ import { SaveStore } from '../../../store/save.store';
             Link
           </p>
           <div class="grid grid-cols-5">
-            <p class="font-bold">Requirements: </p>
+            <p class="font-bold">Requirements:</p>
             <span
               class="font-white whitespace-pre-wrap font-bold col-span-4"
               [innerHTML]="replaceWithImageTags(card.linkRequirement)"></span>
           </div>
           <div class="grid grid-cols-5">
-            <p class="font-bold">Link Effect: </p>
+            <p class="font-bold">Link Effect:</p>
             <span
               class="font-white whitespace-pre-wrap font-bold col-span-4"
               [innerHTML]="replaceWithImageTags(card.linkEffect)"></span>
           </div>
           <div class="grid grid-cols-5">
-            <p class="font-bold">Link DP: </p>
+            <p class="font-bold">Link DP:</p>
             <span
               class="font-white whitespace-pre-wrap font-bold col-span-4"
               [innerHTML]="replaceWithImageTags(card.linkDP)"></span>
@@ -435,7 +430,6 @@ import { SaveStore } from '../../../store/save.store';
     ButtonModule,
     RippleModule,
     LazyLoadImageModule,
-    AsyncPipe,
     ImgFallbackDirective,
     NgForOf,
   ],

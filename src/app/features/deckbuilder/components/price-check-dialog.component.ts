@@ -5,14 +5,14 @@ import { SharedModule } from 'primeng/api';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { TableModule } from 'primeng/table';
 import { async, BehaviorSubject, filter, Subject, takeUntil } from 'rxjs';
-import { ICountCard } from '../../../../models';
+import { ICountCard } from '@models';
 import {
   CardMarketService,
   ProductCM,
   ProductCMWithCount,
 } from '../../../services/card-market.service';
-import { SaveStore } from '../../../store/save.store';
-import { WebsiteStore } from '../../../store/website.store';
+import { SaveStore } from '@store';
+import { WebsiteStore } from '@store';
 
 @Component({
   selector: 'digimon-price-check-dialog',
@@ -28,7 +28,7 @@ import { WebsiteStore } from '../../../store/website.store';
         (ngModelChange)="showOnlyMissing()"
         [options]="[
           { label: 'Missing Cards', value: true },
-          { label: 'All Cards', value: false }
+          { label: 'All Cards', value: false },
         ]"
         class="mx-auto"
         optionLabel="label"
@@ -131,13 +131,13 @@ import { WebsiteStore } from '../../../store/website.store';
     TableModule,
     SharedModule,
     CurrencyPipe,
-    AsyncPipe,
   ],
 })
 export class PriceCheckDialogComponent implements OnInit, OnDestroy {
   @Input() checkPrice: BehaviorSubject<boolean>;
   websiteStore = inject(WebsiteStore);
   saveStore = inject(SaveStore);
+  cardMarketService = inject(CardMarketService);
 
   getPriceGuide$ = this.cardMarketService.getPrizeGuide();
 
@@ -150,9 +150,6 @@ export class PriceCheckDialogComponent implements OnInit, OnDestroy {
   totalProducts: ProductCMWithCount;
 
   onDestroy$ = new Subject();
-  protected readonly async = async;
-
-  constructor(private cardMarketService: CardMarketService) {}
 
   ngOnInit() {
     this.getPriceGuide$

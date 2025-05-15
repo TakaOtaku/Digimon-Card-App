@@ -97,7 +97,7 @@ import { WebsiteStore } from '../../store/website.store';
     </div>
   `,
   standalone: true,
-  imports: [NgIf, DialogModule, AsyncPipe, ImgFallbackDirective],
+  imports: [NgIf, DialogModule, ImgFallbackDirective],
   providers: [ImageService],
 })
 export class DeckCardComponent implements OnChanges, OnInit {

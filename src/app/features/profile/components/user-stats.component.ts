@@ -105,7 +105,6 @@ import { NgIf } from '@angular/common';
     CollectionCircleComponent,
     DialogModule,
     CollectionPriceCheckDialogComponent,
-    PaginationCardListComponent,
     CarouselModule,
   ],
 })

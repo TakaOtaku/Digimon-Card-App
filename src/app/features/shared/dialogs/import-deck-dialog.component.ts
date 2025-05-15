@@ -3,7 +3,7 @@ import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
-import { InputTextareaModule } from 'primeng/inputtextarea';
+import { TextareaModule } from 'primeng/textarea';
 import { IDeck } from '../../../../models';
 import { setColors, setTags, stringToDeck } from '../../../functions';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
@@ -45,7 +45,7 @@ import { WebsiteStore } from '../../../store/website.store';
     </div>
   `,
   standalone: true,
-  imports: [FormsModule, InputTextareaModule, NgIf, ButtonModule, AsyncPipe],
+  imports: [FormsModule, TextareaModule, ButtonModule],
   providers: [MessageService],
 })
 export class ImportDeckDialogComponent {

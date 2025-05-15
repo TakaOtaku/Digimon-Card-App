@@ -7,7 +7,7 @@ import {
   OnInit,
   SimpleChanges,
 } from '@angular/core';
-import { DigimonCard, ICountCard } from '../../../../models';
+import { ICountCard } from '../../../../models';
 import { NgIf, NgFor } from '@angular/common';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
 

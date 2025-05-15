@@ -102,7 +102,7 @@ import { DividerModule } from 'primeng/divider';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [DividerModule, AsyncPipe],
+  imports: [DividerModule],
 })
 export class HomeIntroComponent {
   faq = [];

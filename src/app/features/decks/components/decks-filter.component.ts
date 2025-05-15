@@ -46,9 +46,7 @@ import { TAGS } from '../../../../models';
   imports: [
     FormsModule,
     ReactiveFormsModule,
-    NgClass,
     InputTextModule,
-    NgIf,
     StyleClassModule,
     MultiSelectModule,
   ],

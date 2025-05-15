@@ -1,4 +1,4 @@
-import { AsyncPipe, NgClass, NgIf } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown';
@@ -16,7 +16,7 @@ import { WebsiteStore } from '../../store/website.store';
         <i
           [ngClass]="{
             'pi-sort-amount-down': sort.ascOrder,
-            'pi-sort-amount-up': !sort.ascOrder
+            'pi-sort-amount-up': !sort.ascOrder,
           }"
           class="pi text-[#e2e4e6]"></i>
       </button>
@@ -32,14 +32,7 @@ import { WebsiteStore } from '../../store/website.store';
   `,
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [
-    NgIf,
-    NgClass,
-    DropdownModule,
-    FormsModule,
-    ReactiveFormsModule,
-    AsyncPipe,
-  ],
+  imports: [NgClass, DropdownModule, FormsModule, ReactiveFormsModule],
 })
 export class SortButtonsComponent {
   websiteStore = inject(WebsiteStore);

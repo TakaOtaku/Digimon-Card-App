@@ -385,7 +385,7 @@ export class DeckStatisticsComponent implements OnInit, OnDestroy {
     const cardsWithCount = cards
       .map((card) => {
         if (checked.includes(card.cardNumber)) {
-          return;
+          return undefined;
         }
         const count = getCountFromDeckCards(
           cards.filter((value) => value.cardNumber === card.cardNumber),

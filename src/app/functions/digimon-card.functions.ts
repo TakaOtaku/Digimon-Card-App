@@ -249,8 +249,7 @@ export function colorSort(deck: IDeckCard[]) {
     .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
   const yellow = deck
     .filter(
-      (card) =>
-        card.color.startsWith('Yellow') && card.cardType === 'Digimon',
+      (card) => card.color.startsWith('Yellow') && card.cardType === 'Digimon',
     )
     .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
   const green = deck
@@ -265,8 +264,7 @@ export function colorSort(deck: IDeckCard[]) {
     .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
   const purple = deck
     .filter(
-      (card) =>
-        card.color.startsWith('Purple') && card.cardType === 'Digimon',
+      (card) => card.color.startsWith('Purple') && card.cardType === 'Digimon',
     )
     .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
 

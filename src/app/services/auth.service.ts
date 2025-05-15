@@ -1,28 +1,46 @@
-import { inject, Injectable } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Injectable } from '@angular/core';
+import {
+  Auth,
+  setPersistence,
+  browserSessionPersistence,
+  user,
+  User,
+  signInWithPopup,
+  signOut,
+} from '@angular/fire/auth';
 import { GoogleAuthProvider } from 'firebase/auth';
-import firebase from 'firebase/compat';
 import { MessageService } from 'primeng/api';
 import { catchError, first, Observable, of, retry, Subject } from 'rxjs';
-import { ISave, IUser } from '../../models';
-import { emptySave, emptySettings } from '../../models';
-import { SaveStore } from '../store/save.store';
+import { emptySave, emptySettings, ISave, IUser } from '@models';
 import { DigimonBackendService } from './digimon-backend.service';
-import UserCredential = firebase.auth.UserCredential;
-import User = firebase.User;
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  userData: IUser | null;
+  userData!: IUser | null;
+  user$: Observable<User | null>;
   authChange = new Subject<boolean>();
 
   constructor(
-    public afAuth: AngularFireAuth,
+    public firebaseAuth: Auth,
     private digimonBackendService: DigimonBackendService,
     private messageService: MessageService,
-  ) {}
+  ) {
+    this.setSessionStoragePersistence();
+    this.user$ = user(this.firebaseAuth);
+
+    this.user$.subscribe((firebaseUser) => {
+      if (firebaseUser) {
+        debugger;
+        this.SetUserData(firebaseUser, null); // We'll update this later with the actual saveStore
+      }
+    });
+  }
+
+  private setSessionStoragePersistence() {
+    setPersistence(this.firebaseAuth, browserSessionPersistence);
+  }
 
   get isLoggedIn(): boolean {
     return !!this.userData;
@@ -39,42 +57,51 @@ export class AuthService {
     return true;
   }
 
-  GoogleAuth(saveStore: any) {
+  async GoogleAuth(saveStore: any) {
     const provider = new GoogleAuthProvider();
-    provider.setCustomParameters({
-      prompt: 'select_account',
-    });
-    return this.AuthLogin(provider, saveStore);
+    //provider.setCustomParameters({
+    //  prompt: 'select_account',
+    //});
+    try {
+      const result = await signInWithPopup(this.firebaseAuth, provider);
+      const user = result.user;
+      if (!user) {
+        throw new Error('Google-Login error');
+      }
+    } catch (error) {
+      console.error('Google Auth Error: ', error);
+    }
+    //return this.AuthLogin(provider, saveStore);
   }
 
   AuthLogin(provider: any, saveStore: any) {
-    return this.afAuth
-      .signInWithPopup(provider)
-      .then((result: UserCredential) => {
-        this.SetUserData(result.user, saveStore);
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Login Successfully!',
-          detail: 'You have been logged in!',
-        });
-      })
-      .catch((error) => {
-        this.messageService.add({
-          severity: 'error',
-          summary: 'Login Failure!',
-          detail: 'There was an failure with your Login. Please try again!',
-        });
-      });
+    //return this.firebaseAuth
+    //  .signInWithPopup(provider)
+    //  .then((result: UserCredential) => {
+    //    this.SetUserData(result.user, saveStore);
+    //    this.messageService.add({
+    //      severity: 'success',
+    //      summary: 'Login Successfully!',
+    //      detail: 'You have been logged in!',
+    //    });
+    //  })
+    //  .catch((error) => {
+    //    this.messageService.add({
+    //      severity: 'error',
+    //      summary: 'Login Failure!',
+    //      detail: 'There was an failure with your Login. Please try again!',
+    //    });
+    //  });
   }
 
   LogOut(saveStore: any) {
-    return this.afAuth.signOut().then(() => {
+    const promise = signOut(this.firebaseAuth).then(() => {
+      sessionStorage.clear();
       this.messageService.add({
         severity: 'success',
         summary: 'Logout Successful!',
         detail: 'You have been logged out!',
       });
-      localStorage.setItem('user', '');
       this.userData = null;
       this.authChange.next(true);
 
@@ -195,7 +222,7 @@ export class AuthService {
     if (localStorageSave) {
       localStorageSave =
         this.digimonBackendService.checkSaveValidity(localStorageSave);
-      return of(localStorageSave);
+      return of(localStorageSave!);
     }
     return of(emptySave);
   }

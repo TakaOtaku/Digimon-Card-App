@@ -22,7 +22,7 @@ import { ButtonModule } from 'primeng/button';
 import { CalendarModule } from 'primeng/calendar';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
-import { InputTextareaModule } from 'primeng/inputtextarea';
+import { TextareaModule } from 'primeng/textarea';
 import {
   debounceTime,
   distinctUntilChanged,
@@ -184,7 +184,7 @@ interface IDropDownItem {
   imports: [
     FormsModule,
     ReactiveFormsModule,
-    InputTextareaModule,
+    TextareaModule,
     NgFor,
     DeckCardComponent,
     InputTextModule,

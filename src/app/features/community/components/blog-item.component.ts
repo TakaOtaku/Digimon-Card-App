@@ -21,7 +21,7 @@ import { IBlog } from '../../../../models';
           'background-repeat': 'no-repeat',
           'background-position': 'center',
           'background-position-y': '100%',
-          'background-size': 'cover'
+          'background-size': 'cover',
         }"></div>
 
       <div class="flex flex-col h-1/2 p-1 surface-card">

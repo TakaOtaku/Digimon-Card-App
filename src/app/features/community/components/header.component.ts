@@ -78,7 +78,7 @@ import { AuthService } from '../../../services/auth.service';
             (click)="form.get('category')!.setValue('Tournament Report')"
             [ngClass]="{
               'primary-background':
-                form.get('category')!.value === 'Tournament Report'
+                form.get('category')!.value === 'Tournament Report',
             }"
             class="min-w-auto mt-2 h-8 w-36 rounded-l-sm border border-slate-100 p-2 text-xs font-semibold text-[#e2e4e6]">
             Tournament Report
@@ -87,7 +87,7 @@ import { AuthService } from '../../../services/auth.service';
             (click)="form.get('category')!.setValue('Deck-Review')"
             [ngClass]="{
               'primary-background':
-                form.get('category')!.value === 'Deck-Review'
+                form.get('category')!.value === 'Deck-Review',
             }"
             class="min-w-auto mt-2 h-8 w-36 border border-slate-100 p-2 text-xs font-semibold text-[#e2e4e6]">
             Deck-Review

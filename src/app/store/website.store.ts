@@ -1,41 +1,18 @@
-import { computed, inject } from '@angular/core';
+import { inject } from '@angular/core';
 import { tapResponse } from '@ngrx/operators';
-import {
-  patchState,
-  signalStore,
-  withComputed,
-  withMethods,
-  withState,
-} from '@ngrx/signals';
+import { patchState, signalStore, withMethods, withState } from '@ngrx/signals';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
-import { ToastrService } from 'ngx-toastr';
-import {
-  catchError,
-  distinctUntilChanged,
-  filter,
-  first,
-  map,
-  of,
-  pipe,
-  switchMap,
-} from 'rxjs';
+import { distinctUntilChanged, filter, first, pipe, switchMap } from 'rxjs';
 import {
   DRAG,
   dummyCard,
   emptyDeck,
-  emptyFilter,
   IBlog,
-  ICountCard,
   IDeck,
   IDraggedCard,
-  IFilter,
-  ISave,
-  ISettings,
   ISort,
 } from '../../models';
-import { emptySave } from '../../models/data/save.data';
 import { checkSpecialCardCounts } from '../functions';
-import { AuthService } from '../services/auth.service';
 import { ProductCM } from '../services/card-market.service';
 import { DigimonBackendService } from '../services/digimon-backend.service';
 
@@ -86,7 +63,7 @@ export const WebsiteStore = signalStore(
             return digimonBackendService.getDecks().pipe(
               filter((decks) => decks !== null),
               tapResponse({
-                next: (communityDecks) =>
+                next: (communityDecks: any) =>
                   patchState(store, (state) => ({ communityDecks })),
                 error: () => {},
                 finalize: () => {},
@@ -104,7 +81,7 @@ export const WebsiteStore = signalStore(
             return digimonBackendService.getBlogEntries().pipe(
               filter((blogs) => blogs !== null),
               tapResponse({
-                next: (blogs) => patchState(store, (state) => ({ blogs })),
+                next: (blogs: any) => patchState(store, (state) => ({ blogs })),
                 error: () => {},
                 finalize: () => {},
               }),

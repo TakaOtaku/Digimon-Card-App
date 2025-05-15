@@ -6,7 +6,7 @@ import {
   OnInit,
   SimpleChanges,
 } from '@angular/core';
-import { DigimonCard, IDeck } from '../../../../models';
+import { IDeck } from '../../../../models';
 import {
   getCountFromDeckCards,
   mapToDeckCards,
@@ -25,7 +25,7 @@ import { NgIf, NgStyle } from '@angular/common';
         *ngIf="colorSpread[0] !== 0"
         class="h-full w-full grow text-center"
         [ngStyle]="{
-          background: linearGradient(colorSpread[0], '#ef1919')
+          background: linearGradient(colorSpread[0], '#ef1919'),
         }">
         <span class="text-black-outline-xs">{{ colorSpread[0] }}</span>
       </div>
@@ -33,7 +33,7 @@ import { NgIf, NgStyle } from '@angular/common';
         *ngIf="colorSpread[1] !== 0"
         class="h-full w-full grow text-center"
         [ngStyle]="{
-          background: linearGradient(colorSpread[1], '#19a0e3')
+          background: linearGradient(colorSpread[1], '#19a0e3'),
         }">
         <span class="text-black-outline-xs">{{ colorSpread[1] }}</span>
       </div>
@@ -41,7 +41,7 @@ import { NgIf, NgStyle } from '@angular/common';
         *ngIf="colorSpread[2] !== 0"
         class="h-full w-full grow text-center"
         [ngStyle]="{
-          background: linearGradient(colorSpread[2], '#ffd619')
+          background: linearGradient(colorSpread[2], '#ffd619'),
         }">
         <span class="text-black-outline-xs">{{ colorSpread[2] }}</span>
       </div>
@@ -49,7 +49,7 @@ import { NgIf, NgStyle } from '@angular/common';
         *ngIf="colorSpread[3] !== 0"
         class="h-full w-full grow text-center"
         [ngStyle]="{
-          background: linearGradient(colorSpread[3], '#19b383')
+          background: linearGradient(colorSpread[3], '#19b383'),
         }">
         <span class="text-black-outline-xs">{{ colorSpread[3] }}</span>
       </div>
@@ -57,7 +57,7 @@ import { NgIf, NgStyle } from '@angular/common';
         *ngIf="colorSpread[4] !== 0"
         class="h-full w-full grow text-center"
         [ngStyle]="{
-          background: linearGradient(colorSpread[4], '#191919')
+          background: linearGradient(colorSpread[4], '#191919'),
         }">
         <span class="text-black-outline-xs">{{ colorSpread[4] }}</span>
       </div>
@@ -65,7 +65,7 @@ import { NgIf, NgStyle } from '@angular/common';
         *ngIf="colorSpread[5] !== 0"
         class="h-full w-full grow text-center"
         [ngStyle]="{
-          background: linearGradient(colorSpread[5], '#8d6fdb')
+          background: linearGradient(colorSpread[5], '#8d6fdb'),
         }">
         <span class="text-black-outline-xs">{{ colorSpread[5] }}</span>
       </div>
@@ -73,7 +73,7 @@ import { NgIf, NgStyle } from '@angular/common';
         *ngIf="colorSpread[6] !== 0"
         class="h-full w-full grow text-center"
         [ngStyle]="{
-          background: linearGradient(colorSpread[6], '#ffffff')
+          background: linearGradient(colorSpread[6], '#ffffff'),
         }">
         <span class="text-black-outline-xs">{{ colorSpread[6] }}</span>
       </div>
@@ -121,7 +121,7 @@ import { NgIf, NgStyle } from '@angular/common';
   imports: [NgIf, NgStyle, SingleContainerComponent],
 })
 export class ColorSpreadComponent implements OnInit, OnChanges {
-  @Input() deck: IDeck | null;
+  @Input() deck!: IDeck | null;
   @Input() container = false;
 
   colorSpread = [0, 0, 0, 0, 0, 0, 0];

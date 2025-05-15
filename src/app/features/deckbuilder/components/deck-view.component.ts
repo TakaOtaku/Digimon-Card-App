@@ -72,7 +72,7 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
           <div
             class="mx-auto grid w-full grid-cols-4 md:grid-cols-6"
             [ngClass]="{
-              'lg:grid-cols-8': !collectionView
+              'lg:grid-cols-8': !collectionView,
             }">
             <digimon-deck-card
               *ngFor="let card of mainDeck"
@@ -116,7 +116,6 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
     NgIf,
     AccordionModule,
     SharedModule,
-    AsyncPipe,
     ConfirmDialogModule,
     ConfirmPopupModule,
     NgClass,

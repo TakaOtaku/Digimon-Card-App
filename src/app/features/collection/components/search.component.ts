@@ -25,8 +25,6 @@ import { FilterStore } from '../../../store/filter.store';
     NgStyle,
     FormsModule,
     InputTextModule,
-    AsyncPipe,
-    NgIf,
     ReactiveFormsModule,
   ],
 })

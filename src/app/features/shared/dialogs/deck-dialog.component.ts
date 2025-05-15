@@ -1,15 +1,5 @@
 import { NgFor, NgIf } from '@angular/common';
-import {
-  ChangeDetectorRef,
-  Component, effect,
-  EventEmitter,
-  inject,
-  Input,
-  OnChanges,
-  OnInit,
-  Output,
-  SimpleChanges
-} from '@angular/core';
+import { ChangeDetectorRef, Component, effect, inject } from '@angular/core';
 import {
   FormsModule,
   ReactiveFormsModule,
@@ -22,12 +12,16 @@ import { ButtonModule } from 'primeng/button';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
-import { InputTextareaModule } from 'primeng/inputtextarea';
 import { TooltipModule } from 'primeng/tooltip';
 import { first } from 'rxjs';
 import * as uuid from 'uuid';
 
-import { emptyDeck, IDeck, IDeckCard, ITournamentDeck } from '../../../../models';
+import {
+  emptyDeck,
+  IDeck,
+  IDeckCard,
+  ITournamentDeck,
+} from '../../../../models';
 import { mapToDeckCards, setDeckImage } from '../../../functions';
 import { AuthService } from '../../../services/auth.service';
 import { DigimonBackendService } from '../../../services/digimon-backend.service';
@@ -39,6 +33,7 @@ import { DeckCardComponent } from '../deck-card.component';
 import { ChartContainersComponent } from '../statistics/chart-containers.component';
 import { ColorSpreadComponent } from '../statistics/color-spread.component';
 import { DdtoSpreadComponent } from '../statistics/ddto-spread.component';
+import { TextareaModule } from 'primeng/textarea';
 
 export interface DigimonCardImage {
   name: string;
@@ -236,7 +231,7 @@ export interface DigimonCardImage {
     ReactiveFormsModule,
     InputTextModule,
     DropdownModule,
-    InputTextareaModule,
+    TextareaModule,
     ButtonModule,
     ConfirmDialogModule,
   ],

@@ -60,8 +60,6 @@ import { DecksTableComponent } from './decks-table.component';
     PaginatorModule,
     DecksTableComponent,
     DialogModule,
-    DeckDialogComponent,
-    AsyncPipe,
   ],
 })
 export class DecksComponent implements OnInit, OnChanges {

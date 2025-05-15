@@ -3,10 +3,15 @@ import { Component, OnInit, effect, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { saveAs } from 'file-saver';
 import { ButtonModule } from 'primeng/button';
-import { InputTextareaModule } from 'primeng/inputtextarea';
+import { TextareaModule } from 'primeng/textarea';
 import { SelectButtonModule } from 'primeng/selectbutton';
-import { ColorsWithoutMulti, DigimonCard, ICountCard, IDeck, IDeckCard } from '../../../../models';
-import { compareIDs, formatId, levelSort, mapToDeckCards, sortColors, sortID } from '../../../functions';
+import { ColorsWithoutMulti, DigimonCard, IDeck } from '../../../../models';
+import {
+  compareIDs,
+  formatId,
+  levelSort,
+  mapToDeckCards,
+} from '../../../functions';
 import { DialogStore } from '../../../store/dialog.store';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
 
@@ -56,7 +61,7 @@ import { DigimonCardStore } from '../../../store/digimon-card.store';
             class="pi"
             [ngClass]="{
               'pi-check': colorChecked(color),
-              'pi-times': !colorChecked(color)
+              'pi-times': !colorChecked(color),
             }"></i>
         </ng-template>
       </p-selectButton>
@@ -105,7 +110,7 @@ import { DigimonCardStore } from '../../../store/digimon-card.store';
     SelectButtonModule,
     FormsModule,
     NgIf,
-    InputTextareaModule,
+    TextareaModule,
     NgClass,
     ButtonModule,
   ],
@@ -240,11 +245,13 @@ export class ExportDeckDialogComponent implements OnInit {
       const digimonCard = this.digimonCardStore.cardsMap().get(card.id);
       if (digimonCard) {
         if (this.normalOrder) {
-          this.deckText += `${card.id.replace('ST0', 'ST')} ${digimonCard?.name
-            .english} ${card.count}\n`;
+          this.deckText += `${card.id.replace('ST0', 'ST')} ${
+            digimonCard?.name.english
+          } ${card.count}\n`;
         } else {
-          this.deckText += `${card.count} ${digimonCard?.name
-            .english} ${card.id.replace('ST0', 'ST')}\n`;
+          this.deckText += `${card.count} ${
+            digimonCard?.name.english
+          } ${card.id.replace('ST0', 'ST')}\n`;
         }
       }
     });
@@ -266,8 +273,9 @@ export class ExportDeckDialogComponent implements OnInit {
     this.deckText = '// Digimon DeckList\n\n';
     this.deck.cards.forEach((card) => {
       const dc = this.digimonCardStore.cardsMap().get(card.id);
-      this.deckText += `${card.count} ${dc?.name
-        .english} [DCG] (${card.id.replace('ST0', 'ST')})\n`;
+      this.deckText += `${card.count} ${
+        dc?.name.english
+      } [DCG] (${card.id.replace('ST0', 'ST')})\n`;
     });
   }
 
@@ -540,15 +548,13 @@ export class ExportDeckDialogComponent implements OnInit {
     const mainDeckCards = mapToDeckCards(this.deck.cards, allCards);
     const sideDeckCards = mapToDeckCards(this.deck.sideDeck, allCards);
 
-    this.deck.cards = levelSort(mainDeckCards)
-      .map((card) => ({
-        id: card.id,
-        count: card.count,
-      }));
-    this.deck.sideDeck = levelSort(sideDeckCards)
-      .map((card) => ({
-        id: card.id,
-        count: card.count,
-      }));
+    this.deck.cards = levelSort(mainDeckCards).map((card) => ({
+      id: card.id,
+      count: card.count,
+    }));
+    this.deck.sideDeck = levelSort(sideDeckCards).map((card) => ({
+      id: card.id,
+      count: card.count,
+    }));
   }
 }

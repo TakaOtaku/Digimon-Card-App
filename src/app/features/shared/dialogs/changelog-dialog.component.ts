@@ -14,7 +14,8 @@ import { PanelModule } from 'primeng/panel';
         <h1 class="font-bold text-lg underline">Removed</h1>
         <ul class="list-disc p-5">
           <li>
-            Removed the Community Link, as it was not used. I may add a Rule Quiz or something similar in the future.
+            Removed the Community Link, as it was not used. I may add a Rule
+            Quiz or something similar in the future.
           </li>
         </ul>
         <div class="flex flex-wrap align-middle justify-content-between gap-3">
@@ -24,11 +25,11 @@ import { PanelModule } from 'primeng/panel';
       <p-panel header="Version 4.1.8" [toggleable]="true" [collapsed]="true">
         <h1 class="font-bold text-lg underline">Feature</h1>
         <ul class="list-disc p-5">
+          <li>Added support for the new Linked Cards.</li>
           <li>
-            Added support for the new Linked Cards.
-          </li>
-          <li>
-            The Wiki changed where rules are displayed, so they now have a seperate field (Thanks to danweber and SilverDew-sg for offering a Solution on Github)
+            The Wiki changed where rules are displayed, so they now have a
+            seperate field (Thanks to danweber and SilverDew-sg for offering a
+            Solution on Github)
           </li>
         </ul>
         <div class="flex flex-wrap align-middle justify-content-between gap-3">

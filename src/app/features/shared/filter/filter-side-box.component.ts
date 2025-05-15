@@ -17,7 +17,7 @@ import {
 import { MessageService } from 'primeng/api';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { debounceTime, Subject, takeUntil } from 'rxjs';
-import { itemsAsSelectItem } from 'src/app/functions/digimon-card.functions';
+import { itemsAsSelectItem } from '../../../functions';
 import {
   Attributes,
   Colors,
@@ -138,7 +138,7 @@ import { VersionFilterComponent } from './version-filter.component';
         <button
           (click)="
             cardCountFilter.setValue([0, collectionCountMax() ?? 5], {
-              emitEvent: false
+              emitEvent: false,
             })
           "
           class="w-12 text-[#e2e4e6]"
@@ -291,7 +291,7 @@ import { VersionFilterComponent } from './version-filter.component';
   providers: [MessageService],
 })
 export class FilterSideBoxComponent implements OnInit, OnDestroy {
-  @Input() public showColors: boolean;
+  @Input() public showColors!: boolean;
   messageService = inject(MessageService);
 
   filterStore = inject(FilterStore);
@@ -341,49 +341,45 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
 
   resetEmitter = new EventEmitter<void>();
 
-  private filter: IFilter;
-  updateFilter = effect(
-    () => {
-      const filter = this.filterStore.filter();
-      this.filter = filter;
+  private filter!: IFilter;
+  updateFilter = effect(() => {
+    const filter = this.filterStore.filter();
+    this.filter = filter;
 
-      this.levelFilter.setValue(filter.levelFilter, { emitEvent: false });
-      this.playCostFilter.setValue(filter.playCostFilter, {
-        emitEvent: false,
-      });
-      this.digivolutionFilter.setValue(filter.digivolutionFilter, {
-        emitEvent: false,
-      });
-      this.dpFilter.setValue(filter.dpFilter, { emitEvent: false });
-      this.cardCountFilter.setValue(filter.cardCountFilter, {
-        emitEvent: false,
-      });
+    this.levelFilter.setValue(filter.levelFilter, { emitEvent: false });
+    this.playCostFilter.setValue(filter.playCostFilter, {
+      emitEvent: false,
+    });
+    this.digivolutionFilter.setValue(filter.digivolutionFilter, {
+      emitEvent: false,
+    });
+    this.dpFilter.setValue(filter.dpFilter, { emitEvent: false });
+    this.cardCountFilter.setValue(filter.cardCountFilter, {
+      emitEvent: false,
+    });
 
-      this.keywordFilter.setValue(filter.keywordFilter, { emitEvent: false });
-      this.formFilter.setValue(filter.formFilter, { emitEvent: false });
-      this.attributeFilter.setValue(filter.attributeFilter, {
-        emitEvent: false,
-      });
-      this.typeFilter.setValue(filter.typeFilter, { emitEvent: false });
-      this.illustratorFilter.setValue(filter.illustratorFilter, {
-        emitEvent: false,
-      });
-      this.specialRequirementsFilter.setValue(
-        filter.specialRequirementsFilter,
-        { emitEvent: false },
-      );
-      this.restrictionsFilter.setValue(filter.restrictionsFilter, {
-        emitEvent: false,
-      });
-      this.sourceFilter.setValue(filter.sourceFilter, {
-        emitEvent: false,
-      });
-      this.presetFilter.setValue(filter.presetFilter, {
-        emitEvent: false,
-      });
-    },
-    { allowSignalWrites: true },
-  );
+    this.keywordFilter.setValue(filter.keywordFilter, { emitEvent: false });
+    this.formFilter.setValue(filter.formFilter, { emitEvent: false });
+    this.attributeFilter.setValue(filter.attributeFilter, {
+      emitEvent: false,
+    });
+    this.typeFilter.setValue(filter.typeFilter, { emitEvent: false });
+    this.illustratorFilter.setValue(filter.illustratorFilter, {
+      emitEvent: false,
+    });
+    this.specialRequirementsFilter.setValue(filter.specialRequirementsFilter, {
+      emitEvent: false,
+    });
+    this.restrictionsFilter.setValue(filter.restrictionsFilter, {
+      emitEvent: false,
+    });
+    this.sourceFilter.setValue(filter.sourceFilter, {
+      emitEvent: false,
+    });
+    this.presetFilter.setValue(filter.presetFilter, {
+      emitEvent: false,
+    });
+  });
 
   collectionCountMax = computed(() => this.saveStore.settings().countMax);
   private onDestroy$ = new Subject();

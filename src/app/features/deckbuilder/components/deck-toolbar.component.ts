@@ -175,7 +175,6 @@ import { PriceCheckDialogComponent } from './price-check-dialog.component';
     DialogModule,
     PriceCheckDialogComponent,
     NgFor,
-    ExportDeckDialogComponent,
     ImportDeckDialogComponent,
     ConfirmDialogModule,
   ],

@@ -1,26 +1,8 @@
-import { NgClass, NgIf, NgOptimizedImage } from '@angular/common';
-import {
-  Component,
-  EventEmitter,
-  HostListener,
-  inject,
-  Input,
-  OnDestroy,
-  OnInit,
-  Output,
-} from '@angular/core';
+import { NgClass, NgIf } from '@angular/common';
+import { Component, inject, Input, OnDestroy, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import {
-  faCog,
-  faFolder,
-  faHouseUser,
-  faInfoCircle,
-  faPen,
-  faUser,
-  faUsers,
-} from '@fortawesome/free-solid-svg-icons';
-import { ConfirmationService } from 'primeng/api';
+
 import { ButtonModule } from 'primeng/button';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { DialogModule } from 'primeng/dialog';
@@ -29,9 +11,6 @@ import { IUser } from '../../../../models';
 import { AuthService } from '../../../services/auth.service';
 import { DialogStore } from '../../../store/dialog.store';
 import { SaveStore } from '../../../store/save.store';
-import { ChangelogDialogComponent } from '../dialogs/changelog-dialog.component';
-import { SettingsDialogComponent } from '../dialogs/settings-dialog.component';
-import { FilterButtonComponent } from '../filter/filter-button.component';
 
 @Component({
   selector: 'digimon-nav-links',
@@ -40,7 +19,7 @@ import { FilterButtonComponent } from '../filter/filter-button.component';
       [ngClass]="{
         'h-[5rem] lg:h-auto lg:w-[6.5rem] lg:py-5 flex-row lg:flex-col pt-5':
           !sidebar,
-        'w-[6.5rem] py-5 flex-col': sidebar
+        'w-[6.5rem] py-5 flex-col': sidebar,
       }"
       class="p-0 ml-auto list-none flex justify-between">
       <li
@@ -132,13 +111,13 @@ import { FilterButtonComponent } from '../filter/filter-button.component';
     <div
       [ngClass]="{
         'max-lg:ml-auto flex-row lg:flex-col': !sidebar,
-        'flex-col': sidebar
+        'flex-col': sidebar,
       }"
       class="flex justify-center">
       <button
         (click)="loginLogout()"
         [ngClass]="{
-          'max-lg:mr-5': !sidebar
+          'max-lg:mr-5': !sidebar,
         }"
         class="group">
         <ng-container *ngIf="user; else userIcon">
@@ -146,11 +125,11 @@ import { FilterButtonComponent } from '../filter/filter-button.component';
             class='min-w-auto mx-auto primary-background h-12 w-12 overflow-hidden rounded-full text-[#e2e4e6] group-hover:bg-[#64B5F6]"'>
             <img
               *ngIf="user"
-              alt="{{ this.user?.displayName }}"
-              src="{{ this.user?.photoURL }}" />
+              alt="{{ this.user!.displayName }}"
+              src="{{ this.user!.photoURL }}" />
           </div>
           <span class="text-[#e2e4e6] text-xs">{{
-            this.user?.displayName
+            this.user!.displayName
           }}</span>
         </ng-container>
         <ng-template #userIcon>
@@ -166,7 +145,7 @@ import { FilterButtonComponent } from '../filter/filter-button.component';
 
       <i
         [ngClass]="{
-          'max-lg:mr-5': !sidebar
+          'max-lg:mr-5': !sidebar,
         }"
         class="pi pi-ellipsis-h my-5 text-center text-[#e2e4e6] hover:text-[#64B5F6]"
         style="font-size: 1.5rem"
@@ -223,13 +202,9 @@ import { FilterButtonComponent } from '../filter/filter-button.component';
   imports: [
     NgClass,
     NgIf,
-    FilterButtonComponent,
     FontAwesomeModule,
     ConfirmPopupModule,
     DialogModule,
-    SettingsDialogComponent,
-    ChangelogDialogComponent,
-    NgOptimizedImage,
     ButtonModule,
   ],
 })
@@ -238,7 +213,7 @@ export class NavLinksComponent implements OnInit, OnDestroy {
   dialogStore = inject(DialogStore);
   saveStore = inject(SaveStore);
 
-  user: IUser | null;
+  user!: IUser | null;
 
   mobile = false;
   route: string = '';

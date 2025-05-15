@@ -1,5 +1,10 @@
 import { AsyncPipe, NgClass, NgIf, NgStyle } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { filter, map, of, switchMap, tap } from 'rxjs';
@@ -25,7 +30,7 @@ import { DeckViewComponent } from './components/deck-view.component';
           class="overflow-y-auto pb-[10rem] h-full max-h-full overflow-x-hidden self-baseline"
           [ngClass]="{
             'w-2/5 max-w-[40%]': collectionView,
-            'w-full': !collectionView
+            'w-full': !collectionView,
           }"
           [collectionView]="collectionView"
           (hideStats)="statsDisplay = !statsDisplay"></digimon-deck-view>
@@ -62,7 +67,6 @@ import { DeckViewComponent } from './components/deck-view.component';
     NgStyle,
     DeckViewComponent,
     DeckStatsComponent,
-    FilterAndSearchComponent,
     AsyncPipe,
     PaginationCardListComponent,
     PageComponent,

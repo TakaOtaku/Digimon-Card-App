@@ -1,4 +1,4 @@
-import { AsyncPipe, NgIf } from '@angular/common';
+import { NgIf } from '@angular/common';
 import { Component, effect, inject } from '@angular/core';
 import { BlockButtons } from '../../../../models';
 import { FilterStore } from '../../../store/filter.store';
@@ -14,7 +14,7 @@ import { MultiButtonsComponent } from '../multi-buttons.component';
       title="Block"></digimon-multi-buttons>
   `,
   standalone: true,
-  imports: [NgIf, MultiButtonsComponent, AsyncPipe],
+  imports: [MultiButtonsComponent],
 })
 export class BlockFilterComponent {
   filterStore = inject(FilterStore);

@@ -6,10 +6,7 @@ import {
   OnChanges,
   OnInit,
 } from '@angular/core';
-import {
-  addJBeforeWebp,
-  addSampleBeforeWebp,
-} from 'src/assets/cardlists/DigimonCards';
+import { addJBeforeWebp, addSampleBeforeWebp } from '@assets/cardlists/DigimonCards';
 
 @Directive({
   selector: 'img[digimonImgFallback]',

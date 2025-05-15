@@ -1,5 +1,5 @@
 import { AsyncPipe, NgClass, NgIf, NgStyle } from '@angular/common';
-import { Component, effect, inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, effect, inject, OnDestroy } from '@angular/core';
 import {
   FormsModule,
   ReactiveFormsModule,
@@ -13,7 +13,7 @@ import { CardModule } from 'primeng/card';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { InputTextModule } from 'primeng/inputtext';
-import { InputTextareaModule } from 'primeng/inputtextarea';
+import { TextareaModule } from 'primeng/textarea';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { TabViewModule } from 'primeng/tabview';
@@ -466,14 +466,12 @@ import { SettingsRowComponent } from '../settings-row.component';
     NgClass,
     InputSwitchModule,
     NgIf,
-    InputTextareaModule,
     NgStyle,
     TabViewModule,
     CardModule,
     SettingsRowComponent,
     InputTextModule,
-    SetFilterComponent,
-    AsyncPipe,
+    TextareaModule,
   ],
   providers: [MessageService],
 })

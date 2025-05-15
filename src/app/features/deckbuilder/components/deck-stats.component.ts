@@ -1,5 +1,5 @@
 import { AsyncPipe, NgClass, NgIf } from '@angular/common';
-import { Component, computed, effect, inject, Input, Signal } from '@angular/core';
+import { Component, computed, inject, Input, Signal } from '@angular/core';
 import { IDeck, IDeckCard } from '../../../../models';
 import { mapToDeckCards } from '../../../functions';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
@@ -29,7 +29,7 @@ import { DdtoSpreadComponent } from '../../shared/statistics/ddto-spread.compone
           [deck]="mainDeck()"
           class="max-w-[40rem]"
           [ngClass]="{
-            'lg:ml-3 lg:mr-auto': collectionView
+            'lg:ml-3 lg:mr-auto': collectionView,
           }"></digimon-chart-containers>
 
         <digimon-color-spread
@@ -47,7 +47,6 @@ import { DdtoSpreadComponent } from '../../shared/statistics/ddto-spread.compone
     DdtoSpreadComponent,
     ChartContainersComponent,
     ColorSpreadComponent,
-    AsyncPipe,
   ],
 })
 export class DeckStatsComponent {

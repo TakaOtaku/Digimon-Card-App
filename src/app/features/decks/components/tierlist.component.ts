@@ -5,12 +5,11 @@ import {
   Component,
   computed,
   inject,
-  ViewChild,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
-import { MenuItem, MessageService } from 'primeng/api';
+import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { DragDropModule } from 'primeng/dragdrop';
@@ -23,7 +22,7 @@ import { DigimonCardStore } from '../../../store/digimon-card.store';
 import { WebsiteStore } from '../../../store/website.store';
 import { DeckDialogComponent } from '../../shared/dialogs/deck-dialog.component';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
-import { ContextMenu, ContextMenuModule } from 'primeng/contextmenu';
+import { ContextMenuModule } from 'primeng/contextmenu';
 import { SaveStore } from '../../../store/save.store';
 
 @Component({
@@ -104,7 +103,7 @@ import { SaveStore } from '../../../store/save.store';
                 [lazyLoad]="deck.image"
                 [ngStyle]="{
                   border: '2px solid black',
-                  'border-radius': '5px'
+                  'border-radius': '5px',
                 }"
                 [alt]="deck.name"
                 class="barsHandle m-auto h-24 cursor-pointer"
@@ -150,7 +149,6 @@ import { SaveStore } from '../../../store/save.store';
     ListboxModule,
     FormsModule,
     DialogModule,
-    DeckDialogComponent,
     InputTextModule,
     ContextMenuModule,
     NgIf,

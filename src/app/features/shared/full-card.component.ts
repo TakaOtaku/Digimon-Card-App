@@ -1,15 +1,5 @@
-import { AsyncPipe, NgClass, NgIf } from '@angular/common';
-import {
-  ChangeDetectorRef,
-  Component, computed,
-  effect,
-  EventEmitter,
-  inject,
-  Input,
-  OnDestroy,
-  OnInit,
-  Output
-} from '@angular/core';
+import { NgClass, NgIf } from '@angular/common';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DialogModule } from 'primeng/dialog';
 import { DragDropModule } from 'primeng/dragdrop';
@@ -27,9 +17,7 @@ import { CardImageComponent } from './card-image.component';
       (onDragStart)="setDraggedCard(card)"
       class="relative inline-flex w-full transition-transform hover:scale-105">
       <div (click)="click()" (contextmenu)="rightclick()">
-        <digimon-card-image
-          [card]="card"
-          [count]="count"></digimon-card-image>
+        <digimon-card-image [card]="card" [count]="count"></digimon-card-image>
       </div>
 
       <ng-container>
@@ -38,9 +26,10 @@ import { CardImageComponent } from './card-image.component';
           class="text-shadow-white absolute right-1 z-[100] px-1 text-3xl font-black text-orange-500"
           [ngClass]="{
             'bottom-1': !collectionMode(),
-            ' bottom-10': collectionMode()
+            ' bottom-10': collectionMode(),
           }">
-          {{ getCountInDeck(this.card.id) }}<span class="pr-1 text-sky-700">/</span
+          {{ getCountInDeck(this.card.id)
+          }}<span class="pr-1 text-sky-700">/</span
           >{{
             card.cardNumber === 'BT6-085' ||
             card.cardNumber === 'EX2-046' ||
@@ -86,12 +75,11 @@ import { CardImageComponent } from './card-image.component';
     NgClass,
     FormsModule,
     DialogModule,
-    AsyncPipe,
   ],
 })
 export class FullCardComponent {
   @Input() card: DigimonCard = JSON.parse(JSON.stringify(dummyCard));
-  @Input() count: number;
+  @Input() count!: number;
 
   @Input() width?: string;
   @Input() compact?: boolean = false;
@@ -110,9 +98,11 @@ export class FullCardComponent {
   collectionMode = this.saveStore.collectionMode;
 
   getCountInDeck(cardId: string) {
-      return this.websiteStore
+    return (
+      this.websiteStore
         .deck()
-        .cards.find((value) => value.id === withoutJ(cardId))?.count ?? 0;
+        .cards.find((value) => value.id === withoutJ(cardId))?.count ?? 0
+    );
   }
 
   addCardToDeck() {

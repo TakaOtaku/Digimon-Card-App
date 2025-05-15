@@ -26,7 +26,6 @@ import { DigimonCardStore } from '../../../store/digimon-card.store';
 import { emptyDeck } from '../../../store/reducers/digimon.reducers';
 import { SaveStore } from '../../../store/save.store';
 import { WebsiteStore } from '../../../store/website.store';
-import { DeckActions } from './../../../store/digimon.actions';
 
 @Component({
   selector: 'digimon-change-accessorie-dialog',

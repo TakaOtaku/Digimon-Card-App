@@ -1,9 +1,9 @@
 import { NgClass, NgIf, NgStyle } from '@angular/common';
 import { Component, inject, Input } from '@angular/core';
+import { ImgFallbackDirective } from '@directives';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
-import { ImgFallbackDirective } from 'src/app/directives/ImgFallback.directive';
-import { DigimonCard, dummyCard } from '../../../models';
-import { SaveStore } from '../../store/save.store';
+import { DigimonCard, dummyCard } from '@models';
+import { SaveStore } from '@store';
 
 @Component({
   selector: 'digimon-card-image',
@@ -52,7 +52,7 @@ import { SaveStore } from '../../store/save.store';
   `,
   styleUrls: ['./card-image.component.scss'],
   standalone: true,
-  imports: [NgIf, LazyLoadImageModule, NgClass, NgStyle, ImgFallbackDirective],
+  imports: [LazyLoadImageModule, NgClass, NgStyle, ImgFallbackDirective],
 })
 export class CardImageComponent {
   @Input() card: DigimonCard = JSON.parse(JSON.stringify(dummyCard));

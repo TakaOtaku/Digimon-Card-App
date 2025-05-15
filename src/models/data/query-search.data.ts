@@ -1,12 +1,17 @@
 import {
-  Attributes, Blocks, CardTypes,
+  Attributes,
+  Blocks,
+  CardTypes,
   Colors,
   Forms,
   Illustrators,
-  Keywords, Rarity,
-  Restrictions, Sets,
+  Keywords,
+  Rarity,
+  Restrictions,
+  Sets,
   SpecialRequirements,
-  Types, Versions
+  Types,
+  Versions,
 } from './filter.data';
 
 export const FilterTypes = [

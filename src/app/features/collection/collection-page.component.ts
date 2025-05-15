@@ -5,7 +5,6 @@ import { ActivatedRoute } from '@angular/router';
 import { map, of, switchMap } from 'rxjs';
 import { emptySave } from '../../../models';
 import { DigimonBackendService } from '../../services/digimon-backend.service';
-import { FilterAndSearchComponent } from '../shared/filter/filter-and-search.component';
 import { PageComponent } from '../shared/page.component';
 import { PaginationCardListComponent } from './components/pagination-card-list.component';
 
@@ -21,13 +20,7 @@ import { PaginationCardListComponent } from './components/pagination-card-list.c
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    FilterAndSearchComponent,
-    PaginationCardListComponent,
-    PageComponent,
-    AsyncPipe,
-    NgIf,
-  ],
+  imports: [PaginationCardListComponent, PageComponent, AsyncPipe, NgIf],
 })
 export class CollectionPageComponent {
   meta = inject(Meta);

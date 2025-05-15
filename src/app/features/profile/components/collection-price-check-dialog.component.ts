@@ -181,7 +181,6 @@ import { CardImageComponent } from '../../shared/card-image.component';
     NgFor,
     CardImageComponent,
     TableModule,
-    AsyncPipe,
     CurrencyPipe,
   ],
 })

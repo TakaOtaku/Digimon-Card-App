@@ -1,4 +1,4 @@
-import { AsyncPipe, NgClass, NgIf } from '@angular/common';
+import { NgClass, NgIf } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -59,7 +59,6 @@ import { DigimonCardStore } from '../../../store/digimon-card.store';
   imports: [
     PaginatorModule,
     FormsModule,
-    AsyncPipe,
     NgIf,
     SliderModule,
     ReactiveFormsModule,
@@ -67,8 +66,8 @@ import { DigimonCardStore } from '../../../store/digimon-card.store';
   ],
 })
 export class PaginationCardListHeaderComponent {
-  @Input() widthForm: FormControl;
-  @Input() viewOnly: boolean;
+  @Input() widthForm!: FormControl;
+  @Input() viewOnly!: boolean;
   @Input() filterButton: boolean | null = true;
   @Output() filterBox = new EventEmitter<boolean>();
 

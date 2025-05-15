@@ -1,5 +1,5 @@
 import { Component, inject, Input, OnInit } from '@angular/core';
-import { DigimonCard, IDeck } from '../../../../models';
+import { IDeck } from '../../../../models';
 import {
   getCountFromDeckCards,
   mapToDeckCards,
@@ -14,42 +14,42 @@ import { DigimonCardStore } from '../../../store/digimon-card.store';
       <div
         class="h-full w-full text-center"
         [ngStyle]="{
-          background: linearGradientEgg()
+          background: linearGradientEgg(),
         }">
         <span class="text-black-outline-xs">{{ levelSpread[0] }}</span>
       </div>
       <div
         class="h-full w-full text-center"
         [ngStyle]="{
-          background: linearGradient(levelSpread[1])
+          background: linearGradient(levelSpread[1]),
         }">
         <span class="text-black-outline-xs">{{ levelSpread[1] }}</span>
       </div>
       <div
         class="h-full w-full text-center"
         [ngStyle]="{
-          background: linearGradient(levelSpread[2])
+          background: linearGradient(levelSpread[2]),
         }">
         <span class="text-black-outline-xs">{{ levelSpread[2] }}</span>
       </div>
       <div
         class="h-full w-full text-center"
         [ngStyle]="{
-          background: linearGradient(levelSpread[3])
+          background: linearGradient(levelSpread[3]),
         }">
         <span class="text-black-outline-xs">{{ levelSpread[3] }}</span>
       </div>
       <div
         class="h-full w-full text-center"
         [ngStyle]="{
-          background: linearGradient(levelSpread[4])
+          background: linearGradient(levelSpread[4]),
         }">
         <span class="text-black-outline-xs">{{ levelSpread[4] }}</span>
       </div>
       <div
         class="h-full w-full text-center"
         [ngStyle]="{
-          background: linearGradient(levelSpread[5])
+          background: linearGradient(levelSpread[5]),
         }">
         <span class="text-black-outline-xs">{{ levelSpread[5] }}</span>
       </div>

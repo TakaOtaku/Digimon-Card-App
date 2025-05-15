@@ -43,16 +43,16 @@ import { ChartContainerComponent } from './chart-container.component';
   imports: [ChartContainerComponent],
 })
 export class ChartContainersComponent implements OnInit, OnChanges {
-  @Input() public deck: IDeckCard[];
+  @Input() public deck!: IDeckCard[];
 
-  digiEggs: number[];
-  lv3: number[];
-  lv4: number[];
-  lv5: number[];
-  lv6: number[];
-  lv7: number[];
-  tamer: number[];
-  options: number[];
+  digiEggs: number[] = [];
+  lv3: number[] = [];
+  lv4: number[] = [];
+  lv5: number[] = [];
+  lv6: number[] = [];
+  lv7: number[] = [];
+  tamer: number[] = [];
+  options: number[] = [];
 
   constructor() {}
 
