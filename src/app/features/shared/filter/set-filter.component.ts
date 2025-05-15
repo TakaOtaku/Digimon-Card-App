@@ -20,7 +20,7 @@ import { FilterStore } from '../../../store/filter.store';
       display="chip"
       scrollHeight="250px"
       class="mx-auto mb-2 w-full max-w-[250px]"
-      styleClass="w-full max-w-[250px] h-8 text-sm">
+      styleClass="w-full max-w-[250px] h-8 text-sm leading-[0.75rem]">
       <ng-template let-group pTemplate="group">
         <div class="align-items-center flex">
           <span>{{ group.label }}</span>

@@ -1,4 +1,4 @@
-import { AsyncPipe, NgClass, NgIf, NgStyle } from '@angular/common';
+import { NgClass, NgIf, NgStyle } from '@angular/common';
 import { Component, effect, inject, OnDestroy } from '@angular/core';
 import {
   FormsModule,
@@ -13,10 +13,10 @@ import { CardModule } from 'primeng/card';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { InputTextModule } from 'primeng/inputtext';
-import { TextareaModule } from 'primeng/textarea';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { TabViewModule } from 'primeng/tabview';
+import { TextareaModule } from 'primeng/textarea';
 import { Subject } from 'rxjs';
 import {
   DigimonCard,
@@ -29,7 +29,6 @@ import { DigimonBackendService } from '../../../services/digimon-backend.service
 import { DialogStore } from '../../../store/dialog.store';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
 import { SaveStore } from '../../../store/save.store';
-import { SetFilterComponent } from '../filter/set-filter.component';
 import { SettingsRowComponent } from '../settings-row.component';
 
 @Component({

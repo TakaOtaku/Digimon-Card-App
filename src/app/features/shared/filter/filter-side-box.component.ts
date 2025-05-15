@@ -1,23 +1,6 @@
-import {
-  Component,
-  computed,
-  effect,
-  EventEmitter,
-  inject,
-  Input,
-  OnDestroy,
-  OnInit,
-} from '@angular/core';
-import {
-  FormsModule,
-  ReactiveFormsModule,
-  UntypedFormControl,
-  UntypedFormGroup,
-} from '@angular/forms';
-import { MessageService } from 'primeng/api';
-import { MultiSelectModule } from 'primeng/multiselect';
-import { debounceTime, Subject, takeUntil } from 'rxjs';
-import { itemsAsSelectItem } from '../../../functions';
+import { Component, computed, effect, EventEmitter, inject, Input, OnDestroy, OnInit } from '@angular/core';
+import { FormsModule, ReactiveFormsModule, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
+import { itemsAsSelectItem } from '@functions';
 import {
   Attributes,
   Colors,
@@ -30,9 +13,11 @@ import {
   Restrictions,
   SpecialRequirements,
   Types,
-} from '../../../../models';
-import { FilterStore } from '../../../store/filter.store';
-import { SaveStore } from '../../../store/save.store';
+} from '@models';
+import { FilterStore, SaveStore } from '@store';
+import { MessageService } from 'primeng/api';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { debounceTime, Subject, takeUntil } from 'rxjs';
 import { RangeSliderComponent } from '../range-slider.component';
 import { SortButtonsComponent } from '../sort-buttons.component';
 import { BlockFilterComponent } from './block-filter.component';
@@ -50,12 +35,9 @@ import { VersionFilterComponent } from './version-filter.component';
       <div class="mt-1 grid w-full grid-cols-4">
         <div></div>
 
-        <digimon-sort-buttons class="col-span-2 mx-auto"></digimon-sort-buttons>
+        <digimon-sort-buttons class="col-span-2 mx-auto white"></digimon-sort-buttons>
 
-        <button
-          (click)="reset()"
-          class="ml-auto mr-5 text-[#e2e4e6]"
-          type="button">
+        <button (click)="reset()" class="ml-auto mr-5 text-[#e2e4e6]" type="button">
           <i class="pi pi-refresh"></i>
         </button>
       </div>
@@ -64,8 +46,7 @@ import { VersionFilterComponent } from './version-filter.component';
       <digimon-color-filter></digimon-color-filter>
       <digimon-card-type-filter></digimon-card-type-filter>
 
-      <digimon-set-filter
-        class="mx-auto w-full max-w-[250px]"></digimon-set-filter>
+      <digimon-set-filter class="mx-auto w-full max-w-[250px]"></digimon-set-filter>
 
       <div class="flex flex-row">
         <digimon-range-slider
@@ -74,10 +55,7 @@ import { VersionFilterComponent } from './version-filter.component';
           [filterFormControl]="levelFilter"
           title="Level:"
           class="w-full"></digimon-range-slider>
-        <button
-          (click)="levelFilter.setValue([2, 7], { emitEvent: false })"
-          class="w-12 text-[#e2e4e6]"
-          type="button">
+        <button (click)="levelFilter.setValue([2, 7], { emitEvent: false })" class="w-12 text-[#e2e4e6]" type="button">
           <i class="pi pi-refresh"></i>
         </button>
       </div>
@@ -89,10 +67,7 @@ import { VersionFilterComponent } from './version-filter.component';
           [filterFormControl]="playCostFilter"
           title="Play Cost:"
           class="w-full"></digimon-range-slider>
-        <button
-          (click)="playCostFilter.setValue([0, 20], { emitEvent: false })"
-          class="w-12 text-[#e2e4e6]"
-          type="button">
+        <button (click)="playCostFilter.setValue([0, 20], { emitEvent: false })" class="w-12 text-[#e2e4e6]" type="button">
           <i class="pi pi-refresh"></i>
         </button>
       </div>
@@ -104,10 +79,7 @@ import { VersionFilterComponent } from './version-filter.component';
           [filterFormControl]="digivolutionFilter"
           title="Digivolution Cost:"
           class="w-full"></digimon-range-slider>
-        <button
-          (click)="digivolutionFilter.setValue([0, 7], { emitEvent: false })"
-          class="w-12 text-[#e2e4e6]"
-          type="button">
+        <button (click)="digivolutionFilter.setValue([0, 7], { emitEvent: false })" class="w-12 text-[#e2e4e6]" type="button">
           <i class="pi pi-refresh"></i>
         </button>
       </div>
@@ -120,10 +92,7 @@ import { VersionFilterComponent } from './version-filter.component';
           suffix="000"
           title="DP:"
           class="w-full"></digimon-range-slider>
-        <button
-          (click)="dpFilter.setValue([1, 17], { emitEvent: false })"
-          class="w-12 text-[#e2e4e6]"
-          type="button">
+        <button (click)="dpFilter.setValue([1, 17], { emitEvent: false })" class="w-12 text-[#e2e4e6]" type="button">
           <i class="pi pi-refresh"></i>
         </button>
       </div>
@@ -163,7 +132,7 @@ import { VersionFilterComponent } from './version-filter.component';
         display="chip"
         scrollHeight="250px"
         class="mx-auto my-1 w-full max-w-[250px]"
-        styleClass="w-full mt-1 h-8 text-sm max-w-[250px]">
+        styleClass="w-full mt-1 h-8 text-sm max-w-[250px] leading-[0.75rem]">
       </p-multiSelect>
 
       <p-multiSelect
@@ -178,7 +147,7 @@ import { VersionFilterComponent } from './version-filter.component';
         display="chip"
         scrollHeight="250px"
         class="mx-auto mb-1 w-full max-w-[250px]"
-        styleClass="w-full mt-1 h-8 text-sm max-w-[250px]">
+        styleClass="w-full mt-1 h-8 text-sm max-w-[250px] leading-[0.75rem]">
       </p-multiSelect>
 
       <p-multiSelect
@@ -193,7 +162,7 @@ import { VersionFilterComponent } from './version-filter.component';
         display="chip"
         scrollHeight="250px"
         class="mx-auto mb-1 w-full max-w-[250px]"
-        styleClass="w-full mt-1 h-8 text-sm max-w-[250px]">
+        styleClass="w-full mt-1 h-8 text-sm max-w-[250px] leading-[0.75rem]">
       </p-multiSelect>
 
       <p-multiSelect
@@ -208,7 +177,7 @@ import { VersionFilterComponent } from './version-filter.component';
         display="chip"
         scrollHeight="250px"
         class="mx-auto mb-1 w-full max-w-[250px]"
-        styleClass="w-full mt-1 h-8 text-sm max-w-[250px]">
+        styleClass="w-full mt-1 h-8 text-sm max-w-[250px] leading-[0.75rem]">
       </p-multiSelect>
 
       <p-multiSelect
@@ -223,7 +192,7 @@ import { VersionFilterComponent } from './version-filter.component';
         display="chip"
         scrollHeight="250px"
         class="mx-auto mb-1 w-full max-w-[250px]"
-        styleClass="w-full mt-1 h-8 text-sm max-w-[250px]">
+        styleClass="w-full mt-1 h-8 text-sm max-w-[250px] leading-[0.75rem]">
       </p-multiSelect>
 
       <p-multiSelect
@@ -238,7 +207,7 @@ import { VersionFilterComponent } from './version-filter.component';
         display="chip"
         scrollHeight="250px"
         class="mx-auto mb-1 w-full max-w-[250px]"
-        styleClass="w-full mt-1 h-8 text-sm max-w-[250px]">
+        styleClass="w-full mt-1 h-8 text-sm max-w-[250px] leading-[0.75rem]">
       </p-multiSelect>
 
       <p-multiSelect
@@ -253,7 +222,7 @@ import { VersionFilterComponent } from './version-filter.component';
         display="chip"
         scrollHeight="250px"
         class="mx-auto mb-1 w-full max-w-[250px]"
-        styleClass="w-full mt-1 h-8 text-sm max-w-[250px]">
+        styleClass="w-full mt-1 h-8 text-sm max-w-[250px] leading-[0.75rem]">
       </p-multiSelect>
 
       <p-multiSelect
@@ -268,7 +237,7 @@ import { VersionFilterComponent } from './version-filter.component';
         display="chip"
         scrollHeight="250px"
         class="mx-auto mb-1 w-full max-w-[250px]"
-        styleClass="w-full mt-1 h-8 text-sm max-w-[250px]">
+        styleClass="w-full mt-1 h-8 text-sm max-w-[250px] leading-[0.75rem]">
       </p-multiSelect>
     </div>
   `,
@@ -340,7 +309,7 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
   presets = itemsAsSelectItem(Presets);
 
   resetEmitter = new EventEmitter<void>();
-
+  collectionCountMax = computed(() => this.saveStore.settings().countMax);
   private filter!: IFilter;
   updateFilter = effect(() => {
     const filter = this.filterStore.filter();
@@ -380,17 +349,13 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
       emitEvent: false,
     });
   });
-
-  collectionCountMax = computed(() => this.saveStore.settings().countMax);
   private onDestroy$ = new Subject();
 
   ngOnInit(): void {
-    this.filterFormGroup.valueChanges
-      .pipe(debounceTime(200), takeUntil(this.onDestroy$))
-      .subscribe((filterValue) => {
-        const filter: IFilter = { ...this.filter, ...filterValue };
-        this.filterStore.updateFilter(filter);
-      });
+    this.filterFormGroup.valueChanges.pipe(debounceTime(200), takeUntil(this.onDestroy$)).subscribe((filterValue) => {
+      const filter: IFilter = { ...this.filter, ...filterValue };
+      this.filterStore.updateFilter(filter);
+    });
   }
 
   ngOnDestroy() {

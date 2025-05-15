@@ -1,17 +1,9 @@
 import { Injectable } from '@angular/core';
-import {
-  Auth,
-  setPersistence,
-  browserSessionPersistence,
-  user,
-  User,
-  signInWithPopup,
-  signOut,
-} from '@angular/fire/auth';
+import { Auth, browserSessionPersistence, setPersistence, signInWithPopup, signOut, user, User } from '@angular/fire/auth';
+import { emptySave, emptySettings, ISave, IUser } from '@models';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { MessageService } from 'primeng/api';
 import { catchError, first, Observable, of, retry, Subject } from 'rxjs';
-import { emptySave, emptySettings, ISave, IUser } from '@models';
 import { DigimonBackendService } from './digimon-backend.service';
 
 @Injectable({
@@ -32,14 +24,9 @@ export class AuthService {
 
     this.user$.subscribe((firebaseUser) => {
       if (firebaseUser) {
-        debugger;
         this.SetUserData(firebaseUser, null); // We'll update this later with the actual saveStore
       }
     });
-  }
-
-  private setSessionStoragePersistence() {
-    setPersistence(this.firebaseAuth, browserSessionPersistence);
   }
 
   get isLoggedIn(): boolean {
@@ -166,10 +153,7 @@ export class AuthService {
 
     this.userData = userData;
 
-    this.digimonBackendService
-      .updateSave(this.userData.save)
-      .pipe(first())
-      .subscribe();
+    this.digimonBackendService.updateSave(this.userData.save).pipe(first()).subscribe();
 
     this.authChange.next(true);
   }
@@ -207,21 +191,20 @@ export class AuthService {
       return this.loadLocalStorageSave();
     }
 
-    return this.digimonBackendService
-      .getSave(this.userData!.uid)
-      .pipe(retry(5));
+    return this.digimonBackendService.getSave(this.userData!.uid).pipe(retry(5));
+  }
+
+  private setSessionStoragePersistence() {
+    setPersistence(this.firebaseAuth, browserSessionPersistence);
   }
 
   // Check local storage for a backup save, if there is none create a new save
   private loadLocalStorageSave(): Observable<ISave> {
     const localStorageItem = localStorage.getItem('Digimon-Card-Collector');
-    let localStorageSave: ISave | null = localStorageItem
-      ? JSON.parse(localStorageItem)
-      : null;
+    let localStorageSave: ISave | null = localStorageItem ? JSON.parse(localStorageItem) : null;
 
     if (localStorageSave) {
-      localStorageSave =
-        this.digimonBackendService.checkSaveValidity(localStorageSave);
+      localStorageSave = this.digimonBackendService.checkSaveValidity(localStorageSave);
       return of(localStorageSave!);
     }
     return of(emptySave);
@@ -229,9 +212,7 @@ export class AuthService {
 
   private getLocalStorageSave(): ISave {
     const localStorageItem = localStorage.getItem('Digimon-Card-Collector');
-    let localStorageSave: ISave | null = localStorageItem
-      ? JSON.parse(localStorageItem)
-      : null;
+    let localStorageSave: ISave | null = localStorageItem ? JSON.parse(localStorageItem) : null;
     return localStorageSave || emptySave;
   }
 }

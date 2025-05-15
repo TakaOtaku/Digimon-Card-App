@@ -1,4 +1,4 @@
-import { AsyncPipe, NgFor, NgIf } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import {
   ChangeDetectorRef,
   Component,
@@ -9,6 +9,9 @@ import {
 } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
+import { setDeckImage } from '@functions';
+import { emptyDeck, ICountCard, IDeck, ITournamentDeck } from '@models';
+import { DialogStore, DigimonCardStore, SaveStore, WebsiteStore } from '@store';
 import { ToastrService } from 'ngx-toastr';
 import { BlockUIModule } from 'primeng/blockui';
 import { ButtonModule } from 'primeng/button';
@@ -18,15 +21,7 @@ import { PaginatorModule } from 'primeng/paginator';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { TooltipModule } from 'primeng/tooltip';
 import { Subject } from 'rxjs';
-import { emptyDeck, ICountCard, IDeck, ITournamentDeck } from '../../../models';
-import { setDeckImage } from '../../functions';
-import { DialogStore } from '../../store/dialog.store';
-import { DigimonCardStore } from '../../store/digimon-card.store';
-import { SaveStore } from '../../store/save.store';
-import { WebsiteStore } from '../../store/website.store';
 import { DeckContainerComponent } from '../shared/deck-container.component';
-import { DeckDialogComponent } from '../shared/dialogs/deck-dialog.component';
-import { DeckSubmissionComponent } from '../shared/dialogs/deck-submission.component';
 import { PageComponent } from '../shared/page.component';
 import { DeckStatisticsComponent } from './components/deck-statistics.component';
 import { DecksFilterComponent } from './components/decks-filter.component';
@@ -139,25 +134,17 @@ import { TierlistComponent } from './components/tierlist.component';
   providers: [],
 })
 export class DecksPageComponent implements OnInit {
-  private meta = inject(Meta);
-  private title = inject(Title);
-  private toastrService = inject(ToastrService);
-
   saveStore = inject(SaveStore);
   dialogStore = inject(DialogStore);
   websiteStore = inject(WebsiteStore);
-
   selectedDeck: IDeck = emptyDeck;
-
   form = new UntypedFormGroup({
     searchFilter: new UntypedFormControl(''),
     tagFilter: new UntypedFormControl([]),
   });
-
   deckDialog = false;
   deckStatsDialog = false;
   updateStatistics = new Subject<boolean>();
-
   decksToShow: IDeck[] = [];
   first = 0;
   page = 0;
@@ -165,9 +152,10 @@ export class DecksPageComponent implements OnInit {
   decks: IDeck[] = [];
   filteredDecks: IDeck[] = [];
   collection: ICountCard[];
-
   loading2 = false;
-
+  private meta = inject(Meta);
+  private title = inject(Title);
+  private toastrService = inject(ToastrService);
   private digimonCardStore = inject(DigimonCardStore);
 
   constructor(private changeDetection: ChangeDetectorRef) {
@@ -199,19 +187,6 @@ export class DecksPageComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize(event: Event): void {
     this.checkScreenWidth((event.target as Window).innerWidth);
-  }
-
-  private checkScreenWidth(innerWidth: number) {
-    const lg = innerWidth >= 1024;
-    const md = innerWidth >= 768;
-    if (lg) {
-      this.rows = 20;
-    } else if (md) {
-      this.rows = 10;
-    } else {
-      this.rows = 5;
-    }
-    this.setDecksToShow(0, this.rows);
   }
 
   showDeckDetails(deck: IDeck) {
@@ -264,6 +239,19 @@ export class DecksPageComponent implements OnInit {
       this.form.get('searchFilter')!.value,
     );
     this.filteredDecks = this.applyTagFilter(this.form.get('tagFilter')!.value);
+    this.setDecksToShow(0, this.rows);
+  }
+
+  private checkScreenWidth(innerWidth: number) {
+    const lg = innerWidth >= 1024;
+    const md = innerWidth >= 768;
+    if (lg) {
+      this.rows = 20;
+    } else if (md) {
+      this.rows = 10;
+    } else {
+      this.rows = 5;
+    }
     this.setDecksToShow(0, this.rows);
   }
 
