@@ -1,4 +1,3 @@
-import { NgIf } from '@angular/common';
 import { Component, effect, inject } from '@angular/core';
 import { BlockButtons } from '../../../../models';
 import { FilterStore } from '../../../store/filter.store';

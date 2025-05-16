@@ -6,22 +6,14 @@ import { ButtonModule } from 'primeng/button';
 import { TextareaModule } from 'primeng/textarea';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { ColorsWithoutMulti, DigimonCard, IDeck } from '../../../../models';
-import {
-  compareIDs,
-  formatId,
-  levelSort,
-  mapToDeckCards,
-} from '../../../functions';
+import { compareIDs, formatId, levelSort, mapToDeckCards } from '../../../functions';
 import { DialogStore } from '../../../store/dialog.store';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
 
 @Component({
   selector: 'digimon-export-deck-dialog',
   template: `
-    <p-selectButton
-      [options]="exportList"
-      [(ngModel)]="exportType"
-      (onOptionClick)="changeExportType($event)"></p-selectButton>
+    <p-selectButton [options]="exportList" [(ngModel)]="exportType" (onOptionClick)="changeExportType($event)"></p-selectButton>
     <div *ngIf="exportType !== 'IMAGE'">
       <textarea
         #textAreaElement
@@ -32,24 +24,9 @@ import { DigimonCardStore } from '../../../store/digimon-card.store';
     </div>
 
     <div [ngClass]="{ hidden: exportType !== 'IMAGE' }">
-      <canvas
-        #Canvas
-        id="Canvas"
-        width="640"
-        height="360"
-        (contextmenu)="downloadImage()"></canvas>
-      <canvas
-        #HDCanvas
-        id="HDCanvas"
-        width="1920"
-        height="1080"
-        class="hidden"></canvas>
-      <canvas
-        #TTSCanvas
-        id="TTS"
-        width="7440"
-        height="6240"
-        class="hidden"></canvas>
+      <canvas #Canvas id="Canvas" width="640" height="360" (contextmenu)="downloadImage()"></canvas>
+      <canvas #HDCanvas id="HDCanvas" width="1920" height="1080" class="hidden"></canvas>
+      <canvas #TTSCanvas id="TTS" width="7440" height="6240" class="hidden"></canvas>
       <p-selectButton
         class="Colors mt-3"
         [options]="colors"
@@ -74,46 +51,19 @@ import { DigimonCardStore } from '../../../store/digimon-card.store';
         icon="pi pi-copy"
         (click)="copyToClipboard()"
         styleClass="p-button-sm"></p-button>
-      <p-button
-        *ngIf="exportType !== 'IMAGE'"
-        (click)="exportDeckToFile()"
-        class="ml-5"
-        styleClass="p-button-sm"
-        >Export to File
-      </p-button>
-      <p-button
-        *ngIf="exportType === 'IMAGE'"
-        (click)="setExportTypeIMAGE()"
-        class="ml-5"
-        styleClass="p-button-sm">
+      <p-button *ngIf="exportType !== 'IMAGE'" (click)="exportDeckToFile()" class="ml-5" styleClass="p-button-sm">Export to File </p-button>
+      <p-button *ngIf="exportType === 'IMAGE'" (click)="setExportTypeIMAGE()" class="ml-5" styleClass="p-button-sm">
         Generate Image
       </p-button>
-      <p-button
-        *ngIf="exportType === 'IMAGE'"
-        (click)="downloadImageTTS()"
-        class="ml-5"
-        styleClass="p-button-sm">
+      <p-button *ngIf="exportType === 'IMAGE'" (click)="downloadImageTTS()" class="ml-5" styleClass="p-button-sm">
         Download Deck (TTS)
       </p-button>
-      <p-button
-        *ngIf="exportType === 'IMAGE'"
-        (click)="downloadImage()"
-        class="ml-5"
-        styleClass="p-button-sm"
-        >Download Image
-      </p-button>
+      <p-button *ngIf="exportType === 'IMAGE'" (click)="downloadImage()" class="ml-5" styleClass="p-button-sm">Download Image </p-button>
     </div>
   `,
   styleUrls: ['./export-deck-dialog.component.scss'],
   standalone: true,
-  imports: [
-    SelectButtonModule,
-    FormsModule,
-    NgIf,
-    TextareaModule,
-    NgClass,
-    ButtonModule,
-  ],
+  imports: [SelectButtonModule, FormsModule, NgIf, TextareaModule, NgClass, ButtonModule],
 })
 export class ExportDeckDialogComponent implements OnInit {
   digimonCardStore = inject(DigimonCardStore);
@@ -146,15 +96,7 @@ export class ExportDeckDialogComponent implements OnInit {
     this.deckSort();
   }
 
-  private static writeText(
-    ctx: any,
-    text: string,
-    x: number,
-    y: number,
-    scale: number,
-    fontSize?: number,
-    fillStyle?: string,
-  ) {
+  private static writeText(ctx: any, text: string, x: number, y: number, scale: number, fontSize?: number, fillStyle?: string) {
     ctx.font = fontSize ? fontSize * scale + 'px Roboto' : '15px Roboto';
     ctx.shadowColor = 'black';
     ctx.shadowBlur = 2 * scale;
@@ -197,17 +139,13 @@ export class ExportDeckDialogComponent implements OnInit {
 
   setExportTypeIMAGE(): void {
     this.generateCanvas();
-    this.generateCanvas(
-      document.getElementById('HDCanvas')! as HTMLCanvasElement,
-    );
+    this.generateCanvas(document.getElementById('HDCanvas')! as HTMLCanvasElement);
     this.generateTTS(document.getElementById('TTS')! as HTMLCanvasElement);
   }
 
   downloadImageTTS() {
     const canvas = document.getElementById('TTS')! as HTMLCanvasElement;
-    const img = canvas
-      .toDataURL('image/jpg', 0.7)
-      .replace('image/jpg', 'image/octet-stream');
+    const img = canvas.toDataURL('image/jpg', 0.7).replace('image/jpg', 'image/octet-stream');
     const link = document.createElement('a');
     link.download = 'deck.png';
     link.href = img;
@@ -216,9 +154,7 @@ export class ExportDeckDialogComponent implements OnInit {
 
   downloadImage() {
     const canvas = document.getElementById('HDCanvas')! as HTMLCanvasElement;
-    const img = canvas
-      .toDataURL('image/png', 1.0)
-      .replace('image/png', 'image/octet-stream');
+    const img = canvas.toDataURL('image/png', 1.0).replace('image/png', 'image/octet-stream');
     const link = document.createElement('a');
     link.download = 'deck.png';
     link.href = img;
@@ -245,13 +181,9 @@ export class ExportDeckDialogComponent implements OnInit {
       const digimonCard = this.digimonCardStore.cardsMap().get(card.id);
       if (digimonCard) {
         if (this.normalOrder) {
-          this.deckText += `${card.id.replace('ST0', 'ST')} ${
-            digimonCard?.name.english
-          } ${card.count}\n`;
+          this.deckText += `${card.id.replace('ST0', 'ST')} ${digimonCard?.name.english} ${card.count}\n`;
         } else {
-          this.deckText += `${card.count} ${
-            digimonCard?.name.english
-          } ${card.id.replace('ST0', 'ST')}\n`;
+          this.deckText += `${card.count} ${digimonCard?.name.english} ${card.id.replace('ST0', 'ST')}\n`;
         }
       }
     });
@@ -273,9 +205,7 @@ export class ExportDeckDialogComponent implements OnInit {
     this.deckText = '// Digimon DeckList\n\n';
     this.deck.cards.forEach((card) => {
       const dc = this.digimonCardStore.cardsMap().get(card.id);
-      this.deckText += `${card.count} ${
-        dc?.name.english
-      } [DCG] (${card.id.replace('ST0', 'ST')})\n`;
+      this.deckText += `${card.count} ${dc?.name.english} [DCG] (${card.id.replace('ST0', 'ST')})\n`;
     });
   }
 
@@ -288,9 +218,7 @@ export class ExportDeckDialogComponent implements OnInit {
       if (canvas) {
         return canvas.getContext('2d')!;
       }
-      return (
-        document.getElementById('Canvas')! as HTMLCanvasElement
-      ).getContext('2d')!;
+      return (document.getElementById('Canvas')! as HTMLCanvasElement).getContext('2d')!;
     };
 
     const loadImage = (url: string) => {
@@ -306,13 +234,7 @@ export class ExportDeckDialogComponent implements OnInit {
       const ctx = getContext();
       const myOptions = Object.assign({}, options);
       return loadImage(myOptions.uri).then((img: any) => {
-        ctx.drawImage(
-          img,
-          myOptions.x * scale,
-          myOptions.y * scale,
-          myOptions.sw * scale,
-          myOptions.sh * scale,
-        );
+        ctx.drawImage(img, myOptions.x * scale, myOptions.y * scale, myOptions.sw * scale, myOptions.sh * scale);
 
         imgs = this.getImages();
 
@@ -324,13 +246,7 @@ export class ExportDeckDialogComponent implements OnInit {
       const ctx = getContext();
       const myOptions = Object.assign({}, options);
       return loadImage(myOptions.uri).then((img: any) => {
-        ctx.drawImage(
-          img,
-          myOptions.x * scale,
-          myOptions.y * scale,
-          myOptions.sw * scale,
-          myOptions.sh * scale,
-        );
+        ctx.drawImage(img, myOptions.x * scale, myOptions.y * scale, myOptions.sw * scale, myOptions.sh * scale);
         loadedCount += 1;
         if (loadedCount === imgs.length) {
           this.drawCount(ctx, scale);
@@ -373,9 +289,7 @@ export class ExportDeckDialogComponent implements OnInit {
     let cardsInCurrentRow = 1;
     const cardsPerRow = 9;
     this.deck.cards.forEach((card) => {
-      const fullCard = this.digimonCards.find((search: DigimonCard) =>
-        compareIDs(card.id, search.id),
-      );
+      const fullCard = this.digimonCards.find((search: DigimonCard) => compareIDs(card.id, search.id));
       imgs.push({
         uri: fullCard!.cardImage,
         x: x,
@@ -403,9 +317,7 @@ export class ExportDeckDialogComponent implements OnInit {
       if (canvas) {
         return canvas.getContext('2d')!;
       }
-      return (
-        document.getElementById('Canvas')! as HTMLCanvasElement
-      ).getContext('2d')!;
+      return (document.getElementById('Canvas')! as HTMLCanvasElement).getContext('2d')!;
     };
 
     const loadImage = (url: string) => {
@@ -421,13 +333,7 @@ export class ExportDeckDialogComponent implements OnInit {
       const ctx = getContext();
       const myOptions = Object.assign({}, options);
       return loadImage(myOptions.uri).then((img: any) => {
-        ctx.drawImage(
-          img,
-          myOptions.x,
-          myOptions.y,
-          myOptions.sw,
-          myOptions.sh,
-        );
+        ctx.drawImage(img, myOptions.x, myOptions.y, myOptions.sw, myOptions.sh);
 
         imgs = this.getImagesAll();
 
@@ -439,13 +345,7 @@ export class ExportDeckDialogComponent implements OnInit {
       const ctx = getContext();
       const myOptions = Object.assign({}, options);
       return loadImage(myOptions.uri).then((img: any) => {
-        ctx.drawImage(
-          img,
-          myOptions.x,
-          myOptions.y,
-          myOptions.sw,
-          myOptions.sh,
-        );
+        ctx.drawImage(img, myOptions.x, myOptions.y, myOptions.sw, myOptions.sh);
         loadedCount += 1;
         if (loadedCount === imgs.length) {
           this.drawCount(ctx, 1);
@@ -471,9 +371,7 @@ export class ExportDeckDialogComponent implements OnInit {
     let cardsInCurrentRow = 1;
     const cardsPerRow = 10;
     this.deck.cards.forEach((card) => {
-      const fullCard = this.digimonCards.find((search: DigimonCard) =>
-        compareIDs(card.id, search.id),
-      );
+      const fullCard = this.digimonCards.find((search: DigimonCard) => compareIDs(card.id, search.id));
       for (let i = 1; i <= card.count; i++) {
         imgs.push({
           uri: fullCard!.cardImage,
@@ -511,23 +409,8 @@ export class ExportDeckDialogComponent implements OnInit {
     let cardsInCurrentRow = 1;
     const cardsPerRow = 9;
     this.deck.cards.forEach((card) => {
-      ExportDeckDialogComponent.writeText(
-        ctx,
-        'x',
-        x - 13,
-        y,
-        scale,
-        20,
-        '#0369a1',
-      );
-      ExportDeckDialogComponent.writeText(
-        ctx,
-        card.count.toString(),
-        x,
-        y,
-        scale,
-        20,
-      );
+      ExportDeckDialogComponent.writeText(ctx, 'x', x - 13, y, scale, 20, '#0369a1');
+      ExportDeckDialogComponent.writeText(ctx, card.count.toString(), x, y, scale, 20);
 
       if (cardsInCurrentRow >= cardsPerRow) {
         y += 95;

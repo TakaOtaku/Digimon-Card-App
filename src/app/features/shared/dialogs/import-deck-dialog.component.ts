@@ -1,4 +1,3 @@
-import { AsyncPipe, NgIf } from '@angular/common';
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MessageService } from 'primeng/api';
@@ -14,10 +13,7 @@ import { WebsiteStore } from '../../../store/website.store';
   template: `
     <div>
       <div>
-        <p>
-          Copy your deck in the text area and press import or press the "Import
-          Text-File"-Button to import a file.
-        </p>
+        <p>Copy your deck in the text area and press import or press the "Import Text-File"-Button to import a file.</p>
         <textarea
           pInputTextarea
           [placeholder]="importPlaceholder"
@@ -35,12 +31,7 @@ import { WebsiteStore } from '../../../store/website.store';
           (change)="handleFileInput($event.target, currentDeck)"
           #fileUpload />
         <button pButton (click)="fileUpload.click()">Import Text-File</button>
-        <button
-          pButton
-          (click)="importDeck(currentDeck)"
-          style="margin-left: 5px">
-          Import
-        </button>
+        <button pButton (click)="importDeck(currentDeck)" style="margin-left: 5px">Import</button>
       </div>
     </div>
   `,

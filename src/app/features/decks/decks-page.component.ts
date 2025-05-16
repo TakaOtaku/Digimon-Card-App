@@ -1,12 +1,5 @@
 import { NgFor, NgIf } from '@angular/common';
-import {
-  ChangeDetectorRef,
-  Component,
-  effect,
-  HostListener,
-  inject,
-  OnInit,
-} from '@angular/core';
+import { ChangeDetectorRef, Component, effect, HostListener, inject, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
 import { setDeckImage } from '@functions';
@@ -36,10 +29,7 @@ import { TierlistComponent } from './components/tierlist.component';
       </p-blockUI>
       <div class="mx-auto self-baseline px-5 w-full max-w-7xl">
         <div class="lg:px-auto flex px-1 flex-col md:flex-row items-baseline">
-          <h1
-            class="text-shadow mt-6 pb-1 text-2xl md:text-4xl font-black text-[#e2e4e6]">
-            Community Decks
-          </h1>
+          <h1 class="text-shadow mt-6 pb-1 text-2xl md:text-4xl font-black text-[#e2e4e6]">Community Decks</h1>
 
           <div class="md:ml-auto">
             <p-button
@@ -57,19 +47,13 @@ import { TierlistComponent } from './components/tierlist.component';
               icon="pi pi-chart-line"
               type="button"
               label="Statistics"
-              (click)="
-                deckStatsDialog = true; updateStatistics.next(true)
-              "></p-button>
+              (click)="deckStatsDialog = true; updateStatistics.next(true)"></p-button>
           </div>
         </div>
 
-        <digimon-decks-filter
-          [form]="form"
-          (applyFilter)="filterChanges()"></digimon-decks-filter>
+        <digimon-decks-filter [form]="form" (applyFilter)="filterChanges()"></digimon-decks-filter>
 
-        <div
-          *ngIf="decksToShow.length > 0; else loading"
-          class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div *ngIf="decksToShow.length > 0; else loading" class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           <digimon-deck-container
             class="mx-auto min-w-[280px] max-w-[285px]"
             *ngFor="let deck of decksToShow"
@@ -108,10 +92,7 @@ import { TierlistComponent } from './components/tierlist.component';
       [resizable]="false"
       styleClass="w-full h-full max-w-6xl min-h-[500px]"
       [baseZIndex]="10000">
-      <digimon-deck-statistics
-        [decks]="filteredDecks"
-        [updateCards]="updateStatistics"
-        [(loading)]="loading2"></digimon-deck-statistics>
+      <digimon-deck-statistics [decks]="filteredDecks" [updateCards]="updateStatistics" [(loading)]="loading2"></digimon-deck-statistics>
     </p-dialog>
   `,
   standalone: true,
@@ -218,26 +199,20 @@ export class DecksPageComponent implements OnInit {
 
     this.filteredDecks = this.filteredDecks.filter((deck) => {
       return deck.cards.every((cardNeededForDeck) => {
-        const totalCount =
-          collectionCounts[cardNeededForDeck.id.split('_', 1)[0]] || 0;
+        const totalCount = collectionCounts[cardNeededForDeck.id.split('_', 1)[0]] || 0;
         return totalCount >= cardNeededForDeck.count;
       });
     });
     this.setDecksToShow(0, this.rows);
 
-    this.toastrService.success(
-      'Filtered for Decks possible with your cards',
-      'Success',
-    );
+    this.toastrService.success('Filtered for Decks possible with your cards', 'Success');
 
     this.loading2 = false;
   }
 
   filterChanges() {
     this.filteredDecks = this.decks;
-    this.filteredDecks = this.applySearchFilter(
-      this.form.get('searchFilter')!.value,
-    );
+    this.filteredDecks = this.applySearchFilter(this.form.get('searchFilter')!.value);
     this.filteredDecks = this.applyTagFilter(this.form.get('tagFilter')!.value);
     this.setDecksToShow(0, this.rows);
   }
@@ -256,15 +231,10 @@ export class DecksPageComponent implements OnInit {
   }
 
   private setDecksToShow(from: number, to: number) {
-    this.decksToShow = this.filteredDecks
-      .slice(from, to)
-      .map((deck: IDeck | ITournamentDeck) => ({
-        ...deck,
-        imageCardId:
-          deck.imageCardId === 'BT1-001'
-            ? setDeckImage(deck, this.digimonCardStore.cards()).id
-            : deck.imageCardId,
-      }));
+    this.decksToShow = this.filteredDecks.slice(from, to).map((deck: IDeck | ITournamentDeck) => ({
+      ...deck,
+      imageCardId: deck.imageCardId === 'BT1-001' ? setDeckImage(deck, this.digimonCardStore.cards()).id : deck.imageCardId,
+    }));
   }
 
   private makeGoogleFriendly() {
@@ -273,8 +243,7 @@ export class DecksPageComponent implements OnInit {
     this.meta.addTags([
       {
         name: 'description',
-        content:
-          'Meta decks, fun decks, tournament decks and many more, find new decks for every set.',
+        content: 'Meta decks, fun decks, tournament decks and many more, find new decks for every set.',
       },
       { name: 'author', content: 'TakaOtaku' },
       {
@@ -291,26 +260,13 @@ export class DecksPageComponent implements OnInit {
     return this.filteredDecks.filter((deck) => {
       const search = searchValue.toLocaleLowerCase();
 
-      const titleInText =
-        deck.title?.toLocaleLowerCase().includes(search) ?? false;
-      const descriptionInText =
-        deck.description?.toLocaleLowerCase().includes(search) ?? false;
-      const userInText =
-        deck.user?.toLocaleLowerCase().includes(search) ?? false;
-      const cardsInText =
-        deck.cards.filter((card) =>
-          card.id.toLocaleLowerCase().includes(search),
-        ).length > 0;
-      const colorInText =
-        deck.color?.name.toLocaleLowerCase().includes(search) ?? false;
+      const titleInText = deck.title?.toLocaleLowerCase().includes(search) ?? false;
+      const descriptionInText = deck.description?.toLocaleLowerCase().includes(search) ?? false;
+      const userInText = deck.user?.toLocaleLowerCase().includes(search) ?? false;
+      const cardsInText = deck.cards.filter((card) => card.id.toLocaleLowerCase().includes(search)).length > 0;
+      const colorInText = deck.color?.name.toLocaleLowerCase().includes(search) ?? false;
 
-      return (
-        titleInText ||
-        descriptionInText ||
-        userInText ||
-        cardsInText ||
-        colorInText
-      );
+      return titleInText || descriptionInText || userInText || cardsInText || colorInText;
     });
   }
 
@@ -318,8 +274,6 @@ export class DecksPageComponent implements OnInit {
     if (!tagValues || tagValues.length === 0) {
       return this.filteredDecks;
     }
-    return this.filteredDecks.filter((deck) =>
-      deck.tags.some((tag) => tagValues.includes(tag.name)),
-    );
+    return this.filteredDecks.filter((deck) => deck.tags.some((tag) => tagValues.includes(tag.name)));
   }
 }

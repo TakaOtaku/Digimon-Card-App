@@ -22,17 +22,6 @@ import { TooltipModule } from 'primeng/tooltip';
     <div class="mb-5 w-full p-1">
       <h1 class="main-font w-full text-3xl font-extrabold uppercase text-[#e2e4e6]">
         Digimon Archtype Ranking
-        <span
-          class="surface-card ml-auto inline-block whitespace-nowrap rounded border border-black px-2.5 py-1.5 text-center align-baseline font-bold leading-none text-[#e2e4e6]"
-          >{{ currentRegion }}</span
-        >
-        <button
-          class="p-button-outlined p-button-rounded p-button-sm mx-2"
-          icon="pi pi-map-marker"
-          pButton
-          pRipple
-          type="button"
-          (click)="switchRegion()"></button>
         <button
           class="p-button-outlined p-button-rounded p-button-sm mx-2"
           icon="pi pi-copy"

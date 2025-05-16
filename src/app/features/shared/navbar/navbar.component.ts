@@ -13,10 +13,7 @@ import { NavLinksComponent } from './nav-links.component';
       border-b lg:border-b-0 lg:border-r border-slate-600 px-5 lg:px-0 lg:py-10 items-center"
       style="backdrop-filter: blur(16px); background-color: color-mix(in srgb, #17212f 70%, transparent)">
       <a class="z-[5000]" href="https://digimoncard.app">
-        <img
-          alt="Logo"
-          class="mt-[0.25rem] cursor-pointer max-h-[2.5rem] md:max-h-[4rem]"
-          src="../../../../assets/images/logo.png" />
+        <img alt="Logo" class="mt-[0.25rem] cursor-pointer max-h-[2.5rem] md:max-h-[4rem]" src="../../../../assets/images/logo.png" />
       </a>
 
       <i
@@ -24,18 +21,11 @@ import { NavLinksComponent } from './nav-links.component';
         class="block md:hidden ml-3 pi pi-bars px-1 text-[#e2e4e6] hover:text-[#64B5F6]"
         style="font-size: 1.25rem"></i>
 
-      <digimon-nav-links
-        class="hidden md:flex flex-row lg:flex-col w-full h-full justify-evenly"></digimon-nav-links>
+      <digimon-nav-links class="hidden md:flex flex-row lg:flex-col w-full h-full justify-evenly"></digimon-nav-links>
     </nav>
   `,
   standalone: true,
-  imports: [
-    FontAwesomeModule,
-    ConfirmPopupModule,
-    DialogModule,
-    NavLinksComponent,
-    SidebarModule,
-  ],
+  imports: [FontAwesomeModule, ConfirmPopupModule, DialogModule, NavLinksComponent, SidebarModule],
 })
 export class NavbarComponent {
   @Output() openSideNav = new EventEmitter<boolean>();

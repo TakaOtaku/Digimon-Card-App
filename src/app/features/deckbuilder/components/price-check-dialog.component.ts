@@ -1,16 +1,12 @@
-import { AsyncPipe, CurrencyPipe, NgFor, NgIf } from '@angular/common';
+import { CurrencyPipe, NgFor, NgIf } from '@angular/common';
 import { Component, inject, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from 'primeng/api';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { TableModule } from 'primeng/table';
-import { async, BehaviorSubject, filter, Subject, takeUntil } from 'rxjs';
+import { BehaviorSubject, filter, Subject, takeUntil } from 'rxjs';
 import { ICountCard } from '@models';
-import {
-  CardMarketService,
-  ProductCM,
-  ProductCMWithCount,
-} from '../../../services/card-market.service';
+import { CardMarketService, ProductCM, ProductCMWithCount } from '../../../services/card-market.service';
 import { SaveStore } from '@store';
 import { WebsiteStore } from '@store';
 
@@ -37,15 +33,10 @@ import { WebsiteStore } from '@store';
 
     <div *ngIf="notFound.length > 0" class="flex flex-row flex-wrap">
       Couldn't find a price for:
-      <span *ngFor="let card of notFound" class="mx-1 font-bold">{{
-        card.cardId
-      }}</span>
+      <span *ngFor="let card of notFound" class="mx-1 font-bold">{{ card.cardId }}</span>
     </div>
 
-    <p-table
-      [value]="filteredProducts"
-      [breakpoint]="'0px'"
-      styleClass="p-datatable-sm p-datatable-striped">
+    <p-table [value]="filteredProducts" [breakpoint]="'0px'" styleClass="p-datatable-sm p-datatable-striped">
       <ng-template pTemplate="header">
         <tr>
           <th>Count</th>
@@ -73,10 +64,7 @@ import { WebsiteStore } from '@store';
           <td>{{ product.avg30 | currency: 'EUR' }}</td>
           <td class="bg-white">
             <a [href]="product.link" target="_blank">
-              <img
-                class="max-h-[2rem]"
-                src="assets/icons/CardmarketLogo.png"
-                alt="Link to CardMarket" />
+              <img class="max-h-[2rem]" src="assets/icons/CardmarketLogo.png" alt="Link to CardMarket" />
             </a>
           </td>
         </tr>
@@ -100,9 +88,7 @@ import { WebsiteStore } from '@store';
 
     <div class="flex flex-col text-xs">
       <span><b>Disclaimer:</b></span>
-      <span>
-        Not all cards may have a price or they could be linked wrong.</span
-      >
+      <span> Not all cards may have a price or they could be linked wrong.</span>
       <span> The Prices are updated once a day.</span>
       <span> TCGPlayer doesn't give out access to their API anymore.</span>
     </div>
@@ -123,15 +109,7 @@ import { WebsiteStore } from '@store';
     `,
   ],
   standalone: true,
-  imports: [
-    SelectButtonModule,
-    FormsModule,
-    NgIf,
-    NgFor,
-    TableModule,
-    SharedModule,
-    CurrencyPipe,
-  ],
+  imports: [SelectButtonModule, FormsModule, NgIf, NgFor, TableModule, SharedModule, CurrencyPipe],
 })
 export class PriceCheckDialogComponent implements OnInit, OnDestroy {
   @Input() checkPrice: BehaviorSubject<boolean>;
@@ -152,12 +130,10 @@ export class PriceCheckDialogComponent implements OnInit, OnDestroy {
   onDestroy$ = new Subject();
 
   ngOnInit() {
-    this.getPriceGuide$
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((priceGuide) => {
-        this.websiteStore.updatePriceGuideCM(priceGuide);
-        this.updatePrice();
-      });
+    this.getPriceGuide$.pipe(takeUntil(this.onDestroy$)).subscribe((priceGuide) => {
+      this.websiteStore.updatePriceGuideCM(priceGuide);
+      this.updatePrice();
+    });
 
     this.checkPrice
       .pipe(
@@ -177,10 +153,7 @@ export class PriceCheckDialogComponent implements OnInit, OnDestroy {
       .deck()
       .cards.map((card) => {
         const foundProduct: ProductCM =
-          this.websiteStore
-            .priceGuideCM()
-            .find((product) => card.id === product.cardId) ??
-          this.emptyProduct(card);
+          this.websiteStore.priceGuideCM().find((product) => card.id === product.cardId) ?? this.emptyProduct(card);
 
         return { ...foundProduct, count: card.count } as ProductCMWithCount;
       })
@@ -237,17 +210,13 @@ export class PriceCheckDialogComponent implements OnInit, OnDestroy {
   }
 
   showOnlyMissing() {
-    this.filteredProducts = this.onlyMissing
-      ? this.getMissingCards()
-      : this.products;
+    this.filteredProducts = this.onlyMissing ? this.getMissingCards() : this.products;
   }
 
   getMissingCards = (): ProductCMWithCount[] => {
     return this.products
       .map((product) => {
-        const foundCard = this.saveStore
-          .collection()
-          .find((collectionCard) => collectionCard.id === product.cardId);
+        const foundCard = this.saveStore.collection().find((collectionCard) => collectionCard.id === product.cardId);
         if (foundCard) {
           return { ...product, count: product.count - foundCard.count };
         } else {

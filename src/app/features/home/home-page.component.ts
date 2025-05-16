@@ -35,8 +35,7 @@ export class HomePageComponent {
       { name: 'author', content: 'TakaOtaku' },
       {
         name: 'keywords',
-        content:
-          'Digimon, decks, deck builder, collection,  tournament, TCG, community, friends, share',
+        content: 'Digimon, decks, deck builder, collection,  tournament, TCG, community, friends, share',
       },
     ]);
   }

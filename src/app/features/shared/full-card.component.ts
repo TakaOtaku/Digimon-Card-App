@@ -28,15 +28,8 @@ import { CardImageComponent } from './card-image.component';
             'bottom-1': !collectionMode(),
             ' bottom-10': collectionMode(),
           }">
-          {{ getCountInDeck(this.card.id)
-          }}<span class="pr-1 text-sky-700">/</span
-          >{{
-            card.cardNumber === 'BT6-085' ||
-            card.cardNumber === 'EX2-046' ||
-            card.cardNumber === 'BT11-061'
-              ? 50
-              : 4
-          }}
+          {{ getCountInDeck(this.card.id) }}<span class="pr-1 text-sky-700">/</span
+          >{{ card.cardNumber === 'BT6-085' || card.cardNumber === 'EX2-046' || card.cardNumber === 'BT11-061' ? 50 : 4 }}
         </span>
       </ng-container>
 
@@ -68,14 +61,7 @@ import { CardImageComponent } from './card-image.component';
   `,
   styleUrls: ['./full-card.component.scss'],
   standalone: true,
-  imports: [
-    DragDropModule,
-    CardImageComponent,
-    NgIf,
-    NgClass,
-    FormsModule,
-    DialogModule,
-  ],
+  imports: [DragDropModule, CardImageComponent, NgIf, NgClass, FormsModule, DialogModule],
 })
 export class FullCardComponent {
   @Input() card: DigimonCard = JSON.parse(JSON.stringify(dummyCard));
@@ -98,11 +84,7 @@ export class FullCardComponent {
   collectionMode = this.saveStore.collectionMode;
 
   getCountInDeck(cardId: string) {
-    return (
-      this.websiteStore
-        .deck()
-        .cards.find((value) => value.id === withoutJ(cardId))?.count ?? 0
-    );
+    return this.websiteStore.deck().cards.find((value) => value.id === withoutJ(cardId))?.count ?? 0;
   }
 
   addCardToDeck() {

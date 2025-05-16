@@ -1,11 +1,4 @@
-import {
-  Directive,
-  ElementRef,
-  HostListener,
-  Input,
-  OnChanges,
-  OnInit,
-} from '@angular/core';
+import { Directive, ElementRef, HostListener, Input, OnChanges, OnInit } from '@angular/core';
 import { addJBeforeWebp, addSampleBeforeWebp } from '@assets/cardlists/DigimonCards';
 
 @Directive({
@@ -45,8 +38,7 @@ export class ImgFallbackDirective implements OnInit, OnChanges {
       }
     } else {
       const indexOfJ = this.digimonImgFallback.lastIndexOf('-J.webp');
-      const sampleJ =
-        this.digimonImgFallback.slice(0, indexOfJ) + '-Sample-J.webp';
+      const sampleJ = this.digimonImgFallback.slice(0, indexOfJ) + '-Sample-J.webp';
       if (sampleJ !== currentSrc) {
         element.src = sampleJ;
         return;

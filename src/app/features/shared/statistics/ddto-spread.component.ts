@@ -1,16 +1,6 @@
-import {
-  Component,
-  inject,
-  Input,
-  OnChanges,
-  OnInit,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, inject, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { IDeck } from '../../../../models';
-import {
-  getCountFromDeckCards,
-  mapToDeckCards,
-} from '../../../functions/digimon-card.functions';
+import { getCountFromDeckCards, mapToDeckCards } from '../../../functions/digimon-card.functions';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
 import { SingleContainerComponent } from '../single-container.component';
 import { NgIf, NgStyle } from '@angular/common';
@@ -55,23 +45,10 @@ import { NgIf, NgStyle } from '@angular/common';
     </div>
 
     <div *ngIf="container" class="flex w-full flex-row">
-      <digimon-single-container
-        label="Egg"
-        [value]="ddto[0]"
-        percent="20"
-        class="w-12"></digimon-single-container>
-      <digimon-single-container
-        label="Digimon"
-        [value]="ddto[1]"
-        class="w-14"></digimon-single-container>
-      <digimon-single-container
-        label="Tamer"
-        [value]="ddto[2]"
-        class="w-12"></digimon-single-container>
-      <digimon-single-container
-        label="Option"
-        [value]="ddto[3]"
-        class="w-12"></digimon-single-container>
+      <digimon-single-container label="Egg" [value]="ddto[0]" percent="20" class="w-12"></digimon-single-container>
+      <digimon-single-container label="Digimon" [value]="ddto[1]" class="w-14"></digimon-single-container>
+      <digimon-single-container label="Tamer" [value]="ddto[2]" class="w-12"></digimon-single-container>
+      <digimon-single-container label="Option" [value]="ddto[3]" class="w-12"></digimon-single-container>
     </div>
   `,
   standalone: true,
@@ -97,10 +74,7 @@ export class DdtoSpreadComponent implements OnInit, OnChanges {
     if (!this.deck) {
       return;
     }
-    const cards = mapToDeckCards(
-      this.deck.cards,
-      this.digimonCardStore.cards(),
-    );
+    const cards = mapToDeckCards(this.deck.cards, this.digimonCardStore.cards());
     const digieggs = cards.filter((card) => card.cardType === 'Digi-Egg');
     const digimon = cards.filter((card) => card.cardType === 'Digimon');
     const tamer = cards.filter((card) => card.cardType === 'Tamer');

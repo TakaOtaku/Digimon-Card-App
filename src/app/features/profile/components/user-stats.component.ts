@@ -1,13 +1,7 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  inject,
-  Input,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { CarouselModule } from 'primeng/carousel';
 import { ISave } from '../../../../models';
-import { PaginationCardListComponent } from '../../collection/components/pagination-card-list.component';
 import { CollectionPriceCheckDialogComponent } from './collection-price-check-dialog.component';
 import { DialogModule } from 'primeng/dialog';
 import { CollectionCircleComponent } from './collection-circle.component';
@@ -31,40 +25,26 @@ import { NgIf } from '@angular/common';
 
         <div class="hidden sm:flex flex-row justify-center">
           <div class="flex flex-col">
-            <digimon-collection-circle
-              [type]="'BT'"
-              class="mx-2"></digimon-collection-circle>
+            <digimon-collection-circle [type]="'BT'" class="mx-2"></digimon-collection-circle>
             <label class="text-center">BT</label>
           </div>
           <div class="flex flex-col">
-            <digimon-collection-circle
-              [type]="'EX'"
-              class="mx-2"></digimon-collection-circle>
+            <digimon-collection-circle [type]="'EX'" class="mx-2"></digimon-collection-circle>
             <label class="text-center">EX</label>
           </div>
           <div class="flex flex-col">
-            <digimon-collection-circle
-              [type]="'ST'"
-              class="mx-2"></digimon-collection-circle>
+            <digimon-collection-circle [type]="'ST'" class="mx-2"></digimon-collection-circle>
             <label class="text-center">ST</label>
           </div>
           <div class="flex flex-col">
-            <digimon-collection-circle
-              [type]="'P-'"
-              class="mx-2"></digimon-collection-circle>
+            <digimon-collection-circle [type]="'P-'" class="mx-2"></digimon-collection-circle>
             <label class="text-center">P</label>
           </div>
         </div>
 
-        <p-carousel
-          class="sm:hidden"
-          [value]="collectionCircles"
-          [numVisible]="1"
-          [circular]="true"
-          [autoplayInterval]="10000">
+        <p-carousel class="sm:hidden" [value]="collectionCircles" [numVisible]="1" [circular]="true" [autoplayInterval]="10000">
           <ng-template let-circle pTemplate="item">
-            <digimon-collection-circle
-              [type]="circle.label"></digimon-collection-circle>
+            <digimon-collection-circle [type]="circle.label"></digimon-collection-circle>
             <div class="text-center w-full mx-auto font-bold">
               {{ circle.label }}
             </div>
@@ -94,29 +74,17 @@ import { NgIf } from '@angular/common';
       [modal]="true"
       [dismissableMask]="true"
       [resizable]="false">
-      <digimon-collection-price-check-dialog
-        [save]="save"></digimon-collection-price-check-dialog>
+      <digimon-collection-price-check-dialog [save]="save"></digimon-collection-price-check-dialog>
     </p-dialog>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    NgIf,
-    CollectionCircleComponent,
-    DialogModule,
-    CollectionPriceCheckDialogComponent,
-    CarouselModule,
-  ],
+  imports: [NgIf, CollectionCircleComponent, DialogModule, CollectionPriceCheckDialogComponent, CarouselModule],
 })
 export class UserStatsComponent {
   @Input() save: ISave;
 
-  collectionCircles = [
-    { label: 'BT' },
-    { label: 'EX' },
-    { label: 'ST' },
-    { label: 'P-' },
-  ];
+  collectionCircles = [{ label: 'BT' }, { label: 'EX' }, { label: 'ST' }, { label: 'P-' }];
 
   private router = inject(Router);
   priceCheckDialog = false;

@@ -1,11 +1,4 @@
-import {
-  AsyncPipe,
-  DatePipe,
-  NgClass,
-  NgFor,
-  NgIf,
-  NgStyle,
-} from '@angular/common';
+import { DatePipe, NgClass, NgFor, NgStyle } from '@angular/common';
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { SharedModule } from 'primeng/api';
@@ -43,9 +36,7 @@ import { SaveStore } from '../../../store/save.store';
         <tr class="mt-[-ß.5rem]" pRowGroupHeader>
           <td class="py-3" colspan="5">
             <div class="flex flex-row">
-              <div
-                [ngClass]="deck.color?.name"
-                class="ml-3 mr-1 h-7 w-7 rounded-full"></div>
+              <div [ngClass]="deck.color?.name" class="ml-3 mr-1 h-7 w-7 rounded-full"></div>
               <span class="ml-2 font-bold">{{ deck.color?.name }} Decks</span>
 
               <div class="ml-auto mr-2 font-bold">
@@ -97,15 +88,7 @@ import { SaveStore } from '../../../store/save.store';
     `,
   ],
   standalone: true,
-  imports: [
-    TableModule,
-    SharedModule,
-    NgClass,
-    LazyLoadImageModule,
-    NgStyle,
-    NgFor,
-    DatePipe,
-  ],
+  imports: [TableModule, SharedModule, NgClass, LazyLoadImageModule, NgStyle, NgFor, DatePipe],
 })
 export class DecksTableComponent {
   @Input() decks: IDeck[];
@@ -116,20 +99,13 @@ export class DecksTableComponent {
 
   getCardImage(deck: IDeck): string {
     //If there are no cards in the deck set it to the Yokomon
-    if (
-      !deck.cards ||
-      deck.cards.length === 0 ||
-      this.digimonCardStore.cards().length === 0
-    ) {
+    if (!deck.cards || deck.cards.length === 0 || this.digimonCardStore.cards().length === 0) {
       return '../../../assets/images/cards/eng/BT1-001.webp';
     }
 
     // If there is a ImageCardId set it
     if (deck.imageCardId) {
-      return (
-        this.digimonCardStore.cardsMap().get(deck.imageCardId)?.cardImage ??
-        '../../../assets/images/cards/eng/BT1-001.webp'
-      );
+      return this.digimonCardStore.cardsMap().get(deck.imageCardId)?.cardImage ?? '../../../assets/images/cards/eng/BT1-001.webp';
     } else {
       const deckImage = setDeckImage(deck, this.digimonCardStore.cards());
       this.saveStore.saveDeck({ ...deck, imageCardId: deckImage.id });

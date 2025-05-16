@@ -1,9 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import {
-  UntypedFormControl,
-  FormsModule,
-  ReactiveFormsModule,
-} from '@angular/forms';
+import { UntypedFormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TAGS } from '../../../../models';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { InputTextModule } from 'primeng/inputtext';
@@ -37,12 +33,7 @@ import { InputTextModule } from 'primeng/inputtext';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    FormsModule,
-    InputTextModule,
-    ReactiveFormsModule,
-    MultiSelectModule,
-  ],
+  imports: [FormsModule, InputTextModule, ReactiveFormsModule, MultiSelectModule],
 })
 export class DeckFilterComponent {
   @Input() searchFilter: UntypedFormControl;

@@ -1,24 +1,12 @@
 import { NgIf } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  effect,
-  inject,
-  Input,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, inject, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { DataViewModule } from 'primeng/dataview';
 import { DialogModule } from 'primeng/dialog';
 import { DragDropModule } from 'primeng/dragdrop';
 import { SidebarModule } from 'primeng/sidebar';
 import { SkeletonModule } from 'primeng/skeleton';
-import {
-  DigimonCard,
-  DRAG,
-  dummyCard,
-  ICountCard,
-  IDraggedCard,
-} from '../../../../models';
+import { DigimonCard, DRAG, dummyCard, ICountCard, IDraggedCard } from '../../../../models';
 import { IntersectionListenerDirective } from '../../../directives/intersection-listener.directive';
 import { filterCards, withoutJ } from '../../../functions';
 import { DialogStore } from '../../../store/dialog.store';
@@ -39,9 +27,7 @@ import { FilterStore } from '../../../store/filter.store';
         [filterButton]="!filterBoxEnabled"
         (filterBox)="filterBox = $event"
         [widthForm]="widthForm"
-        [viewOnly]="
-          inputCollection.length > 0
-        "></digimon-pagination-card-list-header>
+        [viewOnly]="inputCollection.length > 0"></digimon-pagination-card-list-header>
 
       <digimon-search></digimon-search>
 
@@ -60,34 +46,19 @@ import { FilterStore } from '../../../store/filter.store';
               [collectionOnly]="collectionOnly"
               [onlyView]="inputCollection.length > 0"
               (viewCard)="viewCard($event)"></digimon-full-card>
-            <div
-              *ngIf="$index + 1 === showCards.length"
-              (digimonIntersectionListener)="loadItems()"
-              class="sm:m-0.5 md:m-1"></div>
+            <div *ngIf="$index + 1 === showCards.length" (digimonIntersectionListener)="loadItems()" class="sm:m-0.5 md:m-1"></div>
           } @placeholder {
-            <p-skeleton
-              class="sm:m-0.5 md:m-1"
-              width="5.6rem"
-              height="10rem"></p-skeleton>
+            <p-skeleton class="sm:m-0.5 md:m-1" width="5.6rem" height="10rem"></p-skeleton>
           }
         } @empty {
-          <h1
-            *ngIf="filteredCards().length === 0"
-            class="primary-color text-bold my-10 text-center text-5xl">
-            No cards found!
-          </h1>
+          <h1 *ngIf="filteredCards().length === 0" class="primary-color text-bold my-10 text-center text-5xl">No cards found!</h1>
         }
       </div>
     </div>
 
-    <digimon-filter-side-box
-      *ngIf="filterBoxEnabled"
-      class="hidden xl:flex"></digimon-filter-side-box>
+    <digimon-filter-side-box *ngIf="filterBoxEnabled" class="hidden xl:flex"></digimon-filter-side-box>
 
-    <p-sidebar
-      [(visible)]="filterBox"
-      position="right"
-      styleClass="w-[20rem] md:w-[24rem] overflow-x-hidden overflow-y-auto p-0">
+    <p-sidebar [(visible)]="filterBox" position="right" styleClass="w-[20rem] md:w-[24rem] overflow-x-hidden overflow-y-auto p-0">
       <digimon-filter-side-box></digimon-filter-side-box>
     </p-sidebar>
   `,
@@ -153,10 +124,7 @@ export class PaginationCardListComponent {
   constructor() {
     effect(() => {
       const settings = this.saveStore.settings();
-      if (
-        settings.fullscreenFilter === null ||
-        settings.fullscreenFilter === undefined
-      ) {
+      if (settings.fullscreenFilter === null || settings.fullscreenFilter === undefined) {
         return true;
       }
       return settings.fullscreenFilter;
@@ -172,15 +140,9 @@ export class PaginationCardListComponent {
 
   getCount(cardId: string): number {
     if (this.inputCollection.length === 0) {
-      return (
-        this.collection().find((value) => value.id === withoutJ(cardId))
-          ?.count ?? 0
-      );
+      return this.collection().find((value) => value.id === withoutJ(cardId))?.count ?? 0;
     }
-    return (
-      this.inputCollection.find((value) => value.id === withoutJ(cardId))
-        ?.count ?? 0
-    );
+    return this.inputCollection.find((value) => value.id === withoutJ(cardId))?.count ?? 0;
   }
 
   viewCard(card: DigimonCard) {

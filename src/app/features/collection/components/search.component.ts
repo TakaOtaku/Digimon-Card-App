@@ -1,4 +1,3 @@
-import { NgStyle } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterStore } from '@store';
@@ -16,7 +15,7 @@ import { debounceTime, distinctUntilChanged } from 'rxjs';
     </p-icon-field>
   `,
   standalone: true,
-  imports: [NgStyle, FormsModule, InputTextModule, ReactiveFormsModule, IconField, InputIcon],
+  imports: [FormsModule, InputTextModule, ReactiveFormsModule, IconField, InputIcon],
 })
 export class SearchComponent {
   filterStore = inject(FilterStore);

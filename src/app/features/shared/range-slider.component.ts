@@ -1,15 +1,5 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnDestroy,
-  OnInit,
-} from '@angular/core';
-import {
-  FormsModule,
-  ReactiveFormsModule,
-  UntypedFormControl,
-} from '@angular/forms';
+import { Component, EventEmitter, Input, OnDestroy, OnInit } from '@angular/core';
+import { FormsModule, ReactiveFormsModule, UntypedFormControl } from '@angular/forms';
 import { Subject, takeUntil } from 'rxjs';
 import { SliderModule } from 'primeng/slider';
 
@@ -17,11 +7,7 @@ import { SliderModule } from 'primeng/slider';
   selector: 'digimon-range-slider',
   template: `
     <div class="custom-slider flex flex-row px-3">
-      <p-slider
-        [formControl]="filterFormControl"
-        class="w-full"
-        orientation="horizontal"
-        range="true"></p-slider>
+      <p-slider [formControl]="filterFormControl" class="w-full" orientation="horizontal" range="true"></p-slider>
     </div>
 
     <h1 class="mb-1 mt-[-8px] text-center text-xs font-bold text-[#e2e4e6]">

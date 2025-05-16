@@ -1,4 +1,4 @@
-import { AsyncPipe, NgClass, NgIf } from '@angular/common';
+import { NgClass, NgIf } from '@angular/common';
 import { Component, computed, inject, Input, Signal } from '@angular/core';
 import { IDeck, IDeckCard } from '../../../../models';
 import { mapToDeckCards } from '../../../functions';
@@ -12,10 +12,7 @@ import { DdtoSpreadComponent } from '../../shared/statistics/ddto-spread.compone
   selector: 'digimon-deck-stats',
   template: `
     <!-- Deck Stats -->
-    <div
-      *ngIf="showStats"
-      class="fixed bottom-0 z-[102] flex h-28 w-full flex-row"
-      [ngClass]="{ 'lg:w-[350px]': collectionView }">
+    <div *ngIf="showStats" class="fixed bottom-0 z-[102] flex h-28 w-full flex-row" [ngClass]="{ 'lg:w-[350px]': collectionView }">
       <div
         [ngClass]="{ 'w-full': collectionView, 'border-l-2': !collectionView }"
         class="surface-card flex flex-row border-r-2 border-t-2 border-white bg-opacity-25 lg:mx-auto">
@@ -41,13 +38,7 @@ import { DdtoSpreadComponent } from '../../shared/statistics/ddto-spread.compone
     </div>
   `,
   standalone: true,
-  imports: [
-    NgIf,
-    NgClass,
-    DdtoSpreadComponent,
-    ChartContainersComponent,
-    ColorSpreadComponent,
-  ],
+  imports: [NgIf, NgClass, DdtoSpreadComponent, ChartContainersComponent, ColorSpreadComponent],
 })
 export class DeckStatsComponent {
   @Input() showStats = true;
@@ -57,10 +48,5 @@ export class DeckStatsComponent {
   digimonCardStore = inject(DigimonCardStore);
 
   deck: Signal<IDeck> = this.websiteStore.deck;
-  mainDeck: Signal<IDeckCard[]> = computed(() =>
-    mapToDeckCards(
-      this.websiteStore.deck().cards,
-      this.digimonCardStore.cards(),
-    ),
-  );
+  mainDeck: Signal<IDeckCard[]> = computed(() => mapToDeckCards(this.websiteStore.deck().cards, this.digimonCardStore.cards()));
 }

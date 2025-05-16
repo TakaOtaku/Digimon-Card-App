@@ -1,34 +1,13 @@
-import { AsyncPipe, NgClass, NgFor, NgIf } from '@angular/common';
-import {
-  Component,
-  effect,
-  EventEmitter,
-  inject,
-  Input,
-  Output,
-  Signal,
-} from '@angular/core';
+import { NgClass, NgFor, NgIf } from '@angular/common';
+import { Component, effect, EventEmitter, inject, Input, Output, Signal } from '@angular/core';
 import { AccordionModule } from 'primeng/accordion';
 import { ConfirmationService, MessageService, SharedModule } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { DragDropModule } from 'primeng/dragdrop';
 import { first } from 'rxjs';
-import {
-  DeckColorMap,
-  DRAG,
-  IDeck,
-  IDeckCard,
-  IDraggedCard,
-  ISave,
-} from '../../../../models';
-import {
-  colorSort,
-  compareIDs,
-  levelSort,
-  setColors,
-  setTags,
-} from '../../../functions';
+import { DeckColorMap, DRAG, IDeck, IDeckCard, IDraggedCard, ISave } from '../../../../models';
+import { colorSort, compareIDs, levelSort, setColors, setTags } from '../../../functions';
 import { DigimonBackendService } from '../../../services/digimon-backend.service';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
 import { SaveStore } from '../../../store/save.store';
@@ -54,19 +33,10 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
 
     <ng-container>
       <p-accordion class="mx-auto" [multiple]="true" [activeIndex]="[0, 1]">
-        <p-accordionTab
-          [pDroppable]="['toDeck', 'fromSide']"
-          (onDrop)="drop(draggedCard(), 'Main')"
-          [(selected)]="mainExpanded">
+        <p-accordionTab [pDroppable]="['toDeck', 'fromSide']" (onDrop)="drop(draggedCard(), 'Main')" [(selected)]="mainExpanded">
           <ng-template pTemplate="header">
             <div>
-              {{
-                'Main-Deck (' +
-                  getCardCount(mainDeck, 'Egg') +
-                  '/5 - ' +
-                  getCardCount(mainDeck, 'Deck') +
-                  '/50)'
-              }}
+              {{ 'Main-Deck (' + getCardCount(mainDeck, 'Egg') + '/5 - ' + getCardCount(mainDeck, 'Deck') + '/50)' }}
             </div>
           </ng-template>
           <div
@@ -160,28 +130,20 @@ export class DeckViewComponent {
     const iSideDeckCards: IDeckCard[] = [];
 
     this.deck().cards.forEach((card) => {
-      const foundCard = this.digimonCardStore
-        .cards()
-        .find((item) => compareIDs(item.id, card.id));
+      const foundCard = this.digimonCardStore.cards().find((item) => compareIDs(item.id, card.id));
       if (foundCard) {
         iDeckCards.push({ ...foundCard, count: card.count });
       }
     });
     (this.deck().sideDeck ?? []).forEach((card) => {
-      const foundCard = this.digimonCardStore
-        .cards()
-        .find((item) => compareIDs(item.id, card.id));
+      const foundCard = this.digimonCardStore.cards().find((item) => compareIDs(item.id, card.id));
       if (foundCard) {
         iSideDeckCards.push({ ...foundCard, count: card.count });
       }
     });
 
-    iDeckCards.forEach((card) =>
-      this.mainDeck.push({ ...card, count: card.count }),
-    );
-    iSideDeckCards.forEach((card) =>
-      this.sideDeck.push({ ...card, count: card.count }),
-    );
+    iDeckCards.forEach((card) => this.mainDeck.push({ ...card, count: card.count }));
+    iSideDeckCards.forEach((card) => this.sideDeck.push({ ...card, count: card.count }));
     this.deckSort();
     this.onMainDeck.emit(this.mainDeck);
   });
@@ -192,8 +154,7 @@ export class DeckViewComponent {
   saveDeck(event: any) {
     this.confirmationService.confirm({
       target: event.target,
-      message:
-        'You are about to save all changes and overwrite everything changed. Are you sure?',
+      message: 'You are about to save all changes and overwrite everything changed. Are you sure?',
       accept: () => {
         this.onMainDeck.pipe(first()).subscribe(() => {
           this.saveStore.importDeck(this.deck());
@@ -242,9 +203,7 @@ export class DeckViewComponent {
    * Compare with the collection if you have all necessary Cards
    */
   getCardHave(card: IDeckCard) {
-    const foundCards = this.saveStore
-      .collection()
-      .filter((colCard) => this.removeP(colCard.id) === card.cardNumber);
+    const foundCards = this.saveStore.collection().filter((colCard) => this.removeP(colCard.id) === card.cardNumber);
     let count = 0;
     foundCards?.forEach((found) => {
       count += found.count;

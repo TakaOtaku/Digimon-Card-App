@@ -17,9 +17,7 @@ function setupJsonJAP(): DigimonCard[] {
   return japCards;
 }
 
-export function setupDigimonCardMap(
-  cards: DigimonCard[],
-): Map<string, DigimonCard> {
+export function setupDigimonCardMap(cards: DigimonCard[]): Map<string, DigimonCard> {
   const digimonCardMap = new Map<string, DigimonCard>();
   cards.forEach((digimonCard) => {
     digimonCardMap.set(digimonCard.id, digimonCard);

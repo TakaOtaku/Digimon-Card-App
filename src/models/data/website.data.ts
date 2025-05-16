@@ -17,8 +17,7 @@ export const dummyCard: DigimonCard = {
   rule: '-',
   digiXros: '-',
   digivolveCondition: [],
-  digivolveEffect:
-    "[When Attacking] When you attack an opponent's Digimon, this Digimon gets +1000 DP for the turn.",
+  digivolveEffect: "[When Attacking] When you attack an opponent's Digimon, this Digimon gets +1000 DP for the turn.",
   dnaDigivolve: '-',
   dp: '-',
   effect: '-',

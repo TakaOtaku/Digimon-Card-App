@@ -1,9 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  HostListener,
-  inject,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostListener, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
@@ -19,11 +14,9 @@ import { PageComponent } from '../shared/page.component';
   selector: 'digimon-products',
   template: `
     <digimon-page>
-      <div
-        class="overflow-x-hidden flex self-baseline flex-col justify-center max-w-md md:max-w-4xl mx-auto">
+      <div class="overflow-x-hidden flex self-baseline flex-col justify-center max-w-md md:max-w-4xl mx-auto">
         <div *ngFor="let product of products; let last = last">
-          <h1
-            class="text-shadow text-center mt-6 text-4xl font-black text-[#e2e4e6] underline xl:mt-2">
+          <h1 class="text-shadow text-center mt-6 text-4xl font-black text-[#e2e4e6] underline xl:mt-2">
             {{ product.name }}
           </h1>
           <p-carousel
@@ -33,12 +26,8 @@ import { PageComponent } from '../shared/page.component';
             [circular]="true"
             [autoplayInterval]="5000">
             <ng-template let-item pTemplate="item">
-              <div
-                class="border-1 surface-border border-round m-2 text-center py-5 px-3">
-                <img
-                  src="{{ item.image }}"
-                  [alt]="item.name"
-                  class="shadow-2 mx-auto h-60" />
+              <div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
+                <img src="{{ item.image }}" [alt]="item.name" class="shadow-2 mx-auto h-60" />
                 <div>
                   <h4 class="mb-1 text-black-outline text-white">
                     {{ item.name }}
@@ -63,16 +52,7 @@ import { PageComponent } from '../shared/page.component';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    NgFor,
-    TooltipModule,
-    LazyLoadImageModule,
-    ButtonModule,
-    CarouselModule,
-    GalleriaModule,
-    DividerModule,
-    PageComponent,
-  ],
+  imports: [NgFor, TooltipModule, LazyLoadImageModule, ButtonModule, CarouselModule, GalleriaModule, DividerModule, PageComponent],
 })
 export class ProductsComponent {
   starter = [
@@ -170,14 +150,12 @@ export class ProductsComponent {
   booster = [
     {
       name: 'BT01-03: Release Special Booster Ver.1.0',
-      image:
-        '../../assets/images/products/Special_Release_Booster_Pack_1.0.webp',
+      image: '../../assets/images/products/Special_Release_Booster_Pack_1.0.webp',
       link: 'https://digimoncardgame.fandom.com/wiki/BT01-03:_Release_Special_Booster_Ver.1.0',
     },
     {
       name: 'BT01-03: Release Special Booster Ver.1.5',
-      image:
-        '../../assets/images/products/Special_Release_Booster_Pack_1.5.webp',
+      image: '../../assets/images/products/Special_Release_Booster_Pack_1.5.webp',
       link: 'https://digimoncardgame.fandom.com/wiki/BT01-03:_Release_Special_Booster_Ver.1.5',
     },
     {
@@ -339,8 +317,7 @@ export class ProductsComponent {
     },
     {
       name: 'Great Legend Pre-Release Promotion',
-      image:
-        '../../assets/images/products/Great_Legend_Pre-Release_Promotion_Pack.webp',
+      image: '../../assets/images/products/Great_Legend_Pre-Release_Promotion_Pack.webp',
       link: 'https://digimoncardgame.fandom.com/wiki/Great_Legend_Pre-Release_Promotion',
     },
     {
@@ -370,8 +347,7 @@ export class ProductsComponent {
     },
     {
       name: 'Battle of Omni Pre-Release Promotion',
-      image:
-        '../../assets/images/products/Battle_of_Omni_Pre-Release_Promotion_Pack.webp',
+      image: '../../assets/images/products/Battle_of_Omni_Pre-Release_Promotion_Pack.webp',
       link: 'https://digimoncardgame.fandom.com/wiki/Battle_of_Omni_Pre-Release_Promotion',
     },
     {
@@ -391,8 +367,7 @@ export class ProductsComponent {
     },
     {
       name: 'Double Diamond Pre-Release Promotion',
-      image:
-        '../../assets/images/products/Double_Diamond_Pre-Release_Promotion_Pack.webp',
+      image: '../../assets/images/products/Double_Diamond_Pre-Release_Promotion_Pack.webp',
       link: 'https://digimoncardgame.fandom.com/wiki/Double_Diamond_Pre-Release_Promotion',
     },
     {
@@ -422,8 +397,7 @@ export class ProductsComponent {
     },
     {
       name: 'Box Promotion Pack -Next Adventure-',
-      image:
-        '../../assets/images/products/Box_Promotion_Pack_-Next_Adventure-.webp',
+      image: '../../assets/images/products/Box_Promotion_Pack_-Next_Adventure-.webp',
       link: 'https://digimoncardgame.fandom.com/wiki/Box_Promotion_Pack_-Next_Adventure-',
     },
     {
@@ -534,14 +508,12 @@ export class ProductsComponent {
     this.meta.addTags([
       {
         name: 'description',
-        content:
-          'See all Digimon TCG Products in one Place with a Link to the Wiki',
+        content: 'See all Digimon TCG Products in one Place with a Link to the Wiki',
       },
       { name: 'author', content: 'TakaOtaku' },
       {
         name: 'keywords',
-        content:
-          'Digimon, decks, deck builder, collection,  tournament, TCG, community, friends, share',
+        content: 'Digimon, decks, deck builder, collection,  tournament, TCG, community, friends, share',
       },
     ]);
   }

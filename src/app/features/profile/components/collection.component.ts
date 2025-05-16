@@ -1,12 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  inject,
-  Input,
-  OnChanges,
-  OnInit,
-  SimpleChanges,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ICountCard } from '../../../../models';
 import { NgIf, NgFor } from '@angular/common';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
@@ -21,12 +13,8 @@ interface MappedCollection {
 @Component({
   selector: 'digimon-collection',
   template: `
-    <div
-      class="border-red h-[250px] overflow-y-scroll border-2 text-[#e2e4e6] lg:h-1/2">
-      <div
-        class="primary-background h-12 w-full border-2 border-slate-500 text-center text-3xl font-bold">
-        Collection
-      </div>
+    <div class="border-red h-[250px] overflow-y-scroll border-2 text-[#e2e4e6] lg:h-1/2">
+      <div class="primary-background h-12 w-full border-2 border-slate-500 text-center text-3xl font-bold">Collection</div>
 
       <div class="mx-2 mt-2 flex h-full w-[calc(100%-1rem)] flex-col">
         <button
@@ -192,9 +180,7 @@ interface MappedCollection {
         </div>
 
         <div *ngIf="showCollection">
-          <div
-            *ngFor="let card of collectionList"
-            class="primary-background mt-1 grid w-full grid-cols-12 text-center text-[#e2e4e6]">
+          <div *ngFor="let card of collectionList" class="primary-background mt-1 grid w-full grid-cols-12 text-center text-[#e2e4e6]">
             <div class="col-span-3">{{ card.id }}</div>
             <div class="col-span-7">{{ card.name }}</div>
             <div class="col-span-2">{{ card.count }}</div>

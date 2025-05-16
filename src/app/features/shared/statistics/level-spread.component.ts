@@ -1,9 +1,6 @@
 import { Component, inject, Input, OnInit } from '@angular/core';
 import { IDeck } from '../../../../models';
-import {
-  getCountFromDeckCards,
-  mapToDeckCards,
-} from '../../../functions/digimon-card.functions';
+import { getCountFromDeckCards, mapToDeckCards } from '../../../functions/digimon-card.functions';
 import { NgStyle } from '@angular/common';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
 
@@ -77,10 +74,7 @@ export class LevelSpreadComponent implements OnInit {
   }
 
   getLevelSpread() {
-    const cards = mapToDeckCards(
-      this.deck.cards,
-      this.digimonCardStore.cards(),
-    );
+    const cards = mapToDeckCards(this.deck.cards, this.digimonCardStore.cards());
     const digieggs = cards.filter((card) => card.cardType === 'Digi-Egg');
     const lv3 = cards.filter((card) => card.cardLv === 'Lv.3');
     const lv4 = cards.filter((card) => card.cardLv === 'Lv.4');
@@ -97,8 +91,7 @@ export class LevelSpreadComponent implements OnInit {
   }
 
   linearGradientEgg(): string {
-    const eggPercent =
-      this.levelSpread[0] !== 0 ? (1 - this.levelSpread[0] / 5) * 100 : 0;
+    const eggPercent = this.levelSpread[0] !== 0 ? (1 - this.levelSpread[0] / 5) * 100 : 0;
     return `linear-gradient(to bottom, transparent ${eggPercent}%, #08528d 0%)`;
   }
 

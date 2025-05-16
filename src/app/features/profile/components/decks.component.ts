@@ -1,21 +1,11 @@
-import { AsyncPipe, NgFor, NgIf } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  HostListener,
-  inject,
-  Input,
-  OnChanges,
-  OnInit,
-  SimpleChanges,
-} from '@angular/core';
+import { NgFor, NgIf } from '@angular/common';
+import { ChangeDetectionStrategy, Component, HostListener, inject, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { DialogModule } from 'primeng/dialog';
 import { PaginatorModule } from 'primeng/paginator';
 import { emptyDeck, ICountCard, IDeck, IUser } from '../../../../models';
 import { DialogStore } from '../../../store/dialog.store';
 import { SaveStore } from '../../../store/save.store';
 import { DeckContainerComponent } from '../../shared/deck-container.component';
-import { DeckDialogComponent } from '../../shared/dialogs/deck-dialog.component';
 import { DecksTableComponent } from './decks-table.component';
 
 @Component({
@@ -46,21 +36,12 @@ import { DecksTableComponent } from './decks-table.component';
     </div>
 
     <ng-template #deckTable>
-      <digimon-decks-table
-        [decks]="decks"
-        (onDeckClick)="showDeckDialog($event)"></digimon-decks-table>
+      <digimon-decks-table [decks]="decks" (onDeckClick)="showDeckDialog($event)"></digimon-decks-table>
     </ng-template>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    NgIf,
-    NgFor,
-    DeckContainerComponent,
-    PaginatorModule,
-    DecksTableComponent,
-    DialogModule,
-  ],
+  imports: [NgIf, NgFor, DeckContainerComponent, PaginatorModule, DecksTableComponent, DialogModule],
 })
 export class DecksComponent implements OnInit, OnChanges {
   @Input() decks: IDeck[];
@@ -129,9 +110,6 @@ export class DecksComponent implements OnInit, OnChanges {
   onPageChange(event: any, slice?: number) {
     this.first = event.first;
     this.page = event.page;
-    this.decksToShow = this.decks.slice(
-      event.first,
-      (slice ?? this.row) * (event.page + 1),
-    );
+    this.decksToShow = this.decks.slice(event.first, (slice ?? this.row) * (event.page + 1));
   }
 }

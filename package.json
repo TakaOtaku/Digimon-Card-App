@@ -8,7 +8,11 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "eslint \"src/**/*.ts\"",
-    "lint:fix": "eslint \"src/**/*.ts\" --fix"
+    "lint:fix": "eslint \"src/**/*.ts\" --fix",
+    "prettier": "prettier --write \"src/**/*.{ts,html,scss,css,json}\"",
+    "format": "npm run lint:fix && npm run prettier",
+    "lint:all": "eslint \"src/**/*.{ts,html}\"",
+    "format:all": "npm run lint:all -- --fix && prettier --write \"src/**/*.{ts,html,scss,css,json}\""
   },
   "private": true,
   "dependencies": {

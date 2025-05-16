@@ -1,4 +1,4 @@
-import { NgClass, NgIf, NgStyle } from '@angular/common';
+import { NgClass, NgStyle } from '@angular/common';
 import { Component, inject, Input } from '@angular/core';
 import { ImgFallbackDirective } from '@directives';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
@@ -10,34 +10,19 @@ import { SaveStore } from '@store';
   template: `
     <div class="absolute top-1 z-10 grid w-full grid-cols-5 gap-0">
       <div></div>
-      @if (
-        card.version.includes('Foil') ||
-        card.version.includes('Alternative') ||
-        card.version.includes('Textured')
-      ) {
+      @if (card.version.includes('Foil') || card.version.includes('Alternative') || card.version.includes('Textured')) {
         <img
-          [src]="
-            aa.get(this.card.color) ??
-            'assets/images/banner/ico_card_detail_multi.png'
-          "
+          [src]="aa.get(this.card.color) ?? 'assets/images/banner/ico_card_detail_multi.png'"
           alt="AA-Banner"
           class="col-span-3 w-full" />
       } @else if (card.version.includes('Reprint')) {
         <img
-          [src]="
-            reprint.get(this.card.color) ??
-            'assets/images/banner/reprint_multi.png'
-          "
+          [src]="reprint.get(this.card.color) ?? 'assets/images/banner/reprint_multi.png'"
           alt="Reprint-Banner"
           class="col-span-3 w-full" />
-      } @else if (
-        card.version.includes('Stamp') || card.version.includes('Pre-Release')
-      ) {
+      } @else if (card.version.includes('Stamp') || card.version.includes('Pre-Release')) {
         <img
-          [src]="
-            stamped.get(this.card.color) ??
-            'assets/images/banner/stamped_multi.png'
-          "
+          [src]="stamped.get(this.card.color) ?? 'assets/images/banner/stamped_multi.png'"
           alt="Stamped-Banner"
           class="col-span-3 w-full" />
       }

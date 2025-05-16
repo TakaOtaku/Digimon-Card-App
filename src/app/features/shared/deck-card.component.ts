@@ -1,14 +1,5 @@
-import { AsyncPipe, NgIf } from '@angular/common';
-import {
-  Component,
-  EventEmitter,
-  inject,
-  Input,
-  OnChanges,
-  OnInit,
-  Output,
-  SimpleChanges,
-} from '@angular/core';
+import { NgIf } from '@angular/common';
+import { Component, EventEmitter, inject, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 
 import { DialogModule } from 'primeng/dialog';
 import { DigimonCard, dummyCard, IDeckCard } from '../../../models';
@@ -26,31 +17,23 @@ import { WebsiteStore } from '../../store/website.store';
         class="group absolute z-[101] flex h-full w-full flex-col rounded xl:opacity-0 xl:hover:opacity-100"
         (click)="showCardDetails()"
         (contextmenu)="showCardDetails()">
-        <div
-          *ngIf="edit"
-          class="hidden h-1/2 w-full rounded bg-sky-700 bg-opacity-30 xl:block">
+        <div *ngIf="edit" class="hidden h-1/2 w-full rounded bg-sky-700 bg-opacity-30 xl:block">
           <div class="absolute top-2">
             <button
               (click)="addCardCount($event)"
               type="button"
               class="z-[101] mx-auto flex hidden h-8 w-8 translate-x-full rounded border border-black bg-sky-700 group-hover:block">
-              <span class="text-shadow text-2xl font-black text-[#e2e4e6]">
-                +
-              </span>
+              <span class="text-shadow text-2xl font-black text-[#e2e4e6]"> + </span>
             </button>
           </div>
         </div>
-        <div
-          *ngIf="edit"
-          class="hidden h-1/2 w-full rounded bg-red-500 bg-opacity-30 xl:block">
+        <div *ngIf="edit" class="hidden h-1/2 w-full rounded bg-red-500 bg-opacity-30 xl:block">
           <div class="absolute bottom-2">
             <button
               (click)="reduceCardCount($event)"
               type="button"
               class="z-[101] mx-auto flex hidden h-8 w-8 translate-x-full rounded border border-black bg-sky-700 group-hover:block">
-              <span class="text-shadow text-2xl font-black text-[#e2e4e6]">
-                -
-              </span>
+              <span class="text-shadow text-2xl font-black text-[#e2e4e6]"> - </span>
             </button>
           </div>
         </div>
@@ -63,22 +46,12 @@ import { WebsiteStore } from '../../store/website.store';
         class="group z-50 m-auto rounded border-2 border-black" />
 
       <div *ngIf="edit" class="flex h-1/2 w-full flex-row rounded xl:hidden">
-        <button
-          (click)="addCardCount($event)"
-          type="button"
-          class="z-[101] flex h-8 w-1/2 rounded-l border border-black bg-sky-700">
-          <span class="text-shadow mx-auto text-2xl font-black text-[#e2e4e6]">
-            +
-          </span>
+        <button (click)="addCardCount($event)" type="button" class="z-[101] flex h-8 w-1/2 rounded-l border border-black bg-sky-700">
+          <span class="text-shadow mx-auto text-2xl font-black text-[#e2e4e6]"> + </span>
         </button>
 
-        <button
-          (click)="reduceCardCount($event)"
-          type="button"
-          class="z-[101] flex h-8 w-1/2 rounded-r border border-black bg-sky-700">
-          <span class="text-shadow mx-auto text-2xl font-black text-[#e2e4e6]">
-            -
-          </span>
+        <button (click)="reduceCardCount($event)" type="button" class="z-[101] flex h-8 w-1/2 rounded-r border border-black bg-sky-700">
+          <span class="text-shadow mx-auto text-2xl font-black text-[#e2e4e6]"> - </span>
         </button>
       </div>
 
@@ -90,9 +63,7 @@ import { WebsiteStore } from '../../store/website.store';
       <p
         *ngIf="missingCards"
         class="text-red text-black-outline absolute left-0 right-0 top-[40px] z-[100] mx-auto text-center text-6xl font-bold">
-        {{
-          (cardHave ?? 0) - card.count > 0 ? 0 : (cardHave ?? 0) - card.count
-        }}
+        {{ (cardHave ?? 0) - card.count > 0 ? 0 : (cardHave ?? 0) - card.count }}
       </p>
     </div>
   `,
@@ -126,9 +97,7 @@ export class DeckCardComponent implements OnChanges, OnInit {
   }
 
   mapCard(): void {
-    this.completeCard =
-      this.digimonCardStore.cardsMap().get(this.card.id) ??
-      (JSON.parse(JSON.stringify(dummyCard)) as DigimonCard);
+    this.completeCard = this.digimonCardStore.cardsMap().get(this.card.id) ?? (JSON.parse(JSON.stringify(dummyCard)) as DigimonCard);
   }
 
   addCardCount(event?: any): void {

@@ -1,30 +1,25 @@
-import { NgClass, NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import {
-  FormsModule,
-  ReactiveFormsModule,
-  UntypedFormGroup,
-} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, UntypedFormGroup } from '@angular/forms';
+import { IconField } from 'primeng/iconfield';
+import { InputIcon } from 'primeng/inputicon';
 import { InputTextModule } from 'primeng/inputtext';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { StyleClassModule } from 'primeng/styleclass';
-import { TAGS } from '../../../../models';
+import { TAGS } from '@models';
 
 @Component({
   selector: 'digimon-decks-filter',
   template: `
-    <div
-      [formGroup]="form"
-      class="my-1 grid max-w-7xl grid-cols-5 lg:flex lg:flex-row">
-      <span class="col-span-5 sm:col-span-2 p-input-icon-left my-1 w-full">
-        <i class="pi pi-search h-3"></i>
+    <div [formGroup]="form" class="my-1 grid max-w-7xl grid-cols-5 lg:flex lg:flex-row">
+      <p-icon-field class="m-1 col-span-5 sm:col-span-2 w-full my-1">
+        <p-inputicon styleClass="pi pi-search"></p-inputicon>
         <input
           formControlName="searchFilter"
-          class="w-full text-xs"
+          class="w-full"
           pInputText
-          placeholder="Search (Title, Description, User, Card-Ids, Color)"
+          placeholder="Search  (Title, Description, User, Card-Ids, Color)"
           type="text" />
-      </span>
+      </p-icon-field>
       <p-multiSelect
         formControlName="tagFilter"
         [options]="tags"
@@ -33,7 +28,7 @@ import { TAGS } from '../../../../models';
         display="chip"
         scrollHeight="250px"
         class="col-span-3 sm:col-span-2 sm:mx-auto sm:my-1 w-full max-w-[250px]"
-        styleClass="w-full h-[34px] text-sm max-w-[250px]">
+        styleClass="w-full max-w-[250px]">
       </p-multiSelect>
       <button
         (click)="applyFilter.emit(true)"
@@ -43,13 +38,7 @@ import { TAGS } from '../../../../models';
     </div>
   `,
   standalone: true,
-  imports: [
-    FormsModule,
-    ReactiveFormsModule,
-    InputTextModule,
-    StyleClassModule,
-    MultiSelectModule,
-  ],
+  imports: [FormsModule, ReactiveFormsModule, InputTextModule, StyleClassModule, MultiSelectModule, IconField, InputIcon],
 })
 export class DecksFilterComponent {
   @Input() form: UntypedFormGroup;

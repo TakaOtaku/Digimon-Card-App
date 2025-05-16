@@ -208,26 +208,9 @@ export const Keywords: string[] = [
   '\uff1cVortex\uff1e',
 ];
 
-export const Colors: string[] = [
-  'Red',
-  'Blue',
-  'Yellow',
-  'Green',
-  'Black',
-  'Purple',
-  'White',
-  'Multi',
-];
+export const Colors: string[] = ['Red', 'Blue', 'Yellow', 'Green', 'Black', 'Purple', 'White', 'Multi'];
 
-export const ColorsWithoutMulti: string[] = [
-  'Red',
-  'Blue',
-  'Yellow',
-  'Green',
-  'Black',
-  'Purple',
-  'White',
-];
+export const ColorsWithoutMulti: string[] = ['Red', 'Blue', 'Yellow', 'Green', 'Black', 'Purple', 'White'];
 
 export const Forms: string[] = [
   'In-Training',

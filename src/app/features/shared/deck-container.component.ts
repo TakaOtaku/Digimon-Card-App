@@ -1,12 +1,5 @@
 import { AsyncPipe, DatePipe, NgIf, NgStyle } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  inject,
-  Input,
-  OnChanges,
-  SimpleChanges,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { BehaviorSubject, first } from 'rxjs';
 import { ColorMap, IDeck, ITournamentDeck } from '../../../models';
@@ -20,10 +13,7 @@ import { DigimonCardStore } from '../../store/digimon-card.store';
     <div
       class="surface-card relative h-32 w-full cursor-pointer border border-black"
       defaultImage="assets/images/digimon-card-back.webp"
-      [lazyLoad]="
-        (cardImageSubject$ | async) ??
-        '../../../assets/images/digimon-card-back.webp'
-      "
+      [lazyLoad]="(cardImageSubject$ | async) ?? '../../../assets/images/digimon-card-back.webp'"
       [ngStyle]="{
         'background-repeat': 'no-repeat',
         'background-position': 'center',
@@ -39,8 +29,7 @@ import { DigimonCardStore } from '../../store/digimon-card.store';
         <span class="text-shadow text-4xl text-[#ef4444]">!</span>
       </div>
 
-      <div
-        class="absolute bottom-0 h-16 w-full justify-center bg-black bg-opacity-80">
+      <div class="absolute bottom-0 h-16 w-full justify-center bg-black bg-opacity-80">
         <div class="my-auto flex w-full flex-col p-1">
           <div class="text-shadow truncate font-bold text-[#e2e4e6]">
             {{ deck.title }}
@@ -49,9 +38,7 @@ import { DigimonCardStore } from '../../store/digimon-card.store';
             {{ deck.description }}
           </div>
 
-          <div
-            *ngIf="mode !== 'Tournament'; else tournament"
-            class="text-shadow flex w-full flex-row text-xs text-[#e2e4e6]">
+          <div *ngIf="mode !== 'Tournament'; else tournament" class="text-shadow flex w-full flex-row text-xs text-[#e2e4e6]">
             <div *ngIf="mode === 'Community'" class="ml-1 font-bold">
               {{ deck.user }}
             </div>
@@ -60,8 +47,7 @@ import { DigimonCardStore } from '../../store/digimon-card.store';
             </div>
           </div>
           <ng-template #tournament>
-            <div
-              class="text-shadow grid w-full grid-cols-5 text-xs text-[#e2e4e6]">
+            <div class="text-shadow grid w-full grid-cols-5 text-xs text-[#e2e4e6]">
               <div class="ml-1 font-bold">
                 {{ placementString(getTournamentDeck(deck).placement) }}
               </div>
@@ -88,9 +74,7 @@ import { DigimonCardStore } from '../../store/digimon-card.store';
 export class DeckContainerComponent implements OnChanges {
   @Input() deck: IDeck | ITournamentDeck;
   @Input() mode = 'Basic';
-  cardImageSubject$ = new BehaviorSubject<string>(
-    '../../../assets/images/digimon-card-back.webp',
-  );
+  cardImageSubject$ = new BehaviorSubject<string>('../../../assets/images/digimon-card-back.webp');
 
   colorMap = ColorMap;
 
@@ -108,8 +92,7 @@ export class DeckContainerComponent implements OnChanges {
     // If there is an ImageCardId set it
     if (this.deck.imageCardId) {
       const imageCard = digimonCardMap.get(this.deck.imageCardId);
-      imagePath =
-        imageCard?.cardImage ?? '../../../assets/images/digimon-card-back.webp';
+      imagePath = imageCard?.cardImage ?? '../../../assets/images/digimon-card-back.webp';
     } else if (this.deck.cards && this.deck.cards.length < 0) {
       // If there are cards in the deck, set it to the first card
       const imageCard = setDeckImage(this.deck, this.digimonCardStore.cards()); // Replace setDeckImage with the appropriate function
@@ -127,9 +110,7 @@ export class DeckContainerComponent implements OnChanges {
   }
 
   isIllegal(): boolean {
-    return this.deck.tags
-      ? !!this.deck.tags.find((tag) => tag.name === 'Illegal')
-      : false;
+    return this.deck.tags ? !!this.deck.tags.find((tag) => tag.name === 'Illegal') : false;
   }
 
   placementString(placement: number): string {

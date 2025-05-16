@@ -1,10 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  effect,
-  inject,
-  signal,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { BlockUIModule } from 'primeng/blockui';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
@@ -26,8 +20,7 @@ import { WebsiteStore } from './store/website.store';
 @Component({
   selector: 'digimon-root',
   template: `
-    <div
-      class="flex flex-col lg:flex-row bg-gradient-to-b from-[#17212f] to-[#08528d]">
+    <div class="flex flex-col lg:flex-row bg-gradient-to-b from-[#17212f] to-[#08528d]">
       <digimon-navbar (openSideNav)="sideNav = true"></digimon-navbar>
 
       @if (saveLoaded()) {
@@ -40,19 +33,14 @@ import { WebsiteStore } from './store/website.store';
       } @else {
         <div class="h-[calc(100vh-58px)] w-screen"></div>
         <p-blockUI [blocked]="!saveLoaded()"></p-blockUI>
-        <p-progressSpinner
-          class="absolute left-1/2 top-1/2 z-[5000] -translate-x-1/2 -translate-y-1/2 transform"></p-progressSpinner>
+        <p-progressSpinner class="absolute left-1/2 top-1/2 z-[5000] -translate-x-1/2 -translate-y-1/2 transform"></p-progressSpinner>
       }
 
       <digimon-dialog></digimon-dialog>
 
-      <p-sidebar
-        [(visible)]="sideNav"
-        styleClass="w-[6.5rem] overflow-hidden p-0">
+      <p-sidebar [(visible)]="sideNav" styleClass="w-[6.5rem] overflow-hidden p-0">
         <ng-template pTemplate="content" class="p-0">
-          <digimon-nav-links
-            class="flex flex-col w-full justify-center"
-            [sidebar]="true"></digimon-nav-links>
+          <digimon-nav-links class="flex flex-col w-full justify-center" [sidebar]="true"></digimon-nav-links>
         </ng-template>
       </p-sidebar>
 
@@ -96,9 +84,7 @@ export class AppComponent {
 
     effect(() => {
       console.log('Save changed', this.saveStore.save());
-      this.saveLoaded.set(
-        this.saveStore.save().uid !== '' || this.saveStore.loadedSave(),
-      );
+      this.saveLoaded.set(this.saveStore.save().uid !== '' || this.saveStore.loadedSave());
 
       if (!this.saveStore.loadedSave()) return;
 
@@ -176,9 +162,7 @@ export class AppComponent {
     filter = { ...filter, versionFilter: [] };
 
     if (!settings.showFoilCards) {
-      let versionFilter = filter.versionFilter.filter(
-        (filter) => filter !== 'Foil',
-      );
+      let versionFilter = filter.versionFilter.filter((filter) => filter !== 'Foil');
       if (versionFilter.length === 0) {
         versionFilter = [
           'Normal',
@@ -195,154 +179,58 @@ export class AppComponent {
       filter = { ...filter, versionFilter };
     }
     if (!settings.showTexturedCards) {
-      let versionFilter = filter.versionFilter.filter(
-        (filter) => filter !== 'Textured',
-      );
+      let versionFilter = filter.versionFilter.filter((filter) => filter !== 'Textured');
       if (versionFilter.length === 0) {
-        versionFilter = [
-          'Normal',
-          'Alternative Art',
-          'Foil',
-          'Release',
-          'Box Topper',
-          'Full Art',
-          'Stamp',
-          'Special Rare',
-          'Rare Pull',
-        ];
+        versionFilter = ['Normal', 'Alternative Art', 'Foil', 'Release', 'Box Topper', 'Full Art', 'Stamp', 'Special Rare', 'Rare Pull'];
       }
       filter = { ...filter, versionFilter };
     }
     if (!settings.showPreRelease) {
-      let versionFilter = filter.versionFilter.filter(
-        (filter) => filter !== 'Release',
-      );
+      let versionFilter = filter.versionFilter.filter((filter) => filter !== 'Release');
       if (versionFilter.length === 0) {
-        versionFilter = [
-          'Normal',
-          'Alternative Art',
-          'Foil',
-          'Textured',
-          'Box Topper',
-          'Full Art',
-          'Stamp',
-          'Special Rare',
-          'Rare Pull',
-        ];
+        versionFilter = ['Normal', 'Alternative Art', 'Foil', 'Textured', 'Box Topper', 'Full Art', 'Stamp', 'Special Rare', 'Rare Pull'];
       }
       filter = { ...filter, versionFilter };
     }
     if (!settings.showBoxTopper) {
-      let versionFilter = filter.versionFilter.filter(
-        (filter) => filter !== 'Box Topper',
-      );
+      let versionFilter = filter.versionFilter.filter((filter) => filter !== 'Box Topper');
       if (versionFilter.length === 0) {
-        versionFilter = [
-          'Normal',
-          'Alternative Art',
-          'Foil',
-          'Textured',
-          'Release',
-          'Full Art',
-          'Stamp',
-          'Special Rare',
-          'Rare Pull',
-        ];
+        versionFilter = ['Normal', 'Alternative Art', 'Foil', 'Textured', 'Release', 'Full Art', 'Stamp', 'Special Rare', 'Rare Pull'];
       }
       filter = { ...filter, versionFilter };
     }
     if (!settings.showFullArtCards) {
-      let versionFilter = filter.versionFilter.filter(
-        (filter) => filter !== 'Full Art',
-      );
+      let versionFilter = filter.versionFilter.filter((filter) => filter !== 'Full Art');
       if (versionFilter.length === 0) {
-        versionFilter = [
-          'Normal',
-          'Alternative Art',
-          'Foil',
-          'Textured',
-          'Release',
-          'Box Topper',
-          'Stamp',
-          'Special Rare',
-          'Rare Pull',
-        ];
+        versionFilter = ['Normal', 'Alternative Art', 'Foil', 'Textured', 'Release', 'Box Topper', 'Stamp', 'Special Rare', 'Rare Pull'];
       }
       filter = { ...filter, versionFilter };
     }
     if (!settings.showStampedCards) {
-      let versionFilter = filter.versionFilter.filter(
-        (filter) => filter !== 'Stamp',
-      );
+      let versionFilter = filter.versionFilter.filter((filter) => filter !== 'Stamp');
       if (versionFilter.length === 0) {
-        versionFilter = [
-          'Normal',
-          'Alternative Art',
-          'Foil',
-          'Textured',
-          'Release',
-          'Box Topper',
-          'Full Art',
-          'Special Rare',
-          'Rare Pull',
-        ];
+        versionFilter = ['Normal', 'Alternative Art', 'Foil', 'Textured', 'Release', 'Box Topper', 'Full Art', 'Special Rare', 'Rare Pull'];
       }
       filter = { ...filter, versionFilter };
     }
     if (!settings.showAACards) {
-      let versionFilter = filter.versionFilter.filter(
-        (filter) => filter !== 'Alternative Art',
-      );
+      let versionFilter = filter.versionFilter.filter((filter) => filter !== 'Alternative Art');
       if (versionFilter.length === 0) {
-        versionFilter = [
-          'Normal',
-          'Foil',
-          'Textured',
-          'Release',
-          'Box Topper',
-          'Full Art',
-          'Stamp',
-          'Special Rare',
-          'Rare Pull',
-        ];
+        versionFilter = ['Normal', 'Foil', 'Textured', 'Release', 'Box Topper', 'Full Art', 'Stamp', 'Special Rare', 'Rare Pull'];
       }
       filter = { ...filter, versionFilter };
     }
     if (!settings.showSpecialRareCards) {
-      let versionFilter = filter.versionFilter.filter(
-        (filter) => filter !== 'Special Rare',
-      );
+      let versionFilter = filter.versionFilter.filter((filter) => filter !== 'Special Rare');
       if (versionFilter.length === 0) {
-        versionFilter = [
-          'Normal',
-          'Alternative Art',
-          'Foil',
-          'Textured',
-          'Release',
-          'Box Topper',
-          'Full Art',
-          'Stamp',
-          'Rare Pull',
-        ];
+        versionFilter = ['Normal', 'Alternative Art', 'Foil', 'Textured', 'Release', 'Box Topper', 'Full Art', 'Stamp', 'Rare Pull'];
       }
       filter = { ...filter, versionFilter };
     }
     if (!settings.showRarePullCards) {
-      let versionFilter = filter.versionFilter.filter(
-        (filter) => filter !== 'Rare Pull',
-      );
+      let versionFilter = filter.versionFilter.filter((filter) => filter !== 'Rare Pull');
       if (versionFilter.length === 0) {
-        versionFilter = [
-          'Normal',
-          'Alternative Art',
-          'Foil',
-          'Textured',
-          'Release',
-          'Box Topper',
-          'Full Art',
-          'Stamp',
-          'Special Rare',
-        ];
+        versionFilter = ['Normal', 'Alternative Art', 'Foil', 'Textured', 'Release', 'Box Topper', 'Full Art', 'Stamp', 'Special Rare'];
       }
       filter = { ...filter, versionFilter };
     }

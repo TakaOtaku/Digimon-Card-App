@@ -1,16 +1,6 @@
-import {
-  Component,
-  inject,
-  Input,
-  OnChanges,
-  OnInit,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, inject, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { IDeck } from '../../../../models';
-import {
-  getCountFromDeckCards,
-  mapToDeckCards,
-} from '../../../functions/digimon-card.functions';
+import { getCountFromDeckCards, mapToDeckCards } from '../../../functions/digimon-card.functions';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
 import { SingleContainerComponent } from '../single-container.component';
 import { NgIf, NgStyle } from '@angular/common';
@@ -18,9 +8,7 @@ import { NgIf, NgStyle } from '@angular/common';
 @Component({
   selector: 'digimon-color-spread',
   template: `
-    <div
-      *ngIf="!container"
-      class="flex h-full w-full flex-row flex-nowrap items-stretch">
+    <div *ngIf="!container" class="flex h-full w-full flex-row flex-nowrap items-stretch">
       <div
         *ngIf="colorSpread[0] !== 0"
         class="h-full w-full grow text-center"
@@ -80,41 +68,13 @@ import { NgIf, NgStyle } from '@angular/common';
     </div>
 
     <div *ngIf="container" class="flex w-full flex-row">
-      <digimon-single-container
-        label="Red"
-        color="#ef1919"
-        class="w-10"
-        [value]="colorSpread[0]"></digimon-single-container>
-      <digimon-single-container
-        label="Blue"
-        color="#19a0e3"
-        class="w-10"
-        [value]="colorSpread[1]"></digimon-single-container>
-      <digimon-single-container
-        label="Yellow"
-        color="#ffd619"
-        class="w-10"
-        [value]="colorSpread[2]"></digimon-single-container>
-      <digimon-single-container
-        label="Green"
-        color="#19b383"
-        class="w-10"
-        [value]="colorSpread[3]"></digimon-single-container>
-      <digimon-single-container
-        label="Black"
-        color="#191919"
-        class="w-10"
-        [value]="colorSpread[4]"></digimon-single-container>
-      <digimon-single-container
-        label="Purple"
-        color="#8d6fdb"
-        class="w-10"
-        [value]="colorSpread[5]"></digimon-single-container>
-      <digimon-single-container
-        label="White"
-        color="#ffffff"
-        class="w-10"
-        [value]="colorSpread[6]"></digimon-single-container>
+      <digimon-single-container label="Red" color="#ef1919" class="w-10" [value]="colorSpread[0]"></digimon-single-container>
+      <digimon-single-container label="Blue" color="#19a0e3" class="w-10" [value]="colorSpread[1]"></digimon-single-container>
+      <digimon-single-container label="Yellow" color="#ffd619" class="w-10" [value]="colorSpread[2]"></digimon-single-container>
+      <digimon-single-container label="Green" color="#19b383" class="w-10" [value]="colorSpread[3]"></digimon-single-container>
+      <digimon-single-container label="Black" color="#191919" class="w-10" [value]="colorSpread[4]"></digimon-single-container>
+      <digimon-single-container label="Purple" color="#8d6fdb" class="w-10" [value]="colorSpread[5]"></digimon-single-container>
+      <digimon-single-container label="White" color="#ffffff" class="w-10" [value]="colorSpread[6]"></digimon-single-container>
     </div>
   `,
   standalone: true,
@@ -141,20 +101,13 @@ export class ColorSpreadComponent implements OnInit, OnChanges {
       return;
     }
 
-    const cards = mapToDeckCards(
-      this.deck.cards,
-      this.digimonCardStore.cards(),
-    );
+    const cards = mapToDeckCards(this.deck.cards, this.digimonCardStore.cards());
     const red = cards.filter((card) => card.color.split('/')[0] === 'Red');
     const blue = cards.filter((card) => card.color.split('/')[0] === 'Blue');
-    const yellow = cards.filter(
-      (card) => card.color.split('/')[0] === 'Yellow',
-    );
+    const yellow = cards.filter((card) => card.color.split('/')[0] === 'Yellow');
     const green = cards.filter((card) => card.color.split('/')[0] === 'Green');
     const black = cards.filter((card) => card.color.split('/')[0] === 'Black');
-    const purple = cards.filter(
-      (card) => card.color.split('/')[0] === 'Purple',
-    );
+    const purple = cards.filter((card) => card.color.split('/')[0] === 'Purple');
     const white = cards.filter((card) => card.color.split('/')[0] === 'White');
 
     this.colorSpread[0] = getCountFromDeckCards(red);
