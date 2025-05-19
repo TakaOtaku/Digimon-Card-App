@@ -48,7 +48,6 @@ export const WebsiteStore = signalStore(
   withMethods((store, digimonBackendService = inject(DigimonBackendService)) => ({
     loadCommunityDecks: rxMethod<void>(
       pipe(
-        first(),
         distinctUntilChanged(),
         switchMap(() => {
           return digimonBackendService.getDecks().pipe(
@@ -65,7 +64,6 @@ export const WebsiteStore = signalStore(
 
     loadBlogs: rxMethod<void>(
       pipe(
-        first(),
         distinctUntilChanged(),
         switchMap(() => {
           return digimonBackendService.getBlogEntries().pipe(

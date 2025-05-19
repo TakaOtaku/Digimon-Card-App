@@ -6,18 +6,18 @@ import { DialogModule } from 'primeng/dialog';
 import { DragDropModule } from 'primeng/dragdrop';
 import { SidebarModule } from 'primeng/sidebar';
 import { SkeletonModule } from 'primeng/skeleton';
-import { DigimonCard, DRAG, dummyCard, ICountCard, IDraggedCard } from '../../../../models';
-import { IntersectionListenerDirective } from '../../../directives/intersection-listener.directive';
-import { filterCards, withoutJ } from '../../../functions';
-import { DialogStore } from '../../../store/dialog.store';
-import { DigimonCardStore } from '../../../store/digimon-card.store';
-import { SaveStore } from '../../../store/save.store';
-import { WebsiteStore } from '../../../store/website.store';
+import { DigimonCard, DRAG, dummyCard, ICountCard, IDraggedCard } from '@models';
+import { IntersectionListenerDirective } from '@directives';
+import { filterCards, withoutJ } from '@functions';
+import { DialogStore } from '@store';
+import { DigimonCardStore } from '@store';
+import { SaveStore } from '@store';
+import { WebsiteStore } from '@store';
 import { FilterSideBoxComponent } from '../../shared/filter/filter-side-box.component';
 import { FullCardComponent } from '../../shared/full-card.component';
 import { PaginationCardListHeaderComponent } from './pagination-card-list-header.component';
 import { SearchComponent } from './search.component';
-import { FilterStore } from '../../../store/filter.store';
+import { FilterStore } from '@store';
 
 @Component({
   selector: 'digimon-pagination-card-list',

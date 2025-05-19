@@ -14,11 +14,11 @@ import { SelectButtonModule } from 'primeng/selectbutton';
 import { TabViewModule } from 'primeng/tabview';
 import { TextareaModule } from 'primeng/textarea';
 import { Subject } from 'rxjs';
-import { DigimonCard, emptySettings, GroupedSets, ICountCard, ISave } from '../../../../models';
-import { DigimonBackendService } from '../../../services/digimon-backend.service';
-import { DialogStore } from '../../../store/dialog.store';
-import { DigimonCardStore } from '../../../store/digimon-card.store';
-import { SaveStore } from '../../../store/save.store';
+import { DigimonCard, emptySettings, GroupedSets, ICountCard, ISave } from '@models';
+import { DigimonBackendService } from '@services';
+import { DialogStore } from '@store';
+import { DigimonCardStore } from '@store';
+import { SaveStore } from '@store';
 import { SettingsRowComponent } from '../settings-row.component';
 
 @Component({
@@ -533,8 +533,6 @@ export class SettingsDialogComponent implements OnDestroy {
         countMax: this.collectionFilterMax,
       },
     };
-
-    console.log(save);
 
     this.saveStore.updateSave(save);
     this.toastrService.info('Settings were saved and updated.', 'Settings saved!');

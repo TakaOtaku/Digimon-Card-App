@@ -16,7 +16,7 @@ export interface MultiButtons {
           (click)="clickEvent.emit(button.value)"
           *ngFor="let button of buttonArray; let i = index"
           [ngClass]="{
-            'bg-[#e2e4e6] text-black': value.includes(button.value),
+            'button-highlight-background text-white': value.includes(button.value),
             'surface-card text-[#e2e4e6]': !value.includes(button.value),
             'rounded-l-sm': i === 0,
             'rounded-r-sm': i === buttonArray.length - 1,

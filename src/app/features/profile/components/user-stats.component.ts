@@ -58,11 +58,6 @@ import { NgIf } from '@angular/common';
           class="surface-ground hover:primary-background text-shadow border flex-grow border-black p-2 font-bold text-[#e2e4e6]">
           View Collection
         </button>
-        <button
-          (click)="priceCheckDialog = true"
-          class="surface-ground hover:primary-background text-shadow border flex-grow border-black p-2 font-bold text-[#e2e4e6]">
-          Collection Worth
-        </button>
       </div>
     </div>
 

@@ -91,7 +91,7 @@ export class DeckbuilderPageComponent implements OnInit {
       const foundDeck = save.decks.find((deck) => deck.id === this.deckId);
       if (!foundDeck) return;
 
-      const sameUser = save.uid === this.authService.currentUser?.uid;
+      const sameUser = save.uid === this.authService.currentUser()?.uid;
 
       // Set a new UID if it is a new user, otherwise keep the old one
       this.websiteStore.updateDeck({

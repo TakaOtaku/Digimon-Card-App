@@ -12,7 +12,7 @@ import { SaveStore } from '../../../store/save.store';
         <button
           (click)="setCardSet(cardSet.English)"
           [ngClass]="{
-            'bg-[#e2e4e6] text-black': selectedCardSet === cardSet.English,
+            'button-highlight-background text-white': selectedCardSet === cardSet.English,
             'surface-card text-[#e2e4e6]': selectedCardSet !== cardSet.English,
           }"
           class="min-w-auto mt-2 h-8 w-20 rounded-l-sm border border-slate-100 p-2 text-xs font-semibold text-[#e2e4e6]">
@@ -21,7 +21,7 @@ import { SaveStore } from '../../../store/save.store';
         <button
           (click)="setCardSet(cardSet.Japanese)"
           [ngClass]="{
-            'bg-[#e2e4e6] text-black': selectedCardSet === cardSet.Japanese,
+            'button-highlight-background text-white': selectedCardSet === cardSet.Japanese,
             'surface-card text-[#e2e4e6]': selectedCardSet !== cardSet.Japanese,
           }"
           class="min-w-auto mt-2 h-8 w-20 border border-slate-100 p-2 text-xs font-semibold text-[#e2e4e6]">

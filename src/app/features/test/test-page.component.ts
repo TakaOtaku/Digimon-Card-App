@@ -71,7 +71,7 @@ export class TestPageComponent implements OnDestroy {
 
   isAdmin(): boolean {
     return !!ADMINS.find((user) => {
-      if (this.authService.currentUser?.uid === user.id) {
+      if (this.authService.currentUser()?.uid === user.id) {
         return user.admin;
       }
       return false;
@@ -102,8 +102,6 @@ export class TestPageComponent implements OnDestroy {
           )
           .subscribe();
       });
-
-      //concat(...observable).subscribe((value) => console.log(value));
     });
   }
 

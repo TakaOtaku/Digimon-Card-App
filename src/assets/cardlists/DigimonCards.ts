@@ -1,5 +1,5 @@
-import { CARDSET } from '../../models';
-import { DigimonCard } from '../../models';
+import { CARDSET } from '@models';
+import { DigimonCard } from '@models';
 import DigimonCardsJsonENG from './PreparedDigimonCardsENG.json';
 import DigimonCardsJsonJAP from './PreparedDigimonCardsJAP.json';
 

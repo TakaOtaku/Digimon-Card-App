@@ -6,12 +6,12 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { DragDropModule } from 'primeng/dragdrop';
 import { first } from 'rxjs';
-import { DeckColorMap, DRAG, IDeck, IDeckCard, IDraggedCard, ISave } from '../../../../models';
-import { colorSort, compareIDs, levelSort, setColors, setTags } from '../../../functions';
-import { DigimonBackendService } from '../../../services/digimon-backend.service';
-import { DigimonCardStore } from '../../../store/digimon-card.store';
-import { SaveStore } from '../../../store/save.store';
-import { WebsiteStore } from '../../../store/website.store';
+import { DeckColorMap, DRAG, IDeck, IDeckCard, IDraggedCard, ISave } from '@models';
+import { colorSort, compareIDs, levelSort, setColors, setTags } from '@functions';
+import { DigimonBackendService } from '@services';
+import { DigimonCardStore } from '@store';
+import { SaveStore } from '@store';
+import { WebsiteStore } from '@store';
 import { DeckCardComponent } from '../../shared/deck-card.component';
 import { DeckMetadataComponent } from './deck-metadata.component';
 import { DeckToolbarComponent } from './deck-toolbar.component';
@@ -154,6 +154,7 @@ export class DeckViewComponent {
   saveDeck(event: any) {
     this.confirmationService.confirm({
       target: event.target,
+      key: 'save',
       message: 'You are about to save all changes and overwrite everything changed. Are you sure?',
       accept: () => {
         this.onMainDeck.pipe(first()).subscribe(() => {

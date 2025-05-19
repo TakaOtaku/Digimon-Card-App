@@ -6,6 +6,25 @@ import { PanelModule } from 'primeng/panel';
   selector: 'digimon-changelog-dialog',
   template: `
     <div>
+      <p-panel header="Version 4.2.0" [toggleable]="true" [collapsed]="false">
+        <h1 class="font-bold text-lg underline">Feature</h1>
+        <ul class="list-disc p-5">
+          <li>Updated all Packages to the newest Version.</li>
+          <li>Because of the Update a few styles changed, so I embraced it and made a few more changes.</li>
+          <li>Added new Deck-Table expandable rows.</li>
+          <li>Added new Keyword Assembly.</li>
+          <li>Added all new Products</li>
+          <li>Added new Tags for the new Sets</li>
+        </ul>
+        <h1 class="font-bold text-lg underline">Removed</h1>
+        <ul class="list-disc p-5">
+          <li>All Pricing Functionality, CardMarket, CardTrader and TCGPlayer don't allow API access.</li>
+          <li>Sort by Count and Name, needs a rework to work again</li>
+        </ul>
+        <div class="flex flex-wrap align-middle justify-content-between gap-3">
+          <span class="ml-auto p-text-secondary">Updated 19.05.2025</span>
+        </div>
+      </p-panel>
       <p-panel header="Version 4.1.9" [toggleable]="true" [collapsed]="false">
         <h1 class="font-bold text-lg underline">Feature</h1>
         <ul class="list-disc p-5">

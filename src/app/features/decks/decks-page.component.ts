@@ -35,6 +35,7 @@ import { TierlistComponent } from './components/tierlist.component';
             <p-button
               size="small"
               class="p-button-outlined mr-1"
+              styleClass="primary-background text-white border-none"
               icon="pi pi-search"
               type="button"
               pTooltip="Filter the Decks for Decks possible with your cards"
@@ -44,6 +45,7 @@ import { TierlistComponent } from './components/tierlist.component';
             <p-button
               size="small"
               class="p-button-outlined"
+              styleClass="primary-background text-white border-none"
               icon="pi pi-chart-line"
               type="button"
               label="Statistics"
@@ -53,7 +55,7 @@ import { TierlistComponent } from './components/tierlist.component';
 
         <digimon-decks-filter [form]="form" (applyFilter)="filterChanges()"></digimon-decks-filter>
 
-        <div *ngIf="decksToShow.length > 0; else loading" class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div *ngIf="decksToShow.length > 0; else loading" class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-1">
           <digimon-deck-container
             class="mx-auto min-w-[280px] max-w-[285px]"
             *ngFor="let deck of decksToShow"

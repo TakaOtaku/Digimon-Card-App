@@ -35,7 +35,7 @@ export interface DigimonCardImage {
   template: `
     <div class="flex h-full w-full flex-col">
       <div
-        class="grid max-h-[375px] min-h-[200px] w-full grid-cols-4 overflow-y-scroll border-2 border-slate-200 md:grid-cols-6 lg:grid-cols-8">
+        class="grid max-h-[560px] min-h-[200px] w-full grid-cols-4 overflow-y-scroll border-2 border-slate-200 md:grid-cols-6 lg:grid-cols-8">
         <digimon-deck-card *ngFor="let card of mainDeck" [edit]="false" [card]="card"></digimon-deck-card>
       </div>
 
@@ -149,6 +149,7 @@ export interface DigimonCardImage {
       </ng-template>
     </div>
 
+    <p-confirmDialog header="Save Deck?" rejectButtonStyleClass="p-button-outlined" key="save"></p-confirmDialog>
     <p-confirmDialog header="Open Deck" rejectButtonStyleClass="p-button-outlined"></p-confirmDialog>
     <p-confirmDialog
       header="Delete Confirmation"
@@ -226,14 +227,14 @@ export class DeckDialogComponent {
     });
 
     this.isAdmin =
-      this.authService.currentUser?.uid === 'S3rWXPtCYRN8vSrxY3qE6aeewy43' ||
-      this.authService.currentUser?.uid === 'loBLZPOIL0ZlDzt6A1rgDiTomTw2';
+      this.authService.currentUser()?.uid === 'S3rWXPtCYRN8vSrxY3qE6aeewy43' ||
+      this.authService.currentUser()?.uid === 'loBLZPOIL0ZlDzt6A1rgDiTomTw2';
   }
 
   openDeck(event: Event) {
     if (this.editable) {
       if (this.authService.isLoggedIn) {
-        this.router.navigateByUrl(`deckbuilder/user/${this.authService.currentUser?.uid}/deck/${this.deck.id}`);
+        this.router.navigateByUrl(`deckbuilder/user/${this.authService.currentUser().uid}/deck/${this.deck.id}`);
       } else {
         this.websiteStore.updateDeck(this.deck);
         this.router.navigateByUrl('deckbuilder');
@@ -322,7 +323,7 @@ export class DeckDialogComponent {
     selBox.style.top = '0';
     selBox.style.opacity = '0';
     selBox.value = this.editable
-      ? `https://digimoncard.app/deckbuilder/user/${this.authService.currentUser?.uid}/deck/${this.deck.id}`
+      ? `https://digimoncard.app/deckbuilder/user/${this.authService.currentUser()?.uid}/deck/${this.deck.id}`
       : `https://digimoncard.app/deckbuilder/${this.deck.id}`;
     document.body.appendChild(selBox);
     selBox.focus();

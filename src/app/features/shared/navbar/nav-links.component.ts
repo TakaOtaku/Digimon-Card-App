@@ -1,16 +1,15 @@
 import { NgClass, NgIf } from '@angular/common';
-import { Component, inject, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, effect, inject, Input, OnInit, Signal, signal, WritableSignal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { IUser } from '@models';
+import { AuthService } from '@services';
+import { DialogStore, SaveStore } from '@store';
 
 import { ButtonModule } from 'primeng/button';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { DialogModule } from 'primeng/dialog';
-import { Subject, takeUntil } from 'rxjs';
-import { IUser } from '../../../../models';
-import { AuthService } from '../../../services/auth.service';
-import { DialogStore } from '../../../store/dialog.store';
-import { SaveStore } from '../../../store/save.store';
 
 @Component({
   selector: 'digimon-nav-links',
@@ -23,7 +22,7 @@ import { SaveStore } from '../../../store/save.store';
       class="p-0 ml-auto list-none flex justify-between">
       <li class="flex flex-col items-center group cursor-pointer" [ngClass]="getNavigationBorder('/')" (click)="router.navigateByUrl('')">
         <i class="pi pi-home group-hover:text-[#64B5F6]" style="font-size: 1.5rem"></i>
-        <div [ngClass]="{ 'text-[#64B5F6]': route === '/' }" style="font-size:smaller" class="p-2 group-hover:text-[#64B5F6]">Home</div>
+        <div [ngClass]="{ 'text-[#64B5F6]': route() === '/' }" style="font-size:smaller" class="p-2 group-hover:text-[#64B5F6]">Home</div>
       </li>
 
       <li
@@ -79,12 +78,12 @@ import { SaveStore } from '../../../store/save.store';
           'max-lg:mr-5': !sidebar,
         }"
         class="group">
-        <ng-container *ngIf="user; else userIcon">
+        <ng-container *ngIf="user(); else userIcon">
           <div
             class='min-w-auto mx-auto primary-background h-12 w-12 overflow-hidden rounded-full text-[#e2e4e6] group-hover:bg-[#64B5F6]"'>
-            <img *ngIf="user" alt="{{ this.user!.displayName }}" src="{{ this.user!.photoURL }}" />
+            <img *ngIf="user()" alt="{{ this.user()?.displayName }}" src="{{ this.user()?.photoURL }}" />
           </div>
-          <span class="text-[#e2e4e6] text-xs">{{ this.user!.displayName }}</span>
+          <span class="text-[#e2e4e6] text-xs">{{ this.user()?.displayName }}</span>
         </ng-container>
         <ng-template #userIcon>
           <div
@@ -120,7 +119,7 @@ import { SaveStore } from '../../../store/save.store';
           <i class="pi pi-paypal px-1 text-[#e2e4e6] hover:text-[#64B5F6]" style="font-size: 1rem"></i>
         </a>
         <div class="col-span-2 flex align-center justify-center">
-          <p-button class="mx-auto" [link]="true" size="small" (onClick)="showChangelog()" label="Ver. 4.1.8"></p-button>
+          <p-button class="mx-auto" [link]="true" size="small" (onClick)="showChangelog()" label="Ver. 4.2.0"></p-button>
         </div>
       </div>
     </div>
@@ -128,48 +127,33 @@ import { SaveStore } from '../../../store/save.store';
   standalone: true,
   imports: [NgClass, NgIf, FontAwesomeModule, ConfirmPopupModule, DialogModule, ButtonModule],
 })
-export class NavLinksComponent implements OnInit, OnDestroy {
+export class NavLinksComponent {
   @Input() sidebar = false;
   dialogStore = inject(DialogStore);
   saveStore = inject(SaveStore);
+  router: Router = inject(Router);
+  authService: AuthService = inject(AuthService);
 
-  user!: IUser | null;
+  user: Signal<IUser | null> = this.authService.currentUser;
 
   mobile = false;
-  route: string = '';
+  route: WritableSignal<string> = signal('');
 
-  private onDestroy$ = new Subject();
-
-  constructor(
-    public router: Router,
-    public authService: AuthService,
-  ) {}
-
-  ngOnInit() {
-    this.user = this.authService.currentUser;
-    this.authService.user$.subscribe((user: IUser) => {
-      this.user = user;
-    });
-
-    this.router.events.pipe(takeUntil(this.onDestroy$)).subscribe((event) => {
+  constructor() {
+    this.router.events.pipe(takeUntilDestroyed()).subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.route = event.url;
+        this.route.set(event.url);
       }
     });
   }
 
-  ngOnDestroy() {
-    this.onDestroy$.next(true);
-    this.onDestroy$.unsubscribe();
-  }
-
   loginLogout() {
-    this.authService.isLoggedIn ? this.authService.logOut() : this.authService.googleAuth();
+    this.authService.currentUser() ? this.authService.logOut() : this.authService.googleAuth();
   }
 
   getNavigationBorder(route: string): any {
     if (route === '/deckbuilder') {
-      const deckOpenOrDeckbuilder = this.route === '/deckbuilder' || (this.route.includes('/deck/') && this.route.includes('/user/'));
+      const deckOpenOrDeckbuilder = this.route() === '/deckbuilder' || (this.route().includes('/deck/') && this.route().includes('/user/'));
       return {
         'border-l-[3px] border-white': deckOpenOrDeckbuilder && this.sidebar,
         'border-b-[3px] lg:border-b-0 lg:border-l-[3px] border-white': deckOpenOrDeckbuilder && !this.sidebar,
@@ -178,18 +162,18 @@ export class NavLinksComponent implements OnInit, OnDestroy {
       };
     } else if (route === '/user') {
       return {
-        'border-l-[3px] border-white': this.route.includes(route) && !this.route.includes('deckbuilder') && this.sidebar,
+        'border-l-[3px] border-white': this.route().includes(route) && !this.route().includes('deckbuilder') && this.sidebar,
         'border-b-[3px] lg:border-b-0 lg:border-l-[3px] border-white':
-          this.route.includes(route) && !this.route.includes('deckbuilder') && !this.sidebar,
-        'text-[#64B5F6]': this.route.includes(route) && !this.route.includes('deckbuilder'),
-        'text-[#e2e4e6]': !this.route.includes(route),
+          this.route().includes(route) && !this.route().includes('deckbuilder') && !this.sidebar,
+        'text-[#64B5F6]': this.route().includes(route) && !this.route().includes('deckbuilder'),
+        'text-[#e2e4e6]': !this.route().includes(route),
       };
     }
     return {
-      'border-l-[3px] border-white': this.route === route && this.sidebar,
-      'border-b-[3px] lg:border-b-0 lg:border-l-[3px] border-white': this.route === route && !this.sidebar,
-      'text-[#64B5F6]': this.route === route,
-      'text-[#e2e4e6]': this.route !== route,
+      'border-l-[3px] border-white': this.route() === route && this.sidebar,
+      'border-b-[3px] lg:border-b-0 lg:border-l-[3px] border-white': this.route() === route && !this.sidebar,
+      'text-[#64B5F6]': this.route() === route,
+      'text-[#e2e4e6]': this.route() !== route,
     };
   }
 

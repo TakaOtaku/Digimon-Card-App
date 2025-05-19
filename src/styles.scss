@@ -7,6 +7,14 @@
 
 @import 'primeicons/primeicons.css';
 
+:root {
+  --p-surface-950: #17212f !important;
+  --p-surface-900: #17212f !important;
+  --p-surface-800: #17212f !important;
+  --surface-card: #17212f !important;
+  --highlight: #185571 !important
+}
+
 html,
 body {
   height: 100%;
@@ -37,7 +45,7 @@ body {
 }
 
 .primary-background {
-  background-color: #08528d;
+  background-color: #08528d !important;
 }
 
 .primary-border {
@@ -66,11 +74,15 @@ body {
 }
 
 .surface-card {
-  background-color: var(--surface-card);
+  background-color: var(--p-surface-950);
 }
 
 .surface-ground {
-  background-color: #17212f;
+  background-color: var(--p-surface-950);
+}
+
+.button-highlight-background {
+  background-color: var(--highlight);
 }
 
 .c-white {

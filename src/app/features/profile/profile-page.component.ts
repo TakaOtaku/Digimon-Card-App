@@ -69,11 +69,12 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
 
     this.save$ = merge(
       toObservable(this.saveStore.save),
-      this.authService.user$.pipe(
+      toObservable(this.authService.currentUser).pipe(
+        filter(() => !!this.authService.currentUser()),
         tap(() => this.changeURL()),
         switchMap(() => {
           this.editable = true;
-          return this.digimonBackendService.getSave(this.authService.currentUser!.uid);
+          return this.digimonBackendService.getSave(this.authService.currentUser()!.uid);
         }),
       ),
       this.route.params.pipe(
@@ -85,7 +86,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
         }),
         switchMap((params) => this.digimonBackendService.getSave(params['id']).pipe(first())),
         tap((save) => {
-          this.editable = save.uid === this.authService.currentUser?.uid;
+          this.editable = save.uid === this.authService.currentUser()?.uid;
           this.decks = save?.decks ?? [];
           this.filteredDecks = this.decks;
           this.filterChanges();
@@ -107,8 +108,8 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
   }
 
   changeURL() {
-    if (this.authService.currentUser?.uid) {
-      this.location.replaceState('/user/' + this.authService.currentUser?.uid);
+    if (this.authService.currentUser()?.uid) {
+      this.location.replaceState('/user/' + this.authService.currentUser()?.uid);
     } else {
       this.location.replaceState('/user');
     }

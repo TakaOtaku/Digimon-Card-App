@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, computed, inject
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ADMINS, emptyDeck, JAPTIERLIST, TIERLIST } from '@models';
+import { ADMINS, emptyDeck, TIERLIST } from '@models';
 import { DigimonCardStore, SaveStore, WebsiteStore } from '@store';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { MessageService } from 'primeng/api';
@@ -165,23 +165,12 @@ export class TierlistComponent {
       .subscribe((value) => {
         const newTierlist = (value as any[])[0];
         this.tierlist = newTierlist;
-        this.changeDetectorRef.detectChanges();
       });
   }
 
   openCommunityWithSearch(card: string) {
     this.websiteStore.updateCommunityDeckSearch(card);
     this.router.navigateByUrl('/decks');
-  }
-
-  switchRegion() {
-    if (this.currentRegion === 'GLOBAL') {
-      this.currentRegion = 'JAPAN';
-      this.tierlist = JAPTIERLIST;
-    } else {
-      this.currentRegion = 'GLOBAL';
-      this.tierlist = TIERLIST;
-    }
   }
 
   onDragStart(index: number, tier: number) {
@@ -230,7 +219,6 @@ export class TierlistComponent {
   }
 
   onDropToTier(tier: number) {
-    console.log('Move Deck ' + this.selectedDeck.name + ' to Tier ' + this.tiers[tier].tier);
     // Remove the dragged element from the old tier
     this.tierlist[this.startTier].splice(this.startIndex, 1);
 

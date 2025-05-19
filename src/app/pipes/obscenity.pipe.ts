@@ -1,20 +1,16 @@
-declare var require: any;
 import { Pipe, PipeTransform } from '@angular/core';
+import { Filter } from 'bad-words';
 
 @Pipe({
   name: 'obscenity',
   standalone: true,
 })
 export class ObscenityPipe implements PipeTransform {
-  public readonly obscenities = require('badwords-list');
-
   transform(value: any, ...args: any[]): any {
     let newVal: string = value;
-    const grawlix: string = '@#$%&!';
+    const filter = new Filter();
 
-    this.obscenities.array.forEach((curse: any) => {
-      newVal = this.replaceAll(newVal, curse, grawlix);
-    });
+    newVal = filter.clean(value);
 
     return newVal;
   }

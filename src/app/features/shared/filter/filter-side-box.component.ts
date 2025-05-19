@@ -1,4 +1,4 @@
-import { Component, computed, effect, EventEmitter, inject, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, computed, effect, EventEmitter, inject, Input, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { itemsAsSelectItem } from '@functions';
 import {
@@ -17,7 +17,7 @@ import {
 import { FilterStore, SaveStore } from '@store';
 import { MessageService } from 'primeng/api';
 import { MultiSelectModule } from 'primeng/multiselect';
-import { debounceTime, Subject, takeUntil } from 'rxjs';
+import { debounceTime } from 'rxjs';
 import { RangeSliderComponent } from '../range-slider.component';
 import { SortButtonsComponent } from '../sort-buttons.component';
 import { BlockFilterComponent } from './block-filter.component';
@@ -97,7 +97,7 @@ import { VersionFilterComponent } from './version-filter.component';
         </button>
       </div>
 
-      <div class="flex flex-row">
+      <div class="flex flex-row mb-2">
         <digimon-range-slider
           [reset]="resetEmitter"
           [minMax]="[0, collectionCountMax() ?? 5]"
@@ -259,12 +259,14 @@ import { VersionFilterComponent } from './version-filter.component';
   ],
   providers: [MessageService],
 })
-export class FilterSideBoxComponent implements OnInit, OnDestroy {
+export class FilterSideBoxComponent {
   @Input() public showColors!: boolean;
   messageService = inject(MessageService);
 
   filterStore = inject(FilterStore);
   saveStore = inject(SaveStore);
+
+  collectionCountMax = computed(() => this.saveStore.settings().countMax);
 
   keywordFilter = new UntypedFormControl([]);
   formFilter = new UntypedFormControl([]);
@@ -274,11 +276,11 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
   specialRequirementsFilter = new UntypedFormControl([]);
   restrictionsFilter = new UntypedFormControl([]);
   sourceFilter = new UntypedFormControl([]);
-  levelFilter = new UntypedFormControl([]);
-  playCostFilter = new UntypedFormControl([]);
-  digivolutionFilter = new UntypedFormControl([]);
-  dpFilter = new UntypedFormControl([]);
-  cardCountFilter = new UntypedFormControl([]);
+  levelFilter = new UntypedFormControl([2, 7]);
+  playCostFilter = new UntypedFormControl([0, 20]);
+  digivolutionFilter = new UntypedFormControl([0, 7]);
+  dpFilter = new UntypedFormControl([1, 17]);
+  cardCountFilter = new UntypedFormControl([0, this.collectionCountMax() ?? 5]);
   presetFilter = new UntypedFormControl([]);
 
   filterFormGroup: UntypedFormGroup = new UntypedFormGroup({
@@ -309,7 +311,7 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
   presets = itemsAsSelectItem(Presets);
 
   resetEmitter = new EventEmitter<void>();
-  collectionCountMax = computed(() => this.saveStore.settings().countMax);
+
   private filter!: IFilter;
   updateFilter = effect(() => {
     const filter = this.filterStore.filter();
@@ -349,19 +351,12 @@ export class FilterSideBoxComponent implements OnInit, OnDestroy {
       emitEvent: false,
     });
   });
-  private onDestroy$ = new Subject();
-
-  ngOnInit(): void {
-    this.filterFormGroup.valueChanges.pipe(debounceTime(200), takeUntil(this.onDestroy$)).subscribe((filterValue) => {
+  private formSubscription = effect(() => {
+    this.filterFormGroup.valueChanges.pipe(debounceTime(200)).subscribe((filterValue) => {
       const filter: IFilter = { ...this.filter, ...filterValue };
       this.filterStore.updateFilter(filter);
     });
-  }
-
-  ngOnDestroy() {
-    this.onDestroy$.next(true);
-    this.onDestroy$.complete();
-  }
+  });
 
   reset() {
     this.resetEmitter.emit();

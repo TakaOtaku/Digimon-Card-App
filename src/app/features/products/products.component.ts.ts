@@ -146,6 +146,16 @@ export class ProductsComponent {
       image: '../../assets/images/products/ST-19.webp',
       link: 'https://digimoncardgame.fandom.com/wiki/ST-19:_Starter_Deck_Fable_Waltz',
     },
+    {
+      name: 'ST-20: Starter Deck Protector of Light',
+      image: '../../assets/images/products/ST-20.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/ST-20:_Starter_Deck_Protector_of_Light',
+    },
+    {
+      name: 'ST-21: Starter Deck Hero of Hope',
+      image: '../../assets/images/products/ST-21.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/ST-21:_Starter_Deck_Hero_of_Hope',
+    },
   ];
   booster = [
     {
@@ -262,6 +272,66 @@ export class ProductsComponent {
       name: 'BT-17: Booster Secret Crisis',
       image: '../../assets/images/products/BT-17.webp',
       link: 'https://digimoncardgame.fandom.com/wiki/BT-17:_Booster_Secret_Crisis',
+    },
+    {
+      name: 'EX-07: Extra Booster Digimon Liberator',
+      image: '../../assets/images/products/EX-07.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/EX-07:_Extra_Booster_Digimon_Liberator',
+    },
+    {
+      name: 'BT-18: Booster Elemental Successor',
+      image: '../../assets/images/products/BT-18.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/BT-18:_Booster_Elemental_Successor',
+    },
+    {
+      name: 'BT-19: Booster Xros Evolution',
+      image: '../../assets/images/products/BT-19.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/BT-19:_Booster_Xros_Evolution',
+    },
+    {
+      name: 'EX-08: Extra Booster Chain of Liberation',
+      image: '../../assets/images/products/EX-08.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/EX-08:_Extra_Booster_Chain_of_Liberation',
+    },
+    {
+      name: 'BT-20: Booster Over the X',
+      image: '../../assets/images/products/BT-20.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/BT-20:_Booster_Over_the_X',
+    },
+    {
+      name: 'BT18-19: Special Booster Ver.2.0',
+      image: '../../assets/images/products/BT-2.0.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/BT18-19:_Special_Booster_Ver.2.0',
+    },
+    {
+      name: 'BT19-20: Special Booster Ver.2.5',
+      image: '../../assets/images/products/BT-2.5.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/BT19-20:_Special_Booster_Ver.2.5',
+    },
+    {
+      name: 'BT-21: Booster World Convergence',
+      image: '../../assets/images/products/BT-21.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/BT-21:_Booster_World_Convergence',
+    },
+    {
+      name: 'EX-09: Extra Booster Versus Monsters',
+      image: '../../assets/images/products/EX-09.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/EX-09:_Extra_Booster_Versus_Monsters',
+    },
+    {
+      name: 'BT-22: Booster Cyber Eden',
+      image: '../../assets/images/products/BT-22.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/BT-22:_Booster_Cyber_Eden',
+    },
+    {
+      name: 'EX-10: Extra Booster Sinister Order',
+      image: '../../assets/images/products/EX-10.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/EX-10:_Extra_Booster_Sinister_Order',
+    },
+    {
+      name: 'BT-23: Booster Hackers Slumber',
+      image: '../../assets/images/products/BT-23.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/BT-23:_Booster_Hackers_Slumber',
     },
   ];
   promo = [
@@ -469,6 +539,21 @@ export class ProductsComponent {
       name: "PB-11: Digimon Card Game Tamer's Set 5",
       image: '../../assets/images/products/PB-11.webp',
       link: 'https://digimoncardgame.fandom.com/wiki/PB-11:_Digimon_Card_Game_Tamer%27s_Set_5',
+    },
+    {
+      name: 'Digimon Card Game 2nd Anniversary Set',
+      image: '../../assets/images/products/2nd_Anniversary_Set.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/PB-12E:_Digimon_Card_Game_2nd_Anniversary_Set',
+    },
+    {
+      name: 'PB-13: Royal Knights Binder Set',
+      image: '../../assets/images/products/PB-13.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/PB-13:_Digimon_Card_Game_Royal_Knights_Binder_Set',
+    },
+    {
+      name: "PB-14: Digimon Card Game Tamer's Set EX2",
+      image: '../../assets/images/products/PB-14.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/PB-14:_Digimon_Card_Game_Tamer%27s_Set_EX2',
     },
   ];
 

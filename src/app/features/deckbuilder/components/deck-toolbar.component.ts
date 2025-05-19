@@ -20,7 +20,7 @@ import { PriceCheckDialogComponent } from './price-check-dialog.component';
 @Component({
   selector: 'digimon-deck-toolbar',
   template: `
-    <div class="toolbar ml-3 mr-3 flex w-[100%-3rem] flex-row justify-evenly border-b-2 border-slate-600 md:grid-cols-12">
+    <div class="toolbar ml-3 mr-3 flex w-[100%-3rem] flex-row justify-evenly border-b-2 border-slate-600 md:grid-cols-11">
       <button
         (click)="missingCardsChange.emit(!missingCards)"
         [ngClass]="{ 'primary-background': missingCards }"
@@ -77,25 +77,7 @@ import { PriceCheckDialogComponent } from './price-check-dialog.component';
         pButton
         pTooltip="Click to simulate your draw hand and the security stack!"
         tooltipPosition="top"></button>
-
-      <button
-        (click)="checkPrice()"
-        class="p-button-outlined h-[30px] w-full cursor-pointer"
-        icon="pi pi-dollar"
-        iconPos="left"
-        pButton></button>
     </div>
-
-    <p-dialog
-      header="Price Check"
-      [(visible)]="priceCheckDialog"
-      [modal]="true"
-      [dismissableMask]="true"
-      [resizable]="false"
-      styleClass="w-[100%] min-w-[250px] sm:min-w-[500px] sm:w-[700px] min-h-[500px]"
-      [baseZIndex]="10000">
-      <digimon-price-check-dialog [checkPrice]="checkPrice$"></digimon-price-check-dialog>
-    </p-dialog>
 
     <p-dialog
       header="Simulate Security/Draw"
@@ -149,7 +131,6 @@ import { PriceCheckDialogComponent } from './price-check-dialog.component';
     TooltipModule,
     NgClass,
     DialogModule,
-    PriceCheckDialogComponent,
     NgFor,
     ImportDeckDialogComponent,
     ConfirmDialogModule,
@@ -210,8 +191,8 @@ export class DeckToolbarComponent {
       accept: () => {
         const newDeckID = uuid.v4();
         this.websiteStore.createNewDeck(newDeckID);
-        if (this.authService.currentUser?.uid) {
-          this.route.navigateByUrl(`deckbuilder/user/${this.authService.currentUser?.uid}/deck/${newDeckID}`);
+        if (this.authService.currentUser()?.uid) {
+          this.route.navigateByUrl(`deckbuilder/user/${this.authService.currentUser()?.uid}/deck/${newDeckID}`);
         } else {
           this.route.navigateByUrl(`deckbuilder`);
         }

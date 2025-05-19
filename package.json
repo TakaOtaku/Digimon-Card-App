@@ -41,6 +41,7 @@
     "@tailwindcss/cli": "^4.1.6",
     "@tailwindcss/postcss": "^4.1.6",
     "@types/chart.js": "2.9.41",
+    "bad-words": "^4.0.0",
     "badwords-list": "^1.0.0",
     "chart.js": "^4.4.9",
     "file-saver": "^2.0.5",

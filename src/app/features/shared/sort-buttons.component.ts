@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, inject, Signal, signal } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MenuItem } from 'primeng/api';
 import { DropdownModule } from 'primeng/dropdown';
@@ -10,26 +10,21 @@ import { WebsiteStore } from '../../store/website.store';
   selector: 'digimon-sort-buttons',
   template: `
     <div class="mb-1 inline-flex rounded-md shadow-sm" role="group">
-      @if (sort.ascOrder) {
-        <p-splitbutton
-          [label]="sortElement().name"
-          icon="pi pi-sort-amount-down"
-          (onClick)="changeOrder()"
-          [model]="sortOptions"
-          raised
-          text
-          size="small" />
-      } @else {
-        <p-splitbutton
-          [label]="sortElement().name"
-          icon="pi pi-sort-amount-down"
-          (onClick)="changeOrder()"
-          [model]="sortOptions"
-          raised
-          text
-          size="small" />
-      }
+      <p-splitbutton
+        [label]="sortElement().name"
+        [icon]="sort().ascOrder ? 'pi pi-sort-amount-down' : 'pi pi-sort-amount-up'"
+        class="border-slate-200 border rounded"
+        (onClick)="changeOrder()"
+        [model]="sortOptions"
+        raised
+        text
+        size="small" />
     </div>
+  `,
+  styles: `
+    p-splitbutton ::ng-deep .p-button-text {
+      color: white;
+    }
   `,
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -38,7 +33,7 @@ import { WebsiteStore } from '../../store/website.store';
 export class SortButtonsComponent {
   websiteStore = inject(WebsiteStore);
   sortElement = signal({ name: 'ID', element: 'id' });
-  sort: ISort = this.websiteStore.sort();
+  sort: Signal<ISort> = this.websiteStore.sort;
 
   sortOptions: MenuItem[] = [
     {
@@ -69,22 +64,14 @@ export class SortButtonsComponent {
         this.updateStore();
       },
     },
-    {
-      label: 'Name',
-      command: () => {
-        this.sortElement.set({ name: 'Name', element: 'name' });
-        this.updateStore();
-      },
-    },
   ];
 
   updateStore() {
-    this.websiteStore.updateSort({ sortBy: this.sortElement(), ascOrder: this.sort.ascOrder });
+    this.websiteStore.updateSort({ sortBy: this.sortElement(), ascOrder: this.sort().ascOrder });
   }
 
   changeOrder() {
-    const ascOrder = !this.sort.ascOrder;
-    console.log(ascOrder);
+    const ascOrder = !this.sort().ascOrder;
     this.websiteStore.updateSort({ sortBy: this.sortElement(), ascOrder });
   }
 }

@@ -1,5 +1,13 @@
 import { NgClass, NgForOf, NgIf, NgStyle } from '@angular/common';
-import { ChangeDetectorRef, Component, effect, HostListener, inject } from '@angular/core';
+import {
+  AfterViewChecked,
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  effect, ElementRef,
+  HostListener,
+  inject, OnDestroy, Renderer2
+} from '@angular/core';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
@@ -7,6 +15,7 @@ import { ImgFallbackDirective } from '@directives';
 import { ColorMap, DigimonCard, ICountCard, IDeck, replacements } from '@models';
 import { formatId, withoutJ } from '@functions';
 import { DialogStore, SaveStore, WebsiteStore, DigimonCardStore } from '@store';
+import { Tooltip, TooltipModule } from 'primeng/tooltip';
 
 @Component({
   selector: 'digimon-view-card-dialog',
@@ -163,6 +172,10 @@ import { DialogStore, SaveStore, WebsiteStore, DigimonCardStore } from '@store';
             <p [ngStyle]="{ color }" class="text-black-outline-xs text-lg font-extrabold">DigiXros</p>
             <p class="font-white whitespace-pre-wrap font-bold leading-[1.7em]" [innerHTML]="replaceWithImageTags(card.digiXros)"></p>
           </div>
+          <div *ngIf="card.assembly !== '-'" class="my-0.5 flex w-full flex-col rounded-full" id="Digimon-Assembly">
+            <p [ngStyle]="{ color }" class="text-black-outline-xs text-lg font-extrabold">Assembly</p>
+            <p class="font-white whitespace-pre-wrap font-bold leading-[1.7em]" [innerHTML]="replaceWithImageTags(card.assembly)"></p>
+          </div>
           <div
             *ngIf="card.burstDigivolve && card.burstDigivolve !== '-'"
             class="my-0.5 flex w-full flex-col rounded-full"
@@ -218,13 +231,12 @@ import { DialogStore, SaveStore, WebsiteStore, DigimonCardStore } from '@store';
         </div>
       </div>
 
-      <!-- TODO
-      <div *ngIf="card.restriction !== '-'" class="my-4 max-w-full" id="Restriction">
+      <div *ngIf="card.restrictions.english !== 'Unrestricted'" class="my-4 max-w-full" id="Restriction">
         <div class="flex flex-col" id="Card-Restriction">
-          <p [ngStyle]="{color}" class="text-black-outline-xs text-lg font-extrabold">Restriction</p>
-          <p class="font-white font-bold">{{ card.restriction }}</p>
+          <p [ngStyle]="{ color }" class="text-black-outline-xs text-lg font-extrabold">Restriction</p>
+          <p class="font-white font-bold">{{ card.restrictions.english }}</p>
         </div>
-      </div> -->
+      </div>
 
       <div class="my-4 max-w-full" id="Notes">
         <div class="flex flex-col" id="Card-Notes">
@@ -252,7 +264,7 @@ import { DialogStore, SaveStore, WebsiteStore, DigimonCardStore } from '@store';
     </div>
   `,
   standalone: true,
-  imports: [NgStyle, NgIf, NgClass, ButtonModule, RippleModule, LazyLoadImageModule, ImgFallbackDirective, NgForOf],
+  imports: [NgStyle, NgIf, NgClass, ButtonModule, RippleModule, LazyLoadImageModule, ImgFallbackDirective, NgForOf, TooltipModule],
 })
 export class ViewCardDialogComponent {
   changeDetection = inject(ChangeDetectorRef);
@@ -284,7 +296,6 @@ export class ViewCardDialogComponent {
     this.collectionCard = collection.find((colCard) => colCard.id === withoutJ(this.card.id))!;
 
     this.card = this.dialogStore.viewCard().card;
-    console.log(this.card);
     this.setupView();
   });
 
@@ -349,14 +360,16 @@ export class ViewCardDialogComponent {
       return;
     }
     this.card = newCard;
-    console.log(this.card);
     this.setupView();
   }
 
   replaceWithImageTags(effect: string): string {
     let replacedText = effect;
-    for (const [pattern, imageTag] of replacements) {
-      replacedText = replacedText.replace(pattern, `<img class="inline h-4" src="assets/images/keywords/${imageTag}.webp"/>`);
+    for (const [pattern, imageTag, tooltip] of replacements) {
+      replacedText = replacedText.replace(
+        pattern,
+        `<img class="inline h-4 tooltip-keyword" data-tooltip="${tooltip}" src="assets/images/keywords/${imageTag}.webp"/>`,
+      );
     }
     return replacedText;
   }

@@ -27,9 +27,13 @@ import { DividerModule } from 'primeng/divider';
 
     <h2 class="mt-1 text-center text-[#e2e4e6] text-sm sm:text-base">
       March next year the 3-Year Plan for the Server will end and I will have to move to a new server. The last Server was about 250-300€
-      for the 3 years, thanks to a good deal and about 100€ of that was payed thanks to the donations. So if you want to support the site,
+      for the 3 years, thanks to a good deal and about 75€ of that was payed thanks to the donations. So if you want to support the site,
       consider donating a few bucks to help me maintain the site.
     </h2>
+
+    <a href="https://www.paypal.com/donate/?hosted_button_id=WLM58Q785D4H4" target="_blank">
+      <img src="assets/images/blue.png" alt="Paypal Donate Button" class="mx-auto h-12" />
+    </a>
 
     <p-divider class="my-5"></p-divider>
 
@@ -37,8 +41,8 @@ import { DividerModule } from 'primeng/divider';
       If you do like the site and want to support it, consider donating
       <a href="https://www.paypal.com/donate/?hosted_button_id=WLM58Q785D4H4" target="_blank">
         <i class="pi pi-paypal px-1 text-[#e2e4e6] hover:text-[#64B5F6]"></i>
-      </a>
-      and helping me keep the website ad-free. I will use everything that gets donated to get better servers to improve the performance of
+      </a>.
+      I will use everything that gets donated to get better servers to improve the performance of
       the website.
     </h2>
 

@@ -1,21 +1,17 @@
 import { ChangeDetectionStrategy, Component, effect, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { filterCards } from '@functions';
+import { CARDSET, emptyFilter, IFilter } from '@models';
+import { AuthService, DigimonBackendService } from '@services';
+import { DigimonCardStore, FilterStore, SaveStore, WebsiteStore } from '@store';
 import { BlockUIModule } from 'primeng/blockui';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { SidebarModule } from 'primeng/sidebar';
 import { ToastModule } from 'primeng/toast';
 import { first } from 'rxjs';
-import { CARDSET, emptyFilter, IFilter } from '../models';
 import { DialogComponent } from './features/shared/dialog.component';
 import { NavLinksComponent } from './features/shared/navbar/nav-links.component';
 import { NavbarComponent } from './features/shared/navbar/navbar.component';
-import { filterCards } from './functions';
-import { AuthService } from './services/auth.service';
-import { DigimonBackendService } from './services/digimon-backend.service';
-import { DigimonCardStore } from './store/digimon-card.store';
-import { FilterStore } from './store/filter.store';
-import { SaveStore } from './store/save.store';
-import { WebsiteStore } from './store/website.store';
 
 @Component({
   selector: 'digimon-root',
@@ -76,6 +72,14 @@ export class AppComponent {
 
   cardSet = '';
   settings = this.saveStore.settings();
+
+  onAuthChange = effect(() => {
+    if (this.authService.isLoggedIn) {
+      this.saveStore.updateSave(this.authService.currentUser().save);
+    } else {
+      this.saveStore.updateSave(this.authService.getLocalStorageSave());
+    }
+  });
 
   constructor() {
     // Check if a save is in local storage from a previous login

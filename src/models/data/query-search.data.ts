@@ -1,3 +1,4 @@
+import { TAGS } from '@models';
 import {
   Attributes,
   Blocks,
@@ -8,7 +9,6 @@ import {
   Keywords,
   Rarity,
   Restrictions,
-  Sets,
   SpecialRequirements,
   Types,
   Versions,
@@ -42,7 +42,7 @@ export const Combiner = ['AND', 'OR'];
 export const filterTypeMap = new Map<string, string[]>([
   ['Color', Colors],
   ['Card Type', CardTypes],
-  ['Set', Sets],
+  ['Set', TAGS],
   ['Level', []],
   ['Play Cost', []],
   ['Digivolve Cost', []],

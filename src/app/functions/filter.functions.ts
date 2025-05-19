@@ -353,18 +353,6 @@ function applySortOrder(cards: DigimonCard[], sort: ISort, collection: ICountCar
     return sort.ascOrder
       ? returnArray.sort(dynamicSortNumber(sort.sortBy.element))
       : returnArray.sort(dynamicSortNumber(`-${sort.sortBy.element}`));
-  } else if (sort.sortBy.element === 'count') {
-    return sort.ascOrder
-      ? returnArray.sort((a, b) => {
-          const countA = collection.find((card) => card.id === a.id)?.count ?? 0;
-          const countB = collection.find((card) => card.id === b.id)?.count ?? 0;
-          return countA - countB;
-        })
-      : returnArray.sort((a, b) => {
-          const countA = collection.find((card) => card.id === a.id)?.count ?? 0;
-          const countB = collection.find((card) => card.id === b.id)?.count ?? 0;
-          return countB - countA;
-        });
   }
   return sort.ascOrder ? returnArray.sort(dynamicSort(sort.sortBy.element)) : returnArray.sort(dynamicSort(`-${sort.sortBy.element}`));
 }
