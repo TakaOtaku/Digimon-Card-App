@@ -116,6 +116,11 @@ def saveCards():
 
 def loadCards():
   # Open the JSON file and load its contents
+  """
+  Loads Digimon card data from a JSON file and populates WV.cards with DigimonCard instances.
+  
+  Each card entry from the JSON is converted into a DigimonCard object, including nested attributes such as AAs and JAAs, and assigned to the global WV.cards list.
+  """
   with open('./scripts/python/Wiki/jsons/DigimonCards.json', 'r') as file:
     data = json.load(file)
     # Data is an Array of DigimonCards and they should be added to WV.Cards with the correct Class

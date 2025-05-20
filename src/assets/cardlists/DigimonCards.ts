@@ -12,11 +12,22 @@ function setupJsonENG(): DigimonCard[] {
   return digimonCards;
 }
 
+/**
+ * Loads and returns an array of Digimon cards from the Japanese JSON data.
+ *
+ * @returns An array of DigimonCard objects representing the Japanese card set.
+ */
 function setupJsonJAP(): DigimonCard[] {
   const japCards: DigimonCard[] = [...DigimonCardsJsonJAP];
   return japCards;
 }
 
+/**
+ * Creates a map of Digimon cards keyed by their unique ID.
+ *
+ * @param cards - An array of DigimonCard objects to be mapped.
+ * @returns A Map where each key is a card's {@link DigimonCard.id} and the value is the corresponding DigimonCard object.
+ */
 export function setupDigimonCardMap(cards: DigimonCard[]): Map<string, DigimonCard> {
   const digimonCardMap = new Map<string, DigimonCard>();
   cards.forEach((digimonCard) => {

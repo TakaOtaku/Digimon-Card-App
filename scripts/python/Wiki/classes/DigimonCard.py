@@ -4,6 +4,11 @@ from classes.Name import Name
 
 class DigimonCard:
     def __init__(self):
+        """
+        Initializes a DigimonCard instance with default attribute values.
+        
+        All card attributes are set to default values such as "-", empty lists, or instances of supporting classes. This prepares the object for subsequent property-based configuration.
+        """
         self._id = "-"
         self._name = Name()
         self._cardImage = ""
@@ -151,18 +156,39 @@ class DigimonCard:
 
     @digiXros.setter
     def digiXros(self, value):
+        """
+        Sets the DigiXros attribute for the Digimon card.
+        
+        Args:
+            value: The DigiXros information to assign to the card.
+        """
         self._digiXros = value
 
     @property
     def assembly(self):
+      """
+      Gets the assembly information associated with the Digimon card.
+      
+      Returns:
+          The assembly attribute as a string.
+      """
       return self._assembly
 
     @assembly.setter
     def assembly(self, value):
+      """
+      Sets the assembly attribute for the Digimon card.
+      
+      Args:
+          value: The assembly information to assign to the card.
+      """
       self._assembly = value
 
     @property
     def specialDigivolve(self):
+        """
+        Returns the special digivolution condition for the Digimon card.
+        """
         return self._specialDigivolve
 
     @specialDigivolve.setter

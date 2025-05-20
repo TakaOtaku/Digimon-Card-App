@@ -75,6 +75,18 @@ def addCorrectSpecialDigivolve(digimoncard, specialDigivolve):
 
 
 def getDigivolveInfo(html, digimoncard):
+  """
+  Parses and assigns digivolution and special evolution requirements from HTML to a DigimonCard.
+  
+  Extracts standard digivolution conditions from tables with class "evocon" and creates DigivolveCondition objects for each, setting color, level/form, and cost. Also processes special evolution requirements from tables with class "effect", assigning DigiXros, Assembly, Link, and alternative digivolution requirements to the corresponding attributes of the DigimonCard.
+  
+  Args:
+  	html: BeautifulSoup HTML section containing digivolution information.
+  	digimoncard: The DigimonCard object to update.
+  
+  Returns:
+  	The updated DigimonCard object with parsed digivolution and special evolution data.
+  """
   if html == None:
     return digimoncard
 
