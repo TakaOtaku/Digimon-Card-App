@@ -1,6 +1,14 @@
 import { DigimonCard, emptyDeck, ICountCard, IDeck, IDeckCard } from '../../models';
 import { compareIDs, setColors, setTags } from './digimon-card.functions';
 
+/**
+ * Parses a Digimon deck from a string input, supporting both line-based and Tabletop Simulator (TTS) JSON formats.
+ *
+ * Attempts to interpret the input as a newline-separated deck list first; if unsuccessful, tries to parse it as a TTS JSON deck. Returns the constructed deck with assigned properties if successful, or `null` if parsing fails.
+ *
+ * @param deckList - The string representation of the deck, either as a list or TTS JSON.
+ * @returns The parsed {@link IDeck} if successful, or `null` if the input is invalid or unrecognized.
+ */
 export function stringToDeck(deckList: string, allCards: DigimonCard[]): IDeck | null {
   let result: string[] = deckList.split('\n');
 
@@ -123,11 +131,22 @@ function findNumber(array: string[]): number {
   return count;
 }
 
+/**
+ * Assigns tag and color properties to a deck based on its contents.
+ *
+ * Updates the {@link deck} object by setting its `tags` and `color` properties using the provided list of all cards.
+ */
 function setDeckProperties(deck: IDeck, allCards: DigimonCard[]) {
   deck.tags = setTags(deck, allCards);
   deck.color = setColors(deck, allCards);
 }
 
+/**
+ * Searches for a Digimon card in the provided list by its ID.
+ *
+ * @param cardId - The ID of the card to search for.
+ * @returns The matching {@link DigimonCard} if found; otherwise, `undefined`.
+ */
 function findCardById(cardId: string, allCards: DigimonCard[]): DigimonCard | undefined {
   return allCards.find((card) => compareIDs(card.id, cardId));
 }

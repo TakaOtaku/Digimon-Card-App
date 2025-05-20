@@ -1,6 +1,13 @@
 /* eslint-disable prettier/prettier */
 import { DigimonCard, ICountCard, IFilter, ISave, ISort, UltimateCup2023, UltimateCup2024 } from '../../models';
 
+/**
+ * Filters and sorts an array of Digimon cards based on multiple criteria.
+ *
+ * Applies a series of exclusion filters to the input cards, removing any card that matches a filter condition. After filtering, sorts the remaining cards according to the specified sort order.
+ *
+ * @returns An array of Digimon cards that match all filter criteria, sorted as specified.
+ */
 export function filterCards(
   cards: DigimonCard[],
   save: ISave,
@@ -180,6 +187,14 @@ function applyTypeFilter(card: DigimonCard, filter: string[]): boolean {
   return !filter.some((filter) => card['type'].split('/').includes(filter));
 }
 
+/**
+ * Excludes a card if its version matches any of the specified version filters.
+ *
+ * Handles special cases for versions such as "Stamp", "Alternative Art", "Foil", "Textured", "Release", "Box Topper", "Full Art", "Special Rare", and "Rare Pull". For the "Stamp" filter, cards with "Pre-Release Stamp", "Pre-Release", or "Pre Release" are not excluded.
+ *
+ * @param filters - List of version filters to apply.
+ * @returns `true` if the card should be excluded based on its version; otherwise, `false`.
+ */
 function applyVersionFilter(card: DigimonCard, filters: string[]): boolean {
   let remove = false;
   for (let filter of filters) {
@@ -213,6 +228,12 @@ function applyVersionFilter(card: DigimonCard, filters: string[]): boolean {
   return !remove;
 }
 
+/**
+ * Determines whether a card should be excluded based on the presence of specified keywords in its effect or digivolveEffect text.
+ *
+ * @param filters - List of keywords to search for in the card's effect or digivolveEffect.
+ * @returns True if none of the keywords are found in the card's effect or digivolveEffect; otherwise, false.
+ */
 function applyKeywordFilter(card: DigimonCard, filters: string[]): boolean {
   let remove = false;
   for (let filter of filters) {
@@ -222,6 +243,14 @@ function applyKeywordFilter(card: DigimonCard, filters: string[]): boolean {
   return !remove;
 }
 
+/**
+ * Determines whether a card should be excluded based on special requirements filters.
+ *
+ * Returns true if the card does not meet any of the specified special requirements such as Digivolve, Burst Digivolve, DNA Digivolution, ACE, or DigiXros.
+ *
+ * @param filters - List of special requirements to filter by.
+ * @returns True if the card should be excluded; false otherwise.
+ */
 function applySpecialRequirementsFilter(card: DigimonCard, filters: string[]): boolean {
   let remove = false;
   for (let filter of filters) {
@@ -249,10 +278,23 @@ function applySpecialRequirementsFilter(card: DigimonCard, filters: string[]): b
   return !remove;
 }
 
+/**
+ * Determines whether a card should be excluded based on its notes property.
+ *
+ * @returns True if the card's notes are not included in the filter list; otherwise, false.
+ */
 function applySourceFilter(card: DigimonCard, filters: string[]): boolean {
   return filters.includes(card['notes']);
 }
 
+/**
+ * Determines whether a card should be excluded based on its count in the user's collection and the specified count range.
+ *
+ * @param cardCountFilter - An array with two elements specifying the minimum and maximum allowed counts.
+ * @returns `true` if the card's count is outside the specified range and should be excluded; otherwise, `false`.
+ *
+ * @remark If the maximum value in {@link cardCountFilter} equals the user's maximum count setting, only the lower bound is enforced.
+ */
 function applyCardCountFilter(card: DigimonCard, save: ISave, cardCountFilter: number[]): boolean {
   const count = save.collection.find((cc) => cc.id === card.id)?.count ?? 0;
 
@@ -264,6 +306,15 @@ function applyCardCountFilter(card: DigimonCard, save: ISave, cardCountFilter: n
   return !(cardCountFilter[0] <= count && count <= cardCountFilter[1]);
 }
 
+/**
+ * Determines whether a Digimon card should be excluded based on a numeric range filter for a specified property.
+ *
+ * Applies range filtering to properties such as level, play cost, digivolution cost, or DP. Returns `true` if the card's value for the given property falls outside the specified range, or if required values are missing.
+ *
+ * @param filter - The inclusive lower and upper bounds for the property.
+ * @param key - The property to filter by: 'level', 'playCost', 'digivolution', or 'dp'.
+ * @returns `true` if the card should be excluded based on the range filter; otherwise, `false`.
+ */
 function applyRangeFilter(card: DigimonCard, filter: number[], key: string): boolean {
   switch (key) {
     default:
@@ -334,6 +385,12 @@ function applyRangeFilter(card: DigimonCard, filter: number[], key: string): boo
   }
 }
 
+/**
+ * Excludes a card if it is not included in any of the specified preset sets.
+ *
+ * @param filter - List of preset set names to check (e.g., "Ultimate Cup 2023", "Ultimate Cup 2024").
+ * @returns `false` if the card is found in any of the specified preset sets; otherwise, `true` to indicate exclusion.
+ */
 function applyPresetFilter(card: DigimonCard, filter: string[]): boolean {
   let inPreset = true;
   for (const preset of filter) {
@@ -347,6 +404,13 @@ function applyPresetFilter(card: DigimonCard, filter: string[]): boolean {
   return inPreset;
 }
 
+/**
+ * Sorts an array of Digimon cards based on the specified sort criteria.
+ *
+ * Sorts by numeric order for 'playCost' and 'dp', or by string order for other properties, in ascending or descending order as specified.
+ *
+ * @returns The sorted array of Digimon cards.
+ */
 function applySortOrder(cards: DigimonCard[], sort: ISort, collection: ICountCard[]): DigimonCard[] {
   const returnArray = [...new Set([...cards])];
   if (sort.sortBy.element === 'playCost' || sort.sortBy.element === 'dp') {
@@ -357,7 +421,12 @@ function applySortOrder(cards: DigimonCard[], sort: ISort, collection: ICountCar
   return sort.ascOrder ? returnArray.sort(dynamicSort(sort.sortBy.element)) : returnArray.sort(dynamicSort(`-${sort.sortBy.element}`));
 }
 
-//endregion
+/**
+ * Returns a comparator function for case-insensitive, locale-aware string sorting by the specified property.
+ *
+ * @param property - The object property to sort by. Prefix with '-' for descending order.
+ * @returns A comparator function suitable for use with {@link Array.prototype.sort}.
+ */
 
 export function dynamicSort(property: string): any {
   let sortOrder = 1;
@@ -388,6 +457,13 @@ export function dynamicSortNumber(property: string): any {
   };
 }
 
+/**
+ * Compares two card ID strings for sorting by set name, set number, and card ID.
+ *
+ * Splits each ID into components and compares them in order: set name (with numeric-aware comparison), set number (as an integer), and card ID (as a string).
+ *
+ * @returns A negative number if {@link a} should come before {@link b}, a positive number if after, or 0 if they are equal.
+ */
 export function sortID(a: string, b: string) {
   const aSplit = a.split('-');
   const bSplit = b.split('-');

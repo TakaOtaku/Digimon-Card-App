@@ -20,6 +20,12 @@ export function setTags(deck: IDeck, allCards: DigimonCard[]) {
   return tags;
 }
 
+/**
+ * Determines the newest set present among the given cards and returns its corresponding tag.
+ *
+ * @param cards - The list of cards to check for set membership.
+ * @returns An array containing the tag for the newest set found, or an empty array if none match.
+ */
 export function setNewestSet(cards: ICountCard[]): ITag[] {
   const releaseOrder = ReleaseOrder;
   let set = '';
@@ -38,6 +44,13 @@ export function setNewestSet(cards: ICountCard[]): ITag[] {
   return newestTag ? [newestTag] : [];
 }
 
+/**
+ * Determines whether any banned cards are present in the provided card list.
+ *
+ * @returns True if at least one banned card is included; otherwise, false.
+ *
+ * @remark The banning logic is currently not implemented and always returns false.
+ */
 export function bannedCardsIncluded(cards: ICountCard[], allCards: DigimonCard[]): boolean {
   let banned = false;
   if (!cards) {
@@ -57,6 +70,11 @@ export function bannedCardsIncluded(cards: ICountCard[], allCards: DigimonCard[]
   return banned;
 }
 
+/**
+ * Determines if any restricted card appears more times than allowed in the provided card list.
+ *
+ * @returns True if a restricted card exceeds its allowed count; otherwise, false.
+ */
 export function tooManyRestrictedCardsIncluded(cards: ICountCard[], allCards: DigimonCard[]): boolean {
   let restricted = false;
   if (!cards) {
@@ -77,6 +95,11 @@ export function tooManyRestrictedCardsIncluded(cards: ICountCard[], allCards: Di
   return restricted;
 }
 
+/**
+ * Determines the primary color of a deck based on the most frequent card color.
+ *
+ * Returns the color with the highest card count in the deck, using a predefined color map. Defaults to "White" if the deck is empty or mapping fails.
+ */
 export function setColors(deck: IDeck, allCards: DigimonCard[]) {
   if (deck.cards.length === 0) {
     return ['White', { name: 'White', img: 'assets/images/decks/white.svg' }];
@@ -172,12 +195,28 @@ export function deckIsValid(deck: IDeck, allCards: DigimonCard[]): string {
   return '';
 }
 
+/**
+ * Compares two color names based on their predefined order.
+ *
+ * @param colorA - The first color to compare.
+ * @param colorB - The second color to compare.
+ * @returns A negative number if {@link colorA} comes before {@link colorB}, a positive number if after, or zero if they are equal in order.
+ */
 export function sortColors(colorA: string, colorB: string): number {
   const a: number = ColorOrderMap.get(colorA) ?? 0;
   const b: number = ColorOrderMap.get(colorB) ?? 0;
   return a - b;
 }
 
+/**
+ * Converts an array of card count objects into full deck card objects by matching IDs with the complete card list.
+ *
+ * Handles special formatting for starter deck IDs by normalizing them before searching.
+ *
+ * @param cards - The array of card count objects to convert.
+ * @param allCards - The complete list of available Digimon cards.
+ * @returns An array of deck card objects with associated counts.
+ */
 export function mapToDeckCards(cards: ICountCard[], allCards: DigimonCard[]): IDeckCard[] {
   const deckCards: IDeckCard[] = [];
 
@@ -201,6 +240,12 @@ export function mapToDeckCards(cards: ICountCard[], allCards: DigimonCard[]): ID
   return deckCards;
 }
 
+/**
+ * Calculates the total number of cards by summing the count property of each card in the array.
+ *
+ * @param deckCards - An array of deck cards or counted cards to total.
+ * @returns The sum of all card counts in {@link deckCards}.
+ */
 export function getCountFromDeckCards(deckCards: IDeckCard[] | ICountCard[]): number {
   let number = 0;
   deckCards.forEach((card) => {
@@ -209,6 +254,14 @@ export function getCountFromDeckCards(deckCards: IDeckCard[] | ICountCard[]): nu
   return number;
 }
 
+/**
+ * Sorts a deck's cards by color and card type, grouping eggs, Digimon by color, tamers, and options.
+ *
+ * Digimon cards are grouped and sorted within each color by level and ID. Tamers and options are sorted by color and ID. Duplicate cards are removed in the final result.
+ *
+ * @param deck - The array of deck cards to sort.
+ * @returns The sorted array of deck cards with duplicates removed.
+ */
 export function colorSort(deck: IDeckCard[]) {
   const eggs = deck.filter((card) => card.cardType === 'Digi-Egg').sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
@@ -242,6 +295,14 @@ export function colorSort(deck: IDeckCard[]) {
   return [...new Set([...eggs, ...red, ...blue, ...yellow, ...green, ...black, ...purple, ...white, ...tamer, ...options])];
 }
 
+/**
+ * Sorts deck cards by level and card type, grouping eggs, Digimon by level, tamers, and options.
+ *
+ * Cards are ordered as follows: Digi-Eggs, level 0 Digimon, level 3–7 Digimon, Tamers, then Options. Within each group, cards are sorted by color and then by ID.
+ *
+ * @param deck - The array of deck cards to sort.
+ * @returns The sorted array of deck cards with duplicates removed.
+ */
 export function levelSort(deck: IDeckCard[]) {
   const eggs = deck.filter((card) => card.cardType === 'Digi-Egg').sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
@@ -262,6 +323,13 @@ export function levelSort(deck: IDeckCard[]) {
   return [...new Set([...eggs, ...lv0, ...lv3, ...lv4, ...lv5, ...lv6, ...lv7, ...tamer, ...options])];
 }
 
+/**
+ * Selects a representative Digimon card image for a deck, prioritizing the highest-level non-egg, non-level 7 Digimon.
+ *
+ * If no suitable Digimon card is found, returns a dummy card as a fallback.
+ *
+ * @returns The chosen Digimon card to represent the deck, or a dummy card if none are available.
+ */
 export function setDeckImage(deck: IDeck | ITournamentDeck, allCards: DigimonCard[]): DigimonCard {
   if (deck.cards && deck.cards.length === 0) {
     return JSON.parse(JSON.stringify(dummyCard));
@@ -280,6 +348,12 @@ export function setDeckImage(deck: IDeck | ITournamentDeck, allCards: DigimonCar
   return deckCards.length > 0 ? deckCards[0] : JSON.parse(JSON.stringify(dummyCard));
 }
 
+/**
+ * Converts an array of strings into select item objects with matching label and value.
+ *
+ * @param array - The list of strings to convert.
+ * @returns An array of select items where each item's label and value are set to the corresponding string.
+ */
 export function itemsAsSelectItem(array: string[]): ISelectItem[] {
   return array.map((item) => ({ label: item, value: item }) as ISelectItem);
 }

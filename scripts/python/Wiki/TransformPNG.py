@@ -2,6 +2,18 @@ import os
 from PIL import Image, ImageFile
 
 def validate_png(file_path):
+    """
+    Checks if the specified file is a valid PNG image.
+    
+    Attempts to open and verify the image at the given file path using Pillow. Returns
+    True if the image is valid and can be verified, otherwise returns False.
+    
+    Args:
+        file_path: Path to the image file to validate.
+    
+    Returns:
+        True if the file is a valid PNG image, False otherwise.
+    """
     try:
         with Image.open(file_path) as img:
             img.verify()  # Verify that it's a valid image
@@ -11,6 +23,11 @@ def validate_png(file_path):
 
 def pngToWebP():
     # Set this to True to allow PIL to load truncated files
+    """
+    Converts all valid PNG images in a directory to WebP format.
+    
+    Iterates through PNG files in the specified input directory, validates each image, and converts valid images to WebP format with quality set to 80. Outputs converted files to a designated output directory, creating it if necessary. Prints a summary of successful and failed conversions, including the names of any files that could not be converted.
+    """
     ImageFile.LOAD_TRUNCATED_IMAGES = True
     
     # Input and output folders
