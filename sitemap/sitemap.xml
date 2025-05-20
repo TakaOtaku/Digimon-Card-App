@@ -17,6 +17,10 @@
         <changefreq>weekly</changefreq>
 	</url>
   <url>
+    <loc>https://digimoncard.app/rulings/</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://digimoncard.app/products/</loc>
     <changefreq>weekly</changefreq>
   </url>

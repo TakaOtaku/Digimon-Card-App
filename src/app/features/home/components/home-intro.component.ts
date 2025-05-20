@@ -37,14 +37,14 @@ import { DividerModule } from 'primeng/divider';
 
     <p-divider class="my-5"></p-divider>
 
-    <h2 class="mt-1 text-center text-[#e2e4e6] text-sm sm:text-base">
+    <!--h2 class="mt-1 text-center text-[#e2e4e6] text-sm sm:text-base">
       If you do like the site and want to support it, consider donating
       <a href="https://www.paypal.com/donate/?hosted_button_id=WLM58Q785D4H4" target="_blank">
         <i class="pi pi-paypal px-1 text-[#e2e4e6] hover:text-[#64B5F6]"></i>
       </a>.
       I will use everything that gets donated to get better servers to improve the performance of
       the website.
-    </h2>
+    </h2-->
 
     <p-divider class="my-5"></p-divider>
 

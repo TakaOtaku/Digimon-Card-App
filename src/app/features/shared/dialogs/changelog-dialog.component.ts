@@ -15,6 +15,7 @@ import { PanelModule } from 'primeng/panel';
           <li>Added new Keyword Assembly.</li>
           <li>Added all new Products</li>
           <li>Added new Tags for the new Sets</li>
+          <li>Added new Page for Rulings</li>
         </ul>
         <h1 class="font-bold text-lg underline">Removed</h1>
         <ul class="list-disc p-5">

@@ -59,6 +59,14 @@ import { DialogModule } from 'primeng/dialog';
 
       <li
         class="flex flex-col items-center group cursor-pointer"
+        [ngClass]="getNavigationBorder('/rulings')"
+        (click)="router.navigateByUrl('/rulings')">
+        <i class="pi pi-question-circle group-hover:text-[#64B5F6]" style="font-size: 1.5rem"></i>
+        <button style="font-size:smaller" class="p-2 group-hover:text-[#64B5F6]">Rulings</button>
+      </li>
+
+      <li
+        class="flex flex-col items-center group cursor-pointer"
         [ngClass]="getNavigationBorder('/products')"
         (click)="router.navigateByUrl('/products')">
         <i class="pi pi-tags group-hover:text-[#64B5F6]" style="font-size: 1.5rem"></i>

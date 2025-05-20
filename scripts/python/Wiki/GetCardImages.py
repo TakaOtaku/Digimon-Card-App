@@ -37,20 +37,6 @@ def remove_suffix_and_extension(input_string):
 
   return without_suffix
 
-def check_if_already_downloaded(image_name):
-  # Remove .webp and .png from the text
-  image_name = re.sub(r'\.png$', '', image_name)
-  image_name = re.sub(r'\.webp$', '', image_name)
-
-  # Check if the image name already exists in the directory
-  image_path = './src/assets/images/cards/' + image_name + '.webp';
-  if os.path.exists(image_path):
-    print(f"Image {image_name} already downloaded. Skipping...")
-    return True
-  else:
-    print(f"Image {image_name} not found. Proceeding to download...")
-    return False
-
 def getCardImages():
   # Backup the AAs and JAAs for each card
   backup_aas = []
@@ -93,9 +79,6 @@ def getCardImages():
 
         for item in gallery_items:
           img = item.find("img")
-
-          if (check_if_already_downloaded(img['data-image-key'])):
-            continue
 
           id_with_p = None
           if img is None:
