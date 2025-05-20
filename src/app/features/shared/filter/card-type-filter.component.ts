@@ -1,4 +1,3 @@
-import { AsyncPipe, NgIf } from '@angular/common';
 import { Component, effect, inject } from '@angular/core';
 import { CardTypeButtons } from '../../../../models';
 import { FilterStore } from '../../../store/filter.store';
@@ -15,7 +14,7 @@ import { MultiButtonsComponent } from '../multi-buttons.component';
       title="Card-Types"></digimon-multi-buttons>
   `,
   standalone: true,
-  imports: [NgIf, MultiButtonsComponent, AsyncPipe],
+  imports: [MultiButtonsComponent],
 })
 export class CardTypeFilterComponent {
   filterStore = inject(FilterStore);

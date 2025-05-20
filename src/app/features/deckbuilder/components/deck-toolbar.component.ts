@@ -1,14 +1,5 @@
 import { NgClass, NgFor } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  EventEmitter,
-  inject,
-  Input,
-  Output,
-  Signal,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, EventEmitter, inject, Input, Output, Signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
@@ -23,15 +14,13 @@ import { AuthService } from '../../../services/auth.service';
 import { DialogStore } from '../../../store/dialog.store';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
 import { WebsiteStore } from '../../../store/website.store';
-import { ExportDeckDialogComponent } from '../../shared/dialogs/export-deck-dialog.component';
 import { ImportDeckDialogComponent } from '../../shared/dialogs/import-deck-dialog.component';
 import { PriceCheckDialogComponent } from './price-check-dialog.component';
 
 @Component({
   selector: 'digimon-deck-toolbar',
   template: `
-    <div
-      class="toolbar ml-3 mr-3 flex w-[100%-3rem] flex-row justify-evenly border-b-2 border-slate-600 md:grid-cols-12">
+    <div class="toolbar ml-3 mr-3 flex w-[100%-3rem] flex-row justify-evenly border-b-2 border-slate-600 md:grid-cols-11">
       <button
         (click)="missingCardsChange.emit(!missingCards)"
         [ngClass]="{ 'primary-background': missingCards }"
@@ -51,12 +40,7 @@ import { PriceCheckDialogComponent } from './price-check-dialog.component';
         pTooltip="Click to create a new Deck!"
         tooltipPosition="top"></button>
 
-      <button
-        (click)="save.emit($event)"
-        class="p-button-outlined h-[30px] w-full"
-        icon="pi pi-save"
-        iconPos="left"
-        pButton></button>
+      <button (click)="save.emit($event)" class="p-button-outlined h-[30px] w-full" icon="pi pi-save" iconPos="left" pButton></button>
 
       <button
         (click)="importDeckDialog = true"
@@ -93,26 +77,7 @@ import { PriceCheckDialogComponent } from './price-check-dialog.component';
         pButton
         pTooltip="Click to simulate your draw hand and the security stack!"
         tooltipPosition="top"></button>
-
-      <button
-        (click)="checkPrice()"
-        class="p-button-outlined h-[30px] w-full cursor-pointer"
-        icon="pi pi-dollar"
-        iconPos="left"
-        pButton></button>
     </div>
-
-    <p-dialog
-      header="Price Check"
-      [(visible)]="priceCheckDialog"
-      [modal]="true"
-      [dismissableMask]="true"
-      [resizable]="false"
-      styleClass="w-[100%] min-w-[250px] sm:min-w-[500px] sm:w-[700px] min-h-[500px]"
-      [baseZIndex]="10000">
-      <digimon-price-check-dialog
-        [checkPrice]="checkPrice$"></digimon-price-check-dialog>
-    </p-dialog>
 
     <p-dialog
       header="Simulate Security/Draw"
@@ -125,21 +90,15 @@ import { PriceCheckDialogComponent } from './price-check-dialog.component';
       <!-- Security Stack -->
       <h1 class="text-center text-2xl font-bold">Security Stack</h1>
       <div class="mt-5 flex flex-row">
-        <div
-          *ngFor="let secCard of securityStack"
-          class="cards-in-a-row-5 mr-1">
-          <img
-            [src]="secCard.cardImage"
-            [alt]="secCard.id + ' - ' + secCard.name" />
+        <div *ngFor="let secCard of securityStack" class="cards-in-a-row-5 mr-1">
+          <img [src]="secCard.cardImage" [alt]="secCard.id + ' - ' + secCard.name" />
         </div>
       </div>
 
       <h1 class="text-center text-2xl font-bold">Draw Hand</h1>
       <div class="mt-5 flex flex-row">
         <div *ngFor="let drawCard of drawHand" class="cards-in-a-row-5 mr-1">
-          <img
-            [src]="drawCard.cardImage"
-            [alt]="drawCard.id + ' - ' + drawCard.name" />
+          <img [src]="drawCard.cardImage" [alt]="drawCard.id + ' - ' + drawCard.name" />
         </div>
       </div>
 
@@ -156,8 +115,7 @@ import { PriceCheckDialogComponent } from './price-check-dialog.component';
       [modal]="true"
       [dismissableMask]="true"
       [resizable]="false">
-      <digimon-import-deck-dialog
-        (onClose)="importDeckDialog = false"></digimon-import-deck-dialog>
+      <digimon-import-deck-dialog (onClose)="importDeckDialog = false"></digimon-import-deck-dialog>
     </p-dialog>
 
     <p-confirmDialog
@@ -173,9 +131,7 @@ import { PriceCheckDialogComponent } from './price-check-dialog.component';
     TooltipModule,
     NgClass,
     DialogModule,
-    PriceCheckDialogComponent,
     NgFor,
-    ExportDeckDialogComponent,
     ImportDeckDialogComponent,
     ConfirmDialogModule,
   ],
@@ -193,12 +149,7 @@ export class DeckToolbarComponent {
   digimonCardStore = inject(DigimonCardStore);
 
   deck: Signal<IDeck> = this.websiteStore.deck;
-  mainDeck: Signal<IDeckCard[]> = computed(() =>
-    mapToDeckCards(
-      this.websiteStore.deck().cards,
-      this.digimonCardStore.cards(),
-    ),
-  );
+  mainDeck: Signal<IDeckCard[]> = computed(() => mapToDeckCards(this.websiteStore.deck().cards, this.digimonCardStore.cards()));
 
   importDeckDialog = false;
   priceCheckDialog = false;
@@ -227,10 +178,7 @@ export class DeckToolbarComponent {
       currentIndex--;
 
       // And swap it with the current element.
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex],
-        array[currentIndex],
-      ];
+      [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
     }
 
     return array;
@@ -239,15 +187,12 @@ export class DeckToolbarComponent {
   newDeck() {
     this.confirmationService.confirm({
       key: 'NewDeck',
-      message:
-        'You are about to clear all cards in the deck and make a new one. Are you sure?',
+      message: 'You are about to clear all cards in the deck and make a new one. Are you sure?',
       accept: () => {
         const newDeckID = uuid.v4();
         this.websiteStore.createNewDeck(newDeckID);
-        if (this.authService.userData?.uid) {
-          this.route.navigateByUrl(
-            `deckbuilder/user/${this.authService.userData?.uid}/deck/${newDeckID}`,
-          );
+        if (this.authService.currentUser()?.uid) {
+          this.route.navigateByUrl(`deckbuilder/user/${this.authService.currentUser()?.uid}/deck/${newDeckID}`);
         } else {
           this.route.navigateByUrl(`deckbuilder`);
         }
@@ -268,13 +213,9 @@ export class DeckToolbarComponent {
 
   mulligan() {
     this.allDeckCards = DeckToolbarComponent.shuffle(
-      this.deck().cards.map((card) =>
-        this.digimonCardStore.cards().find((a) => a.id === card.id),
-      ),
+      this.deck().cards.map((card) => this.digimonCardStore.cards().find((a) => a.id === card.id)),
     );
-    this.allDeckCards = this.allDeckCards.filter(
-      (card) => card.cardType !== 'Digi-Egg',
-    );
+    this.allDeckCards = this.allDeckCards.filter((card) => card.cardType !== 'Digi-Egg');
 
     this.securityStack = this.allDeckCards.slice(0, 5);
     this.drawHand = this.allDeckCards.slice(5, 10);

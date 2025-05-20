@@ -140,6 +140,7 @@ def loadCards():
         currentDigimon.cardType = card['cardType']
         currentDigimon.color = card['color']
         currentDigimon.digiXros = card['digiXros']
+        currentDigimon.assembly = card['assembly']
         currentDigimon.digivolveCondition = card['digivolveCondition']
         currentDigimon.digivolveEffect = card['digivolveEffect']
         currentDigimon.dnaDigivolve = card['dnaDigivolve']

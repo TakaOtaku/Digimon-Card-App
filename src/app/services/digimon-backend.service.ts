@@ -1,16 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { filter, first, map, Observable } from 'rxjs';
-import {
-  DigimonCard,
-  IColor,
-  ICountCard,
-  IDeck,
-  ISave,
-  ISettings,
-  ITournamentDeck,
-  IUser,
-} from 'src/models';
+import { first, map, Observable } from 'rxjs';
+import { DigimonCard, IColor, ICountCard, IDeck, ISave, ISettings, ITournamentDeck, IUser } from '../../models';
 import { CARDSET, IBlog, IBlogWithText, ITag } from '../../models';
 import { sortByReleaseOrder } from '../../models';
 import { emptySettings } from '../../models';
@@ -35,9 +26,7 @@ export class DigimonBackendService {
             const cards: ICountCard[] = JSON.parse(deck.cards);
             let sideDeck: ICountCard[];
             if (deck.sideDeck) {
-              sideDeck = JSON.parse(
-                deck.sideDeck !== '' ? deck.sideDeck : '[]',
-              );
+              sideDeck = JSON.parse(deck.sideDeck !== '' ? deck.sideDeck : '[]');
             } else {
               sideDeck = [];
             }
@@ -81,9 +70,7 @@ export class DigimonBackendService {
       map((decks) => {
         return decks.map((deck) => {
           const cards: ICountCard = JSON.parse(deck.cards);
-          const sideDeck: ICountCard = JSON.parse(
-            deck.sideDeck !== '' ? deck.sideDeck : '[]',
-          );
+          const sideDeck: ICountCard = JSON.parse(deck.sideDeck !== '' ? deck.sideDeck : '[]');
           const color: IColor = JSON.parse(deck.color);
           const tags: ITag[] = JSON.parse(deck.tags);
           const likes: string[] = deck.likes ? JSON.parse(deck.likes) : [];
@@ -130,9 +117,7 @@ export class DigimonBackendService {
     return this.http.get<any>(`${baseUrl}decks/${id}`).pipe(
       map((deck) => {
         const cards: ICountCard = JSON.parse(deck.cards);
-        const sideDeck: ICountCard = JSON.parse(
-          deck.sideDeck !== '' ? deck.sideDeck : '[]',
-        );
+        const sideDeck: ICountCard = JSON.parse(deck.sideDeck !== '' ? deck.sideDeck : '[]');
         const color: IColor = JSON.parse(deck.color);
         const tags: ITag[] = JSON.parse(deck.tags);
         const likes: string[] = deck.likes ? JSON.parse(deck.likes) : [];
@@ -162,19 +147,11 @@ export class DigimonBackendService {
         } as ISave;
 
         newSave.settings.aaCollectionMinimum =
-          newSave.settings.aaCollectionMinimum !== undefined
-            ? newSave.settings.aaCollectionMinimum
-            : 1;
+          newSave.settings.aaCollectionMinimum !== undefined ? newSave.settings.aaCollectionMinimum : 1;
 
-        newSave.settings.countMax =
-          newSave.settings.countMax !== undefined
-            ? newSave.settings.countMax
-            : 5;
+        newSave.settings.countMax = newSave.settings.countMax !== undefined ? newSave.settings.countMax : 5;
 
-        newSave.settings.cardSet =
-          newSave.settings.cardSet === 'Both'
-            ? 'English'
-            : newSave.settings.cardSet;
+        newSave.settings.cardSet = newSave.settings.cardSet === 'Both' ? 'English' : newSave.settings.cardSet;
 
         return newSave;
       }),
@@ -209,11 +186,7 @@ export class DigimonBackendService {
     return this.http.post(baseUrl + 'blogs-with-text', data);
   }
 
-  updateDeck(
-    deck: IDeck,
-    user: IUser | null = null,
-    allCards: DigimonCard[],
-  ): Observable<any> {
+  updateDeck(deck: IDeck, user: IUser | null = null, allCards: DigimonCard[]): Observable<any> {
     let newDeck: any;
     if (user) {
       newDeck = {
@@ -319,11 +292,7 @@ export class DigimonBackendService {
       }
     }
 
-    if (
-      save.settings.cardSet === undefined ||
-      save.settings.cardSet === 'Overwrite' ||
-      +save.settings.cardSet >>> 0
-    ) {
+    if (save.settings.cardSet === undefined || save.settings.cardSet === 'Overwrite' || +save.settings.cardSet >>> 0) {
       save = {
         ...save,
         settings: { ...save.settings, cardSet: CARDSET.English },

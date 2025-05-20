@@ -1,10 +1,8 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import {
-  UntypedFormControl,
-  FormsModule,
-  ReactiveFormsModule,
-} from '@angular/forms';
-import { TAGS } from '../../../../models';
+import { UntypedFormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { IconField } from 'primeng/iconfield';
+import { InputIcon } from 'primeng/inputicon';
+import { TAGS } from '@models';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { InputTextModule } from 'primeng/inputtext';
 
@@ -12,17 +10,15 @@ import { InputTextModule } from 'primeng/inputtext';
   selector: 'digimon-deck-filter',
   template: `
     <div class="mx-auto flex flex-row">
-      <div class="flex w-full flex-col sm:pr-2">
-        <span class="p-input-icon-left w-full">
-          <i class="pi pi-search h-3"></i>
-          <input
-            [formControl]="searchFilter"
-            class="text-xs w-full"
-            pInputText
-            placeholder="Search (Title, Description, Card-Ids, Color)"
-            type="text" />
-        </span>
-      </div>
+      <p-icon-field class="my-1 mr-1 w-full">
+        <p-inputicon styleClass="pi pi-search"></p-inputicon>
+        <input
+          [formControl]="searchFilter"
+          class="w-full"
+          pInputText
+          placeholder="Search (Title, Description, Card-Ids, Color))"
+          type="text" />
+      </p-icon-field>
       <p-multiSelect
         [formControl]="tagFilter"
         [options]="tags"
@@ -30,19 +26,14 @@ import { InputTextModule } from 'primeng/inputtext';
         placeholder="Select a Tag"
         display="chip"
         scrollHeight="250px"
-        class="mx-auto max-w-[250px]"
-        styleClass="h-[34px] text-sm max-w-[250px]">
+        class="mx-auto my-1 ml-1 max-w-[250px]"
+        styleClass="max-w-[250px]">
       </p-multiSelect>
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    FormsModule,
-    InputTextModule,
-    ReactiveFormsModule,
-    MultiSelectModule,
-  ],
+  imports: [FormsModule, InputTextModule, ReactiveFormsModule, MultiSelectModule, IconField, InputIcon]
 })
 export class DeckFilterComponent {
   @Input() searchFilter: UntypedFormControl;

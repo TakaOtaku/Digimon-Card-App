@@ -1,12 +1,20 @@
-@import "tailwindcss/base" layer(tailwindcss);
-@import "tailwindcss/components" layer(tailwindcss);
-@import "tailwindcss/utilities" layer(tailwindcss);
+@use 'scrollbar';
+@use 'slider';
 
-@import "primeng/resources/themes/lara-light-blue/theme.css";
-@import "primeng/resources/primeng.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@import 'scrollbar';
-@import 'slider';
+@import 'primeicons/primeicons.css';
+
+:root {
+  --p-surface-950: #17212f !important;
+  --p-surface-900: #17212f !important;
+  --p-surface-800: #17212f !important;
+  --surface-card: #17212f !important;
+  --highlight: #185571 !important;
+  --p-overlay-modal-padding: 0 !important;
+}
 
 html,
 body {
@@ -19,7 +27,10 @@ body {
 }
 
 * {
-  font-family: Montserrat, -apple-system, sans-serif;
+  font-family:
+    Montserrat,
+    -apple-system,
+    sans-serif;
 }
 
 body {
@@ -35,7 +46,7 @@ body {
 }
 
 .primary-background {
-  background-color: #08528d;
+  background-color: #08528d !important;
 }
 
 .primary-border {
@@ -46,7 +57,9 @@ body {
   border: 2px solid white;
 
   &.White {
-    box-shadow: inset 0 0 0px 2px hsl(0deg 0% 0%), 0 0 0 2px hsl(0deg 0% 100%);
+    box-shadow:
+      inset 0 0 0px 2px hsl(0deg 0% 0%),
+      0 0 0 2px hsl(0deg 0% 100%);
     border: none;
   }
 }
@@ -62,11 +75,15 @@ body {
 }
 
 .surface-card {
-  background-color: var(--surface-card);
+  background-color: var(--p-surface-950);
 }
 
 .surface-ground {
-  background-color: var(--surface-ground);
+  background-color: var(--p-surface-950);
+}
+
+.button-highlight-background {
+  background-color: var(--highlight);
 }
 
 .c-white {
@@ -83,27 +100,44 @@ body {
 
 .text-black-outline {
   color: #fff;
-  text-shadow: 3px 0 0 #000, 0 -3px 0 #000, 0 3px 0 #000, -3px 0 0 #000;
+  text-shadow:
+    3px 0 0 #000,
+    0 -3px 0 #000,
+    0 3px 0 #000,
+    -3px 0 0 #000;
 }
 
 .text-black-outline-xs {
   color: #fff;
-  text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
+  text-shadow:
+    2px 0 0 #000,
+    0 -2px 0 #000,
+    0 2px 0 #000,
+    -2px 0 0 #000;
 }
 
 .text-shadow {
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-  1px 1px 0 #000;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .text-shadow-white {
-  text-shadow: -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white,
-  2px 2px 0 white;
+  text-shadow:
+    -2px -2px 0 white,
+    2px -2px 0 white,
+    -2px 2px 0 white,
+    2px 2px 0 white;
 }
 
 .text-shadow-white-xs {
-  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
-  1px 1px 0 white;
+  text-shadow:
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white;
 }
 
 .Red {
@@ -147,16 +181,7 @@ body {
 }
 
 .Multi {
-  background: linear-gradient(
-      90deg,
-      #ef1919 14%,
-      #19a0e3 28%,
-      #ffd619 42%,
-      #19b383 56%,
-      #191919 70%,
-      #8d6fdb 84%,
-      #ffffff 100%
-  );
+  background: linear-gradient(90deg, #ef1919 14%, #19a0e3 28%, #ffd619 42%, #19b383 56%, #191919 70%, #8d6fdb 84%, #ffffff 100%);
 }
 
 digimon-multi-select {
@@ -240,7 +265,6 @@ p-dialog::ng-deep {
   position: relative;
 }
 
-
 .background-darker {
-  background-color: color-mix(in srgb, var(--surface-ground) 50%, black);
+  background-color: color-mix(in srgb, #17212f 50%, black);
 }

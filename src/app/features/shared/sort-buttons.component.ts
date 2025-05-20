@@ -1,66 +1,77 @@
-import { AsyncPipe, NgClass, NgIf } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, inject, Signal, signal } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MenuItem } from 'primeng/api';
 import { DropdownModule } from 'primeng/dropdown';
-import { ISort, ISortElement } from '../../../models';
+import { SplitButton } from 'primeng/splitbutton';
+import { ISort } from '../../../models';
 import { WebsiteStore } from '../../store/website.store';
 
 @Component({
   selector: 'digimon-sort-buttons',
   template: `
     <div class="mb-1 inline-flex rounded-md shadow-sm" role="group">
-      <button
-        type="button"
-        (click)="changeOrder(sort)"
-        class="rounded-l-lg border border-gray-200 px-2 py-0.5 hover:backdrop-brightness-150 focus:z-10 focus:ring-2 focus:ring-blue-700">
-        <i
-          [ngClass]="{
-            'pi-sort-amount-down': sort.ascOrder,
-            'pi-sort-amount-up': !sort.ascOrder
-          }"
-          class="pi text-[#e2e4e6]"></i>
-      </button>
-      <p-dropdown
-        class="rounded-r-md border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-blue-700"
-        [options]="sortOptions"
-        [(ngModel)]="sortElement"
-        (ngModelChange)="updateStore(sort.ascOrder)"
-        [style]="{ height: '2rem', lineHeight: '10px' }"
-        optionLabel="name">
-      </p-dropdown>
+      <p-splitbutton
+        [label]="sortElement().name"
+        [icon]="sort().ascOrder ? 'pi pi-sort-amount-down' : 'pi pi-sort-amount-up'"
+        class="border-slate-200 border rounded"
+        (onClick)="changeOrder()"
+        [model]="sortOptions"
+        raised
+        text
+        size="small" />
     </div>
+  `,
+  styles: `
+    p-splitbutton ::ng-deep .p-button-text {
+      color: white;
+    }
   `,
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [
-    NgIf,
-    NgClass,
-    DropdownModule,
-    FormsModule,
-    ReactiveFormsModule,
-    AsyncPipe,
-  ],
+  imports: [DropdownModule, FormsModule, ReactiveFormsModule, SplitButton],
 })
 export class SortButtonsComponent {
   websiteStore = inject(WebsiteStore);
-  sortElement = { name: 'ID', element: 'id' };
-  sort: ISort = this.websiteStore.sort();
+  sortElement = signal({ name: 'ID', element: 'id' });
+  sort: Signal<ISort> = this.websiteStore.sort;
 
-  sortOptions: ISortElement[] = [
-    { name: 'ID', element: 'id' },
-    { name: 'Cost', element: 'playCost' },
-    { name: 'DP', element: 'dp' },
-    { name: 'Level', element: 'cardLv' },
-    { name: 'Name', element: 'name' },
-    { name: 'Count', element: 'count' },
+  sortOptions: MenuItem[] = [
+    {
+      label: 'ID',
+      command: () => {
+        this.sortElement.set({ name: 'ID', element: 'id' });
+        this.updateStore();
+      },
+    },
+    {
+      label: 'Cost',
+      command: () => {
+        this.sortElement.set({ name: 'Cost', element: 'playCost' });
+        this.updateStore();
+      },
+    },
+    {
+      label: 'DP',
+      command: () => {
+        this.sortElement.set({ name: 'DP', element: 'dp' });
+        this.updateStore();
+      },
+    },
+    {
+      label: 'Level',
+      command: () => {
+        this.sortElement.set({ name: 'Level', element: 'cardLv' });
+        this.updateStore();
+      },
+    },
   ];
 
-  updateStore(ascOrder: boolean) {
-    this.websiteStore.updateSort({ sortBy: this.sortElement, ascOrder });
+  updateStore() {
+    this.websiteStore.updateSort({ sortBy: this.sortElement(), ascOrder: this.sort().ascOrder });
   }
 
-  changeOrder(sort: ISort) {
-    const ascOrder = !sort.ascOrder;
-    this.websiteStore.updateSort({ ...sort, ascOrder });
+  changeOrder() {
+    const ascOrder = !this.sort().ascOrder;
+    this.websiteStore.updateSort({ sortBy: this.sortElement(), ascOrder });
   }
 }

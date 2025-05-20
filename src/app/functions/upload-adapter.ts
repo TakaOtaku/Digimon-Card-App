@@ -34,11 +34,7 @@ export class MyUploadAdapter {
     xhr.addEventListener('load', () => {
       const response = xhr.response;
       if (!response || response.error) {
-        return reject(
-          response && response.error
-            ? response.error.message
-            : genericErrorText,
-        );
+        return reject(response && response.error ? response.error.message : genericErrorText);
       }
       resolve({
         default: response.url,
