@@ -1,7 +1,8 @@
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor } from '@angular/common';
 import {
   ChangeDetectionStrategy,
-  Component, computed,
+  Component,
+  computed,
   effect,
   HostListener,
   inject,
@@ -10,18 +11,17 @@ import {
   OnInit,
   SimpleChanges
 } from '@angular/core';
+import { emptyDeck, ICountCard, IDeck, IUser } from '@models';
+import { DialogStore, SaveStore } from '@store';
 import { DialogModule } from 'primeng/dialog';
 import { PaginatorModule } from 'primeng/paginator';
-import { emptyDeck, ICountCard, IDeck, IUser } from '@models';
-import { DialogStore } from '@store';
-import { SaveStore } from '@store';
 import { DeckContainerComponent } from '../../shared/deck-container.component';
 import { DecksTableComponent } from './decks-table.component';
 
 @Component({
   selector: 'digimon-decks',
   template: `
-    @if (!displayTables) {
+    @if (!displayTables()) {
       <div class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 py-2">
         <digimon-deck-container
           class="mx-auto min-w-[280px] max-w-[285px]"
@@ -71,6 +71,9 @@ export class DecksComponent implements OnInit, OnChanges {
   deck: IDeck = JSON.parse(JSON.stringify(emptyDeck));
 
   displayTables = computed(() => this.saveStore.settings().deckDisplayTable);
+  effect = effect(() => {
+    console.log('Display Table: ' + this.displayTables());
+  });
 
   ngOnInit() {
     if (!this.decks) {

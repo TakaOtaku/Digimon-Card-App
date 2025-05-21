@@ -1,6 +1,6 @@
 import { AsyncPipe, Location, NgIf } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject, OnDestroy, OnInit } from '@angular/core';
-import { toObservable } from '@angular/core/rxjs-interop';
+import { ChangeDetectionStrategy, Component, effect, inject, OnDestroy, OnInit } from '@angular/core';
+import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { UntypedFormControl } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
@@ -34,7 +34,13 @@ import { UserStatsComponent } from './components/user-stats.component';
   imports: [NgIf, AsyncPipe, DeckFilterComponent, DecksComponent, UserStatsComponent, PageComponent],
 })
 export class ProfilePageComponent implements OnInit, OnDestroy {
-  saveStore = inject(SaveStore);
+  private saveStore = inject(SaveStore);
+  private authService: AuthService = inject(AuthService);
+  private location: Location = inject(Location);
+  private route: ActivatedRoute = inject(ActivatedRoute);
+  private digimonBackendService: DigimonBackendService = inject(DigimonBackendService);
+  private meta: Meta = inject(Meta);
+  private title: Title = inject(Title);
 
   save$: Observable<ISave | null>;
   decks: IDeck[];
@@ -45,46 +51,46 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
   tagFilter = new UntypedFormControl([]);
 
   editable = true;
-  otherProfile = '';
+  otherProfile: string | null = null;
+
+  currentUser = this.authService.currentUser;
 
   private onDestroy$ = new Subject<boolean>();
 
-  constructor(
-    private location: Location,
-    private route: ActivatedRoute,
-    public authService: AuthService,
-    private digimonBackendService: DigimonBackendService,
-    private meta: Meta,
-    private title: Title,
-  ) {
+  constructor() {
     this.save$ = merge(
       toObservable(this.saveStore.save),
       toObservable(this.authService.currentUser).pipe(
         filter(() => !!this.authService.currentUser()),
-        tap(() => this.changeURL()),
         switchMap(() => {
           return this.digimonBackendService.getSave(this.authService.currentUser()!.uid);
         }),
       ),
       this.route.params.pipe(
-        filter((params) => {
-          if (!params['id']) {
-            // if no id is provided, we want to show the current user
-            this.changeURL();
-          }
-          this.otherProfile = params['id'];
-          return !!params['id'];
-        }),
+        filter((params) => !!params['id']),
+        tap((params) => (this.otherProfile = params['id'])),
         switchMap((params) => this.digimonBackendService.getSave(params['id']).pipe(first())),
       ),
     ).pipe(
-      filter((save) => save.uid === this.otherProfile),
-      tap((save) => {
-        this.editable = save.uid === this.authService.currentUser()?.uid;
-        this.decks = save?.decks ?? [];
-        this.filteredDecks = this.decks;
-        this.filterChanges();
-        console.log(save);
+      filter((save) => {
+        // If other profile is null, we are in the main user profile and can just do the default
+        // The same is true if the other profile is the same as the current user id
+        // If the other profile is not null and not the same as the current user id, we are in another profile and need to check if the received save is the same as the other profile
+        if (!this.otherProfile || this.otherProfile === this.authService.currentUser()?.uid) {
+          this.setURLToMainUser();
+          this.editable = true;
+          this.decks = save?.decks ?? [];
+          this.filteredDecks = this.decks;
+          this.filterChanges();
+          return true;
+        } else if (this.otherProfile === save?.uid) {
+          this.editable = false;
+          this.decks = save?.decks ?? [];
+          this.filteredDecks = this.decks;
+          this.filterChanges();
+          return true;
+        }
+        return false;
       }),
     );
   }
@@ -101,7 +107,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
     this.onDestroy$.unsubscribe();
   }
 
-  changeURL() {
+  setURLToMainUser() {
     if (this.authService.currentUser()?.uid) {
       this.location.replaceState('/user/' + this.authService.currentUser()?.uid);
     } else {
