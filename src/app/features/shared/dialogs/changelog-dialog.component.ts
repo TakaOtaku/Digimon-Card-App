@@ -6,6 +6,20 @@ import { PanelModule } from 'primeng/panel';
   selector: 'digimon-changelog-dialog',
   template: `
     <div>
+      <p-panel header="Version 4.2.1" [toggleable]="true" [collapsed]="false">
+        <h1 class="font-bold text-lg underline">Feature</h1>
+        <ul class="list-disc p-5">
+          <li>Added a "Delete all Decks" Button for the Players that want to start fresh each Meta.</li>
+        </ul>
+        <h1 class="font-bold text-lg underline">Bugfixes</h1>
+        <ul class="list-disc p-5">
+          <li>Fixed a bug with the Table Display of your Player Decks</li>
+          <li>Fixed a bug where Test Hands couldn't show duplicates.</li>
+        </ul>
+        <div class="flex flex-wrap align-middle justify-content-between gap-3">
+          <span class="ml-auto p-text-secondary">Updated 21.05.2025</span>
+        </div>
+      </p-panel>
       <p-panel header="Version 4.2.0" [toggleable]="true" [collapsed]="false">
         <h1 class="font-bold text-lg underline">Feature</h1>
         <ul class="list-disc p-5">
@@ -26,7 +40,7 @@ import { PanelModule } from 'primeng/panel';
           <span class="ml-auto p-text-secondary">Updated 19.05.2025</span>
         </div>
       </p-panel>
-      <p-panel header="Version 4.1.9" [toggleable]="true" [collapsed]="false">
+      <p-panel header="Version 4.1.9" [toggleable]="true" [collapsed]="true">
         <h1 class="font-bold text-lg underline">Feature</h1>
         <ul class="list-disc p-5">
           <li>Display rule and link field of cards in view mode.</li>

@@ -1,8 +1,11 @@
 import { ChangeDetectionStrategy, Component, inject, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '@services';
+import { SaveStore } from '@store';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { CarouselModule } from 'primeng/carousel';
-import { ISave } from '../../../../models';
-import { CollectionPriceCheckDialogComponent } from './collection-price-check-dialog.component';
+import { ConfirmPopup } from 'primeng/confirmpopup';
+import { ISave } from '@models';
 import { DialogModule } from 'primeng/dialog';
 import { CollectionCircleComponent } from './collection-circle.component';
 import { NgIf } from '@angular/common';
@@ -58,33 +61,59 @@ import { NgIf } from '@angular/common';
           class="surface-ground hover:primary-background text-shadow border flex-grow border-black p-2 font-bold text-[#e2e4e6]">
           View Collection
         </button>
+        <button
+          *ngIf="showDeckDeleteButton()"
+          (click)="deleteUserDecks($event)"
+          class="bg-red-500 hover:primary-background text-shadow border flex-grow border-black p-2 font-bold text-[#e2e4e6]">
+          Delete all Decks
+        </button>
       </div>
+      <p-confirmpopup key="deleteDecks"/>
     </div>
-
-    <p-dialog
-      header="Price Check"
-      [(visible)]="priceCheckDialog"
-      styleClass="w-[100%] min-w-[250px] sm:min-w-[500px] sm:w-[900px] lg:w-[1024px] 2xl:w-[1536px] min-h-[500px]"
-      [baseZIndex]="10000"
-      [modal]="true"
-      [dismissableMask]="true"
-      [resizable]="false">
-      <digimon-collection-price-check-dialog [save]="save"></digimon-collection-price-check-dialog>
-    </p-dialog>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, CollectionCircleComponent, DialogModule, CollectionPriceCheckDialogComponent, CarouselModule],
+  imports: [NgIf, CollectionCircleComponent, DialogModule, CarouselModule, ConfirmPopup]
 })
 export class UserStatsComponent {
   @Input() save: ISave;
 
+  authService = inject(AuthService);
+  confirmationService = inject(ConfirmationService);
+  messageService = inject(MessageService);
+  saveStore = inject(SaveStore);
+
   collectionCircles = [{ label: 'BT' }, { label: 'EX' }, { label: 'ST' }, { label: 'P-' }];
 
   private router = inject(Router);
-  priceCheckDialog = false;
 
   openCollection() {
     this.router.navigateByUrl('/collection/' + this.save.uid);
+  }
+
+  showDeckDeleteButton() {
+    return this.authService.currentUser()?.uid === this.save.uid;
+  }
+
+  deleteUserDecks(event: Event) {
+    this.confirmationService.confirm({
+      target: event.target as EventTarget,
+      key: 'deleteDecks',
+      message: 'Are you sure you want to delete all your Decks?',
+      icon: 'pi pi-exclamation-triangle',
+      rejectButtonProps: {
+        label: 'Cancel',
+        severity: 'secondary',
+        outlined: true,
+      },
+      acceptButtonProps: {
+        label: 'Delete',
+      },
+      accept: () => {
+        this.messageService.add({ severity: 'info', summary: 'Confirmed', detail: 'You have deleted all your Decks', life: 3000 });
+        this.saveStore.updateSave({ ...this.save, decks: [] });
+      },
+      reject: () => {},
+    });
   }
 }

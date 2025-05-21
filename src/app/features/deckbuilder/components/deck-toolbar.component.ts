@@ -8,14 +8,13 @@ import { DialogModule } from 'primeng/dialog';
 import { TooltipModule } from 'primeng/tooltip';
 import { BehaviorSubject } from 'rxjs';
 import * as uuid from 'uuid';
-import { DigimonCard, IDeck, IDeckCard } from '../../../../models';
-import { mapToDeckCards } from '../../../functions';
-import { AuthService } from '../../../services/auth.service';
-import { DialogStore } from '../../../store/dialog.store';
-import { DigimonCardStore } from '../../../store/digimon-card.store';
-import { WebsiteStore } from '../../../store/website.store';
+import { DigimonCard, IDeck, IDeckCard } from '@models';
+import { mapToDeckCards } from '@functions';
+import { AuthService } from '@services';
+import { DialogStore } from '@store';
+import { DigimonCardStore } from '@store';
+import { WebsiteStore } from '@store';
 import { ImportDeckDialogComponent } from '../../shared/dialogs/import-deck-dialog.component';
-import { PriceCheckDialogComponent } from './price-check-dialog.component';
 
 @Component({
   selector: 'digimon-deck-toolbar',
@@ -91,14 +90,14 @@ import { PriceCheckDialogComponent } from './price-check-dialog.component';
       <h1 class="text-center text-2xl font-bold">Security Stack</h1>
       <div class="mt-5 flex flex-row">
         <div *ngFor="let secCard of securityStack" class="cards-in-a-row-5 mr-1">
-          <img [src]="secCard.cardImage" [alt]="secCard.id + ' - ' + secCard.name" />
+          <img [src]="secCard.cardImage" [alt]="secCard.id + ' - ' + secCard.name" class="max-h-56" />
         </div>
       </div>
 
       <h1 class="text-center text-2xl font-bold">Draw Hand</h1>
       <div class="mt-5 flex flex-row">
         <div *ngFor="let drawCard of drawHand" class="cards-in-a-row-5 mr-1">
-          <img [src]="drawCard.cardImage" [alt]="drawCard.id + ' - ' + drawCard.name" />
+          <img [src]="drawCard.cardImage" [alt]="drawCard.id + ' - ' + drawCard.name" class="max-h-56" />
         </div>
       </div>
 
@@ -167,21 +166,22 @@ export class DeckToolbarComponent {
     private authService: AuthService,
   ) {}
 
-  private static shuffle(array: any[]) {
-    let currentIndex = array.length,
-      randomIndex;
+  private static shuffle<T>(array: T[]): T[] {
+    const newArray = [...array]; // Create a copy to avoid mutating the original
+    let currentIndex = newArray.length;
+    let randomIndex;
 
-    // While there remain elements to shuffle.
-    while (currentIndex != 0) {
-      // Pick a remaining element.
+    // While there remain elements to shuffle
+    while (currentIndex > 0) {
+      // Pick a remaining element
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex--;
 
-      // And swap it with the current element.
-      [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+      // And swap it with the current element
+      [newArray[currentIndex], newArray[randomIndex]] = [newArray[randomIndex], newArray[currentIndex]];
     }
 
-    return array;
+    return newArray;
   }
 
   newDeck() {
@@ -212,9 +212,13 @@ export class DeckToolbarComponent {
   }
 
   mulligan() {
-    this.allDeckCards = DeckToolbarComponent.shuffle(
-      this.deck().cards.map((card) => this.digimonCardStore.cards().find((a) => a.id === card.id)),
-    );
+    const cards = [];
+    this.deck().cards.forEach((card) => {
+      for (let i = 0; i < card.count; i++) {
+        cards.push(card.id);
+      }
+    });
+    this.allDeckCards = DeckToolbarComponent.shuffle(cards.map((card) => this.digimonCardStore.cards().find((a) => a.id === card)));
     this.allDeckCards = this.allDeckCards.filter((card) => card.cardType !== 'Digi-Egg');
 
     this.securityStack = this.allDeckCards.slice(0, 5);
