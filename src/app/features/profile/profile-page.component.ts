@@ -1,14 +1,13 @@
 import { AsyncPipe, Location, NgIf } from '@angular/common';
-import { ChangeDetectionStrategy, Component, effect, inject, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { toObservable } from '@angular/core/rxjs-interop';
 import { UntypedFormControl } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
+import { IDeck, ISave } from '@models';
+import { AuthService, DigimonBackendService } from '@services';
+import { SaveStore } from '@store';
 import { filter, first, merge, Observable, Subject, switchMap, takeUntil, tap } from 'rxjs';
-import { IDeck, ISave } from '../../../models';
-import { AuthService } from '../../services/auth.service';
-import { DigimonBackendService } from '../../services/digimon-backend.service';
-import { SaveStore } from '../../store/save.store';
 import { PageComponent } from '../shared/page.component';
 import { DeckFilterComponent } from './components/deck-filter.component';
 import { DecksComponent } from './components/decks.component';
@@ -46,6 +45,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
   tagFilter = new UntypedFormControl([]);
 
   editable = true;
+  otherProfile = '';
 
   private onDestroy$ = new Subject<boolean>();
 
@@ -57,41 +57,35 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
     private meta: Meta,
     private title: Title,
   ) {
-    effect(() => {
-      this.decks = this.saveStore.decks().sort((a, b) => {
-        const aTitle = a.title ?? '';
-        const bTitle = b.title ?? '';
-        return aTitle.localeCompare(bTitle);
-      });
-      this.filteredDecks = this.decks;
-      this.filterChanges();
-    });
-
     this.save$ = merge(
       toObservable(this.saveStore.save),
       toObservable(this.authService.currentUser).pipe(
         filter(() => !!this.authService.currentUser()),
         tap(() => this.changeURL()),
         switchMap(() => {
-          this.editable = true;
           return this.digimonBackendService.getSave(this.authService.currentUser()!.uid);
         }),
       ),
       this.route.params.pipe(
         filter((params) => {
           if (!params['id']) {
+            // if no id is provided, we want to show the current user
             this.changeURL();
           }
+          this.otherProfile = params['id'];
           return !!params['id'];
         }),
         switchMap((params) => this.digimonBackendService.getSave(params['id']).pipe(first())),
-        tap((save) => {
-          this.editable = save.uid === this.authService.currentUser()?.uid;
-          this.decks = save?.decks ?? [];
-          this.filteredDecks = this.decks;
-          this.filterChanges();
-        }),
       ),
+    ).pipe(
+      filter((save) => save.uid === this.otherProfile),
+      tap((save) => {
+        this.editable = save.uid === this.authService.currentUser()?.uid;
+        this.decks = save?.decks ?? [];
+        this.filteredDecks = this.decks;
+        this.filterChanges();
+        console.log(save);
+      }),
     );
   }
 
