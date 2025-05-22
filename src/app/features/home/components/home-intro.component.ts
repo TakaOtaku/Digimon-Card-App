@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Button } from 'primeng/button';
 import { DividerModule } from 'primeng/divider';
 
 @Component({
@@ -21,6 +22,42 @@ import { DividerModule } from 'primeng/divider';
     <h2 class="mt-1 text-center text-[#e2e4e6] text-sm sm:text-base">
       Everything related to the cards is loaded once a day from
       <span class="font-bold">DigimonCardGame.Fandom</span>. Thanks to their effort everything should on here should be up to date.
+    </h2>
+
+    <p-divider class="my-5"></p-divider>
+
+    <h2 class="mt-1 text-left border-slate-300 surface-ground p-5 text-[#e2e4e6] text-sm sm:text-base flex flex-col">
+      <h2 class="font-bold text-lg mb-5">🧠 Help Build a Ruling Quiz!</h2>
+
+      <p class="mb-5">I want to create an interactive quiz feature for the site, and I need YOUR expertise to make it awesome!</p>
+
+      <div class="quiz-details mb-5">
+        <strong>What I want to build:</strong>
+        <ul class="list-disc">
+          <li class="ml-5">Multiple choice and single choice questions</li>
+          <li class="ml-5">Randomized question selection</li>
+          <li class="ml-5">Score tracking and feedback</li>
+          <li class="ml-5">Questions covering various ruling scenarios</li>
+        </ul>
+      </div>
+
+      <p class="mb-5">
+        <strong>I need your help!</strong> Submit your best ruling questions and we'll include them in the quiz pool. The more questions we
+        collect, the better and more varied the quiz experience will be for everyone.
+      </p>
+
+      <p>Each submission should include:</p>
+      <ul class="mb-5 list-disc">
+        <li class="ml-5">A clear ruling scenario or question</li>
+        <li class="ml-5">Multiple answer choices (for multiple choice)</li>
+        <li class="ml-5">The correct answer with brief explanation</li>
+      </ul>
+
+      <a class="mb-5 p-button" href="https://forms.gle/uxJLiyXcvDhe7gKC8" target="_blank">📝 Submit Your Questions Here</a>
+
+      <p class="help-text">
+        Takes just 2-3 minutes per question. Every contribution helps make this feature better for the entire community!
+      </p>
     </h2>
 
     <p-divider class="my-5"></p-divider>
