@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, effect, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { filterCards } from '@functions';
-import { CARDSET, emptyFilter, IFilter } from '@models';
+import { CARDSET, emptyFilter, emptySave, IFilter } from '@models';
 import { AuthService, DigimonBackendService } from '@services';
 import { DigimonCardStore, FilterStore, SaveStore, WebsiteStore } from '@store';
 import { BlockUIModule } from 'primeng/blockui';
@@ -77,7 +77,7 @@ export class AppComponent {
     if (this.authService.isLoggedIn) {
       this.saveStore.updateSave(this.authService.currentUser().save);
     } else {
-      this.saveStore.updateSave(this.authService.getLocalStorageSave());
+      this.saveStore.updateSave(this.authService.getLocalStorageSave() || emptySave);
     }
   });
 
