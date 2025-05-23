@@ -54,6 +54,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
   otherProfile: string | null = null;
 
   currentUser = this.authService.currentUser;
+  routeParams = toSignal(this.route.params);
 
   private onDestroy$ = new Subject<boolean>();
 
@@ -76,7 +77,8 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
         // If other profile is null, we are in the main user profile and can just do the default
         // The same is true if the other profile is the same as the current user id
         // If the other profile is not null and not the same as the current user id, we are in another profile and need to check if the received save is the same as the other profile
-        if (!this.otherProfile || this.otherProfile === this.authService.currentUser()?.uid) {
+        if (!this.routeParams() && (!this.otherProfile || this.otherProfile === this.authService.currentUser()?.uid)) {
+          console.log('changing url', this.routeParams());
           this.setURLToMainUser();
           this.editable = true;
           this.decks = save?.decks ?? [];
