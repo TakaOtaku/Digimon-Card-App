@@ -1,10 +1,6 @@
-import { AsyncPipe, NgClass, NgIf, NgStyle } from '@angular/common';
-import { Component, effect, inject, OnDestroy, OnInit } from '@angular/core';
-import {
-  FormsModule,
-  ReactiveFormsModule,
-  UntypedFormControl,
-} from '@angular/forms';
+import { NgClass, NgIf, NgStyle } from '@angular/common';
+import { Component, effect, inject, OnDestroy } from '@angular/core';
+import { FormsModule, ReactiveFormsModule, UntypedFormControl } from '@angular/forms';
 import { saveAs } from 'file-saver';
 import { ToastrService } from 'ngx-toastr';
 import { ConfirmationService, MessageService, SharedModule } from 'primeng/api';
@@ -13,23 +9,16 @@ import { CardModule } from 'primeng/card';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { InputTextModule } from 'primeng/inputtext';
-import { InputTextareaModule } from 'primeng/inputtextarea';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { TabViewModule } from 'primeng/tabview';
+import { TextareaModule } from 'primeng/textarea';
 import { Subject } from 'rxjs';
-import {
-  DigimonCard,
-  emptySettings,
-  GroupedSets,
-  ICountCard,
-  ISave,
-} from '../../../../models';
-import { DigimonBackendService } from '../../../services/digimon-backend.service';
-import { DialogStore } from '../../../store/dialog.store';
-import { DigimonCardStore } from '../../../store/digimon-card.store';
-import { SaveStore } from '../../../store/save.store';
-import { SetFilterComponent } from '../filter/set-filter.component';
+import { DigimonCard, emptySettings, GroupedSets, ICountCard, ISave } from '@models';
+import { DigimonBackendService } from '@services';
+import { DialogStore } from '@store';
+import { DigimonCardStore } from '@store';
+import { SaveStore } from '@store';
 import { SettingsRowComponent } from '../settings-row.component';
 
 @Component({
@@ -37,17 +26,9 @@ import { SettingsRowComponent } from '../settings-row.component';
   template: `
     <p-tabView class="centered-tabs">
       <p-tabPanel class="ml-auto" header="General">
-        <p-card
-          header="Deckbuilder"
-          subheader="Settings for the Deckbuilder"
-          styleClass="border-slate-300 border">
+        <p-card header="Deckbuilder" subheader="Settings for the Deckbuilder" styleClass="border-slate-300 border">
           <digimon-settings-row title="Sort Cards by">
-            <p-selectButton
-              [allowEmpty]="false"
-              [formControl]="sortOrderFilter"
-              [multiple]="false"
-              [options]="sortOrder">
-            </p-selectButton>
+            <p-selectButton [allowEmpty]="false" [formControl]="sortOrderFilter" [multiple]="false" [options]="sortOrder"> </p-selectButton>
           </digimon-settings-row>
 
           <digimon-settings-row title="Display SideDecks">
@@ -69,11 +50,7 @@ import { SettingsRowComponent } from '../settings-row.component';
           </digimon-settings-row>
         </p-card>
 
-        <p-card
-          class="m-1"
-          header="Collection"
-          subheader="Settings for the Collection"
-          styleClass="border-slate-300 border">
+        <p-card class="m-1" header="Collection" subheader="Settings for the Collection" styleClass="border-slate-300 border">
           <digimon-settings-row title="Sets you want to complete">
             <p-multiSelect
               [filter]="false"
@@ -95,19 +72,13 @@ import { SettingsRowComponent } from '../settings-row.component';
             </p-multiSelect>
           </digimon-settings-row>
           <digimon-settings-row title="Collection Goal">
-            <p-inputNumber
-              [(ngModel)]="collectionCount"
-              mode="decimal"></p-inputNumber>
+            <p-inputNumber [(ngModel)]="collectionCount" mode="decimal"></p-inputNumber>
           </digimon-settings-row>
           <digimon-settings-row title="AA Collection Goal">
-            <p-inputNumber
-              [(ngModel)]="aaCollectionCount"
-              mode="decimal"></p-inputNumber>
+            <p-inputNumber [(ngModel)]="aaCollectionCount" mode="decimal"></p-inputNumber>
           </digimon-settings-row>
           <digimon-settings-row title="Collection Filter Max">
-            <p-inputNumber
-              [(ngModel)]="collectionFilterMax"
-              mode="decimal"></p-inputNumber>
+            <p-inputNumber [(ngModel)]="collectionFilterMax" mode="decimal"></p-inputNumber>
           </digimon-settings-row>
           <digimon-settings-row title="Alt. Art Cards">
             <p-selectButton
@@ -183,11 +154,7 @@ import { SettingsRowComponent } from '../settings-row.component';
           </digimon-settings-row>
         </p-card>
 
-        <p-card
-          class="m-1"
-          header="Profile"
-          subheader="Settings for your Profile"
-          styleClass="border-slate-300 border">
+        <p-card class="m-1" header="Profile" subheader="Settings for your Profile" styleClass="border-slate-300 border">
           <digimon-settings-row title="Username">
             <input type="text" pInputText [(ngModel)]="username" />
           </digimon-settings-row>
@@ -213,18 +180,9 @@ import { SettingsRowComponent } from '../settings-row.component';
           </digimon-settings-row>
         </p-card>
 
-        <p-card
-          class="m-1"
-          header="Save"
-          subheader="Interactions with your Save"
-          styleClass="border-slate-300 border">
+        <p-card class="m-1" header="Save" subheader="Interactions with your Save" styleClass="border-slate-300 border">
           <div class="flex flex-col justify-between lg:flex-row">
-            <input
-              #fileUpload
-              (change)="handleFileInput($event.target)"
-              [ngStyle]="{ display: 'none' }"
-              accept=".json"
-              type="file" />
+            <input #fileUpload (change)="handleFileInput($event.target)" [ngStyle]="{ display: 'none' }" accept=".json" type="file" />
             <button
               (click)="fileUpload.click()"
               class="m-auto mb-2 min-w-[200px] max-w-[200px]"
@@ -249,13 +207,7 @@ import { SettingsRowComponent } from '../settings-row.component';
           </div>
         </p-card>
 
-        <button
-          (click)="saveSettings()"
-          class="mt-10"
-          icon="pi pi-save"
-          label="Save Settings"
-          pButton
-          type="button"></button>
+        <button (click)="saveSettings()" class="mt-10" icon="pi pi-save" label="Save Settings" pButton type="button"></button>
       </p-tabPanel>
 
       <p-tabPanel header="Collection Export">
@@ -283,9 +235,7 @@ import { SettingsRowComponent } from '../settings-row.component';
             </p-multiSelect>
           </div>
 
-          <h1 class="mt-3 text-center text-xs font-bold text-[#e2e4e6]">
-            Rarity:
-          </h1>
+          <h1 class="mt-3 text-center text-xs font-bold text-[#e2e4e6]">Rarity:</h1>
           <div class="inline-flex w-full justify-center">
             <button
               (click)="changeRarity('C')"
@@ -319,9 +269,7 @@ import { SettingsRowComponent } from '../settings-row.component';
             </button>
           </div>
 
-          <h1 class="mt-3 text-center text-xs font-bold text-[#e2e4e6]">
-            Version:
-          </h1>
+          <h1 class="mt-3 text-center text-xs font-bold text-[#e2e4e6]">Version:</h1>
           <div class="inline-flex w-full justify-center">
             <button
               (click)="changeVersion('Normal')"
@@ -367,9 +315,7 @@ import { SettingsRowComponent } from '../settings-row.component';
             </button>
           </div>
 
-          <p class="mt-3 text-center font-bold">
-            Missing Cards or Collected Cards?
-          </p>
+          <p class="mt-3 text-center font-bold">Missing Cards or Collected Cards?</p>
           <div class="mx-auto flex flex-row">
             <span class="mr-2">Missing</span>
             <p-inputSwitch [(ngModel)]="collectedCards"></p-inputSwitch>
@@ -377,9 +323,7 @@ import { SettingsRowComponent } from '../settings-row.component';
           </div>
 
           <div *ngIf="!collectedCards" class="my-3">
-            <h1 class="text-center text-xs font-bold text-[#e2e4e6]">
-              Collection Goal:
-            </h1>
+            <h1 class="text-center text-xs font-bold text-[#e2e4e6]">Collection Goal:</h1>
             <div class="inline-flex w-full justify-center">
               <button
                 (click)="goal = 1"
@@ -415,12 +359,7 @@ import { SettingsRowComponent } from '../settings-row.component';
           </div>
 
           <div class="mt-3 flex w-full justify-end">
-            <button
-              (click)="exportCollection()"
-              icon="pi pi-download"
-              label="Export"
-              pButton
-              type="button"></button>
+            <button (click)="exportCollection()" icon="pi pi-download" label="Export" pButton type="button"></button>
           </div>
         </div>
       </p-tabPanel>
@@ -436,12 +375,7 @@ import { SettingsRowComponent } from '../settings-row.component';
             pInputTextarea></textarea>
         </div>
         <div class="flex w-full justify-end">
-          <button
-            (click)="importCollection()"
-            icon="pi pi-upload"
-            label="Import"
-            pButton
-            type="button"></button>
+          <button (click)="importCollection()" icon="pi pi-upload" label="Import" pButton type="button"></button>
         </div>
       </p-tabPanel>
     </p-tabView>
@@ -466,14 +400,12 @@ import { SettingsRowComponent } from '../settings-row.component';
     NgClass,
     InputSwitchModule,
     NgIf,
-    InputTextareaModule,
     NgStyle,
     TabViewModule,
     CardModule,
     SettingsRowComponent,
     InputTextModule,
-    SetFilterComponent,
-    AsyncPipe,
+    TextareaModule,
   ],
   providers: [MessageService],
 })
@@ -492,8 +424,7 @@ export class SettingsDialogComponent implements OnDestroy {
   rarities: string[] = [];
   versions: string[] = [];
 
-  importPlaceholder =
-    '' + 'Paste Collection here\n' + '\n' + ' Format:\n' + '   Qty Id\n';
+  importPlaceholder = '' + 'Paste Collection here\n' + '\n' + ' Format:\n' + '   Qty Id\n';
   collectionText = '';
 
   collection: ICountCard[] = [];
@@ -603,13 +534,8 @@ export class SettingsDialogComponent implements OnDestroy {
       },
     };
 
-    console.log(save);
-
     this.saveStore.updateSave(save);
-    this.toastrService.info(
-      'Settings were saved and updated.',
-      'Settings saved!',
-    );
+    this.toastrService.info('Settings were saved and updated.', 'Settings saved!');
 
     this.dialogStore.updateSettingsDialog(false);
   }
@@ -627,10 +553,7 @@ export class SettingsDialogComponent implements OnDestroy {
     });
 
     this.saveStore.addCard(collectionCards);
-    this.toastrService.info(
-      'The collection was imported successfully!',
-      'Collection Imported!',
-    );
+    this.toastrService.info('The collection was imported successfully!', 'Collection Imported!');
   }
 
   exportSave(): void {
@@ -645,10 +568,7 @@ export class SettingsDialogComponent implements OnDestroy {
         let save: any = JSON.parse(fileReader.result as string);
         save = this.digimonBackendService.checkSaveValidity(save, null);
         this.saveStore.updateSave(save);
-        this.toastrService.info(
-          'The save was loaded successfully!',
-          'Save loaded!',
-        );
+        this.toastrService.info('The save was loaded successfully!', 'Save loaded!');
       } catch (e) {
         this.toastrService.info('The save was not loaded!', 'Save Error!');
       }
@@ -669,10 +589,7 @@ export class SettingsDialogComponent implements OnDestroy {
           settings: emptySettings,
         };
         this.saveStore.updateSave(resetedSave);
-        this.toastrService.info(
-          'The save was cleared successfully!',
-          'Save cleared!',
-        );
+        this.toastrService.info('The save was cleared successfully!', 'Save cleared!');
       },
       reject: () => {},
     });
@@ -700,10 +617,7 @@ export class SettingsDialogComponent implements OnDestroy {
       .sort((a, b) => a.id.localeCompare(b.id));
 
     if (exportCards.length === 0) {
-      this.toastrService.info(
-        'No cards, that match your filter were found!',
-        'No cards found!',
-      );
+      this.toastrService.info('No cards, that match your filter were found!', 'No cards found!');
       return;
     }
 
@@ -730,9 +644,7 @@ export class SettingsDialogComponent implements OnDestroy {
       collection.forEach((collectionCard) => returnCards.push(collectionCard));
     } else {
       allCards.forEach((card) => {
-        const foundCard = collection.find(
-          (collectionCard) => collectionCard.id === card.id,
-        );
+        const foundCard = collection.find((collectionCard) => collectionCard.id === card.id);
         if (foundCard) {
           if (this.goal - foundCard.count > 0) {
             returnCards.push({
@@ -750,16 +662,10 @@ export class SettingsDialogComponent implements OnDestroy {
   }
 
   private setupAllCards(): DigimonCard[] {
-    let setFiltered: DigimonCard[] =
-      this.sets.length === 0 ? this.digimonCardStore.cards() : [];
+    let setFiltered: DigimonCard[] = this.sets.length === 0 ? this.digimonCardStore.cards() : [];
     this.sets.forEach((filter) => {
       setFiltered = [
-        ...new Set([
-          ...setFiltered,
-          ...this.digimonCardStore
-            .cards()
-            .filter((cards) => cards['id'].split('-')[0] === filter),
-        ]),
+        ...new Set([...setFiltered, ...this.digimonCardStore.cards().filter((cards) => cards['id'].split('-')[0] === filter)]),
       ];
     });
 
@@ -768,12 +674,7 @@ export class SettingsDialogComponent implements OnDestroy {
       raritiesFiltered = setFiltered;
     }
     this.rarities.forEach((filter) => {
-      raritiesFiltered = [
-        ...new Set([
-          ...raritiesFiltered,
-          ...setFiltered.filter((cards) => cards['rarity'] === filter),
-        ]),
-      ];
+      raritiesFiltered = [...new Set([...raritiesFiltered, ...setFiltered.filter((cards) => cards['rarity'] === filter)])];
     });
 
     let versionsFiltered: DigimonCard[] = [];
@@ -781,29 +682,16 @@ export class SettingsDialogComponent implements OnDestroy {
       versionsFiltered = raritiesFiltered;
     }
     this.versions.forEach((filter) => {
-      versionsFiltered = [
-        ...new Set([
-          ...versionsFiltered,
-          ...raritiesFiltered.filter((cards) => cards['version'] === filter),
-        ]),
-      ];
+      versionsFiltered = [...new Set([...versionsFiltered, ...raritiesFiltered.filter((cards) => cards['version'] === filter)])];
     });
 
     return versionsFiltered;
   }
 
   private setupCollection(): ICountCard[] {
-    let setFiltered: ICountCard[] =
-      this.sets.length === 0 ? this.saveStore.collection() : [];
+    let setFiltered: ICountCard[] = this.sets.length === 0 ? this.saveStore.collection() : [];
     this.sets.forEach((filter) => {
-      setFiltered = [
-        ...new Set([
-          ...setFiltered,
-          ...this.saveStore
-            .collection()
-            .filter((cards) => cards['id'].split('-')[0] === filter),
-        ]),
-      ];
+      setFiltered = [...new Set([...setFiltered, ...this.saveStore.collection().filter((cards) => cards['id'].split('-')[0] === filter)])];
     });
 
     if (this.rarities.length === 0) {
@@ -812,15 +700,9 @@ export class SettingsDialogComponent implements OnDestroy {
 
     let collectionCardsForRarity: ICountCard[] = [];
     setFiltered.forEach((collectionCard) => {
-      const foundCard = this.digimonCardStore
-        .cards()
-        .find((card) => card.id === collectionCard.id);
+      const foundCard = this.digimonCardStore.cards().find((card) => card.id === collectionCard.id);
 
-      if (
-        this.rarities.includes(
-          foundCard && foundCard.rarity ? foundCard.rarity : '',
-        )
-      ) {
+      if (this.rarities.includes(foundCard && foundCard.rarity ? foundCard.rarity : '')) {
         collectionCardsForRarity.push(collectionCard);
       }
     });
@@ -831,9 +713,7 @@ export class SettingsDialogComponent implements OnDestroy {
 
     let collectionCardsForVersion: ICountCard[] = [];
     collectionCardsForRarity.forEach((collectionCard) => {
-      const foundCard = this.digimonCardStore
-        .cards()
-        .find((card) => card.id === collectionCard.id);
+      const foundCard = this.digimonCardStore.cards().find((card) => card.id === collectionCard.id);
 
       if (this.versions.includes(foundCard!.version)) {
         collectionCardsForVersion.push(collectionCard);
@@ -848,9 +728,7 @@ export class SettingsDialogComponent implements OnDestroy {
     const lineSplit: string[] = line.replace(/  +/g, ' ').split(' ');
     const cardLine: number = +lineSplit[0] >>> 0;
     if (cardLine > 0) {
-      if (
-        !this.digimonCardStore.cards().find((card) => card.id === lineSplit[1])
-      ) {
+      if (!this.digimonCardStore.cards().find((card) => card.id === lineSplit[1])) {
         return null;
       }
       return { count: cardLine, id: lineSplit[1] } as ICountCard;

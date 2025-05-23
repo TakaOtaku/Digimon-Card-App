@@ -1,16 +1,7 @@
-import {
-  DigimonCard,
-  emptyDeck,
-  ICountCard,
-  IDeck,
-  IDeckCard,
-} from '../../models';
+import { DigimonCard, emptyDeck, ICountCard, IDeck, IDeckCard } from '../../models';
 import { compareIDs, setColors, setTags } from './digimon-card.functions';
 
-export function stringToDeck(
-  deckList: string,
-  allCards: DigimonCard[],
-): IDeck | null {
+export function stringToDeck(deckList: string, allCards: DigimonCard[]): IDeck | null {
   let result: string[] = deckList.split('\n');
 
   let deck: IDeck = parseDeck(result, allCards);
@@ -137,10 +128,7 @@ function setDeckProperties(deck: IDeck, allCards: DigimonCard[]) {
   deck.color = setColors(deck, allCards);
 }
 
-function findCardById(
-  cardId: string,
-  allCards: DigimonCard[],
-): DigimonCard | undefined {
+function findCardById(cardId: string, allCards: DigimonCard[]): DigimonCard | undefined {
   return allCards.find((card) => compareIDs(card.id, cardId));
 }
 

@@ -1,4 +1,4 @@
-import { AsyncPipe, CurrencyPipe, NgFor, NgIf } from '@angular/common';
+import { CurrencyPipe, NgFor, NgIf } from '@angular/common';
 import { Component, inject, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from 'primeng/api';
@@ -6,17 +6,8 @@ import { BlockUIModule } from 'primeng/blockui';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { TableModule } from 'primeng/table';
-import {
-  DigimonCard,
-  dummyCard,
-  GroupedSets,
-  ICountCard,
-  ISave,
-} from '../../../../models';
-import {
-  ProductCM,
-  ProductCMWithCount,
-} from '../../../services/card-market.service';
+import { DigimonCard, dummyCard, GroupedSets, ICountCard, ISave } from '../../../../models';
+import { ProductCM, ProductCMWithCount } from '../../../services/card-market.service';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
 import { WebsiteStore } from '../../../store/website.store';
 import { CardImageComponent } from '../../shared/card-image.component';
@@ -32,10 +23,7 @@ import { CardImageComponent } from '../../shared/card-image.component';
 
       <div class="mb-2 flex flex-col">
         <span>All Price-Information is from <b>CardMarket</b>.</span>
-        <span class="text-xs"
-          >Calculating the Card-Prices may take a while if you have a big
-          collection.</span
-        >
+        <span class="text-xs">Calculating the Card-Prices may take a while if you have a big collection.</span>
       </div>
 
       <div class="flex flex-row">
@@ -79,15 +67,11 @@ import { CardImageComponent } from '../../shared/card-image.component';
       <div *ngIf="notFound.length > 0" class="flex flex-row flex-wrap">
         <span class="w-full">Couldn't find a price for: </span>
         <div *ngFor="let card of notFound">
-          <digimon-card-image
-            [card]="getCard(card.cardId)"></digimon-card-image>
+          <digimon-card-image [card]="getCard(card.cardId)"></digimon-card-image>
         </div>
       </div>
 
-      <p-table
-        [value]="filteredProducts"
-        [breakpoint]="'0px'"
-        styleClass="p-datatable-sm p-datatable-striped">
+      <p-table [value]="filteredProducts" [breakpoint]="'0px'" styleClass="p-datatable-sm p-datatable-striped">
         <ng-template pTemplate="header">
           <tr>
             <th>Img</th>
@@ -106,8 +90,7 @@ import { CardImageComponent } from '../../shared/card-image.component';
         <ng-template pTemplate="body" let-product>
           <tr>
             <th>
-              <digimon-card-image
-                [card]="getCard(product.cardId)"></digimon-card-image>
+              <digimon-card-image [card]="getCard(product.cardId)"></digimon-card-image>
             </th>
             <th>{{ product.count }}</th>
             <td>{{ product.cardId }}</td>
@@ -120,10 +103,7 @@ import { CardImageComponent } from '../../shared/card-image.component';
             <td>{{ product.avg30 | currency: 'EUR' }}</td>
             <td class="bg-white">
               <a [href]="product.link" target="_blank">
-                <img
-                  class="max-h-[2rem]"
-                  src="assets/icons/CardmarketLogo.png"
-                  alt="Link to CardMarket" />
+                <img class="max-h-[2rem]" src="assets/icons/CardmarketLogo.png" alt="Link to CardMarket" />
               </a>
             </td>
           </tr>
@@ -147,9 +127,7 @@ import { CardImageComponent } from '../../shared/card-image.component';
 
       <div class="flex flex-col text-xs">
         <span><b>Disclaimer:</b></span>
-        <span>
-          Not all cards may have a price or they could be linked wrong.</span
-        >
+        <span> Not all cards may have a price or they could be linked wrong.</span>
         <span> The Prices are updated once a day.</span>
         <span> TCGPlayer doesn't give out access to their API anymore.</span>
       </div>
@@ -181,7 +159,6 @@ import { CardImageComponent } from '../../shared/card-image.component';
     NgFor,
     CardImageComponent,
     TableModule,
-    AsyncPipe,
     CurrencyPipe,
   ],
 })
@@ -210,9 +187,7 @@ export class CollectionPriceCheckDialogComponent {
     const filteredCollection = this.filterCollection();
     const all: ProductCMWithCount[] = filteredCollection
       .map((card) => {
-        const foundProduct: ProductCM =
-          this.prizeGuide.find((product) => card.id === product.cardId) ??
-          this.emptyProduct(card);
+        const foundProduct: ProductCM = this.prizeGuide.find((product) => card.id === product.cardId) ?? this.emptyProduct(card);
 
         return { ...foundProduct, count: card.count } as ProductCMWithCount;
       })
@@ -271,9 +246,7 @@ export class CollectionPriceCheckDialogComponent {
   getMissingCards = (): ProductCMWithCount[] => {
     return this.products
       .map((product) => {
-        const foundCard = this.filterCollection().find(
-          (collectionCard) => collectionCard.id === product.cardId,
-        );
+        const foundCard = this.filterCollection().find((collectionCard) => collectionCard.id === product.cardId);
         if (foundCard) {
           return { ...product, count: product.count - foundCard.count };
         } else {

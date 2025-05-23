@@ -26,6 +26,7 @@ export interface DigimonCard {
   linkEffect: string;
   rule: string;
   digiXros: string;
+  assembly: string;
   digivolveCondition: DigivolveCondition[];
   digivolveEffect: string;
   dnaDigivolve: string;

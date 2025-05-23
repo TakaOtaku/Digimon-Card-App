@@ -1,14 +1,5 @@
 import { NgStyle } from '@angular/common';
-import {
-  Component,
-  EventEmitter,
-  inject,
-  Input,
-  OnChanges,
-  OnInit,
-  Output,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, EventEmitter, inject, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { AutoCompleteModule } from 'primeng/autocomplete';
@@ -26,31 +17,19 @@ import { DigimonCardStore } from '../../../store/digimon-card.store';
 import { emptyDeck } from '../../../store/reducers/digimon.reducers';
 import { SaveStore } from '../../../store/save.store';
 import { WebsiteStore } from '../../../store/website.store';
-import { DeckActions } from './../../../store/digimon.actions';
 
 @Component({
   selector: 'digimon-change-accessorie-dialog',
   template: `
-    <p-selectButton
-      class="mt-10 text-center"
-      [options]="colorList"
-      [(ngModel)]="color"
-      optionLabel="name">
+    <p-selectButton class="mt-10 text-center" [options]="colorList" [(ngModel)]="color" optionLabel="name">
       <ng-template let-item>
-        <span [ngStyle]="{ color: colorMap.get(item.name) }">{{
-          item.name
-        }}</span>
+        <span [ngStyle]="{ color: colorMap.get(item.name) }">{{ item.name }}</span>
       </ng-template>
     </p-selectButton>
 
     <div class="inline-flex w-full">
       <span class="p-float-label mt-5 w-1/2">
-        <input
-          class="w-full"
-          id="float-input"
-          type="text"
-          pInputText
-          [(ngModel)]="title" />
+        <input class="w-full" id="float-input" type="text" pInputText [(ngModel)]="title" />
         <label for="float-input">Deck Name</label>
       </span>
 
@@ -69,12 +48,7 @@ import { DeckActions } from './../../../store/digimon.actions';
     </div>
 
     <span class="p-float-label mt-6 w-full">
-      <input
-        class="w-full"
-        id="float-input2"
-        type="text"
-        pInputText
-        [(ngModel)]="description" />
+      <input class="w-full" id="float-input2" type="text" pInputText [(ngModel)]="description" />
       <label for="float-input2">Description</label>
     </span>
 
@@ -89,14 +63,7 @@ import { DeckActions } from './../../../store/digimon.actions';
     </div>
   `,
   standalone: true,
-  imports: [
-    SelectButtonModule,
-    FormsModule,
-    NgStyle,
-    InputTextModule,
-    AutoCompleteModule,
-    ButtonModule,
-  ],
+  imports: [SelectButtonModule, FormsModule, NgStyle, InputTextModule, AutoCompleteModule, ButtonModule],
   providers: [MessageService],
 })
 export class ChangeAccessorieDialogComponent implements OnInit, OnChanges {
@@ -176,10 +143,7 @@ export class ChangeAccessorieDialogComponent implements OnInit, OnChanges {
     this.confirmationService.confirm({
       message: 'You are about to share the deck. Are you sure?',
       accept: () => {
-        this.digimonCardService
-          .updateDeck(deck, this.auth.userData, this.digimonCardStore.cards())
-          .pipe(first())
-          .subscribe();
+        this.digimonCardService.updateDeck(deck, this.auth.userData, this.digimonCardStore.cards()).pipe(first()).subscribe();
         this.messageService.add({
           severity: 'success',
           summary: 'Deck shared!',

@@ -1,11 +1,5 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  effect,
-  inject,
-} from '@angular/core';
+import { Component, effect, inject } from '@angular/core';
 import { DialogModule } from 'primeng/dialog';
-import { emptyDeck } from '../../../models';
 import { ChangelogDialogComponent } from './dialogs/changelog-dialog.component';
 import { DeckDialogComponent } from './dialogs/deck-dialog.component';
 import { ExportDeckDialogComponent } from './dialogs/export-deck-dialog.component';
@@ -82,8 +76,8 @@ import { DialogStore } from '../../store/dialog.store';
     SettingsDialogComponent,
     ViewCardDialogComponent,
     ExportDeckDialogComponent,
-    DeckDialogComponent
-  ]
+    DeckDialogComponent,
+  ],
 })
 export class DialogComponent {
   dialogStore = inject(DialogStore);

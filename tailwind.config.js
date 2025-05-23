@@ -2,7 +2,7 @@ module.exports = {
   mode: 'jit',
   important: true,
   content: [
-    './src/**/*.{html,ts}',
+    './src/**/*.{html,ts,scss,css}',
     './node_modules/tw-elements/dist/js/**/*.js',
   ],
   theme: {
@@ -12,8 +12,8 @@ module.exports = {
         '3xs': '0.5rem',
       },
       backgroundImage: {
-        'digimon': "url('/assets/images/bg_corner.png')",
-      }
+        digimon: "url('/assets/images/bg_corner.png')",
+      },
     },
   },
   variants: {
@@ -21,5 +21,5 @@ module.exports = {
       display: ['group-hover'],
     },
   },
-  plugins: [require('tw-elements/dist/plugin')],
+  //plugins: [require('tw-elements')],
 };

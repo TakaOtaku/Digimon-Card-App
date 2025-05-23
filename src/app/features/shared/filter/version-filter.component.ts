@@ -1,4 +1,3 @@
-import { AsyncPipe, NgIf } from '@angular/common';
 import { Component, effect, inject } from '@angular/core';
 import { VersionButtons } from '../../../../models';
 import { FilterStore } from '../../../store/filter.store';
@@ -15,7 +14,7 @@ import { MultiButtonsComponent } from '../multi-buttons.component';
       title="Version"></digimon-multi-buttons>
   `,
   standalone: true,
-  imports: [NgIf, MultiButtonsComponent, AsyncPipe],
+  imports: [MultiButtonsComponent],
 })
 export class VersionFilterComponent {
   filterStore = inject(FilterStore);
@@ -25,7 +24,6 @@ export class VersionFilterComponent {
 
   filterChange = effect(() => {
     this.versionFilter = this.filterStore.versionFilter();
-    console.log(this.versionFilter);
   });
 
   changeVersion(version: string, versionFilter: string[]) {

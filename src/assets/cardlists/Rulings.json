@@ -2425,7 +2425,7 @@
       "question": "Q: If multiple cards are placed as the bottom digivolution cards for this card's [Start of Your Main Phase] effect, what order are the cards placed?"
     },
     {
-      "answer": "A: No, it isn't processed.  \nOverflow \uff1c-nocategory\uff1e (As this card moves from the field or under a card to an area other than those, lose nocategory memory.) is processed when a card is sent from the area or from under a card to another area.  In this case, \nOverflow \uff1c-nocategory\uff1e (As this card moves from the field or under a card to an area other than those, lose nocategory memory.) isn't processed because a card from the area is placed under another card.[2]",
+      "answer": "A: No, it isn't processed.  \nOverflow is processed when a card is sent from the area or from under a card to another area.  In this case, \nOverflow isn't processed because a card from the area is placed under another card.[2]",
       "question": "Q: When I use this card's [Start of Your Main Phase] effect to place a BT17-078 [Omnimon ACE] under this card as a digivolution card, is BT17-078 [Omnimon ACE] processed?"
     },
     {
@@ -2961,8 +2961,8 @@
       "question": "Q: This card's [On Play][When Digivolving] effect reads \"trash your Digimon in the breeding area\" for when a Digimon is played by this effect, but what happens to the remaining digivolution cards under this Digimon?"
     },
     {
-      "answer": "A: Yes, it's processed.  \nOverflow \uff1c-nocategory\uff1e (As this card moves from the field or under a card to an area other than those, lose nocategory memory.) is processed when a card is sent from the area or from under a card to another area.  In this case, \nOverflow \uff1c-nocategory\uff1e (As this card moves from the field or under a card to an area other than those, lose nocategory memory.) is processed because a card is placed in the trash from under another card.[2]",
-      "question": "Q: I used this card's [On Play] effect to trash a BT13-007 [King Drasil_7D6] with a BT17-078 [Omnimon ACE] in its digivolution cards. Is BT17-078 [Omnimon ACE]'s \nOverflow \uff1c-nocategory\uff1e (As this card moves from the field or under a card to an area other than those, lose nocategory memory.) processed at such times?"
+      "answer": "A: Yes, it's processed.  \nOverflow is processed when a card is sent from the area or from under a card to another area.  In this case, \nOverflow is processed because a card is placed in the trash from under another card.[2]",
+      "question": "Q: I used this card's [On Play] effect to trash a BT13-007 [King Drasil_7D6] with a BT17-078 [Omnimon ACE] in its digivolution cards. Is BT17-078 [Omnimon ACE]'s \nOverflow processed at such times?"
     }
   ],
   "BT14-006": [
@@ -4617,12 +4617,12 @@
       "question": "Q: After performing \"deleting 1 of your [Ukkomon]\" and \"trashing 1 of your Digimon in the breeding area,\" can I choose to not play a [BigUkkomon] into the breeding area for this card's [Main] effect?"
     },
     {
-      "answer": "A: Yes, it's processed.  \nOverflow \uff1c-nocategory\uff1e (As this card moves from the field or under a card to an area other than those, lose nocategory memory.) is processed when a card is sent from the area or from under a card to another area. In this case, it's processed because a card from the area is placed in the trash.[2]",
-      "question": "Q: Is \nOverflow \uff1c-nocategory\uff1e (As this card moves from the field or under a card to an area other than those, lose nocategory memory.) processed when this card's [Main] effect trashes a Digimon with \nOverflow \uff1c-nocategory\uff1e (As this card moves from the field or under a card to an area other than those, lose nocategory memory.) in the breeding area?"
+      "answer": "A: Yes, it's processed.  \nOverflow is processed when a card is sent from the area or from under a card to another area. In this case, it's processed because a card from the area is placed in the trash.[2]",
+      "question": "Q: Is \nOverflow processed when this card's [Main] effect trashes a Digimon with \nOverflow in the breeding area?"
     },
     {
-      "answer": "A: Yes, it's processed.  \nOverflow \uff1c-nocategory\uff1e (As this card moves from the field or under a card to an area other than those, lose nocategory memory.) is processed when a card is sent from the area or from under a card to another area. In this case, it's processed because it's placed into the trash from under a card.[2]",
-      "question": "Q: Is \nOverflow \uff1c-nocategory\uff1e (As this card moves from the field or under a card to an area other than those, lose nocategory memory.) processed when this card's [Main] effect trashes a Digimon in the breeding area that has a card with \nOverflow \uff1c-nocategory\uff1e (As this card moves from the field or under a card to an area other than those, lose nocategory memory.) in its digivolution cards?"
+      "answer": "A: Yes, it's processed.  \nOverflow is processed when a card is sent from the area or from under a card to another area. In this case, it's processed because it's placed into the trash from under a card.[2]",
+      "question": "Q: Is \nOverflow processed when this card's [Main] effect trashes a Digimon in the breeding area that has a card with \nOverflow in its digivolution cards?"
     }
   ],
   "BT16-091": [
@@ -17789,8 +17789,8 @@
       "question": "Q: What does this card's \"when [...] would leave the battle area\" mean, exactly?"
     },
     {
-      "answer": "A: No, it doesn't.  \nOverflow \uff1c-nocategory\uff1e (As this card moves from the field or under a card to an area other than those, lose nocategory memory.) applies when a card from the battle area or from under a card is placed into another area. In this case, it doesn't apply because a card from the battle area is placed under another card.[1]",
-      "question": "Q: Does \nOverflow \uff1c-nocategory\uff1e (As this card moves from the field or under a card to an area other than those, lose nocategory memory.) apply when I use this card's [All Turns] effect to place this card in the digivolution cards of the played [Guilmon]?"
+      "answer": "A: No, it doesn't.  \nOverflow applies when a card from the battle area or from under a card is placed into another area. In this case, it doesn't apply because a card from the battle area is placed under another card.[1]",
+      "question": "Q: Does \nOverflow apply when I use this card's [All Turns] effect to place this card in the digivolution cards of the played [Guilmon]?"
     },
     {
       "answer": "A: Such effects increase the maximum value shown for DP-based deletion effects.  For example, while \"[Your Turn] Add 1000 to the maximum your DP-based deletion effects can delete\" is activated, \"[When Digivolving] Delete 1 of your opponent's Digimon with 3000 DP or less\" will allow you to delete an opponent's Digimon with 4000 DP or less.[1]",
@@ -18697,8 +18697,8 @@
   ],
   "P-143": [
     {
-      "answer": "A: No, it isn't processed.  In this case, \nOverflow \uff1c-nocategory\uff1e (As this card moves from the field or under a card to an area other than those, lose nocategory memory.) isn't processed because the card isn't removed from the area.[1]",
-      "question": "Q: If a card with \nOverflow \uff1c-nocategory\uff1e (As this card moves from the field or under a card to an area other than those, lose nocategory memory.) is in this card's digivolution cards, is \nOverflow \uff1c-nocategory\uff1e (As this card moves from the field or under a card to an area other than those, lose nocategory memory.) on that card processed when this card's [End of Your Turn] effect moves it to the breeding area?"
+      "answer": "A: No, it isn't processed.  In this case, \nOverflow isn't processed because the card isn't removed from the area.[1]",
+      "question": "Q: If a card with \nOverflow is in this card's digivolution cards, is \nOverflow on that card processed when this card's [End of Your Turn] effect moves it to the breeding area?"
     },
     {
       "answer": "A: No, they aren't trashed.[2]",

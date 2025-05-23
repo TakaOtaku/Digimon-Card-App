@@ -94,7 +94,7 @@ def getDigivolveInfo(html, digimoncard):
         case 'Level':
           newDigivolveCondition.level = data[1]
         case 'Form':
-          newDigivolveCondition.level = data[1]          
+          newDigivolveCondition.level = data[1]
         case 'Digivolve Cost':
           newDigivolveCondition.cost = data[1]
     digimoncard.digivolveCondition.append(newDigivolveCondition)
@@ -107,6 +107,9 @@ def getDigivolveInfo(html, digimoncard):
       if (specialEvo.find("DigiXros Requirements") != -1):
         xrosHeart = specialEvoCon.find("td")
         digimoncard.digiXros = xrosHeart.text
+      if (specialEvo.find("Assembly Requirements") != -1):
+        assembly = specialEvoCon.find("td")
+        digimoncard.assembly = assembly.text
       if (specialEvo.find("Link Requirements") != -1):
         linkRequirements = specialEvoCon.find("td")
         digimoncard.linkRequirement = linkRequirements.text

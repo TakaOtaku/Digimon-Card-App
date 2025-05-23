@@ -1,16 +1,6 @@
-import {
-  Component,
-  inject,
-  Input,
-  OnChanges,
-  OnInit,
-  SimpleChanges,
-} from '@angular/core';
-import { DigimonCard, IDeck } from '../../../../models';
-import {
-  getCountFromDeckCards,
-  mapToDeckCards,
-} from '../../../functions/digimon-card.functions';
+import { Component, inject, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { IDeck } from '../../../../models';
+import { getCountFromDeckCards, mapToDeckCards } from '../../../functions/digimon-card.functions';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
 import { SingleContainerComponent } from '../single-container.component';
 import { NgIf, NgStyle } from '@angular/common';
@@ -22,28 +12,28 @@ import { NgIf, NgStyle } from '@angular/common';
       <div
         class="h-full w-full text-center"
         [ngStyle]="{
-          background: linearGradientEgg()
+          background: linearGradientEgg(),
         }">
         <span class="text-black-outline-xs">{{ ddto[0] }}</span>
       </div>
       <div
         class="h-full w-full text-center"
         [ngStyle]="{
-          background: linearGradient(ddto[1])
+          background: linearGradient(ddto[1]),
         }">
         <span class="text-black-outline-xs">{{ ddto[1] }}</span>
       </div>
       <div
         class="h-full w-full text-center"
         [ngStyle]="{
-          background: linearGradient(ddto[2])
+          background: linearGradient(ddto[2]),
         }">
         <span class="text-black-outline-xs">{{ ddto[2] }}</span>
       </div>
       <div
         class="h-full w-full text-center"
         [ngStyle]="{
-          background: linearGradient(ddto[3])
+          background: linearGradient(ddto[3]),
         }">
         <span class="text-black-outline-xs">{{ ddto[3] }}</span>
       </div>
@@ -55,30 +45,17 @@ import { NgIf, NgStyle } from '@angular/common';
     </div>
 
     <div *ngIf="container" class="flex w-full flex-row">
-      <digimon-single-container
-        label="Egg"
-        [value]="ddto[0]"
-        percent="20"
-        class="w-12"></digimon-single-container>
-      <digimon-single-container
-        label="Digimon"
-        [value]="ddto[1]"
-        class="w-14"></digimon-single-container>
-      <digimon-single-container
-        label="Tamer"
-        [value]="ddto[2]"
-        class="w-12"></digimon-single-container>
-      <digimon-single-container
-        label="Option"
-        [value]="ddto[3]"
-        class="w-12"></digimon-single-container>
+      <digimon-single-container label="Egg" [value]="ddto[0]" percent="20" class="w-12"></digimon-single-container>
+      <digimon-single-container label="Digimon" [value]="ddto[1]" class="w-14"></digimon-single-container>
+      <digimon-single-container label="Tamer" [value]="ddto[2]" class="w-12"></digimon-single-container>
+      <digimon-single-container label="Option" [value]="ddto[3]" class="w-12"></digimon-single-container>
     </div>
   `,
   standalone: true,
   imports: [NgIf, NgStyle, SingleContainerComponent],
 })
 export class DdtoSpreadComponent implements OnInit, OnChanges {
-  @Input() deck: IDeck | null;
+  @Input() deck!: IDeck | null;
   @Input() container = false;
 
   ddto = [0, 0, 0, 0];
@@ -97,10 +74,7 @@ export class DdtoSpreadComponent implements OnInit, OnChanges {
     if (!this.deck) {
       return;
     }
-    const cards = mapToDeckCards(
-      this.deck.cards,
-      this.digimonCardStore.cards(),
-    );
+    const cards = mapToDeckCards(this.deck.cards, this.digimonCardStore.cards());
     const digieggs = cards.filter((card) => card.cardType === 'Digi-Egg');
     const digimon = cards.filter((card) => card.cardType === 'Digimon');
     const tamer = cards.filter((card) => card.cardType === 'Tamer');

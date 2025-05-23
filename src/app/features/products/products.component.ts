@@ -1,9 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  HostListener,
-  inject,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostListener, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
@@ -19,11 +14,9 @@ import { PageComponent } from '../shared/page.component';
   selector: 'digimon-products',
   template: `
     <digimon-page>
-      <div
-        class="overflow-x-hidden flex self-baseline flex-col justify-center max-w-md md:max-w-4xl mx-auto">
+      <div class="overflow-x-hidden flex self-baseline flex-col justify-center max-w-md md:max-w-4xl mx-auto">
         <div *ngFor="let product of products; let last = last">
-          <h1
-            class="text-shadow text-center mt-6 text-4xl font-black text-[#e2e4e6] underline xl:mt-2">
+          <h1 class="text-shadow text-center mt-6 text-4xl font-black text-[#e2e4e6] underline xl:mt-2">
             {{ product.name }}
           </h1>
           <p-carousel
@@ -33,12 +26,8 @@ import { PageComponent } from '../shared/page.component';
             [circular]="true"
             [autoplayInterval]="5000">
             <ng-template let-item pTemplate="item">
-              <div
-                class="border-1 surface-border border-round m-2 text-center py-5 px-3">
-                <img
-                  src="{{ item.image }}"
-                  [alt]="item.name"
-                  class="shadow-2 mx-auto h-60" />
+              <div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
+                <img src="{{ item.image }}" [alt]="item.name" class="shadow-2 mx-auto h-60" />
                 <div>
                   <h4 class="mb-1 text-black-outline text-white">
                     {{ item.name }}
@@ -63,16 +52,7 @@ import { PageComponent } from '../shared/page.component';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    NgFor,
-    TooltipModule,
-    LazyLoadImageModule,
-    ButtonModule,
-    CarouselModule,
-    GalleriaModule,
-    DividerModule,
-    PageComponent,
-  ],
+  imports: [NgFor, TooltipModule, LazyLoadImageModule, ButtonModule, CarouselModule, GalleriaModule, DividerModule, PageComponent],
 })
 export class ProductsComponent {
   starter = [
@@ -166,18 +146,26 @@ export class ProductsComponent {
       image: '../../assets/images/products/ST-19.webp',
       link: 'https://digimoncardgame.fandom.com/wiki/ST-19:_Starter_Deck_Fable_Waltz',
     },
+    {
+      name: 'ST-20: Starter Deck Protector of Light',
+      image: '../../assets/images/products/ST-20.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/ST-20:_Starter_Deck_Protector_of_Light',
+    },
+    {
+      name: 'ST-21: Starter Deck Hero of Hope',
+      image: '../../assets/images/products/ST-21.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/ST-21:_Starter_Deck_Hero_of_Hope',
+    },
   ];
   booster = [
     {
       name: 'BT01-03: Release Special Booster Ver.1.0',
-      image:
-        '../../assets/images/products/Special_Release_Booster_Pack_1.0.webp',
+      image: '../../assets/images/products/Special_Release_Booster_Pack_1.0.webp',
       link: 'https://digimoncardgame.fandom.com/wiki/BT01-03:_Release_Special_Booster_Ver.1.0',
     },
     {
       name: 'BT01-03: Release Special Booster Ver.1.5',
-      image:
-        '../../assets/images/products/Special_Release_Booster_Pack_1.5.webp',
+      image: '../../assets/images/products/Special_Release_Booster_Pack_1.5.webp',
       link: 'https://digimoncardgame.fandom.com/wiki/BT01-03:_Release_Special_Booster_Ver.1.5',
     },
     {
@@ -285,6 +273,66 @@ export class ProductsComponent {
       image: '../../assets/images/products/BT-17.webp',
       link: 'https://digimoncardgame.fandom.com/wiki/BT-17:_Booster_Secret_Crisis',
     },
+    {
+      name: 'EX-07: Extra Booster Digimon Liberator',
+      image: '../../assets/images/products/EX-07.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/EX-07:_Extra_Booster_Digimon_Liberator',
+    },
+    {
+      name: 'BT-18: Booster Elemental Successor',
+      image: '../../assets/images/products/BT-18.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/BT-18:_Booster_Elemental_Successor',
+    },
+    {
+      name: 'BT-19: Booster Xros Evolution',
+      image: '../../assets/images/products/BT-19.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/BT-19:_Booster_Xros_Evolution',
+    },
+    {
+      name: 'EX-08: Extra Booster Chain of Liberation',
+      image: '../../assets/images/products/EX-08.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/EX-08:_Extra_Booster_Chain_of_Liberation',
+    },
+    {
+      name: 'BT-20: Booster Over the X',
+      image: '../../assets/images/products/BT-20.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/BT-20:_Booster_Over_the_X',
+    },
+    {
+      name: 'BT18-19: Special Booster Ver.2.0',
+      image: '../../assets/images/products/BT-2.0.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/BT18-19:_Special_Booster_Ver.2.0',
+    },
+    {
+      name: 'BT19-20: Special Booster Ver.2.5',
+      image: '../../assets/images/products/BT-2.5.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/BT19-20:_Special_Booster_Ver.2.5',
+    },
+    {
+      name: 'BT-21: Booster World Convergence',
+      image: '../../assets/images/products/BT-21.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/BT-21:_Booster_World_Convergence',
+    },
+    {
+      name: 'EX-09: Extra Booster Versus Monsters',
+      image: '../../assets/images/products/EX-09.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/EX-09:_Extra_Booster_Versus_Monsters',
+    },
+    {
+      name: 'BT-22: Booster Cyber Eden',
+      image: '../../assets/images/products/BT-22.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/BT-22:_Booster_Cyber_Eden',
+    },
+    {
+      name: 'EX-10: Extra Booster Sinister Order',
+      image: '../../assets/images/products/EX-10.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/EX-10:_Extra_Booster_Sinister_Order',
+    },
+    {
+      name: 'BT-23: Booster Hackers Slumber',
+      image: '../../assets/images/products/BT-23.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/BT-23:_Booster_Hackers_Slumber',
+    },
   ];
   promo = [
     {
@@ -339,8 +387,7 @@ export class ProductsComponent {
     },
     {
       name: 'Great Legend Pre-Release Promotion',
-      image:
-        '../../assets/images/products/Great_Legend_Pre-Release_Promotion_Pack.webp',
+      image: '../../assets/images/products/Great_Legend_Pre-Release_Promotion_Pack.webp',
       link: 'https://digimoncardgame.fandom.com/wiki/Great_Legend_Pre-Release_Promotion',
     },
     {
@@ -370,8 +417,7 @@ export class ProductsComponent {
     },
     {
       name: 'Battle of Omni Pre-Release Promotion',
-      image:
-        '../../assets/images/products/Battle_of_Omni_Pre-Release_Promotion_Pack.webp',
+      image: '../../assets/images/products/Battle_of_Omni_Pre-Release_Promotion_Pack.webp',
       link: 'https://digimoncardgame.fandom.com/wiki/Battle_of_Omni_Pre-Release_Promotion',
     },
     {
@@ -391,8 +437,7 @@ export class ProductsComponent {
     },
     {
       name: 'Double Diamond Pre-Release Promotion',
-      image:
-        '../../assets/images/products/Double_Diamond_Pre-Release_Promotion_Pack.webp',
+      image: '../../assets/images/products/Double_Diamond_Pre-Release_Promotion_Pack.webp',
       link: 'https://digimoncardgame.fandom.com/wiki/Double_Diamond_Pre-Release_Promotion',
     },
     {
@@ -422,8 +467,7 @@ export class ProductsComponent {
     },
     {
       name: 'Box Promotion Pack -Next Adventure-',
-      image:
-        '../../assets/images/products/Box_Promotion_Pack_-Next_Adventure-.webp',
+      image: '../../assets/images/products/Box_Promotion_Pack_-Next_Adventure-.webp',
       link: 'https://digimoncardgame.fandom.com/wiki/Box_Promotion_Pack_-Next_Adventure-',
     },
     {
@@ -496,6 +540,21 @@ export class ProductsComponent {
       image: '../../assets/images/products/PB-11.webp',
       link: 'https://digimoncardgame.fandom.com/wiki/PB-11:_Digimon_Card_Game_Tamer%27s_Set_5',
     },
+    {
+      name: 'Digimon Card Game 2nd Anniversary Set',
+      image: '../../assets/images/products/2nd_Anniversary_Set.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/PB-12E:_Digimon_Card_Game_2nd_Anniversary_Set',
+    },
+    {
+      name: 'PB-13: Royal Knights Binder Set',
+      image: '../../assets/images/products/PB-13.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/PB-13:_Digimon_Card_Game_Royal_Knights_Binder_Set',
+    },
+    {
+      name: "PB-14: Digimon Card Game Tamer's Set EX2",
+      image: '../../assets/images/products/PB-14.webp',
+      link: 'https://digimoncardgame.fandom.com/wiki/PB-14:_Digimon_Card_Game_Tamer%27s_Set_EX2',
+    },
   ];
 
   products = [
@@ -534,14 +593,12 @@ export class ProductsComponent {
     this.meta.addTags([
       {
         name: 'description',
-        content:
-          'See all Digimon TCG Products in one Place with a Link to the Wiki',
+        content: 'See all Digimon TCG Products in one Place with a Link to the Wiki',
       },
       { name: 'author', content: 'TakaOtaku' },
       {
         name: 'keywords',
-        content:
-          'Digimon, decks, deck builder, collection,  tournament, TCG, community, friends, share',
+        content: 'Digimon, decks, deck builder, collection,  tournament, TCG, community, friends, share',
       },
     ]);
   }

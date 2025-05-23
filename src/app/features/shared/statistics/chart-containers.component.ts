@@ -1,10 +1,4 @@
-import {
-  Component,
-  Input,
-  OnChanges,
-  OnInit,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { IDeckCard } from '../../../../models';
 import { ChartContainerComponent } from './chart-container.component';
 
@@ -12,47 +6,30 @@ import { ChartContainerComponent } from './chart-container.component';
   selector: 'digimon-chart-containers',
   template: `
     <div class="jusify-between flex flex-row">
-      <digimon-chart-container
-        label="Lv.2"
-        [fill]="digiEggs"
-        fillPercent="20"></digimon-chart-container>
-      <digimon-chart-container
-        label="Lv.3"
-        [fill]="lv3"></digimon-chart-container>
-      <digimon-chart-container
-        label="Lv.4"
-        [fill]="lv4"></digimon-chart-container>
-      <digimon-chart-container
-        label="Lv.5"
-        [fill]="lv5"></digimon-chart-container>
-      <digimon-chart-container
-        label="Lv.6"
-        [fill]="lv6"></digimon-chart-container>
-      <digimon-chart-container
-        label="Lv.7+"
-        [fill]="lv7"></digimon-chart-container>
-      <digimon-chart-container
-        label="TM"
-        [fill]="tamer"></digimon-chart-container>
-      <digimon-chart-container
-        label="OP"
-        [fill]="options"></digimon-chart-container>
+      <digimon-chart-container label="Lv.2" [fill]="digiEggs" fillPercent="20"></digimon-chart-container>
+      <digimon-chart-container label="Lv.3" [fill]="lv3"></digimon-chart-container>
+      <digimon-chart-container label="Lv.4" [fill]="lv4"></digimon-chart-container>
+      <digimon-chart-container label="Lv.5" [fill]="lv5"></digimon-chart-container>
+      <digimon-chart-container label="Lv.6" [fill]="lv6"></digimon-chart-container>
+      <digimon-chart-container label="Lv.7+" [fill]="lv7"></digimon-chart-container>
+      <digimon-chart-container label="TM" [fill]="tamer"></digimon-chart-container>
+      <digimon-chart-container label="OP" [fill]="options"></digimon-chart-container>
     </div>
   `,
   standalone: true,
   imports: [ChartContainerComponent],
 })
 export class ChartContainersComponent implements OnInit, OnChanges {
-  @Input() public deck: IDeckCard[];
+  @Input() public deck!: IDeckCard[];
 
-  digiEggs: number[];
-  lv3: number[];
-  lv4: number[];
-  lv5: number[];
-  lv6: number[];
-  lv7: number[];
-  tamer: number[];
-  options: number[];
+  digiEggs: number[] = [];
+  lv3: number[] = [];
+  lv4: number[] = [];
+  lv5: number[] = [];
+  lv6: number[] = [];
+  lv7: number[] = [];
+  tamer: number[] = [];
+  options: number[] = [];
 
   constructor() {}
 
@@ -94,9 +71,7 @@ export class ChartContainersComponent implements OnInit, OnChanges {
     const black = array.filter((card) => card.color === 'Black');
     const purple = array.filter((card) => card.color === 'Purple');
     const white = array.filter((card) => card.color === 'White');
-    const multi = array.filter(
-      (card) => card.color.includes('/') || card.color === 'Multi',
-    );
+    const multi = array.filter((card) => card.color.includes('/') || card.color === 'Multi');
 
     return [
       this.getCount(red),

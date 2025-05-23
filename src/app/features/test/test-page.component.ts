@@ -13,64 +13,26 @@ import { DigimonCardStore } from '../../store/digimon-card.store';
 @Component({
   selector: 'digimon-test-page',
   template: `
-    <button
-      *ngIf="isAdmin()"
-      class="border-2 border-amber-200 bg-amber-400"
-      (click)="updateAllSaves()">
-      Update all Saves
-    </button>
-    <button
-      *ngIf="isAdmin()"
-      class="border-2 border-amber-200 bg-amber-400"
-      (click)="updatePriceGuideIds()">
-      Update PriceGuide Ids
-    </button>
-    <button
-      *ngIf="isAdmin()"
-      class="border-2 border-amber-200 bg-amber-400"
-      (click)="updatePriceGuideIdsAAs()">
+    <button *ngIf="isAdmin()" class="border-2 border-amber-200 bg-amber-400" (click)="updateAllSaves()">Update all Saves</button>
+    <button *ngIf="isAdmin()" class="border-2 border-amber-200 bg-amber-400" (click)="updatePriceGuideIds()">Update PriceGuide Ids</button>
+    <button *ngIf="isAdmin()" class="border-2 border-amber-200 bg-amber-400" (click)="updatePriceGuideIdsAAs()">
       Update PriceGuide Ids AAs
     </button>
 
-    <button
-      *ngIf="isAdmin()"
-      class="border-2 border-amber-200 bg-amber-400"
-      (click)="updateAllDecks()">
-      Update all Decks
-    </button>
+    <button *ngIf="isAdmin()" class="border-2 border-amber-200 bg-amber-400" (click)="updateAllDecks()">Update all Decks</button>
 
-    <button
-      *ngIf="isAdmin()"
-      class="border-2 border-amber-200 bg-amber-400"
-      (click)="updateAllSaves()">
-      Update all Save Decks
-    </button>
+    <button *ngIf="isAdmin()" class="border-2 border-amber-200 bg-amber-400" (click)="updateAllSaves()">Update all Save Decks</button>
 
-    <p-dialog
-      [(visible)]="updateIDDialog"
-      [baseZIndex]="100000"
-      [dismissableMask]="true"
-      [resizable]="false">
+    <p-dialog [(visible)]="updateIDDialog" [baseZIndex]="100000" [dismissableMask]="true" [resizable]="false">
       <h1>
-        There are still <b>{{ productsWithoutCorrectID.length }}</b> without
-        correct ID.
+        There are still <b>{{ productsWithoutCorrectID.length }}</b> without correct ID.
       </h1>
 
-      <a
-        class="my-3"
-        [href]="productsWithoutCorrectID[0]?.link"
-        target="_blank"
-        >{{ productsWithoutCorrectID[0]?.link }}</a
-      >
+      <a class="my-3" [href]="productsWithoutCorrectID[0]?.link" target="_blank">{{ productsWithoutCorrectID[0]?.link }}</a>
 
       <div class="my-3 flex flex-row">
         <div>Enter a ID:</div>
-        <input
-          [(ngModel)]="currentID"
-          type="number"
-          min="1"
-          max="10"
-          class="text-center font-bold text-black" />
+        <input [(ngModel)]="currentID" type="number" min="1" max="10" class="text-center font-bold text-black" />
       </div>
 
       <button (click)="updateFirstObject()">Save and Next</button>
@@ -109,7 +71,7 @@ export class TestPageComponent implements OnDestroy {
 
   isAdmin(): boolean {
     return !!ADMINS.find((user) => {
-      if (this.authService.userData?.uid === user.id) {
+      if (this.authService.currentUser()?.uid === user.id) {
         return user.admin;
       }
       return false;
@@ -140,8 +102,6 @@ export class TestPageComponent implements OnDestroy {
           )
           .subscribe();
       });
-
-      //concat(...observable).subscribe((value) => console.log(value));
     });
   }
 
@@ -159,19 +119,12 @@ export class TestPageComponent implements OnDestroy {
       .subscribe((products) => {
         const wrongIDs = products
           .filter((product) => product.cardId.endsWith('_P'))
-          .sort((a, b) =>
-            b.cardId
-              .toLocaleLowerCase()
-              .localeCompare(a.cardId.toLocaleLowerCase()),
-          );
+          .sort((a, b) => b.cardId.toLocaleLowerCase().localeCompare(a.cardId.toLocaleLowerCase()));
 
         const ArrayObject: any = {};
         wrongIDs.forEach((product) => {
           if (ArrayObject[product.cardId]) {
-            ArrayObject[product.cardId] = [
-              ...ArrayObject[product.cardId],
-              product,
-            ];
+            ArrayObject[product.cardId] = [...ArrayObject[product.cardId], product];
           } else {
             ArrayObject[product.cardId] = [product];
           }
@@ -184,14 +137,7 @@ export class TestPageComponent implements OnDestroy {
           if ((value as any[]).length === 0) {
             delete ArrayObject[key];
           } else if ((value as any[]).length === 1) {
-            ofArray$.push(
-              this.cardMarketService
-                .updateProductId(
-                  ArrayObject[key][0].cardId + `1`,
-                  ArrayObject[key][0],
-                )
-                .pipe(first()),
-            );
+            ofArray$.push(this.cardMarketService.updateProductId(ArrayObject[key][0].cardId + `1`, ArrayObject[key][0]).pipe(first()));
             delete ArrayObject[key];
           }
         });
@@ -200,10 +146,7 @@ export class TestPageComponent implements OnDestroy {
 
         Object.entries(ArrayObject).forEach((entry) => {
           const [key, value] = entry;
-          this.productsWithoutCorrectID = [
-            ...this.productsWithoutCorrectID,
-            value,
-          ];
+          this.productsWithoutCorrectID = [...this.productsWithoutCorrectID, value];
         });
 
         this.productsWithoutCorrectID = this.productsWithoutCorrectID.flat();
@@ -214,10 +157,7 @@ export class TestPageComponent implements OnDestroy {
   updateFirstObject() {
     const id = this.productsWithoutCorrectID[0].cardId + this.currentID;
     const product = this.productsWithoutCorrectID[0];
-    this.cardMarketService
-      .updateProductId(id, product)
-      .pipe(first())
-      .subscribe();
+    this.cardMarketService.updateProductId(id, product).pipe(first()).subscribe();
     this.productsWithoutCorrectID = this.productsWithoutCorrectID.slice(1);
   }
 
@@ -260,9 +200,7 @@ export class TestPageComponent implements OnDestroy {
         tags,
         color,
         imageCardId:
-          !deck.imageCardId || deck.imageCardId === 'BT1-001'
-            ? setDeckImage(deck, this.digimonCardStore.cards()).id
-            : deck.imageCardId,
+          !deck.imageCardId || deck.imageCardId === 'BT1-001' ? setDeckImage(deck, this.digimonCardStore.cards()).id : deck.imageCardId,
         date: !deck.date ? new Date().toString() : deck.date,
       };
     });
@@ -287,11 +225,7 @@ export class TestPageComponent implements OnDestroy {
       newDecks = { ...deck, date: new Date().toString() };
     }
 
-    return error
-      ? this.digimonBackendService
-          .updateDeck(newDecks, null, this.digimonCardStore.cards())
-          .pipe(first())
-      : null;
+    return error ? this.digimonBackendService.updateDeck(newDecks, null, this.digimonCardStore.cards()).pipe(first()) : null;
   }
 
   private updateTournamentDeck(deck: ITournamentDeck): Observable<any> | null {
@@ -309,8 +243,6 @@ export class TestPageComponent implements OnDestroy {
       newDecks = { ...deck, date: new Date().toString() };
     }
 
-    return error
-      ? this.digimonBackendService.updateTournamentDeck(newDecks).pipe(first())
-      : null;
+    return error ? this.digimonBackendService.updateTournamentDeck(newDecks).pipe(first()) : null;
   }
 }

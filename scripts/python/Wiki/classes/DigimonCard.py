@@ -19,6 +19,7 @@ class DigimonCard:
         self._cardNumber = "-"
 
         self._digiXros = "-"
+        self._assembly = "-"
         self._specialDigivolve = "-"
         self._burstDigivolve = "-"
         self._dnaDigivolve = "-"
@@ -151,6 +152,14 @@ class DigimonCard:
     @digiXros.setter
     def digiXros(self, value):
         self._digiXros = value
+
+    @property
+    def assembly(self):
+      return self._assembly
+
+    @assembly.setter
+    def assembly(self, value):
+      self._assembly = value
 
     @property
     def specialDigivolve(self):

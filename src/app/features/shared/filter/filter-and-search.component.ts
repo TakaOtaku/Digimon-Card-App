@@ -1,17 +1,6 @@
 import { NgStyle } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  effect,
-  inject,
-  OnDestroy,
-  OnInit,
-} from '@angular/core';
-import {
-  FormsModule,
-  ReactiveFormsModule,
-  UntypedFormControl,
-} from '@angular/forms';
+import { ChangeDetectionStrategy, Component, effect, inject, OnDestroy, OnInit } from '@angular/core';
+import { FormsModule, ReactiveFormsModule, UntypedFormControl } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { InputTextModule } from 'primeng/inputtext';
@@ -23,34 +12,18 @@ import { FilterSideBoxComponent } from './filter-side-box.component';
 @Component({
   selector: 'digimon-filter-and-search',
   template: `
-    <div
-      class="surface-ground flex h-[70px] w-full flex-col justify-center py-1">
+    <div class="surface-ground flex h-[70px] w-full flex-col justify-center py-1">
       <div class="my-1 inline-flex h-full w-full">
-        <span
-          class="p-input-icon-left w-full"
-          [ngStyle]="{ display: 'inline-flex' }">
+        <span class="p-input-icon-left w-full" [ngStyle]="{ display: 'inline-flex' }">
           <i class="pi pi-search h-3"></i>
-          <input
-            type="text"
-            class="w-full text-xs"
-            pInputText
-            [formControl]="searchFilter"
-            placeholder="Search" />
+          <input type="text" class="w-full text-xs" pInputText [formControl]="searchFilter" placeholder="Search" />
         </span>
-        <button
-          (click)="this.display = true"
-          pButton
-          type="button"
-          icon="pi pi-filter-fill"
-          label="Filter"></button>
+        <button (click)="this.display = true" pButton type="button" icon="pi pi-filter-fill" label="Filter"></button>
       </div>
 
       <div class="mx-auto my-1 flex flex-row justify-center">
         <span class="text-xs font-bold text-[#e2e4e6]">Collection Mode:</span>
-        <input
-          type="checkbox"
-          class="my-auto ml-1 h-5 w-5"
-          [formControl]="collectionMode" />
+        <input type="checkbox" class="my-auto ml-1 h-5 w-5" [formControl]="collectionMode" />
       </div>
     </div>
 
@@ -67,15 +40,7 @@ import { FilterSideBoxComponent } from './filter-side-box.component';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    NgStyle,
-    FormsModule,
-    InputTextModule,
-    ReactiveFormsModule,
-    ButtonModule,
-    DialogModule,
-    FilterSideBoxComponent,
-  ],
+  imports: [NgStyle, FormsModule, InputTextModule, ReactiveFormsModule, ButtonModule, DialogModule, FilterSideBoxComponent],
 })
 export class FilterAndSearchComponent implements OnInit, OnDestroy {
   saveStore = inject(SaveStore);
@@ -93,11 +58,9 @@ export class FilterAndSearchComponent implements OnInit, OnDestroy {
       emitEvent: false,
     });
 
-    this.searchFilter.valueChanges
-      .pipe(debounceTime(200), takeUntil(this.onDestroy$))
-      .subscribe((searchFilter) => {
-        this.filterStore.updateSearchFilter(searchFilter);
-      });
+    this.searchFilter.valueChanges.pipe(debounceTime(200), takeUntil(this.onDestroy$)).subscribe((searchFilter) => {
+      this.filterStore.updateSearchFilter(searchFilter);
+    });
 
     effect(() => {
       this.collectionMode.setValue(this.saveStore.collectionMode(), {
@@ -105,12 +68,10 @@ export class FilterAndSearchComponent implements OnInit, OnDestroy {
       });
     });
 
-    this.collectionMode.valueChanges
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((collectionMode) => {
-        const settings = this.saveStore.settings();
-        this.saveStore.updateSettings({ ...settings, collectionMode });
-      });
+    this.collectionMode.valueChanges.pipe(takeUntil(this.onDestroy$)).subscribe((collectionMode) => {
+      const settings = this.saveStore.settings();
+      this.saveStore.updateSettings({ ...settings, collectionMode });
+    });
   }
 
   ngOnDestroy() {
