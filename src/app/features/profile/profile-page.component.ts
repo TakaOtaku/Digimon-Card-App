@@ -77,7 +77,8 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
         // If other profile is null, we are in the main user profile and can just do the default
         // The same is true if the other profile is the same as the current user id
         // If the other profile is not null and not the same as the current user id, we are in another profile and need to check if the received save is the same as the other profile
-        if (!this.routeParams() && (!this.otherProfile || this.otherProfile === this.authService.currentUser()?.uid)) {
+        const routeParamSet = this.routeParams() && this.routeParams()!['id'] !== undefined;
+        if (!routeParamSet && (!this.otherProfile || this.otherProfile === this.authService.currentUser()?.uid)) {
           console.log('changing url', this.routeParams());
           this.setURLToMainUser();
           this.editable = true;
