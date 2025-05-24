@@ -2425,7 +2425,7 @@
       "question": "Q: If multiple cards are placed as the bottom digivolution cards for this card's [Start of Your Main Phase] effect, what order are the cards placed?"
     },
     {
-      "answer": "A: No, it isn't processed.  \nOverflow \uff1c-nocategory\uff1e (As this card moves from the field or under a card to an area other than those, lose nocategory memory.) is processed when a card is sent from the area or from under a card to another area.  In this case, \nOverflow \uff1c-nocategory\uff1e (As this card moves from the field or under a card to an area other than those, lose nocategory memory.) isn't processed because a card from the area is placed under another card.[2]",
+      "answer": "A: No, it isn't processed.  \nOverflow is processed when a card is sent from the area or from under a card to another area.  In this case, \nOverflow isn't processed because a card from the area is placed under another card.[2]",
       "question": "Q: When I use this card's [Start of Your Main Phase] effect to place a BT17-078 [Omnimon ACE] under this card as a digivolution card, is BT17-078 [Omnimon ACE] processed?"
     },
     {
@@ -2961,8 +2961,8 @@
       "question": "Q: This card's [On Play][When Digivolving] effect reads \"trash your Digimon in the breeding area\" for when a Digimon is played by this effect, but what happens to the remaining digivolution cards under this Digimon?"
     },
     {
-      "answer": "A: Yes, it's processed.  \nOverflow \uff1c-nocategory\uff1e (As this card moves from the field or under a card to an area other than those, lose nocategory memory.) is processed when a card is sent from the area or from under a card to another area.  In this case, \nOverflow \uff1c-nocategory\uff1e (As this card moves from the field or under a card to an area other than those, lose nocategory memory.) is processed because a card is placed in the trash from under another card.[2]",
-      "question": "Q: I used this card's [On Play] effect to trash a BT13-007 [King Drasil_7D6] with a BT17-078 [Omnimon ACE] in its digivolution cards. Is BT17-078 [Omnimon ACE]'s \nOverflow \uff1c-nocategory\uff1e (As this card moves from the field or under a card to an area other than those, lose nocategory memory.) processed at such times?"
+      "answer": "A: Yes, it's processed.  \nOverflow is processed when a card is sent from the area or from under a card to another area.  In this case, \nOverflow is processed because a card is placed in the trash from under another card.[2]",
+      "question": "Q: I used this card's [On Play] effect to trash a BT13-007 [King Drasil_7D6] with a BT17-078 [Omnimon ACE] in its digivolution cards. Is BT17-078 [Omnimon ACE]'s \nOverflow processed at such times?"
     }
   ],
   "BT14-006": [
@@ -4617,12 +4617,12 @@
       "question": "Q: After performing \"deleting 1 of your [Ukkomon]\" and \"trashing 1 of your Digimon in the breeding area,\" can I choose to not play a [BigUkkomon] into the breeding area for this card's [Main] effect?"
     },
     {
-      "answer": "A: Yes, it's processed.  \nOverflow \uff1c-nocategory\uff1e (As this card moves from the field or under a card to an area other than those, lose nocategory memory.) is processed when a card is sent from the area or from under a card to another area. In this case, it's processed because a card from the area is placed in the trash.[2]",
-      "question": "Q: Is \nOverflow \uff1c-nocategory\uff1e (As this card moves from the field or under a card to an area other than those, lose nocategory memory.) processed when this card's [Main] effect trashes a Digimon with \nOverflow \uff1c-nocategory\uff1e (As this card moves from the field or under a card to an area other than those, lose nocategory memory.) in the breeding area?"
+      "answer": "A: Yes, it's processed.  \nOverflow is processed when a card is sent from the area or from under a card to another area. In this case, it's processed because a card from the area is placed in the trash.[2]",
+      "question": "Q: Is \nOverflow processed when this card's [Main] effect trashes a Digimon with \nOverflow in the breeding area?"
     },
     {
-      "answer": "A: Yes, it's processed.  \nOverflow \uff1c-nocategory\uff1e (As this card moves from the field or under a card to an area other than those, lose nocategory memory.) is processed when a card is sent from the area or from under a card to another area. In this case, it's processed because it's placed into the trash from under a card.[2]",
-      "question": "Q: Is \nOverflow \uff1c-nocategory\uff1e (As this card moves from the field or under a card to an area other than those, lose nocategory memory.) processed when this card's [Main] effect trashes a Digimon in the breeding area that has a card with \nOverflow \uff1c-nocategory\uff1e (As this card moves from the field or under a card to an area other than those, lose nocategory memory.) in its digivolution cards?"
+      "answer": "A: Yes, it's processed.  \nOverflow is processed when a card is sent from the area or from under a card to another area. In this case, it's processed because it's placed into the trash from under a card.[2]",
+      "question": "Q: Is \nOverflow processed when this card's [Main] effect trashes a Digimon in the breeding area that has a card with \nOverflow in its digivolution cards?"
     }
   ],
   "BT16-091": [
@@ -8440,11 +8440,11 @@
     },
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: Can I choose different Digimon for the Digimon that gains \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack) and the Digimon that attacks for this card's [Your Turn] effect?"
+      "question": "Q: Can I choose different Digimon for the Digimon that gains \uff1cAlliance\uff1e and the Digimon that attacks for this card's [Your Turn] effect?"
     },
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: After my Digimon gains \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack) with this card's [Your Turn] effect, can I choose to not attack for the part of the effect after \"then\"?"
+      "question": "Q: After my Digimon gains \uff1cAlliance\uff1e with this card's [Your Turn] effect, can I choose to not attack for the part of the effect after \"then\"?"
     },
     {
       "answer": "A: No. You perform \uff1cDe-Digivolve  1\uff1e (Trash the top card. You can't trash past level 3 cards) twice, not \uff1cDe-Digivolve  2\uff1e (Trash up to 2 cards from the top. You can't trash past level 3 cards). \nWhen performing \uff1cDe-Digivolve  2\uff1e (Trash up to 2 cards from the top. You can't trash past level 3 cards), the top 2 cards are considered to be trashed at the same time, but when performing \uff1cDe-Digivolve  1\uff1e (Trash the top card. You can't trash past level 3 cards) twice, the top 2 cards are trashed 1 at a time. \n\nFor example, if using \uff1cDe-Digivolve  2\uff1e (Trash up to 2 cards from the top. You can't trash past level 3 cards) to simultaneously trash the top 2 cards of a suspended Digimon and the 2nd card trashed is BT15-047 [Kabuterimon], its effect won't activate. However, if performing \uff1cDe-Digivolve  1\uff1e (Trash the top card. You can't trash past level 3 cards) twice and the Digimon becomes BT15-047 [Kabuterimon] after the 1st instance of \uff1cDe-Digivolve  1\uff1e (Trash the top card. You can't trash past level 3 cards) trashes a card, it won't be affected by the 2nd instance of \uff1cDe-Digivolve  1\uff1e (Trash the top card. You can't trash past level 3 cards) and won't be trashed.[1]",
@@ -8554,11 +8554,11 @@
     },
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: Can I choose different Digimon for the Digimon that gains \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack) and the Digimon that attacks for this card's [Your Turn] effect?"
+      "question": "Q: Can I choose different Digimon for the Digimon that gains \uff1cAlliance\uff1e and the Digimon that attacks for this card's [Your Turn] effect?"
     },
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: After my Digimon gains \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack) with this card's [Your Turn] effect, can I choose to not attack for the part of the effect after \"then\"?"
+      "question": "Q: After my Digimon gains \uff1cAlliance\uff1e with this card's [Your Turn] effect, can I choose to not attack for the part of the effect after \"then\"?"
     }
   ],
   "BT21-080": [
@@ -17789,8 +17789,8 @@
       "question": "Q: What does this card's \"when [...] would leave the battle area\" mean, exactly?"
     },
     {
-      "answer": "A: No, it doesn't.  \nOverflow \uff1c-nocategory\uff1e (As this card moves from the field or under a card to an area other than those, lose nocategory memory.) applies when a card from the battle area or from under a card is placed into another area. In this case, it doesn't apply because a card from the battle area is placed under another card.[1]",
-      "question": "Q: Does \nOverflow \uff1c-nocategory\uff1e (As this card moves from the field or under a card to an area other than those, lose nocategory memory.) apply when I use this card's [All Turns] effect to place this card in the digivolution cards of the played [Guilmon]?"
+      "answer": "A: No, it doesn't.  \nOverflow applies when a card from the battle area or from under a card is placed into another area. In this case, it doesn't apply because a card from the battle area is placed under another card.[1]",
+      "question": "Q: Does \nOverflow apply when I use this card's [All Turns] effect to place this card in the digivolution cards of the played [Guilmon]?"
     },
     {
       "answer": "A: Such effects increase the maximum value shown for DP-based deletion effects.  For example, while \"[Your Turn] Add 1000 to the maximum your DP-based deletion effects can delete\" is activated, \"[When Digivolving] Delete 1 of your opponent's Digimon with 3000 DP or less\" will allow you to delete an opponent's Digimon with 4000 DP or less.[1]",
@@ -18697,8 +18697,8 @@
   ],
   "P-143": [
     {
-      "answer": "A: No, it isn't processed.  In this case, \nOverflow \uff1c-nocategory\uff1e (As this card moves from the field or under a card to an area other than those, lose nocategory memory.) isn't processed because the card isn't removed from the area.[1]",
-      "question": "Q: If a card with \nOverflow \uff1c-nocategory\uff1e (As this card moves from the field or under a card to an area other than those, lose nocategory memory.) is in this card's digivolution cards, is \nOverflow \uff1c-nocategory\uff1e (As this card moves from the field or under a card to an area other than those, lose nocategory memory.) on that card processed when this card's [End of Your Turn] effect moves it to the breeding area?"
+      "answer": "A: No, it isn't processed.  In this case, \nOverflow isn't processed because the card isn't removed from the area.[1]",
+      "question": "Q: If a card with \nOverflow is in this card's digivolution cards, is \nOverflow on that card processed when this card's [End of Your Turn] effect moves it to the breeding area?"
     },
     {
       "answer": "A: No, they aren't trashed.[2]",
@@ -19984,11 +19984,11 @@
     },
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: Can I choose different Digimon for the Digimon that gains \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack) and the Digimon that attacks for this card's [Your Turn] effect?"
+      "question": "Q: Can I choose different Digimon for the Digimon that gains \uff1cAlliance\uff1e and the Digimon that attacks for this card's [Your Turn] effect?"
     },
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: After my Digimon gains \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack) with this card's [Your Turn] effect, can I choose to not attack for the part of the effect after \"then\"?"
+      "question": "Q: After my Digimon gains \uff1cAlliance\uff1e with this card's [Your Turn] effect, can I choose to not attack for the part of the effect after \"then\"?"
     }
   ],
   "ST20-06": [
@@ -19998,11 +19998,11 @@
     },
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: Can I choose different Digimon for the Digimon that gains \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack) and the Digimon that attacks for this card's [Your Turn] effect?"
+      "question": "Q: Can I choose different Digimon for the Digimon that gains \uff1cAlliance\uff1e and the Digimon that attacks for this card's [Your Turn] effect?"
     },
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: After my Digimon gains \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack) with this card's [Your Turn] effect, can I choose to not attack for the part of the effect after \"then\"?"
+      "question": "Q: After my Digimon gains \uff1cAlliance\uff1e with this card's [Your Turn] effect, can I choose to not attack for the part of the effect after \"then\"?"
     }
   ],
   "ST20-07": [
@@ -20022,11 +20022,11 @@
     },
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: Can I choose different Digimon for the Digimon that gains \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack) and the Digimon that attacks for this card's [Your Turn] effect?"
+      "question": "Q: Can I choose different Digimon for the Digimon that gains \uff1cAlliance\uff1e and the Digimon that attacks for this card's [Your Turn] effect?"
     },
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: After my Digimon gains \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack) with this card's [Your Turn] effect, can I choose to not attack for the part of the effect after \"then\"?"
+      "question": "Q: After my Digimon gains \uff1cAlliance\uff1e with this card's [Your Turn] effect, can I choose to not attack for the part of the effect after \"then\"?"
     }
   ],
   "ST20-10": [
@@ -20114,11 +20114,11 @@
     },
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: Can I choose different Digimon for the Digimon that gains \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack) and the Digimon that attacks for this card's [Your Turn] effect?"
+      "question": "Q: Can I choose different Digimon for the Digimon that gains \uff1cAlliance\uff1e and the Digimon that attacks for this card's [Your Turn] effect?"
     },
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: After my Digimon gains \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack) with this card's [Your Turn] effect, can I choose to not attack for the part of the effect after \"then\"?"
+      "question": "Q: After my Digimon gains \uff1cAlliance\uff1e with this card's [Your Turn] effect, can I choose to not attack for the part of the effect after \"then\"?"
     }
   ],
   "ST21-06": [
@@ -20128,11 +20128,11 @@
     },
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: Can I choose different Digimon for the Digimon that gains \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack) and the Digimon that attacks for this card's [Your Turn] effect?"
+      "question": "Q: Can I choose different Digimon for the Digimon that gains \uff1cAlliance\uff1e and the Digimon that attacks for this card's [Your Turn] effect?"
     },
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: After my Digimon gains \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack) with this card's [Your Turn] effect, can I choose to not attack for the part of the effect after \"then\"?"
+      "question": "Q: After my Digimon gains \uff1cAlliance\uff1e with this card's [Your Turn] effect, can I choose to not attack for the part of the effect after \"then\"?"
     }
   ],
   "ST21-08": [
@@ -20148,11 +20148,11 @@
     },
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: Can I choose different Digimon for the Digimon that gains \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack) and the Digimon that attacks for this card's [Your Turn] effect?"
+      "question": "Q: Can I choose different Digimon for the Digimon that gains \uff1cAlliance\uff1e and the Digimon that attacks for this card's [Your Turn] effect?"
     },
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: After my Digimon gains \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack) with this card's [Your Turn] effect, can I choose to not attack for the part of the effect after \"then\"?"
+      "question": "Q: After my Digimon gains \uff1cAlliance\uff1e with this card's [Your Turn] effect, can I choose to not attack for the part of the effect after \"then\"?"
     }
   ],
   "ST21-10": [
