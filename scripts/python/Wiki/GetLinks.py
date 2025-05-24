@@ -22,7 +22,7 @@ def getLinks(wikiPageLink):
 
 def getPromoLinks():
   promolink = WV.wikiLink + WV.promo
-  start_id = 1
+  start_id = 150
   max_id = 999
 
   for iterator in range(start_id, max_id + 1):
@@ -56,6 +56,19 @@ def saveLinks():
     # Save the Links to a JSON file
     with open('./scripts/python/Wiki/jsons/Links.json', 'w') as file:
       json.dump(data, file, indent=2)
+
+    # Set current Links to the new Links
+    WV.cardLinks = data
+
+def addLinks():
+  # Open the JSON file and load its contents
+  with open('./scripts/python/Wiki/jsons/Links.json', 'r') as file:
+    data = json.load(file)
+
+    # Add all new Links to the Array
+    for link in WV.cardLinks:
+      if link not in data:
+        data.append(link)
 
     # Set current Links to the new Links
     WV.cardLinks = data

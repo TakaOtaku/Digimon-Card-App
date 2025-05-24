@@ -1,6 +1,16 @@
 import { ICountCard, IDeck } from '../interfaces';
 
 export const ReleaseOrder = [
+  'EX09',
+  'BT21',
+  'ST21',
+  'ST20',
+  'BT20',
+  'BT19',
+  'BT18',
+  'EX07',
+  'ST19',
+  'ST18',
   'BT17',
   'EX06',
   'BT16',
@@ -50,10 +60,8 @@ const getReleaseOrderIndex = (cardId: string): number => {
 };
 
 export const sortByReleaseOrder = (deckA: IDeck, deckB: IDeck): number => {
-  const newestCardIdA =
-    deckA.cards.length > 0 ? findNewestCard(deckA.cards) : '';
-  const newestCardIdB =
-    deckB.cards.length > 0 ? findNewestCard(deckB.cards) : '';
+  const newestCardIdA = deckA.cards.length > 0 ? findNewestCard(deckA.cards) : '';
+  const newestCardIdB = deckB.cards.length > 0 ? findNewestCard(deckB.cards) : '';
 
   const releaseOrderIndexA = getReleaseOrderIndex(newestCardIdA);
   const releaseOrderIndexB = getReleaseOrderIndex(newestCardIdB);

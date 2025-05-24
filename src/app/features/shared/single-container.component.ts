@@ -13,7 +13,7 @@ import { NgStyle } from '@angular/common';
           class="w-full"
           [ngStyle]="{
             height: 'calc(' + value + ' * ' + percent + '%)',
-            backgroundColor: color
+            backgroundColor: color,
           }"></div>
       </div>
       <p class="text-center text-xs text-[#e2e4e6]">{{ label }}</p>
@@ -24,8 +24,8 @@ import { NgStyle } from '@angular/common';
   imports: [NgStyle],
 })
 export class SingleContainerComponent {
-  @Input() public label: string;
-  @Input() public value: number;
+  @Input() public label!: string;
+  @Input() public value!: number;
   @Input() public percent?: string = '2';
   @Input() public color?: string = '#08528d';
 }

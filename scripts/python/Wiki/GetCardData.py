@@ -93,6 +93,8 @@ def getDigivolveInfo(html, digimoncard):
           newDigivolveCondition.color = data[1]
         case 'Level':
           newDigivolveCondition.level = data[1]
+        case 'Form':
+          newDigivolveCondition.level = data[1]
         case 'Digivolve Cost':
           newDigivolveCondition.cost = data[1]
     digimoncard.digivolveCondition.append(newDigivolveCondition)
@@ -105,6 +107,12 @@ def getDigivolveInfo(html, digimoncard):
       if (specialEvo.find("DigiXros Requirements") != -1):
         xrosHeart = specialEvoCon.find("td")
         digimoncard.digiXros = xrosHeart.text
+      if (specialEvo.find("Assembly Requirements") != -1):
+        assembly = specialEvoCon.find("td")
+        digimoncard.assembly = assembly.text
+      if (specialEvo.find("Link Requirements") != -1):
+        linkRequirements = specialEvoCon.find("td")
+        digimoncard.linkRequirement = linkRequirements.text
       if (specialEvo.find("Alt. Digivolution Requirements") != -1):
         addCorrectSpecialDigivolve(digimoncard, specialEvoCon)
 
@@ -128,10 +136,7 @@ def getExtraInfo(html, digimoncard):
 
     if th.text.find("Rule") != -1:
       td = table.find("td")
-      if digimoncard.effect:
-        digimoncard.effect += f" td.text"
-      else:
-        digimoncard.effect = f"td.text"
+      digimoncard.rule = td.text
 
     if th.text.find("Inherited Effect") != -1:
       td = table.find("td")
@@ -144,6 +149,14 @@ def getExtraInfo(html, digimoncard):
     if th.text.find("Ace") != -1:
       td = table.find("td")
       digimoncard.aceEffect = td.text
+
+    if th.text.find("Link DP") != -1:
+      td = table.find("td")
+      digimoncard.linkDP = td.text
+
+    if th.text.find("Link Effect") != -1:
+      td = table.find("td")
+      digimoncard.linkEffect = td.text
 
   return digimoncard
 
@@ -249,7 +262,8 @@ def setRarity(digimoncard):
     "Super Rare": 'SR',
     "Secret Rare": 'SEC',
     "Alternative Art": "AA",
-    "Promo": "P"
+    "Promo": "P",
+    "Special Rare": "SP"
   }
 
   digimoncard.rarity = rarityDict[digimoncard.rarity]

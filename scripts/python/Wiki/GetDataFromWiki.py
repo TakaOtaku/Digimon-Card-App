@@ -22,6 +22,9 @@ GetLinks.getPromoLinks()
 print('Comparing to saved Links')
 GetLinks.saveLinks()
 
+###GetLinks.addLinks()
+###WikiFunctions.loadCards()
+
 # Sort Links and set how many Cards are there
 WikiVariables.cardLinks = sorted(list(set(WikiVariables.cardLinks)))
 WikiVariables.cardCount = len(WikiVariables.cardLinks)
@@ -32,7 +35,7 @@ WikiVariables.cardCount = len(WikiVariables.cardLinks)
 print('Getting Card Data!')
 GetCardData.getCardData()
 
-# WF.getRulings()
+WikiFunctions.getRulings()
 
 print('Saving Cards!')
 WikiFunctions.saveCards()
@@ -60,10 +63,10 @@ for replacement in WikiVariables.replacements:
   FormatCards.replace_string_in_json(replacement, '')
 
 print('Removing Spaces!')
-FormatCards.replace_string_in_json('  ', '')
-FormatCards.replace_string_in_json('  ', '')
-FormatCards.replace_string_in_json('  ', '')
-FormatCards.replace_string_in_json('  ', '')
+FormatCards.replace_string_in_json('    ', ' ')
+FormatCards.replace_string_in_json('   ', ' ')
+FormatCards.replace_string_in_json('   ', ' ')
+FormatCards.replace_string_in_json('  ', ' ')
 FormatCards.replace_string_in_json(' .', '.')
 
 print('Removing Samples!')

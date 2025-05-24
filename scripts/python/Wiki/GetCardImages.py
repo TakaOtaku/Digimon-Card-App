@@ -1,8 +1,10 @@
+import os
 import time
 import re
 import requests
 from bs4 import BeautifulSoup
 import urllib.request
+import traceback
 
 import WikiVariables as WV
 
@@ -78,21 +80,25 @@ def getCardImages():
         for item in gallery_items:
           img = item.find("img")
 
+          id_with_p = None
           if img is None:
-            continue
+            noImage = item.find("a", class_="image-no-lightbox")
+            # Remove .png from the text and replace spaces with underscores
+            id_with_p = re.sub(r'\.png$', '', noImage.text)
+            id_with_p = re.sub(r'\s', '_', id_with_p)
+          else:
+            id_with_p = re.sub(r'\.png$', '', img['data-image-key'])
+            src = img['src'].split("/latest")[0]
 
-          id_with_p = re.sub(r'\.png$', '', img['data-image-key'])
-          src = img['src'].split("/latest")[0]
+            save_location = src + '/latest'
+            save_location = save_location.replace('-j', '-J')
 
-          save_location = src + '/latest'
-          save_location = save_location.replace('-j', '-J')
-
-          download_image_with_retry(
-            save_location,
-            './scripts/python/Wiki/digimon-images/' +
-            img['data-image-key'],
-            img['data-image-key']
-          )
+            download_image_with_retry(
+              save_location,
+              './scripts/python/Wiki/digimon-images/' +
+              img['data-image-key'],
+              img['data-image-key']
+            )
 
           captions = item.find("div", class_="lightbox-caption")
           notes = captions.find_all("a")
@@ -111,8 +117,10 @@ def getCardImages():
 
           # Update the AAs for the card
           # If the Note is the Note for NA it is ignored
+          # Notes can have a differnet _P then in the Gallery because of the ordering sometimes
+          added = False
           for aa in backup_aas:
-            if aa['note'] == note_array[0]:
+            if aa['note'] == note_array[0] and added == False:
               if '_P' in id_with_p:
                 new_aa = {
                   'id': id_with_p,
@@ -121,6 +129,7 @@ def getCardImages():
                   'type': aa['type']
                 }
                 card.AAs.append(new_aa)
+                added = True
               elif '-Errata' in id_with_p:
                 new_aa = {
                   'id': id_with_p,
@@ -129,6 +138,7 @@ def getCardImages():
                   'type': aa['type']
                 }
                 card.AAs.append(new_aa)
+                added = True
               else:
                 card.notes = combined_notes
 
@@ -167,9 +177,10 @@ def getCardImages():
             note_array.append(note.text)
           combined_notes = " / ".join(note_array)
 
+          added = False
           # Update the JAAs for the card
           for aa in backup_jaas:
-            if aa['note'] == note_array[0]:
+            if aa['note'] == note_array[0] and added == False:
               if '_P' in id_with_p:
                 new_aa = {
                   'id': id_with_p,
@@ -178,6 +189,7 @@ def getCardImages():
                   'type': aa['type']
                 }
                 card.JAAs.append(new_aa)
+                added = True
 
       # Update the card object in the WV.cards list
       index = 0
@@ -185,6 +197,7 @@ def getCardImages():
         if obj.id == card.id:
           WV.cards[index] = card
         index += 1
-
-    except:
+    except Exception:
       print("Error for: " + link)
+      traceback.print_exc()
+      print(Exception)

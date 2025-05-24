@@ -19,10 +19,15 @@ class DigimonCard:
         self._cardNumber = "-"
 
         self._digiXros = "-"
+        self._assembly = "-"
         self._specialDigivolve = "-"
         self._burstDigivolve = "-"
         self._dnaDigivolve = "-"
+        self._linkRequirement = "-"
+        self._linkDP = "-"
+        self._linkEffect = "-"
 
+        self._rule = "-"
         self._effect = "-"
         self._digivolveEffect = "-"
         self._securityEffect = "-"
@@ -149,6 +154,14 @@ class DigimonCard:
         self._digiXros = value
 
     @property
+    def assembly(self):
+      return self._assembly
+
+    @assembly.setter
+    def assembly(self, value):
+      self._assembly = value
+
+    @property
     def specialDigivolve(self):
         return self._specialDigivolve
 
@@ -171,6 +184,38 @@ class DigimonCard:
     @burstDigivolve.setter
     def burstDigivolve(self, value):
         self._burstDigivolve = value
+
+    @property
+    def linkRequirement(self):
+        return self._linkRequirement
+
+    @linkRequirement.setter
+    def linkRequirement(self, value):
+        self._linkRequirement = value
+
+    @property
+    def linkDP(self):
+        return self._linkDP
+
+    @linkDP.setter
+    def linkDP(self, value):
+        self._linkDP = value
+
+    @property
+    def linkEffect(self):
+        return self._linkEffect
+
+    @linkEffect.setter
+    def linkEffect(self, value):
+        self._linkEffect = value
+
+    @property
+    def rule(self):
+        return self._rule
+
+    @rule.setter
+    def rule(self, value):
+        self._rule = value
 
     @property
     def effect(self):

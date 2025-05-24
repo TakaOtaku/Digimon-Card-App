@@ -16,6 +16,8 @@ export const emptySettings: ISettings = {
   showStampedCards: true,
   showAACards: true,
   showReprintCards: false,
+  showSpecialRareCards: false,
+  showRarePullCards: false,
 
   sortDeckOrder: 'Level',
 

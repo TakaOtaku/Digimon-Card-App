@@ -18,7 +18,12 @@ export const TAGS = [
   'BT15',
   'BT16',
   'BT17',
+  'BT18',
+  'BT19',
+  'BT20',
+  'BT21',
   'RB1',
+  'RB2',
   'LM',
   'EX1',
   'EX2',
@@ -26,6 +31,9 @@ export const TAGS = [
   'EX4',
   'EX5',
   'EX6',
+  'EX7',
+  'EX8',
+  'EX9',
   'ST1',
   'ST2',
   'ST3',
@@ -42,6 +50,11 @@ export const TAGS = [
   'ST15',
   'ST16',
   'ST17',
+  'ST18',
+  'ST19',
+  'ST20',
+  'ST21',
+  'ST22',
 ];
 
 export const tagsList: ITag[] = [
@@ -62,6 +75,11 @@ export const tagsList: ITag[] = [
   { name: 'BT15', color: 'Primary' },
   { name: 'BT16', color: 'Primary' },
   { name: 'BT17', color: 'Primary' },
+  { name: 'BT18', color: 'Primary' },
+  { name: 'BT19', color: 'Primary' },
+  { name: 'BT20', color: 'Primary' },
+  { name: 'BT21', color: 'Primary' },
+  { name: 'BT22', color: 'Primary' },
 
   { name: 'EX1', color: 'Primary' },
   { name: 'EX2', color: 'Primary' },
@@ -69,8 +87,13 @@ export const tagsList: ITag[] = [
   { name: 'EX4', color: 'Primary' },
   { name: 'EX5', color: 'Primary' },
   { name: 'EX6', color: 'Primary' },
+  { name: 'EX7', color: 'Primary' },
+  { name: 'EX8', color: 'Primary' },
+  { name: 'EX9', color: 'Primary' },
+  { name: 'EX10', color: 'Primary' },
 
   { name: 'RB1', color: 'Primary' },
+  { name: 'RB2', color: 'Primary' },
 
   { name: 'LM', color: 'Primary' },
 
@@ -91,6 +114,11 @@ export const tagsList: ITag[] = [
   { name: 'ST15', color: 'Primary' },
   { name: 'ST16', color: 'Primary' },
   { name: 'ST17', color: 'Primary' },
+  { name: 'ST18', color: 'Primary' },
+  { name: 'ST19', color: 'Primary' },
+  { name: 'ST20', color: 'Primary' },
+  { name: 'ST21', color: 'Primary' },
+  { name: 'ST22', color: 'Primary' },
 
   { name: 'Illegal', color: 'Primary' },
 ];
