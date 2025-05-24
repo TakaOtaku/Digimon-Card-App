@@ -27,8 +27,8 @@ jobs:
           port: 21
           username: ${{ secrets.PROD_USER }}
           password: ${{ secrets.PROD_PASSWORD }}
-          local-dir: ./dist/digimon-card-game-collector/assets/
-          server-dir: ./develop.digimoncard.app/browser/assets/
+          local-dir: ./dist/digimon-card-game-collector/browser/assets/
+          server-dir: ./develop.digimoncard.app/assets/
       - name: 📂 Sync server files
         uses: SamKirkland/FTP-Deploy-Action@4.3.2
         with:
