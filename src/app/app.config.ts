@@ -3,8 +3,6 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
-import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule, HammerModule } from '@angular/platform-browser';
@@ -32,8 +30,6 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes, withPreloading(PreloadAllModules)),
     provideAnimationsAsync(),
     importProvidersFrom(
-      AngularFireModule.initializeApp(environment.firebaseConfig),
-      AngularFireDatabaseModule,
       FontAwesomeModule,
       FormsModule,
       ReactiveFormsModule,

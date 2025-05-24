@@ -1,21 +1,21 @@
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
-import { ColorList } from '../../../../models';
-import { setColors, setTags } from '../../../functions';
+import { ColorList } from '@models';
+import { setColors, setTags } from '@functions';
 import { ObscenityPipe } from '../../../pipes/obscenity.pipe';
 import { TextareaModule } from 'primeng/textarea';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import { ChipModule } from 'primeng/chip';
 import { NgFor, NgClass } from '@angular/common';
-import { DigimonCardStore } from '../../../store/digimon-card.store';
-import { WebsiteStore } from '../../../store/website.store';
+import { DigimonCardStore } from '@store';
+import { WebsiteStore } from '@store';
 
 @Component({
   selector: 'digimon-deck-metadata',
   template: `
     <div class="mb-1 inline-flex w-full px-3">
       <div class="ml-auto mt-2 flex w-1/2 pr-2">
-        <p-chip class="ml-auto" *ngFor="let tag of tags()" label="{{ tag.name }}"></p-chip>
+        <p-chip class="ml-auto text-white" *ngFor="let tag of tags()" label="{{ tag.name }}"></p-chip>
       </div>
 
       <div class="mt-2 w-1/2 pl-1">

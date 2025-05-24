@@ -8,8 +8,8 @@ import { Subject, takeUntil } from 'rxjs';
   selector: 'digimon-range-slider',
   template: `
     <div class="flex flex-row">
-      <span class="ml-2">{{ filterFormControl?.value[0] ?? minMax[0] }}</span>
-      <span class="ml-auto mr-2">{{ filterFormControl?.value[1] ?? minMax[1] }}</span>
+      <span class="ml-2 text-white">{{ filterFormControl?.value[0] ?? minMax[0] }}</span>
+      <span class="ml-auto mr-2 text-white">{{ filterFormControl?.value[1] ?? minMax[1] }}</span>
     </div>
     <div class="custom-slider flex flex-row px-3 my-3">
       <p-slider

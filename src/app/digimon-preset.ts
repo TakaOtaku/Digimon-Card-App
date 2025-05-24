@@ -33,6 +33,22 @@ export const DigimonPreset = definePreset(Lara, {
           950: '#17212f', // Default: {sky.950} Background MultiSelect
         },
       },
+      dark: {
+        surface: {
+          0: '#ffffff', //#1f2d40
+          50: '#1f2d40',
+          100: '{sky.950}', // Hover
+          200: '#1f2d40',
+          300: '#ffffff', // Border
+          400: '#ffffff',
+          500: '#ffffff', // Text
+          600: '{sky.600}',
+          700: '#ffffff', // Text Color
+          800: '#ffffff',
+          900: '{sky.900}',
+          950: '#17212f', // Default: {sky.950} Background MultiSelect
+        },
+      },
     },
   },
 });
