@@ -1,9 +1,10 @@
 import { NgClass, NgFor, NgIf, NgStyle } from '@angular/common';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, computed, inject } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { Database, ref, set, onValue } from '@angular/fire/database';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ADMINS, emptyDeck, TIERLIST } from '@models';
+import { DigimonBackendService } from '@services';
 import { DigimonCardStore, SaveStore, WebsiteStore } from '@store';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { MessageService } from 'primeng/api';
@@ -155,17 +156,22 @@ export class TierlistComponent {
   });
   private messageService = inject(MessageService);
   private router: Router = inject(Router);
-  private db: AngularFireDatabase = inject(AngularFireDatabase);
+  private digimonBackendService = inject(DigimonBackendService);
   private changeDetectorRef: ChangeDetectorRef = inject(ChangeDetectorRef);
+  private db = inject(Database);
 
   constructor() {
-    this.db
-      .list('tierlist')
-      .valueChanges()
-      .subscribe((value) => {
-        const newTierlist = (value as any[])[0];
-        this.tierlist = newTierlist;
-      });
+    const tierlistRef = ref(this.db, 'tierlist');
+    onValue(tierlistRef, (snapshot) => {
+      const data = snapshot.val();
+      if (data && Array.isArray(data)) {
+        this.tierlist = data[0];
+        this.changeDetectorRef.detectChanges();
+      } else if (data && data.tierlist) {
+        this.tierlist = data.tierlist;
+        this.changeDetectorRef.detectChanges();
+      }
+    });
   }
 
   openCommunityWithSearch(card: string) {
@@ -251,6 +257,19 @@ export class TierlistComponent {
 
   uploadTierlist() {
     // Upload the current tierlist to the database
-    this.db.list('tierlist').set('tierlist', this.tierlist);
+    const tierlistRef = ref(this.db, 'tierlist/tierlist');
+    set(tierlistRef, this.tierlist)
+      .then(() => {
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Tierlist uploaded successfully.',
+        });
+      })
+      .catch((error) => {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Error uploading tierlist: ' + error.message,
+        });
+      });
   }
 }

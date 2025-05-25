@@ -1,12 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { first, map, Observable } from 'rxjs';
-import { DigimonCard, IColor, ICountCard, IDeck, ISave, ISettings, ITournamentDeck, IUser } from '../../models';
-import { CARDSET, IBlog, IBlogWithText, ITag } from '../../models';
-import { sortByReleaseOrder } from '../../models';
-import { emptySettings } from '../../models';
-import { IUserAndDecks } from '../../models';
-import { setDeckImage } from '../functions';
+import { DigimonCard, IColor, ICountCard, IDeck, ISave, ISettings, ITournamentDeck, IUser } from '@models';
+import { CARDSET, IBlog, IBlogWithText, ITag } from '@models';
+import { sortByReleaseOrder } from '@models';
+import { emptySettings } from '@models';
+import { IUserAndDecks } from '@models';
+import { checkDeckErrors, setDeckImage } from '@functions';
 
 const baseUrl = 'https://backend.digimoncard.app/api/';
 const baseUrl_inactiv = 'http://localhost:8080/api/';
@@ -152,6 +152,16 @@ export class DigimonBackendService {
         newSave.settings.countMax = newSave.settings.countMax !== undefined ? newSave.settings.countMax : 5;
 
         newSave.settings.cardSet = newSave.settings.cardSet === 'Both' ? 'English' : newSave.settings.cardSet;
+
+        newSave.settings.collectionSets = newSave.settings.collectionSets !== undefined ? newSave.settings.collectionSets : [];
+        newSave.settings.showReprintCards = newSave.settings.showReprintCards !== undefined ? newSave.settings.showReprintCards : false;
+        newSave.settings.showSpecialRareCards =
+          newSave.settings.showSpecialRareCards !== undefined ? newSave.settings.showSpecialRareCards : false;
+        newSave.settings.showReprintCards = newSave.settings.showReprintCards !== undefined ? newSave.settings.showRarePullCards : false;
+        newSave.settings.deckDisplayTable = newSave.settings.deckDisplayTable !== undefined ? newSave.settings.deckDisplayTable : false;
+        newSave.settings.showRarePullCards = newSave.settings.showRarePullCards !== undefined ? newSave.settings.showRarePullCards : false;
+
+        newSave.decks = checkDeckErrors(newSave.decks);
 
         return newSave;
       }),

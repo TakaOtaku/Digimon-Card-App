@@ -61,12 +61,6 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
   constructor() {
     this.save$ = merge(
       toObservable(this.saveStore.save),
-      toObservable(this.authService.currentUser).pipe(
-        filter(() => !!this.authService.currentUser()),
-        switchMap(() => {
-          return this.digimonBackendService.getSave(this.authService.currentUser()!.uid);
-        }),
-      ),
       this.route.params.pipe(
         filter((params) => !!params['id']),
         tap((params) => (this.otherProfile = params['id'])),
