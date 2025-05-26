@@ -6,12 +6,6 @@ export const ADMINS = [
     editEvents: true,
   },
   {
-    id: 'EN0yzEjtqhbPQKMezZ61jZ8eQYs1', // Yondaime
-    admin: false,
-    writeBlog: true,
-    editEvents: true,
-  },
-  {
     id: '864x9WGJa5WR32egGNLiJKqJaL83', //digimoncard.app@gmail.com
     admin: false,
     writeBlog: true,

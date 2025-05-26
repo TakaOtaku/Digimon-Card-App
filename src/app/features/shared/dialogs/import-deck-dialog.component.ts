@@ -1,9 +1,8 @@
-import { AsyncPipe, NgIf } from '@angular/common';
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
-import { InputTextareaModule } from 'primeng/inputtextarea';
+import { TextareaModule } from 'primeng/textarea';
 import { IDeck } from '../../../../models';
 import { setColors, setTags, stringToDeck } from '../../../functions';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
@@ -14,10 +13,7 @@ import { WebsiteStore } from '../../../store/website.store';
   template: `
     <div>
       <div>
-        <p>
-          Copy your deck in the text area and press import or press the "Import
-          Text-File"-Button to import a file.
-        </p>
+        <p>Copy your deck in the text area and press import or press the "Import Text-File"-Button to import a file.</p>
         <textarea
           pInputTextarea
           [placeholder]="importPlaceholder"
@@ -35,17 +31,12 @@ import { WebsiteStore } from '../../../store/website.store';
           (change)="handleFileInput($event.target, currentDeck)"
           #fileUpload />
         <button pButton (click)="fileUpload.click()">Import Text-File</button>
-        <button
-          pButton
-          (click)="importDeck(currentDeck)"
-          style="margin-left: 5px">
-          Import
-        </button>
+        <button pButton (click)="importDeck(currentDeck)" style="margin-left: 5px">Import</button>
       </div>
     </div>
   `,
   standalone: true,
-  imports: [FormsModule, InputTextareaModule, NgIf, ButtonModule, AsyncPipe],
+  imports: [FormsModule, TextareaModule, ButtonModule],
   providers: [MessageService],
 })
 export class ImportDeckDialogComponent {

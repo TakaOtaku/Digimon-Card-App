@@ -1,4 +1,3 @@
-import { NgClass } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -12,7 +11,7 @@ import { Component, Input } from '@angular/core';
     </div>
   `,
   standalone: true,
-  imports: [NgClass],
+  imports: [],
 })
 export class SettingsRowComponent {
   @Input() title: string = '';

@@ -10,18 +10,16 @@ export interface MultiButtons {
   selector: 'digimon-multi-buttons',
   template: `
     <div class="mx-auto mb-2 max-w-[250px]">
-      <h1 class="mb-1 text-center text-xs font-bold text-[#e2e4e6]">
-        {{ title }}:
-      </h1>
+      <h1 class="mb-1 text-center text-xs font-bold text-[#e2e4e6]">{{ title }}:</h1>
       <div [ngClass]="grid" class="my-2 grid w-full justify-center">
         <button
           (click)="clickEvent.emit(button.value)"
           *ngFor="let button of buttonArray; let i = index"
           [ngClass]="{
-            'bg-[#e2e4e6] text-black': value.includes(button.value),
+            'button-highlight-background text-white': value.includes(button.value),
             'surface-card text-[#e2e4e6]': !value.includes(button.value),
             'rounded-l-sm': i === 0,
-            'rounded-r-sm': i === buttonArray.length - 1
+            'rounded-r-sm': i === buttonArray.length - 1,
           }"
           class="min-w-auto h-8  border border-slate-100 p-0.5 py-2 text-xs font-semibold text-[#e2e4e6]">
           {{ button.name }}
@@ -34,7 +32,7 @@ export interface MultiButtons {
 })
 export class MultiButtonsComponent implements OnInit {
   @Input() title = '';
-  @Input() buttonArray: MultiButtons[];
+  @Input() buttonArray!: MultiButtons[];
   @Input() value: any;
   @Input() perRow: 2 | 3 | 4 | 5 | 6 | 7 | 8 | 10 = 3;
   @Output() clickEvent = new EventEmitter<any>();

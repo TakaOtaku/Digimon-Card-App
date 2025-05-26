@@ -1,27 +1,27 @@
-import { AsyncPipe, NgFor, NgIf } from '@angular/common';
+import { NgFor } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
+  computed,
+  effect,
   HostListener,
   inject,
   Input,
   OnChanges,
   OnInit,
-  SimpleChanges,
+  SimpleChanges
 } from '@angular/core';
+import { emptyDeck, ICountCard, IDeck, IUser } from '@models';
+import { DialogStore, SaveStore } from '@store';
 import { DialogModule } from 'primeng/dialog';
 import { PaginatorModule } from 'primeng/paginator';
-import { emptyDeck, ICountCard, IDeck, IUser } from '../../../../models';
-import { DialogStore } from '../../../store/dialog.store';
-import { SaveStore } from '../../../store/save.store';
 import { DeckContainerComponent } from '../../shared/deck-container.component';
-import { DeckDialogComponent } from '../../shared/dialogs/deck-dialog.component';
 import { DecksTableComponent } from './decks-table.component';
 
 @Component({
   selector: 'digimon-decks',
   template: `
-    <div *ngIf="!displayTables; else deckTable">
+    @if (!displayTables()) {
       <div class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 py-2">
         <digimon-deck-container
           class="mx-auto min-w-[280px] max-w-[285px]"
@@ -43,26 +43,13 @@ import { DecksTableComponent } from './decks-table.component';
           class="surface-card mx-auto h-8"
           styleClass="surface-card p-0"></p-paginator>
       </div>
-    </div>
-
-    <ng-template #deckTable>
-      <digimon-decks-table
-        [decks]="decks"
-        (onDeckClick)="showDeckDialog($event)"></digimon-decks-table>
-    </ng-template>
+    } @else {
+      <digimon-decks-table [decks]="decks" (onDeckClick)="showDeckDialog($event)"></digimon-decks-table>
+    }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    NgIf,
-    NgFor,
-    DeckContainerComponent,
-    PaginatorModule,
-    DecksTableComponent,
-    DialogModule,
-    DeckDialogComponent,
-    AsyncPipe,
-  ],
+  imports: [NgFor, DeckContainerComponent, PaginatorModule, DecksTableComponent, DialogModule],
 })
 export class DecksComponent implements OnInit, OnChanges {
   @Input() decks: IDeck[];
@@ -83,7 +70,10 @@ export class DecksComponent implements OnInit, OnChanges {
 
   deck: IDeck = JSON.parse(JSON.stringify(emptyDeck));
 
-  displayTables = this.saveStore.settings().deckDisplayTable;
+  displayTables = computed(() => this.saveStore.settings().deckDisplayTable);
+  effect = effect(() => {
+    console.log('Display Table: ' + this.displayTables());
+  });
 
   ngOnInit() {
     if (!this.decks) {
@@ -131,9 +121,6 @@ export class DecksComponent implements OnInit, OnChanges {
   onPageChange(event: any, slice?: number) {
     this.first = event.first;
     this.page = event.page;
-    this.decksToShow = this.decks.slice(
-      event.first,
-      (slice ?? this.row) * (event.page + 1),
-    );
+    this.decksToShow = this.decks.slice(event.first, (slice ?? this.row) * (event.page + 1));
   }
 }

@@ -1,11 +1,5 @@
 import { computed } from '@angular/core';
-import {
-  patchState,
-  signalStore,
-  withComputed,
-  withMethods,
-  withState,
-} from '@ngrx/signals';
+import { patchState, signalStore, withComputed, withMethods, withState } from '@ngrx/signals';
 import { emptyFilter, IFilter } from '../../models';
 
 type FilterStore = {

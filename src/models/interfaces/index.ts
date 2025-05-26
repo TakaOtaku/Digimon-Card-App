@@ -16,3 +16,4 @@ export * from './tag.interface';
 export * from './tournament-deck.interface';
 export * from './user.interface';
 export * from './userAndDecks.interface';
+export * from './rulings.interface';

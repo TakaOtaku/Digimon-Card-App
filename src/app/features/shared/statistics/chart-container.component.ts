@@ -14,7 +14,7 @@ import { NgFor, NgClass, NgStyle } from '@angular/common';
           [ngClass]="color"
           class="w-full"
           [ngStyle]="{
-            height: 'calc(' + fill[7 - i] + ' * ' + fillPercent + '%)'
+            height: 'calc(' + fill[7 - i] + ' * ' + fillPercent + '%)',
           }"></div>
       </div>
       <p class="text-center text-xs text-[#e2e4e6]">{{ label }}</p>
@@ -25,20 +25,11 @@ import { NgFor, NgClass, NgStyle } from '@angular/common';
   imports: [NgFor, NgClass, NgStyle],
 })
 export class ChartContainerComponent {
-  @Input() public label: string;
-  @Input() public fill: number[];
+  @Input() public label!: string;
+  @Input() public fill!: number[];
   @Input() public fillPercent?: string = '3.333';
 
-  colors = [
-    'Multi',
-    'White',
-    'Purple',
-    'Black',
-    'Green',
-    'Yellow',
-    'Blue',
-    'Red',
-  ];
+  colors = ['Multi', 'White', 'Purple', 'Black', 'Green', 'Yellow', 'Blue', 'Red'];
 
   getFillCount(): number {
     let num = 0;

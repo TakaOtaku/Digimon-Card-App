@@ -6,16 +6,18 @@ export interface ISettings {
   collectionMinimum: number; // How many cards do you want to collect to color it ---- default = 1
   aaCollectionMinimum: number; // How many aa cards do you want to collect to color it ---- default = 1
 
+  showNormalCards: boolean; // Show Normal Cards ---- default = false
+  showAACards: boolean; // Show AA Cards ---- default = false
+  showFoilCards: boolean; // Show Foil Cards ---- default = false
+  showTexturedCards: boolean; // Show Textured Cards ---- default = false
   showPreRelease: boolean; // Show Pre-Release Stamped Cards ---- default = false
-  showFoilCards: boolean;
-  showTexturedCards: boolean;
-  showBoxTopper: boolean;
-  showFullArtCards: boolean;
-  showStampedCards: boolean; // Show Stamped Cards ---- default = true
-  showAACards: boolean; // Show AA Cards ---- default = true
+  showBoxTopper: boolean; // Show Box Topper Cards ---- default = false
+  showFullArtCards: boolean; // Show Full Art Cards ---- default = false
+  showStampedCards: boolean; // Show Stamped Cards ---- default = false
+  showSpecialRareCards: boolean; // Show Special Rare Cards ---- default = false
+  showRarePullCards: boolean; // Show Rare Pull Cards ---- default = false
+
   showReprintCards: boolean; // Show Reprint Cards ---- default = false
-  showSpecialRareCards: boolean;
-  showRarePullCards: boolean;
 
   sortDeckOrder: string; // Set Deck-Sort Order ---- default = Level
   showUserStats: boolean; // Show User-Stats in the Profil Yes or no ---- default = true
