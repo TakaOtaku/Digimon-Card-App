@@ -1,12 +1,12 @@
 import { NgClass, NgIf } from '@angular/common';
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { withoutJ } from '@functions';
+import { DigimonCard, DRAG, dummyCard } from '@models';
+import { SaveStore, WebsiteStore } from '@store';
 import { DialogModule } from 'primeng/dialog';
 import { DragDropModule } from 'primeng/dragdrop';
-import { DigimonCard, DRAG, dummyCard } from '../../../models';
-import { withoutJ } from '../../functions';
-import { SaveStore } from '../../store/save.store';
-import { WebsiteStore } from '../../store/website.store';
+import { cardsAllow50 } from '../../../models/data/cards-50.data';
 import { CardImageComponent } from './card-image.component';
 
 @Component({
@@ -29,7 +29,7 @@ import { CardImageComponent } from './card-image.component';
             ' bottom-10': collectionMode(),
           }">
           {{ getCountInDeck(this.card.id) }}<span class="pr-1 text-sky-700">/</span
-          >{{ card.cardNumber === 'BT6-085' || card.cardNumber === 'EX2-046' || card.cardNumber === 'BT11-061' ? 50 : 4 }}
+          >{{ cardsAllow50.includes(card.cardNumber)? 50 : 4 }}
         </span>
       </ng-container>
 
@@ -140,4 +140,6 @@ export class FullCardComponent {
   rightclick() {
     this.showCardDetails();
   }
+
+  protected readonly cardsAllow50 = cardsAllow50;
 }

@@ -10,11 +10,14 @@ import { PanelModule } from 'primeng/panel';
         <h1 class="font-bold text-lg underline">Feature</h1>
         <ul class="list-disc p-5">
           <li>Added a "Delete all Decks" Button for the Players that want to start fresh each Meta.</li>
+          <li>Improved the Way you can select the Default Filter in the Settings Dialog</li>
         </ul>
         <h1 class="font-bold text-lg underline">Bugfixes</h1>
         <ul class="list-disc p-5">
           <li>Fixed a bug with the Table Display of your Player Decks</li>
           <li>Fixed a bug where Test Hands couldn't show duplicates.</li>
+          <li>Fixed some errors with older decks and players</li>
+          <li>Eater and Eyesmon Scatter Mode allow 50 Cards in a Deck</li>
         </ul>
         <div class="flex flex-wrap align-middle justify-content-between gap-3">
           <span class="ml-auto p-text-secondary">Updated 21.05.2025</span>

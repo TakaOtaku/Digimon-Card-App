@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, effect, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { filterCards } from '@functions';
-import { CARDSET, emptyFilter, emptySave, IFilter } from '@models';
+import { CARDSET, emptyFilter, emptySave, IFilter, ISettings } from '@models';
 import { AuthService, DigimonBackendService } from '@services';
 import { DigimonCardStore, FilterStore, SaveStore, WebsiteStore } from '@store';
 import { BlockUIModule } from 'primeng/blockui';
@@ -71,7 +71,7 @@ export class AppComponent {
   sideNav = false;
 
   cardSet = '';
-  settings = this.saveStore.settings();
+  settings: ISettings | null = null;
 
   onAuthChange = effect(() => {
     if (this.authService.isLoggedIn) {
@@ -95,10 +95,10 @@ export class AppComponent {
       console.log('Update Save in the Database');
       this.updateDatabase();
 
-      if (this.settings !== this.saveStore.settings()) {
+      if (this.settings === null || this.settings !== this.saveStore.settings()) {
         console.log('Change Advanced Settings');
-        this.settings = this.saveStore.settings();
         this.setAdvancedSettings();
+        this.settings = this.saveStore.settings();
       }
 
       if (this.cardSet !== this.saveStore.settings().cardSet) {
@@ -161,83 +161,35 @@ export class AppComponent {
       return;
     }
 
-    let filter: IFilter = this.filterStore.filter();
-    if (filter !== emptyFilter) return;
-    filter = { ...filter, versionFilter: [] };
+    const CARD_VERSION_MAPPING = {
+      showNormalCards: 'Normal',
+      showAACards: 'Alternative Art',
+      showFoilCards: 'Foil',
+      showTexturedCards: 'Textured',
+      showPreRelease: 'Release',
+      showBoxTopper: 'Box Topper',
+      showFullArtCards: 'Full Art',
+      showStampedCards: 'Stamp',
+      showSpecialRareCards: 'Special Rare',
+      showRarePullCards: 'Rare Pull',
+    };
 
-    if (!settings.showFoilCards) {
-      let versionFilter = filter.versionFilter.filter((filter) => filter !== 'Foil');
-      if (versionFilter.length === 0) {
-        versionFilter = [
-          'Normal',
-          'Alternative Art',
-          'Textured',
-          'Release',
-          'Box Topper',
-          'Full Art',
-          'Stamp',
-          'Special Rare',
-          'Rare Pull',
-        ];
+    const ALL_CARD_VERSIONS = Object.values(CARD_VERSION_MAPPING);
+
+    let filter: IFilter = this.filterStore.filter();
+
+    let newVersionFilter: string[] = [...ALL_CARD_VERSIONS];
+
+    for (const [settingKey, cardVersion] of Object.entries(CARD_VERSION_MAPPING)) {
+      // Cast to keyof ISettings for type safety
+      const key = settingKey as keyof ISettings;
+      if (!settings[key]) {
+        // If the setting is false (e.g., !settings.showFoilCards) filter out the card version
+        newVersionFilter = newVersionFilter.filter((v) => v !== cardVersion);
       }
-      filter = { ...filter, versionFilter };
     }
-    if (!settings.showTexturedCards) {
-      let versionFilter = filter.versionFilter.filter((filter) => filter !== 'Textured');
-      if (versionFilter.length === 0) {
-        versionFilter = ['Normal', 'Alternative Art', 'Foil', 'Release', 'Box Topper', 'Full Art', 'Stamp', 'Special Rare', 'Rare Pull'];
-      }
-      filter = { ...filter, versionFilter };
-    }
-    if (!settings.showPreRelease) {
-      let versionFilter = filter.versionFilter.filter((filter) => filter !== 'Release');
-      if (versionFilter.length === 0) {
-        versionFilter = ['Normal', 'Alternative Art', 'Foil', 'Textured', 'Box Topper', 'Full Art', 'Stamp', 'Special Rare', 'Rare Pull'];
-      }
-      filter = { ...filter, versionFilter };
-    }
-    if (!settings.showBoxTopper) {
-      let versionFilter = filter.versionFilter.filter((filter) => filter !== 'Box Topper');
-      if (versionFilter.length === 0) {
-        versionFilter = ['Normal', 'Alternative Art', 'Foil', 'Textured', 'Release', 'Full Art', 'Stamp', 'Special Rare', 'Rare Pull'];
-      }
-      filter = { ...filter, versionFilter };
-    }
-    if (!settings.showFullArtCards) {
-      let versionFilter = filter.versionFilter.filter((filter) => filter !== 'Full Art');
-      if (versionFilter.length === 0) {
-        versionFilter = ['Normal', 'Alternative Art', 'Foil', 'Textured', 'Release', 'Box Topper', 'Stamp', 'Special Rare', 'Rare Pull'];
-      }
-      filter = { ...filter, versionFilter };
-    }
-    if (!settings.showStampedCards) {
-      let versionFilter = filter.versionFilter.filter((filter) => filter !== 'Stamp');
-      if (versionFilter.length === 0) {
-        versionFilter = ['Normal', 'Alternative Art', 'Foil', 'Textured', 'Release', 'Box Topper', 'Full Art', 'Special Rare', 'Rare Pull'];
-      }
-      filter = { ...filter, versionFilter };
-    }
-    if (!settings.showAACards) {
-      let versionFilter = filter.versionFilter.filter((filter) => filter !== 'Alternative Art');
-      if (versionFilter.length === 0) {
-        versionFilter = ['Normal', 'Foil', 'Textured', 'Release', 'Box Topper', 'Full Art', 'Stamp', 'Special Rare', 'Rare Pull'];
-      }
-      filter = { ...filter, versionFilter };
-    }
-    if (!settings.showSpecialRareCards) {
-      let versionFilter = filter.versionFilter.filter((filter) => filter !== 'Special Rare');
-      if (versionFilter.length === 0) {
-        versionFilter = ['Normal', 'Alternative Art', 'Foil', 'Textured', 'Release', 'Box Topper', 'Full Art', 'Stamp', 'Rare Pull'];
-      }
-      filter = { ...filter, versionFilter };
-    }
-    if (!settings.showRarePullCards) {
-      let versionFilter = filter.versionFilter.filter((filter) => filter !== 'Rare Pull');
-      if (versionFilter.length === 0) {
-        versionFilter = ['Normal', 'Alternative Art', 'Foil', 'Textured', 'Release', 'Box Topper', 'Full Art', 'Stamp', 'Special Rare'];
-      }
-      filter = { ...filter, versionFilter };
-    }
+
+    filter = { ...filter, versionFilter: newVersionFilter };
 
     this.filterStore.updateFilter(filter);
   }

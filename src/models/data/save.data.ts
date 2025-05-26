@@ -8,16 +8,18 @@ export const emptySettings: ISettings = {
   collectionMinimum: 1,
   aaCollectionMinimum: 1,
 
-  showFoilCards: true,
-  showTexturedCards: true,
-  showPreRelease: true,
-  showBoxTopper: true,
-  showFullArtCards: true,
-  showStampedCards: true,
-  showAACards: true,
-  showReprintCards: false,
+  showNormalCards: false,
+  showAACards: false,
+  showFoilCards: false,
+  showTexturedCards: false,
+  showPreRelease: false,
+  showBoxTopper: false,
+  showFullArtCards: false,
+  showStampedCards: false,
   showSpecialRareCards: false,
   showRarePullCards: false,
+
+  showReprintCards: false,
 
   sortDeckOrder: 'Level',
 

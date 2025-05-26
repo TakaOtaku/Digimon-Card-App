@@ -160,6 +160,7 @@ export class DigimonBackendService {
         newSave.settings.showReprintCards = newSave.settings.showReprintCards !== undefined ? newSave.settings.showRarePullCards : false;
         newSave.settings.deckDisplayTable = newSave.settings.deckDisplayTable !== undefined ? newSave.settings.deckDisplayTable : false;
         newSave.settings.showRarePullCards = newSave.settings.showRarePullCards !== undefined ? newSave.settings.showRarePullCards : false;
+        newSave.settings.showNormalCards = newSave.settings.showNormalCards ?? false;
 
         newSave.decks = checkDeckErrors(newSave.decks);
 
