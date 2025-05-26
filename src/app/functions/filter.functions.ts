@@ -1,12 +1,5 @@
 /* eslint-disable prettier/prettier */
-import {
-  DigimonCard,
-  ICountCard,
-  IFilter, ISave,
-  ISort,
-  UltimateCup2023,
-  UltimateCup2024
-} from '../../models';
+import { DigimonCard, ICountCard, IFilter, ISave, ISort, UltimateCup2023, UltimateCup2024 } from '../../models';
 
 export function filterCards(
   cards: DigimonCard[],
@@ -19,10 +12,7 @@ export function filterCards(
   let removeCards: DigimonCard[] = [];
 
   cards.forEach((card) => {
-    if (
-      filter.searchFilter !== '' &&
-      applySearchFilter(card, filter.searchFilter)
-    ) {
+    if (filter.searchFilter !== '' && applySearchFilter(card, filter.searchFilter)) {
       removeCards.push(card);
       return;
     }
@@ -30,94 +20,55 @@ export function filterCards(
       removeCards.push(card);
       return;
     }
-    if (
-      filter.rarityFilter.length > 0 &&
-      applyRarityFilter(card, filter.rarityFilter)
-    ) {
+    if (filter.rarityFilter.length > 0 && applyRarityFilter(card, filter.rarityFilter)) {
       removeCards.push(card);
       return;
     }
-    if (
-      filter.cardTypeFilter.length > 0 &&
-      applyCardTypeFilter(card, filter.cardTypeFilter)
-    ) {
+    if (filter.cardTypeFilter.length > 0 && applyCardTypeFilter(card, filter.cardTypeFilter)) {
       removeCards.push(card);
       return;
     }
-    if (
-      filter.formFilter.length > 0 &&
-      applyFormFilter(card, filter.formFilter)
-    ) {
+    if (filter.formFilter.length > 0 && applyFormFilter(card, filter.formFilter)) {
       removeCards.push(card);
       return;
     }
-    if (
-      filter.attributeFilter.length > 0 &&
-      applyAttributeFilter(card, filter.attributeFilter)
-    ) {
+    if (filter.attributeFilter.length > 0 && applyAttributeFilter(card, filter.attributeFilter)) {
       removeCards.push(card);
       return;
     }
-    if (
-      filter.illustratorFilter.length > 0 &&
-      applyIllustratorFilter(card, filter.illustratorFilter)
-    ) {
+    if (filter.illustratorFilter.length > 0 && applyIllustratorFilter(card, filter.illustratorFilter)) {
       removeCards.push(card);
       return;
     }
-    if (
-      filter.restrictionsFilter.length > 0 &&
-      applyRestrictionFilter(card, filter.restrictionsFilter)
-    ) {
+    if (filter.restrictionsFilter.length > 0 && applyRestrictionFilter(card, filter.restrictionsFilter)) {
       removeCards.push(card);
       return;
     }
-    if (
-      filter.blockFilter.length > 0 &&
-      applyBlockFilter(card, filter.blockFilter)
-    ) {
+    if (filter.blockFilter.length > 0 && applyBlockFilter(card, filter.blockFilter)) {
       removeCards.push(card);
       return;
     }
-    if (
-      filter.colorFilter.length > 0 &&
-      applyColorFilter(card, filter.colorFilter)
-    ) {
+    if (filter.colorFilter.length > 0 && applyColorFilter(card, filter.colorFilter)) {
       removeCards.push(card);
       return;
     }
-    if (
-      filter.typeFilter.length > 0 &&
-      applyTypeFilter(card, filter.typeFilter)
-    ) {
+    if (filter.typeFilter.length > 0 && applyTypeFilter(card, filter.typeFilter)) {
       removeCards.push(card);
       return;
     }
-    if (
-      filter.versionFilter.length > 0 &&
-      applyVersionFilter(card, filter.versionFilter)
-    ) {
+    if (filter.versionFilter.length > 0 && applyVersionFilter(card, filter.versionFilter)) {
       removeCards.push(card);
       return;
     }
-    if (
-      filter.keywordFilter.length > 0 &&
-      applyKeywordFilter(card, filter.keywordFilter)
-    ) {
+    if (filter.keywordFilter.length > 0 && applyKeywordFilter(card, filter.keywordFilter)) {
       removeCards.push(card);
       return;
     }
-    if (
-      filter.specialRequirementsFilter.length > 0 &&
-      applySpecialRequirementsFilter(card, filter.specialRequirementsFilter)
-    ) {
+    if (filter.specialRequirementsFilter.length > 0 && applySpecialRequirementsFilter(card, filter.specialRequirementsFilter)) {
       removeCards.push(card);
       return;
     }
-    if (
-      filter.sourceFilter.length > 0 &&
-      applySourceFilter(card, filter.sourceFilter)
-    ) {
+    if (filter.sourceFilter.length > 0 && applySourceFilter(card, filter.sourceFilter)) {
       removeCards.push(card);
       return;
     }
@@ -141,10 +92,7 @@ export function filterCards(
       removeCards.push(card);
       return;
     }
-    if (
-      filter.presetFilter.length > 0 &&
-      applyPresetFilter(card, filter.presetFilter)
-    ) {
+    if (filter.presetFilter.length > 0 && applyPresetFilter(card, filter.presetFilter)) {
       removeCards.push(card);
       return;
     }
@@ -236,7 +184,8 @@ function applyVersionFilter(card: DigimonCard, filters: string[]): boolean {
   let remove = false;
   for (let filter of filters) {
     if (filter === 'Stamp') {
-      const preRelease = card['version'].includes('Pre-Release Stamp') || card['version'].includes('Pre-Release') || card['version'].includes('Pre Release')
+      const preRelease =
+        card['version'].includes('Pre-Release Stamp') || card['version'].includes('Pre-Release') || card['version'].includes('Pre Release');
       remove = card['version'].includes('Stamp') && !preRelease;
     } else if (filter === 'AA' || filter === 'Alternative Art') {
       remove = card['version'].includes('Alternative Art');
@@ -267,18 +216,13 @@ function applyVersionFilter(card: DigimonCard, filters: string[]): boolean {
 function applyKeywordFilter(card: DigimonCard, filters: string[]): boolean {
   let remove = false;
   for (let filter of filters) {
-    remove =
-      card['effect'].includes(filter) ||
-      card['digivolveEffect'].includes(filter);
+    remove = card['effect'].includes(filter) || card['digivolveEffect'].includes(filter);
     if (remove) break;
   }
   return !remove;
 }
 
-function applySpecialRequirementsFilter(
-  card: DigimonCard,
-  filters: string[],
-): boolean {
+function applySpecialRequirementsFilter(card: DigimonCard, filters: string[]): boolean {
   let remove = false;
   for (let filter of filters) {
     if (filter === 'Digivolve') {
@@ -309,11 +253,7 @@ function applySourceFilter(card: DigimonCard, filters: string[]): boolean {
   return filters.includes(card['notes']);
 }
 
-function applyCardCountFilter(
-  card: DigimonCard,
-  save: ISave,
-  cardCountFilter: number[],
-): boolean {
+function applyCardCountFilter(card: DigimonCard, save: ISave, cardCountFilter: number[]): boolean {
   const count = save.collection.find((cc) => cc.id === card.id)?.count ?? 0;
 
   // If the CardCount Filter is at the max, check if the card count is higher than the smaller slider
@@ -324,11 +264,7 @@ function applyCardCountFilter(
   return !(cardCountFilter[0] <= count && count <= cardCountFilter[1]);
 }
 
-function applyRangeFilter(
-  card: DigimonCard,
-  filter: number[],
-  key: string,
-): boolean {
+function applyRangeFilter(card: DigimonCard, filter: number[], key: string): boolean {
   switch (key) {
     default:
     case 'level':
@@ -362,12 +298,12 @@ function applyRangeFilter(
       let highestDigivolveCost;
       let lowestDigivolveCost;
 
-      for (let condition of card["digivolveCondition"]) {
-        if(!highestDigivolveCost || +condition.cost >>> 0 > highestDigivolveCost) highestDigivolveCost = +condition.cost >>> 0;
-        if(!lowestDigivolveCost || +condition.cost >>> 0 < lowestDigivolveCost) lowestDigivolveCost = +condition.cost >>> 0;
+      for (let condition of card['digivolveCondition']) {
+        if (!highestDigivolveCost || +condition.cost >>> 0 > highestDigivolveCost) highestDigivolveCost = +condition.cost >>> 0;
+        if (!lowestDigivolveCost || +condition.cost >>> 0 < lowestDigivolveCost) lowestDigivolveCost = +condition.cost >>> 0;
       }
 
-      if(!highestDigivolveCost || !lowestDigivolveCost) {
+      if (!highestDigivolveCost || !lowestDigivolveCost) {
         return true;
       }
 
@@ -411,36 +347,14 @@ function applyPresetFilter(card: DigimonCard, filter: string[]): boolean {
   return inPreset;
 }
 
-function applySortOrder(
-  cards: DigimonCard[],
-  sort: ISort,
-  collection: ICountCard[],
-): DigimonCard[] {
+function applySortOrder(cards: DigimonCard[], sort: ISort, collection: ICountCard[]): DigimonCard[] {
   const returnArray = [...new Set([...cards])];
   if (sort.sortBy.element === 'playCost' || sort.sortBy.element === 'dp') {
     return sort.ascOrder
       ? returnArray.sort(dynamicSortNumber(sort.sortBy.element))
       : returnArray.sort(dynamicSortNumber(`-${sort.sortBy.element}`));
-  } else if (sort.sortBy.element === 'count') {
-    return sort.ascOrder
-      ? returnArray.sort((a, b) => {
-          const countA =
-            collection.find((card) => card.id === a.id)?.count ?? 0;
-          const countB =
-            collection.find((card) => card.id === b.id)?.count ?? 0;
-          return countA - countB;
-        })
-      : returnArray.sort((a, b) => {
-          const countA =
-            collection.find((card) => card.id === a.id)?.count ?? 0;
-          const countB =
-            collection.find((card) => card.id === b.id)?.count ?? 0;
-          return countB - countA;
-        });
   }
-  return sort.ascOrder
-    ? returnArray.sort(dynamicSort(sort.sortBy.element))
-    : returnArray.sort(dynamicSort(`-${sort.sortBy.element}`));
+  return sort.ascOrder ? returnArray.sort(dynamicSort(sort.sortBy.element)) : returnArray.sort(dynamicSort(`-${sort.sortBy.element}`));
 }
 
 //endregion
@@ -452,12 +366,10 @@ export function dynamicSort(property: string): any {
     property = property.substr(1);
   }
   return function (a: any, b: any) {
-    let result = a[property]
-      .toLowerCase()
-      .localeCompare(b[property].toLowerCase(), undefined, {
-        numeric: true,
-        sensitivity: 'base',
-      });
+    let result = a[property].toLowerCase().localeCompare(b[property].toLowerCase(), undefined, {
+      numeric: true,
+      sensitivity: 'base',
+    });
     return result * sortOrder;
   };
 }
@@ -483,12 +395,8 @@ export function sortID(a: string, b: string) {
   const aSetName = hasNumber(aSplit[0]) ? aSplit[0].slice(0, 2) : 'P';
   const bSetName = hasNumber(bSplit[0]) ? bSplit[0].slice(0, 2) : 'P';
 
-  const aSetNumber = hasNumber(aSplit[0])
-    ? (aSplit[0].substring(2) as any) >>> 0
-    : 99;
-  const bSetNumber = hasNumber(bSplit[0])
-    ? (bSplit[0].substring(2) as any) >>> 0
-    : 99;
+  const aSetNumber = hasNumber(aSplit[0]) ? (aSplit[0].substring(2) as any) >>> 0 : 99;
+  const bSetNumber = hasNumber(bSplit[0]) ? (bSplit[0].substring(2) as any) >>> 0 : 99;
 
   const aSetID = aSplit[1];
   const bSetID = bSplit[1];
@@ -498,8 +406,7 @@ export function sortID(a: string, b: string) {
     sensitivity: 'base',
   });
 
-  const SetNumberResult =
-    aSetNumber < bSetNumber ? -1 : aSetNumber > bSetNumber ? 1 : 0;
+  const SetNumberResult = aSetNumber < bSetNumber ? -1 : aSetNumber > bSetNumber ? 1 : 0;
 
   const IDResult = aSetID < bSetID ? -1 : aSetID > bSetID ? 1 : 0;
 

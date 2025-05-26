@@ -1,8 +1,5 @@
 import { patchState, signalStore, withMethods, withState } from '@ngrx/signals';
-import {
-  setupDigimonCardMap,
-  setupDigimonCards,
-} from '../../assets/cardlists/DigimonCards';
+import { setupDigimonCardMap, setupDigimonCards } from '../../assets/cardlists/DigimonCards';
 import { CARDSET, DigimonCard } from '../../models';
 
 type DigimonCards = {

@@ -4,3 +4,4 @@ export * from './digimon-card.functions';
 export * from './filter.functions';
 export * from './parse-deck';
 export * from './upload-adapter';
+export * from './check-deck-errors';

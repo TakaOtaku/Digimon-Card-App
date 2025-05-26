@@ -1,210 +1,223 @@
-import { inject, Injectable } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { GoogleAuthProvider } from 'firebase/auth';
-import firebase from 'firebase/compat';
+import { Injectable, Signal, signal } from '@angular/core';
+import {
+  Auth,
+  browserSessionPersistence,
+  GoogleAuthProvider,
+  setPersistence,
+  signInWithPopup,
+  signOut,
+  user,
+  User,
+} from '@angular/fire/auth';
+import { emptySave, emptySettings, ISave, IUser } from '@models';
 import { MessageService } from 'primeng/api';
-import { catchError, first, Observable, of, retry, Subject } from 'rxjs';
-import { ISave, IUser } from '../../models';
-import { emptySave, emptySettings } from '../../models';
-import { SaveStore } from '../store/save.store';
+import { catchError, Observable, of, switchMap, tap } from 'rxjs';
 import { DigimonBackendService } from './digimon-backend.service';
-import UserCredential = firebase.auth.UserCredential;
-import User = firebase.User;
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  userData: IUser | null;
-  authChange = new Subject<boolean>();
+  private userSignal = signal<IUser | null>(null);
+  // Use the user observable from the injected AngularFire Auth service
+  firebaseUser$: Observable<User | null>;
 
   constructor(
-    public afAuth: AngularFireAuth,
+    private firebaseAuth: Auth, // AngularFire Auth service is injected here
     private digimonBackendService: DigimonBackendService,
     private messageService: MessageService,
-  ) {}
+  ) {
+    // Set persistence
+    setPersistence(this.firebaseAuth, browserSessionPersistence);
+
+    // Use the user observable provided by the injected AngularFire Auth service
+    this.firebaseUser$ = user(this.firebaseAuth);
+
+    // Initialize auth state handling
+    this.initAuthState();
+  }
 
   get isLoggedIn(): boolean {
-    return !!this.userData;
+    return this.userSignal() !== null;
+  }
+
+  get currentUser(): Signal<IUser | null> {
+    return this.userSignal;
   }
 
   /**
-   * Login automatically when you were logged in before
+   * Initialize the authentication state handling
    */
-  userInLocalStorage(): boolean {
-    const userRAW = localStorage.getItem('user');
-    if (!userRAW) return false;
+  private initAuthState(): void {
+    this.firebaseUser$ // Now using the AngularFire user observable
+      .pipe(
+        switchMap((firebaseUser) => {
+          if (!firebaseUser) {
+            // User is logged out, clear state
+            this.userSignal.set(null);
+            return of(null);
+          }
 
-    this.userData = JSON.parse(userRAW);
-    return true;
+          // User is logged in, get save from backend
+          return this.digimonBackendService.getSave(firebaseUser.uid).pipe(
+            catchError(() => {
+              console.log('No save found, creating a new one');
+              // Use local save if available, otherwise create empty
+              const localSave = this.getLocalStorageSave();
+              return of(this.createNewSave(firebaseUser, localSave));
+            }),
+            tap((save) => {
+              if (save) {
+                // Create user data object and update state
+                const userData: IUser = {
+                  uid: firebaseUser.uid,
+                  displayName: firebaseUser.displayName || '',
+                  photoURL: firebaseUser.photoURL || '',
+                  save: this.ensureSaveHasUserInfo(save, firebaseUser),
+                };
+
+                // Update local storage and state
+                localStorage.setItem('user', JSON.stringify(userData));
+                this.userSignal.set(userData);
+
+                // Ensure save is up to date in backend
+                this.digimonBackendService.updateSave(userData.save).subscribe();
+              }
+            }),
+          );
+        }),
+      )
+      .subscribe();
   }
 
-  GoogleAuth(saveStore: any) {
-    const provider = new GoogleAuthProvider();
-    provider.setCustomParameters({
-      prompt: 'select_account',
-    });
-    return this.AuthLogin(provider, saveStore);
-  }
+  /**
+   * Sign in with Google
+   */
+  async googleAuth(): Promise<any> {
+    try {
+      const provider = new GoogleAuthProvider();
 
-  AuthLogin(provider: any, saveStore: any) {
-    return this.afAuth
-      .signInWithPopup(provider)
-      .then((result: UserCredential) => {
-        this.SetUserData(result.user, saveStore);
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Login Successfully!',
-          detail: 'You have been logged in!',
-        });
-      })
-      .catch((error) => {
-        this.messageService.add({
-          severity: 'error',
-          summary: 'Login Failure!',
-          detail: 'There was an failure with your Login. Please try again!',
-        });
+      provider.setCustomParameters({
+        prompt: 'select_account',
       });
+
+      const result = await signInWithPopup(this.firebaseAuth, provider);
+
+      this.messageService.add({
+        severity: 'success',
+        summary: 'Login Successful!',
+        detail: 'You have been logged in with Google!',
+      });
+
+      return result;
+    } catch (error) {
+      console.error('Google Auth Error:', error);
+
+      // More specific error handling
+      let errorMessage = 'Could not log in with Google';
+      // Check if it's a known Firebase error structure
+      if (error && typeof error === 'object' && 'code' in error && 'message' in error) {
+        errorMessage = `Authentication failed: ${error.message} (${error.code})`;
+      } else if (error instanceof Error) {
+        errorMessage = `Authentication failed: ${error.message}`;
+      }
+
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Login Failed',
+        detail: errorMessage,
+      });
+
+      // Re-throw the error so the caller can handle it if needed
+      throw error;
+    }
   }
 
-  LogOut(saveStore: any) {
-    return this.afAuth.signOut().then(() => {
+  /**
+   * Sign out
+   */
+  async logOut(): Promise<void> {
+    try {
+      await signOut(this.firebaseAuth);
       this.messageService.add({
         severity: 'success',
         summary: 'Logout Successful!',
         detail: 'You have been logged out!',
       });
-      localStorage.setItem('user', '');
-      this.userData = null;
-      this.authChange.next(true);
 
-      const string = localStorage.getItem('Digimon-Card-Collector');
-      const save = JSON.parse(
-        string ??
-          '{version: 1, collection:[], decks: [], settings: {cardSize: 50, collectionMode: false, collectionMode: false, collectionMinimum: 1,' +
-            '  showPreRelease: true,' +
-            '  showStampedCards: true,' +
-            '  showAACards: true,' +
-            '  sortDeckOrder: "Level"}}',
-      );
-      saveStore.updateSave(save);
-    });
-  }
-
-  createUserData(user: User, save: any, saveStore: any) {
-    let userData: IUser = !save
-      ? {
-          uid: user.uid,
-          displayName: user.displayName ?? '',
-          photoURL: user.photoURL ?? '',
-          save: {
-            uid: user.uid,
-            photoURL: user.photoURL ?? '',
-            displayName: user.displayName ?? '',
-            version: 1,
-            collection: [],
-            decks: [],
-            settings: emptySettings,
-          },
-        }
-      : {
-          uid: user.uid,
-          displayName: user.displayName ?? '',
-          photoURL: user.photoURL ?? '',
-          save,
-        };
-
-    if (!userData.save.uid) {
-      userData.save.uid = user.uid;
-    }
-    if (!userData.save.displayName) {
-      userData.save.displayName = user.displayName ?? '';
-    }
-    if (!userData.save.photoURL) {
-      userData.save.photoURL = user.photoURL ?? '';
-    }
-
-    localStorage.setItem('user', JSON.stringify(userData));
-    saveStore.updateSave(
-      save ?? {
-        uid: user.uid,
-        photoURL: user.photoURL ?? '',
-        displayName: user.displayName ?? '',
-        version: 1,
-        collection: [],
-        decks: [],
-        settings: emptySettings,
-      },
-    );
-
-    this.userData = userData;
-
-    this.digimonBackendService
-      .updateSave(this.userData.save)
-      .pipe(first())
-      .subscribe();
-
-    this.authChange.next(true);
-  }
-
-  SetUserData(user: User | null, saveStore: any) {
-    if (!user) return;
-    // eslint-disable-next-line no-console
-    console.log('User-ID: ', user.uid);
-    this.digimonBackendService
-      .getSave(user.uid)
-      .pipe(
-        first(),
-        catchError((e) => {
-          // eslint-disable-next-line no-console
-          console.log('No save found creating a new one!');
-          this.createUserData(user, this.getLocalStorageSave(), saveStore);
-          return of(null);
-        }),
-      )
-      .subscribe((save: ISave | null) => {
-        if (!save) {
-          return;
-        }
-        this.createUserData(user, save, saveStore);
+      this.userSignal.set(null);
+    } catch (error) {
+      console.error('Logout Error:', error);
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Logout Failed',
+        detail: 'Could not log out',
       });
+    }
   }
 
   /**
-   * Load the User-Save from the backend or local storage
-   * Check if the user is in the cache, load the save from the backend.
-   * Otherwise, check the local storage for an offline save or create a new save.
+   * Load the current save - used on application init
    */
   loadSave(): Observable<ISave> {
-    if (!this.userInLocalStorage()) {
-      return this.loadLocalStorageSave();
+    if (this.currentUser()) {
+      // User is logged in, get save from backend
+      return this.digimonBackendService.getSave(this.currentUser().uid).pipe(
+        catchError(() => {
+          console.log('Failed to load save from backend, using local save');
+          return of(this.getLocalStorageSave() || emptySave);
+        }),
+      );
     }
 
-    return this.digimonBackendService
-      .getSave(this.userData!.uid)
-      .pipe(retry(5));
+    // No user logged in, use local save
+    return of(this.getLocalStorageSave() || emptySave);
   }
 
-  // Check local storage for a backup save, if there is none create a new save
-  private loadLocalStorageSave(): Observable<ISave> {
+  /**
+   * Get save from local storage
+   */
+  getLocalStorageSave(): ISave | null {
     const localStorageItem = localStorage.getItem('Digimon-Card-Collector');
-    let localStorageSave: ISave | null = localStorageItem
-      ? JSON.parse(localStorageItem)
-      : null;
+    if (!localStorageItem) return null;
 
-    if (localStorageSave) {
-      localStorageSave =
-        this.digimonBackendService.checkSaveValidity(localStorageSave);
-      return of(localStorageSave);
+    try {
+      const localSave = JSON.parse(localStorageItem);
+      return this.digimonBackendService.checkSaveValidity(localSave);
+    } catch (e) {
+      console.error('Error parsing local save:', e);
+      return null;
     }
-    return of(emptySave);
   }
 
-  private getLocalStorageSave(): ISave {
-    const localStorageItem = localStorage.getItem('Digimon-Card-Collector');
-    let localStorageSave: ISave | null = localStorageItem
-      ? JSON.parse(localStorageItem)
-      : null;
-    return localStorageSave || emptySave;
+  /**
+   * Create a new save object for a user
+   */
+  private createNewSave(user: User, existingSave: ISave | null): ISave {
+    if (existingSave) {
+      return this.ensureSaveHasUserInfo(existingSave, user);
+    }
+
+    return {
+      uid: user.uid,
+      photoURL: user.photoURL || '',
+      displayName: user.displayName || '',
+      version: 1,
+      collection: [],
+      decks: [],
+      settings: emptySettings,
+    };
+  }
+
+  /**
+   * Ensure save has user information
+   */
+  private ensureSaveHasUserInfo(save: ISave, user: User): ISave {
+    return {
+      ...save,
+      uid: user.uid,
+      displayName: user.displayName || save.displayName || '',
+      photoURL: user.photoURL || save.photoURL || '',
+    };
   }
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
-import { get, getDatabase, ref, update } from '@angular/fire/database';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -8,13 +8,11 @@ import { get, getDatabase, ref, update } from '@angular/fire/database';
 export class DatabaseService {
   constructor(public database: AngularFireDatabase) {}
 
-  loadChangelog(): Promise<any> {
-    const db = getDatabase();
-    return get(ref(db, 'blog/changelog'));
+  loadChangelog(): Observable<any> {
+    return this.database.object('blog/changelog').valueChanges();
   }
 
   saveChangelog(changelog: any) {
-    const db = getDatabase();
-    return update(ref(db, 'blog/changelog'), { text: changelog });
+    return this.database.object('blog/changelog').update({ text: changelog });
   }
 }

@@ -1,15 +1,9 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  effect,
-  inject,
-} from '@angular/core';
+import { Component, effect, inject } from '@angular/core';
 import { DialogModule } from 'primeng/dialog';
-import { emptyDeck } from '../../../models';
 import { ChangelogDialogComponent } from './dialogs/changelog-dialog.component';
 import { DeckDialogComponent } from './dialogs/deck-dialog.component';
 import { ExportDeckDialogComponent } from './dialogs/export-deck-dialog.component';
-import { SettingsDialogComponent } from './dialogs/settings-dialog.component';
+import { SettingsDialogComponent } from './dialogs/settings-dialog/settings-dialog.component';
 import { ViewCardDialogComponent } from './dialogs/view-card-dialog.component';
 import { DialogStore } from '../../store/dialog.store';
 
@@ -48,7 +42,7 @@ import { DialogStore } from '../../store/dialog.store';
       [dismissableMask]="true"
       [resizable]="false"
       header="Settings"
-      styleClass="background-darker surface-ground w-full h-full max-w-6xl min-h-[500px]">
+      styleClass="background-darker surface-ground w-full h-full max-w-6xl min-h-[500px] p-5">
       <digimon-settings-dialog></digimon-settings-dialog>
     </p-dialog>
 
@@ -82,8 +76,8 @@ import { DialogStore } from '../../store/dialog.store';
     SettingsDialogComponent,
     ViewCardDialogComponent,
     ExportDeckDialogComponent,
-    DeckDialogComponent
-  ]
+    DeckDialogComponent,
+  ],
 })
 export class DialogComponent {
   dialogStore = inject(DialogStore);
