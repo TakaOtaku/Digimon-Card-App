@@ -27,10 +27,25 @@ jobs:
       - name: Run Python script
         run: python scripts/python/Wiki/GetDataFromWiki.py
 
-      - name: Commit everything
+      - name: Check for changes
+        id: git_status
         run: |
-          git config --local user.email "christian_bayer@yahoo.de"
-          git config --local user.name "TakaOtaku"
+          # Check if there are any changes to commit
+          # --porcelain prints output in an easily parsable format
+          # If there are changes, the command will output text; otherwise, it will be empty.
+          if [[ -n $(git status --porcelain) ]]; then
+            echo "Changes detected."
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "No changes to commit."
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit everything
+        if: steps.git_status.outputs.changed == 'true'
+        run: |
+          git config --local user.email "digimoncard.app@gmail.de"
+          git config --local user.name "DigimonCardApp"
           git add -A
           git commit -am "[Automatic] Update Cards"
           git push
@@ -58,7 +73,7 @@ jobs:
           port: 21
           username: ${{ secrets.PROD_USER }}
           password: ${{ secrets.PROD_PASSWORD }}
-          local-dir: ./dist/digimon-card-game-collector/assets/
+          local-dir: ./dist/digimon-card-game-collector/browser/assets/
           server-dir: ./public_html/assets/
       - name: 📂 Sync server files
         uses: SamKirkland/FTP-Deploy-Action@4.3.2
