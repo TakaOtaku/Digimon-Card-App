@@ -998,7 +998,7 @@
   "BT10-059": [
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: If my opponent does not have any Digimon in play so there is no target for \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon (Trash the top card. You can't trash past level 3 cards), can I still place this card under 1 of my Digimon that has the [Legend-Arms]/[Xros Heart]\u00a0trait when activating this card's [On Play] effect?"
+      "question": "Q: If my opponent does not have any Digimon in play so there is no target for \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon (Trash the top card. You can't trash past level 3 cards), can I still place this card under 1 of my Digimon that has the [Legend-Arms] or [Xros Heart]\u00a0trait when activating this card's [On Play] effect?"
     }
   ],
   "BT10-061": [
@@ -1617,8 +1617,8 @@
   ],
   "BT11-072": [
     {
-      "answer": "A: Yes, you can add 1 card with the [Cyborg]/[Machine]\u00a0trait to your hand or place it under this Digimon as its bottom digivolution card even when no [Analogman] is among the revealed cards.[1]",
-      "question": "Q: If there is no [Analogman] among the cards revealed by this card's effect, can I add 1 card with the [Cyborg]/[Machine]\u00a0trait to my hand or place it under this Digimon as its bottom digivolution card?"
+      "answer": "A: Yes, you can add 1 card with the [Cyborg] or [Machine]\u00a0trait to your hand or place it under this Digimon as its bottom digivolution card even when no [Analogman] is among the revealed cards.[1]",
+      "question": "Q: If there is no [Analogman] among the cards revealed by this card's effect, can I add 1 card with the [Cyborg] or [Machine]\u00a0trait to my hand or place it under this Digimon as its bottom digivolution card?"
     },
     {
       "answer": "A: Yes, you can.[1]",
@@ -2375,8 +2375,8 @@
       "question": "Q: [Shoutmon]'s digivolution cards are trashed when I place it in this Digimon's digivolution cards for the \"When this card would be played\" effect. Can I DigiXros with those trashed cards and place them in this Digimon's digivolution cards?"
     },
     {
-      "answer": "A: It means that you can DigiXros with as many cards as you like, as long as all the cards have the [Xros Heart]/[Blue Flare]\u00a0trait and different card numbers.[1]",
-      "question": "Q: What does \"\u221e Digimon cards w/[Xros Heart]/[Blue Flare]\u00a0trait & different card numbers\" in this card's DigiXros requirements mean?"
+      "answer": "A: It means that you can DigiXros with as many cards as you like, as long as all the cards have the [Xros Heart] or [Blue Flare]\u00a0trait and different card numbers.[1]",
+      "question": "Q: What does \"\u221e Digimon cards w/[Xros Heart] or [Blue Flare]\u00a0trait & different card numbers\" in this card's DigiXros requirements mean?"
     },
     {
       "answer": "A: No, it's not DigiXros if you don't place any cards.[1]",
@@ -2972,7 +2972,7 @@
     },
     {
       "answer": "A: No, this card's effect does not allow ignoring digivolution requirements, so you can only digivolve into a card that meets the digivolution requirements.[2]",
-      "question": "Q: When a Digimon card with the [Dark Animal]/[SoC]\u00a0trait is trashed from my hand, can I use this card's inherited effect to digivolve into that card regardless of its digivolution requirements?"
+      "question": "Q: When a Digimon card with the [Dark Animal] or [SoC]\u00a0trait is trashed from my hand, can I use this card's inherited effect to digivolve into that card regardless of its digivolution requirements?"
     },
     {
       "answer": "A: No, you must pay the digivolution cost.[2]",
@@ -3236,7 +3236,7 @@
   "BT14-056": [
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: If one of the cards revealed from my deck by this card's [On Play] effect is a Tamer card or Option card with the [D-Brigade]/[DigiPolice]\u00a0trait, can I add that card to my hand?"
+      "question": "Q: If one of the cards revealed from my deck by this card's [On Play] effect is a Tamer card or Option card with the [D-Brigade] or [DigiPolice]\u00a0trait, can I add that card to my hand?"
     },
     {
       "answer": "A: Yes, it can. This effect can interrupt the removal of a card from the battle area, therefore by deleting 1 of your other Digimon with the [D-Brigade]\u00a0trait, this card will be prevented from being placed in your other Digimon's digivolution cards.[1]",
@@ -3258,7 +3258,7 @@
     },
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: If one of the cards revealed from my deck by this card's [When Attacking] effect is a Tamer card with the [D-Brigade]/[DigiPolice]\u00a0trait and a play cost of 3 or less, can I play that card?"
+      "question": "Q: If one of the cards revealed from my deck by this card's [When Attacking] effect is a Tamer card with the [D-Brigade] or [DigiPolice]\u00a0trait and a play cost of 3 or less, can I play that card?"
     },
     {
       "answer": "A: \"When [...] would leave the battle area\" refers to when this Digimon is placed in the trash, returned to the hand/deck, placed in the security stack, moved to the breeding area, or placed under another card.[1]",
@@ -3290,7 +3290,7 @@
   "BT14-064": [
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: If one of the cards revealed from my deck by this card's [On Play] [When Digivolving] effect is a Tamer card with the [D-Brigade]/[DigiPolice]\u00a0trait and a play cost of 4 or less, can I play that card?"
+      "question": "Q: If one of the cards revealed from my deck by this card's [On Play] [When Digivolving] effect is a Tamer card with the [D-Brigade] or [DigiPolice]\u00a0trait and a play cost of 4 or less, can I play that card?"
     }
   ],
   "BT14-065": [
@@ -3316,7 +3316,7 @@
   "BT14-068": [
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: If one of the cards revealed from my deck by this card's [End of Your Turn] effect is a Tamer card with the [D-Brigade]/[DigiPolice]\u00a0trait, can I play that card?"
+      "question": "Q: If one of the cards revealed from my deck by this card's [End of Your Turn] effect is a Tamer card with the [D-Brigade] or [DigiPolice]\u00a0trait, can I play that card?"
     }
   ],
   "BT14-072": [
@@ -3378,7 +3378,7 @@
     },
     {
       "answer": "A: No, you can't. This effect is a \"You may play\" effect, but it doesn't include \"up to,\" therefore you must choose to either play no cards or as many as possible.[1]",
-      "question": "Q: Can I use this card's [When Digivolving] effect to play just 2 of the target cards from my trash when [Eiji Nagasumi] is in this Digimon's digivolution cards and I have 3 or more level 4 or lower cards with the [Dark Animal]/[SoC]\u00a0trait in my trash?"
+      "question": "Q: Can I use this card's [When Digivolving] effect to play just 2 of the target cards from my trash when [Eiji Nagasumi] is in this Digimon's digivolution cards and I have 3 or more level 4 or lower cards with the [Dark Animal] or [SoC]\u00a0trait in my trash?"
     },
     {
       "answer": "A: The memory will move to 3 on your opponent's side, and the turn will end if there are no other effects pending activation, etc.[1]",
@@ -3836,11 +3836,11 @@
   "BT15-055": [
     {
       "answer": "A: Yes, even if you only reveal one of the applicable cards, you can still add it to your hand.[1]",
-      "question": "Q: If the cards I reveal from my deck for this card's [On Play] effect include only either a card with the [Machine]/[Cyborg]\u00a0trait or a black Tamer card, can I only add 1 card to my hand?"
+      "question": "Q: If the cards I reveal from my deck for this card's [On Play] effect include only either a card with the [Machine] or [Cyborg]\u00a0trait or a black Tamer card, can I only add 1 card to my hand?"
     },
     {
       "answer": "A: No. If you have cards that are targets of this effect, you must add as many cards to your hand as possible.[1]",
-      "question": "Q: If the cards I reveal from my deck for this card's [On Play] effect include both a card with the [Machine]/[Cyborg]\u00a0trait and a black Tamer card, can I choose to only add one of them to my hand, and place the remaining cards at the bottom of my deck?"
+      "question": "Q: If the cards I reveal from my deck for this card's [On Play] effect include both a card with the [Machine] or [Cyborg]\u00a0trait and a black Tamer card, can I choose to only add one of them to my hand, and place the remaining cards at the bottom of my deck?"
     }
   ],
   "BT15-056": [
@@ -3890,11 +3890,11 @@
   "BT15-064": [
     {
       "answer": "A: When only 1 of such cards is revealed, it's placed as this Digimon's bottom digivolution card according to the effect's processing order. You can't add a card to your hand.[1]",
-      "question": "Q: What happens when I use this card's [On Play] [When Digivolving] effect and only 1 card with the [Machine]/[Cyborg]/[SoC]\u00a0trait is among the revealed cards?"
+      "question": "Q: What happens when I use this card's [On Play] [When Digivolving] effect and only 1 card with the [Machine], [Cyborg] or [SoC]\u00a0trait is among the revealed cards?"
     },
     {
       "answer": "A: Yes, that's correct.[1]",
-      "question": "Q: Does the card added to the hand from among the revealed cards for this card's [On Play] [When Digivolving] effect also have to have the [Machine]/[Cyborg]/[SoC]\u00a0trait?"
+      "question": "Q: Does the card added to the hand from among the revealed cards for this card's [On Play] [When Digivolving] effect also have to have the [Machine], [Cyborg] or [SoC]\u00a0trait?"
     }
   ],
   "BT15-066": [
@@ -4104,7 +4104,7 @@
   "BT15-096": [
     {
       "answer": "A: Yes, that's correct.[1]",
-      "question": "Q: Can I only trash cards with the [Machine]/[Cyborg]\u00a0trait from among the cards revealed from my deck for this card's [Main] and [Security] effects?"
+      "question": "Q: Can I only trash cards with the [Machine] or [Cyborg]\u00a0trait from among the cards revealed from my deck for this card's [Main] and [Security] effects?"
     },
     {
       "answer": "A: When only 1 of such cards is revealed, it's added to the hand according to the effect's processing order. You can't trash a card.[1]",
@@ -4244,15 +4244,15 @@
   "BT16-024": [
     {
       "answer": "A: No, this card's effect does not allow ignoring digivolution requirements, so you can only digivolve into a card that meets the digivolution requirements.[1]",
-      "question": "Q: When I use this card's [On Play] [When Digivolving] effect to digivolve it into a Digimon card with the [Angel]/[Three Great Angels]\u00a0trait in my security stack, can it digivolve regardless of its digivolution requirements?"
+      "question": "Q: When I use this card's [On Play] [When Digivolving] effect to digivolve it into a Digimon card with the [Angel] or [Three Great Angels]\u00a0trait in my security stack, can it digivolve regardless of its digivolution requirements?"
     },
     {
       "answer": "A: No, you can't.[1]",
-      "question": "Q: Can I use an effect that digivolves my Digimon to digivolve this Digimon into a Digimon card with the [Angel]/[Three Great Angels]\u00a0trait in my security stack?"
+      "question": "Q: Can I use an effect that digivolves my Digimon to digivolve this Digimon into a Digimon card with the [Angel] or [Three Great Angels]\u00a0trait in my security stack?"
     },
     {
       "answer": "A: Yes, they trigger.[1]",
-      "question": "Q: I used this card's [On Play] [When Digivolving] effect to digivolve into a card with the [Angel]/[Three Great Angels]\u00a0trait in my security stack, then I placed 1 Digimon card with the [Angel]/[Archangel]/[Three Great Angels]\u00a0trait from the hand at the bottom of my security stack.  The number of cards in my security stack remained the same, but do \"when a card is removed from a security stack\" or \"When a card is added to a security stack\" effects trigger?"
+      "question": "Q: I used this card's [On Play] [When Digivolving] effect to digivolve into a card with the [Angel] or [Three Great Angels]\u00a0trait in my security stack, then I placed 1 Digimon card with the [Angel], [Archangel] or [Three Great Angels]\u00a0trait from the hand at the bottom of my security stack.  The number of cards in my security stack remained the same, but do \"when a card is removed from a security stack\" or \"When a card is added to a security stack\" effects trigger?"
     }
   ],
   "BT16-025": [
@@ -4280,7 +4280,7 @@
   "BT16-030": [
     {
       "answer": "A: No, this card's effect does not allow ignoring digivolution requirements, so you can only digivolve into a card that meets the digivolution requirements.[1]",
-      "question": "Q: When I use this card's [Start of Your Main Phase] [On Play] effect to digivolve it into a level 4 Digimon card with the [Holy Beast]/[Free]\u00a0trait in the trash, can it digivolve regardless of its digivolution requirements?"
+      "question": "Q: When I use this card's [Start of Your Main Phase] [On Play] effect to digivolve it into a level 4 Digimon card with the [Holy Beast] or [Free]\u00a0trait in the trash, can it digivolve regardless of its digivolution requirements?"
     }
   ],
   "BT16-032": [
@@ -4324,7 +4324,7 @@
   "BT16-040": [
     {
       "answer": "A: No, this card's effect does not allow ignoring digivolution requirements, so you can only digivolve into a card that meets the digivolution requirements.[1]",
-      "question": "Q: When I use this card's [Start of Your Main Phase] [On Play] effect to digivolve it into a level 4 Digimon card with the [Insectoid]/[Free]\u00a0trait in the trash, can it digivolve regardless of its digivolution requirements?"
+      "question": "Q: When I use this card's [Start of Your Main Phase] [On Play] effect to digivolve it into a level 4 Digimon card with the [Insectoid] or [Free]\u00a0trait in the trash, can it digivolve regardless of its digivolution requirements?"
     }
   ],
   "BT16-043": [
@@ -4410,7 +4410,7 @@
   "BT16-061": [
     {
       "answer": "A: No, this card's effect does not allow ignoring digivolution requirements, so you can only digivolve into a card that meets the digivolution requirements.[1]",
-      "question": "Q: When I use this card's [All Turns] effect to digivolve it into a Digimon card with the [Beast Dragon]/[Undead]/[SoC]\u00a0trait in the hand, can it digivolve regardless of its digivolution requirements?"
+      "question": "Q: When I use this card's [All Turns] effect to digivolve it into a Digimon card with the [Beast Dragon], [Undead] or [SoC]\u00a0trait in the hand, can it digivolve regardless of its digivolution requirements?"
     }
   ],
   "BT16-062": [
@@ -4756,11 +4756,11 @@
   "BT17-009": [
     {
       "answer": "A: Yes, even if you only reveal one of the applicable cards, you can still add it to your hand.[1]",
-      "question": "Q: If the 3 cards I reveal from my deck for this card's effect include only either a card with the [Hybrid]/[Ten Warriors]\u00a0trait or a Tamer card with an inherited effect, can I just add that 1 card to my hand?"
+      "question": "Q: If the 3 cards I reveal from my deck for this card's effect include only either a card with the [Hybrid] or [Ten Warriors]\u00a0trait or a Tamer card with an inherited effect, can I just add that 1 card to my hand?"
     },
     {
       "answer": "A: No. If you have cards that are targets of this effect, you must add as many cards to your hand as possible.[1]",
-      "question": "Q: If the 3 cards I reveal from my deck for this card's effect include both a card with the [Hybrid]/[Ten Warriors]\u00a0trait and a Tamer card with an inherited effect, can I choose to only add one of them to my hand, and place the remaining cards at the bottom of my deck?"
+      "question": "Q: If the 3 cards I reveal from my deck for this card's effect include both a card with the [Hybrid] or [Ten Warriors]\u00a0trait and a Tamer card with an inherited effect, can I choose to only add one of them to my hand, and place the remaining cards at the bottom of my deck?"
     },
     {
       "answer": "A: It means a Tamer card with \"Inherited Effect\" in its lower text.  A Tamer card with a [Security] effect in its lower text isn't a \"Tamer card with inherited effects.\"[1]",
@@ -4920,11 +4920,11 @@
   "BT17-020": [
     {
       "answer": "A: Yes, even if you only reveal one of the applicable cards, you can still add it to your hand.[1]",
-      "question": "Q: If the 3 cards I reveal from my deck for this card's effect include only either a card with the [Hybrid]/[Ten Warriors]\u00a0trait or a Tamer card with an inherited effect, can I just add that 1 card to my hand?"
+      "question": "Q: If the 3 cards I reveal from my deck for this card's effect include only either a card with the [Hybrid] or [Ten Warriors]\u00a0trait or a Tamer card with an inherited effect, can I just add that 1 card to my hand?"
     },
     {
       "answer": "A: No. If you have cards that are targets of this effect, you must add as many cards to your hand as possible.[1]",
-      "question": "Q: If the 3 cards I reveal from my deck for this card's effect include both a card with the [Hybrid]/[Ten Warriors]\u00a0trait and a Tamer card with an inherited effect, can I choose to only add one of them to my hand, and place the remaining cards at the bottom of my deck?"
+      "question": "Q: If the 3 cards I reveal from my deck for this card's effect include both a card with the [Hybrid] or [Ten Warriors]\u00a0trait and a Tamer card with an inherited effect, can I choose to only add one of them to my hand, and place the remaining cards at the bottom of my deck?"
     },
     {
       "answer": "A: It means a Tamer card with \"Inherited Effect\" in its lower text.  A Tamer card with a [Security] effect in its lower text isn't a \"Tamer card with inherited effects.\"[1]",
@@ -10538,15 +10538,15 @@
   "BT5-092": [
     {
       "answer": "A: No, digivolving Digimon in your breeding area doesn't trigger the effect that reduces digivolution cost by 1.[1]",
-      "question": "Q: I digivolve a Digimon in my breeding area into a Digimon card with [Greymon]/[Garurumon]/[Omnimon]\u00a0in its name. Can I use this Tamer's effect to reduce the digivolution cost by 1?"
+      "question": "Q: I digivolve a Digimon in my breeding area into a Digimon card with [Greymon], [Garurumon] or [Omnimon]\u00a0in its name. Can I use this Tamer's effect to reduce the digivolution cost by 1?"
     },
     {
       "answer": "A: Yes, each copy of this Tamer may be be suspended to reduce the digivolution cost by 1 each.[1]",
       "question": "Q: Does the second effect of this Tamer stack if there are multiple copies in play in my battle area?"
     },
     {
-      "answer": "A: No, [ST5-04 ToyAgumon] is not named [Agumon]/[Gabumon]. The effect to play a Digimon does not have \"in its name\" in the card text.[2]",
-      "question": "Q: Can I play [ToyAgumon]/[Agumon Expert] with this card's [On Play] effect?"
+      "answer": "A: No, [ST5-04 ToyAgumon] is not named [Agumon] or [Gabumon]. The effect to play a Digimon does not have \"in its name\" in the card text.[2]",
+      "question": "Q: Can I play [ToyAgumon] or [Agumon Expert] with this card's [On Play] effect?"
     },
     {
       "answer": "A: This card is meant to have a [Your Turn] effect.[3]",
@@ -13020,7 +13020,7 @@
     },
     {
       "answer": "A: No, you must fulfil the condition to reveal this card from your hand.",
-      "question": "Q: Can I reveal this card in my hand if I don't have a Digimon [Justimon]/[Raidenmon]\u00a0in its name in play?"
+      "question": "Q: Can I reveal this card in my hand if I don't have a Digimon [Justimon] or [Raidenmon]\u00a0in its name in play?"
     }
   ],
   "BT9-043": [
@@ -13089,7 +13089,7 @@
   ],
   "BT9-052": [
     {
-      "answer": "A: No, you can\u2019t because this effect specifies the card name and it\u2019s required to meet the condition you have cards with [Okuwamon]/[X Antibody] in its digivolution cards. It does not refer to the traits of the cards.",
+      "answer": "A: No, you can\u2019t because this effect specifies the card name and it\u2019s required to meet the condition you have cards with [Okuwamon] or [X Antibody] in its digivolution cards. It does not refer to the traits of the cards.",
       "question": "Q: The effect of \"If you have [Okuwamon]\n"
     }
   ],
@@ -13104,7 +13104,7 @@
     },
     {
       "answer": "A: No, you must fulfil the condition to reveal this card from your hand.",
-      "question": "Q: Can I reveal this card in my hand if I don't have a Digimon [Justimon]/[Raidenmon]\u00a0in its name in play?"
+      "question": "Q: Can I reveal this card in my hand if I don't have a Digimon [Justimon] or [Raidenmon]\u00a0in its name in play?"
     }
   ],
   "BT9-055": [
@@ -14808,7 +14808,7 @@
   "EX3-045": [
     {
       "answer": "A: Yes.",
-      "question": "Q: If both a card with [Vegetation]/[Plant]/[Fairy]\u00a0in any of its traits are revealed with this effect, must I add both of them to hand?"
+      "question": "Q: If both a card with [Vegetation], [Plant] or [Fairy]\u00a0in any of its traits are revealed with this effect, must I add both of them to hand?"
     },
     {
       "answer": "A: Yes, \"[Vegetation]\u00a0in any of its traits\" includes the following traits:Category:VegetationCategory:Ancient PlantCategory:Carnivorous Plant\n",
@@ -15026,7 +15026,7 @@
   "EX4-014": [
     {
       "answer": "A: Yes, it does.[1]",
-      "question": "Q: Does this card's effect also activate when an opponent's Digimon with the [Blue Flare]/[Twilight]\u00a0trait is played during my turn?"
+      "question": "Q: Does this card's effect also activate when an opponent's Digimon with the [Blue Flare] or [Twilight]\u00a0trait is played during my turn?"
     },
     {
       "answer": "A: No, you can't. If Digimon with the [Blue Flare] and [Twilight]\u00a0traits are played by separate effects, this card's effect will separately trigger for each trait. Because of the rule that states that an effect triggered afterward will take precedence for activation, for the situation stated in your question, \"\"return 1 Digimon card with DigiXros requirements from your trash to your hand\"\" will activate by playing the Digimon with the [Twilight]\u00a0trait, but because the effect is a [Once Per Turn] effect, \uff1cDraw 1\uff1e doesn't activate by playing the Digimon with the [Blue Flare]\u00a0trait.[1]",
@@ -15410,11 +15410,11 @@
   "EX5-008": [
     {
       "answer": "A: Yes, even if you only reveal one of the applicable cards, you can still add it to your hand.[1]",
-      "question": "Q: If the cards revealed for this card's [On Play][When Digivolving] effect include only either 1 card with the [Light Fang]\u00a0trait or 1 card with the [Night Claw]/[Galaxy]\u00a0trait, can I just add that 1 card to my hand?"
+      "question": "Q: If the cards revealed for this card's [On Play][When Digivolving] effect include only either 1 card with the [Light Fang]\u00a0trait or 1 card with the [Night Claw] or [Galaxy]\u00a0trait, can I just add that 1 card to my hand?"
     },
     {
       "answer": "A: No. If you have cards that are targets of this effect, you must add as many cards to your hand as possible.[1]",
-      "question": "Q: If the 3 cards I reveal from my deck for this card's [On Play][When Digivolving] effect include both a card with the [Light Fang]\u00a0trait and a card with the [Night Claw]/[Galaxy]\u00a0trait, can I choose to only add one of them to my hand, and place the remaining cards at the bottom of my deck?"
+      "question": "Q: If the 3 cards I reveal from my deck for this card's [On Play][When Digivolving] effect include both a card with the [Light Fang]\u00a0trait and a card with the [Night Claw] or [Galaxy]\u00a0trait, can I choose to only add one of them to my hand, and place the remaining cards at the bottom of my deck?"
     }
   ],
   "EX5-009": [
@@ -15498,7 +15498,7 @@
   "EX5-012": [
     {
       "answer": "A: No, it isn't.  This card's effect reads \"when this card would be [...] digivolved into,\" therefore the effect doesn't activate for digivolutions from this card.[1]",
-      "question": "Q: If this Digimon has 3 or more digivolution cards and I have a Digimon with the [Light Fang]/[Night Claw]/[Galaxy]\u00a0trait, is the digivolution cost still reduced by 2 when digivolving this Digimon into a Digimon card in my hand?"
+      "question": "Q: If this Digimon has 3 or more digivolution cards and I have a Digimon with the [Light Fang], [Night Claw] or [Galaxy]\u00a0trait, is the digivolution cost still reduced by 2 when digivolving this Digimon into a Digimon card in my hand?"
     }
   ],
   "EX5-013": [
@@ -15552,11 +15552,11 @@
   "EX5-017": [
     {
       "answer": "A: Yes, even if you only reveal one of the applicable cards, you can still add it to your hand.[1]",
-      "question": "Q: If the 3 cards revealed for this card's effect include only either 1 card with the [Light Fang]\u00a0trait or 1 card with the [Night Claw]/[Galaxy]\u00a0trait, can I just add that 1 card to my hand?"
+      "question": "Q: If the 3 cards revealed for this card's effect include only either 1 card with the [Light Fang]\u00a0trait or 1 card with the [Night Claw] or [Galaxy]\u00a0trait, can I just add that 1 card to my hand?"
     },
     {
       "answer": "A: No. If you have cards that are targets of this effect, you must add as many cards to your hand as possible.[1]",
-      "question": "Q: If the 3 cards revealed for this card's effect include 1 card with the [Light Fang]\u00a0trait and 1 card with the [Night Claw]/[Galaxy]\u00a0trait, can I choose to only add one of them to my hand, and place the remaining cards at the bottom of my deck?"
+      "question": "Q: If the 3 cards revealed for this card's effect include 1 card with the [Light Fang]\u00a0trait and 1 card with the [Night Claw] or [Galaxy]\u00a0trait, can I choose to only add one of them to my hand, and place the remaining cards at the bottom of my deck?"
     }
   ],
   "EX5-018": [
@@ -15594,7 +15594,7 @@
   "EX5-020": [
     {
       "answer": "A: No, it isn't.  This card's effect reads \"when this card would be [...] digivolved into,\" therefore the effect doesn't activate for digivolutions from this card.[1]",
-      "question": "Q: If this Digimon has 3 or more digivolution cards and I have a Digimon with the [Night Claw]/[Light Fang]/[Galaxy]\u00a0trait, is the digivolution cost still reduced by 2 when digivolving this Digimon into a Digimon card in my hand?"
+      "question": "Q: If this Digimon has 3 or more digivolution cards and I have a Digimon with the [Night Claw], [Light Fang] or [Galaxy]\u00a0trait, is the digivolution cost still reduced by 2 when digivolving this Digimon into a Digimon card in my hand?"
     }
   ],
   "EX5-021": [
@@ -16074,7 +16074,7 @@
   "EX5-066": [
     {
       "answer": "A: Yes, it activates.[1]",
-      "question": "Q: Does \"return 1 Digimon card with the [Light Fang]/[Night Claw]/[Galaxy]\u00a0trait from your trash to the hand\" in this card's [Main] effect activate when my opponent doesn't have any Digimon?"
+      "question": "Q: Does \"return 1 Digimon card with the [Light Fang], [Night Claw] or [Galaxy]\u00a0trait from your trash to the hand\" in this card's [Main] effect activate when my opponent doesn't have any Digimon?"
     }
   ],
   "EX5-067": [
@@ -16084,7 +16084,7 @@
     },
     {
       "answer": "A: Yes, it activates.[1]",
-      "question": "Q: Does \"you may play 1 Tamer card with the [Night Claw]/[Light Fang]\u00a0trait from your hand without paying the cost\" in this card's [Main] effect activate when my opponent doesn't have any Digimon or Tamers?"
+      "question": "Q: Does \"you may play 1 Tamer card with the [Night Claw] or [Light Fang]\u00a0trait from your hand without paying the cost\" in this card's [Main] effect activate when my opponent doesn't have any Digimon or Tamers?"
     }
   ],
   "EX5-069": [
@@ -16130,17 +16130,17 @@
   "EX5-071": [
     {
       "answer": "A: No, you can't.[1]",
-      "question": "Q: When I don't have any Digimon, can I use this card's effect to reveal a card with the [Deva]/[Four Sovereigns]\u00a0trait and declare to place it as the bottom digivolution card of my Digimon?"
+      "question": "Q: When I don't have any Digimon, can I use this card's effect to reveal a card with the [Deva] or [Four Sovereigns]\u00a0trait and declare to place it as the bottom digivolution card of my Digimon?"
     },
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: If I use this card's effect to reveal an Option card with the [Deva]/[Four Sovereigns]\u00a0trait from my deck, can I place that card as the bottom digivolution card of my Digimon?"
+      "question": "Q: If I use this card's effect to reveal an Option card with the [Deva] or [Four Sovereigns]\u00a0trait from my deck, can I place that card as the bottom digivolution card of my Digimon?"
     }
   ],
   "EX5-072": [
     {
       "answer": "A: No, it doesn't.[1]",
-      "question": "Q: Does \"when this card would be used, reduce the cost by 1 for each [Deva]/[Four Sovereigns]\u00a0trait card with a different name in your trash\" include this card itself when I use it?"
+      "question": "Q: Does \"when this card would be used, reduce the cost by 1 for each [Deva] or [Four Sovereigns]\u00a0trait card with a different name in your trash\" include this card itself when I use it?"
     }
   ],
   "EX5-073": [
@@ -16174,11 +16174,11 @@
   "EX6-003": [
     {
       "answer": "A: Yes, that's correct.[1]",
-      "question": "Q: I used this card's inherited effect to add 1 card from my security stack to the hand and then place 1 Digimon card with the [Angel]/[Archangel]/[Three Great Angels]\u00a0trait from the hand at the bottom of my security stack. At such times, is a card considered to be added to my security stack, allowing \"when a card is added to your security stack\" effects to activate?"
+      "question": "Q: I used this card's inherited effect to add 1 card from my security stack to the hand and then place 1 Digimon card with the [Angel], [Archangel] or [Three Great Angels]\u00a0trait from the hand at the bottom of my security stack. At such times, is a card considered to be added to my security stack, allowing \"when a card is added to your security stack\" effects to activate?"
     },
     {
       "answer": "A: Yes, that's correct.[1]",
-      "question": "Q: I used this card's inherited effect to add 1 card from my security stack to the hand and then place 1 Digimon card with the [Angel]/[Archangel]/[Three Great Angels]\u00a0trait from the hand at the bottom of my security stack. At such times, is a card considered to be removed from my security stack, allowing \"when a card is removed from your security stack\" effects to activate?"
+      "question": "Q: I used this card's inherited effect to add 1 card from my security stack to the hand and then place 1 Digimon card with the [Angel], [Archangel] or [Three Great Angels]\u00a0trait from the hand at the bottom of my security stack. At such times, is a card considered to be removed from my security stack, allowing \"when a card is removed from your security stack\" effects to activate?"
     }
   ],
   "EX6-006": [
@@ -16272,11 +16272,11 @@
   "EX6-017": [
     {
       "answer": "A: Yes, even if you only reveal one of the applicable cards, you can still add it to your hand.[1]",
-      "question": "Q: If the cards I reveal from my deck for this card's [On Play] effect include only either a Digimon card with the [Angel]/[Archangel]\u00a0trait or a card with the [Three Great Angels]\u00a0trait, can I only add 1 card to my hand?"
+      "question": "Q: If the cards I reveal from my deck for this card's [On Play] effect include only either a Digimon card with the [Angel] or [Archangel]\u00a0trait or a card with the [Three Great Angels]\u00a0trait, can I only add 1 card to my hand?"
     },
     {
       "answer": "A: No. If you have cards that are targets of this effect, you must add as many cards to your hand as possible.[2]",
-      "question": "Q: If the cards I reveal from my deck for this card's [On Play] effect include both a Digimon card with the [Angel]/[Archangel]\u00a0trait and a card with the [Three Great Angels]\u00a0trait, can I choose to only add one of them to my hand, and place the remaining cards at the bottom of my deck?"
+      "question": "Q: If the cards I reveal from my deck for this card's [On Play] effect include both a Digimon card with the [Angel] or [Archangel]\u00a0trait and a card with the [Three Great Angels]\u00a0trait, can I choose to only add one of them to my hand, and place the remaining cards at the bottom of my deck?"
     }
   ],
   "EX6-018": [
@@ -16296,11 +16296,11 @@
   "EX6-020": [
     {
       "answer": "A: Yes, even if you only reveal one of the applicable cards, you can still add it to your hand.[1]",
-      "question": "Q: If the cards I reveal from my deck for this card's [On Play] [When Digivolving] effect include only either a card with the [Angel]/[Archangel]/[Fallen Angel]\u00a0trait or a [Mirei Mikagura], can I only add 1 card to my hand?"
+      "question": "Q: If the cards I reveal from my deck for this card's [On Play] [When Digivolving] effect include only either a card with the [Angel], [Archangel] or [Fallen Angel]\u00a0trait or a [Mirei Mikagura], can I only add 1 card to my hand?"
     },
     {
       "answer": "A: No. If you have cards that are targets of this effect, you must add as many cards to your hand as possible.[1]",
-      "question": "Q: If the cards I reveal from my deck for this card's [On Play] [When Digivolving] effect include both a card with the [Angel]/[Archangel]/[Fallen Angel]\u00a0trait and a [Mirei Mikagura], can I choose to only add one of them to my hand, and place the remaining cards at the bottom of my deck?"
+      "question": "Q: If the cards I reveal from my deck for this card's [On Play] [When Digivolving] effect include both a card with the [Angel], [Archangel] or [Fallen Angel]\u00a0trait and a [Mirei Mikagura], can I choose to only add one of them to my hand, and place the remaining cards at the bottom of my deck?"
     }
   ],
   "EX6-021": [
@@ -16584,15 +16584,15 @@
   "EX6-047": [
     {
       "answer": "A: Yes, even if you only reveal one of the applicable cards, you can still add it to your hand.[1]",
-      "question": "Q: If the cards I reveal from my deck for this card's [On Play] effect include only either a card with the [Fallen Angel]/[Demon Lord]\u00a0trait or a purple Option card, can I only add 1 card to my hand?"
+      "question": "Q: If the cards I reveal from my deck for this card's [On Play] effect include only either a card with the [Fallen Angel] or [Demon Lord]\u00a0trait or a purple Option card, can I only add 1 card to my hand?"
     },
     {
       "answer": "A: No. If you have cards that are targets of this effect, you must add as many cards to your hand as possible.[1]",
-      "question": "Q: If the cards I reveal for this card's [On Play] effect include both a card with the [Fallen Angel]/[Demon Lord]\u00a0trait and a purple Option card, can I choose to only add one of them to my hand, and place the remaining cards at the bottom of my deck?"
+      "question": "Q: If the cards I reveal for this card's [On Play] effect include both a card with the [Fallen Angel] or [Demon Lord]\u00a0trait and a purple Option card, can I choose to only add one of them to my hand, and place the remaining cards at the bottom of my deck?"
     },
     {
       "answer": "A: No. Even if you add 2 cards to your hand, you only trash 1 card.[1]",
-      "question": "Q: If I add both a card with the [Fallen Angel]/[Demon Lord]\u00a0trait and a purple Option card to my hand for this card's [On Play] effect, do I trash 2 cards in my hand?"
+      "question": "Q: If I add both a card with the [Fallen Angel] or [Demon Lord]\u00a0trait and a purple Option card to my hand for this card's [On Play] effect, do I trash 2 cards in my hand?"
     }
   ],
   "EX6-048": [
@@ -16730,7 +16730,7 @@
   "EX6-064": [
     {
       "answer": "A: No, you can't.  You can\u2019t ignore digivolution requirements when using this card's [Your Turn] effect.[1]",
-      "question": "Q: Can I use this card's [Your Turn] effect to digivolve into a Digimon card with the [Beastkin]/[Holy Beast]/[Cherub]\u00a0trait in the hand regardless of its digivolution requirements?"
+      "question": "Q: Can I use this card's [Your Turn] effect to digivolve into a Digimon card with the [Beastkin], [Holy Beast] or [Cherub]\u00a0trait in the hand regardless of its digivolution requirements?"
     },
     {
       "answer": "A: Yes, that's correct.[1]",
@@ -16756,7 +16756,7 @@
   "EX6-068": [
     {
       "answer": "A: Yes, that's correct.[1]",
-      "question": "Q: Can I use this card to place this card in the battle area without placing 1 Digimon card with the [Angel]/[Archangel]/[Three Great Angels]\u00a0trait from the hand at the bottom of my security stack?"
+      "question": "Q: Can I use this card to place this card in the battle area without placing 1 Digimon card with the [Angel], [Archangel] or [Three Great Angels]\u00a0trait from the hand at the bottom of my security stack?"
     }
   ],
   "EX6-069": [
@@ -16980,7 +16980,7 @@
   "EX7-050": [
     {
       "answer": "A: No, it doesn't trigger.  Only effects with the [Breeding] icon trigger and activate in the breeding area.[1]",
-      "question": "Q: Does this card's [Your Turn] effect trigger when this card is in the breeding area and would digivolve into a card with the [Dark Dragon]/[Evil Dragon]\u00a0trait?"
+      "question": "Q: Does this card's [Your Turn] effect trigger when this card is in the breeding area and would digivolve into a card with the [Dark Dragon] or [Evil Dragon]\u00a0trait?"
     }
   ],
   "EX7-052": [
@@ -17374,11 +17374,11 @@
     },
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: Can I use this card's [End of Your Turn] effect to place Digi-Egg cards with the [Mineral]/[Rock]\u00a0trait from my trash as digivolution cards?"
+      "question": "Q: Can I use this card's [End of Your Turn] effect to place Digi-Egg cards with the [Mineral] or [Rock]\u00a0trait from my trash as digivolution cards?"
     },
     {
       "answer": "A: No, you can't.  If this card's [End of Your Turn] effect activates, you must place at least 1 card in digivolution cards.  However, if you choose to not activate this effect, it won't activate and you don't place any cards in digivolution cards.[1]",
-      "question": "Q: Can I activate this card's [End of Your Turn] effect but choose to not to place cards with the [Mineral]/[Rock]\u00a0trait from my trash as this Digimon's bottom digivolution cards?"
+      "question": "Q: Can I activate this card's [End of Your Turn] effect but choose to not to place cards with the [Mineral] or [Rock]\u00a0trait from my trash as this Digimon's bottom digivolution cards?"
     }
   ],
   "EX8-060": [
@@ -17442,7 +17442,7 @@
   "EX8-067": [
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: Can I use this card's [Your Turn] effect to place Digi-Egg cards with the [Mineral]/[Rock]\u00a0trait from my trash as digivolution cards?"
+      "question": "Q: Can I use this card's [Your Turn] effect to place Digi-Egg cards with the [Mineral] or [Rock]\u00a0trait from my trash as digivolution cards?"
     }
   ],
   "EX8-068": [
@@ -18324,7 +18324,7 @@
   "P-074": [
     {
       "answer": "A: No, you can't.  The period starting from the use of [BT14-093 Emissary of Hope] until the digivolution is complete and you shuffle your security stack is considered checking your security stack, so it isn't affected by other cards' effects. Therefore, you can't use this card's effect to trash cards from your security stack.[1]",
-      "question": "Q: I used [BT14-093 Emissary of Hope] to digivolve this Digimon into a card with the [Shaman]/[Wizard]\u00a0trait in my security stack. In such cases, can I use this card's [Your Turn] effect to trash cards from my security stack?"
+      "question": "Q: I used [BT14-093 Emissary of Hope] to digivolve this Digimon into a card with the [Shaman] or [Wizard]\u00a0trait in my security stack. In such cases, can I use this card's [Your Turn] effect to trash cards from my security stack?"
     }
   ],
   "P-077": [
@@ -19720,11 +19720,11 @@
   "ST18-04": [
     {
       "answer": "A: Yes, you can.  Even if you only reveal one of the applicable cards, you can still add it to your hand.[1]",
-      "question": "Q: If the 3 cards revealed for this card's [On Play] effect include only either 1 card with [Avian] or [Bird] in any of its traits or 1 card with the [Vortex Warriors]/[LIBERATOR]\u00a0trait, can I just add that 1 card to my hand?"
+      "question": "Q: If the 3 cards revealed for this card's [On Play] effect include only either 1 card with [Avian] or [Bird] in any of its traits or 1 card with the [Vortex Warriors] or [LIBERATOR]\u00a0trait, can I just add that 1 card to my hand?"
     },
     {
       "answer": "A: No, you can't.  If you have cards that are targets of this effect, you must add as many cards to your hand as possible.[1]",
-      "question": "Q: If the 3 cards I reveal from my deck for this card's [On Play] effect include both a card with [Avian] or [Bird] in any of its traits and a card with the [Vortex Warriors]/[LIBERATOR]\u00a0trait, can I choose to only add one of them to my hand, and place the remaining cards at the bottom of my deck?"
+      "question": "Q: If the 3 cards I reveal from my deck for this card's [On Play] effect include both a card with [Avian] or [Bird] in any of its traits and a card with the [Vortex Warriors] or [LIBERATOR]\u00a0trait, can I choose to only add one of them to my hand, and place the remaining cards at the bottom of my deck?"
     }
   ],
   "ST18-05": [
