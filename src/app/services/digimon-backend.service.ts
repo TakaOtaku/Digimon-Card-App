@@ -301,6 +301,16 @@ export class DigimonBackendService {
         save = { ...save, photoURL: '' };
         changedSave = true;
       }
+
+      save.settings.collectionSets = save.settings.collectionSets ?? [];
+      save.settings.showReprintCards = save.settings.showReprintCards ?? false;
+      save.settings.showSpecialRareCards = save.settings.showSpecialRareCards ?? false;
+      save.settings.showReprintCards = save.settings.showReprintCards ?? false;
+      save.settings.deckDisplayTable = save.settings.deckDisplayTable ?? false;
+      save.settings.showRarePullCards = save.settings.showRarePullCards ?? false;
+      save.settings.showNormalCards = save.settings.showNormalCards ?? false;
+
+      save.decks = checkDeckErrors(save.decks);
     }
 
     if (save.settings.cardSet === undefined || save.settings.cardSet === 'Overwrite' || +save.settings.cardSet >>> 0) {
