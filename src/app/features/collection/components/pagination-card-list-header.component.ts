@@ -3,8 +3,8 @@ import { ChangeDetectionStrategy, Component, computed, EventEmitter, inject, Inp
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PaginatorModule } from 'primeng/paginator';
 import { SliderModule } from 'primeng/slider';
-import { SaveStore } from '../../../store/save.store';
-import { DigimonCardStore } from '../../../store/digimon-card.store';
+import { SaveStore } from '@store';
+import { DigimonCardStore } from '@store';
 
 @Component({
   selector: 'digimon-pagination-card-list-header',
@@ -21,7 +21,7 @@ import { DigimonCardStore } from '../../../store/digimon-card.store';
 
       <div [ngClass]="{ 'xl:hidden ': !filterButton }" class="mx-2 mt-2 flex flex-row justify-center absolute right-2">
         <button
-          (click)="filterBox.emit(true)"
+          (click)="closeFilterSidebox()"
           class="flex flex-row sm:justify-center min-w-auto primary-background h-8 w-8 sm:w-24 rounded p-2 text-xs font-semibold text-[#e2e4e6]">
           <i class="pi pi-filter-fill mr-3"></i>
           <span class="hidden sm:block">Filter</span>
@@ -51,5 +51,9 @@ export class PaginationCardListHeaderComponent {
   changeCollectionMode(collectionMode: boolean) {
     const settings = this.saveStore.settings();
     this.saveStore.updateSettings({ ...settings, collectionMode });
+  }
+
+  closeFilterSidebox() {
+    this.filterBox.emit(true);
   }
 }

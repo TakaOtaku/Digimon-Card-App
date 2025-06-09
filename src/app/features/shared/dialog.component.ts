@@ -53,7 +53,7 @@ import { DialogStore } from '../../store/dialog.store';
       [modal]="true"
       [dismissableMask]="true"
       [resizable]="false"
-      styleClass="overflow-x-hidden">
+      styleClass="overflow-x-hidden border-none p-3 m-2">
       <digimon-view-card-dialog></digimon-view-card-dialog>
     </p-dialog>
 

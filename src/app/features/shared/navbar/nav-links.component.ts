@@ -127,7 +127,7 @@ import { DialogModule } from 'primeng/dialog';
           <i class="pi pi-paypal px-1 text-[#e2e4e6] hover:text-[#64B5F6]" style="font-size: 1rem"></i>
         </a>
         <div class="col-span-2 flex align-center justify-center">
-          <p-button class="mx-auto" [link]="true" size="small" (onClick)="showChangelog()" label="Ver. 4.2.1"></p-button>
+          <p-button class="mx-auto" [link]="true" size="small" (onClick)="showChangelog()" label="Ver. 4.2.2"></p-button>
         </div>
       </div>
     </div>

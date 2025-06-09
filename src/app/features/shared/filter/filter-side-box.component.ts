@@ -55,7 +55,7 @@ import { VersionFilterComponent } from './version-filter.component';
           [filterFormControl]="levelFilter"
           title="Level:"
           class="w-full"></digimon-range-slider>
-        <button (click)="levelFilter.setValue([2, 7], { emitEvent: false })" class="w-12 text-[#e2e4e6]" type="button">
+        <button (click)="levelFilter.setValue([2, 7])" class="w-12 text-[#e2e4e6]" type="button">
           <i class="pi pi-refresh"></i>
         </button>
       </div>
@@ -67,7 +67,7 @@ import { VersionFilterComponent } from './version-filter.component';
           [filterFormControl]="playCostFilter"
           title="Play Cost:"
           class="w-full"></digimon-range-slider>
-        <button (click)="playCostFilter.setValue([0, 20], { emitEvent: false })" class="w-12 text-[#e2e4e6]" type="button">
+        <button (click)="playCostFilter.setValue([0, 20])" class="w-12 text-[#e2e4e6]" type="button">
           <i class="pi pi-refresh"></i>
         </button>
       </div>
@@ -79,7 +79,7 @@ import { VersionFilterComponent } from './version-filter.component';
           [filterFormControl]="digivolutionFilter"
           title="Digivolution Cost:"
           class="w-full"></digimon-range-slider>
-        <button (click)="digivolutionFilter.setValue([0, 7], { emitEvent: false })" class="w-12 text-[#e2e4e6]" type="button">
+        <button (click)="digivolutionFilter.setValue([0, 7])" class="w-12 text-[#e2e4e6]" type="button">
           <i class="pi pi-refresh"></i>
         </button>
       </div>
@@ -92,7 +92,7 @@ import { VersionFilterComponent } from './version-filter.component';
           suffix="000"
           title="DP:"
           class="w-full"></digimon-range-slider>
-        <button (click)="dpFilter.setValue([1, 17], { emitEvent: false })" class="w-12 text-[#e2e4e6]" type="button">
+        <button (click)="dpFilter.setValue([1, 17])" class="w-12 text-[#e2e4e6]" type="button">
           <i class="pi pi-refresh"></i>
         </button>
       </div>

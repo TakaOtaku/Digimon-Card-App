@@ -43,7 +43,7 @@ export const DigimonPreset = definePreset(Lara, {
           400: '#ffffff',
           500: '#ffffff', // Text
           600: '{sky.600}',
-          700: '#ffffff', // Text Color
+          700: '#17212f', // Text Color
           800: '#ffffff',
           900: '{sky.900}',
           950: '#17212f', // Default: {sky.950} Background MultiSelect

@@ -1,21 +1,13 @@
 import { NgClass, NgForOf, NgIf, NgStyle } from '@angular/common';
-import {
-  AfterViewChecked,
-  AfterViewInit,
-  ChangeDetectorRef,
-  Component,
-  effect, ElementRef,
-  HostListener,
-  inject, OnDestroy, Renderer2
-} from '@angular/core';
+import { ChangeDetectorRef, Component, effect, HostListener, inject } from '@angular/core';
+import { ImgFallbackDirective } from '@directives';
+import { formatId, withoutJ } from '@functions';
+import { ColorMap, DigimonCard, ICountCard, IDeck, replacements } from '@models';
+import { DialogStore, DigimonCardStore, SaveStore, WebsiteStore } from '@store';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
-import { ImgFallbackDirective } from '@directives';
-import { ColorMap, DigimonCard, ICountCard, IDeck, replacements } from '@models';
-import { formatId, withoutJ } from '@functions';
-import { DialogStore, SaveStore, WebsiteStore, DigimonCardStore } from '@store';
-import { Tooltip, TooltipModule } from 'primeng/tooltip';
+import { TooltipModule } from 'primeng/tooltip';
 
 @Component({
   selector: 'digimon-view-card-dialog',

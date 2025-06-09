@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit } from '@angular/core';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormsModule, ReactiveFormsModule, UntypedFormControl } from '@angular/forms';
 import { SliderModule } from 'primeng/slider';
 import { Subject, takeUntil } from 'rxjs';

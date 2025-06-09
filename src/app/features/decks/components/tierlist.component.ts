@@ -82,6 +82,7 @@ import { TooltipModule } from 'primeng/tooltip';
                 [ngStyle]="{
                   border: '2px solid black',
                   'border-radius': '5px',
+                  background: 'black',
                 }"
                 [alt]="deck.name"
                 class="barsHandle m-auto h-24 cursor-pointer"

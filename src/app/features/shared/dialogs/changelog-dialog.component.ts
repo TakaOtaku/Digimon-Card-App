@@ -6,7 +6,19 @@ import { PanelModule } from 'primeng/panel';
   selector: 'digimon-changelog-dialog',
   template: `
     <div>
-      <p-panel header="Version 4.2.1" [toggleable]="true" [collapsed]="false">
+      <p-panel header="Version 4.2.2" [toggleable]="true" [collapsed]="true">
+        <h1 class="font-bold text-lg underline">Bugfixes</h1>
+        <ul class="list-disc p-5">
+          <li>Filter Sidebox closing on any click</li>
+          <li>Padding on View-Card Dialog was missing, the border was also wrong</li>
+          <li>Filter Reset Buttons did not work</li>
+          <li>Tooltips were completely white</li>
+        </ul>
+        <div class="flex flex-wrap align-middle justify-content-between gap-3">
+          <span class="ml-auto p-text-secondary">Updated 09.06.2025</span>
+        </div>
+      </p-panel>
+      <p-panel header="Version 4.2.1" [toggleable]="true" [collapsed]="true">
         <h1 class="font-bold text-lg underline">Feature</h1>
         <ul class="list-disc p-5">
           <li>Added a "Delete all Decks" Button for the Players that want to start fresh each Meta.</li>
@@ -23,7 +35,7 @@ import { PanelModule } from 'primeng/panel';
           <span class="ml-auto p-text-secondary">Updated 21.05.2025</span>
         </div>
       </p-panel>
-      <p-panel header="Version 4.2.0" [toggleable]="true" [collapsed]="false">
+      <p-panel header="Version 4.2.0" [toggleable]="true" [collapsed]="true">
         <h1 class="font-bold text-lg underline">Feature</h1>
         <ul class="list-disc p-5">
           <li>Updated all Packages to the newest Version.</li>

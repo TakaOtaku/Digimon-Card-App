@@ -14,6 +14,7 @@ import { DigimonCardStore } from '../../store/digimon-card.store';
   selector: 'digimon-test-page',
   template: `
     <button *ngIf="isAdmin()" class="border-2 border-amber-200 bg-amber-400" (click)="updateAllSaves()">Update all Saves</button>
+    <button class="border-2 border-amber-200 bg-amber-400" (click)="getSave()">Get Save</button>
     <button *ngIf="isAdmin()" class="border-2 border-amber-200 bg-amber-400" (click)="updatePriceGuideIds()">Update PriceGuide Ids</button>
     <button *ngIf="isAdmin()" class="border-2 border-amber-200 bg-amber-400" (click)="updatePriceGuideIdsAAs()">
       Update PriceGuide Ids AAs
@@ -244,5 +245,14 @@ export class TestPageComponent implements OnDestroy {
     }
 
     return error ? this.digimonBackendService.updateTournamentDeck(newDecks).pipe(first()) : null;
+  }
+
+  getSave() {
+    this.digimonBackendService
+      .getSave('i49olCvVfANnLm5lCh8oufr3ytR2')
+      .pipe(first())
+      .subscribe((save) => {
+        console.log(save);
+      });
   }
 }

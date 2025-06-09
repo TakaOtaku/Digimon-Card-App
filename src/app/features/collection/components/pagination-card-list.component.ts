@@ -58,7 +58,11 @@ import { FilterStore } from '@store';
 
     <digimon-filter-side-box *ngIf="filterBoxEnabled" class="hidden xl:flex"></digimon-filter-side-box>
 
-    <p-sidebar [(visible)]="filterBox" position="right" styleClass="w-[20rem] md:w-[24rem] overflow-x-hidden overflow-y-auto p-0">
+    <p-sidebar
+      [(visible)]="filterBox"
+      dismissible="false"
+      position="right"
+      styleClass="w-[20rem] md:w-[24rem] overflow-x-hidden overflow-y-auto p-0 border-none">
       <digimon-filter-side-box></digimon-filter-side-box>
     </p-sidebar>
   `,
