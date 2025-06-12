@@ -9171,7 +9171,23 @@
   ],
   "BT3-093": [
     {
-      "answer": "A: One \"Blue Digimon card\" and one \"Green Digimon card.\"[1]",
+      "answer": "A: Yes, if you only reveal one or the other, you only get to add one card to your hand.[1]",
+      "question": "Q: If the cards I reveal from my deck include only either a blue or green Digimon card, can I only add 1 card to my hand?"
+    },
+    {
+      "answer": "A: Yes, you may add them both to your hand.[1]",
+      "question": "Q: If the cards I reveal from my deck include 2 multi-coloured Blue-Green Digimon cards, can I add both of those cards to my hand?"
+    },
+    {
+      "answer": "A: Yes, you can choose to add the Blue-Green Digimon as a Blue Digimon so that there are no other Green Digimon to add.[1]",
+      "question": "Q: If the cards I reveal from my deck include both a Blue-Green Digimon card and a single-coloured Blue Digimon card, can I choose to add just 1 of them to my hand?"
+    },
+    {
+      "answer": "A: Yes, you can choose to add the Blue-Green Digimon as a Green Digimon so that there are no other Blue Digimon to add.[1]",
+      "question": "Q: If the cards I reveal from my deck include both a Blue-Green Digimon card and a single-coloured Green Digimon card, can I choose to add just 1 of them to my hand?"
+    },
+    {
+      "answer": "A: One \"Blue Digimon card\" and one \"Green Digimon card.\"[2]",
       "question": "Q: Which card is added to your hand by this card's [On Play] effect?"
     }
   ],
