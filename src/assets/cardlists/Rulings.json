@@ -8272,7 +8272,7 @@
   "BT21-023": [
     {
       "answer": "A: No, you can't.[1]",
-      "question": "Q: Can I use this card's [On Play] [When Digivolving] effect to link a card that doesn't have [Link] [[[:category:|]]]\u00a0trait: Cost  (Plug this card from the hand or battle area sideways into the specified Digimon in the battle area.)?"
+      "question": "Q: Can I use this card's [On Play] [When Digivolving] effect to link a card that doesn't have [Link]?"
     }
   ],
   "BT21-024": [
@@ -8516,7 +8516,7 @@
   "BT21-073": [
     {
       "answer": "A: No, you can't.[1]",
-      "question": "Q: Can I use this card's [On Play] [When Digivolving] effect to link a card that doesn't have [Link] [[[:category:|]]]\u00a0trait: Cost  (Plug this card from the hand or battle area sideways into the specified Digimon in the battle area.)?"
+      "question": "Q: Can I use this card's [On Play] [When Digivolving] effect to link a card that doesn't have [Link]?"
     },
     {
       "answer": "A: You can give that effect to such Digimon, but Digimon that aren't affected by effects won't be affected by it, therefore the gained effect won't trigger.[1]",
@@ -8524,7 +8524,7 @@
     },
     {
       "answer": "A: Yes, you can choose 1 card from among that Digimon's link cards and trash it.[1]",
-      "question": "Q: If a Digimon's maximum links is increased using \uff1cLink +1\uff1e (Add 1 to this Digimon's maximum links) and has a total of 2 link cards including this card, then it would be removed from the battle area, can I choose from among those cards to trash for this card's [Link] [[[:category:|]]]\u00a0trait: Cost  (Plug this card from the hand or battle area sideways into the specified Digimon in the battle area.) effect?"
+      "question": "Q: If a Digimon's maximum links is increased using \uff1cLink +1\uff1e (Add 1 to this Digimon's maximum links) and has a total of 2 link cards including this card, then it would be removed from the battle area, can I choose from among those cards to trash for this card's [Link] effect?"
     }
   ],
   "BT21-074": [
@@ -8702,7 +8702,7 @@
   "BT21-097": [
     {
       "answer": "A: No, you can't.[1]",
-      "question": "Q: Can I use this card's \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below) effect to link a card that doesn't have [Link] [[[:category:|]]]\u00a0trait: Cost  (Plug this card from the hand or battle area sideways into the specified Digimon in the battle area.)?"
+      "question": "Q: Can I use this card's \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below) effect to link a card that doesn't have [Link]?"
     }
   ],
   "BT21-098": [
@@ -8732,7 +8732,7 @@
   "BT21-101": [
     {
       "answer": "A: No, you can't.[1]",
-      "question": "Q: Can I use this card's [When Digivolving] [When Attacking] effect to link a card that doesn't have [Link] [[[:category:{{{2}}}|{{{2}}}]]]\u00a0trait: Cost  (Plug this card from the hand or battle area sideways into the specified Digimon in the battle area.)?"
+      "question": "Q: Can I use this card's [When Digivolving] [When Attacking] effect to link a card that doesn't have [Link]?"
     }
   ],
   "BT3-002": [
@@ -14831,7 +14831,7 @@
       "question": "Q: When it says \"[Vegetation]\u00a0in any of its traits\" (\u690d\u7269\u578b), does it include traits other than [Vegetation] (\u690d\u7269\u578b)?"
     },
     {
-      "answer": "A: Yes, \"[Fairy]\u00a0in any of its traits\" includes the following traits:Category:Ancient FairyCategory:Fairy\n",
+      "answer": "A: Yes, \"[Fairy]\u00a0in any of its traits\" includes the following traits:Category:FairyCategory:Ancient Fairy\n",
       "question": "Q: When it says \"[Fairy]\u00a0in any of its traits\" (\u5996\u7cbe\u578b), does it include traits other than [Fairy] (\u5996\u7cbe\u578b)?"
     }
   ],
