@@ -998,7 +998,7 @@
   "BT10-059": [
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: If my opponent does not have any Digimon in play so there is no target for \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon (Trash the top card. You can't trash past level 3 cards), can I still place this card under 1 of my Digimon that has the [Legend-Arms] or [Xros Heart]\u00a0trait when activating this card's [On Play] effect?"
+      "question": "Q: If my opponent does not have any Digimon in play so there is no target for \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon. (Trash the top card. You can't trash past level 3 cards.), can I still place this card under 1 of my Digimon that has the [Legend-Arms] or [Xros Heart]\u00a0trait when activating this card's [On Play] effect?"
     }
   ],
   "BT10-061": [
@@ -1817,8 +1817,8 @@
   ],
   "BT11-111": [
     {
-      "answer": "A: No, you can't. \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards) is not considered an effect where a Digimon would leave the battle area.[1]",
-      "question": "Q: Can I activate this card's [All Turns] effect and place 4 [Vemmon] at the bottom of their owners' decks to prevent it from leaving the battle area when this Digimon is affected by a \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards) effect?"
+      "answer": "A: No, you can't. \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards.) is not considered an effect where a Digimon would leave the battle area.[1]",
+      "question": "Q: Can I activate this card's [All Turns] effect and place 4 [Vemmon] at the bottom of their owners' decks to prevent it from leaving the battle area when this Digimon is affected by a \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards.) effect?"
     },
     {
       "answer": "A: \"When [...] would leave the battle area\" refers to when this Digimon is placed in the trash, returned to the hand/deck, placed in the security stack, moved to the breeding area, or placed under another card.[1]",
@@ -2682,7 +2682,7 @@
   "BT13-073": [
     {
       "answer": "A: No, you can't.  This card's [All Turns] effect is triggered when one of your Digimon with [Chessmon] is deleted, therefore it won't trigger if such a Digimon isn't deleted.[1]",
-      "question": "Q: If an effect such as \uff1cDecoy (nocategory)\uff1e (When your other nocategory Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent 1 of those Digimon's deletion) prevents deletion when this suspended Digimon would be deleted, can I use this card's [All Turns] effect to unsuspend this Digimon?"
+      "question": "Q: If an effect such as \uff1cDecoy (nocategory)\uff1e (When your other nocategory Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent 1 of those Digimon's deletion.) prevents deletion when this suspended Digimon would be deleted, can I use this card's [All Turns] effect to unsuspend this Digimon?"
     }
   ],
   "BT13-075": [
@@ -3295,8 +3295,8 @@
   ],
   "BT14-065": [
     {
-      "answer": "A: No. \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon (Trash the top card. You can't trash past level 3 cards) activates 3 times, not \uff1cDe-Digivolve  3\uff1e nocategory of your opponent's Digimon (Trash up to 3 cards from the top. You can't trash past level 3 cards).  The difference is that \uff1cDe-Digivolve  3\uff1e nocategory of your opponent's Digimon (Trash up to 3 cards from the top. You can't trash past level 3 cards) allows you to trash 1 to 3 cards, but \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon (Trash the top card. You can't trash past level 3 cards) trashes 1 card three times, meaning that you always trash 3 cards (or until there are no more digivolution cards or until the Digimon is reduced to level 3).[1]",
-      "question": "Q: If my opponent reveals 3 Digimon cards from their deck by this card's effect, does it \uff1cDe-Digivolve  3\uff1e nocategory of your opponent's Digimon (Trash up to 3 cards from the top. You can't trash past level 3 cards) 1 of my opponent's Digimon?"
+      "answer": "A: No. \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon. (Trash the top card. You can't trash past level 3 cards.) activates 3 times, not \uff1cDe-Digivolve  3\uff1e nocategory of your opponent's Digimon. (Trash up to 3 cards from the top. You can't trash past level 3 cards.).  The difference is that \uff1cDe-Digivolve  3\uff1e nocategory of your opponent's Digimon. (Trash up to 3 cards from the top. You can't trash past level 3 cards.) allows you to trash 1 to 3 cards, but \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon. (Trash the top card. You can't trash past level 3 cards.) trashes 1 card three times, meaning that you always trash 3 cards (or until there are no more digivolution cards or until the Digimon is reduced to level 3).[1]",
+      "question": "Q: If my opponent reveals 3 Digimon cards from their deck by this card's effect, does it \uff1cDe-Digivolve  3\uff1e nocategory of your opponent's Digimon. (Trash up to 3 cards from the top. You can't trash past level 3 cards.) 1 of my opponent's Digimon?"
     },
     {
       "answer": "A: The player that activated this effect chooses.[1]",
@@ -4382,7 +4382,7 @@
   "BT16-055": [
     {
       "answer": "A: Yes, that's correct.[1]",
-      "question": "Q: If I have exactly 3 cards in my security stack, do I activate both the \"until the end of your opponent's turn, 1 of your Digimon can't have its DP reduced by your opponent's effects and isn't affected by \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards) effects\" effect and the \"1 of your Digimon gains \uff1cBlocker\uff1e and \uff1cReboot\uff1e until the end of your opponent's turn\" effect when activating this card's [On Play] [When Digivolving] effect?"
+      "question": "Q: If I have exactly 3 cards in my security stack, do I activate both the \"until the end of your opponent's turn, 1 of your Digimon can't have its DP reduced by your opponent's effects and isn't affected by \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards.) effects\" effect and the \"1 of your Digimon gains \uff1cBlocker\uff1e and \uff1cReboot\uff1e until the end of your opponent's turn\" effect when activating this card's [On Play] [When Digivolving] effect?"
     }
   ],
   "BT16-056": [
@@ -4394,7 +4394,7 @@
   "BT16-059": [
     {
       "answer": "A: Yes, that's correct.[1]",
-      "question": "Q: If I have exactly 3 cards in my security stack, do I activate both the \"\uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon (Trash the top card. You can't trash past level 3 cards) 1 of your opponent's Digimon\" effect and the \"delete 1 of their Digimon with a play cost of 6 or less\" effect when activating this card's [On Play] [When Digivolving] effect?"
+      "question": "Q: If I have exactly 3 cards in my security stack, do I activate both the \"\uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon. (Trash the top card. You can't trash past level 3 cards.) 1 of your opponent's Digimon\" effect and the \"delete 1 of their Digimon with a play cost of 6 or less\" effect when activating this card's [On Play] [When Digivolving] effect?"
     }
   ],
   "BT16-060": [
@@ -4594,7 +4594,7 @@
     },
     {
       "answer": "A: No, it doesn\u2019t activate.  The rest of the effect won't activate if you don't perform the specified action in effects with \"by X\" conditions.[1]",
-      "question": "Q: When one of my Digimon DNA digivolves into a black or yellow Digimon, does the \"\uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon (Trash the top card. You can't trash past level 3 cards) 1 of your opponent's Digimon\" effect activate even if I don't suspend this Tamer?"
+      "question": "Q: When one of my Digimon DNA digivolves into a black or yellow Digimon, does the \"\uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon. (Trash the top card. You can't trash past level 3 cards.) 1 of your opponent's Digimon\" effect activate even if I don't suspend this Tamer?"
     }
   ],
   "BT16-089": [
@@ -4700,13 +4700,13 @@
   "BT17-003": [
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: Can I use this card's inherited effect to gain 1 memory when I activate \uff1cMind Link\uff1e\u00a0to 1 of your Digimon (Place this Tamer as that Digimon's bottom digivolution card if there are no Tamer cards in its digivolution cards) on a digivolution card of a Digimon with this card in its digivolution cards and place a Tamer card?"
+      "question": "Q: Can I use this card's inherited effect to gain 1 memory when I activate \uff1cMind Link\uff1e\u00a0to 1 of your Digimon. (Place this Tamer as that Digimon's bottom digivolution card if there are no Tamer cards in its digivolution cards.) on a digivolution card of a Digimon with this card in its digivolution cards and place a Tamer card?"
     }
   ],
   "BT17-006": [
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: Can I use this card's inherited effect to digivolve when I activate \uff1cMind Link\uff1e\u00a0to 1 of your Digimon (Place this Tamer as that Digimon's bottom digivolution card if there are no Tamer cards in its digivolution cards) on a digivolution card of a Digimon with this card in its digivolution cards and place a Tamer card?"
+      "question": "Q: Can I use this card's inherited effect to digivolve when I activate \uff1cMind Link\uff1e\u00a0to 1 of your Digimon. (Place this Tamer as that Digimon's bottom digivolution card if there are no Tamer cards in its digivolution cards.) on a digivolution card of a Digimon with this card in its digivolution cards and place a Tamer card?"
     },
     {
       "answer": "A: No, this card's inherited effect does not allow ignoring digivolution requirements, so you can only digivolve into a card that meets the digivolution requirements.[1]",
@@ -5360,7 +5360,7 @@
     },
     {
       "answer": "A: Yes, you do.  You perform the part of the effect after \"then\" regardless of whether or not a Tamer was played.[1]",
-      "question": "Q: If both players don't play a Tamer for this card's [On Play] [When Digivolving] effect, do I still perform \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon (Trash the top card. You can't trash past level 3 cards)?"
+      "question": "Q: If both players don't play a Tamer for this card's [On Play] [When Digivolving] effect, do I still perform \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon. (Trash the top card. You can't trash past level 3 cards.)?"
     }
   ],
   "BT17-076": [
@@ -8153,8 +8153,8 @@
   ],
   "BT20-099": [
     {
-      "answer": "A: Yes, it triggers.When deletion occurs by DP becoming 0, it's considered deletion by the rules, therefore \uff1cPartition\uff1e (When this Digimon with each of the specified digivolution cards would leave the battle area other than by your own effects or by battle, you may play 1 each of the specified cards without paying the costs)'s trigger conditions are met.[1]",
-      "question": "Q: If BT20-037 [Chaosmon: Valdur Arm] has this card, a yellow level 6 card, and a green level 6 card in its digivolution cards, then this card's inherited effect causes its DP to become 0 and it's deleted, does BT20-037 [Chaosmon: Valdur Arm]'s \uff1cPartition (Yellow Lv.6 + Green/Black Lv.6)\uff1e (When this Digimon with each of the specified digivolution cards would leave the battle area other than by your own effects or by battle, you may play 1 each of the specified cards without paying the costs) trigger?"
+      "answer": "A: Yes, it triggers.When deletion occurs by DP becoming 0, it's considered deletion by the rules, therefore \uff1cPartition\uff1e (When this Digimon with each of the specified digivolution cards would leave the battle area other than by your own effects or by battle, you may play 1 each of the specified cards without paying the costs.)'s trigger conditions are met.[1]",
+      "question": "Q: If BT20-037 [Chaosmon: Valdur Arm] has this card, a yellow level 6 card, and a green level 6 card in its digivolution cards, then this card's inherited effect causes its DP to become 0 and it's deleted, does BT20-037 [Chaosmon: Valdur Arm]'s \uff1cPartition (Yellow Lv.6 + Green/Black Lv.6)\uff1e (When this Digimon with each of the specified digivolution cards would leave the battle area other than by your own effects or by battle, you may play 1 each of the specified cards without paying the costs.) trigger?"
     }
   ],
   "BT20-101": [
@@ -8188,7 +8188,7 @@
     },
     {
       "answer": "A: Yes, another security check is performed.[1]",
-      "question": "Q: A Digimon that has this card in its digivolution cards attacks, and a security check was performed on my opponent's security stack.If the attacking Digimon with this card in its digivolution cards digivolves into a Digimon with \uff1cSecurity A. +1\uff1e (This Digimon checks 1 additional security card) using this card's inherited effect, is another security check performed?"
+      "question": "Q: A Digimon that has this card in its digivolution cards attacks, and a security check was performed on my opponent's security stack.If the attacking Digimon with this card in its digivolution cards digivolves into a Digimon with \uff1cSecurity A. +1\uff1e (This Digimon checks 1 additional security card.) using this card's inherited effect, is another security check performed?"
     },
     {
       "answer": "A: The top card of the security stack.Upon a security check, the checked card is already considered to be removed from the security stack, therefore that card won't be trashed.\n[1]",
@@ -8230,7 +8230,7 @@
     },
     {
       "answer": "A: Yes, another security check is performed.[1]",
-      "question": "Q: This card attacks and I perform a security check on my opponent.If I then use this card's [Your Turn] effect to digivolve into a Digimon card with \uff1cSecurity A. +1\uff1e (This Digimon checks 1 additional security card), is another security check performed?"
+      "question": "Q: This card attacks and I perform a security check on my opponent.If I then use this card's [Your Turn] effect to digivolve into a Digimon card with \uff1cSecurity A. +1\uff1e (This Digimon checks 1 additional security card.), is another security check performed?"
     }
   ],
   "BT21-017": [
@@ -8256,7 +8256,7 @@
     },
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: If I use this card's [End of Attack] effect to play a Tamer card and then delete this card, can I use \uff1cSave\uff1e (You may place this card under one of your Tamers) to place this card under that Tamer?"
+      "question": "Q: If I use this card's [End of Attack] effect to play a Tamer card and then delete this card, can I use \uff1cSave\uff1e (You may place this card under one of your Tamers.) to place this card under that Tamer?"
     }
   ],
   "BT21-022": [
@@ -8425,7 +8425,7 @@
   ],
   "BT21-060": [
     {
-      "answer": "A: This effect prevents cards stacked on top from being trashed by \uff1cDe-Digivolve\uff1e (Trash up to  cards from the top. You can't trash past level 3 cards) or other effects, and cards stacked on the bottom can't be trashed by effects such as those that trash digivolution cards.[1]",
+      "answer": "A: This effect prevents cards stacked on top from being trashed by \uff1cDe-Digivolve\uff1e (Trash up to  cards from the top. You can't trash past level 3 cards.) or other effects, and cards stacked on the bottom can't be trashed by effects such as those that trash digivolution cards.[1]",
       "question": "Q: What does a \"can't trash stacked cards\" effect do, exactly?"
     },
     {
@@ -8447,8 +8447,8 @@
       "question": "Q: After my Digimon gains \uff1cAlliance\uff1e with this card's [Your Turn] effect, can I choose to not attack for the part of the effect after \"then\"?"
     },
     {
-      "answer": "A: No. You perform \uff1cDe-Digivolve  1\uff1e (Trash the top card. You can't trash past level 3 cards) twice, not \uff1cDe-Digivolve  2\uff1e (Trash up to 2 cards from the top. You can't trash past level 3 cards). \nWhen performing \uff1cDe-Digivolve  2\uff1e (Trash up to 2 cards from the top. You can't trash past level 3 cards), the top 2 cards are considered to be trashed at the same time, but when performing \uff1cDe-Digivolve  1\uff1e (Trash the top card. You can't trash past level 3 cards) twice, the top 2 cards are trashed 1 at a time. \n\nFor example, if using \uff1cDe-Digivolve  2\uff1e (Trash up to 2 cards from the top. You can't trash past level 3 cards) to simultaneously trash the top 2 cards of a suspended Digimon and the 2nd card trashed is BT15-047 [Kabuterimon], its effect won't activate. However, if performing \uff1cDe-Digivolve  1\uff1e (Trash the top card. You can't trash past level 3 cards) twice and the Digimon becomes BT15-047 [Kabuterimon] after the 1st instance of \uff1cDe-Digivolve  1\uff1e (Trash the top card. You can't trash past level 3 cards) trashes a card, it won't be affected by the 2nd instance of \uff1cDe-Digivolve  1\uff1e (Trash the top card. You can't trash past level 3 cards) and won't be trashed.[1]",
-      "question": "Q: My Tamer has 4 colors.If this card's [On Play] [When Digivolving] effect activates, do I perform \uff1cDe-Digivolve  2\uff1e (Trash up to 2 cards from the top. You can't trash past level 3 cards)?"
+      "answer": "A: No. You perform \uff1cDe-Digivolve  1\uff1e (Trash the top card. You can't trash past level 3 cards.) twice, not \uff1cDe-Digivolve  2\uff1e (Trash up to 2 cards from the top. You can't trash past level 3 cards.). \nWhen performing \uff1cDe-Digivolve  2\uff1e (Trash up to 2 cards from the top. You can't trash past level 3 cards.), the top 2 cards are considered to be trashed at the same time, but when performing \uff1cDe-Digivolve  1\uff1e (Trash the top card. You can't trash past level 3 cards.) twice, the top 2 cards are trashed 1 at a time. \n\nFor example, if using \uff1cDe-Digivolve  2\uff1e (Trash up to 2 cards from the top. You can't trash past level 3 cards.) to simultaneously trash the top 2 cards of a suspended Digimon and the 2nd card trashed is BT15-047 [Kabuterimon], its effect won't activate. However, if performing \uff1cDe-Digivolve  1\uff1e (Trash the top card. You can't trash past level 3 cards.) twice and the Digimon becomes BT15-047 [Kabuterimon] after the 1st instance of \uff1cDe-Digivolve  1\uff1e (Trash the top card. You can't trash past level 3 cards.) trashes a card, it won't be affected by the 2nd instance of \uff1cDe-Digivolve  1\uff1e (Trash the top card. You can't trash past level 3 cards.) and won't be trashed.[1]",
+      "question": "Q: My Tamer has 4 colors.If this card's [On Play] [When Digivolving] effect activates, do I perform \uff1cDe-Digivolve  2\uff1e (Trash up to 2 cards from the top. You can't trash past level 3 cards.)?"
     }
   ],
   "BT21-062": [
@@ -8524,7 +8524,7 @@
     },
     {
       "answer": "A: Yes, you can choose 1 card from among that Digimon's link cards and trash it.[1]",
-      "question": "Q: If a Digimon's maximum links is increased using \uff1cLink +1\uff1e (Add 1 to this Digimon's maximum links) and has a total of 2 link cards including this card, then it would be removed from the battle area, can I choose from among those cards to trash for this card's [Link] effect?"
+      "question": "Q: If a Digimon's maximum links is increased using \uff1cLink +1\uff1e (Add 1 to this Digimon's maximum links.) and has a total of 2 link cards including this card, then it would be removed from the battle area, can I choose from among those cards to trash for this card's [Link] effect?"
     }
   ],
   "BT21-074": [
@@ -8569,8 +8569,8 @@
   ],
   "BT21-081": [
     {
-      "answer": "A: No, you can't.The Digimon that was given \uff1cPiercing\uff1e (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would) by this effect must attack if possible.[1]",
-      "question": "Q: Can I use this card's [End of Your Turn] effect to give \uff1cPiercing\uff1e (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would) to 1 of my Digimon, but then choose to not attack with that Digimon?"
+      "answer": "A: No, you can't.The Digimon that was given \uff1cPiercing\uff1e (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.) by this effect must attack if possible.[1]",
+      "question": "Q: Can I use this card's [End of Your Turn] effect to give \uff1cPiercing\uff1e (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.) to 1 of my Digimon, but then choose to not attack with that Digimon?"
     },
     {
       "answer": "A: No, an attack using the 2nd effect isn't possible. A new attack declaration can't be made during an attack.In this case, the [End of Your Turn] effects on both copies of this card trigger simultaneously at the end of your turn, and you use the [End of Your Turn] effect on the 1st copy of this card to attack.The 2nd [End of Your Turn] effect can be activated before the counter timing, but because you can't declare another attack during an attack, you won't be able to attack using the 2nd effect, even if you activate it.[1]",
@@ -8702,7 +8702,7 @@
   "BT21-097": [
     {
       "answer": "A: No, you can't.[1]",
-      "question": "Q: Can I use this card's \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below) effect to link a card that doesn't have [Link]?"
+      "question": "Q: Can I use this card's \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below.) effect to link a card that doesn't have [Link]?"
     }
   ],
   "BT21-098": [
@@ -9100,7 +9100,7 @@
     },
     {
       "answer": "A: Yes, as long as the opponent's Digimon is level 3 at the time the Option card's effect activates, you can delete it with this card's inherited effect.[1]",
-      "question": "Q: I use an Option card with \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards), like BT2-105 [Spider Shooter], to reduce an opponent's level 4 or greater Digimon to level 3. Can I then use this card's inherited effect to delete that Digimon?"
+      "question": "Q: I use an Option card with \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards.), like BT2-105 [Spider Shooter], to reduce an opponent's level 4 or greater Digimon to level 3. Can I then use this card's inherited effect to delete that Digimon?"
     }
   ],
   "BT3-090": [
@@ -9303,8 +9303,8 @@
   ],
   "BT3-107": [
     {
-      "answer": "A: Yes, if \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon (Trash the top card. You can't trash past level 3 cards) causes it to become a Digimon with a play cost of 4 or less, you can delete it.[1]",
-      "question": "Q: I use this card on one of my opponent's Digimon with a play cost of 5 or more, and \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon (Trash the top card. You can't trash past level 3 cards) causes it to become a Digimon with a play cost of 4. Can I use this card's effect to delete that Digimon?"
+      "answer": "A: Yes, if \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon. (Trash the top card. You can't trash past level 3 cards.) causes it to become a Digimon with a play cost of 4 or less, you can delete it.[1]",
+      "question": "Q: I use this card on one of my opponent's Digimon with a play cost of 5 or more, and \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon. (Trash the top card. You can't trash past level 3 cards.) causes it to become a Digimon with a play cost of 4. Can I use this card's effect to delete that Digimon?"
     },
     {
       "answer": "A: Yes, you can.[1]",
@@ -10112,11 +10112,11 @@
     },
     {
       "answer": "A: It becomes a level 3 Digimon. The digivolution cards placed below it remain, and their inherited effects can still be activated.[1]",
-      "question": "Q: I use this Digimon's [When Digivolving] effect to place a level 3 Digimon card at the top of its digivolution cards. This Digimon is then targeted with a \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon (Trash the top card. You can't trash past level 3 cards) effect, trashing this card. What happens to the Digimon?"
+      "question": "Q: I use this Digimon's [When Digivolving] effect to place a level 3 Digimon card at the top of its digivolution cards. This Digimon is then targeted with a \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon. (Trash the top card. You can't trash past level 3 cards.) effect, trashing this card. What happens to the Digimon?"
     },
     {
-      "answer": "A: The \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards) effect trashes this card, and the Digimon becomes a level 3 Digimon. \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards) can't be used to trash any more cards once the Digimon it's targeting becomes level 3, and the effect ends. Any digivolution cards placed below it remain, and their inherited effects can still be activated.[1]",
-      "question": "Q: I use this Digimon's [When Digivolving] effect to place a level 3 Digimon card at the top of its digivolution cards. This Digimon is then targeted with a \uff1cDe-Digivolve  2\uff1e nocategory of your opponent's Digimon (Trash up to 2 cards from the top. You can't trash past level 3 cards) effect. What happens?"
+      "answer": "A: The \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards.) effect trashes this card, and the Digimon becomes a level 3 Digimon. \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards.) can't be used to trash any more cards once the Digimon it's targeting becomes level 3, and the effect ends. Any digivolution cards placed below it remain, and their inherited effects can still be activated.[1]",
+      "question": "Q: I use this Digimon's [When Digivolving] effect to place a level 3 Digimon card at the top of its digivolution cards. This Digimon is then targeted with a \uff1cDe-Digivolve  2\uff1e nocategory of your opponent's Digimon. (Trash up to 2 cards from the top. You can't trash past level 3 cards.) effect. What happens?"
     },
     {
       "answer": "A: No. If you activate \uff1cBlitz\uff1e first, after activating any [When Attacking] or [When a Digimon attacks] effects, you activate the other [When Digivolving] effect before the reaction timing occurs.[1]",
@@ -10576,7 +10576,7 @@
     },
     {
       "answer": "A: It remains stacked on top of the digivolution cards, but since it's no longer a Digimon, it can no longer activate inherited effects. If it digivolves back into a Digimon, it will be able to use inherited effects again.[1]",
-      "question": "Q: I use this card's effect to place a Digimon card under one of my Digimon that digivolved from a Tamer card. If \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards) causes that card to become a Tamer card again, what happens to the digivolution cards under it?"
+      "question": "Q: I use this card's effect to place a Digimon card under one of my Digimon that digivolved from a Tamer card. If \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards.) causes that card to become a Tamer card again, what happens to the digivolution cards under it?"
     }
   ],
   "BT5-097": [
@@ -10606,7 +10606,7 @@
   "BT5-104": [
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: My opponent doesn't have a Digimon I can target with \uff1cDe-Digivolve  2\uff1e nocategory of your opponent's Digimon (Trash up to 2 cards from the top. You can't trash past level 3 cards) in play. Can I still use this card to create a [Diaboromon] token?"
+      "question": "Q: My opponent doesn't have a Digimon I can target with \uff1cDe-Digivolve  2\uff1e nocategory of your opponent's Digimon. (Trash up to 2 cards from the top. You can't trash past level 3 cards.) in play. Can I still use this card to create a [Diaboromon] token?"
     },
     {
       "answer": "A: Yes, you can.[1]",
@@ -10616,7 +10616,7 @@
   "BT5-105": [
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: My opponent doesn't have a Digimon I can target with \uff1cDe-Digivolve  3\uff1e nocategory of your opponent's Digimon (Trash up to 3 cards from the top. You can't trash past level 3 cards) in play. Can I still use this card to delete all of my opponent's Digimon with play costs of 3 or less?"
+      "question": "Q: My opponent doesn't have a Digimon I can target with \uff1cDe-Digivolve  3\uff1e nocategory of your opponent's Digimon. (Trash up to 3 cards from the top. You can't trash past level 3 cards.) in play. Can I still use this card to delete all of my opponent's Digimon with play costs of 3 or less?"
     }
   ],
   "BT5-107": [
@@ -11399,8 +11399,8 @@
   ],
   "BT7-018": [
     {
-      "answer": "A: No. Having this card become a Digimon as a result of \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards) doesn\u2019t count as playing it, so you can\u2019t draw any cards.[1]",
-      "question": "Q: A Digimon with this card in its digivolution cards is targeted with \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards) by my opponent, resulting in this card now being the Digimon\u2019s top card. Do I draw 2 cards with this card's [On Play] effect?"
+      "answer": "A: No. Having this card become a Digimon as a result of \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards.) doesn\u2019t count as playing it, so you can\u2019t draw any cards.[1]",
+      "question": "Q: A Digimon with this card in its digivolution cards is targeted with \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards.) by my opponent, resulting in this card now being the Digimon\u2019s top card. Do I draw 2 cards with this card's [On Play] effect?"
     }
   ],
   "BT7-021": [
@@ -11515,8 +11515,8 @@
   ],
   "BT7-028": [
     {
-      "answer": "A: No. Having a digivolution card become a Digimon as a result of \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards) does not count as playing that card, so this card's [Your Turn] effect does not trigger.[1]",
-      "question": "Q: One of my Digimon with digivolution cards is targeted by my opponent\u2019s \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards), resulting in it becoming one of the Digimon in its digivolution cards. When this happens, can I return 1 of my opponent's level 4 or lower Digimon to its owner's hand with this card's [Yout Turn] effect?"
+      "answer": "A: No. Having a digivolution card become a Digimon as a result of \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards.) does not count as playing that card, so this card's [Your Turn] effect does not trigger.[1]",
+      "question": "Q: One of my Digimon with digivolution cards is targeted by my opponent\u2019s \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards.), resulting in it becoming one of the Digimon in its digivolution cards. When this happens, can I return 1 of my opponent's level 4 or lower Digimon to its owner's hand with this card's [Yout Turn] effect?"
     }
   ],
   "BT7-029": [
@@ -12304,7 +12304,7 @@
     },
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: When this card's [When Digivolving] effect deletes Digimon in play, can you and your opponent activate \uff1cDecoy (nocategory)\uff1e (When your other nocategory Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent 1 of those Digimon's deletion), \uff1cArmor Purge\uff1e, and similar effects to prevent their deletion?"
+      "question": "Q: When this card's [When Digivolving] effect deletes Digimon in play, can you and your opponent activate \uff1cDecoy (nocategory)\uff1e (When your other nocategory Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent 1 of those Digimon's deletion.), \uff1cArmor Purge\uff1e, and similar effects to prevent their deletion?"
     }
   ],
   "BT8-020": [
@@ -12444,7 +12444,7 @@
   "BT8-048": [
     {
       "answer": "A: No. Once a Digimon with \uff1cBlocker\uff1e is targeted by this card's [When Digivolving] effect, it becomes unable to attack or block until the end of your opponent\u2019s next turn, even if it loses \uff1cBlocker\uff1e.[1]",
-      "question": "Q: If I choose an opponent's Digimon for this card's [When Digivolving] effect, and that Digimon loses \uff1cBlocker\uff1e due to digivolving, \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards), or some other reason, can that Digimon now attack and block again?"
+      "question": "Q: If I choose an opponent's Digimon for this card's [When Digivolving] effect, and that Digimon loses \uff1cBlocker\uff1e due to digivolving, \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards.), or some other reason, can that Digimon now attack and block again?"
     }
   ],
   "BT8-050": [
@@ -13172,7 +13172,7 @@
     },
     {
       "answer": "A: Yes, you do.[2]",
-      "question": "Q: If both black and red cards are in this card\u2019s digivolution cards, do I get both \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon (Trash the top card. You can't trash past level 3 cards) and \uff1cBlitz\uff1e from this card's [When Digivolving] effect?"
+      "question": "Q: If both black and red cards are in this card\u2019s digivolution cards, do I get both \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon. (Trash the top card. You can't trash past level 3 cards.) and \uff1cBlitz\uff1e from this card's [When Digivolving] effect?"
     }
   ],
   "BT9-069": [
@@ -13461,12 +13461,12 @@
   ],
   "BT9-107": [
     {
-      "answer": "A: No, you can't.  This effect only activates \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards) on 1 of your opponent's Digimon. For the part of the effect after \"then,\" you can also choose a Digimon other than the target Digimon for \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards).[1]",
-      "question": "Q: If I use this card's [Main] effect to trash 2 cards in my hand, can I activate \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon (Trash the top card. You can't trash past level 3 cards) on 2 of my opponent's Digimon?"
+      "answer": "A: No, you can't.  This effect only activates \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards.) on 1 of your opponent's Digimon. For the part of the effect after \"then,\" you can also choose a Digimon other than the target Digimon for \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards.).[1]",
+      "question": "Q: If I use this card's [Main] effect to trash 2 cards in my hand, can I activate \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon. (Trash the top card. You can't trash past level 3 cards.) on 2 of my opponent's Digimon?"
     },
     {
-      "answer": "A: \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon (Trash the top card. You can't trash past level 3 cards) activates twice, \uff1cDe-Digivolve  2\uff1e nocategory of your opponent's Digimon (Trash up to 2 cards from the top. You can't trash past level 3 cards) doesn't activate once.  Even if a Tamer card or Option card becomes the top card after trashing the top card, \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards) can trash a card regardless of its card category, therefore you go on to trash the 2nd card. However, if a card with an \"isn't affected by effects\" becomes the top card after the first \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon (Trash the top card. You can't trash past level 3 cards), it won't be affected by the second \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon (Trash the top card. You can't trash past level 3 cards) and won't be trashed.[1]",
-      "question": "Q: When I use this card's [Main] effect to trash 2 cards in my hand, does \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon (Trash the top card. You can't trash past level 3 cards) activate twice or does \uff1cDe-Digivolve  2\uff1e nocategory of your opponent's Digimon (Trash up to 2 cards from the top. You can't trash past level 3 cards) activate once?"
+      "answer": "A: \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon. (Trash the top card. You can't trash past level 3 cards.) activates twice, \uff1cDe-Digivolve  2\uff1e nocategory of your opponent's Digimon. (Trash up to 2 cards from the top. You can't trash past level 3 cards.) doesn't activate once.  Even if a Tamer card or Option card becomes the top card after trashing the top card, \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards.) can trash a card regardless of its card category, therefore you go on to trash the 2nd card. However, if a card with an \"isn't affected by effects\" becomes the top card after the first \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon. (Trash the top card. You can't trash past level 3 cards.), it won't be affected by the second \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon. (Trash the top card. You can't trash past level 3 cards.) and won't be trashed.[1]",
+      "question": "Q: When I use this card's [Main] effect to trash 2 cards in my hand, does \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon. (Trash the top card. You can't trash past level 3 cards.) activate twice or does \uff1cDe-Digivolve  2\uff1e nocategory of your opponent's Digimon. (Trash up to 2 cards from the top. You can't trash past level 3 cards.) activate once?"
     }
   ],
   "BT9-109": [
@@ -13488,7 +13488,7 @@
     },
     {
       "answer": "A: As with Digimon without DP, this card can't exist in the battle area as the top card, therefore it's trashed. This isn't considered deletion.  If this card has other digivolution cards under it, they are also trashed.[1]",
-      "question": "Q: What happens if this card becomes the top card after a Digimon with this card in its digivolution cards is affected by \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards)?"
+      "question": "Q: What happens if this card becomes the top card after a Digimon with this card in its digivolution cards is affected by \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards.)?"
     },
     {
       "answer": "A: Effects can't trash this card, therefore only the digivolution card on top of this card is trashed.[1]",
@@ -13576,7 +13576,7 @@
   "EX1-008": [
     {
       "answer": "A: Yes. \uff1cPiercing\uff1e has already activated. Perform the additional check, assuming your Digimon still has \uff1cSecurity A. +1\uff1e.[1]",
-      "question": "Q: I have a Digimon that gained \uff1cSecurity A. +1\uff1e from another card\u2019s effect, and which also gained \uff1cPiercing\uff1e from this card\u2019s inherited effect. I attack an opponent's Digimon with it, and perform a security check with \uff1cPiercing\uff1e. The first card checked has a \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon (Trash the top card. You can't trash past level 3 cards) [Security] effect, which trashes the top card of my attacking Digimon, turning it into a Digimon without [Machine] or [Dragonkin].   This causes the Digimon to also lose \uff1cPiercing\uff1e. Do I still perform the second check?"
+      "question": "Q: I have a Digimon that gained \uff1cSecurity A. +1\uff1e from another card\u2019s effect, and which also gained \uff1cPiercing\uff1e from this card\u2019s inherited effect. I attack an opponent's Digimon with it, and perform a security check with \uff1cPiercing\uff1e. The first card checked has a \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon. (Trash the top card. You can't trash past level 3 cards.) [Security] effect, which trashes the top card of my attacking Digimon, turning it into a Digimon without [Machine] or [Dragonkin].   This causes the Digimon to also lose \uff1cPiercing\uff1e. Do I still perform the second check?"
     },
     {
       "answer": "A: Yes, it does.   [When Attacking] effects activate before your opponent gets to activate \uff1cBlocker\uff1e.[1]",
@@ -13730,7 +13730,7 @@
   "EX1-038": [
     {
       "answer": "A: No, \uff1cPiercing\uff1e has already activated. Perform the additional check, assuming your Digimon still has \uff1cSecurity A. +1\uff1e.[1]",
-      "question": "Q: I have a Digimon that gained \uff1cSecurity A. +1\uff1e from another card\u2019s effect, and which also gained \uff1cPiercing\uff1e from this card\u2019s inherited effect. I attack an opponent's Digimon with it, and perform a security check with \uff1cPiercing\uff1e. The first card checked has a \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon (Trash the top card. You can't trash past level 3 cards) [Security] effect, which trashes the top card of my attacking Digimon, turning it into a Digimon without [Free] in its traits or [Imperialdramon].   This causes the Digimon to also lose \uff1cPiercing\uff1e. Do I still perform the second check?"
+      "question": "Q: I have a Digimon that gained \uff1cSecurity A. +1\uff1e from another card\u2019s effect, and which also gained \uff1cPiercing\uff1e from this card\u2019s inherited effect. I attack an opponent's Digimon with it, and perform a security check with \uff1cPiercing\uff1e. The first card checked has a \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon. (Trash the top card. You can't trash past level 3 cards.) [Security] effect, which trashes the top card of my attacking Digimon, turning it into a Digimon without [Free] in its traits or [Imperialdramon].   This causes the Digimon to also lose \uff1cPiercing\uff1e. Do I still perform the second check?"
     }
   ],
   "EX1-040": [
@@ -13848,7 +13848,7 @@
   "EX1-062": [
     {
       "answer": "A: No. This card is no longer in play at the end of the attack, so the [End of Attack] effect doesn't activate.[1]",
-      "question": "Q: I attack my opponent with this Digimon and flip over [BT2-105 Spider Shooter] during the security check. The \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards) trashes this card. Does this card\u2019s [End of Attack] effect activate?"
+      "question": "Q: I attack my opponent with this Digimon and flip over [BT2-105 Spider Shooter] during the security check. The \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards.) trashes this card. Does this card\u2019s [End of Attack] effect activate?"
     },
     {
       "answer": "A: No, this card\u2019s [On Deletion] effect can only play cards whose names are specifically [Agumon].[1]",
@@ -14103,8 +14103,8 @@
       "question": "Q: If [EX2-008 Guilmon]\u2019s [On Play] effect reveals this card from my deck, can I add it to my hand as a card that has [Gallantmon]?"
     },
     {
-      "answer": "A: Yes. The Digimon chosen as a target for this effect is not deleted, and the Digimon that activates \uff1cDecoy (nocategory)\uff1e (When your other nocategory Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent 1 of those Digimon's deletion) is deleted by the effect of \uff1cDecoy (nocategory)\uff1e (When your other nocategory Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent 1 of those Digimon's deletion) and not this effect. As such, the condition is satisfied for \"if no Digimon was deleted by this effect,\" and both players will trash the top 5 cards of their decks.[1]",
-      "question": "Q: I try to delete an opponent's Digimon with this card\u2019s [When Digivolving] effect, and my opponent activates \uff1cDecoy (nocategory)\uff1e (When your other nocategory Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent 1 of those Digimon's deletion) to prevent the chosen Digimon from being deleted. If the Digimon that activated \uff1cDecoy (nocategory)\uff1e (When your other nocategory Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent 1 of those Digimon's deletion) is deleted, does the \u201cif no Digimon was deleted by this effect\u201d part of this card's effect still activate?"
+      "answer": "A: Yes. The Digimon chosen as a target for this effect is not deleted, and the Digimon that activates \uff1cDecoy (nocategory)\uff1e (When your other nocategory Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent 1 of those Digimon's deletion.) is deleted by the effect of \uff1cDecoy (nocategory)\uff1e (When your other nocategory Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent 1 of those Digimon's deletion.) and not this effect. As such, the condition is satisfied for \"if no Digimon was deleted by this effect,\" and both players will trash the top 5 cards of their decks.[1]",
+      "question": "Q: I try to delete an opponent's Digimon with this card\u2019s [When Digivolving] effect, and my opponent activates \uff1cDecoy (nocategory)\uff1e (When your other nocategory Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent 1 of those Digimon's deletion.) to prevent the chosen Digimon from being deleted. If the Digimon that activated \uff1cDecoy (nocategory)\uff1e (When your other nocategory Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent 1 of those Digimon's deletion.) is deleted, does the \u201cif no Digimon was deleted by this effect\u201d part of this card's effect still activate?"
     },
     {
       "answer": "A: This is a special rule for this card that always treats it as if it also has the [ChaosGallantmon] name.[2]",
@@ -14252,19 +14252,19 @@
   "EX2-037": [
     {
       "answer": "A: Yes, it can.[1]",
-      "question": "Q: Can this card\u2019s [Opponent's Turn] effect \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards) an opponent\u2019s Digimon when it unsuspends during my opponent\u2019s unsuspend phase?"
+      "question": "Q: Can this card\u2019s [Opponent's Turn] effect \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards.) an opponent\u2019s Digimon when it unsuspends during my opponent\u2019s unsuspend phase?"
     },
     {
-      "answer": "A: Yes, you choose one of those Digimon to \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards).[1]",
-      "question": "Q: During my opponent\u2019s unsuspend phase, more than one of my opponent's Digimon become unsuspended. Do I choose which Digimon to \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards) with this card\u2019s [Opponent's Turn] effect?"
+      "answer": "A: Yes, you choose one of those Digimon to \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards.).[1]",
+      "question": "Q: During my opponent\u2019s unsuspend phase, more than one of my opponent's Digimon become unsuspended. Do I choose which Digimon to \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards.) with this card\u2019s [Opponent's Turn] effect?"
     },
     {
       "answer": "A: No, you can't.[1]",
-      "question": "Q: When an opponent\u2019s Digimon becomes unsuspended, can I choose not to activate this card\u2019s [Opponent's Turn] effect to \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards) that Digimon in order to preserve the effect\u2019s [Once Per Turn] limit?"
+      "question": "Q: When an opponent\u2019s Digimon becomes unsuspended, can I choose not to activate this card\u2019s [Opponent's Turn] effect to \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards.) that Digimon in order to preserve the effect\u2019s [Once Per Turn] limit?"
     },
     {
-      "answer": "A: No, you can't.  \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards) activates even if the opponent's Digimon that becomes unsuspended is level 3 or has no digivolution cards.[1]",
-      "question": "Q: My opponent unsuspends a Digimon that has no digivolution cards or is level 3. Can I choose not to activate the \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards) from this card\u2019s [Opponent's Turn] effect?"
+      "answer": "A: No, you can't.  \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards.) activates even if the opponent's Digimon that becomes unsuspended is level 3 or has no digivolution cards.[1]",
+      "question": "Q: My opponent unsuspends a Digimon that has no digivolution cards or is level 3. Can I choose not to activate the \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards.) from this card\u2019s [Opponent's Turn] effect?"
     }
   ],
   "EX2-038": [
@@ -14938,7 +14938,7 @@
   "EX3-069": [
     {
       "answer": "A: Yes, it is still a Digimon that was played by this effect, so you delete it at the end of your opponent's turn.[1]",
-      "question": "Q: This card's effects read \"The Digimon played by this effect can't digivolve to level 7, and at the end of your opponent's turn, delete that Digimon.\" Do I delete that Digimon even if digivolution cards are added by an effect and then it becomes another Digimon due to an effect such as \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards)?"
+      "question": "Q: This card's effects read \"The Digimon played by this effect can't digivolve to level 7, and at the end of your opponent's turn, delete that Digimon.\" Do I delete that Digimon even if digivolution cards are added by an effect and then it becomes another Digimon due to an effect such as \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards.)?"
     },
     {
       "answer": "A: No, if the Digimon to digivolve into is level 7, DNA digivolving is not possible either.[1]",
@@ -15188,7 +15188,7 @@
   "EX4-036": [
     {
       "answer": "A: It targets 1 of your opponent's Digimon.[1]",
-      "question": "Q: What can be the target of \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon (Trash the top card. You can't trash past level 3 cards) in this card's [End of Attack] effect?"
+      "question": "Q: What can be the target of \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon. (Trash the top card. You can't trash past level 3 cards.) in this card's [End of Attack] effect?"
     },
     {
       "answer": "A: No. You can't perform a security check even if you gain \uff1cPiercing\uff1e after deleting your opponent's Digimon in battle.[1]",
@@ -15244,7 +15244,7 @@
   "EX4-050": [
     {
       "answer": "A: No. If this card's effect causes \uff1cSecurity A. +1\uff1e to be lost before the 2nd security check, it isn't performed.[1]",
-      "question": "Q: \"My opponent's Digimon with \uff1cSecurity A. +1\uff1e attacks me and 1 card is removed from my security stack by the security check. If I use this card's [Opponent's Turn] effect to \uff1cDe-Digivolve  X\uff1e nocategory of your opponent's Digimon (Trash up to X cards from the top. You can't trash past level 3 cards) that opponent's Digimon and it loses \uff1cSecurity A. +1\uff1e, is the 2nd security check performed?\""
+      "question": "Q: \"My opponent's Digimon with \uff1cSecurity A. +1\uff1e attacks me and 1 card is removed from my security stack by the security check. If I use this card's [Opponent's Turn] effect to \uff1cDe-Digivolve  X\uff1e nocategory of your opponent's Digimon. (Trash up to X cards from the top. You can't trash past level 3 cards.) that opponent's Digimon and it loses \uff1cSecurity A. +1\uff1e, is the 2nd security check performed?\""
     }
   ],
   "EX4-052": [
@@ -16136,7 +16136,7 @@
     },
     {
       "answer": "A: Yes, it activates.[1]",
-      "question": "Q: If a Digimon with this card in its digivolution cards would be deleted other than by one of my effects, then an effect such as \uff1cDecoy (nocategory)\uff1e (When your other nocategory Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent 1 of those Digimon's deletion) prevents it from being deleted, does this card's inherited effect activate?"
+      "question": "Q: If a Digimon with this card in its digivolution cards would be deleted other than by one of my effects, then an effect such as \uff1cDecoy (nocategory)\uff1e (When your other nocategory Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent 1 of those Digimon's deletion.) prevents it from being deleted, does this card's inherited effect activate?"
     },
     {
       "answer": "A: No, you can't.  If digivolution isn't performed using this card's effect, you can't place this card in digivolution cards.[1]",
@@ -16614,7 +16614,7 @@
   "EX6-048": [
     {
       "answer": "A: Yes, it activates.  Until the end of your opponent's turn, 1 of their Digimon gains that effect, so the [End of Attack] effect will activate even if the affected Digimon digivolves or de-digivolves.[1]",
-      "question": "Q: A Digimon affected by this card's [On Play] [When Digivolving] effect attacked the opponent player, then a [Security] effect gave this Digimon \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon (Trash the top card. You can't trash past level 3 cards) and trashed it. Does the [End of Attack] effect activate in such cases?"
+      "question": "Q: A Digimon affected by this card's [On Play] [When Digivolving] effect attacked the opponent player, then a [Security] effect gave this Digimon \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon. (Trash the top card. You can't trash past level 3 cards.) and trashed it. Does the [End of Attack] effect activate in such cases?"
     },
     {
       "answer": "A: No, this effect triggers simultaneously with [When Attacking] effects. The turn player's effects will resolve first, then this effect will resolve, then the attack will end.[2]",
@@ -18190,7 +18190,7 @@
     },
     {
       "answer": "A: This card's inherited effect is a [Your Turn] effect, so your black Digimon will lose \uff1cSecurity A. +1\uff1e as soon as it drops below 13000 DP. If the Digimon has no other effects to increase the number of security checks, the attack will end without performing any further checks.[1]",
-      "question": "Q: This card is in the digivolution cards of a black Digimon with 13000 DP, which I use to attack my opponent. The first card flipped over during the security check causes the black Digimon to \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards), resulting in it having 12000 DP or less. Does the black Digimon still get extra security checks from \uff1cSecurity A. +1\uff1e?"
+      "question": "Q: This card is in the digivolution cards of a black Digimon with 13000 DP, which I use to attack my opponent. The first card flipped over during the security check causes the black Digimon to \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards.), resulting in it having 12000 DP or less. Does the black Digimon still get extra security checks from \uff1cSecurity A. +1\uff1e?"
     }
   ],
   "P-034": [
@@ -18891,8 +18891,8 @@
       "question": "Q: Can I place either my Digimon or Tamer or an opponent's Digimon or Tamer as the top or bottom security card for this card's [When Digivolving] effect?"
     },
     {
-      "answer": "A: Yes, you can activate \uff1cRecovery +1 (Deck)\uff1e (Place the top card of your deck on top of your security stack).[1]",
-      "question": "Q: Can I activate \uff1cRecovery +1 (Deck)\uff1e (Place the top card of your deck on top of your security stack) even when not DNA digivolving with this card's 1st [When Digivolving] effect?"
+      "answer": "A: Yes, you can activate \uff1cRecovery +1 (Deck)\uff1e (Place the top card of your deck on top of your security stack.).[1]",
+      "question": "Q: Can I activate \uff1cRecovery +1 (Deck)\uff1e (Place the top card of your deck on top of your security stack.) even when not DNA digivolving with this card's 1st [When Digivolving] effect?"
     }
   ],
   "RB1-003": [
@@ -19658,7 +19658,7 @@
   "ST16-15": [
     {
       "answer": "A: Even if the Digimon becomes a Digimon without [Garurumon], as long as the conditions were met at the time of activation for this card's effect, the effect will persist until the end of your opponent's turn.[1]",
-      "question": "Q: I used this card's [Main] effect to to give 1 of my Digimon with [Garurumon] \"[On Deletion] Play this card without paying the cost.\" What happens to the effect if the target Digimon later becomes a Digimon without [Garururmon] by digivolving or \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards)?"
+      "question": "Q: I used this card's [Main] effect to to give 1 of my Digimon with [Garurumon] \"[On Deletion] Play this card without paying the cost.\" What happens to the effect if the target Digimon later becomes a Digimon without [Garururmon] by digivolving or \uff1cDe-Digivolve  nocategory\uff1e (Trash up to nocategory cards from the top. You can't trash past level 3 cards.)?"
     }
   ],
   "ST17-03": [
@@ -19723,8 +19723,8 @@
       "question": "Q: Does this card's [Security] effect allow me to ignore the digivolution requirements when I digivolve 1 of my Digimon into this card at the end of the battle?"
     },
     {
-      "answer": "A: It occurs with your opponent's Digimon after \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon (Trash the top card. You can't trash past level 3 cards).  Security effects have top priority and activate when a card is flipped over for a security check.[1]",
-      "question": "Q: If this card's [Security] effect gives \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon (Trash the top card. You can't trash past level 3 cards) to my opponent's attacking Digimon, does the battle with the Security Digimon occur with my opponent's Digimon before or after \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon (Trash the top card. You can't trash past level 3 cards)?"
+      "answer": "A: It occurs with your opponent's Digimon after \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon. (Trash the top card. You can't trash past level 3 cards.).  Security effects have top priority and activate when a card is flipped over for a security check.[1]",
+      "question": "Q: If this card's [Security] effect gives \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon. (Trash the top card. You can't trash past level 3 cards.) to my opponent's attacking Digimon, does the battle with the Security Digimon occur with my opponent's Digimon before or after \uff1cDe-Digivolve  1\uff1e nocategory of your opponent's Digimon. (Trash the top card. You can't trash past level 3 cards.)?"
     }
   ],
   "ST18-01": [
