@@ -100,6 +100,7 @@ export const replacements: Array<[RegExp, string, string]> = [
   [/＜Partition \(Yellow Lv.6 \+ Black Lv.6\)＞/g, 'partition_yellow_lv.6_black_lv.6', ''],
   [/＜Partition \(Yellow\/Black Lv.6 \+ Green\/Purple Lv.4\)＞/g, 'partition_yellow_black_lv.6_green_purple_lv.6', ''],
   [/＜Piercing＞/g, 'piercing', ''],
+  [/＜Progress＞/g, 'progress', ''],
   [/＜Raid＞/g, 'raid', ''],
   [/＜Reboot＞/g, 'reboot', ''],
   [/＜Recovery \+1 \(Deck\)＞/g, 'recovery_+1deck', ''],
