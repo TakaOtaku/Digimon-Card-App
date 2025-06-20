@@ -156,8 +156,7 @@ NoteDictionary = {
     'BT19-20: Special Booster Ver.2.5': '▹SPECIAL BOOSTER VER.2.5 [BT19-20]',
     'BT-21: Booster World Convergence': '▹BOOSTER WORLD CONVERGENCE [BT-21]',
     'BT-22: Booster Cyber Eden': '▹BOOSTER CYBER EDEN [BT-22]',
-    'BT-23: Booster Hackers Slumber': '▹BOOSTER HACKERS' SLUMBER [BT-23]',
-
+  
     'EX-01: Theme Booster Classic Collection': '▹THEME BOOSTER CLASSIC COLLECTION [EX-01]',
     'EX-02: Theme Booster Digital Hazard': '▹THEME BOOSTER DIGITAL HAZARD [EX-02]',
     'EX-03: Theme Booster Draconic Roar': '▹THEME BOOSTER DRAGONIC ROAR [EX-03]',
@@ -168,7 +167,6 @@ NoteDictionary = {
     'EX-08: Extra Booster Chain of Liberation': '▹EXTRA BOOSTER CHAIN OF LIBERATION [EX-08]',
     'EX-09: Extra Booster Versus Monsters': '▹EXTRA BOOSTER VERSUS MONSTERS [EX-09]',
     'EX-10: Extra Booster Sinister Order': '▹EXTRA BOOSTER SINISTER ORDER [EX-10]',
-    'EX-11: Extra Booster Dawn of Liberator': '▹EXTRA BOOSTER DAWN OF LIBERATOR [EX-11]',
 
     'RB-01: Resurgence Booster': 'BOOSTER RESURGENCE BOOSTER [RB01]',
 
@@ -192,7 +190,6 @@ NoteDictionary = {
     'ST-19: Starter Deck Fable Waltz': 'STARTER DECK FABLE WALTZ [ST-19]',
     'ST-20: Starter Deck Protector of Light': 'STARTER DECK PROTECTOR OF LIGHT [ST-20]',
     'ST-21: Starter Deck Hero of Hope': 'STARTER DECK HERO OF HOPE [ST-21]',
-    'ST-22: Advanced Deck Set Amethyst Mandala ': 'ADVANCED DECK SET AMETHYST MANDALA [ST-22]',
   
     'LM-01: Limited Card Pack Digimon Ghost Game': 'LIMITED CARD PACK DIGIMON GHOST GAME [LM-01]',
     'LM-02: Limited Card Pack Digimon DeathXmon': 'LIMITED CARD PACK DIGIMON DEATHXMON [LM-02]',
