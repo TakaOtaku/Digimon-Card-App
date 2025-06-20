@@ -109,6 +109,7 @@ export const replacements: Array<[RegExp, string, string]> = [
   [/＜Rush＞/g, 'rush', ''],
   [/\[Rule]/g, 'rule', ''],
   [/＜Save＞/g, 'save', ''],
+  [/＜Scapegoat＞/g, 'scapegoat', ''],
   [/\[Security]/g, 'security', ''],
   [/＜Security Attack＞/g, 'security_attack', ''],
   [/＜Security Attack -＞/g, 'security_attack_-', ''],
