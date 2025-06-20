@@ -133,6 +133,7 @@ export const replacements: Array<[RegExp, string, string]> = [
   [/＜Vortex＞/g, 'vortex', ''],
   [/\[When Attacking]/g, 'when_attacking', ''],
   [/\[When Digivolving]/g, 'when_digivolving', ''],
+  [/\[When Linking]/g, 'when_linking', ''],
   [/\[When Moving]/g, 'when_moving', ''],
   [/\[Your Turn]/g, 'your_turn', ''],
 ];
