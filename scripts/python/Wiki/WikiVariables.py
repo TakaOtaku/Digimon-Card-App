@@ -320,6 +320,7 @@ replacements = [
     '(When your other Red or Black Digimon would be deleted by an opponent\'s effect, you may delete this Digimon to prevent 1 of those Digimon\'s deletion.)',
     '(When this Digimon would leave the battle area other than in battle, you may play 1 Red or Black Level 3 Digimon card from its digivolution cards without paying the cost.)',
     '(When this Digimon would leave the battle area other than in battle, you may play 1 Blue or Yellow Level 3 Digimon card from its digivolution cards without paying the cost.)',
-    '(When your other [Bagra Army] trait Digimon would be deleted by an opponent\'s effect, you may delete this Digimon to prevent 1 of those Digimon\'s deletion.)',    
+    '(When your other [Bagra Army] trait Digimon would be deleted by an opponent\'s effect, you may delete this Digimon to prevent 1 of those Digimon\'s deletion.)',  
+    '(By trashing this card after the placing turn, activate the effect below.)',   
     'When this would be played, by placing the specified cards from the trash under it, reduce the play cost.',
 ]
