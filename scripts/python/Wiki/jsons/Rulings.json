@@ -8702,7 +8702,7 @@
   "BT21-097": [
     {
       "answer": "A: No, you can't.[1]",
-      "question": "Q: Can I use this card's \uff1cDelay\uff1e (After this card is placed, by trashing it the next turn or later, activate the effect below.) effect to link a card that doesn't have [Link]?"
+      "question": "Q: Can I use this card's \uff1cDelay\uff1e (By trashing this card after the placing turn, activate the effect below.) effect to link a card that doesn't have [Link]?"
     }
   ],
   "BT21-098": [
