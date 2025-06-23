@@ -69,10 +69,12 @@ export class AuthService {
             tap((save) => {
               if (save) {
                 // Create user data object and update state
+                const displayName = save.displayName ? save.displayName : firebaseUser.displayName;
+                const photoURL = save.photoURL ? save.photoURL : firebaseUser.photoURL;
                 const userData: IUser = {
                   uid: firebaseUser.uid,
-                  displayName: firebaseUser.displayName || '',
-                  photoURL: firebaseUser.photoURL || '',
+                  displayName: displayName,
+                  photoURL: photoURL,
                   save: this.ensureSaveHasUserInfo(save, firebaseUser),
                 };
 
@@ -216,8 +218,8 @@ export class AuthService {
     return {
       ...save,
       uid: user.uid,
-      displayName: user.displayName || save.displayName || '',
-      photoURL: user.photoURL || save.photoURL || '',
+      displayName: save.displayName || user.displayName || '',
+      photoURL: save.photoURL || user.photoURL || '',
     };
   }
 }
