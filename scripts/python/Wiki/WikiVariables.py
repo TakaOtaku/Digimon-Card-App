@@ -323,4 +323,5 @@ replacements = [
     '(When your other [Bagra Army] trait Digimon would be deleted by an opponent\'s effect, you may delete this Digimon to prevent 1 of those Digimon\'s deletion.)',  
     '(By trashing this card after the placing turn, activate the effect below.)',   
     'When this would be played, by placing the specified cards from the trash under it, reduce the play cost.',
+    ' (When this Digimon would leave the battle area other than in battle, you may play 1 Level 4 Digimon card with [Aqua] or [Sea Animal] in any of its traits from its digivolution cards without paying the cost.)'
 ]
