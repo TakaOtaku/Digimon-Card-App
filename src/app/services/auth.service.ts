@@ -60,12 +60,6 @@ export class AuthService {
 
           // User is logged in, get save from backend
           return this.digimonBackendService.getSave(firebaseUser.uid).pipe(
-            catchError(() => {
-              console.log('No save found, creating a new one');
-              // Use local save if available, otherwise create empty
-              const localSave = this.getLocalStorageSave();
-              return of(this.createNewSave(firebaseUser, localSave));
-            }),
             tap((save) => {
               if (save) {
                 // Create user data object and update state
