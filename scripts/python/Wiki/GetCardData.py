@@ -110,9 +110,6 @@ def getDigivolveInfo(html, digimoncard):
       if (specialEvo.find("Assembly Requirements") != -1):
         assembly = specialEvoCon.find("td")
         digimoncard.assembly = assembly.text
-      if (specialEvo.find("Link Requirements") != -1):
-        linkRequirements = specialEvoCon.find("td")
-        digimoncard.linkRequirement = linkRequirements.text
       if (specialEvo.find("Alt. Digivolution Requirements") != -1):
         addCorrectSpecialDigivolve(digimoncard, specialEvoCon)
 
@@ -157,6 +154,10 @@ def getExtraInfo(html, digimoncard):
     if th.text.find("Link Effect") != -1:
       td = table.find("td")
       digimoncard.linkEffect = td.text
+
+    if th.text.find("Link Requirements") != -1:
+      td = table.find("td")
+      digimoncard.linkRequirement = td.text
 
   return digimoncard
 
