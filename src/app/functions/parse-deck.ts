@@ -65,14 +65,16 @@ function isValidNumberPNumber(str: string): boolean {
 }
 
 function parseLine(line: string, allCards: DigimonCard[]): IDeckCard | null {
-  let lineSplit: string[] = line.replace(/  +/g, ' ').split(' '); // Split the line by spaces and remove extra spaces
+  let lineSplit: string[] = line.replace(/  +/g, ' ').trim().split(' '); // Split the line by spaces and remove extra spaces
   const cardLine: boolean = /\d/.test(line); // Check if the line contains a number
 
   if (!cardLine) {
     return null;
   }
-  let matches = lineSplit.filter((string) => string.includes('-')); // Filter out the strings containing '-' -> Card ID
-  matches = matches.filter((str) => {
+
+  // Find card ID matches (strings containing '-')
+  let idMatches = lineSplit.filter((string) => string.includes('-')); // Filter out the strings containing '-' -> Card ID
+  idMatches = idMatches.filter((str) => {
     const parts = str.split('-');
     if (parts.length === 2) {
       return isValidNumber(parts[1]) || isValidNumberPNumber(parts[1]);
@@ -80,7 +82,7 @@ function parseLine(line: string, allCards: DigimonCard[]): IDeckCard | null {
     return false;
   });
 
-  matches = matches.map((string) => {
+  idMatches = idMatches.map((string) => {
     // Modify the matches
     if (string.includes('\r')) {
       // If the string contains '\r'
@@ -89,18 +91,32 @@ function parseLine(line: string, allCards: DigimonCard[]): IDeckCard | null {
     return string;
   });
 
-  if (matches.length === 0) {
+  if (idMatches.length === 0) {
     // If there are no valid matches
     return null;
   }
 
-  let cardId = findCardId(matches[matches.length - 1]); // Get the ID of the last match
+  let cardId = findCardId(idMatches[idMatches.length - 1]); // Get the ID of the last match
   if (!findCardById(cardId, allCards)) {
     // If the card ID is not found in the allCards array
     return null;
   }
 
-  return { count: findNumber(lineSplit), id: cardId } as IDeckCard; // Return an object with the count and card ID as IDeckCard
+  // Find quantity - look for standalone numbers that aren't part of card IDs
+  let quantity = 1; // Default quantity
+  for (const part of lineSplit) {
+    const cleanPart = part.replace('\r', '');
+    // Check if it's a standalone number (not part of a card ID)
+    if (isValidNumber(cleanPart) && !cleanPart.includes('-')) {
+      const num = parseInt(cleanPart, 10);
+      if (num > 0) {
+        quantity = num;
+        break; // Take the first valid standalone number as quantity
+      }
+    }
+  }
+
+  return { count: quantity, id: cardId } as IDeckCard;
 }
 
 function findCardId(id: string): string {
@@ -110,17 +126,6 @@ function findCardId(id: string): string {
     return 'ST' + numberA + '-' + splitA[1];
   }
   return id;
-}
-
-function findNumber(array: string[]): number {
-  let count = 0;
-  array.forEach((string) => {
-    let number: number = +string >>> 0;
-    if (number > 0) {
-      count = number;
-    }
-  });
-  return count;
 }
 
 function setDeckProperties(deck: IDeck, allCards: DigimonCard[]) {

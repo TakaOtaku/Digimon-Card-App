@@ -6,6 +6,20 @@ import { PanelModule } from 'primeng/panel';
   selector: 'digimon-changelog-dialog',
   template: `
     <div>
+      <p-panel header="Version 4.2.3" [toggleable]="true" [collapsed]="false">
+        <h1 class="font-bold text-lg underline">Feature</h1>
+        <ul class="list-disc p-5">
+          <li>Export Deck Dialog allows all variations</li>
+          <li>Added BT23 and LM07</li>
+        </ul>
+        <h1 class="font-bold text-lg underline">Bugfixes</h1>
+        <ul class="list-disc p-5">
+          <li>Tierlist was not working</li>
+        </ul>
+        <div class="flex flex-wrap align-middle justify-content-between gap-3">
+          <span class="ml-auto p-text-secondary">Updated 09.06.2025</span>
+        </div>
+      </p-panel>
       <p-panel header="Version 4.2.2" [toggleable]="true" [collapsed]="true">
         <h1 class="font-bold text-lg underline">Bugfixes</h1>
         <ul class="list-disc p-5">

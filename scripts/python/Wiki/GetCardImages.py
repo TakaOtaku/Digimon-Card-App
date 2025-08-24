@@ -1,3 +1,20 @@
+"""
+GetCardImages.py - Download card images from the Digimon Wiki
+
+This script downloads card images from the wiki, but now includes optimization to skip
+downloading images that already exist in the src/assets/images/cards directory.
+
+Key features:
+- Checks if images already exist in the final assets location (as .webp files)
+- Skips downloads for existing images to save time and bandwidth
+- Provides detailed progress logging with emojis for better visibility
+- Shows download statistics summary at the end
+- Maintains original functionality for card data processing
+
+The script converts .png filenames from wiki to .webp filenames used in assets
+to perform the existence check.
+"""
+
 import os
 import time
 import re
@@ -8,25 +25,77 @@ import traceback
 
 import WikiVariables as WV
 
+# Statistics tracking
+download_stats = {
+    'skipped': 0,
+    'downloaded': 0,
+    'failed': 0
+}
+
+def check_image_exists_in_assets(image_name: str) -> bool:
+    """
+    Check if the image already exists in the src/assets/images/cards directory.
+
+    Args:
+        image_name: The image filename to check (with .png extension from wiki)
+
+    Returns:
+        bool: True if the image exists (as .webp), False otherwise
+    """
+    # Convert image name from .png to .webp
+    webp_filename = re.sub(r'\.png$', '.webp', image_name)
+
+    # Get the script's directory and navigate to the assets directory
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    # Go up from scripts/python/Wiki to the project root, then to assets
+    assets_path = os.path.join(script_dir, '..', '..', '..', 'src', 'assets', 'images', 'cards')
+    full_path = os.path.join(assets_path, webp_filename)
+
+    # Normalize the path
+    full_path = os.path.normpath(full_path)
+
+    return os.path.exists(full_path)
+
 def download_image_with_retry(url, save_directory, id, max_retries=5, retry_delay=5):
-  retries = 0
+    """
+    Download image with retry logic, but skip if already exists in assets.
 
-  while retries < max_retries:
-    try:
-      urllib.request.urlretrieve(url, save_directory)
-      print(f"Downloaded image ${id} successfully.")
-      return
-    except urllib.error.HTTPError as e:
-      if e.code == 503:
-        print(
-          f"HTTP Error 503: Service Unavailable. Retrying in {retry_delay} seconds...")
-        retries += 1
-        time.sleep(retry_delay)
-      else:
-        print(f"HTTP Error {e.code}: {e.reason}")
-        break
+    Args:
+        url: URL to download from
+        save_directory: Local directory to save to
+        id: Image ID for logging
+        max_retries: Maximum retry attempts
+        retry_delay: Delay between retries
+    """
+    # Check if image already exists in assets directory
+    if check_image_exists_in_assets(id):
+        print(f"⏭️  Skipping {id} - already exists in assets directory")
+        download_stats['skipped'] += 1
+        return
 
-  print("Failed to download the image after multiple attempts.")
+    print(f"⬇️  Downloading {id}...")
+    retries = 0
+
+    while retries < max_retries:
+        try:
+            urllib.request.urlretrieve(url, save_directory)
+            print(f"✅ Downloaded image {id} successfully.")
+            download_stats['downloaded'] += 1
+            return
+        except urllib.error.HTTPError as e:
+            if e.code == 503:
+                print(f"⚠️  HTTP Error 503: Service Unavailable. Retrying in {retry_delay} seconds...")
+                retries += 1
+                time.sleep(retry_delay)
+            else:
+                print(f"❌ HTTP Error {e.code}: {e.reason}")
+                break
+        except Exception as e:
+            print(f"❌ Unexpected error downloading {id}: {str(e)}")
+            break
+
+    print(f"❌ Failed to download {id} after {max_retries} attempts.")
+    download_stats['failed'] += 1
 
 def remove_suffix_and_extension(input_string):
   # Remove the ".webp" extension
@@ -41,6 +110,9 @@ def getCardImages():
   # Backup the AAs and JAAs for each card
   backup_aas = []
   backup_jaas = []
+
+  print("🚀 Starting card image download process...")
+  print(f"📊 Processing {len(WV.cardLinks)} card links...")
 
   # Loop through each card link
   for link in WV.cardLinks:
@@ -201,3 +273,18 @@ def getCardImages():
       print("Error for: " + link)
       traceback.print_exc()
       print(Exception)
+
+  # Print download summary
+  print("\n" + "="*50)
+  print("📊 DOWNLOAD SUMMARY")
+  print("="*50)
+  print(f"✅ Successfully downloaded: {download_stats['downloaded']} images")
+  print(f"⏭️  Skipped (already exist): {download_stats['skipped']} images")
+  print(f"❌ Failed downloads: {download_stats['failed']} images")
+  print(f"📈 Total processed: {sum(download_stats.values())} images")
+
+  if download_stats['skipped'] > 0:
+    time_saved = download_stats['skipped'] * 2  # Estimate 2 seconds per image
+    print(f"⏱️  Estimated time saved: {time_saved} seconds ({time_saved/60:.1f} minutes)")
+
+  print("="*50)

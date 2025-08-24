@@ -50,9 +50,11 @@ wikiPageLinks = [
         'url': 'https://digimoncardgame.fandom.com/wiki/BT19-20:_Special_Booster_Ver.2.5'},
     {'name': '▹BOOSTER WORLD COMVERGENCE [BT-21]',
         'url': 'https://digimoncardgame.fandom.com/wiki/BT-21:_Booster_World_Convergence'},
-      {'name': '▹BOOSTER CYBER EDEN [BT-22]',
-        'url': 'https://digimoncardgame.fandom.com/wiki/BT-22:_Booster_Cyber_Eden'},
-  
+    {'name': '▹BOOSTER CYBER EDEN [BT-22]',
+      'url': 'https://digimoncardgame.fandom.com/wiki/BT-22:_Booster_Cyber_Eden'},
+    {'name': '▹BOOSTER HACKERS SLUMBER [BT-23]',
+      'url': 'https://digimoncardgame.fandom.com/wiki/BT-23:_Booster_Hackers%27_Slumber'},
+
     {'name': '▹THEME BOOSTER CLASSIC COLLECTION [EX-01]',
         'url': 'https://digimoncardgame.fandom.com/wiki/EX-01:_Theme_Booster_Classic_Collection'},
     {'name': '▹THEME BOOSTER DIGITAL HAZARD [EX-02]',
@@ -117,7 +119,7 @@ wikiPageLinks = [
         'url': 'https://digimoncardgame.fandom.com/wiki/ST-20:_Starter_Deck_Protector_of_Light'},
     {'name': 'STARTER DECK HERO OF HOPE [ST-21]',
        'url': 'https://digimoncardgame.fandom.com/wiki/ST-21:_Starter_Deck_Hero_of_Hope'},
-  
+
     {'name': 'LIMITED CARD PACK DIGIMON GHOST GAME [LM-01]',
         'url': 'https://digimoncardgame.fandom.com/wiki/LM-01:_Limited_Card_Pack_Digimon_Ghost_Game'},
     {'name': 'LIMITED CARD PACK DEATHXMON [LM-02]',
@@ -132,6 +134,8 @@ wikiPageLinks = [
         'url': 'https://digimoncardgame.fandom.com/wiki/BT-21:_Limited_Card_Pack'},
     {'name': 'LIMITED CARD PACK BILLION BULLET [LM-06]',
         'url': 'https://digimoncardgame.fandom.com/wiki/LM-06:_Limited_Card_Pack_Billion_Bullet'},
+    {'name': 'LIMITED CARD PACK ANOTHER KNIGHT [LM-07]',
+        'url': 'https://digimoncardgame.fandom.com/wiki/LM-07:_Limited_Card_Pack_Another_Knight'},
 ]
 NoteDictionary = {
     'BT01-03: Release Special Booster Ver.1.0': '▹RELEASE SPECIAL BOOSTER 1.0 [BT01-03]',
@@ -156,7 +160,8 @@ NoteDictionary = {
     'BT19-20: Special Booster Ver.2.5': '▹SPECIAL BOOSTER VER.2.5 [BT19-20]',
     'BT-21: Booster World Convergence': '▹BOOSTER WORLD CONVERGENCE [BT-21]',
     'BT-22: Booster Cyber Eden': '▹BOOSTER CYBER EDEN [BT-22]',
-  
+    'BT-23: Booster Hackers Slumber': '▹BOOSTER HACKERS SLUMBER [BT-23]',
+
     'EX-01: Theme Booster Classic Collection': '▹THEME BOOSTER CLASSIC COLLECTION [EX-01]',
     'EX-02: Theme Booster Digital Hazard': '▹THEME BOOSTER DIGITAL HAZARD [EX-02]',
     'EX-03: Theme Booster Draconic Roar': '▹THEME BOOSTER DRAGONIC ROAR [EX-03]',
@@ -190,7 +195,7 @@ NoteDictionary = {
     'ST-19: Starter Deck Fable Waltz': 'STARTER DECK FABLE WALTZ [ST-19]',
     'ST-20: Starter Deck Protector of Light': 'STARTER DECK PROTECTOR OF LIGHT [ST-20]',
     'ST-21: Starter Deck Hero of Hope': 'STARTER DECK HERO OF HOPE [ST-21]',
-  
+
     'LM-01: Limited Card Pack Digimon Ghost Game': 'LIMITED CARD PACK DIGIMON GHOST GAME [LM-01]',
     'LM-02: Limited Card Pack Digimon DeathXmon': 'LIMITED CARD PACK DIGIMON DEATHXMON [LM-02]',
     'LM-03: Limited Card Set 2024': 'LIMITED CARD SET 2024 [LM-03]',
@@ -200,6 +205,7 @@ NoteDictionary = {
     'LM-05: Limited Card Pack Final Elysion': 'LIMITED CARD PACK FINAL ELYSION [LM-05]',
     'LM-05: Limited Card Pack Shield of the Just': 'LIMITED PACK SHIELD OF THE JUST [LM-05]',
     'LM-06: Limited Card Pack Billion Bullet': 'LIMITED CARD PACK BILLION BULLET [LM-06]',
+    'LM-07: Limited Card Pack Another Knight': 'LIMITED CARD PACK ANOTHER KNIGHT [LM-07]',
 }
 replacements = [
     '(After this card is placed, by trashing it the next turn or later, activate the effect below.)',
@@ -320,8 +326,8 @@ replacements = [
     '(When your other Red or Black Digimon would be deleted by an opponent\'s effect, you may delete this Digimon to prevent 1 of those Digimon\'s deletion.)',
     '(When this Digimon would leave the battle area other than in battle, you may play 1 Red or Black Level 3 Digimon card from its digivolution cards without paying the cost.)',
     '(When this Digimon would leave the battle area other than in battle, you may play 1 Blue or Yellow Level 3 Digimon card from its digivolution cards without paying the cost.)',
-    '(When your other [Bagra Army] trait Digimon would be deleted by an opponent\'s effect, you may delete this Digimon to prevent 1 of those Digimon\'s deletion.)',  
-    '(By trashing this card after the placing turn, activate the effect below.)',   
+    '(When your other [Bagra Army] trait Digimon would be deleted by an opponent\'s effect, you may delete this Digimon to prevent 1 of those Digimon\'s deletion.)',
+    '(By trashing this card after the placing turn, activate the effect below.)',
     'When this would be played, by placing the specified cards from the trash under it, reduce the play cost.',
     ' (When this Digimon would leave the battle area other than in battle, you may play 1 Level 4 Digimon card with [Aqua] or [Sea Animal] in any of its traits from its digivolution cards without paying the cost.)'
 ]

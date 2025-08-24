@@ -1,322 +1,508 @@
+"""
+Module for extracting Digimon card data from the wiki.
+
+This module contains functions to parse HTML content from the Digimon Card Game Wiki
+and extract card information into structured data objects.
+"""
+from typing import List, Optional, Dict, Any
 import requests
-from bs4 import BeautifulSoup
+import time
+from bs4 import BeautifulSoup, Tag
 
 from classes.DigimonCard import DigimonCard
 from classes.DigivolveCondition import DigivolveCondition
 
 import WikiVariables as WV
 
-
-def splitCellsInPair(cells):
-  array = []
-  for i in range(0, len(cells), 2):
-    array.append([cells[i], cells[i + 1]])
-  return array
-
-
-
-def getMainInfo(html, digimoncard):
-  if html == None:
-    return digimoncard
-
-  # Get all the Data from the Table Cells
-  cellData = []
-  cells = html.find_all("td")
-  for cell in cells:
-    cellData.append(cell.text.replace("\n", "").strip())
-
-  # Add all Data in Pairs of 2 (Header and Value)
-  infoArray = splitCellsInPair(cellData)
-
-  for data in infoArray:
-    if 'Name' in data[0]:
-      digimoncard.name.english = data[1]
-    if 'Japanese' in data[0]:
-      digimoncard.name.japanese = data[1]
-    if 'Traditional Chinese' in data[0]:
-      digimoncard.name.traditionalChinese = data[1]
-    if 'Simplified Chinese' in data[0]:
-      digimoncard.name.simplifiedChinese = data[1]
-    if 'Korean' in data[0]:
-      digimoncard.name.korean = data[1]
-
-    if 'Colour' in data[0]:
-      digimoncard.color = data[1].replace(" / ", "/")
-    if 'Card Type' in data[0]:
-      digimoncard.cardType = data[1]
-    if 'Play Cost' in data[0]:
-      digimoncard.playCost = data[1]
-    if 'Use Cost' in data[0]:
-      digimoncard.playCost = data[1]
-    if 'DP' in data[0]:
-      digimoncard.dp = data[1].replace(" DP", "")
-    if 'Level' in data[0]:
-      digimoncard.cardLv = "Lv." + data[1]
-    if 'Form' in data[0]:
-      digimoncard.form = data[1]
-    if 'Attribute' in data[0]:
-      digimoncard.attribute = data[1]
-    if 'Type' in data[0]:
-      digimoncard.type = data[1]
-    if 'Rarity' in data[0]:
-      digimoncard.rarity = data[1]
-  return digimoncard
-
-
-def addCorrectSpecialDigivolve(digimoncard, specialDigivolve):
-  td = specialDigivolve.find("td")
-  if 'DNA' in td.text:
-    digimoncard.dnaDigivolve = td.text
-    return
-  if 'Burst' in td.text:
-    digimoncard.burstDigivolve = td.text
-    return
-  digimoncard.specialDigivolve = td.text
-
-
-def getDigivolveInfo(html, digimoncard):
-  if html == None:
-    return digimoncard
-
-  evoCons = html.find_all("table", class_="evocon")
-  for evoCon in evoCons:
-    cellData = []
-    cells = evoCon.find_all("td")
-    for cell in cells:
-      cellData.append(cell.text.replace("\n", "").strip())
-    infoArray = splitCellsInPair(cellData)
-
-    newDigivolveCondition = DigivolveCondition()
-    for data in infoArray:
-      match (data[0]):
-        case 'Colour':
-          newDigivolveCondition.color = data[1]
-        case 'Level':
-          newDigivolveCondition.level = data[1]
-        case 'Form':
-          newDigivolveCondition.level = data[1]
-        case 'Digivolve Cost':
-          newDigivolveCondition.cost = data[1]
-    digimoncard.digivolveCondition.append(newDigivolveCondition)
-
-  specialEvoCons = html.find_all("table", class_="effect")
-  for specialEvoCon in specialEvoCons:
-    th = specialEvoCon.find("th")
-    if th is not None:
-      specialEvo = th.text.replace("\n", "")
-      if (specialEvo.find("DigiXros Requirements") != -1):
-        xrosHeart = specialEvoCon.find("td")
-        digimoncard.digiXros = xrosHeart.text
-      if (specialEvo.find("Assembly Requirements") != -1):
-        assembly = specialEvoCon.find("td")
-        digimoncard.assembly = assembly.text
-      if (specialEvo.find("Alt. Digivolution Requirements") != -1):
-        addCorrectSpecialDigivolve(digimoncard, specialEvoCon)
-
-  return digimoncard
-
-
-def getExtraInfo(html, digimoncard):
-  if html == None:
-    return digimoncard
-
-  tables = html.find_all("table")
-  for table in tables:
-    th = table.find("th")
-
-    if th is None:
-      return digimoncard
-
-    if th.text.find("Card Effect") != -1:
-      td = table.find("td")
-      digimoncard.effect = td.text
-
-    if th.text.find("Rule") != -1:
-      td = table.find("td")
-      digimoncard.rule = td.text
-
-    if th.text.find("Inherited Effect") != -1:
-      td = table.find("td")
-      digimoncard.digivolveEffect = td.text
-
-    if th.text.find("Security Effect") != -1:
-      td = table.find("td")
-      digimoncard.securityEffect = td.text
-
-    if th.text.find("Ace") != -1:
-      td = table.find("td")
-      digimoncard.aceEffect = td.text
-
-    if th.text.find("Link DP") != -1:
-      td = table.find("td")
-      digimoncard.linkDP = td.text
-
-    if th.text.find("Link Effect") != -1:
-      td = table.find("td")
-      digimoncard.linkEffect = td.text
-
-    if th.text.find("Link Requirements") != -1:
-      td = table.find("td")
-      digimoncard.linkRequirement = td.text
-
-  return digimoncard
-
-
-def getEnglishIllustrator(rows, digimoncard):
-  illustratorCount = 0
-  for row in rows:
-    cells = row.find_all("td")
-
-    if cells is None or illustratorCount == 0:
-      illustratorCount += 1
-      continue
-
-    # The first Illustrator is the Main Illustrator
-    if illustratorCount == 1:
-      digimoncard.illustrator = cells[0].text
-      digimoncard.notes = cells[1].text
-    else:
-      #Pre-Release and Revision Packs dont Count as AAs
-      if 'Pre Release' in cells[2].text or 'Pre Release' in cells[1].text:
-        illustratorCount -= 1
-        digimoncard.AAs.append(
-          {'id': '_P0', 'illustrator': cells[0].text, 'note': cells[1].text, 'type': cells[2].text})
-      elif 'Errata' in cells[2].text or 'Errata' in cells[1].text:
-        illustratorCount -= 1
-        digimoncard.AAs.append(
-          {'id': '-Errata', 'illustrator': cells[0].text, 'note': cells[1].text, 'type': cells[2].text})
-      else:
-        digimoncard.AAs.append(
-          {'id': '_P' + str(illustratorCount - 1), 'illustrator': cells[0].text, 'note': cells[1].text,
-           'type': cells[2].text})
-    illustratorCount += 1
-
-
-def getJapaneseIllustrator(rows, digimoncard):
-  illustratorCount = 0
-  for row in rows:
-    cells = row.find_all("td")
-
-    if cells is None or illustratorCount == 0:
-      illustratorCount += 1
-      continue
-
-    if illustratorCount != 1:
-      digimoncard.JAAs.append(
-        {'id': '_P' + str(illustratorCount - 1), 'illustrator': cells[0].text, 'note': cells[1].text,
-         'type': cells[2].text})
-    illustratorCount += 1
-
-
-def getIllustratorsInfo(html, digimoncard):
-  if html == None or len(html) == 0:
-    return digimoncard
-
-  # If len is 1 there is only a japanese Release
-  if len(html) == 1:
-    rowsJ = html[0].find_all("tr")
-    rows = None
-    getJapaneseIllustrator(rowsJ, digimoncard)
-  else:
-    # The first Table is for English Sets
-    rows = html[0].find_all("tr")
-    # The second Table is for Japanese Sets
-    rowsJ = html[1].find_all("tr")
-
-    getEnglishIllustrator(rows, digimoncard)
-    getJapaneseIllustrator(rowsJ, digimoncard)
-
-  return digimoncard
-
-
-def getRestrictedInfo(html, digimoncard):
-  if html == None:
-    return digimoncard
-
-  # The order of the restrictions is always the same (English, Japanese, Chinese, Korean)
-  tds = html.find_all("td")
-
-  if tds is None:
-    return digimoncard
-
-  digimoncard.restrictions.english = tds[0].text
-  digimoncard.restrictions.japanese = tds[1].text
-  digimoncard.restrictions.chinese = tds[2].text
-  digimoncard.restrictions.korean = tds[3].text
-
-  blocks = tds[4].find_all("span", class_="block_circle")
-  for block in blocks:
-    if (block.text == "-"):
-      continue
-    digimoncard.block.append(block.text)
-
-  return digimoncard
-
-
-def setRarity(digimoncard):
-  rarityDict = {
+# Constants for parsing
+RARITY_MAPPING = {
     "-": "-",
     "": "-",
     "Common": "C",
     "Uncommon": "U",
-    "Rare": 'R',
-    "Super Rare": 'SR',
-    "Secret Rare": 'SEC',
+    "Rare": "R",
+    "Super Rare": "SR",
+    "Secret Rare": "SEC",
     "Alternative Art": "AA",
     "Promo": "P",
     "Special Rare": "SP"
-  }
+}
 
-  digimoncard.rarity = rarityDict[digimoncard.rarity]
-  return digimoncard
+# Field mappings for main info parsing
+MAIN_INFO_MAPPINGS = {
+    "Name": ("name.english", str),
+    "Japanese": ("name.japanese", str),
+    "Traditional Chinese": ("name.traditionalChinese", str),
+    "Simplified Chinese": ("name.simplifiedChinese", str),
+    "Korean": ("name.korean", str),
+    "Colour": ("color", lambda x: x.replace(" / ", "/")),
+    "Card Type": ("cardType", str),
+    "Play Cost": ("playCost", str),
+    "Use Cost": ("playCost", str),
+    "DP": ("dp", lambda x: x.replace(" DP", "")),
+    "Level": ("cardLv", lambda x: "Lv." + x),
+    "Form": ("form", str),
+    "Attribute": ("attribute", str),
+    "Type": ("type", str),
+    "Rarity": ("rarity", str),
+}
+
+# Field mappings for extra info parsing
+EXTRA_INFO_MAPPINGS = {
+    "Card Effect": "effect",
+    "Rule": "rule",
+    "Inherited Effect": "digivolveEffect",
+    "Security Effect": "securityEffect",
+    "Ace": "aceEffect",
+    "Link DP": "linkDP",
+    "Link Effect": "linkEffect",
+    "Link Requirements": "linkRequirement",
+}
 
 
-def setCardImage(digimoncard, url):
-  splitUrl = url.split("/")
-  digimoncard.id = splitUrl[2]
-  digimoncard.cardNumber = splitUrl[2]
-  digimoncard.cardImage = 'assets/images/cards/' + \
-                          digimoncard.cardImage + digimoncard.id + ".webp"
+def splitCellsInPair(cells: List[str]) -> List[List[str]]:
+    """
+    Split a list of cells into pairs (header, value).
 
-  return digimoncard
+    Args:
+        cells: List of cell text content
 
-def getCardData():
-  count = 0
-  for link in WV.cardLinks:
+    Returns:
+        List of [header, value] pairs
+    """
+    return [[cells[i], cells[i + 1]] for i in range(0, len(cells), 2)]
+
+
+def set_nested_attribute(obj: Any, path: str, value: Any, transform_func=None) -> None:
+    """
+    Set a nested attribute on an object using dot notation.
+
+    Args:
+        obj: The object to set the attribute on
+        path: Dot-separated path to the attribute (e.g., "name.english")
+        value: The value to set
+        transform_func: Optional function to transform the value before setting
+    """
+    if transform_func:
+        value = transform_func(value)
+
+    parts = path.split('.')
+    current = obj
+    for part in parts[:-1]:
+        current = getattr(current, part)
+    setattr(current, parts[-1], value)
+
+
+
+def getMainInfo(html: Optional[Tag], digimoncard: DigimonCard) -> DigimonCard:
+    """
+    Extract main card information from HTML.
+
+    Args:
+        html: BeautifulSoup HTML element containing main card info
+        digimoncard: DigimonCard object to populate
+
+    Returns:
+        Updated DigimonCard object
+    """
+    if html is None:
+        return digimoncard
+
+    # Get all the Data from the Table Cells
+    cellData = []
+    cells = html.find_all("td")
+    for cell in cells:
+        cellData.append(cell.text.replace("\n", "").strip())
+
+    # Add all Data in Pairs of 2 (Header and Value)
+    infoArray = splitCellsInPair(cellData)
+
+    for header, value in infoArray:
+        for key, (path, transform) in MAIN_INFO_MAPPINGS.items():
+            if key in header:
+                set_nested_attribute(digimoncard, path, value, transform)
+                break
+
+    return digimoncard
+
+
+def addCorrectSpecialDigivolve(digimoncard: DigimonCard, specialDigivolve: Tag) -> None:
+    """
+    Add special digivolve information to the card based on the type.
+
+    Args:
+        digimoncard: DigimonCard object to update
+        specialDigivolve: HTML element containing special digivolve info
+    """
+    td = specialDigivolve.find("td")
+    if td is None:
+        return
+
+    text = td.text
+    if 'DNA' in text:
+        digimoncard.dnaDigivolve = text
+    elif 'Burst' in text:
+        digimoncard.burstDigivolve = text
+    else:
+        digimoncard.specialDigivolve = text
+
+
+def getDigivolveInfo(html: Optional[Tag], digimoncard: DigimonCard) -> DigimonCard:
+    """
+    Extract digivolution information from HTML.
+
+    Args:
+        html: BeautifulSoup HTML element containing digivolve info
+        digimoncard: DigimonCard object to populate
+
+    Returns:
+        Updated DigimonCard object
+    """
+    if html is None:
+        return digimoncard
+
+    # Process evolution conditions
+    evoCons = html.find_all("table", class_="evocon")
+    for evoCon in evoCons:
+        cellData = []
+        cells = evoCon.find_all("td")
+        for cell in cells:
+            cellData.append(cell.text.replace("\n", "").strip())
+        infoArray = splitCellsInPair(cellData)
+
+        newDigivolveCondition = DigivolveCondition()
+        for header, value in infoArray:
+            if header == 'Colour':
+                newDigivolveCondition.color = value
+            elif header in ['Level', 'Form']:
+                newDigivolveCondition.level = value
+            elif header == 'Digivolve Cost':
+                newDigivolveCondition.cost = value
+        digimoncard.digivolveCondition.append(newDigivolveCondition)
+
+    # Process special evolution conditions
+    specialEvoCons = html.find_all("table", class_="effect")
+    for specialEvoCon in specialEvoCons:
+        th = specialEvoCon.find("th")
+        if th is None:
+            continue
+
+        specialEvo = th.text.replace("\n", "").strip()
+        td = specialEvoCon.find("td")
+
+        if td is None:
+            continue
+
+        if "DigiXros Requirements" in specialEvo:
+            digimoncard.digiXros = td.text
+        elif "Assembly Requirements" in specialEvo:
+            digimoncard.assembly = td.text
+        elif "Alt. Digivolution Requirements" in specialEvo:
+            addCorrectSpecialDigivolve(digimoncard, specialEvoCon)
+
+    return digimoncard
+
+
+def getExtraInfo(html: Optional[Tag], digimoncard: DigimonCard) -> DigimonCard:
+    """
+    Extract extra card information from HTML.
+
+    Args:
+        html: BeautifulSoup HTML element containing extra card info
+        digimoncard: DigimonCard object to populate
+
+    Returns:
+        Updated DigimonCard object
+    """
+    if html is None:
+        return digimoncard
+
+    tables = html.find_all("table")
+    for table in tables:
+        th = table.find("th")
+        td = table.find("td")
+
+        if th is None or td is None:
+            continue
+
+        header_text = th.text.strip()
+
+        # Check against our mapping dictionary
+        for key, attribute in EXTRA_INFO_MAPPINGS.items():
+            if key in header_text:
+                setattr(digimoncard, attribute, td.text)
+                break
+
+    return digimoncard
+
+
+def getEnglishIllustrator(rows: List[Tag], digimoncard: DigimonCard) -> None:
+    """
+    Extract English illustrator information from table rows.
+
+    Args:
+        rows: List of HTML table row elements
+        digimoncard: DigimonCard object to populate
+    """
+    for illustratorCount, row in enumerate(rows):
+        cells = row.find_all("td")
+
+        if not cells or illustratorCount == 0:
+            continue
+
+        # Ensure we have enough cells to process
+        if len(cells) < 3:
+            continue
+
+        # The first Illustrator is the Main Illustrator
+        if illustratorCount == 1:
+            digimoncard.illustrator = cells[0].text
+            digimoncard.notes = cells[1].text
+        else:
+            cell_type = cells[2].text if len(cells) > 2 else ""
+            cell_note = cells[1].text
+
+            # Pre-Release and Revision Packs don't count as AAs
+            if 'Pre Release' in cell_type or 'Pre Release' in cell_note:
+                aa_id = '_P0'
+            elif 'Errata' in cell_type or 'Errata' in cell_note:
+                aa_id = '-Errata'
+            else:
+                aa_id = f'_P{illustratorCount - 1}'
+
+            digimoncard.AAs.append({
+                'id': aa_id,
+                'illustrator': cells[0].text,
+                'note': cell_note,
+                'type': cell_type
+            })
+
+
+def getJapaneseIllustrator(rows: List[Tag], digimoncard: DigimonCard) -> None:
+    """
+    Extract Japanese illustrator information from table rows.
+
+    Args:
+        rows: List of HTML table row elements
+        digimoncard: DigimonCard object to populate
+    """
+    for illustratorCount, row in enumerate(rows):
+        cells = row.find_all("td")
+
+        if not cells or illustratorCount == 0:
+            continue
+
+        # Ensure we have enough cells to process
+        if len(cells) < 3:
+            continue
+
+        if illustratorCount != 1:
+            digimoncard.JAAs.append({
+                'id': f'_P{illustratorCount - 1}',
+                'illustrator': cells[0].text,
+                'note': cells[1].text,
+                'type': cells[2].text
+            })
+
+
+def getIllustratorsInfo(html: Optional[List[Tag]], digimoncard: DigimonCard) -> DigimonCard:
+    """
+    Extract illustrator information from HTML tables.
+
+    Args:
+        html: List of HTML table elements containing illustrator info
+        digimoncard: DigimonCard object to populate
+
+    Returns:
+        Updated DigimonCard object
+    """
+    if html is None or len(html) == 0:
+        return digimoncard
+
+    # If len is 1 there is only a Japanese Release
+    if len(html) == 1:
+        rowsJ = html[0].find_all("tr")
+        getJapaneseIllustrator(rowsJ, digimoncard)
+    else:
+        # The first Table is for English Sets
+        rows = html[0].find_all("tr")
+        # The second Table is for Japanese Sets
+        rowsJ = html[1].find_all("tr")
+
+        getEnglishIllustrator(rows, digimoncard)
+        getJapaneseIllustrator(rowsJ, digimoncard)
+
+    return digimoncard
+
+
+def getRestrictedInfo(html: Optional[Tag], digimoncard: DigimonCard) -> DigimonCard:
+    """
+    Extract restriction and block information from HTML.
+
+    Args:
+        html: BeautifulSoup HTML element containing restriction info
+        digimoncard: DigimonCard object to populate
+
+    Returns:
+        Updated DigimonCard object
+    """
+    if html is None:
+        return digimoncard
+
+    # The order of the restrictions is always the same (English, Japanese, Chinese, Korean)
+    tds = html.find_all("td")
+
+    if not tds or len(tds) < 5:
+        return digimoncard
+
+    digimoncard.restrictions.english = tds[0].text
+    digimoncard.restrictions.japanese = tds[1].text
+    digimoncard.restrictions.chinese = tds[2].text
+    digimoncard.restrictions.korean = tds[3].text
+
+    blocks = tds[4].find_all("span", class_="block_circle")
+    for block in blocks:
+        block_text = block.text.strip()
+        if block_text != "-":
+            digimoncard.block.append(block_text)
+
+    return digimoncard
+
+
+def setRarity(digimoncard: DigimonCard) -> DigimonCard:
+    """
+    Convert rarity text to abbreviated format.
+
+    Args:
+        digimoncard: DigimonCard object to update
+
+    Returns:
+        Updated DigimonCard object
+    """
+    digimoncard.rarity = RARITY_MAPPING.get(digimoncard.rarity, digimoncard.rarity)
+    return digimoncard
+
+
+def setCardImage(digimoncard: DigimonCard, url: str) -> DigimonCard:
+    """
+    Set card ID and image path from URL.
+
+    Args:
+        digimoncard: DigimonCard object to update
+        url: Wiki URL for the card
+
+    Returns:
+        Updated DigimonCard object
+    """
+    splitUrl = url.split("/")
+    if len(splitUrl) >= 3:
+        card_id = splitUrl[2]
+        digimoncard.id = card_id
+        digimoncard.cardNumber = card_id
+        digimoncard.cardImage = f'assets/images/cards/{card_id}.webp'
+
+    return digimoncard
+
+def getCardData() -> None:
+    """
+    Main function to extract card data from all wiki links.
+
+    Processes each card link, extracts data, and adds to WV.cards list.
+    """
+    count = 0
+    errors = []
+
+    # Create a session for connection reuse (simple optimization)
+    session = requests.Session()
+    session.headers.update({
+        'User-Agent': 'DigimonCardApp/1.0 (Card Data Fetcher)',
+        'Connection': 'keep-alive',
+    })
+
+    print(f"📊 Processing {len(WV.cardLinks)} cards...")
+    start_time = time.time()
+
+    for link in WV.cardLinks:
+        try:
+            count += 1
+
+            # Use session instead of requests.get for better performance
+            page = session.get(WV.wikiLink + link, timeout=20)
+            page.raise_for_status()
+
+            # Use lxml parser for better performance
+            soup = BeautifulSoup(page.content, "lxml")
+
+            currentDigimon = DigimonCard()
+
+            cardTable = soup.find('div', class_='ctable')
+
+            if cardTable is None:
+                print(f"No Card Table found for: {link}")
+                continue
+
+            # Extract different sections of card information
+            infoMain = cardTable.find("div", class_="info-main")
+            infoDigivolve = cardTable.find("div", class_="info-digivolve")
+            infoExtra = cardTable.find("div", class_="info-extra")
+            infoRestricted = cardTable.find("div", class_="info-restricted")
+            infoIllustrator = soup.find_all("table", class_="settable")
+
+            # Process each section
+            currentDigimon = getMainInfo(infoMain, currentDigimon)
+            currentDigimon = getDigivolveInfo(infoDigivolve, currentDigimon)
+            currentDigimon = getExtraInfo(infoExtra, currentDigimon)
+            currentDigimon = getRestrictedInfo(infoRestricted, currentDigimon)
+            currentDigimon = getIllustratorsInfo(infoIllustrator, currentDigimon)
+
+            # Final processing
+            currentDigimon = setRarity(currentDigimon)
+            currentDigimon = setCardImage(currentDigimon, link)
+
+            # Progress indicator every 50 cards
+            if count % 50 == 0:
+                elapsed = time.time() - start_time
+                rate = count / elapsed if elapsed > 0 else 0
+                print(f'⚡ [{count}/{WV.cardCount}] Progress: {count/WV.cardCount*100:.1f}% '
+                      f'({rate:.1f} cards/sec)')
+            else:
+                print(f'[{count}/{WV.cardCount}] {currentDigimon.id} - {currentDigimon.name.english}')
+
+            WV.cards.append(currentDigimon)
+
+        except requests.exceptions.RequestException as e:
+            error_msg = f"Network error for {link}: {e}"
+            print(error_msg)
+            errors.append(error_msg)
+        except Exception as e:
+            error_msg = f"Processing error for {link}: {e}"
+            print(error_msg)
+            errors.append(error_msg)
+
+    # Final statistics
+    total_time = time.time() - start_time
+    success_count = len(WV.cards)
+
+    print(f"\n✅ Card data extraction completed!")
+    print(f"📈 Successfully processed: {success_count} cards")
+    print(f"❌ Errors: {len(errors)}")
+    print(f"⏱️  Total time: {total_time:.1f}s")
+    print(f"🚀 Average speed: {success_count/total_time:.1f} cards/sec")
+
+    if errors:
+        print(f"\n⚠️  Recent errors:")
+        for error in errors[-3:]:  # Show last 3 errors
+            print(f"  - {error}")
+
+def getCardDataFast() -> None:
+    """
+    Fast version using the optimized parallel fetcher.
+    For maximum performance, use GetCardDataFast.py directly.
+    """
     try:
-      count += 1
-
-      page = requests.get(WV.wikiLink + link)
-      soup = BeautifulSoup(page.content, "html.parser")
-
-      currentDigimon = DigimonCard()
-
-      cardTable = soup.find('div', class_='ctable')
-
-      if cardTable is None:
-        print("No Card Table found for: " + link)
-        continue
-
-      infoMain = cardTable.find("div", class_="info-main")
-      infoDigivolve = cardTable.find("div", class_="info-digivolve")
-      infoExtra = cardTable.find("div", class_="info-extra")
-      infoRestricted = cardTable.find("div", class_="info-restricted")
-
-      infoIllustrator = soup.find_all("table", class_="settable")
-
-      currentDigimon = getMainInfo(infoMain, currentDigimon)
-      currentDigimon = getDigivolveInfo(infoDigivolve, currentDigimon)
-      currentDigimon = getExtraInfo(infoExtra, currentDigimon)
-      currentDigimon = getRestrictedInfo(infoRestricted, currentDigimon)
-
-      currentDigimon = getIllustratorsInfo(
-        infoIllustrator, currentDigimon)
-
-      currentDigimon = setRarity(currentDigimon)
-      currentDigimon = setCardImage(currentDigimon, link)
-
-      print('[' + str(count) + '/' + str(WV.cardCount) + ']' +
-            currentDigimon.id + ' - ' + currentDigimon.name.english)
-      WV.cards.append(currentDigimon)
-    except:
-      print("Error for: " + link)
+        from GetCardDataFast import getCardDataOptimized
+        print("🚀 Using optimized parallel card fetcher...")
+        getCardDataOptimized("normal")
+    except ImportError:
+        print("⚠️  Fast fetcher not available, using standard method...")
+        getCardData()

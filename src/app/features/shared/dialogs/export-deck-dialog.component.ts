@@ -14,6 +14,19 @@ import { DigimonCardStore } from '../../../store/digimon-card.store';
   selector: 'digimon-export-deck-dialog',
   template: `
     <p-selectButton [options]="exportList" [(ngModel)]="exportType" (onOptionClick)="changeExportType($event)"></p-selectButton>
+
+    <!-- Order Selection Button Group (only for TEXT export) -->
+    <div *ngIf="exportType === 'TEXT'" class="mt-3">
+      <label class="block text-sm font-medium mb-2">Export Order:</label>
+      <p-selectButton
+        [options]="orderOptions"
+        [(ngModel)]="selectedOrder"
+        (onChange)="onOrderChange()"
+        optionLabel="label"
+        optionValue="value">
+      </p-selectButton>
+    </div>
+
     <div *ngIf="exportType !== 'IMAGE'">
       <textarea
         #textAreaElement
@@ -78,6 +91,17 @@ export class ExportDeckDialogComponent implements OnInit {
 
   colors = ColorsWithoutMulti;
   selectedColor = 'Red';
+
+  // Order options for export
+  orderOptions = [
+    { label: 'Qty Name ID', value: 'qty-name-id' },
+    { label: 'ID Name Qty', value: 'id-name-qty' },
+    { label: 'Name Qty ID', value: 'name-qty-id' },
+    { label: 'Name ID Qty', value: 'name-id-qty' },
+    { label: 'ID Qty Name', value: 'id-qty-name' },
+    { label: 'Qty ID Name', value: 'qty-id-name' }
+  ];
+  selectedOrder = 'qty-name-id';
 
   normalOrder = true;
 
@@ -175,16 +199,40 @@ export class ExportDeckDialogComponent implements OnInit {
     document.body.removeChild(selBox);
   }
 
+  onOrderChange(): void {
+    // Regenerate the deck text when order changes
+    this.setExportTypeText();
+  }
+
+  private formatCardLine(card: any, digimonCard: any): string {
+    const cardId = card.id.replace('ST0', 'ST');
+    const cardName = digimonCard?.name.english || 'Unknown';
+    const cardQty = card.count.toString();
+
+    switch (this.selectedOrder) {
+      case 'qty-name-id':
+        return `${cardQty} ${cardName} ${cardId}`;
+      case 'id-name-qty':
+        return `${cardId} ${cardName} ${cardQty}`;
+      case 'name-qty-id':
+        return `${cardName} ${cardQty} ${cardId}`;
+      case 'name-id-qty':
+        return `${cardName} ${cardId} ${cardQty}`;
+      case 'id-qty-name':
+        return `${cardId} ${cardQty} ${cardName}`;
+      case 'qty-id-name':
+        return `${cardQty} ${cardId} ${cardName}`;
+      default:
+        return `${cardQty} ${cardName} ${cardId}`;
+    }
+  }
+
   private setExportTypeText(): void {
     this.deckText = '// Digimon DeckList\n\n';
     this.deck.cards.forEach((card) => {
       const digimonCard = this.digimonCardStore.cardsMap().get(card.id);
       if (digimonCard) {
-        if (this.normalOrder) {
-          this.deckText += `${card.id.replace('ST0', 'ST')} ${digimonCard?.name.english} ${card.count}\n`;
-        } else {
-          this.deckText += `${card.count} ${digimonCard?.name.english} ${card.id.replace('ST0', 'ST')}\n`;
-        }
+        this.deckText += this.formatCardLine(card, digimonCard) + '\n';
       }
     });
   }
