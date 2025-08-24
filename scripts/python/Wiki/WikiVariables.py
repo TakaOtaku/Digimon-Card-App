@@ -313,6 +313,7 @@ replacements = [
     'If 2 such cards are linked together, stack the link card on top and digivolve.',
     '<< ',
     '(Add 1 to this Digimon\'s maximum links.)',
+    '(This Digimon can block in the blocker timing.)',
     '(While attacking, your opponent\'s effects don\'t affect this Digimon.)',
     '(In the main phase, by suspending this Digimon, place your deck\'s top card face down as this Digimon\'s bottom digivolution card. This effect can also activate in the breeding area.)',
     '(When your other [Xros Heart] trait Digimon would be deleted by an opponent\'s effect, you may delete this Digimon to prevent 1 of those Digimon\'s deletion.)',
