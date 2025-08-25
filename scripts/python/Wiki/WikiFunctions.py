@@ -5,6 +5,10 @@ from bs4 import BeautifulSoup
 from classes.DigimonCard import DigimonCard
 
 import WikiVariables as WV
+import time
+import random
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
 def check_if_image_exists(image_path):
     return os.path.exists(image_path)
@@ -69,12 +73,59 @@ def setNotes():
             card.notes = WV.NoteDictionary[card.notes]
 
 
+# Configure requests session with retry strategy
+def create_robust_session():
+    session = requests.Session()
+
+    # Define retry strategy
+    retry_strategy = Retry(
+        total=3,
+        backoff_factor=1,
+        status_forcelist=[429, 500, 502, 503, 504],
+        allowed_methods=["HEAD", "GET", "OPTIONS"]
+    )
+
+    adapter = HTTPAdapter(max_retries=retry_strategy)
+    session.mount("http://", adapter)
+    session.mount("https://", adapter)
+
+    # Set a user agent to be polite
+    session.headers.update({
+        'User-Agent': 'Digimon Card App Data Scraper 1.0 (digimoncard.app@gmail.de)'
+    })
+
+    return session
+
+# Global session
+session = create_robust_session()
+
+def safe_request(url, delay=None):
+    """Make a safe HTTP request with error handling and optional delay"""
+    if delay:
+        time.sleep(delay)
+
+    try:
+        response = session.get(url, timeout=30)
+        response.raise_for_status()
+        return response
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching {url}: {e}")
+        # Add exponential backoff on error
+        time.sleep(random.uniform(2, 5))
+        return None
+
+
 def getRulings():
     rulingCount = 0
     for link in WV.cardLinks:
         rulingCount += 1
-        page = requests.get(WV.wikiLink + link + WV.ruling)
-        soup = BeautifulSoup(page.content, "html.parser")
+
+        response = safe_request(WV.wikiLink + link + WV.ruling, delay=random.uniform(0.2, 0.5))
+        if not response:
+            print(f"Failed to fetch rulings for: {link}")
+            continue
+
+        soup = BeautifulSoup(response.content, "html.parser")
 
         id = link.split("/")[2]
 
@@ -167,6 +218,3 @@ def loadCards():
 
     WV.cards = cards
     print("Cards Loaded!")
-
-
-

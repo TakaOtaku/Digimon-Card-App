@@ -7,12 +7,39 @@ and extract card information into structured data objects.
 from typing import List, Optional, Dict, Any
 import requests
 import time
+import random
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 from bs4 import BeautifulSoup, Tag
 
 from classes.DigimonCard import DigimonCard
 from classes.DigivolveCondition import DigivolveCondition
 
 import WikiVariables as WV
+
+# Configure requests session with retry strategy
+def create_robust_session():
+    session = requests.Session()
+
+    # Define retry strategy
+    retry_strategy = Retry(
+        total=3,
+        backoff_factor=1,
+        status_forcelist=[429, 500, 502, 503, 504],
+        allowed_methods=["HEAD", "GET", "OPTIONS"]
+    )
+
+    adapter = HTTPAdapter(max_retries=retry_strategy)
+    session.mount("http://", adapter)
+    session.mount("https://", adapter)
+
+    # Set a user agent to be polite
+    session.headers.update({
+        'User-Agent': 'Digimon Card App Data Scraper 1.0 (digimoncard.app@gmail.de)',
+        'Connection': 'keep-alive',
+    })
+
+    return session
 
 # Constants for parsing
 RARITY_MAPPING = {
@@ -413,11 +440,7 @@ def getCardData() -> None:
     errors = []
 
     # Create a session for connection reuse (simple optimization)
-    session = requests.Session()
-    session.headers.update({
-        'User-Agent': 'DigimonCardApp/1.0 (Card Data Fetcher)',
-        'Connection': 'keep-alive',
-    })
+    session = create_robust_session()
 
     print(f"📊 Processing {len(WV.cardLinks)} cards...")
     start_time = time.time()
@@ -425,6 +448,10 @@ def getCardData() -> None:
     for link in WV.cardLinks:
         try:
             count += 1
+
+            # Add delay between requests to be respectful to the server
+            if count > 1:  # Skip delay for first request
+                time.sleep(random.uniform(0.1, 0.3))
 
             # Use session instead of requests.get for better performance
             page = session.get(WV.wikiLink + link, timeout=20)
