@@ -6,6 +6,7 @@ import { DialogStore, DigimonCardStore, SaveStore } from '@store';
 import { saveAs } from 'file-saver';
 import { ToastrService } from 'ngx-toastr';
 import { MessageService } from 'primeng/api';
+import { ButtonDirective } from 'primeng/button';
 import { InputSwitch } from 'primeng/inputswitch';
 import { MultiSelect } from 'primeng/multiselect';
 
@@ -173,7 +174,7 @@ import { MultiSelect } from 'primeng/multiselect';
     `,
   ],
   standalone: true,
-  imports: [MultiSelect, FormsModule, NgClass, InputSwitch, NgIf],
+  imports: [MultiSelect, FormsModule, NgClass, InputSwitch, NgIf, ButtonDirective],
   providers: [MessageService],
 })
 export class CollectionExportComponent {
