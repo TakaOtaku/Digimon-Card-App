@@ -8153,8 +8153,8 @@
   ],
   "BT20-099": [
     {
-      "answer": "A: Yes, it triggers.When deletion occurs by DP becoming 0, it's considered deletion by the rules, therefore \uff1cPartition\uff1e (When this Digimon with each of the specified digivolution cards would leave the battle area other than by your own effects or by battle, you may play 1 each of the specified cards without paying the costs.)'s trigger conditions are met.[1]",
-      "question": "Q: If BT20-037 [Chaosmon: Valdur Arm] has this card, a yellow level 6 card, and a green level 6 card in its digivolution cards, then this card's inherited effect causes its DP to become 0 and it's deleted, does BT20-037 [Chaosmon: Valdur Arm]'s \uff1cPartition (Yellow Lv.6 + Green/Black Lv.6)\uff1e (When this Digimon with each of the specified digivolution cards would leave the battle area other than by your own effects or by battle, you may play 1 each of the specified cards without paying the costs.) trigger?"
+      "answer": "A: Yes, it triggers.When deletion occurs by DP becoming 0, it's considered deletion by the rules, therefore \uff1cPartition\uff1e's trigger conditions are met.[1]",
+      "question": "Q: If BT20-037 [Chaosmon: Valdur Arm] has this card, a yellow level 6 card, and a green level 6 card in its digivolution cards, then this card's inherited effect causes its DP to become 0 and it's deleted, does BT20-037 [Chaosmon: Valdur Arm]'s \uff1cPartition (Yellow Lv.6 + Green/Black Lv.6)\uff1e trigger?"
     }
   ],
   "BT20-101": [
