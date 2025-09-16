@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "serve -s dist/digimon-card-game-collector/browser",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
@@ -53,6 +53,7 @@
     "primeicons": "7.0.0",
     "primeng": "^19.1.2",
     "rxjs": "~7.8.0",
+    "serve": "^14.2.5",
     "tslib": "^2.3.0",
     "tw-elements": "^2.0.0",
     "uuid": "^11.1.0",
