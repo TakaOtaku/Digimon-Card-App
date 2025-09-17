@@ -64,11 +64,11 @@ export class AuthService {
               if (save) {
                 // Create user data object and update state
                 const displayName = save.displayName ? save.displayName : firebaseUser.displayName;
-                const photoURL = save.photoURL ? save.photoURL : firebaseUser.photoURL;
+                const photoUrl = save.photoUrl ? save.photoUrl : firebaseUser.photoURL;
                 const userData: IUser = {
                   uid: firebaseUser.uid,
                   displayName: displayName,
-                  photoURL: photoURL,
+                  photoUrl: photoUrl,
                   save: this.ensureSaveHasUserInfo(save, firebaseUser),
                 };
 
@@ -196,7 +196,7 @@ export class AuthService {
 
     return {
       uid: user.uid,
-      photoURL: user.photoURL || '',
+      photoUrl: user.photoURL || '', // Firebase user still has photoURL
       displayName: user.displayName || '',
       version: 1,
       collection: [],
@@ -213,7 +213,7 @@ export class AuthService {
       ...save,
       uid: user.uid,
       displayName: save.displayName || user.displayName || '',
-      photoURL: save.photoURL || user.photoURL || '',
+      photoUrl: save.photoUrl || user.photoURL || '', // Firebase user has photoURL, save has photoUrl
     };
   }
 }

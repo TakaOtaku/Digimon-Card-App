@@ -6,9 +6,13 @@
         ".write": "auth != null && auth.uid === $uid"
       }
     },
+    "decks": {
+      ".read": true,
+      ".write": "auth != null"
+    },
     "tierlist": {
       ".read": true,
-      ".write": true,
+      ".write": true
     }
   }
 }

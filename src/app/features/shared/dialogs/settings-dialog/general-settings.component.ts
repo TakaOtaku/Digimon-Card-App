@@ -213,7 +213,7 @@ export class GeneralSettingsComponent {
         emitEvent: false,
       });
       this.username = save.displayName ?? '';
-      this.displayImage = save.photoURL ?? '';
+      this.displayImage = save.photoUrl ?? '';
       this.save = JSON.stringify(save, undefined, 4);
 
       const filterMappings = [
@@ -242,7 +242,7 @@ export class GeneralSettingsComponent {
     const save: ISave = {
       ...this.iSave,
       displayName: this.username,
-      photoURL: this.displayImage,
+      photoUrl: this.displayImage,
       settings: {
         ...this.iSave.settings,
         collectionMinimum: this.collectionCount,
@@ -310,7 +310,7 @@ export class GeneralSettingsComponent {
         this.saveStore.updateSave(resetedSave);
         this.toastrService.info('The save was cleared successfully!', 'Save cleared!');
       },
-      reject: () => {},
+      reject: () => { },
     });
   }
 

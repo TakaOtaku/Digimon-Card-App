@@ -16,7 +16,7 @@ const baseUrl_inactiv2 = 'https://179.61.219.98:8090/preview/digimoncard.app/';
   providedIn: 'root',
 })
 export class DigimonBackendService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getDecks(url: string = baseUrl): Observable<IDeck[]> {
     return this.http.get<any[]>(url + 'decks').pipe(
@@ -272,9 +272,8 @@ export class DigimonBackendService {
         save = { ...save, displayName: user.displayName };
         changedSave = true;
       }
-      if (!save.photoURL) {
-        save = { ...save, photoURL: user.photoURL };
-        changedSave = true;
+      if (!save.photoUrl) {
+        save = { ...save, photoUrl: user.photoURL };
       }
     } else {
       if (!save.collection) {
@@ -297,8 +296,8 @@ export class DigimonBackendService {
         save = { ...save, displayName: '' };
         changedSave = true;
       }
-      if (!save.photoURL) {
-        save = { ...save, photoURL: '' };
+      if (!save.photoUrl) {
+        save = { ...save, photoUrl: '' };
         changedSave = true;
       }
 

@@ -34,7 +34,7 @@ export const emptySettings: ISettings = {
 
 export const emptySave: ISave = {
   uid: '',
-  photoURL: '',
+  photoUrl: '',
   displayName: '',
   version: 4.0,
   collection: [],

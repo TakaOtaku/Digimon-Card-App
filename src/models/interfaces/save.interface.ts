@@ -5,7 +5,7 @@ import { ISettings } from './settings.interface';
 export interface ISave {
   uid?: string;
   displayName?: string;
-  photoURL?: string;
+  photoUrl?: string; // Changed from photoURL to photoUrl for consistency
   version?: number;
   collection: ICountCard[];
   decks: IDeck[];

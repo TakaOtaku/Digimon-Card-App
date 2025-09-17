@@ -89,7 +89,7 @@ import { DialogModule } from 'primeng/dialog';
         <ng-container *ngIf="user(); else userIcon">
           <div
             class='min-w-auto mx-auto primary-background h-12 w-12 overflow-hidden rounded-full text-[#e2e4e6] group-hover:bg-[#64B5F6]"'>
-            <img *ngIf="user()" alt="{{ this.user()?.displayName }}" src="{{ this.user()?.photoURL }}" />
+            <img *ngIf="user()" alt="{{ this.user()?.displayName }}" src="{{ this.user()?.photoUrl }}" />
           </div>
           <span class="text-[#e2e4e6] text-xs">{{ this.user()?.displayName }}</span>
         </ng-container>
