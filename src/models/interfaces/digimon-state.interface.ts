@@ -1,4 +1,3 @@
-import { ProductCM } from '../../app/services/card-market.service';
 import { IBlog } from './blog-entry.interface';
 import { IDeck } from './deck.interface';
 import { IDraggedCard } from './dragged-card.interface';
@@ -15,6 +14,5 @@ export interface IDigimonState {
   communityDeckSearch: string;
   communityDecks: IDeck[];
   blogs: IBlog[];
-  priceGuideCM: ProductCM[];
   draggedCard: IDraggedCard;
 }

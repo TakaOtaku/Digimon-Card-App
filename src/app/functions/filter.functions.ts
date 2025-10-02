@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
-import { DigimonCard, ICountCard, IFilter, ISave, ISort, UltimateCup2023, UltimateCup2024 } from '../../models';
+import { DigimonCard, ICountCard, IFilter, ISave, ISort, UltimateCup2023, UltimateCup2024, IAdvancedSearch } from '../../models';
+import { AdvancedSearchService } from '../services/advanced-search.service';
 
 export function filterCards(
   cards: DigimonCard[],
@@ -7,8 +8,16 @@ export function filterCards(
   filter: IFilter,
   sort: ISort,
   cardMap: Map<string, DigimonCard>,
+  advancedSearch?: IAdvancedSearch | null,
+  advancedSearchService?: AdvancedSearchService,
 ): DigimonCard[] {
   let filteredCards: DigimonCard[] = cards;
+  
+  // Apply advanced search first if available
+  if (advancedSearch && advancedSearchService) {
+    filteredCards = advancedSearchService.applyAdvancedSearch(filteredCards, advancedSearch);
+  }
+
   let removeCards: DigimonCard[] = [];
 
   cards.forEach((card) => {

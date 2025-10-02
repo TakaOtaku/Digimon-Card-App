@@ -26,46 +26,9 @@ import { DividerModule } from 'primeng/divider';
 
     <p-divider class="my-5"></p-divider>
 
-    <h2 class="mt-1 text-left border-slate-300 surface-ground p-5 text-[#e2e4e6] text-sm sm:text-base flex flex-col">
-      <h2 class="font-bold text-lg mb-5">🧠 Help Build a Ruling Quiz!</h2>
-
-      <p class="mb-5">I want to create an interactive quiz feature for the site, and I need YOUR expertise to make it awesome!</p>
-
-      <div class="quiz-details mb-5">
-        <strong>What I want to build:</strong>
-        <ul class="list-disc">
-          <li class="ml-5">Multiple choice and single choice questions</li>
-          <li class="ml-5">Randomized question selection</li>
-          <li class="ml-5">Score tracking and feedback</li>
-          <li class="ml-5">Questions covering various ruling scenarios</li>
-        </ul>
-      </div>
-
-      <p class="mb-5">
-        <strong>I need your help!</strong> Submit your best ruling questions and we'll include them in the quiz pool. The more questions we
-        collect, the better and more varied the quiz experience will be for everyone.
-      </p>
-
-      <p>Each submission should include:</p>
-      <ul class="mb-5 list-disc">
-        <li class="ml-5">A clear ruling scenario or question</li>
-        <li class="ml-5">Multiple answer choices (for multiple choice)</li>
-        <li class="ml-5">The correct answer with brief explanation</li>
-      </ul>
-
-      <a class="mb-5 p-button" href="https://forms.gle/uxJLiyXcvDhe7gKC8" target="_blank">📝 Submit Your Questions Here</a>
-
-      <p class="help-text">
-        Takes just 2-3 minutes per question. Every contribution helps make this feature better for the entire community!
-      </p>
-    </h2>
-
-    <p-divider class="my-5"></p-divider>
-
     <h2 class="mt-1 text-center text-[#e2e4e6] text-sm sm:text-base">
-      March next year the 3-Year Plan for the Server will end and I will have to move to a new server. The last Server was about 250-300€
-      for the 3 years, thanks to a good deal and about 75€ of that was payed thanks to the donations. So if you want to support the site,
-      consider donating a few bucks to help me maintain the site.
+      Thanks to some generous people which donated, I could move the website to a better server. 
+      Which should improve the security and performance of the website, I am very grateful for that.
     </h2>
 
     <a href="https://www.paypal.com/donate/?hosted_button_id=WLM58Q785D4H4" target="_blank">
@@ -82,8 +45,6 @@ import { DividerModule } from 'primeng/divider';
       I will use everything that gets donated to get better servers to improve the performance of
       the website.
     </h2-->
-
-    <p-divider class="my-5"></p-divider>
 
     <h2 class='text-shadow text-base sm:text-lg font-black underline text-center text-white text-[#e2e4e6]"'>Partners</h2>
     <div class="mx-auto flex flex-row">

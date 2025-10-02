@@ -8,7 +8,7 @@ import { DragDropModule } from 'primeng/dragdrop';
 import { first } from 'rxjs';
 import { DeckColorMap, DRAG, IDeck, IDeckCard, IDraggedCard, ISave } from '@models';
 import { colorSort, compareIDs, levelSort, setColors, setTags } from '@functions';
-import { DigimonBackendService } from '@services';
+import { MongoBackendService } from '@services';
 import { DigimonCardStore } from '@store';
 import { SaveStore } from '@store';
 import { WebsiteStore } from '@store';
@@ -98,7 +98,7 @@ export class DeckViewComponent {
   @Output() onMainDeck = new EventEmitter<IDeckCard[]>();
   @Output() hideStats = new EventEmitter<boolean>();
 
-  digimonBackendService = inject(DigimonBackendService);
+  mongoBackendService = inject(MongoBackendService);
   confirmationService = inject(ConfirmationService);
   messageService = inject(MessageService);
 

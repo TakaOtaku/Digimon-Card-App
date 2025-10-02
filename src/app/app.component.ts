@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, Component, effect, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { filterCards } from '@functions';
+import { AdvancedSearchService } from './services/advanced-search.service';
 import { CARDSET, emptyFilter, emptySave, IFilter, ISettings } from '@models';
-import { AuthService, DigimonBackendService } from '@services';
+import { AuthService, MongoBackendService } from '@services';
 import { DigimonCardStore, FilterStore, SaveStore, WebsiteStore } from '@store';
 import { BlockUIModule } from 'primeng/blockui';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
@@ -64,7 +65,8 @@ export class AppComponent {
   websiteStore = inject(WebsiteStore);
 
   authService = inject(AuthService);
-  backendService = inject(DigimonBackendService);
+  backendService = inject(MongoBackendService);
+  advancedSearchService = inject(AdvancedSearchService);
 
   saveLoaded = signal(false);
 
@@ -120,6 +122,8 @@ export class AppComponent {
         this.filterStore.filter(),
         this.websiteStore.sort(),
         this.digimonCardStore.cardsMap(),
+        this.filterStore.advancedSearch(),
+        this.advancedSearchService,
       );
 
       this.digimonCardStore.updateFilteredCards(filteredCards);
@@ -141,7 +145,7 @@ export class AppComponent {
       this.backendService
         .updateSave(save)
         .pipe(first())
-        .subscribe(() => {});
+        .subscribe(() => { });
     } else {
       localStorage.setItem('Digimon-Card-Collector', JSON.stringify(save));
     }

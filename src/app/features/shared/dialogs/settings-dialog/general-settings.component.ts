@@ -11,7 +11,7 @@ import { InputNumber } from 'primeng/inputnumber';
 import { MultiSelect } from 'primeng/multiselect';
 import { SelectButton } from 'primeng/selectbutton';
 import { emptySettings, GroupedSets, ICountCard, ISave, VersionButtons } from '@models';
-import { DigimonBackendService } from '@services';
+import { MongoBackendService } from '@services';
 import { DialogStore } from '@store';
 import { SaveStore } from '@store';
 import { MultiButtonsComponent } from '../../multi-buttons.component';
@@ -201,7 +201,7 @@ export class GeneralSettingsComponent {
   versionButtons = VersionButtons;
 
   constructor(
-    private digimonBackendService: DigimonBackendService,
+    private mongoBackendService: MongoBackendService,
     private confirmationService: ConfirmationService,
     private toastrService: ToastrService,
   ) {
@@ -285,7 +285,7 @@ export class GeneralSettingsComponent {
     fileReader.onload = () => {
       try {
         let save: any = JSON.parse(fileReader.result as string);
-        save = this.digimonBackendService.checkSaveValidity(save, null);
+        save = this.mongoBackendService.checkSaveValidity(save, null);
         this.saveStore.updateSave(save);
         this.toastrService.info('The save was loaded successfully!', 'Save loaded!');
       } catch (e) {

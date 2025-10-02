@@ -1,10 +1,18 @@
 ---
-applyTo: '**'
+description: 'Angular-specific coding standards and best practices'
+applyTo: '**/*.ts, **/*.html, **/*.scss, **/*.css'
 ---
 
-# Angular Digimon Card App - Software Engineer Assistant
+# Angular Development Instructions
 
-You are an expert software engineer specializing in Angular development, working on the Digimon Card App project. Your role is to help develop, maintain, and improve this comprehensive Angular application for Digimon card game enthusiasts.
+Instructions for generating high-quality Angular applications with TypeScript, using Angular Signals for state management, adhering to Angular best practices as outlined at https://angular.dev.
+
+## Project Context
+- Latest Angular version (use standalone components by default)
+- TypeScript for type safety
+- Angular CLI for project setup and scaffolding
+- Follow Angular Style Guide (https://angular.dev/style-guide)
+- Use Angular Material or other modern UI libraries for consistent styling (if specified)
 
 ## Project Overview
 
@@ -16,135 +24,110 @@ This is a full-featured Angular application for managing Digimon trading cards, 
 - Product information and releases
 - Rules and game information
 
-## Tech Stack & Architecture
+## Technology Stack
 
-**Frontend:**
-- Angular 15+ with TypeScript
-- TailwindCSS for styling
-- RxJS for reactive programming
-- Angular Signals and standalone components
-- Firebase for backend services
-- Custom state management with stores
-
-**Backend & Data:**
-- Firebase Authentication and Firestore
-- Python scripts for data scraping and processing
-- Wiki data extraction and image processing
-- JSON-based card data storage
-
-**Build & Deployment:**
-- Angular CLI
-- Karma for testing
-- PostCSS for CSS processing
-- GitHub Actions for CI/CD
+- **Frontend**: Angular (latest version) with standalone components
+- **Authentication**: Firebase Auth (Google OAuth and email/password)
+- **Backend**: Custom Digimon Backend API connected to MongoDB
+- **Database**: MongoDB for all data storage (users, decks, cards, blogs)
+- **State Management**: NgRx Signals for reactive state management
 
 ## Key Project Structure
 
 - `src/app/features/` - Feature modules (collection, deckbuilder, decks, etc.)
-- `src/app/services/` - Core services (auth, database, digimon-backend)
+- `src/app/services/` - Core services (auth, mongo-backend, image, etc.)
 - `src/app/store/` - State management stores
 - `src/app/functions/` - Utility functions for card operations
 - `src/models/` - TypeScript interfaces and data models
 - `scripts/python/` - Data processing and wiki scraping scripts
 
-## Development Guidelines
+## Development Standards
 
-### Code Style & Patterns
-- Use Angular standalone components and modern patterns
-- Implement reactive programming with RxJS observables
-- Follow Angular style guide and naming conventions
-- Use TypeScript strict mode and proper typing
-- Implement proper error handling and loading states
+### Architecture
+- Use standalone components unless modules are explicitly required
+- Organize code by feature modules or domains for scalability
+- Implement lazy loading for feature modules to optimize performance
+- Use Angular's built-in dependency injection system effectively
+- Structure components with a clear separation of concerns (smart vs. presentational components)
 
-### Component Development
-- Create reusable, composable components
-- Use Angular Signals for state management where appropriate
-- Implement proper lifecycle hooks
-- Follow accessibility best practices
-- Use TailwindCSS utility classes for styling
+### TypeScript
+- Enable strict mode in `tsconfig.json` for type safety
+- Define clear interfaces and types for components, services, and models
+- Use type guards and union types for robust type checking
+- Implement proper error handling with RxJS operators (e.g., `catchError`)
+- Use typed forms (e.g., `FormGroup`, `FormControl`) for reactive forms
 
-### Service Layer
-- Implement services for data access and business logic
-- Use dependency injection properly
-- Handle HTTP requests with proper error handling
-- Implement caching strategies where needed
-- Follow single responsibility principle
+### Component Design
+- Follow Angular's component lifecycle hooks best practices
+- When using Angular >= 19, Use `input()` `output()`, `viewChild()`, `viewChildren()`, `contentChild()` and `viewChildren()` functions instead of decorators; otherwise use decorators
+- Leverage Angular's change detection strategy (default or `OnPush` for performance)
+- Keep templates clean and logic in component classes or services
+- Use Angular directives and pipes for reusable functionality
+
+### Styling
+- Use Angular's component-level CSS encapsulation (default: ViewEncapsulation.Emulated)
+- Prefer SCSS for styling with consistent theming
+- Implement responsive design using CSS Grid, Flexbox, or Angular CDK Layout utilities
+- Follow Angular Material's theming guidelines if used
+- Maintain accessibility (a11y) with ARIA attributes and semantic HTML
 
 ### State Management
-- Use custom stores for complex state management
-- Implement proper data flow patterns
-- Handle async operations with observables
-- Maintain immutable state updates
+- Use Angular Signals for reactive state management in components and services
+- Leverage `signal()`, `computed()`, and `effect()` for reactive state updates
+- Use writable signals for mutable state and computed signals for derived state
+- Handle loading and error states with signals and proper UI feedback
+- Use Angular's `AsyncPipe` to handle observables in templates when combining signals with RxJS
 
-### Data Models
-- Define comprehensive TypeScript interfaces
-- Implement proper data validation
-- Use enums for constants and card properties
-- Maintain consistent data structures
+### Data Fetching
+- Use Angular's `HttpClient` for API calls with proper typing
+- Implement RxJS operators for data transformation and error handling
+- Use Angular's `inject()` function for dependency injection in standalone components
+- Implement caching strategies (e.g., `shareReplay` for observables)
+- Store API response data in signals for reactive updates
+- Handle API errors with global interceptors for consistent error handling
 
-## Specific Domain Knowledge
+### Security
+- Sanitize user inputs using Angular's built-in sanitization
+- Implement route guards for authentication and authorization
+- Use Angular's `HttpInterceptor` for CSRF protection and API authentication headers
+- Validate form inputs with Angular's reactive forms and custom validators
+- Follow Angular's security best practices (e.g., avoid direct DOM manipulation)
 
-### Digimon Card Game
-- Understand card types: Digimon, Tamers, Options
-- Know card properties: Level, DP, Cost, Colors, Effects
-- Familiar with deck building rules and restrictions
-- Understand game mechanics and card interactions
+### Performance
+- Enable production builds with `ng build --prod` for optimization
+- Use lazy loading for routes to reduce initial bundle size
+- Optimize change detection with `OnPush` strategy and signals for fine-grained reactivity
+- Use trackBy in `ngFor` loops to improve rendering performance
+- Implement server-side rendering (SSR) or static site generation (SSG) with Angular Universal (if specified)
 
-### Card Data Structure
-- Cards have unique IDs (e.g., BT1-001, P-150)
-- Multiple rarities and alternate arts exist
-- Cards belong to sets/products with specific naming
-- Images are processed and stored in WebP format
+### Testing
+- Write unit tests for components, services, and pipes using Jasmine and Karma
+- Use Angular's `TestBed` for component testing with mocked dependencies
+- Test signal-based state updates using Angular's testing utilities
+- Write end-to-end tests with Cypress or Playwright (if specified)
+- Mock HTTP requests using `HttpClientTestingModule`
+- Ensure high test coverage for critical functionality
 
-### Features to Support
-- Advanced card search and filtering
-- Deck validation and error checking
-- Collection tracking and statistics
-- Price tracking and market integration
-- User authentication and profiles
+## Implementation Process
+1. Plan project structure and feature modules
+2. Define TypeScript interfaces and models
+3. Scaffold components, services, and pipes using Angular CLI
+4. Implement data services and API integrations with signal-based state
+5. Build reusable components with clear inputs and outputs
+6. Add reactive forms and validation
+7. Apply styling with SCSS and responsive design
+8. Implement lazy-loaded routes and guards
+9. Add error handling and loading states using signals
+10. Write unit and end-to-end tests
+11. Optimize performance and bundle size
 
-## Common Tasks
-
-### When Adding New Features:
-1. Create feature module in `src/app/features/`
-2. Implement necessary interfaces in `src/models/`
-3. Add required services for data operations
-4. Update routing in `routes.ts`
-5. Add proper error handling and loading states
-6. Write unit tests for components and services
-
-### When Working with Card Data:
-- Use existing card functions in `src/app/functions/`
-- Maintain consistency with card ID formats
-- Handle missing or invalid card data gracefully
-- Implement proper filtering and search logic
-
-### When Updating UI:
-- Use TailwindCSS utility classes
-- Maintain responsive design principles
-- Follow existing component patterns
-- Implement proper accessibility features
-
-## Python Scripts Integration
-
-- Use scripts in `scripts/python/Wiki/` for data updates
-- Handle card image processing and format conversion
-- Maintain data consistency between Python and Angular
-- Update JSON files that Angular consumes
-
-## Performance Considerations
-
-- Implement lazy loading for feature modules
-- Use OnPush change detection strategy
-- Optimize image loading with proper sizing
-- Implement virtual scrolling for large lists
-- Cache frequently accessed data
-
-## Testing Strategy
-
-- Write unit tests for components and services
-- Test card validation and deck building logic
-- Mock external services and API calls
-- Test responsive design and accessibility
+## Additional Guidelines
+- Follow Angular's naming conventions (e.g., `feature.component.ts`, `feature.service.ts`)
+- Use Angular CLI commands for generating boilerplate code
+- Document components and services with clear JSDoc comments
+- Ensure accessibility compliance (WCAG 2.1) where applicable
+- Use Angular's built-in i18n for internationalization (if specified)
+- Keep code DRY by creating reusable utilities and shared modules
+- Use signals consistently for state management to ensure reactive updates
 
 Remember: You're working on a specialized application for card game enthusiasts. Focus on user experience, data accuracy, and performance while maintaining clean, maintainable code that follows Angular best practices.

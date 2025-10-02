@@ -2,11 +2,10 @@ import { inject } from '@angular/core';
 import { tapResponse } from '@ngrx/operators';
 import { patchState, signalStore, withMethods, withState } from '@ngrx/signals';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
-import { distinctUntilChanged, filter, first, pipe, switchMap } from 'rxjs';
+import { distinctUntilChanged, filter as rxFilter, first, pipe, switchMap } from 'rxjs';
 import { DRAG, dummyCard, emptyDeck, IBlog, IDeck, IDraggedCard, ISort } from '../../models';
 import { checkSpecialCardCounts } from '../functions';
-import { ProductCM } from '../services/card-market.service';
-import { DigimonBackendService } from '../services/digimon-backend.service';
+import { MongoBackendService, IDeckFilter, IPaginationResponse } from '../services/mongo-backend.service';
 
 type Website = {
   deck: IDeck;
@@ -16,8 +15,18 @@ type Website = {
   communityDeckSearch: string;
   communityDecks: IDeck[];
   blogs: IBlog[];
-  priceGuideCM: ProductCM[];
   draggedCard: IDraggedCard;
+  // Pagination state
+  decksPagination: {
+    currentPage: number;
+    totalPages: number;
+    totalDecks: number;
+    limit: number;
+    hasNextPage: boolean;
+    hasPrevPage: boolean;
+  };
+  decksFilter: IDeckFilter;
+  isLoadingDecks: boolean;
 };
 
 const initialState: Website = {
@@ -34,28 +43,111 @@ const initialState: Website = {
   communityDeckSearch: '',
   communityDecks: [],
   blogs: [],
-  priceGuideCM: [],
   draggedCard: {
     card: JSON.parse(JSON.stringify(dummyCard)),
     drag: DRAG.Collection,
   },
+  decksPagination: {
+    currentPage: 1,
+    totalPages: 1,
+    totalDecks: 0,
+    limit: 20,
+    hasNextPage: false,
+    hasPrevPage: false,
+  },
+  decksFilter: {
+    page: 1,
+    limit: 20,
+  },
+  isLoadingDecks: false,
 };
 
 export const WebsiteStore = signalStore(
   { providedIn: 'root' },
   withState(initialState),
 
-  withMethods((store, digimonBackendService = inject(DigimonBackendService)) => ({
+  withMethods((store, mongoBackendService = inject(MongoBackendService)) => ({
     loadCommunityDecks: rxMethod<void>(
       pipe(
         distinctUntilChanged(),
         switchMap(() => {
-          return digimonBackendService.getDecks().pipe(
-            filter((decks) => decks !== null),
+          patchState(store, { isLoadingDecks: true });
+          return mongoBackendService.getDecksPaginated(store.decksFilter()).pipe(
+            rxFilter((response) => response !== null),
             tapResponse({
-              next: (communityDecks: any) => patchState(store, (state) => ({ communityDecks })),
-              error: () => {},
-              finalize: () => {},
+              next: (response: IPaginationResponse<IDeck>) => {
+                patchState(store, (state) => ({
+                  communityDecks: response.data,
+                  decksPagination: response.pagination,
+                  isLoadingDecks: false
+                }));
+              },
+              error: () => {
+                patchState(store, { isLoadingDecks: false });
+              },
+              finalize: () => {
+                patchState(store, { isLoadingDecks: false });
+              },
+            }),
+          );
+        }),
+      ),
+    ),
+
+    loadCommunityDecksWithFilter: rxMethod<IDeckFilter>(
+      pipe(
+        distinctUntilChanged(),
+        switchMap((filter) => {
+          patchState(store, {
+            isLoadingDecks: true,
+            decksFilter: { ...store.decksFilter(), ...filter, page: 1 } // Reset to page 1 when filtering
+          });
+          return mongoBackendService.getDecksPaginated(store.decksFilter()).pipe(
+            rxFilter((response) => response !== null),
+            tapResponse({
+              next: (response: IPaginationResponse<IDeck>) => {
+                patchState(store, (state) => ({
+                  communityDecks: response.data,
+                  decksPagination: response.pagination,
+                  isLoadingDecks: false
+                }));
+              },
+              error: () => {
+                patchState(store, { isLoadingDecks: false });
+              },
+              finalize: () => {
+                patchState(store, { isLoadingDecks: false });
+              },
+            }),
+          );
+        }),
+      ),
+    ),
+
+    loadDecksPage: rxMethod<number>(
+      pipe(
+        distinctUntilChanged(),
+        switchMap((page) => {
+          patchState(store, {
+            isLoadingDecks: true,
+            decksFilter: { ...store.decksFilter(), page }
+          });
+          return mongoBackendService.getDecksPaginated(store.decksFilter()).pipe(
+            rxFilter((response) => response !== null),
+            tapResponse({
+              next: (response: IPaginationResponse<IDeck>) => {
+                patchState(store, (state) => ({
+                  communityDecks: response.data,
+                  decksPagination: response.pagination,
+                  isLoadingDecks: false
+                }));
+              },
+              error: () => {
+                patchState(store, { isLoadingDecks: false });
+              },
+              finalize: () => {
+                patchState(store, { isLoadingDecks: false });
+              },
             }),
           );
         }),
@@ -66,12 +158,12 @@ export const WebsiteStore = signalStore(
       pipe(
         distinctUntilChanged(),
         switchMap(() => {
-          return digimonBackendService.getBlogEntries().pipe(
-            filter((blogs) => blogs !== null),
+          return mongoBackendService.getBlogEntries().pipe(
+            rxFilter((blogs) => blogs !== null),
             tapResponse({
               next: (blogs: any) => patchState(store, (state) => ({ blogs })),
-              error: () => {},
-              finalize: () => {},
+              error: () => { },
+              finalize: () => { },
             }),
           );
         }),
@@ -101,15 +193,22 @@ export const WebsiteStore = signalStore(
     },
     updateCommunityDeckSearch(communityDeckSearch: string): void {
       patchState(store, (state) => ({ communityDeckSearch }));
+      // Also update the search filter and reload
+      this.loadCommunityDecksWithFilter({ search: communityDeckSearch });
     },
     updateCommunityDecks(communityDecks: IDeck[]): void {
       patchState(store, (state) => ({ communityDecks }));
     },
+    updateDecksFilter(filter: Partial<IDeckFilter>): void {
+      patchState(store, (state) => ({
+        decksFilter: { ...state.decksFilter, ...filter }
+      }));
+    },
+    updateDecksPagination(pagination: any): void {
+      patchState(store, (state) => ({ decksPagination: pagination }));
+    },
     updateBlogs(blogs: IBlog[]): void {
       patchState(store, (state) => ({ blogs }));
-    },
-    updatePriceGuideCM(priceGuideCM: ProductCM[]): void {
-      patchState(store, (state) => ({ priceGuideCM }));
     },
     updateDraggedCard(draggedCard: IDraggedCard): void {
       patchState(store, (state) => ({ draggedCard }));

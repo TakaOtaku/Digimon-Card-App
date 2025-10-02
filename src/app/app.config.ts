@@ -10,7 +10,7 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { PreloadAllModules, provideRouter, withPreloading } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { AuthService, DigimonBackendService } from '@services';
+import { AuthService, DigimonBackendService, MongoBackendService } from '@services';
 import { ToastrModule } from 'ngx-toastr';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { BlockUIModule } from 'primeng/blockui';
@@ -56,7 +56,8 @@ export const appConfig: ApplicationConfig = {
 
     ReactiveFormsModule,
     AuthService,
-    DigimonBackendService,
+    DigimonBackendService,  // Legacy HTTP backend for migration
+    MongoBackendService,    // New MongoDB backend
     provideHttpClient(withInterceptorsFromDi()),
     provideAnimations(),
     MessageService,

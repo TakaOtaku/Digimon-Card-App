@@ -18,6 +18,7 @@ import { FullCardComponent } from '../../shared/full-card.component';
 import { PaginationCardListHeaderComponent } from './pagination-card-list-header.component';
 import { SearchComponent } from './search.component';
 import { FilterStore } from '@store';
+import { AdvancedSearchService } from '../../../services/advanced-search.service';
 
 @Component({
   selector: 'digimon-pagination-card-list',
@@ -92,6 +93,7 @@ export class PaginationCardListComponent {
   saveStore = inject(SaveStore);
   dialogStore = inject(DialogStore);
   filterStore = inject(FilterStore);
+  advancedSearchService = inject(AdvancedSearchService);
 
   draggedCard = this.websiteStore.draggedCard;
   collection = this.saveStore.collection;
@@ -120,6 +122,8 @@ export class PaginationCardListComponent {
       this.filterStore.filter(),
       this.websiteStore.sort(),
       this.digimonCardStore.cardsMap(),
+      this.filterStore.advancedSearch(),
+      this.advancedSearchService,
     );
 
     this.digimonCardStore.updateFilteredCards(filteredCards);

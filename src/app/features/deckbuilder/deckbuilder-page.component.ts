@@ -6,7 +6,7 @@ import { filter, map, of, switchMap, tap } from 'rxjs';
 import * as uuid from 'uuid';
 import { emptySave } from '../../../models';
 import { AuthService } from '../../services/auth.service';
-import { DigimonBackendService } from '../../services/digimon-backend.service';
+import { MongoBackendService } from '../../services/mongo-backend.service';
 import { SaveStore } from '../../store/save.store';
 import { WebsiteStore } from '../../store/website.store';
 import { PaginationCardListComponent } from '../collection/components/pagination-card-list.component';
@@ -55,7 +55,7 @@ import { DeckViewComponent } from './components/deck-view.component';
 })
 export class DeckbuilderPageComponent implements OnInit {
   route = inject(ActivatedRoute);
-  digimonBackendService = inject(DigimonBackendService);
+  mongoBackendService = inject(MongoBackendService);
   authService = inject(AuthService);
   meta = inject(Meta);
   title = inject(Title);
@@ -73,10 +73,10 @@ export class DeckbuilderPageComponent implements OnInit {
     switchMap((params) => {
       if (params['userId'] && params['deckId']) {
         this.deckId = params['deckId'];
-        return this.digimonBackendService.getSave(params['userId']);
+        return this.mongoBackendService.getSave(params['userId']);
       } else if (params['id']) {
         this.deckId = params['id'];
-        return this.digimonBackendService.getDeck(params['id']).pipe(
+        return this.mongoBackendService.getDeck(params['id']).pipe(
           map((deck) => {
             return { ...emptySave, decks: [deck] };
           }),

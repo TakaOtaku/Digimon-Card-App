@@ -1,9 +1,8 @@
 import { NgFor, NgIf } from '@angular/common';
-import { ChangeDetectorRef, Component, effect, HostListener, inject, OnInit } from '@angular/core';
-import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
+import { ChangeDetectorRef, Component, effect, inject, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { setDeckImage } from '@functions';
-import { emptyDeck, ICountCard, IDeck, ITournamentDeck } from '@models';
+import { emptyDeck, ICountCard, IDeck } from '@models';
 import { DialogStore, DigimonCardStore, SaveStore, WebsiteStore } from '@store';
 import { ToastrService } from 'ngx-toastr';
 import { BlockUIModule } from 'primeng/blockui';
@@ -16,8 +15,10 @@ import { TooltipModule } from 'primeng/tooltip';
 import { Subject } from 'rxjs';
 import { DeckContainerComponent } from '../shared/deck-container.component';
 import { PageComponent } from '../shared/page.component';
+import { PaginationComponent } from '../shared/pagination.component';
+import { DeckFilterComponent } from '../shared/deck-filter.component';
+import { IDeckFilter } from '../../services/mongo-backend.service';
 import { DeckStatisticsComponent } from './components/deck-statistics.component';
-import { DecksFilterComponent } from './components/decks-filter.component';
 import { TierlistComponent } from './components/tierlist.component';
 
 @Component({
@@ -31,17 +32,7 @@ import { TierlistComponent } from './components/tierlist.component';
         <div class="lg:px-auto flex px-1 flex-col md:flex-row items-baseline">
           <h1 class="text-shadow mt-6 pb-1 text-2xl md:text-4xl font-black text-[#e2e4e6]">Community Decks</h1>
 
-          <div class="md:ml-auto">
-            <p-button
-              size="small"
-              class="p-button-outlined mr-1"
-              styleClass="primary-background text-white border-none"
-              icon="pi pi-search"
-              type="button"
-              pTooltip="Filter the Decks for Decks possible with your cards"
-              label="Possible Decks"
-              (click)="applyCollectionFilter()"></p-button>
-
+          <div class="md:ml-auto pb-2">
             <p-button
               size="small"
               class="p-button-outlined"
@@ -53,32 +44,49 @@ import { TierlistComponent } from './components/tierlist.component';
           </div>
         </div>
 
-        <digimon-decks-filter [form]="form" (applyFilter)="filterChanges()"></digimon-decks-filter>
+        <!-- Deck Filter Component -->
+        <digimon-deck-filter
+          [filter]="websiteStore.decksFilter()"
+          (filterChange)="onFilterChange($event)">
+        </digimon-deck-filter>
 
-        <div *ngIf="decksToShow.length > 0; else loading" class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-1">
+        <!-- Loading State -->
+        <div *ngIf="websiteStore.isLoadingDecks()" class="flex w-full justify-center py-8">
+          <p-progressSpinner class="mx-auto"></p-progressSpinner>
+        </div>
+
+        <!-- Initial State - No Search Yet -->
+        <div *ngIf="!websiteStore.isLoadingDecks() && websiteStore.communityDecks().length === 0 && !hasSearched()" class="text-center py-12">
+          <div class="max-w-md mx-auto">
+            <i class="pi pi-search text-6xl text-gray-300 mb-4"></i>
+            <h3 class="text-xl font-semibold text-gray-600 mb-2">Search for Decks</h3>
+            <p class="text-gray-500">Enter a search term above to browse community decks. Search by deck name, user, card IDs, or colors.</p>
+          </div>
+        </div>
+
+        <!-- Deck Results -->
+        <div *ngIf="!websiteStore.isLoadingDecks() && websiteStore.communityDecks().length > 0" class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-1 mt-2">
           <digimon-deck-container
             class="mx-auto min-w-[280px] max-w-[285px]"
-            *ngFor="let deck of decksToShow"
+            *ngFor="let deck of websiteStore.communityDecks()"
             (click)="showDeckDetails(deck)"
             (contextmenu)="showDeckDetails(deck)"
             [deck]="deck"></digimon-deck-container>
         </div>
 
-        <ng-template #loading>
-          <div class="flex w-full">
-            <p-progressSpinner class="mx-auto"></p-progressSpinner>
-          </div>
-        </ng-template>
+        <!-- No Results After Search -->
+        <div *ngIf="!websiteStore.isLoadingDecks() && websiteStore.communityDecks().length === 0 && hasSearched()" class="text-center py-8">
+          <i class="pi pi-exclamation-triangle text-4xl text-gray-400 mb-4"></i>
+          <p class="text-gray-500">No decks found matching your search criteria.</p>
+          <p class="text-sm text-gray-400 mt-2">Try different keywords or clear your search to browse all decks.</p>
+        </div>
 
-        <p-paginator
-          class="w-full h-8 surface-ground"
-          (onPageChange)="onPageChange($event)"
-          [first]="first"
-          [rows]="rows"
-          [showJumpToPageDropdown]="true"
-          [showPageLinks]="false"
-          [totalRecords]="filteredDecks.length"
-          styleClass="surface-ground p-0 mx-auto"></p-paginator>
+        <!-- New Pagination Component -->
+        <digimon-pagination
+          *ngIf="!websiteStore.isLoadingDecks() && websiteStore.communityDecks().length > 0"
+          [pagination]="websiteStore.decksPagination()"
+          (pageChange)="onPageChange($event)">
+        </digimon-pagination>
 
         <p-divider></p-divider>
 
@@ -100,7 +108,6 @@ import { TierlistComponent } from './components/tierlist.component';
   standalone: true,
   imports: [
     ButtonModule,
-    DecksFilterComponent,
     NgFor,
     DeckContainerComponent,
     PaginatorModule,
@@ -113,6 +120,8 @@ import { TierlistComponent } from './components/tierlist.component';
     PageComponent,
     TooltipModule,
     BlockUIModule,
+    PaginationComponent,
+    DeckFilterComponent,
   ],
   providers: [],
 })
@@ -121,55 +130,36 @@ export class DecksPageComponent implements OnInit {
   dialogStore = inject(DialogStore);
   websiteStore = inject(WebsiteStore);
   selectedDeck: IDeck = emptyDeck;
-  form = new UntypedFormGroup({
-    searchFilter: new UntypedFormControl(''),
-    tagFilter: new UntypedFormControl([]),
-  });
   deckDialog = false;
   deckStatsDialog = false;
   updateStatistics = new Subject<boolean>();
-  decksToShow: IDeck[] = [];
-  first = 0;
-  page = 0;
-  rows = 20;
   decks: IDeck[] = [];
   filteredDecks: IDeck[] = [];
   collection: ICountCard[];
   loading2 = false;
+  private searchPerformed = false;
   private meta = inject(Meta);
   private title = inject(Title);
   private toastrService = inject(ToastrService);
   private digimonCardStore = inject(DigimonCardStore);
 
   constructor(private changeDetection: ChangeDetectorRef) {
-    this.websiteStore.loadCommunityDecks();
+    // Don't load decks automatically - wait for user to search
 
     effect(() => {
       const decks = this.websiteStore.communityDecks();
-      const search = this.websiteStore.communityDeckSearch();
-      if (decks.length === 0) return;
 
+      // Store current decks for collection filtering
       this.decks = decks;
-
       this.filteredDecks = decks;
       this.collection = this.saveStore.collection();
 
-      this.form.get('searchFilter')?.setValue(search);
-      this.filteredDecks = this.applySearchFilter(search);
-      this.setDecksToShow(0, this.rows);
       this.changeDetection.detectChanges();
     });
   }
 
   ngOnInit(): void {
-    this.checkScreenWidth(window.innerWidth);
-
     this.makeGoogleFriendly();
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: Event): void {
-    this.checkScreenWidth((event.target as Window).innerWidth);
   }
 
   showDeckDetails(deck: IDeck) {
@@ -180,12 +170,6 @@ export class DecksPageComponent implements OnInit {
     });
     this.selectedDeck = deck;
     this.deckDialog = true;
-  }
-
-  onPageChange(event: any, slice?: number) {
-    this.first = event.first;
-    this.page = event.page;
-    this.setDecksToShow(event.first, (slice ?? this.rows) * (event.page + 1));
   }
 
   applyCollectionFilter() {
@@ -199,44 +183,34 @@ export class DecksPageComponent implements OnInit {
       collectionCounts[cardId] = (collectionCounts[cardId] || 0) + card.count;
     });
 
-    this.filteredDecks = this.filteredDecks.filter((deck) => {
+    // Filter current decks based on collection
+    const possibleDecks = this.filteredDecks.filter((deck) => {
       return deck.cards.every((cardNeededForDeck) => {
         const totalCount = collectionCounts[cardNeededForDeck.id.split('_', 1)[0]] || 0;
         return totalCount >= cardNeededForDeck.count;
       });
     });
-    this.setDecksToShow(0, this.rows);
+
+    // Update the filtered decks display
+    this.filteredDecks = possibleDecks;
 
     this.toastrService.success('Filtered for Decks possible with your cards', 'Success');
 
     this.loading2 = false;
   }
 
-  filterChanges() {
-    this.filteredDecks = this.decks;
-    this.filteredDecks = this.applySearchFilter(this.form.get('searchFilter')!.value);
-    this.filteredDecks = this.applyTagFilter(this.form.get('tagFilter')!.value);
-    this.setDecksToShow(0, this.rows);
+  // Filter and pagination methods
+  onFilterChange(filter: IDeckFilter) {
+    this.searchPerformed = true;
+    this.websiteStore.loadCommunityDecksWithFilter(filter);
   }
 
-  private checkScreenWidth(innerWidth: number) {
-    const lg = innerWidth >= 1024;
-    const md = innerWidth >= 768;
-    if (lg) {
-      this.rows = 20;
-    } else if (md) {
-      this.rows = 10;
-    } else {
-      this.rows = 5;
-    }
-    this.setDecksToShow(0, this.rows);
+  onPageChange(page: number) {
+    this.websiteStore.loadDecksPage(page);
   }
 
-  private setDecksToShow(from: number, to: number) {
-    this.decksToShow = this.filteredDecks.slice(from, to).map((deck: IDeck | ITournamentDeck) => ({
-      ...deck,
-      imageCardId: deck.imageCardId === 'BT1-001' ? setDeckImage(deck, this.digimonCardStore.cards()).id : deck.imageCardId,
-    }));
+  hasSearched(): boolean {
+    return this.searchPerformed;
   }
 
   private makeGoogleFriendly() {
@@ -253,29 +227,5 @@ export class DecksPageComponent implements OnInit {
         content: 'Meta, decks, tournament, fun',
       },
     ]);
-  }
-
-  private applySearchFilter(searchValue: string): IDeck[] {
-    if (!searchValue || searchValue === '') {
-      return this.filteredDecks;
-    }
-    return this.filteredDecks.filter((deck) => {
-      const search = searchValue.toLocaleLowerCase();
-
-      const titleInText = deck.title?.toLocaleLowerCase().includes(search) ?? false;
-      const descriptionInText = deck.description?.toLocaleLowerCase().includes(search) ?? false;
-      const userInText = deck.user?.toLocaleLowerCase().includes(search) ?? false;
-      const cardsInText = deck.cards.filter((card) => card.id.toLocaleLowerCase().includes(search)).length > 0;
-      const colorInText = deck.color?.name.toLocaleLowerCase().includes(search) ?? false;
-
-      return titleInText || descriptionInText || userInText || cardsInText || colorInText;
-    });
-  }
-
-  private applyTagFilter(tagValues: string[]): IDeck[] {
-    if (!tagValues || tagValues.length === 0) {
-      return this.filteredDecks;
-    }
-    return this.filteredDecks.filter((deck) => deck.tags.some((tag) => tagValues.includes(tag.name)));
   }
 }

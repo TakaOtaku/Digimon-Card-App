@@ -1,20 +1,22 @@
 import { computed } from '@angular/core';
 import { patchState, signalStore, withComputed, withMethods, withState } from '@ngrx/signals';
-import { emptyFilter, IFilter } from '../../models';
+import { emptyFilter, IFilter, IAdvancedSearch } from '../../models';
 
 type FilterStore = {
   filter: IFilter;
+  advancedSearch: IAdvancedSearch | null;
 };
 
 const initialState: FilterStore = {
   filter: emptyFilter,
+  advancedSearch: null,
 };
 
 export const FilterStore = signalStore(
   { providedIn: 'root' },
   withState(initialState),
 
-  withComputed(({ filter }) => ({
+  withComputed(({ filter, advancedSearch }) => ({
     searchFilter: computed(() => filter.searchFilter()),
     colorFilter: computed(() => filter.colorFilter()),
     cardTypeFilter: computed(() => filter.cardTypeFilter()),
@@ -22,6 +24,8 @@ export const FilterStore = signalStore(
     rarityFilter: computed(() => filter.rarityFilter()),
     versionFilter: computed(() => filter.versionFilter()),
     setFilter: computed(() => filter.setFilter()),
+    advancedSearch: computed(() => advancedSearch()),
+    advancedSearchActive: computed(() => advancedSearch() !== null),
   })),
 
   withMethods((store) => ({
@@ -62,6 +66,12 @@ export const FilterStore = signalStore(
       patchState(store, (state) => ({
         filter: { ...state.filter, setFilter },
       }));
+    },
+    updateAdvancedSearch(advancedSearch: IAdvancedSearch | null): void {
+      patchState(store, (state) => ({ advancedSearch }));
+    },
+    clearAdvancedSearch(): void {
+      patchState(store, (state) => ({ advancedSearch: null }));
     },
   })),
 );

@@ -5,7 +5,7 @@ import { UntypedFormControl } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { IDeck, ISave } from '@models';
-import { AuthService, DigimonBackendService } from '@services';
+import { AuthService, MongoBackendService } from '@services';
 import { SaveStore } from '@store';
 import { filter, first, merge, Observable, Subject, switchMap, takeUntil, tap } from 'rxjs';
 import { PageComponent } from '../shared/page.component';
@@ -38,7 +38,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
   private authService: AuthService = inject(AuthService);
   private location: Location = inject(Location);
   private route: ActivatedRoute = inject(ActivatedRoute);
-  private digimonBackendService: DigimonBackendService = inject(DigimonBackendService);
+  private mongoBackendService: MongoBackendService = inject(MongoBackendService);
   private meta: Meta = inject(Meta);
   private title: Title = inject(Title);
 
@@ -64,7 +64,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
       this.route.params.pipe(
         filter((params) => !!params['id']),
         tap((params) => (this.otherProfile = params['id'])),
-        switchMap((params) => this.digimonBackendService.getSave(params['id']).pipe(first())),
+        switchMap((params) => this.mongoBackendService.getSave(params['id']).pipe(first())),
       ),
     ).pipe(
       filter((save) => {

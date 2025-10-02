@@ -4,7 +4,7 @@ import { Database, ref, set, onValue } from '@angular/fire/database';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ADMINS, emptyDeck, TIERLIST } from '@models';
-import { DigimonBackendService } from '@services';
+import { MongoBackendService } from '@services';
 import { DigimonCardStore, SaveStore, WebsiteStore } from '@store';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { MessageService } from 'primeng/api';
@@ -157,7 +157,7 @@ export class TierlistComponent {
   });
   private messageService = inject(MessageService);
   private router: Router = inject(Router);
-  private digimonBackendService = inject(DigimonBackendService);
+  private mongoBackendService = inject(MongoBackendService);
   private changeDetectorRef: ChangeDetectorRef = inject(ChangeDetectorRef);
   private db = inject(Database);
 

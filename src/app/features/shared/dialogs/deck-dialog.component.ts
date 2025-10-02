@@ -11,10 +11,10 @@ import { TooltipModule } from 'primeng/tooltip';
 import { first } from 'rxjs';
 import * as uuid from 'uuid';
 
-import { emptyDeck, IDeck, IDeckCard, ITournamentDeck } from '../../../../models';
+import { emptyDeck, IDeck, IDeckCard } from '../../../../models';
 import { mapToDeckCards, setDeckImage } from '../../../functions';
 import { AuthService } from '../../../services/auth.service';
-import { DigimonBackendService } from '../../../services/digimon-backend.service';
+import { MongoBackendService } from '../../../services/mongo-backend.service';
 import { DialogStore } from '../../../store/dialog.store';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
 import { SaveStore } from '../../../store/save.store';
@@ -184,7 +184,7 @@ export class DeckDialogComponent {
   dialogStore = inject(DialogStore);
   digimonCardStore = inject(DigimonCardStore);
 
-  deck: IDeck | ITournamentDeck = emptyDeck;
+  deck: IDeck = emptyDeck;
   editable = true;
 
   deckFormGroup = new UntypedFormGroup({
@@ -205,7 +205,7 @@ export class DeckDialogComponent {
   constructor(
     private authService: AuthService,
     private router: Router,
-    private digimonBackendService: DigimonBackendService,
+    private mongoBackendService: MongoBackendService,
     private confirmationService: ConfirmationService,
     private messageService: MessageService,
   ) {
@@ -275,7 +275,7 @@ export class DeckDialogComponent {
         key: 'Delete',
         message: 'You are about to permanently delete this deck. Are you sure?',
         accept: () => {
-          this.digimonBackendService.deleteDeck(this.deck.id).pipe(first()).subscribe();
+          this.mongoBackendService.deleteDeck(this.deck.id).pipe(first()).subscribe();
           this.messageService.add({
             severity: 'success',
             summary: 'Deck deleted!',

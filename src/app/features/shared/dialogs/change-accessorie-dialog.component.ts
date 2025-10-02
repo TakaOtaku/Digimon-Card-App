@@ -12,7 +12,7 @@ import { ITag } from '../../../../models/interfaces/tag.interface';
 import { ColorMap } from '../../../../models/maps/color.map';
 import { deckIsValid } from '../../../functions/digimon-card.functions';
 import { AuthService } from '../../../services/auth.service';
-import { DigimonBackendService } from '../../../services/digimon-backend.service';
+import { MongoBackendService } from '../../../services/mongo-backend.service';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
 import { emptyDeck } from '../../../store/reducers/digimon.reducers';
 import { SaveStore } from '../../../store/save.store';
@@ -89,10 +89,10 @@ export class ChangeAccessorieDialogComponent implements OnInit, OnChanges {
   private digimonCardStore = inject(DigimonCardStore);
   constructor(
     private confirmationService: ConfirmationService,
-    private digimonCardService: DigimonBackendService,
+    private mongoBackendService: MongoBackendService,
     private auth: AuthService,
     private messageService: MessageService,
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.setData(this.deck);
@@ -143,7 +143,7 @@ export class ChangeAccessorieDialogComponent implements OnInit, OnChanges {
     this.confirmationService.confirm({
       message: 'You are about to share the deck. Are you sure?',
       accept: () => {
-        this.digimonCardService.updateDeck(deck, this.auth.userData, this.digimonCardStore.cards()).pipe(first()).subscribe();
+        this.mongoBackendService.updateDeck(deck, this.auth.currentUser(), this.digimonCardStore.cards()).pipe(first()).subscribe();
         this.messageService.add({
           severity: 'success',
           summary: 'Deck shared!',

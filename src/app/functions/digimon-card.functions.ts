@@ -1,4 +1,4 @@
-import { DigimonCard, dummyCard, ICountCard, IDeck, IDeckCard, ISelectItem, ITag, ITournamentDeck, tagsList } from '../../models';
+import { DigimonCard, dummyCard, ICountCard, IDeck, IDeckCard, ISelectItem, ITag, tagsList } from '../../models';
 import { ReleaseOrder } from '../../models/data/release-order.data';
 import { ColorOrderMap, DeckColorMap } from '../../models/maps/color.map';
 import { sortID } from './filter.functions';
@@ -153,7 +153,7 @@ export function deckIsValid(deck: IDeck, allCards: DigimonCard[]): string {
         } else {
           eggCount += card.count;
         }
-      } catch (e) {}
+      } catch (e) { }
     }
   });
 
@@ -262,7 +262,7 @@ export function levelSort(deck: IDeckCard[]) {
   return [...new Set([...eggs, ...lv0, ...lv3, ...lv4, ...lv5, ...lv6, ...lv7, ...tamer, ...options])];
 }
 
-export function setDeckImage(deck: IDeck | ITournamentDeck, allCards: DigimonCard[]): DigimonCard {
+export function setDeckImage(deck: IDeck, allCards: DigimonCard[]): DigimonCard {
   if (deck.cards && deck.cards.length === 0) {
     return JSON.parse(JSON.stringify(dummyCard));
   }
@@ -275,7 +275,7 @@ export function setDeckImage(deck: IDeck | ITournamentDeck, allCards: DigimonCar
   }
   try {
     deckCards = deckCards.sort((a, b) => Number(b.cardLv.replace('Lv.', '')) - Number(a.cardLv.replace('Lv.', '')));
-  } catch (e) {}
+  } catch (e) { }
 
   return deckCards.length > 0 ? deckCards[0] : JSON.parse(JSON.stringify(dummyCard));
 }

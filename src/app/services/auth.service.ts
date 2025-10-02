@@ -12,7 +12,7 @@ import {
 import { emptySave, emptySettings, ISave, IUser } from '@models';
 import { MessageService } from 'primeng/api';
 import { catchError, Observable, of, switchMap, tap } from 'rxjs';
-import { DigimonBackendService } from './digimon-backend.service';
+import { MongoBackendService } from './mongo-backend.service';
 
 @Injectable({
   providedIn: 'root',
@@ -24,7 +24,7 @@ export class AuthService {
 
   constructor(
     private firebaseAuth: Auth, // AngularFire Auth service is injected here
-    private digimonBackendService: DigimonBackendService,
+    private mongoBackendService: MongoBackendService,
     private messageService: MessageService,
   ) {
     // Set persistence
@@ -59,7 +59,7 @@ export class AuthService {
           }
 
           // User is logged in, get save from backend
-          return this.digimonBackendService.getSave(firebaseUser.uid).pipe(
+          return this.mongoBackendService.getSave(firebaseUser.uid).pipe(
             tap((save) => {
               if (save) {
                 // Create user data object and update state
@@ -77,7 +77,7 @@ export class AuthService {
                 this.userSignal.set(userData);
 
                 // Ensure save is up to date in backend
-                this.digimonBackendService.updateSave(userData.save).subscribe();
+                this.mongoBackendService.updateSave(userData.save).subscribe();
               }
             }),
           );
@@ -158,7 +158,7 @@ export class AuthService {
   loadSave(): Observable<ISave> {
     if (this.currentUser()) {
       // User is logged in, get save from backend
-      return this.digimonBackendService.getSave(this.currentUser().uid).pipe(
+      return this.mongoBackendService.getSave(this.currentUser().uid).pipe(
         catchError(() => {
           console.log('Failed to load save from backend, using local save');
           return of(this.getLocalStorageSave() || emptySave);
@@ -179,7 +179,7 @@ export class AuthService {
 
     try {
       const localSave = JSON.parse(localStorageItem);
-      return this.digimonBackendService.checkSaveValidity(localSave);
+      return this.mongoBackendService.checkSaveValidity(localSave);
     } catch (e) {
       console.error('Error parsing local save:', e);
       return null;

@@ -3,12 +3,17 @@ import { CollectionPageComponent } from './features/collection/collection-page.c
 import { DeckbuilderPageComponent } from './features/deckbuilder/deckbuilder-page.component';
 import { DecksPageComponent } from './features/decks/decks-page.component';
 import { HomePageComponent } from './features/home/home-page.component';
+import { MigrationComponent } from './features/migration/migration.component';
 import { ProductsComponent } from './features/products/products.component';
 import { ProfilePageComponent } from './features/profile/profile-page.component';
 import { RulesComponent } from './features/rules/rules.component';
 import { TestPageComponent } from './features/test/test-page.component';
 
 export const routes: Routes = [
+  {
+    path: 'migration',
+    component: MigrationComponent,
+  },
   {
     path: 'test',
     component: TestPageComponent,
