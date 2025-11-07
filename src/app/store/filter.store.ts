@@ -1,10 +1,10 @@
 import { computed } from '@angular/core';
 import { patchState, signalStore, withComputed, withMethods, withState } from '@ngrx/signals';
-import { emptyFilter, IFilter, IAdvancedSearch } from '../../models';
+import { emptyFilter, IFilter } from '../../models';
 
 type FilterStore = {
   filter: IFilter;
-  advancedSearch: IAdvancedSearch | null;
+  advancedSearch: string | null;
 };
 
 const initialState: FilterStore = {
@@ -25,7 +25,7 @@ export const FilterStore = signalStore(
     versionFilter: computed(() => filter.versionFilter()),
     setFilter: computed(() => filter.setFilter()),
     advancedSearch: computed(() => advancedSearch()),
-    advancedSearchActive: computed(() => advancedSearch() !== null),
+    advancedSearchActive: computed(() => advancedSearch() !== null && advancedSearch().trim() !== ''),
   })),
 
   withMethods((store) => ({
@@ -67,7 +67,7 @@ export const FilterStore = signalStore(
         filter: { ...state.filter, setFilter },
       }));
     },
-    updateAdvancedSearch(advancedSearch: IAdvancedSearch | null): void {
+    updateAdvancedSearch(advancedSearch: string | null): void {
       patchState(store, (state) => ({ advancedSearch }));
     },
     clearAdvancedSearch(): void {

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, input, output } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, UntypedFormGroup } from '@angular/forms';
 import { IconField } from 'primeng/iconfield';
 import { InputIcon } from 'primeng/inputicon';
@@ -22,11 +22,13 @@ import { TAGS } from '@models';
       </p-icon-field>
       <p-multiSelect
         formControlName="tagFilter"
-        [options]="tags"
+        [options]="tagOptions"
         [showToggleAll]="false"
         placeholder="Select a Tag"
         display="chip"
         scrollHeight="250px"
+        optionLabel="label"
+        optionValue="value"
         class="col-span-3 sm:col-span-2 sm:mx-auto sm:my-1 w-full max-w-[250px]"
         styleClass="w-full max-w-[250px]">
       </p-multiSelect>
@@ -41,9 +43,14 @@ import { TAGS } from '@models';
   imports: [FormsModule, ReactiveFormsModule, InputTextModule, StyleClassModule, MultiSelectModule, IconField, InputIcon],
 })
 export class DecksFilterComponent {
-  @Input() form: UntypedFormGroup;
+  form = input.required<UntypedFormGroup>();
 
-  @Output() applyFilter = new EventEmitter<any>();
+  applyFilter = output<any>();
 
   tags = TAGS;
+
+  tagOptions = TAGS.map(tag => ({
+    label: tag,
+    value: tag
+  }));
 }

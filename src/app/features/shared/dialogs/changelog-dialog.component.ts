@@ -239,4 +239,4 @@ import { PanelModule } from 'primeng/panel';
   standalone: true,
   imports: [DividerModule, PanelModule],
 })
-export class ChangelogDialogComponent {}
+export class ChangelogDialogComponent { }

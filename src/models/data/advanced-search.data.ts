@@ -1,12 +1,12 @@
 import { IFilterOption, IOperatorOption } from '../interfaces/advanced-search.interface';
-import { 
-  Colors, 
-  Rarity, 
-  CardTypes, 
-  Blocks, 
-  Forms, 
-  Attributes, 
-  Types, 
+import {
+  Colors,
+  Rarity,
+  CardTypes,
+  Blocks,
+  Forms,
+  Attributes,
+  Types,
   Illustrators,
   Keywords,
   SpecialRequirements,
@@ -15,9 +15,6 @@ import {
 } from './filter.data';
 
 export const FILTER_OPTIONS: IFilterOption[] = [
-  // Global text search - should be first option
-  { label: 'Global Search', value: 'global_text_search', type: 'string' },
-  
   // String filters
   { label: 'Card Name', value: 'name.english', type: 'string' },
   { label: 'Card ID', value: 'id', type: 'string' },
@@ -28,7 +25,7 @@ export const FILTER_OPTIONS: IFilterOption[] = [
   { label: 'Digivolve Effect', value: 'digivolveEffect', type: 'string' },
   { label: 'Security Effect', value: 'securityEffect', type: 'string' },
   { label: 'ACE Effect', value: 'aceEffect', type: 'string' },
-  
+
   // Array filters with predefined options
   { label: 'Color', value: 'color', type: 'array', options: Colors },
   { label: 'Rarity', value: 'rarity', type: 'array', options: Rarity },
@@ -41,12 +38,12 @@ export const FILTER_OPTIONS: IFilterOption[] = [
   { label: 'Keywords', value: 'keywords', type: 'array', options: Keywords },
   { label: 'Special Requirements', value: 'specialRequirements', type: 'array', options: SpecialRequirements },
   { label: 'Restrictions', value: 'restrictions.english', type: 'array', options: Restrictions },
-  
+
   // Number filters
   { label: 'Play Cost', value: 'playCost', type: 'number' },
   { label: 'DP', value: 'dp', type: 'number' },
   { label: 'Level', value: 'cardLv', type: 'number' },
-  
+
   // Range filters
   { label: 'Digivolution Cost', value: 'digivolveCondition', type: 'range' },
 ];
@@ -59,7 +56,7 @@ export const OPERATOR_OPTIONS: IOperatorOption[] = [
   { label: 'does not contain', value: 'not_contains', compatibleTypes: ['string'] },
   { label: 'starts with', value: 'starts_with', compatibleTypes: ['string'] },
   { label: 'ends with', value: 'ends_with', compatibleTypes: ['string'] },
-  
+
   // Number operators
   { label: 'equals', value: '==', compatibleTypes: ['number'] },
   { label: 'not equals', value: '!=', compatibleTypes: ['number'] },
@@ -68,7 +65,7 @@ export const OPERATOR_OPTIONS: IOperatorOption[] = [
   { label: 'less than', value: '<', compatibleTypes: ['number', 'range'] },
   { label: 'less than or equal', value: '<=', compatibleTypes: ['number', 'range'] },
   { label: 'between', value: 'between', compatibleTypes: ['number', 'range'] },
-  
+
   // Array operators
   { label: 'includes', value: 'includes', compatibleTypes: ['array'] },
   { label: 'does not include', value: 'not_includes', compatibleTypes: ['array'] },

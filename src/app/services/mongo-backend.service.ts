@@ -84,6 +84,7 @@ export class MongoBackendService {
         if (filters.title) params.append('title', filters.title);
         if (filters.user) params.append('user', filters.user);
         if (filters.search) params.append('search', filters.search);
+        if (filters.cardSet) params.append('cardSet', filters.cardSet);
         if (filters.tags && filters.tags.length > 0) {
             params.append('tags', JSON.stringify(filters.tags));
         }

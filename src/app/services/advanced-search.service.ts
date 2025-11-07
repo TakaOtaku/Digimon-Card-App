@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
+import sift from 'sift';
 import { DigimonCard } from '../../models/interfaces';
-import { IAdvancedSearch, ISearchFilter, ISearchExpression } from '../../models/interfaces/advanced-search.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -8,417 +8,324 @@ import { IAdvancedSearch, ISearchFilter, ISearchExpression } from '../../models/
 export class AdvancedSearchService {
 
   /**
-   * Apply advanced search filters to a list of cards
+   * Apply advanced search filters to a list of cards using natural language query
+   * Example: "(cardType == Digimon AND color == Red) OR (color == Blue AND cardType == Option)"
+   * Falls back to global text search if query doesn't match advanced syntax
    */
-  applyAdvancedSearch(cards: DigimonCard[], advancedSearch: IAdvancedSearch): DigimonCard[] {
-    if (!advancedSearch.expressions.length) {
+  applyAdvancedSearch(cards: DigimonCard[], searchQuery: string): DigimonCard[] {
+    if (!searchQuery.trim()) {
       return cards;
     }
 
-    console.log('Applying advanced search:', advancedSearch);
-    console.log('Input cards count:', cards.length);
-
-    const result = cards.filter(card => this.evaluateAdvancedSearch(card, advancedSearch));
-    
-    console.log('Filtered cards count:', result.length);
-    return result;
-  }
-
-  /**
-   * Evaluate if a card matches the advanced search criteria
-   */
-  private evaluateAdvancedSearch(card: DigimonCard, advancedSearch: IAdvancedSearch): boolean {
-    const expressionResults = advancedSearch.expressions.map(expression => 
-      this.evaluateExpression(card, expression)
-    );
-
-    // Apply global logic between expressions
-    if (advancedSearch.globalLogic === 'AND') {
-      return expressionResults.every(result => result);
-    } else {
-      return expressionResults.some(result => result);
-    }
-  }
-
-  /**
-   * Evaluate a single expression (group of filters with logic)
-   */
-  private evaluateExpression(card: DigimonCard, expression: ISearchExpression): boolean {
-    const filterResults = expression.filters.map(filter => 
-      this.evaluateFilter(card, filter)
-    );
-
-    // Apply logic within the expression
-    if (expression.logic === 'AND') {
-      return filterResults.every(result => result);
-    } else {
-      return filterResults.some(result => result);
-    }
-  }
-
-  /**
-   * Evaluate a single filter against a card
-   */
-  private evaluateFilter(card: DigimonCard, filter: ISearchFilter): boolean {
-    // Handle global text search specially
-    if (filter.field === 'global_text_search') {
-      return this.globalTextSearch(card, filter.value);
-    }
-
-    const fieldValue = this.getFieldValue(card, filter.field);
-    const filterValue = filter.value;
-
-    switch (filter.operator) {
-      case '==':
-        return this.equalityCheck(fieldValue, filterValue);
-      case '!=':
-        return !this.equalityCheck(fieldValue, filterValue);
-      case 'contains':
-        return this.containsCheck(fieldValue, filterValue);
-      case 'not_contains':
-        return !this.containsCheck(fieldValue, filterValue);
-      case 'starts_with':
-        return this.startsWithCheck(fieldValue, filterValue);
-      case 'ends_with':
-        return this.endsWithCheck(fieldValue, filterValue);
-      case '>':
-        return this.greaterThanCheck(fieldValue, filterValue);
-      case '>=':
-        return this.greaterThanOrEqualCheck(fieldValue, filterValue);
-      case '<':
-        return this.lessThanCheck(fieldValue, filterValue);
-      case '<=':
-        return this.lessThanOrEqualCheck(fieldValue, filterValue);
-      case 'between':
-        return this.betweenCheck(fieldValue, filterValue);
-      case 'includes':
-        return this.includesCheck(fieldValue, filterValue);
-      case 'not_includes':
-        return !this.includesCheck(fieldValue, filterValue);
-      default:
-        return false;
+    try {
+      console.log('Parsing search query:', searchQuery);
+      
+      // Check if this looks like an advanced search query (contains operators)
+      const hasAdvancedSyntax = /(\s+==\s+|\s+!=\s+|\s+>=\s+|\s+<=\s+|\s+>\s+|\s+<\s+|\s+contains\s+|\s+starts_with\s+|\s+ends_with\s+|\s+AND\s+|\s+OR\s+)/i.test(searchQuery);
+      
+      if (hasAdvancedSyntax) {
+        // Try to parse as advanced search
+        const siftQuery = this.parseSearchQuery(searchQuery);
+        console.log('Generated sift query:', JSON.stringify(siftQuery, null, 2));
+        
+        const filterFn = sift(siftQuery);
+        const result = cards.filter(card => filterFn(card));
+        
+        console.log(`Filtered ${result.length} cards from ${cards.length} total using advanced search`);
+        return result;
+      } else {
+        // Fall back to global text search
+        console.log('No advanced syntax detected, using global text search');
+        return this.globalTextSearch(cards, searchQuery);
+      }
+    } catch (error) {
+      console.error('Error applying advanced search, falling back to global text search:', error);
+      return this.globalTextSearch(cards, searchQuery);
     }
   }
 
   /**
    * Perform global text search across all card fields
    */
-  private globalTextSearch(card: DigimonCard, searchText: string): boolean {
-    if (!searchText.trim()) return true;
+  private globalTextSearch(cards: DigimonCard[], searchText: string): DigimonCard[] {
+    if (!searchText.trim()) return cards;
     
     const searchTerm = searchText.toLowerCase();
-    console.log(`Searching for "${searchTerm}" in card:`, card.name?.english || card.id);
+    console.log(`Global text search for: "${searchTerm}"`);
     
-    // Define all searchable text fields on the card
-    const searchableFields = [
-      card.name?.english,
-      card.name?.japanese,
-      card.name?.korean,
-      card.name?.simplifiedChinese,
-      card.name?.traditionalChinese,
-      card.id,
-      card.cardNumber,
-      card.illustrator,
-      card.notes,
-      card.effect,
-      card.digivolveEffect,
-      card.securityEffect,
-      card.aceEffect,
-      card.linkEffect,
-      card.linkRequirement,
-      card.rule,
-      card.color,
-      card.rarity,
-      card.cardType,
-      card.form,
-      card.attribute,
-      card.type,
-      card.version,
-      card.restrictions?.english,
-      card.restrictions?.japanese,
-      card.restrictions?.korean,
-      card.restrictions?.chinese,
-      card.specialDigivolve,
-      card.dnaDigivolve,
-      card.burstDigivolve,
-      card.digiXros,
-      card.assembly,
-      String(card.playCost),
-      String(card.dp),
-      String(card.linkDP),
-      String(card.cardLv),
-      // Also search in block array
-      card.block?.join(' '),
-      // Also search in digivolution conditions
-      card.digivolveCondition?.map(dc => `${dc.color} ${dc.cost} ${dc.level}`).join(' ')
-    ];
-    
-    // Check if any field contains the search term
-    const found = searchableFields.some(field => {
-      if (field === null || field === undefined) return false;
-      const fieldString = String(field).toLowerCase();
-      const result = fieldString.includes(searchTerm);
-      if (result) {
-        console.log(`Found "${searchTerm}" in field:`, fieldString.substring(0, 100));
-      }
-      return result;
+    const result = cards.filter(card => {
+      // Define all searchable text fields on the card
+      const searchableFields = [
+        card.name?.english,
+        card.name?.japanese,
+        card.name?.korean,
+        card.name?.simplifiedChinese,
+        card.name?.traditionalChinese,
+        card.id,
+        card.cardNumber,
+        card.illustrator,
+        card.notes,
+        card.effect,
+        card.digivolveEffect,
+        card.securityEffect,
+        card.aceEffect,
+        card.linkEffect,
+        card.linkRequirement,
+        card.rule,
+        card.color,
+        card.rarity,
+        card.cardType,
+        card.form,
+        card.attribute,
+        card.type,
+        card.version,
+        card.restrictions?.english,
+        card.restrictions?.japanese,
+        card.restrictions?.korean,
+        card.restrictions?.chinese,
+        card.specialDigivolve,
+        card.dnaDigivolve,
+        card.burstDigivolve,
+        card.digiXros,
+        card.assembly,
+        String(card.playCost),
+        String(card.dp),
+        String(card.linkDP),
+        String(card.cardLv),
+        card.block?.join(' '),
+        card.digivolveCondition?.map(dc => `${dc.color} ${dc.cost} ${dc.level}`).join(' ')
+      ];
+      
+      // Check if any field contains the search term
+      return searchableFields.some(field => {
+        if (field === null || field === undefined) return false;
+        return String(field).toLowerCase().includes(searchTerm);
+      });
     });
     
-    console.log(`Global search result for "${searchTerm}" in ${card.name?.english || card.id}:`, found);
-    return found;
+    console.log(`Global text search found ${result.length} cards from ${cards.length} total`);
+    return result;
   }
 
   /**
-   * Get field value from card using dot notation
+   * Parse natural language search query into MongoDB/Sift query
+   * Example: "(cardType == Digimon AND color == Red) OR (color == Blue AND cardType == Option)"
+   * Returns: { $or: [{ $and: [{ cardType: 'Digimon' }, { color: 'Red' }] }, { $and: [{ color: 'Blue' }, { cardType: 'Option' }] }] }
    */
-  private getFieldValue(card: DigimonCard, field: string): any {
-    const keys = field.split('.');
-    let value: any = card;
+  private parseSearchQuery(query: string): any {
+    // Remove extra whitespace
+    query = query.trim();
+
+    // Check if the query contains OR at the top level (not inside parentheses)
+    const orParts = this.splitByLogicalOperator(query, 'OR');
     
-    for (const key of keys) {
-      if (value === null || value === undefined) {
-        return null;
-      }
-      value = value[key];
-    }
-
-    // Handle special cases
-    if (field === 'cardLv') {
-      // Extract number from level string (e.g., "Lv.3" -> 3)
-      const match = String(value).match(/\d+/);
-      return match ? parseInt(match[0], 10) : 0;
-    }
-
-    if (field === 'keywords') {
-      // Combine effect and digivolve effect for keyword search
-      return `${card.effect} ${card.digivolveEffect} ${card.securityEffect} ${card.aceEffect}`;
-    }
-
-    if (field === 'digivolveCondition') {
-      // Return array of digivolution costs
-      return card.digivolveCondition?.map(condition => parseInt(condition.cost, 10) || 0) || [];
-    }
-
-    return value;
-  }
-
-  /**
-   * Check equality with case-insensitive string comparison
-   */
-  private equalityCheck(fieldValue: any, filterValue: string): boolean {
-    if (fieldValue === null || fieldValue === undefined) return false;
-    return String(fieldValue).toLowerCase() === filterValue.toLowerCase();
-  }
-
-  /**
-   * Check if field contains filter value (case-insensitive)
-   */
-  private containsCheck(fieldValue: any, filterValue: string): boolean {
-    if (fieldValue === null || fieldValue === undefined) return false;
-    return String(fieldValue).toLowerCase().includes(filterValue.toLowerCase());
-  }
-
-  /**
-   * Check if field starts with filter value (case-insensitive)
-   */
-  private startsWithCheck(fieldValue: any, filterValue: string): boolean {
-    if (fieldValue === null || fieldValue === undefined) return false;
-    return String(fieldValue).toLowerCase().startsWith(filterValue.toLowerCase());
-  }
-
-  /**
-   * Check if field ends with filter value (case-insensitive)
-   */
-  private endsWithCheck(fieldValue: any, filterValue: string): boolean {
-    if (fieldValue === null || fieldValue === undefined) return false;
-    return String(fieldValue).toLowerCase().endsWith(filterValue.toLowerCase());
-  }
-
-  /**
-   * Numeric greater than check
-   */
-  private greaterThanCheck(fieldValue: any, filterValue: string): boolean {
-    const numValue = this.parseNumber(fieldValue);
-    const filterNum = parseFloat(filterValue);
-    return numValue !== null && filterNum !== null && numValue > filterNum;
-  }
-
-  /**
-   * Numeric greater than or equal check
-   */
-  private greaterThanOrEqualCheck(fieldValue: any, filterValue: string): boolean {
-    const numValue = this.parseNumber(fieldValue);
-    const filterNum = parseFloat(filterValue);
-    return numValue !== null && filterNum !== null && numValue >= filterNum;
-  }
-
-  /**
-   * Numeric less than check
-   */
-  private lessThanCheck(fieldValue: any, filterValue: string): boolean {
-    const numValue = this.parseNumber(fieldValue);
-    const filterNum = parseFloat(filterValue);
-    return numValue !== null && filterNum !== null && numValue < filterNum;
-  }
-
-  /**
-   * Numeric less than or equal check
-   */
-  private lessThanOrEqualCheck(fieldValue: any, filterValue: string): boolean {
-    const numValue = this.parseNumber(fieldValue);
-    const filterNum = parseFloat(filterValue);
-    return numValue !== null && filterNum !== null && numValue <= filterNum;
-  }
-
-  /**
-   * Numeric between check (expects "min,max" format)
-   */
-  private betweenCheck(fieldValue: any, filterValue: string): boolean {
-    const numValue = this.parseNumber(fieldValue);
-    if (numValue === null) return false;
-    
-    const [min, max] = filterValue.split(',').map(v => parseFloat(v.trim()));
-    if (isNaN(min) || isNaN(max)) return false;
-    
-    return numValue >= min && numValue <= max;
-  }
-
-  /**
-   * Array includes check (for multi-value fields like color, type)
-   */
-  private includesCheck(fieldValue: any, filterValue: string): boolean {
-    if (fieldValue === null || fieldValue === undefined) return false;
-    
-    // Handle array fields
-    if (Array.isArray(fieldValue)) {
-      return fieldValue.some(item => 
-        String(item).toLowerCase().includes(filterValue.toLowerCase())
-      );
-    }
-    
-    // Handle string fields that might contain multiple values (like color: "Red/Blue")
-    const fieldStr = String(fieldValue).toLowerCase();
-    return fieldStr.includes(filterValue.toLowerCase());
-  }
-
-  /**
-   * Parse number from various formats
-   */
-  private parseNumber(value: any): number | null {
-    if (value === null || value === undefined || value === '' || value === '-') {
-      return null;
-    }
-    
-    const num = parseFloat(String(value));
-    return isNaN(num) ? null : num;
-  }
-
-  /**
-   * Parse advanced search string into structured object
-   * Example: "Color == Red AND Color != Blue OR Rarity == SR"
-   */
-  parseSearchString(searchString: string): IAdvancedSearch | null {
-    if (!searchString.trim()) {
-      return null;
-    }
-
-    try {
-      // Split by OR first (lowest precedence)
-      const orParts = searchString.split(/\s+OR\s+/i);
-      
-      const expressions: ISearchExpression[] = orParts.map(orPart => {
-        // Split each OR part by AND
-        const andParts = orPart.split(/\s+AND\s+/i);
-        
-        const filters: ISearchFilter[] = andParts.map(andPart => {
-          return this.parseFilterString(andPart.trim());
-        }).filter(f => f !== null) as ISearchFilter[];
-
-        return {
-          filters,
-          logic: 'AND' as const
-        };
-      });
-
+    if (orParts.length > 1) {
+      // Multiple OR conditions
       return {
-        expressions: expressions.filter(expr => expr.filters.length > 0),
-        globalLogic: 'OR' as const
+        $or: orParts.map(part => this.parseAndExpression(part))
       };
-    } catch (error) {
-      console.error('Error parsing search string:', error);
-      return null;
     }
+    
+    // Single expression or AND expressions
+    return this.parseAndExpression(query);
   }
 
   /**
-   * Parse individual filter string
-   * Example: "Color == Red" or "PlayCost > 5"
+   * Split query by logical operator (OR/AND) respecting parentheses
    */
-  private parseFilterString(filterString: string): ISearchFilter | null {
-    const operators = ['>=', '<=', '==', '!=', '>', '<', 'contains', 'not_contains', 'starts_with', 'ends_with', 'includes', 'not_includes', 'between'];
-    
-    for (const operator of operators) {
-      const parts = filterString.split(new RegExp(`\\s+${operator}\\s+`, 'i'));
-      if (parts.length === 2) {
-        const field = parts[0].trim();
-        const value = parts[1].trim().replace(/^["']|["']$/g, ''); // Remove quotes
-        
-        return {
-          field: this.normalizeFieldName(field),
-          operator: operator.toLowerCase(),
-          value,
-          displayText: filterString
-        };
+  private splitByLogicalOperator(query: string, operator: 'OR' | 'AND'): string[] {
+    const parts: string[] = [];
+    let currentPart = '';
+    let parenthesesDepth = 0;
+    let i = 0;
+
+    const operatorRegex = new RegExp(`\\s+${operator}\\s+`, 'i');
+
+    while (i < query.length) {
+      const char = query[i];
+
+      if (char === '(') {
+        parenthesesDepth++;
+        currentPart += char;
+        i++;
+      } else if (char === ')') {
+        parenthesesDepth--;
+        currentPart += char;
+        i++;
+      } else {
+        // Check if we're at an operator
+        const remaining = query.substring(i);
+        const match = remaining.match(operatorRegex);
+
+        if (match && match.index === 0 && parenthesesDepth === 0) {
+          // Found operator at top level
+          if (currentPart.trim()) {
+            parts.push(currentPart.trim());
+          }
+          currentPart = '';
+          i += match[0].length;
+        } else {
+          currentPart += char;
+          i++;
+        }
       }
     }
 
+    if (currentPart.trim()) {
+      parts.push(currentPart.trim());
+    }
+
+    return parts.length > 0 ? parts : [query];
+  }
+
+  /**
+   * Parse an AND expression or a single expression
+   */
+  private parseAndExpression(expression: string): any {
+    // Remove surrounding parentheses if present
+    expression = expression.trim();
+    if (expression.startsWith('(') && expression.endsWith(')')) {
+      expression = expression.substring(1, expression.length - 1).trim();
+    }
+
+    // Check for OR within this expression (recursive)
+    const orParts = this.splitByLogicalOperator(expression, 'OR');
+    if (orParts.length > 1) {
+      return {
+        $or: orParts.map(part => this.parseAndExpression(part))
+      };
+    }
+
+    // Split by AND
+    const andParts = this.splitByLogicalOperator(expression, 'AND');
+
+    if (andParts.length > 1) {
+      // Multiple AND conditions
+      const conditions = andParts.map(part => this.parseCondition(part)).filter(c => c !== null);
+      return { $and: conditions };
+    }
+
+    // Single condition
+    return this.parseCondition(expression);
+  }
+
+  /**
+   * Parse a single condition like "color == Red" or "playCost > 5"
+   */
+  private parseCondition(condition: string): any {
+    condition = condition.trim();
+
+    // Remove surrounding parentheses if present
+    if (condition.startsWith('(') && condition.endsWith(')')) {
+      condition = condition.substring(1, condition.length - 1).trim();
+    }
+
+    // Define operators in order of precedence (longest first to avoid partial matches)
+    const operators = [
+      { op: '>=', siftOp: '$gte' },
+      { op: '<=', siftOp: '$lte' },
+      { op: '!=', siftOp: '$ne' },
+      { op: '==', siftOp: '$eq' },
+      { op: '>', siftOp: '$gt' },
+      { op: '<', siftOp: '$lt' },
+      { op: 'contains', siftOp: '$regex' },
+      { op: 'not_contains', siftOp: '$not' },
+      { op: 'starts_with', siftOp: '$regex' },
+      { op: 'ends_with', siftOp: '$regex' },
+      { op: 'includes', siftOp: '$in' },
+      { op: 'not_includes', siftOp: '$nin' }
+    ];
+
+    for (const { op, siftOp } of operators) {
+      const regex = new RegExp(`\\s+${op}\\s+`, 'i');
+      const parts = condition.split(regex);
+
+      if (parts.length === 2) {
+        const field = this.normalizeFieldName(parts[0].trim());
+        let value: any = parts[1].trim().replace(/^["']|["']$/g, ''); // Remove quotes
+
+        // Handle special operators
+        if (op === 'contains') {
+          return { [field]: { $regex: value, $options: 'i' } };
+        } else if (op === 'not_contains') {
+          return { [field]: { $not: { $regex: value, $options: 'i' } } };
+        } else if (op === 'starts_with') {
+          return { [field]: { $regex: `^${value}`, $options: 'i' } };
+        } else if (op === 'ends_with') {
+          return { [field]: { $regex: `${value}$`, $options: 'i' } };
+        } else if (op === 'includes' || op === 'not_includes') {
+          // For array/string includes
+          return { [field]: { [siftOp]: [value] } };
+        } else if (op === '==' || op === '!=') {
+          // Case-insensitive equality for strings
+          if (isNaN(Number(value))) {
+            // String comparison - use regex for case-insensitive
+            if (op === '==') {
+              return { [field]: { $regex: `^${this.escapeRegex(value)}$`, $options: 'i' } };
+            } else {
+              return { [field]: { $not: { $regex: `^${this.escapeRegex(value)}$`, $options: 'i' } } };
+            }
+          } else {
+            // Numeric comparison
+            value = Number(value);
+            return { [field]: { [siftOp]: value } };
+          }
+        } else {
+          // Numeric operators
+          value = Number(value);
+          return { [field]: { [siftOp]: value } };
+        }
+      }
+    }
+
+    console.warn('Could not parse condition:', condition);
     return null;
   }
 
   /**
-   * Normalize field names to match card properties
+   * Escape special regex characters
+   */
+  private escapeRegex(str: string): string {
+    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  /**
+   * Normalize field names to match DigimonCard properties
    */
   private normalizeFieldName(fieldName: string): string {
     const fieldMap: { [key: string]: string } = {
-      'global search': 'global_text_search',
-      'globalsearch': 'global_text_search',
-      'global_text_search': 'global_text_search',
       'color': 'color',
+      'colour': 'color',
       'rarity': 'rarity',
       'cardtype': 'cardType',
+      'card-type': 'cardType',
       'card type': 'cardType',
+      'type': 'cardType',
       'playcost': 'playCost',
+      'play-cost': 'playCost',
       'play cost': 'playCost',
+      'cost': 'playCost',
       'level': 'cardLv',
+      'lv': 'cardLv',
       'dp': 'dp',
       'name': 'name.english',
       'effect': 'effect',
       'form': 'form',
       'attribute': 'attribute',
-      'type': 'type',
+      'digimontype': 'type',
+      'digimon-type': 'type',
+      'digimon type': 'type',
       'illustrator': 'illustrator',
+      'artist': 'illustrator',
       'block': 'block',
       'version': 'version',
-      'keywords': 'keywords',
-      'digivolve': 'digivolveCondition',
-      'digivolution': 'digivolveCondition'
+      'cardnumber': 'cardNumber',
+      'card-number': 'cardNumber',
+      'card number': 'cardNumber',
+      'number': 'cardNumber'
     };
 
-    const normalized = fieldName.toLowerCase().replace(/[^a-z\s]/g, '');
-    return fieldMap[normalized] || normalized;
-  }
-
-  /**
-   * Convert advanced search object back to readable string
-   */
-  stringifyAdvancedSearch(advancedSearch: IAdvancedSearch): string {
-    const expressionStrings = advancedSearch.expressions.map(expression => {
-      const filterStrings = expression.filters.map(filter => 
-        filter.displayText || `${filter.field} ${filter.operator} ${filter.value}`
-      );
-      return filterStrings.join(` ${expression.logic} `);
-    });
-
-    return expressionStrings.join(` ${advancedSearch.globalLogic} `);
+    const normalized = fieldName.toLowerCase().replace(/[^a-z-\s]/g, '');
+    return fieldMap[normalized] || fieldName;
   }
 }

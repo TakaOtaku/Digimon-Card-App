@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { FilterStore } from '@store';
-import { IAdvancedSearch } from '@models';
 import { AdvancedSearchComponent } from '../../shared/advanced-search.component';
 
 @Component({
@@ -9,8 +8,7 @@ import { AdvancedSearchComponent } from '../../shared/advanced-search.component'
     <div class="w-full">
       <!-- Advanced Search Component as the main search -->
       <digimon-advanced-search 
-        (searchChange)="onAdvancedSearchChange($event)"
-        [showQuickFilters]="false">
+        (searchChange)="onAdvancedSearchChange($event)">
       </digimon-advanced-search>
     </div>
   `,
@@ -20,7 +18,7 @@ import { AdvancedSearchComponent } from '../../shared/advanced-search.component'
 export class SearchComponent {
   filterStore = inject(FilterStore);
 
-  onAdvancedSearchChange(advancedSearch: IAdvancedSearch | null): void {
-    this.filterStore.updateAdvancedSearch(advancedSearch);
+  onAdvancedSearchChange(searchQuery: string): void {
+    this.filterStore.updateAdvancedSearch(searchQuery || null);
   }
 }

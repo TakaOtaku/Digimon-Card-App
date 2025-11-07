@@ -95,6 +95,16 @@ export class DeckContainerComponent implements OnChanges {
 
   getTags(deck: IDeck): string {
     if (deck.tags && deck.tags.length > 0) {
+      // Prioritize showing set tags (BT, EX, ST) over other tags
+      const setTag = deck.tags.find(tag => 
+        tag.name.match(/^(BT|EX|ST|RB)\d+$/) || tag.name === 'LM' || tag.name === 'P'
+      );
+      
+      if (setTag) {
+        return setTag.name;
+      }
+      
+      // Fall back to first tag if no set tag found
       return deck.tags[0] ? deck.tags[0].name : '';
     }
     return '';
