@@ -119,6 +119,8 @@ wikiPageLinks = [
         'url': 'https://digimoncardgame.fandom.com/wiki/ST-20:_Starter_Deck_Protector_of_Light'},
     {'name': 'STARTER DECK HERO OF HOPE [ST-21]',
        'url': 'https://digimoncardgame.fandom.com/wiki/ST-21:_Starter_Deck_Hero_of_Hope'},
+    {'name': 'ADVANCED DECK SET AMETHYST MANDALA [ST-22]',
+       'url': 'https://digimoncardgame.fandom.com/wiki/ST-22:_Advanced_Deck_Set_Amethyst_Mandala'},
 
     {'name': 'LIMITED CARD PACK DIGIMON GHOST GAME [LM-01]',
         'url': 'https://digimoncardgame.fandom.com/wiki/LM-01:_Limited_Card_Pack_Digimon_Ghost_Game'},
@@ -195,6 +197,7 @@ NoteDictionary = {
     'ST-19: Starter Deck Fable Waltz': 'STARTER DECK FABLE WALTZ [ST-19]',
     'ST-20: Starter Deck Protector of Light': 'STARTER DECK PROTECTOR OF LIGHT [ST-20]',
     'ST-21: Starter Deck Hero of Hope': 'STARTER DECK HERO OF HOPE [ST-21]',
+    'ST-22: Advanced Deck Set Amethyst Mandala': 'ADVANCED DECK SET AMETHYST MANDALA [ST-22]',
 
     'LM-01: Limited Card Pack Digimon Ghost Game': 'LIMITED CARD PACK DIGIMON GHOST GAME [LM-01]',
     'LM-02: Limited Card Pack Digimon DeathXmon': 'LIMITED CARD PACK DIGIMON DEATHXMON [LM-02]',
