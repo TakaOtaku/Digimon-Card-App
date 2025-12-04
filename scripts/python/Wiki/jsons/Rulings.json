@@ -15413,16 +15413,6 @@
       "question": "Q: What does this card's \"when an effect places the top card of this Digimon in its digivolution cards\" mean, exactly?"
     }
   ],
-  "EX5-007": [
-    {
-      "answer": "A: It means that you place the top card of the Digimon with this card in its digivolution cards as the bottom digivolution card.  For example, if you have a level 4 Digimon with just this card in its digivolution cards, you place that level 4 Digimon card under this card. This will turn this Digimon into a level 3 Digimon with the level 4 Digimon card as a digivolution card.[1]",
-      "question": "Q: What does \"by placing the top card of this Digimon [...] as this Digimon's bottom digivolution card\" in this card's inherited effect mean, exactly?"
-    },
-    {
-      "answer": "A: No, it can't.  A record of activation remains for the inherited effect's [Once Per Turn] even if this card stops being a digivolution card, so it can't be activated twice in the same turn.[1]",
-      "question": "Q: This card's inherited effect placed a stacked card under this Digimon's digivolution cards and increased my memory by 2 when another copy of this card was in this card's digivolution cards.  Can this be repeated to give me infinite memory?"
-    }
-  ],
   "EX5-008": [
     {
       "answer": "A: Yes, even if you only reveal one of the applicable cards, you can still add it to your hand.[1]",
