@@ -18133,6 +18133,12 @@
       "question": "Q: I digivolve a suspended Digimon into this card, and paying the memory cost for the digivolution moves the memory gauge to 1 or more on the opponent's side. Before it becomes my opponent's turn, can I activate this card's <Digi-Burst> to unsuspend this Digimon?"
     }
   ],
+  "P-027": [
+    {
+      "answer": "A: Yes, you can.[1]",
+      "question": "Q: When using this card's <Digi-Burst> to use an Option card, can I activate the effect on my [BT3-096 Mimi Tachikawa]?"
+    }
+  ],
   "P-028": [
     {
       "answer": "A: Yes. If you have 3 security, you meet the conditions for both \uff1cDraw 1\uff1e and \"gain 1 memory,\" and activate both.[1]",
@@ -18257,6 +18263,12 @@
     {
       "answer": "A: Yes, you can.  You can choose to suspend 1 of your opponent's Digimon, and it is possible to choose an opponent's Digimon with 5000 DP or less as the target.[1]",
       "question": "Q: Can I use this card's effect to suspend just 1 of my opponent's Digimon when they have 2 Digimon with 5000 DP or less?"
+    }
+  ],
+  "P-046": [
+    {
+      "answer": "A: No, it doesn\u2019t activate.  Activating \uff1cDelay\uff1e on an Option card in the battle area is not considered to be using an Option card.[1]",
+      "question": "Q: Does this card's inherited effect activate when \uff1cDelay\uff1e activates on an Option card placed in my battle area?"
     }
   ],
   "P-047": [
@@ -18657,6 +18669,16 @@
       "question": "Q: Does this card's [Start of Your Main Phase] effect activate if I have the same number of security cards as my opponent?"
     }
   ],
+  "P-130": [
+    {
+      "answer": "A: No, you can't.  \"Lv.-\" Digimon and Digimon cards can't be targeted by effects that reference levels.[1]",
+      "question": "Q: Can I use this card\u2019s [On Play] effect to move a \"Lv.-\" Digimon from the breeding area to the battle area?"
+    },
+    {
+      "answer": "A: Yes, it activates.[1]",
+      "question": "Q: I moved a Digimon from the breeding area to the battle area when all of my Digimon's DP was reduced by activation of an effect. That Digimon's DP becomes 0 due to the DP-reducing effect at the same time it's moved to the battle area, then it's deleted, but does this card's [Your Turn] effect activate?"
+    }
+  ],
   "P-138": [
     {
       "answer": "A: Yes, even if you only reveal one of the applicable cards, you can still add it to your hand.[1]",
@@ -18861,6 +18883,16 @@
     {
       "answer": "A: Yes, you can.[1]",
       "question": "Q: My opponent has a Digimon with 13000 DP or less.Can I meet the \"if this effect didn't delete\" condition in this card's [On Play] [When Digivolving] effect by choosing an opponent's Digimon with 13000 DP or less and an effect that prevents deletion?"
+    }
+  ],
+  "P-187": [
+    {
+      "answer": "A: Yes, you can place it as the top or bottom security card.[1]",
+      "question": "Q: Can I place either my Digimon or Tamer or an opponent's Digimon or Tamer as the top or bottom security card for this card's [When Digivolving] effect?"
+    },
+    {
+      "answer": "A: Yes, you can activate \uff1cRecovery +1 (Deck)\uff1e (Place the top card of your deck on top of your security stack.).[1]",
+      "question": "Q: Can I activate \uff1cRecovery +1 (Deck)\uff1e (Place the top card of your deck on top of your security stack.) even when not DNA digivolving with this card's 1st [When Digivolving] effect?"
     }
   ],
   "RB1-003": [
@@ -19087,6 +19119,18 @@
       "question": "Q: Does this card's inherited effect activate when I attack my opponent's Digimon?"
     }
   ],
+  "ST1-11": [
+    {
+      "answer": "A: Only multiples of 2 count for this effect, so even if you have 3 digivolution cards, it only gains \uff1cSecurity A. +1\uff1e.[1]",
+      "question": "Q: How does this Digimon's effect work when it has 3 digivolution cards?"
+    }
+  ],
+  "ST1-12": [
+    {
+      "answer": "A: Yes, it can.[1]",
+      "question": "Q: Does the effect of this Tamer stack if there are multiple copies in play in my battle area?"
+    }
+  ],
   "ST1-13": [
     {
       "answer": "A: Yes, it does.[1]",
@@ -19255,6 +19299,12 @@
     {
       "answer": "A: That's correct. Such effects can no longer reduce play costs.  This card's effect also prevents play cost-reducing effects from activating when Tamer cards are played.[1]",
       "question": "Q: When I have this Digimon, can my opponent no longer use [BT14-046 Togemon]'s [Your Turn] effect or inherited effect to reduce the play cost of green Tamer cards?"
+    }
+  ],
+  "ST12-04": [
+    {
+      "answer": "A: No. Even if 2 or more Digimon with [Sistermon] are played at the same time, you only gain 1 memory by this card\u2019s effect.[1]",
+      "question": "Q: If I play 2 or more Digimon with [Sistermon] at the same time, do I gain 1 memory for each Digimon played?"
     }
   ],
   "ST12-10": [
@@ -19971,6 +20021,16 @@
       "question": "Q: After my Digimon gains \uff1cAlliance\uff1e with this card's [Your Turn] effect, can I choose to not attack for the part of the effect after \"then\"?"
     }
   ],
+  "ST20-07": [
+    {
+      "answer": "A: This effect prevents digivolution costs from being reduced when the costs are to be paid. This effect affects the opponent player.[1]",
+      "question": "Q: What does a \"your opponent can't reduce digivolution costs\" effect do, exactly?"
+    },
+    {
+      "answer": "A: Yes, it can be digivolved.\"Digivolve without paying the cost\" effects aren't effects that reduce the digivolution cost.[1]",
+      "question": "Q: Can my opponent digivolve a card using a \"digivolve without paying the cost\" effect while a \"your opponent can't reduce digivolution costs\" effect is activated?"
+    }
+  ],
   "ST20-09": [
     {
       "answer": "A: No, you can't.If the effect triggers, it must activate.[1]",
@@ -20233,6 +20293,16 @@
       "question": "Q: Can I use this card's effect to target one of my opponent's Digimon with 2000 DP or less, reduce its DP to 0, and delete it?"
     }
   ],
+  "ST3-15": [
+    {
+      "answer": "A: That Digimon can't perform security checks, so the battle ends. Even if your opponent has no cards in their security stack, you would not win the game by attacking with that Digimon.[1]",
+      "question": "Q: What happens when a Digimon has a security check number of 0 because of this card's effect and it attacks a player?"
+    },
+    {
+      "answer": "A: It would still check 0 cards. In order to check 1 or more security cards, that Digimon would need to gain <Security Attack +3> or higher.[1]",
+      "question": "Q: This card's effect causes a Digimon to gain <Security Attack -3>, giving them a security check number of 0. How many security cards could that Digimon check if it gained \uff1cSecurity A. +1\uff1e?"
+    }
+  ],
   "ST3-16": [
     {
       "answer": "A: Yes, you can.[1]",
@@ -20263,6 +20333,16 @@
     {
       "answer": "A: Yes, it can. Even if your memory counter moves to 1 on your opponent's side due to this Digimon's [When Attacking] effect, your turn doesn't end until the attack does.[1]",
       "question": "Q: Can this Digimon attack if I have less than 2 memory?"
+    }
+  ],
+  "ST4-11": [
+    {
+      "answer": "A: No, [Security] effects only activate when flipped over from the security stack.[1]",
+      "question": "Q: I use this card's inherited effect to trash an opponent's Security Card. Does the security effect on that card activate?"
+    },
+    {
+      "answer": "A: No, this effect only trashes the top card of your opponent's security stack. It doesn't win you the game if it's empty.[1]",
+      "question": "Q: My opponent has an empty security stack. If I have a Digimon with this card in its digivolution cards, and I use it to attack and delete an opponent's Digimon and survive, do I win the game?"
     }
   ],
   "ST4-12": [
@@ -20355,6 +20435,12 @@
     {
       "answer": "A: One \"purple use cost 1 option card\" or \"purple use cost 7 option card\".[1]",
       "question": "Q: Which card can be returned to your hand by this card's [On Play] effect?"
+    }
+  ],
+  "ST6-08": [
+    {
+      "answer": "A: Yes, it can. Even if your memory counter moves to 1 on your opponent's side due to this Digimon's [When Attacking] effect, your turn doesn't end until the attack does.[1]",
+      "question": "Q: Can this Digimon attack if I have less than 2 memory?"
     }
   ],
   "ST6-12": [
@@ -20461,6 +20547,12 @@
       "question": "Q: My opponent has a Digimon with 4000 DP or less and an effect that reads, \u201cThis Digimon can't be deleted by your opponent\u2019s effects,\u201d and another Digimon with 4000 DP or less but no effect. Can I intentionally choose the Digimon with the effect preventing deletion to have this Digimon gain +3000 DP?"
     }
   ],
+  "ST7-11": [
+    {
+      "answer": "A: No. If the number of cards in your security stack is less than or equal to your opponent\u2019s at the time you use this card, the effect doesn't go away, even if your opponent loses security cards later.[1]",
+      "question": "Q: I use this card, and my opponent and I both have the same number of cards in our security stacks. Later, my opponent loses a security card. When this happens, do I remove \uff1cSecurity A. +1\uff1e from this card\u2019s effect?"
+    }
+  ],
   "ST7-12": [
     {
       "answer": "A: You can choose any number of your opponent's Digimon, as long as the DP of the chosen Digimon adds up to 8000 or less. For example, you could choose 1 Digimon with 3000 DP + 1 Digimon with 5000 DP, or 2 Digimon with 2000 DP + 1 Digimon with 3000 DP.[1]",
@@ -20517,6 +20609,12 @@
     {
       "answer": "A: Yes. The inherited effect activates as soon as you have 8 cards in your hand, so the Digimon gets \uff1cSecurity A. +1\uff1e for the rest of the attack.[1]",
       "question": "Q: When I had 7 cards in my hand, I attacked with a Digimon with this card in its digivolution cards, and \uff1cDraw 1\uff1e activated from a [When Attacking] effect. I now have 8 cards, so does that attack perform a security check with this card's inherited effect of \uff1cSecurity A. +1\uff1e?"
+    }
+  ],
+  "ST8-09": [
+    {
+      "answer": "A: If you attack with this Digimon, your opponent's Digimon can't change the target of attack by activating \uff1cBlocker\uff1e.[1]",
+      "question": "Q: \u201cThis Digimon can't be blocked.\u201d How does this effect work, exactly?"
     }
   ],
   "ST8-10": [
