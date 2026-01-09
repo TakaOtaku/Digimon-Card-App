@@ -77,9 +77,13 @@ wikiPageLinks = [
         'url': 'https://digimoncardgame.fandom.com/wiki/EX-09:_Extra_Booster_Versus_Monsters'},
     {'name': '▹EXTRA BOOSTER SINISTER ORDER [EX-10]',
         'url': 'https://digimoncardgame.fandom.com/wiki/EX-10:_Extra_Booster_Sinister_Order'},
+    {'name': '▹EXTRA BOOSTER DAWN OF LIBERATOR [EX-11]',
+        'url': 'https://digimoncardgame.fandom.com/wiki/EX-11:_Extra_Booster_Dawn_of_Liberator'},
 
     {'name': 'BOOSTER RESURGENCE BOOSTER [RB1]',
         'url': 'https://digimoncardgame.fandom.com/wiki/RB-01:_Resurgence_Booster'},
+    {'name': 'ADVANCED BOOSTER DIGIMON GENERATION [AD-01]',
+        'url': 'https://digimoncardgame.fandom.com/wiki/AD-01:_Advanced_Booster_Digimon_Generation'},
 
     {'name': 'STARTER DECK GAIA RED [ST-1]',
         'url': 'https://digimoncardgame.fandom.com/wiki/ST-1:_Starter_Deck_Gaia_Red'},
@@ -140,6 +144,8 @@ wikiPageLinks = [
         'url': 'https://digimoncardgame.fandom.com/wiki/LM-06:_Limited_Card_Pack_Billion_Bullet'},
     {'name': 'LIMITED CARD PACK ANOTHER KNIGHT [LM-07]',
         'url': 'https://digimoncardgame.fandom.com/wiki/LM-07:_Limited_Card_Pack_Another_Knight'},
+    {'name': 'LIMITED CARD PACK FINAL CREST [LM-08]',
+        'url': 'https://digimoncardgame.fandom.com/wiki/LM-08:_Limited_Card_Pack_Final_Crest'},
 ]
 NoteDictionary = {
     'BT01-03: Release Special Booster Ver.1.0': '▹RELEASE SPECIAL BOOSTER 1.0 [BT01-03]',
@@ -177,8 +183,11 @@ NoteDictionary = {
     'EX-08: Extra Booster Chain of Liberation': '▹EXTRA BOOSTER CHAIN OF LIBERATION [EX-08]',
     'EX-09: Extra Booster Versus Monsters': '▹EXTRA BOOSTER VERSUS MONSTERS [EX-09]',
     'EX-10: Extra Booster Sinister Order': '▹EXTRA BOOSTER SINISTER ORDER [EX-10]',
+    'EX-11: Extra Booster Dawn of Liberator': '▹EXTRA BOOSTER DAWN OF LIBERATOR [EX-11]',
 
     'RB-01: Resurgence Booster': 'BOOSTER RESURGENCE BOOSTER [RB01]',
+
+    'AD-01: Advanced Booster Digimon Generation': 'ADVANCED BOOSTER DIGIMON GENERATION [AD-01]',
 
     'ST-1: Starter Deck Gaia Red': 'STARTER DECK GAIA RED [ST-01]',
     'ST-2: Starter Deck Cocytus Blue': 'STARTER DECK COCYTUS BLUE [ST-02]',
@@ -212,6 +221,7 @@ NoteDictionary = {
     'LM-05: Limited Card Pack Shield of the Just': 'LIMITED PACK SHIELD OF THE JUST [LM-05]',
     'LM-06: Limited Card Pack Billion Bullet': 'LIMITED CARD PACK BILLION BULLET [LM-06]',
     'LM-07: Limited Card Pack Another Knight': 'LIMITED CARD PACK ANOTHER KNIGHT [LM-07]',
+    'LM-08: Limited Card Pack Final Crest': 'LIMITED CARD PACK FINAL CREST [LM-08]',
 }
 replacements = [
     '(After this card is placed, by trashing it the next turn or later, activate the effect below.)',
@@ -310,9 +320,6 @@ replacements = [
     '(When this Digimon would be deleted other than by your effects, by deleting 1 of your other Digimon, prevent that deletion.)',
     '(When this Digimon with digivolution cards is deleted, play this card without paying the cost.)',
     '(At the end of your turn, this Digimon may attack. At the end of that attack, delete this Digimon. Your opponent\'s unsuspended Digimon can also be attacked with this effect.)',
-    '(At the end of your turn, by deleting 1 of your Tokens or other [Puppet] trait Digimon, this Digimon attacks a player without suspending.)',
-    '(At the end of your turn, by deleting 1 of your Tokens or other [Composite] trait Digimon, this Digimon attacks a player without suspending.)',
-    '(At the end of your turn, by deleting 1 of your Tokens or other [Unidentified] trait Digimon, this Digimon attacks a player without suspending.)',
     '(When this Digimon would leave the battle area other than in battle, you may play 1 Blue Level 4 Digimon card from its digivolution cards without paying the cost.)',
     '(When this Digimon would leave the battle area other than in battle, you may play 1 Blue Level 5 Digimon card from its digivolution cards without paying the cost.)',
     '(Plug this card from the hand or battle area sideways into the specified Digimon in the battle area.)',
@@ -323,10 +330,6 @@ replacements = [
     '(While attacking, your opponent\'s effects don\'t affect this Digimon.)',
     '(In the main phase, by suspending this Digimon, place your deck\'s top card face down as this Digimon\'s bottom digivolution card. This effect can also activate in the breeding area.)',
     '(When your other [Xros Heart] trait Digimon would be deleted by an opponent\'s effect, you may delete this Digimon to prevent 1 of those Digimon\'s deletion.)',
-    '(At the end of your turn, by deleting 1 of your Tokens or other [Composite] trait Digimon, this Digimon attacks a player without suspending.)',
-    '(When this Digimon would leave the battle area other than in battle, you may play 1 Level 3 Digimon card with [Aqua] or [Sea Animal] in any of its traits from its digivolution cards without paying the cost.)',
-    '(When this Digimon would leave the battle area other than in battle, you may play 1 Level 4 Digimon card with [Aqua] or [Sea Animal] in any of its traits from its digivolution cards without paying the cost.)',
-    '(When this Digimon would leave the battle area other than in battle, you may play 1 Level 5 Digimon card with [Aqua] or [Sea Animal] in any of its traits from its digivolution cards without paying the cost.)',
     '(When your other [Deva] or [Four Sovereigns] trait Digimon would be deleted by an opponent\'s effect, you may delete this Digimon to prevent 1 of those Digimon\'s deletion.)',
     '(At the end of your turn, by deleting 1 of your Tokens or other [Puppet] trait Digimon, this Digimon attacks a player without suspending.)',
     '(When your other Black or White Digimon would be deleted by an opponent\'s effect, you may delete this Digimon to prevent 1 of those Digimon\'s deletion.)',
@@ -336,5 +339,17 @@ replacements = [
     '(When your other [Bagra Army] trait Digimon would be deleted by an opponent\'s effect, you may delete this Digimon to prevent 1 of those Digimon\'s deletion.)',
     '(By trashing this card after the placing turn, activate the effect below.)',
     'When this would be played, by placing the specified cards from the trash under it, reduce the play cost.',
-    ' (When this Digimon would leave the battle area other than in battle, you may play 1 Level 4 Digimon card with [Aqua] or [Sea Animal] in any of its traits from its digivolution cards without paying the cost.)'
+    '(At the end of your turn, by deleting 1 of your Tokens or other [Puppet] trait Digimon, this Digimon attacks a player without suspending.)',
+    '(At the end of your turn, by deleting 1 of your Tokens or other [Composite] trait Digimon, this Digimon attacks a player without suspending.)',
+    '(At the end of your turn, by deleting 1 of your Tokens or other [Unidentified] trait Digimon, this Digimon attacks a player without suspending.)',
+    '(At the end of your turn, by deleting 1 of your Tokens or other [Appmon] trait Digimon, this Digimon attacks a player without suspending.)',
+    '(When this Digimon would leave the battle area other than in battle, you may play 1 Level 3 Digimon card with [Aqua] or [Sea Animal] in any of its traits from its digivolution cards without paying the cost.)',
+    '(When this Digimon would leave the battle area other than in battle, you may play 1 Level 4 Digimon card with [Aqua] or [Sea Animal] in any of its traits from its digivolution cards without paying the cost.)',
+    '(When this Digimon would leave the battle area other than in battle, you may play 1 Level 5 Digimon card with [Aqua] or [Sea Animal] in any of its traits from its digivolution cards without paying the cost.)',
+    '(When this Digimon would leave the battle area other than in battle, you may play 1 Level 6 or lower Digimon card with [Aqua] or [Sea Animal] in any of its traits from its digivolution cards without paying the cost.)'
+    '(When this Digimon would leave the battle area other than in battle, you may play 1 [Aegiomon] from its digivolution cards without paying the cost.)',
+    '(When this Digimon would leave the battle area other than in battle, you may play 1 [Calmaramon] from its digivolution cards without paying the cost.)',
+    '(When this Digimon would leave the battle area other than in battle, you may play 1 [Lanamon] from its digivolution cards without paying the cost.)',
+    '(When this Digimon would leave the battle area other than in battle, you may play 1 [Betamon] or [ModokiBetamon] from its digivolution cards without paying the cost.)',
+    '(When this Digimon would leave the battle area other than in battle, you may play 1 [Aegiomon] from its digivolution cards without paying the cost.)'
 ]
