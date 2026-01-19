@@ -9,12 +9,12 @@ export function setupDigimonCards(cardset: CARDSET): DigimonCard[] {
 
 function setupJsonENG(): DigimonCard[] {
   const digimonCards: DigimonCard[] = [...DigimonCardsJsonENG];
-  return digimonCards;
+  return digimonCards.filter((card) => card.name.japanese && card.name.japanese.trim() !== '');
 }
 
 function setupJsonJAP(): DigimonCard[] {
   const japCards: DigimonCard[] = [...DigimonCardsJsonJAP];
-  return japCards;
+  return japCards.filter((card) => card.name.japanese && card.name.japanese.trim() !== '');
 }
 
 export function setupDigimonCardMap(cards: DigimonCard[]): Map<string, DigimonCard> {
@@ -29,9 +29,11 @@ function mapJsonToEngCardList(): Map<string, DigimonCard> {
   const cards: Map<string, DigimonCard> = new Map<string, DigimonCard>();
 
   const digimonCards: DigimonCard[] = [...DigimonCardsJsonENG];
-  digimonCards.forEach((digimonCard: DigimonCard) => {
-    cards.set(digimonCard.id, digimonCard);
-  });
+  digimonCards
+    .filter((card) => card.name.japanese && card.name.japanese.trim() !== '')
+    .forEach((digimonCard: DigimonCard) => {
+      cards.set(digimonCard.id, digimonCard);
+    });
 
   return cards;
 }
