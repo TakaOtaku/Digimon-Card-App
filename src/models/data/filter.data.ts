@@ -137,6 +137,7 @@ export const Keywords: string[] = [
   '\uff1cFortitude\uff1e',
   '\uff1cJamming\uff1e',
   '\uff1cLink +1\uff1e',
+  '\uff1cLink +2\uff1e',
   '\uff1cMaterial Save 1\uff1e',
   '\uff1cMaterial Save 2\uff1e',
   '\uff1cMaterial Save 3\uff1e',
