@@ -233,6 +233,7 @@ replacements = [
     '(At blocker timing, by suspending this Digimon, it becomes the attack target.)',
     '(Trash this card in your battle area to activate the effect below. You can\'t activate this effect the turn this card enters play.)',
     '(When this Digimon attacks and deletes an opponent\'s Digimon and survives the battle, it performs any security checks it normally would.)',
+    '(When this Digimon attacks and deletes an opponent\'s Digimon in battle, it checks security before the attack ends.)',
     '(Place the top card of your deck on top of your security stack.)',
     '(This Digimon can\'t be deleted in battles against Security Digimon.)',
     '(Trash all of the digivolution cards on that Digimon.)',
@@ -350,5 +351,7 @@ replacements = [
     '(When this Digimon would leave the battle area other than in battle, you may play 1 \[Calmaramon\] from its digivolution cards without paying the cost.)',
     '(When this Digimon would leave the battle area other than in battle, you may play 1 \[Lanamon\] from its digivolution cards without paying the cost.)',
     '(When this Digimon would leave the battle area other than in battle, you may play 1 \[Betamon\] or [ModokiBetamon\] from its digivolution cards without paying the cost.)',
-    '(When this Digimon would leave the battle area other than in battle, you may play 1 \[Aegiomon\] from its digivolution cards without paying the cost.)'
+    '(When this Digimon would leave the battle area other than in battle, you may play 1 \[Aegiomon\] from its digivolution cards without paying the cost.)',
+    '(Specified cards let you ignore color requirements.)',
+    '(Instead of trashing after use, your cards may digivolve into this card without paying the cost.)'
 ]
