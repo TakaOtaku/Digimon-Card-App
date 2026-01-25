@@ -8569,8 +8569,8 @@
   ],
   "BT21-081": [
     {
-      "answer": "A: No, you can't.The Digimon that was given \uff1cPiercing\uff1e (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.) by this effect must attack if possible.[1]",
-      "question": "Q: Can I use this card's [End of Your Turn] effect to give \uff1cPiercing\uff1e (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.) to 1 of my Digimon, but then choose to not attack with that Digimon?"
+      "answer": "A: No, you can't.The Digimon that was given \uff1cPiercing\uff1e (When this Digimon attacks and deletes an opponent's Digimon in battle, it checks security before the attack ends.) by this effect must attack if possible.[1]",
+      "question": "Q: Can I use this card's [End of Your Turn] effect to give \uff1cPiercing\uff1e (When this Digimon attacks and deletes an opponent's Digimon in battle, it checks security before the attack ends.) to 1 of my Digimon, but then choose to not attack with that Digimon?"
     },
     {
       "answer": "A: No, an attack using the 2nd effect isn't possible. A new attack declaration can't be made during an attack.In this case, the [End of Your Turn] effects on both copies of this card trigger simultaneously at the end of your turn, and you use the [End of Your Turn] effect on the 1st copy of this card to attack.The 2nd [End of Your Turn] effect can be activated before the counter timing, but because you can't declare another attack during an attack, you won't be able to attack using the 2nd effect, even if you activate it.[1]",
