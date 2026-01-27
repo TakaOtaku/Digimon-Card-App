@@ -365,7 +365,6 @@ function applySortOrder(cards: DigimonCard[], sort: ISort, collection: ICountCar
   }
   return sort.ascOrder ? returnArray.sort(dynamicSort(sort.sortBy.element)) : returnArray.sort(dynamicSort(`-${sort.sortBy.element}`));
 }
-
 //endregion
 
 export function dynamicSort(property: string): any {

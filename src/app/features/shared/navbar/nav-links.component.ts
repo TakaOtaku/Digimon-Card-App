@@ -1,5 +1,5 @@
 import { NgClass, NgIf } from '@angular/common';
-import { Component, effect, inject, Input, OnInit, Signal, signal, WritableSignal } from '@angular/core';
+import { Component, inject, Input, Signal, signal, WritableSignal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -102,13 +102,15 @@ import { DialogModule } from 'primeng/dialog';
         </ng-template>
       </button>
 
-      <i
+      <div
+        class="flex flex-col my-5 group cursor-pointer"
         [ngClass]="{
           'max-lg:mr-5': !sidebar,
         }"
-        class="pi pi-ellipsis-h my-5 text-center text-[#e2e4e6] hover:text-[#64B5F6]"
-        style="font-size: 1.5rem"
-        (click)="openSettings()"></i>
+        (click)="openSettings()">
+        <i class="pi pi-ellipsis-h text-center text-[#e2e4e6] group-hover:text-[#64B5F6]" style="font-size: 1.5rem"></i>
+        <span class="text-xs text-center text-[#e2e4e6] group-hover:text-[#64B5F6]">Options</span>
+      </div>
 
       <div class="grid grid-cols-2 justify-center items-center">
         <a class="mx-auto" href="https://github.com/TakaOtaku/Digimon-Card-App" target="_blank">

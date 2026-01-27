@@ -5,14 +5,16 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { TooltipModule } from 'primeng/tooltip';
+import { IconFieldModule } from 'primeng/iconfield';
+import { InputIconModule } from 'primeng/inputicon';
 
 @Component({
   selector: 'digimon-advanced-search',
   template: `
     <div class="advanced-search-container">
       <div class="search-input-container">
-        <span class="p-input-icon-left p-input-icon-right flex-1 flex-row no-wrap">
-          <i class="pi pi-search"></i>
+        <p-iconfield class="flex-1 w-full">
+          <p-inputicon class="pi pi-search"></p-inputicon>
           <input
             pInputText
             [(ngModel)]="searchQuery"
@@ -21,14 +23,14 @@ import { TooltipModule } from 'primeng/tooltip';
             placeholder="Search cards or use advanced syntax (e.g., cardType == Digimon AND color == Red)"
             class="w-full"
           />
-          <i 
+          <p-inputicon 
             *ngIf="searchQuery().trim()" 
             class="pi pi-times cursor-pointer" 
             (click)="onClear()"
             pTooltip="Clear search"
             tooltipPosition="top">
-          </i>
-        </span>
+          </p-inputicon>
+        </p-iconfield>
 
         <button
           pButton
@@ -43,13 +45,12 @@ import { TooltipModule } from 'primeng/tooltip';
       </div>
     </div>
 
-
     <!-- Help Dialog -->
     <p-dialog 
       header="Advanced Search Help" 
       [(visible)]="showHelp"
       [modal]="true"
-      [style]="{ width: '50vw' }"
+      [style]="{ width: '50vw', padding: '1rem' }"
       [dismissableMask]="true">
       
       <div class="help-content">
@@ -164,19 +165,17 @@ import { TooltipModule } from 'primeng/tooltip';
     InputTextModule,
     ButtonModule,
     DialogModule,
-    TooltipModule
+    TooltipModule,
+    IconFieldModule,
+    InputIconModule
   ]
 })
-export class AdvancedSearchComponent implements OnInit {
+export class AdvancedSearchComponent {
   @Output() searchChange = new EventEmitter<string>();
 
   // Signals
   searchQuery = signal<string>('');
   showHelp = false;
-
-  ngOnInit() {
-    // Component initialization if needed
-  }
 
   onQueryChange(query: string) {
     this.searchQuery.set(query);
@@ -185,7 +184,6 @@ export class AdvancedSearchComponent implements OnInit {
   onEnter() {
     const query = this.searchQuery().trim();
     if (query) {
-      console.log('Emitting search query:', query);
       this.searchChange.emit(query);
     }
   }

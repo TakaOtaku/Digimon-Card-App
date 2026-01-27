@@ -19,17 +19,30 @@ import { DividerModule } from 'primeng/divider';
 
     <p-divider class="my-5"></p-divider>
 
-    <h2 class="mt-1 text-center text-[#e2e4e6] text-sm sm:text-base">
-      Everything related to the cards is loaded once a day from
-      <span class="font-bold">DigimonCardGame.Fandom</span>. Thanks to their effort everything should on here should be up to date.
+    <h2 class="mt-1 text-center text-[#e2e4e6] text-sm sm:text-base flex-col">
+      <div class="flex-row">
+        Everything related to the cards is loaded once a day from
+        <span class="font-bold">DigimonCardGame.Fandom</span>.
+      </div>
+      <span>Thanks to their effort everything should on here should be up to date.</span>
     </h2>
 
     <p-divider class="my-5"></p-divider>
 
     <h2 class="mt-1 text-center text-[#e2e4e6] text-sm sm:text-base">
-      Thanks to some generous people which donated, I could move the website to a better server. 
+      Thanks to some generous people which donated, I could move the website to a better server.
       Which should improve the security and performance of the website, I am very grateful for that.
     </h2>
+
+    <p-divider class="my-5"></p-divider>
+
+    <h2 class="mt-1 text-center text-[#e2e4e6] text-sm sm:text-base">
+      I am always open for feedback and suggestions to improve the website, so feel free to reach out to me on discord and github.
+      That said, I am not the fastest when it comes to implementing new features, but I will try my best.
+      Also I am always looking for people who want to help me maintaining the website and implement feature, so if you know someone or are interested yourself, please reach out to me.
+    </h2>
+
+    <p-divider class="my-5"></p-divider>
 
     <a href="https://www.paypal.com/donate/?hosted_button_id=WLM58Q785D4H4" target="_blank">
       <img src="assets/images/blue.png" alt="Paypal Donate Button" class="mx-auto h-12" />

@@ -19,22 +19,29 @@ export class AdvancedSearchService {
 
     try {
       console.log('Parsing search query:', searchQuery);
-      
-      // Check if this looks like an advanced search query (contains operators)
-      const hasAdvancedSyntax = /(\s+==\s+|\s+!=\s+|\s+>=\s+|\s+<=\s+|\s+>\s+|\s+<\s+|\s+contains\s+|\s+starts_with\s+|\s+ends_with\s+|\s+AND\s+|\s+OR\s+)/i.test(searchQuery);
-      
-      if (hasAdvancedSyntax) {
-        // Try to parse as advanced search
+
+      // Check if this looks like an advanced search query with field operators
+      const hasFieldOperators = /(\s+==\s+|\s+!=\s+|\s+>=\s+|\s+<=\s+|\s+>\s+|\s+<\s+|\s+contains\s+|\s+starts_with\s+|\s+ends_with\s+)/i.test(searchQuery);
+
+      // Check if query has AND/OR logical operators (for combining text searches)
+      const hasLogicalOperators = /(\s+AND\s+|\s+OR\s+)/i.test(searchQuery);
+
+      if (hasFieldOperators) {
+        // Try to parse as advanced search with field operators
         const siftQuery = this.parseSearchQuery(searchQuery);
         console.log('Generated sift query:', JSON.stringify(siftQuery, null, 2));
-        
+
         const filterFn = sift(siftQuery);
         const result = cards.filter(card => filterFn(card));
-        
+
         console.log(`Filtered ${result.length} cards from ${cards.length} total using advanced search`);
         return result;
+      } else if (hasLogicalOperators) {
+        // Handle AND/OR with global text search terms (e.g., "Agumon AND Gabumon")
+        console.log('Logical operators detected without field operators, using combined text search');
+        return this.globalTextSearchWithLogicalOperators(cards, searchQuery);
       } else {
-        // Fall back to global text search
+        // Fall back to simple global text search
         console.log('No advanced syntax detected, using global text search');
         return this.globalTextSearch(cards, searchQuery);
       }
@@ -49,10 +56,10 @@ export class AdvancedSearchService {
    */
   private globalTextSearch(cards: DigimonCard[], searchText: string): DigimonCard[] {
     if (!searchText.trim()) return cards;
-    
+
     const searchTerm = searchText.toLowerCase();
     console.log(`Global text search for: "${searchTerm}"`);
-    
+
     const result = cards.filter(card => {
       // Define all searchable text fields on the card
       const searchableFields = [
@@ -95,16 +102,129 @@ export class AdvancedSearchService {
         card.block?.join(' '),
         card.digivolveCondition?.map(dc => `${dc.color} ${dc.cost} ${dc.level}`).join(' ')
       ];
-      
+
       // Check if any field contains the search term
       return searchableFields.some(field => {
         if (field === null || field === undefined) return false;
         return String(field).toLowerCase().includes(searchTerm);
       });
     });
-    
+
     console.log(`Global text search found ${result.length} cards from ${cards.length} total`);
     return result;
+  }
+
+  /**
+   * Perform global text search with AND/OR logical operators
+   * Example: "Agumon AND Gabumon" searches for cards containing both terms
+   * Example: "Agumon OR Gabumon" searches for cards containing either term
+   */
+  private globalTextSearchWithLogicalOperators(cards: DigimonCard[], searchQuery: string): DigimonCard[] {
+    // Split by OR first (lower precedence)
+    const orParts = this.splitByLogicalOperator(searchQuery, 'OR');
+
+    if (orParts.length > 1) {
+      // OR: card must match at least one of the parts
+      console.log(`OR search with ${orParts.length} parts:`, orParts);
+      const result = cards.filter(card =>
+        orParts.some(part => this.cardMatchesTextQuery(card, part))
+      );
+      console.log(`OR search found ${result.length} cards from ${cards.length} total`);
+      return result;
+    }
+
+    // Split by AND
+    const andParts = this.splitByLogicalOperator(searchQuery, 'AND');
+
+    if (andParts.length > 1) {
+      // AND: card must match all parts
+      console.log(`AND search with ${andParts.length} parts:`, andParts);
+      const result = cards.filter(card =>
+        andParts.every(part => this.cardMatchesTextQuery(card, part))
+      );
+      console.log(`AND search found ${result.length} cards from ${cards.length} total`);
+      return result;
+    }
+
+    // Single term, fall back to regular global search
+    return this.globalTextSearch(cards, searchQuery);
+  }
+
+  /**
+   * Check if a card matches a text query (searches all fields)
+   */
+  private cardMatchesTextQuery(card: DigimonCard, query: string): boolean {
+    // Handle nested OR/AND in query part
+    const orParts = this.splitByLogicalOperator(query, 'OR');
+    if (orParts.length > 1) {
+      return orParts.some(part => this.cardMatchesTextQuery(card, part));
+    }
+
+    const andParts = this.splitByLogicalOperator(query, 'AND');
+    if (andParts.length > 1) {
+      return andParts.every(part => this.cardMatchesTextQuery(card, part));
+    }
+
+    // Clean up the search term
+    let searchTerm = query.trim().toLowerCase();
+
+    // Remove surrounding parentheses if present
+    if (searchTerm.startsWith('(') && searchTerm.endsWith(')')) {
+      searchTerm = searchTerm.substring(1, searchTerm.length - 1).trim();
+    }
+
+    // Remove quotes if present
+    searchTerm = searchTerm.replace(/^["']|["']$/g, '');
+
+    if (!searchTerm) return true;
+
+    // Define all searchable text fields on the card
+    const searchableFields = [
+      card.name?.english,
+      card.name?.japanese,
+      card.name?.korean,
+      card.name?.simplifiedChinese,
+      card.name?.traditionalChinese,
+      card.id,
+      card.cardNumber,
+      card.illustrator,
+      card.notes,
+      card.effect,
+      card.digivolveEffect,
+      card.securityEffect,
+      card.aceEffect,
+      card.linkEffect,
+      card.linkRequirement,
+      card.rule,
+      card.color,
+      card.rarity,
+      card.cardType,
+      card.form,
+      card.attribute,
+      card.type,
+      card.version,
+      card.restrictions?.english,
+      card.restrictions?.japanese,
+      card.restrictions?.korean,
+      card.restrictions?.chinese,
+      card.specialDigivolve,
+      card.dnaDigivolve,
+      card.burstDigivolve,
+      card.digiXros,
+      card.assembly,
+      String(card.playCost),
+      String(card.dp),
+      String(card.linkDP),
+      String(card.cardLv),
+      card.block?.join(' '),
+      card.digivolveCondition?.map(dc => `${dc.color} ${dc.cost} ${dc.level}`).join(' ')
+    ];
+
+    // Check if any field contains the search term
+    return searchableFields.some(field => {
+      if (field === null || field === undefined) return false;
+      return String(field).toLowerCase().includes(searchTerm);
+    });
   }
 
   /**
@@ -118,14 +238,14 @@ export class AdvancedSearchService {
 
     // Check if the query contains OR at the top level (not inside parentheses)
     const orParts = this.splitByLogicalOperator(query, 'OR');
-    
+
     if (orParts.length > 1) {
       // Multiple OR conditions
       return {
         $or: orParts.map(part => this.parseAndExpression(part))
       };
     }
-    
+
     // Single expression or AND expressions
     return this.parseAndExpression(query);
   }
