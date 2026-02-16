@@ -41,6 +41,10 @@ class DigimonCard:
         self._AAs = []
         self._JAAs = []
 
+        self._optionCardColourRequirement = "-"
+        self._optionCardEffect = "-"
+        self._dualEffect = "-"
+
     @property
     def id(self):
         return self._id
@@ -312,3 +316,25 @@ class DigimonCard:
     @JAAs.setter
     def JAAs(self, value):
         self._JAAs = value
+
+    @property
+    def optionCardColourRequirement(self):
+        return self._optionCardColourRequirement
+    @optionCardColourRequirement.setter
+    def optionCardColourRequirement(self, value):
+        self._optionCardColourRequirement = value
+
+    @property
+    def optionCardEffect(self):
+        return self._optionCardEffect
+    @optionCardEffect.setter
+    def optionCardEffect(self, value):
+        self._optionCardEffect = value
+
+    @property
+    def dualEffect(self):
+        return self._dualEffect
+    @dualEffect.setter
+    def dualEffect(self, value):
+        self._dualEffect = value
+

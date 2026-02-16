@@ -134,7 +134,17 @@ function applyRarityFilter(card: DigimonCard, filter: string[]): boolean {
 }
 
 function applyCardTypeFilter(card: DigimonCard, filter: string[]): boolean {
-  return !filter.includes(card['cardType']);
+  // Direct match
+  if (filter.includes(card['cardType'])) {
+    return false;
+  }
+  // Handle hybrid "Digimon/Option" type - include it when filtering by either "Digimon" or "Option"
+  if (card['cardType'] === 'Digimon/Option') {
+    if (filter.includes('Digimon') || filter.includes('Option')) {
+      return false;
+    }
+  }
+  return true;
 }
 
 function applyFormFilter(card: DigimonCard, filter: string[]): boolean {

@@ -45,6 +45,9 @@ export const dummyCard: DigimonCard = {
   specialDigivolve: '-',
   type: 'Digimon',
   version: 'Normal',
+  optionCardColourRequirement: '-',
+  optionCardEffect: '-',
+  dualEffect: '-',
 };
 
 export const emptyDeck: IDeck = {

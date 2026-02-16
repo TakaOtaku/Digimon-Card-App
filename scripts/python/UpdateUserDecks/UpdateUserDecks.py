@@ -25,7 +25,7 @@ def set_tags(deck: Dict) -> List[Dict]:
 
 def set_newest_set(cards: List[Dict]) -> Dict:
     release_order = [
-        'BT21', 'BT20', 'BT19', 'EX8', 'BT18', 'EX7', 'ST19', 'ST18', 'BT17', 'EX6', 'BT16', 'ST17', 'BT15','EX5', 'BT14',
+        'EX12', 'BT25', 'AD1', 'EX11', 'BT24', 'BT23', 'EX10', 'BT22', 'EX9', 'BT21', 'BT20', 'BT19', 'EX8', 'BT18', 'EX7', 'ST19', 'ST18', 'BT17', 'EX6', 'BT16', 'ST17', 'BT15','EX5', 'BT14',
         'ST16', 'ST15', 'RB1', 'BT13', 'EX4', 'BT12', 'ST14', 'BT11', 'EX3', 'BT10', 'ST13', 'ST12', 'BT9', 'EX2',
         'BT8', 'ST10', 'ST9', 'BT7', 'EX1', 'BT6', 'ST8', 'ST7', 'BT5', 'BT4', 'ST6', 'ST5', 'ST4', 'BT3', 'BT2', 'BT1', 'ST3', 'ST2', 'ST1'
     ]
@@ -134,7 +134,10 @@ banned_cards = [
 cards_that_can_be_included_50 = [
     'BT6-085',
     'BT11-061',
-    'EX2-046'
+    'EX2-046',
+    'BT22-079',
+    'EX9-048',
+    'EX11-027'
 ]
 
 

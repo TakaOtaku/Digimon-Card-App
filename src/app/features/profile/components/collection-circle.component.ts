@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, effect, inject, Input } from '@angular/core';
 import { ChartModule } from 'primeng/chart';
-import { DigimonCard } from '../../../../models';
-import { DigimonCardStore } from '../../../store/digimon-card.store';
-import { SaveStore } from '../../../store/save.store';
+import { DigimonCard } from '@models';
+import { DigimonCardStore } from '@store';
+import { SaveStore } from '@store';
 
 @Component({
   selector: 'digimon-collection-circle',

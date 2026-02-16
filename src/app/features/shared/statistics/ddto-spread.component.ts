@@ -1,7 +1,12 @@
 import { Component, inject, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { IDeck } from '../../../../models';
-import { getCountFromDeckCards, mapToDeckCards } from '../../../functions/digimon-card.functions';
-import { DigimonCardStore } from '../../../store/digimon-card.store';
+import { IDeck } from '@models';
+import {
+  getCountFromDeckCards,
+  isDigimonType,
+  isOptionType,
+  mapToDeckCards
+} from '@functions';
+import { DigimonCardStore } from '@store';
 import { SingleContainerComponent } from '../single-container.component';
 import { NgIf, NgStyle } from '@angular/common';
 
@@ -76,9 +81,9 @@ export class DdtoSpreadComponent implements OnInit, OnChanges {
     }
     const cards = mapToDeckCards(this.deck.cards, this.digimonCardStore.cards());
     const digieggs = cards.filter((card) => card.cardType === 'Digi-Egg');
-    const digimon = cards.filter((card) => card.cardType === 'Digimon');
+    const digimon = cards.filter((card) => isDigimonType(card.cardType));
     const tamer = cards.filter((card) => card.cardType === 'Tamer');
-    const options = cards.filter((card) => card.cardType === 'Option');
+    const options = cards.filter((card) => isOptionType(card.cardType));
 
     this.ddto[0] = getCountFromDeckCards(digieggs);
     this.ddto[1] = getCountFromDeckCards(digimon);

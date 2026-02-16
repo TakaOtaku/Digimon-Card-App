@@ -1,45 +1,19 @@
 """
-Module for extracting Digimon card data from the wiki.
+Module for extracting Digimon card data from the wiki using MediaWiki API.
 
 This module contains functions to parse HTML content from the Digimon Card Game Wiki
 and extract card information into structured data objects.
 """
 from typing import List, Optional, Dict, Any
-import requests
 import time
 import random
-from requests.adapters import HTTPAdapter
-from urllib3.util.retry import Retry
 from bs4 import BeautifulSoup, Tag
 
 from classes.DigimonCard import DigimonCard
 from classes.DigivolveCondition import DigivolveCondition
 
 import WikiVariables as WV
-
-# Configure requests session with retry strategy
-def create_robust_session():
-    session = requests.Session()
-
-    # Define retry strategy
-    retry_strategy = Retry(
-        total=3,
-        backoff_factor=1,
-        status_forcelist=[429, 500, 502, 503, 504],
-        allowed_methods=["HEAD", "GET", "OPTIONS"]
-    )
-
-    adapter = HTTPAdapter(max_retries=retry_strategy)
-    session.mount("http://", adapter)
-    session.mount("https://", adapter)
-
-    # Set a user agent to be polite
-    session.headers.update({
-        'User-Agent': 'Digimon Card App Data Scraper 1.0 (digimoncard.app@gmail.de)',
-        'Connection': 'keep-alive',
-    })
-
-    return session
+import WikiFunctions as WF
 
 # Constants for parsing
 RARITY_MAPPING = {
@@ -75,16 +49,21 @@ MAIN_INFO_MAPPINGS = {
 }
 
 # Field mappings for extra info parsing
-EXTRA_INFO_MAPPINGS = {
-    "Card Effect": "effect",
-    "Rule": "rule",
-    "Inherited Effect": "digivolveEffect",
-    "Security Effect": "securityEffect",
-    "Ace": "aceEffect",
-    "Link DP": "linkDP",
-    "Link Effect": "linkEffect",
-    "Link Requirements": "linkRequirement",
-}
+# IMPORTANT: Order matters! More specific keys must come before less specific ones
+# e.g., "Option Card Effect" must come before "Card Effect"
+EXTRA_INFO_MAPPINGS = [
+    ("Option Card Colour Requirements", "optionCardColourRequirement"),
+    ("Option Card Effect", "optionCardEffect"),
+    ("Card Effect", "effect"),
+    ("Rule", "rule"),
+    ("Inherited Effect", "digivolveEffect"),
+    ("Security Effect", "securityEffect"),
+    ("Ace", "aceEffect"),
+    ("Link DP", "linkDP"),
+    ("Link Effect", "linkEffect"),
+    ("Link Requirements", "linkRequirement"),
+    ("Dual", "dualEffect"),
+]
 
 
 def splitCellsInPair(cells: List[str]) -> List[List[str]]:
@@ -254,8 +233,8 @@ def getExtraInfo(html: Optional[Tag], digimoncard: DigimonCard) -> DigimonCard:
 
         header_text = th.text.strip()
 
-        # Check against our mapping dictionary
-        for key, attribute in EXTRA_INFO_MAPPINGS.items():
+        # Check against our mapping list (order matters - more specific first)
+        for key, attribute in EXTRA_INFO_MAPPINGS:
             if key in header_text:
                 setattr(digimoncard, attribute, td.text)
                 break
@@ -432,33 +411,33 @@ def setCardImage(digimoncard: DigimonCard, url: str) -> DigimonCard:
 
 def getCardData() -> None:
     """
-    Main function to extract card data from all wiki links.
+    Main function to extract card data from all wiki links using MediaWiki API.
 
     Processes each card link, extracts data, and adds to WV.cards list.
     """
     count = 0
     errors = []
 
-    # Create a session for connection reuse (simple optimization)
-    session = create_robust_session()
-
-    print(f"📊 Processing {len(WV.cardLinks)} cards...")
+    print(f"📊 Processing {len(WV.cardLinks)} cards using MediaWiki API...")
     start_time = time.time()
 
     for link in WV.cardLinks:
         try:
             count += 1
 
+            # Extract page title from link (e.g., '/wiki/BT1-001' -> 'BT1-001')
+            page_title = link.split('/wiki/')[-1] if '/wiki/' in link else link.lstrip('/')
+
             # Add delay between requests to be respectful to the server
-            if count > 1:  # Skip delay for first request
-                time.sleep(random.uniform(0.1, 0.3))
+            delay = random.uniform(0.3, 0.6) if count > 1 else 0
 
-            # Use session instead of requests.get for better performance
-            page = session.get(WV.wikiLink + link, timeout=20)
-            page.raise_for_status()
+            # Use MediaWiki API to get page content
+            soup = WF.get_page_html(page_title, delay=delay)
 
-            # Use lxml parser for better performance
-            soup = BeautifulSoup(page.content, "lxml")
+            if soup is None:
+                print(f"Failed to fetch page: {link}")
+                errors.append(f"Failed to fetch: {link}")
+                continue
 
             currentDigimon = DigimonCard()
 
@@ -497,10 +476,6 @@ def getCardData() -> None:
 
             WV.cards.append(currentDigimon)
 
-        except requests.exceptions.RequestException as e:
-            error_msg = f"Network error for {link}: {e}"
-            print(error_msg)
-            errors.append(error_msg)
         except Exception as e:
             error_msg = f"Processing error for {link}: {e}"
             print(error_msg)
@@ -520,6 +495,7 @@ def getCardData() -> None:
         print(f"\n⚠️  Recent errors:")
         for error in errors[-3:]:  # Show last 3 errors
             print(f"  - {error}")
+
 
 def getCardDataFast() -> None:
     """

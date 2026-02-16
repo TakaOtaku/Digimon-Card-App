@@ -663,9 +663,13 @@ export const BlockButtons: MultiButtons[] = [
     name: '05',
     value: '05',
   },
+  {
+    name: '06',
+    value: '06',
+  },
 ];
 
-export const CardTypes = ['Digi-Egg', 'Digimon', 'Tamer', 'Option'];
+export const CardTypes = ['Digi-Egg', 'Digimon', 'Tamer', 'Option', 'Digimon/Option'];
 export const CardTypeButtons: MultiButtons[] = [
   {
     name: 'Digi-Egg',
