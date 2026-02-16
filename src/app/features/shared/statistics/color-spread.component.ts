@@ -102,13 +102,13 @@ export class ColorSpreadComponent implements OnInit, OnChanges {
     }
 
     const cards = mapToDeckCards(this.deck.cards, this.digimonCardStore.cards());
-    const red = cards.filter((card) => card.color.split('/')[0] === 'Red');
-    const blue = cards.filter((card) => card.color.split('/')[0] === 'Blue');
-    const yellow = cards.filter((card) => card.color.split('/')[0] === 'Yellow');
-    const green = cards.filter((card) => card.color.split('/')[0] === 'Green');
-    const black = cards.filter((card) => card.color.split('/')[0] === 'Black');
-    const purple = cards.filter((card) => card.color.split('/')[0] === 'Purple');
-    const white = cards.filter((card) => card.color.split('/')[0] === 'White');
+    const red = cards.filter((card) => card.color && card.color.split('/')[0] === 'Red');
+    const blue = cards.filter((card) => card.color && card.color.split('/')[0] === 'Blue');
+    const yellow = cards.filter((card) => card.color && card.color.split('/')[0] === 'Yellow');
+    const green = cards.filter((card) => card.color && card.color.split('/')[0] === 'Green');
+    const black = cards.filter((card) => card.color && card.color.split('/')[0] === 'Black');
+    const purple = cards.filter((card) => card.color && card.color.split('/')[0] === 'Purple');
+    const white = cards.filter((card) => card.color && card.color.split('/')[0] === 'White');
 
     this.colorSpread[0] = getCountFromDeckCards(red);
     this.colorSpread[1] = getCountFromDeckCards(blue);

@@ -190,12 +190,36 @@ export function mapToDeckCards(cards: ICountCard[], allCards: DigimonCard[]): ID
     if (cardSplit[0].includes('ST') && cardSplit[0].match(/ST0\d/)) {
       let searchId = cardSplit[0].replace('0', '') + '-' + cardSplit[1];
       let found = allCards.find((allCard) => searchId === allCard.id);
-      deckCards.push({ ...found, count: card.count } as IDeckCard);
+      if (found) {
+        deckCards.push({ ...found, count: card.count } as IDeckCard);
+      } else {
+        // Card not found in store - create placeholder with minimal info
+        deckCards.push({
+          id: card.id,
+          count: card.count,
+          name: { english: card.id, japanese: '' },
+          color: 'Unknown',
+          cardType: 'Unknown',
+          cardNumber: card.id,
+        } as IDeckCard);
+      }
       return;
     }
 
     let found = allCards.find((allCard) => card.id === allCard.id);
-    deckCards.push({ ...found, count: card.count } as IDeckCard);
+    if (found) {
+      deckCards.push({ ...found, count: card.count } as IDeckCard);
+    } else {
+      // Card not found in store - create placeholder with minimal info
+      deckCards.push({
+        id: card.id,
+        count: card.count,
+        name: { english: card.id, japanese: '' },
+        color: 'Unknown',
+        cardType: 'Unknown',
+        cardNumber: card.id,
+      } as IDeckCard);
+    }
   });
 
   return deckCards;

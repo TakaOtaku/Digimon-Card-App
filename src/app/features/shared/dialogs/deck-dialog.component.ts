@@ -309,10 +309,12 @@ export class DeckDialogComponent {
 
   createImageOptions(): DigimonCardImage[] {
     return (
-      this.mainDeck.map((card) => ({
-        name: `${card.id} - ${card.name.english}`,
-        value: card.id,
-      })) ?? []
+      this.mainDeck
+        .filter((card) => card && card.name && card.name.english)
+        .map((card) => ({
+          name: `${card.id} - ${card.name.english}`,
+          value: card.id,
+        })) ?? []
     );
   }
 

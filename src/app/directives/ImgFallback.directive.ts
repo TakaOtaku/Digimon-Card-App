@@ -23,8 +23,15 @@ export class ImgFallbackDirective implements OnInit, OnChanges {
   @HostListener('error')
   loadFallbackOnError(error: any) {
     const element: HTMLImageElement = <HTMLImageElement>this.el.nativeElement;
+    
+    // Guard against undefined or empty digimonImgFallback
+    if (!this.digimonImgFallback) {
+      element.src = '../../../assets/images/digimon-card-back.webp';
+      return;
+    }
+    
     const hasJ = this.digimonImgFallback.includes('-J');
-    const currentSrc = 'assets' + element.src.split('assets')[1];
+    const currentSrc = element.src.includes('assets') ? 'assets' + element.src.split('assets')[1] : '';
 
     if (this.digimonImgFallback && !hasJ) {
       const modifiedSrc = addJBeforeWebp(this.digimonImgFallback);
@@ -38,10 +45,12 @@ export class ImgFallbackDirective implements OnInit, OnChanges {
       }
     } else {
       const indexOfJ = this.digimonImgFallback.lastIndexOf('-J.webp');
-      const sampleJ = this.digimonImgFallback.slice(0, indexOfJ) + '-Sample-J.webp';
-      if (sampleJ !== currentSrc) {
-        element.src = sampleJ;
-        return;
+      if (indexOfJ !== -1) {
+        const sampleJ = this.digimonImgFallback.slice(0, indexOfJ) + '-Sample-J.webp';
+        if (sampleJ !== currentSrc) {
+          element.src = sampleJ;
+          return;
+        }
       }
     }
     element.src = '../../../assets/images/digimon-card-back.webp';

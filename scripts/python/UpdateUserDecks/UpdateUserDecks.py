@@ -25,7 +25,7 @@ def set_tags(deck: Dict) -> List[Dict]:
 
 def set_newest_set(cards: List[Dict]) -> Dict:
     release_order = [
-        'BT21', 'BT20', 'BT19', 'EX8', 'BT18', 'EX7', 'ST19', 'ST18', 'BT17', 'EX6', 'BT16', 'ST17', 'BT15','EX5', 'BT14',
+        'EX12', 'BT25', 'AD1', 'EX11', 'BT24', 'BT23', 'EX10', 'BT22', 'EX9', 'BT21', 'BT20', 'BT19', 'EX8', 'BT18', 'EX7', 'ST19', 'ST18', 'BT17', 'EX6', 'BT16', 'ST17', 'BT15','EX5', 'BT14',
         'ST16', 'ST15', 'RB1', 'BT13', 'EX4', 'BT12', 'ST14', 'BT11', 'EX3', 'BT10', 'ST13', 'ST12', 'BT9', 'EX2',
         'BT8', 'ST10', 'ST9', 'BT7', 'EX1', 'BT6', 'ST8', 'ST7', 'BT5', 'BT4', 'ST6', 'ST5', 'ST4', 'BT3', 'BT2', 'BT1', 'ST3', 'ST2', 'ST1'
     ]
@@ -137,13 +137,66 @@ cards_that_can_be_included_50 = [
     'EX2-046'
 ]
 
+# Backend URLs
+# MongoDB Backend (new)
+mongoBackendUrl = 'http://digimoncardapp.backend.takaotaku.de/api/'
+usersAPI = mongoBackendUrl + 'users'
+decksAPI = mongoBackendUrl + 'decks'
 
-usersAPI = 'https://backend.digimoncard.app/api/users'
-decksAPI = 'https://backend.digimoncard.app/api/decks'
+# Legacy Backend (old - kept for reference)
+# legacyBackendUrl = 'https://backend.digimoncard.app/api/'
+# usersAPI = legacyBackendUrl + 'users'
+# decksAPI = legacyBackendUrl + 'decks'
 
-# Get all users from the database and wait for the response
-response = requests.get(usersAPI)
-users = response.json()
+def fetch_all_paginated(base_url, item_key, limit=500):
+    """
+    Fetch all items from a paginated API endpoint.
+    
+    Args:
+        base_url: The API endpoint URL
+        item_key: The key in the response that contains the items (e.g., 'users', 'decks')
+        limit: Number of items per page
+    
+    Returns:
+        List of all items from all pages
+    """
+    all_items = []
+    page = 1
+    
+    while True:
+        url = f"{base_url}?page={page}&limit={limit}"
+        print(f"Fetching {item_key} page {page}...")
+        response = requests.get(url)
+        data = response.json()
+        
+        # Handle different response formats
+        if isinstance(data, list):
+            # Plain array response
+            all_items.extend(data)
+            break
+        elif item_key in data and isinstance(data[item_key], list):
+            # Paginated response: { users: [...], pagination: {...} }
+            items = data[item_key]
+            all_items.extend(items)
+            
+            # Check if there are more pages
+            pagination = data.get('pagination', {})
+            total_pages = pagination.get('totalPages', 1)
+            
+            print(f"  Got {len(items)} {item_key} (page {page}/{total_pages})")
+            
+            if page >= total_pages:
+                break
+            page += 1
+        else:
+            print(f"Warning: Unknown response format for {item_key}")
+            break
+    
+    print(f"Total {item_key} fetched: {len(all_items)}")
+    return all_items
+
+# Get all users from the database (handles pagination)
+users = fetch_all_paginated(usersAPI, 'users', limit=1000)
 
 decksToAdd = []
 decksInValid = []
