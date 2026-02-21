@@ -353,5 +353,6 @@ replacements = [
     '(When this Digimon would leave the battle area other than in battle, you may play 1 [Betamon] or [ModokiBetamon] from its digivolution cards without paying the cost.)',
     '(When this Digimon would leave the battle area other than in battle, you may play 1 [Aegiomon] from its digivolution cards without paying the cost.)',
     '(Specified cards let you ignore color requirements.)',
+    '(This Digimon also unsuspends in your opponent's unsuspend phase.)',
     '(Instead of trashing after use, your cards may digivolve into this card without paying the cost.)'
 ]
