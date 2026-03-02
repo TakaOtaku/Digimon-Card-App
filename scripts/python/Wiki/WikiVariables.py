@@ -56,7 +56,7 @@ wikiPageLinks = [
       'url': 'https://digimoncardgame.fandom.com/wiki/BT-23:_Booster_Hackers%27_Slumber'},
     {'name': '▹BOOSTER TIME STRANGER [BT-24]',
       'url': 'https://digimoncardgame.fandom.com/wiki/BT-24:_Booster_Time_Stranger'},
-  
+
     {'name': '▹THEME BOOSTER CLASSIC COLLECTION [EX-01]',
         'url': 'https://digimoncardgame.fandom.com/wiki/EX-01:_Theme_Booster_Classic_Collection'},
     {'name': '▹THEME BOOSTER DIGITAL HAZARD [EX-02]',
@@ -353,6 +353,6 @@ replacements = [
     '(When this Digimon would leave the battle area other than in battle, you may play 1 [Betamon] or [ModokiBetamon] from its digivolution cards without paying the cost.)',
     '(When this Digimon would leave the battle area other than in battle, you may play 1 [Aegiomon] from its digivolution cards without paying the cost.)',
     '(Specified cards let you ignore color requirements.)',
-    '(This Digimon also unsuspends in your opponent's unsuspend phase.)',
+    '(This Digimon also unsuspends in your opponent\'s unsuspend phase.)',
     '(Instead of trashing after use, your cards may digivolve into this card without paying the cost.)'
 ]
