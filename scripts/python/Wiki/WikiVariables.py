@@ -79,6 +79,8 @@ wikiPageLinks = [
         'url': 'https://digimoncardgame.fandom.com/wiki/EX-10:_Extra_Booster_Sinister_Order'},
     {'name': '▹EXTRA BOOSTER DAWN OF LIBERATOR [EX-11]',
         'url': 'https://digimoncardgame.fandom.com/wiki/EX-11:_Extra_Booster_Dawn_of_Liberator'},
+    {'name': '▹EXTRA BOOSTER DIGITAL WORLD SHAMBALA [EX-12]',
+        'url': 'https://digimoncardgame.fandom.com/wiki/EX-12:_Extra_Booster_Digital_World_Shambala'},
 
     {'name': 'BOOSTER RESURGENCE BOOSTER [RB1]',
         'url': 'https://digimoncardgame.fandom.com/wiki/RB-01:_Resurgence_Booster'},
@@ -127,6 +129,10 @@ wikiPageLinks = [
        'url': 'https://digimoncardgame.fandom.com/wiki/ST-21:_Starter_Deck_Hero_of_Hope'},
     {'name': 'ADVANCED DECK SET AMETHYST MANDALA [ST-22]',
        'url': 'https://digimoncardgame.fandom.com/wiki/ST-22:_Advanced_Deck_Set_Amethyst_Mandala'},
+    {'name': 'STARTER DECK DIGIMON BEATBREAK [ST-23]',
+        'url': 'https://digimoncardgame.fandom.com/wiki/ST-23:_Starter_Deck_Digimon_Beatbreak'},
+    {'name': 'STARTER DECK DIGIMON DATA SQUAD [ST-24]',
+       'url': 'https://digimoncardgame.fandom.com/wiki/ST-24:_Starter_Deck_Digimon_Data_Squad'},
 
     {'name': 'LIMITED CARD PACK DIGIMON GHOST GAME [LM-01]',
         'url': 'https://digimoncardgame.fandom.com/wiki/LM-01:_Limited_Card_Pack_Digimon_Ghost_Game'},
@@ -184,6 +190,7 @@ NoteDictionary = {
     'EX-09: Extra Booster Versus Monsters': '▹EXTRA BOOSTER VERSUS MONSTERS [EX-09]',
     'EX-10: Extra Booster Sinister Order': '▹EXTRA BOOSTER SINISTER ORDER [EX-10]',
     'EX-11: Extra Booster Dawn of Liberator': '▹EXTRA BOOSTER DAWN OF LIBERATOR [EX-11]',
+    'EX-12: Extra Booster Digital World Shambala': '▹EXTRA BOOSTER DIGITAL WORLD SHAMBALA [EX-12]',
 
     'RB-01: Resurgence Booster': 'BOOSTER RESURGENCE BOOSTER [RB01]',
 
@@ -210,7 +217,9 @@ NoteDictionary = {
     'ST-20: Starter Deck Protector of Light': 'STARTER DECK PROTECTOR OF LIGHT [ST-20]',
     'ST-21: Starter Deck Hero of Hope': 'STARTER DECK HERO OF HOPE [ST-21]',
     'ST-22: Advanced Deck Set Amethyst Mandala': 'ADVANCED DECK SET AMETHYST MANDALA [ST-22]',
-
+    'ST-23: Starter Deck Digimon Beatbreak': 'STARTER DECK DIGIMON BEATBREAK [ST-23]',
+    'ST-24: Starter Deck Digimon Data Squad': 'STARTER DECK DIGIMON DATA SQUAD [ST-24]',
+  
     'LM-01: Limited Card Pack Digimon Ghost Game': 'LIMITED CARD PACK DIGIMON GHOST GAME [LM-01]',
     'LM-02: Limited Card Pack Digimon DeathXmon': 'LIMITED CARD PACK DIGIMON DEATHXMON [LM-02]',
     'LM-03: Limited Card Set 2024': 'LIMITED CARD SET 2024 [LM-03]',
@@ -253,7 +262,6 @@ replacements = [
     '(When one of your Digimon digivolves into this card from your hand, you may suspend 1 of your Digimon to reduce the memory cost of the digivolution by 2.)',
     '(When one of your Digimon digivolves into this card from your hand, you may suspend 1 of your Digimon to reduce the memory cost of the digivolution by 3.)',
     '(Trash up to 1 card from the top of one of your opponent\'s Digimon. If it has no digivolution cards, or becomes a level 3 Digimon, you can\'t trash any more cards.)',
-    '(When this Digimon is deleted after losing a battle, delete the Digimon it was battling.)',
     '(This Digimon checks 1 fewer security card.)',
     '(Trash all of its digivolution cards.)',
     '(This Digimon can attack the turn it comes into play.)',
@@ -267,7 +275,7 @@ replacements = [
     '(When one of your other Digimon with [Bagra Army]\u00a0trait would be deleted by an opponent\'s effect, you may delete this Digimon to prevent that deletion.)',
     '(When this Digimon attacks, you may switch the target of attack to 1 of your opponent\'s unsuspended Digimon with the highest DP.)',
     '(When this Digimon would be deleted, you may suspend it to prevent that deletion.)',
-    '(When this Digimon would be deleted in battle, by trashing the top card of your security stack, prevent that deletion.)',
+    '(When this Digimon would be deleted in battle, by trashing your top security card, it isn't deleted.)',
     '(Your Digimon may digivolve into this card without paying the cost.)',
     '(When this card is sent from battle area or under your card to another area, lose 3 memory.)',
     '(Place this Tamer under 1 of your Digimon without a Tamer in its digivolution cards.)',
@@ -275,7 +283,7 @@ replacements = [
     '(You may trash 1 of this Digimon\'s digivolution cards to activate the effect below.)',
     '(You may trash 2 of this Digimon\'s digivolution cards to activate the effect below.)',
     '(You may trash 4 of this Digimon\'s digivolution cards to activate the effect below.)',
-    '(When this Digimon is deleted after losing a battle, delete the Digimon it was battling.)',
+    '(When only this Digimon is deleted in battle, delete the Digimon it battled.)',
     '(When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon\'s DP to this Digimon and it gains \uff1cSecurity Attack +1\uff1e for the attack.)',
     '(When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon\'s DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack.)',
     '(Trash up to 3 cards from the top of one of your opponent\'s Digimon. If it has no digivolution cards, or becomes a level 3 Digimon, you can\'t trash any more cards.)',
