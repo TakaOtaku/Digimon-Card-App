@@ -253,7 +253,7 @@ replacements = [
     '(This Digimon checks 3 fewer security cards.)',
     '(This Digimon checks 2 additional security cards.)',
     '(Trash up to 2 cards from the top of one of your opponent\'s Digimon. If it has no digivolution cards, or becomes a level 3 Digimon, you can\'t trash any more cards.)',
-    '(Unsuspend this Digimon during your opponent\'s unsuspend phase.)',
+    '(This Digimon also unsuspends in your opponent\'s unsuspend phase.)',
     '(Trash up to 4 cards from the top of one of your opponent\'s Digimon. If it has no digivolution cards, or becomes a level 3 Digimon, you can\'t trash any more cards.)',
     '(Draw 1 card from your deck.)',
     '(Draw 1 card from your deck.)',
