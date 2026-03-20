@@ -56,6 +56,8 @@ wikiPageLinks = [
       'url': 'https://digimoncardgame.fandom.com/wiki/BT-23:_Booster_Hackers%27_Slumber'},
     {'name': '▹BOOSTER TIME STRANGER [BT-24]',
       'url': 'https://digimoncardgame.fandom.com/wiki/BT-24:_Booster_Time_Stranger'},
+    {'name': '▹BOOSTER DUAL REVOLUTION [BT-25]',
+      'url': 'https://digimoncardgame.fandom.com/wiki/BT-25:_Booster_Dual_Revolution'},
   
     {'name': '▹THEME BOOSTER CLASSIC COLLECTION [EX-01]',
         'url': 'https://digimoncardgame.fandom.com/wiki/EX-01:_Theme_Booster_Classic_Collection'},
@@ -178,7 +180,8 @@ NoteDictionary = {
     'BT-22: Booster Cyber Eden': '▹BOOSTER CYBER EDEN [BT-22]',
     'BT-23: Booster Hackers Slumber': '▹BOOSTER HACKERS SLUMBER [BT-23]',
     'BT-24: Booster Time Stranger': '▹BOOSTER TIME STRANGER [BT-24]',
-
+    'BT-25: Booster Dual Revolution': '▹BOOSTER DUAL REVOLUTION [BT-25]',
+  
     'EX-01: Theme Booster Classic Collection': '▹THEME BOOSTER CLASSIC COLLECTION [EX-01]',
     'EX-02: Theme Booster Digital Hazard': '▹THEME BOOSTER DIGITAL HAZARD [EX-02]',
     'EX-03: Theme Booster Draconic Roar': '▹THEME BOOSTER DRAGONIC ROAR [EX-03]',
