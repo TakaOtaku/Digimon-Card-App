@@ -355,5 +355,5 @@ replacements = [
     '(Specified cards let you ignore color requirements.)',
     '(This Digimon also unsuspends in your opponent\'s unsuspend phase.)',
     '(Instead of trashing after use, your cards may digivolve into this card without paying the cost.)',
-    '(When this Digimon would be deleted in battle, by trashing your top security card, it isn't deleted.)'
+    '(When this Digimon would be deleted in battle, by trashing your top security card, it isn\'t deleted.)'
 ]
