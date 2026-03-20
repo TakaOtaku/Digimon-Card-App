@@ -275,7 +275,7 @@ replacements = [
     '(When one of your other Digimon with [Bagra Army]\u00a0trait would be deleted by an opponent\'s effect, you may delete this Digimon to prevent that deletion.)',
     '(When this Digimon attacks, you may switch the target of attack to 1 of your opponent\'s unsuspended Digimon with the highest DP.)',
     '(When this Digimon would be deleted, you may suspend it to prevent that deletion.)',
-    '(When this Digimon would be deleted in battle, by trashing your top security card, it isn't deleted.)',
+    '(When this Digimon would be deleted in battle, by trashing your top security card, it isn\'t deleted.)',
     '(Your Digimon may digivolve into this card without paying the cost.)',
     '(When this card is sent from battle area or under your card to another area, lose 3 memory.)',
     '(Place this Tamer under 1 of your Digimon without a Tamer in its digivolution cards.)',
