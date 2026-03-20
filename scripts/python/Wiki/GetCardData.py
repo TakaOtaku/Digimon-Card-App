@@ -49,21 +49,19 @@ MAIN_INFO_MAPPINGS = {
 }
 
 # Field mappings for extra info parsing
-# IMPORTANT: Order matters! More specific keys must come before less specific ones
-# e.g., "Option Card Effect" must come before "Card Effect"
-EXTRA_INFO_MAPPINGS = [
-    ("Option Card Colour Requirements", "optionCardColourRequirement"),
-    ("Option Card Effect", "optionCardEffect"),
-    ("Card Effect", "effect"),
-    ("Rule", "rule"),
-    ("Inherited Effect", "digivolveEffect"),
-    ("Security Effect", "securityEffect"),
-    ("Ace", "aceEffect"),
-    ("Link DP", "linkDP"),
-    ("Link Effect", "linkEffect"),
-    ("Link Requirements", "linkRequirement"),
-    ("Dual", "dualEffect"),
-]
+EXTRA_INFO_MAPPINGS = {
+    "Option Card Colour Requirements": "optionCardColourRequirement",
+    "Option Card Effect": "optionCardEffect",
+    "Card Effect": "effect",
+    "Rule": "rule",
+    "Inherited Effect": "digivolveEffect",
+    "Security Effect": "securityEffect",
+    "Ace": "aceEffect",
+    "Link DP": "linkDP",
+    "Link Effect": "linkEffect",
+    "Link Requirements": "linkRequirement",
+    "Dual": "dualEffect",
+}
 
 
 def splitCellsInPair(cells: List[str]) -> List[List[str]]:
@@ -233,8 +231,8 @@ def getExtraInfo(html: Optional[Tag], digimoncard: DigimonCard) -> DigimonCard:
 
         header_text = th.text.strip()
 
-        # Check against our mapping list (order matters - more specific first)
-        for key, attribute in EXTRA_INFO_MAPPINGS:
+        # Check against our mapping dictionary
+        for key, attribute in EXTRA_INFO_MAPPINGS.items():
             if key in header_text:
                 setattr(digimoncard, attribute, td.text)
                 break
