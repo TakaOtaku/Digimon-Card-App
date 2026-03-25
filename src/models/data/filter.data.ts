@@ -29,6 +29,7 @@ export const GroupedSets = [
       { label: 'BT22', value: 'BT22' },
       { label: 'BT23', value: 'BT23' },
       { label: 'BT24', value: 'BT24' },
+      { label: 'BT25', value: 'BT25' },
     ],
   },
   {
@@ -46,6 +47,7 @@ export const GroupedSets = [
       { label: 'EX9', value: 'EX9' },
       { label: 'EX10', value: 'EX10' },
       { label: 'EX11', value: 'EX11' },
+      { label: 'EX12', value: 'EX12' },
     ],
   },
   {
@@ -73,6 +75,8 @@ export const GroupedSets = [
       { label: 'ST20', value: 'ST20' },
       { label: 'ST21', value: 'ST21' },
       { label: 'ST22', value: 'ST22' },
+      { label: 'ST23', value: 'ST23' },
+      { label: 'ST24', value: 'ST24' },
     ],
   },
   {
@@ -88,6 +92,7 @@ export const GroupedSets = [
 export const Keywords: string[] = [
   '\uff1cAlliance\uff1e',
   '\uff1cArmor Purge\uff1e',
+  '\uff1cAscension\uff1e',
   '\uff1cBarrier\uff1e',
   '\uff1cBlast Digivolve\uff1e',
   '\uff1cBlast DNA Digivolve ([Alphamon] + [Ouryumon])\uff1e',
@@ -218,6 +223,7 @@ export const Types: string[] = [
   'ACCEL',
   'Account Book (App Name)',
   'Action (App Name)',
+  'ADAMAS',
   'Address Book (App Name)',
   'ADVENTURE',
   'Alien',
@@ -371,6 +377,7 @@ export const Types: string[] = [
   'Hotel (App Name)',
   'Hunter',
   'Ice-Snow',
+  'Iliad',
   'Insectoid',
   'Intel Acquisition Agent',
   'Invader',
@@ -468,6 +475,7 @@ export const Types: string[] = [
   'Setup (App Name)',
   'Seven Great Demon Lords',
   'Shaman',
+  'Shambala',
   'Shooting (App Name)',
   'Shopping (App Name)',
   'Simulation (App Name)',
@@ -495,6 +503,7 @@ export const Types: string[] = [
   'Three Musketeers',
   'Throne',
   'Time Slip (App Name)',
+  'TS',
   'Training (App Name)',
   'Transfer (App Name)',
   'Translation (App Name)',
@@ -631,6 +640,7 @@ export const SpecialRequirements: string[] = [
   'ACE',
   'App Fusion',
   'Assembly',
+  'Arts Digivolve',
 ];
 
 export const Restrictions: string[] = ['Banned', 'Restricted to 1'];
@@ -687,9 +697,13 @@ export const CardTypeButtons: MultiButtons[] = [
     name: 'Option',
     value: 'Option',
   },
+  {
+    name: 'Dual',
+    value: 'Digimon/Option',
+  },
 ];
 
-export const Rarity = ['C', 'U', 'R', 'SR', 'SEC', 'P'];
+export const Rarity = ['C', 'U', 'R', 'SR', 'UR', 'SEC', 'P'];
 export const RarityButtons: MultiButtons[] = [
   {
     name: 'C',
@@ -706,6 +720,10 @@ export const RarityButtons: MultiButtons[] = [
   {
     name: 'SR',
     value: 'SR',
+  },
+  {
+    name: 'UR',
+    value: 'UR',
   },
   {
     name: 'SEC',
