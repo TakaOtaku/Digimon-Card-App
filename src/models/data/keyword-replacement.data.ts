@@ -4,6 +4,7 @@ export const replacements: Array<[RegExp, string, string]> = [
   [/＜Alliance＞/g, 'alliance', ''],
   [/\[App Fusion\]/g, 'app_fusion', ''],
   [/＜Armor Purge＞/g, 'armor_purge', ''],
+  [/＜Ascension＞/g, 'ascension', ''],
   [/\[Assembly -1\]/g, 'assembly_-1', ''],
   [/\[Assembly -2\]/g, 'assembly_-2', ''],
   [/\[Assembly -3\]/g, 'assembly_-3', ''],
