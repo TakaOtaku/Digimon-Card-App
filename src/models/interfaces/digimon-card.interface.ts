@@ -55,4 +55,7 @@ export interface DigimonCard {
   specialDigivolve: string;
   type: string;
   version: string;
+  optionCardColourRequirement: string;
+  optionCardEffect: string;
+  dualEffect: string;
 }

@@ -1050,7 +1050,7 @@
   "BT10-071": [
     {
       "answer": "A: No. You didn't have 10 cards in your trash until after the deletion already took place, so this Digimon's inherited effect could not be active at the time of the deletion.[1]",
-      "question": "Q: I have 9 cards in my trash and a Digimon with this card as a digivolution card is deleted in battle. The deleted cards, including this one, are sent to my trash, and now I have over 10 cards in my trash. Does \uff1cRetaliation\uff1e in this card's inherited effects activate and delete my opponent's Digimon it battled?"
+      "question": "Q: I have 9 cards in my trash and a Digimon with this card as a digivolution card is deleted in battle. The deleted cards, including this one, are sent to my trash, and now I have over 10 cards in my trash. Does \uff1cRetaliation\uff1e  (When only this Digimon is deleted in battle, delete the Digimon it battled.)  in this card's inherited effects activate and delete my opponent's Digimon it battled?"
     }
   ],
   "BT10-073": [
@@ -2733,8 +2733,8 @@
       "question": "Q: Do I or my opponent choose the card to be trashed from their hand when I activate this card's inherited effect?"
     },
     {
-      "answer": "A: Yes. It activates because the Digimon is deleted by the \uff1cRetaliation\uff1e effect, not by battle.[1]",
-      "question": "Q: Does this card\u2019s inherited effect activate when the Digimon with this card in its digivolution cards is deleted by \uff1cRetaliation\uff1e on a battled opponent's Digimon?"
+      "answer": "A: Yes. It activates because the Digimon is deleted by the \uff1cRetaliation\uff1e  (When only this Digimon is deleted in battle, delete the Digimon it battled.)  effect, not by battle.[1]",
+      "question": "Q: Does this card\u2019s inherited effect activate when the Digimon with this card in its digivolution cards is deleted by \uff1cRetaliation\uff1e  (When only this Digimon is deleted in battle, delete the Digimon it battled.)  on a battled opponent's Digimon?"
     }
   ],
   "BT13-080": [
@@ -2757,8 +2757,8 @@
       "question": "Q: Do I or my opponent choose the card to be trashed from their hand when I activate this card's inherited effect?"
     },
     {
-      "answer": "A: Yes. It activates because the Digimon is deleted by the \uff1cRetaliation\uff1e effect, not by battle.[1]",
-      "question": "Q: Does this card\u2019s inherited effect activate when the Digimon with this card in its digivolution cards is deleted by \uff1cRetaliation\uff1e on a battled opponent's Digimon?"
+      "answer": "A: Yes. It activates because the Digimon is deleted by the \uff1cRetaliation\uff1e  (When only this Digimon is deleted in battle, delete the Digimon it battled.)  effect, not by battle.[1]",
+      "question": "Q: Does this card\u2019s inherited effect activate when the Digimon with this card in its digivolution cards is deleted by \uff1cRetaliation\uff1e  (When only this Digimon is deleted in battle, delete the Digimon it battled.)  on a battled opponent's Digimon?"
     }
   ],
   "BT13-083": [
@@ -2777,8 +2777,8 @@
   ],
   "BT13-085": [
     {
-      "answer": "A: Yes. It activates because the Digimon is deleted by the \uff1cRetaliation\uff1e effect, not by battle.[1]",
-      "question": "Q: Does this card\u2019s inherited effect activate when the Digimon with this card in its digivolution cards is deleted by \uff1cRetaliation\uff1e on a battled opponent's Digimon?"
+      "answer": "A: Yes. It activates because the Digimon is deleted by the \uff1cRetaliation\uff1e  (When only this Digimon is deleted in battle, delete the Digimon it battled.)  effect, not by battle.[1]",
+      "question": "Q: Does this card\u2019s inherited effect activate when the Digimon with this card in its digivolution cards is deleted by \uff1cRetaliation\uff1e  (When only this Digimon is deleted in battle, delete the Digimon it battled.)  on a battled opponent's Digimon?"
     }
   ],
   "BT13-087": [
@@ -3095,8 +3095,8 @@
       "question": "Q: Does this card's [All Turns] effect prevent deletion even when I lose a battle with my opponent's Security Digimon?"
     },
     {
-      "answer": "A: Yes, it's deleted. \uff1cRetaliation\uff1e is deletion by an effect, not by battle.[1]",
-      "question": "Q: Does this card's [All Turns] delete this Digimon when my opponent's Digimon activates \uff1cRetaliation\uff1e after battling this Digimon?"
+      "answer": "A: Yes, it's deleted. \uff1cRetaliation\uff1e  (When only this Digimon is deleted in battle, delete the Digimon it battled.)  is deletion by an effect, not by battle.[1]",
+      "question": "Q: Does this card's [All Turns] delete this Digimon when my opponent's Digimon activates \uff1cRetaliation\uff1e  (When only this Digimon is deleted in battle, delete the Digimon it battled.)  after battling this Digimon?"
     }
   ],
   "BT14-029": [
@@ -4700,13 +4700,13 @@
   "BT17-003": [
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: Can I use this card's inherited effect to gain 1 memory when I activate \uff1cMind Link\uff1e\u00a0to 1 of your Digimon. (Place this Tamer as that Digimon's bottom digivolution card if there are no Tamer cards in its digivolution cards.) on a digivolution card of a Digimon with this card in its digivolution cards and place a Tamer card?"
+      "question": "Q: Can I use this card's inherited effect to gain 1 memory when I activate \uff1cMind Link\uff1e\u00a0with 1 of your Digimon. (Place this Tamer as that Digimon's bottom digivolution card if there are no Tamer cards in its digivolution cards.) on a digivolution card of a Digimon with this card in its digivolution cards and place a Tamer card?"
     }
   ],
   "BT17-006": [
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: Can I use this card's inherited effect to digivolve when I activate \uff1cMind Link\uff1e\u00a0to 1 of your Digimon. (Place this Tamer as that Digimon's bottom digivolution card if there are no Tamer cards in its digivolution cards.) on a digivolution card of a Digimon with this card in its digivolution cards and place a Tamer card?"
+      "question": "Q: Can I use this card's inherited effect to digivolve when I activate \uff1cMind Link\uff1e\u00a0with 1 of your Digimon. (Place this Tamer as that Digimon's bottom digivolution card if there are no Tamer cards in its digivolution cards.) on a digivolution card of a Digimon with this card in its digivolution cards and place a Tamer card?"
     },
     {
       "answer": "A: No, this card's inherited effect does not allow ignoring digivolution requirements, so you can only digivolve into a card that meets the digivolution requirements.[1]",
@@ -4893,8 +4893,8 @@
       "question": "Q: My opponent has a Digimon with 8000 DP or less and an effect that reads, \u201cThis Digimon can't be deleted by your opponent\u2019s effects,\u201d and another Digimon with 8000 DP or less but no effect. Can I intentionally have this card\u2019s effect target the Digimon with the effect preventing deletion and have this Digimon get 3000 DP?"
     },
     {
-      "answer": "A: Yes, it's deleted.  When your opponent's Digimon is deleted in battle, it causes ST7-05 [Growlmon]'s inherited effect and \uff1cRetaliation\uff1e on the opponent's Digimon to trigger simultaneously. The turn player's effect activates first, the memory becomes 1, and this Digimon's [Your Turn] effect can no longer activate, therefore it's deleted by \uff1cRetaliation\uff1e.[1]",
-      "question": "Q: The memory is at 0, I use this Digimon with ST7-05 [Growlmon] in its digivolution cards to attack, and it deleted an opponent's Digimon with \uff1cRetaliation\uff1e in battle. Is this Digimon deleted by the \uff1cRetaliation\uff1e effect at such times?"
+      "answer": "A: Yes, it's deleted.  When your opponent's Digimon is deleted in battle, it causes ST7-05 [Growlmon]'s inherited effect and \uff1cRetaliation\uff1e  (When only this Digimon is deleted in battle, delete the Digimon it battled.)  on the opponent's Digimon to trigger simultaneously. The turn player's effect activates first, the memory becomes 1, and this Digimon's [Your Turn] effect can no longer activate, therefore it's deleted by \uff1cRetaliation\uff1e  (When only this Digimon is deleted in battle, delete the Digimon it battled.) .[1]",
+      "question": "Q: The memory is at 0, I use this Digimon with ST7-05 [Growlmon] in its digivolution cards to attack, and it deleted an opponent's Digimon with \uff1cRetaliation\uff1e  (When only this Digimon is deleted in battle, delete the Digimon it battled.)  in battle. Is this Digimon deleted by the \uff1cRetaliation\uff1e  (When only this Digimon is deleted in battle, delete the Digimon it battled.)  effect at such times?"
     }
   ],
   "BT17-018": [
@@ -5477,8 +5477,8 @@
       "question": "Q: Can I use this card's [All Turns] effect to suspend this Tamer when my level 5 or higher [Free]\u00a0trait Digimon would be deleted in battle, even if I don't have any level 4 or lower Digimon cards in that Digimon's digivolution cards?"
     },
     {
-      "answer": "A: No, you can't.  The card is removed from digivolution cards before \uff1cRetaliation\uff1e can activate.[1]",
-      "question": "Q: When my level 5 or higher [Free]\u00a0trait Digimon would be deleted in battle, I used this card's [All Turns] effect to play a level 4 or lower Digimon card with \uff1cRetaliation\uff1e in its inherited effects from that Digimon's digivolution cards. Can I use \uff1cRetaliation\uff1e to delete the battled opponent's Digimon at such times?"
+      "answer": "A: No, you can't.  The card is removed from digivolution cards before \uff1cRetaliation\uff1e  (When only this Digimon is deleted in battle, delete the Digimon it battled.)  can activate.[1]",
+      "question": "Q: When my level 5 or higher [Free]\u00a0trait Digimon would be deleted in battle, I used this card's [All Turns] effect to play a level 4 or lower Digimon card with \uff1cRetaliation\uff1e  (When only this Digimon is deleted in battle, delete the Digimon it battled.)  in its inherited effects from that Digimon's digivolution cards. Can I use \uff1cRetaliation\uff1e  (When only this Digimon is deleted in battle, delete the Digimon it battled.)  to delete the battled opponent's Digimon at such times?"
     },
     {
       "answer": "A: No, you can't.  This card's [End of Your Turn] effect does not allow you to attack with Digimon that are in a state where they can't attack.[1]",
@@ -8153,8 +8153,8 @@
   ],
   "BT20-099": [
     {
-      "answer": "A: Yes, it triggers.When deletion occurs by DP becoming 0, it's considered deletion by the rules, therefore \uff1cPartition\uff1e (When this Digimon with each of the specified digivolution cards would leave the battle area other than by your own effects or by battle, you may play 1 each of the specified cards without paying the costs.)'s trigger conditions are met.[1]",
-      "question": "Q: If BT20-037 [Chaosmon: Valdur Arm] has this card, a yellow level 6 card, and a green level 6 card in its digivolution cards, then this card's inherited effect causes its DP to become 0 and it's deleted, does BT20-037 [Chaosmon: Valdur Arm]'s \uff1cPartition (Yellow Lv.6 + Green/Black Lv.6)\uff1e (When this Digimon with each of the specified digivolution cards would leave the battle area other than by your own effects or by battle, you may play 1 each of the specified cards without paying the costs.) trigger?"
+      "answer": "A: Yes, it triggers.When deletion occurs by DP becoming 0, it's considered deletion by the rules, therefore \uff1cPartition\uff1e's trigger conditions are met.[1]",
+      "question": "Q: If BT20-037 [Chaosmon: Valdur Arm] has this card, a yellow level 6 card, and a green level 6 card in its digivolution cards, then this card's inherited effect causes its DP to become 0 and it's deleted, does BT20-037 [Chaosmon: Valdur Arm]'s \uff1cPartition (Yellow Lv.6 + Green/Black Lv.6)\uff1e trigger?"
     }
   ],
   "BT20-101": [
@@ -8304,7 +8304,7 @@
     },
     {
       "answer": "A: Yes, you can.This card's [All Turns] effect plays one of your cards.Cards can be played by your effects even after a \"your opponent can't play Digimon by effects\" effect has activated.[1]",
-      "question": "Q: Can I use this card's [All Turns] effect to play a [Petrification] Token. (Digimon/White/3000 DP/[Your Turn] This Digimon can't suspend./[On Deletion] Trash your top security card.) during the turn I activated BT8-097 [Crimson Blaze]'s [Main] effect?"
+      "question": "Q: Can I use this card's [All Turns] effect to play a [Petrification] Token. (Digimon/White/3000 DP/[Your Turn] This Digimon can't suspend. [On Deletion] Trash your top security card.) during the turn I activated BT8-097 [Crimson Blaze]'s [Main] effect?"
     }
   ],
   "BT21-030": [
@@ -8569,8 +8569,8 @@
   ],
   "BT21-081": [
     {
-      "answer": "A: No, you can't.The Digimon that was given \uff1cPiercing\uff1e (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.) by this effect must attack if possible.[1]",
-      "question": "Q: Can I use this card's [End of Your Turn] effect to give \uff1cPiercing\uff1e (When this Digimon attacks and deletes an opponent's Digimon and survives the battle, it performs any security checks it normally would.) to 1 of my Digimon, but then choose to not attack with that Digimon?"
+      "answer": "A: No, you can't.The Digimon that was given \uff1cPiercing\uff1e (When this Digimon attacks and deletes an opponent's Digimon in battle, it checks security before the attack ends.) by this effect must attack if possible.[1]",
+      "question": "Q: Can I use this card's [End of Your Turn] effect to give \uff1cPiercing\uff1e (When this Digimon attacks and deletes an opponent's Digimon in battle, it checks security before the attack ends.) to 1 of my Digimon, but then choose to not attack with that Digimon?"
     },
     {
       "answer": "A: No, an attack using the 2nd effect isn't possible. A new attack declaration can't be made during an attack.In this case, the [End of Your Turn] effects on both copies of this card trigger simultaneously at the end of your turn, and you use the [End of Your Turn] effect on the 1st copy of this card to attack.The 2nd [End of Your Turn] effect can be activated before the counter timing, but because you can't declare another attack during an attack, you won't be able to attack using the 2nd effect, even if you activate it.[1]",
@@ -9344,11 +9344,11 @@
   "BT4-006": [
     {
       "answer": "A: No. You lose this card's inherited effect when it is placed in the trash, so it can't activate.[1]",
-      "question": "Q: I have 9 cards in my trash and a Digimon with this card as a digivolution card is deleted in battle. The deleted cards, including this one, are sent to my trash, and now I have over 10 cards in my trash. Does this card's \uff1cRetaliation\uff1e activate?"
+      "question": "Q: I have 9 cards in my trash and a Digimon with this card as a digivolution card is deleted in battle. The deleted cards, including this one, are sent to my trash, and now I have over 10 cards in my trash. Does this card's \uff1cRetaliation\uff1e  (When only this Digimon is deleted in battle, delete the Digimon it battled.)  activate?"
     },
     {
-      "answer": "A: Yes, if you had 10 or more cards when it was deleted, you can activate \uff1cRetaliation\uff1e.[1]",
-      "question": "Q: I have 10 or more cards in my trash and a Digimon with this card as a digivolution card is deleted in battle. Before this card's effect has a chance to activate, another effect activates and reduces the number of cards in my trash to 9 or less. Does this card's \uff1cRetaliation\uff1e activate?"
+      "answer": "A: Yes, if you had 10 or more cards when it was deleted, you can activate \uff1cRetaliation\uff1e  (When only this Digimon is deleted in battle, delete the Digimon it battled.) .[1]",
+      "question": "Q: I have 10 or more cards in my trash and a Digimon with this card as a digivolution card is deleted in battle. Before this card's effect has a chance to activate, another effect activates and reduces the number of cards in my trash to 9 or less. Does this card's \uff1cRetaliation\uff1e  (When only this Digimon is deleted in battle, delete the Digimon it battled.)  activate?"
     }
   ],
   "BT4-008": [
@@ -9907,7 +9907,7 @@
   ],
   "BT4-101": [
     {
-      "answer": "A: No, it's deleted by this card's effect, not by battle.  As such, effects that read, \"deletes an opponent's Digimon and survives,\" and effects like \uff1cRetaliation\uff1e don't activate.[1]",
+      "answer": "A: No, it's deleted by this card's effect, not by battle.  As such, effects that read, \"deletes an opponent's Digimon and survives,\" and effects like \uff1cRetaliation\uff1e  (When only this Digimon is deleted in battle, delete the Digimon it battled.)  don't activate.[1]",
       "question": "Q: I use this card to grant my Digimon this card's effect. I then use one of my Digimon to attack an opponent's Digimon with no digivolution cards. Does my opponent's Digimon get deleted in battle?"
     },
     {
@@ -13858,7 +13858,7 @@
   "EX1-063": [
     {
       "answer": "A: No, it can't.[1]",
-      "question": "Q: Can this card's [When Attacking] effect play a purple level 4 or lower Digimon card with \uff1cRetaliation\uff1e as its inherited effect from my trash?"
+      "question": "Q: Can this card's [When Attacking] effect play a purple level 4 or lower Digimon card with \uff1cRetaliation\uff1e  (When only this Digimon is deleted in battle, delete the Digimon it battled.)  as its inherited effect from my trash?"
     }
   ],
   "EX1-064": [
@@ -14971,8 +14971,8 @@
   ],
   "EX4-004": [
     {
-      "answer": "A: Yes, it activates. Deletion by the \uff1cRetaliation\uff1e effect isn't considered deletion by battle.[1]",
-      "question": "Q: If a Digimon with this card in its digivolution cards is deleted by an opponent's \uff1cRetaliation\uff1e, does this card's [On Deletion] effect activate?"
+      "answer": "A: Yes, it activates. Deletion by the \uff1cRetaliation\uff1e  (When only this Digimon is deleted in battle, delete the Digimon it battled.)  effect isn't considered deletion by battle.[1]",
+      "question": "Q: If a Digimon with this card in its digivolution cards is deleted by an opponent's \uff1cRetaliation\uff1e  (When only this Digimon is deleted in battle, delete the Digimon it battled.) , does this card's [On Deletion] effect activate?"
     }
   ],
   "EX4-006": [
@@ -15271,8 +15271,8 @@
   ],
   "EX4-056": [
     {
-      "answer": "A: Yes, it activates. Deletion by the \uff1cRetaliation\uff1e effect isn't considered deletion by battle.[1]",
-      "question": "Q: If a Digimon with this card in its digivolution cards is deleted by an opponent's \uff1cRetaliation\uff1e, does this card's [On Deletion] effect activate?"
+      "answer": "A: Yes, it activates. Deletion by the \uff1cRetaliation\uff1e  (When only this Digimon is deleted in battle, delete the Digimon it battled.)  effect isn't considered deletion by battle.[1]",
+      "question": "Q: If a Digimon with this card in its digivolution cards is deleted by an opponent's \uff1cRetaliation\uff1e  (When only this Digimon is deleted in battle, delete the Digimon it battled.) , does this card's [On Deletion] effect activate?"
     }
   ],
   "EX4-058": [
@@ -17627,8 +17627,8 @@
       "question": "Q: Does this card's [When Attacking] effect prevent deletion in battles against Security Digimon?"
     },
     {
-      "answer": "A: No. Deletion by \uff1cRetaliation\uff1e is deletion by an effect, not deletion in battle.[1]",
-      "question": "Q: Does this card's [When Attacking] effect prevent deletion even when my opponent's deleted Digimon has \uff1cRetaliation\uff1e?"
+      "answer": "A: No. Deletion by \uff1cRetaliation\uff1e  (When only this Digimon is deleted in battle, delete the Digimon it battled.)  is deletion by an effect, not deletion in battle.[1]",
+      "question": "Q: Does this card's [When Attacking] effect prevent deletion even when my opponent's deleted Digimon has \uff1cRetaliation\uff1e  (When only this Digimon is deleted in battle, delete the Digimon it battled.)\u00a0?"
     },
     {
       "answer": "A: No, you can't.  Upon the attack declaration, the inherited effects on the 2 copies of this card simultaneously trigger, then the player determines the activation order. However, because your hand increases to 8 cards from \uff1cDraw 1\uff1e on the 1st card, the effect's conditions aren't met for the 2nd card, so the effect doesn't activate. As a result, you only draw 1 card.[1]",
@@ -20445,8 +20445,8 @@
   ],
   "ST6-12": [
     {
-      "answer": "A: Digimon retain effects when digivolving or de-digivolving, so \uff1cRetaliation\uff1e remains.[1]",
-      "question": "Q: I use this card to give a Digimon \uff1cRetaliation\uff1e. If that Digimon digivolves into a different Digimon, what happens to \uff1cRetaliation\uff1e?"
+      "answer": "A: Digimon retain effects when digivolving or de-digivolving, so \uff1cRetaliation\uff1e  (When only this Digimon is deleted in battle, delete the Digimon it battled.)  remains.[1]",
+      "question": "Q: I use this card to give a Digimon \uff1cRetaliation\uff1e  (When only this Digimon is deleted in battle, delete the Digimon it battled.) . If that Digimon digivolves into a different Digimon, what happens to \uff1cRetaliation\uff1e  (When only this Digimon is deleted in battle, delete the Digimon it battled.)\u00a0?"
     },
     {
       "answer": "A: Yes, it is possible.[2]",

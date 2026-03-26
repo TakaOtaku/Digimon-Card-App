@@ -3,6 +3,20 @@ import { ReleaseOrder } from '../../models/data/release-order.data';
 import { ColorOrderMap, DeckColorMap } from '../../models/maps/color.map';
 import { sortID } from './filter.functions';
 
+/**
+ * Check if a card is a Digimon-type card (includes hybrid "Digimon/Option" type)
+ */
+export function isDigimonType(cardType: string): boolean {
+  return cardType === 'Digimon' || cardType === 'Digimon/Option';
+}
+
+/**
+ * Check if a card is an Option-type card (includes hybrid "Digimon/Option" type)
+ */
+export function isOptionType(cardType: string): boolean {
+  return cardType === 'Option' || cardType === 'Digimon/Option';
+}
+
 export function setTags(deck: IDeck, allCards: DigimonCard[]) {
   let tags = [];
 
@@ -237,26 +251,26 @@ export function colorSort(deck: IDeckCard[]) {
   const eggs = deck.filter((card) => card.cardType === 'Digi-Egg').sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
   const red = deck
-    .filter((card) => card.color.startsWith('Red') && card.cardType === 'Digimon')
+    .filter((card) => card.color.startsWith('Red') && isDigimonType(card.cardType))
     .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
   const blue = deck
-    .filter((card) => card.color.startsWith('Blue') && card.cardType === 'Digimon')
+    .filter((card) => card.color.startsWith('Blue') && isDigimonType(card.cardType))
     .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
   const yellow = deck
-    .filter((card) => card.color.startsWith('Yellow') && card.cardType === 'Digimon')
+    .filter((card) => card.color.startsWith('Yellow') && isDigimonType(card.cardType))
     .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
   const green = deck
-    .filter((card) => card.color.startsWith('Green') && card.cardType === 'Digimon')
+    .filter((card) => card.color.startsWith('Green') && isDigimonType(card.cardType))
     .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
   const black = deck
-    .filter((card) => card.color.startsWith('Black') && card.cardType === 'Digimon')
+    .filter((card) => card.color.startsWith('Black') && isDigimonType(card.cardType))
     .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
   const purple = deck
-    .filter((card) => card.color.startsWith('Purple') && card.cardType === 'Digimon')
+    .filter((card) => card.color.startsWith('Purple') && isDigimonType(card.cardType))
     .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
 
   const white = deck
-    .filter((card) => card.color.startsWith('White') && card.cardType === 'Digimon')
+    .filter((card) => card.color.startsWith('White') && isDigimonType(card.cardType))
     .sort((a, b) => a.cardLv.localeCompare(b.cardLv) || sortID(a.id, b.id));
 
   const tamer = deck.filter((card) => card.cardType === 'Tamer').sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
@@ -270,7 +284,7 @@ export function levelSort(deck: IDeckCard[]) {
   const eggs = deck.filter((card) => card.cardType === 'Digi-Egg').sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
   const lv0 = deck
-    .filter((card) => card.cardLv === '-' && card.cardType === 'Digimon')
+    .filter((card) => card.cardLv === '-' && isDigimonType(card.cardType))
     .sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
 
   const lv3 = deck.filter((card) => card.cardLv === 'Lv.3').sort((a, b) => sortColors(a.color, b.color) || sortID(a.id, b.id));
@@ -292,7 +306,7 @@ export function setDeckImage(deck: IDeck, allCards: DigimonCard[]): DigimonCard 
   }
   let deckCards = mapToDeckCards(deck.cards, allCards);
 
-  deckCards = deckCards.filter((card) => card.cardType === 'Digimon').filter((card) => card.cardLv !== 'Lv.7');
+  deckCards = deckCards.filter((card) => isDigimonType(card.cardType)).filter((card) => card.cardLv !== 'Lv.7');
 
   if (deckCards.length === 0) {
     return JSON.parse(JSON.stringify(dummyCard));

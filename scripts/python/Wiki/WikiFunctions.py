@@ -10,8 +10,226 @@ import random
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
+# MediaWiki API endpoint for Fandom
+WIKI_API_URL = 'https://digimoncardgame.fandom.com/api.php'
+
 def check_if_image_exists(image_path):
     return os.path.exists(image_path)
+
+
+# ============================================
+# MediaWiki API Functions
+# ============================================
+
+def create_api_session():
+    """Create a requests session optimized for MediaWiki API calls"""
+    session = requests.Session()
+    
+    retry_strategy = Retry(
+        total=5,
+        backoff_factor=1.5,
+        status_forcelist=[429, 500, 502, 503, 504],
+        allowed_methods=["HEAD", "GET", "POST", "OPTIONS"]
+    )
+    
+    adapter = HTTPAdapter(max_retries=retry_strategy)
+    session.mount("http://", adapter)
+    session.mount("https://", adapter)
+    
+    # MediaWiki API is more lenient with bot-like User-Agents when using the API
+    session.headers.update({
+        'User-Agent': 'DigimonCardApp/1.0 (https://digimoncard.app; contact@digimoncard.app) Python/requests',
+        'Accept': 'application/json',
+    })
+    
+    return session
+
+# Global API session
+api_session = create_api_session()
+
+
+def api_request(params, delay=0.5):
+    """
+    Make a request to the MediaWiki API.
+    
+    Args:
+        params: Dictionary of API parameters
+        delay: Delay between requests in seconds (default 0.5s)
+    
+    Returns:
+        JSON response or None on error
+    """
+    if delay:
+        time.sleep(delay)
+    
+    # Always request JSON format
+    params['format'] = 'json'
+    
+    try:
+        response = api_session.get(WIKI_API_URL, params=params, timeout=30)
+        response.raise_for_status()
+        return response.json()
+    except requests.exceptions.RequestException as e:
+        print(f"API request error: {e}")
+        time.sleep(random.uniform(2, 5))
+        return None
+
+
+def get_page_html(page_title, delay=0.5):
+    """
+    Get the HTML content of a wiki page using the parse API.
+    
+    Args:
+        page_title: The title of the wiki page (e.g., 'BT1-001' or 'BT-01:_Booster_New_Evolution')
+        delay: Delay between requests
+    
+    Returns:
+        BeautifulSoup object of the page content, or None on error
+    """
+    params = {
+        'action': 'parse',
+        'page': page_title,
+        'prop': 'text',
+        'disablelimitreport': 'true',
+        'disableeditsection': 'true',
+    }
+    
+    result = api_request(params, delay)
+    
+    if result and 'parse' in result and 'text' in result['parse']:
+        html_content = result['parse']['text']['*']
+        return BeautifulSoup(html_content, 'lxml')
+    
+    return None
+
+
+def get_category_members(category_name, delay=0.3):
+    """
+    Get all pages in a category using the API.
+    
+    Args:
+        category_name: Category name (without 'Category:' prefix)
+        delay: Delay between requests
+    
+    Returns:
+        List of page titles in the category
+    """
+    pages = []
+    params = {
+        'action': 'query',
+        'list': 'categorymembers',
+        'cmtitle': f'Category:{category_name}',
+        'cmlimit': 500,
+    }
+    
+    while True:
+        result = api_request(params, delay)
+        
+        if not result or 'query' not in result:
+            break
+        
+        for member in result['query'].get('categorymembers', []):
+            pages.append(member['title'])
+        
+        # Handle continuation for large categories
+        if 'continue' in result:
+            params['cmcontinue'] = result['continue']['cmcontinue']
+        else:
+            break
+    
+    return pages
+
+
+def get_links_from_page(page_title, delay=0.5):
+    """
+    Get all links from a wiki page using the parse API.
+    
+    Args:
+        page_title: The title of the wiki page
+        delay: Delay between requests
+    
+    Returns:
+        List of link hrefs found in the page
+    """
+    soup = get_page_html(page_title, delay)
+    if not soup:
+        return []
+    
+    links = []
+    for a_tag in soup.find_all('a', href=True):
+        href = a_tag['href']
+        # Filter for wiki links
+        if href.startswith('/wiki/') and ':' not in href:
+            links.append(href)
+    
+    return links
+
+
+def get_card_links_from_set_page(page_title, delay=0.5):
+    """
+    Get all card links from a booster/starter deck page.
+    
+    Args:
+        page_title: The title of the set page (e.g., 'BT-01:_Booster_New_Evolution')
+        delay: Delay between requests
+    
+    Returns:
+        List of card link paths (e.g., ['/wiki/BT1-001', '/wiki/BT1-002', ...])
+    """
+    soup = get_page_html(page_title, delay)
+    if not soup:
+        print(f"Failed to fetch page: {page_title}")
+        return []
+    
+    card_links = []
+    
+    # Find the card list table
+    card_table = soup.find('table', class_='cardlist')
+    if not card_table:
+        print(f"No card table found for: {page_title}")
+        return []
+    
+    card_table_body = card_table.find('tbody')
+    if not card_table_body:
+        print(f"No table body found for: {page_title}")
+        return []
+    
+    # Get all links from the table
+    for link in card_table_body.find_all('a', href=True):
+        href = link['href']
+        # Filter out non-card links
+        if href and 'Card_Types' not in href and href.startswith('/wiki/'):
+            if href not in card_links:
+                card_links.append(href)
+    
+    return card_links
+
+
+def get_page_exists(page_title, delay=0.3):
+    """
+    Check if a wiki page exists using the API.
+    
+    Args:
+        page_title: The title of the page to check
+        delay: Delay between requests
+    
+    Returns:
+        True if page exists, False otherwise
+    """
+    params = {
+        'action': 'query',
+        'titles': page_title,
+        'prop': 'info',
+    }
+    
+    result = api_request(params, delay)
+    
+    if result and 'query' in result and 'pages' in result['query']:
+        pages = result['query']['pages']
+        # If page doesn't exist, the key is '-1'
+        return '-1' not in pages
+    
+    return False
 
 def class_to_dict(obj):
     if isinstance(obj, dict):
@@ -73,59 +291,20 @@ def setNotes():
             card.notes = WV.NoteDictionary[card.notes]
 
 
-# Configure requests session with retry strategy
-def create_robust_session():
-    session = requests.Session()
-
-    # Define retry strategy
-    retry_strategy = Retry(
-        total=3,
-        backoff_factor=1,
-        status_forcelist=[429, 500, 502, 503, 504],
-        allowed_methods=["HEAD", "GET", "OPTIONS"]
-    )
-
-    adapter = HTTPAdapter(max_retries=retry_strategy)
-    session.mount("http://", adapter)
-    session.mount("https://", adapter)
-
-    # Set a user agent to be polite
-    session.headers.update({
-        'User-Agent': 'Digimon Card App Data Scraper 1.0 (digimoncard.app@gmail.de)'
-    })
-
-    return session
-
-# Global session
-session = create_robust_session()
-
-def safe_request(url, delay=None):
-    """Make a safe HTTP request with error handling and optional delay"""
-    if delay:
-        time.sleep(delay)
-
-    try:
-        response = session.get(url, timeout=30)
-        response.raise_for_status()
-        return response
-    except requests.exceptions.RequestException as e:
-        print(f"Error fetching {url}: {e}")
-        # Add exponential backoff on error
-        time.sleep(random.uniform(2, 5))
-        return None
-
-
 def getRulings():
+    """Get rulings for all cards using MediaWiki API"""
     rulingCount = 0
     for link in WV.cardLinks:
         rulingCount += 1
 
-        response = safe_request(WV.wikiLink + link + WV.ruling, delay=random.uniform(0.2, 0.5))
-        if not response:
+        # Extract page title and add /Rulings suffix
+        page_title = link.split('/wiki/')[-1] if '/wiki/' in link else link.lstrip('/')
+        rulings_page_title = page_title + '/Rulings'
+
+        soup = get_page_html(rulings_page_title, delay=random.uniform(0.2, 0.5))
+        if not soup:
             print(f"Failed to fetch rulings for: {link}")
             continue
-
-        soup = BeautifulSoup(response.content, "html.parser")
 
         id = link.split("/")[2]
 

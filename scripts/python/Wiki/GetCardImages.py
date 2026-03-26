@@ -1,10 +1,11 @@
 """
-GetCardImages.py - Download card images from the Digimon Wiki
+GetCardImages.py - Download card images from the Digimon Wiki using MediaWiki API
 
 This script downloads card images from the wiki, but now includes optimization to skip
 downloading images that already exist in the src/assets/images/cards directory.
 
 Key features:
+- Uses MediaWiki API to avoid 403 Forbidden errors
 - Checks if images already exist in the final assets location (as .webp files)
 - Skips downloads for existing images to save time and bandwidth
 - Provides detailed progress logging with emojis for better visibility
@@ -18,16 +19,13 @@ to perform the existence check.
 import os
 import time
 import re
-import requests
-from bs4 import BeautifulSoup
 import urllib.request
 import traceback
 from PIL import Image
 import random
-from requests.adapters import HTTPAdapter
-from urllib3.util.retry import Retry
 
 import WikiVariables as WV
+import WikiFunctions as WF
 
 # Statistics tracking
 download_stats = {
@@ -36,46 +34,6 @@ download_stats = {
     'failed': 0
 }
 
-# Configure requests session with retry strategy
-def create_robust_session():
-    session = requests.Session()
-
-    # Define retry strategy
-    retry_strategy = Retry(
-        total=3,
-        backoff_factor=1,
-        status_forcelist=[429, 500, 502, 503, 504],
-        allowed_methods=["HEAD", "GET", "OPTIONS"]
-    )
-
-    adapter = HTTPAdapter(max_retries=retry_strategy)
-    session.mount("http://", adapter)
-    session.mount("https://", adapter)
-
-    # Set a user agent to be polite
-    session.headers.update({
-        'User-Agent': 'Digimon Card App Data Scraper 1.0 (digimoncard.app@gmail.de)'
-    })
-
-    return session
-
-# Global session
-session = create_robust_session()
-
-def safe_request(url, delay=None):
-    """Make a safe HTTP request with error handling and optional delay"""
-    if delay:
-        time.sleep(delay)
-
-    try:
-        response = session.get(url, timeout=30)
-        response.raise_for_status()
-        return response
-    except requests.exceptions.RequestException as e:
-        print(f"Error fetching {url}: {e}")
-        # Add exponential backoff on error
-        time.sleep(random.uniform(2, 5))
-        return None
 
 def check_image_exists_in_assets(image_name: str) -> bool:
     """
@@ -156,7 +114,7 @@ def getCardImages():
   backup_aas = []
   backup_jaas = []
 
-  print("🚀 Starting card image download process...")
+  print("🚀 Starting card image download process using MediaWiki API...")
   print(f"📊 Processing {len(WV.cardLinks)} card links...")
 
   # Loop through each card link
@@ -164,13 +122,15 @@ def getCardImages():
     try:
       print('Checking ' + link)
 
-      # Get the HTML content for the page
-      response = safe_request(WV.wikiLink + link + WV.gallery, delay=random.uniform(0.2, 0.5))
-      if not response:
+      # Extract page title from link and add /Gallery suffix
+      page_title = link.split('/wiki/')[-1] if '/wiki/' in link else link.lstrip('/')
+      gallery_page_title = page_title + '/Gallery'
+
+      # Get the HTML content for the gallery page using MediaWiki API
+      soup = WF.get_page_html(gallery_page_title, delay=random.uniform(0.2, 0.5))
+      if not soup:
           print(f"Failed to fetch gallery for: {link}")
           continue
-
-      soup = BeautifulSoup(response.content, "html.parser")
 
       # Get the ID of the card
       id = link.split("/")[2]

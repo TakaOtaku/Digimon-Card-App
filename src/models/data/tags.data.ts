@@ -1,6 +1,7 @@
 import { ITag } from '../interfaces';
 
 export const TAGS = [
+  'AD1',
   'BT1',
   'BT2',
   'BT3',
@@ -24,8 +25,9 @@ export const TAGS = [
   'BT21',
   'BT22',
   'BT23',
+  'BT24',
+  'BT25',
   'RB1',
-  'RB2',
   'LM',
   'EX1',
   'EX2',
@@ -38,6 +40,7 @@ export const TAGS = [
   'EX9',
   'EX10',
   'EX11',
+  'EX12',
   'ST1',
   'ST2',
   'ST3',
@@ -59,6 +62,8 @@ export const TAGS = [
   'ST20',
   'ST21',
   'ST22',
+  'ST23',
+  'ST24',
 ];
 
 export const tagsList: ITag[] = [
@@ -84,6 +89,9 @@ export const tagsList: ITag[] = [
   { name: 'BT20', color: 'Primary' },
   { name: 'BT21', color: 'Primary' },
   { name: 'BT22', color: 'Primary' },
+  { name: 'BT23', color: 'Primary' },
+  { name: 'BT24', color: 'Primary' },
+  { name: 'BT25', color: 'Primary' },
 
   { name: 'EX1', color: 'Primary' },
   { name: 'EX2', color: 'Primary' },
@@ -95,9 +103,11 @@ export const tagsList: ITag[] = [
   { name: 'EX8', color: 'Primary' },
   { name: 'EX9', color: 'Primary' },
   { name: 'EX10', color: 'Primary' },
+  { name: 'EX11', color: 'Primary' },
+  { name: 'EX12', color: 'Primary' },
 
+  { name: 'AD1', color: 'Primary' },
   { name: 'RB1', color: 'Primary' },
-  { name: 'RB2', color: 'Primary' },
 
   { name: 'LM', color: 'Primary' },
 
@@ -123,6 +133,8 @@ export const tagsList: ITag[] = [
   { name: 'ST20', color: 'Primary' },
   { name: 'ST21', color: 'Primary' },
   { name: 'ST22', color: 'Primary' },
+  { name: 'ST23', color: 'Primary' },
+  { name: 'ST23', color: 'Primary' },
 
   { name: 'Illegal', color: 'Primary' },
 ];

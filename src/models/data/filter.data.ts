@@ -28,6 +28,8 @@ export const GroupedSets = [
       { label: 'BT21', value: 'BT21' },
       { label: 'BT22', value: 'BT22' },
       { label: 'BT23', value: 'BT23' },
+      { label: 'BT24', value: 'BT24' },
+      { label: 'BT25', value: 'BT25' },
     ],
   },
   {
@@ -44,6 +46,8 @@ export const GroupedSets = [
       { label: 'EX8', value: 'EX8' },
       { label: 'EX9', value: 'EX9' },
       { label: 'EX10', value: 'EX10' },
+      { label: 'EX11', value: 'EX11' },
+      { label: 'EX12', value: 'EX12' },
     ],
   },
   {
@@ -70,10 +74,14 @@ export const GroupedSets = [
       { label: 'ST19', value: 'ST19' },
       { label: 'ST20', value: 'ST20' },
       { label: 'ST21', value: 'ST21' },
+      { label: 'ST22', value: 'ST22' },
+      { label: 'ST23', value: 'ST23' },
+      { label: 'ST24', value: 'ST24' },
     ],
   },
   {
     items: [
+      { label: 'AD01', value: 'AD1' },
       { label: 'RB01', value: 'RB1' },
       { label: 'LM', value: 'LM' },
       { label: 'P', value: 'P' },
@@ -84,6 +92,7 @@ export const GroupedSets = [
 export const Keywords: string[] = [
   '\uff1cAlliance\uff1e',
   '\uff1cArmor Purge\uff1e',
+  '\uff1cAscension\uff1e',
   '\uff1cBarrier\uff1e',
   '\uff1cBlast Digivolve\uff1e',
   '\uff1cBlast DNA Digivolve ([Alphamon] + [Ouryumon])\uff1e',
@@ -96,8 +105,13 @@ export const Keywords: string[] = [
   '\uff1cBlitz\uff1e',
   '\uff1cBlocker\uff1e',
   '\uff1cCollision\uff1e',
-  '\uff1cDecode (Blue Lv.4)\uff1e',
-  '\uff1cDecode (Blue Lv.5)\uff1e',
+  '\uff1cDecode ([Aegiomon])\uff1e',
+  '\uff1cDecode ([Calmaramon])\uff1e',
+  '\uff1cDecode (Lv.4 w/[Aqua]/[Sea Animal] in any trait)\uff1e',
+  '\uff1cDecode (Lv.5 w/[Aqua]/[Sea Animal] in any trait)\uff1e',
+  '\uff1cDecode (Lv.6 or lower w/[Aqua]/[Sea Animal] in any trait)\uff1e',
+  '\uff1cDecode ([Lanamon])\uff1e',
+  '\uff1cDecode  ([Betamon])/([ModokiBetamon])\uff1e',
   '\uff1cDecoy ([Bagra Army] trait)\uff1e',
   '\uff1cDecoy (Black)\uff1e',
   '\uff1cDecoy (Black/White)\uff1e',
@@ -128,13 +142,16 @@ export const Keywords: string[] = [
   '\uff1cFortitude\uff1e',
   '\uff1cJamming\uff1e',
   '\uff1cLink +1\uff1e',
+  '\uff1cLink +2\uff1e',
   '\uff1cMaterial Save 1\uff1e',
   '\uff1cMaterial Save 2\uff1e',
   '\uff1cMaterial Save 3\uff1e',
   '\uff1cMaterial Save 4\uff1e',
   '\uff1cMind Link\uff1e',
+  '\uff1cOverclock ([Appmon] trait)\uff1e',
   '\uff1cOverclock ([Composite] trait)\uff1e',
   '\uff1cOverclock ([Puppet] trait)\uff1e',
+  '\uff1cOverclock ([Unidentified] trait)\uff1e',
   '\uff1cPartition (Blue Lv.4 + Green Lv.4)\uff1e',
   '\uff1cPartition (Black Lv.4 + Yellow Lv.4)\uff1e',
   '\uff1cPartition (Red Lv.4 + Yellow Lv.4)\uff1e',
@@ -206,6 +223,7 @@ export const Types: string[] = [
   'ACCEL',
   'Account Book (App Name)',
   'Action (App Name)',
+  'ADAMAS',
   'Address Book (App Name)',
   'ADVENTURE',
   'Alien',
@@ -359,6 +377,7 @@ export const Types: string[] = [
   'Hotel (App Name)',
   'Hunter',
   'Ice-Snow',
+  'Iliad',
   'Insectoid',
   'Intel Acquisition Agent',
   'Invader',
@@ -456,6 +475,7 @@ export const Types: string[] = [
   'Setup (App Name)',
   'Seven Great Demon Lords',
   'Shaman',
+  'Shambala',
   'Shooting (App Name)',
   'Shopping (App Name)',
   'Simulation (App Name)',
@@ -483,6 +503,7 @@ export const Types: string[] = [
   'Three Musketeers',
   'Throne',
   'Time Slip (App Name)',
+  'TS',
   'Training (App Name)',
   'Transfer (App Name)',
   'Translation (App Name)',
@@ -619,13 +640,14 @@ export const SpecialRequirements: string[] = [
   'ACE',
   'App Fusion',
   'Assembly',
+  'Arts Digivolve',
 ];
 
 export const Restrictions: string[] = ['Banned', 'Restricted to 1'];
 
 export const Presets: string[] = ['Ultimate Cup 2023', 'Ultimate Cup 2024'];
 
-export const Blocks = ['00', '01', '02', '03', '04'];
+export const Blocks = ['00', '01', '02', '03', '04', '05', '06'];
 export const BlockButtons: MultiButtons[] = [
   {
     name: '00',
@@ -651,9 +673,13 @@ export const BlockButtons: MultiButtons[] = [
     name: '05',
     value: '05',
   },
+  {
+    name: '06',
+    value: '06',
+  },
 ];
 
-export const CardTypes = ['Digi-Egg', 'Digimon', 'Tamer', 'Option'];
+export const CardTypes = ['Digi-Egg', 'Digimon', 'Tamer', 'Option', 'Ace', 'Digimon/Option'];
 export const CardTypeButtons: MultiButtons[] = [
   {
     name: 'Digi-Egg',
@@ -671,9 +697,17 @@ export const CardTypeButtons: MultiButtons[] = [
     name: 'Option',
     value: 'Option',
   },
+  {
+    name: 'Ace',
+    value: 'Digimon Ace',
+  },
+  {
+    name: 'Dual',
+    value: 'Digimon/Option',
+  },
 ];
 
-export const Rarity = ['C', 'U', 'R', 'SR', 'SEC', 'P'];
+export const Rarity = ['C', 'U', 'R', 'SR', 'UR', 'SEC', 'P'];
 export const RarityButtons: MultiButtons[] = [
   {
     name: 'C',
@@ -690,6 +724,10 @@ export const RarityButtons: MultiButtons[] = [
   {
     name: 'SR',
     value: 'SR',
+  },
+  {
+    name: 'UR',
+    value: 'UR',
   },
   {
     name: 'SEC',

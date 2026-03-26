@@ -134,7 +134,10 @@ banned_cards = [
 cards_that_can_be_included_50 = [
     'BT6-085',
     'BT11-061',
-    'EX2-046'
+    'EX2-046',
+    'BT22-079',
+    'EX9-048',
+    'EX11-027'
 ]
 
 # Backend URLs

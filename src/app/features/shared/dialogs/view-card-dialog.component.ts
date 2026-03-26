@@ -1,7 +1,7 @@
 import { NgClass, NgForOf, NgIf, NgStyle } from '@angular/common';
 import { ChangeDetectorRef, Component, effect, HostListener, inject } from '@angular/core';
 import { ImgFallbackDirective } from '@directives';
-import { formatId, withoutJ } from '@functions';
+import { formatId, isDigimonType, withoutJ } from '@functions';
 import { ColorMap, DigimonCard, ICountCard, IDeck, replacements } from '@models';
 import { DialogStore, DigimonCardStore, SaveStore, WebsiteStore } from '@store';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
@@ -28,7 +28,7 @@ import { TooltipModule } from 'primeng/tooltip';
             {{ card.cardType }}
           </p>
           <div
-            *ngIf="card.cardType === 'Digimon' || card.cardType === 'Digi-Egg'"
+            *ngIf="isDigimonType(card.cardType) || card.cardType === 'Digi-Egg'"
             [ngStyle]="{ backgroundColor }"
             class="inline-block rounded-full px-6 py-2.5 leading-tight shadow-md"
             id="Digimon-Lv">
@@ -180,6 +180,15 @@ import { TooltipModule } from 'primeng/tooltip';
             <span class="font-white whitespace-pre-wrap font-bold leading-[1.7em]" [innerHTML]="replaceWithImageTags(card.aceEffect)">
             </span>
           </div>
+          <div
+            *ngIf="card.optionCardColourRequirement && card.optionCardColourRequirement !== '-'"
+            class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150"
+            id="Option-Colour-Requirement">
+            <p [ngStyle]="{ color }" class="text-black-outline-xs ml-1.5 text-lg font-extrabold">Option Color Req.</p>
+            <p class="font-white ml-auto mr-1.5 font-bold leading-[1.7em]">
+              {{ card.optionCardColourRequirement }}
+            </p>
+          </div>
         </div>
       </div>
 
@@ -192,6 +201,16 @@ import { TooltipModule } from 'primeng/tooltip';
         <div *ngIf="card.effect !== '-'" class="flex flex-col" id="Digimon-Effect">
           <p [ngStyle]="{ color }" class="text-black-outline-xs text-lg font-extrabold">Effect</p>
           <span class="font-white whitespace-pre-wrap font-bold" [innerHTML]="replaceWithImageTags(card.effect)"></span>
+        </div>
+
+        <div *ngIf="card.dualEffect && card.dualEffect !== '-'" class="flex flex-col" id="Dual-Effect">
+          <p [ngStyle]="{ color }" class="text-black-outline-xs text-lg font-extrabold">Dual Effect</p>
+          <span class="font-white whitespace-pre-wrap font-bold" [innerHTML]="replaceWithImageTags(card.dualEffect)"></span>
+        </div>
+
+        <div *ngIf="card.optionCardEffect && card.optionCardEffect !== '-'" class="flex flex-col" id="Option-Card-Effect">
+          <p [ngStyle]="{ color }" class="text-black-outline-xs text-lg font-extrabold">Option Card Effect</p>
+          <span class="font-white whitespace-pre-wrap font-bold" [innerHTML]="replaceWithImageTags(card.optionCardEffect)"></span>
         </div>
 
         <div *ngIf="card.digivolveEffect !== '-'" class="flex flex-col" id="Digimon-Digivolve-Effect">
@@ -264,6 +283,9 @@ export class ViewCardDialogComponent {
   dialogStore = inject(DialogStore);
   websiteStore = inject(WebsiteStore);
   digimonCardStore = inject(DigimonCardStore);
+
+  // Helper function exposed to template
+  isDigimonType = isDigimonType;
 
   card: DigimonCard = this.dialogStore.viewCard().card;
   width?: string = this.dialogStore.viewCard().width;

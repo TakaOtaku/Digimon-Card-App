@@ -4,4 +4,5 @@ export const cardsAllow50 = [
   'BT22-079', // Eater (Species Form)
   'EX2-046', // ADR-02 Searcher
   'EX9-048', // Eyesmon: Scatter Mode
+  'EX11-027', // Maquinamon
 ];
