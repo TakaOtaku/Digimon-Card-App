@@ -23,6 +23,7 @@ RARITY_MAPPING = {
     "Uncommon": "U",
     "Rare": "R",
     "Super Rare": "SR",
+    "Ultimate Rare": "UR",
     "Secret Rare": "SEC",
     "Alternative Art": "AA",
     "Promo": "P",
