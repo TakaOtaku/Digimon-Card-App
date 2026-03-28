@@ -13,6 +13,7 @@ export const replacements: Array<[RegExp, string, string]> = [
   [/\[Assembly -5\]/g, 'assembly_-5', ''],
   [/\[Assembly -6\]/g, 'assembly_-6', ''],
   [/\[Assembly -7\]/g, 'assembly_-7', ''],
+  [/\[Assembly -8\]/g, 'assembly_-8', ''],
   [/\[At End of Opponent's Turn\]/g, 'at_end_of_opponents_turn', ''],
   [/＜Barrier＞/g, 'barrier', ''],
   [/＜Blast Digivolve＞/g, 'blast_digivolve', ''],
