@@ -638,6 +638,7 @@ export const SpecialRequirements: string[] = [
   'DigiXros',
   'Burst Digivolve',
   'ACE',
+  'Link',
   'App Fusion',
   'Assembly',
   'Arts Digivolve',
@@ -700,6 +701,10 @@ export const CardTypeButtons: MultiButtons[] = [
   {
     name: 'Ace',
     value: 'Digimon ACE',
+  },
+  {
+    name: 'Link',
+    value: 'applink',
   },
   {
     name: 'Dual',
