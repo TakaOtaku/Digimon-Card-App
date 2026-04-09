@@ -646,8 +646,6 @@ export const SpecialRequirements: string[] = [
 
 export const Restrictions: string[] = ['Banned', 'Restricted to 1'];
 
-export const Presets: string[] = ['Ultimate Cup 2023', 'Ultimate Cup 2024'];
-
 export const Blocks = ['00', '01', '02', '03', '04', '05', '06'];
 export const BlockButtons: MultiButtons[] = [
   {
@@ -701,10 +699,6 @@ export const CardTypeButtons: MultiButtons[] = [
   {
     name: 'Ace',
     value: 'Digimon ACE',
-  },
-  {
-    name: 'Link',
-    value: 'applink',
   },
   {
     name: 'Dual',
