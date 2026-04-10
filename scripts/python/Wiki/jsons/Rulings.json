@@ -2682,7 +2682,7 @@
   "BT13-073": [
     {
       "answer": "A: No, you can't.  This card's [All Turns] effect is triggered when one of your Digimon with [Chessmon] is deleted, therefore it won't trigger if such a Digimon isn't deleted.[1]",
-      "question": "Q: If an effect such as \uff1cDecoy (nocategory)\uff1e (When your other nocategory Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent 1 of those Digimon's deletion.) prevents deletion when this suspended Digimon would be deleted, can I use this card's [All Turns] effect to unsuspend this Digimon?"
+      "question": "Q: If an effect such as \uff1cDecoy (nocategory)\uff1e (When your opponent's effects would delete any of your other specified Digimon, by deleting this Digimon, 1 of those Digimon isn't deleted.) prevents deletion when this suspended Digimon would be deleted, can I use this card's [All Turns] effect to unsuspend this Digimon?"
     }
   ],
   "BT13-075": [
@@ -12304,7 +12304,7 @@
     },
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: When this card's [When Digivolving] effect deletes Digimon in play, can you and your opponent activate \uff1cDecoy (nocategory)\uff1e (When your other nocategory Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent 1 of those Digimon's deletion.), \uff1cArmor Purge\uff1e, and similar effects to prevent their deletion?"
+      "question": "Q: When this card's [When Digivolving] effect deletes Digimon in play, can you and your opponent activate \uff1cDecoy (nocategory)\uff1e (When your opponent's effects would delete any of your other specified Digimon, by deleting this Digimon, 1 of those Digimon isn't deleted.), \uff1cArmor Purge\uff1e, and similar effects to prevent their deletion?"
     }
   ],
   "BT8-020": [
@@ -14103,8 +14103,8 @@
       "question": "Q: If [EX2-008 Guilmon]\u2019s [On Play] effect reveals this card from my deck, can I add it to my hand as a card that has [Gallantmon]?"
     },
     {
-      "answer": "A: Yes. The Digimon chosen as a target for this effect is not deleted, and the Digimon that activates \uff1cDecoy (nocategory)\uff1e (When your other nocategory Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent 1 of those Digimon's deletion.) is deleted by the effect of \uff1cDecoy (nocategory)\uff1e (When your other nocategory Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent 1 of those Digimon's deletion.) and not this effect. As such, the condition is satisfied for \"if no Digimon was deleted by this effect,\" and both players will trash the top 5 cards of their decks.[1]",
-      "question": "Q: I try to delete an opponent's Digimon with this card\u2019s [When Digivolving] effect, and my opponent activates \uff1cDecoy (nocategory)\uff1e (When your other nocategory Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent 1 of those Digimon's deletion.) to prevent the chosen Digimon from being deleted. If the Digimon that activated \uff1cDecoy (nocategory)\uff1e (When your other nocategory Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent 1 of those Digimon's deletion.) is deleted, does the \u201cif no Digimon was deleted by this effect\u201d part of this card's effect still activate?"
+      "answer": "A: Yes. The Digimon chosen as a target for this effect is not deleted, and the Digimon that activates \uff1cDecoy (nocategory)\uff1e (When your opponent's effects would delete any of your other specified Digimon, by deleting this Digimon, 1 of those Digimon isn't deleted.) is deleted by the effect of \uff1cDecoy (nocategory)\uff1e (When your opponent's effects would delete any of your other specified Digimon, by deleting this Digimon, 1 of those Digimon isn't deleted.) and not this effect. As such, the condition is satisfied for \"if no Digimon was deleted by this effect,\" and both players will trash the top 5 cards of their decks.[1]",
+      "question": "Q: I try to delete an opponent's Digimon with this card\u2019s [When Digivolving] effect, and my opponent activates \uff1cDecoy (nocategory)\uff1e (When your opponent's effects would delete any of your other specified Digimon, by deleting this Digimon, 1 of those Digimon isn't deleted.) to prevent the chosen Digimon from being deleted. If the Digimon that activated \uff1cDecoy (nocategory)\uff1e (When your opponent's effects would delete any of your other specified Digimon, by deleting this Digimon, 1 of those Digimon isn't deleted.) is deleted, does the \u201cif no Digimon was deleted by this effect\u201d part of this card's effect still activate?"
     },
     {
       "answer": "A: This is a special rule for this card that always treats it as if it also has the [ChaosGallantmon] name.[2]",
@@ -16136,7 +16136,7 @@
     },
     {
       "answer": "A: Yes, it activates.[1]",
-      "question": "Q: If a Digimon with this card in its digivolution cards would be deleted other than by one of my effects, then an effect such as \uff1cDecoy (nocategory)\uff1e (When your other nocategory Digimon would be deleted by an opponent's effect, you may delete this Digimon to prevent 1 of those Digimon's deletion.) prevents it from being deleted, does this card's inherited effect activate?"
+      "question": "Q: If a Digimon with this card in its digivolution cards would be deleted other than by one of my effects, then an effect such as \uff1cDecoy (nocategory)\uff1e (When your opponent's effects would delete any of your other specified Digimon, by deleting this Digimon, 1 of those Digimon isn't deleted.) prevents it from being deleted, does this card's inherited effect activate?"
     },
     {
       "answer": "A: No, you can't.  If digivolution isn't performed using this card's effect, you can't place this card in digivolution cards.[1]",
