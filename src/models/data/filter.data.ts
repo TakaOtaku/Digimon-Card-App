@@ -699,10 +699,6 @@ export const CardTypeButtons: MultiButtons[] = [
     value: 'Option',
   },
   {
-    name: 'Ace',
-    value: 'Digimon ACE',
-  },
-  {
     name: 'Dual',
     value: 'Digimon/Option',
   },
