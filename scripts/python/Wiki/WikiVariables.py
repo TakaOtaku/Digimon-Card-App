@@ -246,7 +246,7 @@ replacements = [
     '(This Digimon can\'t be deleted in battles against Security Digimon.)',
     '(Trash all of the digivolution cards on that Digimon.)',
     '(This Digimon checks 1 additional security card.)',
-    '(This Digimon checks 1 fewer security cards.)',
+    '(This Digimon checks 1 fewer security card.)',
     '(This Digimon checks 2 additional security cards.)',
     '(This Digimon checks 2 fewer security cards.)',
     '(This Digimon checks 3 additional security cards.)',
