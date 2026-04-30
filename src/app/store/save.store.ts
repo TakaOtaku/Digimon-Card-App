@@ -39,7 +39,7 @@ export const SaveStore = signalStore(
         switchMap(() => {
           return authService.loadSave().pipe(
             tapResponse({
-              next: (save: any) => {
+              next: (save: ISave) => {
                 toastrService.info('Your save was loaded successfully!', 'Welcome back!');
 
                 patchState(store, {

@@ -24,8 +24,7 @@ export const FilterStore = signalStore(
     rarityFilter: computed(() => filter.rarityFilter()),
     versionFilter: computed(() => filter.versionFilter()),
     setFilter: computed(() => filter.setFilter()),
-    advancedSearch: computed(() => advancedSearch()),
-    advancedSearchActive: computed(() => advancedSearch() !== null && advancedSearch().trim() !== ''),
+    advancedSearchActive: computed(() => advancedSearch() !== null && advancedSearch()!.trim() !== ''),
   })),
 
   withMethods((store) => ({

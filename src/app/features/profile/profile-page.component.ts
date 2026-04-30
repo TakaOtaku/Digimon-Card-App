@@ -73,7 +73,6 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
         // If the other profile is not null and not the same as the current user id, we are in another profile and need to check if the received save is the same as the other profile
         const routeParamSet = this.routeParams() && this.routeParams()!['id'] !== undefined;
         if (!routeParamSet && (!this.otherProfile || this.otherProfile === this.authService.currentUser()?.uid)) {
-          console.log('changing url', this.routeParams());
           this.setURLToMainUser();
           this.editable = true;
           this.decks = save?.decks ?? [];

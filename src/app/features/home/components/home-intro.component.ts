@@ -6,7 +6,7 @@ import { DividerModule } from 'primeng/divider';
   selector: 'digimon-home-intro',
   template: `
     <div class="flex flex-row justify-center">
-      <img alt="Logo" class="cursor-pointer max-h-[3rem] md:max-h-[6rem]" src="../../../assets/images/logo.png" />
+      <img alt="Logo" class="cursor-pointer max-h-[3rem] md:max-h-[6rem]" src="../../../assets/images/logo.png" width="96" height="96" />
       <h1 class="text-shadow ml-3 mt-3 md:mt-6 text-center text-xl sm:text-3xl md:text-6xl font-black text-[#64B5F6]">Digimoncard.app</h1>
     </div>
 
@@ -24,7 +24,7 @@ import { DividerModule } from 'primeng/divider';
         Everything related to the cards is loaded once a day from
         <span class="font-bold">DigimonCardGame.Fandom</span>.
       </div>
-      <span>Thanks to their effort everything should on here should be up to date.</span>
+      <span>Thanks to their effort everything on here should be up to date.</span>
     </h2>
 
     <p-divider class="my-5"></p-divider>
@@ -45,7 +45,7 @@ import { DividerModule } from 'primeng/divider';
     <p-divider class="my-5"></p-divider>
 
     <a href="https://www.paypal.com/donate/?hosted_button_id=WLM58Q785D4H4" target="_blank">
-      <img src="assets/images/blue.png" alt="Paypal Donate Button" class="mx-auto h-12" />
+      <img src="assets/images/blue.png" alt="Paypal Donate Button" class="mx-auto h-12" width="200" height="48" />
     </a>
 
     <p-divider class="my-5"></p-divider>
@@ -62,15 +62,15 @@ import { DividerModule } from 'primeng/divider';
     <h2 class='text-shadow text-base sm:text-lg font-black underline text-center text-white text-[#e2e4e6]"'>Partners</h2>
     <div class="mx-auto flex flex-row">
       <a class="mx-auto flex flex-col" href="https://www.youtube.com/@AVAULT" target="_blank">
-        <img class="mx-auto max-h-16 w-16 rounded-full object-cover" src="assets/images/partners/avault.jpg" alt="AVAULT" />
+        <img class="mx-auto max-h-16 w-16 rounded-full object-cover" src="assets/images/partners/avault.jpg" alt="AVAULT" width="64" height="64" />
         <div class="text-shadow text-center text-xs font-black text-[#e2e4e6]">AVAULT</div>
       </a>
       <a class="mx-auto flex flex-col" href="https://discord.gg/digimon-tcg-dach-759562127513223168" target="_blank">
-        <img class="mx-auto max-h-16" src="assets/images/partners/dach.png" alt="Digimon DACH Discord" />
+        <img class="mx-auto max-h-16" src="assets/images/partners/dach.png" alt="Digimon DACH Discord" width="64" height="64" />
         <div class="text-shadow text-center text-xs font-black text-[#e2e4e6]">Digimon TCG DACH</div>
       </a>
       <a class="mx-auto flex flex-col" href="https://www.youtube.com/East_ML" target="_blank">
-        <img class="mx-auto max-h-16 w-16 rounded-full object-cover" src="assets/images/partners/east.jpg" alt="East" />
+        <img class="mx-auto max-h-16 w-16 rounded-full object-cover" src="assets/images/partners/east.jpg" alt="East" width="64" height="64" />
         <div class="text-shadow text-center text-xs font-black text-[#e2e4e6]">East</div>
       </a>
     </div>

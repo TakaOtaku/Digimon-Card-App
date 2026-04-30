@@ -64,7 +64,7 @@ import { TooltipModule } from 'primeng/tooltip';
           class="text-black-outline w-24 text-center text-7xl font-black leading-[5.5rem] text-[#e2e4e6]">
           {{ key.tier }}
         </div>
-        <p-listbox [options]="tierlist[i]" [(ngModel)]="selectedDeck">
+        <p-listbox [options]="tierlist[i]" [(ngModel)]="selectedDeck" optionLabel="name">
           <ng-template let-deck let-index="index" pTemplate="item">
             <div
               (contextmenu)="removeDeck(deck, index, i)"
@@ -237,7 +237,6 @@ export class TierlistComponent {
   }
 
   removeDeck(deck: any, index: number, tier: number) {
-    console.log('Remove Deck ', deck);
     this.tierlist[tier].splice(index, 1);
   }
 

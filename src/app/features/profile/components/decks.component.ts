@@ -3,7 +3,6 @@ import {
   ChangeDetectionStrategy,
   Component,
   computed,
-  effect,
   HostListener,
   inject,
   Input,
@@ -71,9 +70,6 @@ export class DecksComponent implements OnInit, OnChanges {
   deck: IDeck = JSON.parse(JSON.stringify(emptyDeck));
 
   displayTables = computed(() => this.saveStore.settings().deckDisplayTable);
-  effect = effect(() => {
-    console.log('Display Table: ' + this.displayTables());
-  });
 
   ngOnInit() {
     if (!this.decks) {

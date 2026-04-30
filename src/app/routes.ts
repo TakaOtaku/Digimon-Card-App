@@ -1,62 +1,53 @@
 import { Routes } from '@angular/router';
-import { CollectionPageComponent } from './features/collection/collection-page.component';
-import { DeckbuilderPageComponent } from './features/deckbuilder/deckbuilder-page.component';
-import { DecksPageComponent } from './features/decks/decks-page.component';
-import { HomePageComponent } from './features/home/home-page.component';
-import { MigrationComponent } from './features/migration/migration.component';
-import { ProductsComponent } from './features/products/products.component';
-import { ProfilePageComponent } from './features/profile/profile-page.component';
-import { RulesComponent } from './features/rules/rules.component';
-import { TestPageComponent } from './features/test/test-page.component';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
   {
     path: 'migration',
-    component: MigrationComponent,
-  },
-  {
-    path: 'test',
-    component: TestPageComponent,
+    loadComponent: () => import('./features/migration/migration.component').then(m => m.MigrationComponent),
+    canActivate: [authGuard],
   },
   {
     path: 'decks',
-    component: DecksPageComponent,
+    loadComponent: () => import('./features/decks/decks-page.component').then(m => m.DecksPageComponent),
   },
   {
     path: 'products',
-    component: ProductsComponent,
+    loadComponent: () => import('./features/products/products.component').then(m => m.ProductsComponent),
   },
   {
     path: 'user',
-    component: ProfilePageComponent,
+    loadComponent: () => import('./features/profile/profile-page.component').then(m => m.ProfilePageComponent),
+    canActivate: [authGuard],
   },
   {
     path: 'user/:id',
-    component: ProfilePageComponent,
+    loadComponent: () => import('./features/profile/profile-page.component').then(m => m.ProfilePageComponent),
   },
   {
     path: 'deckbuilder/user/:userId/deck/:deckId',
-    component: DeckbuilderPageComponent,
+    loadComponent: () => import('./features/deckbuilder/deckbuilder-page.component').then(m => m.DeckbuilderPageComponent),
   },
   {
     path: 'deckbuilder/:id',
-    component: DeckbuilderPageComponent,
+    loadComponent: () => import('./features/deckbuilder/deckbuilder-page.component').then(m => m.DeckbuilderPageComponent),
   },
   {
     path: 'deckbuilder',
-    component: DeckbuilderPageComponent,
+    loadComponent: () => import('./features/deckbuilder/deckbuilder-page.component').then(m => m.DeckbuilderPageComponent),
+    canActivate: [authGuard],
   },
   {
     path: 'collection',
-    component: CollectionPageComponent,
+    loadComponent: () => import('./features/collection/collection-page.component').then(m => m.CollectionPageComponent),
   },
   {
     path: 'collection/:userId',
-    component: CollectionPageComponent,
+    loadComponent: () => import('./features/collection/collection-page.component').then(m => m.CollectionPageComponent),
   },
   {
     path: 'rulings',
-    component: RulesComponent,
+    loadComponent: () => import('./features/rules/rules.component').then(m => m.RulesComponent),
   },
-  { path: '**', component: HomePageComponent },
+  { path: '**', loadComponent: () => import('./features/home/home-page.component').then(m => m.HomePageComponent) },
 ];

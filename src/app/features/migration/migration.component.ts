@@ -1,12 +1,13 @@
 import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { Subject, takeUntil, forkJoin, finalize, timeout, catchError, of } from 'rxjs';
 import { MigrationService, MigrationResult, MigrationProgress, ComparisonResult } from '../../services/migration.service';
 
 @Component({
     selector: 'app-migration',
     standalone: true,
-    imports: [CommonModule],
+    imports: [CommonModule, FormsModule],
     template: `
     <div class="container mx-auto p-6 max-w-4xl">
       <h1 class="text-3xl font-bold text-gray-800 mb-6">Data Migration Tool</h1>
@@ -115,19 +116,34 @@ import { MigrationService, MigrationResult, MigrationProgress, ComparisonResult 
                 class="px-4 py-2 bg-purple-500 text-white rounded-md hover:bg-purple-600 disabled:opacity-50 disabled:cursor-not-allowed">
                 Migrate Everything
               </button>
+
+              <button
+                (click)="fixDeckImages()"
+                [disabled]="isLoading || !connectionStatus.mongo"
+                class="px-4 py-2 bg-yellow-500 text-white rounded-md hover:bg-yellow-600 disabled:opacity-50 disabled:cursor-not-allowed">
+                <span *ngIf="!isFixingImages">Fix Deck Images</span>
+                <span *ngIf="isFixingImages">Fixing...</span>
+              </button>
             </div>
           </div>
 
           <!-- Danger Zone -->
           <div class="border-t pt-4">
             <h3 class="text-lg font-medium text-red-600 mb-2">Danger Zone</h3>
-            <button 
-              (click)="clearMongoData()"
-              [disabled]="isLoading || !connectionStatus.mongo"
-              class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 disabled:opacity-50 disabled:cursor-not-allowed"
-              onclick="return confirm('Are you sure? This will delete all data from the MongoDB backend!')">
-              Clear MongoDB Data
-            </button>
+            <p class="text-sm text-gray-600 mb-2">Type <strong>DELETE</strong> to confirm clearing all MongoDB data.</p>
+            <div class="flex gap-2 items-center">
+              <input
+                type="text"
+                [(ngModel)]="clearConfirmText"
+                placeholder="Type DELETE to confirm"
+                class="border border-gray-300 rounded px-3 py-2 text-sm w-48" />
+              <button
+                (click)="clearMongoData()"
+                [disabled]="isLoading || !connectionStatus.mongo || clearConfirmText !== 'DELETE'"
+                class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 disabled:opacity-50 disabled:cursor-not-allowed">
+                Clear MongoDB Data
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -296,6 +312,8 @@ export class MigrationComponent implements OnInit, OnDestroy {
 
     isLoading = false;
     isComparing = false;
+    isFixingImages = false;
+    clearConfirmText = '';
     connectionStatus = { legacy: false, mongo: false };
     migrationStatus: any = null;
     currentProgress: MigrationProgress | null = null;
@@ -324,17 +342,17 @@ export class MigrationComponent implements OnInit, OnDestroy {
     testConnections() {
         this.isLoading = true;
         this.addMessage('info', 'Testing Connections', 'Checking connectivity to both backends...');
-        
+
         const legacyObs = this.migrationService.testLegacyConnection().pipe(
             timeout(10000),
             catchError(error => of({ success: false, message: error.message || 'Connection timeout' }))
         );
-        
+
         const mongoObs = this.migrationService.testMongoConnection().pipe(
             timeout(10000),
             catchError(error => of({ success: false, message: error.message || 'Connection timeout' }))
         );
-        
+
         forkJoin({
             legacy: legacyObs,
             mongo: mongoObs
@@ -364,7 +382,7 @@ export class MigrationComponent implements OnInit, OnDestroy {
                 }
 
                 this.cdr.detectChanges();
-                
+
                 // Refresh status after connections are confirmed
                 this.refreshStatus();
             },
@@ -478,10 +496,7 @@ export class MigrationComponent implements OnInit, OnDestroy {
     }
 
     clearMongoData() {
-        if (!confirm('Are you sure you want to clear all data from MongoDB? This action cannot be undone!')) {
-            return;
-        }
-
+        this.clearConfirmText = '';
         this.isLoading = true;
         this.addMessage('info', 'Clearing MongoDB Data', 'Removing all data from MongoDB backend...');
 
@@ -506,6 +521,31 @@ export class MigrationComponent implements OnInit, OnDestroy {
 
     // ===== COMPARISON METHODS =====
 
+    fixDeckImages() {
+        this.isFixingImages = true;
+        this.isLoading = true;
+        this.addMessage('info', 'Fixing Deck Images', 'Computing correct images for decks with default Yokomon image...');
+
+        this.migrationService.fixDeckImages()
+            .pipe(takeUntil(this.destroy$))
+            .subscribe({
+                next: (result) => {
+                    this.isFixingImages = false;
+                    this.isLoading = false;
+                    if (result.success) {
+                        this.addMessage('success', 'Images Fixed', result.message);
+                    } else {
+                        this.addMessage('error', 'Fix Failed', result.message);
+                    }
+                },
+                error: (error) => {
+                    this.isFixingImages = false;
+                    this.isLoading = false;
+                    this.addMessage('error', 'Fix Error', error.message || 'Unknown error');
+                }
+            });
+    }
+
     compareData() {
         this.isComparing = true;
         this.isLoading = true;
@@ -527,16 +567,16 @@ export class MigrationComponent implements OnInit, OnDestroy {
 
                 if (result) {
                     this.comparisonResult = result;
-                    
+
                     const totalUnmigrated = result.users.unmigrated.length + result.decks.unmigrated.length;
                     const totalChanged = result.users.changed.length + result.decks.changed.length;
                     const totalSynced = result.users.synced + result.decks.synced;
-                    
-                    this.addMessage('success', 'Comparison Complete', 
+
+                    this.addMessage('success', 'Comparison Complete',
                         `Found ${totalUnmigrated} unmigrated items, ${totalChanged} changed items, and ${totalSynced} items in sync.`
                     );
                 }
-                
+
                 this.cdr.detectChanges();
             });
     }
@@ -716,7 +756,7 @@ export class MigrationComponent implements OnInit, OnDestroy {
         }
 
         const step = steps[index];
-        
+
         switch (step.type) {
             case 'migrateUnmigratedUsers':
                 this.executeSyncStepWithCallback(

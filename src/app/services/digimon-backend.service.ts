@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { first, map, Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 import { DigimonCard, IColor, ICountCard, IDeck, ISave, ISettings, ITournamentDeck, IUser } from '@models';
 import { CARDSET, IBlog, IBlogWithText, ITag } from '@models';
 import { sortByReleaseOrder } from '@models';
@@ -8,13 +9,16 @@ import { emptySettings } from '@models';
 import { IUserAndDecks } from '@models';
 import { checkDeckErrors, setDeckImage } from '@functions';
 
-const baseUrl = 'https://backend.digimoncard.app/api/';
-const baseUrl_inactiv = 'http://localhost:8080/api/';
-const baseUrl_inactiv2 = 'https://179.61.219.98:8090/preview/digimoncard.app/';
+const baseUrl = environment.legacyApiBaseUrl;
 
 @Injectable({
   providedIn: 'root',
 })
+/**
+ * @deprecated Use {@link MongoBackendService} instead. This service targets the
+ * legacy MySQL backend and is kept only for data migration via MigrationService.
+ * Do not add new call sites — it will be removed once migration is complete.
+ */
 export class DigimonBackendService {
   constructor(private http: HttpClient) { }
 

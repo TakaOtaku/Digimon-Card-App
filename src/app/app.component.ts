@@ -89,29 +89,24 @@ export class AppComponent {
     this.saveStore.loadSave();
 
     effect(() => {
-      console.log('Save changed', this.saveStore.save());
       this.saveLoaded.set(this.saveStore.save().uid !== '' || this.saveStore.loadedSave());
 
       if (!this.saveStore.loadedSave()) return;
 
-      console.log('Update Save in the Database');
       this.updateDatabase();
 
       if (this.settings === null || this.settings !== this.saveStore.settings()) {
-        console.log('Change Advanced Settings');
         this.setAdvancedSettings();
         this.settings = this.saveStore.settings();
       }
 
       if (this.cardSet !== this.saveStore.settings().cardSet) {
-        console.log('Set DigimonCard Set');
         this.cardSet = this.saveStore.settings().cardSet;
         this.setDigimonCardSet();
       }
     });
 
     effect(() => {
-      console.log('Filter changed');
       const cards = this.digimonCardStore.cards();
 
       if (cards.length === 0) return;

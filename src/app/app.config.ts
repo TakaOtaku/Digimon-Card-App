@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
@@ -11,6 +11,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { PreloadAllModules, provideRouter, withPreloading } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AuthService, DigimonBackendService, MongoBackendService } from '@services';
+import { authInterceptor } from './services/auth.interceptor';
 import { ToastrModule } from 'ngx-toastr';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { BlockUIModule } from 'primeng/blockui';
@@ -58,7 +59,7 @@ export const appConfig: ApplicationConfig = {
     AuthService,
     DigimonBackendService,  // Legacy HTTP backend for migration
     MongoBackendService,    // New MongoDB backend
-    provideHttpClient(withInterceptorsFromDi()),
+    provideHttpClient(withInterceptors([authInterceptor])),
     provideAnimations(),
     MessageService,
     ConfirmationService,

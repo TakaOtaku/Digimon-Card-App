@@ -11,7 +11,7 @@ import {
 } from '@angular/fire/auth';
 import { emptySave, emptySettings, ISave, IUser } from '@models';
 import { MessageService } from 'primeng/api';
-import { catchError, Observable, of, switchMap, tap } from 'rxjs';
+import { catchError, filter, Observable, of, ReplaySubject, switchMap, take, tap } from 'rxjs';
 import { MongoBackendService } from './mongo-backend.service';
 
 @Injectable({
@@ -19,6 +19,7 @@ import { MongoBackendService } from './mongo-backend.service';
 })
 export class AuthService {
   private userSignal = signal<IUser | null>(null);
+  private authStateResolved$ = new ReplaySubject<boolean>(1);
   // Use the user observable from the injected AngularFire Auth service
   firebaseUser$: Observable<User | null>;
 
@@ -45,6 +46,11 @@ export class AuthService {
     return this.userSignal;
   }
 
+  /** Emits once after the initial auth state has been resolved. */
+  get authReady$(): Observable<boolean> {
+    return this.authStateResolved$.pipe(filter(Boolean), take(1));
+  }
+
   /**
    * Initialize the authentication state handling
    */
@@ -55,6 +61,7 @@ export class AuthService {
           if (!firebaseUser) {
             // User is logged out, clear state
             this.userSignal.set(null);
+            this.authStateResolved$.next(true);
             return of(null);
           }
 
@@ -79,6 +86,7 @@ export class AuthService {
                 // Ensure save is up to date in backend
                 this.mongoBackendService.updateSave(userData.save).subscribe();
               }
+              this.authStateResolved$.next(true);
             }),
           );
         }),

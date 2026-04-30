@@ -32,7 +32,7 @@ import { SaveStore } from '@store';
       [digimonImgFallback]="card.cardImage"
       [ngClass]="{ grayscale: setGrayScale() }"
       [ngStyle]="{ border: cardBorder, 'border-radius': cardRadius }"
-      alt="{{ card.cardNumber + ' ' + card.name }}"
+      alt="{{ card.cardNumber + ' ' + card.name.english }}"
       class="m-auto aspect-auto" />
   `,
   styleUrls: ['./card-image.component.scss'],

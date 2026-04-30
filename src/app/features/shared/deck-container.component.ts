@@ -73,13 +73,13 @@ export class DeckContainerComponent implements OnChanges {
   setCardImage() {
     const digimonCardMap = this.digimonCardStore.cardsMap();
     let imagePath = '';
-    // If there is an ImageCardId set it
-    if (this.deck.imageCardId) {
+    // If there is a valid ImageCardId (not the default BT1-001), use it
+    if (this.deck.imageCardId && this.deck.imageCardId !== 'BT1-001') {
       const imageCard = digimonCardMap.get(this.deck.imageCardId);
       imagePath = imageCard?.cardImage ?? '../../../assets/images/digimon-card-back.webp';
-    } else if (this.deck.cards && this.deck.cards.length < 0) {
-      // If there are cards in the deck, set it to the first card
-      const imageCard = setDeckImage(this.deck, this.digimonCardStore.cards()); // Replace setDeckImage with the appropriate function
+    } else if (this.deck.cards && this.deck.cards.length > 0) {
+      // Compute image from the deck's cards
+      const imageCard = setDeckImage(this.deck, this.digimonCardStore.cards());
       imagePath = imageCard?.cardImage ?? '';
     }
 

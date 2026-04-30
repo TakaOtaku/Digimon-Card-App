@@ -54,12 +54,12 @@ export class FilterAndSearchComponent implements OnInit, OnDestroy {
   private onDestroy$ = new Subject();
 
   ngOnInit(): void {
-    this.searchFilter.setValue(this.filterStore.searchFilter(), {
+    this.searchFilter.setValue(this.filterStore.advancedSearch() ?? '', {
       emitEvent: false,
     });
 
-    this.searchFilter.valueChanges.pipe(debounceTime(200), takeUntil(this.onDestroy$)).subscribe((searchFilter) => {
-      this.filterStore.updateSearchFilter(searchFilter);
+    this.searchFilter.valueChanges.pipe(debounceTime(300), takeUntil(this.onDestroy$)).subscribe((searchFilter) => {
+      this.filterStore.updateAdvancedSearch(searchFilter || null);
     });
 
     effect(() => {

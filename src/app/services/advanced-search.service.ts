@@ -18,8 +18,6 @@ export class AdvancedSearchService {
     }
 
     try {
-      console.log('Parsing search query:', searchQuery);
-
       // Check if this looks like an advanced search query with field operators
       const hasFieldOperators = /(\s+==\s+|\s+!=\s+|\s+>=\s+|\s+<=\s+|\s+>\s+|\s+<\s+|\s+contains\s+|\s+starts_with\s+|\s+ends_with\s+)/i.test(searchQuery);
 
@@ -27,26 +25,15 @@ export class AdvancedSearchService {
       const hasLogicalOperators = /(\s+AND\s+|\s+OR\s+)/i.test(searchQuery);
 
       if (hasFieldOperators) {
-        // Try to parse as advanced search with field operators
         const siftQuery = this.parseSearchQuery(searchQuery);
-        console.log('Generated sift query:', JSON.stringify(siftQuery, null, 2));
-
         const filterFn = sift(siftQuery);
-        const result = cards.filter(card => filterFn(card));
-
-        console.log(`Filtered ${result.length} cards from ${cards.length} total using advanced search`);
-        return result;
+        return cards.filter(card => filterFn(card));
       } else if (hasLogicalOperators) {
-        // Handle AND/OR with global text search terms (e.g., "Agumon AND Gabumon")
-        console.log('Logical operators detected without field operators, using combined text search');
         return this.globalTextSearchWithLogicalOperators(cards, searchQuery);
       } else {
-        // Fall back to simple global text search
-        console.log('No advanced syntax detected, using global text search');
         return this.globalTextSearch(cards, searchQuery);
       }
     } catch (error) {
-      console.error('Error applying advanced search, falling back to global text search:', error);
       return this.globalTextSearch(cards, searchQuery);
     }
   }
@@ -58,9 +45,8 @@ export class AdvancedSearchService {
     if (!searchText.trim()) return cards;
 
     const searchTerm = searchText.toLowerCase();
-    console.log(`Global text search for: "${searchTerm}"`);
 
-    const result = cards.filter(card => {
+    return cards.filter(card => {
       // Define all searchable text fields on the card
       const searchableFields = [
         card.name?.english,
@@ -109,9 +95,6 @@ export class AdvancedSearchService {
         return String(field).toLowerCase().includes(searchTerm);
       });
     });
-
-    console.log(`Global text search found ${result.length} cards from ${cards.length} total`);
-    return result;
   }
 
   /**
@@ -124,26 +107,18 @@ export class AdvancedSearchService {
     const orParts = this.splitByLogicalOperator(searchQuery, 'OR');
 
     if (orParts.length > 1) {
-      // OR: card must match at least one of the parts
-      console.log(`OR search with ${orParts.length} parts:`, orParts);
-      const result = cards.filter(card =>
+      return cards.filter(card =>
         orParts.some(part => this.cardMatchesTextQuery(card, part))
       );
-      console.log(`OR search found ${result.length} cards from ${cards.length} total`);
-      return result;
     }
 
     // Split by AND
     const andParts = this.splitByLogicalOperator(searchQuery, 'AND');
 
     if (andParts.length > 1) {
-      // AND: card must match all parts
-      console.log(`AND search with ${andParts.length} parts:`, andParts);
-      const result = cards.filter(card =>
+      return cards.filter(card =>
         andParts.every(part => this.cardMatchesTextQuery(card, part))
       );
-      console.log(`AND search found ${result.length} cards from ${cards.length} total`);
-      return result;
     }
 
     // Single term, fall back to regular global search
@@ -398,7 +373,19 @@ export class AdvancedSearchService {
       }
     }
 
-    console.warn('Could not parse condition:', condition);
+    // Treat unparseable conditions as plain text name search
+    const textTerm = condition.replace(/^["'(]|["')]$/g, '').trim();
+    if (textTerm) {
+      return {
+        $or: [
+          { 'name.english': { $regex: this.escapeRegex(textTerm), $options: 'i' } },
+          { 'name.japanese': { $regex: this.escapeRegex(textTerm), $options: 'i' } },
+          { effect: { $regex: this.escapeRegex(textTerm), $options: 'i' } },
+          { digivolveEffect: { $regex: this.escapeRegex(textTerm), $options: 'i' } },
+          { securityEffect: { $regex: this.escapeRegex(textTerm), $options: 'i' } },
+        ]
+      };
+    }
     return null;
   }
 

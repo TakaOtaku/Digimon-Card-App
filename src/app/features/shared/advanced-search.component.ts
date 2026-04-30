@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, effect, EventEmitter, inject, OnInit, Output, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
@@ -7,6 +8,8 @@ import { DialogModule } from 'primeng/dialog';
 import { TooltipModule } from 'primeng/tooltip';
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
+import { Subject, debounceTime, distinctUntilChanged } from 'rxjs';
+import { FilterStore } from '@store';
 
 @Component({
   selector: 'digimon-advanced-search',
@@ -14,14 +17,15 @@ import { InputIconModule } from 'primeng/inputicon';
     <div class="advanced-search-container">
       <div class="search-input-container">
         <p-iconfield class="flex-1 w-full">
-          <p-inputicon class="pi pi-search"></p-inputicon>
+          <p-inputicon [class]="isSearching() ? 'pi pi-spin pi-spinner' : 'pi pi-search'"></p-inputicon>
           <input
             pInputText
             [(ngModel)]="searchQuery"
             (ngModelChange)="onQueryChange($event)"
             (keydown.enter)="onEnter()"
-            placeholder="Search cards or use advanced syntax (e.g., cardType == Digimon AND color == Red)"
+            placeholder="Search cards... (e.g., Agumon, or cardType == Digimon AND color == Red)"
             class="w-full"
+            aria-label="Search cards"
           />
           <p-inputicon 
             *ngIf="searchQuery().trim()" 
@@ -170,26 +174,54 @@ import { InputIconModule } from 'primeng/inputicon';
     InputIconModule
   ]
 })
-export class AdvancedSearchComponent {
+export class AdvancedSearchComponent implements OnInit {
   @Output() searchChange = new EventEmitter<string>();
 
-  // Signals
+  private filterStore = inject(FilterStore);
+  private destroyRef = inject(DestroyRef);
+  private searchSubject = new Subject<string>();
+
   searchQuery = signal<string>('');
+  isSearching = signal(false);
   showHelp = false;
+
+  // Sync input with store (for external changes like URL params or sidebar reset)
+  private syncEffect = effect(() => {
+    const storeValue = this.filterStore.advancedSearch();
+    if (storeValue === null || storeValue === '') {
+      this.searchQuery.set('');
+    } else if (storeValue !== this.searchQuery()) {
+      this.searchQuery.set(storeValue);
+    }
+  });
+
+  ngOnInit(): void {
+    this.searchSubject.pipe(
+      debounceTime(300),
+      distinctUntilChanged(),
+      takeUntilDestroyed(this.destroyRef),
+    ).subscribe(query => {
+      this.isSearching.set(false);
+      this.searchChange.emit(query);
+    });
+  }
 
   onQueryChange(query: string) {
     this.searchQuery.set(query);
+    this.isSearching.set(true);
+    this.searchSubject.next(query.trim());
   }
 
   onEnter() {
+    // Immediate search on Enter, bypass debounce
     const query = this.searchQuery().trim();
-    if (query) {
-      this.searchChange.emit(query);
-    }
+    this.isSearching.set(false);
+    this.searchChange.emit(query);
   }
 
   onClear() {
     this.searchQuery.set('');
+    this.isSearching.set(false);
     this.searchChange.emit('');
   }
 }

@@ -4,35 +4,75 @@ on:
   schedule:
     - cron: "0 0 */3 * *"
   workflow_dispatch:
-
+    inputs:
+      phase:
+        description: "Run only a specific phase (leave empty for full pipeline)"
+        required: false
+        type: choice
+        default: ""
+        options:
+          - ""
+          - fetch_links
+          - scrape_cards
+          - fetch_rulings
+          - merge_cards
+          - fetch_images
+          - format_cards
+          - prepare_output
+      skip:
+        description: "Comma-separated phases to skip (e.g. fetch_images,prepare_output)"
+        required: false
+        default: ""
 
 jobs:
-  run_script:
+  update-cards:
     runs-on: ubuntu-latest
+    timeout-minutes: 120
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.x
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: scripts/python/requirements.txt
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install beautifulsoup4 requests pillow lxml
+          pip install -r scripts/python/requirements.txt
 
-      - name: Run Python script
-        run: python scripts/python/Wiki/GetDataFromWiki.py
+      - name: Create required directories
+        run: |
+          mkdir -p scripts/python/Wiki/digimon-images/converted
+          mkdir -p scripts/python/Wiki/jsons
+
+      - name: Ensure Links.json exists
+        run: |
+          if [ ! -f scripts/python/Wiki/jsons/Links.json ]; then
+            echo "[]" > scripts/python/Wiki/jsons/Links.json
+          fi
+
+      - name: Run card update pipeline
+        run: |
+          ARGS=""
+          if [ -n "${{ github.event.inputs.phase }}" ]; then
+            ARGS="--phase ${{ github.event.inputs.phase }}"
+          fi
+          if [ -n "${{ github.event.inputs.skip }}" ]; then
+            # Convert comma-separated to space-separated for argparse nargs
+            SKIP_PHASES=$(echo "${{ github.event.inputs.skip }}" | tr ',' ' ')
+            ARGS="$ARGS --skip $SKIP_PHASES"
+          fi
+          echo "Running: python scripts/python/Wiki/GetDataFromWiki.py $ARGS"
+          python scripts/python/Wiki/GetDataFromWiki.py $ARGS
 
       - name: Check for changes
         id: git_status
         run: |
-          # Check if there are any changes to commit
-          # --porcelain prints output in an easily parsable format
-          # If there are changes, the command will output text; otherwise, it will be empty.
           if [[ -n $(git status --porcelain) ]]; then
             echo "Changes detected."
             echo "changed=true" >> $GITHUB_OUTPUT
@@ -41,11 +81,11 @@ jobs:
             echo "changed=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Commit everything
+      - name: Commit and push changes
         if: steps.git_status.outputs.changed == 'true'
         run: |
           git config --local user.email "digimoncard.app@gmail.de"
           git config --local user.name "DigimonCardApp"
           git add -A
-          git commit -am "[Automatic] Update Cards"
+          git commit -m "[Automatic] Update Cards"
           git push

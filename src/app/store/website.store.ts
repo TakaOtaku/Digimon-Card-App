@@ -7,24 +7,25 @@ import { DRAG, dummyCard, emptyDeck, IBlog, IDeck, IDraggedCard, ISort } from '.
 import { checkSpecialCardCounts } from '../functions';
 import { MongoBackendService, IDeckFilter, IPaginationResponse } from '../services/mongo-backend.service';
 
+interface IPaginationState {
+  currentPage: number;
+  totalPages: number;
+  totalDecks: number;
+  limit: number;
+  hasNextPage: boolean;
+  hasPrevPage: boolean;
+}
+
 type Website = {
   deck: IDeck;
   mobileCollectionView: boolean;
-  addCardToDeck: string;
+  pendingCardForDeck: string;
   sort: ISort;
   communityDeckSearch: string;
   communityDecks: IDeck[];
   blogs: IBlog[];
   draggedCard: IDraggedCard;
-  // Pagination state
-  decksPagination: {
-    currentPage: number;
-    totalPages: number;
-    totalDecks: number;
-    limit: number;
-    hasNextPage: boolean;
-    hasPrevPage: boolean;
-  };
+  decksPagination: IPaginationState;
   decksFilter: IDeckFilter;
   isLoadingDecks: boolean;
 };
@@ -32,7 +33,7 @@ type Website = {
 const initialState: Website = {
   deck: JSON.parse(JSON.stringify(emptyDeck)),
   mobileCollectionView: false,
-  addCardToDeck: '',
+  pendingCardForDeck: '',
   sort: {
     sortBy: {
       name: 'ID',
@@ -161,7 +162,7 @@ export const WebsiteStore = signalStore(
           return mongoBackendService.getBlogEntries().pipe(
             rxFilter((blogs) => blogs !== null),
             tapResponse({
-              next: (blogs: any) => patchState(store, (state) => ({ blogs })),
+              next: (blogs: IBlog[]) => patchState(store, (state) => ({ blogs })),
               error: () => { },
               finalize: () => { },
             }),
@@ -186,7 +187,7 @@ export const WebsiteStore = signalStore(
       patchState(store, (state) => ({ mobileCollectionView }));
     },
     updateAddCardToDeck(addCardToDeck: string): void {
-      patchState(store, (state) => ({ addCardToDeck }));
+      patchState(store, (state) => ({ pendingCardForDeck: addCardToDeck }));
     },
     updateSort(sort: ISort): void {
       patchState(store, (state) => ({ sort }));
@@ -204,7 +205,7 @@ export const WebsiteStore = signalStore(
         decksFilter: { ...state.decksFilter, ...filter }
       }));
     },
-    updateDecksPagination(pagination: any): void {
+    updateDecksPagination(pagination: IPaginationState): void {
       patchState(store, (state) => ({ decksPagination: pagination }));
     },
     updateBlogs(blogs: IBlog[]): void {
@@ -222,10 +223,10 @@ export const WebsiteStore = signalStore(
       patchState(store, (state) => {
         const cards = state.deck.cards.map((card) => {
           if (card.id === cardToAdd) {
-            card.count += 1;
+            const updated = { ...card, count: card.count + 1 };
+            updated.count = checkSpecialCardCounts(updated);
+            return updated;
           }
-
-          card.count = checkSpecialCardCounts(card);
           return card;
         });
 
@@ -241,7 +242,7 @@ export const WebsiteStore = signalStore(
         const cards = state.deck.cards
           .map((card) => {
             if (card.id === cardToRemove) {
-              card.count -= 1;
+              return { ...card, count: card.count - 1 };
             }
             return card;
           })
@@ -255,10 +256,10 @@ export const WebsiteStore = signalStore(
       patchState(store, (state) => {
         const sideDeck = (state.deck.sideDeck ?? []).map((card) => {
           if (card.id === cardToAdd) {
-            card.count += 1;
+            const updated = { ...card, count: card.count + 1 };
+            updated.count = checkSpecialCardCounts(updated);
+            return updated;
           }
-
-          card.count = checkSpecialCardCounts(card);
           return card;
         });
 
@@ -274,7 +275,7 @@ export const WebsiteStore = signalStore(
         const sideDeck = (state.deck.sideDeck ?? [])
           .map((card) => {
             if (card.id === cardToRemove) {
-              card.count -= 1;
+              return { ...card, count: card.count - 1 };
             }
             return card;
           })

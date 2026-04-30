@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { first, map, Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 import { DigimonCard, IColor, ICountCard, IDeck, ISave, ISettings, IUser } from '@models';
 import { CARDSET, IBlog, IBlogWithText, ITag } from '@models';
 import { sortByReleaseOrder } from '@models';
@@ -47,7 +48,7 @@ export interface IDeckFilter {
     providedIn: 'root',
 })
 export class MongoBackendService {
-    private readonly baseUrl = 'http://digimoncardapp.backend.takaotaku.de/api/';
+    private readonly baseUrl = environment.apiBaseUrl;
 
     constructor(private http: HttpClient) { }
 
@@ -184,16 +185,40 @@ export class MongoBackendService {
      */
     getUserDecks(url: string = this.baseUrl): Observable<IUserAndDecks[]> {
         return this.http.get<any[]>(url + 'users/decks').pipe(
-            map((array: any[]) => {
-                return array.filter((user) => user[1] !== '[]');
-            }),
-            map((array: any[]) => {
-                const userAndDecks: IUserAndDecks[] = [];
-                array.forEach((user) => {
-                    let parsedDecks: any[] = JSON.parse(user[1]);
-                    userAndDecks.push({ user: user[0], decks: parsedDecks });
-                });
-                return userAndDecks;
+            map((payload: any[]) => {
+                if (!Array.isArray(payload) || payload.length === 0) {
+                    return [];
+                }
+
+                // New backend format: [{ _id, title, user, userId, ... }]
+                if (!Array.isArray(payload[0])) {
+                    const groupedByUser = new Map<string, IUserAndDecks>();
+
+                    payload.forEach((rawDeck) => {
+                        const parsedDeck = this.parseDeckFromMongo(rawDeck);
+                        const userId = parsedDeck.userId || 'unknown';
+                        const userName = parsedDeck.user || 'Unknown';
+
+                        if (!groupedByUser.has(userId)) {
+                            groupedByUser.set(userId, {
+                                user: { uid: userId, user: userName },
+                                decks: [],
+                            });
+                        }
+
+                        groupedByUser.get(userId)?.decks.push(parsedDeck);
+                    });
+
+                    return Array.from(groupedByUser.values());
+                }
+
+                // Legacy backend format: [[{ uid, user }, "[decks-json]"], ...]
+                return payload
+                    .filter((user) => user[1] !== '[]')
+                    .map((user) => ({
+                        user: user[0],
+                        decks: JSON.parse(user[1]),
+                    }));
             }),
         );
     }
@@ -323,15 +348,47 @@ export class MongoBackendService {
 
     // ===== HELPER METHODS =====
 
+    private parseArrayField<T>(value: unknown, fallback: T[] = []): T[] {
+        if (Array.isArray(value)) {
+            return value as T[];
+        }
+        if (typeof value === 'string') {
+            try {
+                const parsed = JSON.parse(value);
+                return Array.isArray(parsed) ? (parsed as T[]) : fallback;
+            } catch {
+                return fallback;
+            }
+        }
+        return fallback;
+    }
+
+    private parseObjectField<T extends object>(value: unknown, fallback: T): T {
+        if (value && typeof value === 'object' && !Array.isArray(value)) {
+            return value as T;
+        }
+        if (typeof value === 'string') {
+            try {
+                const parsed = JSON.parse(value);
+                if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) {
+                    return parsed as T;
+                }
+            } catch {
+                return fallback;
+            }
+        }
+        return fallback;
+    }
+
     /**
      * Parse deck data from MongoDB format to application format
      */
     private parseDeckFromMongo(deck: any): IDeck {
-        const cards: ICountCard[] = JSON.parse(deck.cards || '[]');
-        const sideDeck: ICountCard[] = JSON.parse(deck.sideDeck || '[]');
-        const color: IColor = JSON.parse(deck.color || '{}');
-        const tags: ITag[] = JSON.parse(deck.tags || '[]');
-        const likes: string[] = deck.likes ? JSON.parse(deck.likes) : [];
+        const cards: ICountCard[] = this.parseArrayField<ICountCard>(deck.cards, []);
+        const sideDeck: ICountCard[] = this.parseArrayField<ICountCard>(deck.sideDeck, []);
+        const color: IColor = this.parseObjectField<IColor>(deck.color, { name: '', img: '' });
+        const tags: ITag[] = this.parseArrayField<ITag>(deck.tags, []);
+        const likes: string[] = this.parseArrayField<string>(deck.likes, []);
 
         return {
             ...deck,
@@ -350,17 +407,17 @@ export class MongoBackendService {
     private prepareDeckForMongo(deck: IDeck): any {
         return {
             id: deck.id,
-            cards: JSON.stringify(deck.cards || []),
-            sideDeck: JSON.stringify(deck.sideDeck || []),
-            color: JSON.stringify(deck.color || {}),
+            cards: deck.cards || [],
+            sideDeck: deck.sideDeck || [],
+            color: deck.color || { name: '', img: '' },
             title: deck.title,
             description: deck.description,
-            tags: JSON.stringify(deck.tags || []),
+            tags: deck.tags || [],
             date: deck.date,
             user: deck.user,
             userId: deck.userId,
             imageCardId: deck.imageCardId,
-            likes: JSON.stringify(deck.likes || []),
+            likes: deck.likes || [],
             photoUrl: deck.photoUrl
         };
     }
@@ -369,9 +426,9 @@ export class MongoBackendService {
      * Parse save data from MongoDB format to application format
      */
     private parseSaveFromMongo(save: any): ISave {
-        const collection: ICountCard[] = save.cardCollection || [];
-        const decks: IDeck[] = JSON.parse(save.decks || '[]');
-        const settings: ISettings = save.settings || {};
+        const collection: ICountCard[] = this.parseArrayField<ICountCard>(save.cardCollection, []);
+        const decks: IDeck[] = this.parseArrayField<IDeck>(save.decks, []);
+        const settings: ISettings = this.parseObjectField<ISettings>(save.settings, emptySettings);
 
         return {
             ...save,
@@ -390,8 +447,9 @@ export class MongoBackendService {
         return {
             uid: save.uid,
             cardCollection: save.collection,
-            decks: JSON.stringify(save.decks || []),
+            decks: save.decks || [],
             displayName: save.displayName,
+            photoUrl: save.photoUrl,
             photoURL: save.photoUrl,
             settings: save.settings,
             version: save.version || 1

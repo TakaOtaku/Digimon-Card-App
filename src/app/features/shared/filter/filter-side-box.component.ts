@@ -361,9 +361,10 @@ export class FilterSideBoxComponent {
   reset() {
     this.resetEmitter.emit();
     this.filterStore.updateFilter(emptyFilter);
+    this.filterStore.clearAdvancedSearch();
     this.messageService.add({
       severity: 'info',
-      detail: 'All filter were reset.',
+      detail: 'All filters were reset.',
     });
   }
 }
