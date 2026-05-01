@@ -4,7 +4,7 @@ import { Database, ref, set, onValue } from '@angular/fire/database';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ADMINS, emptyDeck, TIERLIST } from '@models';
-import { MongoBackendService } from '@services';
+import { DigimonBackendService } from '@services';
 import { DigimonCardStore, SaveStore, WebsiteStore } from '@store';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { MessageService } from 'primeng/api';
@@ -64,7 +64,7 @@ import { TooltipModule } from 'primeng/tooltip';
           class="text-black-outline w-24 text-center text-7xl font-black leading-[5.5rem] text-[#e2e4e6]">
           {{ key.tier }}
         </div>
-        <p-listbox [options]="tierlist[i]" [(ngModel)]="selectedDeck" optionLabel="name">
+        <p-listbox [options]="tierlist[i]" [(ngModel)]="selectedDeck">
           <ng-template let-deck let-index="index" pTemplate="item">
             <div
               (contextmenu)="removeDeck(deck, index, i)"
@@ -157,7 +157,7 @@ export class TierlistComponent {
   });
   private messageService = inject(MessageService);
   private router: Router = inject(Router);
-  private mongoBackendService = inject(MongoBackendService);
+  private digimonBackendService = inject(DigimonBackendService);
   private changeDetectorRef: ChangeDetectorRef = inject(ChangeDetectorRef);
   private db = inject(Database);
 
@@ -237,6 +237,7 @@ export class TierlistComponent {
   }
 
   removeDeck(deck: any, index: number, tier: number) {
+    console.log('Remove Deck ', deck);
     this.tierlist[tier].splice(index, 1);
   }
 

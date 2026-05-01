@@ -18,7 +18,6 @@ import { FullCardComponent } from '../../shared/full-card.component';
 import { PaginationCardListHeaderComponent } from './pagination-card-list-header.component';
 import { SearchComponent } from './search.component';
 import { FilterStore } from '@store';
-import { AdvancedSearchService } from '../../../services/advanced-search.service';
 
 @Component({
   selector: 'digimon-pagination-card-list',
@@ -35,9 +34,6 @@ import { AdvancedSearchService } from '../../../services/advanced-search.service
       <div
         [pDroppable]="['fromDeck', 'fromSide']"
         (onDrop)="drop(draggedCard(), draggedCard())"
-        role="list"
-        aria-live="polite"
-        aria-label="Card search results"
         class="h-[calc(100vh-8.5rem)] md:h-[calc(100vh-10rem)] lg:h-[calc(100vh-5rem)] flex flex-wrap w-full content-start justify-start overflow-y-scroll">
         @for (card of showCards; track $index) {
           @defer (on viewport) {
@@ -96,7 +92,6 @@ export class PaginationCardListComponent {
   saveStore = inject(SaveStore);
   dialogStore = inject(DialogStore);
   filterStore = inject(FilterStore);
-  advancedSearchService = inject(AdvancedSearchService);
 
   draggedCard = this.websiteStore.draggedCard;
   collection = this.saveStore.collection;
@@ -114,6 +109,7 @@ export class PaginationCardListComponent {
 
   onFilterChange = effect(() => {
     if (this.inputCollection.length === 0) return;
+    console.log('Filter changed');
     const cards = this.digimonCardStore.cards();
 
     if (cards.length === 0) return;
@@ -124,8 +120,6 @@ export class PaginationCardListComponent {
       this.filterStore.filter(),
       this.websiteStore.sort(),
       this.digimonCardStore.cardsMap(),
-      this.filterStore.advancedSearch(),
-      this.advancedSearchService,
     );
 
     this.digimonCardStore.updateFilteredCards(filteredCards);
@@ -141,6 +135,7 @@ export class PaginationCardListComponent {
     });
 
     effect(() => {
+      console.log('Filtered Cards changed');
       const filteredCards = this.digimonCardStore.filteredCards();
       this.showCards = filteredCards.slice(0, this.perPage);
       this.page = 1;

@@ -1,6 +1,5 @@
 /* eslint-disable prettier/prettier */
 import { DigimonCard, ICountCard, IFilter, ISave, ISort, UltimateCup2023, UltimateCup2024 } from '../../models';
-import { AdvancedSearchService } from '../services/advanced-search.service';
 
 export function filterCards(
   cards: DigimonCard[],
@@ -8,108 +7,124 @@ export function filterCards(
   filter: IFilter,
   sort: ISort,
   cardMap: Map<string, DigimonCard>,
-  advancedSearchQuery?: string | null,
-  advancedSearchService?: AdvancedSearchService,
 ): DigimonCard[] {
   let filteredCards: DigimonCard[] = cards;
-  
-  // Apply advanced search first if available
-  if (advancedSearchQuery && advancedSearchService) {
-    filteredCards = advancedSearchService.applyAdvancedSearch(filteredCards, advancedSearchQuery);
-  }
+  let removeCards: DigimonCard[] = [];
 
-  const removeCards = new Set<DigimonCard>();
-
-  filteredCards.forEach((card) => {
+  cards.forEach((card) => {
+    if (filter.searchFilter !== '' && applySearchFilter(card, filter.searchFilter)) {
+      removeCards.push(card);
+      return;
+    }
     if (filter.setFilter.length > 0 && applySetFilter(card, filter.setFilter)) {
-      removeCards.add(card);
+      removeCards.push(card);
       return;
     }
     if (filter.rarityFilter.length > 0 && applyRarityFilter(card, filter.rarityFilter)) {
-      removeCards.add(card);
+      removeCards.push(card);
       return;
     }
     if (filter.cardTypeFilter.length > 0 && applyCardTypeFilter(card, filter.cardTypeFilter)) {
-      removeCards.add(card);
+      removeCards.push(card);
       return;
     }
     if (filter.formFilter.length > 0 && applyFormFilter(card, filter.formFilter)) {
-      removeCards.add(card);
+      removeCards.push(card);
       return;
     }
     if (filter.attributeFilter.length > 0 && applyAttributeFilter(card, filter.attributeFilter)) {
-      removeCards.add(card);
+      removeCards.push(card);
       return;
     }
     if (filter.illustratorFilter.length > 0 && applyIllustratorFilter(card, filter.illustratorFilter)) {
-      removeCards.add(card);
+      removeCards.push(card);
       return;
     }
     if (filter.restrictionsFilter.length > 0 && applyRestrictionFilter(card, filter.restrictionsFilter)) {
-      removeCards.add(card);
+      removeCards.push(card);
       return;
     }
     if (filter.blockFilter.length > 0 && applyBlockFilter(card, filter.blockFilter)) {
-      removeCards.add(card);
+      removeCards.push(card);
       return;
     }
     if (filter.colorFilter.length > 0 && applyColorFilter(card, filter.colorFilter)) {
-      removeCards.add(card);
+      removeCards.push(card);
       return;
     }
     if (filter.typeFilter.length > 0 && applyTypeFilter(card, filter.typeFilter)) {
-      removeCards.add(card);
+      removeCards.push(card);
       return;
     }
     if (filter.versionFilter.length > 0 && applyVersionFilter(card, filter.versionFilter)) {
-      removeCards.add(card);
+      removeCards.push(card);
       return;
     }
     if (filter.keywordFilter.length > 0 && applyKeywordFilter(card, filter.keywordFilter)) {
-      removeCards.add(card);
+      removeCards.push(card);
       return;
     }
     if (filter.specialRequirementsFilter.length > 0 && applySpecialRequirementsFilter(card, filter.specialRequirementsFilter)) {
-      removeCards.add(card);
+      removeCards.push(card);
       return;
     }
     if (filter.sourceFilter.length > 0 && applySourceFilter(card, filter.sourceFilter)) {
-      removeCards.add(card);
+      removeCards.push(card);
       return;
     }
     if (applyCardCountFilter(card, save, filter.cardCountFilter)) {
-      removeCards.add(card);
+      removeCards.push(card);
       return;
     }
     if (applyRangeFilter(card, filter.levelFilter, 'level')) {
-      removeCards.add(card);
+      removeCards.push(card);
       return;
     }
     if (applyRangeFilter(card, filter.playCostFilter, 'playCost')) {
-      removeCards.add(card);
+      removeCards.push(card);
       return;
     }
     if (applyRangeFilter(card, filter.digivolutionFilter, 'digivolution')) {
-      removeCards.add(card);
+      removeCards.push(card);
       return;
     }
     if (applyRangeFilter(card, filter.dpFilter, 'dp')) {
-      removeCards.add(card);
+      removeCards.push(card);
       return;
     }
     if (filter.presetFilter.length > 0 && applyPresetFilter(card, filter.presetFilter)) {
-      removeCards.add(card);
+      removeCards.push(card);
       return;
     }
   });
 
-  filteredCards = filteredCards.filter((card) => !removeCards.has(card));
+  filteredCards = filteredCards.filter((card) => !removeCards.includes(card));
 
   filteredCards = applySortOrder(filteredCards, sort, save.collection);
   return filteredCards;
 }
 
 //region Filter Functions
+function applySearchFilter(card: DigimonCard, searchFilter: string): boolean {
+  function deepSearch(obj: any): boolean {
+    if (typeof obj === 'string') {
+      return obj.toLowerCase().includes(searchFilter.toLowerCase());
+    }
+
+    if (Array.isArray(obj)) {
+      return obj.some((item) => deepSearch(item));
+    }
+
+    if (typeof obj === 'object') {
+      return Object.values(obj).some((value) => deepSearch(value));
+    }
+
+    return false;
+  }
+
+  return !deepSearch(card);
+}
+
 function applySetFilter(card: DigimonCard, filter: string[]): boolean {
   return !filter.includes(card['id'].split('-')[0]);
 }
@@ -275,7 +290,7 @@ function applyRangeFilter(card: DigimonCard, filter: number[], key: string): boo
         return false;
       }
 
-      const level: number = parseInt(card['cardLv'].replace(/\D/g, ''), 10) || 0;
+      const level: number = +card['cardLv'].slice(-1) >>> 0;
       if (filter[1] === 7) {
         return filter[0] > level;
       }
@@ -359,6 +374,7 @@ function applySortOrder(cards: DigimonCard[], sort: ISort, collection: ICountCar
   }
   return sort.ascOrder ? returnArray.sort(dynamicSort(sort.sortBy.element)) : returnArray.sort(dynamicSort(`-${sort.sortBy.element}`));
 }
+
 //endregion
 
 export function dynamicSort(property: string): any {

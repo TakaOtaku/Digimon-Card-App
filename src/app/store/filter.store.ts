@@ -4,19 +4,17 @@ import { emptyFilter, IFilter } from '../../models';
 
 type FilterStore = {
   filter: IFilter;
-  advancedSearch: string | null;
 };
 
 const initialState: FilterStore = {
   filter: emptyFilter,
-  advancedSearch: null,
 };
 
 export const FilterStore = signalStore(
   { providedIn: 'root' },
   withState(initialState),
 
-  withComputed(({ filter, advancedSearch }) => ({
+  withComputed(({ filter }) => ({
     searchFilter: computed(() => filter.searchFilter()),
     colorFilter: computed(() => filter.colorFilter()),
     cardTypeFilter: computed(() => filter.cardTypeFilter()),
@@ -24,7 +22,6 @@ export const FilterStore = signalStore(
     rarityFilter: computed(() => filter.rarityFilter()),
     versionFilter: computed(() => filter.versionFilter()),
     setFilter: computed(() => filter.setFilter()),
-    advancedSearchActive: computed(() => advancedSearch() !== null && advancedSearch()!.trim() !== ''),
   })),
 
   withMethods((store) => ({
@@ -65,12 +62,6 @@ export const FilterStore = signalStore(
       patchState(store, (state) => ({
         filter: { ...state.filter, setFilter },
       }));
-    },
-    updateAdvancedSearch(advancedSearch: string | null): void {
-      patchState(store, (state) => ({ advancedSearch }));
-    },
-    clearAdvancedSearch(): void {
-      patchState(store, (state) => ({ advancedSearch: null }));
     },
   })),
 );

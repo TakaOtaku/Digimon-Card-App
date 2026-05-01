@@ -1,42 +1,30 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterStore } from '@store';
-import { AdvancedSearchComponent } from '../../shared/advanced-search.component';
+import { IconField } from 'primeng/iconfield';
+import { InputIcon } from 'primeng/inputicon';
+import { InputTextModule } from 'primeng/inputtext';
+import { debounceTime, distinctUntilChanged } from 'rxjs';
 
 @Component({
   selector: 'digimon-search',
   template: `
-    <div class="w-full">
-      <!-- Advanced Search Component as the main search -->
-      <digimon-advanced-search 
-        (searchChange)="onAdvancedSearchChange($event)">
-      </digimon-advanced-search>
-    </div>
+    <p-icon-field class="m-1">
+      <p-inputicon styleClass="pi pi-search"></p-inputicon>
+      <input [formControl]="search$" class="h-6 w-full text-xs" pInputText placeholder="Search" type="text" />
+    </p-icon-field>
   `,
   standalone: true,
-  imports: [AdvancedSearchComponent],
+  imports: [FormsModule, InputTextModule, ReactiveFormsModule, IconField, InputIcon],
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent {
   filterStore = inject(FilterStore);
-  private router = inject(Router);
-  private route = inject(ActivatedRoute);
+  search$ = new FormControl<string>('');
 
-  ngOnInit(): void {
-    const search = this.route.snapshot.queryParamMap.get('search');
-    if (search) {
-      this.filterStore.updateAdvancedSearch(search);
-    }
-  }
-
-  onAdvancedSearchChange(searchQuery: string): void {
-    this.filterStore.updateAdvancedSearch(searchQuery || null);
-
-    // Update URL query parameter without navigating
-    this.router.navigate([], {
-      relativeTo: this.route,
-      queryParams: searchQuery ? { search: searchQuery } : {},
-      queryParamsHandling: searchQuery ? 'merge' : '',
-      replaceUrl: true,
+  constructor() {
+    this.search$.valueChanges.pipe(debounceTime(200), distinctUntilChanged()).subscribe((search) => {
+      const value = search ? search : '';
+      this.filterStore.updateSearchFilter(value);
     });
   }
 }
