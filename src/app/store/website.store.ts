@@ -6,7 +6,7 @@ import { distinctUntilChanged, filter, first, pipe, switchMap } from 'rxjs';
 import { DRAG, dummyCard, emptyDeck, IBlog, IDeck, IDraggedCard, ISort } from '../../models';
 import { checkSpecialCardCounts } from '../functions';
 import { ProductCM } from '../services/card-market.service';
-import { DigimonBackendService } from '../services/digimon-backend.service';
+import { IDeckFilter, IPaginationResponse, MongoBackendService } from '../services/mongo-backend.service';
 
 type Website = {
   deck: IDeck;
@@ -18,6 +18,9 @@ type Website = {
   blogs: IBlog[];
   priceGuideCM: ProductCM[];
   draggedCard: IDraggedCard;
+  decksFilter: IDeckFilter;
+  isLoadingDecks: boolean;
+  decksPagination: IPaginationResponse<IDeck>['pagination'];
 };
 
 const initialState: Website = {
@@ -39,18 +42,28 @@ const initialState: Website = {
     card: JSON.parse(JSON.stringify(dummyCard)),
     drag: DRAG.Collection,
   },
+  decksFilter: {},
+  isLoadingDecks: false,
+  decksPagination: {
+    currentPage: 1,
+    totalPages: 1,
+    totalDecks: 0,
+    limit: 20,
+    hasNextPage: false,
+    hasPrevPage: false,
+  },
 };
 
 export const WebsiteStore = signalStore(
   { providedIn: 'root' },
   withState(initialState),
 
-  withMethods((store, digimonBackendService = inject(DigimonBackendService)) => ({
+  withMethods((store, mongoBackendService = inject(MongoBackendService)) => ({
     loadCommunityDecks: rxMethod<void>(
       pipe(
         distinctUntilChanged(),
         switchMap(() => {
-          return digimonBackendService.getDecks().pipe(
+          return mongoBackendService.getDecks().pipe(
             filter((decks) => decks !== null),
             tapResponse({
               next: (communityDecks: any) => patchState(store, (state) => ({ communityDecks })),
@@ -66,7 +79,7 @@ export const WebsiteStore = signalStore(
       pipe(
         distinctUntilChanged(),
         switchMap(() => {
-          return digimonBackendService.getBlogEntries().pipe(
+          return mongoBackendService.getBlogEntries().pipe(
             filter((blogs) => blogs !== null),
             tapResponse({
               next: (blogs: any) => patchState(store, (state) => ({ blogs })),
@@ -77,6 +90,40 @@ export const WebsiteStore = signalStore(
         }),
       ),
     ),
+
+    loadCommunityDecksWithFilter(filterParam: IDeckFilter): void {
+      patchState(store, { isLoadingDecks: true, decksFilter: filterParam });
+      mongoBackendService.getDecksPaginated(filterParam).subscribe({
+        next: (response) => {
+          patchState(store, {
+            communityDecks: response.data,
+            decksPagination: response.pagination,
+            isLoadingDecks: false,
+          });
+        },
+        error: () => {
+          patchState(store, { isLoadingDecks: false });
+        },
+      });
+    },
+
+    loadDecksPage(page: number): void {
+      const currentFilter = store.decksFilter();
+      const filterWithPage = { ...currentFilter, page };
+      patchState(store, { isLoadingDecks: true });
+      mongoBackendService.getDecksPaginated(filterWithPage).subscribe({
+        next: (response) => {
+          patchState(store, {
+            communityDecks: response.data,
+            decksPagination: response.pagination,
+            isLoadingDecks: false,
+          });
+        },
+        error: () => {
+          patchState(store, { isLoadingDecks: false });
+        },
+      });
+    },
 
     updateDeck(deck: IDeck): void {
       patchState(store, (state) => ({ deck }));
