@@ -1,0 +1,17 @@
+# Nixpacks configuration for Coolify deployment
+[variables]
+NIXPACKS_NODE_VERSION = "22"
+NPM_CONFIG_UPDATE_NOTIFIER = "false"
+NPM_CONFIG_FUND = "false"
+NPM_CONFIG_AUDIT = "false"
+DISABLE_OPENCOLLECTIVE = "true"
+NODE_OPTIONS = "--max-old-space-size=4096"
+
+[phases.install]
+cmds = ["npm ci --prefer-offline --no-audit --no-fund --quiet"]
+
+[phases.build]
+cmds = ["npm run build"]
+
+[start]
+cmd = "npm run start"

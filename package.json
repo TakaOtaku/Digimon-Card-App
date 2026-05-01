@@ -16,6 +16,10 @@
     "format:all": "npm run lint:all -- --fix && prettier --write \"src/**/*.{ts,html,scss,css,json}\""
   },
   "private": true,
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
   "dependencies": {
     "@angular/animations": "^19.2.10",
     "@angular/cdk": "19.2.15",
