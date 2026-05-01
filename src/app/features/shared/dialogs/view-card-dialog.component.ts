@@ -2,7 +2,7 @@ import { NgClass, NgForOf, NgIf, NgStyle } from '@angular/common';
 import { ChangeDetectorRef, Component, effect, HostListener, inject } from '@angular/core';
 import { ImgFallbackDirective } from '@directives';
 import { formatId, isDigimonType, withoutJ } from '@functions';
-import { ColorMap, DigimonCard, ICountCard, IDeck, replacements } from '@models';
+import { ColorMap, DigimonCard, ICountCard, IDeck, RarityAbbreviationMap, replacements } from '@models';
 import { DialogStore, DigimonCardStore, SaveStore, WebsiteStore } from '@store';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { ButtonModule } from 'primeng/button';
@@ -19,7 +19,7 @@ import { TooltipModule } from 'primeng/tooltip';
             {{ card.cardNumber }}
           </p>
           <p class="self-center font-bold uppercase text-[#e2e4e6]" id="Card-Rarity">
-            {{ card.rarity }}
+            {{ getRarity(card.rarity) }}
           </p>
           <p class="self-center font-bold uppercase text-[#e2e4e6]" id="Card-Block">
             {{ card.block }}
@@ -411,5 +411,9 @@ export class ViewCardDialogComponent {
       return 'Rare Pull';
     }
     return 'Normal';
+  }
+
+  getRarity(rarity: string): string {
+    return RarityAbbreviationMap.get(rarity) ?? rarity;
   }
 }
