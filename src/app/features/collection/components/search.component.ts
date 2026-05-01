@@ -1,30 +1,42 @@
-import { Component, inject } from '@angular/core';
-import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Component, inject, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FilterStore } from '@store';
-import { IconField } from 'primeng/iconfield';
-import { InputIcon } from 'primeng/inputicon';
-import { InputTextModule } from 'primeng/inputtext';
-import { debounceTime, distinctUntilChanged } from 'rxjs';
+import { AdvancedSearchComponent } from '../../shared/advanced-search.component';
 
 @Component({
   selector: 'digimon-search',
   template: `
-    <p-icon-field class="m-1">
-      <p-inputicon styleClass="pi pi-search"></p-inputicon>
-      <input [formControl]="search$" class="h-6 w-full text-xs" pInputText placeholder="Search" type="text" />
-    </p-icon-field>
+    <div class="w-full">
+      <!-- Advanced Search Component as the main search -->
+      <digimon-advanced-search 
+        (searchChange)="onAdvancedSearchChange($event)">
+      </digimon-advanced-search>
+    </div>
   `,
   standalone: true,
-  imports: [FormsModule, InputTextModule, ReactiveFormsModule, IconField, InputIcon],
+  imports: [AdvancedSearchComponent],
 })
-export class SearchComponent {
+export class SearchComponent implements OnInit {
   filterStore = inject(FilterStore);
-  search$ = new FormControl<string>('');
+  private router = inject(Router);
+  private route = inject(ActivatedRoute);
 
-  constructor() {
-    this.search$.valueChanges.pipe(debounceTime(200), distinctUntilChanged()).subscribe((search) => {
-      const value = search ? search : '';
-      this.filterStore.updateSearchFilter(value);
+  ngOnInit(): void {
+    const search = this.route.snapshot.queryParamMap.get('search');
+    if (search) {
+      this.filterStore.updateAdvancedSearch(search);
+    }
+  }
+
+  onAdvancedSearchChange(searchQuery: string): void {
+    this.filterStore.updateAdvancedSearch(searchQuery || null);
+
+    // Update URL query parameter without navigating
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: searchQuery ? { search: searchQuery } : {},
+      queryParamsHandling: searchQuery ? 'merge' : '',
+      replaceUrl: true,
     });
   }
 }
