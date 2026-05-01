@@ -88,10 +88,26 @@ export class AuthService {
               }
               this.authStateResolved$.next(true);
             }),
+            catchError((err) => {
+              console.error('Error loading user save:', err);
+              this.authStateResolved$.next(true);
+              return of(null);
+            }),
           );
         }),
+        catchError((err) => {
+          console.error('Auth state error:', err);
+          this.userSignal.set(null);
+          this.authStateResolved$.next(true);
+          return of(null);
+        }),
       )
-      .subscribe();
+      .subscribe({
+        error: (err) => {
+          console.error('Auth subscription error:', err);
+          this.authStateResolved$.next(true);
+        },
+      });
   }
 
   /**
