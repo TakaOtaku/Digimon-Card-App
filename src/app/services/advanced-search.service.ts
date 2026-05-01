@@ -373,19 +373,7 @@ export class AdvancedSearchService {
       }
     }
 
-    // Treat unparseable conditions as plain text name search
-    const textTerm = condition.replace(/^["'(]|["')]$/g, '').trim();
-    if (textTerm) {
-      return {
-        $or: [
-          { 'name.english': { $regex: this.escapeRegex(textTerm), $options: 'i' } },
-          { 'name.japanese': { $regex: this.escapeRegex(textTerm), $options: 'i' } },
-          { effect: { $regex: this.escapeRegex(textTerm), $options: 'i' } },
-          { digivolveEffect: { $regex: this.escapeRegex(textTerm), $options: 'i' } },
-          { securityEffect: { $regex: this.escapeRegex(textTerm), $options: 'i' } },
-        ]
-      };
-    }
+    console.warn('Could not parse condition:', condition);
     return null;
   }
 
