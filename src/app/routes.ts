@@ -18,7 +18,6 @@ export const routes: Routes = [
   {
     path: 'user',
     loadComponent: () => import('./features/profile/profile-page.component').then(m => m.ProfilePageComponent),
-    canActivate: [authGuard],
   },
   {
     path: 'user/:id',
@@ -35,7 +34,6 @@ export const routes: Routes = [
   {
     path: 'deckbuilder',
     loadComponent: () => import('./features/deckbuilder/deckbuilder-page.component').then(m => m.DeckbuilderPageComponent),
-    canActivate: [authGuard],
   },
   {
     path: 'collection',

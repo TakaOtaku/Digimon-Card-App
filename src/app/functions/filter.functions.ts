@@ -12,7 +12,7 @@ export function filterCards(
   advancedSearchService?: AdvancedSearchService,
 ): DigimonCard[] {
   let filteredCards: DigimonCard[] = cards;
-  
+
   // Apply advanced search first if available
   if (advancedSearchQuery && advancedSearchService) {
     filteredCards = advancedSearchService.applyAdvancedSearch(filteredCards, advancedSearchQuery);

@@ -1,6 +1,6 @@
 export const environment = {
-  production: true,
-  apiBaseUrl: 'https://digimoncardapp.backend.takaotaku.de/api/',
+  production: false,
+  apiBaseUrl: 'http://localhost:3001/api/',
   legacyApiBaseUrl: 'https://backend.digimoncard.app/api/',
   firebaseConfig: {
     apiKey: 'AIzaSyAdV8igtmcuSjmNQr2QU2NscmTAn4nWwUg',

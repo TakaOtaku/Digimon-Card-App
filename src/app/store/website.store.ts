@@ -67,8 +67,8 @@ export const WebsiteStore = signalStore(
             filter((decks) => decks !== null),
             tapResponse({
               next: (communityDecks: any) => patchState(store, (state) => ({ communityDecks })),
-              error: () => {},
-              finalize: () => {},
+              error: () => { },
+              finalize: () => { },
             }),
           );
         }),
@@ -83,8 +83,8 @@ export const WebsiteStore = signalStore(
             filter((blogs) => blogs !== null),
             tapResponse({
               next: (blogs: any) => patchState(store, (state) => ({ blogs })),
-              error: () => {},
-              finalize: () => {},
+              error: () => { },
+              finalize: () => { },
             }),
           );
         }),

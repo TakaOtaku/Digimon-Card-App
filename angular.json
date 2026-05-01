@@ -42,12 +42,20 @@
               "./src/styles.scss"
             ],
             "stylePreprocessorOptions": {
-              "includePaths": ["node_modules/"]
+              "includePaths": [
+                "node_modules/"
+              ]
             },
             "scripts": []
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",
