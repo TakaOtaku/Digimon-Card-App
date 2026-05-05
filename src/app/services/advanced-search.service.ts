@@ -374,7 +374,21 @@ export class AdvancedSearchService {
     }
 
     console.warn('Could not parse condition:', condition);
-    return null;
+    // Treat as a text search term — match against common text fields
+    const escapedTerm = this.escapeRegex(condition);
+    return {
+      $or: [
+        { 'name.english': { $regex: escapedTerm, $options: 'i' } },
+        { 'name.japanese': { $regex: escapedTerm, $options: 'i' } },
+        { effect: { $regex: escapedTerm, $options: 'i' } },
+        { digivolveEffect: { $regex: escapedTerm, $options: 'i' } },
+        { securityEffect: { $regex: escapedTerm, $options: 'i' } },
+        { id: { $regex: escapedTerm, $options: 'i' } },
+        { cardNumber: { $regex: escapedTerm, $options: 'i' } },
+        { type: { $regex: escapedTerm, $options: 'i' } },
+        { notes: { $regex: escapedTerm, $options: 'i' } },
+      ]
+    };
   }
 
   /**
