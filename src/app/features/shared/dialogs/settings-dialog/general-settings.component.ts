@@ -1,16 +1,15 @@
 import { NgStyle } from '@angular/common';
 import { Component, effect, inject } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, UntypedFormControl } from '@angular/forms';
-import { yearsPerPage } from '@angular/material/datepicker';
 import { saveAs } from 'file-saver';
 import { ToastrService } from 'ngx-toastr';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ButtonDirective } from 'primeng/button';
-import { Card } from 'primeng/card';
 import { InputNumber } from 'primeng/inputnumber';
 import { MultiSelect } from 'primeng/multiselect';
 import { SelectButton } from 'primeng/selectbutton';
-import { emptySettings, GroupedSets, ICountCard, ISave, VersionButtons } from '@models';
+import { ToggleSwitch } from 'primeng/toggleswitch';
+import { emptySettings, GroupedSets, ICountCard, ISave, PriceMetric, VersionButtons } from '@models';
 import { MongoBackendService } from '@services';
 import { DialogStore } from '@store';
 import { SaveStore } from '@store';
@@ -20,136 +19,115 @@ import { SettingsRowComponent } from '../../settings-row.component';
 @Component({
   selector: 'digimon-general-settings',
   template: `
-    <p-card header="Deckbuilder" subheader="Settings for the Deckbuilder" styleClass="border-slate-300 border">
-      <digimon-settings-row title="Sort Cards by">
-        <p-selectButton [allowEmpty]="false" [formControl]="sortOrderFilter" [multiple]="false" [options]="sortOrder"> </p-selectButton>
-      </digimon-settings-row>
+    <div class="flex flex-col gap-5 p-2">
+      <!-- Deckbuilder Section -->
+      <section class="rounded-xl border border-white/10 bg-white/[0.03] p-5">
+        <h3 class="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-[#64B5F6]">
+          <i class="pi pi-pencil text-xs"></i> Deckbuilder
+        </h3>
+        <digimon-settings-row title="Sort Cards by">
+          <p-selectButton [allowEmpty]="false" [formControl]="sortOrderFilter" [multiple]="false" [options]="sortOrder"></p-selectButton>
+        </digimon-settings-row>
+        <digimon-settings-row title="Display SideDecks">
+          <p-selectButton [allowEmpty]="false" [(ngModel)]="sideDeck" [options]="yesNoOptions" optionLabel="label" optionValue="value"></p-selectButton>
+        </digimon-settings-row>
+        <digimon-settings-row title="Display Filter on Fullscreen">
+          <p-selectButton [allowEmpty]="false" [(ngModel)]="fullscreenFilter" [options]="yesNoOptions" optionLabel="label" optionValue="value"></p-selectButton>
+        </digimon-settings-row>
+        <digimon-settings-row title="Show Prices">
+          <p-toggleSwitch [(ngModel)]="showPrices"></p-toggleSwitch>
+        </digimon-settings-row>
+        @if (showPrices) {
+          <digimon-settings-row title="Price Display Metric">
+            <p-selectButton [allowEmpty]="false" [(ngModel)]="priceMetric" [options]="priceMetricOptions" optionLabel="label" optionValue="value"></p-selectButton>
+          </digimon-settings-row>
+        }
+      </section>
 
-      <digimon-settings-row title="Display SideDecks">
-        <p-selectButton
-          [allowEmpty]="false"
-          [(ngModel)]="sideDeck"
-          [options]="yesNoOptions"
-          optionLabel="label"
-          optionValue="value"></p-selectButton>
-      </digimon-settings-row>
+      <!-- Collection Section -->
+      <section class="rounded-xl border border-white/10 bg-white/[0.03] p-5">
+        <h3 class="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-[#64B5F6]">
+          <i class="pi pi-folder text-xs"></i> Collection
+        </h3>
+        <digimon-settings-row title="Sets you want to complete">
+          <p-multiSelect
+            [filter]="false"
+            [(ngModel)]="setGoal"
+            [group]="true"
+            [options]="groupedSets"
+            [showHeader]="false"
+            [showToggleAll]="false"
+            placeholder="Select sets to collect"
+            display="chip"
+            scrollHeight="250px"
+            class="w-full max-w-[250px]"
+            styleClass="w-full max-w-[250px] h-8 text-sm">
+            <ng-template let-group pTemplate="group">
+              <div class="align-items-center flex">
+                <span>{{ group.label }}</span>
+              </div>
+            </ng-template>
+          </p-multiSelect>
+        </digimon-settings-row>
+        <digimon-settings-row title="Collection Goal">
+          <p-inputNumber [(ngModel)]="collectionCount" mode="decimal"></p-inputNumber>
+        </digimon-settings-row>
+        <digimon-settings-row title="AA Collection Goal">
+          <p-inputNumber [(ngModel)]="aaCollectionCount" mode="decimal"></p-inputNumber>
+        </digimon-settings-row>
+        <digimon-settings-row title="Collection Filter Max">
+          <p-inputNumber [(ngModel)]="collectionFilterMax" mode="decimal"></p-inputNumber>
+        </digimon-settings-row>
+        <digimon-settings-row title="Version Default Filter">
+          <digimon-multi-buttons
+            (clickEvent)="changeVersionFilterDefault($event)"
+            [buttonArray]="versionButtons"
+            [value]="versionFilterDefault"
+            [perRow]="3"
+            title="Version"></digimon-multi-buttons>
+        </digimon-settings-row>
+      </section>
 
-      <digimon-settings-row title="Display Filter on Fullscreen">
-        <p-selectButton
-          [allowEmpty]="false"
-          [(ngModel)]="fullscreenFilter"
-          [options]="yesNoOptions"
-          optionLabel="label"
-          optionValue="value"></p-selectButton>
-      </digimon-settings-row>
-    </p-card>
+      <!-- Profile Section -->
+      <section class="rounded-xl border border-white/10 bg-white/[0.03] p-5">
+        <h3 class="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-[#64B5F6]">
+          <i class="pi pi-user text-xs"></i> Profile
+        </h3>
+        <digimon-settings-row title="Username">
+          <input type="text" pInputText [(ngModel)]="username" class="w-full max-w-[220px]" />
+        </digimon-settings-row>
+        <digimon-settings-row title="Profile Image URL">
+          <input type="text" pInputText [(ngModel)]="displayImage" class="w-full max-w-[220px]" />
+        </digimon-settings-row>
+        <digimon-settings-row title="Show Collection Stats">
+          <p-selectButton [allowEmpty]="false" [(ngModel)]="userStats" [options]="yesNoOptions" optionLabel="label" optionValue="value"></p-selectButton>
+        </digimon-settings-row>
+        <digimon-settings-row title="Display Decks as Table">
+          <p-selectButton [allowEmpty]="false" [(ngModel)]="deckDisplayTable" [options]="yesNoOptions" optionLabel="label" optionValue="value"></p-selectButton>
+        </digimon-settings-row>
+      </section>
 
-    <p-card class="m-1" header="Collection" subheader="Settings for the Collection" styleClass="border-slate-300 border">
-      <digimon-settings-row title="Sets you want to complete">
-        <p-multiSelect
-          [filter]="false"
-          [(ngModel)]="setGoal"
-          [group]="true"
-          [options]="groupedSets"
-          [showHeader]="false"
-          [showToggleAll]="false"
-          placeholder="Select sets to collect"
-          display="chip"
-          scrollHeight="250px"
-          class="mx-auto mb-2 w-full max-w-[250px]"
-          styleClass="w-full max-w-[250px] h-8 text-sm">
-          <ng-template let-group pTemplate="group">
-            <div class="align-items-center flex">
-              <span>{{ group.label }}</span>
-            </div>
-          </ng-template>
-        </p-multiSelect>
-      </digimon-settings-row>
-      <digimon-settings-row title="Collection Goal">
-        <p-inputNumber [(ngModel)]="collectionCount" mode="decimal"></p-inputNumber>
-      </digimon-settings-row>
-      <digimon-settings-row title="AA Collection Goal">
-        <p-inputNumber [(ngModel)]="aaCollectionCount" mode="decimal"></p-inputNumber>
-      </digimon-settings-row>
-      <digimon-settings-row title="Collection Filter Max">
-        <p-inputNumber [(ngModel)]="collectionFilterMax" mode="decimal"></p-inputNumber>
-      </digimon-settings-row>
-      <digimon-settings-row title="Version Default Filter">
-        <digimon-multi-buttons
-          (clickEvent)="changeVersionFilterDefault($event)"
-          [buttonArray]="versionButtons"
-          [value]="versionFilterDefault"
-          [perRow]="3"
-          title="Version"></digimon-multi-buttons>
-      </digimon-settings-row>
-    </p-card>
+      <!-- Save Data Section -->
+      <section class="rounded-xl border border-white/10 bg-white/[0.03] p-5">
+        <h3 class="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-[#64B5F6]">
+          <i class="pi pi-database text-xs"></i> Save Data
+        </h3>
+        <div class="flex flex-col gap-3 sm:flex-row sm:justify-center sm:flex-wrap">
+          <input #fileUpload (change)="handleFileInput($event.target)" [ngStyle]="{ display: 'none' }" accept=".json" type="file" />
+          <button (click)="fileUpload.click()" class="min-w-[150px]" icon="pi pi-upload" label="Import" pButton type="button"></button>
+          <button (click)="exportSave()" class="min-w-[150px]" icon="pi pi-download" label="Export" pButton type="button"></button>
+          <button (click)="deleteSave($event)" class="min-w-[150px] p-button-danger" icon="pi pi-trash" label="Delete" pButton type="button"></button>
+        </div>
+      </section>
 
-    <p-card class="m-1" header="Profile" subheader="Settings for your Profile" styleClass="border-slate-300 border">
-      <digimon-settings-row title="Username">
-        <input type="text" pInputText [(ngModel)]="username" />
-      </digimon-settings-row>
-      <digimon-settings-row title="Profile Image">
-        <input type="text" pInputText [(ngModel)]="displayImage" />
-      </digimon-settings-row>
-      <digimon-settings-row title="Collection-Stats">
-        <p-selectButton
-          [allowEmpty]="false"
-          [(ngModel)]="userStats"
-          [options]="yesNoOptions"
-          optionLabel="label"
-          optionValue="value"></p-selectButton>
-      </digimon-settings-row>
-
-      <digimon-settings-row title="Display Decks in a Table">
-        <p-selectButton
-          [allowEmpty]="false"
-          [(ngModel)]="deckDisplayTable"
-          [options]="yesNoOptions"
-          optionLabel="label"
-          optionValue="value"></p-selectButton>
-      </digimon-settings-row>
-    </p-card>
-
-    <p-card class="m-1" header="Save" subheader="Interactions with your Save" styleClass="border-slate-300 border">
-      <div class="flex flex-col justify-between lg:flex-row">
-        <input #fileUpload (change)="handleFileInput($event.target)" [ngStyle]="{ display: 'none' }" accept=".json" type="file" />
-        <button
-          (click)="fileUpload.click()"
-          class="m-auto mb-2 min-w-[200px] max-w-[200px]"
-          icon="pi pi-upload"
-          label="Import Save"
-          pButton
-          type="button"></button>
-        <button
-          (click)="exportSave()"
-          class="m-auto mb-2 min-w-[200px] max-w-[200px]"
-          icon="pi pi-download"
-          label="Export Save"
-          pButton
-          type="button"></button>
-        <button
-          (click)="deleteSave($event)"
-          class="m-auto mb-2 min-w-[200px] max-w-[200px]"
-          icon="pi pi-times"
-          label="Delete Save"
-          pButton
-          type="button"></button>
+      <!-- Save Button -->
+      <div class="flex justify-end pt-2">
+        <button (click)="saveSettings()" class="px-8" icon="pi pi-check" label="Save Settings" pButton type="button"></button>
       </div>
-    </p-card>
-
-    <button (click)="saveSettings()" class="mt-10" icon="pi pi-save" label="Save Settings" pButton type="button"></button>
+    </div>
   `,
-  styles: [
-    `
-      .centered-tabs .p-tabview-nav {
-        display: flex;
-        justify-content: center;
-      }
-    `,
-  ],
   standalone: true,
   imports: [
-    Card,
     SettingsRowComponent,
     SelectButton,
     ReactiveFormsModule,
@@ -159,6 +137,7 @@ import { SettingsRowComponent } from '../../settings-row.component';
     ButtonDirective,
     MultiButtonsComponent,
     NgStyle,
+    ToggleSwitch,
   ],
   providers: [MessageService],
 })
@@ -194,6 +173,17 @@ export class GeneralSettingsComponent {
 
   fullscreenFilter = true;
 
+  showPrices = false;
+  priceMetric: string = PriceMetric.Trend;
+  priceMetricOptions = [
+    { label: 'Low', value: PriceMetric.Low },
+    { label: 'Avg', value: PriceMetric.Avg },
+    { label: 'Trend', value: PriceMetric.Trend },
+    { label: '1-Day', value: PriceMetric.Avg1 },
+    { label: '7-Day', value: PriceMetric.Avg7 },
+    { label: '30-Day', value: PriceMetric.Avg30 },
+  ];
+
   displayImage = '';
   username = '';
 
@@ -215,6 +205,16 @@ export class GeneralSettingsComponent {
       this.username = save.displayName ?? '';
       this.displayImage = save.photoUrl ?? '';
       this.save = JSON.stringify(save, undefined, 4);
+      this.priceMetric = save.settings?.priceMetric ?? PriceMetric.Trend;
+      this.showPrices = save.settings?.showPrices ?? false;
+      this.setGoal = save.settings?.collectionSets ?? [];
+      this.collectionCount = save.settings?.collectionMinimum ?? 1;
+      this.aaCollectionCount = save.settings?.aaCollectionMinimum ?? 1;
+      this.userStats = save.settings?.showUserStats ?? true;
+      this.sideDeck = save.settings?.displaySideDeck ?? true;
+      this.deckDisplayTable = save.settings?.deckDisplayTable ?? true;
+      this.fullscreenFilter = save.settings?.fullscreenFilter ?? true;
+      this.collectionFilterMax = save.settings?.countMax ?? 5;
 
       const filterMappings = [
         { setting: 'showNormalCards', value: 'Normal' },
@@ -255,6 +255,8 @@ export class GeneralSettingsComponent {
         collectionSets: this.setGoal,
         fullscreenFilter: this.fullscreenFilter,
         countMax: this.collectionFilterMax,
+        showPrices: this.showPrices,
+        priceMetric: this.priceMetric,
 
         showNormalCards: this.versionFilterDefault.includes('Normal'),
         showAACards: this.versionFilterDefault.includes('Alternative Art'),

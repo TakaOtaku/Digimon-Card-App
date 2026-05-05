@@ -108,8 +108,8 @@ import { DialogModule } from 'primeng/dialog';
           'max-lg:mr-5': !sidebar,
         }"
         (click)="openSettings()">
-        <i class="pi pi-ellipsis-h text-center text-[#e2e4e6] group-hover:text-[#64B5F6]" style="font-size: 1.5rem"></i>
-        <span class="text-xs text-center text-[#e2e4e6] group-hover:text-[#64B5F6]">Options</span>
+        <i class="pi pi-cog text-center text-[#e2e4e6] group-hover:text-[#64B5F6]" style="font-size: 1.5rem"></i>
+        <span class="text-xs text-center text-[#e2e4e6] group-hover:text-[#64B5F6]">Settings</span>
       </div>
 
       <div class="grid grid-cols-2 justify-center items-center">

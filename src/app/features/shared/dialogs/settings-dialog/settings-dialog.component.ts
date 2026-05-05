@@ -7,8 +7,8 @@ import { GeneralSettingsComponent } from './general-settings.component';
 @Component({
   selector: 'digimon-settings-dialog',
   template: `
-    <p-tabView class="centered-tabs p-5">
-      <p-tabPanel class="ml-auto" header="General">
+    <p-tabView class="settings-tabs">
+      <p-tabPanel header="General">
         <digimon-general-settings></digimon-general-settings>
       </p-tabPanel>
 
@@ -23,13 +23,15 @@ import { GeneralSettingsComponent } from './general-settings.component';
   `,
   styles: [
     `
-      .centered-tabs .p-tabview-nav {
+      :host ::ng-deep .settings-tabs .p-tabview-nav {
         display: flex;
         justify-content: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        margin-bottom: 1rem;
       }
     `,
   ],
   standalone: true,
   imports: [CollectionImportComponent, TabPanel, CollectionExportComponent, GeneralSettingsComponent, TabView],
 })
-export class SettingsDialogComponent {}
+export class SettingsDialogComponent { }
