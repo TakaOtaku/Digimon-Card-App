@@ -1,4 +1,4 @@
-import { NgClass, NgFor } from '@angular/common';
+import { CurrencyPipe, NgClass, NgFor, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, EventEmitter, inject, Input, Output, Signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConfirmationService, MessageService } from 'primeng/api';
@@ -8,12 +8,14 @@ import { DialogModule } from 'primeng/dialog';
 import { TooltipModule } from 'primeng/tooltip';
 import { BehaviorSubject } from 'rxjs';
 import * as uuid from 'uuid';
-import { DigimonCard, IDeck, IDeckCard } from '@models';
+import { DigimonCard, IDeck, IDeckCard, PriceMetric } from '@models';
 import { mapToDeckCards } from '@functions';
 import { AuthService } from '@services';
 import { DialogStore } from '@store';
 import { DigimonCardStore } from '@store';
+import { SaveStore } from '@store';
 import { WebsiteStore } from '@store';
+import { CardMarketService } from '../../../services/card-market.service';
 import { ImportDeckDialogComponent } from '../../shared/dialogs/import-deck-dialog.component';
 
 @Component({
@@ -78,6 +80,11 @@ import { ImportDeckDialogComponent } from '../../shared/dialogs/import-deck-dial
         tooltipPosition="top"></button>
     </div>
 
+    <div *ngIf="saveStore.showPrices() && deckTotalValue() !== null" class="mx-3 flex items-center justify-center text-sm font-bold text-green-400">
+      <span class="mr-1 text-[#e2e4e6]">Deck Value:</span>
+      <span>{{ deckTotalValue() | currency: 'EUR' }}</span>
+    </div>
+
     <p-dialog
       header="Simulate Security/Draw"
       [(visible)]="simulateDialog"
@@ -129,10 +136,12 @@ import { ImportDeckDialogComponent } from '../../shared/dialogs/import-deck-dial
     ButtonModule,
     TooltipModule,
     NgClass,
+    NgIf,
     DialogModule,
     NgFor,
     ImportDeckDialogComponent,
     ConfirmDialogModule,
+    CurrencyPipe,
   ],
   providers: [MessageService],
 })
@@ -146,9 +155,18 @@ export class DeckToolbarComponent {
   websiteStore = inject(WebsiteStore);
   dialogStore = inject(DialogStore);
   digimonCardStore = inject(DigimonCardStore);
+  private cardMarketService = inject(CardMarketService);
+  saveStore = inject(SaveStore);
 
   deck: Signal<IDeck> = this.websiteStore.deck;
   mainDeck: Signal<IDeckCard[]> = computed(() => mapToDeckCards(this.websiteStore.deck().cards, this.digimonCardStore.cards()));
+
+  deckTotalValue: Signal<number | null> = computed(() => {
+    const cards = this.websiteStore.deck().cards;
+    if (!cards.length || !this.cardMarketService.isLoaded()) return null;
+    const metric = (this.saveStore.settings().priceMetric as PriceMetric) || PriceMetric.Trend;
+    return this.cardMarketService.calculateTotalValue(cards, metric);
+  });
 
   importDeckDialog = false;
   priceCheckDialog = false;
@@ -164,7 +182,7 @@ export class DeckToolbarComponent {
     private messageService: MessageService,
     private route: Router,
     private authService: AuthService,
-  ) {}
+  ) { }
 
   private static shuffle<T>(array: T[]): T[] {
     const newArray = [...array]; // Create a copy to avoid mutating the original

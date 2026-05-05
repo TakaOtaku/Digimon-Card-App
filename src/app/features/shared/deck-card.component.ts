@@ -1,12 +1,14 @@
-import { NgIf } from '@angular/common';
-import { Component, EventEmitter, inject, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { CurrencyPipe, NgIf } from '@angular/common';
+import { Component, computed, EventEmitter, inject, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 
 import { DialogModule } from 'primeng/dialog';
-import { DigimonCard, dummyCard, IDeckCard } from '../../../models';
+import { DigimonCard, dummyCard, IDeckCard, PriceMetric } from '../../../models';
 import { ImgFallbackDirective } from '../../directives/ImgFallback.directive';
 import { ImageService } from '../../services/image.service';
+import { CardMarketService } from '../../services/card-market.service';
 import { DialogStore } from '../../store/dialog.store';
 import { DigimonCardStore } from '../../store/digimon-card.store';
+import { SaveStore } from '../../store/save.store';
 import { WebsiteStore } from '../../store/website.store';
 
 @Component({
@@ -60,6 +62,12 @@ import { WebsiteStore } from '../../store/website.store';
         <span class="text-sky-700">x</span>{{ card.count }}
       </span>
 
+      <span
+        *ngIf="showPrices() && getCardPrice() as price"
+        class="text-shadow absolute top-1 left-1 z-[100] rounded bg-black/60 px-1 text-xs font-bold text-green-400">
+        {{ price | currency: 'EUR' }}
+      </span>
+
       <p
         *ngIf="missingCards"
         class="text-red text-black-outline absolute left-0 right-0 top-[40px] z-[100] mx-auto text-center text-6xl font-bold">
@@ -68,7 +76,7 @@ import { WebsiteStore } from '../../store/website.store';
     </div>
   `,
   standalone: true,
-  imports: [NgIf, DialogModule, ImgFallbackDirective],
+  imports: [NgIf, DialogModule, ImgFallbackDirective, CurrencyPipe],
   providers: [ImageService],
 })
 export class DeckCardComponent implements OnChanges, OnInit {
@@ -83,6 +91,10 @@ export class DeckCardComponent implements OnChanges, OnInit {
   websiteStore = inject(WebsiteStore);
   digimonCardStore = inject(DigimonCardStore);
   dialogStore = inject(DialogStore);
+  private cardMarketService = inject(CardMarketService);
+  private saveStore = inject(SaveStore);
+
+  showPrices = computed(() => this.saveStore.showPrices());
 
   completeCard: DigimonCard = JSON.parse(JSON.stringify(dummyCard));
 
@@ -135,5 +147,12 @@ export class DeckCardComponent implements OnChanges, OnInit {
       card: this.viewCard,
       width: '50vw',
     });
+  }
+
+  getCardPrice(): number | null {
+    const metric = (this.saveStore.settings().priceMetric as PriceMetric) || PriceMetric.Trend;
+    const price = this.cardMarketService.getPrice(this.card.id, metric);
+    if (price === null) return null;
+    return price * this.card.count;
   }
 }

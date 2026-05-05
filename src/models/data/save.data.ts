@@ -1,4 +1,4 @@
-import { CARDSET } from '../enums';
+import { CARDSET, PriceMetric } from '../enums';
 import { ISave, ISettings } from '../interfaces';
 
 export const emptySettings: ISettings = {
@@ -30,6 +30,8 @@ export const emptySettings: ISettings = {
 
   fullscreenFilter: true,
   countMax: 5,
+  showPrices: false,
+  priceMetric: PriceMetric.Trend,
 };
 
 export const emptySave: ISave = {

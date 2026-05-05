@@ -1,12 +1,13 @@
-import { NgClass, NgIf } from '@angular/common';
+import { CurrencyPipe, NgClass, NgIf } from '@angular/common';
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { withoutJ } from '@functions';
-import { DigimonCard, DRAG, dummyCard } from '@models';
+import { DigimonCard, DRAG, dummyCard, PriceMetric } from '@models';
 import { SaveStore, WebsiteStore } from '@store';
 import { DialogModule } from 'primeng/dialog';
 import { DragDropModule } from 'primeng/dragdrop';
 import { cardsAllow50 } from '../../../models/data/cards-50.data';
+import { CardMarketService } from '../../../app/services/card-market.service';
 import { CardImageComponent } from './card-image.component';
 
 @Component({
@@ -19,6 +20,12 @@ import { CardImageComponent } from './card-image.component';
       <div (click)="click()" (contextmenu)="rightclick()">
         <digimon-card-image [card]="card" [count]="count"></digimon-card-image>
       </div>
+
+      <span
+        *ngIf="saveStore.showPrices() && getCardPrice() as price"
+        class="text-shadow absolute top-1 left-1 z-[100] rounded bg-black/60 px-1 text-xs font-bold text-green-400">
+        {{ price | currency: 'EUR' }}
+      </span>
 
       <ng-container>
         <span
@@ -61,7 +68,7 @@ import { CardImageComponent } from './card-image.component';
   `,
   styleUrls: ['./full-card.component.scss'],
   standalone: true,
-  imports: [DragDropModule, CardImageComponent, NgIf, NgClass, FormsModule, DialogModule],
+  imports: [DragDropModule, CardImageComponent, NgIf, NgClass, FormsModule, DialogModule, CurrencyPipe],
 })
 export class FullCardComponent {
   @Input() card: DigimonCard = JSON.parse(JSON.stringify(dummyCard));
@@ -80,8 +87,14 @@ export class FullCardComponent {
 
   websiteStore = inject(WebsiteStore);
   saveStore = inject(SaveStore);
+  private cardMarketService = inject(CardMarketService);
 
   collectionMode = this.saveStore.collectionMode;
+
+  getCardPrice(): number | null {
+    const metric = (this.saveStore.settings().priceMetric as PriceMetric) || PriceMetric.Trend;
+    return this.cardMarketService.getPrice(this.card.id, metric);
+  }
 
   getCountInDeck(cardId: string) {
     return this.websiteStore.deck().cards.find((value) => value.id === withoutJ(cardId))?.count ?? 0;

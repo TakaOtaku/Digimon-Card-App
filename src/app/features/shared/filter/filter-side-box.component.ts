@@ -97,6 +97,21 @@ import { VersionFilterComponent } from './version-filter.component';
         </button>
       </div>
 
+      @if (saveStore.showPrices()) {
+        <div class="flex flex-row">
+          <digimon-range-slider
+            [reset]="resetEmitter"
+            [minMax]="[0, 100]"
+            [filterFormControl]="priceFilter"
+            suffix="€"
+            title="Price:"
+            class="w-full"></digimon-range-slider>
+          <button (click)="priceFilter.setValue([0, 100])" class="w-12 text-[#e2e4e6]" type="button">
+            <i class="pi pi-refresh"></i>
+          </button>
+        </div>
+      }
+
       <div class="flex flex-row mb-2">
         <digimon-range-slider
           [reset]="resetEmitter"
@@ -280,6 +295,7 @@ export class FilterSideBoxComponent {
   playCostFilter = new UntypedFormControl([0, 20]);
   digivolutionFilter = new UntypedFormControl([0, 7]);
   dpFilter = new UntypedFormControl([1, 17]);
+  priceFilter = new UntypedFormControl([0, 100]);
   cardCountFilter = new UntypedFormControl([0, this.collectionCountMax() ?? 5]);
   presetFilter = new UntypedFormControl([]);
 
@@ -296,6 +312,7 @@ export class FilterSideBoxComponent {
     playCostFilter: this.playCostFilter,
     digivolutionFilter: this.digivolutionFilter,
     dpFilter: this.dpFilter,
+    priceFilter: this.priceFilter,
     cardCountFilter: this.cardCountFilter,
     presetFilter: this.presetFilter,
   });
@@ -325,6 +342,7 @@ export class FilterSideBoxComponent {
       emitEvent: false,
     });
     this.dpFilter.setValue(filter.dpFilter, { emitEvent: false });
+    this.priceFilter.setValue(filter.priceFilter, { emitEvent: false });
     this.cardCountFilter.setValue(filter.cardCountFilter, {
       emitEvent: false,
     });
