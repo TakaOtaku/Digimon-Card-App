@@ -25,6 +25,8 @@ export class SearchComponent implements OnInit {
     const search = this.route.snapshot.queryParamMap.get('search');
     if (search) {
       this.filterStore.updateAdvancedSearch(search);
+    } else {
+      this.filterStore.clearAdvancedSearch();
     }
   }
 

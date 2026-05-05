@@ -185,11 +185,13 @@ export class AdvancedSearchComponent implements OnInit {
   isSearching = signal(false);
   showHelp = false;
 
-  // Sync input with store (for external clears like sidebar reset)
+  // Sync input with store (for external updates like URL params or sidebar reset)
   private syncEffect = effect(() => {
     const storeValue = this.filterStore.advancedSearch();
     if (storeValue === null || storeValue === '') {
       this.searchQuery.set('');
+    } else if (storeValue !== this.searchQuery()) {
+      this.searchQuery.set(storeValue);
     }
   });
 
