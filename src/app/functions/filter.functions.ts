@@ -2,6 +2,8 @@
 import { DigimonCard, ICountCard, IFilter, ISave, ISort, UltimateCup2023, UltimateCup2024 } from '../../models';
 import { AdvancedSearchService } from '../services/advanced-search.service';
 
+export type PriceGetter = (cardId: string) => number | null;
+
 export function filterCards(
   cards: DigimonCard[],
   save: ISave,
@@ -10,9 +12,10 @@ export function filterCards(
   cardMap: Map<string, DigimonCard>,
   advancedSearchQuery?: string | null,
   advancedSearchService?: AdvancedSearchService,
+  priceGetter?: PriceGetter,
 ): DigimonCard[] {
   let filteredCards: DigimonCard[] = cards;
-  
+
   // Apply advanced search first if available
   if (advancedSearchQuery && advancedSearchService) {
     filteredCards = advancedSearchService.applyAdvancedSearch(filteredCards, advancedSearchQuery);
@@ -97,6 +100,10 @@ export function filterCards(
       removeCards.add(card);
       return;
     }
+    if (priceGetter && applyPriceFilter(card, filter.priceFilter, priceGetter)) {
+      removeCards.add(card);
+      return;
+    }
     if (filter.presetFilter.length > 0 && applyPresetFilter(card, filter.presetFilter)) {
       removeCards.add(card);
       return;
@@ -105,7 +112,7 @@ export function filterCards(
 
   filteredCards = filteredCards.filter((card) => !removeCards.has(card));
 
-  filteredCards = applySortOrder(filteredCards, sort, save.collection);
+  filteredCards = applySortOrder(filteredCards, sort, save.collection, priceGetter);
   return filteredCards;
 }
 
@@ -337,6 +344,20 @@ function applyRangeFilter(card: DigimonCard, filter: number[], key: string): boo
   }
 }
 
+function applyPriceFilter(card: DigimonCard, filter: number[], priceGetter: PriceGetter): boolean {
+  if (filter[0] === 0 && filter[1] === 100) {
+    return false;
+  }
+  const price = priceGetter(card.id);
+  if (price === null) {
+    return true; // hide cards with no price when filter is active
+  }
+  if (filter[1] === 100) {
+    return price < filter[0];
+  }
+  return price < filter[0] || price > filter[1];
+}
+
 function applyPresetFilter(card: DigimonCard, filter: string[]): boolean {
   let inPreset = true;
   for (const preset of filter) {
@@ -350,8 +371,15 @@ function applyPresetFilter(card: DigimonCard, filter: string[]): boolean {
   return inPreset;
 }
 
-function applySortOrder(cards: DigimonCard[], sort: ISort, collection: ICountCard[]): DigimonCard[] {
+function applySortOrder(cards: DigimonCard[], sort: ISort, collection: ICountCard[], priceGetter?: PriceGetter): DigimonCard[] {
   const returnArray = [...new Set([...cards])];
+  if (sort.sortBy.element === 'price' && priceGetter) {
+    return returnArray.sort((a, b) => {
+      const priceA = priceGetter(a.id) ?? 0;
+      const priceB = priceGetter(b.id) ?? 0;
+      return sort.ascOrder ? priceA - priceB : priceB - priceA;
+    });
+  }
   if (sort.sortBy.element === 'playCost' || sort.sortBy.element === 'dp') {
     return sort.ascOrder
       ? returnArray.sort(dynamicSortNumber(sort.sortBy.element))

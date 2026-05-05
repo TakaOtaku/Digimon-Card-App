@@ -73,6 +73,7 @@ export const emptyFilter = {
   playCostFilter: [0, 20],
   digivolutionFilter: [0, 7],
   dpFilter: [1, 17],
+  priceFilter: [0, 100],
   rarityFilter: [],
   versionFilter: [],
   keywordFilter: [],

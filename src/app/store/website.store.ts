@@ -6,6 +6,7 @@ import { distinctUntilChanged, filter as rxFilter, first, pipe, switchMap } from
 import { DRAG, dummyCard, emptyDeck, IBlog, IDeck, IDraggedCard, ISort } from '../../models';
 import { checkSpecialCardCounts } from '../functions';
 import { MongoBackendService, IDeckFilter, IPaginationResponse } from '../services/mongo-backend.service';
+import { ProductCM } from '../services/card-market.service';
 
 interface IPaginationState {
   currentPage: number;
@@ -28,6 +29,7 @@ type Website = {
   decksPagination: IPaginationState;
   decksFilter: IDeckFilter;
   isLoadingDecks: boolean;
+  priceGuideCM: ProductCM[];
 };
 
 const initialState: Website = {
@@ -61,6 +63,7 @@ const initialState: Website = {
     limit: 20,
   },
   isLoadingDecks: false,
+  priceGuideCM: [],
 };
 
 export const WebsiteStore = signalStore(
@@ -213,6 +216,9 @@ export const WebsiteStore = signalStore(
     },
     updateDraggedCard(draggedCard: IDraggedCard): void {
       patchState(store, (state) => ({ draggedCard }));
+    },
+    updatePriceGuideCM(priceGuideCM: ProductCM[]): void {
+      patchState(store, (state) => ({ priceGuideCM }));
     },
 
     createNewDeck(id: string): void {

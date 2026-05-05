@@ -2,7 +2,8 @@ import { ChangeDetectionStrategy, Component, effect, inject, signal } from '@ang
 import { RouterOutlet } from '@angular/router';
 import { filterCards } from '@functions';
 import { AdvancedSearchService } from './services/advanced-search.service';
-import { CARDSET, emptyFilter, emptySave, IFilter, ISettings } from '@models';
+import { CardMarketService } from './services/card-market.service';
+import { CARDSET, emptyFilter, emptySave, IFilter, ISettings, PriceMetric } from '@models';
 import { AuthService, MongoBackendService } from '@services';
 import { DigimonCardStore, FilterStore, SaveStore, WebsiteStore } from '@store';
 import { BlockUIModule } from 'primeng/blockui';
@@ -67,6 +68,7 @@ export class AppComponent {
   authService = inject(AuthService);
   backendService = inject(MongoBackendService);
   advancedSearchService = inject(AdvancedSearchService);
+  private cardMarketService = inject(CardMarketService);
 
   saveLoaded = signal(false);
 
@@ -87,6 +89,11 @@ export class AppComponent {
     // Check if a save is in local storage from a previous login
     // If this is the case, set the save
     this.saveStore.loadSave();
+
+    // Load price guide data into website store for dialog components
+    this.cardMarketService.getPrizeGuide().pipe(first()).subscribe((priceGuide) => {
+      this.websiteStore.updatePriceGuideCM(priceGuide);
+    });
 
     effect(() => {
       this.saveLoaded.set(this.saveStore.save().uid !== '' || this.saveStore.loadedSave());
@@ -119,6 +126,7 @@ export class AppComponent {
         this.digimonCardStore.cardsMap(),
         this.filterStore.advancedSearch(),
         this.advancedSearchService,
+        (cardId) => this.cardMarketService.getPrice(cardId, (this.saveStore.settings().priceMetric as PriceMetric) || PriceMetric.Trend),
       );
 
       this.digimonCardStore.updateFilteredCards(filteredCards);

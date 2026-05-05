@@ -6,7 +6,7 @@ import { DialogModule } from 'primeng/dialog';
 import { DragDropModule } from 'primeng/dragdrop';
 import { SidebarModule } from 'primeng/sidebar';
 import { SkeletonModule } from 'primeng/skeleton';
-import { DigimonCard, DRAG, dummyCard, ICountCard, IDraggedCard } from '@models';
+import { DigimonCard, DRAG, dummyCard, ICountCard, IDraggedCard, PriceMetric } from '@models';
 import { IntersectionListenerDirective } from '@directives';
 import { filterCards, withoutJ } from '@functions';
 import { DialogStore } from '@store';
@@ -19,6 +19,7 @@ import { PaginationCardListHeaderComponent } from './pagination-card-list-header
 import { SearchComponent } from './search.component';
 import { FilterStore } from '@store';
 import { AdvancedSearchService } from '../../../services/advanced-search.service';
+import { CardMarketService } from '../../../services/card-market.service';
 
 @Component({
   selector: 'digimon-pagination-card-list',
@@ -97,6 +98,7 @@ export class PaginationCardListComponent {
   dialogStore = inject(DialogStore);
   filterStore = inject(FilterStore);
   advancedSearchService = inject(AdvancedSearchService);
+  private cardMarketService = inject(CardMarketService);
 
   draggedCard = this.websiteStore.draggedCard;
   collection = this.saveStore.collection;
@@ -126,6 +128,7 @@ export class PaginationCardListComponent {
       this.digimonCardStore.cardsMap(),
       this.filterStore.advancedSearch(),
       this.advancedSearchService,
+      (cardId) => this.cardMarketService.getPrice(cardId, (this.saveStore.settings().priceMetric as PriceMetric) || PriceMetric.Trend),
     );
 
     this.digimonCardStore.updateFilteredCards(filteredCards);

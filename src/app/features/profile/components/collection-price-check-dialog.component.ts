@@ -7,7 +7,7 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { TableModule } from 'primeng/table';
 import { DigimonCard, dummyCard, GroupedSets, ICountCard, ISave } from '../../../../models';
-import { ProductCM, ProductCMWithCount } from '../../../services/card-market.service';
+import { CardMarketService, ProductCM, ProductCMWithCount } from '../../../services/card-market.service';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
 import { WebsiteStore } from '../../../store/website.store';
 import { CardImageComponent } from '../../shared/card-image.component';
@@ -166,8 +166,8 @@ export class CollectionPriceCheckDialogComponent {
   @Input() save: ISave;
 
   websiteStore = inject(WebsiteStore);
+  private cardMarketService = inject(CardMarketService);
 
-  prizeGuide = this.websiteStore.priceGuideCM();
   onlyMissing = false;
   spinner = false;
 
@@ -184,10 +184,11 @@ export class CollectionPriceCheckDialogComponent {
 
   updatePrice() {
     this.spinner = true;
+    const prizeGuide = this.websiteStore.priceGuideCM();
     const filteredCollection = this.filterCollection();
     const all: ProductCMWithCount[] = filteredCollection
       .map((card) => {
-        const foundProduct: ProductCM = this.prizeGuide.find((product) => card.id === product.cardId) ?? this.emptyProduct(card);
+        const foundProduct: ProductCM = prizeGuide.find((product) => card.id === product.cardId) ?? this.emptyProduct(card);
 
         return { ...foundProduct, count: card.count } as ProductCMWithCount;
       })

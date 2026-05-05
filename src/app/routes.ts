@@ -47,5 +47,9 @@ export const routes: Routes = [
     path: 'rulings',
     loadComponent: () => import('./features/rules/rules.component').then(m => m.RulesComponent),
   },
+  {
+    path: 'price-compare',
+    loadComponent: () => import('./features/price-compare/price-compare.component').then(m => m.PriceCompareComponent),
+  },
   { path: '**', loadComponent: () => import('./features/home/home-page.component').then(m => m.HomePageComponent) },
 ];
