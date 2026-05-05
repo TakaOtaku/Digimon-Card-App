@@ -4,6 +4,7 @@ import { ImgFallbackDirective } from '@directives';
 import { formatId, isDigimonType, withoutJ } from '@functions';
 import { ColorMap, DigimonCard, ICountCard, IDeck, replacements } from '@models';
 import { DialogStore, DigimonCardStore, SaveStore, WebsiteStore } from '@store';
+import { CardMarketService } from '@services';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
@@ -59,7 +60,8 @@ import { TooltipModule } from 'primeng/tooltip';
         <h1 [ngStyle]="{ color }" class="text-black-outline-xs my-1 text-3xl font-black" id="Card-Name">
           {{ card.name.english }}
         </h1>
-        <button (click)="openWiki()" class="p-button-text" icon="pi pi-question-circle" pButton pRipple type="button"></button>
+        <button (click)="openWiki()" class="p-button-text" icon="pi pi-question-circle" pButton pRipple type="button" pTooltip="Wiki" tooltipPosition="top"></button>
+        <button *ngIf="getCardmarketLink()" (click)="openCardmarket()" class="p-button-text" icon="pi pi-shopping-cart" pButton pRipple type="button" pTooltip="Cardmarket" tooltipPosition="top"></button>
         <button class="ml-1" (click)="nextCard()">
           <i class="fa-solid fa-circle-arrow-right text-[#e2e4e6]"></i>
         </button>
@@ -283,6 +285,7 @@ export class ViewCardDialogComponent {
   dialogStore = inject(DialogStore);
   websiteStore = inject(WebsiteStore);
   digimonCardStore = inject(DigimonCardStore);
+  private cardMarketService = inject(CardMarketService);
 
   // Helper function exposed to template
   isDigimonType = isDigimonType;
@@ -325,6 +328,18 @@ export class ViewCardDialogComponent {
   openWiki() {
     const wikiLink = 'https://digimoncardgame.fandom.com/wiki/' + formatId(this.card.id);
     window.open(wikiLink, '_blank');
+  }
+
+  openCardmarket() {
+    const link = this.getCardmarketLink();
+    if (link) {
+      window.open(link, '_blank');
+    }
+  }
+
+  getCardmarketLink(): string | null {
+    const priceData = this.cardMarketService.getPriceData(this.card.id);
+    return priceData?.link ?? null;
   }
 
   openWikiIllustrator() {
