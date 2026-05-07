@@ -141,6 +141,12 @@ function applyCardTypeFilter(card: DigimonCard, filter: string[]): boolean {
       return false;
     }
   }
+  // Handle "Link" filter - Link cards are identified by linkEffect
+  if (filter.includes('Link')) {
+    if (card['linkEffect'] && card['linkEffect'] !== '-') {
+      return false;
+    }
+  }
   // Direct match
   if (filter.includes(card['cardType'])) {
     return false;

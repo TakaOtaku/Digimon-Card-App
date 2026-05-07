@@ -267,6 +267,7 @@ export const Types: string[] = [
   'Beast',
   'Beast Dragon',
   'Beast Knight',
+  'BEATBREAK',
   'Beastkin',
   'Beauty (App Name)',
   'Big Death-Stars',
@@ -359,6 +360,7 @@ export const Types: string[] = [
   'Ghost',
   'Giant Bird',
   'Global (App Name)',
+  'Glowing Dawn',
   'God Beast',
   'Gossip (App Name)',
   'Gossip Review (App Name)',
@@ -680,7 +682,7 @@ export const BlockButtons: MultiButtons[] = [
   },
 ];
 
-export const CardTypes = ['Digi-Egg', 'Digimon', 'Tamer', 'Option', 'Ace', 'Digimon/Option'];
+export const CardTypes = ['Digi-Egg', 'Digimon', 'Tamer', 'Option', 'Ace', 'Digimon/Option', 'Link'];
 export const CardTypeButtons: MultiButtons[] = [
   {
     name: 'Digi-Egg',
@@ -705,6 +707,10 @@ export const CardTypeButtons: MultiButtons[] = [
   {
     name: 'Dual',
     value: 'Digimon/Option',
+  },
+  {
+    name: 'Link',
+    value: 'Link',
   },
 ];
 
