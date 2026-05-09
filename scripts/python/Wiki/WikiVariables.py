@@ -238,7 +238,7 @@ NoteDictionary = {
 replacements = [
     '(After this card is placed, by trashing it the next turn or later, activate the effect below.)',
     '(After this card is placed, by trashing it the next turn or later, activate the effect below.)',
-    '(This Digimon can attack the turn it comes into play.)',
+    '(This Digimon can attack the turn it was played.)',
     '(At blocker timing, by suspending this Digimon, it becomes the attack target.)',
     '(Trash this card in your battle area to activate the effect below. You can\'t activate this effect the turn this card enters play.)',
     '(When this Digimon attacks and deletes an opponent\'s Digimon in battle, it checks security before the attack ends.)',
@@ -259,7 +259,6 @@ replacements = [
     '(Draw 2 cards from your deck.)',
     '(Draw 3 cards from your deck.)',
     '(Trash all of its digivolution cards.)',
-    '(This Digimon can attack the turn it comes into play.)',
     '(When this Digimon would be deleted, you may trash the top card of this Digimon to prevent that deletion.)',
     '(You may place this card under one of your Tamers.)',
     '(If your opponent has 1 or more memory, this Digimon may attack.)',
