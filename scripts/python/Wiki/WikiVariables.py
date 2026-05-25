@@ -327,5 +327,5 @@ replacements = [
     '(When this Digimon is deleted, you may place this card as the top security card.)',
     '(When your opponent\'s effects would delete any of your other specified Digimon, by deleting this Digimon, 1 of those Digimon isn\'t deleted.)',
     '(Place the top card of your deck as your top security card.)',
-    '(When any of your other Digimon would leave the battle area by your opponent\'s effects, by deleting this Digimon, they don't leave.)'
+    '(When any of your other Digimon would leave the battle area by your opponent\'s effects, by deleting this Digimon, they don\'t leave.)'
 ]
