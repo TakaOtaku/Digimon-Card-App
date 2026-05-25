@@ -506,6 +506,7 @@ export const Types: string[] = [
   'Three Musketeers',
   'Throne',
   'Time Slip (App Name)',
+  'Titan',
   'TS',
   'Training (App Name)',
   'Transfer (App Name)',
