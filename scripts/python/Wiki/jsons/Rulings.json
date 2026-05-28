@@ -1035,15 +1035,11 @@
   ],
   "BT10-070": [
     {
-      "answer": "A: Only if it has 3 digivolution cards, but the check will ignore the [On Play].",
-      "question": "Q: If this Digimon has [BT5-014 OmniShoutmon], does this Digimon gain \uff1cSecurity A. +1\uff1e?"
+      "answer": "A: The trigger simultaneously, so the turn player can activate their [When Attacking] effect first.[1]",
+      "question": "Q: When one of my opponent's Digimon attacks, in what order do that Digimon's [When Attacking] effect and this card's [Opponent's Turn] effect activate"
     },
     {
-      "answer": "A: No, you can't. This card's [Opponent's Turn] effect triggers in the counter timing of the attack after [When Attacking] effects have already activated.[1]",
-      "question": "Q: When one of my opponent's level 4 or lower Digimon attacks, can I delete that Digimon with this card's [Opponent's Turn] effect before its [When Attacking] effects activate?"
-    },
-    {
-      "answer": "A: Yes, it can activate.  This card's [On Play] effect activates \uff1cBlitz\uff1e if there are 3 or more digivolution cards.[1]",
+      "answer": "A: Yes, it can activate.  This card's [On Play] effect activates \uff1cBlitz\uff1e if there are 3 or more digivolution cards.[2]",
       "question": "Q: If this Digimon has 4 or more digivolution cards when I play this card, does \uff1cBlitz\uff1e activate?"
     }
   ],
@@ -14831,7 +14827,7 @@
       "question": "Q: When it says \"[Vegetation]\u00a0in any of its traits\" (\u690d\u7269\u578b), does it include traits other than [Vegetation] (\u690d\u7269\u578b)?"
     },
     {
-      "answer": "A: Yes, \"[Fairy]\u00a0in any of its traits\" includes the following traits:Category:FairyCategory:Ancient Fairy\n",
+      "answer": "A: Yes, \"[Fairy]\u00a0in any of its traits\" includes the following traits:Category:Ancient FairyCategory:Fairy\n",
       "question": "Q: When it says \"[Fairy]\u00a0in any of its traits\" (\u5996\u7cbe\u578b), does it include traits other than [Fairy] (\u5996\u7cbe\u578b)?"
     }
   ],
