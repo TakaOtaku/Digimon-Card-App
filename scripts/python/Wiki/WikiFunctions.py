@@ -90,6 +90,7 @@ def get_page_html(page_title, delay=0.5):
         'action': 'parse',
         'page': page_title,
         'prop': 'text',
+        'redirects': 'true',
         'disablelimitreport': 'true',
         'disableeditsection': 'true',
     }

@@ -82,7 +82,7 @@ wikiPageLinks = [
     {'name': '▹EXTRA BOOSTER DAWN OF LIBERATOR [EX-11]',
         'url': 'https://digimoncardgame.fandom.com/wiki/EX-11:_Extra_Booster_Dawn_of_Liberator'},
     {'name': '▹EXTRA BOOSTER DIGITAL WORLD SHAMBALA [EX-12]',
-        'url': 'https://digimoncardgame.fandom.com/wiki/EX-12:_Extra_Booster_Digital_World_Shambala'},
+        'url': 'https://digimoncardgame.fandom.com/wiki/EX-12:_EXTRA_BOOSTER_DIGITAL_WORLD_SHAMBALA'},
 
     {'name': 'BOOSTER RESURGENCE BOOSTER [RB1]',
         'url': 'https://digimoncardgame.fandom.com/wiki/RB-01:_Resurgence_Booster'},

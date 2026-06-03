@@ -19,10 +19,10 @@ to perform the existence check.
 import os
 import time
 import re
-import urllib.request
 import traceback
 from PIL import Image
 import random
+import requests
 
 import WikiVariables as WV
 import WikiFunctions as WF
@@ -81,17 +81,20 @@ def download_image_with_retry(url, save_directory, id, max_retries=5, retry_dela
 
     while retries < max_retries:
         try:
-            urllib.request.urlretrieve(url, save_directory)
+            response = WF.api_session.get(url, timeout=30)
+            response.raise_for_status()
+            with open(save_directory, 'wb') as f:
+                f.write(response.content)
             print(f"✅ Downloaded image {id} successfully.")
             download_stats['downloaded'] += 1
             return
-        except urllib.error.HTTPError as e:
-            if e.code == 503:
+        except requests.exceptions.HTTPError as e:
+            if e.response.status_code == 503:
                 print(f"⚠️  HTTP Error 503: Service Unavailable. Retrying in {retry_delay} seconds...")
                 retries += 1
                 time.sleep(retry_delay)
             else:
-                print(f"❌ HTTP Error {e.code}: {e.reason}")
+                print(f"❌ HTTP Error {e.response.status_code}: {e.response.reason}")
                 break
         except Exception as e:
             print(f"❌ Unexpected error downloading {id}: {str(e)}")
