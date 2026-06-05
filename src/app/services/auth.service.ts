@@ -60,6 +60,11 @@ export class AuthService {
 
           // User is logged in, get save from backend
           return this.digimonBackendService.getSave(firebaseUser.uid).pipe(
+            catchError(() => {
+              // User doesn't exist in backend yet (new user) or fetch failed
+              // Create a new save for them
+              return of(this.createNewSave(firebaseUser, this.getLocalStorageSave()));
+            }),
             tap((save) => {
               if (save) {
                 // Create user data object and update state
@@ -78,6 +83,20 @@ export class AuthService {
 
                 // Ensure save is up to date in backend
                 this.digimonBackendService.updateSave(userData.save).subscribe();
+              } else {
+                // Save is falsy — treat as new user
+                const newSave = this.createNewSave(firebaseUser, null);
+                const userData: IUser = {
+                  uid: firebaseUser.uid,
+                  displayName: firebaseUser.displayName || '',
+                  photoURL: firebaseUser.photoURL || '',
+                  save: newSave,
+                };
+
+                localStorage.setItem('user', JSON.stringify(userData));
+                this.userSignal.set(userData);
+
+                this.digimonBackendService.updateSave(newSave).subscribe();
               }
             }),
           );
