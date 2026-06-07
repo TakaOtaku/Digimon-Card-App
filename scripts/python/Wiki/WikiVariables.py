@@ -296,6 +296,7 @@ replacements = [
     '(Trash up to 3 cards from the top. You can\'t trash past level 3 cards.)',
     '(Trash up to 4 cards from the top. You can\'t trash past level 3 cards.)',
     '(When this Digimon would be deleted, by trashing any 3 of its digivolution cards, it isn\'t deleted.)',
+    '(When this Digimon would be deleted, by trashing any 2 of its digivolution cards, it isn\'t deleted.)',
     'When this would be played, you may place specified cards from your hand/battle area under it. Each one reduces the play cost.',
     '(As this card moves from the field or under a card to an area other than those, lose 3 memory.)',
     '(As this card moves from the field or under a card to an area other than those, lose 4 memory.)',
