@@ -86,6 +86,7 @@ export const replacements: Array<[RegExp, string, string]> = [
   [/＜Evade＞/g, 'evade', ''],
   [/＜Execute＞/g, 'execute', ''],
   [/＜Fortitude＞/g, 'fortitude', ''],
+  [/＜Fragment \(2\)＞/g, 'fragment_2', ''],
   [/＜Fragment \(3\)＞/g, 'fragment_3', ''],
   [/＜Guard＞/g, 'guard', ''],
   [/\[Hand\]/g, 'hand', ''],
