@@ -138,6 +138,7 @@ export const Keywords: string[] = [
   '\uff1cEngage\uff1e',
   '\uff1cEvade\uff1e',
   '\uff1cExecute\uff1e',
+  '\uff1cFragment (2)\uff1e',
   '\uff1cFragment (3)\uff1e',
   '\uff1cGuard\uff1e',
   '\uff1cIceclad\uff1e',
