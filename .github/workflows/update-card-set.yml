@@ -95,8 +95,9 @@ jobs:
         run: pip install requests beautifulsoup4 lxml Pillow
 
       - name: Run GetDataFromWikiSingle
-        working-directory: scripts/python/Wiki
-        run: python GetDataFromWikiSingle.py "${{ github.event.inputs.set_code }}"
+        env:
+          PYTHONPATH: scripts/python/Wiki
+        run: python scripts/python/Wiki/GetDataFromWikiSingle.py "${{ github.event.inputs.set_code }}"
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
