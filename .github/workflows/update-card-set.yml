@@ -1,0 +1,111 @@
+name: Update Card Set from Wiki
+
+on:
+  workflow_dispatch:
+    inputs:
+      set_code:
+        description: 'Card Set to Update'
+        required: true
+        type: choice
+        options:
+          - BT01-03
+          - BT-04
+          - BT-05
+          - BT-06
+          - BT-07
+          - BT-08
+          - BT-09
+          - BT-10
+          - BT-11
+          - BT-12
+          - BT-13
+          - BT-14
+          - BT-15
+          - BT-16
+          - BT-17
+          - BT-18
+          - BT-19
+          - BT18-19
+          - BT19-20
+          - BT-21
+          - BT-22
+          - BT-23
+          - BT-24
+          - BT-25
+          - EX-01
+          - EX-02
+          - EX-03
+          - EX-04
+          - EX-05
+          - EX-06
+          - EX-07
+          - EX-08
+          - EX-09
+          - EX-10
+          - EX-11
+          - EX-12
+          - RB1
+          - AD-01
+          - ST-1
+          - ST-2
+          - ST-3
+          - ST-4
+          - ST-5
+          - ST-6
+          - ST-7
+          - ST-8
+          - ST-9
+          - ST-10
+          - ST-12
+          - ST-13
+          - ST-14
+          - ST-15
+          - ST-16
+          - ST-17
+          - ST-18
+          - ST-19
+          - ST-20
+          - ST-21
+          - ST-22
+          - ST-23
+          - ST-24
+          - LM-01
+          - LM-02
+          - LM-03
+          - LM03-04
+          - LM-04
+          - LM-06
+          - LM-07
+          - LM-08
+
+jobs:
+  update-set:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4 Pillow
+
+      - name: Run GetDataFromWikiSingle
+        working-directory: scripts/python/Wiki
+        run: python GetDataFromWikiSingle.py "${{ github.event.inputs.set_code }}"
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "Update card data for set ${{ github.event.inputs.set_code }}"
+          title: "Update card data for set ${{ github.event.inputs.set_code }}"
+          body: |
+            Automated update of card data for set **${{ github.event.inputs.set_code }}** from the Digimon Card Wiki.
+
+            Triggered by @${{ github.actor }}
+          branch: "update-set/${{ github.event.inputs.set_code }}"
+          delete-branch: true
