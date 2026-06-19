@@ -92,7 +92,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install requests beautifulsoup4 Pillow
+        run: pip install requests beautifulsoup4 lxml Pillow
 
       - name: Run GetDataFromWikiSingle
         working-directory: scripts/python/Wiki
