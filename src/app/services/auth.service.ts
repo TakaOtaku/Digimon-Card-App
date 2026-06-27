@@ -1,7 +1,7 @@
 import { Injectable, Signal, signal } from '@angular/core';
 import {
   Auth,
-  browserSessionPersistence,
+  browserLocalPersistence,
   GoogleAuthProvider,
   setPersistence,
   signInWithPopup,
@@ -11,7 +11,7 @@ import {
 } from '@angular/fire/auth';
 import { emptySave, emptySettings, ISave, IUser } from '@models';
 import { MessageService } from 'primeng/api';
-import { catchError, Observable, of, switchMap, tap } from 'rxjs';
+import { catchError, Observable, of, retry, switchMap, tap } from 'rxjs';
 import { DigimonBackendService } from './digimon-backend.service';
 
 @Injectable({
@@ -27,8 +27,8 @@ export class AuthService {
     private digimonBackendService: DigimonBackendService,
     private messageService: MessageService,
   ) {
-    // Set persistence
-    setPersistence(this.firebaseAuth, browserSessionPersistence);
+    // Set persistence - use local so auth survives tab/browser close
+    setPersistence(this.firebaseAuth, browserLocalPersistence);
 
     // Use the user observable provided by the injected AngularFire Auth service
     this.firebaseUser$ = user(this.firebaseAuth);
@@ -60,43 +60,49 @@ export class AuthService {
 
           // User is logged in, get save from backend
           return this.digimonBackendService.getSave(firebaseUser.uid).pipe(
+            retry({ count: 2, delay: 1000 }),
             catchError(() => {
-              // User doesn't exist in backend yet (new user) or fetch failed
-              // Create a new save for them
-              return of(this.createNewSave(firebaseUser, this.getLocalStorageSave()));
+              // Fetch failed after retries — use local cache if available, but do NOT push to backend
+              const localSave = this.getLocalStorageSave();
+              if (localSave && localSave.uid === firebaseUser.uid) {
+                return of({ ...localSave, _fetchFailed: true } as ISave & { _fetchFailed?: boolean });
+              }
+              // No local save either — return null to indicate we couldn't load
+              return of(null);
             }),
             tap((save) => {
+              const fetchFailed = save && '_fetchFailed' in save && (save as any)._fetchFailed;
+
               if (save) {
                 // Create user data object and update state
                 const displayName = save.displayName ? save.displayName : firebaseUser.displayName;
                 const photoURL = save.photoURL ? save.photoURL : firebaseUser.photoURL;
+                const cleanSave = { ...save } as any;
+                delete cleanSave._fetchFailed;
+
                 const userData: IUser = {
                   uid: firebaseUser.uid,
                   displayName: displayName,
                   photoURL: photoURL,
-                  save: this.ensureSaveHasUserInfo(save, firebaseUser),
+                  save: this.ensureSaveHasUserInfo(cleanSave, firebaseUser),
                 };
 
                 // Update local storage and state
                 localStorage.setItem('user', JSON.stringify(userData));
                 this.userSignal.set(userData);
 
-                // Ensure save is up to date in backend
-                this.digimonBackendService.updateSave(userData.save).subscribe();
+                // Only push save to backend if it was successfully fetched (not from local fallback)
+                if (!fetchFailed) {
+                  this.digimonBackendService.updateSave(userData.save).subscribe();
+                }
               } else {
-                // Save is falsy — treat as new user
-                const newSave = this.createNewSave(firebaseUser, null);
-                const userData: IUser = {
-                  uid: firebaseUser.uid,
-                  displayName: firebaseUser.displayName || '',
-                  photoURL: firebaseUser.photoURL || '',
-                  save: newSave,
-                };
-
-                localStorage.setItem('user', JSON.stringify(userData));
-                this.userSignal.set(userData);
-
-                this.digimonBackendService.updateSave(newSave).subscribe();
+                // Could not load save from backend or local — show error, don't create empty save
+                console.warn('Could not load user save from backend or local storage.');
+                this.messageService.add({
+                  severity: 'warn',
+                  summary: 'Could not load profile',
+                  detail: 'Your profile data could not be loaded. Please try refreshing.',
+                });
               }
             }),
           );
