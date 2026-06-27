@@ -491,7 +491,7 @@ export const Types: string[] = [
   'SoC',
   'Spa (App Name)',
   'SW',
-  'Stealth (App Name)'
+  'Stealth (App Name)',
   'Stegosaur',
   'Strategy (App Name)',
   'Subtypes',
