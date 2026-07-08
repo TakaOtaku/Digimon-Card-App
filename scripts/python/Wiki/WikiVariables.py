@@ -58,6 +58,8 @@ wikiPageLinks = [
       'url': 'https://digimoncardgame.fandom.com/wiki/BT-24:_Booster_Time_Stranger'},
     {'name': '▹BOOSTER DUAL REVOLUTION [BT-25]',
       'url': 'https://digimoncardgame.fandom.com/wiki/BT-25:_Booster_Dual_Revolution'},
+      {'name': '▹BOOSTER TIMELESS BONDS [BT-26]',
+      'url': 'https://digimoncardgame.fandom.com/wiki/BT-26:_BOOSTER_TIMELESS_BONDS'},
   
     {'name': '▹THEME BOOSTER CLASSIC COLLECTION [EX-01]',
         'url': 'https://digimoncardgame.fandom.com/wiki/EX-01:_Theme_Booster_Classic_Collection'},
@@ -154,6 +156,8 @@ wikiPageLinks = [
         'url': 'https://digimoncardgame.fandom.com/wiki/LM-07:_Limited_Card_Pack_Another_Knight'},
     {'name': 'LIMITED CARD PACK FINAL CREST [LM-08]',
         'url': 'https://digimoncardgame.fandom.com/wiki/LM-08:_Limited_Card_Pack_Final_Crest'},
+    {'name': 'LIMITED CARD PACKDISTANCIA CERO [LM-09]',
+        'url': 'https://digimoncardgame.fandom.com/wiki/LM-09:_LIMITED_CARD_PACK_DISTANCIA_CERO'},
 ]
 NoteDictionary = {
     'BT01-03: Release Special Booster Ver.1.0': '▹RELEASE SPECIAL BOOSTER 1.0 [BT01-03]',
@@ -181,6 +185,7 @@ NoteDictionary = {
     'BT-23: Booster Hackers Slumber': '▹BOOSTER HACKERS SLUMBER [BT-23]',
     'BT-24: Booster Time Stranger': '▹BOOSTER TIME STRANGER [BT-24]',
     'BT-25: Booster Dual Revolution': '▹BOOSTER DUAL REVOLUTION [BT-25]',
+    'BT-26: Booster TIMELESS BONDS': '▹BOOSTER TIMELESS BONDS [BT-26]',
   
     'EX-01: Theme Booster Classic Collection': '▹THEME BOOSTER CLASSIC COLLECTION [EX-01]',
     'EX-02: Theme Booster Digital Hazard': '▹THEME BOOSTER DIGITAL HAZARD [EX-02]',
@@ -234,6 +239,7 @@ NoteDictionary = {
     'LM-06: Limited Card Pack Billion Bullet': 'LIMITED CARD PACK BILLION BULLET [LM-06]',
     'LM-07: Limited Card Pack Another Knight': 'LIMITED CARD PACK ANOTHER KNIGHT [LM-07]',
     'LM-08: Limited Card Pack Final Crest': 'LIMITED CARD PACK FINAL CREST [LM-08]',
+    'LM-09: Limited Card Pack DISTANCIA CERO': 'LIMITED CARD PACK DISTANCIA CERO [LM-09]',
 }
 replacements = [
     '(After this card is placed, by trashing it the next turn or later, activate the effect below.)',
@@ -241,7 +247,7 @@ replacements = [
     '(This Digimon can attack the turn it was played.)',
     '(At blocker timing, by suspending this Digimon, it becomes the attack target.)',
     '(Trash this card in your battle area to activate the effect below. You can\'t activate this effect the turn this card enters play.)',
-    '(When this Digimon attacks and deletes an opponent\'s Digimon in battle, it checks security before the attack ends.)',
+    '(When this Digimon deletes your opponent\'s Digimon in battle while attacking, it checks security before the attack ends.)',
     '(Place the top card of your deck on top of your security stack.)',
     '(This Digimon can\'t be deleted in battles against Security Digimon.)',
     '(Trash all of the digivolution cards on that Digimon.)',
