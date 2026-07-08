@@ -8565,8 +8565,8 @@
   ],
   "BT21-081": [
     {
-      "answer": "A: No, you can't.The Digimon that was given \uff1cPiercing\uff1e (When this Digimon attacks and deletes an opponent's Digimon in battle, it checks security before the attack ends.) by this effect must attack if possible.[1]",
-      "question": "Q: Can I use this card's [End of Your Turn] effect to give \uff1cPiercing\uff1e (When this Digimon attacks and deletes an opponent's Digimon in battle, it checks security before the attack ends.) to 1 of my Digimon, but then choose to not attack with that Digimon?"
+      "answer": "A: No, you can't.The Digimon that was given \uff1cPiercing\uff1e (When this Digimon deletes your opponent's Digimon in battle while attacking, it checks security before the attack ends.) by this effect must attack if possible.[1]",
+      "question": "Q: Can I use this card's [End of Your Turn] effect to give \uff1cPiercing\uff1e (When this Digimon deletes your opponent's Digimon in battle while attacking, it checks security before the attack ends.) to 1 of my Digimon, but then choose to not attack with that Digimon?"
     },
     {
       "answer": "A: No, an attack using the 2nd effect isn't possible. A new attack declaration can't be made during an attack.In this case, the [End of Your Turn] effects on both copies of this card trigger simultaneously at the end of your turn, and you use the [End of Your Turn] effect on the 1st copy of this card to attack.The 2nd [End of Your Turn] effect can be activated before the counter timing, but because you can't declare another attack during an attack, you won't be able to attack using the 2nd effect, even if you activate it.[1]",
@@ -14823,11 +14823,11 @@
       "question": "Q: If both a card with [Vegetation], [Plant] or [Fairy]\u00a0in any of its traits are revealed with this effect, must I add both of them to hand?"
     },
     {
-      "answer": "A: Yes, \"[Vegetation]\u00a0in any of its traits\" includes the following traits:Category:VegetationCategory:Ancient PlantCategory:Carnivorous Plant\n",
+      "answer": "A: Yes, \"[Vegetation]\u00a0in any of its traits\" includes the following traits:Category:Ancient PlantCategory:Carnivorous PlantCategory:Vegetation\n",
       "question": "Q: When it says \"[Vegetation]\u00a0in any of its traits\" (\u690d\u7269\u578b), does it include traits other than [Vegetation] (\u690d\u7269\u578b)?"
     },
     {
-      "answer": "A: Yes, \"[Fairy]\u00a0in any of its traits\" includes the following traits:Category:FairyCategory:Ancient Fairy\n",
+      "answer": "A: Yes, \"[Fairy]\u00a0in any of its traits\" includes the following traits:Category:Ancient FairyCategory:Fairy\n",
       "question": "Q: When it says \"[Fairy]\u00a0in any of its traits\" (\u5996\u7cbe\u578b), does it include traits other than [Fairy] (\u5996\u7cbe\u578b)?"
     }
   ],
