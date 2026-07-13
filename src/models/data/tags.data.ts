@@ -27,6 +27,7 @@ export const TAGS = [
   'BT23',
   'BT24',
   'BT25',
+  'BT26',
   'RB1',
   'LM',
   'EX1',
@@ -92,6 +93,7 @@ export const tagsList: ITag[] = [
   { name: 'BT23', color: 'Primary' },
   { name: 'BT24', color: 'Primary' },
   { name: 'BT25', color: 'Primary' },
+  { name: 'BT26', color: 'Primary' },
 
   { name: 'EX1', color: 'Primary' },
   { name: 'EX2', color: 'Primary' },

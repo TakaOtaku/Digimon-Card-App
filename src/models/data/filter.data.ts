@@ -30,6 +30,7 @@ export const GroupedSets = [
       { label: 'BT23', value: 'BT23' },
       { label: 'BT24', value: 'BT24' },
       { label: 'BT25', value: 'BT25' },
+      { label: 'BT26', value: 'BT26' },
     ],
   },
   {
