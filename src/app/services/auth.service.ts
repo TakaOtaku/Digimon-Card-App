@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable, Signal, signal } from '@angular/core';
 import {
   Auth,
@@ -11,7 +12,7 @@ import {
 } from '@angular/fire/auth';
 import { emptySave, emptySettings, ISave, IUser } from '@models';
 import { MessageService } from 'primeng/api';
-import { catchError, Observable, of, retry, switchMap, tap } from 'rxjs';
+import { catchError, Observable, of, retry, switchMap, tap, throwError, timer } from 'rxjs';
 import { DigimonBackendService } from './digimon-backend.service';
 
 @Injectable({
@@ -60,8 +61,25 @@ export class AuthService {
 
           // User is logged in, get save from backend
           return this.digimonBackendService.getSave(firebaseUser.uid).pipe(
-            retry({ count: 2, delay: 1000 }),
-            catchError(() => {
+            // Transient backend/network hiccups happen occasionally in production.
+            // Retry with exponential backoff so a temporary blip doesn't look like a
+            // failed login. Never retry a genuine 404 (user simply has no save yet).
+            retry({
+              count: 4,
+              delay: (error, retryCount) => {
+                if ((error as HttpErrorResponse)?.status === 404) {
+                  return throwError(() => error);
+                }
+                return timer(Math.min(1000 * 2 ** (retryCount - 1), 8000));
+              },
+            }),
+            catchError((error) => {
+              // First-time login: the user has no backend save yet (404).
+              // Create a new save so the account is initialized and the user can log in.
+              if ((error as HttpErrorResponse)?.status === 404) {
+                const newSave = this.createNewSave(firebaseUser, this.getLocalStorageSave());
+                return of({ ...newSave, _isNew: true } as ISave & { _isNew?: boolean });
+              }
               // Fetch failed after retries — use local cache if available, but do NOT push to backend
               const localSave = this.getLocalStorageSave();
               if (localSave && localSave.uid === firebaseUser.uid) {
@@ -71,7 +89,7 @@ export class AuthService {
               return of(null);
             }),
             tap((save) => {
-              const fetchFailed = save && '_fetchFailed' in save && (save as any)._fetchFailed;
+              const isNew = save && '_isNew' in save && (save as any)._isNew;
 
               if (save) {
                 // Create user data object and update state
@@ -79,6 +97,7 @@ export class AuthService {
                 const photoURL = save.photoURL ? save.photoURL : firebaseUser.photoURL;
                 const cleanSave = { ...save } as any;
                 delete cleanSave._fetchFailed;
+                delete cleanSave._isNew;
 
                 const userData: IUser = {
                   uid: firebaseUser.uid,
@@ -91,8 +110,10 @@ export class AuthService {
                 localStorage.setItem('user', JSON.stringify(userData));
                 this.userSignal.set(userData);
 
-                // Only push save to backend if it was successfully fetched (not from local fallback)
-                if (!fetchFailed) {
+                // Only write to the backend when creating a brand-new account (first login).
+                // We never re-push an existing user's save on login, so a transient or partial
+                // load can never overwrite their stored collection/decks/settings.
+                if (isNew) {
                   this.digimonBackendService.updateSave(userData.save).subscribe();
                 }
               } else {

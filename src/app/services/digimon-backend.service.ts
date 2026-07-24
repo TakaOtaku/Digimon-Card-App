@@ -18,6 +18,23 @@ const baseUrl_inactiv2 = 'https://179.61.219.98:8090/preview/digimoncard.app/';
 export class DigimonBackendService {
   constructor(private http: HttpClient) {}
 
+  /**
+   * Safely parse a backend field that may be a JSON string, an already-parsed
+   * object/array (Sequelize JSON columns), null, or malformed. Returns the
+   * provided fallback instead of throwing, so a single bad field can never
+   * break loading the whole save.
+   */
+  private safeParse<T>(value: any, fallback: T): T {
+    if (value === null || value === undefined) return fallback;
+    if (typeof value !== 'string') return value as T;
+    try {
+      const parsed = JSON.parse(value);
+      return parsed === null || parsed === undefined ? fallback : (parsed as T);
+    } catch {
+      return fallback;
+    }
+  }
+
   getDecks(url: string = baseUrl): Observable<IDeck[]> {
     return this.http.get<any[]>(url + 'decks').pipe(
       map((decks) => {
@@ -136,9 +153,9 @@ export class DigimonBackendService {
   getSave(id: any): Observable<ISave> {
     return this.http.get<any>(`${baseUrl}users/${id}`).pipe(
       map((save) => {
-        const collection: ICountCard[] = JSON.parse(save.collection);
-        const decks: IDeck[] = JSON.parse(save.decks);
-        const settings: ISettings = JSON.parse(save.settings);
+        const collection: ICountCard[] = this.safeParse<ICountCard[]>(save.collection, []);
+        const decks: IDeck[] = this.safeParse<IDeck[]>(save.decks, []);
+        const settings: ISettings = this.safeParse<ISettings>(save.settings, { ...emptySettings });
         const newSave = {
           ...save,
           collection,
