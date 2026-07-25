@@ -201904,26 +201904,26 @@
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-006.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.2",
     "cardNumber": "BT26-006",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digi-Egg",
+    "color": "Purple",
     "digiXros": "-",
     "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveEffect": "[When Attacking] [Once Per Turn] By trashing any 2 digivolution cards from your [Bagra Army]\u00a0trait trait Digimon, you may play or use 1 [Bagra Army]\u00a0trait trait card from your hand with the cost reduced by 2.",
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
     "effect": "-",
-    "form": "-",
+    "form": "In-Training",
     "id": "BT26-006",
-    "illustrator": "To be completed",
+    "illustrator": "Tsunemi Aosa",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Monimon",
+      "japanese": "\u30e2\u30cb\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -201932,7 +201932,7 @@
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
     "playCost": "-",
-    "rarity": "-",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -201942,7 +201942,7 @@
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "CRT/Bagra Army",
     "version": "Normal"
   },
   {
@@ -201998,32 +201998,38 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Data",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-008.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.3",
     "cardNumber": "BT26-008",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Red",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[Your Turn] This Digimon gets +2000 DP.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "1000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[When Moving] [On Play] 1 of your [Shambala] or [TS]\u00a0trait Digimon gains \uff1cPiercing\uff1e and +3000 DP for the turn.",
+    "form": "Rookie",
     "id": "BT26-008",
-    "illustrator": "To be completed",
+    "illustrator": "NIJIMAARC",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Kotemon",
+      "japanese": "\u30b3\u30c6\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -202031,8 +202037,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "3",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -202041,8 +202047,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.2 w/[Shambala]/[TS]\u00a0trait: Cost 0 ",
+    "type": "Reptile/Shambala/TB/TS",
     "version": "Normal"
   },
   {
@@ -202126,7 +202132,7 @@
     "dnaDigivolve": "-",
     "dp": "4000",
     "dualEffect": "-",
-    "effect": "\uff1cDetach ([Seven Code] trait)\uff1e (When this Digimon would leave the battle area other than by your effects, by trashing 1 of its specified link cards, it doesn't leave.)\n[When Attacking] By trashing 1 [Game], [Open] or [Seven Code]\u00a0trait card from your hand, \uff1cDraw 2\uff1e ",
+    "effect": "\uff1cDetach ([Seven Code] trait)\uff1e \n[When Attacking] By trashing 1 [Game], [Open] or [Seven Code]\u00a0trait card from your hand, \uff1cDraw 2\uff1e ",
     "form": "Stnd./Appmon",
     "id": "BT26-010",
     "illustrator": "YAMURETSU",
@@ -202210,32 +202216,43 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-012.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.4",
     "cardNumber": "BT26-012",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Red/Yellow",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "3",
+        "level": "3"
+      },
+      {
+        "color": "Yellow",
+        "cost": "3",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[When Attacking] [Once Per Turn] 1 of your opponent's Digimon gets -2000 DP for the turn.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "6000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[Main] [Once Per Turn] You may play or use 1 [TB]\u00a0trait card from your hand with the cost reduced by 2.",
+    "form": "Champion",
     "id": "BT26-012",
-    "illustrator": "To be completed",
+    "illustrator": "tessy",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Manekimon",
+      "japanese": "\u30de\u30cd\u30ad\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -202243,8 +202260,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "5",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -202253,39 +202270,50 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.3 w/[Shambala]\u00a0trait: Cost 2 ",
+    "type": "Puppet/Shambala/TB",
     "version": "Normal"
   },
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Virus",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-013.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.4",
     "cardNumber": "BT26-013",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Red/Purple",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "3",
+        "level": "3"
+      },
+      {
+        "color": "Purple",
+        "cost": "3",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[Your Turn] This Digimon gets +2000 DP.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "5000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "\uff1cBlocker\uff1e \n[On Play] [On Deletion] By trashing 1 card in your hand, delete 1 of your opponent's Digimon with 6000 DP or less.",
+    "form": "Champion",
     "id": "BT26-013",
-    "illustrator": "To be completed",
+    "illustrator": "NIJIMAARC",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Musyamon",
+      "japanese": "\u30e0\u30b7\u30e3\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -202293,8 +202321,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "4",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -202303,39 +202331,50 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.3 w/[Shambala]/[TS]\u00a0trait: Cost 2 ",
+    "type": "Wizard/Shambala/TB/TS",
     "version": "Normal"
   },
   {
     "aceEffect": "-",
-    "assembly": "-",
-    "attribute": "-",
+    "assembly": "[Assembly\u00a0-2] Lv.4 or lower [TB]\u00a0trait card",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-014.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.5",
     "cardNumber": "BT26-014",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Red/Yellow",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "4",
+        "level": "4"
+      },
+      {
+        "color": "Yellow",
+        "cost": "4",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "[On Deletion] You may play 1 [TB] trait Digimon card with 6000 DP or less from your hand without paying the cost.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "7000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[On Play] [When Digivolving] Delete 1 of your opponent's Digimon with 7000 DP or less.\n[On Deletion] You may return 1 [Shambala]\u00a0trait card from your trash to the hand. Then, you may play 1 [TB]\u00a0trait Digimon card with 6000 DP or less from your hand without paying the cost.",
+    "form": "Ultimate",
     "id": "BT26-014",
-    "illustrator": "To be completed",
+    "illustrator": "tessy",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Darumamon",
+      "japanese": "\u30c0\u30eb\u30de\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -202343,8 +202382,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "7",
+    "rarity": "R",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -202353,8 +202392,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.4 w/[Shambala]\u00a0trait: Cost 3 ",
+    "type": "Mutant/Shambala/TB",
     "version": "Normal"
   },
   {
@@ -202459,33 +202498,44 @@
   },
   {
     "aceEffect": "-",
-    "assembly": "-",
-    "attribute": "-",
+    "assembly": "[Assembly\u00a0-4] 2 Lv.5 or lower [Shambala]\u00a0trait cards w/different levels",
+    "attribute": "Virus",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-017.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.6",
     "cardNumber": "BT26-017",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Red/Purple",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "4",
+        "level": "5"
+      },
+      {
+        "color": "Purple",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "12000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "\uff1cBlocker\uff1e \n\uff1cRetaliation\uff1e \n[On Play] [When Digivolving] 1 of your Digimon with the [Shambala]\u00a0trait gains \uff1cSecurity A. +1\uff1e and \uff1cProgress\uff1e for the turn. \n[On Deletion] You may play 1 [Shambala] or [TS]\u00a0trait card with a play cost of 5 or less from your trash without paying the cost.",
+    "form": "Mega",
     "id": "BT26-017",
-    "illustrator": "To be completed",
+    "illustrator": "NIJIMAARC",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Zanbamon",
+      "japanese": "\u30b6\u30f3\u30d0\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -202493,8 +202543,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "12",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -202503,8 +202553,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[Shambala]/[TS]\u00a0trait: Cost 3 ",
+    "type": "Wizard/Shambala/TB/TS",
     "version": "Normal"
   },
   {
@@ -202582,7 +202632,7 @@
     "dnaDigivolve": "-",
     "dp": "4000",
     "dualEffect": "-",
-    "effect": "\uff1cDetach ([Seven Code] trait)\uff1e (When this Digimon would leave the battle area other than by your effects, by trashing 1 of its specified link cards, it doesn't leave.)\n[When Attacking] If your hand has 7 or fewer cards, \uff1cDraw 1\uff1e ",
+    "effect": "\uff1cDetach ([Seven Code] trait)\uff1e \n[When Attacking] If your hand has 7 or fewer cards, \uff1cDraw 1\uff1e ",
     "form": "Stnd./Appmon",
     "id": "BT26-019",
     "illustrator": "YAMURETSU",
@@ -202671,7 +202721,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-021.webp",
+    "cardImage": "assets/images/cards/BT26-021-Sample.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BT26-021",
     "cardType": "Digimon",
@@ -202721,7 +202771,7 @@
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] Lv.3 w/[TS]\u00a0trait: Cost 2 ",
-    "type": "Amphibian/TS",
+    "type": "Amphibian/Titan/TS",
     "version": "Normal"
   },
   {
@@ -203766,7 +203816,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-038.webp",
+    "cardImage": "assets/images/cards/BT26-038-Sample.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BT26-038",
     "cardType": "Digimon",
@@ -203978,7 +204028,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-042.webp",
+    "cardImage": "assets/images/cards/BT26-042-Sample.webp",
     "cardLv": "Lv.5",
     "cardNumber": "BT26-042",
     "cardType": "Digimon",
@@ -204140,7 +204190,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-045.webp",
+    "cardImage": "assets/images/cards/BT26-045-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT26-045",
     "cardType": "Digimon",
@@ -204246,7 +204296,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-047.webp",
+    "cardImage": "assets/images/cards/BT26-047-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT26-047",
     "cardType": "Digimon",
@@ -204587,7 +204637,7 @@
     "dnaDigivolve": "-",
     "dp": "4000",
     "dualEffect": "-",
-    "effect": "\uff1cDetach ([Seven Code] trait)\uff1e (When this Digimon would leave the battle area other than by your effects, by trashing 1 of its specified link cards, it doesn't leave.)\n[Your Turn] [Once Per Turn] When this Digimon gets linked, 1 of your Digimon with the [Social], [Tool], [Open] or [Seven Code]\u00a0trait gains \uff1cCollision\uff1e and +3000 DP for the turn.",
+    "effect": "\uff1cDetach ([Seven Code] trait)\uff1e \n[Your Turn] [Once Per Turn] When this Digimon gets linked, 1 of your Digimon with the [Social], [Tool], [Open] or [Seven Code]\u00a0trait gains \uff1cCollision\uff1e and +3000 DP for the turn.",
     "form": "Stnd./Appmon",
     "id": "BT26-051",
     "illustrator": "YAMURETSU",
@@ -204827,91 +204877,113 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-056.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.5",
     "cardNumber": "BT26-056",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon/Option",
+    "color": "Black/Purple",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "4"
+      },
+      {
+        "color": "Purple",
+        "cost": "4",
+        "level": "4"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
-    "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "dp": "8000",
+    "dualEffect": "[Arts Digivolve] ",
+    "effect": "\uff1cJamming\uff1e \n\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n[On Deletion] You may play 1 level 4 or lower Digimon card with the [Titan]\u00a0trait from your trash without paying the cost.",
+    "form": "Ultimate",
     "id": "BT26-056",
-    "illustrator": "To be completed",
+    "illustrator": "k.Dra",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Cerberusmon: Werewolf Mode/Inferno Divide",
+      "japanese": "\u30b1\u30eb\u30d9\u30ed\u30e2\u30f3\uff1a\u4eba\u72fc\u30e2\u30fc\u30c9/\u30a4\u30f3\u30d5\u30a7\u30eb\u30ce\u30c7\u30a3\u30d0\u30a4\u30c9",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
     },
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
-    "optionCardColourRequirement": "-",
-    "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "optionCardColourRequirement": "Black",
+    "optionCardEffect": "\uff1cUse Req. ([TS] trait)\uff1e \n[Main] Trash 1 card in your hand. Then, \uff1cDe-Digivolve 3\uff1e 1 of your opponent's Digimon. ",
+    "playCost": "3",
+    "rarity": "R",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
       "japanese": "Not released",
       "korean": "Not released"
     },
-    "rule": "-",
+    "rule": "[Rule] Trait: Has [Dark Animal] Type.",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] [Cerberusmon]: Cost 1\n[Digivolve] Lv.4 w/[TS]\u00a0trait: Cost 3 ",
+    "type": "Wizard/Titan/TS",
     "version": "Normal"
   },
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-057.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.5",
     "cardNumber": "BT26-057",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon/Option",
+    "color": "Black/Red",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "4"
+      },
+      {
+        "color": "Red",
+        "cost": "4",
+        "level": "4"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
-    "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "dp": "8000",
+    "dualEffect": "[Arts Digivolve] ",
+    "effect": "[When Digivolving] By trashing the bottom face-down card under card from under any of your Tamers, until your opponent's turn ends, their Digimon effects don't affect this Digimon, and it gets +3000 DP. [All Turns] [Once Per Turn] When attack targets change or effects trash cards from under your Tamers, this Digimon may unsuspend.",
+    "form": "Ultimate",
     "id": "BT26-057",
-    "illustrator": "To be completed",
+    "illustrator": "tessy",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Bearcatmon/Penetrate Blow",
+      "japanese": "\u30d9\u30a2\u30ad\u30e3\u30c3\u30c8\u30e2\u30f3/\u30da\u30cd\u30c8\u30ec\u30a4\u30c8\u30d6\u30ed\u30a6",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
     },
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
-    "optionCardColourRequirement": "-",
-    "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "optionCardColourRequirement": "Black",
+    "optionCardEffect": "\uff1cUse Req. ([GlowingDawn] trait)\uff1e \n[Main] \uff1cDe-Digivolve 1\uff1e 1 of your opponent's Digimon. Then, until their turn ends, 1 of their Digimon gets \"[Start of Your Main Phase] This Digimon attacks.\"",
+    "playCost": "4",
+    "rarity": "SR",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -204920,9 +204992,70 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.4 w/[Glowing Dawn]\u00a0trait: Cost 3 ",
+    "type": "Beastkin/Glowing Dawn/BEATBREAK",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT26-057_P1.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "BT26-057",
+    "cardType": "Digimon/Option",
+    "color": "Black/Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "4"
+      },
+      {
+        "color": "Red",
+        "cost": "4",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "8000",
+    "dualEffect": "[Arts Digivolve] ",
+    "effect": "[When Digivolving] By trashing the bottom face-down card under card from under any of your Tamers, until your opponent's turn ends, their Digimon effects don't affect this Digimon, and it gets +3000 DP. [All Turns] [Once Per Turn] When attack targets change or effects trash cards from under your Tamers, this Digimon may unsuspend.",
+    "form": "Ultimate",
+    "id": "BT26-057_P1",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Bearcatmon/Penetrate Blow",
+      "japanese": "\u30d9\u30a2\u30ad\u30e3\u30c3\u30c8\u30e2\u30f3/\u30da\u30cd\u30c8\u30ec\u30a4\u30c8\u30d6\u30ed\u30a6",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "BT-26: BOOSTER TIMELESS BONDS",
+    "optionCardColourRequirement": "Black",
+    "optionCardEffect": "\uff1cUse Req. ([GlowingDawn] trait)\uff1e \n[Main] \uff1cDe-Digivolve 1\uff1e 1 of your opponent's Digimon. Then, until their turn ends, 1 of their Digimon gets \"[Start of Your Main Phase] This Digimon attacks.\"",
+    "playCost": "4",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.4 w/[Glowing Dawn]\u00a0trait: Cost 3 ",
+    "type": "Beastkin/Glowing Dawn/BEATBREAK",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -204982,7 +205115,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-059.webp",
+    "cardImage": "assets/images/cards/BT26-059-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT26-059",
     "cardType": "Digimon",
@@ -205215,7 +205348,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-061.webp",
+    "cardImage": "assets/images/cards/BT26-061-Sample.webp",
     "cardLv": "Lv.3",
     "cardNumber": "BT26-061",
     "cardType": "Digimon",
@@ -205349,7 +205482,7 @@
     "dnaDigivolve": "-",
     "dp": "4000",
     "dualEffect": "-",
-    "effect": "\uff1cDetach ([Seven Code] trait)\uff1e (When this Digimon would leave the battle area other than by your effects, by trashing 1 of its specified link cards, it doesn't leave.)\n[Your Turn] [Once Per Turn] When this Digimon gets linked, reveal the top 3 cards of your deck. Add 1 card with the [Entertainment], [Open] or [Seven Code]\u00a0trait among them to the hand. Return the rest to the top or bottom of the deck.",
+    "effect": "\uff1cDetach ([Seven Code] trait)\uff1e \n[Your Turn] [Once Per Turn] When this Digimon gets linked, reveal the top 3 cards of your deck. Add 1 card with the [Entertainment], [Open] or [Seven Code]\u00a0trait among them to the hand. Return the rest to the top or bottom of the deck.",
     "form": "Stnd./Appmon",
     "id": "BT26-063",
     "illustrator": "YAMURETSU",
@@ -205494,7 +205627,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-066.webp",
+    "cardImage": "assets/images/cards/BT26-066-Sample.webp",
     "cardLv": "Lv.3",
     "cardNumber": "BT26-066",
     "cardType": "Digimon",
@@ -205651,32 +205784,38 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-069.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.4",
     "cardNumber": "BT26-069",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Purple",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When your hand is trashed from, this [Titan]\u00a0trait Digimon may digivolve into [Titamon] or a [Titan]\u00a0trait Digimon card in the trash with the cost reduced by 1.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "6000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "When this card is trashed from the hand, if your hand has 5 or fewer cards, \uff1cDraw 1\uff1e \n[On Play] [When Digivolving] By trashing 1 card in your hand, delete 1 level 4 or lower Digimon.",
+    "form": "Champion",
     "id": "BT26-069",
-    "illustrator": "To be completed",
+    "illustrator": "k.Dra",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Dobermon",
+      "japanese": "\u30c9\u30fc\u30d9\u30eb\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -205684,8 +205823,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "5",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -205694,8 +205833,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.3 w/[TS]\u00a0trait: Cost 2 ",
+    "type": "Dark Animal/Titan/TS",
     "version": "Normal"
   },
   {
@@ -205706,7 +205845,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-070.webp",
+    "cardImage": "assets/images/cards/BT26-070-Sample.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BT26-070",
     "cardType": "Digimon",
@@ -205929,32 +206068,43 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-074.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.5",
     "cardNumber": "BT26-074",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Purple/Black",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "4",
+        "level": "4"
+      },
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "[On Deletion] Delete 1 of your opponent's Digimon with the lowest level.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "7000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[On Play] [When Digivolving] [When Attacking] [Once Per Turn] If it's your turn, by trashing 1 card in your hand, you may use 1 Option card with the [Titan]\u00a0trait from your trash with the cost reduced by 2.",
+    "form": "Ultimate",
     "id": "BT26-074",
-    "illustrator": "To be completed",
+    "illustrator": "k.Dra",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Cerberusmon",
+      "japanese": "\u30b1\u30eb\u30d9\u30ed\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -205962,8 +206112,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "7",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -205972,8 +206122,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.4 w/[TS]\u00a0trait: Cost 3 ",
+    "type": "Dark Animal/Titan/TS",
     "version": "Normal"
   },
   {
@@ -205984,7 +206134,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-075.webp",
+    "cardImage": "assets/images/cards/BT26-075-Sample.webp",
     "cardLv": "Lv.5",
     "cardNumber": "BT26-075",
     "cardType": "Digimon/Option",
@@ -206045,7 +206195,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-075_P1.webp",
+    "cardImage": "assets/images/cards/BT26-075_P1-Sample.webp",
     "cardLv": "Lv.5",
     "cardNumber": "BT26-075",
     "cardType": "Digimon/Option",
@@ -206250,33 +206400,39 @@
   },
   {
     "aceEffect": "-",
-    "assembly": "-",
-    "attribute": "-",
+    "assembly": "[Assembly\u00a0-2] [Plutomon]",
+    "attribute": "Virus",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-079.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.6",
     "cardNumber": "BT26-079",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Purple",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "12000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[Trash] [Main] If your hand has 5 or fewer cards, play this card with the cost reduced by 4.\n\uff1cSecurity A. +1\uff1e \n\uff1cDecode ([Plutomon])\uff1e \n\uff1cRetaliation\uff1e \n[On Play] [When Digivolving] [When Attacking] By trashing 1 card in your hand, delete 1 of your opponent's level 6 or lower Digimon.\n[All Turns] [Once Per Turn] When any of your opponent's Digimon are played or digivolve, both players trash cards in their hand so that they have 4 left.",
+    "form": "Mega",
     "id": "BT26-079",
-    "illustrator": "To be completed",
+    "illustrator": "k.Dra",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "ZombiePlutomon",
+      "japanese": "\u30be\u30f3\u30d3\u30d7\u30eb\u30fc\u30c8\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -206284,8 +206440,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "12",
+    "rarity": "SR",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -206294,9 +206450,65 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] [Plutomon]: Cost 1\n[Digivolve] Lv.5 w/[TS]\u00a0trait: Cost 3 ",
+    "type": "Undead/Titan/TS",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-2] [Plutomon]",
+    "attribute": "Virus",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT26-079_P1.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT26-079",
+    "cardType": "Digimon",
+    "color": "Purple",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "-",
+    "effect": "[Trash] [Main] If your hand has 5 or fewer cards, play this card with the cost reduced by 4.\n\uff1cSecurity A. +1\uff1e \n\uff1cDecode ([Plutomon])\uff1e \n\uff1cRetaliation\uff1e \n[On Play] [When Digivolving] [When Attacking] By trashing 1 card in your hand, delete 1 of your opponent's level 6 or lower Digimon.\n[All Turns] [Once Per Turn] When any of your opponent's Digimon are played or digivolve, both players trash cards in their hand so that they have 4 left.",
+    "form": "Mega",
+    "id": "BT26-079_P1",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "ZombiePlutomon",
+      "japanese": "\u30be\u30f3\u30d3\u30d7\u30eb\u30fc\u30c8\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "BT-26: BOOSTER TIMELESS BONDS",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "12",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Plutomon]: Cost 1\n[Digivolve] Lv.5 w/[TS]\u00a0trait: Cost 3 ",
+    "type": "Undead/Titan/TS",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -207168,7 +207380,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-095.webp",
+    "cardImage": "assets/images/cards/BT26-095-Sample.webp",
     "cardLv": "-",
     "cardNumber": "BT26-095",
     "cardType": "Tamer",
@@ -207418,7 +207630,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-100.webp",
+    "cardImage": "assets/images/cards/BT26-100-Sample.webp",
     "cardLv": "-",
     "cardNumber": "BT26-100",
     "cardType": "Option",
@@ -207729,10 +207941,10 @@
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "[Start of Your Main Phase] Gain 1 memory.\n[On Play] By trashing 1 [Shambala]\u00a0trait card from your hand, \uff1cDraw 2\uff1e \n[End of Your Turn] If you have a Digimon with the [Tentei Hachibushu]\u00a0trait, by suspending this Tamer, you may use 1 Option card with the [Shambala]\u00a0trait from your hand without paying the cost.",
     "form": "-",
     "id": "BT26-104",
-    "illustrator": "To be completed",
+    "illustrator": "tyuga",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
@@ -207757,7 +207969,7 @@
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
     "specialDigivolve": "-",
-    "type": "Shambala",
+    "type": "Shambala/SW/TB/TS",
     "version": "Normal"
   },
   {
@@ -207779,10 +207991,10 @@
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "[Start of Your Main Phase] Gain 1 memory.\n[On Play] By trashing 1 [Shambala]\u00a0trait card from your hand, \uff1cDraw 2\uff1e \n[End of Your Turn] If you have a Digimon with the [Tentei Hachibushu]\u00a0trait, by suspending this Tamer, you may use 1 Option card with the [Shambala]\u00a0trait from your hand without paying the cost.",
     "form": "-",
     "id": "BT26-104_P1",
-    "illustrator": "To be completed",
+    "illustrator": "Tonamikanji",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
@@ -207807,7 +208019,7 @@
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
     "specialDigivolve": "-",
-    "type": "Shambala",
+    "type": "Shambala/SW/TB/TS",
     "version": "Alternative Art"
   },
   {
@@ -207829,10 +208041,10 @@
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "[Start of Your Main Phase] Gain 1 memory.\n[On Play] By trashing 1 [Shambala]\u00a0trait card from your hand, \uff1cDraw 2\uff1e \n[End of Your Turn] If you have a Digimon with the [Tentei Hachibushu]\u00a0trait, by suspending this Tamer, you may use 1 Option card with the [Shambala]\u00a0trait from your hand without paying the cost.",
     "form": "-",
     "id": "BT26-104_P2",
-    "illustrator": "To be completed",
+    "illustrator": "Tonamikanji",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
@@ -207857,7 +208069,7 @@
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
     "specialDigivolve": "-",
-    "type": "Shambala",
+    "type": "Shambala/SW/TB/TS",
     "version": "Alternative Art"
   },
   {
