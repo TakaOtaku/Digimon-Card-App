@@ -2,7 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
-import { DropdownModule } from 'primeng/dropdown';
+import { SelectModule } from 'primeng/select';
 import { IconField } from 'primeng/iconfield';
 import { InputIcon } from 'primeng/inputicon';
 import { IDeckFilter } from '../../services/mongo-backend.service';
@@ -30,7 +30,7 @@ import { TAGS } from '@models';
 
         <!-- Sets Filter -->
         <div class="md:col-span-2">
-          <p-dropdown
+          <p-select
             [options]="setOptions"
             [(ngModel)]="currentFilter.cardSet"
             optionLabel="label"
@@ -38,7 +38,7 @@ import { TAGS } from '@models';
             placeholder="All Sets"
             (onChange)="onFilterChange()"
             styleClass="w-full">
-          </p-dropdown>
+          </p-select>
         </div>
 
         <!-- Browse All Button -->
@@ -70,7 +70,7 @@ import { TAGS } from '@models';
       </div>
   `,
   standalone: true,
-  imports: [FormsModule, ButtonModule, InputTextModule, DropdownModule, IconField, InputIcon],
+  imports: [FormsModule, ButtonModule, InputTextModule, SelectModule, IconField, InputIcon],
 })
 export class DeckFilterComponent {
   @Input() filter: IDeckFilter = {};

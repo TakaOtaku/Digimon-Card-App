@@ -8,7 +8,7 @@ import { AuthService, MongoBackendService } from '@services';
 import { DigimonCardStore, FilterStore, SaveStore, WebsiteStore } from '@store';
 import { BlockUIModule } from 'primeng/blockui';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
-import { SidebarModule } from 'primeng/sidebar';
+import { DrawerModule } from 'primeng/drawer';
 import { ToastModule } from 'primeng/toast';
 import { first } from 'rxjs';
 import { DialogComponent } from './features/shared/dialog.component';
@@ -36,11 +36,11 @@ import { NavbarComponent } from './features/shared/navbar/navbar.component';
 
       <digimon-dialog></digimon-dialog>
 
-      <p-sidebar [(visible)]="sideNav" styleClass="w-[6.5rem] overflow-hidden p-0">
+      <p-drawer [(visible)]="sideNav" styleClass="w-[6.5rem] overflow-hidden p-0">
         <ng-template pTemplate="content" class="p-0">
           <digimon-nav-links class="flex flex-col w-full justify-center" [sidebar]="true"></digimon-nav-links>
         </ng-template>
-      </p-sidebar>
+      </p-drawer>
 
       <p-toast></p-toast>
     </div>
@@ -53,7 +53,7 @@ import { NavbarComponent } from './features/shared/navbar/navbar.component';
     RouterOutlet,
     BlockUIModule,
     ProgressSpinnerModule,
-    SidebarModule,
+    DrawerModule,
     NavLinksComponent,
     ToastModule,
     DialogComponent,

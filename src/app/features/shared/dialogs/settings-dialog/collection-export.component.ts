@@ -7,7 +7,7 @@ import { saveAs } from 'file-saver';
 import { ToastrService } from 'ngx-toastr';
 import { MessageService } from 'primeng/api';
 import { ButtonDirective } from 'primeng/button';
-import { InputSwitch } from 'primeng/inputswitch';
+import { ToggleSwitch } from 'primeng/toggleswitch';
 import { MultiSelect } from 'primeng/multiselect';
 
 @Component({
@@ -120,7 +120,7 @@ import { MultiSelect } from 'primeng/multiselect';
       <p class="mt-3 text-center font-bold">Missing Cards or Collected Cards?</p>
       <div class="mx-auto flex flex-row">
         <span class="mr-2">Missing</span>
-        <p-inputSwitch [(ngModel)]="collectedCards"></p-inputSwitch>
+        <p-toggleswitch [(ngModel)]="collectedCards"></p-toggleswitch>
         <span class="ml-2">Collected</span>
       </div>
 
@@ -174,7 +174,7 @@ import { MultiSelect } from 'primeng/multiselect';
     `,
   ],
   standalone: true,
-  imports: [MultiSelect, FormsModule, NgClass, InputSwitch, NgIf, ButtonDirective],
+  imports: [MultiSelect, FormsModule, NgClass, ToggleSwitch, NgIf, ButtonDirective],
   providers: [MessageService],
 })
 export class CollectionExportComponent {

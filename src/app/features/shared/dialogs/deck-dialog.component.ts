@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import { DropdownModule } from 'primeng/dropdown';
+import { SelectModule } from 'primeng/select';
 import { InputTextModule } from 'primeng/inputtext';
 import { TooltipModule } from 'primeng/tooltip';
 import { first } from 'rxjs';
@@ -80,13 +80,13 @@ export interface DigimonCardImage {
           <label>Title</label>
           <input formControlName="title" placeholder="Deck Name:" class="col-span-2 mr-2 w-full text-sm" pInputText type="text" />
           <label>Image</label>
-          <p-dropdown
+          <p-select
             styleClass="truncate w-full lg:w-[250px]"
             class=" col-span-2"
             [options]="cardImageOptions"
             formControlName="cardImage"
             optionLabel="name"
-            appendTo="body"></p-dropdown>
+            appendTo="body"></p-select>
           <label>Description</label>
           <textarea
             formControlName="description"
@@ -170,7 +170,7 @@ export interface DigimonCardImage {
     FormsModule,
     ReactiveFormsModule,
     InputTextModule,
-    DropdownModule,
+    SelectModule,
     TextareaModule,
     ButtonModule,
     ConfirmDialogModule,

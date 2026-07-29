@@ -4,7 +4,7 @@ import { FormControl } from '@angular/forms';
 import { DataViewModule } from 'primeng/dataview';
 import { DialogModule } from 'primeng/dialog';
 import { DragDropModule } from 'primeng/dragdrop';
-import { SidebarModule } from 'primeng/sidebar';
+import { DrawerModule } from 'primeng/drawer';
 import { SkeletonModule } from 'primeng/skeleton';
 import { DigimonCard, DRAG, dummyCard, ICountCard, IDraggedCard, PriceMetric } from '@models';
 import { IntersectionListenerDirective } from '@directives';
@@ -63,13 +63,13 @@ import { CardMarketService } from '../../../services/card-market.service';
 
     <digimon-filter-side-box *ngIf="filterBoxEnabled" class="hidden xl:flex"></digimon-filter-side-box>
 
-    <p-sidebar
+    <p-drawer
       [(visible)]="filterBox"
       dismissible="false"
       position="right"
       styleClass="w-[20rem] md:w-[24rem] overflow-x-hidden overflow-y-auto p-0 border-none">
       <digimon-filter-side-box></digimon-filter-side-box>
-    </p-sidebar>
+    </p-drawer>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
@@ -81,7 +81,7 @@ import { CardMarketService } from '../../../services/card-market.service';
     FullCardComponent,
     DialogModule,
     FilterSideBoxComponent,
-    SidebarModule,
+    DrawerModule,
     DataViewModule,
     SkeletonModule,
     IntersectionListenerDirective,

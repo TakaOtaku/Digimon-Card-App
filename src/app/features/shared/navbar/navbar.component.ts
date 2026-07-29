@@ -2,7 +2,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { DialogModule } from 'primeng/dialog';
-import { SidebarModule } from 'primeng/sidebar';
+import { DrawerModule } from 'primeng/drawer';
 import { environment } from '../../../../environments/environment';
 import { NavLinksComponent } from './nav-links.component';
 
@@ -26,7 +26,7 @@ import { NavLinksComponent } from './nav-links.component';
     </nav>
   `,
   standalone: true,
-  imports: [FontAwesomeModule, ConfirmPopupModule, DialogModule, NavLinksComponent, SidebarModule],
+  imports: [FontAwesomeModule, ConfirmPopupModule, DialogModule, NavLinksComponent, DrawerModule],
 })
 export class NavbarComponent {
   @Output() openSideNav = new EventEmitter<boolean>();

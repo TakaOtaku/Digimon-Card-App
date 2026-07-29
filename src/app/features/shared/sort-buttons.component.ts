@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, effect, inject, Signal, signal } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MenuItem } from 'primeng/api';
-import { DropdownModule } from 'primeng/dropdown';
+import { SelectModule } from 'primeng/select';
 import { SplitButton } from 'primeng/splitbutton';
 import { ISort } from '../../../models';
 import { SaveStore } from '../../store/save.store';
@@ -29,7 +29,7 @@ import { WebsiteStore } from '../../store/website.store';
   `,
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [DropdownModule, FormsModule, ReactiveFormsModule, SplitButton],
+  imports: [SelectModule, FormsModule, ReactiveFormsModule, SplitButton],
 })
 export class SortButtonsComponent {
   websiteStore = inject(WebsiteStore);

@@ -29,49 +29,53 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
         (hideStats)="hideStats.emit(true)"></digimon-deck-toolbar>
     </div>
 
-    <p-confirmPopup></p-confirmPopup>
+    <p-confirmpopup></p-confirmpopup>
 
     <ng-container>
-      <p-accordion class="mx-auto" [multiple]="true" [activeIndex]="[0, 1]">
-        <p-accordionTab [pDroppable]="['toDeck', 'fromSide']" (onDrop)="drop(draggedCard(), 'Main')" [(selected)]="mainExpanded">
-          <ng-template pTemplate="header">
+      <p-accordion class="mx-auto" [multiple]="true" [(value)]="accordionValue">
+        <p-accordion-panel value="0" [pDroppable]="['toDeck', 'fromSide']" (onDrop)="drop(draggedCard(), 'Main')">
+          <p-accordion-header>
             <div>
               {{ 'Main-Deck (' + getCardCount(mainDeck, 'Egg') + '/5 - ' + getCardCount(mainDeck, 'Deck') + '/50)' }}
             </div>
-          </ng-template>
-          <div
-            class="mx-auto grid w-full grid-cols-4 md:grid-cols-6"
-            [ngClass]="{
-              'lg:grid-cols-8': !collectionView,
-            }">
-            <digimon-deck-card
-              *ngFor="let card of mainDeck"
-              pDraggable="fromDeck"
-              (onDragStart)="setDraggedCard(card, DRAG.Main)"
-              (removeCard)="removeCard(card)"
-              [cardHave]="getCardHave(card)"
-              [card]="card"
-              [missingCards]="missingCards"></digimon-deck-card>
-          </div>
-        </p-accordionTab>
-        <p-accordionTab
+          </p-accordion-header>
+          <p-accordion-content>
+            <div
+              class="mx-auto grid w-full grid-cols-4 md:grid-cols-6"
+              [ngClass]="{
+                'lg:grid-cols-8': !collectionView,
+              }">
+              <digimon-deck-card
+                *ngFor="let card of mainDeck"
+                pDraggable="fromDeck"
+                (onDragStart)="setDraggedCard(card, DRAG.Main)"
+                (removeCard)="removeCard(card)"
+                [cardHave]="getCardHave(card)"
+                [card]="card"
+                [missingCards]="missingCards"></digimon-deck-card>
+            </div>
+          </p-accordion-content>
+        </p-accordion-panel>
+        <p-accordion-panel
+          value="1"
           *ngIf="displaySideDeck()"
           [pDroppable]="['toDeck', 'fromDeck']"
-          [(selected)]="sideExpanded"
-          (onDrop)="drop(draggedCard(), 'Side')"
-          [header]="'Side-Deck (' + getCardCount(sideDeck, 'All') + ')'">
-          <div class="grid w-full grid-cols-4 md:grid-cols-6">
-            <digimon-deck-card
-              *ngFor="let card of sideDeck"
-              pDraggable="fromSide"
-              (onDragStart)="setDraggedCard(card, DRAG.Side)"
-              (removeCard)="removeSideCard(card)"
-              [cardHave]="getCardHave(card)"
-              [sideDeck]="true"
-              [card]="card"
-              [missingCards]="missingCards"></digimon-deck-card>
-          </div>
-        </p-accordionTab>
+          (onDrop)="drop(draggedCard(), 'Side')">
+          <p-accordion-header>{{ 'Side-Deck (' + getCardCount(sideDeck, 'All') + ')' }}</p-accordion-header>
+          <p-accordion-content>
+            <div class="grid w-full grid-cols-4 md:grid-cols-6">
+              <digimon-deck-card
+                *ngFor="let card of sideDeck"
+                pDraggable="fromSide"
+                (onDragStart)="setDraggedCard(card, DRAG.Side)"
+                (removeCard)="removeSideCard(card)"
+                [cardHave]="getCardHave(card)"
+                [sideDeck]="true"
+                [card]="card"
+                [missingCards]="missingCards"></digimon-deck-card>
+            </div>
+          </p-accordion-content>
+        </p-accordion-panel>
       </p-accordion>
     </ng-container>
   `,
@@ -109,9 +113,8 @@ export class DeckViewComponent {
   displaySideDeck = this.saveStore.displaySideDeck;
 
   mainDeck: IDeckCard[] = [];
-  mainExpanded = true;
+  accordionValue: string[] = ['0', '1'];
   sideDeck: IDeckCard[] = [];
-  sideExpanded = false;
 
   draggedCard = this.websiteStore.draggedCard;
 
