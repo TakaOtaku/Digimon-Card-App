@@ -17,4 +17,10 @@ export const ADMINS = [
     writeBlog: false,
     editEvents: false,
   },
+  {
+    id: 'loBLZPOIL0ZlDzt6A1rgDiTomTw2', // legacy deck-dialog admin
+    admin: true,
+    writeBlog: false,
+    editEvents: false,
+  },
 ];

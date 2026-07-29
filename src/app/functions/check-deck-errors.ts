@@ -1,7 +1,6 @@
 import { emptyDeck, IDeck } from '@models';
 import * as uuid from 'uuid';
 
-export * from './upload-adapter';
 export function checkDeckErrors(decks: IDeck[]) {
   const newDecks: IDeck[] = decks.map((deck) => {
     const newDeck = { ...emptyDeck };

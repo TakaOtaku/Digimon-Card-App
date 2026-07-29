@@ -60,6 +60,17 @@ export class MigrationService {
     private readonly mongoBackendRootUrl = this.mongoBackendUrl.replace(/\/api\/?$/, '/');
     private readonly legacyBackendUrl = environment.legacyApiBaseUrl;
 
+    /**
+     * Shared secret required by the token-protected /api/migration/* endpoints.
+     * Supplied by the admin at runtime via the migration UI so it is never
+     * committed to source or shipped in the build.
+     */
+    migrationToken = '';
+
+    private migrationRequestOptions(): { headers: { [header: string]: string } } {
+        return { headers: { 'x-migration-token': this.migrationToken } };
+    }
+
     private digimonCardStore = inject(DigimonCardStore);
 
     constructor(private http: HttpClient) { }
@@ -315,7 +326,7 @@ export class MigrationService {
                 }
 
                 const batchRequests = batches.map((batch, idx) =>
-                    this.http.patch<any>(`${this.mongoMigrationUrl}decks/fix-images`, batch).pipe(
+                    this.http.patch<any>(`${this.mongoMigrationUrl}decks/fix-images`, batch, this.migrationRequestOptions()).pipe(
                         map(res => {
                             console.log(`Batch ${idx + 1}/${batches.length}: ${res.modified} modified`);
                             return res;
@@ -797,7 +808,7 @@ export class MigrationService {
                             progress: { total, processed, successful, failed, currentItem: `Batch ${batchIndex + 1}/${batches.length} (${batch.length} users)` }
                         });
 
-                        this.http.post<any>(`${this.mongoMigrationUrl}users/bulk`, payload).pipe(
+                        this.http.post<any>(`${this.mongoMigrationUrl}users/bulk`, payload, this.migrationRequestOptions()).pipe(
                             catchError((error: HttpErrorResponse) => of({ error: true, message: error.message, total: batch.length }))
                         ).subscribe(result => {
                             if (result.error) {
@@ -868,7 +879,7 @@ export class MigrationService {
                             progress: { total, processed, successful, failed, currentItem: `Batch ${batchIndex + 1}/${batches.length} (${batch.length} decks)` }
                         });
 
-                        this.http.post<any>(`${this.mongoMigrationUrl}decks/bulk`, payload).pipe(
+                        this.http.post<any>(`${this.mongoMigrationUrl}decks/bulk`, payload, this.migrationRequestOptions()).pipe(
                             catchError((error: HttpErrorResponse) => of({ error: true, message: error.message, total: batch.length }))
                         ).subscribe(result => {
                             if (result.error) {

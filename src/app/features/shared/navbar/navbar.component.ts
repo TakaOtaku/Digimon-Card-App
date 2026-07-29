@@ -3,6 +3,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { DialogModule } from 'primeng/dialog';
 import { SidebarModule } from 'primeng/sidebar';
+import { environment } from '../../../../environments/environment';
 import { NavLinksComponent } from './nav-links.component';
 
 @Component({
@@ -12,7 +13,7 @@ import { NavLinksComponent } from './nav-links.component';
       class="flex flex-row lg:flex-col h-[3.5rem] md:h-[5rem] lg:min-h-[100vh] lg:h-full w-[100vw] lg:w-[6.5rem] lg:max-w-[6.5rem] max-w-[100vw]
       border-b lg:border-b-0 lg:border-r border-slate-600 px-5 lg:px-0 lg:py-10 items-center"
       style="backdrop-filter: blur(16px); background-color: color-mix(in srgb, #17212f 70%, transparent)">
-      <a class="z-[5000]" href="https://digimoncard.app">
+      <a class="z-[5000]" [href]="appUrl">
         <img alt="Logo" class="mt-[0.25rem] cursor-pointer max-h-[2.5rem] md:max-h-[4rem]" src="../../../../assets/images/logo.png" />
       </a>
 
@@ -29,4 +30,5 @@ import { NavLinksComponent } from './nav-links.component';
 })
 export class NavbarComponent {
   @Output() openSideNav = new EventEmitter<boolean>();
+  protected readonly appUrl = environment.appUrl;
 }

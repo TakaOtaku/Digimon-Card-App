@@ -11,7 +11,8 @@ import { TooltipModule } from 'primeng/tooltip';
 import { first } from 'rxjs';
 import * as uuid from 'uuid';
 
-import { emptyDeck, IDeck, IDeckCard } from '../../../../models';
+import { ADMINS, emptyDeck, IDeck, IDeckCard } from '../../../../models';
+import { environment } from '../../../../environments/environment';
 import { mapToDeckCards, setDeckImage } from '../../../functions';
 import { AuthService } from '../../../services/auth.service';
 import { MongoBackendService } from '../../../services/mongo-backend.service';
@@ -226,9 +227,9 @@ export class DeckDialogComponent {
       this.changeDetection.detectChanges();
     });
 
-    this.isAdmin =
-      this.authService.currentUser()?.uid === 'S3rWXPtCYRN8vSrxY3qE6aeewy43' ||
-      this.authService.currentUser()?.uid === 'loBLZPOIL0ZlDzt6A1rgDiTomTw2';
+    this.isAdmin = ADMINS.some(
+      (admin) => admin.admin && admin.id === this.authService.currentUser()?.uid,
+    );
   }
 
   openDeck(event: Event) {
@@ -325,8 +326,8 @@ export class DeckDialogComponent {
     selBox.style.top = '0';
     selBox.style.opacity = '0';
     selBox.value = this.editable
-      ? `https://digimoncard.app/deckbuilder/user/${this.authService.currentUser()?.uid}/deck/${this.deck.id}`
-      : `https://digimoncard.app/deckbuilder/${this.deck.id}`;
+      ? `${environment.appUrl}/deckbuilder/user/${this.authService.currentUser()?.uid}/deck/${this.deck.id}`
+      : `${environment.appUrl}/deckbuilder/${this.deck.id}`;
     document.body.appendChild(selBox);
     selBox.focus();
     selBox.select();

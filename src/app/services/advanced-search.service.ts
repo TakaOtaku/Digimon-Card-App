@@ -373,7 +373,6 @@ export class AdvancedSearchService {
       }
     }
 
-    console.warn('Could not parse condition:', condition);
     // Treat as a text search term — match against common text fields
     const escapedTerm = this.escapeRegex(condition);
     return {

@@ -640,6 +640,15 @@ export const CardTypeButtons: MultiButtons[] = [
 ];
 
 export const Rarity = ['C', 'U', 'R', 'SR', 'UR', 'SEC', 'P'];
+export const RarityAbbreviationMap = new Map<string, string>([
+  ['Common', 'C'],
+  ['Uncommon', 'U'],
+  ['Rare', 'R'],
+  ['Super Rare', 'SR'],
+  ['Ultimate Rare', 'UR'],
+  ['Secret Rare', 'SEC'],
+  ['Promo', 'P'],
+]);
 export const RarityButtons: MultiButtons[] = [
   {
     name: 'C',

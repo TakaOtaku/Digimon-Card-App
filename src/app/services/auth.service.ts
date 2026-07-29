@@ -230,7 +230,6 @@ export class AuthService {
       // User is logged in, get save from backend
       return this.mongoBackendService.getSave(this.currentUser().uid).pipe(
         catchError(() => {
-          console.log('Failed to load save from backend, using local save');
           return of(this.getLocalStorageSave() || emptySave);
         }),
       );

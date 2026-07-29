@@ -38,6 +38,20 @@ import { MigrationService, MigrationResult, MigrationProgress, ComparisonResult 
         </div>
       </div>
 
+      <!-- Migration Token -->
+      <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+        <h2 class="text-xl font-semibold mb-2">Migration Token</h2>
+        <p class="text-sm text-gray-600 mb-3">
+          Required to run any migration. Paste the backend's <code>MIGRATION_TOKEN</code> here — it is kept in memory only and never stored.
+        </p>
+        <input
+          type="password"
+          [(ngModel)]="migrationToken"
+          placeholder="Enter MIGRATION_TOKEN"
+          autocomplete="off"
+          class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+      </div>
+
       <!-- Migration Status -->
       <div class="bg-white rounded-lg shadow-md p-6 mb-6" *ngIf="migrationStatus">
         <h2 class="text-xl font-semibold mb-4">Migration Status</h2>
@@ -329,6 +343,14 @@ export class MigrationComponent implements OnInit, OnDestroy {
         private migrationService: MigrationService,
         private cdr: ChangeDetectorRef
     ) { }
+
+    /** Migration token, held only in memory and forwarded to the backend as a header. */
+    get migrationToken(): string {
+        return this.migrationService.migrationToken;
+    }
+    set migrationToken(value: string) {
+        this.migrationService.migrationToken = value;
+    }
 
     ngOnInit() {
         this.testConnections();

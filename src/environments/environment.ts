@@ -2,6 +2,7 @@ export const environment = {
   production: false,
   apiBaseUrl: 'http://localhost:3001/api/',
   legacyApiBaseUrl: 'https://backend.digimoncard.app/api/',
+  appUrl: 'http://localhost:4200',
   firebaseConfig: {
     apiKey: 'AIzaSyAdV8igtmcuSjmNQr2QU2NscmTAn4nWwUg',
     authDomain: 'digimon-card-collector.firebaseapp.com',
