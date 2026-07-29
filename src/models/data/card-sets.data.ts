@@ -20,6 +20,7 @@ export interface CardSet {
  */
 export const CARD_SETS: CardSet[] = [
   // ---- Newest ----
+  { name: 'BT26', category: 'Standard' },
   { name: 'EX12', category: 'Extra' },
   { name: 'BT25', category: 'Standard' },
   { name: 'ST24', category: 'Starter' },

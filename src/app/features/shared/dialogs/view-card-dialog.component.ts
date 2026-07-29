@@ -2,7 +2,7 @@ import { NgClass, NgForOf, NgIf, NgStyle } from '@angular/common';
 import { ChangeDetectorRef, Component, effect, HostListener, inject } from '@angular/core';
 import { ImgFallbackDirective } from '@directives';
 import { formatId, isDigimonType, withoutJ } from '@functions';
-import { ColorMap, DigimonCard, ICountCard, IDeck, replacements } from '@models';
+import { ColorMap, DigimonCard, ICountCard, IDeck, RarityAbbreviationMap, replacements } from '@models';
 import { DialogStore, DigimonCardStore, SaveStore, WebsiteStore } from '@store';
 import { CardMarketService } from '@services';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
@@ -20,7 +20,7 @@ import { TooltipModule } from 'primeng/tooltip';
             {{ card.cardNumber }}
           </p>
           <p class="self-center font-bold uppercase text-[#e2e4e6]" id="Card-Rarity">
-            {{ card.rarity }}
+            {{ getRarity(card.rarity) }}
           </p>
           <p class="self-center font-bold uppercase text-[#e2e4e6]" id="Card-Block">
             {{ card.block }}
@@ -408,7 +408,11 @@ export class ViewCardDialogComponent {
   }
 
   private getVersion(version: string) {
-    if (version.includes('Foil')) {
+    if (version.includes('Special Rare') || version.includes('Secret Rare')) {
+      return 'Special Rare';
+    } else if (version.includes('Rare Pull')) {
+      return 'Rare Pull';
+    } else if (version.includes('Foil')) {
       return 'Foil';
     } else if (version.includes('Textured')) {
       return 'Textured';
@@ -420,11 +424,11 @@ export class ViewCardDialogComponent {
       return 'Full Art';
     } else if (version.includes('Stamp')) {
       return 'Stamp';
-    } else if (version.includes('Special Rare')) {
-      return 'Special Rare';
-    } else if (version.includes('Rare Pull')) {
-      return 'Rare Pull';
     }
     return 'Normal';
+  }
+
+  getRarity(rarity: string): string {
+    return RarityAbbreviationMap.get(rarity) ?? rarity;
   }
 }

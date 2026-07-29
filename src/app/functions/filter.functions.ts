@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { DigimonCard, ICountCard, IFilter, ISave, ISort, UltimateCup2023, UltimateCup2024 } from '../../models';
+import { DigimonCard, ICountCard, IFilter, ISave, ISort, RarityAbbreviationMap, UltimateCup2023, UltimateCup2024 } from '../../models';
 import { AdvancedSearchService } from '../services/advanced-search.service';
 
 export type PriceGetter = (cardId: string) => number | null;
@@ -122,10 +122,23 @@ function applySetFilter(card: DigimonCard, filter: string[]): boolean {
 }
 
 function applyRarityFilter(card: DigimonCard, filter: string[]): boolean {
-  return !filter.includes(card['rarity']);
+  const normalizedRarity = RarityAbbreviationMap.get(card['rarity']) ?? card['rarity'];
+  return !filter.includes(normalizedRarity);
 }
 
 function applyCardTypeFilter(card: DigimonCard, filter: string[]): boolean {
+  // Handle "Ace" filter - ACE cards have cardType "Digimon" but are identified by aceEffect
+  if (filter.includes('Ace')) {
+    if (card['aceEffect'] && card['aceEffect'] !== '-') {
+      return false;
+    }
+  }
+  // Handle "Link" filter - Link cards are identified by linkEffect
+  if (filter.includes('Link')) {
+    if (card['linkEffect'] && card['linkEffect'] !== '-') {
+      return false;
+    }
+  }
   // Direct match
   if (filter.includes(card['cardType'])) {
     return false;
@@ -204,7 +217,7 @@ function applyVersionFilter(card: DigimonCard, filters: string[]): boolean {
     } else if (filter === 'Full Art') {
       remove = card['version'].includes('Full Art');
     } else if (filter === 'Special Rare') {
-      remove = card['version'].includes('Special Rare');
+      remove = card['version'].includes('Special Rare') || card['version'].includes('Secret Rare');
     } else if (filter === 'Rare Pull') {
       remove = card['version'].includes('Rare Pull');
     } else {

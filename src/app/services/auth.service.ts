@@ -1,7 +1,8 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable, Signal, signal } from '@angular/core';
 import {
   Auth,
-  browserSessionPersistence,
+  browserLocalPersistence,
   GoogleAuthProvider,
   setPersistence,
   signInWithPopup,
@@ -11,7 +12,7 @@ import {
 } from '@angular/fire/auth';
 import { emptySave, emptySettings, ISave, IUser } from '@models';
 import { MessageService } from 'primeng/api';
-import { catchError, filter, Observable, of, ReplaySubject, switchMap, take, tap } from 'rxjs';
+import { catchError, filter, Observable, of, ReplaySubject, retry, switchMap, take, tap, throwError, timer } from 'rxjs';
 import { MongoBackendService } from './mongo-backend.service';
 
 @Injectable({
@@ -28,8 +29,8 @@ export class AuthService {
     private mongoBackendService: MongoBackendService,
     private messageService: MessageService,
   ) {
-    // Set persistence
-    setPersistence(this.firebaseAuth, browserSessionPersistence);
+    // Set persistence - use local so auth survives tab/browser close
+    setPersistence(this.firebaseAuth, browserLocalPersistence);
 
     // Use the user observable provided by the injected AngularFire Auth service
     this.firebaseUser$ = user(this.firebaseAuth);
@@ -67,24 +68,69 @@ export class AuthService {
 
           // User is logged in, get save from backend
           return this.mongoBackendService.getSave(firebaseUser.uid).pipe(
+            // Transient backend/network hiccups happen occasionally in production.
+            // Retry with exponential backoff so a temporary blip doesn't look like a
+            // failed login. Never retry a genuine 404 (user simply has no save yet).
+            retry({
+              count: 4,
+              delay: (error, retryCount) => {
+                if ((error as HttpErrorResponse)?.status === 404) {
+                  return throwError(() => error);
+                }
+                return timer(Math.min(1000 * 2 ** (retryCount - 1), 8000));
+              },
+            }),
+            catchError((error) => {
+              // First-time login: the user has no backend save yet (404).
+              // Create a new save so the account is initialized and the user can log in.
+              if ((error as HttpErrorResponse)?.status === 404) {
+                const newSave = this.createNewSave(firebaseUser, this.getLocalStorageSave());
+                return of({ ...newSave, _isNew: true } as ISave & { _isNew?: boolean });
+              }
+              // Fetch failed after retries — use local cache if available, but do NOT push to backend
+              const localSave = this.getLocalStorageSave();
+              if (localSave && localSave.uid === firebaseUser.uid) {
+                return of({ ...localSave, _fetchFailed: true } as ISave & { _fetchFailed?: boolean });
+              }
+              // No local save either — return null to indicate we couldn't load
+              return of(null);
+            }),
             tap((save) => {
+              const isNew = save && '_isNew' in save && (save as any)._isNew;
+
               if (save) {
                 // Create user data object and update state
                 const displayName = save.displayName ? save.displayName : firebaseUser.displayName;
                 const photoUrl = save.photoUrl ? save.photoUrl : firebaseUser.photoURL;
+                const cleanSave = { ...save } as any;
+                delete cleanSave._fetchFailed;
+                delete cleanSave._isNew;
+
                 const userData: IUser = {
                   uid: firebaseUser.uid,
                   displayName: displayName,
                   photoUrl: photoUrl,
-                  save: this.ensureSaveHasUserInfo(save, firebaseUser),
+                  save: this.ensureSaveHasUserInfo(cleanSave, firebaseUser),
                 };
 
                 // Update local storage and state
                 localStorage.setItem('user', JSON.stringify(userData));
                 this.userSignal.set(userData);
 
-                // Ensure save is up to date in backend
-                this.mongoBackendService.updateSave(userData.save).subscribe();
+                // Only write to the backend when creating a brand-new account (first login).
+                // We never re-push an existing user's save on login, so a transient or partial
+                // load can never overwrite their stored collection/decks/settings.
+                if (isNew) {
+                  this.mongoBackendService.updateSave(userData.save).subscribe();
+                }
+              } else {
+                // Could not load save from backend or local — show error, don't create empty save
+                console.warn('Could not load user save from backend or local storage.');
+                this.messageService.add({
+                  severity: 'warn',
+                  summary: 'Could not load profile',
+                  detail: 'Your profile data could not be loaded. Please try refreshing.',
+                });
               }
               this.authStateResolved$.next(true);
             }),
