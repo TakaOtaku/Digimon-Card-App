@@ -41,6 +41,13 @@ testem.log
 .DS_Store
 Thumbs.db
 
+# Tests
+/coverage
+/playwright-report/
+/test-results/
+/blob-report/
+/playwright/.cache/
+
 # Python
 __pycache__/
 *.py[cod]
