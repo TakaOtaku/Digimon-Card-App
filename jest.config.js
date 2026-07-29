@@ -2,7 +2,9 @@
 module.exports = {
   preset: 'jest-preset-angular',
   setupFilesAfterEnv: ['<rootDir>/setup-jest.ts'],
-  testEnvironment: 'jsdom',
+  // jest-fixed-jsdom restores Node web globals (fetch, ReadableStream, ...) that
+  // @firebase/auth needs but stock jsdom omits under jest 30.
+  testEnvironment: 'jest-fixed-jsdom',
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/dist/', '<rootDir>/e2e/'],
   moduleNameMapper: {
     '^@models$': '<rootDir>/src/models',

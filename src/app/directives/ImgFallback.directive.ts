@@ -21,7 +21,7 @@ export class ImgFallbackDirective implements OnInit, OnChanges {
   }
 
   @HostListener('error')
-  loadFallbackOnError(error: any) {
+  loadFallbackOnError() {
     const element: HTMLImageElement = <HTMLImageElement>this.el.nativeElement;
     
     // Guard against undefined or empty digimonImgFallback
