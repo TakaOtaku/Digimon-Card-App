@@ -202560,32 +202560,38 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Data",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-018.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.3",
     "cardNumber": "BT26-018",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Blue",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "\uff1cJamming\uff1e ",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "1000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[When Moving] [On Play] Reveal the top 3 cards of your deck. Add 1 card with [Aqua] or [Sea Animal]\u00a0in any of its traits or 1 card with the [DS]\u00a0trait among them to the hand. Return the rest to the bottom of the deck. Then, trash the bottom digivolution card of 1 of your opponent's Digimon.",
+    "form": "Rookie",
     "id": "BT26-018",
-    "illustrator": "To be completed",
+    "illustrator": "naru",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Sangomon",
+      "japanese": "\u30b5\u30f3\u30b4\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -202593,18 +202599,18 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "3",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
       "japanese": "Not released",
       "korean": "Not released"
     },
-    "rule": "-",
+    "rule": "[Rule] Trait: Has [Aquatic] Type.",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.0 w/[2]\u00a0trait: Cost DS ",
+    "type": "Mollusk/DS",
     "version": "Normal"
   },
   {
@@ -202666,32 +202672,38 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Virus",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-020.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.4",
     "cardNumber": "BT26-020",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Blue",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "\uff1cEvade\uff1e ",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "4000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[On Play] \uff1cDraw 1\uff1e Then, 1 of your opponent's Digimon can't attack or block until their turn ends.",
+    "form": "Champion",
     "id": "BT26-020",
-    "illustrator": "To be completed",
+    "illustrator": "naru",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "ShellNumemon",
+      "japanese": "\u30ab\u30e9\u30c4\u30ad\u30cc\u30e1\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -202699,8 +202711,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "4",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -202709,8 +202721,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.2 w/[3]\u00a0trait: Cost DS ",
+    "type": "Crustacean/DS",
     "version": "Normal"
   },
   {
@@ -203211,31 +203223,42 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Data",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-030.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.5",
     "cardNumber": "BT26-030",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Yellow/Purple",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "4",
+        "level": "4"
+      },
+      {
+        "color": "Purple",
+        "cost": "4",
+        "level": "4"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "6000",
     "dualEffect": "-",
     "effect": "-",
-    "form": "-",
+    "form": "Ultimate",
     "id": "BT26-030",
     "illustrator": "To be completed",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
+      "english": "Pumpkinmon",
       "japanese": "",
       "korean": "-",
       "simplifiedChinese": "-",
@@ -203244,8 +203267,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "6",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -203255,7 +203278,7 @@
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "Puppet/Iliad/TS",
     "version": "Normal"
   },
   {
@@ -203950,7 +203973,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-040.webp",
+    "cardImage": "assets/images/cards/BT26-040-Sample.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BT26-040",
     "cardType": "Digimon",
@@ -204430,7 +204453,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-049.webp",
+    "cardImage": "assets/images/cards/BT26-049-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT26-049",
     "cardType": "Digimon",
@@ -204542,7 +204565,7 @@
       "06"
     ],
     "burstDigivolve": "[Digivolve] Lv.6 w/[DATA SQUAD]\u00a0trait: Cost 5 [Burst Digivolve] [Rosemon]: Cost 0 by returning 1 [Yoshino Fujieda] to the hand.",
-    "cardImage": "assets/images/cards/BT26-050_P1.webp",
+    "cardImage": "assets/images/cards/BT26-050_P1-Sample.webp",
     "cardLv": "Lv.7",
     "cardNumber": "BT26-050",
     "cardType": "Digimon/Option",
@@ -204872,7 +204895,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-055.webp",
+    "cardImage": "assets/images/cards/BT26-055-Sample.webp",
     "cardLv": "Lv.5",
     "cardNumber": "BT26-055",
     "cardType": "Digimon",
@@ -205629,7 +205652,13 @@
     "cardType": "Digimon",
     "color": "Purple",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
     "digivolveEffect": "[When Attacking] [Once Per Turn] \uff1cDraw 1\uff1e and trash 1 card in your hand.",
     "dnaDigivolve": "-",
     "dp": "1000",
@@ -206003,32 +206032,38 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-072.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.4",
     "cardNumber": "BT26-072",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Purple",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[On Deletion] Your opponent trashes 1 card in their hand.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "5000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "\uff1cBlocker\uff1e \n[On Play] [When Digivolving] By trashing 1 card in your hand or placing it face down under any of your [Keenan Crier]s, delete 1 of your opponent's level 4 or lower Digimon.",
+    "form": "Champion",
     "id": "BT26-072",
-    "illustrator": "To be completed",
+    "illustrator": "NAOKI AKAMINE",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Peckmon",
+      "japanese": "\u30da\u30c3\u30af\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -206036,8 +206071,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "4",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -206046,8 +206081,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.3 w/[DATA SQUAD]\u00a0trait: Cost 2 ",
+    "type": "Avian/DATA SQUAD",
     "version": "Normal"
   },
   {
@@ -206297,32 +206332,38 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-076.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.5",
     "cardNumber": "BT26-076",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Purple",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "3",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "[On Deletion] You may play 1 play cost 5 or lower card with [Avian] or [Bird]\u00a0in any of its traits or the [DATA SQUAD]\u00a0trait from your trash without paying the cost.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "7000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[When Digivolving] Delete 1 of your opponent's level 4 or lower Digimon. Then, by trashing the bottom face-down card from under any of your Tamers, they trash 1 card in their hand.\n[Your Turn] [Once Per Turn] When your opponent's hand is trashed from or effects trash cards from under your Tamers, this Digimon may digivolve into [Ravemon] or a [DATA SQUAD]\u00a0trait Digimon card in the trash with the cost reduced by 1.",
+    "form": "Ultimate",
     "id": "BT26-076",
-    "illustrator": "To be completed",
+    "illustrator": "NAOKI AKAMINE",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Crowmon",
+      "japanese": "\u30e4\u30bf\u30ac\u30e9\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -206330,8 +206371,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "7",
+    "rarity": "R",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -206340,8 +206381,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.4 w/[DATA SQUAD]\u00a0trait: Cost 3 ",
+    "type": "Mysterious Bird/DATA SQUAD",
     "version": "Normal"
   },
   {
@@ -206352,7 +206393,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-077.webp",
+    "cardImage": "assets/images/cards/BT26-077-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT26-077",
     "cardType": "Digimon",
@@ -206413,7 +206454,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-078.webp",
+    "cardImage": "assets/images/cards/BT26-078-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT26-078",
     "cardType": "Digimon",
@@ -206474,7 +206515,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-079.webp",
+    "cardImage": "assets/images/cards/BT26-079-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT26-079",
     "cardType": "Digimon",
@@ -206636,7 +206677,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-081.webp",
+    "cardImage": "assets/images/cards/BT26-081-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT26-081",
     "cardType": "Digimon",
@@ -207686,7 +207727,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-098.webp",
+    "cardImage": "assets/images/cards/BT26-098-Sample.webp",
     "cardLv": "-",
     "cardNumber": "BT26-098",
     "cardType": "Option",

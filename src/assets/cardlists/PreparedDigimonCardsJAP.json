@@ -24268,6 +24268,62 @@
   {
     "aceEffect": "-",
     "assembly": "-",
+    "attribute": "Free",
+    "block": [
+      "02"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT11-023_P2-J.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "BT11-023",
+    "cardType": "Digimon",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When you play a blue Tamer, gain 1 memory.",
+    "dnaDigivolve": "-",
+    "dp": "1000",
+    "dualEffect": "-",
+    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 Digimon card with [Veedramon]\u00a0in its name and 1 blue Tamer card among them to your hand. Place the rest at the bottom of your deck in any order.",
+    "form": "Rookie",
+    "id": "BT11-023_P2",
+    "illustrator": "Nakano Haito",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Veemon",
+      "japanese": "\u30d6\u30a4\u30e2\u30f3",
+      "korean": "\ube0c\uc774\ubaac",
+      "simplifiedChinese": "V\u4ed4\u517d",
+      "traditionalChinese": "V\u4ed4\u7378"
+    },
+    "notes": "LM-08: LIMITED CARD PACK FINAL CREST",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Mini Dragon",
+    "version": "Foil - Coloured Border -\u00a0Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
     "attribute": "Vaccine",
     "block": [
       "02"
@@ -30884,6 +30940,56 @@
     "specialDigivolve": "-",
     "type": "-",
     "version": "Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "02"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT11-112_P3-J.webp",
+    "cardLv": "-",
+    "cardNumber": "BT11-112",
+    "cardType": "Tamer",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "[On Play] Until the end of your opponent's turn, 1 of your Digimon with [Veemon] or [Veedramon]\u00a0in its name gains \uff1cBlocker\uff1e and \uff1cEvade\uff1e \n[All Turns] When one of your Digimon with [Veedramon]\u00a0in its name becomes suspended, by suspending this Tamer, activate 1 of that Digimon's [When Digivolving] effects.\n[Your Turn] [Once Per Turn] When one of your blue Digimon becomes unsuspended, gain 1 memory.",
+    "form": "-",
+    "id": "BT11-112_P3",
+    "illustrator": "Takase",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Rina Shinomiya",
+      "japanese": "\u56db\u30ce\u5bae\u30ea\u30ca",
+      "korean": "\uc2dc\ub178\ubbf8\uc57c \ub9ac\ub098",
+      "simplifiedChinese": "\u56db\u4e4b\u5bab\u8389\u5a1c",
+      "traditionalChinese": "\u56db\u4e4b\u5bae\u8389\u5a1c"
+    },
+    "notes": "LM-08: LIMITED CARD PACK FINAL CREST",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "SEC",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "[Security] Play this card without paying the cost.",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Foil - Coloured Border -\u00a0Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -64341,6 +64447,56 @@
     "specialDigivolve": "-",
     "type": "-",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "03"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT15-096_P1-J.webp",
+    "cardLv": "-",
+    "cardNumber": "BT15-096",
+    "cardType": "Option",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "[Main] Reveal the top 5 cards of your deck. Among them, add 1 card with the [Machine] or [Cyborg]\u00a0trait to the hand and trash 1 such card. Return the rest to the top of the deck. Then, place this card in the battle area.\n[Main] \uff1cDelay\uff1e \n\u30fbYou may play 1 level 5 or higher Digimon card with the [Machine] or [Cyborg]\u00a0trait from your hand with the play cost reduced by 3.",
+    "form": "-",
+    "id": "BT15-096_P1",
+    "illustrator": "Shin Sasaki",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Supreme Connection!",
+      "japanese": "\u81f3\u9ad8\u306e\u30b3\u30cd\u30af\u30b7\u30e7\u30f3!!",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "LM-08: LIMITED CARD PACK FINAL CREST",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "[Security] Reveal the top 5 cards of your deck. Among them, add 1 card with the [Machine] or [Cyborg]\u00a0trait to the hand and trash 1 such card. Return the rest to the top of the deck. Then, place this card in the battle area.",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Foil - Coloured Border -\u00a0Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -109949,6 +110105,67 @@
   {
     "aceEffect": "-",
     "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "04"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT20-018_P1-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT20-018",
+    "cardType": "Digimon",
+    "color": "Red/Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "3",
+        "level": "5"
+      },
+      {
+        "color": "Black",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "[When Attacking] [Once Per Turn] If this Digimon is [Alphamon: Ouryuken], trash your opponent's top security card.",
+    "dnaDigivolve": "-",
+    "dp": "11000",
+    "dualEffect": "-",
+    "effect": "\uff1cPiercing\uff1e \n[On Play] [When Digivolving] \uff1cDe-Digivolve 2\uff1e 1 of your opponent's Digimon. Then, if during an attack, 1 of your Digimon in the breeding area may digivolve into a level 6 or lower [Chronicle]\u00a0trait Digimon card in the hand or trash without paying the cost.\n[All Turns] [Once Per Turn] When security stacks are removed from, delete 1 of your opponent's Digimon with the lowest DP.",
+    "form": "Mega",
+    "id": "BT20-018_P1",
+    "illustrator": "Nakano Haito",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Ouryumon",
+      "japanese": "\u30aa\u30a6\u30ea\u30e5\u30a6\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "LM-08: LIMITED CARD PACK FINAL CREST",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "12",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Beast Dragon/X Antibody/Chronicle",
+    "version": "Foil - Coloured Border -\u00a0Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
     "attribute": "Data",
     "block": [
       "04"
@@ -111503,6 +111720,67 @@
     "specialDigivolve": "-",
     "type": "Unique",
     "version": "Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "04"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT20-037_P2-J.webp",
+    "cardLv": "Lv.7",
+    "cardNumber": "BT20-037",
+    "cardType": "Digimon",
+    "color": "Yellow/Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "5",
+        "level": "6"
+      },
+      {
+        "color": "Green",
+        "cost": "5",
+        "level": "6"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "[DNA Digivolve] Yellow Lv.6 + Green/Black Lv.6: Cost 0 ",
+    "dp": "15000",
+    "dualEffect": "-",
+    "effect": "\uff1cSecurity A. +1\uff1e \n\uff1cPartition (Yellow Lv.6 & Green/Black Lv.6)\uff1e \n[When Digivolving] For each of this Digimon's level 6 digivolution cards, suspend 1 of your opponent's Digimon or Tamers and gain 1 memory. Then none of their Digimon or Tamers can activate [On Play] effects or unsuspend until the end of their turn.",
+    "form": "Mega",
+    "id": "BT20-037_P2",
+    "illustrator": "Spareribs",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Chaosmon: Valdur Arm",
+      "japanese": "\u30ab\u30aa\u30b9\u30e2\u30f3\uff1a\u30f4\u30a1\u30ed\u30c9\u30a5\u30eb\u30a2\u30fc\u30e0",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "LM-08: LIMITED CARD PACK FINAL CREST",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "15",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Choice Restriction",
+      "english": "Choice Restriction",
+      "japanese": "Choice Restriction",
+      "korean": "Choice Restriction"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Unique",
+    "version": "Foil - Coloured Border -\u00a0Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -113221,6 +113499,73 @@
     "version": "Alternative Art"
   },
   {
+    "aceEffect": "Overflow \uff1c-5\uff1e ",
+    "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "04",
+      "05"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT20-060_P5-J.webp",
+    "cardLv": "Lv.7",
+    "cardNumber": "BT20-060",
+    "cardType": "Digimon",
+    "color": "Black/Yellow/Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "6",
+        "level": "6"
+      },
+      {
+        "color": "Yellow",
+        "cost": "6",
+        "level": "6"
+      },
+      {
+        "color": "Red",
+        "cost": "6",
+        "level": "6"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "[DNA Digivolve] Black Lv.6 + Yellow/Red Lv.6: Cost 0 ",
+    "dp": "16000",
+    "dualEffect": "-",
+    "effect": "[Hand] [Counter] \uff1cBlast DNA Digivolve ([Alphamon] + [Ouryumon])\uff1e \n[On Play] [When Digivolving] 1 of your opponent's Digimon gets -15000 DP until the end of their turn. Then, if DNA digivolving, trash your opponent's top security card and \uff1cRecovery +1 (Deck)\uff1e \n[All Turns] [Once Per Turn] When security stacks are removed from, gain 3 memory.",
+    "form": "Mega",
+    "id": "BT20-060_P5",
+    "illustrator": "toriyufu",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Alphamon: Ouryuken",
+      "japanese": "\u30a2\u30eb\u30d5\u30a1\u30e2\u30f3\uff1a\u738b\u7adc\u5263",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "LM-08: LIMITED CARD PACK FINAL CREST",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "9",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "NO DATA/X Antibody/Royal Knight/Chronicle",
+    "version": "Alternative Art"
+  },
+  {
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Virus",
@@ -113280,6 +113625,67 @@
     "specialDigivolve": "[Digivolve] [Yaamon]: Cost 0 ",
     "type": "Evil/LIBERATOR",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Virus",
+    "block": [
+      "04"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT20-061_P1-J.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "BT20-061",
+    "cardType": "Digimon",
+    "color": "Purple/Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "1",
+        "level": "2"
+      },
+      {
+        "color": "Red",
+        "cost": "1",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[Your Turn] This Digimon gets +2000 DP.",
+    "dnaDigivolve": "-",
+    "dp": "1000",
+    "dualEffect": "-",
+    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 card with the [Evil], [Dark Dragon] or [Evil Dragon]\u00a0trait and 1 [Yuuki] among them to the hand. Return the rest to the bottom of the deck.",
+    "form": "Rookie",
+    "id": "BT20-061_P1",
+    "illustrator": "SENNSU",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Impmon",
+      "japanese": "\u30a4\u30f3\u30d7\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "LM-08: LIMITED CARD PACK FINAL CREST",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Yaamon]: Cost 0 ",
+    "type": "Evil/LIBERATOR",
+    "version": "Foil - Coloured Border -\u00a0Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -114394,6 +114800,67 @@
       "traditionalChinese": "-"
     },
     "notes": "BT-20: Booster Over the X",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "7",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[Dark Dragon]/[Evil Dragon]\u00a0trait: Cost 3 ",
+    "type": "Evil Dragon/LIBERATOR",
+    "version": "Alternative Art"
+  },
+  {
+    "aceEffect": "Overflow \uff1c-4\uff1e ",
+    "assembly": "-",
+    "attribute": "Virus",
+    "block": [
+      "04"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT20-077_P3-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT20-077",
+    "cardType": "Digimon",
+    "color": "Purple/Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "4",
+        "level": "5"
+      },
+      {
+        "color": "Red",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "-",
+    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e \n[On Play] [When Digivolving] Trash cards in your hand until it has 4 left. Then, play 1 8000 DP or lower Digimon card from your trash without paying the cost. For each card this effect trashed, remove 2000 from this effect's DP maximum.\n[All Turns] All of your [Dark Dragon] or [Evil Dragon]\u00a0trait Digimon gain \uff1cRush\uff1e and \uff1cBlocker\uff1e and get +2000 DP.",
+    "form": "Mega",
+    "id": "BT20-077_P3",
+    "illustrator": "Takase",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "HeavyMetaldramon",
+      "japanese": "\u30d8\u30f4\u30a3\u30fc\u30e1\u30bf\u30eb\u30c9\u30e9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "LM-08: LIMITED CARD PACK FINAL CREST",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
     "playCost": "7",
@@ -121806,6 +122273,67 @@
   {
     "aceEffect": "-",
     "assembly": "-",
+    "attribute": "Tool",
+    "block": [
+      "05"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT21-071_P1-J.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "BT21-071",
+    "cardType": "Digimon",
+    "color": "Purple",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "2",
+        "level": "3"
+      },
+      {
+        "color": "All",
+        "cost": "2",
+        "level": "Stnd."
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "4000",
+    "dualEffect": "-",
+    "effect": "[On Play] [When Digivolving] By placing 1 card with the [Appmon] or [Three Musketeers]\u00a0trait from your hand or trash as 1 of your Digimon's bottom digivolution card, gain 1 memory.",
+    "form": "Sup./Appmon",
+    "id": "BT21-071_P1",
+    "illustrator": "BIRU YAMAGUCHI",
+    "linkDP": "+3000 DP",
+    "linkEffect": "[When Linking] \uff1cDraw 2\uff1e and trash 2 cards in your hand.",
+    "linkRequirement": "[Link] [Appmon]\u00a0trait: Cost 2 ",
+    "name": {
+      "english": "Scopemon",
+      "japanese": "\u30b9\u30b3\u30fc\u30d7\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "LM-08: LIMITED CARD PACK FINAL CREST",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "4",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.3 w/[Three Musketeers]\u00a0in text: Cost 2 ",
+    "type": "Monitoring (App Name)",
+    "version": "Foil - Coloured Border -\u00a0Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
     "attribute": "Vaccine",
     "block": [
       "05"
@@ -124693,6 +125221,67 @@
   {
     "aceEffect": "-",
     "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "05"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT22-008_P1-J.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "BT22-008",
+    "cardType": "Digimon",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "0",
+        "level": "2"
+      },
+      {
+        "color": "Blue",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[End of Your Turn] This Digimon and any of your other Digimon may DNA digivolve into a Digimon card in the hand.",
+    "dnaDigivolve": "-",
+    "dp": "1000",
+    "dualEffect": "-",
+    "effect": "[On Play] You may return 1 Digimon card with [Greymon], [Garurumon] or [Omnimon]\u00a0in its name from your trash to the hand.",
+    "form": "Rookie",
+    "id": "BT22-008_P1",
+    "illustrator": "poroze",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Agumon",
+      "japanese": "\u30a2\u30b0\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "LM-08: LIMITED CARD PACK FINAL CREST",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Koromon]/Lv.2 w/[CS]\u00a0trait: Cost 0 ",
+    "type": "Reptile/CS",
+    "version": "Foil - Coloured Border -\u00a0Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
     "attribute": "Entertainment",
     "block": [
       "05"
@@ -125294,6 +125883,67 @@
     "specialDigivolve": "[Digivolve] [Tsunomon]/Lv.2 w/[CS]\u00a0trait: Cost 0 ",
     "type": "Reptile/CS",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Data",
+    "block": [
+      "05"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT22-017_P1-J.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "BT22-017",
+    "cardType": "Digimon",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "0",
+        "level": "2"
+      },
+      {
+        "color": "Red",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[End of Your Turn] This Digimon and any of your other Digimon may DNA digivolve into a Digimon card in the hand.",
+    "dnaDigivolve": "-",
+    "dp": "1000",
+    "dualEffect": "-",
+    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 card with [Omnimon]\u00a0in its text and 1 card with the [CS]\u00a0trait among them to the hand. Return the rest to the bottom of the deck.",
+    "form": "Rookie",
+    "id": "BT22-017_P1",
+    "illustrator": "poroze",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Gabumon",
+      "japanese": "\u30ac\u30d6\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "LM-08: LIMITED CARD PACK FINAL CREST",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Tsunomon]/Lv.2 w/[CS]\u00a0trait: Cost 0 ",
+    "type": "Reptile/CS",
+    "version": "Foil - Coloured Border -\u00a0Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -130255,6 +130905,56 @@
     "specialDigivolve": "-",
     "type": "LIBERATOR",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "05"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT22-088_P1-J.webp",
+    "cardLv": "-",
+    "cardNumber": "BT22-088",
+    "cardType": "Tamer",
+    "color": "Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "[Start of Your Main Phase] By returning this Tamer to the bottom of the deck, you may play 1 [Arisa Kinosaki] from your hand without paying the cost. Then, if you don't have a Digimon, you may play 1 [Shoemon] from your trash without paying the cost.\n[All Turns] When any of your Tokens or [Puppet]\u00a0trait Digimon are played, by suspending this Tamer, \uff1cDraw 1\uff1e ",
+    "form": "-",
+    "id": "BT22-088_P1",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Arisa Kinosaki",
+      "japanese": "\u57ce\u4e4b\u5d0e\u6709\u7d17",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "LM-08: LIMITED CARD PACK FINAL CREST",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "[Security] Play this card without paying the cost.",
+    "specialDigivolve": "-",
+    "type": "LIBERATOR",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -155172,32 +155872,38 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Data",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-018-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.3",
     "cardNumber": "BT26-018",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Blue",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "\uff1cJamming\uff1e ",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "1000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[When Moving] [On Play] Reveal the top 3 cards of your deck. Add 1 card with [Aqua] or [Sea Animal]\u00a0in any of its traits or 1 card with the [DS]\u00a0trait among them to the hand. Return the rest to the bottom of the deck. Then, trash the bottom digivolution card of 1 of your opponent's Digimon.",
+    "form": "Rookie",
     "id": "BT26-018",
-    "illustrator": "To be completed",
+    "illustrator": "naru",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Sangomon",
+      "japanese": "\u30b5\u30f3\u30b4\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -155205,18 +155911,18 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "3",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
       "japanese": "Not released",
       "korean": "Not released"
     },
-    "rule": "-",
+    "rule": "[Rule] Trait: Has [Aquatic] Type.",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.0 w/[2]\u00a0trait: Cost DS ",
+    "type": "Mollusk/DS",
     "version": "Normal"
   },
   {
@@ -155278,32 +155984,38 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Virus",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-020-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.4",
     "cardNumber": "BT26-020",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Blue",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "\uff1cEvade\uff1e ",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "4000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[On Play] \uff1cDraw 1\uff1e Then, 1 of your opponent's Digimon can't attack or block until their turn ends.",
+    "form": "Champion",
     "id": "BT26-020",
-    "illustrator": "To be completed",
+    "illustrator": "naru",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "ShellNumemon",
+      "japanese": "\u30ab\u30e9\u30c4\u30ad\u30cc\u30e1\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -155311,8 +156023,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "4",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -155321,8 +156033,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.2 w/[3]\u00a0trait: Cost DS ",
+    "type": "Crustacean/DS",
     "version": "Normal"
   },
   {
@@ -155823,31 +156535,42 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Data",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-030-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.5",
     "cardNumber": "BT26-030",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Yellow/Purple",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "4",
+        "level": "4"
+      },
+      {
+        "color": "Purple",
+        "cost": "4",
+        "level": "4"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "6000",
     "dualEffect": "-",
     "effect": "-",
-    "form": "-",
+    "form": "Ultimate",
     "id": "BT26-030",
     "illustrator": "To be completed",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
+      "english": "Pumpkinmon",
       "japanese": "",
       "korean": "-",
       "simplifiedChinese": "-",
@@ -155856,8 +156579,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "6",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -155867,7 +156590,7 @@
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "Puppet/Iliad/TS",
     "version": "Normal"
   },
   {
@@ -157763,7 +158486,13 @@
     "cardType": "Digimon",
     "color": "Purple",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
     "digivolveEffect": "[When Attacking] [Once Per Turn] \uff1cDraw 1\uff1e and trash 1 card in your hand.",
     "dnaDigivolve": "-",
     "dp": "1000",
@@ -158137,32 +158866,38 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-072-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.4",
     "cardNumber": "BT26-072",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Purple",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[On Deletion] Your opponent trashes 1 card in their hand.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "5000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "\uff1cBlocker\uff1e \n[On Play] [When Digivolving] By trashing 1 card in your hand or placing it face down under any of your [Keenan Crier]s, delete 1 of your opponent's level 4 or lower Digimon.",
+    "form": "Champion",
     "id": "BT26-072",
-    "illustrator": "To be completed",
+    "illustrator": "NAOKI AKAMINE",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Peckmon",
+      "japanese": "\u30da\u30c3\u30af\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -158170,8 +158905,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "4",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -158180,8 +158915,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.3 w/[DATA SQUAD]\u00a0trait: Cost 2 ",
+    "type": "Avian/DATA SQUAD",
     "version": "Normal"
   },
   {
@@ -158370,32 +159105,38 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-076-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.5",
     "cardNumber": "BT26-076",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Purple",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "3",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "[On Deletion] You may play 1 play cost 5 or lower card with [Avian] or [Bird]\u00a0in any of its traits or the [DATA SQUAD]\u00a0trait from your trash without paying the cost.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "7000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[When Digivolving] Delete 1 of your opponent's level 4 or lower Digimon. Then, by trashing the bottom face-down card from under any of your Tamers, they trash 1 card in their hand.\n[Your Turn] [Once Per Turn] When your opponent's hand is trashed from or effects trash cards from under your Tamers, this Digimon may digivolve into [Ravemon] or a [DATA SQUAD]\u00a0trait Digimon card in the trash with the cost reduced by 1.",
+    "form": "Ultimate",
     "id": "BT26-076",
-    "illustrator": "To be completed",
+    "illustrator": "NAOKI AKAMINE",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Crowmon",
+      "japanese": "\u30e4\u30bf\u30ac\u30e9\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -158403,8 +159144,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "7",
+    "rarity": "R",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -158413,8 +159154,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.4 w/[DATA SQUAD]\u00a0trait: Cost 3 ",
+    "type": "Mysterious Bird/DATA SQUAD",
     "version": "Normal"
   },
   {
@@ -298697,6 +299438,72 @@
     "assembly": "-",
     "attribute": "Vaccine",
     "block": [
+      "04"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX8-029_P2-J.webp",
+    "cardLv": "Lv.7",
+    "cardNumber": "EX8-029",
+    "cardType": "Digimon",
+    "color": "Blue/Black/Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "5",
+        "level": "6"
+      },
+      {
+        "color": "Black",
+        "cost": "5",
+        "level": "6"
+      },
+      {
+        "color": "Yellow",
+        "cost": "5",
+        "level": "6"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "[DNA Digivolve] Blue/Purple Lv.6 + Black/Yellow Lv.6\u00a0: Cost 0\n[DNA Digivolve] [Plesiomon] + Lv.5 w/[Seadramon]\u00a0in name: Cost 0 ",
+    "dp": "15000",
+    "dualEffect": "-",
+    "effect": "[When Digivolving] Return up to 14 play cost's total worth of your opponent's Digimon to the bottom of the deck. If DNA digivolving, you may play up to 12 play cost's total worth of [DS]\u00a0trait cards from this Digimon's digivolution cards without paying the costs.\n[All Turns] While you have 1 or more memory, none of your [DS]\u00a0trait Digimon are affected by your opponent's Digimon's effects. While you have 1 or less, none of your opponent's Digimon can activate [On Play] effects.",
+    "form": "Mega",
+    "id": "EX8-029_P2",
+    "illustrator": "kaz",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Aegisdramon",
+      "japanese": "\u30a4\u30fc\u30b8\u30b9\u30c9\u30e9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "LM-08: LIMITED CARD PACK FINAL CREST",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "15",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "[Rule] Trait: Has [Aquatic] Type.",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Cyborg/DS",
+    "version": "Foil - Coloured Border -\u00a0Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
       "04",
       "05"
     ],
@@ -303668,6 +304475,67 @@
     "specialDigivolve": "-",
     "type": "Warrior/Witchelny/Vortex Warriors",
     "version": "Textured -\u00a0Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Data",
+    "block": [
+      "04"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX8-074_P4-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "EX8-074",
+    "cardType": "Digimon",
+    "color": "Green/Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "3",
+        "level": "5"
+      },
+      {
+        "color": "Red",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "11000",
+    "dualEffect": "-",
+    "effect": "When this card would be played, by suspending 2 Digimon, reduce the play cost by 4.\n\uff1cAlliance\uff1e \n\uff1cVortex\uff1e \n[When Digivolving] You may suspend 1 Digimon. Then, you may delete 1 of your opponent's 8000 DP or lower Digimon. For each other suspended Digimon, add 3000 to this DP deletion effect's maximum.\n[All Turns] [Once Per Turn] When Digimon are played, you may activate 1 of this Digimon's [When Digivolving] effects.",
+    "form": "Mega",
+    "id": "EX8-074_P4",
+    "illustrator": "toriyufu",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "MedievalGallantmon",
+      "japanese": "\u30e1\u30c7\u30a3\u30fc\u30d0\u30eb\u30c7\u30e5\u30fc\u30af\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "LM-08: LIMITED CARD PACK FINAL CREST",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "11",
+    "rarity": "SEC",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Warrior/Witchelny/Vortex Warriors",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -338040,6 +338908,67 @@
   {
     "aceEffect": "-",
     "assembly": "-",
+    "attribute": "Virus",
+    "block": [
+      "05"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/P-201_P2-J.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "P-201",
+    "cardType": "Digimon",
+    "color": "Green/Purple",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "1",
+        "level": "2"
+      },
+      {
+        "color": "Purple",
+        "cost": "1",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[End of Opponent's Turn] [Once Per Turn] By trashing 1 card in your hand, suspend 1 of your opponent's Digimon.",
+    "dnaDigivolve": "-",
+    "dp": "1000",
+    "dualEffect": "-",
+    "effect": "[On Play] [On Deletion] Reveal the top 3 cards of your deck. Add 1 card with [Belphemon] or [Gizmon]\u00a0in its text among them to the hand. Return the rest to the bottom of the deck. Then, trash 1 card in your hand.",
+    "form": "Rookie",
+    "id": "P-201_P2",
+    "illustrator": "poroze",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Phascomon",
+      "japanese": "\u30d5\u30a1\u30b9\u30b3\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "LM-08: LIMITED CARD PACK FINAL CREST",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Kapurimon]: Cost 0 ",
+    "type": "Dark Animal",
+    "version": "Foil - Coloured Border -\u00a0Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
     "attribute": "Data",
     "block": [
       "05"
@@ -338092,6 +339021,62 @@
     "specialDigivolve": "[Digivolve] Lv.3 w/[DM]\u00a0trait: Cost 2 ",
     "type": "Dinosaur/DM/Ver.1",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Data",
+    "block": [
+      "05"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/P-202_P2-J.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "P-202",
+    "cardType": "Digimon",
+    "color": "Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "\uff1cPiercing\uff1e ",
+    "dnaDigivolve": "-",
+    "dp": "4000",
+    "dualEffect": "-",
+    "effect": "\uff1cTraining\uff1e \n[Your Turn] [Once Per Turn] When any of your suspended Digimon would digivolve into a Digimon card with [Tyrannomon]\u00a0in its name or the [Dinosaur] or [Ver.1]\u00a0trait, reduce the digivolution cost by 1.",
+    "form": "Champion",
+    "id": "P-202_P2",
+    "illustrator": "Souichirou Gunjima",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Tyrannomon",
+      "japanese": "\u30c6\u30a3\u30e9\u30ce\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "LM-08: LIMITED CARD PACK FINAL CREST",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "4",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.3 w/[DM]\u00a0trait: Cost 2 ",
+    "type": "Dinosaur/DM/Ver.1",
+    "version": "Foil - Coloured Border -\u00a0Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -338152,6 +339137,62 @@
   {
     "aceEffect": "-",
     "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "05"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/P-203_P2-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "P-203",
+    "cardType": "Digimon",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "-",
+    "effect": "[On Play] [When Digivolving] [When Attacking] [Once Per Turn] \uff1cDe-Digivolve 1\uff1e 1 of your opponent's Digimon. Then, by trashing 1 Option card in the battle area, this Digimon gains \uff1cPiercing\uff1e and \uff1cSecurity A. +1\uff1e for the turn. \n[All Turns] [Once Per Turn] When Option cards in the battle area are trashed, 1 of your opponent's Digimon can't digivolve or attack players until their turn ends.",
+    "form": "Mega",
+    "id": "P-203_P2",
+    "illustrator": "Murakami Hisashi",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Justimon: Accel Arm",
+      "japanese": "\u30b8\u30e3\u30b9\u30c6\u30a3\u30e2\u30f3\uff1a\u30a2\u30af\u30bb\u30eb\u30a2\u30fc\u30e0",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "LM-08: LIMITED CARD PACK FINAL CREST",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "12",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Justimon: Blitz Arm]/[Justimon: Critical Arm]: Cost 1\n[Digivolve] Lv.5 w/[Cyberdramon]\u00a0in name: Cost 3 ",
+    "type": "Cyborg",
+    "version": "Foil - Coloured Border -\u00a0Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
     "attribute": "-",
     "block": [
       "05"
@@ -338207,6 +339248,56 @@
       "05"
     ],
     "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/P-204_P2-J.webp",
+    "cardLv": "-",
+    "cardNumber": "P-204",
+    "cardType": "Option",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "[Main] By trashing 1 card with the [X Antibody] or [Chronicle]\u00a0trait from your hand, \uff1cDraw 2\uff1e Then, place this card in the battle area.\n[All Turns] When Digimon attack players, \uff1cDelay\uff1e \n\u30fb1 of your [Grademon] or Digimon with the [Chronicle]\u00a0trait may digivolve into [Alphamon] or a level 6 or lower Digimon card with the [Chronicle]\u00a0trait in the hand without paying the cost.",
+    "form": "-",
+    "id": "P-204_P2",
+    "illustrator": "tessy",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Release of the Sealed Knight!",
+      "japanese": "\u5c01\u5370\u3055\u308c\u3057\u9a0e\u58eb\u306e\u89e3\u653e\uff01",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "LM-08: LIMITED CARD PACK FINAL CREST",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "[Security] Activate this card's [Main] effects.",
+    "specialDigivolve": "-",
+    "type": "X Antibody/Chronicle",
+    "version": "Foil - Coloured Border -\u00a0Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "05"
+    ],
+    "burstDigivolve": "-",
     "cardImage": "assets/images/cards/P-205-J.webp",
     "cardLv": "-",
     "cardNumber": "P-205",
@@ -338248,6 +339339,56 @@
     "specialDigivolve": "-",
     "type": "DM",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "05"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/P-205_P2-J.webp",
+    "cardLv": "-",
+    "cardNumber": "P-205",
+    "cardType": "Option",
+    "color": "Purple",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "While you have a Digimon or Tamer with the [DM]\u00a0trait on the field, you can ignore this card's color requirements.\n[Main] \uff1cDraw 2\uff1e and trash 2 cards in your hand. Then, place this card in the battle area.\n[Main] \uff1cDelay\uff1e \n\u30fbBy deleting 1 of your play cost 7 or lower Digimon, you may play 1 Digimon card with [Kimeramon] or [Millenniummon]\u00a0in its name from your trash with the play cost reduced by 3.",
+    "form": "-",
+    "id": "P-205_P2",
+    "illustrator": "Kuromori maya",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Insane Synthetic Monster",
+      "japanese": "\u72c2\u6c17\u306e\u5408\u6210\u9b54\u7363",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "LM-08: LIMITED CARD PACK FINAL CREST",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "[Security] \uff1cDraw 2\uff1e and trash 2 cards in your hand. Then, place this card in the battle area.",
+    "specialDigivolve": "-",
+    "type": "DM",
+    "version": "Foil - Coloured Border -\u00a0Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -338747,6 +339888,62 @@
   {
     "aceEffect": "-",
     "assembly": "-",
+    "attribute": "Virus",
+    "block": [
+      "05"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/P-201_P2-J.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "P-214",
+    "cardType": "Digimon",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[All Turns] When this Digimon with [Seadramon]\u00a0in its text would leave the battle area by your opponent's effects, by trashing 2 same-level cards in its digivolution cards, it doesn't leave.",
+    "dnaDigivolve": "-",
+    "dp": "3000",
+    "dualEffect": "-",
+    "effect": "\uff1cDecode ([Betamon]/[ModokiBetamon])\uff1e \n[On Play] [When Digivolving] By placing this Digimon as the bottom digivolution card of any of your other Digimon with [Seadramon]\u00a0in its text, return 1 of your opponent's Digimon with as high or lower a level as 1 of your Digimon with [Seadramon]\u00a0in its text to the bottom of the deck.",
+    "form": "Rookie",
+    "id": "P-201_P2",
+    "illustrator": "koki",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Betamon (X Antibody)",
+      "japanese": "\u30d9\u30bf\u30e2\u30f3X\u6297\u4f53",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "LM-08: LIMITED CARD PACK FINAL CREST",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "4",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Betamon]/[ModokiBetamon]: Cost 0 ",
+    "type": "Aquatic/X Antibody",
+    "version": "Foil - Coloured Border -\u00a0Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
     "attribute": "Data",
     "block": [
       "05"
@@ -338808,6 +340005,67 @@
   {
     "aceEffect": "-",
     "assembly": "-",
+    "attribute": "Data",
+    "block": [
+      "05"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/P-215_P2-J.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "P-215",
+    "cardType": "Digimon",
+    "color": "Blue/Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "3",
+        "level": "3"
+      },
+      {
+        "color": "Black",
+        "cost": "3",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "\uff1cBlocker\uff1e ",
+    "dnaDigivolve": "-",
+    "dp": "6000",
+    "dualEffect": "-",
+    "effect": "[When Moving] [On Play] [When Digivolving] By placing 1 level 4 or lower [Ice-Snow], [Mineral] or [Rock]\u00a0trait card from your hand or trash as this Digimon's bottom digivolution card, until your opponent\u2019s turn ends, their effects can't return 1 or your [Ice-Snow], [Mineral] or [Rock]\u00a0trait Digimon to hands or decks or affect it with \uff1cDe-Digivolve\uff1e effects.",
+    "form": "Champion",
+    "id": "P-215_P2",
+    "illustrator": "koki",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Icemon",
+      "japanese": "\u30a2\u30a4\u30b9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "LM-08: LIMITED CARD PACK FINAL CREST",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "5",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "[Rule] Trait: Has [Mineral] Type.",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.3 w/[Ice-Snow]/[Mineral]/[Rock]\u00a0trait: Cost 2 ",
+    "type": "Ice-Snow",
+    "version": "Foil - Coloured Border -\u00a0Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
     "attribute": "Virus",
     "block": [
       "05"
@@ -338860,6 +340118,62 @@
     "specialDigivolve": "-",
     "type": "Puppet",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Virus",
+    "block": [
+      "05"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/P-216_P2-J.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "P-216",
+    "cardType": "Digimon",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "3",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "\uff1cBlocker\uff1e ",
+    "dnaDigivolve": "-",
+    "dp": "6000",
+    "dualEffect": "-",
+    "effect": "\uff1cBlocker\uff1e \n[On Play] You may play 1 [Dark Masters]\u00a0trait Digimon card from your hand without paying the cost. The Digimon this effect played can't digivolve and is deleted at turn end.\n[On Deletion] You may play 1 face-up [Dark Masters]\u00a0trait Digimon card from your security stack without paying the cost. At the end of your turn, delete the Digimon this effect played.",
+    "form": "Ultimate",
+    "id": "P-216_P2",
+    "illustrator": "Itohiro",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "WaruMonzaemon",
+      "japanese": "\u30ef\u30eb\u3082\u3093\u3056\u3048\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "LM-08: LIMITED CARD PACK FINAL CREST",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "6",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Puppet",
+    "version": "Foil - Coloured Border -\u00a0Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -338919,6 +340233,56 @@
       "05"
     ],
     "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/P-217_P2-J.webp",
+    "cardLv": "-",
+    "cardNumber": "P-217",
+    "cardType": "Tamer",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 [Social]\u00a0trait card and 1 [Creation], [Navi] or [Tool]\u00a0trait card among them to the hand. Return the rest to the bottom of the deck.\n[Your Turn] When any of your Digimon get linked to a [Social], [Creation], [Navi] or [Tool]\u00a0trait card, by suspending this Tamer, gain 1 memory.",
+    "form": "-",
+    "id": "P-217_P2",
+    "illustrator": "No Illustrator",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Haru Shinkai",
+      "japanese": "\u65b0\u6d77\u30cf\u30eb",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "LM-08: LIMITED CARD PACK FINAL CREST",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "[Security] Play this card without paying the cost.",
+    "specialDigivolve": "-",
+    "type": "App Driver/Appmon",
+    "version": "Foil - Coloured Border -\u00a0Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "05"
+    ],
+    "burstDigivolve": "-",
     "cardImage": "assets/images/cards/P-218-J.webp",
     "cardLv": "-",
     "cardNumber": "P-218",
@@ -338969,6 +340333,56 @@
       "05"
     ],
     "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/P-218_P2-J.webp",
+    "cardLv": "-",
+    "cardNumber": "P-218",
+    "cardType": "Tamer",
+    "color": "Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 [Entertainment]\u00a0trait card and 1 [Awakening], [Tool] or [Navi]\u00a0trait card among them to the hand. Return the rest to the bottom of the deck.\n[Your Turn] When any of your Digimon get linked to a [Entertainment], [Tool] or [Navi]\u00a0trait card, by suspending this Tamer, gain 1 memory.",
+    "form": "-",
+    "id": "P-218_P2",
+    "illustrator": "No Illustrator",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Torajiro Asuka",
+      "japanese": "\u98db\u9ce5\u864e\u6b21\u90ce",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "LM-08: LIMITED CARD PACK FINAL CREST",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "[Security] Play this card without paying the cost.",
+    "specialDigivolve": "-",
+    "type": "App Driver/Appmon",
+    "version": "Foil - Coloured Border -\u00a0Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "05"
+    ],
+    "burstDigivolve": "-",
     "cardImage": "assets/images/cards/P-219-J.webp",
     "cardLv": "-",
     "cardNumber": "P-219",
@@ -339010,6 +340424,56 @@
     "specialDigivolve": "-",
     "type": "Seven Great Demon Lords",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "05"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/P-219_P2-J.webp",
+    "cardLv": "-",
+    "cardNumber": "P-219",
+    "cardType": "Option",
+    "color": "Purple",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "When this card would be used, if your opponent has 10 or more cards in their trash, reduce the use cost by 3.\n[Main] Delete 1 of your opponent's level 6 or lower Digimon. Then, by deleting 1 of your [Evil] or [Fallen Angel]\u00a0trait Digimon, you may play 1 [Creepymon] from your trash without paying the cost. The Digimon this effect played gains \uff1cRush\uff1e and \uff1cBlocker\uff1e until your opponent's turn ends.",
+    "form": "-",
+    "id": "P-219_P2",
+    "illustrator": "tessy",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Flame Inferno",
+      "japanese": "\u30d5\u30ec\u30a4\u30e0\u30a4\u30f3\u30d5\u30a7\u30eb\u30ce",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "LM-08: LIMITED CARD PACK FINAL CREST",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "9",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "[Security] Activate this card's [Main] effects.",
+    "specialDigivolve": "-",
+    "type": "Seven Great Demon Lords",
+    "version": "Foil - Coloured Border -\u00a0Alternative Art"
   },
   {
     "aceEffect": "-",

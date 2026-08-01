@@ -18563,6 +18563,12 @@
         "illustrator": "sasasi",
         "note": "Box Promotion Pack: Dimensional Phase",
         "type": "Foil -\u00a0Uncommon"
+      },
+      {
+        "id": "BT11-023_P2-J",
+        "illustrator": "Nakano Haito",
+        "note": "LM-08: LIMITED CARD PACK FINAL CREST",
+        "type": "Foil - Coloured Border -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "-",
@@ -24484,6 +24490,12 @@
         "illustrator": "Nakano Haito",
         "note": "PB-23: Digimon Card Game Premium Heroines Set ver.2",
         "type": "Alternative Art"
+      },
+      {
+        "id": "BT11-112_P3-J",
+        "illustrator": "Takase",
+        "note": "LM-08: LIMITED CARD PACK FINAL CREST",
+        "type": "Foil - Coloured Border -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "-",
@@ -53241,7 +53253,14 @@
         "type": "Foil - Coloured Border -\u00a0Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT15-096_P1-J",
+        "illustrator": "Shin Sasaki",
+        "note": "LM-08: LIMITED CARD PACK FINAL CREST",
+        "type": "Foil - Coloured Border -\u00a0Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
@@ -89893,7 +89912,14 @@
         "type": "Foil - Coloured Border -\u00a0Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT20-018_P1-J",
+        "illustrator": "Nakano Haito",
+        "note": "LM-08: LIMITED CARD PACK FINAL CREST",
+        "type": "Foil - Coloured Border -\u00a0Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -91190,6 +91216,12 @@
         "illustrator": "Naochika Morishita",
         "note": "BT-20: Booster Over the X",
         "type": "Alternative Art"
+      },
+      {
+        "id": "BT20-037_P2-J",
+        "illustrator": "Spareribs",
+        "note": "LM-08: LIMITED CARD PACK FINAL CREST",
+        "type": "Foil - Coloured Border -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "-",
@@ -92760,6 +92792,12 @@
         "illustrator": "Spareribs",
         "note": "BT-20: Booster Over the X",
         "type": "Alternative Art"
+      },
+      {
+        "id": "BT20-060_P5-J",
+        "illustrator": "toriyufu",
+        "note": "LM-08: LIMITED CARD PACK FINAL CREST",
+        "type": "Alternative Art"
       }
     ],
     "aceEffect": "Overflow \uff1c-5\uff1e ",
@@ -92837,7 +92875,14 @@
         "type": "Foil - Coloured Border -\u00a0Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT20-061_P1-J",
+        "illustrator": "SENNSU",
+        "note": "LM-08: LIMITED CARD PACK FINAL CREST",
+        "type": "Foil - Coloured Border -\u00a0Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Virus",
@@ -93935,6 +93980,12 @@
         "id": "BT20-077_P2-J",
         "illustrator": "Takeuchi Moto",
         "note": "BT-20: Booster Over the X",
+        "type": "Alternative Art"
+      },
+      {
+        "id": "BT20-077_P3-J",
+        "illustrator": "Takase",
+        "note": "LM-08: LIMITED CARD PACK FINAL CREST",
         "type": "Alternative Art"
       }
     ],
@@ -100305,7 +100356,14 @@
         "type": "Foil - Coloured Border -\u00a0Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT21-071_P1-J",
+        "illustrator": "BIRU YAMAGUCHI",
+        "note": "LM-08: LIMITED CARD PACK FINAL CREST",
+        "type": "Foil - Coloured Border -\u00a0Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Tool",
@@ -102771,7 +102829,14 @@
         "type": "Foil - Coloured Border -\u00a0Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT22-008_P1-J",
+        "illustrator": "poroze",
+        "note": "LM-08: LIMITED CARD PACK FINAL CREST",
+        "type": "Foil - Coloured Border -\u00a0Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -103375,7 +103440,14 @@
         "type": "Foil - Coloured Border -\u00a0Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT22-017_P1-J",
+        "illustrator": "poroze",
+        "note": "LM-08: LIMITED CARD PACK FINAL CREST",
+        "type": "Foil - Coloured Border -\u00a0Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Data",
@@ -107948,7 +108020,14 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT22-088_P1-J",
+        "illustrator": "Tonamikanji",
+        "note": "LM-08: LIMITED CARD PACK FINAL CREST",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
@@ -129184,32 +129263,38 @@
     "JAAs": [],
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Data",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-018.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.3",
     "cardNumber": "BT26-018",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Blue",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "\uff1cJamming\uff1e ",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "1000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[When Moving] [On Play] Reveal the top 3 cards of your deck. Add 1 card with [Aqua] or [Sea Animal]\u00a0in any of its traits or 1 card with the [DS]\u00a0trait among them to the hand. Return the rest to the bottom of the deck. Then, trash the bottom digivolution card of 1 of your opponent's Digimon.",
+    "form": "Rookie",
     "id": "BT26-018",
-    "illustrator": "To be completed",
+    "illustrator": "naru",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Sangomon",
+      "japanese": "\u30b5\u30f3\u30b4\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -129217,18 +129302,18 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "3",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
       "japanese": "Not released",
       "korean": "Not released"
     },
-    "rule": "-",
+    "rule": "[Rule] Trait: Has [Aquatic] Type.",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.0 w/[2]\u00a0trait: Cost DS ",
+    "type": "Mollusk/DS",
     "version": "Normal"
   },
   {
@@ -129294,32 +129379,38 @@
     "JAAs": [],
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Virus",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-020.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.4",
     "cardNumber": "BT26-020",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Blue",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "\uff1cEvade\uff1e ",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "4000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[On Play] \uff1cDraw 1\uff1e Then, 1 of your opponent's Digimon can't attack or block until their turn ends.",
+    "form": "Champion",
     "id": "BT26-020",
-    "illustrator": "To be completed",
+    "illustrator": "naru",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "ShellNumemon",
+      "japanese": "\u30ab\u30e9\u30c4\u30ad\u30cc\u30e1\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -129327,8 +129418,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "4",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -129337,8 +129428,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.2 w/[3]\u00a0trait: Cost DS ",
+    "type": "Crustacean/DS",
     "version": "Normal"
   },
   {
@@ -129859,31 +129950,42 @@
     "JAAs": [],
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Data",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-030.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.5",
     "cardNumber": "BT26-030",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Yellow/Purple",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "4",
+        "level": "4"
+      },
+      {
+        "color": "Purple",
+        "cost": "4",
+        "level": "4"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "6000",
     "dualEffect": "-",
     "effect": "-",
-    "form": "-",
+    "form": "Ultimate",
     "id": "BT26-030",
     "illustrator": "To be completed",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
+      "english": "Pumpkinmon",
       "japanese": "",
       "korean": "-",
       "simplifiedChinese": "-",
@@ -129892,8 +129994,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "6",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -129903,7 +130005,7 @@
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "Puppet/Iliad/TS",
     "version": "Normal"
   },
   {
@@ -131922,7 +132024,13 @@
     "cardType": "Digimon",
     "color": "Purple",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
     "digivolveEffect": "[When Attacking] [Once Per Turn] \uff1cDraw 1\uff1e and trash 1 card in your hand.",
     "dnaDigivolve": "-",
     "dp": "1000",
@@ -132310,32 +132418,38 @@
     "JAAs": [],
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-072.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.4",
     "cardNumber": "BT26-072",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Purple",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[On Deletion] Your opponent trashes 1 card in their hand.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "5000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "\uff1cBlocker\uff1e \n[On Play] [When Digivolving] By trashing 1 card in your hand or placing it face down under any of your [Keenan Crier]s, delete 1 of your opponent's level 4 or lower Digimon.",
+    "form": "Champion",
     "id": "BT26-072",
-    "illustrator": "To be completed",
+    "illustrator": "NAOKI AKAMINE",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Peckmon",
+      "japanese": "\u30da\u30c3\u30af\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -132343,8 +132457,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "4",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -132353,8 +132467,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.3 w/[DATA SQUAD]\u00a0trait: Cost 2 ",
+    "type": "Avian/DATA SQUAD",
     "version": "Normal"
   },
   {
@@ -132558,32 +132672,38 @@
     "JAAs": [],
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-076.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.5",
     "cardNumber": "BT26-076",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Purple",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "3",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "[On Deletion] You may play 1 play cost 5 or lower card with [Avian] or [Bird]\u00a0in any of its traits or the [DATA SQUAD]\u00a0trait from your trash without paying the cost.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "7000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[When Digivolving] Delete 1 of your opponent's level 4 or lower Digimon. Then, by trashing the bottom face-down card from under any of your Tamers, they trash 1 card in their hand.\n[Your Turn] [Once Per Turn] When your opponent's hand is trashed from or effects trash cards from under your Tamers, this Digimon may digivolve into [Ravemon] or a [DATA SQUAD]\u00a0trait Digimon card in the trash with the cost reduced by 1.",
+    "form": "Ultimate",
     "id": "BT26-076",
-    "illustrator": "To be completed",
+    "illustrator": "NAOKI AKAMINE",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Crowmon",
+      "japanese": "\u30e4\u30bf\u30ac\u30e9\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -132591,8 +132711,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "7",
+    "rarity": "R",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -132601,8 +132721,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.4 w/[DATA SQUAD]\u00a0trait: Cost 3 ",
+    "type": "Mysterious Bird/DATA SQUAD",
     "version": "Normal"
   },
   {
@@ -241083,6 +241203,12 @@
         "illustrator": "toriyufu",
         "note": "EX-08: Extra Booster Chain of Liberation",
         "type": "Alternative Art"
+      },
+      {
+        "id": "EX8-029_P2-J",
+        "illustrator": "kaz",
+        "note": "LM-08: LIMITED CARD PACK FINAL CREST",
+        "type": "Foil - Coloured Border -\u00a0Alternative Art"
       }
     ],
     "aceEffect": "-",
@@ -244383,6 +244509,12 @@
         "illustrator": "Nakano Haito",
         "note": "PB-21: Tamer's Evolution Box - Rise of Digimon",
         "type": "Textured -\u00a0Alternative Art"
+      },
+      {
+        "id": "EX8-074_P4-J",
+        "illustrator": "toriyufu",
+        "note": "LM-08: LIMITED CARD PACK FINAL CREST",
+        "type": "Alternative Art"
       }
     ],
     "aceEffect": "-",
@@ -268730,7 +268862,14 @@
         "type": "Foil - Coloured Border -\u00a0Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "P-201_P2-J",
+        "illustrator": "poroze",
+        "note": "LM-08: LIMITED CARD PACK FINAL CREST",
+        "type": "Foil - Coloured Border -\u00a0Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Virus",
@@ -268806,7 +268945,14 @@
         "type": "Foil - Coloured Border -\u00a0Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "P-202_P2-J",
+        "illustrator": "Souichirou Gunjima",
+        "note": "LM-08: LIMITED CARD PACK FINAL CREST",
+        "type": "Foil - Coloured Border -\u00a0Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Data",
@@ -268877,7 +269023,14 @@
         "type": "Foil - Coloured Border -\u00a0Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "P-203_P2-J",
+        "illustrator": "Murakami Hisashi",
+        "note": "LM-08: LIMITED CARD PACK FINAL CREST",
+        "type": "Foil - Coloured Border -\u00a0Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -268948,7 +269101,14 @@
         "type": "Foil - Coloured Border -\u00a0Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "P-204_P2-J",
+        "illustrator": "tessy",
+        "note": "LM-08: LIMITED CARD PACK FINAL CREST",
+        "type": "Foil - Coloured Border -\u00a0Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
@@ -269013,7 +269173,14 @@
         "type": "Foil - Coloured Border -\u00a0Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "P-205_P2-J",
+        "illustrator": "Kuromori maya",
+        "note": "LM-08: LIMITED CARD PACK FINAL CREST",
+        "type": "Foil - Coloured Border -\u00a0Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
@@ -269571,7 +269738,14 @@
         "type": "Foil - Coloured Border -\u00a0Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "P-201_P2-J",
+        "illustrator": "koki",
+        "note": "LM-08: LIMITED CARD PACK FINAL CREST",
+        "type": "Foil - Coloured Border -\u00a0Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Virus",
@@ -269642,7 +269816,14 @@
         "type": "Foil - Coloured Border -\u00a0Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "P-215_P2-J",
+        "illustrator": "koki",
+        "note": "LM-08: LIMITED CARD PACK FINAL CREST",
+        "type": "Foil - Coloured Border -\u00a0Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Data",
@@ -269718,7 +269899,14 @@
         "type": "Foil - Coloured Border -\u00a0Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "P-216_P2-J",
+        "illustrator": "Itohiro",
+        "note": "LM-08: LIMITED CARD PACK FINAL CREST",
+        "type": "Foil - Coloured Border -\u00a0Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Virus",
@@ -269789,7 +269977,14 @@
         "type": "Foil - Coloured Border -\u00a0Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "P-217_P2-J",
+        "illustrator": "No Illustrator",
+        "note": "LM-08: LIMITED CARD PACK FINAL CREST",
+        "type": "Foil - Coloured Border -\u00a0Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
@@ -269854,7 +270049,14 @@
         "type": "Foil - Coloured Border -\u00a0Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "P-218_P2-J",
+        "illustrator": "No Illustrator",
+        "note": "LM-08: LIMITED CARD PACK FINAL CREST",
+        "type": "Foil - Coloured Border -\u00a0Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
@@ -269919,7 +270121,14 @@
         "type": "Foil - Coloured Border -\u00a0Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "P-219_P2-J",
+        "illustrator": "tessy",
+        "note": "LM-08: LIMITED CARD PACK FINAL CREST",
+        "type": "Foil - Coloured Border -\u00a0Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
