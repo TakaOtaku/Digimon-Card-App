@@ -201653,7 +201653,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-001.webp",
+    "cardImage": "assets/images/cards/BT26-001-Sample.webp",
     "cardLv": "Lv.2",
     "cardNumber": "BT26-001",
     "cardType": "Digi-Egg",
@@ -202171,7 +202171,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-011.webp",
+    "cardImage": "assets/images/cards/BT26-011-Sample.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BT26-011",
     "cardType": "Digimon",
@@ -202410,7 +202410,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-015.webp",
+    "cardImage": "assets/images/cards/BT26-015-Sample.webp",
     "cardLv": "Lv.5",
     "cardNumber": "BT26-015",
     "cardType": "Digimon",
@@ -202466,32 +202466,43 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-016.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.6",
     "cardNumber": "BT26-016",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Red/Yellow",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "4",
+        "level": "5"
+      },
+      {
+        "color": "Yellow",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "12000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "\uff1cPiercing\uff1e \n\uff1cEngage\uff1e \n[On Play] [When Digivolving] [When Attacking] [Once Per Turn] You may delete 1 of your opponent's Digimon with as much DP as this Digimon or less. Then, by returning 3 cards in trashes to the bottom of the deck, \uff1cRecovery +1\uff1e \n[All Turns] [Once Per Turn] When this Digimon would leave the battle area, by returning your top security card to the bottom of the deck, it doesn't leave.",
+    "form": "Mega",
     "id": "BT26-016",
-    "illustrator": "To be completed",
+    "illustrator": "Spareribs",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Chronomon: Holy Mode",
+      "japanese": "\u30af\u30ed\u30ce\u30e2\u30f3\uff1a\u30db\u30fc\u30ea\u30fc\u30e2\u30fc\u30c9",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -202499,8 +202510,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "12",
+    "rarity": "SR",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -202509,9 +202520,70 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[TS]\u00a0trait: Cost 3 ",
+    "type": "Shaman/Iliad/TS",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT26-016_P1.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT26-016",
+    "cardType": "Digimon",
+    "color": "Red/Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "4",
+        "level": "5"
+      },
+      {
+        "color": "Yellow",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "-",
+    "effect": "\uff1cPiercing\uff1e \n\uff1cEngage\uff1e \n[On Play] [When Digivolving] [When Attacking] [Once Per Turn] You may delete 1 of your opponent's Digimon with as much DP as this Digimon or less. Then, by returning 3 cards in trashes to the bottom of the deck, \uff1cRecovery +1\uff1e \n[All Turns] [Once Per Turn] When this Digimon would leave the battle area, by returning your top security card to the bottom of the deck, it doesn't leave.",
+    "form": "Mega",
+    "id": "BT26-016_P1",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Chronomon: Holy Mode",
+      "japanese": "\u30af\u30ed\u30ce\u30e2\u30f3\uff1a\u30db\u30fc\u30ea\u30fc\u30e2\u30fc\u30c9",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "BT-26: BOOSTER TIMELESS BONDS",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "12",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[TS]\u00a0trait: Cost 3 ",
+    "type": "Shaman/Iliad/TS",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -202806,32 +202878,43 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-022.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.4",
     "cardNumber": "BT26-022",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Blue/Yellow",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "3",
+        "level": "3"
+      },
+      {
+        "color": "Yellow",
+        "cost": "3",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "\uff1cBarrier\uff1e ",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "4000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[On Play] [When Digivolving] Add your top security card to the hand and \uff1cRecovery +1\uff1e \n[End of Your Turn] If you have a red or purple Digimon, by placing this Digimon as the bottom security card, you may play 1 blue or red [Iliad]\u00a0trait Digimon card from your hand with the cost reduced by 4.",
+    "form": "Champion",
     "id": "BT26-022",
-    "illustrator": "To be completed",
+    "illustrator": "itohiro",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Sorcermon",
+      "japanese": "\u30bd\u30fc\u30b5\u30ea\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -202839,8 +202922,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "4",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -202849,39 +202932,45 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.3 w/[TS]\u00a0trait: Cost 2 ",
+    "type": "Wizard/Witchelny/Iliad/TS",
     "version": "Normal"
   },
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-023.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.4",
     "cardNumber": "BT26-023",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Blue",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[When Attacking] If your hand has 7 or fewer cards, \uff1cDraw 1\uff1e ",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "4000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "\uff1cTraining\uff1e \n\uff1cJamming\uff1e \n[On Play] [When Attacking] By placing 1 card in your hand face down as this Digimon's bottom digivolution card, return 1 of your opponent's level 4 or lower Digimon to the bottom of the deck.",
+    "form": "Champion",
     "id": "BT26-023",
-    "illustrator": "To be completed",
+    "illustrator": "GOSSAN",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Mojyamon",
+      "japanese": "\u30e2\u30b8\u30e3\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -202889,8 +202978,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "4",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -202899,8 +202988,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.3 w/[DM]\u00a0trait: Cost 2 ",
+    "type": "Rare Animal/DM/Ver.4",
     "version": "Normal"
   },
   {
@@ -203245,7 +203334,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-030.webp",
+    "cardImage": "assets/images/cards/BT26-030-Sample.webp",
     "cardLv": "Lv.5",
     "cardNumber": "BT26-030",
     "cardType": "Digimon",
@@ -204147,32 +204236,38 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Data",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-043.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.5",
     "cardNumber": "BT26-043",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Green",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "3",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "[All Turns] [Once Per Turn] When any of your Digimon are played, you may suspend 1 of your opponent's Digimon.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "6000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "\uff1cBlocker\uff1e \n[On Play] [When Digivolving] Suspend 1 of your opponent's Digimon or Tamers. Then, by placing your deck's top card face down as this Digimon's bottom digivolution card, for each of this Digimon's face-down digivolution cards, 1 of your opponent's Digimon or Tamers can't unsuspend until their turn ends.",
+    "form": "Ultimate",
     "id": "BT26-043",
-    "illustrator": "To be completed",
+    "illustrator": "GOSSAN",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Piximon",
+      "japanese": "\u30d4\u30c3\u30b3\u30ed\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -204180,8 +204275,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "6",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -204190,8 +204285,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.4 w/[DM]\u00a0trait: Cost 3 ",
+    "type": "Fairy/DM/Ver.4",
     "version": "Normal"
   },
   {
@@ -204415,32 +204510,43 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-048.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.6",
     "cardNumber": "BT26-048",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Green/Yellow",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "4",
+        "level": "5"
+      },
+      {
+        "color": "Yellow",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "12000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "\uff1cAlliance\uff1e \n\uff1cVortex\uff1e \n[When Digivolving] [When Attacking] By trashing any of your Digimon's bottom face-down digivolution card, you may play 1 6000 DP or lower [Ver.4]\u00a0trait Digimon card from your hand without paying the cost.\n[All Turns] When effects trash face-down digivolution cards from your Digimon, 1 of your opponent's Digimon gets -6000 DP for the turn.",
+    "form": "Mega",
     "id": "BT26-048",
-    "illustrator": "To be completed",
+    "illustrator": "NAOKI AKAMINE",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "BloomLordmon",
+      "japanese": "\u30d6\u30eb\u30e0\u30ed\u30fc\u30c9\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -204448,8 +204554,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "12",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -204458,8 +204564,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[DM]\u00a0trait: Cost 3 ",
+    "type": "Fairy/DM/Ver.4",
     "version": "Normal"
   },
   {
@@ -205379,32 +205485,43 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Virus",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-060.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.7",
     "cardNumber": "BT26-060",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Black/Red",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "6",
+        "level": "6"
+      },
+      {
+        "color": "Red",
+        "cost": "6",
+        "level": "6"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "16000",
     "dualEffect": "-",
     "effect": "-",
-    "form": "-",
+    "form": "Mega",
     "id": "BT26-060",
     "illustrator": "To be completed",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Chronomon: Destroy Mode",
+      "japanese": "\u30af\u30ed\u30ce\u30e2\u30f3\uff1a\u30c7\u30b9\u30c8\u30ed\u30a4\u30e2\u30fc\u30c9",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -205412,8 +205529,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "16",
+    "rarity": "UR",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -205423,8 +205540,130 @@
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "Shaman/Iliad/TS",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Virus",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT26-060_P1.webp",
+    "cardLv": "Lv.7",
+    "cardNumber": "BT26-060",
+    "cardType": "Digimon",
+    "color": "Black/Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "6",
+        "level": "6"
+      },
+      {
+        "color": "Red",
+        "cost": "6",
+        "level": "6"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "16000",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "Mega",
+    "id": "BT26-060_P1",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Chronomon: Destroy Mode",
+      "japanese": "\u30af\u30ed\u30ce\u30e2\u30f3\uff1a\u30c7\u30b9\u30c8\u30ed\u30a4\u30e2\u30fc\u30c9",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "BT-26: BOOSTER TIMELESS BONDS",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "16",
+    "rarity": "UR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Shaman/Iliad/TS",
+    "version": "Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Virus",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT26-060_P2.webp",
+    "cardLv": "Lv.7",
+    "cardNumber": "BT26-060",
+    "cardType": "Digimon",
+    "color": "Black/Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "6",
+        "level": "6"
+      },
+      {
+        "color": "Red",
+        "cost": "6",
+        "level": "6"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "16000",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "Mega",
+    "id": "BT26-060_P2",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Chronomon: Destroy Mode",
+      "japanese": "\u30af\u30ed\u30ce\u30e2\u30f3\uff1a\u30c7\u30b9\u30c8\u30ed\u30a4\u30e2\u30fc\u30c9",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "BT-26: BOOSTER TIMELESS BONDS",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "16",
+    "rarity": "UR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Shaman/Iliad/TS",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -205770,32 +206009,43 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Data",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-067.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.4",
     "cardNumber": "BT26-067",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Purple/Red",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "3",
+        "level": "3"
+      },
+      {
+        "color": "Red",
+        "cost": "3",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "\uff1cRetaliation\uff1e ",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "4000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[On Play] [When Digivolving] \uff1cDraw 1\uff1e and trash 1 card in your hand.\n[End of Your Turn] If you have a blue or yellow Digimon, by returning this Digimon to the bottom of the deck, you may play 1 red or blue [Iliad]\u00a0trait Digimon card from your trash with the cost reduced by 4.",
+    "form": "Champion",
     "id": "BT26-067",
-    "illustrator": "To be completed",
+    "illustrator": "itohiro",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Wizardmon",
+      "japanese": "\u30a6\u30a3\u30b6\u30fc\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -205803,8 +206053,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "4",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -205813,8 +206063,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.3 w/[TS]\u00a0trait: Cost 2 ",
+    "type": "Wizard/Witchelny/Iliad/TS",
     "version": "Normal"
   },
   {
@@ -206639,41 +206889,52 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Virus",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-080.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.6",
     "cardNumber": "BT26-080",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon/Option",
+    "color": "Purple/Green",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "5",
+        "level": "5"
+      },
+      {
+        "color": "Green",
+        "cost": "5",
+        "level": "5"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "-",
-    "dualEffect": "-",
+    "dualEffect": "[Arts Digivolve] ",
     "effect": "-",
-    "form": "-",
+    "form": "Mega",
     "id": "BT26-080",
     "illustrator": "To be completed",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Bacchusmon/Reversal of the Dead",
+      "japanese": "\u30d0\u30c3\u30ab\u30b9\u30e2\u30f3/\u30ea\u30d0\u30fc\u30b9\n\u30fb\u30aa\u30d6\n\u30fb\u30b6\n\u30fb\u30c7\u30c3\u30c9",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
     },
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
-    "optionCardColourRequirement": "-",
-    "optionCardEffect": "-",
+    "optionCardColourRequirement": "Purple",
+    "optionCardEffect": "\uff1cUse Req. ([TS] trait)\uff1e ",
     "playCost": "-",
-    "rarity": "-",
+    "rarity": "SR",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -206683,8 +206944,69 @@
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "Shaman/Olympos XII/Iliad/TS",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Virus",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT26-080_P1.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT26-080",
+    "cardType": "Digimon/Option",
+    "color": "Purple/Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "5",
+        "level": "5"
+      },
+      {
+        "color": "Green",
+        "cost": "5",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "[Arts Digivolve] ",
+    "effect": "-",
+    "form": "Mega",
+    "id": "BT26-080_P1",
+    "illustrator": "sasasi",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Bacchusmon/Reversal of the Dead",
+      "japanese": "\u30d0\u30c3\u30ab\u30b9\u30e2\u30f3/\u30ea\u30d0\u30fc\u30b9\n\u30fb\u30aa\u30d6\n\u30fb\u30b6\n\u30fb\u30c7\u30c3\u30c9",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "BT-26: BOOSTER TIMELESS BONDS",
+    "optionCardColourRequirement": "Purple",
+    "optionCardEffect": "\uff1cUse Req. ([TS] trait)\uff1e ",
+    "playCost": "-",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Shaman/Olympos XII/Iliad/TS",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -206938,7 +207260,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-083.webp",
+    "cardImage": "assets/images/cards/BT26-083-Sample.webp",
     "cardLv": "Lv.7",
     "cardNumber": "BT26-083",
     "cardType": "Digimon",
@@ -206999,7 +207321,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-083_P1.webp",
+    "cardImage": "assets/images/cards/BT26-083_P1-Sample.webp",
     "cardLv": "Lv.7",
     "cardNumber": "BT26-083",
     "cardType": "Digimon",
@@ -207616,7 +207938,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-093_P1.webp",
+    "cardImage": "assets/images/cards/BT26-093_P1-Sample.webp",
     "cardLv": "-",
     "cardNumber": "BT26-093",
     "cardType": "Tamer",
@@ -207766,7 +208088,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-095_P1.webp",
+    "cardImage": "assets/images/cards/BT26-095_P1-Sample.webp",
     "cardLv": "-",
     "cardNumber": "BT26-095",
     "cardType": "Tamer",
@@ -208172,15 +208494,31 @@
     "cardType": "Digimon",
     "color": "Yellow/Red/Black",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "6",
+        "level": "6"
+      },
+      {
+        "color": "Red",
+        "cost": "6",
+        "level": "6"
+      },
+      {
+        "color": "Black",
+        "cost": "6",
+        "level": "6"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "16000",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "\uff1cPiercing\uff1e \n\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n\uff1cInheritance ([Jupitermon])\uff1e (This Digimon gains all effects other than \uff1cInheritance\uff1e of the top specified card in its digivolution cards.)\n[When Digivolving] [Counter] [Once Per Turn] Trash your top security card, and \uff1cRecovery +2\uff1e (Place the top 2 cards of your deck as your top security card.)\n[All Turns] [Once Per Turn] When security stacks are removed from, 1 of your opponent's Digimon gets -15000 DP until their turn ends.",
     "form": "Mega",
     "id": "BT26-103",
-    "illustrator": "To be completed",
+    "illustrator": "Tonamikanji",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
@@ -208204,7 +208542,7 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
+    "specialDigivolve": "[Digivolve] Lv.6 w/[Olympos XII]\u00a0trait: Cost 5 ",
     "type": "Shaman/Olympos XII/Iliad/TS",
     "version": "Normal"
   },
@@ -208222,12 +208560,28 @@
     "cardType": "Digimon",
     "color": "Yellow/Red/Black",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "6",
+        "level": "6"
+      },
+      {
+        "color": "Red",
+        "cost": "6",
+        "level": "6"
+      },
+      {
+        "color": "Black",
+        "cost": "6",
+        "level": "6"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "16000",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "\uff1cPiercing\uff1e \n\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n\uff1cInheritance ([Jupitermon])\uff1e (This Digimon gains all effects other than \uff1cInheritance\uff1e of the top specified card in its digivolution cards.)\n[When Digivolving] [Counter] [Once Per Turn] Trash your top security card, and \uff1cRecovery +2\uff1e (Place the top 2 cards of your deck as your top security card.)\n[All Turns] [Once Per Turn] When security stacks are removed from, 1 of your opponent's Digimon gets -15000 DP until their turn ends.",
     "form": "Mega",
     "id": "BT26-103_P1",
     "illustrator": "sasasi",
@@ -208254,7 +208608,7 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
+    "specialDigivolve": "[Digivolve] Lv.6 w/[Olympos XII]\u00a0trait: Cost 5 ",
     "type": "Shaman/Olympos XII/Iliad/TS",
     "version": "Alternative Art"
   },
@@ -208272,12 +208626,28 @@
     "cardType": "Digimon",
     "color": "Yellow/Red/Black",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "6",
+        "level": "6"
+      },
+      {
+        "color": "Red",
+        "cost": "6",
+        "level": "6"
+      },
+      {
+        "color": "Black",
+        "cost": "6",
+        "level": "6"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "16000",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "\uff1cPiercing\uff1e \n\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n\uff1cInheritance ([Jupitermon])\uff1e (This Digimon gains all effects other than \uff1cInheritance\uff1e of the top specified card in its digivolution cards.)\n[When Digivolving] [Counter] [Once Per Turn] Trash your top security card, and \uff1cRecovery +2\uff1e (Place the top 2 cards of your deck as your top security card.)\n[All Turns] [Once Per Turn] When security stacks are removed from, 1 of your opponent's Digimon gets -15000 DP until their turn ends.",
     "form": "Mega",
     "id": "BT26-103_P2",
     "illustrator": "sasasi",
@@ -208304,7 +208674,7 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
+    "specialDigivolve": "[Digivolve] Lv.6 w/[Olympos XII]\u00a0trait: Cost 5 ",
     "type": "Shaman/Olympos XII/Iliad/TS",
     "version": "Alternative Art"
   },
