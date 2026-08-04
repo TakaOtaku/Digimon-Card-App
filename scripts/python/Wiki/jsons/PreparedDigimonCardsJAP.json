@@ -20027,7 +20027,7 @@
     "dnaDigivolve": "-",
     "dp": "11000",
     "dualEffect": "-",
-    "effect": "\uff1cRetaliation\uff1e \n[Opponent's Turn] When your opponent plays a Digimon, you may plays 1 purple level 4 or lower Digimon card from your trash without paying its memory cost. Any [On Play] effects on Digimon played with this effect don't activate.\n[On Deletion] If your opponent has 2 or fewer Digimon in play, you may play 1 purple level 5 or lower Digimon card or 1 [Mervamon] from your trash without paying its memory cost.",
+    "effect": "\uff1cRetaliation\uff1e \n[Opponent's Turn] When your opponent plays a Digimon, you may play 1 purple level 4 or lower Digimon card from your trash without paying its memory cost. Any [On Play] effects on Digimon played with this effect don't activate.\n[On Deletion] If your opponent has 2 or fewer Digimon in play, you may play 1 purple level 5 or lower Digimon card or 1 [Mervamon] from your trash without paying its memory cost.",
     "form": "Mega",
     "id": "BT10-083",
     "illustrator": "Takase",
@@ -20083,7 +20083,7 @@
     "dnaDigivolve": "-",
     "dp": "11000",
     "dualEffect": "-",
-    "effect": "\uff1cRetaliation\uff1e \n[Opponent's Turn] When your opponent plays a Digimon, you may plays 1 purple level 4 or lower Digimon card from your trash without paying its memory cost. Any [On Play] effects on Digimon played with this effect don't activate.\n[On Deletion] If your opponent has 2 or fewer Digimon in play, you may play 1 purple level 5 or lower Digimon card or 1 [Mervamon] from your trash without paying its memory cost.",
+    "effect": "\uff1cRetaliation\uff1e \n[Opponent's Turn] When your opponent plays a Digimon, you may play 1 purple level 4 or lower Digimon card from your trash without paying its memory cost. Any [On Play] effects on Digimon played with this effect don't activate.\n[On Deletion] If your opponent has 2 or fewer Digimon in play, you may play 1 purple level 5 or lower Digimon card or 1 [Mervamon] from your trash without paying its memory cost.",
     "form": "Mega",
     "id": "BT10-083_P1",
     "illustrator": "Tonamikanji",
@@ -156702,51 +156702,62 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Data",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-032-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.6",
     "cardNumber": "BT26-032",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon/Option",
+    "color": "Yellow/Green",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "5",
+        "level": "5"
+      },
+      {
+        "color": "Green",
+        "cost": "5",
+        "level": "5"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
-    "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "dp": "13000",
+    "dualEffect": "[Arts Digivolve] ",
+    "effect": "\uff1cAlliance\uff1e \n\uff1cSuccession ([Ceresmon])\uff1e \n[When Digivolving] All of your opponent's suspended Digimon get -5000 DP until their turn ends. Then, by suspending 1 Digimon, if it's your turn, you may play or use 1 [Vegetation] or [TS]\u00a0trait card from your hand with the cost reduced by 5.",
+    "form": "Mega",
     "id": "BT26-032",
-    "illustrator": "To be completed",
+    "illustrator": "NIJIMAARC",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Ceresmon/Famis",
+      "japanese": "\u30b1\u30ec\u30b9\u30e2\u30f3/\u30d5\u30a1\u30df\u30b9",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
     },
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
-    "optionCardColourRequirement": "-",
-    "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "optionCardColourRequirement": "Green",
+    "optionCardEffect": "\uff1cUse Req. ([TS] trait)\uff1e \n[Main] You may suspend 2 of your opponent's Digimon or Tamers. Then, 3 of their Digimon or Tamers can't unsuspend until their turn ends.",
+    "playCost": "5",
+    "rarity": "SR",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
       "japanese": "Not released",
       "korean": "Not released"
     },
-    "rule": "-",
+    "rule": "[Rule] Trait: Has [Vegetation] Type.",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Play cost 12 [Ceresmon]: Cost 2 ",
+    "type": "Shaman/Olympos XII/Iliad/TS",
     "version": "Normal"
   },
   {
@@ -156813,32 +156824,38 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Data",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-034-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.3",
     "cardNumber": "BT26-034",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Green",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[When Attacking] [Once Per Turn] You may suspend 1 of your opponent's Digimon.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "1000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[Start of Your Main Phase] If you have 4 or less memory, this Digimon may digivolve into a Digimon card with the [Vegetation] or [TS]\u00a0trait in the hand without paying the cost.",
+    "form": "Rookie",
     "id": "BT26-034",
-    "illustrator": "To be completed",
+    "illustrator": "Kazumasa Yasukuni",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Palmon",
+      "japanese": "\u30d1\u30eb\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -156846,8 +156863,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "3",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -156856,8 +156873,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.2 w/[TS]\u00a0trait: Cost 0 ",
+    "type": "Vegetation/Iliad/TS",
     "version": "Normal"
   },
   {
@@ -157472,32 +157489,43 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Data",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-046-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.6",
     "cardNumber": "BT26-046",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Green/Blue",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "3",
+        "level": "5"
+      },
+      {
+        "color": "Blue",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "11000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "When this card would be played, if there are 2 or more suspended Digimon, reduce the cost by 4. \uff1cPiercing\uff1e \n\uff1cVortex\uff1e \n[On Play] [When Digivolving] Suspend 1 of your opponent's Digimon or Tamers. 1 of their Digimon or Tamers can't unsuspend until their turn ends. Then, 1 of your Digimon can't be deleted in battle until their turn ends.",
+    "form": "Mega",
     "id": "BT26-046",
-    "illustrator": "To be completed",
+    "illustrator": "tessy",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Gryphonmon",
+      "japanese": "\u30b0\u30ea\u30d5\u30a9\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -157505,18 +157533,18 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "11",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
       "japanese": "Not released",
       "korean": "Not released"
     },
-    "rule": "-",
+    "rule": "[Rule] Trait: Has [Avian] Type.",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[TS]\u00a0trait: Cost 3 ",
+    "type": "Mythical Beast/Iliad/TS",
     "version": "Normal"
   },
   {
@@ -160431,24 +160459,24 @@
     "cardImage": "assets/images/cards/BT26-099-J.webp",
     "cardLv": "-",
     "cardNumber": "BT26-099",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Option",
+    "color": "Green",
     "digiXros": "-",
     "digivolveCondition": [],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "\uff1cUse Req. ([DM] trait)\uff1e \n[Main] Reveal the top 3 cards of your deck. Add 1 [DM] card among them to the hand. Return the rest to the bottom of the deck. Then, place this card in the battle area.\n[All Turns] When face-down cards are placed in any of your Digimon's digivolution cards, \uff1cDelay\uff1e \n\u30fbAny of those Digimon may digivolve into a level 6 or lower [DM]\u00a0trait Digimon card in the hand without paying the cost.",
     "form": "-",
     "id": "BT26-099",
-    "illustrator": "To be completed",
+    "illustrator": "No Illustrator",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Training Manual",
+      "japanese": "\u30c8\u30ec\u30fc\u30de\u30cb\u30e5\u30a2\u30eb",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -160456,8 +160484,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "3",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -160465,9 +160493,9 @@
       "korean": "Not released"
     },
     "rule": "-",
-    "securityEffect": "-",
+    "securityEffect": "[Security] Activate this card's [Main] effects.",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "DM",
     "version": "Normal"
   },
   {
@@ -160655,7 +160683,7 @@
     "dnaDigivolve": "-",
     "dp": "16000",
     "dualEffect": "-",
-    "effect": "\uff1cPiercing\uff1e \n\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n\uff1cInheritance ([Jupitermon])\uff1e (This Digimon gains all effects other than \uff1cInheritance\uff1e of the top specified card in its digivolution cards.)\n[When Digivolving] [Counter] [Once Per Turn] Trash your top security card, and \uff1cRecovery +2\uff1e (Place the top 2 cards of your deck as your top security card.)\n[All Turns] [Once Per Turn] When security stacks are removed from, 1 of your opponent's Digimon gets -15000 DP until their turn ends.",
+    "effect": "\uff1cPiercing\uff1e \n\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n\uff1cSuccession ([Jupitermon])\uff1e \n[When Digivolving] [Counter] [Once Per Turn] Trash your top security card, and \uff1cRecovery +2\uff1e (Place the top 2 cards of your deck as your top security card.)\n[All Turns] [Once Per Turn] When security stacks are removed from, 1 of your opponent's Digimon gets -15000 DP until their turn ends.",
     "form": "Mega",
     "id": "BT26-103",
     "illustrator": "Tonamikanji",
@@ -254909,6 +254937,72 @@
     "specialDigivolve": "[Digivolve] Lv.5 w/[Gokuumon]\u00a0in text or w/[Shambala]\u00a0trait: Cost 4 ",
     "type": "Tath\u0101gata/Shambala/SW",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-6] 3 [Gokuumon]/[Sangomon]/[Cho-Hakkaimon]/[Sanzomon] w/different names",
+    "attribute": "Virus",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX12-048_P1-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "EX12-048",
+    "cardType": "Digimon",
+    "color": "Yellow/Red/Blue",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "5",
+        "level": "5"
+      },
+      {
+        "color": "Red",
+        "cost": "5",
+        "level": "5"
+      },
+      {
+        "color": "Blue",
+        "cost": "5",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "13000",
+    "dualEffect": "-",
+    "effect": "\uff1cRush\uff1e \n\uff1cRaid\uff1e \n\uff1cPiercing\uff1e \n\uff1cSecurity A. +1\uff1e \n[On Play] [When Digivolving] 1 of your opponent's Digimon gets -8000 DP until their turn ends. It further gets -3000 DP for each of this Digimon's level 5 digivolution cards. Then, this Digimon may attack.\n[All Turns] When this Digimon would leave the battle area other than by your effects, you may play 2 level 5 cards with [Gokuumon]\u00a0in their texts or the [SW]\u00a0trait from its digivolution cards without paying the costs.",
+    "form": "Mega",
+    "id": "EX12-048_P1",
+    "illustrator": "toriyufu",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "SeitenGokuumon",
+      "japanese": "\u30bb\u30a4\u30c6\u30f3\u30b4\u30af\u30a6\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "13",
+    "rarity": "UR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[Gokuumon]\u00a0in text or w/[Shambala]\u00a0trait: Cost 4 ",
+    "type": "Tath\u0101gata/Shambala/SW",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
