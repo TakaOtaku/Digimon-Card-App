@@ -336,5 +336,6 @@ replacements = [
     '(Place the top card of your deck as your top security card.)',
     '(When any of your other Digimon would leave the battle area by your opponent\'s effects, by deleting this Digimon, they don\'t leave.)',
     '(At the end of your turn, this Digimon may attack.)',
-    '(When this Digimon would leave the battle area other than by your effects, by trashing 1 of its specified link cards, it doesn\'t leave.)'
+    '(When this Digimon would leave the battle area other than by your effects, by trashing 1 of its specified link cards, it doesn\'t leave.)',
+    '(This Digimon gains all effects other than \uff1cSuccession\uff1e on its topmost specified digivolution card.)'
 ]
