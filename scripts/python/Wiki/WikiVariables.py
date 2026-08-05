@@ -279,6 +279,7 @@ replacements = [
     '(When this card is sent from battle area or under your card to another area, lose 3 memory.)',
     '(Place this Tamer under 1 of your Digimon without a Tamer in its digivolution cards.)',
     '(Place the top 2 cards of your deck on top of your security stack.)',
+    '(Place the top 3 cards of your deck on top of your security stack.)',
     '(You may trash 1 of this Digimon\'s digivolution cards to activate the effect below.)',
     '(You may trash 2 of this Digimon\'s digivolution cards to activate the effect below.)',
     '(You may trash 4 of this Digimon\'s digivolution cards to activate the effect below.)',
