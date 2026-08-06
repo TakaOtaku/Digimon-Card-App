@@ -195711,8 +195711,8 @@
     "form": "Ult./Appmon",
     "id": "EX10-030",
     "illustrator": "tessy",
-    "linkDP": "-",
-    "linkEffect": "-",
+    "linkDP": "+4000 DP",
+    "linkEffect": "[All Turns] [Once Per Turn] When this Digimon would leave the battle area, by trashing 1 of its link cards, it doesn't leave.",
     "linkRequirement": "[Link] [Appmon]\u00a0trait: Cost 3 ",
     "name": {
       "english": "Cometmon",
