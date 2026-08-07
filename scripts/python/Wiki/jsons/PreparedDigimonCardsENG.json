@@ -205057,7 +205057,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-054.webp",
+    "cardImage": "assets/images/cards/BT26-054-Sample.webp",
     "cardLv": "Lv.5",
     "cardNumber": "BT26-054",
     "cardType": "Digimon",
@@ -205075,20 +205075,20 @@
         "level": "4"
       }
     ],
-    "digivolveEffect": "-",
+    "digivolveEffect": "[Opponent's Turn] [Once Per Turn] When one of your opponent's Digimon attacks, you may change the attack target to this Digimon.",
     "dnaDigivolve": "-",
     "dp": "7000",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "[On Play] [When Digivolving] You may play 1 [CS]\u00a0trait Tamer card from your hand without paying the cost. This effect can't play cards with the same name as any of your Tamers.\n[All Turns] [Once Per Turn] When effects place [CS]\u00a0trait Digimon cards in this Digimon's digivolution cards, this Digimon may digivolve into a [CS]\u00a0trait Digimon card in the hand without paying the cost.",
     "form": "Ultimate",
     "id": "BT26-054",
-    "illustrator": "To be completed",
+    "illustrator": "NAOKI AKAMINE",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
       "english": "Andromon",
-      "japanese": "",
+      "japanese": "\u30a2\u30f3\u30c9\u30ed\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -205106,7 +205106,7 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
+    "specialDigivolve": "[Digivolve] Lv.4 w/[CS]\u00a0trait: Cost 3 ",
     "type": "Cyborg/CS",
     "version": "Normal"
   },
@@ -205357,7 +205357,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-058.webp",
+    "cardImage": "assets/images/cards/BT26-058-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT26-058",
     "cardType": "Digimon",
@@ -205379,16 +205379,16 @@
     "dnaDigivolve": "-",
     "dp": "12000",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] Your opponent's Digimon effects don't affect 1 of your [CS]\u00a0trait Digimon until their turn ends.\n[All Turns] When any of your [CS]\u00a0trait Digimon would leave the battle area, by placing this Digimon's top stacked card as its bottom digivolution card, they don't leave.",
     "form": "Mega",
     "id": "BT26-058",
-    "illustrator": "To be completed",
+    "illustrator": "NAOKI AKAMINE",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
       "english": "HiAndromon",
-      "japanese": "",
+      "japanese": "\u30cf\u30a4\u30a2\u30f3\u30c9\u30ed\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -205406,7 +205406,7 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[CS]\u00a0trait: Cost 3 ",
     "type": "Cyborg/CS",
     "version": "Normal"
   },
@@ -206949,7 +206949,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-079_P1.webp",
+    "cardImage": "assets/images/cards/BT26-079_P1-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT26-079",
     "cardType": "Digimon",
@@ -206969,7 +206969,7 @@
     "effect": "[Trash] [Main] If your hand has 5 or fewer cards, play this card with the cost reduced by 4.\n\uff1cSecurity A. +1\uff1e \n\uff1cDecode ([Plutomon])\uff1e \n\uff1cRetaliation\uff1e \n[On Play] [When Digivolving] [When Attacking] By trashing 1 card in your hand, delete 1 of your opponent's level 6 or lower Digimon.\n[All Turns] [Once Per Turn] When any of your opponent's Digimon are played or digivolve, both players trash cards in their hand so that they have 4 left.",
     "form": "Mega",
     "id": "BT26-079_P1",
-    "illustrator": "To be completed",
+    "illustrator": "As'Maria",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
@@ -207603,33 +207603,39 @@
   },
   {
     "aceEffect": "-",
-    "assembly": "-",
-    "attribute": "-",
+    "assembly": "[Assembly\u00a0-7] 7 [Seven Code]\u00a0trait Digimon cards w/different names",
+    "attribute": "Unknown",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-086.webp",
-    "cardLv": "-",
+    "cardImage": "assets/images/cards/BT26-086-Sample.webp",
+    "cardLv": "Lv.7",
     "cardNumber": "BT26-086",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "White",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "All",
+        "cost": "4",
+        "level": "God"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "14000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "\uff1cRush\uff1e \n\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n\uff1cLink +6\uff1e (Add 6 to this Digimon's maximum links.)\n[On Play] [When Digivolving] You may link up to 7 [Appmon]\u00a0trait cards with different names from this Digimon's digivolution cards to this Digimon without paying the costs. Then, this Digimon may attack without suspending.\n[All Turns] [Once Per Turn] When this Digimon gets linked, you may delete 1 of your opponent's Digimon. Then, if this Digimon has 7 link cards, return your opponent's top security card to the bottom of the deck.",
+    "form": "Unknown/Appmon",
     "id": "BT26-086",
-    "illustrator": "To be completed",
+    "illustrator": "sasasi",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Dantemon",
+      "japanese": "\u30c0\u30f3\u30c6\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -207637,8 +207643,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "14",
+    "rarity": "SR",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -207648,8 +207654,64 @@
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "Open (App Name)",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-7] 7 [Seven Code]\u00a0trait Digimon cards w/different names",
+    "attribute": "Unknown",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT26-086_P1-Sample.webp",
+    "cardLv": "Lv.7",
+    "cardNumber": "BT26-086",
+    "cardType": "Digimon",
+    "color": "White",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "All",
+        "cost": "4",
+        "level": "God"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "14000",
+    "dualEffect": "-",
+    "effect": "\uff1cRush\uff1e \n\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n\uff1cLink +6\uff1e (Add 6 to this Digimon's maximum links.)\n[On Play] [When Digivolving] You may link up to 7 [Appmon]\u00a0trait cards with different names from this Digimon's digivolution cards to this Digimon without paying the costs. Then, this Digimon may attack without suspending.\n[All Turns] [Once Per Turn] When this Digimon gets linked, you may delete 1 of your opponent's Digimon. Then, if this Digimon has 7 link cards, return your opponent's top security card to the bottom of the deck.",
+    "form": "Unknown/Appmon",
+    "id": "BT26-086_P1",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Dantemon",
+      "japanese": "\u30c0\u30f3\u30c6\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "BT-26: BOOSTER TIMELESS BONDS",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "14",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Open (App Name)",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -208609,7 +208671,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-103.webp",
+    "cardImage": "assets/images/cards/BT26-103-Sample.webp",
     "cardLv": "Lv.7",
     "cardNumber": "BT26-103",
     "cardType": "Digimon",
