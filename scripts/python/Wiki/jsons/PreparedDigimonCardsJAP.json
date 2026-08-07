@@ -157947,31 +157947,42 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-054-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.5",
     "cardNumber": "BT26-054",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Black/Yellow",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "4"
+      },
+      {
+        "color": "Yellow",
+        "cost": "4",
+        "level": "4"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "7000",
     "dualEffect": "-",
     "effect": "-",
-    "form": "-",
+    "form": "Ultimate",
     "id": "BT26-054",
     "illustrator": "To be completed",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
+      "english": "Andromon",
       "japanese": "",
       "korean": "-",
       "simplifiedChinese": "-",
@@ -157980,8 +157991,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "7",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -157991,7 +158002,7 @@
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "Cyborg/CS",
     "version": "Normal"
   },
   {
@@ -158141,7 +158152,7 @@
     "dnaDigivolve": "-",
     "dp": "8000",
     "dualEffect": "[Arts Digivolve] ",
-    "effect": "[When Digivolving] By trashing the bottom face-down card under card from under any of your Tamers, until your opponent's turn ends, their Digimon effects don't affect this Digimon, and it gets +3000 DP. [All Turns] [Once Per Turn] When attack targets change or effects trash cards from under your Tamers, this Digimon may unsuspend.",
+    "effect": "[When Digivolving] By trashing the bottom face-down card under card from under any of your Tamers, until your opponent's turn ends, their Digimon effects don't affect this Digimon, and it gets +3000 DP.\n[All Turns] [Once Per Turn] When attack targets change or effects trash cards from under your Tamers, this Digimon may unsuspend.",
     "form": "Ultimate",
     "id": "BT26-057",
     "illustrator": "tessy",
@@ -158175,31 +158186,42 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-058-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.6",
     "cardNumber": "BT26-058",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Black/Yellow",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "5"
+      },
+      {
+        "color": "Yellow",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "12000",
     "dualEffect": "-",
     "effect": "-",
-    "form": "-",
+    "form": "Mega",
     "id": "BT26-058",
     "illustrator": "To be completed",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
+      "english": "HiAndromon",
       "japanese": "",
       "korean": "-",
       "simplifiedChinese": "-",
@@ -158208,8 +158230,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "12",
+    "rarity": "R",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -158219,7 +158241,7 @@
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "Cyborg/CS",
     "version": "Normal"
   },
   {
@@ -255964,6 +255986,128 @@
     "specialDigivolve": "[Digivolve] Lv.5 w/[Shambala]\u00a0trait: Cost 3 ",
     "type": "Shaman/Saneiketsu/Tentei Hachibushu/Shambala/SW",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX12-057_P1-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "EX12-057",
+    "cardType": "Digimon",
+    "color": "Black/Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "5"
+      },
+      {
+        "color": "Yellow",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "-",
+    "effect": "[On Play] [When Digivolving] [Counter] [Once Per Turn] You may play 1 [Paishu] Token. (Digimon/Yellow/6000 DP/\uff1cBlocker\uff1e \uff1cGuard\uff1e)\n[All Turns] [Once Per Turn] When any of your Digimon are played, \uff1cDe-Digivolve 2\uff1e 1 of your opponent's Digimon. Then, 1 of their Digimon gets -6000 DP until their turn ends.",
+    "form": "Mega",
+    "id": "EX12-057_P1",
+    "illustrator": "Spareribs",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Takutoumon",
+      "japanese": "\u30bf\u30af\u30c8\u30a6\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "12",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[Shambala]\u00a0trait: Cost 3 ",
+    "type": "Shaman/Saneiketsu/Tentei Hachibushu/Shambala/SW",
+    "version": "Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX12-057_P2-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "EX12-057",
+    "cardType": "Digimon",
+    "color": "Black/Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "5"
+      },
+      {
+        "color": "Yellow",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "-",
+    "effect": "[On Play] [When Digivolving] [Counter] [Once Per Turn] You may play 1 [Paishu] Token. (Digimon/Yellow/6000 DP/\uff1cBlocker\uff1e \uff1cGuard\uff1e)\n[All Turns] [Once Per Turn] When any of your Digimon are played, \uff1cDe-Digivolve 2\uff1e 1 of your opponent's Digimon. Then, 1 of their Digimon gets -6000 DP until their turn ends.",
+    "form": "Mega",
+    "id": "EX12-057_P2",
+    "illustrator": "Spareribs",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Takutoumon",
+      "japanese": "\u30bf\u30af\u30c8\u30a6\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "12",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[Shambala]\u00a0trait: Cost 3 ",
+    "type": "Shaman/Saneiketsu/Tentei Hachibushu/Shambala/SW",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",

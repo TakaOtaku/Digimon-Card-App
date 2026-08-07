@@ -131457,31 +131457,42 @@
     "JAAs": [],
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-054.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.5",
     "cardNumber": "BT26-054",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Black/Yellow",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "4"
+      },
+      {
+        "color": "Yellow",
+        "cost": "4",
+        "level": "4"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "7000",
     "dualEffect": "-",
     "effect": "-",
-    "form": "-",
+    "form": "Ultimate",
     "id": "BT26-054",
     "illustrator": "To be completed",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
+      "english": "Andromon",
       "japanese": "",
       "korean": "-",
       "simplifiedChinese": "-",
@@ -131490,8 +131501,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "7",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -131501,7 +131512,7 @@
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "Cyborg/CS",
     "version": "Normal"
   },
   {
@@ -131664,7 +131675,7 @@
     "dnaDigivolve": "-",
     "dp": "8000",
     "dualEffect": "[Arts Digivolve] ",
-    "effect": "[When Digivolving] By trashing the bottom face-down card under card from under any of your Tamers, until your opponent's turn ends, their Digimon effects don't affect this Digimon, and it gets +3000 DP. [All Turns] [Once Per Turn] When attack targets change or effects trash cards from under your Tamers, this Digimon may unsuspend.",
+    "effect": "[When Digivolving] By trashing the bottom face-down card under card from under any of your Tamers, until your opponent's turn ends, their Digimon effects don't affect this Digimon, and it gets +3000 DP.\n[All Turns] [Once Per Turn] When attack targets change or effects trash cards from under your Tamers, this Digimon may unsuspend.",
     "form": "Ultimate",
     "id": "BT26-057",
     "illustrator": "tessy",
@@ -131700,31 +131711,42 @@
     "JAAs": [],
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-058.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.6",
     "cardNumber": "BT26-058",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Black/Yellow",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "5"
+      },
+      {
+        "color": "Yellow",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "12000",
     "dualEffect": "-",
     "effect": "-",
-    "form": "-",
+    "form": "Mega",
     "id": "BT26-058",
     "illustrator": "To be completed",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
+      "english": "HiAndromon",
       "japanese": "",
       "korean": "-",
       "simplifiedChinese": "-",
@@ -131733,8 +131755,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "12",
+    "rarity": "R",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -131744,7 +131766,7 @@
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "Cyborg/CS",
     "version": "Normal"
   },
   {
@@ -195711,8 +195733,8 @@
     "form": "Ult./Appmon",
     "id": "EX10-030",
     "illustrator": "tessy",
-    "linkDP": "+4000 DP",
-    "linkEffect": "[All Turns] [Once Per Turn] When this Digimon would leave the battle area, by trashing 1 of its link cards, it doesn't leave.",
+    "linkDP": "-",
+    "linkEffect": "-",
     "linkRequirement": "[Link] [Appmon]\u00a0trait: Cost 3 ",
     "name": {
       "english": "Cometmon",
@@ -207547,12 +207569,6 @@
         "illustrator": "toriyufu",
         "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
         "type": "Alternative Art"
-      },
-      {
-        "id": "EX12-048_P2",
-        "illustrator": "toriyufu",
-        "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
-        "type": "Alternative Art"
       }
     ],
     "JAAs": [
@@ -208221,8 +208237,34 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "EX12-057_P1",
+        "illustrator": "Spareribs",
+        "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
+        "type": "Alternative Art"
+      },
+      {
+        "id": "EX12-057_P2",
+        "illustrator": "Spareribs",
+        "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
+        "type": "Alternative Art"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "EX12-057_P1-J",
+        "illustrator": "Spareribs",
+        "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
+        "type": "Alternative Art"
+      },
+      {
+        "id": "EX12-057_P2-J",
+        "illustrator": "Spareribs",
+        "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Data",
