@@ -179,7 +179,7 @@ NoteDictionary = {
     'BT-16: Booster Beginning Observer': '▹BOOSTER BEGINNING OBSERVER [BT-16]',
     'BT-17: Booster Secret Crisis': '▹BOOSTER SECRET CRISIS [BT-17]',
     'BT-18: Booster Elemental Successor': '▹BOOSTER ELEMENTAL SUCCESSOR [BT-18]',
-    'BT-19: Booster Xros Evolution': '▹BOOSTER XRO EVOLUTION [BT-19]',
+    'BT-19: Booster Xros Evolution': '▹BOOSTER XROS EVOLUTION [BT-19]',
     'BT18-19: Special Booster Ver.2.0': '▹SPECIAL BOOSTER VER.2.0 [BT18-19]',
     'BT19-20: Special Booster Ver.2.5': '▹SPECIAL BOOSTER VER.2.5 [BT19-20]',
     'BT-21: Booster World Convergence': '▹BOOSTER WORLD CONVERGENCE [BT-21]',
