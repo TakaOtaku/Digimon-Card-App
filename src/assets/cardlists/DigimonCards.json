@@ -102862,7 +102862,7 @@
         "level": "2"
       }
     ],
-    "digivolveEffect": "[End of Your Turn] This Digimon and any of your other Digimon may DNA digivolve into a Digimon card in the hand.",
+    "digivolveEffect": "[End of Your Turn] This Digimon and any of your other Digimon may DNA digivolve into a Digimon card in the hand..",
     "dnaDigivolve": "-",
     "dp": "1000",
     "dualEffect": "-",
@@ -129656,32 +129656,43 @@
     "JAAs": [],
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Virus",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-024.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.3",
     "cardNumber": "BT26-024",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Yellow",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "0",
+        "level": "2"
+      },
+      {
+        "color": "Green",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "\uff1cBarrier\uff1e ",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "2000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[Your Turn] When any of your other Digimon with the [Vegetation], [Fairy] or [WG]\u00a0trait are played, this Digimon may digivolve into a Digimon card with the [Vegetation], [Fairy] or [WG]\u00a0trait in the hand without paying the cost.",
+    "form": "Rookie",
     "id": "BT26-024",
-    "illustrator": "To be completed",
+    "illustrator": "Ryodan",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Tinkermon",
+      "japanese": "\u30c6\u30a3\u30f3\u30ab\u30fc\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -129689,8 +129700,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "3",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -129699,8 +129710,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.2 w/[WG]\u00a0trait: Cost 0 ",
+    "type": "Fairy/WG",
     "version": "Normal"
   },
   {
@@ -129824,32 +129835,43 @@
     "JAAs": [],
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Data",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-027.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.4",
     "cardNumber": "BT26-027",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Yellow/Green",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "2",
+        "level": "3"
+      },
+      {
+        "color": "Green",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "\uff1cBarrier\uff1e ",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "5000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[On Play] [Start of Opponent's Main Phase] By suspending 1 of your Digimon with the [Vegetation], [Fairy] or [WG]\u00a0trait, give 1 of your opponent's Digimon \uff1cSecurity A. -2\uff1e until their turn ends. ",
+    "form": "Champion",
     "id": "BT26-027",
-    "illustrator": "To be completed",
+    "illustrator": "Ryodan",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Petermon",
+      "japanese": "\u30d4\u30fc\u30bf\u30fc\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -129857,8 +129879,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "4",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -129867,8 +129889,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.3 w/[WG]\u00a0trait: Cost 2 ",
+    "type": "Fairy/WG",
     "version": "Normal"
   },
   {
@@ -130339,32 +130361,38 @@
     "JAAs": [],
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-035.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.3",
     "cardNumber": "BT26-035",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Green",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When this Digimon wins a battle, 1 of your [Insectoid] or [NSp]\u00a0trait trait Digimon may digivolve into an [Insectoid] or [NSp]\u00a0trait trait Digimon card in the hand with the cost reduced by 1.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "1000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[When Moving] [On Play] You may suspend 1 Digimon.",
+    "form": "Rookie",
     "id": "BT26-035",
-    "illustrator": "To be completed",
+    "illustrator": "naru",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Morphomon",
+      "japanese": "\u30e2\u30eb\u30d5\u30a9\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -130372,8 +130400,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "3",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -130382,8 +130410,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.2 w/[NSp]\u00a0trait: Cost 0 ",
+    "type": "Insectoid/NSp",
     "version": "Normal"
   },
   {
@@ -130686,32 +130714,43 @@
     "JAAs": [],
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Free",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-041.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.4",
     "cardNumber": "BT26-041",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Green/Yellow",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "3",
+        "level": "3"
+      },
+      {
+        "color": "Yellow",
+        "cost": "3",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When this Digimon wins a battle, gain 1 memory.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "5000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[On Play] [When Digivolving] Add your top security card to the hand and \uff1cRecovery +1\uff1e Then, you may suspend 1 Digimon.",
+    "form": "Champion",
     "id": "BT26-041",
-    "illustrator": "To be completed",
+    "illustrator": "naru",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Hudiemon",
+      "japanese": "\u30d5\u30fc\u30c7\u30a3\u30a8\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -130719,8 +130758,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "4",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -130729,8 +130768,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.3 w/[Larva]/[Insectoid]/[NSp]\u00a0trait: Cost 2 ",
+    "type": "Insectoid/NSp",
     "version": "Normal"
   },
   {
@@ -131480,20 +131519,20 @@
         "level": "4"
       }
     ],
-    "digivolveEffect": "-",
+    "digivolveEffect": "[Opponent's Turn] [Once Per Turn] When one of your opponent's Digimon attacks, you may change the attack target to this Digimon.",
     "dnaDigivolve": "-",
     "dp": "7000",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "[On Play] [When Digivolving] You may play 1 [CS]\u00a0trait Tamer card from your hand without paying the cost. This effect can't play cards with the same name as any of your Tamers.\n[All Turns] [Once Per Turn] When effects place [CS]\u00a0trait Digimon cards in this Digimon's digivolution cards, this Digimon may digivolve into a [CS]\u00a0trait Digimon card in the hand without paying the cost.",
     "form": "Ultimate",
     "id": "BT26-054",
-    "illustrator": "To be completed",
+    "illustrator": "NAOKI AKAMINE",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
       "english": "Andromon",
-      "japanese": "",
+      "japanese": "\u30a2\u30f3\u30c9\u30ed\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -131511,7 +131550,7 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
+    "specialDigivolve": "[Digivolve] Lv.4 w/[CS]\u00a0trait: Cost 3 ",
     "type": "Cyborg/CS",
     "version": "Normal"
   },
@@ -131738,16 +131777,16 @@
     "dnaDigivolve": "-",
     "dp": "12000",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] Your opponent's Digimon effects don't affect 1 of your [CS]\u00a0trait Digimon until their turn ends.\n[All Turns] When any of your [CS]\u00a0trait Digimon would leave the battle area, by placing this Digimon's top stacked card as its bottom digivolution card, they don't leave.",
     "form": "Mega",
     "id": "BT26-058",
-    "illustrator": "To be completed",
+    "illustrator": "NAOKI AKAMINE",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
       "english": "HiAndromon",
-      "japanese": "",
+      "japanese": "\u30cf\u30a4\u30a2\u30f3\u30c9\u30ed\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -131765,7 +131804,7 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[CS]\u00a0trait: Cost 3 ",
     "type": "Cyborg/CS",
     "version": "Normal"
   },
@@ -131890,10 +131929,10 @@
     "dnaDigivolve": "-",
     "dp": "16000",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "\uff1cSecurity A. +1\uff1e \n\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n\uff1cSuccession (Lv.6 w/[Chronomon] in name)\uff1e \n[On Play] [When Digivolving] Return the top 5 stacked cards of 3 of your opponent's Digimon to the top of the deck.\n[All Turns] [Once Per Turn] When your effects add to decks, you may delete 1 of your opponent's Digimon.",
     "form": "Mega",
     "id": "BT26-060",
-    "illustrator": "To be completed",
+    "illustrator": "Spareribs",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
@@ -131917,7 +131956,7 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
+    "specialDigivolve": "[Digivolve] Lv.6 w/[Chronomon]\u00a0in text/[Giant Slayer]: Cost 5 ",
     "type": "Shaman/Iliad/TS",
     "version": "Normal"
   },
@@ -133016,7 +133055,7 @@
     "AAs": [
       {
         "id": "BT26-079_P1",
-        "illustrator": "To be completed",
+        "illustrator": "As'Maria",
         "note": "BT-26: BOOSTER TIMELESS BONDS",
         "type": "Alternative Art"
       }
@@ -133424,8 +133463,8 @@
     "AAs": [],
     "JAAs": [],
     "aceEffect": "-",
-    "assembly": "-",
-    "attribute": "-",
+    "assembly": "[Assembly\u00a0-5] 5 different-level cards w/[Chronomon]\u00a0in text or w/[Shaman]\u00a0trait",
+    "attribute": "NO DATA",
     "block": [
       "06"
     ],
@@ -133433,24 +133472,24 @@
     "cardImage": "assets/images/cards/BT26-085.webp",
     "cardLv": "-",
     "cardNumber": "BT26-085",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "White",
     "digiXros": "-",
     "digivolveCondition": [],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "14000",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "\uff1cCollision\uff1e \n\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n[On Play] Until your opponent's turn ends, your opponent's effects can't reduce this Digimon's DP or trash its stacked cards.\n[All Turns] When this Digimon would leave the battle area, by digivolving it into [Chronomon: Destroy Mode] in the hand or trash without paying the cost, it doesn't leave.",
     "form": "-",
     "id": "BT26-085",
-    "illustrator": "To be completed",
+    "illustrator": "k.Dra",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Giant Slayer",
+      "japanese": "\u5de8\u795e\u5175\u5668",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -133458,8 +133497,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "12",
+    "rarity": "R",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -133469,40 +133508,53 @@
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "TS",
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "BT26-086_P1",
+        "illustrator": "Tonamikanji",
+        "note": "BT-26: BOOSTER TIMELESS BONDS",
+        "type": "Alternative Art"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
-    "assembly": "-",
-    "attribute": "-",
+    "assembly": "[Assembly\u00a0-7] 7 [Seven Code]\u00a0trait Digimon cards w/different names",
+    "attribute": "Unknown",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT26-086.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.7",
     "cardNumber": "BT26-086",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "White",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "All",
+        "cost": "4",
+        "level": "God"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "14000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "\uff1cRush\uff1e \n\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n\uff1cLink +6\uff1e (Add 6 to this Digimon's maximum links.)\n[On Play] [When Digivolving] You may link up to 7 [Appmon]\u00a0trait cards with different names from this Digimon's digivolution cards to this Digimon without paying the costs. Then, this Digimon may attack without suspending.\n[All Turns] [Once Per Turn] When this Digimon gets linked, you may delete 1 of your opponent's Digimon. Then, if this Digimon has 7 link cards, return your opponent's top security card to the bottom of the deck.",
+    "form": "Unknown/Appmon",
     "id": "BT26-086",
-    "illustrator": "To be completed",
+    "illustrator": "sasasi",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Dantemon",
+      "japanese": "\u30c0\u30f3\u30c6\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -133510,8 +133562,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "14",
+    "rarity": "SR",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -133521,7 +133573,7 @@
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "Open (App Name)",
     "version": "Normal"
   },
   {
@@ -133537,8 +133589,8 @@
     "cardImage": "assets/images/cards/BT26-087.webp",
     "cardLv": "-",
     "cardNumber": "BT26-087",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Tamer",
+    "color": "Red",
     "digiXros": "-",
     "digivolveCondition": [],
     "digivolveEffect": "-",
@@ -133548,13 +133600,13 @@
     "effect": "-",
     "form": "-",
     "id": "BT26-087",
-    "illustrator": "To be completed",
+    "illustrator": "Nakano Haito",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Toya Kuga",
+      "japanese": "\u4e45\u6211\u6a59\u77e2",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -133562,8 +133614,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "3",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -133571,9 +133623,9 @@
       "korean": "Not released"
     },
     "rule": "-",
-    "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "securityEffect": "[Security] Play this card without paying the cost.",
+    "specialDigivolve": "[Start of Your Main Phase] By returning 1 [TS]\u00a0trait Digimon card from your trash to the bottom of the deck, gain 1 memory. After, you may return 1 [Giant Slayer] from your trash to the hand.\n[On Play] By trashing 1 [TS] card from your hand, \uff1cDraw 2\uff1e ",
+    "type": "TS",
     "version": "Normal"
   },
   {
@@ -133589,24 +133641,24 @@
     "cardImage": "assets/images/cards/BT26-088.webp",
     "cardLv": "-",
     "cardNumber": "BT26-088",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Tamer",
+    "color": "Red",
     "digiXros": "-",
     "digivolveCondition": [],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "[Start of Your Main Phase] If your opponent has a Digimon, gain 1 memory.\n[Your Turn] When any [Boss] or [TS]\u00a0trait Digimon cards would be played, by suspending this Tamer, reduce the costs by 1. If you have no Digimon, instead reduce the costs by 2.",
     "form": "-",
     "id": "BT26-088",
-    "illustrator": "To be completed",
+    "illustrator": "No Illustrator",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Hiroko Sagisaka",
+      "japanese": "\u9dfa\u5742\u30d2\u30ed\u30b3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -133614,8 +133666,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "4",
+    "rarity": "R",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -133623,9 +133675,9 @@
       "korean": "Not released"
     },
     "rule": "-",
-    "securityEffect": "-",
+    "securityEffect": "[Security] Play this card without paying the cost.",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "TS",
     "version": "Normal"
   },
   {
@@ -133804,24 +133856,24 @@
     "cardImage": "assets/images/cards/BT26-092.webp",
     "cardLv": "-",
     "cardNumber": "BT26-092",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Tamer",
+    "color": "Black",
     "digiXros": "-",
     "digivolveCondition": [],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "[Start of Your Main Phase] By trashing 1 [TS]\u00a0trait card from your hand, \uff1cDraw 1\uff1e and gain 1 memory.\n[Opponent's Turn] When one of your opponent's Digimon attacks, by returning 1 of your [TS]\u00a0trait Tamers to the bottom of the deck, you may change the attack target to 1 of your Digimon with the [TS]\u00a0trait.",
     "form": "-",
     "id": "BT26-092",
-    "illustrator": "To be completed",
+    "illustrator": "No Illustrator",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Shota Kuroi",
+      "japanese": "\u9ed2\u4e95\u7fd4\u592a",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -133829,8 +133881,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "3",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -133838,9 +133890,9 @@
       "korean": "Not released"
     },
     "rule": "-",
-    "securityEffect": "-",
+    "securityEffect": "[Security] Play this card without paying the cost.",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "TS",
     "version": "Normal"
   },
   {
@@ -134026,8 +134078,8 @@
     "cardImage": "assets/images/cards/BT26-096.webp",
     "cardLv": "-",
     "cardNumber": "BT26-096",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Tamer",
+    "color": "Purple",
     "digiXros": "-",
     "digivolveCondition": [],
     "digivolveEffect": "-",
@@ -134037,13 +134089,13 @@
     "effect": "-",
     "form": "-",
     "id": "BT26-096",
-    "illustrator": "To be completed",
+    "illustrator": "Nakano Haito",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Kosuke Misono",
+      "japanese": "\u5fa1\u5712\u516c\u4ecb",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -134051,8 +134103,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "3",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -134060,9 +134112,9 @@
       "korean": "Not released"
     },
     "rule": "-",
-    "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "securityEffect": "[Security] Play this card without paying the cost.",
+    "specialDigivolve": "[Start of Your Turn] If you have 2 or less memory, set it to 3.\n[Main] By returning this Tamer to the bottom of the deck, you may play 1 Digimon card with [Chronomon]\u00a0in its text or 1 Tamer card with the [TS]\u00a0trait from your hand or trash with the cost reduced by 2.",
+    "type": "TS",
     "version": "Normal"
   },
   {
@@ -134078,24 +134130,24 @@
     "cardImage": "assets/images/cards/BT26-097.webp",
     "cardLv": "-",
     "cardNumber": "BT26-097",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Option",
+    "color": "Yellow",
     "digiXros": "-",
     "digivolveCondition": [],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "Add 1 to this card's use cost for each of your security cards.\n[Main] By placing 1 of your Tamers with [Dan Yuki] or [Kanan Yuki]\u00a0in their names as any of your [Aegiomon]'s bottom digivolution card, it may digivolve into [Jupitermon] in the hand or trash, ignoring digivolution requirements and without paying the cost. After, you may place 1 card with [Aegiochusmon]\u00a0in its name in your trash as any of your [Jupitermon]'s top digivolution card.",
     "form": "-",
     "id": "BT26-097",
-    "illustrator": "To be completed",
+    "illustrator": "No Illustrator",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "The Thunder Emperor Awakens",
+      "japanese": "\u96f7\u9706\u306e\u899a\u9192",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -134103,8 +134155,8 @@
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "2",
+    "rarity": "R",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -134112,9 +134164,9 @@
       "korean": "Not released"
     },
     "rule": "-",
-    "securityEffect": "-",
+    "securityEffect": "[Security] You may play 1 play cost 5 or lower [TS]\u00a0trait card from your hand without paying the cost. Then, add this card to the hand.",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "TS",
     "version": "Normal"
   },
   {
@@ -186420,7 +186472,7 @@
     "dnaDigivolve": "-",
     "dp": "12000",
     "dualEffect": "-",
-    "effect": "[On Play] Play 1 purple or yellow Digimon with 6000 DP or less from your trash without paying its memory cost. If your have 1 or fewer security cards, you may play 1 level 6 or lower Digimon card with the [Angel] or [Fallen Angel]\u00a0trait from your trash without paying its memory cost instead.\n[End of Your Turn] This Digimon and any of your other Digimon may DNA digivolve into a Digimon card in the hand.",
+    "effect": "[On Play] Play 1 purple or yellow Digimon with 6000 DP or less from your trash without paying its memory cost. If your have 1 or fewer security cards, you may play 1 level 6 or lower Digimon card with the [Angel] or [Fallen Angel]\u00a0trait from your trash without paying its memory cost instead.\n[End of Your Turn] This Digimon and any of your other Digimon may DNA digivolve into a Digimon card in the hand..",
     "form": "Mega",
     "id": "BT9-080",
     "illustrator": "Takase",
@@ -205253,7 +205305,7 @@
       }
     ],
     "aceEffect": "-",
-    "assembly": "[Assembly\u00a0-6] Lv.5 x Lv.4 x Lv.3, all w/[Agumon]/[Greymon]\u00a0in name or w/[ME]/[VB]\u00a0trait",
+    "assembly": "[Assembly\u00a0-6] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Agumon]/[Greymon]\u00a0in name or w/[ME]/[VB]\u00a0trait",
     "attribute": "Vaccine",
     "block": [
       "06"
@@ -206617,7 +206669,7 @@
       }
     ],
     "aceEffect": "-",
-    "assembly": "[Assembly\u00a0-6] Lv.5 x Lv.4 x Lv.3, all w/[Gabumon]/[Garurumon]\u00a0in name or w/[ME]/[VB]\u00a0trait",
+    "assembly": "[Assembly\u00a0-6] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Gabumon]/[Garurumon]\u00a0in name or w/[ME]/[VB]\u00a0trait",
     "attribute": "Data",
     "block": [
       "06"
@@ -209730,6 +209782,4549 @@
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Unique/VB",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-001_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-001.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-001",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-001",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-002_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-002.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-002",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-002",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-003_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-003.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-003",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-003",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-004_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-004.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-004",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-004",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-005_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-005.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-005",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-005",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-006_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-006.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-006",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-006",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-007_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-007.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-007",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-007",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-008_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-008.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-008",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-008",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-009_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-009.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-009",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-009",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-010_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-010.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-010",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-010",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-011_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-011.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-011",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-011",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-012_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-012.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-012",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-012",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-013_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-013.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-013",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-013",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-014_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-014.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-014",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-014",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-015_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-015.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-015",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-015",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-016_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-016.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-016",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-016",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-017_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-017.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-017",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-017",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-018_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-018.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-018",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-018",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-019_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-019.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-019",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-019",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-020_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-020.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-020",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-020",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-021_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-021.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-021",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-021",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-022_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-022.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-022",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-022",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-023_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-023.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-023",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-023",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-024_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-024.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-024",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-024",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-025_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-025.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-025",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-025",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-026_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-026.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-026",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-026",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-027_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-027.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-027",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-027",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-028_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-028.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-028",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-028",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-029_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-029.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-029",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-029",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-030_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-030.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-030",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-030",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-031_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-031.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-031",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-031",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-032_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-032.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-032",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-032",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-033_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-033.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-033",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-033",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-034_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-034.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-034",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-034",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-035_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-035.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-035",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-035",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-036_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-036.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-036",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-036",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-037_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-037.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-037",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-037",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-038_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-038.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-038",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-038",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-039_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-039.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-039",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-039",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-040_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-040.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-040",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-040",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-041_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-041.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-041",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-041",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-042_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-042.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-042",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-042",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-043_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-043.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-043",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-043",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-044_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-044.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-044",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-044",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-045_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-045.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-045",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-045",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-046_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-046.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-046",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-046",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-047_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-047.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-047",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-047",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-048_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-048.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-048",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-048",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-049_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-049.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-049",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-049",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-050_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-050.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-050",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-050",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-051_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-051.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-051",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-051",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-052_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-052.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-052",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-052",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-053_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-053.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-053",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-053",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-054_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-054.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-054",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-054",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-055_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-055.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-055",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-055",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-056_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-056.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-056",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-056",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-057_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-057.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-057",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-057",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-058_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-058.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-058",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-058",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-059_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-059.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-059",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-059",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-060_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-060.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-060",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-060",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-061_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-061.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-061",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-061",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-062_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-062.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-062",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-062",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-063_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-063.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-063",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-063",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-064_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-064.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-064",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-064",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-065_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-065.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-065",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-065",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-066_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-066.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-066",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-066",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-067_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-067.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-067",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-067",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-068_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-068.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-068",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-068",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-069_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-069.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-069",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-069",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-070_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-070.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-070",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-070",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-071_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-071.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-071",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-071",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-072_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-072.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-072",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-072",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-073_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-073.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-073",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-073",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-074_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-074.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-074",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-074",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-075_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-075.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-075",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-075",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-076_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-076.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-076",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-076",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX13-077_P1",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-077.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-077",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-077",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
     "version": "Normal"
   },
   {
@@ -215096,7 +219691,7 @@
         "level": "3"
       }
     ],
-    "digivolveEffect": "[End of Your Turn] This Digimon and any of your other Digimon may DNA digivolve into a Digimon card in the hand.",
+    "digivolveEffect": "[End of Your Turn] This Digimon and any of your other Digimon may DNA digivolve into a Digimon card in the hand..",
     "dnaDigivolve": "-",
     "dp": "5000",
     "dualEffect": "-",
@@ -218472,7 +223067,7 @@
         "level": "3"
       }
     ],
-    "digivolveEffect": "[End of Your Turn] This Digimon and any of your other Digimon may DNA digivolve into a Digimon card in the hand.",
+    "digivolveEffect": "[End of Your Turn] This Digimon and any of your other Digimon may DNA digivolve into a Digimon card in the hand..",
     "dnaDigivolve": "-",
     "dp": "5000",
     "dualEffect": "-",
@@ -271806,7 +276401,7 @@
     ],
     "JAAs": [],
     "aceEffect": "-",
-    "assembly": "[Assembly\u00a0-6] Lv.5 x Lv.4 x Lv.3, all w/[Gammamon]\u00a0in text or w/[VB]\u00a0trait",
+    "assembly": "[Assembly\u00a0-6] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Gammamon]\u00a0in text or w/[VB]\u00a0trait",
     "attribute": "Virus",
     "block": [
       "06"
@@ -276065,7 +280660,7 @@
         "level": "3"
       }
     ],
-    "digivolveEffect": "[End of Your Turn] This Digimon and any of your other Digimon may DNA digivolve into a Digimon card in the hand.",
+    "digivolveEffect": "[End of Your Turn] This Digimon and any of your other Digimon may DNA digivolve into a Digimon card in the hand..",
     "dnaDigivolve": "-",
     "dp": "4000",
     "dualEffect": "-",
@@ -278049,7 +282644,7 @@
         "level": "4"
       }
     ],
-    "digivolveEffect": "[End of Your Turn] This Digimon and any of your other Digimon may DNA digivolve into a Digimon card in the hand.",
+    "digivolveEffect": "[End of Your Turn] This Digimon and any of your other Digimon may DNA digivolve into a Digimon card in the hand..",
     "dnaDigivolve": "-",
     "dp": "7000",
     "dualEffect": "-",
@@ -278596,7 +283191,7 @@
         "level": "4"
       }
     ],
-    "digivolveEffect": "[End of Your Turn] This Digimon and any of your other Digimon may DNA digivolve into a Digimon card in the hand.",
+    "digivolveEffect": "[End of Your Turn] This Digimon and any of your other Digimon may DNA digivolve into a Digimon card in the hand..",
     "dnaDigivolve": "-",
     "dp": "7000",
     "dualEffect": "-",
@@ -296799,7 +301394,7 @@
         "level": "2"
       }
     ],
-    "digivolveEffect": "[End of Your Turn] You may DNA digivolve this Digimon and one of your other Digimon in play into a Digimon card in your hand by paying its DNA digivolve cost.",
+    "digivolveEffect": "[End of Your Turn] This Digimon and any of your other Digimon may DNA digivolve into a Digimon card in the hand.",
     "dnaDigivolve": "-",
     "dp": "3000",
     "dualEffect": "-",
