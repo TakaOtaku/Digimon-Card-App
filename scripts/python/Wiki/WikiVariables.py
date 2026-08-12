@@ -328,6 +328,7 @@ replacements = [
     '<< ',
     '(Add 1 to this Digimon\'s maximum links.)',
     '(Add 2 to this Digimon\'s maximum links.)',
+    '(Add 6 to this Digimon\'s maximum links.)',
     '(This Digimon can block in the blocker timing.)',
     '(While attacking, your opponent\'s effects don\'t affect this Digimon.)',
     '(In the main phase, by suspending this Digimon, place your deck\'s top card face down as this Digimon\'s bottom digivolution card. This effect can also activate in the breeding area.)',
