@@ -203000,7 +203000,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-024.webp",
+    "cardImage": "assets/images/cards/BT26-024-Sample.webp",
     "cardLv": "Lv.3",
     "cardNumber": "BT26-024",
     "cardType": "Digimon",
@@ -203173,7 +203173,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-027.webp",
+    "cardImage": "assets/images/cards/BT26-027-Sample.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BT26-027",
     "cardType": "Digimon",
@@ -203900,7 +203900,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-035.webp",
+    "cardImage": "assets/images/cards/BT26-035-Sample.webp",
     "cardLv": "Lv.3",
     "cardNumber": "BT26-035",
     "cardType": "Digimon",
@@ -204241,7 +204241,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-041.webp",
+    "cardImage": "assets/images/cards/BT26-041-Sample.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BT26-041",
     "cardType": "Digimon",
@@ -205096,7 +205096,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-054.webp",
+    "cardImage": "assets/images/cards/BT26-054-Sample.webp",
     "cardLv": "Lv.5",
     "cardNumber": "BT26-054",
     "cardType": "Digimon",
@@ -205396,7 +205396,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-058.webp",
+    "cardImage": "assets/images/cards/BT26-058-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT26-058",
     "cardType": "Digimon",
@@ -205640,7 +205640,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-060.webp",
+    "cardImage": "assets/images/cards/BT26-060-Sample.webp",
     "cardLv": "Lv.7",
     "cardNumber": "BT26-060",
     "cardType": "Digimon",
@@ -205701,7 +205701,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-060_P1.webp",
+    "cardImage": "assets/images/cards/BT26-060_P1-Sample.webp",
     "cardLv": "Lv.7",
     "cardNumber": "BT26-060",
     "cardType": "Digimon",
@@ -205726,7 +205726,7 @@
     "effect": "\uff1cSecurity A. +1\uff1e \n\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n\uff1cSuccession (Lv.6 w/[Chronomon] in name)\uff1e \n[On Play] [When Digivolving] Return the top 5 stacked cards of 3 of your opponent's Digimon to the top of the deck.\n[All Turns] [Once Per Turn] When your effects add to decks, you may delete 1 of your opponent's Digimon.",
     "form": "Mega",
     "id": "BT26-060_P1",
-    "illustrator": "To be completed",
+    "illustrator": "k.Dra",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
@@ -205787,7 +205787,7 @@
     "effect": "\uff1cSecurity A. +1\uff1e \n\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n\uff1cSuccession (Lv.6 w/[Chronomon] in name)\uff1e \n[On Play] [When Digivolving] Return the top 5 stacked cards of 3 of your opponent's Digimon to the top of the deck.\n[All Turns] [Once Per Turn] When your effects add to decks, you may delete 1 of your opponent's Digimon.",
     "form": "Mega",
     "id": "BT26-060_P2",
-    "illustrator": "To be completed",
+    "illustrator": "k.Dra",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
@@ -206988,7 +206988,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-079_P1.webp",
+    "cardImage": "assets/images/cards/BT26-079_P1-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT26-079",
     "cardType": "Digimon",
@@ -207598,7 +207598,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-085.webp",
+    "cardImage": "assets/images/cards/BT26-085-Sample.webp",
     "cardLv": "-",
     "cardNumber": "BT26-085",
     "cardType": "Digimon",
@@ -207648,7 +207648,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-086.webp",
+    "cardImage": "assets/images/cards/BT26-086-Sample.webp",
     "cardLv": "Lv.7",
     "cardNumber": "BT26-086",
     "cardType": "Digimon",
@@ -207704,7 +207704,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-086_P1.webp",
+    "cardImage": "assets/images/cards/BT26-086_P1-Sample.webp",
     "cardLv": "Lv.7",
     "cardNumber": "BT26-086",
     "cardType": "Digimon",
@@ -207760,7 +207760,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-087.webp",
+    "cardImage": "assets/images/cards/BT26-087-Sample.webp",
     "cardLv": "-",
     "cardNumber": "BT26-087",
     "cardType": "Tamer",
@@ -207810,7 +207810,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-088.webp",
+    "cardImage": "assets/images/cards/BT26-088-Sample.webp",
     "cardLv": "-",
     "cardNumber": "BT26-088",
     "cardType": "Tamer",
@@ -208060,7 +208060,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-092.webp",
+    "cardImage": "assets/images/cards/BT26-092-Sample.webp",
     "cardLv": "-",
     "cardNumber": "BT26-092",
     "cardType": "Tamer",
@@ -208360,7 +208360,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-096.webp",
+    "cardImage": "assets/images/cards/BT26-096-Sample.webp",
     "cardLv": "-",
     "cardNumber": "BT26-096",
     "cardType": "Tamer",
@@ -208410,7 +208410,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-097.webp",
+    "cardImage": "assets/images/cards/BT26-097-Sample.webp",
     "cardLv": "-",
     "cardNumber": "BT26-097",
     "cardType": "Option",
@@ -208710,7 +208710,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-103.webp",
+    "cardImage": "assets/images/cards/BT26-103-Sample.webp",
     "cardLv": "Lv.7",
     "cardNumber": "BT26-103",
     "cardType": "Digimon",
@@ -208776,7 +208776,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-103_P1.webp",
+    "cardImage": "assets/images/cards/BT26-103_P1-Sample.webp",
     "cardLv": "Lv.7",
     "cardNumber": "BT26-103",
     "cardType": "Digimon",
