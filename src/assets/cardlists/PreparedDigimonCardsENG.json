@@ -169839,7 +169839,7 @@
         "level": "2"
       }
     ],
-    "digivolveEffect": "[End of Your Turn] This Digimon and any of your other Digimon may DNA digivolve into a Digimon card in the hand..",
+    "digivolveEffect": "[End of Your Turn] This Digimon and any of your other Digimon may DNA digivolve into a Digimon card in the hand.",
     "dnaDigivolve": "-",
     "dp": "1000",
     "dualEffect": "-",
@@ -169900,7 +169900,7 @@
         "level": "2"
       }
     ],
-    "digivolveEffect": "[End of Your Turn] This Digimon and any of your other Digimon may DNA digivolve into a Digimon card in the hand..",
+    "digivolveEffect": "[End of Your Turn] This Digimon and any of your other Digimon may DNA digivolve into a Digimon card in the hand.",
     "dnaDigivolve": "-",
     "dp": "1000",
     "dualEffect": "-",
@@ -169961,7 +169961,7 @@
         "level": "2"
       }
     ],
-    "digivolveEffect": "[End of Your Turn] This Digimon and any of your other Digimon may DNA digivolve into a Digimon card in the hand..",
+    "digivolveEffect": "[End of Your Turn] This Digimon and any of your other Digimon may DNA digivolve into a Digimon card in the hand.",
     "dnaDigivolve": "-",
     "dp": "1000",
     "dualEffect": "-",
@@ -207665,7 +207665,7 @@
     "dnaDigivolve": "-",
     "dp": "14000",
     "dualEffect": "-",
-    "effect": "\uff1cRush\uff1e \n\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n\uff1cLink +6\uff1e (Add 6 to this Digimon's maximum links.)\n[On Play] [When Digivolving] You may link up to 7 [Appmon]\u00a0trait cards with different names from this Digimon's digivolution cards to this Digimon without paying the costs. Then, this Digimon may attack without suspending.\n[All Turns] [Once Per Turn] When this Digimon gets linked, you may delete 1 of your opponent's Digimon. Then, if this Digimon has 7 link cards, return your opponent's top security card to the bottom of the deck.",
+    "effect": "\uff1cRush\uff1e \n\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n\uff1cLink +6\uff1e \n[On Play] [When Digivolving] You may link up to 7 [Appmon]\u00a0trait cards with different names from this Digimon's digivolution cards to this Digimon without paying the costs. Then, this Digimon may attack without suspending.\n[All Turns] [Once Per Turn] When this Digimon gets linked, you may delete 1 of your opponent's Digimon. Then, if this Digimon has 7 link cards, return your opponent's top security card to the bottom of the deck.",
     "form": "Unknown/Appmon",
     "id": "BT26-086",
     "illustrator": "sasasi",
@@ -207721,7 +207721,7 @@
     "dnaDigivolve": "-",
     "dp": "14000",
     "dualEffect": "-",
-    "effect": "\uff1cRush\uff1e \n\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n\uff1cLink +6\uff1e (Add 6 to this Digimon's maximum links.)\n[On Play] [When Digivolving] You may link up to 7 [Appmon]\u00a0trait cards with different names from this Digimon's digivolution cards to this Digimon without paying the costs. Then, this Digimon may attack without suspending.\n[All Turns] [Once Per Turn] When this Digimon gets linked, you may delete 1 of your opponent's Digimon. Then, if this Digimon has 7 link cards, return your opponent's top security card to the bottom of the deck.",
+    "effect": "\uff1cRush\uff1e \n\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n\uff1cLink +6\uff1e \n[On Play] [When Digivolving] You may link up to 7 [Appmon]\u00a0trait cards with different names from this Digimon's digivolution cards to this Digimon without paying the costs. Then, this Digimon may attack without suspending.\n[All Turns] [Once Per Turn] When this Digimon gets linked, you may delete 1 of your opponent's Digimon. Then, if this Digimon has 7 link cards, return your opponent's top security card to the bottom of the deck.",
     "form": "Unknown/Appmon",
     "id": "BT26-086_P1",
     "illustrator": "Tonamikanji",
@@ -207771,7 +207771,7 @@
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "[Start of Your Main Phase] By returning 1 [TS]\u00a0trait Digimon card from your trash to the bottom of the deck, gain 1 memory. After, you may return 1 [Giant Slayer] from your trash to the hand.\n[On Play] By trashing 1 [TS] card from your hand, \uff1cDraw 2\uff1e ",
     "form": "-",
     "id": "BT26-087",
     "illustrator": "Nakano Haito",
@@ -207798,7 +207798,7 @@
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
-    "specialDigivolve": "[Start of Your Main Phase] By returning 1 [TS]\u00a0trait Digimon card from your trash to the bottom of the deck, gain 1 memory. After, you may return 1 [Giant Slayer] from your trash to the hand.\n[On Play] By trashing 1 [TS] card from your hand, \uff1cDraw 2\uff1e ",
+    "specialDigivolve": "-",
     "type": "TS",
     "version": "Normal"
   },
@@ -208371,7 +208371,7 @@
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "[Start of Your Turn] If you have 2 or less memory, set it to 3.\n[Main] By returning this Tamer to the bottom of the deck, you may play 1 Digimon card with [Chronomon]\u00a0in its text or 1 Tamer card with the [TS]\u00a0trait from your hand or trash with the cost reduced by 2.",
     "form": "-",
     "id": "BT26-096",
     "illustrator": "Nakano Haito",
@@ -208398,7 +208398,7 @@
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
-    "specialDigivolve": "[Start of Your Turn] If you have 2 or less memory, set it to 3.\n[Main] By returning this Tamer to the bottom of the deck, you may play 1 Digimon card with [Chronomon]\u00a0in its text or 1 Tamer card with the [TS]\u00a0trait from your hand or trash with the cost reduced by 2.",
+    "specialDigivolve": "-",
     "type": "TS",
     "version": "Normal"
   },
