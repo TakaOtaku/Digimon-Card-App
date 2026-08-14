@@ -203783,7 +203783,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-033_P2.webp",
+    "cardImage": "assets/images/cards/BT26-033_P2-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT26-033",
     "cardType": "Digimon/Option",
@@ -204836,7 +204836,7 @@
     "effect": "[When Digivolving] You may suspend 2 Digimon or Tamers. Then, 2 of your opponent's Digimon or Tamers can't unsuspend until their turn ends.\n[When Digivolving] [When Attacking] By returning 1 other suspended Digimon to the bottom of the deck, trash your opponent's top security card.",
     "form": "Mega",
     "id": "BT26-050_P1",
-    "illustrator": "To be completed",
+    "illustrator": "Nakano Haito",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
@@ -204872,7 +204872,7 @@
       "06"
     ],
     "burstDigivolve": "[Digivolve] Lv.6 w/[DATA SQUAD]\u00a0trait: Cost 5 [Burst Digivolve] [Rosemon]: Cost 0 by returning 1 [Yoshino Fujieda] to the hand.",
-    "cardImage": "assets/images/cards/BT26-050_P2.webp",
+    "cardImage": "assets/images/cards/BT26-050_P2-Sample.webp",
     "cardLv": "Lv.7",
     "cardNumber": "BT26-050",
     "cardType": "Digimon/Option",
@@ -204892,7 +204892,7 @@
     "effect": "[When Digivolving] You may suspend 2 Digimon or Tamers. Then, 2 of your opponent's Digimon or Tamers can't unsuspend until their turn ends.\n[When Digivolving] [When Attacking] By returning 1 other suspended Digimon to the bottom of the deck, trash your opponent's top security card.",
     "form": "Mega",
     "id": "BT26-050_P2",
-    "illustrator": "To be completed",
+    "illustrator": "Nakano Haito",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
@@ -205579,7 +205579,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-059_P2.webp",
+    "cardImage": "assets/images/cards/BT26-059_P2-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT26-059",
     "cardType": "Digimon",
@@ -205762,7 +205762,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-060_P2.webp",
+    "cardImage": "assets/images/cards/BT26-060_P2-Sample.webp",
     "cardLv": "Lv.7",
     "cardNumber": "BT26-060",
     "cardType": "Digimon",
@@ -208842,7 +208842,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-103_P2.webp",
+    "cardImage": "assets/images/cards/BT26-103_P2-Sample.webp",
     "cardLv": "Lv.7",
     "cardNumber": "BT26-103",
     "cardType": "Digimon",
@@ -209008,7 +209008,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-104_P2.webp",
+    "cardImage": "assets/images/cards/BT26-104_P2-Sample.webp",
     "cardLv": "-",
     "cardNumber": "BT26-104",
     "cardType": "Tamer",
