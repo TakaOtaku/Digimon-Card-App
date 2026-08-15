@@ -116588,7 +116588,7 @@
     "dnaDigivolve": "-",
     "dp": "1000",
     "dualEffect": "-",
-    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 Digimon card with the [Demon] or [Shaman]\u00a0trait and 1 card with the [Titan]\u00a0trait among them to the hand. Return the rest to the bottom of the deck.",
+    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 Digimon card with the [Demon] or [Shaman]\u00a0trait and 1 card with the [Titan]\u00a0trait among them to the hand. Return the rest to the bottom of the deck. If this effect added, trash 1 card in your hand.",
     "form": "Rookie",
     "id": "BT24-021",
     "illustrator": "Iori Sunakura",
