@@ -202110,6 +202110,62 @@
   {
     "aceEffect": "-",
     "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT26-009_P1.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "BT26-009",
+    "cardType": "Digimon",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[When Attacking] \uff1cDraw 1\uff1e Then, if your hand has 6 or more cards, return 1 card in your hand to the bottom of the deck.",
+    "dnaDigivolve": "-",
+    "dp": "2000",
+    "dualEffect": "-",
+    "effect": "[Start of Your Main Phase] By trashing 1 card with [Chronomon]\u00a0in its text or the [Shaman]\u00a0trait from your hand, \uff1cDraw 1\uff1e and gain 1 memory.",
+    "form": "Rookie",
+    "id": "BT26-009_P1",
+    "illustrator": "Spareribs",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Hyokomon",
+      "japanese": "\u30d2\u30e7\u30b3\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "Box Promotion Pack: TIMELESS BONDS",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.2 w/[TS]\u00a0trait: Cost 0 ",
+    "type": "Bird/Iliad/TS",
+    "version": "Full Art -\u00a0Box Topper"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
     "attribute": "Game",
     "block": [
       "06"
@@ -203783,7 +203839,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-033_P2.webp",
+    "cardImage": "assets/images/cards/BT26-033_P2-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT26-033",
     "cardType": "Digimon/Option",
@@ -204872,7 +204928,7 @@
       "06"
     ],
     "burstDigivolve": "[Digivolve] Lv.6 w/[DATA SQUAD]\u00a0trait: Cost 5 [Burst Digivolve] [Rosemon]: Cost 0 by returning 1 [Yoshino Fujieda] to the hand.",
-    "cardImage": "assets/images/cards/BT26-050_P2.webp",
+    "cardImage": "assets/images/cards/BT26-050_P2-Sample.webp",
     "cardLv": "Lv.7",
     "cardNumber": "BT26-050",
     "cardType": "Digimon/Option",
@@ -205031,6 +205087,62 @@
     "specialDigivolve": "[Digivolve] Lv.2 w/[Glowing Dawn]\u00a0trait: Cost 0 ",
     "type": "Puppet/Glowing Dawn/BEATBREAK",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT26-052_P1.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "BT26-052",
+    "cardType": "Digimon",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "\uff1cReboot\uff1e ",
+    "dnaDigivolve": "-",
+    "dp": "2000",
+    "dualEffect": "-",
+    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 card with the [Glowing Dawn]\u00a0trait and 1 black card with the [BEATBREAK]\u00a0trait among them to the hand. Return the rest to the bottom of the deck.",
+    "form": "Rookie",
+    "id": "BT26-052_P1",
+    "illustrator": "tessy",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Pristimon",
+      "japanese": "\u30d7\u30ea\u30b9\u30c6\u30a3\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "Box Promotion Pack: TIMELESS BONDS",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.2 w/[Glowing Dawn]\u00a0trait: Cost 0 ",
+    "type": "Puppet/Glowing Dawn/BEATBREAK",
+    "version": "Full Art -\u00a0Box Topper"
   },
   {
     "aceEffect": "-",
@@ -205579,7 +205691,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-059_P2.webp",
+    "cardImage": "assets/images/cards/BT26-059_P2-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT26-059",
     "cardType": "Digimon",
@@ -205762,7 +205874,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-060_P2.webp",
+    "cardImage": "assets/images/cards/BT26-060_P2-Sample.webp",
     "cardLv": "Lv.7",
     "cardNumber": "BT26-060",
     "cardType": "Digimon",
@@ -205870,6 +205982,62 @@
     "specialDigivolve": "[Digivolve] Lv.2 w/[Glowing Dawn]\u00a0trait: Cost 0 ",
     "type": "Mammal/Glowing Dawn/BEATBREAK",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Virus",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT26-061_P1.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "BT26-061",
+    "cardType": "Digimon",
+    "color": "Purple",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[When Attacking] [Once Per Turn] \uff1cDraw 1\uff1e and trash 1 card in your hand.",
+    "dnaDigivolve": "-",
+    "dp": "2000",
+    "dualEffect": "-",
+    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 [Glowing Dawn]\u00a0trait card and 1 purple [BEATBREAK]\u00a0trait card among them to the hand. Return the rest to the bottom of the deck.",
+    "form": "Rookie",
+    "id": "BT26-061_P1",
+    "illustrator": "Takeuchi Moto",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Chiropmon",
+      "japanese": "\u30ad\u30ed\u30d7\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "Box Promotion Pack: TIMELESS BONDS",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.2 w/[Glowing Dawn]\u00a0trait: Cost 0 ",
+    "type": "Mammal/Glowing Dawn/BEATBREAK",
+    "version": "Full Art -\u00a0Box Topper"
   },
   {
     "aceEffect": "-",
@@ -206043,6 +206211,62 @@
     "specialDigivolve": "[Digivolve] Lv.2 w/[TS]\u00a0trait: Cost 0 ",
     "type": "Evil/Iliad/ADAMAS/TS",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Virus",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT26-064_P1.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "BT26-064",
+    "cardType": "Digimon",
+    "color": "Purple",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[When Attacking] [Once Per Turn] \uff1cDraw 1\uff1e and trash 1 card in your hand.",
+    "dnaDigivolve": "-",
+    "dp": "2000",
+    "dualEffect": "-",
+    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 card with the [Fallen Angel], [Undead], [Wizard] or [Demon Lord]\u00a0trait and 1 card with the [TS]\u00a0trait among them to the hand. Return the rest to the bottom of the deck.",
+    "form": "Rookie",
+    "id": "BT26-064_P1",
+    "illustrator": "NAOKI AKAMINE",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "DemiDevimon",
+      "japanese": "\u30d4\u30b3\u30c7\u30d3\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "Box Promotion Pack: TIMELESS BONDS",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.2 w/[TS]\u00a0trait: Cost 0 ",
+    "type": "Evil/Iliad/ADAMAS/TS",
+    "version": "Full Art -\u00a0Box Topper"
   },
   {
     "aceEffect": "-",
@@ -208842,7 +209066,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-103_P2.webp",
+    "cardImage": "assets/images/cards/BT26-103_P2-Sample.webp",
     "cardLv": "Lv.7",
     "cardNumber": "BT26-103",
     "cardType": "Digimon",
@@ -209008,7 +209232,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT26-104_P2.webp",
+    "cardImage": "assets/images/cards/BT26-104_P2-Sample.webp",
     "cardLv": "-",
     "cardNumber": "BT26-104",
     "cardType": "Tamer",

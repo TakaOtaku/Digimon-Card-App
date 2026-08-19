@@ -128735,8 +128735,22 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "BT26-009_P1",
+        "illustrator": "Spareribs",
+        "note": "Box Promotion Pack: TIMELESS BONDS",
+        "type": "Full Art -\u00a0Box Topper"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "BT26-009_P1-J",
+        "illustrator": "Spareribs",
+        "note": "Box Promotion Pack: TIMELESS BONDS",
+        "type": "Full Art -\u00a0Box Topper"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -129169,7 +129183,14 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT26-016_P1-J",
+        "illustrator": "To be completed",
+        "note": "BT-26: BOOSTER TIMELESS BONDS",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -130091,7 +130112,14 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT26-031_P1-J",
+        "illustrator": "k.Dra",
+        "note": "BT-26: BOOSTER TIMELESS BONDS",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Virus",
@@ -130161,7 +130189,14 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT26-032_P1-J",
+        "illustrator": "sasasi",
+        "note": "BT-26: BOOSTER TIMELESS BONDS",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Data",
@@ -130237,7 +130272,20 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT26-033_P1-J",
+        "illustrator": "toriyufu",
+        "note": "BT-26: BOOSTER TIMELESS BONDS",
+        "type": "Alternative Art"
+      },
+      {
+        "id": "BT26-033_P2-J",
+        "illustrator": "toriyufu",
+        "note": "BT-26: BOOSTER TIMELESS BONDS",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -131261,7 +131309,20 @@
         "type": "Textured -\u00a0Special Rare"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT26-050_P1-J",
+        "illustrator": "Nakano Haito",
+        "note": "BT-26: BOOSTER TIMELESS BONDS",
+        "type": "Textured -\u00a0Special Rare"
+      },
+      {
+        "id": "BT26-050_P2-J",
+        "illustrator": "Nakano Haito",
+        "note": "BT-26: BOOSTER TIMELESS BONDS",
+        "type": "Textured -\u00a0Special Rare"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Data",
@@ -131376,8 +131437,22 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "BT26-052_P1",
+        "illustrator": "tessy",
+        "note": "Box Promotion Pack: TIMELESS BONDS",
+        "type": "Full Art -\u00a0Box Topper"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "BT26-052_P1-J",
+        "illustrator": "tessy",
+        "note": "Box Promotion Pack: TIMELESS BONDS",
+        "type": "Full Art -\u00a0Box Topper"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -131684,7 +131759,14 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT26-057_P1-J",
+        "illustrator": "Takeuchi Moto",
+        "note": "BT-26: BOOSTER TIMELESS BONDS",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -131823,7 +131905,20 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT26-059_P1-J",
+        "illustrator": "toriyufu",
+        "note": "BT-26: BOOSTER TIMELESS BONDS",
+        "type": "Alternative Art"
+      },
+      {
+        "id": "BT26-059_P2-J",
+        "illustrator": "toriyufu",
+        "note": "BT-26: BOOSTER TIMELESS BONDS",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Virus",
@@ -131899,7 +131994,20 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT26-060_P1-J",
+        "illustrator": "k.Dra",
+        "note": "BT-26: BOOSTER TIMELESS BONDS",
+        "type": "Alternative Art"
+      },
+      {
+        "id": "BT26-060_P2-J",
+        "illustrator": "k.Dra",
+        "note": "BT-26: BOOSTER TIMELESS BONDS",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Virus",
@@ -131961,8 +132069,22 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "BT26-061_P1",
+        "illustrator": "Takeuchi Moto",
+        "note": "Box Promotion Pack: TIMELESS BONDS",
+        "type": "Full Art -\u00a0Box Topper"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "BT26-061_P1-J",
+        "illustrator": "Takeuchi Moto",
+        "note": "Box Promotion Pack: TIMELESS BONDS",
+        "type": "Full Art -\u00a0Box Topper"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Virus",
@@ -132140,8 +132262,22 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "BT26-064_P1",
+        "illustrator": "NAOKI AKAMINE",
+        "note": "Box Promotion Pack: TIMELESS BONDS",
+        "type": "Full Art -\u00a0Box Topper"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "BT26-064_P1-J",
+        "illustrator": "NAOKI AKAMINE",
+        "note": "Box Promotion Pack: TIMELESS BONDS",
+        "type": "Full Art -\u00a0Box Topper"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Virus",
@@ -132806,7 +132942,14 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT26-075_P1-J",
+        "illustrator": "k.Dra",
+        "note": "BT-26: BOOSTER TIMELESS BONDS",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Virus",
@@ -133060,7 +133203,14 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT26-079_P1-J",
+        "illustrator": "As'Maria",
+        "note": "BT-26: BOOSTER TIMELESS BONDS",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "[Assembly\u00a0-2] [Plutomon]",
     "attribute": "Virus",
@@ -133125,7 +133275,14 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT26-080_P1-J",
+        "illustrator": "sasasi",
+        "note": "BT-26: BOOSTER TIMELESS BONDS",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Virus",
@@ -133200,7 +133357,14 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT26-081_P1-J",
+        "illustrator": "sasasi",
+        "note": "BT-26: BOOSTER TIMELESS BONDS",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "[Assembly\u00a0-5] [Minervamon]",
     "attribute": "Virus",
@@ -133275,7 +133439,14 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT26-082_P1-J",
+        "illustrator": "k.Dra",
+        "note": "BT-26: BOOSTER TIMELESS BONDS",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -133340,7 +133511,14 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT26-083_P1-J",
+        "illustrator": "sasasi",
+        "note": "BT-26: BOOSTER TIMELESS BONDS",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "[Assembly\u00a0-4] [Junomon]",
     "attribute": "Virus",
@@ -133520,7 +133698,14 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT26-086_P1-J",
+        "illustrator": "Tonamikanji",
+        "note": "BT-26: BOOSTER TIMELESS BONDS",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "[Assembly\u00a0-7] 7 [Seven Code]\u00a0trait Digimon cards w/different names",
     "attribute": "Unknown",
@@ -133741,7 +133926,14 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT26-090_P1-J",
+        "illustrator": "Takase",
+        "note": "BT-26: BOOSTER TIMELESS BONDS",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
@@ -133904,7 +134096,14 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT26-093_P1-J",
+        "illustrator": "No Illustrator",
+        "note": "BT-26: BOOSTER TIMELESS BONDS",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
@@ -134015,7 +134214,14 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT26-095_P1-J",
+        "illustrator": "No Illustrator",
+        "note": "BT-26: BOOSTER TIMELESS BONDS",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
@@ -134444,7 +134650,20 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT26-103_P1-J",
+        "illustrator": "sasasi",
+        "note": "BT-26: BOOSTER TIMELESS BONDS",
+        "type": "Alternative Art"
+      },
+      {
+        "id": "BT26-103_P2-J",
+        "illustrator": "sasasi",
+        "note": "BT-26: BOOSTER TIMELESS BONDS",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -134525,7 +134744,20 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT26-104_P1-J",
+        "illustrator": "Tonamikanji",
+        "note": "BT-26: BOOSTER TIMELESS BONDS",
+        "type": "Alternative Art"
+      },
+      {
+        "id": "BT26-104_P2-J",
+        "illustrator": "Tonamikanji",
+        "note": "BT-26: BOOSTER TIMELESS BONDS",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
