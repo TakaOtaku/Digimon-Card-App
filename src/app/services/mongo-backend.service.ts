@@ -257,6 +257,15 @@ export class MongoBackendService {
         return this.http.put(`${this.baseUrl}users/${save.uid}`, saveData);
     }
 
+    /**
+     * Delete a user save (admin only on backend)
+     * @param uid User ID
+     * @returns Observable with delete result
+     */
+    deleteSave(uid: string): Observable<any> {
+        return this.http.delete(`${this.baseUrl}users/${uid}`);
+    }
+
     // ===== BLOG OPERATIONS =====
     // Note: These may need to be implemented in your MongoDB backend
 
