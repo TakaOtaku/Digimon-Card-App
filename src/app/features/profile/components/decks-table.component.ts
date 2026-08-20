@@ -9,6 +9,7 @@ import { IDeck } from '../../../../models';
 import { setDeckImage } from '../../../functions/digimon-card.functions';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
 import { SaveStore } from '../../../store/save.store';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'digimon-decks-table',
@@ -115,12 +116,12 @@ export class DecksTableComponent {
   getCardImage(deck: IDeck): string {
     //If there are no cards in the deck set it to the Yokomon
     if (!deck.cards || deck.cards.length === 0 || this.digimonCardStore.cards().length === 0) {
-      return '../../../assets/images/cards/eng/BT1-001.webp';
+      return `${environment.cardImageBaseUrl}BT1-001.webp`;
     }
 
     // If there is a ImageCardId set it
     if (deck.imageCardId) {
-      return this.digimonCardStore.cardsMap().get(deck.imageCardId)?.cardImage ?? '../../../assets/images/cards/eng/BT1-001.webp';
+      return this.digimonCardStore.cardsMap().get(deck.imageCardId)?.cardImage ?? `${environment.cardImageBaseUrl}BT1-001.webp`;
     } else {
       const deckImage = setDeckImage(deck, this.digimonCardStore.cards());
       this.saveStore.saveDeck({ ...deck, imageCardId: deckImage.id });

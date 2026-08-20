@@ -3,6 +3,7 @@ export const environment = {
   apiBaseUrl: 'http://localhost:3001/api/',
   legacyApiBaseUrl: 'https://backend.digimoncard.app/api/',
   appUrl: 'http://localhost:4200',
+  cardImageBaseUrl: 'https://web-garage.takaotaku.de/',
   firebaseConfig: {
     apiKey: 'AIzaSyAdV8igtmcuSjmNQr2QU2NscmTAn4nWwUg',
     authDomain: 'digimon-card-collector.firebaseapp.com',

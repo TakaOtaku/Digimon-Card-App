@@ -10,6 +10,7 @@ import { InputIcon } from 'primeng/inputicon';
 import { InputText } from 'primeng/inputtext';
 import { PageComponent } from '../shared/page.component';
 import Rulings from '../../../assets/cardlists/Rulings.json';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'digimon-products',
@@ -28,7 +29,7 @@ import Rulings from '../../../assets/cardlists/Rulings.json';
           @for (cardRulings of Object.entries(digimonRulings); track $index) {
             <div *ngIf="shouldDisplay(cardRulings)" class="flex flex-col md:flex-row my-2 border border-slate-300 surface-ground">
               <img
-                [digimonImgFallback]="'assets/images/cards/' + cardRulings[0] + '.webp'"
+                [digimonImgFallback]="cardImageBase + cardRulings[0] + '.webp'"
                 [ngStyle]="{ border: '2px solid black', 'border-radius': '5px' }"
                 alt="{{ cardRulings[0] }}"
                 class="ml-0 aspect-auto h-26 md:h-56" />
@@ -64,6 +65,7 @@ export class RulesComponent {
 
   digimonRulings: DigimonRulings = {};
   searchTerm: WritableSignal<string> = signal('');
+  protected readonly cardImageBase = environment.cardImageBaseUrl;
 
   constructor() {
     this.makeGoogleFriendly();
