@@ -237,6 +237,20 @@ export class MongoBackendService {
     }
 
     /**
+     * Get user saves paginated (admin lists)
+     */
+    getSavesPaginated(page = 1, limit = 50): Observable<{ data: ISave[]; totalPages: number; totalUsers: number; page: number }> {
+        return this.http.get<any>(`${this.baseUrl}users?page=${page}&limit=${limit}`).pipe(
+            map((res) => ({
+                data: (res.users ?? []).map((save: any) => this.parseSaveFromMongo(save)),
+                totalPages: res.pagination?.totalPages ?? 1,
+                totalUsers: res.pagination?.totalUsers ?? 0,
+                page: res.pagination?.page ?? page,
+            })),
+        );
+    }
+
+    /**
      * Get a specific user save
      * @param id User ID
      * @returns Observable user save

@@ -36,7 +36,9 @@ type AdminTab = 'users' | 'decks' | 'analytics';
 
       @switch (tab()) {
         @case ('users') {
-          <div class="text-sm text-gray-400 mb-2">{{ users().length }} users</div>
+          <div class="mb-2 flex items-center">
+            <span class="ml-auto text-sm text-gray-400">{{ usersTotal() }} users · Seite {{ usersPage() }}/{{ usersTotalPages() }}</span>
+          </div>
           <div class="overflow-x-auto rounded border border-gray-700">
             <table class="w-full text-left text-sm">
               <thead class="bg-gray-800 text-gray-300">
@@ -55,6 +57,12 @@ type AdminTab = 'users' | 'decks' | 'analytics';
                 }
               </tbody>
             </table>
+          </div>
+          <div class="mt-2 flex gap-2">
+            <button type="button" [disabled]="usersPage() <= 1" (click)="loadUsers(usersPage() - 1)"
+              class="rounded bg-gray-700 px-3 py-1 text-xs hover:bg-gray-600 disabled:opacity-40">Zurück</button>
+            <button type="button" [disabled]="usersPage() >= usersTotalPages()" (click)="loadUsers(usersPage() + 1)"
+              class="rounded bg-gray-700 px-3 py-1 text-xs hover:bg-gray-600 disabled:opacity-40">Weiter</button>
           </div>
         }
         @case ('decks') {
@@ -93,11 +101,18 @@ type AdminTab = 'users' | 'decks' | 'analytics';
           </div>
         }
         @case ('analytics') {
-          <div class="rounded border border-gray-700 p-4">
-            <p class="text-gray-300">Analytics-Dashboard folgt (Umami).</p>
-            <a href="https://umami.takaotaku.de" target="_blank" rel="noopener"
-              class="mt-2 inline-block text-primary underline">Umami öffnen</a>
+          <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+            <div class="rounded border border-gray-700 p-4">
+              <div class="text-2xl font-bold text-blue-400">{{ statUsers() }}</div>
+              <div class="text-sm text-gray-400">Nutzer</div>
+            </div>
+            <div class="rounded border border-gray-700 p-4">
+              <div class="text-2xl font-bold text-green-400">{{ statDecks() }}</div>
+              <div class="text-sm text-gray-400">Decks</div>
+            </div>
           </div>
+          <a href="https://umami.takaotaku.de" target="_blank" rel="noopener"
+            class="mt-3 inline-block text-primary underline">Umami-Dashboard öffnen</a>
         }
       }
     </div>
@@ -121,6 +136,11 @@ export class AdminComponent implements OnInit {
   protected readonly decksTotalPages = signal(1);
   protected readonly decksTotal = signal(0);
   protected readonly decksSearch = signal('');
+  protected readonly usersPage = signal(1);
+  protected readonly usersTotalPages = signal(1);
+  protected readonly usersTotal = signal(0);
+  protected readonly statUsers = signal(0);
+  protected readonly statDecks = signal(0);
 
   ngOnInit(): void {
     this.loadUsers();
@@ -130,14 +150,18 @@ export class AdminComponent implements OnInit {
     this.tab.set(tab);
     if (tab === 'users' && this.users().length === 0) this.loadUsers();
     if (tab === 'decks' && this.decks().length === 0) this.loadDecks();
+    if (tab === 'analytics') this.loadStats();
   }
 
-  private loadUsers(): void {
+  loadUsers(page = 1): void {
     this.loading.set(true);
     this.error.set(null);
-    this.backend.getSaves().subscribe({
-      next: (users) => {
-        this.users.set(users);
+    this.backend.getSavesPaginated(page, 50).subscribe({
+      next: (res) => {
+        this.users.set(res.data);
+        this.usersPage.set(res.page);
+        this.usersTotalPages.set(res.totalPages);
+        this.usersTotal.set(res.totalUsers);
         this.loading.set(false);
       },
       error: (err) => {
@@ -145,6 +169,11 @@ export class AdminComponent implements OnInit {
         this.loading.set(false);
       },
     });
+  }
+
+  private loadStats(): void {
+    this.backend.getSavesPaginated(1, 1).subscribe({ next: (r) => this.statUsers.set(r.totalUsers) });
+    this.backend.getDecksPaginated({ page: 1, limit: 1 }).subscribe({ next: (r) => this.statDecks.set(r.pagination.totalDecks) });
   }
 
   loadDecks(page = 1): void {
