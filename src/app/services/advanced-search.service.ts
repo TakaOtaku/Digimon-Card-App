@@ -27,7 +27,9 @@ export class AdvancedSearchService {
       if (hasFieldOperators) {
         const siftQuery = this.parseSearchQuery(searchQuery);
         const filterFn = sift(siftQuery);
-        return cards.filter(card => filterFn(card));
+        // dp/playCost/cardLv/linkDP are stored as strings; coerce to numbers on a
+        // shallow copy so numeric operators (>, >=, <, <=, numeric ==) actually match.
+        return cards.filter(card => filterFn(this.withNumericFields(card)));
       } else if (hasLogicalOperators) {
         return this.globalTextSearchWithLogicalOperators(cards, searchQuery);
       } else {
@@ -36,6 +38,21 @@ export class AdvancedSearchService {
     } catch (error) {
       return this.globalTextSearch(cards, searchQuery);
     }
+  }
+
+  /**
+   * Return a shallow copy of the card with numeric-in-string fields converted to
+   * numbers, so sift comparison operators work on dp/playCost/cardLv/linkDP.
+   */
+  private withNumericFields(card: DigimonCard): DigimonCard {
+    const normalized: Record<string, unknown> = { ...card };
+    for (const field of ['dp', 'playCost', 'cardLv', 'linkDP']) {
+      const match = String((card as unknown as Record<string, unknown>)[field] ?? '').match(/-?\d+/);
+      if (match) {
+        normalized[field] = Number(match[0]);
+      }
+    }
+    return normalized as unknown as DigimonCard;
   }
 
   /**
