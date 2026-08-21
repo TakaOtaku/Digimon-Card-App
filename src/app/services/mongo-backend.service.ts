@@ -70,6 +70,15 @@ export class MongoBackendService {
     }
 
     /**
+     * Get the most-liked decks (admin analytics)
+     */
+    getTopDecks(limit = 10): Observable<IDeck[]> {
+        return this.http.get<any[]>(`${this.baseUrl}decks/top?limit=${limit}`).pipe(
+            map((decks) => decks.map((deck) => this.parseDeckFromMongo(deck))),
+        );
+    }
+
+    /**
      * Get paginated decks with filtering
      * @param filters Filter and pagination options
      * @param url Optional URL override (defaults to MongoDB backend)

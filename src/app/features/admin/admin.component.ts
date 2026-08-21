@@ -111,6 +111,23 @@ type AdminTab = 'users' | 'decks' | 'analytics';
               <div class="text-sm text-gray-400">Decks</div>
             </div>
           </div>
+          <h3 class="mt-4 mb-2 text-lg font-medium text-gray-200">Top Decks (Likes)</h3>
+          <div class="overflow-x-auto rounded border border-gray-700">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-gray-800 text-gray-300">
+                <tr><th class="p-2">Titel</th><th class="p-2">Besitzer</th><th class="p-2 w-20">Likes</th></tr>
+              </thead>
+              <tbody>
+                @for (d of topDecks(); track d.id) {
+                  <tr class="border-t border-gray-800">
+                    <td class="p-2">{{ d.title || '—' }}</td>
+                    <td class="p-2 text-gray-400">{{ d.user || '—' }}</td>
+                    <td class="p-2">{{ d.likes?.length ?? 0 }}</td>
+                  </tr>
+                }
+              </tbody>
+            </table>
+          </div>
           <a href="https://umami.takaotaku.de" target="_blank" rel="noopener"
             class="mt-3 inline-block text-primary underline">Umami-Dashboard öffnen</a>
         }
@@ -141,6 +158,7 @@ export class AdminComponent implements OnInit {
   protected readonly usersTotal = signal(0);
   protected readonly statUsers = signal(0);
   protected readonly statDecks = signal(0);
+  protected readonly topDecks = signal<IDeck[]>([]);
 
   ngOnInit(): void {
     this.loadUsers();
@@ -174,6 +192,7 @@ export class AdminComponent implements OnInit {
   private loadStats(): void {
     this.backend.getSavesPaginated(1, 1).subscribe({ next: (r) => this.statUsers.set(r.totalUsers) });
     this.backend.getDecksPaginated({ page: 1, limit: 1 }).subscribe({ next: (r) => this.statDecks.set(r.pagination.totalDecks) });
+    this.backend.getTopDecks(10).subscribe({ next: (d) => this.topDecks.set(d) });
   }
 
   loadDecks(page = 1): void {
