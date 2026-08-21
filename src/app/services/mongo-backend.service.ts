@@ -79,6 +79,15 @@ export class MongoBackendService {
     }
 
     /**
+     * Get all decks of a specific user (admin moderation)
+     */
+    getDecksByUser(uid: string): Observable<IDeck[]> {
+        return this.http.get<any[]>(`${this.baseUrl}users/decks?uid=${encodeURIComponent(uid)}`).pipe(
+            map((decks) => decks.map((deck) => this.parseDeckFromMongo(deck))),
+        );
+    }
+
+    /**
      * Get paginated decks with filtering
      * @param filters Filter and pagination options
      * @param url Optional URL override (defaults to MongoDB backend)

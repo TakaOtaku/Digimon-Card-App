@@ -42,14 +42,16 @@ type AdminTab = 'users' | 'decks' | 'analytics';
           <div class="overflow-x-auto rounded border border-gray-700">
             <table class="w-full text-left text-sm">
               <thead class="bg-gray-800 text-gray-300">
-                <tr><th class="p-2">Name</th><th class="p-2">UID</th><th class="p-2 w-24">Aktion</th></tr>
+                <tr><th class="p-2">Name</th><th class="p-2">UID</th><th class="p-2 w-40">Aktion</th></tr>
               </thead>
               <tbody>
                 @for (u of users(); track u.uid) {
                   <tr class="border-t border-gray-800">
                     <td class="p-2">{{ u.displayName || '—' }}</td>
                     <td class="p-2 font-mono text-xs text-gray-400">{{ u.uid }}</td>
-                    <td class="p-2">
+                    <td class="p-2 flex gap-1">
+                      <button type="button" (click)="showUserDecks(u)"
+                        class="rounded bg-gray-700 px-2 py-1 text-xs hover:bg-gray-600">Decks</button>
                       <button type="button" (click)="deleteUser(u)"
                         class="rounded bg-red-700 px-2 py-1 text-xs text-white hover:bg-red-600">Löschen</button>
                     </td>
@@ -64,6 +66,26 @@ type AdminTab = 'users' | 'decks' | 'analytics';
             <button type="button" [disabled]="usersPage() >= usersTotalPages()" (click)="loadUsers(usersPage() + 1)"
               class="rounded bg-gray-700 px-3 py-1 text-xs hover:bg-gray-600 disabled:opacity-40">Weiter</button>
           </div>
+          @if (selectedUser(); as su) {
+            <div class="mt-4 rounded border border-gray-700 p-3">
+              <div class="mb-2 flex items-center">
+                <h3 class="text-lg font-medium text-gray-200">Decks von {{ su.displayName || su.uid }}</h3>
+                <button type="button" (click)="selectedUser.set(null)"
+                  class="ml-auto rounded bg-gray-700 px-2 py-1 text-xs hover:bg-gray-600">Schließen</button>
+              </div>
+              @if (userDecks().length === 0) {
+                <div class="text-sm text-gray-400">Keine Decks.</div>
+              }
+              @for (d of userDecks(); track d.id) {
+                <div class="flex items-center border-t border-gray-800 py-1 text-sm">
+                  <span>{{ d.title || '—' }}</span>
+                  <span class="ml-2 text-xs text-gray-500">{{ d.likes?.length ?? 0 }} Likes</span>
+                  <button type="button" (click)="deleteUserDeck(d)"
+                    class="ml-auto rounded bg-red-700 px-2 py-1 text-xs text-white hover:bg-red-600">Löschen</button>
+                </div>
+              }
+            </div>
+          }
         }
         @case ('decks') {
           <div class="mb-2 flex items-center gap-2">
@@ -159,6 +181,8 @@ export class AdminComponent implements OnInit {
   protected readonly statUsers = signal(0);
   protected readonly statDecks = signal(0);
   protected readonly topDecks = signal<IDeck[]>([]);
+  protected readonly selectedUser = signal<ISave | null>(null);
+  protected readonly userDecks = signal<IDeck[]>([]);
 
   ngOnInit(): void {
     this.loadUsers();
@@ -218,6 +242,24 @@ export class AdminComponent implements OnInit {
     if (!user.uid || !confirm(`User "${user.displayName ?? user.uid}" wirklich löschen?`)) return;
     this.backend.deleteSave(user.uid).subscribe({
       next: () => this.users.update((list) => list.filter((u) => u.uid !== user.uid)),
+      error: (err) => this.error.set(err?.message ?? 'Löschen fehlgeschlagen.'),
+    });
+  }
+
+  showUserDecks(user: ISave): void {
+    this.selectedUser.set(user);
+    this.userDecks.set([]);
+    if (!user.uid) return;
+    this.backend.getDecksByUser(user.uid).subscribe({
+      next: (decks) => this.userDecks.set(decks),
+      error: (err) => this.error.set(err?.message ?? 'Fehler beim Laden der Decks.'),
+    });
+  }
+
+  deleteUserDeck(deck: IDeck): void {
+    if (!deck.id || !confirm(`Deck "${deck.title}" wirklich löschen?`)) return;
+    this.backend.deleteDeck(deck.id).subscribe({
+      next: () => this.userDecks.update((list) => list.filter((d) => d.id !== deck.id)),
       error: (err) => this.error.set(err?.message ?? 'Löschen fehlgeschlagen.'),
     });
   }
