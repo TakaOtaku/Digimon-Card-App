@@ -58,7 +58,14 @@ type AdminTab = 'users' | 'decks' | 'analytics';
           </div>
         }
         @case ('decks') {
-          <div class="text-sm text-gray-400 mb-2">{{ decks().length }} decks (erste 100)</div>
+          <div class="mb-2 flex items-center gap-2">
+            <input #q type="text" placeholder="Titel/Suche…"
+              class="rounded border border-gray-700 bg-gray-800 px-2 py-1 text-sm"
+              (keyup.enter)="decksSearch.set(q.value); loadDecks(1)" />
+            <button type="button" (click)="decksSearch.set(q.value); loadDecks(1)"
+              class="rounded bg-gray-700 px-2 py-1 text-xs hover:bg-gray-600">Suchen</button>
+            <span class="ml-auto text-sm text-gray-400">{{ decksTotal() }} decks · Seite {{ decksPage() }}/{{ decksTotalPages() }}</span>
+          </div>
           <div class="overflow-x-auto rounded border border-gray-700">
             <table class="w-full text-left text-sm">
               <thead class="bg-gray-800 text-gray-300">
@@ -77,6 +84,12 @@ type AdminTab = 'users' | 'decks' | 'analytics';
                 }
               </tbody>
             </table>
+          </div>
+          <div class="mt-2 flex gap-2">
+            <button type="button" [disabled]="decksPage() <= 1" (click)="loadDecks(decksPage() - 1)"
+              class="rounded bg-gray-700 px-3 py-1 text-xs hover:bg-gray-600 disabled:opacity-40">Zurück</button>
+            <button type="button" [disabled]="decksPage() >= decksTotalPages()" (click)="loadDecks(decksPage() + 1)"
+              class="rounded bg-gray-700 px-3 py-1 text-xs hover:bg-gray-600 disabled:opacity-40">Weiter</button>
           </div>
         }
         @case ('analytics') {
@@ -104,6 +117,10 @@ export class AdminComponent implements OnInit {
   protected readonly error = signal<string | null>(null);
   protected readonly users = signal<ISave[]>([]);
   protected readonly decks = signal<IDeck[]>([]);
+  protected readonly decksPage = signal(1);
+  protected readonly decksTotalPages = signal(1);
+  protected readonly decksTotal = signal(0);
+  protected readonly decksSearch = signal('');
 
   ngOnInit(): void {
     this.loadUsers();
@@ -130,12 +147,16 @@ export class AdminComponent implements OnInit {
     });
   }
 
-  private loadDecks(): void {
+  loadDecks(page = 1): void {
     this.loading.set(true);
     this.error.set(null);
-    this.backend.getDecksPaginated({ limit: 100 }).subscribe({
+    const search = this.decksSearch().trim();
+    this.backend.getDecksPaginated({ page, limit: 50, search: search || undefined }).subscribe({
       next: (res) => {
         this.decks.set(res.data);
+        this.decksPage.set(res.pagination.currentPage);
+        this.decksTotalPages.set(res.pagination.totalPages);
+        this.decksTotal.set(res.pagination.totalDecks);
         this.loading.set(false);
       },
       error: (err) => {
