@@ -52095,10 +52095,10 @@
     "playCost": "3",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Unrestricted",
-      "english": "Unrestricted",
-      "japanese": "Unrestricted",
-      "korean": "Not released"
+      "chinese": "Restricted to 1",
+      "english": "Restricted to 1",
+      "japanese": "Restricted to 1",
+      "korean": "Restricted to 1"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -52151,10 +52151,10 @@
     "playCost": "3",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Unrestricted",
-      "english": "Unrestricted",
-      "japanese": "Unrestricted",
-      "korean": "Not released"
+      "chinese": "Restricted to 1",
+      "english": "Restricted to 1",
+      "japanese": "Restricted to 1",
+      "korean": "Restricted to 1"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -52207,10 +52207,10 @@
     "playCost": "3",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Unrestricted",
-      "english": "Unrestricted",
-      "japanese": "Unrestricted",
-      "korean": "Not released"
+      "chinese": "Restricted to 1",
+      "english": "Restricted to 1",
+      "japanese": "Restricted to 1",
+      "korean": "Restricted to 1"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -57420,10 +57420,10 @@
     "playCost": "-",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Unrestricted",
-      "english": "Unrestricted",
-      "japanese": "Unrestricted",
-      "korean": "Not released"
+      "chinese": "Banned",
+      "english": "Banned",
+      "japanese": "Banned",
+      "korean": "Banned"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -57470,10 +57470,10 @@
     "playCost": "-",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Unrestricted",
-      "english": "Unrestricted",
-      "japanese": "Unrestricted",
-      "korean": "Not released"
+      "chinese": "Banned",
+      "english": "Banned",
+      "japanese": "Banned",
+      "korean": "Banned"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -234419,10 +234419,10 @@
     "playCost": "2",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Unrestricted",
-      "english": "Unrestricted",
-      "japanese": "Unrestricted",
-      "korean": "Unrestricted"
+      "chinese": "Restricted to 1",
+      "english": "Restricted to 1",
+      "japanese": "Restricted to 1",
+      "korean": "Restricted to 1"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -234470,10 +234470,10 @@
     "playCost": "2",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Unrestricted",
-      "english": "Unrestricted",
-      "japanese": "Unrestricted",
-      "korean": "Unrestricted"
+      "chinese": "Restricted to 1",
+      "english": "Restricted to 1",
+      "japanese": "Restricted to 1",
+      "korean": "Restricted to 1"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -234521,10 +234521,10 @@
     "playCost": "2",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Unrestricted",
-      "english": "Unrestricted",
-      "japanese": "Unrestricted",
-      "korean": "Unrestricted"
+      "chinese": "Restricted to 1",
+      "english": "Restricted to 1",
+      "japanese": "Restricted to 1",
+      "korean": "Restricted to 1"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -234572,10 +234572,10 @@
     "playCost": "2",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Unrestricted",
-      "english": "Unrestricted",
-      "japanese": "Unrestricted",
-      "korean": "Unrestricted"
+      "chinese": "Restricted to 1",
+      "english": "Restricted to 1",
+      "japanese": "Restricted to 1",
+      "korean": "Restricted to 1"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -234623,10 +234623,10 @@
     "playCost": "2",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Unrestricted",
-      "english": "Unrestricted",
-      "japanese": "Unrestricted",
-      "korean": "Unrestricted"
+      "chinese": "Restricted to 1",
+      "english": "Restricted to 1",
+      "japanese": "Restricted to 1",
+      "korean": "Restricted to 1"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -304193,10 +304193,10 @@
     "playCost": "6",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Unrestricted",
-      "english": "Unrestricted",
-      "japanese": "Unrestricted",
-      "korean": "Unrestricted"
+      "chinese": "Restricted to 1",
+      "english": "Restricted to 1",
+      "japanese": "Restricted to 1",
+      "korean": "Restricted to 1"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -304255,10 +304255,10 @@
     "playCost": "6",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Unrestricted",
-      "english": "Unrestricted",
-      "japanese": "Unrestricted",
-      "korean": "Unrestricted"
+      "chinese": "Restricted to 1",
+      "english": "Restricted to 1",
+      "japanese": "Restricted to 1",
+      "korean": "Restricted to 1"
     },
     "rule": "-",
     "securityEffect": "-",
