@@ -21472,7 +21472,7 @@
       "english": "Blazing Memory Boost!",
       "japanese": "\u30d6\u30ec\u30a4\u30b8\u30f3\u30b0\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
       "korean": "-",
-      "simplifiedChinese": "\u70bd\u70c8\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "simplifiedChinese": "\u70bd\u70c8\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u71be\u71b1\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\uff01\uff01"
     },
     "notes": "\u25b9BOOSTER XROS ENCOUNTER [BT-10]",
@@ -21622,7 +21622,7 @@
       "english": "Impulse Memory Boost!",
       "japanese": "\u30a4\u30f3\u30d1\u30eb\u30b9\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
       "korean": "-",
-      "simplifiedChinese": "\u8109\u51b2\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "simplifiedChinese": "\u8109\u51b2\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u885d\u52d5\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\uff01\uff01"
     },
     "notes": "\u25b9BOOSTER XROS ENCOUNTER [BT-10]",
@@ -179879,7 +179879,7 @@
       "english": "Thomas H. Norstein",
       "japanese": "\u30c8\u30fc\u30de\n\u30fbH\n\u30fb\u30ce\u30eb\u30b7\u30e5\u30bf\u30a4\u30f3",
       "korean": "\ud1a0\ub9c8 H \ub178\ub974\uc288\ud0c0\uc778",
-      "simplifiedChinese": "\u6258\u9a6c \u00b7 H \u00b7 \u8bfa\u5c14\u4fee\u5766",
+      "simplifiedChinese": "\u6258\u9a6c\n\u30fbH\n\u30fb\u8bfa\u5c14\u4fee\u5766",
       "traditionalChinese": "\u6258\u99ac\n\u30fbH\n\u30fb\u8afe\u53f2\u4e01"
     },
     "notes": "\u25b9BOOSTER GREAT LEGEND [BT-04]",
@@ -179929,7 +179929,7 @@
       "english": "Thomas H. Norstein",
       "japanese": "\u30c8\u30fc\u30de\n\u30fbH\n\u30fb\u30ce\u30eb\u30b7\u30e5\u30bf\u30a4\u30f3",
       "korean": "\ud1a0\ub9c8 H \ub178\ub974\uc288\ud0c0\uc778",
-      "simplifiedChinese": "\u6258\u9a6c \u00b7 H \u00b7 \u8bfa\u5c14\u4fee\u5766",
+      "simplifiedChinese": "\u6258\u9a6c\n\u30fbH\n\u30fb\u8bfa\u5c14\u4fee\u5766",
       "traditionalChinese": "\u6258\u99ac\n\u30fbH\n\u30fb\u8afe\u53f2\u4e01"
     },
     "notes": "BT-04: Booster Great Legend",
@@ -199373,7 +199373,7 @@
       "english": "Reinforcing Memory Boost!",
       "japanese": "\u30ea\u30a4\u30f3\u30d5\u30a9\u30fc\u30b9\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8!!",
       "korean": "\ub9ac\uc778\ud3ec\uc2a4\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
-      "simplifiedChinese": "\u589e\u63f4\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "simplifiedChinese": "\u589e\u63f4\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u589e\u5f37\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
     },
     "notes": "\u25b9BOOSTER DOUBLE DIAMOND [BT-06]",
@@ -327126,8 +327126,8 @@
     "name": {
       "english": "Red Memory Boost!",
       "japanese": "\u30ec\u30c3\u30c9\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
-      "korean": "\ub808\ub4dc\u00b7\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
-      "simplifiedChinese": "\u7ea2\u8272\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "korean": "\ub808\ub4dc\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
+      "simplifiedChinese": "\u7ea2\u8272\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u7d05\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
     },
     "notes": "ST-7: Starter Deck Gallantmon / ST-8: Starter Deck UlforceVeedramon",
@@ -327178,8 +327178,8 @@
     "name": {
       "english": "Red Memory Boost!",
       "japanese": "\u30ec\u30c3\u30c9\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
-      "korean": "\ub808\ub4dc\u00b7\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
-      "simplifiedChinese": "\u7ea2\u8272\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "korean": "\ub808\ub4dc\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
+      "simplifiedChinese": "\u7ea2\u8272\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u7d05\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
     },
     "notes": "Memorial Collection 03",
@@ -327230,8 +327230,8 @@
     "name": {
       "english": "Red Memory Boost!",
       "japanese": "\u30ec\u30c3\u30c9\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
-      "korean": "\ub808\ub4dc\u00b7\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
-      "simplifiedChinese": "\u7ea2\u8272\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "korean": "\ub808\ub4dc\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
+      "simplifiedChinese": "\u7ea2\u8272\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u7d05\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
     },
     "notes": "RB-01: Resurgence Booster",
@@ -327282,8 +327282,8 @@
     "name": {
       "english": "Red Memory Boost!",
       "japanese": "\u30ec\u30c3\u30c9\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
-      "korean": "\ub808\ub4dc\u00b7\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
-      "simplifiedChinese": "\u7ea2\u8272\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "korean": "\ub808\ub4dc\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
+      "simplifiedChinese": "\u7ea2\u8272\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u7d05\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
     },
     "notes": "RB-01: Resurgence Booster",
@@ -327334,8 +327334,8 @@
     "name": {
       "english": "Red Memory Boost!",
       "japanese": "\u30ec\u30c3\u30c9\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
-      "korean": "\ub808\ub4dc\u00b7\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
-      "simplifiedChinese": "\u7ea2\u8272\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "korean": "\ub808\ub4dc\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
+      "simplifiedChinese": "\u7ea2\u8272\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u7d05\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
     },
     "notes": "PREMIUM CARD COLLECTION Memory Boost! Set",
@@ -327386,8 +327386,8 @@
     "name": {
       "english": "Blue Memory Boost!",
       "japanese": "\u30d6\u30eb\u30fc\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
-      "korean": "\ube14\ub8e8\u00b7\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
-      "simplifiedChinese": "\u84dd\u8272\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "korean": "\ube14\ub8e8\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
+      "simplifiedChinese": "\u84dd\u8272\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u85cd\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
     },
     "notes": "ST-7: Starter Deck Gallantmon / ST-8: Starter Deck UlforceVeedramon",
@@ -327438,8 +327438,8 @@
     "name": {
       "english": "Blue Memory Boost!",
       "japanese": "\u30d6\u30eb\u30fc\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
-      "korean": "\ube14\ub8e8\u00b7\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
-      "simplifiedChinese": "\u84dd\u8272\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "korean": "\ube14\ub8e8\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
+      "simplifiedChinese": "\u84dd\u8272\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u85cd\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
     },
     "notes": "Memorial Collection 03",
@@ -327490,8 +327490,8 @@
     "name": {
       "english": "Blue Memory Boost!",
       "japanese": "\u30d6\u30eb\u30fc\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
-      "korean": "\ube14\ub8e8\u00b7\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
-      "simplifiedChinese": "\u84dd\u8272\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "korean": "\ube14\ub8e8\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
+      "simplifiedChinese": "\u84dd\u8272\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u85cd\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
     },
     "notes": "RB-01: Resurgence Booster",
@@ -327542,8 +327542,8 @@
     "name": {
       "english": "Blue Memory Boost!",
       "japanese": "\u30d6\u30eb\u30fc\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
-      "korean": "\ube14\ub8e8\u00b7\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
-      "simplifiedChinese": "\u84dd\u8272\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "korean": "\ube14\ub8e8\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
+      "simplifiedChinese": "\u84dd\u8272\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u85cd\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
     },
     "notes": "RB-01: Resurgence Booster",
@@ -327594,8 +327594,8 @@
     "name": {
       "english": "Blue Memory Boost!",
       "japanese": "\u30d6\u30eb\u30fc\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
-      "korean": "\ube14\ub8e8\u00b7\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
-      "simplifiedChinese": "\u84dd\u8272\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "korean": "\ube14\ub8e8\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
+      "simplifiedChinese": "\u84dd\u8272\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u85cd\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
     },
     "notes": "Demo Deck: Imperialdramon",
@@ -327646,8 +327646,8 @@
     "name": {
       "english": "Blue Memory Boost!",
       "japanese": "\u30d6\u30eb\u30fc\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
-      "korean": "\ube14\ub8e8\u00b7\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
-      "simplifiedChinese": "\u84dd\u8272\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "korean": "\ube14\ub8e8\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
+      "simplifiedChinese": "\u84dd\u8272\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u85cd\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
     },
     "notes": "PREMIUM CARD COLLECTION Memory Boost! Set",
@@ -327699,8 +327699,8 @@
     "name": {
       "english": "Yellow Memory Boost!",
       "japanese": "\u30a4\u30a8\u30ed\u30fc\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
-      "korean": "\uc610\ub85c\u00b7\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
-      "simplifiedChinese": "\u9ec4\u8272\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "korean": "\uc610\ub85c\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
+      "simplifiedChinese": "\u9ec4\u8272\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u9ec3\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
     },
     "notes": "ST-7: Starter Deck Gallantmon / ST-8: Starter Deck UlforceVeedramon",
@@ -327752,8 +327752,8 @@
     "name": {
       "english": "Yellow Memory Boost!",
       "japanese": "\u30a4\u30a8\u30ed\u30fc\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
-      "korean": "\uc610\ub85c\u00b7\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
-      "simplifiedChinese": "\u9ec4\u8272\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "korean": "\uc610\ub85c\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
+      "simplifiedChinese": "\u9ec4\u8272\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u9ec3\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
     },
     "notes": "Memorial Collection 03",
@@ -327805,8 +327805,8 @@
     "name": {
       "english": "Yellow Memory Boost!",
       "japanese": "\u30a4\u30a8\u30ed\u30fc\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
-      "korean": "\uc610\ub85c\u00b7\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
-      "simplifiedChinese": "\u9ec4\u8272\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "korean": "\uc610\ub85c\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
+      "simplifiedChinese": "\u9ec4\u8272\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u9ec3\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
     },
     "notes": "RB-01: Resurgence Booster",
@@ -327858,8 +327858,8 @@
     "name": {
       "english": "Yellow Memory Boost!",
       "japanese": "\u30a4\u30a8\u30ed\u30fc\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
-      "korean": "\uc610\ub85c\u00b7\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
-      "simplifiedChinese": "\u9ec4\u8272\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "korean": "\uc610\ub85c\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
+      "simplifiedChinese": "\u9ec4\u8272\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u9ec3\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
     },
     "notes": "RB-01: Resurgence Booster",
@@ -327911,8 +327911,8 @@
     "name": {
       "english": "Yellow Memory Boost!",
       "japanese": "\u30a4\u30a8\u30ed\u30fc\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
-      "korean": "\uc610\ub85c\u00b7\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
-      "simplifiedChinese": "\u9ec4\u8272\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "korean": "\uc610\ub85c\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
+      "simplifiedChinese": "\u9ec4\u8272\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u9ec3\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
     },
     "notes": "ST-19: Starter Deck Fable Waltz",
@@ -327964,8 +327964,8 @@
     "name": {
       "english": "Yellow Memory Boost!",
       "japanese": "\u30a4\u30a8\u30ed\u30fc\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
-      "korean": "\uc610\ub85c\u00b7\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
-      "simplifiedChinese": "\u9ec4\u8272\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "korean": "\uc610\ub85c\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
+      "simplifiedChinese": "\u9ec4\u8272\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u9ec3\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
     },
     "notes": "PREMIUM CARD COLLECTION Memory Boost! Set",
@@ -328017,8 +328017,8 @@
     "name": {
       "english": "Green Memory Boost!",
       "japanese": "\u30b0\u30ea\u30fc\u30f3\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
-      "korean": "\uadf8\ub9b0\u00b7\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
-      "simplifiedChinese": "\u7eff\u8272\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "korean": "\uadf8\ub9b0\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
+      "simplifiedChinese": "\u7eff\u8272\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u7da0\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
     },
     "notes": "ST-7: Starter Deck Gallantmon / ST-8: Starter Deck UlforceVeedramon",
@@ -328070,8 +328070,8 @@
     "name": {
       "english": "Green Memory Boost!",
       "japanese": "\u30b0\u30ea\u30fc\u30f3\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
-      "korean": "\uadf8\ub9b0\u00b7\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
-      "simplifiedChinese": "\u7eff\u8272\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "korean": "\uadf8\ub9b0\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
+      "simplifiedChinese": "\u7eff\u8272\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u7da0\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
     },
     "notes": "Memorial Collection 03",
@@ -328123,8 +328123,8 @@
     "name": {
       "english": "Green Memory Boost!",
       "japanese": "\u30b0\u30ea\u30fc\u30f3\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
-      "korean": "\uadf8\ub9b0\u00b7\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
-      "simplifiedChinese": "\u7eff\u8272\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "korean": "\uadf8\ub9b0\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
+      "simplifiedChinese": "\u7eff\u8272\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u7da0\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
     },
     "notes": "RB-01: Resurgence Booster",
@@ -328176,8 +328176,8 @@
     "name": {
       "english": "Green Memory Boost!",
       "japanese": "\u30b0\u30ea\u30fc\u30f3\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
-      "korean": "\uadf8\ub9b0\u00b7\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
-      "simplifiedChinese": "\u7eff\u8272\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "korean": "\uadf8\ub9b0\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
+      "simplifiedChinese": "\u7eff\u8272\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u7da0\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
     },
     "notes": "RB-01: Resurgence Booster",
@@ -328229,8 +328229,8 @@
     "name": {
       "english": "Green Memory Boost!",
       "japanese": "\u30b0\u30ea\u30fc\u30f3\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
-      "korean": "\uadf8\ub9b0\u00b7\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
-      "simplifiedChinese": "\u7eff\u8272\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "korean": "\uadf8\ub9b0\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
+      "simplifiedChinese": "\u7eff\u8272\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u7da0\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
     },
     "notes": "ST-18: Starter Deck Guardian Vortex",
@@ -328282,8 +328282,8 @@
     "name": {
       "english": "Green Memory Boost!",
       "japanese": "\u30b0\u30ea\u30fc\u30f3\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
-      "korean": "\uadf8\ub9b0\u00b7\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
-      "simplifiedChinese": "\u7eff\u8272\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "korean": "\uadf8\ub9b0\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
+      "simplifiedChinese": "\u7eff\u8272\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u7da0\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
     },
     "notes": "PREMIUM CARD COLLECTION Memory Boost! Set",
@@ -328334,8 +328334,8 @@
     "name": {
       "english": "Black Memory Boost!",
       "japanese": "\u30d6\u30e9\u30c3\u30af\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
-      "korean": "\ube14\ub799\u00b7\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
-      "simplifiedChinese": "\u9ed1\u8272\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "korean": "\ube14\ub799\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
+      "simplifiedChinese": "\u9ed1\u8272\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u9ed1\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
     },
     "notes": "ST-7: Starter Deck Gallantmon / ST-8: Starter Deck UlforceVeedramon",
@@ -328386,8 +328386,8 @@
     "name": {
       "english": "Black Memory Boost!",
       "japanese": "\u30d6\u30e9\u30c3\u30af\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
-      "korean": "\ube14\ub799\u00b7\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
-      "simplifiedChinese": "\u9ed1\u8272\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "korean": "\ube14\ub799\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
+      "simplifiedChinese": "\u9ed1\u8272\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u9ed1\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
     },
     "notes": "Memorial Collection 03",
@@ -328438,8 +328438,8 @@
     "name": {
       "english": "Black Memory Boost!",
       "japanese": "\u30d6\u30e9\u30c3\u30af\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
-      "korean": "\ube14\ub799\u00b7\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
-      "simplifiedChinese": "\u9ed1\u8272\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "korean": "\ube14\ub799\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
+      "simplifiedChinese": "\u9ed1\u8272\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u9ed1\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
     },
     "notes": "RB-01: Resurgence Booster",
@@ -328490,8 +328490,8 @@
     "name": {
       "english": "Black Memory Boost!",
       "japanese": "\u30d6\u30e9\u30c3\u30af\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
-      "korean": "\ube14\ub799\u00b7\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
-      "simplifiedChinese": "\u9ed1\u8272\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "korean": "\ube14\ub799\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
+      "simplifiedChinese": "\u9ed1\u8272\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u9ed1\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
     },
     "notes": "RB-01: Resurgence Booster",
@@ -328542,8 +328542,8 @@
     "name": {
       "english": "Black Memory Boost!",
       "japanese": "\u30d6\u30e9\u30c3\u30af\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
-      "korean": "\ube14\ub799\u00b7\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
-      "simplifiedChinese": "\u9ed1\u8272\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "korean": "\ube14\ub799\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
+      "simplifiedChinese": "\u9ed1\u8272\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u9ed1\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
     },
     "notes": "PREMIUM CARD COLLECTION Memory Boost! Set",
@@ -328594,8 +328594,8 @@
     "name": {
       "english": "Purple Memory Boost!",
       "japanese": "\u30f4\u30a1\u30a4\u30aa\u30ec\u30c3\u30c8\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
-      "korean": "\ud37c\ud50c\u00b7\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
-      "simplifiedChinese": "\u7d2b\u8272\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "korean": "\ud37c\ud50c\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
+      "simplifiedChinese": "\u7d2b\u8272\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u7d2b\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
     },
     "notes": "ST-7: Starter Deck Gallantmon / ST-8: Starter Deck UlforceVeedramon",
@@ -328646,8 +328646,8 @@
     "name": {
       "english": "Purple Memory Boost!",
       "japanese": "\u30f4\u30a1\u30a4\u30aa\u30ec\u30c3\u30c8\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
-      "korean": "\ud37c\ud50c\u00b7\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
-      "simplifiedChinese": "\u7d2b\u8272\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "korean": "\ud37c\ud50c\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
+      "simplifiedChinese": "\u7d2b\u8272\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u7d2b\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
     },
     "notes": "Memorial Collection 03",
@@ -328698,8 +328698,8 @@
     "name": {
       "english": "Purple Memory Boost!",
       "japanese": "\u30f4\u30a1\u30a4\u30aa\u30ec\u30c3\u30c8\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
-      "korean": "\ud37c\ud50c\u00b7\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
-      "simplifiedChinese": "\u7d2b\u8272\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "korean": "\ud37c\ud50c\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
+      "simplifiedChinese": "\u7d2b\u8272\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u7d2b\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
     },
     "notes": "RB-01: Resurgence Booster",
@@ -328750,8 +328750,8 @@
     "name": {
       "english": "Purple Memory Boost!",
       "japanese": "\u30f4\u30a1\u30a4\u30aa\u30ec\u30c3\u30c8\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
-      "korean": "\ud37c\ud50c\u00b7\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
-      "simplifiedChinese": "\u7d2b\u8272\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "korean": "\ud37c\ud50c\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
+      "simplifiedChinese": "\u7d2b\u8272\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u7d2b\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
     },
     "notes": "RB-01: Resurgence Booster",
@@ -328802,8 +328802,8 @@
     "name": {
       "english": "Purple Memory Boost!",
       "japanese": "\u30f4\u30a1\u30a4\u30aa\u30ec\u30c3\u30c8\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
-      "korean": "\ud37c\ud50c\u00b7\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
-      "simplifiedChinese": "\u7d2b\u8272\u00b7\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "korean": "\ud37c\ud50c\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
+      "simplifiedChinese": "\u7d2b\u8272\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
       "traditionalChinese": "\u7d2b\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
     },
     "notes": "PREMIUM CARD COLLECTION Memory Boost! Set",
