@@ -61,7 +61,11 @@ export class AdvancedSearchService {
   private globalTextSearch(cards: DigimonCard[], searchText: string): DigimonCard[] {
     if (!searchText.trim()) return cards;
 
-    const searchTerm = searchText.toLowerCase();
+    let searchTerm = searchText.toLowerCase();
+    // Remove surrounding parentheses if present
+    if (searchTerm.startsWith('(') && searchTerm.endsWith(')')) {
+      searchTerm = searchTerm.substring(1, searchTerm.length - 1).trim();
+    }
 
     return cards.filter(card => {
       // Define all searchable text fields on the card
@@ -330,6 +334,23 @@ export class AdvancedSearchService {
     // Remove surrounding parentheses if present
     if (condition.startsWith('(') && condition.endsWith(')')) {
       condition = condition.substring(1, condition.length - 1).trim();
+    }
+
+    // Check if this condition contains logical operators (OR/AND)
+    // Split by OR first (lower precedence)
+    const orParts = this.splitByLogicalOperator(condition, 'OR');
+    if (orParts.length > 1) {
+      return {
+        $or: orParts.map(part => this.parseCondition(part))
+      };
+    }
+
+    // Split by AND
+    const andParts = this.splitByLogicalOperator(condition, 'AND');
+    if (andParts.length > 1) {
+      return {
+        $and: andParts.map(part => this.parseCondition(part))
+      };
     }
 
     // Define operators in order of precedence (longest first to avoid partial matches)
