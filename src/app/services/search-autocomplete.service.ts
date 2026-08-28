@@ -46,106 +46,96 @@ export class SearchAutocompleteService {
 
   private cardTypes = ['Digimon', 'Option', 'Tamer', 'Digi-Egg'];
   private colors = ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Black', 'White'];
-  private rarities = ['C', 'UC', 'R', 'SR', 'SEC'];
+  private rarities = ['C', 'U', 'R', 'SR', 'UR', 'SEC', 'P'];
   private forms = ['Rookie', 'Champion', 'Ultimate', 'Mega'];
   private attributes = ['Vaccine', 'Virus', 'Data', 'Free'];
 
   getSuggestions(query: string, cursorPosition: number): SearchSuggestion[] {
-    if (!query) {
-      return this.getFieldSuggestions('');
+    const raw = (query ?? '').substring(0, cursorPosition);
+
+    // The partial is the trailing run of characters the user is currently typing
+    // (empty if the text ends with a space or parenthesis).
+    const partialMatch = raw.match(/[^\s()]*$/);
+    const partial = partialMatch ? partialMatch[0] : '';
+    const completed = raw.substring(0, raw.length - partial.length);
+
+    // Handle an operator glued to a field with no spaces, e.g. "color==re"
+    const glued = partial.match(/^(.*?)(==|!=|>=|<=|>|<)(.*)$/);
+    if (glued) {
+      const field = this.resolveField(glued[1]);
+      return this.getValueSuggestions(glued[3], field);
     }
 
-    // Find the current token being typed
-    const token = this.getCurrentToken(query, cursorPosition);
-    if (!token) {
-      return [];
+    const { expected, field } = this.analyzeContext(completed);
+
+    switch (expected) {
+      case 'operator':
+        return this.getOperatorSuggestions(partial);
+      case 'value':
+        return this.getValueSuggestions(partial, field);
+      case 'logical':
+        return this.getLogicalOperatorSuggestions(partial);
+      case 'field':
+      default:
+        return this.getFieldSuggestions(partial);
     }
-
-    const { text, type } = token;
-
-    // Suggest based on what the user is typing
-    if (type === 'field') {
-      return this.getFieldSuggestions(text);
-    } else if (type === 'operator') {
-      return this.getOperatorSuggestions(text);
-    } else if (type === 'value') {
-      // Try to get the field being used to suggest appropriate values
-      const field = this.getFieldBeforeOperator(query, cursorPosition);
-      return this.getValueSuggestions(text, field);
-    } else if (type === 'logical') {
-      return this.getLogicalOperatorSuggestions(text);
-    }
-
-    return [];
   }
 
-  private getCurrentToken(query: string, cursorPosition: number): { text: string; type: string } | null {
-    const beforeCursor = query.substring(0, cursorPosition).trimEnd();
-    const lastChar = beforeCursor[beforeCursor.length - 1];
+  /**
+   * Walk the already-completed part of the query and determine what kind of
+   * token should come next, plus the field the current clause refers to.
+   */
+  private analyzeContext(completed: string): { expected: 'field' | 'operator' | 'value' | 'logical'; field: string | null } {
+    const tokens = this.tokenize(completed);
+    let state: 'field' | 'operator' | 'value' | 'logical' = 'field';
+    let field: string | null = null;
 
-    // Check if we're after a space (likely starting a new token)
-    if (lastChar === ' ' || lastChar === '(' || lastChar === ')') {
-      // Suggest logical operators or fields
-      const remaining = query.substring(cursorPosition).trim();
-      if (remaining.match(/^AND|OR|and|or/i)) {
-        return null; // Already typed
+    for (const token of tokens) {
+      if (token === '(') {
+        state = 'field';
+        continue;
       }
-      return { text: '', type: 'logical' };
-    }
-
-    // Get the current word being typed
-    const words = beforeCursor.split(/\s+/);
-    const currentWord = words[words.length - 1];
-
-    if (!currentWord) {
-      return null;
-    }
-
-    // Check if we're typing an operator (contains special chars)
-    if (currentWord.includes('==') || currentWord.includes('!=') || currentWord.includes('>=') || 
-        currentWord.includes('<=') || currentWord.includes('>') || currentWord.includes('<')) {
-      // Find the part after the operator
-      const opMatch = currentWord.match(/[=><!]+(.*)$/);
-      if (opMatch) {
-        return { text: opMatch[1], type: 'value' };
-      }
-      return null;
-    }
-
-    // Check if this looks like a field name
-    if (!currentWord.includes('(') && !currentWord.includes(')')) {
-      // Check if any known operators appear in this word
-      const hasOperator = this.operators.some(o => currentWord.includes(o.op));
-      if (hasOperator) {
-        const opMatch = currentWord.match(/([=><!]+|contains|starts_with|ends_with)(.*)$/i);
-        if (opMatch) {
-          return { text: opMatch[2], type: 'value' };
-        }
+      if (token === ')') {
+        state = 'logical';
+        continue;
       }
 
-      // Check for logical operators
-      if (currentWord.toUpperCase() === 'AND' || currentWord.toUpperCase() === 'OR' ||
-          ['AND', 'OR'].some(op => op.startsWith(currentWord.toUpperCase()))) {
-        return { text: currentWord, type: 'logical' };
+      const upper = token.toUpperCase();
+      if (upper === 'AND' || upper === 'OR') {
+        state = 'field';
+        continue;
       }
 
-      // Likely a field name
-      return { text: currentWord, type: 'field' };
+      if (state === 'field') {
+        const resolved = this.resolveField(token);
+        if (resolved) field = resolved;
+        state = 'operator';
+      } else if (state === 'operator') {
+        state = 'value';
+      } else if (state === 'value') {
+        state = 'logical';
+      } else {
+        // Stray token after a completed clause; assume a new field begins
+        const resolved = this.resolveField(token);
+        field = resolved;
+        state = 'operator';
+      }
     }
 
-    return null;
+    return { expected: state, field };
   }
 
-  private getFieldBeforeOperator(query: string, cursorPosition: number): string | null {
-    const beforeCursor = query.substring(0, cursorPosition);
-    const words = beforeCursor.split(/\s+|==|!=|>=|<=|>|<|contains|starts_with|ends_with/i);
-    
-    if (words.length > 0) {
-      const lastWord = words[words.length - 1].trim();
-      const field = this.fieldNames.find(f => f.name.toLowerCase() === lastWord.toLowerCase());
-      return field?.name || null;
-    }
-    return null;
+  private tokenize(text: string): string[] {
+    return text
+      .replace(/([()])/g, ' $1 ')
+      .replace(/(==|!=|>=|<=|>|<)/g, ' $1 ')
+      .split(/\s+/)
+      .filter(Boolean);
+  }
+
+  private resolveField(token: string): string | null {
+    const field = this.fieldNames.find(f => f.name.toLowerCase() === token.trim().toLowerCase());
+    return field ? field.name : null;
   }
 
   private getFieldSuggestions(partial: string): SearchSuggestion[] {

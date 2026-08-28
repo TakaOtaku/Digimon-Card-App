@@ -1,15 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, DestroyRef, effect, EventEmitter, inject, OnInit, Output, signal, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, DestroyRef, effect, ElementRef, EventEmitter, inject, OnInit, Output, signal, untracked, ViewChild } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { TooltipModule } from 'primeng/tooltip';
-import { IconFieldModule } from 'primeng/iconfield';
-import { InputIconModule } from 'primeng/inputicon';
-import { AutoCompleteModule, AutoComplete } from 'primeng/autocomplete';
-import { Subject, debounceTime, distinctUntilChanged } from 'rxjs';
+import { Subject, debounceTime, distinctUntilChanged, map } from 'rxjs';
 import { FilterStore } from '@store';
 import { SearchAutocompleteService, SearchSuggestion } from '@services';
 
@@ -18,35 +15,43 @@ import { SearchAutocompleteService, SearchSuggestion } from '@services';
   template: `
     <div class="advanced-search-container">
       <div class="search-input-container">
-        <p-autoComplete
-          #searchAutocomplete
-          [(ngModel)]="searchQuery"
-          [suggestions]="suggestions()"
-          (onSelect)="onSuggestionSelected($event)"
-          (completeMethod)="onSearchChange($event)"
-          (ngModelChange)="onQueryChange($event)"
-          (keydown.enter)="onEnter()"
-          [showEmptyMessage]="false"
-          [minLength]="0"
-          [forceSelection]="false"
-          class="w-full"
-          styleClass="w-full"
-          field="label"
-          placeholder="Search cards... (e.g., Agumon, or cardType == Digimon AND color == Red)"
-          aria-label="Search cards">
-          
-          <ng-template let-item pTemplate="item">
-            <div class="flex items-center justify-between p-2">
-              <div class="flex flex-col">
-                <span class="font-semibold">{{ item.label }}</span>
-                <span class="text-xs text-gray-400" *ngIf="item.description">{{ item.description }}</span>
-              </div>
-              <span class="text-xs px-2 py-1 rounded" [ngClass]="getCategoryClass(item.category)">
-                {{ item.category }}
-              </span>
-            </div>
-          </ng-template>
-        </p-autoComplete>
+        <div class="search-field">
+          <i class="pi pi-search search-field-icon"></i>
+          <input
+            #searchInput
+            type="text"
+            pInputText
+            autocomplete="off"
+            class="w-full search-field-input"
+            (input)="onInput($event)"
+            (keydown)="onKeyDown($event)"
+            (focus)="onFocus()"
+            (blur)="onBlur()"
+            placeholder="Search cards... (e.g., Agumon, or cardType == Digimon AND color == Red)"
+            aria-label="Search cards" />
+
+          @if (showSuggestions() && suggestions().length > 0) {
+            <ul class="suggestions-panel" role="listbox">
+              @for (item of suggestions(); track item.value; let i = $index) {
+                <li
+                  role="option"
+                  [attr.aria-selected]="i === activeIndex()"
+                  class="suggestion-item"
+                  [class.active]="i === activeIndex()"
+                  (mousedown)="selectSuggestion(item, $event)"
+                  (mouseenter)="activeIndex.set(i)">
+                  <div class="flex flex-col">
+                    <span class="font-semibold">{{ item.label }}</span>
+                    <span class="text-xs text-gray-400" *ngIf="item.description">{{ item.description }}</span>
+                  </div>
+                  <span class="text-xs px-2 py-1 rounded category-badge" [ngClass]="getCategoryClass(item.category)">
+                    {{ item.category }}
+                  </span>
+                </li>
+              }
+            </ul>
+          }
+        </div>
 
         <button
           pButton
@@ -137,6 +142,65 @@ import { SearchAutocompleteService, SearchSuggestion } from '@services';
       width: 100%;
     }
 
+    /* The input plus its floating suggestion panel */
+    .search-field {
+      position: relative;
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    .search-field-icon {
+      position: absolute;
+      left: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-color-secondary);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .search-field-input {
+      width: 100%;
+      padding-left: 2.25rem;
+    }
+
+    .suggestions-panel {
+      position: absolute;
+      top: calc(100% + 4px);
+      left: 0;
+      right: 0;
+      z-index: 1100;
+      margin: 0;
+      padding: 0.25rem;
+      list-style: none;
+      max-height: 320px;
+      overflow-y: auto;
+      background: var(--surface-overlay, #1f2937);
+      border: 1px solid var(--surface-border, #374151);
+      border-radius: 6px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    }
+
+    .suggestion-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+      cursor: pointer;
+      color: var(--text-color, #e5e7eb);
+    }
+
+    .suggestion-item:hover,
+    .suggestion-item.active {
+      background: var(--surface-hover, #374151);
+    }
+
+    .category-badge {
+      white-space: nowrap;
+    }
+
     .cursor-pointer {
       cursor: pointer;
       color: var(--text-color-secondary);
@@ -181,15 +245,12 @@ import { SearchAutocompleteService, SearchSuggestion } from '@services';
     InputTextModule,
     ButtonModule,
     DialogModule,
-    TooltipModule,
-    IconFieldModule,
-    InputIconModule,
-    AutoCompleteModule
+    TooltipModule
   ]
 })
-export class AdvancedSearchComponent implements OnInit {
+export class AdvancedSearchComponent implements OnInit, AfterViewInit {
   @Output() searchChange = new EventEmitter<string>();
-  @ViewChild('searchAutocomplete') autocomplete!: AutoComplete;
+  @ViewChild('searchInput') searchInput!: ElementRef<HTMLInputElement>;
 
   private filterStore = inject(FilterStore);
   private destroyRef = inject(DestroyRef);
@@ -199,63 +260,134 @@ export class AdvancedSearchComponent implements OnInit {
   searchQuery = signal<string>('');
   isSearching = signal(false);
   suggestions = signal<SearchSuggestion[]>([]);
+  showSuggestions = signal(false);
+  activeIndex = signal(-1);
   showHelp = false;
+
+  // Tracks the last query we emitted so store echoes don't clobber local edits.
+  private lastEmitted = '';
 
   // Sync input with store (for external updates like URL params or sidebar reset)
   private syncEffect = effect(() => {
-    const storeValue = this.filterStore.advancedSearch();
-    if (storeValue === null || storeValue === '') {
-      this.searchQuery.set('');
-    } else if (storeValue !== this.searchQuery()) {
-      this.searchQuery.set(storeValue);
+    const storeValue = this.filterStore.advancedSearch() ?? '';
+    // Ignore echoes of our own emissions.
+    if (storeValue.trim() === this.lastEmitted) {
+      return;
+    }
+    const current = untracked(() => this.searchQuery());
+    if (storeValue.trim() === current.trim()) {
+      return;
+    }
+    this.searchQuery.set(storeValue);
+    const el = this.searchInput?.nativeElement;
+    if (el && el.value !== storeValue) {
+      el.value = storeValue;
     }
   });
 
   ngOnInit(): void {
     this.searchSubject.pipe(
       debounceTime(300),
+      map(value => (value ?? '').trim()),
       distinctUntilChanged(),
       takeUntilDestroyed(this.destroyRef),
     ).subscribe(query => {
       this.isSearching.set(false);
+      this.lastEmitted = query;
       this.searchChange.emit(query);
     });
   }
 
-  onQueryChange(query: string) {
-    this.searchQuery.set(query);
+  ngAfterViewInit(): void {
+    const el = this.searchInput?.nativeElement;
+    if (el && this.searchQuery()) {
+      el.value = this.searchQuery();
+    }
+  }
+
+  onInput(event: Event) {
+    const value = (event.target as HTMLInputElement).value ?? '';
+    this.searchQuery.set(value);
+    this.updateSuggestions(value);
+    this.showSuggestions.set(true);
     this.isSearching.set(true);
-    this.searchSubject.next(query.trim());
+    this.searchSubject.next(value);
   }
 
-  onSearchChange(event: any) {
-    const query = event.query || '';
-    // Get autocomplete suggestions based on current cursor position
-    // For simplicity, we'll provide suggestions for the last word being typed
-    const suggestions = this.autocompleteService.getSuggestions(query, query.length);
-    this.suggestions.set(suggestions);
+  onFocus() {
+    this.updateSuggestions(this.searchQuery());
+    this.showSuggestions.set(true);
   }
 
-  onSuggestionSelected(event: any) {
-    const suggestion = event as SearchSuggestion;
-    if (!suggestion || !suggestion.value) {
+  onBlur() {
+    // Delay so a suggestion click (mousedown) can register before closing.
+    setTimeout(() => this.showSuggestions.set(false), 150);
+  }
+
+  onKeyDown(event: KeyboardEvent) {
+    const items = this.suggestions();
+    const open = this.showSuggestions() && items.length > 0;
+
+    if (event.key === 'ArrowDown' && open) {
+      event.preventDefault();
+      this.activeIndex.set((this.activeIndex() + 1) % items.length);
+      return;
+    }
+    if (event.key === 'ArrowUp' && open) {
+      event.preventDefault();
+      this.activeIndex.set((this.activeIndex() - 1 + items.length) % items.length);
+      return;
+    }
+    if (event.key === 'Escape') {
+      this.showSuggestions.set(false);
+      return;
+    }
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      if (open && this.activeIndex() >= 0) {
+        this.selectSuggestion(items[this.activeIndex()], event);
+      } else {
+        this.onEnter();
+      }
+    }
+  }
+
+  selectSuggestion(item: SearchSuggestion, event?: Event) {
+    event?.preventDefault();
+    if (!item || !item.value) {
       return;
     }
 
-    const currentText = this.searchQuery();
-    const cursorPosition = currentText.length;
-    
-    // Find the start of the current token
-    let tokenStart = cursorPosition - 1;
-    while (tokenStart >= 0 && currentText[tokenStart] !== ' ' && currentText[tokenStart] !== '(' && currentText[tokenStart] !== ')') {
+    const base = this.searchQuery();
+
+    // Replace only the token currently being typed, keeping everything before it.
+    let tokenStart = base.length;
+    while (tokenStart > 0 && !/[\s()]/.test(base[tokenStart - 1])) {
       tokenStart--;
     }
-    tokenStart++;
 
-    // Replace the current token with the suggestion
-    const newText = currentText.substring(0, tokenStart) + suggestion.value + ' ';
+    const newText = base.substring(0, tokenStart) + item.value + ' ';
     this.searchQuery.set(newText);
-    this.suggestions.set([]);
+
+    const el = this.searchInput?.nativeElement;
+    if (el) {
+      el.value = newText;
+      el.focus();
+      el.setSelectionRange(newText.length, newText.length);
+    }
+
+    // Immediately offer suggestions for the next token in the query.
+    this.updateSuggestions(newText);
+    this.showSuggestions.set(true);
+
+    this.isSearching.set(true);
+    this.searchSubject.next(newText);
+  }
+
+  private updateSuggestions(query: string) {
+    const value = query ?? '';
+    this.suggestions.set(this.autocompleteService.getSuggestions(value, value.length));
+    this.activeIndex.set(-1);
   }
 
   getCategoryClass(category: string): string {
@@ -277,14 +409,21 @@ export class AdvancedSearchComponent implements OnInit {
     // Immediate search on Enter, bypass debounce
     const query = this.searchQuery().trim();
     this.isSearching.set(false);
+    this.lastEmitted = query;
     this.searchChange.emit(query);
-    this.suggestions.set([]);
+    this.showSuggestions.set(false);
   }
 
   onClear() {
     this.searchQuery.set('');
+    const el = this.searchInput?.nativeElement;
+    if (el) {
+      el.value = '';
+    }
     this.isSearching.set(false);
+    this.lastEmitted = '';
     this.searchChange.emit('');
     this.suggestions.set([]);
+    this.showSuggestions.set(false);
   }
 }
