@@ -4,6 +4,7 @@ import { Database, ref, set, onValue } from '@angular/fire/database';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ADMINS, emptyDeck, TIERLIST } from '@models';
+import { environment } from '../../../../environments/environment';
 import { MongoBackendService } from '@services';
 import { DigimonCardStore, SaveStore, WebsiteStore } from '@store';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
@@ -166,22 +167,28 @@ export class TierlistComponent {
     const tierlistRef = ref(this.db, 'tierlist');
     onValue(tierlistRef, (snapshot) => {
       const data = snapshot.val();
+      console.log('Firebase tierlist data:', data);
+      
       // Only update if data is valid and non-empty
       if (data) {
         if (Array.isArray(data)) {
           // If it's an array with tiers
-          if (data[0] && Array.isArray(data[0]) && data[0].length > 0) {
+          if (data.length > 0 && data[0] && Array.isArray(data[0]) && data[0].length > 0) {
             this.tierlist = data;
+            console.log('Tierlist updated from Firebase array');
             this.changeDetectorRef.detectChanges();
           }
         } else if (data.tierlist && Array.isArray(data.tierlist)) {
           // If it's an object with tierlist property
           if (data.tierlist.length > 0 && data.tierlist[0].length > 0) {
             this.tierlist = data.tierlist;
+            console.log('Tierlist updated from Firebase object');
             this.changeDetectorRef.detectChanges();
           }
         }
       }
+    }, (error) => {
+      console.error('Error loading tierlist from Firebase:', error);
     });
   }
 
@@ -287,18 +294,24 @@ export class TierlistComponent {
     if (!imageUrl) {
       return 'assets/images/digimon-card-back.webp';
     }
-    
+
     // If it's already a full CDN URL, return as is
     if (imageUrl.startsWith('http://') || imageUrl.startsWith('https://')) {
       return imageUrl;
     }
-    
-    // If it's a relative path like 'cards/BT1-001.webp', prepend CDN URL
-    if (imageUrl.includes('/')) {
-      return 'https://web-garage.takaotaku.de/' + imageUrl.replace(/^\//, '');
+
+    // Bundled card images ship as 'assets/images/cards/BT1-001.webp' -> rewrite to CDN base
+    const cardImagePrefix = 'assets/images/cards/';
+    if (imageUrl.startsWith(cardImagePrefix)) {
+      return environment.cardImageBaseUrl + imageUrl.slice(cardImagePrefix.length);
     }
-    
-    // For card IDs like 'BT1-001', construct the CDN path
-    return 'https://web-garage.takaotaku.de/cards/' + imageUrl + '.webp';
+
+    // Local assets (placeholders, card back) stay as-is
+    if (imageUrl.startsWith('assets/')) {
+      return imageUrl;
+    }
+
+    // For bare card IDs like 'BT1-001', construct the CDN path
+    return environment.cardImageBaseUrl + imageUrl + '.webp';
   }
 }

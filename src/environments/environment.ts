@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  apiBaseUrl: 'http://localhost:3001/api/',
+  apiBaseUrl: 'https://digimoncardapp.backend.takaotaku.de/api/',
   legacyApiBaseUrl: 'https://backend.digimoncard.app/api/',
   appUrl: 'http://localhost:3000',
   cardImageBaseUrl: 'https://web-garage.takaotaku.de/',
