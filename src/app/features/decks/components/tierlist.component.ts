@@ -78,7 +78,7 @@ import { TooltipModule } from 'primeng/tooltip';
                 (click)="openCommunityWithSearch(deck.card)"
                 pTooltip="{{ deck.name }}"
                 tooltipPosition="top"
-                [lazyLoad]="deck.image"
+                [lazyLoad]="ensureCdnUrl(deck.image)"
                 [ngStyle]="{
                   border: '2px solid black',
                   'border-radius': '5px',
@@ -86,7 +86,8 @@ import { TooltipModule } from 'primeng/tooltip';
                 }"
                 [alt]="deck.name"
                 class="barsHandle m-auto h-24 cursor-pointer"
-                defaultImage="assets/images/digimon-card-back.webp" />
+                defaultImage="assets/images/digimon-card-back.webp"
+                errorImage="assets/images/digimon-card-back.webp" />
             </div>
           </ng-template>
         </p-listbox>
@@ -165,12 +166,21 @@ export class TierlistComponent {
     const tierlistRef = ref(this.db, 'tierlist');
     onValue(tierlistRef, (snapshot) => {
       const data = snapshot.val();
-      if (data && Array.isArray(data)) {
-        this.tierlist = data[0];
-        this.changeDetectorRef.detectChanges();
-      } else if (data && data.tierlist) {
-        this.tierlist = data.tierlist;
-        this.changeDetectorRef.detectChanges();
+      // Only update if data is valid and non-empty
+      if (data) {
+        if (Array.isArray(data)) {
+          // If it's an array with tiers
+          if (data[0] && Array.isArray(data[0]) && data[0].length > 0) {
+            this.tierlist = data;
+            this.changeDetectorRef.detectChanges();
+          }
+        } else if (data.tierlist && Array.isArray(data.tierlist)) {
+          // If it's an object with tierlist property
+          if (data.tierlist.length > 0 && data.tierlist[0].length > 0) {
+            this.tierlist = data.tierlist;
+            this.changeDetectorRef.detectChanges();
+          }
+        }
       }
     });
   }
@@ -271,5 +281,24 @@ export class TierlistComponent {
           summary: 'Error uploading tierlist: ' + error.message,
         });
       });
+  }
+
+  ensureCdnUrl(imageUrl: string): string {
+    if (!imageUrl) {
+      return 'assets/images/digimon-card-back.webp';
+    }
+    
+    // If it's already a full CDN URL, return as is
+    if (imageUrl.startsWith('http://') || imageUrl.startsWith('https://')) {
+      return imageUrl;
+    }
+    
+    // If it's a relative path like 'cards/BT1-001.webp', prepend CDN URL
+    if (imageUrl.includes('/')) {
+      return 'https://web-garage.takaotaku.de/' + imageUrl.replace(/^\//, '');
+    }
+    
+    // For card IDs like 'BT1-001', construct the CDN path
+    return 'https://web-garage.takaotaku.de/cards/' + imageUrl + '.webp';
   }
 }

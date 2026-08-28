@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, DestroyRef, effect, EventEmitter, inject, OnInit, Output, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, effect, EventEmitter, inject, OnInit, Output, signal, ViewChild } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
@@ -8,33 +8,45 @@ import { DialogModule } from 'primeng/dialog';
 import { TooltipModule } from 'primeng/tooltip';
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
+import { AutoCompleteModule, AutoComplete } from 'primeng/autocomplete';
 import { Subject, debounceTime, distinctUntilChanged } from 'rxjs';
 import { FilterStore } from '@store';
+import { SearchAutocompleteService, SearchSuggestion } from '@services';
 
 @Component({
   selector: 'digimon-advanced-search',
   template: `
     <div class="advanced-search-container">
       <div class="search-input-container">
-        <p-iconfield class="flex-1 w-full">
-          <p-inputicon [class]="isSearching() ? 'pi pi-spin pi-spinner' : 'pi pi-search'"></p-inputicon>
-          <input
-            pInputText
-            [(ngModel)]="searchQuery"
-            (ngModelChange)="onQueryChange($event)"
-            (keydown.enter)="onEnter()"
-            placeholder="Search cards... (e.g., Agumon, or cardType == Digimon AND color == Red)"
-            class="w-full"
-            aria-label="Search cards"
-          />
-          <p-inputicon 
-            *ngIf="searchQuery().trim()" 
-            class="pi pi-times cursor-pointer" 
-            (click)="onClear()"
-            pTooltip="Clear search"
-            tooltipPosition="top">
-          </p-inputicon>
-        </p-iconfield>
+        <p-autoComplete
+          #searchAutocomplete
+          [(ngModel)]="searchQuery"
+          [suggestions]="suggestions()"
+          (onSelect)="onSuggestionSelected($event)"
+          (completeMethod)="onSearchChange($event)"
+          (ngModelChange)="onQueryChange($event)"
+          (keydown.enter)="onEnter()"
+          [showEmptyMessage]="false"
+          [minLength]="0"
+          [forceSelection]="false"
+          class="w-full"
+          styleClass="w-full"
+          field="label"
+          placeholder="Search cards... (e.g., Agumon, or cardType == Digimon AND color == Red)"
+          aria-label="Search cards">
+          
+          <ng-template let-item pTemplate="item">
+            <div class="flex items-center justify-between p-2">
+              <div class="flex flex-col">
+                <span class="font-semibold">{{ item.label }}</span>
+                <span class="text-xs text-gray-400" *ngIf="item.description">{{ item.description }}</span>
+              </div>
+              <span class="text-xs px-2 py-1 rounded" [ngClass]="getCategoryClass(item.category)">
+                {{ item.category }}
+              </span>
+            </div>
+          </ng-template>
+        </p-autoComplete>
 
         <button
           pButton
@@ -171,18 +183,22 @@ import { FilterStore } from '@store';
     DialogModule,
     TooltipModule,
     IconFieldModule,
-    InputIconModule
+    InputIconModule,
+    AutoCompleteModule
   ]
 })
 export class AdvancedSearchComponent implements OnInit {
   @Output() searchChange = new EventEmitter<string>();
+  @ViewChild('searchAutocomplete') autocomplete!: AutoComplete;
 
   private filterStore = inject(FilterStore);
   private destroyRef = inject(DestroyRef);
   private searchSubject = new Subject<string>();
+  private autocompleteService = inject(SearchAutocompleteService);
 
   searchQuery = signal<string>('');
   isSearching = signal(false);
+  suggestions = signal<SearchSuggestion[]>([]);
   showHelp = false;
 
   // Sync input with store (for external updates like URL params or sidebar reset)
@@ -212,16 +228,63 @@ export class AdvancedSearchComponent implements OnInit {
     this.searchSubject.next(query.trim());
   }
 
+  onSearchChange(event: any) {
+    const query = event.query || '';
+    // Get autocomplete suggestions based on current cursor position
+    // For simplicity, we'll provide suggestions for the last word being typed
+    const suggestions = this.autocompleteService.getSuggestions(query, query.length);
+    this.suggestions.set(suggestions);
+  }
+
+  onSuggestionSelected(event: any) {
+    const suggestion = event as SearchSuggestion;
+    if (!suggestion || !suggestion.value) {
+      return;
+    }
+
+    const currentText = this.searchQuery();
+    const cursorPosition = currentText.length;
+    
+    // Find the start of the current token
+    let tokenStart = cursorPosition - 1;
+    while (tokenStart >= 0 && currentText[tokenStart] !== ' ' && currentText[tokenStart] !== '(' && currentText[tokenStart] !== ')') {
+      tokenStart--;
+    }
+    tokenStart++;
+
+    // Replace the current token with the suggestion
+    const newText = currentText.substring(0, tokenStart) + suggestion.value + ' ';
+    this.searchQuery.set(newText);
+    this.suggestions.set([]);
+  }
+
+  getCategoryClass(category: string): string {
+    switch (category) {
+      case 'field':
+        return 'bg-blue-200 text-blue-800';
+      case 'operator':
+        return 'bg-green-200 text-green-800';
+      case 'logical':
+        return 'bg-purple-200 text-purple-800';
+      case 'value':
+        return 'bg-orange-200 text-orange-800';
+      default:
+        return 'bg-gray-200 text-gray-800';
+    }
+  }
+
   onEnter() {
     // Immediate search on Enter, bypass debounce
     const query = this.searchQuery().trim();
     this.isSearching.set(false);
     this.searchChange.emit(query);
+    this.suggestions.set([]);
   }
 
   onClear() {
     this.searchQuery.set('');
     this.isSearching.set(false);
     this.searchChange.emit('');
+    this.suggestions.set([]);
   }
 }

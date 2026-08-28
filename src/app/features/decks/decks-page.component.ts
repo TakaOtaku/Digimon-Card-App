@@ -5,7 +5,6 @@ import { setDeckImage } from '@functions';
 import { emptyDeck, ICountCard, IDeck } from '@models';
 import { DialogStore, DigimonCardStore, SaveStore, WebsiteStore } from '@store';
 import { ToastrService } from 'ngx-toastr';
-import { BlockUIModule } from 'primeng/blockui';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { DividerModule } from 'primeng/divider';
@@ -25,9 +24,6 @@ import { TierlistComponent } from './components/tierlist.component';
   selector: 'digimon-decks-page',
   template: `
     <digimon-page #page>
-      <p-blockUI [blocked]="loading2" [target]="page">
-        <p-progressSpinner class="mx-auto"></p-progressSpinner>
-      </p-blockUI>
       <div class="mx-auto self-baseline px-5 w-full max-w-7xl">
         <div class="lg:px-auto flex px-1 flex-col md:flex-row items-baseline">
           <h1 class="text-shadow mt-6 pb-1 text-2xl md:text-4xl font-black text-[#e2e4e6]">Community Decks</h1>
@@ -51,8 +47,8 @@ import { TierlistComponent } from './components/tierlist.component';
         </digimon-deck-filter>
 
         <!-- Loading State -->
-        <div *ngIf="websiteStore.isLoadingDecks()" class="flex w-full justify-center py-8">
-          <p-progressSpinner class="mx-auto"></p-progressSpinner>
+        <div *ngIf="websiteStore.isLoadingDecks()" class="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
+          <p-progressSpinner></p-progressSpinner>
         </div>
 
         <!-- Initial State - No Search Yet -->
@@ -102,6 +98,9 @@ import { TierlistComponent } from './components/tierlist.component';
       [resizable]="false"
       styleClass="w-full h-full max-w-6xl min-h-[500px]"
       [baseZIndex]="10000">
+      <div *ngIf="loading2" class="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
+        <p-progressSpinner></p-progressSpinner>
+      </div>
       <digimon-deck-statistics [decks]="filteredDecks" [updateCards]="updateStatistics" [(loading)]="loading2"></digimon-deck-statistics>
     </p-dialog>
   `,
@@ -119,7 +118,6 @@ import { TierlistComponent } from './components/tierlist.component';
     DividerModule,
     PageComponent,
     TooltipModule,
-    BlockUIModule,
     PaginationComponent,
     DeckFilterComponent,
   ],

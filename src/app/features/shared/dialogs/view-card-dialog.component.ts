@@ -13,7 +13,7 @@ import { TooltipModule } from 'primeng/tooltip';
 @Component({
   selector: 'digimon-view-card-dialog',
   template: `
-    <div class="h-full w-full min-w-full max-w-full overflow-x-hidden md:w-[700px] md:min-w-[700px] md:max-w-[700px]">
+    <div class="h-full w-full min-w-full max-w-full overflow-x-hidden p-4 md:w-[700px] md:min-w-[700px] md:max-w-[700px]">
       <div class="align-center min-h-10 mt-1 inline-flex w-full justify-between border-b border-slate-200" id="Header">
         <div class="align-center my-3 inline-flex h-full flex-grow flex-wrap justify-between gap-[.5rem] md:my-2 md:flex-nowrap">
           <p class="self-center font-bold text-gray-500" id="Card-Number">
@@ -68,12 +68,12 @@ import { TooltipModule } from 'primeng/tooltip';
       </div>
 
       <div class="w-full flex-row md:flex" id="Image-Attributes">
-        <div class="w-full md:w-1/2">
+        <div class="w-full md:w-1/2 flex items-center justify-center">
           <img
             [digimonImgFallback]="png"
             alt="{{ imageAlt }}"
             defaultImage="assets/images/digimon-card-back.webp"
-            class="mx-auto my-5 max-w-[15rem] md:my-0 md:max-w-full" />
+            class="mx-auto my-5 max-w-[15rem] md:my-0 md:max-w-full object-contain" />
         </div>
         <div class="md:max-w-1/2 w-full self-center md:w-1/2 md:pl-2">
           <div

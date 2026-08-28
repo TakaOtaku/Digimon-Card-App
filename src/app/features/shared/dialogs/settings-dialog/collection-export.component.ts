@@ -42,78 +42,78 @@ import { MultiSelect } from 'primeng/multiselect';
         <button
           (click)="changeRarity('C')"
           [ngClass]="{ 'primary-border': rarities.includes('C') }"
-          class="min-w-auto primary-background mt-2 h-8 w-10 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
+          class="min-w-auto primary-background mt-2 h-8 px-2 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
           C
         </button>
         <button
           (click)="changeRarity('UC')"
           [ngClass]="{ 'primary-border': rarities.includes('UC') }"
-          class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
+          class="min-w-auto primary-background mt-2 h-8 px-2 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
           UC
         </button>
         <button
           (click)="changeRarity('R')"
           [ngClass]="{ 'primary-border': rarities.includes('R') }"
-          class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
+          class="min-w-auto primary-background mt-2 h-8 px-2 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
           R
         </button>
         <button
           (click)="changeRarity('SR')"
           [ngClass]="{ 'primary-border': rarities.includes('SR') }"
-          class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
+          class="min-w-auto primary-background mt-2 h-8 px-2 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
           SR
         </button>
         <button
           (click)="changeRarity('SEC')"
           [ngClass]="{ 'primary-border': rarities.includes('SEC') }"
-          class="min-w-auto primary-background mt-2 h-8 w-10 rounded-r border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
+          class="min-w-auto primary-background mt-2 h-8 px-2 rounded-r border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
           SEC
         </button>
       </div>
 
       <h1 class="mt-3 text-center text-xs font-bold text-[#e2e4e6]">Version:</h1>
-      <div class="inline-flex w-full justify-center">
+      <div class="inline-flex w-full justify-center flex-wrap gap-1">
         <button
           (click)="changeVersion('Normal')"
           [ngClass]="{ 'primary-border': versions.includes('Normal') }"
-          class="min-w-auto primary-background mt-2 h-8 w-10 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
+          class="min-w-auto primary-background mt-2 h-8 px-2 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
           Normal
         </button>
         <button
           (click)="changeVersion('AA')"
           [ngClass]="{ 'primary-border': versions.includes('AA') }"
-          class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
+          class="min-w-auto primary-background mt-2 h-8 px-2 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
           AA
         </button>
         <button
           (click)="changeVersion('Pre-Release')"
           [ngClass]="{ 'primary-border': versions.includes('Pre-Release') }"
-          class="min-w-auto primary-background mt-2 h-8 w-10 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
-          Pre-Release
+          class="min-w-auto primary-background mt-2 h-8 px-2 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
+          Pre-Rel.
         </button>
         <button
           (click)="changeVersion('Stamp')"
           [ngClass]="{ 'primary-border': versions.includes('Stamp') }"
-          class="min-w-auto primary-background mt-2 h-8 w-10 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
+          class="min-w-auto primary-background mt-2 h-8 px-2 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
           Stamp
         </button>
         <button
           (click)="changeVersion('Reprint')"
           [ngClass]="{ 'primary-border': versions.includes('Reprint') }"
-          class="min-w-auto primary-background mt-2 h-8 w-10 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
+          class="min-w-auto primary-background mt-2 h-8 px-2 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
           Reprint
         </button>
         <button
           (click)="changeVersion('Special Rare')"
-          [ngClass]="{ 'primary-border': versions.includes('Reprint') }"
-          class="min-w-auto primary-background mt-2 h-8 w-10 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
-          Reprint
+          [ngClass]="{ 'primary-border': versions.includes('Special Rare') }"
+          class="min-w-auto primary-background mt-2 h-8 px-2 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
+          Special
         </button>
         <button
           (click)="changeVersion('Rare Pull')"
-          [ngClass]="{ 'primary-border': versions.includes('Reprint') }"
-          class="min-w-auto primary-background mt-2 h-8 w-10 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
-          Reprint
+          [ngClass]="{ 'primary-border': versions.includes('Rare Pull') }"
+          class="min-w-auto primary-background mt-2 h-8 px-2 rounded-r border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
+          R. Pull
         </button>
       </div>
 

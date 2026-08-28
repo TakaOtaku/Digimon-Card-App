@@ -56,7 +56,9 @@ import { CardMarketService } from '../../../services/card-market.service';
             <p-skeleton class="sm:m-0.5 md:m-1" width="5.6rem" height="10rem"></p-skeleton>
           }
         } @empty {
-          <h1 *ngIf="filteredCards().length === 0" class="primary-color text-bold my-10 text-center text-5xl">No cards found!</h1>
+          <div *ngIf="filteredCards().length === 0" class="flex items-center justify-center w-full h-full">
+            <h1 class="primary-color text-bold text-5xl text-center">No cards found!</h1>
+          </div>
         }
       </div>
     </div>

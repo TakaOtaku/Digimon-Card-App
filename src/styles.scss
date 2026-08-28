@@ -268,3 +268,8 @@ p-dialog::ng-deep {
 .background-darker {
   background-color: color-mix(in srgb, #17212f 50%, black);
 }
+
+/* ===== Confirmation Dialog Padding ===== */
+:deep(.p-confirm-dialog-message) {
+  padding: 1rem;
+}
