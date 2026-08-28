@@ -340208,33 +340208,39 @@
   },
   {
     "aceEffect": "-",
-    "assembly": "-",
-    "attribute": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Guilmon]/[Growlmon]\u00a0in name",
+    "attribute": "Virus",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-015.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.6",
     "cardNumber": "EX13-015",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Red",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "12000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "\uff1cPiercing\uff1e \n\uff1cProgress\uff1e \n\uff1cBlocker\uff1e \n[On Play] [When Digivolving] [When Attacking] [Counter] [Once Per Turn] Delete 1 of your opponent\u2019s Digimon with 12000 DP or less. If this effect didn't delete, trash their top security card.\n[Opponent's Turn] [Once Per Turn] When this Digimon would leave the battle area other than by your effects, by deleting 1 of your opponent's 9000 DP or lower Digimon, it doesn't leave.",
+    "form": "Mega",
     "id": "EX13-015",
-    "illustrator": "To be completed",
+    "illustrator": "tyuga",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Gallantmon",
+      "japanese": "\u30c7\u30e5\u30fc\u30af\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -340242,8 +340248,8 @@
     "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "12",
+    "rarity": "SR",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -340253,38 +340259,44 @@
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "Holy Warrior/Royal Knight",
     "version": "Normal"
   },
   {
     "aceEffect": "-",
-    "assembly": "-",
-    "attribute": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Guilmon]/[Growlmon]\u00a0in name",
+    "attribute": "Virus",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-015_P1.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.6",
     "cardNumber": "EX13-015",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Red",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "12000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "\uff1cPiercing\uff1e \n\uff1cProgress\uff1e \n\uff1cBlocker\uff1e \n[On Play] [When Digivolving] [When Attacking] [Counter] [Once Per Turn] Delete 1 of your opponent\u2019s Digimon with 12000 DP or less. If this effect didn't delete, trash their top security card.\n[Opponent's Turn] [Once Per Turn] When this Digimon would leave the battle area other than by your effects, by deleting 1 of your opponent's 9000 DP or lower Digimon, it doesn't leave.",
+    "form": "Mega",
     "id": "EX13-015_P1",
     "illustrator": "To be completed",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Gallantmon",
+      "japanese": "\u30c7\u30e5\u30fc\u30af\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -340292,8 +340304,8 @@
     "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "12",
+    "rarity": "SR",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -340303,8 +340315,64 @@
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "-",
-    "version": "Foil - Coloured Border -\u00a0"
+    "type": "Holy Warrior/Royal Knight",
+    "version": "Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Guilmon]/[Growlmon]\u00a0in name",
+    "attribute": "Virus",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-015_P2.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "EX13-015",
+    "cardType": "Digimon",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "-",
+    "effect": "\uff1cPiercing\uff1e \n\uff1cProgress\uff1e \n\uff1cBlocker\uff1e \n[On Play] [When Digivolving] [When Attacking] [Counter] [Once Per Turn] Delete 1 of your opponent\u2019s Digimon with 12000 DP or less. If this effect didn't delete, trash their top security card.\n[Opponent's Turn] [Once Per Turn] When this Digimon would leave the battle area other than by your effects, by deleting 1 of your opponent's 9000 DP or lower Digimon, it doesn't leave.",
+    "form": "Mega",
+    "id": "EX13-015_P2",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Gallantmon",
+      "japanese": "\u30c7\u30e5\u30fc\u30af\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "12",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Holy Warrior/Royal Knight",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -340708,33 +340776,44 @@
   },
   {
     "aceEffect": "-",
-    "assembly": "-",
-    "attribute": "-",
+    "assembly": "[Assembly\u00a0-2] [Veemon] ",
+    "attribute": "Free",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-020.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.4",
     "cardNumber": "EX13-020",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Blue/Yellow",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "4",
+        "level": "3"
+      },
+      {
+        "color": "Yellow",
+        "cost": "4",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[End of Your Turn] [Once Per Turn] 1 of your Digimon with the [Free] or [Royal Knight]\u00a0trait may unsuspend.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "7000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "\uff1cBlocker\uff1e \n\uff1cArmor Purge\uff1e \n[On Play] [When Digivolving] [When Attacking] [Once Per Turn] This Digimon gets +1000 DP until your opponent's turn ends for each color in trashes. Then, to 1 of your opponent's Digimon, give -4000 DP until their turn ends for every 5000 DP this Digimon has.\n[End of Your Turn] [Once Per Turn] 1 of your [Free] or [Royal Knight]\u00a0trait Digimon may unsuspend.",
+    "form": "Armor Form",
     "id": "EX13-020",
-    "illustrator": "To be completed",
+    "illustrator": "Souichirou Gunjima",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Magnamon",
+      "japanese": "\u30de\u30b0\u30ca\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -340742,8 +340821,8 @@
     "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "7",
+    "rarity": "SR",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -340752,39 +340831,50 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] [Veemon]: Cost 3 ",
+    "type": "Holy Warrior/Royal Knight",
     "version": "Normal"
   },
   {
     "aceEffect": "-",
-    "assembly": "-",
-    "attribute": "-",
+    "assembly": "[Assembly\u00a0-2] [Veemon] ",
+    "attribute": "Free",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-020_P1.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.4",
     "cardNumber": "EX13-020",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Blue/Yellow",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "4",
+        "level": "3"
+      },
+      {
+        "color": "Yellow",
+        "cost": "4",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[End of Your Turn] [Once Per Turn] 1 of your Digimon with the [Free] or [Royal Knight]\u00a0trait may unsuspend.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "7000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "\uff1cBlocker\uff1e \n\uff1cArmor Purge\uff1e \n[On Play] [When Digivolving] [When Attacking] [Once Per Turn] This Digimon gets +1000 DP until your opponent's turn ends for each color in trashes. Then, to 1 of your opponent's Digimon, give -4000 DP until their turn ends for every 5000 DP this Digimon has.\n[End of Your Turn] [Once Per Turn] 1 of your [Free] or [Royal Knight]\u00a0trait Digimon may unsuspend.",
+    "form": "Armor Form",
     "id": "EX13-020_P1",
     "illustrator": "To be completed",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Magnamon",
+      "japanese": "\u30de\u30b0\u30ca\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -340792,8 +340882,8 @@
     "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "7",
+    "rarity": "SR",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -340802,9 +340892,70 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
-    "version": "Foil - Coloured Border -\u00a0"
+    "specialDigivolve": "[Digivolve] [Veemon]: Cost 3 ",
+    "type": "Holy Warrior/Royal Knight",
+    "version": "Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-2] [Veemon] ",
+    "attribute": "Free",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-020_P2.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "EX13-020",
+    "cardType": "Digimon",
+    "color": "Blue/Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "4",
+        "level": "3"
+      },
+      {
+        "color": "Yellow",
+        "cost": "4",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[End of Your Turn] [Once Per Turn] 1 of your Digimon with the [Free] or [Royal Knight]\u00a0trait may unsuspend.",
+    "dnaDigivolve": "-",
+    "dp": "7000",
+    "dualEffect": "-",
+    "effect": "\uff1cBlocker\uff1e \n\uff1cArmor Purge\uff1e \n[On Play] [When Digivolving] [When Attacking] [Once Per Turn] This Digimon gets +1000 DP until your opponent's turn ends for each color in trashes. Then, to 1 of your opponent's Digimon, give -4000 DP until their turn ends for every 5000 DP this Digimon has.\n[End of Your Turn] [Once Per Turn] 1 of your [Free] or [Royal Knight]\u00a0trait Digimon may unsuspend.",
+    "form": "Armor Form",
+    "id": "EX13-020_P2",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Magnamon",
+      "japanese": "\u30de\u30b0\u30ca\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "7",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Veemon]: Cost 3 ",
+    "type": "Holy Warrior/Royal Knight",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -345109,32 +345260,43 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Virus",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-064.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.6",
     "cardNumber": "EX13-064",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Purple/Black",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "4",
+        "level": "5"
+      },
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "12000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[When Digivolving] You may play or use 1 play or use cost 8 or lower Digimon or Option card with [Knightmon]\u00a0in their texts from your hand or trash without paying the cost.\n[Your Turn] All of your Digimon with [Knightmon]\u00a0in their texts gain \uff1cCollision\uff1e and \uff1cPiercing\uff1e \n[Your Turn] [Once Per Turn] When any of your other Digimon or Tamers are played, 1 of your Digimon with [Knightmon]\u00a0text Digimon may gain \uff1cRush\uff1e and \uff1cCollision\uff1e for the turn and attack.",
+    "form": "Mega",
     "id": "EX13-064",
     "illustrator": "To be completed",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "LordKnightmon",
+      "japanese": "\u30ed\u30fc\u30c9\u30ca\u30a4\u30c8\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -345142,8 +345304,8 @@
     "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "12",
+    "rarity": "SR",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -345152,39 +345314,50 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[Knightmon]\u00a0in text: Cost 3\n[Digivolve] While you have 3 or fewer security cards, [Rie Kishibe]: Cost 5 ",
+    "type": "Holy Warrior/Royal Knight/CS",
     "version": "Normal"
   },
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Virus",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-064_P1.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.6",
     "cardNumber": "EX13-064",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Purple/Black",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "4",
+        "level": "5"
+      },
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "12000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[When Digivolving] You may play or use 1 play or use cost 8 or lower Digimon or Option card with [Knightmon]\u00a0in their texts from your hand or trash without paying the cost.\n[Your Turn] All of your Digimon with [Knightmon]\u00a0in their texts gain \uff1cCollision\uff1e and \uff1cPiercing\uff1e \n[Your Turn] [Once Per Turn] When any of your other Digimon or Tamers are played, 1 of your Digimon with [Knightmon]\u00a0text Digimon may gain \uff1cRush\uff1e and \uff1cCollision\uff1e for the turn and attack.",
+    "form": "Mega",
     "id": "EX13-064_P1",
     "illustrator": "To be completed",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "LordKnightmon",
+      "japanese": "\u30ed\u30fc\u30c9\u30ca\u30a4\u30c8\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -345192,8 +345365,8 @@
     "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "12",
+    "rarity": "SR",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -345202,9 +345375,70 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
-    "version": "Foil - Coloured Border -\u00a0"
+    "specialDigivolve": "[Digivolve] Lv.5 w/[Knightmon]\u00a0in text: Cost 3\n[Digivolve] While you have 3 or fewer security cards, [Rie Kishibe]: Cost 5 ",
+    "type": "Holy Warrior/Royal Knight/CS",
+    "version": "Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Virus",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-064_P2.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "EX13-064",
+    "cardType": "Digimon",
+    "color": "Purple/Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "4",
+        "level": "5"
+      },
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "-",
+    "effect": "[When Digivolving] You may play or use 1 play or use cost 8 or lower Digimon or Option card with [Knightmon]\u00a0in their texts from your hand or trash without paying the cost.\n[Your Turn] All of your Digimon with [Knightmon]\u00a0in their texts gain \uff1cCollision\uff1e and \uff1cPiercing\uff1e \n[Your Turn] [Once Per Turn] When any of your other Digimon or Tamers are played, 1 of your Digimon with [Knightmon]\u00a0text Digimon may gain \uff1cRush\uff1e and \uff1cCollision\uff1e for the turn and attack.",
+    "form": "Mega",
+    "id": "EX13-064_P2",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "LordKnightmon",
+      "japanese": "\u30ed\u30fc\u30c9\u30ca\u30a4\u30c8\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "12",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[Knightmon]\u00a0in text: Cost 3\n[Digivolve] While you have 3 or fewer security cards, [Rie Kishibe]: Cost 5 ",
+    "type": "Holy Warrior/Royal Knight/CS",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -345917,15 +346151,15 @@
     "cardImage": "assets/images/cards/EX13-072.webp",
     "cardLv": "-",
     "cardNumber": "EX13-072",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Tamer",
+    "color": "Black",
     "digiXros": "-",
     "digivolveCondition": [],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "[Start of Your Main Phase] By trashing 1 [Chronicle]\u00a0trait card from your hand, \uff1cDraw 1\uff1e and gain 1 memory.\n[Your Turn] When one of your Digimon with the [Chronicle]\u00a0trait attack, by suspending this Tamer, you may use 1 Option card with the [Chronicle]\u00a0trait from your hand with the cost reduced by 1.",
     "form": "-",
     "id": "EX13-072",
     "illustrator": "To be completed",
@@ -345933,8 +346167,8 @@
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Kota Domoto",
+      "japanese": "\u5802\u672c\u30b3\u30fc\u30bf",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -345942,7 +346176,7 @@
     "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
+    "playCost": "4",
     "rarity": "-",
     "restrictions": {
       "chinese": "Not released",
@@ -345951,9 +346185,9 @@
       "korean": "Not released"
     },
     "rule": "-",
-    "securityEffect": "-",
+    "securityEffect": "[Security] Play this card without paying the cost.",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "Chronicle",
     "version": "Normal"
   },
   {
@@ -345967,15 +346201,15 @@
     "cardImage": "assets/images/cards/EX13-072_P1.webp",
     "cardLv": "-",
     "cardNumber": "EX13-072",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Tamer",
+    "color": "Black",
     "digiXros": "-",
     "digivolveCondition": [],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "[Start of Your Main Phase] By trashing 1 [Chronicle]\u00a0trait card from your hand, \uff1cDraw 1\uff1e and gain 1 memory.\n[Your Turn] When one of your Digimon with the [Chronicle]\u00a0trait attack, by suspending this Tamer, you may use 1 Option card with the [Chronicle]\u00a0trait from your hand with the cost reduced by 1.",
     "form": "-",
     "id": "EX13-072_P1",
     "illustrator": "To be completed",
@@ -345983,8 +346217,8 @@
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Kota Domoto",
+      "japanese": "\u5802\u672c\u30b3\u30fc\u30bf",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -345992,7 +346226,7 @@
     "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
+    "playCost": "4",
     "rarity": "-",
     "restrictions": {
       "chinese": "Not released",
@@ -346001,9 +346235,9 @@
       "korean": "Not released"
     },
     "rule": "-",
-    "securityEffect": "-",
+    "securityEffect": "[Security] Play this card without paying the cost.",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "Chronicle",
     "version": "Foil - Coloured Border -\u00a0"
   },
   {
