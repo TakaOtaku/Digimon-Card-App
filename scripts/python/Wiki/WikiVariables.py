@@ -85,6 +85,8 @@ wikiPageLinks = [
         'url': 'https://digimoncardgame.fandom.com/wiki/EX-11:_Extra_Booster_Dawn_of_Liberator'},
     {'name': '▹EXTRA BOOSTER DIGITAL WORLD SHAMBALA [EX-12]',
         'url': 'https://digimoncardgame.fandom.com/wiki/EX-12:_EXTRA_BOOSTER_DIGITAL_WORLD_SHAMBALA'},
+    {'name': '▹EXTRA BOOSTER CHIVALROUS XIII [EX-13]',
+        'url': 'https://digimoncardgame.fandom.com/wiki/EX-13:_EXTRA_BOOSTER_CHIVALROUS_XIII'},
 
     {'name': 'BOOSTER RESURGENCE BOOSTER [RB1]',
         'url': 'https://digimoncardgame.fandom.com/wiki/RB-01:_Resurgence_Booster'},
@@ -177,7 +179,7 @@ NoteDictionary = {
     'BT-16: Booster Beginning Observer': '▹BOOSTER BEGINNING OBSERVER [BT-16]',
     'BT-17: Booster Secret Crisis': '▹BOOSTER SECRET CRISIS [BT-17]',
     'BT-18: Booster Elemental Successor': '▹BOOSTER ELEMENTAL SUCCESSOR [BT-18]',
-    'BT-19: Booster Xros Evolution': '▹BOOSTER XRO EVOLUTION [BT-19]',
+    'BT-19: Booster Xros Evolution': '▹BOOSTER XROS EVOLUTION [BT-19]',
     'BT18-19: Special Booster Ver.2.0': '▹SPECIAL BOOSTER VER.2.0 [BT18-19]',
     'BT19-20: Special Booster Ver.2.5': '▹SPECIAL BOOSTER VER.2.5 [BT19-20]',
     'BT-21: Booster World Convergence': '▹BOOSTER WORLD CONVERGENCE [BT-21]',
@@ -199,6 +201,7 @@ NoteDictionary = {
     'EX-10: Extra Booster Sinister Order': '▹EXTRA BOOSTER SINISTER ORDER [EX-10]',
     'EX-11: Extra Booster Dawn of Liberator': '▹EXTRA BOOSTER DAWN OF LIBERATOR [EX-11]',
     'EX-12: Extra Booster Digital World Shambala': '▹EXTRA BOOSTER DIGITAL WORLD SHAMBALA [EX-12]',
+    'EX-13: EXTRA BOOSTER CHIVALROUS XIII': '▹EXTRA BOOSTER CHIVALROUS XIII [EX-13]',
 
     'RB-01: Resurgence Booster': 'BOOSTER RESURGENCE BOOSTER [RB01]',
 
@@ -249,6 +252,11 @@ replacements = [
     '(Trash this card in your battle area to activate the effect below. You can\'t activate this effect the turn this card enters play.)',
     '(When this Digimon deletes your opponent\'s Digimon in battle while attacking, it checks security before the attack ends.)',
     '(Place the top card of your deck on top of your security stack.)',
+    '(Place the top 2 cards of your deck on top of your security stack.)',
+    '(Place the top 3 cards of your deck on top of your security stack.)',
+    '(Place the top card of your deck as your top security card.)',
+    '(Place the top 2 cards of your deck as your top 2 security cards.)',
+    '(Place the top 3 cards of your deck as your top 3 security cards.)',
     '(This Digimon can\'t be deleted in battles against Security Digimon.)',
     '(Trash all of the digivolution cards on that Digimon.)',
     '(This Digimon checks 1 additional security card.)',
@@ -278,7 +286,6 @@ replacements = [
     '(Your Digimon may digivolve into this card without paying the cost.)',
     '(When this card is sent from battle area or under your card to another area, lose 3 memory.)',
     '(Place this Tamer under 1 of your Digimon without a Tamer in its digivolution cards.)',
-    '(Place the top 2 cards of your deck on top of your security stack.)',
     '(You may trash 1 of this Digimon\'s digivolution cards to activate the effect below.)',
     '(You may trash 2 of this Digimon\'s digivolution cards to activate the effect below.)',
     '(You may trash 4 of this Digimon\'s digivolution cards to activate the effect below.)',
@@ -321,6 +328,7 @@ replacements = [
     '<< ',
     '(Add 1 to this Digimon\'s maximum links.)',
     '(Add 2 to this Digimon\'s maximum links.)',
+    '(Add 6 to this Digimon\'s maximum links.)',
     '(This Digimon can block in the blocker timing.)',
     '(While attacking, your opponent\'s effects don\'t affect this Digimon.)',
     '(In the main phase, by suspending this Digimon, place your deck\'s top card face down as this Digimon\'s bottom digivolution card. This effect can also activate in the breeding area.)',
@@ -336,5 +344,6 @@ replacements = [
     '(Place the top card of your deck as your top security card.)',
     '(When any of your other Digimon would leave the battle area by your opponent\'s effects, by deleting this Digimon, they don\'t leave.)',
     '(At the end of your turn, this Digimon may attack.)',
-    '(When this Digimon would leave the battle area other than by your effects, by trashing 1 of its specified link cards, it doesn\'t leave.)'
+    '(When this Digimon would leave the battle area other than by your effects, by trashing 1 of its specified link cards, it doesn\'t leave.)',
+    '(This Digimon gains all effects other than \uff1cSuccession\uff1e on its topmost specified digivolution card.)'
 ]
