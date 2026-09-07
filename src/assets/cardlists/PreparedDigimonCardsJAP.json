@@ -26510,7 +26510,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Also treated as having [Leomon].",
+    "rule": "[Rule] Name: Treated as including [Leomon].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Beastkin",
@@ -31086,7 +31086,7 @@
       "japanese": "Unrestricted",
       "korean": "Not released"
     },
-    "rule": "[Rule] Name: Not treated as having [Vee].",
+    "rule": "[Rule] Name: Not treated as including [Vee].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Baby Dragon",
@@ -31137,7 +31137,7 @@
       "japanese": "Unrestricted",
       "korean": "Not released"
     },
-    "rule": "[Rule] Name: Not treated as having [Vee].",
+    "rule": "[Rule] Name: Not treated as including [Vee].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Baby Dragon",
@@ -31841,7 +31841,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Greymon].",
+    "rule": "[Rule] Name: Not treated as including [Greymon].",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] [Agunimon]: Cost 1 ",
     "type": "Dark Dragon",
@@ -46033,7 +46033,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Greymon].",
+    "rule": "[Rule] Name: Not treated as including [Greymon].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Beast Dragon/X Antibody",
@@ -53561,7 +53561,7 @@
       "japanese": "Unrestricted",
       "korean": "Not released"
     },
-    "rule": "[Rule] Name: Also treated as having [Leomon].",
+    "rule": "[Rule] Name: Treated as including [Leomon].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Beastkin",
@@ -56742,7 +56742,7 @@
       "japanese": "Unrestricted",
       "korean": "Not released"
     },
-    "rule": "[Rule] Name: Also treated as having [Sukamon].",
+    "rule": "[Rule] Name: Treated as including [Sukamon].",
     "securityEffect": "[Security] Until the end of your turn, change 1 of your opponent's Digimon into being white and having 3000 DP and an original name of [Sukamon]",
     "specialDigivolve": "-",
     "type": "-",
@@ -65227,7 +65227,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Vee].",
+    "rule": "[Rule] Name: Not treated as including [Vee].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Baby Dragon",
@@ -65278,7 +65278,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Vee].",
+    "rule": "[Rule] Name: Not treated as including [Vee].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Baby Dragon",
@@ -70104,7 +70104,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Greymon].",
+    "rule": "[Rule] Name: Not treated as including [Greymon].",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] Lv.4 w/[Dorugamon]\u00a0in its name or Lv.4 w/[SoC]\u00a0trait: Cost 3 ",
     "type": "Beast Dragon/X Antibody/SoC",
@@ -70165,7 +70165,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Greymon].",
+    "rule": "[Rule] Name: Not treated as including [Greymon].",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] Lv.4 w/[Dorugamon]\u00a0in its name or Lv.4 w/[SoC]\u00a0trait: Cost 3 ",
     "type": "Beast Dragon/X Antibody/SoC",
@@ -74305,7 +74305,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Greymon].",
+    "rule": "[Rule] Name: Not treated as including [Greymon].",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] [Takuya Kanbara]: Cost 2\n[Digivolve] [Agunimon]: Cost 1 ",
     "type": "Dark Dragon",
@@ -75424,7 +75424,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Garurumon].",
+    "rule": "[Rule] Name: Not treated as including [Garurumon].",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] [Koji Minamoto]: Cost 2\n[Digivolve] [Lobomon]: Cost 1 ",
     "type": "Cyborg",
@@ -77342,7 +77342,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Argomon].",
+    "rule": "[Rule] Name: Not treated as including [Argomon].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Beastkin",
@@ -78695,7 +78695,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Greymon].",
+    "rule": "[Rule] Name: Not treated as including [Greymon].",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] [DoruGreymon]: Cost 1 ",
     "type": "Undead/X Antibody/SoC",
@@ -93474,7 +93474,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Argomon].",
+    "rule": "[Rule] Name: Not treated as including [Argomon].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Beastkin",
@@ -93942,7 +93942,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Argomon].",
+    "rule": "[Rule] Name: Not treated as including [Argomon].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Machine",
@@ -97838,7 +97838,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Vee].",
+    "rule": "[Rule] Name: Not treated as including [Vee].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Baby Dragon",
@@ -108838,7 +108838,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Vee].",
+    "rule": "[Rule] Name: Not treated as including [Vee].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Baby Dragon",
@@ -108888,7 +108888,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Vee].",
+    "rule": "[Rule] Name: Not treated as including [Vee].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Baby Dragon",
@@ -112635,7 +112635,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Impmon].",
+    "rule": "[Rule] Name: Not treated as including [Impmon].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Machine",
@@ -125639,7 +125639,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Also treated as having [Greymon].",
+    "rule": "[Rule] Name: Treated as including [Greymon].",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] Lv.5 w/[Greymon]\u00a0in name or w/[CS]\u00a0trait: Cost 4 ",
     "type": "Dragonkin/X Antibody/CS",
@@ -162681,7 +162681,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Vee].",
+    "rule": "[Rule] Name: Not treated as including [Vee].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Baby Dragon",
@@ -162732,7 +162732,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Vee].",
+    "rule": "[Rule] Name: Not treated as including [Vee].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Baby Dragon",
@@ -167099,7 +167099,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Argomon].",
+    "rule": "[Rule] Name: Not treated as including [Argomon].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Beastkin",
@@ -167156,7 +167156,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Argomon].",
+    "rule": "[Rule] Name: Not treated as including [Argomon].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Beastkin",
@@ -168008,7 +168008,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Argomon].",
+    "rule": "[Rule] Name: Not treated as including [Argomon].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Machine",
@@ -168065,7 +168065,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Argomon].",
+    "rule": "[Rule] Name: Not treated as including [Argomon].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Machine",
@@ -168122,7 +168122,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Argomon].",
+    "rule": "[Rule] Name: Not treated as including [Argomon].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Machine",
@@ -168179,7 +168179,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Argomon].",
+    "rule": "[Rule] Name: Not treated as including [Argomon].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Machine",
@@ -173846,7 +173846,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Greymon].",
+    "rule": "[Rule] Name: Not treated as including [Greymon].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Dark Dragon",
@@ -175052,7 +175052,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Garurumon].",
+    "rule": "[Rule] Name: Not treated as including [Garurumon].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Cyborg",
@@ -177915,7 +177915,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Impmon].",
+    "rule": "[Rule] Name: Not treated as including [Impmon].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Machine",
@@ -201125,7 +201125,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Greymon].",
+    "rule": "[Rule] Name: Not treated as including [Greymon].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Dark Dragon",
@@ -202148,7 +202148,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Garurumon].",
+    "rule": "[Rule] Name: Not treated as including [Garurumon].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Cyborg",
@@ -205766,7 +205766,7 @@
       "japanese": "Restricted to 1",
       "korean": "Not released"
     },
-    "rule": "[Rule] Name: Not treated as having [Greymon].",
+    "rule": "[Rule] Name: Not treated as including [Greymon].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Beast Dragon/X Antibody",
@@ -205823,7 +205823,7 @@
       "japanese": "Restricted to 1",
       "korean": "Not released"
     },
-    "rule": "[Rule] Name: Not treated as having [Greymon].",
+    "rule": "[Rule] Name: Not treated as including [Greymon].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Beast Dragon/X Antibody",
@@ -205880,7 +205880,7 @@
       "japanese": "Restricted to 1",
       "korean": "Not released"
     },
-    "rule": "[Rule] Name: Not treated as having [Greymon].",
+    "rule": "[Rule] Name: Not treated as including [Greymon].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Beast Dragon/X Antibody",
@@ -205937,7 +205937,7 @@
       "japanese": "Restricted to 1",
       "korean": "Not released"
     },
-    "rule": "[Rule] Name: Not treated as having [Greymon].",
+    "rule": "[Rule] Name: Not treated as including [Greymon].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Beast Dragon/X Antibody",
@@ -205994,7 +205994,7 @@
       "japanese": "Restricted to 1",
       "korean": "Not released"
     },
-    "rule": "[Rule] Name: Not treated as having [Greymon].",
+    "rule": "[Rule] Name: Not treated as including [Greymon].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Beast Dragon/X Antibody",
@@ -223880,7 +223880,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Also treated as having [Leomon].",
+    "rule": "[Rule] Name: Treated as including [Leomon].",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] [Panjyamon]: Cost 0 ",
     "type": "Beastkin/X Antibody",
@@ -225152,7 +225152,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Also treated as having [Greymon].",
+    "rule": "[Rule] Name: Treated as including [Greymon].",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] [BlackWarGreymon]: Cost 2 ",
     "type": "Dragonkin/X Antibody",
@@ -225213,7 +225213,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Also treated as having [Greymon].",
+    "rule": "[Rule] Name: Treated as including [Greymon].",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] [BlackWarGreymon]: Cost 2 ",
     "type": "Dragonkin/X Antibody",
@@ -225859,7 +225859,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Greymon].",
+    "rule": "[Rule] Name: Not treated as including [Greymon].",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] [DoruGreymon]: Cost 1 ",
     "type": "Undead/X Antibody",
@@ -256037,7 +256037,7 @@
       "japanese": "Not released",
       "korean": "Not released"
     },
-    "rule": "[Rule] Name: Also treated as having [Mamemon].",
+    "rule": "[Rule] Name: Treated as including [Mamemon].",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] Lv.3 w/[ME]\u00a0trait: Cost 2 ",
     "type": "Mutant/ME",
@@ -256098,7 +256098,7 @@
       "japanese": "Not released",
       "korean": "Not released"
     },
-    "rule": "[Rule] Name: Also treated as having [Mamemon].",
+    "rule": "[Rule] Name: Treated as including [Mamemon].",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] Lv.3 w/[ME]\u00a0trait: Cost 2 ",
     "type": "Mutant/ME",
@@ -260168,26 +260168,26 @@
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-003-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.2",
     "cardNumber": "EX13-003",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digi-Egg",
+    "color": "Yellow",
     "digiXros": "-",
     "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When your security stack is removed from, this Digimon may digivolve into a Digimon card with [Kentaurosmon]\u00a0in its name or the [Holy Beast]\u00a0trait in the hand with the cost reduced by 1.",
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
     "effect": "-",
-    "form": "-",
+    "form": "In-Training",
     "id": "EX13-003",
-    "illustrator": "To be completed",
+    "illustrator": "SENNSU",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Kyaromon",
+      "japanese": "\u30ad\u30e3\u30ed\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -260196,7 +260196,7 @@
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
     "playCost": "-",
-    "rarity": "-",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -260206,7 +260206,7 @@
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "Lesser/DATA SQUAD",
     "version": "Normal"
   },
   {
@@ -261371,32 +261371,38 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-026-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.3",
     "cardNumber": "EX13-026",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Yellow",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[When Attacking] [Once Per Turn] Give 1 of your opponent's Digimon \uff1cSecurity A. -1\uff1e until their turn ends.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "1000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[When Moving] [On Play] Reveal the top 3 cards of your deck. Among them, add 1 [Holy Beast], [Royal Knight] or [DATA SQUAD]\u00a0trait card to the hand and place 1 such card face down under any of your [DATA SQUAD]\u00a0trait Tamers. Return the rest to the bottom of the deck.",
+    "form": "Rookie",
     "id": "EX13-026",
-    "illustrator": "To be completed",
+    "illustrator": "SENNSU",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Kudamon",
+      "japanese": "\u30af\u30c0\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -261404,8 +261410,8 @@
     "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "3",
+    "rarity": "R",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -261414,8 +261420,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.2 w/[DATA SQUAD]\u00a0trait: Cost 0 ",
+    "type": "Holy Beast/DATA SQUAD",
     "version": "Normal"
   },
   {
@@ -261571,32 +261577,38 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-030-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.4",
     "cardNumber": "EX13-030",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Yellow",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "\uff1cBarrier\uff1e ",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "5000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "\uff1cBarrier\uff1e \n[On Play] [When Digivolving] [When Attacking] [Once Per Turn] By trashing your top security card, you may play 1 [Richard Sampson] from your hand or trash without paying the cost.",
+    "form": "Champion",
     "id": "EX13-030",
-    "illustrator": "To be completed",
+    "illustrator": "SENNSU",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Reppamon",
+      "japanese": "\u30ec\u30c3\u30d1\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -261604,8 +261616,8 @@
     "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "5",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -261614,8 +261626,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.3 w/[DATA SQUAD]\u00a0trait: Cost 2 ",
+    "type": "Holy Beast/DATA SQUAD",
     "version": "Normal"
   },
   {
@@ -261671,32 +261683,38 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-032-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.5",
     "cardNumber": "EX13-032",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Yellow",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "3",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "[All Turns] [Once Per Turn] When this Digimon with [Kentaurosmon]\u00a0in its name would leave the battle area, by placing its top stacked card as the top security card, it doesn't leave.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "7000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[When Digivolving] [When Attacking] [Once Per Turn] By trashing your top security card or the bottom face-down card from under any of your Tamers, this Digimon unsuspends. After, 1 of your opponent's Digimon can't activate [When Digivolving] effects until their turn ends.\n[All Turns] When this Digimon would leave the battle area, by placing its top stacked card as the top security card, it doesn't leave.",
+    "form": "Ultimate",
     "id": "EX13-032",
-    "illustrator": "To be completed",
+    "illustrator": "SENNSU",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Chirinmon",
+      "japanese": "\u30c1\u30a3\u30ea\u30f3\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -261704,8 +261722,8 @@
     "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "7",
+    "rarity": "R",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -261714,8 +261732,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.4 w/[DATA SQUAD]\u00a0trait: Cost 3 ",
+    "type": "Holy Beast/DATA SQUAD",
     "version": "Normal"
   },
   {
@@ -261870,33 +261888,39 @@
   },
   {
     "aceEffect": "-",
-    "assembly": "-",
-    "attribute": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all Yellow w/[Holy Beast]\u00a0trait",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-036-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.6",
     "cardNumber": "EX13-036",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Yellow",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "12000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[Security] [On Play] 1 of your opponent's Digimon gets -7000 DP for the turn. If there are 6 or fewer total cards in both players' security stacks, instead all of their Digimon get -7000 DP for the turn.\n[When Digivolving] By trashing the top security card of 1 player with the most security cards, you may activate 1 of this Digimon's [Security] effects.\n[When Digivolving] [End of Attack] [Counter] [Once Per Turn] You may place 1 of each player's Digimon as the top security cards.",
+    "form": "Mega",
     "id": "EX13-036",
-    "illustrator": "To be completed",
+    "illustrator": "SENNSU",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Kentaurosmon",
+      "japanese": "\u30b9\u30ec\u30a4\u30d7\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -261904,8 +261928,8 @@
     "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "12",
+    "rarity": "SR",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -261914,8 +261938,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[Holy Beast]/[DATA SQUAD]\u00a0trait: Cost 3 ",
+    "type": "Holy Warrior/Royal Knight/DATA SQUAD",
     "version": "Normal"
   },
   {
@@ -262371,32 +262395,38 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Data",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-046-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.3",
     "cardNumber": "EX13-046",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Black",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[On Deletion] \uff1cDe-Digivolve 1\uff1e 1 of your opponent's Digimon. ",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "2000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 card with [Mamemon]\u00a0in its text and 1 card with the [Mutant]\u00a0trait among them to the hand. Return the rest to the bottom of the deck.",
+    "form": "Rookie",
     "id": "EX13-046",
-    "illustrator": "To be completed",
+    "illustrator": "koki",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Kokuwamon",
+      "japanese": "\u30b3\u30af\u30ef\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -262404,8 +262434,8 @@
     "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "3",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -262415,38 +262445,44 @@
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "Machine",
     "version": "Normal"
   },
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Data",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-047-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.3",
     "cardNumber": "EX13-047",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Black",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[Opponent's Turn] This Digimon gets +2000 DP.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "3000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "\uff1cBlocker\uff1e \n[On Play] Reveal the top 3 cards of your deck. Add 1 card with the [Royal Knight]\u00a0trait and 1 card with \uff1cBlocker\uff1e among them to the hand. Return the rest to the bottom of the deck.\n[When Attacking] Lose 2 memory.",
+    "form": "Rookie",
     "id": "EX13-047",
-    "illustrator": "To be completed",
+    "illustrator": "GOSSAN",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Gotsumon",
+      "japanese": "\u30b4\u30c4\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -262454,8 +262490,8 @@
     "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "3",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -262465,38 +262501,44 @@
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "Rock",
     "version": "Normal"
   },
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Data",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-048-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.3",
     "cardNumber": "EX13-048",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Black",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[All Turns] [Once Per Turn] When this Digimon would leave the battle area other than by your effects, by deleting 1 of your other Digimon with [Knightmon]\u00a0in its text, it doesn't leave.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "2000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 card with [Knightmon]\u00a0in its text and 1 card with [Knightmon]\u00a0in its name among them to the hand. Return the rest to the bottom of the deck.",
+    "form": "Rookie",
     "id": "EX13-048",
-    "illustrator": "To be completed",
+    "illustrator": "Souichirou Gunjima",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Kotemon",
+      "japanese": "\u30b3\u30c6\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -262504,8 +262546,8 @@
     "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "3",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -262515,7 +262557,7 @@
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "Reptile",
     "version": "Normal"
   },
   {
@@ -262621,32 +262663,38 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Virus",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-051-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.4",
     "cardNumber": "EX13-051",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Black",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[Opponent's Turn] [Once Per Turn] When any of your Digimon suspend, this Digimon may unsuspend.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "5000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "\uff1cBlocker\uff1e \n[All Turns] When any of your other Digimon with \uff1cBlocker\uff1e would leave the battle area other than by your effects, by suspending this Digimon, they don't leave.",
+    "form": "Champion",
     "id": "EX13-051",
-    "illustrator": "To be completed",
+    "illustrator": "GOSSAN",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Guardromon",
+      "japanese": "\u30ac\u30fc\u30c9\u30ed\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -262654,8 +262702,8 @@
     "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "4",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -262665,38 +262713,44 @@
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "Mine",
     "version": "Normal"
   },
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-052-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.4",
     "cardNumber": "EX13-052",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Black",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[All Turns] [Once Per Turn] When this Digimon would leave the battle area other than by your effects, by deleting 1 of your other Digimon with [Knightmon]\u00a0in its text, it doesn't leave.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "4000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "\uff1cGuard\uff1e \n[On Play] [On Deletion] \uff1cDe-Digivolve 1\uff1e 1 of your opponent's Digimon. ",
+    "form": "Champion",
     "id": "EX13-052",
-    "illustrator": "To be completed",
+    "illustrator": "Moyasi",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Gladimon",
+      "japanese": "\u30b0\u30e9\u30c7\u30a3\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -262704,8 +262758,8 @@
     "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "4",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -262715,38 +262769,49 @@
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "Warrior",
     "version": "Normal"
   },
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Data",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-053-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.4",
     "cardNumber": "EX13-053",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Black",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "2",
+        "level": "3"
+      },
+      {
+        "color": "Yellow",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[On Deletion] \uff1cDe-Digivolve 1\uff1e 1 of your opponent's Digimon. ",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "4000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[On Play] [On Deletion] You may return up to 3 Digimon cards with [Mamemon]\u00a0in their texts from your trash to the top of the deck. Then, delete 1 of your opponent's Digimon with a play cost of 3 or less. For each one this effect returned, add 1 to this effect's play cost maximum.",
+    "form": "Champion",
     "id": "EX13-053",
-    "illustrator": "To be completed",
+    "illustrator": "koki",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Thundermon",
+      "japanese": "\u30b5\u30f3\u30c0\u30fc\u30dc\u30fc\u30eb\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -262754,18 +262819,18 @@
     "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "4",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
       "japanese": "Not released",
       "korean": "Not released"
     },
-    "rule": "-",
+    "rule": "[Rule] Name: Treated as including [Mamemon].",
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "Mutant",
     "version": "Normal"
   },
   {
@@ -262871,32 +262936,38 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-056-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.5",
     "cardNumber": "EX13-056",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Black",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "3",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "[Opponent's Turn] [Once Per Turn] When any of your Digimon suspend, you may play 1 level 5 or lower black Digimon card with \uff1cBlocker\uff1e from your hand without paying the cost.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "7000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "\uff1cCollision\uff1e \n\uff1cBlocker\uff1e \n[All Turns] [Once Per Turn] When this Digimon suspends, reveal the top 3 cards of your deck. You may play 1 level 4 or lower black Digimon card with \uff1cBlocker\uff1e among them without paying the cost. Trash the rest.",
+    "form": "Ultimate",
     "id": "EX13-056",
-    "illustrator": "To be completed",
+    "illustrator": "GOSSAN",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Giromon",
+      "japanese": "\u30ae\u30ed\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -262904,18 +262975,18 @@
     "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "7",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
       "japanese": "Not released",
       "korean": "Not released"
     },
-    "rule": "-",
+    "rule": "[Rule] Trait: Has [Machine] Type.",
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "Mine",
     "version": "Normal"
   },
   {
@@ -262971,32 +263042,38 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Data",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-058-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.5",
     "cardNumber": "EX13-058",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Black",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "3",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "[All Turns] [Once Per Turn] When any of your Digimon with [Knightmon]\u00a0in their texts are played, \uff1cDe-Digivolve 1\uff1e 1 of your opponent's Digimon. ",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "7000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[When Attacking] [On Deletion] You may play or use 1 card with [Knightmon]\u00a0in its text and a play or use cost of 4 or less from your hand without paying the cost.\n[Opponent's Turn] All of your Digimon with [Knightmon]\u00a0in their texts gain \uff1cReboot\uff1e and \uff1cBlocker\uff1e ",
+    "form": "Ultimate",
     "id": "EX13-058",
-    "illustrator": "To be completed",
+    "illustrator": "BIRU YAMAGUCHI",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Knightmon",
+      "japanese": "\u30ca\u30a4\u30c8\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -263004,8 +263081,8 @@
     "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "7",
+    "rarity": "R",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -263014,39 +263091,45 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.4 w/[Knightmon]\u00a0in text: Cost 3 ",
+    "type": "Warrior",
     "version": "Normal"
   },
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Data",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-059-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.5",
     "cardNumber": "EX13-059",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Black",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "3",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "[End of Your Turn] [Once Per Turn] By deleting 1 of your Digimon with [Mamemon]\u00a0in its name, delete all of your opponent's Digimon with the lowest play cost.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "8000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[When Digivolving] [On Deletion] Reveal the top 3 cards of your deck. You may play 1 play cost 7 or lower Digimon card with [Mamemon]\u00a0in its name or the [Mutant]\u00a0trait among them without paying the cost. Trash the rest.\n[End of Your Turn] [Once Per Turn] By deleting 1 of your Digimon with [Mamemon]\u00a0in its name, delete 1 of your opponent's Digimon with the lowest play cost.",
+    "form": "Ultimate",
     "id": "EX13-059",
-    "illustrator": "To be completed",
+    "illustrator": "koki",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "BigMamemon",
+      "japanese": "\u30d3\u30c3\u30b0\u30de\u30e1\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -263054,8 +263137,8 @@
     "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "8",
+    "rarity": "R",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -263065,7 +263148,7 @@
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "Mutant",
     "version": "Normal"
   },
   {
@@ -263170,33 +263253,39 @@
   },
   {
     "aceEffect": "-",
-    "assembly": "-",
-    "attribute": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all Black w/\uff1cBlocker\uff1e",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-062-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.6",
     "cardNumber": "EX13-062",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Black",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "12000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n[On Play] [When Digivolving] Your opponent's effects don't affect this Digimon until their turn ends.\n[All Turns] [Once Per Turn] When this Digimon suspends, you may delete all of your opponent's Digimon with the lowest play cost.\n[All Turns] When this Digimon unsuspends, it gets +3000 DP until your turn ends.",
+    "form": "Mega",
     "id": "EX13-062",
-    "illustrator": "To be completed",
+    "illustrator": "GOSSAN",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Craniamon",
+      "japanese": "\u30af\u30ec\u30cb\u30a2\u30e0\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -263204,8 +263293,8 @@
     "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "12",
+    "rarity": "SR",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -263215,38 +263304,44 @@
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "Holy Warrior/Royal Knight",
     "version": "Normal"
   },
   {
     "aceEffect": "-",
-    "assembly": "-",
-    "attribute": "-",
+    "assembly": "[Assembly\u00a0-4] 3 Lv.5 or lower [Mamemon]\u00a0text cards w/different names",
+    "attribute": "Data",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-063-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.6",
     "cardNumber": "EX13-063",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Black",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "12000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[On Play] [When Digivolving] [On Deletion] Reveal the top 3 cards of your deck. You may play 1 play cost 10 or lower Digimon card with [Mamemon]\u00a0in its name or the [Mutant]\u00a0trait among them without paying the cost. Trash the rest.\n[On Deletion] Delete 1 of your opponent's highest play cost Digimon.\n[All Turns] All of your Digimon with [Mamemon]\u00a0in their names gain \uff1cBlocker\uff1e and \uff1cGuard\uff1e ",
+    "form": "Mega",
     "id": "EX13-063",
-    "illustrator": "To be completed",
+    "illustrator": "koki",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "PrinceMamemon",
+      "japanese": "\u30d7\u30ea\u30f3\u30b9\u30de\u30e1\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -263254,8 +263349,8 @@
     "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "11",
+    "rarity": "SR",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -263265,7 +263360,7 @@
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "Mutant",
     "version": "Normal"
   },
   {
@@ -263298,10 +263393,10 @@
     "dnaDigivolve": "-",
     "dp": "12000",
     "dualEffect": "-",
-    "effect": "[When Digivolving] You may play or use 1 play or use cost 8 or lower Digimon or Option card with [Knightmon]\u00a0in their texts from your hand or trash without paying the cost.\n[Your Turn] All of your Digimon with [Knightmon]\u00a0in their texts gain \uff1cCollision\uff1e and \uff1cPiercing\uff1e \n[Your Turn] [Once Per Turn] When any of your other Digimon or Tamers are played, 1 of your Digimon with [Knightmon]\u00a0text Digimon may gain \uff1cRush\uff1e and \uff1cCollision\uff1e for the turn and attack.",
+    "effect": "[When Digivolving] You may play or use 1 play or use cost 8 or lower [Knightmon]\u00a0text card from your hand or trash without paying the cost.\n[Your Turn] All of your [Knightmon]\u00a0text Digimon gain \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack.) and \uff1cPiercing\uff1e \n[Your Turn] [Once Per Turn] When any of your other Digimon or Tamers are played, 1 of your [Knightmon]\u00a0text Digimon may gain \uff1cRush\uff1e and \uff1cCollision\uff1e for the turn and attack.",
     "form": "Mega",
     "id": "EX13-064",
-    "illustrator": "To be completed",
+    "illustrator": "Nakano Haito",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
@@ -263640,24 +263735,24 @@
     "cardImage": "assets/images/cards/EX13-071-J.webp",
     "cardLv": "-",
     "cardNumber": "EX13-071",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Tamer",
+    "color": "Yellow",
     "digiXros": "-",
     "digivolveCondition": [],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "[Start of Your Main Phase] [On Play] You may place your deck's top card face down under this Tamer. Then, if your opponent has a Digimon, gain 1 memory.\n[Main] [Once Per Turn] By trashing 3 bottom face-down cards from under any of your Tamers and placing 1 each of level 4 and level 5 [Holy Beast]\u00a0trait yellow Digimon cards from your trash as 1 of your [Kudamon] 's bottom digivolution cards, it may digivolve into [Kentaurosmon] in the hand or trash, ignoring level and with the cost reduced by 1.",
     "form": "-",
     "id": "EX13-071",
-    "illustrator": "To be completed",
+    "illustrator": "No Illustrator",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Richard Sampson",
+      "japanese": "\u85a9\u6469\u5ec9\u592a\u90ce",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -263665,8 +263760,8 @@
     "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "4",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -263674,9 +263769,9 @@
       "korean": "Not released"
     },
     "rule": "-",
-    "securityEffect": "-",
+    "securityEffect": "[Security] Play this card without paying the cost.",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "DATA SQUAD",
     "version": "Normal"
   },
   {
@@ -263790,24 +263885,24 @@
     "cardImage": "assets/images/cards/EX13-074-J.webp",
     "cardLv": "-",
     "cardNumber": "EX13-074",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Tamer",
+    "color": "Purple/Black",
     "digiXros": "-",
     "digivolveCondition": [],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "[Start of Your Turn] If you have 2 or less memory, set it to 3.\n[All Turns] [Once Per Turn] When any of your [Knightmon]\u00a0text Digimon are played or deleted, by placing 1 such card from your hand or trash under this Tamer, \uff1cDraw 1\uff1e \n[Main] [Once Per Turn] If this Tamer has 3 or more [Knightmon]\u00a0text cards under it, it may digivolve into [LordKnightmon] in the hand or trash for a digivolution cost of 3, ignoring digivolution requirements.",
     "form": "-",
     "id": "EX13-074",
-    "illustrator": "To be completed",
+    "illustrator": "Takase",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Rie Kishibe",
+      "japanese": "\u5cb8\u90e8\u30ea\u30a8",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -263815,8 +263910,8 @@
     "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "4",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -263824,9 +263919,9 @@
       "korean": "Not released"
     },
     "rule": "-",
-    "securityEffect": "-",
+    "securityEffect": "[Security] Play this card without paying the cost.",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "CS",
     "version": "Normal"
   },
   {
@@ -266616,7 +266711,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Argomon].",
+    "rule": "[Rule] Name: Not treated as including [Argomon].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Beastkin",
@@ -266842,7 +266937,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Argomon].",
+    "rule": "[Rule] Name: Not treated as including [Argomon].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Machine",
@@ -266898,7 +266993,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Argomon].",
+    "rule": "[Rule] Name: Not treated as including [Argomon].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Machine",
@@ -278764,7 +278859,7 @@
       "japanese": "Restricted to 1",
       "korean": "Restricted to 1"
     },
-    "rule": "[Rule] Name: Also treated as having [Sakuyamon].",
+    "rule": "[Rule] Name: Treated as including [Sakuyamon].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Shaman",
@@ -278825,7 +278920,7 @@
       "japanese": "Restricted to 1",
       "korean": "Restricted to 1"
     },
-    "rule": "[Rule] Name: Also treated as having [Sakuyamon].",
+    "rule": "[Rule] Name: Treated as including [Sakuyamon].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Shaman",
@@ -279403,7 +279498,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Argomon].",
+    "rule": "[Rule] Name: Not treated as including [Argomon].",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] Lv.3 w/[Terriermon]/[Lopmon]\u00a0in name: Cost 2 ",
     "type": "Beastkin",
@@ -279525,7 +279620,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Argomon].",
+    "rule": "[Rule] Name: Not treated as including [Argomon].",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] Lv.5 w/[Rapidmon]\u00a0in name or Lv.5 2-color w/Green: Cost 4 ",
     "type": "Machine",
@@ -279586,7 +279681,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Argomon].",
+    "rule": "[Rule] Name: Not treated as including [Argomon].",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] Lv.5 w/[Rapidmon]\u00a0in name or Lv.5 2-color w/Green: Cost 4 ",
     "type": "Machine",
@@ -280227,7 +280322,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Also treated as having [Greymon].",
+    "rule": "[Rule] Name: Treated as including [Greymon].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Dragonkin/X Antibody",
@@ -280288,7 +280383,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Also treated as having [Greymon].",
+    "rule": "[Rule] Name: Treated as including [Greymon].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Dragonkin/X Antibody",
@@ -280741,7 +280836,7 @@
     "dnaDigivolve": "-",
     "dp": "1000",
     "dualEffect": "-",
-    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 purple Digimon card with [Ravemon]\u00a0in its name or [Bird]\u00a0in any of its traits and 1 [Keenan Crier] among them to your hand. Place the rest at the bottom of your deck in any order.",
+    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 purple Digimon card with [Ravemon]\u00a0in its name or [Bird] or [Avian]\u00a0in any of its traits and 1 [Keenan Crier] among them to your hand. Place the rest at the bottom of your deck in any order.",
     "form": "Rookie",
     "id": "EX4-053",
     "illustrator": "Spareribs",
@@ -280797,7 +280892,7 @@
     "dnaDigivolve": "-",
     "dp": "1000",
     "dualEffect": "-",
-    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 purple Digimon card with [Ravemon]\u00a0in its name or [Bird]\u00a0in any of its traits and 1 [Keenan Crier] among them to your hand. Place the rest at the bottom of your deck in any order.",
+    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 purple Digimon card with [Ravemon]\u00a0in its name or [Bird] or [Avian]\u00a0in any of its traits and 1 [Keenan Crier] among them to your hand. Place the rest at the bottom of your deck in any order.",
     "form": "Rookie",
     "id": "EX4-053_P1",
     "illustrator": "Takase",
@@ -282316,7 +282411,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Also treated as having [Plug-In].",
+    "rule": "[Rule] Name: Treated as including [Plug-In].",
     "securityEffect": "[Security] Return 1 Digimon card from your trash to your hand, and add this card to your hand.",
     "specialDigivolve": "-",
     "type": "-",
@@ -282366,7 +282461,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Also treated as having [Plug-In].",
+    "rule": "[Rule] Name: Treated as including [Plug-In].",
     "securityEffect": "[Security] Return 1 Digimon card from your trash to your hand, and add this card to your hand.",
     "specialDigivolve": "-",
     "type": "-",
@@ -283615,7 +283710,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Dramon].",
+    "rule": "[Rule] Name: Not treated as including [Dramon].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Holy Beast/Deva",
@@ -285258,7 +285353,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Also treated as having [Leomon].",
+    "rule": "[Rule] Name: Treated as including [Leomon].",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] [Liollmon]/[Elecmon]: Cost 2 ",
     "type": "Holy Beast",
@@ -286456,7 +286551,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Also treated as having [Etemon]/[Sukamon].",
+    "rule": "[Rule] Name: Treated as including [Etemon]/[Sukamon].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Puppet",
@@ -339110,7 +339205,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Also treated as having [Mamemon]/[Tyrannomon].",
+    "rule": "[Rule] Name: Treated as including [Mamemon]/[Tyrannomon].",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] Lv.4 w/[Mamemon]/[Tyrannomon]\u00a0in name: Cost 3 ",
     "type": "Mutant/X Antibody",
@@ -344308,7 +344403,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Also treated as having [Greymon].",
+    "rule": "[Rule] Name: Treated as including [Greymon].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Dragonkin/X Antibody",
@@ -344607,7 +344702,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Vee].",
+    "rule": "[Rule] Name: Not treated as including [Vee].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Baby Dragon",
@@ -344657,7 +344752,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Vee].",
+    "rule": "[Rule] Name: Not treated as including [Vee].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Baby Dragon",
@@ -360846,7 +360941,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Argomon].",
+    "rule": "[Rule] Name: Not treated as including [Argomon].",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] Lv.3 w/[Terriermon]/[Lopmon]\u00a0in name: Cost 2 ",
     "type": "Beastkin",
@@ -361152,7 +361247,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Argomon].",
+    "rule": "[Rule] Name: Not treated as including [Argomon].",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] [Rapidmon]\u00a0in name: Cost 5 ",
     "type": "Machine",
@@ -361214,7 +361309,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Argomon].",
+    "rule": "[Rule] Name: Not treated as including [Argomon].",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] [Rapidmon]\u00a0in name: Cost 5 ",
     "type": "Machine",
@@ -376964,7 +377059,7 @@
       "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
-    "rule": "[Rule] Name: Not treated as having [Vee].",
+    "rule": "[Rule] Name: Not treated as including [Vee].",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Baby Dragon",
