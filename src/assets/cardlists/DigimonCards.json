@@ -213885,7 +213885,7 @@
     ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "12000",
+    "dp": "13000",
     "dualEffect": "-",
     "effect": "\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n[On Play] [When Digivolving] You may play 1 [Hinukamuy] Token. (Digimon/White/6000 DP/\uff1cAlliance\uff1e \uff1cReboot\uff1e \uff1cBlocker\uff1e) Then, until your opponent's turn ends, their Digimon effects don't affect 1 of your white Digimon.\n[All Turns] [Once Per Turn] When any of your white Digimon suspend, you may use 1 use cost 5 or lower Option card with [Huckmon]\u00a0in its text from your hand or this Digimon's digivolution cards without paying the cost.",
     "form": "Mega",
@@ -213904,7 +213904,7 @@
     "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "12",
+    "playCost": "13",
     "rarity": "SR",
     "restrictions": {
       "chinese": "Not released",
@@ -214363,7 +214363,7 @@
     "AAs": [
       {
         "id": "EX13-069_P1",
-        "illustrator": "To be completed",
+        "illustrator": "Takase",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Alternative Art"
       }
@@ -214422,9 +214422,9 @@
     "AAs": [
       {
         "id": "EX13-070_P1",
-        "illustrator": "To be completed",
+        "illustrator": "No Illustrator",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
-        "type": "Foil - Coloured Border -\u00a0"
+        "type": "Limited Uncommon"
       }
     ],
     "JAAs": [],
@@ -214438,24 +214438,24 @@
     "cardImage": "assets/images/cards/EX13-070.webp",
     "cardLv": "-",
     "cardNumber": "EX13-070",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Tamer",
+    "color": "Blue/Green",
     "digiXros": "-",
     "digivolveCondition": [],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "[Start of Your Turn] If you have 2 or less memory, set it to 3.\n[End of Your Turn] By suspending this Tamer, activate 1 of the effects below:\n\u30fb1 of your Digimon may digivolve into a Digimon card with [Imperialdramon]\u00a0in its name or the [Free]\u00a0trait in the hand. Reduce this effect's paid cost by 1 for each of your opponent's Digimon.\n\u30fb2 of your Digimon may DNA digivolve into a [Free]\u00a0trait Digimon card in the hand.",
     "form": "-",
     "id": "EX13-070",
-    "illustrator": "To be completed",
+    "illustrator": "No Illustrator",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Davis Motomiya & Ken Ichijoji",
+      "japanese": "\u672c\u5bae\u5927\u8f14\uff06\u4e00\u4e57\u5bfa\u8ce2",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -214463,8 +214463,8 @@
     "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "4",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -214472,7 +214472,7 @@
       "korean": "Not released"
     },
     "rule": "-",
-    "securityEffect": "-",
+    "securityEffect": "[Security] Play this card without paying the cost.",
     "specialDigivolve": "-",
     "type": "-",
     "version": "Normal"
@@ -214776,13 +214776,13 @@
     "AAs": [
       {
         "id": "EX13-076_P1",
-        "illustrator": "To be completed",
+        "illustrator": "Spareribs",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Alternative Art"
       },
       {
         "id": "EX13-076_P2",
-        "illustrator": "To be completed",
+        "illustrator": "Spareribs",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Alternative Art"
       }
