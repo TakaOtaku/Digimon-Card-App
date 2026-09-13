@@ -260865,33 +260865,44 @@
   },
   {
     "aceEffect": "-",
-    "assembly": "-",
-    "attribute": "-",
+    "assembly": "[Assembly\u00a0-7] [WarGreymon] \u00d7 [MetalGarurumon] \u00d7 [Agumon] \u00d7 [Gabumon]",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-016-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.7",
     "cardNumber": "EX13-016",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Red/White/Blue",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "5",
+        "level": "6"
+      },
+      {
+        "color": "Blue",
+        "cost": "5",
+        "level": "6"
+      }
+    ],
     "digivolveEffect": "-",
-    "dnaDigivolve": "-",
-    "dp": "-",
+    "dnaDigivolve": "[Digivolve] Lv.6 w/[CS]\u00a0trait: Cost 5 [DNA Digivolve] Lv.6 w/[Greymon]\u00a0in name + Lv.6 w/[Garurumon]\u00a0in name\u00a0: Cost 0",
+    "dp": "15000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "\uff1cRaid\uff1e \n\uff1cBlocker\uff1e \n[On Play] [When Digivolving] [When Attacking] [Once Per Turn] 2 of your opponent's Digimon or Tamers can't suspend until their turn ends.\n[On Play] [When Digivolving] [Counter] [Once Per Turn] You may delete 1 of your opponent's Digimon with as many digivolution cards as this Digimon or fewer.\n[All Turns] When this Digimon would leave the battle area, by trashing 2 same-level cards from its digivolution cards, it doesn't leave.",
+    "form": "Mega",
     "id": "EX13-016",
-    "illustrator": "To be completed",
+    "illustrator": "toriyufu",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Omnimon",
+      "japanese": "\u30aa\u30e1\u30ac\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -260899,8 +260910,8 @@
     "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "15",
+    "rarity": "SR",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -260910,7 +260921,7 @@
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "Holy Warrior/Royal Knight/CS",
     "version": "Normal"
   },
   {
@@ -263721,24 +263732,24 @@
     "cardImage": "assets/images/cards/EX13-067-J.webp",
     "cardLv": "-",
     "cardNumber": "EX13-067",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Tamer",
+    "color": "Red/Blue",
     "digiXros": "-",
     "digivolveCondition": [],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "[Start of Your Main Phase] If your opponent has a Digimon, gain 1 memory.\n[Your Turn] When any of your Digimon digivolve, if you have 1 or fewer Digimon, by suspending this Tamer, you may play 1 [Gabumon] if that Digimon has [Greymon]\u00a0in its name and 1 [Agumon] if it has [Garurumon]\u00a0in its name from your hand or trash without paying the cost.",
     "form": "-",
     "id": "EX13-067",
-    "illustrator": "To be completed",
+    "illustrator": "Nakano Haito",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Nokia Shiramine",
+      "japanese": "\u767d\u5cf0\u30ce\u30ad\u30a2",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -263746,8 +263757,8 @@
     "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "4",
+    "rarity": "R",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -263755,9 +263766,9 @@
       "korean": "Not released"
     },
     "rule": "-",
-    "securityEffect": "-",
+    "securityEffect": "[Security] Play this card without paying the cost.",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "CS",
     "version": "Normal"
   },
   {
@@ -264223,33 +264234,39 @@
   },
   {
     "aceEffect": "-",
-    "assembly": "-",
-    "attribute": "-",
+    "assembly": "[Assembly\u00a0-8] 6 [ADVENTURE]\u00a0trait Digimon cards w/different colors",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-077-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.7",
     "cardNumber": "EX13-077",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "White",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "All",
+        "cost": "6",
+        "level": "6"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "16000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[On Play] [When Digivolving] 1 of your Digimon may attack without suspending. Then, for every 2 of your Digimon and Tamers' colors, activate 1 effect below:\n\u30fbThis Digimon may battle 1 of your opponent's Digimon.\n\u30fbBy returning 5 cards from your opponent's trash to the bottom of the deck, \uff1cRecovery +1\uff1e \n[All Turns] This Digimon gains all colors in its digivolution cards, and +1000 DP for each of your Digimon and Tamers' colors.",
+    "form": "Mega",
     "id": "EX13-077",
-    "illustrator": "To be completed",
+    "illustrator": "k.Dra",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Omnimon: Merciful Mode",
+      "japanese": "\u30aa\u30e1\u30ac\u30e2\u30f3\uff1a\u30de\u30fc\u30b7\u30d5\u30eb\u30e2\u30fc\u30c9",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -264257,8 +264274,8 @@
     "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "16",
+    "rarity": "SEC",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -264267,8 +264284,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] [Omnimon]: Cost 2 ",
+    "type": "Holy Warrior/ADVENTURE",
     "version": "Normal"
   },
   {
