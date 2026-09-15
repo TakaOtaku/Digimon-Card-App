@@ -339114,7 +339114,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/EX13-004.webp",
+    "cardImage": "assets/images/cards/EX13-004-Sample.webp",
     "cardLv": "Lv.2",
     "cardNumber": "EX13-004",
     "cardType": "Digi-Egg",
@@ -341663,7 +341663,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/EX13-025.webp",
+    "cardImage": "assets/images/cards/EX13-025-Sample.webp",
     "cardLv": "Lv.3",
     "cardNumber": "EX13-025",
     "cardType": "Digimon",
@@ -342075,7 +342075,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/EX13-029.webp",
+    "cardImage": "assets/images/cards/EX13-029-Sample.webp",
     "cardLv": "Lv.4",
     "cardNumber": "EX13-029",
     "cardType": "Digimon",
@@ -342426,7 +342426,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/EX13-033.webp",
+    "cardImage": "assets/images/cards/EX13-033-Sample.webp",
     "cardLv": "Lv.5",
     "cardNumber": "EX13-033",
     "cardType": "Digimon",
@@ -342548,7 +342548,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/EX13-034.webp",
+    "cardImage": "assets/images/cards/EX13-034-Sample.webp",
     "cardLv": "Lv.5",
     "cardNumber": "EX13-034",
     "cardType": "Digimon",
@@ -342950,7 +342950,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/EX13-037.webp",
+    "cardImage": "assets/images/cards/EX13-037-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "EX13-037",
     "cardType": "Digimon",
@@ -344421,18 +344421,29 @@
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-049.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.3",
     "cardNumber": "EX13-049",
     "cardType": "Digimon",
-    "color": "Black",
+    "color": "Black/Yellow",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "1",
+        "level": "2"
+      },
+      {
+        "color": "Yellow",
+        "cost": "1",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[When Attacking] [Once Per Turn] 1 of your opponent's Digimon gets -2000 DP for the turn.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "1000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[When Moving] [On Play] Reveal the top 3 cards of your deck. Add 1 card with the [X Antibody] or [Chronicle]\u00a0trait among them to the hand. Return the rest to the top or bottom of the deck.",
+    "form": "Rookie",
     "id": "EX13-049",
     "illustrator": "Spareribs",
     "linkDP": "-",
@@ -344448,7 +344459,7 @@
     "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
+    "playCost": "3",
     "rarity": "R",
     "restrictions": {
       "chinese": "Not released",
@@ -344458,7 +344469,7 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
+    "specialDigivolve": "[Digivolve] [Dorimon]/Black Lv.2 w/[X Antibody]\u00a0trait: Cost 0 ",
     "type": "Beast/X Antibody/Chronicle",
     "version": "Normal"
   },
@@ -344470,7 +344481,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/EX13-050.webp",
+    "cardImage": "assets/images/cards/EX13-050-Sample.webp",
     "cardLv": "Lv.3",
     "cardNumber": "EX13-050",
     "cardType": "Digimon",
@@ -345051,18 +345062,29 @@
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-055.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.4",
     "cardNumber": "EX13-055",
     "cardType": "Digimon",
-    "color": "Black",
+    "color": "Black/Yellow",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "3",
+        "level": "3"
+      },
+      {
+        "color": "Yellow",
+        "cost": "3",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "\uff1cBarrier\uff1e ",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "5000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[On Play] [When Digivolving] 1 of your opponent's Digimon gets -3000 DP for the turn.\n[When Attacking] This Digimon may digivolve into a Digimon card with the [Chronicle]\u00a0trait in the hand or trash.",
+    "form": "Champion",
     "id": "EX13-055",
     "illustrator": "Spareribs",
     "linkDP": "-",
@@ -345078,8 +345100,8 @@
     "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "5",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -345088,7 +345110,7 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
+    "specialDigivolve": "[Digivolve] [Dorumon]/Lv.3 w/[Chronicle]\u00a0trait: Cost 2 ",
     "type": "Cyborg/X Antibody/Chronicle",
     "version": "Normal"
   },
@@ -345101,18 +345123,29 @@
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-055_P1.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.4",
     "cardNumber": "EX13-055",
     "cardType": "Digimon",
-    "color": "Black",
+    "color": "Black/Yellow",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "3",
+        "level": "3"
+      },
+      {
+        "color": "Yellow",
+        "cost": "3",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "\uff1cBarrier\uff1e ",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "5000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[On Play] [When Digivolving] 1 of your opponent's Digimon gets -3000 DP for the turn.\n[When Attacking] This Digimon may digivolve into a Digimon card with the [Chronicle]\u00a0trait in the hand or trash.",
+    "form": "Champion",
     "id": "EX13-055_P1",
     "illustrator": "Spareribs",
     "linkDP": "-",
@@ -345128,8 +345161,8 @@
     "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "5",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -345138,9 +345171,9 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
+    "specialDigivolve": "[Digivolve] [Dorumon]/Lv.3 w/[Chronicle]\u00a0trait: Cost 2 ",
     "type": "Cyborg/X Antibody/Chronicle",
-    "version": "Foil - Coloured Border -\u00a0"
+    "version": "Foil - Coloured Border -\u00a0Limited Common"
   },
   {
     "aceEffect": "-",
@@ -345263,18 +345296,29 @@
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-057.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.5",
     "cardNumber": "EX13-057",
     "cardType": "Digimon",
-    "color": "Black",
+    "color": "Black/Yellow",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "4"
+      },
+      {
+        "color": "Yellow",
+        "cost": "4",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "[All Turns] [Once Per Turn] When any of your [Chronicle]\u00a0trait Digimon would leave the battle area, by trashing your top security card, they don't leave.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "7000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[On Play] [When Digivolving] Until your opponent's turn ends, 1 of your [X Antibody] or [Chronicle]\u00a0trait Digimon gains \uff1cReboot\uff1e and \uff1cBlocker\uff1e. If during an attack, it also isn't affected by their Digimon effects and gets +5000 DP.\n[End of Attack] [Once Per Turn] This Digimon may digivolve into a Digimon card with the [Chronicle]\u00a0trait in the hand or trash.",
+    "form": "Ultimate",
     "id": "EX13-057",
     "illustrator": "Spareribs",
     "linkDP": "-",
@@ -345290,8 +345334,8 @@
     "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "7",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -345300,7 +345344,7 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
+    "specialDigivolve": "[Digivolve] [Raptordramon]/Lv.4 w/[Chronicle]\u00a0trait: Cost 3 ",
     "type": "Warrior/X Antibody/Chronicle",
     "version": "Normal"
   },
@@ -345313,18 +345357,29 @@
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-057_P1.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.5",
     "cardNumber": "EX13-057",
     "cardType": "Digimon",
-    "color": "Black",
+    "color": "Black/Yellow",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "4"
+      },
+      {
+        "color": "Yellow",
+        "cost": "4",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "[All Turns] [Once Per Turn] When any of your [Chronicle]\u00a0trait Digimon would leave the battle area, by trashing your top security card, they don't leave.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "7000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[On Play] [When Digivolving] Until your opponent's turn ends, 1 of your [X Antibody] or [Chronicle]\u00a0trait Digimon gains \uff1cReboot\uff1e and \uff1cBlocker\uff1e. If during an attack, it also isn't affected by their Digimon effects and gets +5000 DP.\n[End of Attack] [Once Per Turn] This Digimon may digivolve into a Digimon card with the [Chronicle]\u00a0trait in the hand or trash.",
+    "form": "Ultimate",
     "id": "EX13-057_P1",
     "illustrator": "Spareribs",
     "linkDP": "-",
@@ -345340,8 +345395,8 @@
     "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "7",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -345350,9 +345405,9 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
+    "specialDigivolve": "[Digivolve] [Raptordramon]/Lv.4 w/[Chronicle]\u00a0trait: Cost 3 ",
     "type": "Warrior/X Antibody/Chronicle",
-    "version": "Foil - Coloured Border -\u00a0"
+    "version": "Foil - Coloured Border -\u00a0Limited Uncommon"
   },
   {
     "aceEffect": "-",
@@ -345468,7 +345523,7 @@
   },
   {
     "aceEffect": "-",
-    "assembly": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Chronicle]\u00a0trait",
     "attribute": "Data",
     "block": [
       "06"
@@ -345478,14 +345533,25 @@
     "cardLv": "Lv.6",
     "cardNumber": "EX13-060",
     "cardType": "Digimon",
-    "color": "Black",
+    "color": "Black/Yellow",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "5",
+        "level": "5"
+      },
+      {
+        "color": "Yellow",
+        "cost": "5",
+        "level": "5"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "13000",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "[When Digivolving] 1 of your opponent's Digimon gets -8000 DP until their turn ends. Then, if they have 5 or more memory, gain 2 memory.\n[Your Turn] [Once Per Turn] When any of your [Chronicle]\u00a0trait Digimon or Tamers are played, 1 of your Digimon may attack. Then, you may activate 1 of this Digimon's [When Digivolving] effects.\n[End of Your Turn] [Once Per Turn] You may play 1 [Chronicle]\u00a0trait card without [Alphamon]\u00a0in its name from your hand with the cost reduced by 6. It gains \uff1cRush\uff1e for the turn. ",
     "form": "Mega",
     "id": "EX13-060",
     "illustrator": "Spareribs",
@@ -345502,7 +345568,7 @@
     "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
+    "playCost": "13",
     "rarity": "UR",
     "restrictions": {
       "chinese": "Not released",
@@ -345512,13 +345578,13 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "Holy Warrior/Royal Knight/Chronicle",
+    "specialDigivolve": "[Digivolve] [Grademon]/Lv.5 w/[Chronicle]\u00a0trait: Cost 4 ",
+    "type": "Holy Warrior/Royal Knight/X Antibody/Chronicle",
     "version": "Normal"
   },
   {
     "aceEffect": "-",
-    "assembly": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Chronicle]\u00a0trait",
     "attribute": "Data",
     "block": [
       "06"
@@ -345528,14 +345594,25 @@
     "cardLv": "Lv.6",
     "cardNumber": "EX13-060",
     "cardType": "Digimon",
-    "color": "Black",
+    "color": "Black/Yellow",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "5",
+        "level": "5"
+      },
+      {
+        "color": "Yellow",
+        "cost": "5",
+        "level": "5"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "13000",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "[When Digivolving] 1 of your opponent's Digimon gets -8000 DP until their turn ends. Then, if they have 5 or more memory, gain 2 memory.\n[Your Turn] [Once Per Turn] When any of your [Chronicle]\u00a0trait Digimon or Tamers are played, 1 of your Digimon may attack. Then, you may activate 1 of this Digimon's [When Digivolving] effects.\n[End of Your Turn] [Once Per Turn] You may play 1 [Chronicle]\u00a0trait card without [Alphamon]\u00a0in its name from your hand with the cost reduced by 6. It gains \uff1cRush\uff1e for the turn. ",
     "form": "Mega",
     "id": "EX13-060_P1",
     "illustrator": "Tonamikanji",
@@ -345552,7 +345629,7 @@
     "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
+    "playCost": "13",
     "rarity": "UR",
     "restrictions": {
       "chinese": "Not released",
@@ -345562,13 +345639,13 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "Holy Warrior/Royal Knight/Chronicle",
+    "specialDigivolve": "[Digivolve] [Grademon]/Lv.5 w/[Chronicle]\u00a0trait: Cost 4 ",
+    "type": "Holy Warrior/Royal Knight/X Antibody/Chronicle",
     "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
-    "assembly": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Chronicle]\u00a0trait",
     "attribute": "Data",
     "block": [
       "06"
@@ -345578,14 +345655,25 @@
     "cardLv": "Lv.6",
     "cardNumber": "EX13-060",
     "cardType": "Digimon",
-    "color": "Black",
+    "color": "Black/Yellow",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "5",
+        "level": "5"
+      },
+      {
+        "color": "Yellow",
+        "cost": "5",
+        "level": "5"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "13000",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "[When Digivolving] 1 of your opponent's Digimon gets -8000 DP until their turn ends. Then, if they have 5 or more memory, gain 2 memory.\n[Your Turn] [Once Per Turn] When any of your [Chronicle]\u00a0trait Digimon or Tamers are played, 1 of your Digimon may attack. Then, you may activate 1 of this Digimon's [When Digivolving] effects.\n[End of Your Turn] [Once Per Turn] You may play 1 [Chronicle]\u00a0trait card without [Alphamon]\u00a0in its name from your hand with the cost reduced by 6. It gains \uff1cRush\uff1e for the turn. ",
     "form": "Mega",
     "id": "EX13-060_P2",
     "illustrator": "Tonamikanji",
@@ -345602,7 +345690,7 @@
     "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
+    "playCost": "13",
     "rarity": "UR",
     "restrictions": {
       "chinese": "Not released",
@@ -345612,13 +345700,13 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "Holy Warrior/Royal Knight/Chronicle",
+    "specialDigivolve": "[Digivolve] [Grademon]/Lv.5 w/[Chronicle]\u00a0trait: Cost 4 ",
+    "type": "Holy Warrior/Royal Knight/X Antibody/Chronicle",
     "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
-    "assembly": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Chronicle]\u00a0trait",
     "attribute": "Data",
     "block": [
       "06"
@@ -345628,14 +345716,25 @@
     "cardLv": "Lv.6",
     "cardNumber": "EX13-060",
     "cardType": "Digimon",
-    "color": "Black",
+    "color": "Black/Yellow",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "5",
+        "level": "5"
+      },
+      {
+        "color": "Yellow",
+        "cost": "5",
+        "level": "5"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "13000",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "[When Digivolving] 1 of your opponent's Digimon gets -8000 DP until their turn ends. Then, if they have 5 or more memory, gain 2 memory.\n[Your Turn] [Once Per Turn] When any of your [Chronicle]\u00a0trait Digimon or Tamers are played, 1 of your Digimon may attack. Then, you may activate 1 of this Digimon's [When Digivolving] effects.\n[End of Your Turn] [Once Per Turn] You may play 1 [Chronicle]\u00a0trait card without [Alphamon]\u00a0in its name from your hand with the cost reduced by 6. It gains \uff1cRush\uff1e for the turn. ",
     "form": "Mega",
     "id": "EX13-060_P3",
     "illustrator": "Tonamikanji",
@@ -345652,7 +345751,7 @@
     "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
+    "playCost": "13",
     "rarity": "UR",
     "restrictions": {
       "chinese": "Not released",
@@ -345662,8 +345761,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "Holy Warrior/Royal Knight/Chronicle",
+    "specialDigivolve": "[Digivolve] [Grademon]/Lv.5 w/[Chronicle]\u00a0trait: Cost 4 ",
+    "type": "Holy Warrior/Royal Knight/X Antibody/Chronicle",
     "version": "Alternative Art"
   },
   {
@@ -346445,7 +346544,7 @@
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] [Sistermon Noir]/[Sistermon Ciel]: Cost 1\n[Digivolve] Lv.3 w/[Huckmon]\u00a0in text: Cost 3 ",
     "type": "Puppet",
-    "version": "Limited Uncommon"
+    "version": "Foil - Coloured Border -\u00a0Limited Uncommon"
   },
   {
     "aceEffect": "-",
@@ -347055,7 +347154,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/EX13-073.webp",
+    "cardImage": "assets/images/cards/EX13-073-Sample.webp",
     "cardLv": "-",
     "cardNumber": "EX13-073",
     "cardType": "Tamer",
@@ -347544,7 +347643,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/EX13-077_P1.webp",
+    "cardImage": "assets/images/cards/EX13-077_P1-Sample.webp",
     "cardLv": "Lv.7",
     "cardNumber": "EX13-077",
     "cardType": "Digimon",
