@@ -340483,7 +340483,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/EX13-016_P1.webp",
+    "cardImage": "assets/images/cards/EX13-016_P1-Sample.webp",
     "cardLv": "Lv.7",
     "cardNumber": "EX13-016",
     "cardType": "Digimon",
@@ -340544,7 +340544,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/EX13-016_P2.webp",
+    "cardImage": "assets/images/cards/EX13-016_P2-Sample.webp",
     "cardLv": "Lv.7",
     "cardNumber": "EX13-016",
     "cardType": "Digimon",
@@ -341017,7 +341017,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/EX13-020_P1.webp",
+    "cardImage": "assets/images/cards/EX13-020_P1-Sample.webp",
     "cardLv": "Lv.4",
     "cardNumber": "EX13-020",
     "cardType": "Digimon",
@@ -341078,7 +341078,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/EX13-020_P2.webp",
+    "cardImage": "assets/images/cards/EX13-020_P2-Sample.webp",
     "cardLv": "Lv.4",
     "cardNumber": "EX13-020",
     "cardType": "Digimon",
@@ -344420,7 +344420,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/EX13-049.webp",
+    "cardImage": "assets/images/cards/EX13-049-Sample.webp",
     "cardLv": "Lv.3",
     "cardNumber": "EX13-049",
     "cardType": "Digimon",
@@ -345061,7 +345061,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/EX13-055.webp",
+    "cardImage": "assets/images/cards/EX13-055-Sample.webp",
     "cardLv": "Lv.4",
     "cardNumber": "EX13-055",
     "cardType": "Digimon",
@@ -345295,7 +345295,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/EX13-057.webp",
+    "cardImage": "assets/images/cards/EX13-057-Sample.webp",
     "cardLv": "Lv.5",
     "cardNumber": "EX13-057",
     "cardType": "Digimon",
@@ -345529,7 +345529,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/EX13-060.webp",
+    "cardImage": "assets/images/cards/EX13-060-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "EX13-060",
     "cardType": "Digimon",
@@ -365581,7 +365581,7 @@
       "02"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/EX4-030_P1.webp",
+    "cardImage": "assets/images/cards/_P1.webp",
     "cardLv": "Lv.6",
     "cardNumber": "EX4-030",
     "cardType": "Digimon",
@@ -365605,7 +365605,7 @@
     "dualEffect": "-",
     "effect": "[When Digivolving] You may use an Option card with a cost of 5 or less in your hand without paying the cost.\n[Your Turn] [Once Per Turn] When you use an Option card with a cost of 2 or more, you may play 1 [Taomon] or 1 level 4 or lower yellow or blue Digimon card from this Digimon's digivolution cards without paying the cost.",
     "form": "Mega",
-    "id": "EX4-030_P1",
+    "id": "_P1",
     "illustrator": "Tonamikanji",
     "linkDP": "-",
     "linkEffect": "-",
