@@ -279193,7 +279193,7 @@
       "02"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/_P1.webp",
+    "cardImage": "assets/images/cards/EX4-030_P1-J.webp",
     "cardLv": "Lv.6",
     "cardNumber": "EX4-030",
     "cardType": "Digimon",
@@ -279217,7 +279217,7 @@
     "dualEffect": "-",
     "effect": "[When Digivolving] You may use an Option card with a cost of 5 or less in your hand without paying the cost.\n[Your Turn] [Once Per Turn] When you use an Option card with a cost of 2 or more, you may play 1 [Taomon] or 1 level 4 or lower yellow or blue Digimon card from this Digimon's digivolution cards without paying the cost.",
     "form": "Mega",
-    "id": "_P1",
+    "id": "EX4-030_P1",
     "illustrator": "Tonamikanji",
     "linkDP": "-",
     "linkEffect": "-",
