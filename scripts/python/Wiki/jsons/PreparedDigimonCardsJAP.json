@@ -144211,7 +144211,7 @@
     "linkRequirement": "-",
     "name": {
       "english": "Diaboromon (X Antibody)",
-      "japanese": "\u30b1\u30e9\u30e2\u30f3X\u6297\u4f53",
+      "japanese": "\u30c7\u30a3\u30a2\u30dc\u30ed\u30e2\u30f3X\u6297\u4f53",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -144267,7 +144267,7 @@
     "linkRequirement": "-",
     "name": {
       "english": "Diaboromon (X Antibody)",
-      "japanese": "\u30b1\u30e9\u30e2\u30f3X\u6297\u4f53",
+      "japanese": "\u30c7\u30a3\u30a2\u30dc\u30ed\u30e2\u30f3X\u6297\u4f53",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -260117,6 +260117,56 @@
       "06"
     ],
     "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-001_P1-J.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-001",
+    "cardType": "Digi-Egg",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When any of your red Tamers are played, this Digimon may digivolve into a Digimon card with [Growlmon] or [Gallantmon]\u00a0in its name in the hand with the cost reduced by 2.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX13-001_P1",
+    "illustrator": "tyuga",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Gigimon",
+      "japanese": "\u30ae\u30ae\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Limited Uncommon"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-002-J.webp",
     "cardLv": "Lv.2",
     "cardNumber": "EX13-002",
@@ -260158,6 +260208,56 @@
     "specialDigivolve": "-",
     "type": "Baby Dragon",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-002_P1-J.webp",
+    "cardLv": "Lv.2",
+    "cardNumber": "EX13-002",
+    "cardType": "Digi-Egg",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When any of your blue Tamers are played, this Digimon with [Veedramon]\u00a0in its name may unsuspend.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "In-Training",
+    "id": "EX13-002_P1",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "DemiVeemon",
+      "japanese": "\u30c1\u30d3\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "[Rule] Name: Not treated as including [Vee].",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Baby Dragon",
+    "version": "Limited Uncommon"
   },
   {
     "aceEffect": "-",
@@ -260217,6 +260317,56 @@
       "06"
     ],
     "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-003_P1-J.webp",
+    "cardLv": "Lv.2",
+    "cardNumber": "EX13-003",
+    "cardType": "Digi-Egg",
+    "color": "Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When your security stack is removed from, this Digimon may digivolve into a Digimon card with [Kentaurosmon]\u00a0in its name or the [Holy Beast]\u00a0trait in the hand with the cost reduced by 1.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "In-Training",
+    "id": "EX13-003_P1",
+    "illustrator": "SENNSU",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Kyaromon",
+      "japanese": "\u30ad\u30e3\u30ed\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Lesser/DATA SQUAD",
+    "version": "Limited Uncommon"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-004-J.webp",
     "cardLv": "Lv.2",
     "cardNumber": "EX13-004",
@@ -260258,6 +260408,56 @@
     "specialDigivolve": "-",
     "type": "-",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-004_P1-J.webp",
+    "cardLv": "Lv.2",
+    "cardNumber": "EX13-004",
+    "cardType": "Digi-Egg",
+    "color": "Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[When Attacking] [Once Per Turn] This Digimon may digivolve into a Digimon card with [Witchelny]\u00a0in its text in the hand with the cost reduced by 1. If this effect digivolved, trash your top security card.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "In-Training",
+    "id": "EX13-004_P1",
+    "illustrator": "naru",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "DemiMeramon",
+      "japanese": "\u30d7\u30c1\u30e1\u30e9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Limited Uncommon"
   },
   {
     "aceEffect": "-",
@@ -260317,6 +260517,56 @@
       "06"
     ],
     "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-005_P1-J.webp",
+    "cardLv": "Lv.2",
+    "cardNumber": "EX13-005",
+    "cardType": "Digi-Egg",
+    "color": "Green",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[When Attacking] [Once Per Turn] You may play or use 1 card with [Dracomon] or [Examon]\u00a0in its text from your hand with the cost reduced by 1.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "In-Training",
+    "id": "EX13-005_P1",
+    "illustrator": "koki",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Bebydomon",
+      "japanese": "\u30d9\u30d3\u30c9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Baby Dragon",
+    "version": "Limited Uncommon"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-006-J.webp",
     "cardLv": "Lv.2",
     "cardNumber": "EX13-006",
@@ -260358,6 +260608,56 @@
     "specialDigivolve": "-",
     "type": "Lesser/X Antibody/Chronicle",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-006_P1-J.webp",
+    "cardLv": "Lv.2",
+    "cardNumber": "EX13-006",
+    "cardType": "Digi-Egg",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[End of Your Turn] [Once Per Turn] By paying 1 cost, 1 of your Digimon with the [X Antibody] or [Chronicle]\u00a0trait may unsuspend.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "In-Training",
+    "id": "EX13-006_P1",
+    "illustrator": "Spareribs",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Dorimon",
+      "japanese": "\u30c9\u30ea\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Lesser/X Antibody/Chronicle",
+    "version": "Limited Uncommon"
   },
   {
     "aceEffect": "-",
@@ -260586,6 +260886,62 @@
   {
     "aceEffect": "-",
     "assembly": "-",
+    "attribute": "Virus",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-010_P1-J.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "EX13-010",
+    "cardType": "Digimon",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[All Turns] Add 2000 to this Digimon's DP deletion effects' maximums.",
+    "dnaDigivolve": "-",
+    "dp": "6000",
+    "dualEffect": "-",
+    "effect": "[When Moving] [When Digivolving] Delete 1 of your opponent's Digimon with 4000 DP or less. If this effect didn't delete, this Digimon gains \uff1cRaid\uff1e and +3000 DP for the turn.",
+    "form": "Champion",
+    "id": "EX13-010_P1",
+    "illustrator": "tyuga",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Growlmon",
+      "japanese": "\u30b0\u30e9\u30a6\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "6",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Dark Dragon",
+    "version": "Limited Common"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
     "attribute": "Data",
     "block": [
       "06"
@@ -260647,6 +261003,62 @@
       "06"
     ],
     "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-011_P1-J.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "EX13-011",
+    "cardType": "Digimon",
+    "color": "Red/White",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[Your Turn] This Digimon gets +2000 DP.",
+    "dnaDigivolve": "-",
+    "dp": "5000",
+    "dualEffect": "-",
+    "effect": "\uff1cRaid\uff1e \n[On Play] [When Digivolving] If you have 1 or fewer Tamers, you may play 1 [Mon] from your hand without paying the cost.",
+    "form": "Champion",
+    "id": "EX13-011_P1",
+    "illustrator": "NAOKI AKAMINE",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "BaoHuckmon",
+      "japanese": "\u30d0\u30aa\u30cf\u30c3\u30af\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "5",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.3 w/[Huckmon]\u00a0in text: Cost 2 ",
+    "type": "Dinosaur",
+    "version": "Limited Common"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-012-J.webp",
     "cardLv": "Lv.5",
     "cardNumber": "EX13-012",
@@ -260694,6 +261106,62 @@
     "specialDigivolve": "[Digivolve] Lv.4 w/[Huckmon]\u00a0in text: Cost 3 ",
     "type": "Dragonkin",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-012_P1-J.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "EX13-012",
+    "cardType": "Digimon",
+    "color": "Red/White",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "3",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "\uff1cAlliance\uff1e ",
+    "dnaDigivolve": "-",
+    "dp": "7000",
+    "dualEffect": "-",
+    "effect": "\uff1cAlliance\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] You may play or use 1 white card with [Huckmon]\u00a0in its text from your hand with the cost reduced by 3.",
+    "form": "Ultimate",
+    "id": "EX13-012_P1",
+    "illustrator": "NAOKI AKAMINE",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "SaviorHuckmon",
+      "japanese": "\u30bb\u30a4\u30d0\u30fc\u30cf\u30c3\u30af\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "7",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.4 w/[Huckmon]\u00a0in text: Cost 3 ",
+    "type": "Dragonkin",
+    "version": "Limited Uncommon"
   },
   {
     "aceEffect": "-",
@@ -260753,6 +261221,62 @@
   },
   {
     "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Virus",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-013_P1-J.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "EX13-013",
+    "cardType": "Digimon",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "3",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "[All Turns] [Once Per Turn] When any of your opponent's Digimon are deleted, if this Digimon has [Gallantmon]\u00a0in its name, trash their top security card.",
+    "dnaDigivolve": "-",
+    "dp": "8000",
+    "dualEffect": "-",
+    "effect": "\uff1cEngage\uff1e \n[When Digivolving] [When Attacking] Delete 1 of your opponent's Digimon with 5000 DP or less. If this effect didn't delete, this Digimon gains \uff1cPiercing\uff1e and +3000 DP for the turn.\n[End of Attack] [On Deletion] You may play 1 Tamer card with [Guilmon]\u00a0in its text from your hand or trash without paying the cost.",
+    "form": "Ultimate",
+    "id": "EX13-013_P1",
+    "illustrator": "tyuga",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "WarGrowlmon",
+      "japanese": "\u30e1\u30ac\u30ed\u30b0\u30e9\u30a6\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "8",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Cyborg",
+    "version": "Limited Uncommon"
+  },
+  {
+    "aceEffect": "-",
     "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Huckmon]\u00a0in text",
     "attribute": "Data",
     "block": [
@@ -260809,6 +261333,118 @@
   },
   {
     "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Huckmon]\u00a0in text",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-014_P1-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "EX13-014",
+    "cardType": "Digimon",
+    "color": "Red/White",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "-",
+    "effect": "[When Digivolving] [When Attacking] [Once Per Turn] You may use 1 use cost 5 or lower [Huckmon]\u00a0text Option card from your hand or this Digimon's digivolution cards without paying the cost.\n[All Turns] [Once Per Turn] When any of your Digimon are played, you may delete 1 of your opponent's lowest DP Digimon. Then, if you don't have [Atho or Ren\u00e9 & Por], you may play 1 [Atho, Ren\u00e9 & Por] Token. (Digimon/White/6000 DP/\uff1cReboot\uff1e \uff1cBlocker\uff1e \uff1cDecoy (Red)/(Black)\uff1e)",
+    "form": "Mega",
+    "id": "EX13-014_P1",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Jesmon",
+      "japanese": "\u30b8\u30a8\u30b9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "12",
+    "rarity": "UR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[Huckmon]\u00a0in text: Cost 3 ",
+    "type": "Holy Warrior/Royal Knight",
+    "version": "Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Huckmon]\u00a0in text",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-014_P2-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "EX13-014",
+    "cardType": "Digimon",
+    "color": "Red/White",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "-",
+    "effect": "[When Digivolving] [When Attacking] [Once Per Turn] You may use 1 use cost 5 or lower [Huckmon]\u00a0text Option card from your hand or this Digimon's digivolution cards without paying the cost.\n[All Turns] [Once Per Turn] When any of your Digimon are played, you may delete 1 of your opponent's lowest DP Digimon. Then, if you don't have [Atho or Ren\u00e9 & Por], you may play 1 [Atho, Ren\u00e9 & Por] Token. (Digimon/White/6000 DP/\uff1cReboot\uff1e \uff1cBlocker\uff1e \uff1cDecoy (Red)/(Black)\uff1e)",
+    "form": "Mega",
+    "id": "EX13-014_P2",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Jesmon",
+      "japanese": "\u30b8\u30a8\u30b9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "12",
+    "rarity": "UR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[Huckmon]\u00a0in text: Cost 3 ",
+    "type": "Holy Warrior/Royal Knight",
+    "version": "Alternative Art"
+  },
+  {
+    "aceEffect": "-",
     "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Guilmon]/[Growlmon]\u00a0in name",
     "attribute": "Virus",
     "block": [
@@ -260862,6 +261498,174 @@
     "specialDigivolve": "-",
     "type": "Holy Warrior/Royal Knight",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Guilmon]/[Growlmon]\u00a0in name",
+    "attribute": "Virus",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-015_P1-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "EX13-015",
+    "cardType": "Digimon",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "-",
+    "effect": "\uff1cRaid\uff1e \n\uff1cProgress\uff1e \n\uff1cBlocker\uff1e \n[On Play] [When Digivolving] [When Attacking] [Counter] [Once Per Turn] Delete 1 of your opponent's 12000 DP or higher Digimon. If this effect didn't delete, trash their top security card.\n[All Turns] [Once Per Turn] When this Digimon would leave the battle area other than by your effects, by deleting 1 of your opponent's 9000 DP or lower Digimon, it doesn't leave.",
+    "form": "Mega",
+    "id": "EX13-015_P1",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Gallantmon",
+      "japanese": "\u30c7\u30e5\u30fc\u30af\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "12",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Holy Warrior/Royal Knight",
+    "version": "Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Guilmon]/[Growlmon]\u00a0in name",
+    "attribute": "Virus",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-015_P2-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "EX13-015",
+    "cardType": "Digimon",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "-",
+    "effect": "\uff1cRaid\uff1e \n\uff1cProgress\uff1e \n\uff1cBlocker\uff1e \n[On Play] [When Digivolving] [When Attacking] [Counter] [Once Per Turn] Delete 1 of your opponent's 12000 DP or higher Digimon. If this effect didn't delete, trash their top security card.\n[All Turns] [Once Per Turn] When this Digimon would leave the battle area other than by your effects, by deleting 1 of your opponent's 9000 DP or lower Digimon, it doesn't leave.",
+    "form": "Mega",
+    "id": "EX13-015_P2",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Gallantmon",
+      "japanese": "\u30c7\u30e5\u30fc\u30af\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "12",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Holy Warrior/Royal Knight",
+    "version": "Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Guilmon]/[Growlmon]\u00a0in name",
+    "attribute": "Virus",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-015_P3-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "EX13-015",
+    "cardType": "Digimon",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "-",
+    "effect": "\uff1cRaid\uff1e \n\uff1cProgress\uff1e \n\uff1cBlocker\uff1e \n[On Play] [When Digivolving] [When Attacking] [Counter] [Once Per Turn] Delete 1 of your opponent's 12000 DP or higher Digimon. If this effect didn't delete, trash their top security card.\n[All Turns] [Once Per Turn] When this Digimon would leave the battle area other than by your effects, by deleting 1 of your opponent's 9000 DP or lower Digimon, it doesn't leave.",
+    "form": "Mega",
+    "id": "EX13-015_P3",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Gallantmon",
+      "japanese": "\u30c7\u30e5\u30fc\u30af\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "12",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Holy Warrior/Royal Knight",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -260923,6 +261727,189 @@
     "specialDigivolve": "-",
     "type": "Holy Warrior/Royal Knight/CS",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-7] [WarGreymon] \u00d7 [MetalGarurumon] \u00d7 [Agumon] \u00d7 [Gabumon]",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-016_P1-J.webp",
+    "cardLv": "Lv.7",
+    "cardNumber": "EX13-016",
+    "cardType": "Digimon",
+    "color": "Red/White/Blue",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "5",
+        "level": "6"
+      },
+      {
+        "color": "Blue",
+        "cost": "5",
+        "level": "6"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "[Digivolve] Lv.6 w/[CS]\u00a0trait: Cost 5 [DNA Digivolve] Lv.6 w/[Greymon]\u00a0in name + Lv.6 w/[Garurumon]\u00a0in name\u00a0: Cost 0",
+    "dp": "15000",
+    "dualEffect": "-",
+    "effect": "\uff1cRaid\uff1e \n\uff1cBlocker\uff1e \n[On Play] [When Digivolving] [When Attacking] [Once Per Turn] 2 of your opponent's Digimon or Tamers can't suspend until their turn ends.\n[On Play] [When Digivolving] [Counter] [Once Per Turn] You may delete 1 of your opponent's Digimon with as many digivolution cards as this Digimon or fewer.\n[All Turns] When this Digimon would leave the battle area, by trashing 2 same-level cards from its digivolution cards, it doesn't leave.",
+    "form": "Mega",
+    "id": "EX13-016_P1",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Omnimon",
+      "japanese": "\u30aa\u30e1\u30ac\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "15",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Holy Warrior/Royal Knight/CS",
+    "version": "Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-7] [WarGreymon] \u00d7 [MetalGarurumon] \u00d7 [Agumon] \u00d7 [Gabumon]",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-016_P2-J.webp",
+    "cardLv": "Lv.7",
+    "cardNumber": "EX13-016",
+    "cardType": "Digimon",
+    "color": "Red/White/Blue",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "5",
+        "level": "6"
+      },
+      {
+        "color": "Blue",
+        "cost": "5",
+        "level": "6"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "[Digivolve] Lv.6 w/[CS]\u00a0trait: Cost 5 [DNA Digivolve] Lv.6 w/[Greymon]\u00a0in name + Lv.6 w/[Garurumon]\u00a0in name\u00a0: Cost 0",
+    "dp": "15000",
+    "dualEffect": "-",
+    "effect": "\uff1cRaid\uff1e \n\uff1cBlocker\uff1e \n[On Play] [When Digivolving] [When Attacking] [Once Per Turn] 2 of your opponent's Digimon or Tamers can't suspend until their turn ends.\n[On Play] [When Digivolving] [Counter] [Once Per Turn] You may delete 1 of your opponent's Digimon with as many digivolution cards as this Digimon or fewer.\n[All Turns] When this Digimon would leave the battle area, by trashing 2 same-level cards from its digivolution cards, it doesn't leave.",
+    "form": "Mega",
+    "id": "EX13-016_P2",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Omnimon",
+      "japanese": "\u30aa\u30e1\u30ac\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "15",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Holy Warrior/Royal Knight/CS",
+    "version": "Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-7] [WarGreymon] \u00d7 [MetalGarurumon] \u00d7 [Agumon] \u00d7 [Gabumon]",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-016_P3-J.webp",
+    "cardLv": "Lv.7",
+    "cardNumber": "EX13-016",
+    "cardType": "Digimon",
+    "color": "Red/White/Blue",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "5",
+        "level": "6"
+      },
+      {
+        "color": "Blue",
+        "cost": "5",
+        "level": "6"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "[Digivolve] Lv.6 w/[CS]\u00a0trait: Cost 5 [DNA Digivolve] Lv.6 w/[Greymon]\u00a0in name + Lv.6 w/[Garurumon]\u00a0in name\u00a0: Cost 0",
+    "dp": "15000",
+    "dualEffect": "-",
+    "effect": "\uff1cRaid\uff1e \n\uff1cBlocker\uff1e \n[On Play] [When Digivolving] [When Attacking] [Once Per Turn] 2 of your opponent's Digimon or Tamers can't suspend until their turn ends.\n[On Play] [When Digivolving] [Counter] [Once Per Turn] You may delete 1 of your opponent's Digimon with as many digivolution cards as this Digimon or fewer.\n[All Turns] When this Digimon would leave the battle area, by trashing 2 same-level cards from its digivolution cards, it doesn't leave.",
+    "form": "Mega",
+    "id": "EX13-016_P3",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Omnimon",
+      "japanese": "\u30aa\u30e1\u30ac\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "15",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Holy Warrior/Royal Knight/CS",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -261049,6 +262036,67 @@
       "06"
     ],
     "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-018_P1-J.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "EX13-018",
+    "cardType": "Digimon",
+    "color": "Blue/Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "3",
+        "level": "3"
+      },
+      {
+        "color": "Red",
+        "cost": "3",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[Your Turn] This Digimon gets +2000 DP.",
+    "dnaDigivolve": "-",
+    "dp": "5000",
+    "dualEffect": "-",
+    "effect": "[On Play] [When Digivolving] By trashing 1 card with [Dracomon] or [Examon]\u00a0in its text from your hand, \uff1cDraw 2\uff1e \n[Your Turn] When any of your other Digimon with [Dracomon] or [Examon]\u00a0in their texts are played, this Digimon may digivolve into a Digimon card with [Examon]\u00a0in its text in the hand with the cost reduced by 2.",
+    "form": "Champion",
+    "id": "EX13-018_P1",
+    "illustrator": "SENNSU",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Coredramon",
+      "japanese": "\u30b3\u30a2\u30c9\u30e9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "5",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.3 w/[Dracomon]\u00a0in name: Cost 2 ",
+    "type": "Dragon",
+    "version": "Limited Common"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-019-J.webp",
     "cardLv": "Lv.4",
     "cardNumber": "EX13-019",
@@ -261096,6 +262144,62 @@
     "specialDigivolve": "[Digivolve] Lv.3 w/[CS]\u00a0trait: Cost 2 ",
     "type": "Mythical Dragon/CS",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-019_P1-J.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "EX13-019",
+    "cardType": "Digimon",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "\uff1cJamming\uff1e ",
+    "dnaDigivolve": "-",
+    "dp": "6000",
+    "dualEffect": "-",
+    "effect": "\uff1cJamming\uff1e \n[When Attacking] [Once Per Turn] You may play 1 Tamer card with [Veedramon]\u00a0in its text from your hand with the cost reduced by 2.",
+    "form": "Champion",
+    "id": "EX13-019_P1",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Veedramon",
+      "japanese": "\u30d6\u30a4\u30c9\u30e9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "6",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.3 w/[CS]\u00a0trait: Cost 2 ",
+    "type": "Mythical Dragon/CS",
+    "version": "Limited Common"
   },
   {
     "aceEffect": "-",
@@ -261157,6 +262261,189 @@
     "specialDigivolve": "[Digivolve] [Veemon]: Cost 3 ",
     "type": "Holy Warrior/Royal Knight",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-2] [Veemon] ",
+    "attribute": "Free",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-020_P1-J.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "EX13-020",
+    "cardType": "Digimon",
+    "color": "Blue/Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "4",
+        "level": "3"
+      },
+      {
+        "color": "Yellow",
+        "cost": "4",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[End of Your Turn] [Once Per Turn] 1 of your Digimon with the [Free] or [Royal Knight]\u00a0trait may unsuspend.",
+    "dnaDigivolve": "-",
+    "dp": "7000",
+    "dualEffect": "-",
+    "effect": "\uff1cBlocker\uff1e \n\uff1cArmor Purge\uff1e \n[On Play] [When Digivolving] [When Attacking] [Once Per Turn] This Digimon gets +1000 DP until your opponent's turn ends for each color in trashes. Then, to 1 of your opponent's Digimon, give -4000 DP until their turn ends for every 5000 DP this Digimon has.\n[End of Your Turn] [Once Per Turn] 1 of your [Free] or [Royal Knight]\u00a0trait Digimon may unsuspend.",
+    "form": "Armor Form",
+    "id": "EX13-020_P1",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Magnamon",
+      "japanese": "\u30de\u30b0\u30ca\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "7",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Veemon]: Cost 3 ",
+    "type": "Holy Warrior/Royal Knight",
+    "version": "Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-2] [Veemon] ",
+    "attribute": "Free",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-020_P2-J.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "EX13-020",
+    "cardType": "Digimon",
+    "color": "Blue/Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "4",
+        "level": "3"
+      },
+      {
+        "color": "Yellow",
+        "cost": "4",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[End of Your Turn] [Once Per Turn] 1 of your Digimon with the [Free] or [Royal Knight]\u00a0trait may unsuspend.",
+    "dnaDigivolve": "-",
+    "dp": "7000",
+    "dualEffect": "-",
+    "effect": "\uff1cBlocker\uff1e \n\uff1cArmor Purge\uff1e \n[On Play] [When Digivolving] [When Attacking] [Once Per Turn] This Digimon gets +1000 DP until your opponent's turn ends for each color in trashes. Then, to 1 of your opponent's Digimon, give -4000 DP until their turn ends for every 5000 DP this Digimon has.\n[End of Your Turn] [Once Per Turn] 1 of your [Free] or [Royal Knight]\u00a0trait Digimon may unsuspend.",
+    "form": "Armor Form",
+    "id": "EX13-020_P2",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Magnamon",
+      "japanese": "\u30de\u30b0\u30ca\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "7",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Veemon]: Cost 3 ",
+    "type": "Holy Warrior/Royal Knight",
+    "version": "Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-2] [Veemon] ",
+    "attribute": "Free",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-020_P3-J.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "EX13-020",
+    "cardType": "Digimon",
+    "color": "Blue/Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "4",
+        "level": "3"
+      },
+      {
+        "color": "Yellow",
+        "cost": "4",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[End of Your Turn] [Once Per Turn] 1 of your Digimon with the [Free] or [Royal Knight]\u00a0trait may unsuspend.",
+    "dnaDigivolve": "-",
+    "dp": "7000",
+    "dualEffect": "-",
+    "effect": "\uff1cBlocker\uff1e \n\uff1cArmor Purge\uff1e \n[On Play] [When Digivolving] [When Attacking] [Once Per Turn] This Digimon gets +1000 DP until your opponent's turn ends for each color in trashes. Then, to 1 of your opponent's Digimon, give -4000 DP until their turn ends for every 5000 DP this Digimon has.\n[End of Your Turn] [Once Per Turn] 1 of your [Free] or [Royal Knight]\u00a0trait Digimon may unsuspend.",
+    "form": "Armor Form",
+    "id": "EX13-020_P3",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Magnamon",
+      "japanese": "\u30de\u30b0\u30ca\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "7",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Veemon]: Cost 3 ",
+    "type": "Holy Warrior/Royal Knight",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -261227,6 +262514,67 @@
       "06"
     ],
     "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-021_P1-J.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "EX13-021",
+    "cardType": "Digimon",
+    "color": "Blue/Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "4",
+        "level": "4"
+      },
+      {
+        "color": "Red",
+        "cost": "4",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "[All Turns] [Once Per Turn] When this Digimon with [Dracomon] or [Examon]\u00a0in its text suspends, it may unsuspend.",
+    "dnaDigivolve": "-",
+    "dp": "7000",
+    "dualEffect": "-",
+    "effect": "\uff1cJamming\uff1e \n[On Play] [When Digivolving] trash the bottom 2 digivolution cards of 1 of your opponent's Digimon. Then, 1 of their Digimon or Tamers can't suspend until their turn ends.\n[All Turns] This Digimon is also treated as Lv.6 [Slayerdramon] for [Examon]'s DNA digivolution.",
+    "form": "Ultimate",
+    "id": "EX13-021_P1",
+    "illustrator": "BIRU YAMAGUCHI",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Wingdramon",
+      "japanese": "\u30a6\u30a4\u30f3\u30b0\u30c9\u30e9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "7",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Coredramon]: Cost 3 ",
+    "type": "Sky Dragon",
+    "version": "Limited Uncommon"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-022-J.webp",
     "cardLv": "Lv.5",
     "cardNumber": "EX13-022",
@@ -261274,6 +262622,62 @@
     "specialDigivolve": "[Digivolve] Lv.4 w/[CS]\u00a0trait: Cost 3 ",
     "type": "Holy Dragon/CS",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-022_P1-J.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "EX13-022",
+    "cardType": "Digimon",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "3",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "[All Turns] [Once Per Turn] When this Digimon with [Veedramon]\u00a0in its name suspends, it may unsuspend.",
+    "dnaDigivolve": "-",
+    "dp": "7000",
+    "dualEffect": "-",
+    "effect": "[On Play] [When Digivolving] [When Attacking] [Once Per Turn] You may play 1 Tamer card with [Veedramon]\u00a0in its text from your hand without paying the cost.\n[All Turns] [Once Per Turn] When any of your Tamers are played, 1 of your opponent's Digimon or Tamers can't suspend until their turn ends.",
+    "form": "Ultimate",
+    "id": "EX13-022_P1",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "AeroVeedramon",
+      "japanese": "\u30a8\u30a2\u30ed\u30d6\u30a4\u30c9\u30e9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "7",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.4 w/[CS]\u00a0trait: Cost 3 ",
+    "type": "Holy Dragon/CS",
+    "version": "Limited Uncommon"
   },
   {
     "aceEffect": "-",
@@ -261330,6 +262734,118 @@
     "specialDigivolve": "[Digivolve] Lv.5 w/[CS]\u00a0trait: Cost 3 ",
     "type": "Holy Warrior/Royal Knight/CS",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Veemon]/[Veedramon]\u00a0in name",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-023_P1-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "EX13-023",
+    "cardType": "Digimon",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "-",
+    "effect": "\uff1cBlocker\uff1e \n\uff1cEvade\uff1e \n[On Play] [When Digivolving] [When Attacking] [Once Per Turn] 1 of your Digimon may change orientation.\n[On Play] [When Digivolving] You may return all of your opponent's Digimon with the fewest digivolution cards to the bottom of the deck.\n[All Turns] Your opponent's effects can't reduce this unsuspended Digimon's DP, return its stacked cards to the hand or deck, or trash them.",
+    "form": "Mega",
+    "id": "EX13-023_P1",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "UlforceVeedramon",
+      "japanese": "\u30a2\u30eb\u30d5\u30a9\u30fc\u30b9\u30d6\u30a4\u30c9\u30e9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "12",
+    "rarity": "UR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[CS]\u00a0trait: Cost 3 ",
+    "type": "Holy Warrior/Royal Knight/CS",
+    "version": "Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Veemon]/[Veedramon]\u00a0in name",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-023_P2-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "EX13-023",
+    "cardType": "Digimon",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "-",
+    "effect": "\uff1cBlocker\uff1e \n\uff1cEvade\uff1e \n[On Play] [When Digivolving] [When Attacking] [Once Per Turn] 1 of your Digimon may change orientation.\n[On Play] [When Digivolving] You may return all of your opponent's Digimon with the fewest digivolution cards to the bottom of the deck.\n[All Turns] Your opponent's effects can't reduce this unsuspended Digimon's DP, return its stacked cards to the hand or deck, or trash them.",
+    "form": "Mega",
+    "id": "EX13-023_P2",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "UlforceVeedramon",
+      "japanese": "\u30a2\u30eb\u30d5\u30a9\u30fc\u30b9\u30d6\u30a4\u30c9\u30e9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "12",
+    "rarity": "UR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[CS]\u00a0trait: Cost 3 ",
+    "type": "Holy Warrior/Royal Knight/CS",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -261447,6 +262963,62 @@
     "specialDigivolve": "-",
     "type": "Flame",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-025_P1-J.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "EX13-025",
+    "cardType": "Digimon",
+    "color": "Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[All Turns] [Once Per Turn] When this Digimon with [Dynasmon] or [Witchelny]\u00a0in its text would leave the battle area by your opponent's effects, by trashing your top security card, it doesn't leave.",
+    "dnaDigivolve": "-",
+    "dp": "2000",
+    "dualEffect": "-",
+    "effect": "[Start of Your Main Phase] If you have 3 or more security cards, trash your top or bottom security card, \uff1cDraw 1\uff1e and gain 1 memory. Then, if you have 2 or fewer security cards, you may place 1 card with [Witchelny]\u00a0in its text from your hand as the bottom security card.",
+    "form": "Rookie",
+    "id": "EX13-025_P1",
+    "illustrator": "k.Dra",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Candlemon",
+      "japanese": "\u30ad\u30e3\u30f3\u30c9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "[Rule] Trait: Has [Witchelny] Type.",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Flame",
+    "version": "Limited Common"
   },
   {
     "aceEffect": "-",
@@ -261573,6 +263145,67 @@
       "06"
     ],
     "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-027_P1-J.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "EX13-027",
+    "cardType": "Digimon",
+    "color": "Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "0",
+        "level": "2"
+      },
+      {
+        "color": "Black",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[All Turns] [Once Per Turn] When this Digimon would leave the battle area other than by your effects, by deleting 1 other Digimon with [Sukamon]\u00a0in its name, it doesn't leave.",
+    "dnaDigivolve": "-",
+    "dp": "1000",
+    "dualEffect": "-",
+    "effect": "[When Moving] [On Play] Reveal the top 3 cards of your deck. Among them, add 1 card with [Sukamon] or [Etemon]\u00a0in its name to the hand and trash 1 such card. Return the rest to the bottom of the deck.",
+    "form": "Rookie",
+    "id": "EX13-027_P1",
+    "illustrator": "GOSSAN",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Chuumon",
+      "japanese": "\u30c1\u30e5\u30fc\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Beast",
+    "version": "Limited Common"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Virus",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-028-J.webp",
     "cardLv": "Lv.4",
     "cardNumber": "EX13-028",
@@ -261625,6 +263258,67 @@
     "specialDigivolve": "-",
     "type": "Abnormal",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Virus",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-028_P1-J.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "EX13-028",
+    "cardType": "Digimon",
+    "color": "Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "2",
+        "level": "3"
+      },
+      {
+        "color": "Black",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[All Turns] [Once Per Turn] When this Digimon would leave the battle area other than by your effects, by deleting 1 other Digimon with [Sukamon]\u00a0in its name, it doesn't leave.",
+    "dnaDigivolve": "-",
+    "dp": "2000",
+    "dualEffect": "-",
+    "effect": "\uff1cBlocker\uff1e \n[On Deletion] Reveal the top 3 cards of your deck. You may play 1 play cost 3 or lower Digimon card with [Chuumon] or [Sukamon]\u00a0in its name among them without paying the cost. trash the rest.",
+    "form": "Champion",
+    "id": "EX13-028_P1",
+    "illustrator": "GOSSAN",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Sukamon",
+      "japanese": "\u30b9\u30ab\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Abnormal",
+    "version": "Limited Common"
   },
   {
     "aceEffect": "-",
@@ -261690,6 +263384,67 @@
   {
     "aceEffect": "-",
     "assembly": "-",
+    "attribute": "Virus",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-029_P1-J.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "EX13-029",
+    "cardType": "Digimon",
+    "color": "Yellow/Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "3",
+        "level": "3"
+      },
+      {
+        "color": "Red",
+        "cost": "3",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[All Turns] [Once Per Turn] When this Digimon with [Dynasmon] or [Witchelny]\u00a0in its text would leave the battle area by your opponent's effects, by trashing your top security card, it doesn't leave.",
+    "dnaDigivolve": "-",
+    "dp": "5000",
+    "dualEffect": "-",
+    "effect": "\uff1cArmor Purge\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] By trashing your top security card, 1 of your opponent's Digimon gets -4000 DP for the turn. After, if you have 3 or fewer security cards, delete 1 of your opponent's Digimon with 4000 DP or less.",
+    "form": "Armor Form",
+    "id": "EX13-029_P1",
+    "illustrator": "k.Dra",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "FlameWizardmon",
+      "japanese": "\u30d5\u30ec\u30a4\u30a6\u30a3\u30b6\u30fc\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "5",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "[Rule] Name: Also treated as [Wizardmon].",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.3 w/[Witchelny]\u00a0in text: Cost 2 ",
+    "type": "Wizard/Witchelny",
+    "version": "Limited Common"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
     "attribute": "Vaccine",
     "block": [
       "06"
@@ -261742,6 +263497,62 @@
     "specialDigivolve": "[Digivolve] Lv.3 w/[DATA SQUAD]\u00a0trait: Cost 2 ",
     "type": "Holy Beast/DATA SQUAD",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-030_P1-J.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "EX13-030",
+    "cardType": "Digimon",
+    "color": "Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "\uff1cBarrier\uff1e ",
+    "dnaDigivolve": "-",
+    "dp": "5000",
+    "dualEffect": "-",
+    "effect": "\uff1cBarrier\uff1e \n[On Play] [When Digivolving] [When Attacking] [Once Per Turn] By trashing your top security card, you may play 1 [Richard Sampson] from your hand or trash without paying the cost.",
+    "form": "Champion",
+    "id": "EX13-030_P1",
+    "illustrator": "SENNSU",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Reppamon",
+      "japanese": "\u30ec\u30c3\u30d1\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "5",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.3 w/[DATA SQUAD]\u00a0trait: Cost 2 ",
+    "type": "Holy Beast/DATA SQUAD",
+    "version": "Limited Common"
   },
   {
     "aceEffect": "-",
@@ -261929,6 +263740,67 @@
       "06"
     ],
     "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-033_P1-J.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "EX13-033",
+    "cardType": "Digimon",
+    "color": "Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "4",
+        "level": "4"
+      },
+      {
+        "color": "Red",
+        "cost": "4",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "[All Turns] [Once Per Turn] When your security stack is removed from, this Digimon may unsuspend.",
+    "dnaDigivolve": "-",
+    "dp": "7000",
+    "dualEffect": "-",
+    "effect": "\uff1cBarrier\uff1e \n[On Play] [When Digivolving] You may place 1 [Witchelny]\u00a0text card from your hand as the bottom security card. Then, by trashing your top security card, 1 of your Digimon may attack.\n[All Turns] [Once Per Turn] When your security stack is removed from, 1 of your opponent's Digimon gets -6000 DP for the turn. Then, if you have 3 or fewer security cards, delete 1 of their 6000 DP or lower Digimon.",
+    "form": "Ultimate",
+    "id": "EX13-033_P1",
+    "illustrator": "k.Dra",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Mistymon",
+      "japanese": "\u30df\u30b9\u30c6\u30a3\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "7",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.4 w/[Witchelny]\u00a0in text: Cost 3 ",
+    "type": "Magic Warrior/Witchelny",
+    "version": "Limited Uncommon"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Virus",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-034-J.webp",
     "cardLv": "Lv.5",
     "cardNumber": "EX13-034",
@@ -261976,6 +263848,62 @@
     "specialDigivolve": "[Digivolve] Lv.4 w/[Witchelny]\u00a0in text: Cost 3 ",
     "type": "Wizard",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Virus",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-034_P1-J.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "EX13-034",
+    "cardType": "Digimon",
+    "color": "Yellow/Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "4",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "[All Turns] [Once Per Turn] When your security stack is removed from, this Digimon may unsuspend.",
+    "dnaDigivolve": "-",
+    "dp": "6000",
+    "dualEffect": "-",
+    "effect": "\uff1cBarrier\uff1e \n[On Play] [When Digivolving] [When Attacking] [Once Per Turn] Until your opponent's turn ends, 1 of your Digimon gains \uff1cReboot\uff1e and \uff1cBlocker\uff1e , and their \uff1cDe-Digivolve\uff1e effects don't affect it.\n[All Turns] [Once Per Turn] When your security stack is removed from, \uff1cDe-Digivolve 1\uff1e 1 of your opponent's Digimon. Then, if you have 3 or fewer security cards, 1 of their Digimon can't digivolve until their turn ends.",
+    "form": "Ultimate",
+    "id": "EX13-034_P1",
+    "illustrator": "Moyasi",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Wisemon",
+      "japanese": "\u30ef\u30a4\u30ba\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "6",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.4 w/[Witchelny]\u00a0in text: Cost 3 ",
+    "type": "Wizard",
+    "version": "Limited Common"
   },
   {
     "aceEffect": "-",
@@ -262040,6 +263968,67 @@
   },
   {
     "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Virus",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-035_P1-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "EX13-035",
+    "cardType": "Digimon",
+    "color": "Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "5",
+        "level": "5"
+      },
+      {
+        "color": "Black",
+        "cost": "5",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "13000",
+    "dualEffect": "-",
+    "effect": "[On Play] [When Digivolving] You may play up to 2 Digimon cards with [Chuumon], [Sukamon] or [Etemon]\u00a0in their names and up to 6 total play cost from your hand or trash without paying the costs. By returning 10 such cards from your trash to the bottom of the deck, add 6 to the play cost maximum.\n[All Turns] While there are 3 or more Digimon with [Sukamon] or [Etemon]\u00a0in their names, give all of your opponent's Digimon \uff1cSecurity A. -1\uff1e and -3000 DP.",
+    "form": "Mega",
+    "id": "EX13-035_P1",
+    "illustrator": "poroze",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "KingEtemon",
+      "japanese": "\u30ad\u30f3\u30b0\u30a8\u30c6\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "13",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[Sukamon]/[Etemon]\u00a0in name: Cost 4 ",
+    "type": "Puppet",
+    "version": "Alternative Art"
+  },
+  {
+    "aceEffect": "-",
     "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all Yellow w/[Holy Beast]\u00a0trait",
     "attribute": "Vaccine",
     "block": [
@@ -262093,6 +264082,118 @@
     "specialDigivolve": "[Digivolve] Lv.5 w/[Holy Beast]/[DATA SQUAD]\u00a0trait: Cost 3 ",
     "type": "Holy Warrior/Royal Knight/DATA SQUAD",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all Yellow w/[Holy Beast]\u00a0trait",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-036_P1-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "EX13-036",
+    "cardType": "Digimon",
+    "color": "Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "-",
+    "effect": "[Security] [On Play] 1 of your opponent's Digimon gets -7000 DP for the turn. If there are 6 or fewer total cards in both players' security stacks, instead all of their Digimon get -7000 DP for the turn.\n[When Digivolving] By trashing the top security card of 1 player with the most security cards, you may activate 1 of this Digimon's [Security] effects.\n[When Digivolving] [End of Attack] [Counter] [Once Per Turn] You may place 1 of each player's Digimon as the top security cards.",
+    "form": "Mega",
+    "id": "EX13-036_P1",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Kentaurosmon",
+      "japanese": "\u30b9\u30ec\u30a4\u30d7\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "12",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[Holy Beast]/[DATA SQUAD]\u00a0trait: Cost 3 ",
+    "type": "Holy Warrior/Royal Knight/DATA SQUAD",
+    "version": "Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all Yellow w/[Holy Beast]\u00a0trait",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-036_P2-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "EX13-036",
+    "cardType": "Digimon",
+    "color": "Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "-",
+    "effect": "[Security] [On Play] 1 of your opponent's Digimon gets -7000 DP for the turn. If there are 6 or fewer total cards in both players' security stacks, instead all of their Digimon get -7000 DP for the turn.\n[When Digivolving] By trashing the top security card of 1 player with the most security cards, you may activate 1 of this Digimon's [Security] effects.\n[When Digivolving] [End of Attack] [Counter] [Once Per Turn] You may place 1 of each player's Digimon as the top security cards.",
+    "form": "Mega",
+    "id": "EX13-036_P2",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Kentaurosmon",
+      "japanese": "\u30b9\u30ec\u30a4\u30d7\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "12",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[Holy Beast]/[DATA SQUAD]\u00a0trait: Cost 3 ",
+    "type": "Holy Warrior/Royal Knight/DATA SQUAD",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -262157,6 +264258,128 @@
   },
   {
     "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Witchelny]\u00a0in text",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-037_P1-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "EX13-037",
+    "cardType": "Digimon",
+    "color": "Yellow/Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "4",
+        "level": "5"
+      },
+      {
+        "color": "Red",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "-",
+    "effect": "\uff1cRaid\uff1e \n\uff1cPiercing\uff1e \n\uff1cBlocker\uff1e \n[On Play] [When Digivolving] [When Attacking] [Once Per Turn] trash your top security card and this Digimon gets +10000 DP until your opponent's turn ends. Then, if you have 3 or fewer security cards, trash their top security card.\n[All Turns] [Once Per Turn] When security stacks are removed from, 1 of your opponent's Digimon gets -12000 DP until their turn ends. Then, if you have 3 or fewer security cards, \uff1cRecovery +1\uff1e ",
+    "form": "Mega",
+    "id": "EX13-037_P1",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Dynasmon",
+      "japanese": "\u30c7\u30e5\u30ca\u30b9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "12",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[Witchelny]\u00a0in text: Cost 3 ",
+    "type": "Holy Warrior/Royal Knight",
+    "version": "Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Witchelny]\u00a0in text",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-037_P2-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "EX13-037",
+    "cardType": "Digimon",
+    "color": "Yellow/Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "4",
+        "level": "5"
+      },
+      {
+        "color": "Red",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "-",
+    "effect": "\uff1cRaid\uff1e \n\uff1cPiercing\uff1e \n\uff1cBlocker\uff1e \n[On Play] [When Digivolving] [When Attacking] [Once Per Turn] trash your top security card and this Digimon gets +10000 DP until your opponent's turn ends. Then, if you have 3 or fewer security cards, trash their top security card.\n[All Turns] [Once Per Turn] When security stacks are removed from, 1 of your opponent's Digimon gets -12000 DP until their turn ends. Then, if you have 3 or fewer security cards, \uff1cRecovery +1\uff1e ",
+    "form": "Mega",
+    "id": "EX13-037_P2",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Dynasmon",
+      "japanese": "\u30c7\u30e5\u30ca\u30b9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "12",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[Witchelny]\u00a0in text: Cost 3 ",
+    "type": "Holy Warrior/Royal Knight",
+    "version": "Alternative Art"
+  },
+  {
+    "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
     "block": [
@@ -262210,6 +264433,62 @@
     "specialDigivolve": "-",
     "type": "Mammal",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-038_P1-J.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "EX13-038",
+    "cardType": "Digimon",
+    "color": "Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[All Turns] All of your suspended Digimon get +1000 DP.",
+    "dnaDigivolve": "-",
+    "dp": "2000",
+    "dualEffect": "-",
+    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 card with [Leopardmon]\u00a0in its text and 1 Digimon card with [Beast], [Animal] or [Sovereign], other than [Sea Animal],\u00a0in any of its traits among them to the hand. Return the rest to the bottom of the deck.",
+    "form": "Rookie",
+    "id": "EX13-038_P1",
+    "illustrator": "Kazumasa Yasukuni",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Salamon",
+      "japanese": "\u30d7\u30ed\u30c3\u30c8\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "[Rule] Trait: Has [Beast] Type.",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Mammal",
+    "version": "Limited Common"
   },
   {
     "aceEffect": "-",
@@ -262275,6 +264554,67 @@
   {
     "aceEffect": "-",
     "assembly": "-",
+    "attribute": "Virus",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-039_P1-J.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "EX13-039",
+    "cardType": "Digimon",
+    "color": "Green/Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "3",
+        "level": "3"
+      },
+      {
+        "color": "Red",
+        "cost": "3",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[Your Turn] This Digimon gets +2000 DP.",
+    "dnaDigivolve": "-",
+    "dp": "5000",
+    "dualEffect": "-",
+    "effect": "[On Play] [When Digivolving] You may return 1 non-Digi-Egg card with [Dracomon] or [Examon]\u00a0in its text from your trash to the hand.\n[Your Turn] When any of your other Digimon with [Dracomon] or [Examon]\u00a0in their texts are played, this Digimon may digivolve into a Digimon card with [Examon]\u00a0in its text in the hand with the cost reduced by 2.",
+    "form": "Champion",
+    "id": "EX13-039_P1",
+    "illustrator": "SENNSU",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Coredramon",
+      "japanese": "\u30b3\u30a2\u30c9\u30e9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "5",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.3 w/[Dracomon]\u00a0in name: Cost 2 ",
+    "type": "Dragon",
+    "version": "Limited Common"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
     "attribute": "Data",
     "block": [
       "06"
@@ -262327,6 +264667,62 @@
     "specialDigivolve": "-",
     "type": "Beast",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-040_P1-J.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "EX13-040",
+    "cardType": "Digimon",
+    "color": "Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[All Turns] All of your suspended Digimon get +1000 DP.",
+    "dnaDigivolve": "-",
+    "dp": "5000",
+    "dualEffect": "-",
+    "effect": "[On Play] [When Digivolving] 1 of your opponent's Digimon or Tamers can't unsuspend until their turn ends.\n[All Turns] When this Digimon suspends, suspend 1 of your opponent's Digimon or Tamers.",
+    "form": "Champion",
+    "id": "EX13-040_P1",
+    "illustrator": "Kazumasa Yasukuni",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Mikemon",
+      "japanese": "\u30df\u30b1\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "4",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Beast",
+    "version": "Limited Common"
   },
   {
     "aceEffect": "-",
@@ -262388,6 +264784,67 @@
     "specialDigivolve": "[Digivolve] [Coredramon]: Cost 3 ",
     "type": "Earth Dragon",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Virus",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-041_P1-J.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "EX13-041",
+    "cardType": "Digimon",
+    "color": "Green/Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "4",
+        "level": "4"
+      },
+      {
+        "color": "Red",
+        "cost": "4",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "[All Turns] [Once Per Turn] When any of your Digimon with [Dracomon] or [Examon]\u00a0in their texts delete your opponent's Digimon in battle, trash their top security card.",
+    "dnaDigivolve": "-",
+    "dp": "7000",
+    "dualEffect": "-",
+    "effect": "\uff1cFortitude\uff1e \n[On Play] [When Digivolving] Suspend 1 of your opponent's Digimon or Tamers. Then, 1 of their Digimon or Tamers can't unsuspend in their next unsuspend phase.\n[All Turns] This Digimon is also treated as Lv.6 [Breakdramon] for [Examon]'s DNA digivolution.",
+    "form": "Ultimate",
+    "id": "EX13-041_P1",
+    "illustrator": "BIRU YAMAGUCHI",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Groundramon",
+      "japanese": "\u30b0\u30e9\u30a6\u30f3\u30c9\u30e9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "7",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Coredramon]: Cost 3 ",
+    "type": "Earth Dragon",
+    "version": "Limited Common"
   },
   {
     "aceEffect": "-",
@@ -262500,6 +264957,118 @@
     "specialDigivolve": "[Digivolve] [Leopardmon: Leopard Mode]: Cost 1 ",
     "type": "Holy Warrior/Royal Knight",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all Green w/[Mammal]/[Beast]/[Beastkin]\u00a0trait",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-043_P1-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "EX13-043",
+    "cardType": "Digimon",
+    "color": "Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "-",
+    "effect": "[On Play] [When Digivolving] You may suspend 1 Digimon. Then, you may return 1 of your opponent's lowest DP Digimon to the bottom of the deck.\n[When Digivolving] [When Attacking] [Once Per Turn] You may play or use 1 [Mammal], [Beast], [Beastkin] or [Royal Knight]\u00a0trait card from your hand with the cost reduced by 4. For each suspended Digimon, further reduce it by 1.\n[All Turns] [Once Per Turn] When any of your suspended Digimon would leave the battle area other than by your effects, by unsuspending 1 of your Digimon, they don't leave.",
+    "form": "Mega",
+    "id": "EX13-043_P1",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Leopardmon",
+      "japanese": "\u30c9\u30a5\u30d5\u30c8\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "12",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Leopardmon: Leopard Mode]: Cost 1 ",
+    "type": "Holy Warrior/Royal Knight",
+    "version": "Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all Green w/[Mammal]/[Beast]/[Beastkin]\u00a0trait",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-043_P2-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "EX13-043",
+    "cardType": "Digimon",
+    "color": "Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "-",
+    "effect": "[On Play] [When Digivolving] You may suspend 1 Digimon. Then, you may return 1 of your opponent's lowest DP Digimon to the bottom of the deck.\n[When Digivolving] [When Attacking] [Once Per Turn] You may play or use 1 [Mammal], [Beast], [Beastkin] or [Royal Knight]\u00a0trait card from your hand with the cost reduced by 4. For each suspended Digimon, further reduce it by 1.\n[All Turns] [Once Per Turn] When any of your suspended Digimon would leave the battle area other than by your effects, by unsuspending 1 of your Digimon, they don't leave.",
+    "form": "Mega",
+    "id": "EX13-043_P2",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Leopardmon",
+      "japanese": "\u30c9\u30a5\u30d5\u30c8\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "12",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Leopardmon: Leopard Mode]: Cost 1 ",
+    "type": "Holy Warrior/Royal Knight",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -262636,6 +265205,138 @@
       "06"
     ],
     "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-045_P1-J.webp",
+    "cardLv": "Lv.7",
+    "cardNumber": "EX13-045",
+    "cardType": "Digimon",
+    "color": "Green/Red/Blue",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "5",
+        "level": "6"
+      },
+      {
+        "color": "Red",
+        "cost": "5",
+        "level": "6"
+      },
+      {
+        "color": "Blue",
+        "cost": "5",
+        "level": "6"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "[DNA Digivolve] Green Lv.6 + Blue Lv.6\u00a0: Cost 0",
+    "dp": "15000",
+    "dualEffect": "-",
+    "effect": "\uff1cRaid\uff1e \n\uff1cPiercing\uff1e \n\uff1cSecurity A. +1\uff1e \n\uff1cBlocker\uff1e \n\uff1cEvade\uff1e \n[When Digivolving] If DNA digivolving, this Digimon attacks and all of your Digimon get +10000 DP until your opponent's turn ends. Then, this Digimon may battle 1 of your opponent's Digimon.\n[Your Turn] [Once Per Turn] When this Digimon wins a battle, you may play or use 1 play or use cost 12 or lower [Dracomon] or [Examon]\u00a0text card from your hand or its digivolution cards without paying the cost.",
+    "form": "Mega",
+    "id": "EX13-045_P1",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Examon",
+      "japanese": "\u30a8\u30b0\u30b6\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "15",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Holy Warrior/Royal Knight",
+    "version": "Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-045_P2-J.webp",
+    "cardLv": "Lv.7",
+    "cardNumber": "EX13-045",
+    "cardType": "Digimon",
+    "color": "Green/Red/Blue",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "5",
+        "level": "6"
+      },
+      {
+        "color": "Red",
+        "cost": "5",
+        "level": "6"
+      },
+      {
+        "color": "Blue",
+        "cost": "5",
+        "level": "6"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "[DNA Digivolve] Green Lv.6 + Blue Lv.6\u00a0: Cost 0",
+    "dp": "15000",
+    "dualEffect": "-",
+    "effect": "\uff1cRaid\uff1e \n\uff1cPiercing\uff1e \n\uff1cSecurity A. +1\uff1e \n\uff1cBlocker\uff1e \n\uff1cEvade\uff1e \n[When Digivolving] If DNA digivolving, this Digimon attacks and all of your Digimon get +10000 DP until your opponent's turn ends. Then, this Digimon may battle 1 of your opponent's Digimon.\n[Your Turn] [Once Per Turn] When this Digimon wins a battle, you may play or use 1 play or use cost 12 or lower [Dracomon] or [Examon]\u00a0text card from your hand or its digivolution cards without paying the cost.",
+    "form": "Mega",
+    "id": "EX13-045_P2",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Examon",
+      "japanese": "\u30a8\u30b0\u30b6\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "15",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Holy Warrior/Royal Knight",
+    "version": "Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-046-J.webp",
     "cardLv": "Lv.3",
     "cardNumber": "EX13-046",
@@ -262748,6 +265449,62 @@
       "06"
     ],
     "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-047_P1-J.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "EX13-047",
+    "cardType": "Digimon",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[Opponent's Turn] This Digimon gets +2000 DP.",
+    "dnaDigivolve": "-",
+    "dp": "3000",
+    "dualEffect": "-",
+    "effect": "\uff1cBlocker\uff1e \n[On Play] Reveal the top 3 cards of your deck. Add 1 card with the [Royal Knight]\u00a0trait and 1 card with \uff1cBlocker\uff1e among them to the hand. Return the rest to the bottom of the deck.\n[When Attacking] Lose 2 memory.",
+    "form": "Rookie",
+    "id": "EX13-047_P1",
+    "illustrator": "GOSSAN",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Gotsumon",
+      "japanese": "\u30b4\u30c4\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Rock",
+    "version": "Limited Common"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-048-J.webp",
     "cardLv": "Lv.3",
     "cardNumber": "EX13-048",
@@ -262795,6 +265552,62 @@
     "specialDigivolve": "-",
     "type": "Reptile",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-048_P1-J.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "EX13-048",
+    "cardType": "Digimon",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[All Turns] [Once Per Turn] When this Digimon would leave the battle area other than by your effects, by deleting 1 of your other Digimon with [Knightmon]\u00a0in its text, it doesn't leave.",
+    "dnaDigivolve": "-",
+    "dp": "2000",
+    "dualEffect": "-",
+    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 card with [Knightmon]\u00a0in its text and 1 card with [Knightmon]\u00a0in its name among them to the hand. Return the rest to the bottom of the deck.",
+    "form": "Rookie",
+    "id": "EX13-048_P1",
+    "illustrator": "Souichirou Gunjima",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Kotemon",
+      "japanese": "\u30b3\u30c6\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Reptile",
+    "version": "Limited Common"
   },
   {
     "aceEffect": "-",
@@ -262916,6 +265729,62 @@
   {
     "aceEffect": "-",
     "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-050_P1-J.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "EX13-050",
+    "cardType": "Digimon",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "\uff1cBlocker\uff1e ",
+    "dnaDigivolve": "-",
+    "dp": "1000",
+    "dualEffect": "-",
+    "effect": "[All Turns] Players can't gain memory other than by Tamer effects.",
+    "form": "Rookie",
+    "id": "EX13-050_P1",
+    "illustrator": "kaz",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Bokomon",
+      "japanese": "\u30dc\u30b3\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Mutant",
+    "version": "Limited Common"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
     "attribute": "Virus",
     "block": [
       "06"
@@ -262972,6 +265841,62 @@
   {
     "aceEffect": "-",
     "assembly": "-",
+    "attribute": "Virus",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-051_P1-J.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "EX13-051",
+    "cardType": "Digimon",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[Opponent's Turn] [Once Per Turn] When any of your Digimon suspend, this Digimon may unsuspend.",
+    "dnaDigivolve": "-",
+    "dp": "5000",
+    "dualEffect": "-",
+    "effect": "\uff1cBlocker\uff1e \n[All Turns] When any of your other Digimon with \uff1cBlocker\uff1e would leave the battle area other than by your effects, by suspending this Digimon, they don't leave.",
+    "form": "Champion",
+    "id": "EX13-051_P1",
+    "illustrator": "GOSSAN",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Guardromon",
+      "japanese": "\u30ac\u30fc\u30c9\u30ed\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "4",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Mine",
+    "version": "Limited Uncommon"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
     "attribute": "Vaccine",
     "block": [
       "06"
@@ -263024,6 +265949,62 @@
     "specialDigivolve": "-",
     "type": "Warrior",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-052_P1-J.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "EX13-052",
+    "cardType": "Digimon",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[All Turns] [Once Per Turn] When this Digimon would leave the battle area other than by your effects, by deleting 1 of your other Digimon with [Knightmon]\u00a0in its text, it doesn't leave.",
+    "dnaDigivolve": "-",
+    "dp": "4000",
+    "dualEffect": "-",
+    "effect": "\uff1cGuard\uff1e \n[On Play] [On Deletion] \uff1cDe-Digivolve 1\uff1e 1 of your opponent's Digimon. ",
+    "form": "Champion",
+    "id": "EX13-052_P1",
+    "illustrator": "Moyasi",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Gladimon",
+      "japanese": "\u30b0\u30e9\u30c7\u30a3\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "4",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Warrior",
+    "version": "Limited Common"
   },
   {
     "aceEffect": "-",
@@ -263089,6 +266070,67 @@
   {
     "aceEffect": "-",
     "assembly": "-",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-053_P1-J.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "EX13-053",
+    "cardType": "Digimon",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "2",
+        "level": "3"
+      },
+      {
+        "color": "Yellow",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[On Deletion] \uff1cDe-Digivolve 1\uff1e 1 of your opponent's Digimon. ",
+    "dnaDigivolve": "-",
+    "dp": "4000",
+    "dualEffect": "-",
+    "effect": "[On Play] [On Deletion] You may return up to 3 Digimon cards with [Mamemon]\u00a0in their texts from your trash to the top of the deck. Then, delete 1 of your opponent's Digimon with a play cost of 3 or less. For each one this effect returned, add 1 to this effect's play cost maximum.",
+    "form": "Champion",
+    "id": "EX13-053_P1",
+    "illustrator": "koki",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Thundermon",
+      "japanese": "\u30b5\u30f3\u30c0\u30fc\u30dc\u30fc\u30eb\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "4",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "[Rule] Name: Treated as including [Mamemon].",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Mutant",
+    "version": "Limited Common"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
     "attribute": "Virus",
     "block": [
       "06"
@@ -263146,6 +266188,67 @@
     "specialDigivolve": "-",
     "type": "Invader",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Virus",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-054_P1-J.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "EX13-054",
+    "cardType": "Digimon",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "2",
+        "level": "3"
+      },
+      {
+        "color": "Yellow",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[All Turns] This Digimon gets +1000 DP.",
+    "dnaDigivolve": "-",
+    "dp": "3000",
+    "dualEffect": "-",
+    "effect": "[Security] At the end of the battle, play this card without paying the cost.\n[On Play] [On Deletion] 1 of your opponent's Digimon can't attack players until their turn ends.",
+    "form": "Champion",
+    "id": "EX13-054_P1",
+    "illustrator": "kaz",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Nanimon",
+      "japanese": "\u30ca\u30cb\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "[Rule] Trait: Has [Mutant] Type.",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Invader",
+    "version": "Limited Common"
   },
   {
     "aceEffect": "-",
@@ -263216,6 +266319,67 @@
       "06"
     ],
     "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-055_P1-J.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "EX13-055",
+    "cardType": "Digimon",
+    "color": "Black/Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "3",
+        "level": "3"
+      },
+      {
+        "color": "Yellow",
+        "cost": "3",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "\uff1cBarrier\uff1e ",
+    "dnaDigivolve": "-",
+    "dp": "5000",
+    "dualEffect": "-",
+    "effect": "[On Play] [When Digivolving] 1 of your opponent's Digimon gets -3000 DP for the turn.\n[When Attacking] This Digimon may digivolve into a Digimon card with the [Chronicle]\u00a0trait in the hand or trash.",
+    "form": "Champion",
+    "id": "EX13-055_P1",
+    "illustrator": "Spareribs",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Raptordramon",
+      "japanese": "\u30e9\u30d7\u30bf\u30fc\u30c9\u30e9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "5",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Dorumon]/Lv.3 w/[Chronicle]\u00a0trait: Cost 2 ",
+    "type": "Cyborg/X Antibody/Chronicle",
+    "version": "Foil - Coloured Border -\u00a0Limited Common"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-056-J.webp",
     "cardLv": "Lv.5",
     "cardNumber": "EX13-056",
@@ -263263,6 +266427,62 @@
     "specialDigivolve": "-",
     "type": "Mine",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-056_P1-J.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "EX13-056",
+    "cardType": "Digimon",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "3",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "[Opponent's Turn] [Once Per Turn] When any of your Digimon suspend, you may play 1 level 5 or lower black Digimon card with \uff1cBlocker\uff1e from your hand without paying the cost.",
+    "dnaDigivolve": "-",
+    "dp": "7000",
+    "dualEffect": "-",
+    "effect": "\uff1cCollision\uff1e \n\uff1cBlocker\uff1e \n[All Turns] [Once Per Turn] When this Digimon suspends, reveal the top 3 cards of your deck. You may play 1 level 4 or lower black Digimon card with \uff1cBlocker\uff1e among them without paying the cost. Trash the rest.",
+    "form": "Ultimate",
+    "id": "EX13-056_P1",
+    "illustrator": "GOSSAN",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Giromon",
+      "japanese": "\u30ae\u30ed\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "7",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "[Rule] Trait: Has [Machine] Type.",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Mine",
+    "version": "Limited Uncommon"
   },
   {
     "aceEffect": "-",
@@ -263324,6 +266544,67 @@
     "specialDigivolve": "[Digivolve] [Raptordramon]/Lv.4 w/[Chronicle]\u00a0trait: Cost 3 ",
     "type": "Warrior/X Antibody/Chronicle",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-057_P1-J.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "EX13-057",
+    "cardType": "Digimon",
+    "color": "Black/Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "4"
+      },
+      {
+        "color": "Yellow",
+        "cost": "4",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "[All Turns] [Once Per Turn] When any of your [Chronicle]\u00a0trait Digimon would leave the battle area, by trashing your top security card, they don't leave.",
+    "dnaDigivolve": "-",
+    "dp": "7000",
+    "dualEffect": "-",
+    "effect": "[On Play] [When Digivolving] Until your opponent's turn ends, 1 of your [X Antibody] or [Chronicle]\u00a0trait Digimon gains \uff1cReboot\uff1e and \uff1cBlocker\uff1e. If during an attack, it also isn't affected by their Digimon effects and gets +5000 DP.\n[End of Attack] [Once Per Turn] This Digimon may digivolve into a Digimon card with the [Chronicle]\u00a0trait in the hand or trash.",
+    "form": "Ultimate",
+    "id": "EX13-057_P1",
+    "illustrator": "Spareribs",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Grademon",
+      "japanese": "\u30b0\u30ec\u30a4\u30c9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "7",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Raptordramon]/Lv.4 w/[Chronicle]\u00a0trait: Cost 3 ",
+    "type": "Warrior/X Antibody/Chronicle",
+    "version": "Foil - Coloured Border -\u00a0Limited Uncommon"
   },
   {
     "aceEffect": "-",
@@ -263500,6 +266781,189 @@
   },
   {
     "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Chronicle]\u00a0trait",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-060_P1-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "EX13-060",
+    "cardType": "Digimon",
+    "color": "Black/Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "5",
+        "level": "5"
+      },
+      {
+        "color": "Yellow",
+        "cost": "5",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "13000",
+    "dualEffect": "-",
+    "effect": "[When Digivolving] 1 of your opponent's Digimon gets -8000 DP until their turn ends. Then, if they have 5 or more memory, gain 2 memory.\n[Your Turn] [Once Per Turn] When any of your [Chronicle]\u00a0trait Digimon or Tamers are played, 1 of your Digimon may attack. Then, you may activate 1 of this Digimon's [When Digivolving] effects.\n[End of Your Turn] [Once Per Turn] You may play 1 [Chronicle]\u00a0trait card without [Alphamon]\u00a0in its name from your hand with the cost reduced by 6. It gains \uff1cRush\uff1e for the turn. ",
+    "form": "Mega",
+    "id": "EX13-060_P1",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Alphamon",
+      "japanese": "\u30a2\u30eb\u30d5\u30a1\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "13",
+    "rarity": "UR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Grademon]/Lv.5 w/[Chronicle]\u00a0trait: Cost 4 ",
+    "type": "Holy Warrior/Royal Knight/X Antibody/Chronicle",
+    "version": "Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Chronicle]\u00a0trait",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-060_P2-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "EX13-060",
+    "cardType": "Digimon",
+    "color": "Black/Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "5",
+        "level": "5"
+      },
+      {
+        "color": "Yellow",
+        "cost": "5",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "13000",
+    "dualEffect": "-",
+    "effect": "[When Digivolving] 1 of your opponent's Digimon gets -8000 DP until their turn ends. Then, if they have 5 or more memory, gain 2 memory.\n[Your Turn] [Once Per Turn] When any of your [Chronicle]\u00a0trait Digimon or Tamers are played, 1 of your Digimon may attack. Then, you may activate 1 of this Digimon's [When Digivolving] effects.\n[End of Your Turn] [Once Per Turn] You may play 1 [Chronicle]\u00a0trait card without [Alphamon]\u00a0in its name from your hand with the cost reduced by 6. It gains \uff1cRush\uff1e for the turn. ",
+    "form": "Mega",
+    "id": "EX13-060_P2",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Alphamon",
+      "japanese": "\u30a2\u30eb\u30d5\u30a1\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "13",
+    "rarity": "UR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Grademon]/Lv.5 w/[Chronicle]\u00a0trait: Cost 4 ",
+    "type": "Holy Warrior/Royal Knight/X Antibody/Chronicle",
+    "version": "Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Chronicle]\u00a0trait",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-060_P3-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "EX13-060",
+    "cardType": "Digimon",
+    "color": "Black/Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "5",
+        "level": "5"
+      },
+      {
+        "color": "Yellow",
+        "cost": "5",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "13000",
+    "dualEffect": "-",
+    "effect": "[When Digivolving] 1 of your opponent's Digimon gets -8000 DP until their turn ends. Then, if they have 5 or more memory, gain 2 memory.\n[Your Turn] [Once Per Turn] When any of your [Chronicle]\u00a0trait Digimon or Tamers are played, 1 of your Digimon may attack. Then, you may activate 1 of this Digimon's [When Digivolving] effects.\n[End of Your Turn] [Once Per Turn] You may play 1 [Chronicle]\u00a0trait card without [Alphamon]\u00a0in its name from your hand with the cost reduced by 6. It gains \uff1cRush\uff1e for the turn. ",
+    "form": "Mega",
+    "id": "EX13-060_P3",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Alphamon",
+      "japanese": "\u30a2\u30eb\u30d5\u30a1\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "13",
+    "rarity": "UR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Grademon]/Lv.5 w/[Chronicle]\u00a0trait: Cost 4 ",
+    "type": "Holy Warrior/Royal Knight/X Antibody/Chronicle",
+    "version": "Alternative Art"
+  },
+  {
+    "aceEffect": "-",
     "assembly": "[Assembly\u00a0-5] 3 [Huckmon]\u00a0text Digimon cards w/different names",
     "attribute": "Data",
     "block": [
@@ -263553,6 +267017,118 @@
     "specialDigivolve": "[Digivolve] Lv.5 w/[Huckmon]\u00a0in text: Cost 4 ",
     "type": "Holy Warrior/Royal Knight",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-5] 3 [Huckmon]\u00a0text Digimon cards w/different names",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-061_P1-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "EX13-061",
+    "cardType": "Digimon",
+    "color": "Black/White",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "5",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "13000",
+    "dualEffect": "-",
+    "effect": "\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n[On Play] [When Digivolving] You may play 1 [Hinukamuy] Token. (Digimon/White/6000 DP/\uff1cAlliance\uff1e \uff1cReboot\uff1e \uff1cBlocker\uff1e) Then, until your opponent's turn ends, their Digimon effects don't affect 1 of your white Digimon.\n[All Turns] [Once Per Turn] When any of your white Digimon suspend, you may use 1 use cost 5 or lower Option card with [Huckmon]\u00a0in its text from your hand or this Digimon's digivolution cards without paying the cost.",
+    "form": "Mega",
+    "id": "EX13-061_P1",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Gankoomon",
+      "japanese": "\u30ac\u30f3\u30af\u30a5\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "13",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[Huckmon]\u00a0in text: Cost 4 ",
+    "type": "Holy Warrior/Royal Knight",
+    "version": "Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-5] 3 [Huckmon]\u00a0text Digimon cards w/different names",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-061_P2-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "EX13-061",
+    "cardType": "Digimon",
+    "color": "Black/White",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "5",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "13000",
+    "dualEffect": "-",
+    "effect": "\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n[On Play] [When Digivolving] You may play 1 [Hinukamuy] Token. (Digimon/White/6000 DP/\uff1cAlliance\uff1e \uff1cReboot\uff1e \uff1cBlocker\uff1e) Then, until your opponent's turn ends, their Digimon effects don't affect 1 of your white Digimon.\n[All Turns] [Once Per Turn] When any of your white Digimon suspend, you may use 1 use cost 5 or lower Option card with [Huckmon]\u00a0in its text from your hand or this Digimon's digivolution cards without paying the cost.",
+    "form": "Mega",
+    "id": "EX13-061_P2",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Gankoomon",
+      "japanese": "\u30ac\u30f3\u30af\u30a5\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "13",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[Huckmon]\u00a0in text: Cost 4 ",
+    "type": "Holy Warrior/Royal Knight",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -263612,6 +267188,118 @@
   },
   {
     "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all Black w/\uff1cBlocker\uff1e",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-062_P1-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "EX13-062",
+    "cardType": "Digimon",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "-",
+    "effect": "\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n[On Play] [When Digivolving] Your opponent's effects don't affect this Digimon until their turn ends.\n[All Turns] [Once Per Turn] When this Digimon suspends, you may delete all of your opponent's Digimon with the lowest play cost.\n[All Turns] When this Digimon unsuspends, it gets +3000 DP until your turn ends.",
+    "form": "Mega",
+    "id": "EX13-062_P1",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Craniamon",
+      "japanese": "\u30af\u30ec\u30cb\u30a2\u30e0\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "12",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Holy Warrior/Royal Knight",
+    "version": "Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all Black w/\uff1cBlocker\uff1e",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-062_P2-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "EX13-062",
+    "cardType": "Digimon",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "-",
+    "effect": "\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n[On Play] [When Digivolving] Your opponent's effects don't affect this Digimon until their turn ends.\n[All Turns] [Once Per Turn] When this Digimon suspends, you may delete all of your opponent's Digimon with the lowest play cost.\n[All Turns] When this Digimon unsuspends, it gets +3000 DP until your turn ends.",
+    "form": "Mega",
+    "id": "EX13-062_P2",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Craniamon",
+      "japanese": "\u30af\u30ec\u30cb\u30a2\u30e0\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "12",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Holy Warrior/Royal Knight",
+    "version": "Alternative Art"
+  },
+  {
+    "aceEffect": "-",
     "assembly": "[Assembly\u00a0-4] 3 Lv.5 or lower [Mamemon]\u00a0text cards w/different names",
     "attribute": "Data",
     "block": [
@@ -263665,6 +267353,62 @@
     "specialDigivolve": "-",
     "type": "Mutant",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-4] 3 Lv.5 or lower [Mamemon]\u00a0text cards w/different names",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-063_P1-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "EX13-063",
+    "cardType": "Digimon",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "-",
+    "effect": "[On Play] [When Digivolving] [On Deletion] Reveal the top 3 cards of your deck. You may play 1 play cost 10 or lower Digimon card with [Mamemon]\u00a0in its name or the [Mutant]\u00a0trait among them without paying the cost. Trash the rest.\n[On Deletion] Delete 1 of your opponent's highest play cost Digimon.\n[All Turns] All of your Digimon with [Mamemon]\u00a0in their names gain \uff1cBlocker\uff1e and \uff1cGuard\uff1e ",
+    "form": "Mega",
+    "id": "EX13-063_P1",
+    "illustrator": "poroze",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "PrinceMamemon",
+      "japanese": "\u30d7\u30ea\u30f3\u30b9\u30de\u30e1\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "11",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Mutant",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -263726,6 +267470,128 @@
     "specialDigivolve": "[Digivolve] Lv.5 w/[Knightmon]\u00a0in text: Cost 3\n[Digivolve] While you have 3 or fewer security cards, [Rie Kishibe]: Cost 5 ",
     "type": "Holy Warrior/Royal Knight/CS",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Virus",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-064_P1-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "EX13-064",
+    "cardType": "Digimon",
+    "color": "Purple/Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "4",
+        "level": "5"
+      },
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "-",
+    "effect": "[When Digivolving] You may play or use 1 play or use cost 8 or lower [Knightmon]\u00a0text card from your hand or trash without paying the cost.\n[Your Turn] All of your [Knightmon]\u00a0text Digimon gain \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack.) and \uff1cPiercing\uff1e \n[Your Turn] [Once Per Turn] When any of your other Digimon or Tamers are played, 1 of your [Knightmon]\u00a0text Digimon may gain \uff1cRush\uff1e and \uff1cCollision\uff1e for the turn and attack.",
+    "form": "Mega",
+    "id": "EX13-064_P1",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "LordKnightmon",
+      "japanese": "\u30ed\u30fc\u30c9\u30ca\u30a4\u30c8\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "12",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[Knightmon]\u00a0in text: Cost 3\n[Digivolve] While you have 3 or fewer security cards, [Rie Kishibe]: Cost 5 ",
+    "type": "Holy Warrior/Royal Knight/CS",
+    "version": "Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Virus",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-064_P2-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "EX13-064",
+    "cardType": "Digimon",
+    "color": "Purple/Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "4",
+        "level": "5"
+      },
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "-",
+    "effect": "[When Digivolving] You may play or use 1 play or use cost 8 or lower [Knightmon]\u00a0text card from your hand or trash without paying the cost.\n[Your Turn] All of your [Knightmon]\u00a0text Digimon gain \uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, add the suspended Digimon's DP to this Digimon and it gains \uff1cSecurity A. +1\uff1e for the attack.) and \uff1cPiercing\uff1e \n[Your Turn] [Once Per Turn] When any of your other Digimon or Tamers are played, 1 of your [Knightmon]\u00a0text Digimon may gain \uff1cRush\uff1e and \uff1cCollision\uff1e for the turn and attack.",
+    "form": "Mega",
+    "id": "EX13-064_P2",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "LordKnightmon",
+      "japanese": "\u30ed\u30fc\u30c9\u30ca\u30a4\u30c8\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "12",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[Knightmon]\u00a0in text: Cost 3\n[Digivolve] While you have 3 or fewer security cards, [Rie Kishibe]: Cost 5 ",
+    "type": "Holy Warrior/Royal Knight/CS",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -263830,6 +267696,56 @@
   {
     "aceEffect": "-",
     "assembly": "-",
+    "attribute": "Virus",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-066_P1-J.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "EX13-066",
+    "cardType": "Digimon/Option",
+    "color": "White/Black",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "6000",
+    "dualEffect": "[Arts Digivolve] ",
+    "effect": "\uff1cDecode ([Sistermon Noir]/[Sistermon Ciel])\uff1e \n[When Digivolving] Delete 1 of your opponent's Digimon with a play cost of 4 or less.",
+    "form": "Champion",
+    "id": "EX13-066_P1",
+    "illustrator": "Tsunemi Aosa",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Sistermon Noir (Awakened)/Mickey Bullet (Awakened)",
+      "japanese": "\u30b7\u30b9\u30bf\u30e2\u30f3 \u30ce\u30ef\u30fc\u30eb\uff08\u899a\u9192\uff09/\u30df\u30c3\u30ad\u30fc\u30d0\u30ec\u30c3\u30c8\uff08\u899a\u9192\uff09",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "White",
+    "optionCardEffect": "[Main] You may play 1 play cost 4 or lower card with [Sistermon] from your hand or trash without paying the cost. Then, to 1 of your opponent's Digimon, \uff1cDe-Digivolve 1\uff1e for each of your Digimon.",
+    "playCost": "5",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "[Rule] Also has Name: [Sistermon Ciel (Awakened)] and Trait: [Data] Attribute.",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Sistermon Noir]/[Sistermon Ciel]: Cost 1\n[Digivolve] Lv.3 w/[Huckmon]\u00a0in text: Cost 3 ",
+    "type": "Puppet",
+    "version": "Foil - Coloured Border -\u00a0Limited Uncommon"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
     "attribute": "-",
     "block": [
       "06"
@@ -263876,6 +267792,56 @@
     "specialDigivolve": "-",
     "type": "CS",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-067_P1-J.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-067",
+    "cardType": "Tamer",
+    "color": "Red/Blue",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "[Start of Your Main Phase] If your opponent has a Digimon, gain 1 memory.\n[Your Turn] When any of your Digimon digivolve, if you have 1 or fewer Digimon, by suspending this Tamer, you may play 1 [Gabumon] if that Digimon has [Greymon]\u00a0in its name and 1 [Agumon] if it has [Garurumon]\u00a0in its name from your hand or trash without paying the cost.",
+    "form": "-",
+    "id": "EX13-067_P1",
+    "illustrator": "Nakano Haito",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Nokia Shiramine",
+      "japanese": "\u767d\u5cf0\u30ce\u30ad\u30a2",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "4",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "[Security] Play this card without paying the cost.",
+    "specialDigivolve": "-",
+    "type": "CS",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -263935,6 +267901,56 @@
       "06"
     ],
     "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-068_P1-J.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-068",
+    "cardType": "Tamer",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "[Start of Your Turn] If you have 2 or less memory, set it to 3.\n[Start of Your Main Phase] By returning this Tamer to the bottom of the deck, you may play 1 [Takato Matsuki] from your hand without paying the cost. After, if you don't have a Digimon, you may play 1 [Guilmon] from your trash without paying the cost.",
+    "form": "-",
+    "id": "EX13-068_P1",
+    "illustrator": "No Illustrator",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Takato Matsuki",
+      "japanese": "\u677e\u7530\u5553\u4eba",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "4",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "[Security] Play this card without paying the cost.",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Limited Uncommon"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-069-J.webp",
     "cardLv": "-",
     "cardNumber": "EX13-069",
@@ -263976,6 +267992,56 @@
     "specialDigivolve": "-",
     "type": "CS",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-069_P1-J.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-069",
+    "cardType": "Tamer",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "[Start of Your Main Phase] If you have a Digimon with [Veemon] or [Veedramon]\u00a0in its name, gain 1 memory.\n[Your Turn] When any of your Digimon unsuspend, by suspending this Tamer, \uff1cDraw 1\uff1e. After, 1 of your Digimon may digivolve into a Digimon card with [Veedramon]\u00a0in its name in the hand with the cost reduced by 2.",
+    "form": "-",
+    "id": "EX13-069_P1",
+    "illustrator": "Takase",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Rina Shinomiya",
+      "japanese": "\u56db\u30ce\u5bae\u30ea\u30ca",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "[Security] Play this card without paying the cost.",
+    "specialDigivolve": "-",
+    "type": "CS",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -264035,6 +268101,56 @@
       "06"
     ],
     "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-070_P1-J.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-070",
+    "cardType": "Tamer",
+    "color": "Blue/Green",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "[Start of Your Turn] If you have 2 or less memory, set it to 3.\n[End of Your Turn] By suspending this Tamer, activate 1 of the effects below:\n\u30fb1 of your Digimon may digivolve into a Digimon card with [Imperialdramon]\u00a0in its name or the [Free]\u00a0trait in the hand. Reduce this effect's paid cost by 1 for each of your opponent's Digimon.\n\u30fb2 of your Digimon may DNA digivolve into a [Free]\u00a0trait Digimon card in the hand.",
+    "form": "-",
+    "id": "EX13-070_P1",
+    "illustrator": "No Illustrator",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Davis Motomiya & Ken Ichijoji",
+      "japanese": "\u672c\u5bae\u5927\u8f14\uff06\u4e00\u4e57\u5bfa\u8ce2",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "4",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "[Security] Play this card without paying the cost.",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Limited Uncommon"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-071-J.webp",
     "cardLv": "-",
     "cardNumber": "EX13-071",
@@ -264085,6 +268201,56 @@
       "06"
     ],
     "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-071_P1-J.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-071",
+    "cardType": "Tamer",
+    "color": "Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "[Start of Your Main Phase] [On Play] You may place your deck's top card face down under this Tamer. Then, if your opponent has a Digimon, gain 1 memory.\n[Main] [Once Per Turn] By trashing 3 bottom face-down cards from under any of your Tamers and placing 1 each of level 4 and level 5 [Holy Beast]\u00a0trait yellow Digimon cards from your trash as 1 of your [Kudamon] 's bottom digivolution cards, it may digivolve into [Kentaurosmon] in the hand or trash, ignoring level and with the cost reduced by 1.",
+    "form": "-",
+    "id": "EX13-071_P1",
+    "illustrator": "No Illustrator",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Richard Sampson",
+      "japanese": "\u85a9\u6469\u5ec9\u592a\u90ce",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "4",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "[Security] Play this card without paying the cost.",
+    "specialDigivolve": "-",
+    "type": "DATA SQUAD",
+    "version": "Limited Uncommon"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-072-J.webp",
     "cardLv": "-",
     "cardNumber": "EX13-072",
@@ -264126,6 +268292,56 @@
     "specialDigivolve": "-",
     "type": "Chronicle",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-072_P1-J.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-072",
+    "cardType": "Tamer",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "[Start of Your Main Phase] By trashing 1 [Chronicle]\u00a0trait card from your hand, \uff1cDraw 1\uff1e and gain 1 memory.\n[Your Turn] When one of your [Chronicle]\u00a0trait Digimon attacks, by suspending this Tamer, you may use 1 [X Antibody] or 1 Option card with the [Chronicle]\u00a0trait from your hand with the cost reduced by 1.",
+    "form": "-",
+    "id": "EX13-072_P1",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Kota Domoto",
+      "japanese": "\u5802\u672c\u30b3\u30fc\u30bf",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "4",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "[Security] Play this card without paying the cost.",
+    "specialDigivolve": "-",
+    "type": "Chronicle",
+    "version": "Foil - Coloured Border -\u00a0"
   },
   {
     "aceEffect": "-",
@@ -264235,6 +268451,56 @@
       "06"
     ],
     "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-074_P1-J.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-074",
+    "cardType": "Tamer",
+    "color": "Purple/Black",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "[Start of Your Turn] If you have 2 or less memory, set it to 3.\n[All Turns] [Once Per Turn] When any of your [Knightmon]\u00a0text Digimon are played or deleted, by placing 1 such card from your hand or trash under this Tamer, \uff1cDraw 1\uff1e \n[Main] [Once Per Turn] If this Tamer has 3 or more [Knightmon]\u00a0text cards under it, it may digivolve into [LordKnightmon] in the hand or trash for a digivolution cost of 3, ignoring digivolution requirements.",
+    "form": "-",
+    "id": "EX13-074_P1",
+    "illustrator": "Takase",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Rie Kishibe",
+      "japanese": "\u5cb8\u90e8\u30ea\u30a8",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "4",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "[Security] Play this card without paying the cost.",
+    "specialDigivolve": "-",
+    "type": "CS",
+    "version": "Limited Uncommon"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-075-J.webp",
     "cardLv": "-",
     "cardNumber": "EX13-075",
@@ -264276,6 +268542,56 @@
     "specialDigivolve": "-",
     "type": "-",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-075_P1-J.webp",
+    "cardLv": "-",
+    "cardNumber": "EX13-075",
+    "cardType": "Tamer",
+    "color": "White",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "[Start of Your Turn] If you have 2 or less memory, set it to 3.\n[On Play] Reveal the top 3 cards of your deck. Add 1 card with [Huckmon]\u00a0in its text among them to the hand. Return the rest to the bottom of the deck.",
+    "form": "-",
+    "id": "EX13-075_P1",
+    "illustrator": "Nakano Haito",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Mon",
+      "japanese": "\u3082\u3093",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "4",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "[Security] Play this card without paying the cost.",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -264340,6 +268656,128 @@
   },
   {
     "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-8] 6 [Free]/[Royal Knight]\u00a0trait Digimon cards w/different names",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-076_P1-J.webp",
+    "cardLv": "Lv.7",
+    "cardNumber": "EX13-076",
+    "cardType": "Digimon",
+    "color": "White/Blue/Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "6",
+        "level": "6"
+      },
+      {
+        "color": "Green",
+        "cost": "6",
+        "level": "6"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "16000",
+    "dualEffect": "-",
+    "effect": "\uff1cPiercing\uff1e \n\uff1cVortex\uff1e \n\uff1cBlocker\uff1e \n\uff1cEvade\uff1e \n[On Play] [When Digivolving] [When Attacking] [Once Per Turn] You may suspend 1 of your opponent's Digimon. Then, you may return all digivolution cards of 1 of their Digimon to the bottom of the deck and have this Digimon battle it. Compare the number of digivolution cards instead of DP in this battle.\n[All Turns] [Once Per Turn] When this Digimon wins a battle, you may return 1 of your opponent's Digimon to the bottom of the deck. Then, this Digimon may unsuspend.",
+    "form": "Mega",
+    "id": "EX13-076_P1",
+    "illustrator": "Spareribs",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Imperialdramon: Paladin Mode",
+      "japanese": "\u30a4\u30f3\u30da\u30ea\u30a2\u30eb\u30c9\u30e9\u30e2\u30f3\uff1a\u30d1\u30e9\u30c7\u30a3\u30f3\u30e2\u30fc\u30c9",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "16",
+    "rarity": "SEC",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "[Rule] Trait: Has [Free] Attribute.",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.6 w/[Free]/[Royal Knight]\u00a0trait: Cost 5 ",
+    "type": "Ancient Holy Warrior",
+    "version": "Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-8] 6 [Free]/[Royal Knight]\u00a0trait Digimon cards w/different names",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-076_P2-J.webp",
+    "cardLv": "Lv.7",
+    "cardNumber": "EX13-076",
+    "cardType": "Digimon",
+    "color": "White/Blue/Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "6",
+        "level": "6"
+      },
+      {
+        "color": "Green",
+        "cost": "6",
+        "level": "6"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "16000",
+    "dualEffect": "-",
+    "effect": "\uff1cPiercing\uff1e \n\uff1cVortex\uff1e \n\uff1cBlocker\uff1e \n\uff1cEvade\uff1e \n[On Play] [When Digivolving] [When Attacking] [Once Per Turn] You may suspend 1 of your opponent's Digimon. Then, you may return all digivolution cards of 1 of their Digimon to the bottom of the deck and have this Digimon battle it. Compare the number of digivolution cards instead of DP in this battle.\n[All Turns] [Once Per Turn] When this Digimon wins a battle, you may return 1 of your opponent's Digimon to the bottom of the deck. Then, this Digimon may unsuspend.",
+    "form": "Mega",
+    "id": "EX13-076_P2",
+    "illustrator": "Spareribs",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Imperialdramon: Paladin Mode",
+      "japanese": "\u30a4\u30f3\u30da\u30ea\u30a2\u30eb\u30c9\u30e9\u30e2\u30f3\uff1a\u30d1\u30e9\u30c7\u30a3\u30f3\u30e2\u30fc\u30c9",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "16",
+    "rarity": "SEC",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "[Rule] Trait: Has [Free] Attribute.",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.6 w/[Free]/[Royal Knight]\u00a0trait: Cost 5 ",
+    "type": "Ancient Holy Warrior",
+    "version": "Alternative Art"
+  },
+  {
+    "aceEffect": "-",
     "assembly": "[Assembly\u00a0-8] 6 [ADVENTURE]\u00a0trait Digimon cards w/different colors",
     "attribute": "Vaccine",
     "block": [
@@ -264393,6 +268831,118 @@
     "specialDigivolve": "[Digivolve] [Omnimon]: Cost 2 ",
     "type": "Holy Warrior/ADVENTURE",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-8] 6 [ADVENTURE]\u00a0trait Digimon cards w/different colors",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-077_P1-J.webp",
+    "cardLv": "Lv.7",
+    "cardNumber": "EX13-077",
+    "cardType": "Digimon",
+    "color": "White",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "All",
+        "cost": "6",
+        "level": "6"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "16000",
+    "dualEffect": "-",
+    "effect": "[On Play] [When Digivolving] 1 of your Digimon may attack without suspending. Then, for every 2 of your Digimon and Tamers' colors, activate 1 effect below:\n\u30fbThis Digimon may battle 1 of your opponent's Digimon.\n\u30fbBy returning 5 cards from your opponent's trash to the bottom of the deck, \uff1cRecovery +1\uff1e \n[All Turns] This Digimon gains all colors in its digivolution cards, and +1000 DP for each of your Digimon and Tamers' colors.",
+    "form": "Mega",
+    "id": "EX13-077_P1",
+    "illustrator": "toriyufu",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Omnimon: Merciful Mode",
+      "japanese": "\u30aa\u30e1\u30ac\u30e2\u30f3\uff1a\u30de\u30fc\u30b7\u30d5\u30eb\u30e2\u30fc\u30c9",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "16",
+    "rarity": "SEC",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Omnimon]: Cost 2 ",
+    "type": "Holy Warrior/ADVENTURE",
+    "version": "Alternative Art"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-8] 6 [ADVENTURE]\u00a0trait Digimon cards w/different colors",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-077_P2-J.webp",
+    "cardLv": "Lv.7",
+    "cardNumber": "EX13-077",
+    "cardType": "Digimon",
+    "color": "White",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "All",
+        "cost": "6",
+        "level": "6"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "16000",
+    "dualEffect": "-",
+    "effect": "[On Play] [When Digivolving] 1 of your Digimon may attack without suspending. Then, for every 2 of your Digimon and Tamers' colors, activate 1 effect below:\n\u30fbThis Digimon may battle 1 of your opponent's Digimon.\n\u30fbBy returning 5 cards from your opponent's trash to the bottom of the deck, \uff1cRecovery +1\uff1e \n[All Turns] This Digimon gains all colors in its digivolution cards, and +1000 DP for each of your Digimon and Tamers' colors.",
+    "form": "Mega",
+    "id": "EX13-077_P2",
+    "illustrator": "toriyufu",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Omnimon: Merciful Mode",
+      "japanese": "\u30aa\u30e1\u30ac\u30e2\u30f3\uff1a\u30de\u30fc\u30b7\u30d5\u30eb\u30e2\u30fc\u30c9",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "16",
+    "rarity": "SEC",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Omnimon]: Cost 2 ",
+    "type": "Holy Warrior/ADVENTURE",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",

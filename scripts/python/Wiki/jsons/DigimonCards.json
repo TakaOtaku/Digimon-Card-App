@@ -119396,7 +119396,7 @@
     "linkRequirement": "-",
     "name": {
       "english": "Diaboromon (X Antibody)",
-      "japanese": "\u30b1\u30e9\u30e2\u30f3X\u6297\u4f53",
+      "japanese": "\u30c7\u30a3\u30a2\u30dc\u30ed\u30e2\u30f3X\u6297\u4f53",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -210031,7 +210031,14 @@
         "type": "Limited Uncommon"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-001_P1-J",
+        "illustrator": "tyuga",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Uncommon"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
@@ -210090,7 +210097,14 @@
         "type": "Limited Uncommon"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-002_P1-J",
+        "illustrator": "Tonamikanji",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Uncommon"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
@@ -210149,7 +210163,14 @@
         "type": "Limited Uncommon"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-003_P1-J",
+        "illustrator": "SENNSU",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Uncommon"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
@@ -210208,7 +210229,14 @@
         "type": "Limited Uncommon"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-004_P1-J",
+        "illustrator": "naru",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Uncommon"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
@@ -210267,7 +210295,14 @@
         "type": "Limited Uncommon"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-005_P1-J",
+        "illustrator": "koki",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Uncommon"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
@@ -210326,7 +210361,14 @@
         "type": "Limited Uncommon"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-006_P1-J",
+        "illustrator": "Spareribs",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Uncommon"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
@@ -210559,7 +210601,14 @@
         "type": "Limited Common"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-010_P1-J",
+        "illustrator": "tyuga",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Common"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Virus",
@@ -210624,7 +210673,14 @@
         "type": "Limited Common"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-011_P1-J",
+        "illustrator": "NAOKI AKAMINE",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Common"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Data",
@@ -210689,7 +210745,14 @@
         "type": "Limited Uncommon"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-012_P1-J",
+        "illustrator": "NAOKI AKAMINE",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Uncommon"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Data",
@@ -210754,7 +210817,14 @@
         "type": "Limited Uncommon"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-013_P1-J",
+        "illustrator": "tyuga",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Uncommon"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Virus",
@@ -210825,7 +210895,20 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-014_P1-J",
+        "illustrator": "Tonamikanji",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      },
+      {
+        "id": "EX13-014_P2-J",
+        "illustrator": "Tonamikanji",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Huckmon]\u00a0in text",
     "attribute": "Data",
@@ -210902,7 +210985,26 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-015_P1-J",
+        "illustrator": "Tonamikanji",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      },
+      {
+        "id": "EX13-015_P2-J",
+        "illustrator": "Tonamikanji",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      },
+      {
+        "id": "EX13-015_P3-J",
+        "illustrator": "Tonamikanji",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Guilmon]/[Growlmon]\u00a0in name",
     "attribute": "Virus",
@@ -210979,7 +211081,26 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-016_P1-J",
+        "illustrator": "Tonamikanji",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      },
+      {
+        "id": "EX13-016_P2-J",
+        "illustrator": "Tonamikanji",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      },
+      {
+        "id": "EX13-016_P3-J",
+        "illustrator": "Tonamikanji",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "[Assembly\u00a0-7] [WarGreymon] \u00d7 [MetalGarurumon] \u00d7 [Agumon] \u00d7 [Gabumon]",
     "attribute": "Vaccine",
@@ -211107,7 +211228,14 @@
         "type": "Limited Common"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-018_P1-J",
+        "illustrator": "SENNSU",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Common"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -211177,7 +211305,14 @@
         "type": "Limited Common"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-019_P1-J",
+        "illustrator": "Tonamikanji",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Common"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -211254,7 +211389,26 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-020_P1-J",
+        "illustrator": "Tonamikanji",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      },
+      {
+        "id": "EX13-020_P2-J",
+        "illustrator": "Tonamikanji",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      },
+      {
+        "id": "EX13-020_P3-J",
+        "illustrator": "Tonamikanji",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "[Assembly\u00a0-2] [Veemon] ",
     "attribute": "Free",
@@ -211324,7 +211478,14 @@
         "type": "Limited Uncommon"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-021_P1-J",
+        "illustrator": "BIRU YAMAGUCHI",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Uncommon"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -211394,7 +211555,14 @@
         "type": "Limited Uncommon"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-022_P1-J",
+        "illustrator": "Tonamikanji",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Uncommon"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -211465,7 +211633,20 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-023_P1-J",
+        "illustrator": "Tonamikanji",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      },
+      {
+        "id": "EX13-023_P2-J",
+        "illustrator": "Tonamikanji",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Veemon]/[Veedramon]\u00a0in name",
     "attribute": "Vaccine",
@@ -211593,7 +211774,14 @@
         "type": "Limited Common"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-025_P1-J",
+        "illustrator": "k.Dra",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Common"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Data",
@@ -211716,7 +211904,14 @@
         "type": "Limited Common"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-027_P1-J",
+        "illustrator": "GOSSAN",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Common"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Virus",
@@ -211786,7 +211981,14 @@
         "type": "Limited Common"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-028_P1-J",
+        "illustrator": "GOSSAN",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Common"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Virus",
@@ -211856,7 +212058,14 @@
         "type": "Limited Common"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-029_P1-J",
+        "illustrator": "k.Dra",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Common"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Virus",
@@ -211926,7 +212135,14 @@
         "type": "Limited Common"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-030_P1-J",
+        "illustrator": "SENNSU",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Common"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -212112,7 +212328,14 @@
         "type": "Limited Uncommon"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-033_P1-J",
+        "illustrator": "k.Dra",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Uncommon"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Virus",
@@ -212182,7 +212405,14 @@
         "type": "Limited Common"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-034_P1-J",
+        "illustrator": "Moyasi",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Common"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Virus",
@@ -212247,7 +212477,14 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-035_P1-J",
+        "illustrator": "poroze",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Virus",
@@ -212323,7 +212560,20 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-036_P1-J",
+        "illustrator": "Tonamikanji",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      },
+      {
+        "id": "EX13-036_P2-J",
+        "illustrator": "Tonamikanji",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all Yellow w/[Holy Beast]\u00a0trait",
     "attribute": "Vaccine",
@@ -212394,7 +212644,20 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-037_P1-J",
+        "illustrator": "Tonamikanji",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      },
+      {
+        "id": "EX13-037_P2-J",
+        "illustrator": "Tonamikanji",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Witchelny]\u00a0in text",
     "attribute": "Data",
@@ -212464,7 +212727,14 @@
         "type": "Limited Common"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-038_P1-J",
+        "illustrator": "Kazumasa Yasukuni",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Common"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -212529,7 +212799,14 @@
         "type": "Limited Common"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-039_P1-J",
+        "illustrator": "SENNSU",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Common"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Virus",
@@ -212599,7 +212876,14 @@
         "type": "Limited Common"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-040_P1-J",
+        "illustrator": "Kazumasa Yasukuni",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Common"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Data",
@@ -212664,7 +212948,14 @@
         "type": "Limited Common"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-041_P1-J",
+        "illustrator": "BIRU YAMAGUCHI",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Common"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Virus",
@@ -212798,7 +213089,20 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-043_P1-J",
+        "illustrator": "Tonamikanji",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      },
+      {
+        "id": "EX13-043_P2-J",
+        "illustrator": "Tonamikanji",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all Green w/[Mammal]/[Beast]/[Beastkin]\u00a0trait",
     "attribute": "Data",
@@ -212932,7 +213236,20 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-045_P1-J",
+        "illustrator": "Tonamikanji",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      },
+      {
+        "id": "EX13-045_P2-J",
+        "illustrator": "Tonamikanji",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Data",
@@ -213072,7 +213389,14 @@
         "type": "Limited Common"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-047_P1-J",
+        "illustrator": "GOSSAN",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Common"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Data",
@@ -213137,7 +213461,14 @@
         "type": "Limited Common"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-048_P1-J",
+        "illustrator": "Souichirou Gunjima",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Common"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Data",
@@ -213265,7 +213596,14 @@
         "type": "Limited Common"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-050_P1-J",
+        "illustrator": "kaz",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Common"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -213330,7 +213668,14 @@
         "type": "Limited Uncommon"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-051_P1-J",
+        "illustrator": "GOSSAN",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Uncommon"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Virus",
@@ -213395,7 +213740,14 @@
         "type": "Limited Common"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-052_P1-J",
+        "illustrator": "Moyasi",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Common"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -213460,7 +213812,14 @@
         "type": "Limited Common"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-053_P1-J",
+        "illustrator": "koki",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Common"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Data",
@@ -213530,7 +213889,14 @@
         "type": "Limited Common"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-054_P1-J",
+        "illustrator": "kaz",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Common"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Virus",
@@ -213600,7 +213966,14 @@
         "type": "Foil - Coloured Border -\u00a0Limited Common"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-055_P1-J",
+        "illustrator": "Spareribs",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0Limited Common"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -213670,7 +214043,14 @@
         "type": "Limited Uncommon"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-056_P1-J",
+        "illustrator": "GOSSAN",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Uncommon"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -213735,7 +214115,14 @@
         "type": "Foil - Coloured Border -\u00a0Limited Uncommon"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-057_P1-J",
+        "illustrator": "Spareribs",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0Limited Uncommon"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -213933,7 +214320,26 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-060_P1-J",
+        "illustrator": "Tonamikanji",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      },
+      {
+        "id": "EX13-060_P2-J",
+        "illustrator": "Tonamikanji",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      },
+      {
+        "id": "EX13-060_P3-J",
+        "illustrator": "Tonamikanji",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Chronicle]\u00a0trait",
     "attribute": "Data",
@@ -214009,7 +214415,20 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-061_P1-J",
+        "illustrator": "Tonamikanji",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      },
+      {
+        "id": "EX13-061_P2-J",
+        "illustrator": "Tonamikanji",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "[Assembly\u00a0-5] 3 [Huckmon]\u00a0text Digimon cards w/different names",
     "attribute": "Data",
@@ -214080,7 +214499,20 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-062_P1-J",
+        "illustrator": "Tonamikanji",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      },
+      {
+        "id": "EX13-062_P2-J",
+        "illustrator": "Tonamikanji",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all Black w/\uff1cBlocker\uff1e",
     "attribute": "Vaccine",
@@ -214145,7 +214577,14 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-063_P1-J",
+        "illustrator": "poroze",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "[Assembly\u00a0-4] 3 Lv.5 or lower [Mamemon]\u00a0text cards w/different names",
     "attribute": "Data",
@@ -214216,7 +214655,20 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-064_P1-J",
+        "illustrator": "Tonamikanji",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      },
+      {
+        "id": "EX13-064_P2-J",
+        "illustrator": "Tonamikanji",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Virus",
@@ -214338,7 +214790,14 @@
         "type": "Foil - Coloured Border -\u00a0Limited Uncommon"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-066_P1-J",
+        "illustrator": "Tsunemi Aosa",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0Limited Uncommon"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Virus",
@@ -214397,7 +214856,14 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-067_P1-J",
+        "illustrator": "Nakano Haito",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
@@ -214456,7 +214922,14 @@
         "type": "Limited Uncommon"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-068_P1-J",
+        "illustrator": "No Illustrator",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Uncommon"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
@@ -214515,7 +214988,14 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-069_P1-J",
+        "illustrator": "Takase",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
@@ -214574,7 +215054,14 @@
         "type": "Limited Uncommon"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-070_P1-J",
+        "illustrator": "No Illustrator",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Uncommon"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
@@ -214633,7 +215120,14 @@
         "type": "Limited Uncommon"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-071_P1-J",
+        "illustrator": "No Illustrator",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Uncommon"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
@@ -214692,7 +215186,14 @@
         "type": "Foil - Coloured Border -\u00a0"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-072_P1-J",
+        "illustrator": "To be completed",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
@@ -214803,7 +215304,14 @@
         "type": "Limited Uncommon"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-074_P1-J",
+        "illustrator": "Takase",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Uncommon"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
@@ -214862,7 +215370,14 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-075_P1-J",
+        "illustrator": "Nakano Haito",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
@@ -214927,7 +215442,20 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-076_P1-J",
+        "illustrator": "Spareribs",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      },
+      {
+        "id": "EX13-076_P2-J",
+        "illustrator": "Spareribs",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "[Assembly\u00a0-8] 6 [Free]/[Royal Knight]\u00a0trait Digimon cards w/different names",
     "attribute": "Vaccine",
@@ -214992,18 +215520,31 @@
     "AAs": [
       {
         "id": "EX13-077_P1",
-        "illustrator": "To be completed",
+        "illustrator": "toriyufu",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Alternative Art"
       },
       {
         "id": "EX13-077_P2",
-        "illustrator": "To be completed",
+        "illustrator": "toriyufu",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-077_P1-J",
+        "illustrator": "toriyufu",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      },
+      {
+        "id": "EX13-077_P2-J",
+        "illustrator": "toriyufu",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "[Assembly\u00a0-8] 6 [ADVENTURE]\u00a0trait Digimon cards w/different colors",
     "attribute": "Vaccine",

@@ -190643,7 +190643,7 @@
     "linkRequirement": "-",
     "name": {
       "english": "Diaboromon (X Antibody)",
-      "japanese": "\u30b1\u30e9\u30e2\u30f3X\u6297\u4f53",
+      "japanese": "\u30c7\u30a3\u30a2\u30dc\u30ed\u30e2\u30f3X\u6297\u4f53",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -190699,7 +190699,7 @@
     "linkRequirement": "-",
     "name": {
       "english": "Diaboromon (X Antibody)",
-      "japanese": "\u30b1\u30e9\u30e2\u30f3X\u6297\u4f53",
+      "japanese": "\u30c7\u30a3\u30a2\u30dc\u30ed\u30e2\u30f3X\u6297\u4f53",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -340086,7 +340086,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/EX13-014_P1.webp",
+    "cardImage": "assets/images/cards/EX13-014_P1-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "EX13-014",
     "cardType": "Digimon",
@@ -340142,7 +340142,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/EX13-014_P2.webp",
+    "cardImage": "assets/images/cards/EX13-014_P2-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "EX13-014",
     "cardType": "Digimon",
@@ -342838,7 +342838,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/EX13-036_P1.webp",
+    "cardImage": "assets/images/cards/EX13-036_P1-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "EX13-036",
     "cardType": "Digimon",
@@ -342894,7 +342894,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/EX13-036_P2.webp",
+    "cardImage": "assets/images/cards/EX13-036_P2-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "EX13-036",
     "cardType": "Digimon",
@@ -343011,7 +343011,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/EX13-037_P1.webp",
+    "cardImage": "assets/images/cards/EX13-037_P1-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "EX13-037",
     "cardType": "Digimon",
@@ -343072,7 +343072,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/EX13-037_P2.webp",
+    "cardImage": "assets/images/cards/EX13-037_P2-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "EX13-037",
     "cardType": "Digimon",
@@ -343952,7 +343952,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/EX13-045_P1.webp",
+    "cardImage": "assets/images/cards/EX13-045_P1-Sample.webp",
     "cardLv": "Lv.7",
     "cardNumber": "EX13-045",
     "cardType": "Digimon",
@@ -344018,7 +344018,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/EX13-045_P2.webp",
+    "cardImage": "assets/images/cards/EX13-045_P2-Sample.webp",
     "cardLv": "Lv.7",
     "cardNumber": "EX13-045",
     "cardType": "Digimon",
@@ -345590,7 +345590,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/EX13-060_P1.webp",
+    "cardImage": "assets/images/cards/EX13-060_P1-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "EX13-060",
     "cardType": "Digimon",
@@ -345651,7 +345651,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/EX13-060_P2.webp",
+    "cardImage": "assets/images/cards/EX13-060_P2-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "EX13-060",
     "cardType": "Digimon",
@@ -345829,7 +345829,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/EX13-061_P1.webp",
+    "cardImage": "assets/images/cards/EX13-061_P1-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "EX13-061",
     "cardType": "Digimon",
@@ -345885,7 +345885,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/EX13-061_P2.webp",
+    "cardImage": "assets/images/cards/EX13-061_P2-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "EX13-061",
     "cardType": "Digimon",
@@ -345997,7 +345997,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/EX13-062_P1.webp",
+    "cardImage": "assets/images/cards/EX13-062_P1-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "EX13-062",
     "cardType": "Digimon",
@@ -346053,7 +346053,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/EX13-062_P2.webp",
+    "cardImage": "assets/images/cards/EX13-062_P2-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "EX13-062",
     "cardType": "Digimon",
@@ -346282,7 +346282,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/EX13-064_P1.webp",
+    "cardImage": "assets/images/cards/EX13-064_P1-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "EX13-064",
     "cardType": "Digimon",
@@ -346343,7 +346343,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/EX13-064_P2.webp",
+    "cardImage": "assets/images/cards/EX13-064_P2-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "EX13-064",
     "cardType": "Digimon",
@@ -347663,7 +347663,7 @@
     "effect": "[On Play] [When Digivolving] 1 of your Digimon may attack without suspending. Then, for every 2 of your Digimon and Tamers' colors, activate 1 effect below:\n\u30fbThis Digimon may battle 1 of your opponent's Digimon.\n\u30fbBy returning 5 cards from your opponent's trash to the bottom of the deck, \uff1cRecovery +1\uff1e \n[All Turns] This Digimon gains all colors in its digivolution cards, and +1000 DP for each of your Digimon and Tamers' colors.",
     "form": "Mega",
     "id": "EX13-077_P1",
-    "illustrator": "To be completed",
+    "illustrator": "toriyufu",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
@@ -347719,7 +347719,7 @@
     "effect": "[On Play] [When Digivolving] 1 of your Digimon may attack without suspending. Then, for every 2 of your Digimon and Tamers' colors, activate 1 effect below:\n\u30fbThis Digimon may battle 1 of your opponent's Digimon.\n\u30fbBy returning 5 cards from your opponent's trash to the bottom of the deck, \uff1cRecovery +1\uff1e \n[All Turns] This Digimon gains all colors in its digivolution cards, and +1000 DP for each of your Digimon and Tamers' colors.",
     "form": "Mega",
     "id": "EX13-077_P2",
-    "illustrator": "To be completed",
+    "illustrator": "toriyufu",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
