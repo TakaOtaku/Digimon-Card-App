@@ -213324,7 +213324,14 @@
         "type": "Limited Common"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "EX13-046_P1-J",
+        "illustrator": "koki",
+        "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+        "type": "Limited Common"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Data",

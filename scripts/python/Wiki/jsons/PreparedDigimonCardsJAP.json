@@ -265393,6 +265393,62 @@
       "06"
     ],
     "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-046_P1-J.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "EX13-046",
+    "cardType": "Digimon",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[On Deletion] \uff1cDe-Digivolve 1\uff1e 1 of your opponent's Digimon. ",
+    "dnaDigivolve": "-",
+    "dp": "2000",
+    "dualEffect": "-",
+    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 card with [Mamemon]\u00a0in its text and 1 card with the [Mutant]\u00a0trait among them to the hand. Return the rest to the bottom of the deck.",
+    "form": "Rookie",
+    "id": "EX13-046_P1",
+    "illustrator": "koki",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Kokuwamon",
+      "japanese": "\u30b3\u30af\u30ef\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Machine",
+    "version": "Limited Common"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-047-J.webp",
     "cardLv": "Lv.3",
     "cardNumber": "EX13-047",
