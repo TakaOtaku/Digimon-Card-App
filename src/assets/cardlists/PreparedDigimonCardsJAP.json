@@ -257724,7 +257724,7 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "Data",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
@@ -257785,7 +257785,7 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "Data",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
@@ -257846,7 +257846,7 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "Data",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
@@ -260718,6 +260718,62 @@
   {
     "aceEffect": "-",
     "assembly": "-",
+    "attribute": "Virus",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-007_P1-J.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "EX13-007",
+    "cardType": "Digimon",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[All Turns] Add 2000 to this Digimon's DP deletion effects' maximums.",
+    "dnaDigivolve": "-",
+    "dp": "1000",
+    "dualEffect": "-",
+    "effect": "[When Moving] [On Play] By trashing 1 card in your hand, you may return 1 Digimon card with [Gallantmon]\u00a0in its name or 1 red Tamer card from your trash to the hand.",
+    "form": "Rookie",
+    "id": "EX13-007_P1",
+    "illustrator": "tyuga",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Guilmon",
+      "japanese": "\u30ae\u30eb\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "Box Promotion Pack: CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Reptile",
+    "version": "Full Art -\u00a0Box Topper"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
     "attribute": "Data",
     "block": [
       "06"
@@ -260779,6 +260835,62 @@
       "06"
     ],
     "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-008_P1-J.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "EX13-008",
+    "cardType": "Digimon",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[End of Your Turn] This Digimon and any of your other Digimon may DNA digivolve into a Digimon card in the hand.",
+    "dnaDigivolve": "-",
+    "dp": "1000",
+    "dualEffect": "-",
+    "effect": "[When Moving] [On Play] Reveal the top 3 cards of your deck. Add 1 card with [Dracomon] or [Examon]\u00a0in its text among them to the hand. Return the rest to the bottom of the deck.",
+    "form": "Rookie",
+    "id": "EX13-008_P1",
+    "illustrator": "Souichirou Gunjima",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Dracomon",
+      "japanese": "\u30c9\u30e9\u30b3\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "Box Promotion Pack: CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Bebydomon]: Cost 0 ",
+    "type": "Dragon",
+    "version": "Full Art -\u00a0Box Topper"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
     "cardImage": "assets/images/cards/EX13-009-J.webp",
     "cardLv": "Lv.3",
     "cardNumber": "EX13-009",
@@ -260826,6 +260938,62 @@
     "specialDigivolve": "-",
     "type": "Mini Dragon",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-009_P1-J.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "EX13-009",
+    "cardType": "Digimon",
+    "color": "Red/White",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When any of your white Digimon are played, gain 1 memory.",
+    "dnaDigivolve": "-",
+    "dp": "2000",
+    "dualEffect": "-",
+    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 Digimon card with [Huckmon] or [Sistermon]\u00a0in its text and 1 such Tamer card or Option card among them to the hand. Return the rest to the bottom of the deck.",
+    "form": "Rookie",
+    "id": "EX13-009_P1",
+    "illustrator": "NAOKI AKAMINE",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Huckmon",
+      "japanese": "\u30cf\u30c3\u30af\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "Box Promotion Pack: CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Mini Dragon",
+    "version": "Full Art -\u00a0Box Topper"
   },
   {
     "aceEffect": "-",
@@ -261970,6 +262138,62 @@
   {
     "aceEffect": "-",
     "assembly": "-",
+    "attribute": "Free",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-017_P1-J.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "EX13-017",
+    "cardType": "Digimon",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[All Turns] [Once Per Turn] When this Digimon with [Veedramon]\u00a0in its name would leave the battle area by your opponent's effects, by suspending it, it doesn't leave.",
+    "dnaDigivolve": "-",
+    "dp": "1000",
+    "dualEffect": "-",
+    "effect": "[When Moving] [On Play] Reveal the top 3 cards of your deck. Add 1 card with [Veedramon]\u00a0in its text or the [Royal Knight]\u00a0trait among them to the hand. Return the rest to the bottom of the deck.",
+    "form": "Rookie",
+    "id": "EX13-017_P1",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Veemon",
+      "japanese": "\u30d6\u30a4\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "Box Promotion Pack: CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.2 w/[CS]\u00a0trait: Cost 0 ",
+    "type": "Mini Dragon/CS",
+    "version": "Full Art -\u00a0Box Topper"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
     "attribute": "Vaccine",
     "block": [
       "06"
@@ -263075,6 +263299,62 @@
     "specialDigivolve": "[Digivolve] Lv.2 w/[DATA SQUAD]\u00a0trait: Cost 0 ",
     "type": "Holy Beast/DATA SQUAD",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-026_P1-J.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "EX13-026",
+    "cardType": "Digimon",
+    "color": "Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[When Attacking] [Once Per Turn] Give 1 of your opponent's Digimon \uff1cSecurity A. -1\uff1e until their turn ends.",
+    "dnaDigivolve": "-",
+    "dp": "1000",
+    "dualEffect": "-",
+    "effect": "[When Moving] [On Play] Reveal the top 3 cards of your deck. Among them, add 1 [Holy Beast], [Royal Knight] or [DATA SQUAD]\u00a0trait card to the hand and place 1 such card face down under any of your [DATA SQUAD]\u00a0trait Tamers. Return the rest to the bottom of the deck.",
+    "form": "Rookie",
+    "id": "EX13-026_P1",
+    "illustrator": "SENNSU",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Kudamon",
+      "japanese": "\u30af\u30c0\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "Box Promotion Pack: CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.2 w/[DATA SQUAD]\u00a0trait: Cost 0 ",
+    "type": "Holy Beast/DATA SQUAD",
+    "version": "Full Art -\u00a0Box Topper"
   },
   {
     "aceEffect": "-",
@@ -265729,6 +266009,67 @@
   {
     "aceEffect": "-",
     "assembly": "-",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX13-049_P1-J.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "EX13-049",
+    "cardType": "Digimon",
+    "color": "Black/Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "1",
+        "level": "2"
+      },
+      {
+        "color": "Yellow",
+        "cost": "1",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[When Attacking] [Once Per Turn] 1 of your opponent's Digimon gets -2000 DP for the turn.",
+    "dnaDigivolve": "-",
+    "dp": "1000",
+    "dualEffect": "-",
+    "effect": "[When Moving] [On Play] Reveal the top 3 cards of your deck. Add 1 card with the [X Antibody] or [Chronicle]\u00a0trait among them to the hand. Return the rest to the top or bottom of the deck.",
+    "form": "Rookie",
+    "id": "EX13-049_P1",
+    "illustrator": "Spareribs",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Dorumon",
+      "japanese": "\u30c9\u30eb\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "Box Promotion Pack: CHIVALROUS XIII",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Dorimon]/Black Lv.2 w/[X Antibody]\u00a0trait: Cost 0 ",
+    "type": "Beast/X Antibody/Chronicle",
+    "version": "Full Art -\u00a0Box Topper"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
     "attribute": "Vaccine",
     "block": [
       "06"
@@ -266777,7 +267118,7 @@
   {
     "aceEffect": "-",
     "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Chronicle]\u00a0trait",
-    "attribute": "Data",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
@@ -266838,7 +267179,7 @@
   {
     "aceEffect": "-",
     "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Chronicle]\u00a0trait",
-    "attribute": "Data",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
@@ -266899,7 +267240,7 @@
   {
     "aceEffect": "-",
     "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Chronicle]\u00a0trait",
-    "attribute": "Data",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
@@ -266960,7 +267301,7 @@
   {
     "aceEffect": "-",
     "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Chronicle]\u00a0trait",
-    "attribute": "Data",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],

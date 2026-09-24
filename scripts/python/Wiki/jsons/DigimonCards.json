@@ -208557,7 +208557,7 @@
     ],
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "Data",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
@@ -210419,8 +210419,22 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "EX13-007_P1",
+        "illustrator": "tyuga",
+        "note": "Box Promotion Pack: CHIVALROUS XIII",
+        "type": "Full Art -\u00a0Box Topper"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "EX13-007_P1-J",
+        "illustrator": "tyuga",
+        "note": "Box Promotion Pack: CHIVALROUS XIII",
+        "type": "Full Art -\u00a0Box Topper"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Virus",
@@ -210477,8 +210491,22 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "EX13-008_P1",
+        "illustrator": "Souichirou Gunjima",
+        "note": "Box Promotion Pack: CHIVALROUS XIII",
+        "type": "Full Art -\u00a0Box Topper"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "EX13-008_P1-J",
+        "illustrator": "Souichirou Gunjima",
+        "note": "Box Promotion Pack: CHIVALROUS XIII",
+        "type": "Full Art -\u00a0Box Topper"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Data",
@@ -210535,8 +210563,22 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "EX13-009_P1",
+        "illustrator": "NAOKI AKAMINE",
+        "note": "Box Promotion Pack: CHIVALROUS XIII",
+        "type": "Full Art -\u00a0Box Topper"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "EX13-009_P1-J",
+        "illustrator": "NAOKI AKAMINE",
+        "note": "Box Promotion Pack: CHIVALROUS XIII",
+        "type": "Full Art -\u00a0Box Topper"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Data",
@@ -211162,8 +211204,22 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "EX13-017_P1",
+        "illustrator": "Tonamikanji",
+        "note": "Box Promotion Pack: CHIVALROUS XIII",
+        "type": "Full Art -\u00a0Box Topper"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "EX13-017_P1-J",
+        "illustrator": "Tonamikanji",
+        "note": "Box Promotion Pack: CHIVALROUS XIII",
+        "type": "Full Art -\u00a0Box Topper"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Free",
@@ -211838,8 +211894,22 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "EX13-026_P1",
+        "illustrator": "SENNSU",
+        "note": "Box Promotion Pack: CHIVALROUS XIII",
+        "type": "Full Art -\u00a0Box Topper"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "EX13-026_P1-J",
+        "illustrator": "SENNSU",
+        "note": "Box Promotion Pack: CHIVALROUS XIII",
+        "type": "Full Art -\u00a0Box Topper"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -213532,8 +213602,22 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "EX13-049_P1",
+        "illustrator": "Spareribs",
+        "note": "Box Promotion Pack: CHIVALROUS XIII",
+        "type": "Full Art -\u00a0Box Topper"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "EX13-049_P1-J",
+        "illustrator": "Spareribs",
+        "note": "Box Promotion Pack: CHIVALROUS XIII",
+        "type": "Full Art -\u00a0Box Topper"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Data",
@@ -214349,7 +214433,7 @@
     ],
     "aceEffect": "-",
     "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Chronicle]\u00a0trait",
-    "attribute": "Data",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
