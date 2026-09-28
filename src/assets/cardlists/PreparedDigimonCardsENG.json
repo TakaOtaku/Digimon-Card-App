@@ -171150,7 +171150,7 @@
     "dnaDigivolve": "-",
     "dp": "5000",
     "dualEffect": "-",
-    "effect": "[When Digivolving] If you have 1 or fewer Tamers, from your hand and without paying the cost, you may play 1 Tamer card with [Veedramon]\u00a0in its text from your hand without paying the cost.",
+    "effect": "[When Digivolving] If you have 1 or fewer Tamers, you may play 1 Tamer card with [Veedramon]\u00a0in its text from your hand without paying the cost.",
     "form": "Champion",
     "id": "BT22-022",
     "illustrator": "Spareribs",
@@ -171206,7 +171206,7 @@
     "dnaDigivolve": "-",
     "dp": "5000",
     "dualEffect": "-",
-    "effect": "[When Digivolving] If you have 1 or fewer Tamers, from your hand and without paying the cost, you may play 1 Tamer card with [Veedramon]\u00a0in its text from your hand without paying the cost.",
+    "effect": "[When Digivolving] If you have 1 or fewer Tamers, you may play 1 Tamer card with [Veedramon]\u00a0in its text from your hand without paying the cost.",
     "form": "Champion",
     "id": "BT22-022_P1",
     "illustrator": "Spareribs",
@@ -201684,10 +201684,10 @@
     "playCost": "-",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -201734,10 +201734,10 @@
     "playCost": "-",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -201784,10 +201784,10 @@
     "playCost": "-",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -201834,10 +201834,10 @@
     "playCost": "-",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -201884,10 +201884,10 @@
     "playCost": "-",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -201934,10 +201934,10 @@
     "playCost": "-",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -201984,10 +201984,10 @@
     "playCost": "-",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -202040,10 +202040,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -202096,10 +202096,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -202152,10 +202152,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -202208,10 +202208,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -202264,10 +202264,10 @@
     "playCost": "5",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -202325,10 +202325,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -202386,10 +202386,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -202447,10 +202447,10 @@
     "playCost": "7",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -202508,10 +202508,10 @@
     "playCost": "7",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -202569,10 +202569,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -202630,10 +202630,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -202691,10 +202691,10 @@
     "playCost": "12",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -202747,10 +202747,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Aquatic] Type.",
     "securityEffect": "-",
@@ -202803,10 +202803,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -202859,10 +202859,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -202920,10 +202920,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -202981,10 +202981,10 @@
     "playCost": "4",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -203037,10 +203037,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -203098,10 +203098,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -203271,10 +203271,10 @@
     "playCost": "4",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -203332,10 +203332,10 @@
     "playCost": "5",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -203393,10 +203393,10 @@
     "playCost": "8",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Angel] Type.",
     "securityEffect": "-",
@@ -203454,10 +203454,10 @@
     "playCost": "6",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -203515,10 +203515,10 @@
     "playCost": "4",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -203576,10 +203576,10 @@
     "playCost": "4",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -203637,10 +203637,10 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Vegetation] Type.",
     "securityEffect": "-",
@@ -203698,10 +203698,10 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Vegetation] Type.",
     "securityEffect": "-",
@@ -203759,10 +203759,10 @@
     "playCost": "2",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -203820,10 +203820,10 @@
     "playCost": "2",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -203881,10 +203881,10 @@
     "playCost": "2",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -203937,10 +203937,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -203993,10 +203993,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -204049,10 +204049,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -204110,10 +204110,10 @@
     "playCost": "5",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -204166,10 +204166,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -204278,10 +204278,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -204339,10 +204339,10 @@
     "playCost": "4",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -204395,10 +204395,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -204451,10 +204451,10 @@
     "playCost": "6",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -204563,10 +204563,10 @@
     "playCost": "11",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -204624,10 +204624,10 @@
     "playCost": "11",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Avian] Type.",
     "securityEffect": "-",
@@ -204680,10 +204680,10 @@
     "playCost": "13",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -204741,10 +204741,10 @@
     "playCost": "12",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -204797,9 +204797,9 @@
     "playCost": "12",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
       "korean": "Unrestricted"
     },
     "rule": "-",
@@ -204853,10 +204853,10 @@
     "playCost": "6",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -204909,10 +204909,10 @@
     "playCost": "6",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -204965,10 +204965,10 @@
     "playCost": "6",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -205021,10 +205021,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -205077,10 +205077,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -205133,10 +205133,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -205189,10 +205189,10 @@
     "playCost": "5",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -205250,10 +205250,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -205306,10 +205306,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -205367,10 +205367,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Dark Animal] Type.",
     "securityEffect": "-",
@@ -205428,10 +205428,10 @@
     "playCost": "4",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -205489,10 +205489,10 @@
     "playCost": "4",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -205550,10 +205550,10 @@
     "playCost": "12",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -205611,10 +205611,10 @@
     "playCost": "13",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -205672,10 +205672,10 @@
     "playCost": "13",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -205733,10 +205733,10 @@
     "playCost": "13",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -205794,10 +205794,10 @@
     "playCost": "16",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -205855,10 +205855,10 @@
     "playCost": "16",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -205916,10 +205916,10 @@
     "playCost": "16",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -206089,10 +206089,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -206145,10 +206145,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -206201,10 +206201,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -206257,10 +206257,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -206313,10 +206313,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -206369,10 +206369,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -206430,10 +206430,10 @@
     "playCost": "4",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -206486,10 +206486,10 @@
     "playCost": "6",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -206542,10 +206542,10 @@
     "playCost": "5",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -206659,10 +206659,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -206715,10 +206715,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -206776,10 +206776,10 @@
     "playCost": "8",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Wizard] Type.",
     "securityEffect": "-",
@@ -206837,10 +206837,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -207015,10 +207015,10 @@
     "playCost": "7",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -207076,10 +207076,10 @@
     "playCost": "12",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -207137,10 +207137,10 @@
     "playCost": "13",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -207193,10 +207193,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -207249,10 +207249,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -207315,10 +207315,10 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -207381,10 +207381,10 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -207447,10 +207447,10 @@
     "playCost": "13",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -207513,10 +207513,10 @@
     "playCost": "13",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -207686,10 +207686,10 @@
     "playCost": "14",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -207747,10 +207747,10 @@
     "playCost": "14",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -207803,10 +207803,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -207853,10 +207853,10 @@
     "playCost": "12",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -207909,10 +207909,10 @@
     "playCost": "14",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -207965,10 +207965,10 @@
     "playCost": "14",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -208015,10 +208015,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -208065,10 +208065,10 @@
     "playCost": "4",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -208115,10 +208115,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -208315,10 +208315,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -208365,10 +208365,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -208415,10 +208415,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -208465,10 +208465,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -208515,10 +208515,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -208565,10 +208565,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -208615,10 +208615,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -208665,10 +208665,10 @@
     "playCost": "2",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] You may play 1 play cost 5 or lower [TS]\u00a0trait card from your hand without paying the cost. Then, add this card to the hand.",
@@ -208715,10 +208715,10 @@
     "playCost": "5",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] You may play 1 [Lalamon] or [Yoshino Fujieda] from your hand or trash without paying the cost. Then, add this card to the hand.",
@@ -208765,10 +208765,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Activate this card's [Main] effects.",
@@ -208815,10 +208815,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] You may play 1 level 4 or lower [Titan]\u00a0trait Digimon card from your hand or trash without paying the cost.",
@@ -208865,10 +208865,10 @@
     "playCost": "4",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] You may play 1 play cost 4 or lower [TS] card from your hand or trash without paying the cost.",
@@ -208915,10 +208915,10 @@
     "playCost": "7",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] You may play 1 play cost 5 or lower [Appmon]\u00a0trait card from your hand or trash without paying the cost. Then, add this card to the hand.",
@@ -208981,10 +208981,10 @@
     "playCost": "16",
     "rarity": "SEC",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -209047,10 +209047,10 @@
     "playCost": "16",
     "rarity": "SEC",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -209113,10 +209113,10 @@
     "playCost": "16",
     "rarity": "SEC",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -209163,10 +209163,10 @@
     "playCost": "5",
     "rarity": "SEC",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -209213,10 +209213,10 @@
     "playCost": "5",
     "rarity": "SEC",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -209263,10 +209263,10 @@
     "playCost": "5",
     "rarity": "SEC",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -317053,7 +317053,7 @@
         "level": "Sup."
       }
     ],
-    "digivolveEffect": "[All Turns] [Once Per Turn] When this Digimon would leave the battle area, by trashing 1 of its link cards, it doesn't leave.",
+    "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "8000",
     "dualEffect": "-",
@@ -317062,7 +317062,7 @@
     "id": "EX10-030",
     "illustrator": "tessy",
     "linkDP": "-",
-    "linkEffect": "-",
+    "linkEffect": "[All Turns] [Once Per Turn] When this Digimon would leave the battle area, by trashing 1 of its link cards, it doesn't leave.",
     "linkRequirement": "[Link] [Appmon]\u00a0trait: Cost 3 ",
     "name": {
       "english": "Cometmon",
@@ -317119,7 +317119,7 @@
         "level": "Sup."
       }
     ],
-    "digivolveEffect": "[All Turns] [Once Per Turn] When this Digimon would leave the battle area, by trashing 1 of its link cards, it doesn't leave.",
+    "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "8000",
     "dualEffect": "-",
@@ -317128,7 +317128,7 @@
     "id": "EX10-030_P1",
     "illustrator": "tessy",
     "linkDP": "-",
-    "linkEffect": "-",
+    "linkEffect": "[All Turns] [Once Per Turn] When this Digimon would leave the battle area, by trashing 1 of its link cards, it doesn't leave.",
     "linkRequirement": "[Link] [Appmon]\u00a0trait: Cost 3 ",
     "name": {
       "english": "Cometmon",
@@ -330091,10 +330091,10 @@
     "playCost": "-",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -330141,10 +330141,10 @@
     "playCost": "-",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -330191,10 +330191,10 @@
     "playCost": "-",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -330241,10 +330241,10 @@
     "playCost": "-",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -330291,10 +330291,10 @@
     "playCost": "-",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -330341,10 +330341,10 @@
     "playCost": "-",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -330391,10 +330391,10 @@
     "playCost": "-",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -330441,10 +330441,10 @@
     "playCost": "-",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -330497,10 +330497,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -330553,10 +330553,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -330609,10 +330609,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -330670,10 +330670,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -330731,10 +330731,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -330787,10 +330787,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -330843,10 +330843,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -330899,10 +330899,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -330955,10 +330955,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -331016,10 +331016,10 @@
     "playCost": "5",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -331077,10 +331077,10 @@
     "playCost": "5",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -331133,10 +331133,10 @@
     "playCost": "5",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -331189,10 +331189,10 @@
     "playCost": "5",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -331245,10 +331245,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -331301,10 +331301,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -331362,10 +331362,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -331423,10 +331423,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -331484,10 +331484,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -331545,10 +331545,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -331606,10 +331606,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -331667,10 +331667,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -331728,10 +331728,10 @@
     "playCost": "7",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -331789,10 +331789,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -331850,10 +331850,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -331911,10 +331911,10 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -331972,10 +331972,10 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -332033,10 +332033,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -332094,10 +332094,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -332155,10 +332155,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -332211,10 +332211,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -332267,10 +332267,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -332323,10 +332323,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -332379,10 +332379,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -332435,10 +332435,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -332491,10 +332491,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -332552,10 +332552,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -332613,10 +332613,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -332674,10 +332674,10 @@
     "playCost": "4",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -332735,10 +332735,10 @@
     "playCost": "4",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -332791,10 +332791,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -332847,10 +332847,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -332903,10 +332903,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Aquatic] Type.",
     "securityEffect": "-",
@@ -332959,10 +332959,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Aquatic] Type.",
     "securityEffect": "-",
@@ -333020,10 +333020,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -333081,10 +333081,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -333142,10 +333142,10 @@
     "playCost": "8",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -333203,10 +333203,10 @@
     "playCost": "8",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -333264,10 +333264,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -333325,10 +333325,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -333386,10 +333386,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -333447,10 +333447,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -333508,10 +333508,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Aquatic] Type.",
     "securityEffect": "-",
@@ -333569,10 +333569,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Aquatic] Type.",
     "securityEffect": "-",
@@ -333630,10 +333630,10 @@
     "playCost": "7",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -333691,10 +333691,10 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -333752,10 +333752,10 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -333813,10 +333813,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -333874,10 +333874,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -333935,10 +333935,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -333996,10 +333996,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -334057,10 +334057,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -334118,10 +334118,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Aquatic] Type.",
     "securityEffect": "-",
@@ -334179,10 +334179,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Aquatic] Type.",
     "securityEffect": "-",
@@ -334240,10 +334240,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Aquatic] Type.",
     "securityEffect": "-",
@@ -334433,10 +334433,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -334494,10 +334494,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -334550,10 +334550,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -334606,10 +334606,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -334662,10 +334662,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -334718,10 +334718,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -334779,10 +334779,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Name: Treated as including [Mamemon].",
     "securityEffect": "-",
@@ -334840,10 +334840,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Name: Treated as including [Mamemon].",
     "securityEffect": "-",
@@ -334901,10 +334901,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -334962,10 +334962,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -335018,10 +335018,10 @@
     "playCost": "5",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -335074,10 +335074,10 @@
     "playCost": "5",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -335130,10 +335130,10 @@
     "playCost": "7",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -335186,10 +335186,10 @@
     "playCost": "7",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -335247,10 +335247,10 @@
     "playCost": "7",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -335308,10 +335308,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -335369,10 +335369,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -335430,10 +335430,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -335496,10 +335496,10 @@
     "playCost": "13",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -335562,10 +335562,10 @@
     "playCost": "13",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -335623,10 +335623,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -335684,10 +335684,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -335745,10 +335745,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -335806,10 +335806,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -335867,10 +335867,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -335928,10 +335928,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -335989,10 +335989,10 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -336050,10 +336050,10 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -336106,10 +336106,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -336162,10 +336162,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -336218,10 +336218,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -336274,10 +336274,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -336335,10 +336335,10 @@
     "playCost": "7",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -336396,10 +336396,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -336457,10 +336457,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -336518,10 +336518,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -336579,10 +336579,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -336640,10 +336640,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -336701,10 +336701,10 @@
     "playCost": "11",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -336762,10 +336762,10 @@
     "playCost": "7",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -336823,10 +336823,10 @@
     "playCost": "7",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -336889,10 +336889,10 @@
     "playCost": "15",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -336955,10 +336955,10 @@
     "playCost": "15",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -337016,10 +337016,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -337077,10 +337077,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -337133,10 +337133,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -337189,10 +337189,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -337250,10 +337250,10 @@
     "playCost": "7",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -337311,10 +337311,10 @@
     "playCost": "7",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -337372,10 +337372,10 @@
     "playCost": "7",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -337433,10 +337433,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -337494,10 +337494,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -337555,10 +337555,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -337605,10 +337605,10 @@
     "playCost": "4",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -337655,10 +337655,10 @@
     "playCost": "4",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -337705,10 +337705,10 @@
     "playCost": "4",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -337755,10 +337755,10 @@
     "playCost": "4",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -337805,10 +337805,10 @@
     "playCost": "4",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -337855,10 +337855,10 @@
     "playCost": "4",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -337905,10 +337905,10 @@
     "playCost": "2",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] You may play 1 level 5 or lower [VB]\u00a0trait card from your hand or trash without paying the cost.",
@@ -337955,10 +337955,10 @@
     "playCost": "2",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] You may play 1 level 5 or lower [VB]\u00a0trait card from your hand or trash without paying the cost.",
@@ -338005,10 +338005,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Activate this card's [Main] effects.",
@@ -338055,10 +338055,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Activate this card's [Main] effects.",
@@ -338105,10 +338105,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Activate this card's [Main] effects.",
@@ -338155,10 +338155,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Activate this card's [Main] effects.",
@@ -338205,10 +338205,10 @@
     "playCost": "2",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] You may play 1 level 5 or lower [ME]\u00a0trait card from your hand or trash without paying the cost.",
@@ -338255,10 +338255,10 @@
     "playCost": "2",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] You may play 1 level 5 or lower [ME]\u00a0trait card from your hand or trash without paying the cost.",
@@ -338305,10 +338305,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Place this card in the battle area.",
@@ -338355,10 +338355,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Place this card in the battle area.",
@@ -338405,10 +338405,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] You may play 1 play cost 5 or lower [Shambala]\u00a0trait card from your hand or trash without paying the cost.",
@@ -338455,10 +338455,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] You may play 1 play cost 5 or lower [Shambala]\u00a0trait card from your hand or trash without paying the cost.",
