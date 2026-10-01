@@ -13,12 +13,12 @@ test.beforeEach(async ({ page }) => {
 test.describe('Home page', () => {
   test('loads and shows the navbar logo', async ({ page }) => {
     await page.goto('/');
-    await expect(page.locator('img[alt="Logo"]')).toBeVisible();
+    await expect(page.locator('digimon-navbar img[alt="Logo"]')).toBeVisible();
   });
 
   test('logo links somewhere (configured app URL)', async ({ page }) => {
     await page.goto('/');
-    const logoLink = page.locator('a:has(img[alt="Logo"])').first();
+    const logoLink = page.locator('digimon-navbar a:has(img[alt="Logo"])');
     await expect(logoLink).toHaveAttribute('href', /.+/);
   });
 

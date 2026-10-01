@@ -26,7 +26,10 @@ This is a full-featured Angular application for managing Digimon trading cards, 
 
 ## Technology Stack
 
-- **Frontend**: Angular (latest version) with standalone components
+- **Frontend**: Angular 21.2 with standalone components
+- **Language**: TypeScript ~5.9
+- **State Management**: NgRx 21.1 Signals/Store
+- **UI**: PrimeNG 21.1 and Angular Material 21.2
 - **Authentication**: Firebase Auth (Google OAuth and email/password)
 - **Backend**: Custom Digimon Backend API connected to MongoDB
 - **Database**: MongoDB for all data storage (users, decks, cards, blogs)
@@ -94,19 +97,19 @@ This is a full-featured Angular application for managing Digimon trading cards, 
 - Follow Angular's security best practices (e.g., avoid direct DOM manipulation)
 
 ### Performance
-- Enable production builds with `ng build --prod` for optimization
+- Use `npm run build` for the production build
 - Use lazy loading for routes to reduce initial bundle size
 - Optimize change detection with `OnPush` strategy and signals for fine-grained reactivity
 - Use trackBy in `ngFor` loops to improve rendering performance
 - Implement server-side rendering (SSR) or static site generation (SSG) with Angular Universal (if specified)
 
 ### Testing
-- Write unit tests for components, services, and pipes using Jasmine and Karma
-- Use Angular's `TestBed` for component testing with mocked dependencies
-- Test signal-based state updates using Angular's testing utilities
-- Write end-to-end tests with Cypress or Playwright (if specified)
-- Mock HTTP requests using `HttpClientTestingModule`
-- Ensure high test coverage for critical functionality
+- Use the repository's Jest setup for unit tests and Angular `TestBed` for component/service tests
+- Use Playwright for browser tests; `npx playwright test` starts the local app and stubs `/api/**`
+- Do not treat frontend E2E tests as verification of the live backend or production authentication
+- Mock HTTP requests and Firebase-dependent behavior in unit tests
+- Run `npm test`, `npm run lint:all`, and `npm run build` for frontend validation
+- Keep test coverage focused on changed behavior and user-critical flows
 
 ## Implementation Process
 1. Plan project structure and feature modules

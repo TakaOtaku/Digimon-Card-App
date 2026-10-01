@@ -52,3 +52,7 @@ Thumbs.db
 __pycache__/
 *.py[cod]
 *.pyo
+/scripts/python/.env.garage
+
+# Card images are served from Garage, not Git
+/src/assets/images/cards/

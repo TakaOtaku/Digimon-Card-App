@@ -49,6 +49,7 @@ jobs:
         run: |
           mkdir -p scripts/python/Wiki/digimon-images/converted
           mkdir -p scripts/python/Wiki/jsons
+          mkdir -p src/assets/images/cards
 
       - name: Ensure Links.json exists
         run: |
@@ -57,7 +58,19 @@ jobs:
           fi
 
       - name: Run card update pipeline
+        env: &garage-env
+          GARAGE_ENDPOINT_URL: ${{ secrets.GARAGE_ENDPOINT_URL }}
+          GARAGE_BUCKET: ${{ secrets.GARAGE_BUCKET }}
+          GARAGE_ACCESS_KEY_ID: ${{ secrets.GARAGE_ACCESS_KEY_ID }}
+          GARAGE_SECRET_ACCESS_KEY: ${{ secrets.GARAGE_SECRET_ACCESS_KEY }}
+          GARAGE_REGION: ${{ vars.GARAGE_REGION || 'garage' }}
+          GARAGE_ADDRESSING_STYLE: ${{ vars.GARAGE_ADDRESSING_STYLE || 'path' }}
+          GARAGE_KEY_PREFIX: ${{ vars.GARAGE_KEY_PREFIX }}
         run: |
+          if [ -z "$GARAGE_BUCKET" ]; then
+            echo "::error::Garage secrets are missing; the pipeline would treat every card image as missing."
+            exit 1
+          fi
           ARGS=""
           if [ -n "${{ github.event.inputs.phase }}" ]; then
             ARGS="--phase ${{ github.event.inputs.phase }}"
@@ -69,6 +82,15 @@ jobs:
           fi
           echo "Running: python scripts/python/Wiki/GetDataFromWiki.py $ARGS"
           python scripts/python/Wiki/GetDataFromWiki.py $ARGS
+
+      - name: Upload missing card images to Garage
+        env: *garage-env
+        run: |
+          if ls src/assets/images/cards/*.webp >/dev/null 2>&1; then
+            python scripts/python/garage_sync.py --apply
+          else
+            echo "No new card images to upload."
+          fi
 
       - name: Check for changes
         id: git_status

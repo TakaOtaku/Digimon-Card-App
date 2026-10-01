@@ -4,6 +4,10 @@ import os
 
 from copy import deepcopy
 
+import CardImageIndex
+
+CARD_IMAGE_PREFIX = "assets/images/cards/"
+
 preparedCardsENG = []
 preparedCardsJAP = []
 
@@ -43,8 +47,10 @@ def addJBeforeWebp(imagePath):
     return imagePath
 
 def check_image_exists(file_path):
-  """Checks if the image file at the given file path exists."""
+  """Checks if the image exists locally or in Garage."""
 
+  if file_path.startswith(CARD_IMAGE_PREFIX):
+    return CardImageIndex.image_exists(file_path[len(CARD_IMAGE_PREFIX):])
   return os.path.isfile("src/" + file_path)
 
 def checkIfSampleShouldBeUsed(card):
