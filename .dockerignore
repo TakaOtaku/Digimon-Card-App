@@ -16,3 +16,5 @@ __pycache__
 *.pyc
 venv
 scripts/python/Wiki/digimon-images
+scripts/python/.env.garage
+src/assets/images/cards
