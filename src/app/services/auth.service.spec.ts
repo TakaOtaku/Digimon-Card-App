@@ -15,11 +15,15 @@ jest.mock('@angular/fire/auth', () => ({
   },
   signInWithPopup: jest.fn(() => Promise.resolve({ user: { uid: 'user-1' } })),
   signOut: jest.fn(() => Promise.resolve()),
+}));
+
+jest.mock('firebase/auth', () => ({
   setPersistence: jest.fn(() => Promise.resolve()),
-  browserLocalPersistence: {},
+  browserLocalPersistence: class BrowserLocalPersistence {},
 }));
 
 import { Auth } from '@angular/fire/auth';
+import { browserLocalPersistence, setPersistence } from 'firebase/auth';
 import { AuthService } from './auth.service';
 
 describe('AuthService', () => {
@@ -47,6 +51,10 @@ describe('AuthService', () => {
   it('starts logged out', () => {
     expect(service.isLoggedIn).toBe(false);
     expect(service.currentUser()).toBeNull();
+  });
+
+  it('passes the unwrapped persistence class to Firebase', () => {
+    expect(setPersistence).toHaveBeenCalledWith(expect.anything(), browserLocalPersistence);
   });
 
   it('clears state on logout', async () => {

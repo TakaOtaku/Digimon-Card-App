@@ -1,15 +1,8 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable, Signal, signal } from '@angular/core';
-import {
-  Auth,
-  browserLocalPersistence,
-  GoogleAuthProvider,
-  setPersistence,
-  signInWithPopup,
-  signOut,
-  user,
-  User,
-} from '@angular/fire/auth';
+import { Auth, GoogleAuthProvider, signInWithPopup, signOut, user, User } from '@angular/fire/auth';
+// Imported from firebase/auth directly: AngularFire's zone wrapper wraps the persistence class, which breaks it.
+import { browserLocalPersistence, setPersistence } from 'firebase/auth';
 import { emptySave, emptySettings, ISave, IUser } from '@models';
 import { MessageService } from 'primeng/api';
 import { catchError, filter, Observable, of, ReplaySubject, retry, switchMap, take, tap, throwError, timer } from 'rxjs';
