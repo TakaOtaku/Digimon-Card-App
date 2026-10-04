@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - coolify
+  workflow_dispatch:
 
 env:
   REGISTRY: ghcr.io
@@ -47,3 +48,14 @@ jobs:
 
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+      - name: Redeploy on Coolify
+        env:
+          COOLIFY_WEBHOOK: ${{ secrets.COOLIFY_WEBHOOK }}
+          COOLIFY_TOKEN: ${{ secrets.COOLIFY_TOKEN }}
+        run: |
+          if [ -z "$COOLIFY_WEBHOOK" ]; then
+            echo "COOLIFY_WEBHOOK not set; redeploy manually in Coolify."
+            exit 0
+          fi
+          curl --fail --silent --show-error -H "Authorization: Bearer $COOLIFY_TOKEN" "$COOLIFY_WEBHOOK"
