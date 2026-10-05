@@ -23,6 +23,13 @@ RUN printf 'server {\n\
   location / {\n\
   try_files $uri $uri/ /index.html;\n\
   }\n\
+  # The old site used an Angular service worker; a 404 manifest makes it unregister.\n\
+  location = /ngsw.json {\n\
+  return 404;\n\
+  }\n\
+  location = /ngsw-worker.js {\n\
+  add_header Cache-Control "no-cache";\n\
+  }\n\
   location ~* \\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|webp)$ {\n\
   expires 1y;\n\
   add_header Cache-Control "public, immutable";\n\
