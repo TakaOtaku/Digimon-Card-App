@@ -170,7 +170,7 @@ export class TierlistComponent {
     onValue(tierlistRef, (snapshot) => {
       const data = snapshot.val();
       console.log('Firebase tierlist data:', data);
-      
+
       // Only update if data is valid and non-empty
       if (data) {
         if (Array.isArray(data)) {

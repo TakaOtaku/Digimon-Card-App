@@ -1,8 +1,10 @@
 {
-  "/card-images/": {
-    "target": "https://web-garage.takaotaku.de",
-    "secure": true,
-    "changeOrigin": true,
-    "pathRewrite": { "^/card-images/": "/" }
-  }
+    "/card-images/": {
+        "target": "https://web-garage.takaotaku.de",
+        "secure": true,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/card-images/": "/"
+        }
+    }
 }
