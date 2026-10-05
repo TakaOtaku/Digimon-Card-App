@@ -121,18 +121,13 @@ export class ExportDeckDialogComponent implements OnInit {
     this.deckSort();
   }
 
-  // Cross-origin card images (Garage) must load with CORS or the canvas can't be exported.
+  // Garage sends no CORS headers; load card images through the same-origin /card-images/ proxy.
   private static loadCanvasImage(url: string): Promise<HTMLImageElement> {
     return new Promise((resolve, reject) => {
       const img = new Image();
-      const isCrossOrigin = new URL(url, window.location.href).origin !== window.location.origin;
-      if (isCrossOrigin) {
-        img.crossOrigin = 'anonymous';
-      }
       img.onload = () => resolve(img);
       img.onerror = () => reject(new Error(`load ${url} fail`));
-      // The ?cors suffix avoids reusing a cached copy that was fetched without CORS.
-      img.src = isCrossOrigin ? `${url}${url.includes('?') ? '&' : '?'}cors` : url;
+      img.src = url.startsWith(environment.cardImageBaseUrl) ? '/card-images/' + url.slice(environment.cardImageBaseUrl.length) : url;
     });
   }
 
