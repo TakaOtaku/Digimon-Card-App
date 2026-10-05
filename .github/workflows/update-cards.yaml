@@ -27,7 +27,8 @@ on:
 jobs:
   update-cards:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    # A full run takes ~2.5h (it visits every wiki gallery page).
+    timeout-minutes: 240
     permissions:
       contents: write
       actions: write
