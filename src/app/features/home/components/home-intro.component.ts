@@ -30,16 +30,9 @@ import { DividerModule } from 'primeng/divider';
     <p-divider class="my-5"></p-divider>
 
     <h2 class="mt-1 text-center text-[#e2e4e6] text-sm sm:text-base">
-      Thanks to some generous people which donated, I could move the website to a better server.
-      Which should improve the security and performance of the website, I am very grateful for that.
-    </h2>
-
-    <p-divider class="my-5"></p-divider>
-
-    <h2 class="mt-1 text-center text-[#e2e4e6] text-sm sm:text-base">
       I am always open for feedback and suggestions to improve the website, so feel free to reach out to me on discord and github.
       That said, I am not the fastest when it comes to implementing new features, but I will try my best.
-      Also I am always looking for people who want to help me maintaining the website and implement feature, so if you know someone or are interested yourself, please reach out to me.
+      Also I am <b>looking for people</b> who want to help me maintaining the website, design new features and implement them, so if you know someone or are interested yourself, please reach out to me.
     </h2>
 
     <p-divider class="my-5"></p-divider>
@@ -49,15 +42,6 @@ import { DividerModule } from 'primeng/divider';
     </a>
 
     <p-divider class="my-5"></p-divider>
-
-    <!--h2 class="mt-1 text-center text-[#e2e4e6] text-sm sm:text-base">
-      If you do like the site and want to support it, consider donating
-      <a href="https://www.paypal.com/donate/?hosted_button_id=WLM58Q785D4H4" target="_blank">
-        <i class="pi pi-paypal px-1 text-[#e2e4e6] hover:text-[#64B5F6]"></i>
-      </a>.
-      I will use everything that gets donated to get better servers to improve the performance of
-      the website.
-    </h2-->
 
     <h2 class='text-shadow text-base sm:text-lg font-black underline text-center text-white text-[#e2e4e6]"'>Partners</h2>
     <div class="mx-auto flex flex-row">
