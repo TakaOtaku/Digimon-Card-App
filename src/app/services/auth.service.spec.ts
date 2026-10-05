@@ -8,7 +8,7 @@ import { MongoBackendService } from './mongo-backend.service';
 let mockUserSubject = new Subject<any>();
 
 jest.mock('@angular/fire/auth', () => ({
-  Auth: class Auth {},
+  Auth: class Auth { },
   user: () => mockUserSubject,
   GoogleAuthProvider: class {
     setCustomParameters = jest.fn();
@@ -19,7 +19,7 @@ jest.mock('@angular/fire/auth', () => ({
 
 jest.mock('firebase/auth', () => ({
   setPersistence: jest.fn(() => Promise.resolve()),
-  browserLocalPersistence: class BrowserLocalPersistence {},
+  browserLocalPersistence: class BrowserLocalPersistence { },
 }));
 
 import { Auth } from '@angular/fire/auth';

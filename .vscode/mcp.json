@@ -3,12 +3,21 @@
     "context7": {
       "type": "stdio",
       "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp@4.1.1"]
+      "args": [
+        "-y",
+        "@upstash/context7-mcp@4.1.1"
+      ]
     },
     "playwright": {
       "type": "stdio",
       "command": "npx",
-      "args": ["-y", "@playwright/mcp@0.0.83", "--isolated", "--browser", "chrome"]
+      "args": [
+        "-y",
+        "@playwright/mcp@0.0.83",
+        "--isolated",
+        "--browser",
+        "chrome"
+      ]
     }
   }
 }
