@@ -30,6 +30,13 @@ RUN printf 'server {\n\
   location = /ngsw-worker.js {\n\
   add_header Cache-Control "no-cache";\n\
   }\n\
+  # Same-origin card images so the deck image export canvas is not tainted (Garage sends no CORS).\n\
+  location ^~ /card-images/ {\n\
+  proxy_pass https://web-garage.takaotaku.de/;\n\
+  proxy_set_header Host web-garage.takaotaku.de;\n\
+  proxy_ssl_server_name on;\n\
+  expires 7d;\n\
+  }\n\
   location ~* \\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|webp)$ {\n\
   expires 1y;\n\
   add_header Cache-Control "public, immutable";\n\
