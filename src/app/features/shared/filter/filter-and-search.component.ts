@@ -3,6 +3,7 @@ import { ChangeDetectionStrategy, Component, effect, inject, OnDestroy, OnInit }
 import { FormsModule, ReactiveFormsModule, UntypedFormControl } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
+import { OverlayZoneFixDirective } from '@directives';
 import { InputTextModule } from 'primeng/inputtext';
 import { debounceTime, Subject, takeUntil } from 'rxjs';
 import { FilterStore } from '../../../store/filter.store';
@@ -40,7 +41,7 @@ import { FilterSideBoxComponent } from './filter-side-box.component';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgStyle, FormsModule, InputTextModule, ReactiveFormsModule, ButtonModule, DialogModule, FilterSideBoxComponent],
+  imports: [NgStyle, FormsModule, InputTextModule, ReactiveFormsModule, ButtonModule, DialogModule, FilterSideBoxComponent, OverlayZoneFixDirective],
 })
 export class FilterAndSearchComponent implements OnInit, OnDestroy {
   saveStore = inject(SaveStore);

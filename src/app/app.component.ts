@@ -9,6 +9,7 @@ import { DigimonCardStore, FilterStore, SaveStore, WebsiteStore } from '@store';
 import { BlockUIModule } from 'primeng/blockui';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { DrawerModule } from 'primeng/drawer';
+import { OverlayZoneFixDirective } from '@directives';
 import { ToastModule } from 'primeng/toast';
 import { first } from 'rxjs';
 import { DialogComponent } from './features/shared/dialog.component';
@@ -57,6 +58,7 @@ import { NavbarComponent } from './features/shared/navbar/navbar.component';
     NavLinksComponent,
     ToastModule,
     DialogComponent,
+    OverlayZoneFixDirective,
   ],
 })
 export class AppComponent {

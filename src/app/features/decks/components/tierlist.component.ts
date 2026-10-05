@@ -12,6 +12,7 @@ import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { ContextMenuModule } from 'primeng/contextmenu';
 import { DialogModule } from 'primeng/dialog';
+import { OverlayZoneFixDirective } from '@directives';
 import { DragDropModule } from 'primeng/dragdrop';
 import { InputTextModule } from 'primeng/inputtext';
 import { ListboxModule } from 'primeng/listbox';
@@ -128,6 +129,7 @@ import { TooltipModule } from 'primeng/tooltip';
     InputTextModule,
     ContextMenuModule,
     NgIf,
+    OverlayZoneFixDirective,
   ],
 })
 export class TierlistComponent {

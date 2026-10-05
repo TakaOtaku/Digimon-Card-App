@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
+import { OverlayZoneFixDirective } from '@directives';
 import { TooltipModule } from 'primeng/tooltip';
 import { Subject, debounceTime, distinctUntilChanged, map } from 'rxjs';
 import { FilterStore } from '@store';
@@ -245,7 +246,8 @@ import { SearchAutocompleteService, SearchSuggestion } from '@services';
     InputTextModule,
     ButtonModule,
     DialogModule,
-    TooltipModule
+    TooltipModule,
+    OverlayZoneFixDirective
   ]
 })
 export class AdvancedSearchComponent implements OnInit, AfterViewInit {
