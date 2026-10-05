@@ -6,6 +6,7 @@ export interface IFilter {
   playCostFilter: number[];
   digivolutionFilter: number[];
   dpFilter: number[];
+  priceFilter: number[];
   rarityFilter: string[];
   versionFilter: string[];
   keywordFilter: string[];

@@ -25,4 +25,6 @@ export interface ISettings {
   displaySideDeck: boolean; // Display SideDeck in the DeckView
   fullscreenFilter: boolean; // Display Filter with big screen
   countMax: number; // How high do you want to set the count-filter
+  showPrices: boolean; // Show Cardmarket prices on cards/decks/collection ---- default = false
+  priceMetric: string; // Which price metric to display ---- default = 'trend'
 }

@@ -20,7 +20,7 @@ import { NgIf } from '@angular/common';
             class="my-auto mr-2 h-16 w-auto rounded-full text-xs font-semibold text-[#e2e4e6]"
             *ngIf="save"
             alt="{{ save.displayName ?? 'Username not Found' }}"
-            src="{{ save.photoURL }}" />
+            src="{{ save.photoUrl }}" />
           <div class="vertical-align my-auto text-center text-2xl font-bold">
             {{ save.displayName ?? 'User' }}
           </div>
@@ -113,7 +113,7 @@ export class UserStatsComponent {
         this.messageService.add({ severity: 'info', summary: 'Confirmed', detail: 'You have deleted all your Decks', life: 3000 });
         this.saveStore.updateSave({ ...this.save, decks: [] });
       },
-      reject: () => {},
+      reject: () => { },
     });
   }
 }

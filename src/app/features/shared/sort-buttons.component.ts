@@ -1,9 +1,10 @@
-import { ChangeDetectionStrategy, Component, effect, inject, Signal, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, effect, inject, Signal, signal } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MenuItem } from 'primeng/api';
-import { DropdownModule } from 'primeng/dropdown';
+import { SelectModule } from 'primeng/select';
 import { SplitButton } from 'primeng/splitbutton';
 import { ISort } from '../../../models';
+import { SaveStore } from '../../store/save.store';
 import { WebsiteStore } from '../../store/website.store';
 
 @Component({
@@ -28,14 +29,15 @@ import { WebsiteStore } from '../../store/website.store';
   `,
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [DropdownModule, FormsModule, ReactiveFormsModule, SplitButton],
+  imports: [SelectModule, FormsModule, ReactiveFormsModule, SplitButton],
 })
 export class SortButtonsComponent {
   websiteStore = inject(WebsiteStore);
+  private saveStore = inject(SaveStore);
   sortElement = signal({ name: 'ID', element: 'id' });
   sort: Signal<ISort> = this.websiteStore.sort;
 
-  sortOptions: MenuItem[] = [
+  private allSortOptions: MenuItem[] = [
     {
       label: 'ID',
       command: () => {
@@ -64,7 +66,20 @@ export class SortButtonsComponent {
         this.updateStore();
       },
     },
+    {
+      label: 'Price',
+      command: () => {
+        this.sortElement.set({ name: 'Price', element: 'price' });
+        this.updateStore();
+      },
+    },
   ];
+
+  get sortOptions(): MenuItem[] {
+    return this.saveStore.showPrices()
+      ? this.allSortOptions
+      : this.allSortOptions.filter((o) => o.label !== 'Price');
+  }
 
   updateStore() {
     this.websiteStore.updateSort({ sortBy: this.sortElement(), ascOrder: this.sort().ascOrder });

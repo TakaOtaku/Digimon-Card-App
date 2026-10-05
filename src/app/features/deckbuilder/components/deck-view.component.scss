@@ -1,8 +1,9 @@
-p-accordionTab ::ng-deep .p-accordioncontent-content {
+p-accordion-content ::ng-deep .p-accordioncontent-content {
   background: transparent;
+  border-color: transparent;
   padding: 0;
 }
 
-p-accordionTab ::ng-deep .p-accordion-header a {
+p-accordion-header {
   padding: 0.5rem 0.5rem;
 }

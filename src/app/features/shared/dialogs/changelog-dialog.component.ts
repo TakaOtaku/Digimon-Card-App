@@ -6,7 +6,42 @@ import { PanelModule } from 'primeng/panel';
   selector: 'digimon-changelog-dialog',
   template: `
     <div>
-      <p-panel header="Version 4.2.3" [toggleable]="true" [collapsed]="false">
+      <p-panel header="Version 5.0.0" [toggleable]="true" [collapsed]="false">
+        <h1 class="font-bold text-lg underline">Features</h1>
+        <ul class="list-disc p-5">
+          <li>Added Advanced Search functionality with comprehensive filter options</li>
+          <li>Introduced new MongoDB backend service with pagination support</li>
+          <li>Added Migration Tool for seamless data migration from legacy backend</li>
+          <li>Enhanced deck filtering with search capabilities across multiple fields</li>
+          <li>Added new pagination component for better deck browsing experience</li>
+          <li>Re-introduced Cardmarket pricing integration with local price data</li>
+          <li>Added "Show Prices" toggle in Settings to enable/disable all price features</li>
+          <li>Card prices displayed on card thumbnails, deck view, and collection header</li>
+          <li>Added Cardmarket link button in the card detail dialog (opens Versions page)</li>
+          <li>Added price sorting and price range filter</li>
+          <li>Modernized Settings dialog with new section-based layout</li>
+        </ul>
+        <h1 class="font-bold text-lg underline">Technical</h1>
+        <ul class="list-disc p-5">
+          <li>Migrated from legacy MySQL backend to MongoDB backend</li>
+          <li>New Cardmarket price mapping system using local JSON data files</li>
+          <li>Price mapping script assigns cheapest product as Normal Art</li>
+          <li>Manual override system for correcting Cardmarket ID mappings</li>
+          <li>Enhanced Filter Store with advanced search support</li>
+          <li>Improved code organization by removing unused tournament deck features</li>
+          <li>Added comprehensive migration services for data transfer</li>
+          <li>Updated service architecture with MongoBackendService</li>
+        </ul>
+        <h1 class="font-bold text-lg underline">Removed</h1>
+        <ul class="list-disc p-5">
+          <li>Removed Tournament Deck submission functionality</li>
+          <li>Cleaned up unused interfaces and deprecated code</li>
+        </ul>
+        <div class="flex flex-wrap align-middle justify-content-between gap-3">
+          <span class="ml-auto p-text-secondary">Updated 05.05.2026</span>
+        </div>
+      </p-panel>
+      <p-panel header="Version 4.2.3" [toggleable]="true" [collapsed]="true">
         <h1 class="font-bold text-lg underline">Feature</h1>
         <ul class="list-disc p-5">
           <li>Export Deck Dialog allows all variations</li>
@@ -210,4 +245,4 @@ import { PanelModule } from 'primeng/panel';
   standalone: true,
   imports: [DividerModule, PanelModule],
 })
-export class ChangelogDialogComponent {}
+export class ChangelogDialogComponent { }

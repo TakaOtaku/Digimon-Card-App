@@ -1,95 +1,6 @@
 import { MultiButtons } from '../../app/features/shared/multi-buttons.component';
 
-export const GroupedSets = [
-  {
-    label: 'Standard',
-    value: 'displays',
-    items: [
-      { label: 'BT1', value: 'BT1' },
-      { label: 'BT2', value: 'BT2' },
-      { label: 'BT3', value: 'BT3' },
-      { label: 'BT4', value: 'BT4' },
-      { label: 'BT5', value: 'BT5' },
-      { label: 'BT6', value: 'BT6' },
-      { label: 'BT7', value: 'BT7' },
-      { label: 'BT8', value: 'BT8' },
-      { label: 'BT9', value: 'BT9' },
-      { label: 'BT10', value: 'BT10' },
-      { label: 'BT11', value: 'BT11' },
-      { label: 'BT12', value: 'BT12' },
-      { label: 'BT13', value: 'BT13' },
-      { label: 'BT14', value: 'BT14' },
-      { label: 'BT15', value: 'BT15' },
-      { label: 'BT16', value: 'BT16' },
-      { label: 'BT17', value: 'BT17' },
-      { label: 'BT18', value: 'BT18' },
-      { label: 'BT19', value: 'BT19' },
-      { label: 'BT20', value: 'BT20' },
-      { label: 'BT21', value: 'BT21' },
-      { label: 'BT22', value: 'BT22' },
-      { label: 'BT23', value: 'BT23' },
-      { label: 'BT24', value: 'BT24' },
-      { label: 'BT25', value: 'BT25' },
-      { label: 'BT26', value: 'BT26' },
-    ],
-  },
-  {
-    label: 'Extra',
-    value: 'extra',
-    items: [
-      { label: 'EX1', value: 'EX1' },
-      { label: 'EX2', value: 'EX2' },
-      { label: 'EX3', value: 'EX3' },
-      { label: 'EX4', value: 'EX4' },
-      { label: 'EX5', value: 'EX5' },
-      { label: 'EX6', value: 'EX6' },
-      { label: 'EX7', value: 'EX7' },
-      { label: 'EX8', value: 'EX8' },
-      { label: 'EX9', value: 'EX9' },
-      { label: 'EX10', value: 'EX10' },
-      { label: 'EX11', value: 'EX11' },
-      { label: 'EX12', value: 'EX12' },
-      { label: 'EX13', value: 'EX13' },
-    ],
-  },
-  {
-    label: 'Starter Decks',
-    value: 'starter',
-    items: [
-      { label: 'ST1', value: 'ST1' },
-      { label: 'ST2', value: 'ST2' },
-      { label: 'ST3', value: 'ST3' },
-      { label: 'ST4', value: 'ST4' },
-      { label: 'ST5', value: 'ST5' },
-      { label: 'ST6', value: 'ST6' },
-      { label: 'ST7', value: 'ST7' },
-      { label: 'ST8', value: 'ST8' },
-      { label: 'ST9', value: 'ST9' },
-      { label: 'ST10', value: 'ST10' },
-      { label: 'ST12', value: 'ST12' },
-      { label: 'ST13', value: 'ST13' },
-      { label: 'ST14', value: 'ST14' },
-      { label: 'ST15', value: 'ST15' },
-      { label: 'ST16', value: 'ST16' },
-      { label: 'ST17', value: 'ST17' },
-      { label: 'ST18', value: 'ST18' },
-      { label: 'ST19', value: 'ST19' },
-      { label: 'ST20', value: 'ST20' },
-      { label: 'ST21', value: 'ST21' },
-      { label: 'ST22', value: 'ST22' },
-      { label: 'ST23', value: 'ST23' },
-      { label: 'ST24', value: 'ST24' },
-    ],
-  },
-  {
-    items: [
-      { label: 'AD01', value: 'AD1' },
-      { label: 'RB01', value: 'RB1' },
-      { label: 'LM', value: 'LM' },
-      { label: 'P', value: 'P' },
-    ],
-  },
-];
+export { GroupedSets } from './card-sets.data';
 
 export const Keywords: string[] = [
   '\uff1cAlliance\uff1e',
@@ -138,12 +49,9 @@ export const Keywords: string[] = [
   '\uff1cDraw 1\uff1e',
   '\uff1cDraw 2\uff1e',
   '\uff1cDraw 3\uff1e',
-  '\uff1cEngage\uff1e',
   '\uff1cEvade\uff1e',
   '\uff1cExecute\uff1e',
-  '\uff1cFragment (2)\uff1e',
   '\uff1cFragment (3)\uff1e',
-  '\uff1cGuard\uff1e',
   '\uff1cIceclad\uff1e',
   '\uff1cFortitude\uff1e',
   '\uff1cJamming\uff1e',
@@ -273,7 +181,6 @@ export const Types: string[] = [
   'Beast',
   'Beast Dragon',
   'Beast Knight',
-  'BEATBREAK',
   'Beastkin',
   'Beauty (App Name)',
   'Big Death-Stars',
@@ -366,7 +273,6 @@ export const Types: string[] = [
   'Ghost',
   'Giant Bird',
   'Global (App Name)',
-  'Glowing Dawn',
   'God Beast',
   'Gossip (App Name)',
   'Gossip Review (App Name)',
@@ -494,7 +400,6 @@ export const Types: string[] = [
   'SNS (App Name)',
   'SoC',
   'Spa (App Name)',
-  'SW',
   'Stealth (App Name)',
   'Stegosaur',
   'Strategy (App Name)',
@@ -508,14 +413,11 @@ export const Types: string[] = [
   'Swipe (App Name)',
   'Tap (App Name)',
   'Tathāgata',
-  'TB',
   'Ten Warriors',
-  'Tentei Hachibushu',
   'Three Great Angels',
   'Three Musketeers',
   'Throne',
   'Time Slip (App Name)',
-  'Titan',
   'TS',
   'Training (App Name)',
   'Transfer (App Name)',
@@ -558,7 +460,26 @@ export const Types: string[] = [
   'X Antibody',
   'X Program',
   'Xros Heart',
+  'Zaxon',
+  'Zip',
   'Zip/Unzip (App Name)',
+  'Ancient Insect',
+  'Appmon',
+  'Astronomy (App Name)',
+  'Avatar',
+  'Awakening (App Name)',
+  'BEATBREAK',
+  'Creation',
+  'DATA SQUAD',
+  'Glowing Dawn',
+  'Hudie',
+  'Leviathan',
+  'Onmyōjutsu',
+  'Plug-In',
+  'SW',
+  'Titan',
+  'Transmutation (App Name)',
+  'Unzip (App Name)',
 ].sort();
 
 export const Illustrators: string[] = [
@@ -651,7 +572,6 @@ export const SpecialRequirements: string[] = [
   'DigiXros',
   'Burst Digivolve',
   'ACE',
-  'Link',
   'App Fusion',
   'Assembly',
   'Arts Digivolve',
@@ -693,7 +613,7 @@ export const BlockButtons: MultiButtons[] = [
   },
 ];
 
-export const CardTypes = ['Digi-Egg', 'Digimon', 'Tamer', 'Option', 'Ace', 'Link', 'Digimon/Option'];
+export const CardTypes = ['Digi-Egg', 'Digimon', 'Tamer', 'Option', 'Ace', 'Digimon/Option'];
 export const CardTypeButtons: MultiButtons[] = [
   {
     name: 'Digi-Egg',
@@ -713,11 +633,7 @@ export const CardTypeButtons: MultiButtons[] = [
   },
   {
     name: 'Ace',
-    value: 'Ace',
-  },
-  {
-    name: 'Link',
-    value: 'Link',
+    value: 'Digimon Ace',
   },
   {
     name: 'Dual',
@@ -726,7 +642,6 @@ export const CardTypeButtons: MultiButtons[] = [
 ];
 
 export const Rarity = ['C', 'U', 'R', 'SR', 'UR', 'SEC', 'P'];
-
 export const RarityAbbreviationMap = new Map<string, string>([
   ['Common', 'C'],
   ['Uncommon', 'U'],

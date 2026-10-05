@@ -27,6 +27,7 @@ export const SaveStore = signalStore(
     collectionMinimum: computed(() => save.settings().collectionMinimum),
     aaCollectionMinimum: computed(() => save.settings().aaCollectionMinimum),
     displaySideDeck: computed(() => save.settings().displaySideDeck),
+    showPrices: computed(() => save.settings().showPrices ?? false),
     collection: computed(() => save.collection()),
     decks: computed(() => save.decks()),
   })),
@@ -39,7 +40,7 @@ export const SaveStore = signalStore(
         switchMap(() => {
           return authService.loadSave().pipe(
             tapResponse({
-              next: (save: any) => {
+              next: (save: ISave) => {
                 toastrService.info('Your save was loaded successfully!', 'Welcome back!');
 
                 patchState(store, {

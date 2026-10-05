@@ -4,6 +4,7 @@ import { ImgFallbackDirective } from '@directives';
 import { formatId, isDigimonType, withoutJ } from '@functions';
 import { ColorMap, DigimonCard, ICountCard, IDeck, RarityAbbreviationMap, replacements } from '@models';
 import { DialogStore, DigimonCardStore, SaveStore, WebsiteStore } from '@store';
+import { CardMarketService } from '@services';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
@@ -12,7 +13,7 @@ import { TooltipModule } from 'primeng/tooltip';
 @Component({
   selector: 'digimon-view-card-dialog',
   template: `
-    <div class="h-full w-full min-w-full max-w-full overflow-x-hidden md:w-[700px] md:min-w-[700px] md:max-w-[700px]">
+    <div class="h-full w-full min-w-full max-w-full overflow-x-hidden p-4 md:w-[700px] md:min-w-[700px] md:max-w-[700px]">
       <div class="align-center min-h-10 mt-1 inline-flex w-full justify-between border-b border-slate-200" id="Header">
         <div class="align-center my-3 inline-flex h-full flex-grow flex-wrap justify-between gap-[.5rem] md:my-2 md:flex-nowrap">
           <p class="self-center font-bold text-gray-500" id="Card-Number">
@@ -59,19 +60,20 @@ import { TooltipModule } from 'primeng/tooltip';
         <h1 [ngStyle]="{ color }" class="text-black-outline-xs my-1 text-3xl font-black" id="Card-Name">
           {{ card.name.english }}
         </h1>
-        <button (click)="openWiki()" class="p-button-text" icon="pi pi-question-circle" pButton pRipple type="button"></button>
+        <button (click)="openWiki()" class="p-button-text" icon="pi pi-question-circle" pButton pRipple type="button" pTooltip="Wiki" tooltipPosition="top"></button>
+        <button *ngIf="getCardmarketLink()" (click)="openCardmarket()" class="p-button-text" icon="pi pi-shopping-cart" pButton pRipple type="button" pTooltip="Cardmarket" tooltipPosition="top"></button>
         <button class="ml-1" (click)="nextCard()">
           <i class="fa-solid fa-circle-arrow-right text-[#e2e4e6]"></i>
         </button>
       </div>
 
       <div class="w-full flex-row md:flex" id="Image-Attributes">
-        <div class="w-full md:w-1/2">
+        <div class="w-full md:w-1/2 flex items-center justify-center">
           <img
             [digimonImgFallback]="png"
             alt="{{ imageAlt }}"
             defaultImage="assets/images/digimon-card-back.webp"
-            class="mx-auto my-5 max-w-[15rem] md:my-0 md:max-w-full" />
+            class="mx-auto my-5 max-w-[15rem] md:my-0 md:max-w-full object-contain" />
         </div>
         <div class="md:max-w-1/2 w-full self-center md:w-1/2 md:pl-2">
           <div
@@ -283,6 +285,7 @@ export class ViewCardDialogComponent {
   dialogStore = inject(DialogStore);
   websiteStore = inject(WebsiteStore);
   digimonCardStore = inject(DigimonCardStore);
+  private cardMarketService = inject(CardMarketService);
 
   // Helper function exposed to template
   isDigimonType = isDigimonType;
@@ -325,6 +328,18 @@ export class ViewCardDialogComponent {
   openWiki() {
     const wikiLink = 'https://digimoncardgame.fandom.com/wiki/' + formatId(this.card.id);
     window.open(wikiLink, '_blank');
+  }
+
+  openCardmarket() {
+    const link = this.getCardmarketLink();
+    if (link) {
+      window.open(link, '_blank');
+    }
+  }
+
+  getCardmarketLink(): string | null {
+    const priceData = this.cardMarketService.getPriceData(this.card.id);
+    return priceData?.link ?? null;
   }
 
   openWikiIllustrator() {

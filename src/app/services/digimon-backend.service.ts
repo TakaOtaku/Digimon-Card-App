@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { first, map, Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 import { DigimonCard, IColor, ICountCard, IDeck, ISave, ISettings, ITournamentDeck, IUser } from '@models';
 import { CARDSET, IBlog, IBlogWithText, ITag } from '@models';
 import { sortByReleaseOrder } from '@models';
@@ -8,15 +9,18 @@ import { emptySettings } from '@models';
 import { IUserAndDecks } from '@models';
 import { checkDeckErrors, setDeckImage } from '@functions';
 
-const baseUrl = 'https://backend.digimoncard.app/api/';
-const baseUrl_inactiv = 'http://localhost:8080/api/';
-const baseUrl_inactiv2 = 'https://179.61.219.98:8090/preview/digimoncard.app/';
+const baseUrl = environment.legacyApiBaseUrl;
 
 @Injectable({
   providedIn: 'root',
 })
+/**
+ * @deprecated Use {@link MongoBackendService} instead. This service targets the
+ * legacy MySQL backend and is kept only for data migration via MigrationService.
+ * Do not add new call sites — it will be removed once migration is complete.
+ */
 export class DigimonBackendService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   /**
    * Safely parse a backend field that may be a JSON string, an already-parsed
@@ -82,32 +86,6 @@ export class DigimonBackendService {
     );
   }
 
-  getTournamentDecks(url: string = baseUrl): Observable<ITournamentDeck[]> {
-    return this.http.get<any[]>(url + 'tournament-decks').pipe(
-      map((decks) => {
-        return decks.map((deck) => {
-          const cards: ICountCard = JSON.parse(deck.cards);
-          const sideDeck: ICountCard = JSON.parse(deck.sideDeck !== '' ? deck.sideDeck : '[]');
-          const color: IColor = JSON.parse(deck.color);
-          const tags: ITag[] = JSON.parse(deck.tags);
-          const likes: string[] = deck.likes ? JSON.parse(deck.likes) : [];
-          return {
-            ...deck,
-            likes,
-            cards,
-            sideDeck,
-            color,
-            tags,
-          } as ITournamentDeck;
-        });
-      }),
-    );
-  }
-
-  getBlogEntries(url: string = baseUrl): Observable<IBlog[]> {
-    return this.http.get<IBlog[]>(url + 'blogs');
-  }
-
   getSaves(url: string = baseUrl): Observable<ISave[]> {
     return this.http.get<any[]>(url + 'users').pipe(
       map((saves) => {
@@ -124,10 +102,6 @@ export class DigimonBackendService {
         });
       }),
     );
-  }
-
-  getBlogEntriesWithText(url: string = baseUrl): Observable<IBlogWithText[]> {
-    return this.http.get<IBlogWithText[]>(url + 'blogs-with-text');
   }
 
   getDeck(id: any): Observable<IDeck> {
@@ -186,32 +160,8 @@ export class DigimonBackendService {
     );
   }
 
-  getBlogEntryWithText(id: any): Observable<IBlogWithText> {
-    return this.http.get<IBlogWithText>(`${baseUrl}blogs-with-text/${id}`).pipe(
-      map((blog) => {
-        const text = JSON.parse(blog.text);
-        return {
-          ...blog,
-          text,
-        } as IBlogWithText;
-      }),
-    );
-  }
-
   createDeck(data: IDeck): Observable<any> {
     return this.http.post(baseUrl + 'decks', data);
-  }
-
-  createTournamentDeck(data: ITournamentDeck): Observable<any> {
-    return this.http.post(baseUrl + 'tournament-decks', data);
-  }
-
-  createBlog(data: IBlog): Observable<any> {
-    return this.http.post(baseUrl + 'blogs', data);
-  }
-
-  createBlogWithText(data: IBlogWithText): Observable<any> {
-    return this.http.post(baseUrl + 'blogs-with-text', data);
   }
 
   updateDeck(deck: IDeck, user: IUser | null = null, allCards: DigimonCard[]): Observable<any> {
@@ -234,36 +184,12 @@ export class DigimonBackendService {
     return this.http.put(`${baseUrl}decks/${deck.id}`, newDeck);
   }
 
-  updateTournamentDeck(deck: ITournamentDeck): Observable<any> {
-    return this.http.put(`${baseUrl}tournament-decks/${deck.id}`, deck);
-  }
-
   updateSave(save: ISave): Observable<any> {
     return this.http.put(`${baseUrl}users/${save.uid}`, save);
   }
 
-  updateBlog(blog: IBlog): Observable<any> {
-    return this.http.put(`${baseUrl}blogs/${blog.uid}`, blog);
-  }
-
-  updateBlogWithText(blog: IBlogWithText): Observable<any> {
-    return this.http.put(`${baseUrl}blogs-with-text/${blog.uid}`, blog);
-  }
-
   deleteDeck(id: any): Observable<any> {
     return this.http.delete(`${baseUrl}decks/${id}`);
-  }
-
-  deleteTournamentDeck(id: any): Observable<any> {
-    return this.http.delete(`${baseUrl}tournament-decks/${id}`);
-  }
-
-  deleteBlogEntry(id: any): Observable<any> {
-    return this.http.delete(`${baseUrl}blogs/${id}`);
-  }
-
-  deleteBlogEntryWithText(id: any): Observable<any> {
-    return this.http.delete(`${baseUrl}blogs-with-text/${id}`);
   }
 
   checkSaveValidity(save: any, user?: any): ISave {
@@ -289,9 +215,8 @@ export class DigimonBackendService {
         save = { ...save, displayName: user.displayName };
         changedSave = true;
       }
-      if (!save.photoURL) {
-        save = { ...save, photoURL: user.photoURL };
-        changedSave = true;
+      if (!save.photoUrl) {
+        save = { ...save, photoUrl: user.photoURL };
       }
     } else {
       if (!save.collection) {
@@ -314,8 +239,8 @@ export class DigimonBackendService {
         save = { ...save, displayName: '' };
         changedSave = true;
       }
-      if (!save.photoURL) {
-        save = { ...save, photoURL: '' };
+      if (!save.photoUrl) {
+        save = { ...save, photoUrl: '' };
         changedSave = true;
       }
 

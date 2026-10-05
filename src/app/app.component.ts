@@ -1,12 +1,14 @@
 import { ChangeDetectionStrategy, Component, effect, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { filterCards } from '@functions';
-import { CARDSET, emptyFilter, emptySave, IFilter, ISettings } from '@models';
-import { AuthService, DigimonBackendService } from '@services';
+import { AdvancedSearchService } from './services/advanced-search.service';
+import { CardMarketService } from './services/card-market.service';
+import { CARDSET, emptyFilter, emptySave, IFilter, ISettings, PriceMetric } from '@models';
+import { AuthService, MongoBackendService } from '@services';
 import { DigimonCardStore, FilterStore, SaveStore, WebsiteStore } from '@store';
 import { BlockUIModule } from 'primeng/blockui';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
-import { SidebarModule } from 'primeng/sidebar';
+import { DrawerModule } from 'primeng/drawer';
 import { ToastModule } from 'primeng/toast';
 import { first } from 'rxjs';
 import { DialogComponent } from './features/shared/dialog.component';
@@ -34,11 +36,11 @@ import { NavbarComponent } from './features/shared/navbar/navbar.component';
 
       <digimon-dialog></digimon-dialog>
 
-      <p-sidebar [(visible)]="sideNav" styleClass="w-[6.5rem] overflow-hidden p-0">
+      <p-drawer [(visible)]="sideNav" styleClass="w-[6.5rem] overflow-hidden p-0">
         <ng-template pTemplate="content" class="p-0">
           <digimon-nav-links class="flex flex-col w-full justify-center" [sidebar]="true"></digimon-nav-links>
         </ng-template>
-      </p-sidebar>
+      </p-drawer>
 
       <p-toast></p-toast>
     </div>
@@ -51,7 +53,7 @@ import { NavbarComponent } from './features/shared/navbar/navbar.component';
     RouterOutlet,
     BlockUIModule,
     ProgressSpinnerModule,
-    SidebarModule,
+    DrawerModule,
     NavLinksComponent,
     ToastModule,
     DialogComponent,
@@ -64,7 +66,9 @@ export class AppComponent {
   websiteStore = inject(WebsiteStore);
 
   authService = inject(AuthService);
-  backendService = inject(DigimonBackendService);
+  backendService = inject(MongoBackendService);
+  advancedSearchService = inject(AdvancedSearchService);
+  private cardMarketService = inject(CardMarketService);
 
   saveLoaded = signal(false);
 
@@ -86,30 +90,30 @@ export class AppComponent {
     // If this is the case, set the save
     this.saveStore.loadSave();
 
+    // Load price guide data into website store for dialog components
+    this.cardMarketService.getPrizeGuide().pipe(first()).subscribe((priceGuide) => {
+      this.websiteStore.updatePriceGuideCM(priceGuide);
+    });
+
     effect(() => {
-      console.log('Save changed', this.saveStore.save());
       this.saveLoaded.set(this.saveStore.save().uid !== '' || this.saveStore.loadedSave());
 
       if (!this.saveStore.loadedSave()) return;
 
-      console.log('Update Save in the Database');
       this.updateDatabase();
 
       if (this.settings === null || this.settings !== this.saveStore.settings()) {
-        console.log('Change Advanced Settings');
         this.setAdvancedSettings();
         this.settings = this.saveStore.settings();
       }
 
       if (this.cardSet !== this.saveStore.settings().cardSet) {
-        console.log('Set DigimonCard Set');
         this.cardSet = this.saveStore.settings().cardSet;
         this.setDigimonCardSet();
       }
     });
 
     effect(() => {
-      console.log('Filter changed');
       const cards = this.digimonCardStore.cards();
 
       if (cards.length === 0) return;
@@ -120,6 +124,9 @@ export class AppComponent {
         this.filterStore.filter(),
         this.websiteStore.sort(),
         this.digimonCardStore.cardsMap(),
+        this.filterStore.advancedSearch(),
+        this.advancedSearchService,
+        (cardId) => this.cardMarketService.getPrice(cardId, (this.saveStore.settings().priceMetric as PriceMetric) || PriceMetric.Trend),
       );
 
       this.digimonCardStore.updateFilteredCards(filteredCards);
@@ -141,7 +148,7 @@ export class AppComponent {
       this.backendService
         .updateSave(save)
         .pipe(first())
-        .subscribe(() => {});
+        .subscribe(() => { });
     } else {
       localStorage.setItem('Digimon-Card-Collector', JSON.stringify(save));
     }

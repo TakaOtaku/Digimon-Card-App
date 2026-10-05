@@ -6,6 +6,7 @@ import { ButtonModule } from 'primeng/button';
 import { TextareaModule } from 'primeng/textarea';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { ColorsWithoutMulti, DigimonCard, IDeck } from '../../../../models';
+import { environment } from '../../../../environments/environment';
 import { compareIDs, formatId, levelSort, mapToDeckCards } from '../../../functions';
 import { DialogStore } from '../../../store/dialog.store';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
@@ -238,7 +239,7 @@ export class ExportDeckDialogComponent implements OnInit {
   }
 
   private setExportTypeTTS(): void {
-    this.deckText = '["Exported from https://digimoncard.app",';
+    this.deckText = `["Exported from ${environment.appUrl}",`;
     const cards = mapToDeckCards(this.deck.cards, this.digimonCards);
     cards.forEach((card) => {
       for (let i = 0; i < card.count; i++) {

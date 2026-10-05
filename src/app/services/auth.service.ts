@@ -1,31 +1,25 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable, Signal, signal } from '@angular/core';
-import {
-  Auth,
-  browserLocalPersistence,
-  GoogleAuthProvider,
-  setPersistence,
-  signInWithPopup,
-  signOut,
-  user,
-  User,
-} from '@angular/fire/auth';
+import { Auth, GoogleAuthProvider, signInWithPopup, signOut, user, User } from '@angular/fire/auth';
+// Imported from firebase/auth directly: AngularFire's zone wrapper wraps the persistence class, which breaks it.
+import { browserLocalPersistence, setPersistence } from 'firebase/auth';
 import { emptySave, emptySettings, ISave, IUser } from '@models';
 import { MessageService } from 'primeng/api';
-import { catchError, Observable, of, retry, switchMap, tap, throwError, timer } from 'rxjs';
-import { DigimonBackendService } from './digimon-backend.service';
+import { catchError, filter, Observable, of, ReplaySubject, retry, switchMap, take, tap, throwError, timer } from 'rxjs';
+import { MongoBackendService } from './mongo-backend.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   private userSignal = signal<IUser | null>(null);
+  private authStateResolved$ = new ReplaySubject<boolean>(1);
   // Use the user observable from the injected AngularFire Auth service
   firebaseUser$: Observable<User | null>;
 
   constructor(
     private firebaseAuth: Auth, // AngularFire Auth service is injected here
-    private digimonBackendService: DigimonBackendService,
+    private mongoBackendService: MongoBackendService,
     private messageService: MessageService,
   ) {
     // Set persistence - use local so auth survives tab/browser close
@@ -46,6 +40,11 @@ export class AuthService {
     return this.userSignal;
   }
 
+  /** Emits once after the initial auth state has been resolved. */
+  get authReady$(): Observable<boolean> {
+    return this.authStateResolved$.pipe(filter(Boolean), take(1));
+  }
+
   /**
    * Initialize the authentication state handling
    */
@@ -56,11 +55,12 @@ export class AuthService {
           if (!firebaseUser) {
             // User is logged out, clear state
             this.userSignal.set(null);
+            this.authStateResolved$.next(true);
             return of(null);
           }
 
           // User is logged in, get save from backend
-          return this.digimonBackendService.getSave(firebaseUser.uid).pipe(
+          return this.mongoBackendService.getSave(firebaseUser.uid).pipe(
             // Transient backend/network hiccups happen occasionally in production.
             // Retry with exponential backoff so a temporary blip doesn't look like a
             // failed login. Never retry a genuine 404 (user simply has no save yet).
@@ -94,7 +94,7 @@ export class AuthService {
               if (save) {
                 // Create user data object and update state
                 const displayName = save.displayName ? save.displayName : firebaseUser.displayName;
-                const photoURL = save.photoURL ? save.photoURL : firebaseUser.photoURL;
+                const photoUrl = save.photoUrl ? save.photoUrl : firebaseUser.photoURL;
                 const cleanSave = { ...save } as any;
                 delete cleanSave._fetchFailed;
                 delete cleanSave._isNew;
@@ -102,7 +102,7 @@ export class AuthService {
                 const userData: IUser = {
                   uid: firebaseUser.uid,
                   displayName: displayName,
-                  photoURL: photoURL,
+                  photoUrl: photoUrl,
                   save: this.ensureSaveHasUserInfo(cleanSave, firebaseUser),
                 };
 
@@ -114,7 +114,7 @@ export class AuthService {
                 // We never re-push an existing user's save on login, so a transient or partial
                 // load can never overwrite their stored collection/decks/settings.
                 if (isNew) {
-                  this.digimonBackendService.updateSave(userData.save).subscribe();
+                  this.mongoBackendService.updateSave(userData.save).subscribe();
                 }
               } else {
                 // Could not load save from backend or local — show error, don't create empty save
@@ -125,11 +125,28 @@ export class AuthService {
                   detail: 'Your profile data could not be loaded. Please try refreshing.',
                 });
               }
+              this.authStateResolved$.next(true);
+            }),
+            catchError((err) => {
+              console.error('Error loading user save:', err);
+              this.authStateResolved$.next(true);
+              return of(null);
             }),
           );
         }),
+        catchError((err) => {
+          console.error('Auth state error:', err);
+          this.userSignal.set(null);
+          this.authStateResolved$.next(true);
+          return of(null);
+        }),
       )
-      .subscribe();
+      .subscribe({
+        error: (err) => {
+          console.error('Auth subscription error:', err);
+          this.authStateResolved$.next(true);
+        },
+      });
   }
 
   /**
@@ -204,9 +221,8 @@ export class AuthService {
   loadSave(): Observable<ISave> {
     if (this.currentUser()) {
       // User is logged in, get save from backend
-      return this.digimonBackendService.getSave(this.currentUser().uid).pipe(
+      return this.mongoBackendService.getSave(this.currentUser().uid).pipe(
         catchError(() => {
-          console.log('Failed to load save from backend, using local save');
           return of(this.getLocalStorageSave() || emptySave);
         }),
       );
@@ -225,7 +241,7 @@ export class AuthService {
 
     try {
       const localSave = JSON.parse(localStorageItem);
-      return this.digimonBackendService.checkSaveValidity(localSave);
+      return this.mongoBackendService.checkSaveValidity(localSave);
     } catch (e) {
       console.error('Error parsing local save:', e);
       return null;
@@ -242,7 +258,7 @@ export class AuthService {
 
     return {
       uid: user.uid,
-      photoURL: user.photoURL || '',
+      photoUrl: user.photoURL || '', // Firebase user still has photoURL
       displayName: user.displayName || '',
       version: 1,
       collection: [],
@@ -259,7 +275,7 @@ export class AuthService {
       ...save,
       uid: user.uid,
       displayName: save.displayName || user.displayName || '',
-      photoURL: save.photoURL || user.photoURL || '',
+      photoUrl: save.photoUrl || user.photoURL || '', // Firebase user has photoURL, save has photoUrl
     };
   }
 }

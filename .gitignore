@@ -26,6 +26,7 @@ yarn-error.log
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+!.vscode/mcp.json
 .history/*
 
 # Miscellaneous
@@ -40,3 +41,19 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Tests
+/coverage
+/playwright-report/
+/test-results/
+/blob-report/
+/playwright/.cache/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+/scripts/python/.env.garage
+
+# Card images are served from Garage, not Git
+/src/assets/images/cards/

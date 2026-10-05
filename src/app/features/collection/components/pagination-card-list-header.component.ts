@@ -1,10 +1,13 @@
-import { NgClass, NgIf } from '@angular/common';
+import { CurrencyPipe, NgClass, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, EventEmitter, inject, Input, Output } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PriceMetric } from '@models';
 import { PaginatorModule } from 'primeng/paginator';
 import { SliderModule } from 'primeng/slider';
 import { SaveStore } from '@store';
 import { DigimonCardStore } from '@store';
+import { CardMarketService } from '../../../services/card-market.service';
 
 @Component({
   selector: 'digimon-pagination-card-list-header',
@@ -15,6 +18,9 @@ import { DigimonCardStore } from '@store';
         <span class="text-xs sm:hidden font-bold text-[#e2e4e6]">CM:</span>
         <input type="checkbox" class="my-auto ml-1 h-5 w-5" [ngModel]="collectionMode()" (ngModelChange)="changeCollectionMode($event)" />
         <span class="ml-6 text-xs font-bold text-[#e2e4e6]"> Cards: {{ cardCount() }} </span>
+        @if (saveStore.showPrices() && collectionValue() !== null) {
+          <span class="ml-4 text-xs font-bold text-green-400">💰 {{ collectionValue() | currency: 'EUR' }}</span>
+        }
       </div>
 
       <p-slider class="w-32 md:w-36 lg:w-56" [formControl]="widthForm" [step]="0.1" [min]="3" [max]="14"></p-slider>
@@ -31,7 +37,7 @@ import { DigimonCardStore } from '@store';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [PaginatorModule, FormsModule, NgIf, SliderModule, ReactiveFormsModule, NgClass],
+  imports: [PaginatorModule, FormsModule, NgIf, SliderModule, ReactiveFormsModule, NgClass, CurrencyPipe],
 })
 export class PaginationCardListHeaderComponent {
   @Input() widthForm!: FormControl;
@@ -41,11 +47,21 @@ export class PaginationCardListHeaderComponent {
 
   saveStore = inject(SaveStore);
   digimonCardStore = inject(DigimonCardStore);
+  private cardMarketService = inject(CardMarketService);
+  private pricesLoaded = toSignal(this.cardMarketService.priceMap$);
 
   collectionMode = this.saveStore.collectionMode;
 
   cardCount = computed(() => {
     return this.digimonCardStore.filteredCards().length;
+  });
+
+  collectionValue = computed(() => {
+    if (!this.pricesLoaded()) return null;
+    const collection = this.saveStore.collection();
+    if (!collection.length) return null;
+    const metric = (this.saveStore.settings().priceMetric as PriceMetric) || PriceMetric.Trend;
+    return this.cardMarketService.calculateTotalValue(collection, metric);
   });
 
   changeCollectionMode(collectionMode: boolean) {

@@ -6,7 +6,7 @@ import { DividerModule } from 'primeng/divider';
   selector: 'digimon-home-intro',
   template: `
     <div class="flex flex-row justify-center">
-      <img alt="Logo" class="cursor-pointer max-h-[3rem] md:max-h-[6rem]" src="../../../assets/images/logo.png" />
+      <img alt="Logo" class="cursor-pointer max-h-[3rem] md:max-h-[6rem]" src="../../../assets/images/logo.png" width="96" height="96" />
       <h1 class="text-shadow ml-3 mt-3 md:mt-6 text-center text-xl sm:text-3xl md:text-6xl font-black text-[#64B5F6]">Digimoncard.app</h1>
     </div>
 
@@ -19,59 +19,42 @@ import { DividerModule } from 'primeng/divider';
 
     <p-divider class="my-5"></p-divider>
 
-    <h2 class="mt-1 text-center text-[#e2e4e6] text-sm sm:text-base">
-      Everything related to the cards is loaded once a day from
-      <span class="font-bold">DigimonCardGame.Fandom</span>. Thanks to their effort everything should on here should be up to date.
+    <h2 class="mt-1 text-center text-[#e2e4e6] text-sm sm:text-base flex-col">
+      <div class="flex-row">
+        Everything related to the cards is loaded once a day from
+        <span class="font-bold">DigimonCardGame.Fandom</span>.
+      </div>
+      <span>Thanks to their effort everything on here should be up to date.</span>
     </h2>
 
     <p-divider class="my-5"></p-divider>
 
-    <div class="border border-[#64B5F6] rounded-lg bg-[#1a2a3a] p-4 mt-1">
-      <h3 class="text-center text-[#64B5F6] text-base sm:text-lg font-bold mb-2">Server Migration Notice</h3>
-      <p class="text-center text-[#e2e4e6] text-sm sm:text-base mb-2">
-        I will move to a new server between <span class="font-bold">August–October</span> depending on progress and time.
-      </p>
-      <p class="text-center text-[#e2e4e6] text-sm sm:text-base mb-2">
-        You can already check out a test version at
-        <a class="font-bold text-[#64B5F6] underline" href="https://digimoncardapp.takaotaku.de/" target="_blank">digimoncardapp.takaotaku.de</a>.
-      </p>
-      <p class="text-center text-[#e2e4e6] text-sm sm:text-base">
-        The saves on the test site are a backup from February and are <span class="font-bold">not</span> kept up-to-date,
-        but all saves will be fully migrated with the switch.
-      </p>
-    </div>
+    <h2 class="mt-1 text-center text-[#e2e4e6] text-sm sm:text-base">
+      I am always open for feedback and suggestions to improve the website, so feel free to reach out to me on discord and github.
+      That said, I am not the fastest when it comes to implementing new features, but I will try my best.
+      Also I am <b>looking for people</b> who want to help me maintaining the website, design new features and implement them, so if you know someone or are interested yourself, please reach out to me.
+    </h2>
 
     <p-divider class="my-5"></p-divider>
 
     <a href="https://www.paypal.com/donate/?hosted_button_id=WLM58Q785D4H4" target="_blank">
-      <img src="assets/images/blue.png" alt="Paypal Donate Button" class="mx-auto h-12" />
+      <img src="assets/images/blue.png" alt="Paypal Donate Button" class="mx-auto h-12" width="200" height="48" />
     </a>
-
-    <p-divider class="my-5"></p-divider>
-
-    <!--h2 class="mt-1 text-center text-[#e2e4e6] text-sm sm:text-base">
-      If you do like the site and want to support it, consider donating
-      <a href="https://www.paypal.com/donate/?hosted_button_id=WLM58Q785D4H4" target="_blank">
-        <i class="pi pi-paypal px-1 text-[#e2e4e6] hover:text-[#64B5F6]"></i>
-      </a>.
-      I will use everything that gets donated to get better servers to improve the performance of
-      the website.
-    </h2-->
 
     <p-divider class="my-5"></p-divider>
 
     <h2 class='text-shadow text-base sm:text-lg font-black underline text-center text-white text-[#e2e4e6]"'>Partners</h2>
     <div class="mx-auto flex flex-row">
       <a class="mx-auto flex flex-col" href="https://www.youtube.com/@AVAULT" target="_blank">
-        <img class="mx-auto max-h-16 w-16 rounded-full object-cover" src="assets/images/partners/avault.jpg" alt="AVAULT" />
+        <img class="mx-auto max-h-16 w-16 rounded-full object-cover" src="assets/images/partners/avault.jpg" alt="AVAULT" width="64" height="64" />
         <div class="text-shadow text-center text-xs font-black text-[#e2e4e6]">AVAULT</div>
       </a>
       <a class="mx-auto flex flex-col" href="https://discord.gg/digimon-tcg-dach-759562127513223168" target="_blank">
-        <img class="mx-auto max-h-16" src="assets/images/partners/dach.png" alt="Digimon DACH Discord" />
+        <img class="mx-auto max-h-16" src="assets/images/partners/dach.png" alt="Digimon DACH Discord" width="64" height="64" />
         <div class="text-shadow text-center text-xs font-black text-[#e2e4e6]">Digimon TCG DACH</div>
       </a>
       <a class="mx-auto flex flex-col" href="https://www.youtube.com/East_ML" target="_blank">
-        <img class="mx-auto max-h-16 w-16 rounded-full object-cover" src="assets/images/partners/east.jpg" alt="East" />
+        <img class="mx-auto max-h-16 w-16 rounded-full object-cover" src="assets/images/partners/east.jpg" alt="East" width="64" height="64" />
         <div class="text-shadow text-center text-xs font-black text-[#e2e4e6]">East</div>
       </a>
     </div>

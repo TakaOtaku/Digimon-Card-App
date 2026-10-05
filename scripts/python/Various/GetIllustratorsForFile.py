@@ -3,7 +3,6 @@ import urllib
 import json
 from bs4 import BeautifulSoup
 import re
-import pandas as pd
 
 cards = []
 with open('BT10.json', encoding='utf-8') as fh:

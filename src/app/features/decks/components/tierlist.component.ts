@@ -4,7 +4,8 @@ import { Database, ref, set, onValue } from '@angular/fire/database';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ADMINS, emptyDeck, TIERLIST } from '@models';
-import { DigimonBackendService } from '@services';
+import { environment } from '../../../../environments/environment';
+import { MongoBackendService } from '@services';
 import { DigimonCardStore, SaveStore, WebsiteStore } from '@store';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { MessageService } from 'primeng/api';
@@ -64,7 +65,7 @@ import { TooltipModule } from 'primeng/tooltip';
           class="text-black-outline w-24 text-center text-7xl font-black leading-[5.5rem] text-[#e2e4e6]">
           {{ key.tier }}
         </div>
-        <p-listbox [options]="tierlist[i]" [(ngModel)]="selectedDeck">
+        <p-listbox [options]="tierlist[i]" [(ngModel)]="selectedDeck" optionLabel="name">
           <ng-template let-deck let-index="index" pTemplate="item">
             <div
               (contextmenu)="removeDeck(deck, index, i)"
@@ -78,7 +79,7 @@ import { TooltipModule } from 'primeng/tooltip';
                 (click)="openCommunityWithSearch(deck.card)"
                 pTooltip="{{ deck.name }}"
                 tooltipPosition="top"
-                [lazyLoad]="deck.image"
+                [lazyLoad]="ensureCdnUrl(deck.image)"
                 [ngStyle]="{
                   border: '2px solid black',
                   'border-radius': '5px',
@@ -86,7 +87,8 @@ import { TooltipModule } from 'primeng/tooltip';
                 }"
                 [alt]="deck.name"
                 class="barsHandle m-auto h-24 cursor-pointer"
-                defaultImage="assets/images/digimon-card-back.webp" />
+                defaultImage="assets/images/digimon-card-back.webp"
+                errorImage="assets/images/digimon-card-back.webp" />
             </div>
           </ng-template>
         </p-listbox>
@@ -157,7 +159,7 @@ export class TierlistComponent {
   });
   private messageService = inject(MessageService);
   private router: Router = inject(Router);
-  private digimonBackendService = inject(DigimonBackendService);
+  private mongoBackendService = inject(MongoBackendService);
   private changeDetectorRef: ChangeDetectorRef = inject(ChangeDetectorRef);
   private db = inject(Database);
 
@@ -165,13 +167,28 @@ export class TierlistComponent {
     const tierlistRef = ref(this.db, 'tierlist');
     onValue(tierlistRef, (snapshot) => {
       const data = snapshot.val();
-      if (data && Array.isArray(data)) {
-        this.tierlist = data[0];
-        this.changeDetectorRef.detectChanges();
-      } else if (data && data.tierlist) {
-        this.tierlist = data.tierlist;
-        this.changeDetectorRef.detectChanges();
+      console.log('Firebase tierlist data:', data);
+      
+      // Only update if data is valid and non-empty
+      if (data) {
+        if (Array.isArray(data)) {
+          // If it's an array with tiers
+          if (data.length > 0 && data[0] && Array.isArray(data[0]) && data[0].length > 0) {
+            this.tierlist = data;
+            console.log('Tierlist updated from Firebase array');
+            this.changeDetectorRef.detectChanges();
+          }
+        } else if (data.tierlist && Array.isArray(data.tierlist)) {
+          // If it's an object with tierlist property
+          if (data.tierlist.length > 0 && data.tierlist[0].length > 0) {
+            this.tierlist = data.tierlist;
+            console.log('Tierlist updated from Firebase object');
+            this.changeDetectorRef.detectChanges();
+          }
+        }
       }
+    }, (error) => {
+      console.error('Error loading tierlist from Firebase:', error);
     });
   }
 
@@ -237,7 +254,6 @@ export class TierlistComponent {
   }
 
   removeDeck(deck: any, index: number, tier: number) {
-    console.log('Remove Deck ', deck);
     this.tierlist[tier].splice(index, 1);
   }
 
@@ -272,5 +288,30 @@ export class TierlistComponent {
           summary: 'Error uploading tierlist: ' + error.message,
         });
       });
+  }
+
+  ensureCdnUrl(imageUrl: string): string {
+    if (!imageUrl) {
+      return 'assets/images/digimon-card-back.webp';
+    }
+
+    // If it's already a full CDN URL, return as is
+    if (imageUrl.startsWith('http://') || imageUrl.startsWith('https://')) {
+      return imageUrl;
+    }
+
+    // Bundled card images ship as 'assets/images/cards/BT1-001.webp' -> rewrite to CDN base
+    const cardImagePrefix = 'assets/images/cards/';
+    if (imageUrl.startsWith(cardImagePrefix)) {
+      return environment.cardImageBaseUrl + imageUrl.slice(cardImagePrefix.length);
+    }
+
+    // Local assets (placeholders, card back) stay as-is
+    if (imageUrl.startsWith('assets/')) {
+      return imageUrl;
+    }
+
+    // For bare card IDs like 'BT1-001', construct the CDN path
+    return environment.cardImageBaseUrl + imageUrl + '.webp';
   }
 }

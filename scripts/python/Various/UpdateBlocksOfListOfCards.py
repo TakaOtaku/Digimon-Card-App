@@ -3,7 +3,6 @@ import urllib
 import json
 from bs4 import BeautifulSoup
 import re
-import pandas as pd
 
 allChanges = [
  'BT1-085_P1',

@@ -1,0 +1,188 @@
+================================================================================
+CARDMARKET → APP CARD ID MAPPING REPORT
+================================================================================
+
+Total products: 8851
+Total app cards: 8211
+Unique card numbers in app: 4209
+Successfully mapped: 8163
+Manual overrides applied: 7
+
+--------------------------------------------------------------------------------
+UNRECOGNIZED PRODUCT NAMES (9)
+These products could not have a card number extracted from their name.
+--------------------------------------------------------------------------------
+  idProduct=650842: Diaboromon (Token)
+  idProduct=758230: Diaboromon (Token)
+  idProduct=786235: Token Card
+  idProduct=835342: Familiar Token
+  idProduct=844983: Diaboromon (Token)
+  idProduct=853029: Atho, René & Por (Token)
+  idProduct=860888: Pipe Fox Token (ST22-T01)
+  idProduct=860889: Uka no Mitama Token (ST22-T02)
+  idProduct=864555: Petrification (Token)
+
+--------------------------------------------------------------------------------
+UNMAPPED PRODUCTS (0)
+Card number found in Cardmarket but not in app data.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+EXTRA CM PRODUCTS (680)
+More Cardmarket products than app variants for a card number.
+These need manual overrides or the app needs more _P variants.
+--------------------------------------------------------------------------------
+  idProduct=650430: Sirenmon (BT1-057) (exp=5007, position #3, app has 2 variants)
+  idProduct=650380: Okuwamon (BT1-077) (exp=5016, position #4, app has 3 variants)
+  idProduct=854213: Kapurimon (BT2-005) (exp=6353, position #2, app has 1 variants)
+  idProduct=854214: Numemon (BT2-056) (exp=6353, position #4, app has 3 variants)
+  idProduct=679424: Airdramon (BT3-024) (exp=5175, position #3, app has 2 variants)
+  idProduct=854201: Turuiemon (BT3-037) (exp=6353, position #2, app has 1 variants)
+  idProduct=745646: Angewomon (BT3-039) (exp=5515, position #5, app has 4 variants)
+  idProduct=772029: Terriermon (BT3-046) (exp=5423, position #8, app has 7 variants)
+  idProduct=620343: Etemon (BT3-070) (exp=4986, position #2, app has 1 variants)
+  idProduct=828259: Davis Motomiya (BT3-093) (exp=5010, position #5, app has 4 variants)
+  idProduct=650086: Tsunomon (BT5-002) (exp=4991, position #3, app has 2 variants)
+  idProduct=854215: Commandramon (BT5-061) (exp=6353, position #3, app has 2 variants)
+  idProduct=650342: Mekanorimon (BT5-062) (exp=5013, position #3, app has 2 variants)
+  idProduct=854216: BlackGaogamon (BT5-064) (exp=6353, position #2, app has 1 variants)
+  idProduct=854217: WaruMonzaemon (BT5-066) (exp=6353, position #4, app has 3 variants)
+  idProduct=854218: BlackMachGaogamon (BT5-068) (exp=6353, position #2, app has 1 variants)
+  idProduct=744157: BlackWarGreymon (BT5-069) (exp=5009, position #4, app has 3 variants)
+  idProduct=650124: Sora Takenouchi & Joe Kido (BT5-088) (exp=4991, position #5, app has 4 variants)
+  idProduct=650147: Pagumon (BT6-005) (exp=4993, position #5, app has 4 variants)
+  idProduct=620700: Tapirmon (BT6-032) (exp=4992, position #2, app has 1 variants)
+  idProduct=650169: Junkmon (BT6-055) (exp=4993, position #3, app has 2 variants)
+  idProduct=720908: Gundramon (BT6-065) (exp=5010, position #3, app has 2 variants)
+  idProduct=650257: Dead or Alive (BT7-109) (exp=4995, position #4, app has 3 variants)
+  idProduct=621265: Garudamon (ST1-08) (exp=5009, position #3, app has 2 variants)
+  idProduct=620961: Bearmon (ST2-04) (exp=4999, position #2, app has 1 variants)
+  idProduct=650326: Unimon (ST3-07) (exp=5012, position #4, app has 3 variants)
+  idProduct=675271: Palmon (ST4-04) (exp=5010, position #3, app has 2 variants)
+  idProduct=621012: ToyAgumon (ST5-04) (exp=5002, position #2, app has 1 variants)
+  idProduct=789146: Blue Memory Boost! (P-036) (exp=5026, position #8, app has 7 variants)
+  idProduct=789147: Yellow Memory Boost! (P-037) (exp=5026, position #8, app has 7 variants)
+  idProduct=873712: Guilmon (ST7-03) (exp=6482, position #8, app has 7 variants)
+  idProduct=663523: Growlmon (ST7-05) (exp=5011, position #5, app has 4 variants)
+  idProduct=693217: Gallantmon (ST7-09) (exp=5047, position #4, app has 3 variants)
+  idProduct=854256: Atomic Blaster (ST7-12) (exp=6353, position #2, app has 1 variants)
+  idProduct=621082: AeroVeedramon (ST8-08) (exp=5005, position #2, app has 1 variants)
+  idProduct=802703: AeroVeedramon (ST8-08) (exp=5632, position #3, app has 1 variants)
+  idProduct=854207: Elecmon (EX1-023) (exp=6353, position #2, app has 1 variants)
+  idProduct=621121: Gatomon (EX1-026) (exp=4997, position #3, app has 2 variants)
+  idProduct=650018: Kuwagamon (EX1-037) (exp=4997, position #3, app has 2 variants)
+  idProduct=681162: Agumon (P-009) (exp=4996, position #4, app has 3 variants)
+  idProduct=704093: Greymon (P-010) (exp=5324, position #5, app has 4 variants)
+  idProduct=673866: Keramon (P-013) (exp=5436, position #4, app has 3 variants)
+  idProduct=673867: Kurisarimon (P-014) (exp=5436, position #3, app has 2 variants)
+  idProduct=621222: Infermon (P-015) (exp=4996, position #2, app has 1 variants)
+  idProduct=621224: DemiDevimon (P-017) (exp=4996, position #3, app has 2 variants)
+  idProduct=650200: AeroVeedramon Zero (P-047) (exp=4996, position #3, app has 2 variants)
+  idProduct=650202: UlforceVeedramon Zero (P-048) (exp=4996, position #3, app has 2 variants)
+  idProduct=790562: Digimon Emperor (BT8-094) (exp=5632, position #5, app has 4 variants)
+  idProduct=854212: Junomon (ST10-13) (exp=6353, position #2, app has 1 variants)
+  idProduct=654554: BlackGatomon (BT8-077) (exp=5050, position #3, app has 2 variants)
+  idProduct=844261: Crimson Blaze (BT8-097) (exp=6024, position #7, app has 6 variants)
+  idProduct=731950: Gammamon (P-058) (exp=5457, position #2, app has 1 variants)
+  idProduct=781884: Gammamon (P-058) (exp=5011, position #3, app has 1 variants)
+  idProduct=781886: Gammamon (P-058) (exp=5011, position #4, app has 1 variants)
+  idProduct=854242: Guilmon (EX2-008) (exp=6353, position #4, app has 3 variants)
+  idProduct=665442: Guilmon (EX2-008) (exp=5079, position #5, app has 3 variants)
+  idProduct=665460: Takato Matsuki (EX2-056) (exp=5079, position #4, app has 3 variants)
+  idProduct=703702: Digivolution Plug-In S (EX2-070) (exp=5437, position #3, app has 2 variants)
+  idProduct=665439: Viximon (EX2-003) (exp=5079, position #3, app has 2 variants)
+  idProduct=665447: Renamon (EX2-019) (exp=5079, position #4, app has 3 variants)
+  idProduct=854260: Kyubimon (EX2-021) (exp=6353, position #2, app has 1 variants)
+  idProduct=679469: Taomon (EX2-023) (exp=5009, position #3, app has 2 variants)
+  idProduct=665449: Sakuyamon (EX2-024) (exp=5079, position #4, app has 3 variants)
+  idProduct=665462: Rika Nonaka (EX2-060) (exp=5079, position #4, app has 3 variants)
+  idProduct=664283: ADR-02 Searcher (EX2-046) (exp=5079, position #2, app has 1 variants)
+  idProduct=669604: Okuwamon (P-075) (exp=4996, position #4, app has 3 variants)
+  idProduct=781875: WereGarurumon (X Antibody) (BT9-028) (exp=5011, position #3, app has 2 variants)
+  idProduct=669340: WereGarurumon (X Antibody) (BT9-028) (exp=5124, position #4, app has 2 variants)
+  idProduct=825288: WereGarurumon (X Antibody) (BT9-028) (exp=5423, position #5, app has 2 variants)
+  idProduct=669355: Megadramon (BT9-065) (exp=5124, position #3, app has 2 variants)
+  idProduct=679456: Gankoomon (X Antibody) (BT10-068) (exp=5152, position #4, app has 3 variants)
+  idProduct=756178: Gankoomon (X Antibody) (BT10-068) (exp=5324, position #5, app has 3 variants)
+  idProduct=679815: Jesmon GX (BT10-112) (exp=5152, position #4, app has 3 variants)
+  idProduct=675852: Gurimon (ST12-01) (exp=5153, position #2, app has 1 variants)
+  idProduct=703666: From Master to Disciple (ST12-15) (exp=5018, position #3, app has 2 variants)
+  idProduct=800412: Sistermon Blanc (ST12-12) (exp=5963, position #5, app has 4 variants)
+  idProduct=785190: Sistermon Ciel (ST12-13) (exp=5883, position #4, app has 3 variants)
+  idProduct=800411: Sistermon Ciel (ST12-13) (exp=5963, position #5, app has 3 variants)
+  idProduct=675856: Huckmon (ST12-04) (exp=5153, position #2, app has 1 variants)
+  idProduct=675857: BaoHuckmon (ST12-06) (exp=5153, position #2, app has 1 variants)
+  idProduct=675858: SaviorHuckmon (ST12-08) (exp=5153, position #2, app has 1 variants)
+  idProduct=675859: Volcanomon (ST12-09) (exp=5153, position #2, app has 1 variants)
+  idProduct=675860: Gankoomon (ST12-11) (exp=5153, position #2, app has 1 variants)
+  idProduct=675861: Quake! Blast! Fire! Father! (ST12-16) (exp=5153, position #2, app has 1 variants)
+  idProduct=675862: Candlemon (ST12-02) (exp=5153, position #2, app has 1 variants)
+  idProduct=703682: Solarmon (ST12-03) (exp=5437, position #4, app has 3 variants)
+  idProduct=675865: Meramon (ST12-05) (exp=5153, position #2, app has 1 variants)
+  idProduct=675867: SkullMeramon (ST12-07) (exp=5153, position #2, app has 1 variants)
+  idProduct=675872: Chikurimon (ST13-08) (exp=5154, position #2, app has 1 variants)
+  idProduct=854257: Kyubimon (BT10-036) (exp=6353, position #2, app has 1 variants)
+  idProduct=781877: Paildramon (EX3-010) (exp=5011, position #3, app has 2 variants)
+  idProduct=781878: Paildramon (EX3-010) (exp=5011, position #4, app has 2 variants)
+  idProduct=685184: Paildramon (EX3-010) (exp=5190, position #5, app has 2 variants)
+  idProduct=683224: Dorbickmon (EX3-014) (exp=5190, position #4, app has 3 variants)
+  idProduct=696462: Yokomon (BT11-001) (exp=5246, position #2, app has 1 variants)
+  idProduct=696249: Birdramon (BT11-011) (exp=5251, position #3, app has 2 variants)
+  idProduct=696476: Garudamon (BT11-013) (exp=5246, position #2, app has 1 variants)
+  idProduct=696528: Crimson Flare (BT11-097) (exp=5246, position #2, app has 1 variants)
+  idProduct=696466: Bearmon (BT11-008) (exp=5246, position #2, app has 1 variants)
+  idProduct=696471: Grizzlymon (BT11-010) (exp=5246, position #2, app has 1 variants)
+  ... and 580 more
+
+--------------------------------------------------------------------------------
+APP IDS MISSING FROM CARDMARKET (48)
+App card IDs that have no Cardmarket product mapped to them.
+--------------------------------------------------------------------------------
+  BT16-077_P2
+  BT20-060_P5
+  BT20-077_P2-Errata
+  BT20-077_P3
+  BT20-091_P2
+  BT25-044
+  BT25-044_P1
+  BT25-082
+  BT25-085_P1
+  BT25-086_P2-Sample
+  BT25-091_P2-Sample
+  BT25-092_P1
+  BT25-092_P2
+  BT25-097
+  BT25-104
+  BT25-104_P1
+  BT25-104_P2
+  BT7-062_P5
+  BT7-064_P4
+  EX1-073_P4
+  EX12-001
+  EX12-001_P1
+  EX12-018
+  EX12-048
+  EX5-070_P4
+  EX8-074_P4
+  LM-057
+  LM-058
+  LM-059
+  LM-060
+  LM-061
+  LM-062
+  P-012_P1
+  P-147_P2
+  P-226
+  P-239
+  RB1-004
+  RB1-006
+  RB1-007
+  ST23-01
+  ST23-03
+  ST23-04
+  ST23-13
+  ST24-01
+  ST24-07
+  ST24-08
+  ST24-09
+  ST24-14

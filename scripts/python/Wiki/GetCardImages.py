@@ -24,6 +24,7 @@ from PIL import Image
 import random
 import requests
 
+import CardImageIndex
 import WikiVariables as WV
 import WikiFunctions as WF
 
@@ -48,16 +49,7 @@ def check_image_exists_in_assets(image_name: str) -> bool:
     # Convert image name from .png to .webp
     webp_filename = re.sub(r'\.png$', '.webp', image_name)
 
-    # Get the script's directory and navigate to the assets directory
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    # Go up from scripts/python/Wiki to the project root, then to assets
-    assets_path = os.path.join(script_dir, '..', '..', '..', 'src', 'assets', 'images', 'cards')
-    full_path = os.path.join(assets_path, webp_filename)
-
-    # Normalize the path
-    full_path = os.path.normpath(full_path)
-
-    return os.path.exists(full_path)
+    return CardImageIndex.image_exists(webp_filename)
 
 def download_image_with_retry(url, save_directory, id, max_retries=5, retry_delay=5):
     """

@@ -3,7 +3,6 @@ import {
   ChangeDetectionStrategy,
   Component,
   computed,
-  effect,
   HostListener,
   inject,
   Input,
@@ -40,11 +39,24 @@ import { DecksTableComponent } from './decks-table.component';
           [showJumpToPageDropdown]="true"
           [showPageLinks]="false"
           [totalRecords]="decks.length"
-          class="surface-card mx-auto h-8"
+          class="surface-card mx-auto"
           styleClass="surface-card p-0"></p-paginator>
       </div>
     } @else {
       <digimon-decks-table [decks]="decks" (onDeckClick)="showDeckDialog($event)"></digimon-decks-table>
+    }
+  `,
+  styles: `
+    :host ::ng-deep .p-paginator .p-paginator-first,
+    :host ::ng-deep .p-paginator .p-paginator-prev,
+    :host ::ng-deep .p-paginator .p-paginator-next,
+    :host ::ng-deep .p-paginator .p-paginator-last,
+    :host ::ng-deep .p-paginator .p-select {
+      height: 2.625rem;
+      min-width: 2.625rem;
+    }
+    :host ::ng-deep .p-paginator .p-select {
+      align-items: center;
     }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -71,9 +83,6 @@ export class DecksComponent implements OnInit, OnChanges {
   deck: IDeck = JSON.parse(JSON.stringify(emptyDeck));
 
   displayTables = computed(() => this.saveStore.settings().deckDisplayTable);
-  effect = effect(() => {
-    console.log('Display Table: ' + this.displayTables());
-  });
 
   ngOnInit() {
     if (!this.decks) {

@@ -2,7 +2,7 @@ import { AsyncPipe, DatePipe, NgIf, NgStyle } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { BehaviorSubject, first } from 'rxjs';
-import { ColorMap, IDeck, ITournamentDeck } from '../../../models';
+import { ColorMap, IDeck } from '../../../models';
 import { setDeckImage } from '../../functions';
 import { ImageService } from '../../services/image.service';
 import { DigimonCardStore } from '../../store/digimon-card.store';
@@ -38,30 +38,14 @@ import { DigimonCardStore } from '../../store/digimon-card.store';
             {{ deck.description }}
           </div>
 
-          <div *ngIf="mode !== 'Tournament'; else tournament" class="text-shadow flex w-full flex-row text-xs text-[#e2e4e6]">
+          <div class="text-shadow flex w-full flex-row text-xs text-[#e2e4e6]">
             <div *ngIf="mode === 'Community'" class="ml-1 font-bold">
               {{ deck.user }}
             </div>
             <div class="ml-auto font-bold">
-              {{ deck.date | date: 'dd.MM.YY' }}
+              {{ deck.date | date: 'dd.MM.yy' }}
             </div>
           </div>
-          <ng-template #tournament>
-            <div class="text-shadow grid w-full grid-cols-5 text-xs text-[#e2e4e6]">
-              <div class="ml-1 font-bold">
-                {{ placementString(getTournamentDeck(deck).placement) }}
-              </div>
-              <div class="col-span-2 ml-1 truncate font-bold">
-                {{ getTournamentDeck(deck).user }}
-              </div>
-              <div class="mx-auto font-bold">
-                {{ getTournamentDeck(deck).size }}
-              </div>
-              <div class="ml-auto font-bold">
-                {{ getTournamentDeck(deck).date | date: 'dd.MM.YY' }}
-              </div>
-            </div>
-          </ng-template>
         </div>
       </div>
     </div>
@@ -72,7 +56,7 @@ import { DigimonCardStore } from '../../store/digimon-card.store';
   providers: [ImageService],
 })
 export class DeckContainerComponent implements OnChanges {
-  @Input() deck: IDeck | ITournamentDeck;
+  @Input() deck: IDeck;
   @Input() mode = 'Basic';
   cardImageSubject$ = new BehaviorSubject<string>('../../../assets/images/digimon-card-back.webp');
 
@@ -80,7 +64,7 @@ export class DeckContainerComponent implements OnChanges {
 
   private digimonCardStore = inject(DigimonCardStore);
 
-  constructor(private imageService: ImageService) {}
+  constructor(private imageService: ImageService) { }
 
   ngOnChanges(changes: SimpleChanges): void {
     this.setCardImage();
@@ -89,13 +73,13 @@ export class DeckContainerComponent implements OnChanges {
   setCardImage() {
     const digimonCardMap = this.digimonCardStore.cardsMap();
     let imagePath = '';
-    // If there is an ImageCardId set it
-    if (this.deck.imageCardId) {
+    // If there is a valid ImageCardId (not the default BT1-001), use it
+    if (this.deck.imageCardId && this.deck.imageCardId !== 'BT1-001') {
       const imageCard = digimonCardMap.get(this.deck.imageCardId);
       imagePath = imageCard?.cardImage ?? '../../../assets/images/digimon-card-back.webp';
-    } else if (this.deck.cards && this.deck.cards.length < 0) {
-      // If there are cards in the deck, set it to the first card
-      const imageCard = setDeckImage(this.deck, this.digimonCardStore.cards()); // Replace setDeckImage with the appropriate function
+    } else if (this.deck.cards && this.deck.cards.length > 0) {
+      // Compute image from the deck's cards
+      const imageCard = setDeckImage(this.deck, this.digimonCardStore.cards());
       imagePath = imageCard?.cardImage ?? '';
     }
 
@@ -105,28 +89,23 @@ export class DeckContainerComponent implements OnChanges {
       .subscribe((imagePath: string) => this.cardImageSubject$.next(imagePath));
   }
 
-  getTournamentDeck(deck: IDeck | ITournamentDeck): ITournamentDeck {
-    return deck as ITournamentDeck;
-  }
-
   isIllegal(): boolean {
     return this.deck.tags ? !!this.deck.tags.find((tag) => tag.name === 'Illegal') : false;
   }
 
-  placementString(placement: number): string {
-    if (placement === 1) {
-      return '1st';
-    } else if (placement === 2) {
-      return '2nd';
-    } else if (placement === 3) {
-      return '3th';
-    }
-    return placement + 'th';
-  }
-
-  getTags(deck: IDeck | ITournamentDeck) {
+  getTags(deck: IDeck): string {
     if (deck.tags && deck.tags.length > 0) {
-      return deck!.tags[0] ? deck!.tags[0].name : '';
+      // Prioritize showing set tags (BT, EX, ST) over other tags
+      const setTag = deck.tags.find(tag => 
+        tag.name.match(/^(BT|EX|ST|RB)\d+$/) || tag.name === 'LM' || tag.name === 'P'
+      );
+      
+      if (setTag) {
+        return setTag.name;
+      }
+      
+      // Fall back to first tag if no set tag found
+      return deck.tags[0] ? deck.tags[0].name : '';
     }
     return '';
   }

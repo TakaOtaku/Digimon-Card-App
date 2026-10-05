@@ -5,16 +5,17 @@ import { Router } from '@angular/router';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import { DropdownModule } from 'primeng/dropdown';
+import { SelectModule } from 'primeng/select';
 import { InputTextModule } from 'primeng/inputtext';
 import { TooltipModule } from 'primeng/tooltip';
 import { first } from 'rxjs';
 import * as uuid from 'uuid';
 
-import { emptyDeck, IDeck, IDeckCard, ITournamentDeck } from '../../../../models';
+import { ADMINS, emptyDeck, IDeck, IDeckCard } from '../../../../models';
+import { environment } from '../../../../environments/environment';
 import { mapToDeckCards, setDeckImage } from '../../../functions';
 import { AuthService } from '../../../services/auth.service';
-import { DigimonBackendService } from '../../../services/digimon-backend.service';
+import { MongoBackendService } from '../../../services/mongo-backend.service';
 import { DialogStore } from '../../../store/dialog.store';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
 import { SaveStore } from '../../../store/save.store';
@@ -79,13 +80,13 @@ export interface DigimonCardImage {
           <label>Title</label>
           <input formControlName="title" placeholder="Deck Name:" class="col-span-2 mr-2 w-full text-sm" pInputText type="text" />
           <label>Image</label>
-          <p-dropdown
+          <p-select
             styleClass="truncate w-full lg:w-[250px]"
             class=" col-span-2"
             [options]="cardImageOptions"
             formControlName="cardImage"
             optionLabel="name"
-            appendTo="body"></p-dropdown>
+            appendTo="body"></p-select>
           <label>Description</label>
           <textarea
             formControlName="description"
@@ -169,7 +170,7 @@ export interface DigimonCardImage {
     FormsModule,
     ReactiveFormsModule,
     InputTextModule,
-    DropdownModule,
+    SelectModule,
     TextareaModule,
     ButtonModule,
     ConfirmDialogModule,
@@ -184,7 +185,7 @@ export class DeckDialogComponent {
   dialogStore = inject(DialogStore);
   digimonCardStore = inject(DigimonCardStore);
 
-  deck: IDeck | ITournamentDeck = emptyDeck;
+  deck: IDeck = emptyDeck;
   editable = true;
 
   deckFormGroup = new UntypedFormGroup({
@@ -205,7 +206,7 @@ export class DeckDialogComponent {
   constructor(
     private authService: AuthService,
     private router: Router,
-    private digimonBackendService: DigimonBackendService,
+    private mongoBackendService: MongoBackendService,
     private confirmationService: ConfirmationService,
     private messageService: MessageService,
   ) {
@@ -226,9 +227,9 @@ export class DeckDialogComponent {
       this.changeDetection.detectChanges();
     });
 
-    this.isAdmin =
-      this.authService.currentUser()?.uid === 'S3rWXPtCYRN8vSrxY3qE6aeewy43' ||
-      this.authService.currentUser()?.uid === 'loBLZPOIL0ZlDzt6A1rgDiTomTw2';
+    this.isAdmin = ADMINS.some(
+      (admin) => admin.admin && admin.id === this.authService.currentUser()?.uid,
+    );
   }
 
   openDeck(event: Event) {
@@ -275,7 +276,7 @@ export class DeckDialogComponent {
         key: 'Delete',
         message: 'You are about to permanently delete this deck. Are you sure?',
         accept: () => {
-          this.digimonBackendService.deleteDeck(this.deck.id).pipe(first()).subscribe();
+          this.mongoBackendService.deleteDeck(this.deck.id).pipe(first()).subscribe();
           this.messageService.add({
             severity: 'success',
             summary: 'Deck deleted!',
@@ -309,10 +310,12 @@ export class DeckDialogComponent {
 
   createImageOptions(): DigimonCardImage[] {
     return (
-      this.mainDeck.map((card) => ({
-        name: `${card.id} - ${card.name.english}`,
-        value: card.id,
-      })) ?? []
+      this.mainDeck
+        .filter((card) => card && card.name && card.name.english)
+        .map((card) => ({
+          name: `${card.id} - ${card.name.english}`,
+          value: card.id,
+        })) ?? []
     );
   }
 
@@ -323,8 +326,8 @@ export class DeckDialogComponent {
     selBox.style.top = '0';
     selBox.style.opacity = '0';
     selBox.value = this.editable
-      ? `https://digimoncard.app/deckbuilder/user/${this.authService.currentUser()?.uid}/deck/${this.deck.id}`
-      : `https://digimoncard.app/deckbuilder/${this.deck.id}`;
+      ? `${environment.appUrl}/deckbuilder/user/${this.authService.currentUser()?.uid}/deck/${this.deck.id}`
+      : `${environment.appUrl}/deckbuilder/${this.deck.id}`;
     document.body.appendChild(selBox);
     selBox.focus();
     selBox.select();

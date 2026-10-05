@@ -27,7 +27,7 @@ import { PageComponent } from '../shared/page.component';
             [autoplayInterval]="5000">
             <ng-template let-item pTemplate="item">
               <div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
-                <img src="{{ item.image }}" [alt]="item.name" class="shadow-2 mx-auto h-60" />
+                <img src="{{ item.image }}" [alt]="item.name" class="shadow-2 mx-auto h-60" width="240" height="240" />
                 <div>
                   <h4 class="mb-1 text-black-outline text-white">
                     {{ item.name }}

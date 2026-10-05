@@ -4,35 +4,100 @@ on:
   schedule:
     - cron: "0 0 */3 * *"
   workflow_dispatch:
-
+    inputs:
+      phase:
+        description: "Run only a specific phase (leave empty for full pipeline)"
+        required: false
+        type: choice
+        default: ""
+        options:
+          - ""
+          - fetch_links
+          - scrape_cards
+          - fetch_rulings
+          - merge_cards
+          - fetch_images
+          - format_cards
+          - prepare_output
+      skip:
+        description: "Comma-separated phases to skip (e.g. fetch_images,prepare_output)"
+        required: false
+        default: ""
 
 jobs:
-  run_script:
+  update-cards:
     runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: write
+      actions: write
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.x
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: scripts/python/requirements.txt
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install beautifulsoup4 requests pillow lxml
+          pip install -r scripts/python/requirements.txt
 
-      - name: Run Python script
-        run: python scripts/python/Wiki/GetDataFromWiki.py
+      - name: Create required directories
+        run: |
+          mkdir -p scripts/python/Wiki/digimon-images/converted
+          mkdir -p scripts/python/Wiki/jsons
+          mkdir -p src/assets/images/cards
+
+      - name: Ensure Links.json exists
+        run: |
+          if [ ! -f scripts/python/Wiki/jsons/Links.json ]; then
+            echo "[]" > scripts/python/Wiki/jsons/Links.json
+          fi
+
+      - name: Run card update pipeline
+        env: &garage-env
+          GARAGE_ENDPOINT_URL: ${{ secrets.GARAGE_ENDPOINT_URL }}
+          GARAGE_BUCKET: ${{ secrets.GARAGE_BUCKET }}
+          GARAGE_ACCESS_KEY_ID: ${{ secrets.GARAGE_ACCESS_KEY_ID }}
+          GARAGE_SECRET_ACCESS_KEY: ${{ secrets.GARAGE_SECRET_ACCESS_KEY }}
+          GARAGE_REGION: ${{ vars.GARAGE_REGION || 'garage' }}
+          GARAGE_ADDRESSING_STYLE: ${{ vars.GARAGE_ADDRESSING_STYLE || 'path' }}
+          GARAGE_KEY_PREFIX: ${{ vars.GARAGE_KEY_PREFIX }}
+        run: |
+          if [ -z "$GARAGE_BUCKET" ]; then
+            echo "::error::Garage secrets are missing; the pipeline would treat every card image as missing."
+            exit 1
+          fi
+          ARGS=""
+          if [ -n "${{ github.event.inputs.phase }}" ]; then
+            ARGS="--phase ${{ github.event.inputs.phase }}"
+          fi
+          if [ -n "${{ github.event.inputs.skip }}" ]; then
+            # Convert comma-separated to space-separated for argparse nargs
+            SKIP_PHASES=$(echo "${{ github.event.inputs.skip }}" | tr ',' ' ')
+            ARGS="$ARGS --skip $SKIP_PHASES"
+          fi
+          echo "Running: python scripts/python/Wiki/GetDataFromWiki.py $ARGS"
+          python scripts/python/Wiki/GetDataFromWiki.py $ARGS
+
+      - name: Upload missing card images to Garage
+        env: *garage-env
+        run: |
+          if ls src/assets/images/cards/*.webp >/dev/null 2>&1; then
+            python scripts/python/garage_sync.py --apply
+          else
+            echo "No new card images to upload."
+          fi
 
       - name: Check for changes
         id: git_status
         run: |
-          # Check if there are any changes to commit
-          # --porcelain prints output in an easily parsable format
-          # If there are changes, the command will output text; otherwise, it will be empty.
           if [[ -n $(git status --porcelain) ]]; then
             echo "Changes detected."
             echo "changed=true" >> $GITHUB_OUTPUT
@@ -41,11 +106,18 @@ jobs:
             echo "changed=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Commit everything
+      - name: Commit and push changes
         if: steps.git_status.outputs.changed == 'true'
         run: |
           git config --local user.email "digimoncard.app@gmail.de"
           git config --local user.name "DigimonCardApp"
           git add -A
-          git commit -am "[Automatic] Update Cards"
+          git commit -m "[Automatic] Update Cards"
           git push
+
+      # Pushes made with GITHUB_TOKEN don't trigger workflows, but workflow_dispatch does.
+      - name: Build and deploy the new card data
+        if: steps.git_status.outputs.changed == 'true' && hashFiles('.github/workflows/build-coolify.yaml') != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run build-coolify.yaml --ref "$GITHUB_REF_NAME"

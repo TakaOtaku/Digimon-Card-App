@@ -1,4 +1,4 @@
-import { DigimonCard, dummyCard, ICountCard, IDeck, IDeckCard, ISelectItem, ITag, ITournamentDeck, tagsList } from '../../models';
+import { DigimonCard, dummyCard, ICountCard, IDeck, IDeckCard, ISelectItem, ITag, tagsList } from '../../models';
 import { ReleaseOrder } from '../../models/data/release-order.data';
 import { ColorOrderMap, DeckColorMap } from '../../models/maps/color.map';
 import { sortID } from './filter.functions';
@@ -204,12 +204,36 @@ export function mapToDeckCards(cards: ICountCard[], allCards: DigimonCard[]): ID
     if (cardSplit[0].includes('ST') && cardSplit[0].match(/ST0\d/)) {
       let searchId = cardSplit[0].replace('0', '') + '-' + cardSplit[1];
       let found = allCards.find((allCard) => searchId === allCard.id);
-      deckCards.push({ ...found, count: card.count } as IDeckCard);
+      if (found) {
+        deckCards.push({ ...found, count: card.count } as IDeckCard);
+      } else {
+        // Card not found in store - create placeholder with minimal info
+        deckCards.push({
+          id: card.id,
+          count: card.count,
+          name: { english: card.id, japanese: '' },
+          color: 'Unknown',
+          cardType: 'Unknown',
+          cardNumber: card.id,
+        } as IDeckCard);
+      }
       return;
     }
 
     let found = allCards.find((allCard) => card.id === allCard.id);
-    deckCards.push({ ...found, count: card.count } as IDeckCard);
+    if (found) {
+      deckCards.push({ ...found, count: card.count } as IDeckCard);
+    } else {
+      // Card not found in store - create placeholder with minimal info
+      deckCards.push({
+        id: card.id,
+        count: card.count,
+        name: { english: card.id, japanese: '' },
+        color: 'Unknown',
+        cardType: 'Unknown',
+        cardNumber: card.id,
+      } as IDeckCard);
+    }
   });
 
   return deckCards;
@@ -276,7 +300,7 @@ export function levelSort(deck: IDeckCard[]) {
   return [...new Set([...eggs, ...lv0, ...lv3, ...lv4, ...lv5, ...lv6, ...lv7, ...tamer, ...options])];
 }
 
-export function setDeckImage(deck: IDeck | ITournamentDeck, allCards: DigimonCard[]): DigimonCard {
+export function setDeckImage(deck: IDeck, allCards: DigimonCard[]): DigimonCard {
   if (deck.cards && deck.cards.length === 0) {
     return JSON.parse(JSON.stringify(dummyCard));
   }

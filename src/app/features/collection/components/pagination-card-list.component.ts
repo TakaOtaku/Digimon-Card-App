@@ -4,9 +4,9 @@ import { FormControl } from '@angular/forms';
 import { DataViewModule } from 'primeng/dataview';
 import { DialogModule } from 'primeng/dialog';
 import { DragDropModule } from 'primeng/dragdrop';
-import { SidebarModule } from 'primeng/sidebar';
+import { DrawerModule } from 'primeng/drawer';
 import { SkeletonModule } from 'primeng/skeleton';
-import { DigimonCard, DRAG, dummyCard, ICountCard, IDraggedCard } from '@models';
+import { DigimonCard, DRAG, dummyCard, ICountCard, IDraggedCard, PriceMetric } from '@models';
 import { IntersectionListenerDirective } from '@directives';
 import { filterCards, withoutJ } from '@functions';
 import { DialogStore } from '@store';
@@ -18,6 +18,8 @@ import { FullCardComponent } from '../../shared/full-card.component';
 import { PaginationCardListHeaderComponent } from './pagination-card-list-header.component';
 import { SearchComponent } from './search.component';
 import { FilterStore } from '@store';
+import { AdvancedSearchService } from '../../../services/advanced-search.service';
+import { CardMarketService } from '../../../services/card-market.service';
 
 @Component({
   selector: 'digimon-pagination-card-list',
@@ -34,6 +36,9 @@ import { FilterStore } from '@store';
       <div
         [pDroppable]="['fromDeck', 'fromSide']"
         (onDrop)="drop(draggedCard(), draggedCard())"
+        role="list"
+        aria-live="polite"
+        aria-label="Card search results"
         class="h-[calc(100vh-8.5rem)] md:h-[calc(100vh-10rem)] lg:h-[calc(100vh-5rem)] flex flex-wrap w-full content-start justify-start overflow-y-scroll">
         @for (card of showCards; track $index) {
           @defer (on viewport) {
@@ -51,20 +56,22 @@ import { FilterStore } from '@store';
             <p-skeleton class="sm:m-0.5 md:m-1" width="5.6rem" height="10rem"></p-skeleton>
           }
         } @empty {
-          <h1 *ngIf="filteredCards().length === 0" class="primary-color text-bold my-10 text-center text-5xl">No cards found!</h1>
+          <div *ngIf="filteredCards().length === 0" class="flex items-center justify-center w-full h-full">
+            <h1 class="primary-color text-bold text-5xl text-center">No cards found!</h1>
+          </div>
         }
       </div>
     </div>
 
     <digimon-filter-side-box *ngIf="filterBoxEnabled" class="hidden xl:flex"></digimon-filter-side-box>
 
-    <p-sidebar
+    <p-drawer
       [(visible)]="filterBox"
       dismissible="false"
       position="right"
       styleClass="w-[20rem] md:w-[24rem] overflow-x-hidden overflow-y-auto p-0 border-none">
       <digimon-filter-side-box></digimon-filter-side-box>
-    </p-sidebar>
+    </p-drawer>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
@@ -76,7 +83,7 @@ import { FilterStore } from '@store';
     FullCardComponent,
     DialogModule,
     FilterSideBoxComponent,
-    SidebarModule,
+    DrawerModule,
     DataViewModule,
     SkeletonModule,
     IntersectionListenerDirective,
@@ -92,6 +99,8 @@ export class PaginationCardListComponent {
   saveStore = inject(SaveStore);
   dialogStore = inject(DialogStore);
   filterStore = inject(FilterStore);
+  advancedSearchService = inject(AdvancedSearchService);
+  private cardMarketService = inject(CardMarketService);
 
   draggedCard = this.websiteStore.draggedCard;
   collection = this.saveStore.collection;
@@ -109,7 +118,6 @@ export class PaginationCardListComponent {
 
   onFilterChange = effect(() => {
     if (this.inputCollection.length === 0) return;
-    console.log('Filter changed');
     const cards = this.digimonCardStore.cards();
 
     if (cards.length === 0) return;
@@ -120,6 +128,9 @@ export class PaginationCardListComponent {
       this.filterStore.filter(),
       this.websiteStore.sort(),
       this.digimonCardStore.cardsMap(),
+      this.filterStore.advancedSearch(),
+      this.advancedSearchService,
+      (cardId) => this.cardMarketService.getPrice(cardId, (this.saveStore.settings().priceMetric as PriceMetric) || PriceMetric.Trend),
     );
 
     this.digimonCardStore.updateFilteredCards(filteredCards);
@@ -135,7 +146,6 @@ export class PaginationCardListComponent {
     });
 
     effect(() => {
-      console.log('Filtered Cards changed');
       const filteredCards = this.digimonCardStore.filteredCards();
       this.showCards = filteredCards.slice(0, this.perPage);
       this.page = 1;
