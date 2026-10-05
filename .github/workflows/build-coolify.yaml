@@ -4,7 +4,13 @@ on:
   push:
     branches:
       - main
+      - coolify
   workflow_dispatch:
+
+# Both branches publish :latest; run one build at a time.
+concurrency:
+  group: coolify-image
+  cancel-in-progress: false
 
 env:
   REGISTRY: ghcr.io
