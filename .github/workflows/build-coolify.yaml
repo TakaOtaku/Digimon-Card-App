@@ -3,7 +3,7 @@ name: Build and Push Docker Image (Coolify)
 on:
   push:
     branches:
-      - coolify
+      - main
   workflow_dispatch:
 
 env:

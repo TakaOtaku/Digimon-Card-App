@@ -93,12 +93,46 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install requests beautifulsoup4 lxml Pillow
+        run: pip install -r scripts/python/requirements.txt
+
+      - name: Create required directories
+        run: |
+          mkdir -p scripts/python/Wiki/digimon-images/converted
+          mkdir -p src/assets/images/cards
 
       - name: Run GetDataFromWikiSingle
         env:
           PYTHONPATH: scripts/python/Wiki
-        run: python scripts/python/Wiki/GetDataFromWikiSingle.py "${{ github.event.inputs.set_code }}"
+          GARAGE_ENDPOINT_URL: ${{ secrets.GARAGE_ENDPOINT_URL }}
+          GARAGE_BUCKET: ${{ secrets.GARAGE_BUCKET }}
+          GARAGE_ACCESS_KEY_ID: ${{ secrets.GARAGE_ACCESS_KEY_ID }}
+          GARAGE_SECRET_ACCESS_KEY: ${{ secrets.GARAGE_SECRET_ACCESS_KEY }}
+          GARAGE_REGION: ${{ vars.GARAGE_REGION || 'garage' }}
+          GARAGE_ADDRESSING_STYLE: ${{ vars.GARAGE_ADDRESSING_STYLE || 'path' }}
+          GARAGE_KEY_PREFIX: ${{ vars.GARAGE_KEY_PREFIX }}
+        run: |
+          if [ -z "$GARAGE_BUCKET" ]; then
+            echo "::error::Garage secrets are missing; the pipeline would treat every card image as missing."
+            exit 1
+          fi
+          python scripts/python/Wiki/GetDataFromWikiSingle.py "${{ github.event.inputs.set_code }}"
+
+      # Card images are not committed; upload them before the PR so its JSON never points at missing images.
+      - name: Upload missing card images to Garage
+        env:
+          GARAGE_ENDPOINT_URL: ${{ secrets.GARAGE_ENDPOINT_URL }}
+          GARAGE_BUCKET: ${{ secrets.GARAGE_BUCKET }}
+          GARAGE_ACCESS_KEY_ID: ${{ secrets.GARAGE_ACCESS_KEY_ID }}
+          GARAGE_SECRET_ACCESS_KEY: ${{ secrets.GARAGE_SECRET_ACCESS_KEY }}
+          GARAGE_REGION: ${{ vars.GARAGE_REGION || 'garage' }}
+          GARAGE_ADDRESSING_STYLE: ${{ vars.GARAGE_ADDRESSING_STYLE || 'path' }}
+          GARAGE_KEY_PREFIX: ${{ vars.GARAGE_KEY_PREFIX }}
+        run: |
+          if ls src/assets/images/cards/*.webp >/dev/null 2>&1; then
+            python scripts/python/garage_sync.py --apply
+          else
+            echo "No new card images to upload."
+          fi
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
