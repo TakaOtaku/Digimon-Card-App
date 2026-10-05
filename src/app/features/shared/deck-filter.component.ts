@@ -11,7 +11,7 @@ import { TAGS } from '@models';
 @Component({
   selector: 'digimon-deck-filter',
   template: `
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-end">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-stretch">
         <!-- Single Search Input -->
         <div class="md:col-span-7">
           <p-icon-field class="w-full">
@@ -42,13 +42,13 @@ import { TAGS } from '@models';
         </div>
 
         <!-- Browse All Button -->
-        <div class="md:col-span-2">
+        <div class="md:col-span-2 flex">
           <button
             pButton
             type="button"
             label="Browse All"
             icon="pi pi-list"
-            class="p-button-sm w-full"
+            class="w-full h-full"
             styleClass="p-button-outlined"
             style="border-color: #08528d; color: white; background-color: #08528d;"
             (click)="browseAll()">
@@ -56,12 +56,12 @@ import { TAGS } from '@models';
         </div>
 
         <!-- Submit/Search Button -->
-        <div class="md:col-span-1">
+        <div class="md:col-span-1 flex">
           <button
             pButton
             type="button"
             icon="pi pi-search"
-            class="p-button-sm w-full"
+            class="w-full h-full"
             styleClass="p-button-outlined"
             style="border-color: #08528d; color: white; background-color: #08528d;"
             (click)="applyFilters()">

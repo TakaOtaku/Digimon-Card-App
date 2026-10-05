@@ -43,7 +43,7 @@ import { DigimonCardStore } from '../../store/digimon-card.store';
               {{ deck.user }}
             </div>
             <div class="ml-auto font-bold">
-              {{ deck.date | date: 'dd.MM.YY' }}
+              {{ deck.date | date: 'dd.MM.yy' }}
             </div>
           </div>
         </div>

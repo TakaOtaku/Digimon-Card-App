@@ -88,7 +88,7 @@ import { environment } from '../../../../environments/environment';
               </div>
             </td>
             <td class="text-center text-xs hidden md:table-cell">
-              {{ deck?.date | date: 'dd.MM.YY' }}
+              {{ deck?.date | date: 'dd.MM.yy' }}
             </td>
           </tr>
         </ng-template>
