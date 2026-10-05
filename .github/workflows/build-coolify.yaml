@@ -58,4 +58,4 @@ jobs:
             echo "COOLIFY_WEBHOOK not set; redeploy manually in Coolify."
             exit 0
           fi
-          curl --fail --silent --show-error -H "Authorization: Bearer $COOLIFY_TOKEN" "$COOLIFY_WEBHOOK"
+          curl --fail --silent --show-error --request POST -H "Authorization: Bearer $COOLIFY_TOKEN" "$COOLIFY_WEBHOOK"
