@@ -50,8 +50,11 @@ export const Keywords: string[] = [
   '\uff1cDraw 2\uff1e',
   '\uff1cDraw 3\uff1e',
   '\uff1cEvade\uff1e',
+  '\uff1cEngage\uff1e',
   '\uff1cExecute\uff1e',
+  '\uff1cFragment (2)\uff1e',
   '\uff1cFragment (3)\uff1e',
+  '\uff1cGuard\uff1e',
   '\uff1cIceclad\uff1e',
   '\uff1cFortitude\uff1e',
   '\uff1cJamming\uff1e',
@@ -477,6 +480,8 @@ export const Types: string[] = [
   'Onmyōjutsu',
   'Plug-In',
   'SW',
+  'TB',
+  'Tentei Hachibushu',
   'Titan',
   'Transmutation (App Name)',
   'Unzip (App Name)',
@@ -572,6 +577,7 @@ export const SpecialRequirements: string[] = [
   'DigiXros',
   'Burst Digivolve',
   'ACE',
+  'Link',
   'App Fusion',
   'Assembly',
   'Arts Digivolve',
@@ -613,7 +619,7 @@ export const BlockButtons: MultiButtons[] = [
   },
 ];
 
-export const CardTypes = ['Digi-Egg', 'Digimon', 'Tamer', 'Option', 'Ace', 'Digimon/Option'];
+export const CardTypes = ['Digi-Egg', 'Digimon', 'Tamer', 'Option', 'Ace', 'Link', 'Digimon/Option'];
 export const CardTypeButtons: MultiButtons[] = [
   {
     name: 'Digi-Egg',
@@ -633,7 +639,11 @@ export const CardTypeButtons: MultiButtons[] = [
   },
   {
     name: 'Ace',
-    value: 'Digimon Ace',
+    value: 'Ace',
+  },
+  {
+    name: 'Link',
+    value: 'Link',
   },
   {
     name: 'Dual',

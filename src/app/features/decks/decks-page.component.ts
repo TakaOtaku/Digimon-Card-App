@@ -7,6 +7,7 @@ import { DialogStore, DigimonCardStore, SaveStore, WebsiteStore } from '@store';
 import { ToastrService } from 'ngx-toastr';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
+import { OverlayZoneFixDirective } from '@directives';
 import { DividerModule } from 'primeng/divider';
 import { PaginatorModule } from 'primeng/paginator';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
@@ -120,6 +121,7 @@ import { TierlistComponent } from './components/tierlist.component';
     TooltipModule,
     PaginationComponent,
     DeckFilterComponent,
+    OverlayZoneFixDirective,
   ],
   providers: [],
 })

@@ -7,7 +7,7 @@ import { DragDropModule } from 'primeng/dragdrop';
 import { DrawerModule } from 'primeng/drawer';
 import { SkeletonModule } from 'primeng/skeleton';
 import { DigimonCard, DRAG, dummyCard, ICountCard, IDraggedCard, PriceMetric } from '@models';
-import { IntersectionListenerDirective } from '@directives';
+import { IntersectionListenerDirective, OverlayZoneFixDirective } from '@directives';
 import { filterCards, withoutJ } from '@functions';
 import { DialogStore } from '@store';
 import { DigimonCardStore } from '@store';
@@ -87,6 +87,7 @@ import { CardMarketService } from '../../../services/card-market.service';
     DataViewModule,
     SkeletonModule,
     IntersectionListenerDirective,
+    OverlayZoneFixDirective,
   ],
 })
 export class PaginationCardListComponent {

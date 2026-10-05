@@ -5,6 +5,7 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DialogModule } from 'primeng/dialog';
+import { OverlayZoneFixDirective } from '@directives';
 import { TooltipModule } from 'primeng/tooltip';
 import { BehaviorSubject } from 'rxjs';
 import * as uuid from 'uuid';
@@ -142,6 +143,7 @@ import { ImportDeckDialogComponent } from '../../shared/dialogs/import-deck-dial
     ImportDeckDialogComponent,
     ConfirmDialogModule,
     CurrencyPipe,
+    OverlayZoneFixDirective,
   ],
   providers: [MessageService],
 })

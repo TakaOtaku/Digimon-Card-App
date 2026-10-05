@@ -1,4 +1,4 @@
-import { Component, effect, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { DialogModule } from 'primeng/dialog';
 import { ChangelogDialogComponent } from './dialogs/changelog-dialog.component';
 import { DeckDialogComponent } from './dialogs/deck-dialog.component';
@@ -12,7 +12,8 @@ import { DialogStore } from '../../store/dialog.store';
   template: `
     <p-dialog
       header="Deck Details"
-      [(visible)]="deckDialog"
+      [visible]="deckDialog()"
+      (visibleChange)="$event || closeDeckDialog()"
       (onHide)="closeDeckDialog()"
       [modal]="true"
       [dismissableMask]="true"
@@ -24,7 +25,8 @@ import { DialogStore } from '../../store/dialog.store';
 
     <p-dialog
       header="Export Deck"
-      [(visible)]="exportDeckDialog"
+      [visible]="exportDeckDialog()"
+      (visibleChange)="$event || closeExportDeckDialog()"
       (onHide)="closeExportDeckDialog()"
       [modal]="true"
       [dismissableMask]="true"
@@ -35,7 +37,8 @@ import { DialogStore } from '../../store/dialog.store';
     </p-dialog>
 
     <p-dialog
-      [(visible)]="settingsDialog"
+      [visible]="settingsDialog()"
+      (visibleChange)="$event || closeSettingsDialog()"
       (onHide)="closeSettingsDialog()"
       [baseZIndex]="10000"
       [modal]="true"
@@ -47,7 +50,8 @@ import { DialogStore } from '../../store/dialog.store';
     </p-dialog>
 
     <p-dialog
-      [(visible)]="viewCardDialog"
+      [visible]="viewCardDialog()"
+      (visibleChange)="$event || closeViewCardDialog()"
       (onHide)="closeViewCardDialog()"
       [showHeader]="false"
       [modal]="true"
@@ -58,7 +62,8 @@ import { DialogStore } from '../../store/dialog.store';
     </p-dialog>
 
     <p-dialog
-      [(visible)]="changelogDialog"
+      [visible]="changelogDialog()"
+      (visibleChange)="$event || closeChangelogDialog()"
       (onHide)="closeChangelogDialog()"
       header="Changelog"
       [modal]="true"
@@ -82,29 +87,12 @@ import { DialogStore } from '../../store/dialog.store';
 export class DialogComponent {
   dialogStore = inject(DialogStore);
 
-  settingsDialog = false;
-  viewCardDialog = false;
-  exportDeckDialog = false;
-  deckDialog = false;
-  changelogDialog = false;
-
-  constructor() {
-    effect(() => {
-      this.settingsDialog = this.dialogStore.settings();
-    });
-    effect(() => {
-      this.viewCardDialog = this.dialogStore.viewCard().show;
-    });
-    effect(() => {
-      this.exportDeckDialog = this.dialogStore.exportDeck().show;
-    });
-    effect(() => {
-      this.deckDialog = this.dialogStore.deck().show;
-    });
-    effect(() => {
-      this.changelogDialog = this.dialogStore.changelog();
-    });
-  }
+  // PrimeNG 21 closes on mask click outside the Angular zone; signal-driven visibility still re-renders.
+  settingsDialog = computed(() => this.dialogStore.settings());
+  viewCardDialog = computed(() => this.dialogStore.viewCard().show);
+  exportDeckDialog = computed(() => this.dialogStore.exportDeck().show);
+  deckDialog = computed(() => this.dialogStore.deck().show);
+  changelogDialog = computed(() => this.dialogStore.changelog());
 
   closeSettingsDialog() {
     this.dialogStore.updateSettingsDialog(false);

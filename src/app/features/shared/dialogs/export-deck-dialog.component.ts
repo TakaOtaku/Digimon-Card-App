@@ -121,6 +121,21 @@ export class ExportDeckDialogComponent implements OnInit {
     this.deckSort();
   }
 
+  // Cross-origin card images (Garage) must load with CORS or the canvas can't be exported.
+  private static loadCanvasImage(url: string): Promise<HTMLImageElement> {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      const isCrossOrigin = new URL(url, window.location.href).origin !== window.location.origin;
+      if (isCrossOrigin) {
+        img.crossOrigin = 'anonymous';
+      }
+      img.onload = () => resolve(img);
+      img.onerror = () => reject(new Error(`load ${url} fail`));
+      // The ?cors suffix avoids reusing a cached copy that was fetched without CORS.
+      img.src = isCrossOrigin ? `${url}${url.includes('?') ? '&' : '?'}cors` : url;
+    });
+  }
+
   private static writeText(ctx: any, text: string, x: number, y: number, scale: number, fontSize?: number, fillStyle?: string) {
     ctx.font = fontSize ? fontSize * scale + 'px Roboto' : '15px Roboto';
     ctx.shadowColor = 'black';
@@ -270,14 +285,7 @@ export class ExportDeckDialogComponent implements OnInit {
       return (document.getElementById('Canvas')! as HTMLCanvasElement).getContext('2d')!;
     };
 
-    const loadImage = (url: string) => {
-      return new Promise((resolve, reject) => {
-        const img = new Image();
-        img.onload = () => resolve(img);
-        img.onerror = () => reject(new Error(`load ${url} fail`));
-        img.src = url;
-      });
-    };
+    const loadImage = ExportDeckDialogComponent.loadCanvasImage;
 
     const background = (options: any) => {
       const ctx = getContext();
@@ -369,14 +377,7 @@ export class ExportDeckDialogComponent implements OnInit {
       return (document.getElementById('Canvas')! as HTMLCanvasElement).getContext('2d')!;
     };
 
-    const loadImage = (url: string) => {
-      return new Promise((resolve, reject) => {
-        const img = new Image();
-        img.onload = () => resolve(img);
-        img.onerror = () => reject(new Error(`load ${url} fail`));
-        img.src = url;
-      });
-    };
+    const loadImage = ExportDeckDialogComponent.loadCanvasImage;
 
     const background = (options: any) => {
       const ctx = getContext();
