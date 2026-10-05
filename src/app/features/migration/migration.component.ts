@@ -576,7 +576,7 @@ export class MigrationComponent implements OnInit, OnDestroy {
         this.migrationService.compareData()
             .pipe(
                 takeUntil(this.destroy$),
-                timeout(60000),
+                timeout(300000),
                 catchError(error => {
                     this.addMessage('error', 'Comparison Failed', error.message || 'Failed to compare data');
                     this.cdr.detectChanges();

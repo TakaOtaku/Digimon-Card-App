@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Observable, throwError, forkJoin, of } from 'rxjs';
-import { map, catchError, retry, delay, concatMap } from 'rxjs/operators';
+import { Observable, throwError, forkJoin, of, from, timer } from 'rxjs';
+import { map, catchError, retry, delay, concatMap, mergeMap, toArray, finalize } from 'rxjs/operators';
 import { IDeck, ISave, IUser } from '@models';
 import { environment } from '../../environments/environment';
 import { DigimonCardStore } from '../store/digimon-card.store';
@@ -75,6 +75,22 @@ export class MigrationService {
 
     constructor(private http: HttpClient) { }
 
+    /**
+     * Fetch pages 2..totalPages a few at a time. A page that still fails after retries
+     * fails the whole load, so callers never compare against incomplete data.
+     */
+    private fetchRemainingPages(totalPages: number, fetchPage: (page: number) => Observable<any[]>): Observable<any[]> {
+        const pages = Array.from({ length: totalPages - 1 }, (_, i) => i + 2);
+        return from(pages).pipe(
+            mergeMap(page => fetchPage(page).pipe(
+                retry({ count: 4, delay: (_error, attempt) => timer(1000 * 2 ** attempt) }),
+                map(items => ({ page, items }))
+            ), 4),
+            toArray(),
+            map(results => results.sort((a, b) => a.page - b.page).flatMap(r => r.items))
+        );
+    }
+
     // ===== CONNECTION TESTING =====
 
     /**
@@ -143,7 +159,7 @@ export class MigrationService {
      * @returns Observable array of all users
      */
     getMongoUsers(): Observable<any[]> {
-        return this.http.get<any>(`${this.mongoBackendUrl}users?limit=1000`).pipe(
+        return this.http.get<any>(`${this.mongoBackendUrl}users?limit=1000`, this.migrationRequestOptions()).pipe(
             concatMap(firstResponse => {
                 // If it's a plain array, return it directly
                 if (Array.isArray(firstResponse)) {
@@ -163,29 +179,17 @@ export class MigrationService {
                     }
 
                     // Fetch remaining pages
-                    const pageRequests: Observable<any[]>[] = [];
-                    for (let page = 2; page <= totalPages; page++) {
-                        pageRequests.push(
-                            this.http.get<any>(`${this.mongoBackendUrl}users?page=${page}&limit=1000`).pipe(
-                                map(response => {
-                                    if (Array.isArray(response)) return response;
-                                    if (response && Array.isArray(response.users)) return response.users;
-                                    return [];
-                                }),
-                                catchError(() => of([]))
-                            )
-                        );
-                    }
-
-                    // Combine first page with all other pages
-                    if (pageRequests.length === 0) {
-                        return of(firstPageUsers);
-                    }
-
-                    return forkJoin(pageRequests).pipe(
-                        map(allPages => {
-                            const allUsers = [...firstPageUsers];
-                            allPages.forEach(pageUsers => allUsers.push(...pageUsers));
+                    return this.fetchRemainingPages(totalPages, page =>
+                        this.http.get<any>(`${this.mongoBackendUrl}users?page=${page}&limit=1000`, this.migrationRequestOptions()).pipe(
+                            map(response => {
+                                if (Array.isArray(response)) return response;
+                                if (response && Array.isArray(response.users)) return response.users;
+                                return [];
+                            })
+                        )
+                    ).pipe(
+                        map(otherUsers => {
+                            const allUsers = [...firstPageUsers, ...otherUsers];
                             console.log(`MongoDB users: Fetched ${allUsers.length} total users from ${totalPages} pages`);
                             return allUsers;
                         })
@@ -204,10 +208,9 @@ export class MigrationService {
 
                 return of([]);
             }),
-            retry(2),
             catchError(error => {
                 console.error('Error fetching MongoDB users:', error);
-                return of([]);
+                return throwError(() => new Error('Could not load all MongoDB users. Try again in a few minutes.'));
             })
         );
     }
@@ -218,7 +221,7 @@ export class MigrationService {
      */
     getMongoDecks(): Observable<any[]> {
         // First, get the first page to determine total pages
-        return this.http.get<any>(`${this.mongoBackendUrl}decks?limit=500`).pipe(
+        return this.http.get<any>(`${this.mongoBackendUrl}decks?limit=500`, this.migrationRequestOptions()).pipe(
             concatMap(firstResponse => {
                 console.log('MongoDB decks first page response:', firstResponse);
 
@@ -240,29 +243,17 @@ export class MigrationService {
                     }
 
                     // Fetch remaining pages
-                    const pageRequests: Observable<any[]>[] = [];
-                    for (let page = 2; page <= totalPages; page++) {
-                        pageRequests.push(
-                            this.http.get<any>(`${this.mongoBackendUrl}decks?page=${page}&limit=500`).pipe(
-                                map(response => {
-                                    if (Array.isArray(response)) return response;
-                                    if (response && Array.isArray(response.decks)) return response.decks;
-                                    return [];
-                                }),
-                                catchError(() => of([]))
-                            )
-                        );
-                    }
-
-                    // Combine first page with all other pages
-                    if (pageRequests.length === 0) {
-                        return of(firstPageDecks);
-                    }
-
-                    return forkJoin(pageRequests).pipe(
-                        map(allPages => {
-                            const allDecks = [...firstPageDecks];
-                            allPages.forEach(pageDecks => allDecks.push(...pageDecks));
+                    return this.fetchRemainingPages(totalPages, page =>
+                        this.http.get<any>(`${this.mongoBackendUrl}decks?page=${page}&limit=500`, this.migrationRequestOptions()).pipe(
+                            map(response => {
+                                if (Array.isArray(response)) return response;
+                                if (response && Array.isArray(response.decks)) return response.decks;
+                                return [];
+                            })
+                        )
+                    ).pipe(
+                        map(otherDecks => {
+                            const allDecks = [...firstPageDecks, ...otherDecks];
                             console.log(`MongoDB decks: Fetched ${allDecks.length} total decks from ${totalPages} pages`);
                             return allDecks;
                         })
@@ -277,10 +268,9 @@ export class MigrationService {
                 console.warn('MongoDB decks: Unknown response format, returning empty array');
                 return of([]);
             }),
-            retry(2),
             catchError(error => {
                 console.error('Error fetching MongoDB decks:', error);
-                return of([]);
+                return throwError(() => new Error('Could not load all MongoDB decks. Try again in a few minutes.'));
             })
         );
     }
@@ -586,135 +576,76 @@ export class MigrationService {
      * Migrate only unmigrated users
      */
     migrateUnmigratedUsers(users: ISave[]): Observable<{ progress: MigrationProgress; result?: MigrationResult }> {
-        return new Observable(observer => {
-            const total = users.length;
-            let processed = 0;
-            let successful = 0;
-            let failed = 0;
-
-            observer.next({ progress: { total, processed, successful, failed } });
-
-            if (total === 0) {
-                observer.next({
-                    result: this.createSuccessResult('No unmigrated users to process'),
-                    progress: { total, processed, successful, failed }
-                });
-                observer.complete();
-                return;
-            }
-
-            const processUser = (index: number) => {
-                if (index >= users.length) {
-                    observer.next({
-                        result: this.createSuccessResult(
-                            `Migration completed. ${successful} successful, ${failed} failed out of ${total} users`
-                        ),
-                        progress: { total, processed, successful, failed }
-                    });
-                    observer.complete();
-                    return;
-                }
-
-                const user = users[index];
-                observer.next({
-                    progress: {
-                        total,
-                        processed,
-                        successful,
-                        failed,
-                        currentItem: user.displayName || user.uid
-                    }
-                });
-
-                this.migrateUser(user).subscribe({
-                    next: (result) => {
-                        processed++;
-                        if (result.success) {
-                            successful++;
-                        } else {
-                            failed++;
-                        }
-                        observer.next({ progress: { total, processed, successful, failed } });
-                        setTimeout(() => processUser(index + 1), 50);
-                    },
-                    error: () => {
-                        processed++;
-                        failed++;
-                        observer.next({ progress: { total, processed, successful, failed } });
-                        setTimeout(() => processUser(index + 1), 50);
-                    }
-                });
-            };
-
-            processUser(0);
-        });
+        return this.bulkUpsert('users', users.map(u => this.prepareUserData(u)));
     }
 
     /**
      * Migrate only unmigrated decks
      */
     migrateUnmigratedDecks(decks: IDeck[]): Observable<{ progress: MigrationProgress; result?: MigrationResult }> {
+        return this.bulkUpsert('decks', decks.map(d => this.prepareDeckData(d)));
+    }
+
+    /**
+     * Upsert prepared items through the token-protected bulk endpoint, 500 per request.
+     */
+    private bulkUpsert(kind: 'users' | 'decks', payloads: any[]): Observable<{ progress: MigrationProgress; result?: MigrationResult }> {
+        const BATCH_SIZE = 500;
         return new Observable(observer => {
-            const total = decks.length;
+            const total = payloads.length;
             let processed = 0;
             let successful = 0;
             let failed = 0;
+            const errors = new Set<string>();
 
             observer.next({ progress: { total, processed, successful, failed } });
 
             if (total === 0) {
                 observer.next({
-                    result: this.createSuccessResult('No unmigrated decks to process'),
+                    result: this.createSuccessResult(`No ${kind} to process`),
                     progress: { total, processed, successful, failed }
                 });
                 observer.complete();
                 return;
             }
 
-            const processDeck = (index: number) => {
-                if (index >= decks.length) {
+            const batchCount = Math.ceil(total / BATCH_SIZE);
+            const processBatch = (batchIndex: number) => {
+                if (batchIndex >= batchCount) {
+                    const summary = `Migration completed. ${successful} successful, ${failed} failed out of ${total} ${kind}`;
                     observer.next({
-                        result: this.createSuccessResult(
-                            `Migration completed. ${successful} successful, ${failed} failed out of ${total} decks`
-                        ),
+                        result: failed === 0
+                            ? this.createSuccessResult(summary)
+                            : this.createErrorResult(summary, [...errors].join('; ')),
                         progress: { total, processed, successful, failed }
                     });
                     observer.complete();
                     return;
                 }
 
-                const deck = decks[index];
+                const batch = payloads.slice(batchIndex * BATCH_SIZE, (batchIndex + 1) * BATCH_SIZE);
                 observer.next({
-                    progress: {
-                        total,
-                        processed,
-                        successful,
-                        failed,
-                        currentItem: deck.title
-                    }
+                    progress: { total, processed, successful, failed, currentItem: `Batch ${batchIndex + 1}/${batchCount} (${batch.length} ${kind})` }
                 });
 
-                this.migrateDeck(deck).subscribe({
-                    next: (result) => {
-                        processed++;
-                        if (result.success) {
-                            successful++;
-                        } else {
-                            failed++;
-                        }
+                this.http.post<any>(`${this.mongoMigrationUrl}${kind}/bulk`, batch, this.migrationRequestOptions()).pipe(
+                    finalize(() => {
+                        processed += batch.length;
                         observer.next({ progress: { total, processed, successful, failed } });
-                        setTimeout(() => processDeck(index + 1), 50);
+                        processBatch(batchIndex + 1);
+                    })
+                ).subscribe({
+                    next: () => {
+                        successful += batch.length;
                     },
-                    error: () => {
-                        processed++;
-                        failed++;
-                        observer.next({ progress: { total, processed, successful, failed } });
-                        setTimeout(() => processDeck(index + 1), 50);
+                    error: (error: HttpErrorResponse) => {
+                        failed += batch.length;
+                        errors.add(error.status === 403 ? 'Invalid or missing migration token' : (error.error?.message || error.message));
                     }
                 });
             };
 
-            processDeck(0);
+            processBatch(0);
         });
     }
 
@@ -744,7 +675,7 @@ export class MigrationService {
     migrateUser(user: ISave): Observable<MigrationResult> {
         const userData = this.prepareUserData(user);
 
-        return this.http.put(`${this.mongoMigrationUrl}users/${user.uid}`, userData).pipe(
+        return this.http.post(`${this.mongoMigrationUrl}users/bulk`, [userData], this.migrationRequestOptions()).pipe(
             map(() => this.createSuccessResult(`Successfully migrated user: ${user.displayName || user.uid}`)),
             catchError((error: HttpErrorResponse) =>
                 of(this.createErrorResult(`Failed to migrate user: ${user.displayName || user.uid}`, error.message))
@@ -760,7 +691,7 @@ export class MigrationService {
     migrateDeck(deck: IDeck): Observable<MigrationResult> {
         const deckData = this.prepareDeckData(deck);
 
-        return this.http.put(`${this.mongoMigrationUrl}decks/${deck.id}`, deckData).pipe(
+        return this.http.post(`${this.mongoMigrationUrl}decks/bulk`, [deckData], this.migrationRequestOptions()).pipe(
             map(() => this.createSuccessResult(`Successfully migrated deck: ${deck.title}`)),
             catchError((error: HttpErrorResponse) =>
                 of(this.createErrorResult(`Failed to migrate deck: ${deck.title}`, error.message))
