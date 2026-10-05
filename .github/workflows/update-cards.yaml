@@ -28,6 +28,9 @@ jobs:
   update-cards:
     runs-on: ubuntu-latest
     timeout-minutes: 120
+    permissions:
+      contents: write
+      actions: write
 
     steps:
       - name: Checkout code
@@ -111,3 +114,10 @@ jobs:
           git add -A
           git commit -m "[Automatic] Update Cards"
           git push
+
+      # Pushes made with GITHUB_TOKEN don't trigger workflows, but workflow_dispatch does.
+      - name: Build and deploy the new card data
+        if: steps.git_status.outputs.changed == 'true' && hashFiles('.github/workflows/build-coolify.yaml') != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run build-coolify.yaml --ref "$GITHUB_REF_NAME"
