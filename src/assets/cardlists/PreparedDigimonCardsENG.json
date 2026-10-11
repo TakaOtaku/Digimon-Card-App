@@ -3641,63 +3641,6 @@
     "attribute": "Vaccine",
     "block": [
       "00",
-      "01"
-    ],
-    "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT1-009_P1.webp",
-    "cardLv": "Lv.3",
-    "cardNumber": "BT1-009",
-    "cardType": "Digimon",
-    "color": "Red",
-    "digiXros": "-",
-    "digivolveCondition": [
-      {
-        "color": "Red",
-        "cost": "0",
-        "level": "2"
-      }
-    ],
-    "digivolveEffect": "-",
-    "dnaDigivolve": "-",
-    "dp": "3000",
-    "dualEffect": "-",
-    "effect": "-",
-    "form": "Rookie",
-    "id": "BT1-009_P1",
-    "illustrator": "Takase",
-    "linkDP": "-",
-    "linkEffect": "-",
-    "linkRequirement": "-",
-    "name": {
-      "english": "Monodramon",
-      "japanese": "\u30e2\u30ce\u30c9\u30e9\u30e2\u30f3",
-      "korean": "\ubaa8\ub178\ub4dc\ub77c\ubaac",
-      "simplifiedChinese": "\u5355\u89d2\u9f99\u517d",
-      "traditionalChinese": "\u55ae\u89d2\u9f8d\u7378"
-    },
-    "notes": "ST-7: Starter Deck Gallantmon",
-    "optionCardColourRequirement": "-",
-    "optionCardEffect": "-",
-    "playCost": "2",
-    "rarity": "C",
-    "restrictions": {
-      "chinese": "Unrestricted",
-      "english": "Unrestricted",
-      "japanese": "Unrestricted",
-      "korean": "Unrestricted"
-    },
-    "rule": "-",
-    "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "Mini Dragon",
-    "version": "No Foil -\u00a0Common"
-  },
-  {
-    "aceEffect": "-",
-    "assembly": "-",
-    "attribute": "Vaccine",
-    "block": [
-      "00",
       "01",
       "02"
     ],
@@ -26413,156 +26356,6 @@
     "specialDigivolve": "-",
     "type": "-",
     "version": "Normal"
-  },
-  {
-    "aceEffect": "-",
-    "assembly": "-",
-    "attribute": "-",
-    "block": [
-      "02"
-    ],
-    "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT10-101_P0.webp",
-    "cardLv": "-",
-    "cardNumber": "BT10-101",
-    "cardType": "Option",
-    "color": "Yellow",
-    "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
-    "dnaDigivolve": "-",
-    "dp": "-",
-    "dualEffect": "-",
-    "effect": "While you have [Pulsemon] or a Digimon with [Pulsemon] in its digivolution cards, you can ignore this card's color requirements.\n[Main] If you have 3 or more security cards, 1 of your opponent's Digimon gets -12000 DP for the turn. If you have 3 or fewer security cards, place 1 of your opponent's Digimon face down on top of their security stack.",
-    "form": "-",
-    "id": "BT10-101_P0",
-    "illustrator": "itohiro",
-    "linkDP": "-",
-    "linkEffect": "-",
-    "linkRequirement": "-",
-    "name": {
-      "english": "L\u00f3nkh\u0113 Adistakto",
-      "japanese": "\u30ed\u30f3\u30d2\n\u30fb\u30a2\u30c7\u30a3\u30b9\u30bf\u30af\u30c8",
-      "korean": "-",
-      "simplifiedChinese": "\u65e0\u60c5\u4e4b\u67aa",
-      "traditionalChinese": "\u7121\u60c5\u4e4b\u69cd"
-    },
-    "notes": "Xros Encounter Pre-Release Pack",
-    "optionCardColourRequirement": "-",
-    "optionCardEffect": "-",
-    "playCost": "8",
-    "rarity": "U",
-    "restrictions": {
-      "chinese": "Unrestricted",
-      "english": "Unrestricted",
-      "japanese": "Unrestricted",
-      "korean": "Unrestricted"
-    },
-    "rule": "-",
-    "securityEffect": "[Security] Activate this card's [Main] effects.",
-    "specialDigivolve": "-",
-    "type": "-",
-    "version": "Foil - Pre Release Stamp -\u00a0Uncommon"
-  },
-  {
-    "aceEffect": "-",
-    "assembly": "-",
-    "attribute": "-",
-    "block": [
-      "02"
-    ],
-    "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT10-101-Errata.webp",
-    "cardLv": "-",
-    "cardNumber": "BT10-101",
-    "cardType": "Option",
-    "color": "Yellow",
-    "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
-    "dnaDigivolve": "-",
-    "dp": "-",
-    "dualEffect": "-",
-    "effect": "While you have [Pulsemon] or a Digimon with [Pulsemon] in its digivolution cards, you can ignore this card's color requirements.\n[Main] If you have 3 or more security cards, 1 of your opponent's Digimon gets -12000 DP for the turn. If you have 3 or fewer security cards, place 1 of your opponent's Digimon face down on top of their security stack.",
-    "form": "-",
-    "id": "BT10-101-Errata",
-    "illustrator": "itohiro",
-    "linkDP": "-",
-    "linkEffect": "-",
-    "linkRequirement": "-",
-    "name": {
-      "english": "L\u00f3nkh\u0113 Adistakto",
-      "japanese": "\u30ed\u30f3\u30d2\n\u30fb\u30a2\u30c7\u30a3\u30b9\u30bf\u30af\u30c8",
-      "korean": "-",
-      "simplifiedChinese": "\u65e0\u60c5\u4e4b\u67aa",
-      "traditionalChinese": "\u7121\u60c5\u4e4b\u69cd"
-    },
-    "notes": "Revision Pack 2023",
-    "optionCardColourRequirement": "-",
-    "optionCardEffect": "-",
-    "playCost": "8",
-    "rarity": "U",
-    "restrictions": {
-      "chinese": "Unrestricted",
-      "english": "Unrestricted",
-      "japanese": "Unrestricted",
-      "korean": "Unrestricted"
-    },
-    "rule": "-",
-    "securityEffect": "[Security] Activate this card's [Main] effects.",
-    "specialDigivolve": "-",
-    "type": "-",
-    "version": "No Foil - Errata Text -\u00a0Uncommon"
-  },
-  {
-    "aceEffect": "-",
-    "assembly": "-",
-    "attribute": "-",
-    "block": [
-      "02"
-    ],
-    "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT10-101_P1.webp",
-    "cardLv": "-",
-    "cardNumber": "BT10-101",
-    "cardType": "Option",
-    "color": "Yellow",
-    "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
-    "dnaDigivolve": "-",
-    "dp": "-",
-    "dualEffect": "-",
-    "effect": "While you have [Pulsemon] or a Digimon with [Pulsemon] in its digivolution cards, you can ignore this card's color requirements.\n[Main] If you have 3 or more security cards, 1 of your opponent's Digimon gets -12000 DP for the turn. If you have 3 or fewer security cards, place 1 of your opponent's Digimon face down on top of their security stack.",
-    "form": "-",
-    "id": "BT10-101_P1",
-    "illustrator": "itohiro",
-    "linkDP": "-",
-    "linkEffect": "-",
-    "linkRequirement": "-",
-    "name": {
-      "english": "L\u00f3nkh\u0113 Adistakto",
-      "japanese": "\u30ed\u30f3\u30d2\n\u30fb\u30a2\u30c7\u30a3\u30b9\u30bf\u30af\u30c8",
-      "korean": "-",
-      "simplifiedChinese": "\u65e0\u60c5\u4e4b\u67aa",
-      "traditionalChinese": "\u7121\u60c5\u4e4b\u69cd"
-    },
-    "notes": "Event Pack 5",
-    "optionCardColourRequirement": "-",
-    "optionCardEffect": "-",
-    "playCost": "8",
-    "rarity": "U",
-    "restrictions": {
-      "chinese": "Unrestricted",
-      "english": "Unrestricted",
-      "japanese": "Unrestricted",
-      "korean": "Unrestricted"
-    },
-    "rule": "-",
-    "securityEffect": "[Security] Activate this card's [Main] effects.",
-    "specialDigivolve": "-",
-    "type": "-",
-    "version": "Foil - Coloured Border -\u00a0Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -74682,62 +74475,6 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "Data",
-    "block": [
-      "03"
-    ],
-    "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT14-044_P1.webp",
-    "cardLv": "Lv.3",
-    "cardNumber": "BT14-044",
-    "cardType": "Digimon",
-    "color": "Green",
-    "digiXros": "-",
-    "digivolveCondition": [
-      {
-        "color": "Green",
-        "cost": "0",
-        "level": "2"
-      }
-    ],
-    "digivolveEffect": "[Your Turn] [Once Per Turn] When this Digimon would digivolve, if you have a green Tamer, reduce the cost by 1.",
-    "dnaDigivolve": "-",
-    "dp": "1000",
-    "dualEffect": "-",
-    "effect": "[Start of Your Main Phase] 1 of your opponent's Digimon gains \"[All Turns] When this Digimon becomes suspended, lose 2 memory.\" until the end of their turn.",
-    "form": "Rookie",
-    "id": "BT14-044_P1",
-    "illustrator": "Tonamikanji",
-    "linkDP": "-",
-    "linkEffect": "-",
-    "linkRequirement": "-",
-    "name": {
-      "english": "Palmon",
-      "japanese": "\u30d1\u30eb\u30e2\u30f3",
-      "korean": "\ud314\ubaac",
-      "simplifiedChinese": "\u5df4\u9c81\u517d",
-      "traditionalChinese": "\u5df4\u9b6f\u7378"
-    },
-    "notes": "BT-14: Booster Blast Ace",
-    "optionCardColourRequirement": "-",
-    "optionCardEffect": "-",
-    "playCost": "3",
-    "rarity": "SR",
-    "restrictions": {
-      "chinese": "Unrestricted",
-      "english": "Unrestricted",
-      "japanese": "Unrestricted",
-      "korean": "Not released"
-    },
-    "rule": "-",
-    "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "Vegetation",
-    "version": "Textured -\u00a0Alternative Art"
-  },
-  {
-    "aceEffect": "-",
-    "assembly": "-",
     "attribute": "Virus",
     "block": [
       "03"
@@ -77391,62 +77128,6 @@
     "specialDigivolve": "-",
     "type": "Cyborg/D-Brigade/DigiPolice",
     "version": "Normal"
-  },
-  {
-    "aceEffect": "-",
-    "assembly": "-",
-    "attribute": "Virus",
-    "block": [
-      "03"
-    ],
-    "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT14-068_P1.webp",
-    "cardLv": "Lv.6",
-    "cardNumber": "BT14-068",
-    "cardType": "Digimon",
-    "color": "Black",
-    "digiXros": "-",
-    "digivolveCondition": [
-      {
-        "color": "Black",
-        "cost": "4",
-        "level": "5"
-      }
-    ],
-    "digivolveEffect": "-",
-    "dnaDigivolve": "-",
-    "dp": "12000",
-    "dualEffect": "-",
-    "effect": "[When Digivolving] Delete up to 7 play cost's total worth of your opponent's Digimon.\n[Opponent's Turn] All of your Digimon with the [D-Brigade]\u00a0trait gain \uff1cBlocker\uff1e \n[End of Your Turn] [Once Per Turn] Reveal the top 3 cards of your deck. You may play up to 7 play cost's total worth of cards with the [D-Brigade] or [DigiPolice]\u00a0trait among them without paying the costs. Trash the rest.",
-    "form": "Mega",
-    "id": "BT14-068_P1",
-    "illustrator": "Naochika Morishita",
-    "linkDP": "-",
-    "linkEffect": "-",
-    "linkRequirement": "-",
-    "name": {
-      "english": "Brigadramon",
-      "japanese": "\u30d6\u30ea\u30ac\u30fc\u30c9\u30e9\u30e2\u30f3",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "\u65c5\u5718\u9f8d\u7378"
-    },
-    "notes": "BT-14: Booster Blast Ace",
-    "optionCardColourRequirement": "-",
-    "optionCardEffect": "-",
-    "playCost": "12",
-    "rarity": "SR",
-    "restrictions": {
-      "chinese": "Unrestricted",
-      "english": "Unrestricted",
-      "japanese": "Unrestricted",
-      "korean": "Not released"
-    },
-    "rule": "-",
-    "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "Cyborg/D-Brigade/DigiPolice",
-    "version": "Textured -\u00a0Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -196682,7 +196363,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "12000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "[When Digivolving] [When Attacking] [Once Per Turn] \uff1cRecovery +1\uff1e Then, by trashing the top security card of 1 player with the most security cards, this Digimon unsuspends.\n[All Turns] [Once Per Turn] When any of your [Glowing Dawn]\u00a0trait Digimon would leave the battle area, by trashing your top security card, they don't leave.",
     "form": "Mega",
     "id": "BT25-043",
@@ -196698,8 +196379,8 @@
       "traditionalChinese": "-"
     },
     "notes": "BT-25: BOOSTER DUAL REVOLUTION",
-    "optionCardColourRequirement": "Yellow",
-    "optionCardEffect": "\uff1cUse Req. ([Glowing Dawn] trait)\uff1e \n[Main] 1 of your opponent's Digimon gets -8000 DP for the turn. Then, by trashing your top security card, all of your opponent's Digimon get -5000 DP for the turn.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "6",
     "rarity": "UR",
     "restrictions": {
@@ -196738,7 +196419,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "12000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "[When Digivolving] [When Attacking] [Once Per Turn] \uff1cRecovery +1\uff1e Then, by trashing the top security card of 1 player with the most security cards, this Digimon unsuspends.\n[All Turns] [Once Per Turn] When any of your [Glowing Dawn]\u00a0trait Digimon would leave the battle area, by trashing your top security card, they don't leave.",
     "form": "Mega",
     "id": "BT25-043_P1",
@@ -196754,8 +196435,8 @@
       "traditionalChinese": "-"
     },
     "notes": "BT-25: BOOSTER DUAL REVOLUTION",
-    "optionCardColourRequirement": "Yellow",
-    "optionCardEffect": "\uff1cUse Req. ([Glowing Dawn] trait)\uff1e \n[Main] 1 of your opponent's Digimon gets -8000 DP for the turn. Then, by trashing your top security card, all of your opponent's Digimon get -5000 DP for the turn.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "6",
     "rarity": "UR",
     "restrictions": {
@@ -196794,7 +196475,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "12000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "[When Digivolving] [When Attacking] [Once Per Turn] \uff1cRecovery +1\uff1e Then, by trashing the top security card of 1 player with the most security cards, this Digimon unsuspends.\n[All Turns] [Once Per Turn] When any of your [Glowing Dawn]\u00a0trait Digimon would leave the battle area, by trashing your top security card, they don't leave.",
     "form": "Mega",
     "id": "BT25-043_P2",
@@ -196810,8 +196491,8 @@
       "traditionalChinese": "-"
     },
     "notes": "BT-25: BOOSTER DUAL REVOLUTION",
-    "optionCardColourRequirement": "Yellow",
-    "optionCardEffect": "\uff1cUse Req. ([Glowing Dawn] trait)\uff1e \n[Main] 1 of your opponent's Digimon gets -8000 DP for the turn. Then, by trashing your top security card, all of your opponent's Digimon get -5000 DP for the turn.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "6",
     "rarity": "UR",
     "restrictions": {
@@ -197115,62 +196796,6 @@
     "specialDigivolve": "[Digivolve] Lv.2 w/[Glowing Dawn]\u00a0trait: Cost 0 ",
     "type": "Reptile/Glowing Dawn/BEATBREAK",
     "version": "Normal"
-  },
-  {
-    "aceEffect": "-",
-    "assembly": "-",
-    "attribute": "Data",
-    "block": [
-      "06"
-    ],
-    "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT25-046_P1.webp",
-    "cardLv": "Lv.3",
-    "cardNumber": "BT25-046",
-    "cardType": "Digimon",
-    "color": "Green",
-    "digiXros": "-",
-    "digivolveCondition": [
-      {
-        "color": "Green",
-        "cost": "0",
-        "level": "2"
-      }
-    ],
-    "digivolveEffect": "\uff1cPiercing\uff1e ",
-    "dnaDigivolve": "-",
-    "dp": "2000",
-    "dualEffect": "-",
-    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 card with the [Glowing Dawn]\u00a0trait and 1 green card with the [BEATBREAK]\u00a0trait among them to the hand. Return the rest to the bottom of the deck.",
-    "form": "Rookie",
-    "id": "BT25-046_P1",
-    "illustrator": "Tonamikanji",
-    "linkDP": "-",
-    "linkEffect": "-",
-    "linkRequirement": "-",
-    "name": {
-      "english": "Gekkomon",
-      "japanese": "\u30b2\u30c3\u30b3\u30fc\u30e2\u30f3",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
-    },
-    "notes": "Box Promotion Pack: DUAL REVOLUTION",
-    "optionCardColourRequirement": "-",
-    "optionCardEffect": "-",
-    "playCost": "3",
-    "rarity": "U",
-    "restrictions": {
-      "chinese": "Unrestricted",
-      "english": "Unrestricted",
-      "japanese": "Unrestricted",
-      "korean": "Unrestricted"
-    },
-    "rule": "-",
-    "securityEffect": "-",
-    "specialDigivolve": "[Digivolve] Lv.2 w/[Glowing Dawn]\u00a0trait: Cost 0 ",
-    "type": "Reptile/Glowing Dawn/BEATBREAK",
-    "version": "Full Art -\u00a0Box Topper"
   },
   {
     "aceEffect": "-",
@@ -197789,7 +197414,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "8000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "[When Digivolving] [When Attacking] [Once Per Turn] By trashing the bottom face-down card under any of your Tamers, \uff1cDe-Digivolve 1\uff1e 1 of your opponent's Digimon. \n[When Digivolving] This Digimon may battle 1 of your opponent's Digimon.",
     "form": "Ultimate",
     "id": "BT25-057",
@@ -197805,8 +197430,8 @@
       "traditionalChinese": "-"
     },
     "notes": "BT-25: BOOSTER DUAL REVOLUTION",
-    "optionCardColourRequirement": "Green",
-    "optionCardEffect": "\uff1cUse Req. ([Glowing Dawn] trait)\uff1e \n[Main] 1 of your Digimon gains \uff1cRush\uff1e , \uff1cSecurity A. +1\uff1e and +5000 DP for the turn. Then, it may attack.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "4",
     "rarity": "UR",
     "restrictions": {
@@ -197850,7 +197475,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "8000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "[When Digivolving] [When Attacking] [Once Per Turn] By trashing the bottom face-down card under any of your Tamers, \uff1cDe-Digivolve 1\uff1e 1 of your opponent's Digimon. \n[When Digivolving] This Digimon may battle 1 of your opponent's Digimon.",
     "form": "Ultimate",
     "id": "BT25-057_P1",
@@ -197866,8 +197491,8 @@
       "traditionalChinese": "-"
     },
     "notes": "BT-25: BOOSTER DUAL REVOLUTION",
-    "optionCardColourRequirement": "Green",
-    "optionCardEffect": "\uff1cUse Req. ([Glowing Dawn] trait)\uff1e \n[Main] 1 of your Digimon gains \uff1cRush\uff1e , \uff1cSecurity A. +1\uff1e and +5000 DP for the turn. Then, it may attack.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "4",
     "rarity": "UR",
     "restrictions": {
@@ -197911,7 +197536,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "8000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "[When Digivolving] [When Attacking] [Once Per Turn] By trashing the bottom face-down card under any of your Tamers, \uff1cDe-Digivolve 1\uff1e 1 of your opponent's Digimon. \n[When Digivolving] This Digimon may battle 1 of your opponent's Digimon.",
     "form": "Ultimate",
     "id": "BT25-057_P2",
@@ -197927,8 +197552,8 @@
       "traditionalChinese": "-"
     },
     "notes": "BT-25: BOOSTER DUAL REVOLUTION",
-    "optionCardColourRequirement": "Green",
-    "optionCardEffect": "\uff1cUse Req. ([Glowing Dawn] trait)\uff1e \n[Main] 1 of your Digimon gains \uff1cRush\uff1e , \uff1cSecurity A. +1\uff1e and +5000 DP for the turn. Then, it may attack.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "4",
     "rarity": "UR",
     "restrictions": {
@@ -199925,7 +199550,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "12000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "\uff1cBlocker\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] You may use 1 [Three Musketeers] or [TS]\u00a0trait Option card from your hand or this Digimon's digivolution cards without paying the cost.\n[When Digivolving] [When Attacking] [Counter] [Once Per Turn] By trashing 1 Option card from any of your Digimon's digivolution cards or link cards, this Digimon unsuspends.",
     "form": "Mega",
     "id": "BT25-085",
@@ -199941,8 +199566,8 @@
       "traditionalChinese": "-"
     },
     "notes": "BT-25: BOOSTER DUAL REVOLUTION",
-    "optionCardColourRequirement": "Purple",
-    "optionCardEffect": "\uff1cUse Req. ([Three Musketeers] in text)\uff1e \n[Main] Delete 1 of your opponent's highest level Digimon. Then, you may place 1 [Three Musketeers]\u00a0trait card from your hand or trash as any of your Digimon's bottom digivolution card.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "6",
     "rarity": "UR",
     "restrictions": {
@@ -199986,7 +199611,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "12000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "\uff1cBlocker\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] You may use 1 [Three Musketeers] or [TS]\u00a0trait Option card from your hand or this Digimon's digivolution cards without paying the cost.\n[When Digivolving] [When Attacking] [Counter] [Once Per Turn] By trashing 1 Option card from any of your Digimon's digivolution cards or link cards, this Digimon unsuspends.",
     "form": "Mega",
     "id": "BT25-085_P1",
@@ -200002,8 +199627,8 @@
       "traditionalChinese": "-"
     },
     "notes": "BT-25: BOOSTER DUAL REVOLUTION",
-    "optionCardColourRequirement": "Purple",
-    "optionCardEffect": "\uff1cUse Req. ([Three Musketeers] in text)\uff1e \n[Main] Delete 1 of your opponent's highest level Digimon. Then, you may place 1 [Three Musketeers]\u00a0trait card from your hand or trash as any of your Digimon's bottom digivolution card.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "6",
     "rarity": "UR",
     "restrictions": {
@@ -200047,7 +199672,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "12000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "\uff1cBlocker\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] You may use 1 [Three Musketeers] or [TS]\u00a0trait Option card from your hand or this Digimon's digivolution cards without paying the cost.\n[When Digivolving] [When Attacking] [Counter] [Once Per Turn] By trashing 1 Option card from any of your Digimon's digivolution cards or link cards, this Digimon unsuspends.",
     "form": "Mega",
     "id": "BT25-085_P2",
@@ -200063,8 +199688,8 @@
       "traditionalChinese": "-"
     },
     "notes": "BT-25: BOOSTER DUAL REVOLUTION",
-    "optionCardColourRequirement": "Purple",
-    "optionCardEffect": "\uff1cUse Req. ([Three Musketeers] in text)\uff1e \n[Main] Delete 1 of your opponent's highest level Digimon. Then, you may place 1 [Three Musketeers]\u00a0trait card from your hand or trash as any of your Digimon's bottom digivolution card.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "6",
     "rarity": "UR",
     "restrictions": {
@@ -201491,7 +201116,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "15000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "\uff1cRaid\uff1e \n\uff1cPiercing\uff1e \n\uff1cSecurity A. +1\uff1e \n\uff1cBlocker\uff1e \n\uff1cBarrier\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] Activate 1 [Main] effect on this card's Option side.\n[Your Turn] All of your [Marcus Damon]s are also treated as 12000 DP Digimon and gain \uff1cRush\uff1e ",
     "form": "Mega",
     "id": "BT25-104",
@@ -201507,8 +201132,8 @@
       "traditionalChinese": "-"
     },
     "notes": "BT-25: BOOSTER DUAL REVOLUTION",
-    "optionCardColourRequirement": "Red/Yellow",
-    "optionCardEffect": "\uff1cUse Req. ([DATA SQUAD] trait)\uff1e \n[Main] 1 of your opponent's Digimon gets -15000 DP for the turn. Then, you may play 1 Tamer card from your hand without paying the cost.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "6",
     "rarity": "SEC",
     "restrictions": {
@@ -201552,7 +201177,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "15000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "\uff1cRaid\uff1e \n\uff1cPiercing\uff1e \n\uff1cSecurity A. +1\uff1e \n\uff1cBlocker\uff1e \n\uff1cBarrier\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] Activate 1 [Main] effect on this card's Option side.\n[Your Turn] All of your [Marcus Damon]s are also treated as 12000 DP Digimon and gain \uff1cRush\uff1e ",
     "form": "Mega",
     "id": "BT25-104_P1",
@@ -201568,8 +201193,8 @@
       "traditionalChinese": "-"
     },
     "notes": "BT-25: BOOSTER DUAL REVOLUTION",
-    "optionCardColourRequirement": "Red/Yellow",
-    "optionCardEffect": "\uff1cUse Req. ([DATA SQUAD] trait)\uff1e \n[Main] 1 of your opponent's Digimon gets -15000 DP for the turn. Then, you may play 1 Tamer card from your hand without paying the cost.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "6",
     "rarity": "SEC",
     "restrictions": {
@@ -201613,7 +201238,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "15000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "\uff1cRaid\uff1e \n\uff1cPiercing\uff1e \n\uff1cSecurity A. +1\uff1e \n\uff1cBlocker\uff1e \n\uff1cBarrier\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] Activate 1 [Main] effect on this card's Option side.\n[Your Turn] All of your [Marcus Damon]s are also treated as 12000 DP Digimon and gain \uff1cRush\uff1e ",
     "form": "Mega",
     "id": "BT25-104_P2",
@@ -201629,8 +201254,8 @@
       "traditionalChinese": "-"
     },
     "notes": "BT-25: BOOSTER DUAL REVOLUTION",
-    "optionCardColourRequirement": "Red/Yellow",
-    "optionCardEffect": "\uff1cUse Req. ([DATA SQUAD] trait)\uff1e \n[Main] 1 of your opponent's Digimon gets -15000 DP for the turn. Then, you may play 1 Tamer card from your hand without paying the cost.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "6",
     "rarity": "SEC",
     "restrictions": {
@@ -203494,7 +203119,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "8000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "[When Digivolving] By trashing the top security card of 1 player with the most security cards, 1 of your opponent's Digimon or Tamers can't suspend until their turn ends.\n[When Digivolving] [When Attacking] [Once Per Turn] By trashing the bottom face-down card from under any of your Tamers, \uff1cRecovery +1\uff1e ",
     "form": "Ultimate",
     "id": "BT26-031",
@@ -203510,8 +203135,8 @@
       "traditionalChinese": "-"
     },
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
-    "optionCardColourRequirement": "Yellow",
-    "optionCardEffect": "\uff1cUse Req. ([Glowing Dawn] trait)\uff1e \n[Main] 1 of your opponent's Digimon gets -8000 DP until their turn ends. By trashing your top security card, it further gets -5000 DP.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "4",
     "rarity": "SR",
     "restrictions": {
@@ -203555,7 +203180,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "8000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "[When Digivolving] By trashing the top security card of 1 player with the most security cards, 1 of your opponent's Digimon or Tamers can't suspend until their turn ends.\n[When Digivolving] [When Attacking] [Once Per Turn] By trashing the bottom face-down card from under any of your Tamers, \uff1cRecovery +1\uff1e ",
     "form": "Ultimate",
     "id": "BT26-031_P1",
@@ -203571,8 +203196,8 @@
       "traditionalChinese": "-"
     },
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
-    "optionCardColourRequirement": "Yellow",
-    "optionCardEffect": "\uff1cUse Req. ([Glowing Dawn] trait)\uff1e \n[Main] 1 of your opponent's Digimon gets -8000 DP until their turn ends. By trashing your top security card, it further gets -5000 DP.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "4",
     "rarity": "SR",
     "restrictions": {
@@ -203616,7 +203241,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "13000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "\uff1cAlliance\uff1e \n\uff1cSuccession ([Ceresmon])\uff1e \n[When Digivolving] All of your opponent's suspended Digimon get -5000 DP until their turn ends. Then, by suspending 1 Digimon, if it's your turn, you may play or use 1 [Vegetation] or [TS]\u00a0trait card from your hand with the cost reduced by 5.",
     "form": "Mega",
     "id": "BT26-032",
@@ -203632,8 +203257,8 @@
       "traditionalChinese": "-"
     },
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
-    "optionCardColourRequirement": "Green",
-    "optionCardEffect": "\uff1cUse Req. ([TS] trait)\uff1e \n[Main] You may suspend 2 of your opponent's Digimon or Tamers. Then, 3 of their Digimon or Tamers can't unsuspend until their turn ends.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
@@ -203677,7 +203302,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "13000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "\uff1cAlliance\uff1e \n\uff1cSuccession ([Ceresmon])\uff1e \n[When Digivolving] All of your opponent's suspended Digimon get -5000 DP until their turn ends. Then, by suspending 1 Digimon, if it's your turn, you may play or use 1 [Vegetation] or [TS]\u00a0trait card from your hand with the cost reduced by 5.",
     "form": "Mega",
     "id": "BT26-032_P1",
@@ -203693,8 +203318,8 @@
       "traditionalChinese": "-"
     },
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
-    "optionCardColourRequirement": "Green",
-    "optionCardEffect": "\uff1cUse Req. ([TS] trait)\uff1e \n[Main] You may suspend 2 of your opponent's Digimon or Tamers. Then, 3 of their Digimon or Tamers can't unsuspend until their turn ends.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
@@ -203738,7 +203363,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "13000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "\uff1cRaid\uff1e \n\uff1cAlliance\uff1e \n\uff1cEngage\uff1e \n[When Digivolving] Add your top security card to the hand. Then, if it's your turn, you may play or use 1 [Iliad] card from your hand with the cost reduced by 5.\n[All Turns] When any of your [TS]\u00a0trait Digimon or Tamers would leave the battle area, by placing this Digimon's top stacked card as the bottom security card, they don't leave.",
     "form": "Mega",
     "id": "BT26-033",
@@ -203754,8 +203379,8 @@
       "traditionalChinese": "-"
     },
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
-    "optionCardColourRequirement": "Yellow/Red",
-    "optionCardEffect": "For each of your security cards, add 1 to this card's use cost.\n\uff1cUse Req. ([TS] trait)\uff1e \n[Main] Delete all of your opponent's Digimon with the lowest DP. Then, \uff1cRecovery +1\uff1e ",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "2",
     "rarity": "SR",
     "restrictions": {
@@ -203799,7 +203424,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "13000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "\uff1cRaid\uff1e \n\uff1cAlliance\uff1e \n\uff1cEngage\uff1e \n[When Digivolving] Add your top security card to the hand. Then, if it's your turn, you may play or use 1 [Iliad] card from your hand with the cost reduced by 5.\n[All Turns] When any of your [TS]\u00a0trait Digimon or Tamers would leave the battle area, by placing this Digimon's top stacked card as the bottom security card, they don't leave.",
     "form": "Mega",
     "id": "BT26-033_P1",
@@ -203815,8 +203440,8 @@
       "traditionalChinese": "-"
     },
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
-    "optionCardColourRequirement": "Yellow/Red",
-    "optionCardEffect": "For each of your security cards, add 1 to this card's use cost.\n\uff1cUse Req. ([TS] trait)\uff1e \n[Main] Delete all of your opponent's Digimon with the lowest DP. Then, \uff1cRecovery +1\uff1e ",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "2",
     "rarity": "SR",
     "restrictions": {
@@ -203860,7 +203485,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "13000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "\uff1cRaid\uff1e \n\uff1cAlliance\uff1e \n\uff1cEngage\uff1e \n[When Digivolving] Add your top security card to the hand. Then, if it's your turn, you may play or use 1 [Iliad] card from your hand with the cost reduced by 5.\n[All Turns] When any of your [TS]\u00a0trait Digimon or Tamers would leave the battle area, by placing this Digimon's top stacked card as the bottom security card, they don't leave.",
     "form": "Mega",
     "id": "BT26-033_P2",
@@ -203876,8 +203501,8 @@
       "traditionalChinese": "-"
     },
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
-    "optionCardColourRequirement": "Yellow/Red",
-    "optionCardEffect": "For each of your security cards, add 1 to this card's use cost.\n\uff1cUse Req. ([TS] trait)\uff1e \n[Main] Delete all of your opponent's Digimon with the lowest DP. Then, \uff1cRecovery +1\uff1e ",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "2",
     "rarity": "SR",
     "restrictions": {
@@ -204832,7 +204457,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "15000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "[When Digivolving] You may suspend 2 Digimon or Tamers. Then, 2 of your opponent's Digimon or Tamers can't unsuspend until their turn ends.\n[When Digivolving] [When Attacking] By returning 1 other suspended Digimon to the bottom of the deck, trash your opponent's top security card.",
     "form": "Mega",
     "id": "BT26-050",
@@ -204848,8 +204473,8 @@
       "traditionalChinese": "-"
     },
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
-    "optionCardColourRequirement": "Green",
-    "optionCardEffect": "\uff1cUse Req. ([DATA SQUAD] trait)\uff1e \n[Main] Suspend 2 of your opponent's Digimon or Tamers. Then, until their turn ends, none of their suspended Digimon or Tamers can digivolve or unsuspend.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "6",
     "rarity": "UR",
     "restrictions": {
@@ -204888,7 +204513,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "15000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "[When Digivolving] You may suspend 2 Digimon or Tamers. Then, 2 of your opponent's Digimon or Tamers can't unsuspend until their turn ends.\n[When Digivolving] [When Attacking] By returning 1 other suspended Digimon to the bottom of the deck, trash your opponent's top security card.",
     "form": "Mega",
     "id": "BT26-050_P1",
@@ -204904,8 +204529,8 @@
       "traditionalChinese": "-"
     },
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
-    "optionCardColourRequirement": "Green",
-    "optionCardEffect": "\uff1cUse Req. ([DATA SQUAD] trait)\uff1e \n[Main] Suspend 2 of your opponent's Digimon or Tamers. Then, until their turn ends, none of their suspended Digimon or Tamers can digivolve or unsuspend.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "6",
     "rarity": "UR",
     "restrictions": {
@@ -204944,7 +204569,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "15000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "[When Digivolving] You may suspend 2 Digimon or Tamers. Then, 2 of your opponent's Digimon or Tamers can't unsuspend until their turn ends.\n[When Digivolving] [When Attacking] By returning 1 other suspended Digimon to the bottom of the deck, trash your opponent's top security card.",
     "form": "Mega",
     "id": "BT26-050_P2",
@@ -204960,8 +204585,8 @@
       "traditionalChinese": "-"
     },
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
-    "optionCardColourRequirement": "Green",
-    "optionCardEffect": "\uff1cUse Req. ([DATA SQUAD] trait)\uff1e \n[Main] Suspend 2 of your opponent's Digimon or Tamers. Then, until their turn ends, none of their suspended Digimon or Tamers can digivolve or unsuspend.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "6",
     "rarity": "UR",
     "restrictions": {
@@ -205346,7 +204971,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "8000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "\uff1cJamming\uff1e \n\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n[On Deletion] You may play 1 level 4 or lower Digimon card with the [Titan]\u00a0trait from your trash without paying the cost.",
     "form": "Ultimate",
     "id": "BT26-056",
@@ -205362,8 +204987,8 @@
       "traditionalChinese": "-"
     },
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
-    "optionCardColourRequirement": "Black",
-    "optionCardEffect": "\uff1cUse Req. ([TS] trait)\uff1e \n[Main] Trash 1 card in your hand. Then, \uff1cDe-Digivolve 3\uff1e 1 of your opponent's Digimon. ",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
@@ -205407,7 +205032,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "8000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "[When Digivolving] By trashing the bottom face-down card under card from under any of your Tamers, until your opponent's turn ends, their Digimon effects don't affect this Digimon, and it gets +3000 DP.\n[All Turns] [Once Per Turn] When attack targets change or effects trash cards from under your Tamers, this Digimon may unsuspend.",
     "form": "Ultimate",
     "id": "BT26-057",
@@ -205423,8 +205048,8 @@
       "traditionalChinese": "-"
     },
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
-    "optionCardColourRequirement": "Black",
-    "optionCardEffect": "\uff1cUse Req. ([GlowingDawn] trait)\uff1e \n[Main] \uff1cDe-Digivolve 1\uff1e 1 of your opponent's Digimon. Then, give 1 of your opponent's Digimon \"[Start of Your Main Phase] This Digimon attacks.\" until their turn ends.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "4",
     "rarity": "SR",
     "restrictions": {
@@ -205468,7 +205093,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "8000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "[When Digivolving] By trashing the bottom face-down card under card from under any of your Tamers, until your opponent's turn ends, their Digimon effects don't affect this Digimon, and it gets +3000 DP.\n[All Turns] [Once Per Turn] When attack targets change or effects trash cards from under your Tamers, this Digimon may unsuspend.",
     "form": "Ultimate",
     "id": "BT26-057_P1",
@@ -205484,8 +205109,8 @@
       "traditionalChinese": "-"
     },
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
-    "optionCardColourRequirement": "Black",
-    "optionCardEffect": "\uff1cUse Req. ([GlowingDawn] trait)\uff1e \n[Main] \uff1cDe-Digivolve 1\uff1e 1 of your opponent's Digimon. Then, give 1 of your opponent's Digimon \"[Start of Your Main Phase] This Digimon attacks.\" until their turn ends.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "4",
     "rarity": "SR",
     "restrictions": {
@@ -206877,7 +206502,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "8000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "\uff1cExecute\uff1e \n\uff1cAscension\uff1e \n[Security] [On Deletion] By trashing the bottom face-down card from under any of your Tamers, you may play 1 [Glowing Dawn]\u00a0trait card with a play cost of 5 or less from your trash without paying the cost.",
     "form": "Ultimate",
     "id": "BT26-075",
@@ -206893,8 +206518,8 @@
       "traditionalChinese": "-"
     },
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
-    "optionCardColourRequirement": "Purple",
-    "optionCardEffect": "\uff1cUse Req. ([Glowing Dawn] trait)\uff1e \n[Main] Delete 1 of your opponent\u2019s Digimon with the lowest level.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "4",
     "rarity": "SR",
     "restrictions": {
@@ -206938,7 +206563,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "8000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "\uff1cExecute\uff1e \n\uff1cAscension\uff1e \n[Security] [On Deletion] By trashing the bottom face-down card from under any of your Tamers, you may play 1 [Glowing Dawn]\u00a0trait card with a play cost of 5 or less from your trash without paying the cost.",
     "form": "Ultimate",
     "id": "BT26-075_P1",
@@ -206954,8 +206579,8 @@
       "traditionalChinese": "-"
     },
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
-    "optionCardColourRequirement": "Purple",
-    "optionCardEffect": "\uff1cUse Req. ([Glowing Dawn] trait)\uff1e \n[Main] Delete 1 of your opponent\u2019s Digimon with the lowest level.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "4",
     "rarity": "SR",
     "restrictions": {
@@ -207294,7 +206919,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "13000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "\uff1cSecurity A. +1\uff1e \n\uff1cSuccession ([Bacchusmon])\uff1e \n[When Digivolving] By suspending 1 Digimon, this Digimon may attack without suspending.\n[When Attacking] [Once Per Turn] Delete 1 of your opponent's Digimon with the same orientation as this Digimon.",
     "form": "Mega",
     "id": "BT26-080",
@@ -207310,8 +206935,8 @@
       "traditionalChinese": "-"
     },
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
-    "optionCardColourRequirement": "Purple",
-    "optionCardEffect": "\uff1cUse Req. ([TS] trait)\uff1e \n[Main] You may unsuspend 1 Digimon. Then, delete all of your opponent's unsuspended Digimon with the lowest DP.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
@@ -207360,7 +206985,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "13000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "\uff1cSecurity A. +1\uff1e \n\uff1cSuccession ([Bacchusmon])\uff1e \n[When Digivolving] By suspending 1 Digimon, this Digimon may attack without suspending.\n[When Attacking] [Once Per Turn] Delete 1 of your opponent's Digimon with the same orientation as this Digimon.",
     "form": "Mega",
     "id": "BT26-080_P1",
@@ -207376,8 +207001,8 @@
       "traditionalChinese": "-"
     },
     "notes": "BT-26: BOOSTER TIMELESS BONDS",
-    "optionCardColourRequirement": "Purple",
-    "optionCardEffect": "\uff1cUse Req. ([TS] trait)\uff1e \n[Main] You may unsuspend 1 Digimon. Then, delete all of your opponent's unsuspended Digimon with the lowest DP.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
@@ -331890,7 +331515,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "12000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "\uff1cProgress\uff1e \n\uff1cPiercing\uff1e \n\uff1cSecurity A. +1\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] You may place up to 2 Digimon cards with [Gammamon]\u00a0in its text or the [VB]\u00a0trait from your hand or trash as this Digimon's top or bottom digivolution cards. If this effect placed, to 1 of your opponent's Digimon, give -2000 DP until their turn ends for each of this Digimon's digivolution cards.",
     "form": "Mega",
     "id": "EX12-018",
@@ -331906,8 +331531,8 @@
       "traditionalChinese": "-"
     },
     "notes": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
-    "optionCardColourRequirement": "Red",
-    "optionCardEffect": "\uff1cUse Req. ([VB] trait)\uff1e \n[Main] Delete 1 of your opponent's highest DP Digimon. Then, 1 of your Digimon may attack.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
@@ -331951,7 +331576,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "12000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "\uff1cProgress\uff1e \n\uff1cPiercing\uff1e \n\uff1cSecurity A. +1\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] You may place up to 2 Digimon cards with [Gammamon]\u00a0in its text or the [VB]\u00a0trait from your hand or trash as this Digimon's top or bottom digivolution cards. If this effect placed, to 1 of your opponent's Digimon, give -2000 DP until their turn ends for each of this Digimon's digivolution cards.",
     "form": "Mega",
     "id": "EX12-018_P1",
@@ -331967,8 +331592,8 @@
       "traditionalChinese": "-"
     },
     "notes": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
-    "optionCardColourRequirement": "Red",
-    "optionCardEffect": "\uff1cUse Req. ([VB] trait)\uff1e \n[Main] Delete 1 of your opponent's highest DP Digimon. Then, 1 of your Digimon may attack.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
@@ -333670,7 +333295,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "12000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "[When Digivolving] [When Attacking] [Counter] You may trash up to 3 cards in your hand. Then, to 1 of your opponent's Digimon, give -4000 DP until your turn ends for each card this effect trashed.\n[All Turns] [Once Per Turn] When any of your Digimon with [Jellymon]\u00a0in their texts or the [DS]\u00a0trait would leave the battle area, by returning 3 cards from your trash to the bottom of the deck, they don't leave.",
     "form": "Mega",
     "id": "EX12-033",
@@ -333686,8 +333311,8 @@
       "traditionalChinese": "-"
     },
     "notes": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
-    "optionCardColourRequirement": "Blue",
-    "optionCardEffect": "\uff1cUse Req. ([DS] trait)\uff1e \n[Main] Trash any 4 cards under your opponent's Digimon or Tamers. Then, you may return 1 of your opponent's Digimon or Tamers without cards under it to the hand.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
@@ -333731,7 +333356,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "12000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "[When Digivolving] [When Attacking] [Counter] You may trash up to 3 cards in your hand. Then, to 1 of your opponent's Digimon, give -4000 DP until your turn ends for each card this effect trashed.\n[All Turns] [Once Per Turn] When any of your Digimon with [Jellymon]\u00a0in their texts or the [DS]\u00a0trait would leave the battle area, by returning 3 cards from your trash to the bottom of the deck, they don't leave.",
     "form": "Mega",
     "id": "EX12-033_P1",
@@ -333747,8 +333372,8 @@
       "traditionalChinese": "-"
     },
     "notes": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
-    "optionCardColourRequirement": "Blue",
-    "optionCardEffect": "\uff1cUse Req. ([DS] trait)\uff1e \n[Main] Trash any 4 cards under your opponent's Digimon or Tamers. Then, you may return 1 of your opponent's Digimon or Tamers without cards under it to the hand.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
@@ -335968,7 +335593,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "12000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "\uff1cPiercing\uff1e \n\uff1cVortex\uff1e \n[When Digivolving] Your opponent's Digimon effects don't affect 1 of your Digimon until their turn ends.\n[When Digivolving] [When Attacking] [Counter] [Once Per Turn] 1 of your Digimon may get +3000 DP until your opponent's turn ends, and battle 1 of their Digimon.",
     "form": "Mega",
     "id": "EX12-052",
@@ -335984,8 +335609,8 @@
       "traditionalChinese": "-"
     },
     "notes": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
-    "optionCardColourRequirement": "Green",
-    "optionCardEffect": "\uff1cUse Req. ([NSp] trait)\uff1e \n[Main] 1 of your Digimon may unsuspend. Then, suspend 2 of your opponent's Digimon. 2 of their Digimon or Tamers can't unsuspend until their turn ends.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
@@ -336029,7 +335654,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "12000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "\uff1cPiercing\uff1e \n\uff1cVortex\uff1e \n[When Digivolving] Your opponent's Digimon effects don't affect 1 of your Digimon until their turn ends.\n[When Digivolving] [When Attacking] [Counter] [Once Per Turn] 1 of your Digimon may get +3000 DP until your opponent's turn ends, and battle 1 of their Digimon.",
     "form": "Mega",
     "id": "EX12-052_P1",
@@ -336045,8 +335670,8 @@
       "traditionalChinese": "-"
     },
     "notes": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
-    "optionCardColourRequirement": "Green",
-    "optionCardEffect": "\uff1cUse Req. ([NSp] trait)\uff1e \n[Main] 1 of your Digimon may unsuspend. Then, suspend 2 of your opponent's Digimon. 2 of their Digimon or Tamers can't unsuspend until their turn ends.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
@@ -338845,10 +338470,10 @@
     "playCost": "-",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -338895,10 +338520,10 @@
     "playCost": "-",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -338945,10 +338570,10 @@
     "playCost": "-",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Name: Not treated as including [Vee].",
     "securityEffect": "-",
@@ -338995,10 +338620,10 @@
     "playCost": "-",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Name: Not treated as including [Vee].",
     "securityEffect": "-",
@@ -339045,10 +338670,10 @@
     "playCost": "-",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -339095,10 +338720,10 @@
     "playCost": "-",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -339145,10 +338770,10 @@
     "playCost": "-",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -339195,10 +338820,10 @@
     "playCost": "-",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -339245,10 +338870,10 @@
     "playCost": "-",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -339295,10 +338920,10 @@
     "playCost": "-",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -339345,10 +338970,10 @@
     "playCost": "-",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -339395,10 +339020,10 @@
     "playCost": "-",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -339451,10 +339076,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -339507,10 +339132,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -339563,10 +339188,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -339619,10 +339244,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -339675,10 +339300,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -339731,10 +339356,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -339787,10 +339412,10 @@
     "playCost": "6",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -339843,10 +339468,10 @@
     "playCost": "6",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -339899,10 +339524,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -339955,10 +339580,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -340011,10 +339636,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -340067,10 +339692,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -340123,10 +339748,10 @@
     "playCost": "8",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -340179,10 +339804,10 @@
     "playCost": "8",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -340235,10 +339860,10 @@
     "playCost": "12",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -340291,10 +339916,10 @@
     "playCost": "12",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -340347,10 +339972,10 @@
     "playCost": "12",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -340403,10 +340028,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -340459,10 +340084,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -340515,10 +340140,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -340571,10 +340196,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -340632,10 +340257,10 @@
     "playCost": "15",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -340693,10 +340318,10 @@
     "playCost": "15",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -340754,10 +340379,10 @@
     "playCost": "15",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -340815,10 +340440,10 @@
     "playCost": "15",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -340871,10 +340496,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -340927,10 +340552,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -340988,10 +340613,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -341049,10 +340674,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -341105,10 +340730,10 @@
     "playCost": "6",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -341161,10 +340786,10 @@
     "playCost": "6",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -341222,10 +340847,10 @@
     "playCost": "7",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -341283,10 +340908,10 @@
     "playCost": "7",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -341344,10 +340969,10 @@
     "playCost": "7",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -341405,10 +341030,10 @@
     "playCost": "7",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -341466,10 +341091,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -341527,10 +341152,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -341583,10 +341208,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -341639,10 +341264,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -341695,10 +341320,10 @@
     "playCost": "12",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -341751,10 +341376,10 @@
     "playCost": "12",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -341807,10 +341432,10 @@
     "playCost": "12",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -341868,10 +341493,10 @@
     "playCost": "12",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -341924,10 +341549,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Witchelny] Type.",
     "securityEffect": "-",
@@ -341980,10 +341605,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Witchelny] Type.",
     "securityEffect": "-",
@@ -342036,10 +341661,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -342092,10 +341717,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -342153,10 +341778,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -342214,10 +341839,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -342275,10 +341900,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -342336,10 +341961,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -342397,10 +342022,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Name: Also treated as [Wizardmon].",
     "securityEffect": "-",
@@ -342458,10 +342083,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Name: Also treated as [Wizardmon].",
     "securityEffect": "-",
@@ -342514,10 +342139,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -342570,10 +342195,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -342631,10 +342256,10 @@
     "playCost": "7",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -342687,10 +342312,10 @@
     "playCost": "7",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -342748,10 +342373,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -342809,10 +342434,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -342865,10 +342490,10 @@
     "playCost": "6",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -342921,10 +342546,10 @@
     "playCost": "6",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -342982,10 +342607,10 @@
     "playCost": "13",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -343043,10 +342668,10 @@
     "playCost": "13",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -343099,10 +342724,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -343155,10 +342780,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -343211,10 +342836,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -343272,10 +342897,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -343333,10 +342958,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -343394,10 +343019,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -343450,10 +343075,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Beast] Type.",
     "securityEffect": "-",
@@ -343506,10 +343131,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Beast] Type.",
     "securityEffect": "-",
@@ -343567,10 +343192,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -343628,10 +343253,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -343684,10 +343309,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -343740,10 +343365,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -343801,10 +343426,10 @@
     "playCost": "7",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -343862,10 +343487,10 @@
     "playCost": "7",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -343918,10 +343543,10 @@
     "playCost": "7",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -343974,10 +343599,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -344030,10 +343655,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -344086,10 +343711,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -344147,10 +343772,10 @@
     "playCost": "12",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -344213,10 +343838,10 @@
     "playCost": "15",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -344279,10 +343904,10 @@
     "playCost": "15",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -344345,10 +343970,10 @@
     "playCost": "15",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -344401,10 +344026,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -344457,10 +344082,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -344513,10 +344138,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -344569,10 +344194,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -344625,10 +344250,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -344681,10 +344306,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -344742,10 +344367,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -344803,10 +344428,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -344859,10 +344484,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -344915,10 +344540,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -344971,10 +344596,10 @@
     "playCost": "4",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -345027,10 +344652,10 @@
     "playCost": "4",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -345083,10 +344708,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -345139,10 +344764,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -345200,10 +344825,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Name: Treated as including [Mamemon].",
     "securityEffect": "-",
@@ -345261,10 +344886,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Name: Treated as including [Mamemon].",
     "securityEffect": "-",
@@ -345322,10 +344947,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Mutant] Type.",
     "securityEffect": "-",
@@ -345383,10 +345008,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Mutant] Type.",
     "securityEffect": "-",
@@ -345444,10 +345069,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -345505,10 +345130,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -345561,10 +345186,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Machine] Type.",
     "securityEffect": "-",
@@ -345617,10 +345242,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Machine] Type.",
     "securityEffect": "-",
@@ -345678,10 +345303,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -345739,10 +345364,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -345795,10 +345420,10 @@
     "playCost": "7",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -345851,10 +345476,10 @@
     "playCost": "8",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -345912,10 +345537,10 @@
     "playCost": "13",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -345973,10 +345598,10 @@
     "playCost": "13",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -346034,10 +345659,10 @@
     "playCost": "13",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -346095,10 +345720,10 @@
     "playCost": "13",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -346151,10 +345776,10 @@
     "playCost": "13",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -346207,10 +345832,10 @@
     "playCost": "13",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -346263,10 +345888,10 @@
     "playCost": "13",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -346319,10 +345944,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -346375,10 +346000,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -346431,10 +346056,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -346487,10 +346112,10 @@
     "playCost": "11",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -346543,10 +346168,10 @@
     "playCost": "11",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -346604,10 +346229,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -346665,10 +346290,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -346726,10 +346351,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -346755,7 +346380,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "5000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "\uff1cDecode ([Sistermon Blanc])\uff1e \n\uff1cGuard\uff1e ",
     "form": "Rookie",
     "id": "EX13-065",
@@ -346771,15 +346396,15 @@
       "traditionalChinese": "-"
     },
     "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
-    "optionCardColourRequirement": "White",
-    "optionCardEffect": "[Main] You may play 1 play cost 4 or lower card with [Sistermon] from your hand or trash without paying the cost. Then, to 1 of your opponent's Digimon, give -3000 DP for the turn for each of your Digimon.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "5",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -346805,7 +346430,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "6000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "\uff1cDecode ([Sistermon Noir]/[Sistermon Ciel])\uff1e \n[When Digivolving] Delete 1 of your opponent's Digimon with a play cost of 4 or less.",
     "form": "Champion",
     "id": "EX13-066",
@@ -346821,15 +346446,15 @@
       "traditionalChinese": "-"
     },
     "notes": "\u25b9EXTRA BOOSTER CHIVALROUS XIII [EX-13]",
-    "optionCardColourRequirement": "White",
-    "optionCardEffect": "[Main] You may play 1 play cost 4 or lower card with [Sistermon] from your hand or trash without paying the cost. Then, to 1 of your opponent's Digimon, \uff1cDe-Digivolve 1\uff1e for each of your Digimon.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "5",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Also has Name: [Sistermon Ciel (Awakened)] and Trait: [Data] Attribute.",
     "securityEffect": "-",
@@ -346855,7 +346480,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "6000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "\uff1cDecode ([Sistermon Noir]/[Sistermon Ciel])\uff1e \n[When Digivolving] Delete 1 of your opponent's Digimon with a play cost of 4 or less.",
     "form": "Champion",
     "id": "EX13-066_P1",
@@ -346871,15 +346496,15 @@
       "traditionalChinese": "-"
     },
     "notes": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
-    "optionCardColourRequirement": "White",
-    "optionCardEffect": "[Main] You may play 1 play cost 4 or lower card with [Sistermon] from your hand or trash without paying the cost. Then, to 1 of your opponent's Digimon, \uff1cDe-Digivolve 1\uff1e for each of your Digimon.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "5",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Also has Name: [Sistermon Ciel (Awakened)] and Trait: [Data] Attribute.",
     "securityEffect": "-",
@@ -346926,10 +346551,10 @@
     "playCost": "4",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -346976,10 +346601,10 @@
     "playCost": "4",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -347026,10 +346651,10 @@
     "playCost": "4",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -347076,10 +346701,10 @@
     "playCost": "4",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -347126,10 +346751,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -347176,10 +346801,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -347226,10 +346851,10 @@
     "playCost": "4",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -347276,10 +346901,10 @@
     "playCost": "4",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -347326,10 +346951,10 @@
     "playCost": "4",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -347376,10 +347001,10 @@
     "playCost": "4",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -347426,10 +347051,10 @@
     "playCost": "4",
     "rarity": "-",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -347476,10 +347101,10 @@
     "playCost": "4",
     "rarity": "-",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -347526,10 +347151,10 @@
     "playCost": "4",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -347576,10 +347201,10 @@
     "playCost": "4",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -347626,10 +347251,10 @@
     "playCost": "4",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -347676,10 +347301,10 @@
     "playCost": "4",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -347726,10 +347351,10 @@
     "playCost": "4",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -347787,10 +347412,10 @@
     "playCost": "16",
     "rarity": "SEC",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Free] Attribute.",
     "securityEffect": "-",
@@ -347848,10 +347473,10 @@
     "playCost": "16",
     "rarity": "SEC",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Free] Attribute.",
     "securityEffect": "-",
@@ -347909,10 +347534,10 @@
     "playCost": "16",
     "rarity": "SEC",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Free] Attribute.",
     "securityEffect": "-",
@@ -347965,10 +347590,10 @@
     "playCost": "16",
     "rarity": "SEC",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -348021,10 +347646,10 @@
     "playCost": "16",
     "rarity": "SEC",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -348077,10 +347702,10 @@
     "playCost": "16",
     "rarity": "SEC",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -416805,7 +416430,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "13000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "\uff1cPiercing\uff1e \n\uff1cVortex\uff1e \n\uff1cBlocker\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] You may unsuspend 1 Digimon. Then, this Digimon may battle 1 of your opponent's Digimon.\n[All Turns] [Once Per Turn] When this Digimon would leave the battle area other than by your effects, by suspending 1 Digimon, it doesn't leave.",
     "form": "Mega",
     "id": "LM-066",
@@ -416821,8 +416446,8 @@
       "traditionalChinese": "-"
     },
     "notes": "LM-09: LIMITED CARD PACK DISTANCIA CERO",
-    "optionCardColourRequirement": "Green",
-    "optionCardEffect": "When this card would be used, by suspending 2 Digimon, reduce the cost by 2.\n[Main] 1 of your opponent's Digimon or Tamers can't unsuspend until their turn ends. Then, for every 2 suspended Digimon, return 1 of their Digimon to the bottom of the deck.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "6",
     "rarity": "P",
     "restrictions": {
@@ -416861,7 +416486,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "13000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n\uff1cFragment (3)\uff1e \n[When Digivolving] [Counter] [Once Per Turn] Reveal the top 6 cards of your deck. You may play or use 1 play or use cost 6 or lower [Three Musketeers]\u00a0text card among them without paying the cost. Return the rest to the bottom of the deck.\n[When Digivolving] [When Attacking] By trashing up to 3 [Three Musketeers]\u00a0text cards from any of your Digimon's digivolution cards, for each one trashed, delete 1 of your opponent's play cost 7 or lower Digimon.",
     "form": "Mega",
     "id": "LM-067",
@@ -416877,8 +416502,8 @@
       "traditionalChinese": "-"
     },
     "notes": "LM-09: LIMITED CARD PACK DISTANCIA CERO",
-    "optionCardColourRequirement": "Black",
-    "optionCardEffect": "\uff1cUse Req. ([Three Musketeers] in text)\uff1e \n[Main] \uff1cDe-Digivolve 3\uff1e 3 of your opponent's Digimon. Then, you may place 1 [Three Musketeers]\u00a0trait card from your hand or trash as any of your Digimon's bottom digivolution card.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "6",
     "rarity": "P",
     "restrictions": {
@@ -416922,7 +416547,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "13000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "\uff1cSecurity A. +1\uff1e \n[When Digivolving] [End of Attack] If your hand has 4 or fewer cards, you may play 1 level 4 or lower Digimon card with the [Evil], [Dark Dragon] or [Evil Dragon]\u00a0trait from your trash to the field without paying the cost.\n[When Digivolving] [On Deletion] Trash 2 cards in your hand. Then, you may activate 1 [Main] effect on this card's Option side.",
     "form": "Mega",
     "id": "LM-068",
@@ -416938,8 +416563,8 @@
       "traditionalChinese": "-"
     },
     "notes": "LM-09: LIMITED CARD PACK DISTANCIA CERO",
-    "optionCardColourRequirement": "Purple",
-    "optionCardEffect": "[Trash] [Your Turn] When one of your [Evil], [Dark Dragon] or [Evil Dragon]\u00a0trait Digimon attacks, if your hand has 4 or fewer cards, you may use this card with the cost reduced by 3.\n[Main] Delete 1 of your opponent's Digimon with a level as high as the number of cards in your hand or higher.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "6",
     "rarity": "P",
     "restrictions": {
@@ -477314,7 +476939,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "12000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "\uff1cSecurity A. +1\uff1e \n\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] Your opponent's Digimon effects don't affect this Digimon until their turn ends. Then, delete 1 of your opponent's Digimon with the lowest DP.",
     "form": "Mega",
     "id": "ST23-09",
@@ -477330,8 +476955,8 @@
       "traditionalChinese": "-"
     },
     "notes": "ST-23: STARTER DECK DIGIMON BEATBREAK",
-    "optionCardColourRequirement": "Green",
-    "optionCardEffect": "\uff1cUse Req. ([BEATBREAK] trait)\uff1e \n[Main] Suspend 1 of your opponent's Digimon. Then, return 1 of your opponent's suspended Digimon with the highest DP to the bottom of the deck.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
@@ -477375,7 +477000,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "12000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "\uff1cSecurity A. +1\uff1e \n\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] Your opponent's Digimon effects don't affect this Digimon until their turn ends. Then, delete 1 of your opponent's Digimon with the lowest DP.",
     "form": "Mega",
     "id": "ST23-09_P1",
@@ -477391,8 +477016,8 @@
       "traditionalChinese": "-"
     },
     "notes": "ST-23 & ST-24: Welcome Tamers Pack",
-    "optionCardColourRequirement": "Green",
-    "optionCardEffect": "\uff1cUse Req. ([BEATBREAK] trait)\uff1e \n[Main] Suspend 1 of your opponent's Digimon. Then, return 1 of your opponent's suspended Digimon with the highest DP to the bottom of the deck.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
@@ -478612,7 +478237,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "12000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "\uff1cRaid\uff1e \n\uff1cPiercing\uff1e \n\uff1cSecurity A. +1\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] You may play 1 Tamer card with a play cost of 5 or less from your hand or trash without paying the cost. Then, 1 of your opponent's Digimon gets -9000 DP for the turn.",
     "form": "Mega",
     "id": "ST24-07",
@@ -478628,8 +478253,8 @@
       "traditionalChinese": "-"
     },
     "notes": "ST-24: STARTER DECK DIGIMON DATA SQUAD",
-    "optionCardColourRequirement": "Yellow/Red",
-    "optionCardEffect": "\uff1cUse Req. ([DATA SQUAD] trait)\uff1e \n[Main] 1 of your opponent's Digimon gets -6000 DP for the turn. Then, delete 1 of your opponent's Digimon with 7000 DP or less.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
@@ -478673,7 +478298,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "12000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "\uff1cRaid\uff1e \n\uff1cPiercing\uff1e \n\uff1cSecurity A. +1\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] You may play 1 Tamer card with a play cost of 5 or less from your hand or trash without paying the cost. Then, 1 of your opponent's Digimon gets -9000 DP for the turn.",
     "form": "Mega",
     "id": "ST24-07_P1",
@@ -478689,8 +478314,8 @@
       "traditionalChinese": "-"
     },
     "notes": "ST-23 & ST-24: Welcome Tamers Pack",
-    "optionCardColourRequirement": "Yellow/Red",
-    "optionCardEffect": "\uff1cUse Req. ([DATA SQUAD] trait)\uff1e \n[Main] 1 of your opponent's Digimon gets -6000 DP for the turn. Then, delete 1 of your opponent's Digimon with 7000 DP or less.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
@@ -478734,7 +478359,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "12000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "\uff1cRaid\uff1e \n\uff1cPiercing\uff1e \n\uff1cSecurity A. +1\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] You may play 1 Tamer card with a play cost of 5 or less from your hand or trash without paying the cost. Then, 1 of your opponent's Digimon gets -9000 DP for the turn.",
     "form": "Mega",
     "id": "ST24-07_P2",
@@ -478750,8 +478375,8 @@
       "traditionalChinese": "-"
     },
     "notes": "DUAL REVOLUTION BT-25 Release Event",
-    "optionCardColourRequirement": "Yellow/Red",
-    "optionCardEffect": "\uff1cUse Req. ([DATA SQUAD] trait)\uff1e \n[Main] 1 of your opponent's Digimon gets -6000 DP for the turn. Then, delete 1 of your opponent's Digimon with 7000 DP or less.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
@@ -478795,7 +478420,7 @@
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "12000",
-    "dualEffect": "[Arts Digivolve] ",
+    "dualEffect": "-",
     "effect": "\uff1cRaid\uff1e \n\uff1cPiercing\uff1e \n\uff1cSecurity A. +1\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] You may play 1 Tamer card with a play cost of 5 or less from your hand or trash without paying the cost. Then, 1 of your opponent's Digimon gets -9000 DP for the turn.",
     "form": "Mega",
     "id": "ST24-07_P3",
@@ -478811,8 +478436,8 @@
       "traditionalChinese": "-"
     },
     "notes": "DUAL REVOLUTION BT-25 Release Event",
-    "optionCardColourRequirement": "Yellow/Red",
-    "optionCardEffect": "\uff1cUse Req. ([DATA SQUAD] trait)\uff1e \n[Main] 1 of your opponent's Digimon gets -6000 DP for the turn. Then, delete 1 of your opponent's Digimon with 7000 DP or less.",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
