@@ -1,0 +1,53 @@
+name: Garage Watchdog
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: garage-watchdog
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check card images, restart Garage if they are down
+        env:
+          CHECK_URL: https://web-garage.takaotaku.de/BT1-001.webp
+          RESTART_URL: ${{ secrets.COOLIFY_GARAGE_RESTART_URL }}
+          COOLIFY_TOKEN: ${{ secrets.COOLIFY_TOKEN }}
+        run: |
+          healthy() {
+            [ "$(curl -s -o /dev/null -m 15 -w '%{http_code}' "$CHECK_URL")" = "200" ]
+          }
+
+          # Three failures in a row so a single blip doesn't trigger a restart.
+          for attempt in 1 2 3; do
+            if healthy; then
+              echo "Card images OK."
+              exit 0
+            fi
+            echo "Attempt $attempt failed."
+            sleep 20
+          done
+
+          if [ -z "$RESTART_URL" ] || [ -z "$COOLIFY_TOKEN" ]; then
+            echo "::error::Card images are down and COOLIFY_GARAGE_RESTART_URL/COOLIFY_TOKEN are not set; restart Garage manually."
+            exit 1
+          fi
+
+          echo "Card images are down; restarting Garage."
+          curl --fail --silent --show-error -X POST -H "Authorization: Bearer $COOLIFY_TOKEN" "$RESTART_URL"
+
+          for attempt in $(seq 1 12); do
+            sleep 15
+            if healthy; then
+              echo "::warning::Garage was restarted and card images are back."
+              exit 0
+            fi
+          done
+          echo "::error::Garage was restarted but card images are still down."
+          exit 1
