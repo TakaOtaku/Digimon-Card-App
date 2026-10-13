@@ -5519,12 +5519,6 @@
       "question": "Q: Does \"when an effect suspends\" in this card's [Your Turn] effect trigger when an attack declaration is made for a Digimon and it's suspended using an effect such as \uff1cBlitz\uff1e or an \"attack using X\" effect?"
     }
   ],
-  "BT17-090": [
-    {
-      "answer": "A: No, this card's [End of Opponent's Turn] effect does not allow ignoring digivolution requirements, so you can only digivolve into a card that meets the digivolution requirements.[1]",
-      "question": "Q: Can I use this card's [End of Opponent's Turn] effect to digivolve into a Digimon card with [Dex] in the trash regardless of its digivolution requirements?"
-    }
-  ],
   "BT17-091": [
     {
       "answer": "A: Yes, you can.[1]",
@@ -5559,36 +5553,6 @@
     {
       "answer": "A: It means a Tamer card with \"Inherited Effect\" in its lower text.  A Tamer card with a [Security] effect in its lower text isn't a \"Tamer card with inherited effects.\"[1]",
       "question": "Q: What does this card's \"Tamer card with inherited effects\" mean, exactly?"
-    }
-  ],
-  "BT17-095": [
-    {
-      "answer": "A: \"When [...] would leave the battle area other than by battle\" refers to when that Digimon is placed in the trash other than as a result of a battle, returned to the hand/deck, placed in the security stack, moved to the breeding area, or placed under another card.[1]",
-      "question": "Q: What does this card's \"when [...] would leave the battle area other than by [...] a battle\" mean, exactly?"
-    },
-    {
-      "answer": "A: No. You can\u2019t ignore the digivolution requirements, so you can\u2019t DNA digivolve into a Digimon card that doesn\u2019t have [DNA Digivolution].[1]",
-      "question": "Q: With this card's \uff1cDelay\uff1e effect, can I DNA digivolve into a Digimon card in my hand that doesn\u2019t have [DNA Digivolution]?"
-    },
-    {
-      "answer": "A: No. You can\u2019t ignore the digivolution requirements, so you can\u2019t DNA digivolve using Digimon that aren\u2019t specified in [DNA Digivolution].[1]",
-      "question": "Q: Does this card's \uff1cDelay\uff1e effect allow me to DNA digivolve into a card other than the Digimon specified by [DNA Digivolution] in the hand?"
-    },
-    {
-      "answer": "A: No, they do not leave the Battle Area. DNA digivolves digivolve as a new Digimon, so it is a different Digimon than the one that leaves.[2]",
-      "question": "Q: If two Digimon including the leaving Digimon digivolved by the \"Delay\" effect of this card, does the Digimon that digivolved DNA digivolves leave the Battle Area?"
-    },
-    {
-      "answer": "A: When a Digimon leaves the Battle Area other than as a result of a Battle is when it is \"placed in trash,\" \"returned to hand or deck,\" \"placed in security,\" \"moved to the Breeding Area,\" or \"placed under another card\" other than as a result of a Battle.[3]",
-      "question": "Q: What exactly does this card mean \"when leaving the Battle Area outside of a battle\"?"
-    },
-    {
-      "answer": "A: No, you cannot ignore the digivolution requirements, so you cannot DNA digivolve to a Digimon card that does not have \"digivolves\".[3]",
-      "question": "Q: Can I use the \"Delay\" effect of this card to digivolve DNA digivolution to a Digimon card that does not have \"Jogress\" in my hand?"
-    },
-    {
-      "answer": "A: No, you cannot ignore the digivolution requirements, so you cannot digivolve DNA digivolves with a Digimon that is not designated as a \"digivolution\" digivolution.[3]",
-      "question": "Q: Can I use the \"Delay\" effect of this card to perform DNA digivolves with a Digimon not designated as a \"digivolve\" in my hand?"
     }
   ],
   "BT17-096": [
@@ -8271,22 +8235,10 @@
       "question": "Q: Can I use this card's [On Play] [When Digivolving] effect to link a card that doesn't have [Link]?"
     }
   ],
-  "BT21-024": [
-    {
-      "answer": "A: Yes, it does.[1]",
-      "question": "Q: Does this card's [On Play] [When Digivolving] effect trash a card from my opponent's security stack even when they have 6 or more security cards?"
-    }
-  ],
   "BT21-025": [
     {
       "answer": "A: The [Security] effect will activate first.Upon a security check, a [Security] effect will immediately activate without pending activation.[1]",
       "question": "Q: What order do an effect that triggers when a card is removed from a security stack and a [Security] effect on a checked card activate when they trigger simultaneously upon a security check?"
-    }
-  ],
-  "BT21-028": [
-    {
-      "answer": "A: It refers to a card that contains the specified text or icon in its name, traits, effects, inherited effects, (Rule), digivolution requirements, DNA digivolution, DigiXros requirements, burst digivolve, App Fusion, or Link.For example, a card with [Knightmon] in its text would include cards with the name [DarkKnightmon] and cards with the text [Knightmon] in their effects.\n[1]",
-      "question": "Q: What does a card with \"X in its text\" refer to?"
     }
   ],
   "BT21-029": [
@@ -10231,12 +10183,6 @@
     {
       "answer": "A: Yes. [BT2-111 Beelzemon]'s effect doesn't reduce digivolution costs--it allows you to ignore digivolution requirements and digivolve for a specific memory cost, so you can still activate it.[1]",
       "question": "Q: My opponent has this Digimon in play. Can I use effects like [BT2-111 Beelzemon]'s \"digivolve into this card in your hand for a memory cost of X, ignoring this card's digivolution requirements\" effect?"
-    }
-  ],
-  "BT5-034": [
-    {
-      "answer": "A: You can have up to two yellow Digimon cards, one with \"Warrior type\" in its trait and the other with \"Holy Knight type\" in its trait.[1]",
-      "question": "Q: Which card is added to your hand by this card's [On Play] effect?"
     }
   ],
   "BT5-035": [
@@ -14827,7 +14773,7 @@
       "question": "Q: When it says \"[Vegetation]\u00a0in any of its traits\" (\u690d\u7269\u578b), does it include traits other than [Vegetation] (\u690d\u7269\u578b)?"
     },
     {
-      "answer": "A: Yes, \"[Fairy]\u00a0in any of its traits\" includes the following traits:Category:Ancient FairyCategory:Fairy\n",
+      "answer": "A: Yes, \"[Fairy]\u00a0in any of its traits\" includes the following traits:Category:FairyCategory:Ancient Fairy\n",
       "question": "Q: When it says \"[Fairy]\u00a0in any of its traits\" (\u5996\u7cbe\u578b), does it include traits other than [Fairy] (\u5996\u7cbe\u578b)?"
     }
   ],
