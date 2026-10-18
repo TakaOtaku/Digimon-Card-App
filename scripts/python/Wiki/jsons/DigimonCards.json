@@ -215694,6 +215694,206 @@
   {
     "AAs": [
       {
+        "id": "EX14-001_P1",
+        "illustrator": "To be completed",
+        "note": "EX-14: EXTRA BOOSTER MALEVOLENT VII",
+        "type": "Foil - Coloured Border -\u00a0"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX14-001.webp",
+    "cardLv": "-",
+    "cardNumber": "EX14-001",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "EX14-001",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER MALEVOLENT VII [EX-14]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX14-012_P1",
+        "illustrator": "To be completed",
+        "note": "EX-14: EXTRA BOOSTER MALEVOLENT VII",
+        "type": "Alternative Art"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX14-012.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "EX14-012",
+    "cardType": "Digimon/Option",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "[Arts Digivolve] ",
+    "effect": "\uff1cSecurity A. +1\uff1e \n\uff1cEngage\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] 1 of your Digimon gets +3000 DP until your opponent's turn ends. Then, by trashing the bottom face-down card from under any of your Tamers, delete 1 of their Digimon with as much DP as this Digimon or less.\n[Security] [On Deletion] You may use this card without paying the cost.",
+    "form": "Mega",
+    "id": "EX14-012",
+    "illustrator": "sasasi",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "VictoryGreymon/Dramon Breaker",
+      "japanese": "\u30d3\u30af\u30c8\u30ea\u30fc\u30b0\u30ec\u30a4\u30e2\u30f3/\u30c9\u30e9\u30e2\u30f3\u30d6\u30ec\u30a4\u30ab\u30fc",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER MALEVOLENT VII [EX-14]",
+    "optionCardColourRequirement": "Red",
+    "optionCardEffect": "\uff1cUse Req. ([TERMINAL] trait)\uff1e \n[Main] Delete up to 15000 DP total worth of your opponent's Digimon.",
+    "playCost": "7",
+    "rarity": "UR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[TERMINAL]\u00a0trait: Cost 3 ",
+    "type": "Dragonkin/TWIN/TERMINAL",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
+        "id": "EX14-054_P1",
+        "illustrator": "To be completed",
+        "note": "EX-14: EXTRA BOOSTER MALEVOLENT VII",
+        "type": "Alternative Art"
+      },
+      {
+        "id": "EX14-054_P2",
+        "illustrator": "To be completed",
+        "note": "EX-14: EXTRA BOOSTER MALEVOLENT VII",
+        "type": "Alternative Art"
+      }
+    ],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-5] 3 [Greed]\u00a0trait cards w/different levels",
+    "attribute": "Virus",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/EX14-054.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "EX14-054",
+    "cardType": "Digimon",
+    "color": "Purple/Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "4",
+        "level": "5"
+      },
+      {
+        "color": "Red",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "13000",
+    "dualEffect": "-",
+    "effect": "\uff1cAlliance\uff1e (When this Digimon attacks, by suspending 1 of your other Digimon, this Digimon gains \uff1cSecurity A. +1\uff1e and the suspended Digimon's DP for the attack.)\n\uff1cEngage\uff1e \n[On Play] [When Digivolving] [When Attacking] [Once Per Turn] You may play 1 play cost 6 or lower [Evil], [Wizard], [Fallen Angel] or [Greed]\u00a0trait Digimon card from your trash without paying the cost. Then, your opponent trashes 1 card in their hand.\n[All Turns] [Once Per Turn] When your opponent's hand is trashed from, you may delete all of their lowest level Digimon.",
+    "form": "Mega",
+    "id": "EX14-054",
+    "illustrator": "k.Dra",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Barbamon",
+      "japanese": "\u30d0\u30eb\u30d0\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "\u25b9EXTRA BOOSTER MALEVOLENT VII [EX-14]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "13",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[Fallen Angel]/[Greed]\u00a0trait: Cost 3 ",
+    "type": "Demon Lord/Greed/Seven Great Demon Lords",
+    "version": "Normal"
+  },
+  {
+    "AAs": [
+      {
         "id": "EX2-001_P1",
         "illustrator": "Takase",
         "note": "EX-02: Theme Booster Digital Hazard",
