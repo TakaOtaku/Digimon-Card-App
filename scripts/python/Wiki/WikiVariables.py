@@ -88,7 +88,7 @@ wikiPageLinks = [
     {'name': '▹EXTRA BOOSTER DIGITAL WORLD SHAMBALA [EX-12]',
         'url': 'https://digimoncardgame.fandom.com/wiki/EX-12:_EXTRA_BOOSTER_DIGITAL_WORLD_SHAMBALA'},
     {'name': '▹EXTRA BOOSTER CHIVALROUS XIII [EX-13]',
-        'url': 'https://digimoncardgame.fandom.com/wiki/EX-13:_EXTRA_BOOSTER_CHIVALROUS XIII},
+        'url': 'https://digimoncardgame.fandom.com/wiki/EX-13:_EXTRA_BOOSTER_CHIVALROUS XIII'},
     {'name': '▹EXTRA BOOSTER MALEVOLENT VII [EX-14]',
         'url': 'https://digimoncardgame.fandom.com/wiki/EX-14:_EXTRA_BOOSTER_MALEVOLENT_VII'},
 
