@@ -209383,10 +209383,10 @@
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT27-003.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.2",
     "cardNumber": "BT27-003",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digi-Egg",
+    "color": "Green",
     "digiXros": "-",
     "digivolveCondition": [],
     "digivolveEffect": "-",
@@ -209394,14 +209394,14 @@
     "dp": "-",
     "dualEffect": "-",
     "effect": "-",
-    "form": "-",
+    "form": "In-Training",
     "id": "BT27-003",
     "illustrator": "To be completed",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
+      "english": "Frimon",
       "japanese": "",
       "korean": "-",
       "simplifiedChinese": "-",
@@ -209411,7 +209411,7 @@
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
     "playCost": "-",
-    "rarity": "-",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -209421,7 +209421,7 @@
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "Lesser/ACCEL",
     "version": "Normal"
   },
   {
@@ -211573,31 +211573,42 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT27-045.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.3",
     "cardNumber": "BT27-045",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Green/Yellow",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "1",
+        "level": "2"
+      },
+      {
+        "color": "Yellow",
+        "cost": "1",
+        "level": "2"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "2000",
     "dualEffect": "-",
     "effect": "-",
-    "form": "-",
+    "form": "Rookie",
     "id": "BT27-045",
     "illustrator": "To be completed",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
+      "english": "Liollmon",
       "japanese": "",
       "korean": "-",
       "simplifiedChinese": "-",
@@ -211606,8 +211617,8 @@
     "notes": "\u25b9BOOSTER IGNITION OF X [BT-27]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "3",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -211617,7 +211628,7 @@
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "Holy Beast/ACCEL",
     "version": "Normal"
   },
   {
@@ -213564,7 +213575,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-082_P1.webp",
+    "cardImage": "assets/images/cards/BT27-082_P1-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-082",
     "cardType": "Digimon/Option",
@@ -213584,7 +213595,7 @@
     "effect": "\uff1cExecute\uff1e \n\uff1cAscension\uff1e \n[Security] [On Deletion] Delete 1 of your opponent's Digimon with the lowest level. If this effect didn't delete, Trash their top security card.\n[When Digivolving] [When Attacking] [Once Per Turn] By trashing 2 bottom face-down cards from under any of your Tamers, activate 1 [Main] effect on this card's Option side.",
     "form": "Mega",
     "id": "BT27-082_P1",
-    "illustrator": "To be completed",
+    "illustrator": "Tonamikanji",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
