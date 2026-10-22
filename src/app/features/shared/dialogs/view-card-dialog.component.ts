@@ -1,7 +1,7 @@
 import { NgClass, NgForOf, NgIf, NgStyle } from '@angular/common';
 import { ChangeDetectorRef, Component, effect, HostListener, inject } from '@angular/core';
 import { ImgFallbackDirective } from '@directives';
-import { formatId, isDigimonType, withoutJ } from '@functions';
+import { formatId, isDigimonType, isOptionType, withoutJ } from '@functions';
 import { ColorMap, DigimonCard, ICountCard, IDeck, RarityAbbreviationMap, replacements } from '@models';
 import { DialogStore, DigimonCardStore, SaveStore, WebsiteStore } from '@store';
 import { CardMarketService } from '@services';
@@ -130,7 +130,9 @@ import { TooltipModule } from 'primeng/tooltip';
             *ngIf="card.playCost !== '-'"
             class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150"
             id="Digimon-Play-Cost">
-            <p [ngStyle]="{ color }" class="text-black-outline-xs ml-1.5 text-lg font-extrabold">Play Cost</p>
+            <p [ngStyle]="{ color }" class="text-black-outline-xs ml-1.5 text-lg font-extrabold">
+              {{ isOptionType(card.cardType) ? 'Use Cost' : 'Play Cost' }}
+            </p>
             <p class="font-white ml-auto mr-1.5 font-bold leading-[1.7em]">
               {{ card.playCost }}
             </p>
@@ -289,6 +291,7 @@ export class ViewCardDialogComponent {
 
   // Helper function exposed to template
   isDigimonType = isDigimonType;
+  isOptionType = isOptionType;
 
   card: DigimonCard = this.dialogStore.viewCard().card;
   width?: string = this.dialogStore.viewCard().width;

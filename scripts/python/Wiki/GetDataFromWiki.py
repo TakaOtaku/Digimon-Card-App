@@ -124,6 +124,9 @@ def _card_content_hash(card: dict) -> str:
         "burstDigivolve": card.get("burstDigivolve", "-"),
         "digiXros": card.get("digiXros", "-"),
         "assembly": card.get("assembly", "-"),
+        "optionCardColourRequirement": card.get("optionCardColourRequirement", "-"),
+        "optionCardEffect": card.get("optionCardEffect", "-"),
+        "dualEffect": card.get("dualEffect", "-"),
     }
     return hashlib.sha256(json.dumps(relevant, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
 

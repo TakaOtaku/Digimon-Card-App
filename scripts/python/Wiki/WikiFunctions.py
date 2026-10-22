@@ -393,6 +393,9 @@ def loadCards():
         currentDigimon.specialDigivolve = card['specialDigivolve']
         currentDigimon.type = card['type']
         currentDigimon.version = card['version']
+        currentDigimon.optionCardColourRequirement = card.get('optionCardColourRequirement', '-')
+        currentDigimon.optionCardEffect = card.get('optionCardEffect', '-')
+        currentDigimon.dualEffect = card.get('dualEffect', '-')
 
         cards.append(currentDigimon)
 
