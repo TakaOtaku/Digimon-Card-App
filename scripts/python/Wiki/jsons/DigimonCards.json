@@ -134818,9 +134818,9 @@
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT27-001.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.2",
     "cardNumber": "BT27-001",
-    "cardType": "",
+    "cardType": "Digi-Egg",
     "color": "[[]]",
     "digiXros": "-",
     "digivolveCondition": [],
@@ -134829,7 +134829,7 @@
     "dp": "-",
     "dualEffect": "-",
     "effect": "-",
-    "form": "-",
+    "form": "In-Training",
     "id": "BT27-001",
     "illustrator": "To be completed",
     "linkDP": "-",
@@ -135176,32 +135176,43 @@
     "JAAs": [],
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT27-008.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.3",
     "cardNumber": "BT27-008",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Red/Black",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "1",
+        "level": "2"
+      },
+      {
+        "color": "Black",
+        "cost": "1",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "\uff1cRaid\uff1e ",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "2000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[Start of Your Main Phase] By trashing 1 card with the [Chronicle]\u00a0trait from your hand, \uff1cDraw 1\uff1e and gain 1 memory.",
+    "form": "Rookie",
     "id": "BT27-008",
-    "illustrator": "To be completed",
+    "illustrator": "Murakami Hisashi",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Ryudamon",
+      "japanese": "\u30ea\u30e5\u30a6\u30c0\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -135209,8 +135220,8 @@
     "notes": "\u25b9BOOSTER IGNITION OF X [BT-27]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "3",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -135219,8 +135230,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] [Kyokomon]/Black Lv.2 w/[X Antibody]\u00a0trait: Cost 0 ",
+    "type": "Beast/X Antibody/Chronicle",
     "version": "Normal"
   },
   {
@@ -135228,32 +135239,43 @@
     "JAAs": [],
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT27-009.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.4",
     "cardNumber": "BT27-009",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Red/Black",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "3",
+        "level": "3"
+      },
+      {
+        "color": "Black",
+        "cost": "3",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[Your Turn] This Digimon gets +2000 DP.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "5000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[On Play] [When Digivolving] 1 of your Digimon gets +3000 DP until your opponent's turn ends.\n[When Attacking] This Digimon may digivolve into a Digimon card with the [Chronicle]\u00a0trait in the hand or trash.",
+    "form": "Champion",
     "id": "BT27-009",
-    "illustrator": "To be completed",
+    "illustrator": "Murakami Hisashi",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Ginryumon",
+      "japanese": "\u30ae\u30f3\u30ea\u30e5\u30a6\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -135261,8 +135283,8 @@
     "notes": "\u25b9BOOSTER IGNITION OF X [BT-27]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "5",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -135271,8 +135293,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] [Ryudamon]/Lv.3 w/[Chronicle]\u00a0trait: Cost 2 ",
+    "type": "Beast Dragon/X Antibody/Chronicle",
     "version": "Normal"
   },
   {
@@ -135436,32 +135458,43 @@
     "JAAs": [],
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT27-013.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.5",
     "cardNumber": "BT27-013",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Red/Black",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "4",
+        "level": "4"
+      },
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "[Opponent's Turn] [Once Per Turn] When one of your opponent's Digimon attacks, you may change the attack target to 1 of your [Chronicle]\u00a0trait Digimon.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "7000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[On Play] [When Digivolving] \uff1cDe-Digivolve 1\uff1e 1 of your opponent's Digimon. Then, if during an attack, delete 1 of your opponent's Digimon with as much DP as this Digimon or less.\n[Your Turn] When your opponent's security stack is removed from, this Digimon may digivolve into a [Chronicle]\u00a0trait Digimon card in the hand or trash.",
+    "form": "Ultimate",
     "id": "BT27-013",
-    "illustrator": "To be completed",
+    "illustrator": "Murakami Hisashi",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Hisyaryumon",
+      "japanese": "\u30d2\u30b7\u30e3\u30ea\u30e5\u30a6\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -135469,8 +135502,8 @@
     "notes": "\u25b9BOOSTER IGNITION OF X [BT-27]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "7",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -135479,8 +135512,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] [Ginryumon]/Lv.4 w/[Chronicle]\u00a0trait: Cost 3 ",
+    "type": "Beast Dragon/X Antibody/Chronicle",
     "version": "Normal"
   },
   {
@@ -135536,36 +135569,54 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
+    "AAs": [
+      {
+        "id": "BT27-015_P1",
+        "illustrator": "To be completed",
+        "note": "BT-27: BOOSTER IGNITION OF X",
+        "type": "Alternative Art"
+      }
+    ],
     "JAAs": [],
     "aceEffect": "-",
-    "assembly": "-",
-    "attribute": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Chronicle]\u00a0trait",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT27-015.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.6",
     "cardNumber": "BT27-015",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Red/Black",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "4",
+        "level": "5"
+      },
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "[All Turns] [Once Per Turn] When security stacks are removed from, this [Alphamon: Ouryuken] may unsuspend.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "12000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "\uff1cPiercing\uff1e \n\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n[On Play] [When Digivolving] Delete 1 of your opponent's Digimon with as much DP as 1 of your Digimon or less. Then, if during an attack, Trash their top security card.\n[All Turns] [Once Per Turn] When security stacks are removed from, you may play or use 1 [Chronicle]\u00a0trait Tamer or Option card from your hand without paying the cost.",
+    "form": "Mega",
     "id": "BT27-015",
-    "illustrator": "To be completed",
+    "illustrator": "Murakami Hisashi",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Ouryumon",
+      "japanese": "\u30aa\u30a6\u30ea\u30e5\u30a6\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -135573,8 +135624,8 @@
     "notes": "\u25b9BOOSTER IGNITION OF X [BT-27]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "12",
+    "rarity": "SR",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -135583,8 +135634,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] [Hisyaryumon]/Lv.5 w/[Chronicle]\u00a0trait: Cost 3 ",
+    "type": "Beast Dragon/X Antibody/Chronicle",
     "version": "Normal"
   },
   {
@@ -138360,7 +138411,7 @@
     "AAs": [
       {
         "id": "BT27-067_P1",
-        "illustrator": "To be completed",
+        "illustrator": "Tonamikanji",
         "note": "BT-27: BOOSTER IGNITION OF X",
         "type": "Alternative Art"
       }
@@ -139261,7 +139312,7 @@
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT27-083.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.6",
     "cardNumber": "BT27-083",
     "cardType": "",
     "color": "[[]]",
@@ -139272,7 +139323,7 @@
     "dp": "-",
     "dualEffect": "-",
     "effect": "-",
-    "form": "-",
+    "form": "Mega",
     "id": "BT27-083",
     "illustrator": "To be completed",
     "linkDP": "-",
@@ -139552,58 +139603,6 @@
     "effect": "-",
     "form": "-",
     "id": "BT27-088",
-    "illustrator": "To be completed",
-    "linkDP": "-",
-    "linkEffect": "-",
-    "linkRequirement": "-",
-    "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
-    },
-    "notes": "\u25b9BOOSTER IGNITION OF X [BT-27]",
-    "optionCardColourRequirement": "-",
-    "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
-    "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
-    },
-    "rule": "-",
-    "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
-    "version": "Normal"
-  },
-  {
-    "AAs": [],
-    "JAAs": [],
-    "aceEffect": "-",
-    "assembly": "-",
-    "attribute": "-",
-    "block": [
-      "06"
-    ],
-    "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-089.webp",
-    "cardLv": "-",
-    "cardNumber": "BT27-089",
-    "cardType": "",
-    "color": "[[]]",
-    "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
-    "dnaDigivolve": "-",
-    "dp": "-",
-    "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
-    "id": "BT27-089",
     "illustrator": "To be completed",
     "linkDP": "-",
     "linkEffect": "-",
