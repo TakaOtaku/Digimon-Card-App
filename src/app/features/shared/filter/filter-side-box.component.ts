@@ -343,9 +343,12 @@ export class FilterSideBoxComponent {
     });
     this.dpFilter.setValue(filter.dpFilter, { emitEvent: false });
     this.priceFilter.setValue(filter.priceFilter, { emitEvent: false });
-    this.cardCountFilter.setValue(filter.cardCountFilter, {
-      emitEvent: false,
-    });
+    // PrimeNG's slider overflows its track when the value exceeds max
+    const countMax = this.collectionCountMax() ?? 5;
+    this.cardCountFilter.setValue(
+      filter.cardCountFilter.map((v) => Math.min(v, countMax)),
+      { emitEvent: false },
+    );
 
     this.keywordFilter.setValue(filter.keywordFilter, { emitEvent: false });
     this.formFilter.setValue(filter.formFilter, { emitEvent: false });
