@@ -163639,32 +163639,48 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Data",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT27-021-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.3",
     "cardNumber": "BT27-021",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Blue/Red/Green",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "1",
+        "level": "2"
+      },
+      {
+        "color": "Red",
+        "cost": "1",
+        "level": "2"
+      },
+      {
+        "color": "Green",
+        "cost": "1",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[End of Your Turn] This Digimon and any of your other Digimon may DNA digivolve into a Digimon card in the hand.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "3000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[On Play] [When Digivolving] Reveal the top 3 cards of your deck. Add 1 Digimon card with [Examon]\u00a0in its text and 1 such Option card among them to the hand. Return the rest to the bottom of the deck.",
+    "form": "Rookie",
     "id": "BT27-021",
-    "illustrator": "To be completed",
+    "illustrator": "IWAO",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Dracomon (X Antibody)",
+      "japanese": "\u30c9\u30e9\u30b3\u30e2\u30f3X\u6297\u4f53",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -163672,8 +163688,8 @@
     "notes": "\u25b9BOOSTER IGNITION OF X [BT-27]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "4",
+    "rarity": "R",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -163682,8 +163698,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] [Dracomon]: Cost 0 ",
+    "type": "Dragon/X Antibody",
     "version": "Normal"
   },
   {
@@ -163739,32 +163755,43 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT27-023-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.4",
     "cardNumber": "BT27-023",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Blue/Black",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "3",
+        "level": "3"
+      },
+      {
+        "color": "Black",
+        "cost": "3",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "\uff1cEvade\uff1e ",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "5000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[When Moving] [On Play] 1 of your Digimon with [Gammamon]\u00a0in its text or the [VB]\u00a0trait can't be deleted in battle for the turn.\n[When Attacking] [Once Per Turn] 1 of your opponent's level 5 or lower Digimon can't suspend until their turn ends.",
+    "form": "Champion",
     "id": "BT27-023",
-    "illustrator": "To be completed",
+    "illustrator": "tessy",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "KausGammamon",
+      "japanese": "\u30ab\u30a6\u30b9\u30ac\u30f3\u30de\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -163772,18 +163799,18 @@
     "notes": "\u25b9BOOSTER IGNITION OF X [BT-27]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "4",
+    "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] [Gammamon]/Lv.3 w/[VB]\u00a0trait: Cost 2 ",
+    "type": "Dragonkin/VB",
     "version": "Normal"
   },
   {
@@ -163795,10 +163822,10 @@
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT27-024-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.4",
     "cardNumber": "BT27-024",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Blue",
     "digiXros": "-",
     "digivolveCondition": [],
     "digivolveEffect": "-",
@@ -163806,7 +163833,7 @@
     "dp": "-",
     "dualEffect": "-",
     "effect": "-",
-    "form": "-",
+    "form": "Champion",
     "id": "BT27-024",
     "illustrator": "To be completed",
     "linkDP": "-",
@@ -164307,41 +164334,57 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Data",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT27-034-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.7",
     "cardNumber": "BT27-034",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon/Option",
+    "color": "Blue/Red/Green",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "6",
+        "level": "6"
+      },
+      {
+        "color": "Red",
+        "cost": "6",
+        "level": "6"
+      },
+      {
+        "color": "Green",
+        "cost": "6",
+        "level": "6"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
-    "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "dp": "16000",
+    "dualEffect": "[Arts Digivolve] ",
+    "effect": "\uff1cRaid\uff1e \n\uff1cPiercing\uff1e \n\uff1cSecurity A. +1\uff1e \n\uff1cBlocker\uff1e \n\uff1cEvade\uff1e \n\uff1cDecode (Green Lv.5)\uff1e \n\uff1cDecode (Blue Lv.5)\uff1e \n[When Digivolving] [When Attacking] [Counter] [Once Per Turn] You may suspend up to 3 Digimon or Tamers. Then, by trashing 1 [Examon] or [X Antibody] from this Digimon's digivolution cards, activate 1 [Main] effect on this card's Option side.",
+    "form": "Mega",
     "id": "BT27-034",
-    "illustrator": "To be completed",
+    "illustrator": "IWAO",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Examon (X Antibody)/Ultimate Battle Dragonlance Ambrose",
+      "japanese": "\u30a8\u30b0\u30b6\u30e2\u30f3X\u6297\u4f53/\u7a76\u6975\u6226\u7adc\u69cd\u30a2\u30f3\u30d6\u30ed\u30b8\u30a6\u30b9",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
     },
     "notes": "\u25b9BOOSTER IGNITION OF X [BT-27]",
-    "optionCardColourRequirement": "-",
-    "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "optionCardColourRequirement": "Red",
+    "optionCardEffect": "[Main] Delete up to 9000 DP's total worth of your opponent's Digimon. For each of their Digimon and Tamers, add 3000 to this effect's DP maximum. If this effect didn't delete, trash 1 of their Option cards in the battle area.",
+    "playCost": "6",
+    "rarity": "SR",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -164350,8 +164393,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] [Examon]: Cost 2 ",
+    "type": "Holy Warrior/X Antibody/Royal Knight",
     "version": "Normal"
   },
   {
@@ -164761,33 +164804,44 @@
   },
   {
     "aceEffect": "-",
-    "assembly": "-",
-    "attribute": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Chessmon]\u00a0in its name",
+    "attribute": "Virus",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT27-042-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.6",
     "cardNumber": "BT27-042",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Yellow/Black",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "3",
+        "level": "5"
+      },
+      {
+        "color": "Black",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "11000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[On Play] [When Digivolving] You may play 1 play cost 7 or lower Digimon card with [Chessmon]\u00a0in its name from your hand without paying the cost.\n[On Deletion] \uff1cRecovery +1\uff1e Then, by suspending 1 of your [QueenChessmon], you may play this card from your trash to the breeding area without paying the cost.",
+    "form": "Mega",
     "id": "BT27-042",
-    "illustrator": "To be completed",
+    "illustrator": "YAMURETSU",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "KingChessmon",
+      "japanese": "\u30ad\u30f3\u30b0\u30c1\u30a7\u30b9\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -164795,8 +164849,8 @@
     "notes": "\u25b9BOOSTER IGNITION OF X [BT-27]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "13",
+    "rarity": "R",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -164805,8 +164859,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[Chessmon]\u00a0in text or w/[DATA SQUAD]\u00a0trait: Cost 3 ",
+    "type": "Puppet/DATA SQUAD",
     "version": "Normal"
   },
   {
@@ -165041,32 +165095,43 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Vaccine",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT27-047-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.4",
     "cardNumber": "BT27-047",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Green/Yellow",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "3",
+        "level": "3"
+      },
+      {
+        "color": "Yellow",
+        "cost": "3",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "\uff1cPiercing\uff1e ",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "5000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[When Moving] [On Play] Suspend 1 of your opponent's Digimon.\n[When Attacking] [Once Per Turn] This Digimon gets +5000 DP for the turn.",
+    "form": "Champion",
     "id": "BT27-047",
-    "illustrator": "To be completed",
+    "illustrator": "tessy",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "WezenGammamon",
+      "japanese": "\u30a6\u30a7\u30ba\u30f3\u30ac\u30f3\u30de\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -165074,18 +165139,18 @@
     "notes": "\u25b9BOOSTER IGNITION OF X [BT-27]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "4",
+    "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] [Gammamon]/Lv.3 w/[VB]\u00a0trait: Cost 2 ",
+    "type": "Ceratopsian/VB",
     "version": "Normal"
   },
   {
@@ -165097,10 +165162,10 @@
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT27-048-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.4",
     "cardNumber": "BT27-048",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Green",
     "digiXros": "-",
     "digivolveCondition": [],
     "digivolveEffect": "-",
@@ -165108,7 +165173,7 @@
     "dp": "-",
     "dualEffect": "-",
     "effect": "-",
-    "form": "-",
+    "form": "Champion",
     "id": "BT27-048",
     "illustrator": "To be completed",
     "linkDP": "-",
@@ -165586,32 +165651,43 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Virus",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT27-057-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.3",
     "cardNumber": "BT27-057",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Black/Yellow",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "1",
+        "level": "2"
+      },
+      {
+        "color": "Yellow",
+        "cost": "1",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[On Deletion] \uff1cDe-Digivolve 1\uff1e 1 of your opponent's Digimon. ",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "2000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "[Start of Your Main Phase] By trashing 1 card with [Chessmon]\u00a0in its text from your hand, \uff1cDraw 1\uff1e and gain 1 memory.",
+    "form": "Rookie",
     "id": "BT27-057",
-    "illustrator": "To be completed",
+    "illustrator": "YAMURETSU",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "PawnChessmon",
+      "japanese": "\u30dd\u30fc\u30f3\u30c1\u30a7\u30b9\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -165619,8 +165695,8 @@
     "notes": "\u25b9BOOSTER IGNITION OF X [BT-27]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "3",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -165629,8 +165705,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.2 w/[Chessmon]\u00a0in text or w/[DATA SQUAD]\u00a0trait: Cost 0 ",
+    "type": "Puppet/DATA SQUAD",
     "version": "Normal"
   },
   {
@@ -165792,32 +165868,43 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Virus",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT27-061-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.4",
     "cardNumber": "BT27-061",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Black/Yellow",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "3",
+        "level": "3"
+      },
+      {
+        "color": "Yellow",
+        "cost": "3",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[On Deletion] \uff1cDe-Digivolve 1\uff1e 1 of your opponent's Digimon. ",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "4000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "\uff1cBlocker\uff1e \n[On Deletion] You may play 1 play cost 4 or lower Digimon card with [Chessmon]\u00a0in its name from your hand without paying the cost.",
+    "form": "Champion",
     "id": "BT27-061",
-    "illustrator": "To be completed",
+    "illustrator": "YAMURETSU",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "KnightChessmon",
+      "japanese": "\u30ca\u30a4\u30c8\u30c1\u30a7\u30b9\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -165825,8 +165912,8 @@
     "notes": "\u25b9BOOSTER IGNITION OF X [BT-27]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "4",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -165835,8 +165922,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.3 w/[Chessmon]\u00a0in name or w/[DATA SQUAD]\u00a0trait: Cost 2 ",
+    "type": "Puppet/DATA SQUAD",
     "version": "Normal"
   },
   {
@@ -166004,10 +166091,10 @@
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT27-065-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.5",
     "cardNumber": "BT27-065",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Black",
     "digiXros": "-",
     "digivolveCondition": [],
     "digivolveEffect": "-",
@@ -166015,7 +166102,7 @@
     "dp": "-",
     "dualEffect": "-",
     "effect": "-",
-    "form": "-",
+    "form": "Ultimate",
     "id": "BT27-065",
     "illustrator": "To be completed",
     "linkDP": "-",
@@ -166048,32 +166135,43 @@
   {
     "aceEffect": "-",
     "assembly": "-",
-    "attribute": "-",
+    "attribute": "Virus",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT27-066-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.5",
     "cardNumber": "BT27-066",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Black/Yellow",
     "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "4"
+      },
+      {
+        "color": "Yellow",
+        "cost": "4",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "[Opponent's Turn] [Once Per Turn] When one of your opponent's Digimon attacks, you may change the attack target to this Digimon.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "7000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n[On Play] [On Deletion] To 1 of your opponent's Digimon, \uff1cDe-Digivolve 1\uff1e for each of your other Digimon with [Chessmon]\u00a0in their names of your opponent's Digimon. Then, delete 1 of your opponent's Digimon with a play cost of 5 or less.",
+    "form": "Ultimate",
     "id": "BT27-066",
-    "illustrator": "To be completed",
+    "illustrator": "YAMURETSU",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "RookChessmon",
+      "japanese": "\u30eb\u30fc\u30af\u30c1\u30a7\u30b9\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -166081,8 +166179,8 @@
     "notes": "\u25b9BOOSTER IGNITION OF X [BT-27]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "7",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -166091,8 +166189,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.4 w/[Chessmon]\u00a0in name or w/[DATA SQUAD]\u00a0trait: Cost 3 ",
+    "type": "Puppet/DATA SQUAD",
     "version": "Normal"
   },
   {
@@ -166208,33 +166306,44 @@
   },
   {
     "aceEffect": "-",
-    "assembly": "-",
-    "attribute": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Chessmon]\u00a0in its name",
+    "attribute": "Virus",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT27-069-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.6",
     "cardNumber": "BT27-069",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digimon",
+    "color": "Black/Yellow",
     "digiXros": "-",
-    "digivolveCondition": [],
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "5"
+      },
+      {
+        "color": "Yellow",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "12000",
     "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
+    "effect": "\uff1cRush\uff1e \n\uff1cOverclock ([Chessmon] in name)\uff1e \n\uff1cBlocker\uff1e \n[On Play] [When Digivolving] \uff1cDe-Digivolve 3\uff1e 1 of your opponent's Digimon. \n[All Turns] [Once Per Turn] When any of your other Digimon with [Chessmon]\u00a0in their names are deleted, delete 1 of your opponent's lowest play cost Digimon. If this effect didn't delete, trash their top security card.",
+    "form": "Mega",
     "id": "BT27-069",
-    "illustrator": "To be completed",
+    "illustrator": "YAMURETSU",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "QueenChessmon",
+      "japanese": "\u30af\u30a4\u30fc\u30f3\u30c1\u30a7\u30b9\u30e2\u30f3",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -166242,8 +166351,8 @@
     "notes": "\u25b9BOOSTER IGNITION OF X [BT-27]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "12",
+    "rarity": "R",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -166252,8 +166361,8 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[Chessmon]\u00a0in text or w/[DATA SQUAD]\u00a0trait: Cost 3 ",
+    "type": "Puppet/DATA SQUAD",
     "version": "Normal"
   },
   {
@@ -167494,23 +167603,23 @@
     "cardLv": "-",
     "cardNumber": "BT27-093",
     "cardType": "Tamer",
-    "color": "[[]]",
+    "color": "Black/Yellow",
     "digiXros": "-",
     "digivolveCondition": [],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "[Start of Your Main Phase] By placing 1 card with [Chessmon]\u00a0in its text from your hand face down under this Tamer, \uff1cDraw 1\uff1e and gain 1 memory.\n[Main] By suspending this Tamer and trashing 2 bottom face-down cards from under any of your Tamers, 1 of your Digimon may digivolve into a Digimon card with [Chessmon]\u00a0in its name in the hand with the cost reduced by 2.",
     "form": "-",
     "id": "BT27-093",
-    "illustrator": "To be completed",
+    "illustrator": "No Illustrator",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Miki Kurosaki & Megumi Shirakawa",
+      "japanese": "\u9ed2\u5d0e\u7f8e\u6a39&\u767d\u5ddd\u6075",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -167518,8 +167627,8 @@
     "notes": "\u25b9BOOSTER IGNITION OF X [BT-27]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "4",
+    "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -167527,9 +167636,9 @@
       "korean": "Not released"
     },
     "rule": "-",
-    "securityEffect": "-",
+    "securityEffect": "[Security] Play this card without paying the cost.",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "DATA SQUAD",
     "version": "Normal"
   },
   {
@@ -167544,23 +167653,23 @@
     "cardLv": "-",
     "cardNumber": "BT27-094",
     "cardType": "Tamer",
-    "color": "[[]]",
+    "color": "Black",
     "digiXros": "-",
     "digivolveCondition": [],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "[Start of Your Turn] If you have 2 or less memory, set it to 3.\n[All Turns] When a Digimon attacks, by suspending this Tamer, you may place the top 2 cards of your deck face down under this Tamer. After, if it's your opponent's turn, by trashing 4 bottom face-down cards from under any of your Tamers, you may use 1 black [BEATBREAK]\u00a0trait Option card from your hand without paying the cost.",
     "form": "-",
     "id": "BT27-094",
-    "illustrator": "To be completed",
+    "illustrator": "No Illustrator",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Reina Sakuya",
+      "japanese": "\u54b2\u591c\u30ec\u30fc\u30ca",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -167568,8 +167677,8 @@
     "notes": "\u25b9BOOSTER IGNITION OF X [BT-27]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "4",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -167577,9 +167686,9 @@
       "korean": "Not released"
     },
     "rule": "-",
-    "securityEffect": "-",
+    "securityEffect": "[Security] Play this card without paying the cost.",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "Glowing Dawn/BEATBREAK",
     "version": "Normal"
   },
   {
@@ -167701,16 +167810,16 @@
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "[Start of Your Turn] If you have 2 or less memory, set it to 3.\n[All Turns] When a Digimon attacks, by suspending this Tamer, you may place the top 2 cards of your deck face down under this Tamer. After, if it's your turn, by trashing 4 bottom face-down cards from under any of your Tamers, you may use 1 purple [BEATBREAK]\u00a0trait Option card from your trash with the cost reduced by 3.",
     "form": "-",
     "id": "BT27-097",
-    "illustrator": "To be completed",
+    "illustrator": "No Illustrator",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
     "name": {
-      "english": "[[:Category:|]]",
-      "japanese": "",
+      "english": "Makoto Kuonji",
+      "japanese": "\u4e45\u9060\u5bfa\u30de\u30b3\u30c8",
       "korean": "-",
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
@@ -167718,8 +167827,8 @@
     "notes": "\u25b9BOOSTER IGNITION OF X [BT-27]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "4",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -167727,9 +167836,9 @@
       "korean": "Not released"
     },
     "rule": "-",
-    "securityEffect": "-",
+    "securityEffect": "[Security] Play this card without paying the cost.",
     "specialDigivolve": "-",
-    "type": "-",
+    "type": "Glowing Dawn/BEATBREAK",
     "version": "Normal"
   },
   {
@@ -381836,10 +381945,10 @@
     ],
     "burstDigivolve": "-",
     "cardImage": "assets/images/cards/ST25-01-J.webp",
-    "cardLv": "-",
+    "cardLv": "Lv.2",
     "cardNumber": "ST25-01",
-    "cardType": "",
-    "color": "[[]]",
+    "cardType": "Digi-Egg",
+    "color": "Red",
     "digiXros": "-",
     "digivolveCondition": [],
     "digivolveEffect": "-",
@@ -381847,7 +381956,7 @@
     "dp": "-",
     "dualEffect": "-",
     "effect": "-",
-    "form": "-",
+    "form": "In-Training",
     "id": "ST25-01",
     "illustrator": "To be completed",
     "linkDP": "-",
@@ -381870,6 +381979,112 @@
       "english": "Not released",
       "japanese": "Not released",
       "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Lesser/Alysion",
+    "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "00"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/ST25-02-J.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "ST25-02",
+    "cardType": "Digimon",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "Rookie",
+    "id": "ST25-02",
+    "illustrator": "-",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:{{{name}}}|{{{name}}}]]",
+      "japanese": "{{{jpname}}}",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "-",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "00"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/ST25-03-J.webp",
+    "cardLv": "-",
+    "cardNumber": "ST25-03",
+    "cardType": "",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "ST25-03",
+    "illustrator": "-",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:{{{name}}}|{{{name}}}]]",
+      "japanese": "{{{jpname}}}",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "-",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
