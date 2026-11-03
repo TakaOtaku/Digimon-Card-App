@@ -129,7 +129,8 @@ export interface DigimonCardImage {
           label="Delete"></button>
       </div>
       <ng-template #editButtons>
-        <div class="mx-auto mt-1 grid grid-cols-3 lg:grid-cols-5">
+        <div class="mx-auto mt-1 grid grid-cols-3 lg:grid-cols-6">
+          <button (click)="viewDeck()" pButton class="p-button-sm lg:p-button p-button-outlined" type="button" label="View"></button>
           <button (click)="openDeck($event)" pButton class="p-button-sm lg:p-button p-button-outlined" type="button" label="Open"></button>
           <button (click)="copyDeck($event)" pButton class="p-button-sm lg:p-button p-button-outlined" type="button" label="Copy"></button>
           <button
@@ -232,6 +233,11 @@ export class DeckDialogComponent {
     );
   }
 
+  viewDeck() {
+    this.router.navigateByUrl(`/deck/${this.deck.id}`);
+    this.dialogStore.showDeckDialog(false);
+  }
+
   openDeck(event: Event) {
     if (this.editable) {
       if (this.authService.isLoggedIn) {
@@ -327,7 +333,7 @@ export class DeckDialogComponent {
     selBox.style.opacity = '0';
     selBox.value = this.editable
       ? `${environment.appUrl}/deckbuilder/user/${this.authService.currentUser()?.uid}/deck/${this.deck.id}`
-      : `${environment.appUrl}/deckbuilder/${this.deck.id}`;
+      : `${environment.appUrl}/deck/${this.deck.id}`;
     document.body.appendChild(selBox);
     selBox.focus();
     selBox.select();

@@ -18,6 +18,10 @@ export const routes: Routes = [
     loadComponent: () => import('./features/cards/cards-page.component').then(m => m.CardsPageComponent),
   },
   {
+    path: 'deck/:id',
+    loadComponent: () => import('./features/decks/deck-page.component').then(m => m.DeckPageComponent),
+  },
+  {
     path: 'decks',
     loadComponent: () => import('./features/decks/decks-page.component').then(m => m.DecksPageComponent),
   },
