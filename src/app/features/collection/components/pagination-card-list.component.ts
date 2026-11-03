@@ -29,7 +29,10 @@ import { CardMarketService } from '../../../services/card-market.service';
         [filterButton]="!filterBoxEnabled"
         (filterBox)="filterBox = $event"
         [widthForm]="widthForm"
-        [viewOnly]="inputCollection.length > 0"></digimon-pagination-card-list-header>
+        [viewOnly]="inputCollection.length > 0">
+        <ng-content select="[headerStart]" ngProjectAs="[headerStart]"></ng-content>
+        <ng-content select="[headerEnd]" ngProjectAs="[headerEnd]"></ng-content>
+      </digimon-pagination-card-list-header>
 
       <digimon-search></digimon-search>
 

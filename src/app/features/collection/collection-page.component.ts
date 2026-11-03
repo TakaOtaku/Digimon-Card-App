@@ -1,5 +1,5 @@
 import { CurrencyPipe, NgClass } from '@angular/common';
-import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
@@ -21,6 +21,23 @@ import { PaginationCardListComponent } from './components/pagination-card-list.c
           [collectionOnly]="true"
           [inputCollection]="collection"
           class="w-screen flex flex-row h-[calc(100vh-7.5rem)] md:h-[calc(100vh-5rem)]">
+          <div headerStart role="group" aria-label="Show cards" class="inline-flex gap-1 rounded-full border border-line bg-ink-1 p-0.5">
+            @for (option of ownedOptions; track option.label) {
+              <button
+                type="button"
+                (click)="showOwned(option.range)"
+                [attr.aria-pressed]="ownedFilter() === option.label"
+                class="rounded-full px-3 py-0.5 text-xs"
+                [ngClass]="ownedFilter() === option.label ? 'bg-accent text-accent-ink font-semibold' : 'text-fg'">
+                {{ option.label }}
+              </button>
+            }
+          </div>
+          @if (own) {
+            <button headerEnd type="button" (click)="openImportExport()" class="h-8 rounded-lg border border-line bg-ink-2 px-3 text-xs font-semibold text-fg hover:border-accent">
+              <i class="pi pi-sort-alt mr-1"></i> Import / Export
+            </button>
+          }
           <section aria-label="Collection summary" class="w-full flex flex-wrap items-center gap-2 px-1 pt-2">
             @for (stat of stats(); track stat.label) {
               <div class="min-w-[9rem] flex-1 rounded-lg border border-line bg-ink-1 px-4 py-3">
@@ -28,29 +45,13 @@ import { PaginationCardListComponent } from './components/pagination-card-list.c
                 <div class="font-mono text-2xl font-semibold text-fg">{{ stat.value }}</div>
               </div>
             }
-            <div class="flex w-full flex-wrap items-center gap-2">
-              <div role="group" aria-label="Show cards" class="inline-flex gap-1 rounded-full border border-line bg-ink-1 p-1">
-                @for (option of ownedOptions; track option.label) {
-                  <button
-                    type="button"
-                    (click)="showOwned(option.range)"
-                    [attr.aria-pressed]="ownedFilter() === option.label"
-                    class="rounded-full px-3 py-1 text-sm"
-                    [ngClass]="ownedFilter() === option.label ? 'bg-accent text-accent-ink font-semibold' : 'text-fg'">
-                    {{ option.label }}
-                  </button>
-                }
-              </div>
-              @if (own) {
-                <button type="button" (click)="openImportExport()" class="ml-auto h-9 rounded-lg border border-line bg-ink-2 px-3 text-sm text-fg hover:border-accent">
-                  <i class="pi pi-sort-alt mr-1"></i> Import / Export
-                </button>
-              }
-            </div>
           </section>
-          <section aria-label="Set completion" class="w-full flex gap-2 overflow-x-auto px-1 pt-1 pb-2">
+          <section
+            aria-label="Set completion"
+            class="w-full grid grid-cols-[repeat(auto-fill,minmax(8rem,1fr))] gap-2 overflow-hidden px-1 pt-2"
+            [style.max-height]="showAllSets() ? null : '11.75rem'">
             @for (set of sets(); track set.set) {
-              <div class="shrink-0 w-32 rounded-lg border border-line bg-ink-1 p-3 flex flex-col gap-2">
+              <div class="rounded-lg border border-line bg-ink-1 p-3 flex flex-col gap-2">
                 <div class="flex justify-between font-mono text-sm">
                   <span class="font-semibold text-fg">{{ set.set }}</span>
                   <span class="text-muted">{{ set.percent }}%</span>
@@ -62,6 +63,11 @@ import { PaginationCardListComponent } from './components/pagination-card-list.c
               </div>
             }
           </section>
+          @if (sets().length > 12) {
+            <button type="button" (click)="showAllSets.set(!showAllSets())" class="mx-1 mb-2 mt-1 w-full text-left text-sm text-accent hover:underline">
+              {{ showAllSets() ? 'Show fewer sets' : 'Show all ' + sets().length + ' sets' }}
+            </button>
+          }
         </digimon-pagination-card-list>
       </digimon-page>
     }
@@ -100,6 +106,7 @@ export class CollectionPageComponent {
   private currency = inject(CurrencyPipe);
 
   own = !this.route.snapshot.params['userId'];
+  showAllSets = signal(false);
   private collection = computed(() => (this.own ? this.saveStore.collection() : (this.urlCollection() ?? [])));
 
   stats = computed(() => {
