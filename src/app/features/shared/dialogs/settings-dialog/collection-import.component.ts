@@ -4,42 +4,37 @@ import { ICountCard } from '@models';
 import { DigimonCardStore, SaveStore } from '@store';
 import { ToastrService } from 'ngx-toastr';
 import { MessageService } from 'primeng/api';
-import { ButtonDirective } from 'primeng/button';
-import { Textarea } from 'primeng/textarea';
 
 @Component({
   selector: 'digimon-collection-import',
   template: `
-    <div>
-      <p>Copy your collection in the text area and press import.</p>
-      <textarea
-        [(ngModel)]="collectionText"
-        [placeholder]="importPlaceholder"
-        class="border-black-500 min-h-[150px] w-full border-2"
-        id="text-import"
-        pInputTextarea></textarea>
-    </div>
-    <div class="flex w-full justify-end">
-      <button (click)="importCollection()" icon="pi pi-upload" label="Import" pButton type="button"></button>
+    <div class="flex flex-col gap-4">
+      <p class="m-0 text-sm leading-relaxed text-muted">
+        Paste one card per line as <span class="font-mono text-fg">quantity card-number</span>, for example
+        <span class="font-mono text-fg">4 BT1-010</span>. Counts are added to your collection; unknown card numbers are skipped.
+      </p>
+      <label class="flex flex-col gap-1">
+        <span class="text-xs font-semibold uppercase tracking-wider text-muted">Collection list</span>
+        <textarea
+          id="text-import"
+          [(ngModel)]="collectionText"
+          [placeholder]="importPlaceholder"
+          class="min-h-[220px] w-full rounded-lg border border-line bg-ink-0 p-3 font-mono text-sm text-fg outline-none focus:border-accent"></textarea>
+      </label>
+      <div class="flex justify-end">
+        <button type="button" (click)="importCollection()" [disabled]="!collectionText.trim()" class="inline-flex h-11 items-center gap-2 rounded-lg bg-accent px-5 font-semibold text-accent-ink disabled:opacity-40"><i class="pi pi-upload"></i> Import cards</button>
+      </div>
     </div>
   `,
-  styles: [
-    `
-      .centered-tabs .p-tabview-nav {
-        display: flex;
-        justify-content: center;
-      }
-    `,
-  ],
   standalone: true,
-  imports: [FormsModule, Textarea, ButtonDirective],
+  imports: [FormsModule],
   providers: [MessageService],
 })
 export class CollectionImportComponent {
   private saveStore = inject(SaveStore);
   private toastrService: ToastrService = inject(ToastrService);
 
-  importPlaceholder = '' + 'Paste Collection here\n' + '\n' + ' Format:\n' + '   Qty Id\n';
+  importPlaceholder = '4 BT1-010\n2 BT1-011\n1 EX13-001';
   collectionText = '';
 
   private digimonCardStore = inject(DigimonCardStore);

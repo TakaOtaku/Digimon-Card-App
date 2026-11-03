@@ -10,8 +10,8 @@ import { GeneralSettingsComponent } from './general-settings.component';
     <p-tabs value="0" class="settings-tabs">
       <p-tablist>
         <p-tab value="0">General</p-tab>
-        <p-tab value="1">Collection Export</p-tab>
-        <p-tab value="2">Collection Import</p-tab>
+        <p-tab value="1">Export collection</p-tab>
+        <p-tab value="2">Import collection</p-tab>
       </p-tablist>
 
       <p-tabpanels>
