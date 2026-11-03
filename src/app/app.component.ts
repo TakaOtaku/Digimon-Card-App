@@ -36,10 +36,8 @@ import { NavbarComponent } from './features/shared/navbar/navbar.component';
 
       <digimon-dialog></digimon-dialog>
 
-      <p-drawer [(visible)]="sideNav" styleClass="w-[6.5rem] overflow-hidden p-0">
-        <ng-template pTemplate="content" class="p-0">
-          <digimon-nav-links class="flex flex-col w-full justify-center" [sidebar]="true"></digimon-nav-links>
-        </ng-template>
+      <p-drawer [(visible)]="sideNav" position="bottom" header="Menu" styleClass="!h-auto max-h-[85vh] rounded-t-2xl border-t border-line px-4 pt-2">
+        <digimon-nav-links [sidebar]="true" (done)="sideNav = false"></digimon-nav-links>
       </p-drawer>
 
       <p-toast></p-toast>

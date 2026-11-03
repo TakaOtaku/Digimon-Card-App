@@ -1,5 +1,5 @@
 import { NgClass, NgIf } from '@angular/common';
-import { Component, computed, inject, Input, Signal, signal, WritableSignal } from '@angular/core';
+import { Component, computed, EventEmitter, inject, Input, Output, Signal, signal, WritableSignal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -16,138 +16,139 @@ import { MenuItem } from 'primeng/api';
 @Component({
   selector: 'digimon-nav-links',
   template: `
-    <ul
-      [ngClass]="{
-        'h-full flex-row ml-4 xl:ml-8': !sidebar,
-        'w-[6.5rem] py-5 flex-col justify-between ml-auto': sidebar,
-      }"
-      class="p-0 my-0 list-none flex">
-      <li class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer" [ngClass]="getNavigationBorder('/')" (click)="router.navigateByUrl('')">
-        <i class="pi pi-home group-hover:text-accent" style="font-size: 1.5rem"></i>
-        <div [ngClass]="{ 'text-accent': route() === '/' }" style="font-size:smaller" class="p-2 group-hover:text-accent">Home</div>
-      </li>
-
-      <li
-        class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
-        [ngClass]="getNavigationBorder('/cards')"
-        (click)="router.navigateByUrl('/cards')">
-        <i class="pi pi-clone group-hover:text-accent" style="font-size: 1.5rem"></i>
-        <button style="font-size:smaller" class="p-2 group-hover:text-accent">Cards</button>
-      </li>
-
-      <li
-        class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
-        [ngClass]="getNavigationBorder('/deckbuilder')"
-        (click)="router.navigateByUrl('/deckbuilder')">
-        <i class="pi pi-pencil group-hover:text-accent" style="font-size: 1.5rem"></i>
-        <button style="font-size:smaller" class="p-2 group-hover:text-accent">Deckbuilder</button>
-      </li>
-
-      <li
-        class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
-        [ngClass]="getNavigationBorder('/collection')"
-        (click)="router.navigateByUrl('/collection')">
-        <i class="pi pi-folder group-hover:text-accent" style="font-size: 1.5rem"></i>
-        <button style="font-size:smaller" class="p-2 group-hover:text-accent">Collection</button>
-      </li>
-
-      <li
-        class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
-        [ngClass]="getNavigationBorder('/user')"
-        (click)="router.navigateByUrl('/user')">
-        <i class="pi pi-user group-hover:text-accent" style="font-size: 1.5rem"></i>
-        <button style="font-size:smaller" class="p-2 group-hover:text-accent">Profile</button>
-      </li>
-
-      <li
-        class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
-        [ngClass]="getNavigationBorder('/decks')"
-        (click)="router.navigateByUrl('/decks')">
-        <i class="pi pi-table group-hover:text-accent" style="font-size: 1.5rem"></i>
-        <button style="font-size:smaller" class="p-2 group-hover:text-accent">Decks</button>
-      </li>
-
-      @if (sidebar) {
-      <li
-        class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
-        [ngClass]="getNavigationBorder('/rulings')"
-        (click)="router.navigateByUrl('/rulings')">
-        <i class="pi pi-question-circle group-hover:text-accent" style="font-size: 1.5rem"></i>
-        <button style="font-size:smaller" class="p-2 group-hover:text-accent">Rulings</button>
-      </li>
-
-      <li
-        class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
-        [ngClass]="getNavigationBorder('/products')"
-        (click)="router.navigateByUrl('/products')">
-        <i class="pi pi-tags group-hover:text-accent" style="font-size: 1.5rem"></i>
-        <button style="font-size:smaller" class="p-2 group-hover:text-accent">Products</button>
-      </li>
-      } @else {
-        <li
-          class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
-          [ngClass]="moreActive() ? 'border-b-[3px] border-accent text-accent' : 'text-fg'"
-          (click)="moreMenu.toggle($event)">
-          <i class="pi pi-ellipsis-h group-hover:text-accent" style="font-size: 1.5rem"></i>
-          <button style="font-size:smaller" class="p-2 group-hover:text-accent" aria-haspopup="menu">More</button>
-        </li>
-      }
-    </ul>
-    <p-menu #moreMenu [model]="moreItems" [popup]="true" appendTo="body"></p-menu>
-
     @if (sidebar) {
-      <div class="flex flex-col justify-center">
-        <button
-          (click)="loginLogout()"
-          class="group">
-          <ng-container *ngIf="user(); else userIcon">
-            <div
-              class='min-w-auto mx-auto primary-background h-12 w-12 overflow-hidden rounded-full text-fg group-hover:bg-accent"'>
-              <img *ngIf="user()" alt="{{ this.user()?.displayName }}" src="{{ this.user()?.photoUrl }}" />
-            </div>
-            <span class="text-fg text-xs">{{ this.user()?.displayName }}</span>
-          </ng-container>
-          <ng-template #userIcon>
-            <div
-              class='min-w-auto mx-auto flex flex-col justify-center primary-background h-12 w-12 overflow-hidden rounded-full text-fg hover:bg-accent"'>
-              <i class="pi pi-user" style="font-size: 1.5rem"></i>
-            </div>
-            <span class="text-fg text-xs group-hover:text-accent">Press to Login</span>
-          </ng-template>
-        </button>
-
-        <div
-          class="flex flex-col group cursor-pointer"
-          [ngClass]="{
-            'my-5': sidebar,
-          }"
-          (click)="openSettings()">
-          <i class="pi pi-cog text-center text-fg group-hover:text-accent" style="font-size: 1.5rem"></i>
-          <span class="text-xs text-center text-fg group-hover:text-accent">Settings</span>
+      <div class="flex flex-col gap-5 pb-4">
+        <div class="flex items-center gap-3">
+          <span class="grid h-12 w-12 shrink-0 place-items-center overflow-hidden rounded-full bg-ink-2 text-muted">
+            @if (user(); as u) {
+              <img [src]="u.photoUrl" alt="" class="h-full w-full object-cover" />
+            } @else {
+              <i class="pi pi-user text-xl"></i>
+            }
+          </span>
+          <div class="min-w-0 flex-1">
+            <div class="truncate font-semibold text-fg">{{ user()?.displayName || 'Not logged in' }}</div>
+            <div class="text-xs text-muted">{{ user() ? 'Decks and collection sync to your account' : 'Log in to sync decks and collection' }}</div>
+          </div>
+          <button
+            type="button"
+            (click)="loginLogout(); done.emit()"
+            class="h-10 shrink-0 rounded-lg px-4 text-sm font-semibold"
+            [ngClass]="user() ? 'border border-line bg-ink-2 text-fg' : 'bg-accent text-accent-ink'">
+            {{ user() ? 'Log out' : 'Log in' }}
+          </button>
         </div>
 
-        <div class="grid grid-cols-2 justify-center items-center">
-          <a class="mx-auto" href="https://github.com/TakaOtaku/Digimon-Card-App" target="_blank">
-            <i class="pi pi-github px-1 text-fg hover:text-accent" style="font-size: 1rem"></i>
-          </a>
+        <nav aria-label="All pages" class="grid grid-cols-4 gap-2">
+          @for (link of sheetLinks; track link.url) {
+            <button
+              type="button"
+              (click)="go(link.url)"
+              [attr.aria-current]="isActive(link.url) ? 'page' : null"
+              class="flex flex-col items-center gap-1.5 rounded-xl border bg-ink-2 py-3 text-xs font-medium"
+              [ngClass]="isActive(link.url) ? 'border-accent text-accent' : 'border-transparent text-fg'">
+              <i [class]="'pi ' + link.icon" style="font-size: 1.25rem"></i>
+              {{ link.label }}
+            </button>
+          }
+        </nav>
 
-          <a class="mx-auto" href="https://twitter.com/digimoncardapp" target="_blank">
-            <i class="pi pi-twitter px-1 text-fg hover:text-accent" style="font-size: 1rem"></i>
-          </a>
+        <div class="flex flex-col divide-y divide-line overflow-hidden rounded-xl border border-line">
+          <button type="button" (click)="openSettings(); done.emit()" class="flex h-12 items-center gap-3 px-4 text-left text-fg">
+            <i class="pi pi-cog text-muted"></i><span class="flex-1">Settings</span><i class="pi pi-chevron-right text-xs text-muted"></i>
+          </button>
+          <button type="button" (click)="showChangelog(); done.emit()" class="flex h-12 items-center gap-3 px-4 text-left text-fg">
+            <i class="pi pi-sparkles text-muted"></i><span class="flex-1">What's new</span>
+            <span class="font-mono text-xs text-muted">v{{ version }}</span><i class="pi pi-chevron-right text-xs text-muted"></i>
+          </button>
+        </div>
 
-          <a class="mx-auto" href="https://discordapp.com/users/189436886744432640" target="_blank">
-            <i class="pi pi-discord px-1 text-fg hover:text-accent" style="font-size: 1rem"></i>
-          </a>
-
-          <a class="mx-auto" href="https://www.paypal.com/donate/?hosted_button_id=WLM58Q785D4H4" target="_blank">
-            <i class="pi pi-paypal px-1 text-fg hover:text-accent" style="font-size: 1rem"></i>
-          </a>
-          <div class="col-span-2 flex align-center justify-center">
-            <p-button class="mx-auto" [link]="true" size="small" (onClick)="showChangelog()" label="Ver. 5.0.0"></p-button>
-          </div>
+        <div class="flex justify-center gap-6 text-muted">
+          <a href="https://github.com/TakaOtaku/Digimon-Card-App" target="_blank" aria-label="GitHub" class="text-muted hover:text-accent"><i class="pi pi-github text-lg"></i></a>
+          <a href="https://twitter.com/digimoncardapp" target="_blank" aria-label="X / Twitter" class="text-muted hover:text-accent"><i class="pi pi-twitter text-lg"></i></a>
+          <a href="https://discordapp.com/users/189436886744432640" target="_blank" aria-label="Discord" class="text-muted hover:text-accent"><i class="pi pi-discord text-lg"></i></a>
+          <a href="https://www.paypal.com/donate/?hosted_button_id=WLM58Q785D4H4" target="_blank" aria-label="Donate with PayPal" class="text-muted hover:text-accent"><i class="pi pi-paypal text-lg"></i></a>
         </div>
       </div>
     } @else {
+      <ul
+        [ngClass]="{
+          'h-full flex-row ml-4 xl:ml-8': !sidebar,
+          'w-[6.5rem] py-5 flex-col justify-between ml-auto': sidebar,
+        }"
+        class="p-0 my-0 list-none flex">
+        <li class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer" [ngClass]="getNavigationBorder('/')" (click)="router.navigateByUrl('')">
+          <i class="pi pi-home group-hover:text-accent" style="font-size: 1.5rem"></i>
+          <div [ngClass]="{ 'text-accent': route() === '/' }" style="font-size:smaller" class="p-2 group-hover:text-accent">Home</div>
+        </li>
+
+        <li
+          class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
+          [ngClass]="getNavigationBorder('/cards')"
+          (click)="router.navigateByUrl('/cards')">
+          <i class="pi pi-clone group-hover:text-accent" style="font-size: 1.5rem"></i>
+          <button style="font-size:smaller" class="p-2 group-hover:text-accent">Cards</button>
+        </li>
+
+        <li
+          class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
+          [ngClass]="getNavigationBorder('/deckbuilder')"
+          (click)="router.navigateByUrl('/deckbuilder')">
+          <i class="pi pi-pencil group-hover:text-accent" style="font-size: 1.5rem"></i>
+          <button style="font-size:smaller" class="p-2 group-hover:text-accent">Deckbuilder</button>
+        </li>
+
+        <li
+          class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
+          [ngClass]="getNavigationBorder('/collection')"
+          (click)="router.navigateByUrl('/collection')">
+          <i class="pi pi-folder group-hover:text-accent" style="font-size: 1.5rem"></i>
+          <button style="font-size:smaller" class="p-2 group-hover:text-accent">Collection</button>
+        </li>
+
+        <li
+          class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
+          [ngClass]="getNavigationBorder('/user')"
+          (click)="router.navigateByUrl('/user')">
+          <i class="pi pi-user group-hover:text-accent" style="font-size: 1.5rem"></i>
+          <button style="font-size:smaller" class="p-2 group-hover:text-accent">Profile</button>
+        </li>
+
+        <li
+          class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
+          [ngClass]="getNavigationBorder('/decks')"
+          (click)="router.navigateByUrl('/decks')">
+          <i class="pi pi-table group-hover:text-accent" style="font-size: 1.5rem"></i>
+          <button style="font-size:smaller" class="p-2 group-hover:text-accent">Decks</button>
+        </li>
+
+        @if (sidebar) {
+        <li
+          class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
+          [ngClass]="getNavigationBorder('/rulings')"
+          (click)="router.navigateByUrl('/rulings')">
+          <i class="pi pi-question-circle group-hover:text-accent" style="font-size: 1.5rem"></i>
+          <button style="font-size:smaller" class="p-2 group-hover:text-accent">Rulings</button>
+        </li>
+
+        <li
+          class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
+          [ngClass]="getNavigationBorder('/products')"
+          (click)="router.navigateByUrl('/products')">
+          <i class="pi pi-tags group-hover:text-accent" style="font-size: 1.5rem"></i>
+          <button style="font-size:smaller" class="p-2 group-hover:text-accent">Products</button>
+        </li>
+        } @else {
+          <li
+            class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
+            [ngClass]="moreActive() ? 'border-b-[3px] border-accent text-accent' : 'text-fg'"
+            (click)="moreMenu.toggle($event)">
+            <i class="pi pi-ellipsis-h group-hover:text-accent" style="font-size: 1.5rem"></i>
+            <button style="font-size:smaller" class="p-2 group-hover:text-accent" aria-haspopup="menu">More</button>
+          </li>
+        }
+      </ul>
+      <p-menu #moreMenu [model]="moreItems" [popup]="true" appendTo="body"></p-menu>
       <div class="order-1 ml-3 flex flex-row items-center gap-2">
         <a
           href="/deckbuilder"
@@ -182,6 +183,19 @@ import { MenuItem } from 'primeng/api';
 })
 export class NavLinksComponent {
   @Input() sidebar = false;
+  // Sheet mode: tell the host to close after any action
+  @Output() done = new EventEmitter<void>();
+  readonly version = '5.0.0';
+  sheetLinks = [
+    { url: '/', label: 'Home', icon: 'pi-home' },
+    { url: '/cards', label: 'Cards', icon: 'pi-clone' },
+    { url: '/deckbuilder', label: 'Build', icon: 'pi-pencil' },
+    { url: '/collection', label: 'Collection', icon: 'pi-folder' },
+    { url: '/user', label: 'Profile', icon: 'pi-user' },
+    { url: '/decks', label: 'Decks', icon: 'pi-table' },
+    { url: '/rulings', label: 'Rulings', icon: 'pi-question-circle' },
+    { url: '/products', label: 'Products', icon: 'pi-tags' },
+  ];
   dialogStore = inject(DialogStore);
   saveStore = inject(SaveStore);
   router: Router = inject(Router);
@@ -194,6 +208,8 @@ export class NavLinksComponent {
   moreItems: MenuItem[] = [
     { label: 'Rulings', icon: 'pi pi-question-circle', routerLink: '/rulings' },
     { label: 'Products', icon: 'pi pi-tags', routerLink: '/products' },
+    { separator: true },
+    { label: "What's new", icon: 'pi pi-sparkles', command: () => this.showChangelog() },
   ];
   moreActive = computed(() => ['/rulings', '/products'].includes(this.route()));
 
@@ -203,6 +219,16 @@ export class NavLinksComponent {
         this.route.set(event.url);
       }
     });
+  }
+
+  isActive(url: string): boolean {
+    const route = this.route().split('?')[0];
+    return url === '/' ? route === '/' : route.startsWith(url);
+  }
+
+  go(url: string) {
+    this.router.navigateByUrl(url);
+    this.done.emit();
   }
 
   loginLogout() {
