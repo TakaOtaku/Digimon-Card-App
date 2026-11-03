@@ -153,20 +153,21 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
                 }
               </div>
             } @else {
-              <!-- Pool hidden: Digimon fill a wide column, Digi-Egg / Tamer / Option stack beside it -->
-              <div [ngClass]="poolVisible ? 'flex flex-col gap-4' : 'grid grid-cols-[minmax(0,1fr)_auto] items-start gap-x-8 gap-y-4'">
+              <!-- Showcase (pool hidden on a wide screen): Digimon fill a wide column, Digi-Egg / Tamer / Option stack beside it.
+                   Narrow screens hide the pool too (mobile Deck tab), but keep the stacked layout. -->
+              <div [ngClass]="!showcase ? 'flex flex-col gap-4' : 'grid grid-cols-[minmax(0,1fr)_auto] items-start gap-x-8 gap-y-4'">
                 @for (group of groups; track group.title) {
-                  <section class="flex min-w-0 flex-col gap-1" [ngClass]="poolVisible ? '' : sectionPlacement(group.title)">
+                  <section class="flex min-w-0 flex-col gap-1" [ngClass]="!showcase ? '' : sectionPlacement(group.title)">
                     @if (group.title) {
                       <div class="flex justify-between border-b border-line px-1 pb-1">
                         <span class="text-xs font-semibold uppercase tracking-wider text-muted">{{ group.title }}</span>
                         <span class="font-mono text-xs text-muted">{{ group.count }}</span>
                       </div>
                     }
-                    <div [ngClass]="poolVisible ? 'grid grid-cols-[repeat(auto-fill,minmax(6.5rem,1fr))]' : 'flex flex-wrap'">
+                    <div [ngClass]="!showcase ? 'grid grid-cols-[repeat(auto-fill,minmax(6.5rem,1fr))]' : 'flex flex-wrap'">
                       <digimon-deck-card
                         *ngFor="let card of group.cards"
-                        [class.w-36]="!poolVisible"
+                        [class.w-36]="showcase"
                         pDraggable="fromDeck"
                         (onDragStart)="setDraggedCard(card, DRAG.Main)"
                         (removeCard)="removeCard(card)"
