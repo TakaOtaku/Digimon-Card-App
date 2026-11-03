@@ -383,6 +383,16 @@ export function groupDeckCards(cards: IDeckCard[]): DeckCardGroup[] {
   return [...groups.values()].sort((a, b) => a.order - b.order).map(({ title, count, cards }) => ({ title, count, cards }));
 }
 
+/** Copies still needed per deck card, counting every owned printing of the same card number. */
+export function missingCards(cards: IDeckCard[], collection: ICountCard[]): { card: IDeckCard; need: number }[] {
+  const owned = new Map<string, number>();
+  collection.forEach((c) => {
+    const number = withoutJ(c.id).split('_P')[0];
+    owned.set(number, (owned.get(number) ?? 0) + c.count);
+  });
+  return cards.map((card) => ({ card, need: Math.max(0, card.count - (owned.get(card.cardNumber) ?? 0)) })).filter((m) => m.need > 0);
+}
+
 export interface SetCompletion {
   set: string;
   owned: number;

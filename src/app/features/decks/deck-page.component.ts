@@ -4,7 +4,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ImgFallbackDirective } from '@directives';
-import { groupDeckCards, levelSort, mapToDeckCards, withoutJ } from '@functions';
+import { groupDeckCards, levelSort, mapToDeckCards, missingCards } from '@functions';
 import { IDeck, IDeckCard, PriceMetric } from '@models';
 import { MongoBackendService } from '@services';
 import { DialogStore, DigimonCardStore, SaveStore } from '@store';
@@ -179,16 +179,8 @@ export class DeckPageComponent {
     return isNaN(time) ? null : new Date(time);
   });
 
-  // Owned copies per card number, across printings (same rule as the builder)
-  private owned = computed(() => {
-    const owned = new Map<string, number>();
-    this.saveStore.collection().forEach((c) => {
-      const number = withoutJ(c.id).split('_P')[0];
-      owned.set(number, (owned.get(number) ?? 0) + c.count);
-    });
-    return owned;
-  });
-  need = (card: IDeckCard) => Math.max(0, card.count - (this.owned().get(card.cardNumber) ?? 0));
+  private missing = computed(() => new Map(missingCards(this.cards(), this.saveStore.collection()).map((m) => [m.card.id, m.need])));
+  need = (card: IDeckCard) => this.missing().get(card.id) ?? 0;
   ownedCount = computed(() => this.cards().reduce((sum, c) => sum + c.count - this.need(c), 0));
 
   price = computed(() => {

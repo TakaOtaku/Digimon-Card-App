@@ -5,7 +5,7 @@ import { ChartContainerComponent } from './chart-container.component';
 @Component({
   selector: 'digimon-chart-containers',
   template: `
-    <div class="jusify-between flex flex-row">
+    <div class="flex flex-row justify-between">
       <digimon-chart-container label="Lv.2" [fill]="digiEggs" fillPercent="20"></digimon-chart-container>
       <digimon-chart-container label="Lv.3" [fill]="lv3"></digimon-chart-container>
       <digimon-chart-container label="Lv.4" [fill]="lv4"></digimon-chart-container>

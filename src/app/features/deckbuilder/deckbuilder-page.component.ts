@@ -21,9 +21,9 @@ import { DeckViewComponent } from './components/deck-view.component';
       <digimon-page>
         <digimon-deck-view
           *ngIf="deckView"
-          class="overflow-y-auto pb-[10rem] xl:pb-4 h-full max-h-full overflow-x-hidden self-baseline xl:order-3"
+          class="overflow-y-auto pb-[10rem] xl:pb-4 h-full max-h-full overflow-x-hidden self-baseline"
           [ngClass]="{
-            'w-2/5 max-w-[40%] xl:w-[30%] xl:max-w-[30%]': collectionView,
+            'w-2/5 max-w-[40%] xl:w-[36%] xl:max-w-[36%]': collectionView,
             'w-full': !collectionView,
           }"
           [collectionView]="collectionView"
@@ -33,10 +33,11 @@ import { DeckViewComponent } from './components/deck-view.component';
           *ngIf="collectionView"
           [initialWidth]="3"
           [bottomInset]="true"
+          [filterBoxEnabled]="false"
           [ngClass]="{ 'w-3/5 max-w-[60%] xl:w-auto xl:max-w-none xl:flex-1 xl:min-w-0': deckView, 'w-full': !deckView }"
-          class="border-l xl:border-l-0 xl:order-1 max-h-full border-slate-200 flex flex-row  h-[calc(100vh-7.5rem)] md:h-[calc(100vh-5rem)]"></digimon-pagination-card-list>
+          class="border-l max-h-full border-slate-200 flex flex-row  h-[calc(100vh-7.5rem)] md:h-[calc(100vh-5rem)]"></digimon-pagination-card-list>
 
-        <button class="surface-card hidden lg:block w-6 border-l border-slate-200 xl:order-2" (click)="changeView()">
+        <button class="surface-card hidden lg:block w-6 border-l border-slate-200" (click)="changeView()">
           <span
             class="w-full h-[calc(100%-4rem)] md:h-[calc(100%-5.5rem)] lg:h-[calc(100%-0.5rem)] rotate-180 text-center font-bold text-fg"
             [ngStyle]="{ writingMode: 'vertical-rl' }"
@@ -51,7 +52,7 @@ import { DeckViewComponent } from './components/deck-view.component';
           <!-- Wide screens: stats get their own column instead of the fixed bottom strip -->
           <digimon-deck-stats
             [column]="true"
-            class="hidden xl:flex xl:order-4 w-[18rem] shrink-0 h-full overflow-y-auto border-l border-line bg-ink-1 p-4"></digimon-deck-stats>
+            class="hidden xl:flex w-[20rem] shrink-0 h-full overflow-y-auto border-l border-line bg-ink-1 p-4"></digimon-deck-stats>
         }
         @if (mobileTab === 'stats') {
           <digimon-deck-stats [column]="true" class="lg:hidden flex w-full h-full overflow-y-auto p-4 pb-20"></digimon-deck-stats>

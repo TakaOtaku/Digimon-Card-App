@@ -116,7 +116,8 @@ export class PaginationCardListComponent {
   widthForm = new FormControl(this.initialWidth);
 
   filterBox = false;
-  filterBoxEnabled = true;
+  // false: filters only open in the drawer (the builder needs the width)
+  @Input() filterBoxEnabled = true;
   card = JSON.parse(JSON.stringify(dummyCard));
 
   perPage = 100;

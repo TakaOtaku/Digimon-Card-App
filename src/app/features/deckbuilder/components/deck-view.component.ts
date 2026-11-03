@@ -43,10 +43,10 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
         <span class="rounded-md bg-ink-2 px-2.5 py-1 font-mono text-xs text-fg">Side {{ getCardCount(sideDeck, 'All') }}</span>
       }
       <div role="group" aria-label="Deck view" class="ml-auto inline-flex gap-1 rounded-lg border border-line bg-ink-0 p-1">
+        <button type="button" [attr.aria-pressed]="!listView" (click)="listView = false"
+          class="rounded-md px-3 py-1 text-sm font-semibold" [ngClass]="!listView ? 'bg-line text-fg' : 'text-muted'">Cards</button>
         <button type="button" [attr.aria-pressed]="listView" (click)="listView = true"
           class="rounded-md px-3 py-1 text-sm font-semibold" [ngClass]="listView ? 'bg-line text-fg' : 'text-muted'">List</button>
-        <button type="button" [attr.aria-pressed]="!listView" (click)="listView = false"
-          class="rounded-md px-3 py-1 text-sm font-semibold" [ngClass]="!listView ? 'bg-line text-fg' : 'text-muted'">Visual</button>
       </div>
     </div>
 
@@ -93,20 +93,28 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
                 }
               </div>
             } @else {
-            <div
-              class="mx-auto grid w-full grid-cols-4 md:grid-cols-6"
-              [ngClass]="{
-                'lg:grid-cols-8': !collectionView,
-              }">
-              <digimon-deck-card
-                *ngFor="let card of mainDeck"
-                pDraggable="fromDeck"
-                (onDragStart)="setDraggedCard(card, DRAG.Main)"
-                (removeCard)="removeCard(card)"
-                [cardHave]="getCardHave(card)"
-                [card]="card"
-                [missingCards]="missingCards"></digimon-deck-card>
-            </div>
+              <div class="flex flex-col gap-4">
+                @for (group of groups; track group.title) {
+                  <section class="flex flex-col gap-1">
+                    <div class="flex justify-between border-b border-line px-1 pb-1">
+                      <span class="text-xs font-semibold uppercase tracking-wider text-muted">{{ group.title }}</span>
+                      <span class="font-mono text-xs text-muted">{{ group.count }}</span>
+                    </div>
+                    <div class="grid grid-cols-[repeat(auto-fill,minmax(6.5rem,1fr))]">
+                      <digimon-deck-card
+                        *ngFor="let card of group.cards"
+                        pDraggable="fromDeck"
+                        (onDragStart)="setDraggedCard(card, DRAG.Main)"
+                        (removeCard)="removeCard(card)"
+                        [cardHave]="getCardHave(card)"
+                        [card]="card"
+                        [missingCards]="missingCards"></digimon-deck-card>
+                    </div>
+                  </section>
+                } @empty {
+                  <p class="m-0 p-2 text-sm text-muted">Click or drag cards from the pool to add them.</p>
+                }
+              </div>
             }
           </p-accordion-content>
         </p-accordion-panel>
@@ -117,7 +125,7 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
           (onDrop)="drop(draggedCard(), 'Side')">
           <p-accordion-header>{{ 'Side-Deck (' + getCardCount(sideDeck, 'All') + ')' }}</p-accordion-header>
           <p-accordion-content>
-            <div class="grid w-full grid-cols-4 md:grid-cols-6">
+            <div class="grid w-full grid-cols-[repeat(auto-fill,minmax(6.5rem,1fr))]">
               <digimon-deck-card
                 *ngFor="let card of sideDeck"
                 pDraggable="fromSide"
@@ -169,7 +177,7 @@ export class DeckViewComponent {
 
   mainDeck: IDeckCard[] = [];
   groups: DeckCardGroup[] = [];
-  listView = true;
+  listView = false;
   accordionValue: string[] = ['0', '1'];
   sideDeck: IDeckCard[] = [];
 
