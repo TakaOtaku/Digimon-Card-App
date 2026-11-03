@@ -1,4 +1,5 @@
 import { DigimonCard, dummyCard, ICountCard, IDeck, IDeckCard, ISelectItem, ITag, tagsList } from '../../models';
+import { cardsAllow50 } from '../../models/data/cards-50.data';
 import { ReleaseOrder } from '../../models/data/release-order.data';
 import { ColorOrderMap, DeckColorMap } from '../../models/maps/color.map';
 import { sortID } from './filter.functions';
@@ -184,6 +185,37 @@ export function deckIsValid(deck: IDeck, allCards: DigimonCard[]): string {
   }
 
   return '';
+}
+
+export interface DeckCheck {
+  label: string;
+  ok: boolean;
+}
+
+/** Deck-building rules shown in the builder: 50 main cards, at most 5 Digi-Eggs, copy limits. */
+export function deckChecks(cards: IDeckCard[]): DeckCheck[] {
+  let main = 0;
+  let eggs = 0;
+  const copies = new Map<string, { name: string; count: number; max: number }>();
+
+  cards.forEach((card) => {
+    if (card.cardType === 'Digi-Egg') eggs += card.count;
+    else main += card.count;
+
+    const restriction = card.restrictions?.english;
+    const max = restriction === 'Banned' ? 0 : restriction === 'Restricted to 1' ? 1 : cardsAllow50.includes(card.cardNumber) ? 50 : 4;
+    const entry = copies.get(card.cardNumber) ?? { name: card.name?.english ?? card.cardNumber, count: 0, max };
+    entry.count += card.count;
+    copies.set(card.cardNumber, entry);
+  });
+
+  const overLimit = [...copies.values()].filter((c) => c.count > c.max).map((c) => c.name);
+
+  return [
+    { label: `Main deck ${main}/50`, ok: main === 50 },
+    { label: `Digi-Eggs ${eggs}/5`, ok: eggs <= 5 },
+    { label: overLimit.length ? `Over copy limit: ${overLimit.join(', ')}` : 'Copy limits', ok: overLimit.length === 0 },
+  ];
 }
 
 export function sortColors(colorA: string, colorB: string): number {

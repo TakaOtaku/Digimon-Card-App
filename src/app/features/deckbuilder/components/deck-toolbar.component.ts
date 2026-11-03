@@ -22,11 +22,12 @@ import { ImportDeckDialogComponent } from '../../shared/dialogs/import-deck-dial
 @Component({
   selector: 'digimon-deck-toolbar',
   template: `
-    <div class="toolbar ml-3 mr-3 flex w-[100%-3rem] flex-row justify-evenly border-b-2 border-slate-600 md:grid-cols-11">
+    <div class="toolbar ml-3 mr-3 flex w-[100%-3rem] flex-row flex-wrap gap-1 pb-1 justify-evenly border-b-2 border-slate-600">
       <button
         (click)="missingCardsChange.emit(!missingCards)"
         [ngClass]="{ 'primary-background': missingCards }"
-        class="p-button-outlined h-[30px] w-full"
+        class="p-button-outlined h-[30px] flex-1 min-w-fit px-2 text-xs"
+        label="Missing"
         icon="pi pi-times"
         iconPos="left"
         pButton
@@ -35,18 +36,21 @@ import { ImportDeckDialogComponent } from '../../shared/dialogs/import-deck-dial
 
       <button
         (click)="newDeck()"
-        class="p-button-outlined h-[30px] w-full"
+        class="p-button-outlined h-[30px] flex-1 min-w-fit px-2 text-xs"
+        label="New"
         icon="pi pi-file"
         iconPos="left"
         pButton
         pTooltip="Click to create a new Deck!"
         tooltipPosition="top"></button>
 
-      <button (click)="save.emit($event)" class="p-button-outlined h-[30px] w-full" icon="pi pi-save" iconPos="left" pButton></button>
+      <button (click)="save.emit($event)" class="p-button-outlined h-[30px] flex-1 min-w-fit px-2 text-xs"
+        label="Save" icon="pi pi-save" iconPos="left" pButton></button>
 
       <button
         (click)="importDeckDialog = true"
-        class="p-button-outlined h-[30px] w-full"
+        class="p-button-outlined h-[30px] flex-1 min-w-fit px-2 text-xs"
+        label="Import"
         icon="pi pi-download"
         iconPos="left"
         pButton
@@ -55,7 +59,8 @@ import { ImportDeckDialogComponent } from '../../shared/dialogs/import-deck-dial
 
       <button
         (click)="openExportDeckDialog()"
-        class="p-button-outlined h-[30px] w-full"
+        class="p-button-outlined h-[30px] flex-1 min-w-fit px-2 text-xs"
+        label="Export"
         icon="pi pi-upload"
         iconPos="left"
         pButton
@@ -64,7 +69,8 @@ import { ImportDeckDialogComponent } from '../../shared/dialogs/import-deck-dial
 
       <button
         (click)="hideStats.emit(true)"
-        class="p-button-outlined h-[30px] w-full"
+        class="p-button-outlined h-[30px] flex-1 min-w-fit px-2 text-xs"
+        label="Stats"
         icon="pi pi-chart-bar"
         iconPos="left"
         pButton
@@ -73,7 +79,8 @@ import { ImportDeckDialogComponent } from '../../shared/dialogs/import-deck-dial
 
       <button
         (click)="simulate()"
-        class="p-button-outlined h-[30px] w-full"
+        class="p-button-outlined h-[30px] flex-1 min-w-fit px-2 text-xs"
+        label="Test hand"
         icon="pi pi-refresh"
         iconPos="left"
         pButton
