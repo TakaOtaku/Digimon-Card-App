@@ -3,6 +3,9 @@ import Lara from '@primeuix/themes/lara';
 
 // Surface hexes mirror the --dc-* tokens in styles.scss
 export const DigimonPreset = definePreset(Lara, {
+  primitive: {
+    borderRadius: { none: '0', xs: '4px', sm: '6px', md: '10px', lg: '14px', xl: '16px' },
+  },
   semantic: {
     primary: {
       50: '{sky.50}',

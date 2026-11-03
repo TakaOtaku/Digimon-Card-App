@@ -95,62 +95,87 @@ import { MenuItem } from 'primeng/api';
     </ul>
     <p-menu #moreMenu [model]="moreItems" [popup]="true" appendTo="body"></p-menu>
 
-    <div
-      [ngClass]="{
-        'order-1 ml-4 flex-row items-center gap-4': !sidebar,
-        'flex-col': sidebar,
-      }"
-      class="flex justify-center">
-      <button
-        (click)="loginLogout()"
-        class="group">
-        <ng-container *ngIf="user(); else userIcon">
-          <div
-            class='min-w-auto mx-auto primary-background h-12 w-12 overflow-hidden rounded-full text-fg group-hover:bg-accent"'>
-            <img *ngIf="user()" alt="{{ this.user()?.displayName }}" src="{{ this.user()?.photoUrl }}" />
+    @if (sidebar) {
+      <div class="flex flex-col justify-center">
+        <button
+          (click)="loginLogout()"
+          class="group">
+          <ng-container *ngIf="user(); else userIcon">
+            <div
+              class='min-w-auto mx-auto primary-background h-12 w-12 overflow-hidden rounded-full text-fg group-hover:bg-accent"'>
+              <img *ngIf="user()" alt="{{ this.user()?.displayName }}" src="{{ this.user()?.photoUrl }}" />
+            </div>
+            <span class="text-fg text-xs">{{ this.user()?.displayName }}</span>
+          </ng-container>
+          <ng-template #userIcon>
+            <div
+              class='min-w-auto mx-auto flex flex-col justify-center primary-background h-12 w-12 overflow-hidden rounded-full text-fg hover:bg-accent"'>
+              <i class="pi pi-user" style="font-size: 1.5rem"></i>
+            </div>
+            <span class="text-fg text-xs group-hover:text-accent">Press to Login</span>
+          </ng-template>
+        </button>
+
+        <div
+          class="flex flex-col group cursor-pointer"
+          [ngClass]="{
+            'my-5': sidebar,
+          }"
+          (click)="openSettings()">
+          <i class="pi pi-cog text-center text-fg group-hover:text-accent" style="font-size: 1.5rem"></i>
+          <span class="text-xs text-center text-fg group-hover:text-accent">Settings</span>
+        </div>
+
+        <div class="grid grid-cols-2 justify-center items-center">
+          <a class="mx-auto" href="https://github.com/TakaOtaku/Digimon-Card-App" target="_blank">
+            <i class="pi pi-github px-1 text-fg hover:text-accent" style="font-size: 1rem"></i>
+          </a>
+
+          <a class="mx-auto" href="https://twitter.com/digimoncardapp" target="_blank">
+            <i class="pi pi-twitter px-1 text-fg hover:text-accent" style="font-size: 1rem"></i>
+          </a>
+
+          <a class="mx-auto" href="https://discordapp.com/users/189436886744432640" target="_blank">
+            <i class="pi pi-discord px-1 text-fg hover:text-accent" style="font-size: 1rem"></i>
+          </a>
+
+          <a class="mx-auto" href="https://www.paypal.com/donate/?hosted_button_id=WLM58Q785D4H4" target="_blank">
+            <i class="pi pi-paypal px-1 text-fg hover:text-accent" style="font-size: 1rem"></i>
+          </a>
+          <div class="col-span-2 flex align-center justify-center">
+            <p-button class="mx-auto" [link]="true" size="small" (onClick)="showChangelog()" label="Ver. 5.0.0"></p-button>
           </div>
-          <span class="text-fg text-xs">{{ this.user()?.displayName }}</span>
-        </ng-container>
-        <ng-template #userIcon>
-          <div
-            class='min-w-auto mx-auto flex flex-col justify-center primary-background h-12 w-12 overflow-hidden rounded-full text-fg hover:bg-accent"'>
-            <i class="pi pi-user" style="font-size: 1.5rem"></i>
-          </div>
-          <span class="text-fg text-xs group-hover:text-accent">Press to Login</span>
-        </ng-template>
-      </button>
-
-      <div
-        class="flex flex-col group cursor-pointer"
-        [ngClass]="{
-          'my-5': sidebar,
-        }"
-        (click)="openSettings()">
-        <i class="pi pi-cog text-center text-fg group-hover:text-accent" style="font-size: 1.5rem"></i>
-        <span class="text-xs text-center text-fg group-hover:text-accent">Settings</span>
-      </div>
-
-      <div class="justify-center items-center" [ngClass]="sidebar ? 'grid grid-cols-2' : 'hidden xl:flex flex-row'">
-        <a class="mx-auto" href="https://github.com/TakaOtaku/Digimon-Card-App" target="_blank">
-          <i class="pi pi-github px-1 text-fg hover:text-accent" style="font-size: 1rem"></i>
-        </a>
-
-        <a class="mx-auto" href="https://twitter.com/digimoncardapp" target="_blank">
-          <i class="pi pi-twitter px-1 text-fg hover:text-accent" style="font-size: 1rem"></i>
-        </a>
-
-        <a class="mx-auto" href="https://discordapp.com/users/189436886744432640" target="_blank">
-          <i class="pi pi-discord px-1 text-fg hover:text-accent" style="font-size: 1rem"></i>
-        </a>
-
-        <a class="mx-auto" href="https://www.paypal.com/donate/?hosted_button_id=WLM58Q785D4H4" target="_blank">
-          <i class="pi pi-paypal px-1 text-fg hover:text-accent" style="font-size: 1rem"></i>
-        </a>
-        <div class="col-span-2 flex align-center justify-center">
-          <p-button class="mx-auto" [link]="true" size="small" (onClick)="showChangelog()" label="Ver. 5.0.0"></p-button>
         </div>
       </div>
-    </div>
+    } @else {
+      <div class="order-1 ml-3 flex flex-row items-center gap-2">
+        <a
+          href="/deckbuilder"
+          (click)="$event.preventDefault(); router.navigateByUrl('/deckbuilder')"
+          class="hidden lg:inline-flex h-10 items-center gap-2 rounded-lg bg-accent px-4 text-sm font-semibold text-accent-ink no-underline">
+          <i class="pi pi-plus"></i> Build a deck
+        </a>
+        <button
+          type="button"
+          (click)="openSettings()"
+          aria-label="Settings"
+          class="grid h-10 w-10 place-items-center rounded-full border border-line bg-ink-2 text-fg hover:border-accent">
+          <i class="pi pi-cog"></i>
+        </button>
+        <button
+          type="button"
+          (click)="loginLogout()"
+          [attr.aria-label]="user() ? 'Log out ' + user()?.displayName : 'Log in'"
+          [title]="user() ? 'Log out' : 'Log in'"
+          class="grid h-10 w-10 place-items-center overflow-hidden rounded-full border border-line bg-ink-2 text-fg hover:border-accent">
+          @if (user(); as u) {
+            <img [src]="u.photoUrl" alt="" class="h-full w-full object-cover" />
+          } @else {
+            <i class="pi pi-user"></i>
+          }
+        </button>
+      </div>
+    }
   `,
   standalone: true,
   imports: [NgClass, NgIf, FontAwesomeModule, ConfirmPopupModule, DialogModule, ButtonModule, MenuModule],

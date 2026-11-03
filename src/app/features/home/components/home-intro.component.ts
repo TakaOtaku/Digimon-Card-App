@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/c
 import { Router, RouterLink } from '@angular/router';
 import { IDeck } from '@models';
 import { AuthService } from '@services';
-import { SaveStore, WebsiteStore } from '@store';
+import { DialogStore, SaveStore, WebsiteStore } from '@store';
 
 @Component({
   selector: 'digimon-home-intro',
@@ -23,7 +23,7 @@ import { SaveStore, WebsiteStore } from '@store';
             <a
               routerLink="/deckbuilder"
               class="inline-flex h-11 items-center gap-2 rounded-lg border border-line bg-ink-2 px-5 font-semibold text-fg no-underline hover:border-accent">
-              <i class="pi pi-plus"></i> New deck
+              <i class="pi pi-plus"></i> Build a deck
             </a>
           </div>
         </div>
@@ -66,9 +66,15 @@ import { SaveStore, WebsiteStore } from '@store';
             Feedback and suggestions are always welcome on Discord and GitHub. I'm also <span class="font-semibold text-fg">looking for people</span>
             who want to help maintain the website, design new features and implement them.
           </p>
-          <a href="https://www.paypal.com/donate/?hosted_button_id=WLM58Q785D4H4" target="_blank" class="self-start">
-            <img src="assets/images/blue.png" alt="Donate with PayPal" class="h-11" width="183" height="44" />
-          </a>
+          <div class="flex flex-wrap items-center gap-4 text-sm">
+            <a href="https://www.paypal.com/donate/?hosted_button_id=WLM58Q785D4H4" target="_blank">
+              <img src="assets/images/blue.png" alt="Donate with PayPal" class="h-11" width="183" height="44" />
+            </a>
+            <button type="button" (click)="showChangelog()" class="text-accent hover:underline">Changelog</button>
+            <a class="text-accent no-underline hover:underline" href="https://discordapp.com/users/189436886744432640" target="_blank">Discord</a>
+            <a class="text-accent no-underline hover:underline" href="https://github.com/TakaOtaku/Digimon-Card-App" target="_blank">GitHub</a>
+            <a class="text-accent no-underline hover:underline" href="https://twitter.com/digimoncardapp" target="_blank">X / Twitter</a>
+          </div>
         </div>
 
         <div class="flex flex-col gap-3">
@@ -94,6 +100,7 @@ export class HomeIntroComponent {
   private websiteStore = inject(WebsiteStore);
   private authService = inject(AuthService);
   private router = inject(Router);
+  private dialogStore = inject(DialogStore);
 
   recentDecks = computed(() =>
     [...(this.saveStore.decks() ?? [])].sort((a, b) => (Date.parse(b.date) || 0) - (Date.parse(a.date) || 0)).slice(0, 3),
@@ -111,6 +118,10 @@ export class HomeIntroComponent {
     { name: 'Digimon TCG DACH', url: 'https://discord.gg/digimon-tcg-dach-759562127513223168', img: 'assets/images/partners/dach.png' },
     { name: 'East', url: 'https://www.youtube.com/East_ML', img: 'assets/images/partners/east.jpg' },
   ];
+
+  showChangelog() {
+    this.dialogStore.updateChangelogDialog(true);
+  }
 
   cardCount(deck: IDeck): number {
     return (deck.cards ?? []).reduce((sum, card) => sum + card.count, 0);
