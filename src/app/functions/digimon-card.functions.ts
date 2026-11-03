@@ -354,6 +354,33 @@ export function itemsAsSelectItem(array: string[]): ISelectItem[] {
   return array.map((item) => ({ label: item, value: item }) as ISelectItem);
 }
 
+export interface SetCompletion {
+  set: string;
+  owned: number;
+  total: number;
+}
+
+/** Unique regular printings owned per set (at least `minimum` copies), newest set first. */
+export function setCompletion(cards: DigimonCard[], collection: ICountCard[], minimum: number): SetCompletion[] {
+  const owned = new Map(collection.map((c) => [withoutJ(c.id), c.count]));
+  const counted = new Set<string>();
+  const bySet = new Map<string, SetCompletion>();
+
+  cards.forEach((card) => {
+    const id = withoutJ(card.id);
+    if (card.version !== 'Normal' || !id.includes('-') || counted.has(id)) return;
+    counted.add(id);
+
+    const set = id.split('-')[0];
+    const entry = bySet.get(set) ?? { set, owned: 0, total: 0 };
+    entry.total++;
+    if ((owned.get(id) ?? 0) >= Math.max(minimum, 1)) entry.owned++;
+    bySet.set(set, entry);
+  });
+
+  return ReleaseOrder.filter((set) => bySet.has(set)).map((set) => bySet.get(set)!);
+}
+
 export function withoutJ(id: string): string {
   return id.replace('-J', '');
 }

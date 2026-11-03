@@ -40,6 +40,7 @@ import { CardMarketService } from '../../../services/card-market.service';
         aria-live="polite"
         aria-label="Card search results"
         class="h-[calc(100vh-12.5rem)] md:h-[calc(100vh-10rem)] flex flex-wrap w-full content-start justify-start overflow-y-scroll">
+        <ng-content></ng-content>
         @for (card of showCards; track $index) {
           @defer (on viewport) {
             <digimon-full-card
