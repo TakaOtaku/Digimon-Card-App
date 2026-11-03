@@ -16,7 +16,7 @@ import { HomeMetaComponent } from './home-meta.component';
             type="button"
             (click)="showChangelog()"
             class="inline-flex items-center gap-2 self-start rounded-full border border-line bg-ink-1 py-1 pl-1 pr-3 text-sm text-fg hover:border-accent">
-            <span class="rounded-full bg-accent px-2 py-0.5 font-mono text-xs font-semibold text-accent-ink">v5.0</span>
+            <span class="rounded-full bg-accent px-2 py-0.5 font-mono text-xs font-semibold text-accent-ink">v6.0</span>
             New card search, deck pages and redesign <i class="pi pi-arrow-right text-xs text-muted"></i>
           </button>
           <h1 class="m-0 font-display text-4xl font-bold leading-none text-fg md:text-6xl">Build. Track. Share.</h1>

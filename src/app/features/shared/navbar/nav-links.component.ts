@@ -225,7 +225,7 @@ export class NavLinksComponent {
   @Input() sidebar = false;
   // Sheet mode: tell the host to close after any action
   @Output() done = new EventEmitter<void>();
-  readonly version = '5.0.0';
+  readonly version = '6.0.0';
   supportDialog = false;
   sheetLinks = [
     { url: '/', label: 'Home', icon: 'pi-home' },

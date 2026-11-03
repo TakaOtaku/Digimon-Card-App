@@ -6,16 +6,54 @@ import { PanelModule } from 'primeng/panel';
   selector: 'digimon-changelog-dialog',
   template: `
     <div class="flex flex-col gap-3">
-      <p-panel header="Version 5.0.0 · Latest" [toggleable]="true" [collapsed]="false">
+      <p-panel header="Version 6.0.0 · Latest" [toggleable]="true" [collapsed]="false">
         <h1 class="mb-1 mt-3 text-sm font-semibold uppercase tracking-wider text-accent">Redesign</h1>
         <ul class="m-0 list-disc space-y-1 pl-5 text-sm leading-relaxed text-fg">
-          <li>New dark look with a top navigation bar and a bottom tab bar on phones</li>
-          <li>Card search from anywhere with Ctrl K, and a dedicated Cards page with a detail panel</li>
-          <li>Deck builder with grouped full-card or list view, a stats column and deck checks</li>
-          <li>Read-only deck pages for sharing community decks</li>
-          <li>Collection summary, set completion and All / Owned / Missing shortcuts</li>
-          <li>New home page with recent decks, the meta tier list and top community decks</li>
+          <li>New dark look: one color system, new fonts, rounder controls and consistent buttons, chips and dialogs</li>
+          <li>Top navigation bar on desktop; on phones a bottom tab bar and a menu sheet with every page, account, settings and What's new</li>
+          <li>Rulings and Products sit in the top bar on wide screens</li>
+          <li>Support button with Ko-fi and PayPal</li>
         </ul>
+        <h1 class="mb-1 mt-3 text-sm font-semibold uppercase tracking-wider text-accent">Cards</h1>
+        <ul class="m-0 list-disc space-y-1 pl-5 text-sm leading-relaxed text-fg">
+          <li>New Cards page with filters and a card detail panel (image, costs, effects with keyword icons, Add to deck, owned count)</li>
+          <li>Search cards from anywhere with Ctrl K (Cmd K on Mac)</li>
+        </ul>
+        <h1 class="mb-1 mt-3 text-sm font-semibold uppercase tracking-wider text-accent">Deck builder</h1>
+        <ul class="m-0 list-disc space-y-1 pl-5 text-sm leading-relaxed text-fg">
+          <li>Deck, card pool and stats side by side on wide screens; Pool / Deck / Stats tabs on phones</li>
+          <li>Deck shown as full cards grouped by type, or as a compact list with + / - buttons</li>
+          <li>Hide pool to see the whole deck, and Share image to copy or download the deck picture</li>
+          <li>Stats column: level curve, card types, colors, deck check (50 cards, 5 eggs, copy limits incl. banned and restricted), missing cards with Copy missing list, and price estimate</li>
+          <li>Redesigned Import, Export (new Copy image) and Test hand (reveal security, draw a card)</li>
+        </ul>
+        <h1 class="mb-1 mt-3 text-sm font-semibold uppercase tracking-wider text-accent">Decks</h1>
+        <ul class="m-0 list-disc space-y-1 pl-5 text-sm leading-relaxed text-fg">
+          <li>Read-only deck pages to share community decks, with level curve, owned cards, price and text list</li>
+          <li>Redesigned deck tiles, deck dialog and tier list; two tiles per row on phones</li>
+          <li>Rebuilt deck statistics: inclusion rate and average copies per card, deck colors, filter by card type</li>
+        </ul>
+        <h1 class="mb-1 mt-3 text-sm font-semibold uppercase tracking-wider text-accent">Collection</h1>
+        <ul class="m-0 list-disc space-y-1 pl-5 text-sm leading-relaxed text-fg">
+          <li>Collection page always works in collection mode</li>
+          <li>Summary of unique cards, copies, playsets and value</li>
+          <li>All / Owned / Missing shortcuts and Import / Export in the header</li>
+          <li>Set completion follows your collection settings; finished sets move to a Completed group</li>
+        </ul>
+        <h1 class="mb-1 mt-3 text-sm font-semibold uppercase tracking-wider text-accent">Home, profile and more</h1>
+        <ul class="m-0 list-disc space-y-1 pl-5 text-sm leading-relaxed text-fg">
+          <li>New home page with recent decks, the meta tier list and top community decks</li>
+          <li>Redesigned profile, rulings, products and settings (switches with explanations)</li>
+          <li>What's new dialog and a link to it on the home page</li>
+        </ul>
+        <h1 class="mb-1 mt-3 text-sm font-semibold uppercase tracking-wider text-accent">Fixes</h1>
+        <ul class="m-0 list-disc space-y-1 pl-5 text-sm leading-relaxed text-fg">
+          <li>Deck statistics no longer skip the most played card or mix up similar card numbers</li>
+          <li>The "Filter panel beside cards" setting works again</li>
+          <li>robots.txt and sitemap are served correctly, and pages have proper titles, descriptions and share previews</li>
+        </ul>
+      </p-panel>
+      <p-panel header="Version 5.0.0" [toggleable]="true" [collapsed]="true">
         <h1 class="mb-1 mt-3 text-sm font-semibold uppercase tracking-wider text-accent">Features</h1>
         <ul class="m-0 list-disc space-y-1 pl-5 text-sm leading-relaxed text-fg">
           <li>Added Advanced Search functionality with comprehensive filter options</li>
