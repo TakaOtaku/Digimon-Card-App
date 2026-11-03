@@ -23,6 +23,7 @@ export interface ISettings {
   showUserStats: boolean; // Show User-Stats in the Profil Yes or no ---- default = true
   deckDisplayTable: boolean; // Display Decks as Table instead of Big Blocks
   displaySideDeck: boolean; // Display SideDeck in the DeckView
+  groupDeckByType?: boolean; // Group decks into Digi-Egg / Digimon / Tamer / Option ---- default = true
   fullscreenFilter: boolean; // Display Filter with big screen
   countMax: number; // How high do you want to set the count-filter
   showPrices: boolean; // Show Cardmarket prices on cards/decks/collection ---- default = false

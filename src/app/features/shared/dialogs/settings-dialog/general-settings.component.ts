@@ -28,6 +28,9 @@ import { SettingsRowComponent } from '../../settings-row.component';
         <digimon-settings-row title="Sort Cards by">
           <p-selectButton [allowEmpty]="false" [formControl]="sortOrderFilter" [multiple]="false" [options]="sortOrder"></p-selectButton>
         </digimon-settings-row>
+        <digimon-settings-row title="Group deck by card type" hint="Show Digi-Egg, Digimon, Tamer and Option separately in the builder and on deck pages. Off shows one grid.">
+          <p-toggleSwitch [(ngModel)]="groupDeckByType"></p-toggleSwitch>
+        </digimon-settings-row>
         <digimon-settings-row title="Side deck" hint="Show a side deck below the main deck in the builder.">
           <p-toggleSwitch [(ngModel)]="sideDeck"></p-toggleSwitch>
         </digimon-settings-row>
@@ -162,6 +165,7 @@ export class GeneralSettingsComponent {
 
   userStats = true;
   deckDisplayTable = true;
+  groupDeckByType = true;
   sideDeck = true;
 
   sortOrder = ['Color', 'Level'];
@@ -208,6 +212,7 @@ export class GeneralSettingsComponent {
       this.aaCollectionCount = save.settings?.aaCollectionMinimum ?? 1;
       this.userStats = save.settings?.showUserStats ?? true;
       this.sideDeck = save.settings?.displaySideDeck ?? true;
+      this.groupDeckByType = save.settings?.groupDeckByType ?? true;
       this.deckDisplayTable = save.settings?.deckDisplayTable ?? true;
       this.fullscreenFilter = save.settings?.fullscreenFilter ?? true;
       this.collectionFilterMax = save.settings?.countMax ?? 5;
@@ -248,6 +253,7 @@ export class GeneralSettingsComponent {
         showUserStats: this.userStats,
         deckDisplayTable: this.deckDisplayTable,
         displaySideDeck: this.sideDeck,
+        groupDeckByType: this.groupDeckByType,
         collectionSets: this.setGoal,
         fullscreenFilter: this.fullscreenFilter,
         countMax: this.collectionFilterMax,

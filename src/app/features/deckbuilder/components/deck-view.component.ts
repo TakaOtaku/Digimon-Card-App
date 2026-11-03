@@ -7,7 +7,7 @@ import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { DragDropModule } from 'primeng/dragdrop';
 import { first } from 'rxjs';
 import { DeckColorMap, DRAG, IDeck, IDeckCard, IDraggedCard, ISave } from '@models';
-import { colorSort, compareIDs, DeckCardGroup, groupDeckCards, levelSort, setColors, setTags } from '@functions';
+import { colorSort, compareIDs, DeckCardGroup, deckGroups, levelSort, setColors, setTags } from '@functions';
 import { ImgFallbackDirective } from '@directives';
 import { MongoBackendService } from '@services';
 import { DialogStore, DigimonCardStore } from '@store';
@@ -77,10 +77,12 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
               <div class="flex flex-col gap-3">
                 @for (group of groups; track group.title) {
                   <div class="flex flex-col gap-1">
-                    <div class="flex justify-between px-1 py-1">
-                      <span class="text-xs font-semibold uppercase tracking-wider text-muted">{{ group.title }}</span>
-                      <span class="font-mono text-xs text-muted">{{ group.count }}</span>
-                    </div>
+                    @if (group.title) {
+                      <div class="flex justify-between px-1 py-1">
+                        <span class="text-xs font-semibold uppercase tracking-wider text-muted">{{ group.title }}</span>
+                        <span class="font-mono text-xs text-muted">{{ group.count }}</span>
+                      </div>
+                    }
                     @for (card of group.cards; track card.id) {
                       <div
                         pDraggable="fromDeck"
@@ -110,10 +112,12 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
               <div class="flex flex-col gap-4">
                 @for (group of groups; track group.title) {
                   <section class="flex flex-col gap-1">
-                    <div class="flex justify-between border-b border-line px-1 pb-1">
-                      <span class="text-xs font-semibold uppercase tracking-wider text-muted">{{ group.title }}</span>
-                      <span class="font-mono text-xs text-muted">{{ group.count }}</span>
-                    </div>
+                    @if (group.title) {
+                      <div class="flex justify-between border-b border-line px-1 pb-1">
+                        <span class="text-xs font-semibold uppercase tracking-wider text-muted">{{ group.title }}</span>
+                        <span class="font-mono text-xs text-muted">{{ group.count }}</span>
+                      </div>
+                    }
                     <div class="grid grid-cols-[repeat(auto-fill,minmax(6.5rem,1fr))]">
                       <digimon-deck-card
                         *ngFor="let card of group.cards"
@@ -310,7 +314,7 @@ export class DeckViewComponent {
       this.mainDeck = levelSort(this.mainDeck);
       this.sideDeck = levelSort(this.sideDeck);
     }
-    this.groups = groupDeckCards(this.mainDeck);
+    this.groups = deckGroups(this.mainDeck, this.saveStore.settings().groupDeckByType !== false);
   }
 
   shareImage() {

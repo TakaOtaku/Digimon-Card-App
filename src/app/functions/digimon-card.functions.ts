@@ -361,18 +361,17 @@ export interface DeckCardGroup {
   cards: IDeckCard[];
 }
 
-/** Groups a sorted deck for the list view: Digi-Egg, Level 2-7, Tamer, Option, then anything else. */
+/** Groups a sorted deck by card type: Digi-Egg, Digimon, Tamer, Option, then anything else. */
 export function groupDeckCards(cards: IDeckCard[]): DeckCardGroup[] {
   const groups = new Map<string, DeckCardGroup & { order: number }>();
 
   cards.forEach((card) => {
-    const level = parseInt((card.cardLv ?? '').replace(/\D/g, ''), 10);
     let title = card.cardType;
-    let order = 200;
+    let order = 4;
     if (card.cardType === 'Digi-Egg') [title, order] = ['Digi-Egg', 0];
-    else if (isDigimonType(card.cardType)) [title, order] = level ? [`Level ${level}`, level] : ['Digimon', 99];
-    else if (card.cardType === 'Tamer') order = 100;
-    else if (card.cardType === 'Option') order = 101;
+    else if (isDigimonType(card.cardType)) [title, order] = ['Digimon', 1];
+    else if (card.cardType === 'Tamer') order = 2;
+    else if (card.cardType === 'Option') order = 3;
 
     const group = groups.get(title) ?? { title, order, count: 0, cards: [] };
     group.count += card.count;
@@ -381,6 +380,12 @@ export function groupDeckCards(cards: IDeckCard[]): DeckCardGroup[] {
   });
 
   return [...groups.values()].sort((a, b) => a.order - b.order).map(({ title, count, cards }) => ({ title, count, cards }));
+}
+
+/** Deck groups for display; with grouping off, one untitled group holds every card. */
+export function deckGroups(cards: IDeckCard[], grouped = true): DeckCardGroup[] {
+  if (grouped) return groupDeckCards(cards);
+  return cards.length ? [{ title: '', count: cards.reduce((sum, card) => sum + card.count, 0), cards }] : [];
 }
 
 /** Copies still needed per deck card, counting every owned printing of the same card number. */

@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component, computed, effect, inject } from '@a
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ImgFallbackDirective } from '@directives';
-import { groupDeckCards, levelSort, mapToDeckCards, missingCards } from '@functions';
+import { deckGroups, levelSort, mapToDeckCards, missingCards } from '@functions';
 import { IDeck, IDeckCard, PriceMetric } from '@models';
 import { MongoBackendService, SeoService } from '@services';
 import { DialogStore, DigimonCardStore, SaveStore } from '@store';
@@ -77,10 +77,12 @@ import { PageComponent } from '../shared/page.component';
             <section aria-label="Cards in deck" class="flex min-w-0 flex-[999_1_36rem] flex-col gap-6">
               @for (group of groups(); track group.title) {
                 <div class="flex flex-col gap-3">
-                  <div class="flex items-baseline gap-2">
-                    <h2 class="m-0 font-display text-xl font-semibold text-fg">{{ group.title }}</h2>
-                    <span class="font-mono text-sm text-muted">{{ group.count }}</span>
-                  </div>
+                  @if (group.title) {
+                    <div class="flex items-baseline gap-2">
+                      <h2 class="m-0 font-display text-xl font-semibold text-fg">{{ group.title }}</h2>
+                      <span class="font-mono text-sm text-muted">{{ group.count }}</span>
+                    </div>
+                  }
                   <div class="grid grid-cols-[repeat(auto-fill,minmax(7rem,1fr))] gap-3">
                     @for (card of group.cards; track card.id) {
                       <div class="flex flex-col gap-1.5">
@@ -164,7 +166,7 @@ export class DeckPageComponent {
     const deck = this.deck();
     return deck ? levelSort(mapToDeckCards(deck.cards, this.digimonCardStore.cards())) : [];
   });
-  groups = computed(() => groupDeckCards(this.cards()));
+  groups = computed(() => deckGroups(this.cards(), this.saveStore.settings().groupDeckByType !== false));
   mainCount = computed(() => this.cards().filter((c) => c.cardType !== 'Digi-Egg').reduce((sum, c) => sum + c.count, 0));
   eggCount = computed(() => this.cards().filter((c) => c.cardType === 'Digi-Egg').reduce((sum, c) => sum + c.count, 0));
   totalCount = computed(() => this.mainCount() + this.eggCount());
