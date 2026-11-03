@@ -20,7 +20,7 @@ import { NavbarComponent } from './features/shared/navbar/navbar.component';
 @Component({
   selector: 'digimon-root',
   template: `
-    <div class="flex flex-col bg-ink-0">
+    <div class="flex flex-col">
       <digimon-navbar (openSideNav)="sideNav = true"></digimon-navbar>
 
       @if (saveLoaded()) {

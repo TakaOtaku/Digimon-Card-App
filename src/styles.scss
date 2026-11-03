@@ -18,6 +18,9 @@
   --dc-accent: #4cc3ff;
   --dc-accent-strong: #1d6fa8;
   --dc-accent-ink: #04121f;
+  // Page background: the gradient from the original site
+  --dc-bg-top: #17212f;
+  --dc-bg-bottom: #08528d;
 
   --p-surface-950: var(--dc-ink-1) !important;
   --p-surface-900: var(--dc-ink-1) !important;
@@ -35,6 +38,7 @@ body {
 // IOS Long Click
 body {
   -webkit-touch-callout: default !important;
+  background: linear-gradient(180deg, var(--dc-bg-top), var(--dc-bg-bottom)) fixed;
 }
 
 * {
