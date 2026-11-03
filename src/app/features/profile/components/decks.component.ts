@@ -27,9 +27,8 @@ import { DecksTableComponent } from './decks-table.component';
         <a routerLink="/deckbuilder" class="inline-flex h-10 items-center rounded-lg bg-accent px-4 font-semibold text-accent-ink no-underline">Build a deck</a>
       </div>
     } @else if (!displayTables()) {
-      <div class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 py-2">
+      <div class="grid grid-cols-[repeat(auto-fill,minmax(16rem,1fr))] gap-3 py-2">
         <digimon-deck-container
-          class="mx-auto min-w-[280px] max-w-[285px]"
           (click)="showDeckDialog(deck)"
           (contextmenu)="showDeckDialog(deck)"
           *ngFor="let deck of decksToShow"

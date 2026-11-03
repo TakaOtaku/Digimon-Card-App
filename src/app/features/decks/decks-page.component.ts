@@ -25,20 +25,18 @@ import { TierlistComponent } from './components/tierlist.component';
   selector: 'digimon-decks-page',
   template: `
     <digimon-page #page>
-      <div class="mx-auto self-baseline px-5 w-full max-w-7xl">
-        <div class="lg:px-auto flex px-1 flex-col md:flex-row items-baseline">
-          <h1 class="text-shadow mt-6 pb-1 text-2xl md:text-4xl font-black text-fg">Community Decks</h1>
-
-          <div class="md:ml-auto pb-2">
-            <p-button
-              size="small"
-              class="p-button-outlined"
-              styleClass="primary-background text-white border-none"
-              icon="pi pi-chart-line"
-              type="button"
-              label="Statistics"
-              (click)="deckStatsDialog = true; updateStatistics.next(true)"></p-button>
+      <div class="mx-auto flex w-full max-w-7xl flex-col gap-4 self-start px-4 py-6 md:px-6">
+        <div class="flex flex-wrap items-end justify-between gap-3">
+          <div class="flex flex-col gap-1">
+            <h1 class="m-0 text-3xl font-bold text-fg md:text-4xl">Community decks</h1>
+            <p class="m-0 text-sm text-muted">Search shared decks by name, player, card IDs or colors.</p>
           </div>
+          <button
+            type="button"
+            (click)="deckStatsDialog = true; updateStatistics.next(true)"
+            class="inline-flex h-10 items-center gap-2 rounded-lg border border-line bg-ink-2 px-4 text-sm font-semibold text-fg hover:border-accent">
+            <i class="pi pi-chart-line"></i> Statistics
+          </button>
         </div>
 
         <!-- Deck Filter Component -->
@@ -55,16 +53,16 @@ import { TierlistComponent } from './components/tierlist.component';
         <!-- Initial State - No Search Yet -->
         <div *ngIf="!websiteStore.isLoadingDecks() && websiteStore.communityDecks().length === 0 && !hasSearched()" class="text-center py-12">
           <div class="max-w-md mx-auto">
-            <i class="pi pi-search text-6xl text-gray-300 mb-4"></i>
-            <h3 class="text-xl font-semibold text-gray-600 mb-2">Search for Decks</h3>
-            <p class="text-gray-500">Enter a search term above to browse community decks. Search by deck name, user, card IDs, or colors.</p>
+            <i class="pi pi-search mb-4 text-5xl text-muted"></i>
+            <h3 class="mb-2 text-xl font-semibold text-fg">Search for decks</h3>
+            <p class="text-muted">Enter a search term above to browse community decks. Search by deck name, user, card IDs, or colors.</p>
           </div>
         </div>
 
         <!-- Deck Results -->
-        <div *ngIf="!websiteStore.isLoadingDecks() && websiteStore.communityDecks().length > 0" class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-1 mt-2">
+        <div *ngIf="!websiteStore.isLoadingDecks() && websiteStore.communityDecks().length > 0" class="grid grid-cols-[repeat(auto-fill,minmax(16rem,1fr))] gap-3">
           <digimon-deck-container
-            class="mx-auto min-w-[280px] max-w-[285px]"
+            mode="Community"
             *ngFor="let deck of websiteStore.communityDecks()"
             (click)="showDeckDetails(deck)"
             (contextmenu)="showDeckDetails(deck)"
@@ -73,9 +71,9 @@ import { TierlistComponent } from './components/tierlist.component';
 
         <!-- No Results After Search -->
         <div *ngIf="!websiteStore.isLoadingDecks() && websiteStore.communityDecks().length === 0 && hasSearched()" class="text-center py-8">
-          <i class="pi pi-exclamation-triangle text-4xl text-gray-400 mb-4"></i>
-          <p class="text-gray-500">No decks found matching your search criteria.</p>
-          <p class="text-sm text-gray-400 mt-2">Try different keywords or clear your search to browse all decks.</p>
+          <i class="pi pi-exclamation-triangle mb-4 text-4xl text-muted"></i>
+          <p class="text-fg">No decks found matching your search criteria.</p>
+          <p class="mt-2 text-sm text-muted">Try different keywords or clear your search to browse all decks.</p>
         </div>
 
         <!-- New Pagination Component -->
