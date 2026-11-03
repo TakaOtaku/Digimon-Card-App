@@ -27,6 +27,7 @@ export const emptySettings: ISettings = {
 
   deckDisplayTable: false,
   displaySideDeck: true,
+  groupDeckByType: true,
 
   fullscreenFilter: true,
   countMax: 5,

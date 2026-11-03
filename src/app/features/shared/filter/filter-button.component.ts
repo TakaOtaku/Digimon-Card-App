@@ -6,7 +6,7 @@ import { WebsiteStore } from '../../../store/website.store';
   template: `
     <button
       (click)="setMobileCollectionView()"
-      class="min-w-auto primary-background ml-2 mt-2 h-8 w-32 rounded p-2 text-xs font-semibold text-[#e2e4e6]">
+      class="min-w-auto primary-background ml-2 mt-2 h-8 w-32 rounded p-2 text-xs font-semibold text-fg">
       Card-List
     </button>
   `,

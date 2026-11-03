@@ -93,11 +93,11 @@ export class DdtoSpreadComponent implements OnInit, OnChanges {
 
   linearGradientEgg(): string {
     const eggPercent = this.ddto[0] !== 0 ? (1 - this.ddto[0] / 5) * 100 : 0;
-    return `linear-gradient(to bottom, transparent ${eggPercent}%, #08528d 0%)`;
+    return `linear-gradient(to bottom, transparent ${eggPercent}%, var(--dc-accent) 0%)`;
   }
 
   linearGradient(value: number): string {
     const percent = value !== 0 ? (1 - value / 50) * 100 : 0;
-    return `linear-gradient(to bottom, transparent ${percent}%, #08528d 0%)`;
+    return `linear-gradient(to bottom, transparent ${percent}%, var(--dc-accent) 0%)`;
   }
 }

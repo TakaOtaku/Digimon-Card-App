@@ -1,5 +1,7 @@
-import { DigimonCard, dummyCard, ICountCard, IDeck, IDeckCard, ISelectItem, ITag, tagsList } from '../../models';
+import { DigimonCard, dummyCard, ICountCard, IDeck, IDeckCard, ISelectItem, ITag, replacements, tagsList } from '../../models';
+import { cardsAllow50 } from '../../models/data/cards-50.data';
 import { ReleaseOrder } from '../../models/data/release-order.data';
+import { environment } from '../../environments/environment';
 import { ColorOrderMap, DeckColorMap } from '../../models/maps/color.map';
 import { sortID } from './filter.functions';
 
@@ -186,6 +188,37 @@ export function deckIsValid(deck: IDeck, allCards: DigimonCard[]): string {
   return '';
 }
 
+export interface DeckCheck {
+  label: string;
+  ok: boolean;
+}
+
+/** Deck-building rules shown in the builder: 50 main cards, at most 5 Digi-Eggs, copy limits. */
+export function deckChecks(cards: IDeckCard[]): DeckCheck[] {
+  let main = 0;
+  let eggs = 0;
+  const copies = new Map<string, { name: string; count: number; max: number }>();
+
+  cards.forEach((card) => {
+    if (card.cardType === 'Digi-Egg') eggs += card.count;
+    else main += card.count;
+
+    const restriction = card.restrictions?.english;
+    const max = restriction === 'Banned' ? 0 : restriction === 'Restricted to 1' ? 1 : cardsAllow50.includes(card.cardNumber) ? 50 : 4;
+    const entry = copies.get(card.cardNumber) ?? { name: card.name?.english ?? card.cardNumber, count: 0, max };
+    entry.count += card.count;
+    copies.set(card.cardNumber, entry);
+  });
+
+  const overLimit = [...copies.values()].filter((c) => c.count > c.max).map((c) => c.name);
+
+  return [
+    { label: `Main deck ${main}/50`, ok: main === 50 },
+    { label: `Digi-Eggs ${eggs}/5`, ok: eggs <= 5 },
+    { label: overLimit.length ? `Over copy limit: ${overLimit.join(', ')}` : 'Copy limits', ok: overLimit.length === 0 },
+  ];
+}
+
 export function sortColors(colorA: string, colorB: string): number {
   const a: number = ColorOrderMap.get(colorA) ?? 0;
   const b: number = ColorOrderMap.get(colorB) ?? 0;
@@ -322,6 +355,162 @@ export function itemsAsSelectItem(array: string[]): ISelectItem[] {
   return array.map((item) => ({ label: item, value: item }) as ISelectItem);
 }
 
+export interface DeckCardGroup {
+  title: string;
+  count: number;
+  cards: IDeckCard[];
+}
+
+/** Groups a sorted deck by card type: Digi-Egg, Digimon, Tamer, Option, then anything else. */
+export function groupDeckCards(cards: IDeckCard[]): DeckCardGroup[] {
+  const groups = new Map<string, DeckCardGroup & { order: number }>();
+
+  cards.forEach((card) => {
+    let title = card.cardType;
+    let order = 4;
+    if (card.cardType === 'Digi-Egg') [title, order] = ['Digi-Egg', 0];
+    else if (isDigimonType(card.cardType)) [title, order] = ['Digimon', 1];
+    else if (card.cardType === 'Tamer') order = 2;
+    else if (card.cardType === 'Option') order = 3;
+
+    const group = groups.get(title) ?? { title, order, count: 0, cards: [] };
+    group.count += card.count;
+    group.cards.push(card);
+    groups.set(title, group);
+  });
+
+  return [...groups.values()].sort((a, b) => a.order - b.order).map(({ title, count, cards }) => ({ title, count, cards }));
+}
+
+/** Deck groups for display; with grouping off, one untitled group holds every card. */
+export function deckGroups(cards: IDeckCard[], grouped = true): DeckCardGroup[] {
+  if (grouped) return groupDeckCards(cards);
+  return cards.length ? [{ title: '', count: cards.reduce((sum, card) => sum + card.count, 0), cards }] : [];
+}
+
+/** Copies still needed per deck card, counting every owned printing of the same card number. */
+export function missingCards(cards: IDeckCard[], collection: ICountCard[]): { card: IDeckCard; need: number }[] {
+  const owned = new Map<string, number>();
+  collection.forEach((c) => {
+    const number = withoutJ(c.id).split('_P')[0];
+    owned.set(number, (owned.get(number) ?? 0) + c.count);
+  });
+  return cards.map((card) => ({ card, need: Math.max(0, card.count - (owned.get(card.cardNumber) ?? 0)) })).filter((m) => m.need > 0);
+}
+
+export interface SetCompletion {
+  set: string;
+  owned: number;
+  total: number;
+}
+
+export interface CardUsage {
+  card: DigimonCard;
+  decks: number;
+  copies: number;
+  percent: number;
+  average: number;
+}
+
+/** How often each card number appears across decks (all printings together), most-included first. */
+export function cardUsage(decks: IDeck[], allCards: DigimonCard[]): CardUsage[] {
+  const byId = new Map(allCards.map((card) => [card.id, card]));
+  const usage = new Map<string, { card: DigimonCard; decks: number; copies: number }>();
+
+  decks.forEach((deck) => {
+    const inDeck = new Map<string, number>();
+    (deck.cards ?? []).forEach((entry) => {
+      // Prefer the regular printing so rows show the normal art
+      const card = byId.get(formatId(entry.id)) ?? byId.get(entry.id);
+      if (!card) return;
+      inDeck.set(card.cardNumber, (inDeck.get(card.cardNumber) ?? 0) + entry.count);
+      if (!usage.has(card.cardNumber)) usage.set(card.cardNumber, { card, decks: 0, copies: 0 });
+    });
+    inDeck.forEach((copies, cardNumber) => {
+      const row = usage.get(cardNumber)!;
+      row.decks++;
+      row.copies += copies;
+    });
+  });
+
+  return [...usage.values()]
+    .map((row) => ({ ...row, percent: (row.decks / decks.length) * 100, average: row.copies / row.decks }))
+    .sort((a, b) => b.decks - a.decks || b.copies - a.copies);
+}
+
+export interface CompletionSettings {
+  collectionMinimum: number;
+  aaCollectionMinimum: number;
+  collectionSets: string[];
+}
+
+/**
+ * Owned printings per set, newest set first, using the collection settings like the profile doughnuts:
+ * regular printings need collectionMinimum copies; other printings count only when aaCollectionMinimum > 0
+ * and need that many; collectionSets (when not empty) limits which sets are tracked.
+ */
+export function setCompletion(cards: DigimonCard[], collection: ICountCard[], settings: CompletionSettings): SetCompletion[] {
+  const owned = new Map(collection.map((c) => [withoutJ(c.id), c.count]));
+  const counted = new Set<string>();
+  const bySet = new Map<string, SetCompletion>();
+  const tracked = settings.collectionSets ?? [];
+
+  cards.forEach((card) => {
+    const id = withoutJ(card.id);
+    const regular = card.version === 'Normal';
+    if (!id.includes('-') || counted.has(id) || (!regular && !(settings.aaCollectionMinimum > 0))) return;
+    const set = id.split('-')[0];
+    if (tracked.length && !tracked.includes(set)) return;
+    counted.add(id);
+
+    const entry = bySet.get(set) ?? { set, owned: 0, total: 0 };
+    entry.total++;
+    const goal = Math.max(regular ? settings.collectionMinimum : settings.aaCollectionMinimum, 1);
+    if ((owned.get(id) ?? 0) >= goal) entry.owned++;
+    bySet.set(set, entry);
+  });
+
+  return ReleaseOrder.filter((set) => bySet.has(set)).map((set) => bySet.get(set)!);
+}
+
+/** Swaps effect keywords like [On Play] for their icon images (rendered via innerHTML). */
+export function replaceWithImageTags(effect: string): string {
+  let replacedText = effect;
+  for (const [pattern, imageTag, tooltip] of replacements) {
+    replacedText = replacedText.replace(
+      pattern,
+      `<img class="inline h-4 tooltip-keyword" data-tooltip="${tooltip}" src="assets/images/keywords/${imageTag}.webp"/>`,
+    );
+  }
+  return replacedText;
+}
+
 export function withoutJ(id: string): string {
   return id.replace('-J', '');
+}
+
+/** Tier list / deck images: bare card IDs and bundled card paths resolve to the card image CDN. */
+export function ensureCdnUrl(imageUrl: string): string {
+  if (!imageUrl) {
+    return 'assets/images/digimon-card-back.webp';
+  }
+
+  // If it's already a full CDN URL, return as is
+  if (imageUrl.startsWith('http://') || imageUrl.startsWith('https://')) {
+    return imageUrl;
+  }
+
+  // Bundled card images ship as 'assets/images/cards/BT1-001.webp' -> rewrite to CDN base
+  const cardImagePrefix = 'assets/images/cards/';
+  if (imageUrl.startsWith(cardImagePrefix)) {
+    return environment.cardImageBaseUrl + imageUrl.slice(cardImagePrefix.length);
+  }
+
+  // Local assets (placeholders, card back) stay as-is
+  if (imageUrl.startsWith('assets/')) {
+    return imageUrl;
+  }
+
+  // For bare card IDs like 'BT1-001', construct the CDN path
+  return environment.cardImageBaseUrl + imageUrl + '.webp';
 }

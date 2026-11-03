@@ -1,10 +1,10 @@
+import { SeoService } from '@services';
 import { NgFor, NgIf } from '@angular/common';
 import { ChangeDetectorRef, Component, effect, inject, OnInit } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
 import { setDeckImage } from '@functions';
 import { emptyDeck, ICountCard, IDeck } from '@models';
 import { DialogStore, DigimonCardStore, SaveStore, WebsiteStore } from '@store';
-import { ToastrService } from 'ngx-toastr';
+import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { OverlayZoneFixDirective } from '@directives';
@@ -25,20 +25,18 @@ import { TierlistComponent } from './components/tierlist.component';
   selector: 'digimon-decks-page',
   template: `
     <digimon-page #page>
-      <div class="mx-auto self-baseline px-5 w-full max-w-7xl">
-        <div class="lg:px-auto flex px-1 flex-col md:flex-row items-baseline">
-          <h1 class="text-shadow mt-6 pb-1 text-2xl md:text-4xl font-black text-[#e2e4e6]">Community Decks</h1>
-
-          <div class="md:ml-auto pb-2">
-            <p-button
-              size="small"
-              class="p-button-outlined"
-              styleClass="primary-background text-white border-none"
-              icon="pi pi-chart-line"
-              type="button"
-              label="Statistics"
-              (click)="deckStatsDialog = true; updateStatistics.next(true)"></p-button>
+      <div class="mx-auto flex w-full max-w-7xl flex-col gap-4 self-start px-4 py-6 md:px-6">
+        <div class="flex flex-wrap items-end justify-between gap-3">
+          <div class="flex flex-col gap-1">
+            <h1 class="m-0 text-3xl font-bold text-fg md:text-4xl">Community decks</h1>
+            <p class="m-0 text-sm text-muted">Search shared decks by name, player, card IDs or colors.</p>
           </div>
+          <button
+            type="button"
+            (click)="deckStatsDialog = true; updateStatistics.next(true)"
+            class="inline-flex h-10 items-center gap-2 rounded-lg border border-line bg-ink-2 px-4 text-sm font-semibold text-fg hover:border-accent">
+            <i class="pi pi-chart-line"></i> Statistics
+          </button>
         </div>
 
         <!-- Deck Filter Component -->
@@ -55,16 +53,16 @@ import { TierlistComponent } from './components/tierlist.component';
         <!-- Initial State - No Search Yet -->
         <div *ngIf="!websiteStore.isLoadingDecks() && websiteStore.communityDecks().length === 0 && !hasSearched()" class="text-center py-12">
           <div class="max-w-md mx-auto">
-            <i class="pi pi-search text-6xl text-gray-300 mb-4"></i>
-            <h3 class="text-xl font-semibold text-gray-600 mb-2">Search for Decks</h3>
-            <p class="text-gray-500">Enter a search term above to browse community decks. Search by deck name, user, card IDs, or colors.</p>
+            <i class="pi pi-search mb-4 text-5xl text-muted"></i>
+            <h3 class="mb-2 text-xl font-semibold text-fg">Search for decks</h3>
+            <p class="text-muted">Enter a search term above to browse community decks. Search by deck name, user, card IDs, or colors.</p>
           </div>
         </div>
 
         <!-- Deck Results -->
-        <div *ngIf="!websiteStore.isLoadingDecks() && websiteStore.communityDecks().length > 0" class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-1 mt-2">
+        <div *ngIf="!websiteStore.isLoadingDecks() && websiteStore.communityDecks().length > 0" class="grid grid-cols-2 gap-2 sm:grid-cols-[repeat(auto-fill,minmax(16rem,1fr))] sm:gap-3">
           <digimon-deck-container
-            class="mx-auto min-w-[280px] max-w-[285px]"
+            mode="Community"
             *ngFor="let deck of websiteStore.communityDecks()"
             (click)="showDeckDetails(deck)"
             (contextmenu)="showDeckDetails(deck)"
@@ -73,9 +71,9 @@ import { TierlistComponent } from './components/tierlist.component';
 
         <!-- No Results After Search -->
         <div *ngIf="!websiteStore.isLoadingDecks() && websiteStore.communityDecks().length === 0 && hasSearched()" class="text-center py-8">
-          <i class="pi pi-exclamation-triangle text-4xl text-gray-400 mb-4"></i>
-          <p class="text-gray-500">No decks found matching your search criteria.</p>
-          <p class="text-sm text-gray-400 mt-2">Try different keywords or clear your search to browse all decks.</p>
+          <i class="pi pi-exclamation-triangle mb-4 text-4xl text-muted"></i>
+          <p class="text-fg">No decks found matching your search criteria.</p>
+          <p class="mt-2 text-sm text-muted">Try different keywords or clear your search to browse all decks.</p>
         </div>
 
         <!-- New Pagination Component -->
@@ -92,12 +90,12 @@ import { TierlistComponent } from './components/tierlist.component';
     </digimon-page>
 
     <p-dialog
-      header="Deck Statistics for the filtered decks"
+      header="Deck statistics"
       [(visible)]="deckStatsDialog"
       [modal]="true"
       [dismissableMask]="true"
       [resizable]="false"
-      styleClass="w-full h-full max-w-6xl min-h-[500px]"
+      styleClass="w-[95vw] max-w-4xl"
       [baseZIndex]="10000">
       <div *ngIf="loading2" class="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
         <p-progressSpinner></p-progressSpinner>
@@ -126,6 +124,7 @@ import { TierlistComponent } from './components/tierlist.component';
   providers: [],
 })
 export class DecksPageComponent implements OnInit {
+  private seo = inject(SeoService);
   saveStore = inject(SaveStore);
   dialogStore = inject(DialogStore);
   websiteStore = inject(WebsiteStore);
@@ -138,9 +137,7 @@ export class DecksPageComponent implements OnInit {
   collection: ICountCard[];
   loading2 = false;
   private searchPerformed = false;
-  private meta = inject(Meta);
-  private title = inject(Title);
-  private toastrService = inject(ToastrService);
+  private messageService = inject(MessageService);
   private digimonCardStore = inject(DigimonCardStore);
 
   constructor(private changeDetection: ChangeDetectorRef) {
@@ -194,7 +191,7 @@ export class DecksPageComponent implements OnInit {
     // Update the filtered decks display
     this.filteredDecks = possibleDecks;
 
-    this.toastrService.success('Filtered for Decks possible with your cards', 'Success');
+    this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Filtered for Decks possible with your cards' });
 
     this.loading2 = false;
   }
@@ -214,18 +211,6 @@ export class DecksPageComponent implements OnInit {
   }
 
   private makeGoogleFriendly() {
-    this.title.setTitle('Digimon Card Game - Community');
-
-    this.meta.addTags([
-      {
-        name: 'description',
-        content: 'Meta decks, fun decks, tournament decks and many more, find new decks for every set.',
-      },
-      { name: 'author', content: 'TakaOtaku' },
-      {
-        name: 'keywords',
-        content: 'Meta, decks, tournament, fun',
-      },
-    ]);
+    this.seo.set('Community decks and tier list', 'Browse Digimon Card Game community decks, the archetype tier list and the most played cards in the meta.');
   }
 }

@@ -1,10 +1,11 @@
-import { ChangeDetectionStrategy, Component, effect, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, inject, PLATFORM_ID, signal } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { filterCards } from '@functions';
 import { AdvancedSearchService } from './services/advanced-search.service';
 import { CardMarketService } from './services/card-market.service';
 import { CARDSET, emptyFilter, emptySave, IFilter, ISettings, PriceMetric } from '@models';
-import { AuthService, MongoBackendService } from '@services';
+import { AuthService, MongoBackendService, SeoService } from '@services';
 import { DigimonCardStore, FilterStore, SaveStore, WebsiteStore } from '@store';
 import { BlockUIModule } from 'primeng/blockui';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
@@ -19,13 +20,12 @@ import { NavbarComponent } from './features/shared/navbar/navbar.component';
 @Component({
   selector: 'digimon-root',
   template: `
-    <div class="flex flex-col lg:flex-row bg-gradient-to-b from-[#17212f] to-[#08528d]">
+    <div class="flex flex-col">
       <digimon-navbar (openSideNav)="sideNav = true"></digimon-navbar>
 
       @if (saveLoaded()) {
         <div
-          class="min-h-[calc(100vh-3.5rem)] md:min-h-[calc(100vh-5rem)] lg:min-h-[100vh]
-        w-[100vw] lg:max-w-[calc(100vw-6.5rem)] lg:w-[calc(100vw-6.5rem)]
+          class="min-h-[calc(100vh-3.5rem)] md:min-h-[calc(100vh-5rem)] w-[100vw] pb-16 md:pb-0
         flex justify-center items-center">
           <router-outlet></router-outlet>
         </div>
@@ -37,10 +37,8 @@ import { NavbarComponent } from './features/shared/navbar/navbar.component';
 
       <digimon-dialog></digimon-dialog>
 
-      <p-drawer [(visible)]="sideNav" styleClass="w-[6.5rem] overflow-hidden p-0">
-        <ng-template pTemplate="content" class="p-0">
-          <digimon-nav-links class="flex flex-col w-full justify-center" [sidebar]="true"></digimon-nav-links>
-        </ng-template>
+      <p-drawer [(visible)]="sideNav" position="bottom" header="Menu" styleClass="!h-auto max-h-[85vh] rounded-t-2xl border-t border-line px-4 pt-2">
+        <digimon-nav-links [sidebar]="true" (done)="sideNav = false"></digimon-nav-links>
       </p-drawer>
 
       <p-toast></p-toast>
@@ -69,10 +67,14 @@ export class AppComponent {
 
   authService = inject(AuthService);
   backendService = inject(MongoBackendService);
+  // Starts canonical / og:url tracking from the first navigation
+  private seo = inject(SeoService);
   advancedSearchService = inject(AdvancedSearchService);
   private cardMarketService = inject(CardMarketService);
 
-  saveLoaded = signal(false);
+  // Prerendering runs without a browser: no save, storage or price data, just the public page
+  private isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
+  saveLoaded = signal(!this.isBrowser);
 
   sideNav = false;
 
@@ -80,6 +82,7 @@ export class AppComponent {
   settings: ISettings | null = null;
 
   onAuthChange = effect(() => {
+    if (!this.isBrowser) return;
     if (this.authService.isLoggedIn) {
       this.saveStore.updateSave(this.authService.currentUser().save);
     } else {
@@ -88,6 +91,8 @@ export class AppComponent {
   });
 
   constructor() {
+    if (!this.isBrowser) return;
+
     // Check if a save is in local storage from a previous login
     // If this is the case, set the save
     this.saveStore.loadSave();

@@ -2,7 +2,6 @@ import { NgStyle } from '@angular/common';
 import { Component, effect, inject } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, UntypedFormControl } from '@angular/forms';
 import { saveAs } from 'file-saver';
-import { ToastrService } from 'ngx-toastr';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ButtonDirective } from 'primeng/button';
 import { InputNumber } from 'primeng/inputnumber';
@@ -22,19 +21,22 @@ import { SettingsRowComponent } from '../../settings-row.component';
     <div class="flex flex-col gap-5 p-2">
       <!-- Deckbuilder Section -->
       <section class="rounded-xl border border-white/10 bg-white/[0.03] p-5">
-        <h3 class="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-[#64B5F6]">
+        <h3 class="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-accent">
           <i class="pi pi-pencil text-xs"></i> Deckbuilder
         </h3>
         <digimon-settings-row title="Sort Cards by">
           <p-selectButton [allowEmpty]="false" [formControl]="sortOrderFilter" [multiple]="false" [options]="sortOrder"></p-selectButton>
         </digimon-settings-row>
-        <digimon-settings-row title="Display SideDecks">
-          <p-selectButton [allowEmpty]="false" [(ngModel)]="sideDeck" [options]="yesNoOptions" optionLabel="label" optionValue="value"></p-selectButton>
+        <digimon-settings-row title="Group deck by card type" hint="Show Digi-Egg, Digimon, Tamer and Option separately in the builder and on deck pages. Off shows one grid.">
+          <p-toggleSwitch [(ngModel)]="groupDeckByType"></p-toggleSwitch>
         </digimon-settings-row>
-        <digimon-settings-row title="Display Filter on Fullscreen">
-          <p-selectButton [allowEmpty]="false" [(ngModel)]="fullscreenFilter" [options]="yesNoOptions" optionLabel="label" optionValue="value"></p-selectButton>
+        <digimon-settings-row title="Side deck" hint="Show a side deck below the main deck in the builder.">
+          <p-toggleSwitch [(ngModel)]="sideDeck"></p-toggleSwitch>
         </digimon-settings-row>
-        <digimon-settings-row title="Show Prices">
+        <digimon-settings-row title="Filter panel beside cards" hint="On wide screens, show filters next to the card list on Cards and Collection. The builder always uses the Filter drawer.">
+          <p-toggleSwitch [(ngModel)]="fullscreenFilter"></p-toggleSwitch>
+        </digimon-settings-row>
+        <digimon-settings-row title="Show prices" hint="Cardmarket prices on cards, decks and your collection.">
           <p-toggleSwitch [(ngModel)]="showPrices"></p-toggleSwitch>
         </digimon-settings-row>
         @if (showPrices) {
@@ -46,7 +48,7 @@ import { SettingsRowComponent } from '../../settings-row.component';
 
       <!-- Collection Section -->
       <section class="rounded-xl border border-white/10 bg-white/[0.03] p-5">
-        <h3 class="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-[#64B5F6]">
+        <h3 class="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-accent">
           <i class="pi pi-folder text-xs"></i> Collection
         </h3>
         <digimon-settings-row title="Sets you want to complete">
@@ -69,28 +71,28 @@ import { SettingsRowComponent } from '../../settings-row.component';
             </ng-template>
           </p-multiSelect>
         </digimon-settings-row>
-        <digimon-settings-row title="Collection Goal">
+        <digimon-settings-row title="Collection goal" hint="Copies of a card you need before it counts as collected.">
           <p-inputNumber [(ngModel)]="collectionCount" mode="decimal"></p-inputNumber>
         </digimon-settings-row>
-        <digimon-settings-row title="AA Collection Goal">
+        <digimon-settings-row title="Alt art collection goal" hint="The same, for alternate art printings. 0 ignores them.">
           <p-inputNumber [(ngModel)]="aaCollectionCount" mode="decimal"></p-inputNumber>
         </digimon-settings-row>
-        <digimon-settings-row title="Collection Filter Max">
+        <digimon-settings-row title="Collection filter max" hint="Highest value on the Number in Collection slider.">
           <p-inputNumber [(ngModel)]="collectionFilterMax" mode="decimal"></p-inputNumber>
         </digimon-settings-row>
-        <digimon-settings-row title="Version Default Filter">
+        <digimon-settings-row title="Default printings" hint="Which versions card lists show until you change the Version filter.">
           <digimon-multi-buttons
             (clickEvent)="changeVersionFilterDefault($event)"
             [buttonArray]="versionButtons"
             [value]="versionFilterDefault"
             [perRow]="3"
-            title="Version"></digimon-multi-buttons>
+            class="w-full"></digimon-multi-buttons>
         </digimon-settings-row>
       </section>
 
       <!-- Profile Section -->
       <section class="rounded-xl border border-white/10 bg-white/[0.03] p-5">
-        <h3 class="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-[#64B5F6]">
+        <h3 class="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-accent">
           <i class="pi pi-user text-xs"></i> Profile
         </h3>
         <digimon-settings-row title="Username">
@@ -99,17 +101,17 @@ import { SettingsRowComponent } from '../../settings-row.component';
         <digimon-settings-row title="Profile Image URL">
           <input type="text" pInputText [(ngModel)]="displayImage" class="w-full max-w-[220px]" />
         </digimon-settings-row>
-        <digimon-settings-row title="Show Collection Stats">
-          <p-selectButton [allowEmpty]="false" [(ngModel)]="userStats" [options]="yesNoOptions" optionLabel="label" optionValue="value"></p-selectButton>
+        <digimon-settings-row title="Profile header" hint="Show your name, counts and set completion on your profile.">
+          <p-toggleSwitch [(ngModel)]="userStats"></p-toggleSwitch>
         </digimon-settings-row>
-        <digimon-settings-row title="Display Decks as Table">
-          <p-selectButton [allowEmpty]="false" [(ngModel)]="deckDisplayTable" [options]="yesNoOptions" optionLabel="label" optionValue="value"></p-selectButton>
+        <digimon-settings-row title="Decks as table" hint="List your decks in a table instead of tiles.">
+          <p-toggleSwitch [(ngModel)]="deckDisplayTable"></p-toggleSwitch>
         </digimon-settings-row>
       </section>
 
       <!-- Save Data Section -->
       <section class="rounded-xl border border-white/10 bg-white/[0.03] p-5">
-        <h3 class="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-[#64B5F6]">
+        <h3 class="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-accent">
           <i class="pi pi-database text-xs"></i> Save Data
         </h3>
         <div class="flex flex-col gap-3 sm:flex-row sm:justify-center sm:flex-wrap">
@@ -139,7 +141,6 @@ import { SettingsRowComponent } from '../../settings-row.component';
     NgStyle,
     ToggleSwitch,
   ],
-  providers: [MessageService],
 })
 export class GeneralSettingsComponent {
   dialogStore = inject(DialogStore);
@@ -160,12 +161,9 @@ export class GeneralSettingsComponent {
   aaCollectionCount = 1;
   collectionFilterMax = 5;
 
-  yesNoOptions = [
-    { label: 'Yes', value: true },
-    { label: 'No', value: false },
-  ];
   userStats = true;
   deckDisplayTable = true;
+  groupDeckByType = true;
   sideDeck = true;
 
   sortOrder = ['Color', 'Level'];
@@ -193,7 +191,7 @@ export class GeneralSettingsComponent {
   constructor(
     private mongoBackendService: MongoBackendService,
     private confirmationService: ConfirmationService,
-    private toastrService: ToastrService,
+    private messageService: MessageService,
   ) {
     effect(() => {
       const save = this.saveStore.save();
@@ -212,6 +210,7 @@ export class GeneralSettingsComponent {
       this.aaCollectionCount = save.settings?.aaCollectionMinimum ?? 1;
       this.userStats = save.settings?.showUserStats ?? true;
       this.sideDeck = save.settings?.displaySideDeck ?? true;
+      this.groupDeckByType = save.settings?.groupDeckByType ?? true;
       this.deckDisplayTable = save.settings?.deckDisplayTable ?? true;
       this.fullscreenFilter = save.settings?.fullscreenFilter ?? true;
       this.collectionFilterMax = save.settings?.countMax ?? 5;
@@ -252,6 +251,7 @@ export class GeneralSettingsComponent {
         showUserStats: this.userStats,
         deckDisplayTable: this.deckDisplayTable,
         displaySideDeck: this.sideDeck,
+        groupDeckByType: this.groupDeckByType,
         collectionSets: this.setGoal,
         fullscreenFilter: this.fullscreenFilter,
         countMax: this.collectionFilterMax,
@@ -272,7 +272,7 @@ export class GeneralSettingsComponent {
     };
 
     this.saveStore.updateSave(save);
-    this.toastrService.info('Settings were saved and updated.', 'Settings saved!');
+    this.messageService.add({ severity: 'info', summary: 'Settings saved!', detail: 'Settings were saved and updated.' });
 
     this.dialogStore.updateSettingsDialog(false);
   }
@@ -289,9 +289,9 @@ export class GeneralSettingsComponent {
         let save: any = JSON.parse(fileReader.result as string);
         save = this.mongoBackendService.checkSaveValidity(save, null);
         this.saveStore.updateSave(save);
-        this.toastrService.info('The save was loaded successfully!', 'Save loaded!');
+        this.messageService.add({ severity: 'info', summary: 'Save loaded!', detail: 'The save was loaded successfully!' });
       } catch (e) {
-        this.toastrService.info('The save was not loaded!', 'Save Error!');
+        this.messageService.add({ severity: 'error', summary: 'Save Error!', detail: 'The save was not loaded!' });
       }
     };
     fileReader.readAsText(input.files[0]);
@@ -310,7 +310,7 @@ export class GeneralSettingsComponent {
           settings: emptySettings,
         };
         this.saveStore.updateSave(resetedSave);
-        this.toastrService.info('The save was cleared successfully!', 'Save cleared!');
+        this.messageService.add({ severity: 'info', summary: 'Save cleared!', detail: 'The save was cleared successfully!' });
       },
       reject: () => { },
     });

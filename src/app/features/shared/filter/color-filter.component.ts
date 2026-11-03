@@ -6,7 +6,7 @@ import { FilterStore } from '../../../store/filter.store';
   selector: 'digimon-color-filter',
   template: `
     <div class="mb-3">
-      <h1 class="mb-2 text-center text-xs font-bold text-[#e2e4e6]">Color:</h1>
+      <h1 class="mb-2 text-center text-xs font-bold text-fg">Color:</h1>
       <div class="inline-flex w-full justify-center">
         <button
           (click)="changeColor('Red', colorFilter)"

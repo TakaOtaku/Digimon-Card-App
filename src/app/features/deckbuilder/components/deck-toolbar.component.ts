@@ -1,4 +1,4 @@
-import { CurrencyPipe, NgClass, NgFor, NgIf } from '@angular/common';
+import { CurrencyPipe, NgClass, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, EventEmitter, inject, Input, Output, Signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConfirmationService, MessageService } from 'primeng/api';
@@ -22,11 +22,12 @@ import { ImportDeckDialogComponent } from '../../shared/dialogs/import-deck-dial
 @Component({
   selector: 'digimon-deck-toolbar',
   template: `
-    <div class="toolbar ml-3 mr-3 flex w-[100%-3rem] flex-row justify-evenly border-b-2 border-slate-600 md:grid-cols-11">
+    <div class="toolbar ml-3 mr-3 flex w-[100%-3rem] flex-row flex-wrap gap-1 pb-1 justify-evenly border-b-2 border-slate-600">
       <button
         (click)="missingCardsChange.emit(!missingCards)"
         [ngClass]="{ 'primary-background': missingCards }"
-        class="p-button-outlined h-[30px] w-full"
+        class="p-button-outlined h-[30px] flex-1 min-w-fit px-2 text-xs"
+        label="Missing"
         icon="pi pi-times"
         iconPos="left"
         pButton
@@ -35,18 +36,21 @@ import { ImportDeckDialogComponent } from '../../shared/dialogs/import-deck-dial
 
       <button
         (click)="newDeck()"
-        class="p-button-outlined h-[30px] w-full"
+        class="p-button-outlined h-[30px] flex-1 min-w-fit px-2 text-xs"
+        label="New"
         icon="pi pi-file"
         iconPos="left"
         pButton
         pTooltip="Click to create a new Deck!"
         tooltipPosition="top"></button>
 
-      <button (click)="save.emit($event)" class="p-button-outlined h-[30px] w-full" icon="pi pi-save" iconPos="left" pButton></button>
+      <button (click)="save.emit($event)" class="p-button-outlined h-[30px] flex-1 min-w-fit px-2 text-xs"
+        label="Save" icon="pi pi-save" iconPos="left" pButton></button>
 
       <button
         (click)="importDeckDialog = true"
-        class="p-button-outlined h-[30px] w-full"
+        class="p-button-outlined h-[30px] flex-1 min-w-fit px-2 text-xs"
+        label="Import"
         icon="pi pi-download"
         iconPos="left"
         pButton
@@ -55,7 +59,8 @@ import { ImportDeckDialogComponent } from '../../shared/dialogs/import-deck-dial
 
       <button
         (click)="openExportDeckDialog()"
-        class="p-button-outlined h-[30px] w-full"
+        class="p-button-outlined h-[30px] flex-1 min-w-fit px-2 text-xs"
+        label="Export"
         icon="pi pi-upload"
         iconPos="left"
         pButton
@@ -64,7 +69,8 @@ import { ImportDeckDialogComponent } from '../../shared/dialogs/import-deck-dial
 
       <button
         (click)="hideStats.emit(true)"
-        class="p-button-outlined h-[30px] w-full"
+        class="p-button-outlined h-[30px] flex-1 min-w-fit px-2 text-xs"
+        label="Stats"
         icon="pi pi-chart-bar"
         iconPos="left"
         pButton
@@ -73,7 +79,8 @@ import { ImportDeckDialogComponent } from '../../shared/dialogs/import-deck-dial
 
       <button
         (click)="simulate()"
-        class="p-button-outlined h-[30px] w-full"
+        class="p-button-outlined h-[30px] flex-1 min-w-fit px-2 text-xs"
+        label="Test hand"
         icon="pi pi-refresh"
         iconPos="left"
         pButton
@@ -82,42 +89,57 @@ import { ImportDeckDialogComponent } from '../../shared/dialogs/import-deck-dial
     </div>
 
     <div *ngIf="saveStore.showPrices() && deckTotalValue() !== null" class="mx-3 flex items-center justify-center text-sm font-bold text-green-400">
-      <span class="mr-1 text-[#e2e4e6]">Deck Value:</span>
+      <span class="mr-1 text-fg">Deck Value:</span>
       <span>{{ deckTotalValue() | currency: 'EUR' }}</span>
     </div>
 
     <p-dialog
-      header="Simulate Security/Draw"
+      header="Test hand"
       [(visible)]="simulateDialog"
       [modal]="true"
       [dismissableMask]="true"
       [resizable]="false"
-      styleClass="w-[100%] min-w-[250px] sm:min-w-[500px] sm:w-[700px] min-h-[500px]"
+      styleClass="w-[95vw] max-w-4xl"
       [baseZIndex]="10000">
-      <!-- Security Stack -->
-      <h1 class="text-center text-2xl font-bold">Security Stack</h1>
-      <div class="mt-5 flex flex-row">
-        <div *ngFor="let secCard of securityStack" class="cards-in-a-row-5 mr-1">
-          <img [src]="secCard.cardImage" [alt]="secCard.id + ' - ' + secCard.name" class="max-h-56" />
+      <div class="flex flex-col gap-5">
+        <section class="flex flex-col gap-2">
+          <div class="flex items-baseline justify-between">
+            <h3 class="m-0 text-xs font-semibold uppercase tracking-wider text-muted">Hand</h3>
+            <span class="font-mono text-xs text-muted">{{ drawHand?.length ?? 0 }} cards · {{ deckLeft() }} left in deck</span>
+          </div>
+          <div class="grid grid-cols-[repeat(auto-fill,minmax(7rem,1fr))] gap-2">
+            @for (card of drawHand; track $index) {
+              <img [src]="card.cardImage" [alt]="card.cardNumber + ' ' + card.name.english" class="w-full rounded-lg" />
+            }
+          </div>
+        </section>
+        <section class="flex flex-col gap-2">
+          <div class="flex items-center justify-between">
+            <h3 class="m-0 text-xs font-semibold uppercase tracking-wider text-muted">Security stack</h3>
+            <button type="button" (click)="revealSecurity = !revealSecurity" class="text-sm text-accent hover:underline">
+              {{ revealSecurity ? 'Hide' : 'Reveal' }}
+            </button>
+          </div>
+          <div class="grid grid-cols-5 gap-2">
+            @for (card of securityStack; track $index) {
+              <img
+                [src]="revealSecurity ? card.cardImage : 'assets/images/digimon-card-back.webp'"
+                [alt]="revealSecurity ? card.cardNumber + ' ' + card.name.english : 'Face-down security card'"
+                class="w-full rounded-lg" />
+            }
+          </div>
+        </section>
+        <div class="flex flex-wrap justify-end gap-2">
+          <button type="button" (click)="drawCard()" [disabled]="deckLeft() === 0" class="h-11 rounded-lg border border-line bg-ink-2 px-4 font-semibold text-fg hover:border-accent disabled:opacity-40">Draw a card</button>
+          <button type="button" (click)="mulligan()" class="h-11 rounded-lg bg-accent px-5 font-semibold text-accent-ink">New hand</button>
         </div>
-      </div>
-
-      <h1 class="text-center text-2xl font-bold">Draw Hand</h1>
-      <div class="mt-5 flex flex-row">
-        <div *ngFor="let drawCard of drawHand" class="cards-in-a-row-5 mr-1">
-          <img [src]="drawCard.cardImage" [alt]="drawCard.id + ' - ' + drawCard.name" class="max-h-56" />
-        </div>
-      </div>
-
-      <div class="mt-5 flex w-full justify-end">
-        <button pButton (click)="mulligan()">Mulligan</button>
       </div>
     </p-dialog>
 
     <p-dialog
-      header="Import Deck"
+      header="Import deck"
       [(visible)]="importDeckDialog"
-      styleClass="w-[100%] min-w-[250px] sm:min-w-[500px] sm:w-[700px] min-h-[500px]"
+      styleClass="w-[95vw] max-w-2xl"
       [baseZIndex]="10000"
       [modal]="true"
       [dismissableMask]="true"
@@ -139,7 +161,6 @@ import { ImportDeckDialogComponent } from '../../shared/dialogs/import-deck-dial
     NgClass,
     NgIf,
     DialogModule,
-    NgFor,
     ImportDeckDialogComponent,
     ConfirmDialogModule,
     CurrencyPipe,
@@ -243,6 +264,19 @@ export class DeckToolbarComponent {
 
     this.securityStack = this.allDeckCards.slice(0, 5);
     this.drawHand = this.allDeckCards.slice(5, 10);
+    this.revealSecurity = false;
+  }
+
+  revealSecurity = false;
+
+  // Shuffled deck order: 5 security, then the hand, then the rest
+  deckLeft(): number {
+    return Math.max(0, (this.allDeckCards?.length ?? 0) - 5 - (this.drawHand?.length ?? 0));
+  }
+
+  drawCard() {
+    const next = this.allDeckCards[5 + this.drawHand.length];
+    if (next) this.drawHand = [...this.drawHand, next];
   }
   //endregion
 

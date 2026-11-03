@@ -1,7 +1,11 @@
 import { definePreset } from '@primeuix/themes';
 import Lara from '@primeuix/themes/lara';
 
+// Surface hexes mirror the --dc-* tokens in styles.scss
 export const DigimonPreset = definePreset(Lara, {
+  primitive: {
+    borderRadius: { none: '0', xs: '4px', sm: '6px', md: '10px', lg: '14px', xl: '16px' },
+  },
   semantic: {
     primary: {
       50: '{sky.50}',
@@ -19,10 +23,10 @@ export const DigimonPreset = definePreset(Lara, {
     colorScheme: {
       light: {
         surface: {
-          0: '#1f2d40',
-          50: '#1f2d40',
+          0: '#18243a',
+          50: '#18243a',
           100: '{sky.950}', // Hover
-          200: '#1f2d40',
+          200: '#18243a',
           300: '#ffffff', // Border
           400: '{sky.400}',
           500: '#ffffff', // Text
@@ -30,23 +34,23 @@ export const DigimonPreset = definePreset(Lara, {
           700: '#ffffff', // Text Color
           800: '#ffffff',
           900: '{sky.900}',
-          950: '#17212f', // Default: {sky.950} Background MultiSelect
+          950: '#111a28', // Default: {sky.950} Background MultiSelect
         },
       },
       dark: {
         surface: {
-          0: '#ffffff', //#1f2d40
-          50: '#1f2d40',
+          0: '#ffffff', //#18243a
+          50: '#18243a',
           100: '{sky.950}', // Hover
-          200: '#1f2d40',
+          200: '#18243a',
           300: '#ffffff', // Border
           400: '#ffffff',
           500: '#ffffff', // Text
           600: '{sky.600}',
-          700: '#17212f', // Text Color
+          700: '#111a28', // Text Color
           800: '#ffffff',
           900: '{sky.900}',
-          950: '#17212f', // Default: {sky.950} Background MultiSelect
+          950: '#111a28', // Default: {sky.950} Background MultiSelect
         },
       },
     },

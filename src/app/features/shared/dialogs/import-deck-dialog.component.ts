@@ -1,8 +1,6 @@
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MessageService } from 'primeng/api';
-import { ButtonModule } from 'primeng/button';
-import { TextareaModule } from 'primeng/textarea';
 import { IDeck } from '../../../../models';
 import { setColors, setTags, stringToDeck } from '../../../functions';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
@@ -11,32 +9,24 @@ import { WebsiteStore } from '../../../store/website.store';
 @Component({
   selector: 'digimon-import-deck-dialog',
   template: `
-    <div>
-      <div>
-        <p>Copy your deck in the text area and press import or press the "Import Text-File"-Button to import a file.</p>
-        <textarea
-          pInputTextarea
-          [placeholder]="importPlaceholder"
-          id="text-import"
-          class="border-black-500 min-h-[200px] min-w-full border-2"
-          [(ngModel)]="deckText"></textarea>
-      </div>
-
-      <div class="mt-5 flex w-full">
-        <input
-          style="display: none"
-          type="file"
-          accept=".txt"
-          id="file-input"
-          (change)="handleFileInput($event.target, currentDeck)"
-          #fileUpload />
-        <button pButton (click)="fileUpload.click()">Import Text-File</button>
-        <button pButton (click)="importDeck(currentDeck)" style="margin-left: 5px">Import</button>
+    <div class="flex flex-col gap-4">
+      <p class="m-0 text-sm leading-relaxed text-muted">
+        Paste a deck list or choose a .txt file. Lines like <span class="font-mono text-fg">4 Agumon BT1-010</span>, TTS and most builder
+        exports work, in any order. The regular art is always used.
+      </p>
+      <label class="flex flex-col gap-1">
+        <span class="text-xs font-semibold uppercase tracking-wider text-muted">Deck list</span>
+        <textarea id="text-import" [placeholder]="importPlaceholder" class="min-h-[240px] w-full rounded-lg border border-line bg-ink-0 p-3 font-mono text-sm text-fg outline-none focus:border-accent" [(ngModel)]="deckText"></textarea>
+      </label>
+      <div class="flex flex-wrap justify-end gap-2">
+        <input class="hidden" type="file" accept=".txt" id="file-input" (change)="handleFileInput($event.target, currentDeck)" #fileUpload />
+        <button type="button" (click)="fileUpload.click()" class="h-11 rounded-lg border border-line bg-ink-2 px-4 font-semibold text-fg hover:border-accent"><i class="pi pi-file mr-1"></i> Choose file</button>
+        <button type="button" (click)="importDeck(currentDeck)" [disabled]="!deckText.trim()" class="h-11 rounded-lg bg-accent px-5 font-semibold text-accent-ink disabled:opacity-40">Import deck</button>
       </div>
     </div>
   `,
   standalone: true,
-  imports: [FormsModule, TextareaModule, ButtonModule],
+  imports: [FormsModule],
   providers: [MessageService],
 })
 export class ImportDeckDialogComponent {
@@ -47,17 +37,7 @@ export class ImportDeckDialogComponent {
 
   currentDeck = this.websiteStore.deck();
 
-  importPlaceholder =
-    '' +
-    'Paste Deck here\n' +
-    '\n' +
-    ' Format:\n' +
-    '   Qty Name Id\n' +
-    '   TTS Format\n' +
-    "   The order of the values doesn't matter\n" +
-    '   Name is optional. Qty(quantity) must be positive\n' +
-    '   Each card can only be declared once\n' +
-    '   Import will always pick the regular art card"';
+  importPlaceholder = '4 Koromon BT1-001\n4 Agumon BT1-010\n4 Greymon BT1-015';
 
   deckText = '';
 

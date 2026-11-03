@@ -1,6 +1,6 @@
 ::ng-deep {
   .custom-slider .ngx-slider .ngx-slider-bar {
-    background: #08528d;
+    background: var(--dc-accent-strong);
     height: 2px;
   }
   .custom-slider .ngx-slider .ngx-slider-selection {
@@ -36,7 +36,7 @@
     height: 10px;
     margin-left: 4px;
     border-radius: 0;
-    background: #08528d;
+    background: var(--dc-accent-strong);
     top: -1px;
   }
 

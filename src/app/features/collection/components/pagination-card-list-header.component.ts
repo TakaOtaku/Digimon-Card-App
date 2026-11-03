@@ -13,22 +13,29 @@ import { CardMarketService } from '../../../services/card-market.service';
   selector: 'digimon-pagination-card-list-header',
   template: `
     <div class="relative flex justify-center items-center h-10 w-full flex-row">
-      <div *ngIf="!viewOnly" class="absolute left-2 top-4 flex flex-row justify-center items-center">
-        <span class="text-xs hidden sm:block font-bold text-[#e2e4e6]">Collection Mode:</span>
-        <span class="text-xs sm:hidden font-bold text-[#e2e4e6]">CM:</span>
+      <div class="absolute left-2 top-2 flex flex-row justify-center items-center gap-3">
+        <ng-content select="[headerStart]"></ng-content>
+        <div *ngIf="!viewOnly" class="flex flex-row justify-center items-center">
+        @if (showCollectionMode) {
+        <span class="text-xs hidden sm:block font-bold text-fg">Collection Mode:</span>
+        <span class="text-xs sm:hidden font-bold text-fg">CM:</span>
         <input type="checkbox" class="my-auto ml-1 h-5 w-5" [ngModel]="collectionMode()" (ngModelChange)="changeCollectionMode($event)" />
-        <span class="ml-6 text-xs font-bold text-[#e2e4e6]"> Cards: {{ cardCount() }} </span>
+        }
+        <span class="text-xs font-bold text-fg" [class.ml-6]="showCollectionMode"> Cards: {{ cardCount() }} </span>
         @if (saveStore.showPrices() && collectionValue() !== null) {
           <span class="ml-4 text-xs font-bold text-green-400">💰 {{ collectionValue() | currency: 'EUR' }}</span>
         }
+        </div>
       </div>
 
       <p-slider class="w-32 md:w-36 lg:w-56" [formControl]="widthForm" [step]="0.1" [min]="3" [max]="14"></p-slider>
 
-      <div [ngClass]="{ 'xl:hidden ': !filterButton }" class="mx-2 mt-2 flex flex-row justify-center absolute right-2">
+      <div class="mx-2 mt-1 flex flex-row items-center justify-center gap-2 absolute right-2">
+        <ng-content select="[headerEnd]"></ng-content>
         <button
+          [ngClass]="{ 'xl:hidden': !filterButton }"
           (click)="closeFilterSidebox()"
-          class="flex flex-row sm:justify-center min-w-auto primary-background h-8 w-8 sm:w-24 rounded p-2 text-xs font-semibold text-[#e2e4e6]">
+          class="flex flex-row sm:justify-center min-w-auto primary-background h-8 w-8 sm:w-24 rounded p-2 text-xs font-semibold text-fg">
           <i class="pi pi-filter-fill mr-3"></i>
           <span class="hidden sm:block">Filter</span>
         </button>
@@ -42,6 +49,7 @@ import { CardMarketService } from '../../../services/card-market.service';
 export class PaginationCardListHeaderComponent {
   @Input() widthForm!: FormControl;
   @Input() viewOnly!: boolean;
+  @Input() showCollectionMode = true;
   @Input() filterButton: boolean | null = true;
   @Output() filterBox = new EventEmitter<boolean>();
 

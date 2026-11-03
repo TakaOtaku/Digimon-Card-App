@@ -1,5 +1,5 @@
-import { NgIf } from '@angular/common';
-import { ChangeDetectionStrategy, Component, effect, inject, Input } from '@angular/core';
+import { NgClass, NgIf } from '@angular/common';
+import { ChangeDetectionStrategy, Component, computed, effect, EventEmitter, inject, Input, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { DataViewModule } from 'primeng/dataview';
 import { DialogModule } from 'primeng/dialog';
@@ -26,10 +26,14 @@ import { CardMarketService } from '../../../services/card-market.service';
   template: `
     <div class="flex flex-col w-full">
       <digimon-pagination-card-list-header
-        [filterButton]="!filterBoxEnabled"
+        [filterButton]="!showFilterBox()"
         (filterBox)="filterBox = $event"
         [widthForm]="widthForm"
-        [viewOnly]="inputCollection.length > 0"></digimon-pagination-card-list-header>
+        [viewOnly]="inputCollection.length > 0"
+        [showCollectionMode]="showCollectionMode">
+        <ng-content select="[headerStart]" ngProjectAs="[headerStart]"></ng-content>
+        <ng-content select="[headerEnd]" ngProjectAs="[headerEnd]"></ng-content>
+      </digimon-pagination-card-list-header>
 
       <digimon-search></digimon-search>
 
@@ -39,7 +43,9 @@ import { CardMarketService } from '../../../services/card-market.service';
         role="list"
         aria-live="polite"
         aria-label="Card search results"
-        class="h-[calc(100vh-8.5rem)] md:h-[calc(100vh-10rem)] lg:h-[calc(100vh-5rem)] flex flex-wrap w-full content-start justify-start overflow-y-scroll">
+        [ngClass]="{ 'pb-16 lg:pb-0': bottomInset }"
+        class="h-[calc(100vh-12.5rem)] md:h-[calc(100vh-10rem)] flex flex-wrap w-full content-start justify-start overflow-y-scroll">
+        <ng-content></ng-content>
         @for (card of showCards; track $index) {
           @defer (on viewport) {
             <digimon-full-card
@@ -50,20 +56,22 @@ import { CardMarketService } from '../../../services/card-market.service';
               [deckBuilder]="true"
               [collectionOnly]="collectionOnly"
               [onlyView]="inputCollection.length > 0"
+              [showCollection]="showCollectionMode"
+              [alwaysCollection]="alwaysCollection"
               (viewCard)="viewCard($event)"></digimon-full-card>
             <div *ngIf="$index + 1 === showCards.length" (digimonIntersectionListener)="loadItems()" class="sm:m-0.5 md:m-1"></div>
           } @placeholder {
             <p-skeleton class="sm:m-0.5 md:m-1" width="5.6rem" height="10rem"></p-skeleton>
           }
         } @empty {
-          <div *ngIf="filteredCards().length === 0" class="flex items-center justify-center w-full h-full">
+          <div *ngIf="filteredCards().length === 0 && digimonCardStore.cards().length > 0" class="flex items-center justify-center w-full h-full">
             <h1 class="primary-color text-bold text-5xl text-center">No cards found!</h1>
           </div>
         }
       </div>
     </div>
 
-    <digimon-filter-side-box *ngIf="filterBoxEnabled" class="hidden xl:flex"></digimon-filter-side-box>
+    <digimon-filter-side-box *ngIf="showFilterBox()" class="hidden xl:flex"></digimon-filter-side-box>
 
     <p-drawer
       [(visible)]="filterBox"
@@ -76,6 +84,7 @@ import { CardMarketService } from '../../../services/card-market.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [
+    NgClass,
     PaginationCardListHeaderComponent,
     SearchComponent,
     NgIf,
@@ -94,6 +103,12 @@ export class PaginationCardListComponent {
   @Input() collectionOnly: boolean = false;
   @Input() initialWidth = 5.6;
   @Input() inputCollection: ICountCard[] = [];
+  @Input() dialogOnView = true;
+  @Input() showCollectionMode = true;
+  @Input() alwaysCollection = false;
+  // Leaves room for the builder's mobile Pool/Deck/Stats tray
+  @Input() bottomInset = false;
+  @Output() cardViewed = new EventEmitter<DigimonCard>();
 
   digimonCardStore = inject(DigimonCardStore);
   websiteStore = inject(WebsiteStore);
@@ -109,7 +124,10 @@ export class PaginationCardListComponent {
   widthForm = new FormControl(this.initialWidth);
 
   filterBox = false;
-  filterBoxEnabled = true;
+  // false: filters only open in the drawer (the builder needs the width)
+  @Input() filterBoxEnabled = true;
+  // 'Filter panel beside cards' setting (unset counts as on)
+  showFilterBox = computed(() => this.filterBoxEnabled && this.saveStore.settings().fullscreenFilter !== false);
   card = JSON.parse(JSON.stringify(dummyCard));
 
   perPage = 100;
@@ -139,14 +157,6 @@ export class PaginationCardListComponent {
 
   constructor() {
     effect(() => {
-      const settings = this.saveStore.settings();
-      if (settings.fullscreenFilter === null || settings.fullscreenFilter === undefined) {
-        return true;
-      }
-      return settings.fullscreenFilter;
-    });
-
-    effect(() => {
       const filteredCards = this.digimonCardStore.filteredCards();
       this.showCards = filteredCards.slice(0, this.perPage);
       this.page = 1;
@@ -161,6 +171,8 @@ export class PaginationCardListComponent {
   }
 
   viewCard(card: DigimonCard) {
+    this.cardViewed.emit(card);
+    if (!this.dialogOnView) return;
     this.dialogStore.updateViewCardDialog({
       show: true,
       card,

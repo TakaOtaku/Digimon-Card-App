@@ -1,7 +1,7 @@
+import { SeoService } from '@services';
 import { NgIf, NgStyle } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject, signal, WritableSignal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { ImgFallbackDirective } from '@directives';
 import { DigimonRulings, QuestionAnswer } from '@models';
@@ -15,53 +15,51 @@ import { environment } from '../../../environments/environment';
 @Component({
   selector: 'digimon-products',
   template: `
-    <digimon-page style="align-items: start !important;">
-      <div class="flex flex-col justify-top px-10 w-full" style="align-self: start !important;">
-        <h1 class="text-shadow mt-6 pb-1 text-2xl md:text-4xl font-black text-[#e2e4e6]">Digimon Card Rulings</h1>
-        <div class="m-1 flex flex-row">
-          <p-icon-field class="mr-1 w-full">
+    <digimon-page>
+      <div class="mx-auto flex w-full max-w-6xl flex-col gap-4 self-start px-4 py-6 md:px-6">
+        <div class="flex flex-wrap items-end justify-between gap-3">
+          <div class="flex flex-col gap-1">
+            <h1 class="m-0 text-3xl font-bold text-fg md:text-4xl">Rulings</h1>
+            <p class="m-0 text-sm text-muted">Official Q&amp;A per card. Search by card number or any word in a question.</p>
+          </div>
+          <p-icon-field class="w-full md:w-96">
             <p-inputicon styleClass="pi pi-search"></p-inputicon>
-            <input [(ngModel)]="searchTerm" class="w-full" pInputText placeholder="Search" type="text" />
+            <input [(ngModel)]="searchTerm" class="w-full" pInputText placeholder="Search rulings, e.g. BT1-010 or Piercing" type="text" />
           </p-icon-field>
         </div>
 
-        <div class="grid grid-cols-1 rulings-container w-full content-start justify-start overflow-y-scroll">
+        <div class="flex flex-col gap-3">
           @for (cardRulings of Object.entries(digimonRulings); track $index) {
-            <div *ngIf="shouldDisplay(cardRulings)" class="flex flex-col md:flex-row my-2 border border-slate-300 surface-ground">
+            <article *ngIf="shouldDisplay(cardRulings)" class="flex flex-col gap-4 rounded-xl border border-line bg-ink-1 p-4 md:flex-row">
               <img
                 [digimonImgFallback]="cardImageBase + cardRulings[0] + '.webp'"
-                [ngStyle]="{ border: '2px solid black', 'border-radius': '5px' }"
                 alt="{{ cardRulings[0] }}"
-                class="ml-0 aspect-auto h-26 md:h-56" />
-              <div class="grid grid-cols-1 mx-5">
+                class="w-32 shrink-0 self-start rounded-lg md:w-40" />
+              <div class="flex min-w-0 flex-1 flex-col divide-y divide-line">
+                <span class="pb-2 font-mono text-sm text-muted">{{ cardRulings[0] }}</span>
                 @for (ruling of cardRulings[1]; track $index) {
-                  <div class="my-2 flex flex-col">
-                    <div>{{ ruling.question }}</div>
-                    <hr />
-                    <div>{{ ruling.answer }}</div>
+                  <div class="flex flex-col gap-1 py-3">
+                    <p class="m-0 text-fg"><span class="mr-2 font-mono font-semibold text-accent">Q</span>{{ stripPrefix(ruling.question) }}</p>
+                    <p class="m-0 text-muted"><span class="mr-2 font-mono font-semibold text-green-400">A</span>{{ stripPrefix(ruling.answer) }}</p>
                   </div>
                 }
               </div>
-            </div>
+            </article>
           }
-          <div></div>
         </div>
       </div>
     </digimon-page>
   `,
-  styles: `
-    .rulings-container {
-      max-height: calc(100vh - 10rem);
-    }
-  `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [PageComponent, FormsModule, IconField, InputIcon, InputText, NgIf, ImgFallbackDirective, NgStyle],
+  imports: [PageComponent, FormsModule, IconField, InputIcon, InputText, NgIf, ImgFallbackDirective],
 })
 export class RulesComponent {
+  private seo = inject(SeoService);
+  // The rulings data already starts with "Q:" / "A:"; the template draws its own labels
+  stripPrefix = (text: string) => text.replace(/^\s*[QA]:\s*/, '');
+
   public router = inject(Router);
-  private meta = inject(Meta);
-  private title = inject(Title);
 
   digimonRulings: DigimonRulings = {};
   searchTerm: WritableSignal<string> = signal('');
@@ -73,19 +71,7 @@ export class RulesComponent {
   }
 
   private makeGoogleFriendly() {
-    this.title.setTitle('Digimon Card Game - Rulings');
-
-    this.meta.addTags([
-      {
-        name: 'description',
-        content: 'See all Official Digimon TCG Rulings in one Place',
-      },
-      { name: 'author', content: 'TakaOtaku' },
-      {
-        name: 'keywords',
-        content: 'Digimon, decks, deck builder, collection,  tournament, TCG, community, friends, share, rules',
-      },
-    ]);
+    this.seo.set('Rulings', 'Official Digimon Card Game rulings and Q&A, searchable by card number or keyword.');
   }
 
   protected readonly Object = Object;

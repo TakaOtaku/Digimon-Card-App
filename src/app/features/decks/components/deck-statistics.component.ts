@@ -1,233 +1,154 @@
-import { NgFor, SlicePipe } from '@angular/common';
-import { Component, EventEmitter, inject, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { NgClass } from '@angular/common';
+import { Component, EventEmitter, inject, Input, OnChanges, OnDestroy, OnInit, Output } from '@angular/core';
+import { ImgFallbackDirective } from '@directives';
 import { Subject, takeUntil } from 'rxjs';
-import { IDeck, IDeckCard } from '../../../../models';
-import { getCountFromDeckCards, mapToDeckCards } from '../../../functions/digimon-card.functions';
+import { IDeck } from '../../../../models';
+import { cardUsage, CardUsage, isDigimonType } from '../../../functions/digimon-card.functions';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
+
+const TYPES = ['All', 'Digimon', 'Tamer', 'Option', 'Digi-Egg'] as const;
+const COLORS = ['Red', 'Blue', 'Yellow', 'Green', 'Black', 'Purple', 'White'];
 
 @Component({
   selector: 'digimon-deck-statistics',
   template: `
-    <div class="flex flex-col overflow-hidden">
-      <div class="my-1 w-full border border-slate-200 p-1">
-        <h1 class="mb-2 w-full text-xl font-extrabold text-[#e2e4e6]">All Cards</h1>
-        <div class="overflow-x-auto sm:-mx-6 lg:-mx-8 lg:overflow-x-hidden">
-          <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-            <div class="max-h-[200px] overflow-x-hidden overflow-y-scroll">
-              <table class="min-w-full overflow-x-hidden">
-                <thead class="surface-card border-b">
-                  <tr>
-                    <th scope="col" class="max-w-[50px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">#</th>
-                    <th scope="col" class="maw-w-[150px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">Card</th>
-                    <th scope="col" class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">ID</th>
-                    <th scope="col" class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"># Played</th>
-                    <th scope="col" class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">% of Decks</th>
-                    <th scope="col" class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"># Average</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr
-                    *ngFor="let card of mostUsedCards | slice: 0 : 50; let i = index"
-                    class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150">
-                    <td class="max-w-[50px] whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">{{ i + 1 }}.</td>
-                    <td class="max-w-[150px] overflow-hidden whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">
-                      {{ card.name.english }}
-                    </td>
-                    <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">
-                      {{ card.cardNumber }}
-                    </td>
-                    <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">{{ card.count }}x</td>
-                    <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">{{ percentInDecks(card) }}%</td>
-                    <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">{{ averagePlayed(card) }}x</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
+    @if (!decks?.length) {
+      <div class="flex flex-col items-center gap-2 py-12 text-center">
+        <i class="pi pi-chart-bar text-4xl text-muted"></i>
+        <p class="m-0 text-fg">No decks to analyse yet.</p>
+        <p class="m-0 text-sm text-muted">Search or press Browse All, then open Statistics again.</p>
       </div>
+    } @else {
+      <div class="flex flex-col gap-5">
+        <p class="m-0 text-sm text-muted">Based on the {{ decks.length }} decks in your current search.</p>
 
-      <div class="my-1 w-full border border-slate-200 p-1">
-        <h1 class="mb-2 w-full text-xl font-extrabold text-[#e2e4e6]">Digimon Cards</h1>
-        <div class="overflow-x-auto sm:-mx-6 lg:-mx-8 lg:overflow-x-hidden">
-          <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-            <div class="max-h-[200px] overflow-x-hidden overflow-y-scroll">
-              <table class="min-w-full overflow-x-hidden">
-                <thead class="surface-card border-b">
-                  <tr>
-                    <th scope="col" class="max-w-[50px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">#</th>
-                    <th scope="col" class="maw-w-[150px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">Card</th>
-                    <th scope="col" class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">ID</th>
-                    <th scope="col" class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"># Played</th>
-                    <th scope="col" class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">% of Decks</th>
-                    <th scope="col" class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"># Average</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr
-                    *ngFor="let card of filter(mostUsedCards, 'Digimon') | slice: 0 : 50; let i = index"
-                    class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150">
-                    <td class="max-w-[50px] whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">{{ i + 1 }}.</td>
-                    <td class="max-w-[150px] overflow-hidden whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">
-                      {{ card.name.english }}
-                    </td>
-                    <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">
-                      {{ card.cardNumber }}
-                    </td>
-                    <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">{{ card.count }}x</td>
-                    <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">{{ percentInDecks(card) }}%</td>
-                    <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">{{ averagePlayed(card) }}x</td>
-                  </tr>
-                </tbody>
-              </table>
+        <div class="grid grid-cols-2 gap-2 md:grid-cols-4">
+          @for (tile of tiles; track tile.label) {
+            <div class="rounded-lg border border-line bg-ink-1 px-4 py-3">
+              <div class="text-[11px] font-semibold uppercase tracking-wider text-muted">{{ tile.label }}</div>
+              <div class="truncate font-mono text-xl font-semibold text-fg">{{ tile.value }}</div>
             </div>
-          </div>
+          }
         </div>
-      </div>
 
-      <div class="my-1 w-full border border-slate-200 p-1">
-        <h1 class="mb-2 w-full text-xl font-extrabold text-[#e2e4e6]">Tamer Cards</h1>
-        <div class="overflow-x-auto sm:-mx-6 lg:-mx-8 lg:overflow-x-hidden">
-          <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-            <div class="max-h-[200px] overflow-x-hidden overflow-y-scroll">
-              <table class="min-w-full overflow-x-hidden">
-                <thead class="surface-card border-b">
-                  <tr>
-                    <th scope="col" class="max-w-[50px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">#</th>
-                    <th scope="col" class="maw-w-[150px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">Card</th>
-                    <th scope="col" class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">ID</th>
-                    <th scope="col" class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"># Played</th>
-                    <th scope="col" class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">% of Decks</th>
-                    <th scope="col" class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"># Average</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr
-                    *ngFor="let card of filter(mostUsedCards, 'Tamer') | slice: 0 : 50; let i = index"
-                    class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150">
-                    <td class="max-w-[50px] whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">{{ i + 1 }}.</td>
-                    <td class="max-w-[150px] overflow-hidden whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">
-                      {{ card.name.english }}
-                    </td>
-                    <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">
-                      {{ card.cardNumber }}
-                    </td>
-                    <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">{{ card.count }}x</td>
-                    <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">{{ percentInDecks(card) }}%</td>
-                    <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">{{ averagePlayed(card) }}x</td>
-                  </tr>
-                </tbody>
-              </table>
+        @if (colorShares.length) {
+          <section class="flex flex-col gap-2">
+            <h3 class="m-0 text-xs font-semibold uppercase tracking-wider text-muted">Deck colors</h3>
+            <div class="flex h-3 overflow-hidden rounded-full">
+              @for (share of colorShares; track share.color) {
+                <span [ngClass]="share.color" [style.flex]="share.count" [title]="share.color + ' ' + share.count"></span>
+              }
             </div>
-          </div>
-        </div>
-      </div>
+            <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm text-fg">
+              @for (share of colorShares; track share.color) {
+                <span class="inline-flex items-center gap-1.5">
+                  <span class="h-2.5 w-2.5 rounded-full" [ngClass]="share.color"></span>{{ share.color }}
+                  <span class="font-mono text-xs text-muted">{{ share.percent }}%</span>
+                </span>
+              }
+            </div>
+          </section>
+        }
 
-      <div class="my-1 w-full border border-slate-200 p-1">
-        <h1 class="mb-2 w-full text-xl font-extrabold text-[#e2e4e6]">Option Cards</h1>
-        <div class="overflow-x-auto sm:-mx-6 lg:-mx-8 lg:overflow-x-hidden">
-          <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-            <div class="max-h-[200px] overflow-x-hidden overflow-y-scroll">
-              <table class="min-w-full overflow-x-hidden">
-                <thead class="surface-card border-b">
-                  <tr>
-                    <th scope="col" class="max-w-[50px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">#</th>
-                    <th scope="col" class="maw-w-[150px] px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">Card</th>
-                    <th scope="col" class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">ID</th>
-                    <th scope="col" class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"># Played</th>
-                    <th scope="col" class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]">% of Decks</th>
-                    <th scope="col" class="px-6 py-2 text-left text-sm font-medium text-[#e2e4e6]"># Average</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr
-                    *ngFor="let card of filter(mostUsedCards, 'Option') | slice: 0 : 50; let i = index"
-                    class="border-b transition duration-300 ease-in-out hover:hover:backdrop-brightness-150">
-                    <td class="max-w-[50px] whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">{{ i + 1 }}.</td>
-                    <td class="max-w-[150px] overflow-hidden whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">
-                      {{ card.name.english }}
-                    </td>
-                    <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">
-                      {{ card.cardNumber }}
-                    </td>
-                    <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">{{ card.count }}x</td>
-                    <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">{{ percentInDecks(card) }}%</td>
-                    <td class="whitespace-nowrap px-6 py-2 text-sm font-light text-[#e2e4e6]">{{ averagePlayed(card) }}x</td>
-                  </tr>
-                </tbody>
-              </table>
+        <section class="flex flex-col gap-3">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <h3 class="m-0 text-xs font-semibold uppercase tracking-wider text-muted">Most played cards</h3>
+            <div role="group" aria-label="Card type" class="flex flex-wrap gap-1">
+              @for (t of types; track t) {
+                <button
+                  type="button"
+                  (click)="type = t"
+                  [attr.aria-pressed]="type === t"
+                  class="h-8 rounded-full border px-3 text-xs font-semibold"
+                  [ngClass]="type === t ? 'border-accent bg-ink-2 text-accent' : 'border-line bg-ink-2 text-fg'">
+                  {{ t }}
+                </button>
+              }
             </div>
           </div>
-        </div>
+
+          <ol class="m-0 flex max-h-[28rem] list-none flex-col gap-1 overflow-y-auto p-0">
+            @for (row of rows(); track row.card.cardNumber; let i = $index) {
+              <li class="flex items-center gap-3 rounded-lg bg-ink-2 py-1 pl-2 pr-3">
+                <span class="w-6 text-right font-mono text-xs text-muted">{{ i + 1 }}</span>
+                <img [digimonImgFallback]="row.card.cardImage" alt="" class="h-11 w-8 rounded object-cover" />
+                <span class="flex min-w-0 flex-[1_1_10rem] flex-col">
+                  <span class="truncate text-sm font-medium text-fg">{{ row.card.name.english }}</span>
+                  <span class="font-mono text-[11px] text-muted">{{ row.card.cardNumber }}</span>
+                </span>
+                <span class="hidden flex-[1_1_8rem] items-center gap-2 sm:flex">
+                  <span class="h-1.5 flex-1 overflow-hidden rounded bg-line"><span class="block h-full bg-accent" [style.width.%]="row.percent"></span></span>
+                </span>
+                <span class="w-14 text-right font-mono text-sm font-semibold text-fg" title="Share of decks that play it">{{ row.percent.toFixed(0) }}%</span>
+                <span class="w-16 text-right font-mono text-xs text-muted" title="Average copies when played">avg {{ row.average.toFixed(1) }}×</span>
+              </li>
+            } @empty {
+              <li class="p-2 text-sm text-muted">No {{ type }} cards in these decks.</li>
+            }
+          </ol>
+        </section>
       </div>
-    </div>
+    }
   `,
   standalone: true,
-  imports: [NgFor, SlicePipe, FormsModule],
+  imports: [NgClass, ImgFallbackDirective],
 })
-export class DeckStatisticsComponent implements OnInit, OnDestroy {
+export class DeckStatisticsComponent implements OnInit, OnChanges, OnDestroy {
   @Input() decks: IDeck[];
   @Input() updateCards: Subject<boolean>;
   @Input() loading: boolean;
   @Output() loadingChange = new EventEmitter<boolean>();
 
-  mostUsedCards: IDeckCard[] = [];
+  types = TYPES;
+  type: (typeof TYPES)[number] = 'All';
+  usage: CardUsage[] = [];
+  tiles: { label: string; value: string | number }[] = [];
+  colorShares: { color: string; count: number; percent: number }[] = [];
 
   private digimonCardStore = inject(DigimonCardStore);
-  private onDestroy$ = new Subject();
+  private onDestroy$ = new Subject<void>();
 
   ngOnInit() {
-    this.updateCards.pipe(takeUntil(this.onDestroy$)).subscribe(() => this.findMostUsedCards());
+    this.updateCards?.pipe(takeUntil(this.onDestroy$)).subscribe(() => this.recalculate());
+  }
+
+  ngOnChanges() {
+    this.recalculate();
   }
 
   ngOnDestroy() {
-    this.onDestroy$.next(true);
-    this.onDestroy$.unsubscribe();
+    this.onDestroy$.next();
+    this.onDestroy$.complete();
   }
 
-  findMostUsedCards() {
-    this.loadingChange.emit(true);
-    const cards = mapToDeckCards(this.decks.map((deck) => deck.cards).flat(1), this.digimonCardStore.cards());
+  rows(): CardUsage[] {
+    const rows =
+      this.type === 'All'
+        ? this.usage
+        : this.usage.filter((row) => (this.type === 'Digimon' ? isDigimonType(row.card.cardType) : row.card.cardType === this.type));
+    return rows.slice(0, 50);
+  }
 
-    let checked: string[] = [];
-    const cardsWithCount = cards
-      .map((card) => {
-        if (checked.includes(card.cardNumber)) {
-          return undefined;
-        }
-        const count = getCountFromDeckCards(cards.filter((value) => value.cardNumber === card.cardNumber));
+  private recalculate() {
+    const decks = this.decks ?? [];
+    this.usage = decks.length ? cardUsage(decks, this.digimonCardStore.cards()) : [];
 
-        checked.push(card.cardNumber);
-        return { ...card, count } as IDeckCard;
-      })
-      .filter((value1) => value1 !== undefined && value1.name && value1.id)
-      .sort((a, b) => b!.count - a!.count);
+    const colors = new Map<string, number>();
+    decks.forEach((deck) => deck.color?.name && colors.set(deck.color.name, (colors.get(deck.color.name) ?? 0) + 1));
+    this.colorShares = COLORS.filter((color) => colors.has(color)).map((color) => ({
+      color,
+      count: colors.get(color)!,
+      percent: Math.round((colors.get(color)! / decks.length) * 100),
+    }));
 
-    this.mostUsedCards = cardsWithCount.slice(1) as IDeckCard[];
+    const top = this.usage[0];
+    const topColor = [...this.colorShares].sort((a, b) => b.count - a.count)[0];
+    this.tiles = [
+      { label: 'Decks analysed', value: decks.length },
+      { label: 'Unique cards', value: this.usage.length },
+      { label: 'Most played', value: top ? top.card.name.english : '—' },
+      { label: 'Top color', value: topColor ? `${topColor.color} ${topColor.percent}%` : '—' },
+    ];
     this.loadingChange.emit(false);
-  }
-
-  percentInDecks(search: IDeckCard) {
-    const inHowManyDecks = this.decks.filter((deck) => {
-      return deck.cards.find((card) => card.id.includes(search.cardNumber));
-    }).length;
-
-    return ((inHowManyDecks / this.decks.length) * 100).toFixed(2);
-  }
-
-  averagePlayed(search: IDeckCard) {
-    const inWhichDecks = this.decks.filter((deck) => deck.cards.find((card) => card.id.includes(search.cardNumber)));
-
-    let howOftenInTheDecks = 0;
-    inWhichDecks.forEach((deck) => {
-      howOftenInTheDecks += getCountFromDeckCards(deck.cards.filter((card) => card.id.includes(search.cardNumber)));
-    });
-
-    return (howOftenInTheDecks / inWhichDecks.length).toFixed(2);
-  }
-
-  filter(cards: IDeckCard[], search: string): IDeckCard[] {
-    return cards.filter((card) => card.cardType === search);
   }
 }

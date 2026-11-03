@@ -8,12 +8,26 @@
 @import 'primeicons/primeicons.css';
 
 :root {
-  --p-surface-950: #17212f !important;
-  --p-surface-900: #17212f !important;
-  --p-surface-800: #17212f !important;
-  --surface-card: #17212f !important;
-  --highlight: #185571 !important;
-  --p-overlay-modal-padding: 0 !important;
+  // Design tokens ("Digivice Dark"); hex copies live in digimon-preset.ts
+  --dc-ink-0: #0b111b;
+  --dc-ink-1: #111a28;
+  --dc-ink-2: #18243a;
+  --dc-line: #26354f;
+  --dc-fg: #e6edf7;
+  --dc-muted: #93a4bd;
+  --dc-accent: #4cc3ff;
+  --dc-accent-strong: #1d6fa8;
+  --dc-accent-ink: #04121f;
+  // Page background: the gradient from the original site
+  --dc-bg-top: #17212f;
+  --dc-bg-bottom: #08528d;
+
+  --p-surface-950: var(--dc-ink-1) !important;
+  --p-surface-900: var(--dc-ink-1) !important;
+  --p-surface-800: var(--dc-ink-1) !important;
+  --surface-card: var(--dc-ink-1) !important;
+  --highlight: var(--dc-ink-2) !important;
+  --p-overlay-modal-padding: 1.25rem !important;
 }
 
 html,
@@ -24,11 +38,12 @@ body {
 // IOS Long Click
 body {
   -webkit-touch-callout: default !important;
+  background: linear-gradient(180deg, var(--dc-bg-top), var(--dc-bg-bottom)) fixed;
 }
 
 * {
   font-family:
-    Montserrat,
+    Inter,
     -apple-system,
     sans-serif;
 }
@@ -37,20 +52,31 @@ body {
   margin: 0;
 }
 
+h1:not(.text-xs) {
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+// Many filters use a tiny h1 as a field label; style those like the mockup's labels
+h1.text-xs {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--dc-muted) !important;
+}
+
 .primary-color {
   color: var(--primary-color);
 }
 
 .bg {
-  background-color: #17212f;
+  background-color: var(--dc-ink-0);
 }
 
 .primary-background {
-  background-color: #08528d !important;
+  background-color: var(--dc-accent-strong) !important;
 }
 
 .primary-border {
-  border: 2px solid #62b7f6;
+  border: 2px solid var(--dc-accent);
 }
 
 .border-selected {
@@ -141,23 +167,23 @@ body {
 }
 
 .Red {
-  background: #ef1919;
+  background: #e5484d;
 }
 
 .Blue {
-  background: #19a0e3;
+  background: #3e9bff;
 }
 
 .Yellow {
-  background: #ffd619;
+  background: #f5c518;
 }
 
 .Green {
-  background: #19b383;
+  background: #2fb67c;
 }
 
 .Black {
-  background: #191919;
+  background: #1c1f26;
 }
 
 .Purple {
@@ -181,7 +207,7 @@ body {
 }
 
 .Multi {
-  background: linear-gradient(90deg, #ef1919 14%, #19a0e3 28%, #ffd619 42%, #19b383 56%, #191919 70%, #8d6fdb 84%, #ffffff 100%);
+  background: linear-gradient(90deg, #e5484d 14%, #3e9bff 28%, #f5c518 42%, #2fb67c 56%, #1c1f26 70%, #8d6fdb 84%, #ffffff 100%);
 }
 
 digimon-multi-select {
@@ -253,9 +279,10 @@ p-dialog::ng-deep {
 .stat-container {
   width: 22px;
   height: 60px;
-  border: 1px solid #ffffff;
+  border: 1px solid var(--dc-line);
   border-radius: 6px;
-  background: #7794a8;
+  background: var(--dc-ink-2);
+  overflow: hidden;
   margin: 0 auto;
   display: flex;
   align-items: baseline;
@@ -266,7 +293,7 @@ p-dialog::ng-deep {
 }
 
 .background-darker {
-  background-color: color-mix(in srgb, #17212f 50%, black);
+  background-color: var(--dc-ink-0);
 }
 
 /* ===== Confirmation Dialog Padding ===== */

@@ -57,3 +57,7 @@ __pycache__/
 
 # Card images are served from Garage, not Git
 /src/assets/images/cards/
+
+# Local tooling
+/.claude/
+/graphify-out/

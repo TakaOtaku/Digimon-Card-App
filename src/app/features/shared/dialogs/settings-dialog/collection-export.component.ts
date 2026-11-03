@@ -1,22 +1,41 @@
-import { NgClass, NgIf } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { Component, inject, Signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DigimonCard, GroupedSets, ICountCard, ISave } from '@models';
 import { DialogStore, DigimonCardStore, SaveStore } from '@store';
 import { saveAs } from 'file-saver';
-import { ToastrService } from 'ngx-toastr';
 import { MessageService } from 'primeng/api';
-import { ButtonDirective } from 'primeng/button';
-import { ToggleSwitch } from 'primeng/toggleswitch';
 import { MultiSelect } from 'primeng/multiselect';
 
 @Component({
   selector: 'digimon-collection-export',
   template: `
-    <div class="mx-auto flex flex-col justify-center">
-      <p class="text-center font-bold">What cards you want to export?</p>
-      <p class="text-center text-xs">(Select nothing for all cards)</p>
-      <div class="mx-auto">
+    <div class="flex flex-col gap-5">
+      <p class="m-0 text-sm text-muted">Download a CSV of your collection, or of the cards you still need, to share or keep as a backup.</p>
+
+      <div class="flex flex-col gap-2">
+        <span class="text-xs font-semibold uppercase tracking-wider text-muted">Export</span>
+        <div role="group" aria-label="What to export" class="inline-flex self-start gap-1 rounded-full border border-line bg-ink-0 p-1">
+          <button type="button" (click)="collectedCards = true" [attr.aria-pressed]="collectedCards"
+            class="rounded-full px-4 py-1 text-sm" [ngClass]="collectedCards ? 'bg-accent font-semibold text-accent-ink' : 'text-fg'">Cards I own</button>
+          <button type="button" (click)="collectedCards = false" [attr.aria-pressed]="!collectedCards"
+            class="rounded-full px-4 py-1 text-sm" [ngClass]="!collectedCards ? 'bg-accent font-semibold text-accent-ink' : 'text-fg'">Cards I'm missing</button>
+        </div>
+      </div>
+
+      @if (!collectedCards) {
+        <div class="flex flex-col gap-2">
+          <span class="text-xs font-semibold uppercase tracking-wider text-muted">Copies wanted per card</span>
+          <div role="group" aria-label="Copies wanted" class="flex flex-wrap gap-1">
+            @for (n of [1, 2, 3, 4, 5]; track n) {
+              <button type="button" (click)="goal = n" [attr.aria-pressed]="goal === n" class="h-8 rounded-full border px-3 text-xs font-semibold w-10 font-mono" [ngClass]="goal === n ? 'border-accent bg-ink-2 text-accent' : 'border-line bg-ink-2 text-fg'">{{ n }}</button>
+            }
+          </div>
+        </div>
+      }
+
+      <label class="flex flex-col gap-2">
+        <span class="text-xs font-semibold uppercase tracking-wider text-muted">Sets <span class="normal-case tracking-normal text-muted">(none selected = all)</span></span>
         <p-multiSelect
           [filter]="false"
           [(ngModel)]="sets"
@@ -24,171 +43,68 @@ import { MultiSelect } from 'primeng/multiselect';
           [options]="groupedSets"
           [showHeader]="false"
           [showToggleAll]="false"
-          placeholder="Select a Set"
+          placeholder="All sets"
           display="chip"
           scrollHeight="250px"
-          class="mt-2"
-          styleClass="w-full max-w-[300px] h-8 text-sm">
+          appendTo="body"
+          styleClass="w-full">
           <ng-template let-group pTemplate="group">
-            <div class="align-items-center flex">
-              <span>{{ group.label }}</span>
-            </div>
+            <span>{{ group.label }}</span>
           </ng-template>
         </p-multiSelect>
-      </div>
+      </label>
 
-      <h1 class="mt-3 text-center text-xs font-bold text-[#e2e4e6]">Rarity:</h1>
-      <div class="inline-flex w-full justify-center">
-        <button
-          (click)="changeRarity('C')"
-          [ngClass]="{ 'primary-border': rarities.includes('C') }"
-          class="min-w-auto primary-background mt-2 h-8 px-2 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
-          C
-        </button>
-        <button
-          (click)="changeRarity('UC')"
-          [ngClass]="{ 'primary-border': rarities.includes('UC') }"
-          class="min-w-auto primary-background mt-2 h-8 px-2 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
-          UC
-        </button>
-        <button
-          (click)="changeRarity('R')"
-          [ngClass]="{ 'primary-border': rarities.includes('R') }"
-          class="min-w-auto primary-background mt-2 h-8 px-2 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
-          R
-        </button>
-        <button
-          (click)="changeRarity('SR')"
-          [ngClass]="{ 'primary-border': rarities.includes('SR') }"
-          class="min-w-auto primary-background mt-2 h-8 px-2 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
-          SR
-        </button>
-        <button
-          (click)="changeRarity('SEC')"
-          [ngClass]="{ 'primary-border': rarities.includes('SEC') }"
-          class="min-w-auto primary-background mt-2 h-8 px-2 rounded-r border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
-          SEC
-        </button>
-      </div>
-
-      <h1 class="mt-3 text-center text-xs font-bold text-[#e2e4e6]">Version:</h1>
-      <div class="inline-flex w-full justify-center flex-wrap gap-1">
-        <button
-          (click)="changeVersion('Normal')"
-          [ngClass]="{ 'primary-border': versions.includes('Normal') }"
-          class="min-w-auto primary-background mt-2 h-8 px-2 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
-          Normal
-        </button>
-        <button
-          (click)="changeVersion('AA')"
-          [ngClass]="{ 'primary-border': versions.includes('AA') }"
-          class="min-w-auto primary-background mt-2 h-8 px-2 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
-          AA
-        </button>
-        <button
-          (click)="changeVersion('Pre-Release')"
-          [ngClass]="{ 'primary-border': versions.includes('Pre-Release') }"
-          class="min-w-auto primary-background mt-2 h-8 px-2 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
-          Pre-Rel.
-        </button>
-        <button
-          (click)="changeVersion('Stamp')"
-          [ngClass]="{ 'primary-border': versions.includes('Stamp') }"
-          class="min-w-auto primary-background mt-2 h-8 px-2 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
-          Stamp
-        </button>
-        <button
-          (click)="changeVersion('Reprint')"
-          [ngClass]="{ 'primary-border': versions.includes('Reprint') }"
-          class="min-w-auto primary-background mt-2 h-8 px-2 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
-          Reprint
-        </button>
-        <button
-          (click)="changeVersion('Special Rare')"
-          [ngClass]="{ 'primary-border': versions.includes('Special Rare') }"
-          class="min-w-auto primary-background mt-2 h-8 px-2 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
-          Special
-        </button>
-        <button
-          (click)="changeVersion('Rare Pull')"
-          [ngClass]="{ 'primary-border': versions.includes('Rare Pull') }"
-          class="min-w-auto primary-background mt-2 h-8 px-2 rounded-r border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
-          R. Pull
-        </button>
-      </div>
-
-      <p class="mt-3 text-center font-bold">Missing Cards or Collected Cards?</p>
-      <div class="mx-auto flex flex-row">
-        <span class="mr-2">Missing</span>
-        <p-toggleswitch [(ngModel)]="collectedCards"></p-toggleswitch>
-        <span class="ml-2">Collected</span>
-      </div>
-
-      <div *ngIf="!collectedCards" class="my-3">
-        <h1 class="text-center text-xs font-bold text-[#e2e4e6]">Collection Goal:</h1>
-        <div class="inline-flex w-full justify-center">
-          <button
-            (click)="goal = 1"
-            [ngClass]="{ 'primary-border': goal === 1 }"
-            class="min-w-auto primary-background mt-2 h-8 w-20 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
-            1
-          </button>
-          <button
-            (click)="goal = 2"
-            [ngClass]="{ 'primary-border': goal === 2 }"
-            class="min-w-auto primary-background mt-2 h-8 w-20 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
-            2
-          </button>
-          <button
-            (click)="goal = 3"
-            [ngClass]="{ 'primary-border': goal === 3 }"
-            class="min-w-auto primary-background mt-2 h-8 w-20 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
-            3
-          </button>
-          <button
-            (click)="goal = 4"
-            [ngClass]="{ 'primary-border': goal === 4 }"
-            class="min-w-auto primary-background mt-2 h-8 w-20 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
-            4
-          </button>
-          <button
-            (click)="goal = 5"
-            [ngClass]="{ 'primary-border': goal === 5 }"
-            class="min-w-auto primary-background mt-2 h-8 w-20 rounded-l border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
-            5
-          </button>
+      <div class="flex flex-col gap-2">
+        <span class="text-xs font-semibold uppercase tracking-wider text-muted">Rarity <span class="normal-case tracking-normal text-muted">(none = all)</span></span>
+        <div role="group" aria-label="Rarity" class="flex flex-wrap gap-1">
+          @for (rarity of rarityOptions; track rarity) {
+            <button type="button" (click)="changeRarity(rarity)" [attr.aria-pressed]="rarities.includes(rarity)"
+              class="h-8 rounded-full border px-3 text-xs font-semibold font-mono" [ngClass]="rarities.includes(rarity) ? 'border-accent bg-ink-2 text-accent' : 'border-line bg-ink-2 text-fg'">{{ rarity }}</button>
+          }
         </div>
       </div>
 
-      <div class="mt-3 flex w-full justify-end">
-        <button (click)="exportCollection()" icon="pi pi-download" label="Export" pButton type="button"></button>
+      <div class="flex flex-col gap-2">
+        <span class="text-xs font-semibold uppercase tracking-wider text-muted">Printings <span class="normal-case tracking-normal text-muted">(none = all)</span></span>
+        <div role="group" aria-label="Printings" class="flex flex-wrap gap-1">
+          @for (version of versionOptions; track version.value) {
+            <button type="button" (click)="changeVersion(version.value)" [attr.aria-pressed]="versions.includes(version.value)"
+              class="h-8 rounded-full border px-3 text-xs font-semibold" [ngClass]="versions.includes(version.value) ? 'border-accent bg-ink-2 text-accent' : 'border-line bg-ink-2 text-fg'">{{ version.label }}</button>
+          }
+        </div>
+      </div>
+
+      <div class="flex justify-end">
+        <button type="button" (click)="exportCollection()" class="inline-flex h-11 items-center gap-2 rounded-lg bg-accent px-5 font-semibold text-accent-ink disabled:opacity-40"><i class="pi pi-download"></i> Download CSV</button>
       </div>
     </div>
   `,
-  styles: [
-    `
-      .centered-tabs .p-tabview-nav {
-        display: flex;
-        justify-content: center;
-      }
-    `,
-  ],
   standalone: true,
-  imports: [MultiSelect, FormsModule, NgClass, ToggleSwitch, NgIf, ButtonDirective],
-  providers: [MessageService],
+  imports: [MultiSelect, FormsModule, NgClass],
 })
 export class CollectionExportComponent {
   private dialogStore = inject(DialogStore);
   private saveStore = inject(SaveStore);
   private digimonCardStore = inject(DigimonCardStore);
-  private toastrService = inject(ToastrService);
+  private messageService = inject(MessageService);
 
   save: Signal<ISave> = this.saveStore.save;
 
   collectedCards = true;
   groupedSets = GroupedSets;
   sets: string[] = [];
-  goal = 4;
+  // Starts at the collection goal from the settings
+  goal = Math.min(Math.max(this.saveStore.settings().collectionMinimum, 1), 5);
+  rarityOptions = ['C', 'UC', 'R', 'SR', 'SEC'];
+  versionOptions = [
+    { label: 'Normal', value: 'Normal' },
+    { label: 'Alt. art', value: 'AA' },
+    { label: 'Pre-release', value: 'Pre-Release' },
+    { label: 'Stamp', value: 'Stamp' },
+    { label: 'Reprint', value: 'Reprint' },
+    { label: 'Special rare', value: 'Special Rare' },
+    { label: 'Rare pull', value: 'Rare Pull' },
+  ];
   rarities: string[] = [];
   versions: string[] = [];
 
@@ -216,7 +132,7 @@ export class CollectionExportComponent {
       .sort((a, b) => a.id.localeCompare(b.id));
 
     if (exportCards.length === 0) {
-      this.toastrService.info('No cards, that match your filter were found!', 'No cards found!');
+      this.messageService.add({ severity: 'info', summary: 'No cards found!', detail: 'No cards, that match your filter were found!' });
       return;
     }
 

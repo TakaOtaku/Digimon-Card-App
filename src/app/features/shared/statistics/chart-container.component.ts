@@ -5,7 +5,7 @@ import { NgFor, NgClass, NgStyle } from '@angular/common';
   selector: 'digimon-chart-container',
   template: `
     <div class="m-0.5 h-full w-8">
-      <p class="text-center text-[#e2e4e6]">
+      <p class="text-center text-fg">
         {{ getFillCount() }}
       </p>
       <div class="stat-container">
@@ -17,7 +17,7 @@ import { NgFor, NgClass, NgStyle } from '@angular/common';
             height: 'calc(' + fill[7 - i] + ' * ' + fillPercent + '%)',
           }"></div>
       </div>
-      <p class="text-center text-xs text-[#e2e4e6]">{{ label }}</p>
+      <p class="text-center text-xs text-fg">{{ label }}</p>
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -2,7 +2,7 @@ import { computed, inject } from '@angular/core';
 import { tapResponse } from '@ngrx/operators';
 import { patchState, signalStore, withComputed, withMethods, withState } from '@ngrx/signals';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
-import { ToastrService } from 'ngx-toastr';
+import { MessageService } from 'primeng/api';
 import { distinctUntilChanged, first, pipe, switchMap } from 'rxjs';
 import { emptySave, ICountCard, IDeck, ISave, ISettings } from '../../models';
 import { AuthService } from '../services/auth.service';
@@ -32,7 +32,7 @@ export const SaveStore = signalStore(
     decks: computed(() => save.decks()),
   })),
 
-  withMethods((store, toastrService = inject(ToastrService), authService = inject(AuthService)) => ({
+  withMethods((store, messageService = inject(MessageService), authService = inject(AuthService)) => ({
     loadSave: rxMethod<void>(
       pipe(
         first(),
@@ -41,7 +41,7 @@ export const SaveStore = signalStore(
           return authService.loadSave().pipe(
             tapResponse({
               next: (save: ISave) => {
-                toastrService.info('Your save was loaded successfully!', 'Welcome back!');
+                messageService.add({ severity: 'info', summary: 'Welcome back!', detail: 'Your save was loaded successfully!' });
 
                 patchState(store, {
                   save: {
@@ -51,7 +51,7 @@ export const SaveStore = signalStore(
                 });
               },
               error: () => {
-                toastrService.info('There was an error while loading your save, please refresh the site!', 'Save Loading Error!');
+                messageService.add({ severity: 'error', summary: 'Save Loading Error!', detail: 'There was an error while loading your save, please refresh the site!' });
               },
               finalize: () => patchState(store, { loadedSave: true }),
             }),

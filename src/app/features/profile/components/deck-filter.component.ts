@@ -16,7 +16,7 @@ import { InputTextModule } from 'primeng/inputtext';
           [formControl]="searchFilter"
           class="w-full"
           pInputText
-          placeholder="Search (Title, Description, Card-Ids, Color))"
+          placeholder="Search title, description, card IDs or color"
           type="text" />
       </p-icon-field>
       <p-multiSelect

@@ -4,7 +4,7 @@ import { Database, ref, set, onValue } from '@angular/fire/database';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ADMINS, emptyDeck, TIERLIST } from '@models';
-import { environment } from '../../../../environments/environment';
+import { ensureCdnUrl } from '@functions';
 import { MongoBackendService } from '@services';
 import { DigimonCardStore, SaveStore, WebsiteStore } from '@store';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
@@ -22,9 +22,9 @@ import { TooltipModule } from 'primeng/tooltip';
 @Component({
   selector: 'digimon-tierlist',
   template: `
-    <div class="mb-5 w-full p-1">
-      <h1 class="main-font w-full text-3xl font-extrabold uppercase text-[#e2e4e6]">
-        Digimon Archtype Ranking
+    <div class="mb-5 flex w-full flex-col gap-3">
+      <h2 class="m-0 flex flex-wrap items-center gap-1 font-display text-2xl font-semibold text-fg">
+        Archetype tier list
         <button
           class="p-button-outlined p-button-rounded p-button-sm mx-2"
           icon="pi pi-copy"
@@ -55,15 +55,16 @@ import { TooltipModule } from 'primeng/tooltip';
           pRipple
           type="button"
           (click)="uploadTierlist()"></button>
-      </h1>
-      <h3 class="mb-2 text-2xs">Maintained by #Naethaen</h3>
+      </h2>
+      <p class="m-0 text-xs text-muted">Maintained by #Naethaen · click an archetype to search its decks</p>
 
-      <div *ngFor="let key of tiers; let i = index" class="flex w-full flex-row border border-black">
+      <div class="overflow-hidden rounded-xl border border-line">
+      <div *ngFor="let key of tiers; let i = index" class="flex w-full flex-row border-b border-line last:border-b-0">
         <div
           [ngClass]="key.color"
           pDroppable="gens"
           (onDrop)="onDropToTier(i)"
-          class="text-black-outline w-24 text-center text-7xl font-black leading-[5.5rem] text-[#e2e4e6]">
+          class="grid w-20 shrink-0 place-items-center font-display text-5xl font-bold text-ink-0">
           {{ key.tier }}
         </div>
         <p-listbox [options]="tierlist[i]" [(ngModel)]="selectedDeck" optionLabel="name">
@@ -93,6 +94,7 @@ import { TooltipModule } from 'primeng/tooltip';
             </div>
           </ng-template>
         </p-listbox>
+      </div>
       </div>
     </div>
 
@@ -292,28 +294,6 @@ export class TierlistComponent {
       });
   }
 
-  ensureCdnUrl(imageUrl: string): string {
-    if (!imageUrl) {
-      return 'assets/images/digimon-card-back.webp';
-    }
+  ensureCdnUrl = ensureCdnUrl;
 
-    // If it's already a full CDN URL, return as is
-    if (imageUrl.startsWith('http://') || imageUrl.startsWith('https://')) {
-      return imageUrl;
-    }
-
-    // Bundled card images ship as 'assets/images/cards/BT1-001.webp' -> rewrite to CDN base
-    const cardImagePrefix = 'assets/images/cards/';
-    if (imageUrl.startsWith(cardImagePrefix)) {
-      return environment.cardImageBaseUrl + imageUrl.slice(cardImagePrefix.length);
-    }
-
-    // Local assets (placeholders, card back) stay as-is
-    if (imageUrl.startsWith('assets/')) {
-      return imageUrl;
-    }
-
-    // For bare card IDs like 'BT1-001', construct the CDN path
-    return environment.cardImageBaseUrl + imageUrl + '.webp';
-  }
 }

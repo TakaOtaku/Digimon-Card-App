@@ -2,20 +2,21 @@
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--surface-card) #ffffff;
+  scrollbar-color: var(--dc-line) transparent;
 }
 
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
   width: 12px;
+  height: 12px;
 }
 
 *::-webkit-scrollbar-track {
-  background: #ffffff;
+  background: transparent;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: var(--surface-card);
+  background-color: var(--dc-line);
   border-radius: 10px;
-  border: 3px solid #ffffff;
+  border: 3px solid var(--dc-ink-0);
 }

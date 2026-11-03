@@ -81,8 +81,8 @@ export class CollectionCircleComponent {
             collectionColors[6],
             setCards.length - setCardsCollected.length,
           ],
-          backgroundColor: ['#ef1919', '#19a0e3', '#ffd619', '#19b383', '#191919', '#8d6fdb', '#ffffff', 'grey'],
-          hoverBackgroundColor: ['#ef1919', '#19a0e3', '#ffd619', '#19b383', '#191919', '#8d6fdb', '#ffffff', 'grey'],
+          backgroundColor: ['#ef1919', '#19a0e3', '#ffd619', '#19b383', '#191919', '#8d6fdb', '#ffffff', '#26354f'],
+          hoverBackgroundColor: ['#ef1919', '#19a0e3', '#ffd619', '#19b383', '#191919', '#8d6fdb', '#ffffff', '#26354f'],
         },
       ],
     };

@@ -32,8 +32,8 @@ import { CardImageComponent } from './card-image.component';
           *ngIf="!collectionOnly && deckBuilder && getCountInDeck(this.card.id)"
           class="text-shadow-white absolute right-1 z-[100] px-1 text-3xl font-black text-orange-500"
           [ngClass]="{
-            'bottom-1': !collectionMode(),
-            ' bottom-10': collectionMode(),
+            'bottom-1': !counters(),
+            ' bottom-10': counters(),
           }">
           {{ getCountInDeck(this.card.id) }}<span class="pr-1 text-sky-700">/</span
           >{{ cardsAllow50.includes(card.cardNumber)? 50 : 4 }}
@@ -41,26 +41,26 @@ import { CardImageComponent } from './card-image.component';
       </ng-container>
 
       <div
-        *ngIf="collectionMode() || onlyView"
+        *ngIf="counters() || onlyView"
         class="flex absolute bottom-2 left-1/2 transform -translate-x-1/2 h-8 w-[calc(100%-1rem)] flex-row rounded-lg bg-transparent">
         <button
           *ngIf="!onlyView"
           (click)="decreaseCardCount(card.id)"
-          class="primary-background h-full w-1/3 cursor-pointer rounded-l text-[#e2e4e6] outline-none">
+          class="primary-background h-full w-1/3 cursor-pointer rounded-l text-fg outline-none">
           <span class="m-auto text-2xl font-thin">−</span>
         </button>
         <input
           type="number"
           min="0"
           [ngClass]="{ 'mx-auto': onlyView }"
-          class="primary-background text-md flex w-1/3 cursor-default appearance-none items-center text-center font-semibold text-[#e2e4e6] outline-none focus:outline-none md:text-base"
+          class="primary-background text-md flex w-1/3 cursor-default appearance-none items-center text-center font-semibold text-fg outline-none focus:outline-none md:text-base"
           [(ngModel)]="count"
           [disabled]="onlyView"
           (change)="changeCardCount($event, card.id)" />
         <button
           *ngIf="!onlyView"
           (click)="increaseCardCount(card.id)"
-          class="primary-background h-full w-1/3 cursor-pointer rounded-r text-[#e2e4e6] outline-none">
+          class="primary-background h-full w-1/3 cursor-pointer rounded-r text-fg outline-none">
           <span class="m-auto text-2xl font-thin">+</span>
         </button>
       </div>
@@ -82,6 +82,11 @@ export class FullCardComponent {
   @Input() collectionOnly: boolean = false;
 
   @Input() onlyView!: boolean;
+  // false on /cards, which has no collection mode
+  @Input() showCollection = true;
+  // true on /collection: counters regardless of the Collection mode setting
+  @Input() alwaysCollection = false;
+  counters = () => this.alwaysCollection || (this.collectionMode() && this.showCollection);
 
   @Output() viewCard = new EventEmitter<DigimonCard>();
 

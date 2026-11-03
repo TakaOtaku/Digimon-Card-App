@@ -14,6 +14,14 @@ export const routes: Routes = [
     canActivate: [adminGuard],
   },
   {
+    path: 'cards',
+    loadComponent: () => import('./features/cards/cards-page.component').then(m => m.CardsPageComponent),
+  },
+  {
+    path: 'deck/:id',
+    loadComponent: () => import('./features/decks/deck-page.component').then(m => m.DeckPageComponent),
+  },
+  {
     path: 'decks',
     loadComponent: () => import('./features/decks/decks-page.component').then(m => m.DecksPageComponent),
   },
@@ -57,5 +65,6 @@ export const routes: Routes = [
     path: 'price-compare',
     loadComponent: () => import('./features/price-compare/price-compare.component').then(m => m.PriceCompareComponent),
   },
+  { path: '', pathMatch: 'full', loadComponent: () => import('./features/home/home-page.component').then(m => m.HomePageComponent) },
   { path: '**', loadComponent: () => import('./features/home/home-page.component').then(m => m.HomePageComponent) },
 ];

@@ -1,6 +1,6 @@
-import { AsyncPipe, NgClass, NgIf, NgStyle } from '@angular/common';
+import { SeoService } from '@services';
+import { AsyncPipe, NgClass, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { filter, map, of, switchMap, tap } from 'rxjs';
 import * as uuid from 'uuid';
@@ -21,44 +21,64 @@ import { DeckViewComponent } from './components/deck-view.component';
       <digimon-page>
         <digimon-deck-view
           *ngIf="deckView"
-          class="overflow-y-auto pb-[10rem] h-full max-h-full overflow-x-hidden self-baseline"
+          class="overflow-y-auto pb-[10rem] xl:pb-4 h-full max-h-full overflow-x-hidden self-baseline"
           [ngClass]="{
-            'w-2/5 max-w-[40%]': collectionView,
+            'w-2/5 max-w-[40%] xl:w-[36%] xl:max-w-[36%]': collectionView,
             'w-full': !collectionView,
           }"
           [collectionView]="collectionView"
+          [poolVisible]="collectionView"
+          [showcase]="!collectionView && wide"
+          (togglePool)="changeView()"
           (hideStats)="statsDisplay = !statsDisplay"></digimon-deck-view>
 
         <digimon-pagination-card-list
           *ngIf="collectionView"
           [initialWidth]="3"
-          [ngClass]="{ 'w-3/5 max-w-[60%]': deckView, 'w-full': !deckView }"
-          class="border-l max-h-full border-slate-200 flex flex-row  h-[calc(100vh-3.5rem)] md:h-[calc(100vh-5rem)] lg:h-screen"></digimon-pagination-card-list>
+          [bottomInset]="true"
+          [filterBoxEnabled]="false"
+          [ngClass]="{ 'w-3/5 max-w-[60%] xl:w-auto xl:max-w-none xl:flex-1 xl:min-w-0': deckView, 'w-full': !deckView }"
+          class="border-l max-h-full border-slate-200 flex flex-row  h-[calc(100vh-7.5rem)] md:h-[calc(100vh-5rem)]"></digimon-pagination-card-list>
 
-        <button class="surface-card w-6 border-l border-slate-200" (click)="changeView()">
-          <span
-            class="w-full h-[calc(100%-4rem)] md:h-[calc(100%-5.5rem)] lg:h-[calc(100%-0.5rem)] rotate-180 text-center font-bold text-[#e2e4e6]"
-            [ngStyle]="{ writingMode: 'vertical-rl' }"
-            >{{ collectionView ? 'Hide Card View' : 'Show Card View' }}</span
-          >
-        </button>
 
         @if (statsDisplay && deckView) {
-          <digimon-deck-stats class="fixed left-0 lg:left-[6.5rem] z-[300]" [collectionView]="collectionView"></digimon-deck-stats>
+          <digimon-deck-stats class="fixed left-0 z-[300] hidden lg:block xl:hidden" [collectionView]="collectionView"></digimon-deck-stats>
+        }
+        @if (statsDisplay && deckView) {
+          <!-- Wide screens: stats get their own column instead of the fixed bottom strip -->
+          <digimon-deck-stats
+            [column]="true"
+            class="hidden xl:flex w-[20rem] shrink-0 h-full overflow-y-auto border-l border-line bg-ink-1 p-4"></digimon-deck-stats>
+        }
+        @if (mobileTab === 'stats') {
+          <digimon-deck-stats [column]="true" class="lg:hidden flex w-full h-full overflow-y-auto p-4 pb-20"></digimon-deck-stats>
         }
       </digimon-page>
+
+      <div role="tablist" aria-label="Builder view" class="lg:hidden fixed inset-x-3 bottom-[4.5rem] z-[350] flex gap-1 rounded-xl border border-line bg-ink-1 p-1 shadow-lg">
+        @for (tab of mobileTabs; track tab.id) {
+          <button
+            type="button"
+            role="tab"
+            [attr.aria-selected]="mobileTab === tab.id"
+            (click)="setMobileTab(tab.id)"
+            class="h-10 flex-1 rounded-lg text-sm font-semibold"
+            [ngClass]="mobileTab === tab.id ? 'bg-line text-fg' : 'text-muted'">
+            {{ tab.label }}
+          </button>
+        }
+      </div>
     }
   `,
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgClass, NgIf, NgStyle, DeckViewComponent, DeckStatsComponent, AsyncPipe, PaginationCardListComponent, PageComponent],
+  imports: [NgClass, NgIf, DeckViewComponent, DeckStatsComponent, AsyncPipe, PaginationCardListComponent, PageComponent],
 })
 export class DeckbuilderPageComponent implements OnInit {
+  private seo = inject(SeoService);
   route = inject(ActivatedRoute);
   mongoBackendService = inject(MongoBackendService);
   authService = inject(AuthService);
-  meta = inject(Meta);
-  title = inject(Title);
 
   saveStore = inject(SaveStore);
   websiteStore = inject(WebsiteStore);
@@ -119,8 +139,27 @@ export class DeckbuilderPageComponent implements OnInit {
     }
   }
 
+  // Phones (< lg) show one of pool / deck / stats at a time
+  mobileTabs = [
+    { id: 'pool', label: 'Pool' },
+    { id: 'deck', label: 'Deck' },
+    { id: 'stats', label: 'Stats' },
+  ] as const;
+  mobileTab: 'pool' | 'deck' | 'stats' = 'deck';
+
+  setMobileTab(tab: 'pool' | 'deck' | 'stats') {
+    this.mobileTab = tab;
+    this.collectionView = tab === 'pool';
+    this.deckView = tab === 'deck';
+  }
+
+  // lg and up; phones switch views with the Pool / Deck / Stats tabs instead
+  wide = true;
+
   private onResize() {
-    if (window.innerWidth < 1024) {
+    // Prerendering has no window; render the desktop layout
+    this.wide = typeof window === 'undefined' || window.innerWidth >= 1024;
+    if (!this.wide) {
       this.collectionView = false;
       this.deckView = true;
     } else {
@@ -130,19 +169,6 @@ export class DeckbuilderPageComponent implements OnInit {
   }
 
   private makeGoogleFriendly() {
-    this.title.setTitle('Digimon Card Game - Deck Builder');
-
-    this.meta.addTags([
-      {
-        name: 'description',
-        content:
-          'Build tournament winning decks with the best deck builder for the Digimon TCG and share them with the community or your friends.',
-      },
-      { name: 'author', content: 'TakaOtaku' },
-      {
-        name: 'keywords',
-        content: 'Digimon, decks, deck builder, tournament, TCG, community, friends, share',
-      },
-    ]);
+    this.seo.set('Deck builder', 'Build Digimon TCG decks with level curves, deck checks, test hands, price checks and image export, then share them.');
   }
 }
