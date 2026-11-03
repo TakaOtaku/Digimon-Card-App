@@ -2,10 +2,9 @@ import { AsyncPipe, Location, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, effect, inject, OnDestroy, OnInit } from '@angular/core';
 import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { UntypedFormControl } from '@angular/forms';
-import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { IDeck, ISave } from '@models';
-import { AuthService, MongoBackendService } from '@services';
+import { AuthService, MongoBackendService, SeoService } from '@services';
 import { SaveStore } from '@store';
 import { filter, first, merge, Observable, Subject, switchMap, takeUntil, tap } from 'rxjs';
 import { PageComponent } from '../shared/page.component';
@@ -34,13 +33,12 @@ import { UserStatsComponent } from './components/user-stats.component';
   imports: [NgIf, AsyncPipe, DeckFilterComponent, DecksComponent, UserStatsComponent, PageComponent],
 })
 export class ProfilePageComponent implements OnInit, OnDestroy {
+  private seo = inject(SeoService);
   private saveStore = inject(SaveStore);
   private authService: AuthService = inject(AuthService);
   private location: Location = inject(Location);
   private route: ActivatedRoute = inject(ActivatedRoute);
   private mongoBackendService: MongoBackendService = inject(MongoBackendService);
-  private meta: Meta = inject(Meta);
-  private title: Title = inject(Title);
 
   save$: Observable<ISave | null>;
   decks: IDeck[];
@@ -122,19 +120,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
   }
 
   private makeGoogleFriendly() {
-    this.title.setTitle('Digimon Card Game - Profil');
-
-    this.meta.addTags([
-      {
-        name: 'description',
-        content: 'See your Collection and Decks in one view. Share them with your friends, for easy insights in your decks and trading.',
-      },
-      { name: 'author', content: 'TakaOtaku' },
-      {
-        name: 'keywords',
-        content: 'Collection, Decks, Share, insights, trading',
-      },
-    ]);
+    this.seo.set('Profile', 'Your Digimon Card Game decks and collection in one place, ready to share with friends.');
   }
 
   private applySearchFilter(): IDeck[] {

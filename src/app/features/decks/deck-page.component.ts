@@ -1,12 +1,11 @@
 import { CurrencyPipe, DatePipe, NgClass } from '@angular/common';
-import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, effect, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ImgFallbackDirective } from '@directives';
 import { groupDeckCards, levelSort, mapToDeckCards, missingCards } from '@functions';
 import { IDeck, IDeckCard, PriceMetric } from '@models';
-import { MongoBackendService } from '@services';
+import { MongoBackendService, SeoService } from '@services';
 import { DialogStore, DigimonCardStore, SaveStore } from '@store';
 import { MessageService } from 'primeng/api';
 import { catchError, map, of, startWith, switchMap } from 'rxjs';
@@ -147,7 +146,6 @@ export class DeckPageComponent {
   private dialogStore = inject(DialogStore);
   private cardMarketService = inject(CardMarketService);
   private messageService = inject(MessageService);
-  private title = inject(Title);
 
   // undefined = loading, null = not found
   deck = toSignal(
@@ -198,8 +196,16 @@ export class DeckPageComponent {
   );
   shareUrl = computed(() => window.location.origin + this.router.url);
 
+  private seo = inject(SeoService);
+
   constructor() {
-    this.title.setTitle('Digimon Card Game - Deck');
+    effect(() => {
+      const deck = this.deck();
+      if (!deck) return this.seo.set('Deck', 'A Digimon Card Game deck shared on digimoncard.app.');
+      const title = deck.title || 'Untitled deck';
+      const by = deck.user ? ` by ${deck.user}` : '';
+      this.seo.set(`${title}${by}`, `${title}${by}: ${this.mainCount()} + ${this.eggCount()} card Digimon Card Game deck with level curve, price estimate and text list.`);
+    });
   }
 
   copy(text: string, summary: string) {

@@ -1,7 +1,7 @@
+import { SeoService } from '@services';
 import { PageComponent } from '../shared/page.component';
 import { HomeIntroComponent } from './components/home-intro.component';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 
 @Component({
   selector: 'digimon-home-page',
@@ -16,27 +16,12 @@ import { Meta, Title } from '@angular/platform-browser';
   imports: [HomeIntroComponent, PageComponent],
 })
 export class HomePageComponent {
-  constructor(
-    private meta: Meta,
-    private title: Title,
-  ) {
+  private seo = inject(SeoService);
+  constructor() {
     this.makeGoogleFriendly();
   }
 
   private makeGoogleFriendly() {
-    this.title.setTitle('Digimon Card Game - Home');
-
-    this.meta.addTags([
-      {
-        name: 'description',
-        content:
-          'Digimoncard.App is a website to to keep track of your Digimon card collection, build great decks and keep you posted about the result of any major events.',
-      },
-      { name: 'author', content: 'TakaOtaku' },
-      {
-        name: 'keywords',
-        content: 'Digimon, decks, deck builder, collection,  tournament, TCG, community, friends, share',
-      },
-    ]);
+    this.seo.set('Digimon TCG deck builder and collection tracker', 'Free Digimon Card Game deck builder, card database and collection tracker. Build, track and share decks.');
   }
 }

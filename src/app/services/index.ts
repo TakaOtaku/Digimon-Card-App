@@ -6,3 +6,4 @@ export * from './migration.service';         // Existing migration utilities
 export * from './migration-bulk.service';
 export * from './mongo-backend.service';     // New MongoDB backend
 export * from './search-autocomplete.service';
+export * from './seo.service';

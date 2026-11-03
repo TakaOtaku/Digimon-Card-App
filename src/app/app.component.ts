@@ -4,7 +4,7 @@ import { filterCards } from '@functions';
 import { AdvancedSearchService } from './services/advanced-search.service';
 import { CardMarketService } from './services/card-market.service';
 import { CARDSET, emptyFilter, emptySave, IFilter, ISettings, PriceMetric } from '@models';
-import { AuthService, MongoBackendService } from '@services';
+import { AuthService, MongoBackendService, SeoService } from '@services';
 import { DigimonCardStore, FilterStore, SaveStore, WebsiteStore } from '@store';
 import { BlockUIModule } from 'primeng/blockui';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
@@ -66,6 +66,8 @@ export class AppComponent {
 
   authService = inject(AuthService);
   backendService = inject(MongoBackendService);
+  // Starts canonical / og:url tracking from the first navigation
+  private seo = inject(SeoService);
   advancedSearchService = inject(AdvancedSearchService);
   private cardMarketService = inject(CardMarketService);
 

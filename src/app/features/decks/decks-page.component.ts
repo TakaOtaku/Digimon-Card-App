@@ -1,6 +1,6 @@
+import { SeoService } from '@services';
 import { NgFor, NgIf } from '@angular/common';
 import { ChangeDetectorRef, Component, effect, inject, OnInit } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
 import { setDeckImage } from '@functions';
 import { emptyDeck, ICountCard, IDeck } from '@models';
 import { DialogStore, DigimonCardStore, SaveStore, WebsiteStore } from '@store';
@@ -124,6 +124,7 @@ import { TierlistComponent } from './components/tierlist.component';
   providers: [],
 })
 export class DecksPageComponent implements OnInit {
+  private seo = inject(SeoService);
   saveStore = inject(SaveStore);
   dialogStore = inject(DialogStore);
   websiteStore = inject(WebsiteStore);
@@ -136,8 +137,6 @@ export class DecksPageComponent implements OnInit {
   collection: ICountCard[];
   loading2 = false;
   private searchPerformed = false;
-  private meta = inject(Meta);
-  private title = inject(Title);
   private toastrService = inject(ToastrService);
   private digimonCardStore = inject(DigimonCardStore);
 
@@ -212,18 +211,6 @@ export class DecksPageComponent implements OnInit {
   }
 
   private makeGoogleFriendly() {
-    this.title.setTitle('Digimon Card Game - Community');
-
-    this.meta.addTags([
-      {
-        name: 'description',
-        content: 'Meta decks, fun decks, tournament decks and many more, find new decks for every set.',
-      },
-      { name: 'author', content: 'TakaOtaku' },
-      {
-        name: 'keywords',
-        content: 'Meta, decks, tournament, fun',
-      },
-    ]);
+    this.seo.set('Community decks and tier list', 'Browse Digimon Card Game community decks, the archetype tier list and the most played cards in the meta.');
   }
 }

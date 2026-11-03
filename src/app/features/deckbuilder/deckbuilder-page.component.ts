@@ -1,6 +1,6 @@
+import { SeoService } from '@services';
 import { AsyncPipe, NgClass, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { filter, map, of, switchMap, tap } from 'rxjs';
 import * as uuid from 'uuid';
@@ -74,11 +74,10 @@ import { DeckViewComponent } from './components/deck-view.component';
   imports: [NgClass, NgIf, DeckViewComponent, DeckStatsComponent, AsyncPipe, PaginationCardListComponent, PageComponent],
 })
 export class DeckbuilderPageComponent implements OnInit {
+  private seo = inject(SeoService);
   route = inject(ActivatedRoute);
   mongoBackendService = inject(MongoBackendService);
   authService = inject(AuthService);
-  meta = inject(Meta);
-  title = inject(Title);
 
   saveStore = inject(SaveStore);
   websiteStore = inject(WebsiteStore);
@@ -164,19 +163,6 @@ export class DeckbuilderPageComponent implements OnInit {
   }
 
   private makeGoogleFriendly() {
-    this.title.setTitle('Digimon Card Game - Deck Builder');
-
-    this.meta.addTags([
-      {
-        name: 'description',
-        content:
-          'Build tournament winning decks with the best deck builder for the Digimon TCG and share them with the community or your friends.',
-      },
-      { name: 'author', content: 'TakaOtaku' },
-      {
-        name: 'keywords',
-        content: 'Digimon, decks, deck builder, tournament, TCG, community, friends, share',
-      },
-    ]);
+    this.seo.set('Deck builder', 'Build Digimon TCG decks with level curves, deck checks, test hands, price checks and image export, then share them.');
   }
 }

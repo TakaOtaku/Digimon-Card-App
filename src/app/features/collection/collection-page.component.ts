@@ -1,12 +1,11 @@
 import { CurrencyPipe, NgClass } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { map, of, switchMap } from 'rxjs';
 import { emptySave, PriceMetric } from '@models';
 import { setCompletion } from '@functions';
-import { MongoBackendService } from '@services';
+import { MongoBackendService, SeoService } from '@services';
 import { DialogStore, DigimonCardStore, FilterStore, SaveStore } from '@store';
 import { CardMarketService } from '../../services/card-market.service';
 import { PageComponent } from '../shared/page.component';
@@ -117,8 +116,7 @@ import { PaginationCardListComponent } from './components/pagination-card-list.c
   providers: [CurrencyPipe],
 })
 export class CollectionPageComponent {
-  meta = inject(Meta);
-  title = inject(Title);
+  private seo = inject(SeoService);
 
   private mongoBackendService = inject(MongoBackendService);
   private route = inject(ActivatedRoute);
@@ -210,19 +208,6 @@ export class CollectionPageComponent {
   }
 
   private makeGoogleFriendly() {
-    this.title.setTitle('Digimon Card Game - Collection');
-
-    this.meta.addTags([
-      {
-        name: 'description',
-        content:
-          'Keep track of your Collection of the new Digimon Card Game. Find missing cards, rulings, erratas and many more information easily.',
-      },
-      { name: 'author', content: 'TakaOtaku' },
-      {
-        name: 'keywords',
-        content: 'Collection, Digimon, Card, Card, Game, rulings, erratas',
-      },
-    ]);
+    this.seo.set('Collection tracker', 'Track your Digimon Card Game collection: owned cards, playsets, set completion and collection value.');
   }
 }

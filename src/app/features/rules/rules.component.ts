@@ -1,7 +1,7 @@
+import { SeoService } from '@services';
 import { NgIf, NgStyle } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject, signal, WritableSignal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { ImgFallbackDirective } from '@directives';
 import { DigimonRulings, QuestionAnswer } from '@models';
@@ -55,12 +55,11 @@ import { environment } from '../../../environments/environment';
   imports: [PageComponent, FormsModule, IconField, InputIcon, InputText, NgIf, ImgFallbackDirective],
 })
 export class RulesComponent {
+  private seo = inject(SeoService);
   // The rulings data already starts with "Q:" / "A:"; the template draws its own labels
   stripPrefix = (text: string) => text.replace(/^\s*[QA]:\s*/, '');
 
   public router = inject(Router);
-  private meta = inject(Meta);
-  private title = inject(Title);
 
   digimonRulings: DigimonRulings = {};
   searchTerm: WritableSignal<string> = signal('');
@@ -72,19 +71,7 @@ export class RulesComponent {
   }
 
   private makeGoogleFriendly() {
-    this.title.setTitle('Digimon Card Game - Rulings');
-
-    this.meta.addTags([
-      {
-        name: 'description',
-        content: 'See all Official Digimon TCG Rulings in one Place',
-      },
-      { name: 'author', content: 'TakaOtaku' },
-      {
-        name: 'keywords',
-        content: 'Digimon, decks, deck builder, collection,  tournament, TCG, community, friends, share, rules',
-      },
-    ]);
+    this.seo.set('Rulings', 'Official Digimon Card Game rulings and Q&A, searchable by card number or keyword.');
   }
 
   protected readonly Object = Object;

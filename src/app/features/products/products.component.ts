@@ -1,5 +1,5 @@
+import { SeoService } from '@services';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
 import { PageComponent } from '../shared/page.component';
 
 @Component({
@@ -40,6 +40,7 @@ import { PageComponent } from '../shared/page.component';
   imports: [PageComponent],
 })
 export class ProductsComponent {
+  private seo = inject(SeoService);
   starter = [
     {
       name: 'ST-1: Starter Deck Gaia Red',
@@ -557,25 +558,11 @@ export class ProductsComponent {
     },
   ];
 
-  private meta = inject(Meta);
-  private title = inject(Title);
   constructor() {
     this.makeGoogleFriendly();
   }
 
   private makeGoogleFriendly() {
-    this.title.setTitle('Digimon Card Game - Products');
-
-    this.meta.addTags([
-      {
-        name: 'description',
-        content: 'See all Digimon TCG Products in one Place with a Link to the Wiki',
-      },
-      { name: 'author', content: 'TakaOtaku' },
-      {
-        name: 'keywords',
-        content: 'Digimon, decks, deck builder, collection,  tournament, TCG, community, friends, share',
-      },
-    ]);
+    this.seo.set('Products', 'Every Digimon Card Game starter deck, booster set and promo product with a link to its card list.');
   }
 }

@@ -1,5 +1,5 @@
+import { SeoService } from '@services';
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
 import { DigimonCard } from '@models';
 import { DialogStore } from '@store';
 import { PaginationCardListComponent } from '../collection/components/pagination-card-list.component';
@@ -29,19 +29,12 @@ import { CardDetailPanelComponent } from './card-detail-panel.component';
   imports: [PaginationCardListComponent, PageComponent, CardDetailPanelComponent],
 })
 export class CardsPageComponent {
+  private seo = inject(SeoService);
   private dialogStore = inject(DialogStore);
   selected = signal<DigimonCard | null>(null);
 
   constructor() {
-    inject(Title).setTitle('Digimon Card Game - Cards');
-    inject(Meta).addTags([
-      {
-        name: 'description',
-        content: 'Search every Digimon Card Game card by name, number, color, level, set and effect.',
-      },
-      { name: 'author', content: 'TakaOtaku' },
-      { name: 'keywords', content: 'Cards, Card Search, Database, Digimon, Card, Game' },
-    ]);
+    this.seo.set('Card search', 'Search every Digimon Card Game card by name, number, color, level, set and effect, with rulings and prices.');
   }
 
   // The side panel only exists on xl screens; smaller screens keep the dialog
