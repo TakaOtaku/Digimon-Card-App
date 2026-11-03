@@ -29,6 +29,14 @@ import { MenuItem } from 'primeng/api';
 
       <li
         class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
+        [ngClass]="getNavigationBorder('/cards')"
+        (click)="router.navigateByUrl('/cards')">
+        <i class="pi pi-clone group-hover:text-accent" style="font-size: 1.5rem"></i>
+        <button style="font-size:smaller" class="p-2 group-hover:text-accent">Cards</button>
+      </li>
+
+      <li
+        class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
         [ngClass]="getNavigationBorder('/deckbuilder')"
         (click)="router.navigateByUrl('/deckbuilder')">
         <i class="pi pi-pencil group-hover:text-accent" style="font-size: 1.5rem"></i>

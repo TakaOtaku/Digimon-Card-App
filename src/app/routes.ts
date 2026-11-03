@@ -14,6 +14,10 @@ export const routes: Routes = [
     canActivate: [adminGuard],
   },
   {
+    path: 'cards',
+    loadComponent: () => import('./features/cards/cards-page.component').then(m => m.CardsPageComponent),
+  },
+  {
     path: 'decks',
     loadComponent: () => import('./features/decks/decks-page.component').then(m => m.DecksPageComponent),
   },

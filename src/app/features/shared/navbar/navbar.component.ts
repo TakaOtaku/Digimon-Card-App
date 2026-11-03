@@ -45,7 +45,7 @@ export class NavbarComponent {
   @Output() openSideNav = new EventEmitter<boolean>();
   protected readonly appUrl = environment.appUrl;
   protected readonly mobileLinks = [
-    { url: '/', label: 'Home', icon: 'pi-home' },
+    { url: '/cards', label: 'Cards', icon: 'pi-search' },
     { url: '/deckbuilder', label: 'Build', icon: 'pi-pencil' },
     { url: '/decks', label: 'Decks', icon: 'pi-table' },
     { url: '/collection', label: 'Collection', icon: 'pi-folder' },
