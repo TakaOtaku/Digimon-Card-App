@@ -1,58 +1,43 @@
-import { ChangeDetectionStrategy, Component, HostListener, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
-import { Router } from '@angular/router';
-import { LazyLoadImageModule } from 'ng-lazyload-image';
-import { ButtonModule } from 'primeng/button';
-import { CarouselModule } from 'primeng/carousel';
-import { DividerModule } from 'primeng/divider';
-import { GalleriaModule } from 'primeng/galleria';
-import { TooltipModule } from 'primeng/tooltip';
-import { NgFor } from '@angular/common';
 import { PageComponent } from '../shared/page.component';
 
 @Component({
   selector: 'digimon-products',
   template: `
     <digimon-page>
-      <div class="overflow-x-hidden flex self-baseline flex-col justify-center max-w-md md:max-w-4xl mx-auto">
-        <div *ngFor="let product of products; let last = last">
-          <h1 class="text-shadow text-center mt-6 text-4xl font-black text-fg underline xl:mt-2">
-            {{ product.name }}
-          </h1>
-          <p-carousel
-            [value]="product.items"
-            [numVisible]="displayCount"
-            [numScroll]="displayCount"
-            [circular]="true"
-            [autoplayInterval]="5000">
-            <ng-template let-item pTemplate="item">
-              <div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
-                <img src="{{ item.image }}" [alt]="item.name" class="shadow-2 mx-auto h-60" width="240" height="240" />
-                <div>
-                  <h4 class="mb-1 text-black-outline text-white">
-                    {{ item.name }}
-                  </h4>
-                  <div class="car-buttons mt-2">
-                    <!--p-button type="button" styleClass="p-button p-button-rounded mr-2" icon="pi pi-info-circle"></p-button-->
-                    <p-button
-                      (click)="openLink(item.link)"
-                      type="button"
-                      styleClass="p-button-success p-button-rounded mr-2"
-                      icon="pi pi-external-link"></p-button>
-                  </div>
-                </div>
-              </div>
-            </ng-template>
-          </p-carousel>
-
-          <p-divider *ngIf="!last"></p-divider>
+      <div class="mx-auto flex w-full max-w-7xl flex-col gap-8 self-start px-4 py-6 md:px-6">
+        <div class="flex flex-col gap-1">
+          <h1 class="m-0 text-3xl font-bold text-fg md:text-4xl">Products</h1>
+          <p class="m-0 text-sm text-muted">Every starter deck, booster and special set, with a link to its card list.</p>
         </div>
+        @for (product of products; track product.name) {
+          <section class="flex flex-col gap-3">
+            <div class="flex items-baseline gap-2">
+              <h2 class="m-0 font-display text-2xl font-semibold text-fg">{{ product.name }}</h2>
+              <span class="font-mono text-sm text-muted">{{ product.items.length }}</span>
+            </div>
+            <div class="grid grid-cols-[repeat(auto-fill,minmax(10rem,1fr))] gap-3">
+              @for (item of product.items; track item.name) {
+                <a
+                  [href]="item.link"
+                  target="_blank"
+                  rel="noopener"
+                  class="flex flex-col gap-2 rounded-xl border border-line bg-ink-1 p-3 text-fg no-underline hover:border-accent">
+                  <img [src]="item.image" [alt]="item.name" loading="lazy" class="mx-auto h-40 object-contain" width="160" height="160" />
+                  <span class="text-sm font-semibold leading-snug">{{ item.name }}</span>
+                  <span class="mt-auto text-xs text-accent">View on wiki <i class="pi pi-external-link text-[10px]"></i></span>
+                </a>
+              }
+            </div>
+          </section>
+        }
       </div>
     </digimon-page>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgFor, TooltipModule, LazyLoadImageModule, ButtonModule, CarouselModule, GalleriaModule, DividerModule, PageComponent],
+  imports: [PageComponent],
 })
 export class ProductsComponent {
   starter = [
@@ -572,19 +557,10 @@ export class ProductsComponent {
     },
   ];
 
-  displayCount = 3;
-
-  public router = inject(Router);
   private meta = inject(Meta);
   private title = inject(Title);
   constructor() {
     this.makeGoogleFriendly();
-    this.checkScreenWidth(window.innerWidth);
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: Event): void {
-    this.checkScreenWidth((event.target as Window).innerWidth);
   }
 
   private makeGoogleFriendly() {
@@ -601,24 +577,5 @@ export class ProductsComponent {
         content: 'Digimon, decks, deck builder, collection,  tournament, TCG, community, friends, share',
       },
     ]);
-  }
-
-  openLink(link: string) {
-    window.open(link, '_blank');
-  }
-
-  private checkScreenWidth(innerWidth: number) {
-    const xl = innerWidth >= 1280;
-    const lg = innerWidth >= 1024;
-    const md = innerWidth >= 768;
-    if (xl) {
-      this.displayCount = 4;
-    } else if (lg) {
-      this.displayCount = 3;
-    } else if (md) {
-      this.displayCount = 2;
-    } else {
-      this.displayCount = 1;
-    }
   }
 }
