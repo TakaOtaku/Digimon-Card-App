@@ -1,5 +1,5 @@
 import { NgClass, NgFor, NgIf, NgStyle } from '@angular/common';
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, computed, inject } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, computed, DestroyRef, inject } from '@angular/core';
 import { Database, ref, set, onValue } from '@angular/fire/database';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -169,7 +169,8 @@ export class TierlistComponent {
 
   constructor() {
     const tierlistRef = ref(this.db, 'tierlist');
-    onValue(tierlistRef, (snapshot) => {
+    // Cached data fires this callback during construction, where detectChanges() throws and crashed the SSR server: only mark for check
+    const unsubscribe = onValue(tierlistRef, (snapshot) => {
       const data = snapshot.val();
       console.log('Firebase tierlist data:', data);
 
@@ -180,20 +181,22 @@ export class TierlistComponent {
           if (data.length > 0 && data[0] && Array.isArray(data[0]) && data[0].length > 0) {
             this.tierlist = data;
             console.log('Tierlist updated from Firebase array');
-            this.changeDetectorRef.detectChanges();
+            this.changeDetectorRef.markForCheck();
           }
         } else if (data.tierlist && Array.isArray(data.tierlist)) {
           // If it's an object with tierlist property
           if (data.tierlist.length > 0 && data.tierlist[0].length > 0) {
             this.tierlist = data.tierlist;
             console.log('Tierlist updated from Firebase object');
-            this.changeDetectorRef.detectChanges();
+            this.changeDetectorRef.markForCheck();
           }
         }
       }
     }, (error) => {
       console.error('Error loading tierlist from Firebase:', error);
     });
+    // A listener left behind fires on a destroyed view after every server render or page visit
+    inject(DestroyRef).onDestroy(unsubscribe);
   }
 
   openCommunityWithSearch(card: string) {
