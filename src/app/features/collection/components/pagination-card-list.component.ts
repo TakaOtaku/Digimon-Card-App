@@ -57,6 +57,7 @@ import { CardMarketService } from '../../../services/card-market.service';
               [collectionOnly]="collectionOnly"
               [onlyView]="inputCollection.length > 0"
               [showCollection]="showCollectionMode"
+              [alwaysCollection]="alwaysCollection"
               (viewCard)="viewCard($event)"></digimon-full-card>
             <div *ngIf="$index + 1 === showCards.length" (digimonIntersectionListener)="loadItems()" class="sm:m-0.5 md:m-1"></div>
           } @placeholder {
@@ -104,6 +105,7 @@ export class PaginationCardListComponent {
   @Input() inputCollection: ICountCard[] = [];
   @Input() dialogOnView = true;
   @Input() showCollectionMode = true;
+  @Input() alwaysCollection = false;
   // Leaves room for the builder's mobile Pool/Deck/Stats tray
   @Input() bottomInset = false;
   @Output() cardViewed = new EventEmitter<DigimonCard>();

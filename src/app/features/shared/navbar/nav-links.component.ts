@@ -122,9 +122,8 @@ import { MenuItem } from 'primeng/api';
           <button style="font-size:smaller" class="p-2 group-hover:text-accent">Decks</button>
         </li>
 
-        @if (sidebar) {
         <li
-          class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
+          class="hidden xl:flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
           [ngClass]="getNavigationBorder('/rulings')"
           (click)="router.navigateByUrl('/rulings')">
           <i class="pi pi-question-circle group-hover:text-accent" style="font-size: 1.5rem"></i>
@@ -132,21 +131,19 @@ import { MenuItem } from 'primeng/api';
         </li>
 
         <li
-          class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
+          class="hidden xl:flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
           [ngClass]="getNavigationBorder('/products')"
           (click)="router.navigateByUrl('/products')">
           <i class="pi pi-tags group-hover:text-accent" style="font-size: 1.5rem"></i>
           <button style="font-size:smaller" class="p-2 group-hover:text-accent">Products</button>
         </li>
-        } @else {
           <li
-            class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
+            class="flex xl:hidden flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
             [ngClass]="moreActive() ? 'border-b-[3px] border-accent text-accent' : 'text-fg'"
             (click)="moreMenu.toggle($event)">
             <i class="pi pi-ellipsis-h group-hover:text-accent" style="font-size: 1.5rem"></i>
             <button style="font-size:smaller" class="p-2 group-hover:text-accent" aria-haspopup="menu">More</button>
           </li>
-        }
       </ul>
       <p-menu #moreMenu [model]="moreItems" [popup]="true" appendTo="body"></p-menu>
       <div class="order-1 ml-3 flex flex-row items-center gap-2">

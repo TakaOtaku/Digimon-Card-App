@@ -20,6 +20,8 @@ import { PaginationCardListComponent } from './components/pagination-card-list.c
         <digimon-pagination-card-list
           [collectionOnly]="true"
           [inputCollection]="collection"
+          [showCollectionMode]="false"
+          [alwaysCollection]="true"
           class="w-screen flex flex-row h-[calc(100vh-7.5rem)] md:h-[calc(100vh-5rem)]">
           <div headerStart role="group" aria-label="Show cards" class="inline-flex gap-1 rounded-full border border-line bg-ink-1 p-0.5">
             @for (option of ownedOptions; track option.label) {
