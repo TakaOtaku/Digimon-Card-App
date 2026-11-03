@@ -65,11 +65,11 @@ import { DialogStore } from '../../store/dialog.store';
       [visible]="changelogDialog()"
       (visibleChange)="$event || closeChangelogDialog()"
       (onHide)="closeChangelogDialog()"
-      header="Changelog"
+      header="What's new"
       [modal]="true"
       [dismissableMask]="true"
       [resizable]="false"
-      styleClass="background-darker surface-ground w-full h-full max-w-6xl min-h-[500px]">
+      styleClass="w-[95vw] max-w-3xl">
       <digimon-changelog-dialog></digimon-changelog-dialog>
     </p-dialog>
   `,

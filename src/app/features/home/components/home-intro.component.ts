@@ -12,6 +12,13 @@ import { HomeMetaComponent } from './home-meta.component';
     <div class="mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 py-8 md:px-6 md:py-12">
       <section class="flex flex-wrap items-stretch gap-6">
         <div class="flex min-w-0 flex-[999_1_32rem] flex-col justify-center gap-5">
+          <button
+            type="button"
+            (click)="showChangelog()"
+            class="inline-flex items-center gap-2 self-start rounded-full border border-line bg-ink-1 py-1 pl-1 pr-3 text-sm text-fg hover:border-accent">
+            <span class="rounded-full bg-accent px-2 py-0.5 font-mono text-xs font-semibold text-accent-ink">v5.0</span>
+            New card search, deck pages and redesign <i class="pi pi-arrow-right text-xs text-muted"></i>
+          </button>
           <h1 class="m-0 font-display text-4xl font-bold leading-none text-fg md:text-6xl">Build. Track. Share.</h1>
           <p class="m-0 max-w-xl text-base leading-relaxed text-muted md:text-lg">
             Deck builder, collection tracker and card database for the Digimon Card Game. Card data is loaded once a day from
