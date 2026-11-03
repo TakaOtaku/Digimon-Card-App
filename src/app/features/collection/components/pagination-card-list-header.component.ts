@@ -16,10 +16,12 @@ import { CardMarketService } from '../../../services/card-market.service';
       <div class="absolute left-2 top-2 flex flex-row justify-center items-center gap-3">
         <ng-content select="[headerStart]"></ng-content>
         <div *ngIf="!viewOnly" class="flex flex-row justify-center items-center">
+        @if (showCollectionMode) {
         <span class="text-xs hidden sm:block font-bold text-fg">Collection Mode:</span>
         <span class="text-xs sm:hidden font-bold text-fg">CM:</span>
         <input type="checkbox" class="my-auto ml-1 h-5 w-5" [ngModel]="collectionMode()" (ngModelChange)="changeCollectionMode($event)" />
-        <span class="ml-6 text-xs font-bold text-fg"> Cards: {{ cardCount() }} </span>
+        }
+        <span class="text-xs font-bold text-fg" [class.ml-6]="showCollectionMode"> Cards: {{ cardCount() }} </span>
         @if (saveStore.showPrices() && collectionValue() !== null) {
           <span class="ml-4 text-xs font-bold text-green-400">💰 {{ collectionValue() | currency: 'EUR' }}</span>
         }
@@ -47,6 +49,7 @@ import { CardMarketService } from '../../../services/card-market.service';
 export class PaginationCardListHeaderComponent {
   @Input() widthForm!: FormControl;
   @Input() viewOnly!: boolean;
+  @Input() showCollectionMode = true;
   @Input() filterButton: boolean | null = true;
   @Output() filterBox = new EventEmitter<boolean>();
 

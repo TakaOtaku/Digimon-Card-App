@@ -15,6 +15,7 @@ import { CardDetailPanelComponent } from './card-detail-panel.component';
         <digimon-pagination-card-list
           [collectionOnly]="true"
           [dialogOnView]="false"
+          [showCollectionMode]="false"
           (cardViewed)="select($event)"
           class="flex flex-row flex-1 min-w-0 h-full"></digimon-pagination-card-list>
         <aside aria-label="Card details" class="hidden xl:block w-[22rem] shrink-0 overflow-y-auto border-l border-line bg-ink-1 p-4">

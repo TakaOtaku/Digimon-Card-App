@@ -78,13 +78,13 @@ import { SettingsRowComponent } from '../../settings-row.component';
         <digimon-settings-row title="Collection filter max" hint="Highest value on the Number in Collection slider.">
           <p-inputNumber [(ngModel)]="collectionFilterMax" mode="decimal"></p-inputNumber>
         </digimon-settings-row>
-        <digimon-settings-row title="Version Default Filter">
+        <digimon-settings-row title="Default printings" hint="Which versions card lists show until you change the Version filter.">
           <digimon-multi-buttons
             (clickEvent)="changeVersionFilterDefault($event)"
             [buttonArray]="versionButtons"
             [value]="versionFilterDefault"
             [perRow]="3"
-            title="Version"></digimon-multi-buttons>
+            class="w-full"></digimon-multi-buttons>
         </digimon-settings-row>
       </section>
 

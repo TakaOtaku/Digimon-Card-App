@@ -32,8 +32,8 @@ import { CardImageComponent } from './card-image.component';
           *ngIf="!collectionOnly && deckBuilder && getCountInDeck(this.card.id)"
           class="text-shadow-white absolute right-1 z-[100] px-1 text-3xl font-black text-orange-500"
           [ngClass]="{
-            'bottom-1': !collectionMode(),
-            ' bottom-10': collectionMode(),
+            'bottom-1': !(collectionMode() && showCollection),
+            ' bottom-10': collectionMode() && showCollection,
           }">
           {{ getCountInDeck(this.card.id) }}<span class="pr-1 text-sky-700">/</span
           >{{ cardsAllow50.includes(card.cardNumber)? 50 : 4 }}
@@ -41,7 +41,7 @@ import { CardImageComponent } from './card-image.component';
       </ng-container>
 
       <div
-        *ngIf="collectionMode() || onlyView"
+        *ngIf="(collectionMode() && showCollection) || onlyView"
         class="flex absolute bottom-2 left-1/2 transform -translate-x-1/2 h-8 w-[calc(100%-1rem)] flex-row rounded-lg bg-transparent">
         <button
           *ngIf="!onlyView"
@@ -82,6 +82,8 @@ export class FullCardComponent {
   @Input() collectionOnly: boolean = false;
 
   @Input() onlyView!: boolean;
+  // false on /cards, which has no collection mode
+  @Input() showCollection = true;
 
   @Output() viewCard = new EventEmitter<DigimonCard>();
 
