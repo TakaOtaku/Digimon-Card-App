@@ -153,7 +153,8 @@ export class DeckbuilderPageComponent implements OnInit {
   }
 
   private onResize() {
-    if (window.innerWidth < 1024) {
+    // Prerendering has no window; render the desktop layout
+    if (typeof window !== 'undefined' && window.innerWidth < 1024) {
       this.collectionView = false;
       this.deckView = true;
     } else {

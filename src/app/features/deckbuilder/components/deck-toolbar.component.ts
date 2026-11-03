@@ -1,4 +1,4 @@
-import { CurrencyPipe, NgClass, NgFor, NgIf } from '@angular/common';
+import { CurrencyPipe, NgClass, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, EventEmitter, inject, Input, Output, Signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConfirmationService, MessageService } from 'primeng/api';
@@ -161,7 +161,6 @@ import { ImportDeckDialogComponent } from '../../shared/dialogs/import-deck-dial
     NgClass,
     NgIf,
     DialogModule,
-    NgFor,
     ImportDeckDialogComponent,
     ConfirmDialogModule,
     CurrencyPipe,

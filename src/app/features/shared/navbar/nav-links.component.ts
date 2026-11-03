@@ -1,4 +1,4 @@
-import { NgClass, NgIf } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { Component, computed, EventEmitter, inject, Input, Output, Signal, signal, WritableSignal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router } from '@angular/router';
@@ -219,7 +219,7 @@ import { MenuItem } from 'primeng/api';
     </p-dialog>
   `,
   standalone: true,
-  imports: [NgClass, NgIf, FontAwesomeModule, ConfirmPopupModule, DialogModule, ButtonModule, MenuModule],
+  imports: [NgClass, FontAwesomeModule, ConfirmPopupModule, DialogModule, ButtonModule, MenuModule],
 })
 export class NavLinksComponent {
   @Input() sidebar = false;

@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, effect, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, inject, PLATFORM_ID, signal } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { filterCards } from '@functions';
 import { AdvancedSearchService } from './services/advanced-search.service';
@@ -71,7 +72,9 @@ export class AppComponent {
   advancedSearchService = inject(AdvancedSearchService);
   private cardMarketService = inject(CardMarketService);
 
-  saveLoaded = signal(false);
+  // Prerendering runs without a browser: no save, storage or price data, just the public page
+  private isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
+  saveLoaded = signal(!this.isBrowser);
 
   sideNav = false;
 
@@ -79,6 +82,7 @@ export class AppComponent {
   settings: ISettings | null = null;
 
   onAuthChange = effect(() => {
+    if (!this.isBrowser) return;
     if (this.authService.isLoggedIn) {
       this.saveStore.updateSave(this.authService.currentUser().save);
     } else {
@@ -87,6 +91,8 @@ export class AppComponent {
   });
 
   constructor() {
+    if (!this.isBrowser) return;
+
     // Check if a save is in local storage from a previous login
     // If this is the case, set the save
     this.saveStore.loadSave();

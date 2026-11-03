@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { forkJoin, map, Observable, of, ReplaySubject, shareReplay, tap } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { PriceMetric } from '../../models';
@@ -102,7 +103,8 @@ export class CardMarketService {
       map((m) => Array.from(m.values())),
       shareReplay(1),
     );
-    this.loadData();
+    // Prices are browser-only; prerendered pages render without them
+    if (isPlatformBrowser(inject(PLATFORM_ID))) this.loadData();
   }
 
   private loadData(): void {

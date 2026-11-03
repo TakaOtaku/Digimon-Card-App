@@ -1,4 +1,4 @@
-import { NgFor, NgIf } from '@angular/common';
+import { NgIf } from '@angular/common';
 import { ChangeDetectorRef, Component, effect, inject } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -132,12 +132,10 @@ export interface DigimonCardImage {
   `,
   standalone: true,
   imports: [
-    NgFor,
     DeckCardComponent,
     DdtoSpreadComponent,
     ChartContainersComponent,
     ColorSpreadComponent,
-    NgIf,
     TooltipModule,
     FormsModule,
     ReactiveFormsModule,

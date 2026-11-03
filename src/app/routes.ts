@@ -65,5 +65,6 @@ export const routes: Routes = [
     path: 'price-compare',
     loadComponent: () => import('./features/price-compare/price-compare.component').then(m => m.PriceCompareComponent),
   },
+  { path: '', pathMatch: 'full', loadComponent: () => import('./features/home/home-page.component').then(m => m.HomePageComponent) },
   { path: '**', loadComponent: () => import('./features/home/home-page.component').then(m => m.HomePageComponent) },
 ];

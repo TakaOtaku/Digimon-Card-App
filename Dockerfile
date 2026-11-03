@@ -20,8 +20,16 @@ RUN printf 'server {\n\
   listen 3000;\n\
   root /usr/share/nginx/html;\n\
   index index.html;\n\
+  gzip on;\n\
+  gzip_types text/plain text/css application/json application/javascript text/xml application/xml image/svg+xml;\n\
+  gzip_min_length 1024;\n\
+  # Prerendered pages (/, /cards, /decks, ...) are folders with an index.html; other routes get the client-only shell.\n\
   location / {\n\
-  try_files $uri $uri/ /index.html;\n\
+  try_files $uri $uri/ /index.csr.html;\n\
+  }\n\
+  # HTML must not be cached long: it points at hashed bundles that change every deploy.\n\
+  location ~* \\.html$ {\n\
+  add_header Cache-Control "no-cache";\n\
   }\n\
   # The old site used an Angular service worker; a 404 manifest makes it unregister.\n\
   location = /ngsw.json {\n\
