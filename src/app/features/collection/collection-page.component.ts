@@ -48,11 +48,22 @@ import { PaginationCardListComponent } from './components/pagination-card-list.c
               </div>
             }
           </section>
+          <div class="flex w-full flex-wrap items-baseline justify-between gap-2 px-1 pt-3">
+            <h2 class="m-0 text-xs font-semibold uppercase tracking-wider text-muted">Set completion</h2>
+            <span class="text-xs text-muted">
+              {{ goalSummary() }} ·
+              @if (own) {
+                <button type="button" (click)="openImportExport()" class="text-accent hover:underline">change in Settings</button>
+              } @else {
+                using your settings
+              }
+            </span>
+          </div>
           <section
-            aria-label="Set completion"
+            aria-label="Sets in progress"
             class="w-full grid grid-cols-[repeat(auto-fill,minmax(8rem,1fr))] gap-2 overflow-hidden px-1 pt-2"
             [style.max-height]="showAllSets() ? null : '11.75rem'">
-            @for (set of sets(); track set.set) {
+            @for (set of openSets(); track set.set) {
               <div class="rounded-lg border border-line bg-ink-1 p-3 flex flex-col gap-2">
                 <div class="flex justify-between font-mono text-sm">
                   <span class="font-semibold text-fg">{{ set.set }}</span>
@@ -63,12 +74,38 @@ import { PaginationCardListComponent } from './components/pagination-card-list.c
                 </div>
                 <span class="font-mono text-xs text-muted">{{ set.owned }} / {{ set.total }}</span>
               </div>
+            } @empty {
+              <span class="col-span-full text-sm text-muted">Every tracked set is complete.</span>
             }
           </section>
-          @if (sets().length > 12) {
-            <button type="button" (click)="showAllSets.set(!showAllSets())" class="mx-1 mb-2 mt-1 w-full text-left text-sm text-accent hover:underline">
-              {{ showAllSets() ? 'Show fewer sets' : 'Show all ' + sets().length + ' sets' }}
+          @if (openSets().length > 12) {
+            <button type="button" (click)="showAllSets.set(!showAllSets())" class="mx-1 mt-1 w-full text-left text-sm text-accent hover:underline">
+              {{ showAllSets() ? 'Show fewer sets' : 'Show all ' + openSets().length + ' sets in progress' }}
             </button>
+          }
+          @if (completedSets().length) {
+            <section aria-label="Completed sets" class="mx-1 mb-2 mt-2 w-full rounded-lg border border-green-500/30 bg-ink-1">
+              <button
+                type="button"
+                (click)="showCompleted.set(!showCompleted())"
+                [attr.aria-expanded]="showCompleted()"
+                class="flex w-full items-center gap-2 px-3 py-2 text-left text-sm font-semibold text-fg">
+                <i class="pi pi-check-circle text-green-400"></i>
+                Completed
+                <span class="font-mono text-xs text-muted">{{ completedSets().length }}</span>
+                <i class="pi ml-auto text-xs text-muted" [ngClass]="showCompleted() ? 'pi-chevron-up' : 'pi-chevron-down'"></i>
+              </button>
+              @if (showCompleted()) {
+                <div class="flex flex-wrap gap-1.5 px-3 pb-3">
+                  @for (set of completedSets(); track set.set) {
+                    <span class="inline-flex items-center gap-1 rounded-full border border-green-500/40 bg-ink-2 px-2.5 py-0.5 font-mono text-xs text-green-300">
+                      <i class="pi pi-check text-[10px]"></i>{{ set.set }}
+                      <span class="text-muted">{{ set.total }}</span>
+                    </span>
+                  }
+                </div>
+              }
+            </section>
           }
         </digimon-pagination-card-list>
       </digimon-page>
@@ -148,12 +185,24 @@ export class CollectionPageComponent {
     this.dialogStore.updateSettingsDialog(true);
   }
 
+  showCompleted = signal(false);
+
   sets = computed(() => {
-    const collection = this.collection();
-    return setCompletion(this.digimonCardStore.cards(), collection, this.saveStore.settings().collectionMinimum).map((set) => ({
+    const settings = this.saveStore.settings();
+    return setCompletion(this.digimonCardStore.cards(), this.collection(), settings).map((set) => ({
       ...set,
-      percent: Math.round((set.owned / set.total) * 100),
+      percent: Math.floor((set.owned / set.total) * 100),
     }));
+  });
+  openSets = computed(() => this.sets().filter((set) => set.owned < set.total));
+  completedSets = computed(() => this.sets().filter((set) => set.owned >= set.total));
+
+  goalSummary = computed(() => {
+    const { collectionMinimum, aaCollectionMinimum, collectionSets } = this.saveStore.settings();
+    const copies = `${Math.max(collectionMinimum, 1)} ${Math.max(collectionMinimum, 1) === 1 ? 'copy' : 'copies'} per card`;
+    const aa = aaCollectionMinimum > 0 ? `alt arts at ${aaCollectionMinimum}` : 'alt arts ignored';
+    const sets = collectionSets?.length ? `${collectionSets.length} tracked sets` : 'all sets';
+    return `${copies}, ${aa}, ${sets}`;
   });
 
   constructor() {

@@ -399,21 +399,35 @@ export interface SetCompletion {
   total: number;
 }
 
-/** Unique regular printings owned per set (at least `minimum` copies), newest set first. */
-export function setCompletion(cards: DigimonCard[], collection: ICountCard[], minimum: number): SetCompletion[] {
+export interface CompletionSettings {
+  collectionMinimum: number;
+  aaCollectionMinimum: number;
+  collectionSets: string[];
+}
+
+/**
+ * Owned printings per set, newest set first, using the collection settings like the profile doughnuts:
+ * regular printings need collectionMinimum copies; other printings count only when aaCollectionMinimum > 0
+ * and need that many; collectionSets (when not empty) limits which sets are tracked.
+ */
+export function setCompletion(cards: DigimonCard[], collection: ICountCard[], settings: CompletionSettings): SetCompletion[] {
   const owned = new Map(collection.map((c) => [withoutJ(c.id), c.count]));
   const counted = new Set<string>();
   const bySet = new Map<string, SetCompletion>();
+  const tracked = settings.collectionSets ?? [];
 
   cards.forEach((card) => {
     const id = withoutJ(card.id);
-    if (card.version !== 'Normal' || !id.includes('-') || counted.has(id)) return;
+    const regular = card.version === 'Normal';
+    if (!id.includes('-') || counted.has(id) || (!regular && !(settings.aaCollectionMinimum > 0))) return;
+    const set = id.split('-')[0];
+    if (tracked.length && !tracked.includes(set)) return;
     counted.add(id);
 
-    const set = id.split('-')[0];
     const entry = bySet.get(set) ?? { set, owned: 0, total: 0 };
     entry.total++;
-    if ((owned.get(id) ?? 0) >= Math.max(minimum, 1)) entry.owned++;
+    const goal = Math.max(regular ? settings.collectionMinimum : settings.aaCollectionMinimum, 1);
+    if ((owned.get(id) ?? 0) >= goal) entry.owned++;
     bySet.set(set, entry);
   });
 
