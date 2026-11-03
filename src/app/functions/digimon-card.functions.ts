@@ -1,6 +1,7 @@
 import { DigimonCard, dummyCard, ICountCard, IDeck, IDeckCard, ISelectItem, ITag, replacements, tagsList } from '../../models';
 import { cardsAllow50 } from '../../models/data/cards-50.data';
 import { ReleaseOrder } from '../../models/data/release-order.data';
+import { environment } from '../../environments/environment';
 import { ColorOrderMap, DeckColorMap } from '../../models/maps/color.map';
 import { sortID } from './filter.functions';
 
@@ -423,4 +424,30 @@ export function replaceWithImageTags(effect: string): string {
 
 export function withoutJ(id: string): string {
   return id.replace('-J', '');
+}
+
+/** Tier list / deck images: bare card IDs and bundled card paths resolve to the card image CDN. */
+export function ensureCdnUrl(imageUrl: string): string {
+  if (!imageUrl) {
+    return 'assets/images/digimon-card-back.webp';
+  }
+
+  // If it's already a full CDN URL, return as is
+  if (imageUrl.startsWith('http://') || imageUrl.startsWith('https://')) {
+    return imageUrl;
+  }
+
+  // Bundled card images ship as 'assets/images/cards/BT1-001.webp' -> rewrite to CDN base
+  const cardImagePrefix = 'assets/images/cards/';
+  if (imageUrl.startsWith(cardImagePrefix)) {
+    return environment.cardImageBaseUrl + imageUrl.slice(cardImagePrefix.length);
+  }
+
+  // Local assets (placeholders, card back) stay as-is
+  if (imageUrl.startsWith('assets/')) {
+    return imageUrl;
+  }
+
+  // For bare card IDs like 'BT1-001', construct the CDN path
+  return environment.cardImageBaseUrl + imageUrl + '.webp';
 }

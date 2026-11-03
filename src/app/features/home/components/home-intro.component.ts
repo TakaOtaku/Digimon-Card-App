@@ -4,6 +4,7 @@ import { Router, RouterLink } from '@angular/router';
 import { IDeck } from '@models';
 import { AuthService } from '@services';
 import { DialogStore, SaveStore, WebsiteStore } from '@store';
+import { HomeMetaComponent } from './home-meta.component';
 
 @Component({
   selector: 'digimon-home-intro',
@@ -59,6 +60,8 @@ import { DialogStore, SaveStore, WebsiteStore } from '@store';
         }
       </section>
 
+      <digimon-home-meta></digimon-home-meta>
+
       <section class="flex flex-wrap items-center justify-between gap-6 border-t border-line pt-8">
         <div class="flex min-w-0 flex-[1_1_28rem] flex-col gap-3">
           <h2 class="m-0 font-display text-xl font-semibold text-fg">Help shape Digimoncard.app</h2>
@@ -93,7 +96,7 @@ import { DialogStore, SaveStore, WebsiteStore } from '@store';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgClass, RouterLink],
+  imports: [NgClass, RouterLink, HomeMetaComponent],
 })
 export class HomeIntroComponent {
   private saveStore = inject(SaveStore);

@@ -4,7 +4,7 @@ import { Database, ref, set, onValue } from '@angular/fire/database';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ADMINS, emptyDeck, TIERLIST } from '@models';
-import { environment } from '../../../../environments/environment';
+import { ensureCdnUrl } from '@functions';
 import { MongoBackendService } from '@services';
 import { DigimonCardStore, SaveStore, WebsiteStore } from '@store';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
@@ -292,28 +292,6 @@ export class TierlistComponent {
       });
   }
 
-  ensureCdnUrl(imageUrl: string): string {
-    if (!imageUrl) {
-      return 'assets/images/digimon-card-back.webp';
-    }
+  ensureCdnUrl = ensureCdnUrl;
 
-    // If it's already a full CDN URL, return as is
-    if (imageUrl.startsWith('http://') || imageUrl.startsWith('https://')) {
-      return imageUrl;
-    }
-
-    // Bundled card images ship as 'assets/images/cards/BT1-001.webp' -> rewrite to CDN base
-    const cardImagePrefix = 'assets/images/cards/';
-    if (imageUrl.startsWith(cardImagePrefix)) {
-      return environment.cardImageBaseUrl + imageUrl.slice(cardImagePrefix.length);
-    }
-
-    // Local assets (placeholders, card back) stay as-is
-    if (imageUrl.startsWith('assets/')) {
-      return imageUrl;
-    }
-
-    // For bare card IDs like 'BT1-001', construct the CDN path
-    return environment.cardImageBaseUrl + imageUrl + '.webp';
-  }
 }
