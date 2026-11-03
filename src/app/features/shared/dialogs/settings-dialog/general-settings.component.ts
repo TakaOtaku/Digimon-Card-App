@@ -28,13 +28,13 @@ import { SettingsRowComponent } from '../../settings-row.component';
         <digimon-settings-row title="Sort Cards by">
           <p-selectButton [allowEmpty]="false" [formControl]="sortOrderFilter" [multiple]="false" [options]="sortOrder"></p-selectButton>
         </digimon-settings-row>
-        <digimon-settings-row title="Display SideDecks">
-          <p-selectButton [allowEmpty]="false" [(ngModel)]="sideDeck" [options]="yesNoOptions" optionLabel="label" optionValue="value"></p-selectButton>
+        <digimon-settings-row title="Side deck" hint="Show a side deck below the main deck in the builder.">
+          <p-toggleSwitch [(ngModel)]="sideDeck"></p-toggleSwitch>
         </digimon-settings-row>
-        <digimon-settings-row title="Display Filter on Fullscreen">
-          <p-selectButton [allowEmpty]="false" [(ngModel)]="fullscreenFilter" [options]="yesNoOptions" optionLabel="label" optionValue="value"></p-selectButton>
+        <digimon-settings-row title="Filter panel beside cards" hint="On wide screens, show filters next to the card list on Cards and Collection. The builder always uses the Filter drawer.">
+          <p-toggleSwitch [(ngModel)]="fullscreenFilter"></p-toggleSwitch>
         </digimon-settings-row>
-        <digimon-settings-row title="Show Prices">
+        <digimon-settings-row title="Show prices" hint="Cardmarket prices on cards, decks and your collection.">
           <p-toggleSwitch [(ngModel)]="showPrices"></p-toggleSwitch>
         </digimon-settings-row>
         @if (showPrices) {
@@ -69,13 +69,13 @@ import { SettingsRowComponent } from '../../settings-row.component';
             </ng-template>
           </p-multiSelect>
         </digimon-settings-row>
-        <digimon-settings-row title="Collection Goal">
+        <digimon-settings-row title="Collection goal" hint="Copies of a card you need before it counts as collected.">
           <p-inputNumber [(ngModel)]="collectionCount" mode="decimal"></p-inputNumber>
         </digimon-settings-row>
-        <digimon-settings-row title="AA Collection Goal">
+        <digimon-settings-row title="Alt art collection goal" hint="The same, for alternate art printings. 0 ignores them.">
           <p-inputNumber [(ngModel)]="aaCollectionCount" mode="decimal"></p-inputNumber>
         </digimon-settings-row>
-        <digimon-settings-row title="Collection Filter Max">
+        <digimon-settings-row title="Collection filter max" hint="Highest value on the Number in Collection slider.">
           <p-inputNumber [(ngModel)]="collectionFilterMax" mode="decimal"></p-inputNumber>
         </digimon-settings-row>
         <digimon-settings-row title="Version Default Filter">
@@ -99,11 +99,11 @@ import { SettingsRowComponent } from '../../settings-row.component';
         <digimon-settings-row title="Profile Image URL">
           <input type="text" pInputText [(ngModel)]="displayImage" class="w-full max-w-[220px]" />
         </digimon-settings-row>
-        <digimon-settings-row title="Show Collection Stats">
-          <p-selectButton [allowEmpty]="false" [(ngModel)]="userStats" [options]="yesNoOptions" optionLabel="label" optionValue="value"></p-selectButton>
+        <digimon-settings-row title="Profile header" hint="Show your name, counts and set completion on your profile.">
+          <p-toggleSwitch [(ngModel)]="userStats"></p-toggleSwitch>
         </digimon-settings-row>
-        <digimon-settings-row title="Display Decks as Table">
-          <p-selectButton [allowEmpty]="false" [(ngModel)]="deckDisplayTable" [options]="yesNoOptions" optionLabel="label" optionValue="value"></p-selectButton>
+        <digimon-settings-row title="Decks as table" hint="List your decks in a table instead of tiles.">
+          <p-toggleSwitch [(ngModel)]="deckDisplayTable"></p-toggleSwitch>
         </digimon-settings-row>
       </section>
 
@@ -160,10 +160,6 @@ export class GeneralSettingsComponent {
   aaCollectionCount = 1;
   collectionFilterMax = 5;
 
-  yesNoOptions = [
-    { label: 'Yes', value: true },
-    { label: 'No', value: false },
-  ];
   userStats = true;
   deckDisplayTable = true;
   sideDeck = true;

@@ -1,5 +1,5 @@
 import { NgClass, NgIf } from '@angular/common';
-import { ChangeDetectionStrategy, Component, effect, EventEmitter, inject, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, effect, EventEmitter, inject, Input, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { DataViewModule } from 'primeng/dataview';
 import { DialogModule } from 'primeng/dialog';
@@ -26,7 +26,7 @@ import { CardMarketService } from '../../../services/card-market.service';
   template: `
     <div class="flex flex-col w-full">
       <digimon-pagination-card-list-header
-        [filterButton]="!filterBoxEnabled"
+        [filterButton]="!showFilterBox()"
         (filterBox)="filterBox = $event"
         [widthForm]="widthForm"
         [viewOnly]="inputCollection.length > 0">
@@ -68,7 +68,7 @@ import { CardMarketService } from '../../../services/card-market.service';
       </div>
     </div>
 
-    <digimon-filter-side-box *ngIf="filterBoxEnabled" class="hidden xl:flex"></digimon-filter-side-box>
+    <digimon-filter-side-box *ngIf="showFilterBox()" class="hidden xl:flex"></digimon-filter-side-box>
 
     <p-drawer
       [(visible)]="filterBox"
@@ -121,6 +121,8 @@ export class PaginationCardListComponent {
   filterBox = false;
   // false: filters only open in the drawer (the builder needs the width)
   @Input() filterBoxEnabled = true;
+  // 'Filter panel beside cards' setting (unset counts as on)
+  showFilterBox = computed(() => this.filterBoxEnabled && this.saveStore.settings().fullscreenFilter !== false);
   card = JSON.parse(JSON.stringify(dummyCard));
 
   perPage = 100;
@@ -149,14 +151,6 @@ export class PaginationCardListComponent {
   });
 
   constructor() {
-    effect(() => {
-      const settings = this.saveStore.settings();
-      if (settings.fullscreenFilter === null || settings.fullscreenFilter === undefined) {
-        return true;
-      }
-      return settings.fullscreenFilter;
-    });
-
     effect(() => {
       const filteredCards = this.digimonCardStore.filteredCards();
       this.showCards = filteredCards.slice(0, this.perPage);
