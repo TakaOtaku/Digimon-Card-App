@@ -10,43 +10,30 @@ import { DigimonCardStore } from '../../store/digimon-card.store';
 @Component({
   selector: 'digimon-deck-container',
   template: `
-    <div
-      class="surface-card relative h-32 w-full cursor-pointer border border-black"
-      defaultImage="assets/images/digimon-card-back.webp"
-      [lazyLoad]="(cardImageSubject$ | async) ?? '../../../assets/images/digimon-card-back.webp'"
-      [ngStyle]="{
-        'background-repeat': 'no-repeat',
-        'background-position': 'center',
-        'background-position-y': '25%',
-      }">
+    <div class="relative flex w-full cursor-pointer flex-col overflow-hidden rounded-xl border border-line bg-ink-1 hover:border-accent">
       <div
-        [ngStyle]="{ background: colorMap.get(deck?.color?.name ?? '') }"
-        class="text-shadow-white-xs relative left-[-5px] top-[10px] w-24 border text-black border-black bg-opacity-80 text-center text-xs font-bold uppercase">
-        <span class="mr-1">{{ getTags(deck) }}</span>
+        class="relative h-32 w-full"
+        defaultImage="assets/images/digimon-card-back.webp"
+        [lazyLoad]="(cardImageSubject$ | async) ?? '../../../assets/images/digimon-card-back.webp'"
+        [ngStyle]="{
+          'background-repeat': 'no-repeat',
+          'background-size': 'cover',
+          'background-position': 'center 25%',
+        }">
+        @if (getTags(deck); as tag) {
+          <span class="absolute left-2 top-2 rounded-md bg-black/70 px-2 py-0.5 font-mono text-xs font-semibold text-fg">{{ tag }}</span>
+        }
+        <span *ngIf="isIllegal()" class="absolute right-2 top-2 rounded-md bg-red-500 px-2 py-0.5 text-xs font-semibold text-white">Illegal</span>
       </div>
 
-      <div *ngIf="isIllegal()" class="absolute right-[35px] top-[5px]">
-        <span class="text-shadow text-4xl text-[#ef4444]">!</span>
-      </div>
-
-      <div class="absolute bottom-0 h-16 w-full justify-center bg-black bg-opacity-80">
-        <div class="my-auto flex w-full flex-col p-1">
-          <div class="text-shadow truncate font-bold text-fg">
-            {{ deck.title }}
-          </div>
-          <div class="text-shadow min-h-[16px] truncate text-xs text-fg">
-            {{ deck.description }}
-          </div>
-
-          <div class="text-shadow flex w-full flex-row text-xs text-fg">
-            <div *ngIf="mode === 'Community'" class="ml-1 font-bold">
-              {{ deck.user }}
-            </div>
-            <div class="ml-auto font-bold">
-              {{ deck.date | date: 'dd.MM.yy' }}
-            </div>
-          </div>
-        </div>
+      <div class="flex flex-col gap-1 p-3">
+        <span class="truncate font-display text-lg font-semibold text-fg">{{ deck.title || 'Untitled deck' }}</span>
+        <span class="min-h-[1rem] truncate text-xs text-muted">{{ deck.description }}</span>
+        <span class="flex items-center gap-2 text-xs text-muted">
+          <span class="h-2.5 w-2.5 shrink-0 rounded-full" [ngStyle]="{ background: colorMap.get(deck?.color?.name ?? '') }"></span>
+          <span *ngIf="mode === 'Community'" class="truncate">{{ deck.user }}</span>
+          <span class="ml-auto font-mono">{{ deck.date | date: 'dd.MM.yy' }}</span>
+        </span>
       </div>
     </div>
   `,

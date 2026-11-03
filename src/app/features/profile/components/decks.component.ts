@@ -1,3 +1,4 @@
+import { RouterLink } from '@angular/router';
 import { NgFor } from '@angular/common';
 import {
   ChangeDetectionStrategy,
@@ -20,7 +21,12 @@ import { DecksTableComponent } from './decks-table.component';
 @Component({
   selector: 'digimon-decks',
   template: `
-    @if (!displayTables()) {
+    @if (!decks?.length) {
+      <div class="flex flex-col items-center gap-3 rounded-xl border border-dashed border-line py-12 text-center">
+        <span class="text-muted">No decks here yet.</span>
+        <a routerLink="/deckbuilder" class="inline-flex h-10 items-center rounded-lg bg-accent px-4 font-semibold text-accent-ink no-underline">Build a deck</a>
+      </div>
+    } @else if (!displayTables()) {
       <div class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 py-2">
         <digimon-deck-container
           class="mx-auto min-w-[280px] max-w-[285px]"
@@ -61,7 +67,7 @@ import { DecksTableComponent } from './decks-table.component';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgFor, DeckContainerComponent, PaginatorModule, DecksTableComponent, DialogModule],
+  imports: [NgFor, DeckContainerComponent, PaginatorModule, DecksTableComponent, DialogModule, RouterLink],
 })
 export class DecksComponent implements OnInit, OnChanges {
   @Input() decks: IDeck[];

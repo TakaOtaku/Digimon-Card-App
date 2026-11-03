@@ -17,15 +17,15 @@ import { UserStatsComponent } from './components/user-stats.component';
   selector: 'digimon-profile-page',
   template: `
     <digimon-page *ngIf="save$ | async as save">
-      <div class="flex flex-col self-baseline px-5 max-w-sm sm:max-w-3xl md:max-w-5xl lg:max-w-6xl xl:max-w-7xl mx-auto">
-        <digimon-user-stats *ngIf="showUserStats" [save]="save" class="mx-auto my-1 w-[calc(100%-3rem)] sm:w-full"></digimon-user-stats>
+      <div class="mx-auto flex w-full max-w-7xl flex-col gap-4 self-start px-4 py-6 md:px-6">
+        <digimon-user-stats *ngIf="showUserStats" [save]="save" class="w-full"></digimon-user-stats>
 
-        <digimon-deck-filter
-          [searchFilter]="searchFilter"
-          [tagFilter]="tagFilter"
-          class="mx-auto w-[calc(100%-3rem)] sm:w-full"></digimon-deck-filter>
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <h2 class="m-0 font-display text-2xl font-semibold text-fg">{{ editable ? 'Your decks' : 'Decks' }}</h2>
+          <digimon-deck-filter [searchFilter]="searchFilter" [tagFilter]="tagFilter" class="min-w-0 flex-[0_1_40rem]"></digimon-deck-filter>
+        </div>
 
-        <digimon-decks class="mx-auto mt-1 w-full" [editable]="editable" [decks]="filteredDecks"></digimon-decks>
+        <digimon-decks class="w-full" [editable]="editable" [decks]="filteredDecks"></digimon-decks>
       </div>
     </digimon-page>
   `,

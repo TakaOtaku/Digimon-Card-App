@@ -13,63 +13,47 @@ import { NgIf } from '@angular/common';
 @Component({
   selector: 'digimon-user-stats',
   template: `
-    <div class="flex flex-col py-2 text-fg">
-      <div class="flex flex-col sm:flex-row justify-center">
-        <div class="flex flex-row mx-auto sm:ml-0 sm:mr-5">
-          <img
-            class="my-auto mr-2 h-16 w-auto rounded-full text-xs font-semibold text-fg"
-            *ngIf="save"
-            alt="{{ save.displayName ?? 'Username not Found' }}"
-            src="{{ save.photoUrl }}" />
-          <div class="vertical-align my-auto text-center text-2xl font-bold">
-            {{ save.displayName ?? 'User' }}
-          </div>
+    <section class="flex flex-wrap items-center gap-6 rounded-xl border border-line bg-ink-1 p-5 text-fg">
+      <div class="flex min-w-0 flex-[1_1_16rem] items-center gap-4">
+        @if (save.photoUrl) {
+          <img class="h-16 w-16 shrink-0 rounded-full object-cover" [alt]="save.displayName || 'Profile picture'" [src]="save.photoUrl" />
+        } @else {
+          <span class="grid h-16 w-16 shrink-0 place-items-center rounded-full bg-ink-2 text-2xl text-muted"><i class="pi pi-user"></i></span>
+        }
+        <div class="flex min-w-0 flex-col gap-1">
+          <h1 class="m-0 truncate text-3xl font-bold">{{ save.displayName || 'Guest' }}</h1>
+          <span class="font-mono text-sm text-muted">{{ save.decks?.length ?? 0 }} decks · {{ ownedCards() }} cards owned</span>
         </div>
-
-        <div class="hidden sm:flex flex-row justify-center">
-          <div class="flex flex-col">
-            <digimon-collection-circle [type]="'BT'" class="mx-2"></digimon-collection-circle>
-            <label class="text-center">BT</label>
-          </div>
-          <div class="flex flex-col">
-            <digimon-collection-circle [type]="'EX'" class="mx-2"></digimon-collection-circle>
-            <label class="text-center">EX</label>
-          </div>
-          <div class="flex flex-col">
-            <digimon-collection-circle [type]="'ST'" class="mx-2"></digimon-collection-circle>
-            <label class="text-center">ST</label>
-          </div>
-          <div class="flex flex-col">
-            <digimon-collection-circle [type]="'P-'" class="mx-2"></digimon-collection-circle>
-            <label class="text-center">P</label>
-          </div>
-        </div>
-
-        <p-carousel class="sm:hidden" [value]="collectionCircles" [numVisible]="1" [circular]="true" [autoplayInterval]="10000">
-          <ng-template let-circle pTemplate="item">
-            <digimon-collection-circle [type]="circle.label"></digimon-collection-circle>
-            <div class="text-center w-full mx-auto font-bold">
-              {{ circle.label }}
-            </div>
-          </ng-template>
-        </p-carousel>
       </div>
 
-      <div class="flex flex-col sm:flex-row w-full">
-        <button
-          (click)="openCollection()"
-          class="surface-ground hover:primary-background text-shadow border flex-grow border-black p-2 font-bold text-fg">
-          View Collection
-        </button>
+      <div class="hidden flex-row gap-3 sm:flex">
+        @for (circle of collectionCircles; track circle.label) {
+          <div class="flex flex-col items-center gap-1">
+            <digimon-collection-circle [type]="$any(circle.label)"></digimon-collection-circle>
+            <span class="text-xs font-semibold uppercase tracking-wider text-muted">{{ circle.label === 'P-' ? 'P' : circle.label }}</span>
+          </div>
+        }
+      </div>
+
+      <p-carousel class="w-full sm:hidden" [value]="collectionCircles" [numVisible]="1" [circular]="true" [autoplayInterval]="10000">
+        <ng-template let-circle pTemplate="item">
+          <digimon-collection-circle [type]="circle.label"></digimon-collection-circle>
+          <div class="mx-auto w-full text-center font-bold">{{ circle.label }}</div>
+        </ng-template>
+      </p-carousel>
+
+      <div class="flex flex-wrap gap-2">
+        <button type="button" (click)="openCollection()" class="h-11 rounded-lg bg-accent px-4 font-semibold text-accent-ink">View collection</button>
         <button
           *ngIf="showDeckDeleteButton()"
+          type="button"
           (click)="deleteUserDecks($event)"
-          class="bg-red-500 hover:primary-background text-shadow border flex-grow border-black p-2 font-bold text-fg">
-          Delete all Decks
+          class="h-11 rounded-lg border border-red-500/60 bg-ink-2 px-4 font-semibold text-red-300 hover:bg-red-500/10">
+          Delete all decks
         </button>
       </div>
       <p-confirmpopup key="deleteDecks"/>
-    </div>
+    </section>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
@@ -84,6 +68,10 @@ export class UserStatsComponent {
   saveStore = inject(SaveStore);
 
   collectionCircles = [{ label: 'BT' }, { label: 'EX' }, { label: 'ST' }, { label: 'P-' }];
+
+  ownedCards(): number {
+    return (this.save?.collection ?? []).filter((card) => card.count > 0).length;
+  }
 
   private router = inject(Router);
 
