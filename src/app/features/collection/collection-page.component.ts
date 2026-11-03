@@ -15,7 +15,7 @@ import { PaginationCardListComponent } from './components/pagination-card-list.c
       <digimon-pagination-card-list
         [collectionOnly]="true"
         [inputCollection]="collection"
-        class="w-screen flex flex-row h-[calc(100vh-3.5rem)] md:h-[calc(100vh-5rem)]"></digimon-pagination-card-list>
+        class="w-screen flex flex-row h-[calc(100vh-7.5rem)] md:h-[calc(100vh-5rem)]"></digimon-pagination-card-list>
     </digimon-page>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

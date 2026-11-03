@@ -1,5 +1,5 @@
 import { NgClass, NgIf } from '@angular/common';
-import { Component, inject, Input, Signal, signal, WritableSignal } from '@angular/core';
+import { Component, computed, inject, Input, Signal, signal, WritableSignal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -10,6 +10,8 @@ import { DialogStore, SaveStore } from '@store';
 import { ButtonModule } from 'primeng/button';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { DialogModule } from 'primeng/dialog';
+import { MenuModule } from 'primeng/menu';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'digimon-nav-links',
@@ -57,6 +59,7 @@ import { DialogModule } from 'primeng/dialog';
         <button style="font-size:smaller" class="p-2 group-hover:text-accent">Decks</button>
       </li>
 
+      @if (sidebar) {
       <li
         class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
         [ngClass]="getNavigationBorder('/rulings')"
@@ -72,11 +75,21 @@ import { DialogModule } from 'primeng/dialog';
         <i class="pi pi-tags group-hover:text-accent" style="font-size: 1.5rem"></i>
         <button style="font-size:smaller" class="p-2 group-hover:text-accent">Products</button>
       </li>
+      } @else {
+        <li
+          class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
+          [ngClass]="moreActive() ? 'border-b-[3px] border-accent text-accent' : 'text-fg'"
+          (click)="moreMenu.toggle($event)">
+          <i class="pi pi-ellipsis-h group-hover:text-accent" style="font-size: 1.5rem"></i>
+          <button style="font-size:smaller" class="p-2 group-hover:text-accent" aria-haspopup="menu">More</button>
+        </li>
+      }
     </ul>
+    <p-menu #moreMenu [model]="moreItems" [popup]="true" appendTo="body"></p-menu>
 
     <div
       [ngClass]="{
-        'ml-auto flex-row items-center gap-4': !sidebar,
+        'order-1 ml-4 flex-row items-center gap-4': !sidebar,
         'flex-col': sidebar,
       }"
       class="flex justify-center">
@@ -132,7 +145,7 @@ import { DialogModule } from 'primeng/dialog';
     </div>
   `,
   standalone: true,
-  imports: [NgClass, NgIf, FontAwesomeModule, ConfirmPopupModule, DialogModule, ButtonModule],
+  imports: [NgClass, NgIf, FontAwesomeModule, ConfirmPopupModule, DialogModule, ButtonModule, MenuModule],
 })
 export class NavLinksComponent {
   @Input() sidebar = false;
@@ -145,6 +158,11 @@ export class NavLinksComponent {
 
   mobile = false;
   route: WritableSignal<string> = signal('');
+  moreItems: MenuItem[] = [
+    { label: 'Rulings', icon: 'pi pi-question-circle', routerLink: '/rulings' },
+    { label: 'Products', icon: 'pi pi-tags', routerLink: '/products' },
+  ];
+  moreActive = computed(() => ['/rulings', '/products'].includes(this.route()));
 
   constructor() {
     this.router.events.pipe(takeUntilDestroyed()).subscribe((event) => {

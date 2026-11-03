@@ -24,7 +24,7 @@ import { NavbarComponent } from './features/shared/navbar/navbar.component';
 
       @if (saveLoaded()) {
         <div
-          class="min-h-[calc(100vh-3.5rem)] md:min-h-[calc(100vh-5rem)] w-[100vw]
+          class="min-h-[calc(100vh-3.5rem)] md:min-h-[calc(100vh-5rem)] w-[100vw] pb-16 md:pb-0
         flex justify-center items-center">
           <router-outlet></router-outlet>
         </div>

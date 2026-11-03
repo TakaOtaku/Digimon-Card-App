@@ -33,7 +33,7 @@ import { DeckViewComponent } from './components/deck-view.component';
           *ngIf="collectionView"
           [initialWidth]="3"
           [ngClass]="{ 'w-3/5 max-w-[60%]': deckView, 'w-full': !deckView }"
-          class="border-l max-h-full border-slate-200 flex flex-row  h-[calc(100vh-3.5rem)] md:h-[calc(100vh-5rem)]"></digimon-pagination-card-list>
+          class="border-l max-h-full border-slate-200 flex flex-row  h-[calc(100vh-7.5rem)] md:h-[calc(100vh-5rem)]"></digimon-pagination-card-list>
 
         <button class="surface-card w-6 border-l border-slate-200" (click)="changeView()">
           <span
