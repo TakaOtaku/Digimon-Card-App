@@ -13,7 +13,7 @@ import * as uuid from 'uuid';
 
 import { ADMINS, emptyDeck, IDeck, IDeckCard } from '../../../../models';
 import { environment } from '../../../../environments/environment';
-import { DeckCardGroup, groupDeckCards, levelSort, mapToDeckCards, setDeckImage } from '../../../functions';
+import { levelSort, mapToDeckCards, setDeckImage } from '../../../functions';
 import { AuthService } from '../../../services/auth.service';
 import { MongoBackendService } from '../../../services/mongo-backend.service';
 import { DialogStore } from '../../../store/dialog.store';
@@ -35,6 +35,27 @@ export interface DigimonCardImage {
   selector: 'digimon-deck-dialog',
   template: `
     <div class="flex w-full flex-col gap-5">
+      <div class="grid max-h-[32rem] min-h-[12rem] w-full grid-cols-4 overflow-y-auto rounded-xl border border-line bg-ink-1 p-1 md:grid-cols-6 lg:grid-cols-8">
+        @for (card of sortedDeck; track card.id) {
+          <digimon-deck-card [edit]="false" [card]="card"></digimon-deck-card>
+        }
+      </div>
+
+      <section class="flex flex-wrap items-end justify-around gap-6 rounded-xl border border-line bg-ink-1 p-4">
+        <div class="flex flex-col gap-2">
+          <span class="text-xs font-semibold uppercase tracking-wider text-muted">Level curve</span>
+          <digimon-chart-containers [deck]="mainDeck"></digimon-chart-containers>
+        </div>
+        <div class="hidden flex-col gap-2 md:flex">
+          <span class="text-xs font-semibold uppercase tracking-wider text-muted">Card types</span>
+          <digimon-ddto-spread [deck]="deck" [container]="true"></digimon-ddto-spread>
+        </div>
+        <div class="hidden flex-col gap-2 md:flex">
+          <span class="text-xs font-semibold uppercase tracking-wider text-muted">Colors</span>
+          <digimon-color-spread [deck]="deck" [container]="true"></digimon-color-spread>
+        </div>
+      </section>
+
       @if (!editable) {
         <section class="flex flex-col gap-2">
           <h2 class="m-0 truncate font-display text-3xl font-bold text-fg" [title]="deck.title">{{ deck.title || 'Untitled deck' }}</h2>
@@ -90,36 +111,6 @@ export interface DigimonCardImage {
         }
       </div>
 
-      <section class="flex flex-wrap items-end justify-around gap-6 rounded-xl border border-line bg-ink-1 p-4">
-        <div class="flex flex-col gap-2">
-          <span class="text-xs font-semibold uppercase tracking-wider text-muted">Level curve</span>
-          <digimon-chart-containers [deck]="mainDeck"></digimon-chart-containers>
-        </div>
-        <div class="hidden flex-col gap-2 md:flex">
-          <span class="text-xs font-semibold uppercase tracking-wider text-muted">Card types</span>
-          <digimon-ddto-spread [deck]="deck" [container]="true"></digimon-ddto-spread>
-        </div>
-        <div class="hidden flex-col gap-2 md:flex">
-          <span class="text-xs font-semibold uppercase tracking-wider text-muted">Colors</span>
-          <digimon-color-spread [deck]="deck" [container]="true"></digimon-color-spread>
-        </div>
-      </section>
-
-      <div class="flex flex-col gap-4">
-        @for (group of groups; track group.title) {
-          <section class="flex flex-col gap-1">
-            <div class="flex justify-between border-b border-line px-1 pb-1">
-              <span class="text-xs font-semibold uppercase tracking-wider text-muted">{{ group.title }}</span>
-              <span class="font-mono text-xs text-muted">{{ group.count }}</span>
-            </div>
-            <div class="grid grid-cols-[repeat(auto-fill,minmax(6rem,1fr))]">
-              @for (card of group.cards; track card.id) {
-                <digimon-deck-card [edit]="false" [card]="card"></digimon-deck-card>
-              }
-            </div>
-          </section>
-        }
-      </div>
     </div>
 
     <p-confirmDialog header="Save Deck?" rejectButtonStyleClass="p-button-outlined" key="save"></p-confirmDialog>
@@ -170,7 +161,7 @@ export class DeckDialogComponent {
   cardImageOptions: DigimonCardImage[] = [];
 
   mainDeck: IDeckCard[] = [];
-  groups: DeckCardGroup[] = [];
+  sortedDeck: IDeckCard[] = [];
 
   isAdmin = false;
 
@@ -186,7 +177,7 @@ export class DeckDialogComponent {
       this.editable = this.dialogStore.deck().editable;
 
       this.mainDeck = mapToDeckCards(this.deck.cards, this.digimonCardStore.cards());
-      this.groups = groupDeckCards(levelSort(this.mainDeck));
+      this.sortedDeck = levelSort(this.mainDeck);
 
       this.deckFormGroup = new UntypedFormGroup({
         title: new UntypedFormControl(this.deck.title),

@@ -1,10 +1,6 @@
-import { DatePipe, NgClass, NgFor, NgStyle } from '@angular/common';
-import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
+import { DatePipe, NgClass, NgStyle } from '@angular/common';
+import { Component, EventEmitter, inject, Input, OnChanges, Output, signal } from '@angular/core';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
-import { SharedModule } from 'primeng/api';
-import { ButtonDirective } from 'primeng/button';
-import { Ripple } from 'primeng/ripple';
-import { TableModule } from 'primeng/table';
 import { IDeck } from '../../../../models';
 import { setDeckImage } from '../../../functions/digimon-card.functions';
 import { DigimonCardStore } from '../../../store/digimon-card.store';
@@ -14,100 +10,76 @@ import { environment } from '../../../../environments/environment';
 @Component({
   selector: 'digimon-decks-table',
   template: `
-    <div class="max-h-[calc(100vh-5rem] w-full">
-      <p-table
-        [value]="decks"
-        [scrollable]="true"
-        [tableStyle]="{ 'min-width': '30rem', 'max-width': '80rem' }"
-        [breakpoint]="'0px'"
-        sortField="name"
-        sortMode="single"
-        scrollHeight="flex"
-        rowGroupMode="subheader"
-        groupRowsBy="color.name"
-        tableStyleClass="w-full">
-        <ng-template pTemplate="header">
-          <tr>
-            <th></th>
-            <th>Name</th>
-            <th class="hidden md:table-cell">Description</th>
-            <th class="hidden md:table-cell">Set</th>
-            <th class="hidden md:table-cell">Date</th>
-          </tr>
-        </ng-template>
-
-        <ng-template #groupheader pTemplate="groupheader" let-deck let-expanded="expanded">
-          <tr class="mt-[-ß.5rem]" pRowGroupHeader>
-            <td class="py-3" colspan="5">
-              <div class="flex flex-row items-center align-middle">
-                <button
-                  size="small"
-                  type="button"
-                  pButton
-                  pRipple
-                  [pRowToggler]="deck"
-                  text
-                  rounded
-                  plain
-                  class="mr-2"
-                  [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
-                <div [ngClass]="deck.color?.name" class="ml-3 mr-1 h-7 w-7 rounded-full"></div>
-                <span class="ml-2 font-bold">{{ deck.color?.name }} Decks</span>
-
-                <div class="ml-auto mr-2 font-bold">
-                  Total {{ deck.color?.name }} Decks:
-                  {{ decksWithColor(deck.color?.name) }}
-                </div>
-              </div>
-            </td>
-          </tr>
-        </ng-template>
-
-        <ng-template #expandedrow pTemplate="body" let-deck let-rowIndex="rowIndex">
-          <tr class="cursor-pointer" (click)="onDeckClick.emit(deck)">
-            <td>
-              <div
-                class="surface-card relative h-16 w-56 border border-black"
-                defaultImage="assets/images/digimon-card-back.webp"
-                [lazyLoad]="getCardImage(deck)"
-                [ngStyle]="{
-                  'background-repeat': 'no-repeat',
-                  'background-position': 'center',
-                  'background-position-y': '25%',
-                }"></div>
-            </td>
-            <td class="text-xs font-bold">
-              {{ deck?.title }}
-            </td>
-            <td class="text-xs hidden md:table-cell">
-              {{ deck?.description }}
-            </td>
-            <td class="text-xs mx-auto hidden md:table-cell">
-              <div *ngFor="let tag of deck?.tags" class="mr-2">
-                {{ tag?.name }}
-              </div>
-            </td>
-            <td class="text-center text-xs hidden md:table-cell">
-              {{ deck?.date | date: 'dd.MM.yy' }}
-            </td>
-          </tr>
-        </ng-template>
-      </p-table>
+    <div class="flex w-full flex-col gap-2">
+      @for (group of groups(); track group.color) {
+        <section class="overflow-hidden rounded-xl border border-line bg-ink-1">
+          <button
+            type="button"
+            (click)="toggle(group.color)"
+            [attr.aria-expanded]="!collapsed.has(group.color)"
+            class="flex w-full items-center gap-3 px-4 py-3 text-left text-fg">
+            <span class="h-4 w-4 shrink-0 rounded-full" [ngClass]="group.color"></span>
+            <span class="font-semibold">{{ group.color }}</span>
+            <span class="font-mono text-xs text-muted">{{ group.decks.length }} {{ group.decks.length === 1 ? 'deck' : 'decks' }}</span>
+            <i class="pi ml-auto text-xs text-muted" [ngClass]="collapsed.has(group.color) ? 'pi-chevron-down' : 'pi-chevron-up'"></i>
+          </button>
+          @if (!collapsed.has(group.color)) {
+            <ul class="m-0 list-none divide-y divide-line border-t border-line p-0">
+              @for (deck of group.decks; track deck.id) {
+                <li>
+                  <button type="button" (click)="onDeckClick.emit(deck)" class="flex w-full items-center gap-4 px-4 py-2 text-left hover:bg-ink-2">
+                    <span
+                      class="hidden h-12 w-28 shrink-0 rounded-md bg-ink-2 sm:block"
+                      defaultImage="assets/images/digimon-card-back.webp"
+                      [lazyLoad]="getCardImage(deck)"
+                      [ngStyle]="{ 'background-size': 'cover', 'background-position': 'center 25%' }"></span>
+                    <span class="flex min-w-0 flex-1 flex-col">
+                      <span class="truncate font-semibold text-fg">{{ deck.title || 'Untitled deck' }}</span>
+                      <span class="truncate text-xs text-muted">{{ deck.description }}</span>
+                    </span>
+                    <span class="hidden flex-wrap gap-1 md:flex">
+                      @for (tag of deck.tags; track tag.name) {
+                        <span class="rounded-full border border-line bg-ink-2 px-2 py-0.5 font-mono text-[11px] text-fg">{{ tag.name }}</span>
+                      }
+                    </span>
+                    <span class="w-16 text-right font-mono text-xs text-muted">{{ cardCount(deck) }} cards</span>
+                    <span class="hidden w-16 text-right font-mono text-xs text-muted sm:block">{{ deck.date | date: 'dd.MM.yy' }}</span>
+                  </button>
+                </li>
+              }
+            </ul>
+          }
+        </section>
+      }
     </div>
   `,
-  styles: [
-    `
-      td,
-      th {
-        padding: 0.2rem 0 0 !important;
-      }
-    `,
-  ],
   standalone: true,
-  imports: [TableModule, SharedModule, NgClass, LazyLoadImageModule, NgStyle, NgFor, DatePipe, ButtonDirective, Ripple],
+  imports: [NgClass, LazyLoadImageModule, NgStyle, DatePipe],
 })
-export class DecksTableComponent {
+export class DecksTableComponent implements OnChanges {
   @Input() decks: IDeck[];
+  groups = signal<{ color: string; decks: IDeck[] }[]>([]);
+  collapsed = new Set<string>();
+
+  ngOnChanges() {
+    const byColor = new Map<string, IDeck[]>();
+    [...(this.decks ?? [])]
+      .sort((a, b) => (a.title ?? '').localeCompare(b.title ?? ''))
+      .forEach((deck) => {
+        const color = deck?.color?.name || 'Other';
+        byColor.set(color, [...(byColor.get(color) ?? []), deck]);
+      });
+    const order = ['Red', 'Blue', 'Yellow', 'Green', 'Black', 'Purple', 'White', 'Multi', 'Other'];
+    this.groups.set([...byColor.entries()].sort(([a], [b]) => order.indexOf(a) - order.indexOf(b)).map(([color, decks]) => ({ color, decks })));
+  }
+
+  toggle(color: string) {
+    this.collapsed.has(color) ? this.collapsed.delete(color) : this.collapsed.add(color);
+  }
+
+  cardCount(deck: IDeck): number {
+    return (deck.cards ?? []).reduce((sum, card) => sum + card.count, 0);
+  }
   @Output() onDeckClick = new EventEmitter<IDeck>();
 
   saveStore = inject(SaveStore);
@@ -130,10 +102,4 @@ export class DecksTableComponent {
     }
   }
 
-  decksWithColor(color: string) {
-    return this.decks.filter((deck) => {
-      if (!deck || !deck.color || !deck.color.name) return false;
-      return deck.color.name === color;
-    }).length;
-  }
 }

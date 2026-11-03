@@ -30,7 +30,7 @@ import { PaginationCardListComponent } from './components/pagination-card-list.c
                 [attr.aria-pressed]="ownedFilter() === option.label"
                 class="rounded-full px-3 py-0.5 text-xs"
                 [ngClass]="ownedFilter() === option.label ? 'bg-accent text-accent-ink font-semibold' : 'text-fg'">
-                {{ option.label }}
+                {{ option.label === 'Missing' && missingMax() > 0 ? 'Missing (0–' + missingMax() + ')' : option.label }}
               </button>
             }
           </div>
@@ -165,9 +165,12 @@ export class CollectionPageComponent {
     { label: 'Owned', range: 'owned' },
     { label: 'Missing', range: 'missing' },
   ] as const;
+  // Missing = fewer copies than the collection goal (goal 4 -> 0-3); kept below the slider max so it stays distinct from All
+  missingMax = computed(() => Math.max(0, Math.min(Math.max(this.saveStore.settings().collectionMinimum, 1) - 1, this.countMax() - 1)));
+
   ownedFilter = computed(() => {
     const [min, max] = this.filterStore.filter().cardCountFilter;
-    if (min === 0 && max === 0) return 'Missing';
+    if (min === 0 && max === this.missingMax()) return 'Missing';
     if (min === 1 && max === this.countMax()) return 'Owned';
     if (min === 0 && max === this.countMax()) return 'All';
     return '';
@@ -175,7 +178,7 @@ export class CollectionPageComponent {
 
   showOwned(range: 'all' | 'owned' | 'missing') {
     const max = this.countMax();
-    const cardCountFilter = range === 'missing' ? [0, 0] : [range === 'owned' ? 1 : 0, max];
+    const cardCountFilter = range === 'missing' ? [0, this.missingMax()] : [range === 'owned' ? 1 : 0, max];
     this.filterStore.updateFilter({ ...this.filterStore.filter(), cardCountFilter });
   }
 

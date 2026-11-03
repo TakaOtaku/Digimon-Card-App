@@ -25,7 +25,7 @@ RUN printf 'server {\n\
   gzip_min_length 1024;\n\
   # Prerendered pages (/, /cards, /decks, ...) are folders with an index.html; other routes get the client-only shell.\n\
   location / {\n\
-  try_files $uri $uri/ /index.csr.html;\n\
+  try_files $uri $uri/index.html /index.csr.html;\n\
   }\n\
   # HTML must not be cached long: it points at hashed bundles that change every deploy.\n\
   location ~* \\.html$ {\n\

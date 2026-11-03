@@ -19,7 +19,7 @@ import { HomeMetaComponent } from './home-meta.component';
             <span class="rounded-full bg-accent px-2 py-0.5 font-mono text-xs font-semibold text-accent-ink">v6.0</span>
             New card search, deck pages and redesign <i class="pi pi-arrow-right text-xs text-muted"></i>
           </button>
-          <h1 class="m-0 font-display text-4xl font-bold leading-none text-fg md:text-6xl">Build. Track. Share.</h1>
+          <h1 class="m-0 font-display text-4xl font-bold leading-none text-fg md:text-6xl">Digimon Card App</h1>
           <p class="m-0 max-w-xl text-base leading-relaxed text-muted md:text-lg">
             Deck builder, collection tracker and card database for the Digimon Card Game. Card data is loaded once a day from
             <span class="font-semibold text-fg">DigimonCardGame.Fandom</span>, thanks to their effort.

@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
@@ -59,7 +59,7 @@ export const appConfig: ApplicationConfig = {
     AuthService,
     DigimonBackendService,  // Legacy HTTP backend for migration
     MongoBackendService,    // New MongoDB backend
-    provideHttpClient(withInterceptors([authInterceptor])),
+    provideHttpClient(withFetch(), withInterceptors([authInterceptor])),
     provideAnimations(),
     MessageService,
     ConfirmationService,
