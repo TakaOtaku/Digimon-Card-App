@@ -90,12 +90,12 @@ import { TierlistComponent } from './components/tierlist.component';
     </digimon-page>
 
     <p-dialog
-      header="Deck Statistics for the filtered decks"
+      header="Deck statistics"
       [(visible)]="deckStatsDialog"
       [modal]="true"
       [dismissableMask]="true"
       [resizable]="false"
-      styleClass="w-full h-full max-w-6xl min-h-[500px]"
+      styleClass="w-[95vw] max-w-4xl"
       [baseZIndex]="10000">
       <div *ngIf="loading2" class="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
         <p-progressSpinner></p-progressSpinner>

@@ -399,6 +399,40 @@ export interface SetCompletion {
   total: number;
 }
 
+export interface CardUsage {
+  card: DigimonCard;
+  decks: number;
+  copies: number;
+  percent: number;
+  average: number;
+}
+
+/** How often each card number appears across decks (all printings together), most-included first. */
+export function cardUsage(decks: IDeck[], allCards: DigimonCard[]): CardUsage[] {
+  const byId = new Map(allCards.map((card) => [card.id, card]));
+  const usage = new Map<string, { card: DigimonCard; decks: number; copies: number }>();
+
+  decks.forEach((deck) => {
+    const inDeck = new Map<string, number>();
+    (deck.cards ?? []).forEach((entry) => {
+      // Prefer the regular printing so rows show the normal art
+      const card = byId.get(formatId(entry.id)) ?? byId.get(entry.id);
+      if (!card) return;
+      inDeck.set(card.cardNumber, (inDeck.get(card.cardNumber) ?? 0) + entry.count);
+      if (!usage.has(card.cardNumber)) usage.set(card.cardNumber, { card, decks: 0, copies: 0 });
+    });
+    inDeck.forEach((copies, cardNumber) => {
+      const row = usage.get(cardNumber)!;
+      row.decks++;
+      row.copies += copies;
+    });
+  });
+
+  return [...usage.values()]
+    .map((row) => ({ ...row, percent: (row.decks / decks.length) * 100, average: row.copies / row.decks }))
+    .sort((a, b) => b.decks - a.decks || b.copies - a.copies);
+}
+
 export interface CompletionSettings {
   collectionMinimum: number;
   aaCollectionMinimum: number;
