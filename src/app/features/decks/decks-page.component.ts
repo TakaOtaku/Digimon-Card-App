@@ -60,7 +60,7 @@ import { TierlistComponent } from './components/tierlist.component';
         </div>
 
         <!-- Deck Results -->
-        <div *ngIf="!websiteStore.isLoadingDecks() && websiteStore.communityDecks().length > 0" class="grid grid-cols-[repeat(auto-fill,minmax(16rem,1fr))] gap-3">
+        <div *ngIf="!websiteStore.isLoadingDecks() && websiteStore.communityDecks().length > 0" class="grid grid-cols-2 gap-2 sm:grid-cols-[repeat(auto-fill,minmax(16rem,1fr))] sm:gap-3">
           <digimon-deck-container
             mode="Community"
             *ngFor="let deck of websiteStore.communityDecks()"

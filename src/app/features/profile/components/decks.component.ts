@@ -27,7 +27,7 @@ import { DecksTableComponent } from './decks-table.component';
         <a routerLink="/deckbuilder" class="inline-flex h-10 items-center rounded-lg bg-accent px-4 font-semibold text-accent-ink no-underline">Build a deck</a>
       </div>
     } @else if (!displayTables()) {
-      <div class="grid grid-cols-[repeat(auto-fill,minmax(16rem,1fr))] gap-3 py-2">
+      <div class="grid grid-cols-2 gap-2 sm:grid-cols-[repeat(auto-fill,minmax(16rem,1fr))] sm:gap-3 py-2">
         <digimon-deck-container
           (click)="showDeckDialog(deck)"
           (contextmenu)="showDeckDialog(deck)"

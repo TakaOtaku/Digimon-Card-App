@@ -12,7 +12,7 @@ import { DigimonCardStore } from '../../store/digimon-card.store';
   template: `
     <div class="relative flex w-full cursor-pointer flex-col overflow-hidden rounded-xl border border-line bg-ink-1 hover:border-accent">
       <div
-        class="relative h-32 w-full"
+        class="relative h-20 w-full sm:h-32"
         defaultImage="assets/images/digimon-card-back.webp"
         [lazyLoad]="(cardImageSubject$ | async) ?? '../../../assets/images/digimon-card-back.webp'"
         [ngStyle]="{
@@ -26,9 +26,9 @@ import { DigimonCardStore } from '../../store/digimon-card.store';
         <span *ngIf="isIllegal()" class="absolute right-2 top-2 rounded-md bg-red-500 px-2 py-0.5 text-xs font-semibold text-white">Illegal</span>
       </div>
 
-      <div class="flex flex-col gap-1 p-3">
-        <span class="truncate font-display text-lg font-semibold text-fg">{{ deck.title || 'Untitled deck' }}</span>
-        <span class="min-h-[1rem] truncate text-xs text-muted">{{ deck.description }}</span>
+      <div class="flex flex-col gap-1 p-2 sm:p-3">
+        <span class="truncate font-display text-sm font-semibold text-fg sm:text-lg">{{ deck.title || 'Untitled deck' }}</span>
+        <span class="hidden min-h-[1rem] truncate text-xs text-muted sm:block">{{ deck.description }}</span>
         <span class="flex items-center gap-2 text-xs text-muted">
           <span class="h-2.5 w-2.5 shrink-0 rounded-full" [ngStyle]="{ background: colorMap.get(deck?.color?.name ?? '') }"></span>
           <span *ngIf="mode === 'Community'" class="truncate">{{ deck.user }}</span>

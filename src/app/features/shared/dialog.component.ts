@@ -11,14 +11,14 @@ import { DialogStore } from '../../store/dialog.store';
   selector: 'digimon-dialog',
   template: `
     <p-dialog
-      header="Deck Details"
+      header="Deck"
       [visible]="deckDialog()"
       (visibleChange)="$event || closeDeckDialog()"
       (onHide)="closeDeckDialog()"
       [modal]="true"
       [dismissableMask]="true"
       [resizable]="false"
-      styleClass="w-full h-full max-w-6xl min-h-[500px]"
+      styleClass="w-[95vw] max-w-5xl"
       [baseZIndex]="10000">
       <digimon-deck-dialog></digimon-deck-dialog>
     </p-dialog>

@@ -13,7 +13,7 @@ import * as uuid from 'uuid';
 
 import { ADMINS, emptyDeck, IDeck, IDeckCard } from '../../../../models';
 import { environment } from '../../../../environments/environment';
-import { mapToDeckCards, setDeckImage } from '../../../functions';
+import { DeckCardGroup, groupDeckCards, levelSort, mapToDeckCards, setDeckImage } from '../../../functions';
 import { AuthService } from '../../../services/auth.service';
 import { MongoBackendService } from '../../../services/mongo-backend.service';
 import { DialogStore } from '../../../store/dialog.store';
@@ -34,121 +34,92 @@ export interface DigimonCardImage {
 @Component({
   selector: 'digimon-deck-dialog',
   template: `
-    <div class="flex h-full w-full flex-col">
-      <div
-        class="grid max-h-[560px] min-h-[200px] w-full grid-cols-4 overflow-y-scroll border-2 border-slate-200 md:grid-cols-6 lg:grid-cols-8">
-        <digimon-deck-card *ngFor="let card of mainDeck" [edit]="false" [card]="card"></digimon-deck-card>
-      </div>
-
-      <div class="surface-card mx-auto my-1 flex max-h-[200px] w-full flex-row border border-white">
-        <digimon-ddto-spread
-          [deck]="deck"
-          [container]="true"
-          class="ml-auto hidden border-r border-slate-200 px-5 lg:block"></digimon-ddto-spread>
-
-        <digimon-chart-containers [deck]="mainDeck" class="mx-auto max-w-[40rem]"></digimon-chart-containers>
-
-        <digimon-color-spread
-          [deck]="deck"
-          [container]="true"
-          class="mr-auto hidden border-l border-slate-200 px-5 lg:block"></digimon-color-spread>
-      </div>
-
-      <div *ngIf="!editable; else edit" class="mx-auto my-1 grid grid-cols-3 gap-y-1">
-        <label>Title</label>
-        <div [pTooltip]="deck.title" tooltipPosition="top" class="text-shadow col-span-2 mr-3 truncate text-3xl font-black text-fg">
-          {{ deck.title }}
-        </div>
-
-        <label>Description</label>
-        <div class="col-span-2">{{ deck.description }}</div>
-
-        <label>User</label>
-        <div class="col-span-2">
-          {{ deck.user }}
-        </div>
-
-        <label>Tags</label>
-        <div class="col-span-2 flex flex-row align-middle">
-          <div *ngFor="let tag of deck.tags" class="surface-ground mr-0.5 h-8 border border-black px-1.5 text-xs font-bold leading-[35px]">
-            {{ tag.name }}
+    <div class="flex w-full flex-col gap-5">
+      @if (!editable) {
+        <section class="flex flex-col gap-2">
+          <h2 class="m-0 truncate font-display text-3xl font-bold text-fg" [title]="deck.title">{{ deck.title || 'Untitled deck' }}</h2>
+          <div class="flex flex-wrap items-center gap-2 text-sm">
+            @if (deck.user) {
+              <span class="rounded-full border border-line bg-ink-2 px-3 py-0.5 text-fg">by {{ deck.user }}</span>
+            }
+            @for (tag of deck.tags; track tag.name) {
+              <span class="rounded-full border border-line bg-ink-2 px-3 py-0.5 font-mono text-xs text-fg">{{ tag.name }}</span>
+            }
           </div>
-        </div>
-      </div>
-      <ng-template #edit [formGroup]="deckFormGroup">
-        <div class="mx-auto my-1 grid grid-cols-3 gap-y-1">
-          <label>Title</label>
-          <input formControlName="title" placeholder="Deck Name:" class="col-span-2 mr-2 w-full text-sm" pInputText type="text" />
-          <label>Image</label>
-          <p-select
-            styleClass="truncate w-full lg:w-[250px]"
-            class=" col-span-2"
-            [options]="cardImageOptions"
-            formControlName="cardImage"
-            optionLabel="name"
-            appendTo="body"></p-select>
-          <label>Description</label>
-          <textarea
-            formControlName="description"
-            placeholder="Description:"
-            class="col-span-2 h-[66px] w-full overflow-hidden"
-            pInputTextarea></textarea>
-          <label>Tags</label>
-          <div class="col-span-2 flex flex-row align-middle">
-            <div
-              *ngFor="let tag of deck.tags"
-              class="surface-ground mr-0.5 h-8 border border-black px-1.5 text-xs font-bold leading-[35px]">
-              {{ tag.name }}
+          @if (deck.description) {
+            <p class="m-0 whitespace-pre-wrap leading-relaxed text-muted">{{ deck.description }}</p>
+          }
+        </section>
+      } @else {
+        <form [formGroup]="deckFormGroup" class="grid gap-3 md:grid-cols-2">
+          <label class="flex flex-col gap-1">
+            <span class="text-xs font-semibold uppercase tracking-wider text-muted">Title</span>
+            <input formControlName="title" placeholder="Deck name" class="w-full rounded-lg border border-line bg-ink-0 px-3 py-2 text-fg outline-none focus:border-accent" type="text" />
+          </label>
+          <label class="flex flex-col gap-1">
+            <span class="text-xs font-semibold uppercase tracking-wider text-muted">Cover card</span>
+            <p-select styleClass="w-full" [options]="cardImageOptions" formControlName="cardImage" optionLabel="name" appendTo="body"></p-select>
+          </label>
+          <label class="flex flex-col gap-1 md:col-span-2">
+            <span class="text-xs font-semibold uppercase tracking-wider text-muted">Description</span>
+            <textarea formControlName="description" placeholder="What is the plan of this deck?" class="w-full rounded-lg border border-line bg-ink-0 px-3 py-2 text-fg outline-none focus:border-accent min-h-[5rem]"></textarea>
+          </label>
+          @if (deck.tags?.length) {
+            <div class="flex flex-wrap gap-1 md:col-span-2">
+              @for (tag of deck.tags; track tag.name) {
+                <span class="rounded-full border border-line bg-ink-2 px-3 py-0.5 font-mono text-xs text-fg">{{ tag.name }}</span>
+              }
             </div>
-          </div>
-        </div>
-      </ng-template>
+          }
+        </form>
+      }
 
-      <div *ngIf="editable; else editButtons" class="mx-auto mt-1 grid grid-cols-3">
-        <button
-          (click)="saveDeck()"
-          [disabled]="!deckFormGroup.dirty"
-          pButton
-          class="p-button-sm lg:p-button p-button-outlined"
-          type="button"
-          label="Save"></button>
-        <button (click)="openDeck($event)" pButton class="p-button-sm lg:p-button p-button-outlined" type="button" label="Open"></button>
-        <button (click)="copyDeck($event)" pButton class="p-button-sm lg:p-button p-button-outlined" type="button" label="Copy"></button>
-        <button
-          (click)="showExportDeckDialog()"
-          pButton
-          class="p-button-sm lg:p-button p-button-outlined"
-          type="button"
-          label="Export"></button>
-        <button (click)="getLink()" pButton class="p-button-sm lg:p-button p-button-outlined" type="button" label="Get Link"></button>
-        <button
-          (click)="deleteDeck($event)"
-          pButton
-          class="p-button-sm lg:p-button p-button-outlined"
-          type="button"
-          label="Delete"></button>
+      <div class="flex flex-wrap gap-2">
+        @if (editable) {
+          <button type="button" (click)="saveDeck()" [disabled]="!deckFormGroup.dirty" class="h-10 rounded-lg border border-line bg-ink-2 px-4 text-sm font-semibold text-fg hover:border-accent disabled:opacity-40">Save changes</button>
+          <button type="button" (click)="openDeck($event)" class="h-10 rounded-lg bg-accent px-4 text-sm font-semibold text-accent-ink">Open in builder</button>
+        } @else {
+          <button type="button" (click)="viewDeck()" class="h-10 rounded-lg bg-accent px-4 text-sm font-semibold text-accent-ink">View deck page</button>
+          <button type="button" (click)="openDeck($event)" class="h-10 rounded-lg border border-line bg-ink-2 px-4 text-sm font-semibold text-fg hover:border-accent disabled:opacity-40">Open in builder</button>
+        }
+        <button type="button" (click)="copyDeck($event)" class="h-10 rounded-lg border border-line bg-ink-2 px-4 text-sm font-semibold text-fg hover:border-accent disabled:opacity-40">Copy</button>
+        <button type="button" (click)="showExportDeckDialog()" class="h-10 rounded-lg border border-line bg-ink-2 px-4 text-sm font-semibold text-fg hover:border-accent disabled:opacity-40">Export</button>
+        <button type="button" (click)="getLink()" class="h-10 rounded-lg border border-line bg-ink-2 px-4 text-sm font-semibold text-fg hover:border-accent disabled:opacity-40"><i class="pi pi-link mr-1"></i> Copy link</button>
+        @if (editable || isAdmin) {
+          <button type="button" (click)="deleteDeck($event)" class="h-10 rounded-lg border border-red-500/60 bg-ink-2 px-4 text-sm font-semibold text-red-300 hover:bg-red-500/10 ml-auto">Delete</button>
+        }
       </div>
-      <ng-template #editButtons>
-        <div class="mx-auto mt-1 grid grid-cols-3 lg:grid-cols-6">
-          <button (click)="viewDeck()" pButton class="p-button-sm lg:p-button p-button-outlined" type="button" label="View"></button>
-          <button (click)="openDeck($event)" pButton class="p-button-sm lg:p-button p-button-outlined" type="button" label="Open"></button>
-          <button (click)="copyDeck($event)" pButton class="p-button-sm lg:p-button p-button-outlined" type="button" label="Copy"></button>
-          <button
-            (click)="showExportDeckDialog()"
-            pButton
-            class="p-button-sm lg:p-button p-button-outlined"
-            type="button"
-            label="Export"></button>
-          <button (click)="getLink()" pButton class="p-button-sm lg:p-button p-button-outlined" type="button" label="Get Link"></button>
-          <button
-            *ngIf="isAdmin"
-            (click)="deleteDeck($event)"
-            pButton
-            class="p-button-sm lg:p-button p-button-outlined"
-            type="button"
-            label="Delete"></button>
+
+      <section class="flex flex-wrap items-end justify-around gap-6 rounded-xl border border-line bg-ink-1 p-4">
+        <div class="flex flex-col gap-2">
+          <span class="text-xs font-semibold uppercase tracking-wider text-muted">Level curve</span>
+          <digimon-chart-containers [deck]="mainDeck"></digimon-chart-containers>
         </div>
-      </ng-template>
+        <div class="hidden flex-col gap-2 md:flex">
+          <span class="text-xs font-semibold uppercase tracking-wider text-muted">Card types</span>
+          <digimon-ddto-spread [deck]="deck" [container]="true"></digimon-ddto-spread>
+        </div>
+        <div class="hidden flex-col gap-2 md:flex">
+          <span class="text-xs font-semibold uppercase tracking-wider text-muted">Colors</span>
+          <digimon-color-spread [deck]="deck" [container]="true"></digimon-color-spread>
+        </div>
+      </section>
+
+      <div class="flex flex-col gap-4">
+        @for (group of groups; track group.title) {
+          <section class="flex flex-col gap-1">
+            <div class="flex justify-between border-b border-line px-1 pb-1">
+              <span class="text-xs font-semibold uppercase tracking-wider text-muted">{{ group.title }}</span>
+              <span class="font-mono text-xs text-muted">{{ group.count }}</span>
+            </div>
+            <div class="grid grid-cols-[repeat(auto-fill,minmax(6rem,1fr))]">
+              @for (card of group.cards; track card.id) {
+                <digimon-deck-card [edit]="false" [card]="card"></digimon-deck-card>
+              }
+            </div>
+          </section>
+        }
+      </div>
     </div>
 
     <p-confirmDialog header="Save Deck?" rejectButtonStyleClass="p-button-outlined" key="save"></p-confirmDialog>
@@ -201,6 +172,7 @@ export class DeckDialogComponent {
   cardImageOptions: DigimonCardImage[] = [];
 
   mainDeck: IDeckCard[] = [];
+  groups: DeckCardGroup[] = [];
 
   isAdmin = false;
 
@@ -216,6 +188,7 @@ export class DeckDialogComponent {
       this.editable = this.dialogStore.deck().editable;
 
       this.mainDeck = mapToDeckCards(this.deck.cards, this.digimonCardStore.cards());
+      this.groups = groupDeckCards(levelSort(this.mainDeck));
 
       this.deckFormGroup = new UntypedFormGroup({
         title: new UntypedFormControl(this.deck.title),
