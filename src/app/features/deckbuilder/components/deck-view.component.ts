@@ -1,4 +1,4 @@
-import { NgClass, NgFor, NgIf } from '@angular/common';
+import { NgClass, NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
 import { Component, effect, EventEmitter, inject, Input, Output, Signal } from '@angular/core';
 import { AccordionModule } from 'primeng/accordion';
 import { ConfirmationService, MessageService, SharedModule } from 'primeng/api';
@@ -16,10 +16,21 @@ import { WebsiteStore } from '@store';
 import { DeckCardComponent } from '../../shared/deck-card.component';
 import { DeckMetadataComponent } from './deck-metadata.component';
 import { DeckToolbarComponent } from './deck-toolbar.component';
+import { DeckStatsComponent } from './deck-stats.component';
 
 @Component({
   selector: 'digimon-deck-view',
   template: `
+    <ng-template #viewToggle>
+      <div role="group" aria-label="Deck view" class="inline-flex gap-1 rounded-lg border border-line bg-ink-0 p-1">
+        <button type="button" [attr.aria-pressed]="!listView" (click)="listView = false"
+          class="rounded-md px-3 py-1 text-sm font-semibold" [ngClass]="!listView ? 'bg-line text-fg' : 'text-muted'">Cards</button>
+        <button type="button" [attr.aria-pressed]="listView" (click)="listView = true"
+          class="rounded-md px-3 py-1 text-sm font-semibold" [ngClass]="listView ? 'bg-line text-fg' : 'text-muted'">List</button>
+      </div>
+    </ng-template>
+
+    @if (!showcase) {
     <div class="mx-auto mb-2 max-w-[760px]">
       <digimon-deck-metadata></digimon-deck-metadata>
 
@@ -29,9 +40,45 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
         (save)="saveDeck($event)"
         (hideStats)="hideStats.emit(true)"></digimon-deck-toolbar>
     </div>
+    } @else {
+      <!-- Showcase: the whole screen for the deck, laid out for screenshots -->
+      <section class="mx-3 mb-3 mt-3 flex flex-wrap items-center gap-6 rounded-xl border border-line bg-ink-1 p-5">
+        @if (leadImage()) {
+          <img [digimonImgFallback]="leadImage()" alt="" class="w-24 shrink-0 rounded-lg" />
+        }
+        <div class="flex min-w-0 flex-[999_1_26rem] flex-col gap-3">
+          <h1 class="m-0 truncate text-4xl font-bold leading-tight text-fg">{{ deck().title || 'Untitled deck' }}</h1>
+          <div class="flex flex-wrap items-center gap-2 text-sm">
+            @if (deck().color?.name) {
+              <span class="inline-flex items-center gap-1.5 rounded-full border border-line bg-ink-2 px-3 py-0.5 text-fg"><span class="h-2.5 w-2.5 rounded-full" [ngClass]="deck().color.name"></span>{{ deck().color.name }}</span>
+            }
+            @if (deck().user) {
+              <span class="rounded-full border border-line bg-ink-2 px-3 py-0.5 text-fg">by {{ deck().user }}</span>
+            }
+            <span class="rounded-full border border-line bg-ink-2 px-3 py-0.5 text-fg font-mono">{{ getCardCount(mainDeck, 'Deck') }} + {{ getCardCount(mainDeck, 'Egg') }}</span>
+            @if (displaySideDeck() && sideDeck.length) {
+              <span class="rounded-full border border-line bg-ink-2 px-3 py-0.5 text-fg font-mono">Side {{ getCardCount(sideDeck, 'All') }}</span>
+            }
+            @for (tag of deck().tags; track tag.name) {
+              <span class="rounded-full border border-line bg-ink-2 px-3 py-0.5 text-fg">{{ tag.name }}</span>
+            }
+          </div>
+          @if (deck().description) {
+            <p class="m-0 max-w-3xl whitespace-pre-wrap leading-relaxed text-muted">{{ deck().description }}</p>
+          }
+        </div>
+        <div class="flex flex-[1_1_18rem] flex-wrap items-center justify-end gap-2">
+          <button type="button" (click)="togglePool.emit()" class="inline-flex h-10 items-center gap-2 rounded-lg bg-accent px-4 text-sm font-semibold text-accent-ink"><i class="pi pi-pencil"></i> Edit deck</button>
+          <button type="button" (click)="shareImage()" class="inline-flex h-10 items-center gap-2 rounded-lg border border-line bg-ink-2 px-4 text-sm font-semibold text-fg hover:border-accent"><i class="pi pi-image"></i> Share image</button>
+          <button type="button" (click)="saveDeck($event)" class="inline-flex h-10 items-center gap-2 rounded-lg border border-line bg-ink-2 px-4 text-sm font-semibold text-fg hover:border-accent"><i class="pi pi-save"></i> Save</button>
+          <ng-container [ngTemplateOutlet]="viewToggle"></ng-container>
+        </div>
+      </section>
+    }
 
     <p-confirmpopup></p-confirmpopup>
 
+    @if (!showcase) {
     <div class="mx-3 mb-2 flex flex-wrap items-center gap-2">
       <span class="rounded-md px-2.5 py-1 font-mono text-xs" [ngClass]="countBadge(getCardCount(mainDeck, 'Deck') === 50)">
         Main {{ getCardCount(mainDeck, 'Deck') }}/50
@@ -56,13 +103,9 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
         <i [class]="poolVisible ? 'pi pi-eye-slash' : 'pi pi-eye'"></i>
         {{ poolVisible ? 'Hide pool' : 'Show pool' }}
       </button>
-      <div role="group" aria-label="Deck view" class="inline-flex gap-1 rounded-lg border border-line bg-ink-0 p-1">
-        <button type="button" [attr.aria-pressed]="!listView" (click)="listView = false"
-          class="rounded-md px-3 py-1 text-sm font-semibold" [ngClass]="!listView ? 'bg-line text-fg' : 'text-muted'">Cards</button>
-        <button type="button" [attr.aria-pressed]="listView" (click)="listView = true"
-          class="rounded-md px-3 py-1 text-sm font-semibold" [ngClass]="listView ? 'bg-line text-fg' : 'text-muted'">List</button>
-      </div>
+      <ng-container [ngTemplateOutlet]="viewToggle"></ng-container>
     </div>
+    }
 
     <ng-container>
       <p-accordion class="mx-auto" [multiple]="true" [(value)]="accordionValue">
@@ -162,6 +205,12 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
         </p-accordion-panel>
       </p-accordion>
     </ng-container>
+
+    @if (showcase && statsVisible) {
+      <section aria-label="Deck stats" class="mx-3 mb-6 mt-4 rounded-xl border border-line bg-ink-1 p-5">
+        <digimon-deck-stats [column]="true" [row]="true"></digimon-deck-stats>
+      </section>
+    }
   `,
   styleUrls: ['./deck-view.component.scss'],
   standalone: true,
@@ -178,6 +227,8 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
     ConfirmPopupModule,
     NgClass,
     ImgFallbackDirective,
+    NgTemplateOutlet,
+    DeckStatsComponent,
   ],
   providers: [MessageService],
 })
@@ -188,6 +239,9 @@ export class DeckViewComponent {
   @Output() hideStats = new EventEmitter<boolean>();
   @Output() togglePool = new EventEmitter<void>();
   @Input() poolVisible = true;
+  // Pool hidden on a wide screen: hero header and stats below the cards
+  @Input() showcase = false;
+  @Input() statsVisible = true;
 
   mongoBackendService = inject(MongoBackendService);
   confirmationService = inject(ConfirmationService);
@@ -328,6 +382,10 @@ export class DeckViewComponent {
   sectionPlacement(title: string): string {
     if (!title) return 'col-span-2';
     return title === 'Digimon' ? 'col-start-1 row-start-1 row-span-4' : 'col-start-2 w-[28.5rem] max-w-full';
+  }
+
+  leadImage(): string | undefined {
+    return this.digimonCardStore.cardsMap().get(this.deck().imageCardId)?.cardImage ?? this.mainDeck[0]?.cardImage;
   }
 
   countBadge(ok: boolean): string {
