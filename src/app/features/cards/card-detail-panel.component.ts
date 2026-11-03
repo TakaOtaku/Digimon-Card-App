@@ -1,9 +1,8 @@
 import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
 import { ImgFallbackDirective } from '@directives';
-import { replaceWithImageTags, withoutJ } from '@functions';
+import { replaceWithImageTags } from '@functions';
 import { DigimonCard } from '@models';
-import { DialogStore, SaveStore, WebsiteStore } from '@store';
-import { MessageService } from 'primeng/api';
+import { DialogStore } from '@store';
 
 // Wiki data uses '-' for "no value"
 const filled = (value?: string) => !!value && value.trim() !== '-' && value.trim() !== '';
@@ -44,22 +43,6 @@ const filled = (value?: string) => !!value && value.trim() !== '-' && value.trim
           </section>
         }
 
-        <div class="flex items-center gap-2">
-          <button type="button" (click)="addToDeck(card)" class="h-11 flex-1 rounded-lg bg-accent font-semibold text-accent-ink">Add to deck</button>
-          <button
-            type="button"
-            (click)="setOwned(card, owned() - 1)"
-            [disabled]="owned() === 0"
-            aria-label="Owned: remove one"
-            class="h-11 w-11 rounded-lg border border-line bg-ink-2 text-fg disabled:opacity-40">
-            −
-          </button>
-          <span class="min-w-[4.5rem] text-center font-mono text-sm text-fg">Owned {{ owned() }}</span>
-          <button type="button" (click)="setOwned(card, owned() + 1)" aria-label="Owned: add one" class="h-11 w-11 rounded-lg border border-line bg-ink-2 text-fg">
-            +
-          </button>
-        </div>
-
         <button type="button" (click)="openDialog(card)" class="self-start text-sm text-accent hover:underline">Full details, rulings and prices</button>
       </div>
     } @else {
@@ -73,16 +56,8 @@ const filled = (value?: string) => !!value && value.trim() !== '-' && value.trim
 export class CardDetailPanelComponent {
   card = input<DigimonCard | null>(null);
 
-  private saveStore = inject(SaveStore);
-  private websiteStore = inject(WebsiteStore);
   private dialogStore = inject(DialogStore);
-  private messageService = inject(MessageService);
 
-  owned = computed(() => {
-    const card = this.card();
-    if (!card) return 0;
-    return this.saveStore.collection().find((c) => c.id === withoutJ(card.id))?.count ?? 0;
-  });
 
   subtitle = computed(() => {
     const card = this.card()!;
@@ -115,14 +90,7 @@ export class CardDetailPanelComponent {
       .map((e) => ({ label: e.label, html: replaceWithImageTags(e.text) }));
   });
 
-  addToDeck(card: DigimonCard) {
-    this.websiteStore.addCardToDeck(card.id);
-    this.messageService.add({ severity: 'success', summary: 'Added to deck', detail: `${card.name.english} is in your open deck.` });
-  }
 
-  setOwned(card: DigimonCard, count: number) {
-    this.saveStore.updateCard(withoutJ(card.id), Math.max(0, count));
-  }
 
   openDialog(card: DigimonCard) {
     this.dialogStore.updateViewCardDialog({ show: true, card, width: '50vw' });
