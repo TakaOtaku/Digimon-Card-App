@@ -51,19 +51,19 @@ export class CollectionCircleComponent {
       });
     }
 
-    const setCardsCollected = setCards.filter((card: DigimonCard) =>
-      collection.find((colCard) => {
-        if (colCard.id !== card.id) {
-          return false;
-        }
+    // One lookup per card instead of scanning the whole collection for each of ~4.5k cards (froze the profile page)
+    const counts = new Map<string, number>();
+    for (const colCard of collection) {
+      if (!counts.has(colCard.id)) counts.set(colCard.id, colCard.count);
+    }
 
-        if (card.version !== 'Normal') {
-          return colCard.count >= settings.aaCollectionMinimum;
-        }
-
-        return colCard.count >= settings.collectionMinimum;
-      }),
-    );
+    const setCardsCollected = setCards.filter((card: DigimonCard) => {
+      const count = counts.get(card.id);
+      if (count === undefined) {
+        return false;
+      }
+      return count >= (card.version !== 'Normal' ? settings.aaCollectionMinimum : settings.collectionMinimum);
+    });
 
     const collectionColors = this.getColorCardArray(setCardsCollected);
 

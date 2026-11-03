@@ -26,21 +26,24 @@ import { NgIf } from '@angular/common';
         </div>
       </div>
 
-      <div class="hidden flex-row gap-3 sm:flex">
-        @for (circle of collectionCircles; track circle.label) {
-          <div class="flex flex-col items-center gap-1">
-            <digimon-collection-circle [type]="$any(circle.label)"></digimon-collection-circle>
-            <span class="text-xs font-semibold uppercase tracking-wider text-muted">{{ circle.label === 'P-' ? 'P' : circle.label }}</span>
-          </div>
-        }
-      </div>
-
-      <p-carousel class="w-full sm:hidden" [value]="collectionCircles" [numVisible]="1" [circular]="true" [autoplayInterval]="10000">
-        <ng-template let-circle pTemplate="item">
-          <digimon-collection-circle [type]="circle.label"></digimon-collection-circle>
-          <div class="mx-auto w-full text-center font-bold">{{ circle.label }}</div>
-        </ng-template>
-      </p-carousel>
+      <!-- Render only one layout: each circle is a Chart.js canvas, and CSS-hidden ones still cost load time -->
+      @if (!smallScreen) {
+        <div class="flex flex-row gap-3">
+          @for (circle of collectionCircles; track circle.label) {
+            <div class="flex flex-col items-center gap-1">
+              <digimon-collection-circle [type]="$any(circle.label)"></digimon-collection-circle>
+              <span class="text-xs font-semibold uppercase tracking-wider text-muted">{{ circle.label === 'P-' ? 'P' : circle.label }}</span>
+            </div>
+          }
+        </div>
+      } @else {
+        <p-carousel class="w-full" [value]="collectionCircles" [numVisible]="1" [circular]="true" [autoplayInterval]="10000">
+          <ng-template let-circle pTemplate="item">
+            <digimon-collection-circle [type]="circle.label"></digimon-collection-circle>
+            <div class="mx-auto w-full text-center font-bold">{{ circle.label }}</div>
+          </ng-template>
+        </p-carousel>
+      }
 
       <div class="flex flex-wrap gap-2">
         <button type="button" (click)="openCollection()" class="h-11 rounded-lg bg-accent px-4 font-semibold text-accent-ink">View collection</button>
@@ -68,6 +71,8 @@ export class UserStatsComponent {
   saveStore = inject(SaveStore);
 
   collectionCircles = [{ label: 'BT' }, { label: 'EX' }, { label: 'ST' }, { label: 'P-' }];
+  // Below Tailwind's sm breakpoint (640px); the server renders the wide layout
+  smallScreen = typeof window !== 'undefined' && window.innerWidth < 640;
 
   ownedCards(): number {
     return (this.save?.collection ?? []).filter((card) => card.count > 0).length;

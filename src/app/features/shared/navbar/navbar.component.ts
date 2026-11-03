@@ -49,5 +49,6 @@ export class NavbarComponent {
     { url: '/deckbuilder', label: 'Build', icon: 'pi-pencil' },
     { url: '/decks', label: 'Decks', icon: 'pi-table' },
     { url: '/collection', label: 'Collection', icon: 'pi-folder' },
+    { url: '/user', label: 'Profile', icon: 'pi-user' },
   ];
 }
