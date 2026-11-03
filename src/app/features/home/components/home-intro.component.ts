@@ -77,9 +77,9 @@ import { HomeMetaComponent } from './home-meta.component';
             who want to help maintain the website, design new features and implement them.
           </p>
           <div class="flex flex-wrap items-center gap-4 text-sm">
-            <a href="https://www.paypal.com/donate/?hosted_button_id=WLM58Q785D4H4" target="_blank">
-              <img src="assets/images/blue.png" alt="Donate with PayPal" class="h-11" width="183" height="44" />
-            </a>
+            <button type="button" (click)="openSupport()" class="inline-flex h-11 items-center gap-2 rounded-lg bg-accent px-5 font-semibold text-accent-ink">
+              <i class="pi pi-heart-fill"></i> Support digimoncard.app
+            </button>
             <button type="button" (click)="showChangelog()" class="text-accent hover:underline">Changelog</button>
             <a class="text-accent no-underline hover:underline" href="https://discordapp.com/users/189436886744432640" target="_blank">Discord</a>
             <a class="text-accent no-underline hover:underline" href="https://github.com/TakaOtaku/Digimon-Card-App" target="_blank">GitHub</a>
@@ -128,6 +128,10 @@ export class HomeIntroComponent {
     { name: 'Digimon TCG DACH', url: 'https://discord.gg/digimon-tcg-dach-759562127513223168', img: 'assets/images/partners/dach.png' },
     { name: 'East', url: 'https://www.youtube.com/East_ML', img: 'assets/images/partners/east.jpg' },
   ];
+
+  openSupport() {
+    this.dialogStore.updateSupportDialog(true);
+  }
 
   showChangelog() {
     this.dialogStore.updateChangelogDialog(true);

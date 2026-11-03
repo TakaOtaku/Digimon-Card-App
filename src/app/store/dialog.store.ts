@@ -22,6 +22,7 @@ interface ViewCardDialog {
 
 type Dialog = {
   changelog: boolean;
+  support: boolean;
   settings: boolean;
   viewCard: ViewCardDialog;
   exportDeck: ExportDeckDialog;
@@ -30,6 +31,7 @@ type Dialog = {
 
 const initialState: Dialog = {
   changelog: false,
+  support: false,
   settings: false,
   viewCard: {
     show: false,
@@ -54,6 +56,9 @@ export const DialogStore = signalStore(
   withMethods((store) => ({
     updateChangelogDialog(changelog: boolean): void {
       patchState(store, (state) => ({ changelog }));
+    },
+    updateSupportDialog(support: boolean): void {
+      patchState(store, () => ({ support }));
     },
     updateSettingsDialog(settings: boolean): void {
       patchState(store, (state) => ({ settings }));

@@ -57,7 +57,7 @@ import { MenuItem } from 'primeng/api';
           <button type="button" (click)="openSettings(); done.emit()" class="flex h-12 items-center gap-3 px-4 text-left text-fg">
             <i class="pi pi-cog text-muted"></i><span class="flex-1">Settings</span><i class="pi pi-chevron-right text-xs text-muted"></i>
           </button>
-          <button type="button" (click)="supportDialog = true" class="flex h-12 items-center gap-3 px-4 text-left text-fg">
+          <button type="button" (click)="openSupport(); done.emit()" class="flex h-12 items-center gap-3 px-4 text-left text-fg">
             <i class="pi pi-heart-fill text-pink-400"></i><span class="flex-1">Support digimoncard.app</span><i class="pi pi-chevron-right text-xs text-muted"></i>
           </button>
           <button type="button" (click)="showChangelog(); done.emit()" class="flex h-12 items-center gap-3 px-4 text-left text-fg">
@@ -152,7 +152,7 @@ import { MenuItem } from 'primeng/api';
       <div class="order-1 ml-3 flex flex-row items-center gap-2">
         <button
           type="button"
-          (click)="supportDialog = true"
+          (click)="openSupport()"
           aria-label="Support digimoncard.app"
           class="inline-flex h-10 items-center gap-2 rounded-lg border border-line bg-ink-2 px-3 text-sm font-semibold text-fg hover:border-pink-400">
           <i class="pi pi-heart-fill text-pink-400"></i><span class="hidden 2xl:inline">Support</span>
@@ -185,38 +185,6 @@ import { MenuItem } from 'primeng/api';
       </div>
     }
 
-    <p-dialog
-      header="Support digimoncard.app"
-      [(visible)]="supportDialog"
-      [modal]="true"
-      [dismissableMask]="true"
-      [resizable]="false"
-      appendTo="body"
-      styleClass="w-[95vw] max-w-md">
-      <div class="flex flex-col gap-4 text-fg">
-        <p class="m-0 leading-relaxed">
-          digimoncard.app is free, has no ads and is built in my spare time. Hosting, the card image storage and the database are paid out of
-          pocket, so every coffee helps keep it running and growing.
-        </p>
-        <a
-          href="https://ko-fi.com/takaotaku"
-          target="_blank"
-          rel="noopener"
-          class="flex h-12 items-center justify-center gap-2 rounded-lg bg-accent font-semibold text-accent-ink no-underline">
-          <i class="pi pi-heart-fill"></i> Support on Ko-fi
-        </a>
-        <a
-          href="https://www.paypal.com/donate/?hosted_button_id=WLM58Q785D4H4"
-          target="_blank"
-          rel="noopener"
-          class="flex h-11 items-center justify-center gap-2 rounded-lg border border-line bg-ink-2 font-semibold text-fg no-underline hover:border-accent">
-          <i class="pi pi-paypal"></i> Donate with PayPal
-        </a>
-        <p class="m-0 text-sm text-muted">
-          Can't donate? Sharing your decks, reporting bugs on Discord or contributing on GitHub helps just as much.
-        </p>
-      </div>
-    </p-dialog>
   `,
   standalone: true,
   imports: [NgClass, FontAwesomeModule, ConfirmPopupModule, DialogModule, ButtonModule, MenuModule],
@@ -226,7 +194,6 @@ export class NavLinksComponent {
   // Sheet mode: tell the host to close after any action
   @Output() done = new EventEmitter<void>();
   readonly version = '6.0.0';
-  supportDialog = false;
   sheetLinks = [
     { url: '/', label: 'Home', icon: 'pi-home' },
     { url: '/cards', label: 'Cards', icon: 'pi-clone' },
@@ -304,6 +271,10 @@ export class NavLinksComponent {
 
   openSettings() {
     this.dialogStore.updateSettingsDialog(true);
+  }
+
+  openSupport() {
+    this.dialogStore.updateSupportDialog(true);
   }
 
   showChangelog() {

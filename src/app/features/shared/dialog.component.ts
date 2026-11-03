@@ -73,6 +73,40 @@ import { DialogStore } from '../../store/dialog.store';
       styleClass="w-[95vw] max-w-3xl">
       <digimon-changelog-dialog></digimon-changelog-dialog>
     </p-dialog>
+
+    <p-dialog
+      header="Support digimoncard.app"
+      [visible]="supportDialog()"
+      (visibleChange)="$event || closeSupportDialog()"
+      (onHide)="closeSupportDialog()"
+      [modal]="true"
+      [dismissableMask]="true"
+      [resizable]="false"
+      styleClass="w-[95vw] max-w-md">
+      <div class="flex flex-col gap-4 text-fg">
+        <p class="m-0 leading-relaxed">
+          digimoncard.app is free, has no ads and is built in my spare time. Hosting, the card image storage and the database are paid out of
+          pocket, so every coffee helps keep it running and growing.
+        </p>
+        <a
+          href="https://ko-fi.com/takaotaku"
+          target="_blank"
+          rel="noopener"
+          class="flex h-12 items-center justify-center gap-2 rounded-lg bg-accent font-semibold text-accent-ink no-underline">
+          <i class="pi pi-heart-fill"></i> Support on Ko-fi
+        </a>
+        <a
+          href="https://www.paypal.com/donate/?hosted_button_id=WLM58Q785D4H4"
+          target="_blank"
+          rel="noopener"
+          class="flex h-11 items-center justify-center gap-2 rounded-lg border border-line bg-ink-2 font-semibold text-fg no-underline hover:border-accent">
+          <i class="pi pi-paypal"></i> Donate with PayPal
+        </a>
+        <p class="m-0 text-sm text-muted">
+          Can't donate? Sharing your decks, reporting bugs on Discord or contributing on GitHub helps just as much.
+        </p>
+      </div>
+    </p-dialog>
   `,
   standalone: true,
   //changeDetection: ChangeDetectionStrategy.OnPush,
@@ -94,6 +128,7 @@ export class DialogComponent {
   exportDeckDialog = computed(() => this.dialogStore.exportDeck().show);
   deckDialog = computed(() => this.dialogStore.deck().show);
   changelogDialog = computed(() => this.dialogStore.changelog());
+  supportDialog = computed(() => this.dialogStore.support());
 
   closeSettingsDialog() {
     this.dialogStore.updateSettingsDialog(false);
@@ -109,5 +144,8 @@ export class DialogComponent {
   }
   closeChangelogDialog() {
     this.dialogStore.updateChangelogDialog(false);
+  }
+  closeSupportDialog() {
+    this.dialogStore.updateSupportDialog(false);
   }
 }
