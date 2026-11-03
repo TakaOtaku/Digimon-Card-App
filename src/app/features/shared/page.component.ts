@@ -10,7 +10,7 @@ import { BlockableUI } from 'primeng/api';
       ngClass="{{ flex === 'row' ? 'flex-row' : 'flex-col' }}"
       class="overflow-y-auto overflow-x-hidden
       flex items-center justify-center relative
-      h-[calc(100vh-7.5rem)] md:h-[calc(100vh-5rem)]
+      h-[calc(var(--app-vh)-7.5rem)] md:h-[calc(var(--app-vh)-5rem)]
       w-screen">
       <ng-content></ng-content>
     </div>

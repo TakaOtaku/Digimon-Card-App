@@ -8,6 +8,12 @@
 @import 'primeicons/primeicons.css';
 
 :root {
+  // Visible viewport height: iOS counts 100vh with the toolbars hidden, so page bottoms sat under Chrome's bottom bar
+  --app-vh: 100vh;
+  @supports (height: 100dvh) {
+    --app-vh: 100dvh;
+  }
+
   // Design tokens ("Digivice Dark"); hex copies live in digimon-preset.ts
   --dc-ink-0: #0b111b;
   --dc-ink-1: #111a28;

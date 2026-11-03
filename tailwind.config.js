@@ -1,6 +1,8 @@
 module.exports = {
   mode: 'jit',
   important: true,
+  // hover: only on real pointers; on iOS a hover style that reveals content swallowed the first tap
+  future: { hoverOnlyWhenSupported: true },
   content: [
     './src/**/*.{html,ts,scss,css}',
     './node_modules/tw-elements/dist/js/**/*.js',

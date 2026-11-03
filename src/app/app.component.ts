@@ -25,12 +25,12 @@ import { NavbarComponent } from './features/shared/navbar/navbar.component';
 
       @if (saveLoaded()) {
         <div
-          class="min-h-[calc(100vh-3.5rem)] md:min-h-[calc(100vh-5rem)] w-[100vw] pb-16 md:pb-0
+          class="min-h-[calc(var(--app-vh)-3.5rem)] md:min-h-[calc(var(--app-vh)-5rem)] w-[100vw] pb-16 md:pb-0
         flex justify-center items-center">
           <router-outlet></router-outlet>
         </div>
       } @else {
-        <div class="h-[calc(100vh-58px)] w-screen"></div>
+        <div class="h-[calc(var(--app-vh)-58px)] w-screen"></div>
         <p-blockUI [blocked]="!saveLoaded()"></p-blockUI>
         <p-progressSpinner class="absolute left-1/2 top-1/2 z-[5000] -translate-x-1/2 -translate-y-1/2 transform"></p-progressSpinner>
       }

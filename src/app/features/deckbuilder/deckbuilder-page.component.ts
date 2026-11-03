@@ -38,7 +38,7 @@ import { DeckViewComponent } from './components/deck-view.component';
           [bottomInset]="true"
           [filterBoxEnabled]="false"
           [ngClass]="{ 'w-3/5 max-w-[60%] xl:w-auto xl:max-w-none xl:flex-1 xl:min-w-0': deckView, 'w-full': !deckView }"
-          class="border-l max-h-full border-slate-200 flex flex-row  h-[calc(100vh-7.5rem)] md:h-[calc(100vh-5rem)]"></digimon-pagination-card-list>
+          class="border-l max-h-full border-slate-200 flex flex-row  h-[calc(var(--app-vh)-7.5rem)] md:h-[calc(var(--app-vh)-5rem)]"></digimon-pagination-card-list>
 
 
         @if (statsDisplay && deckView) {

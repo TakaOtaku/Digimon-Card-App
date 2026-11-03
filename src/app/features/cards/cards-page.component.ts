@@ -10,7 +10,7 @@ import { CardDetailPanelComponent } from './card-detail-panel.component';
   selector: 'digimon-cards-page',
   template: `
     <digimon-page>
-      <div class="flex w-screen h-[calc(100vh-7.5rem)] md:h-[calc(100vh-5rem)]">
+      <div class="flex w-screen h-[calc(var(--app-vh)-7.5rem)] md:h-[calc(var(--app-vh)-5rem)]">
         <!-- collectionOnly: a click shows the card instead of adding it to a deck -->
         <digimon-pagination-card-list
           [collectionOnly]="true"
