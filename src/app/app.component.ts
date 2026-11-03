@@ -214,6 +214,6 @@ export class AppComponent {
       return;
     }
 
-    this.digimonCardStore.updateCards(cardSet as CARDSET);
+    this.digimonCardStore.updateCards(cardSet as CARDSET).catch((error) => console.error('Loading the card list failed:', error));
   }
 }

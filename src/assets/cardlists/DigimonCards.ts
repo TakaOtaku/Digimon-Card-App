@@ -1,7 +1,5 @@
 import { CARDSET } from '@models';
 import { DigimonCard } from '@models';
-import DigimonCardsJsonENG from './PreparedDigimonCardsENG.json';
-import DigimonCardsJsonJAP from './PreparedDigimonCardsJAP.json';
 import { environment } from '../../environments/environment';
 
 const CARD_IMAGE_PREFIX = 'assets/images/cards/';
@@ -15,18 +13,15 @@ function withCdnImage(card: DigimonCard): DigimonCard {
   return card;
 }
 
-export function setupDigimonCards(cardset: CARDSET): DigimonCard[] {
-  return cardset === CARDSET.English ? setupJsonENG() : setupJsonJAP();
-}
-
-function setupJsonENG(): DigimonCard[] {
-  const digimonCards: DigimonCard[] = [...DigimonCardsJsonENG];
-  return digimonCards.filter((card) => card.name.japanese && card.name.japanese.trim() !== '').map(withCdnImage);
-}
-
-function setupJsonJAP(): DigimonCard[] {
-  const japCards: DigimonCard[] = [...DigimonCardsJsonJAP];
-  return japCards.filter((card) => card.name.japanese && card.name.japanese.trim() !== '').map(withCdnImage);
+// Fetched as plain JSON instead of bundled: both languages compiled into the JS (~27 MB) blocked taps at startup
+export async function setupDigimonCards(cardset: CARDSET): Promise<DigimonCard[]> {
+  const file = cardset === CARDSET.English ? 'PreparedDigimonCardsENG.json' : 'PreparedDigimonCardsJAP.json';
+  const response = await fetch('assets/cardlists/' + file);
+  if (!response.ok) {
+    throw new Error(`Loading ${file} failed: ${response.status}`);
+  }
+  const cards: DigimonCard[] = await response.json();
+  return cards.filter((card) => card.name.japanese && card.name.japanese.trim() !== '').map(withCdnImage);
 }
 
 export function setupDigimonCardMap(cards: DigimonCard[]): Map<string, DigimonCard> {
@@ -35,19 +30,6 @@ export function setupDigimonCardMap(cards: DigimonCard[]): Map<string, DigimonCa
     digimonCardMap.set(digimonCard.id, digimonCard);
   });
   return digimonCardMap;
-}
-
-function mapJsonToEngCardList(): Map<string, DigimonCard> {
-  const cards: Map<string, DigimonCard> = new Map<string, DigimonCard>();
-
-  const digimonCards: DigimonCard[] = [...DigimonCardsJsonENG];
-  digimonCards
-    .filter((card) => card.name.japanese && card.name.japanese.trim() !== '')
-    .forEach((digimonCard: DigimonCard) => {
-      cards.set(digimonCard.id, withCdnImage(digimonCard));
-    });
-
-  return cards;
 }
 
 /* =========================

@@ -18,20 +18,27 @@ export const DigimonCardStore = signalStore(
   { providedIn: 'root' },
   withState(initialState),
 
-  withMethods((store) => ({
-    updateCards(cardset: CARDSET): void {
-      const cards = setupDigimonCards(cardset);
-      const filteredCards = cards;
-      const cardsMap = setupDigimonCardMap(cards);
-      patchState(store, (state) => ({
-        ...state,
-        cards,
-        filteredCards,
-        cardsMap,
-      }));
-    },
-    updateFilteredCards(filteredCards: DigimonCard[]): void {
-      patchState(store, (state) => ({ filteredCards }));
-    },
-  })),
+  withMethods((store) => {
+    let requestedCardset: CARDSET | null = null;
+
+    return {
+      async updateCards(cardset: CARDSET): Promise<void> {
+        requestedCardset = cardset;
+        const cards = await setupDigimonCards(cardset);
+        // A language switch while this one was loading wins
+        if (requestedCardset !== cardset) return;
+        const filteredCards = cards;
+        const cardsMap = setupDigimonCardMap(cards);
+        patchState(store, (state) => ({
+          ...state,
+          cards,
+          filteredCards,
+          cardsMap,
+        }));
+      },
+      updateFilteredCards(filteredCards: DigimonCard[]): void {
+        patchState(store, (state) => ({ filteredCards }));
+      },
+    };
+  }),
 );
