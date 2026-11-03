@@ -1,8 +1,8 @@
 import { NgClass, NgForOf, NgIf, NgStyle } from '@angular/common';
 import { ChangeDetectorRef, Component, effect, HostListener, inject } from '@angular/core';
 import { ImgFallbackDirective } from '@directives';
-import { formatId, isDigimonType, isOptionType, withoutJ } from '@functions';
-import { ColorMap, DigimonCard, ICountCard, IDeck, RarityAbbreviationMap, replacements } from '@models';
+import { formatId, isDigimonType, isOptionType, replaceWithImageTags, withoutJ } from '@functions';
+import { ColorMap, DigimonCard, ICountCard, IDeck, RarityAbbreviationMap } from '@models';
 import { DialogStore, DigimonCardStore, SaveStore, WebsiteStore } from '@store';
 import { CardMarketService } from '@services';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
@@ -395,16 +395,7 @@ export class ViewCardDialogComponent {
     this.setupView();
   }
 
-  replaceWithImageTags(effect: string): string {
-    let replacedText = effect;
-    for (const [pattern, imageTag, tooltip] of replacements) {
-      replacedText = replacedText.replace(
-        pattern,
-        `<img class="inline h-4 tooltip-keyword" data-tooltip="${tooltip}" src="assets/images/keywords/${imageTag}.webp"/>`,
-      );
-    }
-    return replacedText;
-  }
+  replaceWithImageTags = replaceWithImageTags;
 
   closeViewCard() {
     this.dialogStore.showViewCardDialog(false);

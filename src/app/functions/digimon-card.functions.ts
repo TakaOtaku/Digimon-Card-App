@@ -1,4 +1,4 @@
-import { DigimonCard, dummyCard, ICountCard, IDeck, IDeckCard, ISelectItem, ITag, tagsList } from '../../models';
+import { DigimonCard, dummyCard, ICountCard, IDeck, IDeckCard, ISelectItem, ITag, replacements, tagsList } from '../../models';
 import { cardsAllow50 } from '../../models/data/cards-50.data';
 import { ReleaseOrder } from '../../models/data/release-order.data';
 import { ColorOrderMap, DeckColorMap } from '../../models/maps/color.map';
@@ -407,6 +407,18 @@ export function setCompletion(cards: DigimonCard[], collection: ICountCard[], mi
   });
 
   return ReleaseOrder.filter((set) => bySet.has(set)).map((set) => bySet.get(set)!);
+}
+
+/** Swaps effect keywords like [On Play] for their icon images (rendered via innerHTML). */
+export function replaceWithImageTags(effect: string): string {
+  let replacedText = effect;
+  for (const [pattern, imageTag, tooltip] of replacements) {
+    replacedText = replacedText.replace(
+      pattern,
+      `<img class="inline h-4 tooltip-keyword" data-tooltip="${tooltip}" src="assets/images/keywords/${imageTag}.webp"/>`,
+    );
+  }
+  return replacedText;
 }
 
 export function withoutJ(id: string): string {

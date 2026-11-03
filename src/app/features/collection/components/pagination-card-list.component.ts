@@ -1,5 +1,5 @@
 import { NgIf } from '@angular/common';
-import { ChangeDetectionStrategy, Component, effect, inject, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, EventEmitter, inject, Input, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { DataViewModule } from 'primeng/dataview';
 import { DialogModule } from 'primeng/dialog';
@@ -95,6 +95,8 @@ export class PaginationCardListComponent {
   @Input() collectionOnly: boolean = false;
   @Input() initialWidth = 5.6;
   @Input() inputCollection: ICountCard[] = [];
+  @Input() dialogOnView = true;
+  @Output() cardViewed = new EventEmitter<DigimonCard>();
 
   digimonCardStore = inject(DigimonCardStore);
   websiteStore = inject(WebsiteStore);
@@ -162,6 +164,8 @@ export class PaginationCardListComponent {
   }
 
   viewCard(card: DigimonCard) {
+    this.cardViewed.emit(card);
+    if (!this.dialogOnView) return;
     this.dialogStore.updateViewCardDialog({
       show: true,
       card,
