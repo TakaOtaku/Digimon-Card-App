@@ -10,7 +10,7 @@ import { DeckColorMap, DRAG, IDeck, IDeckCard, IDraggedCard, ISave } from '@mode
 import { colorSort, compareIDs, DeckCardGroup, groupDeckCards, levelSort, setColors, setTags } from '@functions';
 import { ImgFallbackDirective } from '@directives';
 import { MongoBackendService } from '@services';
-import { DigimonCardStore } from '@store';
+import { DialogStore, DigimonCardStore } from '@store';
 import { SaveStore } from '@store';
 import { WebsiteStore } from '@store';
 import { DeckCardComponent } from '../../shared/deck-card.component';
@@ -44,9 +44,15 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
       }
       <button
         type="button"
+        (click)="shareImage()"
+        class="ml-auto hidden h-9 items-center gap-2 rounded-lg border border-line bg-ink-2 px-3 text-sm font-semibold text-fg hover:border-accent lg:inline-flex">
+        <i class="pi pi-image"></i> Share image
+      </button>
+      <button
+        type="button"
         (click)="togglePool.emit()"
         [attr.aria-pressed]="!poolVisible"
-        class="ml-auto hidden h-9 items-center gap-2 rounded-lg border border-line bg-ink-2 px-3 text-sm font-semibold text-fg hover:border-accent lg:inline-flex">
+        class="hidden h-9 items-center gap-2 rounded-lg border border-line bg-ink-2 px-3 text-sm font-semibold text-fg hover:border-accent lg:inline-flex">
         <i [class]="poolVisible ? 'pi pi-eye-slash' : 'pi pi-eye'"></i>
         {{ poolVisible ? 'Hide pool' : 'Show pool' }}
       </button>
@@ -180,6 +186,7 @@ export class DeckViewComponent {
   messageService = inject(MessageService);
 
   saveStore = inject(SaveStore);
+  private dialogStore = inject(DialogStore);
   websiteStore = inject(WebsiteStore);
   digimonCardStore = inject(DigimonCardStore);
 
@@ -304,6 +311,10 @@ export class DeckViewComponent {
       this.sideDeck = levelSort(this.sideDeck);
     }
     this.groups = groupDeckCards(this.mainDeck);
+  }
+
+  shareImage() {
+    this.dialogStore.updateExportDeckDialog({ show: true, deck: this.deck(), mode: 'IMAGE' });
   }
 
   countBadge(ok: boolean): string {

@@ -31,7 +31,8 @@ import { DialogStore } from '../../store/dialog.store';
       [modal]="true"
       [dismissableMask]="true"
       [resizable]="false"
-      styleClass="w-full h-full max-w-6xl min-h-[500px]"
+      header="Export deck"
+      styleClass="w-[95vw] max-w-3xl"
       [baseZIndex]="10000">
       <digimon-export-deck-dialog></digimon-export-deck-dialog>
     </p-dialog>

@@ -2,9 +2,7 @@ import { NgClass, NgIf } from '@angular/common';
 import { Component, OnInit, effect, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { saveAs } from 'file-saver';
-import { ButtonModule } from 'primeng/button';
-import { TextareaModule } from 'primeng/textarea';
-import { SelectButtonModule } from 'primeng/selectbutton';
+import { MessageService } from 'primeng/api';
 import { ColorsWithoutMulti, DigimonCard, IDeck } from '../../../../models';
 import { environment } from '../../../../environments/environment';
 import { compareIDs, formatId, levelSort, mapToDeckCards } from '../../../functions';
@@ -14,70 +12,77 @@ import { DigimonCardStore } from '../../../store/digimon-card.store';
 @Component({
   selector: 'digimon-export-deck-dialog',
   template: `
-    <p-selectButton [options]="exportList" [(ngModel)]="exportType" (onOptionClick)="changeExportType($event)"></p-selectButton>
+    <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-2">
+        <span class="text-xs font-semibold uppercase tracking-wider text-muted">Format</span>
+        <div role="group" aria-label="Export format" class="flex flex-wrap gap-1">
+          @for (type of exportList; track type) {
+            <button
+              type="button"
+              (click)="exportType = type; changeExportType({ option: type })"
+              [attr.aria-pressed]="exportType === type"
+              class="h-9 rounded-full border px-4 text-sm font-semibold"
+              [ngClass]="exportType === type ? 'border-accent bg-ink-2 text-accent' : 'border-line bg-ink-2 text-fg'">
+              {{ formatLabels[type] ?? type }}
+            </button>
+          }
+        </div>
+      </div>
 
-    <!-- Order Selection Button Group (only for TEXT export) -->
-    <div *ngIf="exportType === 'TEXT'" class="mt-3">
-      <label class="block text-sm font-medium mb-2">Export Order:</label>
-      <p-selectButton
-        [options]="orderOptions"
-        [(ngModel)]="selectedOrder"
-        (onChange)="onOrderChange()"
-        optionLabel="label"
-        optionValue="value">
-      </p-selectButton>
-    </div>
+      <div *ngIf="exportType === 'TEXT'" class="flex flex-col gap-2">
+        <span class="text-xs font-semibold uppercase tracking-wider text-muted">Line order</span>
+        <div role="group" aria-label="Line order" class="flex flex-wrap gap-1">
+          @for (order of orderOptions; track order.value) {
+            <button
+              type="button"
+              (click)="selectedOrder = order.value; onOrderChange()"
+              [attr.aria-pressed]="selectedOrder === order.value"
+              class="h-8 rounded-full border px-3 font-mono text-xs"
+              [ngClass]="selectedOrder === order.value ? 'border-accent bg-ink-2 text-accent' : 'border-line bg-ink-2 text-fg'">
+              {{ order.label }}
+            </button>
+          }
+        </div>
+      </div>
 
-    <div *ngIf="exportType !== 'IMAGE'">
-      <textarea
-        #textAreaElement
-        pInputTextarea
-        id="text-imports"
-        class="border-black-500 min-h-[200px] min-w-full border-2"
-        [(ngModel)]="deckText"></textarea>
-    </div>
+      <label *ngIf="exportType !== 'IMAGE'" class="flex flex-col gap-1">
+        <span class="text-xs font-semibold uppercase tracking-wider text-muted">Deck list</span>
+        <textarea #textAreaElement id="text-imports" class="min-h-[240px] w-full rounded-lg border border-line bg-ink-0 p-3 font-mono text-sm text-fg outline-none focus:border-accent" [(ngModel)]="deckText"></textarea>
+      </label>
 
-    <div [ngClass]="{ hidden: exportType !== 'IMAGE' }">
-      <canvas #Canvas id="Canvas" width="640" height="360" (contextmenu)="downloadImage()"></canvas>
-      <canvas #HDCanvas id="HDCanvas" width="1920" height="1080" class="hidden"></canvas>
-      <canvas #TTSCanvas id="TTS" width="7440" height="6240" class="hidden"></canvas>
-      <p-selectButton
-        class="Colors mt-3"
-        [options]="colors"
-        [(ngModel)]="selectedColor"
-        (onChange)="setExportTypeIMAGE()"
-        [multiple]="false">
-        <ng-template let-color>
-          <i
-            class="pi"
-            [ngClass]="{
-              'pi-check': colorChecked(color),
-              'pi-times': !colorChecked(color),
-            }"></i>
-        </ng-template>
-      </p-selectButton>
-    </div>
+      <div [ngClass]="{ hidden: exportType !== 'IMAGE' }" class="flex flex-col gap-3">
+        <canvas #Canvas id="Canvas" width="640" height="360" class="w-full rounded-lg border border-line" (contextmenu)="downloadImage()"></canvas>
+        <canvas #HDCanvas id="HDCanvas" width="1920" height="1080" class="hidden"></canvas>
+        <canvas #TTSCanvas id="TTS" width="7440" height="6240" class="hidden"></canvas>
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="mr-1 text-xs font-semibold uppercase tracking-wider text-muted">Background</span>
+          @for (color of colors; track color) {
+            <button
+              type="button"
+              [attr.aria-label]="color"
+              [attr.aria-pressed]="colorChecked(color)"
+              (click)="selectedColor = color; setExportTypeIMAGE()"
+              class="h-8 w-8 rounded-full border-0"
+              [ngClass]="color"
+              [style.box-shadow]="colorChecked(color) ? '0 0 0 2px var(--dc-ink-1), 0 0 0 4px var(--dc-accent)' : 'inset 0 0 0 1px rgba(255,255,255,.25)'"></button>
+          }
+        </div>
+      </div>
 
-    <div class="mt-5 flex w-full justify-end">
-      <p-button
-        *ngIf="exportType !== 'IMAGE'"
-        label="Copy to Clipboard"
-        icon="pi pi-copy"
-        (click)="copyToClipboard()"
-        styleClass="p-button-sm"></p-button>
-      <p-button *ngIf="exportType !== 'IMAGE'" (click)="exportDeckToFile()" class="ml-5" styleClass="p-button-sm">Export to File </p-button>
-      <p-button *ngIf="exportType === 'IMAGE'" (click)="setExportTypeIMAGE()" class="ml-5" styleClass="p-button-sm">
-        Generate Image
-      </p-button>
-      <p-button *ngIf="exportType === 'IMAGE'" (click)="downloadImageTTS()" class="ml-5" styleClass="p-button-sm">
-        Download Deck (TTS)
-      </p-button>
-      <p-button *ngIf="exportType === 'IMAGE'" (click)="downloadImage()" class="ml-5" styleClass="p-button-sm">Download Image </p-button>
+      <div class="flex flex-wrap justify-end gap-2">
+        @if (exportType !== 'IMAGE') {
+          <button type="button" (click)="exportDeckToFile()" class="h-11 rounded-lg border border-line bg-ink-2 px-4 font-semibold text-fg hover:border-accent"><i class="pi pi-download mr-1"></i> Save as file</button>
+          <button type="button" (click)="copyToClipboard()" class="h-11 rounded-lg bg-accent px-5 font-semibold text-accent-ink"><i class="pi pi-copy mr-1"></i> Copy to clipboard</button>
+        } @else {
+          <button type="button" (click)="downloadImageTTS()" class="h-11 rounded-lg border border-line bg-ink-2 px-4 font-semibold text-fg hover:border-accent">Download for TTS</button>
+          <button type="button" (click)="downloadImage()" class="h-11 rounded-lg border border-line bg-ink-2 px-4 font-semibold text-fg hover:border-accent"><i class="pi pi-download mr-1"></i> Download image</button>
+          <button type="button" (click)="copyImage()" class="h-11 rounded-lg bg-accent px-5 font-semibold text-accent-ink"><i class="pi pi-copy mr-1"></i> Copy image</button>
+        }
+      </div>
     </div>
   `,
-  styleUrls: ['./export-deck-dialog.component.scss'],
   standalone: true,
-  imports: [SelectButtonModule, FormsModule, NgIf, TextareaModule, NgClass, ButtonModule],
+  imports: [FormsModule, NgIf, NgClass],
 })
 export class ExportDeckDialogComponent implements OnInit {
   digimonCardStore = inject(DigimonCardStore);
@@ -87,6 +92,8 @@ export class ExportDeckDialogComponent implements OnInit {
   digimonCards: DigimonCard[] = this.digimonCardStore.cards();
 
   exportList = ['TEXT', 'TTS', 'UNTAP', 'IMAGE'];
+  formatLabels: Record<string, string> = { TEXT: 'Text', TTS: 'TTS', UNTAP: 'Untap', IMAGE: 'Image' };
+  private messageService = inject(MessageService);
   exportType = 'TEXT';
   deckText = '';
 
@@ -107,10 +114,12 @@ export class ExportDeckDialogComponent implements OnInit {
   normalOrder = true;
 
   setExport = effect(() => {
-    this.deck = this.dialogStore.exportDeck().deck;
+    const { deck, mode } = this.dialogStore.exportDeck();
+    this.deck = deck;
     this.deckSort();
-    this.setExportTypeText();
-    this.exportType = 'TEXT';
+    this.exportType = mode ?? 'TEXT';
+    // The canvases only exist after the dialog view renders
+    setTimeout(() => this.changeExportType({ option: this.exportType }));
   });
 
   updateDigimonCards = effect(() => {
@@ -194,6 +203,20 @@ export class ExportDeckDialogComponent implements OnInit {
     link.download = 'deck.png';
     link.href = img;
     link.click();
+  }
+
+  copyImage() {
+    const canvas = document.getElementById('HDCanvas') as HTMLCanvasElement;
+    canvas.toBlob((blob) => {
+      if (!blob || !navigator.clipboard?.write) {
+        this.messageService.add({ severity: 'error', summary: 'Copy failed', detail: 'Your browser cannot copy images. Use Download image.' });
+        return;
+      }
+      navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]).then(
+        () => this.messageService.add({ severity: 'success', summary: 'Deck image copied' }),
+        () => this.messageService.add({ severity: 'error', summary: 'Copy failed', detail: 'Your browser blocked clipboard access.' }),
+      );
+    }, 'image/png');
   }
 
   copyToClipboard() {

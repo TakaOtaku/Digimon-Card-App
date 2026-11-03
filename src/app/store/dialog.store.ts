@@ -10,6 +10,8 @@ interface DeckDialog {
 interface ExportDeckDialog {
   show: boolean;
   deck: IDeck;
+  // Opens straight into a format, e.g. 'IMAGE' from the builder's Share image
+  mode?: string;
 }
 
 interface ViewCardDialog {
