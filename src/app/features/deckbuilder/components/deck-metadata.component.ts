@@ -38,7 +38,7 @@ import { WebsiteStore } from '@store';
           class="h-[40px] w-full overflow-hidden md:h-[66px]"
           pInputTextarea></textarea>
       </span>
-      <div class="mr-6 flex h-[40px] w-full flex-row justify-center border border-[#304562] md:h-[66px]">
+      <div class="mr-6 flex h-[40px] w-full flex-row justify-center border border-line md:h-[66px]">
         <div
           *ngFor="let deckBox of colors"
           class="h-full w-full cursor-pointer"

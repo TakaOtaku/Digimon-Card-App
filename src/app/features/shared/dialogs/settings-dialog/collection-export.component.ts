@@ -37,82 +37,82 @@ import { MultiSelect } from 'primeng/multiselect';
         </p-multiSelect>
       </div>
 
-      <h1 class="mt-3 text-center text-xs font-bold text-[#e2e4e6]">Rarity:</h1>
+      <h1 class="mt-3 text-center text-xs font-bold text-fg">Rarity:</h1>
       <div class="inline-flex w-full justify-center">
         <button
           (click)="changeRarity('C')"
           [ngClass]="{ 'primary-border': rarities.includes('C') }"
-          class="min-w-auto primary-background mt-2 h-8 px-2 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
+          class="min-w-auto primary-background mt-2 h-8 px-2 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-fg">
           C
         </button>
         <button
           (click)="changeRarity('UC')"
           [ngClass]="{ 'primary-border': rarities.includes('UC') }"
-          class="min-w-auto primary-background mt-2 h-8 px-2 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
+          class="min-w-auto primary-background mt-2 h-8 px-2 border-r-2 border-slate-200 p-1 text-xs font-semibold text-fg">
           UC
         </button>
         <button
           (click)="changeRarity('R')"
           [ngClass]="{ 'primary-border': rarities.includes('R') }"
-          class="min-w-auto primary-background mt-2 h-8 px-2 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
+          class="min-w-auto primary-background mt-2 h-8 px-2 border-r-2 border-slate-200 p-1 text-xs font-semibold text-fg">
           R
         </button>
         <button
           (click)="changeRarity('SR')"
           [ngClass]="{ 'primary-border': rarities.includes('SR') }"
-          class="min-w-auto primary-background mt-2 h-8 px-2 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
+          class="min-w-auto primary-background mt-2 h-8 px-2 border-r-2 border-slate-200 p-1 text-xs font-semibold text-fg">
           SR
         </button>
         <button
           (click)="changeRarity('SEC')"
           [ngClass]="{ 'primary-border': rarities.includes('SEC') }"
-          class="min-w-auto primary-background mt-2 h-8 px-2 rounded-r border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
+          class="min-w-auto primary-background mt-2 h-8 px-2 rounded-r border-r-2 border-slate-200 p-1 text-xs font-semibold text-fg">
           SEC
         </button>
       </div>
 
-      <h1 class="mt-3 text-center text-xs font-bold text-[#e2e4e6]">Version:</h1>
+      <h1 class="mt-3 text-center text-xs font-bold text-fg">Version:</h1>
       <div class="inline-flex w-full justify-center flex-wrap gap-1">
         <button
           (click)="changeVersion('Normal')"
           [ngClass]="{ 'primary-border': versions.includes('Normal') }"
-          class="min-w-auto primary-background mt-2 h-8 px-2 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
+          class="min-w-auto primary-background mt-2 h-8 px-2 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-fg">
           Normal
         </button>
         <button
           (click)="changeVersion('AA')"
           [ngClass]="{ 'primary-border': versions.includes('AA') }"
-          class="min-w-auto primary-background mt-2 h-8 px-2 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
+          class="min-w-auto primary-background mt-2 h-8 px-2 border-r-2 border-slate-200 p-1 text-xs font-semibold text-fg">
           AA
         </button>
         <button
           (click)="changeVersion('Pre-Release')"
           [ngClass]="{ 'primary-border': versions.includes('Pre-Release') }"
-          class="min-w-auto primary-background mt-2 h-8 px-2 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
+          class="min-w-auto primary-background mt-2 h-8 px-2 border-r-2 border-slate-200 p-1 text-xs font-semibold text-fg">
           Pre-Rel.
         </button>
         <button
           (click)="changeVersion('Stamp')"
           [ngClass]="{ 'primary-border': versions.includes('Stamp') }"
-          class="min-w-auto primary-background mt-2 h-8 px-2 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
+          class="min-w-auto primary-background mt-2 h-8 px-2 border-r-2 border-slate-200 p-1 text-xs font-semibold text-fg">
           Stamp
         </button>
         <button
           (click)="changeVersion('Reprint')"
           [ngClass]="{ 'primary-border': versions.includes('Reprint') }"
-          class="min-w-auto primary-background mt-2 h-8 px-2 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
+          class="min-w-auto primary-background mt-2 h-8 px-2 border-r-2 border-slate-200 p-1 text-xs font-semibold text-fg">
           Reprint
         </button>
         <button
           (click)="changeVersion('Special Rare')"
           [ngClass]="{ 'primary-border': versions.includes('Special Rare') }"
-          class="min-w-auto primary-background mt-2 h-8 px-2 border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
+          class="min-w-auto primary-background mt-2 h-8 px-2 border-r-2 border-slate-200 p-1 text-xs font-semibold text-fg">
           Special
         </button>
         <button
           (click)="changeVersion('Rare Pull')"
           [ngClass]="{ 'primary-border': versions.includes('Rare Pull') }"
-          class="min-w-auto primary-background mt-2 h-8 px-2 rounded-r border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
+          class="min-w-auto primary-background mt-2 h-8 px-2 rounded-r border-slate-200 p-1 text-xs font-semibold text-fg">
           R. Pull
         </button>
       </div>
@@ -125,36 +125,36 @@ import { MultiSelect } from 'primeng/multiselect';
       </div>
 
       <div *ngIf="!collectedCards" class="my-3">
-        <h1 class="text-center text-xs font-bold text-[#e2e4e6]">Collection Goal:</h1>
+        <h1 class="text-center text-xs font-bold text-fg">Collection Goal:</h1>
         <div class="inline-flex w-full justify-center">
           <button
             (click)="goal = 1"
             [ngClass]="{ 'primary-border': goal === 1 }"
-            class="min-w-auto primary-background mt-2 h-8 w-20 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
+            class="min-w-auto primary-background mt-2 h-8 w-20 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-fg">
             1
           </button>
           <button
             (click)="goal = 2"
             [ngClass]="{ 'primary-border': goal === 2 }"
-            class="min-w-auto primary-background mt-2 h-8 w-20 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
+            class="min-w-auto primary-background mt-2 h-8 w-20 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-fg">
             2
           </button>
           <button
             (click)="goal = 3"
             [ngClass]="{ 'primary-border': goal === 3 }"
-            class="min-w-auto primary-background mt-2 h-8 w-20 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
+            class="min-w-auto primary-background mt-2 h-8 w-20 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-fg">
             3
           </button>
           <button
             (click)="goal = 4"
             [ngClass]="{ 'primary-border': goal === 4 }"
-            class="min-w-auto primary-background mt-2 h-8 w-20 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
+            class="min-w-auto primary-background mt-2 h-8 w-20 rounded-l border-r-2 border-slate-200 p-1 text-xs font-semibold text-fg">
             4
           </button>
           <button
             (click)="goal = 5"
             [ngClass]="{ 'primary-border': goal === 5 }"
-            class="min-w-auto primary-background mt-2 h-8 w-20 rounded-l border-slate-200 p-1 text-xs font-semibold text-[#e2e4e6]">
+            class="min-w-auto primary-background mt-2 h-8 w-20 rounded-l border-slate-200 p-1 text-xs font-semibold text-fg">
             5
           </button>
         </div>

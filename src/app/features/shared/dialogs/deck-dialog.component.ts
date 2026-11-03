@@ -56,7 +56,7 @@ export interface DigimonCardImage {
 
       <div *ngIf="!editable; else edit" class="mx-auto my-1 grid grid-cols-3 gap-y-1">
         <label>Title</label>
-        <div [pTooltip]="deck.title" tooltipPosition="top" class="text-shadow col-span-2 mr-3 truncate text-3xl font-black text-[#e2e4e6]">
+        <div [pTooltip]="deck.title" tooltipPosition="top" class="text-shadow col-span-2 mr-3 truncate text-3xl font-black text-fg">
           {{ deck.title }}
         </div>
 

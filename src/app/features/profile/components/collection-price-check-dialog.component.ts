@@ -59,7 +59,7 @@ import { CardImageComponent } from '../../shared/card-image.component';
         </p-multiSelect>
         <button
           (click)="updatePrice()"
-          class="surface-ground hover:primary-background text-shadow h-8 border border-black px-1 font-bold text-[#e2e4e6]">
+          class="surface-ground hover:primary-background text-shadow h-8 border border-black px-1 font-bold text-fg">
           Check Price
         </button>
       </div>

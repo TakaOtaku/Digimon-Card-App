@@ -7,24 +7,24 @@ import { SaveStore } from '../../../store/save.store';
   selector: 'digimon-language-filter',
   template: `
     <div class="mb-3">
-      <h1 class="text-center text-xs font-bold text-[#e2e4e6]">Language:</h1>
+      <h1 class="text-center text-xs font-bold text-fg">Language:</h1>
       <div class="inline-flex w-full justify-center">
         <button
           (click)="setCardSet(cardSet.English)"
           [ngClass]="{
             'button-highlight-background text-white': selectedCardSet === cardSet.English,
-            'surface-card text-[#e2e4e6]': selectedCardSet !== cardSet.English,
+            'surface-card text-fg': selectedCardSet !== cardSet.English,
           }"
-          class="min-w-auto mt-2 h-8 w-20 rounded-l-sm border border-slate-100 p-2 text-xs font-semibold text-[#e2e4e6]">
+          class="min-w-auto mt-2 h-8 w-20 rounded-l-sm border border-slate-100 p-2 text-xs font-semibold text-fg">
           English
         </button>
         <button
           (click)="setCardSet(cardSet.Japanese)"
           [ngClass]="{
             'button-highlight-background text-white': selectedCardSet === cardSet.Japanese,
-            'surface-card text-[#e2e4e6]': selectedCardSet !== cardSet.Japanese,
+            'surface-card text-fg': selectedCardSet !== cardSet.Japanese,
           }"
-          class="min-w-auto mt-2 h-8 w-20 border border-slate-100 p-2 text-xs font-semibold text-[#e2e4e6]">
+          class="min-w-auto mt-2 h-8 w-20 border border-slate-100 p-2 text-xs font-semibold text-fg">
           日本語
         </button>
       </div>

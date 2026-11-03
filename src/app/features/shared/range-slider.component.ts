@@ -21,7 +21,7 @@ import { Subject, takeUntil } from 'rxjs';
         range="true"></p-slider>
     </div>
 
-    <h1 class="mt-[-5px] text-center text-xs font-bold text-[#e2e4e6]">
+    <h1 class="mt-[-5px] text-center text-xs font-bold text-fg">
       {{ title }}
     </h1>
   `,

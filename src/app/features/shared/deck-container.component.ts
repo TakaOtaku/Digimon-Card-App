@@ -31,14 +31,14 @@ import { DigimonCardStore } from '../../store/digimon-card.store';
 
       <div class="absolute bottom-0 h-16 w-full justify-center bg-black bg-opacity-80">
         <div class="my-auto flex w-full flex-col p-1">
-          <div class="text-shadow truncate font-bold text-[#e2e4e6]">
+          <div class="text-shadow truncate font-bold text-fg">
             {{ deck.title }}
           </div>
-          <div class="text-shadow min-h-[16px] truncate text-xs text-[#e2e4e6]">
+          <div class="text-shadow min-h-[16px] truncate text-xs text-fg">
             {{ deck.description }}
           </div>
 
-          <div class="text-shadow flex w-full flex-row text-xs text-[#e2e4e6]">
+          <div class="text-shadow flex w-full flex-row text-xs text-fg">
             <div *ngIf="mode === 'Community'" class="ml-1 font-bold">
               {{ deck.user }}
             </div>

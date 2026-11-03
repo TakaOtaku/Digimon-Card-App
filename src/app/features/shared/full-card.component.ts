@@ -46,21 +46,21 @@ import { CardImageComponent } from './card-image.component';
         <button
           *ngIf="!onlyView"
           (click)="decreaseCardCount(card.id)"
-          class="primary-background h-full w-1/3 cursor-pointer rounded-l text-[#e2e4e6] outline-none">
+          class="primary-background h-full w-1/3 cursor-pointer rounded-l text-fg outline-none">
           <span class="m-auto text-2xl font-thin">−</span>
         </button>
         <input
           type="number"
           min="0"
           [ngClass]="{ 'mx-auto': onlyView }"
-          class="primary-background text-md flex w-1/3 cursor-default appearance-none items-center text-center font-semibold text-[#e2e4e6] outline-none focus:outline-none md:text-base"
+          class="primary-background text-md flex w-1/3 cursor-default appearance-none items-center text-center font-semibold text-fg outline-none focus:outline-none md:text-base"
           [(ngModel)]="count"
           [disabled]="onlyView"
           (change)="changeCardCount($event, card.id)" />
         <button
           *ngIf="!onlyView"
           (click)="increaseCardCount(card.id)"
-          class="primary-background h-full w-1/3 cursor-pointer rounded-r text-[#e2e4e6] outline-none">
+          class="primary-background h-full w-1/3 cursor-pointer rounded-r text-fg outline-none">
           <span class="m-auto text-2xl font-thin">+</span>
         </button>
       </div>

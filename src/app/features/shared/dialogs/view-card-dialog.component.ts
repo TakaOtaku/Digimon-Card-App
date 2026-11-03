@@ -19,10 +19,10 @@ import { TooltipModule } from 'primeng/tooltip';
           <p class="self-center font-bold text-gray-500" id="Card-Number">
             {{ card.cardNumber }}
           </p>
-          <p class="self-center font-bold uppercase text-[#e2e4e6]" id="Card-Rarity">
+          <p class="self-center font-bold uppercase text-fg" id="Card-Rarity">
             {{ getRarity(card.rarity) }}
           </p>
-          <p class="self-center font-bold uppercase text-[#e2e4e6]" id="Card-Block">
+          <p class="self-center font-bold uppercase text-fg" id="Card-Block">
             {{ card.block }}
           </p>
           <p [ngStyle]="{ color }" class="text-black-outline-xs self-center font-bold" id="Card-Type">
@@ -33,7 +33,7 @@ import { TooltipModule } from 'primeng/tooltip';
             [ngStyle]="{ backgroundColor }"
             class="inline-block rounded-full px-6 py-2.5 leading-tight shadow-md"
             id="Digimon-Lv">
-            <p class="font-bold leading-[5px] text-[#e2e4e6]" [ngClass]="{ 'text-black': this.card.color === 'Yellow' }">
+            <p class="font-bold leading-[5px] text-fg" [ngClass]="{ 'text-black': this.card.color === 'Yellow' }">
               {{ card.cardLv }}
             </p>
           </div>
@@ -55,7 +55,7 @@ import { TooltipModule } from 'primeng/tooltip';
 
       <div class="flex flex-row">
         <button class="mr-1" (click)="previousCard()">
-          <i class="fa-solid fa-circle-arrow-left text-[#e2e4e6]"></i>
+          <i class="fa-solid fa-circle-arrow-left text-fg"></i>
         </button>
         <h1 [ngStyle]="{ color }" class="text-black-outline-xs my-1 text-3xl font-black" id="Card-Name">
           {{ card.name.english }}
@@ -63,7 +63,7 @@ import { TooltipModule } from 'primeng/tooltip';
         <button (click)="openWiki()" class="p-button-text" icon="pi pi-question-circle" pButton pRipple type="button" pTooltip="Wiki" tooltipPosition="top"></button>
         <button *ngIf="getCardmarketLink()" (click)="openCardmarket()" class="p-button-text" icon="pi pi-shopping-cart" pButton pRipple type="button" pTooltip="Cardmarket" tooltipPosition="top"></button>
         <button class="ml-1" (click)="nextCard()">
-          <i class="fa-solid fa-circle-arrow-right text-[#e2e4e6]"></i>
+          <i class="fa-solid fa-circle-arrow-right text-fg"></i>
         </button>
       </div>
 

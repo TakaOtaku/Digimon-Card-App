@@ -27,7 +27,7 @@ import { TierlistComponent } from './components/tierlist.component';
     <digimon-page #page>
       <div class="mx-auto self-baseline px-5 w-full max-w-7xl">
         <div class="lg:px-auto flex px-1 flex-col md:flex-row items-baseline">
-          <h1 class="text-shadow mt-6 pb-1 text-2xl md:text-4xl font-black text-[#e2e4e6]">Community Decks</h1>
+          <h1 class="text-shadow mt-6 pb-1 text-2xl md:text-4xl font-black text-fg">Community Decks</h1>
 
           <div class="md:ml-auto pb-2">
             <p-button

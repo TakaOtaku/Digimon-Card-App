@@ -23,7 +23,7 @@ import { FilterSideBoxComponent } from './filter-side-box.component';
       </div>
 
       <div class="mx-auto my-1 flex flex-row justify-center">
-        <span class="text-xs font-bold text-[#e2e4e6]">Collection Mode:</span>
+        <span class="text-xs font-bold text-fg">Collection Mode:</span>
         <input type="checkbox" class="my-auto ml-1 h-5 w-5" [formControl]="collectionMode" />
       </div>
     </div>

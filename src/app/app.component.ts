@@ -19,13 +19,12 @@ import { NavbarComponent } from './features/shared/navbar/navbar.component';
 @Component({
   selector: 'digimon-root',
   template: `
-    <div class="flex flex-col lg:flex-row bg-gradient-to-b from-[#17212f] to-[#08528d]">
+    <div class="flex flex-col bg-ink-0">
       <digimon-navbar (openSideNav)="sideNav = true"></digimon-navbar>
 
       @if (saveLoaded()) {
         <div
-          class="min-h-[calc(100vh-3.5rem)] md:min-h-[calc(100vh-5rem)] lg:min-h-[100vh]
-        w-[100vw] lg:max-w-[calc(100vw-6.5rem)] lg:w-[calc(100vw-6.5rem)]
+          class="min-h-[calc(100vh-3.5rem)] md:min-h-[calc(100vh-5rem)] w-[100vw]
         flex justify-center items-center">
           <router-outlet></router-outlet>
         </div>

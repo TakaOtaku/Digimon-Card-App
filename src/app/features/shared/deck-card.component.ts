@@ -25,7 +25,7 @@ import { WebsiteStore } from '../../store/website.store';
               (click)="addCardCount($event)"
               type="button"
               class="z-[101] mx-auto flex hidden h-8 w-8 translate-x-full rounded border border-black bg-sky-700 group-hover:block">
-              <span class="text-shadow text-2xl font-black text-[#e2e4e6]"> + </span>
+              <span class="text-shadow text-2xl font-black text-fg"> + </span>
             </button>
           </div>
         </div>
@@ -35,7 +35,7 @@ import { WebsiteStore } from '../../store/website.store';
               (click)="reduceCardCount($event)"
               type="button"
               class="z-[101] mx-auto flex hidden h-8 w-8 translate-x-full rounded border border-black bg-sky-700 group-hover:block">
-              <span class="text-shadow text-2xl font-black text-[#e2e4e6]"> - </span>
+              <span class="text-shadow text-2xl font-black text-fg"> - </span>
             </button>
           </div>
         </div>
@@ -49,11 +49,11 @@ import { WebsiteStore } from '../../store/website.store';
 
       <div *ngIf="edit" class="flex h-1/2 w-full flex-row rounded xl:hidden">
         <button (click)="addCardCount($event)" type="button" class="z-[101] flex h-8 w-1/2 rounded-l border border-black bg-sky-700">
-          <span class="text-shadow mx-auto text-2xl font-black text-[#e2e4e6]"> + </span>
+          <span class="text-shadow mx-auto text-2xl font-black text-fg"> + </span>
         </button>
 
         <button (click)="reduceCardCount($event)" type="button" class="z-[101] flex h-8 w-1/2 rounded-r border border-black bg-sky-700">
-          <span class="text-shadow mx-auto text-2xl font-black text-[#e2e4e6]"> - </span>
+          <span class="text-shadow mx-auto text-2xl font-black text-fg"> - </span>
         </button>
       </div>
 

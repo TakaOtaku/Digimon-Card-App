@@ -50,7 +50,7 @@ import { TAGS } from '@models';
             icon="pi pi-list"
             class="w-full h-full"
             styleClass="p-button-outlined"
-            style="border-color: #08528d; color: white; background-color: #08528d;"
+            style="border-color: var(--dc-accent-strong); color: white; background-color: var(--dc-accent-strong);"
             (click)="browseAll()">
           </button>
         </div>
@@ -63,7 +63,7 @@ import { TAGS } from '@models';
             icon="pi pi-search"
             class="w-full h-full"
             styleClass="p-button-outlined"
-            style="border-color: #08528d; color: white; background-color: #08528d;"
+            style="border-color: var(--dc-accent-strong); color: white; background-color: var(--dc-accent-strong);"
             (click)="applyFilters()">
           </button>
         </div>

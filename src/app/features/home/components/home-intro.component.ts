@@ -7,19 +7,19 @@ import { DividerModule } from 'primeng/divider';
   template: `
     <div class="flex flex-row justify-center">
       <img alt="Logo" class="cursor-pointer max-h-[3rem] md:max-h-[6rem]" src="../../../assets/images/logo.png" width="96" height="96" />
-      <h1 class="text-shadow ml-3 mt-3 md:mt-6 text-center text-xl sm:text-3xl md:text-6xl font-black text-[#64B5F6]">Digimoncard.app</h1>
+      <h1 class="text-shadow ml-3 mt-3 md:mt-6 text-center text-xl sm:text-3xl md:text-6xl font-black text-accent">Digimoncard.app</h1>
     </div>
 
     <p-divider class="my-5"></p-divider>
 
-    <h2 class="mt-1 text-center text-[#e2e4e6] text-sm sm:text-base">
+    <h2 class="mt-1 text-center text-fg text-sm sm:text-base">
       I build <span class="font-bold">Digimoncard.App</span> as a website to help you keep track of your Digimon Card collection, give you
       access to a deckbuilder with everything needed to build a great deck and to help you share those decks with friends and the community.
     </h2>
 
     <p-divider class="my-5"></p-divider>
 
-    <h2 class="mt-1 text-center text-[#e2e4e6] text-sm sm:text-base flex-col">
+    <h2 class="mt-1 text-center text-fg text-sm sm:text-base flex-col">
       <div class="flex-row">
         Everything related to the cards is loaded once a day from
         <span class="font-bold">DigimonCardGame.Fandom</span>.
@@ -29,7 +29,7 @@ import { DividerModule } from 'primeng/divider';
 
     <p-divider class="my-5"></p-divider>
 
-    <h2 class="mt-1 text-center text-[#e2e4e6] text-sm sm:text-base">
+    <h2 class="mt-1 text-center text-fg text-sm sm:text-base">
       I am always open for feedback and suggestions to improve the website, so feel free to reach out to me on discord and github.
       That said, I am not the fastest when it comes to implementing new features, but I will try my best.
       Also I am <b>looking for people</b> who want to help me maintaining the website, design new features and implement them, so if you know someone or are interested yourself, please reach out to me.
@@ -43,19 +43,19 @@ import { DividerModule } from 'primeng/divider';
 
     <p-divider class="my-5"></p-divider>
 
-    <h2 class='text-shadow text-base sm:text-lg font-black underline text-center text-white text-[#e2e4e6]"'>Partners</h2>
+    <h2 class='text-shadow text-base sm:text-lg font-black underline text-center text-white text-fg"'>Partners</h2>
     <div class="mx-auto flex flex-row">
       <a class="mx-auto flex flex-col" href="https://www.youtube.com/@AVAULT" target="_blank">
         <img class="mx-auto max-h-16 w-16 rounded-full object-cover" src="assets/images/partners/avault.jpg" alt="AVAULT" width="64" height="64" />
-        <div class="text-shadow text-center text-xs font-black text-[#e2e4e6]">AVAULT</div>
+        <div class="text-shadow text-center text-xs font-black text-fg">AVAULT</div>
       </a>
       <a class="mx-auto flex flex-col" href="https://discord.gg/digimon-tcg-dach-759562127513223168" target="_blank">
         <img class="mx-auto max-h-16" src="assets/images/partners/dach.png" alt="Digimon DACH Discord" width="64" height="64" />
-        <div class="text-shadow text-center text-xs font-black text-[#e2e4e6]">Digimon TCG DACH</div>
+        <div class="text-shadow text-center text-xs font-black text-fg">Digimon TCG DACH</div>
       </a>
       <a class="mx-auto flex flex-col" href="https://www.youtube.com/East_ML" target="_blank">
         <img class="mx-auto max-h-16 w-16 rounded-full object-cover" src="assets/images/partners/east.jpg" alt="East" width="64" height="64" />
-        <div class="text-shadow text-center text-xs font-black text-[#e2e4e6]">East</div>
+        <div class="text-shadow text-center text-xs font-black text-fg">East</div>
       </a>
     </div>
   `,

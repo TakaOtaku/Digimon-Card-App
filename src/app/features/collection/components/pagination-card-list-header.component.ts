@@ -14,10 +14,10 @@ import { CardMarketService } from '../../../services/card-market.service';
   template: `
     <div class="relative flex justify-center items-center h-10 w-full flex-row">
       <div *ngIf="!viewOnly" class="absolute left-2 top-4 flex flex-row justify-center items-center">
-        <span class="text-xs hidden sm:block font-bold text-[#e2e4e6]">Collection Mode:</span>
-        <span class="text-xs sm:hidden font-bold text-[#e2e4e6]">CM:</span>
+        <span class="text-xs hidden sm:block font-bold text-fg">Collection Mode:</span>
+        <span class="text-xs sm:hidden font-bold text-fg">CM:</span>
         <input type="checkbox" class="my-auto ml-1 h-5 w-5" [ngModel]="collectionMode()" (ngModelChange)="changeCollectionMode($event)" />
-        <span class="ml-6 text-xs font-bold text-[#e2e4e6]"> Cards: {{ cardCount() }} </span>
+        <span class="ml-6 text-xs font-bold text-fg"> Cards: {{ cardCount() }} </span>
         @if (saveStore.showPrices() && collectionValue() !== null) {
           <span class="ml-4 text-xs font-bold text-green-400">💰 {{ collectionValue() | currency: 'EUR' }}</span>
         }
@@ -28,7 +28,7 @@ import { CardMarketService } from '../../../services/card-market.service';
       <div [ngClass]="{ 'xl:hidden ': !filterButton }" class="mx-2 mt-2 flex flex-row justify-center absolute right-2">
         <button
           (click)="closeFilterSidebox()"
-          class="flex flex-row sm:justify-center min-w-auto primary-background h-8 w-8 sm:w-24 rounded p-2 text-xs font-semibold text-[#e2e4e6]">
+          class="flex flex-row sm:justify-center min-w-auto primary-background h-8 w-8 sm:w-24 rounded p-2 text-xs font-semibold text-fg">
           <i class="pi pi-filter-fill mr-3"></i>
           <span class="hidden sm:block">Filter</span>
         </button>

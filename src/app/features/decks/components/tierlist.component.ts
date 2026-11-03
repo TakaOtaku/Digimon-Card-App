@@ -23,7 +23,7 @@ import { TooltipModule } from 'primeng/tooltip';
   selector: 'digimon-tierlist',
   template: `
     <div class="mb-5 w-full p-1">
-      <h1 class="main-font w-full text-3xl font-extrabold uppercase text-[#e2e4e6]">
+      <h1 class="main-font w-full text-3xl font-extrabold uppercase text-fg">
         Digimon Archtype Ranking
         <button
           class="p-button-outlined p-button-rounded p-button-sm mx-2"
@@ -63,7 +63,7 @@ import { TooltipModule } from 'primeng/tooltip';
           [ngClass]="key.color"
           pDroppable="gens"
           (onDrop)="onDropToTier(i)"
-          class="text-black-outline w-24 text-center text-7xl font-black leading-[5.5rem] text-[#e2e4e6]">
+          class="text-black-outline w-24 text-center text-7xl font-black leading-[5.5rem] text-fg">
           {{ key.tier }}
         </div>
         <p-listbox [options]="tierlist[i]" [(ngModel)]="selectedDeck" optionLabel="name">

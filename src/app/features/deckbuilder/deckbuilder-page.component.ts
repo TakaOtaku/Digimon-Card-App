@@ -33,18 +33,18 @@ import { DeckViewComponent } from './components/deck-view.component';
           *ngIf="collectionView"
           [initialWidth]="3"
           [ngClass]="{ 'w-3/5 max-w-[60%]': deckView, 'w-full': !deckView }"
-          class="border-l max-h-full border-slate-200 flex flex-row  h-[calc(100vh-3.5rem)] md:h-[calc(100vh-5rem)] lg:h-screen"></digimon-pagination-card-list>
+          class="border-l max-h-full border-slate-200 flex flex-row  h-[calc(100vh-3.5rem)] md:h-[calc(100vh-5rem)]"></digimon-pagination-card-list>
 
         <button class="surface-card w-6 border-l border-slate-200" (click)="changeView()">
           <span
-            class="w-full h-[calc(100%-4rem)] md:h-[calc(100%-5.5rem)] lg:h-[calc(100%-0.5rem)] rotate-180 text-center font-bold text-[#e2e4e6]"
+            class="w-full h-[calc(100%-4rem)] md:h-[calc(100%-5.5rem)] lg:h-[calc(100%-0.5rem)] rotate-180 text-center font-bold text-fg"
             [ngStyle]="{ writingMode: 'vertical-rl' }"
             >{{ collectionView ? 'Hide Card View' : 'Show Card View' }}</span
           >
         </button>
 
         @if (statsDisplay && deckView) {
-          <digimon-deck-stats class="fixed left-0 lg:left-[6.5rem] z-[300]" [collectionView]="collectionView"></digimon-deck-stats>
+          <digimon-deck-stats class="fixed left-0 z-[300]" [collectionView]="collectionView"></digimon-deck-stats>
         }
       </digimon-page>
     }

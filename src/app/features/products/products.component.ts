@@ -16,7 +16,7 @@ import { PageComponent } from '../shared/page.component';
     <digimon-page>
       <div class="overflow-x-hidden flex self-baseline flex-col justify-center max-w-md md:max-w-4xl mx-auto">
         <div *ngFor="let product of products; let last = last">
-          <h1 class="text-shadow text-center mt-6 text-4xl font-black text-[#e2e4e6] underline xl:mt-2">
+          <h1 class="text-shadow text-center mt-6 text-4xl font-black text-fg underline xl:mt-2">
             {{ product.name }}
           </h1>
           <p-carousel

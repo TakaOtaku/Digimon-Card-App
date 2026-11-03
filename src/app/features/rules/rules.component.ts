@@ -17,7 +17,7 @@ import { environment } from '../../../environments/environment';
   template: `
     <digimon-page style="align-items: start !important;">
       <div class="flex flex-col justify-top px-10 w-full" style="align-self: start !important;">
-        <h1 class="text-shadow mt-6 pb-1 text-2xl md:text-4xl font-black text-[#e2e4e6]">Digimon Card Rulings</h1>
+        <h1 class="text-shadow mt-6 pb-1 text-2xl md:text-4xl font-black text-fg">Digimon Card Rulings</h1>
         <div class="m-1 flex flex-row">
           <p-icon-field class="mr-1 w-full">
             <p-inputicon styleClass="pi pi-search"></p-inputicon>

@@ -82,7 +82,7 @@ import { ImportDeckDialogComponent } from '../../shared/dialogs/import-deck-dial
     </div>
 
     <div *ngIf="saveStore.showPrices() && deckTotalValue() !== null" class="mx-3 flex items-center justify-center text-sm font-bold text-green-400">
-      <span class="mr-1 text-[#e2e4e6]">Deck Value:</span>
+      <span class="mr-1 text-fg">Deck Value:</span>
       <span>{{ deckTotalValue() | currency: 'EUR' }}</span>
     </div>
 

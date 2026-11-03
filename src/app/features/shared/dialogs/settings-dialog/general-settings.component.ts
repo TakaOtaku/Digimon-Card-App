@@ -22,7 +22,7 @@ import { SettingsRowComponent } from '../../settings-row.component';
     <div class="flex flex-col gap-5 p-2">
       <!-- Deckbuilder Section -->
       <section class="rounded-xl border border-white/10 bg-white/[0.03] p-5">
-        <h3 class="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-[#64B5F6]">
+        <h3 class="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-accent">
           <i class="pi pi-pencil text-xs"></i> Deckbuilder
         </h3>
         <digimon-settings-row title="Sort Cards by">
@@ -46,7 +46,7 @@ import { SettingsRowComponent } from '../../settings-row.component';
 
       <!-- Collection Section -->
       <section class="rounded-xl border border-white/10 bg-white/[0.03] p-5">
-        <h3 class="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-[#64B5F6]">
+        <h3 class="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-accent">
           <i class="pi pi-folder text-xs"></i> Collection
         </h3>
         <digimon-settings-row title="Sets you want to complete">
@@ -90,7 +90,7 @@ import { SettingsRowComponent } from '../../settings-row.component';
 
       <!-- Profile Section -->
       <section class="rounded-xl border border-white/10 bg-white/[0.03] p-5">
-        <h3 class="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-[#64B5F6]">
+        <h3 class="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-accent">
           <i class="pi pi-user text-xs"></i> Profile
         </h3>
         <digimon-settings-row title="Username">
@@ -109,7 +109,7 @@ import { SettingsRowComponent } from '../../settings-row.component';
 
       <!-- Save Data Section -->
       <section class="rounded-xl border border-white/10 bg-white/[0.03] p-5">
-        <h3 class="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-[#64B5F6]">
+        <h3 class="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-accent">
           <i class="pi pi-database text-xs"></i> Save Data
         </h3>
         <div class="flex flex-col gap-3 sm:flex-row sm:justify-center sm:flex-wrap">

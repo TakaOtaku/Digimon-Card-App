@@ -16,117 +16,114 @@ import { DialogModule } from 'primeng/dialog';
   template: `
     <ul
       [ngClass]="{
-        'h-[5rem] lg:h-auto lg:w-[6.5rem] lg:py-5 flex-row lg:flex-col pt-5': !sidebar,
-        'w-[6.5rem] py-5 flex-col': sidebar,
+        'h-full flex-row ml-4 xl:ml-8': !sidebar,
+        'w-[6.5rem] py-5 flex-col justify-between ml-auto': sidebar,
       }"
-      class="p-0 ml-auto list-none flex justify-between">
-      <li class="flex flex-col items-center group cursor-pointer" [ngClass]="getNavigationBorder('/')" (click)="router.navigateByUrl('')">
-        <i class="pi pi-home group-hover:text-[#64B5F6]" style="font-size: 1.5rem"></i>
-        <div [ngClass]="{ 'text-[#64B5F6]': route() === '/' }" style="font-size:smaller" class="p-2 group-hover:text-[#64B5F6]">Home</div>
+      class="p-0 my-0 list-none flex">
+      <li class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer" [ngClass]="getNavigationBorder('/')" (click)="router.navigateByUrl('')">
+        <i class="pi pi-home group-hover:text-accent" style="font-size: 1.5rem"></i>
+        <div [ngClass]="{ 'text-accent': route() === '/' }" style="font-size:smaller" class="p-2 group-hover:text-accent">Home</div>
       </li>
 
       <li
-        class="flex flex-col items-center group cursor-pointer"
+        class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
         [ngClass]="getNavigationBorder('/deckbuilder')"
         (click)="router.navigateByUrl('/deckbuilder')">
-        <i class="pi pi-pencil group-hover:text-[#64B5F6]" style="font-size: 1.5rem"></i>
-        <button style="font-size:smaller" class="p-2 group-hover:text-[#64B5F6]">Deckbuilder</button>
+        <i class="pi pi-pencil group-hover:text-accent" style="font-size: 1.5rem"></i>
+        <button style="font-size:smaller" class="p-2 group-hover:text-accent">Deckbuilder</button>
       </li>
 
       <li
-        class="flex flex-col items-center group cursor-pointer"
+        class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
         [ngClass]="getNavigationBorder('/collection')"
         (click)="router.navigateByUrl('/collection')">
-        <i class="pi pi-folder group-hover:text-[#64B5F6]" style="font-size: 1.5rem"></i>
-        <button style="font-size:smaller" class="p-2 group-hover:text-[#64B5F6]">Collection</button>
+        <i class="pi pi-folder group-hover:text-accent" style="font-size: 1.5rem"></i>
+        <button style="font-size:smaller" class="p-2 group-hover:text-accent">Collection</button>
       </li>
 
       <li
-        class="flex flex-col items-center group cursor-pointer"
+        class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
         [ngClass]="getNavigationBorder('/user')"
         (click)="router.navigateByUrl('/user')">
-        <i class="pi pi-user group-hover:text-[#64B5F6]" style="font-size: 1.5rem"></i>
-        <button style="font-size:smaller" class="p-2 group-hover:text-[#64B5F6]">Profile</button>
+        <i class="pi pi-user group-hover:text-accent" style="font-size: 1.5rem"></i>
+        <button style="font-size:smaller" class="p-2 group-hover:text-accent">Profile</button>
       </li>
 
       <li
-        class="flex flex-col items-center group cursor-pointer"
+        class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
         [ngClass]="getNavigationBorder('/decks')"
         (click)="router.navigateByUrl('/decks')">
-        <i class="pi pi-table group-hover:text-[#64B5F6]" style="font-size: 1.5rem"></i>
-        <button style="font-size:smaller" class="p-2 group-hover:text-[#64B5F6]">Decks</button>
+        <i class="pi pi-table group-hover:text-accent" style="font-size: 1.5rem"></i>
+        <button style="font-size:smaller" class="p-2 group-hover:text-accent">Decks</button>
       </li>
 
       <li
-        class="flex flex-col items-center group cursor-pointer"
+        class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
         [ngClass]="getNavigationBorder('/rulings')"
         (click)="router.navigateByUrl('/rulings')">
-        <i class="pi pi-question-circle group-hover:text-[#64B5F6]" style="font-size: 1.5rem"></i>
-        <button style="font-size:smaller" class="p-2 group-hover:text-[#64B5F6]">Rulings</button>
+        <i class="pi pi-question-circle group-hover:text-accent" style="font-size: 1.5rem"></i>
+        <button style="font-size:smaller" class="p-2 group-hover:text-accent">Rulings</button>
       </li>
 
       <li
-        class="flex flex-col items-center group cursor-pointer"
+        class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
         [ngClass]="getNavigationBorder('/products')"
         (click)="router.navigateByUrl('/products')">
-        <i class="pi pi-tags group-hover:text-[#64B5F6]" style="font-size: 1.5rem"></i>
-        <button style="font-size:smaller" class="p-2 group-hover:text-[#64B5F6]">Products</button>
+        <i class="pi pi-tags group-hover:text-accent" style="font-size: 1.5rem"></i>
+        <button style="font-size:smaller" class="p-2 group-hover:text-accent">Products</button>
       </li>
     </ul>
 
     <div
       [ngClass]="{
-        'max-lg:ml-auto flex-row lg:flex-col': !sidebar,
+        'ml-auto flex-row items-center gap-4': !sidebar,
         'flex-col': sidebar,
       }"
       class="flex justify-center">
       <button
         (click)="loginLogout()"
-        [ngClass]="{
-          'max-lg:mr-5': !sidebar,
-        }"
         class="group">
         <ng-container *ngIf="user(); else userIcon">
           <div
-            class='min-w-auto mx-auto primary-background h-12 w-12 overflow-hidden rounded-full text-[#e2e4e6] group-hover:bg-[#64B5F6]"'>
+            class='min-w-auto mx-auto primary-background h-12 w-12 overflow-hidden rounded-full text-fg group-hover:bg-accent"'>
             <img *ngIf="user()" alt="{{ this.user()?.displayName }}" src="{{ this.user()?.photoUrl }}" />
           </div>
-          <span class="text-[#e2e4e6] text-xs">{{ this.user()?.displayName }}</span>
+          <span class="text-fg text-xs">{{ this.user()?.displayName }}</span>
         </ng-container>
         <ng-template #userIcon>
           <div
-            class='min-w-auto mx-auto flex flex-col justify-center primary-background h-12 w-12 overflow-hidden rounded-full text-[#e2e4e6] hover:bg-[#64B5F6]"'>
+            class='min-w-auto mx-auto flex flex-col justify-center primary-background h-12 w-12 overflow-hidden rounded-full text-fg hover:bg-accent"'>
             <i class="pi pi-user" style="font-size: 1.5rem"></i>
           </div>
-          <span class="text-[#e2e4e6] text-xs group-hover:text-[#64B5F6]">Press to Login</span>
+          <span class="text-fg text-xs group-hover:text-accent">Press to Login</span>
         </ng-template>
       </button>
 
       <div
-        class="flex flex-col my-5 group cursor-pointer"
+        class="flex flex-col group cursor-pointer"
         [ngClass]="{
-          'max-lg:mr-5': !sidebar,
+          'my-5': sidebar,
         }"
         (click)="openSettings()">
-        <i class="pi pi-cog text-center text-[#e2e4e6] group-hover:text-[#64B5F6]" style="font-size: 1.5rem"></i>
-        <span class="text-xs text-center text-[#e2e4e6] group-hover:text-[#64B5F6]">Settings</span>
+        <i class="pi pi-cog text-center text-fg group-hover:text-accent" style="font-size: 1.5rem"></i>
+        <span class="text-xs text-center text-fg group-hover:text-accent">Settings</span>
       </div>
 
-      <div class="grid grid-cols-2 justify-center items-center">
+      <div class="justify-center items-center" [ngClass]="sidebar ? 'grid grid-cols-2' : 'hidden xl:flex flex-row'">
         <a class="mx-auto" href="https://github.com/TakaOtaku/Digimon-Card-App" target="_blank">
-          <i class="pi pi-github px-1 text-[#e2e4e6] hover:text-[#64B5F6]" style="font-size: 1rem"></i>
+          <i class="pi pi-github px-1 text-fg hover:text-accent" style="font-size: 1rem"></i>
         </a>
 
         <a class="mx-auto" href="https://twitter.com/digimoncardapp" target="_blank">
-          <i class="pi pi-twitter px-1 text-[#e2e4e6] hover:text-[#64B5F6]" style="font-size: 1rem"></i>
+          <i class="pi pi-twitter px-1 text-fg hover:text-accent" style="font-size: 1rem"></i>
         </a>
 
         <a class="mx-auto" href="https://discordapp.com/users/189436886744432640" target="_blank">
-          <i class="pi pi-discord px-1 text-[#e2e4e6] hover:text-[#64B5F6]" style="font-size: 1rem"></i>
+          <i class="pi pi-discord px-1 text-fg hover:text-accent" style="font-size: 1rem"></i>
         </a>
 
         <a class="mx-auto" href="https://www.paypal.com/donate/?hosted_button_id=WLM58Q785D4H4" target="_blank">
-          <i class="pi pi-paypal px-1 text-[#e2e4e6] hover:text-[#64B5F6]" style="font-size: 1rem"></i>
+          <i class="pi pi-paypal px-1 text-fg hover:text-accent" style="font-size: 1rem"></i>
         </a>
         <div class="col-span-2 flex align-center justify-center">
           <p-button class="mx-auto" [link]="true" size="small" (onClick)="showChangelog()" label="Ver. 5.0.0"></p-button>
@@ -166,24 +163,24 @@ export class NavLinksComponent {
       const deckOpenOrDeckbuilder = this.route() === '/deckbuilder' || (this.route().includes('/deck/') && this.route().includes('/user/'));
       return {
         'border-l-[3px] border-white': deckOpenOrDeckbuilder && this.sidebar,
-        'border-b-[3px] lg:border-b-0 lg:border-l-[3px] border-white': deckOpenOrDeckbuilder && !this.sidebar,
-        'text-[#64B5F6]': deckOpenOrDeckbuilder,
-        'text-[#e2e4e6]': !deckOpenOrDeckbuilder,
+        'border-b-[3px] border-accent': deckOpenOrDeckbuilder && !this.sidebar,
+        'text-accent': deckOpenOrDeckbuilder,
+        'text-fg': !deckOpenOrDeckbuilder,
       };
     } else if (route === '/user') {
       return {
         'border-l-[3px] border-white': this.route().includes(route) && !this.route().includes('deckbuilder') && this.sidebar,
-        'border-b-[3px] lg:border-b-0 lg:border-l-[3px] border-white':
+        'border-b-[3px] border-accent':
           this.route().includes(route) && !this.route().includes('deckbuilder') && !this.sidebar,
-        'text-[#64B5F6]': this.route().includes(route) && !this.route().includes('deckbuilder'),
-        'text-[#e2e4e6]': !this.route().includes(route),
+        'text-accent': this.route().includes(route) && !this.route().includes('deckbuilder'),
+        'text-fg': !this.route().includes(route),
       };
     }
     return {
       'border-l-[3px] border-white': this.route() === route && this.sidebar,
-      'border-b-[3px] lg:border-b-0 lg:border-l-[3px] border-white': this.route() === route && !this.sidebar,
-      'text-[#64B5F6]': this.route() === route,
-      'text-[#e2e4e6]': this.route() !== route,
+      'border-b-[3px] border-accent': this.route() === route && !this.sidebar,
+      'text-accent': this.route() === route,
+      'text-fg': this.route() !== route,
     };
   }
 

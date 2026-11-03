@@ -13,11 +13,11 @@ import { NgIf } from '@angular/common';
 @Component({
   selector: 'digimon-user-stats',
   template: `
-    <div class="flex flex-col py-2 text-[#e2e4e6]">
+    <div class="flex flex-col py-2 text-fg">
       <div class="flex flex-col sm:flex-row justify-center">
         <div class="flex flex-row mx-auto sm:ml-0 sm:mr-5">
           <img
-            class="my-auto mr-2 h-16 w-auto rounded-full text-xs font-semibold text-[#e2e4e6]"
+            class="my-auto mr-2 h-16 w-auto rounded-full text-xs font-semibold text-fg"
             *ngIf="save"
             alt="{{ save.displayName ?? 'Username not Found' }}"
             src="{{ save.photoUrl }}" />
@@ -58,13 +58,13 @@ import { NgIf } from '@angular/common';
       <div class="flex flex-col sm:flex-row w-full">
         <button
           (click)="openCollection()"
-          class="surface-ground hover:primary-background text-shadow border flex-grow border-black p-2 font-bold text-[#e2e4e6]">
+          class="surface-ground hover:primary-background text-shadow border flex-grow border-black p-2 font-bold text-fg">
           View Collection
         </button>
         <button
           *ngIf="showDeckDeleteButton()"
           (click)="deleteUserDecks($event)"
-          class="bg-red-500 hover:primary-background text-shadow border flex-grow border-black p-2 font-bold text-[#e2e4e6]">
+          class="bg-red-500 hover:primary-background text-shadow border flex-grow border-black p-2 font-bold text-fg">
           Delete all Decks
         </button>
       </div>
