@@ -7,7 +7,8 @@ import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { DragDropModule } from 'primeng/dragdrop';
 import { first } from 'rxjs';
 import { DeckColorMap, DRAG, IDeck, IDeckCard, IDraggedCard, ISave } from '@models';
-import { colorSort, compareIDs, levelSort, setColors, setTags } from '@functions';
+import { colorSort, compareIDs, DeckCardGroup, groupDeckCards, levelSort, setColors, setTags } from '@functions';
+import { ImgFallbackDirective } from '@directives';
 import { MongoBackendService } from '@services';
 import { DigimonCardStore } from '@store';
 import { SaveStore } from '@store';
@@ -31,6 +32,24 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
 
     <p-confirmpopup></p-confirmpopup>
 
+    <div class="mx-3 mb-2 flex flex-wrap items-center gap-2">
+      <span class="rounded-md px-2.5 py-1 font-mono text-xs" [ngClass]="countBadge(getCardCount(mainDeck, 'Deck') === 50)">
+        Main {{ getCardCount(mainDeck, 'Deck') }}/50
+      </span>
+      <span class="rounded-md px-2.5 py-1 font-mono text-xs" [ngClass]="countBadge(getCardCount(mainDeck, 'Egg') <= 5)">
+        Egg {{ getCardCount(mainDeck, 'Egg') }}/5
+      </span>
+      @if (displaySideDeck()) {
+        <span class="rounded-md bg-ink-2 px-2.5 py-1 font-mono text-xs text-fg">Side {{ getCardCount(sideDeck, 'All') }}</span>
+      }
+      <div role="group" aria-label="Deck view" class="ml-auto inline-flex gap-1 rounded-lg border border-line bg-ink-0 p-1">
+        <button type="button" [attr.aria-pressed]="listView" (click)="listView = true"
+          class="rounded-md px-3 py-1 text-sm font-semibold" [ngClass]="listView ? 'bg-line text-fg' : 'text-muted'">List</button>
+        <button type="button" [attr.aria-pressed]="!listView" (click)="listView = false"
+          class="rounded-md px-3 py-1 text-sm font-semibold" [ngClass]="!listView ? 'bg-line text-fg' : 'text-muted'">Visual</button>
+      </div>
+    </div>
+
     <ng-container>
       <p-accordion class="mx-auto" [multiple]="true" [(value)]="accordionValue">
         <p-accordion-panel value="0" [pDroppable]="['toDeck', 'fromSide']" (onDrop)="drop(draggedCard(), 'Main')">
@@ -40,6 +59,40 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
             </div>
           </p-accordion-header>
           <p-accordion-content>
+            @if (listView) {
+              <div class="flex flex-col gap-3">
+                @for (group of groups; track group.title) {
+                  <div class="flex flex-col gap-1">
+                    <div class="flex justify-between px-1 py-1">
+                      <span class="text-xs font-semibold uppercase tracking-wider text-muted">{{ group.title }}</span>
+                      <span class="font-mono text-xs text-muted">{{ group.count }}</span>
+                    </div>
+                    @for (card of group.cards; track card.id) {
+                      <div
+                        pDraggable="fromDeck"
+                        (onDragStart)="setDraggedCard(card, DRAG.Main)"
+                        class="flex items-center gap-3 rounded-lg bg-ink-2 py-1 pl-1 pr-2">
+                        <img [digimonImgFallback]="card.cardImage" alt="" class="h-11 w-8 rounded object-cover" />
+                        <span class="flex min-w-0 flex-1 flex-col">
+                          <span class="truncate text-sm font-medium text-fg">{{ card.name.english }}</span>
+                          <span class="font-mono text-[11px] text-muted">{{ card.cardNumber }}</span>
+                        </span>
+                        @if (missingCards && card.count - getCardHave(card) > 0) {
+                          <span class="rounded bg-orange-400/15 px-1.5 py-0.5 font-mono text-[11px] text-orange-300">need {{ card.count - getCardHave(card) }}</span>
+                        }
+                        <button type="button" [attr.aria-label]="'Remove one ' + card.name.english" (click)="websiteStore.removeCardFromDeck(card.id)"
+                          class="h-8 w-8 rounded-md border border-line bg-ink-1 text-fg hover:border-accent">−</button>
+                        <span class="w-5 text-center font-mono font-semibold text-fg">{{ card.count }}</span>
+                        <button type="button" [attr.aria-label]="'Add one ' + card.name.english" (click)="websiteStore.addCardToDeck(card.id)"
+                          class="h-8 w-8 rounded-md border border-line bg-ink-1 text-fg hover:border-accent">+</button>
+                      </div>
+                    }
+                  </div>
+                } @empty {
+                  <p class="m-0 p-2 text-sm text-muted">Click or drag cards from the pool to add them.</p>
+                }
+              </div>
+            } @else {
             <div
               class="mx-auto grid w-full grid-cols-4 md:grid-cols-6"
               [ngClass]="{
@@ -54,6 +107,7 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
                 [card]="card"
                 [missingCards]="missingCards"></digimon-deck-card>
             </div>
+            }
           </p-accordion-content>
         </p-accordion-panel>
         <p-accordion-panel
@@ -93,6 +147,7 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
     ConfirmDialogModule,
     ConfirmPopupModule,
     NgClass,
+    ImgFallbackDirective,
   ],
   providers: [MessageService],
 })
@@ -113,6 +168,8 @@ export class DeckViewComponent {
   displaySideDeck = this.saveStore.displaySideDeck;
 
   mainDeck: IDeckCard[] = [];
+  groups: DeckCardGroup[] = [];
+  listView = true;
   accordionValue: string[] = ['0', '1'];
   sideDeck: IDeckCard[] = [];
 
@@ -228,6 +285,11 @@ export class DeckViewComponent {
       this.mainDeck = levelSort(this.mainDeck);
       this.sideDeck = levelSort(this.sideDeck);
     }
+    this.groups = groupDeckCards(this.mainDeck);
+  }
+
+  countBadge(ok: boolean): string {
+    return ok ? 'bg-green-500/15 text-green-300' : 'bg-ink-2 text-fg';
   }
 
   removeP(id: string): string {

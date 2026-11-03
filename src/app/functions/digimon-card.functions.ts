@@ -354,6 +354,34 @@ export function itemsAsSelectItem(array: string[]): ISelectItem[] {
   return array.map((item) => ({ label: item, value: item }) as ISelectItem);
 }
 
+export interface DeckCardGroup {
+  title: string;
+  count: number;
+  cards: IDeckCard[];
+}
+
+/** Groups a sorted deck for the list view: Digi-Egg, Level 2-7, Tamer, Option, then anything else. */
+export function groupDeckCards(cards: IDeckCard[]): DeckCardGroup[] {
+  const groups = new Map<string, DeckCardGroup & { order: number }>();
+
+  cards.forEach((card) => {
+    const level = parseInt((card.cardLv ?? '').replace(/\D/g, ''), 10);
+    let title = card.cardType;
+    let order = 200;
+    if (card.cardType === 'Digi-Egg') [title, order] = ['Digi-Egg', 0];
+    else if (isDigimonType(card.cardType)) [title, order] = level ? [`Level ${level}`, level] : ['Digimon', 99];
+    else if (card.cardType === 'Tamer') order = 100;
+    else if (card.cardType === 'Option') order = 101;
+
+    const group = groups.get(title) ?? { title, order, count: 0, cards: [] };
+    group.count += card.count;
+    group.cards.push(card);
+    groups.set(title, group);
+  });
+
+  return [...groups.values()].sort((a, b) => a.order - b.order).map(({ title, count, cards }) => ({ title, count, cards }));
+}
+
 export interface SetCompletion {
   set: string;
   owned: number;

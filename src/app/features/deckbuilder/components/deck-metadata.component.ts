@@ -13,19 +13,18 @@ import { WebsiteStore } from '@store';
 @Component({
   selector: 'digimon-deck-metadata',
   template: `
-    <div class="mb-1 inline-flex w-full px-3">
-      <div class="ml-auto mt-2 flex w-1/2 pr-2">
-        <p-chip class="ml-auto text-white" *ngFor="let tag of tags()" label="{{ tag.name }}"></p-chip>
-      </div>
-
-      <div class="mt-2 w-1/2 pl-1">
+    <div class="mb-2 flex w-full flex-wrap items-center gap-2 px-3 pt-2">
+      <label class="min-w-0 flex-[1_1_16rem]">
+        <span class="sr-only">Deck name</span>
         <input
           [ngModel]="this.obscenity.transform(this.title())"
           (ngModelChange)="updateTitle($event)"
-          placeholder="Deck Name:"
-          class="h-8 w-full text-sm"
-          pInputText
+          placeholder="Untitled deck"
+          class="h-11 w-full rounded-lg border border-transparent bg-transparent px-2 font-display text-2xl font-bold text-fg outline-none hover:border-line focus:border-accent"
           type="text" />
+      </label>
+      <div class="flex flex-wrap gap-1">
+        <p-chip class="text-white" *ngFor="let tag of tags()" label="{{ tag.name }}"></p-chip>
       </div>
     </div>
 
