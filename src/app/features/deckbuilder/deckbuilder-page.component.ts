@@ -29,7 +29,6 @@ import { DeckViewComponent } from './components/deck-view.component';
           [collectionView]="collectionView"
           [poolVisible]="collectionView"
           [showcase]="!collectionView && wide"
-          [statsVisible]="statsDisplay"
           (togglePool)="changeView()"
           (hideStats)="statsDisplay = !statsDisplay"></digimon-deck-view>
 
@@ -42,10 +41,10 @@ import { DeckViewComponent } from './components/deck-view.component';
           class="border-l max-h-full border-slate-200 flex flex-row  h-[calc(100vh-7.5rem)] md:h-[calc(100vh-5rem)]"></digimon-pagination-card-list>
 
 
-        @if (statsDisplay && deckView && collectionView) {
+        @if (statsDisplay && deckView) {
           <digimon-deck-stats class="fixed left-0 z-[300] hidden lg:block xl:hidden" [collectionView]="collectionView"></digimon-deck-stats>
         }
-        @if (statsDisplay && deckView && collectionView) {
+        @if (statsDisplay && deckView) {
           <!-- Wide screens: stats get their own column instead of the fixed bottom strip -->
           <digimon-deck-stats
             [column]="true"

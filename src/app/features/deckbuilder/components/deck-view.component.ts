@@ -16,7 +16,6 @@ import { WebsiteStore } from '@store';
 import { DeckCardComponent } from '../../shared/deck-card.component';
 import { DeckMetadataComponent } from './deck-metadata.component';
 import { DeckToolbarComponent } from './deck-toolbar.component';
-import { DeckStatsComponent } from './deck-stats.component';
 
 @Component({
   selector: 'digimon-deck-view',
@@ -205,12 +204,6 @@ import { DeckStatsComponent } from './deck-stats.component';
         </p-accordion-panel>
       </p-accordion>
     </ng-container>
-
-    @if (showcase && statsVisible) {
-      <section aria-label="Deck stats" class="mx-3 mb-6 mt-4 rounded-xl border border-line bg-ink-1 p-5">
-        <digimon-deck-stats [column]="true" [row]="true"></digimon-deck-stats>
-      </section>
-    }
   `,
   styleUrls: ['./deck-view.component.scss'],
   standalone: true,
@@ -228,7 +221,6 @@ import { DeckStatsComponent } from './deck-stats.component';
     NgClass,
     ImgFallbackDirective,
     NgTemplateOutlet,
-    DeckStatsComponent,
   ],
   providers: [MessageService],
 })
@@ -239,9 +231,8 @@ export class DeckViewComponent {
   @Output() hideStats = new EventEmitter<boolean>();
   @Output() togglePool = new EventEmitter<void>();
   @Input() poolVisible = true;
-  // Pool hidden on a wide screen: hero header and stats below the cards
+  // Pool hidden on a wide screen: hero header instead of the editing header
   @Input() showcase = false;
-  @Input() statsVisible = true;
 
   mongoBackendService = inject(MongoBackendService);
   confirmationService = inject(ConfirmationService);

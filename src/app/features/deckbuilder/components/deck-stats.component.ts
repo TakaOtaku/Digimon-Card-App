@@ -16,7 +16,7 @@ import { DdtoSpreadComponent } from '../../shared/statistics/ddto-spread.compone
   selector: 'digimon-deck-stats',
   template: `
     @if (column) {
-      <div [ngClass]="row ? 'grid w-full grid-cols-[repeat(auto-fit,minmax(15rem,1fr))] items-start gap-x-10 gap-y-6' : 'flex flex-col gap-6 w-full'">
+      <div class="flex flex-col gap-6 w-full">
         <section class="flex flex-col gap-2">
           <h3 class="m-0 text-xs font-semibold uppercase tracking-wider text-muted">Level curve</h3>
           <digimon-chart-containers [deck]="mainDeck()"></digimon-chart-containers>
@@ -98,8 +98,6 @@ export class DeckStatsComponent {
   @Input() showStats = true;
   @Input() collectionView = false;
   @Input() column = false;
-  // With column: lay the sections out side by side (under the deck)
-  @Input() row = false;
 
   websiteStore = inject(WebsiteStore);
   digimonCardStore = inject(DigimonCardStore);

@@ -1,7 +1,17 @@
+// Main / side deck sit in dark cards like the header, not on the page gradient
+p-accordion-panel {
+  display: block;
+  margin: 0 0.75rem 0.75rem;
+  border: 1px solid var(--dc-line);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--dc-ink-1);
+}
+
 p-accordion-content ::ng-deep .p-accordioncontent-content {
   background: transparent;
   border-color: transparent;
-  padding: 0;
+  padding: 0 0.5rem 0.75rem;
 }
 
 p-accordion-header {
