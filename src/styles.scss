@@ -48,8 +48,15 @@ body {
   margin: 0;
 }
 
-h1 {
+h1:not(.text-xs) {
   font-family: 'Chakra Petch', sans-serif;
+}
+
+// Many filters use a tiny h1 as a field label; style those like the mockup's labels
+h1.text-xs {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--dc-muted) !important;
 }
 
 .primary-color {
@@ -268,9 +275,10 @@ p-dialog::ng-deep {
 .stat-container {
   width: 22px;
   height: 60px;
-  border: 1px solid #ffffff;
+  border: 1px solid var(--dc-line);
   border-radius: 6px;
-  background: #7794a8;
+  background: var(--dc-ink-2);
+  overflow: hidden;
   margin: 0 auto;
   display: flex;
   align-items: baseline;

@@ -11,17 +11,14 @@ export interface MultiButtons {
   template: `
     <div class="mx-auto mb-2 max-w-[250px]">
       <h1 class="mb-1 text-center text-xs font-bold text-fg">{{ title }}:</h1>
-      <div [ngClass]="grid" class="my-2 grid w-full justify-center">
+      <div [ngClass]="grid" class="my-2 grid w-full justify-center gap-1">
         <button
+          type="button"
           (click)="clickEvent.emit(button.value)"
-          *ngFor="let button of buttonArray; let i = index"
-          [ngClass]="{
-            'button-highlight-background text-white': value.includes(button.value),
-            'surface-card text-fg': !value.includes(button.value),
-            'rounded-l-sm': i === 0,
-            'rounded-r-sm': i === buttonArray.length - 1,
-          }"
-          class="min-w-auto h-8  border border-slate-100 p-0.5 py-2 text-xs font-semibold text-fg">
+          *ngFor="let button of buttonArray"
+          [attr.aria-pressed]="value.includes(button.value)"
+          [ngClass]="value.includes(button.value) ? 'border-accent bg-ink-2 text-accent' : 'border-line bg-ink-2 text-fg hover:border-muted'"
+          class="min-w-auto h-8 rounded-full border px-2 text-xs font-semibold">
           {{ button.name }}
         </button>
       </div>
