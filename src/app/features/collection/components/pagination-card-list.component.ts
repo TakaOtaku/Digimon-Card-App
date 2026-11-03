@@ -1,4 +1,4 @@
-import { NgIf } from '@angular/common';
+import { NgClass, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, effect, EventEmitter, inject, Input, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { DataViewModule } from 'primeng/dataview';
@@ -39,6 +39,7 @@ import { CardMarketService } from '../../../services/card-market.service';
         role="list"
         aria-live="polite"
         aria-label="Card search results"
+        [ngClass]="{ 'pb-16 lg:pb-0': bottomInset }"
         class="h-[calc(100vh-12.5rem)] md:h-[calc(100vh-10rem)] flex flex-wrap w-full content-start justify-start overflow-y-scroll">
         <ng-content></ng-content>
         @for (card of showCards; track $index) {
@@ -77,6 +78,7 @@ import { CardMarketService } from '../../../services/card-market.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [
+    NgClass,
     PaginationCardListHeaderComponent,
     SearchComponent,
     NgIf,
@@ -96,6 +98,8 @@ export class PaginationCardListComponent {
   @Input() initialWidth = 5.6;
   @Input() inputCollection: ICountCard[] = [];
   @Input() dialogOnView = true;
+  // Leaves room for the builder's mobile Pool/Deck/Stats tray
+  @Input() bottomInset = false;
   @Output() cardViewed = new EventEmitter<DigimonCard>();
 
   digimonCardStore = inject(DigimonCardStore);

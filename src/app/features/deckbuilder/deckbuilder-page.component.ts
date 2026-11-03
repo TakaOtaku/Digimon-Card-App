@@ -32,10 +32,11 @@ import { DeckViewComponent } from './components/deck-view.component';
         <digimon-pagination-card-list
           *ngIf="collectionView"
           [initialWidth]="3"
+          [bottomInset]="true"
           [ngClass]="{ 'w-3/5 max-w-[60%] xl:w-auto xl:max-w-none xl:flex-1 xl:min-w-0': deckView, 'w-full': !deckView }"
           class="border-l xl:border-l-0 xl:order-1 max-h-full border-slate-200 flex flex-row  h-[calc(100vh-7.5rem)] md:h-[calc(100vh-5rem)]"></digimon-pagination-card-list>
 
-        <button class="surface-card w-6 border-l border-slate-200 xl:order-2" (click)="changeView()">
+        <button class="surface-card hidden lg:block w-6 border-l border-slate-200 xl:order-2" (click)="changeView()">
           <span
             class="w-full h-[calc(100%-4rem)] md:h-[calc(100%-5.5rem)] lg:h-[calc(100%-0.5rem)] rotate-180 text-center font-bold text-fg"
             [ngStyle]="{ writingMode: 'vertical-rl' }"
@@ -44,7 +45,7 @@ import { DeckViewComponent } from './components/deck-view.component';
         </button>
 
         @if (statsDisplay && deckView) {
-          <digimon-deck-stats class="fixed left-0 z-[300] xl:hidden" [collectionView]="collectionView"></digimon-deck-stats>
+          <digimon-deck-stats class="fixed left-0 z-[300] hidden lg:block xl:hidden" [collectionView]="collectionView"></digimon-deck-stats>
         }
         @if (statsDisplay && deckView) {
           <!-- Wide screens: stats get their own column instead of the fixed bottom strip -->
@@ -52,7 +53,24 @@ import { DeckViewComponent } from './components/deck-view.component';
             [column]="true"
             class="hidden xl:flex xl:order-4 w-[18rem] shrink-0 h-full overflow-y-auto border-l border-line bg-ink-1 p-4"></digimon-deck-stats>
         }
+        @if (mobileTab === 'stats') {
+          <digimon-deck-stats [column]="true" class="lg:hidden flex w-full h-full overflow-y-auto p-4 pb-20"></digimon-deck-stats>
+        }
       </digimon-page>
+
+      <div role="tablist" aria-label="Builder view" class="lg:hidden fixed inset-x-3 bottom-[4.5rem] z-[350] flex gap-1 rounded-xl border border-line bg-ink-1 p-1 shadow-lg">
+        @for (tab of mobileTabs; track tab.id) {
+          <button
+            type="button"
+            role="tab"
+            [attr.aria-selected]="mobileTab === tab.id"
+            (click)="setMobileTab(tab.id)"
+            class="h-10 flex-1 rounded-lg text-sm font-semibold"
+            [ngClass]="mobileTab === tab.id ? 'bg-line text-fg' : 'text-muted'">
+            {{ tab.label }}
+          </button>
+        }
+      </div>
     }
   `,
   standalone: true,
@@ -123,6 +141,20 @@ export class DeckbuilderPageComponent implements OnInit {
     } else {
       this.collectionView = !this.collectionView;
     }
+  }
+
+  // Phones (< lg) show one of pool / deck / stats at a time
+  mobileTabs = [
+    { id: 'pool', label: 'Pool' },
+    { id: 'deck', label: 'Deck' },
+    { id: 'stats', label: 'Stats' },
+  ] as const;
+  mobileTab: 'pool' | 'deck' | 'stats' = 'deck';
+
+  setMobileTab(tab: 'pool' | 'deck' | 'stats') {
+    this.mobileTab = tab;
+    this.collectionView = tab === 'pool';
+    this.deckView = tab === 'deck';
   }
 
   private onResize() {
