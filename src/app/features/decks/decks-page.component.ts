@@ -4,7 +4,7 @@ import { ChangeDetectorRef, Component, effect, inject, OnInit } from '@angular/c
 import { setDeckImage } from '@functions';
 import { emptyDeck, ICountCard, IDeck } from '@models';
 import { DialogStore, DigimonCardStore, SaveStore, WebsiteStore } from '@store';
-import { ToastrService } from 'ngx-toastr';
+import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { OverlayZoneFixDirective } from '@directives';
@@ -137,7 +137,7 @@ export class DecksPageComponent implements OnInit {
   collection: ICountCard[];
   loading2 = false;
   private searchPerformed = false;
-  private toastrService = inject(ToastrService);
+  private messageService = inject(MessageService);
   private digimonCardStore = inject(DigimonCardStore);
 
   constructor(private changeDetection: ChangeDetectorRef) {
@@ -191,7 +191,7 @@ export class DecksPageComponent implements OnInit {
     // Update the filtered decks display
     this.filteredDecks = possibleDecks;
 
-    this.toastrService.success('Filtered for Decks possible with your cards', 'Success');
+    this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Filtered for Decks possible with your cards' });
 
     this.loading2 = false;
   }

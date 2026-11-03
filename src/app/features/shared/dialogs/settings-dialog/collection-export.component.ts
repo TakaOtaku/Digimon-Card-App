@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { DigimonCard, GroupedSets, ICountCard, ISave } from '@models';
 import { DialogStore, DigimonCardStore, SaveStore } from '@store';
 import { saveAs } from 'file-saver';
-import { ToastrService } from 'ngx-toastr';
 import { MessageService } from 'primeng/api';
 import { MultiSelect } from 'primeng/multiselect';
 
@@ -82,13 +81,12 @@ import { MultiSelect } from 'primeng/multiselect';
   `,
   standalone: true,
   imports: [MultiSelect, FormsModule, NgClass],
-  providers: [MessageService],
 })
 export class CollectionExportComponent {
   private dialogStore = inject(DialogStore);
   private saveStore = inject(SaveStore);
   private digimonCardStore = inject(DigimonCardStore);
-  private toastrService = inject(ToastrService);
+  private messageService = inject(MessageService);
 
   save: Signal<ISave> = this.saveStore.save;
 
@@ -134,7 +132,7 @@ export class CollectionExportComponent {
       .sort((a, b) => a.id.localeCompare(b.id));
 
     if (exportCards.length === 0) {
-      this.toastrService.info('No cards, that match your filter were found!', 'No cards found!');
+      this.messageService.add({ severity: 'info', summary: 'No cards found!', detail: 'No cards, that match your filter were found!' });
       return;
     }
 

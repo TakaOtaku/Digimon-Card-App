@@ -12,7 +12,6 @@ import { PreloadAllModules, provideRouter, withPreloading } from '@angular/route
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AuthService, DigimonBackendService, MongoBackendService } from '@services';
 import { authInterceptor } from './services/auth.interceptor';
-import { ToastrModule } from 'ngx-toastr';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { BlockUIModule } from 'primeng/blockui';
 import { providePrimeNG } from 'primeng/config';
@@ -36,7 +35,6 @@ export const appConfig: ApplicationConfig = {
       ReactiveFormsModule,
       BrowserModule,
       HammerModule,
-      ToastrModule.forRoot({}),
       DialogModule,
       ConfirmDialogModule,
       ToastModule,

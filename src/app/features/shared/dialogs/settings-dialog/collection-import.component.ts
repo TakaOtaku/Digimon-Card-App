@@ -2,7 +2,6 @@ import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ICountCard } from '@models';
 import { DigimonCardStore, SaveStore } from '@store';
-import { ToastrService } from 'ngx-toastr';
 import { MessageService } from 'primeng/api';
 
 @Component({
@@ -28,11 +27,10 @@ import { MessageService } from 'primeng/api';
   `,
   standalone: true,
   imports: [FormsModule],
-  providers: [MessageService],
 })
 export class CollectionImportComponent {
   private saveStore = inject(SaveStore);
-  private toastrService: ToastrService = inject(ToastrService);
+  private messageService = inject(MessageService);
 
   importPlaceholder = '4 BT1-010\n2 BT1-011\n1 EX13-001';
   collectionText = '';
@@ -52,7 +50,7 @@ export class CollectionImportComponent {
     });
 
     this.saveStore.addCard(collectionCards);
-    this.toastrService.info('The collection was imported successfully!', 'Collection Imported!');
+    this.messageService.add({ severity: 'info', summary: 'Collection Imported!', detail: 'The collection was imported successfully!' });
   }
 
   private parseLine(line: string): ICountCard | null {

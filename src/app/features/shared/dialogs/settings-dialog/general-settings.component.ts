@@ -2,7 +2,6 @@ import { NgStyle } from '@angular/common';
 import { Component, effect, inject } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, UntypedFormControl } from '@angular/forms';
 import { saveAs } from 'file-saver';
-import { ToastrService } from 'ngx-toastr';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ButtonDirective } from 'primeng/button';
 import { InputNumber } from 'primeng/inputnumber';
@@ -142,7 +141,6 @@ import { SettingsRowComponent } from '../../settings-row.component';
     NgStyle,
     ToggleSwitch,
   ],
-  providers: [MessageService],
 })
 export class GeneralSettingsComponent {
   dialogStore = inject(DialogStore);
@@ -193,7 +191,7 @@ export class GeneralSettingsComponent {
   constructor(
     private mongoBackendService: MongoBackendService,
     private confirmationService: ConfirmationService,
-    private toastrService: ToastrService,
+    private messageService: MessageService,
   ) {
     effect(() => {
       const save = this.saveStore.save();
@@ -274,7 +272,7 @@ export class GeneralSettingsComponent {
     };
 
     this.saveStore.updateSave(save);
-    this.toastrService.info('Settings were saved and updated.', 'Settings saved!');
+    this.messageService.add({ severity: 'info', summary: 'Settings saved!', detail: 'Settings were saved and updated.' });
 
     this.dialogStore.updateSettingsDialog(false);
   }
@@ -291,9 +289,9 @@ export class GeneralSettingsComponent {
         let save: any = JSON.parse(fileReader.result as string);
         save = this.mongoBackendService.checkSaveValidity(save, null);
         this.saveStore.updateSave(save);
-        this.toastrService.info('The save was loaded successfully!', 'Save loaded!');
+        this.messageService.add({ severity: 'info', summary: 'Save loaded!', detail: 'The save was loaded successfully!' });
       } catch (e) {
-        this.toastrService.info('The save was not loaded!', 'Save Error!');
+        this.messageService.add({ severity: 'error', summary: 'Save Error!', detail: 'The save was not loaded!' });
       }
     };
     fileReader.readAsText(input.files[0]);
@@ -312,7 +310,7 @@ export class GeneralSettingsComponent {
           settings: emptySettings,
         };
         this.saveStore.updateSave(resetedSave);
-        this.toastrService.info('The save was cleared successfully!', 'Save cleared!');
+        this.messageService.add({ severity: 'info', summary: 'Save cleared!', detail: 'The save was cleared successfully!' });
       },
       reject: () => { },
     });

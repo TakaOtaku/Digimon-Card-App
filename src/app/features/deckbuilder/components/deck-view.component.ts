@@ -83,6 +83,7 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
                         <span class="font-mono text-xs text-muted">{{ group.count }}</span>
                       </div>
                     }
+                    <div class="grid grid-cols-[repeat(auto-fill,minmax(19rem,1fr))] gap-1">
                     @for (card of group.cards; track card.id) {
                       <div
                         pDraggable="fromDeck"
@@ -103,24 +104,27 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
                           class="h-8 w-8 rounded-md border border-line bg-ink-1 text-fg hover:border-accent">+</button>
                       </div>
                     }
+                    </div>
                   </div>
                 } @empty {
                   <p class="m-0 p-2 text-sm text-muted">Click or drag cards from the pool to add them.</p>
                 }
               </div>
             } @else {
-              <div class="flex flex-col gap-4">
+              <!-- Pool hidden: Digimon fill a wide column, Digi-Egg / Tamer / Option stack beside it -->
+              <div [ngClass]="poolVisible ? 'flex flex-col gap-4' : 'grid grid-cols-[minmax(0,1fr)_auto] items-start gap-x-8 gap-y-4'">
                 @for (group of groups; track group.title) {
-                  <section class="flex flex-col gap-1">
+                  <section class="flex min-w-0 flex-col gap-1" [ngClass]="poolVisible ? '' : sectionPlacement(group.title)">
                     @if (group.title) {
                       <div class="flex justify-between border-b border-line px-1 pb-1">
                         <span class="text-xs font-semibold uppercase tracking-wider text-muted">{{ group.title }}</span>
                         <span class="font-mono text-xs text-muted">{{ group.count }}</span>
                       </div>
                     }
-                    <div class="grid grid-cols-[repeat(auto-fill,minmax(6.5rem,1fr))]">
+                    <div [ngClass]="poolVisible ? 'grid grid-cols-[repeat(auto-fill,minmax(6.5rem,1fr))]' : 'flex flex-wrap'">
                       <digimon-deck-card
                         *ngFor="let card of group.cards"
+                        [class.w-36]="!poolVisible"
                         pDraggable="fromDeck"
                         (onDragStart)="setDraggedCard(card, DRAG.Main)"
                         (removeCard)="removeCard(card)"
@@ -319,6 +323,11 @@ export class DeckViewComponent {
 
   shareImage() {
     this.dialogStore.updateExportDeckDialog({ show: true, deck: this.deck(), mode: 'IMAGE' });
+  }
+
+  sectionPlacement(title: string): string {
+    if (!title) return 'col-span-2';
+    return title === 'Digimon' ? 'col-start-1 row-start-1 row-span-4' : 'col-start-2 w-[28.5rem] max-w-full';
   }
 
   countBadge(ok: boolean): string {
