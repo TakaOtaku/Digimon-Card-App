@@ -1,4 +1,4 @@
-import { AsyncPipe, NgClass, NgIf, NgStyle } from '@angular/common';
+import { AsyncPipe, NgClass, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
@@ -27,6 +27,8 @@ import { DeckViewComponent } from './components/deck-view.component';
             'w-full': !collectionView,
           }"
           [collectionView]="collectionView"
+          [poolVisible]="collectionView"
+          (togglePool)="changeView()"
           (hideStats)="statsDisplay = !statsDisplay"></digimon-deck-view>
 
         <digimon-pagination-card-list
@@ -37,13 +39,6 @@ import { DeckViewComponent } from './components/deck-view.component';
           [ngClass]="{ 'w-3/5 max-w-[60%] xl:w-auto xl:max-w-none xl:flex-1 xl:min-w-0': deckView, 'w-full': !deckView }"
           class="border-l max-h-full border-slate-200 flex flex-row  h-[calc(100vh-7.5rem)] md:h-[calc(100vh-5rem)]"></digimon-pagination-card-list>
 
-        <button class="surface-card hidden lg:block w-6 border-l border-slate-200" (click)="changeView()">
-          <span
-            class="w-full h-[calc(100%-4rem)] md:h-[calc(100%-5.5rem)] lg:h-[calc(100%-0.5rem)] rotate-180 text-center font-bold text-fg"
-            [ngStyle]="{ writingMode: 'vertical-rl' }"
-            >{{ collectionView ? 'Hide Card View' : 'Show Card View' }}</span
-          >
-        </button>
 
         @if (statsDisplay && deckView) {
           <digimon-deck-stats class="fixed left-0 z-[300] hidden lg:block xl:hidden" [collectionView]="collectionView"></digimon-deck-stats>
@@ -76,7 +71,7 @@ import { DeckViewComponent } from './components/deck-view.component';
   `,
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgClass, NgIf, NgStyle, DeckViewComponent, DeckStatsComponent, AsyncPipe, PaginationCardListComponent, PageComponent],
+  imports: [NgClass, NgIf, DeckViewComponent, DeckStatsComponent, AsyncPipe, PaginationCardListComponent, PageComponent],
 })
 export class DeckbuilderPageComponent implements OnInit {
   route = inject(ActivatedRoute);

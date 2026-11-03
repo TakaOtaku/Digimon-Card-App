@@ -42,7 +42,15 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
       @if (displaySideDeck()) {
         <span class="rounded-md bg-ink-2 px-2.5 py-1 font-mono text-xs text-fg">Side {{ getCardCount(sideDeck, 'All') }}</span>
       }
-      <div role="group" aria-label="Deck view" class="ml-auto inline-flex gap-1 rounded-lg border border-line bg-ink-0 p-1">
+      <button
+        type="button"
+        (click)="togglePool.emit()"
+        [attr.aria-pressed]="!poolVisible"
+        class="ml-auto hidden h-9 items-center gap-2 rounded-lg border border-line bg-ink-2 px-3 text-sm font-semibold text-fg hover:border-accent lg:inline-flex">
+        <i [class]="poolVisible ? 'pi pi-eye-slash' : 'pi pi-eye'"></i>
+        {{ poolVisible ? 'Hide pool' : 'Show pool' }}
+      </button>
+      <div role="group" aria-label="Deck view" class="inline-flex gap-1 rounded-lg border border-line bg-ink-0 p-1">
         <button type="button" [attr.aria-pressed]="!listView" (click)="listView = false"
           class="rounded-md px-3 py-1 text-sm font-semibold" [ngClass]="!listView ? 'bg-line text-fg' : 'text-muted'">Cards</button>
         <button type="button" [attr.aria-pressed]="listView" (click)="listView = true"
@@ -164,6 +172,8 @@ export class DeckViewComponent {
 
   @Output() onMainDeck = new EventEmitter<IDeckCard[]>();
   @Output() hideStats = new EventEmitter<boolean>();
+  @Output() togglePool = new EventEmitter<void>();
+  @Input() poolVisible = true;
 
   mongoBackendService = inject(MongoBackendService);
   confirmationService = inject(ConfirmationService);
