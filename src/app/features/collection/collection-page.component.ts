@@ -1,12 +1,14 @@
+import { CurrencyPipe, NgClass } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { map, of, switchMap } from 'rxjs';
-import { emptySave } from '@models';
+import { emptySave, PriceMetric } from '@models';
 import { setCompletion } from '@functions';
 import { MongoBackendService } from '@services';
-import { DigimonCardStore, SaveStore } from '@store';
+import { DialogStore, DigimonCardStore, FilterStore, SaveStore } from '@store';
+import { CardMarketService } from '../../services/card-market.service';
 import { PageComponent } from '../shared/page.component';
 import { PaginationCardListComponent } from './components/pagination-card-list.component';
 
@@ -19,6 +21,33 @@ import { PaginationCardListComponent } from './components/pagination-card-list.c
           [collectionOnly]="true"
           [inputCollection]="collection"
           class="w-screen flex flex-row h-[calc(100vh-7.5rem)] md:h-[calc(100vh-5rem)]">
+          <section aria-label="Collection summary" class="w-full flex flex-wrap items-center gap-2 px-1 pt-2">
+            @for (stat of stats(); track stat.label) {
+              <div class="min-w-[9rem] flex-1 rounded-lg border border-line bg-ink-1 px-4 py-3">
+                <div class="text-[11px] font-semibold uppercase tracking-wider text-muted">{{ stat.label }}</div>
+                <div class="font-mono text-2xl font-semibold text-fg">{{ stat.value }}</div>
+              </div>
+            }
+            <div class="flex w-full flex-wrap items-center gap-2">
+              <div role="group" aria-label="Show cards" class="inline-flex gap-1 rounded-full border border-line bg-ink-1 p-1">
+                @for (option of ownedOptions; track option.label) {
+                  <button
+                    type="button"
+                    (click)="showOwned(option.range)"
+                    [attr.aria-pressed]="ownedFilter() === option.label"
+                    class="rounded-full px-3 py-1 text-sm"
+                    [ngClass]="ownedFilter() === option.label ? 'bg-accent text-accent-ink font-semibold' : 'text-fg'">
+                    {{ option.label }}
+                  </button>
+                }
+              </div>
+              @if (own) {
+                <button type="button" (click)="openImportExport()" class="ml-auto h-9 rounded-lg border border-line bg-ink-2 px-3 text-sm text-fg hover:border-accent">
+                  <i class="pi pi-sort-alt mr-1"></i> Import / Export
+                </button>
+              }
+            </div>
+          </section>
           <section aria-label="Set completion" class="w-full flex gap-2 overflow-x-auto px-1 pt-1 pb-2">
             @for (set of sets(); track set.set) {
               <div class="shrink-0 w-32 rounded-lg border border-line bg-ink-1 p-3 flex flex-col gap-2">
@@ -39,7 +68,8 @@ import { PaginationCardListComponent } from './components/pagination-card-list.c
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [PaginationCardListComponent, PageComponent],
+  imports: [PaginationCardListComponent, PageComponent, NgClass],
+  providers: [CurrencyPipe],
 })
 export class CollectionPageComponent {
   meta = inject(Meta);
@@ -64,9 +94,53 @@ export class CollectionPageComponent {
   private digimonCardStore = inject(DigimonCardStore);
   private saveStore = inject(SaveStore);
 
+  private filterStore = inject(FilterStore);
+  private dialogStore = inject(DialogStore);
+  private cardMarketService = inject(CardMarketService);
+  private currency = inject(CurrencyPipe);
+
+  own = !this.route.snapshot.params['userId'];
+  private collection = computed(() => (this.own ? this.saveStore.collection() : (this.urlCollection() ?? [])));
+
+  stats = computed(() => {
+    const owned = this.collection().filter((card) => card.count > 0);
+    const metric = (this.saveStore.settings().priceMetric as PriceMetric) || PriceMetric.Trend;
+    const value = this.cardMarketService.calculateTotalValue(owned, metric);
+    return [
+      { label: 'Unique cards', value: owned.length },
+      { label: 'Total copies', value: owned.reduce((sum, card) => sum + card.count, 0) },
+      { label: 'Playsets (4+)', value: owned.filter((card) => card.count >= 4).length },
+      { label: 'Value', value: value ? this.currency.transform(value, 'EUR') : '—' },
+    ];
+  });
+
+  // Shortcuts for the "Number in Collection" filter
+  private countMax = computed(() => this.saveStore.settings().countMax ?? 5);
+  ownedOptions = [
+    { label: 'All', range: 'all' },
+    { label: 'Owned', range: 'owned' },
+    { label: 'Missing', range: 'missing' },
+  ] as const;
+  ownedFilter = computed(() => {
+    const [min, max] = this.filterStore.filter().cardCountFilter;
+    if (min === 0 && max === 0) return 'Missing';
+    if (min === 1 && max === this.countMax()) return 'Owned';
+    if (min === 0 && max === this.countMax()) return 'All';
+    return '';
+  });
+
+  showOwned(range: 'all' | 'owned' | 'missing') {
+    const max = this.countMax();
+    const cardCountFilter = range === 'missing' ? [0, 0] : [range === 'owned' ? 1 : 0, max];
+    this.filterStore.updateFilter({ ...this.filterStore.filter(), cardCountFilter });
+  }
+
+  openImportExport() {
+    this.dialogStore.updateSettingsDialog(true);
+  }
+
   sets = computed(() => {
-    const own = !this.route.snapshot.params['userId'];
-    const collection = own ? this.saveStore.collection() : (this.urlCollection() ?? []);
+    const collection = this.collection();
     return setCompletion(this.digimonCardStore.cards(), collection, this.saveStore.settings().collectionMinimum).map((set) => ({
       ...set,
       percent: Math.round((set.owned / set.total) * 100),
