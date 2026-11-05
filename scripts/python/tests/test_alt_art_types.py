@@ -7,26 +7,70 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "Wiki"))
 import GetCardImages as GCI
 import GetDataFromWiki as GDW
 
+BOOSTER = "BT-24: BOOSTER TIME STRANGER"
+
+
+def row(suffix, kind):
+    # Rows as GetCardData builds them: '_P<n>' is the table position, matching the gallery numbering
+    return {"id": suffix, "note": BOOSTER, "illustrator": "Tonamikanji", "type": kind}
+
 
 class PickIllustratorRowTests(unittest.TestCase):
-    # BT24-101 on the wiki: two alt prints from the same booster
-    rows = [
-        {"note": "BT-24: BOOSTER TIME STRANGER", "type": "Alternative Art"},
-        {"note": "BT-24: BOOSTER TIME STRANGER", "type": "Rare Pull"},
-    ]
+    # BT24-034 on the wiki: Alternative Art is _P1, Special Rare is _P2
+    rows = [row("_P1", "Alternative Art"), row("_P2", "Special Rare")]
 
-    def test_same_booster_prints_get_their_own_row(self):
-        used = set()
-        first = GCI.pick_illustrator_row(self.rows, "BT-24: BOOSTER TIME STRANGER", used)
-        used.add(first)
-        second = GCI.pick_illustrator_row(self.rows, "BT-24: BOOSTER TIME STRANGER", used)
-        self.assertEqual([self.rows[first]["type"], self.rows[second]["type"]], ["Alternative Art", "Rare Pull"])
+    def type_for(self, image_id, used=()):
+        index = GCI.pick_illustrator_row(self.rows, image_id, BOOSTER, set(used))
+        return self.rows[index]["type"]
 
-    def test_extra_image_reuses_first_row(self):
-        self.assertEqual(GCI.pick_illustrator_row(self.rows, "BT-24: BOOSTER TIME STRANGER", {0, 1}), 0)
+    def test_image_number_picks_the_row(self):
+        self.assertEqual(self.type_for("BT24-034_P1"), "Alternative Art")
+        self.assertEqual(self.type_for("BT24-034_P2"), "Special Rare")
+
+    def test_sample_image_uses_its_prints_row(self):
+        # Gallery order is P1, P1-Sample, P2: the sample must not take the Special Rare row
+        self.assertEqual(self.type_for("BT24-034_P1-Sample"), "Alternative Art")
+
+    def test_stored_rows_with_full_ids_match_too(self):
+        rows = [row("BT24-034_P1", "Alternative Art"), row("BT24-034_P2", "Special Rare")]
+        index = GCI.pick_illustrator_row(rows, "BT24-034_P2", BOOSTER, set())
+        self.assertEqual(rows[index]["type"], "Special Rare")
+
+    def test_base_image_falls_back_to_the_booster_note(self):
+        self.assertIsNotNone(GCI.pick_illustrator_row(self.rows, "BT24-034", BOOSTER, set()))
 
     def test_unknown_note_has_no_row(self):
-        self.assertIsNone(GCI.pick_illustrator_row(self.rows, "EX-11", set()))
+        self.assertIsNone(GCI.pick_illustrator_row(self.rows, "BT24-034", "EX-11", set()))
+
+    def test_ids_without_a_number_use_unused_rows_in_order(self):
+        rows = [row("-Errata", "Errata Text"), row("-Errata", "Errata Text 2")]
+        first = GCI.pick_illustrator_row(rows, "X-Y", BOOSTER, set())
+        second = GCI.pick_illustrator_row(rows, "X-Y", BOOSTER, {first})
+        self.assertEqual((first, second), (0, 1))
+
+
+class MissingSpecialPrintsTests(unittest.TestCase):
+    # BT18-040: the wiki table lists a Special Rare print that has no gallery image
+    rows = [
+        row("_P1", "Alternative Art"),
+        row("_P2", "Special Rare"),
+        row("_P3", "Textured - Stamped - Top 8 Prize"),
+    ]
+
+    def test_special_print_without_image_is_kept(self):
+        prints = GCI.missing_special_prints("BT18-040", self.rows, {0})
+        self.assertEqual([(p["id"], p["type"]) for p in prints], [("BT18-040_P2", "Special Rare")])
+
+    def test_print_with_an_image_is_not_duplicated(self):
+        self.assertEqual(GCI.missing_special_prints("BT18-040", self.rows, {0, 1}), [])
+
+    def test_other_missing_prints_stay_dropped(self):
+        types = [p["type"] for p in GCI.missing_special_prints("BT18-040", self.rows, set())]
+        self.assertNotIn("Textured - Stamped - Top 8 Prize", types)
+
+    def test_rare_pull_is_kept_too(self):
+        prints = GCI.missing_special_prints("BT19-067", [row("_P1", "Foil - Rare Pull")], set())
+        self.assertEqual([p["id"] for p in prints], ["BT19-067_P1"])
 
 
 class ContentHashTests(unittest.TestCase):

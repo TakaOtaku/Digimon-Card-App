@@ -104,12 +104,34 @@ def remove_suffix_and_extension(input_string):
 
   return without_suffix
 
-def pick_illustrator_row(rows, note, used):
-  """Index of the first row for this booster note not taken by an earlier image.
-  More images than rows reuse the first matching row, as before."""
+def illustrator_suffix(image_id):
+  """'BT24-034_P2', 'BT24-034_P2-Sample' or '_P2' -> '_P2'; '...-Errata' -> '-Errata'; the base card -> None."""
+  match = re.search(r'(_P\d+|-Errata)(?:-(?:Sample|J))*$', image_id)
+  return match.group(1) if match else None
+
+def pick_illustrator_row(rows, image_id, note, used):
+  """Row backing a gallery image. Rows are numbered like the gallery (_P1, _P2, ...), so the number decides:
+  matching on the booster note alone gave every print of one booster the same type (a Rare Pull next to an
+  Alternative Art). Without a numbered match, take the first row for this note that no earlier image took."""
+  suffix = illustrator_suffix(image_id)
+  if suffix is not None:
+    for index, row in enumerate(rows):
+      if illustrator_suffix(row['id']) == suffix:
+        return index
   matches = [index for index, row in enumerate(rows) if row['note'] == note]
   unused = [index for index in matches if index not in used]
   return (unused or matches or [None])[0]
+
+def missing_special_prints(card_id, rows, used):
+  """Special Rare / Rare Pull rows that no gallery image backed. The wiki often has no scan for them, and
+  dropping them hid those cards from the SP / RP filters; kept, the site shows its placeholder image."""
+  prints = []
+  for index, row in enumerate(rows):
+    suffix = illustrator_suffix(row['id'])
+    if index in used or suffix is None or not re.search(r'Special Rare|Rare Pull', row['type']):
+      continue
+    prints.append({'id': card_id + suffix, 'illustrator': row['illustrator'], 'note': row['note'], 'type': row['type']})
+  return prints
 
 def getCardImages():
   # Backup the AAs and JAAs for each card
@@ -205,7 +227,7 @@ def getCardImages():
           # Update the AAs for the card
           # If the Note is the Note for NA it is ignored
           # Notes can have a differnet _P then in the Gallery because of the ordering sometimes
-          aa_index = pick_illustrator_row(backup_aas, note_array[0], used_aas)
+          aa_index = pick_illustrator_row(backup_aas, id_with_p, note_array[0], used_aas)
           if aa_index is not None:
             aa = backup_aas[aa_index]
             if '_P' in id_with_p or '-Errata' in id_with_p:
@@ -215,9 +237,16 @@ def getCardImages():
                 'note': combined_notes,
                 'type': aa['type']
               })
-              used_aas.add(aa_index)
+              # Sample images are dropped later and must not take the row of the real print
+              if 'Sample' not in id_with_p:
+                used_aas.add(aa_index)
             else:
               card.notes = combined_notes
+
+      known_ids = {aa['id'] for aa in card.AAs}
+      for missing in missing_special_prints(card.id, backup_aas, used_aas):
+        if missing['id'] not in known_ids:
+          card.AAs.append(missing)
 
       # Download images and update notes for the Japanese gallery
       div_j = soup.find("div", id="gallery-1")
@@ -255,7 +284,7 @@ def getCardImages():
           combined_notes = " / ".join(note_array)
 
           # Update the JAAs for the card
-          aa_index = pick_illustrator_row(backup_jaas, note_array[0], used_jaas)
+          aa_index = pick_illustrator_row(backup_jaas, id_with_p, note_array[0], used_jaas)
           if aa_index is not None and '_P' in id_with_p:
             aa = backup_jaas[aa_index]
             card.JAAs.append({
@@ -264,7 +293,8 @@ def getCardImages():
               'note': combined_notes,
               'type': aa['type']
             })
-            used_jaas.add(aa_index)
+            if 'Sample' not in id_with_p:
+              used_jaas.add(aa_index)
 
       # Update the card object in the WV.cards list
       index = 0
