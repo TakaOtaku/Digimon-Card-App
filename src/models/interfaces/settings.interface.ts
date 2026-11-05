@@ -28,4 +28,5 @@ export interface ISettings {
   countMax: number; // How high do you want to set the count-filter
   showPrices: boolean; // Show Cardmarket prices on cards/decks/collection ---- default = false
   priceMetric: string; // Which price metric to display ---- default = 'trend'
+  cardPreview?: 'dialog' | 'left' | 'right'; // Where the Cards page shows a clicked card ---- default = 'right'
 }

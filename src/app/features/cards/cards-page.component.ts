@@ -1,7 +1,7 @@
 import { SeoService } from '@services';
-import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { DigimonCard } from '@models';
-import { DialogStore } from '@store';
+import { DialogStore, SaveStore } from '@store';
 import { PaginationCardListComponent } from '../collection/components/pagination-card-list.component';
 import { PageComponent } from '../shared/page.component';
 import { CardDetailPanelComponent } from './card-detail-panel.component';
@@ -18,9 +18,14 @@ import { CardDetailPanelComponent } from './card-detail-panel.component';
           [showCollectionMode]="false"
           (cardViewed)="select($event)"
           class="flex flex-row flex-1 min-w-0 h-full"></digimon-pagination-card-list>
-        <aside aria-label="Card details" class="hidden xl:block w-[22rem] shrink-0 overflow-y-auto border-l border-line bg-ink-1 p-4">
-          <digimon-card-detail-panel [card]="selected()"></digimon-card-detail-panel>
-        </aside>
+        @if (preview() !== 'dialog') {
+          <aside
+            aria-label="Card details"
+            class="hidden xl:block w-[22rem] shrink-0 overflow-y-auto border-line bg-ink-1 p-4"
+            [class]="preview() === 'left' ? 'order-first border-r' : 'border-l'">
+            <digimon-card-detail-panel [card]="selected()"></digimon-card-detail-panel>
+          </aside>
+        }
       </div>
     </digimon-page>
   `,
@@ -31,16 +36,18 @@ import { CardDetailPanelComponent } from './card-detail-panel.component';
 export class CardsPageComponent {
   private seo = inject(SeoService);
   private dialogStore = inject(DialogStore);
+  private saveStore = inject(SaveStore);
   selected = signal<DigimonCard | null>(null);
+  preview = computed(() => this.saveStore.settings().cardPreview ?? 'right');
 
   constructor() {
     this.seo.set('Card search', 'Search every Digimon Card Game card by name, number, color, level, set and effect, with rulings and prices.');
   }
 
-  // The side panel only exists on xl screens; smaller screens keep the dialog
+  // The side panel only exists on xl screens, and not at all when the setting says dialog
   select(card: DigimonCard) {
     this.selected.set(card);
-    if (!window.matchMedia('(min-width: 1280px)').matches) {
+    if (this.preview() === 'dialog' || !window.matchMedia('(min-width: 1280px)').matches) {
       this.dialogStore.updateViewCardDialog({ show: true, card, width: '50vw' });
     }
   }

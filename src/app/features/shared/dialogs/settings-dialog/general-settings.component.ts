@@ -36,6 +36,9 @@ import { SettingsRowComponent } from '../../settings-row.component';
         <digimon-settings-row title="Filter panel beside cards" hint="On wide screens, show filters next to the card list on Cards and Collection. The builder always uses the Filter drawer.">
           <p-toggleSwitch [(ngModel)]="fullscreenFilter"></p-toggleSwitch>
         </digimon-settings-row>
+        <digimon-settings-row title="Card preview" hint="Where the Cards page shows a card you click. On narrow screens it is always a dialog.">
+          <p-selectButton [allowEmpty]="false" [(ngModel)]="cardPreview" [options]="cardPreviewOptions" optionLabel="label" optionValue="value"></p-selectButton>
+        </digimon-settings-row>
         <digimon-settings-row title="Show prices" hint="Cardmarket prices on cards, decks and your collection.">
           <p-toggleSwitch [(ngModel)]="showPrices"></p-toggleSwitch>
         </digimon-settings-row>
@@ -171,6 +174,13 @@ export class GeneralSettingsComponent {
 
   fullscreenFilter = true;
 
+  cardPreview: 'dialog' | 'left' | 'right' = 'right';
+  cardPreviewOptions = [
+    { label: 'Dialog', value: 'dialog' },
+    { label: 'Left', value: 'left' },
+    { label: 'Right', value: 'right' },
+  ];
+
   showPrices = false;
   priceMetric: string = PriceMetric.Trend;
   priceMetricOptions = [
@@ -204,6 +214,7 @@ export class GeneralSettingsComponent {
       this.displayImage = save.photoUrl ?? '';
       this.save = JSON.stringify(save, undefined, 4);
       this.priceMetric = save.settings?.priceMetric ?? PriceMetric.Trend;
+      this.cardPreview = save.settings?.cardPreview ?? 'right';
       this.showPrices = save.settings?.showPrices ?? false;
       this.setGoal = save.settings?.collectionSets ?? [];
       this.collectionCount = save.settings?.collectionMinimum ?? 1;
@@ -257,6 +268,7 @@ export class GeneralSettingsComponent {
         countMax: this.collectionFilterMax,
         showPrices: this.showPrices,
         priceMetric: this.priceMetric,
+        cardPreview: this.cardPreview,
 
         showNormalCards: this.versionFilterDefault.includes('Normal'),
         showAACards: this.versionFilterDefault.includes('Alternative Art'),

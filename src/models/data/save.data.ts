@@ -33,6 +33,7 @@ export const emptySettings: ISettings = {
   countMax: 5,
   showPrices: false,
   priceMetric: PriceMetric.Trend,
+  cardPreview: 'right',
 };
 
 export const emptySave: ISave = {
