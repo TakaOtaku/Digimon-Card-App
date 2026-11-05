@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { DigimonCard, ICountCard, IFilter, ISave, ISort, RarityAbbreviationMap, UltimateCup2023, UltimateCup2024 } from '../../models';
+import { DigimonCard, ICountCard, IFilter, ISave, ISort, RarityAbbreviationMap } from '../../models';
 import { AdvancedSearchService } from '../services/advanced-search.service';
 
 export type PriceGetter = (cardId: string) => number | null;
@@ -372,17 +372,16 @@ function applyPriceFilter(card: DigimonCard, filter: number[], priceGetter: Pric
   return price < filter[0] || price > filter[1];
 }
 
+// A preset keeps only its cards; several presets add up. DIGIMON ALYSION is every BD product
+// card (BD01-01, BD02-10, ...), matched by id so new decks need no list update.
+const PRESET_MATCHERS: Record<string, (card: DigimonCard) => boolean> = {
+  'DIGIMON ALYSION': (card) => /^BD\d+-/.test(card.id),
+};
+
 function applyPresetFilter(card: DigimonCard, filter: string[]): boolean {
-  let inPreset = true;
-  for (const preset of filter) {
-    if (preset === 'Ultimate Cup 2023') {
-      if (UltimateCup2023.includes(card.id)) return false;
-    }
-    if (preset === 'Ultimate Cup 2024') {
-      if (UltimateCup2024.includes(card.id)) return false;
-    }
-  }
-  return inPreset;
+  // Saved filters may still hold removed presets (Ultimate Cup): ignore them instead of hiding every card
+  const matchers = filter.map((preset) => PRESET_MATCHERS[preset]).filter(Boolean);
+  return matchers.length > 0 && !matchers.some((matches) => matches(card));
 }
 
 function applySortOrder(cards: DigimonCard[], sort: ISort, collection: ICountCard[], priceGetter?: PriceGetter): DigimonCard[] {
