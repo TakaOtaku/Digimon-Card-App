@@ -6,7 +6,6 @@ and extract card information into structured data objects.
 """
 from typing import List, Optional, Dict, Any
 import time
-import random
 from bs4 import BeautifulSoup, Tag
 
 from classes.DigimonCard import DigimonCard
@@ -420,18 +419,10 @@ def getCardData() -> None:
     print(f"📊 Processing {len(WV.cardLinks)} cards using MediaWiki API...")
     start_time = time.time()
 
-    for link in WV.cardLinks:
+    titles = [link.split('/wiki/')[-1] if '/wiki/' in link else link.lstrip('/') for link in WV.cardLinks]
+    for link, (page_title, soup) in zip(WV.cardLinks, WF.iter_pages_html(titles, delay_range=(0.3, 0.6))):
         try:
             count += 1
-
-            # Extract page title from link (e.g., '/wiki/BT1-001' -> 'BT1-001')
-            page_title = link.split('/wiki/')[-1] if '/wiki/' in link else link.lstrip('/')
-
-            # Add delay between requests to be respectful to the server
-            delay = random.uniform(0.3, 0.6) if count > 1 else 0
-
-            # Use MediaWiki API to get page content
-            soup = WF.get_page_html(page_title, delay=delay)
 
             if soup is None:
                 print(f"Failed to fetch page: {link}")
@@ -488,23 +479,10 @@ def getCardData() -> None:
     print(f"📈 Successfully processed: {success_count} cards")
     print(f"❌ Errors: {len(errors)}")
     print(f"⏱️  Total time: {total_time:.1f}s")
-    print(f"🚀 Average speed: {success_count/total_time:.1f} cards/sec")
+    print(f"🚀 Average speed: {success_count/total_time if total_time > 0 else 0:.1f} cards/sec")
 
     if errors:
         print(f"\n⚠️  Recent errors:")
         for error in errors[-3:]:  # Show last 3 errors
             print(f"  - {error}")
 
-
-def getCardDataFast() -> None:
-    """
-    Fast version using the optimized parallel fetcher.
-    For maximum performance, use GetCardDataFast.py directly.
-    """
-    try:
-        from GetCardDataFast import getCardDataOptimized
-        print("🚀 Using optimized parallel card fetcher...")
-        getCardDataOptimized("normal")
-    except ImportError:
-        print("⚠️  Fast fetcher not available, using standard method...")
-        getCardData()

@@ -21,7 +21,6 @@ import time
 import re
 import traceback
 from PIL import Image
-import random
 import requests
 
 import CardImageIndex
@@ -109,18 +108,30 @@ def illustrator_suffix(image_id):
   match = re.search(r'(_P\d+|-Errata)(?:-(?:Sample|J))*$', image_id)
   return match.group(1) if match else None
 
-def pick_illustrator_row(rows, image_id, note, used):
-  """Row backing a gallery image. Rows are numbered like the gallery (_P1, _P2, ...), so the number decides:
-  matching on the booster note alone gave every print of one booster the same type (a Rare Pull next to an
-  Alternative Art). Without a numbered match, take the first row for this note that no earlier image took."""
+def pick_illustrator_row(rows, image_id, note, used, bindings=None):
+  """Match the gallery release first; table-position suffixes are only hints within that release."""
+  releases = {" ".join(release.split()) for release in note.split(" / ")}
+  matches = [
+    index for index, row in enumerate(rows)
+    if releases.intersection(" ".join(release.split()) for release in row['note'].split(" / "))
+  ]
+  identity = image_id.replace('-Sample', '')
+  if bindings is not None and identity in bindings:
+    index = bindings[identity]
+    return index if 'Sample' in image_id and index in matches else None
   suffix = illustrator_suffix(image_id)
+  selected = None
   if suffix is not None:
-    for index, row in enumerate(rows):
-      if illustrator_suffix(row['id']) == suffix:
-        return index
-  matches = [index for index, row in enumerate(rows) if row['note'] == note]
-  unused = [index for index in matches if index not in used]
-  return (unused or matches or [None])[0]
+    for index in matches:
+      if illustrator_suffix(rows[index]['id']) == suffix and (index not in used or ('Sample' in image_id and bindings is None)):
+        selected = index
+        break
+  if selected is None:
+    unused = [index for index in matches if index not in used]
+    selected = (unused or [None])[0]
+  if bindings is not None and selected is not None and 'Sample' not in image_id:
+    bindings[identity] = selected
+  return selected
 
 def missing_special_prints(card_id, rows, used):
   """Special Rare / Rare Pull rows that no gallery image backed. The wiki often has no scan for them, and
@@ -141,17 +152,15 @@ def getCardImages():
   print("🚀 Starting card image download process using MediaWiki API...")
   print(f"📊 Processing {len(WV.cardLinks)} card links...")
 
+  cards_by_id = {card.id: card for card in WV.cards}
+  titles = [(link.split('/wiki/')[-1] if '/wiki/' in link else link.lstrip('/')) + '/Gallery' for link in WV.cardLinks]
+
   # Loop through each card link
-  for link in WV.cardLinks:
+  for link, (gallery_page_title, soup) in zip(WV.cardLinks, WF.iter_pages_html(titles)):
+    card = None
     try:
       print('Checking ' + link)
 
-      # Extract page title from link and add /Gallery suffix
-      page_title = link.split('/wiki/')[-1] if '/wiki/' in link else link.lstrip('/')
-      gallery_page_title = page_title + '/Gallery'
-
-      # Get the HTML content for the gallery page using MediaWiki API
-      soup = WF.get_page_html(gallery_page_title, delay=random.uniform(0.2, 0.5))
       if not soup:
           print(f"Failed to fetch gallery for: {link}")
           continue
@@ -161,10 +170,7 @@ def getCardImages():
       id_without_p = remove_suffix_and_extension(id)
 
       # Find the card object with the matching ID
-      card = None
-      for obj in WV.cards:
-        if obj.id == id_without_p:
-          card = obj
+      card = cards_by_id.get(id_without_p)
       if card is None:
         continue
 
@@ -179,6 +185,8 @@ def getCardImages():
       # note, and matching the first row every time gave them all its type (lost "Rare Pull")
       used_aas = set()
       used_jaas = set()
+      english_bindings = {}
+      japanese_bindings = {}
 
       # Download images and update notes for the English gallery
       div = soup.find("div", id="gallery-0")
@@ -227,7 +235,7 @@ def getCardImages():
           # Update the AAs for the card
           # If the Note is the Note for NA it is ignored
           # Notes can have a differnet _P then in the Gallery because of the ordering sometimes
-          aa_index = pick_illustrator_row(backup_aas, id_with_p, note_array[0], used_aas)
+          aa_index = pick_illustrator_row(backup_aas, id_with_p, combined_notes, used_aas, english_bindings)
           if aa_index is not None:
             aa = backup_aas[aa_index]
             if '_P' in id_with_p or '-Errata' in id_with_p:
@@ -284,7 +292,7 @@ def getCardImages():
           combined_notes = " / ".join(note_array)
 
           # Update the JAAs for the card
-          aa_index = pick_illustrator_row(backup_jaas, id_with_p, note_array[0], used_jaas)
+          aa_index = pick_illustrator_row(backup_jaas, id_with_p, combined_notes, used_jaas, japanese_bindings)
           if aa_index is not None and '_P' in id_with_p:
             aa = backup_jaas[aa_index]
             card.JAAs.append({
@@ -295,17 +303,13 @@ def getCardImages():
             })
             if 'Sample' not in id_with_p:
               used_jaas.add(aa_index)
-
-      # Update the card object in the WV.cards list
-      index = 0
-      for obj in WV.cards:
-        if obj.id == card.id:
-          WV.cards[index] = card
-        index += 1
     except Exception:
       print("Error for: " + link)
       traceback.print_exc()
-      print(Exception)
+      # A half-parsed gallery must not wipe the card's alternative arts
+      if card is not None:
+        card.AAs = backup_aas
+        card.JAAs = backup_jaas
 
   # Print download summary
   print("\n" + "="*50)

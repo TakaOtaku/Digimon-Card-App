@@ -36,6 +36,9 @@ from typing import Dict, List, Optional, Set
 # ---------------------------------------------------------------------------
 # Logging
 # ---------------------------------------------------------------------------
+# Windows consoles default to cp1252, which can't print the emoji and set names used in the logs.
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(name)s — %(message)s",
@@ -87,6 +90,7 @@ class PipelineStats:
     cards_kept: int = 0
     images_downloaded: int = 0
     images_skipped: int = 0
+    failed_phase: Optional[str] = None
     phase_times: Dict[str, float] = field(default_factory=dict)
 
 
@@ -97,9 +101,8 @@ class PipelineStats:
 def _card_content_hash(card: dict) -> str:
     """
     Compute a stable hash of the card fields that matter for change detection.
-    Ignores cardImage (changes independently via image phase). Of the AAs/JAAs only the
-    sorted types count: their order is volatile across runs, but without the types a wiki
-    fix like "Alternative Art" -> "Rare Pull" never reached the data.
+    Ignores cardImage and provisional AA/ JAA IDs, which change in the image phase.
+    Release/type/illustrator associations matter, but their array order does not.
     """
     relevant = {
         "name": card.get("name", {}),
@@ -131,8 +134,8 @@ def _card_content_hash(card: dict) -> str:
         "linkDP": card.get("linkDP", "-"),
         "linkEffect": card.get("linkEffect", "-"),
         "linkRequirement": card.get("linkRequirement", "-"),
-        "aaTypes": sorted(aa.get("type", "") for aa in card.get("AAs", [])),
-        "jaaTypes": sorted(aa.get("type", "") for aa in card.get("JAAs", [])),
+        "aaPrints": sorted(tuple(" ".join(aa.get(field, "").split()) for field in ("note", "type", "illustrator")) for aa in card.get("AAs", [])),
+        "jaaPrints": sorted(tuple(" ".join(aa.get(field, "").split()) for field in ("note", "type", "illustrator")) for aa in card.get("JAAs", [])),
     }
     return hashlib.sha256(json.dumps(relevant, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
 
@@ -188,18 +191,12 @@ def scrape_cards(stats: PipelineStats) -> None:
     logger.info("═══ Phase 2: Scrape card data ═══")
     t0 = time.time()
 
-    try:
-        from GetCardDataFast import getCardDataOptimized
-        logger.info("Using fast parallel processing")
-        getCardDataOptimized("normal")
-    except ImportError:
-        logger.info("Using standard sequential processing")
-        GetCardData.getCardData()
-    except Exception as exc:
-        logger.warning("Fast processing failed (%s) — falling back to standard", exc)
-        GetCardData.getCardData()
+    GetCardData.getCardData()
 
     stats.cards_scraped = len(WV.cards)
+    # Nearly every link is a card page, so a low yield means the wiki was unreachable.
+    if WV.cardLinks and stats.cards_scraped < 0.9 * len(WV.cardLinks):
+        raise RuntimeError(f"Only {stats.cards_scraped} of {len(WV.cardLinks)} card pages scraped")
     elapsed = time.time() - t0
     stats.phase_times["scrape_cards"] = elapsed
     logger.info("Phase 2 complete: %d cards scraped in %.1fs", stats.cards_scraped, elapsed)
@@ -424,7 +421,10 @@ def run_pipeline(
         try:
             phase_fn(stats)
         except Exception:
-            logger.exception("Phase '%s' FAILED — continuing with next phase", phase_name)
+            # Later phases build on this one's output; stop so a broken run is never committed.
+            logger.exception("Phase '%s' FAILED — aborting pipeline", phase_name)
+            stats.failed_phase = phase_name
+            break
 
     total_time = time.time() - total_start
 
@@ -466,7 +466,9 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    run_pipeline(only=args.phase, skip=set(args.skip))
+    stats = run_pipeline(only=args.phase, skip=set(args.skip))
+    if stats.failed_phase:
+        sys.exit(1)
 
 
 if __name__ == "__main__":

@@ -7,11 +7,14 @@ from classes.DigimonCard import DigimonCard
 import WikiVariables as WV
 import time
 import random
+from concurrent.futures import ThreadPoolExecutor
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
 # MediaWiki API endpoint for Fandom
 WIKI_API_URL = 'https://digimoncardgame.fandom.com/api.php'
+# Parallel page fetches; the session's Retry backs off on 429 if the wiki pushes back.
+WIKI_WORKERS = max(1, int(os.environ.get('WIKI_WORKERS', '4')))
 
 def check_if_image_exists(image_path):
     return os.path.exists(image_path)
@@ -32,7 +35,7 @@ def create_api_session():
         allowed_methods=["HEAD", "GET", "POST", "OPTIONS"]
     )
     
-    adapter = HTTPAdapter(max_retries=retry_strategy)
+    adapter = HTTPAdapter(max_retries=retry_strategy, pool_maxsize=max(10, WIKI_WORKERS))
     session.mount("http://", adapter)
     session.mount("https://", adapter)
     
@@ -62,14 +65,17 @@ def api_request(params, delay=0.5):
     if delay:
         time.sleep(delay)
     
-    # Always request JSON format
-    params['format'] = 'json'
-    
+    params = {**params, 'format': 'json'}
+
     try:
         response = api_session.get(WIKI_API_URL, params=params, timeout=30)
         response.raise_for_status()
-        return response.json()
-    except requests.exceptions.RequestException as e:
+        result = response.json()
+        if 'error' in result:
+            print(f"API error for {params}: {result['error'].get('info', result['error'])}")
+            return None
+        return result
+    except (requests.exceptions.RequestException, ValueError) as e:
         print(f"API request error: {e}")
         time.sleep(random.uniform(2, 5))
         return None
@@ -102,6 +108,38 @@ def get_page_html(page_title, delay=0.5):
         return BeautifulSoup(html_content, 'lxml')
     
     return None
+
+
+def iter_pages_html(page_titles, delay_range=(0.2, 0.5), chunk_size=50):
+    """
+    Yield (title, soup or None) in input order, fetching WIKI_WORKERS pages at once.
+    Works in chunks so a slow consumer never holds more than chunk_size parsed pages.
+    """
+    def fetch(title):
+        return get_page_html(title, delay=random.uniform(*delay_range))
+
+    with ThreadPoolExecutor(WIKI_WORKERS) as pool:
+        for start in range(0, len(page_titles), chunk_size):
+            chunk = page_titles[start:start + chunk_size]
+            yield from zip(chunk, pool.map(fetch, chunk))
+
+
+def get_existing_pages(page_titles, delay=0.2):
+    """
+    Return the subset of page_titles that exist, checking 50 titles per API call.
+    A batch whose lookup fails counts as existing, so callers fetch it rather than drop it.
+    """
+    existing = set()
+    for start in range(0, len(page_titles), 50):
+        chunk = page_titles[start:start + 50]
+        result = api_request({'action': 'query', 'titles': '|'.join(chunk)}, delay)
+        if not result or 'query' not in result:
+            existing.update(chunk)
+            continue
+        normalized = {n['from']: n['to'] for n in result['query'].get('normalized', [])}
+        missing = {p['title'] for p in result['query'].get('pages', {}).values() if 'missing' in p or 'invalid' in p}
+        existing.update(t for t in chunk if normalized.get(t, t) not in missing)
+    return existing
 
 
 def get_category_members(category_name, delay=0.3):
@@ -293,45 +331,43 @@ def setNotes():
 
 
 def getRulings():
-    """Get rulings for all cards using MediaWiki API"""
-    rulingCount = 0
-    for link in WV.cardLinks:
-        rulingCount += 1
+    """
+    Update Rulings.json for the cards in WV.cardLinks using the MediaWiki API.
+    Only cards with a /Rulings page are fetched; cards whose fetch fails keep their saved rulings.
+    """
+    rulings_path = './scripts/python/Wiki/jsons/Rulings.json'
+    if os.path.exists(rulings_path):
+        with open(rulings_path, 'r', encoding='utf-8') as fp:
+            WV.rulings = json.load(fp)
 
-        # Extract page title and add /Rulings suffix
-        page_title = link.split('/wiki/')[-1] if '/wiki/' in link else link.lstrip('/')
-        rulings_page_title = page_title + '/Rulings'
+    ids = [link.split('/wiki/')[-1] if '/wiki/' in link else link.lstrip('/') for link in WV.cardLinks]
+    titles = [card_id + '/Rulings' for card_id in ids]
+    existing = get_existing_pages(titles)
+    print(f'{len(existing)} of {len(titles)} cards have a rulings page')
 
-        soup = get_page_html(rulings_page_title, delay=random.uniform(0.2, 0.5))
+    for card_id, title in zip(ids, titles):
+        if title not in existing:
+            WV.rulings.pop(card_id, None)
+
+    fetch = [(card_id, title) for card_id, title in zip(ids, titles) if title in existing]
+    for count, ((card_id, _), (title, soup)) in enumerate(zip(fetch, iter_pages_html([t for _, t in fetch])), 1):
         if not soup:
-            print(f"Failed to fetch rulings for: {link}")
+            print(f"Failed to fetch rulings for: {card_id} - keeping saved rulings")
             continue
-
-        id = link.split("/")[2]
 
         questions = soup.find_all("div", class_="ruling-question")
         answers = soup.find_all("div", class_="ruling-answer")
+        if len(questions) != len(answers):
+            print(f"Rulings for {card_id}: {len(questions)} questions but {len(answers)} answers")
 
-        if len(questions) == 0:
-            print('Rulings for: ' + id + ' - Found ' +
-                  str(len(questions)) + ' Rulings')
-            continue
-
-        WV.rulings[id] = []
-
-        questionCount = 0
-        for question in questions:
-            questionText = question.text
-            answerText = answers[questionCount].text
-            WV.rulings[id].append(
-                {'question': questionText, 'answer': answerText})
-            questionCount += 1
-        print('[' + str(rulingCount) + '/' + str(WV.cardCount) + ']')
-        print('Rulings for: ' + id + ' - Found ' +
-              str(len(questions)) + ' Rulings')
+        if questions:
+            WV.rulings[card_id] = [{'question': q.text, 'answer': a.text} for q, a in zip(questions, answers)]
+        else:
+            WV.rulings.pop(card_id, None)
+        print(f'[{count}/{len(fetch)}] Rulings for: {card_id} - Found {len(questions)} Rulings')
 
     print('Saving Rulings JSON!')
-    with open('./scripts/python/Wiki/jsons/Rulings.json', 'w') as fp:
+    with open(rulings_path, 'w') as fp:
         json.dump(WV.rulings, fp, indent=2, sort_keys=sort_key)
 
 

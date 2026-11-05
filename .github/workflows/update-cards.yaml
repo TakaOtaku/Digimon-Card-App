@@ -24,10 +24,15 @@ on:
         required: false
         default: ""
 
+# Two runs would race on the same JSON files and push.
+concurrency:
+  group: update-cards
+  cancel-in-progress: false
+
 jobs:
   update-cards:
     runs-on: ubuntu-latest
-    # A full run takes ~2.5h (it visits every wiki gallery page).
+    # A full run visits every card, rulings and gallery page (WIKI_WORKERS at a time).
     timeout-minutes: 240
     permissions:
       contents: write
@@ -70,22 +75,26 @@ jobs:
           GARAGE_REGION: ${{ vars.GARAGE_REGION || 'garage' }}
           GARAGE_ADDRESSING_STYLE: ${{ vars.GARAGE_ADDRESSING_STYLE || 'path' }}
           GARAGE_KEY_PREFIX: ${{ vars.GARAGE_KEY_PREFIX }}
+          WIKI_WORKERS: ${{ vars.WIKI_WORKERS || '4' }}
+          # Inputs go through env, never straight into the script, so they can't inject shell.
+          PHASE: ${{ inputs.phase }}
+          SKIP: ${{ inputs.skip }}
         run: |
           if [ -z "$GARAGE_BUCKET" ]; then
             echo "::error::Garage secrets are missing; the pipeline would treat every card image as missing."
             exit 1
           fi
-          ARGS=""
-          if [ -n "${{ github.event.inputs.phase }}" ]; then
-            ARGS="--phase ${{ github.event.inputs.phase }}"
+          ARGS=()
+          if [ -n "$PHASE" ]; then
+            ARGS+=(--phase "$PHASE")
           fi
-          if [ -n "${{ github.event.inputs.skip }}" ]; then
-            # Convert comma-separated to space-separated for argparse nargs
-            SKIP_PHASES=$(echo "${{ github.event.inputs.skip }}" | tr ',' ' ')
-            ARGS="$ARGS --skip $SKIP_PHASES"
+          if [ -n "$SKIP" ]; then
+            # argparse rejects unknown phase names
+            IFS=', ' read -r -a SKIP_PHASES <<< "$SKIP"
+            ARGS+=(--skip "${SKIP_PHASES[@]}")
           fi
-          echo "Running: python scripts/python/Wiki/GetDataFromWiki.py $ARGS"
-          python scripts/python/Wiki/GetDataFromWiki.py $ARGS
+          echo "Running: python scripts/python/Wiki/GetDataFromWiki.py ${ARGS[*]}"
+          python scripts/python/Wiki/GetDataFromWiki.py "${ARGS[@]}"
 
       - name: Upload missing card images to Garage
         env: *garage-env
@@ -114,6 +123,8 @@ jobs:
           git config --local user.name "DigimonCardApp"
           git add -A
           git commit -m "[Automatic] Update Cards"
+          # The run takes hours; replay onto anything pushed meanwhile instead of failing the push.
+          git pull --rebase
           git push
 
       # Pushes made with GITHUB_TOKEN don't trigger workflows, but workflow_dispatch does.
