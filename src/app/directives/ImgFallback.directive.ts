@@ -1,58 +1,38 @@
-import { Directive, ElementRef, HostListener, Input, OnChanges, OnInit } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input, OnChanges } from '@angular/core';
 import { addJBeforeWebp, addSampleBeforeWebp } from '@assets/cardlists/DigimonCards';
+
+const PLACEHOLDER = 'assets/images/card_placeholder.png';
 
 @Directive({
   selector: 'img[digimonImgFallback]',
   standalone: true,
 })
-export class ImgFallbackDirective implements OnInit, OnChanges {
+export class ImgFallbackDirective implements OnChanges {
   @Input() digimonImgFallback: string;
 
-  constructor(private el: ElementRef) {}
+  // Tried in order on each load error. Tracked here, not read back from src: CDN urls have no
+  // "assets" in them, so the old src-based check retried the same missing image forever.
+  private fallbacks: string[] = [];
 
-  ngOnInit() {
-    const element: HTMLImageElement = <HTMLImageElement>this.el.nativeElement;
-    element.src = this.digimonImgFallback;
-  }
+  constructor(private el: ElementRef<HTMLImageElement>) {}
 
   ngOnChanges(): void {
-    const element: HTMLImageElement = <HTMLImageElement>this.el.nativeElement;
-    element.src = this.digimonImgFallback;
+    const src = this.digimonImgFallback;
+    if (!src) {
+      this.fallbacks = [];
+      this.el.nativeElement.src = PLACEHOLDER;
+      return;
+    }
+    const jIndex = src.lastIndexOf('-J.webp');
+    this.fallbacks = jIndex !== -1 ? [src.slice(0, jIndex) + '-Sample-J.webp'] : [addJBeforeWebp(src), addSampleBeforeWebp(src)];
+    this.el.nativeElement.src = src;
   }
 
   @HostListener('error')
   loadFallbackOnError() {
-    const element: HTMLImageElement = <HTMLImageElement>this.el.nativeElement;
-    
-    // Guard against undefined or empty digimonImgFallback
-    if (!this.digimonImgFallback) {
-      element.src = '../../../assets/images/digimon-card-back.webp';
-      return;
-    }
-    
-    const hasJ = this.digimonImgFallback.includes('-J');
-    const currentSrc = element.src.includes('assets') ? 'assets' + element.src.split('assets')[1] : '';
-
-    if (this.digimonImgFallback && !hasJ) {
-      const modifiedSrc = addJBeforeWebp(this.digimonImgFallback);
-      const sampleSrc = addSampleBeforeWebp(this.digimonImgFallback);
-      if (modifiedSrc !== currentSrc && sampleSrc !== currentSrc) {
-        element.src = modifiedSrc;
-        return;
-      } else if (!currentSrc.includes('Sample')) {
-        element.src = sampleSrc;
-        return;
-      }
-    } else {
-      const indexOfJ = this.digimonImgFallback.lastIndexOf('-J.webp');
-      if (indexOfJ !== -1) {
-        const sampleJ = this.digimonImgFallback.slice(0, indexOfJ) + '-Sample-J.webp';
-        if (sampleJ !== currentSrc) {
-          element.src = sampleJ;
-          return;
-        }
-      }
-    }
-    element.src = '../../../assets/images/digimon-card-back.webp';
+    const element = this.el.nativeElement;
+    // The placeholder itself failing must not start another round
+    if (element.src.endsWith(PLACEHOLDER)) return;
+    element.src = this.fallbacks.shift() ?? PLACEHOLDER;
   }
 }

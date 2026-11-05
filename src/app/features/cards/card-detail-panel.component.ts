@@ -74,6 +74,8 @@ export class CardDetailPanelComponent {
     const stats = [
       { label: 'Play cost', value: card.playCost },
       { label: 'DP', value: card.dp },
+      { label: 'Link DP', value: card.linkDP },
+      { label: 'Option color req.', value: card.optionCardColourRequirement },
       ...(card.digivolveCondition ?? []).map((c) => ({ label: `From Lv.${c.level} ${c.color}`.trim(), value: c.cost })),
     ];
     return stats.filter((s) => filled(s.value));
@@ -81,10 +83,22 @@ export class CardDetailPanelComponent {
 
   effects = computed(() => {
     const card = this.card()!;
+    // Same fields and order as the full card dialog
     return [
+      { label: 'Special Digivolve', text: card.specialDigivolve },
+      { label: 'DNA Digivolve', text: card.dnaDigivolve },
+      { label: 'DigiXros', text: card.digiXros },
+      { label: 'Assembly', text: card.assembly },
+      { label: 'Burst Digivolve', text: card.burstDigivolve },
+      { label: 'ACE', text: card.aceEffect },
+      { label: 'Rule', text: card.rule },
       { label: 'Effect', text: card.effect },
+      { label: 'Dual effect', text: card.dualEffect },
+      { label: 'Option card effect', text: card.optionCardEffect },
       { label: 'Inherited effect', text: card.digivolveEffect },
       { label: 'Security effect', text: card.securityEffect },
+      { label: 'Link requirement', text: card.linkRequirement },
+      { label: 'Link effect', text: card.linkEffect },
     ]
       .filter((e) => filled(e.text))
       .map((e) => ({ label: e.label, html: replaceWithImageTags(e.text) }));

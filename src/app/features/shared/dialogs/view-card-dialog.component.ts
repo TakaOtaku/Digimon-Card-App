@@ -402,7 +402,7 @@ export class ViewCardDialogComponent {
   }
 
   private getVersion(version: string) {
-    if (version.includes('Special Rare') || version.includes('Secret Rare')) {
+    if (version.includes('Special Rare')) {
       return 'Special Rare';
     } else if (version.includes('Rare Pull')) {
       return 'Rare Pull';
