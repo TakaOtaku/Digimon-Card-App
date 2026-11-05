@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
 import { ImgFallbackDirective } from '@directives';
-import { replaceWithImageTags } from '@functions';
+import { isOptionType, replaceWithImageTags } from '@functions';
 import { DigimonCard } from '@models';
 import { DialogStore } from '@store';
 
@@ -72,7 +72,8 @@ export class CardDetailPanelComponent {
   stats = computed(() => {
     const card = this.card()!;
     const stats = [
-      { label: 'Play cost', value: card.playCost },
+      // Options and Dual (Digimon/Option) cards are used, not played: same rule as the full card dialog
+      { label: isOptionType(card.cardType) ? 'Use cost' : 'Play cost', value: card.playCost },
       { label: 'DP', value: card.dp },
       { label: 'Link DP', value: card.linkDP },
       { label: 'Option color req.', value: card.optionCardColourRequirement },
