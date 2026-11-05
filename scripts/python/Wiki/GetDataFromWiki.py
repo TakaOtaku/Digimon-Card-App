@@ -97,8 +97,9 @@ class PipelineStats:
 def _card_content_hash(card: dict) -> str:
     """
     Compute a stable hash of the card fields that matter for change detection.
-    Ignores cardImage (changes independently via image phase) and AAs/JAAs
-    (volatile across runs due to gallery ordering).
+    Ignores cardImage (changes independently via image phase). Of the AAs/JAAs only the
+    sorted types count: their order is volatile across runs, but without the types a wiki
+    fix like "Alternative Art" -> "Rare Pull" never reached the data.
     """
     relevant = {
         "name": card.get("name", {}),
@@ -127,6 +128,11 @@ def _card_content_hash(card: dict) -> str:
         "optionCardColourRequirement": card.get("optionCardColourRequirement", "-"),
         "optionCardEffect": card.get("optionCardEffect", "-"),
         "dualEffect": card.get("dualEffect", "-"),
+        "linkDP": card.get("linkDP", "-"),
+        "linkEffect": card.get("linkEffect", "-"),
+        "linkRequirement": card.get("linkRequirement", "-"),
+        "aaTypes": sorted(aa.get("type", "") for aa in card.get("AAs", [])),
+        "jaaTypes": sorted(aa.get("type", "") for aa in card.get("JAAs", [])),
     }
     return hashlib.sha256(json.dumps(relevant, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
 

@@ -104,6 +104,13 @@ def remove_suffix_and_extension(input_string):
 
   return without_suffix
 
+def pick_illustrator_row(rows, note, used):
+  """Index of the first row for this booster note not taken by an earlier image.
+  More images than rows reuse the first matching row, as before."""
+  matches = [index for index, row in enumerate(rows) if row['note'] == note]
+  unused = [index for index in matches if index not in used]
+  return (unused or matches or [None])[0]
+
 def getCardImages():
   # Backup the AAs and JAAs for each card
   backup_aas = []
@@ -146,6 +153,10 @@ def getCardImages():
       # Remove the AAs and JAAs from the card
       card.AAs = []
       card.JAAs = []
+      # Each illustrator row backs one gallery image: prints from the same booster share a
+      # note, and matching the first row every time gave them all its type (lost "Rare Pull")
+      used_aas = set()
+      used_jaas = set()
 
       # Download images and update notes for the English gallery
       div = soup.find("div", id="gallery-0")
@@ -194,29 +205,19 @@ def getCardImages():
           # Update the AAs for the card
           # If the Note is the Note for NA it is ignored
           # Notes can have a differnet _P then in the Gallery because of the ordering sometimes
-          added = False
-          for aa in backup_aas:
-            if aa['note'] == note_array[0] and added == False:
-              if '_P' in id_with_p:
-                new_aa = {
-                  'id': id_with_p,
-                  'illustrator': aa['illustrator'],
-                  'note': combined_notes,
-                  'type': aa['type']
-                }
-                card.AAs.append(new_aa)
-                added = True
-              elif '-Errata' in id_with_p:
-                new_aa = {
-                  'id': id_with_p,
-                  'illustrator': aa['illustrator'],
-                  'note': combined_notes,
-                  'type': aa['type']
-                }
-                card.AAs.append(new_aa)
-                added = True
-              else:
-                card.notes = combined_notes
+          aa_index = pick_illustrator_row(backup_aas, note_array[0], used_aas)
+          if aa_index is not None:
+            aa = backup_aas[aa_index]
+            if '_P' in id_with_p or '-Errata' in id_with_p:
+              card.AAs.append({
+                'id': id_with_p,
+                'illustrator': aa['illustrator'],
+                'note': combined_notes,
+                'type': aa['type']
+              })
+              used_aas.add(aa_index)
+            else:
+              card.notes = combined_notes
 
       # Download images and update notes for the Japanese gallery
       div_j = soup.find("div", id="gallery-1")
@@ -253,19 +254,17 @@ def getCardImages():
             note_array.append(note.text)
           combined_notes = " / ".join(note_array)
 
-          added = False
           # Update the JAAs for the card
-          for aa in backup_jaas:
-            if aa['note'] == note_array[0] and added == False:
-              if '_P' in id_with_p:
-                new_aa = {
-                  'id': id_with_p,
-                  'illustrator': aa['illustrator'],
-                  'note': combined_notes,
-                  'type': aa['type']
-                }
-                card.JAAs.append(new_aa)
-                added = True
+          aa_index = pick_illustrator_row(backup_jaas, note_array[0], used_jaas)
+          if aa_index is not None and '_P' in id_with_p:
+            aa = backup_jaas[aa_index]
+            card.JAAs.append({
+              'id': id_with_p,
+              'illustrator': aa['illustrator'],
+              'note': combined_notes,
+              'type': aa['type']
+            })
+            used_jaas.add(aa_index)
 
       # Update the card object in the WV.cards list
       index = 0
