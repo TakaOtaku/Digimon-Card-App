@@ -1,4 +1,4 @@
-import { CARD_SETS, ReleaseOrder, TAGS } from './card-sets.data';
+import { CARD_SETS, GroupedSets, ReleaseOrder, TAGS } from './card-sets.data';
 import { RarityAbbreviationMap } from './filter.data';
 
 describe('card-sets data', () => {
@@ -6,6 +6,16 @@ describe('card-sets data', () => {
     expect(CARD_SETS.some((s) => s.name === 'BT26')).toBe(true);
     expect(ReleaseOrder).toContain('BT26');
     expect(TAGS).toContain('BT26');
+  });
+
+  it('lists the sets that were missing: BT27, EX14, ST25, ST26 and the Alysion products', () => {
+    for (const name of ['BT27', 'EX14', 'ST25', 'ST26']) {
+      expect(ReleaseOrder).toContain(name);
+    }
+    const alysion = GroupedSets.find((group) => group.value === 'alysion');
+    expect(alysion?.items.map((item) => item.value)).toEqual(['BD01', 'BD02', 'BD03', 'ED01', 'ED02', 'SD01', 'SD02']);
+    const starters = GroupedSets.find((group) => group.value === 'starter');
+    expect(starters?.items.map((item) => item.value)).toEqual(expect.arrayContaining(['ST25', 'ST26']));
   });
 
   it('derives ReleaseOrder and TAGS from CARD_SETS', () => {

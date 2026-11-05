@@ -6,7 +6,7 @@
  */
 import { ITag } from '../interfaces';
 
-export type SetCategory = 'Standard' | 'Extra' | 'Starter' | 'Misc';
+export type SetCategory = 'Standard' | 'Extra' | 'Starter' | 'Alysion' | 'Misc';
 
 export interface CardSet {
   /** Set code as used in card IDs, e.g. 'BT1', 'EX12', 'ST24' */
@@ -20,6 +20,18 @@ export interface CardSet {
  */
 export const CARD_SETS: CardSet[] = [
   // ---- Newest ----
+  { name: 'EX14', category: 'Extra' }, // Jan 2027
+  { name: 'BT27', category: 'Standard' }, // Dec 2026
+  { name: 'ST26', category: 'Starter' }, // Dec 4 2026, Digimon Alysion Yukinamon
+  { name: 'ST25', category: 'Starter' }, // Dec 4 2026, Digimon Alysion Rubeusdramon
+  // Digimon Alysion products: release dates are still "to be confirmed" on the wiki
+  { name: 'BD03', category: 'Alysion' },
+  { name: 'BD02', category: 'Alysion' },
+  { name: 'BD01', category: 'Alysion' },
+  { name: 'ED02', category: 'Alysion' },
+  { name: 'ED01', category: 'Alysion' },
+  { name: 'SD02', category: 'Alysion' },
+  { name: 'SD01', category: 'Alysion' },
   { name: 'EX13', category: 'Extra' },
   { name: 'BT26', category: 'Standard' },
   { name: 'EX12', category: 'Extra' },
@@ -118,6 +130,7 @@ export const GroupedSets = (() => {
     { label: 'Standard', value: 'displays', category: 'Standard' },
     { label: 'Extra', value: 'extra', category: 'Extra' },
     { label: 'Starter Decks', value: 'starter', category: 'Starter' },
+    { label: 'Digimon Alysion', value: 'alysion', category: 'Alysion' },
   ];
 
   const groups = categoryConfig.map(({ label, value, category }) => ({
