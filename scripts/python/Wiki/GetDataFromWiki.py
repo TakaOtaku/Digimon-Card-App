@@ -237,6 +237,8 @@ def merge_cards(stats: PipelineStats) -> None:
 
     existing = _load_existing_cards()
     logger.info("Loaded %d existing cards for comparison", len(existing))
+    # The image phase restores these for cards whose gallery page cannot be fetched
+    WV.previousPrints = {card_id: (old.get("AAs", []), old.get("JAAs", [])) for card_id, old in existing.items()}
 
     # Convert scraped cards to plain dicts
     scraped_dicts: Dict[str, dict] = {}

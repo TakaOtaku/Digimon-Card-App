@@ -144,10 +144,20 @@ def missing_special_prints(card_id, rows, used):
     prints.append({'id': card_id + suffix, 'illustrator': row['illustrator'], 'note': row['note'], 'type': row['type']})
   return prints
 
-def getCardImages():
+def keep_previous_prints(card):
+  """Give a card whose gallery could not be read the prints of the last good run. Without a record of that
+  run, keep only prints that already carry the card number: the table rows read from the card page have
+  provisional ids ('_P1'), and were output as cards without a number when a gallery failed."""
+  saved = WV.previousPrints.get(card.id)
+  aas, jaas = saved if saved else (card.AAs, card.JAAs)
+  card.AAs = [aa for aa in aas if aa['id'].startswith(card.id)]
+  card.JAAs = [jaa for jaa in jaas if jaa['id'].startswith(card.id)]
+
+def getCardImages(retries=2):
   # Backup the AAs and JAAs for each card
   backup_aas = []
   backup_jaas = []
+  failed_links = []
 
   print("🚀 Starting card image download process using MediaWiki API...")
   print(f"📊 Processing {len(WV.cardLinks)} card links...")
@@ -158,11 +168,13 @@ def getCardImages():
   # Loop through each card link
   for link, (gallery_page_title, soup) in zip(WV.cardLinks, WF.iter_pages_html(titles)):
     card = None
+    backup_aas, backup_jaas = [], []
     try:
       print('Checking ' + link)
 
       if not soup:
           print(f"Failed to fetch gallery for: {link}")
+          failed_links.append(link)
           continue
 
       # Get the ID of the card
@@ -308,8 +320,7 @@ def getCardImages():
       traceback.print_exc()
       # A half-parsed gallery must not wipe the card's alternative arts
       if card is not None:
-        card.AAs = backup_aas
-        card.JAAs = backup_jaas
+        keep_previous_prints(card)
 
   # Print download summary
   print("\n" + "="*50)
@@ -325,3 +336,23 @@ def getCardImages():
     print(f"⏱️  Estimated time saved: {time_saved} seconds ({time_saved/60:.1f} minutes)")
 
   print("="*50)
+
+  # The wiki refuses connections now and then (hundreds of gallery pages in one CI run): ask again
+  # after a pause, and only give up on a card once it has had several chances.
+  if failed_links and retries > 0:
+    print(f"🔁 Retrying {len(failed_links)} gallery pages in 60s ({retries} retries left)")
+    time.sleep(60)
+    all_links = WV.cardLinks
+    WV.cardLinks = failed_links
+    try:
+      getCardImages(retries - 1)
+    finally:
+      WV.cardLinks = all_links
+    return
+
+  for link in failed_links:
+    card = cards_by_id.get(remove_suffix_and_extension(link.split("/")[2]))
+    if card is not None:
+      keep_previous_prints(card)
+  if failed_links:
+    print(f"⚠️  {len(failed_links)} gallery pages could not be fetched; those cards keep their previous prints")

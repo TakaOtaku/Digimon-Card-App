@@ -74,6 +74,9 @@ def prepareCards():
 
       # Add Card AAs and JAAs as single Cards
       for aa in card['AAs']:
+        # A print id without the card number ("_P1") is an unfinished table row, never a card
+        if not aa["id"].startswith(card["id"]):
+          continue
         eng = deepcopy(card)
         eng["cardImage"] = "assets/images/cards/" + aa["id"] + ".webp"
         eng["id"] = aa["id"]
@@ -83,6 +86,8 @@ def prepareCards():
         preparedCardsENG.append(eng)
 
       for jaa in card['JAAs']:
+        if not jaa["id"].startswith(card["id"]):
+          continue
         jap = deepcopy(card)
         jap["cardImage"] = "assets/images/cards/" + jaa["id"] + ".webp"
         jap["id"] = removeJ(jaa["id"])

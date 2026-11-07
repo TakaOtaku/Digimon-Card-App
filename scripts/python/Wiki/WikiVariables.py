@@ -7,6 +7,9 @@ normalCards = []
 cards = []
 rulings = {}
 cardLinks = []
+# card id -> (AAs, JAAs) of the last good run, kept by the merge phase so a gallery page that
+# cannot be fetched does not cost a card its prints
+previousPrints = {}
 wikiPageLinks = [
     {'name': '▹RELEASE SPECIAL BOOSTER 1.0 [BT01-03]',
      'url': 'https://digimoncardgame.fandom.com/wiki/BT01-03:_Release_Special_Booster_Ver.1.0'},
