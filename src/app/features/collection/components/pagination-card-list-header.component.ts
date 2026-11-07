@@ -14,12 +14,12 @@ import { CardMarketService } from '../../../services/card-market.service';
   template: `
     <!-- Phones wrap the slider onto its own row: centered between absolute side groups it covered their buttons -->
     <div class="relative flex w-full flex-row flex-wrap items-center justify-between gap-2 px-2 py-1 sm:h-10 sm:flex-nowrap sm:justify-center sm:p-0">
-      <div class="flex flex-row justify-center items-center gap-3 sm:absolute sm:left-2 sm:top-2">
+      <div class="z-10 flex flex-row justify-center items-center gap-3 sm:absolute sm:left-2 sm:top-2">
         <ng-content select="[headerStart]"></ng-content>
         <div *ngIf="!viewOnly" class="flex flex-row justify-center items-center">
         @if (showCollectionMode) {
         <span class="text-xs hidden sm:block font-bold text-fg">Collection Mode:</span>
-        <span class="text-xs sm:hidden font-bold text-fg">CM:</span>
+        <span class="text-xs sm:hidden font-bold text-fg">Owned:</span>
         <input type="checkbox" class="my-auto ml-1 h-5 w-5" [ngModel]="collectionMode()" (ngModelChange)="changeCollectionMode($event)" />
         }
         <span class="text-xs font-bold text-fg" [class.ml-6]="showCollectionMode"> Cards: {{ cardCount() }} </span>
@@ -31,7 +31,7 @@ import { CardMarketService } from '../../../services/card-market.service';
 
       <p-slider class="order-last mx-auto w-48 sm:order-none sm:mx-0 sm:w-32 md:w-36 lg:w-56" [formControl]="widthForm" [step]="0.1" [min]="3" [max]="14"></p-slider>
 
-      <div class="flex flex-row items-center justify-center gap-2 sm:absolute sm:right-2 sm:mx-2 sm:mt-1">
+      <div class="z-10 flex flex-row items-center justify-center gap-2 sm:absolute sm:right-2 sm:mx-2 sm:mt-1">
         <ng-content select="[headerEnd]"></ng-content>
         <button
           [ngClass]="{ 'xl:hidden': !filterButton }"

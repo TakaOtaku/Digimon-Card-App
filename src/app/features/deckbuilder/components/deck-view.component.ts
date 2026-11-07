@@ -85,6 +85,12 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
       <span class="rounded-md px-2.5 py-1 font-mono text-xs" [ngClass]="countBadge(getCardCount(mainDeck, 'Egg') <= 5)">
         Egg {{ getCardCount(mainDeck, 'Egg') }}/5
       </span>
+      @if (undoDeck) {
+        <button type="button" (click)="undo()" class="h-8 rounded-lg border border-accent bg-ink-2 px-3 text-xs font-semibold text-accent"><i class="pi pi-undo mr-1"></i>Undo remove</button>
+      }
+      @if (getCardCount(mainDeck, 'Deck') === 50 && getCardCount(mainDeck, 'Egg') <= 5) {
+        <span class="text-xs font-semibold text-green-400"><i class="pi pi-check mr-1"></i>Deck ready: try Test hand or Share image</span>
+      }
       @if (displaySideDeck()) {
         <span class="rounded-md bg-ink-2 px-2.5 py-1 font-mono text-xs text-fg">Side {{ getCardCount(sideDeck, 'All') }}</span>
       }
@@ -104,14 +110,17 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
       </button>
       <ng-container [ngTemplateOutlet]="viewToggle"></ng-container>
     </div>
+    <div class="mx-3 mb-2 h-1.5 overflow-hidden rounded-full bg-ink-2" role="progressbar" aria-label="Main deck size" aria-valuemin="0" aria-valuemax="50" [attr.aria-valuenow]="getCardCount(mainDeck, 'Deck')">
+      <div class="h-full rounded-full transition-[width] duration-300" [ngClass]="getCardCount(mainDeck, 'Deck') === 50 ? 'bg-green-400' : 'bg-accent'" [style.width.%]="(getCardCount(mainDeck, 'Deck') / 50) * 100"></div>
+    </div>
     }
 
     <ng-container>
       <p-accordion class="mx-auto" [multiple]="true" [(value)]="accordionValue">
         <p-accordion-panel value="0" [pDroppable]="['toDeck', 'fromSide']" (onDrop)="drop(draggedCard(), 'Main')">
           <p-accordion-header>
-            <div>
-              {{ 'Main-Deck (' + getCardCount(mainDeck, 'Egg') + '/5 - ' + getCardCount(mainDeck, 'Deck') + '/50)' }}
+            <div class="font-display">
+              {{ 'Main deck · Egg ' + getCardCount(mainDeck, 'Egg') + '/5 · Main ' + getCardCount(mainDeck, 'Deck') + '/50' }}
             </div>
           </p-accordion-header>
           <p-accordion-content>
@@ -134,22 +143,27 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
                         <img [digimonImgFallback]="card.cardImage" alt="" class="h-11 w-8 rounded object-cover" />
                         <span class="flex min-w-0 flex-1 flex-col">
                           <span class="truncate text-sm font-medium text-fg">{{ card.name.english }}</span>
-                          <span class="font-mono text-[11px] text-muted">{{ card.cardNumber }}</span>
+                          <span class="font-mono text-xs text-muted">{{ card.cardNumber }}</span>
                         </span>
                         @if (missingCards && card.count - getCardHave(card) > 0) {
-                          <span class="rounded bg-orange-400/15 px-1.5 py-0.5 font-mono text-[11px] text-orange-300">need {{ card.count - getCardHave(card) }}</span>
+                          <span class="rounded bg-orange-400/15 px-1.5 py-0.5 font-mono text-xs text-orange-300">need {{ card.count - getCardHave(card) }}</span>
                         }
-                        <button type="button" [attr.aria-label]="'Remove one ' + card.name.english" (click)="websiteStore.removeCardFromDeck(card.id)"
-                          class="h-8 w-8 rounded-md border border-line bg-ink-1 text-fg hover:border-accent">−</button>
+                        <button type="button" [attr.aria-label]="'Remove one ' + card.name.english" (click)="removeOne(card.id)"
+                          class="h-10 w-10 md:h-8 md:w-8 rounded-md border border-line bg-ink-1 text-fg hover:border-accent">−</button>
                         <span class="w-5 text-center font-mono font-semibold text-fg">{{ card.count }}</span>
                         <button type="button" [attr.aria-label]="'Add one ' + card.name.english" (click)="websiteStore.addCardToDeck(card.id)"
-                          class="h-8 w-8 rounded-md border border-line bg-ink-1 text-fg hover:border-accent">+</button>
+                          class="h-10 w-10 md:h-8 md:w-8 rounded-md border border-line bg-ink-1 text-fg hover:border-accent">+</button>
                       </div>
                     }
                     </div>
                   </div>
                 } @empty {
-                  <p class="m-0 p-2 text-sm text-muted">Click or drag cards from the pool to add them.</p>
+                  <div class="flex flex-col items-start gap-2 rounded-lg border border-dashed border-line p-4">
+                    <p class="m-0 text-sm text-fg">No cards yet. Add cards from the pool, or import a decklist.</p>
+                    @if (!poolVisible) {
+                      <button type="button" (click)="togglePool.emit()" class="h-10 rounded-lg bg-accent px-4 text-sm font-semibold text-accent-ink">Browse the pool</button>
+                    }
+                  </div>
                 }
               </div>
             } @else {
@@ -177,7 +191,12 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
                     </div>
                   </section>
                 } @empty {
-                  <p class="m-0 p-2 text-sm text-muted">Click or drag cards from the pool to add them.</p>
+                  <div class="flex flex-col items-start gap-2 rounded-lg border border-dashed border-line p-4">
+                    <p class="m-0 text-sm text-fg">No cards yet. Add cards from the pool, or import a decklist.</p>
+                    @if (!poolVisible) {
+                      <button type="button" (click)="togglePool.emit()" class="h-10 rounded-lg bg-accent px-4 text-sm font-semibold text-accent-ink">Browse the pool</button>
+                    }
+                  </div>
                 }
               </div>
             }
@@ -188,7 +207,7 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
           *ngIf="displaySideDeck()"
           [pDroppable]="['toDeck', 'fromDeck']"
           (onDrop)="drop(draggedCard(), 'Side')">
-          <p-accordion-header>{{ 'Side-Deck (' + getCardCount(sideDeck, 'All') + ')' }}</p-accordion-header>
+          <p-accordion-header>{{ 'Side deck (' + getCardCount(sideDeck, 'All') + ')' }}</p-accordion-header>
           <p-accordion-content>
             <div class="grid w-full grid-cols-[repeat(auto-fill,minmax(6.5rem,1fr))]">
               <digimon-deck-card
@@ -294,7 +313,7 @@ export class DeckViewComponent {
     this.confirmationService.confirm({
       target: event.target,
       key: 'save',
-      message: 'You are about to save all changes and overwrite everything changed. Are you sure?',
+      message: 'Save this deck? If a deck with the same ID already exists, it will be replaced.',
       accept: () => {
         this.onMainDeck.pipe(first()).subscribe(() => {
           this.saveStore.importDeck(this.deck());
@@ -417,15 +436,38 @@ export class DeckViewComponent {
     return count;
   }
 
+  // One-step undo for removals; the button disappears after 10 seconds
+  undoDeck: IDeck | null = null;
+  private undoTimer?: ReturnType<typeof setTimeout>;
+
+  private rememberDeck() {
+    this.undoDeck = this.deck();
+    clearTimeout(this.undoTimer);
+    this.undoTimer = setTimeout(() => (this.undoDeck = null), 10000);
+  }
+
+  removeOne(cardId: string) {
+    this.rememberDeck();
+    this.websiteStore.removeCardFromDeck(cardId);
+  }
+
+  undo() {
+    if (!this.undoDeck) return;
+    this.websiteStore.updateDeck(this.undoDeck);
+    this.undoDeck = null;
+  }
+
   /**
    * Remove the card from the deck
    */
   removeCard(card: IDeckCard) {
+    this.rememberDeck();
     this.mainDeck = this.mainDeck.filter((value) => value !== card);
     this.mapToDeck();
   }
 
   removeSideCard(card: IDeckCard) {
+    this.rememberDeck();
     this.sideDeck = this.sideDeck.filter((value) => value !== card);
     this.mapToDeck();
   }

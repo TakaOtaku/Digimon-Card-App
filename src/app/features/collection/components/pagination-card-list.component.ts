@@ -64,6 +64,7 @@ import { CardMarketService } from '../../../services/card-market.service';
             <p-skeleton class="sm:m-0.5 md:m-1" width="5.6rem" height="10rem"></p-skeleton>
           }
         } @empty {
+          <p *ngIf="digimonCardStore.cards().length === 0" class="m-0 w-full p-6 text-center text-sm text-muted" role="status">Loading cards…</p>
           <div *ngIf="filteredCards().length === 0 && digimonCardStore.cards().length > 0" class="flex items-center justify-center w-full h-full">
             <h1 class="primary-color text-bold text-5xl text-center">No cards found!</h1>
           </div>

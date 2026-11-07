@@ -36,6 +36,16 @@
   --p-overlay-modal-padding: 1.25rem !important;
 }
 
+// Keyboard focus: one visible cyan ring everywhere
+button:focus-visible,
+a:focus-visible,
+[role="tab"]:focus-visible,
+[role="menuitem"]:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--dc-accent);
+  outline-offset: 2px;
+}
+
 html,
 body {
   height: 100%;

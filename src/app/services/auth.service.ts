@@ -80,12 +80,12 @@ export class AuthService {
                 const newSave = this.createNewSave(firebaseUser, this.getLocalStorageSave());
                 return of({ ...newSave, _isNew: true } as ISave & { _isNew?: boolean });
               }
-              // Fetch failed after retries — use local cache if available, but do NOT push to backend
+              // Fetch failed after retries - use local cache if available, but do NOT push to backend
               const localSave = this.getLocalStorageSave();
               if (localSave && localSave.uid === firebaseUser.uid) {
                 return of({ ...localSave, _fetchFailed: true } as ISave & { _fetchFailed?: boolean });
               }
-              // No local save either — return null to indicate we couldn't load
+              // No local save either - return null to indicate we couldn't load
               return of(null);
             }),
             tap((save) => {
@@ -117,7 +117,7 @@ export class AuthService {
                   this.mongoBackendService.updateSave(userData.save).subscribe();
                 }
               } else {
-                // Could not load save from backend or local — show error, don't create empty save
+                // Could not load save from backend or local - show error, don't create empty save
                 console.warn('Could not load user save from backend or local storage.');
                 this.messageService.add({
                   severity: 'warn',

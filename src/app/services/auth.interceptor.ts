@@ -34,7 +34,7 @@ export const authInterceptor: HttpInterceptorFn = (req: HttpRequest<unknown>, ne
       return next(cloned);
     }),
     catchError(() => {
-      // Token refresh failed — proceed without auth header.
+      // Token refresh failed - proceed without auth header.
       // Backend will return 401 for protected endpoints.
       return next(req);
     }),

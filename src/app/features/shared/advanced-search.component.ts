@@ -28,7 +28,7 @@ import { SearchAutocompleteService, SearchSuggestion } from '@services';
             (keydown)="onKeyDown($event)"
             (focus)="onFocus()"
             (blur)="onBlur()"
-            placeholder="Search cards... (e.g., Agumon, or cardType == Digimon AND color == Red)"
+            placeholder="Name, or e.g. color == Red AND level == 4"
             aria-label="Search cards" />
 
           @if (showSuggestions() && suggestions().length > 0) {
@@ -64,6 +64,11 @@ import { SearchAutocompleteService, SearchSuggestion } from '@services';
           pTooltip="Advanced search syntax help"
           tooltipPosition="top">
         </button>
+      </div>
+      <div class="mt-1 flex gap-1 overflow-x-auto" role="group" aria-label="Example searches">
+        @for (example of examples; track example.label) {
+          <button type="button" (click)="useExample(example.query)" class="h-8 shrink-0 rounded-full border border-line bg-ink-2 px-3 text-xs text-fg hover:border-accent">{{ example.label }}</button>
+        }
       </div>
     </div>
 
@@ -176,10 +181,10 @@ import { SearchAutocompleteService, SearchSuggestion } from '@services';
       list-style: none;
       max-height: 320px;
       overflow-y: auto;
-      background: var(--surface-overlay, #1f2937);
-      border: 1px solid var(--surface-border, #374151);
-      border-radius: 6px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+      background: var(--dc-ink-1);
+      border: 1px solid var(--dc-line);
+      border-radius: 8px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
     }
 
     .suggestion-item {
@@ -188,14 +193,14 @@ import { SearchAutocompleteService, SearchSuggestion } from '@services';
       justify-content: space-between;
       gap: 0.5rem;
       padding: 0.5rem 0.75rem;
-      border-radius: 4px;
+      border-radius: 6px;
       cursor: pointer;
-      color: var(--text-color, #e5e7eb);
+      color: var(--dc-fg);
     }
 
     .suggestion-item:hover,
     .suggestion-item.active {
-      background: var(--surface-hover, #374151);
+      background: var(--dc-ink-2);
     }
 
     .category-badge {
@@ -221,7 +226,7 @@ import { SearchAutocompleteService, SearchSuggestion } from '@services';
       padding: 0.125rem 0.375rem;
       border-radius: 3px;
       font-size: 0.875rem;
-      font-family: 'Courier New', monospace;
+      font-family: 'JetBrains Mono', monospace;
     }
 
     .help-content h6 {
@@ -253,6 +258,20 @@ import { SearchAutocompleteService, SearchSuggestion } from '@services';
 export class AdvancedSearchComponent implements OnInit, AfterViewInit {
   @Output() searchChange = new EventEmitter<string>();
   @ViewChild('searchInput') searchInput!: ElementRef<HTMLInputElement>;
+
+  examples = [
+    { label: 'Red Digimon', query: 'cardType == Digimon AND color == Red' },
+    { label: 'Level 4', query: 'cardLv == 4' },
+    { label: 'Options', query: 'cardType == Option' },
+    { label: 'Mega, DP 10000+', query: 'form == Mega AND dp >= 10000' },
+  ];
+
+  useExample(query: string) {
+    const el = this.searchInput.nativeElement;
+    el.value = query;
+    this.onInput({ target: el } as unknown as Event);
+    this.showSuggestions.set(false);
+  }
 
   private filterStore = inject(FilterStore);
   private destroyRef = inject(DestroyRef);

@@ -139,7 +139,7 @@ interface CardVariantGroup {
                 <span class="text-xs font-semibold text-[var(--text-color-secondary)] uppercase">
                   Cardmarket Products ({{ group.cmProducts.length }})
                   @if (selectedVariant() && selectedGroup() === group.cardNumber) {
-                    — Click to assign to <span class="text-blue-400">{{ selectedVariant()!.card.id }}</span>
+                    - Click to assign to <span class="text-blue-400">{{ selectedVariant()!.card.id }}</span>
                   }
                 </span>
                 <div class="flex flex-wrap gap-2 max-h-[300px] overflow-y-auto">

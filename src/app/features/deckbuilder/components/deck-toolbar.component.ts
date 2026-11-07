@@ -22,70 +22,36 @@ import { ImportDeckDialogComponent } from '../../shared/dialogs/import-deck-dial
 @Component({
   selector: 'digimon-deck-toolbar',
   template: `
-    <div class="toolbar ml-3 mr-3 flex w-[100%-3rem] flex-row flex-wrap gap-1 pb-1 justify-evenly border-b-2 border-slate-600">
+    <div class="toolbar relative mx-3 flex flex-row flex-wrap items-center gap-1 border-b border-line pb-2">
+      <button type="button" (click)="save.emit($event)" class="flex h-10 flex-1 items-center justify-center gap-1.5 rounded-lg bg-accent px-4 text-xs font-semibold text-accent-ink md:h-8 md:flex-none">
+        <i class="pi pi-save"></i> Save
+      </button>
+      <button type="button" (click)="simulate()" class="flex h-10 items-center justify-center gap-1.5 rounded-lg border border-line bg-ink-2 px-3 text-xs font-semibold text-fg hover:border-accent md:h-8 flex-1 md:flex-none" pTooltip="Simulate your draw hand and the security stack" tooltipPosition="top">
+        <i class="pi pi-refresh"></i> Test hand
+      </button>
+      <button type="button" (click)="hideStats.emit(true)" class="flex h-10 items-center justify-center gap-1.5 rounded-lg border border-line bg-ink-2 px-3 text-xs font-semibold text-fg hover:border-accent md:h-8 flex-1 md:flex-none" pTooltip="Hide or show deck statistics" tooltipPosition="top">
+        <i class="pi pi-chart-bar"></i> Stats
+      </button>
       <button
+        type="button"
         (click)="missingCardsChange.emit(!missingCards)"
-        [ngClass]="{ 'primary-background': missingCards }"
-        class="p-button-outlined h-[30px] flex-1 min-w-fit px-2 text-xs"
-        label="Missing"
-        icon="pi pi-times"
-        iconPos="left"
-        pButton
-        pTooltip="Click to show what cards are missing from your Collection!"
-        tooltipPosition="top"></button>
-
-      <button
-        (click)="newDeck()"
-        class="p-button-outlined h-[30px] flex-1 min-w-fit px-2 text-xs"
-        label="New"
-        icon="pi pi-file"
-        iconPos="left"
-        pButton
-        pTooltip="Click to create a new Deck!"
-        tooltipPosition="top"></button>
-
-      <button (click)="save.emit($event)" class="p-button-outlined h-[30px] flex-1 min-w-fit px-2 text-xs"
-        label="Save" icon="pi pi-save" iconPos="left" pButton></button>
-
-      <button
-        (click)="importDeckDialog = true"
-        class="p-button-outlined h-[30px] flex-1 min-w-fit px-2 text-xs"
-        label="Import"
-        icon="pi pi-download"
-        iconPos="left"
-        pButton
-        pTooltip="Click to import a deck!"
-        tooltipPosition="top"></button>
-
-      <button
-        (click)="openExportDeckDialog()"
-        class="p-button-outlined h-[30px] flex-1 min-w-fit px-2 text-xs"
-        label="Export"
-        icon="pi pi-upload"
-        iconPos="left"
-        pButton
-        pTooltip="Click to export this deck!"
-        tooltipPosition="top"></button>
-
-      <button
-        (click)="hideStats.emit(true)"
-        class="p-button-outlined h-[30px] flex-1 min-w-fit px-2 text-xs"
-        label="Stats"
-        icon="pi pi-chart-bar"
-        iconPos="left"
-        pButton
-        pTooltip="Click to hide/show deck statistics!"
-        tooltipPosition="top"></button>
-
-      <button
-        (click)="simulate()"
-        class="p-button-outlined h-[30px] flex-1 min-w-fit px-2 text-xs"
-        label="Test hand"
-        icon="pi pi-refresh"
-        iconPos="left"
-        pButton
-        pTooltip="Click to simulate your draw hand and the security stack!"
-        tooltipPosition="top"></button>
+        [attr.aria-pressed]="missingCards"
+        class="flex h-10 items-center justify-center gap-1.5 rounded-lg border border-line bg-ink-2 px-3 text-xs font-semibold text-fg hover:border-accent md:h-8 flex-1 md:flex-none"
+        [ngClass]="{ 'border-accent text-accent': missingCards }"
+        pTooltip="Show only cards missing from your collection"
+        tooltipPosition="top">
+        <i class="pi pi-filter"></i> Missing
+      </button>
+      <button type="button" (click)="moreOpen = !moreOpen" [attr.aria-expanded]="moreOpen" aria-haspopup="menu" aria-label="More deck actions" class="flex h-10 items-center justify-center gap-1.5 rounded-lg border border-line bg-ink-2 px-3 text-xs font-semibold text-fg hover:border-accent md:h-8 w-10 md:w-8 md:px-0">
+        <i class="pi pi-ellipsis-h"></i>
+      </button>
+      @if (moreOpen) {
+        <div role="menu" class="absolute right-0 top-full z-[400] mt-1 flex w-44 flex-col rounded-lg border border-line bg-ink-1 p-1 shadow-lg">
+          <button type="button" role="menuitem" (click)="moreOpen = false; importDeckDialog = true" class="flex h-10 items-center gap-2 rounded-md px-3 text-left text-sm text-fg hover:bg-ink-2"><i class="pi pi-download"></i> Import deck</button>
+          <button type="button" role="menuitem" (click)="moreOpen = false; openExportDeckDialog()" class="flex h-10 items-center gap-2 rounded-md px-3 text-left text-sm text-fg hover:bg-ink-2"><i class="pi pi-upload"></i> Export deck</button>
+          <button type="button" role="menuitem" (click)="moreOpen = false; newDeck()" class="flex h-10 items-center gap-2 rounded-md px-3 text-left text-sm text-fg hover:bg-ink-2"><i class="pi pi-file"></i> New deck</button>
+        </div>
+      }
     </div>
 
     <div *ngIf="saveStore.showPrices() && deckTotalValue() !== null" class="mx-3 flex items-center justify-center text-sm font-bold text-green-400">
@@ -191,6 +157,7 @@ export class DeckToolbarComponent {
     return this.cardMarketService.calculateTotalValue(cards, metric);
   });
 
+  moreOpen = false;
   importDeckDialog = false;
   priceCheckDialog = false;
   simulateDialog = false;
