@@ -193,7 +193,7 @@ import { SearchAutocompleteService, SearchSuggestion } from '@services';
       justify-content: space-between;
       gap: 0.5rem;
       padding: 0.5rem 0.75rem;
-      border-radius: 6px;
+      border-radius: 8px;
       cursor: pointer;
       color: var(--dc-fg);
     }
@@ -224,8 +224,8 @@ import { SearchAutocompleteService, SearchSuggestion } from '@services';
     .help-content code {
       background: var(--surface-200);
       padding: 0.125rem 0.375rem;
-      border-radius: 3px;
-      font-size: 0.875rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
       font-family: 'JetBrains Mono', monospace;
     }
 

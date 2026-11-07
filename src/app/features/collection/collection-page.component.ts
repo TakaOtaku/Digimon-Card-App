@@ -98,7 +98,7 @@ import { PaginationCardListComponent } from './components/pagination-card-list.c
                 <div class="flex flex-wrap gap-1.5 px-3 pb-3">
                   @for (set of completedSets(); track set.set) {
                     <span class="inline-flex items-center gap-1 rounded-full border border-green-500/40 bg-ink-2 px-2.5 py-0.5 font-mono text-xs text-green-300">
-                      <i class="pi pi-check text-[10px]"></i>{{ set.set }}
+                      <i class="pi pi-check text-[11px]"></i>{{ set.set }}
                       <span class="text-muted">{{ set.total }}</span>
                     </span>
                   }

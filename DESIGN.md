@@ -19,6 +19,7 @@ colors:
   card-green: "#2fb67c"
   card-black: "#1c1f26"
   card-purple: "#8d6fdb"
+  card-white: "#ffffff"
 typography:
   display:
     fontFamily: "Chakra Petch, sans-serif"
@@ -28,9 +29,13 @@ typography:
     fontFamily: "Inter, -apple-system, sans-serif"
     fontSize: "0.75rem"
     letterSpacing: "0.08em"
+  micro:
+    fontFamily: "Inter, -apple-system, sans-serif"
+    fontSize: "0.6875rem"
   mono:
     fontFamily: "JetBrains Mono, monospace"
 rounded:
+  sm: "6px"
   md: "8px"
   full: "9999px"
 components:
@@ -95,6 +100,7 @@ Red #e5484d, Blue #3e9bff, Yellow #f5c518, Green #2fb67c, Black #1c1f26, Purple 
 - **Display** (Chakra Petch, large): page titles and the home hero (every `h1` except tiny field labels).
 - **Body** (Inter, 14-16px): default content.
 - **Label** (Inter 12px, uppercase, 0.08em tracking, Steel Mist): small field labels (tiny `h1.text-xs` are styled this way).
+- **Micro** (Inter 11px): dense table cells, ranking meta and nav labels only; never body text.
 - **Mono** (JetBrains Mono, up to 1.5rem semibold): prices and stats.
 
 ### Named Rules
@@ -116,7 +122,7 @@ Flat tonal layering. Surfaces step ink-0 → ink-1 → ink-2 and are separated b
 
 ## Shapes
 
-Gently rounded rectangles (8px, `rounded-lg`) for panels, inputs and buttons; fully rounded pills for segmented filters and chips; 6px tiles for small stat pills. 1px Hairline borders; selected cards get a 2px white or cyan border.
+Gently rounded rectangles (8px, `rounded-lg`) for panels, inputs and buttons; fully rounded pills for segmented filters and chips; 6px (`rounded.sm`) for stat pills, suggestion rows and code chips. 1px Hairline borders; selected cards get a 2px white or cyan border.
 
 ## Components
 

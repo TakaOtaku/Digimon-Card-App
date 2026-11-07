@@ -26,7 +26,7 @@ import { PageComponent } from '../shared/page.component';
                   class="flex flex-col gap-2 rounded-xl border border-line bg-ink-1 p-3 text-fg no-underline hover:border-accent">
                   <img [src]="item.image" [alt]="item.name" loading="lazy" class="mx-auto h-40 object-contain" width="160" height="160" />
                   <span class="text-sm font-semibold leading-snug">{{ item.name }}</span>
-                  <span class="mt-auto text-xs text-accent">View on wiki <i class="pi pi-external-link text-[10px]"></i></span>
+                  <span class="mt-auto text-xs text-accent">View on wiki <i class="pi pi-external-link text-[11px]"></i></span>
                 </a>
               }
             </div>
