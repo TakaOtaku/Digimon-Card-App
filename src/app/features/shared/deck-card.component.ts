@@ -19,7 +19,7 @@ import { WebsiteStore } from '../../store/website.store';
         class="group absolute z-[101] flex h-full w-full flex-col rounded xl:opacity-0 xl:hover:opacity-100"
         (click)="showCardDetails()"
         (contextmenu)="showCardDetails()">
-        <div *ngIf="edit" class="hidden h-1/2 w-full rounded bg-accent-strong bg-opacity-30 xl:block">
+        <div *ngIf="edit" class="hidden h-1/2 w-full rounded bg-sky-700 bg-opacity-30 xl:block">
           <div class="absolute top-2">
             <button
               (click)="addCardCount($event)"

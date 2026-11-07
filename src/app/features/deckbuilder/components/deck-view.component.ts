@@ -88,9 +88,6 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
       @if (undoDeck) {
         <button type="button" (click)="undo()" class="h-8 rounded-lg border border-accent bg-ink-2 px-3 text-xs font-semibold text-accent"><i class="pi pi-undo mr-1"></i>Undo remove</button>
       }
-      @if (getCardCount(mainDeck, 'Deck') === 50 && getCardCount(mainDeck, 'Egg') <= 5) {
-        <span class="text-xs font-semibold text-green-400"><i class="pi pi-check mr-1"></i>Deck ready: try Test hand or Share image</span>
-      }
       @if (displaySideDeck()) {
         <span class="rounded-md bg-ink-2 px-2.5 py-1 font-mono text-xs text-fg">Side {{ getCardCount(sideDeck, 'All') }}</span>
       }

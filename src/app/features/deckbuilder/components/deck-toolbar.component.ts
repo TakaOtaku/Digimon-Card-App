@@ -22,7 +22,7 @@ import { ImportDeckDialogComponent } from '../../shared/dialogs/import-deck-dial
 @Component({
   selector: 'digimon-deck-toolbar',
   template: `
-    <div class="toolbar relative mx-3 flex flex-row flex-wrap items-center gap-1 border-b border-line pb-2">
+    <div class="toolbar mx-3 flex flex-row flex-wrap items-center gap-1 border-b border-line pb-2">
       <button type="button" (click)="save.emit($event)" class="flex h-10 flex-1 items-center justify-center gap-1.5 rounded-lg bg-accent px-4 text-xs font-semibold text-accent-ink md:h-8 md:flex-none">
         <i class="pi pi-save"></i> Save
       </button>
@@ -42,16 +42,9 @@ import { ImportDeckDialogComponent } from '../../shared/dialogs/import-deck-dial
         tooltipPosition="top">
         <i class="pi pi-filter"></i> Missing
       </button>
-      <button type="button" (click)="moreOpen = !moreOpen" [attr.aria-expanded]="moreOpen" aria-haspopup="menu" aria-label="More deck actions" class="flex h-10 items-center justify-center gap-1.5 rounded-lg border border-line bg-ink-2 px-3 text-xs font-semibold text-fg hover:border-accent md:h-8 w-10 md:w-8 md:px-0">
-        <i class="pi pi-ellipsis-h"></i>
-      </button>
-      @if (moreOpen) {
-        <div role="menu" class="absolute right-0 top-full z-[400] mt-1 flex w-44 flex-col rounded-lg border border-line bg-ink-1 p-1 shadow-lg">
-          <button type="button" role="menuitem" (click)="moreOpen = false; importDeckDialog = true" class="flex h-10 items-center gap-2 rounded-md px-3 text-left text-sm text-fg hover:bg-ink-2"><i class="pi pi-download"></i> Import deck</button>
-          <button type="button" role="menuitem" (click)="moreOpen = false; openExportDeckDialog()" class="flex h-10 items-center gap-2 rounded-md px-3 text-left text-sm text-fg hover:bg-ink-2"><i class="pi pi-upload"></i> Export deck</button>
-          <button type="button" role="menuitem" (click)="moreOpen = false; newDeck()" class="flex h-10 items-center gap-2 rounded-md px-3 text-left text-sm text-fg hover:bg-ink-2"><i class="pi pi-file"></i> New deck</button>
-        </div>
-      }
+      <button type="button" (click)="importDeckDialog = true" class="flex h-10 flex-1 items-center justify-center gap-1.5 rounded-lg border border-line bg-ink-2 px-3 text-xs font-semibold text-fg hover:border-accent md:h-8 md:flex-none"><i class="pi pi-download"></i> Import</button>
+      <button type="button" (click)="openExportDeckDialog()" class="flex h-10 flex-1 items-center justify-center gap-1.5 rounded-lg border border-line bg-ink-2 px-3 text-xs font-semibold text-fg hover:border-accent md:h-8 md:flex-none"><i class="pi pi-upload"></i> Export</button>
+      <button type="button" (click)="newDeck()" class="flex h-10 flex-1 items-center justify-center gap-1.5 rounded-lg border border-line bg-ink-2 px-3 text-xs font-semibold text-fg hover:border-accent md:h-8 md:flex-none"><i class="pi pi-file"></i> New</button>
     </div>
 
     <div *ngIf="saveStore.showPrices() && deckTotalValue() !== null" class="mx-3 flex items-center justify-center text-sm font-bold text-green-400">
@@ -157,7 +150,6 @@ export class DeckToolbarComponent {
     return this.cardMarketService.calculateTotalValue(cards, metric);
   });
 
-  moreOpen = false;
   importDeckDialog = false;
   priceCheckDialog = false;
   simulateDialog = false;
