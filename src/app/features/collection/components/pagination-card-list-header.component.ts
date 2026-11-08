@@ -1,4 +1,4 @@
-import { CurrencyPipe, NgClass, NgIf } from '@angular/common';
+import { CurrencyPipe, DecimalPipe, NgClass, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, EventEmitter, inject, Input, Output } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -22,9 +22,9 @@ import { CardMarketService } from '../../../services/card-market.service';
         <span class="text-xs sm:hidden font-bold text-fg">Owned:</span>
         <input type="checkbox" class="my-auto ml-1 h-5 w-5" [ngModel]="collectionMode()" (ngModelChange)="changeCollectionMode($event)" />
         }
-        <span class="text-xs font-bold text-fg" [class.ml-6]="showCollectionMode"> Cards: {{ cardCount() }} </span>
+        <span class="text-xs font-bold text-fg" [class.ml-6]="showCollectionMode"> Cards: <span class="font-mono">{{ cardCount() | number }}</span> </span>
         @if (saveStore.showPrices() && collectionValue() !== null) {
-          <span class="ml-4 text-xs font-bold text-green-400">💰 {{ collectionValue() | currency: 'EUR' }}</span>
+          <span class="ml-4 text-xs font-bold text-green-400"><span class="font-mono">{{ collectionValue() | currency: 'EUR' }}</span></span>
         }
         </div>
       </div>
@@ -45,7 +45,7 @@ import { CardMarketService } from '../../../services/card-market.service';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [PaginatorModule, FormsModule, NgIf, SliderModule, ReactiveFormsModule, NgClass, CurrencyPipe],
+  imports: [PaginatorModule, FormsModule, NgIf, SliderModule, ReactiveFormsModule, NgClass, CurrencyPipe, DecimalPipe],
 })
 export class PaginationCardListHeaderComponent {
   @Input() widthForm!: FormControl;

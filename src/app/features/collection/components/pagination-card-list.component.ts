@@ -6,13 +6,14 @@ import { DialogModule } from 'primeng/dialog';
 import { DragDropModule } from 'primeng/dragdrop';
 import { DrawerModule } from 'primeng/drawer';
 import { SkeletonModule } from 'primeng/skeleton';
-import { DigimonCard, DRAG, dummyCard, ICountCard, IDraggedCard, PriceMetric } from '@models';
+import { DigimonCard, DRAG, dummyCard, emptyFilter, ICountCard, IDraggedCard, IFilter, PriceMetric } from '@models';
 import { IntersectionListenerDirective, OverlayZoneFixDirective } from '@directives';
 import { filterCards, withoutJ } from '@functions';
 import { DialogStore } from '@store';
 import { DigimonCardStore } from '@store';
 import { SaveStore } from '@store';
 import { WebsiteStore } from '@store';
+import { ActiveFiltersComponent } from '../../shared/filter/active-filters.component';
 import { FilterSideBoxComponent } from '../../shared/filter/filter-side-box.component';
 import { FullCardComponent } from '../../shared/full-card.component';
 import { PaginationCardListHeaderComponent } from './pagination-card-list-header.component';
@@ -36,6 +37,7 @@ import { CardMarketService } from '../../../services/card-market.service';
       </digimon-pagination-card-list-header>
 
       <digimon-search></digimon-search>
+      <digimon-active-filters></digimon-active-filters>
 
       <div
         [pDroppable]="['fromDeck', 'fromSide']"
@@ -65,8 +67,10 @@ import { CardMarketService } from '../../../services/card-market.service';
           }
         } @empty {
           <p *ngIf="digimonCardStore.cards().length === 0" class="m-0 w-full p-6 text-center text-sm text-muted" role="status">Loading cards…</p>
-          <div *ngIf="filteredCards().length === 0 && digimonCardStore.cards().length > 0" class="flex items-center justify-center w-full h-full">
-            <h1 class="primary-color text-bold text-5xl text-center">No cards found!</h1>
+          <div *ngIf="filteredCards().length === 0 && digimonCardStore.cards().length > 0" class="flex h-full w-full flex-col items-center justify-center gap-3 p-6 text-center" role="status">
+            <p class="m-0 font-display text-2xl font-semibold text-fg">No cards match</p>
+            <p class="m-0 max-w-sm text-sm text-muted">Nothing fits the current search and filters. Remove a filter above, or start over.</p>
+            <button type="button" (click)="clearAll()" class="h-10 rounded-lg bg-accent px-4 text-sm font-semibold text-accent-ink">Clear search and filters</button>
           </div>
         }
       </div>
@@ -85,6 +89,7 @@ import { CardMarketService } from '../../../services/card-market.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [
+    ActiveFiltersComponent,
     NgClass,
     PaginationCardListHeaderComponent,
     SearchComponent,
@@ -125,6 +130,11 @@ export class PaginationCardListComponent {
   widthForm = new FormControl(this.initialWidth);
 
   filterBox = false;
+
+  clearAll() {
+    this.filterStore.updateFilter(emptyFilter as unknown as IFilter);
+    this.filterStore.clearAdvancedSearch();
+  }
   // false: filters only open in the drawer (the builder needs the width)
   @Input() filterBoxEnabled = true;
   // 'Filter panel beside cards' setting (unset counts as on)

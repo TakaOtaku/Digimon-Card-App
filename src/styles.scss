@@ -21,6 +21,8 @@
   --dc-line: #26354f;
   --dc-fg: #e6edf7;
   --dc-muted: #93a4bd;
+  // Labels sit on the blue page gradient, where muted text only reaches 3.2:1
+  --dc-label: #c4d0e2;
   --dc-accent: #4cc3ff;
   --dc-accent-strong: #1d6fa8;
   --dc-accent-ink: #04121f;
@@ -73,10 +75,11 @@ h1:not(.text-xs) {
 }
 
 // Many filters use a tiny h1 as a field label; style those like the mockup's labels
-h1.text-xs {
+h1.text-xs,
+h2.text-xs {
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--dc-muted) !important;
+  color: var(--dc-label) !important;
 }
 
 .primary-color {

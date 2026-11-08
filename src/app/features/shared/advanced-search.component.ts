@@ -61,6 +61,7 @@ import { SearchAutocompleteService, SearchSuggestion } from '@services';
           [text]="true"
           [rounded]="true"
           severity="help"
+          aria-label="Advanced search syntax help"
           pTooltip="Advanced search syntax help"
           tooltipPosition="top">
         </button>

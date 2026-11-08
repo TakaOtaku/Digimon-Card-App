@@ -21,9 +21,9 @@ import { Subject, takeUntil } from 'rxjs';
         range="true"></p-slider>
     </div>
 
-    <h1 class="mt-[-5px] text-center text-xs font-bold text-fg">
+    <h2 class="mt-[-5px] text-center text-xs font-bold text-fg">
       {{ title }}
-    </h1>
+    </h2>
   `,
   styleUrls: ['./range-slider.component.scss'],
   standalone: true,
