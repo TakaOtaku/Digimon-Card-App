@@ -13,6 +13,7 @@ import { Subject, takeUntil } from 'rxjs';
     <div class="custom-slider flex flex-row px-3 my-3">
       <p-slider
         [formControl]="filterFormControl"
+        [ariaLabel]="title.replace(':', '')"
         [min]="minMax[0]"
         [max]="minMax[1]"
         step="1"

@@ -50,7 +50,7 @@ export class CardsPageComponent {
   select(card: DigimonCard) {
     this.selected.set(card);
     if (this.preview() === 'dialog' || !window.matchMedia('(min-width: 1280px)').matches) {
-      this.dialogStore.updateViewCardDialog({ show: true, card, width: '50vw' });
+      this.dialogStore.updateViewCardDialog({ show: true, card, width: window.innerWidth < 768 ? '95vw' : '50vw' });
     }
   }
 }

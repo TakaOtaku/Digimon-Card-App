@@ -66,11 +66,13 @@ import { SearchAutocompleteService, SearchSuggestion } from '@services';
           tooltipPosition="top">
         </button>
       </div>
+      @if (!searchQuery()) {
       <div class="mt-1 flex gap-1 overflow-x-auto" role="group" aria-label="Example searches">
         @for (example of examples; track example.label) {
           <button type="button" (click)="useExample(example.query)" class="h-8 shrink-0 rounded-full border border-line bg-ink-2 px-3 text-xs text-fg hover:border-accent">{{ example.label }}</button>
         }
       </div>
+      }
     </div>
 
     <!-- Help Dialog -->
@@ -415,15 +417,15 @@ export class AdvancedSearchComponent implements OnInit, AfterViewInit {
   getCategoryClass(category: string): string {
     switch (category) {
       case 'field':
-        return 'bg-blue-200 text-blue-800';
+        return 'bg-ink-2 text-accent';
       case 'operator':
-        return 'bg-green-200 text-green-800';
+        return 'bg-ink-2 text-fg';
       case 'logical':
-        return 'bg-purple-200 text-purple-800';
+        return 'bg-ink-2 text-muted';
       case 'value':
-        return 'bg-orange-200 text-orange-800';
+        return 'bg-accent text-accent-ink';
       default:
-        return 'bg-gray-200 text-gray-800';
+        return 'bg-ink-2 text-muted';
     }
   }
 

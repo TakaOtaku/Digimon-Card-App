@@ -187,7 +187,7 @@ export class PaginationCardListComponent {
     this.dialogStore.updateViewCardDialog({
       show: true,
       card,
-      width: '50vw',
+      width: typeof window !== 'undefined' && window.innerWidth < 768 ? '95vw' : '50vw',
     });
   }
 
