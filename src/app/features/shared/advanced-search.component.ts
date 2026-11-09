@@ -28,7 +28,7 @@ import { SearchAutocompleteService, SearchSuggestion } from '@services';
             (keydown)="onKeyDown($event)"
             (focus)="onFocus()"
             (blur)="onBlur()"
-            placeholder="Search cards... (e.g., Agumon, or cardType == Digimon AND color == Red)"
+            placeholder="Name, or e.g. color == Red AND level == 4"
             aria-label="Search cards" />
 
           @if (showSuggestions() && suggestions().length > 0) {
@@ -61,6 +61,7 @@ import { SearchAutocompleteService, SearchSuggestion } from '@services';
           [text]="true"
           [rounded]="true"
           severity="help"
+          aria-label="Advanced search syntax help"
           pTooltip="Advanced search syntax help"
           tooltipPosition="top">
         </button>
@@ -176,10 +177,10 @@ import { SearchAutocompleteService, SearchSuggestion } from '@services';
       list-style: none;
       max-height: 320px;
       overflow-y: auto;
-      background: var(--surface-overlay, #1f2937);
-      border: 1px solid var(--surface-border, #374151);
-      border-radius: 6px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+      background: var(--dc-ink-1);
+      border: 1px solid var(--dc-line);
+      border-radius: 8px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
     }
 
     .suggestion-item {
@@ -188,14 +189,14 @@ import { SearchAutocompleteService, SearchSuggestion } from '@services';
       justify-content: space-between;
       gap: 0.5rem;
       padding: 0.5rem 0.75rem;
-      border-radius: 4px;
+      border-radius: 8px;
       cursor: pointer;
-      color: var(--text-color, #e5e7eb);
+      color: var(--dc-fg);
     }
 
     .suggestion-item:hover,
     .suggestion-item.active {
-      background: var(--surface-hover, #374151);
+      background: var(--dc-ink-2);
     }
 
     .category-badge {
@@ -219,9 +220,9 @@ import { SearchAutocompleteService, SearchSuggestion } from '@services';
     .help-content code {
       background: var(--surface-200);
       padding: 0.125rem 0.375rem;
-      border-radius: 3px;
-      font-size: 0.875rem;
-      font-family: 'Courier New', monospace;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-family: 'JetBrains Mono', monospace;
     }
 
     .help-content h6 {
@@ -395,15 +396,15 @@ export class AdvancedSearchComponent implements OnInit, AfterViewInit {
   getCategoryClass(category: string): string {
     switch (category) {
       case 'field':
-        return 'bg-blue-200 text-blue-800';
+        return 'bg-ink-2 text-accent';
       case 'operator':
-        return 'bg-green-200 text-green-800';
+        return 'bg-ink-2 text-fg';
       case 'logical':
-        return 'bg-purple-200 text-purple-800';
+        return 'bg-ink-2 text-muted';
       case 'value':
-        return 'bg-orange-200 text-orange-800';
+        return 'bg-accent text-accent-ink';
       default:
-        return 'bg-gray-200 text-gray-800';
+        return 'bg-ink-2 text-muted';
     }
   }
 

@@ -24,7 +24,7 @@ import { WebsiteStore } from '../../store/website.store';
             <button
               (click)="addCardCount($event)"
               type="button"
-              class="z-[101] mx-auto flex hidden h-8 w-8 translate-x-full rounded border border-black bg-sky-700 group-hover:block">
+              class="z-[101] mx-auto flex hidden h-8 w-8 translate-x-full rounded border border-black bg-accent-strong group-hover:block">
               <span class="text-shadow text-2xl font-black text-fg"> + </span>
             </button>
           </div>
@@ -34,7 +34,7 @@ import { WebsiteStore } from '../../store/website.store';
             <button
               (click)="reduceCardCount($event)"
               type="button"
-              class="z-[101] mx-auto flex hidden h-8 w-8 translate-x-full rounded border border-black bg-sky-700 group-hover:block">
+              class="z-[101] mx-auto flex hidden h-8 w-8 translate-x-full rounded border border-black bg-accent-strong group-hover:block">
               <span class="text-shadow text-2xl font-black text-fg"> - </span>
             </button>
           </div>
@@ -48,11 +48,11 @@ import { WebsiteStore } from '../../store/website.store';
         class="group z-50 m-auto rounded border-2 border-black" />
 
       <div *ngIf="edit" class="flex h-1/2 w-full flex-row rounded xl:hidden">
-        <button (click)="addCardCount($event)" type="button" class="z-[101] flex h-8 w-1/2 rounded-l border border-black bg-sky-700">
+        <button (click)="addCardCount($event)" type="button" class="z-[101] flex h-10 w-1/2 md:h-8 rounded-l border border-black bg-accent-strong">
           <span class="text-shadow mx-auto text-2xl font-black text-fg"> + </span>
         </button>
 
-        <button (click)="reduceCardCount($event)" type="button" class="z-[101] flex h-8 w-1/2 rounded-r border border-black bg-sky-700">
+        <button (click)="reduceCardCount($event)" type="button" class="z-[101] flex h-10 w-1/2 md:h-8 rounded-r border border-black bg-accent-strong">
           <span class="text-shadow mx-auto text-2xl font-black text-fg"> - </span>
         </button>
       </div>

@@ -10,12 +10,14 @@ import { CardDetailPanelComponent } from './card-detail-panel.component';
   selector: 'digimon-cards-page',
   template: `
     <digimon-page>
+      <h1 class="sr-only">Card search</h1>
       <div class="flex w-screen h-[calc(var(--app-vh)-7.5rem)] md:h-[calc(var(--app-vh)-5rem)]">
         <!-- collectionOnly: a click shows the card instead of adding it to a deck -->
         <digimon-pagination-card-list
           [collectionOnly]="true"
           [dialogOnView]="false"
           [showCollectionMode]="false"
+          [hideCollectionFilter]="true"
           (cardViewed)="select($event)"
           class="flex flex-row flex-1 min-w-0 h-full"></digimon-pagination-card-list>
         @if (preview() !== 'dialog') {
@@ -24,6 +26,7 @@ import { CardDetailPanelComponent } from './card-detail-panel.component';
             class="hidden xl:block w-[22rem] shrink-0 overflow-y-auto border-line bg-ink-1 p-4"
             [class]="preview() === 'left' ? 'order-first border-r' : 'border-l'">
             <digimon-card-detail-panel [card]="selected()"></digimon-card-detail-panel>
+            <p class="mt-6 text-xs text-muted">Card data from the <a class="text-accent hover:underline" href="https://digimoncardgame.fandom.com" target="_blank" rel="noopener">Digimon Card Game Fandom wiki</a>.</p>
           </aside>
         }
       </div>
@@ -48,7 +51,7 @@ export class CardsPageComponent {
   select(card: DigimonCard) {
     this.selected.set(card);
     if (this.preview() === 'dialog' || !window.matchMedia('(min-width: 1280px)').matches) {
-      this.dialogStore.updateViewCardDialog({ show: true, card, width: '50vw' });
+      this.dialogStore.updateViewCardDialog({ show: true, card, width: window.innerWidth < 768 ? '95vw' : '50vw' });
     }
   }
 }

@@ -123,11 +123,11 @@ interface CardVariantGroup {
                       <span class="text-xs text-[var(--text-color-secondary)] text-center truncate w-full" [title]="variant.card.id">
                         {{ variant.card.id }}
                       </span>
-                      <span class="text-[10px] text-[var(--text-color-secondary)] text-center truncate w-full">
+                      <span class="text-[11px] text-[var(--text-color-secondary)] text-center truncate w-full">
                         {{ variant.card.version }}
                       </span>
                       @if (getOverrideForVariant(variant.card.id); as ov) {
-                        <span class="text-[10px] text-green-400 font-bold">✓ Reassigned</span>
+                        <span class="text-[11px] text-green-400 font-bold">✓ Reassigned</span>
                       }
                     </div>
                   }
@@ -139,7 +139,7 @@ interface CardVariantGroup {
                 <span class="text-xs font-semibold text-[var(--text-color-secondary)] uppercase">
                   Cardmarket Products ({{ group.cmProducts.length }})
                   @if (selectedVariant() && selectedGroup() === group.cardNumber) {
-                    — Click to assign to <span class="text-blue-400">{{ selectedVariant()!.card.id }}</span>
+                    - Click to assign to <span class="text-blue-400">{{ selectedVariant()!.card.id }}</span>
                   }
                 </span>
                 <div class="flex flex-wrap gap-2 max-h-[300px] overflow-y-auto">
@@ -162,10 +162,10 @@ interface CardVariantGroup {
                         <span class="text-yellow-400">Low: {{ cm.lowPrice | currency: 'EUR' }}</span>
                       </div>
                       @if (getAssignedCardId(cm.idProduct); as assignedId) {
-                        <span class="text-[10px] text-green-400 font-bold">→ {{ assignedId }}</span>
+                        <span class="text-[11px] text-green-400 font-bold">→ {{ assignedId }}</span>
                       } @else {
                         @if (getMappedCardId(cm.idProduct); as mappedId) {
-                          <span class="text-[10px] text-[var(--text-color-secondary)]">mapped: {{ mappedId }}</span>
+                          <span class="text-[11px] text-[var(--text-color-secondary)]">mapped: {{ mappedId }}</span>
                         }
                       }
                     </div>

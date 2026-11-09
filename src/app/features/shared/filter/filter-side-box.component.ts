@@ -31,13 +31,13 @@ import { VersionFilterComponent } from './version-filter.component';
 @Component({
   selector: 'digimon-filter-side-box',
   template: `
-    <div class="mx-1 flex h-full w-full flex-col pt-1 overflow-y-auto">
+    <div class="flex h-full w-full flex-col overflow-y-auto bg-ink-1 px-1 pt-1">
       <div class="mt-1 grid w-full grid-cols-4">
         <div></div>
 
         <digimon-sort-buttons class="col-span-2 mx-auto white"></digimon-sort-buttons>
 
-        <button (click)="reset()" class="ml-auto mr-5 text-fg" type="button">
+        <button (click)="reset()" class="ml-auto mr-2 h-8 w-8 text-fg" type="button" aria-label="Reset all filters" title="Reset all filters">
           <i class="pi pi-refresh"></i>
         </button>
       </div>
@@ -55,7 +55,7 @@ import { VersionFilterComponent } from './version-filter.component';
           [filterFormControl]="levelFilter"
           title="Level:"
           class="w-full"></digimon-range-slider>
-        <button (click)="levelFilter.setValue([2, 7])" class="w-12 text-fg" type="button">
+        <button (click)="levelFilter.setValue([2, 7])" class="h-8 w-12 text-fg" type="button" aria-label="Reset this filter" title="Reset this filter">
           <i class="pi pi-refresh"></i>
         </button>
       </div>
@@ -67,7 +67,7 @@ import { VersionFilterComponent } from './version-filter.component';
           [filterFormControl]="playCostFilter"
           title="Play Cost:"
           class="w-full"></digimon-range-slider>
-        <button (click)="playCostFilter.setValue([0, 20])" class="w-12 text-fg" type="button">
+        <button (click)="playCostFilter.setValue([0, 20])" class="h-8 w-12 text-fg" type="button" aria-label="Reset this filter" title="Reset this filter">
           <i class="pi pi-refresh"></i>
         </button>
       </div>
@@ -79,7 +79,7 @@ import { VersionFilterComponent } from './version-filter.component';
           [filterFormControl]="digivolutionFilter"
           title="Digivolution Cost:"
           class="w-full"></digimon-range-slider>
-        <button (click)="digivolutionFilter.setValue([0, 7])" class="w-12 text-fg" type="button">
+        <button (click)="digivolutionFilter.setValue([0, 7])" class="h-8 w-12 text-fg" type="button" aria-label="Reset this filter" title="Reset this filter">
           <i class="pi pi-refresh"></i>
         </button>
       </div>
@@ -92,7 +92,7 @@ import { VersionFilterComponent } from './version-filter.component';
           suffix="000"
           title="DP:"
           class="w-full"></digimon-range-slider>
-        <button (click)="dpFilter.setValue([1, 17])" class="w-12 text-fg" type="button">
+        <button (click)="dpFilter.setValue([1, 17])" class="h-8 w-12 text-fg" type="button" aria-label="Reset this filter" title="Reset this filter">
           <i class="pi pi-refresh"></i>
         </button>
       </div>
@@ -106,12 +106,13 @@ import { VersionFilterComponent } from './version-filter.component';
             suffix="€"
             title="Price:"
             class="w-full"></digimon-range-slider>
-          <button (click)="priceFilter.setValue([0, 100])" class="w-12 text-fg" type="button">
+          <button (click)="priceFilter.setValue([0, 100])" class="h-8 w-12 text-fg" type="button" aria-label="Reset this filter" title="Reset this filter">
             <i class="pi pi-refresh"></i>
           </button>
         </div>
       }
 
+      @if (!hideCollectionFilter) {
       <div class="flex flex-row mb-2">
         <digimon-range-slider
           [reset]="resetEmitter"
@@ -125,135 +126,138 @@ import { VersionFilterComponent } from './version-filter.component';
               emitEvent: false,
             })
           "
-          class="w-12 text-fg"
-          type="button">
+          class="h-8 w-12 text-fg"
+          type="button"
+          aria-label="Reset this filter"
+          title="Reset this filter">
           <i class="pi pi-refresh"></i>
         </button>
       </div>
+      }
 
       <digimon-rarity-filter></digimon-rarity-filter>
       <digimon-version-filter></digimon-version-filter>
       <digimon-block-filter></digimon-block-filter>
 
-      <p-multiSelect
-        [formControl]="keywordFilter"
-        [options]="keywords"
-        [filter]="false"
-        [showClear]="false"
-        [showHeader]="false"
-        [showToggleAll]="false"
-        appendTo="body"
-        placeholder="Select a Keyword"
-        display="chip"
-        scrollHeight="250px"
-        class="mx-auto my-1 w-full max-w-[250px]"
-        styleClass="w-full mt-1 h-8 text-sm max-w-[250px] leading-[0.75rem]">
-      </p-multiSelect>
+        <p-multiSelect
+          [formControl]="keywordFilter"
+          [options]="keywords"
+          [filter]="false"
+          [showClear]="false"
+          [showHeader]="false"
+          [showToggleAll]="false"
+          appendTo="body"
+          placeholder="Select a Keyword"
+          display="chip"
+          scrollHeight="250px"
+          class="mx-auto my-1 w-full max-w-[250px]"
+          styleClass="w-full mt-1 h-8 text-sm max-w-[250px] leading-[0.75rem]">
+        </p-multiSelect>
 
-      <p-multiSelect
-        [formControl]="formFilter"
-        [options]="forms"
-        [filter]="false"
-        [showClear]="false"
-        [showHeader]="false"
-        [showToggleAll]="false"
-        appendTo="body"
-        placeholder="Select a Form"
-        display="chip"
-        scrollHeight="250px"
-        class="mx-auto mb-1 w-full max-w-[250px]"
-        styleClass="w-full mt-1 h-8 text-sm max-w-[250px] leading-[0.75rem]">
-      </p-multiSelect>
+        <p-multiSelect
+          [formControl]="formFilter"
+          [options]="forms"
+          [filter]="false"
+          [showClear]="false"
+          [showHeader]="false"
+          [showToggleAll]="false"
+          appendTo="body"
+          placeholder="Select a Form"
+          display="chip"
+          scrollHeight="250px"
+          class="mx-auto mb-1 w-full max-w-[250px]"
+          styleClass="w-full mt-1 h-8 text-sm max-w-[250px] leading-[0.75rem]">
+        </p-multiSelect>
 
-      <p-multiSelect
-        [formControl]="attributeFilter"
-        [options]="attributes"
-        [filter]="false"
-        [showClear]="false"
-        [showHeader]="false"
-        [showToggleAll]="false"
-        appendTo="body"
-        placeholder="Select an Attribute"
-        display="chip"
-        scrollHeight="250px"
-        class="mx-auto mb-1 w-full max-w-[250px]"
-        styleClass="w-full mt-1 h-8 text-sm max-w-[250px] leading-[0.75rem]">
-      </p-multiSelect>
+        <p-multiSelect
+          [formControl]="attributeFilter"
+          [options]="attributes"
+          [filter]="false"
+          [showClear]="false"
+          [showHeader]="false"
+          [showToggleAll]="false"
+          appendTo="body"
+          placeholder="Select an Attribute"
+          display="chip"
+          scrollHeight="250px"
+          class="mx-auto mb-1 w-full max-w-[250px]"
+          styleClass="w-full mt-1 h-8 text-sm max-w-[250px] leading-[0.75rem]">
+        </p-multiSelect>
 
-      <p-multiSelect
-        [formControl]="typeFilter"
-        [options]="types"
-        [filter]="false"
-        [showClear]="false"
-        [showHeader]="false"
-        [showToggleAll]="false"
-        appendTo="body"
-        placeholder="Select a Type"
-        display="chip"
-        scrollHeight="250px"
-        class="mx-auto mb-1 w-full max-w-[250px]"
-        styleClass="w-full mt-1 h-8 text-sm max-w-[250px] leading-[0.75rem]">
-      </p-multiSelect>
+        <p-multiSelect
+          [formControl]="typeFilter"
+          [options]="types"
+          [filter]="false"
+          [showClear]="false"
+          [showHeader]="false"
+          [showToggleAll]="false"
+          appendTo="body"
+          placeholder="Select a Type"
+          display="chip"
+          scrollHeight="250px"
+          class="mx-auto mb-1 w-full max-w-[250px]"
+          styleClass="w-full mt-1 h-8 text-sm max-w-[250px] leading-[0.75rem]">
+        </p-multiSelect>
 
-      <p-multiSelect
-        [formControl]="specialRequirementsFilter"
-        [options]="specialRequirements"
-        [filter]="false"
-        [showClear]="false"
-        [showHeader]="false"
-        [showToggleAll]="false"
-        appendTo="body"
-        placeholder="Select a Special Requirement"
-        display="chip"
-        scrollHeight="250px"
-        class="mx-auto mb-1 w-full max-w-[250px]"
-        styleClass="w-full mt-1 h-8 text-sm max-w-[250px] leading-[0.75rem]">
-      </p-multiSelect>
+        <p-multiSelect
+          [formControl]="specialRequirementsFilter"
+          [options]="specialRequirements"
+          [filter]="false"
+          [showClear]="false"
+          [showHeader]="false"
+          [showToggleAll]="false"
+          appendTo="body"
+          placeholder="Select a Special Requirement"
+          display="chip"
+          scrollHeight="250px"
+          class="mx-auto mb-1 w-full max-w-[250px]"
+          styleClass="w-full mt-1 h-8 text-sm max-w-[250px] leading-[0.75rem]">
+        </p-multiSelect>
 
-      <p-multiSelect
-        [formControl]="illustratorFilter"
-        [options]="illustrators"
-        [filter]="false"
-        [showClear]="false"
-        [showHeader]="false"
-        [showToggleAll]="false"
-        appendTo="body"
-        placeholder="Select an Illustrator"
-        display="chip"
-        scrollHeight="250px"
-        class="mx-auto mb-1 w-full max-w-[250px]"
-        styleClass="w-full mt-1 h-8 text-sm max-w-[250px] leading-[0.75rem]">
-      </p-multiSelect>
+        <p-multiSelect
+          [formControl]="illustratorFilter"
+          [options]="illustrators"
+          [filter]="false"
+          [showClear]="false"
+          [showHeader]="false"
+          [showToggleAll]="false"
+          appendTo="body"
+          placeholder="Select an Illustrator"
+          display="chip"
+          scrollHeight="250px"
+          class="mx-auto mb-1 w-full max-w-[250px]"
+          styleClass="w-full mt-1 h-8 text-sm max-w-[250px] leading-[0.75rem]">
+        </p-multiSelect>
 
-      <p-multiSelect
-        [formControl]="restrictionsFilter"
-        [options]="restrictions"
-        [filter]="false"
-        [showClear]="false"
-        [showHeader]="false"
-        [showToggleAll]="false"
-        appendTo="body"
-        placeholder="Select a Restrictions"
-        display="chip"
-        scrollHeight="250px"
-        class="mx-auto mb-1 w-full max-w-[250px]"
-        styleClass="w-full mt-1 h-8 text-sm max-w-[250px] leading-[0.75rem]">
-      </p-multiSelect>
+        <p-multiSelect
+          [formControl]="restrictionsFilter"
+          [options]="restrictions"
+          [filter]="false"
+          [showClear]="false"
+          [showHeader]="false"
+          [showToggleAll]="false"
+          appendTo="body"
+          placeholder="Select a Restriction"
+          display="chip"
+          scrollHeight="250px"
+          class="mx-auto mb-1 w-full max-w-[250px]"
+          styleClass="w-full mt-1 h-8 text-sm max-w-[250px] leading-[0.75rem]">
+        </p-multiSelect>
 
-      <p-multiSelect
-        [formControl]="presetFilter"
-        [options]="presets"
-        [filter]="false"
-        [showClear]="false"
-        [showHeader]="false"
-        [showToggleAll]="false"
-        appendTo="body"
-        placeholder="Select a Preset"
-        display="chip"
-        scrollHeight="250px"
-        class="mx-auto mb-1 w-full max-w-[250px]"
-        styleClass="w-full mt-1 h-8 text-sm max-w-[250px] leading-[0.75rem]">
-      </p-multiSelect>
+        <p-multiSelect
+          [formControl]="presetFilter"
+          [options]="presets"
+          [filter]="false"
+          [showClear]="false"
+          [showHeader]="false"
+          [showToggleAll]="false"
+          appendTo="body"
+          placeholder="Select a Preset"
+          display="chip"
+          scrollHeight="250px"
+          class="mx-auto mb-1 w-full max-w-[250px]"
+          styleClass="w-full mt-1 h-8 text-sm max-w-[250px] leading-[0.75rem]">
+        </p-multiSelect>
     </div>
   `,
   styleUrls: ['filter-side-box.component.scss'],
@@ -276,6 +280,8 @@ import { VersionFilterComponent } from './version-filter.component';
 })
 export class FilterSideBoxComponent {
   @Input() public showColors!: boolean;
+  // The owned-count slider only makes sense where owned counts are shown (deck builder, collection)
+  @Input() hideCollectionFilter = false;
   messageService = inject(MessageService);
 
   filterStore = inject(FilterStore);

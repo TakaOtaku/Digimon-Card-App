@@ -42,7 +42,7 @@ import { MigrationService, MigrationResult, MigrationProgress, ComparisonResult 
       <div class="bg-white rounded-lg shadow-md p-6 mb-6">
         <h2 class="text-xl font-semibold mb-2">Migration Token</h2>
         <p class="text-sm text-gray-600 mb-3">
-          Required to run any migration. Paste the backend's <code>MIGRATION_TOKEN</code> here — it is kept in memory only and never stored.
+          Required to run any migration. Paste the backend's <code>MIGRATION_TOKEN</code> here - it is kept in memory only and never stored.
         </p>
         <input
           type="password"

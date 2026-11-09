@@ -17,7 +17,7 @@ const baseUrl = environment.legacyApiBaseUrl;
 /**
  * @deprecated Use {@link MongoBackendService} instead. This service targets the
  * legacy MySQL backend and is kept only for data migration via MigrationService.
- * Do not add new call sites — it will be removed once migration is complete.
+ * Do not add new call sites - it will be removed once migration is complete.
  */
 export class DigimonBackendService {
   constructor(private http: HttpClient) { }

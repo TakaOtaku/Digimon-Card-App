@@ -411,7 +411,7 @@ export class AdvancedSearchService {
       }
     }
 
-    // Treat as a text search term — match against common text fields
+    // Treat as a text search term - match against common text fields
     const escapedTerm = this.escapeRegex(condition);
     return {
       $or: [

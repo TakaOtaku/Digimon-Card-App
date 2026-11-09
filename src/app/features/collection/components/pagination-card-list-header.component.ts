@@ -1,4 +1,4 @@
-import { CurrencyPipe, NgClass, NgIf } from '@angular/common';
+import { CurrencyPipe, DecimalPipe, NgClass, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, EventEmitter, inject, Input, Output } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -13,25 +13,25 @@ import { CardMarketService } from '../../../services/card-market.service';
   selector: 'digimon-pagination-card-list-header',
   template: `
     <!-- Phones wrap the slider onto its own row: centered between absolute side groups it covered their buttons -->
-    <div class="relative flex w-full flex-row flex-wrap items-center justify-between gap-2 px-2 py-1 sm:h-10 sm:flex-nowrap sm:justify-center sm:p-0">
-      <div class="flex flex-row justify-center items-center gap-3 sm:absolute sm:left-2 sm:top-2">
+    <div class="relative flex w-full flex-row flex-wrap items-center justify-between gap-2 px-2 py-1 sm:min-h-10 sm:flex-nowrap sm:justify-between sm:gap-3 sm:px-2 sm:py-0">
+      <div class="flex flex-row items-center justify-center gap-3">
         <ng-content select="[headerStart]"></ng-content>
         <div *ngIf="!viewOnly" class="flex flex-row justify-center items-center">
         @if (showCollectionMode) {
         <span class="text-xs hidden sm:block font-bold text-fg">Collection Mode:</span>
-        <span class="text-xs sm:hidden font-bold text-fg">CM:</span>
+        <span class="text-xs sm:hidden font-bold text-fg">Owned:</span>
         <input type="checkbox" class="my-auto ml-1 h-5 w-5" [ngModel]="collectionMode()" (ngModelChange)="changeCollectionMode($event)" />
         }
-        <span class="text-xs font-bold text-fg" [class.ml-6]="showCollectionMode"> Cards: {{ cardCount() }} </span>
+        <span class="text-xs font-bold text-fg" [class.ml-6]="showCollectionMode"> Cards: <span class="font-mono">{{ cardCount() | number }}</span> </span>
         @if (saveStore.showPrices() && collectionValue() !== null) {
-          <span class="ml-4 text-xs font-bold text-green-400">💰 {{ collectionValue() | currency: 'EUR' }}</span>
+          <span class="ml-4 text-xs font-bold text-green-400"><span class="font-mono">{{ collectionValue() | currency: 'EUR' }}</span></span>
         }
         </div>
       </div>
 
-      <p-slider class="order-last mx-auto w-48 sm:order-none sm:mx-0 sm:w-32 md:w-36 lg:w-56" [formControl]="widthForm" [step]="0.1" [min]="3" [max]="14"></p-slider>
+      <p-slider class="order-last mx-auto w-48 sm:order-none sm:mx-0 sm:w-32 sm:min-w-0 sm:flex-1 sm:max-w-56" [formControl]="widthForm" [step]="0.1" [min]="3" [max]="14"></p-slider>
 
-      <div class="flex flex-row items-center justify-center gap-2 sm:absolute sm:right-2 sm:mx-2 sm:mt-1">
+      <div class="flex flex-row items-center justify-center gap-2">
         <ng-content select="[headerEnd]"></ng-content>
         <button
           [ngClass]="{ 'xl:hidden': !filterButton }"
@@ -45,7 +45,7 @@ import { CardMarketService } from '../../../services/card-market.service';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [PaginatorModule, FormsModule, NgIf, SliderModule, ReactiveFormsModule, NgClass, CurrencyPipe],
+  imports: [PaginatorModule, FormsModule, NgIf, SliderModule, ReactiveFormsModule, NgClass, CurrencyPipe, DecimalPipe],
 })
 export class PaginationCardListHeaderComponent {
   @Input() widthForm!: FormControl;

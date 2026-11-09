@@ -11,7 +11,7 @@ export interface MultiButtons {
   template: `
     <div class="mx-auto mb-2 max-w-[250px]">
       @if (title) {
-        <h1 class="mb-1 text-center text-xs font-bold text-fg">{{ title }}:</h1>
+        <h2 class="mb-1 text-center text-xs font-bold text-fg">{{ title }}:</h2>
       }
       <div [ngClass]="grid" class="my-2 grid w-full justify-center gap-1">
         <button

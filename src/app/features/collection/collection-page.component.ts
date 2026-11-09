@@ -28,7 +28,7 @@ import { PaginationCardListComponent } from './components/pagination-card-list.c
                 type="button"
                 (click)="showOwned(option.range)"
                 [attr.aria-pressed]="ownedFilter() === option.label"
-                class="rounded-full px-3 py-0.5 text-xs"
+                class="min-h-8 rounded-full px-3 text-xs"
                 [ngClass]="ownedFilter() === option.label ? 'bg-accent text-accent-ink font-semibold' : 'text-fg'">
                 {{ option.label === 'Missing' && missingMax() > 0 ? 'Missing (0–' + missingMax() + ')' : option.label }}
               </button>
@@ -98,7 +98,7 @@ import { PaginationCardListComponent } from './components/pagination-card-list.c
                 <div class="flex flex-wrap gap-1.5 px-3 pb-3">
                   @for (set of completedSets(); track set.set) {
                     <span class="inline-flex items-center gap-1 rounded-full border border-green-500/40 bg-ink-2 px-2.5 py-0.5 font-mono text-xs text-green-300">
-                      <i class="pi pi-check text-[10px]"></i>{{ set.set }}
+                      <i class="pi pi-check text-[11px]"></i>{{ set.set }}
                       <span class="text-muted">{{ set.total }}</span>
                     </span>
                   }

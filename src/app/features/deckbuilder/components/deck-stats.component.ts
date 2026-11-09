@@ -74,7 +74,7 @@ import { DdtoSpreadComponent } from '../../shared/statistics/ddto-spread.compone
           *ngIf="!collectionView"
           [deck]="deck()"
           [container]="true"
-          class="ml-auto hidden border-r border-slate-200 px-5 lg:block"></digimon-ddto-spread>
+          class="ml-auto hidden border-r border-line px-5 lg:block"></digimon-ddto-spread>
 
         <digimon-chart-containers
           [deck]="mainDeck()"
@@ -87,7 +87,7 @@ import { DdtoSpreadComponent } from '../../shared/statistics/ddto-spread.compone
           *ngIf="!collectionView"
           [deck]="deck()"
           [container]="true"
-          class="mr-auto hidden border-l border-slate-200 px-5 lg:block"></digimon-color-spread>
+          class="mr-auto hidden border-l border-line px-5 lg:block"></digimon-color-spread>
       </div>
     </div>
   `,

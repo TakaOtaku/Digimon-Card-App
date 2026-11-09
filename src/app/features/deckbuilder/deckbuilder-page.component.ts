@@ -17,6 +17,7 @@ import { DeckViewComponent } from './components/deck-view.component';
 @Component({
   selector: 'digimon-deckbuilder-page',
   template: `
+    <h1 class="sr-only">Deck builder</h1>
     @if ((checkUrl$ | async) !== false) {
       <digimon-page>
         <digimon-deck-view
@@ -38,7 +39,7 @@ import { DeckViewComponent } from './components/deck-view.component';
           [bottomInset]="true"
           [filterBoxEnabled]="false"
           [ngClass]="{ 'w-3/5 max-w-[60%] xl:w-auto xl:max-w-none xl:flex-1 xl:min-w-0': deckView, 'w-full': !deckView }"
-          class="border-l max-h-full border-slate-200 flex flex-row  h-[calc(var(--app-vh)-7.5rem)] md:h-[calc(var(--app-vh)-5rem)]"></digimon-pagination-card-list>
+          class="border-l max-h-full border-line flex flex-row  h-[calc(var(--app-vh)-7.5rem)] md:h-[calc(var(--app-vh)-5rem)]"></digimon-pagination-card-list>
 
 
         @if (statsDisplay && deckView) {
@@ -64,7 +65,7 @@ import { DeckViewComponent } from './components/deck-view.component';
             (click)="setMobileTab(tab.id)"
             class="h-10 flex-1 rounded-lg text-sm font-semibold"
             [ngClass]="mobileTab === tab.id ? 'bg-line text-fg' : 'text-muted'">
-            {{ tab.label }}
+            {{ tab.id === 'deck' ? 'Deck ' + deckCount() : tab.label }}
           </button>
         }
       </div>
@@ -83,6 +84,7 @@ export class DeckbuilderPageComponent implements OnInit {
   saveStore = inject(SaveStore);
   websiteStore = inject(WebsiteStore);
 
+  deckCount = () => this.websiteStore.deck().cards.reduce((n, c) => n + c.count, 0);
   collectionView = true;
   deckView = true;
 

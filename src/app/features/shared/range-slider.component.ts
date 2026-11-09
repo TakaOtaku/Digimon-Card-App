@@ -13,6 +13,7 @@ import { Subject, takeUntil } from 'rxjs';
     <div class="custom-slider flex flex-row px-3 my-3">
       <p-slider
         [formControl]="filterFormControl"
+        [ariaLabel]="title.replace(':', '')"
         [min]="minMax[0]"
         [max]="minMax[1]"
         step="1"
@@ -21,9 +22,9 @@ import { Subject, takeUntil } from 'rxjs';
         range="true"></p-slider>
     </div>
 
-    <h1 class="mt-[-5px] text-center text-xs font-bold text-fg">
+    <h2 class="mt-[-5px] text-center text-xs font-bold text-fg">
       {{ title }}
-    </h1>
+    </h2>
   `,
   styleUrls: ['./range-slider.component.scss'],
   standalone: true,

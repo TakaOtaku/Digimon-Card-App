@@ -17,7 +17,15 @@ import { CardImageComponent } from './card-image.component';
       [pDraggable]="'toDeck'"
       (onDragStart)="setDraggedCard(card)"
       class="relative inline-flex w-full transition-transform hover:scale-105">
-      <div (click)="click()" (contextmenu)="rightclick()">
+      <div
+        (click)="click()"
+        (contextmenu)="rightclick()"
+        (keydown.enter)="click()"
+        (keydown.space)="$event.preventDefault(); click()"
+        role="button"
+        tabindex="0"
+        [attr.aria-label]="card.cardNumber + ' ' + card.name.english"
+        class="rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
         <digimon-card-image [card]="card" [count]="count"></digimon-card-image>
       </div>
 

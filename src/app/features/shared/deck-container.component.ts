@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component, inject, Input, OnChanges, SimpleCha
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { BehaviorSubject, first } from 'rxjs';
 import { ColorMap, IDeck } from '../../../models';
-import { setDeckImage } from '../../functions';
+import { mapToDeckCards, setDeckImage } from '../../functions';
 import { ImageService } from '../../services/image.service';
 import { DigimonCardStore } from '../../store/digimon-card.store';
 
@@ -30,7 +30,11 @@ import { DigimonCardStore } from '../../store/digimon-card.store';
         <span class="truncate font-display text-sm font-semibold text-fg sm:text-lg">{{ deck.title || 'Untitled deck' }}</span>
         <span class="hidden min-h-[1rem] truncate text-xs text-muted sm:block">{{ deck.description }}</span>
         <span class="flex items-center gap-2 text-xs text-muted">
-          <span class="h-2.5 w-2.5 shrink-0 rounded-full" [ngStyle]="{ background: colorMap.get(deck?.color?.name ?? '') }"></span>
+          <span class="flex shrink-0 items-center gap-1" [attr.aria-label]="'Colors: ' + deckColors.join(', ')">
+            @for (color of deckColors; track color) {
+              <span class="h-3 w-3 rounded-full border border-white/30" [ngStyle]="{ background: colorMap.get(color) }" [title]="color"></span>
+            }
+          </span>
           <span *ngIf="mode === 'Community'" class="truncate">{{ deck.user }}</span>
           <span class="ml-auto font-mono">{{ deck.date | date: 'dd.MM.yy' }}</span>
         </span>
@@ -48,6 +52,8 @@ export class DeckContainerComponent implements OnChanges {
   cardImageSubject$ = new BehaviorSubject<string>('../../../assets/images/digimon-card-back.webp');
 
   colorMap = ColorMap;
+  deckColors: string[] = [];
+  private static readonly colorOrder = ['Red', 'Blue', 'Yellow', 'Green', 'Black', 'Purple', 'White'];
 
   private digimonCardStore = inject(DigimonCardStore);
 
@@ -55,6 +61,19 @@ export class DeckContainerComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     this.setCardImage();
+    this.setColors();
+  }
+
+  // Every color in the deck, not just the main one
+  setColors() {
+    const colors = new Set<string>();
+    for (const card of mapToDeckCards(this.deck.cards ?? [], this.digimonCardStore.cards())) {
+      for (const name of DeckContainerComponent.colorOrder) {
+        if (card.color?.includes(name)) colors.add(name);
+      }
+    }
+    this.deckColors = DeckContainerComponent.colorOrder.filter((name) => colors.has(name));
+    if (!this.deckColors.length && this.deck.color?.name) this.deckColors = [this.deck.color.name];
   }
 
   setCardImage() {

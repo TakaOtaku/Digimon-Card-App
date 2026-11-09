@@ -28,24 +28,25 @@ import { WebsiteStore } from '@store';
       </div>
     </div>
 
-    <div class="mx-3.5 inline-flex w-full">
-      <span class="mr-2 w-full">
+    <div class="mx-3 flex items-stretch gap-2">
+      <span class="min-w-0 flex-[2_1_0]">
         <textarea
           [ngModel]="this.obscenity.transform(this.description())"
           (ngModelChange)="updateDescription($event)"
-          placeholder="Description:"
-          class="h-[40px] w-full overflow-hidden md:h-[66px]"
+          placeholder="Description (optional)"
+          rows="2"
+          class="h-14 w-full resize-none overflow-hidden md:h-[66px]"
           pInputTextarea></textarea>
       </span>
-      <div class="mr-6 flex h-[40px] w-full flex-row justify-center border border-line md:h-[66px]">
+      <div class="flex h-14 min-w-0 flex-[1_1_0] flex-row justify-center overflow-hidden rounded-lg border border-line md:h-[66px]">
         <div
           *ngFor="let deckBox of colors"
-          class="h-full w-full cursor-pointer"
+          class="h-full min-w-0 flex-1"
           [ngClass]="{
             'primary-background': selectedColor().name === deckBox.name,
-            'surface-ground': selectedColor().name !== deckBox.name,
+            'bg-ink-1': selectedColor().name !== deckBox.name,
           }">
-          <img [src]="deckBox.img" alt="Deckbox" class="h-full" />
+          <img [src]="deckBox.img" [alt]="deckBox.name + ' deck box'" class="h-full w-full object-contain" />
         </div>
       </div>
     </div>

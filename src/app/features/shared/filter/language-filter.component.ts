@@ -7,7 +7,7 @@ import { SaveStore } from '../../../store/save.store';
   selector: 'digimon-language-filter',
   template: `
     <div class="mb-3">
-      <h1 class="text-center text-xs font-bold text-fg">Language:</h1>
+      <h2 class="text-center text-xs font-bold text-fg">Language:</h2>
       <div class="inline-flex w-full justify-center">
         <button
           (click)="setCardSet(cardSet.English)"
